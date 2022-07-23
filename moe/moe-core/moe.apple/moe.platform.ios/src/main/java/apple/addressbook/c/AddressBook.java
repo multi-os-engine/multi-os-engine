@@ -206,7 +206,8 @@ public final class AddressBook {
     public static native ConstVoidPtr ABPersonCopySource(ConstVoidPtr person);
 
     /**
-     * Returns an array of all the linked people, including the person passed in. If the person is not linked, returns an array with the person passed in.
+     * Returns an array of all the linked people, including the person passed in. If the person is not linked, returns
+     * an array with the person passed in.
      */
     @Generated
     @Deprecated

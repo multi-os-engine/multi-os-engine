@@ -193,7 +193,7 @@ public class CSCustomAttributeKey extends NSObject implements NSCopying, NSSecur
             boolean searchable, boolean searchableByDefault, boolean unique, boolean multiValued);
 
     /**
-     * Is this attribute expecting multiple values to be associated with it, i.e. are values arrays?  By default, NO
+     * Is this attribute expecting multiple values to be associated with it, i.e. are values arrays? By default, NO
      */
     @Generated
     @Selector("isMultiValued")
@@ -214,7 +214,8 @@ public class CSCustomAttributeKey extends NSObject implements NSCopying, NSSecur
     public native boolean isSearchableByDefault();
 
     /**
-     * Should values be uniqued to save storage? By default, NO. Set this to YES when there is a small set of known values, or values are likely to be frequently repeating for other reasons.
+     * Should values be uniqued to save storage? By default, NO. Set this to YES when there is a small set of known
+     * values, or values are likely to be frequently repeating for other reasons.
      */
     @Generated
     @Selector("isUnique")

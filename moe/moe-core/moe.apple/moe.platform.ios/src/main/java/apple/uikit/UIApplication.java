@@ -142,10 +142,12 @@ public class UIApplication extends UIResponder {
     public static native UIApplication new_objc();
 
     /**
-     * Register non-View/ViewController objects for state restoration so other objects can reference them within state restoration archives.
+     * Register non-View/ViewController objects for state restoration so other objects can reference them within state
+     * restoration archives.
      * If the object implements encode/decode, those methods will be called during save/restore.
      * Obj and identifier must not be nil, or will raise UIRestorationObjectRegistrationException.
-     * Objects do not need to be unregistered when they are deleted, the State Restoration system will notice and stop tracking the object.
+     * Objects do not need to be unregistered when they are deleted, the State Restoration system will notice and stop
+     * tracking the object.
      */
     @Generated
     @Selector("registerObjectForStateRestoration:restorationIdentifier:")
@@ -178,7 +180,8 @@ public class UIApplication extends UIResponder {
     public static native long version_static();
 
     /**
-     * set to 0 to hide. default is 0. In iOS 8.0 and later, your application must register for user notifications using -[UIApplication registerUserNotificationSettings:] before being able to set the icon badge.
+     * set to 0 to hide. default is 0. In iOS 8.0 and later, your application must register for user notifications using
+     * -[UIApplication registerUserNotificationSettings:] before being able to set the icon badge.
      */
     @Generated
     @Selector("applicationIconBadgeNumber")
@@ -195,8 +198,10 @@ public class UIApplication extends UIResponder {
     public native boolean applicationSupportsShakeToEdit();
 
     /**
-     * When background refresh is available for an application, it may launched or resumed in the background to handle significant
-     * location changes, remote notifications, background fetches, etc. Observe UIApplicationBackgroundRefreshStatusDidChangeNotification to
+     * When background refresh is available for an application, it may launched or resumed in the background to handle
+     * significant
+     * location changes, remote notifications, background fetches, etc. Observe
+     * UIApplicationBackgroundRefreshStatusDidChangeNotification to
      * be notified of changes.
      */
     @Generated
@@ -286,8 +291,10 @@ public class UIApplication extends UIResponder {
     public native void endReceivingRemoteControlEvents();
 
     /**
-     * These methods are used to inform the system that state restoration is occurring asynchronously after the application
-     * has processed its restoration archive on launch. In the even of a crash, the system will be able to detect that it may
+     * These methods are used to inform the system that state restoration is occurring asynchronously after the
+     * application
+     * has processed its restoration archive on launch. In the even of a crash, the system will be able to detect that
+     * it may
      * have been caused by a bad restoration archive and arrange to ignore it on a subsequent application launch.
      */
     @Generated
@@ -295,7 +302,8 @@ public class UIApplication extends UIResponder {
     public native void extendStateRestoration();
 
     /**
-     * Indicate the application should not use the snapshot on next launch, even if there is a valid state restoration archive.
+     * Indicate the application should not use the snapshot on next launch, even if there is a valid state restoration
+     * archive.
      * This should only be called from methods invoked from State Preservation, else it is ignored.
      */
     @Generated
@@ -356,7 +364,8 @@ public class UIApplication extends UIResponder {
     public native void setProximitySensingEnabled(boolean value);
 
     /**
-     * Returns YES if the application is currently registered for remote notifications, taking into account any systemwide settings; doesn't relate to connectivity.
+     * Returns YES if the application is currently registered for remote notifications, taking into account any
+     * systemwide settings; doesn't relate to connectivity.
      */
     @Generated
     @Selector("isRegisteredForRemoteNotifications")
@@ -367,7 +376,8 @@ public class UIApplication extends UIResponder {
     public native boolean isStatusBarHidden();
 
     /**
-     * Setting statusBarHidden does nothing if your application is using the default UIViewController-based status bar system.
+     * Setting statusBarHidden does nothing if your application is using the default UIViewController-based status bar
+     * system.
      */
     @Generated
     @Deprecated
@@ -383,8 +393,10 @@ public class UIApplication extends UIResponder {
     public native boolean openURL(NSURL url);
 
     /**
-     * Options are specified in the section below for openURL options. An empty options dictionary will result in the same
-     * behavior as the older openURL call, aside from the fact that this is asynchronous and calls the completion handler rather
+     * Options are specified in the section below for openURL options. An empty options dictionary will result in the
+     * same
+     * behavior as the older openURL call, aside from the fact that this is asynchronous and calls the completion
+     * handler rather
      * than returning a result.
      * The completion handler is called on the main queue.
      */
@@ -410,7 +422,10 @@ public class UIApplication extends UIResponder {
     public native void registerForRemoteNotificationTypes(@NUInt long types);
 
     /**
-     * Calling this will result in either application:didRegisterForRemoteNotificationsWithDeviceToken: or application:didFailToRegisterForRemoteNotificationsWithError: to be called on the application delegate. Note: these callbacks will be made only if the application has successfully registered for user notifications with registerUserNotificationSettings:, or if it is enabled for Background App Refresh.
+     * Calling this will result in either application:didRegisterForRemoteNotificationsWithDeviceToken: or
+     * application:didFailToRegisterForRemoteNotificationsWithError: to be called on the application delegate. Note:
+     * these callbacks will be made only if the application has successfully registered for user notifications with
+     * registerUserNotificationSettings:, or if it is enabled for Background App Refresh.
      */
     @Generated
     @Selector("registerForRemoteNotifications")
@@ -444,7 +459,8 @@ public class UIApplication extends UIResponder {
     public native void sendEvent(UIEvent event);
 
     /**
-     * set to 0 to hide. default is 0. In iOS 8.0 and later, your application must register for user notifications using -[UIApplication registerUserNotificationSettings:] before being able to set the icon badge.
+     * set to 0 to hide. default is 0. In iOS 8.0 and later, your application must register for user notifications using
+     * -[UIApplication registerUserNotificationSettings:] before being able to set the icon badge.
      */
     @Generated
     @Selector("setApplicationIconBadgeNumber:")
@@ -530,7 +546,8 @@ public class UIApplication extends UIResponder {
     public native void setStatusBarOrientationAnimated(@NInt long interfaceOrientation, boolean animated);
 
     /**
-     * Setting the statusBarStyle does nothing if your application is using the default UIViewController-based status bar system.
+     * Setting the statusBarStyle does nothing if your application is using the default UIViewController-based status
+     * bar system.
      */
     @Generated
     @Deprecated
@@ -563,7 +580,8 @@ public class UIApplication extends UIResponder {
     public native long statusBarOrientation();
 
     /**
-     * Returns the animation duration for the status bar during a 90 degree orientation change.  It should be doubled for a 180 degree orientation change.
+     * Returns the animation duration for the status bar during a 90 degree orientation change. It should be doubled for
+     * a 180 degree orientation change.
      */
     @Generated
     @Selector("statusBarOrientationAnimationDuration")
@@ -582,7 +600,7 @@ public class UIApplication extends UIResponder {
      * implemented the delegate equivalent. It returns the orientations specified by
      * the application's info.plist. If no supported interface orientations were
      * specified it will return UIInterfaceOrientationMaskAll on an iPad and
-     * UIInterfaceOrientationMaskAllButUpsideDown on a phone.  The return value
+     * UIInterfaceOrientationMaskAllButUpsideDown on a phone. The return value
      * should be one of the UIInterfaceOrientationMask values which indicates the
      * orientations supported by this application.
      */
@@ -640,7 +658,8 @@ public class UIApplication extends UIResponder {
     public native String alternateIconName();
 
     /**
-     * Pass `nil` to use the primary application icon. The completion handler will be invoked asynchronously on an arbitrary background queue; be sure to dispatch back to the main queue before doing any further UI work.
+     * Pass `nil` to use the primary application icon. The completion handler will be invoked asynchronously on an
+     * arbitrary background queue; be sure to dispatch back to the main queue before doing any further UI work.
      */
     @Generated
     @Selector("setAlternateIconName:completionHandler:")
@@ -669,7 +688,8 @@ public class UIApplication extends UIResponder {
     public native NSSet<? extends UIScene> connectedScenes();
 
     /**
-     * All of the representations that currently have connected UIScene instances or had their sessions persisted by the system (ex: visible in iOS' switcher)
+     * All of the representations that currently have connected UIScene instances or had their sessions persisted by the
+     * system (ex: visible in iOS' switcher)
      */
     @Generated
     @Selector("openSessions")
@@ -677,8 +697,11 @@ public class UIApplication extends UIResponder {
 
     /**
      * Request a given session be activated, first connecting it to the application if necessary.
-     * Providing a session will activate, connecting if necessary, the interface backed by the already existing UISceneSession.
-     * Providing a user activity will dispatch that activity to the provided session's scene. If no session is provided, then the system will select one (possibly creating a new session, if appropriate) and pass the activity to the session scene's delegate.
+     * Providing a session will activate, connecting if necessary, the interface backed by the already existing
+     * UISceneSession.
+     * Providing a user activity will dispatch that activity to the provided session's scene. If no session is provided,
+     * then the system will select one (possibly creating a new session, if appropriate) and pass the activity to the
+     * session scene's delegate.
      */
     @Generated
     @Selector("requestSceneSessionActivation:userActivity:options:errorHandler:")
@@ -694,7 +717,8 @@ public class UIApplication extends UIResponder {
     }
 
     /**
-     * requests that a given session be closed, disconnecting the currently connected scene if present, and calling the -application:didDiscardSceneSessions: method on the application's delegate
+     * requests that a given session be closed, disconnecting the currently connected scene if present, and calling the
+     * -application:didDiscardSceneSessions: method on the application's delegate
      */
     @Generated
     @Selector("requestSceneSessionDestruction:options:errorHandler:")
@@ -710,14 +734,16 @@ public class UIApplication extends UIResponder {
     }
 
     /**
-     * requests that any system UI representing a scene be updated due to background updates or any other relevant model/state update.
+     * requests that any system UI representing a scene be updated due to background updates or any other relevant
+     * model/state update.
      */
     @Generated
     @Selector("requestSceneSessionRefresh:")
     public native void requestSceneSessionRefresh(UISceneSession sceneSession);
 
     /**
-     * returns YES if the application both declares multiple scene support in its info.plist and the executing environment allows multiple scenes for at least one system type. NO otherwise.
+     * returns YES if the application both declares multiple scene support in its info.plist and the executing
+     * environment allows multiple scenes for at least one system type. NO otherwise.
      */
     @Generated
     @Selector("supportsMultipleScenes")

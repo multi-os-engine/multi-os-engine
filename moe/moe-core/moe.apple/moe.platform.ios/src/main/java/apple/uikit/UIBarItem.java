@@ -337,7 +337,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     public native void setTitle(String value);
 
     /**
-     * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary, using the keys found in NSAttributedString.h.
+     * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary,
+     * using the keys found in NSAttributedString.h.
      */
     @Generated
     @Selector("setTitleTextAttributes:forState:")
@@ -363,7 +364,9 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     public native NSDictionary<String, ?> titleTextAttributesForState(@NUInt long state);
 
     /**
-     * Higher-resolution version of the standard image. Default is nil. Used for rendering assistive UI (e.g. for users with visual impairments who need large text). If not provided, the system may attempt to generate an image based on the standard image (for instance, by rasterizing matching PDF representations at a higher resolution).
+     * Higher-resolution version of the standard image. Default is nil. Used for rendering assistive UI (e.g. for users
+     * with visual impairments who need large text). If not provided, the system may attempt to generate an image based
+     * on the standard image (for instance, by rasterizing matching PDF representations at a higher resolution).
      */
     @Generated
     @Selector("largeContentSizeImage")
@@ -378,7 +381,9 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     public native UIEdgeInsets largeContentSizeImageInsets();
 
     /**
-     * Higher-resolution version of the standard image. Default is nil. Used for rendering assistive UI (e.g. for users with visual impairments who need large text). If not provided, the system may attempt to generate an image based on the standard image (for instance, by rasterizing matching PDF representations at a higher resolution).
+     * Higher-resolution version of the standard image. Default is nil. Used for rendering assistive UI (e.g. for users
+     * with visual impairments who need large text). If not provided, the system may attempt to generate an image based
+     * on the standard image (for instance, by rasterizing matching PDF representations at a higher resolution).
      */
     @Generated
     @Selector("setLargeContentSizeImage:")

@@ -49,6 +49,7 @@ jar {
     from { [rootProject.file('LICENSE'), rootProject.file('NOTICE')] }
     destinationDir file('build/libs/core')
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
+    includeEmptyDirs false
 }
 
 task sourceJar(type: Jar) {
@@ -59,6 +60,7 @@ task sourceJar(type: Jar) {
     from sourceSets.main.allJava
     destinationDir file('build/libs/core')
     from(file('../eula/LICENSE.TXT')) { into 'META-INF' }
+    includeEmptyDirs false
 }
 
 /******************************************************************************

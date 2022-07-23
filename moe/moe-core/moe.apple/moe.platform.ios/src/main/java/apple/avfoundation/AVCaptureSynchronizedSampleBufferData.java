@@ -26,9 +26,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * AVCaptureSynchronizedSampleBufferData
  * <p>
- * An concrete subclass of AVCaptureSynchronizedData representing the data delivered by an AVCaptureVideoDataOutput or AVCaptureAudioDataOutput.
+ * An concrete subclass of AVCaptureSynchronizedData representing the data delivered by an AVCaptureVideoDataOutput or
+ * AVCaptureAudioDataOutput.
  * <p>
- * Synchronized sample buffer data is valid for the duration of AVCaptureDataOutputSynchronizer's -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback. To extend the sample buffer data beyond the callback, you must CFRetain it, and later call CFRelease when you're done with it.
+ * Synchronized sample buffer data is valid for the duration of AVCaptureDataOutputSynchronizer's
+ * -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback. To extend the sample buffer data beyond the
+ * callback, you must CFRetain it, and later call CFRelease when you're done with it.
  */
 @Generated
 @Library("AVFoundation")
@@ -148,7 +151,11 @@ public class AVCaptureSynchronizedSampleBufferData extends AVCaptureSynchronized
      * <p>
      * A sample buffer containing video or audio data.
      * <p>
-     * If sampleBufferWasDropped is YES, the returned sampleBuffer was dropped before it could be delivered to you, and thus this sample buffer is a shell containing metadata and format information, but no actual pixel data. This property is never NULL. If a data output has no data to return, it is simply not present in the dictionary of synchronized data returned by AVCaptureDataOutputSynchronizer's -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback.
+     * If sampleBufferWasDropped is YES, the returned sampleBuffer was dropped before it could be delivered to you, and
+     * thus this sample buffer is a shell containing metadata and format information, but no actual pixel data. This
+     * property is never NULL. If a data output has no data to return, it is simply not present in the dictionary of
+     * synchronized data returned by AVCaptureDataOutputSynchronizer's
+     * -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback.
      */
     @Generated
     @Selector("sampleBuffer")
@@ -159,7 +166,8 @@ public class AVCaptureSynchronizedSampleBufferData extends AVCaptureSynchronized
      * <p>
      * YES if the sample buffer was dropped.
      * <p>
-     * AVCaptureVideoDataOutput has a delegate callback for dropped sample buffers. AVCaptureAudioDataOutput does not. Therefore, sampleBufferWasDropped may be YES for video, but never for audio.
+     * AVCaptureVideoDataOutput has a delegate callback for dropped sample buffers. AVCaptureAudioDataOutput does not.
+     * Therefore, sampleBufferWasDropped may be YES for video, but never for audio.
      */
     @Generated
     @Selector("sampleBufferWasDropped")

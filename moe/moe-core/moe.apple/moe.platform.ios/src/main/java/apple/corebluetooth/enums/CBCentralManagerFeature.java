@@ -8,7 +8,8 @@ import org.moe.natj.general.ann.NUInt;
  * <p>
  * The set of device specific features.
  * <p>
- * [@constant] CBCentralManagerFeatureExtendedScanAndConnect      The hardware supports extended scans and enhanced connection creation
+ * [@constant] CBCentralManagerFeatureExtendedScanAndConnect The hardware supports extended scans and enhanced
+ * connection creation
  */
 @Generated
 public final class CBCentralManagerFeature {

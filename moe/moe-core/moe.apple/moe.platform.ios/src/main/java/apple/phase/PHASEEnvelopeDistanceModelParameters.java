@@ -112,7 +112,8 @@ public class PHASEEnvelopeDistanceModelParameters extends PHASEDistanceModelPara
      * <p>
      * Initialize a PHASEEnvelopeDistanceModelParameters with a PHASEEnvelope
      *
-     * @param envelope An envelope object where x values are interpreted as distance and the y values interpreted as gain.
+     * @param envelope An envelope object where x values are interpreted as distance and the y values interpreted as
+     *                 gain.
      * @return An instance, or nil if initialization failed.
      */
     @Generated

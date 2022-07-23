@@ -7,7 +7,8 @@ import org.moe.natj.general.ann.NInt;
  * [@enum] PHASECalibrationMode
  * <p>
  * Calibration mode.
- * [@note] In general, clients are advised use a calibrated input mode. Setting the value to PHASECalibrationModeNone is not advised.
+ * [@note] In general, clients are advised use a calibrated input mode. Setting the value to PHASECalibrationModeNone is
+ * not advised.
  * [@constant] PHASECalibrationModeNone
  * Linear gain with no reference (uncailbrated).
  * [@constant] PHASECalibrationModeRelativeSpl

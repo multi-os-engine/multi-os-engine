@@ -114,7 +114,8 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      * Initialize a list image row item with a text string and an array of @c UIImage
      * for the grid of images.
      * <p>
-     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
+     * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
@@ -255,7 +256,8 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      * item is already displayed in a list template, this image row item will be
      * automatically reloaded.
      * <p>
-     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
+     * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
@@ -263,7 +265,7 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
      *
      * @see To update/reload the title of the image row item, assign to
-     * the @c text property of the image row item.
+     *      the @c text property of the image row item.
      */
     @Generated
     @Selector("updateImages:")

@@ -3,7 +3,7 @@ package apple.mlcompute.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]       MLCActivationType
+ * [@enum] MLCActivationType
  * <p>
  * An activation type that you specify for an activation descriptor.
  */

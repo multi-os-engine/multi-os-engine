@@ -158,7 +158,7 @@ public class HKCumulativeQuantitySample extends HKQuantitySample {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]      sumQuantity
+     * [@property] sumQuantity
      * <p>
      * The sum of quantities represented by the receiver.
      */

@@ -152,7 +152,9 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * The sound file to be played for the notification. The sound must be in the Library/Sounds folder of the app's data container or the Library/Sounds folder of an app group data container. If the file is not found in a container, the system will look in the app's bundle.
+     * The sound file to be played for the notification. The sound must be in the Library/Sounds folder of the app's
+     * data container or the Library/Sounds folder of an app group data container. If the file is not found in a
+     * container, the system will look in the app's bundle.
      */
     @Generated
     @Selector("soundNamed:")
@@ -196,14 +198,19 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
     }
 
     /**
-     * The name of a sound file to be played for an critical alert. Critical alerts will bypass the mute switch and Do Not Disturb. The sound file must be contained in the app’s bundle or in the Library/Sounds folder of the app’s data container. If files exist in both locations then the file in the app’s data container will be preferred.
+     * The name of a sound file to be played for an critical alert. Critical alerts will bypass the mute switch and Do
+     * Not Disturb. The sound file must be contained in the app’s bundle or in the Library/Sounds folder of the app’s
+     * data container. If files exist in both locations then the file in the app’s data container will be preferred.
      */
     @Generated
     @Selector("criticalSoundNamed:")
     public static native UNNotificationSound criticalSoundNamed(String name);
 
     /**
-     * The name of a sound file to be played for an critical alert with a custom audio volume level. Critical alerts will bypass the mute switch and Do Not Disturb. The sound file must be contained in the app’s bundle or in the Library/Sounds folder of the app’s data container. If files exist in both locations then the file in the app’s data container will be preferred. The audio volume is expected to be between 0.0f and 1.0f.
+     * The name of a sound file to be played for an critical alert with a custom audio volume level. Critical alerts
+     * will bypass the mute switch and Do Not Disturb. The sound file must be contained in the app’s bundle or in the
+     * Library/Sounds folder of the app’s data container. If files exist in both locations then the file in the app’s
+     * data container will be preferred. The audio volume is expected to be between 0.0f and 1.0f.
      */
     @Generated
     @Selector("criticalSoundNamed:withAudioVolume:")
@@ -217,21 +224,32 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
     public static native UNNotificationSound defaultCriticalSound();
 
     /**
-     * The default sound used for critical alerts with a custom audio volume level. Critical alerts will bypass the mute switch and Do Not Disturb. The audio volume is expected to be between 0.0f and 1.0f.
+     * The default sound used for critical alerts with a custom audio volume level. Critical alerts will bypass the mute
+     * switch and Do Not Disturb. The audio volume is expected to be between 0.0f and 1.0f.
      */
     @Generated
     @Selector("defaultCriticalSoundWithAudioVolume:")
     public static native UNNotificationSound defaultCriticalSoundWithAudioVolume(float volume);
 
     /**
-     * The default sound used for incoming call notifications. Plays the ringtone and haptics specified in Settings for a 30 second duration. The parent UNNotificationContent object must be created in the notification service extension via -[UNNotificationContent contentByUpdatingWithProvider:error:] where the provider is an INStartCallIntent with a destinationType of INCallDestinationTypeNormal. Please use CallKit instead of UserNotifications for this use case when available.
+     * The default sound used for incoming call notifications. Plays the ringtone and haptics specified in Settings for
+     * a 30 second duration. The parent UNNotificationContent object must be created in the notification service
+     * extension via -[UNNotificationContent contentByUpdatingWithProvider:error:] where the provider is an
+     * INStartCallIntent with a destinationType of INCallDestinationTypeNormal. Please use CallKit instead of
+     * UserNotifications for this use case when available.
      */
     @Generated
     @Selector("defaultRingtoneSound")
     public static native UNNotificationSound defaultRingtoneSound();
 
     /**
-     * The sound file to be played for an incoming call notification. The sound must be in the Library/Sounds folder of the app's data container or the Library/Sounds folder of an app group data container. If the file is not found in a container, the system will look in the app's bundle. The sound will repeat for a total duration of 30 seconds. The haptics specified in Settings will be played along with the sound. The parent UNNotificationContent object must be created in the notification service extension via -[UNNotificationContent contentByUpdatingWithProvider:error:] where the provider is an INStartCallIntent with a destinationType of INCallDestinationTypeNormal. Please use CallKit instead of UserNotifications for this use case when available.
+     * The sound file to be played for an incoming call notification. The sound must be in the Library/Sounds folder of
+     * the app's data container or the Library/Sounds folder of an app group data container. If the file is not found in
+     * a container, the system will look in the app's bundle. The sound will repeat for a total duration of 30 seconds.
+     * The haptics specified in Settings will be played along with the sound. The parent UNNotificationContent object
+     * must be created in the notification service extension via -[UNNotificationContent
+     * contentByUpdatingWithProvider:error:] where the provider is an INStartCallIntent with a destinationType of
+     * INCallDestinationTypeNormal. Please use CallKit instead of UserNotifications for this use case when available.
      */
     @Generated
     @Selector("ringtoneSoundNamed:")

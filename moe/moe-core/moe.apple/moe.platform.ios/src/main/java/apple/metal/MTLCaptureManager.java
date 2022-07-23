@@ -84,7 +84,9 @@ public class MTLCaptureManager extends NSObject {
     public static native String debugDescription_static();
 
     /**
-     * Default scope to be captured when a capture is initiated from Xcode’s capture button. When nil, it’ll fall back to presentDrawable:, presentDrawable:atTime:, presentDrawable:afterMinimumDuration: in MTLCommandBuffer or present:, present:atTime:, present:afterMinimumDuration: in MTLDrawable.
+     * Default scope to be captured when a capture is initiated from Xcode’s capture button. When nil, it’ll fall back
+     * to presentDrawable:, presentDrawable:atTime:, presentDrawable:afterMinimumDuration: in MTLCommandBuffer or
+     * present:, present:atTime:, present:afterMinimumDuration: in MTLDrawable.
      */
     @Generated
     @Selector("defaultCaptureScope")
@@ -163,7 +165,9 @@ public class MTLCaptureManager extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Default scope to be captured when a capture is initiated from Xcode’s capture button. When nil, it’ll fall back to presentDrawable:, presentDrawable:atTime:, presentDrawable:afterMinimumDuration: in MTLCommandBuffer or present:, present:atTime:, present:afterMinimumDuration: in MTLDrawable.
+     * Default scope to be captured when a capture is initiated from Xcode’s capture button. When nil, it’ll fall back
+     * to presentDrawable:, presentDrawable:atTime:, presentDrawable:afterMinimumDuration: in MTLCommandBuffer or
+     * present:, present:atTime:, present:afterMinimumDuration: in MTLDrawable.
      */
     @Generated
     @Selector("setDefaultCaptureScope:")
@@ -184,28 +188,32 @@ public class MTLCaptureManager extends NSObject {
     public static native MTLCaptureManager sharedCaptureManager();
 
     /**
-     * Starts capturing, for the given command queue, command buffers that are created after invoking this method and committed before invoking -[stopCapture] or clicking Xcode’s stop capture button.
+     * Starts capturing, for the given command queue, command buffers that are created after invoking this method and
+     * committed before invoking -[stopCapture] or clicking Xcode’s stop capture button.
      */
     @Generated
     @Selector("startCaptureWithCommandQueue:")
     public native void startCaptureWithCommandQueue(@Mapped(ObjCObjectMapper.class) MTLCommandQueue commandQueue);
 
     /**
-     * Starts capturing, for all queues of the given device, new MTLCommandBuffer's until -[stopCapture] or Xcode’s stop capture button is pressed
+     * Starts capturing, for all queues of the given device, new MTLCommandBuffer's until -[stopCapture] or Xcode’s stop
+     * capture button is pressed
      */
     @Generated
     @Selector("startCaptureWithDevice:")
     public native void startCaptureWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
-     * Start a capture with the given scope: from the scope's begin until its end, restricting the capture to the scope's device(s) and, if selected, the scope's command queue
+     * Start a capture with the given scope: from the scope's begin until its end, restricting the capture to the
+     * scope's device(s) and, if selected, the scope's command queue
      */
     @Generated
     @Selector("startCaptureWithScope:")
     public native void startCaptureWithScope(@Mapped(ObjCObjectMapper.class) MTLCaptureScope captureScope);
 
     /**
-     * Stops a capture started from startCaptureWithDevice:/startCaptureWithCommandQueue:/startCaptureWithScope: or from Xcode’s capture button
+     * Stops a capture started from startCaptureWithDevice:/startCaptureWithCommandQueue:/startCaptureWithScope: or from
+     * Xcode’s capture button
      */
     @Generated
     @Selector("stopCapture")

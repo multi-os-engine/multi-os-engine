@@ -141,7 +141,8 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
      * Update the fence to capture all GPU work so far enqueued by this encoder.
      * <p>
      * The fence is updated at kernel submission to maintain global order and prevent deadlock.
-     * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
+     * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of
+     * an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
      */
     @Generated
     @Selector("updateFence:")
@@ -153,7 +154,8 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
      * Prevent further GPU work until the fence is reached.
      * <p>
      * The fence is evaluated at kernel submision to maintain global order and prevent deadlock.
-     * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
+     * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of
+     * an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
      */
     @Generated
     @Selector("waitForFence:")
@@ -167,7 +169,8 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
      * Convenience function to copy sliceCount * levelCount whole surfaces between textures
      * The source and destination pixel format must be identical.
      * The source and destination sample count must be identical.
-     * The sourceLevel mip in sourceTexture must have the same dimension as the destinationLevel mip in destinationTexture.
+     * The sourceLevel mip in sourceTexture must have the same dimension as the destinationLevel mip in
+     * destinationTexture.
      * The sourceTexture must have at least sourceLevel + levelCount mips
      * The destinationTexture must have at least destinationLevel + levelCount mips
      * The sourceTexture must have at least sourceSlice + sliceCount array slices
@@ -185,13 +188,17 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
      * <p>
      * Copy as many whole surfaces as possible between textures.
      * <p>
-     * Convenience function that calls copyFromTexture:sourceSlice:sourceLevel:toTexture:destinationSlice:destinationLevel:sliceCount:levelCount:
+     * Convenience function that calls
+     * copyFromTexture:sourceSlice:sourceLevel:toTexture:destinationSlice:destinationLevel:sliceCount:levelCount:
      * The source and destination pixel format must be identical.
      * The source and destination sample count must be identical.
      * Either:
-     * - sourceTexture must have a mip M with identical dimensions as the first mip of destinationTexture: sourceLevel = M, destinationLevel = 0
-     * - destinationTexture must have a mip M with identical dimensions as the first mip of sourceTexture: sourceLevel = 0, destinationLevel = M
-     * Computes: levelCount = min(sourceTexture.mipmapLevelCount - sourceLevel, destinationTexture.mipmapLevelCount - destinationLevel)
+     * - sourceTexture must have a mip M with identical dimensions as the first mip of destinationTexture: sourceLevel =
+     * M, destinationLevel = 0
+     * - destinationTexture must have a mip M with identical dimensions as the first mip of sourceTexture: sourceLevel =
+     * 0, destinationLevel = M
+     * Computes: levelCount = min(sourceTexture.mipmapLevelCount - sourceLevel, destinationTexture.mipmapLevelCount -
+     * destinationLevel)
      * sliceCount = min(sourceTexture.arrayLength, destinationTexture.arrayLength)
      * Then invokes the method above using the computed parameters.
      */
@@ -226,7 +233,8 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
     /**
      * optimizeContentsForCPUAccess:
      * <p>
-     * Optimizes the texture data to ensure the best possible performance when accessing content on the CPU at the expense of GPU-access performance.
+     * Optimizes the texture data to ensure the best possible performance when accessing content on the CPU at the
+     * expense of GPU-access performance.
      */
     @Generated
     @Selector("optimizeContentsForCPUAccess:")
@@ -235,7 +243,8 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
     /**
      * optimizeContentsForCPUAccess:slice:level:
      * <p>
-     * Optimizes a subset of the texture data to ensure the best possible performance when accessing content on the CPU at the expense of GPU-access performance.
+     * Optimizes a subset of the texture data to ensure the best possible performance when accessing content on the CPU
+     * at the expense of GPU-access performance.
      */
     @Generated
     @Selector("optimizeContentsForCPUAccess:slice:level:")
@@ -245,7 +254,8 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
     /**
      * optimizeContentsForGPUAccess:
      * <p>
-     * Optimizes the texture data to ensure the best possible performance when accessing content on the GPU at the expense of CPU-access performance.
+     * Optimizes the texture data to ensure the best possible performance when accessing content on the GPU at the
+     * expense of CPU-access performance.
      */
     @Generated
     @Selector("optimizeContentsForGPUAccess:")
@@ -254,7 +264,8 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
     /**
      * optimizeContentsForGPUAccess:slice:level:
      * <p>
-     * Optimizes a subset of the texture data to ensure the best possible performance when accessing content on the GPU at the expense of CPU-access performance.
+     * Optimizes a subset of the texture data to ensure the best possible performance when accessing content on the GPU
+     * at the expense of CPU-access performance.
      */
     @Generated
     @Selector("optimizeContentsForGPUAccess:slice:level:")
@@ -264,7 +275,8 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
     /**
      * optimizeIndirectCommandBuffer:withRange:
      * <p>
-     * Optimizes a subset of the texture data to ensure the best possible performance when accessing content on the CPU at the expense of GPU-access performance.
+     * Optimizes a subset of the texture data to ensure the best possible performance when accessing content on the CPU
+     * at the expense of GPU-access performance.
      */
     @Generated
     @Selector("optimizeIndirectCommandBuffer:withRange:")
@@ -302,7 +314,7 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
      * @param sampleBuffer      The sample buffer to resolve.
      * @param range             The range of indices to resolve.
      * @param destinationBuffer The buffer to resolve values into.
-     * @param destinationOffset The offset to begin writing values out to.  This must be a multiple of
+     * @param destinationOffset The offset to begin writing values out to. This must be a multiple of
      *                          the minimum constant buffer alignment.
      */
     @Generated
@@ -322,13 +334,13 @@ public interface MTLBlitCommandEncoder extends MTLCommandEncoder {
      *
      * @param sampleBuffer The sample buffer to sample into
      * @param sampleIndex  The index into the counter buffer to write the sample.
-     * @param barrier      Insert a barrier before taking the sample.  Passing
+     * @param barrier      Insert a barrier before taking the sample. Passing
      *                     YES will ensure that all work encoded before this operation in the encoder is
-     *                     complete but does not isolate the work with respect to other encoders.  Passing
+     *                     complete but does not isolate the work with respect to other encoders. Passing
      *                     NO will allow the sample to be taken concurrently with other operations in this
      *                     encoder.
      *                     In general, passing YES will lead to more repeatable counter results but
-     *                     may negatively impact performance.  Passing NO will generally be higher performance
+     *                     may negatively impact performance. Passing NO will generally be higher performance
      *                     but counter results may not be repeatable.
      */
     @Generated

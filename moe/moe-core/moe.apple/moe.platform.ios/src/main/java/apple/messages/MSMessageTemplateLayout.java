@@ -157,7 +157,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     public static native long version_static();
 
     /**
-     * [@property]   caption
+     * [@property] caption
      * <p>
      * Text to be used as a caption related to the message content.
      */
@@ -166,7 +166,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     public native String caption();
 
     /**
-     * [@property]   image
+     * [@property] image
      * <p>
      * A UIImage object used to construct the message representation in the conversation transcript.
      * <p>
@@ -178,7 +178,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     public native UIImage image();
 
     /**
-     * [@property]   imageSubtitle
+     * [@property] imageSubtitle
      * <p>
      * Subtitle text associated with the image or media .
      */
@@ -187,7 +187,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     public native String imageSubtitle();
 
     /**
-     * [@property]   imageTitle
+     * [@property] imageTitle
      * <p>
      * Title text associated with the image or media .
      */
@@ -200,7 +200,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     public native MSMessageTemplateLayout init();
 
     /**
-     * [@property]   mediaFileURL
+     * [@property] mediaFileURL
      * <p>
      * The URL to a media file used to construct the message representation in the conversation transcript.
      * <p>
@@ -213,7 +213,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     public native NSURL mediaFileURL();
 
     /**
-     * [@property]   caption
+     * [@property] caption
      * <p>
      * Text to be used as a caption related to the message content.
      */
@@ -222,7 +222,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     public native void setCaption(String value);
 
     /**
-     * [@property]   image
+     * [@property] image
      * <p>
      * A UIImage object used to construct the message representation in the conversation transcript.
      * <p>
@@ -234,7 +234,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     public native void setImage(UIImage value);
 
     /**
-     * [@property]   imageSubtitle
+     * [@property] imageSubtitle
      * <p>
      * Subtitle text associated with the image or media .
      */
@@ -243,7 +243,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     public native void setImageSubtitle(String value);
 
     /**
-     * [@property]   imageTitle
+     * [@property] imageTitle
      * <p>
      * Title text associated with the image or media .
      */
@@ -252,7 +252,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     public native void setImageTitle(String value);
 
     /**
-     * [@property]   mediaFileURL
+     * [@property] mediaFileURL
      * <p>
      * The URL to a media file used to construct the message representation in the conversation transcript.
      * <p>
@@ -265,7 +265,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     public native void setMediaFileURL(NSURL value);
 
     /**
-     * [@property]   subcaption
+     * [@property] subcaption
      * <p>
      * Text to be used as a subcaption related to the message content.
      */
@@ -274,7 +274,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     public native void setSubcaption(String value);
 
     /**
-     * [@property]   trailingCaption
+     * [@property] trailingCaption
      * <p>
      * Text to be drawn right aligned on the same line as the caption text.
      */
@@ -283,7 +283,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     public native void setTrailingCaption(String value);
 
     /**
-     * [@property]   trailingSubcaption
+     * [@property] trailingSubcaption
      * <p>
      * Text to be drawn right aligned on the same line as the subcaption text.
      */
@@ -292,7 +292,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     public native void setTrailingSubcaption(String value);
 
     /**
-     * [@property]   subcaption
+     * [@property] subcaption
      * <p>
      * Text to be used as a subcaption related to the message content.
      */
@@ -301,7 +301,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     public native String subcaption();
 
     /**
-     * [@property]   trailingCaption
+     * [@property] trailingCaption
      * <p>
      * Text to be drawn right aligned on the same line as the caption text.
      */
@@ -310,7 +310,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
     public native String trailingCaption();
 
     /**
-     * [@property]   trailingSubcaption
+     * [@property] trailingSubcaption
      * <p>
      * Text to be drawn right aligned on the same line as the subcaption text.
      */

@@ -143,7 +143,8 @@ public class VNHumanHandPoseObservation extends VNRecognizedPointsObservation {
      * Obtain a specific normalized point for a named human hand joint.
      *
      * @param jointName The name of the human hand joint.
-     * @param error     The address of a variable that will be populated with the error that describes the failure.  If the caller does not require this information, NULL can be passed.
+     * @param error     The address of a variable that will be populated with the error that describes the failure. If
+     *                  the caller does not require this information, NULL can be passed.
      * @return the recognized point, or nil if the point could not be obtained.
      */
     @Generated
@@ -154,10 +155,12 @@ public class VNHumanHandPoseObservation extends VNRecognizedPointsObservation {
     /**
      * Obtains the collection of points associated with a named human hand joints group.
      * <p>
-     * The obtained collection is a dictionary that provides the mapping of human hand join names to the recognized point.
+     * The obtained collection is a dictionary that provides the mapping of human hand join names to the recognized
+     * point.
      *
      * @param jointsGroupName The name of the human hand joints group.
-     * @param error           The address of a variable that will be populated with the error that describes the failure.  If the caller does not require this information, NULL can be passed.
+     * @param error           The address of a variable that will be populated with the error that describes the
+     *                        failure. If the caller does not require this information, NULL can be passed.
      * @return a dictionary of recognized points in the group, or nil if an error was encountered.
      */
     @Generated

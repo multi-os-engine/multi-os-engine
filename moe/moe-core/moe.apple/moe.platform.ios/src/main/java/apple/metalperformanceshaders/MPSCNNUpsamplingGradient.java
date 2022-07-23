@@ -43,10 +43,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * For example, for the nearest variant with scaleFactorX = scaleFactorY = 2, the
  * forward pass produced the following output:
  * <p>
- * Input:	    Output:
+ * Input: Output:
  * a a b b
- * a b         a a b b
- * c d         c c d d
+ * a b a a b b
+ * c d c c d d
  * c c d d
  * <p>
  * To upsample the image, the input data is replicated.
@@ -54,13 +54,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * And, the backward pass for the above froward pass is computed in the following
  * way:
  * <p>
- * Input:		    Output:
+ * Input: Output:
  * a1 a2 b1 b2
- * a2 a3 b3 b4	    x y
- * c1 c2 d1 d2	    z w
+ * a2 a3 b3 b4 x y
+ * c1 c2 d1 d2 z w
  * c3 c4 d3 d4
  * <p>
- * where	x = a1 + a2 + a3 + a4
+ * where x = a1 + a2 + a3 + a4
  * y = b1 + b2 + b3 + b4
  * z = c1 + c2 + c3 + c4
  * w = d1 + d2 + d3 + d4
@@ -180,7 +180,7 @@ public class MPSCNNUpsamplingGradient extends MPSCNNGradientKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   scaleFactorX
+     * [@property] scaleFactorX
      * <p>
      * The downsampling scale factor for the x dimension. The default value is 1.
      */
@@ -189,7 +189,7 @@ public class MPSCNNUpsamplingGradient extends MPSCNNGradientKernel {
     public native double scaleFactorX();
 
     /**
-     * [@property]   scaleFactorY
+     * [@property] scaleFactorY
      * <p>
      * The downsampling scale factor for the y dimension. The default value is 1.
      */

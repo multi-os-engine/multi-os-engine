@@ -172,7 +172,7 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
     public static native long version_static();
 
     /**
-     * [@property]  bundleIdentifier
+     * [@property] bundleIdentifier
      * <p>
      * The bundle identifier of the source represented by the receiver.
      */
@@ -199,9 +199,9 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
     public native HKSource initWithCoder(NSCoder coder);
 
     /**
-     * [@property]      name
+     * [@property] name
      * <p>
-     * The name of the source represented by the receiver.  If the source is an app, then the name is the
+     * The name of the source represented by the receiver. If the source is an app, then the name is the
      * localized name of the app.
      */
     @Generated

@@ -38,7 +38,8 @@ public interface CMHeadphoneMotionManagerDelegate {
      * headphoneMotionManagerDidDisconnect:
      * <p>
      * Discussion:
-     * Invoked when a headphone is disconnected. Execution of the delegate callback occurs on the operation queue used to
+     * Invoked when a headphone is disconnected. Execution of the delegate callback occurs on the operation queue used
+     * to
      * deliver the device motion updates. The main thread is used if the queue was not specified.
      */
     @Generated

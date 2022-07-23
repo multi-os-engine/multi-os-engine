@@ -5,9 +5,13 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] BGTaskSchedulerErrorCode
- * [@constant] BGTaskSchedulerErrorCodeUnavailable Background task scheduling functionality is not available for this app/extension. Background App Refresh may have been disabled in Settings.
- * [@constant] BGTaskSchedulerErrorCodeTooManyPendingTaskRequests The task request could not be submitted because there are too many pending task requests of this type. Cancel some existing task requests before trying again.
- * [@constant] BGTaskSchedulerErrorCodeNotPermitted The task request could not be submitted because the appropriate background mode is not included in the UIBackgroundModes array, or its identifier was not present in the BGTaskSchedulerPermittedIdentifiers array in the app's Info.plist.
+ * [@constant] BGTaskSchedulerErrorCodeUnavailable Background task scheduling functionality is not available for this
+ * app/extension. Background App Refresh may have been disabled in Settings.
+ * [@constant] BGTaskSchedulerErrorCodeTooManyPendingTaskRequests The task request could not be submitted because there
+ * are too many pending task requests of this type. Cancel some existing task requests before trying again.
+ * [@constant] BGTaskSchedulerErrorCodeNotPermitted The task request could not be submitted because the appropriate
+ * background mode is not included in the UIBackgroundModes array, or its identifier was not present in the
+ * BGTaskSchedulerPermittedIdentifiers array in the app's Info.plist.
  */
 @Generated
 public final class BGTaskSchedulerErrorCode {

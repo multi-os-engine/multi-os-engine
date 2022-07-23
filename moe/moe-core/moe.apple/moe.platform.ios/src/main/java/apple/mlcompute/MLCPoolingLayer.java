@@ -86,7 +86,7 @@ public class MLCPoolingLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   descriptor
+     * [@property] descriptor
      * <p>
      * The pooling descriptor
      */

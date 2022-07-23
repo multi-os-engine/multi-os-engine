@@ -84,7 +84,7 @@ public class HKAudiogramSensitivityPoint extends NSObject {
     public static native String description_static();
 
     /**
-     * [@property] frequency  Frequency where sensitivity was measured.  The unit of measurement
+     * [@property] frequency Frequency where sensitivity was measured. The unit of measurement
      * is [HKUnit hertzUnit] or "Hz".
      */
     @Generated
@@ -160,8 +160,8 @@ public class HKAudiogramSensitivityPoint extends NSObject {
      * @param rightEarSensitivity Right ear sensitivity measured in attenuated dB from a baseline of 0 dB.
      * @param error               If there was a problem creating this instance this will contain the error.
      * @return New instance of a sensitivity point or nil if there were problems
-     * creating the instance.  Errors may include incorrect quantity units
-     * or data that is out of an expected range.
+     *         creating the instance. Errors may include incorrect quantity units
+     *         or data that is out of an expected range.
      */
     @Generated
     @Selector("sensitivityPointWithFrequency:leftEarSensitivity:rightEarSensitivity:error:")

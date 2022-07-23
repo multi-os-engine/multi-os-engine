@@ -74,7 +74,8 @@ public interface PKPushRegistryDelegate {
      * PKPushType.
      *
      * @param registry        The PKPushRegistry instance responsible for the delegate callback.
-     * @param pushCredentials The push credentials that can be used to send pushes to the device for the specified PKPushType.
+     * @param pushCredentials The push credentials that can be used to send pushes to the device for the specified
+     *                        PKPushType.
      * @param type            This is a PKPushType constant which is present in [registry desiredPushTypes].
      */
     @Generated

@@ -133,7 +133,7 @@ public class MPSTemporaryMatrix extends MPSMatrix {
      * Help MPS decide which allocations to make ahead of time
      * <p>
      * The buffer cache that underlies the MPSTemporaryMatrix can automatically allocate new storage as
-     * needed as you create new temporary matrices.  However, sometimes a more global view of what you
+     * needed as you create new temporary matrices. However, sometimes a more global view of what you
      * plan to make is useful for maximizing memory reuse to get the most efficient operation.
      * This class method hints to the cache what the list of matrices will be.
      * <p>
@@ -232,10 +232,10 @@ public class MPSTemporaryMatrix extends MPSMatrix {
      *
      * @param commandBuffer    The MTLCommandBuffer on which the MPSTemporaryMatrix will be exclusively used
      * @param matrixDescriptor A valid MPSMatrixDescriptor describing the MPSMatrix format to create
-     * @return A valid MPSTemporaryMatrix.  The object is not managed by a NSAutoreleasePool. The object will be
-     * released when the command buffer is committed. The underlying buffer will become invalid before
-     * this time due to the action of the readCount property.  Please read and understand the use of
-     * the readCount property before using this object.
+     * @return A valid MPSTemporaryMatrix. The object is not managed by a NSAutoreleasePool. The object will be
+     *         released when the command buffer is committed. The underlying buffer will become invalid before
+     *         this time due to the action of the readCount property. Please read and understand the use of
+     *         the readCount property before using this object.
      */
     @Generated
     @Selector("temporaryMatrixWithCommandBuffer:matrixDescriptor:")

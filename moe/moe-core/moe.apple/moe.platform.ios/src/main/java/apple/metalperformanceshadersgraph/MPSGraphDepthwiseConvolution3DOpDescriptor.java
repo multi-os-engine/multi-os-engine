@@ -73,7 +73,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * [@property]   channelDimensionIndex
+     * [@property] channelDimensionIndex
      * <p>
      * Defines which axis contains the channels in the input and the weights, within
      * the 4d tile of the last dimensions. For example the value of @code -1 @endcode
@@ -138,7 +138,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
             NSArray<? extends NSNumber> paddingValues, @NUInt long paddingStyle);
 
     /**
-     * [@property]   dilationRates
+     * [@property] dilationRates
      * <p>
      * Must be three numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1 ] @endcode
@@ -183,7 +183,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     public static native MPSGraphDepthwiseConvolution3DOpDescriptor new_objc();
 
     /**
-     * [@property]   paddingStyle
+     * [@property] paddingStyle
      * <p>
      * Defines what kind of padding to apply to operation.
      * Default value: @code MPSGraphPaddingStyleExplicit @endcode
@@ -194,7 +194,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     public native long paddingStyle();
 
     /**
-     * [@property]   paddingValues
+     * [@property] paddingValues
      * <p>
      * Must be six numbers, two for each spatial dimension. `paddingValues[0]` defines the explicit padding
      * amount before the first spatial dimension (slowest running index of spatial dimensions),
@@ -215,7 +215,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   channelDimensionIndex
+     * [@property] channelDimensionIndex
      * <p>
      * Defines which axis contains the channels in the input and the weights, within
      * the 4d tile of the last dimensions. For example the value of @code -1 @endcode
@@ -231,7 +231,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     public native void setChannelDimensionIndex(@NInt long value);
 
     /**
-     * [@property]   dilationRates
+     * [@property] dilationRates
      * <p>
      * Must be three numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1 ] @endcode
@@ -241,7 +241,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     public native void setDilationRates(NSArray<? extends NSNumber> value);
 
     /**
-     * [@property]   paddingStyle
+     * [@property] paddingStyle
      * <p>
      * Defines what kind of padding to apply to operation.
      * Default value: @code MPSGraphPaddingStyleExplicit @endcode
@@ -251,7 +251,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     public native void setPaddingStyle(@NUInt long value);
 
     /**
-     * [@property]   paddingValues
+     * [@property] paddingValues
      * <p>
      * Must be six numbers, two for each spatial dimension. `paddingValues[0]` defines the explicit padding
      * amount before the first spatial dimension (slowest running index of spatial dimensions),
@@ -264,7 +264,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     public native void setPaddingValues(NSArray<? extends NSNumber> value);
 
     /**
-     * [@property]   strides
+     * [@property] strides
      * <p>
      * Must be three numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1 ] @endcode
@@ -278,7 +278,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   strides
+     * [@property] strides
      * <p>
      * Must be three numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1 ] @endcode

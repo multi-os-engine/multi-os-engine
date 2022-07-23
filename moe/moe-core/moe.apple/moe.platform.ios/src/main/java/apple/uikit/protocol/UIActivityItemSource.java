@@ -79,7 +79,8 @@ public interface UIActivityItemSource {
     }
 
     /**
-     * called to determine data type. only the class of the return type is consulted. it should match what -itemForActivityType: returns later
+     * called to determine data type. only the class of the return type is consulted. it should match what
+     * -itemForActivityType: returns later
      */
     @Generated
     @Selector("activityViewControllerPlaceholderItem:")

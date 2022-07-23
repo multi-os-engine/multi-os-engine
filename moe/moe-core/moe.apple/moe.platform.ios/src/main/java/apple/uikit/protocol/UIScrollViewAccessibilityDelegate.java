@@ -45,7 +45,8 @@ public interface UIScrollViewAccessibilityDelegate extends UIScrollViewDelegate 
     }
 
     /**
-     * If an object adopting this protocol responds to this method, the system will try sending it before sending its non-attributed version.
+     * If an object adopting this protocol responds to this method, the system will try sending it before sending its
+     * non-attributed version.
      */
     @Generated
     @IsOptional

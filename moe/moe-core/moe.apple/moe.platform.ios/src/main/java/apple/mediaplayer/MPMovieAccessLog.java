@@ -43,7 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * -----------------------------------------------------------------------------
- * An MPMovieAccessLog accumulates key metrics about network playback and presents them as a collection of MPMovieAccessLogEvent instances.
+ * An MPMovieAccessLog accumulates key metrics about network playback and presents them as a collection of
+ * MPMovieAccessLogEvent instances.
  * Each MPMovieAccessLogEvent instance collates the data that relates to each uninterrupted period of playback.
  */
 @Deprecated
@@ -164,7 +165,8 @@ public class MPMovieAccessLog extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * An ordered collection of MPMovieAccessLogEvent instances that represent the chronological sequence of events contained in the access log.
+     * An ordered collection of MPMovieAccessLogEvent instances that represent the chronological sequence of events
+     * contained in the access log.
      */
     @Deprecated
     @Generated
@@ -172,7 +174,8 @@ public class MPMovieAccessLog extends NSObject implements NSCopying {
     public native NSArray<?> events();
 
     /**
-     * Returns the webserver access log into a textual format that conforms to the W3C Extended Log File Format for web server log files.
+     * Returns the webserver access log into a textual format that conforms to the W3C Extended Log File Format for web
+     * server log files.
      * For more information see: http://www.w3.org/pub/WWW/TR/WD-logfile.html
      */
     @Deprecated

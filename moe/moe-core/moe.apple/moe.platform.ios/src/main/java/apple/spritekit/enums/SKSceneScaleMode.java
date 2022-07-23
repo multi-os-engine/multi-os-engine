@@ -26,11 +26,13 @@ public final class SKSceneScaleMode {
      */
     @Generated @NInt public static final long Fill = 0x0000000000000000L;
     /**
-     * Scale the SKScene to fill the SKView while preserving the scene's aspect ratio. Some cropping may occur if the view has a different aspect ratio.
+     * Scale the SKScene to fill the SKView while preserving the scene's aspect ratio. Some cropping may occur if the
+     * view has a different aspect ratio.
      */
     @Generated @NInt public static final long AspectFill = 0x0000000000000001L;
     /**
-     * Scale the SKScene to fit within the SKView while preserving the scene's aspect ratio. Some letterboxing may occur if the view has a different aspect ratio.
+     * Scale the SKScene to fit within the SKView while preserving the scene's aspect ratio. Some letterboxing may occur
+     * if the view has a different aspect ratio.
      */
     @Generated @NInt public static final long AspectFit = 0x0000000000000002L;
     /**

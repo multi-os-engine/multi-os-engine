@@ -31,7 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * An MXMetric subclass that encapsulates location metrics
  * <p>
- * The metrics contained in this class describe properties of location activity. See MXAppRunTimeMetric for time spent performing location activities.
+ * The metrics contained in this class describe properties of location activity. See MXAppRunTimeMetric for time spent
+ * performing location activities.
  */
 @Generated
 @Library("MetricKit")
@@ -84,7 +85,7 @@ public class MXLocationActivityMetric extends MXMetric {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]      cumulativeBestAccuracyForNavigationTime
+     * [@property] cumulativeBestAccuracyForNavigationTime
      * <p>
      * Cumulative time spent acquiring location at kCLLocationAccuracyBestForNavigation.
      * <p>
@@ -95,7 +96,7 @@ public class MXLocationActivityMetric extends MXMetric {
     public native NSMeasurement<NSUnitDuration> cumulativeBestAccuracyForNavigationTime();
 
     /**
-     * [@property]      cumulativeBestAccuracyTime
+     * [@property] cumulativeBestAccuracyTime
      * <p>
      * Cumulative time spent acquiring location at kCLLocationAccuracyBest.
      * <p>
@@ -106,7 +107,7 @@ public class MXLocationActivityMetric extends MXMetric {
     public native NSMeasurement<NSUnitDuration> cumulativeBestAccuracyTime();
 
     /**
-     * [@property]      cumulativeHundredMetersAccuracyTime
+     * [@property] cumulativeHundredMetersAccuracyTime
      * <p>
      * Cumulative time spent acquiring location at kCLLocationAccuracyHundredMeters.
      * <p>
@@ -117,7 +118,7 @@ public class MXLocationActivityMetric extends MXMetric {
     public native NSMeasurement<NSUnitDuration> cumulativeHundredMetersAccuracyTime();
 
     /**
-     * [@property]      cumulativeKilometerAccuracyTime
+     * [@property] cumulativeKilometerAccuracyTime
      * <p>
      * Cumulative time spent acquiring location at kCLLocationAccuracyKilometer.
      * <p>
@@ -128,7 +129,7 @@ public class MXLocationActivityMetric extends MXMetric {
     public native NSMeasurement<NSUnitDuration> cumulativeKilometerAccuracyTime();
 
     /**
-     * [@property]      cumulativeNearestTenMetersAccuracyTime
+     * [@property] cumulativeNearestTenMetersAccuracyTime
      * <p>
      * Cumulative time spent acquiring location at kCLLocationAccuracyNearestTenMeters.
      * <p>
@@ -139,7 +140,7 @@ public class MXLocationActivityMetric extends MXMetric {
     public native NSMeasurement<NSUnitDuration> cumulativeNearestTenMetersAccuracyTime();
 
     /**
-     * [@property]      cumulativeThreeKilometersAccuracyTime
+     * [@property] cumulativeThreeKilometersAccuracyTime
      * <p>
      * Cumulative time spent acquiring location at kCLLocationAccuracyThreeKilometers.
      * <p>

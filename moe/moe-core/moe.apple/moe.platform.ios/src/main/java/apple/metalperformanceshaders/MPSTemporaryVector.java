@@ -143,7 +143,7 @@ public class MPSTemporaryVector extends MPSVector {
      * Help MPS decide which allocations to make ahead of time
      * <p>
      * The buffer cache that underlies the MPSTemporaryVector can automatically allocate new storage as
-     * needed as you create new temporary vectors.  However, sometimes a more global view of what you
+     * needed as you create new temporary vectors. However, sometimes a more global view of what you
      * plan to make is useful for maximizing memory reuse to get the most efficient operation.
      * This class method hints to the cache what the list of matrices will be.
      * <p>
@@ -242,10 +242,10 @@ public class MPSTemporaryVector extends MPSVector {
      *
      * @param commandBuffer The MTLCommandBuffer on which the MPSTemporaryMatrix will be exclusively used
      * @param descriptor    A valid MPSVectorDescriptor describing the MPSVector format to create
-     * @return A valid MPSTemporaryVector.  The object is not managed by a NSAutoreleasePool. The object will be
-     * released when the command buffer is committed. The underlying buffer will become invalid before
-     * this time due to the action of the readCount property.  Please read and understand the use of
-     * the readCount property before using this object.
+     * @return A valid MPSTemporaryVector. The object is not managed by a NSAutoreleasePool. The object will be
+     *         released when the command buffer is committed. The underlying buffer will become invalid before
+     *         this time due to the action of the readCount property. Please read and understand the use of
+     *         the readCount property before using this object.
      */
     @Generated
     @Selector("temporaryVectorWithCommandBuffer:descriptor:")

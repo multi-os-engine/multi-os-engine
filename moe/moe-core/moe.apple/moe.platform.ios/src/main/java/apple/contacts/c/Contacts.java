@@ -575,7 +575,8 @@ public final class Contacts {
     public static native String CNErrorDomain();
 
     /**
-     * When available an array of one or more CNContact, CNGroup, CNContainer, CNSaveRequest, or CNFetchRequest objects for which the error code applies.
+     * When available an array of one or more CNContact, CNGroup, CNContainer, CNSaveRequest, or CNFetchRequest objects
+     * for which the error code applies.
      */
     @Generated
     @CVariable()
@@ -599,7 +600,8 @@ public final class Contacts {
     public static native String CNErrorUserInfoValidationErrorsKey();
 
     /**
-     * An array of key paths associated with a given error. For validation errors this will contain key paths to specific object properties.
+     * An array of key paths associated with a given error. For validation errors this will contain key paths to
+     * specific object properties.
      */
     @Generated
     @CVariable()

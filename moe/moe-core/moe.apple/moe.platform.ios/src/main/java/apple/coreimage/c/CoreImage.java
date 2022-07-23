@@ -397,7 +397,8 @@ public final class CoreImage {
     public static native String kCIUIParameterSet();
 
     /**
-     * Constant for requesting controls that are appropiate in an basic user scenario, meaning the bare minimum of settings to control the filter.
+     * Constant for requesting controls that are appropiate in an basic user scenario, meaning the bare minimum of
+     * settings to control the filter.
      */
     @Generated
     @CVariable()
@@ -863,7 +864,8 @@ public final class CoreImage {
     public static native String CIDetectorMaxFeatureCount();
 
     /**
-     * The key in the options dictionary used to specify number of angles, the value for this key is one of 1, 3, 5, 7, 9, 11.
+     * The key in the options dictionary used to specify number of angles, the value for this key is one of 1, 3, 5, 7,
+     * 9, 11.
      */
     @Generated
     @CVariable()
@@ -872,7 +874,7 @@ public final class CoreImage {
 
     /**
      * The value for this key is an integer NSNumber from 1..8 such as that
-     * found in kCGImagePropertyOrientation.  If present, the detection will be done
+     * found in kCGImagePropertyOrientation. If present, the detection will be done
      * based on that orientation but the coordinates in the returned features will
      * still be based on those of the image.
      */
@@ -882,7 +884,8 @@ public final class CoreImage {
     public static native String CIDetectorImageOrientation();
 
     /**
-     * The value for this key is a bool NSNumber. If true, facial expressions, such as blinking and closed eyes are extracted
+     * The value for this key is a bool NSNumber. If true, facial expressions, such as blinking and closed eyes are
+     * extracted
      */
     @Generated
     @CVariable()
@@ -914,7 +917,8 @@ public final class CoreImage {
     public static native String CIDetectorAspectRatio();
 
     /**
-     * The value for this key is a bool NSNumber. Controls whether the text detector should detect subfeatures or not. The default value is NO
+     * The value for this key is a bool NSNumber. Controls whether the text detector should detect subfeatures or not.
+     * The default value is NO
      */
     @Generated
     @CVariable()
@@ -1036,7 +1040,10 @@ public final class CoreImage {
     public static native String kCIInputAllowDraftModeKey();
 
     /**
-     * NSString: Version string representing the decoder version to be used. A newly initialized object defaults to the newest available decoder version for the given image type. User can request an alternative, older version in order to maintain compatibility with older releases. Must be one of kCISupportedDecoderVersions (below), otherwise a nil output image will be generated.
+     * NSString: Version string representing the decoder version to be used. A newly initialized object defaults to the
+     * newest available decoder version for the given image type. User can request an alternative, older version in
+     * order to maintain compatibility with older releases. Must be one of kCISupportedDecoderVersions (below),
+     * otherwise a nil output image will be generated.
      */
     @Generated
     @CVariable()
@@ -1044,7 +1051,9 @@ public final class CoreImage {
     public static native String kCIInputDecoderVersionKey();
 
     /**
-     * NSArray : Array of all supported decoder versions for the given image type, sorted in increasingly newer order. Each entry is a NSString. All entries would represent a valid version identifier to be passed in for kCIInputDecoderVersion. This value can be only read; setting this value will raise an exception.
+     * NSArray : Array of all supported decoder versions for the given image type, sorted in increasingly newer order.
+     * Each entry is a NSString. All entries would represent a valid version identifier to be passed in for
+     * kCIInputDecoderVersion. This value can be only read; setting this value will raise an exception.
      */
     @Generated
     @CVariable()
@@ -1088,7 +1097,8 @@ public final class CoreImage {
     public static native String kCIInputDisableGamutMapKey();
 
     /**
-     * NSNumber (float): The X value of the chromaticity. You can always query this value and you'll get the current X value for neutral X,Y.
+     * NSNumber (float): The X value of the chromaticity. You can always query this value and you'll get the current X
+     * value for neutral X,Y.
      */
     @Generated
     @CVariable()
@@ -1096,7 +1106,8 @@ public final class CoreImage {
     public static native String kCIInputNeutralChromaticityXKey();
 
     /**
-     * NSNumber (float): The Y value of the chromaticity. You can always query this value and you'll get the current Y value for neutral X,Y.
+     * NSNumber (float): The Y value of the chromaticity. You can always query this value and you'll get the current Y
+     * value for neutral X,Y.
      */
     @Generated
     @CVariable()
@@ -1104,7 +1115,8 @@ public final class CoreImage {
     public static native String kCIInputNeutralChromaticityYKey();
 
     /**
-     * NSNumber (float) : The color temperature to be considered neutral. You can always query this value and you'll get the current value for temperature.
+     * NSNumber (float) : The color temperature to be considered neutral. You can always query this value and you'll get
+     * the current value for temperature.
      */
     @Generated
     @CVariable()
@@ -1112,7 +1124,8 @@ public final class CoreImage {
     public static native String kCIInputNeutralTemperatureKey();
 
     /**
-     * NSNumber (float) : The tint to be considered neutral. You can always query this value and you'll get the current value for tint.
+     * NSNumber (float) : The tint to be considered neutral. You can always query this value and you'll get the current
+     * value for tint.
      */
     @Generated
     @CVariable()
@@ -1129,7 +1142,9 @@ public final class CoreImage {
     public static native String kCIInputNeutralLocationKey();
 
     /**
-     * NSNumber (float) : The desired scale factor at which the image will be eventually drawn. Setting this value can greatly improve the drawing performance. A value of 1 would mean identity, values smaller than 1 will result in a smaller output image. Changing the Scale Factor with enabled Draft Mode may also improve performance.
+     * NSNumber (float) : The desired scale factor at which the image will be eventually drawn. Setting this value can
+     * greatly improve the drawing performance. A value of 1 would mean identity, values smaller than 1 will result in a
+     * smaller output image. Changing the Scale Factor with enabled Draft Mode may also improve performance.
      */
     @Generated
     @CVariable()
@@ -1137,7 +1152,9 @@ public final class CoreImage {
     public static native String kCIInputScaleFactorKey();
 
     /**
-     * NSNumber (BOOL) : Normally, an image is loaded in its proper orientation, given the associated metadata gives an indication about the orientation. For special purposes it may be useful to load the image in its physical orientation. The exact meaning of this is dependent on the image in question. The default value is NO.
+     * NSNumber (BOOL) : Normally, an image is loaded in its proper orientation, given the associated metadata gives an
+     * indication about the orientation. For special purposes it may be useful to load the image in its physical
+     * orientation. The exact meaning of this is dependent on the image in question. The default value is NO.
      */
     @Generated
     @CVariable()
@@ -1145,7 +1162,9 @@ public final class CoreImage {
     public static native String kCIInputIgnoreImageOrientationKey();
 
     /**
-     * NSNumber (int) : Overriding this value allows the user to change the orientation of the image. The valid values are in range 1...8 and follow the EXIF specification. Changing this value makes for instance rotation in 90-degree increments easy. The value is disregarded when the kCIInputIgnoreImageOrientationKey flag is set.
+     * NSNumber (int) : Overriding this value allows the user to change the orientation of the image. The valid values
+     * are in range 1...8 and follow the EXIF specification. Changing this value makes for instance rotation in
+     * 90-degree increments easy. The value is disregarded when the kCIInputIgnoreImageOrientationKey flag is set.
      */
     @Generated
     @CVariable()
@@ -1153,7 +1172,8 @@ public final class CoreImage {
     public static native String kCIInputImageOrientationKey();
 
     /**
-     * NSNumber (BOOL) : Determines if the default sharpening should be on. default = YES. Has no effect if the image used for initialization was not RAW.
+     * NSNumber (BOOL) : Determines if the default sharpening should be on. default = YES. Has no effect if the image
+     * used for initialization was not RAW.
      */
     @Generated
     @CVariable()
@@ -1161,7 +1181,8 @@ public final class CoreImage {
     public static native String kCIInputEnableSharpeningKey();
 
     /**
-     * NSNumber (BOOL) : Determines if progressive chromatic noise tracking (based on ISO and exposure time) should be used. default = YES. Has no effect if the image used for initialization was not RAW.
+     * NSNumber (BOOL) : Determines if progressive chromatic noise tracking (based on ISO and exposure time) should be
+     * used. default = YES. Has no effect if the image used for initialization was not RAW.
      */
     @Generated
     @CVariable()
@@ -1177,7 +1198,8 @@ public final class CoreImage {
     public static native String kCIInputNoiseReductionAmountKey();
 
     /**
-     * NSNumber (BOOL) : Determines if the default vendor lens correction be on. default = YES if raw image used for initialization contains lens distortion parameters.
+     * NSNumber (BOOL) : Determines if the default vendor lens correction be on. default = YES if raw image used for
+     * initialization contains lens distortion parameters.
      */
     @Generated
     @CVariable()
@@ -1233,7 +1255,8 @@ public final class CoreImage {
     public static native String kCIInputLinearSpaceFilter();
 
     /**
-     * CIVector containing the full native size of the unscaled image. The vector's X value is the width, Y is the height.
+     * CIVector containing the full native size of the unscaled image. The vector's X value is the width, Y is the
+     * height.
      * This is not affected by changing either kCIInputIgnoreImageOrientationKey or kCIInputImageOrientationKey.
      */
     @Generated
@@ -1289,7 +1312,7 @@ public final class CoreImage {
 
     /**
      * A boolean value specifying whether the image should sampled using "nearest neighbor"
-     * behavior.  If not specified, the image will be sampled using "linear sampling"
+     * behavior. If not specified, the image will be sampled using "linear sampling"
      */
     @Generated
     @CVariable()
@@ -1311,7 +1334,8 @@ public final class CoreImage {
     public static native String kCIImageApplyOrientationProperty();
 
     /**
-     * The kCIImageAuxiliaryDepth or kCIImageAuxiliaryDisparity or kCIImageAuxiliaryPortraitEffectsMatte keys can be passed to the methods:
+     * The kCIImageAuxiliaryDepth or kCIImageAuxiliaryDisparity or kCIImageAuxiliaryPortraitEffectsMatte keys can be
+     * passed to the methods:
      * + [CIImage imageWithContentsOfURL:options:]
      * + [CIImage imageWithData:options:]
      * If the value of one of these keys is @YES, the auxiliary image be returned instead of the primary image.
@@ -1417,7 +1441,8 @@ public final class CoreImage {
     public static native String kCIImageRepresentationPortraitEffectsMatteImage();
 
     /**
-     * The value for kCIImageRepresentationAVSemanticSegmentationMattes should be an array of AVSemanticSegmentationMatte objects.
+     * The value for kCIImageRepresentationAVSemanticSegmentationMattes should be an array of
+     * AVSemanticSegmentationMatte objects.
      */
     @Generated
     @CVariable()
@@ -1481,7 +1506,7 @@ public final class CoreImage {
      * The option will only have an effect if the image has a CGColorSpace that is high dynamic range (HDR).
      * This option can be useful if further usage of an image is not prepared for HDR values.
      * If the value for this option is @YES, then the HDR input image will be tone mapped to working space SDR.
-     * If the value for this option is @NO, then the HDR  input image will be linearized to unclamped working space.
+     * If the value for this option is @NO, then the HDR input image will be linearized to unclamped working space.
      * If this option is not specified, then it will behave as if @NO was specified.
      */
     @Generated

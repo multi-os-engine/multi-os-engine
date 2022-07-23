@@ -54,11 +54,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * AVAssetWriter provides services for writing media data to a new file,
  * <p>
- * Instances of AVAssetWriter can write media to new files in formats such as the QuickTime movie file format or the MPEG-4 file format. AVAssetWriter has support for automatic interleaving of media data for multiple concurrent tracks. Source media data can be obtained from instances of AVAssetReader for one or more assets or from other sources outside of AVFoundation.
+ * Instances of AVAssetWriter can write media to new files in formats such as the QuickTime movie file format or the
+ * MPEG-4 file format. AVAssetWriter has support for automatic interleaving of media data for multiple concurrent
+ * tracks. Source media data can be obtained from instances of AVAssetReader for one or more assets or from other
+ * sources outside of AVFoundation.
  * <p>
- * Instances of AVAssetWriter can re-encode media samples as they are written. Instances of AVAssetWriter can also optionally write metadata collections to the output file.
+ * Instances of AVAssetWriter can re-encode media samples as they are written. Instances of AVAssetWriter can also
+ * optionally write metadata collections to the output file.
  * <p>
- * A single instance of AVAssetWriter can be used once to write to a single file. Clients that wish to write to files multiple times must use a new instance of AVAssetWriter each time.
+ * A single instance of AVAssetWriter can be used once to write to a single file. Clients that wish to write to files
+ * multiple times must use a new instance of AVAssetWriter each time.
  */
 @Generated
 @Library("AVFoundation")
@@ -99,7 +104,8 @@ public class AVAssetWriter extends NSObject {
      *
      * @param URL      The location of the file to be written. The URL must be a file URL.
      * @param fileType A UTI indicating the format of the file to be written.
-     * @param outError On return, if initialization of the AVAssetWriter fails, points to an NSError describing the nature of the failure.
+     * @param outError On return, if initialization of the AVAssetWriter fails, points to an NSError describing the
+     *                 nature of the failure.
      * @return An instance of AVAssetWriter.
      */
     @Generated
@@ -207,9 +213,12 @@ public class AVAssetWriter extends NSObject {
     /**
      * addInputGroup:
      * <p>
-     * Adds an instance of AVAssetWriterInputGroup to the AVAssetWriter.  The AVAssetWriter will mark the tracks associated with grouped inputs as mutually exclusive to each other for playback or other processing, if the output container format supports mutually exlusive relationships among tracks.
+     * Adds an instance of AVAssetWriterInputGroup to the AVAssetWriter. The AVAssetWriter will mark the tracks
+     * associated with grouped inputs as mutually exclusive to each other for playback or other processing, if the
+     * output container format supports mutually exlusive relationships among tracks.
      * <p>
-     * When an input group is added to an AVAssetWriter, the value of marksOutputTrackAsEnabled will automatically be set to YES for the default input and set to NO for all of the other inputs in the group.
+     * When an input group is added to an AVAssetWriter, the value of marksOutputTrackAsEnabled will automatically be
+     * set to YES for the default input and set to NO for all of the other inputs in the group.
      * <p>
      * Input groups cannot be added after writing has started.
      *
@@ -235,7 +244,8 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * Tests whether an input can be added to the receiver.
      * <p>
-     * An input that accepts media data of a type that is not compatible with the receiver, or with output settings that are not compatible with the receiver, cannot be added.
+     * An input that accepts media data of a type that is not compatible with the receiver, or with output settings that
+     * are not compatible with the receiver, cannot be added.
      *
      * @param input The AVAssetWriterInput object to be tested.
      * @return A BOOL indicating whether the input can be added to the receiver.
@@ -249,7 +259,9 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * Tests whether an input group can be added to the receiver.
      * <p>
-     * If outputFileType specifies a container format that does not support mutually exclusive relationships among tracks, or if the specified instance of AVAssetWriterInputGroup contains inputs with media types that cannot be related, the group cannot be added to the AVAssetWriter.
+     * If outputFileType specifies a container format that does not support mutually exclusive relationships among
+     * tracks, or if the specified instance of AVAssetWriterInputGroup contains inputs with media types that cannot be
+     * related, the group cannot be added to the AVAssetWriter.
      *
      * @param inputGroup The AVAssetWriterInputGroup object to be tested.
      * @return A BOOL indicating whether the input group can be added to the receiver.
@@ -263,12 +275,16 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * Tests whether output settings for a specific media type are supported by the receiver's file format.
      * <p>
-     * This method determines whether the output settings for the specified media type can be used with the receiver's file format. For example, video compression settings that specify H.264 compression are not compatible with file formats that cannot contain H.264-compressed video.
+     * This method determines whether the output settings for the specified media type can be used with the receiver's
+     * file format. For example, video compression settings that specify H.264 compression are not compatible with file
+     * formats that cannot contain H.264-compressed video.
      * <p>
-     * Attempting to add an input with output settings and a media type for which this method returns NO will cause an exception to be thrown.
+     * Attempting to add an input with output settings and a media type for which this method returns NO will cause an
+     * exception to be thrown.
      *
      * @param outputSettings The output settings that are to be tested.
-     * @param mediaType      The media type for which the output settings are to be tested. Media types are defined in AVMediaFormat.h.
+     * @param mediaType      The media type for which the output settings are to be tested. Media types are defined in
+     *                       AVMediaFormat.h.
      * @return A BOOL indicating whether the given output settings can be used for the given media type.
      */
     @Generated
@@ -280,11 +296,13 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * Cancels the creation of the output file.
      * <p>
-     * If the status of the receiver is "failed" or "completed," -cancelWriting is a no-op.  Otherwise, this method will block until writing is canceled.
+     * If the status of the receiver is "failed" or "completed," -cancelWriting is a no-op. Otherwise, this method will
+     * block until writing is canceled.
      * <p>
      * If an output file was created by the receiver during the writing process, -cancelWriting will delete the file.
      * <p>
-     * This method should not be called concurrently with -[AVAssetWriterInput appendSampleBuffer:] or -[AVAssetWriterInputPixelBufferAdaptor appendPixelBuffer:withPresentationTime:].
+     * This method should not be called concurrently with -[AVAssetWriterInput appendSampleBuffer:] or
+     * -[AVAssetWriterInputPixelBufferAdaptor appendPixelBuffer:withPresentationTime:].
      */
     @Generated
     @Selector("cancelWriting")
@@ -293,13 +311,19 @@ public class AVAssetWriter extends NSObject {
     /**
      * [@property] directoryForTemporaryFiles
      * <p>
-     * Specifies a directory that is suitable for containing temporary files generated during the process of writing an asset.
+     * Specifies a directory that is suitable for containing temporary files generated during the process of writing an
+     * asset.
      * <p>
-     * AVAssetWriter may need to write temporary files when configured in certain ways, such as when performsMultiPassEncodingIfSupported is set to YES on one or more of its inputs.  This property can be used to control where in the filesystem those temporary files are created.  All temporary files will be deleted when asset writing is completed, is canceled, or fails.
+     * AVAssetWriter may need to write temporary files when configured in certain ways, such as when
+     * performsMultiPassEncodingIfSupported is set to YES on one or more of its inputs. This property can be used to
+     * control where in the filesystem those temporary files are created. All temporary files will be deleted when asset
+     * writing is completed, is canceled, or fails.
      * <p>
-     * When the value of this property is nil, the asset writer will choose a suitable location when writing temporary files.  The default value is nil.
+     * When the value of this property is nil, the asset writer will choose a suitable location when writing temporary
+     * files. The default value is nil.
      * <p>
-     * This property cannot be set after writing has started.  The asset writer will fail if a file cannot be created in this directory (for example, due to insufficient permissions).
+     * This property cannot be set after writing has started. The asset writer will fail if a file cannot be created in
+     * this directory (for example, due to insufficient permissions).
      */
     @Generated
     @Selector("directoryForTemporaryFiles")
@@ -312,13 +336,23 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * Call this method to complete a session started with -startSessionAtSourceTime:.
      * <p>
-     * The endTime defines the moment on the timeline of source samples at which the session ends. In the case of the QuickTime movie file format, each sample-writing session's startTime...endTime pair corresponds to a period of movie time into which the session's samples are inserted. Samples with timestamps that are later than the session end time will still be added to the written file but will be edited out (i.e. not presented during playback). So if the first session has duration D1 = endTime - startTime, it will be inserted into the written file at time 0 through D1; the second session would be inserted into the written file at time D1 through D1+D2, etc. It is legal to have a session with no samples; this will cause creation of an empty edit of the prescribed duration.
+     * The endTime defines the moment on the timeline of source samples at which the session ends. In the case of the
+     * QuickTime movie file format, each sample-writing session's startTime...endTime pair corresponds to a period of
+     * movie time into which the session's samples are inserted. Samples with timestamps that are later than the session
+     * end time will still be added to the written file but will be edited out (i.e. not presented during playback). So
+     * if the first session has duration D1 = endTime - startTime, it will be inserted into the written file at time 0
+     * through D1; the second session would be inserted into the written file at time D1 through D1+D2, etc. It is legal
+     * to have a session with no samples; this will cause creation of an empty edit of the prescribed duration.
      * <p>
-     * It is not mandatory to call -endSessionAtSourceTime:; if -finishWritingWithCompletionHandler: is called without first invoking -endSessionAtSourceTime:, the session's effective end time will be the latest end timestamp of the session's appended samples (i.e. no samples will be edited out at the end).
+     * It is not mandatory to call -endSessionAtSourceTime:; if -finishWritingWithCompletionHandler: is called without
+     * first invoking -endSessionAtSourceTime:, the session's effective end time will be the latest end timestamp of the
+     * session's appended samples (i.e. no samples will be edited out at the end).
      * <p>
-     * It is an error to append samples outside of a sample-writing session.  To append more samples after invoking -endSessionAtSourceTime:, you must first start a new session using -startSessionAtSourceTime:.
+     * It is an error to append samples outside of a sample-writing session. To append more samples after invoking
+     * -endSessionAtSourceTime:, you must first start a new session using -startSessionAtSourceTime:.
      * <p>
-     * NOTE: Multiple sample-writing sessions are currently not supported. It is an error to call -startSessionAtSourceTime: a second time after calling -endSessionAtSourceTime:.
+     * NOTE: Multiple sample-writing sessions are currently not supported. It is an error to call
+     * -startSessionAtSourceTime: a second time after calling -endSessionAtSourceTime:.
      *
      * @param endTime The ending asset time for the sample-writing session, in the timeline of the source samples.
      */
@@ -331,7 +365,9 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * If the receiver's status is AVAssetWriterStatusFailed, this describes the error that caused the failure.
      * <p>
-     * The value of this property is an NSError that describes what caused the receiver to no longer be able to write to its output file. If the receiver's status is not AVAssetWriterStatusFailed, the value of this property is nil. This property is thread safe.
+     * The value of this property is an NSError that describes what caused the receiver to no longer be able to write to
+     * its output file. If the receiver's status is not AVAssetWriterStatusFailed, the value of this property is nil.
+     * This property is thread safe.
      */
     @Generated
     @Selector("error")
@@ -342,15 +378,20 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * Completes the writing of the output file.
      * <p>
-     * This method is deprecated.  Use finishWritingWithCompletionHandler: instead.
+     * This method is deprecated. Use finishWritingWithCompletionHandler: instead.
      * <p>
-     * This method will block until writing is finished. When this method returns successfully, the file being written by the receiver is complete and ready to use.
+     * This method will block until writing is finished. When this method returns successfully, the file being written
+     * by the receiver is complete and ready to use.
      * <p>
-     * Because this method is blocking and can take a long time to execute (especially with shouldOptimizeForNetworkUse set to YES), it should not be called from the main thread.  Doing so can cause the finishWriting operation to fail.
+     * Because this method is blocking and can take a long time to execute (especially with shouldOptimizeForNetworkUse
+     * set to YES), it should not be called from the main thread. Doing so can cause the finishWriting operation to
+     * fail.
      * <p>
-     * If writing cannot be finished, this method returns NO. Clients can check the values of the status and error properties for more information on why writing could not be finished.
+     * If writing cannot be finished, this method returns NO. Clients can check the values of the status and error
+     * properties for more information on why writing could not be finished.
      * <p>
-     * This method should not be called concurrently with -[AVAssetWriterInput appendSampleBuffer:] or -[AVAssetWriterInputPixelBufferAdaptor appendPixelBuffer:withPresentationTime:].
+     * This method should not be called concurrently with -[AVAssetWriterInput appendSampleBuffer:] or
+     * -[AVAssetWriterInputPixelBufferAdaptor appendPixelBuffer:withPresentationTime:].
      *
      * @return A BOOL indicating whether writing successfully finished.
      */
@@ -366,9 +407,14 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * This method returns immediately and causes its work to be performed asynchronously.
      * <p>
-     * When the writing of the output file is finished, or if a failure or a cancellation occurs in the meantime, the specified handler will be invoked to indicate completion of the operation. To determine whether the operation succeeded, your handler can check the value of AVAssetWriter.status. If the status is AVAssetWriterStatusFailed, AVAsset.error will contain an instance of NSError that describes the failure.
+     * When the writing of the output file is finished, or if a failure or a cancellation occurs in the meantime, the
+     * specified handler will be invoked to indicate completion of the operation. To determine whether the operation
+     * succeeded, your handler can check the value of AVAssetWriter.status. If the status is AVAssetWriterStatusFailed,
+     * AVAsset.error will contain an instance of NSError that describes the failure.
      * <p>
-     * To guarantee that all sample buffers are successfully written, ensure all calls to -[AVAssetWriterInput appendSampleBuffer:] or -[AVAssetWriterInputPixelBufferAdaptor appendPixelBuffer:withPresentationTime:] have returned before invoking this method.
+     * To guarantee that all sample buffers are successfully written, ensure all calls to -[AVAssetWriterInput
+     * appendSampleBuffer:] or -[AVAssetWriterInputPixelBufferAdaptor appendPixelBuffer:withPresentationTime:] have
+     * returned before invoking this method.
      */
     @Generated
     @Selector("finishWritingWithCompletionHandler:")
@@ -390,7 +436,8 @@ public class AVAssetWriter extends NSObject {
      *
      * @param URL      The location of the file to be written. The URL must be a file URL.
      * @param fileType A UTI indicating the format of the file to be written.
-     * @param outError On return, if initialization of the AVAssetWriter fails, points to an NSError describing the nature of the failure.
+     * @param outError On return, if initialization of the AVAssetWriter fails, points to an NSError describing the
+     *                 nature of the failure.
      * @return An instance of AVAssetWriter.
      */
     @Generated
@@ -403,7 +450,8 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * The instances of AVAssetWriterInputGroup that have been added to the AVAssetWriter.
      * <p>
-     * The value of this property is an NSArray containing concrete instances of AVAssetWriterInputGroup.  Input groups can be added to the receiver using the addInputGroup: method.
+     * The value of this property is an NSArray containing concrete instances of AVAssetWriterInputGroup. Input groups
+     * can be added to the receiver using the addInputGroup: method.
      */
     @Generated
     @Selector("inputGroups")
@@ -414,7 +462,8 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * The inputs from which the asset writer receives media data.
      * <p>
-     * The value of this property is an NSArray containing concrete instances of AVAssetWriterInput. Inputs can be added to the receiver using the addInput: method.
+     * The value of this property is an NSArray containing concrete instances of AVAssetWriterInput. Inputs can be added
+     * to the receiver using the addInput: method.
      */
     @Generated
     @Selector("inputs")
@@ -425,7 +474,8 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * A collection of metadata to be written to the receiver's output file.
      * <p>
-     * The value of this property is an array of AVMetadataItem objects representing the collection of top-level metadata to be written in the output file.
+     * The value of this property is an array of AVMetadataItem objects representing the collection of top-level
+     * metadata to be written in the output file.
      * <p>
      * This property cannot be set after writing has started.
      */
@@ -438,7 +488,9 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * For file types that support movie fragments, specifies the frequency at which movie fragments should be written.
      * <p>
-     * When movie fragments are used, a partially written asset whose writing is unexpectedly interrupted can be successfully opened and played up to multiples of the specified time interval. The default value of this property is kCMTimeInvalid, which indicates that movie fragments should not be used.
+     * When movie fragments are used, a partially written asset whose writing is unexpectedly interrupted can be
+     * successfully opened and played up to multiples of the specified time interval. The default value of this property
+     * is kCMTimeInvalid, which indicates that movie fragments should not be used.
      * <p>
      * This property cannot be set after writing has started.
      */
@@ -450,7 +502,8 @@ public class AVAssetWriter extends NSObject {
     /**
      * [@property] movieTimeScale
      * <p>
-     * For file types that contain a 'moov' atom, such as QuickTime Movie files, specifies the asset-level time scale to be used.
+     * For file types that contain a 'moov' atom, such as QuickTime Movie files, specifies the asset-level time scale to
+     * be used.
      * <p>
      * The default value is 0, which indicates that the receiver should choose a convenient value, if applicable.
      * <p>
@@ -474,7 +527,10 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * The location of the file for which the instance of AVAssetWriter was initialized for writing.
      * <p>
-     * You may use UTTypeCopyPreferredTagWithClass(outputFileType, kUTTagClassFilenameExtension) to obtain an appropriate path extension for the outputFileType you have specified. For more information about UTTypeCopyPreferredTagWithClass and kUTTagClassFilenameExtension, on iOS see <CoreServices/UTType.h> and on Mac OS X see <LaunchServices/UTType.h>.
+     * You may use UTTypeCopyPreferredTagWithClass(outputFileType, kUTTagClassFilenameExtension) to obtain an
+     * appropriate path extension for the outputFileType you have specified. For more information about
+     * UTTypeCopyPreferredTagWithClass and kUTTagClassFilenameExtension, on iOS see <CoreServices/UTType.h> and on Mac
+     * OS X see <LaunchServices/UTType.h>.
      */
     @Generated
     @Selector("outputURL")
@@ -485,9 +541,12 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * For file types that support movie fragments, provides a hint of the final duration of the file to be written
      * <p>
-     * The value of this property must be a nonnegative, numeric CMTime.  Alternatively, if the value of this property is an invalid CMTime (e.g. kCMTimeInvalid), no overall duration hint will be written to the file.  The default value is kCMTimeInvalid.
+     * The value of this property must be a nonnegative, numeric CMTime. Alternatively, if the value of this property is
+     * an invalid CMTime (e.g. kCMTimeInvalid), no overall duration hint will be written to the file. The default value
+     * is kCMTimeInvalid.
      * <p>
-     * This property is currently ignored if movie fragments are not being written.  Use the movieFragmentInterval property to enable movie fragments.
+     * This property is currently ignored if movie fragments are not being written. Use the movieFragmentInterval
+     * property to enable movie fragments.
      * <p>
      * This property cannot be set after writing has started.
      */
@@ -499,13 +558,19 @@ public class AVAssetWriter extends NSObject {
     /**
      * [@property] directoryForTemporaryFiles
      * <p>
-     * Specifies a directory that is suitable for containing temporary files generated during the process of writing an asset.
+     * Specifies a directory that is suitable for containing temporary files generated during the process of writing an
+     * asset.
      * <p>
-     * AVAssetWriter may need to write temporary files when configured in certain ways, such as when performsMultiPassEncodingIfSupported is set to YES on one or more of its inputs.  This property can be used to control where in the filesystem those temporary files are created.  All temporary files will be deleted when asset writing is completed, is canceled, or fails.
+     * AVAssetWriter may need to write temporary files when configured in certain ways, such as when
+     * performsMultiPassEncodingIfSupported is set to YES on one or more of its inputs. This property can be used to
+     * control where in the filesystem those temporary files are created. All temporary files will be deleted when asset
+     * writing is completed, is canceled, or fails.
      * <p>
-     * When the value of this property is nil, the asset writer will choose a suitable location when writing temporary files.  The default value is nil.
+     * When the value of this property is nil, the asset writer will choose a suitable location when writing temporary
+     * files. The default value is nil.
      * <p>
-     * This property cannot be set after writing has started.  The asset writer will fail if a file cannot be created in this directory (for example, due to insufficient permissions).
+     * This property cannot be set after writing has started. The asset writer will fail if a file cannot be created in
+     * this directory (for example, due to insufficient permissions).
      */
     @Generated
     @Selector("setDirectoryForTemporaryFiles:")
@@ -516,7 +581,8 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * A collection of metadata to be written to the receiver's output file.
      * <p>
-     * The value of this property is an array of AVMetadataItem objects representing the collection of top-level metadata to be written in the output file.
+     * The value of this property is an array of AVMetadataItem objects representing the collection of top-level
+     * metadata to be written in the output file.
      * <p>
      * This property cannot be set after writing has started.
      */
@@ -529,7 +595,9 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * For file types that support movie fragments, specifies the frequency at which movie fragments should be written.
      * <p>
-     * When movie fragments are used, a partially written asset whose writing is unexpectedly interrupted can be successfully opened and played up to multiples of the specified time interval. The default value of this property is kCMTimeInvalid, which indicates that movie fragments should not be used.
+     * When movie fragments are used, a partially written asset whose writing is unexpectedly interrupted can be
+     * successfully opened and played up to multiples of the specified time interval. The default value of this property
+     * is kCMTimeInvalid, which indicates that movie fragments should not be used.
      * <p>
      * This property cannot be set after writing has started.
      */
@@ -540,7 +608,8 @@ public class AVAssetWriter extends NSObject {
     /**
      * [@property] movieTimeScale
      * <p>
-     * For file types that contain a 'moov' atom, such as QuickTime Movie files, specifies the asset-level time scale to be used.
+     * For file types that contain a 'moov' atom, such as QuickTime Movie files, specifies the asset-level time scale to
+     * be used.
      * <p>
      * The default value is 0, which indicates that the receiver should choose a convenient value, if applicable.
      * <p>
@@ -555,9 +624,12 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * For file types that support movie fragments, provides a hint of the final duration of the file to be written
      * <p>
-     * The value of this property must be a nonnegative, numeric CMTime.  Alternatively, if the value of this property is an invalid CMTime (e.g. kCMTimeInvalid), no overall duration hint will be written to the file.  The default value is kCMTimeInvalid.
+     * The value of this property must be a nonnegative, numeric CMTime. Alternatively, if the value of this property is
+     * an invalid CMTime (e.g. kCMTimeInvalid), no overall duration hint will be written to the file. The default value
+     * is kCMTimeInvalid.
      * <p>
-     * This property is currently ignored if movie fragments are not being written.  Use the movieFragmentInterval property to enable movie fragments.
+     * This property is currently ignored if movie fragments are not being written. Use the movieFragmentInterval
+     * property to enable movie fragments.
      * <p>
      * This property cannot be set after writing has started.
      */
@@ -568,9 +640,11 @@ public class AVAssetWriter extends NSObject {
     /**
      * [@property] shouldOptimizeForNetworkUse
      * <p>
-     * Specifies whether the output file should be written in way that makes it more suitable for playback over a network
+     * Specifies whether the output file should be written in way that makes it more suitable for playback over a
+     * network
      * <p>
-     * When the value of this property is YES, the output file will be written in such a way that playback can start after only a small amount of the file is downloaded.
+     * When the value of this property is YES, the output file will be written in such a way that playback can start
+     * after only a small amount of the file is downloaded.
      * <p>
      * This property cannot be set after writing has started.
      */
@@ -581,9 +655,11 @@ public class AVAssetWriter extends NSObject {
     /**
      * [@property] shouldOptimizeForNetworkUse
      * <p>
-     * Specifies whether the output file should be written in way that makes it more suitable for playback over a network
+     * Specifies whether the output file should be written in way that makes it more suitable for playback over a
+     * network
      * <p>
-     * When the value of this property is YES, the output file will be written in such a way that playback can start after only a small amount of the file is downloaded.
+     * When the value of this property is YES, the output file will be written in such a way that playback can start
+     * after only a small amount of the file is downloaded.
      * <p>
      * This property cannot be set after writing has started.
      */
@@ -596,13 +672,24 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * Initiates a sample-writing session for the receiver.
      * <p>
-     * Sequences of sample data appended to the asset writer inputs are considered to fall within "sample-writing sessions", initiated with this method. Accordingly, this method must be called after writing has started (using -startWriting) but before any sample data is appended to the receiver's inputs.
+     * Sequences of sample data appended to the asset writer inputs are considered to fall within "sample-writing
+     * sessions", initiated with this method. Accordingly, this method must be called after writing has started (using
+     * -startWriting) but before any sample data is appended to the receiver's inputs.
      * <p>
-     * Each writing session has a start time which, where allowed by the file format being written, defines the mapping from the timeline of source samples to the timeline of the written file. In the case of the QuickTime movie file format, the first session begins at movie time 0, so a sample appended with timestamp T will be played at movie time (T-startTime).  Samples with timestamps earlier than startTime will still be added to the output file but will be edited out (i.e. not presented during playback). If the earliest appended sample for an input has a timestamp later than than startTime, an empty edit will be inserted to preserve synchronization between tracks of the output asset.
+     * Each writing session has a start time which, where allowed by the file format being written, defines the mapping
+     * from the timeline of source samples to the timeline of the written file. In the case of the QuickTime movie file
+     * format, the first session begins at movie time 0, so a sample appended with timestamp T will be played at movie
+     * time (T-startTime). Samples with timestamps earlier than startTime will still be added to the output file but
+     * will be edited out (i.e. not presented during playback). If the earliest appended sample for an input has a
+     * timestamp later than than startTime, an empty edit will be inserted to preserve synchronization between tracks of
+     * the output asset.
      * <p>
-     * To end the session started by use of this method, use -endSessionAtSourceTime: or -finishWritingWithCompletionHandler:.  It is an error to invoke -startSessionAtSourceTime: twice in a row without invoking -endSessionAtSourceTime: in between.
+     * To end the session started by use of this method, use -endSessionAtSourceTime: or
+     * -finishWritingWithCompletionHandler:. It is an error to invoke -startSessionAtSourceTime: twice in a row without
+     * invoking -endSessionAtSourceTime: in between.
      * <p>
-     * NOTE: Multiple sample-writing sessions are currently not supported. It is an error to call -startSessionAtSourceTime: a second time after calling -endSessionAtSourceTime:.
+     * NOTE: Multiple sample-writing sessions are currently not supported. It is an error to call
+     * -startSessionAtSourceTime: a second time after calling -endSessionAtSourceTime:.
      *
      * @param startTime The starting asset time for the sample-writing session, in the timeline of the source samples.
      */
@@ -615,11 +702,19 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * Prepares the receiver for accepting input and for writing its output to its output file.
      * <p>
-     * This method must be called after all inputs have been added and other configuration properties have been set in order to tell the receiver to prepare for writing. After this method is called, clients can start writing sessions using startSessionAtSourceTime: and can write media samples using the methods provided by each of the receiver's inputs.
+     * This method must be called after all inputs have been added and other configuration properties have been set in
+     * order to tell the receiver to prepare for writing. After this method is called, clients can start writing
+     * sessions using startSessionAtSourceTime: and can write media samples using the methods provided by each of the
+     * receiver's inputs.
      * <p>
-     * If writing cannot be started, this method returns NO. Clients can check the values of the status and error properties for more information on why writing could not be started.
+     * If writing cannot be started, this method returns NO. Clients can check the values of the status and error
+     * properties for more information on why writing could not be started.
      * <p>
-     * On iOS, if the status of an AVAssetWriter is AVAssetWriterStatusWriting when the client app goes into the background, its status will change to AVAssetWriterStatusFailed and appending to any of its inputs will fail.  You may want to use -[UIApplication beginBackgroundTaskWithExpirationHandler:] to avoid being interrupted in the middle of a writing session and to finish writing the data that has already been appended.  For more information about executing code in the background, see the iOS Application Programming Guide.
+     * On iOS, if the status of an AVAssetWriter is AVAssetWriterStatusWriting when the client app goes into the
+     * background, its status will change to AVAssetWriterStatusFailed and appending to any of its inputs will fail. You
+     * may want to use -[UIApplication beginBackgroundTaskWithExpirationHandler:] to avoid being interrupted in the
+     * middle of a writing session and to finish writing the data that has already been appended. For more information
+     * about executing code in the background, see the iOS Application Programming Guide.
      *
      * @return A BOOL indicating whether writing successfully started.
      */
@@ -632,7 +727,10 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * The status of writing samples to the receiver's output file.
      * <p>
-     * The value of this property is an AVAssetWriterStatus that indicates whether writing is in progress, has completed successfully, has been canceled, or has failed. Clients of AVAssetWriterInput objects should check the value of this property after appending samples fails to determine why no more samples could be written. This property is thread safe.
+     * The value of this property is an AVAssetWriterStatus that indicates whether writing is in progress, has completed
+     * successfully, has been canceled, or has failed. Clients of AVAssetWriterInput objects should check the value of
+     * this property after appending samples fails to determine why no more samples could be written. This property is
+     * thread safe.
      */
     @Generated
     @Selector("status")
@@ -661,7 +759,8 @@ public class AVAssetWriter extends NSObject {
     /**
      * flushSegment
      * <p>
-     * Closes the current segment and outputs it to the -assetWriter:didOutputSegmentData:segmentType:segmentReport: or -assetWriter:didOutputSegmentData:segmentType: delegate method.
+     * Closes the current segment and outputs it to the -assetWriter:didOutputSegmentData:segmentType:segmentReport: or
+     * -assetWriter:didOutputSegmentData:segmentType: delegate method.
      * <p>
      * Use this method only when the value of preferredOutputSegmentInterval property is set to kCMTimeIndefinite.
      */
@@ -674,9 +773,12 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * Creates an instance of AVAssetWriter configured to output segment data in a specified container format.
      * <p>
-     * Clients that want to receive segment data through the -assetWriter:didOutputSegmentData:segmentType:segmentReport: or -assetWriter:didOutputSegmentData:segmentType: delegate method should use this initializer instead of -initWithURL:fileType:error:.
+     * Clients that want to receive segment data through the
+     * -assetWriter:didOutputSegmentData:segmentType:segmentReport: or -assetWriter:didOutputSegmentData:segmentType:
+     * delegate method should use this initializer instead of -initWithURL:fileType:error:.
      * <p>
-     * Clients may use +typeWithIdentifier: with a UTI to create an instance of UTType. See <UniformTypeIdentifiers/UTType.h>.
+     * Clients may use +typeWithIdentifier: with a UTI to create an instance of UTType. See
+     * <UniformTypeIdentifiers/UTType.h>.
      * <p>
      * UTIs for container formats that can be output are declared in AVMediaFormat.h.
      *
@@ -696,7 +798,10 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * The default value is 1.
      * <p>
-     * Note that if you combine movie fragments produced by an instance of AVAssetWriter with additional movie fragments, produced either by a different instance of AVAssetWriter or by some other means, it is necessary to ensure that movie fragment sequence numbers increase monotonically across the entire combined collection, in temporal order.
+     * Note that if you combine movie fragments produced by an instance of AVAssetWriter with additional movie
+     * fragments, produced either by a different instance of AVAssetWriter or by some other means, it is necessary to
+     * ensure that movie fragment sequence numbers increase monotonically across the entire combined collection, in
+     * temporal order.
      * <p>
      * This property cannot be set after writing has started.
      */
@@ -710,7 +815,8 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * Specifies start time of initial segment.
      * <p>
-     * A numeric time must be set if the value of preferredOutputSegmentInterval property is positive numeric. If not, this property is irrelevant.
+     * A numeric time must be set if the value of preferredOutputSegmentInterval property is positive numeric. If not,
+     * this property is irrelevant.
      * <p>
      * This property cannot be set after writing has started.
      */
@@ -724,9 +830,13 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * Specifies a file type profile for the specified file type.
      * <p>
-     * The default value is nil, which means that the receiver will choose an appropriate default profile based on the specified file type.
+     * The default value is nil, which means that the receiver will choose an appropriate default profile based on the
+     * specified file type.
      * <p>
-     * Clients that want to receive segment data that is suitable for streaming through the -assetWriter:didOutputSegmentData:segmentType:segmentReport: or -assetWriter:didOutputSegmentData:segmentType: delegate method should set AVFileTypeProfileMPEG4AppleHLS, or AVFileTypeProfileMPEG4CMAFCompliant to require output that is specifically compliant with CMAF format, with AVFileTypeMPEG4 file type.
+     * Clients that want to receive segment data that is suitable for streaming through the
+     * -assetWriter:didOutputSegmentData:segmentType:segmentReport: or -assetWriter:didOutputSegmentData:segmentType:
+     * delegate method should set AVFileTypeProfileMPEG4AppleHLS, or AVFileTypeProfileMPEG4CMAFCompliant to require
+     * output that is specifically compliant with CMAF format, with AVFileTypeMPEG4 file type.
      * <p>
      * File type profiles are declared in AVMediaFormat.h.
      * <p>
@@ -741,7 +851,8 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * Specifies preferred segment interval.
      * <p>
-     * The default value is kCMTimeInvalid, which means that the receiver will choose an appropriate default value. The value can be set to positive numeric or kCMTimeIndefinite.
+     * The default value is kCMTimeInvalid, which means that the receiver will choose an appropriate default value. The
+     * value can be set to positive numeric or kCMTimeIndefinite.
      * If the value is kCMTimeIndefinite, every time a client calls -flushSegment the receiver outputs a segment data.
      * <p>
      * This property cannot be set after writing has started.
@@ -754,11 +865,14 @@ public class AVAssetWriter extends NSObject {
     /**
      * [@property] producesCombinableFragments
      * <p>
-     * For file types that support fragmented MPEG-4, specifies whether the movie fragments should be produced in way that makes them suitable for combining with movie fragments produced by one or more other instances of AVAssetWriter into a single fragment stream of uniform encoding.
+     * For file types that support fragmented MPEG-4, specifies whether the movie fragments should be produced in way
+     * that makes them suitable for combining with movie fragments produced by one or more other instances of
+     * AVAssetWriter into a single fragment stream of uniform encoding.
      * <p>
      * The default value is NO.
      * <p>
-     * When multiple instances of AVAssetWriter are used to produce distinct streams that complement each other, for example to create HLS encoding or bitrate variants, it’s not necessary to set this property to YES.
+     * When multiple instances of AVAssetWriter are used to produce distinct streams that complement each other, for
+     * example to create HLS encoding or bitrate variants, it’s not necessary to set this property to YES.
      * <p>
      * This property cannot be set after writing has started.
      */
@@ -805,7 +919,10 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * The default value is 1.
      * <p>
-     * Note that if you combine movie fragments produced by an instance of AVAssetWriter with additional movie fragments, produced either by a different instance of AVAssetWriter or by some other means, it is necessary to ensure that movie fragment sequence numbers increase monotonically across the entire combined collection, in temporal order.
+     * Note that if you combine movie fragments produced by an instance of AVAssetWriter with additional movie
+     * fragments, produced either by a different instance of AVAssetWriter or by some other means, it is necessary to
+     * ensure that movie fragment sequence numbers increase monotonically across the entire combined collection, in
+     * temporal order.
      * <p>
      * This property cannot be set after writing has started.
      */
@@ -818,7 +935,8 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * Specifies start time of initial segment.
      * <p>
-     * A numeric time must be set if the value of preferredOutputSegmentInterval property is positive numeric. If not, this property is irrelevant.
+     * A numeric time must be set if the value of preferredOutputSegmentInterval property is positive numeric. If not,
+     * this property is irrelevant.
      * <p>
      * This property cannot be set after writing has started.
      */
@@ -831,9 +949,13 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * Specifies a file type profile for the specified file type.
      * <p>
-     * The default value is nil, which means that the receiver will choose an appropriate default profile based on the specified file type.
+     * The default value is nil, which means that the receiver will choose an appropriate default profile based on the
+     * specified file type.
      * <p>
-     * Clients that want to receive segment data that is suitable for streaming through the -assetWriter:didOutputSegmentData:segmentType:segmentReport: or -assetWriter:didOutputSegmentData:segmentType: delegate method should set AVFileTypeProfileMPEG4AppleHLS, or AVFileTypeProfileMPEG4CMAFCompliant to require output that is specifically compliant with CMAF format, with AVFileTypeMPEG4 file type.
+     * Clients that want to receive segment data that is suitable for streaming through the
+     * -assetWriter:didOutputSegmentData:segmentType:segmentReport: or -assetWriter:didOutputSegmentData:segmentType:
+     * delegate method should set AVFileTypeProfileMPEG4AppleHLS, or AVFileTypeProfileMPEG4CMAFCompliant to require
+     * output that is specifically compliant with CMAF format, with AVFileTypeMPEG4 file type.
      * <p>
      * File type profiles are declared in AVMediaFormat.h.
      * <p>
@@ -848,7 +970,8 @@ public class AVAssetWriter extends NSObject {
      * <p>
      * Specifies preferred segment interval.
      * <p>
-     * The default value is kCMTimeInvalid, which means that the receiver will choose an appropriate default value. The value can be set to positive numeric or kCMTimeIndefinite.
+     * The default value is kCMTimeInvalid, which means that the receiver will choose an appropriate default value. The
+     * value can be set to positive numeric or kCMTimeIndefinite.
      * If the value is kCMTimeIndefinite, every time a client calls -flushSegment the receiver outputs a segment data.
      * <p>
      * This property cannot be set after writing has started.
@@ -860,11 +983,14 @@ public class AVAssetWriter extends NSObject {
     /**
      * [@property] producesCombinableFragments
      * <p>
-     * For file types that support fragmented MPEG-4, specifies whether the movie fragments should be produced in way that makes them suitable for combining with movie fragments produced by one or more other instances of AVAssetWriter into a single fragment stream of uniform encoding.
+     * For file types that support fragmented MPEG-4, specifies whether the movie fragments should be produced in way
+     * that makes them suitable for combining with movie fragments produced by one or more other instances of
+     * AVAssetWriter into a single fragment stream of uniform encoding.
      * <p>
      * The default value is NO.
      * <p>
-     * When multiple instances of AVAssetWriter are used to produce distinct streams that complement each other, for example to create HLS encoding or bitrate variants, it’s not necessary to set this property to YES.
+     * When multiple instances of AVAssetWriter are used to produce distinct streams that complement each other, for
+     * example to create HLS encoding or bitrate variants, it’s not necessary to set this property to YES.
      * <p>
      * This property cannot be set after writing has started.
      */

@@ -96,14 +96,14 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]   clipRectSource
+     * [@property] clipRectSource
      * <p>
      * The source rectangle to use when reading data.
      * <p>
      * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSCNNKernel offset parameter for this filter.
-     * The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
      */
     @Generated
     @Selector("clipRectSource")
@@ -174,14 +174,14 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   clipRectSource
+     * [@property] clipRectSource
      * <p>
      * The source rectangle to use when reading data.
      * <p>
      * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSCNNKernel offset parameter for this filter.
-     * The latter is ignored.   Default: MPSRectNoClip, use the entire source texture.
+     * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
      */
     @Generated
     @Selector("setClipRectSource:")

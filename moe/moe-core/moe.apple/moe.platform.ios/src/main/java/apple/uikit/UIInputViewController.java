@@ -174,7 +174,8 @@ public class UIInputViewController extends UIViewController implements UITextInp
     /**
      * Launch inputMode list above the view when long pressing or swiping up from the view,
      * Advance to nextInputMode when short tapping on the view.
-     * Example: [KeyboardButton addTarget:self action:@selector(handleInputModeListFromView:withEvent:) forControlEvents:UIControlEventAllTouchEvents].
+     * Example: [KeyboardButton addTarget:self action:@selector(handleInputModeListFromView:withEvent:)
+     * forControlEvents:UIControlEventAllTouchEvents].
      */
     @Generated
     @Selector("handleInputModeListFromView:withEvent:")
@@ -197,7 +198,7 @@ public class UIInputViewController extends UIViewController implements UITextInp
     public native UIInputView inputView();
 
     /**
-     * The primary language of the UIInputViewController.  A BCP 47 language identifier such as en-US
+     * The primary language of the UIInputViewController. A BCP 47 language identifier such as en-US
      * If specified, this will supersede any PrimaryLanguage in the Info.plist.
      */
     @Generated
@@ -226,7 +227,7 @@ public class UIInputViewController extends UIViewController implements UITextInp
     public native void setInputView(UIInputView value);
 
     /**
-     * The primary language of the UIInputViewController.  A BCP 47 language identifier such as en-US
+     * The primary language of the UIInputViewController. A BCP 47 language identifier such as en-US
      * If specified, this will supersede any PrimaryLanguage in the Info.plist.
      */
     @Generated

@@ -46,8 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * delta_{x,y} is the Kronecker delta symbol for which
  * <p>
- * delta_{x,y} =  {  1, when x == y
- * {  0, otherwise,
+ * delta_{x,y} = { 1, when x == y
+ * { 0, otherwise,
  * and out(x) is the L2-norm pooling value at point 'x' defined above.
  */
 @Generated
@@ -148,8 +148,8 @@ public class MPSCNNPoolingL2NormGradient extends MPSCNNPoolingGradient {
      * Initialize a gradient L2-norm pooling filter
      *
      * @param device          The device the filter will run on
-     * @param kernelWidth     The width of the kernel.  Can be an odd or even value.
-     * @param kernelHeight    The height of the kernel.  Can be an odd or even value.
+     * @param kernelWidth     The width of the kernel. Can be an odd or even value.
+     * @param kernelHeight    The height of the kernel. Can be an odd or even value.
      * @param strideInPixelsX The input stride (upsampling factor) in the x dimension.
      * @param strideInPixelsY The input stride (upsampling factor) in the y dimension.
      * @return A valid MPSCNNPoolingL2NormGradient object or nil, if failure.

@@ -52,7 +52,8 @@ public final class Photos {
     public static native String PHLivePhotoInfoErrorKey();
 
     /**
-     * key : NSNumber containing a BOOL, YES whenever the deivered live photo object does not contain all content required for full playback.
+     * key : NSNumber containing a BOOL, YES whenever the deivered live photo object does not contain all content
+     * required for full playback.
      */
     @Generated
     @CVariable()
@@ -60,7 +61,8 @@ public final class Photos {
     public static native String PHLivePhotoInfoIsDegradedKey();
 
     /**
-     * key : NSNumber containing a BOOL, YES when the result handler is being called after the request has been cancelled.
+     * key : NSNumber containing a BOOL, YES when the result handler is being called after the request has been
+     * cancelled.
      */
     @Generated
     @CVariable()
@@ -97,7 +99,8 @@ public final class Photos {
     public static native String PHLivePhotoShouldRenderAtPlaybackTime();
 
     /**
-     * Size to pass when requesting the original image or the largest rendered image available (resizeMode will be ignored)
+     * Size to pass when requesting the original image or the largest rendered image available (resizeMode will be
+     * ignored)
      */
     @Generated
     @CVariable()
@@ -105,7 +108,8 @@ public final class Photos {
     public static native CGSize PHImageManagerMaximumSize();
 
     /**
-     * key (NSNumber): result is in iCloud, meaning a new request will need to get issued (with networkAccessAllowed set) to get the result
+     * key (NSNumber): result is in iCloud, meaning a new request will need to get issued (with networkAccessAllowed
+     * set) to get the result
      */
     @Generated
     @CVariable()
@@ -113,7 +117,9 @@ public final class Photos {
     public static native String PHImageResultIsInCloudKey();
 
     /**
-     * key (NSNumber): result  is a degraded image (only with async requests), meaning other images will be sent unless the request is cancelled in the meanwhile (note that the other request may fail if, for example, data is not available locally and networkAccessAllowed was not specified)
+     * key (NSNumber): result is a degraded image (only with async requests), meaning other images will be sent unless
+     * the request is cancelled in the meanwhile (note that the other request may fail if, for example, data is not
+     * available locally and networkAccessAllowed was not specified)
      */
     @Generated
     @CVariable()

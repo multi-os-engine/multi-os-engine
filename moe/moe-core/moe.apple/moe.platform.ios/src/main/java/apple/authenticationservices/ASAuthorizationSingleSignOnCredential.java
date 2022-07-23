@@ -64,15 +64,19 @@ public class ASAuthorizationSingleSignOnCredential extends NSObject implements A
     public static native ASAuthorizationSingleSignOnCredential allocWithZone(VoidPtr zone);
 
     /**
-     * The complete AuthenticationServices extension response with the additional outputs used by the specific technology used by the Authorization Server instance and AuthenticationServices Extension.
-     * [@note] for some operations all properties can be null and the response will indicate just successful result of the operation.
+     * The complete AuthenticationServices extension response with the additional outputs used by the specific
+     * technology used by the Authorization Server instance and AuthenticationServices Extension.
+     * [@note] for some operations all properties can be null and the response will indicate just successful result of
+     * the operation.
      */
     @Generated
     @Selector("authenticatedResponse")
     public native NSHTTPURLResponse authenticatedResponse();
 
     /**
-     * This value will contain a list of scopes for which the user provided authorization.  These may contain a subset of the requested scopes on @see ASAuthorizationOpenIDRequest.  The application should query this value to identify which scopes were returned as it maybe different from ones requested.
+     * This value will contain a list of scopes for which the user provided authorization. These may contain a subset of
+     * the requested scopes on @see ASAuthorizationOpenIDRequest. The application should query this value to identify
+     * which scopes were returned as it maybe different from ones requested.
      */
     @Generated
     @Selector("authorizedScopes")

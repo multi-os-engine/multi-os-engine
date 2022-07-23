@@ -86,7 +86,7 @@ public class MLCGatherLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   dimension
+     * [@property] dimension
      * <p>
      * The dimension along which to index
      */

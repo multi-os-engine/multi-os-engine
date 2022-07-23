@@ -203,7 +203,8 @@ public class UIActivity extends NSObject {
     public native UIActivity init();
 
     /**
-     * if no view controller, this method is called. call activityDidFinish when done. default calls [self activityDidFinish:NO]
+     * if no view controller, this method is called. call activityDidFinish when done. default calls [self
+     * activityDidFinish:NO]
      */
     @Generated
     @Selector("performActivity")

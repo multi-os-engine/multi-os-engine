@@ -137,9 +137,12 @@ public class PHASEShape extends NSObject implements NSCopying {
      * Initialize a shape from an MDLMesh and a list of materials
      * <p>
      * The materials array cannot be empty and cannot contain nil entries, otherwise an exception is thrown.
-     * If the number of submeshes within the mesh are less than or equal to the size of the material array, the material will be assigned
-     * to the corresponding element. If the number of submeshes within the mesh is greater than the size of the material array, the material
-     * assigned to the element will be the index of the element modulo the number of materials. IE: given a mesh with 6 submeshes and an array
+     * If the number of submeshes within the mesh are less than or equal to the size of the material array, the material
+     * will be assigned
+     * to the corresponding element. If the number of submeshes within the mesh is greater than the size of the material
+     * array, the material
+     * assigned to the element will be the index of the element modulo the number of materials. IE: given a mesh with 6
+     * submeshes and an array
      * of 3 materials, the element at index 5 will be assigned the material at index: 5 % 3 = 2.
      *
      * @param engine    The engine this shape will be used with

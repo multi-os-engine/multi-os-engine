@@ -173,7 +173,8 @@ public class HMCharacteristicMetadata extends NSObject {
     public native String manufacturerDescription();
 
     /**
-     * Max length value for the characteristic that indicates the maximum number of UTF-8 characters allowed if it has a format of "string".
+     * Max length value for the characteristic that indicates the maximum number of UTF-8 characters allowed if it has a
+     * format of "string".
      */
     @Generated
     @Selector("maxLength")
@@ -194,7 +195,8 @@ public class HMCharacteristicMetadata extends NSObject {
     public native NSNumber minimumValue();
 
     /**
-     * Step value for the characteristic that indicates the minimum step value allowed if it has a format of "int" or "float".
+     * Step value for the characteristic that indicates the minimum step value allowed if it has a format of "int" or
+     * "float".
      */
     @Generated
     @Selector("stepValue")

@@ -177,7 +177,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * <p>
      * The number of array elements to allocate. The default value is 1.
      * <p>
-     * When allocating any non-Array texture type, arrayLength has to be 1. Otherwise it must be set to something greater than 1 and less than 2048.
+     * When allocating any non-Array texture type, arrayLength has to be 1. Otherwise it must be set to something
+     * greater than 1 and less than 2048.
      */
     @Generated
     @Selector("arrayLength")
@@ -243,7 +244,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] pixelFormat
      * <p>
-     * The pixel format to use when allocating this texture. This is also the pixel format that will be used to when the caller writes or reads pixels from this texture. The default value is MTLPixelFormatRGBA8Unorm.
+     * The pixel format to use when allocating this texture. This is also the pixel format that will be used to when the
+     * caller writes or reads pixels from this texture. The default value is MTLPixelFormatRGBA8Unorm.
      */
     @Generated
     @Selector("pixelFormat")
@@ -267,7 +269,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * <p>
      * The number of samples in the texture to create. The default value is 1.
      * <p>
-     * When creating Buffer textures sampleCount must be 1. Implementations may round sample counts up to the next supported value.
+     * When creating Buffer textures sampleCount must be 1. Implementations may round sample counts up to the next
+     * supported value.
      */
     @Generated
     @Selector("sampleCount")
@@ -279,7 +282,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * <p>
      * The number of array elements to allocate. The default value is 1.
      * <p>
-     * When allocating any non-Array texture type, arrayLength has to be 1. Otherwise it must be set to something greater than 1 and less than 2048.
+     * When allocating any non-Array texture type, arrayLength has to be 1. Otherwise it must be set to something
+     * greater than 1 and less than 2048.
      */
     @Generated
     @Selector("setArrayLength:")
@@ -330,7 +334,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] pixelFormat
      * <p>
-     * The pixel format to use when allocating this texture. This is also the pixel format that will be used to when the caller writes or reads pixels from this texture. The default value is MTLPixelFormatRGBA8Unorm.
+     * The pixel format to use when allocating this texture. This is also the pixel format that will be used to when the
+     * caller writes or reads pixels from this texture. The default value is MTLPixelFormatRGBA8Unorm.
      */
     @Generated
     @Selector("setPixelFormat:")
@@ -352,7 +357,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * <p>
      * The number of samples in the texture to create. The default value is 1.
      * <p>
-     * When creating Buffer textures sampleCount must be 1. Implementations may round sample counts up to the next supported value.
+     * When creating Buffer textures sampleCount must be 1. Implementations may round sample counts up to the next
+     * supported value.
      */
     @Generated
     @Selector("setSampleCount:")
@@ -439,7 +445,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * <p>
      * Allow GPU-optimization for the contents of this texture. The default value is true.
      * <p>
-     * Useful for opting-out of GPU-optimization when implicit optimization (e.g. RT writes) is regressing CPU-read-back performance. See the documentation for optimizeContentsForGPUAccess: and optimizeContentsForCPUAccess: APIs.
+     * Useful for opting-out of GPU-optimization when implicit optimization (e.g. RT writes) is regressing CPU-read-back
+     * performance. See the documentation for optimizeContentsForGPUAccess: and optimizeContentsForCPUAccess: APIs.
      */
     @Generated
     @Selector("allowGPUOptimizedContents")
@@ -451,7 +458,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * Set hazard tracking mode for the texture. The default value is MTLHazardTrackingModeDefault.
      * <p>
      * For resources created from the device, MTLHazardTrackingModeDefault is treated as MTLHazardTrackingModeTracked.
-     * For resources created on a heap, MTLHazardTrackingModeDefault is treated as the hazardTrackingMode of the heap itself.
+     * For resources created on a heap, MTLHazardTrackingModeDefault is treated as the hazardTrackingMode of the heap
+     * itself.
      * In either case, it is possible to opt-out of hazard tracking by setting MTLHazardTrackingModeUntracked.
      * It is not possible to opt-in to hazard tracking on a heap that itself is not hazard tracked.
      * For optimal performance, perform hazard tracking manually through MTLFence or MTLEvent instead.
@@ -466,7 +474,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * <p>
      * Allow GPU-optimization for the contents of this texture. The default value is true.
      * <p>
-     * Useful for opting-out of GPU-optimization when implicit optimization (e.g. RT writes) is regressing CPU-read-back performance. See the documentation for optimizeContentsForGPUAccess: and optimizeContentsForCPUAccess: APIs.
+     * Useful for opting-out of GPU-optimization when implicit optimization (e.g. RT writes) is regressing CPU-read-back
+     * performance. See the documentation for optimizeContentsForGPUAccess: and optimizeContentsForCPUAccess: APIs.
      */
     @Generated
     @Selector("setAllowGPUOptimizedContents:")
@@ -478,7 +487,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
      * Set hazard tracking mode for the texture. The default value is MTLHazardTrackingModeDefault.
      * <p>
      * For resources created from the device, MTLHazardTrackingModeDefault is treated as MTLHazardTrackingModeTracked.
-     * For resources created on a heap, MTLHazardTrackingModeDefault is treated as the hazardTrackingMode of the heap itself.
+     * For resources created on a heap, MTLHazardTrackingModeDefault is treated as the hazardTrackingMode of the heap
+     * itself.
      * In either case, it is possible to opt-out of hazard tracking by setting MTLHazardTrackingModeUntracked.
      * It is not possible to opt-in to hazard tracking on a heap that itself is not hazard tracked.
      * For optimal performance, perform hazard tracking manually through MTLFence or MTLEvent instead.
@@ -490,7 +500,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] swizzle
      * <p>
-     * Channel swizzle to use when reading or sampling from the texture, the default value is MTLTextureSwizzleChannelsDefault.
+     * Channel swizzle to use when reading or sampling from the texture, the default value is
+     * MTLTextureSwizzleChannelsDefault.
      */
     @Generated
     @Selector("setSwizzle:")
@@ -499,7 +510,8 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] swizzle
      * <p>
-     * Channel swizzle to use when reading or sampling from the texture, the default value is MTLTextureSwizzleChannelsDefault.
+     * Channel swizzle to use when reading or sampling from the texture, the default value is
+     * MTLTextureSwizzleChannelsDefault.
      */
     @Generated
     @Selector("swizzle")
@@ -519,15 +531,26 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] compressionType
      * <p>
-     * Controls how the texture contents will be compressed when written to by the GPU. Compression can be used to reduce the bandwidth usage and storage requirements of a texture.
+     * Controls how the texture contents will be compressed when written to by the GPU. Compression can be used to
+     * reduce the bandwidth usage and storage requirements of a texture.
      * <p>
-     * The default compression type is lossless, meaning that no loss of precision will occur when the texture content is modified.
-     * Losslessly compressed textures may benefit from reduced bandwidth usage when regions of correlated color values are written, but do not benefit from reduced storage requirements.
-     * Enabling lossy compression for textures that can tolerate some precision loss will guarantee both reduced bandwidth usage and reduced storage requirements.
-     * The amount of precision loss depends on the color values stored; regions with correlated color values can be represented with limited to no precision loss, whereas regions with unrelated color values suffer more precision loss.
-     * Enabling lossy compression requires both storageMode == MTLStorageModePrivate, allowGPUOptimizedContents == YES, and cannot be combined with either MTLTextureUsagePixelFormatView, MTLTextureUsageShaderWrite, MTLTextureType1D(Array) or MTLTextureTypeTextureBuffer.
-     * Moreover, not all MTLPixelFormat are supported with lossy compression, verify that the MTLDevice's GPU family supports the lossy compression feature for the pixelFormat requested.
-     * Set allowGPUOptimizedContents to NO to opt out of both lossless and lossy compression; such textures do not benefit from either reduced bandwidth usage or reduced storage requirements, but have predictable CPU readback performance.
+     * The default compression type is lossless, meaning that no loss of precision will occur when the texture content
+     * is modified.
+     * Losslessly compressed textures may benefit from reduced bandwidth usage when regions of correlated color values
+     * are written, but do not benefit from reduced storage requirements.
+     * Enabling lossy compression for textures that can tolerate some precision loss will guarantee both reduced
+     * bandwidth usage and reduced storage requirements.
+     * The amount of precision loss depends on the color values stored; regions with correlated color values can be
+     * represented with limited to no precision loss, whereas regions with unrelated color values suffer more precision
+     * loss.
+     * Enabling lossy compression requires both storageMode == MTLStorageModePrivate, allowGPUOptimizedContents == YES,
+     * and cannot be combined with either MTLTextureUsagePixelFormatView, MTLTextureUsageShaderWrite,
+     * MTLTextureType1D(Array) or MTLTextureTypeTextureBuffer.
+     * Moreover, not all MTLPixelFormat are supported with lossy compression, verify that the MTLDevice's GPU family
+     * supports the lossy compression feature for the pixelFormat requested.
+     * Set allowGPUOptimizedContents to NO to opt out of both lossless and lossy compression; such textures do not
+     * benefit from either reduced bandwidth usage or reduced storage requirements, but have predictable CPU readback
+     * performance.
      */
     @Generated
     @Selector("compressionType")
@@ -537,15 +560,26 @@ public class MTLTextureDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] compressionType
      * <p>
-     * Controls how the texture contents will be compressed when written to by the GPU. Compression can be used to reduce the bandwidth usage and storage requirements of a texture.
+     * Controls how the texture contents will be compressed when written to by the GPU. Compression can be used to
+     * reduce the bandwidth usage and storage requirements of a texture.
      * <p>
-     * The default compression type is lossless, meaning that no loss of precision will occur when the texture content is modified.
-     * Losslessly compressed textures may benefit from reduced bandwidth usage when regions of correlated color values are written, but do not benefit from reduced storage requirements.
-     * Enabling lossy compression for textures that can tolerate some precision loss will guarantee both reduced bandwidth usage and reduced storage requirements.
-     * The amount of precision loss depends on the color values stored; regions with correlated color values can be represented with limited to no precision loss, whereas regions with unrelated color values suffer more precision loss.
-     * Enabling lossy compression requires both storageMode == MTLStorageModePrivate, allowGPUOptimizedContents == YES, and cannot be combined with either MTLTextureUsagePixelFormatView, MTLTextureUsageShaderWrite, MTLTextureType1D(Array) or MTLTextureTypeTextureBuffer.
-     * Moreover, not all MTLPixelFormat are supported with lossy compression, verify that the MTLDevice's GPU family supports the lossy compression feature for the pixelFormat requested.
-     * Set allowGPUOptimizedContents to NO to opt out of both lossless and lossy compression; such textures do not benefit from either reduced bandwidth usage or reduced storage requirements, but have predictable CPU readback performance.
+     * The default compression type is lossless, meaning that no loss of precision will occur when the texture content
+     * is modified.
+     * Losslessly compressed textures may benefit from reduced bandwidth usage when regions of correlated color values
+     * are written, but do not benefit from reduced storage requirements.
+     * Enabling lossy compression for textures that can tolerate some precision loss will guarantee both reduced
+     * bandwidth usage and reduced storage requirements.
+     * The amount of precision loss depends on the color values stored; regions with correlated color values can be
+     * represented with limited to no precision loss, whereas regions with unrelated color values suffer more precision
+     * loss.
+     * Enabling lossy compression requires both storageMode == MTLStorageModePrivate, allowGPUOptimizedContents == YES,
+     * and cannot be combined with either MTLTextureUsagePixelFormatView, MTLTextureUsageShaderWrite,
+     * MTLTextureType1D(Array) or MTLTextureTypeTextureBuffer.
+     * Moreover, not all MTLPixelFormat are supported with lossy compression, verify that the MTLDevice's GPU family
+     * supports the lossy compression feature for the pixelFormat requested.
+     * Set allowGPUOptimizedContents to NO to opt out of both lossless and lossy compression; such textures do not
+     * benefit from either reduced bandwidth usage or reduced storage requirements, but have predictable CPU readback
+     * performance.
      */
     @Generated
     @Selector("setCompressionType:")

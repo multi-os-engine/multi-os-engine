@@ -38,7 +38,7 @@ public final class NewsstandKit {
     }
 
     /**
-     * [@constant]   NKIssueDownloadCompletedNotification
+     * [@constant] NKIssueDownloadCompletedNotification
      * <p>
      * Notification when an issue's assets have all been downloaded.
      */

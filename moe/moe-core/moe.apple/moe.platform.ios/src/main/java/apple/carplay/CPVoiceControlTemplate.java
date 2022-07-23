@@ -53,7 +53,8 @@ public class CPVoiceControlTemplate extends CPTemplate {
      * When the Voice Control template is first presented, the first state you specify in
      * [@c] initWithVoiceControlStates: will be visible.
      *
-     * @param identifier An identifier corresponding to one of the voice control states used to initialize this template.
+     * @param identifier An identifier corresponding to one of the voice control states used to initialize this
+     *                   template.
      */
     @Generated
     @Selector("activateVoiceControlStateWithIdentifier:")
@@ -124,9 +125,11 @@ public class CPVoiceControlTemplate extends CPTemplate {
      * <p>
      * [@note] By default, the Voice Control template will begin on the first state specified.
      * <p>
-     * [@warning] You may specify a maximum of 5 voice control states. If you specify more than 5, only the first 5 will be available.
+     * [@warning] You may specify a maximum of 5 voice control states. If you specify more than 5, only the first 5 will
+     * be available.
      *
-     * @param voiceControlStates An array of voice control states for this template. Your app can switch between these states after the template is presented.
+     * @param voiceControlStates An array of voice control states for this template. Your app can switch between these
+     *                           states after the template is presented.
      */
     @Generated
     @Selector("initWithVoiceControlStates:")

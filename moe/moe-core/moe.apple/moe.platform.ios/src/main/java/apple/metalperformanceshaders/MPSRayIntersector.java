@@ -668,7 +668,7 @@ public class MPSRayIntersector extends MPSKernel implements NSSecureCoding, NSCo
      * <p>
      * [@code]
      * tex.write(float4(ray.position, as_type<float>(ray.mask)), pixel, 0); // slice 0
-     * tex.write(float4(ray.direction, ray.maxDistance), pixel, 1);         // slice 1
+     * tex.write(float4(ray.direction, ray.maxDistance), pixel, 1); // slice 1
      * [@end]
      * <p>
      * If the intersection data type is MPSIntersectionDataTypeDistance, the intersection texture may

@@ -137,7 +137,7 @@ public class MXAnimationMetric extends MXMetric {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]      scrollHitchTimeRatio
+     * [@property] scrollHitchTimeRatio
      * <p>
      * Ratio of time the application spent hitching while scrolling.
      * <p>

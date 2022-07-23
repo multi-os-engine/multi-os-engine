@@ -45,7 +45,8 @@ public interface CBPeripheralDelegate {
     /**
      * peripheral:didDiscoverCharacteristicsForService:error:
      * <p>
-     * This method returns the result of a @link discoverCharacteristics:forService: @/link call. If the characteristic(s) were read successfully,
+     * This method returns the result of a @link discoverCharacteristics:forService: @/link call. If the
+     * characteristic(s) were read successfully,
      * they can be retrieved via <i>service</i>'s <code>characteristics</code> property.
      *
      * @param peripheral The peripheral providing this information.
@@ -63,7 +64,8 @@ public interface CBPeripheralDelegate {
     /**
      * peripheral:didDiscoverDescriptorsForCharacteristic:error:
      * <p>
-     * This method returns the result of a @link discoverDescriptorsForCharacteristic: @/link call. If the descriptors were read successfully,
+     * This method returns the result of a @link discoverDescriptorsForCharacteristic: @/link call. If the descriptors
+     * were read successfully,
      * they can be retrieved via <i>characteristic</i>'s <code>descriptors</code> property.
      *
      * @param peripheral     The peripheral providing this information.
@@ -81,7 +83,8 @@ public interface CBPeripheralDelegate {
     /**
      * peripheral:didDiscoverIncludedServicesForService:error:
      * <p>
-     * This method returns the result of a @link discoverIncludedServices:forService: @/link call. If the included service(s) were read successfully,
+     * This method returns the result of a @link discoverIncludedServices:forService: @/link call. If the included
+     * service(s) were read successfully,
      * they can be retrieved via <i>service</i>'s <code>includedServices</code> property.
      *
      * @param peripheral The peripheral providing this information.
@@ -99,7 +102,8 @@ public interface CBPeripheralDelegate {
     /**
      * peripheral:didDiscoverServices:
      * <p>
-     * This method returns the result of a @link discoverServices: @/link call. If the service(s) were read successfully, they can be retrieved via
+     * This method returns the result of a @link discoverServices: @/link call. If the service(s) were read
+     * successfully, they can be retrieved via
      * <i>peripheral</i>'s @link services @/link property.
      *
      * @param peripheral The peripheral providing this information.
@@ -166,7 +170,8 @@ public interface CBPeripheralDelegate {
     /**
      * peripheral:didUpdateValueForCharacteristic:error:
      * <p>
-     * This method is invoked after a @link readValueForCharacteristic: @/link call, or upon receipt of a notification/indication.
+     * This method is invoked after a @link readValueForCharacteristic: @/link call, or upon receipt of a
+     * notification/indication.
      *
      * @param peripheral     The peripheral providing this information.
      * @param characteristic A <code>CBCharacteristic</code> object.
@@ -200,7 +205,8 @@ public interface CBPeripheralDelegate {
     /**
      * peripheral:didWriteValueForCharacteristic:error:
      * <p>
-     * This method returns the result of a {@link writeValue:forCharacteristic:type:} call, when the <code>CBCharacteristicWriteWithResponse</code> type is used.
+     * This method returns the result of a {@link writeValue:forCharacteristic:type:} call, when the
+     * <code>CBCharacteristicWriteWithResponse</code> type is used.
      *
      * @param peripheral     The peripheral providing this information.
      * @param characteristic A <code>CBCharacteristic</code> object.
@@ -281,7 +287,8 @@ public interface CBPeripheralDelegate {
     /**
      * peripheralIsReadyToSendWriteWithoutResponse:
      * <p>
-     * This method is invoked after a failed call to @link writeValue:forCharacteristic:type: @/link, when <i>peripheral</i> is again
+     * This method is invoked after a failed call to @link writeValue:forCharacteristic:type: @/link, when
+     * <i>peripheral</i> is again
      * ready to send characteristic value updates.
      *
      * @param peripheral The peripheral providing this update.

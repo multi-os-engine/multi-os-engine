@@ -165,7 +165,10 @@ public class INPlacemarkResolutionResult extends INIntentResolutionResult {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given CLPlacemark. The resolvedPlacemark can be different than the original CLPlacemark. This allows app extensions to dynamically fill-in details about the CLPlacemark, as appropriate. To make a new CLPlacemark, see <Intents/CLPlacemark+IntentsAdditions.h>.
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given CLPlacemark. The
+     * resolvedPlacemark can be different than the original CLPlacemark. This allows app extensions to dynamically
+     * fill-in details about the CLPlacemark, as appropriate. To make a new CLPlacemark, see
+     * <Intents/CLPlacemark+IntentsAdditions.h>.
      * Use +notRequired to continue with a 'nil' value.
      */
     @Generated

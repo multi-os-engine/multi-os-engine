@@ -110,7 +110,8 @@ public class HKElectrocardiogramQuery extends HKQuery {
      * an electrocardiogram.
      *
      * @param electrocardiogram The sample for which the lead data will be returned.
-     * @param dataHandler       The block to invoke with results from the query. It will be called once for each voltage measurement. Call [query stop] to stop enumeration, if desired.
+     * @param dataHandler       The block to invoke with results from the query. It will be called once for each voltage
+     *                          measurement. Call [query stop] to stop enumeration, if desired.
      */
     @Generated
     @Selector("initWithElectrocardiogram:dataHandler:")

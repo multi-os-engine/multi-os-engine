@@ -3,7 +3,7 @@ package apple.mlcompute.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]       MLCGraphCompilationOptions
+ * [@enum] MLCGraphCompilationOptions
  * <p>
  * A bitmask that specifies the options you use when compiling a graph.
  * <p>
@@ -37,8 +37,10 @@ public final class MLCGraphCompilationOptions {
      * The option to link graphs during graph compilation.
      * <p>
      * Include this option when you link together one or more sub-graphs when executing the forward, gradient, and
-     * optimizer update. For example, if the full computation graph includes a layer that the framework doesn’t support, you’ll
-     * need to create multiple sub-graphs and link them together using \p MLCGraphCompilationOptionsLinkGraphs. When doing so,
+     * optimizer update. For example, if the full computation graph includes a layer that the framework doesn’t support,
+     * you’ll
+     * need to create multiple sub-graphs and link them together using \p MLCGraphCompilationOptionsLinkGraphs. When
+     * doing so,
      * include this option when you call \p -compileWithOptions: for graphs you want to link together.
      */
     @Generated public static final long LinkGraphs = 0x0000000000000004L;
@@ -46,8 +48,10 @@ public final class MLCGraphCompilationOptions {
      * The option to compute all gradients during graph compilation.
      * <p>
      * Include this option to compute gradients for layers with or without parameters that only take input tensors.
-     * For example, if the first layer of a graph is a convolution layer, the framework only computes the gradients for weights
-     * and biases associated with the convolution layer, but not the gradients for the input. Include this option if you want to
+     * For example, if the first layer of a graph is a convolution layer, the framework only computes the gradients for
+     * weights
+     * and biases associated with the convolution layer, but not the gradients for the input. Include this option if you
+     * want to
      * compute all gradients for the input.
      */
     @Generated public static final long ComputeAllGradients = 0x0000000000000008L;

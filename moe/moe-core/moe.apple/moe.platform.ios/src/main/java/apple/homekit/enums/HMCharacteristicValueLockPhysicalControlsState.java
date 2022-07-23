@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueLockPhysicalControlsState
+ * [@enum] HMCharacteristicValueLockPhysicalControlsState
  * <p>
- * [@constant]  HMCharacteristicValueLockPhysicalControlsStateNotLocked  Physical controls not locked.
- * [@constant]  HMCharacteristicValueLockPhysicalControlsStateLocked     Physical controls locked.
+ * [@constant] HMCharacteristicValueLockPhysicalControlsStateNotLocked Physical controls not locked.
+ * [@constant] HMCharacteristicValueLockPhysicalControlsStateLocked Physical controls locked.
  */
 @Generated
 public final class HMCharacteristicValueLockPhysicalControlsState {

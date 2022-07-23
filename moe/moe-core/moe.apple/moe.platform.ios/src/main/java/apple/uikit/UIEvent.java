@@ -153,7 +153,8 @@ public class UIEvent extends NSObject {
     public native NSSet<? extends UITouch> allTouches();
 
     /**
-     * An array of auxiliary UITouch’s for the touch events that did not get delivered for a given main touch. This also includes an auxiliary version of the main touch itself.
+     * An array of auxiliary UITouch’s for the touch events that did not get delivered for a given main touch. This also
+     * includes an auxiliary version of the main touch itself.
      */
     @Generated
     @Selector("coalescedTouchesForTouch:")
@@ -164,7 +165,9 @@ public class UIEvent extends NSObject {
     public native UIEvent init();
 
     /**
-     * An array of auxiliary UITouch’s for touch events that are predicted to occur for a given main touch. These predictions may not exactly match the real behavior of the touch as it moves, so they should be interpreted as an estimate.
+     * An array of auxiliary UITouch’s for touch events that are predicted to occur for a given main touch. These
+     * predictions may not exactly match the real behavior of the touch as it moves, so they should be interpreted as an
+     * estimate.
      */
     @Generated
     @Selector("predictedTouchesForTouch:")

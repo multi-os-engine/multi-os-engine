@@ -48,7 +48,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * Several methods in CloudKit accept completion handlers to indicate when they're completed.
  * All CKOperation subclasses include progress and completion blocks to report significant events in their lifecycles.
- * Each of these handlers and blocks is invoked on a non-main serial queue.  The receiver is responsible for handling the message on a different queue or thread if it is required.
+ * Each of these handlers and blocks is invoked on a non-main serial queue. The receiver is responsible for handling the
+ * message on a different queue or thread if it is required.
  */
 @Generated
 @Library("CloudKit")
@@ -103,7 +104,9 @@ public class CKContainer extends NSObject {
     /**
      * Obtain a CKContainer for the given containerIdentifier
      * <p>
-     * If the application is in production mode (aka, @c com.apple.developer.icloud-container-environment is set to Production in your entitlements plist, and you have no override in @c com.apple.developer.icloud-container-development-container-identifiers), then the production environment is used.
+     * If the application is in production mode (aka, @c com.apple.developer.icloud-container-environment is set to
+     * Production in your entitlements plist, and you have no override in @c
+     * com.apple.developer.icloud-container-development-container-identifiers), then the production environment is used.
      */
     @Generated
     @Selector("containerWithIdentifier:")
@@ -118,7 +121,8 @@ public class CKContainer extends NSObject {
      * <p>
      * application-identifier is the calling process' @c application-identifier entitlement on iOS / tvOS / watchOS.
      * application-identifier is the calling process' @c com.apple.application-identifier entitlement on macOS.
-     * On all OSes, if an @c com.apple.developer.associated-application-identifier entitlement is present, its value will be preferred over the @c application-identifier variants.
+     * On all OSes, if an @c com.apple.developer.associated-application-identifier entitlement is present, its value
+     * will be preferred over the @c application-identifier variants.
      */
     @Generated
     @Selector("defaultContainer")
@@ -210,7 +214,8 @@ public class CKContainer extends NSObject {
     /**
      * Fetches all user identities that match an entry in the user's contacts database.
      * <p>
-     * [@c] CKDiscoverAllUserIdentitiesOperation is the more configurable, @c CKOperation -based alternative to this methods
+     * [@c] CKDiscoverAllUserIdentitiesOperation is the more configurable, @c CKOperation -based alternative to this
+     * methods
      */
     @Generated
     @Selector("discoverAllIdentitiesWithCompletionHandler:")
@@ -220,7 +225,10 @@ public class CKContainer extends NSObject {
     /**
      * Fetches the user identity that corresponds to the given email address.
      * <p>
-     * Only users who have opted-in to user discoverability will have their identities returned by this method.  If a user with the inputted email exists in iCloud, but has not opted-in to user discoverability, this method completes with a nil @c userInfo.  @c CKDiscoverUserIdentitiesOperation is the more configurable, @c CKOperation -based alternative to this method
+     * Only users who have opted-in to user discoverability will have their identities returned by this method. If a
+     * user with the inputted email exists in iCloud, but has not opted-in to user discoverability, this method
+     * completes with a nil @c userInfo. @c CKDiscoverUserIdentitiesOperation is the more configurable, @c CKOperation
+     * -based alternative to this method
      */
     @Generated
     @Selector("discoverUserIdentityWithEmailAddress:completionHandler:")
@@ -230,7 +238,10 @@ public class CKContainer extends NSObject {
     /**
      * Fetches the user identity that corresponds to the given phone number.
      * <p>
-     * Only users who have opted-in to user discoverability will have their identities returned by this method.  If a user with the inputted phone number exists in iCloud, but has not opted-in to user discoverability, this method completes with a nil @c userInfo.  @c CKDiscoverUserIdentitiesOperation is the more configurable, @c CKOperation -based alternative to this method
+     * Only users who have opted-in to user discoverability will have their identities returned by this method. If a
+     * user with the inputted phone number exists in iCloud, but has not opted-in to user discoverability, this method
+     * completes with a nil @c userInfo. @c CKDiscoverUserIdentitiesOperation is the more configurable, @c CKOperation
+     * -based alternative to this method
      */
     @Generated
     @Selector("discoverUserIdentityWithPhoneNumber:completionHandler:")
@@ -240,7 +251,9 @@ public class CKContainer extends NSObject {
     /**
      * Fetches the user identity that corresponds to the given user record id.
      * <p>
-     * Only users who have opted-in to user discoverability will have their identities returned by this method.  If a user has not opted-in to user discoverability, this method completes with a nil @c userInfo.  @c CKDiscoverUserIdentitiesOperation is the more configurable, @c CKOperation -based alternative to this method
+     * Only users who have opted-in to user discoverability will have their identities returned by this method. If a
+     * user has not opted-in to user discoverability, this method completes with a nil @c userInfo. @c
+     * CKDiscoverUserIdentitiesOperation is the more configurable, @c CKOperation -based alternative to this method
      */
     @Generated
     @Selector("discoverUserIdentityWithUserRecordID:completionHandler:")
@@ -250,7 +263,8 @@ public class CKContainer extends NSObject {
     /**
      * Long lived CKOperations returned by this call must be started on an operation queue.
      * Remember to set the callback blocks before starting the operation.
-     * If an operation has already completed against the server, and is subsequently resumed, that operation will replay all of its callbacks from the start of the operation, but the request will not be re-sent to the server.
+     * If an operation has already completed against the server, and is subsequently resumed, that operation will replay
+     * all of its callbacks from the start of the operation, but the request will not be re-sent to the server.
      * If a long lived operation is cancelled or finishes completely it is no longer returned by these calls.
      */
     @Generated
@@ -271,7 +285,8 @@ public class CKContainer extends NSObject {
     /**
      * Fetches share participants matching the provided info.
      * <p>
-     * [@c] CKFetchShareParticipantsOperation is the more configurable, @c CKOperation -based alternative to these methods.
+     * [@c] CKFetchShareParticipantsOperation is the more configurable, @c CKOperation -based alternative to these
+     * methods.
      */
     @Generated
     @Selector("fetchShareParticipantWithEmailAddress:completionHandler:")
@@ -289,7 +304,8 @@ public class CKContainer extends NSObject {
             @ObjCBlock(name = "call_fetchShareParticipantWithUserRecordIDCompletionHandler") Block_fetchShareParticipantWithUserRecordIDCompletionHandler completionHandler);
 
     /**
-     * If there is no iCloud account configured, or if access is restricted, a @c CKErrorNotAuthenticated error will be returned.
+     * If there is no iCloud account configured, or if access is restricted, a @c CKErrorNotAuthenticated error will be
+     * returned.
      * <p>
      * This work is treated as having @c NSQualityOfServiceUserInitiated quality of service.
      */

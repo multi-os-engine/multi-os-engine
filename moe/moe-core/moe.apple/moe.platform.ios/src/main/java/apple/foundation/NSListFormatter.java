@@ -20,7 +20,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * NSListFormatter provides locale-correct formatting of a list of items using the appropriate separator and conjunction. Note that the list formatter is unaware of the context where the joined string will be used, e.g., in the beginning of the sentence or used as a standalone string in the UI, so it will not provide any sort of capitalization customization on the given items, but merely join them as-is. The string joined this way may not be grammatically correct when placed in a sentence, and it should only be used in a standalone manner.
+ * NSListFormatter provides locale-correct formatting of a list of items using the appropriate separator and
+ * conjunction. Note that the list formatter is unaware of the context where the joined string will be used, e.g., in
+ * the beginning of the sentence or used as a standalone string in the UI, so it will not provide any sort of
+ * capitalization customization on the given items, but merely join them as-is. The string joined this way may not be
+ * grammatically correct when placed in a sentence, and it should only be used in a standalone manner.
  */
 @Generated
 @Library("Foundation")
@@ -111,7 +115,8 @@ public class NSListFormatter extends NSFormatter {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * Specifies how each object should be formatted. If not set, the object is formatted using its instance method in the following order: -descriptionWithLocale:, -localizedDescription, and -description.
+     * Specifies how each object should be formatted. If not set, the object is formatted using its instance method in
+     * the following order: -descriptionWithLocale:, -localizedDescription, and -description.
      */
     @Generated
     @Selector("itemFormatter")
@@ -122,14 +127,17 @@ public class NSListFormatter extends NSFormatter {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * Specifies the locale to format the items. Defaults to autoupdatingCurrentLocale. Also resets to autoupdatingCurrentLocale on assignment of nil.
+     * Specifies the locale to format the items. Defaults to autoupdatingCurrentLocale. Also resets to
+     * autoupdatingCurrentLocale on assignment of nil.
      */
     @Generated
     @Selector("locale")
     public native NSLocale locale();
 
     /**
-     * Convenience method to return a string constructed from an array of strings using the list format specific to the current locale. It is recommended to join only disjointed strings that are ready to display in a bullet-point list. Sentences, phrases with punctuations, and appositions may not work well when joined together.
+     * Convenience method to return a string constructed from an array of strings using the list format specific to the
+     * current locale. It is recommended to join only disjointed strings that are ready to display in a bullet-point
+     * list. Sentences, phrases with punctuations, and appositions may not work well when joined together.
      */
     @Generated
     @Selector("localizedStringByJoiningStrings:")
@@ -149,14 +157,16 @@ public class NSListFormatter extends NSFormatter {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Specifies how each object should be formatted. If not set, the object is formatted using its instance method in the following order: -descriptionWithLocale:, -localizedDescription, and -description.
+     * Specifies how each object should be formatted. If not set, the object is formatted using its instance method in
+     * the following order: -descriptionWithLocale:, -localizedDescription, and -description.
      */
     @Generated
     @Selector("setItemFormatter:")
     public native void setItemFormatter(NSFormatter value);
 
     /**
-     * Specifies the locale to format the items. Defaults to autoupdatingCurrentLocale. Also resets to autoupdatingCurrentLocale on assignment of nil.
+     * Specifies the locale to format the items. Defaults to autoupdatingCurrentLocale. Also resets to
+     * autoupdatingCurrentLocale on assignment of nil.
      */
     @Generated
     @Selector("setLocale:")
@@ -167,16 +177,21 @@ public class NSListFormatter extends NSFormatter {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Inherited from NSFormatter. `obj` must be an instance of NSArray. Returns nil if `obj` is nil, not an instance of NSArray, or if the list formatter cannot generate a string representation for all objects in the array.
+     * Inherited from NSFormatter. `obj` must be an instance of NSArray. Returns nil if `obj` is nil, not an instance of
+     * NSArray, or if the list formatter cannot generate a string representation for all objects in the array.
      */
     @Generated
     @Selector("stringForObjectValue:")
     public native String stringForObjectValue(@Mapped(ObjCObjectMapper.class) Object obj);
 
     /**
-     * Convenience method for -stringForObjectValue:. Returns a string constructed from an array in the locale-aware format. Each item is formatted using the itemFormatter. If the itemFormatter does not apply to a particular item, the method will fall back to the item's -descriptionWithLocale: or -localizedDescription if implemented, or -description if not.
+     * Convenience method for -stringForObjectValue:. Returns a string constructed from an array in the locale-aware
+     * format. Each item is formatted using the itemFormatter. If the itemFormatter does not apply to a particular item,
+     * the method will fall back to the item's -descriptionWithLocale: or -localizedDescription if implemented, or
+     * -description if not.
      * <p>
-     * Returns nil if `items` is nil or if the list formatter cannot generate a string representation for all items in the array.
+     * Returns nil if `items` is nil or if the list formatter cannot generate a string representation for all items in
+     * the array.
      */
     @Generated
     @Selector("stringFromItems:")

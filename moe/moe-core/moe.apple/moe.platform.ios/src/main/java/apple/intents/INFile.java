@@ -214,14 +214,16 @@ public class INFile extends NSObject implements NSSecureCoding {
     }
 
     /**
-     * Indicates whether the file should be automatically deleted from disk when the Shortcut is done running. `false` by default.
+     * Indicates whether the file should be automatically deleted from disk when the Shortcut is done running. `false`
+     * by default.
      */
     @Generated
     @Selector("removedOnCompletion")
     public native boolean removedOnCompletion();
 
     /**
-     * Indicates whether the file should be automatically deleted from disk when the Shortcut is done running. `false` by default.
+     * Indicates whether the file should be automatically deleted from disk when the Shortcut is done running. `false`
+     * by default.
      */
     @Generated
     @Selector("setRemovedOnCompletion:")

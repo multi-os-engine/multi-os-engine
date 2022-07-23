@@ -126,7 +126,8 @@ public class MTLRasterizationRateSampleArray extends NSObject {
      * <p>
      * Retrieves the sample value at the specified index.
      *
-     * @return NSNumber instance describing the value of the sample at the specified index, or 0 if the index is out of range.
+     * @return NSNumber instance describing the value of the sample at the specified index, or 0 if the index is out of
+     *         range.
      */
     @Generated
     @Selector("objectAtIndexedSubscript:")

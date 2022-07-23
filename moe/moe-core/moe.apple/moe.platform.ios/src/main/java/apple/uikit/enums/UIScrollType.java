@@ -4,9 +4,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * Begins:  when at least minimumNumberOfTouches have moved enough to be considered a pan
+ * Begins: when at least minimumNumberOfTouches have moved enough to be considered a pan
  * Changes: when a finger moves while at least minimumNumberOfTouches are down
- * Ends:    when all fingers have lifted
+ * Ends: when all fingers have lifted
  */
 @Generated
 public final class UIScrollType {

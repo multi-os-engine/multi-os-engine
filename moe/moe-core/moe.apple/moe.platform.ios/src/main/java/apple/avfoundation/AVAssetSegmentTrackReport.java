@@ -88,7 +88,7 @@ public class AVAssetSegmentTrackReport extends NSObject {
     public static native String description_static();
 
     /**
-     * [@property]	duration
+     * [@property] duration
      * <p>
      * Indicates the duration for this track. The value is kCMTimeInvalid if there is no information available.
      */
@@ -98,9 +98,10 @@ public class AVAssetSegmentTrackReport extends NSObject {
     public native CMTime duration();
 
     /**
-     * [@property]	earliestPresentationTimeStamp
+     * [@property] earliestPresentationTimeStamp
      * <p>
-     * Indicates the earliest presentation timestamp (PTS) for this track. The value is kCMTimeInvalid if there is no information available.
+     * Indicates the earliest presentation timestamp (PTS) for this track. The value is kCMTimeInvalid if there is no
+     * information available.
      */
     @Generated
     @Selector("earliestPresentationTimeStamp")
@@ -108,9 +109,10 @@ public class AVAssetSegmentTrackReport extends NSObject {
     public native CMTime earliestPresentationTimeStamp();
 
     /**
-     * [@property]	firstVideoSampleInformation
+     * [@property] firstVideoSampleInformation
      * <p>
-     * Provides information on the first video sample in this track. The value is nil if this track is not video track or no information available.
+     * Provides information on the first video sample in this track. The value is nil if this track is not video track
+     * or no information available.
      */
     @Generated
     @Selector("firstVideoSampleInformation")
@@ -147,7 +149,7 @@ public class AVAssetSegmentTrackReport extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]	mediaType
+     * [@property] mediaType
      * <p>
      * Indicates the media type for this track. Media types are declared in AVMediaFormat.h.
      */
@@ -177,7 +179,7 @@ public class AVAssetSegmentTrackReport extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * [@property]	trackID
+     * [@property] trackID
      * <p>
      * Indicates the persistent unique identifier for this track.
      */

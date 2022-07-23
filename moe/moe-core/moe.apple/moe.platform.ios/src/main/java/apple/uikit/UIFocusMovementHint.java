@@ -146,7 +146,8 @@ public class UIFocusMovementHint extends NSObject implements NSCopying {
     public static native UIFocusMovementHint new_objc();
 
     /**
-     * A 3D transform representing the perspective matrix that should be applied to match the system interaction hinting. Assumes a 0..1 near/far plane.
+     * A 3D transform representing the perspective matrix that should be applied to match the system interaction
+     * hinting. Assumes a 0..1 near/far plane.
      */
     @Generated
     @Selector("perspectiveTransform")
@@ -162,7 +163,8 @@ public class UIFocusMovementHint extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * A vector representing the X and Y axis rotation expressed in radians that should be applied to match the system interaction hinting.
+     * A vector representing the X and Y axis rotation expressed in radians that should be applied to match the system
+     * interaction hinting.
      */
     @Generated
     @Selector("rotation")
@@ -178,7 +180,8 @@ public class UIFocusMovementHint extends NSObject implements NSCopying {
     public static native Class superclass_static();
 
     /**
-     * A vector representing the X and Y axis translation expressed in points that should be applied to match the system interaction hinting.
+     * A vector representing the X and Y axis translation expressed in points that should be applied to match the system
+     * interaction hinting.
      */
     @Generated
     @Selector("translation")

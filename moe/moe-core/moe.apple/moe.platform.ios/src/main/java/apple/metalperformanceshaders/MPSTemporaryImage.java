@@ -57,7 +57,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * (such as what backs a MPSImage or the typical MTLTexture) would be memory
  * that you allocate at launch and never free. Temporary memory would be memory
  * that you free when you are done with it so it can be used for something
- * else as needed later in your app.  You /could/ write your app to allocate
+ * else as needed later in your app. You /could/ write your app to allocate
  * everything you will ever need up front, but this is very inefficient and
  * quite frankly a pain to plan out in advance. You don't do it for your app,
  * so why would you do it for your command buffers?
@@ -65,7 +65,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Welcome to the 1970's! We have added a heap.
  * <p>
  * Unsurprisingly, MPSTemporaryImages can provide for profound reduction in
- * the the amount of memory used by your application.  Like malloc, MPS
+ * the the amount of memory used by your application. Like malloc, MPS
  * maintains a heap of memory usable in a command buffer. Over the lifetime
  * of a command buffer, the same piece of memory may be reused many times.
  * This means that each time the same memory is reused, it aliases with previous
@@ -237,7 +237,7 @@ public class MPSTemporaryImage extends MPSImage {
      * Help MPS decide which allocations to make ahead of time
      * <p>
      * The texture cache that underlies the MPSTemporaryImage can automatically allocate new storage as
-     * needed as you create new temporary images.  However, sometimes a more global view of what you
+     * needed as you create new temporary images. However, sometimes a more global view of what you
      * plan to make is useful for maximizing memory reuse to get the most efficient operation.
      * This class method hints to the cache what the list of images will be.
      * <p>
@@ -279,9 +279,9 @@ public class MPSTemporaryImage extends MPSImage {
      *
      * @param commandBuffer   The MTLCommandBuffer on which the MPSTemporaryImage will be exclusively used
      * @param imageDescriptor A valid imageDescriptor describing the MPSImage format to create.
-     * @return A valid MPSTemporaryImage.  The object will be released when the command buffer
-     * is committed. The underlying texture will become invalid before this time
-     * due to the action of the readCount property.
+     * @return A valid MPSTemporaryImage. The object will be released when the command buffer
+     *         is committed. The underlying texture will become invalid before this time
+     *         due to the action of the readCount property.
      */
     @Generated
     @Selector("temporaryImageWithCommandBuffer:imageDescriptor:")
@@ -302,9 +302,9 @@ public class MPSTemporaryImage extends MPSImage {
      *
      * @param commandBuffer     The command buffer on which the MPSTemporaryImage may be used
      * @param textureDescriptor A texture descriptor describing the MPSTemporaryImage texture
-     * @return A valid MPSTemporaryImage.  The object will be released when the command buffer
-     * is committed. The underlying texture will become invalid before this time
-     * due to the action of the readCount property.
+     * @return A valid MPSTemporaryImage. The object will be released when the command buffer
+     *         is committed. The underlying texture will become invalid before this time
+     *         due to the action of the readCount property.
      */
     @Generated
     @Selector("temporaryImageWithCommandBuffer:textureDescriptor:")
@@ -421,9 +421,9 @@ public class MPSTemporaryImage extends MPSImage {
      *
      * @param commandBuffer     The command buffer on which the MPSTemporaryImage may be used
      * @param textureDescriptor A texture descriptor describing the MPSTemporaryImage texture
-     * @return A valid MPSTemporaryImage.  The object will be released when the command buffer
-     * is committed. The underlying texture will become invalid before this time
-     * due to the action of the readCount property.
+     * @return A valid MPSTemporaryImage. The object will be released when the command buffer
+     *         is committed. The underlying texture will become invalid before this time
+     *         due to the action of the readCount property.
      */
     @Generated
     @Selector("temporaryImageWithCommandBuffer:textureDescriptor:featureChannels:")

@@ -73,7 +73,8 @@ public class UITabBarItemStateAppearance extends NSObject {
     public native UIOffset badgePositionAdjustment();
 
     /**
-     * Text attributes to be used for rendering badge text. If the font and color are unspecified, appropriate defaults are supplied.
+     * Text attributes to be used for rendering badge text. If the font and color are unspecified, appropriate defaults
+     * are supplied.
      */
     @Generated
     @Selector("badgeTextAttributes")
@@ -178,7 +179,8 @@ public class UITabBarItemStateAppearance extends NSObject {
     public native void setBadgePositionAdjustment(@ByValue UIOffset value);
 
     /**
-     * Text attributes to be used for rendering badge text. If the font and color are unspecified, appropriate defaults are supplied.
+     * Text attributes to be used for rendering badge text. If the font and color are unspecified, appropriate defaults
+     * are supplied.
      */
     @Generated
     @Selector("setBadgeTextAttributes:")
@@ -206,7 +208,8 @@ public class UITabBarItemStateAppearance extends NSObject {
     public native void setTitlePositionAdjustment(@ByValue UIOffset value);
 
     /**
-     * Text attributes to be used for rendering title text. If the font or color are unspecified, appropriate defaults are supplied.
+     * Text attributes to be used for rendering title text. If the font or color are unspecified, appropriate defaults
+     * are supplied.
      */
     @Generated
     @Selector("setTitleTextAttributes:")
@@ -229,7 +232,8 @@ public class UITabBarItemStateAppearance extends NSObject {
     public native UIOffset titlePositionAdjustment();
 
     /**
-     * Text attributes to be used for rendering title text. If the font or color are unspecified, appropriate defaults are supplied.
+     * Text attributes to be used for rendering title text. If the font or color are unspecified, appropriate defaults
+     * are supplied.
      */
     @Generated
     @Selector("titleTextAttributes")

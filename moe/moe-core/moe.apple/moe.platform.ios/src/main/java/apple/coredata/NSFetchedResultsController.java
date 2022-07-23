@@ -164,7 +164,8 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
     public static native long version_static();
 
     /**
-     * Name of the persistent cached section information. Use nil to disable persistent caching, or +deleteCacheWithName to clear a cache.
+     * Name of the persistent cached section information. Use nil to disable persistent caching, or +deleteCacheWithName
+     * to clear a cache.
      */
     @Generated
     @Selector("cacheName")
@@ -179,7 +180,9 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
     public native NSFetchedResultsControllerDelegate delegate();
 
     /**
-     * NSFetchRequest instance used to do the fetching. You must not change it, its predicate, or its sort descriptor after initialization without disabling caching or calling +deleteCacheWithName.  The sort descriptor used in the request groups objects into sections.
+     * NSFetchRequest instance used to do the fetching. You must not change it, its predicate, or its sort descriptor
+     * after initialization without disabling caching or calling +deleteCacheWithName. The sort descriptor used in the
+     * request groups objects into sections.
      */
     @Generated
     @Selector("fetchRequest")
@@ -206,10 +209,14 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
 
     /**
      * Initializes an instance of NSFetchedResultsController
-     * fetchRequest - the fetch request used to get the objects. It's expected that the sort descriptor used in the request groups the objects into sections.
+     * fetchRequest - the fetch request used to get the objects. It's expected that the sort descriptor used in the
+     * request groups the objects into sections.
      * context - the context that will hold the fetched objects
-     * sectionNameKeyPath - keypath on resulting objects that returns the section name. This will be used to pre-compute the section information.
-     * cacheName - Section info is cached persistently to a private file under this name. Cached sections are checked to see if the time stamp matches the store, but not if you have illegally mutated the readonly fetch request, predicate, or sort descriptor.
+     * sectionNameKeyPath - keypath on resulting objects that returns the section name. This will be used to pre-compute
+     * the section information.
+     * cacheName - Section info is cached persistently to a private file under this name. Cached sections are checked to
+     * see if the time stamp matches the store, but not if you have illegally mutated the readonly fetch request,
+     * predicate, or sort descriptor.
      */
     @Generated
     @Selector("initWithFetchRequest:managedObjectContext:sectionNameKeyPath:cacheName:")
@@ -217,7 +224,8 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
             NSFetchRequest<?> fetchRequest, NSManagedObjectContext context, String sectionNameKeyPath, String name);
 
     /**
-     * Managed Object Context used to fetch objects. The controller registers to listen to change notifications on this context and properly update its result set and section information.
+     * Managed Object Context used to fetch objects. The controller registers to listen to change notifications on this
+     * context and properly update its result set and section information.
      */
     @Generated
     @Selector("managedObjectContext")
@@ -234,7 +242,8 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
     /**
      * Executes the fetch request on the store to get objects.
      * Returns YES if successful or NO (and an error) if a problem occurred.
-     * An error is returned if the fetch request specified doesn't include a sort descriptor that uses sectionNameKeyPath.
+     * An error is returned if the fetch request specified doesn't include a sort descriptor that uses
+     * sectionNameKeyPath.
      * After executing this method, the fetched objects can be accessed with the property 'fetchedObjects'
      */
     @Generated
@@ -252,7 +261,8 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
     /**
      * Returns the corresponding section index entry for a given section name.
      * Default implementation returns the capitalized first letter of the section name.
-     * Developers that need different behavior can implement the delegate method -(NSString*)controller:(NSFetchedResultsController *)controller sectionIndexTitleForSectionName
+     * Developers that need different behavior can implement the delegate method
+     * -(NSString*)controller:(NSFetchedResultsController *)controller sectionIndexTitleForSectionName
      * Only needed if a section index is used.
      */
     @Generated
@@ -261,7 +271,8 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
 
     /**
      * Returns the array of section index titles.
-     * Default implementation returns the array created by calling sectionIndexTitleForSectionName: on all the known sections.
+     * Default implementation returns the array created by calling sectionIndexTitleForSectionName: on all the known
+     * sections.
      * Developers should override this method if they wish to return a different array for the section index.
      * Only needed if a section index is used.
      */
@@ -278,7 +289,8 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
 
     /**
      * Returns an array of objects that implement the NSFetchedResultsSectionInfo protocol.
-     * This provide a convenience interface for determining the number of sections, the names and titles of the sections, and access to the model objects that belong to each section.
+     * This provide a convenience interface for determining the number of sections, the names and titles of the
+     * sections, and access to the model objects that belong to each section.
      */
     @Generated
     @Selector("sections")

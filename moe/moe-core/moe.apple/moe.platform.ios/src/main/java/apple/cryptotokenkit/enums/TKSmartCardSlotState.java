@@ -13,7 +13,8 @@ public final class TKSmartCardSlotState {
     }
 
     /**
-     * Slot is no longer known to the system.  This is terminal state for TKSmartCardSlot instance, once reached, the slot instance can never be revived.
+     * Slot is no longer known to the system. This is terminal state for TKSmartCardSlot instance, once reached, the
+     * slot instance can never be revived.
      */
     @Generated @NInt public static final long Missing = 0x0000000000000000L;
     /**

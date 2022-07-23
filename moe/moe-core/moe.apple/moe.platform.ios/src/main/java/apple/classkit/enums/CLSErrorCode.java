@@ -4,19 +4,20 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      CLSErrorCode
+ * [@enum] CLSErrorCode
  * <p>
- * [@constant]  CLSErrorCodeNone                         No error.
- * [@constant]  CLSErrorCodeClassKitUnavailable       	 ClassKit is not available on this device.
- * [@constant]  CLSErrorCodeInvalidArgument              An invalid argument was provided to the API.
- * [@constant]  CLSErrorCodeInvalidModification          Attempted to modify a readonly object.
- * [@constant]  CLSErrorCodeAuthorizationDenied          The application is not authorized to perform the requested operation.
- * [@constant]  CLSErrorCodeDatabaseInaccessible         Protected ClassKit is inaccessible because the device is locked.
- * [@constant]  CLSErrorCodeLimits                       Limits exceeded.
- * [@constant]  CLSErrorCodeInvalidCreate                Attempted to save new object that already exists in the data store.
- * [@constant]  CLSErrorCodeInvalidUpdate                Failed to save updated object in the data store.
- * [@constant]  CLSErrorCodePartialFailure               Returned if an operation resulted in a mix of successes and failures.
- * [@constant]  CLSErrorCodeInvalidAccountCredentials    Returned if an operation failed because the user MAID account credentials are invalid.
+ * [@constant] CLSErrorCodeNone No error.
+ * [@constant] CLSErrorCodeClassKitUnavailable ClassKit is not available on this device.
+ * [@constant] CLSErrorCodeInvalidArgument An invalid argument was provided to the API.
+ * [@constant] CLSErrorCodeInvalidModification Attempted to modify a readonly object.
+ * [@constant] CLSErrorCodeAuthorizationDenied The application is not authorized to perform the requested operation.
+ * [@constant] CLSErrorCodeDatabaseInaccessible Protected ClassKit is inaccessible because the device is locked.
+ * [@constant] CLSErrorCodeLimits Limits exceeded.
+ * [@constant] CLSErrorCodeInvalidCreate Attempted to save new object that already exists in the data store.
+ * [@constant] CLSErrorCodeInvalidUpdate Failed to save updated object in the data store.
+ * [@constant] CLSErrorCodePartialFailure Returned if an operation resulted in a mix of successes and failures.
+ * [@constant] CLSErrorCodeInvalidAccountCredentials Returned if an operation failed because the user MAID account
+ * credentials are invalid.
  */
 @Generated
 public final class CLSErrorCode {

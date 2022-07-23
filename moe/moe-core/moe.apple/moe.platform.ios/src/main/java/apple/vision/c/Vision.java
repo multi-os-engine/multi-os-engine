@@ -30,19 +30,20 @@ public final class Vision {
      * Determines whether or not the normalized rect describes the identity rect of { {0, 0}, {1, 1} }.
      *
      * @return YES if the rect is the identity rect; otherwise, NO.
-     * @param    normalizedRect            The rectangle in the normalized coordinate space of [0..1].
+     * @param normalizedRect The rectangle in the normalized coordinate space of [0..1].
      */
     @Generated
     @CFunction
     public static native boolean VNNormalizedRectIsIdentityRect(@ByValue CGRect normalizedRect);
 
     /**
-     * Returns a point in (possibly non-integral) image coordinates that is projected from a point in a normalized coordinate space.
+     * Returns a point in (possibly non-integral) image coordinates that is projected from a point in a normalized
+     * coordinate space.
      *
      * @return the point in image coordinates.
-     * @param    normalizedPoint            The point in the normalized coordinate space of [0..1].
-     * @param    imageWidth                The pixel width of the image.
-     * @param    imageHeight                The pixel height of the image.
+     * @param normalizedPoint The point in the normalized coordinate space of [0..1].
+     * @param imageWidth      The pixel width of the image.
+     * @param imageHeight     The pixel height of the image.
      */
     @Generated
     @CFunction
@@ -51,7 +52,8 @@ public final class Vision {
             @NUInt long imageWidth, @NUInt long imageHeight);
 
     /**
-     * Returns a rectangle in (possibly non-integral) image coordinates that is projected from a rectangle in a normalized coordinate space.
+     * Returns a rectangle in (possibly non-integral) image coordinates that is projected from a rectangle in a
+     * normalized coordinate space.
      *
      * @param normalizedRect The rectangle in the normalized coordinate space of [0..1].
      * @param imageWidth     The pixel width of the image.
@@ -68,9 +70,9 @@ public final class Vision {
      * Returns an image rectangle in normalized coordinates.
      *
      * @return the normalized rectangle.
-     * @param    imageRect                The rectangle in image coordinate space.
-     * @param    imageWidth                The pixel width of the image.
-     * @param    imageHeight                The pixel height of the image.
+     * @param imageRect   The rectangle in image coordinate space.
+     * @param imageWidth  The pixel width of the image.
+     * @param imageHeight The pixel height of the image.
      */
     @Generated
     @CFunction
@@ -177,9 +179,10 @@ public final class Vision {
     public static native CGRect VNNormalizedIdentityRect();
 
     /**
-     * [@const]      VNImageOptionProperties
+     * [@const] VNImageOptionProperties
      * <p>
-     * VNImageOptionProperties is the dictionary from CGImageSourceCopyPropertiesAtIndex. This contains metadata that can be used by some algorithms like horizon detection.
+     * VNImageOptionProperties is the dictionary from CGImageSourceCopyPropertiesAtIndex. This contains metadata that
+     * can be used by some algorithms like horizon detection.
      */
     @Generated
     @CVariable()
@@ -187,15 +190,19 @@ public final class Vision {
     public static native String VNImageOptionProperties();
 
     /**
-     * VNImageOptionCameraIntrinsics  Specifies the camera intrinsics as an NSData or CFData representing a matrix_float3x3. See kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix for details
+     * VNImageOptionCameraIntrinsics Specifies the camera intrinsics as an NSData or CFData representing a
+     * matrix_float3x3. See kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix for details
      * <p>
-     * Camera intrinsic matrix is a CFData containing a matrix_float3x3, which is column-major. It has the following contents:
-     * fx	0	ox
-     * 0	fy	oy
-     * 0	0	1
+     * Camera intrinsic matrix is a CFData containing a matrix_float3x3, which is column-major. It has the following
+     * contents:
+     * fx 0 ox
+     * 0 fy oy
+     * 0 0 1
      * fx and fy are the focal length in pixels. For square pixels, they will have the same value.
      * ox and oy are the coordinates of the principal point. The origin is the upper left of the frame.
-     * [@note] When using a CMSampleBuffer as an input and that sample buffer has camera intrinsics attached to it, Vision will use the camera intrinsic from there unless overwritten by passing in as an explicit option which will take precedence.
+     * [@note] When using a CMSampleBuffer as an input and that sample buffer has camera intrinsics attached to it,
+     * Vision will use the camera intrinsic from there unless overwritten by passing in as an explicit option which will
+     * take precedence.
      */
     @Generated
     @CVariable()
@@ -203,7 +210,10 @@ public final class Vision {
     public static native String VNImageOptionCameraIntrinsics();
 
     /**
-     * VNImageOptionCIContext  Specifies the CIContext to be used in Core Image operations of request handler. If this is not specified, Vision will create its own CIContext. This option is helpful when the passed in CIImage is the result of a CIFilter chain that has been executed on a CIContext or uses outputs of a CIImage on a given CIContext as they don't have to transfer to other contexts.
+     * VNImageOptionCIContext Specifies the CIContext to be used in Core Image operations of request handler. If this is
+     * not specified, Vision will create its own CIContext. This option is helpful when the passed in CIImage is the
+     * result of a CIFilter chain that has been executed on a CIContext or uses outputs of a CIImage on a given
+     * CIContext as they don't have to transfer to other contexts.
      */
     @Generated
     @CVariable()
@@ -221,7 +231,7 @@ public final class Vision {
      * Obtain the size, in bytes, of a given element type.
      *
      * @return a byte count, or 0 if the element type is unknown.
-     * @param    elementType        The element type.
+     * @param elementType The element type.
      */
     @Generated
     @CFunction
@@ -236,7 +246,8 @@ public final class Vision {
     @Generated @NUInt public static final long VNDetectBarcodesRequestRevision1 = 0x0000000000000001L;
     @Generated @NUInt public static final long VNDetectFaceRectanglesRequestRevision1 = 0x0000000000000001L;
     /**
-     * This request revsion can calculate face roll and yaw properties. See [VNFaceObservation -roll] and [VNFaceObservation -yaw]  respectively.
+     * This request revsion can calculate face roll and yaw properties. See [VNFaceObservation -roll] and
+     * [VNFaceObservation -yaw] respectively.
      */
     @Generated @NUInt public static final long VNDetectFaceRectanglesRequestRevision2 = 0x0000000000000002L;
     @Generated @NUInt public static final long VNDetectFaceLandmarksRequestRevision1 = 0x0000000000000001L;
@@ -302,7 +313,11 @@ public final class Vision {
 
     @Generated @NUInt public static final long VNDetectFaceCaptureQualityRequestRevision2 = 0x0000000000000002L;
     /**
-     * VNRecognizeTextRequestRevision2 supports English, Chinese, Portuguese, French, Italian, German and Spanish in the accurate recognition level. The fast recognition level supports English, Portuguese, French, Italian, German and Spanish. Best practice is to use supportedRecognitionLanguagesForTextRecognitionLevel to check for supported languages. As the underlying engine has changed from VNRecognizeTextRequestRevision1, results can differ but are generally more accurate.
+     * VNRecognizeTextRequestRevision2 supports English, Chinese, Portuguese, French, Italian, German and Spanish in the
+     * accurate recognition level. The fast recognition level supports English, Portuguese, French, Italian, German and
+     * Spanish. Best practice is to use supportedRecognitionLanguagesForTextRecognitionLevel to check for supported
+     * languages. As the underlying engine has changed from VNRecognizeTextRequestRevision1, results can differ but are
+     * generally more accurate.
      */
     @Generated @NUInt public static final long VNRecognizeTextRequestRevision2 = 0x0000000000000002L;
 
@@ -728,13 +743,15 @@ public final class Vision {
     @Generated @NUInt public static final long VNDetectTrajectoriesRequestRevision1 = 0x0000000000000001L;
 
     /**
-     * Returns a point in (possibly non-integral) image coordinates that is projected from a point in a normalized coordinate space taking the region of interest (roi) into account.
+     * Returns a point in (possibly non-integral) image coordinates that is projected from a point in a normalized
+     * coordinate space taking the region of interest (roi) into account.
      *
      * @param normalizedPoint The point in the normalized coordinate space of [0..1].
      * @param imageWidth      The pixel width of the image.
      * @param imageHeight     The pixel height of the image.
      * @param roi             The region of interest on which the normalized point was based on.
-     * @return the point in image coordinates from a normalized point that was reported in relation to a region of interest.
+     * @return the point in image coordinates from a normalized point that was reported in relation to a region of
+     *         interest.
      */
     @Generated
     @CFunction
@@ -743,7 +760,8 @@ public final class Vision {
             @NUInt long imageWidth, @NUInt long imageHeight, @ByValue CGRect roi);
 
     /**
-     * Returns a point in normalized coordinate space within a spedified regioin of interest (roi) that is projected from a point in a image coordinates
+     * Returns a point in normalized coordinate space within a spedified regioin of interest (roi) that is projected
+     * from a point in a image coordinates
      *
      * @param imagePoint  The point in image coordinate space.
      * @param imageWidth  The pixel width of the image.
@@ -758,13 +776,15 @@ public final class Vision {
             @NUInt long imageWidth, @NUInt long imageHeight, @ByValue CGRect roi);
 
     /**
-     * Returns a rectangle in (possibly non-integral) image coordinates that is projected from a rectangle in a normalized coordinate space taking the region of interest (roi) into account.
+     * Returns a rectangle in (possibly non-integral) image coordinates that is projected from a rectangle in a
+     * normalized coordinate space taking the region of interest (roi) into account.
      *
      * @param normalizedRect The rectangle in the normalized coordinate space of [0..1].
      * @param imageWidth     The pixel width of the image.
      * @param imageHeight    The pixel height of the image.
      * @param roi            The region of interest on which the normalized point was based on.
-     * @return the rectangle in pixel coordinates from a normalized rectangle that was reported in relation to a region of interest.
+     * @return the rectangle in pixel coordinates from a normalized rectangle that was reported in relation to a region
+     *         of interest.
      */
     @Generated
     @CFunction
@@ -773,7 +793,7 @@ public final class Vision {
             @NUInt long imageWidth, @NUInt long imageHeight, @ByValue CGRect roi);
 
     /**
-     * Returns an image rectangle in normalized coordinates  in relation to the region of interest.
+     * Returns an image rectangle in normalized coordinates in relation to the region of interest.
      *
      * @param imageRect   The rectangle in image coordinate space.
      * @param imageWidth  The pixel width of the image.
@@ -825,11 +845,13 @@ public final class Vision {
      */
     @Generated @NUInt public static final long VNDetectBarcodesRequestRevision2 = 0x0000000000000002L;
     /**
-     * This request revsion can calculate face pitch, in addition to roll and yaw, see [VNFaceObservation -pitch] property. In addition, all three properties - roll, yaw, and pitch are now reported in contiguous manner.
+     * This request revsion can calculate face pitch, in addition to roll and yaw, see [VNFaceObservation -pitch]
+     * property. In addition, all three properties - roll, yaw, and pitch are now reported in contiguous manner.
      */
     @Generated @NUInt public static final long VNDetectFaceRectanglesRequestRevision3 = 0x0000000000000003L;
     /**
-     * This request revsion can detect human full body in addition to upper body only in the previous revision. The choice is controlled by [VNDetectHumanRectanglesRequest -upperBodyOnly] property, which is by default set to YES
+     * This request revsion can detect human full body in addition to upper body only in the previous revision. The
+     * choice is controlled by [VNDetectHumanRectanglesRequest -upperBodyOnly] property, which is by default set to YES
      */
     @Generated @NUInt public static final long VNDetectHumanRectanglesRequestRevision2 = 0x0000000000000002L;
     @Generated @NUInt public static final long VNRecognizeAnimalsRequestRevision2 = 0x0000000000000002L;

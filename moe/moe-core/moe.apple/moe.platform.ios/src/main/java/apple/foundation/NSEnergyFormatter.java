@@ -202,7 +202,8 @@ public class NSEnergyFormatter extends NSFormatter {
     public native void setUnitStyle(@NInt long value);
 
     /**
-     * Format a number in joules to a localized string with the locale-appropriate unit and an appropriate scale (e.g. 10.3J = 2.46cal in the US locale).
+     * Format a number in joules to a localized string with the locale-appropriate unit and an appropriate scale (e.g.
+     * 10.3J = 2.46cal in the US locale).
      */
     @Generated
     @Selector("stringFromJoules:")

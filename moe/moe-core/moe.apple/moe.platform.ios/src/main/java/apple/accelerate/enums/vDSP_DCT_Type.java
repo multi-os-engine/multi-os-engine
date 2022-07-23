@@ -19,8 +19,8 @@ package apple.accelerate.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * vDSP_DCT_CreateSetup is a DCT setup routine.  It creates a setup object
- * for use with the vDSP_DCT_Execute routine.  See additional information
+ * vDSP_DCT_CreateSetup is a DCT setup routine. It creates a setup object
+ * for use with the vDSP_DCT_Execute routine. See additional information
  * above, at "How to use the Discrete Fourier Transform (DFT) and Discrete
  * Cosine Transform (DCT) interfaces."
  * <p>
@@ -28,10 +28,10 @@ import org.moe.natj.general.ann.Generated;
  * <p>
  * vDSP_DFT_Setup Previous
  * <p>
- * Previous is either zero or a previous DFT or DCT setup.  If a
+ * Previous is either zero or a previous DFT or DCT setup. If a
  * previous setup is passed, the new setup will share data with the
  * previous setup, if feasible (and with any other setups the
- * previous setup shares with).  If zero is passed, the routine
+ * previous setup shares with). If zero is passed, the routine
  * will allocate and initialize new memory.
  * <p>
  * vDSP_Length Length
@@ -40,15 +40,15 @@ import org.moe.natj.general.ann.Generated;
  * <p>
  * vDSP_DCT_Type Type
  * <p>
- * Type specifies which DCT variant to perform.  At present, the
+ * Type specifies which DCT variant to perform. At present, the
  * supported DCT types are II and III (which are mutual inverses, up
- * to scaling) and IV (which is its own inverse).  These are specified
+ * to scaling) and IV (which is its own inverse). These are specified
  * with symbol names vDSP_DCT_II, vDSP_DCT_III, and vDSP_DCT_IV.
  * <p>
  * Return value:
  * <p>
  * Zero is returned if memory is unavailable or if there is no
- * implementation for the requested case.  Currently, the implemented
+ * implementation for the requested case. Currently, the implemented
  * cases are:
  * <p>
  * Length = f * 2**n, where f is 1, 3, 5, or 15 and 4 <= n.
@@ -90,14 +90,14 @@ import org.moe.natj.general.ann.Generated;
  * Performance:
  * <p>
  * Performance is good when the array addresses (passed to
- * vDSP_DFT_Execute) are 16-byte aligned.  Other alignments are supported,
+ * vDSP_DFT_Execute) are 16-byte aligned. Other alignments are supported,
  * but performance may be significantly worse in some cases, depending on
  * the processor model or the transform length (because different
  * algorithms are used for different forms of transform length).
  * <p>
  * In-Place Operation:
  * <p>
- * Output may equal Input (in the call the vDSP_DCT_Execute).  Otherwise,
+ * Output may equal Input (in the call the vDSP_DCT_Execute). Otherwise,
  * no overlap is permitted between the two buffers.
  * <p>
  * The returned setup object may be used only with vDSP_DCT_Execute for the

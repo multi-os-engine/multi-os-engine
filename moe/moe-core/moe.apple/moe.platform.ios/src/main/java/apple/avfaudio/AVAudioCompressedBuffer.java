@@ -129,7 +129,8 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
      * <p>
      * Initialize a buffer that is to contain constant bytes per packet compressed audio data.
      * <p>
-     * This fails if the format is PCM or if the format has variable bytes per packet (format.streamDescription->mBytesPerPacket == 0).
+     * This fails if the format is PCM or if the format has variable bytes per packet
+     * (format.streamDescription->mBytesPerPacket == 0).
      *
      * @param format         The format of the audio to be contained in the buffer.
      * @param packetCapacity The capacity of the buffer in packets.
@@ -148,7 +149,8 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
      * @param format            The format of the audio to be contained in the buffer.
      * @param packetCapacity    The capacity of the buffer in packets.
      * @param maximumPacketSize The maximum size in bytes of a compressed packet.
-     *                          The maximum packet size can be obtained from the maximumOutputPacketSize property of an AVAudioConverter configured for encoding this format.
+     *                          The maximum packet size can be obtained from the maximumOutputPacketSize property of an
+     *                          AVAudioConverter configured for encoding this format.
      */
     @Generated
     @Selector("initWithFormat:packetCapacity:maximumPacketSize:")
@@ -217,7 +219,8 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
      * <p>
      * Access the buffer's array of packet descriptions, if any.
      * <p>
-     * If the format has constant bytes per packet (format.streamDescription->mBytesPerPacket != 0), then this will return nil.
+     * If the format has constant bytes per packet (format.streamDescription->mBytesPerPacket != 0), then this will
+     * return nil.
      */
     @Generated
     @Selector("packetDescriptions")

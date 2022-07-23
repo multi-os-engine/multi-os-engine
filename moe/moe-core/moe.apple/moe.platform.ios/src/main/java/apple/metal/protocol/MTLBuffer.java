@@ -36,10 +36,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * A typeless allocation accessible by both the CPU and the GPU (MTLDevice) or by only the GPU when the storage mode is
  * MTLResourceStorageModePrivate.
  * <p>
- * Unlike in OpenGL and OpenCL, access to buffers is not synchronized.  The caller may use the CPU to modify the data at any time
+ * Unlike in OpenGL and OpenCL, access to buffers is not synchronized. The caller may use the CPU to modify the data at
+ * any time
  * but is also responsible for ensuring synchronization and coherency.
  * <p>
- * The contents become undefined if both the CPU and GPU write to the same buffer without a synchronizing action between those writes.
+ * The contents become undefined if both the CPU and GPU write to the same buffer without a synchronizing action between
+ * those writes.
  * This is true even when the regions written do not overlap.
  */
 @Generated

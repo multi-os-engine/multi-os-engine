@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Base class representing Tag-Length-Value record.
- * Every record has its tag and binary value represented as NSData instance.  Allows retrieving record's tag,
+ * Every record has its tag and binary value represented as NSData instance. Allows retrieving record's tag,
  * value (as NSData object) and binary representation of the record. Existing subclasses implement assorted
  * encodings - TKBERTLVRecord, TKSimpleTLVRecord and TKCompactTLVRecord.
  */
@@ -152,7 +152,8 @@ public class TKTLVRecord extends NSObject {
      * The amount of records is determined by the length of input data block.
      *
      * @param data Data block containing zero or more serialized forms of TLV record.
-     * @return An array of TLV record instances parsed from input data block or nil if data do not form valid TLV record sequence.
+     * @return An array of TLV record instances parsed from input data block or nil if data do not form valid TLV record
+     *         sequence.
      */
     @Generated
     @Selector("sequenceOfRecordsFromData:")

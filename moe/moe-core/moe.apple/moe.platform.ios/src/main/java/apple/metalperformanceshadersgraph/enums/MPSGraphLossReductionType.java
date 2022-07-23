@@ -3,13 +3,13 @@ package apple.metalperformanceshadersgraph.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@typedef]    MPSGraphLossReductionType
+ * [@typedef] MPSGraphLossReductionType
  * <p>
  * Options to be utilized by the graph
  * <p>
- * [@constant]   MPSGraphLossReductionTypeAxis                                   No Reductions
- * [@constant]   MPSGraphLossReductionTypeSum                                    ReduceSum down to a scalar
- * [@constant]   MPSGraphLossReductionTypeMean                                   ReduceMean down to a scalar
+ * [@constant] MPSGraphLossReductionTypeAxis No Reductions
+ * [@constant] MPSGraphLossReductionTypeSum ReduceSum down to a scalar
+ * [@constant] MPSGraphLossReductionTypeMean ReduceMean down to a scalar
  */
 @Generated
 public final class MPSGraphLossReductionType {

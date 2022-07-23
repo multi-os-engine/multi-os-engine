@@ -34,7 +34,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Initialization time
  * m[0] = 0 (Initialize initial 1st moment vector aka momentum, user is responsible for this)
  * v[0] = 0 (Initialize initial 2nd moment vector aka velocity, user is responsible for this)
- * t    = 0 (Initialize timestep)
+ * t = 0 (Initialize timestep)
  * <p>
  * https://arxiv.org/abs/1412.6980
  * <p>
@@ -42,12 +42,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * t = t + 1
  * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
  * <p>
- * m[t]     = beta1 * m[t-1] + (1 - beta1) * g
- * v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
+ * m[t] = beta1 * m[t-1] + (1 - beta1) * g
+ * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
  * variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
  * <p>
  * where,
- * g    is gradient of error wrt variable
+ * g is gradient of error wrt variable
  * v[t] is velocity
  * m[t] is momentum
  */
@@ -84,7 +84,7 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   beta1
+     * [@property] beta1
      * <p>
      * The beta1 at which we update values
      * <p>
@@ -95,7 +95,7 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     public native double beta1();
 
     /**
-     * [@property]   beta2
+     * [@property] beta2
      * <p>
      * The beta2 at which we update values
      * <p>
@@ -139,24 +139,34 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * t = t + 1
      * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
      * <p>
-     * m[t]     = beta1 * m[t-1] + (1 - beta1) * g
-     * v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
+     * m[t] = beta1 * m[t-1] + (1 - beta1) * g
+     * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * maxVel[t] = max(maxVel[t-1],v[t])
      * variable = variable - lr[t] * m[t] / (sqrt(maxVel[t]) + epsilon)
      *
      * @param commandBuffer                   A valid MTLCommandBuffer to receive the encoded kernel.
-     * @param batchNormalizationGradientState A valid MPSCNNBatchNormalizationState object which specifies the input state with gradients for this update.
-     * @param batchNormalizationSourceState   A valid MPSCNNBatchNormalizationState object which specifies the input state with original gamma/beta for this update.
-     * @param inputMomentumVectors            An array MPSVector object which specifies the gradient momentum vectors which will
-     *                                        be updated and overwritten. The index 0 corresponds to gamma, index 1 corresponds to beta, array can be of
+     * @param batchNormalizationGradientState A valid MPSCNNBatchNormalizationState object which specifies the input
+     *                                        state with gradients for this update.
+     * @param batchNormalizationSourceState   A valid MPSCNNBatchNormalizationState object which specifies the input
+     *                                        state with original gamma/beta for this update.
+     * @param inputMomentumVectors            An array MPSVector object which specifies the gradient momentum vectors
+     *                                        which will
+     *                                        be updated and overwritten. The index 0 corresponds to gamma, index 1
+     *                                        corresponds to beta, array can be of
      *                                        size 1 in which case beta won't be updated
-     * @param inputVelocityVectors            An array MPSVector object which specifies the gradient velocity vectors which will
-     *                                        be updated and overwritten. The index 0 corresponds to gamma, index 1 corresponds to beta, array can be of
+     * @param inputVelocityVectors            An array MPSVector object which specifies the gradient velocity vectors
+     *                                        which will
+     *                                        be updated and overwritten. The index 0 corresponds to gamma, index 1
+     *                                        corresponds to beta, array can be of
      *                                        size 1 in which case beta won't be updated
-     * @param maximumVelocityVectors          An array MPSVector object which specifies the maximum velocity vectors which will
-     *                                        be updated and overwritten. The index 0 corresponds to weights, index 1 corresponds to biases, array can be of
-     *                                        size 1 in which case biases won't be updated. May be nil, if nil then normal Adam optimizer behaviour is followed.
-     * @param resultState                     A valid MPSCNNNormalizationGammaAndBetaState object which specifies the resultValues state which will
+     * @param maximumVelocityVectors          An array MPSVector object which specifies the maximum velocity vectors
+     *                                        which will
+     *                                        be updated and overwritten. The index 0 corresponds to weights, index 1
+     *                                        corresponds to biases, array can be of
+     *                                        size 1 in which case biases won't be updated. May be nil, if nil then
+     *                                        normal Adam optimizer behaviour is followed.
+     * @param resultState                     A valid MPSCNNNormalizationGammaAndBetaState object which specifies the
+     *                                        resultValues state which will
      *                                        be updated and overwritten.
      */
     @Generated
@@ -176,20 +186,27 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * t = t + 1
      * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
      * <p>
-     * m[t]     = beta1 * m[t-1] + (1 - beta1) * g
-     * v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
+     * m[t] = beta1 * m[t-1] + (1 - beta1) * g
+     * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
      *
      * @param commandBuffer                   A valid MTLCommandBuffer to receive the encoded kernel.
-     * @param batchNormalizationGradientState A valid MPSCNNBatchNormalizationState object which specifies the input state with gradients for this update.
-     * @param batchNormalizationSourceState   A valid MPSCNNBatchNormalizationState object which specifies the input state with original gamma/beta for this update.
-     * @param inputMomentumVectors            An array MPSVector object which specifies the gradient momentum vectors which will
-     *                                        be updated and overwritten. The index 0 corresponds to gamma, index 1 corresponds to beta, array can be of
+     * @param batchNormalizationGradientState A valid MPSCNNBatchNormalizationState object which specifies the input
+     *                                        state with gradients for this update.
+     * @param batchNormalizationSourceState   A valid MPSCNNBatchNormalizationState object which specifies the input
+     *                                        state with original gamma/beta for this update.
+     * @param inputMomentumVectors            An array MPSVector object which specifies the gradient momentum vectors
+     *                                        which will
+     *                                        be updated and overwritten. The index 0 corresponds to gamma, index 1
+     *                                        corresponds to beta, array can be of
      *                                        size 1 in which case beta won't be updated
-     * @param inputVelocityVectors            An array MPSVector object which specifies the gradient velocity vectors which will
-     *                                        be updated and overwritten. The index 0 corresponds to gamma, index 1 corresponds to beta, array can be of
+     * @param inputVelocityVectors            An array MPSVector object which specifies the gradient velocity vectors
+     *                                        which will
+     *                                        be updated and overwritten. The index 0 corresponds to gamma, index 1
+     *                                        corresponds to beta, array can be of
      *                                        size 1 in which case beta won't be updated
-     * @param resultState                     A valid MPSCNNNormalizationGammaAndBetaState object which specifies the resultValues state which will
+     * @param resultState                     A valid MPSCNNNormalizationGammaAndBetaState object which specifies the
+     *                                        resultValues state which will
      *                                        be updated and overwritten.
      */
     @Generated
@@ -202,30 +219,36 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
             MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
-     * Encode an AMSGrad variant of  MPSNNOptimizerAdam object to a command buffer to perform out of place update
+     * Encode an AMSGrad variant of MPSNNOptimizerAdam object to a command buffer to perform out of place update
      * <p>
      * The following operations would be applied
      * At update time:
      * t = t + 1
      * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
      * <p>
-     * m[t]     = beta1 * m[t-1] + (1 - beta1) * g
-     * v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
+     * m[t] = beta1 * m[t-1] + (1 - beta1) * g
+     * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * maxVel[t] = max(maxVel[t-1],v[t])
      * variable = variable - lr[t] * m[t] / (sqrt(maxVel[t]) + epsilon)
      *
      * @param commandBuffer           A valid MTLCommandBuffer to receive the encoded kernel.
-     * @param batchNormalizationState A valid MPSCNNBatchNormalizationState object which specifies the input state with gradients and original gamma/beta for this update.
+     * @param batchNormalizationState A valid MPSCNNBatchNormalizationState object which specifies the input state with
+     *                                gradients and original gamma/beta for this update.
      * @param inputMomentumVectors    An array MPSVector object which specifies the gradient momentum vectors which will
-     *                                be updated and overwritten. The index 0 corresponds to gamma, index 1 corresponds to beta, array can be of
+     *                                be updated and overwritten. The index 0 corresponds to gamma, index 1 corresponds
+     *                                to beta, array can be of
      *                                size 1 in which case beta won't be updated
      * @param inputVelocityVectors    An array MPSVector object which specifies the gradient velocity vectors which will
-     *                                be updated and overwritten. The index 0 corresponds to gamma, index 1 corresponds to beta, array can be of
+     *                                be updated and overwritten. The index 0 corresponds to gamma, index 1 corresponds
+     *                                to beta, array can be of
      *                                size 1 in which case beta won't be updated
      * @param maximumVelocityVectors  An array MPSVector object which specifies the maximum velocity vectors which will
-     *                                be updated and overwritten. The index 0 corresponds to weights, index 1 corresponds to biases, array can be of
-     *                                size 1 in which case biases won't be updated. May be nil, if nil then normal Adam optimizer behaviour is followed.
-     * @param resultState             A valid MPSCNNNormalizationGammaAndBetaState object which specifies the resultValues state which will
+     *                                be updated and overwritten. The index 0 corresponds to weights, index 1
+     *                                corresponds to biases, array can be of
+     *                                size 1 in which case biases won't be updated. May be nil, if nil then normal Adam
+     *                                optimizer behaviour is followed.
+     * @param resultState             A valid MPSCNNNormalizationGammaAndBetaState object which specifies the
+     *                                resultValues state which will
      *                                be updated and overwritten.
      */
     @Generated
@@ -244,19 +267,23 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * t = t + 1
      * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
      * <p>
-     * m[t]     = beta1 * m[t-1] + (1 - beta1) * g
-     * v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
+     * m[t] = beta1 * m[t-1] + (1 - beta1) * g
+     * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
      *
      * @param commandBuffer           A valid MTLCommandBuffer to receive the encoded kernel.
-     * @param batchNormalizationState A valid MPSCNNBatchNormalizationState object which specifies the input state with gradients and original gamma/beta for this update.
+     * @param batchNormalizationState A valid MPSCNNBatchNormalizationState object which specifies the input state with
+     *                                gradients and original gamma/beta for this update.
      * @param inputMomentumVectors    An array MPSVector object which specifies the gradient momentum vectors which will
-     *                                be updated and overwritten. The index 0 corresponds to gamma, index 1 corresponds to beta, array can be of
+     *                                be updated and overwritten. The index 0 corresponds to gamma, index 1 corresponds
+     *                                to beta, array can be of
      *                                size 1 in which case beta won't be updated
      * @param inputVelocityVectors    An array MPSVector object which specifies the gradient velocity vectors which will
-     *                                be updated and overwritten. The index 0 corresponds to gamma, index 1 corresponds to beta, array can be of
+     *                                be updated and overwritten. The index 0 corresponds to gamma, index 1 corresponds
+     *                                to beta, array can be of
      *                                size 1 in which case beta won't be updated
-     * @param resultState             A valid MPSCNNNormalizationGammaAndBetaState object which specifies the resultValues state which will
+     * @param resultState             A valid MPSCNNNormalizationGammaAndBetaState object which specifies the
+     *                                resultValues state which will
      *                                be updated and overwritten.
      */
     @Generated
@@ -274,24 +301,33 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * t = t + 1
      * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
      * <p>
-     * m[t]     = beta1 * m[t-1] + (1 - beta1) * g
-     * v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
+     * m[t] = beta1 * m[t-1] + (1 - beta1) * g
+     * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * maxVel[t] = max(maxVel[t-1],v[t])
      * variable = variable - lr[t] * m[t] / (sqrt(maxVel[t]) + epsilon)
      *
      * @param commandBuffer            A valid MTLCommandBuffer to receive the encoded kernel.
-     * @param convolutionGradientState A valid MPSCNNConvolutionGradientState object which specifies the input state with gradients for this update.
-     * @param convolutionSourceState   A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the input state with values to be updated.
-     * @param inputMomentumVectors     An array MPSVector object which specifies the gradient momentum vectors which will
-     *                                 be updated and overwritten. The index 0 corresponds to weights, index 1 corresponds to biases, array can be of
+     * @param convolutionGradientState A valid MPSCNNConvolutionGradientState object which specifies the input state
+     *                                 with gradients for this update.
+     * @param convolutionSourceState   A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the input
+     *                                 state with values to be updated.
+     * @param inputMomentumVectors     An array MPSVector object which specifies the gradient momentum vectors which
+     *                                 will
+     *                                 be updated and overwritten. The index 0 corresponds to weights, index 1
+     *                                 corresponds to biases, array can be of
      *                                 size 1 in which case biases won't be updated
-     * @param inputVelocityVectors     An array MPSVector object which specifies the gradient velocity vectors which will
-     *                                 be updated and overwritten. The index 0 corresponds to weights, index 1 corresponds to biases, array can be of
+     * @param inputVelocityVectors     An array MPSVector object which specifies the gradient velocity vectors which
+     *                                 will
+     *                                 be updated and overwritten. The index 0 corresponds to weights, index 1
+     *                                 corresponds to biases, array can be of
      *                                 size 1 in which case biases won't be updated
      * @param maximumVelocityVectors   An array MPSVector object which specifies the maximum velocity vectors which will
-     *                                 be updated and overwritten. The index 0 corresponds to weights, index 1 corresponds to biases, array can be of
-     *                                 size 1 in which case biases won't be updated. May be nil, if nil then normal Adam optimizer behaviour is followed.
-     * @param resultState              A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the resultValues state which will
+     *                                 be updated and overwritten. The index 0 corresponds to weights, index 1
+     *                                 corresponds to biases, array can be of
+     *                                 size 1 in which case biases won't be updated. May be nil, if nil then normal Adam
+     *                                 optimizer behaviour is followed.
+     * @param resultState              A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the
+     *                                 resultValues state which will
      *                                 be updated and overwritten.
      */
     @Generated
@@ -311,20 +347,27 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * t = t + 1
      * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
      * <p>
-     * m[t]     = beta1 * m[t-1] + (1 - beta1) * g
-     * v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
+     * m[t] = beta1 * m[t-1] + (1 - beta1) * g
+     * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
      *
      * @param commandBuffer            A valid MTLCommandBuffer to receive the encoded kernel.
-     * @param convolutionGradientState A valid MPSCNNConvolutionGradientState object which specifies the input state with gradients for this update.
-     * @param convolutionSourceState   A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the input state with values to be updated.
-     * @param inputMomentumVectors     An array MPSVector object which specifies the gradient momentum vectors which will
-     *                                 be updated and overwritten. The index 0 corresponds to weights, index 1 corresponds to biases, array can be of
+     * @param convolutionGradientState A valid MPSCNNConvolutionGradientState object which specifies the input state
+     *                                 with gradients for this update.
+     * @param convolutionSourceState   A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the input
+     *                                 state with values to be updated.
+     * @param inputMomentumVectors     An array MPSVector object which specifies the gradient momentum vectors which
+     *                                 will
+     *                                 be updated and overwritten. The index 0 corresponds to weights, index 1
+     *                                 corresponds to biases, array can be of
      *                                 size 1 in which case biases won't be updated
-     * @param inputVelocityVectors     An array MPSVector object which specifies the gradient velocity vectors which will
-     *                                 be updated and overwritten. The index 0 corresponds to weights, index 1 corresponds to biases, array can be of
+     * @param inputVelocityVectors     An array MPSVector object which specifies the gradient velocity vectors which
+     *                                 will
+     *                                 be updated and overwritten. The index 0 corresponds to weights, index 1
+     *                                 corresponds to biases, array can be of
      *                                 size 1 in which case biases won't be updated
-     * @param resultState              A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the resultValues state which will
+     * @param resultState              A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the
+     *                                 resultValues state which will
      *                                 be updated and overwritten.
      */
     @Generated
@@ -358,21 +401,24 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * t = t + 1
      * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
      * <p>
-     * m[t]     = beta1 * m[t-1] + (1 - beta1) * g
-     * v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
+     * m[t] = beta1 * m[t-1] + (1 - beta1) * g
+     * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * maxVel[t] = max(maxVel[t-1],v[t])
      * variable = variable - lr[t] * m[t] / (sqrt(maxVel[t]) + epsilon)
      *
      * @param commandBuffer         A valid MTLCommandBuffer to receive the encoded kernel.
-     * @param inputGradientVector   A valid MPSVector object which specifies the input vector of gradients for this update.
+     * @param inputGradientVector   A valid MPSVector object which specifies the input vector of gradients for this
+     *                              update.
      * @param inputValuesVector     A valid MPSVector object which specifies the input vector of values to be updated.
      * @param inputMomentumVector   A valid MPSVector object which specifies the gradient momentum vector which will
      *                              be updated and overwritten.
      * @param inputVelocityVector   A valid MPSVector object which specifies the gradient velocity vector which will
      *                              be updated and overwritten.
      * @param maximumVelocityVector A valid MPSVector object which specifies the maximum velocity vector which will
-     *                              be updated and overwritten. May be nil, if nil then normal Adam optimizer behaviour is followed.
-     * @param resultValuesVector    A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the resultValues state which will
+     *                              be updated and overwritten. May be nil, if nil then normal Adam optimizer behaviour
+     *                              is followed.
+     * @param resultValuesVector    A valid MPSCNNConvolutionWeightsAndBiasesState object which specifies the
+     *                              resultValues state which will
      *                              be updated and overwritten.
      */
     @Generated
@@ -390,12 +436,13 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
      * t = t + 1
      * lr[t] = learningRate * sqrt(1 - beta2^t) / (1 - beta1^t)
      * <p>
-     * m[t]     = beta1 * m[t-1] + (1 - beta1) * g
-     * v[t]     = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
+     * m[t] = beta1 * m[t-1] + (1 - beta1) * g
+     * v[t] = beta2 * v[t-1] + (1 - beta2) * (g ^ 2)
      * variable = variable - lr[t] * m[t] / (sqrt(v[t]) + epsilon)
      *
      * @param commandBuffer       A valid MTLCommandBuffer to receive the encoded kernel.
-     * @param inputGradientVector A valid MPSVector object which specifies the input vector of gradients for this update.
+     * @param inputGradientVector A valid MPSVector object which specifies the input vector of gradients for this
+     *                            update.
      * @param inputValuesVector   A valid MPSVector object which specifies the input vector of values to be updated.
      * @param inputMomentumVector A valid MPSVector object which specifies the gradient momentum vector which will
      *                            be updated and overwritten.
@@ -412,7 +459,7 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
             MPSVector resultValuesVector);
 
     /**
-     * [@property]   epsilon
+     * [@property] epsilon
      * <p>
      * The epsilon at which we update values
      * <p>
@@ -508,7 +555,7 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   timeStep
+     * [@property] timeStep
      * <p>
      * Current timeStep for the update, number of times update has occurred
      */
@@ -535,7 +582,7 @@ public class MPSNNOptimizerAdam extends MPSNNOptimizer {
     }
 
     /**
-     * [@property]   timeStep
+     * [@property] timeStep
      * <p>
      * Current timeStep for the update, number of times update has occurred
      */

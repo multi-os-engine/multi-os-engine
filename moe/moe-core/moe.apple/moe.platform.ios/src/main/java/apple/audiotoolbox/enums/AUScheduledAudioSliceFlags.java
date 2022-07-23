@@ -19,23 +19,23 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]           ScheduledAudioSlice
+ * [@enum] ScheduledAudioSlice
  * <p>
  * bits in ScheduledAudioSlice.mFlags
  * <p>
- * [@constant]       kScheduledAudioSliceFlag_Complete
+ * [@constant] kScheduledAudioSliceFlag_Complete
  * Set if the unit is done with this slice
- * [@constant]       kScheduledAudioSliceFlag_BeganToRender
+ * [@constant] kScheduledAudioSliceFlag_BeganToRender
  * Set if any portion of the buffer has been played
- * [@constant]       kScheduledAudioSliceFlag_BeganToRenderLate
+ * [@constant] kScheduledAudioSliceFlag_BeganToRenderLate
  * Set if any portion of the buffer was not played because it was scheduled late
- * [@constant]       kScheduledAudioSliceFlag_Loop
+ * [@constant] kScheduledAudioSliceFlag_Loop
  * specifies that the buffer should loop indefinitely
- * [@constant]       kScheduledAudioSliceFlag_Interrupt
+ * [@constant] kScheduledAudioSliceFlag_Interrupt
  * specifies that the buffer should interrupt any previously scheduled buffer
  * (by default, buffers following a playing buffer are not played until the
  * playing buffer has completed).
- * [@constant]       kScheduledAudioSliceFlag_InterruptAtLoop
+ * [@constant] kScheduledAudioSliceFlag_InterruptAtLoop
  * specifies that the buffer should interrupt any previously scheduled buffer,
  * but only at a loop point in that buffer.
  */

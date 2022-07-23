@@ -486,7 +486,7 @@ public final class CoreFoundation {
      *                the dictionary, are not understood by the equal() callback,
      *                the behavior is undefined.
      * @return Returns 1 if a matching key is used by the dictionary,
-     * 0 otherwise.
+     *         0 otherwise.
      */
     @Generated
     @CFunction
@@ -565,10 +565,10 @@ public final class CoreFoundation {
      *                the dictionary, are not understood by the equal() callback,
      *                the behavior is undefined.
      * @return The value with the given key in the dictionary, or NULL if
-     * no key-value pair with a matching key exists. Since NULL
-     * can be a valid value in some dictionaries, the function
-     * CFDictionaryGetValueIfPresent() must be used to distinguish
-     * NULL-no-found from NULL-is-the-value.
+     *         no key-value pair with a matching key exists. Since NULL
+     *         can be a valid value in some dictionaries, the function
+     *         CFDictionaryGetValueIfPresent() must be used to distinguish
+     *         NULL-no-found from NULL-is-the-value.
      */
     @Generated
     @CFunction
@@ -885,7 +885,7 @@ public final class CoreFoundation {
      *                  of version 0 with all fields NULL had been passed in.
      *                  Otherwise, if any of the fields are not valid pointers to
      *                  functions of the correct type, or this parameter is not a
-     *                  valid pointer to a  CFArrayCallBacks callbacks structure,
+     *                  valid pointer to a CFArrayCallBacks callbacks structure,
      *                  the behavior is undefined. If any of the values put into the
      *                  array is not one understood by one of the callback functions
      *                  the behavior when that callback function is used is
@@ -956,7 +956,7 @@ public final class CoreFoundation {
      *                  of version 0 with all fields NULL had been passed in.
      *                  Otherwise, if any of the fields are not valid pointers to
      *                  functions of the correct type, or this parameter is not a
-     *                  valid pointer to a  CFArrayCallBacks callbacks structure,
+     *                  valid pointer to a CFArrayCallBacks callbacks structure,
      *                  the behavior is undefined. If any of the values put into the
      *                  array is not one understood by one of the callback functions
      *                  the behavior when that callback function is used is
@@ -1033,7 +1033,7 @@ public final class CoreFoundation {
      *                 in the array, are not understood by the equal() callback,
      *                 the behavior is undefined.
      * @return The number of times the given value occurs in the array,
-     * within the specified range.
+     *         within the specified range.
      */
     @Generated
     @CFunction
@@ -1059,7 +1059,7 @@ public final class CoreFoundation {
      *                 in the array, are not understood by the equal() callback,
      *                 the behavior is undefined.
      * @return true, if the value is in the specified range of the array,
-     * otherwise false.
+     *         otherwise false.
      */
     @Generated
     @CFunction
@@ -1155,7 +1155,7 @@ public final class CoreFoundation {
      *                 in the array, are not understood by the equal() callback,
      *                 the behavior is undefined.
      * @return The lowest index of the matching values in the range, or
-     * kCFNotFound if no value in the range matched.
+     *         kCFNotFound if no value in the range matched.
      */
     @Generated
     @CFunction
@@ -1184,7 +1184,7 @@ public final class CoreFoundation {
      *                 in the array, are not understood by the equal() callback,
      *                 the behavior is undefined.
      * @return The highest index of the matching values in the range, or
-     * kCFNotFound if no value in the range matched.
+     *         kCFNotFound if no value in the range matched.
      */
     @Generated
     @CFunction
@@ -1222,12 +1222,12 @@ public final class CoreFoundation {
      *                   what is expected by the comparator function, the behavior is
      *                   undefined.
      * @return The return value is either 1) the index of a value that
-     * matched, if the target value matches one or more in the
-     * range, 2) greater than or equal to the end point of the
-     * range, if the value is greater than all the values in the
-     * range, or 3) the index of the value greater than the target
-     * value, if the value lies between two of (or less than all
-     * of) the values in the range.
+     *         matched, if the target value matches one or more in the
+     *         range, 2) greater than or equal to the end point of the
+     *         range, if the value is greater than all the values in the
+     *         range, or 3) the index of the value greater than the target
+     *         value, if the value lies between two of (or less than all
+     *         of) the values in the range.
      */
     @Generated
     @CFunction
@@ -1462,11 +1462,11 @@ public final class CoreFoundation {
      * Returns a predefined CFCharacterSet instance.
      *
      * @param theSetIdentifier The CFCharacterSetPredefinedSet selector
-     *                         which specifies the predefined character set.  If the
+     *                         which specifies the predefined character set. If the
      *                         value is not in CFCharacterSetPredefinedSet, the behavior
      *                         is undefined.
      * @return A reference to the predefined immutable CFCharacterSet.
-     * This instance is owned by CF.
+     *         This instance is owned by CF.
      */
     @Generated
     @CFunction
@@ -1482,8 +1482,8 @@ public final class CoreFoundation {
      *                 CFAllocator is used. If this reference is not a valid
      *                 CFAllocator, the behavior is undefined.
      * @param theRange The CFRange which should be used to specify the
-     *                 Unicode range the character set is filled with.  It
-     *                 accepts the range in 32-bit in the UTF-32 format.  The
+     *                 Unicode range the character set is filled with. It
+     *                 accepts the range in 32-bit in the UTF-32 format. The
      *                 valid character point range is from 0x00000 to 0x10FFFF.
      *                 If the range is outside of the valid Unicode character
      *                 point, the behavior is undefined.
@@ -1525,16 +1525,16 @@ public final class CoreFoundation {
      *                CFAllocator, the behavior is undefined.
      * @param theData The CFData which should be used to specify the
      *                bitmap representation of the Unicode character points
-     *                the character set is filled with.  The bitmap
+     *                the character set is filled with. The bitmap
      *                representation could contain all the Unicode character
-     *                range starting from BMP to Plane 16.  The first 8192 bytes
-     *                of the data represent the BMP range.  The BMP range 8192
+     *                range starting from BMP to Plane 16. The first 8192 bytes
+     *                of the data represent the BMP range. The BMP range 8192
      *                bytes can be followed by zero to sixteen 8192 byte
      *                bitmaps, each one with the plane index byte prepended.
      *                For example, the bitmap representing the BMP and Plane 2
      *                has the size of 16385 bytes (8192 bytes for BMP, 1 byte
-     *                index + 8192 bytes bitmap for Plane 2).  The plane index
-     *                byte, in this case, contains the integer value two.  If
+     *                index + 8192 bytes bitmap for Plane 2). The plane index
+     *                byte, in this case, contains the integer value two. If
      *                this parameter is not a valid CFData or it contains a
      *                Plane index byte outside of the valid Plane range
      *                (1 to 16), the behavior is undefined.
@@ -1554,7 +1554,7 @@ public final class CoreFoundation {
      *               parameter may be NULL in which case the current default
      *               CFAllocator is used. If this reference is not a valid
      *               CFAllocator, the behavior is undefined.
-     * @param theSet The CFCharacterSet which is to be inverted.  If this
+     * @param theSet The CFCharacterSet which is to be inverted. If this
      *               parameter is not a valid CFCharacterSet, the behavior is
      *               undefined.
      * @return A reference to the new immutable CFCharacterSet.
@@ -1581,10 +1581,10 @@ public final class CoreFoundation {
      * [@function] CFCharacterSetHasMemberInPlane
      * Reports whether or not the character set contains at least one member character in the specified plane.
      *
-     * @param theSet   The character set to be checked for the membership.  If this
+     * @param theSet   The character set to be checked for the membership. If this
      *                 parameter is not a valid CFCharacterSet, the behavior is undefined.
      * @param thePlane The plane number to be checked for the membership.
-     *                 The valid value range is from 0 to 16.  If the value is outside of the valid
+     *                 The valid value range is from 0 to 16. If the value is outside of the valid
      *                 plane number range, the behavior is undefined.
      */
     @Generated
@@ -1608,14 +1608,15 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFCharacterSetCreateCopy
-     * Creates a new character set with the values from the given character set.  This function tries to compact the backing store where applicable.
+     * Creates a new character set with the values from the given character set. This function tries to compact the
+     * backing store where applicable.
      *
      * @param alloc  The CFAllocator which should be used to allocate
      *               memory for the array and its storage for values. This
      *               parameter may be NULL in which case the current default
      *               CFAllocator is used. If this reference is not a valid
      *               CFAllocator, the behavior is undefined.
-     * @param theSet The CFCharacterSet which is to be copied.  If this
+     * @param theSet The CFCharacterSet which is to be copied. If this
      *               parameter is not a valid CFCharacterSet, the behavior is
      *               undefined.
      * @return A reference to the new CFCharacterSet.
@@ -1633,7 +1634,7 @@ public final class CoreFoundation {
      *               parameter may be NULL in which case the current default
      *               CFAllocator is used. If this reference is not a valid
      *               CFAllocator, the behavior is undefined.
-     * @param theSet The CFCharacterSet which is to be copied.  If this
+     * @param theSet The CFCharacterSet which is to be copied. If this
      *               parameter is not a valid CFCharacterSet, the behavior is
      *               undefined.
      * @return A reference to the new mutable CFCharacterSet.
@@ -1650,7 +1651,7 @@ public final class CoreFoundation {
      * @param theSet  The character set to be searched. If this parameter
      *                is not a valid CFCharacterSet, the behavior is undefined.
      * @param theChar The Unicode character for which to test against the
-     *                character set.  Note that this function takes 16-bit Unicode
+     *                character set. Note that this function takes 16-bit Unicode
      *                character value; hence, it does not support access to the
      *                non-BMP planes.
      * @return true, if the value is in the character set, otherwise false.
@@ -1683,7 +1684,7 @@ public final class CoreFoundation {
      *               CFAllocator is used. If this reference is not a valid
      *               CFAllocator, the behavior is undefined.
      * @param theSet The CFCharacterSet which is to be used create the
-     *               bitmap representation from.  Refer to the comments for
+     *               bitmap representation from. Refer to the comments for
      *               CFCharacterSetCreateWithBitmapRepresentation for the
      *               detailed discussion of the bitmap representation format.
      *               If this parameter is not a valid CFCharacterSet, the
@@ -1702,9 +1703,9 @@ public final class CoreFoundation {
      * @param theSet   The character set to which the range is to be added.
      *                 If this parameter is not a valid mutable CFCharacterSet,
      *                 the behavior is undefined.
-     * @param theRange The range to add to the character set.  It accepts
-     *                 the range in 32-bit in the UTF-32 format.  The valid
-     *                 character point range is from 0x00000 to 0x10FFFF.  If the
+     * @param theRange The range to add to the character set. It accepts
+     *                 the range in 32-bit in the UTF-32 format. The valid
+     *                 character point range is from 0x00000 to 0x10FFFF. If the
      *                 range is outside of the valid Unicode character point,
      *                 the behavior is undefined.
      */
@@ -1718,7 +1719,7 @@ public final class CoreFoundation {
      * Removes the given range from the charaacter set.
      *
      * @param theSet   The character set from which the range is to be
-     *                 removed.  If this parameter is not a valid mutable
+     *                 removed. If this parameter is not a valid mutable
      *                 CFCharacterSet, the behavior is undefined.
      * @param theRange The range to remove from the character set.
      *                 It accepts the range in 32-bit in the UTF-32 format.
@@ -1736,7 +1737,7 @@ public final class CoreFoundation {
      * Adds the characters in the given string to the charaacter set.
      *
      * @param theSet    The character set to which the characters in the
-     *                  string are to be added.  If this parameter is not a
+     *                  string are to be added. If this parameter is not a
      *                  valid mutable CFCharacterSet, the behavior is undefined.
      * @param theString The string to add to the character set.
      *                  If this parameter is not a valid CFString, the behavior
@@ -1752,7 +1753,7 @@ public final class CoreFoundation {
      * Removes the characters in the given string from the charaacter set.
      *
      * @param theSet    The character set from which the characters in the
-     *                  string are to be remove.  If this parameter is not a
+     *                  string are to be remove. If this parameter is not a
      *                  valid mutable CFCharacterSet, the behavior is undefined.
      * @param theString The string to remove from the character set.
      *                  If this parameter is not a valid CFString, the behavior
@@ -1768,11 +1769,11 @@ public final class CoreFoundation {
      * Forms the union with the given character set.
      *
      * @param theSet      The destination character set into which the
-     *                    union of the two character sets is stored.  If this
+     *                    union of the two character sets is stored. If this
      *                    parameter is not a valid mutable CFCharacterSet, the
      *                    behavior is undefined.
      * @param theOtherSet The character set with which the union is
-     *                    formed.  If this parameter is not a valid CFCharacterSet,
+     *                    formed. If this parameter is not a valid CFCharacterSet,
      *                    the behavior is undefined.
      */
     @Generated
@@ -1788,7 +1789,7 @@ public final class CoreFoundation {
      *                    If this parameter is not a valid mutable CFCharacterSet,
      *                    the behavior is undefined.
      * @param theOtherSet The character set with which the intersection
-     *                    is formed.  If this parameter is not a valid CFCharacterSet,
+     *                    is formed. If this parameter is not a valid CFCharacterSet,
      *                    the behavior is undefined.
      */
     @Generated
@@ -1830,8 +1831,10 @@ public final class CoreFoundation {
      * - CFNotificationCenterAddObserver(): the 'object' and 'suspensionBehavior' arguments are ignored.
      * - CFNotificationCenterAddObserver(): the 'name' argument may not be NULL (for this center).
      * - CFNotificationCenterRemoveObserver(): the 'object' argument is ignored.
-     * - CFNotificationCenterPostNotification(): the 'object', 'userInfo', and 'deliverImmediately' arguments are ignored.
-     * - CFNotificationCenterPostNotificationWithOptions(): the 'object', 'userInfo', and 'options' arguments are ignored.
+     * - CFNotificationCenterPostNotification(): the 'object', 'userInfo', and 'deliverImmediately' arguments are
+     * ignored.
+     * - CFNotificationCenterPostNotificationWithOptions(): the 'object', 'userInfo', and 'options' arguments are
+     * ignored.
      * The Darwin Notify Center has no notion of per-user sessions, all notifications are system-wide.
      * As with distributed notifications, the main thread's run loop must be running in one of the
      * common modes (usually kCFRunLoopDefaultMode) for Darwin-style notifications to be delivered.
@@ -1873,7 +1876,7 @@ public final class CoreFoundation {
     public static native CFLocaleRef CFLocaleGetSystem();
 
     /**
-     * Returns the "root", canonical locale.  Contains fixed "backstop" settings.
+     * Returns the "root", canonical locale. Contains fixed "backstop" settings.
      */
     @Generated
     @CFunction
@@ -1882,11 +1885,11 @@ public final class CoreFoundation {
     /**
      * Returns the logical "user" locale for the current user.
      * [This is Copy in the sense that you get a retain you have to release,
-     * but we may return the same cached object over and over.]  Settings
+     * but we may return the same cached object over and over.] Settings
      * you get from this locale do not change under you as CFPreferences
-     * are changed (for safety and correctness).  Generally you would not
+     * are changed (for safety and correctness). Generally you would not
      * grab this and hold onto it forever, but use it to do the operations
-     * you need to do at the moment, then throw it away.  (The non-changing
+     * you need to do at the moment, then throw it away. (The non-changing
      * ensures that all the results of your operations are consistent.)
      */
     @Generated
@@ -1903,7 +1906,7 @@ public final class CoreFoundation {
 
     /**
      * Returns an array of CFStrings that represents all known legal ISO
-     * language codes.  Note: many of these will not have any supporting
+     * language codes. Note: many of these will not have any supporting
      * locale data in Mac OS X.
      */
     @Generated
@@ -1912,7 +1915,7 @@ public final class CoreFoundation {
 
     /**
      * Returns an array of CFStrings that represents all known legal ISO
-     * country codes.  Note: many of these will not have any supporting
+     * country codes. Note: many of these will not have any supporting
      * locale data in Mac OS X.
      */
     @Generated
@@ -1921,7 +1924,7 @@ public final class CoreFoundation {
 
     /**
      * Returns an array of CFStrings that represents all known legal ISO
-     * currency codes.  Note: some of these currencies may be obsolete, or
+     * currency codes. Note: some of these currencies may be obsolete, or
      * represent other financial instruments.
      */
     @Generated
@@ -2027,14 +2030,14 @@ public final class CoreFoundation {
     /**
      * Having gotten a CFLocale from somebody, code should make a copy
      * if it is going to use it for several operations
-     * or hold onto it.  In the future, there may be mutable locales.
+     * or hold onto it. In the future, there may be mutable locales.
      */
     @Generated
     @CFunction
     public static native CFStringRef CFLocaleGetIdentifier(CFLocaleRef locale);
 
     /**
-     * Returns the locale's identifier.  This may not be the same string
+     * Returns the locale's identifier. This may not be the same string
      * that the locale was created with (CFLocale may canonicalize it).
      */
     @Generated
@@ -2042,8 +2045,8 @@ public final class CoreFoundation {
     public static native ConstVoidPtr CFLocaleGetValue(CFLocaleRef locale, CFStringRef key);
 
     /**
-     * Returns the value for the given key.  This is how settings and state
-     * are accessed via a CFLocale.  Values might be of any CF type.
+     * Returns the value for the given key. This is how settings and state
+     * are accessed via a CFLocale. Values might be of any CF type.
      */
     @Generated
     @CFunction
@@ -2074,7 +2077,8 @@ public final class CoreFoundation {
             int encoding);
 
     /**
-     * The following takes an explicit length, and allows you to specify whether the data is an external format --- that is, whether to pay attention to the BOM character (if any) and do byte swapping if necessary
+     * The following takes an explicit length, and allows you to specify whether the data is an external format --- that
+     * is, whether to pay attention to the BOM character (if any) and do byte swapping if necessary
      */
     @Generated
     @CFunction
@@ -2117,7 +2121,8 @@ public final class CoreFoundation {
             int encoding, CFAllocatorRef contentsDeallocator);
 
     /**
-     * The following takes an explicit length, and allows you to specify whether the data is an external format --- that is, whether to pay attention to the BOM character (if any) and do byte swapping if necessary
+     * The following takes an explicit length, and allows you to specify whether the data is an external format --- that
+     * is, whether to pay attention to the BOM character (if any) and do byte swapping if necessary
      */
     @Generated
     @CFunction
@@ -2157,7 +2162,8 @@ public final class CoreFoundation {
             CFDictionaryRef formatOptions, CFStringRef format, BytePtr arguments);
 
     /**
-     * Functions to create mutable strings. "maxLength", if not 0, is a hard bound on the length of the string. If 0, there is no limit on the length.
+     * Functions to create mutable strings. "maxLength", if not 0, is a hard bound on the length of the string. If 0,
+     * there is no limit on the length.
      */
     @Generated
     @CFunction
@@ -2173,7 +2179,8 @@ public final class CoreFoundation {
      * The string will be manipulated within the provided buffer (if any) until it outgrows capacity; then the
      * externalCharactersAllocator will be consulted for more memory. When the CFString is deallocated, the
      * buffer will be freed with the externalCharactersAllocator. If you provide kCFAllocatorNull here, and the buffer
-     * needs to grow, then CFString will switch to using the default allocator. See comments at top of this file for more info.
+     * needs to grow, then CFString will switch to using the default allocator. See comments at top of this file for
+     * more info.
      */
     @Generated
     @CFunction
@@ -2305,7 +2312,10 @@ public final class CoreFoundation {
     public static native long CFStringGetMaximumSizeForEncoding(@NInt long length, int encoding);
 
     /**
-     * Extract the contents of the string as a NULL-terminated 8-bit string appropriate for passing to POSIX APIs (for example, normalized for HFS+).  The string is zero-terminated. false will be returned if the conversion results don't fit into the buffer.  Use CFStringGetMaximumSizeOfFileSystemRepresentation() if you want to make sure the buffer is of sufficient length.
+     * Extract the contents of the string as a NULL-terminated 8-bit string appropriate for passing to POSIX APIs (for
+     * example, normalized for HFS+). The string is zero-terminated. false will be returned if the conversion results
+     * don't fit into the buffer. Use CFStringGetMaximumSizeOfFileSystemRepresentation() if you want to make sure the
+     * buffer is of sufficient length.
      */
     @Generated
     @CFunction
@@ -2313,7 +2323,11 @@ public final class CoreFoundation {
             @NInt long maxBufLen);
 
     /**
-     * Get the upper bound on the number of bytes required to hold the file system representation for the string. This result is returned quickly as a very rough approximation, and could be much larger than the actual space required. The result includes space for the zero termination. If you are allocating a buffer for long-term keeping, it's recommended that you reallocate it smaller (to be the right size) after calling CFStringGetFileSystemRepresentation().
+     * Get the upper bound on the number of bytes required to hold the file system representation for the string. This
+     * result is returned quickly as a very rough approximation, and could be much larger than the actual space
+     * required. The result includes space for the zero termination. If you are allocating a buffer for long-term
+     * keeping, it's recommended that you reallocate it smaller (to be the right size) after calling
+     * CFStringGetFileSystemRepresentation().
      */
     @Generated
     @CFunction
@@ -2321,7 +2335,9 @@ public final class CoreFoundation {
     public static native long CFStringGetMaximumSizeOfFileSystemRepresentation(CFStringRef string);
 
     /**
-     * Create a CFString from the specified zero-terminated POSIX file system representation.  If the conversion fails (possible due to bytes in the buffer not being a valid sequence of bytes for the appropriate character encoding), NULL is returned.
+     * Create a CFString from the specified zero-terminated POSIX file system representation. If the conversion fails
+     * (possible due to bytes in the buffer not being a valid sequence of bytes for the appropriate character encoding),
+     * NULL is returned.
      */
     @Generated
     @CFunction
@@ -2329,11 +2345,13 @@ public final class CoreFoundation {
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String buffer);
 
     /**
-     * The main comparison routine; compares specified range of the first string to (the full range of) the second string.
+     * The main comparison routine; compares specified range of the first string to (the full range of) the second
+     * string.
      * locale == NULL indicates canonical locale (the return value from CFLocaleGetSystem()).
      * kCFCompareNumerically, added in 10.2, does not work if kCFCompareLocalized is specified on systems before 10.3
      * kCFCompareBackwards and kCFCompareAnchored are not applicable.
-     * rangeToCompare applies to the first string; that is, only the substring of theString1 specified by rangeToCompare is compared against all of theString2.
+     * rangeToCompare applies to the first string; that is, only the substring of theString1 specified by rangeToCompare
+     * is compared against all of theString2.
      */
     @Generated
     @CFunction
@@ -2342,7 +2360,8 @@ public final class CoreFoundation {
             @ByValue CFRange rangeToCompare, @NUInt long compareOptions, CFLocaleRef locale);
 
     /**
-     * Comparison convenience. Uses the current user locale (the return value from CFLocaleCopyCurrent()) if kCFCompareLocalized. Refer to CFStringCompareWithOptionsAndLocale() for more info.
+     * Comparison convenience. Uses the current user locale (the return value from CFLocaleCopyCurrent()) if
+     * kCFCompareLocalized. Refer to CFStringCompareWithOptionsAndLocale() for more info.
      */
     @Generated
     @CFunction
@@ -2362,7 +2381,8 @@ public final class CoreFoundation {
             @NUInt long compareOptions);
 
     /**
-     * CFStringFindWithOptionsAndLocale() returns the found range in the CFRange * argument; you can pass NULL for simple discovery check.
+     * CFStringFindWithOptionsAndLocale() returns the found range in the CFRange * argument; you can pass NULL for
+     * simple discovery check.
      * locale == NULL indicates canonical locale (the return value from CFLocaleGetSystem()).
      * If stringToFind is the empty string (zero length), nothing is found.
      * Ignores the kCFCompareNumerically option.
@@ -2375,7 +2395,8 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFRange result);
 
     /**
-     * Find convenience. Uses the current user locale (the return value from CFLocaleCopyCurrent()) if kCFCompareLocalized. Refer to CFStringFindWithOptionsAndLocale() for more info.
+     * Find convenience. Uses the current user locale (the return value from CFLocaleCopyCurrent()) if
+     * kCFCompareLocalized. Refer to CFStringFindWithOptionsAndLocale() for more info.
      */
     @Generated
     @CFunction
@@ -2386,10 +2407,12 @@ public final class CoreFoundation {
     /**
      * CFStringCreateArrayWithFindResults() returns an array of CFRange pointers, or NULL if there are no matches.
      * Overlapping instances are not found; so looking for "AA" in "AAA" finds just one range.
-     * Post 10.1: If kCFCompareBackwards is provided, the scan is done from the end (which can give a different result), and
+     * Post 10.1: If kCFCompareBackwards is provided, the scan is done from the end (which can give a different result),
+     * and
      * the results are stored in the array backwards (last found range in slot 0).
      * If stringToFind is the empty string (zero length), nothing is found.
-     * kCFCompareAnchored causes just the consecutive instances at start (or end, if kCFCompareBackwards) to be reported. So, searching for "AB" in "ABABXAB..." you just get the first two occurrences.
+     * kCFCompareAnchored causes just the consecutive instances at start (or end, if kCFCompareBackwards) to be
+     * reported. So, searching for "AB" in "ABABXAB..." you just get the first two occurrences.
      * Ignores the kCFCompareNumerically option.
      * Only the substring of theString specified by rangeToSearch is searched for stringToFind.
      */
@@ -2419,11 +2442,11 @@ public final class CoreFoundation {
      * [@function] CFStringGetRangeOfComposedCharactersAtIndex
      * Returns the range of the composed character sequence at the specified index.
      *
-     * @param theString The CFString which is to be searched.  If this
+     * @param theString The CFString which is to be searched. If this
      *                  parameter is not a valid CFString, the behavior is
      *                  undefined.
      * @param theIndex  The index of the character contained in the
-     *                  composed character sequence.  If the index is
+     *                  composed character sequence. If the index is
      *                  outside the index space of the string (0 to N-1 inclusive,
      *                  where N is the length of the string), the behavior is
      *                  undefined.
@@ -2439,11 +2462,11 @@ public final class CoreFoundation {
      * [@function] CFStringFindCharacterFromSet
      * Query the range of the first character contained in the specified character set.
      *
-     * @param theString     The CFString which is to be searched.  If this
+     * @param theString     The CFString which is to be searched. If this
      *                      parameter is not a valid CFString, the behavior is
      *                      undefined.
      * @param theSet        The CFCharacterSet against which the membership
-     *                      of characters is checked.  If this parameter is not a valid
+     *                      of characters is checked. If this parameter is not a valid
      *                      CFCharacterSet, the behavior is undefined.
      * @param rangeToSearch The range of characters within the string to search. If
      *                      the range location or end point (defined by the location
@@ -2453,17 +2476,17 @@ public final class CoreFoundation {
      *                      negative, the behavior is undefined. The range may be empty
      *                      (length 0), in which case no search is performed.
      * @param searchOptions The bitwise-or'ed option flags to control
-     *                      the search behavior.  The supported options are
+     *                      the search behavior. The supported options are
      *                      kCFCompareBackwards andkCFCompareAnchored.
      *                      If other option flags are specified, the behavior
      *                      is undefined.
      * @param result        The pointer to a CFRange supplied by the caller in
-     *                      which the search result is stored.  Note that the length
+     *                      which the search result is stored. Note that the length
      *                      of this range can be more than 1, if for instance the
      *                      result is a composed character. If a pointer to an invalid
      *                      memory is specified, the behavior is undefined.
      * @return true, if at least a character which is a member of the character
-     * set is found and result is filled, otherwise, false.
+     *         set is found and result is filled, otherwise, false.
      */
     @Generated
     @CFunction
@@ -2473,7 +2496,8 @@ public final class CoreFoundation {
 
     /**
      * Find range of bounds of the line(s) that span the indicated range (startIndex, numChars),
-     * taking into account various possible line separator sequences (CR, CRLF, LF, and Unicode NextLine, LineSeparator, ParagraphSeparator).
+     * taking into account various possible line separator sequences (CR, CRLF, LF, and Unicode NextLine, LineSeparator,
+     * ParagraphSeparator).
      * All return values are "optional" (provide NULL if you don't want them)
      * lineBeginIndex: index of first character in line
      * lineEndIndex: index of first character of the next line (including terminating line separator characters)
@@ -2487,7 +2511,8 @@ public final class CoreFoundation {
             NIntPtr lineBeginIndex, NIntPtr lineEndIndex, NIntPtr contentsEndIndex);
 
     /**
-     * Same as CFStringGetLineBounds(), however, will only look for paragraphs. Won't stop at Unicode NextLine or LineSeparator characters.
+     * Same as CFStringGetLineBounds(), however, will only look for paragraphs. Won't stop at Unicode NextLine or
+     * LineSeparator characters.
      */
     @Generated
     @CFunction
@@ -2498,10 +2523,10 @@ public final class CoreFoundation {
      * [@function] CFStringGetHyphenationLocationBeforeIndex
      * Retrieve the first potential hyphenation location found before the specified location.
      *
-     * @param string     The CFString which is to be hyphenated.  If this
+     * @param string     The CFString which is to be hyphenated. If this
      *                   parameter is not a valid CFString, the behavior is
      *                   undefined.
-     * @param location   An index in the string.  If a valid hyphen index is returned, it
+     * @param location   An index in the string. If a valid hyphen index is returned, it
      *                   will be before this index.
      * @param limitRange The range of characters within the string to search. If
      *                   the range location or end point (defined by the location
@@ -2512,13 +2537,13 @@ public final class CoreFoundation {
      *                   (length 0), in which case no hyphen location is generated.
      * @param options    Reserved for future use.
      * @param locale     Specifies which language's hyphenation conventions to use.
-     *                   This must be a valid locale.  Hyphenation data is not available
-     *                   for all locales.  You can use CFStringIsHyphenationAvailableForLocale
+     *                   This must be a valid locale. Hyphenation data is not available
+     *                   for all locales. You can use CFStringIsHyphenationAvailableForLocale
      *                   to test for availability of hyphenation data.
-     * @param character  The suggested hyphen character to insert.  Pass NULL if you
+     * @param character  The suggested hyphen character to insert. Pass NULL if you
      *                   do not need this information.
      * @return an index in the string where it is appropriate to insert a hyphen, if
-     * one exists; else kCFNotFound
+     *         one exists; else kCFNotFound
      */
     @Generated
     @CFunction
@@ -2614,7 +2639,8 @@ public final class CoreFoundation {
      * Pays attention to kCFCompareCaseInsensitive, kCFCompareBackwards, kCFCompareNonliteral, and kCFCompareAnchored.
      * kCFCompareBackwards can be used to do the replacement starting from the end, which could give a different result.
      * ex. AAAAA, replace AA with B -> BBA or ABB; latter if kCFCompareBackwards
-     * kCFCompareAnchored assures only anchored but multiple instances are found (the instances must be consecutive at start or end)
+     * kCFCompareAnchored assures only anchored but multiple instances are found (the instances must be consecutive at
+     * start or end)
      * ex. AAXAA, replace A with B -> BBXBB or BBXAA; latter if kCFCompareAnchored
      * Returns number of replacements performed.
      */
@@ -2640,13 +2666,13 @@ public final class CoreFoundation {
     /**
      * CFStringPad() will pad or cut down a string to the specified size.
      * The pad string is used as the fill string; indexIntoPad specifies which character to start with.
-     * CFStringPad("abc", " ", 9, 0) ->  "abc      "
+     * CFStringPad("abc", " ", 9, 0) -> "abc "
      * CFStringPad("abc", ". ", 9, 1) -> "abc . . ."
      * CFStringPad("abcdef", ?, 3, ?) -> "abc"
      * <p>
      * CFStringTrim() will trim the specified string from both ends of the string.
      * CFStringTrimWhitespace() will do the same with white space characters (tab, newline, etc)
-     * CFStringTrim("  abc ", " ") -> "abc"
+     * CFStringTrim(" abc ", " ") -> "abc"
      * CFStringTrim("* * * *abc * ", "* ") -> "*abc "
      */
     @Generated
@@ -2679,7 +2705,7 @@ public final class CoreFoundation {
      * Normalizes the string into the specified form as described in
      * Unicode Technical Report #15.
      *
-     * @param theString The string which is to be normalized.  If this
+     * @param theString The string which is to be normalized. If this
      *                  parameter is not a valid mutable CFString, the behavior is
      *                  undefined.
      * @param theForm   The form into which the string is to be normalized.
@@ -2701,13 +2727,13 @@ public final class CoreFoundation {
      * to use CFStringNormalize in addition to CFStringFold in order to obtain
      * the effect of kCFCompareNonliteral.
      *
-     * @param theString The string which is to be folded.  If this parameter is not
+     * @param theString The string which is to be folded. If this parameter is not
      *                  a valid mutable CFString, the behavior is undefined.
      * @param theFlags  The equivalency flags which describes the character folding form.
      *                  Only those flags containing the word "insensitive" are recognized here; other flags are ignored.
      *                  Folding with kCFCompareCaseInsensitive removes case distinctions in accordance with the mapping
-     *                  specified by ftp://ftp.unicode.org/Public/UNIDATA/CaseFolding.txt.  Folding with
-     *                  kCFCompareDiacriticInsensitive removes distinctions of accents and other diacritics.  Folding
+     *                  specified by ftp://ftp.unicode.org/Public/UNIDATA/CaseFolding.txt. Folding with
+     *                  kCFCompareDiacriticInsensitive removes distinctions of accents and other diacritics. Folding
      *                  with kCFCompareWidthInsensitive removes character width distinctions by mapping characters in
      *                  the range U+FF00-U+FFEF to their ordinary equivalents.
      * @param theLocale The locale tailoring the character folding behavior. If NULL,
@@ -2719,9 +2745,16 @@ public final class CoreFoundation {
     public static native void CFStringFold(CFMutableStringRef theString, @NUInt long theFlags, CFLocaleRef theLocale);
 
     /**
-     * Perform string transliteration.  The transformation represented by transform is applied to the given range of string, modifying it in place. Only the specified range will be modified, but the transform may look at portions of the string outside that range for context. NULL range pointer causes the whole string to be transformed. On return, range is modified to reflect the new range corresponding to the original range. reverse indicates that the inverse transform should be used instead, if it exists. If the transform is successful, true is returned; if unsuccessful, false. Reasons for the transform being unsuccessful include an invalid transform identifier, or attempting to reverse an irreversible transform.
+     * Perform string transliteration. The transformation represented by transform is applied to the given range of
+     * string, modifying it in place. Only the specified range will be modified, but the transform may look at portions
+     * of the string outside that range for context. NULL range pointer causes the whole string to be transformed. On
+     * return, range is modified to reflect the new range corresponding to the original range. reverse indicates that
+     * the inverse transform should be used instead, if it exists. If the transform is successful, true is returned; if
+     * unsuccessful, false. Reasons for the transform being unsuccessful include an invalid transform identifier, or
+     * attempting to reverse an irreversible transform.
      * <p>
-     * You can pass one of the predefined transforms below, or any valid ICU transform ID as defined in the ICU User Guide. Note that we do not support arbitrary set of ICU transform rules.
+     * You can pass one of the predefined transforms below, or any valid ICU transform ID as defined in the ICU User
+     * Guide. Note that we do not support arbitrary set of ICU transform rules.
      */
     @Generated
     @CFunction
@@ -2737,7 +2770,8 @@ public final class CoreFoundation {
     public static native byte CFStringIsEncodingAvailable(int encoding);
 
     /**
-     * This function returns list of available encodings.  The returned list is terminated with kCFStringEncodingInvalidId and owned by the system.
+     * This function returns list of available encodings. The returned list is terminated with
+     * kCFStringEncodingInvalidId and owned by the system.
      */
     @Generated
     @CFunction
@@ -2751,7 +2785,7 @@ public final class CoreFoundation {
     public static native CFStringRef CFStringGetNameOfEncoding(int encoding);
 
     /**
-     * ID mapping functions from/to Cocoa NSStringEncoding.  Returns kCFStringEncodingInvalidId if no mapping exists.
+     * ID mapping functions from/to Cocoa NSStringEncoding. Returns kCFStringEncodingInvalidId if no mapping exists.
      */
     @Generated
     @CFunction
@@ -2763,7 +2797,8 @@ public final class CoreFoundation {
     public static native int CFStringConvertNSStringEncodingToEncoding(@NUInt long encoding);
 
     /**
-     * ID mapping functions from/to Microsoft Windows codepage (covers both OEM & ANSI).  Returns kCFStringEncodingInvalidId if no mapping exists.
+     * ID mapping functions from/to Microsoft Windows codepage (covers both OEM & ANSI). Returns
+     * kCFStringEncodingInvalidId if no mapping exists.
      */
     @Generated
     @CFunction
@@ -2774,7 +2809,8 @@ public final class CoreFoundation {
     public static native int CFStringConvertWindowsCodepageToEncoding(int codepage);
 
     /**
-     * ID mapping functions from/to IANA registery charset names.  Returns kCFStringEncodingInvalidId if no mapping exists.
+     * ID mapping functions from/to IANA registery charset names. Returns kCFStringEncodingInvalidId if no mapping
+     * exists.
      */
     @Generated
     @CFunction
@@ -2827,7 +2863,8 @@ public final class CoreFoundation {
     public static native int CFStringGetLongCharacterForSurrogatePair(char surrogateHigh, char surrogateLow);
 
     /**
-     * Maps a UTF-32 character to a pair of UTF-16 surrogate characters. The buffer pointed by surrogates has to have space for at least 2 UTF-16 characters. Returns true if mapped to a surrogate pair.
+     * Maps a UTF-32 character to a pair of UTF-16 surrogate characters. The buffer pointed by surrogates has to have
+     * space for at least 2 UTF-16 characters. Returns true if mapped to a surrogate pair.
      */
     @Generated
     @Inline
@@ -2870,12 +2907,18 @@ public final class CoreFoundation {
      * <p>
      * Creates a new CFError.
      *
-     * @param allocator The CFAllocator which should be used to allocate memory for the error. This parameter may be NULL in which case the
-     *                  current default CFAllocator is used. If this reference is not a valid CFAllocator, the behavior is undefined.
-     * @param domain    A CFString identifying the error domain. If this reference is NULL or is otherwise not a valid CFString, the behavior is undefined.
-     * @param code      A CFIndex identifying the error code. The code is interpreted within the context of the error domain.
-     * @param userInfo  A CFDictionary created with kCFCopyStringDictionaryKeyCallBacks and kCFTypeDictionaryValueCallBacks. It will be copied with CFDictionaryCreateCopy().
-     *                  If no userInfo dictionary is desired, NULL may be passed in as a convenience, in which case an empty userInfo dictionary will be assigned.
+     * @param allocator The CFAllocator which should be used to allocate memory for the error. This parameter may be
+     *                  NULL in which case the
+     *                  current default CFAllocator is used. If this reference is not a valid CFAllocator, the behavior
+     *                  is undefined.
+     * @param domain    A CFString identifying the error domain. If this reference is NULL or is otherwise not a valid
+     *                  CFString, the behavior is undefined.
+     * @param code      A CFIndex identifying the error code. The code is interpreted within the context of the error
+     *                  domain.
+     * @param userInfo  A CFDictionary created with kCFCopyStringDictionaryKeyCallBacks and
+     *                  kCFTypeDictionaryValueCallBacks. It will be copied with CFDictionaryCreateCopy().
+     *                  If no userInfo dictionary is desired, NULL may be passed in as a convenience, in which case an
+     *                  empty userInfo dictionary will be assigned.
      * @return A reference to the new CFError.
      */
     @Generated
@@ -2888,14 +2931,22 @@ public final class CoreFoundation {
      * <p>
      * Creates a new CFError without having to create an intermediate userInfo dictionary.
      *
-     * @param allocator         The CFAllocator which should be used to allocate memory for the error. This parameter may be NULL in which case the
-     *                          current default CFAllocator is used. If this reference is not a valid CFAllocator, the behavior is undefined.
-     * @param domain            A CFString identifying the error domain. If this reference is NULL or is otherwise not a valid CFString, the behavior is undefined.
-     * @param code              A CFIndex identifying the error code. The code is interpreted within the context of the error domain.
-     * @param userInfoKeys      An array of numUserInfoValues CFStrings used as keys in creating the userInfo dictionary. NULL is valid only if numUserInfoValues is 0.
-     * @param userInfoValues    An array of numUserInfoValues CF types used as values in creating the userInfo dictionary.  NULL is valid only if numUserInfoValues is 0.
-     * @param numUserInfoValues CFIndex representing the number of keys and values in the userInfoKeys and userInfoValues arrays.
-     * @return A reference to the new CFError. numUserInfoValues CF types are gathered from each of userInfoKeys and userInfoValues to create the userInfo dictionary.
+     * @param allocator         The CFAllocator which should be used to allocate memory for the error. This parameter
+     *                          may be NULL in which case the
+     *                          current default CFAllocator is used. If this reference is not a valid CFAllocator, the
+     *                          behavior is undefined.
+     * @param domain            A CFString identifying the error domain. If this reference is NULL or is otherwise not a
+     *                          valid CFString, the behavior is undefined.
+     * @param code              A CFIndex identifying the error code. The code is interpreted within the context of the
+     *                          error domain.
+     * @param userInfoKeys      An array of numUserInfoValues CFStrings used as keys in creating the userInfo
+     *                          dictionary. NULL is valid only if numUserInfoValues is 0.
+     * @param userInfoValues    An array of numUserInfoValues CF types used as values in creating the userInfo
+     *                          dictionary. NULL is valid only if numUserInfoValues is 0.
+     * @param numUserInfoValues CFIndex representing the number of keys and values in the userInfoKeys and
+     *                          userInfoValues arrays.
+     * @return A reference to the new CFError. numUserInfoValues CF types are gathered from each of userInfoKeys and
+     *         userInfoValues to create the userInfo dictionary.
      */
     @Generated
     @CFunction
@@ -2908,8 +2959,10 @@ public final class CoreFoundation {
      * <p>
      * Returns the error domain the CFError was created with.
      *
-     * @param err The CFError whose error domain is to be returned. If this reference is not a valid CFError, the behavior is undefined.
-     * @return The error domain of the CFError. Since this is a "Get" function, the caller shouldn't CFRelease the return value.
+     * @param err The CFError whose error domain is to be returned. If this reference is not a valid CFError, the
+     *            behavior is undefined.
+     * @return The error domain of the CFError. Since this is a "Get" function, the caller shouldn't CFRelease the
+     *         return value.
      */
     @Generated
     @CFunction
@@ -2920,7 +2973,8 @@ public final class CoreFoundation {
      * <p>
      * Returns the error code the CFError was created with.
      *
-     * @param err The CFError whose error code is to be returned. If this reference is not a valid CFError, the behavior is undefined.
+     * @param err The CFError whose error code is to be returned. If this reference is not a valid CFError, the behavior
+     *            is undefined.
      * @return The error code of the CFError (not an error return for the current call).
      */
     @Generated
@@ -2933,9 +2987,11 @@ public final class CoreFoundation {
      * <p>
      * Returns CFError userInfo dictionary.
      * <p>
-     * Returns a dictionary containing the same keys and values as in the userInfo dictionary the CFError was created with. Returns an empty dictionary if NULL was supplied to CFErrorCreate().
+     * Returns a dictionary containing the same keys and values as in the userInfo dictionary the CFError was created
+     * with. Returns an empty dictionary if NULL was supplied to CFErrorCreate().
      *
-     * @param err The CFError whose error user info is to be returned. If this reference is not a valid CFError, the behavior is undefined.
+     * @param err The CFError whose error user info is to be returned. If this reference is not a valid CFError, the
+     *            behavior is undefined.
      * @return The user info of the CFError.
      */
     @Generated
@@ -2945,16 +3001,25 @@ public final class CoreFoundation {
     /**
      * [@function] CFErrorCopyDescription
      * <p>
-     * Returns a human-presentable description for the error. CFError creators should strive to make sure the return value is human-presentable and localized by providing a value for kCFErrorLocalizedDescriptionKey at the time of CFError creation.
+     * Returns a human-presentable description for the error. CFError creators should strive to make sure the return
+     * value is human-presentable and localized by providing a value for kCFErrorLocalizedDescriptionKey at the time of
+     * CFError creation.
      * <p>
-     * This is a complete sentence or two which says what failed and why it failed. Please refer to header comments for -[NSError localizedDescription] for details on the steps used to compute this; but roughly:
+     * This is a complete sentence or two which says what failed and why it failed. Please refer to header comments for
+     * -[NSError localizedDescription] for details on the steps used to compute this; but roughly:
      * - Use value of kCFErrorLocalizedDescriptionKey as-is if provided.
-     * - Use value of kCFErrorLocalizedFailureKey if provided, optionally followed by kCFErrorLocalizedFailureReasonKey if available.
-     * - Use value of kCFErrorLocalizedFailureReasonKey, combining with a generic failure message such as: "Operation code not be completed. " + kCFErrorLocalizedFailureReasonKey.
-     * - If all of the above fail, generate a semi-user presentable string from kCFErrorDescriptionKey, the domain, and code. Something like: "Operation could not be completed. Error domain/code occurred. " or "Operation could not be completed. " + kCFErrorDescriptionKey + " (Error domain/code)"
-     * Toll-free bridged NSError instances might provide additional behaviors for manufacturing a description string.  Do not count on the exact contents or format of the returned string, it might change.
+     * - Use value of kCFErrorLocalizedFailureKey if provided, optionally followed by kCFErrorLocalizedFailureReasonKey
+     * if available.
+     * - Use value of kCFErrorLocalizedFailureReasonKey, combining with a generic failure message such as: "Operation
+     * code not be completed. " + kCFErrorLocalizedFailureReasonKey.
+     * - If all of the above fail, generate a semi-user presentable string from kCFErrorDescriptionKey, the domain, and
+     * code. Something like: "Operation could not be completed. Error domain/code occurred. " or "Operation could not be
+     * completed. " + kCFErrorDescriptionKey + " (Error domain/code)"
+     * Toll-free bridged NSError instances might provide additional behaviors for manufacturing a description string. Do
+     * not count on the exact contents or format of the returned string, it might change.
      *
-     * @param err The CFError whose description is to be returned. If this reference is not a valid CFError, the behavior is undefined.
+     * @param err The CFError whose description is to be returned. If this reference is not a valid CFError, the
+     *            behavior is undefined.
      * @return A CFString with human-presentable description of the CFError. Never NULL.
      */
     @Generated
@@ -2964,13 +3029,20 @@ public final class CoreFoundation {
     /**
      * [@function] CFErrorCopyFailureReason
      * <p>
-     * Returns a human-presentable failure reason for the error.  May return NULL.  CFError creators should strive to make sure the return value is human-presentable and localized by providing a value for kCFErrorLocalizedFailureReasonKey at the time of CFError creation.
+     * Returns a human-presentable failure reason for the error. May return NULL. CFError creators should strive to make
+     * sure the return value is human-presentable and localized by providing a value for
+     * kCFErrorLocalizedFailureReasonKey at the time of CFError creation.
      * <p>
-     * This is a complete sentence which describes why the operation failed. In many cases this will be just the "because" part of the description (but as a complete sentence, which makes localization easier). By default this looks for kCFErrorLocalizedFailureReasonKey in the user info. Toll-free bridged NSError instances might provide additional behaviors for manufacturing this value. If no user-presentable string is available, returns NULL.
-     * Example Description: "Could not save file 'Letter' in folder 'Documents' because the volume 'MyDisk' doesn't have enough space."
+     * This is a complete sentence which describes why the operation failed. In many cases this will be just the
+     * "because" part of the description (but as a complete sentence, which makes localization easier). By default this
+     * looks for kCFErrorLocalizedFailureReasonKey in the user info. Toll-free bridged NSError instances might provide
+     * additional behaviors for manufacturing this value. If no user-presentable string is available, returns NULL.
+     * Example Description: "Could not save file 'Letter' in folder 'Documents' because the volume 'MyDisk' doesn't have
+     * enough space."
      * Corresponding FailureReason: "The volume 'MyDisk' doesn't have enough space."
      *
-     * @param err The CFError whose failure reason is to be returned. If this reference is not a valid CFError, the behavior is undefined.
+     * @param err The CFError whose failure reason is to be returned. If this reference is not a valid CFError, the
+     *            behavior is undefined.
      * @return A CFString with the localized, end-user presentable failure reason of the CFError, or NULL.
      */
     @Generated
@@ -2980,13 +3052,20 @@ public final class CoreFoundation {
     /**
      * [@function] CFErrorCopyRecoverySuggestion
      * <p>
-     * Returns a human presentable recovery suggestion for the error.  May return NULL.  CFError creators should strive to make sure the return value is human-presentable and localized by providing a value for kCFErrorLocalizedRecoverySuggestionKey at the time of CFError creation.
+     * Returns a human presentable recovery suggestion for the error. May return NULL. CFError creators should strive to
+     * make sure the return value is human-presentable and localized by providing a value for
+     * kCFErrorLocalizedRecoverySuggestionKey at the time of CFError creation.
      * <p>
-     * This is the string that can be displayed as the "informative" (aka "secondary") message on an alert panel. By default this looks for kCFErrorLocalizedRecoverySuggestionKey in the user info. Toll-free bridged NSError instances might provide additional behaviors for manufacturing this value. If no user-presentable string is available, returns NULL.
-     * Example Description: "Could not save file 'Letter' in folder 'Documents' because the volume 'MyDisk' doesn't have enough space."
+     * This is the string that can be displayed as the "informative" (aka "secondary") message on an alert panel. By
+     * default this looks for kCFErrorLocalizedRecoverySuggestionKey in the user info. Toll-free bridged NSError
+     * instances might provide additional behaviors for manufacturing this value. If no user-presentable string is
+     * available, returns NULL.
+     * Example Description: "Could not save file 'Letter' in folder 'Documents' because the volume 'MyDisk' doesn't have
+     * enough space."
      * Corresponding RecoverySuggestion: "Remove some files from the volume and try again."
      *
-     * @param err The CFError whose recovery suggestion is to be returned. If this reference is not a valid CFError, the behavior is undefined.
+     * @param err The CFError whose recovery suggestion is to be returned. If this reference is not a valid CFError, the
+     *            behavior is undefined.
      * @return A CFString with the localized, end-user presentable recovery suggestion of the CFError, or NULL.
      */
     @Generated
@@ -2995,16 +3074,16 @@ public final class CoreFoundation {
 
     /**
      * CFURLs are composed of two fundamental pieces - their string, and a
-     * (possibly NULL) base URL.  A relative URL is one in which the string
+     * (possibly NULL) base URL. A relative URL is one in which the string
      * by itself does not fully specify the URL (for instance "myDir/image.tiff");
      * an absolute URL is one in which the string does fully specify the URL
-     * ("file://localhost/myDir/image.tiff").  Absolute URLs always have NULL
+     * ("file://localhost/myDir/image.tiff"). Absolute URLs always have NULL
      * base URLs; however, it is possible for a URL to have a NULL base, and still
-     * not be absolute.  Such a URL has only a relative string, and cannot be
-     * resolved.  Two CFURLs are considered equal if and only if their strings
-     * are equal and their bases are equal.  In other words,
+     * not be absolute. Such a URL has only a relative string, and cannot be
+     * resolved. Two CFURLs are considered equal if and only if their strings
+     * are equal and their bases are equal. In other words,
      * "file://localhost/myDir/image.tiff" is NOT equal to the URL with relative
-     * string "myDir/image.tiff" and base URL "file://localhost/".  Clients that
+     * string "myDir/image.tiff" and base URL "file://localhost/". Clients that
      * need these less strict form of equality should convert all URLs to their
      * absolute form via CFURLCopyAbsoluteURL(), then compare the absolute forms.
      */
@@ -3030,7 +3109,7 @@ public final class CoreFoundation {
 
     /**
      * Escapes any character that is not 7-bit ASCII with the byte-code
-     * for the given encoding.  If escapeWhitespace is true, whitespace
+     * for the given encoding. If escapeWhitespace is true, whitespace
      * characters (' ', '\t', '\r', '\n') will be escaped also (desirable
      * if embedding the URL into a larger text stream like HTML)
      */
@@ -3049,11 +3128,11 @@ public final class CoreFoundation {
 
     /**
      * Create an absolute URL directly, without requiring the extra step
-     * of calling CFURLCopyAbsoluteURL().  If useCompatibilityMode is
+     * of calling CFURLCopyAbsoluteURL(). If useCompatibilityMode is
      * true, the rules historically used on the web are used to resolve
      * relativeString against baseURL - these rules are generally listed
-     * in the RFC as optional or alternate interpretations.  Otherwise,
-     * the strict rules from the RFC are used.  The major differences are
+     * in the RFC as optional or alternate interpretations. Otherwise,
+     * the strict rules from the RFC are used. The major differences are
      * that in compatibility mode, we are lenient of the scheme appearing
      * in relative portion, leading "../" components are removed from the
      * final URL's path, and if the relative portion contains only
@@ -3073,9 +3152,9 @@ public final class CoreFoundation {
 
     /**
      * filePath should be the URL's path expressed as a path of the type
-     * fsType.  If filePath is not absolute, the resulting URL will be
+     * fsType. If filePath is not absolute, the resulting URL will be
      * considered relative to the current working directory (evaluated
-     * at creation time).  isDirectory determines whether filePath is
+     * at creation time). isDirectory determines whether filePath is
      * treated as a directory path when resolving against relative path
      * components
      */
@@ -3092,7 +3171,7 @@ public final class CoreFoundation {
 
     /**
      * The path style of the baseURL must match the path style of the relative
-     * url or the results are undefined.  If the provided filePath looks like an
+     * url or the results are undefined. If the provided filePath looks like an
      * absolute path ( starting with '/' if pathStyle is kCFURLPosixPathStyle,
      * not starting with ':' for kCFURLHFSPathStyle, or starting with what looks
      * like a drive letter and colon for kCFURLWindowsPathStyle ) then the baseURL
@@ -3114,7 +3193,7 @@ public final class CoreFoundation {
      * url's path. No more than maxBufLen bytes are written to buffer.
      * The buffer should be at least the maximum path length for
      * the file system in question to avoid failures for insufficiently
-     * large buffers.  If resolveAgainstBase is true, the url's relative
+     * large buffers. If resolveAgainstBase is true, the url's relative
      * portion is resolved against its base before the path is computed.
      * Returns success or failure.
      */
@@ -3178,7 +3257,7 @@ public final class CoreFoundation {
 
     /**
      * CFURLCopyFileSystemPath() returns the URL's path as a file system path for the
-     * given path style.  All percent-escape sequences are removed.  The URL is not
+     * given path style. All percent-escape sequences are removed. The URL is not
      * resolved against its base before computing the path.
      */
     @Generated
@@ -3194,7 +3273,7 @@ public final class CoreFoundation {
     public static native byte CFURLHasDirectoryPath(CFURLRef anURL);
 
     /**
-     * Any additional resource specifiers after the path.  For URLs
+     * Any additional resource specifiers after the path. For URLs
      * that cannot be decomposed, this is everything except the scheme itself.
      * Percent-escape sequences are not removed.
      */
@@ -3230,9 +3309,9 @@ public final class CoreFoundation {
     /**
      * CFURLCopyParameterString, CFURLCopyQueryString, and CFURLCopyFragment
      * remove all percent-escape sequences except those for
-     * characters in charactersToLeaveEscaped.  If charactersToLeaveEscaped
+     * characters in charactersToLeaveEscaped. If charactersToLeaveEscaped
      * is empty (""), all percent-escape sequences are replaced by their
-     * corresponding characters.  If charactersToLeaveEscaped is NULL,
+     * corresponding characters. If charactersToLeaveEscaped is NULL,
      * then no escape sequences are removed at all
      */
     @Generated
@@ -3281,9 +3360,9 @@ public final class CoreFoundation {
 
     /**
      * Fills buffer with the bytes for url, returning the number of bytes
-     * filled.  If buffer is of insufficient size, returns -1 and no bytes
-     * are placed in buffer.  If buffer is NULL, the needed length is
-     * computed and returned.  The returned bytes are the original bytes
+     * filled. If buffer is of insufficient size, returns -1 and no bytes
+     * are placed in buffer. If buffer is NULL, the needed length is
+     * computed and returned. The returned bytes are the original bytes
      * from which the URL was created; if the URL was created from a
      * string, the bytes will be the bytes of the string encoded via UTF-8.
      * Note: Due to incompatibilities between encodings, it might be impossible to
@@ -3298,67 +3377,67 @@ public final class CoreFoundation {
     public static native long CFURLGetBytes(CFURLRef url, BytePtr buffer, @NInt long bufferLength);
 
     /**
-     * Gets the  range of the requested component in the bytes of url, as
-     * returned by CFURLGetBytes().  This range is only good for use in the
+     * Gets the range of the requested component in the bytes of url, as
+     * returned by CFURLGetBytes(). This range is only good for use in the
      * bytes returned by CFURLGetBytes!
      * <p>
      * If non-NULL, rangeIncludingSeparators gives the range of component
      * including the sequences that separate component from the previous and
-     * next components.  If there is no previous or next component, that end of
+     * next components. If there is no previous or next component, that end of
      * rangeIncludingSeparators will match the range of the component itself.
      * If url does not contain the given component type, (kCFNotFound, 0) is
      * returned, and rangeIncludingSeparators is set to the location where the
-     * component would be inserted.  Some examples -
+     * component would be inserted. Some examples -
      * <p>
      * For the URL http://www.apple.com/hotnews/
      * <p>
-     * Component           returned range      rangeIncludingSeparators
-     * scheme              (0, 4)              (0, 7)
-     * net location        (7, 13)             (4, 16)
-     * path                (20, 9)             (20, 9)
-     * resource specifier  (kCFNotFound, 0)    (29, 0)
-     * user                (kCFNotFound, 0)    (7, 0)
-     * password            (kCFNotFound, 0)    (7, 0)
-     * user info           (kCFNotFound, 0)    (7, 0)
-     * host                (7, 13)             (4, 16)
-     * port                (kCFNotFound, 0)    (20, 0)
-     * parameter           (kCFNotFound, 0)    (29, 0)
-     * query               (kCFNotFound, 0)    (29, 0)
-     * fragment            (kCFNotFound, 0)    (29, 0)
+     * Component returned range rangeIncludingSeparators
+     * scheme (0, 4) (0, 7)
+     * net location (7, 13) (4, 16)
+     * path (20, 9) (20, 9)
+     * resource specifier (kCFNotFound, 0) (29, 0)
+     * user (kCFNotFound, 0) (7, 0)
+     * password (kCFNotFound, 0) (7, 0)
+     * user info (kCFNotFound, 0) (7, 0)
+     * host (7, 13) (4, 16)
+     * port (kCFNotFound, 0) (20, 0)
+     * parameter (kCFNotFound, 0) (29, 0)
+     * query (kCFNotFound, 0) (29, 0)
+     * fragment (kCFNotFound, 0) (29, 0)
      * <p>
      * <p>
      * For the URL ./relPath/file.html#fragment
      * <p>
-     * Component           returned range      rangeIncludingSeparators
-     * scheme              (kCFNotFound, 0)    (0, 0)
-     * net location        (kCFNotFound, 0)    (0, 0)
-     * path                (0, 19)             (0, 20)
-     * resource specifier  (20, 8)             (19, 9)
-     * user                (kCFNotFound, 0)    (0, 0)
-     * password            (kCFNotFound, 0)    (0, 0)
-     * user info           (kCFNotFound, 0)    (0, 0)
-     * host                (kCFNotFound, 0)    (0, 0)
-     * port                (kCFNotFound, 0)    (0, 0)
-     * parameter           (kCFNotFound, 0)    (19, 0)
-     * query               (kCFNotFound, 0)    (19, 0)
-     * fragment            (20, 8)             (19, 9)
+     * Component returned range rangeIncludingSeparators
+     * scheme (kCFNotFound, 0) (0, 0)
+     * net location (kCFNotFound, 0) (0, 0)
+     * path (0, 19) (0, 20)
+     * resource specifier (20, 8) (19, 9)
+     * user (kCFNotFound, 0) (0, 0)
+     * password (kCFNotFound, 0) (0, 0)
+     * user info (kCFNotFound, 0) (0, 0)
+     * host (kCFNotFound, 0) (0, 0)
+     * port (kCFNotFound, 0) (0, 0)
+     * parameter (kCFNotFound, 0) (19, 0)
+     * query (kCFNotFound, 0) (19, 0)
+     * fragment (20, 8) (19, 9)
      * <p>
      * <p>
      * For the URL scheme://user:pass@host:1/path/path2/file.html;params?query#fragment
      * <p>
-     * Component           returned range      rangeIncludingSeparators
-     * scheme              (0, 6)              (0, 9)
-     * net location        (9, 16)             (6, 19)
-     * path                (25, 21)            (25, 22)
-     * resource specifier  (47, 21)            (46, 22)
-     * user                (9, 4)              (6, 8)
-     * password            (14, 4)             (13, 6)
-     * user info           (9, 9)              (6, 13)
-     * host                (19, 4)             (18, 6)
-     * port                (24, 1)             (23, 2)
-     * parameter           (47, 6)             (46, 8)
-     * query               (54, 5)             (53, 7)
-     * fragment            (60, 8)             (59, 9)
+     * Component returned range rangeIncludingSeparators
+     * scheme (0, 6) (0, 9)
+     * net location (9, 16) (6, 19)
+     * path (25, 21) (25, 22)
+     * resource specifier (47, 21) (46, 22)
+     * user (9, 4) (6, 8)
+     * password (14, 4) (13, 6)
+     * user info (9, 9) (6, 13)
+     * host (19, 4) (18, 6)
+     * port (24, 1) (23, 2)
+     * parameter (47, 6) (46, 8)
+     * query (54, 5) (53, 7)
+     * fragment (60, 8) (59, 9)
      */
     @Generated
     @CFunction
@@ -3369,11 +3448,11 @@ public final class CoreFoundation {
     /**
      * Returns a string with any percent-escape sequences that do NOT
      * correspond to characters in charactersToLeaveEscaped with their
-     * equivalent.  Returns NULL on failure (if an invalid percent-escape sequence
+     * equivalent. Returns NULL on failure (if an invalid percent-escape sequence
      * is encountered), or the original string (retained) if no characters
      * need to be replaced. Pass NULL to request that no percent-escapes be
      * replaced, or the empty string (CFSTR("")) to request that all percent-
-     * escapes be replaced.  Uses UTF8 to interpret percent-escapes.
+     * escapes be replaced. Uses UTF8 to interpret percent-escapes.
      */
     @Generated
     @CFunction
@@ -3396,12 +3475,13 @@ public final class CoreFoundation {
      * sequences are missing), may retain and return originalString.
      * If you are uncertain of the correct encoding, you should use UTF-8,
      * which is the encoding designated by RFC 2396 as the correct encoding
-     * for use in URLs.  The characters so escaped are all characters that
+     * for use in URLs. The characters so escaped are all characters that
      * are not legal URL characters (based on RFC 2396), plus any characters
      * in legalURLCharactersToBeEscaped, less any characters in
-     * charactersToLeaveUnescaped.  To simply correct any non-URL characters
+     * charactersToLeaveUnescaped. To simply correct any non-URL characters
      * in an otherwise correct URL string, do:
-     * newString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, origString, NULL, NULL, kCFStringEncodingUTF8);
+     * newString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, origString, NULL, NULL,
+     * kCFStringEncodingUTF8);
      */
     @Generated
     @Deprecated
@@ -3434,13 +3514,21 @@ public final class CoreFoundation {
      * url
      * The file URL specifying the resource.
      * error
-     * On output when the result is NULL, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
+     * On output when the result is NULL, the error that occurred. This parameter is optional; if you do not wish the
+     * error returned, pass NULL here. The caller is responsible for releasing a valid output error.
      * <p>
      * Return Value
      * The new file reference URL, or NULL if an error occurs.
      * <p>
      * Discussion
-     * File reference URLs use a URL path syntax that identifies a file system object by reference, not by path. This form of file URL remains valid when the file system path of the URL’s underlying resource changes. An error will occur if the url parameter is not a file URL. File reference URLs cannot be created to file system objects which do not exist or are not reachable. In some areas of the file system hierarchy, file reference URLs cannot be generated to the leaf node of the URL path. A file reference URL's path should never be persistently stored because is not valid across system restarts, and across remounts of volumes -- if you want to create a persistent reference to a file system object, use a bookmark (see CFURLCreateBookmarkData). If this function returns NULL, the optional error is populated. This function is currently applicable only to URLs for file system resources.
+     * File reference URLs use a URL path syntax that identifies a file system object by reference, not by path. This
+     * form of file URL remains valid when the file system path of the URL’s underlying resource changes. An error will
+     * occur if the url parameter is not a file URL. File reference URLs cannot be created to file system objects which
+     * do not exist or are not reachable. In some areas of the file system hierarchy, file reference URLs cannot be
+     * generated to the leaf node of the URL path. A file reference URL's path should never be persistently stored
+     * because is not valid across system restarts, and across remounts of volumes -- if you want to create a persistent
+     * reference to a file system object, use a bookmark (see CFURLCreateBookmarkData). If this function returns NULL,
+     * the optional error is populated. This function is currently applicable only to URLs for file system resources.
      * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
@@ -3459,13 +3547,17 @@ public final class CoreFoundation {
      * url
      * The file URL specifying the resource.
      * error
-     * On output when the result is NULL, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
+     * On output when the result is NULL, the error that occurred. This parameter is optional; if you do not wish the
+     * error returned, pass NULL here. The caller is responsible for releasing a valid output error.
      * <p>
      * Return Value
      * The new file path URL, or NULL if an error occurs.
      * <p>
      * Discussion
-     * File path URLs use a file system style path. An error will occur if the url parameter is not a file URL. A file reference URL's resource must exist and be reachable to be converted to a file path URL. If this function returns NULL, the optional error is populated. This function is currently applicable only to URLs for file system resources.
+     * File path URLs use a file system style path. An error will occur if the url parameter is not a file URL. A file
+     * reference URL's resource must exist and be reachable to be converted to a file path URL. If this function returns
+     * NULL, the optional error is populated. This function is currently applicable only to URLs for file system
+     * resources.
      * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
@@ -3473,7 +3565,8 @@ public final class CoreFoundation {
     public static native CFURLRef CFURLCreateFilePathURL(CFAllocatorRef allocator, CFURLRef url, Ptr<CFErrorRef> error);
 
     /**
-     * Note: CFURLCreateFromFSRef and CFURLGetFSRef have never been functional on iOS because the Carbon File Manager is not on iOS.
+     * Note: CFURLCreateFromFSRef and CFURLGetFSRef have never been functional on iOS because the Carbon File Manager is
+     * not on iOS.
      */
     @Generated
     @Deprecated
@@ -3498,13 +3591,21 @@ public final class CoreFoundation {
      * propertyValueTypeRefPtr
      * On output when the result is true, the resource value or NULL.
      * error
-     * On output when the result is false, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
+     * On output when the result is false, the error that occurred. This parameter is optional; if you do not wish the
+     * error returned, pass NULL here. The caller is responsible for releasing a valid output error.
      * <p>
      * Return Value
      * true if propertyValueTypeRefPtr is successfully populated; false if an error occurs.
      * <p>
      * Discussion
-     * CFURLCopyResourcePropertyForKey first checks if the URL object already caches the resource value. If so, it returns the cached resource value to the caller. If not, then CFURLCopyResourcePropertyForKey synchronously obtains the resource value from the backing store, adds the resource value to the URL object's cache, and returns the resource value to the caller. The type of the resource value varies by resource property (see resource key definitions). If this function returns true and propertyValueTypeRefPtr is populated with NULL, it means the resource property is not available for the specified resource and no errors occurred when determining the resource property was not available. If this function returns false, the optional error is populated. This function is currently applicable only to URLs for file system resources.
+     * CFURLCopyResourcePropertyForKey first checks if the URL object already caches the resource value. If so, it
+     * returns the cached resource value to the caller. If not, then CFURLCopyResourcePropertyForKey synchronously
+     * obtains the resource value from the backing store, adds the resource value to the URL object's cache, and returns
+     * the resource value to the caller. The type of the resource value varies by resource property (see resource key
+     * definitions). If this function returns true and propertyValueTypeRefPtr is populated with NULL, it means the
+     * resource property is not available for the specified resource and no errors occurred when determining the
+     * resource property was not available. If this function returns false, the optional error is populated. This
+     * function is currently applicable only to URLs for file system resources.
      * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
@@ -3523,13 +3624,21 @@ public final class CoreFoundation {
      * keys
      * An array of resource keys that identify the resource properties.
      * error
-     * On output when the result is NULL, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
+     * On output when the result is NULL, the error that occurred. This parameter is optional; if you do not wish the
+     * error returned, pass NULL here. The caller is responsible for releasing a valid output error.
      * <p>
      * Return Value
      * A dictionary of resource values indexed by resource key; NULL if an error occurs.
      * <p>
      * Discussion
-     * CFURLCopyResourcePropertiesForKeys first checks if the URL object already caches the resource values. If so, it returns the cached resource values to the caller. If not, then CFURLCopyResourcePropertyForKey synchronously obtains the resource values from the backing store, adds the resource values to the URL object's cache, and returns the resource values to the caller. The type of the resource values vary by property (see resource key definitions). If the result dictionary does not contain a resource value for one or more of the requested resource keys, it means those resource properties are not available for the specified resource and no errors occurred when determining those resource properties were not available. If this function returns NULL, the optional error is populated. This function is currently applicable only to URLs for file system resources.
+     * CFURLCopyResourcePropertiesForKeys first checks if the URL object already caches the resource values. If so, it
+     * returns the cached resource values to the caller. If not, then CFURLCopyResourcePropertyForKey synchronously
+     * obtains the resource values from the backing store, adds the resource values to the URL object's cache, and
+     * returns the resource values to the caller. The type of the resource values vary by property (see resource key
+     * definitions). If the result dictionary does not contain a resource value for one or more of the requested
+     * resource keys, it means those resource properties are not available for the specified resource and no errors
+     * occurred when determining those resource properties were not available. If this function returns NULL, the
+     * optional error is populated. This function is currently applicable only to URLs for file system resources.
      * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
@@ -3550,13 +3659,17 @@ public final class CoreFoundation {
      * propertyValue
      * The resource value.
      * error
-     * On output when the result is false, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
+     * On output when the result is false, the error that occurred. This parameter is optional; if you do not wish the
+     * error returned, pass NULL here. The caller is responsible for releasing a valid output error.
      * <p>
      * Return Value
      * true if the attempt to set the resource value completed with no errors; otherwise, false.
      * <p>
      * Discussion
-     * CFURLSetResourcePropertyForKey writes the new resource value out to the backing store. Attempts to set a read-only resource property or to set a resource property not supported by the resource are ignored and are not considered errors. If this function returns false, the optional error is populated. This function is currently applicable only to URLs for file system resources.
+     * CFURLSetResourcePropertyForKey writes the new resource value out to the backing store. Attempts to set a
+     * read-only resource property or to set a resource property not supported by the resource are ignored and are not
+     * considered errors. If this function returns false, the optional error is populated. This function is currently
+     * applicable only to URLs for file system resources.
      * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
@@ -3575,13 +3688,22 @@ public final class CoreFoundation {
      * keyedPropertyValues
      * A dictionary of resource values indexed by resource keys.
      * error
-     * On output when the result is false, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
+     * On output when the result is false, the error that occurred. This parameter is optional; if you do not wish the
+     * error returned, pass NULL here. The caller is responsible for releasing a valid output error.
      * <p>
      * Return Value
      * true if the attempt to set the resource values completed with no errors; otherwise, false.
      * <p>
      * Discussion
-     * CFURLSetResourcePropertiesForKeys writes the new resource values out to the backing store. Attempts to set read-only resource properties or to set resource properties not supported by the resource are ignored and are not considered errors. If an error occurs after some resource properties have been successfully changed, the userInfo dictionary in the returned error contains an array of resource keys that were not set with the key kCFURLKeysOfUnsetValuesKey. The order in which the resource values are set is not defined. If you need to guarantee the order resource values are set, you should make multiple requests to CFURLSetResourcePropertiesForKeys or CFURLSetResourcePropertyForKey to guarantee the order. If this function returns false, the optional error is populated. This function is currently applicable only to URLs for file system resources.
+     * CFURLSetResourcePropertiesForKeys writes the new resource values out to the backing store. Attempts to set
+     * read-only resource properties or to set resource properties not supported by the resource are ignored and are not
+     * considered errors. If an error occurs after some resource properties have been successfully changed, the userInfo
+     * dictionary in the returned error contains an array of resource keys that were not set with the key
+     * kCFURLKeysOfUnsetValuesKey. The order in which the resource values are set is not defined. If you need to
+     * guarantee the order resource values are set, you should make multiple requests to
+     * CFURLSetResourcePropertiesForKeys or CFURLSetResourcePropertyForKey to guarantee the order. If this function
+     * returns false, the optional error is populated. This function is currently applicable only to URLs for file
+     * system resources.
      * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
@@ -3601,7 +3723,9 @@ public final class CoreFoundation {
      * The resource key that identifies the resource property.
      * <p>
      * Discussion
-     * Discarding a cached resource value may discard other cached resource values, because some resource values are cached as a set of values and because some resource values depend on other resource values (temporary properties have no dependencies). This function is currently applicable only to URLs for file system resources.
+     * Discarding a cached resource value may discard other cached resource values, because some resource values are
+     * cached as a set of values and because some resource values depend on other resource values (temporary properties
+     * have no dependencies). This function is currently applicable only to URLs for file system resources.
      * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
@@ -3618,7 +3742,8 @@ public final class CoreFoundation {
      * The URL specifying the resource.
      * <p>
      * Discussion
-     * All temporary properties are also cleared from the URL object's cache. This function is currently applicable only to URLs for file system resources.
+     * All temporary properties are also cleared from the URL object's cache. This function is currently applicable only
+     * to URLs for file system resources.
      * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
@@ -3639,7 +3764,14 @@ public final class CoreFoundation {
      * The resource value.
      * <p>
      * Discussion
-     * Temporary properties are for client use. Temporary properties exist only in memory and are never written to the resource's backing store. Once set, a temporary value can be copied from the URL object with CFURLCopyResourcePropertyForKey and CFURLCopyResourcePropertiesForKeys. To remove a temporary value from the URL object, use CFURLClearResourcePropertyCacheForKey. Temporary values must be valid Core Foundation types, and will be retained by CFURLSetTemporaryResourcePropertyForKey. Care should be taken to ensure the key that identifies a temporary resource property is unique and does not conflict with system defined keys (using reverse domain name notation in your temporary resource property keys is recommended). This function is currently applicable only to URLs for file system resources.
+     * Temporary properties are for client use. Temporary properties exist only in memory and are never written to the
+     * resource's backing store. Once set, a temporary value can be copied from the URL object with
+     * CFURLCopyResourcePropertyForKey and CFURLCopyResourcePropertiesForKeys. To remove a temporary value from the URL
+     * object, use CFURLClearResourcePropertyCacheForKey. Temporary values must be valid Core Foundation types, and will
+     * be retained by CFURLSetTemporaryResourcePropertyForKey. Care should be taken to ensure the key that identifies a
+     * temporary resource property is unique and does not conflict with system defined keys (using reverse domain name
+     * notation in your temporary resource property keys is recommended). This function is currently applicable only to
+     * URLs for file system resources.
      * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
@@ -3656,13 +3788,19 @@ public final class CoreFoundation {
      * url
      * The URL object.
      * error
-     * On output when the result is false, the error that occurred. This parameter is optional; if you do not wish the error returned, pass NULL here. The caller is responsible for releasing a valid output error.
+     * On output when the result is false, the error that occurred. This parameter is optional; if you do not wish the
+     * error returned, pass NULL here. The caller is responsible for releasing a valid output error.
      * <p>
      * Return Value
      * true if the resource is reachable; otherwise, false.
      * <p>
      * Discussion
-     * CFURLResourceIsReachable synchronously checks if the resource's backing store is reachable. Checking reachability is appropriate when making decisions that do not require other immediate operations on the resource, e.g. periodic maintenance of UI state that depends on the existence of a specific document. When performing operations such as opening a file or copying resource properties, it is more efficient to simply try the operation and handle failures. This function is currently applicable only to URLs for file system resources. If this function returns false, the optional error is populated. For other URL types, false is returned.
+     * CFURLResourceIsReachable synchronously checks if the resource's backing store is reachable. Checking reachability
+     * is appropriate when making decisions that do not require other immediate operations on the resource, e.g.
+     * periodic maintenance of UI state that depends on the existence of a specific document. When performing operations
+     * such as opening a file or copying resource properties, it is more efficient to simply try the operation and
+     * handle failures. This function is currently applicable only to URLs for file system resources. If this function
+     * returns false, the optional error is populated. For other URL types, false is returned.
      * Symbol is present in iOS 4, but performs no operation.
      */
     @Generated
@@ -3670,7 +3808,8 @@ public final class CoreFoundation {
     public static native byte CFURLResourceIsReachable(CFURLRef url, Ptr<CFErrorRef> error);
 
     /**
-     * Returns bookmark data for the URL, created with specified options and resource properties. If this function returns NULL, the optional error is populated.
+     * Returns bookmark data for the URL, created with specified options and resource properties. If this function
+     * returns NULL, the optional error is populated.
      */
     @Generated
     @CFunction
@@ -3678,7 +3817,8 @@ public final class CoreFoundation {
             CFArrayRef resourcePropertiesToInclude, CFURLRef relativeToURL, Ptr<CFErrorRef> error);
 
     /**
-     * Return a URL that refers to a location specified by resolving bookmark data. If this function returns NULL, the optional error is populated.
+     * Return a URL that refers to a location specified by resolving bookmark data. If this function returns NULL, the
+     * optional error is populated.
      */
     @Generated
     @CFunction
@@ -3687,7 +3827,9 @@ public final class CoreFoundation {
             Ptr<CFErrorRef> error);
 
     /**
-     * Returns the resource propertyies identified by a specified array of keys contained in specified bookmark data. If the result dictionary does not contain a resource value for one or more of the requested resource keys, it means those resource properties are not available in the bookmark data.
+     * Returns the resource propertyies identified by a specified array of keys contained in specified bookmark data. If
+     * the result dictionary does not contain a resource value for one or more of the requested resource keys, it means
+     * those resource properties are not available in the bookmark data.
      */
     @Generated
     @CFunction
@@ -3695,7 +3837,8 @@ public final class CoreFoundation {
             CFArrayRef resourcePropertiesToReturn, CFDataRef bookmark);
 
     /**
-     * Returns the resource property identified by a given resource key contained in specified bookmark data. If this function returns NULL, it means the resource property is not available in the bookmark data.
+     * Returns the resource property identified by a given resource key contained in specified bookmark data. If this
+     * function returns NULL, it means the resource property is not available in the bookmark data.
      */
     @Generated
     @CFunction
@@ -3703,7 +3846,9 @@ public final class CoreFoundation {
             CFStringRef resourcePropertyKey, CFDataRef bookmark);
 
     /**
-     * Returns bookmark data derived from an alias file referred to by fileURL. If fileURL refers to an alias file created prior to OS X v10.6 that contains Alias Manager information but no bookmark data, this method synthesizes bookmark data for the file. If this method returns NULL, the optional error is populated.
+     * Returns bookmark data derived from an alias file referred to by fileURL. If fileURL refers to an alias file
+     * created prior to OS X v10.6 that contains Alias Manager information but no bookmark data, this method synthesizes
+     * bookmark data for the file. If this method returns NULL, the optional error is populated.
      */
     @Generated
     @CFunction
@@ -3711,7 +3856,10 @@ public final class CoreFoundation {
             Ptr<CFErrorRef> errorRef);
 
     /**
-     * Creates an alias file on disk at a specified location with specified bookmark data. The bookmark data must have been created with the kCFURLBookmarkCreationSuitableForBookmarkFile option. fileURL must either refer to an existing file (which will be overwritten), or to location in an existing directory. If this method returns FALSE, the optional error is populated.
+     * Creates an alias file on disk at a specified location with specified bookmark data. The bookmark data must have
+     * been created with the kCFURLBookmarkCreationSuitableForBookmarkFile option. fileURL must either refer to an
+     * existing file (which will be overwritten), or to location in an existing directory. If this method returns FALSE,
+     * the optional error is populated.
      */
     @Generated
     @CFunction
@@ -3719,7 +3867,10 @@ public final class CoreFoundation {
             Ptr<CFErrorRef> errorRef);
 
     /**
-     * Given a CFURLRef created by resolving a bookmark data created with security scope, make the resource referenced by the url accessible to the process. When access to this resource is no longer needed the client must call CFURLStopAccessingSecurityScopedResource(). Each call to CFURLStartAccessingSecurityScopedResource() must be balanced with a call to CFURLStopAccessingSecurityScopedResource() (Note: this is not reference counted).
+     * Given a CFURLRef created by resolving a bookmark data created with security scope, make the resource referenced
+     * by the url accessible to the process. When access to this resource is no longer needed the client must call
+     * CFURLStopAccessingSecurityScopedResource(). Each call to CFURLStartAccessingSecurityScopedResource() must be
+     * balanced with a call to CFURLStopAccessingSecurityScopedResource() (Note: this is not reference counted).
      */
     @Generated
     @CFunction
@@ -4024,13 +4175,13 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFBinaryHeapGetMinimum
-     * Returns the minimum value is in the binary heap.  If the heap contains several equal
+     * Returns the minimum value is in the binary heap. If the heap contains several equal
      * minimum values, any one may be returned.
      *
      * @param heap The binary heap to be searched. If this parameter is not a
      *             valid CFBinaryHeap, the behavior is undefined.
      * @return A reference to the minimum value in the binary heap, or NULL if the
-     * binary heap contains no values.
+     *         binary heap contains no values.
      */
     @Generated
     @CFunction
@@ -4038,14 +4189,14 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFBinaryHeapGetMinimumIfPresent
-     * Returns the minimum value is in the binary heap, if present.  If the heap contains several equal
+     * Returns the minimum value is in the binary heap, if present. If the heap contains several equal
      * minimum values, any one may be returned.
      *
      * @param heap  The binary heap to be searched. If this parameter is not a
      *              valid CFBinaryHeap, the behavior is undefined.
      * @param value A C pointer to pointer-sized storage to be filled with the minimum value in
-     *              the binary heap.  If this value is not a valid C pointer to a pointer-sized block
-     *              of storage, the result is undefined.  If the result of the function is false, the value
+     *              the binary heap. If this value is not a valid C pointer to a pointer-sized block
+     *              of storage, the result is undefined. If the result of the function is false, the value
      *              stored at this address is undefined.
      * @return true, if a minimum value was found in the specified binary heap, otherwise false.
      */
@@ -4428,7 +4579,7 @@ public final class CoreFoundation {
     public static native CFCalendarRef CFCalendarCreateWithIdentifier(CFAllocatorRef allocator, CFStringRef identifier);
 
     /**
-     * Create a calendar.  The identifiers are the kCF*Calendar
+     * Create a calendar. The identifiers are the kCF*Calendar
      * constants in CFLocale.h.
      */
     @Generated
@@ -4529,7 +4680,7 @@ public final class CoreFoundation {
             Object... varargs);
 
     /**
-     * CFDateFormatters are not thread-safe.  Do not use one from multiple threads!
+     * CFDateFormatters are not thread-safe. Do not use one from multiple threads!
      */
     @Generated
     @CFunction
@@ -4584,9 +4735,9 @@ public final class CoreFoundation {
     public static native void CFDateFormatterSetFormat(CFDateFormatterRef formatter, CFStringRef formatString);
 
     /**
-     * Set the format description string of the date formatter.  This
-     * overrides the style settings.  The format of the format string
-     * is as defined by the ICU library.  The date formatter starts with a
+     * Set the format description string of the date formatter. This
+     * overrides the style settings. The format of the format string
+     * is as defined by the ICU library. The date formatter starts with a
      * default format string defined by the style arguments with
      * which it was created.
      */
@@ -4617,10 +4768,10 @@ public final class CoreFoundation {
 
     /**
      * Parse a string representation of a date using the current state
-     * of the date formatter.  The range parameter specifies the range
+     * of the date formatter. The range parameter specifies the range
      * of the string in which the parsing should occur in input, and on
      * output indicates the extent that was used; this parameter can
-     * be NULL, in which case the whole string may be used.  The
+     * be NULL, in which case the whole string may be used. The
      * return value indicates whether some date was computed and
      * (if atp is not NULL) stored at the location specified by atp.
      */
@@ -4660,7 +4811,7 @@ public final class CoreFoundation {
             ConstVoidPtr valuePtr);
 
     /**
-     * Returns the storage format of the CFNumber's value.  Note that
+     * Returns the storage format of the CFNumber's value. Note that
      * this is not necessarily the type provided in CFNumberCreate().
      */
     @Generated
@@ -4717,7 +4868,7 @@ public final class CoreFoundation {
     public static native long CFNumberCompare(CFNumberRef number, CFNumberRef otherNumber, VoidPtr context);
 
     /**
-     * CFNumberFormatters are not thread-safe.  Do not use one from multiple threads!
+     * CFNumberFormatters are not thread-safe. Do not use one from multiple threads!
      */
     @Generated
     @CFunction
@@ -4754,8 +4905,8 @@ public final class CoreFoundation {
     public static native void CFNumberFormatterSetFormat(CFNumberFormatterRef formatter, CFStringRef formatString);
 
     /**
-     * Set the format description string of the number formatter.  This
-     * overrides the style settings.  The format of the format string
+     * Set the format description string of the number formatter. This
+     * overrides the style settings. The format of the format string
      * is as defined by the ICU library, and is similar to that found
      * in Microsoft Excel and NSNumberFormatter.
      * The number formatter starts with a default format string defined
@@ -4785,13 +4936,13 @@ public final class CoreFoundation {
 
     /**
      * Parse a string representation of a number using the current state
-     * of the number formatter.  The range parameter specifies the range
+     * of the number formatter. The range parameter specifies the range
      * of the string in which the parsing should occur in input, and on
      * output indicates the extent that was used; this parameter can
-     * be NULL, in which case the whole string may be used.  The
+     * be NULL, in which case the whole string may be used. The
      * return value indicates whether some number was computed and
      * (if valuePtr is not NULL) stored at the location specified by
-     * valuePtr.  The numberType indicates the type of value pointed
+     * valuePtr. The numberType indicates the type of value pointed
      * to by valuePtr.
      */
     @Generated
@@ -4810,8 +4961,8 @@ public final class CoreFoundation {
 
     /**
      * Searches the various sources of application defaults to find the
-     * value for the given key. key must not be NULL.  If a value is found,
-     * it returns it; otherwise returns NULL.  Caller must release the
+     * value for the given key. key must not be NULL. If a value is found,
+     * it returns it; otherwise returns NULL. Caller must release the
      * returned value
      */
     @Generated
@@ -4841,7 +4992,7 @@ public final class CoreFoundation {
 
     /**
      * Sets the given value for the given key in the "normal" place for
-     * application preferences.  key must not be NULL.  If value is NULL,
+     * application preferences. key must not be NULL. If value is NULL,
      * key is removed instead.
      */
     @Generated
@@ -4850,7 +5001,7 @@ public final class CoreFoundation {
 
     /**
      * Adds the preferences for the given suite to the app preferences for
-     * the specified application.  To write to the suite domain, use
+     * the specified application. To write to the suite domain, use
      * CFPreferencesSetValue(), below, using the suiteName in place
      * of the appName
      */
@@ -4873,8 +5024,8 @@ public final class CoreFoundation {
 
     /**
      * The primitive get mechanism; all arguments must be non-NULL
-     * (use the constants above for common values).  Only the exact
-     * location specified by app-user-host is searched.  The returned
+     * (use the constants above for common values). Only the exact
+     * location specified by app-user-host is searched. The returned
      * CFType must be released by the caller when it is finished with it.
      */
     @Generated
@@ -4883,9 +5034,9 @@ public final class CoreFoundation {
             CFStringRef userName, CFStringRef hostName);
 
     /**
-     * Convenience to fetch multiple keys at once.  Keys in
+     * Convenience to fetch multiple keys at once. Keys in
      * keysToFetch that are not present in the returned dictionary
-     * are not present in the domain.  If keysToFetch is NULL, all
+     * are not present in the domain. If keysToFetch is NULL, all
      * keys are fetched.
      */
     @Generated
@@ -4895,7 +5046,7 @@ public final class CoreFoundation {
 
     /**
      * The primitive set function; all arguments except value must be
-     * non-NULL.  If value is NULL, the given key is removed
+     * non-NULL. If value is NULL, the given key is removed
      */
     @Generated
     @CFunction
@@ -4903,7 +5054,7 @@ public final class CoreFoundation {
             CFStringRef userName, CFStringRef hostName);
 
     /**
-     * Convenience to set multiple values at once.  Behavior is undefined
+     * Convenience to set multiple values at once. Behavior is undefined
      * if a key is in both keysToSet and keysToRemove
      */
     @Generated
@@ -4929,7 +5080,7 @@ public final class CoreFoundation {
 
     /**
      * Constructs and returns the list of all keys set in the given
-     * location, or NULL if no keys are set.  The returned value must be released by the caller;
+     * location, or NULL if no keys are set. The returned value must be released by the caller;
      * all arguments must be non-NULL
      */
     @Generated
@@ -5168,8 +5319,17 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFRunLoopTimerContext context);
 
     /**
-     * Setting a tolerance for a timer allows it to fire later than the scheduled fire date, improving the ability of the system to optimize for increased power savings and responsiveness. The timer may fire at any time between its scheduled fire date and the scheduled fire date plus the tolerance. The timer will not fire before the scheduled fire date. For repeating timers, the next fire date is calculated from the original fire date regardless of tolerance applied at individual fire times, to avoid drift. The default value is zero, which means no additional tolerance is applied. The system reserves the right to apply a small amount of tolerance to certain timers regardless of the value of this property.
-     * As the user of the timer, you will have the best idea of what an appropriate tolerance for a timer may be. A general rule of thumb, though, is to set the tolerance to at least 10% of the interval, for a repeating timer. Even a small amount of tolerance will have a significant positive impact on the power usage of your application. The system may put a maximum value of the tolerance.
+     * Setting a tolerance for a timer allows it to fire later than the scheduled fire date, improving the ability of
+     * the system to optimize for increased power savings and responsiveness. The timer may fire at any time between its
+     * scheduled fire date and the scheduled fire date plus the tolerance. The timer will not fire before the scheduled
+     * fire date. For repeating timers, the next fire date is calculated from the original fire date regardless of
+     * tolerance applied at individual fire times, to avoid drift. The default value is zero, which means no additional
+     * tolerance is applied. The system reserves the right to apply a small amount of tolerance to certain timers
+     * regardless of the value of this property.
+     * As the user of the timer, you will have the best idea of what an appropriate tolerance for a timer may be. A
+     * general rule of thumb, though, is to set the tolerance to at least 10% of the interval, for a repeating timer.
+     * Even a small amount of tolerance will have a significant positive impact on the power usage of your application.
+     * The system may put a maximum value of the tolerance.
      */
     @Generated
     @CFunction
@@ -5207,7 +5367,8 @@ public final class CoreFoundation {
             @UncertainArgument("Options: reference, array Fallback: reference") CFSocketContext context);
 
     /**
-     * CFSocketCreateWithSocketSignature() creates a socket of the requested type and binds its address (using CFSocketSetAddress()) to the requested address.  If this fails, it returns NULL.
+     * CFSocketCreateWithSocketSignature() creates a socket of the requested type and binds its address (using
+     * CFSocketSetAddress()) to the requested address. If this fails, it returns NULL.
      */
     @Generated
     @CFunction
@@ -5219,7 +5380,8 @@ public final class CoreFoundation {
             double timeout);
 
     /**
-     * CFSocketCreateConnectedToSocketSignature() creates a socket suitable for connecting to the requested type and address, and connects it (using CFSocketConnectToAddress()).  If this fails, it returns NULL.
+     * CFSocketCreateConnectedToSocketSignature() creates a socket suitable for connecting to the requested type and
+     * address, and connects it (using CFSocketConnectToAddress()). If this fails, it returns NULL.
      */
     @Generated
     @CFunction
@@ -5279,7 +5441,8 @@ public final class CoreFoundation {
     public static native void CFSocketEnableCallBacks(CFSocketRef s, @NUInt long callBackTypes);
 
     /**
-     * For convenience, a function is provided to send data using the socket with a timeout.  The timeout will be used only if the specified value is positive.  The address should be left NULL if the socket is already connected.
+     * For convenience, a function is provided to send data using the socket with a timeout. The timeout will be used
+     * only if the specified value is positive. The address should be left NULL if the socket is already connected.
      */
     @Generated
     @CFunction
@@ -5289,18 +5452,18 @@ public final class CoreFoundation {
     /**
      * Generic name registry functionality (CFSocketRegisterValue,
      * CFSocketCopyRegisteredValue) allows the registration of any property
-     * list type.  Functions specific to CFSockets (CFSocketRegisterSocketData,
+     * list type. Functions specific to CFSockets (CFSocketRegisterSocketData,
      * CFSocketCopyRegisteredSocketData) register a CFData containing the
      * components of a socket signature (protocol family, socket type,
-     * protocol, and address).  In each function the nameServerSignature
+     * protocol, and address). In each function the nameServerSignature
      * may be NULL, or any component of it may be 0, to use default values
-     * (TCP, INADDR_LOOPBACK, port as set).  Name registration servers might
+     * (TCP, INADDR_LOOPBACK, port as set). Name registration servers might
      * not allow registration with other than TCP and INADDR_LOOPBACK.
      * The actual address of the server responding to a query may be obtained
-     * by using the nameServerAddress argument.  This address, the address
+     * by using the nameServerAddress argument. This address, the address
      * returned by CFSocketCopyRegisteredSocketSignature, and the value
      * returned by CFSocketCopyRegisteredValue must (if non-null) be released
-     * by the caller.  CFSocketUnregister removes any registration associated
+     * by the caller. CFSocketUnregister removes any registration associated
      * with the specified name.
      */
     @Generated
@@ -5360,7 +5523,8 @@ public final class CoreFoundation {
     public static native long CFWriteStreamGetTypeID();
 
     /**
-     * Pass kCFAllocatorNull for bytesDeallocator to prevent CFReadStream from deallocating bytes; otherwise, CFReadStream will deallocate bytes when the stream is destroyed
+     * Pass kCFAllocatorNull for bytesDeallocator to prevent CFReadStream from deallocating bytes; otherwise,
+     * CFReadStream will deallocate bytes when the stream is destroyed
      */
     @Generated
     @CFunction
@@ -5369,7 +5533,8 @@ public final class CoreFoundation {
             @NInt long length, CFAllocatorRef bytesDeallocator);
 
     /**
-     * The stream writes into the buffer given; when bufferCapacity is exhausted, the stream is exhausted (status becomes kCFStreamStatusAtEnd)
+     * The stream writes into the buffer given; when bufferCapacity is exhausted, the stream is exhausted (status
+     * becomes kCFStreamStatusAtEnd)
      */
     @Generated
     @CFunction
@@ -5377,7 +5542,8 @@ public final class CoreFoundation {
             @NInt long bufferCapacity);
 
     /**
-     * New buffers are allocated from bufferAllocator as bytes are written to the stream.  At any point, you can recover the bytes thusfar written by asking for the property kCFStreamPropertyDataWritten, above
+     * New buffers are allocated from bufferAllocator as bytes are written to the stream. At any point, you can recover
+     * the bytes thusfar written by asking for the property kCFStreamPropertyDataWritten, above
      */
     @Generated
     @CFunction
@@ -5401,7 +5567,8 @@ public final class CoreFoundation {
             Ptr<CFWriteStreamRef> writeStream, @NInt long transferBufferSize);
 
     /**
-     * Socket streams; the returned streams are paired such that they use the same socket; pass NULL if you want only the read stream or the write stream
+     * Socket streams; the returned streams are paired such that they use the same socket; pass NULL if you want only
+     * the read stream or the write stream
      */
     @Generated
     @CFunction
@@ -5444,8 +5611,8 @@ public final class CoreFoundation {
     public static native CFErrorRef CFWriteStreamCopyError(CFWriteStreamRef stream);
 
     /**
-     * Returns success/failure.  Opening a stream causes it to reserve all the system
-     * resources it requires.  If the stream can open non-blocking, this will always
+     * Returns success/failure. Opening a stream causes it to reserve all the system
+     * resources it requires. If the stream can open non-blocking, this will always
      * return TRUE; listen to the run loop source to find out when the open completes
      * and whether it was successful, or poll using CFRead/WriteStreamGetStatus(), waiting
      * for a status of kCFStreamStatusOpen or kCFStreamStatusError.
@@ -5460,7 +5627,7 @@ public final class CoreFoundation {
 
     /**
      * Terminates the flow of bytes; releases any system resources required by the
-     * stream.  The stream may not fail to close.  You may call CFStreamClose() to
+     * stream. The stream may not fail to close. You may call CFStreamClose() to
      * effectively abort a stream.
      */
     @Generated
@@ -5484,7 +5651,7 @@ public final class CoreFoundation {
      * bytes from being read, or 0 if the stream's end was encountered.
      * It is an error to try and read from a stream that hasn't been opened first.
      * This call will block until at least one byte is available; it will NOT block
-     * until the entire buffer can be filled.  To avoid blocking, either poll using
+     * until the entire buffer can be filled. To avoid blocking, either poll using
      * CFReadStreamHasBytesAvailable() or use the run loop and listen for the
      * kCFStreamEventHasBytesAvailable event for notification of data available.
      */
@@ -5496,11 +5663,11 @@ public final class CoreFoundation {
     /**
      * Returns a pointer to an internal buffer if possible (setting *numBytesRead
      * to the length of the returned buffer), otherwise returns NULL; guaranteed
-     * to return in O(1).  Bytes returned in the buffer are considered read from
+     * to return in O(1). Bytes returned in the buffer are considered read from
      * the stream; if maxBytesToRead is greater than 0, not more than maxBytesToRead
-     * will be returned.  If maxBytesToRead is less than or equal to zero, as many bytes
-     * as are readily available will be returned.  The returned buffer is good only
-     * until the next stream operation called on the stream.  Caller should neither
+     * will be returned. If maxBytesToRead is less than or equal to zero, as many bytes
+     * as are readily available will be returned. The returned buffer is good only
+     * until the next stream operation called on the stream. Caller should neither
      * change the contents of the returned buffer nor attempt to deallocate the buffer;
      * it is still owned by the stream.
      */
@@ -5521,8 +5688,8 @@ public final class CoreFoundation {
     /**
      * Returns the number of bytes successfully written, -1 if an error has
      * occurred, or 0 if the stream has been filled to capacity (for fixed-length
-     * streams).  If the stream is not full, this call will block until at least
-     * one byte is written.  To avoid blocking, either poll via CFWriteStreamCanAcceptBytes
+     * streams). If the stream is not full, this call will block until at least
+     * one byte is written. To avoid blocking, either poll via CFWriteStreamCanAcceptBytes
      * or use the run loop and listen for the kCFStreamEventCanAcceptBytes event.
      */
     @Generated
@@ -5534,12 +5701,12 @@ public final class CoreFoundation {
 
     /**
      * Particular streams can name properties and assign meanings to them; you
-     * access these properties through the following calls.  A property is any interesting
+     * access these properties through the following calls. A property is any interesting
      * information about the stream other than the data being transmitted itself.
      * Examples include the headers from an HTTP transmission, or the expected
-     * number of bytes, or permission information, etc.  Properties that can be set
+     * number of bytes, or permission information, etc. Properties that can be set
      * configure the behavior of the stream, and may only be settable at particular times
-     * (like before the stream has been opened).  See the documentation for particular
+     * (like before the stream has been opened). See the documentation for particular
      * properties to determine their get- and set-ability.
      */
     @Generated
@@ -5566,16 +5733,16 @@ public final class CoreFoundation {
 
     /**
      * Asynchronous processing - If you wish to neither poll nor block, you may register
-     * a client to hear about interesting events that occur on a stream.  Only one client
+     * a client to hear about interesting events that occur on a stream. Only one client
      * per stream is allowed; registering a new client replaces the previous one.
      * <p>
      * Once you have set a client, the stream must be scheduled to provide the context in
-     * which the client will be called.  Streams may be scheduled on a single dispatch queue
-     * or on one or more run loops.  If scheduled on a run loop, it is the caller's responsibility
+     * which the client will be called. Streams may be scheduled on a single dispatch queue
+     * or on one or more run loops. If scheduled on a run loop, it is the caller's responsibility
      * to ensure that at least one of the scheduled run loops is being run.
      * <p>
      * NOTE: Unlike other CoreFoundation APIs, pasing a NULL clientContext here will remove
-     * the client.  If you do not care about the client context (i.e. your only concern
+     * the client. If you do not care about the client context (i.e. your only concern
      * is that your callback be called), you should pass in a valid context where every
      * entry is 0 or NULL.
      */
@@ -5705,7 +5872,7 @@ public final class CoreFoundation {
     public static native byte CFPropertyListIsValid(ConstVoidPtr plist, @NInt long format);
 
     /**
-     * Writes the bytes of a plist serialization out to the stream.  The
+     * Writes the bytes of a plist serialization out to the stream. The
      * stream must be opened and configured -- the function simply writes
      * a bunch of bytes to the stream. The output plist format can be chosen.
      * Leaves the stream open, but note that reading a plist expects the
@@ -5743,7 +5910,12 @@ public final class CoreFoundation {
             @NInt long streamLength, @NUInt long mutabilityOption, NIntPtr format, Ptr<CFStringRef> errorString);
 
     /**
-     * Create a property list with a CFData input. If the format parameter is non-NULL, it will be set to the format of the data after parsing is complete. The options parameter is used to specify CFPropertyListMutabilityOptions. If an error occurs while parsing the data, the return value will be NULL. Additionally, if an error occurs and the error parameter is non-NULL, the error parameter will be set to a CFError describing the problem, which the caller must release. If the parse succeeds, the returned value is a reference to the new property list. It is the responsibility of the caller to release this value.
+     * Create a property list with a CFData input. If the format parameter is non-NULL, it will be set to the format of
+     * the data after parsing is complete. The options parameter is used to specify CFPropertyListMutabilityOptions. If
+     * an error occurs while parsing the data, the return value will be NULL. Additionally, if an error occurs and the
+     * error parameter is non-NULL, the error parameter will be set to a CFError describing the problem, which the
+     * caller must release. If the parse succeeds, the returned value is a reference to the new property list. It is the
+     * responsibility of the caller to release this value.
      */
     @Generated
     @CFunction
@@ -5751,7 +5923,14 @@ public final class CoreFoundation {
             @NUInt long options, NIntPtr format, Ptr<CFErrorRef> error);
 
     /**
-     * Create and return a property list with a CFReadStream input. If the format parameter is non-NULL, it will be set to the format of the data after parsing is complete. The options parameter is used to specify CFPropertyListMutabilityOptions. The streamLength parameter specifies the number of bytes to read from the stream. Set streamLength to 0 to read until the end of the stream is detected. If an error occurs while parsing the data, the return value will be NULL. Additionally, if an error occurs and the error parameter is non-NULL, the error parameter will be set to a CFError describing the problem, which the caller must release. If the parse succeeds, the returned value is a reference to the new property list. It is the responsibility of the caller to release this value.
+     * Create and return a property list with a CFReadStream input. If the format parameter is non-NULL, it will be set
+     * to the format of the data after parsing is complete. The options parameter is used to specify
+     * CFPropertyListMutabilityOptions. The streamLength parameter specifies the number of bytes to read from the
+     * stream. Set streamLength to 0 to read until the end of the stream is detected. If an error occurs while parsing
+     * the data, the return value will be NULL. Additionally, if an error occurs and the error parameter is non-NULL,
+     * the error parameter will be set to a CFError describing the problem, which the caller must release. If the parse
+     * succeeds, the returned value is a reference to the new property list. It is the responsibility of the caller to
+     * release this value.
      */
     @Generated
     @CFunction
@@ -5759,7 +5938,11 @@ public final class CoreFoundation {
             @NInt long streamLength, @NUInt long options, NIntPtr format, Ptr<CFErrorRef> error);
 
     /**
-     * Write the bytes of a serialized property list out to a stream. The stream must be opened and configured. The format of the property list can be chosen with the format parameter. The options parameter is currently unused and should be set to 0. The return value is the number of bytes written or 0 in the case of an error. If an error occurs and the error parameter is non-NULL, the error parameter will be set to a CFError describing the problem, which the caller must release.
+     * Write the bytes of a serialized property list out to a stream. The stream must be opened and configured. The
+     * format of the property list can be chosen with the format parameter. The options parameter is currently unused
+     * and should be set to 0. The return value is the number of bytes written or 0 in the case of an error. If an error
+     * occurs and the error parameter is non-NULL, the error parameter will be set to a CFError describing the problem,
+     * which the caller must release.
      */
     @Generated
     @CFunction
@@ -5768,7 +5951,12 @@ public final class CoreFoundation {
             @NUInt long options, Ptr<CFErrorRef> error);
 
     /**
-     * Create a CFData with the bytes of a serialized property list. The format of the property list can be chosen with the format parameter. The options parameter is currently unused and should be set to 0. If an error occurs while parsing the data, the return value will be NULL. Additionally, if an error occurs and the error parameter is non-NULL, the error parameter will be set to a CFError describing the problem, which the caller must release. If the conversion succeeds, the returned value is a reference to the created data. It is the responsibility of the caller to release this value.
+     * Create a CFData with the bytes of a serialized property list. The format of the property list can be chosen with
+     * the format parameter. The options parameter is currently unused and should be set to 0. If an error occurs while
+     * parsing the data, the return value will be NULL. Additionally, if an error occurs and the error parameter is
+     * non-NULL, the error parameter will be set to a CFError describing the problem, which the caller must release. If
+     * the conversion succeeds, the returned value is a reference to the created data. It is the responsibility of the
+     * caller to release this value.
      */
     @Generated
     @CFunction
@@ -5794,12 +5982,12 @@ public final class CoreFoundation {
      *                  CFAllocator is used. If this reference is not a valid
      *                  CFAllocator, the behavior is undefined.
      * @param values    A C array of the pointer-sized values to be in the
-     *                  set.  This C array is not changed or freed by this function.
+     *                  set. This C array is not changed or freed by this function.
      *                  If this parameter is not a valid pointer to a C array of at
      *                  least numValues pointers, the behavior is undefined.
      * @param numValues The number of values to copy from the values C
      *                  array into the CFSet. This number will be the count of the
-     *                  set.  If this parameter is zero, negative, or greater than
+     *                  set. If this parameter is zero, negative, or greater than
      *                  the number of values actually in the values C array, the
      *                  behavior is undefined.
      * @param callBacks A C pointer to a CFSetCallBacks structure
@@ -5824,7 +6012,7 @@ public final class CoreFoundation {
      *                  of version 0 with all fields NULL had been passed in.
      *                  Otherwise, if any of the fields are not valid pointers to
      *                  functions of the correct type, or this parameter is not a
-     *                  valid pointer to a  CFSetCallBacks callbacks structure,
+     *                  valid pointer to a CFSetCallBacks callbacks structure,
      *                  the behavior is undefined. If any of the values put into the
      *                  set is not one understood by one of the callback functions
      *                  the behavior when that callback function is used is
@@ -5896,7 +6084,7 @@ public final class CoreFoundation {
      *                  of version 0 with all fields NULL had been passed in.
      *                  Otherwise, if any of the fields are not valid pointers to
      *                  functions of the correct type, or this parameter is not a
-     *                  valid pointer to a  CFSetCallBacks callbacks structure,
+     *                  valid pointer to a CFSetCallBacks callbacks structure,
      *                  the behavior is undefined. If any of the values put into the
      *                  set is not one understood by one of the callback functions
      *                  the behavior when that callback function is used is
@@ -6178,12 +6366,12 @@ public final class CoreFoundation {
      * Creates a new mutable tree.
      *
      * @param allocator The CFAllocator which should be used to allocate
-     *                  memory for the tree and storage for its children.  This
+     *                  memory for the tree and storage for its children. This
      *                  parameter may be NULL in which case the current default
-     *                  CFAllocator is used.  If this reference is not a valid
+     *                  CFAllocator is used. If this reference is not a valid
      *                  CFAllocator, the behavior is undefined.
      * @param context   A C pointer to a CFTreeContext structure to be copied
-     *                  and used as the context of the new tree.  The info parameter
+     *                  and used as the context of the new tree. The info parameter
      *                  will be retained by the tree if a retain function is provided.
      *                  If this value is not a valid C pointer to a CFTreeContext
      *                  structure-sized block of storage, the result is undefined.
@@ -6200,7 +6388,7 @@ public final class CoreFoundation {
      * [@function] CFTreeGetParent
      * Returns the parent of the specified tree.
      *
-     * @param tree The tree to be queried.  If this parameter is not a valid
+     * @param tree The tree to be queried. If this parameter is not a valid
      *             CFTree, the behavior is undefined.
      * @return The parent of the tree.
      */
@@ -6212,7 +6400,7 @@ public final class CoreFoundation {
      * [@function] CFTreeGetNextSibling
      * Returns the sibling after the specified tree in the parent tree's list.
      *
-     * @param tree The tree to be queried.  If this parameter is not a valid
+     * @param tree The tree to be queried. If this parameter is not a valid
      *             CFTree, the behavior is undefined.
      * @return The next sibling of the tree.
      */
@@ -6224,7 +6412,7 @@ public final class CoreFoundation {
      * [@function] CFTreeGetFirstChild
      * Returns the first child of the tree.
      *
-     * @param tree The tree to be queried.  If this parameter is not a valid
+     * @param tree The tree to be queried. If this parameter is not a valid
      *             CFTree, the behavior is undefined.
      * @return The first child of the tree.
      */
@@ -6236,12 +6424,12 @@ public final class CoreFoundation {
      * [@function] CFTreeGetContext
      * Returns the context of the specified tree.
      *
-     * @param tree    The tree to be queried.  If this parameter is not a valid
+     * @param tree    The tree to be queried. If this parameter is not a valid
      *                CFTree, the behavior is undefined.
      * @param context A C pointer to a CFTreeContext structure to be filled in with
-     *                the context of the specified tree.  If this value is not a valid C
+     *                the context of the specified tree. If this value is not a valid C
      *                pointer to a CFTreeContext structure-sized block of storage, the
-     *                result is undefined.  If the version number of the storage is not
+     *                result is undefined. If the version number of the storage is not
      *                a valid CFTreeContext version number, the result is undefined.
      */
     @Generated
@@ -6253,7 +6441,7 @@ public final class CoreFoundation {
      * [@function] CFTreeGetChildCount
      * Returns the number of children of the specified tree.
      *
-     * @param tree The tree to be queried.  If this parameter is not a valid
+     * @param tree The tree to be queried. If this parameter is not a valid
      *             CFTree, the behavior is undefined.
      * @return The number of children.
      */
@@ -6266,9 +6454,9 @@ public final class CoreFoundation {
      * [@function] CFTreeGetChildAtIndex
      * Returns the nth child of the specified tree.
      *
-     * @param tree The tree to be queried.  If this parameter is not a valid
+     * @param tree The tree to be queried. If this parameter is not a valid
      *             CFTree, the behavior is undefined.
-     * @param idx  The index of the child tree to be returned.  If this parameter
+     * @param idx  The index of the child tree to be returned. If this parameter
      *             is less than zero or greater than the number of children of the
      *             tree, the result is undefined.
      * @return A reference to the specified child tree.
@@ -6281,10 +6469,10 @@ public final class CoreFoundation {
      * [@function] CFTreeGetChildren
      * Fills the buffer with children from the tree.
      *
-     * @param tree     The tree to be queried.  If this parameter is not a valid
+     * @param tree     The tree to be queried. If this parameter is not a valid
      *                 CFTree, the behavior is undefined.
      * @param children A C array of pointer-sized values to be filled with
-     *                 children from the tree.  If this parameter is not a valid pointer to a
+     *                 children from the tree. If this parameter is not a valid pointer to a
      *                 C array of at least CFTreeGetChildCount() pointers, the behavior is undefined.
      */
     @Generated
@@ -6293,20 +6481,20 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFTreeApplyFunctionToChildren
-     * Calls a function once for each child of the tree.  Note that the applier
+     * Calls a function once for each child of the tree. Note that the applier
      * only operates one level deep, and does not operate on descendents further
      * removed than the immediate children of the tree.
      *
-     * @param tree    The tree to be operated upon.  If this parameter is not a
+     * @param tree    The tree to be operated upon. If this parameter is not a
      *                valid CFTree, the behavior is undefined.
      * @param applier The callback function to call once for each child of
-     *                the given tree.  If this parameter is not a pointer to a
+     *                the given tree. If this parameter is not a pointer to a
      *                function of the correct prototype, the behavior is undefined.
      *                If there are values in the tree which the applier function does
      *                not expect or cannot properly apply to, the behavior is undefined.
      * @param context A pointer-sized user-defined value, which is passed
      *                as the second parameter to the applier function, but is
-     *                otherwise unused by this function.  If the context is not
+     *                otherwise unused by this function. If the context is not
      *                what is expected by the applier function, the behavior is
      *                undefined.
      */
@@ -6320,7 +6508,7 @@ public final class CoreFoundation {
      * [@function] CFTreeFindRoot
      * Returns the root tree of which the specified tree is a descendent.
      *
-     * @param tree The tree to be queried.  If this parameter is not a valid
+     * @param tree The tree to be queried. If this parameter is not a valid
      *             CFTree, the behavior is undefined.
      * @return A reference to the root of the tree.
      */
@@ -6330,13 +6518,13 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFTreeSetContext
-     * Replaces the context of a tree.  The tree releases its retain on the
+     * Replaces the context of a tree. The tree releases its retain on the
      * info of the previous context, and retains the info of the new context.
      *
-     * @param tree    The tree to be operated on.  If this parameter is not a valid
+     * @param tree    The tree to be operated on. If this parameter is not a valid
      *                CFTree, the behavior is undefined.
      * @param context A C pointer to a CFTreeContext structure to be copied
-     *                and used as the context of the new tree.  The info parameter
+     *                and used as the context of the new tree. The info parameter
      *                will be retained by the tree if a retain function is provided.
      *                If this value is not a valid C pointer to a CFTreeContext
      *                structure-sized block of storage, the result is undefined.
@@ -6352,7 +6540,7 @@ public final class CoreFoundation {
      * [@function] CFTreePrependChild
      * Adds the newChild to the specified tree as the first in its list of children.
      *
-     * @param tree     The tree to be operated on.  If this parameter is not a valid
+     * @param tree     The tree to be operated on. If this parameter is not a valid
      *                 CFTree, the behavior is undefined.
      * @param newChild The child to be added.
      *                 If this parameter is not a valid CFTree, the behavior is undefined.
@@ -6367,7 +6555,7 @@ public final class CoreFoundation {
      * [@function] CFTreeAppendChild
      * Adds the newChild to the specified tree as the last in its list of children.
      *
-     * @param tree     The tree to be operated on.  If this parameter is not a valid
+     * @param tree     The tree to be operated on. If this parameter is not a valid
      *                 CFTree, the behavior is undefined.
      * @param newChild The child to be added.
      *                 If this parameter is not a valid CFTree, the behavior is undefined.
@@ -6381,10 +6569,10 @@ public final class CoreFoundation {
     /**
      * [@function] CFTreeInsertSibling
      * Inserts newSibling into the the parent tree's linked list of children after
-     * tree.  The newSibling will have the same parent as tree.
+     * tree. The newSibling will have the same parent as tree.
      *
-     * @param tree       The tree to insert newSibling after.  If this parameter is not a valid
-     *                   CFTree, the behavior is undefined.  If the tree does not have a
+     * @param tree       The tree to insert newSibling after. If this parameter is not a valid
+     *                   CFTree, the behavior is undefined. If the tree does not have a
      *                   parent, the behavior is undefined.
      * @param newSibling The sibling to be added.
      *                   If this parameter is not a valid CFTree, the behavior is undefined.
@@ -6399,7 +6587,7 @@ public final class CoreFoundation {
      * [@function] CFTreeRemove
      * Removes the tree from its parent.
      *
-     * @param tree The tree to be removed.  If this parameter is not a valid
+     * @param tree The tree to be removed. If this parameter is not a valid
      *             CFTree, the behavior is undefined.
      */
     @Generated
@@ -6410,7 +6598,7 @@ public final class CoreFoundation {
      * [@function] CFTreeRemoveAllChildren
      * Removes all the children of the tree.
      *
-     * @param tree The tree to remove all children from.  If this parameter is not a valid
+     * @param tree The tree to remove all children from. If this parameter is not a valid
      *             CFTree, the behavior is undefined.
      */
     @Generated
@@ -6421,7 +6609,7 @@ public final class CoreFoundation {
      * [@function] CFTreeSortChildren
      * Sorts the children of the specified tree using the specified comparator function.
      *
-     * @param tree       The tree to be operated on.  If this parameter is not a valid
+     * @param tree       The tree to be operated on. If this parameter is not a valid
      *                   CFTree, the behavior is undefined.
      * @param comparator The function with the comparator function type
      *                   signature which is used in the sort operation to compare
@@ -6441,20 +6629,20 @@ public final class CoreFoundation {
             @FunctionPtr(name = "call_CFTreeSortChildren") Function_CFTreeSortChildren comparator, VoidPtr context);
 
     /**
-     * Attempts to read the data and properties for the given URL.  If
+     * Attempts to read the data and properties for the given URL. If
      * only interested in one of the resourceData and properties, pass NULL
-     * for the other.  If properties is non-NULL and desiredProperties is
-     * NULL, then all properties are fetched.  Returns success or failure;
+     * for the other. If properties is non-NULL and desiredProperties is
+     * NULL, then all properties are fetched. Returns success or failure;
      * note that as much work as possible is done even if false is returned.
      * So for instance if one property is not available, the others are
      * fetched anyway. errorCode is set to 0 on success, and some other
-     * value on failure.  If non-NULL, it is the caller 's responsibility
+     * value on failure. If non-NULL, it is the caller 's responsibility
      * to release resourceData and properties.
      * <p>
      * Apple reserves for its use all negative error code values; these
-     * values represent errors common to any scheme.  Scheme-specific error
+     * values represent errors common to any scheme. Scheme-specific error
      * codes should be positive, non-zero, and should be used only if one of
-     * the predefined Apple error codes does not apply.  Error codes should
+     * the predefined Apple error codes does not apply. Error codes should
      * be publicized and documented with the scheme-specific properties.
      * <p>
      * NOTE: When asking for the resource data, this call will allocate the entire
@@ -6474,7 +6662,7 @@ public final class CoreFoundation {
     /**
      * Attempts to write the given data and properties to the given URL.
      * If dataToWrite is NULL, only properties are written out (use
-     * CFURLDestroyResource() to delete a resource).  Properties not present
+     * CFURLDestroyResource() to delete a resource). Properties not present
      * in propertiesToWrite are left unchanged, hence if propertiesToWrite
      * is NULL or empty, the URL's properties are not changed at all.
      * Returns success or failure; errorCode is set as for
@@ -6510,8 +6698,8 @@ public final class CoreFoundation {
 
     /**
      * The CFUUIDBytes struct is a 128-bit struct that contains the
-     * raw UUID.  A CFUUIDRef can provide such a struct from the
-     * CFUUIDGetUUIDBytes() function.  This struct is suitable for
+     * raw UUID. A CFUUIDRef can provide such a struct from the
+     * CFUUIDGetUUIDBytes() function. This struct is suitable for
      * passing to APIs that expect a raw UUID.
      */
     @Generated
@@ -6533,14 +6721,16 @@ public final class CoreFoundation {
             byte byte11, byte byte12, byte byte13, byte byte14, byte byte15);
 
     /**
-     * Create and return an identifier with the given contents.  This may return an existing instance with its ref count bumped because of uniquing.
+     * Create and return an identifier with the given contents. This may return an existing instance with its ref count
+     * bumped because of uniquing.
      */
     @Generated
     @CFunction
     public static native CFUUIDRef CFUUIDCreateFromString(CFAllocatorRef alloc, CFStringRef uuidStr);
 
     /**
-     * Converts from a string representation to the UUID.  This may return an existing instance with its ref count bumped because of uniquing.
+     * Converts from a string representation to the UUID. This may return an existing instance with its ref count bumped
+     * because of uniquing.
      */
     @Generated
     @CFunction
@@ -6556,7 +6746,8 @@ public final class CoreFoundation {
             byte byte11, byte byte12, byte byte13, byte byte14, byte byte15);
 
     /**
-     * This returns an immortal CFUUIDRef that should not be released.  It can be used in headers to declare UUID constants with #define.
+     * This returns an immortal CFUUIDRef that should not be released. It can be used in headers to declare UUID
+     * constants with #define.
      */
     @Generated
     @CFunction
@@ -6634,7 +6825,7 @@ public final class CoreFoundation {
     public static native CFDictionaryRef CFBundleGetInfoDictionary(CFBundleRef bundle);
 
     /**
-     * This is the global info dictionary.  Note that CFBundle may add
+     * This is the global info dictionary. Note that CFBundle may add
      * extra keys to the dictionary for its own use.
      */
     @Generated
@@ -6803,7 +6994,7 @@ public final class CoreFoundation {
 
     /**
      * For a directory URL, this is equivalent to calling CFBundleCopyBundleLocalizations()
-     * on the corresponding bundle.  For a plain file URL representing an unbundled executable,
+     * on the corresponding bundle. For a plain file URL representing an unbundled executable,
      * this will attempt to determine its localizations using the CFBundleLocalizations and
      * CFBundleDevelopmentRegion keys in the dictionary returned by CFBundleCopyInfoDictionaryForURL.
      */
@@ -6814,7 +7005,7 @@ public final class CoreFoundation {
     /**
      * ==================== Primitive Code Loading API ====================
      * This API abstracts the various different executable formats supported on
-     * various platforms.  It can load DYLD, CFM, or DLL shared libraries (on their
+     * various platforms. It can load DYLD, CFM, or DLL shared libraries (on their
      * appropriate platforms) and gives a uniform API for looking up functions.
      */
     @Generated
@@ -6829,7 +7020,7 @@ public final class CoreFoundation {
      * If the bundle's executable exists and is a Mach-o file, this function will return an array
      * of CFNumbers whose values are integers representing the architectures the file provides.
      * The values currently in use are those listed in the enum above, but others may be added
-     * in the future.  If the executable is not a Mach-o file, this function returns NULL.
+     * in the future. If the executable is not a Mach-o file, this function returns NULL.
      */
     @Generated
     @CFunction
@@ -6837,7 +7028,7 @@ public final class CoreFoundation {
 
     /**
      * This function will return true if the bundle is loaded, or if the bundle appears to be
-     * loadable upon inspection.  This does not mean that the bundle is definitively loadable,
+     * loadable upon inspection. This does not mean that the bundle is definitively loadable,
      * since it may fail to load due to link errors or other problems not readily detectable.
      * If this function detects problems, it will return false, and return a CFError by reference.
      * It is the responsibility of the caller to release the CFError.
@@ -6847,8 +7038,8 @@ public final class CoreFoundation {
     public static native byte CFBundleLoadExecutableAndReturnError(CFBundleRef bundle, Ptr<CFErrorRef> error);
 
     /**
-     * If the bundle is already loaded, this function will return true.  Otherwise, it will attempt
-     * to load the bundle, and it will return true if that attempt succeeds.  If the bundle fails
+     * If the bundle is already loaded, this function will return true. Otherwise, it will attempt
+     * to load the bundle, and it will return true if that attempt succeeds. If the bundle fails
      * to load, this function will return false, and it will return a CFError by reference.
      * It is the responsibility of the caller to release the CFError.
      */
@@ -6997,14 +7188,16 @@ public final class CoreFoundation {
     public static native byte CFPlugInIsLoadOnDemand(CFPlugInRef plugIn);
 
     /**
-     * This function finds all the factories from any plugin for the given type.  Returns an array that the caller must release.
+     * This function finds all the factories from any plugin for the given type. Returns an array that the caller must
+     * release.
      */
     @Generated
     @CFunction
     public static native CFArrayRef CFPlugInFindFactoriesForPlugInType(CFUUIDRef typeUUID);
 
     /**
-     * This function restricts the result to factories from the given plug-in that can create the given type.  Returns an array that the caller must release.
+     * This function restricts the result to factories from the given plug-in that can create the given type. Returns an
+     * array that the caller must release.
      */
     @Generated
     @CFunction
@@ -7047,8 +7240,10 @@ public final class CoreFoundation {
 
     /**
      * ================= Registering instances =================
-     * When a new instance of a type is created, the instance is responsible for registering itself with the factory that created it and unregistering when it deallocates.
-     * This means that an instance must keep track of the CFUUIDRef of the factory that created it so it can unregister when it goes away.
+     * When a new instance of a type is created, the instance is responsible for registering itself with the factory
+     * that created it and unregistering when it deallocates.
+     * This means that an instance must keep track of the CFUUIDRef of the factory that created it so it can unregister
+     * when it goes away.
      */
     @Generated
     @CFunction
@@ -7159,7 +7354,8 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringCreateWithSubstring
-     * Creates a sub-attributed string from the specified range. It's a programming error for range to specify characters outside the bounds of aStr.
+     * Creates a sub-attributed string from the specified range. It's a programming error for range to specify
+     * characters outside the bounds of aStr.
      */
     @Generated
     @CFunction
@@ -7177,7 +7373,9 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringGetString
-     * Returns the string for the attributed string. For performance reasons, this will often point at the backing store of the attributed string, and it might change if the attributed string is edited.  However, this is an implementation detail, and definitely not something that should be counted on.
+     * Returns the string for the attributed string. For performance reasons, this will often point at the backing store
+     * of the attributed string, and it might change if the attributed string is edited. However, this is an
+     * implementation detail, and definitely not something that should be counted on.
      */
     @Generated
     @CFunction
@@ -7185,7 +7383,8 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringGetLength
-     * Returns the length of the attributed string in characters; same as CFStringGetLength(CFAttributedStringGetString(aStr))
+     * Returns the length of the attributed string in characters; same as
+     * CFStringGetLength(CFAttributedStringGetString(aStr))
      */
     @Generated
     @CFunction
@@ -7194,9 +7393,18 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringGetAttributes
-     * Returns the attributes at the specified location. If effectiveRange is not NULL, upon return *effectiveRange contains a range over which the exact same set of attributes apply. Note that for performance reasons, the returned effectiveRange is not necessarily the maximal range - for that, use CFAttributedStringGetAttributesAndLongestEffectiveRange().  It's a programming error for loc to specify a location outside the bounds of the attributed string.
+     * Returns the attributes at the specified location. If effectiveRange is not NULL, upon return *effectiveRange
+     * contains a range over which the exact same set of attributes apply. Note that for performance reasons, the
+     * returned effectiveRange is not necessarily the maximal range - for that, use
+     * CFAttributedStringGetAttributesAndLongestEffectiveRange(). It's a programming error for loc to specify a location
+     * outside the bounds of the attributed string.
      * <p>
-     * Note that the returned attribute dictionary might change in unpredictable ways from under the caller if the attributed string is edited after this call. If you wish to hang on to the dictionary long-term, you should make an actual copy of it rather than just retaining it.  Also, no assumptions should be made about the relationship of the actual CFDictionaryRef returned by this call and the dictionary originally used to set the attributes, other than the fact that the values stored in the dictionary will be identical (that is, ==) to those originally specified.
+     * Note that the returned attribute dictionary might change in unpredictable ways from under the caller if the
+     * attributed string is edited after this call. If you wish to hang on to the dictionary long-term, you should make
+     * an actual copy of it rather than just retaining it. Also, no assumptions should be made about the relationship of
+     * the actual CFDictionaryRef returned by this call and the dictionary originally used to set the attributes, other
+     * than the fact that the values stored in the dictionary will be identical (that is, ==) to those originally
+     * specified.
      */
     @Generated
     @CFunction
@@ -7205,7 +7413,11 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringGetAttribute
-     * Returns the value of a single attribute at the specified location. If the specified attribute doesn't exist at the location, returns NULL. If effectiveRange is not NULL, upon return *effectiveRange contains a range over which the exact same attribute value applies. Note that for performance reasons, the returned effectiveRange is not necessarily the maximal range - for that, use CFAttributedStringGetAttributeAndLongestEffectiveRange(). It's a programming error for loc to specify a location outside the bounds of the attributed string.
+     * Returns the value of a single attribute at the specified location. If the specified attribute doesn't exist at
+     * the location, returns NULL. If effectiveRange is not NULL, upon return *effectiveRange contains a range over
+     * which the exact same attribute value applies. Note that for performance reasons, the returned effectiveRange is
+     * not necessarily the maximal range - for that, use CFAttributedStringGetAttributeAndLongestEffectiveRange(). It's
+     * a programming error for loc to specify a location outside the bounds of the attributed string.
      */
     @Generated
     @CFunction
@@ -7215,7 +7427,10 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringGetAttributesAndLongestEffectiveRange
-     * Returns the attributes at the specified location. If longestEffectiveRange is not NULL, upon return *longestEffectiveRange contains the maximal range within inRange over which the exact same set of attributes apply. The returned range is clipped to inRange. It's a programming error for loc or inRange to specify locations outside the bounds of the attributed string.
+     * Returns the attributes at the specified location. If longestEffectiveRange is not NULL, upon return
+     * *longestEffectiveRange contains the maximal range within inRange over which the exact same set of attributes
+     * apply. The returned range is clipped to inRange. It's a programming error for loc or inRange to specify locations
+     * outside the bounds of the attributed string.
      */
     @Generated
     @CFunction
@@ -7225,7 +7440,10 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringGetAttributeAndLongestEffectiveRange
-     * Returns the value of a single attribute at the specified location. If longestEffectiveRange is not NULL, upon return *longestEffectiveRange contains the maximal range within inRange over which the exact same attribute value applies. The returned range is clipped to inRange. It's a programming error for loc or inRange to specify locations outside the bounds of the attributed string.
+     * Returns the value of a single attribute at the specified location. If longestEffectiveRange is not NULL, upon
+     * return *longestEffectiveRange contains the maximal range within inRange over which the exact same attribute value
+     * applies. The returned range is clipped to inRange. It's a programming error for loc or inRange to specify
+     * locations outside the bounds of the attributed string.
      */
     @Generated
     @CFunction
@@ -7235,7 +7453,9 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringCreateMutableCopy
-     * Creates a mutable attributed string copy. maxLength, if not 0, is a hard bound on the length of the attributed string; exceeding this size limit during any editing operation is a programming error. If 0, there is no limit on the length.
+     * Creates a mutable attributed string copy. maxLength, if not 0, is a hard bound on the length of the attributed
+     * string; exceeding this size limit during any editing operation is a programming error. If 0, there is no limit on
+     * the length.
      */
     @Generated
     @CFunction
@@ -7244,7 +7464,9 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringCreateMutable
-     * Creates a mutable empty attributed string. maxLength, if not 0, is a hard bound on the length of the attributed string; exceeding this size limit during any editing operation is a programming error. If 0, there is no limit on the length.
+     * Creates a mutable empty attributed string. maxLength, if not 0, is a hard bound on the length of the attributed
+     * string; exceeding this size limit during any editing operation is a programming error. If 0, there is no limit on
+     * the length.
      */
     @Generated
     @CFunction
@@ -7253,9 +7475,12 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringReplaceString
-     * Modifies the string for the attributed string, much like CFStringReplace().  It's an error for range to specify characters outside the bounds of aStr.
+     * Modifies the string for the attributed string, much like CFStringReplace(). It's an error for range to specify
+     * characters outside the bounds of aStr.
      * <p>
-     * (Note: This function is a convenience on CFAttributedStringGetMutableString(); however, until CFAttributedStringGetMutableString() is implemented, it remains the only way to edit the string of the attributed string.)
+     * (Note: This function is a convenience on CFAttributedStringGetMutableString(); however, until
+     * CFAttributedStringGetMutableString() is implemented, it remains the only way to edit the string of the attributed
+     * string.)
      */
     @Generated
     @CFunction
@@ -7264,7 +7489,12 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringGetMutableString
-     * Gets the string for the attributed string as a mutable string, allowing editing the character contents of the string as if it were an CFMutableString. Attributes corresponding to the edited range are appropriately modified. If, as a result of the edit, new characters are introduced into the string, they inherit the attributes of the first replaced character from range. If no existing characters are replaced by the edit, the new characters inherit the attributes of the character preceding range if it has any, otherwise of the character following range. If the initial string is empty, the attributes for the new characters are also empty.
+     * Gets the string for the attributed string as a mutable string, allowing editing the character contents of the
+     * string as if it were an CFMutableString. Attributes corresponding to the edited range are appropriately modified.
+     * If, as a result of the edit, new characters are introduced into the string, they inherit the attributes of the
+     * first replaced character from range. If no existing characters are replaced by the edit, the new characters
+     * inherit the attributes of the character preceding range if it has any, otherwise of the character following
+     * range. If the initial string is empty, the attributes for the new characters are also empty.
      * <p>
      * (Note: This function is not yet implemented and will return NULL except for toll-free bridged instances.)
      */
@@ -7274,7 +7504,11 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringSetAttributes
-     * Sets the value of multiple attributes over the specified range, which should be valid. If clearOtherAttributes is false, existing attributes (which aren't being replaced) are left alone; otherwise they are cleared. The dictionary should be setup for "usual" CF type usage --- CFString keys, and arbitrary CFType values. Note that after this call, further mutations to the replacement dictionary argument by the caller will not affect the contents of the attributed string.
+     * Sets the value of multiple attributes over the specified range, which should be valid. If clearOtherAttributes is
+     * false, existing attributes (which aren't being replaced) are left alone; otherwise they are cleared. The
+     * dictionary should be setup for "usual" CF type usage --- CFString keys, and arbitrary CFType values. Note that
+     * after this call, further mutations to the replacement dictionary argument by the caller will not affect the
+     * contents of the attributed string.
      */
     @Generated
     @CFunction
@@ -7292,7 +7526,8 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringRemoveAttribute
-     * Removes the value of a single attribute over the specified range, which should be valid. It's OK for the attribute not the exist over the specified range.
+     * Removes the value of a single attribute over the specified range, which should be valid. It's OK for the
+     * attribute not the exist over the specified range.
      */
     @Generated
     @CFunction
@@ -7301,7 +7536,9 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringReplaceAttributedString
-     * Replaces the attributed substring over the specified range with the attributed string specified in replacement. range should be valid. To delete a range of the attributed string, call CFAttributedStringReplaceString() with empty string and specified range.
+     * Replaces the attributed substring over the specified range with the attributed string specified in replacement.
+     * range should be valid. To delete a range of the attributed string, call CFAttributedStringReplaceString() with
+     * empty string and specified range.
      */
     @Generated
     @CFunction
@@ -7310,7 +7547,10 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringBeginEditing
-     * In cases where attributed string might do a bunch of work to assure self-consistency, CFAttributedStringBeginEditing/CFAttributedStringEndEditing allow disabling that to allow deferring and coalescing any work. It's a good idea to call these around a set of related mutation calls which don't require the string to be in consistent state in between. These calls can be nested.
+     * In cases where attributed string might do a bunch of work to assure self-consistency,
+     * CFAttributedStringBeginEditing/CFAttributedStringEndEditing allow disabling that to allow deferring and
+     * coalescing any work. It's a good idea to call these around a set of related mutation calls which don't require
+     * the string to be in consistent state in between. These calls can be nested.
      */
     @Generated
     @CFunction
@@ -7318,7 +7558,10 @@ public final class CoreFoundation {
 
     /**
      * [@function] CFAttributedStringEndEditing
-     * In cases where attributed string might do a bunch of work to assure self-consistency, CFAttributedStringBeginEditing/CFAttributedStringEndEditing allow disabling that to allow deferring and coalescing any work. It's a good idea to call these around a set of related mutation calls which don't require the string to be in consistent state in between. These calls can be nested.
+     * In cases where attributed string might do a bunch of work to assure self-consistency,
+     * CFAttributedStringBeginEditing/CFAttributedStringEndEditing allow disabling that to allow deferring and
+     * coalescing any work. It's a good idea to call these around a set of related mutation calls which don't require
+     * the string to be in consistent state in between. These calls can be nested.
      */
     @Generated
     @CFunction
@@ -7333,9 +7576,14 @@ public final class CoreFoundation {
     public static native long CFURLEnumeratorGetTypeID();
 
     /**
-     * CFURLEnumeratorCreateForDirectoryURL - Creates a directory enumerator, flat or recursive. Client specifies the directory URL to enumerate, a bit array of options, and an optional array of property keys to pre-fetch for the found URLs. Specifying pre-fetch properties allows the implementation to optimize device access by using bulk operations when available. Pre-fetching more properties than are actually needed may degrade performance.
+     * CFURLEnumeratorCreateForDirectoryURL - Creates a directory enumerator, flat or recursive. Client specifies the
+     * directory URL to enumerate, a bit array of options, and an optional array of property keys to pre-fetch for the
+     * found URLs. Specifying pre-fetch properties allows the implementation to optimize device access by using bulk
+     * operations when available. Pre-fetching more properties than are actually needed may degrade performance.
      * <p>
-     * A directory enumerator generates URLs with the same type as the directory URL being enumerated. If the directoryURL input parameter is a file reference URL, then generated URLs will be file reference URLs. If the directoryURL input parameter is a file path URL, then generated URLs will be file path URLs.
+     * A directory enumerator generates URLs with the same type as the directory URL being enumerated. If the
+     * directoryURL input parameter is a file reference URL, then generated URLs will be file reference URLs. If the
+     * directoryURL input parameter is a file path URL, then generated URLs will be file path URLs.
      * <p>
      * The kCFURLEnumeratorGenerateFileReferenceURLs option is ignored by CFURLEnumeratorCreateForDirectoryURL.
      */
@@ -7345,11 +7593,16 @@ public final class CoreFoundation {
             CFURLRef directoryURL, @NUInt long option, CFArrayRef propertyKeys);
 
     /**
-     * CFURLEnumeratorCreateForMountedVolumes - Creates an enumerator for mounted filesystem volumes. Client specifies an allocator, a bit array of options, and an optional array of property keys to pre-fetch for the volume URLs. Specifying pre-fetch properties allows the implementation to optimize device access by using bulk operations when available. Pre-fetching more properties than are actually needed may degrade performance.
+     * CFURLEnumeratorCreateForMountedVolumes - Creates an enumerator for mounted filesystem volumes. Client specifies
+     * an allocator, a bit array of options, and an optional array of property keys to pre-fetch for the volume URLs.
+     * Specifying pre-fetch properties allows the implementation to optimize device access by using bulk operations when
+     * available. Pre-fetching more properties than are actually needed may degrade performance.
      * <p>
-     * A volume enumerator generates file path URLs. If you want a volume enumerator to generate file reference URLs, pass the kCFURLEnumeratorGenerateFileReferenceURLs option.
+     * A volume enumerator generates file path URLs. If you want a volume enumerator to generate file reference URLs,
+     * pass the kCFURLEnumeratorGenerateFileReferenceURLs option.
      * <p>
-     * The kCFURLEnumeratorDescendRecursively and kCFURLEnumeratorSkipPackageContents options are ignored by CFURLEnumeratorCreateForMountedVolumes.
+     * The kCFURLEnumeratorDescendRecursively and kCFURLEnumeratorSkipPackageContents options are ignored by
+     * CFURLEnumeratorCreateForMountedVolumes.
      */
     @Generated
     @CFunction
@@ -7357,9 +7610,12 @@ public final class CoreFoundation {
             @NUInt long option, CFArrayRef propertyKeys);
 
     /**
-     * CFURLEnumeratorGetNextURL - Advances the enumerator. If kCFURLEnumeratorSuccess is returned, the url output parameter returns the next URL found. If kCFURLEnumeratorError is returned, an error has occured and the error output parameter describes the error. If kCFURLEnumeratorEnd, the enumeration is finished.
+     * CFURLEnumeratorGetNextURL - Advances the enumerator. If kCFURLEnumeratorSuccess is returned, the url output
+     * parameter returns the next URL found. If kCFURLEnumeratorError is returned, an error has occured and the error
+     * output parameter describes the error. If kCFURLEnumeratorEnd, the enumeration is finished.
      * <p>
-     * The url output parameter, if returned, is not retained. The error output parameter, if returned, is retained and must be released.
+     * The url output parameter, if returned, is not retained. The error output parameter, if returned, is retained and
+     * must be released.
      */
     @Generated
     @CFunction
@@ -7368,19 +7624,24 @@ public final class CoreFoundation {
             Ptr<CFErrorRef> error);
 
     /**
-     * CFURLEnumeratorSkipDescendents - Tells a recursive CFURLEnumerator not to descend into the directory of the last CFURLRef returned by CFURLEnumeratorGetNextURL.
+     * CFURLEnumeratorSkipDescendents - Tells a recursive CFURLEnumerator not to descend into the directory of the last
+     * CFURLRef returned by CFURLEnumeratorGetNextURL.
      * <p>
      * Calls to CFURLEnumeratorSkipDescendents are ignored if:
      * * CFURLEnumeratorGetNextURL has never been called with the CFURLEnumerator.
      * * The last CFURL returned by CFURLEnumeratorGetNextURL is not a directory.
-     * * The CFURLEnumerator was not created with CFURLEnumeratorCreateForDirectoryURL using the kCFURLEnumeratorDescendRecursively option.
+     * * The CFURLEnumerator was not created with CFURLEnumeratorCreateForDirectoryURL using the
+     * kCFURLEnumeratorDescendRecursively option.
      */
     @Generated
     @CFunction
     public static native void CFURLEnumeratorSkipDescendents(CFURLEnumeratorRef enumerator);
 
     /**
-     * CFURLEnumeratorGetDescendentLevel - Returns the number of levels a directory enumerator has descended down into the directory hierarchy from the starting directory. The children of the starting directory are at level 1. Each time a recursive enumerator descends into a subdirectory, it adds one to the descendent level. It then subtracts one from the level when it finishes a subdirectory and continues enumerating the parent directory.
+     * CFURLEnumeratorGetDescendentLevel - Returns the number of levels a directory enumerator has descended down into
+     * the directory hierarchy from the starting directory. The children of the starting directory are at level 1. Each
+     * time a recursive enumerator descends into a subdirectory, it adds one to the descendent level. It then subtracts
+     * one from the level when it finishes a subdirectory and continues enumerating the parent directory.
      */
     @Generated
     @CFunction
@@ -7388,7 +7649,8 @@ public final class CoreFoundation {
     public static native long CFURLEnumeratorGetDescendentLevel(CFURLEnumeratorRef enumerator);
 
     /**
-     * CFURLEnumeratorGetSourceDidChange is deprecated. If your program is interested in directory hierarchy changes during enumeration (and most programs are not interested), you should use the File System Events API.
+     * CFURLEnumeratorGetSourceDidChange is deprecated. If your program is interested in directory hierarchy changes
+     * during enumeration (and most programs are not interested), you should use the File System Events API.
      * <p>
      * CFURLEnumeratorGetSourceDidChange does nothing and always returns false.
      */
@@ -7664,8 +7926,8 @@ public final class CoreFoundation {
      * @param range  The range of characters in string whose language to be
      *               guessed. The specified range must not exceed the bounds of the string.
      * @return A language represented in BCP 47 string. NULL is returned either if
-     * string is NULL, the location of range is negative, the length of range
-     * is 0, or the language of the string cannot be guessed.
+     *         string is NULL, the location of range is negative, the length of range
+     *         is 0, or the language of the string cannot be guessed.
      */
     @Generated
     @CFunction
@@ -7740,7 +8002,7 @@ public final class CoreFoundation {
      *                  CFStringTokenizerCreate.
      * @param index     The index of the Unicode character in the CFString.
      * @return Type of the token if succeeded in finding a token and setting it as
-     * current token. kCFStringTokenizerTokenNone if failed in finding a token.
+     *         current token. kCFStringTokenizerTokenNone if failed in finding a token.
      */
     @Generated
     @CFunction
@@ -7769,7 +8031,7 @@ public final class CoreFoundation {
      * @param tokenizer The reference to CFStringTokenizer returned by
      *                  CFStringTokenizerCreate.
      * @return Type of the token if succeeded in finding a token and setting it as
-     * current token. kCFStringTokenizerTokenNone if failed in finding a token.
+     *         current token. kCFStringTokenizerTokenNone if failed in finding a token.
      */
     @Generated
     @CFunction
@@ -7801,7 +8063,7 @@ public final class CoreFoundation {
      *                  one of kCFStringTokenizerAttributeLatinTranscription or
      *                  kCFStringTokenizerAttributeLanguage.
      * @return Token attribute, or NULL if current token does not have the specified
-     * attribute or if there is no current token.
+     *         attribute or if there is no current token.
      */
     @Generated
     @CFunction
@@ -7993,7 +8255,7 @@ public final class CoreFoundation {
     public static native CFArrayCallBacks kCFTypeArrayCallBacks();
 
     /**
-     * Returns the display name for the given value.  The key tells what
+     * Returns the display name for the given value. The key tells what
      * the value is, and is one of the usual locale property keys, though
      * not all locale property keys have values with display name values.
      */
@@ -8229,28 +8491,33 @@ public final class CoreFoundation {
     public static native CFStringRef kCFErrorDomainCocoa();
 
     /**
-     * Key to identify the end user-presentable description in userInfo. Should be one or more complete sentence(s) describing both what failed and why. For instance 'You can't save the file "To Do List" because the volume "Macintosh HD" is out of space.'
+     * Key to identify the end user-presentable description in userInfo. Should be one or more complete sentence(s)
+     * describing both what failed and why. For instance 'You can't save the file "To Do List" because the volume
+     * "Macintosh HD" is out of space.'
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFErrorLocalizedDescriptionKey();
 
     /**
-     * Key to identify the end user-presentable failure reason ("why it failed") description in userInfo.  Should be one or more complete sentence(s), for instance 'The volume "Macintosh HD" is out of space.'
+     * Key to identify the end user-presentable failure reason ("why it failed") description in userInfo. Should be one
+     * or more complete sentence(s), for instance 'The volume "Macintosh HD" is out of space.'
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFErrorLocalizedFailureReasonKey();
 
     /**
-     * Key to identify the end user-presentable recovery suggestion in userInfo. Should be one or more complete sentence(s), for instance 'Remove some files from the volume, and then try again.'
+     * Key to identify the end user-presentable recovery suggestion in userInfo. Should be one or more complete
+     * sentence(s), for instance 'Remove some files from the volume, and then try again.'
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFErrorLocalizedRecoverySuggestionKey();
 
     /**
-     * Key to identify the description in the userInfo dictionary. Should be a complete sentence if possible. Should not contain domain name or error code.
+     * Key to identify the description in the userInfo dictionary. Should be a complete sentence if possible. Should not
+     * contain domain name or error code.
      */
     @Generated
     @CVariable()
@@ -8264,14 +8531,14 @@ public final class CoreFoundation {
     public static native CFStringRef kCFErrorUnderlyingErrorKey();
 
     /**
-     * Key to identify associated URL in userInfo.  Typically one of this or kCFErrorFilePathKey is provided.
+     * Key to identify associated URL in userInfo. Typically one of this or kCFErrorFilePathKey is provided.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFErrorURLKey();
 
     /**
-     * Key to identify associated file path in userInfo.    Typically one of this or kCFErrorURLKey is provided.
+     * Key to identify associated file path in userInfo. Typically one of this or kCFErrorURLKey is provided.
      */
     @Generated
     @CVariable()
@@ -8331,7 +8598,10 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLIsPackageKey();
 
     /**
-     * True for packaged directories (Read-only 10_6 and 10_7, read-write 10_8, value type CFBoolean). Note: You can only set or clear this property on directories; if you try to set this property on non-directory objects, the property is ignored. If the directory is a package for some other reason (extension type, etc), setting this property to false will have no effect.
+     * True for packaged directories (Read-only 10_6 and 10_7, read-write 10_8, value type CFBoolean). Note: You can
+     * only set or clear this property on directories; if you try to set this property on non-directory objects, the
+     * property is ignored. If the directory is a package for some other reason (extension type, etc), setting this
+     * property to false will have no effect.
      */
     @Generated
     @CVariable()
@@ -8359,14 +8629,16 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLIsHiddenKey();
 
     /**
-     * True for resources normally not displayed to users (Read-write, value type CFBoolean). Note: If the resource is a hidden because its name starts with a period, setting this property to false will not change the property.
+     * True for resources normally not displayed to users (Read-write, value type CFBoolean). Note: If the resource is a
+     * hidden because its name starts with a period, setting this property to false will not change the property.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLHasHiddenExtensionKey();
 
     /**
-     * True for resources whose filename extension is removed from the localized name property (Read-write, value type CFBoolean)
+     * True for resources whose filename extension is removed from the localized name property (Read-write, value type
+     * CFBoolean)
      */
     @Generated
     @CVariable()
@@ -8471,21 +8743,26 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLFileResourceIdentifierKey();
 
     /**
-     * An identifier which can be used to compare two file system objects for equality using CFEqual (i.e, two object identifiers are equal if they have the same file system path or if the paths are linked to same inode on the same file system). This identifier is not persistent across system restarts. (Read-only, value type CFType)
+     * An identifier which can be used to compare two file system objects for equality using CFEqual (i.e, two object
+     * identifiers are equal if they have the same file system path or if the paths are linked to same inode on the same
+     * file system). This identifier is not persistent across system restarts. (Read-only, value type CFType)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLVolumeIdentifierKey();
 
     /**
-     * An identifier that can be used to identify the volume the file system object is on. Other objects on the same volume will have the same volume identifier and can be compared using for equality using CFEqual. This identifier is not persistent across system restarts. (Read-only, value type CFType)
+     * An identifier that can be used to identify the volume the file system object is on. Other objects on the same
+     * volume will have the same volume identifier and can be compared using for equality using CFEqual. This identifier
+     * is not persistent across system restarts. (Read-only, value type CFType)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLPreferredIOBlockSizeKey();
 
     /**
-     * The optimal block size when reading or writing this file's data, or NULL if not available. (Read-only, value type CFNumber)
+     * The optimal block size when reading or writing this file's data, or NULL if not available. (Read-only, value type
+     * CFNumber)
      */
     @Generated
     @CVariable()
@@ -8506,14 +8783,16 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLIsExecutableKey();
 
     /**
-     * true if this process (as determined by EUID) can execute a file resource or search a directory resource. (Read-only, value type CFBoolean)
+     * true if this process (as determined by EUID) can execute a file resource or search a directory resource.
+     * (Read-only, value type CFBoolean)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLFileSecurityKey();
 
     /**
-     * The file system object's security information encapsulated in a CFFileSecurity object. (Read-write, value type CFFileSecurity)
+     * The file system object's security information encapsulated in a CFFileSecurity object. (Read-write, value type
+     * CFFileSecurity)
      */
     @Generated
     @CVariable()
@@ -8541,28 +8820,44 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLIsMountTriggerKey();
 
     /**
-     * true if this URL is a file system trigger directory. Traversing or opening a file system trigger will cause an attempt to mount a file system on the trigger directory. (Read-only, value type CFBoolean)
+     * true if this URL is a file system trigger directory. Traversing or opening a file system trigger will cause an
+     * attempt to mount a file system on the trigger directory. (Read-only, value type CFBoolean)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLGenerationIdentifierKey();
 
     /**
-     * An opaque generation identifier which can be compared using CFEqual() to determine if the data in a document has been modified. For URLs which refer to the same file inode, the generation identifier will change when the data in the file's data fork is changed (changes to extended attributes or other file system metadata do not change the generation identifier). For URLs which refer to the same directory inode, the generation identifier will change when direct children of that directory are added, removed or renamed (changes to the data of the direct children of that directory will not change the generation identifier). The generation identifier is persistent across system restarts. The generation identifier is tied to a specific document on a specific volume and is not transferred when the document is copied to another volume. This property is not supported by all volumes. (Read-only, value type CFType)
+     * An opaque generation identifier which can be compared using CFEqual() to determine if the data in a document has
+     * been modified. For URLs which refer to the same file inode, the generation identifier will change when the data
+     * in the file's data fork is changed (changes to extended attributes or other file system metadata do not change
+     * the generation identifier). For URLs which refer to the same directory inode, the generation identifier will
+     * change when direct children of that directory are added, removed or renamed (changes to the data of the direct
+     * children of that directory will not change the generation identifier). The generation identifier is persistent
+     * across system restarts. The generation identifier is tied to a specific document on a specific volume and is not
+     * transferred when the document is copied to another volume. This property is not supported by all volumes.
+     * (Read-only, value type CFType)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLDocumentIdentifierKey();
 
     /**
-     * The document identifier -- a value assigned by the kernel to a document (which can be either a file or directory) and is used to identify the document regardless of where it gets moved on a volume. The document identifier survives "safe save” operations; i.e it is sticky to the path it was assigned to (-replaceItemAtURL:withItemAtURL:backupItemName:options:resultingItemURL:error: is the preferred safe-save API). The document identifier is persistent across system restarts. The document identifier is not transferred when the file is copied. Document identifiers are only unique within a single volume. This property is not supported by all volumes. (Read-only, value type CFNumber)
+     * The document identifier -- a value assigned by the kernel to a document (which can be either a file or directory)
+     * and is used to identify the document regardless of where it gets moved on a volume. The document identifier
+     * survives "safe save” operations; i.e it is sticky to the path it was assigned to
+     * (-replaceItemAtURL:withItemAtURL:backupItemName:options:resultingItemURL:error: is the preferred safe-save API).
+     * The document identifier is persistent across system restarts. The document identifier is not transferred when the
+     * file is copied. Document identifiers are only unique within a single volume. This property is not supported by
+     * all volumes. (Read-only, value type CFNumber)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLAddedToDirectoryDateKey();
 
     /**
-     * The quarantine properties as defined in LSQuarantine.h. To remove quarantine information from a file, pass kCFNull as the value when setting this property. (Read-write, value type CFDictionary)
+     * The quarantine properties as defined in LSQuarantine.h. To remove quarantine information from a file, pass
+     * kCFNull as the value when setting this property. (Read-write, value type CFDictionary)
      */
     @Generated
     @CVariable()
@@ -8618,21 +8913,25 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLFileAllocatedSizeKey();
 
     /**
-     * Total size allocated on disk for the file in bytes (number of blocks times block size) (Read-only, value type CFNumber)
+     * Total size allocated on disk for the file in bytes (number of blocks times block size) (Read-only, value type
+     * CFNumber)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLTotalFileSizeKey();
 
     /**
-     * Total displayable size of the file in bytes (this may include space used by metadata), or NULL if not available. (Read-only, value type CFNumber)
+     * Total displayable size of the file in bytes (this may include space used by metadata), or NULL if not available.
+     * (Read-only, value type CFNumber)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLTotalFileAllocatedSizeKey();
 
     /**
-     * Total allocated size of the file in bytes (this may include space used by metadata), or NULL if not available. This can be less than the value returned by kCFURLTotalFileSizeKey if the resource is compressed. (Read-only, value type CFNumber)
+     * Total allocated size of the file in bytes (this may include space used by metadata), or NULL if not available.
+     * This can be less than the value returned by kCFURLTotalFileSizeKey if the resource is compressed. (Read-only,
+     * value type CFNumber)
      */
     @Generated
     @CVariable()
@@ -8653,28 +8952,38 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLFileProtectionNone();
 
     /**
-     * The file is stored in an encrypted format on disk and cannot be read from or written to while the device is locked or booting. Transient data files with this protection type should be excluded from backups using kCFURLIsExcludedFromBackupKey.
+     * The file is stored in an encrypted format on disk and cannot be read from or written to while the device is
+     * locked or booting. Transient data files with this protection type should be excluded from backups using
+     * kCFURLIsExcludedFromBackupKey.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLFileProtectionComplete();
 
     /**
-     * The file is stored in an encrypted format on disk. Files can be created while the device is locked, but once closed, cannot be opened again until the device is unlocked. If the file is opened when unlocked, you may continue to access the file normally, even if the user locks the device. There is a small performance penalty when the file is created and opened, though not when being written to or read from. This can be mitigated by changing the file protection to kCFURLFileProtectionComplete when the device is unlocked. Transient data files with this protection type should be excluded from backups using kCFURLIsExcludedFromBackupKey.
+     * The file is stored in an encrypted format on disk. Files can be created while the device is locked, but once
+     * closed, cannot be opened again until the device is unlocked. If the file is opened when unlocked, you may
+     * continue to access the file normally, even if the user locks the device. There is a small performance penalty
+     * when the file is created and opened, though not when being written to or read from. This can be mitigated by
+     * changing the file protection to kCFURLFileProtectionComplete when the device is unlocked. Transient data files
+     * with this protection type should be excluded from backups using kCFURLIsExcludedFromBackupKey.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLFileProtectionCompleteUnlessOpen();
 
     /**
-     * The file is stored in an encrypted format on disk and cannot be accessed until after the device has booted. After the user unlocks the device for the first time, your app can access the file and continue to access it even if the user subsequently locks the device.
+     * The file is stored in an encrypted format on disk and cannot be accessed until after the device has booted. After
+     * the user unlocks the device for the first time, your app can access the file and continue to access it even if
+     * the user subsequently locks the device.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLFileProtectionCompleteUntilFirstUserAuthentication();
 
     /**
-     * As a convenience, volume properties can be requested from any file system URL. The value returned will reflect the property value for the volume on which the resource is located.
+     * As a convenience, volume properties can be requested from any file system URL. The value returned will reflect
+     * the property value for the volume on which the resource is located.
      */
     @Generated
     @CVariable()
@@ -8695,9 +9004,14 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLVolumeAvailableCapacityKey();
 
     /**
-     * Total available capacity in bytes for "Opportunistic" resources, including space expected to be cleared by purging non-essential and cached resources. "Opportunistic" means something that the user is likely to want but does not expect to be present on the local system, but is ultimately non-essential and replaceable. This would include items that will be created or downloaded without an explicit request from the user on the current device.
+     * Total available capacity in bytes for "Opportunistic" resources, including space expected to be cleared by
+     * purging non-essential and cached resources. "Opportunistic" means something that the user is likely to want but
+     * does not expect to be present on the local system, but is ultimately non-essential and replaceable. This would
+     * include items that will be created or downloaded without an explicit request from the user on the current device.
      * <p>
-     * Examples: A background download of a newly available episode of a TV series that a user has been recently watching, a piece of content explicitly requested on another device, or a new document saved to a network server by the current user from another device. (Read-only, value type CFNumber)
+     * Examples: A background download of a newly available episode of a TV series that a user has been recently
+     * watching, a piece of content explicitly requested on another device, or a new document saved to a network server
+     * by the current user from another device. (Read-only, value type CFNumber)
      */
     @Generated
     @CVariable()
@@ -8711,7 +9025,8 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLVolumeSupportsPersistentIDsKey();
 
     /**
-     * true if the volume format supports persistent object identifiers and can look up file system objects by their IDs (Read-only, value type CFBoolean)
+     * true if the volume format supports persistent object identifiers and can look up file system objects by their IDs
+     * (Read-only, value type CFBoolean)
      */
     @Generated
     @CVariable()
@@ -8732,42 +9047,52 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLVolumeSupportsJournalingKey();
 
     /**
-     * true if the volume format supports a journal used to speed recovery in case of unplanned restart (such as a power outage or crash). This does not necessarily mean the volume is actively using a journal. (Read-only, value type CFBoolean)
+     * true if the volume format supports a journal used to speed recovery in case of unplanned restart (such as a power
+     * outage or crash). This does not necessarily mean the volume is actively using a journal. (Read-only, value type
+     * CFBoolean)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLVolumeIsJournalingKey();
 
     /**
-     * true if the volume is currently using a journal for speedy recovery after an unplanned restart. (Read-only, value type CFBoolean)
+     * true if the volume is currently using a journal for speedy recovery after an unplanned restart. (Read-only, value
+     * type CFBoolean)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLVolumeSupportsSparseFilesKey();
 
     /**
-     * true if the volume format supports sparse files, that is, files which can have 'holes' that have never been written to, and thus do not consume space on disk. A sparse file may have an allocated size on disk that is less than its logical length. (Read-only, value type CFBoolean)
+     * true if the volume format supports sparse files, that is, files which can have 'holes' that have never been
+     * written to, and thus do not consume space on disk. A sparse file may have an allocated size on disk that is less
+     * than its logical length. (Read-only, value type CFBoolean)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLVolumeSupportsZeroRunsKey();
 
     /**
-     * For security reasons, parts of a file (runs) that have never been written to must appear to contain zeroes. true if the volume keeps track of allocated but unwritten runs of a file so that it can substitute zeroes without actually writing zeroes to the media. (Read-only, value type CFBoolean)
+     * For security reasons, parts of a file (runs) that have never been written to must appear to contain zeroes. true
+     * if the volume keeps track of allocated but unwritten runs of a file so that it can substitute zeroes without
+     * actually writing zeroes to the media. (Read-only, value type CFBoolean)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLVolumeSupportsCaseSensitiveNamesKey();
 
     /**
-     * true if the volume format treats upper and lower case characters in file and directory names as different. Otherwise an upper case character is equivalent to a lower case character, and you can't have two names that differ solely in the case of the characters. (Read-only, value type CFBoolean)
+     * true if the volume format treats upper and lower case characters in file and directory names as different.
+     * Otherwise an upper case character is equivalent to a lower case character, and you can't have two names that
+     * differ solely in the case of the characters. (Read-only, value type CFBoolean)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLVolumeSupportsCasePreservedNamesKey();
 
     /**
-     * true if the volume format preserves the case of file and directory names.  Otherwise the volume may change the case of some characters (typically making them all upper or all lower case). (Read-only, value type CFBoolean)
+     * true if the volume format preserves the case of file and directory names. Otherwise the volume may change the
+     * case of some characters (typically making them all upper or all lower case). (Read-only, value type CFBoolean)
      */
     @Generated
     @CVariable()
@@ -8781,7 +9106,8 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLVolumeSupportsVolumeSizesKey();
 
     /**
-     * true if the volume supports returning volume size values (kCFURLVolumeTotalCapacityKey and kCFURLVolumeAvailableCapacityKey). (Read-only, value type CFBoolean)
+     * true if the volume supports returning volume size values (kCFURLVolumeTotalCapacityKey and
+     * kCFURLVolumeAvailableCapacityKey). (Read-only, value type CFBoolean)
      */
     @Generated
     @CVariable()
@@ -8795,7 +9121,8 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLVolumeSupportsAdvisoryFileLockingKey();
 
     /**
-     * true if the volume implements whole-file flock(2) style advisory locks, and the O_EXLOCK and O_SHLOCK flags of the open(2) call. (Read-only, value type CFBoolean)
+     * true if the volume implements whole-file flock(2) style advisory locks, and the O_EXLOCK and O_SHLOCK flags of
+     * the open(2) call. (Read-only, value type CFBoolean)
      */
     @Generated
     @CVariable()
@@ -8809,21 +9136,24 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLVolumeIsBrowsableKey();
 
     /**
-     * true if the volume should be visible via the GUI (i.e., appear on the Desktop as a separate volume). (Read-only, value type CFBoolean)
+     * true if the volume should be visible via the GUI (i.e., appear on the Desktop as a separate volume). (Read-only,
+     * value type CFBoolean)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLVolumeMaximumFileSizeKey();
 
     /**
-     * The largest file size (in bytes) supported by this file system, or NULL if this cannot be determined. (Read-only, value type CFNumber)
+     * The largest file size (in bytes) supported by this file system, or NULL if this cannot be determined. (Read-only,
+     * value type CFNumber)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLVolumeIsEjectableKey();
 
     /**
-     * true if the volume's media is ejectable from the drive mechanism under software control. (Read-only, value type CFBoolean)
+     * true if the volume's media is ejectable from the drive mechanism under software control. (Read-only, value type
+     * CFBoolean)
      */
     @Generated
     @CVariable()
@@ -8837,14 +9167,16 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLVolumeIsInternalKey();
 
     /**
-     * true if the volume's device is connected to an internal bus, false if connected to an external bus, or NULL if not available. (Read-only, value type CFBoolean)
+     * true if the volume's device is connected to an internal bus, false if connected to an external bus, or NULL if
+     * not available. (Read-only, value type CFBoolean)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLVolumeIsAutomountedKey();
 
     /**
-     * true if the volume is automounted. Note: do not mistake this with the functionality provided by kCFURLVolumeSupportsBrowsingKey. (Read-only, value type CFBoolean)
+     * true if the volume is automounted. Note: do not mistake this with the functionality provided by
+     * kCFURLVolumeSupportsBrowsingKey. (Read-only, value type CFBoolean)
      */
     @Generated
     @CVariable()
@@ -8879,14 +9211,16 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLVolumeUUIDStringKey();
 
     /**
-     * The volume's persistent UUID as a string, or NULL if a persistent UUID is not available for the volume. (Read-only, value type CFString)
+     * The volume's persistent UUID as a string, or NULL if a persistent UUID is not available for the volume.
+     * (Read-only, value type CFString)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLVolumeNameKey();
 
     /**
-     * The name of the volume (Read-write, settable if kCFURLVolumeSupportsRenamingKey is true and permissions allow, value type CFString)
+     * The name of the volume (Read-write, settable if kCFURLVolumeSupportsRenamingKey is true and permissions allow,
+     * value type CFString)
      */
     @Generated
     @CVariable()
@@ -8914,7 +9248,8 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLVolumeSupportsCompressionKey();
 
     /**
-     * true if the volume supports transparent decompression of compressed files using decmpfs. (Read-only, value type CFBoolean)
+     * true if the volume supports transparent decompression of compressed files using decmpfs. (Read-only, value type
+     * CFBoolean)
      */
     @Generated
     @CVariable()
@@ -8957,7 +9292,8 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLUbiquitousItemIsDownloadedKey();
 
     /**
-     * Equivalent to NSURLUbiquitousItemDownloadingStatusKey == NSURLUbiquitousItemDownloadingStatusCurrent. Has never behaved as documented in earlier releases, hence deprecated. (Read-only, value type CFBoolean)
+     * Equivalent to NSURLUbiquitousItemDownloadingStatusKey == NSURLUbiquitousItemDownloadingStatusCurrent. Has never
+     * behaved as documented in earlier releases, hence deprecated. (Read-only, value type CFBoolean)
      */
     @Generated
     @CVariable()
@@ -9008,7 +9344,8 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLUbiquitousItemDownloadingErrorKey();
 
     /**
-     * returns the error when downloading the item from iCloud failed. See the NSUbiquitousFile section in FoundationErrors.h. (Read-only, value type CFError)
+     * returns the error when downloading the item from iCloud failed. See the NSUbiquitousFile section in
+     * FoundationErrors.h. (Read-only, value type CFError)
      */
     @Generated
     @CVariable()
@@ -9022,14 +9359,16 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLUbiquitousItemDownloadingStatusNotDownloaded();
 
     /**
-     * this item has not been downloaded yet. Use NSFileManager's startDownloadingUbiquitousItemAtURL:error: to download it
+     * this item has not been downloaded yet. Use NSFileManager's startDownloadingUbiquitousItemAtURL:error: to download
+     * it
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLUbiquitousItemDownloadingStatusDownloaded();
 
     /**
-     * there is a local version of this item available. The most current version will get downloaded as soon as possible.
+     * there is a local version of this item available. The most current version will get downloaded as soon as
+     * possible.
      */
     @Generated
     @CVariable()
@@ -9621,14 +9960,16 @@ public final class CoreFoundation {
     public static native CFStringRef kCFSocketRetrieveCommand();
 
     /**
-     * Value will be a CFData containing all bytes thusfar written; used to recover the data written to a memory write stream.
+     * Value will be a CFData containing all bytes thusfar written; used to recover the data written to a memory write
+     * stream.
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyDataWritten();
 
     /**
-     * Property for file write streams; value should be a CFBoolean.  Set to TRUE to append to a file, rather than to replace its contents
+     * Property for file write streams; value should be a CFBoolean. Set to TRUE to append to a file, rather than to
+     * replace its contents
      */
     @Generated
     @CVariable()
@@ -9755,7 +10096,7 @@ public final class CoreFoundation {
     public static native CFStringRef kCFBundleVersionKey();
 
     /**
-     * The version number of the bundle.  For Mac OS 9 style version numbers (for example "2.5.3d5"),
+     * The version number of the bundle. For Mac OS 9 style version numbers (for example "2.5.3d5"),
      * clients can use CFBundleGetVersionNumber() instead of accessing this key directly since that
      * function will properly convert the version string into its compact integer representation.
      */
@@ -9771,7 +10112,8 @@ public final class CoreFoundation {
     public static native CFStringRef kCFBundleNameKey();
 
     /**
-     * The human-readable name of the bundle.  This key is often found in the InfoPlist.strings since it is usually localized.
+     * The human-readable name of the bundle. This key is often found in the InfoPlist.strings since it is usually
+     * localized.
      */
     @Generated
     @CVariable()
@@ -10033,7 +10375,8 @@ public final class CoreFoundation {
     }
 
     /**
-     * Key to identify the end user-presentable failing operation ("what failed") description in userInfo.  Should be one or more complete sentence(s), for instance 'The file "To Do List" couldn't be saved.'
+     * Key to identify the end user-presentable failing operation ("what failed") description in userInfo. Should be one
+     * or more complete sentence(s), for instance 'The file "To Do List" couldn't be saved.'
      */
     @Generated
     @CVariable()
@@ -10047,11 +10390,17 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLVolumeAvailableCapacityForImportantUsageKey();
 
     /**
-     * Total available capacity in bytes for "Important" resources, including space expected to be cleared by purging non-essential and cached resources. "Important" means something that the user or application clearly expects to be present on the local system, but is ultimately replaceable. This would include items that the user has explicitly requested via the UI, and resources that an application requires in order to provide functionality.
+     * Total available capacity in bytes for "Important" resources, including space expected to be cleared by purging
+     * non-essential and cached resources. "Important" means something that the user or application clearly expects to
+     * be present on the local system, but is ultimately replaceable. This would include items that the user has
+     * explicitly requested via the UI, and resources that an application requires in order to provide functionality.
      * <p>
-     * Examples: A video that the user has explicitly requested to watch but has not yet finished watching or an audio file that the user has requested to download.
+     * Examples: A video that the user has explicitly requested to watch but has not yet finished watching or an audio
+     * file that the user has requested to download.
      * <p>
-     * This value should not be used in determining if there is room for an irreplaceable resource. In the case of irreplaceable resources, always attempt to save the resource regardless of available capacity and handle failure as gracefully as possible. (Read-only, value type CFNumber)
+     * This value should not be used in determining if there is room for an irreplaceable resource. In the case of
+     * irreplaceable resources, always attempt to save the resource regardless of available capacity and handle failure
+     * as gracefully as possible. (Read-only, value type CFNumber)
      */
     @Generated
     @CVariable()
@@ -10065,7 +10414,8 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLVolumeSupportsImmutableFilesKey();
 
     /**
-     * true if the volume supports making files immutable with the kCFURLIsUserImmutableKey or kCFURLIsSystemImmutableKey properties (Read-only, value type CFBoolean)
+     * true if the volume supports making files immutable with the kCFURLIsUserImmutableKey or
+     * kCFURLIsSystemImmutableKey properties (Read-only, value type CFBoolean)
      */
     @Generated
     @CVariable()
@@ -10075,7 +10425,7 @@ public final class CoreFoundation {
      * kCFStreamErrorDomainSOCKS
      * <p>
      * Discussion:
-     * SOCKS proxy error domain.  Errors formulated using inlines below.
+     * SOCKS proxy error domain. Errors formulated using inlines below.
      */
     @Generated
     @CVariable()
@@ -10085,12 +10435,12 @@ public final class CoreFoundation {
      * kCFStreamPropertySOCKSProxy
      * <p>
      * Discussion:
-     * Stream property key, for both set and copy operations.  To set a
+     * Stream property key, for both set and copy operations. To set a
      * stream to use a SOCKS proxy, call CFReadStreamSetProperty or
      * CFWriteStreamSetProperty with the property name set to
      * kCFStreamPropertySOCKSProxy and the value being a dictionary with
      * at least the following two keys: kCFStreamPropertySOCKSProxyHost
-     * and kCFStreamPropertySOCKSProxyPort.  The dictionary returned by
+     * and kCFStreamPropertySOCKSProxyPort. The dictionary returned by
      * SystemConfiguration for SOCKS proxies will work without
      * alteration.
      */
@@ -10102,9 +10452,9 @@ public final class CoreFoundation {
      * kCFStreamPropertySOCKSProxyHost
      * <p>
      * Discussion:
-     * CFDictionary key for SOCKS proxy information.  The key
+     * CFDictionary key for SOCKS proxy information. The key
      * kCFStreamPropertySOCKSProxyHost should contain a CFStringRef
-     * value representing the SOCKS proxy host.  Defined to match
+     * value representing the SOCKS proxy host. Defined to match
      * kSCPropNetProxiesSOCKSProxy
      */
     @Generated
@@ -10115,10 +10465,10 @@ public final class CoreFoundation {
      * kCFStreamPropertySOCKSProxyPort
      * <p>
      * Discussion:
-     * CFDictionary key for SOCKS proxy information.  The key
+     * CFDictionary key for SOCKS proxy information. The key
      * kCFStreamPropertySOCKSProxyPort should contain a CFNumberRef
-     * which itself is of type kCFNumberSInt32Type.  This value should
-     * represent the port on which the proxy is listening.  Defined to
+     * which itself is of type kCFNumberSInt32Type. This value should
+     * represent the port on which the proxy is listening. Defined to
      * match kSCPropNetProxiesSOCKSPort
      */
     @Generated
@@ -10129,9 +10479,9 @@ public final class CoreFoundation {
      * kCFStreamPropertySOCKSVersion
      * <p>
      * Discussion:
-     * CFDictionary key for SOCKS proxy information.  By default, SOCKS5
+     * CFDictionary key for SOCKS proxy information. By default, SOCKS5
      * will be used unless there is a kCFStreamPropertySOCKSVersion key
-     * in the dictionary.  Its value must be
+     * in the dictionary. Its value must be
      * kCFStreamSocketSOCKSVersion4 or kCFStreamSocketSOCKSVersion5 to
      * set SOCKS4 or SOCKS5, respectively.
      */
@@ -10143,7 +10493,7 @@ public final class CoreFoundation {
      * kCFStreamSocketSOCKSVersion4
      * <p>
      * Discussion:
-     * CFDictionary value for SOCKS proxy information.  Indcates that
+     * CFDictionary value for SOCKS proxy information. Indcates that
      * SOCKS will or is using version 4 of the SOCKS protocol.
      */
     @Generated
@@ -10154,7 +10504,7 @@ public final class CoreFoundation {
      * kCFStreamSocketSOCKSVersion5
      * <p>
      * Discussion:
-     * CFDictionary value for SOCKS proxy information.  Indcates that
+     * CFDictionary value for SOCKS proxy information. Indcates that
      * SOCKS will or is using version 5 of the SOCKS protocol.
      */
     @Generated
@@ -10165,7 +10515,7 @@ public final class CoreFoundation {
      * kCFStreamPropertySOCKSUser
      * <p>
      * Discussion:
-     * CFDictionary key for SOCKS proxy information.  To set a user name
+     * CFDictionary key for SOCKS proxy information. To set a user name
      * and/or password, if required, the dictionary must contain the
      * key(s) kCFStreamPropertySOCKSUser and/or
      * kCFStreamPropertySOCKSPassword with the value being the user's
@@ -10180,7 +10530,7 @@ public final class CoreFoundation {
      * kCFStreamPropertySOCKSPassword
      * <p>
      * Discussion:
-     * CFDictionary key for SOCKS proxy information.  To set a user name
+     * CFDictionary key for SOCKS proxy information. To set a user name
      * and/or password, if required, the dictionary must contain the
      * key(s) kCFStreamPropertySOCKSUser and/or
      * kCFStreamPropertySOCKSPassword with the value being the user's
@@ -10209,7 +10559,7 @@ public final class CoreFoundation {
      * stream to be secure, call CFReadStreamSetProperty or
      * CFWriteStreamSetPropertywith the property name set to
      * kCFStreamPropertySocketSecurityLevel and the value being one of
-     * the following values.  Streams may set a security level after
+     * the following values. Streams may set a security level after
      * open in order to allow on-the-fly securing of a stream.
      */
     @Generated
@@ -10287,7 +10637,7 @@ public final class CoreFoundation {
      * was created with a native socket, the default property setting on
      * the stream is kCFBooleanFalse. The
      * kCFStreamPropertyShouldCloseNativeSocket can be set through
-     * CFReadStreamSetProperty or CFWriteStreamSetProperty.  The
+     * CFReadStreamSetProperty or CFWriteStreamSetProperty. The
      * property can be copied through CFReadStreamCopyProperty or
      * CFWriteStreamCopyProperty.
      */
@@ -10303,7 +10653,8 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLFileContentIdentifierKey();
 
     /**
-     * A 64-bit value assigned by APFS that identifies a file's content data stream. Only cloned files and their originals can have the same identifier. (CFNumber)
+     * A 64-bit value assigned by APFS that identifies a file's content data stream. Only cloned files and their
+     * originals can have the same identifier. (CFNumber)
      */
     @Generated
     @CVariable()
@@ -10331,14 +10682,16 @@ public final class CoreFoundation {
     public static native CFStringRef kCFURLIsSparseKey();
 
     /**
-     * true if the volume supports setting POSIX access permissions with the kCFURLFileSecurityKey property (Read-only, value type CFBoolean)
+     * true if the volume supports setting POSIX access permissions with the kCFURLFileSecurityKey property (Read-only,
+     * value type CFBoolean)
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLVolumeSupportsFileProtectionKey();
 
     /**
-     * returns the error when uploading the item to iCloud failed. See the NSUbiquitousFile section in FoundationErrors.h. (Read-only, value type CFError)
+     * returns the error when uploading the item to iCloud failed. See the NSUbiquitousFile section in
+     * FoundationErrors.h. (Read-only, value type CFError)
      */
     @Generated
     @CVariable()

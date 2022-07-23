@@ -179,9 +179,9 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
     public static native long version_static();
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The value of alpha.  Default is 0.0
+     * The value of alpha. Default is 0.0
      * <p>
      * The default value 0.0 is not recommended and is
      * preserved for backwards compatibility. With alpha 0,
@@ -194,18 +194,18 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
     public native float alpha();
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
-     * The value of beta.  Default is 0.5
+     * The value of beta. Default is 0.5
      */
     @Generated
     @Selector("beta")
     public native float beta();
 
     /**
-     * [@property]   delta
+     * [@property] delta
      * <p>
-     * The value of delta.  Default is 1/1024
+     * The value of delta. Default is 1/1024
      */
     @Generated
     @Selector("delta")
@@ -226,8 +226,8 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
      * @param kernelWidth  The width of the kernel
      * @param kernelHeight The height of the kernel
      * @return A valid MPSCNNLocalContrastNormalization object or nil, if failure.
-     * <p>
-     * NOTE:  For now, kernelWidth must be equal to kernelHeight
+     *         <p>
+     *         NOTE: For now, kernelWidth must be equal to kernelHeight
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
@@ -235,36 +235,36 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
 
     /**
-     * [@property]   p0
+     * [@property] p0
      * <p>
-     * The value of p0.  Default is 1.0
+     * The value of p0. Default is 1.0
      */
     @Generated
     @Selector("p0")
     public native float p0();
 
     /**
-     * [@property]   pm
+     * [@property] pm
      * <p>
-     * The value of pm.  Default is 0.0
+     * The value of pm. Default is 0.0
      */
     @Generated
     @Selector("pm")
     public native float pm();
 
     /**
-     * [@property]   ps
+     * [@property] ps
      * <p>
-     * The value of ps.  Default is 1.0
+     * The value of ps. Default is 1.0
      */
     @Generated
     @Selector("ps")
     public native float ps();
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The value of alpha.  Default is 0.0
+     * The value of alpha. Default is 0.0
      * <p>
      * The default value 0.0 is not recommended and is
      * preserved for backwards compatibility. With alpha 0,
@@ -277,45 +277,45 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
     public native void setAlpha(float value);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
-     * The value of beta.  Default is 0.5
+     * The value of beta. Default is 0.5
      */
     @Generated
     @Selector("setBeta:")
     public native void setBeta(float value);
 
     /**
-     * [@property]   delta
+     * [@property] delta
      * <p>
-     * The value of delta.  Default is 1/1024
+     * The value of delta. Default is 1/1024
      */
     @Generated
     @Selector("setDelta:")
     public native void setDelta(float value);
 
     /**
-     * [@property]   p0
+     * [@property] p0
      * <p>
-     * The value of p0.  Default is 1.0
+     * The value of p0. Default is 1.0
      */
     @Generated
     @Selector("setP0:")
     public native void setP0(float value);
 
     /**
-     * [@property]   pm
+     * [@property] pm
      * <p>
-     * The value of pm.  Default is 0.0
+     * The value of pm. Default is 0.0
      */
     @Generated
     @Selector("setPm:")
     public native void setPm(float value);
 
     /**
-     * [@property]   ps
+     * [@property] ps
      * <p>
-     * The value of ps.  Default is 1.0
+     * The value of ps. Default is 1.0
      */
     @Generated
     @Selector("setPs:")
@@ -331,7 +331,7 @@ public class MPSCNNLocalContrastNormalization extends MPSCNNKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel

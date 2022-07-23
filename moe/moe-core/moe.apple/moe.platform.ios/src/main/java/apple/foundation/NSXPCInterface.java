@@ -20,7 +20,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * This object holds all information about the interface of an exported or imported object. This includes: what messages are allowed, what kinds of objects are allowed as arguments, what the signature of any reply blocks are, and any information about additional proxy objects.
+ * This object holds all information about the interface of an exported or imported object. This includes: what messages
+ * are allowed, what kinds of objects are allowed as arguments, what the signature of any reply blocks are, and any
+ * information about additional proxy objects.
  */
 @Generated
 @Library("Foundation")
@@ -133,8 +135,15 @@ public class NSXPCInterface extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * If an argument to a method in your protocol is a collection class (for example, NSArray or NSDictionary), then the interface must be configured with the set of expected classes contained inside of the collection. The classes argument to this method should be an NSSet containing Class objects, like [MyObject class]. The selector argument specifies which method in the protocol is being configured. The argumentIndex parameter specifies which argument of the method the NSSet applies to. If the NSSet is for an argument of the reply block in the method, pass YES for the ofReply: argument. The first argument is index 0 for both the method and the reply block.
-     * If the expected classes are all property list types, calling this method is optional (property list types are automatically whitelisted for collection objects). You may use this method to further restrict the set of allowed classes.
+     * If an argument to a method in your protocol is a collection class (for example, NSArray or NSDictionary), then
+     * the interface must be configured with the set of expected classes contained inside of the collection. The classes
+     * argument to this method should be an NSSet containing Class objects, like [MyObject class]. The selector argument
+     * specifies which method in the protocol is being configured. The argumentIndex parameter specifies which argument
+     * of the method the NSSet applies to. If the NSSet is for an argument of the reply block in the method, pass YES
+     * for the ofReply: argument. The first argument is index 0 for both the method and the reply block.
+     * If the expected classes are all property list types, calling this method is optional (property list types are
+     * automatically whitelisted for collection objects). You may use this method to further restrict the set of allowed
+     * classes.
      */
     @Generated
     @Selector("setClasses:forSelector:argumentIndex:ofReply:")
@@ -142,7 +151,10 @@ public class NSXPCInterface extends NSObject {
             @NUInt long arg, boolean ofReply);
 
     /**
-     * If an argument to a method in your protocol should be sent as a proxy object instead of by copy, then the interface must be configured with the interface of that new proxy object. If the proxy object is to be an argument of the reply block, pass YES for ofReply. The first argument is index 0 for both the method and the reply block.
+     * If an argument to a method in your protocol should be sent as a proxy object instead of by copy, then the
+     * interface must be configured with the interface of that new proxy object. If the proxy object is to be an
+     * argument of the reply block, pass YES for ofReply. The first argument is index 0 for both the method and the
+     * reply block.
      */
     @Generated
     @Selector("setInterface:forSelector:argumentIndex:ofReply:")

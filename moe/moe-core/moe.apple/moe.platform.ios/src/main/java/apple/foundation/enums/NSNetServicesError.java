@@ -34,7 +34,8 @@ public final class NSNetServicesError {
      */
     @Generated @NInt public static final long NotFoundError = 0xFFFFFFFFFFFEE6BEL;
     /**
-     * A publication or resolution request was sent to an NSNetService instance which was already published or a search request was made of an NSNetServiceBrowser instance which was already searching.
+     * A publication or resolution request was sent to an NSNetService instance which was already published or a search
+     * request was made of an NSNetServiceBrowser instance which was already searching.
      */
     @Generated @NInt public static final long ActivityInProgress = 0xFFFFFFFFFFFEE6BDL;
     /**
@@ -46,7 +47,8 @@ public final class NSNetServicesError {
      */
     @Generated @NInt public static final long CancelledError = 0xFFFFFFFFFFFEE6BBL;
     /**
-     * An invalid argument was provided when initializing the NSNetService instance or starting a search with an NSNetServiceBrowser instance.
+     * An invalid argument was provided when initializing the NSNetService instance or starting a search with an
+     * NSNetServiceBrowser instance.
      */
     @Generated @NInt public static final long InvalidError = 0xFFFFFFFFFFFEE6BAL;
     /**

@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueTamperStatus
+ * [@enum] HMCharacteristicValueTamperStatus
  * <p>
- * [@constant]  HMCharacteristicValueTamperStatusNone               Accessory is not tampered with.
- * [@constant]  HMCharacteristicValueTamperStatusTampered           Accessory is tampered with.
+ * [@constant] HMCharacteristicValueTamperStatusNone Accessory is not tampered with.
+ * [@constant] HMCharacteristicValueTamperStatusTampered Accessory is tampered with.
  */
 @Generated
 public final class HMCharacteristicValueTamperedStatus {

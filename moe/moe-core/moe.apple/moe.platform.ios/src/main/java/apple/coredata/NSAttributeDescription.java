@@ -159,7 +159,8 @@ public class NSAttributeDescription extends NSPropertyDescription {
     public native boolean allowsExternalBinaryDataStorage();
 
     /**
-     * NSUndefinedAttributeType is valid for transient properties - Core Data will still track the property as an id value and register undo/redo actions, etc. NSUndefinedAttributeType is illegal for non-transient properties.
+     * NSUndefinedAttributeType is valid for transient properties - Core Data will still track the property as an id
+     * value and register undo/redo actions, etc. NSUndefinedAttributeType is illegal for non-transient properties.
      */
     @Generated
     @Selector("attributeType")
@@ -191,7 +192,8 @@ public class NSAttributeDescription extends NSPropertyDescription {
     public native void setAllowsExternalBinaryDataStorage(boolean value);
 
     /**
-     * NSUndefinedAttributeType is valid for transient properties - Core Data will still track the property as an id value and register undo/redo actions, etc. NSUndefinedAttributeType is illegal for non-transient properties.
+     * NSUndefinedAttributeType is valid for transient properties - Core Data will still track the property as an id
+     * value and register undo/redo actions, etc. NSUndefinedAttributeType is illegal for non-transient properties.
      */
     @Generated
     @Selector("setAttributeType:")
@@ -209,21 +211,26 @@ public class NSAttributeDescription extends NSPropertyDescription {
     public native void setDefaultValue(@Mapped(ObjCObjectMapper.class) Object value);
 
     /**
-     * The name of the transformer used to convert a NSTransformedAttributeType.  The transformer must output NSData from transformValue and allow reverse transformation.  If this value is not set, or set to nil, Core Data will default to using a transformer which uses NSCoding to archive/unarchive the attribute value.
+     * The name of the transformer used to convert a NSTransformedAttributeType. The transformer must output NSData from
+     * transformValue and allow reverse transformation. If this value is not set, or set to nil, Core Data will default
+     * to using a transformer which uses NSCoding to archive/unarchive the attribute value.
      */
     @Generated
     @Selector("setValueTransformerName:")
     public native void setValueTransformerName(String value);
 
     /**
-     * The name of the transformer used to convert a NSTransformedAttributeType.  The transformer must output NSData from transformValue and allow reverse transformation.  If this value is not set, or set to nil, Core Data will default to using a transformer which uses NSCoding to archive/unarchive the attribute value.
+     * The name of the transformer used to convert a NSTransformedAttributeType. The transformer must output NSData from
+     * transformValue and allow reverse transformation. If this value is not set, or set to nil, Core Data will default
+     * to using a transformer which uses NSCoding to archive/unarchive the attribute value.
      */
     @Generated
     @Selector("valueTransformerName")
     public native String valueTransformerName();
 
     /**
-     * Returns the version hash for the attribute.  This value includes the versionHash information from the NSPropertyDescription superclass, and the attribute type.
+     * Returns the version hash for the attribute. This value includes the versionHash information from the
+     * NSPropertyDescription superclass, and the attribute type.
      */
     @Generated
     @Selector("versionHash")
@@ -247,10 +254,13 @@ public class NSAttributeDescription extends NSPropertyDescription {
      * This property can be set to enable encryption-at-rest on data stored in CloudKit servers.
      * <p>
      * There are several restrictions on how clients can use this property:
-     * 1. Attributes to be encrypted must be new additions to the CloudKit schema. Attributes that already exist in the production schema cannot be changed to support encryption.
-     * 2. Attributes cannot (ever) change their encryption state in the CloudKit schema. Once something is encrypted (or not) it will forever be so.
+     * 1. Attributes to be encrypted must be new additions to the CloudKit schema. Attributes that already exist in the
+     * production schema cannot be changed to support encryption.
+     * 2. Attributes cannot (ever) change their encryption state in the CloudKit schema. Once something is encrypted (or
+     * not) it will forever be so.
      * <p>
-     * Note: This property does not affect the data in the persistent store. Local file encryption should continue to be managed by using NSFileProtection and other standard platform security mechanisms.
+     * Note: This property does not affect the data in the persistent store. Local file encryption should continue to be
+     * managed by using NSFileProtection and other standard platform security mechanisms.
      */
     @Generated
     @Selector("allowsCloudEncryption")
@@ -260,10 +270,13 @@ public class NSAttributeDescription extends NSPropertyDescription {
      * This property can be set to enable encryption-at-rest on data stored in CloudKit servers.
      * <p>
      * There are several restrictions on how clients can use this property:
-     * 1. Attributes to be encrypted must be new additions to the CloudKit schema. Attributes that already exist in the production schema cannot be changed to support encryption.
-     * 2. Attributes cannot (ever) change their encryption state in the CloudKit schema. Once something is encrypted (or not) it will forever be so.
+     * 1. Attributes to be encrypted must be new additions to the CloudKit schema. Attributes that already exist in the
+     * production schema cannot be changed to support encryption.
+     * 2. Attributes cannot (ever) change their encryption state in the CloudKit schema. Once something is encrypted (or
+     * not) it will forever be so.
      * <p>
-     * Note: This property does not affect the data in the persistent store. Local file encryption should continue to be managed by using NSFileProtection and other standard platform security mechanisms.
+     * Note: This property does not affect the data in the persistent store. Local file encryption should continue to be
+     * managed by using NSFileProtection and other standard platform security mechanisms.
      */
     @Generated
     @Selector("setAllowsCloudEncryption:")

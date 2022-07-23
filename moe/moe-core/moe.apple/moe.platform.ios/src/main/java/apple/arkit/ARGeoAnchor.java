@@ -71,7 +71,8 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
     public native double altitude();
 
     /**
-     * The source of altitude information. If the user did not provide the altitude, ARKit populates this property to indicate the expected accuracy depending on the available altitude data.
+     * The source of altitude information. If the user did not provide the altitude, ARKit populates this property to
+     * indicate the expected accuracy depending on the available altitude data.
      */
     @Generated
     @Selector("altitudeSource")
@@ -138,7 +139,8 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
     /**
      * Initializes a new ARGeoAnchor with the given coordinates.
      * <p>
-     * ARKit will query the ground level altitude during runtime, and populate the altitude as soon as that information becomes available.
+     * ARKit will query the ground level altitude during runtime, and populate the altitude as soon as that information
+     * becomes available.
      *
      * @param coordinate Coordinates.
      */
@@ -159,7 +161,8 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
     /**
      * Initializes a new named ARGeoAnchor with the given coordinates.
      * <p>
-     * ARKit will query the ground level altitude during runtime, and populate the altitude as soon as that information becomes available.
+     * ARKit will query the ground level altitude during runtime, and populate the altitude as soon as that information
+     * becomes available.
      *
      * @param name       Name of the anchor.
      * @param coordinate Coordinates.

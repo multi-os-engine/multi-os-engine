@@ -40,18 +40,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@code]
  * Training graph (partial):
  * <p>
- * ---> input image ---------> MPSCNNKernel ------>  resultImage ------>-->-->-->.
- * \                  |                                           |
- * '------.    MPSNNGradientState                         loss estimation
- * \         |                                           |
- * V        V                                           V
- * <--- result gradient <- MPSCNNGradientKernel <---  input gradient <--<--<--<---'
+ * ---> input image ---------> MPSCNNKernel ------> resultImage ------>-->-->-->.
+ * \ | |
+ * '------. MPSNNGradientState loss estimation
+ * \ | |
+ * V V V
+ * <--- result gradient <- MPSCNNGradientKernel <--- input gradient <--<--<--<---'
  * <p>
  * In general operation, starting with the input image, the sequence of events is:
- * 1a)  Invoke padding policy to find result size for MPSCNNKernel.  This
+ * 1a) Invoke padding policy to find result size for MPSCNNKernel. This
  * also configures some MPSCNNKernel parameters such as offset.
- * 1b)  Use the MPSImageDescriptor from 1a to make resultImage.
- * 1c)  Call MPSCNNKernel -encode...
+ * 1b) Use the MPSImageDescriptor from 1a to make resultImage.
+ * 1c) Call MPSCNNKernel -encode...
  * 2) stages 1a-c are repeated for other forward passes in the inference portion of the graph
  * 3) We estimate the loss resulting from the whole inference computation so far (see MPSCNNLoss.h>
  * 4) stages 5a-c are repeated for corresponding backward gradient passes in the graph
@@ -213,7 +213,7 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -230,8 +230,8 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      *
      * @param device The device that the filter will be used on. May not be NULL.
      * @return A pointer to the newly initialized object. This will fail, returning
-     * nil if the device is not supported. Devices must be
-     * MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     *         nil if the device is not supported. Devices must be
+     *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
     @Generated
     @Selector("initWithDevice:")
@@ -255,7 +255,7 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * [@property]   kernelOffsetX
+     * [@property] kernelOffsetX
      * <p>
      * Offset in the kernel reference frame to position the kernel in the X dimension
      * <p>
@@ -264,7 +264,7 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      * As such, the offset, which describes a X,Y offset in the source coordinate
      * space is insufficient to fully describe the offset applied to a kernel.
      * The kernel offset is the offset after upsampling. Both the source offset
-     * and kernel offset are additive:  effective offset = source offset * stride + kernel offset.
+     * and kernel offset are additive: effective offset = source offset * stride + kernel offset.
      * The offset is applied to the (upsampled) source gradient
      */
     @Generated
@@ -273,7 +273,7 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
     public native long kernelOffsetX();
 
     /**
-     * [@property]   kernelOffsetY
+     * [@property] kernelOffsetY
      * <p>
      * Offset in the kernel reference frame to position the kernel in the Y dimension
      * <p>
@@ -282,7 +282,7 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      * As such, the offset, which describes a X,Y offset in the source coordinate
      * space is insufficient to fully describe the offset applied to a kernel.
      * The kernel offset is the offset after upsampling. Both the source offset
-     * and kernel offset are additive:  effective offset = source offset * stride + kernel offset.
+     * and kernel offset are additive: effective offset = source offset * stride + kernel offset.
      * The offset is applied to the (upsampled) source gradient
      */
     @Generated
@@ -308,7 +308,7 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   kernelOffsetX
+     * [@property] kernelOffsetX
      * <p>
      * Offset in the kernel reference frame to position the kernel in the X dimension
      * <p>
@@ -317,7 +317,7 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      * As such, the offset, which describes a X,Y offset in the source coordinate
      * space is insufficient to fully describe the offset applied to a kernel.
      * The kernel offset is the offset after upsampling. Both the source offset
-     * and kernel offset are additive:  effective offset = source offset * stride + kernel offset.
+     * and kernel offset are additive: effective offset = source offset * stride + kernel offset.
      * The offset is applied to the (upsampled) source gradient
      */
     @Generated
@@ -325,7 +325,7 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
     public native void setKernelOffsetX(@NInt long value);
 
     /**
-     * [@property]   kernelOffsetY
+     * [@property] kernelOffsetY
      * <p>
      * Offset in the kernel reference frame to position the kernel in the Y dimension
      * <p>
@@ -334,7 +334,7 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      * As such, the offset, which describes a X,Y offset in the source coordinate
      * space is insufficient to fully describe the offset applied to a kernel.
      * The kernel offset is the offset after upsampling. Both the source offset
-     * and kernel offset are additive:  effective offset = source offset * stride + kernel offset.
+     * and kernel offset are additive: effective offset = source offset * stride + kernel offset.
      * The offset is applied to the (upsampled) source gradient
      */
     @Generated

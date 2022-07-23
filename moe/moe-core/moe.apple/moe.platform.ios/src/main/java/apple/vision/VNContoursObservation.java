@@ -35,16 +35,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Contours can be referenced as a flattened array or as a tree of enclosing parent contours to enclosed child contours.
  * <p>
  * ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
- * ┌───────────────────┐   │
- * │        Λ         │       ┌─────────┐ │
- * ╱ ╲        │       │         │ │   │
- * │      ╱   ╲       │       │         │ │
- * ╱     ╲      │       │ C       │ │   │
- * │    ▕   A   ▏     │       └─────────┘ │
- * ╲     ╱      │                   │   │
- * │      ╲   ╱       │ B                 │
- * ╲ ╱        └───────────────────┘   │
- * │        V
+ * ┌───────────────────┐ │
+ * │ Λ │ ┌─────────┐ │
+ * ╱ ╲ │ │ │ │ │
+ * │ ╱ ╲ │ │ │ │
+ * ╱ ╲ │ │ C │ │ │
+ * │ ▕ A ▏ │ └─────────┘ │
+ * ╲ ╱ │ │ │
+ * │ ╲ ╱ │ B │
+ * ╲ ╱ └───────────────────┘ │
+ * │ V
  * │
  * └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
  * <p>
@@ -229,7 +229,8 @@ public class VNContoursObservation extends VNObservation {
     /**
      * An array of the top level contours (i.e. contours that are not enclosed inside another contour),.
      * <p>
-     * This array constitutes the top of the contour hierarchy. Each contour object can be further iterated to determine its children.
+     * This array constitutes the top of the contour hierarchy. Each contour object can be further iterated to determine
+     * its children.
      *
      * @see VNContour for more information.
      */

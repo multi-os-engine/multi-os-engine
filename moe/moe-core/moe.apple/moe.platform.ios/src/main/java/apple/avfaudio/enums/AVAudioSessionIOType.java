@@ -24,8 +24,8 @@ import org.moe.natj.general.ann.NUInt;
  * Apps that don't use AVCaptureSession and use AVAudioSessionCategoryPlayAndRecord will continue
  * to have aggregated audio I/O, as in previous versions of iOS.
  * <p>
- * [@var]   AVAudioSessionIOTypeNotSpecified
- * The default value.  If your app does not use AVCaptureSession or does not have any specific
+ * [@var] AVAudioSessionIOTypeNotSpecified
+ * The default value. If your app does not use AVCaptureSession or does not have any specific
  * requirement for aggregating input and output audio in the same realtime I/O callback, use this
  * value. Note that if your app does not use AVCaptureSession, it will get aggregated I/O when using
  * AVAudioSessionCategoryPlayAndRecord.
@@ -34,7 +34,7 @@ import org.moe.natj.general.ann.NUInt;
  * start recording without glitching already running output audio and will allow the system to
  * utilize power-saving optimizations.
  * <p>
- * [@var]    AVAudioSessionIOTypeAggregated
+ * [@var] AVAudioSessionIOTypeAggregated
  * Use this value if your session uses AVAudioSessionCategoryPlayAndRecord and requires input and
  * output audio to be presented in the same realtime I/O callback. For example, if your app will be using
  * a RemoteIO with both input and output enabled.

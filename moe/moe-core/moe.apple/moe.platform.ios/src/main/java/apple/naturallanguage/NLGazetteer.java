@@ -29,7 +29,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * NLGazetteer is a class representing an efficient probabilistic representation for assigning labels to a set of strings.
+ * NLGazetteer is a class representing an efficient probabilistic representation for assigning labels to a set of
+ * strings.
  */
 @Generated
 @Library("NaturalLanguage")

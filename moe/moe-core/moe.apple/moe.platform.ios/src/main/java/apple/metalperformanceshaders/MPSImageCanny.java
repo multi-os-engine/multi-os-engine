@@ -113,7 +113,7 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]    colorTransform
+     * [@property] colorTransform
      * <p>
      * Returns a pointer to the array of three floats used to convert RGBA, RGB or RG images
      * to the destination format when the destination is monochrome.
@@ -160,7 +160,7 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -284,8 +284,10 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
      * [@property] useFastMode
      * <p>
      * Read-write value used to change algorithm to an approximation of the true Canny Edge detection Algorithm.
-     * When true, a limit is placed on how far a single strong edge can extend. The result will be similar to a true output
-     * but some edges may terminate early, resulting in minor differences for cases with long, weak edges. The performance
+     * When true, a limit is placed on how far a single strong edge can extend. The result will be similar to a true
+     * output
+     * but some edges may terminate early, resulting in minor differences for cases with long, weak edges. The
+     * performance
      * for the approximate canny implementation is improved and should provide similar enough results for most cases.
      * Extra tuning of the high and low thresholds as well as sigma may help achieve a more similar output in this mode.
      * Default is YES
@@ -325,8 +327,10 @@ public class MPSImageCanny extends MPSUnaryImageKernel {
      * [@property] useFastMode
      * <p>
      * Read-write value used to change algorithm to an approximation of the true Canny Edge detection Algorithm.
-     * When true, a limit is placed on how far a single strong edge can extend. The result will be similar to a true output
-     * but some edges may terminate early, resulting in minor differences for cases with long, weak edges. The performance
+     * When true, a limit is placed on how far a single strong edge can extend. The result will be similar to a true
+     * output
+     * but some edges may terminate early, resulting in minor differences for cases with long, weak edges. The
+     * performance
      * for the approximate canny implementation is improved and should provide similar enough results for most cases.
      * Extra tuning of the high and low thresholds as well as sigma may help achieve a more similar output in this mode.
      * Default is YES

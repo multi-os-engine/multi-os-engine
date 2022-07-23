@@ -42,14 +42,14 @@ import org.moe.natj.general.ann.Generated;
  * [@constant] kSCNetworkReachabilityFlagsConnectionOnTraffic
  * This flag indicates that the specified nodename or address can
  * be reached using the current network configuration, but a
- * connection must first be established.  Any traffic directed
+ * connection must first be established. Any traffic directed
  * to the specified name or address will initiate the connection.
  * <p>
  * Note: this flag was previously named kSCNetworkReachabilityFlagsConnectionAutomatic
  * [@constant] kSCNetworkReachabilityFlagsInterventionRequired
  * This flag indicates that the specified nodename or address can
  * be reached using the current network configuration, but a
- * connection must first be established.  In addition, some
+ * connection must first be established. In addition, some
  * form of user intervention will be required to establish this
  * connection, such as providing a password, an authentication
  * token, etc.
@@ -59,7 +59,7 @@ import org.moe.natj.general.ann.Generated;
  * (ConnectionOnTraffic), where an attempt to connect has
  * already been made, and where some error (e.g. no dial tone,
  * no answer, bad password, ...) was encountered during the
- * automatic connection attempt.  In this case the PPP controller
+ * automatic connection attempt. In this case the PPP controller
  * will stop attempting to establish a connection until the user
  * has intervened.
  * [@constant] kSCNetworkReachabilityFlagsConnectionOnDemand

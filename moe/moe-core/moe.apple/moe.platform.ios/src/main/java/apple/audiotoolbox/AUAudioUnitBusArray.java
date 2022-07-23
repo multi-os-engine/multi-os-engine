@@ -192,7 +192,7 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     public native long busType();
 
     /**
-     * [@property]	count
+     * [@property] count
      */
     @Generated
     @Selector("count")
@@ -229,7 +229,7 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
             NSArray<? extends AUAudioUnitBus> busArray);
 
     /**
-     * [@property]	countChangeable
+     * [@property] countChangeable
      * <p>
      * Whether the array can have a variable number of busses.
      * <p>
@@ -270,7 +270,7 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     public native void replaceBusses(NSArray<? extends AUAudioUnitBus> busArray);
 
     /**
-     * [@property]	setBusCount:error:
+     * [@property] setBusCount:error:
      * <p>
      * Change the number of busses in the array.
      */

@@ -59,7 +59,8 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     public static native NSCoreDataCoreSpotlightDelegate allocWithZone(VoidPtr zone);
 
     /**
-     * Create the searchable attributes for the managed object. Override to return nil if you do not want the object included in the index.
+     * Create the searchable attributes for the managed object. Override to return nil if you do not want the object
+     * included in the index.
      */
     @Generated
     @Selector("attributeSetForObject:")

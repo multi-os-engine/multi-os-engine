@@ -200,7 +200,7 @@ public class CTCarrier extends NSObject {
      * mobileNetworkCode
      * <p>
      * Discussion:
-     * An NSString containing the  mobile network code for the subscriber's
+     * An NSString containing the mobile network code for the subscriber's
      * cellular service provider, in its numeric representation
      */
     @Generated

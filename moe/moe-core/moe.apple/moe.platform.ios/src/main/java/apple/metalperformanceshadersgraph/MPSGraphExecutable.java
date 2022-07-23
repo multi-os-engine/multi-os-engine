@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * Compiled representation of a compute graph executable
  * <p>
- * An MPSGraphExecutable is a compiled graph for specific feeds for  specific targetTensors and targetOperations
+ * An MPSGraphExecutable is a compiled graph for specific feeds for specific targetTensors and targetOperations
  */
 @Generated
 @Library("MetalPerformanceShadersGraph")
@@ -91,13 +91,15 @@ public class MPSGraphExecutable extends NSObject {
 
     /**
      * Runs the graph for given feeds to return targetTensor values, ensuring all target operations also executed.
-     * This call  is asynchronous and will return immediately if a completionHandler is set.
+     * This call is asynchronous and will return immediately if a completionHandler is set.
      *
-     * @param commandBuffer       commandBuffer passed to exectute the graph on, commitAndContinue might be called, please don't rely on underlying MTLCommandBuffer to remain uncommitted
+     * @param commandBuffer       commandBuffer passed to exectute the graph on, commitAndContinue might be called,
+     *                            please don't rely on underlying MTLCommandBuffer to remain uncommitted
      * @param inputsArray         Feeds tensorData for the placeholder tensors, same order as arguments of main function
      * @param resultsArray        Tensors for which the caller wishes MPSGraphTensorData to be returned
      * @param executionDescriptor ExecutionDescriptor to be passed in and used,
-     * @return A valid MPSGraphTensorData array with results synchronized to the CPU memory if MPSGraphOptionsSynchronizeResults set.
+     * @return A valid MPSGraphTensorData array with results synchronized to the CPU memory if
+     *         MPSGraphOptionsSynchronizeResults set.
      */
     @Generated
     @Selector("encodeToCommandBuffer:inputsArray:resultsArray:executionDescriptor:")
@@ -107,7 +109,7 @@ public class MPSGraphExecutable extends NSObject {
             MPSGraphExecutableExecutionDescriptor executionDescriptor);
 
     /**
-     * [@property]   feedTensors
+     * [@property] feedTensors
      * <p>
      * feedTensors for the graph, can be used to order the inputs when executable was created with an MPSGraph
      */
@@ -151,7 +153,7 @@ public class MPSGraphExecutable extends NSObject {
     public static native MPSGraphExecutable new_objc();
 
     /**
-     * [@property]   options
+     * [@property] options
      * <p>
      * options for the graph, default value is MPSGraphOptionsDefault
      */
@@ -169,13 +171,14 @@ public class MPSGraphExecutable extends NSObject {
 
     /**
      * Runs the graph for given feeds to return targetTensor values, ensuring all target operations also executed.
-     * This call  is asynchronous and will return immediately if a completionHandler is set.
+     * This call is asynchronous and will return immediately if a completionHandler is set.
      *
      * @param commandQueue        CommandQueue passed to exectute the graph on
      * @param inputsArray         Feeds tensorData for the placeholder tensors, same order as arguments of main function
      * @param resultsArray        Tensors for which the caller wishes MPSGraphTensorData to be returned
      * @param executionDescriptor ExecutionDescriptor to be passed in and used,
-     * @return A valid MPSGraphTensorData array with results synchronized to the CPU memory if MPSGraphOptionsSynchronizeResults set.
+     * @return A valid MPSGraphTensorData array with results synchronized to the CPU memory if
+     *         MPSGraphOptionsSynchronizeResults set.
      */
     @Generated
     @Selector("runAsyncWithMTLCommandQueue:inputsArray:resultsArray:executionDescriptor:")
@@ -186,12 +189,13 @@ public class MPSGraphExecutable extends NSObject {
 
     /**
      * Runs the graph for given feeds to return targetTensor values, ensuring all target operations also executed.
-     * This call  is synchronous and will return on completion of execution
+     * This call is synchronous and will return on completion of execution
      *
      * @param commandQueue CommandQueue passed to exectute the graph on
      * @param inputsArray  Feeds tensorData for the placeholder tensors, same order as arguments of main function
      * @param resultsArray Results tensorData for which the caller wishes MPSGraphTensorData to be returned
-     * @return A valid MPSGraphTensorData array with results synchronized to the CPU memory if MPSGraphOptionsSynchronizeResults set.
+     * @return A valid MPSGraphTensorData array with results synchronized to the CPU memory if
+     *         MPSGraphOptionsSynchronizeResults set.
      */
     @Generated
     @Selector("runWithMTLCommandQueue:inputsArray:resultsArray:executionDescriptor:")
@@ -201,7 +205,7 @@ public class MPSGraphExecutable extends NSObject {
             MPSGraphExecutableExecutionDescriptor executionDescriptor);
 
     /**
-     * [@property]   options
+     * [@property] options
      * <p>
      * options for the graph, default value is MPSGraphOptionsDefault
      */
@@ -229,7 +233,7 @@ public class MPSGraphExecutable extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * [@property]   targetTensors
+     * [@property] targetTensors
      * <p>
      * targetTensors for the graph, can be used to order the outputs when executable was created with an MPSGraph
      */

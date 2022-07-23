@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueCarbonDioxideDetectionStatus
+ * [@enum] HMCharacteristicValueCarbonDioxideDetectionStatus
  * <p>
- * [@constant]  HMCharacteristicValueCarbonDioxideDetectionStatusNotDetected    Carbon dioxide is not detected.
- * [@constant]  HMCharacteristicValueCarbonDioxideDetectionStatusDetected       Carbon dioxide is detected.
+ * [@constant] HMCharacteristicValueCarbonDioxideDetectionStatusNotDetected Carbon dioxide is not detected.
+ * [@constant] HMCharacteristicValueCarbonDioxideDetectionStatusDetected Carbon dioxide is detected.
  */
 @Generated
 public final class HMCharacteristicValueCarbonDioxideDetectionStatus {

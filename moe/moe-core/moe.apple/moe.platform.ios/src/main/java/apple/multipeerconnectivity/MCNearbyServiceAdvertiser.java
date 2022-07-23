@@ -52,9 +52,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * represent the local peer, and a service type needs to be specified.
  * <p>
  * The serviceType parameter is a short text string used to describe the
- * app's networking protocol.  It should be in the same format as a
+ * app's networking protocol. It should be in the same format as a
  * Bonjour service type: up to 15 characters long and valid characters
- * include ASCII lowercase letters, numbers, and the hyphen.  A short
+ * include ASCII lowercase letters, numbers, and the hyphen. A short
  * name that distinguishes itself from unrelated services is recommended;
  * for example, a text chat app made by ABC company could use the service
  * type "abc-txtchat". For more detailed information about service type

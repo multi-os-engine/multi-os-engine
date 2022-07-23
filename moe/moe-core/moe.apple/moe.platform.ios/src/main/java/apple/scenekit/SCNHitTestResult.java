@@ -220,7 +220,8 @@ public class SCNHitTestResult extends NSObject {
      * <p>
      * Returns the texture coordinates at the point of intersection, for a given mapping channel.
      *
-     * @param channel The texture coordinates source index of the geometry to use. The channel must exists on the geometry otherwise {0,0} will be returned.
+     * @param channel The texture coordinates source index of the geometry to use. The channel must exists on the
+     *                geometry otherwise {0,0} will be returned.
      */
     @Generated
     @Selector("textureCoordinatesWithMappingChannel:")

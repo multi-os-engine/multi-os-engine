@@ -60,7 +60,8 @@ public interface UITextInputTraits {
     }
 
     /**
-     * default is NO (when YES, will automatically disable return key when text widget has zero-length contents, and will automatically enable when text widget has non-zero-length contents)
+     * default is NO (when YES, will automatically disable return key when text widget has zero-length contents, and
+     * will automatically enable when text widget has non-zero-length contents)
      */
     @Generated
     @IsOptional
@@ -143,7 +144,8 @@ public interface UITextInputTraits {
     }
 
     /**
-     * default is NO (when YES, will automatically disable return key when text widget has zero-length contents, and will automatically enable when text widget has non-zero-length contents)
+     * default is NO (when YES, will automatically disable return key when text widget has zero-length contents, and
+     * will automatically enable when text widget has non-zero-length contents)
      */
     @Generated
     @IsOptional

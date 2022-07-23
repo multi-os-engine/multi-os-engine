@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * Read/Write Options	***************
+ * Read/Write Options ***************
  */
 @Generated
 public final class NSDataReadingOptions {

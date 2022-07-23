@@ -25,7 +25,8 @@ public interface MTLSharedEvent extends MTLEvent {
     MTLSharedEventHandle newSharedEventHandle();
 
     /**
-     * When the event's signaled value reaches value or higher, invoke the block on the dispatch queue owned by the listener.
+     * When the event's signaled value reaches value or higher, invoke the block on the dispatch queue owned by the
+     * listener.
      */
     @Generated
     @Selector("notifyListener:atValue:block:")

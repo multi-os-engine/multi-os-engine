@@ -44,9 +44,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * AVCaptureAudioDataOutput
  * <p>
- * AVCaptureAudioDataOutput is a concrete subclass of AVCaptureOutput that can be used to process uncompressed or compressed samples from the audio being captured.
+ * AVCaptureAudioDataOutput is a concrete subclass of AVCaptureOutput that can be used to process uncompressed or
+ * compressed samples from the audio being captured.
  * <p>
- * Instances of AVCaptureAudioDataOutput produce audio sample buffers suitable for processing using other media APIs. Applications can access the sample buffers with the captureOutput:didOutputSampleBuffer:fromConnection: delegate method.
+ * Instances of AVCaptureAudioDataOutput produce audio sample buffers suitable for processing using other media APIs.
+ * Applications can access the sample buffers with the captureOutput:didOutputSampleBuffer:fromConnection: delegate
+ * method.
  */
 @Generated
 @Library("AVFoundation")
@@ -167,15 +170,23 @@ public class AVCaptureAudioDataOutput extends AVCaptureOutput {
      * <p>
      * Specifies the recommended settings for use with an AVAssetWriterInput.
      * <p>
-     * The value of this property is an NSDictionary containing values for compression settings keys defined in AVAudioSettings.h. This dictionary is suitable for use as the "outputSettings" parameter when creating an AVAssetWriterInput, such as,
+     * The value of this property is an NSDictionary containing values for compression settings keys defined in
+     * AVAudioSettings.h. This dictionary is suitable for use as the "outputSettings" parameter when creating an
+     * AVAssetWriterInput, such as,
      * <p>
-     * [AVAssetWriterInput assetWriterInputWithMediaType:AVMediaTypeAudio outputSettings:outputSettings sourceFormatHint:hint];
+     * [AVAssetWriterInput assetWriterInputWithMediaType:AVMediaTypeAudio outputSettings:outputSettings
+     * sourceFormatHint:hint];
      * <p>
-     * The dictionary returned contains all necessary keys and values needed by AVAssetWriter (see AVAssetWriterInput.h, -initWithMediaType:outputSettings: for a more in depth discussion). For QuickTime movie and ISO files, the recommended audio settings will always produce output comparable to that of AVCaptureMovieFileOutput.
+     * The dictionary returned contains all necessary keys and values needed by AVAssetWriter (see AVAssetWriterInput.h,
+     * -initWithMediaType:outputSettings: for a more in depth discussion). For QuickTime movie and ISO files, the
+     * recommended audio settings will always produce output comparable to that of AVCaptureMovieFileOutput.
      * <p>
-     * Note that the dictionary of settings is dependent on the current configuration of the receiver's AVCaptureSession and its inputs. The settings dictionary may change if the session's configuration changes. As such, you should configure your session first, then query the recommended audio settings.
+     * Note that the dictionary of settings is dependent on the current configuration of the receiver's AVCaptureSession
+     * and its inputs. The settings dictionary may change if the session's configuration changes. As such, you should
+     * configure your session first, then query the recommended audio settings.
      *
-     * @param outputFileType Specifies the UTI of the file type to be written (see AVMediaFormat.h for a list of file format UTIs).
+     * @param outputFileType Specifies the UTI of the file type to be written (see AVMediaFormat.h for a list of file
+     *                       format UTIs).
      * @return A fully populated dictionary of keys and values that are compatible with AVAssetWriter.
      */
     @Generated
@@ -188,7 +199,8 @@ public class AVCaptureAudioDataOutput extends AVCaptureOutput {
      * <p>
      * The dispatch queue on which all sample buffer delegate methods will be called.
      * <p>
-     * The value of this property is a dispatch_queue_t. The queue is set using the setSampleBufferDelegate:queue: method.
+     * The value of this property is a dispatch_queue_t. The queue is set using the setSampleBufferDelegate:queue:
+     * method.
      */
     @Generated
     @Selector("sampleBufferCallbackQueue")
@@ -199,7 +211,9 @@ public class AVCaptureAudioDataOutput extends AVCaptureOutput {
      * <p>
      * The receiver's delegate.
      * <p>
-     * The value of this property is an object conforming to the AVCaptureAudioDataOutputSampleBufferDelegate protocol that will receive sample buffers after they are captured. The delegate is set using the setSampleBufferDelegate:queue: method.
+     * The value of this property is an object conforming to the AVCaptureAudioDataOutputSampleBufferDelegate protocol
+     * that will receive sample buffers after they are captured. The delegate is set using the
+     * setSampleBufferDelegate:queue: method.
      */
     @Generated
     @Selector("sampleBufferDelegate")
@@ -209,15 +223,26 @@ public class AVCaptureAudioDataOutput extends AVCaptureOutput {
     /**
      * setSampleBufferDelegate:queue:
      * <p>
-     * Sets the receiver's delegate that will accept captured buffers and dispatch queue on which the delegate will be called.
+     * Sets the receiver's delegate that will accept captured buffers and dispatch queue on which the delegate will be
+     * called.
      * <p>
-     * When a new audio sample buffer is captured it will be vended to the sample buffer delegate using the captureOutput:didOutputSampleBuffer:fromConnection: delegate method. All delegate methods will be called on the specified dispatch queue. If the queue is blocked when new samples are captured, those samples will be automatically dropped when they become sufficiently late. This allows clients to process existing samples on the same queue without having to manage the potential memory usage increases that would otherwise occur when that processing is unable to keep up with the rate of incoming samples.
+     * When a new audio sample buffer is captured it will be vended to the sample buffer delegate using the
+     * captureOutput:didOutputSampleBuffer:fromConnection: delegate method. All delegate methods will be called on the
+     * specified dispatch queue. If the queue is blocked when new samples are captured, those samples will be
+     * automatically dropped when they become sufficiently late. This allows clients to process existing samples on the
+     * same queue without having to manage the potential memory usage increases that would otherwise occur when that
+     * processing is unable to keep up with the rate of incoming samples.
      * <p>
-     * Clients that need to minimize the chances of samples being dropped should specify a queue on which a sufficiently small amount of processing is being done outside of receiving sample buffers. However, if such clients migrate extra processing to another queue, they are responsible for ensuring that memory usage does not grow without bound from samples that have not been processed.
+     * Clients that need to minimize the chances of samples being dropped should specify a queue on which a sufficiently
+     * small amount of processing is being done outside of receiving sample buffers. However, if such clients migrate
+     * extra processing to another queue, they are responsible for ensuring that memory usage does not grow without
+     * bound from samples that have not been processed.
      * <p>
-     * A serial dispatch queue must be used to guarantee that audio samples will be delivered in order. The sampleBufferCallbackQueue parameter may not be NULL, except when setting sampleBufferDelegate to nil.
+     * A serial dispatch queue must be used to guarantee that audio samples will be delivered in order. The
+     * sampleBufferCallbackQueue parameter may not be NULL, except when setting sampleBufferDelegate to nil.
      *
-     * @param sampleBufferDelegate      An object conforming to the AVCaptureAudioDataOutputSampleBufferDelegate protocol that will receive sample buffers after they are captured.
+     * @param sampleBufferDelegate      An object conforming to the AVCaptureAudioDataOutputSampleBufferDelegate
+     *                                  protocol that will receive sample buffers after they are captured.
      * @param sampleBufferCallbackQueue A dispatch queue on which all sample buffer delegate methods will be called.
      */
     @Generated

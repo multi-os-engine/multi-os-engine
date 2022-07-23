@@ -90,7 +90,7 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
     public static native GKBehavior behaviorWithGoalWeight(GKGoal goal, float weight);
 
     /**
-     * Creates a behavior with an array of goals.  All weights are set to 1.0f
+     * Creates a behavior with an array of goals. All weights are set to 1.0f
      */
     @Generated
     @Selector("behaviorWithGoals:")

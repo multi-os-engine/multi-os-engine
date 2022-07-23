@@ -32,7 +32,8 @@ public interface NSURLSessionWebSocketDelegate extends NSURLSessionTaskDelegate 
 
     /**
      * Indicates that the WebSocket handshake was successful and the connection has been upgraded to webSockets.
-     * It will also provide the protocol that is picked in the handshake. If the handshake fails, this delegate will not be invoked.
+     * It will also provide the protocol that is picked in the handshake. If the handshake fails, this delegate will not
+     * be invoked.
      */
     @Generated
     @IsOptional

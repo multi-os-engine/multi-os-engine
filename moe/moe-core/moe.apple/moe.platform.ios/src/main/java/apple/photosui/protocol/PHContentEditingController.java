@@ -44,14 +44,18 @@ public interface PHContentEditingController {
     boolean canHandleAdjustmentData(PHAdjustmentData adjustmentData);
 
     /**
-     * Called if the user cancels the editing session. (Can be called while the receiver is producing the editing output.)
+     * Called if the user cancels the editing session. (Can be called while the receiver is producing the editing
+     * output.)
      */
     @Generated
     @Selector("cancelContentEditing")
     void cancelContentEditing();
 
     /**
-     * Called when the user finishes the editing session. The receiver should prevent the user from editing the asset further. Also, it should create the editing output and call the completion handler. The completion handler returns after the output has been consumed, so it is safe to perform clean up after it returns. The completion handler can (and should best) be called on a background queue.
+     * Called when the user finishes the editing session. The receiver should prevent the user from editing the asset
+     * further. Also, it should create the editing output and call the completion handler. The completion handler
+     * returns after the output has been consumed, so it is safe to perform clean up after it returns. The completion
+     * handler can (and should best) be called on a background queue.
      */
     @Generated
     @Selector("finishContentEditingWithCompletionHandler:")
@@ -66,7 +70,9 @@ public interface PHContentEditingController {
     boolean shouldShowCancelConfirmation();
 
     /**
-     * Provides the input for the editing session. The placeholder image represents the current version of the asset (with adjustments baked in), and can be used as UI placeholder, in case rendering the adjustments from the input cannot be done in a timely fashion.
+     * Provides the input for the editing session. The placeholder image represents the current version of the asset
+     * (with adjustments baked in), and can be used as UI placeholder, in case rendering the adjustments from the input
+     * cannot be done in a timely fashion.
      */
     @Generated
     @Selector("startContentEditingWithInput:placeholderImage:")

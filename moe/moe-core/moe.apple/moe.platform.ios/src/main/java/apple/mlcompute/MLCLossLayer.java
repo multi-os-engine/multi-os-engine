@@ -136,7 +136,7 @@ public class MLCLossLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   descriptor
+     * [@property] descriptor
      * <p>
      * The loss descriptor
      */
@@ -400,7 +400,7 @@ public class MLCLossLayer extends MLCLayer {
     public static native long version_static();
 
     /**
-     * [@property]   weights
+     * [@property] weights
      * <p>
      * The loss label weights tensor
      */

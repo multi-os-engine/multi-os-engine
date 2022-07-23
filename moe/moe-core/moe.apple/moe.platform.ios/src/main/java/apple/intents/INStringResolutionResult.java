@@ -163,7 +163,9 @@ public class INStringResolutionResult extends INIntentResolutionResult {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given string. The resolvedString can be different than the original string. This allows app extensions to apply business logic constraints to the string.
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given string. The
+     * resolvedString can be different than the original string. This allows app extensions to apply business logic
+     * constraints to the string.
      * Use +notRequired to continue with a 'nil' value.
      */
     @Generated

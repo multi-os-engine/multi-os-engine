@@ -336,7 +336,7 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
      * courseAccuracy
      * <p>
      * Discussion:
-     * Returns the course accuracy of the location in degrees.  Returns negative if course is invalid.
+     * Returns the course accuracy of the location in degrees. Returns negative if course is invalid.
      */
     @Generated
     @Selector("courseAccuracy")

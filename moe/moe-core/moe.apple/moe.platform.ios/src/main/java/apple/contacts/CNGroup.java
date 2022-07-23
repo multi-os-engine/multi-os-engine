@@ -183,7 +183,8 @@ public class CNGroup extends NSObject implements NSCopying, NSMutableCopying, NS
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * The identifier is unique among groups on the device. It can be saved and used for fetching groups next application launch.
+     * The identifier is unique among groups on the device. It can be saved and used for fetching groups next
+     * application launch.
      */
     @Generated
     @Selector("identifier")

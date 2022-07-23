@@ -85,7 +85,8 @@ public final class SensorKit {
      * Accelerometer sensor stream for Motion.
      * <p>
      * This data stream stores acceleration measured by the device's accelerometer.
-     * Fetches from this stream return objects of type NSArray<CMRecordedAccelerometerData *> * as defined in the CoreMotion framework.
+     * Fetches from this stream return objects of type NSArray<CMRecordedAccelerometerData *> * as defined in the
+     * CoreMotion framework.
      */
     @Generated
     @CVariable()
@@ -98,7 +99,8 @@ public final class SensorKit {
      * Rotation rate sensor stream for Motion.
      * <p>
      * This data stream stores rotation rate measured by the device's gyroscope.
-     * Fetches from this stream return objects of type NSArray<CMRecordedRotationRateData *> * as defined in the CoreMotion framework.
+     * Fetches from this stream return objects of type NSArray<CMRecordedRotationRateData *> * as defined in the
+     * CoreMotion framework.
      */
     @Generated
     @CVariable()
@@ -113,8 +115,8 @@ public final class SensorKit {
      * This data stream stores visit information from frequently visited locations including:
      *
      * @textblock - arrival and departure times
-     * - distance from your home
-     * - an anonymous location identifier but no specific location information
+     *            - distance from your home
+     *            - an anonymous location identifier but no specific location information
      * @/textblock Fetches from this stream return objects of type SRVisit.
      */
     @Generated
@@ -143,10 +145,10 @@ public final class SensorKit {
      * This stream stores information about device usage including:
      *
      * @textblock - Types of apps used
-     * - Types of notifications received
-     * - Types of websites visited
-     * - Number of device unlocks and unlock duration
-     * - Number of times the screen is on and the duration
+     *            - Types of notifications received
+     *            - Types of websites visited
+     *            - Number of device unlocks and unlock duration
+     *            - Number of times the screen is on and the duration
      * @/textblock Fetches from this stream return objects of type SRDeviceUsageReport.
      */
     @Generated
@@ -162,7 +164,7 @@ public final class SensorKit {
      * This streams stores information about messages usage including:
      *
      * @textblock - The number of incoming and outgoing messages
-     * - The number of individuals contacted but none of their personal information
+     *            - The number of individuals contacted but none of their personal information
      * @/textblock Fetches from this stream return objects of type SRMessagesUsageReport.
      */
     @Generated
@@ -178,7 +180,7 @@ public final class SensorKit {
      * This streams stores information about phone usage including:
      *
      * @textblock - The number of incoming and outgoing calls
-     * - The number of individuals contacted but none of their personal information
+     *            - The number of individuals contacted but none of their personal information
      * @/textblock Fetches from this stream return objects of type SRPhoneUsageReport.
      */
     @Generated
@@ -194,7 +196,7 @@ public final class SensorKit {
      * This streams stores information about Apple Watch wear including:
      *
      * @textblock - When the watch is worn
-     * - Digital crown and orientation settings
+     *            - Digital crown and orientation settings
      * @/textblock Fetches from this stream return objects of type SRWristDetection.
      */
     @Generated
@@ -210,9 +212,9 @@ public final class SensorKit {
      * This stream stores information about keyboard usage from all apps where a keyboard is used including:
      *
      * @textblock - Metrics about typing speed and accuracy
-     * - Metrics about the length of typed or swiped words
-     * - Metrics about the typing errors made
-     * - The number of words and emojis that convey emotion
+     *            - Metrics about the length of typed or swiped words
+     *            - Metrics about the typing errors made
+     *            - The number of words and emojis that convey emotion
      * @/textblock Fetches from this stream return objects of type SRKeyboardMetrics.
      */
     @Generated
@@ -228,10 +230,11 @@ public final class SensorKit {
      * This stream stores information data about your voice during Siri sessions including:
      *
      * @textblock - Tenor, pitch, and cadence
-     * - Metrics such as average words per minute and average pause length
+     *            - Metrics such as average words per minute and average pause length
      * @/textblock This steam does not store any raw audio nor any audio or data from other parties.
-     * <p>
-     * Fetches from this stream return objects of type SFSpeechRecognitionResult as defined in the Speech framework.
+     *             <p>
+     *             Fetches from this stream return objects of type SFSpeechRecognitionResult as defined in the Speech
+     *             framework.
      */
     @Generated
     @CVariable()
@@ -246,10 +249,11 @@ public final class SensorKit {
      * This stream stores information data about your voice during phone calls including:
      *
      * @textblock - Tenor, pitch, and cadence
-     * - Metrics such as average words per minute and average pause length
+     *            - Metrics such as average words per minute and average pause length
      * @/textblock This steam does not store any raw audio nor any audio or data from other parties.
-     * <p>
-     * Fetches from this stream return objects of type SFSpeechRecognitionResult as defined in the Speech framework.
+     *             <p>
+     *             Fetches from this stream return objects of type SFSpeechRecognitionResult as defined in the Speech
+     *             framework.
      */
     @Generated
     @CVariable()

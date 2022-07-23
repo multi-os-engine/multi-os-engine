@@ -33,7 +33,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("UICollectionViewDataSourcePrefetching")
 public interface UICollectionViewDataSourcePrefetching {
     /**
-     * indexPaths that previously were considered as candidates for pre-fetching, but were not actually used; may be a subset of the previous call to -collectionView:prefetchItemsAtIndexPaths:
+     * indexPaths that previously were considered as candidates for pre-fetching, but were not actually used; may be a
+     * subset of the previous call to -collectionView:prefetchItemsAtIndexPaths:
      */
     @Generated
     @IsOptional

@@ -43,7 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MTLSamplerDescriptor
  * <p>
- * A mutable descriptor used to configure a sampler.  When complete, this can be used to create an immutable MTLSamplerState.
+ * A mutable descriptor used to configure a sampler. When complete, this can be used to create an immutable
+ * MTLSamplerState.
  */
 @Generated
 @Library("Metal")
@@ -200,7 +201,8 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
      * <p>
      * The maximum level of detail that will be used when sampling from a texture.
      * <p>
-     * The default value of lodMaxClamp is FLT_MAX.  Clamp values are ignored for texture sample variants that specify an explicit level of detail.
+     * The default value of lodMaxClamp is FLT_MAX. Clamp values are ignored for texture sample variants that specify an
+     * explicit level of detail.
      */
     @Generated
     @Selector("lodMaxClamp")
@@ -211,7 +213,8 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
      * <p>
      * The minimum level of detail that will be used when sampling from a texture.
      * <p>
-     * The default value of lodMinClamp is 0.0.  Clamp values are ignored for texture sample variants that specify an explicit level of detail.
+     * The default value of lodMinClamp is 0.0. Clamp values are ignored for texture sample variants that specify an
+     * explicit level of detail.
      */
     @Generated
     @Selector("lodMinClamp")
@@ -220,7 +223,8 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] magFilter
      * <p>
-     * Filter option for combining texels within a mipmap level the sample footprint is smaller than a pixel (magnification).
+     * Filter option for combining texels within a mipmap level the sample footprint is smaller than a pixel
+     * (magnification).
      * <p>
      * The default value is MTLSamplerMinMagFilterNearest.
      */
@@ -244,7 +248,8 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] minFilter
      * <p>
-     * Filter option for combining texels within a mipmap level the sample footprint is larger than a pixel (minification).
+     * Filter option for combining texels within a mipmap level the sample footprint is larger than a pixel
+     * (minification).
      * <p>
      * The default value is MTLSamplerMinMagFilterNearest.
      */
@@ -268,9 +273,10 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] normalizedCoordinates.
      * <p>
-     * If YES, texture coordates are from 0 to 1.  If NO, texture coordinates are 0..width, 0..height.
+     * If YES, texture coordates are from 0 to 1. If NO, texture coordinates are 0..width, 0..height.
      * <p>
-     * normalizedCoordinates defaults to YES.  Non-normalized coordinates should only be used with 1D and 2D textures with the ClampToEdge wrap mode, otherwise the results of sampling are undefined.
+     * normalizedCoordinates defaults to YES. Non-normalized coordinates should only be used with 1D and 2D textures
+     * with the ClampToEdge wrap mode, otherwise the results of sampling are undefined.
      */
     @Generated
     @Selector("normalizedCoordinates")
@@ -279,7 +285,7 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] rAddressMode
      * <p>
-     * Set the wrap mode for the R texture coordinate.  The default value is MTLSamplerAddressModeClampToEdge.
+     * Set the wrap mode for the R texture coordinate. The default value is MTLSamplerAddressModeClampToEdge.
      */
     @Generated
     @Selector("rAddressMode")
@@ -289,7 +295,7 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] sAddressMode
      * <p>
-     * Set the wrap mode for the S texture coordinate.  The default value is MTLSamplerAddressModeClampToEdge.
+     * Set the wrap mode for the S texture coordinate. The default value is MTLSamplerAddressModeClampToEdge.
      */
     @Generated
     @Selector("sAddressMode")
@@ -330,7 +336,8 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
      * <p>
      * The maximum level of detail that will be used when sampling from a texture.
      * <p>
-     * The default value of lodMaxClamp is FLT_MAX.  Clamp values are ignored for texture sample variants that specify an explicit level of detail.
+     * The default value of lodMaxClamp is FLT_MAX. Clamp values are ignored for texture sample variants that specify an
+     * explicit level of detail.
      */
     @Generated
     @Selector("setLodMaxClamp:")
@@ -341,7 +348,8 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
      * <p>
      * The minimum level of detail that will be used when sampling from a texture.
      * <p>
-     * The default value of lodMinClamp is 0.0.  Clamp values are ignored for texture sample variants that specify an explicit level of detail.
+     * The default value of lodMinClamp is 0.0. Clamp values are ignored for texture sample variants that specify an
+     * explicit level of detail.
      */
     @Generated
     @Selector("setLodMinClamp:")
@@ -350,7 +358,8 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] magFilter
      * <p>
-     * Filter option for combining texels within a mipmap level the sample footprint is smaller than a pixel (magnification).
+     * Filter option for combining texels within a mipmap level the sample footprint is smaller than a pixel
+     * (magnification).
      * <p>
      * The default value is MTLSamplerMinMagFilterNearest.
      */
@@ -372,7 +381,8 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] minFilter
      * <p>
-     * Filter option for combining texels within a mipmap level the sample footprint is larger than a pixel (minification).
+     * Filter option for combining texels within a mipmap level the sample footprint is larger than a pixel
+     * (minification).
      * <p>
      * The default value is MTLSamplerMinMagFilterNearest.
      */
@@ -394,9 +404,10 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] normalizedCoordinates.
      * <p>
-     * If YES, texture coordates are from 0 to 1.  If NO, texture coordinates are 0..width, 0..height.
+     * If YES, texture coordates are from 0 to 1. If NO, texture coordinates are 0..width, 0..height.
      * <p>
-     * normalizedCoordinates defaults to YES.  Non-normalized coordinates should only be used with 1D and 2D textures with the ClampToEdge wrap mode, otherwise the results of sampling are undefined.
+     * normalizedCoordinates defaults to YES. Non-normalized coordinates should only be used with 1D and 2D textures
+     * with the ClampToEdge wrap mode, otherwise the results of sampling are undefined.
      */
     @Generated
     @Selector("setNormalizedCoordinates:")
@@ -405,7 +416,7 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] rAddressMode
      * <p>
-     * Set the wrap mode for the R texture coordinate.  The default value is MTLSamplerAddressModeClampToEdge.
+     * Set the wrap mode for the R texture coordinate. The default value is MTLSamplerAddressModeClampToEdge.
      */
     @Generated
     @Selector("setRAddressMode:")
@@ -414,7 +425,7 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] sAddressMode
      * <p>
-     * Set the wrap mode for the S texture coordinate.  The default value is MTLSamplerAddressModeClampToEdge.
+     * Set the wrap mode for the S texture coordinate. The default value is MTLSamplerAddressModeClampToEdge.
      */
     @Generated
     @Selector("setSAddressMode:")
@@ -423,7 +434,7 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] tAddressMode
      * <p>
-     * Set the wrap mode for the T texture coordinate.  The default value is MTLSamplerAddressModeClampToEdge.
+     * Set the wrap mode for the T texture coordinate. The default value is MTLSamplerAddressModeClampToEdge.
      */
     @Generated
     @Selector("setTAddressMode:")
@@ -432,7 +443,7 @@ public class MTLSamplerDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] tAddressMode
      * <p>
-     * Set the wrap mode for the T texture coordinate.  The default value is MTLSamplerAddressModeClampToEdge.
+     * Set the wrap mode for the T texture coordinate. The default value is MTLSamplerAddressModeClampToEdge.
      */
     @Generated
     @Selector("tAddressMode")

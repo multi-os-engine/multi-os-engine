@@ -174,8 +174,10 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * Executes a provided block with the fetched values for the given item properties, or nil if no value is available for a property.
-     * In some cases, enumerating the values for multiple properties can be more efficient than fetching each individual property with -valueForProperty:.
+     * Executes a provided block with the fetched values for the given item properties, or nil if no value is available
+     * for a property.
+     * In some cases, enumerating the values for multiple properties can be more efficient than fetching each individual
+     * property with -valueForProperty:.
      */
     @Generated
     @Selector("enumerateValuesForProperties:usingBlock:")

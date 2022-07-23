@@ -29,7 +29,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * [@protocol]		AVPlayerItemMetadataOutputPushDelegate
+ * [@protocol] AVPlayerItemMetadataOutputPushDelegate
  * <p>
  * Extends AVPlayerItemOutputPushDelegate to provide additional methods specific to metadata output.
  */
@@ -43,15 +43,22 @@ public interface AVPlayerItemMetadataOutputPushDelegate extends AVPlayerItemOutp
      * <p>
      * A delegate callback that delivers a new collection of metadata items.
      * <p>
-     * Each group provided in a single invocation of this method will have timing that does not overlap with any other group in the array.
-     * Note that for some timed metadata formats carried by HTTP live streaming, the timeRange of each group must be reported as kCMTimeIndefinite, because its duration will be unknown until the next metadata group in the stream arrives. In these cases, the groups parameter will always contain a single group.
-     * Groups are typically packaged into arrays for delivery to your delegate according to the chunking or interleaving of the underlying metadata data.
-     * Note that if the item carries multiple metadata tracks containing metadata with the same metadata identifiers, this method can be invoked for each one separately, each with reference to the associated AVPlayerItemTrack.
-     * Note that the associated AVPlayerItemTrack parameter can be nil which implies that the metadata describes the asset as a whole, not just a single track of the asset.
+     * Each group provided in a single invocation of this method will have timing that does not overlap with any other
+     * group in the array.
+     * Note that for some timed metadata formats carried by HTTP live streaming, the timeRange of each group must be
+     * reported as kCMTimeIndefinite, because its duration will be unknown until the next metadata group in the stream
+     * arrives. In these cases, the groups parameter will always contain a single group.
+     * Groups are typically packaged into arrays for delivery to your delegate according to the chunking or interleaving
+     * of the underlying metadata data.
+     * Note that if the item carries multiple metadata tracks containing metadata with the same metadata identifiers,
+     * this method can be invoked for each one separately, each with reference to the associated AVPlayerItemTrack.
+     * Note that the associated AVPlayerItemTrack parameter can be nil which implies that the metadata describes the
+     * asset as a whole, not just a single track of the asset.
      *
-     * @param            output The AVPlayerItemMetadataOutput source.
-     * @param            groups An NSArray of AVTimedMetadataGroups that may contain metadata items with requested identifiers, according to the format descriptions associated with the underlying tracks.
-     * @param            track An instance of AVPlayerItemTrack that indicates the source of the metadata items in the group.
+     * @param output The AVPlayerItemMetadataOutput source.
+     * @param groups An NSArray of AVTimedMetadataGroups that may contain metadata items with requested identifiers,
+     *               according to the format descriptions associated with the underlying tracks.
+     * @param track  An instance of AVPlayerItemTrack that indicates the source of the metadata items in the group.
      */
     @Generated
     @IsOptional

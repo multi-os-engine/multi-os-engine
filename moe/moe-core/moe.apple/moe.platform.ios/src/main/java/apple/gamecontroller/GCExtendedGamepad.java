@@ -155,7 +155,7 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
      * <p>
      * Y
      * / \
-     * X   B
+     * X B
      * \ /
      * A
      */
@@ -198,14 +198,16 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     public native GCControllerButtonInput leftShoulder();
 
     /**
-     * A thumbstick is a 2-axis control that is physically required to be analog. All the elements of this directional input are thus analog.
+     * A thumbstick is a 2-axis control that is physically required to be analog. All the elements of this directional
+     * input are thus analog.
      */
     @Generated
     @Selector("leftThumbstick")
     public native GCControllerDirectionPad leftThumbstick();
 
     /**
-     * Triggers are required to be analog inputs. Common uses would be acceleration and decelleration in a driving game for example.
+     * Triggers are required to be analog inputs. Common uses would be acceleration and decelleration in a driving game
+     * for example.
      */
     @Generated
     @Selector("leftTrigger")
@@ -219,7 +221,8 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     public native GCControllerButtonInput rightShoulder();
 
     /**
-     * A thumbstick is a 2-axis control that is physically required to be analog. All the elements of this directional input are thus analog.
+     * A thumbstick is a 2-axis control that is physically required to be analog. All the elements of this directional
+     * input are thus analog.
      */
     @Generated
     @Selector("rightThumbstick")
@@ -230,7 +233,8 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     public native GCControllerButtonInput rightTrigger();
 
     /**
-     * Polls the state vector of the controller and saves it to a snapshot. The snapshot is stored in a device independent
+     * Polls the state vector of the controller and saves it to a snapshot. The snapshot is stored in a device
+     * independent
      * format that can be serialized and used at a later date. This is useful for features such as quality assurance,
      * save game or replay functionality among many.
      * <p>
@@ -273,7 +277,8 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     public native GCControllerButtonInput buttonMenu();
 
     /**
-     * Button options is the secondary menu button. It should be used to enter a secondary menu, such as graphics and sound configuration, and pause the game.
+     * Button options is the secondary menu button. It should be used to enter a secondary menu, such as graphics and
+     * sound configuration, and pause the game.
      */
     @Generated
     @Selector("buttonOptions")
@@ -302,7 +307,8 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     public native void setStateFromExtendedGamepad(GCExtendedGamepad extendedGamepad);
 
     /**
-     * Button home is a special menu button. If the system does not consume button home events, they will be passed to your application and should be used to enter a secondary menu, and pause the game.
+     * Button home is a special menu button. If the system does not consume button home events, they will be passed to
+     * your application and should be used to enter a secondary menu, and pause the game.
      */
     @Generated
     @Selector("buttonHome")

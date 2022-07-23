@@ -42,7 +42,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Detects features in images.
  * <p>
- * This class potentially holds onto a lot of state. Hence it may be beneficial from a performance perspective to re-use the same CIDetector instance. Specifying a CIContext when creating a detector may have an impact on performance since this context may be used when analyzing an image.
+ * This class potentially holds onto a lot of state. Hence it may be beneficial from a performance perspective to re-use
+ * the same CIDetector instance. Specifying a CIContext when creating a detector may have an impact on performance since
+ * this context may be used when analyzing an image.
  */
 @Generated
 @Library("CoreImage")
@@ -110,11 +112,15 @@ public class CIDetector extends NSObject {
      * <p>
      * The context argument specifies the CIContext to be used to operate on the image. May be nil.
      * <p>
-     * If the input image to -featuresInImage: is the output of a CoreImage operation, it may improve performance to specify the same context that was used to operate on that image.
+     * If the input image to -featuresInImage: is the output of a CoreImage operation, it may improve performance to
+     * specify the same context that was used to operate on that image.
      * <p>
-     * The detector may do image processing in this context and if the image is on the GPU and the specified context is a GPU context this may avoid additional upload to / download from the GPU. If the input image is on the CPU (or the output from a CPU based context) specifying a GPU based context (or vice versa) may reduce performance.
+     * The detector may do image processing in this context and if the image is on the GPU and the specified context is
+     * a GPU context this may avoid additional upload to / download from the GPU. If the input image is on the CPU (or
+     * the output from a CPU based context) specifying a GPU based context (or vice versa) may reduce performance.
      * <p>
-     * The options parameter lets you optinally specify a accuracy / performance tradeoff. Can be nil or an empty dictionary.
+     * The options parameter lets you optinally specify a accuracy / performance tradeoff. Can be nil or an empty
+     * dictionary.
      */
     @Generated
     @Selector("detectorOfType:context:options:")

@@ -26,11 +26,14 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * -------------------------------------------------------------------------------------------------------------- ICDeviceBrowser
+ * --------------------------------------------------------------------------------------------------------------
+ * ICDeviceBrowser
  * <p>
  * ICDeviceBrowser
  * <p>
- * The ICDeviceBrowser object is used to find devices such as digital cameras and scanners that are supported by Image Capture. These device may be directly attached to the USB or FireWire bus on the host computer, or available over a TCP/IP network. This object communicates with an Image Capture agent process asynchronously to accomplish this.
+ * The ICDeviceBrowser object is used to find devices such as digital cameras and scanners that are supported by Image
+ * Capture. These device may be directly attached to the USB or FireWire bus on the host computer, or available over a
+ * TCP/IP network. This object communicates with an Image Capture agent process asynchronously to accomplish this.
  */
 @Generated
 @Library("ImageCaptureCore")
@@ -89,7 +92,8 @@ public class ICDeviceBrowser extends NSObject {
     /**
      * [@property] delegate
      * <p>
-     * The delegate. It must conform to ICDeviceBrowserDelegate protocol. The messages this delegate can expect to receive are described by ICDeviceBrowserDelegate protocol.
+     * The delegate. It must conform to ICDeviceBrowserDelegate protocol. The messages this delegate can expect to
+     * receive are described by ICDeviceBrowserDelegate protocol.
      */
     @Generated
     @Selector("delegate")
@@ -103,7 +107,8 @@ public class ICDeviceBrowser extends NSObject {
     /**
      * [@property] devices
      * <p>
-     * All devices found by the browser. This property will change as devices appear and disappear. This array is empty before the first invocation of the delegate method 'deviceBrowser:didAddDevice:moreComing:'.
+     * All devices found by the browser. This property will change as devices appear and disappear. This array is empty
+     * before the first invocation of the delegate method 'deviceBrowser:didAddDevice:moreComing:'.
      */
     @Generated
     @Selector("devices")
@@ -169,7 +174,8 @@ public class ICDeviceBrowser extends NSObject {
     /**
      * [@property] delegate
      * <p>
-     * The delegate. It must conform to ICDeviceBrowserDelegate protocol. The messages this delegate can expect to receive are described by ICDeviceBrowserDelegate protocol.
+     * The delegate. It must conform to ICDeviceBrowserDelegate protocol. The messages this delegate can expect to
+     * receive are described by ICDeviceBrowserDelegate protocol.
      */
     @Generated
     @Selector("setDelegate:")
@@ -178,7 +184,8 @@ public class ICDeviceBrowser extends NSObject {
     /**
      * [@property] delegate
      * <p>
-     * The delegate. It must conform to ICDeviceBrowserDelegate protocol. The messages this delegate can expect to receive are described by ICDeviceBrowserDelegate protocol.
+     * The delegate. It must conform to ICDeviceBrowserDelegate protocol. The messages this delegate can expect to
+     * receive are described by ICDeviceBrowserDelegate protocol.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) ICDeviceBrowserDelegate value) {
@@ -201,7 +208,8 @@ public class ICDeviceBrowser extends NSObject {
      * <p>
      * This message tells the receiver to start looking for devices.
      * <p>
-     * Make sure that the receiver's delegate is set prior to sending this message; otherwise this message will be ignored. The messages the delegate can expect to receive are described by ICDeviceBrowserDelegate protocol.
+     * Make sure that the receiver's delegate is set prior to sending this message; otherwise this message will be
+     * ignored. The messages the delegate can expect to receive are described by ICDeviceBrowserDelegate protocol.
      */
     @Generated
     @Selector("start")
@@ -230,7 +238,8 @@ public class ICDeviceBrowser extends NSObject {
     /**
      * contentsAuthorizationStatus
      * <p>
-     * This method returns a constant indicating whether the app has permission to acces the contents of an attached media device.
+     * This method returns a constant indicating whether the app has permission to acces the contents of an attached
+     * media device.
      * <p>
      * A constant indicating authorization status.
      */
@@ -250,7 +259,7 @@ public class ICDeviceBrowser extends NSObject {
     /**
      * [@property] suspended
      * <p>
-     * Indicates whether the  devices in the browser have suspended communication.
+     * Indicates whether the devices in the browser have suspended communication.
      */
     @Generated
     @Selector("isSuspended")
@@ -293,7 +302,8 @@ public class ICDeviceBrowser extends NSObject {
     /**
      * resetContentsAuthorizationWithCompletion:
      * <p>
-     * This method resets the authorization status for the application accessing the conents of an external media device.
+     * This method resets the authorization status for the application accessing the conents of an external media
+     * device.
      */
     @Generated
     @Selector("resetContentsAuthorizationWithCompletion:")
@@ -312,7 +322,8 @@ public class ICDeviceBrowser extends NSObject {
      * <p>
      * This method resets the authorization status for the application controlling the attached camera device.
      * <p>
-     * If the application already has been granted camera access, this will reset only the presentation dialog letting the user know the app has permission, not the camera access itself.
+     * If the application already has been granted camera access, this will reset only the presentation dialog letting
+     * the user know the app has permission, not the camera access itself.
      */
     @Generated
     @Selector("resetControlAuthorizationWithCompletion:")

@@ -22,7 +22,9 @@ import org.moe.natj.general.ann.NUInt;
 @Generated
 public final class NSFileVersionReplacingOptions {
     /**
-     * Whether -replaceItemAtURL:options:error: must move the version's contents out of the version store instead of copying it. This is useful when you want to promote a version's contents to a separate file. You wouldn't use this to restore a version of a file.
+     * Whether -replaceItemAtURL:options:error: must move the version's contents out of the version store instead of
+     * copying it. This is useful when you want to promote a version's contents to a separate file. You wouldn't use
+     * this to restore a version of a file.
      */
     @Generated @NUInt public static final long NSFileVersionReplacingByMoving = 0x0000000000000001L;
 

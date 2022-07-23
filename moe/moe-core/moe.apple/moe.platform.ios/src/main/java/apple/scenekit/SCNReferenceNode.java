@@ -228,7 +228,8 @@ public class SCNReferenceNode extends SCNNode {
     /**
      * [@property] loadingPolicy
      * <p>
-     * Specifies when to load the reference. see SCNReferenceLoadingPolicy above. Defaults to SCNReferenceLoadingPolicyImmediately.
+     * Specifies when to load the reference. see SCNReferenceLoadingPolicy above. Defaults to
+     * SCNReferenceLoadingPolicyImmediately.
      */
     @Generated
     @Selector("loadingPolicy")
@@ -247,7 +248,8 @@ public class SCNReferenceNode extends SCNNode {
     /**
      * [@property] loadingPolicy
      * <p>
-     * Specifies when to load the reference. see SCNReferenceLoadingPolicy above. Defaults to SCNReferenceLoadingPolicyImmediately.
+     * Specifies when to load the reference. see SCNReferenceLoadingPolicy above. Defaults to
+     * SCNReferenceLoadingPolicyImmediately.
      */
     @Generated
     @Selector("setLoadingPolicy:")

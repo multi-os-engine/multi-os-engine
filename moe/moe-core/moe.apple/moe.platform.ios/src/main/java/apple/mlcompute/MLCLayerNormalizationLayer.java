@@ -26,7 +26,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MLCLayerNormalizationLayer
  * <p>
- * The layer normalizaion layer.  For more information, refer to https://pytorch.org/docs/stable/nn.html#layernorm.
+ * The layer normalizaion layer. For more information, refer to https://pytorch.org/docs/stable/nn.html#layernorm.
  */
 @Generated
 @Library("MLCompute")
@@ -61,7 +61,7 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
      * The beta tensor
      */
@@ -70,7 +70,7 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
     public native MLCTensor beta();
 
     /**
-     * [@property]   betaParameter
+     * [@property] betaParameter
      * <p>
      * The beta tensor parameter used for optimizer update
      */
@@ -105,7 +105,7 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   gamma
+     * [@property] gamma
      * <p>
      * The gamma tensor
      */
@@ -114,7 +114,7 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
     public native MLCTensor gamma();
 
     /**
-     * [@property]   gammaParameter
+     * [@property] gammaParameter
      * <p>
      * The gamma tensor parameter used for optimizer update
      */
@@ -172,7 +172,7 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
     public static native MLCLayerNormalizationLayer new_objc();
 
     /**
-     * [@property]   normalizedShape
+     * [@property] normalizedShape
      * <p>
      * The shape of the axes over which normalization occurs, (W), (H,W) or (C,H,W)
      */
@@ -201,7 +201,7 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
     public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
 
     /**
-     * [@property]   varianceEpsilon
+     * [@property] varianceEpsilon
      * <p>
      * A value used for numerical stability
      */

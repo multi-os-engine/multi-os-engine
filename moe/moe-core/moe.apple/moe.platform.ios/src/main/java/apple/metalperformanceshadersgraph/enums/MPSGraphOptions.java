@@ -3,13 +3,13 @@ package apple.metalperformanceshadersgraph.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@typedef]    MPSGraphOptions
+ * [@typedef] MPSGraphOptions
  * <p>
  * Options to be utilized by the graph
  * <p>
- * [@constant]   MPSGraphOptionsNone                                   No Options
- * [@constant]   MPSGraphOptionsSynchronizeResults            Synchronize results using a blit encoder if on a GPU
- * [@constant]   MPSGraphOptionsVerbose                               Prints more logging info
+ * [@constant] MPSGraphOptionsNone No Options
+ * [@constant] MPSGraphOptionsSynchronizeResults Synchronize results using a blit encoder if on a GPU
+ * [@constant] MPSGraphOptionsVerbose Prints more logging info
  */
 @Generated
 public final class MPSGraphOptions {

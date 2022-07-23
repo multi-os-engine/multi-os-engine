@@ -86,28 +86,34 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * If the style should automatically update when the button is selected. Default varies by style. Disable to customize selection behavior.
+     * If the style should automatically update when the button is selected. Default varies by style. Disable to
+     * customize selection behavior.
      */
     @Generated
     @Selector("automaticallyUpdateForSelection")
     public native boolean automaticallyUpdateForSelection();
 
     /**
-     * A UIBackgroundConfiguration describing the button's background. UIKit provides a value by default with values appropriate for a UIButton.
+     * A UIBackgroundConfiguration describing the button's background. UIKit provides a value by default with values
+     * appropriate for a UIButton.
      */
     @Generated
     @Selector("background")
     public native UIBackgroundConfiguration background();
 
     /**
-     * The base color to use for background elements. This color may be modified before being passed to a transformer, and finally applied to specific elements. Setting nil will cede full control to the configuration to select a color appropriate to the style.
+     * The base color to use for background elements. This color may be modified before being passed to a transformer,
+     * and finally applied to specific elements. Setting nil will cede full control to the configuration to select a
+     * color appropriate to the style.
      */
     @Generated
     @Selector("baseBackgroundColor")
     public native UIColor baseBackgroundColor();
 
     /**
-     * The base color to use for foreground elements. This color may be modified before being passed to a transformer, and finally applied to specific elements. Setting nil will cede full control to the configuration to select a color appropriate to the style.
+     * The base color to use for foreground elements. This color may be modified before being passed to a transformer,
+     * and finally applied to specific elements. Setting nil will cede full control to the configuration to select a
+     * color appropriate to the style.
      */
     @Generated
     @Selector("baseForegroundColor")
@@ -130,7 +136,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     public static native UIButtonConfiguration borderlessButtonConfiguration();
 
     /**
-     * Determines the metrics and ideal size of the button. Clients may resize the button arbitrarily regardless of this value.
+     * Determines the metrics and ideal size of the button. Clients may resize the button arbitrarily regardless of this
+     * value.
      */
     @Generated
     @Selector("buttonSize")
@@ -156,7 +163,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * Insets from the bounds of the button to create the content region. Defaults styles provide insets based on the button size.
+     * Insets from the bounds of the button to create the content region. Defaults styles provide insets based on the
+     * button size.
      */
     @Generated
     @Selector("contentInsets")
@@ -313,42 +321,50 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     public native void setAttributedTitle(NSAttributedString value);
 
     /**
-     * If the style should automatically update when the button is selected. Default varies by style. Disable to customize selection behavior.
+     * If the style should automatically update when the button is selected. Default varies by style. Disable to
+     * customize selection behavior.
      */
     @Generated
     @Selector("setAutomaticallyUpdateForSelection:")
     public native void setAutomaticallyUpdateForSelection(boolean value);
 
     /**
-     * A UIBackgroundConfiguration describing the button's background. UIKit provides a value by default with values appropriate for a UIButton.
+     * A UIBackgroundConfiguration describing the button's background. UIKit provides a value by default with values
+     * appropriate for a UIButton.
      */
     @Generated
     @Selector("setBackground:")
     public native void setBackground(UIBackgroundConfiguration value);
 
     /**
-     * The base color to use for background elements. This color may be modified before being passed to a transformer, and finally applied to specific elements. Setting nil will cede full control to the configuration to select a color appropriate to the style.
+     * The base color to use for background elements. This color may be modified before being passed to a transformer,
+     * and finally applied to specific elements. Setting nil will cede full control to the configuration to select a
+     * color appropriate to the style.
      */
     @Generated
     @Selector("setBaseBackgroundColor:")
     public native void setBaseBackgroundColor(UIColor value);
 
     /**
-     * The base color to use for foreground elements. This color may be modified before being passed to a transformer, and finally applied to specific elements. Setting nil will cede full control to the configuration to select a color appropriate to the style.
+     * The base color to use for foreground elements. This color may be modified before being passed to a transformer,
+     * and finally applied to specific elements. Setting nil will cede full control to the configuration to select a
+     * color appropriate to the style.
      */
     @Generated
     @Selector("setBaseForegroundColor:")
     public native void setBaseForegroundColor(UIColor value);
 
     /**
-     * Determines the metrics and ideal size of the button. Clients may resize the button arbitrarily regardless of this value.
+     * Determines the metrics and ideal size of the button. Clients may resize the button arbitrarily regardless of this
+     * value.
      */
     @Generated
     @Selector("setButtonSize:")
     public native void setButtonSize(@NInt long value);
 
     /**
-     * Insets from the bounds of the button to create the content region. Defaults styles provide insets based on the button size.
+     * Insets from the bounds of the button to create the content region. Defaults styles provide insets based on the
+     * button size.
      */
     @Generated
     @Selector("setContentInsets:")
@@ -540,7 +556,8 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     }
 
     /**
-     * Returns a copy of the configuration updated based on the given button, by applying the configuration's default values for that button's state to any properties that have not been customized.
+     * Returns a copy of the configuration updated based on the given button, by applying the configuration's default
+     * values for that button's state to any properties that have not been customized.
      */
     @Generated
     @Selector("updatedConfigurationForButton:")

@@ -42,7 +42,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * UITextSelectionRect defines an annotated selection rect used by the system to
- * offer rich text interaction experience.  It also serves as an abstract class
+ * offer rich text interaction experience. It also serves as an abstract class
  * provided to be subclassed when adopting UITextInput
  */
 @Generated

@@ -31,7 +31,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A set of one or more haptic events and/or Dynamic parameters/parameter curves.
  * <p>
- * The passed-in arrays' contents are not owned by the pattern object.  Changes made to those arrays
+ * The passed-in arrays' contents are not owned by the pattern object. Changes made to those arrays
  * after a CHHapticPattern object is created have no effect on that object.
  */
 @Generated
@@ -94,7 +94,8 @@ public class CHHapticPattern extends NSObject {
 
     /**
      * [@property] duration
-     * Pattern duration is calculated as the start time of the pattern's last event or parameter, plus that event's duration if present.
+     * Pattern duration is calculated as the start time of the pattern's last event or parameter, plus that event's
+     * duration if present.
      */
     @Generated
     @Selector("duration")
@@ -139,8 +140,8 @@ public class CHHapticPattern extends NSObject {
      * <p>
      * Initialize a new CHHapticPattern with parameters modulated by parameter curves.
      *
-     * @param events          An NSArray of CHHapticEvents.  Can be empty.
-     * @param parameterCurves An NSArray of CHHapticParameterCurves.  Can be empty.
+     * @param events          An NSArray of CHHapticEvents. Can be empty.
+     * @param parameterCurves An NSArray of CHHapticParameterCurves. Can be empty.
      */
     @Generated
     @Selector("initWithEvents:parameterCurves:error:")
@@ -153,8 +154,8 @@ public class CHHapticPattern extends NSObject {
      * <p>
      * Initialize a new CHHapticPattern.
      *
-     * @param events     An NSArray of CHHapticEvents.  Can be empty.
-     * @param parameters An NSArray of CHHapticDynamicParameters.  Can be empty.
+     * @param events     An NSArray of CHHapticEvents. Can be empty.
+     * @param parameters An NSArray of CHHapticDynamicParameters. Can be empty.
      */
     @Generated
     @Selector("initWithEvents:parameters:error:")

@@ -96,7 +96,7 @@ public class MPSRNNDescriptor extends NSObject {
     public native MPSRNNDescriptor init();
 
     /**
-     * [@property]   inputFeatureChannels
+     * [@property] inputFeatureChannels
      * <p>
      * The number of feature channels per pixel in the input image or number of rows in the input matrix.
      */
@@ -127,7 +127,7 @@ public class MPSRNNDescriptor extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   layerSequenceDirection
+     * [@property] layerSequenceDirection
      * <p>
      * When the layer specified with this descriptor is used to process a sequence of inputs
      * by calling @see encodeBidirectionalSequenceToCommandBuffer then this parameter defines
@@ -151,7 +151,7 @@ public class MPSRNNDescriptor extends NSObject {
     public static native MPSRNNDescriptor new_objc();
 
     /**
-     * [@property]   outputFeatureChannels
+     * [@property] outputFeatureChannels
      * <p>
      * The number of feature channels per pixel in the destination image or number of rows in the destination matrix.
      */
@@ -169,7 +169,7 @@ public class MPSRNNDescriptor extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   inputFeatureChannels
+     * [@property] inputFeatureChannels
      * <p>
      * The number of feature channels per pixel in the input image or number of rows in the input matrix.
      */
@@ -178,7 +178,7 @@ public class MPSRNNDescriptor extends NSObject {
     public native void setInputFeatureChannels(@NUInt long value);
 
     /**
-     * [@property]   layerSequenceDirection
+     * [@property] layerSequenceDirection
      * <p>
      * When the layer specified with this descriptor is used to process a sequence of inputs
      * by calling @see encodeBidirectionalSequenceToCommandBuffer then this parameter defines
@@ -196,7 +196,7 @@ public class MPSRNNDescriptor extends NSObject {
     public native void setLayerSequenceDirection(@NUInt long value);
 
     /**
-     * [@property]   outputFeatureChannels
+     * [@property] outputFeatureChannels
      * <p>
      * The number of feature channels per pixel in the destination image or number of rows in the destination matrix.
      */
@@ -205,7 +205,7 @@ public class MPSRNNDescriptor extends NSObject {
     public native void setOutputFeatureChannels(@NUInt long value);
 
     /**
-     * [@property]   useFloat32Weights
+     * [@property] useFloat32Weights
      * <p>
      * If YES, then @ref MPSRNNMatrixInferenceLayer uses 32-bit floating point numbers internally for weights when
      * computing matrix transformations. If NO, then 16-bit, half precision floating point numbers are used.
@@ -218,11 +218,13 @@ public class MPSRNNDescriptor extends NSObject {
     public native void setUseFloat32Weights(boolean value);
 
     /**
-     * [@property]   useLayerInputUnitTransformMode
+     * [@property] useLayerInputUnitTransformMode
      * <p>
-     * if YES then use identity transformation for all weights (W, Wr, Wi, Wf, Wo, Wc) affecting input x_j in this layer,
+     * if YES then use identity transformation for all weights (W, Wr, Wi, Wf, Wo, Wc) affecting input x_j in this
+     * layer,
      * even if said weights are specified as nil.
-     * For example 'W_ij * x_j' is replaced by 'x_j' in formulae defined in @ref MPSRNNSingleGateDescriptor. Defaults to NO.
+     * For example 'W_ij * x_j' is replaced by 'x_j' in formulae defined in @ref MPSRNNSingleGateDescriptor. Defaults to
+     * NO.
      */
     @Generated
     @Selector("setUseLayerInputUnitTransformMode:")
@@ -237,7 +239,7 @@ public class MPSRNNDescriptor extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * [@property]   useFloat32Weights
+     * [@property] useFloat32Weights
      * <p>
      * If YES, then @ref MPSRNNMatrixInferenceLayer uses 32-bit floating point numbers internally for weights when
      * computing matrix transformations. If NO, then 16-bit, half precision floating point numbers are used.
@@ -250,11 +252,13 @@ public class MPSRNNDescriptor extends NSObject {
     public native boolean useFloat32Weights();
 
     /**
-     * [@property]   useLayerInputUnitTransformMode
+     * [@property] useLayerInputUnitTransformMode
      * <p>
-     * if YES then use identity transformation for all weights (W, Wr, Wi, Wf, Wo, Wc) affecting input x_j in this layer,
+     * if YES then use identity transformation for all weights (W, Wr, Wi, Wf, Wo, Wc) affecting input x_j in this
+     * layer,
      * even if said weights are specified as nil.
-     * For example 'W_ij * x_j' is replaced by 'x_j' in formulae defined in @ref MPSRNNSingleGateDescriptor. Defaults to NO.
+     * For example 'W_ij * x_j' is replaced by 'x_j' in formulae defined in @ref MPSRNNSingleGateDescriptor. Defaults to
+     * NO.
      */
     @Generated
     @Selector("useLayerInputUnitTransformMode")

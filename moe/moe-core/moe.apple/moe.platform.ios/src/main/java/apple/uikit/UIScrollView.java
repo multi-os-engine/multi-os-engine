@@ -408,14 +408,16 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     public native boolean bounces();
 
     /**
-     * default is YES. if set, user can go past min/max zoom while gesturing and the zoom will animate to the min/max value at gesture end
+     * default is YES. if set, user can go past min/max zoom while gesturing and the zoom will animate to the min/max
+     * value at gesture end
      */
     @Generated
     @Selector("bouncesZoom")
     public native boolean bouncesZoom();
 
     /**
-     * default is YES. if NO, then once we start tracking, we don't try to drag if the touch moves. this has no effect on presses
+     * default is YES. if NO, then once we start tracking, we don't try to drag if the touch moves. this has no effect
+     * on presses
      */
     @Generated
     @Selector("canCancelContentTouches")
@@ -445,7 +447,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     public native double decelerationRate();
 
     /**
-     * default is YES. if NO, we immediately call -touchesShouldBegin:withEvent:inContentView:. this has no effect on presses
+     * default is YES. if NO, we immediately call -touchesShouldBegin:withEvent:inContentView:. this has no effect on
+     * presses
      */
     @Generated
     @Selector("delaysContentTouches")
@@ -512,7 +515,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     public native void setDirectionalLockEnabled(boolean value);
 
     /**
-     * returns YES if user has started scrolling. this may require some time and or distance to move to initiate dragging
+     * returns YES if user has started scrolling. this may require some time and or distance to move to initiate
+     * dragging
      */
     @Generated
     @Selector("isDragging")
@@ -650,14 +654,16 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     public native void setBounces(boolean value);
 
     /**
-     * default is YES. if set, user can go past min/max zoom while gesturing and the zoom will animate to the min/max value at gesture end
+     * default is YES. if set, user can go past min/max zoom while gesturing and the zoom will animate to the min/max
+     * value at gesture end
      */
     @Generated
     @Selector("setBouncesZoom:")
     public native void setBouncesZoom(boolean value);
 
     /**
-     * default is YES. if NO, then once we start tracking, we don't try to drag if the touch moves. this has no effect on presses
+     * default is YES. if NO, then once we start tracking, we don't try to drag if the touch moves. this has no effect
+     * on presses
      */
     @Generated
     @Selector("setCanCancelContentTouches:")
@@ -693,7 +699,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     public native void setDecelerationRate(@NFloat double value);
 
     /**
-     * default is YES. if NO, we immediately call -touchesShouldBegin:withEvent:inContentView:. this has no effect on presses
+     * default is YES. if NO, we immediately call -touchesShouldBegin:withEvent:inContentView:. this has no effect on
+     * presses
      */
     @Generated
     @Selector("setDelaysContentTouches:")
@@ -754,7 +761,9 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     public native void setRefreshControl(UIRefreshControl value);
 
     /**
-     * use the setter only, as a convenience for setting both verticalScrollIndicatorInsets and horizontalScrollIndicatorInsets to the same value. if those properties have been set to different values, the return value of this getter (deprecated) is undefined.
+     * use the setter only, as a convenience for setting both verticalScrollIndicatorInsets and
+     * horizontalScrollIndicatorInsets to the same value. if those properties have been set to different values, the
+     * return value of this getter (deprecated) is undefined.
      */
     @Generated
     @Selector("setScrollIndicatorInsets:")
@@ -808,7 +817,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * override points for subclasses to control delivery of touch events to subviews of the scroll view
-     * called before touches are delivered to a subview of the scroll view. if it returns NO the touches will not be delivered to the subview
+     * called before touches are delivered to a subview of the scroll view. if it returns NO the touches will not be
+     * delivered to the subview
      * this has no effect on presses
      * default returns YES
      */
@@ -818,7 +828,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
             UIView view);
 
     /**
-     * called before scrolling begins if touches have already been delivered to a subview of the scroll view. if it returns NO the touches will continue to be delivered to the subview and scrolling will not occur
+     * called before scrolling begins if touches have already been delivered to a subview of the scroll view. if it
+     * returns NO the touches will continue to be delivered to the subview and scrolling will not occur
      * not called if canCancelContentTouches is NO. default returns YES if view isn't a UIControl
      * this has no effect on presses
      */
@@ -872,7 +883,9 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     public native UILayoutGuide contentLayoutGuide();
 
     /**
-     * `directionalPressGestureRecognizer` is disabled by default, but can be enabled to perform scrolling in response to up / down / left / right arrow button presses directly, instead of scrolling indirectly in response to focus updates.
+     * `directionalPressGestureRecognizer` is disabled by default, but can be enabled to perform scrolling in response
+     * to up / down / left / right arrow button presses directly, instead of scrolling indirectly in response to focus
+     * updates.
      */
     @Generated
     @Selector("directionalPressGestureRecognizer")

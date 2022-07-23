@@ -40,7 +40,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Base class used to fetch data from the store.  Should not be used directly.
+ * Base class used to fetch data from the store. Should not be used directly.
  */
 @Generated
 @Library("StoreKit")

@@ -44,14 +44,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * GLKReflectionMapEffect
  * <p>
- * GLKReflectionMapEffect is a subclass of GLKBaseEffect.  It is expected that GLKBaseEffect
+ * GLKReflectionMapEffect is a subclass of GLKBaseEffect. It is expected that GLKBaseEffect
  * functionality will be used in combination with GLKReflectionMapEffect.
  * <p>
  * GLKReflectionMapEffect implements common reflection mapping functionality as is used by many of
- * todays games and simulations.  A reflection or environment map can be thought of as a texture
- * mapped polyhedral or spherical mesh that encloses a 3D model.  When the model is rendered
+ * todays games and simulations. A reflection or environment map can be thought of as a texture
+ * mapped polyhedral or spherical mesh that encloses a 3D model. When the model is rendered
  * surface normals from the model are used to calculate reflection vectors which intersect
- * the environment map at some location.  The environment map texture color at this location
+ * the environment map at some location. The environment map texture color at this location
  * is used to impart a modulated environment map color on the model giving the appearance that
  * the shiny model is reflecting its surroundings to the viewer.
  * <p>
@@ -63,8 +63,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * GLKReflectionMapEffect requires at least an OpenGL ES 2.0 context on iOS and an OpenGL Core
  * Profile context on OS X. This context must be initialized and made current prior to creating
- * or initializing GLKReflectionMapEffect instances.  No OpenGL context state settings are
- * modified when a GLKReflectionMapEffect instance is created or its properties set.  When
+ * or initializing GLKReflectionMapEffect instances. No OpenGL context state settings are
+ * modified when a GLKReflectionMapEffect instance is created or its properties set. When
  * -[GLKReflectionMapEffect prepareToDraw] is called it modifies the following state:
  * <p>
  * GL_CURRENT_PROGRAM
@@ -77,14 +77,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * data for the 6 faces of the environment map.
  * <p>
  * GLKReflectionMapEffect reflection vectors are computed in eye space per section 2.11.4 of the
- * OpenGL 2.1 desktop specification for the GL_REFLECTION_MAP texgen mode.  Typical reflection
+ * OpenGL 2.1 desktop specification for the GL_REFLECTION_MAP texgen mode. Typical reflection
  * mapping uses an environment map with a fixed position (e.g. the sky in a real world rendering)
  * and will accurately map the reflection map on the model regardless of the modelview transformation.
  * To achieve this effect decompose the modelview matrix into its model and view components
  * (i.e. the transforms on the object are the model and the transforms on the view are the camera).
- * Then undo the viewing transform by inverting the viewing matrix - call this Vinv.  Now, starting
+ * Then undo the viewing transform by inverting the viewing matrix - call this Vinv. Now, starting
  * with Vinv, treat it as the canonical normal matrix by applying an inverse transpose to it and
- * choosing the upper 3x3 elements of the result.  inverseTranspose(Vinv) simplifies to Vtranspose.
+ * choosing the upper 3x3 elements of the result. inverseTranspose(Vinv) simplifies to Vtranspose.
  * To apply this result to GLKReflectionMapEffect set its matrix property as follows:
  * <p>
  * reflectionMapEffect.matrix = GLKMatrix4GetMatrix3(Vtranspose);
@@ -121,7 +121,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * ... repeat the steps above for other desired vertex attributes
  * <p>
- * glBindVertexArrayOES(0);   // unbind the VAO we created above
+ * glBindVertexArrayOES(0); // unbind the VAO we created above
  * <p>
  * (3) Create a cube map texture for the reflection map
  * <p>
@@ -140,10 +140,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * (4) Set the textureCubeMap property to our new GL cube map and turn on reflection mapping
  * <p>
  * reflectionMapEffect.enable = GL_TRUE;
- * reflectionMapEffect.textureCubeMap = textureCubeMap;     // created in step (2) above
+ * reflectionMapEffect.textureCubeMap = textureCubeMap; // created in step (2) above
  * <p>
- * (5) For each frame drawn:  Update properties that change per frame.  Synchronize the changed effect state
- * by calling -[GLKReflectionMapEffect prepareToDraw].  Draw the model with the effect
+ * (5) For each frame drawn: Update properties that change per frame. Synchronize the changed effect state
+ * by calling -[GLKReflectionMapEffect prepareToDraw]. Draw the model with the effect
  * <p>
  * reflectionMapEffect.transform.modelviewMatrix = modelviewMatrix;
  * [reflectionMapEffect prepareToDraw];

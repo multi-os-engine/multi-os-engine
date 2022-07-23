@@ -49,7 +49,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Immutable Data		***************
+ * Immutable Data ***************
  */
 @Generated
 @Library("Foundation")
@@ -225,7 +225,8 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
 
     /**
      * The -bytes method returns a pointer to a contiguous region of memory managed by the receiver.
-     * If the regions of memory represented by the receiver are already contiguous, it does so in O(1) time, otherwise it may take longer
+     * If the regions of memory represented by the receiver are already contiguous, it does so in O(1) time, otherwise
+     * it may take longer
      * Using -enumerateByteRangesUsingBlock: will be efficient for both contiguous and discontiguous data.
      */
     @Generated
@@ -247,7 +248,8 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * 'block' is called once for each contiguous region of memory in the receiver (once total for contiguous NSDatas), until either all bytes have been enumerated, or the 'stop' parameter is set to YES.
+     * 'block' is called once for each contiguous region of memory in the receiver (once total for contiguous NSDatas),
+     * until either all bytes have been enumerated, or the 'stop' parameter is set to YES.
      */
     @Generated
     @Selector("enumerateByteRangesUsingBlock:")
@@ -272,21 +274,25 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     public native NSData init();
 
     /**
-     * Create an NSData from a Base-64, UTF-8 encoded NSData. By default, returns nil when the input is not recognized as valid Base-64.
+     * Create an NSData from a Base-64, UTF-8 encoded NSData. By default, returns nil when the input is not recognized
+     * as valid Base-64.
      */
     @Generated
     @Selector("initWithBase64EncodedData:options:")
     public native NSData initWithBase64EncodedDataOptions(NSData base64Data, @NUInt long options);
 
     /**
-     * Create an NSData from a Base-64 encoded NSString using the given options. By default, returns nil when the input is not recognized as valid Base-64.
+     * Create an NSData from a Base-64 encoded NSString using the given options. By default, returns nil when the input
+     * is not recognized as valid Base-64.
      */
     @Generated
     @Selector("initWithBase64EncodedString:options:")
     public native NSData initWithBase64EncodedStringOptions(String base64String, @NUInt long options);
 
     /**
-     * These methods first appeared in NSData.h on OS X 10.9 and iOS 7.0. They are deprecated in the same releases in favor of the methods in the NSDataBase64Encoding category. However, these methods have existed for several releases, so they may be used for applications targeting releases prior to OS X 10.9 and iOS 7.0.
+     * These methods first appeared in NSData.h on OS X 10.9 and iOS 7.0. They are deprecated in the same releases in
+     * favor of the methods in the NSDataBase64Encoding category. However, these methods have existed for several
+     * releases, so they may be used for applications targeting releases prior to OS X 10.9 and iOS 7.0.
      */
     @Generated
     @Deprecated

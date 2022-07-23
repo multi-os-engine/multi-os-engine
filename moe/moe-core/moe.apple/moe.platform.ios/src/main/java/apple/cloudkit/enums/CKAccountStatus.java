@@ -21,11 +21,14 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CKAccountStatus
- * [@constant] CKAccountStatusCouldNotDetermine An error occurred when getting the account status, consult the corresponding NSError.
+ * [@constant] CKAccountStatusCouldNotDetermine An error occurred when getting the account status, consult the
+ * corresponding NSError.
  * [@constant] CKAccountStatusAvailable The iCloud account credentials are available for this application
- * [@constant] CKAccountStatusRestricted Parental Controls / Device Management has denied access to iCloud account credentials
+ * [@constant] CKAccountStatusRestricted Parental Controls / Device Management has denied access to iCloud account
+ * credentials
  * [@constant] CKAccountStatusNoAccount No iCloud account is logged in on this device
- * [@constant] CKAccountStatusTemporarilyUnavailable An iCloud account is logged in but not ready. The user can be asked to verify their
+ * [@constant] CKAccountStatusTemporarilyUnavailable An iCloud account is logged in but not ready. The user can be asked
+ * to verify their
  * credentials in Settings app.
  */
 @Generated

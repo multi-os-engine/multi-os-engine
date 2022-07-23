@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSCNNPoolingL2Norm
  * [@dependency] This depends on Metal.framework
  * <p>
- * Specifies the L2-norm pooling filter.  For each pixel, returns L2-Norm of pixels
+ * Specifies the L2-norm pooling filter. For each pixel, returns L2-Norm of pixels
  * in the kernelWidth x kernelHeight filter region.
  * out[c,x,y] = sqrt ( sum_{dx,dy} in[c,x+dx,y+dy] * in[c,x+dx,y+dy] ).
  */
@@ -131,8 +131,8 @@ public class MPSCNNPoolingL2Norm extends MPSCNNPooling {
      * Initialize a MPSCNNPoolingL2Norm pooling filter
      *
      * @param device          The device the filter will run on
-     * @param kernelWidth     The width of the kernel.  Can be an odd or even value.
-     * @param kernelHeight    The height of the kernel.  Can be an odd or even value.
+     * @param kernelWidth     The width of the kernel. Can be an odd or even value.
+     * @param kernelHeight    The height of the kernel. Can be an odd or even value.
      * @param strideInPixelsX The output stride (downsampling factor) in the x dimension.
      * @param strideInPixelsY The output stride (downsampling factor) in the y dimension.
      * @return A valid MPSCNNPooling object or nil, if failure.

@@ -130,7 +130,8 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * Query challenges for the current game issued to the local player -- equivalent GKChallenge objects are not guaranteed to be pointer equivalent across calls, but equal GKChallenge objects will have equal hashes
+     * Query challenges for the current game issued to the local player -- equivalent GKChallenge objects are not
+     * guaranteed to be pointer equivalent across calls, but equal GKChallenge objects will have equal hashes
      */
     @Generated
     @Selector("loadReceivedChallengesWithCompletionHandler:")
@@ -175,7 +176,8 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
     public native NSDate completionDate();
 
     /**
-     * Any GKChallenge object to be declined must be in a state of GKChallengeStatePending in order to be successfully cancelled
+     * Any GKChallenge object to be declined must be in a state of GKChallengeStatePending in order to be successfully
+     * cancelled
      */
     @Generated
     @Selector("decline")

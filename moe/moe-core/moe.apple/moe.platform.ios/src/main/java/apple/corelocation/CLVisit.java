@@ -171,7 +171,7 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
      * arrivalDate
      * <p>
      * Discussion:
-     * The date when the visit began.  This may be equal to [NSDate
+     * The date when the visit began. This may be equal to [NSDate
      * distantPast] if the true arrival date isn't available.
      */
     @Generated
@@ -199,7 +199,7 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
      * departureDate
      * <p>
      * Discussion:
-     * The date when the visit ended.  This is equal to [NSDate
+     * The date when the visit ended. This is equal to [NSDate
      * distantFuture] if the device hasn't yet left.
      */
     @Generated

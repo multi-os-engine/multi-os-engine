@@ -154,7 +154,7 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   scaleFactorX
+     * [@property] scaleFactorX
      * <p>
      * The upsampling scale factor for the x dimension. The default value is 1.
      */
@@ -163,7 +163,7 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
     public native double scaleFactorX();
 
     /**
-     * [@property]   scaleFactorY
+     * [@property] scaleFactorY
      * <p>
      * The upsampling scale factor for the y dimension. The default value is 1.
      */
@@ -195,7 +195,7 @@ public class MPSCNNUpsampling extends MPSCNNKernel {
     public static native long version_static();
 
     /**
-     * [@property]   alignCorners
+     * [@property] alignCorners
      * <p>
      * If YES, the centers of the 4 corner pixels of the input and output regions are aligned,
      * preserving the values at the corner pixels.

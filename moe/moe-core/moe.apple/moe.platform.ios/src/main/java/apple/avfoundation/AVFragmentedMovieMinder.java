@@ -27,7 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A class that periodically checks whether additional movie fragments have been appended to fragmented movie files.
  * <p>
- * AVFragmentedMovieMinder is identical to AVFragmentedAssetMinder except that it's capable of minding only assets of class AVFragmentedMovie.
+ * AVFragmentedMovieMinder is identical to AVFragmentedAssetMinder except that it's capable of minding only assets of
+ * class AVFragmentedMovie.
  */
 @Generated
 @Library("AVFoundation")
@@ -52,7 +53,7 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
      * <p>
      * Adds a fragmented movie to the array of movies being minded.
      *
-     * @param            movie The fragmented movie to add to the minder.
+     * @param movie The fragmented movie to add to the minder.
      */
     @Generated
     @Selector("addFragmentedMovie:")
@@ -106,10 +107,11 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
     /**
      * fragmentedMovieMinderWithMovie:mindingInterval:
      * <p>
-     * Creates an AVFragmentedMovieMinder, adds the specified movie to it, and sets the mindingInterval to the specified value.
+     * Creates an AVFragmentedMovieMinder, adds the specified movie to it, and sets the mindingInterval to the specified
+     * value.
      *
-     * @param            movie An instance of AVFragmentedMovie to add to the AVFragmentedMovieMinder
-     * @param            mindingInterval The initial minding interval of the AVFragmentedMovieMinder.
+     * @param movie           An instance of AVFragmentedMovie to add to the AVFragmentedMovieMinder
+     * @param mindingInterval The initial minding interval of the AVFragmentedMovieMinder.
      * @return A new instance of AVFragmentedMovieMinder.
      */
     @Generated
@@ -133,10 +135,11 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
     /**
      * initWithMovie:mindingInterval:
      * <p>
-     * Creates an AVFragmentedMovieMinder, adds the specified movie to it, and sets the mindingInterval to the specified value.
+     * Creates an AVFragmentedMovieMinder, adds the specified movie to it, and sets the mindingInterval to the specified
+     * value.
      *
-     * @param            movie An instance of AVFragmentedMovie to add to the AVFragmentedMovieMinder
-     * @param            mindingInterval The initial minding interval of the AVFragmentedMovieMinder.
+     * @param movie           An instance of AVFragmentedMovie to add to the AVFragmentedMovieMinder
+     * @param mindingInterval The initial minding interval of the AVFragmentedMovieMinder.
      * @return A new instance of AVFragmentedMovieMinder.
      */
     @Generated
@@ -165,16 +168,17 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]       mindingInterval
+     * [@property] mindingInterval
      * <p>
-     * An NSTimeInterval indicating how often a check for additional movie fragments should be performed. The default interval is 10.0.
+     * An NSTimeInterval indicating how often a check for additional movie fragments should be performed. The default
+     * interval is 10.0.
      */
     @Generated
     @Selector("mindingInterval")
     public native double mindingInterval();
 
     /**
-     * [@property]       movies
+     * [@property] movies
      * <p>
      * An NSArray of the AVFragmentedMovie objects being minded.
      */
@@ -192,7 +196,7 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
      * <p>
      * Removes a fragmented movie from the array of movies being minded.
      *
-     * @param            movie The fragmented movie to remove from the minder.
+     * @param movie The fragmented movie to remove from the minder.
      */
     @Generated
     @Selector("removeFragmentedMovie:")
@@ -207,9 +211,10 @@ public class AVFragmentedMovieMinder extends AVFragmentedAssetMinder {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]       mindingInterval
+     * [@property] mindingInterval
      * <p>
-     * An NSTimeInterval indicating how often a check for additional movie fragments should be performed. The default interval is 10.0.
+     * An NSTimeInterval indicating how often a check for additional movie fragments should be performed. The default
+     * interval is 10.0.
      */
     @Generated
     @Selector("setMindingInterval:")

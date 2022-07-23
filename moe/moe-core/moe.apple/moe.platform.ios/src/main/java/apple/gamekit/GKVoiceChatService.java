@@ -167,7 +167,8 @@ public class GKVoiceChatService extends NSObject {
     public static native long version_static();
 
     /**
-     * callID is returned by didReceiveInvitationFromParticipantID call. An error may occur if there can be no viable connection made to the remote participant.
+     * callID is returned by didReceiveInvitationFromParticipantID call. An error may occur if there can be no viable
+     * connection made to the remote participant.
      */
     @Generated
     @Selector("acceptCallID:error:")
@@ -254,7 +255,8 @@ public class GKVoiceChatService extends NSObject {
     public native void receivedDataFromParticipantID(NSData arbitraryData, String participantID);
 
     /**
-     * will only be called by the client if the client has a pre-established peer-to-peer UDP connection.  Used to receive audio.
+     * will only be called by the client if the client has a pre-established peer-to-peer UDP connection. Used to
+     * receive audio.
      */
     @Generated
     @Selector("receivedRealTimeData:fromParticipantID:")

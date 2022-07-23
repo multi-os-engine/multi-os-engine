@@ -103,7 +103,8 @@ public class GCPhysicalInputProfile extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * Polls the state vector of the physical input input and saves it to a new and writable instance of GCPhysicalInputProfile.
+     * Polls the state vector of the physical input input and saves it to a new and writable instance of
+     * GCPhysicalInputProfile.
      * <p>
      * If your application is heavily multithreaded this may also be useful to guarantee atomicity of input handling as
      * a snapshot will not change based on user input once it is taken.
@@ -144,7 +145,8 @@ public class GCPhysicalInputProfile extends NSObject {
     public native NSDictionary<String, ? extends GCControllerDirectionPad> dpads();
 
     /**
-     * The following properties allow for runtime lookup of any input element on a profile, when provided with a valid alias.
+     * The following properties allow for runtime lookup of any input element on a profile, when provided with a valid
+     * alias.
      * <p>
      * [@example] extendedGamepad.elements["Button A"] == extendedGamepad.buttonA // YES
      * [@example] extendedGamepad.dpads["Left Thumbstick"] == extendedGamepad.leftThumbstick // YES
@@ -216,7 +218,8 @@ public class GCPhysicalInputProfile extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Sets the state vector of the physical input profile to a copy of the passed in physical input profile's state vector.
+     * Sets the state vector of the physical input profile to a copy of the passed in physical input profile's state
+     * vector.
      * <p>
      * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
      *
@@ -256,11 +259,12 @@ public class GCPhysicalInputProfile extends NSObject {
      * Returns the primary alias of the GCControllerElement that a given physical input maps to.
      * <p>
      * If the user were to map a physical press of the A button of their game controller to the B button, then
-     * -[GCPhysicalInputProfile  mappedElementAliasForPhysicalInputName: GCInputButtonA] would return GCInputButtonB.
+     * -[GCPhysicalInputProfile mappedElementAliasForPhysicalInputName: GCInputButtonA] would return GCInputButtonB.
      * Note that mappings can change anytime your app is backgrounded, so make sure you update any relevant visuals when
      * returning to foreground.
      * <p>
-     * [@returns] A GCInput string corresponding to the primary alias of the GCControllerElement that a given physical button maps to, or nil if there is no mapping.
+     * [@returns] A GCInput string corresponding to the primary alias of the GCControllerElement that a given physical
+     * button maps to, or nil if there is no mapping.
      *
      * @param inputName A GCInput string corresponding to the physical button you want the mapped element alias for.
      */
@@ -272,13 +276,16 @@ public class GCPhysicalInputProfile extends NSObject {
      * Returns a set of GCInput strings corresponding to physical inputs that are mapped to a given GCControllerElement.
      * <p>
      * If the user mapped the physical press of the A button, the B button, and the X button to the B button, then
-     * -[GCPhysicalInputProfile mappedPhysicalInputNamesForElementAlias: GCInputButtonB] would return  [GCInputButtonA, GCInputButtonB, GCInputButtonX].
+     * -[GCPhysicalInputProfile mappedPhysicalInputNamesForElementAlias: GCInputButtonB] would return [GCInputButtonA,
+     * GCInputButtonB, GCInputButtonX].
      * Note that mappings can change anytime your app is backgrounded, so make sure you update any relevant visuals when
      * returning to foreground.
      * <p>
-     * [@returns] A set of GCInput strings corresponding to physical inputs that are mapped to a given GCControllerElement, or an empty set if there are no mappings.
+     * [@returns] A set of GCInput strings corresponding to physical inputs that are mapped to a given
+     * GCControllerElement, or an empty set if there are no mappings.
      *
-     * @param elementAlias A GCInput string corresponding to an alias of the GCControllerElement you want the physical buttons for.
+     * @param elementAlias A GCInput string corresponding to an alias of the GCControllerElement you want the physical
+     *                     buttons for.
      */
     @Generated
     @Selector("mappedPhysicalInputNamesForElementAlias:")

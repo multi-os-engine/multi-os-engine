@@ -46,7 +46,7 @@ public final class AVAudioSessionRouteChangeReason {
     @Generated @NUInt public static final long NoSuitableRouteForCategory = 0x0000000000000007L;
     /**
      * Indicates that the set of input and/our output ports has not changed, but some aspect of
-     * their configuration has changed.  For example, a port's selected data source has changed.
+     * their configuration has changed. For example, a port's selected data source has changed.
      * (Introduced in iOS 7.0, watchOS 2.0, tvOS 9.0).
      */
     @Generated @NUInt public static final long RouteConfigurationChange = 0x0000000000000008L;

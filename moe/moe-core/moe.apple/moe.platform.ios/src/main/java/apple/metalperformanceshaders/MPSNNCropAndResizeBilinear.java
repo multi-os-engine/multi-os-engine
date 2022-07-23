@@ -32,7 +32,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSNNCropAndResizeBilinear
  * [@dependency] This depends on Metal.framework
  * <p>
- * The MPSNNCropAndResizeBilinear filter resizes the source image  using bilinear interpolation to
+ * The MPSNNCropAndResizeBilinear filter resizes the source image using bilinear interpolation to
  * a destination whose dimensions are given by resizeWidth and resizeHeight
  * <p>
  * The number of output feature channels remains the same as the number of input feature
@@ -172,7 +172,7 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
     public static native MPSNNCropAndResizeBilinear new_objc();
 
     /**
-     * [@property]   numberOfRegions
+     * [@property] numberOfRegions
      * <p>
      * the number of bounding box i.e. regions to resize.
      */
@@ -182,11 +182,11 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
     public native long numberOfRegions();
 
     /**
-     * [@property]   regions
+     * [@property] regions
      * <p>
      * This is a pointer to "numberOfRegions" boxes which specify the locations in the
      * source image to use for each box/region to perform the resize operation.
-     * The coordinates specified are normalized values.  A normalized region outside the
+     * The coordinates specified are normalized values. A normalized region outside the
      * [0, 1] range is allowed, in which case we use extrapolation_value to extrapolate
      * the input image values.
      */
@@ -196,7 +196,7 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
     public native MPSRegion regions();
 
     /**
-     * [@property]   resizeHeight
+     * [@property] resizeHeight
      * <p>
      * The resize height.
      */
@@ -206,7 +206,7 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
     public native long resizeHeight();
 
     /**
-     * [@property]   resizeWidth
+     * [@property] resizeWidth
      * <p>
      * The resize width.
      */

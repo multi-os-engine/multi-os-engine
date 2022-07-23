@@ -55,7 +55,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A SpriteKit Node used to stroke or fill a shape. CGPaths are used to supply the path.
  * <p>
- * See CGPath <a href="http://developer.apple.com/library/mac/#documentation/GraphicsImaging/Reference/CGPath/Reference/reference.html">reference pages</a> for details on how to construct a CGPath.
+ * See CGPath <a
+ * href="http://developer.apple.com/library/mac/#documentation/GraphicsImaging/Reference/CGPath/Reference/reference.html">reference
+ * pages</a> for details on how to construct a CGPath.
  */
 @Generated
 @Library("SpriteKit")

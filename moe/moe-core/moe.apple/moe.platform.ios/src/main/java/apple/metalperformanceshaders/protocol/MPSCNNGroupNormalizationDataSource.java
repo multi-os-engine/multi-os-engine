@@ -19,7 +19,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * [@protocol]   MPSCNNGroupNormalizationDataSource
+ * [@protocol] MPSCNNGroupNormalizationDataSource
  * <p>
  * The MPSCNNGroupNormalizationDataSource protocol declares the methods that an
  * group of MPSCNNGroupNormalization uses to initialize the
@@ -107,7 +107,7 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
     String label();
 
     /**
-     * [@property]   The number of feature channels that are normalized.
+     * [@property] The number of feature channels that are normalized.
      */
     @Generated
     @Selector("numberOfFeatureChannels")
@@ -115,7 +115,7 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
     long numberOfFeatureChannels();
 
     /**
-     * [@property]   The number of groups used.
+     * [@property] The number of groups used.
      * <p>
      * numberOfFeatureChannels/numberOfGroups channels are normalized together.
      */
@@ -125,7 +125,7 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
     long numberOfGroups();
 
     /**
-     * [@property]   The number of groups used.
+     * [@property] The number of groups used.
      * <p>
      * numberOfFeatureChannels/numberOfGroups channels are normalized together.
      */

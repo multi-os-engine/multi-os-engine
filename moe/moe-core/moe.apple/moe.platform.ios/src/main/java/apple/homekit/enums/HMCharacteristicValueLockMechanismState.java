@@ -20,12 +20,12 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueLockMechanismState
+ * [@enum] HMCharacteristicValueLockMechanismState
  * <p>
- * [@constant]  HMCharacteristicValueLockMechanismStateUnsecured  Unsecured.
- * [@constant]  HMCharacteristicValueLockMechanismStateSecured    Secured.
- * [@constant]  HMCharacteristicValueLockMechanismStateJammed     Jammed.
- * [@constant]  HMCharacteristicValueLockMechanismStateUnknown    Unknown.
+ * [@constant] HMCharacteristicValueLockMechanismStateUnsecured Unsecured.
+ * [@constant] HMCharacteristicValueLockMechanismStateSecured Secured.
+ * [@constant] HMCharacteristicValueLockMechanismStateJammed Jammed.
+ * [@constant] HMCharacteristicValueLockMechanismStateUnknown Unknown.
  */
 @Generated
 public final class HMCharacteristicValueLockMechanismState {

@@ -271,7 +271,8 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     public native long contentInsetsReference();
 
     /**
-     * Creates a list section using the specified configuration. You should pass the layoutEnvironment from inside the UICollectionViewCompositionalLayoutSectionProvider.
+     * Creates a list section using the specified configuration. You should pass the layoutEnvironment from inside the
+     * UICollectionViewCompositionalLayoutSectionProvider.
      */
     @Generated
     @Selector("sectionWithListConfiguration:layoutEnvironment:")

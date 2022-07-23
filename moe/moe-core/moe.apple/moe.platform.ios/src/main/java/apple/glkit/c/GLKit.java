@@ -167,7 +167,8 @@ public final class GLKit {
     public static native boolean GLKVector3AllGreaterThanScalar(@ByValue GLKVector3 vector, float value);
 
     /**
-     * Returns true if all of the first vector's elements are greater than or equal to all of the second vector's arguments.
+     * Returns true if all of the first vector's elements are greater than or equal to all of the second vector's
+     * arguments.
      */
     @Generated
     @Inline
@@ -347,7 +348,8 @@ public final class GLKit {
     public static native boolean GLKVector4AllGreaterThanScalar(@ByValue GLKVector4 vector, float value);
 
     /**
-     * Returns true if all of the first vector's elements are greater than or equal to all of the second vector's arguments.
+     * Returns true if all of the first vector's elements are greater than or equal to all of the second vector's
+     * arguments.
      */
     @Generated
     @Inline
@@ -911,7 +913,8 @@ public final class GLKit {
     public static native GLKMatrix2 GLKMatrix4GetMatrix2(@ByValue GLKMatrix4 matrix);
 
     /**
-     * GLKMatrix4GetRow returns vectors for rows 0, 1, and 2 whose last component will be the translation value tx, ty, and tz, respectively.
+     * GLKMatrix4GetRow returns vectors for rows 0, 1, and 2 whose last component will be the translation value tx, ty,
+     * and tz, respectively.
      * Valid row values range from 0 to 3, inclusive.
      */
     @Generated
@@ -921,7 +924,8 @@ public final class GLKit {
     public static native GLKVector4 GLKMatrix4GetRow(@ByValue GLKMatrix4 matrix, int row);
 
     /**
-     * GLKMatrix4GetColumn returns a vector for column 3 whose first three components will be the translation values tx, ty, and tz.
+     * GLKMatrix4GetColumn returns a vector for column 3 whose first three components will be the translation values tx,
+     * ty, and tz.
      * Valid column values range from 0 to 3, inclusive.
      */
     @Generated
@@ -941,7 +945,8 @@ public final class GLKit {
     public static native GLKMatrix4 GLKMatrix4SetRow(@ByValue GLKMatrix4 matrix, int row, @ByValue GLKVector4 vector);
 
     /**
-     * GLKMatrix4SetColumn expects that the vector for column 3 will contain the translation values tx, ty, and tz as its first three components, respectively.
+     * GLKMatrix4SetColumn expects that the vector for column 3 will contain the translation values tx, ty, and tz as
+     * its first three components, respectively.
      * Valid column values range from 0 to 3, inclusive.
      */
     @Generated
@@ -1260,7 +1265,8 @@ public final class GLKit {
     public static native boolean GLKVector2AllGreaterThanScalar(@ByValue GLKVector2 vector, float value);
 
     /**
-     * Returns true if all of the first vector's elements are greater than or equal to all of the second vector's arguments.
+     * Returns true if all of the first vector's elements are greater than or equal to all of the second vector's
+     * arguments.
      */
     @Generated
     @Inline
@@ -1407,7 +1413,8 @@ public final class GLKit {
     public static native GLKMatrix3 GLKMatrixStackGetMatrix3Inverse(GLKMatrixStackRef stack);
 
     /**
-     * Calculate and return the upper left 3x3 inverse transpose matrix from the matrix currently residing on top of stack.
+     * Calculate and return the upper left 3x3 inverse transpose matrix from the matrix currently residing on top of
+     * stack.
      */
     @Generated
     @CFunction

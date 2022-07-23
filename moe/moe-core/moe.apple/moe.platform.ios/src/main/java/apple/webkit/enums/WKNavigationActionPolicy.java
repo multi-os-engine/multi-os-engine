@@ -24,9 +24,9 @@ import org.moe.natj.general.ann.NInt;
  * <p>
  * The policy to pass back to the decision handler from the
  * webView:decidePolicyForNavigationAction:decisionHandler: method.
- * [@constant] WKNavigationActionPolicyCancel   Cancel the navigation.
- * [@constant] WKNavigationActionPolicyAllow    Allow the navigation to continue.
- * [@constant] WKNavigationActionPolicyDownload    Turn the navigation into a download.
+ * [@constant] WKNavigationActionPolicyCancel Cancel the navigation.
+ * [@constant] WKNavigationActionPolicyAllow Allow the navigation to continue.
+ * [@constant] WKNavigationActionPolicyDownload Turn the navigation into a download.
  */
 @Generated
 public final class WKNavigationActionPolicy {

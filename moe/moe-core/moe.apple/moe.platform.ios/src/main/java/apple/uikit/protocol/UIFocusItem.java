@@ -30,7 +30,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * Objects conforming to UIFocusItem are considered capable of participating in focus. Only UIFocusItems can ever be focused.
+ * Objects conforming to UIFocusItem are considered capable of participating in focus. Only UIFocusItems can ever be
+ * focused.
  */
 @Generated
 @Library("UIKit")
@@ -39,7 +40,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface UIFocusItem extends UIFocusEnvironment {
     /**
      * Indicates whether or not this item is currently allowed to become focused.
-     * Returning NO restricts the item from being focusable, even if it is visible in the user interface. For example, UIControls return NO if they are disabled.
+     * Returning NO restricts the item from being focusable, even if it is visible in the user interface. For example,
+     * UIControls return NO if they are disabled.
      */
     @Generated
     @Selector("canBecomeFocused")
@@ -57,7 +59,8 @@ public interface UIFocusItem extends UIFocusEnvironment {
     }
 
     /**
-     * The geometric frame of this item, represented in the `coordinateSpace` of the UIFocusItemContainer in which it is contained.
+     * The geometric frame of this item, represented in the `coordinateSpace` of the UIFocusItemContainer in which it is
+     * contained.
      */
     @Generated
     @Selector("frame")
@@ -65,8 +68,10 @@ public interface UIFocusItem extends UIFocusEnvironment {
     CGRect frame();
 
     /**
-     * Describes a visual effect to apply when this item is focused. When not implemented, the system may create a default effect for this item.
-     * Returning nil indicates that the system should not apply any visual effects, and that the app will handle applying the appropriate visuals.
+     * Describes a visual effect to apply when this item is focused. When not implemented, the system may create a
+     * default effect for this item.
+     * Returning nil indicates that the system should not apply any visual effects, and that the app will handle
+     * applying the appropriate visuals.
      */
     @Generated
     @IsOptional
@@ -76,8 +81,11 @@ public interface UIFocusItem extends UIFocusEnvironment {
     }
 
     /**
-     * The priority this item has in its focus group. The higher the priority, the more likely it is to get picked when focus moves into this group.
-     * Note: this method can only be used to increase an item's priority, not decrease it. For example if an item is currently selected, the actual priority of this item will be determined by MAX(focusGroupPriority, UIFocusGroupPrioritySelected).
+     * The priority this item has in its focus group. The higher the priority, the more likely it is to get picked when
+     * focus moves into this group.
+     * Note: this method can only be used to increase an item's priority, not decrease it. For example if an item is
+     * currently selected, the actual priority of this item will be determined by MAX(focusGroupPriority,
+     * UIFocusGroupPrioritySelected).
      */
     @Generated
     @IsOptional
@@ -88,7 +96,8 @@ public interface UIFocusItem extends UIFocusEnvironment {
     }
 
     /**
-     * If this returns YES, the focus item is considered transparent in terms of occlusion. Items that are behind it are focusable.
+     * If this returns YES, the focus item is considered transparent in terms of occlusion. Items that are behind it are
+     * focusable.
      * This value is ignored when the item is focusable, in which case the item is never considered transparent.
      */
     @Generated

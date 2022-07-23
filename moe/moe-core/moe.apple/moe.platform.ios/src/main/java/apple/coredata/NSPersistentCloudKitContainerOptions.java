@@ -23,7 +23,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * NSPersistentCloudKitContainerOptions provides customization of how NSPersistentCloudKitContainer aligns a given instance of NSPersistentStoreDescription with a CloudKit database.
+ * NSPersistentCloudKitContainerOptions provides customization of how NSPersistentCloudKitContainer aligns a given
+ * instance of NSPersistentStoreDescription with a CloudKit database.
  */
 @Generated
 @Library("CoreData")

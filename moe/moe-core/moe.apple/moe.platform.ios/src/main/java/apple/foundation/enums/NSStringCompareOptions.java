@@ -38,7 +38,8 @@ public final class NSStringCompareOptions {
      */
     @Generated @NUInt public static final long AnchoredSearch = 0x0000000000000008L;
     /**
-     * Added in 10.2; Numbers within strings are compared using numeric value, that is, Foo2.txt < Foo7.txt < Foo25.txt; only applies to compare methods, not find
+     * Added in 10.2; Numbers within strings are compared using numeric value, that is, Foo2.txt < Foo7.txt < Foo25.txt;
+     * only applies to compare methods, not find
      */
     @Generated @NUInt public static final long NumericSearch = 0x0000000000000040L;
     /**
@@ -50,11 +51,15 @@ public final class NSStringCompareOptions {
      */
     @Generated @NUInt public static final long WidthInsensitiveSearch = 0x0000000000000100L;
     /**
-     * If specified, comparisons are forced to return either NSOrderedAscending or NSOrderedDescending if the strings are equivalent but not strictly equal, for stability when sorting (e.g. "aaa" > "AAA" with NSCaseInsensitiveSearch specified)
+     * If specified, comparisons are forced to return either NSOrderedAscending or NSOrderedDescending if the strings
+     * are equivalent but not strictly equal, for stability when sorting (e.g. "aaa" > "AAA" with
+     * NSCaseInsensitiveSearch specified)
      */
     @Generated @NUInt public static final long ForcedOrderingSearch = 0x0000000000000200L;
     /**
-     * Applies to rangeOfString:..., stringByReplacingOccurrencesOfString:..., and replaceOccurrencesOfString:... methods only; the search string is treated as an ICU-compatible regular expression; if set, no other options can apply except NSCaseInsensitiveSearch and NSAnchoredSearch
+     * Applies to rangeOfString:..., stringByReplacingOccurrencesOfString:..., and replaceOccurrencesOfString:...
+     * methods only; the search string is treated as an ICU-compatible regular expression; if set, no other options can
+     * apply except NSCaseInsensitiveSearch and NSAnchoredSearch
      */
     @Generated @NUInt public static final long RegularExpressionSearch = 0x0000000000000400L;
 

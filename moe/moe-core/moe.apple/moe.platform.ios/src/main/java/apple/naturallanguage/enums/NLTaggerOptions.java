@@ -4,7 +4,12 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * NLTagger is a class used to automatically tag portions of natural language text with information such as parts of speech, named entities, lemmas, language, and script. An instance of this class is assigned a string to tag, and clients can then obtain tags and ranges for tokens in that string appropriate to a given tag scheme and unit. Predefined tag schemes and tags are defined in NLTagScheme.h.  Options arguments of type NLTaggerOptions may include the following flags, which allow clients interested only in certain general types of tokens to specify that tokens of other types should be omitted from the returned results.
+ * NLTagger is a class used to automatically tag portions of natural language text with information such as parts of
+ * speech, named entities, lemmas, language, and script. An instance of this class is assigned a string to tag, and
+ * clients can then obtain tags and ranges for tokens in that string appropriate to a given tag scheme and unit.
+ * Predefined tag schemes and tags are defined in NLTagScheme.h. Options arguments of type NLTaggerOptions may include
+ * the following flags, which allow clients interested only in certain general types of tokens to specify that tokens of
+ * other types should be omitted from the returned results.
  */
 @Generated
 public final class NLTaggerOptions {

@@ -9,7 +9,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * [@protocol]   MPSHandle
+ * [@protocol] MPSHandle
  * <p>
  * MPS resource identification
  * <p>
@@ -32,7 +32,7 @@ import org.moe.natj.objc.ann.Selector;
  * // Add a method for my use to get the image needed based on the handle to it.
  * // This isn't part of the MPSHandle protocol, but we need it for MyEncodeGraph
  * // below. Since it is my code calling my object, we can add whatever we want like this.
- * -(MPSImage*__nonnull) image;    // return the MPSImage corresponding to the handle
+ * -(MPSImage*__nonnull) image; // return the MPSImage corresponding to the handle
  * <p>
  * // required by MPSHandle protocol
  * -(NSString * __nullable) label;
@@ -64,7 +64,7 @@ import org.moe.natj.objc.ann.Selector;
  * }
  * [@endcode]
  * <p>
- * But what is a handle?  Here MPS is giving you enough rope with which to hang
+ * But what is a handle? Here MPS is giving you enough rope with which to hang
  * yourself. Don't panic! As long as your response is not to start tying nooses,
  * you should be fine. It is just rope. More precisely, it is just a pointer to a
  * NSObject. MPS doesn't know or care what it is or does, so long as it conforms
@@ -78,7 +78,7 @@ import org.moe.natj.objc.ann.Selector;
  * Normal MPSImages and MPSStates don't do that part.
  * <p>
  * Your application should be able to use the handle to locate / create the correct
- * image / state or batch thereof to pass as input to the graph.  Handles are also
+ * image / state or batch thereof to pass as input to the graph. Handles are also
  * used to disambiguate graph intermediate images and state outputs. They aren't used
  * to disambiguate image results (see -[MPSNNGraph initWithDevice:resultImages:resultsAreNeeded:]
  * as you should already know the ordering of outputs there. It is the same as what

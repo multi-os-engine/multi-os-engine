@@ -54,7 +54,8 @@ public interface SCNBoundingVolume {
     /**
      * getBoundingSphereCenter:radius:
      * <p>
-     * Fill the center vector with the center of the bounding sphere and store the radius of the bounding sphere in 'radius'.
+     * Fill the center vector with the center of the bounding sphere and store the radius of the bounding sphere in
+     * 'radius'.
      * <p>
      * the returned bounding sphere is in local space of the receiver.
      *

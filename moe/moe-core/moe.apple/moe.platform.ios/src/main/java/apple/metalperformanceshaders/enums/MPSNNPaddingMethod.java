@@ -51,7 +51,8 @@ public final class MPSNNPaddingMethod {
     @Generated @NUInt public static final long SizeFull = 0x0000000000000020L;
     @Generated @NUInt public static final long Size_reserved = 0x0000000000000030L;
     /**
-     * < Use destinationImageDescriptorForSourceImages:sourceStates:forKernel:suggestedDescriptor: to calculate padding and offset.
+     * < Use destinationImageDescriptorForSourceImages:sourceStates:forKernel:suggestedDescriptor: to calculate padding
+     * and offset.
      */
     @Generated @NUInt public static final long Custom = 0x0000000000004000L;
     @Generated @NUInt public static final long SizeMask = 0x00000000000007F0L;
@@ -62,7 +63,9 @@ public final class MPSNNPaddingMethod {
     @Generated @NUInt public static final long ExcludeEdges = 0x0000000000008000L;
     @Generated @NUInt public static final long CustomWhitelistForNodeFusion = 0x0000000000002000L;
     /**
-     * < By itself, MPSNNPaddingMethodCustom will inhibit automatic fusion between nodes producing and consuming the image described by the padding policy. MPSNNPaddingMethodCustomAllowForNodeFusion signals that the custom method is benign and fusion may go ahead.
+     * < By itself, MPSNNPaddingMethodCustom will inhibit automatic fusion between nodes producing and consuming the
+     * image described by the padding policy. MPSNNPaddingMethodCustomAllowForNodeFusion signals that the custom method
+     * is benign and fusion may go ahead.
      */
     @Generated @NUInt public static final long CustomAllowForNodeFusion = 0x0000000000002000L;
 }

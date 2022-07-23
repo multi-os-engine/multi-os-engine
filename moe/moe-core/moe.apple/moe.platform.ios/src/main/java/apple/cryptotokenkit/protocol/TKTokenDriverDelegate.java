@@ -15,7 +15,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * Delegate for customizing token driver operations.  SmartCard tokens should implement TKSmartCardTokenDriverDelegate instead of this base protocol.
+ * Delegate for customizing token driver operations. SmartCard tokens should implement TKSmartCardTokenDriverDelegate
+ * instead of this base protocol.
  */
 @Generated
 @Library("CryptoTokenKit")

@@ -49,7 +49,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@interface] NEFilterFlow
  * <p>
- * The NEFilterFlow class declares the programmatic interface of an object that represents a flow of network data to be filtered.
+ * The NEFilterFlow class declares the programmatic interface of an object that represents a flow of network data to be
+ * filtered.
  * <p>
  * NEFilterFlow is part of NetworkExtension.framework
  */
@@ -203,7 +204,8 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * [@property] sourceAppIdentifier
      * <p>
-     * A string containing the identifier of the source application of the flow. This identifier stays the same for all versions and builds of the application. This identifier is unique among all applications.
+     * A string containing the identifier of the source application of the flow. This identifier stays the same for all
+     * versions and builds of the application. This identifier is unique among all applications.
      */
     @Generated
     @Selector("sourceAppIdentifier")

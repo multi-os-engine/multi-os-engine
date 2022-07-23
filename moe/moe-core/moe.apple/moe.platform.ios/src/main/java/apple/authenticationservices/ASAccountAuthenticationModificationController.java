@@ -127,7 +127,8 @@ public class ASAccountAuthenticationModificationController extends NSObject {
     public static native ASAccountAuthenticationModificationController new_objc();
 
     /**
-     * Perform an upgrade request, one at a time. Any requests initiated with a request already in progress will fail immediately.
+     * Perform an upgrade request, one at a time. Any requests initiated with a request already in progress will fail
+     * immediately.
      */
     @Generated
     @Selector("performRequest:")

@@ -29,10 +29,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * An AVPlaybackCoordinator subclass for controlling an AVPlayer
  * <p>
- * While the coordinator is connected to other participants, it will intercept rate changes and seeks issued to the player to share these with other participants if appropriate.
- * Clients of AVPlayer can thus use the AVPlayer interfaces to modify the playback state of connected participants. When appropriate, the coordinator will also impose rate changes and seeks from other participants on the player. If this occurs, the corresponding notifications will carry an originating participant in their payload.
+ * While the coordinator is connected to other participants, it will intercept rate changes and seeks issued to the
+ * player to share these with other participants if appropriate.
+ * Clients of AVPlayer can thus use the AVPlayer interfaces to modify the playback state of connected participants. When
+ * appropriate, the coordinator will also impose rate changes and seeks from other participants on the player. If this
+ * occurs, the corresponding notifications will carry an originating participant in their payload.
  * See AVPlayer's playbackCoordinator property for more details about player behavior changes.
- * AVPlayerPlaybackCoordinator may begin suspensions on behalf of the player when the player's timeControlStatus changes from AVPlayerTimeControlStatusPlaying to AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate or AVPlayerTimeControlStatusPaused. These suspensions will end when the player's timeControlStatus changes back to AVPlayerTimeControlStatusPlaying. This means that a suspension that begun because the player entered a waiting state, will end automatically when the player is done waiting. A suspension that begun because the player paused, will only end once the player's rate changes back to non-zero.
+ * AVPlayerPlaybackCoordinator may begin suspensions on behalf of the player when the player's timeControlStatus changes
+ * from AVPlayerTimeControlStatusPlaying to AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate or
+ * AVPlayerTimeControlStatusPaused. These suspensions will end when the player's timeControlStatus changes back to
+ * AVPlayerTimeControlStatusPlaying. This means that a suspension that begun because the player entered a waiting state,
+ * will end automatically when the player is done waiting. A suspension that begun because the player paused, will only
+ * end once the player's rate changes back to non-zero.
  */
 @Generated
 @Library("AVFoundation")
@@ -89,7 +97,7 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
     public static native String debugDescription_static();
 
     /**
-     * [@property]	delegate
+     * [@property] delegate
      * <p>
      * An object implementing the AVPlaybackCoordinatorDelegate protocol.
      */
@@ -138,7 +146,7 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
     public static native AVPlayerPlaybackCoordinator new_objc();
 
     /**
-     * [@property]	player
+     * [@property] player
      * <p>
      * The AVPlayer this coordinator is controlling.
      */
@@ -155,7 +163,7 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]	delegate
+     * [@property] delegate
      * <p>
      * An object implementing the AVPlaybackCoordinatorDelegate protocol.
      */
@@ -164,7 +172,7 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVPlayerPlaybackCoordinatorDelegate value);
 
     /**
-     * [@property]	delegate
+     * [@property] delegate
      * <p>
      * An object implementing the AVPlaybackCoordinatorDelegate protocol.
      */

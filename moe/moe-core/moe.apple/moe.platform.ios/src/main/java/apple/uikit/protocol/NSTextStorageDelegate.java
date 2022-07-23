@@ -38,7 +38,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("NSTextStorageDelegate")
 public interface NSTextStorageDelegate {
     /**
-     * Sent inside -processEditing right before notifying layout managers.  Delegates can change the attributes.
+     * Sent inside -processEditing right before notifying layout managers. Delegates can change the attributes.
      */
     @Generated
     @IsOptional
@@ -49,7 +49,7 @@ public interface NSTextStorageDelegate {
     }
 
     /**
-     * Sent inside -processEditing right before fixing attributes.  Delegates can change the characters or attributes.
+     * Sent inside -processEditing right before fixing attributes. Delegates can change the characters or attributes.
      */
     @Generated
     @IsOptional

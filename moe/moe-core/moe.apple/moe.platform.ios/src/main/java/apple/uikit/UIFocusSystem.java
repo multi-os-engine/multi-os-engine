@@ -26,7 +26,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * UIFocusSystem instances manage focus state within a part of the user interface. They are in charge of tracking the current focused item, as well as processing focus updates.
+ * UIFocusSystem instances manage focus state within a part of the user interface. They are in charge of tracking the
+ * current focused item, as well as processing focus updates.
  */
 @Generated
 @Library("UIKit")

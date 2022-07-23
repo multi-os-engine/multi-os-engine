@@ -193,7 +193,8 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
     public native NSPredicate predicate();
 
     /**
-     * Dictionary of NSPropertyDescription|property name string -> constantValue/NSExpression pairs describing the desired updates.
+     * Dictionary of NSPropertyDescription|property name string -> constantValue/NSExpression pairs describing the
+     * desired updates.
      * The expressions can be any NSExpression that evaluates to a scalar value.
      */
     @Generated
@@ -220,7 +221,8 @@ public class NSBatchUpdateRequest extends NSPersistentStoreRequest {
     public native void setPredicate(NSPredicate value);
 
     /**
-     * Dictionary of NSPropertyDescription|property name string -> constantValue/NSExpression pairs describing the desired updates.
+     * Dictionary of NSPropertyDescription|property name string -> constantValue/NSExpression pairs describing the
+     * desired updates.
      * The expressions can be any NSExpression that evaluates to a scalar value.
      */
     @Generated

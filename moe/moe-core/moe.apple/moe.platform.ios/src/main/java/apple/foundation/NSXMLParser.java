@@ -269,7 +269,8 @@ public class NSXMLParser extends NSObject {
     public native void setShouldReportNamespacePrefixes(boolean value);
 
     /**
-     * Toggles between disabling external entities entirely, and the current setting of the 'externalEntityResolvingPolicy'.
+     * Toggles between disabling external entities entirely, and the current setting of the
+     * 'externalEntityResolvingPolicy'.
      * The 'externalEntityResolvingPolicy' property should be used instead of this, unless targeting 10.9/7.0 or earlier
      */
     @Generated
@@ -285,7 +286,8 @@ public class NSXMLParser extends NSObject {
     public native boolean shouldReportNamespacePrefixes();
 
     /**
-     * Toggles between disabling external entities entirely, and the current setting of the 'externalEntityResolvingPolicy'.
+     * Toggles between disabling external entities entirely, and the current setting of the
+     * 'externalEntityResolvingPolicy'.
      * The 'externalEntityResolvingPolicy' property should be used instead of this, unless targeting 10.9/7.0 or earlier
      */
     @Generated

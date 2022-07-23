@@ -25,7 +25,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * NSTextRange represents a contiguous range between two locations inside document contents. It consists of the starting location and terminating location. They are the two basic properties, location and endLocation, respectively. The terminating location, endLocation, is directly following the last location in the range. So, a location is contained in a range if (range.location <= location) && (location < range.endLocation).
+ * NSTextRange represents a contiguous range between two locations inside document contents. It consists of the starting
+ * location and terminating location. They are the two basic properties, location and endLocation, respectively. The
+ * terminating location, endLocation, is directly following the last location in the range. So, a location is contained
+ * in a range if (range.location <= location) && (location < range.endLocation).
  */
 @Generated
 @Library("UIKit")

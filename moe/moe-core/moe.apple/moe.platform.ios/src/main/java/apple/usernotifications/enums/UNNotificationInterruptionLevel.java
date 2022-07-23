@@ -22,7 +22,8 @@ public final class UNNotificationInterruptionLevel {
      */
     @Generated @NUInt public static final long TimeSensitive = 0x0000000000000002L;
     /**
-     * Presented immediately; Lights up screen and plays sound; Always presented during Do Not Disturb; Bypasses mute switch; Includes default critical alert sound if no sound provided
+     * Presented immediately; Lights up screen and plays sound; Always presented during Do Not Disturb; Bypasses mute
+     * switch; Includes default critical alert sound if no sound provided
      */
     @Generated @NUInt public static final long Critical = 0x0000000000000003L;
 }

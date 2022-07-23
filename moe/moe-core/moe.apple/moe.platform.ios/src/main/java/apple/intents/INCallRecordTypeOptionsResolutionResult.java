@@ -144,7 +144,9 @@ public class INCallRecordTypeOptionsResolutionResult extends INIntentResolutionR
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INCallRecordTypeOptions. The resolvedValue can be different than the original INCallRecordTypeOptions. This allows app extensions to apply business logic constraints.
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given
+     * INCallRecordTypeOptions. The resolvedValue can be different than the original INCallRecordTypeOptions. This
+     * allows app extensions to apply business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
      */
     @Generated

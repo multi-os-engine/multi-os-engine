@@ -188,7 +188,7 @@ public class CIColorKernel extends CIKernel {
      * <p>
      * The 'args' is an array of parameters needed to describe the new image.
      * The object types of the items in the array correspond to the argument types of the
-     * kernel function.  For example, if the first argument in the kernel is a __sample,
+     * kernel function. For example, if the first argument in the kernel is a __sample,
      * then the first object in the array must be a CIImage.
      */
     @Generated

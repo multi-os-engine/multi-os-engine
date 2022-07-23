@@ -140,7 +140,8 @@ public class AVAudioPlayer extends NSObject {
     public native double duration();
 
     /**
-     * You must set enableRate to YES for the rate property to take effect. You must set this before calling prepareToPlay.
+     * You must set enableRate to YES for the rate property to take effect. You must set this before calling
+     * prepareToPlay.
      */
     @Generated
     @Selector("enableRate")
@@ -171,8 +172,11 @@ public class AVAudioPlayer extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * The file type hint is a constant defined in AVMediaFormat.h whose value is a UTI for a file format. e.g. AVFileTypeAIFF.
-     * Sometimes the type of a file cannot be determined from the data, or it is actually corrupt. The file type hint tells the parser what kind of data to look for so that files which are not self identifying or possibly even corrupt can be successfully parsed.
+     * The file type hint is a constant defined in AVMediaFormat.h whose value is a UTI for a file format. e.g.
+     * AVFileTypeAIFF.
+     * Sometimes the type of a file cannot be determined from the data, or it is actually corrupt. The file type hint
+     * tells the parser what kind of data to look for so that files which are not self identifying or possibly even
+     * corrupt can be successfully parsed.
      */
     @Generated
     @Selector("initWithContentsOfURL:fileTypeHint:error:")
@@ -267,14 +271,16 @@ public class AVAudioPlayer extends NSObject {
     public native float peakPowerForChannel(@NUInt long channelNumber);
 
     /**
-     * This method starts the audio hardware synchronously (if not already running), and triggers the sound playback which is streamed asynchronously.
+     * This method starts the audio hardware synchronously (if not already running), and triggers the sound playback
+     * which is streamed asynchronously.
      */
     @Generated
     @Selector("play")
     public native boolean play();
 
     /**
-     * This method starts the audio hardware synchronously (if not already running), and triggers the sound playback which is streamed asynchronously at the specified time in the future.
+     * This method starts the audio hardware synchronously (if not already running), and triggers the sound playback
+     * which is streamed asynchronously at the specified time in the future.
      * Time is an absolute time based on and greater than deviceCurrentTime.
      */
     @Generated
@@ -343,7 +349,8 @@ public class AVAudioPlayer extends NSObject {
     }
 
     /**
-     * You must set enableRate to YES for the rate property to take effect. You must set this before calling prepareToPlay.
+     * You must set enableRate to YES for the rate property to take effect. You must set this before calling
+     * prepareToPlay.
      */
     @Generated
     @Selector("setEnableRate:")
@@ -407,7 +414,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * Synchronously stops playback, no longer ready to play.
-     * NOTE: - This will block while releasing the audio hardware that was acquired upon calling play() or prepareToPlay()
+     * NOTE: - This will block while releasing the audio hardware that was acquired upon calling play() or
+     * prepareToPlay()
      */
     @Generated
     @Selector("stop")

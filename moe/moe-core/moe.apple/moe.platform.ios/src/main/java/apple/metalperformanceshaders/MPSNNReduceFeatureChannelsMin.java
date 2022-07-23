@@ -27,7 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNReduceFeatureChannelsMin
  * <p>
- * The MPSNNReduceFeatureChannelsMin performs a reduction operation returning the mininmum value for feature channels of an image
+ * The MPSNNReduceFeatureChannelsMin performs a reduction operation returning the mininmum value for feature channels of
+ * an image
  */
 @Generated
 @Library("MetalPerformanceShaders")

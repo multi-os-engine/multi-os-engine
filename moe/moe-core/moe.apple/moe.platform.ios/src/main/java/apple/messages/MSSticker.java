@@ -153,7 +153,7 @@ public class MSSticker extends NSObject {
     public static native long version_static();
 
     /**
-     * [@property]   imageFileURL
+     * [@property] imageFileURL
      * <p>
      * The file URL to the Sticker was initialized with.
      */
@@ -178,8 +178,10 @@ public class MSSticker extends NSObject {
      *
      * @param fileURL              The URL from which to read sticker data.
      * @param localizedDescription A succinct localized string describing the sticker.
-     * @param error                If this method could not initialize a sticker, this will contain an NSError object describing the failure.
-     * @return A new sticker object or nil if the method could not initialize a sticker from the specified file and localizedDescription.
+     * @param error                If this method could not initialize a sticker, this will contain an NSError object
+     *                             describing the failure.
+     * @return A new sticker object or nil if the method could not initialize a sticker from the specified file and
+     *         localizedDescription.
      */
     @Generated
     @Selector("initWithContentsOfFileURL:localizedDescription:error:")
@@ -187,7 +189,7 @@ public class MSSticker extends NSObject {
             String localizedDescription, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * [@property]   localizedDescription
+     * [@property] localizedDescription
      * <p>
      * A succinct localized string describing the sticker.
      */

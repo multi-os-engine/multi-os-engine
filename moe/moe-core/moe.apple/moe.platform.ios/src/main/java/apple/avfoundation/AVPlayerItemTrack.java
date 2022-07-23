@@ -44,10 +44,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * An AVPlayerItemTrack carries a reference to an AVAssetTrack as well as presentation settings for that track.
  * <p>
  * Note that inspection of assets tracks is provided by AVAssetTrack.
- * This class is intended to represent presentation state for a track of an asset that's played by an AVPlayer and AVPlayerItem.
+ * This class is intended to represent presentation state for a track of an asset that's played by an AVPlayer and
+ * AVPlayerItem.
  * <p>
- * To ensure safe access to AVPlayerItemTrack's nonatomic properties while dynamic changes in playback state may be reported,
- * clients must serialize their access with the associated AVPlayer's notification queue. In the common case, such serialization
+ * To ensure safe access to AVPlayerItemTrack's nonatomic properties while dynamic changes in playback state may be
+ * reported,
+ * clients must serialize their access with the associated AVPlayer's notification queue. In the common case, such
+ * serialization
  * is naturally achieved by invoking AVPlayerItemTrack's various methods on the main thread or queue.
  */
 @Generated
@@ -161,22 +164,25 @@ public class AVPlayerItemTrack extends NSObject {
     public static native long version_static();
 
     /**
-     * [@property]		assetTrack
+     * [@property] assetTrack
      * <p>
      * Indicates the AVAssetTrack for which the AVPlayerItemTrack represents presentation state.
      * <p>
      * This property is not observable.
-     * Clients must serialize their access to the resulting AVAssetTrack and related objects on the associated AVPlayer's
-     * notification queue.  By default, this queue is the main queue.
+     * Clients must serialize their access to the resulting AVAssetTrack and related objects on the associated
+     * AVPlayer's
+     * notification queue. By default, this queue is the main queue.
      */
     @Generated
     @Selector("assetTrack")
     public native AVAssetTrack assetTrack();
 
     /**
-     * [@property]		currentVideoFrameRate
+     * [@property] currentVideoFrameRate
      * <p>
-     * If the media type of the assetTrack is AVMediaTypeVideo, indicates the current frame rate of the track as it plays, in units of frames per second. If the item is not playing, or if the media type of the track is not video, the value of this property is 0.
+     * If the media type of the assetTrack is AVMediaTypeVideo, indicates the current frame rate of the track as it
+     * plays, in units of frames per second. If the item is not playing, or if the media type of the track is not video,
+     * the value of this property is 0.
      * <p>
      * This property is not observable.
      * <p>
@@ -191,7 +197,7 @@ public class AVPlayerItemTrack extends NSObject {
     public native AVPlayerItemTrack init();
 
     /**
-     * [@property]		enabled
+     * [@property] enabled
      * <p>
      * Indicates whether the track is enabled for presentation during playback.
      * <p>
@@ -202,7 +208,7 @@ public class AVPlayerItemTrack extends NSObject {
     public native boolean isEnabled();
 
     /**
-     * [@property]		enabled
+     * [@property] enabled
      * <p>
      * Indicates whether the track is enabled for presentation during playback.
      * <p>

@@ -162,7 +162,8 @@ public interface MTLCommandBuffer {
     /**
      * presentDrawable:atTime:
      * <p>
-     * Add a drawable present for a specific host time that will be invoked when this command buffer has been scheduled for execution.
+     * Add a drawable present for a specific host time that will be invoked when this command buffer has been scheduled
+     * for execution.
      * <p>
      * The submission thread will be lock stepped with present call been serviced by window server
      */
@@ -201,7 +202,8 @@ public interface MTLCommandBuffer {
     /**
      * [@property] status
      * <p>
-     * status reports the current stage in the lifetime of MTLCommandBuffer, as it proceeds to enqueued, committed, scheduled, and completed.
+     * status reports the current stage in the lifetime of MTLCommandBuffer, as it proceeds to enqueued, committed,
+     * scheduled, and completed.
      */
     @Generated
     @Selector("status")
@@ -243,7 +245,8 @@ public interface MTLCommandBuffer {
     /**
      * [@property] GPUEndTime
      * <p>
-     * The host time in seconds that GPU finishes executing this command buffer. Returns zero if CPU has not received completion notification. This usually can be called in command buffer completion handler.
+     * The host time in seconds that GPU finishes executing this command buffer. Returns zero if CPU has not received
+     * completion notification. This usually can be called in command buffer completion handler.
      */
     @Generated
     @Selector("GPUEndTime")
@@ -252,7 +255,8 @@ public interface MTLCommandBuffer {
     /**
      * [@property] GPUStartTime
      * <p>
-     * The host time in seconds that GPU starts executing this command buffer. Returns zero if it has not started. This usually can be called in command buffer completion handler.
+     * The host time in seconds that GPU starts executing this command buffer. Returns zero if it has not started. This
+     * usually can be called in command buffer completion handler.
      */
     @Generated
     @Selector("GPUStartTime")
@@ -278,13 +282,17 @@ public interface MTLCommandBuffer {
     /**
      * presentDrawable:afterMinimumDuration:
      * <p>
-     * Add a drawable present for a specific host time that allows previous frame to be on screen for at least duration time.
+     * Add a drawable present for a specific host time that allows previous frame to be on screen for at least duration
+     * time.
      * <p>
-     * The difference of this API versus presentDrawable:atTime is that this API defers calculation of the presentation time until the previous frame's actual presentation time is known, thus to be able to maintain a more consistent and stable frame time. This also provides an easy way to set frame rate.
+     * The difference of this API versus presentDrawable:atTime is that this API defers calculation of the presentation
+     * time until the previous frame's actual presentation time is known, thus to be able to maintain a more consistent
+     * and stable frame time. This also provides an easy way to set frame rate.
      * The submission thread will be lock stepped with present call been serviced by window server
      *
      * @param drawable The drawable to be presented
-     * @param duration The minimum time that previous frame should be displayed. The time is double preceision floating point in the unit of seconds.
+     * @param duration The minimum time that previous frame should be displayed. The time is double preceision floating
+     *                 point in the unit of seconds.
      */
     @Generated
     @Selector("presentDrawable:afterMinimumDuration:")
@@ -302,7 +310,8 @@ public interface MTLCommandBuffer {
     /**
      * computeCommandEncoderWithDispatchType
      * <p>
-     * returns a compute command encoder to encode into this command buffer. Optionally allow this command encoder to execute dispatches concurrently.
+     * returns a compute command encoder to encode into this command buffer. Optionally allow this command encoder to
+     * execute dispatches concurrently.
      * <p>
      * On devices that do not support concurrent command encoders, this call is equivalent to computeCommandEncoder
      */

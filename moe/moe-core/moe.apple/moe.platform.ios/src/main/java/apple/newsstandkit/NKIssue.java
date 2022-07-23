@@ -178,7 +178,7 @@ public class NKIssue extends NSObject {
     public native NKAssetDownload addAssetWithRequest(NSURLRequest request);
 
     /**
-     * [@property]   contentURL
+     * [@property] contentURL
      * <p>
      * All content that represents this issue should be placed in the
      * URL provided.
@@ -188,7 +188,7 @@ public class NKIssue extends NSObject {
     public native NSURL contentURL();
 
     /**
-     * [@property]   date
+     * [@property] date
      * <p>
      * The date of this issue
      */
@@ -197,7 +197,7 @@ public class NKIssue extends NSObject {
     public native NSDate date();
 
     /**
-     * [@property]   downloadingAssets
+     * [@property] downloadingAssets
      * <p>
      * An array of NKAssetDownload associated with this issue.
      */
@@ -210,7 +210,7 @@ public class NKIssue extends NSObject {
     public native NKIssue init();
 
     /**
-     * [@property]   name
+     * [@property] name
      * <p>
      * The unique name given to this issue
      */
@@ -219,7 +219,7 @@ public class NKIssue extends NSObject {
     public native String name();
 
     /**
-     * [@property]   status
+     * [@property] status
      * <p>
      * The availability of this issue's content.
      * <p>

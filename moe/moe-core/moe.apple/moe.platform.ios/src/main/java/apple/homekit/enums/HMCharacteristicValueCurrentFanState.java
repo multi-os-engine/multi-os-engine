@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueCurrentFanState
+ * [@enum] HMCharacteristicValueCurrentFanState
  * <p>
- * [@constant]  HMCharacteristicValueCurrentFanStateInactive  Inactive.
- * [@constant]  HMCharacteristicValueCurrentFanStateIdle      Idle.
- * [@constant]  HMCharacteristicValueCurrentFanStateActive    Blowing Air.
+ * [@constant] HMCharacteristicValueCurrentFanStateInactive Inactive.
+ * [@constant] HMCharacteristicValueCurrentFanStateIdle Idle.
+ * [@constant] HMCharacteristicValueCurrentFanStateActive Blowing Air.
  */
 @Generated
 public final class HMCharacteristicValueCurrentFanState {

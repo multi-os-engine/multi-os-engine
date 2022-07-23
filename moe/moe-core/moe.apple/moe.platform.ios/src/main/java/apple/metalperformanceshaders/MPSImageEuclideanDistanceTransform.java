@@ -106,7 +106,7 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -186,15 +186,18 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
     public static native long version_static();
 
     /**
-     * [@property]   searchLimitRadius
+     * [@property] searchLimitRadius
      * <p>
      * Defines a search scope size around output pixel to limit closest non-zero pixel search. Optional variable.
      * <p>
-     * When the non-zeroes in the input image are on average very far away from each other (ie. the distances are large),
-     * the distance calculation algorithm has to work harder to find the closest pixel. If you don't care about getting exact
+     * When the non-zeroes in the input image are on average very far away from each other (ie. the distances are
+     * large),
+     * the distance calculation algorithm has to work harder to find the closest pixel. If you don't care about getting
+     * exact
      * results beyond a certain distance you can use this property to limit the search space and speed up the kernels.
      * In case there are no non-zero pixels within this search scope around the output pixel, then the output value will
-     * be some number that is larger than this search limit. Normally you should be fine with the default value of FLT_MAX,
+     * be some number that is larger than this search limit. Normally you should be fine with the default value of
+     * FLT_MAX,
      * which results in the exact EDT, so use this only if you need additional performance.
      * Typical good values are: 32, 64, 96, 128.
      * Default: FLT_MAX
@@ -204,15 +207,18 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
     public native float searchLimitRadius();
 
     /**
-     * [@property]   searchLimitRadius
+     * [@property] searchLimitRadius
      * <p>
      * Defines a search scope size around output pixel to limit closest non-zero pixel search. Optional variable.
      * <p>
-     * When the non-zeroes in the input image are on average very far away from each other (ie. the distances are large),
-     * the distance calculation algorithm has to work harder to find the closest pixel. If you don't care about getting exact
+     * When the non-zeroes in the input image are on average very far away from each other (ie. the distances are
+     * large),
+     * the distance calculation algorithm has to work harder to find the closest pixel. If you don't care about getting
+     * exact
      * results beyond a certain distance you can use this property to limit the search space and speed up the kernels.
      * In case there are no non-zero pixels within this search scope around the output pixel, then the output value will
-     * be some number that is larger than this search limit. Normally you should be fine with the default value of FLT_MAX,
+     * be some number that is larger than this search limit. Normally you should be fine with the default value of
+     * FLT_MAX,
      * which results in the exact EDT, so use this only if you need additional performance.
      * Typical good values are: 32, 64, 96, 128.
      * Default: FLT_MAX

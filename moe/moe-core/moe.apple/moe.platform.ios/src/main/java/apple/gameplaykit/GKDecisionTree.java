@@ -164,7 +164,8 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * Will branch down from the root node to find the correct action attribute for the given collection of results and their respective attributes
+     * Will branch down from the root node to find the correct action attribute for the given collection of results and
+     * their respective attributes
      *
      * @param answers The dictionary of attributes (keys) and their answers (values)
      * @return The attribute found by traversing the tree given the provided answers
@@ -195,17 +196,21 @@ public class GKDecisionTree extends NSObject implements NSSecureCoding {
     /**
      * Initializes and constructs a decision tree by learning from the provided examples & attributes
      *
-     * @param examples   Must be an array of examples (with each example being a collection of the various attributes at a given state)
-     * @param actions    An array of the corresponding actions for each example. Ordered such that the first action matches with the first example in examples.
-     * @param attributes The list of attributes. Ordered such that the first attribute matches with the first result in each example.
-     *                   So if we have two attributes: [distance, jump height], and two examples: [[20, 8], [15, 14]], and the resulting actions here: [Roll, Jump], we can think of this as a matrix:
+     * @param examples   Must be an array of examples (with each example being a collection of the various attributes at
+     *                   a given state)
+     * @param actions    An array of the corresponding actions for each example. Ordered such that the first action
+     *                   matches with the first example in examples.
+     * @param attributes The list of attributes. Ordered such that the first attribute matches with the first result in
+     *                   each example.
+     *                   So if we have two attributes: [distance, jump height], and two examples: [[20, 8], [15, 14]],
+     *                   and the resulting actions here: [Roll, Jump], we can think of this as a matrix:
      *                   <p>
-     *                   distance| height            <-  Attributes
+     *                   distance| height <- Attributes
      *                   _______|_______
-     *                   |       |       |
-     *                   |  20   |   8   |  jump
-     *                   |-------|-------|-------    <-  Results
-     *                   |  15   |   14  |  roll
+     *                   | | |
+     *                   | 20 | 8 | jump
+     *                   |-------|-------|------- <- Results
+     *                   | 15 | 14 | roll
      *                   |_______|_______|
      *                   ^
      *                   |

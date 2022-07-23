@@ -149,7 +149,7 @@ public class EKSource extends EKObject {
     public static native long version_static();
 
     /**
-     * [@property]    calendars
+     * [@property] calendars
      * <p>
      * This is now deprecated in favor of -[EKSource calendarsForEntityType:]
      */

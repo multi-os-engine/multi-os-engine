@@ -43,7 +43,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * UNCalendarNotificationTrigger can be scheduled on the device to notify based on date and time values, and optionally repeat. For example, if a notification should be delivered at the next 8:00 AM then set the 'hour' property of dateComponents to 8. If the notification should be delivered every day at 8:00 AM then set repeats to YES.
+ * UNCalendarNotificationTrigger can be scheduled on the device to notify based on date and time values, and optionally
+ * repeat. For example, if a notification should be delivered at the next 8:00 AM then set the 'hour' property of
+ * dateComponents to 8. If the notification should be delivered every day at 8:00 AM then set repeats to YES.
  */
 @Generated
 @Library("UserNotifications")

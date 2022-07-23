@@ -163,8 +163,8 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
      * Initialize a gradient pooling filter
      *
      * @param device       The device the filter will run on
-     * @param kernelWidth  The width of the kernel.  Can be an odd or even value.
-     * @param kernelHeight The height of the kernel.  Can be an odd or even value.
+     * @param kernelWidth  The width of the kernel. Can be an odd or even value.
+     * @param kernelHeight The height of the kernel. Can be an odd or even value.
      * @return A valid MPSCNNPoolingGradient object or nil, if failure.
      */
     @Generated
@@ -176,8 +176,8 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
      * Initialize a gradient pooling filter
      *
      * @param device          The device the filter will run on
-     * @param kernelWidth     The width of the kernel.  Can be an odd or even value.
-     * @param kernelHeight    The height of the kernel.  Can be an odd or even value.
+     * @param kernelWidth     The width of the kernel. Can be an odd or even value.
+     * @param kernelHeight    The height of the kernel. Can be an odd or even value.
      * @param strideInPixelsX The input stride (upsampling factor) in the x dimension.
      * @param strideInPixelsY The input stride (upsampling factor) in the y dimension.
      * @return A valid MPSCNNPoolingGradient object or nil, if failure.
@@ -223,7 +223,7 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   sourceSize
+     * [@property] sourceSize
      * <p>
      * An optional source size which defines together with primaryOffset, the set of input gradient
      * pixels to take into account in the gradient computations.
@@ -243,7 +243,7 @@ public class MPSCNNPoolingGradient extends MPSCNNGradientKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   sourceSize
+     * [@property] sourceSize
      * <p>
      * An optional source size which defines together with primaryOffset, the set of input gradient
      * pixels to take into account in the gradient computations.

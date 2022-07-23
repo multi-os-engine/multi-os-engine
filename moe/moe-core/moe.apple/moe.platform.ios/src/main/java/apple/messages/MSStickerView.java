@@ -350,7 +350,7 @@ public class MSStickerView extends UIView {
     public static native long version_static();
 
     /**
-     * [@property]   animationDuration
+     * [@property] animationDuration
      * <p>
      * The amount of time it takes to go through one cycle of the sticker animation.
      */
@@ -430,7 +430,7 @@ public class MSStickerView extends UIView {
     public native boolean isAnimating();
 
     /**
-     * [@property]   sticker
+     * [@property] sticker
      * <p>
      * The MSSticker object to display.
      * <p>
@@ -454,7 +454,7 @@ public class MSStickerView extends UIView {
     public native void startAnimating();
 
     /**
-     * [@property]   sticker
+     * [@property] sticker
      * <p>
      * The MSSticker object to display.
      * <p>

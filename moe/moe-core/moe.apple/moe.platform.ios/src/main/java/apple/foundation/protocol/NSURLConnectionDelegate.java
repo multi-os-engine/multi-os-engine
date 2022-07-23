@@ -29,32 +29,32 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * [@protocol]       NSURLConnectionDelegate
+ * [@protocol] NSURLConnectionDelegate
  * <p>
  * Delegate methods that are common to all forms of
- * NSURLConnection.  These are all optional.  This
+ * NSURLConnection. These are all optional. This
  * protocol should be considered a base class for the
  * NSURLConnectionDataDelegate and
  * NSURLConnectionDownloadDelegate protocols.
  * <p>
  * connection:didFailWithError: will be called at
  * most once, if an error occurs during a resource
- * load.  No other callbacks will be made after.<p>
+ * load. No other callbacks will be made after.<p>
  * <p>
  * connectionShouldUseCredentialStorage: will be
  * called at most once, before a resource load begins
  * (which means it may be called during construction
- * of the connection.)  The delegate should return
+ * of the connection.) The delegate should return
  * TRUE if the connection should consult the shared
  * NSURLCredentialStorage in response to
- * authentication challenges.  Regardless of the
+ * authentication challenges. Regardless of the
  * result, the authentication challenge methods may
  * still be called.
  * <p>
  * connection:willSendRequestForAuthenticationChallenge:
  * is the preferred (Mac OS X 10.7 and iOS 5.0 or
  * later) mechanism for responding to authentication
- * challenges.  See
+ * challenges. See
  * <Foundation/NSURLAuthenticationChallenge.h> for
  * more information on dealing with the various types
  * of authentication challenges.

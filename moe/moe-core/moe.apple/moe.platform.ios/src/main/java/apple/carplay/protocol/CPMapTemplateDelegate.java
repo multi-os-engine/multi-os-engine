@@ -147,7 +147,8 @@ public interface CPMapTemplateDelegate {
     }
 
     /**
-     * Determines if the updated distance remaining for the maneuver should be presented as a notification when the app is in the background.
+     * Determines if the updated distance remaining for the maneuver should be presented as a notification when the app
+     * is in the background.
      *
      * @return YES if the updated estimates should appear in the notification, otherwise NO
      */
@@ -204,7 +205,8 @@ public interface CPMapTemplateDelegate {
     /**
      * Called when navigation has been canceled by the system.
      * <p>
-     * [@note] In CarPlay systems that have native navigation, it is expected that only either the native navigation or the iPhone
+     * [@note] In CarPlay systems that have native navigation, it is expected that only either the native navigation or
+     * the iPhone
      * can be actively navigating. When navigation begins in the native system, all CarPlay supported navigation
      * apps that are actively navigating will need to end their navigation session.
      */

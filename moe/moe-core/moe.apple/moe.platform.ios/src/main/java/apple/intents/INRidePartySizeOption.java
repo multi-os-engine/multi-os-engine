@@ -194,7 +194,8 @@ public class INRidePartySizeOption extends NSObject implements NSCopying, NSSecu
     public native NSRange partySizeRange();
 
     /**
-     * the price range for this party size, which may be different from the indicative price range for the ride. If nil, the price range for the associated ride is valid instead.
+     * the price range for this party size, which may be different from the indicative price range for the ride. If nil,
+     * the price range for the associated ride is valid instead.
      */
     @Generated
     @Selector("priceRange")

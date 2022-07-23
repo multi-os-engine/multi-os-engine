@@ -146,7 +146,8 @@ public class GKTurnBasedMatch extends NSObject {
             @ObjCBlock(name = "call_loadMatchWithIDWithCompletionHandler") Block_loadMatchWithIDWithCompletionHandler completionHandler);
 
     /**
-     * This method retrieves the list of GKTurnBasedMatches that the current player is or has participated in. The callback’s array contains GKTurnBasedMatches
+     * This method retrieves the list of GKTurnBasedMatches that the current player is or has participated in. The
+     * callback’s array contains GKTurnBasedMatches
      */
     @Generated
     @Selector("loadMatchesWithCompletionHandler:")
@@ -195,7 +196,8 @@ public class GKTurnBasedMatch extends NSObject {
     public native NSArray<? extends GKTurnBasedExchange> activeExchanges();
 
     /**
-     * returns the exchanges that have been completed and need to be merged by the local participant.  This will be nil unless the local participant is the current turn holder for this match
+     * returns the exchanges that have been completed and need to be merged by the local participant. This will be nil
+     * unless the local participant is the current turn holder for this match
      */
     @Generated
     @Selector("completedExchanges")
@@ -206,7 +208,8 @@ public class GKTurnBasedMatch extends NSObject {
     public native NSDate creationDate();
 
     /**
-     * This indicates the participant who has the current turn.  This is set by passing the next participant into endTurnWithNextParticipant:matchData:completionHandler:
+     * This indicates the participant who has the current turn. This is set by passing the next participant into
+     * endTurnWithNextParticipant:matchData:completionHandler:
      */
     @Generated
     @Selector("currentParticipant")
@@ -221,7 +224,8 @@ public class GKTurnBasedMatch extends NSObject {
             @ObjCBlock(name = "call_declineInviteWithCompletionHandler") Block_declineInviteWithCompletionHandler completionHandler);
 
     /**
-     * This will end the match for all participants. You must set each participant’s matchOutcome before calling this method.  All completed exchanges must be resolved or canceled before calling this.
+     * This will end the match for all participants. You must set each participant’s matchOutcome before calling this
+     * method. All completed exchanges must be resolved or canceled before calling this.
      */
     @Generated
     @Selector("endMatchInTurnWithMatchData:completionHandler:")
@@ -229,7 +233,10 @@ public class GKTurnBasedMatch extends NSObject {
             @ObjCBlock(name = "call_endMatchInTurnWithMatchDataCompletionHandler") Block_endMatchInTurnWithMatchDataCompletionHandler completionHandler);
 
     /**
-     * This will end the match and submit scores and achievements for all participants. Scores should be submitted for all involved players, and multiple scores may be submitted for each to different leaderboards. Earned achievements may also be submitted for any participants. You must set each participant’s matchOutcome before calling this method. All completed exchanges must be resolved or canceled before calling this.
+     * This will end the match and submit scores and achievements for all participants. Scores should be submitted for
+     * all involved players, and multiple scores may be submitted for each to different leaderboards. Earned
+     * achievements may also be submitted for any participants. You must set each participant’s matchOutcome before
+     * calling this method. All completed exchanges must be resolved or canceled before calling this.
      */
     @Generated
     @Selector("endMatchInTurnWithMatchData:scores:achievements:completionHandler:")
@@ -248,7 +255,8 @@ public class GKTurnBasedMatch extends NSObject {
             @ObjCBlock(name = "call_endTurnWithNextParticipantMatchDataCompletionHandler") Block_endTurnWithNextParticipantMatchDataCompletionHandler completionHandler);
 
     /**
-     * Ends the current player's turn. You may update the matchOutcome for any GKTurnBasedPlayerInfos that you wish to before ending the turn.
+     * Ends the current player's turn. You may update the matchOutcome for any GKTurnBasedPlayerInfos that you wish to
+     * before ending the turn.
      * This will asynchronously report error in these cases:
      * 1. Communications problem
      * 2. Is not current player's turn
@@ -277,7 +285,8 @@ public class GKTurnBasedMatch extends NSObject {
     public native long exchangeMaxInitiatedExchangesPerPlayer();
 
     /**
-     * exchanges that are in progress on this match.  Once an exchange has completed and has been resolved by merging it into the match data by the current turn holder then it will be removed from this list
+     * exchanges that are in progress on this match. Once an exchange has completed and has been resolved by merging it
+     * into the match data by the current turn holder then it will be removed from this list
      */
     @Generated
     @Selector("exchanges")
@@ -288,7 +297,8 @@ public class GKTurnBasedMatch extends NSObject {
     public native GKTurnBasedMatch init();
 
     /**
-     * This method fetches the match data and exchanges for this match.  This data is the state of the game at this point in time.  This may update the status and/or participant properties if they have changed.
+     * This method fetches the match data and exchanges for this match. This data is the state of the game at this point
+     * in time. This may update the status and/or participant properties if they have changed.
      */
     @Generated
     @Selector("loadMatchDataWithCompletionHandler:")
@@ -296,8 +306,10 @@ public class GKTurnBasedMatch extends NSObject {
             @ObjCBlock(name = "call_loadMatchDataWithCompletionHandler") Block_loadMatchDataWithCompletionHandler completionHandler);
 
     /**
-     * Developer-defined data representing the current state of the game. This property is nil until loaded by loadMatchDataWithCompletionHandler:
-     * The developer can submit updated matchData by passing it into endTurnWithNextParticipant:matchData:completionHandler: or endMatchInTurnWithMatchData:completionHandler:
+     * Developer-defined data representing the current state of the game. This property is nil until loaded by
+     * loadMatchDataWithCompletionHandler:
+     * The developer can submit updated matchData by passing it into
+     * endTurnWithNextParticipant:matchData:completionHandler: or endMatchInTurnWithMatchData:completionHandler:
      */
     @Generated
     @Selector("matchData")
@@ -316,7 +328,8 @@ public class GKTurnBasedMatch extends NSObject {
     public native String matchID();
 
     /**
-     * returns the localizable message in the current locale. Setting this is equivalent to calling [self setLocalizableMessageWithKey:message arguments:nil]
+     * returns the localizable message in the current locale. Setting this is equivalent to calling [self
+     * setLocalizableMessageWithKey:message arguments:nil]
      */
     @Generated
     @Selector("message")
@@ -330,7 +343,8 @@ public class GKTurnBasedMatch extends NSObject {
             @ObjCBlock(name = "call_participantQuitInTurnWithOutcomeNextParticipantMatchDataCompletionHandler") Block_participantQuitInTurnWithOutcomeNextParticipantMatchDataCompletionHandler completionHandler);
 
     /**
-     * Ends the current player's turn by quitting the match.  The caller must indicate the next player and pass in updated matchData (if used).  All completed exchanges must be resolved or canceled before calling this.
+     * Ends the current player's turn by quitting the match.  The caller must indicate the next player and pass in
+     * updated matchData (if used). All completed exchanges must be resolved or canceled before calling this.
      */
     @Generated
     @Selector("participantQuitInTurnWithOutcome:nextParticipants:turnTimeout:matchData:completionHandler:")
@@ -340,7 +354,8 @@ public class GKTurnBasedMatch extends NSObject {
             @ObjCBlock(name = "call_participantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler") Block_participantQuitInTurnWithOutcomeNextParticipantsTurnTimeoutMatchDataCompletionHandler completionHandler);
 
     /**
-     * Abandon the match when it is not the current participant's turn.  In this there is no update to matchData and no need to set nextParticipant.
+     * Abandon the match when it is not the current participant's turn. In this there is no update to matchData and no
+     * need to set nextParticipant.
      */
     @Generated
     @Selector("participantQuitOutOfTurnWithOutcome:withCompletionHandler:")
@@ -355,7 +370,9 @@ public class GKTurnBasedMatch extends NSObject {
     public native NSArray<? extends GKTurnBasedParticipant> participants();
 
     /**
-     * Recreate a previously existing turn based match that ended. A new match with the same set of players will be returned by the completion handler. If multiple players do this then multiple new matches will be created. Error will be nil on success.
+     * Recreate a previously existing turn based match that ended. A new match with the same set of players will be
+     * returned by the completion handler. If multiple players do this then multiple new matches will be created. Error
+     * will be nil on success.
      * Possible reasons for error:
      * 1. Communications failure
      * 2. Unauthenticated player
@@ -366,7 +383,9 @@ public class GKTurnBasedMatch extends NSObject {
             @ObjCBlock(name = "call_rematchWithCompletionHandler") Block_rematchWithCompletionHandler completionHandler);
 
     /**
-     * Remove a declined or completed match (one with a matchOutcome set) from the player's list of matches. If using the GKTurnBasedMatchmakerViewController UI, this will remove it from the finished sessions.  The developer should not do this without user input.
+     * Remove a declined or completed match (one with a matchOutcome set) from the player's list of matches. If using
+     * the GKTurnBasedMatchmakerViewController UI, this will remove it from the finished sessions. The developer should
+     * not do this without user input.
      */
     @Generated
     @Selector("removeWithCompletionHandler:")
@@ -374,7 +393,11 @@ public class GKTurnBasedMatch extends NSObject {
             @ObjCBlock(name = "call_removeWithCompletionHandler") Block_removeWithCompletionHandler completionHandler);
 
     /**
-     * saves the matchData for the current turn without ending the turn.  If other players have the game running they will receive a handleTurnEventForMatch to indicate that the matchData has changed.  This is useful to initialize the game state for the first player when they take their turn or for updating the turn data due to the user taking an irreversible action within their turn.  All completed exchanges must be resolved or canceled before calling this. If you are using exchanges use saveMergedMatchData instead.
+     * saves the matchData for the current turn without ending the turn. If other players have the game running they
+     * will receive a handleTurnEventForMatch to indicate that the matchData has changed. This is useful to initialize
+     * the game state for the first player when they take their turn or for updating the turn data due to the user
+     * taking an irreversible action within their turn. All completed exchanges must be resolved or canceled before
+     * calling this. If you are using exchanges use saveMergedMatchData instead.
      */
     @Generated
     @Selector("saveCurrentTurnWithMatchData:completionHandler:")
@@ -382,7 +405,11 @@ public class GKTurnBasedMatch extends NSObject {
             @ObjCBlock(name = "call_saveCurrentTurnWithMatchDataCompletionHandler") Block_saveCurrentTurnWithMatchDataCompletionHandler completionHandler);
 
     /**
-     * saves the merged matchData for the current turn without ending the turn and mark the supplied exchanges as resolved meaning that the data has been merged into the match data. If other players have the game running they will receive a handleTurnEventForMatch to indicate that the matchData has changed.  It is required that all completed exchanges are resolved before ending a turn.  Otherwise calling endTurn, participantQuitInTurnWithOutCome or endMatchInTurn will return an error
+     * saves the merged matchData for the current turn without ending the turn and mark the supplied exchanges as
+     * resolved meaning that the data has been merged into the match data. If other players have the game running they
+     * will receive a handleTurnEventForMatch to indicate that the matchData has changed. It is required that all
+     * completed exchanges are resolved before ending a turn. Otherwise calling endTurn,
+     * participantQuitInTurnWithOutCome or endMatchInTurn will return an error
      */
     @Generated
     @Selector("saveMergedMatchData:withResolvedExchanges:completionHandler:")
@@ -391,7 +418,10 @@ public class GKTurnBasedMatch extends NSObject {
             @ObjCBlock(name = "call_saveMergedMatchDataWithResolvedExchangesCompletionHandler") Block_saveMergedMatchDataWithResolvedExchangesCompletionHandler completionHandler);
 
     /**
-     * Send an exchange request to one or more participants.  Each recipient will receive a push notification using supplied localizable message.  If any of the participants have an inactive status (GKTurnBasedParticipantStatusDone) then this will return an error.  completionHandler gets passed the updated exchange with identifier, sender and recipients set
+     * Send an exchange request to one or more participants. Each recipient will receive a push notification using
+     * supplied localizable message. If any of the participants have an inactive status
+     * (GKTurnBasedParticipantStatusDone) then this will return an error.  completionHandler gets passed the updated
+     * exchange with identifier, sender and recipients set
      */
     @Generated
     @Selector("sendExchangeToParticipants:data:localizableMessageKey:arguments:timeout:completionHandler:")
@@ -401,7 +431,9 @@ public class GKTurnBasedMatch extends NSObject {
             @ObjCBlock(name = "call_sendExchangeToParticipantsDataLocalizableMessageKeyArgumentsTimeoutCompletionHandler") Block_sendExchangeToParticipantsDataLocalizableMessageKeyArgumentsTimeoutCompletionHandler completionHandler);
 
     /**
-     * Send a reminder to one or more participants.  Each recipient will receive a push notification using supplied localizable message.  This allows a game to send reminders that a turn or exchange request needs action.  On the receiver side this will generate a turn event for the match.
+     * Send a reminder to one or more participants. Each recipient will receive a push notification using supplied
+     * localizable message. This allows a game to send reminders that a turn or exchange request needs action. On the
+     * receiver side this will generate a turn event for the match.
      */
     @Generated
     @Selector("sendReminderToParticipants:localizableMessageKey:arguments:completionHandler:")
@@ -410,21 +442,27 @@ public class GKTurnBasedMatch extends NSObject {
             @ObjCBlock(name = "call_sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler") Block_sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler completionHandler);
 
     /**
-     * If the developer wishes to display a message in GKTurnBasedMatchmakerViewController at the end of a turn or end of the match.  Only the current participant can set this.
-     * Sets a localizable mesage that will be localized on the receiver side if the game is installed and on the sender side as a fallback.
+     * If the developer wishes to display a message in GKTurnBasedMatchmakerViewController at the end of a turn or end
+     * of the match. Only the current participant can set this.
+     * Sets a localizable mesage that will be localized on the receiver side if the game is installed and on the sender
+     * side as a fallback.
      * The key and arguments offer a subset of formated strings as follows
-     * key is a string in a Localizable.strings file for the current localization (which is set by the user’s language preference).  key string can be formatted with %@ and %n$@ specifiers to take the variables specified in loc-args
+     * key is a string in a Localizable.strings file for the current localization (which is set by the user’s language
+     * preference). key string can be formatted with %@ and %n$@ specifiers to take the variables specified in loc-args
      * arguments is an array of strings that will be substituted using the format string.
-     * Notes: The localized message will be evaluated locally from these keys and sent across as well so that devices that do not have the game installed will see the message in the sender's localization
+     * Notes: The localized message will be evaluated locally from these keys and sent across as well so that devices
+     * that do not have the game installed will see the message in the sender's localization
      * The developer can access resulting string using the message property
-     * This is a similar concept to the way we handle localization for Push Notifications. See the "Local and Push Notification Programming Guide" for more details.
+     * This is a similar concept to the way we handle localization for Push Notifications. See the "Local and Push
+     * Notification Programming Guide" for more details.
      */
     @Generated
     @Selector("setLocalizableMessageWithKey:arguments:")
     public native void setLocalizableMessageWithKeyArguments(String key, NSArray<String> arguments);
 
     /**
-     * returns the localizable message in the current locale. Setting this is equivalent to calling [self setLocalizableMessageWithKey:message arguments:nil]
+     * returns the localizable message in the current locale. Setting this is equivalent to calling [self
+     * setLocalizableMessageWithKey:message arguments:nil]
      */
     @Generated
     @Selector("setMessage:")

@@ -87,7 +87,7 @@ public class MLCSplitLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   dimension
+     * [@property] dimension
      * <p>
      * The dimension (or axis) along which to split tensor
      */
@@ -167,11 +167,11 @@ public class MLCSplitLayer extends MLCLayer {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   splitCount
+     * [@property] splitCount
      * <p>
      * The number of splits.
      * <p>
-     * The tensor will be split into equally sized chunks.  The last chunk may be smaller in size.
+     * The tensor will be split into equally sized chunks. The last chunk may be smaller in size.
      */
     @Generated
     @Selector("splitCount")
@@ -179,7 +179,7 @@ public class MLCSplitLayer extends MLCLayer {
     public native long splitCount();
 
     /**
-     * [@property]   splitSectionLengths
+     * [@property] splitSectionLengths
      * <p>
      * Lengths of each split section.
      * <p>

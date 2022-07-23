@@ -49,19 +49,19 @@ public final class Enums {
      */
     @Generated public static final int kAudioChannelLayoutTag_Ambisonic_B_Format = 0x006B0004;
     /**
-     * < L R Ls Rs  -- 90 degree speaker separation
+     * < L R Ls Rs -- 90 degree speaker separation
      */
     @Generated public static final int kAudioChannelLayoutTag_Quadraphonic = 0x006C0004;
     /**
-     * < L R Ls Rs C  -- 72 degree speaker separation
+     * < L R Ls Rs C -- 72 degree speaker separation
      */
     @Generated public static final int kAudioChannelLayoutTag_Pentagonal = 0x006D0005;
     /**
-     * < L R Ls Rs C Cs  -- 60 degree speaker separation
+     * < L R Ls Rs C Cs -- 60 degree speaker separation
      */
     @Generated public static final int kAudioChannelLayoutTag_Hexagonal = 0x006E0006;
     /**
-     * < L R Ls Rs C Cs Lw Rw  -- 45 degree speaker separation
+     * < L R Ls Rs C Cs Lw Rw -- 45 degree speaker separation
      */
     @Generated public static final int kAudioChannelLayoutTag_Octagonal = 0x006F0008;
     /**
@@ -70,120 +70,120 @@ public final class Enums {
      */
     @Generated public static final int kAudioChannelLayoutTag_Cube = 0x00700008;
     /**
-     * <  C
+     * < C
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_1_0 = 0x00640001;
     /**
-     * <  L R
+     * < L R
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_2_0 = 0x00650002;
     /**
-     * <  L R C
+     * < L R C
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_3_0_A = 0x00710003;
     /**
-     * <  C L R
+     * < C L R
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_3_0_B = 0x00720003;
     /**
-     * <  L R C Cs
+     * < L R C Cs
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_4_0_A = 0x00730004;
     /**
-     * <  C L R Cs
+     * < C L R Cs
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_4_0_B = 0x00740004;
     /**
-     * <  L R C Ls Rs
+     * < L R C Ls Rs
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_5_0_A = 0x00750005;
     /**
-     * <  L R Ls Rs C
+     * < L R Ls Rs C
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_5_0_B = 0x00760005;
     /**
-     * <  L C R Ls Rs
+     * < L C R Ls Rs
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_5_0_C = 0x00770005;
     /**
-     * <  C L R Ls Rs
+     * < C L R Ls Rs
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_5_0_D = 0x00780005;
     /**
-     * <  L R C LFE Ls Rs
+     * < L R C LFE Ls Rs
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_5_1_A = 0x00790006;
     /**
-     * <  L R Ls Rs C LFE
+     * < L R Ls Rs C LFE
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_5_1_B = 0x007A0006;
     /**
-     * <  L C R Ls Rs LFE
+     * < L C R Ls Rs LFE
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_5_1_C = 0x007B0006;
     /**
-     * <  C L R Ls Rs LFE
+     * < C L R Ls Rs LFE
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_5_1_D = 0x007C0006;
     /**
-     * <  L R C LFE Ls Rs Cs
+     * < L R C LFE Ls Rs Cs
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_6_1_A = 0x007D0007;
     /**
-     * <  L R C LFE Ls Rs Lc Rc
+     * < L R C LFE Ls Rs Lc Rc
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_7_1_A = 0x007E0008;
     /**
-     * <  C Lc Rc L R Ls Rs LFE    (doc: IS-13818-7 MPEG2-AAC Table 3.1)
+     * < C Lc Rc L R Ls Rs LFE (doc: IS-13818-7 MPEG2-AAC Table 3.1)
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_7_1_B = 0x007F0008;
     /**
-     * <  L R C LFE Ls Rs Rls Rrs
+     * < L R C LFE Ls Rs Rls Rrs
      */
     @Generated public static final int kAudioChannelLayoutTag_MPEG_7_1_C = 0x00800008;
     /**
-     * <  L R Ls Rs C LFE Lc Rc
+     * < L R Ls Rs C LFE Lc Rc
      */
     @Generated public static final int kAudioChannelLayoutTag_Emagic_Default_7_1 = 0x00810008;
     /**
-     * <  L R C LFE Ls Rs Lt Rt
-     * <      (kAudioChannelLayoutTag_ITU_5_1 plus a matrix encoded stereo mix)
+     * < L R C LFE Ls Rs Lt Rt
+     * < (kAudioChannelLayoutTag_ITU_5_1 plus a matrix encoded stereo mix)
      */
     @Generated public static final int kAudioChannelLayoutTag_SMPTE_DTV = 0x00820008;
     /**
-     * <  C
+     * < C
      */
     @Generated public static final int kAudioChannelLayoutTag_ITU_1_0 = 0x00640001;
     /**
-     * <  L R
+     * < L R
      */
     @Generated public static final int kAudioChannelLayoutTag_ITU_2_0 = 0x00650002;
     /**
-     * <  L R Cs
+     * < L R Cs
      */
     @Generated public static final int kAudioChannelLayoutTag_ITU_2_1 = 0x00830003;
     /**
-     * <  L R Ls Rs
+     * < L R Ls Rs
      */
     @Generated public static final int kAudioChannelLayoutTag_ITU_2_2 = 0x00840004;
     /**
-     * <  L R C
+     * < L R C
      */
     @Generated public static final int kAudioChannelLayoutTag_ITU_3_0 = 0x00710003;
     /**
-     * <  L R C Cs
+     * < L R C Cs
      */
     @Generated public static final int kAudioChannelLayoutTag_ITU_3_1 = 0x00730004;
     /**
-     * <  L R C Ls Rs
+     * < L R C Ls Rs
      */
     @Generated public static final int kAudioChannelLayoutTag_ITU_3_2 = 0x00750005;
     /**
-     * <  L R C LFE Ls Rs
+     * < L R C LFE Ls Rs
      */
     @Generated public static final int kAudioChannelLayoutTag_ITU_3_2_1 = 0x00790006;
     /**
-     * <  L R C LFE Ls Rs Rls Rrs
+     * < L R C LFE Ls Rs Rls Rrs
      */
     @Generated public static final int kAudioChannelLayoutTag_ITU_3_4_1 = 0x00800008;
     /**

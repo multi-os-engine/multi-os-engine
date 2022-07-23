@@ -101,7 +101,7 @@ public class MLCMatMulDescriptor extends NSObject implements NSCopying {
     public static native String description_static();
 
     /**
-     * [@property]   descriptor
+     * [@property] descriptor
      * <p>
      * A matrix multiplication layer descriptor
      */

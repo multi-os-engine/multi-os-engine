@@ -86,7 +86,7 @@ public final class Security {
      * @param allocator CFAllocator to allocate the certificate with.
      * @param data      DER encoded X.509 certificate.
      * @return Return NULL if the passed-in data is not a valid DER-encoded
-     * X.509 certificate, return a SecCertificateRef otherwise.
+     *         X.509 certificate, return a SecCertificateRef otherwise.
      */
     @Generated
     @CFunction
@@ -117,7 +117,7 @@ public final class Security {
      * @param certificate A reference to the certificate from which to derive
      *                    the subject summary string.
      * @return A CFStringRef which the caller should CFRelease() once it's no
-     * longer needed.
+     *         longer needed.
      */
     @Generated
     @CFunction
@@ -181,8 +181,8 @@ public final class Security {
      *                    these dictionaries. Your code must CFRelease the array when it is no longer
      *                    needed.
      * @return errSecSuccess in case of success. errSecDecode means either the
-     * blob can't be read or it is malformed. errSecAuthFailed means an
-     * incorrect password was supplied, or data in the container is damaged.
+     *         blob can't be read or it is malformed. errSecAuthFailed means an
+     *         incorrect password was supplied, or data in the container is damaged.
      */
     @Generated
     @CFunction
@@ -206,10 +206,13 @@ public final class Security {
      * Creates new access control object based on protection type and additional flags.
      * <p>
      * Created access control object should be used as a value for kSecAttrAccessControl attribute in SecItemAdd,
-     * SecItemUpdate or SecKeyGeneratePair functions.  Accessing keychain items or performing operations on keys which are
-     * protected by access control objects can block the execution because of UI which can appear to satisfy the access control
+     * SecItemUpdate or SecKeyGeneratePair functions. Accessing keychain items or performing operations on keys which
+     * are
+     * protected by access control objects can block the execution because of UI which can appear to satisfy the access
+     * control
      * conditions, therefore it is recommended to either move those potentially blocking operations out of the main
-     * application thread or use combination of kSecUseAuthenticationContext and kSecUseAuthenticationUI attributes to control
+     * application thread or use combination of kSecUseAuthenticationContext and kSecUseAuthenticationUI attributes to
+     * control
      * where the UI interaction can appear.
      *
      * @param allocator  Allocator to be used by this instance.
@@ -298,7 +301,7 @@ public final class Security {
      * Add one or more items to a keychain.
      * <p>
      * Attributes defining an item are specified by adding key/value
-     * pairs to the attributes dictionary.  To add multiple items to a keychain
+     * pairs to the attributes dictionary. To add multiple items to a keychain
      * at once use the kSecUseItemList key with an array of items as its value.
      * This is currently only supported for non password items.
      * <p>
@@ -389,7 +392,7 @@ public final class Security {
      *              optional attributes for controlling the search. See the "Attribute
      *              Constants" and "Search Constants" sections for a description of
      *              currently defined search attributes.
-     * @return A result code.  See "Security Error Codes" (SecBase.h).
+     * @return A result code. See "Security Error Codes" (SecBase.h).
      */
     @Generated
     @CFunction
@@ -418,13 +421,13 @@ public final class Security {
      * * kSecAttrKeyType with a value of kSecAttrKeyTypeRSA or any other
      * kSecAttrKeyType defined in SecItem.h
      * * kSecAttrKeySizeInBits with a value being a CFNumberRef containing
-     * the requested key size in bits.  Example sizes for RSA keys are:
+     * the requested key size in bits. Example sizes for RSA keys are:
      * 512, 768, 1024, 2048.
      * <p>
      * The values below may be set either in the top-level dictionary or in a
      * dictionary that is the value of the kSecPrivateKeyAttrs or
-     * kSecPublicKeyAttrs key in the top-level dictionary.  Setting these
-     * attributes explicitly will override the defaults below.  See SecItem.h
+     * kSecPublicKeyAttrs key in the top-level dictionary. Setting these
+     * attributes explicitly will override the defaults below. See SecItem.h
      * for detailed information on these attributes including the types of
      * the values.
      * <p>
@@ -521,7 +524,7 @@ public final class Security {
      *                      the digest of the actual data.
      * @param signedDataLen Length of signedData in bytes.
      * @param sig           Pointer to the signature to verify.
-     * @param sigLen        Length of sig in  bytes.
+     * @param sigLen        Length of sig in bytes.
      * @return A result code. See "Security Error Codes" (SecBase.h).
      */
     @Generated
@@ -620,20 +623,20 @@ public final class Security {
      * * kSecAttrKeyType with a value being kSecAttrKeyTypeRSA or any other
      * kSecAttrKeyType defined in SecItem.h
      * * kSecAttrKeySizeInBits with a value being a CFNumberRef or CFStringRef
-     * containing the requested key size in bits.  Example sizes for RSA
+     * containing the requested key size in bits. Example sizes for RSA
      * keys are: 512, 768, 1024, 2048.
      * <p>
      * The values below may be set either in the top-level dictionary or in a
      * dictionary that is the value of the kSecPrivateKeyAttrs or
-     * kSecPublicKeyAttrs key in the top-level dictionary.  Setting these
-     * attributes explicitly will override the defaults below.  See SecItem.h
+     * kSecPublicKeyAttrs key in the top-level dictionary. Setting these
+     * attributes explicitly will override the defaults below. See SecItem.h
      * for detailed information on these attributes including the types of
      * the values.
      * <p>
      * * kSecAttrLabel default NULL
      * * kSecAttrIsPermanent if this key is present and has a Boolean value of true,
      * the key or key pair will be added to the default keychain.
-     * * kSecAttrTokenID if this key should be generated on specified token.  This
+     * * kSecAttrTokenID if this key should be generated on specified token. This
      * attribute can contain CFStringRef and can be present only in the top-level
      * parameters dictionary.
      * * kSecAttrApplicationTag default NULL
@@ -650,7 +653,7 @@ public final class Security {
      *                   See the discussion sections below for a complete overview of options.
      * @param error      On error, will be populated with an error object describing the failure.
      *                   See "Security Error Codes" (SecBase.h).
-     * @return Newly generated private key.  To get associated public key, use SecKeyCopyPublicKey().
+     * @return Newly generated private key. To get associated public key, use SecKeyCopyPublicKey().
      */
     @Generated
     @CFunction
@@ -664,12 +667,12 @@ public final class Security {
      * This function does not add keys to any keychain, but the SecKey object it returns can be added
      * to keychain using the SecItemAdd function.
      * The requested data format depend on the type of key (kSecAttrKeyType) being created:
-     * * kSecAttrKeyTypeRSA               PKCS#1 format, public key can be also in x509 public key format
-     * * kSecAttrKeyTypeECSECPrimeRandom  ANSI X9.63 format (04 || X || Y [ || K])
+     * * kSecAttrKeyTypeRSA PKCS#1 format, public key can be also in x509 public key format
+     * * kSecAttrKeyTypeECSECPrimeRandom ANSI X9.63 format (04 || X || Y [ || K])
      *
      * @param keyData    CFData representing the key. The format of the data depends on the type of key being created.
      * @param attributes Dictionary containing attributes describing the key to be imported. The keys in this dictionary
-     *                   are kSecAttr* constants from SecItem.h.  Mandatory attributes are:
+     *                   are kSecAttr* constants from SecItem.h. Mandatory attributes are:
      *                   * kSecAttrKeyType
      *                   * kSecAttrKeyClass
      * @param error      On error, will be populated with an error object describing the failure.
@@ -688,8 +691,8 @@ public final class Security {
      * <p>
      * This function may fail if the key is not exportable (e.g., bound to a smart card or Secure Enclave).
      * The format in which the key will be exported depends on the type of key:
-     * * kSecAttrKeyTypeRSA               PKCS#1 format
-     * * kSecAttrKeyTypeECSECPrimeRandom  ANSI X9.63 format (04 || X || Y [ || K])
+     * * kSecAttrKeyTypeRSA PKCS#1 format
+     * * kSecAttrKeyTypeECSECPrimeRandom ANSI X9.63 format (04 || X || Y [ || K])
      *
      * @param key   The key to be exported.
      * @param error On error, will be populated with an error object describing the failure.
@@ -720,7 +723,7 @@ public final class Security {
      *
      * @param key The key whose attributes are to be retrieved.
      * @return Dictionary containing attributes of the key. The keys that populate this dictionary are defined
-     * and discussed in SecItem.h.
+     *         and discussed in SecItem.h.
      */
     @Generated
     @CFunction
@@ -745,7 +748,7 @@ public final class Security {
      * <p>
      * Given a private key and data to sign, generate a digital signature.
      * <p>
-     * Computes digital signature using specified key over input data.  The operation algorithm
+     * Computes digital signature using specified key over input data. The operation algorithm
      * further defines the exact format of input data, operation to be performed and output signature.
      *
      * @param key        Private key with which to sign.
@@ -765,7 +768,7 @@ public final class Security {
      * <p>
      * Given a public key, data which has been signed, and a signature, verify the signature.
      * <p>
-     * Verifies digital signature operation using specified key and signed data.  The operation algorithm
+     * Verifies digital signature operation using specified key and signed data. The operation algorithm
      * further defines the exact format of input data, signature and operation to be performed.
      *
      * @param key        Public key with which to verify the signature.
@@ -786,7 +789,7 @@ public final class Security {
      * <p>
      * Encrypt a block of plaintext.
      * <p>
-     * Encrypts plaintext data using specified key.  The exact type of the operation including the format
+     * Encrypts plaintext data using specified key. The exact type of the operation including the format
      * of input and output data is specified by encryption algorithm.
      *
      * @param key       Public key with which to encrypt the data.
@@ -807,7 +810,7 @@ public final class Security {
      * <p>
      * Decrypt a block of ciphertext.
      * <p>
-     * Decrypts ciphertext data using specified key.  The exact type of the operation including the format
+     * Decrypts ciphertext data using specified key. The exact type of the operation including the format
      * of input and output data is specified by decryption algorithm.
      *
      * @param key        Private key with which to decrypt the data.
@@ -830,7 +833,7 @@ public final class Security {
      *
      * @param algorithm  One of SecKeyAlgorithm constants suitable to perform this operation.
      * @param publicKey  Remote party's public key.
-     * @param parameters Dictionary with parameters, see SecKeyKeyExchangeParameter constants.  Used algorithm
+     * @param parameters Dictionary with parameters, see SecKeyKeyExchangeParameter constants. Used algorithm
      *                   determines the set of required and optional parameters to be used.
      * @param error      Pointer to an error object on failure.
      *                   See "Security Error Codes" (SecBase.h).
@@ -877,8 +880,8 @@ public final class Security {
      *
      * @param policyRef A policy reference.
      * @return A properties dictionary. See "Policy Value Constants" for a list
-     * of currently defined property keys. It is the caller's responsibility to
-     * CFRelease this reference when it is no longer needed.
+     *         of currently defined property keys. It is the caller's responsibility to
+     *         CFRelease this reference when it is no longer needed.
      * @return A result code. See "Security Error Codes" (SecBase.h).
      */
     @Generated
@@ -891,7 +894,7 @@ public final class Security {
      * Returns a policy object for the default X.509 policy.
      *
      * @return A policy object. The caller is responsible for calling CFRelease
-     * on this when it is no longer needed.
+     *         on this when it is no longer needed.
      */
     @Generated
     @CFunction
@@ -907,7 +910,7 @@ public final class Security {
      * @param hostname (Optional) If present, the policy will require the specified
      *                 hostname to match the hostname in the leaf certificate.
      * @return A policy object. The caller is responsible for calling CFRelease
-     * on this when it is no longer needed.
+     *         on this when it is no longer needed.
      */
     @Generated
     @CFunction
@@ -927,7 +930,7 @@ public final class Security {
      *
      * @param revocationFlags Flags to specify revocation checking options.
      * @return A policy object. The caller is responsible for calling CFRelease
-     * on this when it is no longer needed.
+     *         on this when it is no longer needed.
      */
     @Generated
     @CFunction
@@ -944,7 +947,7 @@ public final class Security {
      * @param properties       (Optional) A properties dictionary. See "Policy Value
      *                         Constants" for a list of currently defined property keys.
      * @return The returned policy reference, or NULL if the policy could not be
-     * created.
+     *         created.
      */
     @Generated
     @CFunction
@@ -974,14 +977,23 @@ public final class Security {
      * <p>
      * Asynchronously store (or update) a shared password for a website.
      * <p>
-     * This function adds a shared password item which will be accessible by Safari and applications that have the specified fully-qualified domain name in their 'com.apple.developer.associated-domains' entitlement. If a shared password item already exists for the specified website and account, it will be updated with the provided password. To remove a password, pass NULL for the password parameter.
+     * This function adds a shared password item which will be accessible by Safari and applications that have the
+     * specified fully-qualified domain name in their 'com.apple.developer.associated-domains' entitlement. If a shared
+     * password item already exists for the specified website and account, it will be updated with the provided
+     * password. To remove a password, pass NULL for the password parameter.
      * <p>
-     * Note: since a request involving shared web credentials may potentially require user interaction or other verification to be approved, this function is dispatched asynchronously; your code provides a completion handler that will be called once the results (if any) are available.
+     * Note: since a request involving shared web credentials may potentially require user interaction or other
+     * verification to be approved, this function is dispatched asynchronously; your code provides a completion handler
+     * that will be called once the results (if any) are available.
      *
      * @param fqdn              The fully qualified domain name of the website requiring the password.
      * @param account           The account name associated with this password.
      * @param password          The password to be stored. Pass NULL to remove a shared password if it exists.
-     * @param completionHandler A block which will be invoked when the function has completed. If the shared password was successfully added (or removed), the CFErrorRef parameter passed to the block will be NULL. If the error parameter is non-NULL, an error occurred and the error reference will hold the result. Note: the error reference will be automatically released after this handler is called, though you may optionally retain it for as long as needed.
+     * @param completionHandler A block which will be invoked when the function has completed. If the shared password
+     *                          was successfully added (or removed), the CFErrorRef parameter passed to the block will
+     *                          be NULL. If the error parameter is non-NULL, an error occurred and the error reference
+     *                          will hold the result. Note: the error reference will be automatically released after
+     *                          this handler is called, though you may optionally retain it for as long as needed.
      */
     @Generated
     @CFunction
@@ -993,21 +1005,37 @@ public final class Security {
      * <p>
      * Asynchronously obtain one or more shared passwords for a website.
      * <p>
-     * This function requests one or more shared passwords for a given website, depending on whether the optional account parameter is supplied. To obtain results, the website specified in the fqdn parameter must be one which matches an entry in the calling application's 'com.apple.developer.associated-domains' entitlement.
+     * This function requests one or more shared passwords for a given website, depending on whether the optional
+     * account parameter is supplied. To obtain results, the website specified in the fqdn parameter must be one which
+     * matches an entry in the calling application's 'com.apple.developer.associated-domains' entitlement.
      * <p>
-     * If matching shared password items are found, the credentials provided to the completionHandler will be a CFArrayRef containing CFDictionaryRef entries. Each dictionary entry will contain the following pairs (see Security/SecItem.h):
-     * key: kSecAttrServer     value: CFStringRef (the website)
-     * key: kSecAttrAccount    value: CFStringRef (the account)
+     * If matching shared password items are found, the credentials provided to the completionHandler will be a
+     * CFArrayRef containing CFDictionaryRef entries. Each dictionary entry will contain the following pairs (see
+     * Security/SecItem.h):
+     * key: kSecAttrServer value: CFStringRef (the website)
+     * key: kSecAttrAccount value: CFStringRef (the account)
      * key: kSecSharedPassword value: CFStringRef (the password)
      * <p>
-     * If the found item specifies a non-standard port number (i.e. other than 443 for https), the following key may also be present:
-     * key: kSecAttrPort       value: CFNumberRef (the port number)
+     * If the found item specifies a non-standard port number (i.e. other than 443 for https), the following key may
+     * also be present:
+     * key: kSecAttrPort value: CFNumberRef (the port number)
      * <p>
-     * Note: since a request involving shared web credentials may potentially require user interaction or other verification to be approved, this function is dispatched asynchronously; your code provides a completion handler that will be called once the results (if any) are available.
+     * Note: since a request involving shared web credentials may potentially require user interaction or other
+     * verification to be approved, this function is dispatched asynchronously; your code provides a completion handler
+     * that will be called once the results (if any) are available.
      *
-     * @param fqdn              (Optional) Fully qualified domain name of the website for which passwords are being requested. If NULL is passed in this argument, the domain name(s) listed in the calling application's 'com.apple.developer.associated-domains' entitlement are searched implicitly.
-     * @param account           (Optional) Account name for which passwords are being requested. The account may be NULL to request all shared credentials which are available for the site, allowing the caller to discover an existing account.
-     * @param completionHandler A block which will be called to deliver the requested credentials. If no matching items were found, the credentials array will be empty, and the CFErrorRef parameter will provide the error result. Note: the credentials and error references will be automatically released after this handler is called, though you may optionally retain either for as long as needed.
+     * @param fqdn              (Optional) Fully qualified domain name of the website for which passwords are being
+     *                          requested. If NULL is passed in this argument, the domain name(s) listed in the calling
+     *                          application's 'com.apple.developer.associated-domains' entitlement are searched
+     *                          implicitly.
+     * @param account           (Optional) Account name for which passwords are being requested. The account may be NULL
+     *                          to request all shared credentials which are available for the site, allowing the caller
+     *                          to discover an existing account.
+     * @param completionHandler A block which will be called to deliver the requested credentials. If no matching items
+     *                          were found, the credentials array will be empty, and the CFErrorRef parameter will
+     *                          provide the error result. Note: the credentials and error references will be
+     *                          automatically released after this handler is called, though you may optionally retain
+     *                          either for as long as needed.
      */
     @Generated
     @CFunction
@@ -1019,7 +1047,8 @@ public final class Security {
      * <p>
      * Returns a randomly generated password.
      *
-     * @return CFStringRef password in the form xxx-xxx-xxx-xxx where x is taken from the sets "abcdefghkmnopqrstuvwxy", "ABCDEFGHJKLMNPQRSTUVWXYZ", "3456789" with at least one character from each set being present.
+     * @return CFStringRef password in the form xxx-xxx-xxx-xxx where x is taken from the sets "abcdefghkmnopqrstuvwxy",
+     *         "ABCDEFGHJKLMNPQRSTUVWXYZ", "3456789" with at least one character from each set being present.
      */
     @Generated
     @CFunction
@@ -1046,12 +1075,12 @@ public final class Security {
      * If multiple policies are passed in, all policies must verify
      * for the chain to be considered valid.
      *
-     * @param certificates The group of certificates to verify.  This can either
+     * @param certificates The group of certificates to verify. This can either
      *                     be a CFArrayRef of SecCertificateRef objects or a single SecCertificateRef
      * @param policies     An array of one or more policies. You may pass a
      *                     SecPolicyRef to represent a single policy.
      * @param trust        On return, a pointer to the trust management reference.
-     * @return A result code.  See "Security Error Codes" (SecBase.h).
+     * @return A result code. See "Security Error Codes" (SecBase.h).
      */
     @Generated
     @CFunction
@@ -1139,7 +1168,7 @@ public final class Security {
      * @param trust              A reference to a trust object.
      * @param anchorCertificates An array of anchor certificates.
      *                           Pass NULL to restore the default set of anchor certificates.
-     * @return A result code.  See "Security Error Codes" (SecBase.h).
+     * @return A result code. See "Security Error Codes" (SecBase.h).
      */
     @Generated
     @CFunction
@@ -1153,9 +1182,9 @@ public final class Security {
      *
      * @param trust                  A reference to a trust object.
      * @param anchorCertificatesOnly If true, disables trusting any anchors other
-     *                               than the ones passed in via SecTrustSetAnchorCertificates().  If false,
+     *                               than the ones passed in via SecTrustSetAnchorCertificates(). If false,
      *                               the built in anchor certificates are also trusted.
-     * @return A result code.  See "Security Error Codes" (SecBase.h).
+     * @return A result code. See "Security Error Codes" (SecBase.h).
      */
     @Generated
     @CFunction
@@ -1191,7 +1220,7 @@ public final class Security {
      *
      * @param trust      A reference to a trust object.
      * @param verifyDate The date for which to verify trust.
-     * @return A result code.  See "Security Error Codes" (SecBase.h).
+     * @return A result code. See "Security Error Codes" (SecBase.h).
      */
     @Generated
     @CFunction
@@ -1209,7 +1238,7 @@ public final class Security {
      *
      * @param trust A reference to the trust object being verified.
      * @return A CFAbsoluteTime value representing the time at which certificates
-     * should be checked for validity.
+     *         should be checked for validity.
      */
     @Generated
     @CFunction
@@ -1276,9 +1305,9 @@ public final class Security {
      *
      * @param trust A reference to the trust object which has been evaluated.
      * @return The certificate's public key, or NULL if it the public key could
-     * not be extracted (this can happen if the public key algorithm is not
-     * supported).  The caller is responsible for calling CFRelease on the
-     * returned key when it is no longer needed.
+     *         not be extracted (this can happen if the public key algorithm is not
+     *         supported). The caller is responsible for calling CFRelease on the
+     *         returned key when it is no longer needed.
      */
     @Generated
     @CFunction
@@ -1314,7 +1343,7 @@ public final class Security {
      * SecTrustCopyCertificateChain provides thread-safe results.
      *
      * @param trust Reference to a trust object.
-     * @param ix    The index of the requested certificate.  Indices run from 0
+     * @param ix    The index of the requested certificate. Indices run from 0
      *              (leaf) to the anchor (or last certificate found if no anchor was found).
      *              The leaf cert (index 0) is always present regardless of whether the trust
      *              reference has been evaluated or not.
@@ -1337,11 +1366,11 @@ public final class Security {
      *
      * @param trust A reference to an evaluated trust object.
      * @return An opaque cookie which when passed to SecTrustSetExceptions() will
-     * cause a call to SecTrustEvaluate() return kSecTrustResultProceed.  This
-     * will happen upon subsequent evaluation of the current certificate unless
-     * some new error starts happening that wasn't being reported when the cookie
-     * was returned from this function (for example, if the certificate expires
-     * then evaluation will start failing again until a new cookie is obtained.)
+     *         cause a call to SecTrustEvaluate() return kSecTrustResultProceed. This
+     *         will happen upon subsequent evaluation of the current certificate unless
+     *         some new error starts happening that wasn't being reported when the cookie
+     *         was returned from this function (for example, if the certificate expires
+     *         then evaluation will start failing again until a new cookie is obtained.)
      */
     @Generated
     @CFunction
@@ -1360,19 +1389,19 @@ public final class Security {
      *
      * @param trust      A reference to a trust object.
      * @param exceptions An exceptions cookie as returned by a call to
-     *                   SecTrustCopyExceptions() in the past.  You may pass NULL to clear any
+     *                   SecTrustCopyExceptions() in the past. You may pass NULL to clear any
      *                   exceptions which have been previously set on this trust reference.
      * @return Upon calling SecTrustEvaluate(), any failures that were present at the
-     * time the exceptions object was created are ignored, and instead of returning
-     * kSecTrustResultRecoverableTrustFailure, kSecTrustResultProceed will be returned
-     * (if the certificate for which exceptions was created matches the current leaf
-     * certificate).
+     *         time the exceptions object was created are ignored, and instead of returning
+     *         kSecTrustResultRecoverableTrustFailure, kSecTrustResultProceed will be returned
+     *         (if the certificate for which exceptions was created matches the current leaf
+     *         certificate).
      * @return Returns true if the exceptions cookies was valid and matches the current
-     * leaf certificate, false otherwise.  This function will invalidate the existing
-     * trust result, requiring a subsequent evaluation for the newly-set exceptions.
-     * Note that this function returning true doesn't mean the caller can skip calling
-     * SecTrustEvaluate, as there may be new errors since the exceptions cookie was
-     * created (for example, a certificate may have subsequently expired.)
+     *         leaf certificate, false otherwise. This function will invalidate the existing
+     *         trust result, requiring a subsequent evaluation for the newly-set exceptions.
+     *         Note that this function returning true doesn't mean the caller can skip calling
+     *         SecTrustEvaluate, as there may be new errors since the exceptions cookie was
+     *         created (for example, a certificate may have subsequently expired.)
      */
     @Generated
     @CFunction
@@ -1394,7 +1423,7 @@ public final class Security {
      * @param trust A reference to a trust object. If the trust has not been
      *              evaluated, the returned property array will be empty.
      * @return A property array. It is the caller's responsibility to CFRelease
-     * the returned array when it is no longer needed.
+     *         the returned array when it is no longer needed.
      */
     @Generated
     @CFunction
@@ -1411,9 +1440,9 @@ public final class Security {
      *
      * @param trust A reference to a trust object.
      * @return A dictionary with various fields that can be displayed to the user,
-     * or NULL if no additional info is available or the trust has not yet been
-     * validated.  The caller is responsible for calling CFRelease on the value
-     * returned when it is no longer needed.
+     *         or NULL if no additional info is available or the trust has not yet been
+     *         validated. The caller is responsible for calling CFRelease on the value
+     *         returned when it is no longer needed.
      */
     @Generated
     @CFunction
@@ -2221,9 +2250,12 @@ public final class Security {
      * [@enum] Import/Export options
      * <p>
      * Predefined key constants used when passing dictionary-based arguments to import/export functions.
-     * [@constant] kSecImportExportPassphrase Specifies a passphrase represented by a CFStringRef to be used when exporting to (or importing from) PKCS#12 format.
-     * [@constant] kSecImportExportKeychain On OSX, specifies a keychain represented by a SecKeychainRef to be used as the target when importing from PKCS#12 format.
-     * [@constant] kSecImportExportAccess On OSX, specifies an access represented by a SecAccessRef for the initial access (ACL) of a key imported from PKCS#12 format.
+     * [@constant] kSecImportExportPassphrase Specifies a passphrase represented by a CFStringRef to be used when
+     * exporting to (or importing from) PKCS#12 format.
+     * [@constant] kSecImportExportKeychain On OSX, specifies a keychain represented by a SecKeychainRef to be used as
+     * the target when importing from PKCS#12 format.
+     * [@constant] kSecImportExportAccess On OSX, specifies an access represented by a SecAccessRef for the initial
+     * access (ACL) of a key imported from PKCS#12 format.
      */
     @Generated
     @CVariable()
@@ -2238,11 +2270,11 @@ public final class Security {
      * [@constant] kSecImportItemLabel a CFStringRef representing the item label.
      * This implementation specific identifier cannot be expected to have
      * any format.
-     * [@constant] kSecImportItemKeyID a CFDataRef representing the key id.  Often
+     * [@constant] kSecImportItemKeyID a CFDataRef representing the key id. Often
      * the SHA-1 digest of the public key.
      * [@constant] kSecImportItemIdentity a SecIdentityRef representing the identity.
      * [@constant] kSecImportItemTrust a SecTrustRef set up with all relevant
-     * certificates.  Not guaranteed to succesfully evaluate.
+     * certificates. Not guaranteed to succesfully evaluate.
      * [@constant] kSecImportItemCertChain a CFArrayRef holding all relevant
      * certificates for this item's identity
      */
@@ -2273,7 +2305,7 @@ public final class Security {
      * a dictionary. Its value is one of the constants defined in the Value
      * Constants for kSecClass.
      * [@constant] kSecClass Specifies a dictionary key whose value is the item's
-     * class code.  You use this key to get or set a value of type CFTypeRef
+     * class code. You use this key to get or set a value of type CFTypeRef
      * that contains the item class code.
      */
     @Generated
@@ -2363,9 +2395,9 @@ public final class Security {
      * kSecAttrSynchronizable
      * <p>
      * kSecClassCertificate item attributes:
-     * kSecAttrAccessible    (iOS only)
+     * kSecAttrAccessible (iOS only)
      * kSecAttrAccessControl (iOS only)
-     * kSecAttrAccessGroup   (iOS only)
+     * kSecAttrAccessGroup (iOS only)
      * kSecAttrCertificateType
      * kSecAttrCertificateEncoding
      * kSecAttrLabel
@@ -2387,8 +2419,8 @@ public final class Security {
      * kSecAttrIsPermanent
      * kSecAttrApplicationTag
      * kSecAttrKeyType
-     * kSecAttrPRF    (OS X only)
-     * kSecAttrSalt   (OS X only)
+     * kSecAttrPRF (OS X only)
+     * kSecAttrSalt (OS X only)
      * kSecAttrRounds (OS X only)
      * kSecAttrKeySizeInBits
      * kSecAttrEffectiveKeySize
@@ -2415,7 +2447,7 @@ public final class Security {
      * kSecClassCertificate.
      * <p>
      * [@constant] kSecAttrAccessible Specifies a dictionary key whose value
-     * indicates when your application needs access to an item's data.  You
+     * indicates when your application needs access to an item's data. You
      * should choose the most restrictive option that meets your application's
      * needs to allow the system to protect that item in the best way possible.
      * See the "kSecAttrAccessible Value Constants" section for a list of
@@ -2437,18 +2469,18 @@ public final class Security {
      * This key is available on OS X only.
      * <p>
      * [@constant] kSecAttrAccessGroup Specifies a dictionary key whose value is
-     * a CFStringRef indicating which access group a item is in.  The access
+     * a CFStringRef indicating which access group a item is in. The access
      * groups that a particular application has membership in are determined by
-     * two entitlements for that application.  The application-identifier
+     * two entitlements for that application. The application-identifier
      * entitlement contains the application's single access group, unless
-     * there is a keychain-access-groups entitlement present.  The latter
+     * there is a keychain-access-groups entitlement present. The latter
      * has as its value a list of access groups; the first item in this list
      * is the default access group. Unless a specific access group is provided
      * as the value of kSecAttrAccessGroup when SecItemAdd is called, new items
-     * are created in the application's default access group.  Specifying this
+     * are created in the application's default access group. Specifying this
      * attribute in SecItemCopyMatching, SecItemUpdate, or SecItemDelete calls
      * limits the search to the specified access group (of which the calling
-     * application must be a member to obtain matching results.)  To share
+     * application must be a member to obtain matching results.) To share
      * keychain items between multiple applications, each application must have
      * a common group listed in its keychain-access-groups entitlement, and each
      * must specify this shared access group name as the value for the
@@ -2571,7 +2603,7 @@ public final class Security {
      * that represents an Internet port number. (Items of class
      * kSecClassInternetPassword have this attribute.)
      * [@constant] kSecAttrPath Specifies a dictionary key whose value is the item's
-     * path attribute, typically this is the path component of the URL.  You use
+     * path attribute, typically this is the path component of the URL. You use
      * this key to set or get a CFStringRef value that represents a path. (Items
      * of class kSecClassInternetPassword have this attribute.)
      * [@constant] kSecAttrSubject (read-only) Specifies a dictionary key whose
@@ -2583,7 +2615,7 @@ public final class Security {
      * CFDataRef that contains the X.500 issuer name of a certificate. (Items
      * of class kSecClassCertificate have this attribute.)
      * [@constant] kSecAttrSerialNumber (read-only) Specifies a dictionary key whose
-     * value is the item's serial number.  You use this key to get a value
+     * value is the item's serial number. You use this key to get a value
      * of type CFDataRef that contains the serial number data of a
      * certificate. (Items of class kSecClassCertificate have this
      * attribute.)
@@ -2599,7 +2631,7 @@ public final class Security {
      * whose value is the item's certificate type. You use this key to get
      * a value of type CFNumberRef that denotes the certificate type
      * (On iOS, currently the value of this attribute must be equal to the
-     * version of the X509 certificate.  So, 1 for v1, 2 for v2, and 3 for v3
+     * version of the X509 certificate. So, 1 for v1, 2 for v2, and 3 for v3
      * certificates). (On OSX, see the CSSM_CERT_TYPE enum in cssmtype.h).
      * Only items of class kSecClassCertificate have this attribute.
      * [@constant] kSecAttrCertificateEncoding (read-only) Specifies a dictionary
@@ -2875,16 +2907,16 @@ public final class Security {
      * available until a device unlock occurs.
      * [@constant] kSecAttrAccessibleWhenUnlocked Item data can only be accessed
      * while the device is unlocked. This is recommended for items that only
-     * need be accesible while the application is in the foreground.  Items
+     * need be accesible while the application is in the foreground. Items
      * with this attribute will migrate to a new device when using encrypted
      * backups.
      * [@constant] kSecAttrAccessibleAfterFirstUnlock Item data can only be
-     * accessed once the device has been unlocked after a restart.  This is
+     * accessed once the device has been unlocked after a restart. This is
      * recommended for items that need to be accesible by background
      * applications. Items with this attribute will migrate to a new device
      * when using encrypted backups.
      * [@constant] kSecAttrAccessibleAlways Item data can always be accessed
-     * regardless of the lock state of the device.  This is not recommended
+     * regardless of the lock state of the device. This is not recommended
      * for anything except system use. Items with this attribute will migrate
      * to a new device when using encrypted backups.
      * [@constant] kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly Item data can
@@ -2908,7 +2940,7 @@ public final class Security {
      * device, so after a backup is restored to a new device these items will
      * be missing.
      * [@constant] kSecAttrAccessibleAlwaysThisDeviceOnly Item data can always
-     * be accessed regardless of the lock state of the device.  This option
+     * be accessed regardless of the lock state of the device. This option
      * is not recommended for anything except system use. Items with this
      * attribute will never migrate to a new device, so after a backup is
      * restored to a new device, these items will be missing.
@@ -3180,7 +3212,8 @@ public final class Security {
      * and its value is one of the constants defined here.
      * [@constant] kSecAttrKeyTypeECSECPrimeRandom. The used curve is P-192, P-256, P-384 or P-521.
      * The size is specified by kSecAttrKeySizeInBits attribute. Curves are defined in FIPS PUB 186-4 standard.
-     * [@constant] kSecAttrKeyTypeEC This is the legacy name for kSecAttrKeyTypeECSECPrimeRandom, new applications should not use it.
+     * [@constant] kSecAttrKeyTypeEC This is the legacy name for kSecAttrKeyTypeECSECPrimeRandom, new applications
+     * should not use it.
      * [@constant] kSecAttrKeyTypeDSA (OSX only)
      * [@constant] kSecAttrKeyTypeAES (OSX only)
      * [@constant] kSecAttrKeyType3DES (OSX only)
@@ -3366,16 +3399,16 @@ public final class Security {
      * <p>
      * Predefined value type keys used to pass values in a dictionary.
      * You can specify zero or more of these types depending on the function
-     * you are calling.  For SecItemCopyMatching or SecItemAdd these are
+     * you are calling. For SecItemCopyMatching or SecItemAdd these are
      * used as keys in the results dictionary.
      * [@constant] kSecValueData Specifies a dictionary key whose value is of type
-     * CFDataRef.  For keys and password items, data is secret (encrypted)
+     * CFDataRef. For keys and password items, data is secret (encrypted)
      * and may require the user to enter a password for access.
      * [@constant] kSecValueRef Specifies a dictionary key whose value, depending
      * on the item class requested, is of type SecKeychainItemRef, SecKeyRef,
      * SecCertificateRef, or SecIdentityRef.
      * [@constant] kSecValuePersistentRef Specifies a dictionary key whose value
-     * is of type CFDataRef.  The bytes in this CFDataRef can be stored by
+     * is of type CFDataRef. The bytes in this CFDataRef can be stored by
      * the caller and used on a subsequent invocation of the application (or
      * even a different application) to retrieve the item referenced by it.
      */
@@ -3845,13 +3878,13 @@ public final class Security {
      * a dictionary for a policy instance.
      * <p>
      * All policies will have the following read-only value:
-     * kSecPolicyOid       (the policy object identifier)
+     * kSecPolicyOid (the policy object identifier)
      * <p>
      * Additional policy values which your code can optionally set:
-     * kSecPolicyName      (name which must be matched)
-     * kSecPolicyClient    (evaluate for client, rather than server)
-     * kSecPolicyRevocationFlags   (only valid for a revocation policy)
-     * kSecPolicyTeamIdentifier    (only valid for a Passbook signing policy)
+     * kSecPolicyName (name which must be matched)
+     * kSecPolicyClient (evaluate for client, rather than server)
+     * kSecPolicyRevocationFlags (only valid for a revocation policy)
+     * kSecPolicyTeamIdentifier (only valid for a Passbook signing policy)
      * <p>
      * [@constant] kSecPolicyOid Specifies the policy OID (value is a CFStringRef)
      * [@constant] kSecPolicyName Specifies a CFStringRef (or CFArrayRef of same)
@@ -3892,7 +3925,7 @@ public final class Security {
     public static native CFStringRef kSecPolicyTeamIdentifier();
 
     /**
-     * This is a synonym for NULL, if you'd rather use a named constant.   This
+     * This is a synonym for NULL, if you'd rather use a named constant. This
      * refers to a cryptographically secure random number generator.
      */
     @Generated
@@ -3959,7 +3992,7 @@ public final class Security {
      * successful and none of the certificates in the chain were revoked.
      * The value will be kCFBooleanFalse if no current revocation status
      * could be obtained for one or more certificates in the chain due
-     * to connection problems or timeouts.  This is a hint to a client
+     * to connection problems or timeouts. This is a hint to a client
      * to retry revocation checking at a later time.
      * [@constant] kSecTrustRevocationValidUntilDate
      * This key will be present iff kSecTrustRevocationChecked has a
@@ -4135,12 +4168,15 @@ public final class Security {
      * <p>
      * Retrieves the common name of the subject of a given certificate.
      * <p>
-     * All the data in this string comes from the certificate itself, and thus it's in whatever language the certificate itself is in.
-     * Note that the certificate's common name field may not be present, or may be inadequate to describe the certificate; for display purposes,
+     * All the data in this string comes from the certificate itself, and thus it's in whatever language the certificate
+     * itself is in.
+     * Note that the certificate's common name field may not be present, or may be inadequate to describe the
+     * certificate; for display purposes,
      * you should consider using SecCertificateCopySubjectSummary instead of this function.
      *
      * @param certificate A reference to the certificate from which to retrieve the common name.
-     * @param commonName  On return, a reference to the common name. Your code must release this reference by calling the CFRelease function.
+     * @param commonName  On return, a reference to the common name. Your code must release this reference by calling
+     *                    the CFRelease function.
      * @return A result code. See "Security Error Codes" (SecBase.h).
      */
     @Generated
@@ -4153,7 +4189,8 @@ public final class Security {
      * Returns an array of zero or more email addresses for the subject of a given certificate.
      *
      * @param certificate    A reference to the certificate from which to retrieve the email addresses.
-     * @param emailAddresses On return, an array of zero or more CFStringRef elements corresponding to each email address found.
+     * @param emailAddresses On return, an array of zero or more CFStringRef elements corresponding to each email
+     *                       address found.
      *                       Your code must release this array reference by calling the CFRelease function.
      * @return A result code. See "Security Error Codes" (SecBase.h).
      */
@@ -4167,7 +4204,9 @@ public final class Security {
      * <p>
      * Return the certificate's normalized issuer
      * <p>
-     * The issuer is a sequence in the format used by SecItemCopyMatching.  The content returned is a DER-encoded X.509 distinguished name. For a display version of the issuer, call SecCertificateCopyValues. The caller must CFRelease the value returned.
+     * The issuer is a sequence in the format used by SecItemCopyMatching. The content returned is a DER-encoded X.509
+     * distinguished name. For a display version of the issuer, call SecCertificateCopyValues. The caller must CFRelease
+     * the value returned.
      *
      * @param certificate The certificate from which to get values
      */
@@ -4180,7 +4219,9 @@ public final class Security {
      * <p>
      * Return the certificate's normalized subject
      * <p>
-     * The subject is a sequence in the format used by SecItemCopyMatching. The content returned is a DER-encoded X.509 distinguished name. For a display version of the subject, call SecCertificateCopyValues. The caller must CFRelease the value returned.
+     * The subject is a sequence in the format used by SecItemCopyMatching. The content returned is a DER-encoded X.509
+     * distinguished name. For a display version of the subject, call SecCertificateCopyValues. The caller must
+     * CFRelease the value returned.
      *
      * @param certificate The certificate from which to get values
      */
@@ -4196,7 +4237,8 @@ public final class Security {
      * NOTE: Deprecated in iOS 12.0; use SecCertificateCopyKey instead for cross-platform availability.
      *
      * @param certificate A reference to the certificate from which to retrieve the public key.
-     * @return A reference to the public key for the specified certificate. Your code must release this reference by calling the CFRelease function.
+     * @return A reference to the public key for the specified certificate. Your code must release this reference by
+     *         calling the CFRelease function.
      */
     @Generated
     @CFunction
@@ -4207,10 +4249,12 @@ public final class Security {
      * <p>
      * Return the certificate's serial number.
      * <p>
-     * Return the content of a DER-encoded integer (without the tag and length fields) for this certificate's serial number. The caller must CFRelease the value returned.
+     * Return the content of a DER-encoded integer (without the tag and length fields) for this certificate's serial
+     * number. The caller must CFRelease the value returned.
      *
      * @param certificate The certificate from which to get values.
-     * @param error       An optional pointer to a CFErrorRef which will be set on return from the function if an error occurred. If not NULL, the caller is responsible for releasing the CFErrorRef.
+     * @param error       An optional pointer to a CFErrorRef which will be set on return from the function if an error
+     *                    occurred. If not NULL, the caller is responsible for releasing the CFErrorRef.
      */
     @Generated
     @CFunction
@@ -4222,7 +4266,9 @@ public final class Security {
      * <p>
      * Return the certificate's serial number.
      * <p>
-     * Return the content of a DER-encoded integer (without the tag and length fields) for this certificate's serial number. The caller must CFRelease the value returned. NOTE: Deprecated in iOS 11.0; use SecCertificateCopySerialNumberData instead for cross-platform availability.
+     * Return the content of a DER-encoded integer (without the tag and length fields) for this certificate's serial
+     * number. The caller must CFRelease the value returned. NOTE: Deprecated in iOS 11.0; use
+     * SecCertificateCopySerialNumberData instead for cross-platform availability.
      *
      * @param certificate The certificate from which to get values.
      */
@@ -4415,7 +4461,8 @@ public final class Security {
      * [@reserved] Reserved for future use. Your code should pass NULL in this parameter.
      *
      * @param status An error result code of type OSStatus or CSSM_RETURN, as returned by a Security or CSSM function.
-     * @return A reference to an error string, or NULL if no error string is available for the specified result code. Your code must release this reference by calling the CFRelease function.
+     * @return A reference to an error string, or NULL if no error string is available for the specified result code.
+     *         Your code must release this reference by calling the CFRelease function.
      */
     @Generated
     @CFunction
@@ -4429,7 +4476,9 @@ public final class Security {
      * RSA and ECDSA public keys are supported. All other public key algorithms are unsupported.
      *
      * @param certificate A reference to the certificate from which to retrieve the public key.
-     * @return A reference to the public key for the specified certificate. Your code must release this reference by calling the CFRelease function. If the public key has an encoding issue or uses an unsupported algorithm, the returned reference will be null.
+     * @return A reference to the public key for the specified certificate. Your code must release this reference by
+     *         calling the CFRelease function. If the public key has an encoding issue or uses an unsupported algorithm,
+     *         the returned reference will be null.
      */
     @Generated
     @CFunction
@@ -4812,7 +4861,8 @@ public final class Security {
      * Get the PSKs supported by the local instance.
      *
      * @param metadata A `sec_protocol_metadata_t` instance.
-     * @param handler  A block to invoke one or more times with tuples of dispatch_data_t objects carrying PSKs and their corresponding identities.
+     * @param handler  A block to invoke one or more times with tuples of dispatch_data_t objects carrying PSKs and
+     *                 their corresponding identities.
      * @return Returns true if the PSKs were accessible, false otherwise.
      */
     @Generated
@@ -4836,7 +4886,7 @@ public final class Security {
      *
      * @param metadata A `sec_protocol_metadata_t` instance.
      * @return Returns A NULL-terminated string carrying the server name, or NULL
-     * if none was provided.
+     *         if none was provided.
      */
     @Generated
     @CFunction
@@ -5399,9 +5449,9 @@ public final class Security {
      *
      * @param trust A reference to the trust object which has been evaluated.
      * @return The certificate's public key, or NULL if it the public key could
-     * not be extracted (this can happen if the public key algorithm is not
-     * supported).  The caller is responsible for calling CFRelease on the
-     * returned key when it is no longer needed.
+     *         not be extracted (this can happen if the public key algorithm is not
+     *         supported). The caller is responsible for calling CFRelease on the
+     *         returned key when it is no longer needed.
      */
     @Generated
     @CFunction

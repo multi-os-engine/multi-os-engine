@@ -297,8 +297,10 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     public native double headerTopPadding();
 
     /**
-     * This handler is executed when the list section is configuring separator appearance for an item. The index path for the item being configured and
-     * a resolved separator configuration are passed in to this block. The configuration returned from this block will be treated as the final
+     * This handler is executed when the list section is configuring separator appearance for an item. The index path
+     * for the item being configured and
+     * a resolved separator configuration are passed in to this block. The configuration returned from this block will
+     * be treated as the final
      * separator configuration for this item.
      */
     @Generated
@@ -315,7 +317,8 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     }
 
     /**
-     * The preferred configuration for separators. Used as a baseline for a section in a list using this \c UICollectionLayoutListConfiguration
+     * The preferred configuration for separators. Used as a baseline for a section in a list using this \c
+     * UICollectionLayoutListConfiguration
      */
     @Generated
     @Selector("separatorConfiguration")
@@ -329,8 +332,10 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     public native void setHeaderTopPadding(@NFloat double value);
 
     /**
-     * This handler is executed when the list section is configuring separator appearance for an item. The index path for the item being configured and
-     * a resolved separator configuration are passed in to this block. The configuration returned from this block will be treated as the final
+     * This handler is executed when the list section is configuring separator appearance for an item. The index path
+     * for the item being configured and
+     * a resolved separator configuration are passed in to this block. The configuration returned from this block will
+     * be treated as the final
      * separator configuration for this item.
      */
     @Generated
@@ -347,7 +352,8 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     }
 
     /**
-     * The preferred configuration for separators. Used as a baseline for a section in a list using this \c UICollectionLayoutListConfiguration
+     * The preferred configuration for separators. Used as a baseline for a section in a list using this \c
+     * UICollectionLayoutListConfiguration
      */
     @Generated
     @Selector("setSeparatorConfiguration:")

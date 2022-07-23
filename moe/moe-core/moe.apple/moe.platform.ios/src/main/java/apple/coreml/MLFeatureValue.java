@@ -263,7 +263,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     public static native long version_static();
 
     /**
-     * Construct image feature value from CGImage, using the size and type information required by feature description (orientation is assumed to be kCGImagePropertyOrientationUp)
+     * Construct image feature value from CGImage, using the size and type information required by feature description
+     * (orientation is assumed to be kCGImagePropertyOrientationUp)
      */
     @Generated
     @Selector("featureValueWithCGImage:constraint:options:error:")
@@ -272,7 +273,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Construct image feature value from CGImage w/ specified orientation, using the size and type information required by feature description
+     * Construct image feature value from CGImage w/ specified orientation, using the size and type information required
+     * by feature description
      */
     @Generated
     @Selector("featureValueWithCGImage:orientation:constraint:options:error:")
@@ -299,7 +301,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
             NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Construct image feature value from an image on disk, using a model specified image constraint. Orientation is read from Exif if avaiable
+     * Construct image feature value from an image on disk, using a model specified image constraint. Orientation is
+     * read from Exif if avaiable
      */
     @Generated
     @Selector("featureValueWithImageAtURL:constraint:options:error:")
@@ -308,7 +311,8 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Construct image feature value from an image on disk using a model specified image constraint. The passed in orientation supersedes any in the file
+     * Construct image feature value from an image on disk using a model specified image constraint. The passed in
+     * orientation supersedes any in the file
      */
     @Generated
     @Selector("featureValueWithImageAtURL:orientation:constraint:options:error:")

@@ -27,9 +27,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * The base class for a sound event node definition.
  * <p>
- * Sound event nodes are a hierarchical collection of objects that either generate or control playback of audio content in PHASE.
- * Generator nodes produce audio. They are always leaf nodes in a node hierarchy. These include samplers and push stream nodes.
- * Control nodes set the logic for how generator nodes are selected, mixed and parameterized before downstream mixer processing.
+ * Sound event nodes are a hierarchical collection of objects that either generate or control playback of audio content
+ * in PHASE.
+ * Generator nodes produce audio. They are always leaf nodes in a node hierarchy. These include samplers and push stream
+ * nodes.
+ * Control nodes set the logic for how generator nodes are selected, mixed and parameterized before downstream mixer
+ * processing.
  * Control nodes are always parent nodes, and can be organized into hierarchies for complex sound design scenarios.
  */
 @Generated

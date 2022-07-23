@@ -118,7 +118,8 @@ public class UISheetPresentationControllerDetent extends NSObject {
     public static native UISheetPresentationControllerDetent largeDetent();
 
     /**
-     * A system detent for a sheet that is approximately half the height of the screen, and is inactive in compact height.
+     * A system detent for a sheet that is approximately half the height of the screen, and is inactive in compact
+     * height.
      */
     @Generated
     @Selector("mediumDetent")

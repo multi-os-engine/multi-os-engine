@@ -43,7 +43,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("NSURLSessionDataDelegate")
 public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     /**
-     * Notification that a data task has become a download task.  No
+     * Notification that a data task has become a download task. No
      * future messages will be sent to the data task.
      */
     @Generated
@@ -56,13 +56,13 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
 
     /**
      * Notification that a data task has become a bidirectional stream
-     * task.  No future messages will be sent to the data task.  The newly
+     * task. No future messages will be sent to the data task. The newly
      * created streamTask will carry the original request and response as
      * properties.
      * <p>
      * For requests that were pipelined, the stream object will only allow
      * reading, and the object will immediately issue a
-     * -URLSession:writeClosedForStream:.  Pipelining can be disabled for
+     * -URLSession:writeClosedForStream:. Pipelining can be disabled for
      * all requests in a session, or by the NSURLRequest
      * HTTPShouldUsePipelining property.
      * <p>
@@ -79,8 +79,8 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     }
 
     /**
-     * Sent when data is available for the delegate to consume.  It is
-     * assumed that the delegate will retain and not copy the data.  As
+     * Sent when data is available for the delegate to consume. It is
+     * assumed that the delegate will retain and not copy the data. As
      * the data may be discontiguous, you should use
      * [NSData enumerateByteRangesUsingBlock:] to access it.
      */

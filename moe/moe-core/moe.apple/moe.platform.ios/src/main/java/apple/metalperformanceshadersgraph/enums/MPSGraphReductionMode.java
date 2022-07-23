@@ -4,16 +4,16 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * [@typedef]    MPSGraphStencilReductionMode
+ * [@typedef] MPSGraphStencilReductionMode
  * <p>
  * Reduction Mode
  * <p>
- * [@constant]   MPSGraphReductionModeMin                        Min
- * [@constant]   MPSGraphReductionModeMax                       Max
- * [@constant]   MPSGraphReductionModeSum                       Sum
- * [@constant]   MPSGraphReductionModeProduct                  Product
- * [@constant]   MPSGraphReductionModeArgumentMin         Argument Min
- * [@constant]   MPSGraphReductionModeArgumentMax        Argument Max
+ * [@constant] MPSGraphReductionModeMin Min
+ * [@constant] MPSGraphReductionModeMax Max
+ * [@constant] MPSGraphReductionModeSum Sum
+ * [@constant] MPSGraphReductionModeProduct Product
+ * [@constant] MPSGraphReductionModeArgumentMin Argument Min
+ * [@constant] MPSGraphReductionModeArgumentMax Argument Max
  */
 @Generated
 public final class MPSGraphReductionMode {

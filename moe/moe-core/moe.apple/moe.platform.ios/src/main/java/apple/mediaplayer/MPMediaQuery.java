@@ -209,7 +209,8 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     public native NSArray<? extends MPMediaQuerySection> collectionSections();
 
     /**
-     * Returns an array of MPMediaItemCollections matching the query filter predicates. The collections are grouped by the groupingType.
+     * Returns an array of MPMediaItemCollections matching the query filter predicates. The collections are grouped by
+     * the groupingType.
      */
     @Generated
     @Selector("collections")
@@ -250,7 +251,8 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     public native MPMediaQuery initWithFilterPredicates(NSSet<? extends MPMediaPredicate> filterPredicates);
 
     /**
-     * Returns an array of MPMediaQuerySection instances representing the section grouping of the query's items or collections.
+     * Returns an array of MPMediaQuerySection instances representing the section grouping of the query's items or
+     * collections.
      * May be nil in cases where no section grouping of the items or collections is appropriate.
      */
     @Generated
@@ -259,7 +261,8 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * Returns an array of MPMediaItems matching the query filter predicates.
-     * If no items match this method returns an empty array, otherwise returns nil if an error prevents the items from being fetched.
+     * If no items match this method returns an empty array, otherwise returns nil if an error prevents the items from
+     * being fetched.
      */
     @Generated
     @Selector("items")

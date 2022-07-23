@@ -34,11 +34,11 @@ public final class UITableViewRowAnimation {
      */
     @Generated @NInt public static final long None = 0x0000000000000005L;
     /**
-     * available in iOS 3.2.  attempts to keep cell centered in the space it will/did occupy
+     * available in iOS 3.2. attempts to keep cell centered in the space it will/did occupy
      */
     @Generated @NInt public static final long Middle = 0x0000000000000006L;
     /**
-     * available in iOS 5.0.  chooses an appropriate animation style for you
+     * available in iOS 5.0. chooses an appropriate animation style for you
      */
     @Generated @NInt public static final long Automatic = 0x0000000000000064L;
 

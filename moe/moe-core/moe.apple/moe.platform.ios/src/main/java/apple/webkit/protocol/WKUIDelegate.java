@@ -65,7 +65,8 @@ public interface WKUIDelegate {
     /**
      * Creates a new web view.
      * <p>
-     * The web view returned must be created with the specified configuration. WebKit will load the request in the returned web view.
+     * The web view returned must be created with the specified configuration. WebKit will load the request in the
+     * returned web view.
      * <p>
      * If you do not implement this method, the web view will cancel the navigation.
      *
@@ -93,13 +94,15 @@ public interface WKUIDelegate {
      * To use the defaultActions, your app is responsible for returning whichever of those actions it wants in your
      * view controller's implementation of -previewActionItems.
      * <p>
-     * Returning nil will result in WebKit's default preview behavior. webView:commitPreviewingViewController: will only be invoked
+     * Returning nil will result in WebKit's default preview behavior. webView:commitPreviewingViewController: will only
+     * be invoked
      * if a non-nil view controller was returned.
      *
      * @param webView        The web view invoking the delegate method.
      * @param elementInfo    The elementInfo for the element the user is peeking.
      * @param defaultActions An array of the actions that WebKit would use as previewActionItems for this element by
-     *                       default. These actions would be used if allowsLinkPreview is YES but these delegate methods have not been
+     *                       default. These actions would be used if allowsLinkPreview is YES but these delegate methods
+     *                       have not been
      *                       implemented, or if this delegate method returns nil.
      */
     @Generated
@@ -252,8 +255,10 @@ public interface WKUIDelegate {
      *
      * @param webView           The web view invoking the delegate method.
      * @param elementInfo       The elementInfo for the element the user is touching.
-     * @param completionHandler A completion handler to call once a it has been decided whether or not to show a context menu.
-     *                          Pass a valid UIContextMenuConfiguration to show a context menu, or pass nil to not show a context menu.
+     * @param completionHandler A completion handler to call once a it has been decided whether or not to show a context
+     *                          menu.
+     *                          Pass a valid UIContextMenuConfiguration to show a context menu, or pass nil to not show
+     *                          a context menu.
      */
     @Generated
     @IsOptional
@@ -316,7 +321,8 @@ public interface WKUIDelegate {
     }
 
     /**
-     * Allows your app to determine whether or not the given security origin should have access to the device's orientation and motion.
+     * Allows your app to determine whether or not the given security origin should have access to the device's
+     * orientation and motion.
      *
      * @param securityOrigin  The security origin which requested access to the device's orientation and motion.
      * @param frame           The frame that initiated the request.

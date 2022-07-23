@@ -202,9 +202,11 @@ public class SCNShape extends SCNGeometry {
     /**
      * [@property] chamferProfile
      * <p>
-     * Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path representing a quadrant.
+     * Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path
+     * representing a quadrant.
      * <p>
-     * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to flatten this path. The default value is nil.
+     * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to
+     * flatten this path. The default value is nil.
      */
     @Generated
     @Selector("chamferProfile")
@@ -247,7 +249,8 @@ public class SCNShape extends SCNGeometry {
      * <p>
      * The path defining the shape to be rendered.
      * <p>
-     * The path defines the outline of the shape. The path is filled using the even-odd rule. If the path is self-intersecting, the behavior is undefined.
+     * The path defines the outline of the shape. The path is filled using the even-odd rule. If the path is
+     * self-intersecting, the behavior is undefined.
      */
     @Generated
     @Selector("path")
@@ -267,9 +270,11 @@ public class SCNShape extends SCNGeometry {
     /**
      * [@property] chamferProfile
      * <p>
-     * Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path representing a quadrant.
+     * Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path
+     * representing a quadrant.
      * <p>
-     * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to flatten this path. The default value is nil.
+     * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to
+     * flatten this path. The default value is nil.
      */
     @Generated
     @Selector("setChamferProfile:")
@@ -302,7 +307,8 @@ public class SCNShape extends SCNGeometry {
      * <p>
      * The path defining the shape to be rendered.
      * <p>
-     * The path defines the outline of the shape. The path is filled using the even-odd rule. If the path is self-intersecting, the behavior is undefined.
+     * The path defines the outline of the shape. The path is filled using the even-odd rule. If the path is
+     * self-intersecting, the behavior is undefined.
      */
     @Generated
     @Selector("setPath:")

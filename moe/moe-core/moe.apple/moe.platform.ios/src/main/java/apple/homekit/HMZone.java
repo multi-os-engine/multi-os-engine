@@ -162,7 +162,7 @@ public class HMZone extends NSObject {
     /**
      * Adds a room to a zone.
      * <p>
-     * Both the room and the zone should be part of the home.  A room can be added to multiple
+     * Both the room and the zone should be part of the home. A room can be added to multiple
      * zones, e.g., a room "Kitchen" can be added to "Downstairs" as well as "Outdoor" zones.
      *
      * @param room       Room to add to this zone.

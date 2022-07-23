@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]       HKBiologicalSex
+ * [@enum] HKBiologicalSex
  * <p>
  * This enumerated type is used to represent the biological sex of an individual.
  */

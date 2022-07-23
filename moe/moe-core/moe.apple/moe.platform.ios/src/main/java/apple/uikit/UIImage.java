@@ -322,8 +322,12 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     public native UIImageAsset imageAsset();
 
     /**
-     * Creates a version of this image that, when assigned to a UIImageView’s image property, draws its underlying image contents horizontally mirrored when running under a right-to-left language. Affects the flipsForRightToLeftLayoutDirection property; does not affect the imageOrientation property.
-     * This method cannot be used to create a left-to-right version of a right-to-left source image, and will be deprecated in a future release. New code should instead use -imageWithHorizontallyFlippedOrientation to construct a UIImageAsset.
+     * Creates a version of this image that, when assigned to a UIImageView’s image property, draws its underlying image
+     * contents horizontally mirrored when running under a right-to-left language. Affects the
+     * flipsForRightToLeftLayoutDirection property; does not affect the imageOrientation property.
+     * This method cannot be used to create a left-to-right version of a right-to-left source image, and will be
+     * deprecated in a future release. New code should instead use -imageWithHorizontallyFlippedOrientation to construct
+     * a UIImageAsset.
      */
     @Generated
     @Selector("imageFlippedForRightToLeftLayoutDirection")
@@ -338,7 +342,8 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     public native long imageOrientation();
 
     /**
-     * Returns an optimal UIGraphicsImageRendererFormat instance for this image, maintaining pixel format and color space.
+     * Returns an optimal UIGraphicsImageRendererFormat instance for this image, maintaining pixel format and color
+     * space.
      */
     @Generated
     @Selector("imageRendererFormat")
@@ -356,14 +361,16 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     public native UIImage imageWithAlignmentRectInsets(@ByValue UIEdgeInsets alignmentInsets);
 
     /**
-     * Creates a version of this image with an imageOrientation property that is horizontally mirrored from this image’s. Does not affect the flipsForRightToLeftLayoutDirection property.
+     * Creates a version of this image with an imageOrientation property that is horizontally mirrored from this
+     * image’s. Does not affect the flipsForRightToLeftLayoutDirection property.
      */
     @Generated
     @Selector("imageWithHorizontallyFlippedOrientation")
     public native UIImage imageWithHorizontallyFlippedOrientation();
 
     /**
-     * Create a version of this image with the specified rendering mode. By default, images have a rendering mode of UIImageRenderingModeAutomatic.
+     * Create a version of this image with the specified rendering mode. By default, images have a rendering mode of
+     * UIImageRenderingModeAutomatic.
      */
     @Generated
     @Selector("imageWithRenderingMode:")
@@ -460,7 +467,8 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     public native void setAccessibilityIdentifier(String value);
 
     /**
-     * reflects orientation setting. In iOS 4.0 and later, this is measured in points. In 3.x and earlier, measured in pixels
+     * reflects orientation setting. In iOS 4.0 and later, this is measured in points. In 3.x and earlier, measured in
+     * pixels
      */
     @Generated
     @Selector("size")
@@ -650,12 +658,12 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
      * *
      * * Important note! Given (for example):
      * *
-     * *    image = image(named:"the_image").withRenderingMode(.alwaysTemplate)
+     * * image = image(named:"the_image").withRenderingMode(.alwaysTemplate)
      * <p>
      * * the following two statements aren't exactly equivalent:
      * *
-     * *    a = image.imageAsset.withConfiguration(configuration)
-     * *    b = image.withConfiguration(configuration)
+     * * a = image.imageAsset.withConfiguration(configuration)
+     * * b = image.withConfiguration(configuration)
      * *
      * * The first one will resolve the image again from the asset catalog (if it is originating from one),
      * * resulting in a fresh image without any modifications. In other words, `a` won't have the
@@ -741,7 +749,9 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     /**
      * Synchronously prepares this image for displaying on the specified screen.
      * <p>
-     * [@note] The prepared UIImage is not related to the original image. If the properties of the screen (such as its resolution or color gamut) change, or if the image is displayed on a different screen that the one it was prepared for, it may not render correctly.
+     * [@note] The prepared UIImage is not related to the original image. If the properties of the screen (such as its
+     * resolution or color gamut) change, or if the image is displayed on a different screen that the one it was
+     * prepared for, it may not render correctly.
      *
      * @return A UIImage object that contains the prepared image.
      */
@@ -756,11 +766,15 @@ public class UIImage extends NSObject implements NSSecureCoding, NSItemProviderR
     /**
      * Asynchronously prepares this image for displaying on the specified screen.
      * <p>
-     * The completion handler will be invoked on a private queue. Be sure to return to the main queue before assigning the prepared image to an image view.
+     * The completion handler will be invoked on a private queue. Be sure to return to the main queue before assigning
+     * the prepared image to an image view.
      * <p>
-     * [@note] The prepared UIImage is not related to the original image. If the properties of the screen (such as its resolution or color gamut) change, or if the image is displayed on a different screen that the one it was prepared for, it may not render correctly.
+     * [@note] The prepared UIImage is not related to the original image. If the properties of the screen (such as its
+     * resolution or color gamut) change, or if the image is displayed on a different screen that the one it was
+     * prepared for, it may not render correctly.
      *
-     * @param completionHandler A block to invoke with the prepared image. If preparation failed (for example, beacuse the image data is corrupt), @c image will be nil.
+     * @param completionHandler A block to invoke with the prepared image. If preparation failed (for example, beacuse
+     *                          the image data is corrupt), @c image will be nil.
      */
     @Generated
     @Selector("prepareForDisplayWithCompletionHandler:")

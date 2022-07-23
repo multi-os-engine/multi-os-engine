@@ -65,7 +65,8 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * The amount of space reserved during paragraph layout between the bottom of the last line in the paragraph and the bottom of the text layout fragment.
+     * The amount of space reserved during paragraph layout between the bottom of the last line in the paragraph and the
+     * bottom of the text layout fragment.
      */
     @Generated
     @Selector("bottomMargin")
@@ -110,7 +111,8 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * Returns the frame in the text layout fragment coordinate system for the attachment at location. It returns CGRectZero if location is not with any attachment or the state is not NSTextLayoutFragmentStateLayoutAvailable.
+     * Returns the frame in the text layout fragment coordinate system for the attachment at location. It returns
+     * CGRectZero if location is not with any attachment or the state is not NSTextLayoutFragmentStateLayoutAvailable.
      */
     @Generated
     @Selector("frameForTextAttachmentAtLocation:")
@@ -163,7 +165,8 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * The rect for tiling the layout fragment inside the target layout coordinate system typically in an NSTextContainer.
+     * The rect for tiling the layout fragment inside the target layout coordinate system typically in an
+     * NSTextContainer.
      */
     @Generated
     @Selector("layoutFragmentFrame")
@@ -178,7 +181,8 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
     public native NSOperationQueue layoutQueue();
 
     /**
-     * The amount of margin space reserved during paragraph layout between the leading edge of the text layout fragment (according to the primary writing direction of the paragraph) and the start of the lines in the paragraph.
+     * The amount of margin space reserved during paragraph layout between the leading edge of the text layout fragment
+     * (according to the primary writing direction of the paragraph) and the start of the lines in the paragraph.
      */
     @Generated
     @Selector("leadingPadding")
@@ -198,7 +202,10 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
     public native NSTextRange rangeInElement();
 
     /**
-     * The bounds defining the area required for rendering the contents. The coordinate system is vertically flipped from the layoutFragmentFrame origin ({0,0} is at the upper left corner). The size should be larger than layoutFragmentFrame.size. The origin could be in the negative coordinate since the rendering could be stretched out of layoutFragmentFrame. Only valid when state > NSTextLayoutFragmentStateEstimatedUsageBounds.
+     * The bounds defining the area required for rendering the contents. The coordinate system is vertically flipped
+     * from the layoutFragmentFrame origin ({0,0} is at the upper left corner). The size should be larger than
+     * layoutFragmentFrame.size. The origin could be in the negative coordinate since the rendering could be stretched
+     * out of layoutFragmentFrame. Only valid when state > NSTextLayoutFragmentStateEstimatedUsageBounds.
      */
     @Generated
     @Selector("renderingSurfaceBounds")
@@ -247,7 +254,8 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
     }
 
     /**
-     * Returns NSTextAttachmentViewProvider associated with the receiver. The property contents are only valid with NSTextLayoutFragmentStateLayoutAvailable.
+     * Returns NSTextAttachmentViewProvider associated with the receiver. The property contents are only valid with
+     * NSTextLayoutFragmentStateLayoutAvailable.
      */
     @Generated
     @Selector("textAttachmentViewProviders")
@@ -272,7 +280,8 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
     public native NSArray<? extends NSTextLineFragment> textLineFragments();
 
     /**
-     * The amount of space reserved during paragraph layout between the top of the text layout fragment and the top of the first line in the paragraph.
+     * The amount of space reserved during paragraph layout between the top of the text layout fragment and the top of
+     * the first line in the paragraph.
      */
     @Generated
     @Selector("topMargin")
@@ -280,7 +289,8 @@ public class NSTextLayoutFragment extends NSObject implements NSSecureCoding {
     public native double topMargin();
 
     /**
-     * The amount of margin space reserved during paragraph layout between the end of the lines in the paragraph and the trailing edge of the text layout fragment (according to the primary writing direction of the paragraph).
+     * The amount of margin space reserved during paragraph layout between the end of the lines in the paragraph and the
+     * trailing edge of the text layout fragment (according to the primary writing direction of the paragraph).
      */
     @Generated
     @Selector("trailingPadding")

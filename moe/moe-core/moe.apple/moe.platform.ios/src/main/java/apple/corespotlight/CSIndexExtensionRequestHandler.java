@@ -52,8 +52,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("CoreSpotlight")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class CSIndexExtensionRequestHandler extends NSObject
-        implements NSExtensionRequestHandling, CSSearchableIndexDelegate {
+public class CSIndexExtensionRequestHandler extends NSObject implements NSExtensionRequestHandling,
+        CSSearchableIndexDelegate {
     static {
         NatJ.register();
     }

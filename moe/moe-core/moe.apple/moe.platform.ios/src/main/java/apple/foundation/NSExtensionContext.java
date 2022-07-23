@@ -156,14 +156,20 @@ public class NSExtensionContext extends NSObject {
     public static native long version_static();
 
     /**
-     * Signals the host to cancel the app extension request, with the supplied error, which should be non-nil. The userInfo of the NSError will contain a key NSExtensionItemsAndErrorsKey which will have as its value a dictionary of NSExtensionItems and associated NSError instances.
+     * Signals the host to cancel the app extension request, with the supplied error, which should be non-nil. The
+     * userInfo of the NSError will contain a key NSExtensionItemsAndErrorsKey which will have as its value a dictionary
+     * of NSExtensionItems and associated NSError instances.
      */
     @Generated
     @Selector("cancelRequestWithError:")
     public native void cancelRequestWithError(NSError error);
 
     /**
-     * Signals the host to complete the app extension request with the supplied result items. The completion handler optionally contains any work which the extension may need to perform after the request has been completed, as a background-priority task. The `expired` parameter will be YES if the system decides to prematurely terminate a previous non-expiration invocation of the completionHandler. Note: calling this method will eventually dismiss the associated view controller.
+     * Signals the host to complete the app extension request with the supplied result items. The completion handler
+     * optionally contains any work which the extension may need to perform after the request has been completed, as a
+     * background-priority task. The `expired` parameter will be YES if the system decides to prematurely terminate a
+     * previous non-expiration invocation of the completionHandler. Note: calling this method will eventually dismiss
+     * the associated view controller.
      */
     @Generated
     @Selector("completeRequestReturningItems:completionHandler:")
@@ -190,7 +196,8 @@ public class NSExtensionContext extends NSObject {
     public native NSExtensionContext init();
 
     /**
-     * The list of input NSExtensionItems associated with the context. If the context has no input items, this array will be empty.
+     * The list of input NSExtensionItems associated with the context. If the context has no input items, this array
+     * will be empty.
      */
     @Generated
     @Selector("inputItems")
@@ -227,8 +234,10 @@ public class NSExtensionContext extends NSObject {
             @ObjCBlock(name = "call_openURLCompletionHandler") Block_openURLCompletionHandler completionHandler);
 
     /**
-     * Widgets can change the largest display mode they make available from the default 'NCWidgetDisplayModeCompact' by messaging the extension context.
-     * Modifying this property more than once during the lifetime of the widget (perhaps due to changes in the amount of available content) is supported.
+     * Widgets can change the largest display mode they make available from the default 'NCWidgetDisplayModeCompact' by
+     * messaging the extension context.
+     * Modifying this property more than once during the lifetime of the widget (perhaps due to changes in the amount of
+     * available content) is supported.
      */
     @Generated
     @Selector("setWidgetLargestAvailableDisplayMode:")
@@ -240,8 +249,10 @@ public class NSExtensionContext extends NSObject {
     public native long widgetActiveDisplayMode();
 
     /**
-     * Widgets can change the largest display mode they make available from the default 'NCWidgetDisplayModeCompact' by messaging the extension context.
-     * Modifying this property more than once during the lifetime of the widget (perhaps due to changes in the amount of available content) is supported.
+     * Widgets can change the largest display mode they make available from the default 'NCWidgetDisplayModeCompact' by
+     * messaging the extension context.
+     * Modifying this property more than once during the lifetime of the widget (perhaps due to changes in the amount of
+     * available content) is supported.
      */
     @Generated
     @Selector("widgetLargestAvailableDisplayMode")

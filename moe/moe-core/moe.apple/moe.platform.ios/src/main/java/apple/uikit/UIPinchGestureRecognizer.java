@@ -41,9 +41,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Begins:  when two touches have moved enough to be considered a pinch
+ * Begins: when two touches have moved enough to be considered a pinch
  * Changes: when a finger moves while two fingers remain down
- * Ends:    when both fingers have lifted
+ * Ends: when both fingers have lifted
  */
 @Generated
 @Library("UIKit")

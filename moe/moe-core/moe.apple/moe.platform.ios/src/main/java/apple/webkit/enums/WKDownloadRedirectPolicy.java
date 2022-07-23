@@ -6,9 +6,10 @@ import org.moe.natj.general.ann.NInt;
 /**
  * [@enum] WKDownloadRedirectPolicy
  * <p>
- * The policy to pass back to the decision handler from the download:willPerformHTTPRedirection:newRequest:decisionHandler: method.
- * [@constant] WKDownloadRedirectPolicyCancel   Cancel the redirect.
- * [@constant] WKDownloadRedirectPolicyAllow    Allow the redirect.
+ * The policy to pass back to the decision handler from the
+ * download:willPerformHTTPRedirection:newRequest:decisionHandler: method.
+ * [@constant] WKDownloadRedirectPolicyCancel Cancel the redirect.
+ * [@constant] WKDownloadRedirectPolicyAllow Allow the redirect.
  */
 @Generated
 public final class WKDownloadRedirectPolicy {

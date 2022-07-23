@@ -41,7 +41,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * PHCollectionListChangeRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or -[PHPhotoLibrary performChangesAndWait:] block.
+ * PHCollectionListChangeRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or
+ * -[PHPhotoLibrary performChangesAndWait:] block.
  */
 @Generated
 @Library("Photos")
@@ -86,14 +87,17 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * if the collection list does not allow the type of change requested, these methods will raise an exception, call canPerformEditOperation: on the collection list to determine if the type of edit operation is allowed.
+     * if the collection list does not allow the type of change requested, these methods will raise an exception, call
+     * canPerformEditOperation: on the collection list to determine if the type of edit operation is allowed.
      */
     @Generated
     @Selector("changeRequestForCollectionList:")
     public static native PHCollectionListChangeRequest changeRequestForCollectionList(PHCollectionList collectionList);
 
     /**
-     * to add, remove or rearrange child collections in a collection list, passing in the fetched collections in that collection list will ensure that the child collection positions are tracked correctly in the case that the collection list has been externally edited after the fetch, but before this change is applied
+     * to add, remove or rearrange child collections in a collection list, passing in the fetched collections in that
+     * collection list will ensure that the child collection positions are tracked correctly in the case that the
+     * collection list has been externally edited after the fetch, but before this change is applied
      */
     @Generated
     @Selector("changeRequestForCollectionList:childCollections:")
@@ -196,14 +200,17 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
             NSIndexSet indexes);
 
     /**
-     * The move removes the child collections at fromIndexes first then inserts those collections at the toIndex, so toIndex should point to a location based on the updated indexes after having removed the child collections at fromIndexes
+     * The move removes the child collections at fromIndexes first then inserts those collections at the toIndex, so
+     * toIndex should point to a location based on the updated indexes after having removed the child collections at
+     * fromIndexes
      */
     @Generated
     @Selector("moveChildCollectionsAtIndexes:toIndex:")
     public native void moveChildCollectionsAtIndexesToIndex(NSIndexSet indexes, @NUInt long toIndex);
 
     /**
-     * This can be used to fetch the newly created collection list after the change block has completed by using -localIdentifier
+     * This can be used to fetch the newly created collection list after the change block has completed by using
+     * -localIdentifier
      * It can also be added directly to collection lists within the current change block
      */
     @Generated
@@ -232,7 +239,9 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
     public native String title();
 
     /**
-     * to add, remove or rearrange child collections in the TOP LEVEL collection list, passing in the fetched collections in that collection list will ensure that the child collection positions are tracked correctly in the case that the collection list has been externally edited after the fetch, but before this change is applied
+     * to add, remove or rearrange child collections in the TOP LEVEL collection list, passing in the fetched
+     * collections in that collection list will ensure that the child collection positions are tracked correctly in the
+     * case that the collection list has been externally edited after the fetch, but before this change is applied
      */
     @Generated
     @Selector("changeRequestForTopLevelCollectionListUserCollections:")

@@ -253,7 +253,8 @@ public class UICollectionViewListCell extends UICollectionViewCell {
     public native double indentationWidth();
 
     /**
-     * Defines whether accessories on the leading side are indented as well. If NO, only the content view will be indented.
+     * Defines whether accessories on the leading side are indented as well. If NO, only the content view will be
+     * indented.
      * Defaults to YES.
      */
     @Generated
@@ -419,7 +420,8 @@ public class UICollectionViewListCell extends UICollectionViewCell {
     public native void setIndentationWidth(@NFloat double value);
 
     /**
-     * Defines whether accessories on the leading side are indented as well. If NO, only the content view will be indented.
+     * Defines whether accessories on the leading side are indented as well. If NO, only the content view will be
+     * indented.
      * Defaults to YES.
      */
     @Generated

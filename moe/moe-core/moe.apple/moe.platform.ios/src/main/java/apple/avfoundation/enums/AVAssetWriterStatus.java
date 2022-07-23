@@ -22,18 +22,21 @@ import org.moe.natj.general.ann.NInt;
 /**
  * [@enum] AVAssetWriterStatus
  * <p>
- * These constants are returned by the AVAssetWriter status property to indicate whether it can successfully write samples to its output file.
+ * These constants are returned by the AVAssetWriter status property to indicate whether it can successfully write
+ * samples to its output file.
  * <p>
- * [@constant]	 AVAssetWriterStatusUnknown
+ * [@constant] AVAssetWriterStatusUnknown
  * Indicates that the status of the asset writer is not currently known.
- * [@constant]	 AVAssetWriterStatusWriting
+ * [@constant] AVAssetWriterStatusWriting
  * Indicates that the asset writer is successfully writing samples to its output file.
- * [@constant]	 AVAssetWriterStatusCompleted
+ * [@constant] AVAssetWriterStatusCompleted
  * Indicates that the asset writer has successfully written all samples following a call to finishWriting.
- * [@constant]	 AVAssetWriterStatusFailed
- * Indicates that the asset writer can no longer write samples to its output file because of an error. The error is described by the value of the asset writer's error property.
- * [@constant]	 AVAssetWriterStatusCancelled
- * Indicates that the asset writer can no longer write samples because writing was canceled with the cancelWriting method.
+ * [@constant] AVAssetWriterStatusFailed
+ * Indicates that the asset writer can no longer write samples to its output file because of an error. The error is
+ * described by the value of the asset writer's error property.
+ * [@constant] AVAssetWriterStatusCancelled
+ * Indicates that the asset writer can no longer write samples because writing was canceled with the cancelWriting
+ * method.
  */
 @Generated
 public final class AVAssetWriterStatus {

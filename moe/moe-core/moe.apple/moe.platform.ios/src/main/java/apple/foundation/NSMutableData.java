@@ -43,7 +43,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Mutable Data		***************
+ * Mutable Data ***************
  */
 @Generated
 @Library("Foundation")
@@ -338,7 +338,8 @@ public class NSMutableData extends NSData {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * These methods compress or decompress the receiver's contents in-place using the specified algorithm. If the operation is not successful, these methods leave the receiver unchanged..
+     * These methods compress or decompress the receiver's contents in-place using the specified algorithm. If the
+     * operation is not successful, these methods leave the receiver unchanged..
      */
     @Generated
     @Selector("decompressUsingAlgorithm:error:")

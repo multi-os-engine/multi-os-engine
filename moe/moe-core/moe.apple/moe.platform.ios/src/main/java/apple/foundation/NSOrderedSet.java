@@ -50,14 +50,14 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Immutable Ordered Set   ***************
+ * Immutable Ordered Set ***************
  */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSOrderedSet<_ObjectType> extends NSObject
-        implements NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration {
+public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NSMutableCopying, NSSecureCoding,
+        NSFastEnumeration {
     static {
         NatJ.register();
     }
@@ -210,7 +210,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     public static native long version_static();
 
     /**
-     * NSOrderedSets are not observable, so these methods raise exceptions when invoked on NSOrderedSets. Instead of observing an ordered set, observe the ordered to-many relationship for which the ordered set is the collection of related objects.
+     * NSOrderedSets are not observable, so these methods raise exceptions when invoked on NSOrderedSets. Instead of
+     * observing an ordered set, observe the ordered to-many relationship for which the ordered set is the collection of
+     * related objects.
      */
     @Generated
     @Selector("addObserver:forKeyPath:options:context:")
@@ -219,7 +221,7 @@ public class NSOrderedSet<_ObjectType> extends NSObject
 
     /**
      * These two methods return a facade object for the receiving ordered set,
-     * which acts like an immutable array or set (respectively).  Note that
+     * which acts like an immutable array or set (respectively). Note that
      * while you cannot mutate the ordered set through these facades, mutations
      * to the original ordered set will "show through" the facade and it will
      * appear to change spontaneously, since a copy of the ordered set is not
@@ -503,7 +505,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject
     }
 
     /**
-     * Return an ordered set containing the results of invoking -valueForKey: on each of the receiver's members. The returned ordered set might not have the same number of members as the receiver. The returned ordered set will not contain any elements corresponding to instances of -valueForKey: returning nil, nor will it contain duplicates.
+     * Return an ordered set containing the results of invoking -valueForKey: on each of the receiver's members. The
+     * returned ordered set might not have the same number of members as the receiver. The returned ordered set will not
+     * contain any elements corresponding to instances of -valueForKey: returning nil, nor will it contain duplicates.
      */
     @Generated
     @Selector("valueForKey:")

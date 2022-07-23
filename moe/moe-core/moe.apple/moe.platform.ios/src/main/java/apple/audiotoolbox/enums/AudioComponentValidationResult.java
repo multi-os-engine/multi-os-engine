@@ -19,18 +19,18 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]		 AudioComponentValidationResult
+ * [@enum] AudioComponentValidationResult
  * <p>
  * Constants for describing the result of validating an AudioComponent
- * [@constant]	 kAudioComponentValidationResult_Passed
+ * [@constant] kAudioComponentValidationResult_Passed
  * The AudioComponent passed validation.
- * [@constant]	 kAudioComponentValidationResult_Failed
+ * [@constant] kAudioComponentValidationResult_Failed
  * The AudioComponent failed validation.
- * [@constant]	 kAudioComponentValidationResult_TimedOut
+ * [@constant] kAudioComponentValidationResult_TimedOut
  * The validation operation timed out before completing.
- * [@constant]	 kAudioComponentValidationResult_UnauthorizedError_Open
+ * [@constant] kAudioComponentValidationResult_UnauthorizedError_Open
  * The AudioComponent failed validation during open operation as it is not authorized.
- * [@constant]	 kAudioComponentValidationResult_UnauthorizedError_Init
+ * [@constant] kAudioComponentValidationResult_UnauthorizedError_Init
  * The AudioComponent failed validation during initialization as it is not authorized.
  */
 @Generated

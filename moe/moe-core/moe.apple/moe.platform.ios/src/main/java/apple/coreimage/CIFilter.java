@@ -57,7 +57,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * CIFilter are filter objects for Core Image that encapsulate the filter with its attributes
  * <p>
- * The CIFilter class produces a CIImage object as output. Typically, a filter takes one or more images as input. Some filters, however, generate an image based on other types of input parameters. The parameters of a CIFilter object are set and retrieved through the use of key-value pairs. You use the CIFilter object in conjunction with the CIImage, CIContext, CIVector, CIImageAccumulator, and CIColor objects to take advantage of the built-in Core Image filters when processing images. CIFilter objects are also used along with CIKernel, CISampler, and CIFilterShape objects to create custom filters.
+ * The CIFilter class produces a CIImage object as output. Typically, a filter takes one or more images as input. Some
+ * filters, however, generate an image based on other types of input parameters. The parameters of a CIFilter object are
+ * set and retrieved through the use of key-value pairs. You use the CIFilter object in conjunction with the CIImage,
+ * CIContext, CIVector, CIImageAccumulator, and CIColor objects to take advantage of the built-in Core Image filters
+ * when processing images. CIFilter objects are also used along with CIKernel, CISampler, and CIFilterShape objects to
+ * create custom filters.
  */
 @Generated
 @Library("CoreImage")
@@ -142,8 +147,10 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Returns a CIFilter that will in turn return a properly processed CIImage as "outputImage".
      * <p>
-     * Note that when using this initializer, you should pass in a CVPixelBufferRef with one of the following Raw pixel format types
-     * kCVPixelFormatType_14Bayer_GRBG, kCVPixelFormatType_14Bayer_RGGB, kCVPixelFormatType_14Bayer_BGGR, kCVPixelFormatType_14Bayer_GBRG
+     * Note that when using this initializer, you should pass in a CVPixelBufferRef with one of the following Raw pixel
+     * format types
+     * kCVPixelFormatType_14Bayer_GRBG, kCVPixelFormatType_14Bayer_RGGB, kCVPixelFormatType_14Bayer_BGGR,
+     * kCVPixelFormatType_14Bayer_GBRG
      * as well as the root properties attachment from the CMSampleBufferRef.
      */
     @Generated
@@ -154,7 +161,9 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Returns a CIFilter that will in turn return a properly processed CIImage as "outputImage".
      * <p>
-     * Note that when using this initializer, you should pass in a source type identifier hint (kCGImageSourceTypeIdentifierHint) key/value pair in order to help the decoder determine the file type, as otherwise confusion and incorrect results are possible.
+     * Note that when using this initializer, you should pass in a source type identifier hint
+     * (kCGImageSourceTypeIdentifierHint) key/value pair in order to help the decoder determine the file type, as
+     * otherwise confusion and incorrect results are possible.
      */
     @Generated
     @Selector("filterWithImageData:options:")
@@ -248,7 +257,8 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Returns the URL to the localized reference documentation describing the filter.
      * <p>
-     * The URL can be a local file or a remote document on a webserver. It is possible, that this method returns nil (like filters that predate this feature). A client of this API has to handle this case gracefully.
+     * The URL can be a local file or a remote document on a webserver. It is possible, that this method returns nil
+     * (like filters that predate this feature). A client of this API has to handle this case gracefully.
      */
     @Generated
     @Selector("localizedReferenceDocumentationForFilterName:")

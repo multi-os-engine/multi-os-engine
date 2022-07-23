@@ -130,7 +130,8 @@ public class ASAuthorizationAppleIDRequest extends ASAuthorizationOpenIDRequest 
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * If you have been previously vended a 'user' value through ASAuthorization response, you may set it here to provide additional context to identity provider.
+     * If you have been previously vended a 'user' value through ASAuthorization response, you may set it here to
+     * provide additional context to identity provider.
      *
      * @see ASAuthorizationAppleIDCredential doc for the description of this property in context of response.
      */
@@ -157,7 +158,8 @@ public class ASAuthorizationAppleIDRequest extends ASAuthorizationOpenIDRequest 
     }
 
     /**
-     * If you have been previously vended a 'user' value through ASAuthorization response, you may set it here to provide additional context to identity provider.
+     * If you have been previously vended a 'user' value through ASAuthorization response, you may set it here to
+     * provide additional context to identity provider.
      *
      * @see ASAuthorizationAppleIDCredential doc for the description of this property in context of response.
      */

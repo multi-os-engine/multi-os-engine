@@ -281,7 +281,11 @@ public class NSCoder extends NSObject {
     public native Object decodeObjectForKey(String key);
 
     /**
-     * Specify what the expected class of the allocated object is. If the coder responds YES to -requiresSecureCoding, then an exception will be thrown if the class to be decoded does not implement NSSecureCoding or is not isKindOfClass: of the argument. If the coder responds NO to -requiresSecureCoding, then the class argument is ignored and no check of the class of the decoded object is performed, exactly as if decodeObjectForKey: had been called.
+     * Specify what the expected class of the allocated object is. If the coder responds YES to -requiresSecureCoding,
+     * then an exception will be thrown if the class to be decoded does not implement NSSecureCoding or is not
+     * isKindOfClass: of the argument. If the coder responds NO to -requiresSecureCoding, then the class argument is
+     * ignored and no check of the class of the decoded object is performed, exactly as if decodeObjectForKey: had been
+     * called.
      */
     @Generated
     @Selector("decodeObjectOfClass:forKey:")
@@ -289,7 +293,8 @@ public class NSCoder extends NSObject {
     public native Object decodeObjectOfClassForKey(Class aClass, String key);
 
     /**
-     * The class of the object may be any class in the provided NSSet, or a subclass of any class in the set. Otherwise, the behavior is the same as -decodeObjectOfClass:forKey:.
+     * The class of the object may be any class in the provided NSSet, or a subclass of any class in the set. Otherwise,
+     * the behavior is the same as -decodeObjectOfClass:forKey:.
      */
     @Generated
     @Selector("decodeObjectOfClasses:forKey:")
@@ -338,7 +343,8 @@ public class NSCoder extends NSObject {
     public native UIOffset decodeUIOffsetForKey(String key);
 
     /**
-     * This method is unsafe because it could potentially cause buffer overruns. You should use -decodeValueOfObjCType:at:size: instead.
+     * This method is unsafe because it could potentially cause buffer overruns. You should use
+     * -decodeValueOfObjCType:at:size: instead.
      */
     @Generated
     @Selector("decodeValueOfObjCType:at:")
@@ -352,7 +358,8 @@ public class NSCoder extends NSObject {
     /**
      * Defines the behavior this NSCoder should take on decode failure (i.e. corrupt archive, invalid data, etc.).
      * <p>
-     * The default result of this property is NSDecodingFailurePolicyRaiseException, subclasses can change this to an alternative policy.
+     * The default result of this property is NSDecodingFailurePolicyRaiseException, subclasses can change this to an
+     * alternative policy.
      */
     @Generated
     @Selector("decodingFailurePolicy")
@@ -486,11 +493,13 @@ public class NSCoder extends NSObject {
      * <p>
      * The meaning of this property changes based on the result of the decodingFailurePolicy property:
      * For NSDecodingFailurePolicyRaiseException, this property will always be nil.
-     * For NSDecodingFailurePolicySetErrorAndReturn, this property can be non-nil, and if so, indicates that there was a failure while decoding the archive (specifically its the very first error encountered).
+     * For NSDecodingFailurePolicySetErrorAndReturn, this property can be non-nil, and if so, indicates that there was a
+     * failure while decoding the archive (specifically its the very first error encountered).
      * <p>
      * While .error is non-nil, all attempts to decode data from this coder will return a nil/zero-equivalent value.
      * <p>
-     * This error is consumed by a TopLevel decode API (which resets this coder back to a being able to potentially decode data).
+     * This error is consumed by a TopLevel decode API (which resets this coder back to a being able to potentially
+     * decode data).
      */
     @Generated
     @Selector("error")
@@ -500,32 +509,38 @@ public class NSCoder extends NSObject {
      * Signals to this coder that the decode has failed.
      * [@parameter] non-nil error that describes the reason why the decode failed
      * <p>
-     * Sets an error on this NSCoder once per TopLevel decode; calling it repeatedly will have no effect until the call stack unwinds to one of the TopLevel decode entry-points.
+     * Sets an error on this NSCoder once per TopLevel decode; calling it repeatedly will have no effect until the call
+     * stack unwinds to one of the TopLevel decode entry-points.
      * <p>
      * This method is only meaningful to call for decodes.
      * <p>
-     * Typically, you would want to call this method in your -initWithCoder: implementation when you detect situations like:
+     * Typically, you would want to call this method in your -initWithCoder: implementation when you detect situations
+     * like:
      * - lack of secure coding
      * - corruption of your data
      * - domain validation failures
      * <p>
-     * After calling -failWithError: within your -initWithCoder: implementation, you should clean up and return nil as early as possible.
+     * After calling -failWithError: within your -initWithCoder: implementation, you should clean up and return nil as
+     * early as possible.
      * <p>
-     * Once an error has been signaled to a decoder, it remains set until it has handed off to the first TopLevel decode invocation above it.  For example, consider the following call graph:
-     * A    -decodeTopLevelObjectForKey:error:
-     * B        -initWithCoder:
-     * C            -decodeObjectForKey:
-     * D                -initWithCoder:
-     * E                    -decodeObjectForKey:
-     * F                        -failWithError:
+     * Once an error has been signaled to a decoder, it remains set until it has handed off to the first TopLevel decode
+     * invocation above it. For example, consider the following call graph:
+     * A -decodeTopLevelObjectForKey:error:
+     * B -initWithCoder:
+     * C -decodeObjectForKey:
+     * D -initWithCoder:
+     * E -decodeObjectForKey:
+     * F -failWithError:
      * <p>
-     * In this case the error provided in stack-frame F will be returned via the outError in stack-frame A. Furthermore the result object from decodeTopLevelObjectForKey:error: will be nil, regardless of the result of stack-frame B.
+     * In this case the error provided in stack-frame F will be returned via the outError in stack-frame A. Furthermore
+     * the result object from decodeTopLevelObjectForKey:error: will be nil, regardless of the result of stack-frame B.
      * <p>
      * NSCoder implementations support two mechanisms for the stack-unwinding from F to A:
      * - forced (NSException based)
      * - particpatory (error based)
      * <p>
-     * The kind of unwinding you get is determined by the decodingFailurePolicy property of this NSCoder (which defaults to NSDecodingFailurePolicyRaiseException to match historical behavior).
+     * The kind of unwinding you get is determined by the decodingFailurePolicy property of this NSCoder (which defaults
+     * to NSDecodingFailurePolicyRaiseException to match historical behavior).
      */
     @Generated
     @Selector("failWithError:")
@@ -536,7 +551,8 @@ public class NSCoder extends NSObject {
     public native NSCoder init();
 
     /**
-     * Returns YES if this coder requires secure coding. Secure coders check a list of allowed classes before decoding objects, and all objects must implement NSSecureCoding.
+     * Returns YES if this coder requires secure coding. Secure coders check a list of allowed classes before decoding
+     * objects, and all objects must implement NSSecureCoding.
      */
     @Generated
     @Selector("requiresSecureCoding")
@@ -567,33 +583,43 @@ public class NSCoder extends NSObject {
     public native void encodeDirectionalEdgeInsetsForKey(@ByValue NSDirectionalEdgeInsets insets, String key);
 
     /**
-     * Decodes the \c NSArray object for the given  \c key, which should be an \c NSArray<cls>, containing the given non-collection class (no nested arrays or arrays of dictionaries, etc) from the coder.
+     * Decodes the \c NSArray object for the given \c key, which should be an \c NSArray<cls>, containing the given
+     * non-collection class (no nested arrays or arrays of dictionaries, etc) from the coder.
      * <p>
-     * Requires \c NSSecureCoding otherwise an exception is thrown and sets the \c decodingFailurePolicy to \c NSDecodingFailurePolicySetErrorAndReturn.
+     * Requires \c NSSecureCoding otherwise an exception is thrown and sets the \c decodingFailurePolicy to \c
+     * NSDecodingFailurePolicySetErrorAndReturn.
      * <p>
-     * Returns \c nil if the object for \c key is not of the expected types, or cannot be decoded, and sets the \c error on the decoder.
+     * Returns \c nil if the object for \c key is not of the expected types, or cannot be decoded, and sets the \c error
+     * on the decoder.
      */
     @Generated
     @Selector("decodeArrayOfObjectsOfClass:forKey:")
     public native NSArray<?> decodeArrayOfObjectsOfClassForKey(Class cls, String key);
 
     /**
-     * Decodes the \c NSArray object for the given \c key, which should be an \c NSArray, containing the given non-collection classes (no nested arrays or arrays of dictionaries, etc) from the coder.
+     * Decodes the \c NSArray object for the given \c key, which should be an \c NSArray, containing the given
+     * non-collection classes (no nested arrays or arrays of dictionaries, etc) from the coder.
      * <p>
-     * Requires \c NSSecureCoding otherwise an exception is thrown and sets the \c decodingFailurePolicy to \c NSDecodingFailurePolicySetErrorAndReturn.
+     * Requires \c NSSecureCoding otherwise an exception is thrown and sets the \c decodingFailurePolicy to \c
+     * NSDecodingFailurePolicySetErrorAndReturn.
      * <p>
-     * Returns \c nil if the object for \c key is not of the expected types, or cannot be decoded, and sets the \c error on the decoder.
+     * Returns \c nil if the object for \c key is not of the expected types, or cannot be decoded, and sets the \c error
+     * on the decoder.
      */
     @Generated
     @Selector("decodeArrayOfObjectsOfClasses:forKey:")
     public native NSArray<?> decodeArrayOfObjectsOfClassesForKey(NSSet<? extends Class> classes, String key);
 
     /**
-     * Decodes the \c NSDictionary object for the given \c key, which should be an \c NSDictionary<keyCls,objectCls> , with keys of type given in \c keyCls and objects of the given non-collection class \c objectCls (no nested dictionaries or other dictionaries contained in the dictionary, etc) from the coder.
+     * Decodes the \c NSDictionary object for the given \c key, which should be an \c NSDictionary<keyCls,objectCls> ,
+     * with keys of type given in \c keyCls and objects of the given non-collection class \c objectCls (no nested
+     * dictionaries or other dictionaries contained in the dictionary, etc) from the coder.
      * <p>
-     * Requires \c NSSecureCoding otherwise an exception is thrown and sets the \c decodingFailurePolicy to \c NSDecodingFailurePolicySetErrorAndReturn.
+     * Requires \c NSSecureCoding otherwise an exception is thrown and sets the \c decodingFailurePolicy to \c
+     * NSDecodingFailurePolicySetErrorAndReturn.
      * <p>
-     * Returns \c nil if the object for \c key is not of the expected types, or cannot be decoded, and sets the \c error on the decoder.
+     * Returns \c nil if the object for \c key is not of the expected types, or cannot be decoded, and sets the \c error
+     * on the decoder.
      */
     @Generated
     @Selector("decodeDictionaryWithKeysOfClass:objectsOfClass:forKey:")
@@ -601,11 +627,15 @@ public class NSCoder extends NSObject {
             String key);
 
     /**
-     * Decodes the \c NSDictionary object for the given \c key, which should be an \c NSDictionary, with keys of the types given in \c keyClasses and objects of the given non-collection classes in \c objectClasses (no nested dictionaries or other dictionaries contained in the dictionary, etc) from the given coder.
+     * Decodes the \c NSDictionary object for the given \c key, which should be an \c NSDictionary, with keys of the
+     * types given in \c keyClasses and objects of the given non-collection classes in \c objectClasses (no nested
+     * dictionaries or other dictionaries contained in the dictionary, etc) from the given coder.
      * <p>
-     * Requires \c NSSecureCoding otherwise an exception is thrown and sets the \c decodingFailurePolicy to \c NSDecodingFailurePolicySetErrorAndReturn.
+     * Requires \c NSSecureCoding otherwise an exception is thrown and sets the \c decodingFailurePolicy to \c
+     * NSDecodingFailurePolicySetErrorAndReturn.
      * <p>
-     * Returns \c nil if the object for \c key is not of the expected types, or cannot be decoded, and sets the \c error on the decoder.
+     * Returns \c nil if the object for \c key is not of the expected types, or cannot be decoded, and sets the \c error
+     * on the decoder.
      */
     @Generated
     @Selector("decodeDictionaryWithKeysOfClasses:objectsOfClasses:forKey:")

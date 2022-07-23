@@ -19,11 +19,13 @@ package apple.coretext.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]       CTFontStylisticClass
+ * [@enum] CTFontStylisticClass
  * <p>
  * Stylistic class values.
  * <p>
- * CTFontStylisticClass classifies certain stylistic qualities of the font. These values correspond closely to the font class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the CTFontSymbolicTraits and can be obtained via the kCTFontTraitClassMask.
+ * CTFontStylisticClass classifies certain stylistic qualities of the font. These values correspond closely to the font
+ * class values in the OpenType 'OS/2' table. The class values are bundled in the upper four bits of the
+ * CTFontSymbolicTraits and can be obtained via the kCTFontTraitClassMask.
  */
 @Generated
 public final class CTFontStylisticClass {

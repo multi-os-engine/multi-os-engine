@@ -224,7 +224,7 @@ public class HKCorrelation extends HKSample {
     public native HKCorrelation initWithCoder(NSCoder coder);
 
     /**
-     * [@property]  objects
+     * [@property] objects
      * <p>
      * A set of HKSamples containing all of the objects that were saved with the receiver.
      */

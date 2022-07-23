@@ -125,8 +125,10 @@ public class PHASENumberMetaParameterDefinition extends PHASEMetaParameterDefini
      * Create a new numeric metaparameter definition and a predefined min and maximum range
      *
      * @param value   The initial value of the metaparameter
-     * @param minimum The minimum value for this metaparameter.  Values set to this metaparamter less than the minimum will be clamped.
-     * @param maximum The maximum value for this metaparameter.  Values set to this metaparamter less than the minimum will be clamped.
+     * @param minimum The minimum value for this metaparameter. Values set to this metaparamter less than the minimum
+     *                will be clamped.
+     * @param maximum The maximum value for this metaparameter. Values set to this metaparamter less than the minimum
+     *                will be clamped.
      * @return The new PHASENumberMetaParameterDefinition object
      */
     @Generated
@@ -140,8 +142,10 @@ public class PHASENumberMetaParameterDefinition extends PHASEMetaParameterDefini
      * Create a new numeric metaparameter definition and a predefined min and maximum range
      *
      * @param value      The initial value of the metaparameter
-     * @param minimum    The minimum value for this metaparameter.  Values set to this metaparamter less than the minimum will be clamped.
-     * @param maximum    The maximum value for this metaparameter.  Values set to this metaparamter less than the minimum will be clamped.
+     * @param minimum    The minimum value for this metaparameter. Values set to this metaparamter less than the minimum
+     *                   will be clamped.
+     * @param maximum    The maximum value for this metaparameter. Values set to this metaparamter less than the minimum
+     *                   will be clamped.
      * @param identifier An optional custom identifier to give to this object
      * @return The new PHASENumberMetaParameterDefinition object
      */

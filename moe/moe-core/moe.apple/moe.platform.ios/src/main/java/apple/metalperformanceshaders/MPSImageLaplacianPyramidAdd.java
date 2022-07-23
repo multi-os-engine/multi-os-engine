@@ -37,11 +37,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * the LaplacianMipLevel[l] data coming directly from the source and GaussianMipLevel[l + 1]
  * just written to the destination on the previous iteration :
  * <p>
- * GaussianMipLevel[l] := LaplacianRangeScale^-1(LaplacianMipLevelStored[l], laplacianBias, laplacianScale) + Interpolate(GaussianMipLevel[l + 1])
+ * GaussianMipLevel[l] := LaplacianRangeScale^-1(LaplacianMipLevelStored[l], laplacianBias, laplacianScale) +
+ * Interpolate(GaussianMipLevel[l + 1])
  * <p>
  * As initial state for the first iteration only, the data for GaussianMipLevel[l + 1] in the formula above
- * is provided in the LaplacianMipLevel[#top] level. This corresponds to the special handling of the top mip-level of Gaussian pyramid
- * discussed for MPSImageLaplacianPyramidSubtract. Just like for MPSImageLaplacianPyramidSubtract, if the destination texture needs
+ * is provided in the LaplacianMipLevel[#top] level. This corresponds to the special handling of the top mip-level of
+ * Gaussian pyramid
+ * discussed for MPSImageLaplacianPyramidSubtract. Just like for MPSImageLaplacianPyramidSubtract, if the destination
+ * texture needs
  * to contain all mip-level of the Gaussian pyramid including the top level, it can be just from the source texture.
  */
 @Generated

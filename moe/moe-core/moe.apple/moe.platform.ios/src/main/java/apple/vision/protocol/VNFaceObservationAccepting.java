@@ -10,7 +10,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * A protocol that allows a user to provide an input collection of VNFaceObservations as part of a request. The protocol can be adopted by request objects that request additional information about detected faces, such as facial landmarks.
+ * A protocol that allows a user to provide an input collection of VNFaceObservations as part of a request. The protocol
+ * can be adopted by request objects that request additional information about detected faces, such as facial landmarks.
  */
 @Generated
 @Library("Vision")

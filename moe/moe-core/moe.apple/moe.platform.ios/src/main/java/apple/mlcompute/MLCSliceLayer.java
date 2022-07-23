@@ -89,7 +89,7 @@ public class MLCSliceLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   end
+     * [@property] end
      * <p>
      * A vector of length equal to that of source. The element at index i specifies the end of slice in dimension i.
      */
@@ -156,16 +156,17 @@ public class MLCSliceLayer extends MLCLayer {
             NSArray<? extends NSNumber> end, NSArray<? extends NSNumber> stride);
 
     /**
-     * [@property]   start
+     * [@property] start
      * <p>
-     * A vector of length equal to that of source. The element at index i specifies the beginning of slice in dimension i.
+     * A vector of length equal to that of source. The element at index i specifies the beginning of slice in dimension
+     * i.
      */
     @Generated
     @Selector("start")
     public native NSArray<? extends NSNumber> start();
 
     /**
-     * [@property]   stride
+     * [@property] stride
      * <p>
      * A vector of length equal to that of source. The element at index i specifies the stride of slice in dimension i.
      */

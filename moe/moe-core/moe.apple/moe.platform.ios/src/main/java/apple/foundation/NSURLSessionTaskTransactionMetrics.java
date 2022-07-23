@@ -149,7 +149,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     public static native long version_static();
 
     /**
-     * connectEndDate is the time immediately after the user agent finished establishing the connection to the server, including completion of security-related and other handshakes.
+     * connectEndDate is the time immediately after the user agent finished establishing the connection to the server,
+     * including completion of security-related and other handshakes.
      */
     @Generated
     @Selector("connectEndDate")
@@ -158,7 +159,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * connectStartDate is the time immediately before the user agent started establishing the connection to the server.
      * <p>
-     * For example, this would correspond to the time immediately before the user agent started trying to establish the TCP connection.
+     * For example, this would correspond to the time immediately before the user agent started trying to establish the
+     * TCP connection.
      */
     @Generated
     @Selector("connectStartDate")
@@ -172,16 +174,19 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     public native NSDate domainLookupEndDate();
 
     /**
-     * domainLookupStartDate returns the time immediately before the user agent started the name lookup for the resource.
+     * domainLookupStartDate returns the time immediately before the user agent started the name lookup for the
+     * resource.
      */
     @Generated
     @Selector("domainLookupStartDate")
     public native NSDate domainLookupStartDate();
 
     /**
-     * fetchStartDate returns the time when the user agent started fetching the resource, whether or not the resource was retrieved from the server or local resources.
+     * fetchStartDate returns the time when the user agent started fetching the resource, whether or not the resource
+     * was retrieved from the server or local resources.
      * <p>
-     * The following metrics will be set to nil, if a persistent connection was used or the resource was retrieved from local resources:
+     * The following metrics will be set to nil, if a persistent connection was used or the resource was retrieved from
+     * local resources:
      * <p>
      * domainLookupStartDate
      * domainLookupEndDate
@@ -213,10 +218,12 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     public native boolean isReusedConnection();
 
     /**
-     * The network protocol used to fetch the resource, as identified by the ALPN Protocol ID Identification Sequence [RFC7301].
+     * The network protocol used to fetch the resource, as identified by the ALPN Protocol ID Identification Sequence
+     * [RFC7301].
      * E.g., h2, http/1.1, spdy/3.1.
      * <p>
-     * When a proxy is configured AND a tunnel connection is established, then this attribute returns the value for the tunneled protocol.
+     * When a proxy is configured AND a tunnel connection is established, then this attribute returns the value for the
+     * tunneled protocol.
      * <p>
      * For example:
      * If no proxy were used, and HTTP/2 was negotiated, then h2 would be returned.
@@ -235,16 +242,19 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     public native NSURLRequest request();
 
     /**
-     * requestEndDate is the time immediately after the user agent finished requesting the source, regardless of whether the resource was retrieved from the server or local resources.
+     * requestEndDate is the time immediately after the user agent finished requesting the source, regardless of whether
+     * the resource was retrieved from the server or local resources.
      * <p>
-     * For example, this would correspond to the time immediately after the user agent finished sending the last byte of the request.
+     * For example, this would correspond to the time immediately after the user agent finished sending the last byte of
+     * the request.
      */
     @Generated
     @Selector("requestEndDate")
     public native NSDate requestEndDate();
 
     /**
-     * requestStartDate is the time immediately before the user agent started requesting the source, regardless of whether the resource was retrieved from the server or local resources.
+     * requestStartDate is the time immediately before the user agent started requesting the source, regardless of
+     * whether the resource was retrieved from the server or local resources.
      * <p>
      * For example, this would correspond to the time immediately before the user agent sent an HTTP GET request.
      */
@@ -275,16 +285,19 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     public native NSDate responseEndDate();
 
     /**
-     * responseStartDate is the time immediately after the user agent received the first byte of the response from the server or from local resources.
+     * responseStartDate is the time immediately after the user agent received the first byte of the response from the
+     * server or from local resources.
      * <p>
-     * For example, this would correspond to the time immediately after the user agent received the first byte of an HTTP response.
+     * For example, this would correspond to the time immediately after the user agent received the first byte of an
+     * HTTP response.
      */
     @Generated
     @Selector("responseStartDate")
     public native NSDate responseStartDate();
 
     /**
-     * If an encrypted connection was used, secureConnectionEndDate is the time immediately after the security handshake completed.
+     * If an encrypted connection was used, secureConnectionEndDate is the time immediately after the security handshake
+     * completed.
      * <p>
      * If an encrypted connection was not used, this attribute is set to nil.
      */
@@ -293,7 +306,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     public native NSDate secureConnectionEndDate();
 
     /**
-     * If an encrypted connection was used, secureConnectionStartDate is the time immediately before the user agent started the security handshake to secure the current connection.
+     * If an encrypted connection was used, secureConnectionStartDate is the time immediately before the user agent
+     * started the security handshake to secure the current connection.
      * <p>
      * For example, this would correspond to the time immediately before the user agent started the TLS handshake.
      * <p>

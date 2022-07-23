@@ -29,7 +29,7 @@ public final class MPSKernelOptions {
      * Most MPS functions will sanity check their arguments. This has a small but
      * non-zero CPU cost. Setting the MPSKernelOptionsSkipAPIValidation will skip these checks.
      * MPSKernelOptionsSkipAPIValidation does not skip checks for memory allocation failure.
-     * Caution:  turning on MPSKernelOptionsSkipAPIValidation can result in undefined behavior
+     * Caution: turning on MPSKernelOptionsSkipAPIValidation can result in undefined behavior
      * if the requested operation can not be completed for some reason. Most error states
      * will be passed through to Metal which may do nothing or abort the program if Metal
      * API validation is turned on.
@@ -58,7 +58,7 @@ public final class MPSKernelOptions {
     @Generated @NUInt public static final long DisableInternalTiling = 0x0000000000000004L;
     /**
      * Enabling this bit will cause various -encode... methods to call MTLCommandEncoder
-     * push/popDebugGroup.  The debug string will be drawn from MPSKernel.label, if any
+     * push/popDebugGroup. The debug string will be drawn from MPSKernel.label, if any
      * or the name of the class otherwise.
      */
     @Generated @NUInt public static final long InsertDebugGroups = 0x0000000000000008L;
@@ -70,12 +70,12 @@ public final class MPSKernelOptions {
     /**
      * Some parts of MPS can provide debug commentary and tuning advice when run.
      * Setting this bit to 1 will cause the commentary to be emitted to stderr. Otherwise,
-     * the code is silent.  This is especially useful for debugging MPSNNGraph. This option
-     * is on by default when the MPS_LOG_INFO environment variable is defined.  For
+     * the code is silent. This is especially useful for debugging MPSNNGraph. This option
+     * is on by default when the MPS_LOG_INFO environment variable is defined. For
      * even more detailed output on a MPS object, you can use the po command in llvm
      * with MPS objects:
      * [@code]
-     * llvm>  po  <MPS object pointer>
+     * llvm> po <MPS object pointer>
      * [@endcode]
      */
     @Generated @NUInt public static final long Verbose = 0x0000000000000010L;

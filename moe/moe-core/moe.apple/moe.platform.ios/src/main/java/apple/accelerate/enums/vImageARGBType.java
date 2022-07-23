@@ -19,7 +19,7 @@ package apple.accelerate.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@typedef]    vImageARGBType
+ * [@typedef] vImageARGBType
  * <p>
  * An encoding of an image format type to be used with RGB <-> Y'CbCr conversions in vImage/Conversions.h
  * <p>

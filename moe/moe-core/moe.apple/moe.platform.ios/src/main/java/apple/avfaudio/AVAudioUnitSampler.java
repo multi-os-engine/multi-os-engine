@@ -102,8 +102,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      * [@property] globalTuning
      * <p>
      * adjusts the tuning of all the notes played.
-     * Range:     -2400 -> +2400 cents
-     * Default:   0
+     * Range: -2400 -> +2400 cents
+     * Default: 0
      */
     @Generated
     @Selector("globalTuning")
@@ -197,9 +197,10 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      *
      * @param bankURL  URL for a Soundbank file. The file can be either a DLS bank (.dls) or a SoundFont bank (.sf2).
      * @param program  program number for the instrument to load
-     * @param bankMSB  MSB for the bank number for the instrument to load.  This is usually 0x79 for melodic
+     * @param bankMSB  MSB for the bank number for the instrument to load. This is usually 0x79 for melodic
      *                 instruments and 0x78 for percussion instruments.
-     * @param bankLSB  LSB for the bank number for the instrument to load.  This is often 0, and represents the "bank variation".
+     * @param bankLSB  LSB for the bank number for the instrument to load. This is often 0, and represents the "bank
+     *                 variation".
      * @param outError the status of the operation
      */
     @Generated
@@ -211,7 +212,7 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      * [@property] masterGain
      * <p>
      * adjusts the gain of all the notes played
-     * Range:     -90.0 -> +12 db
+     * Range: -90.0 -> +12 db
      * Default: 0 db
      */
     @Generated
@@ -227,7 +228,7 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      * [@property] overallGain
      * <p>
      * adjusts the gain of all the notes played
-     * Range:     -90.0 -> +12 db
+     * Range: -90.0 -> +12 db
      * Default: 0 db
      */
     @Generated
@@ -246,8 +247,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      * [@property] globalTuning
      * <p>
      * adjusts the tuning of all the notes played.
-     * Range:     -2400 -> +2400 cents
-     * Default:   0
+     * Range: -2400 -> +2400 cents
+     * Default: 0
      */
     @Generated
     @Selector("setGlobalTuning:")
@@ -257,7 +258,7 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      * [@property] masterGain
      * <p>
      * adjusts the gain of all the notes played
-     * Range:     -90.0 -> +12 db
+     * Range: -90.0 -> +12 db
      * Default: 0 db
      */
     @Generated
@@ -268,7 +269,7 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      * [@property] overallGain
      * <p>
      * adjusts the gain of all the notes played
-     * Range:     -90.0 -> +12 db
+     * Range: -90.0 -> +12 db
      * Default: 0 db
      */
     @Generated
@@ -279,8 +280,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      * [@property] stereoPan
      * <p>
      * adjusts the pan for all the notes played.
-     * Range:     -1 -> +1
-     * Default:   0
+     * Range: -1 -> +1
+     * Default: 0
      */
     @Generated
     @Selector("setStereoPan:")
@@ -294,8 +295,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      * [@property] stereoPan
      * <p>
      * adjusts the pan for all the notes played.
-     * Range:     -1 -> +1
-     * Default:   0
+     * Range: -1 -> +1
+     * Default: 0
      */
     @Generated
     @Selector("stereoPan")

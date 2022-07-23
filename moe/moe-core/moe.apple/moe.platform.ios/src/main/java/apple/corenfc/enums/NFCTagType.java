@@ -6,10 +6,10 @@ import org.moe.natj.general.ann.NUInt;
 /**
  * [@enum] NFCTagType
  * <p>
- * [@constant] NFCTagTypeISO15693             ISO15693 tag.
- * [@constant] NFCTagTypeFeliCa               FeliCa tag.
- * [@constant] NFCTagTypeISO7816Compatible    ISO14443-4 type A / B tag with ISO7816 communication.
- * [@constant] NFCTagTypeMiFare               MiFare technology tag (MIFARE Plus, UltraLight, DESFire) base on ISO14443.
+ * [@constant] NFCTagTypeISO15693 ISO15693 tag.
+ * [@constant] NFCTagTypeFeliCa FeliCa tag.
+ * [@constant] NFCTagTypeISO7816Compatible ISO14443-4 type A / B tag with ISO7816 communication.
+ * [@constant] NFCTagTypeMiFare MiFare technology tag (MIFARE Plus, UltraLight, DESFire) base on ISO14443.
  */
 @Generated
 public final class NFCTagType {

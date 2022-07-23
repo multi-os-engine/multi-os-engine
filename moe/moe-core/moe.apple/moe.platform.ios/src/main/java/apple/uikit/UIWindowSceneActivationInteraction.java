@@ -104,7 +104,9 @@ public class UIWindowSceneActivationInteraction extends NSObject implements UIIn
     /**
      * Returns a new @c UIWindowSceneActivationInteraction
      *
-     * @param configurationProvider Called when the interaction has been triggered. It should return a @c UIWindowSceneActivationConfiguration whose user activity will be used to request scene activation.
+     * @param configurationProvider Called when the interaction has been triggered. It should return a @c
+     *                              UIWindowSceneActivationConfiguration whose user activity will be used to request
+     *                              scene activation.
      * @param errorHandler          Called when the activation request fails.
      */
     @Generated

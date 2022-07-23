@@ -87,7 +87,7 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * [@property] data   Data field; nil if data field is absent
+     * [@property] data Data field; nil if data field is absent
      */
     @Generated
     @Selector("data")
@@ -102,7 +102,7 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
     public static native String description_static();
 
     /**
-     * [@property] expectedResponseLength     Expected response length (Le).  -1 means no response data field is expected.
+     * [@property] expectedResponseLength Expected response length (Le). -1 means no response data field is expected.
      */
     @Generated
     @Selector("expectedResponseLength")
@@ -131,17 +131,21 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
     /**
      * initWithInstructionClass:instructionCode:p1Parameter:p2Parameter:data:expectedResponseLength:
      * <p>
-     * Generates an ISO7816 APDU object.  The Lc value is generated base on the size of the data object; possible value ranges from
-     * 1 to 65535 inclusively.  Use @link -initWithData: @link/ in cases where a finer control on the APDU format is required.
+     * Generates an ISO7816 APDU object. The Lc value is generated base on the size of the data object; possible value
+     * ranges from
+     * 1 to 65535 inclusively. Use @link -initWithData: @link/ in cases where a finer control on the APDU format is
+     * required.
      *
      * @param instructionClass       Instruction class (CLA) byte
      * @param instructionCode        Instruction code (INS) byte
      * @param p1Parameter            P1 parameter byte
      * @param p2Parameter            P2 parameter byte
-     * @param data                   Data to transmit.  Value of Lc field is set according to the data size.
+     * @param data                   Data to transmit. Value of Lc field is set according to the data size.
      * @param expectedResponseLength Response data length (Le) in bytes. Valid range is from 1 to 65536 inclusively;
-     *                               -1 means no response data field is expected.  Use 256 if you want to send '00' as the short Le field
-     *                               assuming the data field is less than 256 bytes.  Use 65536 if you want to send '0000' as the extended
+     *                               -1 means no response data field is expected. Use 256 if you want to send '00' as
+     *                               the short Le field
+     *                               assuming the data field is less than 256 bytes. Use 65536 if you want to send
+     *                               '0000' as the extended
      *                               Le field.
      */
     @Generated
@@ -164,14 +168,14 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * [@property] instructionClass   Class (CLA) byte.
+     * [@property] instructionClass Class (CLA) byte.
      */
     @Generated
     @Selector("instructionClass")
     public native byte instructionClass();
 
     /**
-     * [@property] instructionCode    Instruction (INS) byte.
+     * [@property] instructionCode Instruction (INS) byte.
      */
     @Generated
     @Selector("instructionCode")
@@ -191,14 +195,14 @@ public class NFCISO7816APDU extends NSObject implements NSCopying {
     public static native NFCISO7816APDU new_objc();
 
     /**
-     * [@property] p1Parameter     P1 parameter.
+     * [@property] p1Parameter P1 parameter.
      */
     @Generated
     @Selector("p1Parameter")
     public native byte p1Parameter();
 
     /**
-     * [@property] p2Parameter     P2 parameter.
+     * [@property] p2Parameter P2 parameter.
      */
     @Generated
     @Selector("p2Parameter")

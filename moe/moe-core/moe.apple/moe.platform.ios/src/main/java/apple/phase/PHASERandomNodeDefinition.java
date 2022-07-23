@@ -54,7 +54,8 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
      * Add a subtree to a random node
      *
      * @param subtree A PHASESoundEventNodeDefinition that will be a child node of this random node
-     * @param weight  The probability weight of this subtree.  Higher numbers compared to other subtree weights will increase the likelihood of being
+     * @param weight  The probability weight of this subtree. Higher numbers compared to other subtree weights will
+     *                increase the likelihood of being
      *                chosen. This value must be greater than or equal to 1, and is clamped otherwise.
      */
     @Generated
@@ -166,7 +167,8 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
     /**
      * [@property] uniqueSelectionQueueLength
      * <p>
-     * Subtrees will not be repeated until after this random node is activated uniqueSelectionQueueLength number of times.
+     * Subtrees will not be repeated until after this random node is activated uniqueSelectionQueueLength number of
+     * times.
      */
     @Generated
     @Selector("setUniqueSelectionQueueLength:")
@@ -183,7 +185,8 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
     /**
      * [@property] uniqueSelectionQueueLength
      * <p>
-     * Subtrees will not be repeated until after this random node is activated uniqueSelectionQueueLength number of times.
+     * Subtrees will not be repeated until after this random node is activated uniqueSelectionQueueLength number of
+     * times.
      */
     @Generated
     @Selector("uniqueSelectionQueueLength")

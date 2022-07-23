@@ -22,12 +22,12 @@ import org.moe.natj.general.ann.Generated;
  * [@enum] MusicSequenceLoadFlags
  * <p>
  * Flags used to customise loading behaviour
- * [@constant]	kMusicSequenceLoadSMF_PreserveTracks
+ * [@constant] kMusicSequenceLoadSMF_PreserveTracks
  * If this flag is set the resultant Sequence will contain:
  * a tempo track
  * a track for each track found in the SMF
  * This is the default behavior
- * [@constant]	kMusicSequenceLoadSMF_ChannelsToTracks
+ * [@constant] kMusicSequenceLoadSMF_ChannelsToTracks
  * If this flag is set the resultant Sequence will contain:
  * a tempo track
  * 1 track for each MIDI Channel that is found in the SMF

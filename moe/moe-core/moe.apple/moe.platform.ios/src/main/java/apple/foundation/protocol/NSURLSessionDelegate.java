@@ -39,7 +39,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("NSURLSessionDelegate")
 public interface NSURLSessionDelegate {
     /**
-     * The last message a session receives.  A session will only become
+     * The last message a session receives. A session will only become
      * invalid because of a systemic error or when it has been
      * explicitly invalidated, in which case the error parameter will be nil.
      */
@@ -56,7 +56,7 @@ public interface NSURLSessionDelegate {
      * provide authentication credentials to the underlying
      * connection. Some types of authentication will apply to more than
      * one request on a given connection to a server (SSL Server Trust
-     * challenges).  If this delegate message is not implemented, the
+     * challenges). If this delegate message is not implemented, the
      * behavior will be to use the default handling, which may involve user
      * interaction.
      */
@@ -74,7 +74,7 @@ public interface NSURLSessionDelegate {
      * -application:handleEventsForBackgroundURLSession:completionHandler:
      * message, the session delegate will receive this message to indicate
      * that all messages previously enqueued for this session have been
-     * delivered.  At this time it is safe to invoke the previously stored
+     * delivered. At this time it is safe to invoke the previously stored
      * completion handler, or to begin any internal updates that will
      * result in invoking the completion handler.
      */

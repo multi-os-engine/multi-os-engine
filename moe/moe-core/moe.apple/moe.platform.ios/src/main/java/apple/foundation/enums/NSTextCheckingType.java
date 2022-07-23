@@ -19,7 +19,9 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * NSTextCheckingResult is a class used to describe items located by text checking.  Each of these objects represents something that has been found during checking--a misspelled word, a sentence with grammatical issues, a detected URL, a straight quote to be replaced with curly quotes, and so forth.
+ * NSTextCheckingResult is a class used to describe items located by text checking. Each of these objects represents
+ * something that has been found during checking--a misspelled word, a sentence with grammatical issues, a detected URL,
+ * a straight quote to be replaced with curly quotes, and so forth.
  */
 @Generated
 public final class NSTextCheckingType {

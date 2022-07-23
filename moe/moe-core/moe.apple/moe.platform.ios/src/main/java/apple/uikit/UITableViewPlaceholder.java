@@ -108,8 +108,10 @@ public class UITableViewPlaceholder extends NSObject {
     public native UITableViewPlaceholder init();
 
     /**
-     * A placeholder cell will be dequeued for the reuse identifier and inserted at the specified index path without requiring a data source update.
-     * You may use UITableViewAutomaticDimension for the rowHeight to have the placeholder cell self-size if the table view is using estimated row heights.
+     * A placeholder cell will be dequeued for the reuse identifier and inserted at the specified index path without
+     * requiring a data source update.
+     * You may use UITableViewAutomaticDimension for the rowHeight to have the placeholder cell self-size if the table
+     * view is using estimated row heights.
      */
     @Generated
     @Selector("initWithInsertionIndexPath:reuseIdentifier:rowHeight:")

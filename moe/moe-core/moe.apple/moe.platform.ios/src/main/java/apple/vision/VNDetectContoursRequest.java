@@ -84,7 +84,8 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
      * The amount to adjust the image's contrast by.
      * A value of +1.0 means that the contrast is not adjusted. The default value is +2.0.
      * <p>
-     * Countour detection works best with high contrast images. The default value of 2 doubles the image's contrast to aid in detection. If the image already has a high contrast then this value should be set to 1.
+     * Countour detection works best with high contrast images. The default value of 2 doubles the image's contrast to
+     * aid in detection. If the image already has a high contrast then this value should be set to 1.
      */
     @Generated
     @Selector("contrastAdjustment")
@@ -113,7 +114,8 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
     public native boolean detectDarkOnLight();
 
     /**
-     * Identifies to the request if detecting a dark object on a light background, or vice versa, to aid in detection. The default value is YES.
+     * Identifies to the request if detecting a dark object on a light background, or vice versa, to aid in detection.
+     * The default value is YES.
      */
     @Generated
     @Selector("detectsDarkOnLight")
@@ -155,9 +157,12 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * The limit on the maximum dimension of the image to be used for contour detection. Valid range of values is [64 ... NSUIntegerMax]. The default value is 512.
+     * The limit on the maximum dimension of the image to be used for contour detection. Valid range of values is [64
+     * ... NSUIntegerMax]. The default value is 512.
      * <p>
-     * As the contour request is compute intensive, the input image is scaled down maintaining aspect ratio (if needed), such that its maximum dimension is the value of this property. The image never gets scaled up, so specifying the maximum value ensures that the image gets processed in its original size and not downscaled.
+     * As the contour request is compute intensive, the input image is scaled down maintaining aspect ratio (if needed),
+     * such that its maximum dimension is the value of this property. The image never gets scaled up, so specifying the
+     * maximum value ensures that the image gets processed in its original size and not downscaled.
      */
     @Generated
     @Selector("maximumImageDimension")
@@ -181,7 +186,8 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
      * The amount to adjust the image's contrast by.
      * A value of +1.0 means that the contrast is not adjusted. The default value is +2.0.
      * <p>
-     * Countour detection works best with high contrast images. The default value of 2 doubles the image's contrast to aid in detection. If the image already has a high contrast then this value should be set to 1.
+     * Countour detection works best with high contrast images. The default value of 2 doubles the image's contrast to
+     * aid in detection. If the image already has a high contrast then this value should be set to 1.
      */
     @Generated
     @Selector("setContrastAdjustment:")
@@ -192,16 +198,20 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
     public native void setDetectDarkOnLight(boolean value);
 
     /**
-     * Identifies to the request if detecting a dark object on a light background, or vice versa, to aid in detection. The default value is YES.
+     * Identifies to the request if detecting a dark object on a light background, or vice versa, to aid in detection.
+     * The default value is YES.
      */
     @Generated
     @Selector("setDetectsDarkOnLight:")
     public native void setDetectsDarkOnLight(boolean value);
 
     /**
-     * The limit on the maximum dimension of the image to be used for contour detection. Valid range of values is [64 ... NSUIntegerMax]. The default value is 512.
+     * The limit on the maximum dimension of the image to be used for contour detection. Valid range of values is [64
+     * ... NSUIntegerMax]. The default value is 512.
      * <p>
-     * As the contour request is compute intensive, the input image is scaled down maintaining aspect ratio (if needed), such that its maximum dimension is the value of this property. The image never gets scaled up, so specifying the maximum value ensures that the image gets processed in its original size and not downscaled.
+     * As the contour request is compute intensive, the input image is scaled down maintaining aspect ratio (if needed),
+     * such that its maximum dimension is the value of this property. The image never gets scaled up, so specifying the
+     * maximum value ensures that the image gets processed in its original size and not downscaled.
      */
     @Generated
     @Selector("setMaximumImageDimension:")
@@ -225,7 +235,8 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
     public static native long version_static();
 
     /**
-     * The pixel value to use as a pivot for the contrast. Valid values are from [0.0 ... +1.0], or nil to auto-detect based on image intensity.
+     * The pixel value to use as a pivot for the contrast. Valid values are from [0.0 ... +1.0], or nil to auto-detect
+     * based on image intensity.
      * The default value is +0.5 (i.e. pixel center).
      */
     @Generated
@@ -240,7 +251,8 @@ public class VNDetectContoursRequest extends VNImageBasedRequest {
     public native NSArray<? extends VNContoursObservation> results();
 
     /**
-     * The pixel value to use as a pivot for the contrast. Valid values are from [0.0 ... +1.0], or nil to auto-detect based on image intensity.
+     * The pixel value to use as a pivot for the contrast. Valid values are from [0.0 ... +1.0], or nil to auto-detect
+     * based on image intensity.
      * The default value is +0.5 (i.e. pixel center).
      */
     @Generated

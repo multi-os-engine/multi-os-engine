@@ -32,7 +32,8 @@ public interface MPSNDArrayAllocator extends NSSecureCoding, NSCopying {
      * @param kernel     The kernel that will overwrite the array returned by the filter.
      *                   Note that the MPS implementations of this protocol don't need
      *                   this field. It is provided for your convenience.
-     * @return A valid MPSNDArray or MPSTemporaryNDArray. It will be automatically released when the command buffer completes.
+     * @return A valid MPSNDArray or MPSTemporaryNDArray. It will be automatically released when the command buffer
+     *         completes.
      */
     @Generated
     @Selector("arrayForCommandBuffer:arrayDescriptor:kernel:")

@@ -158,7 +158,7 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
     public static native long version_static();
 
     /**
-     * Adds obstacles to this mesh graph.  Only reflected after the next triangulate call.
+     * Adds obstacles to this mesh graph. Only reflected after the next triangulate call.
      */
     @Generated
     @Selector("addObstacles:")
@@ -209,7 +209,7 @@ public class GKMeshGraph<_NodeType> extends GKGraph {
     public native NSArray<? extends GKPolygonObstacle> obstacles();
 
     /**
-     * Removes obstacles from this graph.  Only reflected after the next triangulate call.
+     * Removes obstacles from this graph. Only reflected after the next triangulate call.
      */
     @Generated
     @Selector("removeObstacles:")

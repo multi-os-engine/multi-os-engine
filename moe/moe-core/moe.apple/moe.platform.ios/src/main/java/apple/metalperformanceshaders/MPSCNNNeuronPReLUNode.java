@@ -28,8 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * For each pixel, applies the following function:
  * [@code]
- * f(x) = x                if x >= 0
- * = aData[i] * x     if x < 0,  i is the index of the feature channel
+ * f(x) = x if x >= 0
+ * = aData[i] * x if x < 0, i is the index of the feature channel
  * [@endcode]
  *
  * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
@@ -107,8 +107,8 @@ public class MPSCNNNeuronPReLUNode extends MPSCNNNeuronNode {
      * <p>
      * For each pixel, applies the following function:
      * [@code]
-     * f(x) = x                if x >= 0
-     * = aData[i] * x     if x < 0,  i is the index of the feature channel
+     * f(x) = x if x >= 0
+     * = aData[i] * x if x < 0, i is the index of the feature channel
      * [@endcode]
      *
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter

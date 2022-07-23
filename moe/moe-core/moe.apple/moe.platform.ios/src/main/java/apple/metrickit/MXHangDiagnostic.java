@@ -68,7 +68,7 @@ public class MXHangDiagnostic extends MXDiagnostic {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]      callStackTree
+     * [@property] callStackTree
      * <p>
      * The application call stack tree associated with the hang.
      */
@@ -103,7 +103,7 @@ public class MXHangDiagnostic extends MXDiagnostic {
     public static native String description_static();
 
     /**
-     * [@property]      hangDuration
+     * [@property] hangDuration
      * <p>
      * Total hang duration for this diagnostic.
      * <p>

@@ -117,7 +117,7 @@ public class PKToolPicker extends NSObject {
      *
      * @param view The view in which to return the frame to avoid.
      * @return The rect in `view` that the tool picker obscures. Will return
-     * `CGRectNull` if no rect is obscured, or the tool picker is movable.
+     *         `CGRectNull` if no rect is obscured, or the tool picker is movable.
      */
     @Generated
     @Selector("frameObscuredInView:")

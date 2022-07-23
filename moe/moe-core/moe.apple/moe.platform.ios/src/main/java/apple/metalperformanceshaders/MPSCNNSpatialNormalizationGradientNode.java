@@ -51,9 +51,9 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
     public static native MPSCNNSpatialNormalizationGradientNode allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The value of alpha.  Default is 1.0. Must be non-negative.
+     * The value of alpha. Default is 1.0. Must be non-negative.
      */
     @Generated
     @Selector("alpha")
@@ -64,9 +64,9 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
-     * The value of beta.  Default is 5.0
+     * The value of beta. Default is 5.0
      */
     @Generated
     @Selector("beta")
@@ -95,9 +95,9 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
     public static native String debugDescription_static();
 
     /**
-     * [@property]   delta
+     * [@property] delta
      * <p>
-     * The value of delta.  Default is 1.0
+     * The value of delta. Default is 1.0
      */
     @Generated
     @Selector("delta")
@@ -173,27 +173,27 @@ public class MPSCNNSpatialNormalizationGradientNode extends MPSNNGradientFilterN
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The value of alpha.  Default is 1.0. Must be non-negative.
+     * The value of alpha. Default is 1.0. Must be non-negative.
      */
     @Generated
     @Selector("setAlpha:")
     public native void setAlpha(float value);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
-     * The value of beta.  Default is 5.0
+     * The value of beta. Default is 5.0
      */
     @Generated
     @Selector("setBeta:")
     public native void setBeta(float value);
 
     /**
-     * [@property]   delta
+     * [@property] delta
      * <p>
-     * The value of delta.  Default is 1.0
+     * The value of delta. Default is 1.0
      */
     @Generated
     @Selector("setDelta:")

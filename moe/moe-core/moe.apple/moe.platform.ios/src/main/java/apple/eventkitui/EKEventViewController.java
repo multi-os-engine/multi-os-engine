@@ -163,7 +163,7 @@ public class EKEventViewController extends UIViewController {
     public static native long version_static();
 
     /**
-     * [@property]   allowsCalendarPreview
+     * [@property] allowsCalendarPreview
      * <p>
      * Determines whether event can be shown in calendar day view preview.
      * <p>
@@ -176,7 +176,7 @@ public class EKEventViewController extends UIViewController {
     public native boolean allowsCalendarPreview();
 
     /**
-     * [@property]   allowsEditing
+     * [@property] allowsEditing
      * <p>
      * Determines whether Edit button can be shown.
      * <p>
@@ -196,7 +196,7 @@ public class EKEventViewController extends UIViewController {
     public native EKEventViewDelegate delegate();
 
     /**
-     * [@property]   event
+     * [@property] event
      * <p>
      * Specifies the event to view.
      * <p>
@@ -219,7 +219,7 @@ public class EKEventViewController extends UIViewController {
     public native EKEventViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
     /**
-     * [@property]   allowsCalendarPreview
+     * [@property] allowsCalendarPreview
      * <p>
      * Determines whether event can be shown in calendar day view preview.
      * <p>
@@ -232,7 +232,7 @@ public class EKEventViewController extends UIViewController {
     public native void setAllowsCalendarPreview(boolean value);
 
     /**
-     * [@property]   allowsEditing
+     * [@property] allowsEditing
      * <p>
      * Determines whether Edit button can be shown.
      * <p>
@@ -263,7 +263,7 @@ public class EKEventViewController extends UIViewController {
     }
 
     /**
-     * [@property]   event
+     * [@property] event
      * <p>
      * Specifies the event to view.
      * <p>

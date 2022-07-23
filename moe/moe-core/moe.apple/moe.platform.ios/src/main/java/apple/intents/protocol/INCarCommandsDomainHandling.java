@@ -10,7 +10,6 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INCarCommandsDomainHandling")
-public interface INCarCommandsDomainHandling
-        extends INActivateCarSignalIntentHandling, INSetCarLockStatusIntentHandling, INGetCarLockStatusIntentHandling,
-        INGetCarPowerLevelStatusIntentHandling {
+public interface INCarCommandsDomainHandling extends INActivateCarSignalIntentHandling,
+        INSetCarLockStatusIntentHandling, INGetCarLockStatusIntentHandling, INGetCarPowerLevelStatusIntentHandling {
 }

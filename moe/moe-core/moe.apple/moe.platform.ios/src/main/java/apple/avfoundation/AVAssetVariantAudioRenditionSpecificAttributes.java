@@ -65,7 +65,7 @@ public class AVAssetVariantAudioRenditionSpecificAttributes extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * [@property]		channelCount
+     * [@property] channelCount
      * <p>
      * If it is not declared, the value will be negative.
      */

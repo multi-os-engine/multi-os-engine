@@ -22,7 +22,8 @@ public final class BusinessChat {
     }
 
     /**
-     * Intent is used to help the support agent or business system identify the product, service, account, or other context when the customer tapped the button to send the message.
+     * Intent is used to help the support agent or business system identify the product, service, account, or other
+     * context when the customer tapped the button to send the message.
      */
     @Generated
     @CVariable()
@@ -30,7 +31,8 @@ public final class BusinessChat {
     public static native String BCParameterNameIntent();
 
     /**
-     * Group is used to help the business or customer service platform route the message to the appropriate support agent group.
+     * Group is used to help the business or customer service platform route the message to the appropriate support
+     * agent group.
      */
     @Generated
     @CVariable()
@@ -38,7 +40,8 @@ public final class BusinessChat {
     public static native String BCParameterNameGroup();
 
     /**
-     * Body is used to help the customer by providing a pre-configured contextual message that the customer can tap to send to smooth the transition into Business Chat.
+     * Body is used to help the customer by providing a pre-configured contextual message that the customer can tap to
+     * send to smooth the transition into Business Chat.
      */
     @Generated
     @CVariable()

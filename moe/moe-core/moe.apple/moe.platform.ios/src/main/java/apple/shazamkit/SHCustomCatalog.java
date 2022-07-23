@@ -29,7 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Configure a custom catalog of @c SHSignature objects to match against
  * <p>
- * Use a custom catalog if you intend to search against reference signatures that you have provided yourself. All matches will be performed locally on the device against the signatures added to this Catalog.
+ * Use a custom catalog if you intend to search against reference signatures that you have provided yourself. All
+ * matches will be performed locally on the device against the signatures added to this Catalog.
  * [@c] SHMediaItem can be built using custom data that will be returned when a match is made.
  * Once this catalog has been built it can be written to disk and loaded again at a later date.
  */

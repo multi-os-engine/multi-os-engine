@@ -42,11 +42,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * CBMutableCharacteristic
  * <p>
- * Used to create a local characteristic, which can be added to the local database via <code>CBPeripheralManager</code>. Once a characteristic
+ * Used to create a local characteristic, which can be added to the local database via <code>CBPeripheralManager</code>.
+ * Once a characteristic
  * is published, it is cached and can no longer be changed.
  * If a characteristic value is specified, it will be cached and marked <code>CBCharacteristicPropertyRead</code> and
- * <code>CBAttributePermissionsReadable</code>. If a characteristic value needs to be writeable, or may change during the lifetime of the
- * published <code>CBService</code>, it is considered a dynamic value and will be requested on-demand. Dynamic values are identified by a
+ * <code>CBAttributePermissionsReadable</code>. If a characteristic value needs to be writeable, or may change during
+ * the lifetime of the
+ * published <code>CBService</code>, it is considered a dynamic value and will be requested on-demand. Dynamic values
+ * are identified by a
  * <i>value</i> of <i>nil</i>.
  */
 @Generated
@@ -174,7 +177,8 @@ public class CBMutableCharacteristic extends CBCharacteristic {
      *
      * @param UUID        The Bluetooth UUID of the characteristic.
      * @param properties  The properties of the characteristic.
-     * @param value       The characteristic value to be cached. If <i>nil</i>, the value will be dynamic and requested on-demand.
+     * @param value       The characteristic value to be cached. If <i>nil</i>, the value will be dynamic and requested
+     *                    on-demand.
      * @param permissions The permissions of the characteristic value.
      */
     @Generated
@@ -187,7 +191,7 @@ public class CBMutableCharacteristic extends CBCharacteristic {
      * <p>
      * The permissions of the characteristic value.
      *
-     * @see        CBAttributePermissions
+     * @see CBAttributePermissions
      */
     @Generated
     @Selector("permissions")
@@ -208,7 +212,7 @@ public class CBMutableCharacteristic extends CBCharacteristic {
      * <p>
      * The permissions of the characteristic value.
      *
-     * @see        CBAttributePermissions
+     * @see CBAttributePermissions
      */
     @Generated
     @Selector("setPermissions:")

@@ -139,7 +139,9 @@ public class NSPersistentStore extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Returns the NSMigrationManager class optimized for this store class.  Subclasses of NSPersistentStore can override this to provide a custom migration manager subclass (eg to take advantage of store-specific functionality to improve migration performance).
+     * Returns the NSMigrationManager class optimized for this store class. Subclasses of NSPersistentStore can override
+     * this to provide a custom migration manager subclass (eg to take advantage of store-specific functionality to
+     * improve migration performance).
      */
     @Generated
     @Selector("migrationManagerClass")
@@ -228,7 +230,8 @@ public class NSPersistentStore extends NSObject {
     public native void setReadOnly(boolean value);
 
     /**
-     * Store metadata must be accessible before -load: is called, but there is no way to return an error if the store is invalid
+     * Store metadata must be accessible before -load: is called, but there is no way to return an error if the store is
+     * invalid
      */
     @Generated
     @Selector("loadMetadata:")

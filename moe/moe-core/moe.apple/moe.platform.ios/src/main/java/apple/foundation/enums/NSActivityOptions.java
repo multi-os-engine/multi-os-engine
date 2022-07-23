@@ -19,23 +19,36 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * The system has heuristics to improve battery life, performance, and responsiveness of applications for the benefit of the user. This API can be used to give hints to the system that your application has special requirements. In response to creating one of these activities, the system will disable some or all of the heuristics so your application can finish quickly while still providing responsive behavior if the user needs it.
+ * The system has heuristics to improve battery life, performance, and responsiveness of applications for the benefit of
+ * the user. This API can be used to give hints to the system that your application has special requirements. In
+ * response to creating one of these activities, the system will disable some or all of the heuristics so your
+ * application can finish quickly while still providing responsive behavior if the user needs it.
  * <p>
- * These activities can be used when your application is performing a long-running operation. If the activity can take different amounts of time (for example, calculating the next move in a chess game), it should use this API. This will ensure correct behavior when the amount of data or the capabilities of the user's computer varies. You should put your activity into one of two major categories:
+ * These activities can be used when your application is performing a long-running operation. If the activity can take
+ * different amounts of time (for example, calculating the next move in a chess game), it should use this API. This will
+ * ensure correct behavior when the amount of data or the capabilities of the user's computer varies. You should put
+ * your activity into one of two major categories:
  * <p>
- * User initiated: These are finite length activities that the user has explicitly started. Examples include exporting or downloading a user specified file.
+ * User initiated: These are finite length activities that the user has explicitly started. Examples include exporting
+ * or downloading a user specified file.
  * <p>
- * Background: These are finite length activities that are part of the normal operation of your application but are not explicitly started by the user. Examples include autosaving, indexing, and automatic downloading of files.
+ * Background: These are finite length activities that are part of the normal operation of your application but are not
+ * explicitly started by the user. Examples include autosaving, indexing, and automatic downloading of files.
  * <p>
- * In addition, if your application requires high priority IO, you can include the 'NSActivityLatencyCritical' flag (using a bitwise or). This should be reserved for activities like audio or video recording.
+ * In addition, if your application requires high priority IO, you can include the 'NSActivityLatencyCritical' flag
+ * (using a bitwise or). This should be reserved for activities like audio or video recording.
  * <p>
- * If your activity takes place synchronously inside an event callback on the main thread, you do not need to use this API.
+ * If your activity takes place synchronously inside an event callback on the main thread, you do not need to use this
+ * API.
  * <p>
- * Be aware that failing to end these activities for an extended period of time can have significant negative impacts to the performance of your user's computer, so be sure to use only the minimum amount of time required. User preferences may override your application’s request.
+ * Be aware that failing to end these activities for an extended period of time can have significant negative impacts to
+ * the performance of your user's computer, so be sure to use only the minimum amount of time required. User preferences
+ * may override your application’s request.
  * <p>
  * This API can also be used to control auto termination or sudden termination.
  * <p>
- * id activity = [NSProcessInfo.processInfo beginActivityWithOptions:NSActivityAutomaticTerminationDisabled reason:@"Good Reason"];
+ * id activity = [NSProcessInfo.processInfo beginActivityWithOptions:NSActivityAutomaticTerminationDisabled
+ * reason:@"Good Reason"];
  * // work
  * [NSProcessInfo.processInfo endActivity:activity];
  * <p>
@@ -45,9 +58,12 @@ import org.moe.natj.general.ann.Generated;
  * // work
  * [NSProcessInfo.processInfo enableAutomaticTermination:@"Good Reason"]
  * <p>
- * Since this API returns an object, it may be easier to pair begins and ends. If the object is deallocated before the -endActivity: call, the activity will be automatically ended.
+ * Since this API returns an object, it may be easier to pair begins and ends. If the object is deallocated before the
+ * -endActivity: call, the activity will be automatically ended.
  * <p>
- * This API also provides a mechanism to disable system-wide idle sleep and display idle sleep. These can have a large impact on the user experience, so be sure not to forget to end activities that disable sleep (including NSActivityUserInitiated).
+ * This API also provides a mechanism to disable system-wide idle sleep and display idle sleep. These can have a large
+ * impact on the user experience, so be sure not to forget to end activities that disable sleep (including
+ * NSActivityUserInitiated).
  */
 @Generated
 public final class NSActivityOptions {
@@ -80,7 +96,8 @@ public final class NSActivityOptions {
      */
     @Generated public static final long Background = 0x00000000000000FFL;
     /**
-     * Used for activities that require the highest amount of timer and I/O precision available. Very few applications should need to use this constant.
+     * Used for activities that require the highest amount of timer and I/O precision available. Very few applications
+     * should need to use this constant.
      */
     @Generated public static final long LatencyCritical = 0x000000FF00000000L;
 

@@ -110,10 +110,12 @@ public class CPGridTemplate extends CPTemplate implements CPBarButtonProviding {
     /**
      * Initialize a grid template with an array of @c CPGridButton and a title.
      * <p>
-     * [@note] A grid template will only display the first @c CPGridTemplateMaximumItems buttons in the provided @c gridButtons array.
+     * [@note] A grid template will only display the first @c CPGridTemplateMaximumItems buttons in the provided @c
+     * gridButtons array.
      *
      * @param title       Title shown in template's navigation bar.
-     * @param gridButtons A list of grid buttons on the template. The maximum button count is  @c CPGridTemplateMaximumItems.
+     * @param gridButtons A list of grid buttons on the template. The maximum button count is @c
+     *                    CPGridTemplateMaximumItems.
      */
     @Generated
     @Selector("initWithTitle:gridButtons:")

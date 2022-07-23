@@ -23,7 +23,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A controller battery is an abstract representation of the battery level and battery status of a GCController instance.
+ * A controller battery is an abstract representation of the battery level and battery status of a GCController
+ * instance.
  */
 @Generated
 @Library("GameController")
@@ -68,7 +69,8 @@ public class GCDeviceBattery extends NSObject {
     /**
      * A battery state for controller, defaults to GCControllerBatteryStateUnknown
      * <p>
-     * [@note] This property might be useful if you display the information about currently connected controller for player's convenience
+     * [@note] This property might be useful if you display the information about currently connected controller for
+     * player's convenience
      */
     @Generated
     @Selector("batteryState")

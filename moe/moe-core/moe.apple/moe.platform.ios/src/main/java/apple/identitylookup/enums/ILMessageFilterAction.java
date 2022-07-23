@@ -13,7 +13,8 @@ public final class ILMessageFilterAction {
     }
 
     /**
-     * Insufficient information to determine an action to take. In a query response, has the effect of allowing the message to be shown normally.
+     * Insufficient information to determine an action to take. In a query response, has the effect of allowing the
+     * message to be shown normally.
      */
     @Generated @NInt public static final long None = 0x0000000000000000L;
     /**

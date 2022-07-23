@@ -89,7 +89,8 @@ public class UIDeferredMenuElement extends UIMenuElement {
      * until it is fulfilled. While the element may be stored and re-used across menus, its block is
      * called only once, when the element is first encountered in a menu.
      *
-     * @param elementProvider Called by the system to request the deferred menu items when the containing menu is presented.
+     * @param elementProvider Called by the system to request the deferred menu items when the containing menu is
+     *                        presented.
      *                        Call this block's completion handler when the menu items are available.
      */
     @Generated
@@ -188,7 +189,8 @@ public class UIDeferredMenuElement extends UIMenuElement {
      * until it is fulfilled. Elements created using this initializer are "uncached",
      * so their @c elementProvider block is called every time the element is displayed.
      *
-     * @param elementProvider Called by the system to request the deferred menu items when the containing menu is presented.
+     * @param elementProvider Called by the system to request the deferred menu items when the containing menu is
+     *                        presented.
      *                        Call this block's completion handler when the menu items are available.
      */
     @Generated

@@ -92,7 +92,7 @@ public class AVAudioEngine extends NSObject {
      *             <p>
      *             ```
      *             // when building engine:
-     *             AVAudioNode *_player;	// member of controller class (for example)
+     *             AVAudioNode *_player; // member of controller class (for example)
      *             ...
      *             _player = [[AVAudioPlayerNode alloc] init];
      *             [engine attachNode: _player];
@@ -448,35 +448,36 @@ public class AVAudioEngine extends NSObject {
      *
      * @param mode              The manual rendering mode to use.
      * @param pcmFormat         The format of the output PCM audio data from the engine.
-     * @param maximumFrameCount The maximum number of PCM sample frames the engine will be asked to produce in any single
+     * @param maximumFrameCount The maximum number of PCM sample frames the engine will be asked to produce in any
+     *                          single
      *                          render call.
      * @param outError          On exit, if the engine cannot switch to the manual rendering mode, a description of the
      *                          error (see `AVAudioEngineManualRenderingError` for the possible errors).
      * @return YES for success.
-     * <p>
-     * Use this method to configure the engine to render in response to requests from the client.
-     * <p>
-     * The engine must be in a stopped state before calling this method.
-     * The render format must be a PCM format and match the format of the buffer to which
-     * the engine is asked to render (see `renderOffline:toBuffer:error:`).
-     * <p>
-     * It is advised to enable manual rendering mode soon after the engine is created, and
-     * before accessing any of mainMixerNode, inputNode or outputNode of the engine.
-     * Otherwise, accessing or interacting with the engine before enabling manual rendering
-     * mode could have the unintended side-effect of configuring the hardware for device-rendering
-     * mode.
-     * <p>
-     * The input data in manual rendering mode can be supplied through the source nodes, e.g.
-     * `AVAudioPlayerNode`, `AVAudioInputNode` etc.
-     * <p>
-     * When switching to manual rendering mode, the engine:
-     * 1. Switches the input and output nodes to manual rendering mode. Their input and output
-     * formats may change.
-     * 2. Removes any taps previously installed on the input and output nodes.
-     * 3. Maintains all the engine connections as is.
-     * <p>
-     * Reasons for potential failure when switching to manual rendering mode include:
-     * - Engine is not in a stopped state.
+     *         <p>
+     *         Use this method to configure the engine to render in response to requests from the client.
+     *         <p>
+     *         The engine must be in a stopped state before calling this method.
+     *         The render format must be a PCM format and match the format of the buffer to which
+     *         the engine is asked to render (see `renderOffline:toBuffer:error:`).
+     *         <p>
+     *         It is advised to enable manual rendering mode soon after the engine is created, and
+     *         before accessing any of mainMixerNode, inputNode or outputNode of the engine.
+     *         Otherwise, accessing or interacting with the engine before enabling manual rendering
+     *         mode could have the unintended side-effect of configuring the hardware for device-rendering
+     *         mode.
+     *         <p>
+     *         The input data in manual rendering mode can be supplied through the source nodes, e.g.
+     *         `AVAudioPlayerNode`, `AVAudioInputNode` etc.
+     *         <p>
+     *         When switching to manual rendering mode, the engine:
+     *         1. Switches the input and output nodes to manual rendering mode. Their input and output
+     *         formats may change.
+     *         2. Removes any taps previously installed on the input and output nodes.
+     *         3. Maintains all the engine connections as is.
+     *         <p>
+     *         Reasons for potential failure when switching to manual rendering mode include:
+     *         - Engine is not in a stopped state.
      */
     @Generated
     @Selector("enableManualRenderingMode:format:maximumFrameCount:error:")
@@ -509,11 +510,11 @@ public class AVAudioEngine extends NSObject {
      * @param node The node whose input connection is being queried.
      * @param bus  The node's input bus on which the connection is being queried.
      * @return An AVAudioConnectionPoint object with connection information on the node's
-     * specified input bus.
-     * <p>
-     * Connections are always one-to-one or one-to-many, never many-to-one.
-     * <p>
-     * Returns nil if there is no connection on the node's specified input bus.
+     *         specified input bus.
+     *         <p>
+     *         Connections are always one-to-one or one-to-many, never many-to-one.
+     *         <p>
+     *         Returns nil if there is no connection on the node's specified input bus.
      */
     @Generated
     @Selector("inputConnectionPointForNode:inputBus:")
@@ -643,7 +644,7 @@ public class AVAudioEngine extends NSObject {
      * blocking.
      * <p>
      * When rendering in `AVAudioEngineManualRenderingModeOffline`, either this block based render
-     * call or	`renderOffline:toBuffer:error:` ObjC method can be used.
+     * call or `renderOffline:toBuffer:error:` ObjC method can be used.
      * All the rules outlined in `renderOffline:toBuffer:error:` are applicable here as well.
      */
     @Generated
@@ -733,11 +734,11 @@ public class AVAudioEngine extends NSObject {
      * @param node The node whose output connections are being queried.
      * @param bus  The node's output bus on which connections are being queried.
      * @return An array of AVAudioConnectionPoint objects with connection information on the node's
-     * specified output bus.
-     * <p>
-     * Connections are always one-to-one or one-to-many, never many-to-one.
-     * <p>
-     * Returns an empty array if there are no connections on the node's specified output bus.
+     *         specified output bus.
+     *         <p>
+     *         Connections are always one-to-one or one-to-many, never many-to-one.
+     *         <p>
+     *         Returns an empty array if there are no connections on the node's specified output bus.
      */
     @Generated
     @Selector("outputConnectionPointsForNode:outputBus:")
@@ -806,25 +807,25 @@ public class AVAudioEngine extends NSObject {
      * @param outError       On exit, if an error occurs during rendering, a description of the error (see
      *                       `AVAudioEngineManualRenderingError` for the possible errors)
      * @return One of the status codes from `AVAudioEngineManualRenderingStatus`. Irrespective of the
-     * returned status code, on exit, the output buffer's frameLength will indicate the number of
-     * PCM samples rendered by the engine
-     * <p>
-     * The engine must be in the offline manual rendering mode
-     * (`AVAudioEngineManualRenderingModeOffline`) and started before calling this method.
-     * <p>
-     * The format of the buffer must match the render format set through
-     * `enableManualRenderingMode:format:maximumFrameCount:error:`. The buffer capacity must be
-     * greater than or equal to the number of samples asked to render.
-     * On exit, the buffer's frameLength will indicate the number of PCM samples rendered by the
-     * engine.
-     * <p>
-     * The engine's timeline in manual rendering mode starts at a sample time of zero, and is in
-     * terms of the render format's sample rate. Resetting the engine (see `reset`) will reset the
-     * timeline back to zero.
-     * <p>
-     * When rendering in `AVAudioEngineManualRenderingModeRealtime`, this ObjC render method
-     * must not be used, an error is returned otherwise. Use the block based render call
-     * (`manualRenderingBlock`) in that mode instead.
+     *         returned status code, on exit, the output buffer's frameLength will indicate the number of
+     *         PCM samples rendered by the engine
+     *         <p>
+     *         The engine must be in the offline manual rendering mode
+     *         (`AVAudioEngineManualRenderingModeOffline`) and started before calling this method.
+     *         <p>
+     *         The format of the buffer must match the render format set through
+     *         `enableManualRenderingMode:format:maximumFrameCount:error:`. The buffer capacity must be
+     *         greater than or equal to the number of samples asked to render.
+     *         On exit, the buffer's frameLength will indicate the number of PCM samples rendered by the
+     *         engine.
+     *         <p>
+     *         The engine's timeline in manual rendering mode starts at a sample time of zero, and is in
+     *         terms of the render format's sample rate. Resetting the engine (see `reset`) will reset the
+     *         timeline back to zero.
+     *         <p>
+     *         When rendering in `AVAudioEngineManualRenderingModeRealtime`, this ObjC render method
+     *         must not be used, an error is returned otherwise. Use the block based render call
+     *         (`manualRenderingBlock`) in that mode instead.
      */
     @Generated
     @Selector("renderOffline:toBuffer:error:")
@@ -898,19 +899,19 @@ public class AVAudioEngine extends NSObject {
      * Start the engine.
      *
      * @return YES for success
-     * <p>
-     * Calls prepare if it has not already been called since stop.
-     * <p>
-     * When the engine is rendering to/from an audio device, starts the audio hardware via the
-     * AVAudioInputNode and/or AVAudioOutputNode instances in the engine. Audio begins to flow
-     * through the engine.
-     * Reasons for potential failure to start in this mode include:
-     * 1. There is problem in the structure of the graph. Input can't be routed to output or to a
-     * recording tap through converter type nodes.
-     * 2. An AVAudioSession error.
-     * 3. The driver failed to start the hardware.
-     * <p>
-     * In manual rendering mode, prepares the engine to render when requested by the client.
+     *         <p>
+     *         Calls prepare if it has not already been called since stop.
+     *         <p>
+     *         When the engine is rendering to/from an audio device, starts the audio hardware via the
+     *         AVAudioInputNode and/or AVAudioOutputNode instances in the engine. Audio begins to flow
+     *         through the engine.
+     *         Reasons for potential failure to start in this mode include:
+     *         1. There is problem in the structure of the graph. Input can't be routed to output or to a
+     *         recording tap through converter type nodes.
+     *         2. An AVAudioSession error.
+     *         3. The driver failed to start the hardware.
+     *         <p>
+     *         In manual rendering mode, prepares the engine to render when requested by the client.
      */
     @Generated
     @Selector("startAndReturnError:")

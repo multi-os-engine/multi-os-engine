@@ -30,9 +30,10 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * [@protocol]	AVVideoCompositionInstruction
+ * [@protocol] AVVideoCompositionInstruction
  * <p>
- * The AVVideoCompositionInstruction protocol is implemented by objects to represent operations to be performed by a compositor.
+ * The AVVideoCompositionInstruction protocol is implemented by objects to represent operations to be performed by a
+ * compositor.
  */
 @Generated
 @Library("AVFoundation")
@@ -64,14 +65,16 @@ public interface AVVideoCompositionInstruction {
     int passthroughTrackID();
 
     /**
-     * List of video track IDs required to compose frames for this instruction. If the value of this property is nil, all source tracks will be considered required for composition
+     * List of video track IDs required to compose frames for this instruction. If the value of this property is nil,
+     * all source tracks will be considered required for composition
      */
     @Generated
     @Selector("requiredSourceTrackIDs")
     NSArray<? extends NSValue> requiredSourceTrackIDs();
 
     /**
-     * Indicates the timeRange during which the instruction is effective. Note requirements for the timeRanges of instructions described in connection with AVVideoComposition's instructions key above.
+     * Indicates the timeRange during which the instruction is effective. Note requirements for the timeRanges of
+     * instructions described in connection with AVVideoComposition's instructions key above.
      */
     @Generated
     @Selector("timeRange")
@@ -79,7 +82,8 @@ public interface AVVideoCompositionInstruction {
     CMTimeRange timeRange();
 
     /**
-     * List of sample data track IDs required to compose frames for this instruction.  An empty array indicates that no sample data is required for this instruction.
+     * List of sample data track IDs required to compose frames for this instruction. An empty array indicates that no
+     * sample data is required for this instruction.
      */
     @Generated
     @IsOptional

@@ -50,8 +50,10 @@ public interface NWTCPConnectionAuthenticationDelegate {
      * @param connection           The connection sending this message
      * @param peerCertificateChain The peer certificate chain
      * @param completion           The completion handler for passing the SecTrustRef object to the connection.
-     *                             The SecTrustRef object "trust" is required and must not be nil. It will be evaluated using
-     *                             SecTrustEvaluate() if necessary. The caller is responsible for keeping the argument object
+     *                             The SecTrustRef object "trust" is required and must not be nil. It will be evaluated
+     *                             using
+     *                             SecTrustEvaluate() if necessary. The caller is responsible for keeping the argument
+     *                             object
      *                             alive for the duration of the completion handler invocation.
      */
     @Generated
@@ -71,10 +73,14 @@ public interface NWTCPConnectionAuthenticationDelegate {
      *
      * @param connection The connection sending this message
      * @param completion The completion handler for passing identity and certificate chain to the connection.
-     *                   The "identity" argument is required and must not be nil. The "certificateChain" argument is optional,
-     *                   and is an array of one or more SecCertificateRef objects. The certificate chain must contain objects
-     *                   of type SecCertificateRef only. If the certificate chain is set, it will be used. Otherwise, the leaf
-     *                   certificate will be extracted from the SecIdentityRef object and will be used for authentication.
+     *                   The "identity" argument is required and must not be nil. The "certificateChain" argument is
+     *                   optional,
+     *                   and is an array of one or more SecCertificateRef objects. The certificate chain must contain
+     *                   objects
+     *                   of type SecCertificateRef only. If the certificate chain is set, it will be used. Otherwise,
+     *                   the leaf
+     *                   certificate will be extracted from the SecIdentityRef object and will be used for
+     *                   authentication.
      *                   <p>
      *                   The caller is responsible for keeping the argument object(s) alive for the duration of the
      *                   completion handler invocation.
@@ -97,7 +103,7 @@ public interface NWTCPConnectionAuthenticationDelegate {
      *
      * @param connection The connection sending this message
      * @return YES to take over the default trust evaluation, in which case, the delegate method
-     * evaluateTrustForConnection:peerCertificateChain:completionHandler: will be called.
+     *         evaluateTrustForConnection:peerCertificateChain:completionHandler: will be called.
      */
     @Generated
     @IsOptional
@@ -116,7 +122,7 @@ public interface NWTCPConnectionAuthenticationDelegate {
      *
      * @param connection The connection sending this message
      * @return YES to provide the identity for this connection, in which case, the delegate method
-     * provideIdentityForConnection:completionHandler: will be called.
+     *         provideIdentityForConnection:completionHandler: will be called.
      */
     @Generated
     @IsOptional

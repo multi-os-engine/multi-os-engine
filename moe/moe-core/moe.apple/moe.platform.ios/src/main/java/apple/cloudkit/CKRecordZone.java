@@ -162,7 +162,8 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
     public static native long version_static();
 
     /**
-     * Capabilities on locally-created record zones are not valid until the record zone is saved. Capabilities on record zones fetched from the server are valid.
+     * Capabilities on locally-created record zones are not valid until the record zone is saved. Capabilities on record
+     * zones fetched from the server are valid.
      */
     @Generated
     @Selector("capabilities")
@@ -211,7 +212,8 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
      * <p>
      * You can create a zone-wide share for a zone using @code -[CKShare initWithRecordZoneID:] @endcode.
      * <p>
-     * Zone-wide sharing is only supported in zones with the @c CKRecordZoneCapabilityZoneWideSharing sharing capability.
+     * Zone-wide sharing is only supported in zones with the @c CKRecordZoneCapabilityZoneWideSharing sharing
+     * capability.
      * You cannot share a zone if it already contains shared records.
      */
     @Generated

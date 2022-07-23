@@ -40,9 +40,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * MTLTexture represents a collection of 1D, 2D, or 3D images.
  * <p>
- * Each image in a texture is a 1D, 2D, 2DMultisample, or 3D image. The texture contains one or more images arranged in a mipmap stack. If there are multiple mipmap stacks, each one is referred to as a slice of the texture. 1D, 2D, 2DMultisample, and 3D textures have a single slice. In 1DArray and 2DArray textures, every slice is an array element. A Cube texture always has 6 slices, one for each face. In a CubeArray texture, each set of six slices is one element in the array.
+ * Each image in a texture is a 1D, 2D, 2DMultisample, or 3D image. The texture contains one or more images arranged in
+ * a mipmap stack. If there are multiple mipmap stacks, each one is referred to as a slice of the texture. 1D, 2D,
+ * 2DMultisample, and 3D textures have a single slice. In 1DArray and 2DArray textures, every slice is an array element.
+ * A Cube texture always has 6 slices, one for each face. In a CubeArray texture, each set of six slices is one element
+ * in the array.
  * <p>
- * Most APIs that operate on individual images in a texture address those images via a tuple of a Slice, and Mipmap Level within that slice.
+ * Most APIs that operate on individual images in a texture address those images via a tuple of a Slice, and Mipmap
+ * Level within that slice.
  */
 @Generated
 @Library("Metal")
@@ -64,7 +69,8 @@ public interface MTLTexture extends MTLResource {
     /**
      * [@property] buffer
      * <p>
-     * The buffer this texture view was created from, or nil if this is not a texture view or it was not created from a buffer.
+     * The buffer this texture view was created from, or nil if this is not a texture view or it was not created from a
+     * buffer.
      */
     @Generated
     @Selector("buffer")
@@ -116,7 +122,8 @@ public interface MTLTexture extends MTLResource {
     /**
      * getBytes:bytesPerRow:fromRegion:mipmapLevel:
      * <p>
-     * Convenience for getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice: that doesn't require slice related arguments
+     * Convenience for getBytes:bytesPerRow:bytesPerImage:fromRegion:mipmapLevel:slice: that doesn't require slice
+     * related arguments
      */
     @Generated
     @Selector("getBytes:bytesPerRow:fromRegion:mipmapLevel:")
@@ -138,9 +145,13 @@ public interface MTLTexture extends MTLResource {
     /**
      * [@property] framebufferOnly
      * <p>
-     * If YES, this texture can only be used with a MTLAttachmentDescriptor, and cannot be used as a texture argument for MTLRenderCommandEncoder, MTLBlitCommandEncoder, or MTLComputeCommandEncoder. Furthermore, when this property's value is YES, readPixels/writePixels may not be used with this texture.
+     * If YES, this texture can only be used with a MTLAttachmentDescriptor, and cannot be used as a texture argument
+     * for MTLRenderCommandEncoder, MTLBlitCommandEncoder, or MTLComputeCommandEncoder. Furthermore, when this
+     * property's value is YES, readPixels/writePixels may not be used with this texture.
      * <p>
-     * Textures obtained from CAMetalDrawables may have this property set to YES, depending on the value of frameBufferOnly passed to their parent CAMetalLayer. Textures created directly by the application will not have any restrictions.
+     * Textures obtained from CAMetalDrawables may have this property set to YES, depending on the value of
+     * frameBufferOnly passed to their parent CAMetalLayer. Textures created directly by the application will not have
+     * any restrictions.
      */
     @Generated
     @Selector("isFramebufferOnly")
@@ -159,7 +170,8 @@ public interface MTLTexture extends MTLResource {
     /**
      * newTextureViewWithPixelFormat:
      * <p>
-     * Create a new texture which shares the same storage as the source texture, but with a different (but compatible) pixel format.
+     * Create a new texture which shares the same storage as the source texture, but with a different (but compatible)
+     * pixel format.
      */
     @Generated
     @Selector("newTextureViewWithPixelFormat:")
@@ -169,7 +181,8 @@ public interface MTLTexture extends MTLResource {
     /**
      * newTextureViewWithPixelFormat:textureType:levels:slices:
      * <p>
-     * Create a new texture which shares the same storage as the source texture, but with a different (but compatible) pixel format, texture type, levels and slices.
+     * Create a new texture which shares the same storage as the source texture, but with a different (but compatible)
+     * pixel format, texture type, levels and slices.
      */
     @Generated
     @Selector("newTextureViewWithPixelFormat:textureType:levels:slices:")
@@ -200,7 +213,8 @@ public interface MTLTexture extends MTLResource {
     /**
      * [@property] parentTexture
      * <p>
-     * The texture this texture view was created from, or nil if this is not a texture view or it was not created from a texture.
+     * The texture this texture view was created from, or nil if this is not a texture view or it was not created from a
+     * texture.
      */
     @Generated
     @Selector("parentTexture")
@@ -230,7 +244,8 @@ public interface MTLTexture extends MTLResource {
     /**
      * replaceRegion:mipmapLevel:withBytes:bytesPerRow:
      * <p>
-     * Convenience for replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage: that doesn't require slice related arguments
+     * Convenience for replaceRegion:mipmapLevel:slice:withBytes:bytesPerRow:bytesPerImage: that doesn't require slice
+     * related arguments
      */
     @Generated
     @Selector("replaceRegion:mipmapLevel:withBytes:bytesPerRow:")
@@ -240,7 +255,8 @@ public interface MTLTexture extends MTLResource {
     /**
      * [@property] rootResource
      * <p>
-     * The resource this texture was created from. It may be a texture or a buffer. If this texture is not reusing storage of another MTLResource, then nil is returned.
+     * The resource this texture was created from. It may be a texture or a buffer. If this texture is not reusing
+     * storage of another MTLResource, then nil is returned.
      */
     @Generated
     @Selector("rootResource")
@@ -292,7 +308,8 @@ public interface MTLTexture extends MTLResource {
     /**
      * [@property] iosurface
      * <p>
-     * If this texture was created from an IOSurface, this returns a reference to that IOSurface. iosurface is nil if this texture was not created from an IOSurface.
+     * If this texture was created from an IOSurface, this returns a reference to that IOSurface. iosurface is nil if
+     * this texture was not created from an IOSurface.
      */
     @Generated
     @Selector("iosurface")
@@ -301,7 +318,8 @@ public interface MTLTexture extends MTLResource {
     /**
      * [@property] iosurfacePlane
      * <p>
-     * If this texture was created from an IOSurface, this returns the plane of the IOSurface from which the texture was created. iosurfacePlane is 0 if this texture was not created from an IOSurface.
+     * If this texture was created from an IOSurface, this returns the plane of the IOSurface from which the texture was
+     * created. iosurfacePlane is 0 if this texture was not created from an IOSurface.
      */
     @Generated
     @Selector("iosurfacePlane")
@@ -313,7 +331,8 @@ public interface MTLTexture extends MTLResource {
      * <p>
      * Allow GPU-optimization for the contents texture. The default value is true.
      * <p>
-     * Useful for opting-out of GPU-optimization when implicit optimization (e.g. RT writes) is regressing CPU-read-back performance. See the documentation for optimizeContentsForGPUAccess: and optimizeContentsForCPUAccess: APIs.
+     * Useful for opting-out of GPU-optimization when implicit optimization (e.g. RT writes) is regressing CPU-read-back
+     * performance. See the documentation for optimizeContentsForGPUAccess: and optimizeContentsForCPUAccess: APIs.
      */
     @Generated
     @Selector("allowGPUOptimizedContents")
@@ -357,7 +376,8 @@ public interface MTLTexture extends MTLResource {
     /**
      * newTextureViewWithPixelFormat:textureType:levels:slices:swizzle:
      * <p>
-     * Create a new texture which shares the same storage as the source texture, but with a different (but compatible) pixel format, texture type, levels, slices and swizzle.
+     * Create a new texture which shares the same storage as the source texture, but with a different (but compatible)
+     * pixel format, texture type, levels, slices and swizzle.
      */
     @Generated
     @Selector("newTextureViewWithPixelFormat:textureType:levels:slices:swizzle:")

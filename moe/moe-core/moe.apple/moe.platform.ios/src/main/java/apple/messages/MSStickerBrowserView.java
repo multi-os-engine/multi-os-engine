@@ -445,7 +445,7 @@ public class MSStickerBrowserView extends UIView {
      * configured with flow layout.
      * [@property] size hints the size of the cells, the size a sticker is drawn at will
      * vary based on the device. Sticker images will be scaled down to fit in the grid cell. If the
-     * sticker image is smaller than the cell size measured in pixels then it will be  centered
+     * sticker image is smaller than the cell size measured in pixels then it will be centered
      * in the grid cell.
      */
     @Generated

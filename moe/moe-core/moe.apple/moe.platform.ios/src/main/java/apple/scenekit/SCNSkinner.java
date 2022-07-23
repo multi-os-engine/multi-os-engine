@@ -157,9 +157,13 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
      *
      * @param baseGeometry              Specifies the base geometry used by the skinner
      * @param bones                     Specifies the array of bones.
-     * @param boneInverseBindTransforms The inverse of the bone’s bind-space transformation matrix at the time the bind shape was bound to this bone.
-     * @param boneWeights               A buffer of weights. This contains the weights of every influence of every vertex. The number of influence per vertex is controlled by the number of component in the geometry source.
-     * @param boneIndices               A buffer of bone indexes. This buffer contains the corresponding index in the bones array for every weight in the weights buffer.
+     * @param boneInverseBindTransforms The inverse of the bone’s bind-space transformation matrix at the time the bind
+     *                                  shape was bound to this bone.
+     * @param boneWeights               A buffer of weights. This contains the weights of every influence of every
+     *                                  vertex. The number of influence per vertex is controlled by the number of
+     *                                  component in the geometry source.
+     * @param boneIndices               A buffer of bone indexes. This buffer contains the corresponding index in the
+     *                                  bones array for every weight in the weights buffer.
      */
     @Generated
     @Selector("skinnerWithBaseGeometry:bones:boneInverseBindTransforms:boneWeights:boneIndices:")
@@ -188,7 +192,8 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
      * <p>
      * Updating this will change the geometry of all the nodes sharing the skinner.
      * Access the node's geometry if you want to update this specific skinner properties (materials for example).
-     * Access this property if you want a whole new geometry (which will necessarily be shared among the skinner instances), with
+     * Access this property if you want a whole new geometry (which will necessarily be shared among the skinner
+     * instances), with
      * different sources, for instance.
      */
     @Generated
@@ -198,7 +203,8 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
     /**
      * [@property] baseGeometryBindTransform
      * <p>
-     * Specifies the transform of the baseGeometry at the time when the mesh was bound to a skeleton. This transforms the baseGeometry from object space to a space on which the skinning then applies.
+     * Specifies the transform of the baseGeometry at the time when the mesh was bound to a skeleton. This transforms
+     * the baseGeometry from object space to a space on which the skinning then applies.
      */
     @Generated
     @Selector("baseGeometryBindTransform")
@@ -262,7 +268,8 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
      * <p>
      * Updating this will change the geometry of all the nodes sharing the skinner.
      * Access the node's geometry if you want to update this specific skinner properties (materials for example).
-     * Access this property if you want a whole new geometry (which will necessarily be shared among the skinner instances), with
+     * Access this property if you want a whole new geometry (which will necessarily be shared among the skinner
+     * instances), with
      * different sources, for instance.
      */
     @Generated
@@ -272,7 +279,8 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
     /**
      * [@property] baseGeometryBindTransform
      * <p>
-     * Specifies the transform of the baseGeometry at the time when the mesh was bound to a skeleton. This transforms the baseGeometry from object space to a space on which the skinning then applies.
+     * Specifies the transform of the baseGeometry at the time when the mesh was bound to a skeleton. This transforms
+     * the baseGeometry from object space to a space on which the skinning then applies.
      */
     @Generated
     @Selector("setBaseGeometryBindTransform:")

@@ -179,7 +179,8 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * Creates an action that runs a javascript script over a duration. the node can be accessed from javascript via the "node" symbol and the elapsed time (between 0 and 1 relative to the duration) via the "elapsedTime" symbol.
+     * Creates an action that runs a javascript script over a duration. the node can be accessed from javascript via the
+     * "node" symbol and the elapsed time (between 0 and 1 relative to the duration) via the "elapsedTime" symbol.
      */
     @Generated
     @Selector("javaScriptActionWithScript:duration:")
@@ -367,7 +368,8 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * [@property] duration
      * <p>
-     * This is the expected duration of an action’s animation. The actual time an action takes to complete is modified by the speed property of the action.
+     * This is the expected duration of an action’s animation. The actual time an action takes to complete is modified
+     * by the speed property of the action.
      */
     @Generated
     @Selector("duration")
@@ -397,7 +399,8 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * [@property] duration
      * <p>
-     * This is the expected duration of an action’s animation. The actual time an action takes to complete is modified by the speed property of the action.
+     * This is the expected duration of an action’s animation. The actual time an action takes to complete is modified
+     * by the speed property of the action.
      */
     @Generated
     @Selector("setDuration:")

@@ -152,8 +152,10 @@ public class HMEventTrigger extends HMTrigger {
      *
      * @param significantEvent The significant event to compare against.
      *                         The valid values are: HMSignificantEventSunrise and HMSignificantEventSunset.
-     * @param offset           An offset from the time of the signficant event. To specify an offset after the significant event, the
-     *                         properties of the NSDateComponents must be positive value. e.g. To specify 30 mins after sunset, the
+     * @param offset           An offset from the time of the signficant event. To specify an offset after the
+     *                         significant event, the
+     *                         properties of the NSDateComponents must be positive value. e.g. To specify 30 mins after
+     *                         sunset, the
      *                         'minute' property must be set to 30.
      * @return Predicate object representing a condition to evaluate before executing the action set.
      */
@@ -178,8 +180,10 @@ public class HMEventTrigger extends HMTrigger {
      *
      * @param significantEvent The significant event to compare against.
      *                         The valid values are: HMSignificantEventSunrise and HMSignificantEventSunset.
-     * @param offset           An offset from the time of the signficant event. To specify an offset before the significant event, the
-     *                         properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
+     * @param offset           An offset from the time of the signficant event. To specify an offset before the
+     *                         significant event, the
+     *                         properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before
+     *                         sunset, the
      *                         'minute' property must be set to -30.
      * @return Predicate object representing a condition to evaluate before executing the action set.
      */
@@ -204,7 +208,8 @@ public class HMEventTrigger extends HMTrigger {
      *
      * @param characteristic The characteristic that is evaluated as part of the predicate.
      * @param operatorType   The relation between the characteristic and the target value.
-     *                       This can be either Less Than, Greater Than, Less Than or Equal, Greater Than or Equal, Equal, or Not Equal.
+     *                       This can be either Less Than, Greater Than, Less Than or Equal, Greater Than or Equal,
+     *                       Equal, or Not Equal.
      *                       Anything else will cause an exception to be thrown.
      * @param value          The value of the characteristic to compare when evaluating the predicate.
      * @return Predicate object representing a condition to evaluate before executing the action set.
@@ -351,7 +356,8 @@ public class HMEventTrigger extends HMTrigger {
      * @param events      Array of events that can trigger the evaluation of the trigger. Note: The trigger will
      *                    be evaluated if any one of the events is true.
      * @param endEvents   Array of end events that can trigger the restoration to the state before the scene was run.
-     * @param recurrences Specifies the days of the week when the trigger is to be evaluated. Only the 'weekday' property
+     * @param recurrences Specifies the days of the week when the trigger is to be evaluated. Only the 'weekday'
+     *                    property
      *                    is honored in NSDateComponents.
      * @param predicate   The predicate to evaluate before executing any of the actions sets associated to this
      *                    event.

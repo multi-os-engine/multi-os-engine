@@ -47,7 +47,8 @@ public class UICellAccessoryDelete extends UICellAccessory {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * An optional handler to call when the delete accessory is tapped. If nil, a tap will reveal any trailing swipe actions for the cell.
+     * An optional handler to call when the delete accessory is tapped. If nil, a tap will reveal any trailing swipe
+     * actions for the cell.
      */
     @Generated
     @Selector("actionHandler")
@@ -156,7 +157,8 @@ public class UICellAccessoryDelete extends UICellAccessory {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * An optional handler to call when the delete accessory is tapped. If nil, a tap will reveal any trailing swipe actions for the cell.
+     * An optional handler to call when the delete accessory is tapped. If nil, a tap will reveal any trailing swipe
+     * actions for the cell.
      */
     @Generated
     @Selector("setActionHandler:")

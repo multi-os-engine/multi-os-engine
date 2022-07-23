@@ -58,9 +58,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("UIApplicationDelegate")
 public interface UIApplicationDelegate {
     /**
-     * Called on the main thread after the NSUserActivity object is available. Use the data you stored in the NSUserActivity object to re-create what the user was doing.
-     * You can create/fetch any restorable objects associated with the user activity, and pass them to the restorationHandler. They will then have the UIResponder restoreUserActivityState: method
-     * invoked with the user activity. Invoking the restorationHandler is optional. It may be copied and invoked later, and it will bounce to the main thread to complete its work and call
+     * Called on the main thread after the NSUserActivity object is available. Use the data you stored in the
+     * NSUserActivity object to re-create what the user was doing.
+     * You can create/fetch any restorable objects associated with the user activity, and pass them to the
+     * restorationHandler. They will then have the UIResponder restoreUserActivityState: method
+     * invoked with the user activity. Invoking the restorationHandler is optional. It may be copied and invoked later,
+     * and it will bounce to the main thread to complete its work and call
      * restoreUserActivityState on all objects.
      */
     @Generated
@@ -95,7 +98,8 @@ public interface UIApplicationDelegate {
     }
 
     /**
-     * If the user activity cannot be fetched after willContinueUserActivityWithType is called, this will be called on the main thread when implemented.
+     * If the user activity cannot be fetched after willContinueUserActivityWithType is called, this will be called on
+     * the main thread when implemented.
      */
     @Generated
     @IsOptional
@@ -135,9 +139,15 @@ public interface UIApplicationDelegate {
     }
 
     /**
-     * This delegate method offers an opportunity for applications with the "remote-notification" background mode to fetch appropriate new data in response to an incoming remote notification. You should call the fetchCompletionHandler as soon as you're finished performing that operation, so the system can accurately estimate its power and data cost.
+     * This delegate method offers an opportunity for applications with the "remote-notification" background mode to
+     * fetch appropriate new data in response to an incoming remote notification. You should call the
+     * fetchCompletionHandler as soon as you're finished performing that operation, so the system can accurately
+     * estimate its power and data cost.
      * <p>
-     * This method will be invoked even if the application was launched or resumed because of the remote notification. The respective delegate methods will be invoked first. Note that this behavior is in contrast to application:didReceiveRemoteNotification:, which is not called in those cases, and which will not be invoked if this method is implemented. !
+     * This method will be invoked even if the application was launched or resumed because of the remote notification.
+     * The respective delegate methods will be invoked first. Note that this behavior is in contrast to
+     * application:didReceiveRemoteNotification:, which is not called in those cases, and which will not be invoked if
+     * this method is implemented. !
      */
     @Generated
     @IsOptional
@@ -157,7 +167,8 @@ public interface UIApplicationDelegate {
     }
 
     /**
-     * This callback will be made upon calling -[UIApplication registerUserNotificationSettings:]. The settings the user has granted to the application will be passed in as the second argument.
+     * This callback will be made upon calling -[UIApplication registerUserNotificationSettings:]. The settings the user
+     * has granted to the application will be passed in as the second argument.
      */
     @Generated
     @IsOptional
@@ -168,7 +179,8 @@ public interface UIApplicationDelegate {
     }
 
     /**
-     * This is called on the main thread when a user activity managed by UIKit has been updated. You can use this as a last chance to add additional data to the userActivity.
+     * This is called on the main thread when a user activity managed by UIKit has been updated. You can use this as a
+     * last chance to add additional data to the userActivity.
      */
     @Generated
     @IsOptional
@@ -225,11 +237,16 @@ public interface UIApplicationDelegate {
     }
 
     /**
-     * Applications using an NSURLSession with a background configuration may be launched or resumed in the background in order to handle the
-     * completion of tasks in that session, or to handle authentication. This method will be called with the identifier of the session needing
-     * attention. Once a session has been created from a configuration object with that identifier, the session's delegate will begin receiving
-     * callbacks. If such a session has already been created (if the app is being resumed, for instance), then the delegate will start receiving
-     * callbacks without any action by the application. You should call the completionHandler as soon as you're finished handling the callbacks.
+     * Applications using an NSURLSession with a background configuration may be launched or resumed in the background
+     * in order to handle the
+     * completion of tasks in that session, or to handle authentication. This method will be called with the identifier
+     * of the session needing
+     * attention. Once a session has been created from a configuration object with that identifier, the session's
+     * delegate will begin receiving
+     * callbacks. If such a session has already been created (if the app is being resumed, for instance), then the
+     * delegate will start receiving
+     * callbacks without any action by the application. You should call the completionHandler as soon as you're finished
+     * handling the callbacks.
      */
     @Generated
     @IsOptional
@@ -277,7 +294,8 @@ public interface UIApplicationDelegate {
 
     /**
      * Called when the user activates your application by selecting a shortcut on the home screen,
-     * except when -application:willFinishLaunchingWithOptions: or -application:didFinishLaunchingWithOptions returns NO.
+     * except when -application:willFinishLaunchingWithOptions: or -application:didFinishLaunchingWithOptions returns
+     * NO.
      */
     @Generated
     @IsOptional
@@ -289,7 +307,10 @@ public interface UIApplicationDelegate {
     }
 
     /**
-     * Applications with the "fetch" background mode may be given opportunities to fetch updated content in the background or when it is convenient for the system. This method will be called in these situations. You should call the fetchCompletionHandler as soon as you're finished performing that operation, so the system can accurately estimate its power and data cost.
+     * Applications with the "fetch" background mode may be given opportunities to fetch updated content in the
+     * background or when it is convenient for the system. This method will be called in these situations. You should
+     * call the fetchCompletionHandler as soon as you're finished performing that operation, so the system can
+     * accurately estimate its power and data cost.
      */
     @Generated
     @IsOptional
@@ -338,9 +359,12 @@ public interface UIApplicationDelegate {
     }
 
     /**
-     * This will be called on the main thread after the user indicates they want to accept a CloudKit sharing invitation in your application.
-     * You should use the CKShareMetadata object's shareURL and containerIdentifier to schedule a CKAcceptSharesOperation, then start using
-     * the resulting CKShare and its associated record(s), which will appear in the CKContainer's shared database in a zone matching that of the record's owner.
+     * This will be called on the main thread after the user indicates they want to accept a CloudKit sharing invitation
+     * in your application.
+     * You should use the CKShareMetadata object's shareURL and containerIdentifier to schedule a
+     * CKAcceptSharesOperation, then start using
+     * the resulting CKShare and its associated record(s), which will appear in the CKContainer's shared database in a
+     * zone matching that of the record's owner.
      */
     @Generated
     @IsOptional
@@ -377,9 +401,11 @@ public interface UIApplicationDelegate {
     }
 
     /**
-     * Called on the main thread as soon as the user indicates they want to continue an activity in your application. The NSUserActivity object may not be available instantly,
+     * Called on the main thread as soon as the user indicates they want to continue an activity in your application.
+     * The NSUserActivity object may not be available instantly,
      * so use this as an opportunity to show the user that an activity will be continued shortly.
-     * For each application:willContinueUserActivityWithType: invocation, you are guaranteed to get exactly one invocation of application:continueUserActivity: on success,
+     * For each application:willContinueUserActivityWithType: invocation, you are guaranteed to get exactly one
+     * invocation of application:continueUserActivity: on success,
      * or application:didFailToContinueUserActivityWithType:error: if an error was encountered.
      */
     @Generated
@@ -589,7 +615,8 @@ public interface UIApplicationDelegate {
     /**
      * Called when the UIKit is about to create & vend a new UIScene instance to the application.
      * The application delegate may modify the provided UISceneConfiguration within this method.
-     * If the UISceneConfiguration instance returned from this method does not have a systemType which matches the connectingSession's, UIKit will assert
+     * If the UISceneConfiguration instance returned from this method does not have a systemType which matches the
+     * connectingSession's, UIKit will assert
      */
     @Generated
     @IsOptional
@@ -600,8 +627,10 @@ public interface UIApplicationDelegate {
     }
 
     /**
-     * Called when the system, due to a user interaction or a request from the application itself, removes one or more representation from the -[UIApplication openSessions] set
-     * If sessions are discarded while the application is not running, this method is called shortly after the applications next launch.
+     * Called when the system, due to a user interaction or a request from the application itself, removes one or more
+     * representation from the -[UIApplication openSessions] set
+     * If sessions are discarded while the application is not running, this method is called shortly after the
+     * applications next launch.
      */
     @Generated
     @IsOptional
@@ -636,7 +665,8 @@ public interface UIApplicationDelegate {
     /**
      * UIKeyCommand system-wide keyboard shortcut localization support
      * This method will be called during application launch.
-     * Return NO if the receiving delegate object wishes to opt-out of system-wide keyboard shortcut localization for all application-supplied UIKeyCommands. Return YES by default for apps linked against 15.0 and later SDK.
+     * Return NO if the receiving delegate object wishes to opt-out of system-wide keyboard shortcut localization for
+     * all application-supplied UIKeyCommands. Return YES by default for apps linked against 15.0 and later SDK.
      */
     @Generated
     @IsOptional

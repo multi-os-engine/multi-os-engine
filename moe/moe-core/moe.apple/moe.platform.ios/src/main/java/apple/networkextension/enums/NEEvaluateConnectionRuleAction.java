@@ -27,7 +27,8 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class NEEvaluateConnectionRuleAction {
     /**
-     * [@const] NEEvaluateConnectionRuleActionConnectIfNeeded Start the VPN connection if the destination host is not accessible directly
+     * [@const] NEEvaluateConnectionRuleActionConnectIfNeeded Start the VPN connection if the destination host is not
+     * accessible directly
      */
     @Generated @NInt public static final long ConnectIfNeeded = 0x0000000000000001L;
     /**

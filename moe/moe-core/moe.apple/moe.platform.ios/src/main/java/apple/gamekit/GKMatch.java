@@ -46,7 +46,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * GKMatch represents an active networking sessions between players. It handles network communications and can report player connection status. All matches are created by a GKMatchmaker.
+ * GKMatch represents an active networking sessions between players. It handles network communications and can report
+ * player connection status. All matches are created by a GKMatchmaker.
  */
 @Generated
 @Library("GameKit")
@@ -168,7 +169,9 @@ public class GKMatch extends NSObject {
             @ObjCBlock(name = "call_chooseBestHostPlayerWithCompletionHandler") Block_chooseBestHostPlayerWithCompletionHandler completionHandler);
 
     /**
-     * Choose the best host from among the connected players using gathered estimates for bandwidth and packet loss. This is intended for applications that wish to implement a client-server model on top of the match. The returned player ID will be nil if the best host cannot currently be determined (e.g. players are still connecting).
+     * Choose the best host from among the connected players using gathered estimates for bandwidth and packet loss.
+     * This is intended for applications that wish to implement a client-server model on top of the match. The returned
+     * player ID will be nil if the best host cannot currently be determined (e.g. players are still connecting).
      */
     @Generated
     @Selector("chooseBestHostingPlayerWithCompletionHandler:")
@@ -184,7 +187,8 @@ public class GKMatch extends NSObject {
     public native GKMatchDelegate delegate();
 
     /**
-     * Disconnect the match. This will show all other players in the match that the local player has disconnected. This should be called before releasing the match instance.
+     * Disconnect the match. This will show all other players in the match that the local player has disconnected. This
+     * should be called before releasing the match instance.
      */
     @Generated
     @Selector("disconnect")
@@ -212,7 +216,9 @@ public class GKMatch extends NSObject {
     public native NSArray<? extends GKPlayer> players();
 
     /**
-     * Auto-matching to recreate a previous peer-to-peer match that became disconnected. A new match with the same set of players will be returned by the completion handler. All players should perform this when the match has ended for auto-matching to succeed. Error will be nil on success.
+     * Auto-matching to recreate a previous peer-to-peer match that became disconnected. A new match with the same set
+     * of players will be returned by the completion handler. All players should perform this when the match has ended
+     * for auto-matching to succeed. Error will be nil on success.
      * Possible reasons for error:
      * 1. Communications failure
      * 2. Timeout
@@ -223,7 +229,8 @@ public class GKMatch extends NSObject {
             @ObjCBlock(name = "call_rematchWithCompletionHandler") Block_rematchWithCompletionHandler completionHandler);
 
     /**
-     * Asynchronously send data to one or more GKPlayers. Returns YES if delivery started, NO if unable to start sending and error will be set.
+     * Asynchronously send data to one or more GKPlayers. Returns YES if delivery started, NO if unable to start sending
+     * and error will be set.
      */
     @Generated
     @Selector("sendData:toPlayers:dataMode:error:")
@@ -240,7 +247,8 @@ public class GKMatch extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Asynchronously broadcasts data to all players. Returns YES if delivery started, NO if unable to start sending and error will be set.
+     * Asynchronously broadcasts data to all players. Returns YES if delivery started, NO if unable to start sending and
+     * error will be set.
      */
     @Generated
     @Selector("sendDataToAllPlayers:withDataMode:error:")

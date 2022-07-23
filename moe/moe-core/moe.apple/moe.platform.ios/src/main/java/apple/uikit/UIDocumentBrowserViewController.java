@@ -33,7 +33,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * UIDocumentBrowserViewController is a view controller to browse the files on the user's device or cloud services and open them directly in your application
+ * UIDocumentBrowserViewController is a view controller to browse the files on the user's device or cloud services and
+ * open them directly in your application
  */
 @Generated
 @Library("UIKit")
@@ -54,14 +55,16 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation bar
+     * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation
+     * bar
      */
     @Generated
     @Selector("additionalLeadingNavigationBarButtonItems")
     public native NSArray<? extends UIBarButtonItem> additionalLeadingNavigationBarButtonItems();
 
     /**
-     * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation bar
+     * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation
+     * bar
      */
     @Generated
     @Selector("additionalTrailingNavigationBarButtonItems")
@@ -134,7 +137,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     public static native void clearTextInputContextIdentifier(String identifier);
 
     /**
-     * Allows clients to add custom actions in the menu and the navigation bar. These actions are contextual to the document items.
+     * Allows clients to add custom actions in the menu and the navigation bar. These actions are contextual to the
+     * document items.
      */
     @Generated
     @Selector("customActions")
@@ -183,7 +187,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     public native UIDocumentBrowserViewController init();
 
     /**
-     * @param allowedContentTypes The document types that the user should be able to open. If nil, the types specified via the CFBundleDocumentTypes key in the application plist will be used instead.
+     * @param allowedContentTypes The document types that the user should be able to open. If nil, the types specified
+     *                            via the CFBundleDocumentTypes key in the application plist will be used instead.
      */
     @Generated
     @Selector("initForOpeningFilesWithContentTypes:")
@@ -234,7 +239,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     /**
      * Called to reveal a document at the URL.
-     * Typically called from the application delegate method application:openURL:options:; to let the application present the document.
+     * Typically called from the application delegate method application:openURL:options:; to let the application
+     * present the document.
      */
     @Generated
     @Selector("revealDocumentAtURL:importIfNeeded:completion:")
@@ -249,14 +255,16 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     }
 
     /**
-     * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation bar
+     * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation
+     * bar
      */
     @Generated
     @Selector("setAdditionalLeadingNavigationBarButtonItems:")
     public native void setAdditionalLeadingNavigationBarButtonItems(NSArray<? extends UIBarButtonItem> value);
 
     /**
-     * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation bar
+     * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation
+     * bar
      */
     @Generated
     @Selector("setAdditionalTrailingNavigationBarButtonItems:")
@@ -284,7 +292,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     public native void setBrowserUserInterfaceStyle(@NUInt long value);
 
     /**
-     * Allows clients to add custom actions in the menu and the navigation bar. These actions are contextual to the document items.
+     * Allows clients to add custom actions in the menu and the navigation bar. These actions are contextual to the
+     * document items.
      */
     @Generated
     @Selector("setCustomActions:")
@@ -343,7 +352,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      * Array of content types supported for Recents documents.
      * Default is same as allowedContentTypes.
      * Can be defined via the 'UIDocumentBrowserRecentDocumentContentTypes' key in the app Info.plist.
-     * Note that the recentDocumentsContentTypes must be a subset conforming to the types declared in allowedContentTypes.
+     * Note that the recentDocumentsContentTypes must be a subset conforming to the types declared in
+     * allowedContentTypes.
      */
     @Generated
     @Selector("recentDocumentsContentTypes")
@@ -378,7 +388,10 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     public native boolean shouldShowFileExtensions();
 
     /**
-     * A UIDocumentBrowserTransitionController object is used to display a loading indicator, while the application is spending time on time-consuming operations (e.g., loading, parsing, …) after having finished the file download, and before presenting it. To be used together with the UIViewControllerTransitioningDelegate protocol for custom view controller transitions.
+     * A UIDocumentBrowserTransitionController object is used to display a loading indicator, while the application is
+     * spending time on time-consuming operations (e.g., loading, parsing, …) after having finished the file download,
+     * and before presenting it. To be used together with the UIViewControllerTransitioningDelegate protocol for custom
+     * view controller transitions.
      */
     @Generated
     @Selector("transitionControllerForDocumentAtURL:")
@@ -386,16 +399,19 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     /**
      * Array of content types supported for Recents documents.
-     * Default is same as content types passed in the designated initializer or as CFBundleDocumentTypes  in the app Info.plist.
+     * Default is same as content types passed in the designated initializer or as CFBundleDocumentTypes in the app
+     * Info.plist.
      * Can be defined via the 'UIDocumentBrowserRecentDocumentContentTypes' key in the app Info.plist.
-     * Note that the contentTypesForRecentDocuments must be a subset conforming to the types passed in the initializer or Info.plist.
+     * Note that the contentTypesForRecentDocuments must be a subset conforming to the types passed in the initializer
+     * or Info.plist.
      */
     @Generated
     @Selector("contentTypesForRecentDocuments")
     public native NSArray<? extends UTType> contentTypesForRecentDocuments();
 
     /**
-     * @param contentTypes The content types that the user should be able to open. If nil, the types specified via the CFBundleDocumentTypes key in the application plist will be used instead.
+     * @param contentTypes The content types that the user should be able to open. If nil, the types specified via the
+     *                     CFBundleDocumentTypes key in the application plist will be used instead.
      */
     @Generated
     @Selector("initForOpeningContentTypes:")

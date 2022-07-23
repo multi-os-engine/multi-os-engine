@@ -137,7 +137,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * override this method to provide a custom class to be used when instantiating instances of UICollectionViewLayoutAttributes
+     * override this method to provide a custom class to be used when instantiating instances of
+     * UICollectionViewLayoutAttributes
      */
     @Generated
     @Selector("layoutAttributesClass")
@@ -170,7 +171,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     public static native long version_static();
 
     /**
-     * Methods in this class are meant to be overridden and will be called by its collection view to gather layout information.
+     * Methods in this class are meant to be overridden and will be called by its collection view to gather layout
+     * information.
      * To get the truth on the current state of the collection view, call methods on UICollectionView rather than these.
      */
     @Generated
@@ -178,7 +180,9 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     public native UICollectionView collectionView();
 
     /**
-     * Subclasses must override this method and use it to return the width and height of the collection view’s content. These values represent the width and height of all the content, not just the content that is currently visible. The collection view uses this information to configure its own content size to facilitate scrolling.
+     * Subclasses must override this method and use it to return the width and height of the collection view’s content.
+     * These values represent the width and height of all the content, not just the content that is currently visible.
+     * The collection view uses this information to configure its own content size to facilitate scrolling.
      */
     @Generated
     @Selector("collectionViewContentSize")
@@ -231,7 +235,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     /**
      * These methods are called by collection view during an update block.
-     * Return an array of index paths to indicate views that the layout is deleting or inserting in response to the update.
+     * Return an array of index paths to indicate views that the layout is deleting or inserting in response to the
+     * update.
      */
     @Generated
     @Selector("indexPathsToDeleteForSupplementaryViewOfKind:")
@@ -259,9 +264,12 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
             String elementKind, NSIndexPath decorationIndexPath);
 
     /**
-     * This set of methods is called when the collection view undergoes an animated transition such as a batch update block or an animated bounds change.
-     * For each element on screen before the invalidation, finalLayoutAttributesForDisappearingXXX will be called and an animation setup from what is on screen to those final attributes.
-     * For each element on screen after the invalidation, initialLayoutAttributesForAppearingXXX will be called and an animation setup from those initial attributes to what ends up on screen.
+     * This set of methods is called when the collection view undergoes an animated transition such as a batch update
+     * block or an animated bounds change.
+     * For each element on screen before the invalidation, finalLayoutAttributesForDisappearingXXX will be called and an
+     * animation setup from what is on screen to those final attributes.
+     * For each element on screen after the invalidation, initialLayoutAttributesForAppearingXXX will be called and an
+     * animation setup from those initial attributes to what ends up on screen.
      */
     @Generated
     @Selector("initialLayoutAttributesForAppearingItemAtIndexPath:")
@@ -335,7 +343,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
             String elementKind, NSIndexPath indexPath);
 
     /**
-     * UICollectionView calls this when its bounds have changed inside an animation block before displaying cells in its new bounds
+     * UICollectionView calls this when its bounds have changed inside an animation block before displaying cells in its
+     * new bounds
      */
     @Generated
     @Selector("prepareForAnimatedBoundsChange:")
@@ -343,8 +352,10 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     /**
      * This method is called when there is an update with deletes/inserts to the collection view.
-     * It will be called prior to calling the initial/final layout attribute methods below to give the layout an opportunity to do batch computations for the insertion and deletion layout attributes.
-     * The updateItems parameter is an array of UICollectionViewUpdateItem instances for each element that is moving to a new index path.
+     * It will be called prior to calling the initial/final layout attribute methods below to give the layout an
+     * opportunity to do batch computations for the insertion and deletion layout attributes.
+     * The updateItems parameter is an array of UICollectionViewUpdateItem instances for each element that is moving to
+     * a new index path.
      */
     @Generated
     @Selector("prepareForCollectionViewUpdates:")
@@ -363,7 +374,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     /**
      * The collection view calls -prepareLayout once at its first layout as the first message to the layout instance.
-     * The collection view calls -prepareLayout again after layout is invalidated and before requerying the layout information.
+     * The collection view calls -prepareLayout again after layout is invalidated and before requerying the layout
+     * information.
      * Subclasses should always call super if they override.
      */
     @Generated
@@ -413,7 +425,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
             @ByValue CGPoint position);
 
     /**
-     * Default implementation returns the layout direction of the main bundle's development region; FlowLayout returns leftToRight. Subclasses may override this to specify the implementation-time layout direction of the layout.
+     * Default implementation returns the layout direction of the main bundle's development region; FlowLayout returns
+     * leftToRight. Subclasses may override this to specify the implementation-time layout direction of the layout.
      */
     @Generated
     @Selector("developmentLayoutDirection")
@@ -421,7 +434,9 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     public native long developmentLayoutDirection();
 
     /**
-     * Base implementation returns false. If your subclass’s implementation overrides this property to return true, a UICollectionView showing this layout will ensure its bounds.origin is always found at the leading edge, flipping its coordinate system horizontally if necessary.
+     * Base implementation returns false. If your subclass’s implementation overrides this property to return true, a
+     * UICollectionView showing this layout will ensure its bounds.origin is always found at the leading edge, flipping
+     * its coordinate system horizontally if necessary.
      */
     @Generated
     @Selector("flipsHorizontallyInOppositeLayoutDirection")

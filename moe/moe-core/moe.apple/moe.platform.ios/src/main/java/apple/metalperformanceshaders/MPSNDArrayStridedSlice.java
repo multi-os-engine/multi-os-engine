@@ -154,7 +154,7 @@ public class MPSNDArrayStridedSlice extends MPSNDArrayUnaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]  strides
+     * [@property] strides
      * <p>
      * The strides to use when slicing the input array.
      */
@@ -167,7 +167,7 @@ public class MPSNDArrayStridedSlice extends MPSNDArrayUnaryKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]  strides
+     * [@property] strides
      * <p>
      * The strides to use when slicing the input array.
      */

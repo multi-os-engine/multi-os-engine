@@ -130,7 +130,8 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     public native float maximumAspectRatio();
 
     /**
-     * Specifies the maximum number of rectangles to be returned.  The default is 1.  Setting this property to 0 will allow an unlimited number of observations to be returned.
+     * Specifies the maximum number of rectangles to be returned. The default is 1. Setting this property to 0 will
+     * allow an unlimited number of observations to be returned.
      */
     @Generated
     @Selector("maximumObservations")
@@ -145,14 +146,16 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     public native float minimumAspectRatio();
 
     /**
-     * Specifies a minimum confidence score, range [0.0, 1.0], default 0.0. Any rectangles with a lower confidence score will not be returned.
+     * Specifies a minimum confidence score, range [0.0, 1.0], default 0.0. Any rectangles with a lower confidence score
+     * will not be returned.
      */
     @Generated
     @Selector("minimumConfidence")
     public native float minimumConfidence();
 
     /**
-     * Specifies the minimum size of the rectangle to be detected, as a proportion of the smallest dimension, range [0.0, 1.0], default .2. Any smaller rectangles that may have been detected will not be returned.
+     * Specifies the minimum size of the rectangle to be detected, as a proportion of the smallest dimension, range
+     * [0.0, 1.0], default .2. Any smaller rectangles that may have been detected will not be returned.
      */
     @Generated
     @Selector("minimumSize")
@@ -164,7 +167,8 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     public static native VNDetectRectanglesRequest new_objc();
 
     /**
-     * Specifies the maximum number of degrees a rectangle corner angle can deviate from 90 degrees, range [0,45], default 30
+     * Specifies the maximum number of degrees a rectangle corner angle can deviate from 90 degrees, range [0,45],
+     * default 30
      */
     @Generated
     @Selector("quadratureTolerance")
@@ -186,7 +190,8 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     public native void setMaximumAspectRatio(float value);
 
     /**
-     * Specifies the maximum number of rectangles to be returned.  The default is 1.  Setting this property to 0 will allow an unlimited number of observations to be returned.
+     * Specifies the maximum number of rectangles to be returned. The default is 1. Setting this property to 0 will
+     * allow an unlimited number of observations to be returned.
      */
     @Generated
     @Selector("setMaximumObservations:")
@@ -200,21 +205,24 @@ public class VNDetectRectanglesRequest extends VNImageBasedRequest {
     public native void setMinimumAspectRatio(float value);
 
     /**
-     * Specifies a minimum confidence score, range [0.0, 1.0], default 0.0. Any rectangles with a lower confidence score will not be returned.
+     * Specifies a minimum confidence score, range [0.0, 1.0], default 0.0. Any rectangles with a lower confidence score
+     * will not be returned.
      */
     @Generated
     @Selector("setMinimumConfidence:")
     public native void setMinimumConfidence(float value);
 
     /**
-     * Specifies the minimum size of the rectangle to be detected, as a proportion of the smallest dimension, range [0.0, 1.0], default .2. Any smaller rectangles that may have been detected will not be returned.
+     * Specifies the minimum size of the rectangle to be detected, as a proportion of the smallest dimension, range
+     * [0.0, 1.0], default .2. Any smaller rectangles that may have been detected will not be returned.
      */
     @Generated
     @Selector("setMinimumSize:")
     public native void setMinimumSize(float value);
 
     /**
-     * Specifies the maximum number of degrees a rectangle corner angle can deviate from 90 degrees, range [0,45], default 30
+     * Specifies the maximum number of degrees a rectangle corner angle can deviate from 90 degrees, range [0,45],
+     * default 30
      */
     @Generated
     @Selector("setQuadratureTolerance:")

@@ -182,18 +182,18 @@ public class SRSensorReader extends NSObject {
      * authorization will cause errors to be returned from the other methods.
      * <p>
      * When SensorKit prepares the prompt for display, it will look at the
-     * NSSensorKitUsageDetail key in your Info.plist.  The value should be
+     * NSSensorKitUsageDetail key in your Info.plist. The value should be
      * a dictionary containing usage descriptions for all of the sensors being
-     * requested.  The description key you provide to this method must
-     * correspond to an entry in that dictionary.  To retrieve a localized
+     * requested. The description key you provide to this method must
+     * correspond to an entry in that dictionary. To retrieve a localized
      * string, SensorKit will load your InfoPlist.strings file and try to look
-     * up a string using the description key you provided.  If that fails,
+     * up a string using the description key you provided. If that fails,
      * SensorKit will use the content provided in your Info.plist.
      * <p>
-     * SensorKit may decide against showing the user a prompt.  For example,
+     * SensorKit may decide against showing the user a prompt. For example,
      * if the user has already chosen whether to grant the application access
-     * to all of the types provided.  When that happens, your completion block
-     * will be called with an appropriate  NSError.  If the user responded to
+     * to all of the types provided. When that happens, your completion block
+     * will be called with an appropriate NSError. If the user responded to
      * the prompt, your completion block will be called with a nil error.
      * Changes in authorization status will delivered to the delegate in the
      * sensorReader:didChangeAuthorizationStatus: method.

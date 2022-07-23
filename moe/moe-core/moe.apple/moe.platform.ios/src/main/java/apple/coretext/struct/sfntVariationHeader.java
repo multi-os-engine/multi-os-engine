@@ -133,7 +133,7 @@ public final class sfntVariationHeader extends StructObject {
     public native void setAxis(@ByValue sfntVariationAxis value);
 
     /**
-     * [instanceCount]  …other arrays of data
+     * [instanceCount] …other arrays of data
      */
     @Generated
     @StructureField(order = 8, isGetter = true)
@@ -141,7 +141,7 @@ public final class sfntVariationHeader extends StructObject {
     public native sfntInstance instance();
 
     /**
-     * [instanceCount]  …other arrays of data
+     * [instanceCount] …other arrays of data
      */
     @Generated
     @StructureField(order = 8, isGetter = false)

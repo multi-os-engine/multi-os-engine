@@ -26,7 +26,8 @@ public final class NSURLSessionAuthChallengeDisposition {
      */
     @Generated @NInt public static final long UseCredential = 0x0000000000000000L;
     /**
-     * Default handling for the challenge - as if this delegate were not implemented; the credential parameter is ignored.
+     * Default handling for the challenge - as if this delegate were not implemented; the credential parameter is
+     * ignored.
      */
     @Generated @NInt public static final long PerformDefaultHandling = 0x0000000000000001L;
     /**
@@ -34,7 +35,8 @@ public final class NSURLSessionAuthChallengeDisposition {
      */
     @Generated @NInt public static final long CancelAuthenticationChallenge = 0x0000000000000002L;
     /**
-     * This challenge is rejected and the next authentication protection space should be tried; the credential parameter is ignored.
+     * This challenge is rejected and the next authentication protection space should be tried; the credential parameter
+     * is ignored.
      */
     @Generated @NInt public static final long RejectProtectionSpace = 0x0000000000000003L;
 

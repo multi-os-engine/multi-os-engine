@@ -40,7 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A handle to intermediate code used as inputs for either a MTLComputePipelineState or a MTLRenderPipelineState.
  * <p>
- * MTLFunction is a single vertex shader, fragment shader, or compute function.  A Function can only be used with the device that it was created against.
+ * MTLFunction is a single vertex shader, fragment shader, or compute function. A Function can only be used with the
+ * device that it was created against.
  */
 @Generated
 @Library("Metal")
@@ -50,7 +51,7 @@ public interface MTLFunction {
     /**
      * [@property] device
      * <p>
-     * The device this resource was created against.  This resource can only be used with this device.
+     * The device this resource was created against. This resource can only be used with this device.
      */
     @Generated
     @Selector("device")
@@ -140,7 +141,8 @@ public interface MTLFunction {
     /**
      * newArgumentEncoderWithBufferIndex:
      * <p>
-     * Creates an argument encoder which will encode arguments matching the layout of the argument buffer at the given bind point index.
+     * Creates an argument encoder which will encode arguments matching the layout of the argument buffer at the given
+     * bind point index.
      */
     @Generated
     @Selector("newArgumentEncoderWithBufferIndex:")
@@ -150,7 +152,8 @@ public interface MTLFunction {
     /**
      * newArgumentEncoderWithBufferIndex:
      * <p>
-     * Creates an argument encoder which will encode arguments matching the layout of the argument buffer at the given bind point index.
+     * Creates an argument encoder which will encode arguments matching the layout of the argument buffer at the given
+     * bind point index.
      */
     @Generated
     @Selector("newArgumentEncoderWithBufferIndex:reflection:")

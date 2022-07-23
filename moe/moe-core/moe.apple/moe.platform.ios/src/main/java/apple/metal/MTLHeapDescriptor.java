@@ -243,8 +243,10 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
      * <p>
      * For heaps, MTLHazardTrackingModeDefault is treated as MTLHazardTrackingModeUntracked.
      * Setting hazardTrackingMode to MTLHazardTrackingModeTracked causes hazard tracking to be enabled heap.
-     * When a resource on a hazard tracked heap is modified, reads and writes from all resources suballocated on that heap will be delayed until the modification is complete.
-     * Similarly, modifying heap resources will be delayed until all in-flight reads and writes from all resources suballocated on that heap have completed.
+     * When a resource on a hazard tracked heap is modified, reads and writes from all resources suballocated on that
+     * heap will be delayed until the modification is complete.
+     * Similarly, modifying heap resources will be delayed until all in-flight reads and writes from all resources
+     * suballocated on that heap have completed.
      * For optimal performance, perform hazard tracking manually through MTLFence or MTLEvent instead.
      * All resources created from this heap shared the same hazard tracking mode.
      */
@@ -272,8 +274,10 @@ public class MTLHeapDescriptor extends NSObject implements NSCopying {
      * <p>
      * For heaps, MTLHazardTrackingModeDefault is treated as MTLHazardTrackingModeUntracked.
      * Setting hazardTrackingMode to MTLHazardTrackingModeTracked causes hazard tracking to be enabled heap.
-     * When a resource on a hazard tracked heap is modified, reads and writes from all resources suballocated on that heap will be delayed until the modification is complete.
-     * Similarly, modifying heap resources will be delayed until all in-flight reads and writes from all resources suballocated on that heap have completed.
+     * When a resource on a hazard tracked heap is modified, reads and writes from all resources suballocated on that
+     * heap will be delayed until the modification is complete.
+     * Similarly, modifying heap resources will be delayed until all in-flight reads and writes from all resources
+     * suballocated on that heap have completed.
      * For optimal performance, perform hazard tracking manually through MTLFence or MTLEvent instead.
      * All resources created from this heap shared the same hazard tracking mode.
      */

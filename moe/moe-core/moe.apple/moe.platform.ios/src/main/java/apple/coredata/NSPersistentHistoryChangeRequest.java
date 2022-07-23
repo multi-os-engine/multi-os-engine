@@ -151,7 +151,8 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The type of result that should be returned from this request. Defaults to NSPersistentHistoryResultTypeTransactionsAndChanges
+     * The type of result that should be returned from this request. Defaults to
+     * NSPersistentHistoryResultTypeTransactionsAndChanges
      */
     @Generated
     @Selector("resultType")
@@ -159,7 +160,8 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
     public native long resultType();
 
     /**
-     * The type of result that should be returned from this request. Defaults to NSPersistentHistoryResultTypeTransactionsAndChanges
+     * The type of result that should be returned from this request. Defaults to
+     * NSPersistentHistoryResultTypeTransactionsAndChanges
      */
     @Generated
     @Selector("setResultType:")

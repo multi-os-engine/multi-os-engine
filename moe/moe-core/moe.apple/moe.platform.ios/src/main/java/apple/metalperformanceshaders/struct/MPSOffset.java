@@ -52,7 +52,7 @@ public final class MPSOffset extends StructObject {
     }
 
     /**
-     * <    The horizontal component of the offset. Units: pixels
+     * < The horizontal component of the offset. Units: pixels
      */
     @Generated
     @StructureField(order = 0, isGetter = true)
@@ -60,14 +60,14 @@ public final class MPSOffset extends StructObject {
     public native long x();
 
     /**
-     * <    The horizontal component of the offset. Units: pixels
+     * < The horizontal component of the offset. Units: pixels
      */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setX(@NInt long value);
 
     /**
-     * <    The vertical component of the offset. Units: pixels
+     * < The vertical component of the offset. Units: pixels
      */
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -75,14 +75,14 @@ public final class MPSOffset extends StructObject {
     public native long y();
 
     /**
-     * <    The vertical component of the offset. Units: pixels
+     * < The vertical component of the offset. Units: pixels
      */
     @Generated
     @StructureField(order = 1, isGetter = false)
     public native void setY(@NInt long value);
 
     /**
-     * <    The depth component of the offset. Units: pixels
+     * < The depth component of the offset. Units: pixels
      */
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -90,7 +90,7 @@ public final class MPSOffset extends StructObject {
     public native long z();
 
     /**
-     * <    The depth component of the offset. Units: pixels
+     * < The depth component of the offset. Units: pixels
      */
     @Generated
     @StructureField(order = 2, isGetter = false)

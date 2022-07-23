@@ -184,8 +184,8 @@ public class CMMotionActivityManager extends NSObject {
      * <p>
      * Discussion:
      * Queries for activity transitions that happened during the given time
-     * range.  The date range must be in the past.  Data is only available
-     * for the last seven days.  The result is returned to the handler/queue
+     * range. The date range must be in the past. Data is only available
+     * for the last seven days. The result is returned to the handler/queue
      * specified.
      * <p>
      * The first activity returned may have a startDate before start. This
@@ -202,8 +202,8 @@ public class CMMotionActivityManager extends NSObject {
      * <p>
      * Discussion:
      * Start activity updates, providing data to the given handler through
-     * the given queue.  An update with the current activity will arrive
-     * first.  Then when the activity state changes the handler will be
+     * the given queue. An update with the current activity will arrive
+     * first. Then when the activity state changes the handler will be
      * called with the new activity.
      * <p>
      * You can only have one handler installed at a time, calling

@@ -21,7 +21,8 @@ public final class nw_listener_state_t {
      */
     @Generated public static final int nw_listener_state_invalid = 0x00000000;
     /**
-     * [@const] nw_listener_state_waiting The listener is waiting for a usable network before being able to receive connections
+     * [@const] nw_listener_state_waiting The listener is waiting for a usable network before being able to receive
+     * connections
      */
     @Generated public static final int nw_listener_state_waiting = 0x00000001;
     /**

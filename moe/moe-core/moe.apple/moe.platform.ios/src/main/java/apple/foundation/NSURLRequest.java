@@ -237,9 +237,9 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * if any has been set
      * <p>
      * The stream is returned for examination only; it is
-     * not safe for the caller to manipulate the stream in any way.  Also
+     * not safe for the caller to manipulate the stream in any way. Also
      * note that the HTTPBodyStream and HTTPBody are mutually exclusive - only
-     * one can be set on a given request.  Also note that the body stream is
+     * one can be set on a given request. Also note that the body stream is
      * preserved across copies, but is LOST when the request is coded via the
      * NSCoding protocol
      *
@@ -265,7 +265,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * NOTE: This value is not used prior to 10.3
      *
      * @return YES if cookies will be sent with and set for this request;
-     * otherwise NO.
+     *         otherwise NO.
      */
     @Generated
     @Selector("HTTPShouldHandleCookies")
@@ -276,8 +276,8 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * previous response before transmitting.
      *
      * @return YES if the receiver should transmit before the previous response
-     * is received.  NO if the receiver should wait for the previous response
-     * before transmitting.
+     *         is received. NO if the receiver should wait for the previous response
+     *         before transmitting.
      */
     @Generated
     @Selector("HTTPShouldUsePipelining")
@@ -297,7 +297,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * of the receiver.
      *
      * @return a dictionary containing all the HTTP header fields of the
-     * receiver.
+     *         receiver.
      */
     @Generated
     @Selector("allHTTPHeaderFields")
@@ -308,7 +308,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * the built in cellular radios (if present).
      *
      * @return YES if the receiver is allowed to use the built in cellular radios to
-     * satify the request, NO otherwise.
+     *         satify the request, NO otherwise.
      */
     @Generated
     @Selector("allowsCellularAccess")
@@ -448,7 +448,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * @param field the header field name to use for the lookup
      *              (case-insensitive).
      * @return the value associated with the given header field, or nil if
-     * there is no value associated with the given header field.
+     *         there is no value associated with the given header field.
      */
     @Generated
     @Selector("valueForHTTPHeaderField:")
@@ -459,7 +459,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * network interfaces which have been marked as constrained.
      *
      * @return YES if the receiver is allowed to use an interface marked as constrained to
-     * satify the request, NO otherwise.
+     *         satify the request, NO otherwise.
      */
     @Generated
     @Selector("allowsConstrainedNetworkAccess")
@@ -470,7 +470,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * network interfaces which have been marked as expensive.
      *
      * @return YES if the receiver is allowed to use an interface marked as expensive to
-     * satify the request, NO otherwise.
+     *         satify the request, NO otherwise.
      */
     @Generated
     @Selector("allowsExpensiveNetworkAccess")
@@ -481,7 +481,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * racing without HTTP/3 service discovery.
      *
      * @return YES if server endpoint is known to support HTTP/3. Defaults to NO.
-     * The default may be YES in a future OS update.
+     *         The default may be YES in a future OS update.
      */
     @Generated
     @Selector("assumesHTTP3Capable")

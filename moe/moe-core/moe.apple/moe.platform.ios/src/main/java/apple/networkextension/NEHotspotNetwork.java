@@ -275,9 +275,12 @@ public class NEHotspotNetwork extends NSObject {
      * An application will receive nil if does not have the "com.apple.developer.networking.wifi-info" entitlement.
      *
      * @param completionHandler A block that will be executed when current Wi-Fi network details are
-     *                          obtained from the system. The NEHotspotNetwork object passed to this block will be nil if the requesting
-     *                          application fails to meet above requirements, non-nil otherwise. NEHotspotNetwork object contains only valid
-     *                          SSID, BSSID and security type values, when the block is passed non-nil object.This block is executed on application's
+     *                          obtained from the system. The NEHotspotNetwork object passed to this block will be nil
+     *                          if the requesting
+     *                          application fails to meet above requirements, non-nil otherwise. NEHotspotNetwork object
+     *                          contains only valid
+     *                          SSID, BSSID and security type values, when the block is passed non-nil object.This block
+     *                          is executed on application's
      *                          main queue.
      */
     @Generated

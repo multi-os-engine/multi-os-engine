@@ -20,7 +20,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * [@protocol]   MPSCNNConvolutionDataSource
+ * [@protocol] MPSCNNConvolutionDataSource
  * <p>
  * Provides convolution filter weights and bias terms
  * <p>
@@ -119,8 +119,8 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
      * The load function is intended to be an opportunity to open
      * files or mark memory no longer purgeable.
      *
-     * @return Returns YES on success.  If NO is returned, expect MPS
-     * object construction to fail.
+     * @return Returns YES on success. If NO is returned, expect MPS
+     *         object construction to fail.
      */
     @Generated
     @Selector("load")
@@ -193,7 +193,7 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
      * Callback for the MPSNNGraph to update the convolution weights on GPU.
      * <p>
      * It is the resposibility of this method to decrement the read count of both the gradientState
-     * and the sourceState before returning.  BUG: prior to macOS 10.14, ios/tvos 12.0, the MPSNNGraph
+     * and the sourceState before returning. BUG: prior to macOS 10.14, ios/tvos 12.0, the MPSNNGraph
      * incorrectly decrements the readcount of the gradientState after this method is called.
      *
      * @param commandBuffer The command buffer on which to do the update.
@@ -203,7 +203,7 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
      *                      containing weight gradients.
      * @param sourceState   A state object containing the convolution weights
      * @return If NULL, no update occurs. If nonnull, the result will be used to update the
-     * weights in the MPSNNGraph
+     *         weights in the MPSNNGraph
      */
     @Generated
     @IsOptional
@@ -220,12 +220,16 @@ public interface MPSCNNConvolutionDataSource extends NSCopying {
      * to happen. Provide implementation of this function for CPU side update.
      *
      * @param gradientState A state object produced by the MPSCNNConvolution and updated by MPSCNNConvolutionGradient
-     *                      containing weight gradients. MPSNNGraph is responsible for calling [gradientState synchronizeOnCommandBuffer:]
+     *                      containing weight gradients. MPSNNGraph is responsible for calling [gradientState
+     *                      synchronizeOnCommandBuffer:]
      *                      so that application get correct gradients for CPU side update.
-     * @param sourceState   A state object containing the convolution weights used. MPSCNNConvolution and MPSCNNConvolutionGradient reloadWeightsWithDataSource
-     *                      will be called right after this method is called. Note that the weights returned here may not match the weights
+     * @param sourceState   A state object containing the convolution weights used. MPSCNNConvolution and
+     *                      MPSCNNConvolutionGradient reloadWeightsWithDataSource
+     *                      will be called right after this method is called. Note that the weights returned here may
+     *                      not match the weights
      *                      in your data source due to conversion loss. These are the weights actually used, and should
-     *                      be what you use to calculate the new weights. Your copy may be incorrect. Write the new weights
+     *                      be what you use to calculate the new weights. Your copy may be incorrect. Write the new
+     *                      weights
      *                      to your copy and return them out the left hand side.
      * @return TRUE if success/no error, FALSE in case of failure.
      */

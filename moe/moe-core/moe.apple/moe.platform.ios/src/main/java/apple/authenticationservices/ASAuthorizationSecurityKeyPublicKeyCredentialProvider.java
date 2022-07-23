@@ -90,7 +90,8 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialProvider extends NSObj
      * @param challenge   The challenge to sign.
      * @param displayName The display name for the new credential.
      * @param name        The name for the new credential.
-     * @param userID      An identifier to be stored alongside the credential, which will be returned with the credential when it is used to authenticate.
+     * @param userID      An identifier to be stored alongside the credential, which will be returned with the
+     *                    credential when it is used to authenticate.
      */
     @Generated
     @Selector("createCredentialRegistrationRequestWithChallenge:displayName:name:userID:")

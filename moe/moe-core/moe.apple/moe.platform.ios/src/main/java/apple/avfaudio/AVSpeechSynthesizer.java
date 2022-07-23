@@ -151,7 +151,8 @@ public class AVSpeechSynthesizer extends NSObject {
     public static native AVSpeechSynthesizer new_objc();
 
     /**
-     * Specify the audio channels to be used for synthesized speech as described by the channel descriptions in AVAudioSession's current route.
+     * Specify the audio channels to be used for synthesized speech as described by the channel descriptions in
+     * AVAudioSession's current route.
      * Speech audio will be replicated to each specified channel.
      * Default is nil, which implies system defaults.
      */
@@ -196,7 +197,8 @@ public class AVSpeechSynthesizer extends NSObject {
     public native void setMixToTelephonyUplink(boolean value);
 
     /**
-     * Specify the audio channels to be used for synthesized speech as described by the channel descriptions in AVAudioSession's current route.
+     * Specify the audio channels to be used for synthesized speech as described by the channel descriptions in
+     * AVAudioSession's current route.
      * Speech audio will be replicated to each specified channel.
      * Default is nil, which implies system defaults.
      */
@@ -206,8 +208,10 @@ public class AVSpeechSynthesizer extends NSObject {
 
     /**
      * The AVSpeechSynthesizer will use the AVAudioSession sharedInstance when set to YES.
-     * The AVSpeechSynthesizer will use a separate AVAudioSession for playback when set to NO. Additionally, the audio session will mix and duck other audio, and its active state will be managed automatically.
-     * The separate audio session will use AVAudioSessionRouteSharingPolicyDefault, which means that it may have a different route from the app’s shared instance session.
+     * The AVSpeechSynthesizer will use a separate AVAudioSession for playback when set to NO. Additionally, the audio
+     * session will mix and duck other audio, and its active state will be managed automatically.
+     * The separate audio session will use AVAudioSessionRouteSharingPolicyDefault, which means that it may have a
+     * different route from the app’s shared instance session.
      * Default is YES.
      */
     @Generated
@@ -239,8 +243,10 @@ public class AVSpeechSynthesizer extends NSObject {
 
     /**
      * The AVSpeechSynthesizer will use the AVAudioSession sharedInstance when set to YES.
-     * The AVSpeechSynthesizer will use a separate AVAudioSession for playback when set to NO. Additionally, the audio session will mix and duck other audio, and its active state will be managed automatically.
-     * The separate audio session will use AVAudioSessionRouteSharingPolicyDefault, which means that it may have a different route from the app’s shared instance session.
+     * The AVSpeechSynthesizer will use a separate AVAudioSession for playback when set to NO. Additionally, the audio
+     * session will mix and duck other audio, and its active state will be managed automatically.
+     * The separate audio session will use AVAudioSessionRouteSharingPolicyDefault, which means that it may have a
+     * different route from the app’s shared instance session.
      * Default is YES.
      */
     @Generated

@@ -67,7 +67,7 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
      * A MTLBuffer containing the beta terms.
      */
@@ -103,7 +103,7 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
     public static native String description_static();
 
     /**
-     * [@property]   gamma
+     * [@property] gamma
      * <p>
      * A MTLBuffer containing the gamma terms.
      */

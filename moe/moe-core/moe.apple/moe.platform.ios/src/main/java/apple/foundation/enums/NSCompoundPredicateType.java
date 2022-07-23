@@ -20,7 +20,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * Compound predicates are predicates which act on the results of evaluating other operators. We provide the basic boolean operators: AND, OR, and NOT.
+ * Compound predicates are predicates which act on the results of evaluating other operators. We provide the basic
+ * boolean operators: AND, OR, and NOT.
  */
 @Generated
 public final class NSCompoundPredicateType {

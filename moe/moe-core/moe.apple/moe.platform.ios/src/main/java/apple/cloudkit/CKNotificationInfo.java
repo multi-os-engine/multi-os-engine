@@ -46,10 +46,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * CKNotificationInfo
  * <p>
- * The payload of a push notification delivered in the UIApplication @c application:didReceiveRemoteNotification: delegate method contains information about the firing subscription.
+ * The payload of a push notification delivered in the UIApplication @c application:didReceiveRemoteNotification:
+ * delegate method contains information about the firing subscription.
  * <p>
  * Use @code +[CKNotification notificationFromRemoteNotificationDictionary:] @endcode to parse that payload.
- * On tvOS, alerts, badges, sounds, and categories are not handled in push notifications. However, CKSubscriptions remain available to help you avoid polling the server.
+ * On tvOS, alerts, badges, sounds, and categories are not handled in push notifications. However, CKSubscriptions
+ * remain available to help you avoid polling the server.
  */
 @Generated
 @Library("CloudKit")
@@ -180,21 +182,24 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     public native String alertBody();
 
     /**
-     * The name of an image in your app bundle to be used as the launch image when launching in response to the notification.
+     * The name of an image in your app bundle to be used as the launch image when launching in response to the
+     * notification.
      */
     @Generated
     @Selector("alertLaunchImage")
     public native String alertLaunchImage();
 
     /**
-     * A list of field names to take from the matching record that is used as substitution variables in a formatted alert string.
+     * A list of field names to take from the matching record that is used as substitution variables in a formatted
+     * alert string.
      */
     @Generated
     @Selector("alertLocalizationArgs")
     public native NSArray<String> alertLocalizationArgs();
 
     /**
-     * Instead of a raw alert string, you may optionally specify a key for a localized string in your app's Localizable.strings file.
+     * Instead of a raw alert string, you may optionally specify a key for a localized string in your app's
+     * Localizable.strings file.
      */
     @Generated
     @Selector("alertLocalizationKey")
@@ -220,7 +225,8 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     /**
      * A list of keys from the matching record to include in the notification payload.
      * <p>
-     * Only some keys are allowed.  The value types associated with those keys on the server must be one of these classes:
+     * Only some keys are allowed. The value types associated with those keys on the server must be one of these
+     * classes:
      * - CKReference
      * - CLLocation
      * - NSDate
@@ -258,21 +264,24 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     public native void setAlertBody(String value);
 
     /**
-     * The name of an image in your app bundle to be used as the launch image when launching in response to the notification.
+     * The name of an image in your app bundle to be used as the launch image when launching in response to the
+     * notification.
      */
     @Generated
     @Selector("setAlertLaunchImage:")
     public native void setAlertLaunchImage(String value);
 
     /**
-     * A list of field names to take from the matching record that is used as substitution variables in a formatted alert string.
+     * A list of field names to take from the matching record that is used as substitution variables in a formatted
+     * alert string.
      */
     @Generated
     @Selector("setAlertLocalizationArgs:")
     public native void setAlertLocalizationArgs(NSArray<String> value);
 
     /**
-     * Instead of a raw alert string, you may optionally specify a key for a localized string in your app's Localizable.strings file.
+     * Instead of a raw alert string, you may optionally specify a key for a localized string in your app's
+     * Localizable.strings file.
      */
     @Generated
     @Selector("setAlertLocalizationKey:")
@@ -292,7 +301,8 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     /**
      * A list of keys from the matching record to include in the notification payload.
      * <p>
-     * Only some keys are allowed.  The value types associated with those keys on the server must be one of these classes:
+     * Only some keys are allowed. The value types associated with those keys on the server must be one of these
+     * classes:
      * - CKReference
      * - CLLocation
      * - NSDate
@@ -311,7 +321,8 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     public native void setShouldBadge(boolean value);
 
     /**
-     * Indicates that the notification should be sent with the "content-available" flag to allow for background downloads in the application.
+     * Indicates that the notification should be sent with the "content-available" flag to allow for background
+     * downloads in the application.
      * <p>
      * Default value is @c NO.
      */
@@ -334,7 +345,8 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     public native boolean shouldBadge();
 
     /**
-     * Indicates that the notification should be sent with the "content-available" flag to allow for background downloads in the application.
+     * Indicates that the notification should be sent with the "content-available" flag to allow for background
+     * downloads in the application.
      * <p>
      * Default value is @c NO.
      */
@@ -356,7 +368,8 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     }
 
     /**
-     * Optional property specifying a field name to take from the matching record whose value is used as the apns-collapse-id header.
+     * Optional property specifying a field name to take from the matching record whose value is used as the
+     * apns-collapse-id header.
      *
      * @see APNs Notification API documentation
      */
@@ -365,7 +378,8 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     public native String collapseIDKey();
 
     /**
-     * Optional property specifying a field name to take from the matching record whose value is used as the apns-collapse-id header.
+     * Optional property specifying a field name to take from the matching record whose value is used as the
+     * apns-collapse-id header.
      *
      * @see APNs Notification API documentation
      */
@@ -374,7 +388,8 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     public native void setCollapseIDKey(String value);
 
     /**
-     * Indicates that the notification should be sent with the "mutable-content" flag to allow a Notification Service app extension to modify or replace the push payload.
+     * Indicates that the notification should be sent with the "mutable-content" flag to allow a Notification Service
+     * app extension to modify or replace the push payload.
      * <p>
      * Default value is @c NO.
      */
@@ -390,14 +405,16 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     public native void setSubtitle(String value);
 
     /**
-     * A list of field names to take from the matching record that is used as substitution variables in a formatted subtitle string.
+     * A list of field names to take from the matching record that is used as substitution variables in a formatted
+     * subtitle string.
      */
     @Generated
     @Selector("setSubtitleLocalizationArgs:")
     public native void setSubtitleLocalizationArgs(NSArray<String> value);
 
     /**
-     * Instead of a raw subtitle string, you may optionally specify a key for a localized string in your app's Localizable.strings file.
+     * Instead of a raw subtitle string, you may optionally specify a key for a localized string in your app's
+     * Localizable.strings file.
      */
     @Generated
     @Selector("setSubtitleLocalizationKey:")
@@ -411,21 +428,24 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     public native void setTitle(String value);
 
     /**
-     * A list of field names to take from the matching record that is used as substitution variables in a formatted title string.
+     * A list of field names to take from the matching record that is used as substitution variables in a formatted
+     * title string.
      */
     @Generated
     @Selector("setTitleLocalizationArgs:")
     public native void setTitleLocalizationArgs(NSArray<String> value);
 
     /**
-     * Instead of a raw title string, you may optionally specify a key for a localized string in your app's Localizable.strings file.
+     * Instead of a raw title string, you may optionally specify a key for a localized string in your app's
+     * Localizable.strings file.
      */
     @Generated
     @Selector("setTitleLocalizationKey:")
     public native void setTitleLocalizationKey(String value);
 
     /**
-     * Indicates that the notification should be sent with the "mutable-content" flag to allow a Notification Service app extension to modify or replace the push payload.
+     * Indicates that the notification should be sent with the "mutable-content" flag to allow a Notification Service
+     * app extension to modify or replace the push payload.
      * <p>
      * Default value is @c NO.
      */
@@ -441,14 +461,16 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     public native String subtitle();
 
     /**
-     * A list of field names to take from the matching record that is used as substitution variables in a formatted subtitle string.
+     * A list of field names to take from the matching record that is used as substitution variables in a formatted
+     * subtitle string.
      */
     @Generated
     @Selector("subtitleLocalizationArgs")
     public native NSArray<String> subtitleLocalizationArgs();
 
     /**
-     * Instead of a raw subtitle string, you may optionally specify a key for a localized string in your app's Localizable.strings file.
+     * Instead of a raw subtitle string, you may optionally specify a key for a localized string in your app's
+     * Localizable.strings file.
      */
     @Generated
     @Selector("subtitleLocalizationKey")
@@ -462,14 +484,16 @@ public class CKNotificationInfo extends NSObject implements NSSecureCoding, NSCo
     public native String title();
 
     /**
-     * A list of field names to take from the matching record that is used as substitution variables in a formatted title string.
+     * A list of field names to take from the matching record that is used as substitution variables in a formatted
+     * title string.
      */
     @Generated
     @Selector("titleLocalizationArgs")
     public native NSArray<String> titleLocalizationArgs();
 
     /**
-     * Instead of a raw title string, you may optionally specify a key for a localized string in your app's Localizable.strings file.
+     * Instead of a raw title string, you may optionally specify a key for a localized string in your app's
+     * Localizable.strings file.
      */
     @Generated
     @Selector("titleLocalizationKey")

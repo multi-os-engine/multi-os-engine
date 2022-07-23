@@ -19,7 +19,8 @@ public final class NEFilterReportEvent {
      */
     @Generated @NInt public static final long NewFlow = 0x0000000000000001L;
     /**
-     * [@const] NEFilterReportEventDataDecision The report is reporting a pass/block decision made after analyzing some amount of a flow's data
+     * [@const] NEFilterReportEventDataDecision The report is reporting a pass/block decision made after analyzing some
+     * amount of a flow's data
      */
     @Generated @NInt public static final long DataDecision = 0x0000000000000002L;
     /**

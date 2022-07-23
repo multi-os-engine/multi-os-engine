@@ -203,8 +203,8 @@ public class THClient extends NSObject {
      * Invoking this API will result into UI Alert prompt seeking user's permission to access the credentials
      * <p>
      * [@parameter]
-     * extendedPANID    : Extended PAN Id identifying the thread network
-     * completion       : Callback function to receive the matching active dataset record
+     * extendedPANID : Extended PAN Id identifying the thread network
+     * completion : Callback function to receive the matching active dataset record
      */
     @Generated
     @Selector("retrieveCredentialsForExtendedPANID:completion:")
@@ -249,9 +249,9 @@ public class THClient extends NSObject {
      * Store the Credentials Record
      * <p>
      * [@parameters]
-     * borderAgent              : Border Agent Identifier
+     * borderAgent : Border Agent Identifier
      * activeOperationalDataSet : byte array of active operational dataset
-     * completion               : Callback function to return the status of the store operation
+     * completion : Callback function to return the status of the store operation
      */
     @Generated
     @Selector("storeCredentialsForBorderAgent:activeOperationalDataSet:completion:")

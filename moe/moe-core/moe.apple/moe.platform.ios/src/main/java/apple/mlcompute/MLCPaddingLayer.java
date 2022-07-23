@@ -81,7 +81,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]   constantValue
+     * [@property] constantValue
      * <p>
      * The constant value to use if padding type is constant.
      */
@@ -181,7 +181,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
     public static native MLCPaddingLayer new_objc();
 
     /**
-     * [@property]   paddingBottom
+     * [@property] paddingBottom
      * <p>
      * The bottom padding size
      */
@@ -191,7 +191,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
     public native long paddingBottom();
 
     /**
-     * [@property]   paddingLeft
+     * [@property] paddingLeft
      * <p>
      * The left padding size
      */
@@ -201,7 +201,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
     public native long paddingLeft();
 
     /**
-     * [@property]   paddingRight
+     * [@property] paddingRight
      * <p>
      * The right padding size
      */
@@ -211,7 +211,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
     public native long paddingRight();
 
     /**
-     * [@property]   paddingTop
+     * [@property] paddingTop
      * <p>
      * The top padding size
      */
@@ -221,7 +221,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
     public native long paddingTop();
 
     /**
-     * [@property]   paddingType
+     * [@property] paddingType
      * <p>
      * The padding type i.e. constant, zero, reflect or symmetric
      */

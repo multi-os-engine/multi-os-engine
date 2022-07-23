@@ -41,13 +41,22 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * AVAssetReaderSampleReferenceOutput
  * <p>
- * AVAssetReaderSampleReferenceOutput is a concrete subclass of AVAssetReaderOutput that defines an interface for reading sample references from a single AVAssetTrack of an AVAssetReader's AVAsset.
+ * AVAssetReaderSampleReferenceOutput is a concrete subclass of AVAssetReaderOutput that defines an interface for
+ * reading sample references from a single AVAssetTrack of an AVAssetReader's AVAsset.
  * <p>
- * Clients can extract information about the location (file URL and offset) of samples in a track by adding an instance of AVAssetReaderSampleReferenceOutput to an AVAssetReader using the -[AVAssetReader addOutput:] method. No actual sample data can be extracted using this class. The location of the sample data is described by the kCMSampleBufferAttachmentKey_SampleReferenceURL and kCMSampleBufferAttachmentKey_SampleReferenceByteOffset attachments on the extracted sample buffers. More information about sample buffers describing sample references can be found in the CMSampleBuffer documentation.
+ * Clients can extract information about the location (file URL and offset) of samples in a track by adding an instance
+ * of AVAssetReaderSampleReferenceOutput to an AVAssetReader using the -[AVAssetReader addOutput:] method. No actual
+ * sample data can be extracted using this class. The location of the sample data is described by the
+ * kCMSampleBufferAttachmentKey_SampleReferenceURL and kCMSampleBufferAttachmentKey_SampleReferenceByteOffset
+ * attachments on the extracted sample buffers. More information about sample buffers describing sample references can
+ * be found in the CMSampleBuffer documentation.
  * <p>
- * Sample buffers extracted using this class can also be appended to an AVAssetWriterInput to create movie tracks that are not self-contained and reference data in the original file instead.  Currently, only instances of AVAssetWriter configured to write files of type AVFileTypeQuickTimeMovie can be used to write tracks that are not self-contained.
+ * Sample buffers extracted using this class can also be appended to an AVAssetWriterInput to create movie tracks that
+ * are not self-contained and reference data in the original file instead. Currently, only instances of AVAssetWriter
+ * configured to write files of type AVFileTypeQuickTimeMovie can be used to write tracks that are not self-contained.
  * <p>
- * Since no sample data is ever returned by instances of AVAssetReaderSampleReferenceOutput, the value of the alwaysCopiesSampleData property is ignored.
+ * Since no sample data is ever returned by instances of AVAssetReaderSampleReferenceOutput, the value of the
+ * alwaysCopiesSampleData property is ignored.
  */
 @Generated
 @Library("AVFoundation")
@@ -84,7 +93,8 @@ public class AVAssetReaderSampleReferenceOutput extends AVAssetReaderOutput {
      * <p>
      * The track must be one of the tracks contained by the target AVAssetReader's asset.
      *
-     * @param track The AVAssetTrack for which the resulting AVAssetReaderSampleReferenceOutput should provide sample references.
+     * @param track The AVAssetTrack for which the resulting AVAssetReaderSampleReferenceOutput should provide sample
+     *              references.
      * @return An instance of AVAssetReaderSampleReferenceOutput.
      */
     @Generated
@@ -185,7 +195,8 @@ public class AVAssetReaderSampleReferenceOutput extends AVAssetReaderOutput {
      * <p>
      * The track must be one of the tracks contained by the target AVAssetReader's asset.
      *
-     * @param track The AVAssetTrack for which the resulting AVAssetReaderSampleReferenceOutput should provide sample references.
+     * @param track The AVAssetTrack for which the resulting AVAssetReaderSampleReferenceOutput should provide sample
+     *              references.
      * @return An instance of AVAssetReaderTrackOutput.
      */
     @Generated

@@ -66,7 +66,7 @@ import org.moe.natj.objc.map.ObjCStringMapper;
 @Runtime(CRuntime.class)
 public final class UIKit {
     /**
-     * A required constraint.  Do not exceed this.
+     * A required constraint. Do not exceed this.
      */
     @Generated public static final float UILayoutPriorityRequired = (float)1000.0;
     /**
@@ -78,7 +78,10 @@ public final class UIKit {
      */
     @Generated public static final float UILayoutPriorityDefaultLow = (float)250.0;
     /**
-     * When you send -[UIView systemLayoutSizeFittingSize:], the size fitting most closely to the target size (the argument) is computed.  UILayoutPriorityFittingSizeLevel is the priority level with which the view wants to conform to the target size in that computation.  It's quite low.  It is generally not appropriate to make a constraint at exactly this priority.  You want to be higher or lower.
+     * When you send -[UIView systemLayoutSizeFittingSize:], the size fitting most closely to the target size (the
+     * argument) is computed. UILayoutPriorityFittingSizeLevel is the priority level with which the view wants to
+     * conform to the target size in that computation. It's quite low. It is generally not appropriate to make a
+     * constraint at exactly this priority. You want to be higher or lower.
      */
     @Generated public static final float UILayoutPriorityFittingSizeLevel = (float)50.0;
 
@@ -101,7 +104,9 @@ public final class UIKit {
     public static native boolean UIDeviceOrientationIsLandscape(@NInt long orientation);
 
     /**
-     * The UI_USER_INTERFACE_IDIOM() function is provided for use when deploying to a version of the iOS less than 3.2. If the earliest version of iPhone/iOS that you will be deploying for is 3.2 or greater, you may use -[UIDevice userInterfaceIdiom] directly.
+     * The UI_USER_INTERFACE_IDIOM() function is provided for use when deploying to a version of the iOS less than 3.2.
+     * If the earliest version of iPhone/iOS that you will be deploying for is 3.2 or greater, you may use -[UIDevice
+     * userInterfaceIdiom] directly.
      */
     @Generated
     @Inline
@@ -236,8 +241,10 @@ public final class UIKit {
     public static native boolean UIInterfaceOrientationIsLandscape(@NInt long orientation);
 
     /**
-     * If nil is specified for principalClassName, the value for NSPrincipalClass from the Info.plist is used. If there is no
-     * NSPrincipalClass key specified, the UIApplication class is used. The delegate class will be instantiated using init.
+     * If nil is specified for principalClassName, the value for NSPrincipalClass from the Info.plist is used. If there
+     * is no
+     * NSPrincipalClass key specified, the UIApplication class is used. The delegate class will be instantiated using
+     * init.
      */
     @Generated
     @CFunction
@@ -296,7 +303,8 @@ public final class UIKit {
     /**
      * Returns the element that is currently focused by an assistive technology.
      * default = nil.
-     * Pass in a specific identifier (e.g. UIAccessibilityNotificationVoiceOverIdentifier) in order to choose the focused element for a specific product.
+     * Pass in a specific identifier (e.g. UIAccessibilityNotificationVoiceOverIdentifier) in order to choose the
+     * focused element for a specific product.
      * If no argument is used, the function will returned the element that was most recently focused.
      */
     @Generated
@@ -430,8 +438,10 @@ public final class UIKit {
 
     /**
      * Use UIAccessibilityRequestGuidedAccessSession() to request this app be locked into or released
-     * from Single App mode. The request to lock this app into Single App mode will only succeed if the device is Supervised,
-     * and the app's bundle identifier has been whitelisted using Mobile Device Management. If you successfully request Single
+     * from Single App mode. The request to lock this app into Single App mode will only succeed if the device is
+     * Supervised,
+     * and the app's bundle identifier has been whitelisted using Mobile Device Management. If you successfully request
+     * Single
      * App mode, it is your responsibility to release the device by balancing this call.
      */
     @Generated
@@ -545,7 +555,7 @@ public final class UIKit {
             @ByValue CGRect rect);
 
     /**
-     * Adds a photo to the saved photos album.  The optional completionSelector should have the form:
+     * Adds a photo to the saved photos album. The optional completionSelector should have the form:
      * - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
      */
     @Generated
@@ -651,7 +661,8 @@ public final class UIKit {
     public static native String UIFontDescriptorMatrixAttribute();
 
     /**
-     * An NSCharacterSet instance representing a set of Unicode characters covered by the font. (default: supplied by font)
+     * An NSCharacterSet instance representing a set of Unicode characters covered by the font. (default: supplied by
+     * font)
      */
     @Generated
     @CVariable()
@@ -659,7 +670,8 @@ public final class UIKit {
     public static native String UIFontDescriptorCharacterSetAttribute();
 
     /**
-     * An NSArray instance. Each member of the array is a sub-descriptor. (default: the system default cascading list for user's locale)
+     * An NSArray instance. Each member of the array is a sub-descriptor. (default: the system default cascading list
+     * for user's locale)
      */
     @Generated
     @CVariable()
@@ -675,7 +687,8 @@ public final class UIKit {
     public static native String UIFontDescriptorTraitsAttribute();
 
     /**
-     * A float represented as an NSNumber. The value overrides glyph advancement specified by the font. (default: supplied by each glyph)
+     * A float represented as an NSNumber. The value overrides glyph advancement specified by the font. (default:
+     * supplied by each glyph)
      */
     @Generated
     @CVariable()
@@ -683,7 +696,8 @@ public final class UIKit {
     public static native String UIFontDescriptorFixedAdvanceAttribute();
 
     /**
-     * An array of dictionaries representing non-default font feature settings. Each dictionary contains UIFontFeatureTypeIdentifierKey and UIFontFeatureSelectorIdentifierKey.
+     * An array of dictionaries representing non-default font feature settings. Each dictionary contains
+     * UIFontFeatureTypeIdentifierKey and UIFontFeatureSelectorIdentifierKey.
      */
     @Generated
     @CVariable()
@@ -708,7 +722,8 @@ public final class UIKit {
     public static native String UIFontSymbolicTrait();
 
     /**
-     * This key is used with a trait dictionary to get the normalized weight value as an NSNumber. The valid value range is from -1.0 to 1.0. The value of 0.0 corresponds to the regular or medium font weight.
+     * This key is used with a trait dictionary to get the normalized weight value as an NSNumber. The valid value range
+     * is from -1.0 to 1.0. The value of 0.0 corresponds to the regular or medium font weight.
      */
     @Generated
     @CVariable()
@@ -716,7 +731,8 @@ public final class UIKit {
     public static native String UIFontWeightTrait();
 
     /**
-     * This key is used with a trait dictionary to get the relative inter-glyph spacing value as an NSNumber. The valid value range is from -1.0 to 1.0. The value of 0.0 corresponds to the regular glyph spacing.
+     * This key is used with a trait dictionary to get the relative inter-glyph spacing value as an NSNumber. The valid
+     * value range is from -1.0 to 1.0. The value of 0.0 corresponds to the regular glyph spacing.
      */
     @Generated
     @CVariable()
@@ -724,7 +740,9 @@ public final class UIKit {
     public static native String UIFontWidthTrait();
 
     /**
-     * This key is used with a trait dictionary to get the relative slant angle value as an NSNumber. The valid value range is from -1.0 to 1.0. The value or 0.0 corresponds to 0 degree clockwise rotation from the vertical and 1.0 corresponds to 30 degrees clockwise rotation.
+     * This key is used with a trait dictionary to get the relative slant angle value as an NSNumber. The valid value
+     * range is from -1.0 to 1.0. The value or 0.0 corresponds to 0 degree clockwise rotation from the vertical and 1.0
+     * corresponds to 30 degrees clockwise rotation.
      */
     @Generated
     @CVariable()
@@ -985,7 +1003,9 @@ public final class UIKit {
     public static native CGSize UILayoutFittingExpandedSize();
 
     /**
-     * An attribute for NSTextTab options.  The value is NSCharacterSet.  The character set is used to determine the tab column terminating character.  The tab and newline characters are implied even if not included in the character set.
+     * An attribute for NSTextTab options. The value is NSCharacterSet. The character set is used to determine the tab
+     * column terminating character. The tab and newline characters are implied even if not included in the character
+     * set.
      */
     @Generated
     @CVariable()
@@ -994,9 +1014,11 @@ public final class UIKit {
 
     /**
      * Keys for text attributes dictionaries.
-     * These keys are superseded by the corresponding attribute name keys (NSFontAttributeName, NSForegroundColorAttributeName, NSShadowAttributeName)
+     * These keys are superseded by the corresponding attribute name keys (NSFontAttributeName,
+     * NSForegroundColorAttributeName, NSShadowAttributeName)
      * in NSAttributedString.h.
-     * Key to the font in the text attributes dictionary. A UIFont instance is expected. Use a font with size 0.0 to get the default font size for the situation.
+     * Key to the font in the text attributes dictionary. A UIFont instance is expected. Use a font with size 0.0 to get
+     * the default font size for the situation.
      */
     @Deprecated
     @Generated
@@ -1014,7 +1036,7 @@ public final class UIKit {
     public static native String UITextAttributeTextColor();
 
     /**
-     * Key to the text shadow color in the text attributes dictionary.  A UIColor instance is expected.
+     * Key to the text shadow color in the text attributes dictionary. A UIColor instance is expected.
      */
     @Deprecated
     @Generated
@@ -1023,7 +1045,8 @@ public final class UIKit {
     public static native String UITextAttributeTextShadowColor();
 
     /**
-     * Key to the offset used for the text shadow in the text attributes dictionary. An NSValue instance wrapping a UIOffset struct is expected.
+     * Key to the offset used for the text shadow in the text attributes dictionary. An NSValue instance wrapping a
+     * UIOffset struct is expected.
      */
     @Deprecated
     @Generated
@@ -1199,7 +1222,8 @@ public final class UIKit {
     public static native String UITextFieldDidEndEditingReasonKey();
 
     /**
-     * This exception is raised if supportedInterfaceOrientations returns 0, or if preferredInterfaceOrientationForPresentation
+     * This exception is raised if supportedInterfaceOrientations returns 0, or if
+     * preferredInterfaceOrientationForPresentation
      * returns an orientation that is not supported.
      */
     @Generated
@@ -1344,7 +1368,8 @@ public final class UIKit {
     public static native String UIApplicationLaunchOptionsURLKey();
 
     /**
-     * userInfo contains NSString with bundle ID of the originating application; non-nil if the originating application and this application share the same team identifier
+     * userInfo contains NSString with bundle ID of the originating application; non-nil if the originating application
+     * and this application share the same team identifier
      */
     @Generated
     @CVariable()
@@ -1432,7 +1457,8 @@ public final class UIKit {
     public static native String UIApplicationLaunchOptionsUserActivityTypeKey();
 
     /**
-     * The presence of this key indicates that the app was launched in order to handle a CloudKit sharing invitation. The value of this key is a CKShareMetadata object.
+     * The presence of this key indicates that the app was launched in order to handle a CloudKit sharing invitation.
+     * The value of this key is a CKShareMetadata object.
      */
     @Generated
     @CVariable()
@@ -1445,7 +1471,8 @@ public final class UIKit {
     public static native String UIApplicationOpenSettingsURLString();
 
     /**
-     * value is an NSString containing the bundle ID of the originating application; non-nil if the originating application and this application share the same team identifier
+     * value is an NSString containing the bundle ID of the originating application; non-nil if the originating
+     * application and this application share the same team identifier
      */
     @Generated
     @CVariable()
@@ -1453,7 +1480,8 @@ public final class UIKit {
     public static native String UIApplicationOpenURLOptionsSourceApplicationKey();
 
     /**
-     * value is a property-list typed object corresponding to what the originating application passed in UIDocumentInteractionController's annotation property
+     * value is a property-list typed object corresponding to what the originating application passed in
+     * UIDocumentInteractionController's annotation property
      */
     @Generated
     @CVariable()
@@ -1469,7 +1497,8 @@ public final class UIKit {
     public static native String UIApplicationOpenURLOptionsOpenInPlaceKey();
 
     /**
-     * This notification is posted after the user takes a screenshot (for example by pressing both the home and lock screen buttons)
+     * This notification is posted after the user takes a screenshot (for example by pressing both the home and lock
+     * screen buttons)
      */
     @Generated
     @CVariable()
@@ -1485,8 +1514,10 @@ public final class UIKit {
     public static native String UIApplicationKeyboardExtensionPointIdentifier();
 
     /**
-     * Option for openURL:options:CompletionHandler: only open URL if it is a valid universal link with an application configured to open it
-     * If there is no application configured, or the user disabled using it to open the link, completion handler called with NO
+     * Option for openURL:options:CompletionHandler: only open URL if it is a valid universal link with an application
+     * configured to open it
+     * If there is no application configured, or the user disabled using it to open the link, completion handler called
+     * with NO
      */
     @Generated
     @CVariable()
@@ -1534,7 +1565,10 @@ public final class UIKit {
     public static native String UIApplicationStateRestorationSystemVersionKey();
 
     /**
-     * Sometimes view controllers that are using showViewController:sender and showDetailViewController:sender: will need to know when the split view controller environment above it has changed. This notification will be posted when that happens (for example, when a split view controller is collapsing or expanding). The NSNotification's object will be the view controller that caused the change.
+     * Sometimes view controllers that are using showViewController:sender and showDetailViewController:sender: will
+     * need to know when the split view controller environment above it has changed. This notification will be posted
+     * when that happens (for example, when a split view controller is collapsing or expanding). The NSNotification's
+     * object will be the view controller that caused the change.
      */
     @Generated
     @CVariable()
@@ -1639,7 +1673,7 @@ public final class UIKit {
 
     /**
      * Used when an element can be used to provide a quick summary of current
-     * conditions in the app when the app first launches.  For example, when Weather
+     * conditions in the app when the app first launches. For example, when Weather
      * first launches, the element with today's weather conditions is marked with
      * this trait.
      */
@@ -1679,7 +1713,8 @@ public final class UIKit {
     public static native long UIAccessibilityTraitAdjustable();
 
     /**
-     * Used when an element allows direct touch interaction for VoiceOver users (for example, a view representing a piano keyboard).
+     * Used when an element allows direct touch interaction for VoiceOver users (for example, a view representing a
+     * piano keyboard).
      */
     @Generated
     @CVariable()
@@ -1730,7 +1765,8 @@ public final class UIKit {
 
     /**
      * Listen for this notification to know when VoiceOver finishes outputting an announcement.
-     * The userInfo dictionary contains UIAccessibilityAnnouncementKeyString and UIAccessibilityAnnouncementKeyWasSuccessful.
+     * The userInfo dictionary contains UIAccessibilityAnnouncementKeyString and
+     * UIAccessibilityAnnouncementKeyWasSuccessful.
      */
     @Generated
     @CVariable()
@@ -1755,7 +1791,8 @@ public final class UIKit {
 
     /**
      * In order to know when an assistive technology has focused on an element listen to this notification
-     * The newly focused element will be referenced by UIAccessibilityElementFocusedKeyElement in the userInfo dictionary.
+     * The newly focused element will be referenced by UIAccessibilityElementFocusedKeyElement in the userInfo
+     * dictionary.
      */
     @Generated
     @CVariable()
@@ -1802,7 +1839,7 @@ public final class UIKit {
      * For example, you may want to pause scanning in Switch Control while your app plays an animation.
      * An identifier representing the assistive technology should be used as the argument.
      * Currently, these notifications only apply to Switch Control.
-     * The notifications must be balanced.  That is, every UIAccessibilityPauseAssistiveTechnologyNotification
+     * The notifications must be balanced. That is, every UIAccessibilityPauseAssistiveTechnologyNotification
      * should be followed by a matching UIAccessibilityResumeAssistiveTechnologyNotification with the same argument.
      * If the user performs an action that requires the assistive technology to resume operations,
      * it may do so before it receives the corresponding UIAccessibilityResumeAssistiveTechnologyNotification.
@@ -1817,7 +1854,8 @@ public final class UIKit {
     public static native int UIAccessibilityResumeAssistiveTechnologyNotification();
 
     /**
-     * The following identifier should be used as the argument when posting a UIAccessibilityPauseAssistiveTechnologyNotification
+     * The following identifier should be used as the argument when posting a
+     * UIAccessibilityPauseAssistiveTechnologyNotification
      * or a UIAccessibilityResumeAssistiveTechnologyNotification.
      */
     @Generated
@@ -1854,7 +1892,8 @@ public final class UIKit {
 
     /**
      * Use an NSNumber with a value between [0-2] that specifies the pitch.
-     * For example, you may want to lower the pitch when an object is deleted, or raise the pitch if an object is inserted.
+     * For example, you may want to lower the pitch when an object is deleted, or raise the pitch if an object is
+     * inserted.
      * Default value == 1.0f.
      */
     @Generated
@@ -2161,9 +2200,11 @@ public final class UIKit {
     public static native String UINibProxiedObjectsKey();
 
     /**
-     * Key for specifying spine location in options dictionary argument to initWithTransitionStyle:navigationOrientation:options:.
+     * Key for specifying spine location in options dictionary argument to
+     * initWithTransitionStyle:navigationOrientation:options:.
      * Value should be a 'UIPageViewControllerSpineLocation' wrapped in an NSNumber.
-     * Only valid for use with page view controllers with transition style 'UIPageViewControllerTransitionStylePageCurl'.
+     * Only valid for use with page view controllers with transition style
+     * 'UIPageViewControllerTransitionStylePageCurl'.
      */
     @Generated
     @CVariable()
@@ -2171,7 +2212,8 @@ public final class UIKit {
     public static native String UIPageViewControllerOptionSpineLocationKey();
 
     /**
-     * Key for specifying spacing between pages in options dictionary argument to initWithTransitionStyle:navigationOrientation:options:.
+     * Key for specifying spacing between pages in options dictionary argument to
+     * initWithTransitionStyle:navigationOrientation:options:.
      * Value should be a CGFloat wrapped in an NSNumber. Default is '0'.
      * Only valid for use with page view controllers with transition style 'UIPageViewControllerTransitionStyleScroll'.
      */
@@ -2249,7 +2291,8 @@ public final class UIKit {
     public static native NSArray<String> UIPasteboardTypeListColor();
 
     /**
-     * Use the following type in setItems: or setItems:options: to automatically insert appropriate UTIs for supported types.
+     * Use the following type in setItems: or setItems:options: to automatically insert appropriate UTIs for supported
+     * types.
      * Supported types are: NSString, NSURL, UIImage, UIColor, NSAttributedString.
      */
     @Generated
@@ -2263,7 +2306,8 @@ public final class UIKit {
     public static native String UIPrintErrorDomain();
 
     /**
-     * Object is the UIScreen that represents the new screen. Connection notifications are not sent for screens present when the application is first launched
+     * Object is the UIScreen that represents the new screen. Connection notifications are not sent for screens present
+     * when the application is first launched
      */
     @Generated
     @CVariable()
@@ -2316,7 +2360,8 @@ public final class UIKit {
     public static native String UITransitionContextToViewKey();
 
     /**
-     * Including this constant string in the array of strings returned by sectionIndexTitlesForTableView: will cause a magnifying glass icon to be displayed at that location in the index.
+     * Including this constant string in the array of strings returned by sectionIndexTitlesForTableView: will cause a
+     * magnifying glass icon to be displayed at that location in the index.
      * This should generally only be used as the first title in the index.
      */
     @Generated
@@ -2325,7 +2370,8 @@ public final class UIKit {
     public static native String UITableViewIndexSearch();
 
     /**
-     * Returning this value from tableView:heightForHeaderInSection: or tableView:heightForFooterInSection: results in a height that fits the value returned from
+     * Returning this value from tableView:heightForHeaderInSection: or tableView:heightForFooterInSection: results in a
+     * height that fits the value returned from
      * tableView:titleForHeaderInSection: or tableView:titleForFooterInSection: if the title is not nil.
      */
     @Generated
@@ -2339,7 +2385,8 @@ public final class UIKit {
     public static native String UITableViewSelectionDidChangeNotification();
 
     /**
-     * This constant can be used with any sizing-related `UISplitViewController` properties to get the default system behavior.
+     * This constant can be used with any sizing-related `UISplitViewController` properties to get the default system
+     * behavior.
      */
     @Generated
     @CVariable()
@@ -2556,7 +2603,8 @@ public final class UIKit {
     public static native String NSLigatureAttributeName();
 
     /**
-     * NSNumber containing floating point value, in points; amount to modify default kerning. 0 means kerning is disabled.
+     * NSNumber containing floating point value, in points; amount to modify default kerning. 0 means kerning is
+     * disabled.
      */
     @Generated
     @CVariable()
@@ -2588,7 +2636,8 @@ public final class UIKit {
     public static native String NSStrokeColorAttributeName();
 
     /**
-     * NSNumber containing floating point value, in percent of font point size, default 0: no stroke; positive for stroke alone, negative for stroke and fill (a typical value for outlined text would be 3.0)
+     * NSNumber containing floating point value, in percent of font point size, default 0: no stroke; positive for
+     * stroke alone, negative for stroke and fill (a typical value for outlined text would be 3.0)
      */
     @Generated
     @CVariable()
@@ -2660,7 +2709,8 @@ public final class UIKit {
     public static native String NSObliquenessAttributeName();
 
     /**
-     * NSNumber containing floating point value; log of expansion factor to be applied to glyphs, default 0: no expansion
+     * NSNumber containing floating point value; log of expansion factor to be applied to glyphs, default 0: no
+     * expansion
      */
     @Generated
     @CVariable()
@@ -2668,7 +2718,12 @@ public final class UIKit {
     public static native String NSExpansionAttributeName();
 
     /**
-     * NSArray of NSNumbers representing the nested levels of writing direction overrides as defined by Unicode LRE, RLE, LRO, and RLO characters.  The control characters can be obtained by masking NSWritingDirection and NSWritingDirectionFormatType values.  LRE: NSWritingDirectionLeftToRight|NSWritingDirectionEmbedding, RLE: NSWritingDirectionRightToLeft|NSWritingDirectionEmbedding, LRO: NSWritingDirectionLeftToRight|NSWritingDirectionOverride, RLO: NSWritingDirectionRightToLeft|NSWritingDirectionOverride,
+     * NSArray of NSNumbers representing the nested levels of writing direction overrides as defined by Unicode LRE,
+     * RLE, LRO, and RLO characters. The control characters can be obtained by masking NSWritingDirection and
+     * NSWritingDirectionFormatType values. LRE: NSWritingDirectionLeftToRight|NSWritingDirectionEmbedding, RLE:
+     * NSWritingDirectionRightToLeft|NSWritingDirectionEmbedding, LRO:
+     * NSWritingDirectionLeftToRight|NSWritingDirectionOverride, RLO:
+     * NSWritingDirectionRightToLeft|NSWritingDirectionOverride,
      */
     @Generated
     @CVariable()
@@ -2676,7 +2731,9 @@ public final class UIKit {
     public static native String NSWritingDirectionAttributeName();
 
     /**
-     * An NSNumber containing an integer value.  0 means horizontal text.  1 indicates vertical text.  If not specified, it could follow higher-level vertical orientation settings.  Currently on iOS, it's always horizontal.  The behavior for any other value is undefined.
+     * An NSNumber containing an integer value. 0 means horizontal text. 1 indicates vertical text. If not specified, it
+     * could follow higher-level vertical orientation settings. Currently on iOS, it's always horizontal. The behavior
+     * for any other value is undefined.
      */
     @Generated
     @CVariable()
@@ -2728,7 +2785,10 @@ public final class UIKit {
     public static native String NSTextLayoutSectionRange();
 
     /**
-     * @"DocumentType", one of the document types declared above.  For reader methods, this key in options can specify the document type for interpreting the contents.  Upon return, the document attributes can contain this key for indicating the actual format used to read the contents.  For write methods, this key specifies the format for generating the data.
+     * @"DocumentType", one of the document types declared above. For reader methods, this key in options can specify
+     * the document type for interpreting the contents. Upon return, the document attributes can contain this key for
+     * indicating the actual format used to read the contents. For write methods, this key specifies the format for
+     * generating the data.
      */
     @Generated
     @CVariable()
@@ -2736,7 +2796,10 @@ public final class UIKit {
     public static native String NSDocumentTypeDocumentAttribute();
 
     /**
-     * @"CharacterEncoding", NSNumber containing integer specifying NSStringEncoding for the file; default for plain text is the default encoding.  This key in options can specify the string encoding for reading the data.  Upon return, the document attributes can contain the actual encoding used.  For writing methods, this value is used for generating the plain text data.
+     * @"CharacterEncoding", NSNumber containing integer specifying NSStringEncoding for the file; default for plain
+     * text is the default encoding. This key in options can specify the string encoding for reading the data. Upon
+     * return, the document attributes can contain the actual encoding used. For writing methods, this value is used for
+     * generating the plain text data.
      */
     @Generated
     @CVariable()
@@ -2744,7 +2807,9 @@ public final class UIKit {
     public static native String NSCharacterEncodingDocumentAttribute();
 
     /**
-     * @"DefaultAttributes", NSDictionary containing attributes to be applied to plain files.  Used by reader methods.  This key in options can specify the default attributes applied to the entire document contents.  The document attributes can contain this key indicating the actual attributes used.
+     * @"DefaultAttributes", NSDictionary containing attributes to be applied to plain files. Used by reader methods.
+     * This key in options can specify the default attributes applied to the entire document contents. The document
+     * attributes can contain this key indicating the actual attributes used.
      */
     @Generated
     @CVariable()
@@ -2792,7 +2857,9 @@ public final class UIKit {
     public static native String NSViewModeDocumentAttribute();
 
     /**
-     * @"ReadOnly", NSNumber containing integer; if missing, or 0 or negative, not readonly; 1 or more, readonly. Note that this has nothing to do with the file system protection on the file, but instead, on how the file should be displayed to the user
+     * @"ReadOnly", NSNumber containing integer; if missing, or 0 or negative, not readonly; 1 or more, readonly. Note
+     * that this has nothing to do with the file system protection on the file, but instead, on how the file should be
+     * displayed to the user
      */
     @Generated
     @CVariable()
@@ -2816,7 +2883,8 @@ public final class UIKit {
     public static native String NSHyphenationFactorDocumentAttribute();
 
     /**
-     * @"DefaultTabInterval", NSNumber containing floating point value, representing the document-wide default tab stop interval, in points
+     * @"DefaultTabInterval", NSNumber containing floating point value, representing the document-wide default tab stop
+     * interval, in points
      */
     @Generated
     @CVariable()
@@ -2824,7 +2892,9 @@ public final class UIKit {
     public static native String NSDefaultTabIntervalDocumentAttribute();
 
     /**
-     * NSArray of dictionaries.  Each dictionary describing a layout orientation section.  The dictionary can have two attributes: NSTextLayoutSectionOrientation and NSTextLayoutSectionRange.  When there is a gap between sections, it's assumed to have NSTextLayoutOrientationHorizontal.
+     * NSArray of dictionaries. Each dictionary describing a layout orientation section. The dictionary can have two
+     * attributes: NSTextLayoutSectionOrientation and NSTextLayoutSectionRange. When there is a gap between sections,
+     * it's assumed to have NSTextLayoutOrientationHorizontal.
      */
     @Generated
     @CVariable()
@@ -2897,7 +2967,8 @@ public final class UIKit {
             @Mapped(ObjCStringMapper.class) String rhs);
 
     /**
-     * Font text styles, semantic descriptions of the intended use for a font returned by +[UIFont preferredFontForTextStyle:]
+     * Font text styles, semantic descriptions of the intended use for a font returned by +[UIFont
+     * preferredFontForTextStyle:]
      */
     @Generated
     @CVariable()
@@ -2941,7 +3012,8 @@ public final class UIKit {
 
     /**
      * The corresponding value for this key should be a NSNumber with a YES or NO value.
-     * If YES, then this announcement will be queued behind existing speech; if NO, then it will interrupt existing speech.
+     * If YES, then this announcement will be queued behind existing speech; if NO, then it will interrupt existing
+     * speech.
      * Default behavior is to interrupt existing speech.
      */
     @Generated
@@ -3010,7 +3082,8 @@ public final class UIKit {
     public static native String UIScreenCapturedDidChangeNotification();
 
     /**
-     * @"DocumentType", NSString indicating a document type to be forced when loading the document, specified as one of the NSDocumentTypeDocumentAttribute constants listed above
+     * @"DocumentType", NSString indicating a document type to be forced when loading the document, specified as one of
+     * the NSDocumentTypeDocumentAttribute constants listed above
      */
     @Generated
     @CVariable()
@@ -3026,7 +3099,8 @@ public final class UIKit {
     public static native String NSDefaultAttributesDocumentOption();
 
     /**
-     * @"CharacterEncoding", for plain text and HTML; NSNumber containing integer specifying NSStringEncoding to be used to interpret the file
+     * @"CharacterEncoding", for plain text and HTML; NSNumber containing integer specifying NSStringEncoding to be used
+     * to interpret the file
      */
     @Generated
     @CVariable()
@@ -3242,7 +3316,8 @@ public final class UIKit {
     public static native String UIMenuStandardEdit();
 
     /**
-     * Find menu; empty in the default menubar configuration. Applications should use this when adding their own Find-related menu items.
+     * Find menu; empty in the default menubar configuration. Applications should use this when adding their own
+     * Find-related menu items.
      */
     @Generated
     @CVariable()
@@ -3266,7 +3341,7 @@ public final class UIKit {
     public static native String UIMenuShare();
 
     /**
-     * Bold, Italics, Underline  menu
+     * Bold, Italics, Underline menu
      */
     @Generated
     @CVariable()
@@ -3458,7 +3533,8 @@ public final class UIKit {
     public static native String UIMenuRoot();
 
     /**
-     * UICommand.propertyList value to indicate that a command is a Sharing menu item. Such an item automatically receives a standard Share submenu.
+     * UICommand.propertyList value to indicate that a command is a Sharing menu item. Such an item automatically
+     * receives a standard Share submenu.
      */
     @Generated
     @CVariable()
@@ -3490,11 +3566,12 @@ public final class UIKit {
      */
     @Generated public static final float UILayoutPriorityDragThatCanResizeScene = (float)510.0;
     /**
-     * This is the priority level at which the window's scene prefers to stay the same size.  It's generally not appropriate to make a constraint at exactly this priority. You want to be higher or lower.
+     * This is the priority level at which the window's scene prefers to stay the same size. It's generally not
+     * appropriate to make a constraint at exactly this priority. You want to be higher or lower.
      */
     @Generated public static final float UILayoutPrioritySceneSizeStayPut = (float)500.0;
     /**
-     * This is the priority level at which a split view divider, say, is dragged.  It won't resize the window's scene.
+     * This is the priority level at which a split view divider, say, is dragged. It won't resize the window's scene.
      */
     @Generated public static final float UILayoutPriorityDragThatCannotResizeScene = (float)490.0;
 
@@ -3561,7 +3638,8 @@ public final class UIKit {
     public static native String UIAccessibilitySpeechAttributeSpellOut();
 
     /**
-     * Use a UIAccessibilityTextualContext to specify how this text content should be interpreted by assistive technologies.
+     * Use a UIAccessibilityTextualContext to specify how this text content should be interpreted by assistive
+     * technologies.
      */
     @Generated
     @CVariable()
@@ -3634,7 +3712,12 @@ public final class UIKit {
     public static native String UIActivityItemsConfigurationInteractionShare();
 
     /**
-     * @"TextScaling", one of the text scaling types declared above. Only affects RTF documents.  For reading methods, this indicates the type of text scaling used in the returned attributed string.  For write methods, this attribute can be used in two different ways: (1) Passing only this attribute will overwrite the text scaling metadata in the document, but will not perform any conversion on the font sizes in the document, or (2) Passing both this attribute and NSSourceTextScalingDocumentAttribute will convert the font sizes in the document from the source text scaling type to the text scaling type specified by this attribute.
+     * @"TextScaling", one of the text scaling types declared above. Only affects RTF documents. For reading methods,
+     * this indicates the type of text scaling used in the returned attributed string. For write methods, this attribute
+     * can be used in two different ways: (1) Passing only this attribute will overwrite the text scaling metadata in
+     * the document, but will not perform any conversion on the font sizes in the document, or (2) Passing both this
+     * attribute and NSSourceTextScalingDocumentAttribute will convert the font sizes in the document from the source
+     * text scaling type to the text scaling type specified by this attribute.
      */
     @Generated
     @CVariable()
@@ -3642,7 +3725,11 @@ public final class UIKit {
     public static native String NSTextScalingDocumentAttribute();
 
     /**
-     * @"SourceTextScaling", one of the text scaling types declared above. Only affects RTF documents.  For writing methods, this indicates the type of text scaling in the attributed string that will be used as the base type for conversion.  Use this in conjunction with NSTextScalingDocumentAttribute to convert font point sizes between text scalings when writing attributed strings to RTF.  This attribute is optional and does nothing unless NSTextScalingDocumentAttribute is also specified.
+     * @"SourceTextScaling", one of the text scaling types declared above. Only affects RTF documents. For writing
+     * methods, this indicates the type of text scaling in the attributed string that will be used as the base type for
+     * conversion. Use this in conjunction with NSTextScalingDocumentAttribute to convert font point sizes between text
+     * scalings when writing attributed strings to RTF. This attribute is optional and does nothing unless
+     * NSTextScalingDocumentAttribute is also specified.
      */
     @Generated
     @CVariable()
@@ -3650,7 +3737,12 @@ public final class UIKit {
     public static native String NSSourceTextScalingDocumentAttribute();
 
     /**
-     * @"CocoaRTFVersion", NSNumber containing integer.  Stores the version of Cocoa the file was created with.  NSNumber containing float.  Absence of this value indicates file not labelled as being created by Cocoa or its predecessors.  Values less than 100 are pre-Mac OS X; 100 is Mac OS X 10.0 and 10.1; 102 is Mac OS X 10.2 and 10.3; values greater than 102 correspond to values of NSAppKitVersionNumber on 10.4-10.14 systems.  Beginning with iOS 13 and macOS 10.15, this version number does not have a one-to-one correspondence with any single system framework version, but is guaranteed to monotonically increase with each OS version.
+     * @"CocoaRTFVersion", NSNumber containing integer. Stores the version of Cocoa the file was created with. NSNumber
+     * containing float. Absence of this value indicates file not labelled as being created by Cocoa or its
+     * predecessors. Values less than 100 are pre-Mac OS X; 100 is Mac OS X 10.0 and 10.1; 102 is Mac OS X 10.2 and
+     * 10.3; values greater than 102 correspond to values of NSAppKitVersionNumber on 10.4-10.14 systems. Beginning with
+     * iOS 13 and macOS 10.15, this version number does not have a one-to-one correspondence with any single system
+     * framework version, but is guaranteed to monotonically increase with each OS version.
      */
     @Generated
     @CVariable()
@@ -3658,7 +3750,10 @@ public final class UIKit {
     public static native String NSCocoaVersionDocumentAttribute();
 
     /**
-     * @"TargetTextScaling", one of the text scaling types declared above.  Only affects RTF documents.  For reading methods, you can pass this option to request that the returned attributed string uses the specified scaling.  The font point sizes in the document may be converted if necessary.  If this option is not provided, the system will deduce the target text scaling type based on application framework and platform.
+     * @"TargetTextScaling", one of the text scaling types declared above. Only affects RTF documents. For reading
+     * methods, you can pass this option to request that the returned attributed string uses the specified scaling. The
+     * font point sizes in the document may be converted if necessary. If this option is not provided, the system will
+     * deduce the target text scaling type based on application framework and platform.
      */
     @Generated
     @CVariable()
@@ -3666,7 +3761,12 @@ public final class UIKit {
     public static native String NSTargetTextScalingDocumentOption();
 
     /**
-     * @"SourceTextScaling", one of the text scaling types declared above.  Only affects RTF documents.  For reading methods, you can pass this option to indicate the source text scaling type of the RTF document being read.  Use this in conjunction with NSTargetTextScalingDocumentOption to control text scaling conversions on the font point sizes in the returned attributed string.  This option does nothing unless NSTargetTextScalingDocumentOption is also specified.  If this option is not provided, the system will deduce the source text scaling type based on the information in the document.
+     * @"SourceTextScaling", one of the text scaling types declared above. Only affects RTF documents. For reading
+     * methods, you can pass this option to indicate the source text scaling type of the RTF document being read. Use
+     * this in conjunction with NSTargetTextScalingDocumentOption to control text scaling conversions on the font point
+     * sizes in the returned attributed string. This option does nothing unless NSTargetTextScalingDocumentOption is
+     * also specified. If this option is not provided, the system will deduce the source text scaling type based on the
+     * information in the document.
      */
     @Generated
     @CVariable()
@@ -3675,8 +3775,10 @@ public final class UIKit {
 
     /**
      * Deprecated ***********************
-     * NSUnderlineByWord and the NSUnderlinePattern* values are soft deprecated starting with macOS 10.14/iOS 12 and will be officially deprecated in a future release.  Please use the NSUnderlineStyle* equivalents instead.
-     * Underlines will be drawn with a solid pattern by default, so NSUnderlinePatternSolid does not need to be specified.
+     * NSUnderlineByWord and the NSUnderlinePattern* values are soft deprecated starting with macOS 10.14/iOS 12 and
+     * will be officially deprecated in a future release. Please use the NSUnderlineStyle* equivalents instead.
+     * Underlines will be drawn with a solid pattern by default, so NSUnderlinePatternSolid does not need to be
+     * specified.
      */
     @Generated @NInt public static final long NSUnderlinePatternSolid = 0x0000000000000000L;
     @Generated @NInt public static final long NSUnderlinePatternDot = 0x0000000000000100L;
@@ -3732,7 +3834,8 @@ public final class UIKit {
     public static native String UIWindowSceneSessionRoleExternalDisplay();
 
     /**
-     * Convenience initializer for a button mask where `buttonNumber` is a one-based index of the button on the input device
+     * Convenience initializer for a button mask where `buttonNumber` is a one-based index of the button on the input
+     * device
      * .button(1) == .primary
      * .button(2) == .secondary
      */
@@ -3878,7 +3981,8 @@ public final class UIKit {
     public static native String UIMenuOpenRecent();
 
     /**
-     * NSNumber containing floating point value, in points; amount to modify default tracking. 0 means tracking is disabled.
+     * NSNumber containing floating point value, in points; amount to modify default tracking. 0 means tracking is
+     * disabled.
      */
     @Generated
     @CVariable()
@@ -3975,9 +4079,8 @@ public final class UIKit {
     @Generated @NInt public static final long UIFocusGroupPriorityIgnored = 0x0000000000000000L;
     @Generated @NInt public static final long UIFocusGroupPriorityPreviouslyFocused = 0x00000000000003E8L;
     @Generated @NInt public static final long UIFocusGroupPriorityPrioritized = 0x00000000000007D0L;
-    @Generated @NInt public static final long UIFocusGroupPriorityCurrentlyFocused = org.moe.natj.general.NatJ.is64Bit() ?
-            0x7FFFFFFFFFFFFFFFL :
-            0x000000007FFFFFFFL;
+    @Generated @NInt public static final long UIFocusGroupPriorityCurrentlyFocused = org.moe.natj.general.NatJ
+            .is64Bit() ? 0x7FFFFFFFFFFFFFFFL : 0x000000007FFFFFFFL;
 
     /**
      * Default action identifiers for paste variants
@@ -4051,7 +4154,8 @@ public final class UIKit {
     public static native String UIApplicationOpenExternalURLOptionsEventAttributionKey();
 
     /**
-     * The UICollectionViewLayout class is provided as an abstract class for subclassing to define custom collection layouts.
+     * The UICollectionViewLayout class is provided as an abstract class for subclassing to define custom collection
+     * layouts.
      * Defining a custom layout is an advanced operation intended for applications with complex needs.
      */
     @Generated
@@ -4060,7 +4164,8 @@ public final class UIKit {
     public static native double UICollectionViewLayoutAutomaticDimension();
 
     /**
-     * Use the values from the edges in this constant to indicate to the consumer of a UIListSeparatorConfiguration that the value for that
+     * Use the values from the edges in this constant to indicate to the consumer of a UIListSeparatorConfiguration that
+     * the value for that
      * edge should be replaced with an appropriate inset.
      */
     @Generated
@@ -4202,7 +4307,8 @@ public final class UIKit {
     public static native UIPointerAccessoryPosition UIPointerAccessoryPositionTopLeft();
 
     /**
-     * Posted by NSTextContentStorage when a text attribute unsupported by NSTextContentStorage is added to the underlying text storage.
+     * Posted by NSTextContentStorage when a text attribute unsupported by NSTextContentStorage is added to the
+     * underlying text storage.
      */
     @Generated
     @CVariable()

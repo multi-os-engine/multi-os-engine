@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]          HKCategoryValueCervicalMucusQuality
+ * [@enum] HKCategoryValueCervicalMucusQuality
  * <p>
  * Set of values that may be used for HKCategorySamples with the HKCategoryTypeIdentifierCervicalMucusQuality type.
  * <p>

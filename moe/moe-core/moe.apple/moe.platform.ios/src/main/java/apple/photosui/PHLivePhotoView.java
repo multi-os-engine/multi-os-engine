@@ -462,7 +462,8 @@ public class PHLivePhotoView extends UIView {
     public native void setLivePhoto(PHLivePhoto value);
 
     /**
-     * The following methods allow the client to manually trigger playback. If the live photo is changed during playback, it will be immediately interrupted.
+     * The following methods allow the client to manually trigger playback. If the live photo is changed during
+     * playback, it will be immediately interrupted.
      */
     @Generated
     @Selector("startPlaybackWithStyle:")

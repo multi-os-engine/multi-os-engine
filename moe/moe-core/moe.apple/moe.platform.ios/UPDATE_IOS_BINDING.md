@@ -6,6 +6,7 @@
 * Make sure your NatJGen version is bleeding edge!
 * Do NOT skip steps in this guide, this guide is made specially so that the git diff can (and must) be minimal!
 * Do NOT commit back any changes which are whitespace only into moe-core repository!
+* For consistent formating [spotless](https://github.com/diffplug/spotless) is used. The format specification (Eclipse_Adjusted_NatJGen.xml) is exported by IntelliJ in the eclipse format.
 
 ### Setup & Generation
 
@@ -34,13 +35,7 @@
     ```
 
 * Run the `remove_deprecated_files.py` to remove deprecated files
-* After the generator completed successfully, open the project in IDEA
-* Import the `Eclipse Adjusted NatJGen.xml` code style into IDEA and select it as scheme
-* In the Project navigator, select `moe.apple > moe.platform.ios > src > main > java > apple`
-* Right-click and select `Reformat code`
-    * Check `Include subdirectories`
-    * Check `Optimize imports`
-    * Run and repeat 1-2 times (in some versions of IDEA running only once will not do a sufficient job)
+* After the generator completed successfully, run the "spotlessApply" gradle task
 * Review your git diff and revert any changes that are whitespace only, meaning indentation changes and line-breaks
     * NatJGen has a known issue where it will generate the same code but with different indentation
     * Do not commit `moe.apple/moe.platform.ios/typeconfig.out.ngtconf` it is only generated so `moe.apple/moe.platform.ios/typeconfig.ngtconf` can be updated

@@ -55,7 +55,8 @@ public interface UITextFieldDelegate {
     }
 
     /**
-     * may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES called
+     * may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES
+     * called
      */
     @Generated
     @IsOptional
@@ -95,7 +96,8 @@ public interface UITextFieldDelegate {
     }
 
     /**
-     * return YES to allow editing to stop and to resign first responder status. NO to disallow the editing session to end
+     * return YES to allow editing to stop and to resign first responder status. NO to disallow the editing session to
+     * end
      */
     @Generated
     @IsOptional

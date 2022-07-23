@@ -130,7 +130,7 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
     /**
      * For backwards compatibility on Mach, +allocWithZone: returns
      * an instance of the NSMachPort class when sent to the NSPort
-     * class.  Otherwise, it returns an instance of a concrete
+     * class. Otherwise, it returns an instance of a concrete
      * subclass which can be used for messaging between threads
      * or processes on the local machine.
      */

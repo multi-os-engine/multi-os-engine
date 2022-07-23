@@ -54,7 +54,7 @@ public class MPSNNGramMatrixCalculationGradientNode extends MPSNNGradientFilterN
     public static native MPSNNGramMatrixCalculationGradientNode allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
      * Scaling factor for the output. Default: 1.0f.
      */

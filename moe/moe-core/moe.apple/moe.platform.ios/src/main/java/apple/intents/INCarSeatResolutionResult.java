@@ -181,7 +181,9 @@ public class INCarSeatResolutionResult extends INIntentResolutionResult {
             @NInt long carSeatToConfirm);
 
     /**
-     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INCarSeat. The resolvedValue can be different than the original INCarSeat. This allows app extensions to apply business logic constraints.
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INCarSeat. The
+     * resolvedValue can be different than the original INCarSeat. This allows app extensions to apply business logic
+     * constraints.
      * Use +notRequired to continue with a 'nil' value.
      */
     @Generated

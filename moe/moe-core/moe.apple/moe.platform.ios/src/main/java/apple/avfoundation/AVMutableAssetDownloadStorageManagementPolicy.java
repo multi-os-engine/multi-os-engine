@@ -89,7 +89,7 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
     public static native String description_static();
 
     /**
-     * [@property]	expirationDate
+     * [@property] expirationDate
      * <p>
      * Returns the expiration date of asset.
      */
@@ -133,7 +133,7 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
     public static native AVMutableAssetDownloadStorageManagementPolicy new_objc();
 
     /**
-     * [@property]	priority
+     * [@property] priority
      * <p>
      * Indicates the eviction priority of downloaded asset.
      * <p>
@@ -153,7 +153,7 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]	expirationDate
+     * [@property] expirationDate
      * <p>
      * Returns the expiration date of asset.
      */
@@ -162,7 +162,7 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
     public native void setExpirationDate(NSDate value);
 
     /**
-     * [@property]	priority
+     * [@property] priority
      * <p>
      * Indicates the eviction priority of downloaded asset.
      * <p>

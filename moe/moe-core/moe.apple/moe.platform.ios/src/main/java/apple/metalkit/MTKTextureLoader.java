@@ -322,14 +322,14 @@ public class MTKTextureLoader extends NSObject {
      * <p>
      * Uses texture data from version of the texture from the texture set in the asset catalog
      * which mathces the device's traits.
-     * This method attempts to load a texture asset with thw name iven.  If a texture asset
+     * This method attempts to load a texture asset with thw name iven. If a texture asset
      * with the name given does not exist, it will attempt to create a texture from an
      * image asset with the given name
      *
      * @param name              A texture or image asset name
-     * @param scaleFactor       scale factor of the texture to retrieve from the asset catalog.  Typically the
+     * @param scaleFactor       scale factor of the texture to retrieve from the asset catalog. Typically the
      *                          value retrieved from -[UIView contentScale] or -[NSWindow backingScaleFactor].
-     * @param bundle            Resource bundle in which the asset is located.  Main bundle used if nil.
+     * @param bundle            Resource bundle in which the asset is located. Main bundle used if nil.
      * @param options           Dictonary of MTKTextureLoaderOptions. The following options are ignormed when used
      *                          to load a texture asset but can be used when creating a texture from an image asset:
      *                          MTKTextureLoaderOptionGenerateMipmaps
@@ -352,14 +352,14 @@ public class MTKTextureLoader extends NSObject {
      * <p>
      * Uses texture data from version of the texture from the texture set in the asset catalog
      * which mathces the device's traits.
-     * This method attempts to load a texture asset with the name given.  If a texture asset
+     * This method attempts to load a texture asset with the name given. If a texture asset
      * with the name given does not exist, it will attempt to create a texture from an
      * image asset with the given name.
      *
      * @param names       An array of texture asset names
-     * @param scaleFactor scale factor of the texture to retrieve from the asset catalog.  Typically the
+     * @param scaleFactor scale factor of the texture to retrieve from the asset catalog. Typically the
      *                    value retrieved from -[UIView contentScale] or -[NSWindow backingScaleFactor].
-     * @param bundle      Resource bundle in which the asset is located.  Main bundle used if nil.
+     * @param bundle      Resource bundle in which the asset is located. Main bundle used if nil.
      * @param options     Dictonary of MTKTextureLoaderOptions. The following options are ignormed when used
      *                    to load a texture asset but can be used when creating a texture from an image asset
      *                    MTKTextureLoaderOptionGenerateMipmaps
@@ -381,7 +381,11 @@ public class MTKTextureLoader extends NSObject {
      *
      * @param URLs              Locations of image files from which to create the textures
      * @param options           Dictonary of MTKTextureLoaderOptions, which will be used for every texture loaded
-     * @param completionHandler Block called when all of the textures have been loaded and fully initialized. The array of MTLTextures will be the same length and in the same order as the requested array of paths. If an error occurs while loading a texture, the corresponding array index will contain NSNull. The NSError will be null if all of the textures are loaded successfully, or will correspond to one of the textures which failed to load.
+     * @param completionHandler Block called when all of the textures have been loaded and fully initialized. The array
+     *                          of MTLTextures will be the same length and in the same order as the requested array of
+     *                          paths. If an error occurs while loading a texture, the corresponding array index will
+     *                          contain NSNull. The NSError will be null if all of the textures are loaded successfully,
+     *                          or will correspond to one of the textures which failed to load.
      */
     @Generated
     @Selector("newTexturesWithContentsOfURLs:options:completionHandler:")
@@ -400,8 +404,8 @@ public class MTKTextureLoader extends NSObject {
      *                Will be null if all of the textures are loaded successfully, or will correspond to
      *                one of the textures which failed to load.
      * @return An array of MTLTextures of the same length and in the same order as the requested array of
-     * paths.  If an error occurs while loading a texture, the corresponding array index will
-     * contain [NSNull null].
+     *         paths. If an error occurs while loading a texture, the corresponding array index will
+     *         contain [NSNull null].
      */
     @Generated
     @Selector("newTexturesWithContentsOfURLs:options:error:")
@@ -416,15 +420,15 @@ public class MTKTextureLoader extends NSObject {
      * <p>
      * Uses texture data from version of the texture from the texture set in the asset catalog
      * which mathces the device's traits.
-     * This method attempts to load a texture asset with each name iven.  If a texture asset
+     * This method attempts to load a texture asset with each name iven. If a texture asset
      * with the name given does not exist, it will attempt to create a texture from an
      * image asset with the given name.
      *
-     * @param names             An array texture or image asset names.  If an error occurs while loading a texture,
+     * @param names             An array texture or image asset names. If an error occurs while loading a texture,
      *                          the corresponding index in the returned array contain [NSNull null]
-     * @param scaleFactor       scale factor of the texture to retrieve from the asset catalog.  Typically the
+     * @param scaleFactor       scale factor of the texture to retrieve from the asset catalog. Typically the
      *                          value retrieved from -[UIView contentScale] or -[NSWindow backingScaleFactor].
-     * @param bundle            Resource bundle in which the assets are located.  Main bundle used if nil.
+     * @param bundle            Resource bundle in which the assets are located. Main bundle used if nil.
      * @param options           Dictonary of MTKTextureLoaderOptions. The following options are ignormed when used
      *                          to load a texture asset but can be used when creating a texture from an image asset
      *                          MTKTextureLoaderOptionGenerateMipmaps

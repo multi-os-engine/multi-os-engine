@@ -37,7 +37,8 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
     String displayName();
 
     /**
-     * A human readable name to associate with a credential, which a user should be able to use to identify the credential.
+     * A human readable name to associate with a credential, which a user should be able to use to identify the
+     * credential.
      */
     @Generated
     @Selector("name")
@@ -72,35 +73,42 @@ public interface ASAuthorizationPublicKeyCredentialRegistrationRequest extends N
     void setDisplayName(String value);
 
     /**
-     * A human readable name to associate with a credential, which a user should be able to use to identify the credential.
+     * A human readable name to associate with a credential, which a user should be able to use to identify the
+     * credential.
      */
     @Generated
     @Selector("setName:")
     void setName(String value);
 
     /**
-     * An arbitrary byte sequence which will be stored alongside the credential and will be returned with the credential when authenticating with it in the future. May be used by a relying party to identify the user account this credential is associated with.
+     * An arbitrary byte sequence which will be stored alongside the credential and will be returned with the credential
+     * when authenticating with it in the future. May be used by a relying party to identify the user account this
+     * credential is associated with.
      */
     @Generated
     @Selector("setUserID:")
     void setUserID(NSData value);
 
     /**
-     * A preference for whether the authenticator should attempt to verify that it is being used by its owner, such as through a PIN or biometrics.
+     * A preference for whether the authenticator should attempt to verify that it is being used by its owner, such as
+     * through a PIN or biometrics.
      */
     @Generated
     @Selector("setUserVerificationPreference:")
     void setUserVerificationPreference(String value);
 
     /**
-     * An arbitrary byte sequence which will be stored alongside the credential and will be returned with the credential when authenticating with it in the future. May be used by a relying party to identify the user account this credential is associated with.
+     * An arbitrary byte sequence which will be stored alongside the credential and will be returned with the credential
+     * when authenticating with it in the future. May be used by a relying party to identify the user account this
+     * credential is associated with.
      */
     @Generated
     @Selector("userID")
     NSData userID();
 
     /**
-     * A preference for whether the authenticator should attempt to verify that it is being used by its owner, such as through a PIN or biometrics.
+     * A preference for whether the authenticator should attempt to verify that it is being used by its owner, such as
+     * through a PIN or biometrics.
      */
     @Generated
     @Selector("userVerificationPreference")

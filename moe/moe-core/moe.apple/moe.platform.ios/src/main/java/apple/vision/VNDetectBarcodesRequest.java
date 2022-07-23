@@ -30,7 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A request that detects barcodes in an image.
  * <p>
- * This request will return zero or more VNBarcodeObservation objects objects which describe the barcodes detected in an image.
+ * This request will return zero or more VNBarcodeObservation objects objects which describe the barcodes detected in an
+ * image.
  */
 @Generated
 @Library("Vision")
@@ -139,7 +140,9 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The collection of barcode symbologies that are to be detected in the image.  The default is to scan for all possible symbologies. Setting a revision on the request will reset the symbologies to all symbologies for the specified revision.
+     * The collection of barcode symbologies that are to be detected in the image. The default is to scan for all
+     * possible symbologies. Setting a revision on the request will reset the symbologies to all symbologies for the
+     * specified revision.
      */
     @Generated
     @Selector("setSymbologies:")
@@ -158,14 +161,17 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
      * <p>
      * Calling this method could be a potentially expensive operation.
      *
-     * @return An array of VNBarcodeSymbology objects describing the symbologies currently supported by the Vision framework.
+     * @return An array of VNBarcodeSymbology objects describing the symbologies currently supported by the Vision
+     *         framework.
      */
     @Generated
     @Selector("supportedSymbologies")
     public static native NSArray<String> supportedSymbologies();
 
     /**
-     * The collection of barcode symbologies that are to be detected in the image.  The default is to scan for all possible symbologies. Setting a revision on the request will reset the symbologies to all symbologies for the specified revision.
+     * The collection of barcode symbologies that are to be detected in the image. The default is to scan for all
+     * possible symbologies. Setting a revision on the request will reset the symbologies to all symbologies for the
+     * specified revision.
      */
     @Generated
     @Selector("symbologies")
@@ -202,7 +208,8 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
      * <p>
      * Calling this method could be a potentially expensive operation.
      *
-     * @return An array of VNBarcodeSymbology objects describing the symbologies recognized by the request in its current configuration.
+     * @return An array of VNBarcodeSymbology objects describing the symbologies recognized by the request in its
+     *         current configuration.
      */
     @Generated
     @Selector("supportedSymbologiesAndReturnError:")

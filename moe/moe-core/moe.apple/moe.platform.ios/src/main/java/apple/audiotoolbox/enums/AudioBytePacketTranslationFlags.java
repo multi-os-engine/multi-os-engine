@@ -19,13 +19,13 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]		AudioBytePacketTranslation Flags
+ * [@enum] AudioBytePacketTranslation Flags
  * <p>
  * flags for the AudioBytePacketTranslation mFlags field
  * <p>
  * There is currently only one flag.
  * <p>
- * [@constant]   kBytePacketTranslationFlag_IsEstimate
+ * [@constant] kBytePacketTranslationFlag_IsEstimate
  * If the set then the result value is an estimate.
  */
 @Generated

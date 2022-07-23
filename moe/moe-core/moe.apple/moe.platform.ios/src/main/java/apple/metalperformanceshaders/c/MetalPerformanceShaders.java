@@ -49,21 +49,22 @@ public final class MetalPerformanceShaders {
     /**
      * MPSSupportsMTLDevice
      * <p>
-     * Determine whether a MetalPerformanceShaders.framework  supports a MTLDevice.
+     * Determine whether a MetalPerformanceShaders.framework supports a MTLDevice.
      * <p>
-     * Use this function to determine whether a MTLDevice can be used with interfaces in MetalPerformanceShaders.framework.
+     * Use this function to determine whether a MTLDevice can be used with interfaces in
+     * MetalPerformanceShaders.framework.
      *
      * @param device A valid MTLDevice
-     * @return YES             The device is supported.
-     * NO              The device is not supported
+     * @return YES The device is supported.
+     *         NO The device is not supported
      */
     @Generated
     @CFunction
     public static native boolean MPSSupportsMTLDevice(@Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * [@memberof]   MPSKernel
-     * [@constant]   MPSRectNoClip
+     * [@memberof] MPSKernel
+     * [@constant] MPSRectNoClip
      * <p>
      * This is a special constant to indicate no clipping is to be done.
      * The entire image will be used.
@@ -79,7 +80,7 @@ public final class MetalPerformanceShaders {
     public static native int MPSGetImageType(MPSImage image);
 
     /**
-     * a/b = (a * recip + addend) >> shift      imad(a, recip, addend) >> shift
+     * a/b = (a * recip + addend) >> shift imad(a, recip, addend) >> shift
      * valid for all uint16_t a and b
      * div/0 is returned as div/1
      */
@@ -144,7 +145,7 @@ public final class MetalPerformanceShaders {
      * over the course of the MTLCommandBuffer, such as 1 MB, 2MB, 4 MB and 8MB,
      * the first allocation might create a 1 MB heap, this might be released,
      * but since the second allocation needs a 2 MB heap and the 1 MB heap is too
-     * small to be used, a new heap would need to be made, and so forth.  Using
+     * small to be used, a new heap would need to be made, and so forth. Using
      * MPSHintTemporaryMemoryHighWaterMark(), a single 8 MB heap might be made manifest,
      * and all four allocations can use it if they don't overlap temporally. Otherwise,
      * a total of 1+2+4+8=15 MB might be allocated.
@@ -180,7 +181,7 @@ public final class MetalPerformanceShaders {
      * @param cmdBuf The scope of the MTLHeap
      * @param bytes  The size, in bytes, of the prefetched heap. The actual size ussed may be rounded
      *               up according to device alignment requirements. This should be the maximum
-     *               `                         amount of temporary memory used at any point in the command buffer.
+     *               ` amount of temporary memory used at any point in the command buffer.
      */
     @Generated
     @CFunction
@@ -197,7 +198,7 @@ public final class MetalPerformanceShaders {
      * If it is not reused within the heap cache duration, then the MTLHeaps are released
      * and the memory is returned to the operating system for general reuse. The intent
      * of this second level cache is to avoid surrendering the GPU performance advantage
-     * on repetitive workloads to  allocation, zero-fill and deallocation and reallocation
+     * on repetitive workloads to allocation, zero-fill and deallocation and reallocation
      * of large MTLHeaps, which otherwise can easily occur.
      * <p>
      * Default: 5s.
@@ -216,7 +217,7 @@ public final class MetalPerformanceShaders {
      * <p>
      * This method identifies a suitable device for MPS operation. By
      * default, it prefers a headless high performance GPU. Your application
-     * may use the options parameter to adjust this behavior.  If your application
+     * may use the options parameter to adjust this behavior. If your application
      * needs a particular device, for example one attached to the display on
      * which a view resides, then please see:
      * <p>

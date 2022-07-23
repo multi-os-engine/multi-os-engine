@@ -163,7 +163,8 @@ public class UIBarButtonItemStateAppearance extends NSObject {
     public native void setTitlePositionAdjustment(@ByValue UIOffset value);
 
     /**
-     * Text attributes to be used for rendering title text. If the font or color are unspecified, appropriate defaults are supplied.
+     * Text attributes to be used for rendering title text. If the font or color are unspecified, appropriate defaults
+     * are supplied.
      */
     @Generated
     @Selector("setTitleTextAttributes:")
@@ -186,7 +187,8 @@ public class UIBarButtonItemStateAppearance extends NSObject {
     public native UIOffset titlePositionAdjustment();
 
     /**
-     * Text attributes to be used for rendering title text. If the font or color are unspecified, appropriate defaults are supplied.
+     * Text attributes to be used for rendering title text. If the font or color are unspecified, appropriate defaults
+     * are supplied.
      */
     @Generated
     @Selector("titleTextAttributes")

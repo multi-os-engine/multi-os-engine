@@ -48,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSImageHistogramSpecification
  * <p>
  * The MPSImageHistogramSpecification performs a histogram specification operation on an image.
- * It is a generalized version of histogram equalization operation.  The histogram specificaiton filter
+ * It is a generalized version of histogram equalization operation. The histogram specificaiton filter
  * converts the image so that its histogram matches the desired histogram.
  */
 @Generated
@@ -171,22 +171,33 @@ public class MPSImageHistogramSpecification extends MPSUnaryImageKernel {
      *
      * @param commandBuffer          A valid MTLCommandBuffer.
      * @param source                 A valid MTLTexture containing the source image for the filter.
-     * @param sourceHistogram        A valid MTLBuffer containing the histogram results for the source image.  This filter
-     *                               will use these histogram results to generate the cumulative histogram for equalizing
-     *                               the image.  The histogram results / channel are stored together.  The number of channels
-     *                               for which histogram results are stored is determined by the number of channels in the image.
-     *                               If histogramInfo.histogramForAlpha is false and the source image is RGBA then only histogram
+     * @param sourceHistogram        A valid MTLBuffer containing the histogram results for the source image. This
+     *                               filter
+     *                               will use these histogram results to generate the cumulative histogram for
+     *                               equalizing
+     *                               the image. The histogram results / channel are stored together. The number of
+     *                               channels
+     *                               for which histogram results are stored is determined by the number of channels in
+     *                               the image.
+     *                               If histogramInfo.histogramForAlpha is false and the source image is RGBA then only
+     *                               histogram
      *                               results for RGB channels are stored.
-     * @param sourceHistogramOffset  A byte offset into the sourceHistogram MTLBuffer where the histogram starts. Must conform to
-     *                               alignment requirements for [MTLComputeCommandEncoder setBuffer:offset:atIndex:] offset
+     * @param sourceHistogramOffset  A byte offset into the sourceHistogram MTLBuffer where the histogram starts. Must
+     *                               conform to
+     *                               alignment requirements for [MTLComputeCommandEncoder setBuffer:offset:atIndex:]
+     *                               offset
      *                               parameter.
      * @param desiredHistogram       A valid MTLBuffer containing the desired histogram results for the source image.
-     *                               The histogram results / channel are stored together.  The number of channels
-     *                               for which histogram results are stored is determined by the number of channels in the image.
-     *                               If histogramInfo.histogramForAlpha is false and the source image is RGBA then only histogram
+     *                               The histogram results / channel are stored together. The number of channels
+     *                               for which histogram results are stored is determined by the number of channels in
+     *                               the image.
+     *                               If histogramInfo.histogramForAlpha is false and the source image is RGBA then only
+     *                               histogram
      *                               results for RGB channels are stored.
-     * @param desiredHistogramOffset A byte offset into the desiredHistogram MTLBuffer where the histogram starts. Must conform to
-     *                               alignment requirements for [MTLComputeCommandEncoder setBuffer:offset:atIndex:] offset
+     * @param desiredHistogramOffset A byte offset into the desiredHistogram MTLBuffer where the histogram starts. Must
+     *                               conform to
+     *                               alignment requirements for [MTLComputeCommandEncoder setBuffer:offset:atIndex:]
+     *                               offset
      *                               parameter.
      */
     @Generated
@@ -211,14 +222,14 @@ public class MPSImageHistogramSpecification extends MPSUnaryImageKernel {
      * The MPSImageHistogramSpecification applies a transfor to convert the histogram
      * to a specified histogram. The process is divided into three steps:
      * <p>
-     * -# Call -initWithDevice:histogramInfo:   This creates a MPSImageHistogramSpecification
-     * object.  It is done when the method returns.
+     * -# Call -initWithDevice:histogramInfo: This creates a MPSImageHistogramSpecification
+     * object. It is done when the method returns.
      * <p>
      * -# Call -encodeTransform:sourceTexture:sourceHistogram:sourceHistogramOffset:desiredHistogram:
      * desiredHistogramOffset: This creates a privately held image transform which will convert the
      * the distribution of the source histogram to the desired histogram. This process runs on a
      * MTLCommandBuffer when it is committed to a MTLCommandQueue. It must complete before the next
-     * step can be run. It may be performed on the same MTLCommandBuffer.  The sourceTexture argument
+     * step can be run. It may be performed on the same MTLCommandBuffer. The sourceTexture argument
      * is used by encodeTransform to determine the number of channels and therefore which histogram data
      * in sourceHistogram buffer to use. The sourceHistogram and desiredHistogram must have been computed
      * either on the CPU or using the MPSImageHistogram kernel
@@ -251,7 +262,7 @@ public class MPSImageHistogramSpecification extends MPSUnaryImageKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel

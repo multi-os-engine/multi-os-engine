@@ -24,7 +24,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Contains the local identifier result from looking up a cloud identifier via \c localIdentifierMappingsForCloudIdentifiers, or an \c error indicating why the lookup failed
+ * Contains the local identifier result from looking up a cloud identifier via \c
+ * localIdentifierMappingsForCloudIdentifiers, or an \c error indicating why the lookup failed
  */
 @Generated
 @Library("Photos")
@@ -85,7 +86,8 @@ public class PHLocalIdentifierMapping extends NSObject {
     public static native String description_static();
 
     /**
-     * The \c NSString representing the local identifier of the resource found for this cloud identifier, or nil if the match was not found.
+     * The \c NSString representing the local identifier of the resource found for this cloud identifier, or nil if the
+     * match was not found.
      */
     @Generated
     @Selector("error")

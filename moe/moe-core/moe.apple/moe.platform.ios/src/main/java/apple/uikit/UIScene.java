@@ -99,7 +99,8 @@ public class UIScene extends UIResponder {
     public static native String debugDescription_static();
 
     /**
-     * UIScene is strongly retained by UIKit like UIApplication, however, unlike UIApplication, the delegate may not need to live for the whole lifetime of the process.
+     * UIScene is strongly retained by UIKit like UIApplication, however, unlike UIApplication, the delegate may not
+     * need to live for the whole lifetime of the process.
      * A strong ref here relieves clients of the responsibility of managing the delegate lifetime directly.
      */
     @Generated
@@ -195,7 +196,8 @@ public class UIScene extends UIResponder {
     public native void setActivationConditions(UISceneActivationConditions value);
 
     /**
-     * UIScene is strongly retained by UIKit like UIApplication, however, unlike UIApplication, the delegate may not need to live for the whole lifetime of the process.
+     * UIScene is strongly retained by UIKit like UIApplication, however, unlike UIApplication, the delegate may not
+     * need to live for the whole lifetime of the process.
      * A strong ref here relieves clients of the responsibility of managing the delegate lifetime directly.
      */
     @Generated

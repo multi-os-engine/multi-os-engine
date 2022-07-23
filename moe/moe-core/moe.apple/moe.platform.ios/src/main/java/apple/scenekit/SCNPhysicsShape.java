@@ -160,14 +160,16 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
             NSDictionary<String, ?> options);
 
     /**
-     * Creates an instance of a physics shape based on a node hierachy. The hierarchy must contain geometries at some point to create a valid shape. see above for the possible options.
+     * Creates an instance of a physics shape based on a node hierachy. The hierarchy must contain geometries at some
+     * point to create a valid shape. see above for the possible options.
      */
     @Generated
     @Selector("shapeWithNode:options:")
     public static native SCNPhysicsShape shapeWithNodeOptions(SCNNode node, NSDictionary<String, ?> options);
 
     /**
-     * Creates an instance of a physics shape based on several sub shapes, associated with transforms. The transforms are to be passed as an array of NSValue wrapping SCNMatrix4
+     * Creates an instance of a physics shape based on several sub shapes, associated with transforms. The transforms
+     * are to be passed as an array of NSValue wrapping SCNMatrix4
      */
     @Generated
     @Selector("shapeWithShapes:transforms:")
@@ -213,7 +215,8 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     public native NSDictionary<String, ?> options();
 
     /**
-     * Returns the object from which this physics shape was created. It can be an SCNGeometry*, an SCNNode* or in NSArray* of subshapes.
+     * Returns the object from which this physics shape was created. It can be an SCNGeometry*, an SCNNode* or in
+     * NSArray* of subshapes.
      */
     @Generated
     @Selector("sourceObject")
@@ -227,7 +230,8 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     }
 
     /**
-     * If the physics shape was created from an array of sub shapes, transforms contains the associated transforms as SCNMatrix4 wrapped in NSValue.
+     * If the physics shape was created from an array of sub shapes, transforms contains the associated transforms as
+     * SCNMatrix4 wrapped in NSValue.
      */
     @Generated
     @Selector("transforms")

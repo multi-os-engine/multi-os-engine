@@ -194,9 +194,14 @@ public class PHImageManager extends NSObject {
      * Request largest represented image as data bytes for the specified asset.
      *
      * @param asset         The asset whose image data is to be loaded.
-     * @param options       Options specifying how Photos should handle the request, format the requested image, and notify your app of progress or errors.
-     *                      If PHImageRequestOptionsVersionCurrent is requested and the asset has adjustments then the largest rendered image data is returned. In all other cases then the original image data is returned.
-     * @param resultHandler A block that is called exactly once either synchronously on the current thread or asynchronously on the main thread depending on the synchronous option specified in the PHImageRequestOptions options parameter (deliveryMode is ignored).
+     * @param options       Options specifying how Photos should handle the request, format the requested image, and
+     *                      notify your app of progress or errors.
+     *                      If PHImageRequestOptionsVersionCurrent is requested and the asset has adjustments then the
+     *                      largest rendered image data is returned. In all other cases then the original image data is
+     *                      returned.
+     * @param resultHandler A block that is called exactly once either synchronously on the current thread or
+     *                      asynchronously on the main thread depending on the synchronous option specified in the
+     *                      PHImageRequestOptions options parameter (deliveryMode is ignored).
      */
     @Generated
     @Selector("requestImageDataForAsset:options:resultHandler:")
@@ -209,15 +214,33 @@ public class PHImageManager extends NSObject {
      * @param asset         The asset whose image data is to be loaded.
      * @param targetSize    The target size of image to be returned.
      * @param contentMode   An option for how to fit the image to the aspect ratio of the requested size.
-     *                      If the asset's aspect ratio does not match that of the given targetSize, contentMode determines how the image will be resized.
-     *                      PHImageContentModeAspectFit: Fit the asked size by maintaining the aspect ratio, the delivered image may not necessarily be the asked targetSize (see PHImageRequestOptionsDeliveryMode and PHImageRequestOptionsResizeMode)
-     *                      PHImageContentModeAspectFill: Fill the asked size, some portion of the content may be clipped, the delivered image may not necessarily be the asked targetSize (see PHImageRequestOptionsDeliveryMode and PHImageRequestOptionsResizeMode)
-     *                      PHImageContentModeDefault: Use PHImageContentModeDefault when size is PHImageManagerMaximumSize (though no scaling/cropping will be done on the result)
-     * @param options       Options specifying how Photos should handle the request, format the requested image, and notify your app of progress or errors.
-     *                      If -[PHImageRequestOptions isSynchronous] returns NO (or options is nil), resultHandler may be called 1 or more times. Typically in this case, resultHandler will be called asynchronously on the main thread with the requested results. However, if deliveryMode = PHImageRequestOptionsDeliveryModeOpportunistic, resultHandler may be called synchronously on the calling thread if any image data is immediately available. If the image data returned in this first pass is of insufficient quality, resultHandler will be called again, asychronously on the main thread at a later time with the "correct" results. If the request is cancelled, resultHandler may not be called at all.
-     *                      If -[PHImageRequestOptions isSynchronous] returns YES, resultHandler will be called exactly once, synchronously and on the calling thread. Synchronous requests cannot be cancelled.
-     * @param resultHandler A block that is called one or more times either synchronously on the current thread or asynchronously on the main thread depending on the options specified in the PHImageRequestOptions options parameter.
-     * @return A numeric identifier for the request. If you need to cancel the request before it completes, pass this identifier to the cancelImageRequest: method.
+     *                      If the asset's aspect ratio does not match that of the given targetSize, contentMode
+     *                      determines how the image will be resized.
+     *                      PHImageContentModeAspectFit: Fit the asked size by maintaining the aspect ratio, the
+     *                      delivered image may not necessarily be the asked targetSize (see
+     *                      PHImageRequestOptionsDeliveryMode and PHImageRequestOptionsResizeMode)
+     *                      PHImageContentModeAspectFill: Fill the asked size, some portion of the content may be
+     *                      clipped, the delivered image may not necessarily be the asked targetSize (see
+     *                      PHImageRequestOptionsDeliveryMode and PHImageRequestOptionsResizeMode)
+     *                      PHImageContentModeDefault: Use PHImageContentModeDefault when size is
+     *                      PHImageManagerMaximumSize (though no scaling/cropping will be done on the result)
+     * @param options       Options specifying how Photos should handle the request, format the requested image, and
+     *                      notify your app of progress or errors.
+     *                      If -[PHImageRequestOptions isSynchronous] returns NO (or options is nil), resultHandler may
+     *                      be called 1 or more times. Typically in this case, resultHandler will be called
+     *                      asynchronously on the main thread with the requested results. However, if deliveryMode =
+     *                      PHImageRequestOptionsDeliveryModeOpportunistic, resultHandler may be called synchronously on
+     *                      the calling thread if any image data is immediately available. If the image data returned in
+     *                      this first pass is of insufficient quality, resultHandler will be called again,
+     *                      asychronously on the main thread at a later time with the "correct" results. If the request
+     *                      is cancelled, resultHandler may not be called at all.
+     *                      If -[PHImageRequestOptions isSynchronous] returns YES, resultHandler will be called exactly
+     *                      once, synchronously and on the calling thread. Synchronous requests cannot be cancelled.
+     * @param resultHandler A block that is called one or more times either synchronously on the current thread or
+     *                      asynchronously on the main thread depending on the options specified in the
+     *                      PHImageRequestOptions options parameter.
+     * @return A numeric identifier for the request. If you need to cancel the request before it completes, pass this
+     *         identifier to the cancelImageRequest: method.
      */
     @Generated
     @Selector("requestImageForAsset:targetSize:contentMode:options:resultHandler:")
@@ -226,7 +249,10 @@ public class PHImageManager extends NSObject {
             @ObjCBlock(name = "call_requestImageForAssetTargetSizeContentModeOptionsResultHandler") Block_requestImageForAssetTargetSizeContentModeOptionsResultHandler resultHandler);
 
     /**
-     * Requests a live photo representation of the asset. With PHImageRequestOptionsDeliveryModeOpportunistic (or if no options are specified), the resultHandler block may be called more than once (the first call may occur before the method returns). The PHImageResultIsDegradedKey key in the result handler's info parameter indicates when a temporary low-quality live photo is provided.
+     * Requests a live photo representation of the asset. With PHImageRequestOptionsDeliveryModeOpportunistic (or if no
+     * options are specified), the resultHandler block may be called more than once (the first call may occur before the
+     * method returns). The PHImageResultIsDegradedKey key in the result handler's info parameter indicates when a
+     * temporary low-quality live photo is provided.
      */
     @Generated
     @Selector("requestLivePhotoForAsset:targetSize:contentMode:options:resultHandler:")
@@ -293,9 +319,16 @@ public class PHImageManager extends NSObject {
      * Request largest represented image as data bytes and EXIF orientation for the specified asset.
      *
      * @param asset         The asset whose image data is to be loaded.
-     * @param options       Options specifying how Photos should handle the request, format the requested image, and notify your app of progress or errors.
-     *                      If PHImageRequestOptionsVersionCurrent is requested and the asset has adjustments then the largest rendered image data is returned. In all other cases then the original image data is returned.
-     * @param resultHandler A block that is called exactly once either synchronously on the current thread or asynchronously on the main thread depending on the synchronous option specified in the PHImageRequestOptions options parameter (deliveryMode is ignored). Orientation is an EXIF orientation as an CGImagePropertyOrientation. For iOS or tvOS, convert this to an UIImageOrientation.
+     * @param options       Options specifying how Photos should handle the request, format the requested image, and
+     *                      notify your app of progress or errors.
+     *                      If PHImageRequestOptionsVersionCurrent is requested and the asset has adjustments then the
+     *                      largest rendered image data is returned. In all other cases then the original image data is
+     *                      returned.
+     * @param resultHandler A block that is called exactly once either synchronously on the current thread or
+     *                      asynchronously on the main thread depending on the synchronous option specified in the
+     *                      PHImageRequestOptions options parameter (deliveryMode is ignored). Orientation is an EXIF
+     *                      orientation as an CGImagePropertyOrientation. For iOS or tvOS, convert this to an
+     *                      UIImageOrientation.
      */
     @Generated
     @Selector("requestImageDataAndOrientationForAsset:options:resultHandler:")

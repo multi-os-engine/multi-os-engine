@@ -165,7 +165,8 @@ public class VNHumanObservation extends VNDetectedObjectObservation {
     }
 
     /**
-     * Boolean property to specify whether the human upper body or full body detection is recorded in the observation. This setting is propagated from [VNDetectHumanRectanglesRequest -upperBodyOnly]
+     * Boolean property to specify whether the human upper body or full body detection is recorded in the observation.
+     * This setting is propagated from [VNDetectHumanRectanglesRequest -upperBodyOnly]
      */
     @Generated
     @Selector("upperBodyOnly")

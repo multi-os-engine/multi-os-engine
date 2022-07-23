@@ -139,7 +139,8 @@ public class UIPointerRegion extends NSObject implements NSCopying {
      * Creates a UIPointerRegion with the supplied rect and optional identifier.
      *
      * @param rect       This region's rect. Must be in the pointer interaction's view's coordinate space.
-     * @param identifier Optional identifier that may be used to identify this region in subsequent pointer interaction delegate calls.
+     * @param identifier Optional identifier that may be used to identify this region in subsequent pointer interaction
+     *                   delegate calls.
      */
     @Generated
     @Selector("regionWithRect:identifier:")
@@ -169,7 +170,8 @@ public class UIPointerRegion extends NSObject implements NSCopying {
 
     /**
      * Axes along which this region latches when the primary mouse button is pressed.
-     * When set, the UIPointerStyle associated with this region will "lock in" and allow free-form movement along the specified axes.
+     * When set, the UIPointerStyle associated with this region will "lock in" and allow free-form movement along the
+     * specified axes.
      */
     @Generated
     @Selector("latchingAxes")
@@ -178,7 +180,8 @@ public class UIPointerRegion extends NSObject implements NSCopying {
 
     /**
      * Axes along which this region latches when the primary mouse button is pressed.
-     * When set, the UIPointerStyle associated with this region will "lock in" and allow free-form movement along the specified axes.
+     * When set, the UIPointerStyle associated with this region will "lock in" and allow free-form movement along the
+     * specified axes.
      */
     @Generated
     @Selector("setLatchingAxes:")

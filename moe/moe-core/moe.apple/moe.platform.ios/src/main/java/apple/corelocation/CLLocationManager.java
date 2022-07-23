@@ -81,7 +81,7 @@ public class CLLocationManager extends NSObject {
      * authorizationStatus
      * <p>
      * Discussion:
-     * Deprecated.  Use the instance property authorizationStatus instead.
+     * Deprecated. Use the instance property authorizationStatus instead.
      */
     @Generated
     @Selector("authorizationStatus")
@@ -321,10 +321,10 @@ public class CLLocationManager extends NSObject {
      * "location" is a fatal error.
      * <p>
      * Resetting this property to NO is equivalent to omitting "location" from
-     * the UIBackgroundModes value.  Access to location is still permitted
+     * the UIBackgroundModes value. Access to location is still permitted
      * whenever the application is running (ie not suspended), and has
      * sufficient authorization (ie it has WhenInUse authorization and is in
-     * use, or it has Always authorization).  However, the app will still be
+     * use, or it has Always authorization). However, the app will still be
      * subject to the usual task suspension rules.
      * <p>
      * See -requestWhenInUseAuthorization and -requestAlwaysAuthorization for
@@ -463,7 +463,8 @@ public class CLLocationManager extends NSObject {
      * Discussion:
      * the maximum region size, in terms of a distance from a central point, that the framework can support.
      * Attempts to register a region larger than this will generate a kCLErrorRegionMonitoringFailure.
-     * This value may vary based on the hardware features of the device, as well as on dynamically changing resource constraints.
+     * This value may vary based on the hardware features of the device, as well as on dynamically changing resource
+     * constraints.
      */
     @Generated
     @Selector("maximumRegionMonitoringDistance")
@@ -473,7 +474,7 @@ public class CLLocationManager extends NSObject {
      * monitoredRegions
      * <p>
      * Discussion:
-     * Retrieve a set of objects for the regions that are currently being monitored.  If any location manager
+     * Retrieve a set of objects for the regions that are currently being monitored. If any location manager
      * has been instructed to monitor a region, during this or previous launches of your application, it will
      * be present in this set.
      */
@@ -500,7 +501,7 @@ public class CLLocationManager extends NSObject {
      * will be displayed along with the standard Location permissions dialogs. This property will need to be
      * set prior to calling startUpdatingLocation.
      * <p>
-     * Deprecated.  Set the purpose string in Info.plist using key NSLocationUsageDescription.
+     * Deprecated. Set the purpose string in Info.plist using key NSLocationUsageDescription.
      */
     @Generated
     @Deprecated
@@ -523,7 +524,7 @@ public class CLLocationManager extends NSObject {
      * Discussion:
      * When -authorizationStatus == kCLAuthorizationStatusNotDetermined,
      * calling this method will start the process of requesting "always"
-     * authorization from the user.  Any authorization change as a result of
+     * authorization from the user. Any authorization change as a result of
      * the prompt will be reflected via the usual delegate callback:
      * -locationManager:didChangeAuthorizationStatus:.
      * <p>
@@ -532,19 +533,19 @@ public class CLLocationManager extends NSObject {
      * and the utility of a one-time grant is maximized.
      * <p>
      * If received, "always" authorization grants access to the user's location
-     * via any CLLocationManager API.  In addition, monitoring APIs may launch
-     * your app into the background when they detect an event.  Even if killed by
+     * via any CLLocationManager API. In addition, monitoring APIs may launch
+     * your app into the background when they detect an event. Even if killed by
      * the user, launch events triggered by monitoring APIs will cause a
      * relaunch.
      * <p>
      * "Always" authorization presents a significant risk to user privacy, and
      * as such requesting it is discouraged unless background launch behavior
-     * is genuinely required.  Do not call +requestAlwaysAuthorization unless
+     * is genuinely required. Do not call +requestAlwaysAuthorization unless
      * you think users will thank you for doing so.
      * <p>
      * An application which currently has "when-in-use" authorization and has
      * never before requested "always" authorization may use this method to
-     * request "always" authorization one time only.  Otherwise, if
+     * request "always" authorization one time only. Otherwise, if
      * -authorizationStatus != kCLAuthorizationStatusNotDetermined, (ie
      * generally after the first call) this method will do nothing.
      * <p>
@@ -566,7 +567,7 @@ public class CLLocationManager extends NSObject {
      * Request a single location update.
      * <p>
      * The service will attempt to determine location with accuracy according
-     * to the desiredAccuracy property.  The location update will be delivered
+     * to the desiredAccuracy property. The location update will be delivered
      * via the standard delegate callback, i.e. locationManager:didUpdateLocations:
      * <p>
      * If the best available location has lower accuracy, then it will be
@@ -577,8 +578,8 @@ public class CLLocationManager extends NSObject {
      * <p>
      * There can only be one outstanding location request and this method can
      * not be used concurrently with startUpdatingLocation or
-     * allowDeferredLocationUpdates.  Calling either of those methods will
-     * immediately cancel the location request.  The method
+     * allowDeferredLocationUpdates. Calling either of those methods will
+     * immediately cancel the location request. The method
      * stopUpdatingLocation can be used to explicitly cancel the request.
      */
     @Generated
@@ -602,7 +603,7 @@ public class CLLocationManager extends NSObject {
      * Discussion:
      * When -authorizationStatus == kCLAuthorizationStatusNotDetermined,
      * calling this method will trigger a prompt to request "when-in-use"
-     * authorization from the user.  Any authorization change as a result of
+     * authorization from the user. Any authorization change as a result of
      * the prompt will be reflected via the usual delegate callback:
      * -locationManager:didChangeAuthorizationStatus:.
      * <p>
@@ -612,12 +613,12 @@ public class CLLocationManager extends NSObject {
      * <p>
      * If received, "when-in-use" authorization grants access to the user's
      * location via any CoreLocation API as long as your app is being actively
-     * used by the user.  Typically this means your app must be in the
-     * foreground.  If you start a Continuous Background Location session (see
+     * used by the user. Typically this means your app must be in the
+     * foreground. If you start a Continuous Background Location session (see
      * -allowsBackgroundLocationUpdates), then CoreLocation will maintain
-     * visibility for your app as it enters the background.  This will enable
+     * visibility for your app as it enters the background. This will enable
      * your app to continue receiving location information even as another app
-     * enters the foreground.  Your app will remain visible in this way until
+     * enters the foreground. Your app will remain visible in this way until
      * location updates are stopped or your app is killed by the user.
      * <p>
      * When -authorizationStatus != kCLAuthorizationStatusNotDetermined, (ie
@@ -660,10 +661,10 @@ public class CLLocationManager extends NSObject {
      * "location" is a fatal error.
      * <p>
      * Resetting this property to NO is equivalent to omitting "location" from
-     * the UIBackgroundModes value.  Access to location is still permitted
+     * the UIBackgroundModes value. Access to location is still permitted
      * whenever the application is running (ie not suspended), and has
      * sufficient authorization (ie it has WhenInUse authorization and is in
-     * use, or it has Always authorization).  However, the app will still be
+     * use, or it has Always authorization). However, the app will still be
      * subject to the usual task suspension rules.
      * <p>
      * See -requestWhenInUseAuthorization and -requestAlwaysAuthorization for
@@ -759,7 +760,7 @@ public class CLLocationManager extends NSObject {
      * will be displayed along with the standard Location permissions dialogs. This property will need to be
      * set prior to calling startUpdatingLocation.
      * <p>
-     * Deprecated.  Set the purpose string in Info.plist using key NSLocationUsageDescription.
+     * Deprecated. Set the purpose string in Info.plist using key NSLocationUsageDescription.
      */
     @Generated
     @Deprecated
@@ -786,10 +787,13 @@ public class CLLocationManager extends NSObject {
      * startMonitoringForRegion:desiredAccuracy:
      * <p>
      * Discussion:
-     * Start monitoring the specified region.  desiredAccuracy represents the distance past the border of the region at
-     * which the application would like to be notified that the region border has been crossed.  This is useful to prevent
-     * repeated notifications when the user is on the border of the region.  This value will be honored on a best-effort basis,
-     * and may not be respected if desiredAccuracy is large with respect to the size of the region, or if the device is not
+     * Start monitoring the specified region. desiredAccuracy represents the distance past the border of the region at
+     * which the application would like to be notified that the region border has been crossed. This is useful to
+     * prevent
+     * repeated notifications when the user is on the border of the region. This value will be honored on a best-effort
+     * basis,
+     * and may not be respected if desiredAccuracy is large with respect to the size of the region, or if the device is
+     * not
      * capable of providing the precision desired.
      * <p>
      * If a region of the same type with the same identifier is already being monitored for this application, it will be
@@ -806,8 +810,9 @@ public class CLLocationManager extends NSObject {
      * startMonitoringSignificantLocationChanges
      * <p>
      * Discussion:
-     * Start monitoring significant location changes.  The behavior of this service is not affected by the desiredAccuracy
-     * or distanceFilter properties.  Locations will be delivered through the same delegate callback as the standard
+     * Start monitoring significant location changes. The behavior of this service is not affected by the
+     * desiredAccuracy
+     * or distanceFilter properties. Locations will be delivered through the same delegate callback as the standard
      * location service.
      */
     @Generated
@@ -818,9 +823,9 @@ public class CLLocationManager extends NSObject {
      * startMonitoringVisits
      * <p>
      * Discussion:
-     * Begin monitoring for visits.  All CLLLocationManagers allocated by your
+     * Begin monitoring for visits. All CLLLocationManagers allocated by your
      * application, both current and future, will deliver detected visits to
-     * their delegates.  This will continue until -stopMonitoringVisits is sent
+     * their delegates. This will continue until -stopMonitoringVisits is sent
      * to any such CLLocationManager, even across application relaunch events.
      * <p>
      * Detected visits are sent to the delegate's -locationManager:didVisit:
@@ -864,7 +869,8 @@ public class CLLocationManager extends NSObject {
      * stopMonitoringForRegion:
      * <p>
      * Discussion:
-     * Stop monitoring the specified region.  It is valid to call stopMonitoringForRegion: for a region that was registered
+     * Stop monitoring the specified region. It is valid to call stopMonitoringForRegion: for a region that was
+     * registered
      * for monitoring with a different location manager object, during this or previous launches of your application.
      * <p>
      * This is done asynchronously and may not be immediately reflected in monitoredRegions.
@@ -887,7 +893,7 @@ public class CLLocationManager extends NSObject {
      * stopMonitoringVisits
      * <p>
      * Discussion:
-     * Stop monitoring for visits.  To resume visit monitoring, send
+     * Stop monitoring for visits. To resume visit monitoring, send
      * -startMonitoringVisits.
      * <p>
      * Note that stopping and starting are asynchronous operations and may not
@@ -932,7 +938,7 @@ public class CLLocationManager extends NSObject {
      * <p>
      * Discussion:
      * Specifies that an indicator be shown when the app makes use of continuous
-     * background location updates.  Starting continuous background location
+     * background location updates. Starting continuous background location
      * updates requires the app to set UIBackgroundModes to include "location"
      * and to set the property allowsBackgroundLocationUpdates to YES before
      * calling -startUpdatingLocation with the intent to continue in the
@@ -954,7 +960,7 @@ public class CLLocationManager extends NSObject {
      * <p>
      * Discussion:
      * Specifies that an indicator be shown when the app makes use of continuous
-     * background location updates.  Starting continuous background location
+     * background location updates. Starting continuous background location
      * updates requires the app to set UIBackgroundModes to include "location"
      * and to set the property allowsBackgroundLocationUpdates to YES before
      * calling -startUpdatingLocation with the intent to continue in the
@@ -986,7 +992,7 @@ public class CLLocationManager extends NSObject {
      * <p>
      * Discussion:
      * Start producing ranging measurements for beacons that satisfy
-     * the provided constraint.  Ranging will continue until you pass
+     * the provided constraint. Ranging will continue until you pass
      * an equivalent constraint to stopRangingBeaconsSatisfyingConstraint:.
      */
     @Generated
@@ -997,7 +1003,7 @@ public class CLLocationManager extends NSObject {
      * stopRangingBeaconsSatisfyingConstraint:
      * <p>
      * Discussion:
-     * Stop an earlier beacon ranging request.  See startRangingBeaconsSatisfyingConstraint:.
+     * Stop an earlier beacon ranging request. See startRangingBeaconsSatisfyingConstraint:.
      */
     @Generated
     @Selector("stopRangingBeaconsSatisfyingConstraint:")
@@ -1007,11 +1013,11 @@ public class CLLocationManager extends NSObject {
      * accuracyAuthorization
      * <p>
      * Discussion:
-     * Returns information about the calling application's access to accurate location.  See the
+     * Returns information about the calling application's access to accurate location. See the
      * documentation for CLAccuracyAuthorization for information about how to interpret the return value.
      * <p>
      * Note that this property should generally be interpreted in the context of the authorizationStatus
-     * property.  For example, if authorizationStatus == kCLAuthorizationStatusNotDetermined then accurate
+     * property. For example, if authorizationStatus == kCLAuthorizationStatusNotDetermined then accurate
      * location information cannot be received even when accuracyAuthorization is
      * CLAccuracyAuthorizationFullAccuracy.
      */
@@ -1037,7 +1043,7 @@ public class CLLocationManager extends NSObject {
      * Returns true if widgets of the calling application may be eligible to receive location updates.
      * <p>
      * If the calling application has authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse,
-     * and  authorizedForWidgetUpdates == YES, then widgets will be able to get location updates if called upon
+     * and authorizedForWidgetUpdates == YES, then widgets will be able to get location updates if called upon
      * to refresh within a few minutes of having been seen.
      * <p>
      * If the calling application has authorizationStatus == kCLAuthorizationStatusAuthorizedAlways,
@@ -1052,7 +1058,7 @@ public class CLLocationManager extends NSObject {
      * <p>
      * Discussion:
      * This is a variant of requestTemporaryAccurateLocationAuthorizationWithPurposeKey:completion:
-     * which doesn't take a completion block.  This is equivalent to passing in a nil
+     * which doesn't take a completion block. This is equivalent to passing in a nil
      * completion block.
      */
     @Generated
@@ -1065,23 +1071,23 @@ public class CLLocationManager extends NSObject {
      * Discussion:
      * If your app doesn't have permission to access accurate location (see
      * -accuracyAuthorization), you can use this method to request temporary access
-     * to accurate location.  This access will expire automatically, but it won't expire
-     * while the user is still engaged with your app.  So, for example, while your app
+     * to accurate location. This access will expire automatically, but it won't expire
+     * while the user is still engaged with your app. So, for example, while your app
      * is in the foreground your app will retain the temporary access it was granted.
      * Similarly, if your app starts a Continuous Background Location session with the
      * background location indicator enabled (see -showsBackgroundLocationIndicator),
      * your access to accurate location will remain as long as the background location
-     * indicator remains enabled.  This allows your app to provide session-oriented
+     * indicator remains enabled. This allows your app to provide session-oriented
      * experiences which require accurate location (e.g. fitness or navigation), even if
      * the user has decided not to grant your app persistent access to accurate location.
      * <p>
      * When CoreLocation prepares the prompt for display, it will look at the
-     * NSLocationTemporaryUsageDescriptionDictionary key in your Info.plist.  The value
-     * should be a dictionary containing usage descriptions.  The purposeKey you provide
-     * to this method must correspond to an entry in that dictionary.  To retrieve a
+     * NSLocationTemporaryUsageDescriptionDictionary key in your Info.plist. The value
+     * should be a dictionary containing usage descriptions. The purposeKey you provide
+     * to this method must correspond to an entry in that dictionary. To retrieve a
      * localized string, CoreLocation will load your InfoPlist.strings file and try to
-     * look up a string using the purposeKey you provided.  If that fails, CoreLocation
-     * will use the content provided in your Info.plist.  For example, suppose your
+     * look up a string using the purposeKey you provided. If that fails, CoreLocation
+     * will use the content provided in your Info.plist. For example, suppose your
      * Info.plist contains the following.
      *
      * <key>NSLocationTemporaryUsageDescriptionDictionary</key>
@@ -1093,20 +1099,20 @@ public class CLLocationManager extends NSObject {
      * </dict>
      * <p>
      * In this case, you would be able to provide either "ExampleUsageDescription" or
-     * "AnotherUsageDescription" for the purposeKey argument.  Passing any other string
-     * would result in the prompt not being displayed.  To localize these usage
+     * "AnotherUsageDescription" for the purposeKey argument. Passing any other string
+     * would result in the prompt not being displayed. To localize these usage
      * descriptions, you would add entries for "ExampleUsageDescription" and
      * "AnotherUsageDescription" to your InfoPlist.strings file.
      * <p>
-     * CoreLocation may decide against showing the user a prompt.  For example, if your
+     * CoreLocation may decide against showing the user a prompt. For example, if your
      * app already has access to accurate location or it is currently in the background.
      * When that happens, your completion block will be called with an appropriate
-     * NSError.  If the user responded to the prompt, your completion block will be
-     * called with a nil error.  At that point, you may query the state of your
+     * NSError. If the user responded to the prompt, your completion block will be
+     * called with a nil error. At that point, you may query the state of your
      * CLLocationManager to see if you have been granted accurate access.
      * <p>
      * The completion block will be called in the same threading context where delegate
-     * callbacks occur.  That is, it will be called on the runloop where the
+     * callbacks occur. That is, it will be called on the runloop where the
      * CLLocationManager was originally initialized.
      */
     @Generated
@@ -1125,7 +1131,8 @@ public class CLLocationManager extends NSObject {
      * startMonitoringLocationPushes
      * <p>
      * Discussion:
-     * Request an Apple Push Notification service token to be used to send location pushes. Incoming location pushes launch the app's Location Push Service Extension. Requires the com.apple.developer.location.push entitlement.
+     * Request an Apple Push Notification service token to be used to send location pushes. Incoming location pushes
+     * launch the app's Location Push Service Extension. Requires the com.apple.developer.location.push entitlement.
      */
     @Generated
     @Selector("startMonitoringLocationPushesWithCompletion:")

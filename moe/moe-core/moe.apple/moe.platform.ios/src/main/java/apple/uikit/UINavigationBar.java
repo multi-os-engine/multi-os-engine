@@ -494,7 +494,8 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     public native void setBackIndicatorTransitionMaskImage(UIImage value);
 
     /**
-     * Same as using UIBarPositionAny in -setBackgroundImage:forBarPosition:barMetrics. Resizable images will be stretched
+     * Same as using UIBarPositionAny in -setBackgroundImage:forBarPosition:barMetrics. Resizable images will be
+     * stretched
      * vertically if necessary when the navigation bar is in the position UIBarPositionTopAttached.
      */
     @Generated
@@ -502,9 +503,11 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     public native void setBackgroundImageForBarMetrics(UIImage backgroundImage, @NInt long barMetrics);
 
     /**
-     * In general, you should specify a value for the normal state to be used by other states which don't have a custom value set.
+     * In general, you should specify a value for the normal state to be used by other states which don't have a custom
+     * value set.
      * <p>
-     * Similarly, when a property is dependent on the bar metrics (on the iPhone in landscape orientation, bars have a different height from standard), be sure to specify a value for UIBarMetricsDefault.
+     * Similarly, when a property is dependent on the bar metrics (on the iPhone in landscape orientation, bars have a
+     * different height from standard), be sure to specify a value for UIBarMetricsDefault.
      */
     @Generated
     @Selector("setBackgroundImage:forBarPosition:barMetrics:")
@@ -543,14 +546,17 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     public native void setItems(NSArray<? extends UINavigationItem> value);
 
     /**
-     * If animated is YES, then simulate a push or pop depending on whether the new top item was previously in the stack.
+     * If animated is YES, then simulate a push or pop depending on whether the new top item was previously in the
+     * stack.
      */
     @Generated
     @Selector("setItems:animated:")
     public native void setItemsAnimated(NSArray<? extends UINavigationItem> items, boolean animated);
 
     /**
-     * Default is nil. When non-nil, a custom shadow image to show instead of the default shadow image. For a custom shadow to be shown, a custom background image must also be set with -setBackgroundImage:forBarMetrics: (if the default background image is used, the default shadow image will be used).
+     * Default is nil. When non-nil, a custom shadow image to show instead of the default shadow image. For a custom
+     * shadow to be shown, a custom background image must also be set with -setBackgroundImage:forBarMetrics: (if the
+     * default background image is used, the default shadow image will be used).
      */
     @Generated
     @Selector("setShadowImage:")
@@ -566,7 +572,8 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     public native void setTintColor(UIColor value);
 
     /**
-     * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary, using the keys found in NSAttributedString.h.
+     * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary,
+     * using the keys found in NSAttributedString.h.
      */
     @Generated
     @Selector("setTitleTextAttributes:")
@@ -578,7 +585,9 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
             @NInt long barMetrics);
 
     /**
-     * Default is nil. When non-nil, a custom shadow image to show instead of the default shadow image. For a custom shadow to be shown, a custom background image must also be set with -setBackgroundImage:forBarMetrics: (if the default background image is used, the default shadow image will be used).
+     * Default is nil. When non-nil, a custom shadow image to show instead of the default shadow image. For a custom
+     * shadow to be shown, a custom background image must also be set with -setBackgroundImage:forBarMetrics: (if the
+     * default background image is used, the default shadow image will be used).
      */
     @Generated
     @Selector("shadowImage")
@@ -594,7 +603,8 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     public native UIColor tintColor();
 
     /**
-     * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary, using the keys found in NSAttributedString.h.
+     * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary,
+     * using the keys found in NSAttributedString.h.
      */
     @Generated
     @Selector("titleTextAttributes")
@@ -610,35 +620,42 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     public native UINavigationItem topItem();
 
     /**
-     * You may specify the font, text color, and shadow properties for the large title in the text attributes dictionary, using the keys found in NSAttributedString.h.
+     * You may specify the font, text color, and shadow properties for the large title in the text attributes
+     * dictionary, using the keys found in NSAttributedString.h.
      */
     @Generated
     @Selector("largeTitleTextAttributes")
     public native NSDictionary<String, ?> largeTitleTextAttributes();
 
     /**
-     * When set to YES, the navigation bar will use a larger out-of-line title view when requested by the current navigation item. To specify when the large out-of-line title view appears, see UINavigationItem.largeTitleDisplayMode. Defaults to NO.
+     * When set to YES, the navigation bar will use a larger out-of-line title view when requested by the current
+     * navigation item. To specify when the large out-of-line title view appears, see
+     * UINavigationItem.largeTitleDisplayMode. Defaults to NO.
      */
     @Generated
     @Selector("prefersLargeTitles")
     public native boolean prefersLargeTitles();
 
     /**
-     * You may specify the font, text color, and shadow properties for the large title in the text attributes dictionary, using the keys found in NSAttributedString.h.
+     * You may specify the font, text color, and shadow properties for the large title in the text attributes
+     * dictionary, using the keys found in NSAttributedString.h.
      */
     @Generated
     @Selector("setLargeTitleTextAttributes:")
     public native void setLargeTitleTextAttributes(NSDictionary<String, ?> value);
 
     /**
-     * When set to YES, the navigation bar will use a larger out-of-line title view when requested by the current navigation item. To specify when the large out-of-line title view appears, see UINavigationItem.largeTitleDisplayMode. Defaults to NO.
+     * When set to YES, the navigation bar will use a larger out-of-line title view when requested by the current
+     * navigation item. To specify when the large out-of-line title view appears, see
+     * UINavigationItem.largeTitleDisplayMode. Defaults to NO.
      */
     @Generated
     @Selector("setPrefersLargeTitles:")
     public native void setPrefersLargeTitles(boolean value);
 
     /**
-     * Describes the appearance attributes for the navigation bar to use when it is displayed with its compact height. If not set, the standardAppearance will be used instead.
+     * Describes the appearance attributes for the navigation bar to use when it is displayed with its compact height.
+     * If not set, the standardAppearance will be used instead.
      */
     @Generated
     @Selector("compactAppearance")
@@ -651,21 +668,26 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
-     * Describes the appearance attributes for the navigation bar to use when an associated UIScrollView has reached the edge abutting the bar (the top edge for the navigation bar). If not set, a modified standardAppearance will be used instead.
+     * Describes the appearance attributes for the navigation bar to use when an associated UIScrollView has reached the
+     * edge abutting the bar (the top edge for the navigation bar). If not set, a modified standardAppearance will be
+     * used instead.
      */
     @Generated
     @Selector("scrollEdgeAppearance")
     public native UINavigationBarAppearance scrollEdgeAppearance();
 
     /**
-     * Describes the appearance attributes for the navigation bar to use when it is displayed with its compact height. If not set, the standardAppearance will be used instead.
+     * Describes the appearance attributes for the navigation bar to use when it is displayed with its compact height.
+     * If not set, the standardAppearance will be used instead.
      */
     @Generated
     @Selector("setCompactAppearance:")
     public native void setCompactAppearance(UINavigationBarAppearance value);
 
     /**
-     * Describes the appearance attributes for the navigation bar to use when an associated UIScrollView has reached the edge abutting the bar (the top edge for the navigation bar). If not set, a modified standardAppearance will be used instead.
+     * Describes the appearance attributes for the navigation bar to use when an associated UIScrollView has reached the
+     * edge abutting the bar (the top edge for the navigation bar). If not set, a modified standardAppearance will be
+     * used instead.
      */
     @Generated
     @Selector("setScrollEdgeAppearance:")
@@ -686,14 +708,18 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     public native UINavigationBarAppearance standardAppearance();
 
     /**
-     * Describes the appearance attributes for the navigation bar to use when it is displayed with its compact heights, and an associated UIScrollView has reached the edge abutting the bar. If not set, first the scrollEdgeAppearance will be tried, and if that is nil then compactAppearance followed by a modified standardAppearance.
+     * Describes the appearance attributes for the navigation bar to use when it is displayed with its compact heights,
+     * and an associated UIScrollView has reached the edge abutting the bar. If not set, first the scrollEdgeAppearance
+     * will be tried, and if that is nil then compactAppearance followed by a modified standardAppearance.
      */
     @Generated
     @Selector("compactScrollEdgeAppearance")
     public native UINavigationBarAppearance compactScrollEdgeAppearance();
 
     /**
-     * Describes the appearance attributes for the navigation bar to use when it is displayed with its compact heights, and an associated UIScrollView has reached the edge abutting the bar. If not set, first the scrollEdgeAppearance will be tried, and if that is nil then compactAppearance followed by a modified standardAppearance.
+     * Describes the appearance attributes for the navigation bar to use when it is displayed with its compact heights,
+     * and an associated UIScrollView has reached the edge abutting the bar. If not set, first the scrollEdgeAppearance
+     * will be tried, and if that is nil then compactAppearance followed by a modified standardAppearance.
      */
     @Generated
     @Selector("setCompactScrollEdgeAppearance:")

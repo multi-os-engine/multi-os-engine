@@ -75,7 +75,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     public static native UIListContentConfiguration allocWithZone(VoidPtr zone);
 
     /**
-     * An attributed variant of the primary text, which supersedes the `text` and some properties of the `textProperties` if set.
+     * An attributed variant of the primary text, which supersedes the `text` and some properties of the
+     * `textProperties` if set.
      */
     @Generated
     @Selector("attributedText")
@@ -86,7 +87,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * Whether the content view will preserve inherited layout margins from its superview on the horizontal and/or vertical axes.
+     * Whether the content view will preserve inherited layout margins from its superview on the horizontal and/or
+     * vertical axes.
      */
     @Generated
     @Selector("axesPreservingSuperviewLayoutMargins")
@@ -133,7 +135,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     public static native String description_static();
 
     /**
-     * The margins for the content to the edges of the content view. (When preserving superview layout margins on one or both axes, these are just minimum margins, as inherited margins may be larger.)
+     * The margins for the content to the edges of the content view. (When preserving superview layout margins on one or
+     * both axes, these are just minimum margins, as inherited margins may be larger.)
      */
     @Generated
     @Selector("directionalLayoutMargins")
@@ -238,7 +241,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     public static native UIListContentConfiguration plainHeaderConfiguration();
 
     /**
-     * When YES, the text and secondary text will be positioned side-by-side if there is sufficient space. Otherwise, the text will be stacked in a vertical layout.
+     * When YES, the text and secondary text will be positioned side-by-side if there is sufficient space. Otherwise,
+     * the text will be stacked in a vertical layout.
      */
     @Generated
     @Selector("prefersSideBySideTextAndSecondaryText")
@@ -253,7 +257,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * An attributed variant of the secondary text, which supersedes the `secondaryText` and some properties of the `secondaryTextProperties` if set.
+     * An attributed variant of the secondary text, which supersedes the `secondaryText` and some properties of the
+     * `secondaryTextProperties` if set.
      */
     @Generated
     @Selector("secondaryAttributedText")
@@ -274,21 +279,24 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     public native UIListContentTextProperties secondaryTextProperties();
 
     /**
-     * An attributed variant of the primary text, which supersedes the `text` and some properties of the `textProperties` if set.
+     * An attributed variant of the primary text, which supersedes the `text` and some properties of the
+     * `textProperties` if set.
      */
     @Generated
     @Selector("setAttributedText:")
     public native void setAttributedText(NSAttributedString value);
 
     /**
-     * Whether the content view will preserve inherited layout margins from its superview on the horizontal and/or vertical axes.
+     * Whether the content view will preserve inherited layout margins from its superview on the horizontal and/or
+     * vertical axes.
      */
     @Generated
     @Selector("setAxesPreservingSuperviewLayoutMargins:")
     public native void setAxesPreservingSuperviewLayoutMargins(@NUInt long value);
 
     /**
-     * The margins for the content to the edges of the content view. (When preserving superview layout margins on one or both axes, these are just minimum margins, as inherited margins may be larger.)
+     * The margins for the content to the edges of the content view. (When preserving superview layout margins on one or
+     * both axes, these are just minimum margins, as inherited margins may be larger.)
      */
     @Generated
     @Selector("setDirectionalLayoutMargins:")
@@ -309,14 +317,16 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     public native void setImageToTextPadding(@NFloat double value);
 
     /**
-     * When YES, the text and secondary text will be positioned side-by-side if there is sufficient space. Otherwise, the text will be stacked in a vertical layout.
+     * When YES, the text and secondary text will be positioned side-by-side if there is sufficient space. Otherwise,
+     * the text will be stacked in a vertical layout.
      */
     @Generated
     @Selector("setPrefersSideBySideTextAndSecondaryText:")
     public native void setPrefersSideBySideTextAndSecondaryText(boolean value);
 
     /**
-     * An attributed variant of the secondary text, which supersedes the `secondaryText` and some properties of the `secondaryTextProperties` if set.
+     * An attributed variant of the secondary text, which supersedes the `secondaryText` and some properties of the
+     * `secondaryTextProperties` if set.
      */
     @Generated
     @Selector("setSecondaryAttributedText:")
@@ -337,14 +347,16 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     public native void setText(String value);
 
     /**
-     * Horizontal (minimum) padding between the text and secondary text. Only applies when there is both text and secondary text, and they are in a side-by-side layout.
+     * Horizontal (minimum) padding between the text and secondary text. Only applies when there is both text and
+     * secondary text, and they are in a side-by-side layout.
      */
     @Generated
     @Selector("setTextToSecondaryTextHorizontalPadding:")
     public native void setTextToSecondaryTextHorizontalPadding(@NFloat double value);
 
     /**
-     * Vertical padding between the text and secondary text. Only applies when there is both text and secondary text, and they are in a stacked layout.
+     * Vertical padding between the text and secondary text. Only applies when there is both text and secondary text,
+     * and they are in a stacked layout.
      */
     @Generated
     @Selector("setTextToSecondaryTextVerticalPadding:")
@@ -411,7 +423,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     public native UIListContentTextProperties textProperties();
 
     /**
-     * Horizontal (minimum) padding between the text and secondary text. Only applies when there is both text and secondary text, and they are in a side-by-side layout.
+     * Horizontal (minimum) padding between the text and secondary text. Only applies when there is both text and
+     * secondary text, and they are in a side-by-side layout.
      */
     @Generated
     @Selector("textToSecondaryTextHorizontalPadding")
@@ -419,7 +432,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
     public native double textToSecondaryTextHorizontalPadding();
 
     /**
-     * Vertical padding between the text and secondary text. Only applies when there is both text and secondary text, and they are in a stacked layout.
+     * Vertical padding between the text and secondary text. Only applies when there is both text and secondary text,
+     * and they are in a stacked layout.
      */
     @Generated
     @Selector("textToSecondaryTextVerticalPadding")

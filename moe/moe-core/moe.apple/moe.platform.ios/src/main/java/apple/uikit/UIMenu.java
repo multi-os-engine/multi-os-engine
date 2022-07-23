@@ -67,7 +67,9 @@ public class UIMenu extends UIMenuElement {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * The menu's sub-elements and sub-menus. On iOS 14.0, elements of your own menus are mutable, -copying a menu will produce mutable elements, and UIKit will take immutable copies of menus it receives. Prior to iOS 14.0, menus are always fully immutable.
+     * The menu's sub-elements and sub-menus. On iOS 14.0, elements of your own menus are mutable, -copying a menu will
+     * produce mutable elements, and UIKit will take immutable copies of menus it receives. Prior to iOS 14.0, menus are
+     * always fully immutable.
      */
     @Generated
     @Selector("children")

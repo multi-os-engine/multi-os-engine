@@ -281,7 +281,8 @@ public class AUParameter extends AUParameterNode implements NSSecureCoding {
     public native int unit();
 
     /**
-     * A localized name for the parameter's unit. Supplied by the AU if kAudioUnitParameterUnit_CustomUnit; else by the framework.
+     * A localized name for the parameter's unit. Supplied by the AU if kAudioUnitParameterUnit_CustomUnit; else by the
+     * framework.
      */
     @Generated
     @Selector("unitName")

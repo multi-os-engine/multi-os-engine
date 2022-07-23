@@ -79,7 +79,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Called when the animation either completes its active duration or
-     * is removed from the object it is attached to (i.e. the layer). The 'completed' argument of SCNAnimationDidStopBlock
+     * is removed from the object it is attached to (i.e. the layer). The 'completed' argument of
+     * SCNAnimationDidStopBlock
      * is true if the animation reached the end of its active duration without being removed.
      */
     @Generated
@@ -148,7 +149,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     /**
      * Determines the receiver's blend-in duration.
      * <p>
-     * When the blendInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100% during the specified duration.
+     * When the blendInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100%
+     * during the specified duration.
      */
     @Generated
     @Selector("blendInDuration")
@@ -157,7 +159,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     /**
      * Determines the receiver's blend-out duration.
      * <p>
-     * When the blendOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0% at the end of the animation duration.
+     * When the blendOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to
+     * 0% at the end of the animation duration.
      */
     @Generated
     @Selector("blendOutDuration")
@@ -287,9 +290,10 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * The key-path describing the property to be animated for single-property animations, nil for animations targetting multiple nodes. defaults to nil.
+     * The key-path describing the property to be animated for single-property animations, nil for animations targetting
+     * multiple nodes. defaults to nil.
      * The key-path uses the KVC syntax. It's also possible to target a specific sub-node with the following syntax:
-     * /<node-name>.property1.property2.field    (field is optional, <node-name> is the name of the targeted node).
+     * /<node-name>.property1.property2.field (field is optional, <node-name> is the name of the targeted node).
      */
     @Generated
     @Selector("keyPath")
@@ -348,7 +352,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     /**
      * Called when the animation either completes its active duration or
-     * is removed from the object it is attached to (i.e. the layer). The 'completed' argument of SCNAnimationDidStopBlock
+     * is removed from the object it is attached to (i.e. the layer). The 'completed' argument of
+     * SCNAnimationDidStopBlock
      * is true if the animation reached the end of its active duration without being removed.
      */
     @Generated
@@ -390,7 +395,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     /**
      * Determines the receiver's blend-in duration.
      * <p>
-     * When the blendInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100% during the specified duration.
+     * When the blendInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100%
+     * during the specified duration.
      */
     @Generated
     @Selector("setBlendInDuration:")
@@ -399,7 +405,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     /**
      * Determines the receiver's blend-out duration.
      * <p>
-     * When the blendOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0% at the end of the animation duration.
+     * When the blendOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to
+     * 0% at the end of the animation duration.
      */
     @Generated
     @Selector("setBlendOutDuration:")
@@ -438,9 +445,10 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     public native void setFillsForward(boolean value);
 
     /**
-     * The key-path describing the property to be animated for single-property animations, nil for animations targetting multiple nodes. defaults to nil.
+     * The key-path describing the property to be animated for single-property animations, nil for animations targetting
+     * multiple nodes. defaults to nil.
      * The key-path uses the KVC syntax. It's also possible to target a specific sub-node with the following syntax:
-     * /<node-name>.property1.property2.field    (field is optional, <node-name> is the name of the targeted node).
+     * /<node-name>.property1.property2.field (field is optional, <node-name> is the name of the targeted node).
      */
     @Generated
     @Selector("setKeyPath:")
@@ -463,7 +471,9 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     /**
      * The relative delay to start the animation, in relation to its parent animation if applicable. Defaults to 0.
      * <p>
-     * This property is bridged with CoreAnimations's beginTime. However, for top level animations, startDelay is relative to the current time (unlike CAAnimation's beginTime that is absolute). So if a CAAnimation has a non-zero beginTime, startDelay is initialized as caAnimation.beginTime - CACurrentMediaTime().
+     * This property is bridged with CoreAnimations's beginTime. However, for top level animations, startDelay is
+     * relative to the current time (unlike CAAnimation's beginTime that is absolute). So if a CAAnimation has a
+     * non-zero beginTime, startDelay is initialized as caAnimation.beginTime - CACurrentMediaTime().
      */
     @Generated
     @Selector("setStartDelay:")
@@ -489,7 +499,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * Determines whether the receiver is evaluated using the scene time or the system time. Defaults to NO.
      * <p>
      * A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
-     * The "sceneTime" base is typically used by players or editors that need to preview, edit and being able to change the evaluation time.
+     * The "sceneTime" base is typically used by players or editors that need to preview, edit and being able to change
+     * the evaluation time.
      *
      * @see SCNSceneSourceAnimationImportPolicyKey
      */
@@ -504,7 +515,9 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     /**
      * The relative delay to start the animation, in relation to its parent animation if applicable. Defaults to 0.
      * <p>
-     * This property is bridged with CoreAnimations's beginTime. However, for top level animations, startDelay is relative to the current time (unlike CAAnimation's beginTime that is absolute). So if a CAAnimation has a non-zero beginTime, startDelay is initialized as caAnimation.beginTime - CACurrentMediaTime().
+     * This property is bridged with CoreAnimations's beginTime. However, for top level animations, startDelay is
+     * relative to the current time (unlike CAAnimation's beginTime that is absolute). So if a CAAnimation has a
+     * non-zero beginTime, startDelay is initialized as caAnimation.beginTime - CACurrentMediaTime().
      */
     @Generated
     @Selector("startDelay")
@@ -544,7 +557,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * Determines whether the receiver is evaluated using the scene time or the system time. Defaults to NO.
      * <p>
      * A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
-     * The "sceneTime" base is typically used by players or editors that need to preview, edit and being able to change the evaluation time.
+     * The "sceneTime" base is typically used by players or editors that need to preview, edit and being able to change
+     * the evaluation time.
      *
      * @see SCNSceneSourceAnimationImportPolicyKey
      */

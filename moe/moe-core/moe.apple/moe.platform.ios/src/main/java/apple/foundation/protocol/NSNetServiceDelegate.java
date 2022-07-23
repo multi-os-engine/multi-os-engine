@@ -55,7 +55,9 @@ public interface NSNetServiceDelegate {
     }
 
     /**
-     * Sent to the NSNetService instance's delegate when an error in publishing the instance occurs. The error dictionary will contain two key/value pairs representing the error domain and code (see the NSNetServicesError enumeration above for error code constants). It is possible for an error to occur after a successful publication.
+     * Sent to the NSNetService instance's delegate when an error in publishing the instance occurs. The error
+     * dictionary will contain two key/value pairs representing the error domain and code (see the NSNetServicesError
+     * enumeration above for error code constants). It is possible for an error to occur after a successful publication.
      */
     @Generated
     @IsOptional
@@ -65,7 +67,9 @@ public interface NSNetServiceDelegate {
     }
 
     /**
-     * Sent to the NSNetService instance's delegate when an error in resolving the instance occurs. The error dictionary will contain two key/value pairs representing the error domain and code (see the NSNetServicesError enumeration above for error code constants).
+     * Sent to the NSNetService instance's delegate when an error in resolving the instance occurs. The error dictionary
+     * will contain two key/value pairs representing the error domain and code (see the NSNetServicesError enumeration
+     * above for error code constants).
      */
     @Generated
     @IsOptional
@@ -75,7 +79,8 @@ public interface NSNetServiceDelegate {
     }
 
     /**
-     * Sent to the NSNetService instance's delegate when the instance is being monitored and the instance's TXT record has been updated. The new record is contained in the data parameter.
+     * Sent to the NSNetService instance's delegate when the instance is being monitored and the instance's TXT record
+     * has been updated. The new record is contained in the data parameter.
      */
     @Generated
     @IsOptional
@@ -95,7 +100,10 @@ public interface NSNetServiceDelegate {
     }
 
     /**
-     * Sent to the NSNetService instance's delegate when one or more addresses have been resolved for an NSNetService instance. Some NSNetService methods will return different results before and after a successful resolution. An NSNetService instance may get resolved more than once; truly robust clients may wish to resolve again after an error, or to resolve more than once.
+     * Sent to the NSNetService instance's delegate when one or more addresses have been resolved for an NSNetService
+     * instance. Some NSNetService methods will return different results before and after a successful resolution. An
+     * NSNetService instance may get resolved more than once; truly robust clients may wish to resolve again after an
+     * error, or to resolve more than once.
      */
     @Generated
     @IsOptional
@@ -105,7 +113,8 @@ public interface NSNetServiceDelegate {
     }
 
     /**
-     * Sent to the NSNetService instance's delegate when the instance's previously running publication or resolution request has stopped.
+     * Sent to the NSNetService instance's delegate when the instance's previously running publication or resolution
+     * request has stopped.
      */
     @Generated
     @IsOptional
@@ -115,7 +124,9 @@ public interface NSNetServiceDelegate {
     }
 
     /**
-     * Sent to the NSNetService instance's delegate prior to advertising the service on the network. If for some reason the service cannot be published, the delegate will not receive this message, and an error will be delivered to the delegate via the delegate's -netService:didNotPublish: method.
+     * Sent to the NSNetService instance's delegate prior to advertising the service on the network. If for some reason
+     * the service cannot be published, the delegate will not receive this message, and an error will be delivered to
+     * the delegate via the delegate's -netService:didNotPublish: method.
      */
     @Generated
     @IsOptional
@@ -125,7 +136,9 @@ public interface NSNetServiceDelegate {
     }
 
     /**
-     * Sent to the NSNetService instance's delegate prior to resolving a service on the network. If for some reason the resolution cannot occur, the delegate will not receive this message, and an error will be delivered to the delegate via the delegate's -netService:didNotResolve: method.
+     * Sent to the NSNetService instance's delegate prior to resolving a service on the network. If for some reason the
+     * resolution cannot occur, the delegate will not receive this message, and an error will be delivered to the
+     * delegate via the delegate's -netService:didNotResolve: method.
      */
     @Generated
     @IsOptional

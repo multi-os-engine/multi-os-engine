@@ -184,7 +184,7 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   lossClasses
+     * [@property] lossClasses
      * <p>
      * loss filter for prediction of bounding box predicted class of the detected object
      */
@@ -193,7 +193,7 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     public native MPSCNNLoss lossClasses();
 
     /**
-     * [@property]   lossConfidence
+     * [@property] lossConfidence
      * <p>
      * loss filter for prediction of bounding box probability of presence of object
      */
@@ -202,7 +202,7 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     public native MPSCNNLoss lossConfidence();
 
     /**
-     * [@property]   lossWH
+     * [@property] lossWH
      * <p>
      * loss filter for prediction of bounding box size
      */
@@ -211,7 +211,7 @@ public class MPSCNNYOLOLoss extends MPSCNNKernel {
     public native MPSCNNLoss lossWH();
 
     /**
-     * [@property]   lossXY
+     * [@property] lossXY
      * <p>
      * loss filter for prediction of bounding box position
      */

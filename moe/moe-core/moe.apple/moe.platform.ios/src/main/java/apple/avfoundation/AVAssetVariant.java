@@ -26,7 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * AVAssetVariant
  * <p>
  * An AVAssetVariant represents a bit rate variant.
- * Each asset contains a collection of variants that represent a combination of audio, video, text, closed captions, and subtitles for a particular bit rate.
+ * Each asset contains a collection of variants that represent a combination of audio, video, text, closed captions, and
+ * subtitles for a particular bit rate.
  */
 @Generated
 @Library("AVFoundation")
@@ -57,9 +58,9 @@ public class AVAssetVariant extends NSObject {
     public static native AVAssetVariant allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]		audioAttributes
+     * [@property] audioAttributes
      * <p>
-     * Provides  variant's audio rendition attributes. If no audio attributes are declared, it will be nil.
+     * Provides variant's audio rendition attributes. If no audio attributes are declared, it will be nil.
      */
     @Generated
     @Selector("audioAttributes")
@@ -70,7 +71,7 @@ public class AVAssetVariant extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]		averageBitRate
+     * [@property] averageBitRate
      * <p>
      * If it is not declared, the value will be negative.
      */
@@ -140,7 +141,7 @@ public class AVAssetVariant extends NSObject {
     public static native AVAssetVariant new_objc();
 
     /**
-     * [@property]		peakBitRate
+     * [@property] peakBitRate
      * <p>
      * If it is not declared, the value will be negative.
      */
@@ -170,9 +171,9 @@ public class AVAssetVariant extends NSObject {
     public static native long version_static();
 
     /**
-     * [@property]		videoAttributes
+     * [@property] videoAttributes
      * <p>
-     * Provides  variant's video rendition attributes. If no video attributes are declared, it will be nil.
+     * Provides variant's video rendition attributes. If no video attributes are declared, it will be nil.
      */
     @Generated
     @Selector("videoAttributes")

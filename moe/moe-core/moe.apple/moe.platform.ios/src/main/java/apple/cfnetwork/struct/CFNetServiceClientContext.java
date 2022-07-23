@@ -52,7 +52,7 @@ public final class CFNetServiceClientContext extends StructObject {
     /**
      * The version number of the structure type being passed in as a
      * parameter to the CFNetService, Browser, or Monitor client
-     * function.  The current version number is 0.
+     * function. The current version number is 0.
      */
     @Generated
     @StructureField(order = 0, isGetter = true)
@@ -62,7 +62,7 @@ public final class CFNetServiceClientContext extends StructObject {
     /**
      * The version number of the structure type being passed in as a
      * parameter to the CFNetService, Browser, or Monitor client
-     * function.  The current version number is 0.
+     * function. The current version number is 0.
      */
     @Generated
     @StructureField(order = 0, isGetter = false)

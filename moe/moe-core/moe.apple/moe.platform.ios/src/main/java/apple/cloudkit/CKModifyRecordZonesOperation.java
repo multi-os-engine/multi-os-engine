@@ -163,8 +163,10 @@ public class CKModifyRecordZonesOperation extends CKDatabaseOperation {
      * This block is called when the operation completes.
      * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
-     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordZoneIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
-     * [@c] savedRecordZones, @c deletedRecordZoneIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in previous @c perRecordZoneSaveBlock and @c perRecordZoneDeleteBlock invocations
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordZoneIDs
+     * to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * [@c] savedRecordZones, @c deletedRecordZoneIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of the
+     * data sent back in previous @c perRecordZoneSaveBlock and @c perRecordZoneDeleteBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -184,8 +186,10 @@ public class CKModifyRecordZonesOperation extends CKDatabaseOperation {
      * This block is called when the operation completes.
      * <p>
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
-     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordZoneIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
-     * [@c] savedRecordZones, @c deletedRecordZoneIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of the data sent back in previous @c perRecordZoneSaveBlock and @c perRecordZoneDeleteBlock invocations
+     * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordZoneIDs
+     * to errors keyed off of @c CKPartialErrorsByItemIDKey.
+     * [@c] savedRecordZones, @c deletedRecordZoneIDs and any @c CKPartialErrorsByItemIDKey errors are repeats of the
+     * data sent back in previous @c perRecordZoneSaveBlock and @c perRecordZoneDeleteBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated

@@ -84,7 +84,8 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
     public static native String description_static();
 
     /**
-     * A boolean to indicate whether the reduction should perform a weighted sum of feature channels with non-zero weights
+     * A boolean to indicate whether the reduction should perform a weighted sum of feature channels with non-zero
+     * weights
      * <p>
      * If false, computes a dot product of the feature channels and weights.
      * If true, computes a dot product of the feature channels and weights divided by the number of non-zero weights

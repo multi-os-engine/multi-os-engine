@@ -20,7 +20,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("AVAudioRecorderDelegate")
 public interface AVAudioRecorderDelegate {
     /**
-     * audioRecorderBeginInterruption: is called when the audio session has been interrupted while the recorder was recording. The recorded file will be closed.
+     * audioRecorderBeginInterruption: is called when the audio session has been interrupted while the recorder was
+     * recording. The recorded file will be closed.
      */
     @Generated
     @IsOptional
@@ -31,7 +32,8 @@ public interface AVAudioRecorderDelegate {
     }
 
     /**
-     * audioRecorderDidFinishRecording:successfully: is called when a recording has been finished or stopped. This method is NOT called if the recorder is stopped due to an interruption.
+     * audioRecorderDidFinishRecording:successfully: is called when a recording has been finished or stopped. This
+     * method is NOT called if the recorder is stopped due to an interruption.
      */
     @Generated
     @IsOptional
@@ -51,7 +53,8 @@ public interface AVAudioRecorderDelegate {
     }
 
     /**
-     * audioRecorderEndInterruption: is called when the preferred method, audioRecorderEndInterruption:withFlags:, is not implemented.
+     * audioRecorderEndInterruption: is called when the preferred method, audioRecorderEndInterruption:withFlags:, is
+     * not implemented.
      */
     @Generated
     @IsOptional
@@ -70,7 +73,8 @@ public interface AVAudioRecorderDelegate {
     }
 
     /**
-     * audioRecorderEndInterruption:withOptions: is called when the audio session interruption has ended and this recorder had been interrupted while recording.
+     * audioRecorderEndInterruption:withOptions: is called when the audio session interruption has ended and this
+     * recorder had been interrupted while recording.
      * Currently the only flag is AVAudioSessionInterruptionFlags_ShouldResume.
      */
     @Generated

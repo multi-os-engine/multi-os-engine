@@ -353,12 +353,14 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     /**
      * The configuration of the Assistant Cell.
      * <p>
-     * Assigning to this property will dynamically update the List Template to reflect the visibility, position, and intent identifier of the Assistant Cell.
+     * Assigning to this property will dynamically update the List Template to reflect the visibility, position, and
+     * intent identifier of the Assistant Cell.
      * <p>
      * [@note] The Assistant Cell is only supported by CarPlay Audio and Communication Apps.
      * <p>
      * Unlike @c CPListItem, your application will not receive a callback when the user selects the cell.
-     * Instead, configure an Intents app extention to receive user requests from SiriKit, in order to turn the requests into an
+     * Instead, configure an Intents app extention to receive user requests from SiriKit, in order to turn the requests
+     * into an
      * app-specific actions.
      */
     @Generated
@@ -366,12 +368,14 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     public native CPAssistantCellConfiguration assistantCellConfiguration();
 
     /**
-     * Initialize a list template with one or more sections of items, an optional title, and configuration for the assistant cell via a @c CPAssistantCellConfiguration object.
+     * Initialize a list template with one or more sections of items, an optional title, and configuration for the
+     * assistant cell via a @c CPAssistantCellConfiguration object.
      * <p>
      * [@note] The Assistant Cell is only supported by CarPlay Audio and Communication Apps.
      * <p>
      * Unlike @c CPListItem, your application will not receive a callback when the user selects the cell.
-     * Instead, configure an Intents app extention to receive user requests from SiriKit, in order to turn the requests into an
+     * Instead, configure an Intents app extention to receive user requests from SiriKit, in order to turn the requests
+     * into an
      * app-specific actions.
      */
     @Generated
@@ -382,12 +386,14 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     /**
      * The configuration of the Assistant Cell.
      * <p>
-     * Assigning to this property will dynamically update the List Template to reflect the visibility, position, and intent identifier of the Assistant Cell.
+     * Assigning to this property will dynamically update the List Template to reflect the visibility, position, and
+     * intent identifier of the Assistant Cell.
      * <p>
      * [@note] The Assistant Cell is only supported by CarPlay Audio and Communication Apps.
      * <p>
      * Unlike @c CPListItem, your application will not receive a callback when the user selects the cell.
-     * Instead, configure an Intents app extention to receive user requests from SiriKit, in order to turn the requests into an
+     * Instead, configure an Intents app extention to receive user requests from SiriKit, in order to turn the requests
+     * into an
      * app-specific actions.
      */
     @Generated

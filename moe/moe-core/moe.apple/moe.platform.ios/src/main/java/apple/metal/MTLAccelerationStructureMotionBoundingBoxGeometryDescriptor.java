@@ -29,8 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MTLAccelerationStructureMotionBoundingBoxGeometryDescriptor
-        extends MTLAccelerationStructureGeometryDescriptor {
+public class MTLAccelerationStructureMotionBoundingBoxGeometryDescriptor extends
+        MTLAccelerationStructureGeometryDescriptor {
     static {
         NatJ.register();
     }
@@ -59,7 +59,8 @@ public class MTLAccelerationStructureMotionBoundingBoxGeometryDescriptor
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * Bounding box buffer containing MTLAxisAlignedBoundingBoxes similar to what MTLAccelerationStructureBoundingBoxGeometryDescriptor has but array of the values.
+     * Bounding box buffer containing MTLAxisAlignedBoundingBoxes similar to what
+     * MTLAccelerationStructureBoundingBoxGeometryDescriptor has but array of the values.
      */
     @Generated
     @Selector("boundingBoxBuffers")
@@ -156,7 +157,8 @@ public class MTLAccelerationStructureMotionBoundingBoxGeometryDescriptor
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Bounding box buffer containing MTLAxisAlignedBoundingBoxes similar to what MTLAccelerationStructureBoundingBoxGeometryDescriptor has but array of the values.
+     * Bounding box buffer containing MTLAxisAlignedBoundingBoxes similar to what
+     * MTLAccelerationStructureBoundingBoxGeometryDescriptor has but array of the values.
      */
     @Generated
     @Selector("setBoundingBoxBuffers:")

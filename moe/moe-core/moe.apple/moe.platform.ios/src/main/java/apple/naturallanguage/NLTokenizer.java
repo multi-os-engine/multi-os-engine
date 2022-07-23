@@ -86,7 +86,10 @@ public class NLTokenizer extends NSObject {
     public static native String description_static();
 
     /**
-     * The tokenizer will segment the string as needed into tokens for the given unit, and return those ranges via a block iterator, that iterates over all tokens intersecting a given range, supplying token ranges and flags. The range passed in must not extend beyond the end of the tokenizer's string, or the method will raise an exception. Note that a given instance of NLTokenizer should not be used from more than one thread simultaneously.
+     * The tokenizer will segment the string as needed into tokens for the given unit, and return those ranges via a
+     * block iterator, that iterates over all tokens intersecting a given range, supplying token ranges and flags. The
+     * range passed in must not extend beyond the end of the tokenizer's string, or the method will raise an exception.
+     * Note that a given instance of NLTokenizer should not be used from more than one thread simultaneously.
      */
     @Generated
     @Selector("enumerateTokensInRange:usingBlock:")
@@ -155,7 +158,8 @@ public class NLTokenizer extends NSObject {
     public native void setLanguage(String language);
 
     /**
-     * An NLTokenizer instance must be assigned a string to tokenize, and clients can then obtain ranges for tokens in that string appropriate to the tokenizer's unit.
+     * An NLTokenizer instance must be assigned a string to tokenize, and clients can then obtain ranges for tokens in
+     * that string appropriate to the tokenizer's unit.
      */
     @Generated
     @Selector("setString:")
@@ -166,7 +170,8 @@ public class NLTokenizer extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * An NLTokenizer instance must be assigned a string to tokenize, and clients can then obtain ranges for tokens in that string appropriate to the tokenizer's unit.
+     * An NLTokenizer instance must be assigned a string to tokenize, and clients can then obtain ranges for tokens in
+     * that string appropriate to the tokenizer's unit.
      */
     @Generated
     @Selector("string")
@@ -177,7 +182,8 @@ public class NLTokenizer extends NSObject {
     public static native Class superclass_static();
 
     /**
-     * Returns the range corresponding to the token for the tokenizer's unit that contains the given character index. The index must not extend beyond the end of the tokenizer's string, or the method will raise an exception.
+     * Returns the range corresponding to the token for the tokenizer's unit that contains the given character index.
+     * The index must not extend beyond the end of the tokenizer's string, or the method will raise an exception.
      */
     @Generated
     @Selector("tokenRangeAtIndex:")
@@ -202,7 +208,8 @@ public class NLTokenizer extends NSObject {
     public static native long version_static();
 
     /**
-     * Returns the smallest range covering all tokens for the tokenizer's unit intersecting the given range.  If range.length == 0, this is equivalent to tokenRangeAtIndex:.
+     * Returns the smallest range covering all tokens for the tokenizer's unit intersecting the given range. If
+     * range.length == 0, this is equivalent to tokenRangeAtIndex:.
      */
     @Generated
     @Selector("tokenRangeForRange:")

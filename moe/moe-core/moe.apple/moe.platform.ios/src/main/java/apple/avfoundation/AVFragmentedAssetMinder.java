@@ -45,7 +45,7 @@ public class AVFragmentedAssetMinder extends NSObject {
      * <p>
      * Adds a fragmented asset to the array of assets being minded.
      *
-     * @param            asset The fragmented asset to add to the minder.
+     * @param asset The fragmented asset to add to the minder.
      */
     @Generated
     @Selector("addFragmentedAsset:")
@@ -62,7 +62,7 @@ public class AVFragmentedAssetMinder extends NSObject {
     public static native AVFragmentedAssetMinder allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]       assets
+     * [@property] assets
      * <p>
      * An NSArray of the AVFragmentedAsset objects being minded.
      */
@@ -103,10 +103,11 @@ public class AVFragmentedAssetMinder extends NSObject {
     /**
      * fragmentedAssetMinderWithAsset:mindingInterval:
      * <p>
-     * Creates an AVFragmentedAssetMinder, adds the specified asset to it, and sets the mindingInterval to the specified value.
+     * Creates an AVFragmentedAssetMinder, adds the specified asset to it, and sets the mindingInterval to the specified
+     * value.
      *
-     * @param            asset An instance of AVFragmentedAsset to add to the AVFragmentedAssetMinder
-     * @param            mindingInterval The initial minding interval of the AVFragmentedAssetMinder.
+     * @param asset           An instance of AVFragmentedAsset to add to the AVFragmentedAssetMinder
+     * @param mindingInterval The initial minding interval of the AVFragmentedAssetMinder.
      * @return A new instance of AVFragmentedAssetMinder.
      */
     @Generated
@@ -126,10 +127,11 @@ public class AVFragmentedAssetMinder extends NSObject {
     /**
      * initWithAsset:mindingInterval:
      * <p>
-     * Creates an AVFragmentedAssetMinder, adds the specified asset to it, and sets the mindingInterval to the specified value.
+     * Creates an AVFragmentedAssetMinder, adds the specified asset to it, and sets the mindingInterval to the specified
+     * value.
      *
-     * @param            asset An instance of AVFragmentedAsset to add to the AVFragmentedAssetMinder
-     * @param            mindingInterval The initial minding interval of the AVFragmentedAssetMinder.
+     * @param asset           An instance of AVFragmentedAsset to add to the AVFragmentedAssetMinder
+     * @param mindingInterval The initial minding interval of the AVFragmentedAssetMinder.
      * @return A new instance of AVFragmentedAssetMinder.
      */
     @Generated
@@ -158,9 +160,10 @@ public class AVFragmentedAssetMinder extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]       mindingInterval
+     * [@property] mindingInterval
      * <p>
-     * An NSTimeInterval indicating how often a check for additional fragments should be performed. The default interval is 10.0.
+     * An NSTimeInterval indicating how often a check for additional fragments should be performed. The default interval
+     * is 10.0.
      */
     @Generated
     @Selector("mindingInterval")
@@ -176,7 +179,7 @@ public class AVFragmentedAssetMinder extends NSObject {
      * <p>
      * Removes a fragmented asset from the array of assets being minded.
      *
-     * @param            asset The fragmented asset to remove from the minder.
+     * @param asset The fragmented asset to remove from the minder.
      */
     @Generated
     @Selector("removeFragmentedAsset:")
@@ -191,9 +194,10 @@ public class AVFragmentedAssetMinder extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]       mindingInterval
+     * [@property] mindingInterval
      * <p>
-     * An NSTimeInterval indicating how often a check for additional fragments should be performed. The default interval is 10.0.
+     * An NSTimeInterval indicating how often a check for additional fragments should be performed. The default interval
+     * is 10.0.
      */
     @Generated
     @Selector("setMindingInterval:")

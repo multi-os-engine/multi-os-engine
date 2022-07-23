@@ -248,7 +248,8 @@ public class UIDevice extends NSObject {
     public native String name();
 
     /**
-     * return current device orientation.  this will return UIDeviceOrientationUnknown unless device orientation notifications are being generated.
+     * return current device orientation. this will return UIDeviceOrientationUnknown unless device orientation
+     * notifications are being generated.
      */
     @Generated
     @Selector("orientation")

@@ -27,11 +27,11 @@ public final class MPSAliasingStrategy {
      */
     @Generated @NUInt public static final long AliasingReserved = 0x0000000000000003L;
     /**
-     * < The view must alias the original.  Typical usage for views used for destination slicing.
+     * < The view must alias the original. Typical usage for views used for destination slicing.
      */
     @Generated @NUInt public static final long PreferTemporaryMemory = 0x0000000000000004L;
     /**
-     * < The view must alias the original.  Typical usage for views used for destination slicing.
+     * < The view must alias the original. Typical usage for views used for destination slicing.
      */
     @Generated @NUInt public static final long PreferNonTemporaryMemory = 0x0000000000000008L;
 }

@@ -38,11 +38,13 @@ public final class SecPadding {
      */
     @Generated public static final int SigRaw = 0x00004000;
     /**
-     * __OSX_DEPRECATED(10.0, 10.12, "MD2 is deprecated") __IOS_DEPRECATED(2.0, 5.0, "MD2 is deprecated") __TVOS_UNAVAILABLE __WATCHOS_UNAVAILABLE,
+     * __OSX_DEPRECATED(10.0, 10.12, "MD2 is deprecated") __IOS_DEPRECATED(2.0, 5.0, "MD2 is deprecated")
+     * __TVOS_UNAVAILABLE __WATCHOS_UNAVAILABLE,
      */
     @Generated public static final int PKCS1MD2 = 0x00008000;
     /**
-     * __OSX_DEPRECATED(10.0, 10.12, "MD5 is deprecated") __IOS_DEPRECATED(2.0, 5.0, "MD5 is deprecated") __TVOS_UNAVAILABLE __WATCHOS_UNAVAILABLE,
+     * __OSX_DEPRECATED(10.0, 10.12, "MD5 is deprecated") __IOS_DEPRECATED(2.0, 5.0, "MD5 is deprecated")
+     * __TVOS_UNAVAILABLE __WATCHOS_UNAVAILABLE,
      */
     @Generated public static final int PKCS1MD5 = 0x00008001;
     /**

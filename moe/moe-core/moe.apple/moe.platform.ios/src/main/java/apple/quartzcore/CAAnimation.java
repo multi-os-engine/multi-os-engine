@@ -227,7 +227,8 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
      * <p>
      * Determines the receiver's fade-in duration.
      * <p>
-     * When the fadeInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100% during the specified duration.
+     * When the fadeInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100%
+     * during the specified duration.
      */
     @Generated
     @Selector("fadeInDuration")
@@ -239,7 +240,8 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
      * <p>
      * Determines the receiver's fade-out duration.
      * <p>
-     * When the fadeOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0% at the end of the animation duration.
+     * When the fadeOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0%
+     * at the end of the animation duration.
      */
     @Generated
     @Selector("fadeOutDuration")
@@ -322,7 +324,8 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
      * <p>
      * Determines the receiver's fade-in duration.
      * <p>
-     * When the fadeInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100% during the specified duration.
+     * When the fadeInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100%
+     * during the specified duration.
      */
     @Generated
     @Selector("setFadeInDuration:")
@@ -333,7 +336,8 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
      * <p>
      * Determines the receiver's fade-out duration.
      * <p>
-     * When the fadeOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0% at the end of the animation duration.
+     * When the fadeOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0%
+     * at the end of the animation duration.
      */
     @Generated
     @Selector("setFadeOutDuration:")

@@ -33,12 +33,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * of MIDI messages to specific sounds and synthesis behaviors, e.g. General MIDI, a drawbar organ,
  * etc. A MIDI-CI profile may be a standard registered profile or vendor-specific.
  * <p>
- * Standard Profile				Vendor-Specific Profile
- * Profile ID Byte 1:	0x7E Standard Profile			Manufacturer SysEx ID 1 Profile
- * Profile ID Byte 2:	Profile Bank				Manufacturer SysEx ID 2 Profile
- * Profile ID Byte 3:	Profile Number				Manufacturer SysEx ID 3 Profile
- * Profile ID Byte 4:	Profile Version				Manufacturer-specific Info
- * Profile ID Byte 5:	Profile Level				Manufacturer-specific Info
+ * Standard Profile Vendor-Specific Profile
+ * Profile ID Byte 1: 0x7E Standard Profile Manufacturer SysEx ID 1 Profile
+ * Profile ID Byte 2: Profile Bank Manufacturer SysEx ID 2 Profile
+ * Profile ID Byte 3: Profile Number Manufacturer SysEx ID 3 Profile
+ * Profile ID Byte 4: Profile Version Manufacturer-specific Info
+ * Profile ID Byte 5: Profile Level Manufacturer-specific Info
  */
 @Generated
 @Library("CoreMIDI")

@@ -145,15 +145,15 @@ public class AVAudioUnitVarispeed extends AVAudioUnitTimeEffect {
      * Similarly changing the rate to 0.5, results in the output audio playing one octave lower.
      * <p>
      * The playback rate and pitch can be calculated as
-     * rate  = pow(2, cents/1200.0)
-     * pitch in cents  = 1200.0 * log2(rate)
+     * rate = pow(2, cents/1200.0)
+     * pitch in cents = 1200.0 * log2(rate)
      * <p>
-     * Where,    1 octave  = 1200 cents
-     * 1 musical semitone  = 100 cents
+     * Where, 1 octave = 1200 cents
+     * 1 musical semitone = 100 cents
      * <p>
-     * Range:      0.25 -> 4.0
-     * Default:    1.0
-     * Unit:       Generic
+     * Range: 0.25 -> 4.0
+     * Default: 1.0
+     * Unit: Generic
      */
     @Generated
     @Selector("rate")
@@ -178,15 +178,15 @@ public class AVAudioUnitVarispeed extends AVAudioUnitTimeEffect {
      * Similarly changing the rate to 0.5, results in the output audio playing one octave lower.
      * <p>
      * The playback rate and pitch can be calculated as
-     * rate  = pow(2, cents/1200.0)
-     * pitch in cents  = 1200.0 * log2(rate)
+     * rate = pow(2, cents/1200.0)
+     * pitch in cents = 1200.0 * log2(rate)
      * <p>
-     * Where,    1 octave  = 1200 cents
-     * 1 musical semitone  = 100 cents
+     * Where, 1 octave = 1200 cents
+     * 1 musical semitone = 100 cents
      * <p>
-     * Range:      0.25 -> 4.0
-     * Default:    1.0
-     * Unit:       Generic
+     * Range: 0.25 -> 4.0
+     * Default: 1.0
+     * Unit: Generic
      */
     @Generated
     @Selector("setRate:")

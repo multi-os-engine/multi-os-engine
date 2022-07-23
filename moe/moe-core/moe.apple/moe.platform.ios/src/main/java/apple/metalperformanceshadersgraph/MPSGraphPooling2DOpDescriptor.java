@@ -67,7 +67,7 @@ public class MPSGraphPooling2DOpDescriptor extends NSObject implements NSCopying
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * [@property]   ceilMode
+     * [@property] ceilMode
      * <p>
      * If set then the output size is computed by rounding up instead of down when
      * dividing by stride.
@@ -133,7 +133,7 @@ public class MPSGraphPooling2DOpDescriptor extends NSObject implements NSCopying
     public static native long hash_static();
 
     /**
-     * [@property]   includeZeroPadToAverage
+     * [@property] includeZeroPadToAverage
      * <p>
      * For average pooling use a mode where samples outside the input tensor count as
      * zeroes in the average computation. Otherwise the result is sum over samples divided by
@@ -171,7 +171,7 @@ public class MPSGraphPooling2DOpDescriptor extends NSObject implements NSCopying
     public native long kernelHeight();
 
     /**
-     * [@property]   groups
+     * [@property] groups
      * <p>
      * groups of the operation
      */
@@ -223,7 +223,7 @@ public class MPSGraphPooling2DOpDescriptor extends NSObject implements NSCopying
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   ceilMode
+     * [@property] ceilMode
      * <p>
      * If set then the output size is computed by rounding up instead of down when
      * dividing by stride.
@@ -251,7 +251,7 @@ public class MPSGraphPooling2DOpDescriptor extends NSObject implements NSCopying
             @NUInt long paddingRight, @NUInt long paddingTop, @NUInt long paddingBottom);
 
     /**
-     * [@property]   includeZeroPadToAverage
+     * [@property] includeZeroPadToAverage
      * <p>
      * For average pooling use a mode where samples outside the input tensor count as
      * zeroes in the average computation. Otherwise the result is sum over samples divided by
@@ -267,7 +267,7 @@ public class MPSGraphPooling2DOpDescriptor extends NSObject implements NSCopying
     public native void setKernelHeight(@NUInt long value);
 
     /**
-     * [@property]   groups
+     * [@property] groups
      * <p>
      * groups of the operation
      */

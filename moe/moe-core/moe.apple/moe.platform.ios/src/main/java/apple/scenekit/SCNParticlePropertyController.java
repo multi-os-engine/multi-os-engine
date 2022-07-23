@@ -172,7 +172,8 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
     public static native long version_static();
 
     /**
-     * Specifies the animation to be applied on the particle system property. The type of the animation will depend of the property controlled.
+     * Specifies the animation to be applied on the particle system property. The type of the animation will depend of
+     * the property controlled.
      * See the documentation along property name definition.
      */
     @Generated
@@ -236,7 +237,8 @@ public class SCNParticlePropertyController extends NSObject implements NSSecureC
     public native double inputScale();
 
     /**
-     * Specifies the animation to be applied on the particle system property. The type of the animation will depend of the property controlled.
+     * Specifies the animation to be applied on the particle system property. The type of the animation will depend of
+     * the property controlled.
      * See the documentation along property name definition.
      */
     @Generated

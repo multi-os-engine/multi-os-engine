@@ -106,7 +106,7 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
             NSNumber pNorm, boolean scalesGradientByFrequency);
 
     /**
-     * [@property]   embeddingCount
+     * [@property] embeddingCount
      * <p>
      * The size of the dictionary
      */
@@ -115,7 +115,7 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
     public native NSNumber embeddingCount();
 
     /**
-     * [@property]   embeddingDimension
+     * [@property] embeddingDimension
      * <p>
      * The dimension of embedding vectors
      */
@@ -154,9 +154,10 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   maximumNorm
+     * [@property] maximumNorm
      * <p>
-     * A float, if set, in the forward pass only, the selected embedding vectors will be re-normalized to have an Lp norm of less than maximumNorm in the dictionary, Default=nil
+     * A float, if set, in the forward pass only, the selected embedding vectors will be re-normalized to have an Lp
+     * norm of less than maximumNorm in the dictionary, Default=nil
      */
     @Generated
     @Selector("maximumNorm")
@@ -168,7 +169,7 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
     public static native MLCEmbeddingDescriptor new_objc();
 
     /**
-     * [@property]   pNorm
+     * [@property] pNorm
      * <p>
      * A float, the p of the Lp norm, can be set to infinity norm by [NSNumber numberWithFloat:INFINITY]. Default=2.0
      */
@@ -177,9 +178,10 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
     public native NSNumber pNorm();
 
     /**
-     * [@property]   paddingIndex
+     * [@property] paddingIndex
      * <p>
-     * If set, the embedding vector at paddingIndex is initialized with zero and will not be updated in gradient pass, Default=nil
+     * If set, the embedding vector at paddingIndex is initialized with zero and will not be updated in gradient pass,
+     * Default=nil
      */
     @Generated
     @Selector("paddingIndex")
@@ -194,9 +196,10 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   scalesGradientByFrequency
+     * [@property] scalesGradientByFrequency
      * <p>
-     * If set, the gradients are scaled by the inverse of the frequency of the words in batch before the weight update. Default=NO
+     * If set, the gradients are scaled by the inverse of the frequency of the words in batch before the weight update.
+     * Default=NO
      */
     @Generated
     @Selector("scalesGradientByFrequency")

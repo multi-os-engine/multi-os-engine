@@ -61,9 +61,12 @@ public class SHSignatureGenerator extends NSObject {
     /**
      * Add audio to the generator
      * <p>
-     * Audio passed to the generator should be contiguous, passing non contiguous data will affect the quality of the @c SHSignature
-     * produced. Passing the @c AVAudioTime is not required but recommended, it allows the generator to detect when the audio is not contiguous.
-     * This method will throw an exception if the audio format is not PCM in one of the following sample rates: 48000, 44100, 32000, 16000.
+     * Audio passed to the generator should be contiguous, passing non contiguous data will affect the quality of the @c
+     * SHSignature
+     * produced. Passing the @c AVAudioTime is not required but recommended, it allows the generator to detect when the
+     * audio is not contiguous.
+     * This method will throw an exception if the audio format is not PCM in one of the following sample rates: 48000,
+     * 44100, 32000, 16000.
      *
      * @param time   Where in the stream the audio represents
      * @param buffer The audio data to be appended to the signature

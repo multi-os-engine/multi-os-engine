@@ -191,7 +191,7 @@ public class CMMotionActivity extends CMLogItem {
      * Discussion:
      * A confidence estimate associated with this state.
      * <p>
-     * CoreMotion always provides the most likely state.  Confidence represents
+     * CoreMotion always provides the most likely state. Confidence represents
      * how likely that the state is to be correct.
      */
     @Generated
@@ -257,7 +257,7 @@ public class CMMotionActivity extends CMLogItem {
      * unknown
      * <p>
      * Discussion:
-     * True if there is no estimate of the current state.  This can happen if
+     * True if there is no estimate of the current state. This can happen if
      * the device was turned off.
      */
     @Generated

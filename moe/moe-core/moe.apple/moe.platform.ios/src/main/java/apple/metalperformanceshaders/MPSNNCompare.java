@@ -83,7 +83,7 @@ public class MPSNNCompare extends MPSCNNArithmetic {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]   comparisonType
+     * [@property] comparisonType
      * <p>
      * The comparison type to use
      */
@@ -162,7 +162,7 @@ public class MPSNNCompare extends MPSCNNArithmetic {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   comparisonType
+     * [@property] comparisonType
      * <p>
      * The comparison type to use
      */
@@ -171,9 +171,9 @@ public class MPSNNCompare extends MPSCNNArithmetic {
     public native void setComparisonType(@NUInt long value);
 
     /**
-     * [@property]   threshold
+     * [@property] threshold
      * <p>
-     * The threshold to use when comparing for equality.  Two values will
+     * The threshold to use when comparing for equality. Two values will
      * be considered to be equal if the absolute value of their difference
      * is less than, or equal, to the specified threshold:
      * result = |b - a| <= threshold
@@ -201,9 +201,9 @@ public class MPSNNCompare extends MPSCNNArithmetic {
     }
 
     /**
-     * [@property]   threshold
+     * [@property] threshold
      * <p>
-     * The threshold to use when comparing for equality.  Two values will
+     * The threshold to use when comparing for equality. Two values will
      * be considered to be equal if the absolute value of their difference
      * is less than, or equal, to the specified threshold:
      * result = |b - a| <= threshold

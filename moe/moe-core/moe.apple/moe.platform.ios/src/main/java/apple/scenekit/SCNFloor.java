@@ -257,7 +257,8 @@ public class SCNFloor extends SCNGeometry {
      * <p>
      * Specifies the reflectivity of the floor. Animatable.
      * <p>
-     * If the value is greater than zero then the surface will reflect other objects in the scene. The default value is 0.25.
+     * If the value is greater than zero then the surface will reflect other objects in the scene. The default value is
+     * 0.25.
      */
     @Generated
     @Selector("reflectivity")
@@ -323,7 +324,8 @@ public class SCNFloor extends SCNGeometry {
      * <p>
      * Specifies the reflectivity of the floor. Animatable.
      * <p>
-     * If the value is greater than zero then the surface will reflect other objects in the scene. The default value is 0.25.
+     * If the value is greater than zero then the surface will reflect other objects in the scene. The default value is
+     * 0.25.
      */
     @Generated
     @Selector("setReflectivity:")

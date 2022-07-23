@@ -128,7 +128,7 @@ public class AVCompositionTrackFormatDescriptionReplacement extends NSObject imp
     public static native AVCompositionTrackFormatDescriptionReplacement new_objc();
 
     /**
-     * [@property]       originalFormatDescription
+     * [@property] originalFormatDescription
      * <p>
      * The original format description.
      */
@@ -137,7 +137,7 @@ public class AVCompositionTrackFormatDescriptionReplacement extends NSObject imp
     public native CMFormatDescriptionRef originalFormatDescription();
 
     /**
-     * [@property]       replacementFormatDescription
+     * [@property] replacementFormatDescription
      * <p>
      * The replacement format description.
      */

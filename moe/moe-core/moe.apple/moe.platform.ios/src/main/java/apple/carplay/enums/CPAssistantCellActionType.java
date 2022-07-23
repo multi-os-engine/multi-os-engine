@@ -7,7 +7,8 @@ import org.moe.natj.general.ann.NInt;
  * Actions that Siri will perform when users select the assistant cell.
  * <p>
  * These actions require that your app supports the required SiriKit intents, and your app is of a supporting category.
- * For CarPlay audio apps, this is limited to INPlayMediaIntent. For CarPlay communication apps, this is INStartCallIntent.
+ * For CarPlay audio apps, this is limited to INPlayMediaIntent. For CarPlay communication apps, this is
+ * INStartCallIntent.
  */
 @Generated
 public final class CPAssistantCellActionType {

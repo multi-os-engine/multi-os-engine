@@ -86,7 +86,7 @@ public class MLCScatterLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   dimension
+     * [@property] dimension
      * <p>
      * The dimension along which to index
      */
@@ -142,9 +142,10 @@ public class MLCScatterLayer extends MLCLayer {
     public static native MLCScatterLayer new_objc();
 
     /**
-     * [@property]   reductionType
+     * [@property] reductionType
      * <p>
-     * The reduction type applied for all values in source tensor that are scattered to a specific location in the result tensor.
+     * The reduction type applied for all values in source tensor that are scattered to a specific location in the
+     * result tensor.
      * Must be: MLCReductionTypeNone or MLCReductionTypeSum.
      */
     @Generated

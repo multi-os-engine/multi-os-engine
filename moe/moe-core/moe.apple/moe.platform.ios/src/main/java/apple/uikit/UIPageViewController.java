@@ -177,7 +177,9 @@ public class UIPageViewController extends UIViewController {
     public native UIPageViewControllerDelegate delegate();
 
     /**
-     * An array of UIGestureRecognizers pre-configured to handle user interaction. Initially attached to a view in the UIPageViewController's hierarchy, they can be placed on an arbitrary view to change the region in which the page view controller will respond to user gestures.
+     * An array of UIGestureRecognizers pre-configured to handle user interaction. Initially attached to a view in the
+     * UIPageViewController's hierarchy, they can be placed on an arbitrary view to change the region in which the page
+     * view controller will respond to user gestures.
      * Only populated if transition style is 'UIPageViewControllerTransitionStylePageCurl'.
      */
     @Generated
@@ -259,8 +261,11 @@ public class UIPageViewController extends UIViewController {
     }
 
     /**
-     * Set visible view controllers, optionally with animation. Array should only include view controllers that will be visible after the animation has completed.
-     * For transition style 'UIPageViewControllerTransitionStylePageCurl', if 'doubleSided' is 'YES' and the spine location is not 'UIPageViewControllerSpineLocationMid', two view controllers must be included, as the latter view controller is used as the back.
+     * Set visible view controllers, optionally with animation. Array should only include view controllers that will be
+     * visible after the animation has completed.
+     * For transition style 'UIPageViewControllerTransitionStylePageCurl', if 'doubleSided' is 'YES' and the spine
+     * location is not 'UIPageViewControllerSpineLocationMid', two view controllers must be included, as the latter view
+     * controller is used as the back.
      */
     @Generated
     @Selector("setViewControllers:direction:animated:completion:")
@@ -269,7 +274,8 @@ public class UIPageViewController extends UIViewController {
             @ObjCBlock(name = "call_setViewControllersDirectionAnimatedCompletion") Block_setViewControllersDirectionAnimatedCompletion completion);
 
     /**
-     * If transition style is 'UIPageViewControllerTransitionStylePageCurl', default is 'UIPageViewControllerSpineLocationMin', otherwise 'UIPageViewControllerSpineLocationNone'.
+     * If transition style is 'UIPageViewControllerTransitionStylePageCurl', default is
+     * 'UIPageViewControllerSpineLocationMin', otherwise 'UIPageViewControllerSpineLocationNone'.
      */
     @Generated
     @Selector("spineLocation")

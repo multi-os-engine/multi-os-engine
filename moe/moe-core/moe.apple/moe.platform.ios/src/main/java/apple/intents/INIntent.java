@@ -201,42 +201,48 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
     public native INImage imageForParameterNamed(String parameterName);
 
     /**
-     * The image most relevant for display to the receiver, accounting for both parameter-associated images and other images defined in the receiver.
+     * The image most relevant for display to the receiver, accounting for both parameter-associated images and other
+     * images defined in the receiver.
      */
     @Generated
     @Selector("keyImage")
     public native INImage keyImage();
 
     /**
-     * Set an image associated with a parameter on the receiver. This image will be used in display of the receiver throughout the system.
+     * Set an image associated with a parameter on the receiver. This image will be used in display of the receiver
+     * throughout the system.
      */
     @Generated
     @Selector("setImage:forParameterNamed:")
     public native void setImageForParameterNamed(INImage image, String parameterName);
 
     /**
-     * A human-understandable string that can be shown to the user as an suggestion of the phrase they might want to use when adding intent as a shortcut to Siri.
+     * A human-understandable string that can be shown to the user as an suggestion of the phrase they might want to use
+     * when adding intent as a shortcut to Siri.
      */
     @Generated
     @Selector("setSuggestedInvocationPhrase:")
     public native void setSuggestedInvocationPhrase(String value);
 
     /**
-     * A human-understandable string that can be shown to the user as an suggestion of the phrase they might want to use when adding intent as a shortcut to Siri.
+     * A human-understandable string that can be shown to the user as an suggestion of the phrase they might want to use
+     * when adding intent as a shortcut to Siri.
      */
     @Generated
     @Selector("suggestedInvocationPhrase")
     public native String suggestedInvocationPhrase();
 
     /**
-     * Defines additional contexts in which this intent is relevant to be suggested to the user. Applies to intents donated using INInteraction or set as suggested using INVoiceShortcutCenter.
+     * Defines additional contexts in which this intent is relevant to be suggested to the user. Applies to intents
+     * donated using INInteraction or set as suggested using INVoiceShortcutCenter.
      */
     @Generated
     @Selector("setShortcutAvailability:")
     public native void setShortcutAvailability(@NUInt long value);
 
     /**
-     * Defines additional contexts in which this intent is relevant to be suggested to the user. Applies to intents donated using INInteraction or set as suggested using INVoiceShortcutCenter.
+     * Defines additional contexts in which this intent is relevant to be suggested to the user. Applies to intents
+     * donated using INInteraction or set as suggested using INVoiceShortcutCenter.
      */
     @Generated
     @Selector("shortcutAvailability")

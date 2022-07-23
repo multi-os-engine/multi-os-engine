@@ -104,7 +104,9 @@ public class TKTokenKeychainCertificate extends TKTokenKeychainItem {
     public native TKTokenKeychainCertificate init();
 
     /**
-     * initialize TKTokenKeychainCertificate with data from SecCertificateRef.  Use SecCertificateCreateWithData to obtain SecCertificateRef.  @c constraints property is initialized indicating that reading of certificate is always allowed, all other operations are disallowed.
+     * initialize TKTokenKeychainCertificate with data from SecCertificateRef. Use SecCertificateCreateWithData to
+     * obtain SecCertificateRef. @c constraints property is initialized indicating that reading of certificate is always
+     * allowed, all other operations are disallowed.
      */
     @Generated
     @Selector("initWithCertificate:objectID:")

@@ -143,7 +143,8 @@ public class VNBarcodeObservation extends VNRectangleObservation {
     public static native VNBarcodeObservation observationWithBoundingBox(@ByValue CGRect boundingBox);
 
     /**
-     * The string representation of the barcode's payload.  Depending on the symbology of the barcode and/or the payload data itself, a string representation of the payload may not be available.
+     * The string representation of the barcode's payload. Depending on the symbology of the barcode and/or the payload
+     * data itself, a string representation of the payload may not be available.
      */
     @Generated
     @Selector("payloadStringValue")

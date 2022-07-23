@@ -214,7 +214,7 @@ public class HKSampleType extends HKObjectType {
     public static native HKClinicalType clinicalTypeForIdentifier(String identifier);
 
     /**
-     * [@property]      isMaximumDurationRestricted
+     * [@property] isMaximumDurationRestricted
      * <p>
      * Returns YES if the start and end date for samples of this type are restricted by a maximum duration.
      */
@@ -223,7 +223,7 @@ public class HKSampleType extends HKObjectType {
     public native boolean isMaximumDurationRestricted();
 
     /**
-     * [@property]      isMinimumDurationRestricted
+     * [@property] isMinimumDurationRestricted
      * <p>
      * Returns YES if the start and end date for samples of this type are restricted by a minimum duration.
      */
@@ -232,7 +232,7 @@ public class HKSampleType extends HKObjectType {
     public native boolean isMinimumDurationRestricted();
 
     /**
-     * [@property]      maximumAllowedDuration
+     * [@property] maximumAllowedDuration
      * <p>
      * When the duration is restricted for samples of this type, returns the maximum duration allowed,
      * calculated as the difference between end and start dates.
@@ -244,7 +244,7 @@ public class HKSampleType extends HKObjectType {
     public native double maximumAllowedDuration();
 
     /**
-     * [@property]      minimumAllowedDuration
+     * [@property] minimumAllowedDuration
      * <p>
      * When the duration is restricted for samples of this type, returns the minimum duration allowed,
      * calculated as the difference between end and start dates.
@@ -260,9 +260,10 @@ public class HKSampleType extends HKObjectType {
     public static native HKElectrocardiogramType electrocardiogramType();
 
     /**
-     * [@property]      allowsRecalibrationForEstimates
+     * [@property] allowsRecalibrationForEstimates
      * <p>
-     * Returns YES if first-party samples of this type are produced using a prediction algorithm, and that algorithm supports recalibration. To recalibrate the
+     * Returns YES if first-party samples of this type are produced using a prediction algorithm, and that algorithm
+     * supports recalibration. To recalibrate the
      * estimates for a sample type, see -[HKHealthStore recalibrateEstimatesForSampleType:atDate:completion:]
      */
     @Generated

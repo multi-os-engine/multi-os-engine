@@ -84,7 +84,7 @@ public class MXAppRunTimeMetric extends MXMetric {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]      cumulativeBackgroundAudioTime
+     * [@property] cumulativeBackgroundAudioTime
      * <p>
      * Cumulative time the application spent running in the background to play audio
      * <p>
@@ -95,7 +95,7 @@ public class MXAppRunTimeMetric extends MXMetric {
     public native NSMeasurement<NSUnitDuration> cumulativeBackgroundAudioTime();
 
     /**
-     * [@property]      cumulativeBackgroundLocationTime
+     * [@property] cumulativeBackgroundLocationTime
      * <p>
      * Cumulative time the application spent running in the background to acquire or process location.
      * <p>
@@ -106,7 +106,7 @@ public class MXAppRunTimeMetric extends MXMetric {
     public native NSMeasurement<NSUnitDuration> cumulativeBackgroundLocationTime();
 
     /**
-     * [@property]      cumulativeBackgroundTime
+     * [@property] cumulativeBackgroundTime
      * <p>
      * Cumulative application background time.
      * <p>
@@ -119,7 +119,7 @@ public class MXAppRunTimeMetric extends MXMetric {
     public native NSMeasurement<NSUnitDuration> cumulativeBackgroundTime();
 
     /**
-     * [@property]      cumulativeForegroundTime
+     * [@property] cumulativeForegroundTime
      * <p>
      * Cumulative application foreground time.
      * <p>

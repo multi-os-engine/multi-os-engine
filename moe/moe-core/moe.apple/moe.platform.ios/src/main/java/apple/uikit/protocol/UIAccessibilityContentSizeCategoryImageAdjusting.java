@@ -8,7 +8,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * These should be used in conjunction with the "Preserve vector data" checkbox for an asset catalog asset, to allow smooth scaling of symbolic glyphs.
+ * These should be used in conjunction with the "Preserve vector data" checkbox for an asset catalog asset, to allow
+ * smooth scaling of symbolic glyphs.
  */
 @Generated
 @Library("UIKit")
@@ -16,14 +17,16 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("UIAccessibilityContentSizeCategoryImageAdjusting")
 public interface UIAccessibilityContentSizeCategoryImageAdjusting {
     /**
-     * When this is equal to YES, the receiver's intrinsic size will increase for users who prefer an accessibility content size category.
+     * When this is equal to YES, the receiver's intrinsic size will increase for users who prefer an accessibility
+     * content size category.
      */
     @Generated
     @Selector("adjustsImageSizeForAccessibilityContentSizeCategory")
     boolean adjustsImageSizeForAccessibilityContentSizeCategory();
 
     /**
-     * When this is equal to YES, the receiver's intrinsic size will increase for users who prefer an accessibility content size category.
+     * When this is equal to YES, the receiver's intrinsic size will increase for users who prefer an accessibility
+     * content size category.
      */
     @Generated
     @Selector("setAdjustsImageSizeForAccessibilityContentSizeCategory:")

@@ -45,7 +45,11 @@ public final class PHAuthorizationStatus {
     }
 
     /**
-     * User has authorized this application for limited photo library access. Add PHPhotoLibraryPreventAutomaticLimitedAccessAlert = YES to the application's Info.plist to prevent the automatic alert to update the users limited library selection. Use -[PHPhotoLibrary(PhotosUISupport) presentLimitedLibraryPickerFromViewController:] from PhotosUI/PHPhotoLibrary+PhotosUISupport.h to manually present the limited library picker.
+     * User has authorized this application for limited photo library access. Add
+     * PHPhotoLibraryPreventAutomaticLimitedAccessAlert = YES to the application's Info.plist to prevent the automatic
+     * alert to update the users limited library selection. Use -[PHPhotoLibrary(PhotosUISupport)
+     * presentLimitedLibraryPickerFromViewController:] from PhotosUI/PHPhotoLibrary+PhotosUISupport.h to manually
+     * present the limited library picker.
      */
     @Generated @NInt public static final long Limited = 0x0000000000000004L;
 }

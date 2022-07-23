@@ -106,7 +106,7 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
     public static native String description_static();
 
     /**
-     * [@property]   epsilon
+     * [@property] epsilon
      * <p>
      * The epsilon value used to bias the variance when normalizing.
      */
@@ -133,7 +133,7 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -236,7 +236,7 @@ public class MPSCNNInstanceNormalization extends MPSCNNKernel {
             MPSImage sourceImage, NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
 
     /**
-     * [@property]   epsilon
+     * [@property] epsilon
      * <p>
      * The epsilon value used to bias the variance when normalizing.
      */

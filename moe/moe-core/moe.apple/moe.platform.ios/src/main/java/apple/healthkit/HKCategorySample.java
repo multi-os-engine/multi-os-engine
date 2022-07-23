@@ -230,7 +230,7 @@ public class HKCategorySample extends HKSample {
     }
 
     /**
-     * [@property]   value
+     * [@property] value
      * <p>
      * The preferred enum for the value is determined by the receiver's category type.
      */

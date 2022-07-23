@@ -15,7 +15,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A class  that allocates new MPSImage or MPSTemporaryImage
+ * A class that allocates new MPSImage or MPSTemporaryImage
  * <p>
  * Sometimes it is prohibitively costly for MPS to figure out how
  * big an image should be in advance. In addition, you may want to
@@ -31,9 +31,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Example:
  * [@code]
  * // Note: MPSImageDefaultAllocator is already provided
- * //       by the framework under that name.  It is provided here
- * //       as sample code for writing your own variant.
- * -(MPSImage * __nonnull)  imageForCommandBuffer: (__nonnull id <MTLCommandBuffer>) cmdBuf
+ * // by the framework under that name. It is provided here
+ * // as sample code for writing your own variant.
+ * -(MPSImage * __nonnull) imageForCommandBuffer: (__nonnull id <MTLCommandBuffer>) cmdBuf
  * imageDescriptor: (MPSImageDescriptor * __nonnull) descriptor
  * kernel: (MPSKernel * __nonnull) kernel
  * {
@@ -58,7 +58,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * -(nullable instancetype) initWithCoder: (NSCoder*__nonnull) aDecoder
  * {
- * self =  [super initWithCoder: aDecoder ];
+ * self = [super initWithCoder: aDecoder ];
  * if( nil == self )
  * return self;
  * <p>
@@ -100,7 +100,8 @@ public interface MPSImageAllocator extends NSSecureCoding {
      * @param kernel     The kernel that will overwrite the image returned by the filter.
      *                   Note that the MPS implementations of this protocol don't need
      *                   this field. It is provided for your convenience.
-     * @return A valid MPSImage or MPSTemporaryImage. It will be automatically released when the command buffer completes.
+     * @return A valid MPSImage or MPSTemporaryImage. It will be automatically released when the command buffer
+     *         completes.
      */
     @Generated
     @Selector("imageForCommandBuffer:imageDescriptor:kernel:")

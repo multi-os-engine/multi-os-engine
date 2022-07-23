@@ -43,7 +43,10 @@ public class TKSmartCardToken extends TKToken {
     }
 
     /**
-     * This is AID which is specified in extension's plist NSExtensionAttributes as @c com.apple.ctk.aid attribute. If the attribute specifies array of multiple AIDs, this parameter represents AID which was found on the card and is already preselected.  If @c com.apple.ctk.aid is not present, no application is automatically preselected and value of this property is nil.
+     * This is AID which is specified in extension's plist NSExtensionAttributes as @c com.apple.ctk.aid attribute. If
+     * the attribute specifies array of multiple AIDs, this parameter represents AID which was found on the card and is
+     * already preselected. If @c com.apple.ctk.aid is not present, no application is automatically preselected and
+     * value of this property is nil.
      */
     @Generated
     @Selector("AID")
@@ -107,7 +110,8 @@ public class TKSmartCardToken extends TKToken {
      *
      * @param smartCard   TKSmartCard instance representing connection to SmartCard on which the intance should operate.
      * @param AID         ISO7816-4 application ID which is preselected on the card.
-     * @param instanceID  Unique, persistent identifier of this token.  This is typically implemented by some kind of SmartCard serial number.
+     * @param instanceID  Unique, persistent identifier of this token. This is typically implemented by some kind of
+     *                    SmartCard serial number.
      * @param tokenDriver associated driver which initiated creation of this token.
      */
     @Generated

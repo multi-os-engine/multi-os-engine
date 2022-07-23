@@ -28,7 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@interface] NEAppPushProvider
  * <p>
- * The NEAppPushProvider class declares a programmatic interface to manage a life cycle of app push provider. It also allows the provider to handle outgoing
+ * The NEAppPushProvider class declares a programmatic interface to manage a life cycle of app push provider. It also
+ * allows the provider to handle outgoing
  * communication message from the containing app, and pass incoming call message to the containing app.
  * NEAppPushProvider is part of NetworkExtension.framework
  */
@@ -93,7 +94,8 @@ public class NEAppPushProvider extends NEProvider {
     /**
      * handleTimerEvent
      * <p>
-     * This method is called by the framework periodically after every 60 seconds. Subclasses must override this method to perform necessary tasks.
+     * This method is called by the framework periodically after every 60 seconds. Subclasses must override this method
+     * to perform necessary tasks.
      */
     @Generated
     @Selector("handleTimerEvent")
@@ -137,7 +139,8 @@ public class NEAppPushProvider extends NEProvider {
     /**
      * [@property] providerConfiguration
      * <p>
-     * A dictionary containing current vendor-specific configuration parameters. This dictionary is provided by NEAppPushManager. Use KVO to watch for changes.
+     * A dictionary containing current vendor-specific configuration parameters. This dictionary is provided by
+     * NEAppPushManager. Use KVO to watch for changes.
      */
     @Generated
     @Selector("providerConfiguration")
@@ -148,7 +151,8 @@ public class NEAppPushProvider extends NEProvider {
      * <p>
      * This function is called by the provider when it determines incoming call on the conection.
      *
-     * @param userInfo A dictionary of custom information associated with the incoming call. This dictionary is passed to containg app as-is.
+     * @param userInfo A dictionary of custom information associated with the incoming call. This dictionary is passed
+     *                 to containg app as-is.
      */
     @Generated
     @Selector("reportIncomingCallWithUserInfo:")
@@ -169,10 +173,13 @@ public class NEAppPushProvider extends NEProvider {
     /**
      * startWithCompletionHandler:completionHandler:
      * <p>
-     * This method is called by the framework when the provider is started. Subclasses must override this method to create a connection with its server.
+     * This method is called by the framework when the provider is started. Subclasses must override this method to
+     * create a connection with its server.
      *
-     * @param completionHandler A block that must be called when the provider establishes a connection with the server. If the providers fails to create a connection,
-     *                          the subclass' implementation of this method must pass a non-nil NSError object to this block. A value of nil passed to the completion handler indicates that the connection
+     * @param completionHandler A block that must be called when the provider establishes a connection with the server.
+     *                          If the providers fails to create a connection,
+     *                          the subclass' implementation of this method must pass a non-nil NSError object to this
+     *                          block. A value of nil passed to the completion handler indicates that the connection
      *                          was successfully created.
      */
     @Generated
@@ -190,7 +197,8 @@ public class NEAppPushProvider extends NEProvider {
     /**
      * stopWithReason:reason:completionHandler:
      * <p>
-     * This method is called by the framework when the app push provider needs to be stopped. Subclasses must override this method to perform necessary tasks.
+     * This method is called by the framework when the app push provider needs to be stopped. Subclasses must override
+     * this method to perform necessary tasks.
      *
      * @param reason            An NEProviderStopReason indicating why the provider was stopped.
      * @param completionHandler A block that must be called when the provider is completely stopped.
@@ -219,7 +227,8 @@ public class NEAppPushProvider extends NEProvider {
     /**
      * start
      * <p>
-     * This method is called by the framework when the provider is started. Subclasses must override this method to create a connection with its server.
+     * This method is called by the framework when the provider is started. Subclasses must override this method to
+     * create a connection with its server.
      */
     @Generated
     @Selector("start")

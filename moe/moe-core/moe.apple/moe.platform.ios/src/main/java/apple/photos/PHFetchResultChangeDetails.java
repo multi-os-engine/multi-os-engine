@@ -172,7 +172,8 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     public native NSArray<? extends PHObject> changedObjects();
 
     /**
-     * Enumerates the indexes of the moved items, relative to the 'before' state of the fetch result after applying the removedIndexes and insertedIndexes
+     * Enumerates the indexes of the moved items, relative to the 'before' state of the fetch result after applying the
+     * removedIndexes and insertedIndexes
      */
     @Generated
     @Selector("enumerateMovesWithBlock:")
@@ -187,7 +188,8 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     public native PHFetchResult<? extends PHObject> fetchResultAfterChanges();
 
     /**
-     * fetch result with the state of the fetched objects before this change (returns the fetch result passed in to changeDetailsForFetchResult:)
+     * fetch result with the state of the fetched objects before this change (returns the fetch result passed in to
+     * changeDetailsForFetchResult:)
      */
     @Generated
     @Selector("fetchResultBeforeChanges")
@@ -195,7 +197,8 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
 
     /**
      * YES if the changes to this fetch result are described by the removed/inserted/changed details.
-     * NO indicates that the scope of changes were too large and UI clients should do a full reload, incremental changes could not be provided
+     * NO indicates that the scope of changes were too large and UI clients should do a full reload, incremental changes
+     * could not be provided
      */
     @Generated
     @Selector("hasIncrementalChanges")
@@ -214,7 +217,8 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     public native PHFetchResultChangeDetails<?> init();
 
     /**
-     * The indexes of the inserted items, relative to the 'before' state of the fetch result after applying the removedIndexes
+     * The indexes of the inserted items, relative to the 'before' state of the fetch result after applying the
+     * removedIndexes
      * returns nil if hasIncrementalChanges is NO
      */
     @Generated

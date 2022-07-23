@@ -27,7 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@interface] NEDNSSettingsManager
  * <p>
- * The NEDNSSettingsManager class declares the programmatic interface for an object that manages DNS settings configurations.
+ * The NEDNSSettingsManager class declares the programmatic interface for an object that manages DNS settings
+ * configurations.
  * <p>
  * NEDNSSettingsManager declares methods and properties for configuring and controlling DNS settings on the system.
  * <p>
@@ -125,7 +126,8 @@ public class NEDNSSettingsManager extends NSObject {
     /**
      * [@property] enabled
      * <p>
-     * Checks the enabled status of the DNS settings. DNS settings must be enabled by the user in Settings or System Preferences.
+     * Checks the enabled status of the DNS settings. DNS settings must be enabled by the user in Settings or System
+     * Preferences.
      */
     @Generated
     @Selector("isEnabled")
@@ -144,7 +146,8 @@ public class NEDNSSettingsManager extends NSObject {
      * <p>
      * This function loads the current DNS settings configuration from the caller's DNS settings preferences.
      *
-     * @param completionHandler A block that will be called when the load operation is completed. The NSError passed to this block will be nil if the load operation succeeded, non-nil otherwise.
+     * @param completionHandler A block that will be called when the load operation is completed. The NSError passed to
+     *                          this block will be nil if the load operation succeeded, non-nil otherwise.
      */
     @Generated
     @Selector("loadFromPreferencesWithCompletionHandler:")
@@ -175,7 +178,8 @@ public class NEDNSSettingsManager extends NSObject {
     /**
      * [@property] onDemandRules
      * <p>
-     * An array of NEOnDemandRule objects. If nil, the associated DNS settings will always apply. If non-nil, the array describes the networks on which the DNS configuration should take effect or not.
+     * An array of NEOnDemandRule objects. If nil, the associated DNS settings will always apply. If non-nil, the array
+     * describes the networks on which the DNS configuration should take effect or not.
      */
     @Generated
     @Selector("onDemandRules")
@@ -184,9 +188,11 @@ public class NEDNSSettingsManager extends NSObject {
     /**
      * removeFromPreferencesWithCompletionHandler:
      * <p>
-     * This function removes the DNS settings configuration from the caller's DNS settings preferences. If the DNS settings are enabled, the DNS settings becomes disabled.
+     * This function removes the DNS settings configuration from the caller's DNS settings preferences. If the DNS
+     * settings are enabled, the DNS settings becomes disabled.
      *
-     * @param completionHandler A block that will be called when the remove operation is completed. The NSError passed to this block will be nil if the remove operation succeeded, non-nil otherwise.
+     * @param completionHandler A block that will be called when the remove operation is completed. The NSError passed
+     *                          to this block will be nil if the remove operation succeeded, non-nil otherwise.
      */
     @Generated
     @Selector("removeFromPreferencesWithCompletionHandler:")
@@ -211,9 +217,11 @@ public class NEDNSSettingsManager extends NSObject {
     /**
      * saveToPreferencesWithCompletionHandler:
      * <p>
-     * This function saves the DNS settingsconfiguration in the caller's DNS settings preferences. If the DNS settings are enabled, they will become active.
+     * This function saves the DNS settingsconfiguration in the caller's DNS settings preferences. If the DNS settings
+     * are enabled, they will become active.
      *
-     * @param completionHandler A block that will be called when the save operation is completed. The NSError passed to this block will be nil if the save operation succeeded, non-nil otherwise.
+     * @param completionHandler A block that will be called when the save operation is completed. The NSError passed to
+     *                          this block will be nil if the save operation succeeded, non-nil otherwise.
      */
     @Generated
     @Selector("saveToPreferencesWithCompletionHandler:")
@@ -248,7 +256,8 @@ public class NEDNSSettingsManager extends NSObject {
     /**
      * [@property] onDemandRules
      * <p>
-     * An array of NEOnDemandRule objects. If nil, the associated DNS settings will always apply. If non-nil, the array describes the networks on which the DNS configuration should take effect or not.
+     * An array of NEOnDemandRule objects. If nil, the associated DNS settings will always apply. If non-nil, the array
+     * describes the networks on which the DNS configuration should take effect or not.
      */
     @Generated
     @Selector("setOnDemandRules:")

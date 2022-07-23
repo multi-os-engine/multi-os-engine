@@ -45,8 +45,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * - The current set of rules.
  * - The current set of facts.
  * <p>
- * Each time a fact is added to the system, the set of rules are evaluated in order and their actions executed in the system if their predicates are true.
- * Rules can be fuzzy, allowing predicates and facts to be asserted to a degree of confidence instead of just boolean on/off.
+ * Each time a fact is added to the system, the set of rules are evaluated in order and their actions executed in the
+ * system if their predicates are true.
+ * Rules can be fuzzy, allowing predicates and facts to be asserted to a degree of confidence instead of just boolean
+ * on/off.
  * <p>
  * The facts can be any kind of objects as long as they correctly determine equality using isEqual:
  * The simplest approach is to use strings or dictionaries as they provide the most flexibility in defining
@@ -299,7 +301,7 @@ public class GKRuleSystem extends NSObject {
     public native float minimumGradeForFacts(NSArray<?> facts);
 
     /**
-     * Removes all rules from the system.  This also removes them from the agenda and executed sets.
+     * Removes all rules from the system. This also removes them from the agenda and executed sets.
      */
     @Generated
     @Selector("removeAllRules")

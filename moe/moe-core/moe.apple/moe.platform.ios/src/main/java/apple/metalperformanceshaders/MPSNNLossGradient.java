@@ -82,7 +82,7 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]   computeLabelGradients
+     * [@property] computeLabelGradients
      * <p>
      * The computeLabelGradients property is used to control whether the loss gradient
      * filter computes gradients for the primary (predictions) or secondary (labels) source image from the forward pass.
@@ -200,7 +200,7 @@ public class MPSNNLossGradient extends MPSCNNBinaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   computeLabelGradients
+     * [@property] computeLabelGradients
      * <p>
      * The computeLabelGradients property is used to control whether the loss gradient
      * filter computes gradients for the primary (predictions) or secondary (labels) source image from the forward pass.

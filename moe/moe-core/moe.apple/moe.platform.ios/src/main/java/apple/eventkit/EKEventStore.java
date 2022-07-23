@@ -253,7 +253,7 @@ public class EKEventStore extends NSObject {
      * <p>
      * If you use saveCalendar/saveEvent/removeCalendar/removeEvent, etc. and you pass NO to their
      * parameter, you are batching changes for a later commit. This method does that commit. This
-     * allows you to save the database only once for many additions or changes.  If you pass
+     * allows you to save the database only once for many additions or changes. If you pass
      * YES to methods' commit parameter, then you don't need to call this method.
      * <p>
      * This method will return YES as long as nothing went awry, even if nothing was actually
@@ -266,7 +266,7 @@ public class EKEventStore extends NSObject {
     public native boolean commit(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * [@property]   defaultCalendarForNewEvents
+     * [@property] defaultCalendarForNewEvents
      * <p>
      * Returns the calendar that events should be added to by default.
      * <p>
@@ -310,7 +310,7 @@ public class EKEventStore extends NSObject {
             @ObjCBlock(name = "call_enumerateEventsMatchingPredicateUsingBlock") Block_enumerateEventsMatchingPredicateUsingBlock block);
 
     /**
-     * [@property]   eventStoreIdentifier
+     * [@property] eventStoreIdentifier
      * <p>
      * Returns a unique identifier string representing this calendar store.
      */
@@ -445,7 +445,7 @@ public class EKEventStore extends NSObject {
      * Cause a sync to potentially occur taking into account the necessity of it.
      * <p>
      * You can call this method to pull new data from remote sources.
-     * This only updates the event store's data.  If you want to update your objects after
+     * This only updates the event store's data. If you want to update your objects after
      * refreshing the sources, you should call refresh on each of them afterwards.
      * On iOS, this sync only occurs if deemed necessary.
      * On OS X, this will occur regardless of necessity, but may change in a future release to match the iOS behavior.
@@ -657,7 +657,7 @@ public class EKEventStore extends NSObject {
     public native EKSource sourceWithIdentifier(String identifier);
 
     /**
-     * [@property]   sources
+     * [@property] sources
      * <p>
      * Returns an unordered array of sources.
      */
@@ -687,7 +687,7 @@ public class EKEventStore extends NSObject {
     }
 
     /**
-     * [@property]   delegateSources
+     * [@property] delegateSources
      * <p>
      * Returns an unordered array of sources for all available delegates.
      * <p>

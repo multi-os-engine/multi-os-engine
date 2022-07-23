@@ -36,7 +36,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("UIAdaptivePresentationControllerDelegate")
 public interface UIAdaptivePresentationControllerDelegate {
     /**
-     * For iOS 8.0, the only supported adaptive presentation styles are UIModalPresentationFullScreen and UIModalPresentationOverFullScreen.
+     * For iOS 8.0, the only supported adaptive presentation styles are UIModalPresentationFullScreen and
+     * UIModalPresentationOverFullScreen.
      */
     @Generated
     @IsOptional
@@ -70,7 +71,8 @@ public interface UIAdaptivePresentationControllerDelegate {
     }
 
     /**
-     * If there is no adaptation happening and an original style is used UIModalPresentationNone will be passed as an argument.
+     * If there is no adaptation happening and an original style is used UIModalPresentationNone will be passed as an
+     * argument.
      */
     @Generated
     @IsOptional
@@ -82,8 +84,11 @@ public interface UIAdaptivePresentationControllerDelegate {
     }
 
     /**
-     * Called on the delegate when the user attempts to dismiss the presentation, but user-initiated dismissal is prevented because the presentedViewController isModalInPresentation or presentationControllerShouldDismiss: returned NO.
-     * When this method is called, it is recommended that the user be informed why they cannot dismiss the presentation, such as by presenting an instance of UIAlertController.
+     * Called on the delegate when the user attempts to dismiss the presentation, but user-initiated dismissal is
+     * prevented because the presentedViewController isModalInPresentation or presentationControllerShouldDismiss:
+     * returned NO.
+     * When this method is called, it is recommended that the user be informed why they cannot dismiss the presentation,
+     * such as by presenting an instance of UIAlertController.
      */
     @Generated
     @IsOptional
@@ -93,7 +98,8 @@ public interface UIAdaptivePresentationControllerDelegate {
     }
 
     /**
-     * Called on the delegate when the user has taken action to dismiss the presentation successfully, after all animations are finished.
+     * Called on the delegate when the user has taken action to dismiss the presentation successfully, after all
+     * animations are finished.
      * This is not called if the presentation is dismissed programatically.
      */
     @Generated
@@ -105,7 +111,8 @@ public interface UIAdaptivePresentationControllerDelegate {
 
     /**
      * Called on the delegate to determine if the presentation controller may dismiss in response to user action.
-     * This method may be called at any time, and may not necessarily be followed by presentationControllerWillDismiss: or presentationControllerDidDismiss:.
+     * This method may be called at any time, and may not necessarily be followed by presentationControllerWillDismiss:
+     * or presentationControllerDidDismiss:.
      * Any implementation of this method should be fast.
      * Return NO to prevent dismissal of the view controller.
      */
@@ -117,8 +124,10 @@ public interface UIAdaptivePresentationControllerDelegate {
     }
 
     /**
-     * Called on the delegate when the user has taken action to dismiss the presentation, before interaction or animations begin.
-     * Use this callback to setup alongside animations or interaction notifications with the presentingViewController's transitionCoordinator.
+     * Called on the delegate when the user has taken action to dismiss the presentation, before interaction or
+     * animations begin.
+     * Use this callback to setup alongside animations or interaction notifications with the presentingViewController's
+     * transitionCoordinator.
      * This is not called if the presentation is dismissed programatically.
      */
     @Generated
@@ -129,7 +138,8 @@ public interface UIAdaptivePresentationControllerDelegate {
     }
 
     /**
-     * Called during adaptation so the delegate may configure properties of the adaptive presentation controller before it is presented.
+     * Called during adaptation so the delegate may configure properties of the adaptive presentation controller before
+     * it is presented.
      */
     @Generated
     @IsOptional

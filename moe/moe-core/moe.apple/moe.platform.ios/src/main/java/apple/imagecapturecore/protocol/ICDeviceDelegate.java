@@ -12,7 +12,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * ------------------------------------------------------------------------------------------------------------- ICDeviceDelegate
+ * -------------------------------------------------------------------------------------------------------------
+ * ICDeviceDelegate
  * [@protocol] ICDeviceDelegate <NSObject>
  * <p>
  * A delegate of ICDevice must conform to ICDeviceDelegate protocol.
@@ -28,7 +29,8 @@ public interface ICDeviceDelegate {
      * <p>
      * This message is sent when a session is closed on a device.
      * <p>
-     * This message completes the process initiated by the message "requestCloseSession" sent to the device object. This message is also sent if the device module in control of the device ceases to control the device.
+     * This message completes the process initiated by the message "requestCloseSession" sent to the device object. This
+     * message is also sent if the device module in control of the device ceases to control the device.
      * [@note] Execution of the delegate callback will occur on the main thread.
      */
     @Generated
@@ -78,7 +80,8 @@ public interface ICDeviceDelegate {
      * <p>
      * This message is sent to the device delegate when status information is received from a device.
      * <p>
-     * The 'status' dictionary contains two keys, ICStatusNotificationKey and ICLocalizedStatusNotificationKey, which are defined above.  Status information keys are located in their respective ICDevice type class header.
+     * The 'status' dictionary contains two keys, ICStatusNotificationKey and ICLocalizedStatusNotificationKey, which
+     * are defined above. Status information keys are located in their respective ICDevice type class header.
      * [@note] Execution of the delegate callback will occur on the main thread.
      */
     @Generated

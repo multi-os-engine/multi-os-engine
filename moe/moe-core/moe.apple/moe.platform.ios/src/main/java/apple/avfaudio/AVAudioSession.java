@@ -75,8 +75,8 @@ public class AVAudioSession extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * Get the list of categories available on the device.  Certain categories may be unavailable on
-     * particular devices.  For example, AVAudioSessionCategoryRecord will not be available on devices
+     * Get the list of categories available on the device. Certain categories may be unavailable on
+     * particular devices. For example, AVAudioSessionCategoryRecord will not be available on devices
      * that have no support for audio input.
      */
     @Generated
@@ -95,8 +95,8 @@ public class AVAudioSession extends NSObject {
     public native NSArray<? extends AVAudioSessionPortDescription> availableInputs();
 
     /**
-     * Get the list of modes available on the device.  Certain modes may be unavailable on particular
-     * devices.  For example, AVAudioSessionModeVideoRecording will not be available on devices that
+     * Get the list of modes available on the device. Certain modes may be unavailable on particular
+     * devices. For example, AVAudioSessionModeVideoRecording will not be available on devices that
      * have no support for recording video.
      */
     @Generated
@@ -150,7 +150,7 @@ public class AVAudioSession extends NSObject {
     public native long currentHardwareOutputNumberOfChannels();
 
     /**
-     * deprecated.  Use the corresponding properties without "Hardware" in their names.
+     * deprecated. Use the corresponding properties without "Hardware" in their names.
      */
     @Generated
     @Deprecated
@@ -192,7 +192,7 @@ public class AVAudioSession extends NSObject {
     public native AVAudioSession init();
 
     /**
-     * Obtain the currently selected input data source.  Will be nil if no data sources are available.
+     * Obtain the currently selected input data source. Will be nil if no data sources are available.
      */
     @Generated
     @Selector("inputDataSource")
@@ -245,7 +245,8 @@ public class AVAudioSession extends NSObject {
     public native long inputNumberOfChannels();
 
     /**
-     * Describes the orientation of the input data source (valid for the built-in mic input data source when a stereo polar pattern is selected).
+     * Describes the orientation of the input data source (valid for the built-in mic input data source when a stereo
+     * polar pattern is selected).
      */
     @Generated
     @Selector("inputOrientation")
@@ -273,7 +274,7 @@ public class AVAudioSession extends NSObject {
     public native boolean isInputAvailable();
 
     /**
-     * True when audio input gain is available.  Some input ports may not provide the ability to set the
+     * True when audio input gain is available. Some input ports may not provide the ability to set the
      * input gain, so check this value before attempting to set input gain.
      */
     @Generated
@@ -331,7 +332,7 @@ public class AVAudioSession extends NSObject {
     public static native AVAudioSession new_objc();
 
     /**
-     * Obtain the currently selected output data source.  Will be nil if no data sources are available.
+     * Obtain the currently selected output data source. Will be nil if no data sources are available.
      */
     @Generated
     @Selector("outputDataSource")
@@ -390,7 +391,7 @@ public class AVAudioSession extends NSObject {
     public native double preferredIOBufferDuration();
 
     /**
-     * Get the preferred input port.  Will be nil if no preference has been set.
+     * Get the preferred input port. Will be nil if no preference has been set.
      */
     @Generated
     @Selector("preferredInput")
@@ -422,12 +423,16 @@ public class AVAudioSession extends NSObject {
     /**
      * prepareRouteSelectionForPlaybackWithCompletionHandler:
      * <p>
-     * A call to this method is an indication that playback is about to start. This gives the receiver an opportunity to prompt the user to pick an output destination if necessary.
-     * The receiver will only prompt if the audio session has been configured with a long-form video route sharing policy.
+     * A call to this method is an indication that playback is about to start. This gives the receiver an opportunity to
+     * prompt the user to pick an output destination if necessary.
+     * The receiver will only prompt if the audio session has been configured with a long-form video route sharing
+     * policy.
      * <p>
-     * Presenting playback UI (e.g. AVPlayerViewController) and commencing playback should be performed in the completionHandler.
+     * Presenting playback UI (e.g. AVPlayerViewController) and commencing playback should be performed in the
+     * completionHandler.
      *
-     * @param        completionHandler Once any potential routing is complete, the completion handler is called with the selected route type and with a BOOL indicating whether playback should begin or not.
+     * @param completionHandler Once any potential routing is complete, the completion handler is called with the
+     *                          selected route type and with a BOOL indicating whether playback should begin or not.
      */
     @Generated
     @Selector("prepareRouteSelectionForPlaybackWithCompletionHandler:")
@@ -465,8 +470,8 @@ public class AVAudioSession extends NSObject {
      * Checks to see if calling process has permission to record audio.
      * <p>
      * The 'response' block will be called immediately if permission has already been granted or
-     * denied.  Otherwise, it presents a dialog to notify the user and allow them to choose, and calls
-     * the block once the UI has been dismissed.  'granted' indicates whether permission has been
+     * denied. Otherwise, it presents a dialog to notify the user and allow them to choose, and calls
+     * the block once the UI has been dismissed. 'granted' indicates whether permission has been
      * granted. Note that the block may be called in a different thread context.
      */
     @Generated
@@ -566,7 +571,8 @@ public class AVAudioSession extends NSObject {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
-     * Set allowHapticsAndSystemSoundsDuringRecording to YES in order to allow system sounds and haptics to play while the session is actively using audio input.
+     * Set allowHapticsAndSystemSoundsDuringRecording to YES in order to allow system sounds and haptics to play while
+     * the session is actively using audio input.
      * Default value is NO.
      */
     @Generated
@@ -647,11 +653,11 @@ public class AVAudioSession extends NSObject {
      * gain setting and 1.0 corresponding to the highest analog gain setting.
      * <p>
      * Attempting to set values outside of the defined range will result in the value being "clamped"
-     * to a valid input.  This is a global input gain setting that applies to the current input source
+     * to a valid input. This is a global input gain setting that applies to the current input source
      * for the entire system. When no applications are using the input gain control, the system will
-     * restore the default input gain setting for the input source.  Note that some audio accessories,
-     * such as USB devices, may not have a default value.  This property is only valid if
-     * inputGainSettable is true.  Note: inputGain is key-value observable.
+     * restore the default input gain setting for the input source. Note that some audio accessories,
+     * such as USB devices, may not have a default value. This property is only valid if
+     * inputGainSettable is true. Note: inputGain is key-value observable.
      */
     @Generated
     @Selector("setInputGain:error:")
@@ -661,7 +667,7 @@ public class AVAudioSession extends NSObject {
      * Set the session's mode.
      * <p>
      * Modes modify the audio category in order to introduce behavior that is tailored to the specific
-     * use of audio within an application. Examples:  AVAudioSessionModeVideoRecording,
+     * use of audio within an application. Examples: AVAudioSessionModeVideoRecording,
      * AVAudioSessionModeVoiceChat, AVAudioSessionModeMeasurement, etc.
      */
     @Generated
@@ -751,7 +757,7 @@ public class AVAudioSession extends NSObject {
      * if below property is set to YES then clients will not be interrupted on incoming call notification
      * and user will have opportunity to accept or decline the call. If call is declined, the session
      * will not be interrupted, but if user accepts the incoming call, the session will be interrupted.
-     * With  display style set as "Full Screen", below property will have no effect and clients will be
+     * With display style set as "Full Screen", below property will have no effect and clients will be
      * interrupted by incoming calls. Apps that record audio and/or video and apps that are used for
      * music performance are candidates for using this feature.
      */

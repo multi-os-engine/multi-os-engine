@@ -251,7 +251,8 @@ public class ARSKView extends SKView implements ARSessionProviding {
      * Searches the current frame for objects corresponding to a point in the view.
      * <p>
      * A 2D point in the view’s coordinate space can refer to any point along a line segment
-     * in the 3D coordinate space. Hit-testing is the process of finding objects in the world located along this line segment.
+     * in the 3D coordinate space. Hit-testing is the process of finding objects in the world located along this line
+     * segment.
      *
      * @param point A point in the view’s coordinate system.
      * @param types The types of results to search for.

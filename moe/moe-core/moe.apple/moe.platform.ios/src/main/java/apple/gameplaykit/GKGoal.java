@@ -106,7 +106,8 @@ public class GKGoal extends NSObject implements NSCopying {
      * Creates a goal to align this agent's orientation with the average orientation of the group of agents.
      *
      * @param maxDistance the distance between agents before alignment happens
-     * @param maxAngle    the angle, in radians, between this agent's foward and the vector toward the other agent before alignment happens
+     * @param maxAngle    the angle, in radians, between this agent's foward and the vector toward the other agent
+     *                    before alignment happens
      */
     @Generated
     @Selector("goalToAlignWithAgents:maxDistance:maxAngle:")
@@ -137,7 +138,8 @@ public class GKGoal extends NSObject implements NSCopying {
      * Creates a goal to seek the average position of the group of agents.
      *
      * @param maxDistance the distance between agents before cohesion happens
-     * @param maxAngle    the angle between this agent's foward and the vector toward the other agent before cohesion happens
+     * @param maxAngle    the angle between this agent's foward and the vector toward the other agent before cohesion
+     *                    happens
      */
     @Generated
     @Selector("goalToCohereWithAgents:maxDistance:maxAngle:")
@@ -197,7 +199,8 @@ public class GKGoal extends NSObject implements NSCopying {
      * Creates a goal that tries to repel this agent away from the other agents and attempts to prevent overlap
      *
      * @param maxDistance the distance between agents before repelling happens
-     * @param maxAngle    the angle, in radians, between this agent's foward and the vector toward the other agent before the repelling happens
+     * @param maxAngle    the angle, in radians, between this agent's foward and the vector toward the other agent
+     *                    before the repelling happens
      */
     @Generated
     @Selector("goalToSeparateFromAgents:maxDistance:maxAngle:")

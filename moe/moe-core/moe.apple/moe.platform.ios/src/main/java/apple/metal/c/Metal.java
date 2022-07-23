@@ -86,7 +86,7 @@ public final class Metal {
      * <p>
      * On Mac OS X systems that support automatic graphics switching, calling
      * this API to get a Metal device will cause the system to switch to the high power
-     * GPU.  On other systems that support more than one GPU it will return the GPU that
+     * GPU. On other systems that support more than one GPU it will return the GPU that
      * is associated with the main display.
      */
     @Generated
@@ -256,7 +256,9 @@ public final class Metal {
     public static native String MTLCounterErrorDomain();
 
     /**
-     * Key in the userInfo for MTLCommandBufferError NSErrors. Value is an NSArray of MTLCommandBufferEncoderInfo objects in recorded order if an appropriate MTLCommandBufferErrorOption was set, otherwise the key will not exist in the userInfo dictionary.
+     * Key in the userInfo for MTLCommandBufferError NSErrors. Value is an NSArray of MTLCommandBufferEncoderInfo
+     * objects in recorded order if an appropriate MTLCommandBufferErrorOption was set, otherwise the key will not exist
+     * in the userInfo dictionary.
      */
     @Generated
     @CVariable()

@@ -232,7 +232,8 @@ public class CPListSection extends NSObject implements NSSecureCoding {
      * <p>
      * [@note] The maximum size of the section header image is given by CPMaximumListSectionImageSize.
      * <p>
-     * When providing an image, your app may provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * When providing an image, your app may provide a @c UIImage that is display-ready. If necessary for the image,
+     * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.

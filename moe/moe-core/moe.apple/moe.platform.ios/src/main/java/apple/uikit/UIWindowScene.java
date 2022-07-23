@@ -163,7 +163,8 @@ public class UIWindowScene extends UIScene {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Restrictions which the system should use when resizing the scene. This property will be NULL on platforms which don't support scene resize, else a mutable object is returned which the client may customize.
+     * Restrictions which the system should use when resizing the scene. This property will be NULL on platforms which
+     * don't support scene resize, else a mutable object is returned which the client may customize.
      */
     @Generated
     @Selector("sizeRestrictions")

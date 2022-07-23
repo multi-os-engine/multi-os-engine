@@ -307,7 +307,7 @@ public final class NaturalLanguage {
     public static native String NLLanguageVietnamese();
 
     /**
-     * This tag scheme classifies tokens according to their broad general type:  word, punctuation, whitespace, etc.
+     * This tag scheme classifies tokens according to their broad general type: word, punctuation, whitespace, etc.
      */
     @Generated
     @CVariable()
@@ -315,7 +315,8 @@ public final class NaturalLanguage {
     public static native String NLTagSchemeTokenType();
 
     /**
-     * This tag scheme classifies tokens according to class:  part of speech for words, type of punctuation or whitespace, etc.
+     * This tag scheme classifies tokens according to class: part of speech for words, type of punctuation or
+     * whitespace, etc.
      */
     @Generated
     @CVariable()

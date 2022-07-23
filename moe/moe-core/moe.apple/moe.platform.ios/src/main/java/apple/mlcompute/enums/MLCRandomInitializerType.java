@@ -3,7 +3,7 @@ package apple.mlcompute.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]      MLCRandomInitializerType
+ * [@enum] MLCRandomInitializerType
  * <p>
  * An initializer type you use to create a tensor with random data.
  */

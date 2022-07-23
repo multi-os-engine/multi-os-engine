@@ -4,7 +4,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * NLEmbedding is a class representing a map from a set of strings into a finite-dimensional real vector space. Predefined word embeddings are provided for certain languages.
+ * NLEmbedding is a class representing a map from a set of strings into a finite-dimensional real vector space.
+ * Predefined word embeddings are provided for certain languages.
  */
 @Generated
 public final class NLDistanceType {

@@ -160,9 +160,11 @@ public class VSAccountManager extends NSObject {
      * Determine the state of the application's access to the user's subscription information.
      *
      * @param options           The only currently supported option key is VSCheckAccessOptionPrompt.
-     * @param completionHandler A block to be called when the request finishes.  It will always be called exactly once.  It may be called before the method call returns.  It may be called on any queue.
+     * @param completionHandler A block to be called when the request finishes. It will always be called exactly once.
+     *                          It may be called before the method call returns. It may be called on any queue.
      * @param accessStatus      The current state the application's access to the user's subscription information.
-     * @param error             If the user did not grant access to the app, this will contain an error describing the result of the operation.
+     * @param error             If the user did not grant access to the app, this will contain an error describing the
+     *                          result of the operation.
      */
     @Generated
     @Selector("checkAccessStatusWithOptions:completionHandler:")
@@ -170,8 +172,10 @@ public class VSAccountManager extends NSObject {
             @ObjCBlock(name = "call_checkAccessStatusWithOptionsCompletionHandler") Block_checkAccessStatusWithOptionsCompletionHandler completionHandler);
 
     /**
-     * An object that can help the account manager by presenting and dismissing view controllers when needed, and deciding whether to allow authentication with the selected provider.
-     * Some requests may fail if a delegate is not provided.  For example, an account metadata request may require a delegate if it allows interruption.
+     * An object that can help the account manager by presenting and dismissing view controllers when needed, and
+     * deciding whether to allow authentication with the selected provider.
+     * Some requests may fail if a delegate is not provided. For example, an account metadata request may require a
+     * delegate if it allows interruption.
      */
     @Generated
     @Selector("delegate")
@@ -180,12 +184,16 @@ public class VSAccountManager extends NSObject {
 
     /**
      * Begins requesting information about the subscriber's account.
-     * [@returns] A result object that may be used to cancel the in-flight request.  Cancellation is advisory, and does not guarantee that the request will finish immediately.
+     * [@returns] A result object that may be used to cancel the in-flight request. Cancellation is advisory, and does
+     * not guarantee that the request will finish immediately.
      *
      * @param request           This identifies what specific information the app wants to know.
-     * @param completionHandler A block to be called when the request finishes.  It will always be called exactly once.  It may be called before the method call returns.  It may be called on any queue.
-     * @param metadata          If the request finished successfully, this will contain information about the subscriber's account.
-     * @param error             If the request did not finish successfully, this will contain an error describing the result of the operation.
+     * @param completionHandler A block to be called when the request finishes. It will always be called exactly once.
+     *                          It may be called before the method call returns. It may be called on any queue.
+     * @param metadata          If the request finished successfully, this will contain information about the
+     *                          subscriber's account.
+     * @param error             If the request did not finish successfully, this will contain an error describing the
+     *                          result of the operation.
      */
     @Generated
     @Selector("enqueueAccountMetadataRequest:completionHandler:")
@@ -198,16 +206,20 @@ public class VSAccountManager extends NSObject {
     public native VSAccountManager init();
 
     /**
-     * An object that can help the account manager by presenting and dismissing view controllers when needed, and deciding whether to allow authentication with the selected provider.
-     * Some requests may fail if a delegate is not provided.  For example, an account metadata request may require a delegate if it allows interruption.
+     * An object that can help the account manager by presenting and dismissing view controllers when needed, and
+     * deciding whether to allow authentication with the selected provider.
+     * Some requests may fail if a delegate is not provided. For example, an account metadata request may require a
+     * delegate if it allows interruption.
      */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) VSAccountManagerDelegate value);
 
     /**
-     * An object that can help the account manager by presenting and dismissing view controllers when needed, and deciding whether to allow authentication with the selected provider.
-     * Some requests may fail if a delegate is not provided.  For example, an account metadata request may require a delegate if it allows interruption.
+     * An object that can help the account manager by presenting and dismissing view controllers when needed, and
+     * deciding whether to allow authentication with the selected provider.
+     * Some requests may fail if a delegate is not provided. For example, an account metadata request may require a
+     * delegate if it allows interruption.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) VSAccountManagerDelegate value) {

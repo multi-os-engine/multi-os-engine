@@ -199,7 +199,7 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying, NSSecureCodi
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * [@property]   endDate
+     * [@property] endDate
      * <p>
      * The end date of this recurrence, or nil if it's count-based.
      */
@@ -212,7 +212,7 @@ public class EKRecurrenceEnd extends NSObject implements NSCopying, NSSecureCodi
     public native EKRecurrenceEnd init();
 
     /**
-     * [@property]   occurrenceCount
+     * [@property] occurrenceCount
      * <p>
      * The maximum occurrence count, or 0 if it's date-based.
      */

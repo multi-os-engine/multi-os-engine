@@ -90,7 +90,11 @@ public class NSTextSelectionNavigation extends NSObject {
     public static native String debugDescription_static();
 
     /**
-     * Returns the ranges that should be deleted based on textSelection and movement arguments. The selection after deletion should contain a 0-length range starting at the location of the first range returned. destination is ignored when textSelection has a non-empty selection. allowsDecomposition only applies to NSTextSelectionNavigationDirectionBackward and NSTextSelectionNavigationDestinationCharacter with 0-length selection.
+     * Returns the ranges that should be deleted based on textSelection and movement arguments. The selection after
+     * deletion should contain a 0-length range starting at the location of the first range returned. destination is
+     * ignored when textSelection has a non-empty selection. allowsDecomposition only applies to
+     * NSTextSelectionNavigationDirectionBackward and NSTextSelectionNavigationDestinationCharacter with 0-length
+     * selection.
      */
     @Generated
     @Selector("deletionRangesForTextSelection:direction:destination:allowsDecomposition:")
@@ -102,7 +106,9 @@ public class NSTextSelectionNavigation extends NSObject {
     public static native String description_static();
 
     /**
-     * Returns a text selection moved from textSelection by the navigating operation presented by direction, destination, and extending. Returns nil when the requested operation does not produce any logically valid result. If 'confined' is YES, confine any movement to the text element that the selection already lies within.
+     * Returns a text selection moved from textSelection by the navigating operation presented by direction,
+     * destination, and extending. Returns nil when the requested operation does not produce any logically valid result.
+     * If 'confined' is YES, confine any movement to the text element that the selection already lies within.
      */
     @Generated
     @Selector("destinationSelectionForTextSelection:direction:destination:extending:confined:")
@@ -166,7 +172,8 @@ public class NSTextSelectionNavigation extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Returns the resolved location for inserting the next input if textSelection is isLogical=NO && secondarySelectionLocation!=nil. If not, returns nil.
+     * Returns the resolved location for inserting the next input if textSelection is isLogical=NO &&
+     * secondarySelectionLocation!=nil. If not, returns nil.
      */
     @Generated
     @Selector("resolvedInsertionLocationForTextSelection:writingDirection:")
@@ -175,7 +182,9 @@ public class NSTextSelectionNavigation extends NSObject {
             NSTextSelection textSelection, @NInt long writingDirection);
 
     /**
-     * If YES, rotates the coordinate system for arguments passed to the navigation methods such as -textSelectionsInteractingAtPoint:inContainerAtLocation:anchors:modifiers:selecting:bounds: based on the text container layout orientation. NO by default.
+     * If YES, rotates the coordinate system for arguments passed to the navigation methods such as
+     * -textSelectionsInteractingAtPoint:inContainerAtLocation:anchors:modifiers:selecting:bounds: based on the text
+     * container layout orientation. NO by default.
      */
     @Generated
     @Selector("rotatesCoordinateSystemForLayoutOrientation")
@@ -189,7 +198,9 @@ public class NSTextSelectionNavigation extends NSObject {
     public native void setAllowsNonContiguousRanges(boolean value);
 
     /**
-     * If YES, rotates the coordinate system for arguments passed to the navigation methods such as -textSelectionsInteractingAtPoint:inContainerAtLocation:anchors:modifiers:selecting:bounds: based on the text container layout orientation. NO by default.
+     * If YES, rotates the coordinate system for arguments passed to the navigation methods such as
+     * -textSelectionsInteractingAtPoint:inContainerAtLocation:anchors:modifiers:selecting:bounds: based on the text
+     * container layout orientation. NO by default.
      */
     @Generated
     @Selector("setRotatesCoordinateSystemForLayoutOrientation:")
@@ -212,7 +223,9 @@ public class NSTextSelectionNavigation extends NSObject {
     public native NSTextSelectionDataSource textSelectionDataSource();
 
     /**
-     * Returns a text selection expanded to the nearest boundaries for selectionGranularity that contains point in the coordinate system of the text container at containerLocation. The returned selection will have granularity=selectionGranularity.
+     * Returns a text selection expanded to the nearest boundaries for selectionGranularity that contains point in the
+     * coordinate system of the text container at containerLocation. The returned selection will have
+     * granularity=selectionGranularity.
      */
     @Generated
     @Selector("textSelectionForSelectionGranularity:enclosingPoint:inContainerAtLocation:")
@@ -221,7 +234,8 @@ public class NSTextSelectionNavigation extends NSObject {
             @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 
     /**
-     * Returns a text selection expanded to the nearest boundaries for selectionGranularity enclosing textSelection.textRanges. The returned selection will have granularity=selectionGranularity.
+     * Returns a text selection expanded to the nearest boundaries for selectionGranularity enclosing
+     * textSelection.textRanges. The returned selection will have granularity=selectionGranularity.
      */
     @Generated
     @Selector("textSelectionForSelectionGranularity:enclosingTextSelection:")
@@ -229,7 +243,10 @@ public class NSTextSelectionNavigation extends NSObject {
             @NInt long selectionGranularity, NSTextSelection textSelection);
 
     /**
-     * Returns an array of text selections produced with tap/mouse down at point. anchors defines the last text selection state if selecting=YES or NSTextSelectionNavigationModifierExtend. selecting=YES indicates it's in a text selection dragging session. bounds defines the view area in the container coordinate system that can interact with events. It is typically the view's visible area.
+     * Returns an array of text selections produced with tap/mouse down at point. anchors defines the last text
+     * selection state if selecting=YES or NSTextSelectionNavigationModifierExtend. selecting=YES indicates it's in a
+     * text selection dragging session. bounds defines the view area in the container coordinate system that can
+     * interact with events. It is typically the view's visible area.
      */
     @Generated
     @Selector("textSelectionsInteractingAtPoint:inContainerAtLocation:anchors:modifiers:selecting:bounds:")

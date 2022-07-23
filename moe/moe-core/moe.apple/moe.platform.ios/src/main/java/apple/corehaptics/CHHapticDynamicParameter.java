@@ -25,10 +25,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * CHHapticDynamicParameter
  * <p>
- * A CHHapticDynamicParameter contains a CHHapticDynamicParameterID/value pair which will modify (modulate) the ongoing character
+ * A CHHapticDynamicParameter contains a CHHapticDynamicParameterID/value pair which will modify (modulate) the ongoing
+ * character
  * of a haptic or audio event.
  * <p>
- * CHHapticDynamicParameters have a relative time property to allow specifying the time relationship between parameters in a pattern.
+ * CHHapticDynamicParameters have a relative time property to allow specifying the time relationship between parameters
+ * in a pattern.
  */
 @Generated
 @Library("CoreHaptics")

@@ -42,7 +42,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * When attributes=nil, the methods declared here uses the default behavior for each attribute described in <UIKit/NSAttributedString.h>. When stringDrawingContext=nil, it's equivalent of passing the default instance initialized with [[NSStringDrawingContext alloc] init].
+ * When attributes=nil, the methods declared here uses the default behavior for each attribute described in
+ * <UIKit/NSAttributedString.h>. When stringDrawingContext=nil, it's equivalent of passing the default instance
+ * initialized with [[NSStringDrawingContext alloc] init].
  */
 @Generated
 @Library("UIKit")
@@ -173,7 +175,9 @@ public class NSStringDrawingContext extends NSObject {
     public native NSStringDrawingContext init();
 
     /**
-     * Minimum scale factor for drawWithRect:options:context: and boundingRectWithSize:options:context: methods. If this property is set, the extended string drawing methods will attempt to draw the attributed string in the given bounds by proportionally scaling the font(s) in the attributed string
+     * Minimum scale factor for drawWithRect:options:context: and boundingRectWithSize:options:context: methods. If this
+     * property is set, the extended string drawing methods will attempt to draw the attributed string in the given
+     * bounds by proportionally scaling the font(s) in the attributed string
      */
     @Generated
     @Selector("minimumScaleFactor")
@@ -187,7 +191,9 @@ public class NSStringDrawingContext extends NSObject {
     public native double minimumTrackingAdjustment();
 
     /**
-     * Minimum scale factor for drawWithRect:options:context: and boundingRectWithSize:options:context: methods. If this property is set, the extended string drawing methods will attempt to draw the attributed string in the given bounds by proportionally scaling the font(s) in the attributed string
+     * Minimum scale factor for drawWithRect:options:context: and boundingRectWithSize:options:context: methods. If this
+     * property is set, the extended string drawing methods will attempt to draw the attributed string in the given
+     * bounds by proportionally scaling the font(s) in the attributed string
      */
     @Generated
     @Selector("setMinimumScaleFactor:")

@@ -63,10 +63,10 @@ public interface NSFileProviderEnumerator {
      * file provider (app or extension) a chance to notify about changes.
      * <p>
      * The anchor data should contain whatever information is needed to resume
-     * enumerating changes from the previous synchronization point.  A naive sync
+     * enumerating changes from the previous synchronization point. A naive sync
      * anchor might for example be the date of the last change that was sent from the
      * server to the client, meaning that at that date, the client was in sync with
-     * all the server changes.  A request to enumerate changes from that sync anchor
+     * all the server changes. A request to enumerate changes from that sync anchor
      * would only return the changes that happened after that date, which are
      * therefore changes that the client doesn't yet know about.
      * <p>
@@ -86,16 +86,16 @@ public interface NSFileProviderEnumerator {
      * Enumerate items starting from the specified page, typically
      * NSFileProviderInitialPageSortedByDate or NSFileProviderInitialPageSortedByName.
      * <p>
-     * Pagination allows large collections to be enumerated in multiple batches.  The
+     * Pagination allows large collections to be enumerated in multiple batches. The
      * sort order specified in the initial page is important even if the enumeration
-     * results will actually be sorted again before display.  If results are sorted
+     * results will actually be sorted again before display. If results are sorted
      * correctly across pages, then the new results will be appended at the bottom of
-     * the list, probably not on screen, which is the best user experience.  Otherwise
+     * the list, probably not on screen, which is the best user experience. Otherwise
      * results from the second page might be inserted in the results from the first
      * page, causing bizarre animations.
      * <p>
      * The page data should contain whatever information is needed to resume the
-     * enumeration after the previous page.  If a file provider sends batches of 200
+     * enumeration after the previous page. If a file provider sends batches of 200
      * items to -[NSFileProviderEnumerationObserver didEnumerateItems:] for example,
      * then successive pages might contain offsets in increments of 200.
      */

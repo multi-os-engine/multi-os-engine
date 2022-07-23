@@ -26,7 +26,7 @@ public final class NSDataWritingOptions {
      */
     @Generated @NUInt public static final long DataWritingAtomic = 0x0000000000000001L;
     /**
-     * Hint to  prevent overwriting an existing file. Cannot be combined with NSDataWritingAtomic.
+     * Hint to prevent overwriting an existing file. Cannot be combined with NSDataWritingAtomic.
      */
     @Generated @NUInt public static final long DataWritingWithoutOverwriting = 0x0000000000000002L;
     @Generated @NUInt public static final long DataWritingFileProtectionNone = 0x0000000010000000L;

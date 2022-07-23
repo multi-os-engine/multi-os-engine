@@ -99,7 +99,9 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * Returns the column terminators for locale. Passing nil returns an instance corresponding to +[NSLocale systemLocale]. For matching user's formatting preferences, pass +[NSLocale currentLocale]. Can be used as the value for NSTabColumnTerminatorsAttributeName to make a decimal tab stop.
+     * Returns the column terminators for locale. Passing nil returns an instance corresponding to +[NSLocale
+     * systemLocale]. For matching user's formatting preferences, pass +[NSLocale currentLocale]. Can be used as the
+     * value for NSTabColumnTerminatorsAttributeName to make a decimal tab stop.
      */
     @Generated
     @Selector("columnTerminatorsForLocale:")
@@ -170,7 +172,8 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
     public static native long version_static();
 
     /**
-     * Defines the alignment of tab column contents. NSTextAlignmentNatural and NSTextAlignmentJustified are resolved either NSTextAlignmentLeft or NSTextAlignmentRight based on the user's preferred language.
+     * Defines the alignment of tab column contents. NSTextAlignmentNatural and NSTextAlignmentJustified are resolved
+     * either NSTextAlignmentLeft or NSTextAlignmentRight based on the user's preferred language.
      */
     @Generated
     @Selector("alignment")
@@ -196,7 +199,8 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
     public native NSTextTab initWithCoder(NSCoder coder);
 
     /**
-     * Initializes a text tab with the text alignment, location, and options.  The text alignment is used to determine the position of text inside the tab column.
+     * Initializes a text tab with the text alignment, location, and options. The text alignment is used to determine
+     * the position of text inside the tab column.
      */
     @Generated
     @Selector("initWithTextAlignment:location:options:")

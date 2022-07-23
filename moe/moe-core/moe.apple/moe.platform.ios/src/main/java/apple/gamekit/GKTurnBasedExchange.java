@@ -153,7 +153,9 @@ public class GKTurnBasedExchange extends NSObject {
     public static native long version_static();
 
     /**
-     * cancel an exchange. It is possible to cancel an exchange that is active or complete. Each recipient will receive a push notification using supplied localizable message. Returns an error if the exchange has already been canceled.
+     * cancel an exchange. It is possible to cancel an exchange that is active or complete. Each recipient will receive
+     * a push notification using supplied localizable message. Returns an error if the exchange has already been
+     * canceled.
      */
     @Generated
     @Selector("cancelWithLocalizableMessageKey:arguments:completionHandler:")
@@ -207,7 +209,8 @@ public class GKTurnBasedExchange extends NSObject {
     public native NSArray<? extends GKTurnBasedExchangeReply> replies();
 
     /**
-     * reply to an exchange. The sender will receive a push notification using supplied localizable message. Returns an error if the exchange has already been canceled.
+     * reply to an exchange. The sender will receive a push notification using supplied localizable message. Returns an
+     * error if the exchange has already been canceled.
      */
     @Generated
     @Selector("replyWithLocalizableMessageKey:arguments:data:completionHandler:")

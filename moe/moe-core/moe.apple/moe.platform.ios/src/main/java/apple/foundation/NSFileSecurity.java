@@ -40,7 +40,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * NSFileSecurity encapsulates a file system object's security information. NSFileSecurity and CFFileSecurity are toll-free bridged. Use the CFFileSecurity API for access to the low-level file security properties encapsulated by NSFileSecurity.
+ * NSFileSecurity encapsulates a file system object's security information. NSFileSecurity and CFFileSecurity are
+ * toll-free bridged. Use the CFFileSecurity API for access to the low-level file security properties encapsulated by
+ * NSFileSecurity.
  */
 @Generated
 @Library("Foundation")

@@ -60,7 +60,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * NSDecimalNumber: the class		**********
+ * NSDecimalNumber: the class **********
  */
 @Generated
 @Library("Foundation")

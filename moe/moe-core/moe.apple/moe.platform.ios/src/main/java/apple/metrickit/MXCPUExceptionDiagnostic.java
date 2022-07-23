@@ -68,7 +68,7 @@ public class MXCPUExceptionDiagnostic extends MXDiagnostic {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]      callStackTree
+     * [@property] callStackTree
      * <p>
      * The application call stack tree associated with the excessive CPU consumption.
      */
@@ -168,7 +168,7 @@ public class MXCPUExceptionDiagnostic extends MXDiagnostic {
     }
 
     /**
-     * [@property]      totalCPUTime
+     * [@property] totalCPUTime
      * <p>
      * Total CPU time consumed in the scope of this CPU exception.
      * <p>
@@ -179,7 +179,7 @@ public class MXCPUExceptionDiagnostic extends MXDiagnostic {
     public native NSMeasurement<NSUnitDuration> totalCPUTime();
 
     /**
-     * [@property]      totalSampledTime
+     * [@property] totalSampledTime
      * <p>
      * Total time that the application was sampled for during the CPU exception.
      * <p>

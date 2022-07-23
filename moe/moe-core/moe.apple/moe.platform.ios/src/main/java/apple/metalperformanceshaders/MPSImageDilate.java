@@ -51,13 +51,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * morphological probes.
  * [@code]
  * for each pixel in the filter window:
- * value =  pixel[filterY][filterX] - filter[filterY*filter_width+filterX]
+ * value = pixel[filterY][filterX] - filter[filterY*filter_width+filterX]
  * if( value > bestValue ){
  * result = value
  * bestValue = value;
  * }
  * [@endcode]
- * A filter that contains all zeros and is identical to a MPSImageAreaMax filter.  The center filter element
+ * A filter that contains all zeros and is identical to a MPSImageAreaMax filter. The center filter element
  * is assumed to be 0 to avoid causing a general darkening of the image.
  * <p>
  * The edgeMode property is assumed to always be MPSImageEdgeModeClamp for this filter.
@@ -235,7 +235,7 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel

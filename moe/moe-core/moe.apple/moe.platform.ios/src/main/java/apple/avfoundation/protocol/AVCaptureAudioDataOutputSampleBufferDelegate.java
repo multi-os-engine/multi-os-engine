@@ -42,12 +42,18 @@ public interface AVCaptureAudioDataOutputSampleBufferDelegate {
      * <p>
      * Called whenever an AVCaptureAudioDataOutput instance outputs a new audio sample buffer.
      * <p>
-     * Delegates receive this message whenever the output captures and outputs new audio samples, decoding or re-encoding as specified by the audioSettings property. Delegates can use the provided sample buffer in conjunction with other APIs for further processing. This method will be called on the dispatch queue specified by the output's sampleBufferCallbackQueue property. This method is called periodically, so it must be efficient to prevent capture performance problems, including dropped audio samples.
+     * Delegates receive this message whenever the output captures and outputs new audio samples, decoding or
+     * re-encoding as specified by the audioSettings property. Delegates can use the provided sample buffer in
+     * conjunction with other APIs for further processing. This method will be called on the dispatch queue specified by
+     * the output's sampleBufferCallbackQueue property. This method is called periodically, so it must be efficient to
+     * prevent capture performance problems, including dropped audio samples.
      * <p>
-     * Clients that need to reference the CMSampleBuffer object outside of the scope of this method must CFRetain it and then CFRelease it when they are finished with it.
+     * Clients that need to reference the CMSampleBuffer object outside of the scope of this method must CFRetain it and
+     * then CFRelease it when they are finished with it.
      *
      * @param output       The AVCaptureAudioDataOutput instance that output the samples.
-     * @param sampleBuffer A CMSampleBuffer object containing the audio samples and additional information about them, such as their format and presentation time.
+     * @param sampleBuffer A CMSampleBuffer object containing the audio samples and additional information about them,
+     *                     such as their format and presentation time.
      * @param connection   The AVCaptureConnection from which the audio was received.
      */
     @Generated

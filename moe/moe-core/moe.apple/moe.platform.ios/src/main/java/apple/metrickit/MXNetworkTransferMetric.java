@@ -82,7 +82,7 @@ public class MXNetworkTransferMetric extends MXMetric {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]      cumulativeCellularDownload
+     * [@property] cumulativeCellularDownload
      * <p>
      * Cumulative amount of data downloaded over cellular networks.
      * <p>
@@ -95,7 +95,7 @@ public class MXNetworkTransferMetric extends MXMetric {
     public native NSMeasurement<NSUnitInformationStorage> cumulativeCellularDownload();
 
     /**
-     * [@property]      cumulativeCellularUpload
+     * [@property] cumulativeCellularUpload
      * <p>
      * Cumulative amount of data uploaded over cellular networks.
      * <p>
@@ -108,7 +108,7 @@ public class MXNetworkTransferMetric extends MXMetric {
     public native NSMeasurement<NSUnitInformationStorage> cumulativeCellularUpload();
 
     /**
-     * [@property]      cumulativeWifiDownload
+     * [@property] cumulativeWifiDownload
      * <p>
      * Cumulative amount of data downloaded over WiFi.
      * <p>
@@ -119,7 +119,7 @@ public class MXNetworkTransferMetric extends MXMetric {
     public native NSMeasurement<NSUnitInformationStorage> cumulativeWifiDownload();
 
     /**
-     * [@property]      cumulativeWifiUpload
+     * [@property] cumulativeWifiUpload
      * <p>
      * Cumulative amount of data uploaded over WiFi.
      * <p>

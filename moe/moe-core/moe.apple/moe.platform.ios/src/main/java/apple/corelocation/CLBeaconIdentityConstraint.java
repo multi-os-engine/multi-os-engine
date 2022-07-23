@@ -150,7 +150,7 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
      * <p>
      * Discussion:
      * Initialize a beacon identity constraint with a UUID and major
-     * value.  Minor value will be wildcarded.
+     * value. Minor value will be wildcarded.
      */
     @Generated
     @Selector("initWithUUID:major:")

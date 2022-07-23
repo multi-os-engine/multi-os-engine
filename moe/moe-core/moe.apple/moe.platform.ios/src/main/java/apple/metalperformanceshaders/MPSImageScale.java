@@ -119,7 +119,7 @@ public class MPSImageScale extends MPSUnaryImageKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -172,23 +172,23 @@ public class MPSImageScale extends MPSUnaryImageKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   scaleTransform
+     * [@property] scaleTransform
      * <p>
      * An optional transform that describes how to scale and translate the source image
      * <p>
      * If the scaleTransform is NULL, then any image scaling factor such as MPSImageLanczosScale
      * will rescale the image so that the source image fits exactly into the destination
-     * texture.  If the transform is not NULL, then the transform is used for determining
+     * texture. If the transform is not NULL, then the transform is used for determining
      * how to map the source image to the destination. Default: NULL
      * <p>
      * When the scaleTransform is set to non-NULL, the values pointed to by the new
      * scaleTransform are copied to object storage, and the pointer is updated to point
-     * to internal storage. Do not attempt to free it.  You may free your copy of
+     * to internal storage. Do not attempt to free it. You may free your copy of
      * the MPSScaleTransform as soon as the property set operation is complete.
      * <p>
      * When calculating a scaleTransform, use the limits of the bounding box for the intended
      * source region of interest and the destination clipRect. Adjustments for pixel center
-     * coordinates are handled internally to the function.  For example,
+     * coordinates are handled internally to the function. For example,
      * the scale transform to convert the entire source image to the entire destination image
      * size (clipRect = MPSRectNoClip) would be:
      * <p>
@@ -220,7 +220,7 @@ public class MPSImageScale extends MPSUnaryImageKernel {
      * One would typically use non-zero translations to do tiling, or provide a resized
      * view into a internal segment of an image.
      * <p>
-     * NOTE:  Changing the Lanczos scale factor may trigger recalculation of signficant state internal
+     * NOTE: Changing the Lanczos scale factor may trigger recalculation of signficant state internal
      * to the object when the filter is encoded to the command buffer. The scale factor is
      * scaleTransform->scaleX,Y, or the ratio of source and destination image sizes if
      * scaleTransform is NULL. Reuse a MPSImageLanczosScale object for frequently used scalings
@@ -232,23 +232,23 @@ public class MPSImageScale extends MPSUnaryImageKernel {
     public native MPSScaleTransform scaleTransform();
 
     /**
-     * [@property]   scaleTransform
+     * [@property] scaleTransform
      * <p>
      * An optional transform that describes how to scale and translate the source image
      * <p>
      * If the scaleTransform is NULL, then any image scaling factor such as MPSImageLanczosScale
      * will rescale the image so that the source image fits exactly into the destination
-     * texture.  If the transform is not NULL, then the transform is used for determining
+     * texture. If the transform is not NULL, then the transform is used for determining
      * how to map the source image to the destination. Default: NULL
      * <p>
      * When the scaleTransform is set to non-NULL, the values pointed to by the new
      * scaleTransform are copied to object storage, and the pointer is updated to point
-     * to internal storage. Do not attempt to free it.  You may free your copy of
+     * to internal storage. Do not attempt to free it. You may free your copy of
      * the MPSScaleTransform as soon as the property set operation is complete.
      * <p>
      * When calculating a scaleTransform, use the limits of the bounding box for the intended
      * source region of interest and the destination clipRect. Adjustments for pixel center
-     * coordinates are handled internally to the function.  For example,
+     * coordinates are handled internally to the function. For example,
      * the scale transform to convert the entire source image to the entire destination image
      * size (clipRect = MPSRectNoClip) would be:
      * <p>
@@ -280,7 +280,7 @@ public class MPSImageScale extends MPSUnaryImageKernel {
      * One would typically use non-zero translations to do tiling, or provide a resized
      * view into a internal segment of an image.
      * <p>
-     * NOTE:  Changing the Lanczos scale factor may trigger recalculation of signficant state internal
+     * NOTE: Changing the Lanczos scale factor may trigger recalculation of signficant state internal
      * to the object when the filter is encoded to the command buffer. The scale factor is
      * scaleTransform->scaleX,Y, or the ratio of source and destination image sizes if
      * scaleTransform is NULL. Reuse a MPSImageLanczosScale object for frequently used scalings

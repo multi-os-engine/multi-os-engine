@@ -116,7 +116,8 @@ public class UISceneActivationRequestOptions extends NSObject {
     public static native UISceneActivationRequestOptions new_objc();
 
     /**
-     * Informs the system the interface instance the user interacted with to create the new interface for the purposes of system navigation.
+     * Informs the system the interface instance the user interacted with to create the new interface for the purposes
+     * of system navigation.
      */
     @Generated
     @Selector("requestingScene")
@@ -131,7 +132,8 @@ public class UISceneActivationRequestOptions extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Informs the system the interface instance the user interacted with to create the new interface for the purposes of system navigation.
+     * Informs the system the interface instance the user interacted with to create the new interface for the purposes
+     * of system navigation.
      */
     @Generated
     @Selector("setRequestingScene:")

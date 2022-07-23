@@ -23,7 +23,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * This object is the main configuration mechanism for the communication between two processes. Each NSXPCConnection instance has a private serial queue. This queue is used when sending messages to reply handlers, interruption handlers, and invalidation handlers.
+ * This object is the main configuration mechanism for the communication between two processes. Each NSXPCConnection
+ * instance has a private serial queue. This queue is used when sending messages to reply handlers, interruption
+ * handlers, and invalidation handlers.
  */
 @Generated
 @Library("Foundation")
@@ -54,7 +56,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     public static native NSXPCConnection allocWithZone(VoidPtr zone);
 
     /**
-     * These attributes describe the security attributes of the connection. They may be used by the listener delegate to accept or reject connections.
+     * These attributes describe the security attributes of the connection. They may be used by the listener delegate to
+     * accept or reject connections.
      */
     @Generated
     @Selector("auditSessionIdentifier")
@@ -103,14 +106,18 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     public native NSXPCListenerEndpoint endpoint();
 
     /**
-     * The interface that describes messages that are allowed to be received by the exported object on this connection. This value is required if a exported object is set.
+     * The interface that describes messages that are allowed to be received by the exported object on this connection.
+     * This value is required if a exported object is set.
      */
     @Generated
     @Selector("exportedInterface")
     public native NSXPCInterface exportedInterface();
 
     /**
-     * Set an exported object for the connection. Messages sent to the remoteObjectProxy from the other side of the connection will be dispatched to this object. Messages delivered to exported objects are serialized and sent on a non-main queue. The receiver is responsible for handling the messages on a different queue or thread if it is required.
+     * Set an exported object for the connection. Messages sent to the remoteObjectProxy from the other side of the
+     * connection will be dispatched to this object. Messages delivered to exported objects are serialized and sent on a
+     * non-main queue. The receiver is responsible for handling the messages on a different queue or thread if it is
+     * required.
      */
     @Generated
     @Selector("exportedObject")
@@ -147,8 +154,11 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * The interruption handler will be called if the remote process exits or crashes. It may be possible to re-establish the connection by simply sending another message. The handler will be invoked on the same queue as replies and other handlers, but there is no guarantee of ordering between those callbacks and this one.
-     * The interruptionHandler property is cleared after the connection becomes invalid. This is to mitigate the impact of a retain cycle created by referencing the NSXPCConnection instance inside this block.
+     * The interruption handler will be called if the remote process exits or crashes. It may be possible to
+     * re-establish the connection by simply sending another message. The handler will be invoked on the same queue as
+     * replies and other handlers, but there is no guarantee of ordering between those callbacks and this one.
+     * The interruptionHandler property is cleared after the connection becomes invalid. This is to mitigate the impact
+     * of a retain cycle created by referencing the NSXPCConnection instance inside this block.
      */
     @Generated
     @Selector("interruptionHandler")
@@ -163,16 +173,23 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     }
 
     /**
-     * Invalidate the connection. All outstanding error handling blocks and invalidation blocks will be called on the message handling queue. The connection must be invalidated before it is deallocated. After a connection is invalidated, no more messages may be sent or received.
+     * Invalidate the connection. All outstanding error handling blocks and invalidation blocks will be called on the
+     * message handling queue. The connection must be invalidated before it is deallocated. After a connection is
+     * invalidated, no more messages may be sent or received.
      */
     @Generated
     @Selector("invalidate")
     public native void invalidate();
 
     /**
-     * The invalidation handler will be called if the connection can not be formed or the connection has terminated and may not be re-established. The invalidation handler will also be called if a connection created with an NSXPCListenerEndpoint is invalidated from the remote side, or if the NSXPCListener used to create that endpoint is invalidated. The handler will be invoked on the same queue as replies and other handlers, but there is no guarantee of ordering between those callbacks and this one.
+     * The invalidation handler will be called if the connection can not be formed or the connection has terminated and
+     * may not be re-established. The invalidation handler will also be called if a connection created with an
+     * NSXPCListenerEndpoint is invalidated from the remote side, or if the NSXPCListener used to create that endpoint
+     * is invalidated. The handler will be invoked on the same queue as replies and other handlers, but there is no
+     * guarantee of ordering between those callbacks and this one.
      * You may not send messages over the connection from within an invalidation handler block.
-     * The invalidationHandler property is cleared after the connection becomes invalid. This is to mitigate the impact of a retain cycle created by referencing the NSXPCConnection instance inside this block.
+     * The invalidationHandler property is cleared after the connection becomes invalid. This is to mitigate the impact
+     * of a retain cycle created by referencing the NSXPCConnection instance inside this block.
      */
     @Generated
     @Selector("invalidationHandler")
@@ -204,7 +221,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     public native int processIdentifier();
 
     /**
-     * The interface that describes messages that are allowed to be received by object that has been "imported" to this connection (exported from the other side). This value is required if messages are sent over this connection.
+     * The interface that describes messages that are allowed to be received by object that has been "imported" to this
+     * connection (exported from the other side). This value is required if messages are sent over this connection.
      */
     @Generated
     @Selector("remoteObjectInterface")
@@ -230,7 +248,11 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * All connections start suspended. You must resume them before they will start processing received messages or sending messages through the remoteObjectProxy. Note: Calling resume does not immediately launch the XPC service. The service will be started on demand when the first message is sent. However, if the name specified when creating the connection is determined to be invalid, your invalidation handler will be called immediately (and asynchronously) after calling resume.
+     * All connections start suspended. You must resume them before they will start processing received messages or
+     * sending messages through the remoteObjectProxy. Note: Calling resume does not immediately launch the XPC service.
+     * The service will be started on demand when the first message is sent. However, if the name specified when
+     * creating the connection is determined to be invalid, your invalidation handler will be called immediately (and
+     * asynchronously) after calling resume.
      */
     @Generated
     @Selector("resume")
@@ -241,22 +263,29 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     public native String serviceName();
 
     /**
-     * The interface that describes messages that are allowed to be received by the exported object on this connection. This value is required if a exported object is set.
+     * The interface that describes messages that are allowed to be received by the exported object on this connection.
+     * This value is required if a exported object is set.
      */
     @Generated
     @Selector("setExportedInterface:")
     public native void setExportedInterface(NSXPCInterface value);
 
     /**
-     * Set an exported object for the connection. Messages sent to the remoteObjectProxy from the other side of the connection will be dispatched to this object. Messages delivered to exported objects are serialized and sent on a non-main queue. The receiver is responsible for handling the messages on a different queue or thread if it is required.
+     * Set an exported object for the connection. Messages sent to the remoteObjectProxy from the other side of the
+     * connection will be dispatched to this object. Messages delivered to exported objects are serialized and sent on a
+     * non-main queue. The receiver is responsible for handling the messages on a different queue or thread if it is
+     * required.
      */
     @Generated
     @Selector("setExportedObject:")
     public native void setExportedObject(@Mapped(ObjCObjectMapper.class) Object value);
 
     /**
-     * The interruption handler will be called if the remote process exits or crashes. It may be possible to re-establish the connection by simply sending another message. The handler will be invoked on the same queue as replies and other handlers, but there is no guarantee of ordering between those callbacks and this one.
-     * The interruptionHandler property is cleared after the connection becomes invalid. This is to mitigate the impact of a retain cycle created by referencing the NSXPCConnection instance inside this block.
+     * The interruption handler will be called if the remote process exits or crashes. It may be possible to
+     * re-establish the connection by simply sending another message. The handler will be invoked on the same queue as
+     * replies and other handlers, but there is no guarantee of ordering between those callbacks and this one.
+     * The interruptionHandler property is cleared after the connection becomes invalid. This is to mitigate the impact
+     * of a retain cycle created by referencing the NSXPCConnection instance inside this block.
      */
     @Generated
     @Selector("setInterruptionHandler:")
@@ -271,9 +300,14 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     }
 
     /**
-     * The invalidation handler will be called if the connection can not be formed or the connection has terminated and may not be re-established. The invalidation handler will also be called if a connection created with an NSXPCListenerEndpoint is invalidated from the remote side, or if the NSXPCListener used to create that endpoint is invalidated. The handler will be invoked on the same queue as replies and other handlers, but there is no guarantee of ordering between those callbacks and this one.
+     * The invalidation handler will be called if the connection can not be formed or the connection has terminated and
+     * may not be re-established. The invalidation handler will also be called if a connection created with an
+     * NSXPCListenerEndpoint is invalidated from the remote side, or if the NSXPCListener used to create that endpoint
+     * is invalidated. The handler will be invoked on the same queue as replies and other handlers, but there is no
+     * guarantee of ordering between those callbacks and this one.
      * You may not send messages over the connection from within an invalidation handler block.
-     * The invalidationHandler property is cleared after the connection becomes invalid. This is to mitigate the impact of a retain cycle created by referencing the NSXPCConnection instance inside this block.
+     * The invalidationHandler property is cleared after the connection becomes invalid. This is to mitigate the impact
+     * of a retain cycle created by referencing the NSXPCConnection instance inside this block.
      */
     @Generated
     @Selector("setInvalidationHandler:")
@@ -288,7 +322,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     }
 
     /**
-     * The interface that describes messages that are allowed to be received by object that has been "imported" to this connection (exported from the other side). This value is required if messages are sent over this connection.
+     * The interface that describes messages that are allowed to be received by object that has been "imported" to this
+     * connection (exported from the other side). This value is required if messages are sent over this connection.
      */
     @Generated
     @Selector("setRemoteObjectInterface:")
@@ -321,14 +356,18 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     public static native long version_static();
 
     /**
-     * Get the current connection, in the context of a call to a method on your exported object. Useful for determining 'who called this'.
+     * Get the current connection, in the context of a call to a method on your exported object. Useful for determining
+     * 'who called this'.
      */
     @Generated
     @Selector("currentConnection")
     public static native NSXPCConnection currentConnection();
 
     /**
-     * Add a barrier block to be executed on the connection. This barrier block will run after any outstanding sends have completed. Note: This does not guarantee that messages will be received by the remote process by the time the block is invoked. If you need to ensure receipt of a message by the remote process, waiting for a reply to come back is the best option.
+     * Add a barrier block to be executed on the connection. This barrier block will run after any outstanding sends
+     * have completed. Note: This does not guarantee that messages will be received by the remote process by the time
+     * the block is invoked. If you need to ensure receipt of a message by the remote process, waiting for a reply to
+     * come back is the best option.
      */
     @Generated
     @Selector("scheduleSendBarrierBlock:")

@@ -155,7 +155,7 @@ public final class CoreLocation {
      * <p>
      * Discussion:
      * When an error with code kCLErrorRegionMonitoringResponseDelayed is received, this key may be populated
-     * in the userInfo dictionary.  The value is a CLRegion that the location service can more effectively monitor.
+     * in the userInfo dictionary. The value is a CLRegion that the location service can more effectively monitor.
      */
     @Generated
     @CVariable()
@@ -181,7 +181,7 @@ public final class CoreLocation {
      * If you set your CLLocationManager's desiredAccuracy property to
      * this value, locations delivered to your delegate in response to
      * startUpdatingLocation or requestLocation will have their
-     * accuracy reduced.  The locations you receive will match the
+     * accuracy reduced. The locations you receive will match the
      * locations your app would have received if the user had decided
      * not to grant your app authorization for precise location.
      */

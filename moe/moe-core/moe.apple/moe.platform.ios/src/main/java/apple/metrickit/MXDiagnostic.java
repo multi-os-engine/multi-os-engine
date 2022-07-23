@@ -74,7 +74,7 @@ public class MXDiagnostic extends NSObject implements NSSecureCoding {
     public static native MXDiagnostic allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]      applicationVersion
+     * [@property] applicationVersion
      * <p>
      * An NSString representation of the application version from which this diagnostic was generated.
      */

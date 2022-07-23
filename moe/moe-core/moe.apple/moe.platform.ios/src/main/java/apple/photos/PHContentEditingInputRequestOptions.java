@@ -151,7 +151,8 @@ public class PHContentEditingInputRequestOptions extends NSObject {
     public static native long version_static();
 
     /**
-     * Block to be provided by the client, used to determine if the given adjustment data can be handled (i.e. can be decoded and rendered).
+     * Block to be provided by the client, used to determine if the given adjustment data can be handled (i.e. can be
+     * decoded and rendered).
      */
     @Generated
     @Selector("canHandleAdjustmentData")
@@ -182,7 +183,8 @@ public class PHContentEditingInputRequestOptions extends NSObject {
     public native Block_progressHandler_ret progressHandler();
 
     /**
-     * Block to be provided by the client, used to determine if the given adjustment data can be handled (i.e. can be decoded and rendered).
+     * Block to be provided by the client, used to determine if the given adjustment data can be handled (i.e. can be
+     * decoded and rendered).
      */
     @Generated
     @Selector("setCanHandleAdjustmentData:")

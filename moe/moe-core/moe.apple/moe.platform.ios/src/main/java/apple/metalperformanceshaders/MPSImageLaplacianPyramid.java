@@ -29,7 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSImageLaplacianPyramid
  * <p>
- * Laplacian pyramid levels are constructed as difference between the current source level and 2x interpolated version of the
+ * Laplacian pyramid levels are constructed as difference between the current source level and 2x interpolated version
+ * of the
  * half-resolution source level immediately above it.
  * <p>
  * LaplacianMipLevel[l] := GaussianMipLevel[l] – Interpolate(GaussianMipLevel[l + 1])
@@ -61,7 +62,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * specify point-wise linear mapping of the LaplacianMipLevelRaw result data
  * into the value range of the destination texture :
  * LaplacianRangeScale(pixel, laplacianBias, laplacianScale) := laplacianBias + pixel * laplacianScale,
- * LaplacianMipLevelStored[j]                                := LaplacianRangeScale(LaplacianMipLevel[j], laplacianBias, laplacianScale),
+ * LaplacianMipLevelStored[j] := LaplacianRangeScale(LaplacianMipLevel[j], laplacianBias, laplacianScale),
  * with the default values being laplacianBias = 0.0, laplacianScale = 1.0
  * <p>
  * Limitations of the current software revision :

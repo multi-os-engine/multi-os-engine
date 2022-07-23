@@ -63,9 +63,11 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
     public static native AVSpeechSynthesisVoice allocWithZone(VoidPtr zone);
 
     /**
-     * This is a dictionary of properties that can be used to create an AVAudioFile using -[AVAudioFile initForWriting:settings:commonFormat:interleaved:error:]
+     * This is a dictionary of properties that can be used to create an AVAudioFile using -[AVAudioFile
+     * initForWriting:settings:commonFormat:interleaved:error:]
      * The data provided by AVSpeechSynthesizerBufferCallback will be in this specified format when using this voice.
-     * The AVAudioCommonFormat and interleaved properties can be determined by properties within the settings dictionary.
+     * The AVAudioCommonFormat and interleaved properties can be determined by properties within the settings
+     * dictionary.
      */
     @Generated
     @Selector("audioFileSettings")
@@ -211,9 +213,10 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
      * Retrieve a voice by its identifier.
      * <p>
      * Passing in an invalid identifier will return nil.
-     * Returns nil if the identifier is valid, but the voice is not available on device (i.e. not yet downloaded by the user).
+     * Returns nil if the identifier is valid, but the voice is not available on device (i.e. not yet downloaded by the
+     * user).
      *
-     * @param            identifier A unique identifier for a voice.
+     * @param identifier A unique identifier for a voice.
      */
     @Generated
     @Selector("voiceWithIdentifier:")
@@ -230,7 +233,7 @@ public class AVSpeechSynthesisVoice extends NSObject implements NSSecureCoding {
      * Will return enhanced quality voice if available, default quality otherwise.
      * Examples: en-US (U.S. English), fr-CA (French Canadian)
      *
-     * @param            languageCode Specifies the BCP-47 language tag that represents the voice.
+     * @param languageCode Specifies the BCP-47 language tag that represents the voice.
      */
     @Generated
     @Selector("voiceWithLanguage:")

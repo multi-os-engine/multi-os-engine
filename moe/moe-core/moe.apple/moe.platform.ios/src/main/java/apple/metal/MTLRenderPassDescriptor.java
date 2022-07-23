@@ -230,10 +230,12 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     /**
      * getSamplePositions:count:
      * <p>
-     * Retrieve the previously configured custom sample positions. The positions input array will only be modified when count specifies a length sufficient for the number of previously configured positions.
+     * Retrieve the previously configured custom sample positions. The positions input array will only be modified when
+     * count specifies a length sufficient for the number of previously configured positions.
      *
      * @param positions The destination array for custom sample position data.
-     * @param count     Specifies the length of the positions array, which must be large enough to hold all configured sample positions.
+     * @param count     Specifies the length of the positions array, which must be large enough to hold all configured
+     *                  sample positions.
      * @return The number of previously configured custom sample positions.
      */
     @Generated
@@ -323,7 +325,8 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
      * Configure the custom sample positions, to be used in MSAA rendering (i.e. when sample count > 1).
      *
      * @param positions The source array for custom sample position data.
-     * @param count     Specifies the length of the positions array, and must be a valid sample count or 0 (to disable custom sample positions).
+     * @param count     Specifies the length of the positions array, and must be a valid sample count or 0 (to disable
+     *                  custom sample positions).
      */
     @Generated
     @Selector("setSamplePositions:count:")
@@ -395,9 +398,11 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] rasterizationRateMap
      * <p>
-     * The variable rasterization rate map to use when rendering this pass, or nil to not use variable rasterization rate.
+     * The variable rasterization rate map to use when rendering this pass, or nil to not use variable rasterization
+     * rate.
      * <p>
-     * The default value is nil. Enabling variable rasterization rate allows for decreasing the rasterization rate in unimportant regions of screen space.
+     * The default value is nil. Enabling variable rasterization rate allows for decreasing the rasterization rate in
+     * unimportant regions of screen space.
      */
     @Generated
     @Selector("rasterizationRateMap")
@@ -417,9 +422,11 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     /**
      * [@property] rasterizationRateMap
      * <p>
-     * The variable rasterization rate map to use when rendering this pass, or nil to not use variable rasterization rate.
+     * The variable rasterization rate map to use when rendering this pass, or nil to not use variable rasterization
+     * rate.
      * <p>
-     * The default value is nil. Enabling variable rasterization rate allows for decreasing the rasterization rate in unimportant regions of screen space.
+     * The default value is nil. Enabling variable rasterization rate allows for decreasing the rasterization rate in
+     * unimportant regions of screen space.
      */
     @Generated
     @Selector("setRasterizationRateMap:")

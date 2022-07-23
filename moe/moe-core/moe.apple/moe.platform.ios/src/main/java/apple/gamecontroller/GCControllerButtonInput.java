@@ -154,14 +154,16 @@ public class GCControllerButtonInput extends GCControllerElement {
     public native GCControllerButtonInput init();
 
     /**
-     * Buttons are mostly used in a digital sense, thus we have a recommended method for checking for pressed state instead of
+     * Buttons are mostly used in a digital sense, thus we have a recommended method for checking for pressed state
+     * instead of
      * interpreting the value.
      * <p>
      * As a general guideline a button is pressed if the value exceeds 0. However there may be hysterisis applied
      * to counter noisy input values, thus incidental values around the threshold value may not trigger a change
      * in pressed state.
      * <p>
-     * Others buttons may support two-stage actuation, where the button reports a value between 0 and 1 but is only considered
+     * Others buttons may support two-stage actuation, where the button reports a value between 0 and 1 but is only
+     * considered
      * pressed when its value is greater than some threshold other than 0.
      *
      * @see pressedChangedHandler
@@ -197,7 +199,8 @@ public class GCControllerButtonInput extends GCControllerElement {
             @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
     /**
-     * A normalized value for the input. Between 0 and 1 for button inputs. Values are saturated and thus never exceed the range of [0, 1].
+     * A normalized value for the input. Between 0 and 1 for button inputs. Values are saturated and thus never exceed
+     * the range of [0, 1].
      *
      * @see valueChangedHandler
      * @see pressed

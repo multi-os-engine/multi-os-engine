@@ -36,7 +36,8 @@ public interface UITableViewDropCoordinator {
     /**
      * Animate the dragItem to a rect inside an existing row.
      * The rect is in the coordinate space of the cell at this index path.
-     * The item will be animated with an aspect fit scale transform to fit inside the rect. Use a rect with zero size to shrink the item to a single point.
+     * The item will be animated with an aspect fit scale transform to fit inside the rect. Use a rect with zero size to
+     * shrink the item to a single point.
      */
     @Generated
     @Selector("dropItem:intoRowAtIndexPath:rect:")
@@ -45,7 +46,8 @@ public interface UITableViewDropCoordinator {
 
     /**
      * Animate the dragItem to an automatically inserted placeholder row.
-     * Once the dragItem data is available, you can exchange the temporary placeholder cell with the final cell using the placeholder context
+     * Once the dragItem data is available, you can exchange the temporary placeholder cell with the final cell using
+     * the placeholder context
      * method -commitInsertionWithDataSourceUpdates:
      */
     @Generated
@@ -56,8 +58,10 @@ public interface UITableViewDropCoordinator {
 
     /**
      * Animate the dragItem to a row that you inserted at this index path.
-     * You must call -performBatchUpdates:completion: to update your data source and insert a new row into the table view prior to calling this method.
-     * If desired, use the drop delegate method -tableView:dropPreviewParametersForRowAtIndexPath: to provide preview parameters.
+     * You must call -performBatchUpdates:completion: to update your data source and insert a new row into the table
+     * view prior to calling this method.
+     * If desired, use the drop delegate method -tableView:dropPreviewParametersForRowAtIndexPath: to provide preview
+     * parameters.
      */
     @Generated
     @Selector("dropItem:toRowAtIndexPath:")

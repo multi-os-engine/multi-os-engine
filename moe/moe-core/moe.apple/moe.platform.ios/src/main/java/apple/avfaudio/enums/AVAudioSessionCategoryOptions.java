@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * [@enum]        AVAudioSessionCategoryOptions
+ * [@enum] AVAudioSessionCategoryOptions
  * <p>
  * Customization of various aspects of a category's behavior. Use with
  * setCategory:mode:options:error:.

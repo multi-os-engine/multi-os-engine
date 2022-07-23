@@ -158,7 +158,7 @@ public class PKPushRegistry extends NSObject {
     public static native long version_static();
 
     /**
-     * [@property]      delegate
+     * [@property] delegate
      * <p>
      * Setting a delegate is required to receive device push tokens and incoming pushes.
      */
@@ -168,7 +168,7 @@ public class PKPushRegistry extends NSObject {
     public native PKPushRegistryDelegate delegate();
 
     /**
-     * [@property]      desiredPushTypes
+     * [@property] desiredPushTypes
      * <p>
      * An app requests registration for various types of pushes by setting this NSSet to the desired
      * PKPushType constants. Push tokens and notifications will be delivered via delegate callback.
@@ -188,7 +188,7 @@ public class PKPushRegistry extends NSObject {
      *
      * @param queue All delegate callbacks are performed asynchronously by PKPushRegistry on this queue.
      * @return A PKPushRegistry instance that can be used to register for push tokens and notifications for supported
-     * push types.
+     *         push types.
      */
     @Generated
     @Selector("initWithQueue:")
@@ -204,14 +204,14 @@ public class PKPushRegistry extends NSObject {
      *
      * @param type This is a PKPushType constant that is already in desiredPushTypes.
      * @return Returns the push token that can be used to send pushes to the device for the specified PKPushType.
-     * Returns nil if no push token is available for this PKPushType at the time of invocation.
+     *         Returns nil if no push token is available for this PKPushType at the time of invocation.
      */
     @Generated
     @Selector("pushTokenForType:")
     public native NSData pushTokenForType(String type);
 
     /**
-     * [@property]      delegate
+     * [@property] delegate
      * <p>
      * Setting a delegate is required to receive device push tokens and incoming pushes.
      */
@@ -220,7 +220,7 @@ public class PKPushRegistry extends NSObject {
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) PKPushRegistryDelegate value);
 
     /**
-     * [@property]      delegate
+     * [@property] delegate
      * <p>
      * Setting a delegate is required to receive device push tokens and incoming pushes.
      */
@@ -237,7 +237,7 @@ public class PKPushRegistry extends NSObject {
     }
 
     /**
-     * [@property]      desiredPushTypes
+     * [@property] desiredPushTypes
      * <p>
      * An app requests registration for various types of pushes by setting this NSSet to the desired
      * PKPushType constants. Push tokens and notifications will be delivered via delegate callback.

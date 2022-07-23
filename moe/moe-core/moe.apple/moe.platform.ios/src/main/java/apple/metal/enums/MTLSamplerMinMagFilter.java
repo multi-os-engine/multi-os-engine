@@ -28,7 +28,9 @@ import org.moe.natj.general.ann.NUInt;
  * Select the single texel nearest to the sample point.
  * <p>
  * [@constant] MTLSamplerMinMagFilterLinear
- * Select two texels in each dimension, and interpolate linearly between them.  Not all devices support linear filtering for all formats.  Integer textures can not use linear filtering on any device, and only some devices support linear filtering of Float textures.
+ * Select two texels in each dimension, and interpolate linearly between them. Not all devices support linear filtering
+ * for all formats. Integer textures can not use linear filtering on any device, and only some devices support linear
+ * filtering of Float textures.
  */
 @Generated
 public final class MTLSamplerMinMagFilter {

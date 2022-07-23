@@ -157,7 +157,7 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * If stencil passes, depth is tested next.  Declare what happens when the depth test fails.
+     * If stencil passes, depth is tested next. Declare what happens when the depth test fails.
      */
     @Generated
     @Selector("depthFailureOperation")
@@ -181,7 +181,7 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
     public native int readMask();
 
     /**
-     * If stencil passes, depth is tested next.  Declare what happens when the depth test fails.
+     * If stencil passes, depth is tested next. Declare what happens when the depth test fails.
      */
     @Generated
     @Selector("setDepthFailureOperation:")
@@ -203,7 +203,8 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
     public native void setStencilCompareFunction(@NUInt long value);
 
     /**
-     * Stencil is tested first.  stencilFailureOperation declares how the stencil buffer is updated when the stencil test fails.
+     * Stencil is tested first. stencilFailureOperation declares how the stencil buffer is updated when the stencil test
+     * fails.
      */
     @Generated
     @Selector("setStencilFailureOperation:")
@@ -219,7 +220,8 @@ public class MTLStencilDescriptor extends NSObject implements NSCopying {
     public native long stencilCompareFunction();
 
     /**
-     * Stencil is tested first.  stencilFailureOperation declares how the stencil buffer is updated when the stencil test fails.
+     * Stencil is tested first. stencilFailureOperation declares how the stencil buffer is updated when the stencil test
+     * fails.
      */
     @Generated
     @Selector("stencilFailureOperation")

@@ -203,7 +203,8 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
     /**
      * [@property] matchDomains
      * <p>
-     * An array of strings containing domain strings. If this property is non-nil, the DNS settings will only be used to resolve host names within the specified domains.
+     * An array of strings containing domain strings. If this property is non-nil, the DNS settings will only be used to
+     * resolve host names within the specified domains.
      */
     @Generated
     @Selector("matchDomains")
@@ -212,7 +213,8 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
     /**
      * [@property] matchDomainsNoSearch
      * <p>
-     * A boolean indicating if the match domains should be appended to the search domain list.  Default is NO (match domains will be appended to the search domain list).
+     * A boolean indicating if the match domains should be appended to the search domain list. Default is NO (match
+     * domains will be appended to the search domain list).
      */
     @Generated
     @Selector("matchDomainsNoSearch")
@@ -248,7 +250,8 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
     /**
      * [@property] matchDomains
      * <p>
-     * An array of strings containing domain strings. If this property is non-nil, the DNS settings will only be used to resolve host names within the specified domains.
+     * An array of strings containing domain strings. If this property is non-nil, the DNS settings will only be used to
+     * resolve host names within the specified domains.
      */
     @Generated
     @Selector("setMatchDomains:")
@@ -257,7 +260,8 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
     /**
      * [@property] matchDomainsNoSearch
      * <p>
-     * A boolean indicating if the match domains should be appended to the search domain list.  Default is NO (match domains will be appended to the search domain list).
+     * A boolean indicating if the match domains should be appended to the search domain list. Default is NO (match
+     * domains will be appended to the search domain list).
      */
     @Generated
     @Selector("setMatchDomainsNoSearch:")

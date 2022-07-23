@@ -61,7 +61,8 @@ public interface UIPickerViewDelegate {
     }
 
     /**
-     * these methods return either a plain NSString, a NSAttributedString, or a view (e.g UILabel) to display the row for the component.
+     * these methods return either a plain NSString, a NSAttributedString, or a view (e.g UILabel) to display the row
+     * for the component.
      * for the view versions, we cache any hidden and thus unused views and pass them back for reuse.
      * If you return back a different object, the old one will be released. the view will be centered in the row rect
      */

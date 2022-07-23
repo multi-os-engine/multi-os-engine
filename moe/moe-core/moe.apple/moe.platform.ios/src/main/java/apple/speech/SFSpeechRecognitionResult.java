@@ -44,7 +44,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A recognized utterance, corresponding to a segment of recorded audio with speech and containing one or more transcriptions hypotheses
+ * A recognized utterance, corresponding to a segment of recorded audio with speech and containing one or more
+ * transcriptions hypotheses
  */
 @Generated
 @Library("Speech")

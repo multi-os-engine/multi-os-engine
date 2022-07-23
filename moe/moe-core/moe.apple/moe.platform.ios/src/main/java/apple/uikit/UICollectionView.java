@@ -61,8 +61,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UICollectionView extends UIScrollView
-        implements UIDataSourceTranslating, UISpringLoadedInteractionSupporting {
+public class UICollectionView extends UIScrollView implements UIDataSourceTranslating,
+        UISpringLoadedInteractionSupporting {
     static {
         NatJ.register();
     }
@@ -405,7 +405,8 @@ public class UICollectionView extends UIScrollView
     }
 
     /**
-     * will be automatically resized to track the size of the collection view and placed behind all cells and supplementary views.
+     * will be automatically resized to track the size of the collection view and placed behind all cells and
+     * supplementary views.
      */
     @Generated
     @Selector("backgroundView")
@@ -427,7 +428,8 @@ public class UICollectionView extends UIScrollView
     public native void cancelInteractiveTransition();
 
     /**
-     * Returns any existing visible or prepared cell for the index path. Returns nil when no cell exists, or if index path is out of range.
+     * Returns any existing visible or prepared cell for the index path. Returns nil when no cell exists, or if index
+     * path is out of range.
      */
     @Generated
     @Selector("cellForItemAtIndexPath:")
@@ -581,7 +583,8 @@ public class UICollectionView extends UIScrollView
     public native UICollectionViewDataSourcePrefetching prefetchDataSource();
 
     /**
-     * For each reuse identifier that the collection view will use, register either a class or a nib from which to instantiate a cell.
+     * For each reuse identifier that the collection view will use, register either a class or a nib from which to
+     * instantiate a cell.
      * If a nib is registered, it must contain exactly 1 top level object which is a UICollectionViewCell.
      * If a class is registered, it will be instantiated via alloc/initWithFrame:
      */
@@ -619,7 +622,8 @@ public class UICollectionView extends UIScrollView
     public native void reloadSections(NSIndexSet sections);
 
     /**
-     * defaults to NO. If YES, when focusing on a collection view the last focused index path is focused automatically. If the collection view has never been focused, then the preferred focused index path is used.
+     * defaults to NO. If YES, when focusing on a collection view the last focused index path is focused automatically.
+     * If the collection view has never been focused, then the preferred focused index path is used.
      */
     @Generated
     @Selector("remembersLastFocusedIndexPath")
@@ -653,7 +657,8 @@ public class UICollectionView extends UIScrollView
     public native void setAllowsSelection(boolean value);
 
     /**
-     * will be automatically resized to track the size of the collection view and placed behind all cells and supplementary views.
+     * will be automatically resized to track the size of the collection view and placed behind all cells and
+     * supplementary views.
      */
     @Generated
     @Selector("setBackgroundView:")
@@ -725,7 +730,8 @@ public class UICollectionView extends UIScrollView
     }
 
     /**
-     * defaults to NO. If YES, when focusing on a collection view the last focused index path is focused automatically. If the collection view has never been focused, then the preferred focused index path is used.
+     * defaults to NO. If YES, when focusing on a collection view the last focused index path is focused automatically.
+     * If the collection view has never been focused, then the preferred focused index path is used.
      */
     @Generated
     @Selector("setRemembersLastFocusedIndexPath:")
@@ -810,7 +816,8 @@ public class UICollectionView extends UIScrollView
     public native UICollectionViewDropDelegate dropDelegate();
 
     /**
-     * YES if a drag session is currently active. A drag session begins after items are "lifted" from the collection view.
+     * YES if a drag session is currently active. A drag session begins after items are "lifted" from the collection
+     * view.
      */
     @Generated
     @Selector("hasActiveDrag")
@@ -1011,8 +1018,10 @@ public class UICollectionView extends UIScrollView
     public native UIContextMenuInteraction contextMenuInteraction();
 
     /**
-     * Reconfigures any existing cells for the items. Reconfiguring is more efficient than reloading an item, as it does not replace the
-     * existing cell with a new cell. Prefer reconfiguring over reloading unless you actually need an entirely new cell for the item.
+     * Reconfigures any existing cells for the items. Reconfiguring is more efficient than reloading an item, as it does
+     * not replace the
+     * existing cell with a new cell. Prefer reconfiguring over reloading unless you actually need an entirely new cell
+     * for the item.
      */
     @Generated
     @Selector("reconfigureItemsAtIndexPaths:")

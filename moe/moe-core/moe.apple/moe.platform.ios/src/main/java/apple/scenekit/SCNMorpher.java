@@ -241,7 +241,8 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
      * <p>
      * Specifies the morph targets as an array of SCNGeometry.
      * <p>
-     * The target geometries must have the same number of entries in their geometry sources and the same topology as the base geometry.
+     * The target geometries must have the same number of entries in their geometry sources and the same topology as the
+     * base geometry.
      */
     @Generated
     @Selector("setTargets:")
@@ -250,7 +251,8 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     /**
      * setWeight:forTargetAtIndex:
      * <p>
-     * Sets the weight for the target at the specified index. Animatable implicitly or explicitly with the keyPath "weights[index]" or "weights["targetName"]" (targetName is the name of the target geometry).
+     * Sets the weight for the target at the specified index. Animatable implicitly or explicitly with the keyPath
+     * "weights[index]" or "weights["targetName"]" (targetName is the name of the target geometry).
      */
     @Generated
     @Selector("setWeight:forTargetAtIndex:")
@@ -267,7 +269,8 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
      * <p>
      * Specifies the morph targets as an array of SCNGeometry.
      * <p>
-     * The target geometries must have the same number of entries in their geometry sources and the same topology as the base geometry.
+     * The target geometries must have the same number of entries in their geometry sources and the same topology as the
+     * base geometry.
      */
     @Generated
     @Selector("targets")
@@ -298,7 +301,8 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     /**
      * [@property] unifiesNormals
      * <p>
-     * When set to YES the normals are not morphed but are recomputed after morphing the vertex instead. When set to NO, the morpher will morph the normals if the geometry targets have normals. Defaults to NO.
+     * When set to YES the normals are not morphed but are recomputed after morphing the vertex instead. When set to NO,
+     * the morpher will morph the normals if the geometry targets have normals. Defaults to NO.
      */
     @Generated
     @Selector("setUnifiesNormals:")
@@ -325,7 +329,8 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     /**
      * [@property] unifiesNormals
      * <p>
-     * When set to YES the normals are not morphed but are recomputed after morphing the vertex instead. When set to NO, the morpher will morph the normals if the geometry targets have normals. Defaults to NO.
+     * When set to YES the normals are not morphed but are recomputed after morphing the vertex instead. When set to NO,
+     * the morpher will morph the normals if the geometry targets have normals. Defaults to NO.
      */
     @Generated
     @Selector("unifiesNormals")

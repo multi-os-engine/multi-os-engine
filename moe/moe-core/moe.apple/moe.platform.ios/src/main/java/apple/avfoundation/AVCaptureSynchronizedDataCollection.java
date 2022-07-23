@@ -31,7 +31,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A collection of AVCaptureSynchronizedData objects.
  * <p>
- * AVCaptureDataOutputSynchronizer's -dataOutputSynchronizer:didOutputSynchronizedDataCollection: delegate method delivers a collection of AVCaptureSynchronizedData objects which can be iterated by use AVCaptureOutput. AVCaptureSynchronizedDataCollection supports object subscripting and fast enumeration of the data outputs as keys.
+ * AVCaptureDataOutputSynchronizer's -dataOutputSynchronizer:didOutputSynchronizedDataCollection: delegate method
+ * delivers a collection of AVCaptureSynchronizedData objects which can be iterated by use AVCaptureOutput.
+ * AVCaptureSynchronizedDataCollection supports object subscripting and fast enumeration of the data outputs as keys.
  */
 @Generated
 @Library("AVFoundation")
@@ -149,7 +151,8 @@ public class AVCaptureSynchronizedDataCollection extends NSObject implements NSF
      * <p>
      * Method that provides support for object subscripting.
      * <p>
-     * AVCaptureSynchronizedDataCollection supports object subscripting. If you'd like to find the synchronized data for a given data output, simply:
+     * AVCaptureSynchronizedDataCollection supports object subscripting. If you'd like to find the synchronized data for
+     * a given data output, simply:
      * AVCaptureSynchronizedData *synchronizedData = synchronizedDataCollection[dataOutput];
      *
      * @param key The data output whose synchronized data you'd like to inspect.

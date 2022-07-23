@@ -176,7 +176,8 @@ public class ALAssetRepresentation extends NSObject {
     public native String UTI();
 
     /**
-     * Returns the dimensions of this representation.  If the representation does not have valid dimensions, this method will return CGSizeZero.
+     * Returns the dimensions of this representation. If the representation does not have valid dimensions, this method
+     * will return CGSizeZero.
      */
     @Generated
     @Deprecated
@@ -203,7 +204,8 @@ public class ALAssetRepresentation extends NSObject {
 
     /**
      * Returns a CGImage of the representation that is appropriate for displaying full screen.
-     * The dimensions of this image will be dependent on the hardware that the application is running on and does not mean it will match the dimensions of the screen.
+     * The dimensions of this image will be dependent on the hardware that the application is running on and does not
+     * mean it will match the dimensions of the screen.
      */
     @Generated
     @Deprecated
@@ -214,7 +216,8 @@ public class ALAssetRepresentation extends NSObject {
      * Copies the specified range of bytes into the buffer given by the caller.
      * The method returns the number of bytes actually written to the buffer. The number of bytes read will be
      * less than the requested range if the range exceeds the file's size.
-     * If an error occurs, the method returns 0 and upon return contains an NSError object that describes the problem. Pass NULL if you do not want error information.
+     * If an error occurs, the method returns 0 and upon return contains an NSError object that describes the problem.
+     * Pass NULL if you do not want error information.
      */
     @Generated
     @Deprecated
@@ -254,7 +257,8 @@ public class ALAssetRepresentation extends NSObject {
     public native float scale();
 
     /**
-     * Returns the size of the file for this representation. Callers can use this to allocate buffers of the right size for -getBytes:fromOffset:length:error:
+     * Returns the size of the file for this representation. Callers can use this to allocate buffers of the right size
+     * for -getBytes:fromOffset:length:error:
      */
     @Generated
     @Deprecated

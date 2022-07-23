@@ -65,7 +65,7 @@ public class MXCrashDiagnostic extends MXDiagnostic {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]      callStackTree
+     * [@property] callStackTree
      * <p>
      * The application call stack tree associated with this crash.
      * <p>
@@ -102,7 +102,7 @@ public class MXCrashDiagnostic extends MXDiagnostic {
     public static native String description_static();
 
     /**
-     * [@property]      exceptionCode
+     * [@property] exceptionCode
      * <p>
      * Processor specific information about the exception encoded into one or more 64-bit hexadecimal numbers
      *
@@ -113,7 +113,7 @@ public class MXCrashDiagnostic extends MXDiagnostic {
     public native NSNumber exceptionCode();
 
     /**
-     * [@property]      exceptionType
+     * [@property] exceptionType
      * <p>
      * The name of the Mach exception that terminated the app.
      *
@@ -175,7 +175,7 @@ public class MXCrashDiagnostic extends MXDiagnostic {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]      signal
+     * [@property] signal
      * <p>
      * The signal associated with this crash.
      *
@@ -200,11 +200,13 @@ public class MXCrashDiagnostic extends MXDiagnostic {
     }
 
     /**
-     * [@property]      terminationReason
+     * [@property] terminationReason
      * <p>
      * The termination reason associated with this crash.
      * <p>
-     * Exit reason information specified when a process is terminated. Key system components, both inside and outside of a process, will terminate the process upon encountering a fatal error (e.g. a bad code signature, a missing dependent library, or accessing privacy sensitive information without the proper entitlement).
+     * Exit reason information specified when a process is terminated. Key system components, both inside and outside of
+     * a process, will terminate the process upon encountering a fatal error (e.g. a bad code signature, a missing
+     * dependent library, or accessing privacy sensitive information without the proper entitlement).
      */
     @Generated
     @Selector("terminationReason")
@@ -216,9 +218,10 @@ public class MXCrashDiagnostic extends MXDiagnostic {
     public static native long version_static();
 
     /**
-     * [@property]      virtualMemoryRegionInfo
+     * [@property] virtualMemoryRegionInfo
      * <p>
-     * Details about memory that the app incorrectly accessed in relation to other sections of the app’s virtual memory address space.
+     * Details about memory that the app incorrectly accessed in relation to other sections of the app’s virtual memory
+     * address space.
      * <p>
      * This property is set when a bad memory access crash occurs.
      */

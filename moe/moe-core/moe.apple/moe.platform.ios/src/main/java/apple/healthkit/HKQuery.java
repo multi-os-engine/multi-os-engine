@@ -139,9 +139,11 @@ public class HKQuery extends NSObject {
      * <p>
      * Creates a query predicate that matches HKActivitySummaries that fall between the given date components.
      *
-     * @param startDateComponents The date components that define the beginning of the range. These date components should contain
+     * @param startDateComponents The date components that define the beginning of the range. These date components
+     *                            should contain
      *                            era, year, month, and day components in the gregorian calendar.
-     * @param endDateComponents   The date components that define the end of the range. These date components should contain era,
+     * @param endDateComponents   The date components that define the end of the range. These date components should
+     *                            contain era,
      *                            year, month, and day components in the gregorian calendar.
      */
     @Generated
@@ -156,7 +158,8 @@ public class HKQuery extends NSObject {
      * <p>
      * Creates a query predicate that matches HKActivitySummaries with the given date components.
      *
-     * @param dateComponents The date components of the activity summary. These date components should contain era, year, month,
+     * @param dateComponents The date components of the activity summary. These date components should contain era,
+     *                       year, month,
      *                       and day components in the gregorian calendar.
      */
     @Generated
@@ -407,7 +410,8 @@ public class HKQuery extends NSObject {
      * Creates a query predicate that matches HKWorkouts by the given operator type and totalEnergyBurned
      *
      * @param operatorType  The operator type for the expression.
-     * @param totalDistance The value that the workout's totalEnergyBurned is being compared to. It is the right hand side of the
+     * @param totalDistance The value that the workout's totalEnergyBurned is being compared to. It is the right hand
+     *                      side of the
      *                      expression. The unit for this value should be of type Distance.
      */
     @Generated
@@ -423,7 +427,8 @@ public class HKQuery extends NSObject {
      * Creates a query predicate that matches HKWorkouts by the given operator type and totalEnergyBurned
      *
      * @param operatorType      The operator type for the expression.
-     * @param totalEnergyBurned The value that the workout's totalEnergyBurned is being compared to. It is the right hand side of the
+     * @param totalEnergyBurned The value that the workout's totalEnergyBurned is being compared to. It is the right
+     *                          hand side of the
      *                          expression. The unit for this value should be of type Energy.
      */
     @Generated
@@ -520,7 +525,8 @@ public class HKQuery extends NSObject {
      * <p>
      * Creates a predicate for use with HKQuery subclasses.
      * <p>
-     * Creates a query predicate that matches HKClinicalRecords for a given source, FHIR resource type, and FHIR identifier.
+     * Creates a query predicate that matches HKClinicalRecords for a given source, FHIR resource type, and FHIR
+     * identifier.
      *
      * @param source       The source.
      * @param resourceType The FHIR resource type.

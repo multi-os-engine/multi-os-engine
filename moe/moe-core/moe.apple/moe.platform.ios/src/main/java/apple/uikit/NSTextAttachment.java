@@ -56,9 +56,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSTextAttachment extends NSObject
-        implements NSTextAttachmentLayout, NSTextAttachmentContainer, NSSecureCoding,
-        UIAccessibilityContentSizeCategoryImageAdjusting {
+public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout, NSTextAttachmentContainer,
+        NSSecureCoding, UIAccessibilityContentSizeCategoryImageAdjusting {
     static {
         NatJ.register();
     }
@@ -171,7 +170,8 @@ public class NSTextAttachment extends NSObject
             NSTextContainer textContainer, @ByValue CGRect lineFrag, @ByValue CGPoint position, @NUInt long charIndex);
 
     /**
-     * Defines the layout bounds of the receiver's graphical representation in the text coordinate system.  The origin is at the glyph location on the text baseline.  The default value is CGRectZero.
+     * Defines the layout bounds of the receiver's graphical representation in the text coordinate system. The origin is
+     * at the glyph location on the text baseline. The default value is CGRectZero.
      */
     @Generated
     @Selector("bounds")
@@ -179,7 +179,8 @@ public class NSTextAttachment extends NSObject
     public native CGRect bounds();
 
     /**
-     * These two properties define the contents for the text attachment.  Modifying these properties have a side effect of invalidating -image and -fileWrapper properties. -fileType is an UTI describing the format for -contents.
+     * These two properties define the contents for the text attachment. Modifying these properties have a side effect
+     * of invalidating -image and -fileWrapper properties. -fileType is an UTI describing the format for -contents.
      */
     @Generated
     @Selector("contents")
@@ -194,14 +195,16 @@ public class NSTextAttachment extends NSObject
     public native String fileType();
 
     /**
-     * Optionally, NSTextAttachment can be associated with a file wrapper. Modifying this property has a side effect of invalidating -image, -contents, and fileType properties.
+     * Optionally, NSTextAttachment can be associated with a file wrapper. Modifying this property has a side effect of
+     * invalidating -image, -contents, and fileType properties.
      */
     @Generated
     @Selector("fileWrapper")
     public native NSFileWrapper fileWrapper();
 
     /**
-     * Image representing the text attachment contents. Modifying this property invalidates -contents, -fileType, and -FileWrapper properties.
+     * Image representing the text attachment contents. Modifying this property invalidates -contents, -fileType, and
+     * -FileWrapper properties.
      */
     @Generated
     @Selector("image")
@@ -221,21 +224,25 @@ public class NSTextAttachment extends NSObject
     public native NSTextAttachment initWithCoder(NSCoder coder);
 
     /**
-     * Designated initializer.  Both arguments can be nil.  When contentData==nil || uti==nil, the receiver is consider to be an attachment without document contents.  In this case, the NSAttributedString methods writing external file format tries to save the return value of -[NSTextAttachment image] instead.
+     * Designated initializer. Both arguments can be nil. When contentData==nil || uti==nil, the receiver is consider to
+     * be an attachment without document contents. In this case, the NSAttributedString methods writing external file
+     * format tries to save the return value of -[NSTextAttachment image] instead.
      */
     @Generated
     @Selector("initWithData:ofType:")
     public native NSTextAttachment initWithDataOfType(NSData contentData, String uti);
 
     /**
-     * Defines the layout bounds of the receiver's graphical representation in the text coordinate system.  The origin is at the glyph location on the text baseline.  The default value is CGRectZero.
+     * Defines the layout bounds of the receiver's graphical representation in the text coordinate system. The origin is
+     * at the glyph location on the text baseline. The default value is CGRectZero.
      */
     @Generated
     @Selector("setBounds:")
     public native void setBounds(@ByValue CGRect value);
 
     /**
-     * These two properties define the contents for the text attachment.  Modifying these properties have a side effect of invalidating -image and -fileWrapper properties. -fileType is an UTI describing the format for -contents.
+     * These two properties define the contents for the text attachment. Modifying these properties have a side effect
+     * of invalidating -image and -fileWrapper properties. -fileType is an UTI describing the format for -contents.
      */
     @Generated
     @Selector("setContents:")
@@ -246,14 +253,16 @@ public class NSTextAttachment extends NSObject
     public native void setFileType(String value);
 
     /**
-     * Optionally, NSTextAttachment can be associated with a file wrapper. Modifying this property has a side effect of invalidating -image, -contents, and fileType properties.
+     * Optionally, NSTextAttachment can be associated with a file wrapper. Modifying this property has a side effect of
+     * invalidating -image, -contents, and fileType properties.
      */
     @Generated
     @Selector("setFileWrapper:")
     public native void setFileWrapper(NSFileWrapper value);
 
     /**
-     * Image representing the text attachment contents. Modifying this property invalidates -contents, -fileType, and -FileWrapper properties.
+     * Image representing the text attachment contents. Modifying this property invalidates -contents, -fileType, and
+     * -FileWrapper properties.
      */
     @Generated
     @Selector("setImage:")
@@ -282,7 +291,8 @@ public class NSTextAttachment extends NSObject
     public static native NSTextAttachment textAttachmentWithImage(UIImage image);
 
     /**
-     * When YES, the text attachment tries to use a text attachment view returned by -viewProviderForParentView:location:textContainer:. YES by default
+     * When YES, the text attachment tries to use a text attachment view returned by
+     * -viewProviderForParentView:location:textContainer:. YES by default
      */
     @Generated
     @Selector("allowsTextAttachmentView")
@@ -302,7 +312,8 @@ public class NSTextAttachment extends NSObject
             NSTextContainer textContainer);
 
     /**
-     * Layout padding before and after the text attachment bounds. The layout and rendering bounds X origin gets inset by the padding value. This affects the relationship between the text attachment bounds. 0.0 by default
+     * Layout padding before and after the text attachment bounds. The layout and rendering bounds X origin gets inset
+     * by the padding value. This affects the relationship between the text attachment bounds. 0.0 by default
      */
     @Generated
     @Selector("lineLayoutPadding")
@@ -315,14 +326,16 @@ public class NSTextAttachment extends NSObject
             String fileType);
 
     /**
-     * When YES, the text attachment tries to use a text attachment view returned by -viewProviderForParentView:location:textContainer:. YES by default
+     * When YES, the text attachment tries to use a text attachment view returned by
+     * -viewProviderForParentView:location:textContainer:. YES by default
      */
     @Generated
     @Selector("setAllowsTextAttachmentView:")
     public native void setAllowsTextAttachmentView(boolean value);
 
     /**
-     * Layout padding before and after the text attachment bounds. The layout and rendering bounds X origin gets inset by the padding value. This affects the relationship between the text attachment bounds. 0.0 by default
+     * Layout padding before and after the text attachment bounds. The layout and rendering bounds X origin gets inset
+     * by the padding value. This affects the relationship between the text attachment bounds. 0.0 by default
      */
     @Generated
     @Selector("setLineLayoutPadding:")
@@ -336,7 +349,8 @@ public class NSTextAttachment extends NSObject
     public static native Class textAttachmentViewProviderClassForFileType(String fileType);
 
     /**
-     * Returns YES if the text attachment is configured to use text attachment views. By default, it checks -allowsTextAttachmentView, +textAttachmentViewClassForFileType:, and its contents
+     * Returns YES if the text attachment is configured to use text attachment views. By default, it checks
+     * -allowsTextAttachmentView, +textAttachmentViewClassForFileType:, and its contents
      */
     @Generated
     @Selector("usesTextAttachmentView")

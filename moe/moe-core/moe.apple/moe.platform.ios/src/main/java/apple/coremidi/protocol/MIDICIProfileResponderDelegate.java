@@ -13,7 +13,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * [@protocol]  MIDICIProfileResponderDelegate
+ * [@protocol] MIDICIProfileResponderDelegate
  * <p>
  * Protocol for an NSObject that constructs and issues responses for a MIDICIResponder.
  * A MIDICIProfileResponderDelegate is required to construct a MIDICIResponder.

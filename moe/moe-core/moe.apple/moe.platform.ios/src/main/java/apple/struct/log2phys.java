@@ -65,8 +65,8 @@ public final class log2phys extends StructObject {
     public native void setL2p_flags(int value);
 
     /**
-     * F_LOG2PHYS:     unused so far
-     * F_LOG2PHYS_EXT: IN:  number of bytes to be queried
+     * F_LOG2PHYS: unused so far
+     * F_LOG2PHYS_EXT: IN: number of bytes to be queried
      * OUT: number of contiguous bytes at this position
      */
     @Generated
@@ -74,8 +74,8 @@ public final class log2phys extends StructObject {
     public native long l2p_contigbytes();
 
     /**
-     * F_LOG2PHYS:     unused so far
-     * F_LOG2PHYS_EXT: IN:  number of bytes to be queried
+     * F_LOG2PHYS: unused so far
+     * F_LOG2PHYS_EXT: IN: number of bytes to be queried
      * OUT: number of contiguous bytes at this position
      */
     @Generated
@@ -83,8 +83,8 @@ public final class log2phys extends StructObject {
     public native void setL2p_contigbytes(long value);
 
     /**
-     * F_LOG2PHYS:     OUT: bytes into device
-     * F_LOG2PHYS_EXT: IN:  bytes into file
+     * F_LOG2PHYS: OUT: bytes into device
+     * F_LOG2PHYS_EXT: IN: bytes into file
      * OUT: bytes into device
      */
     @Generated
@@ -92,8 +92,8 @@ public final class log2phys extends StructObject {
     public native long l2p_devoffset();
 
     /**
-     * F_LOG2PHYS:     OUT: bytes into device
-     * F_LOG2PHYS_EXT: IN:  bytes into file
+     * F_LOG2PHYS: OUT: bytes into device
+     * F_LOG2PHYS_EXT: IN: bytes into file
      * OUT: bytes into device
      */
     @Generated

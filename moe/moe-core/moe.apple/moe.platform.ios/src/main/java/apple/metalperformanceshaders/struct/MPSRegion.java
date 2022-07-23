@@ -51,7 +51,7 @@ public final class MPSRegion extends StructObject {
     }
 
     /**
-     * < The top left corner of the region.  Units: pixels
+     * < The top left corner of the region. Units: pixels
      */
     @Generated
     @StructureField(order = 0, isGetter = true)
@@ -59,7 +59,7 @@ public final class MPSRegion extends StructObject {
     public native MPSOrigin origin();
 
     /**
-     * < The top left corner of the region.  Units: pixels
+     * < The top left corner of the region. Units: pixels
      */
     @Generated
     @StructureField(order = 0, isGetter = false)

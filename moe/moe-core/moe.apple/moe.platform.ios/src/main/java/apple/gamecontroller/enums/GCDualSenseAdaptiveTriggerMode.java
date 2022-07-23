@@ -18,7 +18,8 @@ public final class GCDualSenseAdaptiveTriggerMode {
      */
     @Generated @NInt public static final long Feedback = 0x0000000000000001L;
     /**
-     * The adaptive trigger effect provides feedback from the start position to the end position, emulating the feeling of pulling the trigger on a weapon.
+     * The adaptive trigger effect provides feedback from the start position to the end position, emulating the feeling
+     * of pulling the trigger on a weapon.
      */
     @Generated @NInt public static final long Weapon = 0x0000000000000002L;
     /**

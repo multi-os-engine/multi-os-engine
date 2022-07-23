@@ -161,7 +161,8 @@ public class GKMatchmaker extends NSObject {
     public static native long version_static();
 
     /**
-     * Auto-matching or invites to add additional players to a peer-to-peer match for the specified request. Error will be nil on success:
+     * Auto-matching or invites to add additional players to a peer-to-peer match for the specified request. Error will
+     * be nil on success:
      * Possible reasons for error:
      * 1. Communications failure
      * 2. Timeout
@@ -199,7 +200,9 @@ public class GKMatchmaker extends NSObject {
      * 1. Communications failure
      * 2. Unauthenticated player
      * 3. Timeout
-     * Note that the players property on the returned GKMatch instance will only contain connected players. It will initially be empty as players are connecting. Implement the GKMatchDelegate method match:player:didChangeConnectionState: to listen for updates to the GKMatch instance's players property.
+     * Note that the players property on the returned GKMatch instance will only contain connected players. It will
+     * initially be empty as players are connecting. Implement the GKMatchDelegate method
+     * match:player:didChangeConnectionState: to listen for updates to the GKMatch instance's players property.
      */
     @Generated
     @Selector("findMatchForRequest:withCompletionHandler:")
@@ -216,8 +219,10 @@ public class GKMatchmaker extends NSObject {
             @ObjCBlock(name = "call_findPlayersForHostedMatchRequestWithCompletionHandler") Block_findPlayersForHostedMatchRequestWithCompletionHandler completionHandler);
 
     /**
-     * Auto-matching or invites for host-client match request. This returns a list of player identifiers to be included in the match. Determination and communication with the host is not part of this API.
-     * When inviting, no player identifiers will be returned. Player responses will be reported via the inviteeResponseHandler.
+     * Auto-matching or invites for host-client match request. This returns a list of player identifiers to be included
+     * in the match. Determination and communication with the host is not part of this API.
+     * When inviting, no player identifiers will be returned. Player responses will be reported via the
+     * inviteeResponseHandler.
      * Possible reasons for error:
      * 1. Communications failure
      * 2. Unauthenticated player
@@ -229,7 +234,8 @@ public class GKMatchmaker extends NSObject {
             @ObjCBlock(name = "call_findPlayersForHostedRequestWithCompletionHandler") Block_findPlayersForHostedRequestWithCompletionHandler completionHandler);
 
     /**
-     * Call this when finished with all programmatic P2P invites/matchmaking, for compatability with connected players using GKMatchmakerViewController.
+     * Call this when finished with all programmatic P2P invites/matchmaking, for compatability with connected players
+     * using GKMatchmakerViewController.
      */
     @Generated
     @Selector("finishMatchmakingForMatch:")
@@ -267,7 +273,8 @@ public class GKMatchmaker extends NSObject {
             @ObjCBlock(name = "call_queryActivityWithCompletionHandler") Block_queryActivityWithCompletionHandler completionHandler);
 
     /**
-     * Query the server for recent activity in the specified player group. A larger value indicates that a given group has seen more recent activity. Error will be nil on success.
+     * Query the server for recent activity in the specified player group. A larger value indicates that a given group
+     * has seen more recent activity. Error will be nil on success.
      * Possible reasons for error:
      * 1. Communications failure
      */
@@ -282,7 +289,10 @@ public class GKMatchmaker extends NSObject {
     public native void setInviteHandler(@ObjCBlock(name = "call_setInviteHandler") Block_setInviteHandler value);
 
     /**
-     * Start browsing for nearby players that can be invited to a match. The reachableHandler will be called for each player found with a compatible game. It may be called more than once for the same player if that player ever becomes unreachable (e.g. moves out of range). You should call stopBrowsingForNearbyPlayers when finished browsing.
+     * Start browsing for nearby players that can be invited to a match. The reachableHandler will be called for each
+     * player found with a compatible game. It may be called more than once for the same player if that player ever
+     * becomes unreachable (e.g. moves out of range). You should call stopBrowsingForNearbyPlayers when finished
+     * browsing.
      */
     @Generated
     @Selector("startBrowsingForNearbyPlayersWithHandler:")

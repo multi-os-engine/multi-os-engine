@@ -48,7 +48,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@interface] NEFilterProviderConfiguration
  * <p>
- * The NEFilterProviderConfiguration class declares the programmatic interface of an object that configures a plugin-based content filter.
+ * The NEFilterProviderConfiguration class declares the programmatic interface of an object that configures a
+ * plugin-based content filter.
  */
 @Generated
 @Library("NetworkExtension")
@@ -177,7 +178,9 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
     /**
      * [@property] filterBrowsers
      * <p>
-     * If YES, the filter plugin will be allowed to filter browser traffic. If NO, the filter plugin will not see any browser flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the filter take effect.
+     * If YES, the filter plugin will be allowed to filter browser traffic. If NO, the filter plugin will not see any
+     * browser flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the
+     * filter take effect.
      */
     @Generated
     @Selector("filterBrowsers")
@@ -186,7 +189,9 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
     /**
      * [@property] filterSockets
      * <p>
-     * If YES, the filter plugin will be allowed to filter socket traffic. If NO, the filter plugin will not see any socket flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the filter take effect.
+     * If YES, the filter plugin will be allowed to filter socket traffic. If NO, the filter plugin will not see any
+     * socket flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the
+     * filter take effect.
      */
     @Generated
     @Selector("filterSockets")
@@ -239,7 +244,9 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
     /**
      * [@property] filterBrowsers
      * <p>
-     * If YES, the filter plugin will be allowed to filter browser traffic. If NO, the filter plugin will not see any browser flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the filter take effect.
+     * If YES, the filter plugin will be allowed to filter browser traffic. If NO, the filter plugin will not see any
+     * browser flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the
+     * filter take effect.
      */
     @Generated
     @Selector("setFilterBrowsers:")
@@ -248,7 +255,9 @@ public class NEFilterProviderConfiguration extends NSObject implements NSSecureC
     /**
      * [@property] filterSockets
      * <p>
-     * If YES, the filter plugin will be allowed to filter socket traffic. If NO, the filter plugin will not see any socket flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the filter take effect.
+     * If YES, the filter plugin will be allowed to filter socket traffic. If NO, the filter plugin will not see any
+     * socket flows. Defaults to NO. At least one of filterBrowsers and filterSockets should be set to YES to make the
+     * filter take effect.
      */
     @Generated
     @Selector("setFilterSockets:")

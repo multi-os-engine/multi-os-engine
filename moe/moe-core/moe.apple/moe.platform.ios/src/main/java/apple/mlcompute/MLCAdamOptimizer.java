@@ -62,7 +62,7 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   beta1
+     * [@property] beta1
      * <p>
      * Coefficent used for computing running averages of gradient.
      * <p>
@@ -73,7 +73,7 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
     public native float beta1();
 
     /**
-     * [@property]   beta2
+     * [@property] beta2
      * <p>
      * Coefficent used for computing running averages of square of gradient.
      * <p>
@@ -116,7 +116,7 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
     public static native String description_static();
 
     /**
-     * [@property]   epsilon
+     * [@property] epsilon
      * <p>
      * A term added to improve numerical stability.
      * <p>
@@ -192,7 +192,8 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
      * @param beta1               The beta1 value
      * @param beta2               The beta2 value
      * @param epsilon             The epsilon value to use to improve numerical stability
-     * @param usesAMSGrad         Whether to use the AMSGrad variant of this algorithm from the paper (https://arxiv.org/abs/1904.09237)
+     * @param usesAMSGrad         Whether to use the AMSGrad variant of this algorithm from the paper
+     *                            (https://arxiv.org/abs/1904.09237)
      * @param timeStep            The initial timestep to use for the update
      * @return A new MLCAdamOptimizer object.
      */
@@ -219,7 +220,7 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
     public static native Class superclass_static();
 
     /**
-     * [@property]   timeStep
+     * [@property] timeStep
      * <p>
      * The current timestep used for the update.
      * <p>
@@ -231,7 +232,7 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
     public native long timeStep();
 
     /**
-     * [@property]   usesAMSGrad
+     * [@property] usesAMSGrad
      * <p>
      * Whether to use the AMSGrad variant of this algorithm
      * <p>

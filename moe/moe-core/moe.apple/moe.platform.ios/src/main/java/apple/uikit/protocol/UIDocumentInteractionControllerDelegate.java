@@ -36,7 +36,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("UIDocumentInteractionControllerDelegate")
 public interface UIDocumentInteractionControllerDelegate {
     /**
-     * Used to handle additional menu items that can be performed on the item specified by URL.  Currently only supports the "copy:", "print:" and "saveToCameraRoll:" actions.
+     * Used to handle additional menu items that can be performed on the item specified by URL. Currently only supports
+     * the "copy:", "print:" and "saveToCameraRoll:" actions.
      */
     @Generated
     @IsOptional
@@ -96,10 +97,12 @@ public interface UIDocumentInteractionControllerDelegate {
     }
 
     /**
-     * If preview is supported, these provide the view and rect that will be used as the starting point for the animation to the full screen preview.
+     * If preview is supported, these provide the view and rect that will be used as the starting point for the
+     * animation to the full screen preview.
      * The actual animation that is performed depends upon the platform and other factors.
      * If documentInteractionControllerRectForPreview is not implemented, the specified view's bounds will be used.
-     * If documentInteractionControllerViewForPreview is not implemented, the preview controller will simply fade in instead of scaling up.
+     * If documentInteractionControllerViewForPreview is not implemented, the preview controller will simply fade in
+     * instead of scaling up.
      */
     @Generated
     @IsOptional
@@ -112,7 +115,8 @@ public interface UIDocumentInteractionControllerDelegate {
     /**
      * If preview is supported, this provides the view controller on which the preview will be presented.
      * This method is required if preview is supported.
-     * If presenting atop a navigation stack, provide the navigation controller in order to animate in a manner consistent with the rest of the platform.
+     * If presenting atop a navigation stack, provide the navigation controller in order to animate in a manner
+     * consistent with the rest of the platform.
      */
     @Generated
     @IsOptional
@@ -130,7 +134,7 @@ public interface UIDocumentInteractionControllerDelegate {
     }
 
     /**
-     * Preview presented/dismissed on document.  Use to set up any HI underneath.
+     * Preview presented/dismissed on document. Use to set up any HI underneath.
      */
     @Generated
     @IsOptional
@@ -140,7 +144,7 @@ public interface UIDocumentInteractionControllerDelegate {
     }
 
     /**
-     * Open in menu presented/dismissed on document.  Use to set up any HI underneath.
+     * Open in menu presented/dismissed on document. Use to set up any HI underneath.
      */
     @Generated
     @IsOptional
@@ -150,7 +154,7 @@ public interface UIDocumentInteractionControllerDelegate {
     }
 
     /**
-     * Options menu presented/dismissed on document.  Use to set up any HI underneath.
+     * Options menu presented/dismissed on document. Use to set up any HI underneath.
      */
     @Generated
     @IsOptional

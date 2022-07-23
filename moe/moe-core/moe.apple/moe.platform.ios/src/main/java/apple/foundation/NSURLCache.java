@@ -221,8 +221,8 @@ public class NSURLCache extends NSObject {
      *
      * @param request the NSURLRequest to use as a key for the lookup.
      * @return The NSCachedURLResponse stored in the cache with the given
-     * request, or nil if there is no NSCachedURLResponse stored with the
-     * given request.
+     *         request, or nil if there is no NSCachedURLResponse stored with the
+     *         given request.
      */
     @Generated
     @Selector("cachedResponseForRequest:")
@@ -259,7 +259,8 @@ public class NSURLCache extends NSObject {
     /**
      * The on-disk capacity of the receiver.
      * <p>
-     * The on-disk capacity, measured in bytes, for the receiver. On mutation the on-disk cache will truncate its contents to the size given, if necessary.
+     * The on-disk capacity, measured in bytes, for the receiver. On mutation the on-disk cache will truncate its
+     * contents to the size given, if necessary.
      */
     @Generated
     @Selector("diskCapacity")
@@ -290,7 +291,7 @@ public class NSURLCache extends NSObject {
      * @param diskCapacity   the capacity, measured in bytes, for the cache on disk.
      * @param path           the path on disk where the cache data is stored.
      * @return an initialized NSURLCache, with the given capacity, backed
-     * by disk.
+     *         by disk.
      */
     @Generated
     @Selector("initWithMemoryCapacity:diskCapacity:diskPath:")
@@ -350,7 +351,8 @@ public class NSURLCache extends NSObject {
     /**
      * The on-disk capacity of the receiver.
      * <p>
-     * The on-disk capacity, measured in bytes, for the receiver. On mutation the on-disk cache will truncate its contents to the size given, if necessary.
+     * The on-disk capacity, measured in bytes, for the receiver. On mutation the on-disk cache will truncate its
+     * contents to the size given, if necessary.
      */
     @Generated
     @Selector("setDiskCapacity:")
@@ -399,7 +401,8 @@ public class NSURLCache extends NSObject {
      *
      * @param memoryCapacity the capacity, measured in bytes, for the cache in memory. Or 0 to disable memory cache.
      * @param diskCapacity   the capacity, measured in bytes, for the cache on disk. Or 0 to disable disk cache.
-     * @param directoryURL   the path to a directory on disk where the cache data is stored. Or nil for default directory.
+     * @param directoryURL   the path to a directory on disk where the cache data is stored. Or nil for default
+     *                       directory.
      * @return an initialized NSURLCache, with the given capacity, optionally backed by disk.
      */
     @Generated

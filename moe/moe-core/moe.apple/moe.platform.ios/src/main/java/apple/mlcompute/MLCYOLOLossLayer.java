@@ -246,7 +246,7 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
     public static native long version_static();
 
     /**
-     * [@property]   yoloLossDescriptor
+     * [@property] yoloLossDescriptor
      * <p>
      * The YOLO loss descriptor
      */

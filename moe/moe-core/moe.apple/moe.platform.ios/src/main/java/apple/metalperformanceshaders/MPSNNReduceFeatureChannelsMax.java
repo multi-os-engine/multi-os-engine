@@ -27,7 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNReduceFeatureChannelsMax
  * <p>
- * The MPSNNReduceFeatureChannelsMax performs a reduction operation returning the maximum value for feature channels of an image
+ * The MPSNNReduceFeatureChannelsMax performs a reduction operation returning the maximum value for feature channels of
+ * an image
  */
 @Generated
 @Library("MetalPerformanceShaders")

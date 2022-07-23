@@ -20,7 +20,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * Constants that describe the game result for a given participant who has reached the done state.  The developer is free to use these constants or add additional ones
+ * Constants that describe the game result for a given participant who has reached the done state. The developer is free
+ * to use these constants or add additional ones
  */
 @Generated
 public final class GKTurnBasedMatchOutcome {

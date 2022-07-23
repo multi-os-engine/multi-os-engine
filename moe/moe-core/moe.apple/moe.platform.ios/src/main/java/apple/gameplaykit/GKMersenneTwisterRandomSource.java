@@ -167,7 +167,8 @@ public class GKMersenneTwisterRandomSource extends GKRandomSource {
     public static native long version_static();
 
     /**
-     * Initializes a linear congruential random source with bits from a high entropy system resource like SecRandomCopyBytes.
+     * Initializes a linear congruential random source with bits from a high entropy system resource like
+     * SecRandomCopyBytes.
      */
     @Generated
     @Selector("init")

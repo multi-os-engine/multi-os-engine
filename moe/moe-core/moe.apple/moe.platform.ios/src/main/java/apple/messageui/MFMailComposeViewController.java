@@ -50,11 +50,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * The MFMailComposeViewController class provides an interface for editing and sending email.
  * <p>
- * The MFMailComposeViewController class manages all user interaction.  The client needs to set the recipient or
- * recipients.  The client may also set the subject and the body of the message.  Attachments may be added, if
- * so desired.  After setup, the client needs to only display the view.</p>The provided delegate will be informed
+ * The MFMailComposeViewController class manages all user interaction. The client needs to set the recipient or
+ * recipients. The client may also set the subject and the body of the message. Attachments may be added, if
+ * so desired. After setup, the client needs to only display the view.</p>The provided delegate will be informed
  * of the user's composition completion and how they chose to complete the operation.<p>Prior to use, clients
- * should verify the user has set up the device for sending email via <tt>+[MFMailComposeViewController canSendMail]</tt>.
+ * should verify the user has set up the device for sending email via <tt>+[MFMailComposeViewController
+ * canSendMail]</tt>.
  */
 @Generated
 @Library("MessageUI")
@@ -97,8 +98,8 @@ public class MFMailComposeViewController extends UINavigationController {
      * <p>
      * Returns <tt>YES</tt> if the user has set up the device for sending email.
      * <p>
-     * The client may continue to set the recipients and content if the return value was <tt>YES</tt>.  If <tt>NO</tt>
-     * was the result, the client has a couple options.  It may choose to simply notify the user of the inability to
+     * The client may continue to set the recipients and content if the return value was <tt>YES</tt>. If <tt>NO</tt>
+     * was the result, the client has a couple options. It may choose to simply notify the user of the inability to
      * send mail, or it may issue a "mailto" URL via <tt>-[UIApplication openURL:]</tt>.
      */
     @Generated
@@ -192,14 +193,15 @@ public class MFMailComposeViewController extends UINavigationController {
      * <p>
      * This method adds the specified attachment to the email message.
      * <p>
-     * This method adds the specified attachment to the email message.  This should be called prior to display.
+     * This method adds the specified attachment to the email message. This should be called prior to display.
      * Attachments will be appended to the end of the message.
      *
-     * @param attachment NSData containing the contents of the attachment.  Must not be <tt>nil</tt>.
+     * @param attachment NSData containing the contents of the attachment. Must not be <tt>nil</tt>.
      * @param mimeType   NSString specifying the MIME type for the attachment, as specified by the IANA
      *                   (http://www.iana.org/assignments/media-types/). Must not be <tt>nil</tt>.
-     * @param filename   NSString specifying the intended filename for the attachment.  This is displayed below
-     *                   the attachment's icon if the attachment is not decoded when displayed.  Must not be <tt>nil</tt>.
+     * @param filename   NSString specifying the intended filename for the attachment. This is displayed below
+     *                   the attachment's icon if the attachment is not decoded when displayed. Must not be
+     *                   <tt>nil</tt>.
      */
     @Generated
     @Selector("addAttachmentData:mimeType:fileName:")
@@ -227,7 +229,7 @@ public class MFMailComposeViewController extends UINavigationController {
     public native MFMailComposeViewController initWithRootViewController(UIViewController rootViewController);
 
     /**
-     * [@property]   mailComposeDelegate
+     * [@property] mailComposeDelegate
      * <p>
      * This property is the delegate for the MFMailComposeViewControllerDelegate method callbacks.
      */
@@ -241,7 +243,7 @@ public class MFMailComposeViewController extends UINavigationController {
      * <p>
      * This method sets the BCC header for the email message to the specified email addresses.
      * <p>
-     * This method will set the BCC header for the email message.  This should be called prior to display.
+     * This method will set the BCC header for the email message. This should be called prior to display.
      * </p>Recipient addresses should be specified as per RFC5322.
      * </p>After the view has been presented to the user, this method will no longer change the value.
      *
@@ -256,7 +258,7 @@ public class MFMailComposeViewController extends UINavigationController {
      * <p>
      * This method sets the CC header for the email message to the specified email addresses.
      * <p>
-     * This method will set the CC header for the email message.  This should be called prior to display.
+     * This method will set the CC header for the email message. This should be called prior to display.
      * </p>Recipient addresses should be specified as per RFC5322.
      * </p>After the view has been presented to the user, this method will no longer change the value.
      *
@@ -267,7 +269,7 @@ public class MFMailComposeViewController extends UINavigationController {
     public native void setCcRecipients(NSArray<String> ccRecipients);
 
     /**
-     * [@property]   mailComposeDelegate
+     * [@property] mailComposeDelegate
      * <p>
      * This property is the delegate for the MFMailComposeViewControllerDelegate method callbacks.
      */
@@ -277,7 +279,7 @@ public class MFMailComposeViewController extends UINavigationController {
             @Mapped(ObjCObjectMapper.class) MFMailComposeViewControllerDelegate value);
 
     /**
-     * [@property]   mailComposeDelegate
+     * [@property] mailComposeDelegate
      * <p>
      * This property is the delegate for the MFMailComposeViewControllerDelegate method callbacks.
      */
@@ -298,7 +300,7 @@ public class MFMailComposeViewController extends UINavigationController {
      * <p>
      * This method sets the body of the email message to the specified content.
      * <p>
-     * This method will set the body of the email message.  This should be called prior to display.
+     * This method will set the body of the email message. This should be called prior to display.
      * The user's signature, if specified, will be added after the body content.
      *
      * @param body   A NSString containing the body contents of the email message.
@@ -313,7 +315,7 @@ public class MFMailComposeViewController extends UINavigationController {
      * <p>
      * This method sets the Subject header for the email message.
      * <p>
-     * This method will set the Subject header for the email message.  This should be called prior to display.
+     * This method will set the Subject header for the email message. This should be called prior to display.
      * Newlines are removed from the parameter.
      * </p>After the view has been presented to the user, this method will no longer change the value.
      *
@@ -328,7 +330,7 @@ public class MFMailComposeViewController extends UINavigationController {
      * <p>
      * This method sets the To header for the email message to the specified email addresses.
      * <p>
-     * This method will set the To header for the email message.  This should be called prior to display.
+     * This method will set the To header for the email message. This should be called prior to display.
      * </p>Recipient addresses should be specified as per RFC5322.
      * </p>After the view has been presented to the user, this method will no longer change the value.
      *
@@ -343,7 +345,9 @@ public class MFMailComposeViewController extends UINavigationController {
      * <p>
      * This method sets the preferred sending account of the email message.
      * <p>
-     * This method will set the sending account of the message to the specified email address if the user has an account with such an address set up. If there is no account with such an address, the default account will be used instead.
+     * This method will set the sending account of the message to the specified email address if the user has an account
+     * with such an address set up. If there is no account with such an address, the default account will be used
+     * instead.
      * The sending email address should be specified as per RFC5322.
      * After the view has been presented to the user, this method will no longer change the value.
      *

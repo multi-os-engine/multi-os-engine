@@ -39,7 +39,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * NSURLCredentialStorage
  * <p>
- * NSURLCredentialStorage implements a singleton object (shared instance) which manages the shared credentials cache. Note: Whereas in Mac OS X any application can access any credential with a persistence of NSURLCredentialPersistencePermanent provided the user gives permission, in iPhone OS an application can access only its own credentials.
+ * NSURLCredentialStorage implements a singleton object (shared instance) which manages the shared credentials cache.
+ * Note: Whereas in Mac OS X any application can access any credential with a persistence of
+ * NSURLCredentialPersistencePermanent provided the user gives permission, in iPhone OS an application can access only
+ * its own credentials.
  */
 @Generated
 @Library("Foundation")
@@ -166,8 +169,8 @@ public class NSURLCredentialStorage extends NSObject {
      * Get a dictionary mapping NSURLProtectionSpaces to dictionaries which map usernames to NSURLCredentials
      *
      * @return an NSDictionary where the keys are NSURLProtectionSpaces
-     * and the values are dictionaries, in which the keys are usernames
-     * and the values are NSURLCredentials
+     *         and the values are dictionaries, in which the keys are usernames
+     *         and the values are NSURLCredentials
      */
     @Generated
     @Selector("allCredentials")
@@ -238,9 +241,11 @@ public class NSURLCredentialStorage extends NSObject {
      *
      * @param credential The credential to remove.
      * @param space      The protection space for which a credential should be removed
-     * @param options    A dictionary containing options to consider when removing the credential.  This should
-     *                   be used when trying to delete a credential that has the NSURLCredentialPersistenceSynchronizable policy.
-     *                   Please note that when NSURLCredential objects that have a NSURLCredentialPersistenceSynchronizable policy
+     * @param options    A dictionary containing options to consider when removing the credential. This should
+     *                   be used when trying to delete a credential that has the
+     *                   NSURLCredentialPersistenceSynchronizable policy.
+     *                   Please note that when NSURLCredential objects that have a
+     *                   NSURLCredentialPersistenceSynchronizable policy
      *                   are removed, the credential will be removed on all devices that contain this credential.
      */
     @Generated

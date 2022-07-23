@@ -38,7 +38,9 @@ public interface VSAccountManagerDelegate {
      * Called when the account manager is finished using the presented view controller.
      *
      * @param accountManager The account manager instance that previously asked to show the view controller.
-     * @param viewController The view controller that is being presented to the user.  You must use -dismissViewControllerAnimated:completion: to begin dismissing the view controller before returning from this method.
+     * @param viewController The view controller that is being presented to the user. You must use
+     *                       -dismissViewControllerAnimated:completion: to begin dismissing the view controller before
+     *                       returning from this method.
      */
     @Generated
     @Selector("accountManager:dismissViewController:")
@@ -48,7 +50,9 @@ public interface VSAccountManagerDelegate {
      * Called when the account manager needs user interaction to complete a request.
      *
      * @param accountManager The account manager instance that needs to show the view controller.
-     * @param viewController A view controller that needs to be presented to the user.  You must use -presentViewController:animated:completion: to begin presenting this view controller before returning from this method.
+     * @param viewController A view controller that needs to be presented to the user. You must use
+     *                       -presentViewController:animated:completion: to begin presenting this view controller before
+     *                       returning from this method.
      */
     @Generated
     @Selector("accountManager:presentViewController:")

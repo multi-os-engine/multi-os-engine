@@ -124,7 +124,7 @@ public class CSSearchableIndex extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * Not all devices support indexing.  Call this method to check if indexing is supported on the current device.
+     * Not all devices support indexing. Call this method to check if indexing is supported on the current device.
      */
     @Generated
     @Selector("isIndexingAvailable")
@@ -191,8 +191,10 @@ public class CSSearchableIndex extends NSObject {
 
     /**
      * Call this method to remove items with the given identifiers from the index.
-     * Completion handlers will be called once the data has been journaled by the index.  If the completion handler returns an error, the client should retry, as it was not journaled correctly.
-     * reindexSearchableItemsWithIdentifiers will be called if the journaling completed successfully but the data was not able to be indexed for some reason.
+     * Completion handlers will be called once the data has been journaled by the index. If the completion handler
+     * returns an error, the client should retry, as it was not journaled correctly.
+     * reindexSearchableItemsWithIdentifiers will be called if the journaling completed successfully but the data was
+     * not able to be indexed for some reason.
      */
     @Generated
     @Selector("deleteSearchableItemsWithIdentifiers:completionHandler:")
@@ -200,7 +202,8 @@ public class CSSearchableIndex extends NSObject {
             @ObjCBlock(name = "call_deleteSearchableItemsWithIdentifiersCompletionHandler") Block_deleteSearchableItemsWithIdentifiersCompletionHandler completionHandler);
 
     /**
-     * End a batch passing in client state information to be persisted in the index.  The completion handler will be called once the client state has been persisted.
+     * End a batch passing in client state information to be persisted in the index. The completion handler will be
+     * called once the client state has been persisted.
      */
     @Generated
     @Selector("endIndexBatchWithClientState:completionHandler:")
@@ -222,8 +225,10 @@ public class CSSearchableIndex extends NSObject {
 
     /**
      * Call this method to add or update items in the index.
-     * Completion handlers will be called once the data has been journaled by the index.  If the completion handler returns an error, the client should retry, as it was not journaled correctly.
-     * reindexSearchableItemsWithIdentifiers will be called if the journaling completed successfully but the data was not able to be indexed for some reason.
+     * Completion handlers will be called once the data has been journaled by the index. If the completion handler
+     * returns an error, the client should retry, as it was not journaled correctly.
+     * reindexSearchableItemsWithIdentifiers will be called if the journaling completed successfully but the data was
+     * not able to be indexed for some reason.
      */
     @Generated
     @Selector("indexSearchableItems:completionHandler:")
@@ -235,14 +240,18 @@ public class CSSearchableIndex extends NSObject {
     public native CSSearchableIndex init();
 
     /**
-     * Apps can set a name for the index instance. This name is used as a handle for the client state used with the batch API, allowing a single client to have multiple client states; you have to retrieve the client state for an index instance with the same name as you used when setting the client state.
+     * Apps can set a name for the index instance. This name is used as a handle for the client state used with the
+     * batch API, allowing a single client to have multiple client states; you have to retrieve the client state for an
+     * index instance with the same name as you used when setting the client state.
      */
     @Generated
     @Selector("initWithName:")
     public native CSSearchableIndex initWithName(String name);
 
     /**
-     * Apps can set a default protection class for items in their entitlements.  You can alternately create an instance with a custom protection class to use on iOS.  It should be one of NSFileProtectionComplete, NSFileProtectionCompleteUnlessOpen, or NSFileProtectionCompleteUntilFirstUserAuthentication.
+     * Apps can set a default protection class for items in their entitlements. You can alternately create an instance
+     * with a custom protection class to use on iOS. It should be one of NSFileProtectionComplete,
+     * NSFileProtectionCompleteUnlessOpen, or NSFileProtectionCompleteUntilFirstUserAuthentication.
      */
     @Generated
     @Selector("initWithName:protectionClass:")

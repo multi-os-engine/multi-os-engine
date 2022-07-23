@@ -133,7 +133,7 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
      * loadFactoryPreset:
      * <p>
      * Load a distortion preset.
-     * Default:    AVAudioUnitDistortionPresetDrumsBitBrush
+     * Default: AVAudioUnitDistortionPresetDrumsBitBrush
      */
     @Generated
     @Selector("loadFactoryPreset:")
@@ -148,9 +148,9 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
      * [@property] preGain
      * <p>
      * Gain applied to the signal before being distorted
-     * Range:      -80 -> 20
-     * Default:    -6
-     * Unit:       dB
+     * Range: -80 -> 20
+     * Default: -6
+     * Unit: dB
      */
     @Generated
     @Selector("preGain")
@@ -168,9 +168,9 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
      * [@property] preGain
      * <p>
      * Gain applied to the signal before being distorted
-     * Range:      -80 -> 20
-     * Default:    -6
-     * Unit:       dB
+     * Range: -80 -> 20
+     * Default: -6
+     * Unit: dB
      */
     @Generated
     @Selector("setPreGain:")
@@ -184,9 +184,9 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
      * [@property] wetDryMix
      * <p>
      * Blend of the distorted and dry signals
-     * Range:      0 (all dry) -> 100 (all distorted)
-     * Default:    50
-     * Unit:       Percent
+     * Range: 0 (all dry) -> 100 (all distorted)
+     * Default: 50
+     * Unit: Percent
      */
     @Generated
     @Selector("setWetDryMix:")
@@ -205,9 +205,9 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
      * [@property] wetDryMix
      * <p>
      * Blend of the distorted and dry signals
-     * Range:      0 (all dry) -> 100 (all distorted)
-     * Default:    50
-     * Unit:       Percent
+     * Range: 0 (all dry) -> 100 (all distorted)
+     * Default: 50
+     * Unit: Percent
      */
     @Generated
     @Selector("wetDryMix")

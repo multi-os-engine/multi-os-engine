@@ -42,7 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Represents a single state in a state machine.
  * By default, states allow transitions freely to and from the states in the machine.
  * <p>
- * If a more restricted set of valid transitions are needed in the state machine, you may override isValidNextState: where applicable.
+ * If a more restricted set of valid transitions are needed in the state machine, you may override isValidNextState:
+ * where applicable.
  *
  * @see GKStateMachine
  * @see isValidNextState:
@@ -169,7 +170,8 @@ public class GKState extends NSObject {
     /**
      * Called by GKStateMachine when this state is entered.
      *
-     * @param previousState the state that was exited to enter this state.  This is nil if this is the state machine's first entered state.
+     * @param previousState the state that was exited to enter this state. This is nil if this is the state machine's
+     *                      first entered state.
      * @see stateMachineWithStates:initialStateClass:
      */
     @Generated

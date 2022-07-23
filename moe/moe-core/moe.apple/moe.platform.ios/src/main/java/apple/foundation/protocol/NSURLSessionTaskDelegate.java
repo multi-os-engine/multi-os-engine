@@ -44,7 +44,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("NSURLSessionTaskDelegate")
 public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     /**
-     * Sent as the last message related to a specific task.  Error may be
+     * Sent as the last message related to a specific task. Error may be
      * nil, which implies that no error occurred and this task is complete.
      */
     @Generated
@@ -81,7 +81,7 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     }
 
     /**
-     * Sent periodically to notify the delegate of upload progress.  This
+     * Sent periodically to notify the delegate of upload progress. This
      * information is also available as properties of the task.
      */
     @Generated
@@ -93,7 +93,7 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     }
 
     /**
-     * Sent if a task requires a new, unopened body stream.  This may be
+     * Sent if a task requires a new, unopened body stream. This may be
      * necessary when authentication has failed for any request that
      * involves a body stream.
      */

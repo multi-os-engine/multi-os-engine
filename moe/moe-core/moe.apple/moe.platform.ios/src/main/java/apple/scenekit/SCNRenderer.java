@@ -290,7 +290,8 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     /**
      * [@property] nextFrameTime
      * <p>
-     * Returns the time at which the next update should happen. If infinite no update needs to be scheduled yet. If the current frame time, a continuous animation is running and an update should be scheduled after a "natural" delay.
+     * Returns the time at which the next update should happen. If infinite no update needs to be scheduled yet. If the
+     * current frame time, a continuous animation is running and an update should be scheduled after a "natural" delay.
      */
     @Generated
     @Selector("nextFrameTime")
@@ -336,7 +337,8 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
      * <p>
      * renders the receiver's scene at the current system time.
      * <p>
-     * This method only work if the receiver was allocated with an OpenGL context and it is deprecated (use renderAtTime: instead). Use renderAtTime:withEncoder:pass:commandQueue: to render with Metal.
+     * This method only work if the receiver was allocated with an OpenGL context and it is deprecated (use
+     * renderAtTime: instead). Use renderAtTime:withEncoder:pass:commandQueue: to render with Metal.
      */
     @Generated
     @Deprecated
@@ -348,7 +350,8 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
      * <p>
      * updates and renders the receiver's scene at the specified time (system time).
      * <p>
-     * This method only work if the receiver was allocated with an OpenGL context. Use renderAtTime:withEncoder:pass:commandQueue: to render with Metal.
+     * This method only work if the receiver was allocated with an OpenGL context. Use
+     * renderAtTime:withEncoder:pass:commandQueue: to render with Metal.
      */
     @Generated
     @Selector("renderAtTime:")
@@ -357,7 +360,8 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     /**
      * renderAtTime:viewport:commandBuffer:passDescriptor:
      * <p>
-     * updates and renders the receiver's scene at the specified time (system time) viewport, Metal command buffer and pass descriptor.
+     * updates and renders the receiver's scene at the specified time (system time) viewport, Metal command buffer and
+     * pass descriptor.
      * <p>
      * Use this method to render using Metal.
      */
@@ -483,7 +487,8 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
      * <p>
      * renders the receiver's scene with the specified viewport, Metal command buffer and pass descriptor.
      * <p>
-     * Use this method to render using Metal. This method doesn't update the scene's animations, physics, particles etc... It's up to you to call "updateAtTime:" to update the scene.
+     * Use this method to render using Metal. This method doesn't update the scene's animations, physics, particles
+     * etc... It's up to you to call "updateAtTime:" to update the scene.
      */
     @Generated
     @Selector("renderWithViewport:commandBuffer:passDescriptor:")

@@ -82,7 +82,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public native void addBezierPath(UIBezierPath path);
 
     /**
-     * Alignment of text within annotation bounds.  Supported: NSLeftTextAlignment, NSRightTextAlignment and
+     * Alignment of text within annotation bounds. Supported: NSLeftTextAlignment, NSRightTextAlignment and
      * NSCenterTextAlignment.
      * Used by annotations type(s): /FreeText, /Widget (field type(s): /Tx).
      */
@@ -112,7 +112,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     /**
      * List all key-value pairs for this annotation; returns a deep copy of all pairs.
      * Note that this method will not include a copy of the value for /Parent. This is by design as to avoid
-     * introduing a memory cycle. If you would like to get the /Parent propery, use -[PDFAnnotation valueForAnnotationKey:]
+     * introduing a memory cycle. If you would like to get the /Parent propery, use -[PDFAnnotation
+     * valueForAnnotationKey:]
      * with key PDFAnnotationKeyParent.
      */
     @Generated
@@ -133,7 +134,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
 
     /**
      * Optional border or border style that describes how to draw the annotation border (if any). For the "geometry"
-     * annotations (Circle, Ink, Line, Square), the border indicates the line width and whether to draw with a dash pattern
+     * annotations (Circle, Ink, Line, Square), the border indicates the line width and whether to draw with a dash
+     * pattern
      * or solid pattern. PDFAnnotation markup types (Highlight, Strikethrough, Underline) ignores the border.
      */
     @Generated
@@ -231,7 +233,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public static native String description_static();
 
     /**
-     * Destination for the link. May be nil if no destination associated with link; in this case the -[URL] may be valid.
+     * Destination for the link. May be nil if no destination associated with link; in this case the -[URL] may be
+     * valid.
      * The preferred way though is to call -[PDFAnnotation action] and -[PDFAnnotation setAction:].
      * Used by annotations type(s): /Link.
      */
@@ -309,7 +312,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public static native long hash_static();
 
     /**
-     * The type of icon displayed in the PDF.  Supported icons: "Comment", "Key", "Note", "Help", "NewParagraph",
+     * The type of icon displayed in the PDF. Supported icons: "Comment", "Key", "Note", "Help", "NewParagraph",
      * "Paragraph" and "Insert".
      * Used by annotations type(s): /Text.
      */
@@ -323,7 +326,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public native PDFAnnotation init();
 
     /**
-     * Create a custom annotation with bounds, a type (PDFAnnotationSubtype), and an (optional) dictionary of annotation properties.
+     * Create a custom annotation with bounds, a type (PDFAnnotationSubtype), and an (optional) dictionary of annotation
+     * properties.
      */
     @Generated
     @Selector("initWithBounds:forType:withProperties:")
@@ -365,7 +369,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public native boolean isHighlighted();
 
     /**
-     * There are two flavors of Choice widget annotations, lists and pop-up menus. This method allow you to differentiate.
+     * There are two flavors of Choice widget annotations, lists and pop-up menus. This method allow you to
+     * differentiate.
      * Used by annotations type(s): /Widget (field type(s): /Ch).
      */
     @Generated
@@ -476,7 +481,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public native PDFAnnotation popup();
 
     /**
-     * Array of n * 4 points, packed as NSValue pointValue / CGPointValue, defining n quadrilaterals in page space where n is the number of quad points.
+     * Array of n * 4 points, packed as NSValue pointValue / CGPointValue, defining n quadrilaterals in page space where
+     * n is the number of quad points.
      * The points for each quad are ordered in a 'Z' pattern. That is, the first point should represent the upper left
      * point representing the start of the marked-up text, the next point will be the upper right, the third point will
      * represent the lower left of the text and the last point the lower right.
@@ -523,7 +529,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public native void setAction(PDFAction value);
 
     /**
-     * Alignment of text within annotation bounds.  Supported: NSLeftTextAlignment, NSRightTextAlignment and
+     * Alignment of text within annotation bounds. Supported: NSLeftTextAlignment, NSRightTextAlignment and
      * NSCenterTextAlignment.
      * Used by annotations type(s): /FreeText, /Widget (field type(s): /Tx).
      */
@@ -553,7 +559,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
 
     /**
      * Optional border or border style that describes how to draw the annotation border (if any). For the "geometry"
-     * annotations (Circle, Ink, Line, Square), the border indicates the line width and whether to draw with a dash pattern
+     * annotations (Circle, Ink, Line, Square), the border indicates the line width and whether to draw with a dash
+     * pattern
      * or solid pattern. PDFAnnotation markup types (Highlight, Strikethrough, Underline) ignores the border.
      */
     @Generated
@@ -627,7 +634,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public native void setContents(String value);
 
     /**
-     * Destination for the link. May be nil if no destination associated with link; in this case the -[URL] may be valid.
+     * Destination for the link. May be nil if no destination associated with link; in this case the -[URL] may be
+     * valid.
      * The preferred way though is to call -[PDFAnnotation action] and -[PDFAnnotation setAction:].
      * Used by annotations type(s): /Link.
      */
@@ -678,7 +686,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public native void setHighlighted(boolean value);
 
     /**
-     * The type of icon displayed in the PDF.  Supported icons: "Comment", "Key", "Note", "Help", "NewParagraph",
+     * The type of icon displayed in the PDF. Supported icons: "Comment", "Key", "Note", "Help", "NewParagraph",
      * "Paragraph" and "Insert".
      * Used by annotations type(s): /Text.
      */
@@ -695,7 +703,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public native void setInteriorColor(UIColor value);
 
     /**
-     * There are two flavors of Choice widget annotations, lists and pop-up menus. This method allow you to differentiate.
+     * There are two flavors of Choice widget annotations, lists and pop-up menus. This method allow you to
+     * differentiate.
      * Used by annotations type(s): /Widget (field type(s): /Ch).
      */
     @Generated
@@ -768,7 +777,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public native void setPopup(PDFAnnotation value);
 
     /**
-     * Array of n * 4 points, packed as NSValue pointValue / CGPointValue, defining n quadrilaterals in page space where n is the number of quad points.
+     * Array of n * 4 points, packed as NSValue pointValue / CGPointValue, defining n quadrilaterals in page space where
+     * n is the number of quad points.
      * The points for each quad are ordered in a 'Z' pattern. That is, the first point should represent the upper left
      * point representing the start of the marked-up text, the next point will be the upper right, the third point will
      * represent the lower left of the text and the last point the lower right.
@@ -800,7 +810,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public native boolean setRectForAnnotationKey(@ByValue CGRect value, String key);
 
     /**
-     * Indicates whether the annotation should be displayed on screen (depending upon -[shouldPrint] it may still print).
+     * Indicates whether the annotation should be displayed on screen (depending upon -[shouldPrint] it may still
+     * print).
      */
     @Generated
     @Selector("setShouldDisplay:")
@@ -840,7 +851,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public native void setStartPoint(@ByValue CGPoint value);
 
     /**
-     * Returns the annotation type (called "Subtype" in the PDF specification since "Annot" is the type). Examples include:
+     * Returns the annotation type (called "Subtype" in the PDF specification since "Annot" is the type). Examples
+     * include:
      * "Text", "Link", "Line", etc. Required. Note that you are only allowed to set the type of an annotation once.
      */
     @Generated
@@ -879,7 +891,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public native boolean setValueForAnnotationKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
 
     /**
-     * The choices are an array of strings indicating the  option’s export values in either a list or pop-up menu.
+     * The choices are an array of strings indicating the option’s export values in either a list or pop-up menu.
      * Used by annotations type(s): /Widget (field type(s): /Ch).
      */
     @Generated
@@ -923,7 +935,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public native void setWidgetStringValue(String value);
 
     /**
-     * Indicates whether the annotation should be displayed on screen (depending upon -[shouldPrint] it may still print).
+     * Indicates whether the annotation should be displayed on screen (depending upon -[shouldPrint] it may still
+     * print).
      */
     @Generated
     @Selector("shouldDisplay")
@@ -969,7 +982,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public static native Class superclass_static();
 
     /**
-     * Returns the annotation type (called "Subtype" in the PDF specification since "Annot" is the type). Examples include:
+     * Returns the annotation type (called "Subtype" in the PDF specification since "Annot" is the type). Examples
+     * include:
      * "Text", "Link", "Line", etc. Required. Note that you are only allowed to set the type of an annotation once.
      */
     @Generated
@@ -993,7 +1007,7 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     public native Object valueForAnnotationKey(String key);
 
     /**
-     * The choices are an array of strings indicating the  option’s export values in either a list or pop-up menu.
+     * The choices are an array of strings indicating the option’s export values in either a list or pop-up menu.
      * Used by annotations type(s): /Widget (field type(s): /Ch).
      */
     @Generated

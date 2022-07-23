@@ -48,7 +48,8 @@ public class QLThumbnailRepresentation extends NSObject {
     public native CGImageRef CGImage();
 
     /**
-     * Returns the UIImage representation of the thumbnail. You need to explicitly link against UIKit to use this property.
+     * Returns the UIImage representation of the thumbnail. You need to explicitly link against UIKit to use this
+     * property.
      */
     @Generated
     @Selector("UIImage")
@@ -160,7 +161,8 @@ public class QLThumbnailRepresentation extends NSObject {
     public static native long version_static();
 
     /**
-     * Returns the the effective rect within the thumbnail image representing the content of the document. In icon mode, this is the part of the image without all the image decorations.
+     * Returns the the effective rect within the thumbnail image representing the content of the document. In icon mode,
+     * this is the part of the image without all the image decorations.
      */
     @Generated
     @Selector("contentRect")

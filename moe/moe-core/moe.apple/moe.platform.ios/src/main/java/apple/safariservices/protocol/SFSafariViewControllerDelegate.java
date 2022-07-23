@@ -65,7 +65,8 @@ public interface SFSafariViewControllerDelegate {
     }
 
     /**
-     * Delegate callback called when the user taps the Done button. Upon this call, the view controller is dismissed modally.
+     * Delegate callback called when the user taps the Done button. Upon this call, the view controller is dismissed
+     * modally.
      */
     @Generated
     @IsOptional
@@ -75,9 +76,11 @@ public interface SFSafariViewControllerDelegate {
     }
 
     /**
-     * Allows you to exclude certain UIActivityTypes from the UIActivityViewController presented when the user taps the action button.
+     * Allows you to exclude certain UIActivityTypes from the UIActivityViewController presented when the user taps the
+     * action button.
      * <p>
-     * Called when the view controller is about to show a UIActivityViewController after the user taps the action button.
+     * Called when the view controller is about to show a UIActivityViewController after the user taps the action
+     * button.
      *
      * @param URL   the URL of the current web page.
      * @param title the title of the current web page.

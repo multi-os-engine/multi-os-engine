@@ -152,7 +152,7 @@ public class AVMediaSelection extends NSObject implements NSCopying, NSMutableCo
     public static native long version_static();
 
     /**
-     * [@property]		asset
+     * [@property] asset
      * <p>
      * The asset associated with the receiver.
      */
@@ -175,7 +175,8 @@ public class AVMediaSelection extends NSObject implements NSCopying, NSMutableCo
      * <p>
      * Indicates that specified media selection group is subject to automatic media selection.
      * <p>
-     * Automatic application of media selection criteria is suspended in any group in which a specific selection has been made via an invocation of -selectMediaOption:inMediaSelectionGroup:.
+     * Automatic application of media selection criteria is suspended in any group in which a specific selection has
+     * been made via an invocation of -selectMediaOption:inMediaSelectionGroup:.
      *
      * @param mediaSelectionGroup A media selection group obtained from the receiver's asset.
      * @return YES if the group is subject to automatic media selection.
@@ -196,7 +197,8 @@ public class AVMediaSelection extends NSObject implements NSCopying, NSMutableCo
      * <p>
      * Indicates the media selection option that's currently selected from the specified group. May be nil.
      * <p>
-     * If the value of the property allowsEmptySelection of the AVMediaSelectionGroup is YES, the currently selected option in the group may be nil.
+     * If the value of the property allowsEmptySelection of the AVMediaSelectionGroup is YES, the currently selected
+     * option in the group may be nil.
      *
      * @param mediaSelectionGroup A media selection group obtained from the receiver's asset.
      * @return An instance of AVMediaSelectionOption that describes the currently selection option in the group.

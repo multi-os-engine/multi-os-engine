@@ -199,7 +199,8 @@ public class SKDownload extends NSObject {
     public native float progress();
 
     /**
-     * Estimated time remaining to complete the download, in seconds.  Value is SKDownloadTimeRemainingUnknown if estimate is unknownxx.
+     * Estimated time remaining to complete the download, in seconds. Value is SKDownloadTimeRemainingUnknown if
+     * estimate is unknownxx.
      */
     @Generated
     @Selector("timeRemaining")

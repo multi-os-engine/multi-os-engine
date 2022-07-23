@@ -32,7 +32,7 @@ public final class CTFontDescriptorMatchingState {
      */
     @Generated public static final int DidFinish = 0x00000001;
     /**
-     * called once before talking to the server.  Skipped if not necessary.
+     * called once before talking to the server. Skipped if not necessary.
      */
     @Generated public static final int WillBeginQuerying = 0x00000002;
     /**
@@ -50,7 +50,7 @@ public final class CTFontDescriptorMatchingState {
      */
     @Generated public static final int DidMatch = 0x00000007;
     /**
-     * called when an error occurred.  (may be called multiple times.)
+     * called when an error occurred. (may be called multiple times.)
      */
     @Generated public static final int DidFailWithError = 0x00000008;
 

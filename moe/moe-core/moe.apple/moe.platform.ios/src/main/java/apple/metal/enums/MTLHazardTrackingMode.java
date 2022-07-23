@@ -7,7 +7,8 @@ import org.moe.natj.general.ann.NUInt;
  * [@enum] MTLHazardTrackingMode
  * <p>
  * Describes how hazard tracking is performed.
- * [@constant] MTLHazardTrackingModeDefault The default hazard tracking mode for the context. Refer to the usage of the field for semantics.
+ * [@constant] MTLHazardTrackingModeDefault The default hazard tracking mode for the context. Refer to the usage of the
+ * field for semantics.
  * [@constant] MTLHazardTrackingModeUntracked Do not perform hazard tracking.
  * [@constant] MTLHazardTrackingModeTracked Do perform hazard tracking.
  */

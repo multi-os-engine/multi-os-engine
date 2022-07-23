@@ -73,8 +73,10 @@ public class AXCategoricalDataAxisDescriptor extends NSObject implements AXDataA
 
     /**
      * The order of the category values for this axis.
-     * This list should contain every possible category value for this axis, in the order they are displayed visually in the graph or legend.
-     * For example, if your categorical axis represented 'blood type', and the legend contained 'AB, A, B, O' in that order,
+     * This list should contain every possible category value for this axis, in the order they are displayed visually in
+     * the graph or legend.
+     * For example, if your categorical axis represented 'blood type', and the legend contained 'AB, A, B, O' in that
+     * order,
      * you would provide an array containing "AB", "A", "B" and "O" in the same order.
      */
     @Generated
@@ -162,8 +164,10 @@ public class AXCategoricalDataAxisDescriptor extends NSObject implements AXDataA
 
     /**
      * The order of the category values for this axis.
-     * This list should contain every possible category value for this axis, in the order they are displayed visually in the graph or legend.
-     * For example, if your categorical axis represented 'blood type', and the legend contained 'AB, A, B, O' in that order,
+     * This list should contain every possible category value for this axis, in the order they are displayed visually in
+     * the graph or legend.
+     * For example, if your categorical axis represented 'blood type', and the legend contained 'AB, A, B, O' in that
+     * order,
      * you would provide an array containing "AB", "A", "B" and "O" in the same order.
      */
     @Generated

@@ -31,8 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ASAuthorizationPlatformPublicKeyCredentialRegistration extends NSObject
-        implements ASAuthorizationPublicKeyCredentialRegistration {
+public class ASAuthorizationPlatformPublicKeyCredentialRegistration extends NSObject implements
+        ASAuthorizationPublicKeyCredentialRegistration {
     static {
         NatJ.register();
     }

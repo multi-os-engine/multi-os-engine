@@ -78,7 +78,7 @@ public interface CLLocationManagerDelegate {
      * locationManager:didEnterRegion:
      * <p>
      * Discussion:
-     * Invoked when the user enters a monitored region.  This callback will be invoked for every allocated
+     * Invoked when the user enters a monitored region. This callback will be invoked for every allocated
      * CLLocationManager instance with a non-nil delegate that implements this method.
      */
     @Generated
@@ -92,7 +92,7 @@ public interface CLLocationManagerDelegate {
      * locationManager:didExitRegion:
      * <p>
      * Discussion:
-     * Invoked when the user exits a monitored region.  This callback will be invoked for every allocated
+     * Invoked when the user exits a monitored region. This callback will be invoked for every allocated
      * CLLocationManager instance with a non-nil delegate that implements this method.
      */
     @Generated
@@ -181,8 +181,8 @@ public interface CLLocationManagerDelegate {
      * locationManager:didUpdateLocations:
      * <p>
      * Discussion:
-     * Invoked when new locations are available.  Required for delivery of
-     * deferred locations.  If implemented, updates will
+     * Invoked when new locations are available. Required for delivery of
+     * deferred locations. If implemented, updates will
      * not be delivered to locationManager:didUpdateToLocation:fromLocation:
      * <p>
      * locations is an array of CLLocation objects in chronological order.

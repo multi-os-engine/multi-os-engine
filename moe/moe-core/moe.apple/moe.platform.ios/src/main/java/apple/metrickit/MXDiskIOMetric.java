@@ -82,7 +82,7 @@ public class MXDiskIOMetric extends MXMetric {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]      cumulativeLogicalWrites
+     * [@property] cumulativeLogicalWrites
      * <p>
      * Cumulative amount of logical writes.
      * <p>

@@ -120,7 +120,8 @@ public class SKStoreReviewController extends NSObject {
     public static native SKStoreReviewController new_objc();
 
     /**
-     * Request StoreKit to ask the user for an app review. Uses the keyWindow's UIWindowScene which may or may not be the scene a user is interacting with.
+     * Request StoreKit to ask the user for an app review. Uses the keyWindow's UIWindowScene which may or may not be
+     * the scene a user is interacting with.
      * <p>
      * This may or may not show any UI.
      * <p>

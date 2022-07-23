@@ -21,7 +21,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * In an application that has received a URL to a file owned by a file provider, instances of NSFileProviderService can by obtained by calling -[NSFileManager getFileProviderServicesForItemAtURL:completionHandler:]. Each NSFileProviderService instance can only be used to operate on the URL originally passed to that method.
+ * In an application that has received a URL to a file owned by a file provider, instances of NSFileProviderService can
+ * by obtained by calling -[NSFileManager getFileProviderServicesForItemAtURL:completionHandler:]. Each
+ * NSFileProviderService instance can only be used to operate on the URL originally passed to that method.
  */
 @Generated
 @Library("Foundation")

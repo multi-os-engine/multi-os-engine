@@ -15,8 +15,10 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("GCDevice")
 public interface GCDevice {
     /**
-     * The dispatch queue that element value change handlers are submitted on. The default queue is main, and setting this to any
-     * other queue will make value change handlers dispatch async on the given queue. This is useful if the main game loop
+     * The dispatch queue that element value change handlers are submitted on. The default queue is main, and setting
+     * this to any
+     * other queue will make value change handlers dispatch async on the given queue. This is useful if the main game
+     * loop
      * of the application is not on main, or if input logic is handled on another thread from the main game loop.
      *
      * @see GCControllerAxisInput.valueChangedHandler
@@ -43,7 +45,8 @@ public interface GCDevice {
     GCPhysicalInputProfile physicalInputProfile();
 
     /**
-     * The product category the controller belongs to. This is useful for setting appropriate UI elements based on what type of device is connected.
+     * The product category the controller belongs to. This is useful for setting appropriate UI elements based on what
+     * type of device is connected.
      *
      * @see GCProductCategories.h
      */
@@ -52,8 +55,10 @@ public interface GCDevice {
     String productCategory();
 
     /**
-     * The dispatch queue that element value change handlers are submitted on. The default queue is main, and setting this to any
-     * other queue will make value change handlers dispatch async on the given queue. This is useful if the main game loop
+     * The dispatch queue that element value change handlers are submitted on. The default queue is main, and setting
+     * this to any
+     * other queue will make value change handlers dispatch async on the given queue. This is useful if the main game
+     * loop
      * of the application is not on main, or if input logic is handled on another thread from the main game loop.
      *
      * @see GCControllerAxisInput.valueChangedHandler
@@ -67,7 +72,8 @@ public interface GCDevice {
     void setHandlerQueue(NSObject value);
 
     /**
-     * A vendor supplied name. May be nil, and is not guaranteed to be unique. This should not be used as a key in a dictionary,
+     * A vendor supplied name. May be nil, and is not guaranteed to be unique. This should not be used as a key in a
+     * dictionary,
      * but simply as a way to present some basic information about the device in testing or to the user.
      */
     @Generated

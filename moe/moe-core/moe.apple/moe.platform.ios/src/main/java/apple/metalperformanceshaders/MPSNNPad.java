@@ -40,7 +40,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@ref] MPSNNPadding, cannot achieve the necessary padding. Therefore use this filter only when
  * you need one of the special edge modes: @ref MPSImageEdgeModeConstant,
  * [@ref] MPSImageEdgeModeMirror, @ref MPSImageEdgeModeMirrorWithEdge or, if you need padding in the
- * feature-channel dimesion.  In other cases use to @ref MPSNNPadding for best performance.
+ * feature-channel dimesion. In other cases use to @ref MPSNNPadding for best performance.
  * This kernel copies data from source MPSImage into the destination MPSImage allowing special padding
  * modes to be applied. It also enables easy to use arbitrary padding area sizes when used in conjuction
  * with @ref destinationImageDescriptorForSourceImages:sourceStates: function.
@@ -75,7 +75,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * |-----------------------------|
  * Destination:
  * |----------------------------------------------------------------|
- * | -  | -  | -  | -  | 0  | 0  | x1 | x2 | x3 | 0  | 0  | 0  | -  |
+ * | - | - | - | - | 0 | 0 | x1 | x2 | x3 | 0 | 0 | 0 | - |
  * |----------------------------------------------------------------|
  * <p>
  * And with @ref edgeMode = MPSImageEdgeModeMirrorWithEdge:
@@ -86,19 +86,19 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * |-----------------------------|
  * Destination:
  * |----------------------------------------------------------------|
- * | -  | -  | -  | -  | x2 | x1 | x1 | x2 | x3 | x3 | x2 | x1 | -  |
+ * | - | - | - | - | x2 | x1 | x1 | x2 | x3 | x3 | x2 | x1 | - |
  * |----------------------------------------------------------------|
  * <p>
  * Here the symbols '-' denote pixels not written by the kernel.
  * <p>
- * NOTE:   The 'channel' coordinate and size in sourceRegion can be
+ * NOTE: The 'channel' coordinate and size in sourceRegion can be
  * set to other values than those with multiple of four channels,
  * but the @ref destinationFeatureChannelOffset property must be multiple of
  * four, which means that there are some limitations to what can be achieved
  * with this filter alone.
  * <p>
  * [@endcode]
- * [@NOTE]  MPSNNPad is currently the only filter that supports
+ * [@NOTE] MPSNNPad is currently the only filter that supports
  * [@ref] MPSImageEdgeModeMirror, @ref MPSImageEdgeModeMirrorWithEdge and
  * [@ref] MPSImageEdgeModeConstant.
  */
@@ -161,7 +161,7 @@ public class MPSNNPad extends MPSCNNKernel {
     public static native String description_static();
 
     /**
-     * [@property]   fillValue
+     * [@property] fillValue
      * <p>
      * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
      * NOTE: this value is ignored if the filter is initialized with a per-channel fill value
@@ -268,7 +268,7 @@ public class MPSNNPad extends MPSCNNKernel {
     public static native MPSNNPad new_objc();
 
     /**
-     * [@property]   paddingSizeAfter
+     * [@property] paddingSizeAfter
      * <p>
      * This property is used for automatically sizing the destination image
      * for the function @ref destinationImageDescriptorForSourceImages:sourceStates:. Defines
@@ -288,7 +288,7 @@ public class MPSNNPad extends MPSCNNKernel {
     public native MPSImageCoordinate paddingSizeAfter();
 
     /**
-     * [@property]   paddingSizeBefore
+     * [@property] paddingSizeBefore
      * <p>
      * This property is used for automatically sizing the destination image
      * for the function @ref destinationImageDescriptorForSourceImages:sourceStates:. Defines
@@ -315,7 +315,7 @@ public class MPSNNPad extends MPSCNNKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   fillValue
+     * [@property] fillValue
      * <p>
      * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
      * NOTE: this value is ignored if the filter is initialized with a per-channel fill value
@@ -326,7 +326,7 @@ public class MPSNNPad extends MPSCNNKernel {
     public native void setFillValue(float value);
 
     /**
-     * [@property]   paddingSizeAfter
+     * [@property] paddingSizeAfter
      * <p>
      * This property is used for automatically sizing the destination image
      * for the function @ref destinationImageDescriptorForSourceImages:sourceStates:. Defines
@@ -345,7 +345,7 @@ public class MPSNNPad extends MPSCNNKernel {
     public native void setPaddingSizeAfter(@ByValue MPSImageCoordinate value);
 
     /**
-     * [@property]   paddingSizeBefore
+     * [@property] paddingSizeBefore
      * <p>
      * This property is used for automatically sizing the destination image
      * for the function @ref destinationImageDescriptorForSourceImages:sourceStates:. Defines

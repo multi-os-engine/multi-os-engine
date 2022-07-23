@@ -27,7 +27,7 @@ public final class CoreNFC {
     public static native String NFCErrorDomain();
 
     /**
-     * Key in NSError userInfo dictionary.  The corresponding value is the NSUInteger error code from tag's response.
+     * Key in NSError userInfo dictionary. The corresponding value is the NSUInteger error code from tag's response.
      * Refer to ISO15693 specification for the error code values.
      */
     @Generated
@@ -36,7 +36,8 @@ public final class CoreNFC {
     public static native String NFCISO15693TagResponseErrorKey();
 
     /**
-     * Key in NSError userInfo dictionary.  Presence of this key indicates the received response packet length is invalid.
+     * Key in NSError userInfo dictionary. Presence of this key indicates the received response packet length is
+     * invalid.
      */
     @Generated
     @CVariable()

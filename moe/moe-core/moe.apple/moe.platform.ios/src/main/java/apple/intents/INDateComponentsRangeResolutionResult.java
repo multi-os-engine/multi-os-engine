@@ -89,7 +89,8 @@ public class INDateComponentsRangeResolutionResult extends INIntentResolutionRes
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * This resolution result is to ask Siri to confirm if this is the date components range with which the user wants to continue.
+     * This resolution result is to ask Siri to confirm if this is the date components range with which the user wants
+     * to continue.
      */
     @Generated
     @Selector("confirmationRequiredWithDateComponentsRangeToConfirm:")
@@ -164,7 +165,9 @@ public class INDateComponentsRangeResolutionResult extends INIntentResolutionRes
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INDateComponentsRange. The resolvedDateComponentsRange can be different than the original INDateComponentsRange. This allows app extensions to pick a suitable range.
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given
+     * INDateComponentsRange. The resolvedDateComponentsRange can be different than the original INDateComponentsRange.
+     * This allows app extensions to pick a suitable range.
      * Use +notRequired to continue with a 'nil' value.
      */
     @Generated

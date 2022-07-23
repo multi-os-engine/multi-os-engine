@@ -26,6 +26,6 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INRidesharingDomainHandling")
-public interface INRidesharingDomainHandling
-        extends INListRideOptionsIntentHandling, INRequestRideIntentHandling, INGetRideStatusIntentHandling {
+public interface INRidesharingDomainHandling extends INListRideOptionsIntentHandling, INRequestRideIntentHandling,
+        INGetRideStatusIntentHandling {
 }

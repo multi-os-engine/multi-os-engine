@@ -116,7 +116,8 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
      * Creates and returns a geometry source from the given data and parameters.
      * <p>
      * Attempting to modify the Metal buffer outside the SCNSceneRenderer delegate callbacks is undefined.
-     * The typical usage it to modify the MTLBuffer within the willRenderScene callback, using a compute kernel or a vertex function in the user own command buffer. So something like:
+     * The typical usage it to modify the MTLBuffer within the willRenderScene callback, using a compute kernel or a
+     * vertex function in the user own command buffer. So something like:
      * <p>
      * - (void)renderer:(id <SCNSceneRenderer>)aRenderer willRenderScene:(SCNScene *)scene atTime:(NSTimeInterval)time
      * {
@@ -174,7 +175,8 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
      * <p>
      * Creates and returns a geometry source from normals stored in a buffer of SCNVector3 values.
      * <p>
-     * Input normals are copied to an optimized data format. The actual format is described by the properties of the resulting instance.
+     * Input normals are copied to an optimized data format. The actual format is described by the properties of the
+     * resulting instance.
      *
      * @param normals The buffer of normals.
      * @param count   The number of normals.
@@ -189,7 +191,8 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
      * <p>
      * Creates and returns a geometry source from texture coordinates stored in a buffer of CGPoint values.
      * <p>
-     * Input texture coordinates are copied to an optimized data format. The actual format is described by the properties of the resulting instance.
+     * Input texture coordinates are copied to an optimized data format. The actual format is described by the
+     * properties of the resulting instance.
      *
      * @param texcoord The buffer of texture coordinates.
      * @param count    The number of texture coordinate points.
@@ -204,7 +207,8 @@ public class SCNGeometrySource extends NSObject implements NSSecureCoding {
      * <p>
      * Creates and returns a geometry source from vertices stored in a buffer of SCNVector3 values.
      * <p>
-     * Input vertices are copied to an optimized data format. The actual format is described by the properties of the resulting instance.
+     * Input vertices are copied to an optimized data format. The actual format is described by the properties of the
+     * resulting instance.
      *
      * @param vertices The buffer of vertices.
      * @param count    The number of vertices.

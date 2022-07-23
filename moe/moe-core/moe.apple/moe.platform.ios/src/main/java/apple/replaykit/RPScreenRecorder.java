@@ -180,7 +180,8 @@ public class RPScreenRecorder extends NSObject {
     public native RPScreenRecorderDelegate delegate();
 
     /**
-     * Discards the current recording. This can only be called after the handler block in stopRecordingWithHandler: is executed.
+     * Discards the current recording. This can only be called after the handler block in stopRecordingWithHandler: is
+     * executed.
      */
     @Generated
     @Selector("discardRecordingWithHandler:")
@@ -192,35 +193,40 @@ public class RPScreenRecorder extends NSObject {
     public native RPScreenRecorder init();
 
     /**
-     * Check if ReplayKit is available on the device. Implement the screenRecorderDidChangeAvailability: on the delegate to listen for changes to this property. Can be used for key value observing.
+     * Check if ReplayKit is available on the device. Implement the screenRecorderDidChangeAvailability: on the delegate
+     * to listen for changes to this property. Can be used for key value observing.
      */
     @Generated
     @Selector("isAvailable")
     public native boolean isAvailable();
 
     /**
-     * Specify or query whether the camera should be enabled during recording. Can be used for key value observing. Default is NO.
+     * Specify or query whether the camera should be enabled during recording. Can be used for key value observing.
+     * Default is NO.
      */
     @Generated
     @Selector("isCameraEnabled")
     public native boolean isCameraEnabled();
 
     /**
-     * Specify or query whether the camera should be enabled during recording. Can be used for key value observing. Default is NO.
+     * Specify or query whether the camera should be enabled during recording. Can be used for key value observing.
+     * Default is NO.
      */
     @Generated
     @Selector("setCameraEnabled:")
     public native void setCameraEnabled(boolean value);
 
     /**
-     * Specify or query whether the microphone should be enabled during recording. Can be used for key value observing. Default is NO.
+     * Specify or query whether the microphone should be enabled during recording. Can be used for key value observing.
+     * Default is NO.
      */
     @Generated
     @Selector("isMicrophoneEnabled")
     public native boolean isMicrophoneEnabled();
 
     /**
-     * Specify or query whether the microphone should be enabled during recording. Can be used for key value observing. Default is NO.
+     * Specify or query whether the microphone should be enabled during recording. Can be used for key value observing.
+     * Default is NO.
      */
     @Generated
     @Selector("setMicrophoneEnabled:")
@@ -256,9 +262,11 @@ public class RPScreenRecorder extends NSObject {
     }
 
     /**
-     * Starts app recording with a completion handler. Note that before recording actually starts, the user may be prompted with UI to confirm recording.
+     * Starts app recording with a completion handler. Note that before recording actually starts, the user may be
+     * prompted with UI to confirm recording.
      * <p>
-     * handler Called after user interactions are complete. Will be passed an optional NSError in the RPRecordingErrorDomain domain if there was an issue starting the recording.
+     * handler Called after user interactions are complete. Will be passed an optional NSError in the
+     * RPRecordingErrorDomain domain if there was an issue starting the recording.
      */
     @Generated
     @Selector("startRecordingWithHandler:")
@@ -268,9 +276,11 @@ public class RPScreenRecorder extends NSObject {
     /**
      * Deprecated. Use startRecordingWithHandler: instead.
      * <p>
-     * Starts app recording with a completion handler. Note that before recording actually starts, the user may be prompted with UI to confirm recording.
+     * Starts app recording with a completion handler. Note that before recording actually starts, the user may be
+     * prompted with UI to confirm recording.
      * <p>
-     * handler Called after user interactions are complete. Will be passed an optional NSError in the RPRecordingErrorDomain domain if there was an issue starting the recording.
+     * handler Called after user interactions are complete. Will be passed an optional NSError in the
+     * RPRecordingErrorDomain domain if there was an issue starting the recording.
      *
      * @param microphoneEnabled Determines whether the microphone input should be included in the recorded movie audio.
      */
@@ -282,7 +292,9 @@ public class RPScreenRecorder extends NSObject {
     /**
      * Stops app recording with a completion handler.
      * <p>
-     * handler Called when the movie is ready. Will return an instance of RPPreviewViewController on success which should be presented using [UIViewController presentViewController:animated:completion:]. Will be passed an optional NSError in the RPRecordingErrorDomain domain if there was an issue stopping the recording.
+     * handler Called when the movie is ready. Will return an instance of RPPreviewViewController on success which
+     * should be presented using [UIViewController presentViewController:animated:completion:]. Will be passed an
+     * optional NSError in the RPRecordingErrorDomain domain if there was an issue stopping the recording.
      */
     @Generated
     @Selector("stopRecordingWithHandler:")
@@ -333,9 +345,12 @@ public class RPScreenRecorder extends NSObject {
     public native void setCameraPosition(@NInt long value);
 
     /**
-     * Starts screen and audio capture and continually calls the supplied handler with the current sampleBuffer and bufferType and passed it back to the application. Note that before recording actually starts, the user may be prompted with UI to confirm recording.
+     * Starts screen and audio capture and continually calls the supplied handler with the current sampleBuffer and
+     * bufferType and passed it back to the application. Note that before recording actually starts, the user may be
+     * prompted with UI to confirm recording.
      * <p>
-     * handler Called continually with sampleBuffers and the bufferType. Will be passed an optional NSError in the RPRecordingErrorDomain domain if there was an issue starting the capture.
+     * handler Called continually with sampleBuffers and the bufferType. Will be passed an optional NSError in the
+     * RPRecordingErrorDomain domain if there was an issue starting the capture.
      */
     @Generated
     @Selector("startCaptureWithHandler:completionHandler:")
@@ -361,7 +376,8 @@ public class RPScreenRecorder extends NSObject {
     /**
      * Stops screen capture with a completion handler
      * <p>
-     * handler Called after the screen capture has stopped. Will be passed an optional NSError in the RPRecordingErrorDomain domain if there was an issue stopping the capture
+     * handler Called after the screen capture has stopped. Will be passed an optional NSError in the
+     * RPRecordingErrorDomain domain if there was an issue stopping the capture
      */
     @Generated
     @Selector("stopCaptureWithHandler:")
@@ -378,7 +394,8 @@ public class RPScreenRecorder extends NSObject {
     /**
      * Stops app recording with output URL and completion handler.
      * <p>
-     * handler Called when  movie is written to specified output URL. Will be passed an optional NSError in the RPRecordingErrorDomain domain if there was an issue stopping the recording and writing the output URL.
+     * handler Called when movie is written to specified output URL. Will be passed an optional NSError in the
+     * RPRecordingErrorDomain domain if there was an issue stopping the recording and writing the output URL.
      *
      * @param url Output URL for app recording movie.
      */
@@ -397,10 +414,14 @@ public class RPScreenRecorder extends NSObject {
     /**
      * Exports clip recording
      * <p>
-     * Must be called after startClipBufferingWithCompletionHandler:, otherwise this will return an error. Exports clip recording from newest samples in buffer for duration. handler Will be called after asset is finished writing to output path. Will be passed an optional NSError in the RPRecordingErrorDomain domain if there was an issue generating the clip recording.
+     * Must be called after startClipBufferingWithCompletionHandler:, otherwise this will return an error. Exports clip
+     * recording from newest samples in buffer for duration. handler Will be called after asset is finished writing to
+     * output path. Will be passed an optional NSError in the RPRecordingErrorDomain domain if there was an issue
+     * generating the clip recording.
      *
      * @param url      URL containing absolute path for where to save the clip
-     * @param duration Length of time in seconds for clip recording, capped at either the elapsed time, or a maximum of 15 seconds, depending on which is the shorter amount of time
+     * @param duration Length of time in seconds for clip recording, capped at either the elapsed time, or a maximum of
+     *                 15 seconds, depending on which is the shorter amount of time
      */
     @Generated
     @Selector("exportClipToURL:duration:completionHandler:")
@@ -415,9 +436,11 @@ public class RPScreenRecorder extends NSObject {
     }
 
     /**
-     * Start clip recording buffering with a completion handler. Note that before recording actually starts, the user may be prompted with UI to confirm recording.
+     * Start clip recording buffering with a completion handler. Note that before recording actually starts, the user
+     * may be prompted with UI to confirm recording.
      * <p>
-     * handler Called after clip recording is started. Will be passed an optional NSError in the RPRecordingErrorDomain domain if there was an issue starting clip record buffering.
+     * handler Called after clip recording is started. Will be passed an optional NSError in the RPRecordingErrorDomain
+     * domain if there was an issue starting clip record buffering.
      */
     @Generated
     @Selector("startClipBufferingWithCompletionHandler:")
@@ -434,7 +457,8 @@ public class RPScreenRecorder extends NSObject {
     /**
      * Stop clip recording buffering with a completion handler.
      * <p>
-     * handler Called after clip recording session is stopped. Will be passed an optional NSError in the RPRecordingErrorDomain domain if there was an issue stopping clip record buffering.
+     * handler Called after clip recording session is stopped. Will be passed an optional NSError in the
+     * RPRecordingErrorDomain domain if there was an issue stopping clip record buffering.
      */
     @Generated
     @Selector("stopClipBufferingWithCompletionHandler:")

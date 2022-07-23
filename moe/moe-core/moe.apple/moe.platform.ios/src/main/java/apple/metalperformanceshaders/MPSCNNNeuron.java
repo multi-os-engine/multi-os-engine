@@ -50,22 +50,22 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * You must use one of the sub-classes of MPSCNNNeuron.
  * <p>
  * The following filter types are supported:
- * MPSCNNNeuronTypeNone            ///< f(x) = x
- * MPSCNNNeuronTypeLinear          ///< f(x) = a * x + b
- * MPSCNNNeuronTypeReLU            ///< f(x) = x >= 0 ? x : a * x
- * MPSCNNNeuronTypeSigmoid         ///< f(x) = 1 / (1 + e^-x)
- * MPSCNNNeuronTypeHardSigmoid     ///< f(x) = clamp((x * a) + b, 0, 1)
- * MPSCNNNeuronTypeTanH            ///< f(x) = a * tanh(b * x)
- * MPSCNNNeuronTypeAbsolute        ///< f(x) = fabs(x)
- * MPSCNNNeuronTypeSoftPlus        ///< f(x) = a * log(1 + e^(b * x))
- * MPSCNNNeuronTypeSoftSign        ///< f(x) = x / (1 + abs(x))
- * MPSCNNNeuronTypeELU             ///< f(x) = x >= 0 ? x : a * (exp(x) - 1)
- * MPSCNNNeuronTypePReLU           ///< Same as ReLU except parameter a is per channel
- * MPSCNNNeuronTypeReLUN           ///< f(x) = min((x >= 0 ? x : a * x), b)
- * MPSCNNNeuronTypePower           ///< f(x) = (a * x + b) ^ c
- * MPSCNNNeuronTypeExponential     ///< f(x) = c ^ (a * x + b)
- * MPSCNNNeuronTypeLogarithm       ///< f(x) = log_c(a * x + b)
- * MPSCNNNeuronTypeGeLU            ///< f(x) = (1.0 + erf(x * sqrt(0.5))) * 0.5 * x
+ * MPSCNNNeuronTypeNone ///< f(x) = x
+ * MPSCNNNeuronTypeLinear ///< f(x) = a * x + b
+ * MPSCNNNeuronTypeReLU ///< f(x) = x >= 0 ? x : a * x
+ * MPSCNNNeuronTypeSigmoid ///< f(x) = 1 / (1 + e^-x)
+ * MPSCNNNeuronTypeHardSigmoid ///< f(x) = clamp((x * a) + b, 0, 1)
+ * MPSCNNNeuronTypeTanH ///< f(x) = a * tanh(b * x)
+ * MPSCNNNeuronTypeAbsolute ///< f(x) = fabs(x)
+ * MPSCNNNeuronTypeSoftPlus ///< f(x) = a * log(1 + e^(b * x))
+ * MPSCNNNeuronTypeSoftSign ///< f(x) = x / (1 + abs(x))
+ * MPSCNNNeuronTypeELU ///< f(x) = x >= 0 ? x : a * (exp(x) - 1)
+ * MPSCNNNeuronTypePReLU ///< Same as ReLU except parameter a is per channel
+ * MPSCNNNeuronTypeReLUN ///< f(x) = min((x >= 0 ? x : a * x), b)
+ * MPSCNNNeuronTypePower ///< f(x) = (a * x + b) ^ c
+ * MPSCNNNeuronTypeExponential ///< f(x) = c ^ (a * x + b)
+ * MPSCNNNeuronTypeLogarithm ///< f(x) = log_c(a * x + b)
+ * MPSCNNNeuronTypeGeLU ///< f(x) = (1.0 + erf(x * sqrt(0.5))) * 0.5 * x
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -195,7 +195,7 @@ public class MPSCNNNeuron extends MPSCNNKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel

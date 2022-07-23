@@ -17,7 +17,8 @@ public interface MTLEvent {
     /**
      * [@property] device
      * <p>
-     * The device this event can be used with. Will be nil when the event is shared across devices (i.e. MTLSharedEvent).
+     * The device this event can be used with. Will be nil when the event is shared across devices (i.e.
+     * MTLSharedEvent).
      */
     @Generated
     @Selector("device")

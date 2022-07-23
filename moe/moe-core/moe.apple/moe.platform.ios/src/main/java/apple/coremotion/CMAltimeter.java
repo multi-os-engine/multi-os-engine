@@ -229,7 +229,8 @@ public class CMAltimeter extends NSObject {
      * startAbsoluteAltitudeUpdatesToQueue:withHandler:
      * <p>
      * Discussion:
-     * Starts real-time absolute altitude updates, providing data to the given handler on the given queue, whenever a change in elevation is detected.
+     * Starts real-time absolute altitude updates, providing data to the given handler on the given queue, whenever a
+     * change in elevation is detected.
      * <p>
      * Calls to start must be balanced with calls to stopAbsoluteAltitudeUpdates even if an error
      * is returned to the handler.

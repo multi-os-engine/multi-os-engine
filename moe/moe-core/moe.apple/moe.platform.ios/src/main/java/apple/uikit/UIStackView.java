@@ -474,7 +474,7 @@ public class UIStackView extends UIView {
      * Baseline-to-baseline spacing in vertical stacks.
      * The baselineRelativeArrangement property supports specifications of vertical
      * space from the last baseline of one text-based view to the first baseline of a
-     * text-based view below, or from the  top (or bottom) of a container to the first
+     * text-based view below, or from the top (or bottom) of a container to the first
      * (or last) baseline of a contained text-based view.
      * This property is ignored in horizontal stacks. Use the alignment property
      * to specify baseline alignment in horizontal stacks.
@@ -488,7 +488,7 @@ public class UIStackView extends UIView {
      * Baseline-to-baseline spacing in vertical stacks.
      * The baselineRelativeArrangement property supports specifications of vertical
      * space from the last baseline of one text-based view to the first baseline of a
-     * text-based view below, or from the  top (or bottom) of a container to the first
+     * text-based view below, or from the top (or bottom) of a container to the first
      * (or last) baseline of a contained text-based view.
      * This property is ignored in horizontal stacks. Use the alignment property
      * to specify baseline alignment in horizontal stacks.

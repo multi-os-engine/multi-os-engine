@@ -3,7 +3,7 @@ package apple.mlcompute.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]       MLCPoolingType
+ * [@enum] MLCPoolingType
  * <p>
  * A pooling function type for a pooling layer.
  */

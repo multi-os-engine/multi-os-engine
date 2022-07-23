@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSCNNNeuronAbsolute
  * [@dependency] This depends on Metal.framework
  * <p>
- * Specifies the absolute neuron filter.  For each pixel, applies the following function: f(x) = | x |
+ * Specifies the absolute neuron filter. For each pixel, applies the following function: f(x) = | x |
  */
 @Generated
 @Library("MetalPerformanceShaders")

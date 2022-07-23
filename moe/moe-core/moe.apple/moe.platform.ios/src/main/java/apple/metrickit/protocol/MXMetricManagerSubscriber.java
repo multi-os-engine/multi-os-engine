@@ -12,13 +12,15 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * [@protocol]      MXMetricManagerSubscriber
+ * [@protocol] MXMetricManagerSubscriber
  * <p>
  * A protocol that allows the conforming object to receive metric payloads from the metric manager.
  * <p>
- * In order to receive metric payloads, atleast one object must conform to this protocol and be subscribed   to the metric manager.
+ * In order to receive metric payloads, atleast one object must conform to this protocol and be subscribed to the metric
+ * manager.
  * <p>
- * Objects which conform to this protocol can be passed to addSubscriber:subscriber and removeSubscriber:subscriber to manage their subscription state.
+ * Objects which conform to this protocol can be passed to addSubscriber:subscriber and removeSubscriber:subscriber to
+ * manage their subscription state.
  */
 @Generated
 @Library("MetricKit")
@@ -30,7 +32,8 @@ public interface MXMetricManagerSubscriber {
      * <p>
      * This method is invoked when a new MXMetricPayload has been received.
      * <p>
-     * You can expect for this method to be invoked atleast once per day when the app is running and subscribers are available.
+     * You can expect for this method to be invoked atleast once per day when the app is running and subscribers are
+     * available.
      * <p>
      * If no subscribers are available, this method will not be invoked.
      * <p>
@@ -38,7 +41,8 @@ public interface MXMetricManagerSubscriber {
      * <p>
      * This method is invoked on a background queue.
      *
-     * @param payloads An NSArray of MXMetricPayload objects. This array of payloads contains data from previous usage sessions.
+     * @param payloads An NSArray of MXMetricPayload objects. This array of payloads contains data from previous usage
+     *                 sessions.
      */
     @IsOptional
     @Generated
@@ -52,7 +56,8 @@ public interface MXMetricManagerSubscriber {
      * <p>
      * This method is invoked when a new MXDiagnosticPayload has been received.
      * <p>
-     * You can expect for this method to be invoked atleast once per day when the app is running and subscribers are available.
+     * You can expect for this method to be invoked atleast once per day when the app is running and subscribers are
+     * available.
      * <p>
      * If no subscribers are available, this method will not be invoked.
      * <p>
@@ -60,7 +65,8 @@ public interface MXMetricManagerSubscriber {
      * <p>
      * This method is invoked on a background queue.
      *
-     * @param payloads An NSArray of MXDiagnosticPayload objects. This array of payloads contains diagnostics from previous usage sessions.
+     * @param payloads An NSArray of MXDiagnosticPayload objects. This array of payloads contains diagnostics from
+     *                 previous usage sessions.
      */
     @Generated
     @IsOptional

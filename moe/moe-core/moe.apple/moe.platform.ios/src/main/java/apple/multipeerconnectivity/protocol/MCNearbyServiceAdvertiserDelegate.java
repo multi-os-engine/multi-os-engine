@@ -46,7 +46,7 @@ public interface MCNearbyServiceAdvertiserDelegate {
     }
 
     /**
-     * Incoming invitation request.  Call the invitationHandler block with YES
+     * Incoming invitation request. Call the invitationHandler block with YES
      * and a valid session to connect the inviting peer to the session.
      */
     @Generated

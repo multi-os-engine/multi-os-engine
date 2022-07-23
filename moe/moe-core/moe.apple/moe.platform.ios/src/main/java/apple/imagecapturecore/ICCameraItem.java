@@ -27,7 +27,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * ----------------------------------------------------------------------------------------------------------------- ICCameraItem
+ * -----------------------------------------------------------------------------------------------------------------
+ * ICCameraItem
  * <p>
  * ICCameraItem
  * <p>
@@ -51,7 +52,8 @@ public class ICCameraItem extends NSObject {
     /**
      * [@property] UTI
      * <p>
-     * ￼Item UTI. This is an Uniform Type Identifier string. It is one of: kUTTypeFolder, kUTTypeImage, kUTTypeMovie, kUTTypeAudio, or kUTTypeData.
+     * ￼Item UTI. This is an Uniform Type Identifier string. It is one of: kUTTypeFolder, kUTTypeImage, kUTTypeMovie,
+     * kUTTypeAudio, or kUTTypeData.
      */
     @Generated
     @Selector("UTI")
@@ -205,7 +207,8 @@ public class ICCameraItem extends NSObject {
     /**
      * [@property] metadata
      * <p>
-     * ￼Metadata for the item. The value of this property is NULL unless a 'requestMetadata' message is sent to this object.
+     * ￼Metadata for the item. The value of this property is NULL unless a 'requestMetadata' message is sent to this
+     * object.
      */
     @Generated
     @Selector("metadata")
@@ -263,7 +266,9 @@ public class ICCameraItem extends NSObject {
     /**
      * requestMetadata
      * <p>
-     * ￼Metadata for the file if one is readily available. If one is not readily available, accessing this property will send a message to the device requesting metadata for the file. The delegate of the device will be notified via method "cameraDevice:didReceiveMetadata:forItem:error:", if this method is implemented by the delegate.
+     * ￼Metadata for the file if one is readily available. If one is not readily available, accessing this property will
+     * send a message to the device requesting metadata for the file. The delegate of the device will be notified via
+     * method "cameraDevice:didReceiveMetadata:forItem:error:", if this method is implemented by the delegate.
      * [@note] Execution of the delegate callback will occur on the main thread.
      */
     @Generated
@@ -273,7 +278,9 @@ public class ICCameraItem extends NSObject {
     /**
      * requestThumbnail
      * <p>
-     * This method requests thumbnail for the item. If one is not readily available, accessing this property will send a message to the device requesting a thumbnail for the file. The delegate of the device will be notified via method "cameraDevice:didReceiveThumbnail:forItem:error:", if this method is implemented by the delegate.
+     * This method requests thumbnail for the item. If one is not readily available, accessing this property will send a
+     * message to the device requesting a thumbnail for the file. The delegate of the device will be notified via method
+     * "cameraDevice:didReceiveThumbnail:forItem:error:", if this method is implemented by the delegate.
      * [@note] Execution of the delegate callback will occur on the main thread.
      */
     @Generated
@@ -299,7 +306,8 @@ public class ICCameraItem extends NSObject {
     /**
      * [@property] thumbnail
      * <p>
-     * ￼Thumbnail for the item. The value of this property is NULL unless a 'requestThumbnail' message is sent to this object.
+     * ￼Thumbnail for the item. The value of this property is NULL unless a 'requestThumbnail' message is sent to this
+     * object.
      */
     @Generated
     @Selector("thumbnail")
@@ -315,7 +323,8 @@ public class ICCameraItem extends NSObject {
     /**
      * [@property] userData
      * <p>
-     * ￼A mutable dictionary to store arbitrary key-value pairs associated with a camera item object. This can be used by
+     * ￼A mutable dictionary to store arbitrary key-value pairs associated with a camera item object. This can be used
+     * by
      * view objects that bind to this object to store "house-keeping" information.
      */
     @Generated
@@ -330,7 +339,8 @@ public class ICCameraItem extends NSObject {
     /**
      * [@property] addedAfterContentCatalogCompleted
      * <p>
-     * This property is set if the file is captured on the device after the device's content is fully enumerated. This does
+     * This property is set if the file is captured on the device after the device's content is fully enumerated. This
+     * does
      * not apply to files added as a result of adding a new store to the device.
      */
     @Generated

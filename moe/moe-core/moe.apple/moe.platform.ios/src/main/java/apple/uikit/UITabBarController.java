@@ -175,7 +175,8 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public static native long version_static();
 
     /**
-     * If non-nil, then the "More" view will include an "Edit" button that displays customization UI for the specified controllers. By default, all view controllers are customizable.
+     * If non-nil, then the "More" view will include an "Edit" button that displays customization UI for the specified
+     * controllers. By default, all view controllers are customizable.
      */
     @Generated
     @Selector("customizableViewControllers")
@@ -222,7 +223,8 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native UIViewController selectedViewController();
 
     /**
-     * If non-nil, then the "More" view will include an "Edit" button that displays customization UI for the specified controllers. By default, all view controllers are customizable.
+     * If non-nil, then the "More" view will include an "Edit" button that displays customization UI for the specified
+     * controllers. By default, all view controllers are customizable.
      */
     @Generated
     @Selector("setCustomizableViewControllers:")
@@ -275,8 +277,10 @@ public class UITabBarController extends UIViewController implements UITabBarDele
     public native void setViewControllers(NSArray<? extends UIViewController> value);
 
     /**
-     * If the number of view controllers is greater than the number displayable by a tab bar, a "More" navigation controller will automatically be shown.
-     * The "More" navigation controller will not be returned by -viewControllers, but it may be returned by -selectedViewController.
+     * If the number of view controllers is greater than the number displayable by a tab bar, a "More" navigation
+     * controller will automatically be shown.
+     * The "More" navigation controller will not be returned by -viewControllers, but it may be returned by
+     * -selectedViewController.
      */
     @Generated
     @Selector("setViewControllers:animated:")
@@ -284,7 +288,8 @@ public class UITabBarController extends UIViewController implements UITabBarDele
             boolean animated);
 
     /**
-     * Provided for -[UIActionSheet showFromTabBar:]. Attempting to modify the contents of the tab bar directly will throw an exception.
+     * Provided for -[UIActionSheet showFromTabBar:]. Attempting to modify the contents of the tab bar directly will
+     * throw an exception.
      */
     @Generated
     @Selector("tabBar")

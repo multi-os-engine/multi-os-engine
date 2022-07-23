@@ -144,8 +144,11 @@ public class UITrackingLayoutGuide extends UILayoutGuide {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * @param trackingConstraints Constraints to deactivate when the guide is close to the specified edge, and activate when it moves away. Sending nil will remove the constraints associated with this edge from tracking.
-     * @param edge                When the tracking layout guide is close to this edge, specified constraints will change
+     * @param trackingConstraints Constraints to deactivate when the guide is close to the specified edge, and activate
+     *                            when it moves away. Sending nil will remove the constraints associated with this edge
+     *                            from tracking.
+     * @param edge                When the tracking layout guide is close to this edge, specified constraints will
+     *                            change
      */
     @Generated
     @Selector("setConstraints:activeWhenAwayFromEdge:")
@@ -153,8 +156,11 @@ public class UITrackingLayoutGuide extends UILayoutGuide {
             @NUInt long edge);
 
     /**
-     * @param trackingConstraints Constraints to activate when the guide is close to the specified edge, and deactivate when it moves away. Sending nil will deactivate any currently active constraints associated with this edge and remove them from tracking.
-     * @param edge                When the tracking layout guide is close to this edge, specified constraints will change
+     * @param trackingConstraints Constraints to activate when the guide is close to the specified edge, and deactivate
+     *                            when it moves away. Sending nil will deactivate any currently active constraints
+     *                            associated with this edge and remove them from tracking.
+     * @param edge                When the tracking layout guide is close to this edge, specified constraints will
+     *                            change
      */
     @Generated
     @Selector("setConstraints:activeWhenNearEdge:")

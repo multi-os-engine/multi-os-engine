@@ -165,7 +165,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public static native long version_static();
 
     /**
-     * [@property]      activeEnergyBurned
+     * [@property] activeEnergyBurned
      * <p>
      * The amount of active energy that the user burned.
      * <p>
@@ -176,7 +176,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public native HKQuantity activeEnergyBurned();
 
     /**
-     * [@property]      activeEnergyBurnedGoal
+     * [@property] activeEnergyBurnedGoal
      * <p>
      * The user's active energy goal for the day.
      * <p>
@@ -187,7 +187,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public native HKQuantity activeEnergyBurnedGoal();
 
     /**
-     * [@property]      appleExerciseTime
+     * [@property] appleExerciseTime
      * <p>
      * The amount of exercise time that the user performed.
      * <p>
@@ -199,7 +199,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public native HKQuantity appleExerciseTime();
 
     /**
-     * [@property]      appleExerciseTimeGoal
+     * [@property] appleExerciseTimeGoal
      * <p>
      * The user's exercise time goal for the day.
      * <p>
@@ -210,7 +210,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public native HKQuantity appleExerciseTimeGoal();
 
     /**
-     * [@property]      appleStandHours
+     * [@property] appleStandHours
      * <p>
      * The number of stand hours that the user earned.
      * <p>
@@ -222,7 +222,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public native HKQuantity appleStandHours();
 
     /**
-     * [@property]      appleStandHoursGoal
+     * [@property] appleStandHoursGoal
      * <p>
      * The user's active stand hours goal for the day.
      * <p>
@@ -262,7 +262,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public native HKActivitySummary initWithCoder(NSCoder coder);
 
     /**
-     * [@property]      activeEnergyBurned
+     * [@property] activeEnergyBurned
      * <p>
      * The amount of active energy that the user burned.
      * <p>
@@ -273,7 +273,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public native void setActiveEnergyBurned(HKQuantity value);
 
     /**
-     * [@property]      activeEnergyBurnedGoal
+     * [@property] activeEnergyBurnedGoal
      * <p>
      * The user's active energy goal for the day.
      * <p>
@@ -284,7 +284,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public native void setActiveEnergyBurnedGoal(HKQuantity value);
 
     /**
-     * [@property]      appleExerciseTime
+     * [@property] appleExerciseTime
      * <p>
      * The amount of exercise time that the user performed.
      * <p>
@@ -296,7 +296,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public native void setAppleExerciseTime(HKQuantity value);
 
     /**
-     * [@property]      appleExerciseTimeGoal
+     * [@property] appleExerciseTimeGoal
      * <p>
      * The user's exercise time goal for the day.
      * <p>
@@ -307,7 +307,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public native void setAppleExerciseTimeGoal(HKQuantity value);
 
     /**
-     * [@property]      appleStandHours
+     * [@property] appleStandHours
      * <p>
      * The number of stand hours that the user earned.
      * <p>
@@ -319,7 +319,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public native void setAppleStandHours(HKQuantity value);
 
     /**
-     * [@property]      appleStandHoursGoal
+     * [@property] appleStandHoursGoal
      * <p>
      * The user's active stand hours goal for the day.
      * <p>
@@ -336,11 +336,12 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     }
 
     /**
-     * [@property]      activityMoveMode
+     * [@property] activityMoveMode
      * <p>
      * The move mode of this activity summary
      * <p>
-     * The move mode of an activity summary determines if activeEnergyBurned or appleMoveTime are used for the move ring.
+     * The move mode of an activity summary determines if activeEnergyBurned or appleMoveTime are used for the move
+     * ring.
      */
     @Generated
     @Selector("activityMoveMode")
@@ -348,7 +349,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public native long activityMoveMode();
 
     /**
-     * [@property]      appleMoveTime
+     * [@property] appleMoveTime
      * <p>
      * The amount of move time that the user performed.
      * <p>
@@ -360,7 +361,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public native HKQuantity appleMoveTime();
 
     /**
-     * [@property]      appleMoveTimeGoal
+     * [@property] appleMoveTimeGoal
      * <p>
      * The user's move time goal for the day.
      * <p>
@@ -371,18 +372,19 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public native HKQuantity appleMoveTimeGoal();
 
     /**
-     * [@property]      activityMoveMode
+     * [@property] activityMoveMode
      * <p>
      * The move mode of this activity summary
      * <p>
-     * The move mode of an activity summary determines if activeEnergyBurned or appleMoveTime are used for the move ring.
+     * The move mode of an activity summary determines if activeEnergyBurned or appleMoveTime are used for the move
+     * ring.
      */
     @Generated
     @Selector("setActivityMoveMode:")
     public native void setActivityMoveMode(@NInt long value);
 
     /**
-     * [@property]      appleMoveTime
+     * [@property] appleMoveTime
      * <p>
      * The amount of move time that the user performed.
      * <p>
@@ -394,7 +396,7 @@ public class HKActivitySummary extends NSObject implements NSSecureCoding, NSCop
     public native void setAppleMoveTime(HKQuantity value);
 
     /**
-     * [@property]      appleMoveTimeGoal
+     * [@property] appleMoveTimeGoal
      * <p>
      * The user's move time goal for the day.
      * <p>

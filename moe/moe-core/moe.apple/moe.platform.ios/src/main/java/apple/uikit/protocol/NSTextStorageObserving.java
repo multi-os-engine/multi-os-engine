@@ -14,7 +14,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * NSTextStorageObserving defines the protocol for NSTextStorage controller objects observing changes in the text backing-store.
+ * NSTextStorageObserving defines the protocol for NSTextStorage controller objects observing changes in the text
+ * backing-store.
  */
 @Generated
 @Library("UIKit")
@@ -37,7 +38,9 @@ public interface NSTextStorageObserving {
     }
 
     /**
-     * The newCharRange is the range in the final string which was explicitly edited.  The invalidatedRange includes portions that changed as a result of attribute fixing. invalidatedRange is either equal to newCharRange or larger.  Controllers should not change the contents of the text storage during the execution of this message.
+     * The newCharRange is the range in the final string which was explicitly edited. The invalidatedRange includes
+     * portions that changed as a result of attribute fixing. invalidatedRange is either equal to newCharRange or
+     * larger. Controllers should not change the contents of the text storage during the execution of this message.
      */
     @Generated
     @Selector("processEditingForTextStorage:edited:range:changeInLength:invalidatedRange:")

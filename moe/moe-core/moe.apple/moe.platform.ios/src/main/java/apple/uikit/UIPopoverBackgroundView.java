@@ -356,7 +356,8 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     public static native long version_static();
 
     /**
-     * This method may be overridden to prevent the drawing of the content inset and drop shadow inside the popover. The default implementation of this method returns YES.
+     * This method may be overridden to prevent the drawing of the content inset and drop shadow inside the popover. The
+     * default implementation of this method returns YES.
      */
     @Generated
     @Selector("wantsDefaultContentAppearance")
@@ -411,7 +412,8 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     }
 
     /**
-     * `arrowDirection` manages which direction the popover arrow is pointing. You may be required to change the direction of the arrow while the popover is still visible on-screen.
+     * `arrowDirection` manages which direction the popover arrow is pointing. You may be required to change the
+     * direction of the arrow while the popover is still visible on-screen.
      */
     @Generated
     @Selector("arrowDirection")
@@ -426,7 +428,10 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     }
 
     /**
-     * The arrow offset represents how far from the center of the view the center of the arrow should appear. For `UIPopoverArrowDirectionUp` and `UIPopoverArrowDirectionDown`, this is a left-to-right offset; negative is to the left. For `UIPopoverArrowDirectionLeft` and `UIPopoverArrowDirectionRight`, this is a top-to-bottom offset; negative to toward the top.
+     * The arrow offset represents how far from the center of the view the center of the arrow should appear. For
+     * `UIPopoverArrowDirectionUp` and `UIPopoverArrowDirectionDown`, this is a left-to-right offset; negative is to the
+     * left. For `UIPopoverArrowDirectionLeft` and `UIPopoverArrowDirectionRight`, this is a top-to-bottom offset;
+     * negative to toward the top.
      * <p>
      * This method is called inside an animation block managed by the `UIPopoverController`.
      */
@@ -455,14 +460,18 @@ public class UIPopoverBackgroundView extends UIView implements UIPopoverBackgrou
     public native UIPopoverBackgroundView initWithFrame(@ByValue CGRect frame);
 
     /**
-     * `arrowDirection` manages which direction the popover arrow is pointing. You may be required to change the direction of the arrow while the popover is still visible on-screen.
+     * `arrowDirection` manages which direction the popover arrow is pointing. You may be required to change the
+     * direction of the arrow while the popover is still visible on-screen.
      */
     @Generated
     @Selector("setArrowDirection:")
     public native void setArrowDirection(@NUInt long value);
 
     /**
-     * The arrow offset represents how far from the center of the view the center of the arrow should appear. For `UIPopoverArrowDirectionUp` and `UIPopoverArrowDirectionDown`, this is a left-to-right offset; negative is to the left. For `UIPopoverArrowDirectionLeft` and `UIPopoverArrowDirectionRight`, this is a top-to-bottom offset; negative to toward the top.
+     * The arrow offset represents how far from the center of the view the center of the arrow should appear. For
+     * `UIPopoverArrowDirectionUp` and `UIPopoverArrowDirectionDown`, this is a left-to-right offset; negative is to the
+     * left. For `UIPopoverArrowDirectionLeft` and `UIPopoverArrowDirectionRight`, this is a top-to-bottom offset;
+     * negative to toward the top.
      * <p>
      * This method is called inside an animation block managed by the `UIPopoverController`.
      */

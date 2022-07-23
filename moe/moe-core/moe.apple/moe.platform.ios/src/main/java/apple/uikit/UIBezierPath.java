@@ -347,7 +347,8 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * Returns an immutable CGPathRef which is only valid until the UIBezierPath is further mutated.
-     * Setting the path will create an immutable copy of the provided CGPathRef, so any further mutations on a provided CGMutablePathRef will be ignored.
+     * Setting the path will create an immutable copy of the provided CGPathRef, so any further mutations on a provided
+     * CGMutablePathRef will be ignored.
      */
     @Generated
     @Selector("setCGPath:")

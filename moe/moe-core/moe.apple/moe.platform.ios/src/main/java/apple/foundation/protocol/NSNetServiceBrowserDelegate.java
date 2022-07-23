@@ -34,7 +34,9 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("NSNetServiceBrowserDelegate")
 public interface NSNetServiceBrowserDelegate {
     /**
-     * Sent to the NSNetServiceBrowser instance's delegate for each domain discovered. If there are more domains, moreComing will be YES. If for some reason handling discovered domains requires significant processing, accumulating domains until moreComing is NO and then doing the processing in bulk fashion may be desirable.
+     * Sent to the NSNetServiceBrowser instance's delegate for each domain discovered. If there are more domains,
+     * moreComing will be YES. If for some reason handling discovered domains requires significant processing,
+     * accumulating domains until moreComing is NO and then doing the processing in bulk fashion may be desirable.
      */
     @Generated
     @IsOptional
@@ -45,7 +47,9 @@ public interface NSNetServiceBrowserDelegate {
     }
 
     /**
-     * Sent to the NSNetServiceBrowser instance's delegate for each service discovered. If there are more services, moreComing will be YES. If for some reason handling discovered services requires significant processing, accumulating services until moreComing is NO and then doing the processing in bulk fashion may be desirable.
+     * Sent to the NSNetServiceBrowser instance's delegate for each service discovered. If there are more services,
+     * moreComing will be YES. If for some reason handling discovered services requires significant processing,
+     * accumulating services until moreComing is NO and then doing the processing in bulk fashion may be desirable.
      */
     @Generated
     @IsOptional
@@ -56,7 +60,10 @@ public interface NSNetServiceBrowserDelegate {
     }
 
     /**
-     * Sent to the NSNetServiceBrowser instance's delegate when an error in searching for domains or services has occurred. The error dictionary will contain two key/value pairs representing the error domain and code (see the NSNetServicesError enumeration above for error code constants). It is possible for an error to occur after a search has been started successfully.
+     * Sent to the NSNetServiceBrowser instance's delegate when an error in searching for domains or services has
+     * occurred. The error dictionary will contain two key/value pairs representing the error domain and code (see the
+     * NSNetServicesError enumeration above for error code constants). It is possible for an error to occur after a
+     * search has been started successfully.
      */
     @Generated
     @IsOptional
@@ -89,7 +96,8 @@ public interface NSNetServiceBrowserDelegate {
     }
 
     /**
-     * Sent to the NSNetServiceBrowser instance's delegate when the instance's previous running search request has stopped.
+     * Sent to the NSNetServiceBrowser instance's delegate when the instance's previous running search request has
+     * stopped.
      */
     @Generated
     @IsOptional
@@ -99,7 +107,9 @@ public interface NSNetServiceBrowserDelegate {
     }
 
     /**
-     * Sent to the NSNetServiceBrowser instance's delegate before the instance begins a search. The delegate will not receive this message if the instance is unable to begin a search. Instead, the delegate will receive the -netServiceBrowser:didNotSearch: message.
+     * Sent to the NSNetServiceBrowser instance's delegate before the instance begins a search. The delegate will not
+     * receive this message if the instance is unable to begin a search. Instead, the delegate will receive the
+     * -netServiceBrowser:didNotSearch: message.
      */
     @Generated
     @IsOptional

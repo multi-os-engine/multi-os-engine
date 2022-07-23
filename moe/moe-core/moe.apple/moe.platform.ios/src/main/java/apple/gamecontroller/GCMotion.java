@@ -166,7 +166,8 @@ public class GCMotion extends NSObject {
     /**
      * The current attitude of the controller.
      * <p>
-     * [@note] Remotes without accurate attitude and rotation rate can not determine a stable attitude so the values will be (0,0,0,1) at all times.
+     * [@note] Remotes without accurate attitude and rotation rate can not determine a stable attitude so the values
+     * will be (0,0,0,1) at all times.
      *
      * @see hasAttitude
      * @see GCMicroGamepad
@@ -200,7 +201,8 @@ public class GCMotion extends NSObject {
     /**
      * The current rotation rate of the controller.
      * <p>
-     * [@note] Remotes without accurate attitude and rotation rate can not determine a stable rotation rate so the values will be (0,0,0) at all times.
+     * [@note] Remotes without accurate attitude and rotation rate can not determine a stable rotation rate so the
+     * values will be (0,0,0) at all times.
      *
      * @see hasRotationRate
      * @see GCMicroGamepad
@@ -248,7 +250,8 @@ public class GCMotion extends NSObject {
     }
 
     /**
-     * The controller generating the motion data has sensors that can accurately determine the current attitude and rotation rate. If this is enabled the motion data for attitude and rotation rate are usable for inputs.
+     * The controller generating the motion data has sensors that can accurately determine the current attitude and
+     * rotation rate. If this is enabled the motion data for attitude and rotation rate are usable for inputs.
      */
     @Generated
     @Selector("hasAttitudeAndRotationRate")
@@ -321,7 +324,8 @@ public class GCMotion extends NSObject {
     public native GCAcceleration acceleration();
 
     /**
-     * The controller generating the motion data has sensors that can accurately determine the current attitude. If this is enabled the motion data for attitude is usable for inputs.
+     * The controller generating the motion data has sensors that can accurately determine the current attitude. If this
+     * is enabled the motion data for attitude is usable for inputs.
      */
     @Generated
     @Selector("hasAttitude")
@@ -330,8 +334,10 @@ public class GCMotion extends NSObject {
     /**
      * Returns YES if the controller is capable of reporting gravity and user acceleration separately.
      * <p>
-     * [@note] Some controllers do not separate gravity from user acceleration, and only report the total acceleration of the controller.
-     * Query whether the connected controller has the ability to separate gravity and user acceleration, and it doesn’t, use acceleration instead.
+     * [@note] Some controllers do not separate gravity from user acceleration, and only report the total acceleration
+     * of the controller.
+     * Query whether the connected controller has the ability to separate gravity and user acceleration, and it doesn’t,
+     * use acceleration instead.
      *
      * @see acceleration
      */
@@ -340,17 +346,20 @@ public class GCMotion extends NSObject {
     public native boolean hasGravityAndUserAcceleration();
 
     /**
-     * The controller generating the motion data has sensors that can accurately determine the current rotation rate. If this is enabled the motion data for rotation rate is usable for inputs.
+     * The controller generating the motion data has sensors that can accurately determine the current rotation rate. If
+     * this is enabled the motion data for rotation rate is usable for inputs.
      */
     @Generated
     @Selector("hasRotationRate")
     public native boolean hasRotationRate();
 
     /**
-     * Set this property to YES when you wish to receive motion data from the controller. When you set this property to NO, the motion sensors
+     * Set this property to YES when you wish to receive motion data from the controller. When you set this property to
+     * NO, the motion sensors
      * will be disabled and the GCMotion profile will not be updated.
      * <p>
-     * [@note] It is highly recommended that you only enable sensor during the period of time you directly need motion data. Motion sensors
+     * [@note] It is highly recommended that you only enable sensor during the period of time you directly need motion
+     * data. Motion sensors
      * can drain controller battery, device battery, and needlessly consume Bluetooth bandwidth.
      *
      * @see sensorsRequireManualActivation
@@ -360,9 +369,11 @@ public class GCMotion extends NSObject {
     public native boolean sensorsActive();
 
     /**
-     * If this property is returns YES, you are responsible for setting sensorsActive to YES when you need motion data from the controller.
+     * If this property is returns YES, you are responsible for setting sensorsActive to YES when you need motion data
+     * from the controller.
      * <p>
-     * Some controllers, such as the Siri Remote, automatically activate and deactivate motion sensors. In such a case, this property
+     * Some controllers, such as the Siri Remote, automatically activate and deactivate motion sensors. In such a case,
+     * this property
      * will return NO.
      *
      * @see sensorsActive
@@ -383,10 +394,12 @@ public class GCMotion extends NSObject {
     public native void setAcceleration(@ByValue GCAcceleration acceleration);
 
     /**
-     * Set this property to YES when you wish to receive motion data from the controller. When you set this property to NO, the motion sensors
+     * Set this property to YES when you wish to receive motion data from the controller. When you set this property to
+     * NO, the motion sensors
      * will be disabled and the GCMotion profile will not be updated.
      * <p>
-     * [@note] It is highly recommended that you only enable sensor during the period of time you directly need motion data. Motion sensors
+     * [@note] It is highly recommended that you only enable sensor during the period of time you directly need motion
+     * data. Motion sensors
      * can drain controller battery, device battery, and needlessly consume Bluetooth bandwidth.
      *
      * @see sensorsRequireManualActivation

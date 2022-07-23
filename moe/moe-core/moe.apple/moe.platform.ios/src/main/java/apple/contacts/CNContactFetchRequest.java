@@ -45,7 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Specifies the search criteria to fetch contacts.
  * <p>
- * Used with [CNContactStore enumerateContactsWithFetchRequest:error:usingBlock:]. Can combine any of these options to create a contact fetch request.
+ * Used with [CNContactStore enumerateContactsWithFetchRequest:error:usingBlock:]. Can combine any of these options to
+ * create a contact fetch request.
  */
 @Generated
 @Library("Contacts")
@@ -203,7 +204,8 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
     /**
      * The predicate to match contacts against.
      * <p>
-     * Use only predicates from CNContact+Predicates.h. Compound predicates are not supported. Set to nil to match all contacts.
+     * Use only predicates from CNContact+Predicates.h. Compound predicates are not supported. Set to nil to match all
+     * contacts.
      */
     @Generated
     @Selector("predicate")
@@ -230,7 +232,8 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
     /**
      * The predicate to match contacts against.
      * <p>
-     * Use only predicates from CNContact+Predicates.h. Compound predicates are not supported. Set to nil to match all contacts.
+     * Use only predicates from CNContact+Predicates.h. Compound predicates are not supported. Set to nil to match all
+     * contacts.
      */
     @Generated
     @Selector("setPredicate:")
@@ -250,7 +253,8 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
      * <p>
      * If YES returns unified contacts, otherwise returns individual contacts. Default is YES.
      * <p>
-     * [@note] A unified contact is the aggregation of properties from a set of linked individual contacts. If an individual contact is not linked then the unified contact is simply that individual contact.
+     * [@note] A unified contact is the aggregation of properties from a set of linked individual contacts. If an
+     * individual contact is not linked then the unified contact is simply that individual contact.
      */
     @Generated
     @Selector("setUnifyResults:")
@@ -277,7 +281,8 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
      * <p>
      * If YES returns unified contacts, otherwise returns individual contacts. Default is YES.
      * <p>
-     * [@note] A unified contact is the aggregation of properties from a set of linked individual contacts. If an individual contact is not linked then the unified contact is simply that individual contact.
+     * [@note] A unified contact is the aggregation of properties from a set of linked individual contacts. If an
+     * individual contact is not linked then the unified contact is simply that individual contact.
      */
     @Generated
     @Selector("unifyResults")

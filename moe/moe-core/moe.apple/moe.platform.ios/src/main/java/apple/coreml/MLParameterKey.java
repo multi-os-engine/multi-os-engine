@@ -195,7 +195,8 @@ public class MLParameterKey extends MLKey {
     public static native MLParameterKey new_objc();
 
     /**
-     * Int64 parameter used to specify the number of neighbors to use for class affinity (applicable to kNN). Not adjustable in progress
+     * Int64 parameter used to specify the number of neighbors to use for class affinity (applicable to kNN). Not
+     * adjustable in progress
      */
     @Generated
     @Selector("numberOfNeighbors")

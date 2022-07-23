@@ -121,9 +121,11 @@ public class ATTrackingManager extends NSObject {
      * <p>
      * Request user tracking authorization with a completion handler returning the user's authorization status.
      * Users are able to grant or deny developers tracking privileges on a per-app basis.
-     * This method allows developers to determine if access has been granted. On first use, this method will prompt the user to grant or deny access.
+     * This method allows developers to determine if access has been granted. On first use, this method will prompt the
+     * user to grant or deny access.
      * <p>
-     * The completion handler will be called with the result of the user's decision for granting or denying permission to use application tracking.
+     * The completion handler will be called with the result of the user's decision for granting or denying permission
+     * to use application tracking.
      * The completion handler will be called immediately if access to request authorization is restricted.
      */
     @Generated
@@ -159,11 +161,15 @@ public class ATTrackingManager extends NSObject {
      * <p>
      * Returns information about your application’s tracking authorization status.
      * Users are able to grant or deny developers tracking privileges on a per-app basis.
-     * Application developers must call `requestTrackingAuthorizationWithCompletionHandler:` for the ability to track users.
+     * Application developers must call `requestTrackingAuthorizationWithCompletionHandler:` for the ability to track
+     * users.
      *
-     * @return The current authorization status. If the user has not yet been prompted to approve access, the return value will either be
-     * ATTrackingManagerAuthorizationStatusNotDetermined, or ATTrackingManagerAuthorizationStatusRestricted if this value is managed.
-     * Once the user has been prompted, the return value will be either ATTrackingManagerAuthorizationStatusDenied or ATTrackingManagerAuthorizationStatusAuthorized.
+     * @return The current authorization status. If the user has not yet been prompted to approve access, the return
+     *         value will either be
+     *         ATTrackingManagerAuthorizationStatusNotDetermined, or ATTrackingManagerAuthorizationStatusRestricted if
+     *         this value is managed.
+     *         Once the user has been prompted, the return value will be either
+     *         ATTrackingManagerAuthorizationStatusDenied or ATTrackingManagerAuthorizationStatusAuthorized.
      */
     @Generated
     @Selector("trackingAuthorizationStatus")

@@ -72,7 +72,8 @@ public interface UISearchDisplayDelegate {
     }
 
     /**
-     * return YES to reload table. called when search string/option changes. convenience methods on top UISearchBar delegate methods
+     * return YES to reload table. called when search string/option changes. convenience methods on top UISearchBar
+     * delegate methods
      */
     @Generated
     @IsOptional

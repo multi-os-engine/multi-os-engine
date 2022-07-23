@@ -185,10 +185,12 @@ public class AVQueuePlayer extends AVPlayer {
      * <p>
      * Tests whether an AVPlayerItem can be inserted into the player's queue.
      * <p>
-     * Note that adding the same AVPlayerItem to an AVQueuePlayer at more than one position in the queue is not supported.
+     * Note that adding the same AVPlayerItem to an AVQueuePlayer at more than one position in the queue is not
+     * supported.
      *
      * @param item      The AVPlayerItem to be tested.
-     * @param afterItem The item that the item to be tested is to follow in the queue. Pass nil to test whether the item can be appended to the queue.
+     * @param afterItem The item that the item to be tested is to follow in the queue. Pass nil to test whether the item
+     *                  can be appended to the queue.
      * @return An indication of whether the item can be inserted into the queue after the specified item.
      */
     @Generated
@@ -225,7 +227,8 @@ public class AVQueuePlayer extends AVPlayer {
      * Places an AVPlayerItem after the specified item in the queue.
      *
      * @param item      The item to be inserted.
-     * @param afterItem The item that the newly inserted item should follow in the queue. Pass nil to append the item to the queue.
+     * @param afterItem The item that the newly inserted item should follow in the queue. Pass nil to append the item to
+     *                  the queue.
      */
     @Generated
     @Selector("insertItem:afterItem:")

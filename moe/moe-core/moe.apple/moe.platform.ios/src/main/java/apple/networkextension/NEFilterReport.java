@@ -195,7 +195,8 @@ public class NEFilterReport extends NSObject implements NSSecureCoding, NSCopyin
     /**
      * [@property] bytesInboundCount
      * <p>
-     * The number of inbound bytes received from the flow. This property is only non-zero when the report event is NEFilterReportEventFlowClosed or NEFilterReportEventFlowStatistics.
+     * The number of inbound bytes received from the flow. This property is only non-zero when the report event is
+     * NEFilterReportEventFlowClosed or NEFilterReportEventFlowStatistics.
      */
     @Generated
     @Selector("bytesInboundCount")
@@ -205,7 +206,8 @@ public class NEFilterReport extends NSObject implements NSSecureCoding, NSCopyin
     /**
      * [@property] bytesOutboundCount
      * <p>
-     * The number of outbound bytes sent on the flow. This property is only non-zero when the report event is NEFilterReportEventFlowClosed or NEFilterReportEventFlowStatistics.
+     * The number of outbound bytes sent on the flow. This property is only non-zero when the report event is
+     * NEFilterReportEventFlowClosed or NEFilterReportEventFlowStatistics.
      */
     @Generated
     @Selector("bytesOutboundCount")

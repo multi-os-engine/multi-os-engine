@@ -35,7 +35,7 @@ public final class MPSImageRegion extends StructObject {
     }
 
     /**
-     * <    The position of the top left corner of the subregion
+     * < The position of the top left corner of the subregion
      */
     @Generated
     @StructureField(order = 0, isGetter = true)
@@ -43,14 +43,14 @@ public final class MPSImageRegion extends StructObject {
     public native MPSImageCoordinate offset();
 
     /**
-     * <    The position of the top left corner of the subregion
+     * < The position of the top left corner of the subregion
      */
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setOffset(@ByValue MPSImageCoordinate value);
 
     /**
-     * <    The size {pixels, pixels, channels} of the subregion
+     * < The size {pixels, pixels, channels} of the subregion
      */
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -58,7 +58,7 @@ public final class MPSImageRegion extends StructObject {
     public native MPSImageCoordinate size();
 
     /**
-     * <    The size {pixels, pixels, channels} of the subregion
+     * < The size {pixels, pixels, channels} of the subregion
      */
     @Generated
     @StructureField(order = 1, isGetter = false)

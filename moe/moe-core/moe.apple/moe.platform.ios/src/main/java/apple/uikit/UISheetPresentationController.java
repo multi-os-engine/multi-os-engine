@@ -55,7 +55,8 @@ public class UISheetPresentationController extends UIPresentationController {
 
     /**
      * To animate changing any of the above properties, set them inside a block passed to this method.
-     * By the time this method returns, the receiver and all adjacent sheets in the sheet stack and their subviews will have been laid out.
+     * By the time this method returns, the receiver and all adjacent sheets in the sheet stack and their subviews will
+     * have been laid out.
      */
     @Generated
     @Selector("animateChanges:")
@@ -95,7 +96,8 @@ public class UISheetPresentationController extends UIPresentationController {
     public static native String debugDescription_static();
 
     /**
-     * The delegate inherited from UIPresentationController, redeclared with conformance to UISheetPresentationControllerDelegate.
+     * The delegate inherited from UIPresentationController, redeclared with conformance to
+     * UISheetPresentationControllerDelegate.
      */
     @Generated
     @Selector("delegate")
@@ -152,7 +154,8 @@ public class UISheetPresentationController extends UIPresentationController {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * The identifier of the largest detent that is not dimmed. When nil or the identifier is not found in detents, all detents are dimmed.
+     * The identifier of the largest detent that is not dimmed. When nil or the identifier is not found in detents, all
+     * detents are dimmed.
      * Default: nil
      */
     @Generated
@@ -175,7 +178,8 @@ public class UISheetPresentationController extends UIPresentationController {
     public native double preferredCornerRadius();
 
     /**
-     * Set to YES to cause the sheet to layout with an edge-attached appearance in compact height instead of full screen.
+     * Set to YES to cause the sheet to layout with an edge-attached appearance in compact height instead of full
+     * screen.
      * Default: NO
      */
     @Generated
@@ -191,8 +195,10 @@ public class UISheetPresentationController extends UIPresentationController {
     public native boolean prefersGrabberVisible();
 
     /**
-     * If there is a larger detent to expand to than the selected detent, and a descendent scroll view is scrolled to top, this controls whether scrolling down will expand to a larger detent.
-     * Useful to set to NO for non-modal sheets, where scrolling in the sheet should not expand the sheet and obscure the content above.
+     * If there is a larger detent to expand to than the selected detent, and a descendent scroll view is scrolled to
+     * top, this controls whether scrolling down will expand to a larger detent.
+     * Useful to set to NO for non-modal sheets, where scrolling in the sheet should not expand the sheet and obscure
+     * the content above.
      * Default: YES
      */
     @Generated
@@ -208,7 +214,8 @@ public class UISheetPresentationController extends UIPresentationController {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * The identifier of the selected detent. When nil or the identifier is not found in detents, the sheet is displayed at the smallest detent.
+     * The identifier of the selected detent. When nil or the identifier is not found in detents, the sheet is displayed
+     * at the smallest detent.
      * Default: nil
      */
     @Generated
@@ -216,14 +223,16 @@ public class UISheetPresentationController extends UIPresentationController {
     public native String selectedDetentIdentifier();
 
     /**
-     * The delegate inherited from UIPresentationController, redeclared with conformance to UISheetPresentationControllerDelegate.
+     * The delegate inherited from UIPresentationController, redeclared with conformance to
+     * UISheetPresentationControllerDelegate.
      */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
     /**
-     * The delegate inherited from UIPresentationController, redeclared with conformance to UISheetPresentationControllerDelegate.
+     * The delegate inherited from UIPresentationController, redeclared with conformance to
+     * UISheetPresentationControllerDelegate.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
@@ -248,7 +257,8 @@ public class UISheetPresentationController extends UIPresentationController {
     public native void setDetents(NSArray<? extends UISheetPresentationControllerDetent> value);
 
     /**
-     * The identifier of the largest detent that is not dimmed. When nil or the identifier is not found in detents, all detents are dimmed.
+     * The identifier of the largest detent that is not dimmed. When nil or the identifier is not found in detents, all
+     * detents are dimmed.
      * Default: nil
      */
     @Generated
@@ -265,7 +275,8 @@ public class UISheetPresentationController extends UIPresentationController {
     public native void setPreferredCornerRadius(@NFloat double value);
 
     /**
-     * Set to YES to cause the sheet to layout with an edge-attached appearance in compact height instead of full screen.
+     * Set to YES to cause the sheet to layout with an edge-attached appearance in compact height instead of full
+     * screen.
      * Default: NO
      */
     @Generated
@@ -281,8 +292,10 @@ public class UISheetPresentationController extends UIPresentationController {
     public native void setPrefersGrabberVisible(boolean value);
 
     /**
-     * If there is a larger detent to expand to than the selected detent, and a descendent scroll view is scrolled to top, this controls whether scrolling down will expand to a larger detent.
-     * Useful to set to NO for non-modal sheets, where scrolling in the sheet should not expand the sheet and obscure the content above.
+     * If there is a larger detent to expand to than the selected detent, and a descendent scroll view is scrolled to
+     * top, this controls whether scrolling down will expand to a larger detent.
+     * Useful to set to NO for non-modal sheets, where scrolling in the sheet should not expand the sheet and obscure
+     * the content above.
      * Default: YES
      */
     @Generated
@@ -290,7 +303,8 @@ public class UISheetPresentationController extends UIPresentationController {
     public native void setPrefersScrollingExpandsWhenScrolledToEdge(boolean value);
 
     /**
-     * The identifier of the selected detent. When nil or the identifier is not found in detents, the sheet is displayed at the smallest detent.
+     * The identifier of the selected detent. When nil or the identifier is not found in detents, the sheet is displayed
+     * at the smallest detent.
      * Default: nil
      */
     @Generated

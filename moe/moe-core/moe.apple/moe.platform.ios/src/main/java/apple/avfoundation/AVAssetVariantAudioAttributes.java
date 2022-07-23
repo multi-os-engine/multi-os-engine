@@ -82,9 +82,10 @@ public class AVAssetVariantAudioAttributes extends NSObject {
     public static native String description_static();
 
     /**
-     * [@property]		formatIDs
+     * [@property] formatIDs
      * <p>
-     * Provides an array of audio formats present in the variant's renditions if any are declared. Each value in the array is a NSNumber representation of AudioFormatID.
+     * Provides an array of audio formats present in the variant's renditions if any are declared. Each value in the
+     * array is a NSNumber representation of AudioFormatID.
      */
     @Generated
     @Selector("formatIDs")
@@ -128,9 +129,10 @@ public class AVAssetVariantAudioAttributes extends NSObject {
     /**
      * renditionSpecificAttributesForMediaOption:
      * <p>
-     * Provides attributes for a specific audio media selection option. If no rendition specific attributes are declared, it will be nil.
+     * Provides attributes for a specific audio media selection option. If no rendition specific attributes are
+     * declared, it will be nil.
      *
-     * @param            mediaSelectionOption The option to return rendition specific information for.
+     * @param mediaSelectionOption The option to return rendition specific information for.
      */
     @Generated
     @Selector("renditionSpecificAttributesForMediaOption:")

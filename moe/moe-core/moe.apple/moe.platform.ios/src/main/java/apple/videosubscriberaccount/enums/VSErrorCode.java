@@ -38,7 +38,8 @@ public final class VSErrorCode {
      */
     @Generated @NInt public static final long ServiceTemporarilyUnavailable = 0x0000000000000003L;
     /**
-     * The user's subscription provider did not allow the request to proceed, e.g. because the subscription tier doesn't include the resource, or interactive reauthentication is required, but the request does not allow interruption.
+     * The user's subscription provider did not allow the request to proceed, e.g. because the subscription tier doesn't
+     * include the resource, or interactive reauthentication is required, but the request does not allow interruption.
      */
     @Generated @NInt public static final long ProviderRejected = 0x0000000000000004L;
     /**

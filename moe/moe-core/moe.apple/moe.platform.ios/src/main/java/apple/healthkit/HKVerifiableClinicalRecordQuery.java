@@ -283,7 +283,7 @@ public class HKVerifiableClinicalRecordQuery extends HKQuery {
     public static native NSPredicate predicateForWorkoutsWithWorkoutActivityType(@NUInt long workoutActivityType);
 
     /**
-     * [@property]      recordTypes
+     * [@property] recordTypes
      * <p>
      * The record types that need to be present on desired records.
      */

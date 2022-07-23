@@ -23,17 +23,20 @@ import org.moe.natj.general.ann.NUInt;
 public final class UICollectionViewScrollPosition {
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     /**
-     * The vertical positions are mutually exclusive to each other, but are bitwise or-able with the horizontal scroll positions.
+     * The vertical positions are mutually exclusive to each other, but are bitwise or-able with the horizontal scroll
+     * positions.
      * Combining positions from the same grouping (horizontal or vertical) will result in an NSInvalidArgumentException.
      */
     @Generated @NUInt public static final long Top = 0x0000000000000001L;
     /**
-     * The vertical positions are mutually exclusive to each other, but are bitwise or-able with the horizontal scroll positions.
+     * The vertical positions are mutually exclusive to each other, but are bitwise or-able with the horizontal scroll
+     * positions.
      * Combining positions from the same grouping (horizontal or vertical) will result in an NSInvalidArgumentException.
      */
     @Generated @NUInt public static final long CenteredVertically = 0x0000000000000002L;
     /**
-     * The vertical positions are mutually exclusive to each other, but are bitwise or-able with the horizontal scroll positions.
+     * The vertical positions are mutually exclusive to each other, but are bitwise or-able with the horizontal scroll
+     * positions.
      * Combining positions from the same grouping (horizontal or vertical) will result in an NSInvalidArgumentException.
      */
     @Generated @NUInt public static final long Bottom = 0x0000000000000004L;

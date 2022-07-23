@@ -136,7 +136,8 @@ public class PHASECardioidDirectivityModelSubbandParameters extends NSObject {
      * <p>
      * The directivity pattern.
      * [@note]
-     * Values are clamped to the range [0.0, 1.0]. Default value is 0.0. 0.0 is omnidirectional. 0.5 is cardioid. 1.0 is dipole.
+     * Values are clamped to the range [0.0, 1.0]. Default value is 0.0. 0.0 is omnidirectional. 0.5 is cardioid. 1.0 is
+     * dipole.
      */
     @Generated
     @Selector("pattern")
@@ -166,7 +167,8 @@ public class PHASECardioidDirectivityModelSubbandParameters extends NSObject {
      * <p>
      * The directivity pattern.
      * [@note]
-     * Values are clamped to the range [0.0, 1.0]. Default value is 0.0. 0.0 is omnidirectional. 0.5 is cardioid. 1.0 is dipole.
+     * Values are clamped to the range [0.0, 1.0]. Default value is 0.0. 0.0 is omnidirectional. 0.5 is cardioid. 1.0 is
+     * dipole.
      */
     @Generated
     @Selector("setPattern:")

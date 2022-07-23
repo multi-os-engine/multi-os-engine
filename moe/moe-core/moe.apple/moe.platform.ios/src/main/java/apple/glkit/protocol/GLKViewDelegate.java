@@ -32,8 +32,10 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("GLKViewDelegate")
 public interface GLKViewDelegate {
     /**
-     * Required method for implementing GLKViewDelegate. This draw method variant should be used when not subclassing GLKView.
-     * This method will not be called if the GLKView object has been subclassed and implements -(void)drawRect:(CGRect)rect.
+     * Required method for implementing GLKViewDelegate. This draw method variant should be used when not subclassing
+     * GLKView.
+     * This method will not be called if the GLKView object has been subclassed and implements
+     * -(void)drawRect:(CGRect)rect.
      */
     @Generated
     @Selector("glkView:drawInRect:")

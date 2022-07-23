@@ -4,17 +4,17 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@typedef]    MPSGraphPaddingMode
+ * [@typedef] MPSGraphPaddingMode
  * <p>
  * Tensor Padding mode
  * <p>
- * [@constant]   MPSGraphPaddingModeConstant                    Constant
- * [@constant]   MPSGraphPaddingModeReflect                       Reflect
- * [@constant]   MPSGraphPaddingModeSymmetric                 Symmetric
- * [@constant]   MPSGraphPaddingModeClampToEdge           ClampToEdge (PyTorch ReplicationPad)
- * [@constant]   MPSGraphPaddingModeZero                           Zero
- * [@constant]   MPSGraphPaddingModePeriodic                     Periodic
- * [@constant]   MPSGraphPaddingModeAntiPeriodic               Anti Periodic
+ * [@constant] MPSGraphPaddingModeConstant Constant
+ * [@constant] MPSGraphPaddingModeReflect Reflect
+ * [@constant] MPSGraphPaddingModeSymmetric Symmetric
+ * [@constant] MPSGraphPaddingModeClampToEdge ClampToEdge (PyTorch ReplicationPad)
+ * [@constant] MPSGraphPaddingModeZero Zero
+ * [@constant] MPSGraphPaddingModePeriodic Periodic
+ * [@constant] MPSGraphPaddingModeAntiPeriodic Anti Periodic
  */
 @Generated
 public final class MPSGraphPaddingMode {

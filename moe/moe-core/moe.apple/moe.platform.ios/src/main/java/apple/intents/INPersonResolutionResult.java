@@ -163,7 +163,9 @@ public class INPersonResolutionResult extends INIntentResolutionResult {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INPerson. The resolvedPerson can be different than the original INPerson. This allows app extensions to add and correct attributes of the INPerson. For example, an extension may add a nickname from the app.
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INPerson. The
+     * resolvedPerson can be different than the original INPerson. This allows app extensions to add and correct
+     * attributes of the INPerson. For example, an extension may add a nickname from the app.
      * Use +notRequired to continue with a 'nil' value.
      */
     @Generated

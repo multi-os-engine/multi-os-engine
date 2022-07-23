@@ -157,7 +157,8 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
 
     /**
      * Initializes and returns a physics vehicle that applies on the physics body "chassisBody" with the given wheels.
-     * The wheel properties can be modified at anytime by calling setValue:forKeyPath: on each wheel with the format 'wheel[n].property', where n if the zero based wheel index.
+     * The wheel properties can be modified at anytime by calling setValue:forKeyPath: on each wheel with the format
+     * 'wheel[n].property', where n if the zero based wheel index.
      * A wheel can't be shared to multiple vehicle
      */
     @Generated
@@ -200,7 +201,8 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
     public native SCNPhysicsVehicle initWithCoder(NSCoder coder);
 
     /**
-     * Allows to control the direction of the wheel at the specified index. The steering value is expressed in radian, 0 means straight ahead.
+     * Allows to control the direction of the wheel at the specified index. The steering value is expressed in radian, 0
+     * means straight ahead.
      */
     @Generated
     @Selector("setSteeringAngle:forWheelAtIndex:")

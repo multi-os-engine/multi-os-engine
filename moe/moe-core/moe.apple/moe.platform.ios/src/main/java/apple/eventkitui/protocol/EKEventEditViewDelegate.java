@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * [@enum]       EKEventEditViewDelegate
+ * [@enum] EKEventEditViewDelegate
  * <p>
  * Delegate protocol for event edit view controller.
  */

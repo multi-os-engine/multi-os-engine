@@ -163,7 +163,7 @@ public class MPSNNReduceFeatureChannelsSum extends MPSNNReduceUnary {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   weight
+     * [@property] weight
      * <p>
      * The scale factor to apply to each feature channel value
      * <p>
@@ -194,7 +194,7 @@ public class MPSNNReduceFeatureChannelsSum extends MPSNNReduceUnary {
     public static native long version_static();
 
     /**
-     * [@property]   weight
+     * [@property] weight
      * <p>
      * The scale factor to apply to each feature channel value
      * <p>

@@ -207,7 +207,8 @@ public class UISpringTimingParameters extends NSObject implements UITimingCurveP
             @ByValue CGVector velocity);
 
     /**
-     * Similar to initWithDampingRatio:initialVelocity: except this allows you to specify the spring constants for the underlying
+     * Similar to initWithDampingRatio:initialVelocity: except this allows you to specify the spring constants for the
+     * underlying
      * CASpringAnimation directly. The duration is computed assuming a small settling oscillation.
      */
     @Generated

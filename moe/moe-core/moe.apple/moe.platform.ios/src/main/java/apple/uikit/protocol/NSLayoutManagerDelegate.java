@@ -58,7 +58,9 @@ public interface NSLayoutManagerDelegate {
     }
 
     /**
-     * This is sent whenever a container has been filled.  This method can be useful for paginating.  The textContainer might be nil if we have completed all layout and not all of it fit into the existing containers.  The atEnd flag indicates whether all layout is complete.
+     * This is sent whenever a container has been filled. This method can be useful for paginating. The textContainer
+     * might be nil if we have completed all layout and not all of it fit into the existing containers. The atEnd flag
+     * indicates whether all layout is complete.
      */
     @Generated
     @IsOptional
@@ -105,7 +107,8 @@ public interface NSLayoutManagerDelegate {
     }
 
     /**
-     * Invoked while determining the hyphenation point.  When NO, NSLayoutManager tries to find the next hyphenation opportunity before charIndex
+     * Invoked while determining the hyphenation point. When NO, NSLayoutManager tries to find the next hyphenation
+     * opportunity before charIndex
      */
     @Generated
     @IsOptional
@@ -116,7 +119,8 @@ public interface NSLayoutManagerDelegate {
     }
 
     /**
-     * Invoked while determining the soft line break point.  When NO, NSLayoutManager tries to find the next line break opportunity before charIndex
+     * Invoked while determining the soft line break point. When NO, NSLayoutManager tries to find the next line break
+     * opportunity before charIndex
      */
     @Generated
     @IsOptional
@@ -128,7 +132,12 @@ public interface NSLayoutManagerDelegate {
 
     /**
      * Glyph generation ***********************
-     * This is sent whenever layoutManager is about to store the initial glyph information via -setGlyphs:properties:characterIndexes:forGlyphRange:.  This method allows customizing the initial glyph generation process.  It can invoke -setGlyphs:properties:characterIndexes:forGlyphRange: with modified glyph information.  The return value specifies the actual glyph range stored in this method.  By returning 0, it can indicate layoutManager to do the default processing. Note that querying glyph information surrounding glyphRange could lead to recursion since the data might not be available, yet.
+     * This is sent whenever layoutManager is about to store the initial glyph information via
+     * -setGlyphs:properties:characterIndexes:forGlyphRange:. This method allows customizing the initial glyph
+     * generation process. It can invoke -setGlyphs:properties:characterIndexes:forGlyphRange: with modified glyph
+     * information. The return value specifies the actual glyph range stored in this method. By returning 0, it can
+     * indicate layoutManager to do the default processing. Note that querying glyph information surrounding glyphRange
+     * could lead to recursion since the data might not be available, yet.
      */
     @Generated
     @IsOptional
@@ -141,7 +150,10 @@ public interface NSLayoutManagerDelegate {
     }
 
     /**
-     * Allows NSLayoutManagerDelegate to customize the line fragment geometry before committing to the layout cache. The implementation of this method should make sure that the modified fragments are still valid inside the text container coordinate. When it returns YES, the layout manager uses the modified rects. Otherwise, it ignores the rects returned from this method.
+     * Allows NSLayoutManagerDelegate to customize the line fragment geometry before committing to the layout cache. The
+     * implementation of this method should make sure that the modified fragments are still valid inside the text
+     * container coordinate. When it returns YES, the layout manager uses the modified rects. Otherwise, it ignores the
+     * rects returned from this method.
      */
     @Generated
     @IsOptional
@@ -165,7 +177,9 @@ public interface NSLayoutManagerDelegate {
     }
 
     /**
-     * This is sent right before layoutManager invalidates the layout due to textContainer changing geometry.  The receiver of this method can react to the geometry change and perform adjustments such as recreating the exclusion path.
+     * This is sent right before layoutManager invalidates the layout due to textContainer changing geometry. The
+     * receiver of this method can react to the geometry change and perform adjustments such as recreating the exclusion
+     * path.
      */
     @Generated
     @IsOptional
@@ -177,7 +191,8 @@ public interface NSLayoutManagerDelegate {
 
     /**
      * Layout processing ***********************
-     * This is sent whenever layout or glyphs become invalidated in a layout manager which previously had all layout complete.
+     * This is sent whenever layout or glyphs become invalidated in a layout manager which previously had all layout
+     * complete.
      */
     @Generated
     @IsOptional

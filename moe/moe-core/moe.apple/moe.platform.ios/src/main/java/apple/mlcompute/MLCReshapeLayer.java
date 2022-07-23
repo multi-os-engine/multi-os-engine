@@ -144,7 +144,7 @@ public class MLCReshapeLayer extends MLCLayer {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   shape
+     * [@property] shape
      * <p>
      * The target shape.
      */

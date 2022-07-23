@@ -26,7 +26,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * UILargeContentViewerInteraction enables a gesture to present and dismiss the large content viewer on a device with relevant settings.
+ * UILargeContentViewerInteraction enables a gesture to present and dismiss the large content viewer on a device with
+ * relevant settings.
  * Use methods in <UIKit/UIInteraction.h> to add the interaction to an appropriate view, such as a custom tab bar.
  */
 @Generated
@@ -97,7 +98,8 @@ public class UILargeContentViewerInteraction extends NSObject implements UIInter
     public native void didMoveToView(UIView view);
 
     /**
-     * Returns a gesture recognizer that can be used to set up simultaneous recognition or failure relationships with other gesture recognizers.
+     * Returns a gesture recognizer that can be used to set up simultaneous recognition or failure relationships with
+     * other gesture recognizers.
      */
     @Generated
     @Selector("gestureRecognizerForExclusionRelationship")

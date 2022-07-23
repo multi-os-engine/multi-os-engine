@@ -53,13 +53,16 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * [@property]   activeVideoCallContentViewController
+     * [@property] activeVideoCallContentViewController
      * <p>
      * This view controller will appear in the system's Picture in Picture window when Picture in Picture is active.
      * <p>
-     * This view controller may set a custom `preferredContentSize` which will influence both the aspect ratio and the size of the Picture in Picture window.
-     * When this view controller's appearance methods indicate that it has appeared on screen, content associated with the video call should be placed in its view hierarchy.
-     * Although apps can choose to move content from their source view to this view controller, it is also valid to show different views, as long as they represent the same video call.
+     * This view controller may set a custom `preferredContentSize` which will influence both the aspect ratio and the
+     * size of the Picture in Picture window.
+     * When this view controller's appearance methods indicate that it has appeared on screen, content associated with
+     * the video call should be placed in its view hierarchy.
+     * Although apps can choose to move content from their source view to this view controller, it is also valid to show
+     * different views, as long as they represent the same video call.
      * The content should always fill the view controller's view's bounds.
      * Note that this view controller's view is not interactive and will not receive touches or other user input.
      */
@@ -68,11 +71,13 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
     public native AVPictureInPictureVideoCallViewController activeVideoCallContentViewController();
 
     /**
-     * [@property]   activeVideoCallSourceView
+     * [@property] activeVideoCallSourceView
      * <p>
-     * When a video call is active and the application is foreground, this view contains content associated with the call.
+     * When a video call is active and the application is foreground, this view contains content associated with the
+     * call.
      * <p>
-     * `AVPictureInPictureController` uses this view's layout frame and visibility to determine whether or not Picture in Picture should begin automatically when the app moves to background.
+     * `AVPictureInPictureController` uses this view's layout frame and visibility to determine whether or not Picture
+     * in Picture should begin automatically when the app moves to background.
      * The layout frame also influences the animation when entering and exiting Picture in Picture.
      */
     @Generated
@@ -131,7 +136,8 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
     /**
      * initWithActiveVideoCallSourceView:contentViewController:
      * <p>
-     * Initializes a new `AVPictureInPictureControllerContentSource` suitable for supporting an active video call. This object should only be used for the duration of the call.
+     * Initializes a new `AVPictureInPictureControllerContentSource` suitable for supporting an active video call. This
+     * object should only be used for the duration of the call.
      *
      * @param sourceView            The view which contains content associated with the call.
      * @param contentViewController The view controller that should appear in the system's Picture in Picture window.
@@ -157,8 +163,9 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
      * <p>
      * Use this initializer for a content source with a sample buffer display layer and playback delegate.
      *
-     * @param        sampleBufferDisplayLayer The sample buffer display layer to be shown in Picture in Picture.
-     * @param        playbackDelegate The playback delegate for controlling sample buffer display layer's playback in Picture in Picture.
+     * @param sampleBufferDisplayLayer The sample buffer display layer to be shown in Picture in Picture.
+     * @param playbackDelegate         The playback delegate for controlling sample buffer display layer's playback in
+     *                                 Picture in Picture.
      */
     @Generated
     @Selector("initWithSampleBufferDisplayLayer:playbackDelegate:")
@@ -193,7 +200,7 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
     public static native AVPictureInPictureControllerContentSource new_objc();
 
     /**
-     * [@property]   playerLayer
+     * [@property] playerLayer
      * <p>
      * The receiver's player layer.
      */
@@ -210,7 +217,7 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]	sampleBufferDisplayLayer
+     * [@property] sampleBufferDisplayLayer
      * <p>
      * The receiver's sample buffer display layer.
      */
@@ -219,7 +226,7 @@ public class AVPictureInPictureControllerContentSource extends NSObject {
     public native AVSampleBufferDisplayLayer sampleBufferDisplayLayer();
 
     /**
-     * [@property]	sampleBufferPlaybackDelegate
+     * [@property] sampleBufferPlaybackDelegate
      * <p>
      * The receiver's sample buffer playback delegate.
      */

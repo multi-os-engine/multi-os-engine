@@ -393,7 +393,7 @@ public class MKOverlayView extends UIView {
     /**
      * Return YES if the view is currently ready to draw in the specified rect.
      * Return NO if the view will not draw in the specified rect or if the
-     * data necessary to draw in the specified rect is not available.  In the
+     * data necessary to draw in the specified rect is not available. In the
      * case where the view may want to draw in the specified rect but the data is
      * not available, use setNeedsDisplayInMapRect:zoomLevel: to signal when the
      * data does become available.

@@ -46,11 +46,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * Use CKFetchRecordZoneChangesOperation instead of this class.
  * <p>
- * Any serverChangeTokens saved from a CKFetchRecordChangesOperation are usable as a serverRecordZoneChangeToken in CKFetchRecordZoneChangesOperation
+ * Any serverChangeTokens saved from a CKFetchRecordChangesOperation are usable as a serverRecordZoneChangeToken in
+ * CKFetchRecordZoneChangesOperation
  * <p>
  * This operation will fetch records changes in the given record zone.
  * <p>
- * If a change token from a previous @c CKFetchRecordChangesOperation is passed in, only the records that have changed since that token will be fetched.
+ * If a change token from a previous @c CKFetchRecordChangesOperation is passed in, only the records that have changed
+ * since that token will be fetched.
  * If this is your first fetch or if you wish to re-fetch all records, pass nil for the change token.
  * Change tokens are opaque tokens and clients should not infer any behavior based on their content
  */
@@ -167,7 +169,8 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     /**
      * Declares which user-defined keys should be fetched and added to the resulting CKRecords.
      * <p>
-     * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
+     * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields
+     * should be downloaded.
      * Defaults to @c nil.
      */
     @Generated
@@ -177,10 +180,15 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     /**
      * This block is called when the operation completes.
      * <p>
-     * Clients are responsible for saving the change token at the end of the operation and passing it in to the next call to @c CKFetchRecordChangesOperation.
-     * Note that a fetch can fail partway. If that happens, an updated change token may be returned in the completion block so that already fetched records don't need to be re-downloaded on a subsequent operation.
-     * The @c clientChangeTokenData from the most recent @c CKModifyRecordsOperation is also returned, or nil if none was provided.
-     * If the server returns a @c CKErrorChangeTokenExpired error, the @c previousServerChangeToken value was too old and the client should toss its local cache and re-fetch the changes in this record zone starting with a nil @c previousServerChangeToken.
+     * Clients are responsible for saving the change token at the end of the operation and passing it in to the next
+     * call to @c CKFetchRecordChangesOperation.
+     * Note that a fetch can fail partway. If that happens, an updated change token may be returned in the completion
+     * block so that already fetched records don't need to be re-downloaded on a subsequent operation.
+     * The @c clientChangeTokenData from the most recent @c CKModifyRecordsOperation is also returned, or nil if none
+     * was provided.
+     * If the server returns a @c CKErrorChangeTokenExpired error, the @c previousServerChangeToken value was too old
+     * and the client should toss its local cache and re-fetch the changes in this record zone starting with a nil @c
+     * previousServerChangeToken.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -201,7 +209,8 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
      * If true, then the server wasn't able to return all the changes in this response.
      * <p>
      * Will be set before fetchRecordChangesCompletionBlock is called.
-     * Another CKFetchRecordChangesOperation operation should be run with the updated serverChangeToken token from this operation.
+     * Another CKFetchRecordChangesOperation operation should be run with the updated serverChangeToken token from this
+     * operation.
      */
     @Generated
     @Selector("moreComing")
@@ -212,7 +221,8 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     public native CKServerChangeToken previousServerChangeToken();
 
     /**
-     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block
+     * invocations.
      */
     @Generated
     @Selector("recordChangedBlock")
@@ -220,7 +230,8 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     public native Block_recordChangedBlock_ret recordChangedBlock();
 
     /**
-     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block
+     * invocations.
      */
     @Generated
     @Selector("recordWithIDWasDeletedBlock")
@@ -239,7 +250,8 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     /**
      * Declares which user-defined keys should be fetched and added to the resulting CKRecords.
      * <p>
-     * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields should be downloaded.
+     * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields
+     * should be downloaded.
      * Defaults to @c nil.
      */
     @Generated
@@ -249,10 +261,15 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     /**
      * This block is called when the operation completes.
      * <p>
-     * Clients are responsible for saving the change token at the end of the operation and passing it in to the next call to @c CKFetchRecordChangesOperation.
-     * Note that a fetch can fail partway. If that happens, an updated change token may be returned in the completion block so that already fetched records don't need to be re-downloaded on a subsequent operation.
-     * The @c clientChangeTokenData from the most recent @c CKModifyRecordsOperation is also returned, or nil if none was provided.
-     * If the server returns a @c CKErrorChangeTokenExpired error, the @c previousServerChangeToken value was too old and the client should toss its local cache and re-fetch the changes in this record zone starting with a nil @c previousServerChangeToken.
+     * Clients are responsible for saving the change token at the end of the operation and passing it in to the next
+     * call to @c CKFetchRecordChangesOperation.
+     * Note that a fetch can fail partway. If that happens, an updated change token may be returned in the completion
+     * block so that already fetched records don't need to be re-downloaded on a subsequent operation.
+     * The @c clientChangeTokenData from the most recent @c CKModifyRecordsOperation is also returned, or nil if none
+     * was provided.
+     * If the server returns a @c CKErrorChangeTokenExpired error, the @c previousServerChangeToken value was too old
+     * and the client should toss its local cache and re-fetch the changes in this record zone starting with a nil @c
+     * previousServerChangeToken.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -265,7 +282,8 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
     public native void setPreviousServerChangeToken(CKServerChangeToken value);
 
     /**
-     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block
+     * invocations.
      */
     @Generated
     @Selector("setRecordChangedBlock:")
@@ -273,7 +291,8 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
             @ObjCBlock(name = "call_setRecordChangedBlock") Block_setRecordChangedBlock value);
 
     /**
-     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * ! @discussion Each @c CKOperation instance has a private serial queue. This queue is used for all callback block
+     * invocations.
      */
     @Generated
     @Selector("setRecordWithIDWasDeletedBlock:")

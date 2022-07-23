@@ -175,9 +175,13 @@ public class ALAssetsLibrary extends NSObject {
 
     /**
      * Add a new ALAssetsGroup to the library.
-     * The name of the ALAssetsGroup is name and the type is ALAssetsGroupAlbum.  The editable property of this ALAssetsGroup returns YES.
-     * If name conflicts with another ALAssetsGroup with the same name, then the group is not created and the result block returns a nil group.
-     * When the ALAssetsGroup is added, the user may be asked to confirm the application's access to the data.  If the user denies access to the application or if no application is allowed to access the data, the failure block will be called.
+     * The name of the ALAssetsGroup is name and the type is ALAssetsGroupAlbum. The editable property of this
+     * ALAssetsGroup returns YES.
+     * If name conflicts with another ALAssetsGroup with the same name, then the group is not created and the result
+     * block returns a nil group.
+     * When the ALAssetsGroup is added, the user may be asked to confirm the application's access to the data. If the
+     * user denies access to the application or if no application is allowed to access the data, the failure block will
+     * be called.
      * If the data is currently unavailable, the failure block will be called.
      */
     @Generated
@@ -189,7 +193,9 @@ public class ALAssetsLibrary extends NSObject {
 
     /**
      * Returns an ALAsset object in the result block for a URL previously retrieved from an ALAsset object.
-     * When the ALAsset is requested, the user may be asked to confirm the application's access to the data. If the user denies access to the application or if no application is allowed to access the data, the failure block will be called.
+     * When the ALAsset is requested, the user may be asked to confirm the application's access to the data. If the user
+     * denies access to the application or if no application is allowed to access the data, the failure block will be
+     * called.
      * If the data is currently unavailable, the failure block will be called.
      */
     @Generated
@@ -200,9 +206,12 @@ public class ALAssetsLibrary extends NSObject {
             @ObjCBlock(name = "call_assetForURLResultBlockFailureBlock_2") Block_assetForURLResultBlockFailureBlock_2 failureBlock);
 
     /**
-     * Get the list of groups that match the given types. Multiple types can be ORed together. The results are passed one by one to the caller by executing the enumeration block.
+     * Get the list of groups that match the given types. Multiple types can be ORed together. The results are passed
+     * one by one to the caller by executing the enumeration block.
      * When the enumeration is done, 'enumerationBlock' will be called with group set to nil.
-     * When groups are enumerated, the user may be asked to confirm the application's access to the data. If the user denies access to the application or if no application is allowed to access the data, the failure block will be called.
+     * When groups are enumerated, the user may be asked to confirm the application's access to the data. If the user
+     * denies access to the application or if no application is allowed to access the data, the failure block will be
+     * called.
      * If the data is currently unavailable, the failure block will be called.
      */
     @Generated
@@ -214,7 +223,9 @@ public class ALAssetsLibrary extends NSObject {
 
     /**
      * Returns an ALAssetsGroup object in the result block for a URL previously retrieved from an ALAssetsGroup object.
-     * When the ALAssetsGroup is requested, the user may be asked to confirm the application's access to the data.  If the user denies access to the application or if no application is allowed to access the data, the failure block will be called.
+     * When the ALAssetsGroup is requested, the user may be asked to confirm the application's access to the data. If
+     * the user denies access to the application or if no application is allowed to access the data, the failure block
+     * will be called.
      * If the data is currently unavailable, the failure block will be called.
      */
     @Generated
@@ -234,7 +245,8 @@ public class ALAssetsLibrary extends NSObject {
     public native boolean videoAtPathIsCompatibleWithSavedPhotosAlbum(NSURL videoPathURL);
 
     /**
-     * If there is a conflict between the metadata in the image data and the metadata dictionary, the image data metadata values will be overwritten
+     * If there is a conflict between the metadata in the image data and the metadata dictionary, the image data
+     * metadata values will be overwritten
      */
     @Generated
     @Deprecated
@@ -244,7 +256,8 @@ public class ALAssetsLibrary extends NSObject {
             @ObjCBlock(name = "call_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock") Block_writeImageDataToSavedPhotosAlbumMetadataCompletionBlock completionBlock);
 
     /**
-     * The API user will have to specify the orientation key in the metadata dictionary to preserve the orientation of the image
+     * The API user will have to specify the orientation key in the metadata dictionary to preserve the orientation of
+     * the image
      */
     @Generated
     @Deprecated
@@ -254,7 +267,8 @@ public class ALAssetsLibrary extends NSObject {
             @ObjCBlock(name = "call_writeImageToSavedPhotosAlbumMetadataCompletionBlock") Block_writeImageToSavedPhotosAlbumMetadataCompletionBlock completionBlock);
 
     /**
-     * With a UIImage, the API user can use -[UIImage CGImage] to get a CGImageRef, and cast -[UIImage imageOrientation] to ALAssetOrientation.
+     * With a UIImage, the API user can use -[UIImage CGImage] to get a CGImageRef, and cast -[UIImage imageOrientation]
+     * to ALAssetOrientation.
      */
     @Generated
     @Deprecated

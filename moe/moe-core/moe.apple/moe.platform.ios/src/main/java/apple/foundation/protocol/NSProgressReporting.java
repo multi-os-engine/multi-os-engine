@@ -25,7 +25,10 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * If your class supports reporting progress, then you can adopt the NSProgressReporting protocol. Objects that adopt this protocol should typically be "one-shot" -- that is, the progress is setup at initialization of the object and is updated when work is done. The value of the property should not be set to another progress object. Instead, the user of the NSProgressReporting class should create a new instance to represent a new set of work.
+ * If your class supports reporting progress, then you can adopt the NSProgressReporting protocol. Objects that adopt
+ * this protocol should typically be "one-shot" -- that is, the progress is setup at initialization of the object and is
+ * updated when work is done. The value of the property should not be set to another progress object. Instead, the user
+ * of the NSProgressReporting class should create a new instance to represent a new set of work.
  */
 @Generated
 @Library("Foundation")

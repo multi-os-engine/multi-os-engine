@@ -98,9 +98,11 @@ public class INGetReservationDetailsIntentResponse extends INIntentResponse {
     public native INGetReservationDetailsIntentResponse init();
 
     /**
-     * The app extension has the option of capturing its private state as an NSUserActivity and returning it as the 'currentActivity'.
+     * The app extension has the option of capturing its private state as an NSUserActivity and returning it as the
+     * 'currentActivity'.
      * If the the app is launched, an NSUserActivity will be passed in with the private state.
-     * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This intent object will also be available in the NSUserActivity.interaction property.
+     * In the case of app launch, the NSUserActivity will have its activityType set to the name of the intent. This
+     * intent object will also be available in the NSUserActivity.interaction property.
      */
     @Generated
     @Selector("initWithCode:userActivity:")

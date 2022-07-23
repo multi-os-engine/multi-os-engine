@@ -202,7 +202,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native boolean allowsResting();
 
     /**
-     * Specifies the angular damping of the receiver. Optionally reduce the body's angular velocity each frame to simulate rotational friction. (0.0 - 1.0). Defaults to 0.1.
+     * Specifies the angular damping of the receiver. Optionally reduce the body's angular velocity each frame to
+     * simulate rotational friction. (0.0 - 1.0). Defaults to 0.1.
      */
     @Generated
     @Selector("angularDamping")
@@ -218,7 +219,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native SCNVector4 angularVelocity();
 
     /**
-     * Specifies a factor applied on the rotation on each axis that results from the physics simulation before applying it to the node.
+     * Specifies a factor applied on the rotation on each axis that results from the physics simulation before applying
+     * it to the node.
      */
     @Generated
     @Selector("angularVelocityFactor")
@@ -226,7 +228,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native SCNVector3 angularVelocityFactor();
 
     /**
-     * Applies a linear force with the specified position and direction. The position is relative to the node that owns the physics body.
+     * Applies a linear force with the specified position and direction. The position is relative to the node that owns
+     * the physics body.
      */
     @Generated
     @Selector("applyForce:atPosition:impulse:")
@@ -234,14 +237,17 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
             boolean impulse);
 
     /**
-     * Applies a linear force in the specified direction. The linear force is applied on the center of mass of the receiver. If impulse is set to YES then the force is applied for just one frame, otherwise it applies a continuous force.
+     * Applies a linear force in the specified direction. The linear force is applied on the center of mass of the
+     * receiver. If impulse is set to YES then the force is applied for just one frame, otherwise it applies a
+     * continuous force.
      */
     @Generated
     @Selector("applyForce:impulse:")
     public native void applyForceImpulse(@ByValue SCNVector3 direction, boolean impulse);
 
     /**
-     * Applies an angular force (torque). If impulse is set to YES then the force is applied for just one frame, otherwise it applies a continuous force. The torque is specified as an axis angle.
+     * Applies an angular force (torque). If impulse is set to YES then the force is applied for just one frame,
+     * otherwise it applies a continuous force. The torque is specified as an axis angle.
      */
     @Generated
     @Selector("applyTorque:impulse:")
@@ -249,7 +255,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Defines what logical 'categories' this body belongs too.
-     * Defaults to SCNPhysicsCollisionCategoryStatic for static bodies and SCNPhysicsCollisionCategoryDefault for the other body types.
+     * Defaults to SCNPhysicsCollisionCategoryStatic for static bodies and SCNPhysicsCollisionCategoryDefault for the
+     * other body types.
      * limited to the first 15 bits on macOS 10.10 and iOS 8.
      */
     @Generated
@@ -275,7 +282,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native void clearAllForces();
 
     /**
-     * Defines what logical 'categories' of bodies this body responds to collisions with. Defaults to all bits set (all categories).
+     * Defines what logical 'categories' of bodies this body responds to collisions with. Defaults to all bits set (all
+     * categories).
      */
     @Generated
     @Selector("collisionBitMask")
@@ -283,7 +291,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native long collisionBitMask();
 
     /**
-     * A mask that defines which categories of bodies cause intersection notifications with this physics body. Defaults to 0.
+     * A mask that defines which categories of bodies cause intersection notifications with this physics body. Defaults
+     * to 0.
      * On iOS 8 and macOS 10.10 and lower the intersection notifications are always sent when a collision occurs.
      */
     @Generated
@@ -298,7 +307,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate fluid/air friction. Value should be zero or greater. Defaults to 0.1.
+     * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate
+     * fluid/air friction. Value should be zero or greater. Defaults to 0.1.
      */
     @Generated
     @Selector("damping")
@@ -340,7 +350,9 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native void setAffectedByGravity(boolean value);
 
     /**
-     * If the physics simulation has determined that this body is at rest it may set the resting property to YES. Resting bodies do not participate in the simulation until some collision with a non-resting object, or an impulse is applied, that unrests it. If all bodies in the world are resting then the simulation as a whole is "at rest".
+     * If the physics simulation has determined that this body is at rest it may set the resting property to YES.
+     * Resting bodies do not participate in the simulation until some collision with a non-resting object, or an impulse
+     * is applied, that unrests it. If all bodies in the world are resting then the simulation as a whole is "at rest".
      */
     @Generated
     @Selector("isResting")
@@ -355,7 +367,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native double mass();
 
     /**
-     * Specifies the moment of inertia of the body as a vector in 3D. Disable usesDefaultMomentOfInertia for this value to be used instead of the default moment of inertia that is calculated from the shape geometry.
+     * Specifies the moment of inertia of the body as a vector in 3D. Disable usesDefaultMomentOfInertia for this value
+     * to be used instead of the default moment of inertia that is calculated from the shape geometry.
      */
     @Generated
     @Selector("momentOfInertia")
@@ -363,7 +376,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native SCNVector3 momentOfInertia();
 
     /**
-     * Specifies the physics shape of the receiver. Leaving this nil will let the system decide and use the most efficients bounding representation of the actual geometry.
+     * Specifies the physics shape of the receiver. Leaving this nil will let the system decide and use the most
+     * efficients bounding representation of the actual geometry.
      */
     @Generated
     @Selector("physicsShape")
@@ -400,7 +414,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native void setAllowsResting(boolean value);
 
     /**
-     * Specifies the angular damping of the receiver. Optionally reduce the body's angular velocity each frame to simulate rotational friction. (0.0 - 1.0). Defaults to 0.1.
+     * Specifies the angular damping of the receiver. Optionally reduce the body's angular velocity each frame to
+     * simulate rotational friction. (0.0 - 1.0). Defaults to 0.1.
      */
     @Generated
     @Selector("setAngularDamping:")
@@ -414,7 +429,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native void setAngularVelocity(@ByValue SCNVector4 value);
 
     /**
-     * Specifies a factor applied on the rotation on each axis that results from the physics simulation before applying it to the node.
+     * Specifies a factor applied on the rotation on each axis that results from the physics simulation before applying
+     * it to the node.
      */
     @Generated
     @Selector("setAngularVelocityFactor:")
@@ -422,7 +438,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Defines what logical 'categories' this body belongs too.
-     * Defaults to SCNPhysicsCollisionCategoryStatic for static bodies and SCNPhysicsCollisionCategoryDefault for the other body types.
+     * Defaults to SCNPhysicsCollisionCategoryStatic for static bodies and SCNPhysicsCollisionCategoryDefault for the
+     * other body types.
      * limited to the first 15 bits on macOS 10.10 and iOS 8.
      */
     @Generated
@@ -439,14 +456,16 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native void setCharge(@NFloat double value);
 
     /**
-     * Defines what logical 'categories' of bodies this body responds to collisions with. Defaults to all bits set (all categories).
+     * Defines what logical 'categories' of bodies this body responds to collisions with. Defaults to all bits set (all
+     * categories).
      */
     @Generated
     @Selector("setCollisionBitMask:")
     public native void setCollisionBitMask(@NUInt long value);
 
     /**
-     * A mask that defines which categories of bodies cause intersection notifications with this physics body. Defaults to 0.
+     * A mask that defines which categories of bodies cause intersection notifications with this physics body. Defaults
+     * to 0.
      * On iOS 8 and macOS 10.10 and lower the intersection notifications are always sent when a collision occurs.
      */
     @Generated
@@ -454,7 +473,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native void setContactTestBitMask(@NUInt long value);
 
     /**
-     * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate fluid/air friction. Value should be zero or greater. Defaults to 0.1.
+     * Specifies the damping factor of the receiver. Optionally reduce the body's linear velocity each frame to simulate
+     * fluid/air friction. Value should be zero or greater. Defaults to 0.1.
      */
     @Generated
     @Selector("setDamping:")
@@ -475,14 +495,16 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native void setMass(@NFloat double value);
 
     /**
-     * Specifies the moment of inertia of the body as a vector in 3D. Disable usesDefaultMomentOfInertia for this value to be used instead of the default moment of inertia that is calculated from the shape geometry.
+     * Specifies the moment of inertia of the body as a vector in 3D. Disable usesDefaultMomentOfInertia for this value
+     * to be used instead of the default moment of inertia that is calculated from the shape geometry.
      */
     @Generated
     @Selector("setMomentOfInertia:")
     public native void setMomentOfInertia(@ByValue SCNVector3 value);
 
     /**
-     * Specifies the physics shape of the receiver. Leaving this nil will let the system decide and use the most efficients bounding representation of the actual geometry.
+     * Specifies the physics shape of the receiver. Leaving this nil will let the system decide and use the most
+     * efficients bounding representation of the actual geometry.
      */
     @Generated
     @Selector("setPhysicsShape:")
@@ -524,7 +546,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native void setVelocity(@ByValue SCNVector3 value);
 
     /**
-     * Specifies a factor applied on the translation that results from the physics simulation before applying it to the node.
+     * Specifies a factor applied on the translation that results from the physics simulation before applying it to the
+     * node.
      */
     @Generated
     @Selector("setVelocityFactor:")
@@ -560,7 +583,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native SCNVector3 velocity();
 
     /**
-     * Specifies a factor applied on the translation that results from the physics simulation before applying it to the node.
+     * Specifies a factor applied on the translation that results from the physics simulation before applying it to the
+     * node.
      */
     @Generated
     @Selector("velocityFactor")
@@ -584,7 +608,9 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native SCNVector3 centerOfMassOffset();
 
     /**
-     * Use discrete collision detection if the body’s distance traveled in one step is at or below this threshold, or continuous collision detection otherwise. Defaults to zero, indicating that continuous collision detection is always disabled.
+     * Use discrete collision detection if the body’s distance traveled in one step is at or below this threshold, or
+     * continuous collision detection otherwise. Defaults to zero, indicating that continuous collision detection is
+     * always disabled.
      */
     @Generated
     @Selector("continuousCollisionDetectionThreshold")
@@ -614,7 +640,9 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     public native void setCenterOfMassOffset(@ByValue SCNVector3 value);
 
     /**
-     * Use discrete collision detection if the body’s distance traveled in one step is at or below this threshold, or continuous collision detection otherwise. Defaults to zero, indicating that continuous collision detection is always disabled.
+     * Use discrete collision detection if the body’s distance traveled in one step is at or below this threshold, or
+     * continuous collision detection otherwise. Defaults to zero, indicating that continuous collision detection is
+     * always disabled.
      */
     @Generated
     @Selector("setContinuousCollisionDetectionThreshold:")

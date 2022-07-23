@@ -58,7 +58,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
     public static native MLCOptimizer allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   appliesGradientClipping
+     * [@property] appliesGradientClipping
      * <p>
      * Whether gradient clipping should be applied or not.
      */
@@ -95,7 +95,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * [@property]   customGlobalNorm
+     * [@property] customGlobalNorm
      * <p>
      * Used only with MLCGradientClippingTypeByGlobalNorm. If non zero, this norm will be used in place of global norm.
      */
@@ -112,7 +112,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
     public static native String description_static();
 
     /**
-     * [@property]   gradientClipMax
+     * [@property] gradientClipMax
      * <p>
      * The maximum gradient value if gradient clipping is enabled before gradient is rescaled.
      */
@@ -121,7 +121,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
     public native float gradientClipMax();
 
     /**
-     * [@property]   gradientClipMin
+     * [@property] gradientClipMin
      * <p>
      * The minimum gradient value if gradient clipping is enabled before gradient is rescaled.
      */
@@ -130,7 +130,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
     public native float gradientClipMin();
 
     /**
-     * [@property]   gradientClippingType
+     * [@property] gradientClippingType
      * <p>
      * The type of clipping applied to gradient
      */
@@ -139,7 +139,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
     public native int gradientClippingType();
 
     /**
-     * [@property]   gradientRescale
+     * [@property] gradientRescale
      * <p>
      * The rescale value applied to gradients during optimizer update
      */
@@ -178,16 +178,16 @@ public class MLCOptimizer extends NSObject implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   learningRate
+     * [@property] learningRate
      * <p>
-     * The learning rate.  This property is 'readwrite' so that callers can implement a 'decay' during training
+     * The learning rate. This property is 'readwrite' so that callers can implement a 'decay' during training
      */
     @Generated
     @Selector("learningRate")
     public native float learningRate();
 
     /**
-     * [@property]   maximumClippingNorm
+     * [@property] maximumClippingNorm
      * <p>
      * The maximum clipping value
      */
@@ -201,7 +201,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
     public static native MLCOptimizer new_objc();
 
     /**
-     * [@property]   regularizationScale
+     * [@property] regularizationScale
      * <p>
      * The regularization scale.
      */
@@ -210,7 +210,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
     public native float regularizationScale();
 
     /**
-     * [@property]   regularizationType
+     * [@property] regularizationType
      * <p>
      * The regularization type.
      */
@@ -227,7 +227,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   appliesGradientClipping
+     * [@property] appliesGradientClipping
      * <p>
      * Whether gradient clipping should be applied or not.
      */
@@ -236,9 +236,9 @@ public class MLCOptimizer extends NSObject implements NSCopying {
     public native void setAppliesGradientClipping(boolean value);
 
     /**
-     * [@property]   learningRate
+     * [@property] learningRate
      * <p>
-     * The learning rate.  This property is 'readwrite' so that callers can implement a 'decay' during training
+     * The learning rate. This property is 'readwrite' so that callers can implement a 'decay' during training
      */
     @Generated
     @Selector("setLearningRate:")

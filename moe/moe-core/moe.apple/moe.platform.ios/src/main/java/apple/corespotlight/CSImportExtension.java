@@ -142,7 +142,8 @@ public class CSImportExtension extends NSObject implements NSExtensionRequestHan
     public static native Class superclass_static();
 
     /**
-     * The developer should implement this method to import the file located at contentURL, and update the provided attributes.
+     * The developer should implement this method to import the file located at contentURL, and update the provided
+     * attributes.
      */
     @Generated
     @Selector("updateAttributes:forFileAtURL:error:")

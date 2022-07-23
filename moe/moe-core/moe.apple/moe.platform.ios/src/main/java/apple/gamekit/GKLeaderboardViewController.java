@@ -44,7 +44,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * View controller that provides the standard user interface for leaderboards.  Present modally from the top view controller.
+ * View controller that provides the standard user interface for leaderboards. Present modally from the top view
+ * controller.
  */
 @Deprecated
 @Generated

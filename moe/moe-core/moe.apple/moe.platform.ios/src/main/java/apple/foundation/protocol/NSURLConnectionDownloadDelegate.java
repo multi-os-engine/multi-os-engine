@@ -27,10 +27,10 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * [@protocol]       NSURLConnectionDownloadDelegate
+ * [@protocol] NSURLConnectionDownloadDelegate
  * <p>
  * Delegate methods used to perform resource
- * downloads directly to a disk file.  All the
+ * downloads directly to a disk file. All the
  * methods are optional with the exception of
  * connectionDidFinishDownloading:destinationURL:
  * which must be implemented in order to inform the
@@ -47,7 +47,7 @@ import org.moe.natj.objc.ann.Selector;
  * <p>
  * connectionDidResumeDownloading:totalBytesWritten:expectedTotalBytes:
  * is called when the connection is able to resume an
- * in progress download.  This may happen due to a
+ * in progress download. This may happen due to a
  * connection or network failure.
  * <p>
  * connectionDidFinishDownloading:destinationURL: is
@@ -55,7 +55,7 @@ import org.moe.natj.objc.ann.Selector;
  * a download and provides the location of the file.
  * The file will be located in the applications cache
  * directory and is guaranteed to exist for the
- * duration of the delegate callback.  The
+ * duration of the delegate callback. The
  * implication is that the delegate should copy or
  * move the download to a more persistent location if
  * desired.

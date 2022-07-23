@@ -77,9 +77,11 @@ public class HKCDADocumentSample extends HKDocumentSample {
      * @param startDate       The start date for the document.
      * @param endDate         The end date for the document.
      * @param metadata        Metadata for the document.
-     * @param validationError The XML content will be validated against the standard for CDA content.  If that validation
-     *                        fails, then this parameter will be set with the relavant error.  Detailed information about the
-     *                        failure may be obtained by examining the value for the HKDetailedCDAValidationErrorKey key of
+     * @param validationError The XML content will be validated against the standard for CDA content. If that validation
+     *                        fails, then this parameter will be set with the relavant error. Detailed information about
+     *                        the
+     *                        failure may be obtained by examining the value for the HKDetailedCDAValidationErrorKey key
+     *                        of
      *                        the NSError's userInfo dictionary.
      * @return The new instance or nil if the documentData does not pass validation.
      */
@@ -190,13 +192,13 @@ public class HKCDADocumentSample extends HKDocumentSample {
     public static native long version_static();
 
     /**
-     * [@property]      document
+     * [@property] document
      * <p>
      * The contents of the document.
      * <p>
      * Access to each CDA instance must be authorized by the user in order for the document data to be
-     * accessible to an app.  The authorization request occurs the first time a document matches the predicate
-     * of an executed HKDocumentQuery.  This property will always be nil if the sample is returned by an
+     * accessible to an app. The authorization request occurs the first time a document matches the predicate
+     * of an executed HKDocumentQuery. This property will always be nil if the sample is returned by an
      * HKSampleQuery or an HKAnchoredObjectQuery.
      */
     @Generated

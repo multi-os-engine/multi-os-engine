@@ -43,7 +43,7 @@ public interface UIViewControllerTransitionCoordinator extends UIViewControllerT
      * Any animations specified will be run in the same animation context as the
      * transition. If the animations are occurring in a view that is a not
      * descendent of the containerView, then an ancestor view in which all of the
-     * animations are occurring should be specified.  The completionBlock is invoked
+     * animations are occurring should be specified. The completionBlock is invoked
      * after the transition completes. (Note that this may not be after all the
      * animations specified by to call complete if the duration is not inherited.)
      * It is perfectly legitimate to only specify a completion block. This method
@@ -59,7 +59,8 @@ public interface UIViewControllerTransitionCoordinator extends UIViewControllerT
             @ObjCBlock(name = "call_animateAlongsideTransitionCompletion_1") Block_animateAlongsideTransitionCompletion_1 completion);
 
     /**
-     * This alternative API is needed if the view is not a descendent of the container view AND you require this animation
+     * This alternative API is needed if the view is not a descendent of the container view AND you require this
+     * animation
      * to be driven by a UIPercentDrivenInteractiveTransition interaction controller.
      */
     @Generated
@@ -86,7 +87,7 @@ public interface UIViewControllerTransitionCoordinator extends UIViewControllerT
      * be cancelled and all interactive transitions complete as non-interactive
      * ones. In general, when a transition is cancelled the view controller that was
      * appearing will receive a viewWillDisappear: call, and the view controller
-     * that was disappearing will receive a viewWillAppear: call.  This handler is
+     * that was disappearing will receive a viewWillAppear: call. This handler is
      * invoked BEFORE the "will" method calls are made.
      */
     @Generated

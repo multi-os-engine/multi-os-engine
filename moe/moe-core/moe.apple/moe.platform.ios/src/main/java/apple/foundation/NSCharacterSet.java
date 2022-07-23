@@ -78,7 +78,10 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     public static native NSCharacterSet URLPasswordAllowedCharacterSet();
 
     /**
-     * Returns a character set containing the characters allowed in a URL's path component. ';' is a legal path character, but it is recommended that it be percent-encoded for best compatibility with NSURL (-stringByAddingPercentEncodingWithAllowedCharacters: will percent-encode any ';' characters if you pass the URLPathAllowedCharacterSet).
+     * Returns a character set containing the characters allowed in a URL's path component. ';' is a legal path
+     * character, but it is recommended that it be percent-encoded for best compatibility with NSURL
+     * (-stringByAddingPercentEncodingWithAllowedCharacters: will percent-encode any ';' characters if you pass the
+     * URLPathAllowedCharacterSet).
      */
     @Generated
     @Selector("URLPathAllowedCharacterSet")

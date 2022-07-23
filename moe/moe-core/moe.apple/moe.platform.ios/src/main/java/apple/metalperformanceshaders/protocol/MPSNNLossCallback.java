@@ -11,7 +11,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * [@protocol]   MPSNNLossCallback
+ * [@protocol] MPSNNLossCallback
  * <p>
  * MPSNNLossCallback Defines a callback protocol for @ref MPSNNForwardLossNode and @ref MPSNNLossGradientNode
  * to set the scalar weight value just before encoding the underlying kernels.

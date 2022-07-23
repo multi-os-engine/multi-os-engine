@@ -418,7 +418,8 @@ public class UITableViewHeaderFooterView extends UIView {
     public native UITableViewHeaderFooterView initWithReuseIdentifier(String reuseIdentifier);
 
     /**
-     * if the view is reusable (has a reuse identifier), this is called just before the view is returned from the table view method dequeueReusableHeaderFooterViewWithIdentifier:.  If you override, you MUST call super.
+     * if the view is reusable (has a reuse identifier), this is called just before the view is returned from the table
+     * view method dequeueReusableHeaderFooterViewWithIdentifier:. If you override, you MUST call super.
      */
     @Generated
     @Selector("prepareForReuse")
@@ -449,16 +450,20 @@ public class UITableViewHeaderFooterView extends UIView {
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
-     * When YES, the header/footer will automatically call -updatedConfigurationForState: on its `backgroundConfiguration` when the header/footer's
-     * configuration state changes, and apply the updated configuration back to the header/footer. The default value is YES.
+     * When YES, the header/footer will automatically call -updatedConfigurationForState: on its
+     * `backgroundConfiguration` when the header/footer's
+     * configuration state changes, and apply the updated configuration back to the header/footer. The default value is
+     * YES.
      */
     @Generated
     @Selector("automaticallyUpdatesBackgroundConfiguration")
     public native boolean automaticallyUpdatesBackgroundConfiguration();
 
     /**
-     * When YES, the header/footer will automatically call -updatedConfigurationForState: on its `contentConfiguration` when the header/footer's
-     * configuration state changes, and apply the updated configuration back to the header/footer. The default value is YES.
+     * When YES, the header/footer will automatically call -updatedConfigurationForState: on its `contentConfiguration`
+     * when the header/footer's
+     * configuration state changes, and apply the updated configuration back to the header/footer. The default value is
+     * YES.
      */
     @Generated
     @Selector("automaticallyUpdatesContentConfiguration")
@@ -481,9 +486,12 @@ public class UITableViewHeaderFooterView extends UIView {
     public native UIViewConfigurationState configurationState();
 
     /**
-     * Setting a content configuration replaces the existing contentView of the header/footer with a new content view instance from the configuration,
-     * or directly applies the configuration to the existing content view if the configuration is compatible with the existing content view type.
-     * The default value is nil. After a configuration has been set, setting this property to nil will replace the current content view with a new content view.
+     * Setting a content configuration replaces the existing contentView of the header/footer with a new content view
+     * instance from the configuration,
+     * or directly applies the configuration to the existing content view if the configuration is compatible with the
+     * existing content view type.
+     * The default value is nil. After a configuration has been set, setting this property to nil will replace the
+     * current content view with a new content view.
      */
     @Generated
     @Selector("contentConfiguration")
@@ -498,16 +506,20 @@ public class UITableViewHeaderFooterView extends UIView {
     public native UIListContentConfiguration defaultContentConfiguration();
 
     /**
-     * When YES, the header/footer will automatically call -updatedConfigurationForState: on its `backgroundConfiguration` when the header/footer's
-     * configuration state changes, and apply the updated configuration back to the header/footer. The default value is YES.
+     * When YES, the header/footer will automatically call -updatedConfigurationForState: on its
+     * `backgroundConfiguration` when the header/footer's
+     * configuration state changes, and apply the updated configuration back to the header/footer. The default value is
+     * YES.
      */
     @Generated
     @Selector("setAutomaticallyUpdatesBackgroundConfiguration:")
     public native void setAutomaticallyUpdatesBackgroundConfiguration(boolean value);
 
     /**
-     * When YES, the header/footer will automatically call -updatedConfigurationForState: on its `contentConfiguration` when the header/footer's
-     * configuration state changes, and apply the updated configuration back to the header/footer. The default value is YES.
+     * When YES, the header/footer will automatically call -updatedConfigurationForState: on its `contentConfiguration`
+     * when the header/footer's
+     * configuration state changes, and apply the updated configuration back to the header/footer. The default value is
+     * YES.
      */
     @Generated
     @Selector("setAutomaticallyUpdatesContentConfiguration:")
@@ -521,9 +533,12 @@ public class UITableViewHeaderFooterView extends UIView {
     public native void setBackgroundConfiguration(UIBackgroundConfiguration value);
 
     /**
-     * Setting a content configuration replaces the existing contentView of the header/footer with a new content view instance from the configuration,
-     * or directly applies the configuration to the existing content view if the configuration is compatible with the existing content view type.
-     * The default value is nil. After a configuration has been set, setting this property to nil will replace the current content view with a new content view.
+     * Setting a content configuration replaces the existing contentView of the header/footer with a new content view
+     * instance from the configuration,
+     * or directly applies the configuration to the existing content view if the configuration is compatible with the
+     * existing content view type.
+     * The default value is nil. After a configuration has been set, setting this property to nil will replace the
+     * current content view with a new content view.
      */
     @Generated
     @Selector("setContentConfiguration:")

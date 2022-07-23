@@ -13,7 +13,8 @@ public final class NSXPCConnectionOptions {
     }
 
     /**
-     * Use this option if connecting to a service in the privileged Mach bootstrap (for example, a launchd.plist in /Library/LaunchDaemons).
+     * Use this option if connecting to a service in the privileged Mach bootstrap (for example, a launchd.plist in
+     * /Library/LaunchDaemons).
      */
     @Generated @NUInt public static final long NSXPCConnectionPrivileged = 0x0000000000001000L;
 }

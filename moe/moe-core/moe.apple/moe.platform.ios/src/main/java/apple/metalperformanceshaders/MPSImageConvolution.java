@@ -61,14 +61,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * is separable if the ratio of filter values between all rows is constant over the whole row. For
  * example, this edge detection filter:
  * [@code]
- * -1      0       1
- * -2      0       2
- * -1      0       1
+ * -1 0 1
+ * -2 0 2
+ * -1 0 1
  * [@endcode]
  * can be separated into the product of two vectors:
  * [@code]
  * 1
- * 2      x    [-1  0   1]
+ * 2 x [-1 0 1]
  * 1
  * [@endcode]
  * and consequently can be done as two, one-dimensional convolution passes back to back on the same image.
@@ -186,7 +186,7 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
     public static native long version_static();
 
     /**
-     * [@property]    bias
+     * [@property] bias
      * <p>
      * The bias is a value to be added to convolved pixel before it is converted back to the storage format.
      * It can be used to convert negative values into a representable range for a unsigned MTLPixelFormat.
@@ -246,7 +246,7 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
     public native long kernelWidth();
 
     /**
-     * [@property]    bias
+     * [@property] bias
      * <p>
      * The bias is a value to be added to convolved pixel before it is converted back to the storage format.
      * It can be used to convert negative values into a representable range for a unsigned MTLPixelFormat.
@@ -271,7 +271,7 @@ public class MPSImageConvolution extends MPSUnaryImageKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel

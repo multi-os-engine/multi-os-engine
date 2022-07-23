@@ -391,14 +391,16 @@ public class UIDatePicker extends UIControl implements NSCoding {
     public native NSCalendar calendar();
 
     /**
-     * for UIDatePickerModeCountDownTimer, ignored otherwise. default is 0.0. limit is 23:59 (86,399 seconds). value being set is div 60 (drops remaining seconds).
+     * for UIDatePickerModeCountDownTimer, ignored otherwise. default is 0.0. limit is 23:59 (86,399 seconds). value
+     * being set is div 60 (drops remaining seconds).
      */
     @Generated
     @Selector("countDownDuration")
     public native double countDownDuration();
 
     /**
-     * default is current date when picker created. Ignored in countdown timer mode. for that mode, picker starts at 0:00
+     * default is current date when picker created. Ignored in countdown timer mode. for that mode, picker starts at
+     * 0:00
      */
     @Generated
     @Selector("date")
@@ -443,7 +445,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
     public native NSDate maximumDate();
 
     /**
-     * specify min/max date range. default is nil. When min > max, the values are ignored. Ignored in countdown timer mode
+     * specify min/max date range. default is nil. When min > max, the values are ignored. Ignored in countdown timer
+     * mode
      */
     @Generated
     @Selector("minimumDate")
@@ -465,14 +468,16 @@ public class UIDatePicker extends UIControl implements NSCoding {
     public native void setCalendar(NSCalendar value);
 
     /**
-     * for UIDatePickerModeCountDownTimer, ignored otherwise. default is 0.0. limit is 23:59 (86,399 seconds). value being set is div 60 (drops remaining seconds).
+     * for UIDatePickerModeCountDownTimer, ignored otherwise. default is 0.0. limit is 23:59 (86,399 seconds). value
+     * being set is div 60 (drops remaining seconds).
      */
     @Generated
     @Selector("setCountDownDuration:")
     public native void setCountDownDuration(double value);
 
     /**
-     * default is current date when picker created. Ignored in countdown timer mode. for that mode, picker starts at 0:00
+     * default is current date when picker created. Ignored in countdown timer mode. for that mode, picker starts at
+     * 0:00
      */
     @Generated
     @Selector("setDate:")
@@ -507,7 +512,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
     public native void setMaximumDate(NSDate value);
 
     /**
-     * specify min/max date range. default is nil. When min > max, the values are ignored. Ignored in countdown timer mode
+     * specify min/max date range. default is nil. When min > max, the values are ignored. Ignored in countdown timer
+     * mode
      */
     @Generated
     @Selector("setMinimumDate:")
@@ -541,7 +547,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
-     * The style that the date picker is using for its layout. This property always returns a concrete style (never automatic).
+     * The style that the date picker is using for its layout. This property always returns a concrete style (never
+     * automatic).
      */
     @Generated
     @Selector("datePickerStyle")
@@ -549,7 +556,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
     public native long datePickerStyle();
 
     /**
-     * Request a style for the date picker. If the style changed, then the date picker may need to be resized and will generate a layout pass to display correctly.
+     * Request a style for the date picker. If the style changed, then the date picker may need to be resized and will
+     * generate a layout pass to display correctly.
      */
     @Generated
     @Selector("preferredDatePickerStyle")
@@ -557,7 +565,8 @@ public class UIDatePicker extends UIControl implements NSCoding {
     public native long preferredDatePickerStyle();
 
     /**
-     * Request a style for the date picker. If the style changed, then the date picker may need to be resized and will generate a layout pass to display correctly.
+     * Request a style for the date picker. If the style changed, then the date picker may need to be resized and will
+     * generate a layout pass to display correctly.
      */
     @Generated
     @Selector("setPreferredDatePickerStyle:")

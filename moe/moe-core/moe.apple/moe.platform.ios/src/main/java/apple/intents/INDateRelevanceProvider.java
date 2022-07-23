@@ -88,7 +88,8 @@ public class INDateRelevanceProvider extends INRelevanceProvider {
 
     /**
      * The end date of the relevant time interval.
-     * [@note] If @c endDate is @c nil, the relevant time interval will be assumed to represent a single point in time instead of a time interval.
+     * [@note] If @c endDate is @c nil, the relevant time interval will be assumed to represent a single point in time
+     * instead of a time interval.
      */
     @Generated
     @Selector("endDate")

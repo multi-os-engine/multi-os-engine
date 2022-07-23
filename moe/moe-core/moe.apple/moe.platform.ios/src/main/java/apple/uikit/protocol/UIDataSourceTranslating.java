@@ -40,7 +40,8 @@ public interface UIDataSourceTranslating {
     long dataSourceSectionIndexForPresentationSectionIndex(@NInt long presentationSectionIndex);
 
     /**
-     * Arguments passed to actions performed inside the scope of this block will be interpreted as values in the presentation state,
+     * Arguments passed to actions performed inside the scope of this block will be interpreted as values in the
+     * presentation state,
      * and the values returned from these actions will also be in the presentation state.
      */
     @Generated

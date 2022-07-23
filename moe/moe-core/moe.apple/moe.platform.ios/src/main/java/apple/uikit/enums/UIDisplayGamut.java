@@ -22,7 +22,8 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class UIDisplayGamut {
     /**
-     * UIKit will not set this anymore, instead a sensible default is chosen based on the device capabilities and settings always
+     * UIKit will not set this anymore, instead a sensible default is chosen based on the device capabilities and
+     * settings always
      */
     @Generated @NInt public static final long Unspecified = 0xFFFFFFFFFFFFFFFFL;
     @Generated @NInt public static final long SRGB = 0x0000000000000000L;

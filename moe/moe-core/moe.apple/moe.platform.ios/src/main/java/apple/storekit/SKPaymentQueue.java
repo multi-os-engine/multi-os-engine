@@ -166,28 +166,31 @@ public class SKPaymentQueue extends NSObject {
     public static native long version_static();
 
     /**
-     * Asynchronous.  Add a payment to the server queue.  The payment is copied to add an SKPaymentTransaction to the transactions array.  The same payment can be added multiple times to create multiple transactions.
+     * Asynchronous. Add a payment to the server queue. The payment is copied to add an SKPaymentTransaction to the
+     * transactions array. The same payment can be added multiple times to create multiple transactions.
      */
     @Generated
     @Selector("addPayment:")
     public native void addPayment(SKPayment payment);
 
     /**
-     * Observers are not retained.  The transactions array will only be synchronized with the server while the queue has observers.  This may require that the user authenticate.
+     * Observers are not retained. The transactions array will only be synchronized with the server while the queue has
+     * observers. This may require that the user authenticate.
      */
     @Generated
     @Selector("addTransactionObserver:")
     public native void addTransactionObserver(@Mapped(ObjCObjectMapper.class) SKPaymentTransactionObserver observer);
 
     /**
-     * Asynchronous.  Cancel downloads (SKDownload)
+     * Asynchronous. Cancel downloads (SKDownload)
      */
     @Generated
     @Selector("cancelDownloads:")
     public native void cancelDownloads(NSArray<? extends SKDownload> downloads);
 
     /**
-     * Asynchronous.  Remove a finished (i.e. failed or completed) transaction from the queue.  Attempting to finish a purchasing transaction will throw an exception.
+     * Asynchronous. Remove a finished (i.e. failed or completed) transaction from the queue. Attempting to finish a
+     * purchasing transaction will throw an exception.
      */
     @Generated
     @Selector("finishTransaction:")
@@ -198,7 +201,7 @@ public class SKPaymentQueue extends NSObject {
     public native SKPaymentQueue init();
 
     /**
-     * Asynchronous.  Pause/resume downloads (SKDownload).
+     * Asynchronous. Pause/resume downloads (SKDownload).
      */
     @Generated
     @Selector("pauseDownloads:")
@@ -209,7 +212,11 @@ public class SKPaymentQueue extends NSObject {
     public native void removeTransactionObserver(@Mapped(ObjCObjectMapper.class) SKPaymentTransactionObserver observer);
 
     /**
-     * Asynchronous.  Will add completed transactions for the current user back to the queue to be re-completed.  User will be asked to authenticate.  Observers will receive 0 or more -paymentQueue:updatedTransactions:, followed by either -paymentQueueRestoreCompletedTransactionsFinished: on success or -paymentQueue:restoreCompletedTransactionsFailedWithError: on failure.  In the case of partial success, some transactions may still be delivered.
+     * Asynchronous. Will add completed transactions for the current user back to the queue to be re-completed. User
+     * will be asked to authenticate. Observers will receive 0 or more -paymentQueue:updatedTransactions:, followed by
+     * either -paymentQueueRestoreCompletedTransactionsFinished: on success or
+     * -paymentQueue:restoreCompletedTransactionsFailedWithError: on failure. In the case of partial success, some
+     * transactions may still be delivered.
      */
     @Generated
     @Selector("restoreCompletedTransactions")
@@ -224,14 +231,14 @@ public class SKPaymentQueue extends NSObject {
     public native void resumeDownloads(NSArray<? extends SKDownload> downloads);
 
     /**
-     * Asynchronous.  Start the given downloads (SKDownload).
+     * Asynchronous. Start the given downloads (SKDownload).
      */
     @Generated
     @Selector("startDownloads:")
     public native void startDownloads(NSArray<? extends SKDownload> downloads);
 
     /**
-     * Array of unfinished SKPaymentTransactions.  Only valid while the queue has observers.  Updated asynchronously.
+     * Array of unfinished SKPaymentTransactions. Only valid while the queue has observers. Updated asynchronously.
      */
     @Generated
     @Selector("transactions")
@@ -263,7 +270,9 @@ public class SKPaymentQueue extends NSObject {
     public native SKStorefront storefront();
 
     /**
-     * If StoreKit has called your SKPaymentQueueDelegate's "paymentQueueShouldShowPriceConsent:" method and you returned NO, you can use this method to show the price consent UI at a later time that is more appropriate for your app. If there is no pending price consent, this method will do nothing.
+     * If StoreKit has called your SKPaymentQueueDelegate's "paymentQueueShouldShowPriceConsent:" method and you
+     * returned NO, you can use this method to show the price consent UI at a later time that is more appropriate for
+     * your app. If there is no pending price consent, this method will do nothing.
      */
     @Generated
     @Selector("showPriceConsentIfNeeded")

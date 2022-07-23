@@ -33,9 +33,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * * creating a 'relationshipCount' attribute reflecting the number of objects in
  * a relationship and so avoid having to do a join during fetching
  * <p>
- * IMPORTANT: Derived attributes will be recomputed during save, recomputed values will not be reflected in a managed object's property until after a save.
+ * IMPORTANT: Derived attributes will be recomputed during save, recomputed values will not be reflected in a managed
+ * object's property until after a save.
  * <p>
- * NOTE: Prior to macOS 10.16, iOS 14.0, tvOS 14.0, and watchOS 7.0 a refresh of the object is required after a save to reflect recomputed values
+ * NOTE: Prior to macOS 10.16, iOS 14.0, tvOS 14.0, and watchOS 7.0 a refresh of the object is required after a save to
+ * reflect recomputed values
  */
 @Generated
 @Library("CoreData")

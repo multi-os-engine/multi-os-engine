@@ -139,7 +139,8 @@ public class CNContainer extends NSObject implements NSCopying, NSSecureCoding {
     public static native CNContainer new_objc();
 
     /**
-     * If the identifier is for a unified contact then the fetch will return an empty array. To fetch the containers of a unified contact, first fetch the linked contacts then fetch the container of each linked contact.
+     * If the identifier is for a unified contact then the fetch will return an empty array. To fetch the containers of
+     * a unified contact, first fetch the linked contacts then fetch the container of each linked contact.
      */
     @Generated
     @Selector("predicateForContainerOfContactWithIdentifier:")
@@ -189,7 +190,8 @@ public class CNContainer extends NSObject implements NSCopying, NSSecureCoding {
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * The identifier is unique among containers on the device. It can be saved and used for fetching containers next application launch.
+     * The identifier is unique among containers on the device. It can be saved and used for fetching containers next
+     * application launch.
      */
     @Generated
     @Selector("identifier")

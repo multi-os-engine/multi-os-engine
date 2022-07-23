@@ -102,7 +102,7 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
      * <p>
      * Turns on/off the reverb
      * <p>
-     * Default:    NO
+     * Default: NO
      */
     @Generated
     @Selector("enable")
@@ -152,8 +152,8 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
      * <p>
      * Controls the master level of the reverb
      * <p>
-     * Range:      -40 to 40 dB
-     * Default:    0.0
+     * Range: -40 to 40 dB
+     * Default: 0.0
      */
     @Generated
     @Selector("level")
@@ -191,7 +191,7 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
      * <p>
      * Turns on/off the reverb
      * <p>
-     * Default:    NO
+     * Default: NO
      */
     @Generated
     @Selector("setEnable:")
@@ -202,8 +202,8 @@ public class AVAudioEnvironmentReverbParameters extends NSObject {
      * <p>
      * Controls the master level of the reverb
      * <p>
-     * Range:      -40 to 40 dB
-     * Default:    0.0
+     * Range: -40 to 40 dB
+     * Default: 0.0
      */
     @Generated
     @Selector("setLevel:")

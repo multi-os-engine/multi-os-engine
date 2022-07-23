@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MLCGroupNormalizationLayer
  * <p>
- * A group normalizaion layer.  For more information, refer to https://pytorch.org/docs/stable/nn.html#groupnorm
+ * A group normalizaion layer. For more information, refer to https://pytorch.org/docs/stable/nn.html#groupnorm
  */
 @Generated
 @Library("MLCompute")
@@ -60,7 +60,7 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
      * The beta tensor
      */
@@ -69,7 +69,7 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
     public native MLCTensor beta();
 
     /**
-     * [@property]   betaParameter
+     * [@property] betaParameter
      * <p>
      * The beta tensor parameter used for optimizer update
      */
@@ -104,7 +104,7 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   featureChannelCount
+     * [@property] featureChannelCount
      * <p>
      * The number of feature channels
      */
@@ -114,7 +114,7 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
     public native long featureChannelCount();
 
     /**
-     * [@property]   gamma
+     * [@property] gamma
      * <p>
      * The gamma tensor
      */
@@ -123,7 +123,7 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
     public native MLCTensor gamma();
 
     /**
-     * [@property]   gammaParameter
+     * [@property] gammaParameter
      * <p>
      * The gamma tensor parameter used for optimizer update
      */
@@ -132,7 +132,7 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
     public native MLCTensorParameter gammaParameter();
 
     /**
-     * [@property]   groupCount
+     * [@property] groupCount
      * <p>
      * The number of groups to separate the channels into
      */
@@ -213,7 +213,7 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
     public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
 
     /**
-     * [@property]   varianceEpsilon
+     * [@property] varianceEpsilon
      * <p>
      * A value used for numerical stability
      */

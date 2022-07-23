@@ -16,12 +16,12 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * [@protocol]   MPSNNPadding
+ * [@protocol] MPSNNPadding
  * <p>
  * A method to describe how MPSCNNKernels should pad images when data outside the image is needed
  * <p>
  * Different (non-Apple) CNN frameworks have different policies for how to size the result
- * of a CNN filter and what padding to add around the edges.  Some filters such
+ * of a CNN filter and what padding to add around the edges. Some filters such
  * as pooling and convolution read from neighboring feature channel (pixel) values.
  * Four predefined MPSPaddingMethods are available: MPSNNPaddingMethodValidOnly,
  * MPSNNPaddingMethodFull, MPSNNPaddingMethodSameTL, MPSNNPaddingMethodSameBR. You
@@ -37,14 +37,15 @@ public interface MPSNNPadding extends NSSecureCoding {
      * Determine padding and sizing of result images
      * <p>
      * A MPSNNPaddingMethod must both return a valid MPSImageDescriptor
-     * and set the MPSKernel.offset to the correct value.  This is a
+     * and set the MPSKernel.offset to the correct value. This is a
      * required feature if the MPSNNPaddingMethodCustom bit is set in
      * the paddingMethod.
      * <p>
      * Some code that may prove helpful:
      * <p>
      * [@code]
-     * const int centeringPolicy = 0;  // When kernelSize is even: 0 pad bottom right. 1 pad top left.    Centers the kernel for even sized kernels.
+     * const int centeringPolicy = 0; // When kernelSize is even: 0 pad bottom right. 1 pad top left. Centers the kernel
+     * for even sized kernels.
      * <p>
      * typedef enum Style{
      * StyleValidOnly = -1,
@@ -54,15 +55,15 @@ public interface MPSNNPadding extends NSSecureCoding {
      * <p>
      * // Typical destination size in one dimension for forward filters (most filters)
      * static int DestSize( int sourceSize, int stride, int filterWindowSize, Style style ){
-     * sourceSize += style * (filterWindowSize - 1);       // adjust how many pixels we are allowed to read
-     * return (sourceSize + stride - 1) / stride;          // sourceSize / stride, round up
+     * sourceSize += style * (filterWindowSize - 1); // adjust how many pixels we are allowed to read
+     * return (sourceSize + stride - 1) / stride; // sourceSize / stride, round up
      * }
      * <p>
      * // Typical destination size in one dimension for reverse filters (e.g. convolution transpose)
      * static int DestSizeReverse( int sourceSize, int stride, int filterWindowSize, Style style ){
-     * return (sourceSize-1) * stride +        // center tap for the last N-1 results. Take stride into account
-     * 1 +                             // center tap for the first result
-     * style * (filterWindowSize-1);   // add or subtract (or ignore) the filter extent
+     * return (sourceSize-1) * stride + // center tap for the last N-1 results. Take stride into account
+     * 1 + // center tap for the first result
+     * style * (filterWindowSize-1); // add or subtract (or ignore) the filter extent
      * }
      * <p>
      * // Find the MPSOffset in one dimension
@@ -76,7 +77,8 @@ public interface MPSNNPadding extends NSSecureCoding {
      * <p>
      * // Center the area consumed in the source image:
      * // Calculate the size of the destination image
-     * int destSize = DestSize( sourceSize, stride, filterWindowSize, style ); // use DestSizeReverse here instead as appropriate
+     * int destSize = DestSize( sourceSize, stride, filterWindowSize, style ); // use DestSizeReverse here instead as
+     * appropriate
      * <p>
      * // calculate extent of pixels we need to read in source to populate the destination
      * int readSize = (destSize-1) * stride + filterWindowSize;
@@ -99,8 +101,8 @@ public interface MPSNNPadding extends NSSecureCoding {
      *                     MPSNNPaddingMethodCustom) set for the object. You should adjust the offset
      *                     and image size accordingly. It is on an autoreleasepool.
      * @return The MPSImageDescriptor to use to make a MPSImage to capture the results from the filter.
-     * The MPSImageDescriptor is assumed to be on an autoreleasepool. Your method must also set the
-     * kernel.offset property.
+     *         The MPSImageDescriptor is assumed to be on an autoreleasepool. Your method must also set the
+     *         kernel.offset property.
      */
     @Generated
     @IsOptional
@@ -112,7 +114,7 @@ public interface MPSNNPadding extends NSSecureCoding {
     }
 
     /**
-     * FIXME:  to be made @required
+     * FIXME: to be made @required
      */
     @Generated
     @IsOptional

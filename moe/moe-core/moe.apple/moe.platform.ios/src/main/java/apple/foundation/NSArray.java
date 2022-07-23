@@ -61,8 +61,8 @@ import java.util.NoSuchElementException;
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSArray<_ObjectType> extends NSObject
-        implements NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration, CKRecordValue, List<_ObjectType> {
+public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutableCopying, NSSecureCoding,
+        NSFastEnumeration, CKRecordValue, List<_ObjectType> {
     static {
         NatJ.register();
     }
@@ -95,7 +95,8 @@ public class NSArray<_ObjectType> extends NSObject
     public static native <_ObjectType> NSArray<?> arrayWithArray(NSArray<_ObjectType> array);
 
     /**
-     * These methods are deprecated, and will be marked with API_DEPRECATED in a subsequent release. Use the variants that use errors instead.
+     * These methods are deprecated, and will be marked with API_DEPRECATED in a subsequent release. Use the variants
+     * that use errors instead.
      */
     @Generated
     @Selector("arrayWithContentsOfFile:")
@@ -203,7 +204,8 @@ public class NSArray<_ObjectType> extends NSObject
     public static native long version_static();
 
     /**
-     * NSArrays are not observable, so these methods raise exceptions when invoked on NSArrays. Instead of observing an array, observe the ordered to-many relationship for which the array is the collection of related objects.
+     * NSArrays are not observable, so these methods raise exceptions when invoked on NSArrays. Instead of observing an
+     * array, observe the ordered to-many relationship for which the array is the collection of related objects.
      */
     @Generated
     @Selector("addObserver:forKeyPath:options:context:")
@@ -211,7 +213,13 @@ public class NSArray<_ObjectType> extends NSObject
             VoidPtr context);
 
     /**
-     * Register or deregister as an observer of the values at a key path relative to each indexed element of the array. The options determine what is included in observer notifications and when they're sent, as described above, and the context is passed in observer notifications as described above. These are not merely convenience methods; invoking them is potentially much faster than repeatedly invoking NSObject(NSKeyValueObserverRegistration) methods. You should use -removeObserver:fromObjectsAtIndexes:forKeyPath:context: instead of -removeObserver:fromObjectsAtIndexes:forKeyPath: whenever possible for the same reason described in the NSObject(NSKeyValueObserverRegistration) comment.
+     * Register or deregister as an observer of the values at a key path relative to each indexed element of the array.
+     * The options determine what is included in observer notifications and when they're sent, as described above, and
+     * the context is passed in observer notifications as described above. These are not merely convenience methods;
+     * invoking them is potentially much faster than repeatedly invoking NSObject(NSKeyValueObserverRegistration)
+     * methods. You should use -removeObserver:fromObjectsAtIndexes:forKeyPath:context: instead of
+     * -removeObserver:fromObjectsAtIndexes:forKeyPath: whenever possible for the same reason described in the
+     * NSObject(NSKeyValueObserverRegistration) comment.
      */
     @Generated
     @Selector("addObserver:toObjectsAtIndexes:forKeyPath:options:context:")
@@ -300,7 +308,8 @@ public class NSArray<_ObjectType> extends NSObject
     public native _ObjectType firstObjectCommonWithArray(NSArray<_ObjectType> otherArray);
 
     /**
-     * This method is unsafe because it could potentially cause buffer overruns. You should use -getObjects:range: instead.
+     * This method is unsafe because it could potentially cause buffer overruns. You should use -getObjects:range:
+     * instead.
      */
     @Generated
     @Selector("getObjects:")
@@ -486,7 +495,8 @@ public class NSArray<_ObjectType> extends NSObject
     public native void setValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
 
     /**
-     * Returns a shuffled instance of this array using the systems underlying random source, as with [GKRandomSource sharedRandom]
+     * Returns a shuffled instance of this array using the systems underlying random source, as with [GKRandomSource
+     * sharedRandom]
      */
     @Generated
     @Selector("shuffledArray")
@@ -547,7 +557,8 @@ public class NSArray<_ObjectType> extends NSObject
     }
 
     /**
-     * Return an array containing the results of invoking -valueForKey: on each of the receiver's elements. The returned array will contain NSNull elements for each instance of -valueForKey: returning nil.
+     * Return an array containing the results of invoking -valueForKey: on each of the receiver's elements. The returned
+     * array will contain NSNull elements for each instance of -valueForKey: returning nil.
      */
     @Generated
     @Selector("valueForKey:")
@@ -986,7 +997,8 @@ public class NSArray<_ObjectType> extends NSObject
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Serializes this instance to the specified URL in the NSPropertyList format (using NSPropertyListXMLFormat_v1_0). For other formats use NSPropertyListSerialization directly.
+     * Serializes this instance to the specified URL in the NSPropertyList format (using NSPropertyListXMLFormat_v1_0).
+     * For other formats use NSPropertyListSerialization directly.
      */
     @Generated
     @Selector("writeToURL:error:")

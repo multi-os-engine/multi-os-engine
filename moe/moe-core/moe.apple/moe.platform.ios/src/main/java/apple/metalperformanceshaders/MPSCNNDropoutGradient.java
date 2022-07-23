@@ -159,7 +159,7 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * [@property]   keepProbability
+     * [@property] keepProbability
      * <p>
      * The probability that each element in the input is kept.
      * The valid range is (0.0f, 1.0f).
@@ -173,7 +173,7 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   maskStrideInPixels
+     * [@property] maskStrideInPixels
      * <p>
      * The mask stride in the x, y, and x dimensions, which
      * allows for the broadcasting the mask data.
@@ -201,7 +201,7 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   seed
+     * [@property] seed
      * <p>
      * The seed used to generate random numbers.
      */

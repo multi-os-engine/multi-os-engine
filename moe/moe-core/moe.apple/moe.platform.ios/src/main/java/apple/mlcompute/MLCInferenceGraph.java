@@ -134,7 +134,8 @@ public class MLCInferenceGraph extends MLCGraph {
     /**
      * Compile the inference graph for a device.
      * <p>
-     * Specifying the list of constant tensors when we compile the graph allows MLCompute to perform additional optimizations at compile time.
+     * Specifying the list of constant tensors when we compile the graph allows MLCompute to perform additional
+     * optimizations at compile time.
      *
      * @param options          The compiler options to use when compiling the inference graph
      * @param device           The MLCDevice object
@@ -157,7 +158,7 @@ public class MLCInferenceGraph extends MLCGraph {
     public static native String description_static();
 
     /**
-     * [@property]   The device memory size used by the inference graph
+     * [@property] The device memory size used by the inference graph
      * <p>
      * Returns the total size in bytes of device memory used by all intermediate tensors in the inference graph
      *
@@ -172,11 +173,14 @@ public class MLCInferenceGraph extends MLCGraph {
      * Execute the inference graph with given input data
      * <p>
      * Execute the inference graph given input data.
-     * If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been executed.
-     * Otherwise, this method returns after the graph has been queued for execution.  The completion handler  is called after the graph has finished execution.
+     * If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been
+     * executed.
+     * Otherwise, this method returns after the graph has been queued for execution. The completion handler is called
+     * after the graph has finished execution.
      *
      * @param inputsData        The data objects to use for inputs
-     * @param batchSize         The batch size to use.  For a graph where batch size changes between layers this value must be 0.
+     * @param batchSize         The batch size to use. For a graph where batch size changes between layers this value
+     *                          must be 0.
      * @param options           The execution options
      * @param completionHandler The completion handler
      * @return A boolean indicating success or failure
@@ -199,13 +203,16 @@ public class MLCInferenceGraph extends MLCGraph {
      * Execute the inference graph with given input data
      * <p>
      * Execute the inference graph given input data.
-     * If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been executed.
-     * Otherwise, this method returns after the graph has been queued for execution.  The completion handler  is called after the graph has finished execution.
+     * If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been
+     * executed.
+     * Otherwise, this method returns after the graph has been queued for execution. The completion handler is called
+     * after the graph has finished execution.
      *
      * @param inputsData           The data objects to use for inputs
      * @param lossLabelsData       The data objects to use for loss labels
      * @param lossLabelWeightsData The data objects to use for loss label weights
-     * @param batchSize            The batch size to use.  For a graph where batch size changes between layers this value must be 0.
+     * @param batchSize            The batch size to use. For a graph where batch size changes between layers this value
+     *                             must be 0.
      * @param options              The execution options
      * @param completionHandler    The completion handler
      * @return A boolean indicating success or failure
@@ -230,14 +237,17 @@ public class MLCInferenceGraph extends MLCGraph {
      * Execute the inference graph with given input data
      * <p>
      * Execute the inference graph given input data.
-     * If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been executed.
-     * Otherwise, this method returns after the graph has been queued for execution.  The completion handler  is called after the graph has finished execution.
+     * If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been
+     * executed.
+     * Otherwise, this method returns after the graph has been queued for execution. The completion handler is called
+     * after the graph has finished execution.
      *
      * @param inputsData           The data objects to use for inputs
      * @param lossLabelsData       The data objects to use for loss labels
      * @param lossLabelWeightsData The data objects to use for loss label weights
      * @param outputsData          The data objects to use for outputs
-     * @param batchSize            The batch size to use.  For a graph where batch size changes between layers this value must be 0.
+     * @param batchSize            The batch size to use. For a graph where batch size changes between layers this value
+     *                             must be 0.
      * @param options              The execution options
      * @param completionHandler    The completion handler
      * @return A boolean indicating success or failure
@@ -263,12 +273,15 @@ public class MLCInferenceGraph extends MLCGraph {
      * Execute the inference graph with given input data
      * <p>
      * Execute the inference graph given input data.
-     * If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been executed.
-     * Otherwise, this method returns after the graph has been queued for execution.  The completion handler  is called after the graph has finished execution.
+     * If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been
+     * executed.
+     * Otherwise, this method returns after the graph has been queued for execution. The completion handler is called
+     * after the graph has finished execution.
      *
      * @param inputsData        The data objects to use for inputs
      * @param outputsData       The data objects to use for outputs
-     * @param batchSize         The batch size to use.  For a graph where batch size changes between layers this value must be 0.
+     * @param batchSize         The batch size to use. For a graph where batch size changes between layers this value
+     *                          must be 0.
      * @param options           The execution options
      * @param completionHandler The completion handler
      * @return A boolean indicating success or failure

@@ -122,7 +122,7 @@ public class MPSNDArrayUnaryGradientKernel extends MPSNDArrayMultiaryGradientKer
             @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
-     * RFC:  While this design is nice as it allows the same set of source arrays to
+     * RFC: While this design is nice as it allows the same set of source arrays to
      * be used for forward and gradient passees, it causes a problem for the
      * getters and setters of properties like offset, kernel size, etc.
      * There is currently no way to manually set this information for the gradient.

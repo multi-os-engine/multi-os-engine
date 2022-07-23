@@ -235,7 +235,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     public native UIScreen init();
 
     /**
-     * The screen being mirrored by the receiver. nil if mirroring is disabled or unsupported. Moving a UIWindow to this screen will disable mirroring
+     * The screen being mirrored by the receiver. nil if mirroring is disabled or unsupported. Moving a UIWindow to this
+     * screen will disable mirroring
      */
     @Generated
     @Selector("mirroredScreen")
@@ -258,7 +259,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     public native double nativeScale();
 
     /**
-     * Default is UIScreenOverscanCompensationScale. Determines how the screen behaves if the connected display is overscanning
+     * Default is UIScreenOverscanCompensationScale. Determines how the screen behaves if the connected display is
+     * overscanning
      */
     @Generated
     @Selector("overscanCompensation")
@@ -300,21 +302,24 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     public native void setCurrentMode(UIScreenMode value);
 
     /**
-     * Default is UIScreenOverscanCompensationScale. Determines how the screen behaves if the connected display is overscanning
+     * Default is UIScreenOverscanCompensationScale. Determines how the screen behaves if the connected display is
+     * overscanning
      */
     @Generated
     @Selector("setOverscanCompensation:")
     public native void setOverscanCompensation(@NInt long value);
 
     /**
-     * Default is NO. If YES, brightness levels lower than that of which the hardware is capable are emulated in software, if necessary. Having enabled may entail performance cost.
+     * Default is NO. If YES, brightness levels lower than that of which the hardware is capable are emulated in
+     * software, if necessary. Having enabled may entail performance cost.
      */
     @Generated
     @Selector("setWantsSoftwareDimming:")
     public native void setWantsSoftwareDimming(boolean value);
 
     /**
-     * Please see snapshotViewAfterScreenUpdates: in UIView.h for some important details on the behavior of this method when called from layoutSubviews.
+     * Please see snapshotViewAfterScreenUpdates: in UIView.h for some important details on the behavior of this method
+     * when called from layoutSubviews.
      */
     @Generated
     @Selector("snapshotViewAfterScreenUpdates:")
@@ -333,7 +338,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     public native void traitCollectionDidChange(UITraitCollection previousTraitCollection);
 
     /**
-     * Default is NO. If YES, brightness levels lower than that of which the hardware is capable are emulated in software, if necessary. Having enabled may entail performance cost.
+     * Default is NO. If YES, brightness levels lower than that of which the hardware is capable are emulated in
+     * software, if necessary. Having enabled may entail performance cost.
      */
     @Generated
     @Selector("wantsSoftwareDimming")

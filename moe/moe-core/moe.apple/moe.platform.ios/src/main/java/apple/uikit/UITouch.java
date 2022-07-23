@@ -264,7 +264,8 @@ public class UITouch extends NSObject {
 
     /**
      * Use these methods to gain additional precision that may be available from touches.
-     * Do not use precise locations for hit testing. A touch may hit test inside a view, yet have a precise location that lies just outside.
+     * Do not use precise locations for hit testing. A touch may hit test inside a view, yet have a precise location
+     * that lies just outside.
      */
     @Generated
     @Selector("preciseLocationInView:")

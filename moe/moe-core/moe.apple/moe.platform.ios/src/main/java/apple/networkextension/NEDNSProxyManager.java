@@ -116,7 +116,8 @@ public class NEDNSProxyManager extends NSObject {
     /**
      * [@property] enabled
      * <p>
-     * Toggles the enabled status of the DNS proxy. Setting this property will disable DNS proxy configurations of other apps. This property will be set to NO when other DNS proxy configurations are enabled.
+     * Toggles the enabled status of the DNS proxy. Setting this property will disable DNS proxy configurations of other
+     * apps. This property will be set to NO when other DNS proxy configurations are enabled.
      */
     @Generated
     @Selector("isEnabled")
@@ -135,7 +136,8 @@ public class NEDNSProxyManager extends NSObject {
      * <p>
      * This function loads the current DNS proxy configuration from the caller's DNS proxy preferences.
      *
-     * @param completionHandler A block that will be called when the load operation is completed. The NSError passed to this block will be nil if the load operation succeeded, non-nil otherwise.
+     * @param completionHandler A block that will be called when the load operation is completed. The NSError passed to
+     *                          this block will be nil if the load operation succeeded, non-nil otherwise.
      */
     @Generated
     @Selector("loadFromPreferencesWithCompletionHandler:")
@@ -175,9 +177,11 @@ public class NEDNSProxyManager extends NSObject {
     /**
      * removeFromPreferencesWithCompletionHandler:
      * <p>
-     * This function removes the DNS proxy configuration from the caller's DNS proxy preferences. If the DNS proxy is enabled, the DNS proxy becomes disabled.
+     * This function removes the DNS proxy configuration from the caller's DNS proxy preferences. If the DNS proxy is
+     * enabled, the DNS proxy becomes disabled.
      *
-     * @param completionHandler A block that will be called when the remove operation is completed. The NSError passed to this block will be nil if the remove operation succeeded, non-nil otherwise.
+     * @param completionHandler A block that will be called when the remove operation is completed. The NSError passed
+     *                          to this block will be nil if the remove operation succeeded, non-nil otherwise.
      */
     @Generated
     @Selector("removeFromPreferencesWithCompletionHandler:")
@@ -202,9 +206,11 @@ public class NEDNSProxyManager extends NSObject {
     /**
      * saveToPreferencesWithCompletionHandler:
      * <p>
-     * This function saves the DNS proxy configuration in the caller's DNS proxy preferences. If the DNS proxy is enabled, it will become active.
+     * This function saves the DNS proxy configuration in the caller's DNS proxy preferences. If the DNS proxy is
+     * enabled, it will become active.
      *
-     * @param completionHandler A block that will be called when the save operation is completed. The NSError passed to this block will be nil if the save operation succeeded, non-nil otherwise.
+     * @param completionHandler A block that will be called when the save operation is completed. The NSError passed to
+     *                          this block will be nil if the save operation succeeded, non-nil otherwise.
      */
     @Generated
     @Selector("saveToPreferencesWithCompletionHandler:")
@@ -221,7 +227,8 @@ public class NEDNSProxyManager extends NSObject {
     /**
      * [@property] enabled
      * <p>
-     * Toggles the enabled status of the DNS proxy. Setting this property will disable DNS proxy configurations of other apps. This property will be set to NO when other DNS proxy configurations are enabled.
+     * Toggles the enabled status of the DNS proxy. Setting this property will disable DNS proxy configurations of other
+     * apps. This property will be set to NO when other DNS proxy configurations are enabled.
      */
     @Generated
     @Selector("setEnabled:")

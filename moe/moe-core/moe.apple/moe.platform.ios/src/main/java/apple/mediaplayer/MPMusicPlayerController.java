@@ -253,7 +253,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * The completion handler will be called when the first item from the queue is buffered and ready to play.
-     * If a first item has been specified using MPMusicPlayerQueueDescriptor, the error will be non-nil if the specified item cannot be prepared for playback.
+     * If a first item has been specified using MPMusicPlayerQueueDescriptor, the error will be non-nil if the specified
+     * item cannot be prepared for playback.
      * If a first item is not specified, the error will be non-nil if an item cannot be prepared for playback.
      * Errors will be in MPErrorDomain.
      */
@@ -295,7 +296,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     public native void setQueueWithItemCollection(MPMediaItemCollection itemCollection);
 
     /**
-     * Call -play to begin playback after setting an item queue source. Setting a query will implicitly use MPMediaGroupingTitle.
+     * Call -play to begin playback after setting an item queue source. Setting a query will implicitly use
+     * MPMediaGroupingTitle.
      */
     @Generated
     @Selector("setQueueWithQuery:")

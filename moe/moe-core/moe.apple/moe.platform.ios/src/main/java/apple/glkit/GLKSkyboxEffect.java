@@ -45,14 +45,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * GLKSkyboxEffect
  * <p>
  * GLKSkyboxEffect implements common skybox functionality as is used by many of todays games
- * and simulations.  A skybox is a textured cube that encloses the boundaries of the object
- * space of a 3D graphics application or game.  It provides a visual horizon in all camera
+ * and simulations. A skybox is a textured cube that encloses the boundaries of the object
+ * space of a 3D graphics application or game. It provides a visual horizon in all camera
  * directions within 3D object space.
  * <p>
  * GLKSkyboxEffect requires at least an OpenGL ES 2.0 context on iOS and an OpenGL Core
  * Profile context on OS X. This context must be initialized and made current prior to creating
- * or initializing GLKSkyboxEffect instances.  No OpenGL context state settings are
- * modified when a GLKSkyboxEffect instance is created or its properties set.  When
+ * or initializing GLKSkyboxEffect instances. No OpenGL context state settings are
+ * modified when a GLKSkyboxEffect instance is created or its properties set. When
  * -[GLKSkyboxEffect prepareToDraw] is called it modifies the following state:
  * <p>
  * GL_CURRENT_PROGRAM
@@ -65,7 +65,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * It is up to the client application to save/restore/set these state elements as they choose.
  * <p>
  * A cube mapped texture name must be provided to GLKSkyboxEffect to provide it texture
- * data for the 6 faces of the skybox cube.  Care must be taken when preparing the
+ * data for the 6 faces of the skybox cube. Care must be taken when preparing the
  * cubemap texture to prevent seams from appearing at the interfaces between adjacent
  * faces.
  * <p>
@@ -100,10 +100,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * skybox.xSize = xSize;
  * skybox.ySize = ySize;
  * skybox.zSize = zSize;
- * skybox.textureCubeMap = cubeMapName;     // created in step (2) above
+ * skybox.textureCubeMap = cubeMapName; // created in step (2) above
  * <p>
- * (4) For each frame drawn:  Update properties that change per frame.  Synchronize the changed effect state
- * by calling -[GLKSkyboxEffect prepareToDraw].  Draw the the skybox.
+ * (4) For each frame drawn: Update properties that change per frame. Synchronize the changed effect state
+ * by calling -[GLKSkyboxEffect prepareToDraw]. Draw the the skybox.
  * <p>
  * skybox.transform.modelviewMatrix = modelviewMatrix;
  * [skybox prepareToDraw];

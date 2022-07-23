@@ -42,7 +42,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * UNTimeIntervalNotificationTrigger can be scheduled on the device to notify after the time interval, and optionally repeat.
+ * UNTimeIntervalNotificationTrigger can be scheduled on the device to notify after the time interval, and optionally
+ * repeat.
  */
 @Generated
 @Library("UserNotifications")

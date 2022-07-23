@@ -38,7 +38,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Configuration options for an NSURLSession.  When a session is
+ * Configuration options for an NSURLSession. When a session is
  * created, a copy of the configuration object is made - you cannot
  * modify the configuration of a session after it has been created.
  * <p>
@@ -187,7 +187,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     public native NSDictionary<?, ?> HTTPAdditionalHeaders();
 
     /**
-     * Policy for accepting cookies.  This overrides the policy otherwise specified by the cookie storage.
+     * Policy for accepting cookies. This overrides the policy otherwise specified by the cookie storage.
      */
     @Generated
     @Selector("HTTPCookieAcceptPolicy")
@@ -328,7 +328,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * Allows the app to be resumed or launched in the background when tasks in background sessions complete
-     * or when auth is required. This only applies to configurations created with +backgroundSessionConfigurationWithIdentifier:
+     * or when auth is required. This only applies to configurations created with
+     * +backgroundSessionConfigurationWithIdentifier:
      * and the default value is YES.
      * <p>
      * NOTE: macOS apps based on AppKit do not support background launch.
@@ -360,7 +361,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     public native void setHTTPAdditionalHeaders(NSDictionary<?, ?> value);
 
     /**
-     * Policy for accepting cookies.  This overrides the policy otherwise specified by the cookie storage.
+     * Policy for accepting cookies. This overrides the policy otherwise specified by the cookie storage.
      */
     @Generated
     @Selector("setHTTPCookieAcceptPolicy:")
@@ -424,7 +425,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * Allows the app to be resumed or launched in the background when tasks in background sessions complete
-     * or when auth is required. This only applies to configurations created with +backgroundSessionConfigurationWithIdentifier:
+     * or when auth is required. This only applies to configurations created with
+     * +backgroundSessionConfigurationWithIdentifier:
      * and the default value is YES.
      * <p>
      * NOTE: macOS apps based on AppKit do not support background launch.
@@ -443,8 +445,10 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     public native void setSharedContainerIdentifier(String value);
 
     /**
-     * Enable extended background idle mode for any tcp sockets created.    Enabling this mode asks the system to keep the socket open
-     * and delay reclaiming it when the process moves to the background (see https://developer.apple.com/library/ios/technotes/tn2277/_index.html)
+     * Enable extended background idle mode for any tcp sockets created. Enabling this mode asks the system to keep the
+     * socket open
+     * and delay reclaiming it when the process moves to the background (see
+     * https://developer.apple.com/library/ios/technotes/tn2277/_index.html)
      */
     @Generated
     @Selector("setShouldUseExtendedBackgroundIdleMode:")
@@ -465,14 +469,16 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     public native void setTLSMinimumSupportedProtocol(int value);
 
     /**
-     * default timeout for requests.  This will cause a timeout if no data is transmitted for the given timeout value, and is reset whenever data is transmitted.
+     * default timeout for requests. This will cause a timeout if no data is transmitted for the given timeout value,
+     * and is reset whenever data is transmitted.
      */
     @Generated
     @Selector("setTimeoutIntervalForRequest:")
     public native void setTimeoutIntervalForRequest(double value);
 
     /**
-     * default timeout for requests.  This will cause a timeout if a resource is not able to be retrieved within a given timeout.
+     * default timeout for requests. This will cause a timeout if a resource is not able to be retrieved within a given
+     * timeout.
      */
     @Generated
     @Selector("setTimeoutIntervalForResource:")
@@ -502,29 +508,33 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     public native String sharedContainerIdentifier();
 
     /**
-     * Enable extended background idle mode for any tcp sockets created.    Enabling this mode asks the system to keep the socket open
-     * and delay reclaiming it when the process moves to the background (see https://developer.apple.com/library/ios/technotes/tn2277/_index.html)
+     * Enable extended background idle mode for any tcp sockets created. Enabling this mode asks the system to keep the
+     * socket open
+     * and delay reclaiming it when the process moves to the background (see
+     * https://developer.apple.com/library/ios/technotes/tn2277/_index.html)
      */
     @Generated
     @Selector("shouldUseExtendedBackgroundIdleMode")
     public native boolean shouldUseExtendedBackgroundIdleMode();
 
     /**
-     * default timeout for requests.  This will cause a timeout if no data is transmitted for the given timeout value, and is reset whenever data is transmitted.
+     * default timeout for requests. This will cause a timeout if no data is transmitted for the given timeout value,
+     * and is reset whenever data is transmitted.
      */
     @Generated
     @Selector("timeoutIntervalForRequest")
     public native double timeoutIntervalForRequest();
 
     /**
-     * default timeout for requests.  This will cause a timeout if a resource is not able to be retrieved within a given timeout.
+     * default timeout for requests. This will cause a timeout if a resource is not able to be retrieved within a given
+     * timeout.
      */
     @Generated
     @Selector("timeoutIntervalForResource")
     public native double timeoutIntervalForResource();
 
     /**
-     * multipath service type to use for connections.  The default is NSURLSessionMultipathServiceTypeNone
+     * multipath service type to use for connections. The default is NSURLSessionMultipathServiceTypeNone
      */
     @Generated
     @Selector("multipathServiceType")
@@ -532,7 +542,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     public native long multipathServiceType();
 
     /**
-     * multipath service type to use for connections.  The default is NSURLSessionMultipathServiceTypeNone
+     * multipath service type to use for connections. The default is NSURLSessionMultipathServiceTypeNone
      */
     @Generated
     @Selector("setMultipathServiceType:")
@@ -596,7 +606,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     public native boolean allowsConstrainedNetworkAccess();
 
     /**
-     * allow request to route over expensive networks.  Defaults to YES.
+     * allow request to route over expensive networks. Defaults to YES.
      */
     @Generated
     @Selector("allowsExpensiveNetworkAccess")
@@ -610,7 +620,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     public native void setAllowsConstrainedNetworkAccess(boolean value);
 
     /**
-     * allow request to route over expensive networks.  Defaults to YES.
+     * allow request to route over expensive networks. Defaults to YES.
      */
     @Generated
     @Selector("setAllowsExpensiveNetworkAccess:")

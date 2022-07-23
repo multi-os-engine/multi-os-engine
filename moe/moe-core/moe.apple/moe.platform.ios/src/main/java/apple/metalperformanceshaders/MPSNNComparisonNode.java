@@ -76,9 +76,9 @@ public class MPSNNComparisonNode extends MPSNNBinaryArithmeticNode {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]   comparisonType
+     * [@property] comparisonType
      * <p>
-     * The comparison type to set on the underlying kernel.  Defaults
+     * The comparison type to set on the underlying kernel. Defaults
      * to MPSNNComparisonTypeEqual.
      */
     @Generated
@@ -154,9 +154,9 @@ public class MPSNNComparisonNode extends MPSNNBinaryArithmeticNode {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   comparisonType
+     * [@property] comparisonType
      * <p>
-     * The comparison type to set on the underlying kernel.  Defaults
+     * The comparison type to set on the underlying kernel. Defaults
      * to MPSNNComparisonTypeEqual.
      */
     @Generated

@@ -80,7 +80,7 @@ public class HKSeriesSample extends HKSample {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]      count
+     * [@property] count
      * <p>
      * The number of individual series datum represented by the receiver and accessible
      * through the appropriate HKQuery series subclass.

@@ -30,7 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Lets you provide relevant shortcut to Siri, for display on the Siri Watch Face.
  * <p>
- * Including relevance information allows Siri to make suggestions for shortcuts that the user might be interested in but has not previously performed.
+ * Including relevance information allows Siri to make suggestions for shortcuts that the user might be interested in
+ * but has not previously performed.
  */
 @Generated
 @Library("Intents")
@@ -149,7 +150,8 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
     /**
      * A collection of relevance information that is attached to the relevant shortcuts.
      * <p>
-     * Providing additional relevance information allows Siri to suggest a shortcut that the user is interested in but has not previously performed.
+     * Providing additional relevance information allows Siri to suggest a shortcut that the user is interested in but
+     * has not previously performed.
      *
      * @see INRelevanceProvider
      */
@@ -168,7 +170,8 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
     /**
      * A collection of relevance information that is attached to the relevant shortcuts.
      * <p>
-     * Providing additional relevance information allows Siri to suggest a shortcut that the user is interested in but has not previously performed.
+     * Providing additional relevance information allows Siri to suggest a shortcut that the user is interested in but
+     * has not previously performed.
      *
      * @see INRelevanceProvider
      */
@@ -194,7 +197,8 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
     /**
      * Customizes the display of the relevant shortcut on the Siri watch face.
      * <p>
-     * By default, the UI for the relevant shortcut can be derivied from the information provided in the @c INShortcut. In certain situations, it may be desirable to override this behavior and provide a custom template.
+     * By default, the UI for the relevant shortcut can be derivied from the information provided in the @c INShortcut.
+     * In certain situations, it may be desirable to override this behavior and provide a custom template.
      *
      * @see INDefaultCardTemplate
      */
@@ -245,7 +249,8 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
     /**
      * Customizes the display of the relevant shortcut on the Siri watch face.
      * <p>
-     * By default, the UI for the relevant shortcut can be derivied from the information provided in the @c INShortcut. In certain situations, it may be desirable to override this behavior and provide a custom template.
+     * By default, the UI for the relevant shortcut can be derivied from the information provided in the @c INShortcut.
+     * In certain situations, it may be desirable to override this behavior and provide a custom template.
      *
      * @see INDefaultCardTemplate
      */
@@ -256,7 +261,8 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
     /**
      * Links the relevant shortcut to a specific WidgetKit widget kind.
      * <p>
-     * When a relevant shortcut is linked to a WidgetKit widget, it hints to the system when to show the widget in a stack.
+     * When a relevant shortcut is linked to a WidgetKit widget, it hints to the system when to show the widget in a
+     * stack.
      */
     @Generated
     @Selector("setWidgetKind:")
@@ -265,7 +271,8 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
     /**
      * Links the relevant shortcut to a specific WidgetKit widget kind.
      * <p>
-     * When a relevant shortcut is linked to a WidgetKit widget, it hints to the system when to show the widget in a stack.
+     * When a relevant shortcut is linked to a WidgetKit widget, it hints to the system when to show the widget in a
+     * stack.
      */
     @Generated
     @Selector("widgetKind")

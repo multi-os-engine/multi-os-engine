@@ -211,8 +211,8 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
      * either more or less data.
      *
      * @return The expected content length of the receiver, or -1 if
-     * there is no expectation that can be arrived at regarding expected
-     * content length.
+     *         there is no expectation that can be arrived at regarding expected
+     *         content length.
      */
     @Generated
     @Selector("expectedContentLength")
@@ -277,7 +277,7 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
      * functions made available in the appropriate framework.
      *
      * @return The name of the text encoding of the receiver, or nil if no
-     * text encoding was specified.
+     *         text encoding was specified.
      */
     @Generated
     @Selector("textEncodingName")

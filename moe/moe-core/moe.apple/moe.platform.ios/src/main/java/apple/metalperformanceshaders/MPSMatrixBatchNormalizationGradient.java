@@ -35,7 +35,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A MPSMatrixBatchNormalizationGradient object computes the results of backpropagating
  * the gradients of a loss function with respect to the outputs of an
- * MPSMatrixBatchNormalization object.  The corresponding properties and data used by
+ * MPSMatrixBatchNormalization object. The corresponding properties and data used by
  * the MPSMatrixBatchNormalizationGradient object should correspond to those used by
  * the forward MPSMatrixBatchNormalization object for which the gradient is being computed.
  */
@@ -96,8 +96,8 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
      * @param device The device for the new MPSKernel. If nil, then use
      *               self.device.
      * @return A pointer to a copy of this MPSKernel. This will fail, returning
-     * nil if the device is not supported. Devices must be
-     * MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     *         nil if the device is not supported. Devices must be
+     *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
     @Generated
     @Owned
@@ -123,15 +123,19 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
      *                                     MPSMatrixBatchNormalization operation.
      * @param inputMatrix                  A matrix containing the inputs to a forward MPSMatrixBatchNormalization
      *                                     operation for which the gradient values are to be computed.
-     * @param meanVector                   A vector containing the batch mean values.  Should contain either the specified
-     *                                     values used to compute the forward result, or the computed values resulting from
+     * @param meanVector                   A vector containing the batch mean values. Should contain either the
+     *                                     specified
+     *                                     values used to compute the forward result, or the computed values resulting
+     *                                     from
      *                                     the forward kernel execution.
-     * @param varianceVector               A vector containing the batch variance values.  Should contain either the specified
-     *                                     values used to compute the forward result, or the computed values resulting from
+     * @param varianceVector               A vector containing the batch variance values. Should contain either the
+     *                                     specified
+     *                                     values used to compute the forward result, or the computed values resulting
+     *                                     from
      *                                     the forward kernel execution.
-     * @param gammaVector                  A vector containing the gamma terms.  Should be the same values as used
+     * @param gammaVector                  A vector containing the gamma terms. Should be the same values as used
      *                                     when computing the forward result.
-     * @param betaVector                   A vector containing the beta terms.  Should be the same values as used when
+     * @param betaVector                   A vector containing the beta terms. Should be the same values as used when
      *                                     computing the forward result.
      * @param resultGradientForDataMatrix  The matrix containing the resulting gradient values.
      * @param resultGradientForGammaVector If non-NULL the vector containing gradients for the gamma
@@ -148,7 +152,7 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
             MPSVector resultGradientForBetaVector);
 
     /**
-     * [@property]   epsilon
+     * [@property] epsilon
      * <p>
      * A small term added to the variance when normalizing the input.
      */
@@ -250,7 +254,7 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   epsilon
+     * [@property] epsilon
      * <p>
      * A small term added to the variance when normalizing the input.
      */
@@ -280,7 +284,7 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
             float parameterC);
 
     /**
-     * [@property]   sourceInputFeatureChannels
+     * [@property] sourceInputFeatureChannels
      * <p>
      * The number of feature channels in the input vectors.
      */
@@ -289,7 +293,7 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     public native void setSourceInputFeatureChannels(@NUInt long value);
 
     /**
-     * [@property]   sourceNumberOfFeatureVectors
+     * [@property] sourceNumberOfFeatureVectors
      * <p>
      * The number of input vectors which make up the input array.
      */
@@ -302,7 +306,7 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   sourceInputFeatureChannels
+     * [@property] sourceInputFeatureChannels
      * <p>
      * The number of feature channels in the input vectors.
      */
@@ -312,7 +316,7 @@ public class MPSMatrixBatchNormalizationGradient extends MPSMatrixBinaryKernel {
     public native long sourceInputFeatureChannels();
 
     /**
-     * [@property]   sourceNumberOfFeatureVectors
+     * [@property] sourceNumberOfFeatureVectors
      * <p>
      * The number of input vectors which make up the input array.
      */

@@ -105,7 +105,8 @@ public class SSReadingList extends NSObject {
      * <p>
      * This class method to obtain the instance of SSReadingList should used instead of direct alloc and init.
      *
-     * @return Returns a pointer to a shared instance of SSReadingList, or nil if access to Reading List is not permitted.
+     * @return Returns a pointer to a shared instance of SSReadingList, or nil if access to Reading List is not
+     *         permitted.
      */
     @Generated
     @Selector("defaultReadingList")

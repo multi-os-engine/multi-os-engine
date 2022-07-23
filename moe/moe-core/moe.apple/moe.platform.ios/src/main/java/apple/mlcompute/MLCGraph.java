@@ -66,18 +66,18 @@ public class MLCGraph extends NSObject {
      * Returns true if the data is successfully associated with input tensors.
      * <p>
      * This function should be used if you execute the forward, gradient and optimizer updates independently.
-     * Before the forward pass is executed, the inputs should be written to device memory.  Similarly, before the
+     * Before the forward pass is executed, the inputs should be written to device memory. Similarly, before the
      * gradient pass is executed, the inputs (typically the initial gradient tensor) should be written to device
-     * memory.  The caller must guarantee the lifetime of the underlying memory of each value of \p inputsData
+     * memory. The caller must guarantee the lifetime of the underlying memory of each value of \p inputsData
      * for the entirety of each corresponding input tensor's lifetime.
      *
      * @param inputsData   The input data to use to write to device memory
      * @param inputTensors The list of tensors to perform writes on
      * @param device       The device
-     * @param batchSize    The batch size.  This should be set to the actual batch size that may be used when we execute
+     * @param batchSize    The batch size. This should be set to the actual batch size that may be used when we execute
      *                     the graph and can be a value less than or equal to the batch size specified in the tensor.
      *                     If set to 0, we use batch size specified in the tensor.
-     * @param synchronous  Whether to execute the copy to the device synchronously.  For performance, asynchronous
+     * @param synchronous  Whether to execute the copy to the device synchronously. For performance, asynchronous
      *                     execution is recommended.
      * @return A Boolean value indicating whether the data is successfully associated with the tensor.
      */
@@ -93,15 +93,15 @@ public class MLCGraph extends NSObject {
      * Returns true if the data is successfully associated with input tensors.
      * <p>
      * This function should be used if you execute the forward, gradient and optimizer updates independently.
-     * Before the forward pass is executed, the inputs should be written to device memory.  Similarly, before the
+     * Before the forward pass is executed, the inputs should be written to device memory. Similarly, before the
      * gradient pass is executed, the inputs (typically the initial gradient tensor) should be written to device
-     * memory.  The caller must guarantee the lifetime of the underlying memory of each value of \p inputsData
+     * memory. The caller must guarantee the lifetime of the underlying memory of each value of \p inputsData
      * for the entirety of each corresponding input tensor's lifetime.
      *
      * @param inputsData   The input data to use to write to device memory
      * @param inputTensors The list of tensors to perform writes on
      * @param device       The device
-     * @param synchronous  Whether to execute the copy to the device synchronously.  For performance, asynchronous
+     * @param synchronous  Whether to execute the copy to the device synchronously. For performance, asynchronous
      *                     execution is recommended.
      * @return A Boolean value indicating whether the data is successfully associated with the tensor.
      */
@@ -234,7 +234,8 @@ public class MLCGraph extends NSObject {
     /**
      * Add a layer to the graph
      * <p>
-     * For variable length sequences of LSTMs/RNNs layers, create an MLCTensor of sortedSequenceLengths and pass it as the last index (i.e. index 2 or 4) of sources. This tensor must of be type MLCDataTypeInt32.
+     * For variable length sequences of LSTMs/RNNs layers, create an MLCTensor of sortedSequenceLengths and pass it as
+     * the last index (i.e. index 2 or 4) of sources. This tensor must of be type MLCDataTypeInt32.
      *
      * @param layer   The layer
      * @param sources A list of source tensors
@@ -247,7 +248,8 @@ public class MLCGraph extends NSObject {
     /**
      * Add a layer to the graph
      * <p>
-     * For variable length sequences of LSTMs/RNNs layers, create an MLCTensor of sortedSequenceLengths and pass it as the last index (i.e. index 2 or 4) of sources. This tensor must of be type MLCDataTypeInt32.
+     * For variable length sequences of LSTMs/RNNs layers, create an MLCTensor of sortedSequenceLengths and pass it as
+     * the last index (i.e. index 2 or 4) of sources. This tensor must of be type MLCDataTypeInt32.
      *
      * @param layer         The layer
      * @param sources       A list of source tensors
@@ -262,7 +264,8 @@ public class MLCGraph extends NSObject {
     /**
      * Add a loss layer to the graph
      * <p>
-     * For variable length sequences of LSTMs/RNNs layers, create an MLCTensor of sortedSequenceLengths and pass it as the last index (i.e. index 2 or 4) of sources. This tensor must of be type MLCDataTypeInt32.
+     * For variable length sequences of LSTMs/RNNs layers, create an MLCTensor of sortedSequenceLengths and pass it as
+     * the last index (i.e. index 2 or 4) of sources. This tensor must of be type MLCDataTypeInt32.
      *
      * @param layer      The loss layer
      * @param lossLabels The loss labels tensor
@@ -306,10 +309,12 @@ public class MLCGraph extends NSObject {
      * Add a scatter layer to the graph
      *
      * @param dimension     The dimension along which to index
-     * @param source        The updates to use with scattering with index positions specified in indices to result tensor
+     * @param source        The updates to use with scattering with index positions specified in indices to result
+     *                      tensor
      * @param indices       The index of elements to scatter
-     * @param copyFrom      The source tensor whose data is  to be first copied to the result tensor
-     * @param reductionType The reduction type applied for all values in source tensor that are scattered to a specific location in the result tensor.
+     * @param copyFrom      The source tensor whose data is to be first copied to the result tensor
+     * @param reductionType The reduction type applied for all values in source tensor that are scattered to a specific
+     *                      location in the result tensor.
      *                      Must be: MLCReductionTypeNone or MLCReductionTypeSum.
      * @return A result tensor
      */
@@ -389,7 +394,7 @@ public class MLCGraph extends NSObject {
      * @param dimensions NSArray<NSNumber *> representing the desired ordering of dimensions
      *                   The dimensions array specifies the input axis source for each output axis, such that the
      *                   K'th element in the dimensions array specifies the input axis source for the K'th axis in the
-     *                   output.  The batch dimension which is typically axis 0 cannot be transposed.
+     *                   output. The batch dimension which is typically axis 0 cannot be transposed.
      * @return A result tensor
      */
     @Generated

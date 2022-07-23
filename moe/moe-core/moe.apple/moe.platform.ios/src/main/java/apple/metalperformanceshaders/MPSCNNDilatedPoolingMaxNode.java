@@ -108,7 +108,8 @@ public class MPSCNNDilatedPoolingMaxNode extends MPSNNFilterNode {
      * Convenience initializer for MPSCNNDilatedPooling nodes with square non-overlapping kernels
      *
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
-     * @param size       kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = dilationRateX = dilationRateY = size
+     * @param size       kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = dilationRateX = dilationRateY
+     *                   = size
      * @return A new MPSNNFilter node for a MPSCNNDilatedPooling kernel.
      */
     @Generated
@@ -177,7 +178,8 @@ public class MPSCNNDilatedPoolingMaxNode extends MPSNNFilterNode {
      * Convenience initializer for MPSCNNDilatedPooling nodes with square non-overlapping kernels
      *
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
-     * @param size       kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = dilationRateX = dilationRateY = size
+     * @param size       kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = dilationRateX = dilationRateY
+     *                   = size
      * @return A new MPSNNFilter node for a MPSCNNDilatedPooling kernel.
      */
     @Generated

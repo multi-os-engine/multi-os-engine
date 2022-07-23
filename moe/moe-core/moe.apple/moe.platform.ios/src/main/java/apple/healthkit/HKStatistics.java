@@ -301,7 +301,8 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * durationForSource:
      * <p>
-     * Returns the duration, as a time-unit compatible quantity, for the given source in the time period represented by the receiver.
+     * Returns the duration, as a time-unit compatible quantity, for the given source in the time period represented by
+     * the receiver.
      * <p>
      * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
      */

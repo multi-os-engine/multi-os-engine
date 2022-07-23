@@ -109,7 +109,7 @@ public class AVAudioSessionPortDescription extends NSObject {
      * processing for two-way voice communication.
      * <p>
      * Applications that use their own proprietary voice processing algorithms should use this property
-     * to decide when to disable processing.  On the other hand, if using Apple's Voice Processing I/O
+     * to decide when to disable processing. On the other hand, if using Apple's Voice Processing I/O
      * unit (subtype kAudioUnitSubType_VoiceProcessingIO), the system will automatically manage this
      * for the application. In particular, ports of type AVAudioSessionPortBluetoothHFP and
      * AVAudioSessionPortCarAudio often have hardware voice processing.
@@ -213,8 +213,8 @@ public class AVAudioSessionPortDescription extends NSObject {
      * Select the preferred data source for this port. The input dataSource parameter must be
      * one of the dataSources exposed by the dataSources property. Setting a nil value will clear the
      * preference. Note: if the port is part of the active audio route, changing the data source will
-     * likely result in a route reconfiguration.  If the port is not part of the active route,
-     * selecting a new data source will not result in an immediate route reconfiguration.  Use
+     * likely result in a route reconfiguration. If the port is not part of the active route,
+     * selecting a new data source will not result in an immediate route reconfiguration. Use
      * AVAudioSession's -setPreferredInput:error: method to activate the port.
      */
     @Generated

@@ -67,21 +67,24 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     public native UIColor backgroundColor();
 
     /**
-     * A specific blur effect to use for the bar background. This effect is composited first when constructing the bar's background.
+     * A specific blur effect to use for the bar background. This effect is composited first when constructing the bar's
+     * background.
      */
     @Generated
     @Selector("backgroundEffect")
     public native UIBlurEffect backgroundEffect();
 
     /**
-     * An image to use for the bar background. This image is composited over the backgroundColor, and resized per the backgroundImageContentMode.
+     * An image to use for the bar background. This image is composited over the backgroundColor, and resized per the
+     * backgroundImageContentMode.
      */
     @Generated
     @Selector("backgroundImage")
     public native UIImage backgroundImage();
 
     /**
-     * The content mode to use when rendering the backgroundImage. Defaults to UIViewContentModeScaleToFill. UIViewContentModeRedraw will be reinterpreted as UIViewContentModeScaleToFill.
+     * The content mode to use when rendering the backgroundImage. Defaults to UIViewContentModeScaleToFill.
+     * UIViewContentModeRedraw will be reinterpreted as UIViewContentModeScaleToFill.
      */
     @Generated
     @Selector("backgroundImageContentMode")
@@ -171,7 +174,10 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     public native UIBarAppearance init();
 
     /**
-     * Constructs a new bar appearance, copying all relevant properties from the given appearance object. This initializer is useful for migrating configuration between UIBarAppearance subclasses. For example, you can initialize a UINavigationBarAppearance with a UIToolbarAppearance instance, and shared attributes will be identical between the two.
+     * Constructs a new bar appearance, copying all relevant properties from the given appearance object. This
+     * initializer is useful for migrating configuration between UIBarAppearance subclasses. For example, you can
+     * initialize a UINavigationBarAppearance with a UIToolbarAppearance instance, and shared attributes will be
+     * identical between the two.
      */
     @Generated
     @Selector("initWithBarAppearance:")
@@ -182,7 +188,8 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     public native UIBarAppearance initWithCoder(NSCoder coder);
 
     /**
-     * Constructs a new bar appearance, targeting the passed-in idiom as a hint. Not all platforms support all available idioms. See the idiom property to determine the resolved idiom.
+     * Constructs a new bar appearance, targeting the passed-in idiom as a hint. Not all platforms support all available
+     * idioms. See the idiom property to determine the resolved idiom.
      */
     @Generated
     @Selector("initWithIdiom:")
@@ -230,28 +237,35 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     public native void setBackgroundColor(UIColor value);
 
     /**
-     * A specific blur effect to use for the bar background. This effect is composited first when constructing the bar's background.
+     * A specific blur effect to use for the bar background. This effect is composited first when constructing the bar's
+     * background.
      */
     @Generated
     @Selector("setBackgroundEffect:")
     public native void setBackgroundEffect(UIBlurEffect value);
 
     /**
-     * An image to use for the bar background. This image is composited over the backgroundColor, and resized per the backgroundImageContentMode.
+     * An image to use for the bar background. This image is composited over the backgroundColor, and resized per the
+     * backgroundImageContentMode.
      */
     @Generated
     @Selector("setBackgroundImage:")
     public native void setBackgroundImage(UIImage value);
 
     /**
-     * The content mode to use when rendering the backgroundImage. Defaults to UIViewContentModeScaleToFill. UIViewContentModeRedraw will be reinterpreted as UIViewContentModeScaleToFill.
+     * The content mode to use when rendering the backgroundImage. Defaults to UIViewContentModeScaleToFill.
+     * UIViewContentModeRedraw will be reinterpreted as UIViewContentModeScaleToFill.
      */
     @Generated
     @Selector("setBackgroundImageContentMode:")
     public native void setBackgroundImageContentMode(@NInt long value);
 
     /**
-     * A color to use for the shadow. Its specific behavior depends on the value of shadowImage. If shadowImage is nil, then the shadowColor is used to color the bar's default shadow; a nil or clearColor shadowColor will result in no shadow. If shadowImage is a template image, then the shadowColor is used to tint the image; a nil or clearColor shadowColor will also result in no shadow. If the shadowImage is not a template image, then it will be rendered regardless of the value of shadowColor.
+     * A color to use for the shadow. Its specific behavior depends on the value of shadowImage. If shadowImage is nil,
+     * then the shadowColor is used to color the bar's default shadow; a nil or clearColor shadowColor will result in no
+     * shadow. If shadowImage is a template image, then the shadowColor is used to tint the image; a nil or clearColor
+     * shadowColor will also result in no shadow. If the shadowImage is not a template image, then it will be rendered
+     * regardless of the value of shadowColor.
      */
     @Generated
     @Selector("setShadowColor:")
@@ -269,7 +283,11 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * A color to use for the shadow. Its specific behavior depends on the value of shadowImage. If shadowImage is nil, then the shadowColor is used to color the bar's default shadow; a nil or clearColor shadowColor will result in no shadow. If shadowImage is a template image, then the shadowColor is used to tint the image; a nil or clearColor shadowColor will also result in no shadow. If the shadowImage is not a template image, then it will be rendered regardless of the value of shadowColor.
+     * A color to use for the shadow. Its specific behavior depends on the value of shadowImage. If shadowImage is nil,
+     * then the shadowColor is used to color the bar's default shadow; a nil or clearColor shadowColor will result in no
+     * shadow. If shadowImage is a template image, then the shadowColor is used to tint the image; a nil or clearColor
+     * shadowColor will also result in no shadow. If the shadowImage is not a template image, then it will be rendered
+     * regardless of the value of shadowColor.
      */
     @Generated
     @Selector("shadowColor")

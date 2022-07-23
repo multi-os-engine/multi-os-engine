@@ -187,12 +187,14 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     public static native SKTileDefinition tileDefinitionWithTextureSize(SKTexture texture, @ByValue CGSize size);
 
     /**
-     * Create an animated tile definition with an array of SKTextures, the specified size, and the length of time each texture should be displayed for in the animation.
+     * Create an animated tile definition with an array of SKTextures, the specified size, and the length of time each
+     * texture should be displayed for in the animation.
      *
      * @param textures       the textures to reference for animated content
      * @param normalTextures the normal textures to use for generating normals for lighting
      * @param size           the size of the tile in points
-     * @param timePerFrame   the duration, in seconds, that each texture in the textures array is displayed before switching to the next texture in the sequence
+     * @param timePerFrame   the duration, in seconds, that each texture in the textures array is displayed before
+     *                       switching to the next texture in the sequence
      */
     @Generated
     @Selector("tileDefinitionWithTextures:normalTextures:size:timePerFrame:")
@@ -201,11 +203,13 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
             @NFloat double timePerFrame);
 
     /**
-     * Create an animated tile definition with an array of SKTextures, the specified size, and the length of time each texture should be displayed for in the animation.
+     * Create an animated tile definition with an array of SKTextures, the specified size, and the length of time each
+     * texture should be displayed for in the animation.
      *
      * @param textures     the textures to reference for animated content
      * @param size         the size of the tile in points
-     * @param timePerFrame the duration, in seconds, that each texture in the textures array is displayed before switching to the next texture in the sequence
+     * @param timePerFrame the duration, in seconds, that each texture in the textures array is displayed before
+     *                     switching to the next texture in the sequence
      */
     @Generated
     @Selector("tileDefinitionWithTextures:size:timePerFrame:")
@@ -228,14 +232,16 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * When set to YES, the tile definition's images will be flipped horizontally (i.e., the left of the image becomes the right). Defaults to NO.
+     * When set to YES, the tile definition's images will be flipped horizontally (i.e., the left of the image becomes
+     * the right). Defaults to NO.
      */
     @Generated
     @Selector("flipHorizontally")
     public native boolean flipHorizontally();
 
     /**
-     * When set to YES, the tile definition's images will be flipped vertically (i.e., the top of the image becomes the bottom). Defaults to NO.
+     * When set to YES, the tile definition's images will be flipped vertically (i.e., the top of the image becomes the
+     * bottom). Defaults to NO.
      */
     @Generated
     @Selector("flipVertically")
@@ -281,12 +287,14 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     public native SKTileDefinition initWithTextureSize(SKTexture texture, @ByValue CGSize size);
 
     /**
-     * Initilize an animated tile definition with an array of SKTextures, the specified size, and the length of time each texture should be displayed for in the animation.
+     * Initilize an animated tile definition with an array of SKTextures, the specified size, and the length of time
+     * each texture should be displayed for in the animation.
      *
      * @param textures       the textures to reference for animated content
      * @param normalTextures the normal textures to use for generating normals for lighting
      * @param size           the size of the tile in points
-     * @param timePerFrame   the duration, in seconds, that each texture in the textures array is displayed before switching to the next texture in the sequence
+     * @param timePerFrame   the duration, in seconds, that each texture in the textures array is displayed before
+     *                       switching to the next texture in the sequence
      */
     @Generated
     @Selector("initWithTextures:normalTextures:size:timePerFrame:")
@@ -294,11 +302,13 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
             NSArray<? extends SKTexture> normalTextures, @ByValue CGSize size, @NFloat double timePerFrame);
 
     /**
-     * Initilize an animated tile definition with an array of SKTextures, the specified size, and the length of time each texture should be displayed for in the animation.
+     * Initilize an animated tile definition with an array of SKTextures, the specified size, and the length of time
+     * each texture should be displayed for in the animation.
      *
      * @param textures     the textures to reference for animated content
      * @param size         the size of the tile in points
-     * @param timePerFrame the duration, in seconds, that each texture in the textures array is displayed before switching to the next texture in the sequence
+     * @param timePerFrame the duration, in seconds, that each texture in the textures array is displayed before
+     *                     switching to the next texture in the sequence
      */
     @Generated
     @Selector("initWithTextures:size:timePerFrame:")
@@ -313,14 +323,19 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     public native String name();
 
     /**
-     * The textures to use for generating normals that lights use to light this tile. These will only be used if the tile is lit by at least one light. Each normal texture corresponds to a texture in the textures property.
+     * The textures to use for generating normals that lights use to light this tile. These will only be used if the
+     * tile is lit by at least one light. Each normal texture corresponds to a texture in the textures property.
      */
     @Generated
     @Selector("normalTextures")
     public native NSArray<? extends SKTexture> normalTextures();
 
     /**
-     * This value is used to determine how likely this tile definition is to be chosen for placement when a SKTileGroupRule has mulitple tile definitions assigned to it. A higher value relative to the other definitions assigned to the rule make it more likely for this definition to be selected; lower values make it less likely. Defaults to 1. When set to 0, the definition will never be chosen as long as there is at least one other definition with a placementWeight above 0.
+     * This value is used to determine how likely this tile definition is to be chosen for placement when a
+     * SKTileGroupRule has mulitple tile definitions assigned to it. A higher value relative to the other definitions
+     * assigned to the rule make it more likely for this definition to be selected; lower values make it less likely.
+     * Defaults to 1. When set to 0, the definition will never be chosen as long as there is at least one other
+     * definition with a placementWeight above 0.
      */
     @Generated
     @Selector("placementWeight")
@@ -328,7 +343,8 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     public native long placementWeight();
 
     /**
-     * The rotation of the tile definition's images can be set in 90 degree increments. Defaults to SKTileDefinitionRotation0.
+     * The rotation of the tile definition's images can be set in 90 degree increments. Defaults to
+     * SKTileDefinitionRotation0.
      */
     @Generated
     @Selector("rotation")
@@ -336,14 +352,16 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     public native long rotation();
 
     /**
-     * When set to YES, the tile definition's images will be flipped horizontally (i.e., the left of the image becomes the right). Defaults to NO.
+     * When set to YES, the tile definition's images will be flipped horizontally (i.e., the left of the image becomes
+     * the right). Defaults to NO.
      */
     @Generated
     @Selector("setFlipHorizontally:")
     public native void setFlipHorizontally(boolean value);
 
     /**
-     * When set to YES, the tile definition's images will be flipped vertically (i.e., the top of the image becomes the bottom). Defaults to NO.
+     * When set to YES, the tile definition's images will be flipped vertically (i.e., the top of the image becomes the
+     * bottom). Defaults to NO.
      */
     @Generated
     @Selector("setFlipVertically:")
@@ -357,21 +375,27 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     public native void setName(String value);
 
     /**
-     * The textures to use for generating normals that lights use to light this tile. These will only be used if the tile is lit by at least one light. Each normal texture corresponds to a texture in the textures property.
+     * The textures to use for generating normals that lights use to light this tile. These will only be used if the
+     * tile is lit by at least one light. Each normal texture corresponds to a texture in the textures property.
      */
     @Generated
     @Selector("setNormalTextures:")
     public native void setNormalTextures(NSArray<? extends SKTexture> value);
 
     /**
-     * This value is used to determine how likely this tile definition is to be chosen for placement when a SKTileGroupRule has mulitple tile definitions assigned to it. A higher value relative to the other definitions assigned to the rule make it more likely for this definition to be selected; lower values make it less likely. Defaults to 1. When set to 0, the definition will never be chosen as long as there is at least one other definition with a placementWeight above 0.
+     * This value is used to determine how likely this tile definition is to be chosen for placement when a
+     * SKTileGroupRule has mulitple tile definitions assigned to it. A higher value relative to the other definitions
+     * assigned to the rule make it more likely for this definition to be selected; lower values make it less likely.
+     * Defaults to 1. When set to 0, the definition will never be chosen as long as there is at least one other
+     * definition with a placementWeight above 0.
      */
     @Generated
     @Selector("setPlacementWeight:")
     public native void setPlacementWeight(@NUInt long value);
 
     /**
-     * The rotation of the tile definition's images can be set in 90 degree increments. Defaults to SKTileDefinitionRotation0.
+     * The rotation of the tile definition's images can be set in 90 degree increments. Defaults to
+     * SKTileDefinitionRotation0.
      */
     @Generated
     @Selector("setRotation:")
@@ -385,14 +409,17 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     public native void setSize(@ByValue CGSize value);
 
     /**
-     * The textures used to draw the tile. Non-animated tiles use only one texture. When more than one texture is present, the tile will swap through them in sequence, showing each for the duration specified in the timePerFrame property. After displaying the last texture in the array, the sequence is repeated from the first texture.
+     * The textures used to draw the tile. Non-animated tiles use only one texture. When more than one texture is
+     * present, the tile will swap through them in sequence, showing each for the duration specified in the timePerFrame
+     * property. After displaying the last texture in the array, the sequence is repeated from the first texture.
      */
     @Generated
     @Selector("setTextures:")
     public native void setTextures(NSArray<? extends SKTexture> value);
 
     /**
-     * The duration, in seconds, that each texture in the textures array is displayed before switching to the next texture in the sequence. Only used when there is more than one texture available.
+     * The duration, in seconds, that each texture in the textures array is displayed before switching to the next
+     * texture in the sequence. Only used when there is more than one texture available.
      */
     @Generated
     @Selector("setTimePerFrame:")
@@ -414,14 +441,17 @@ public class SKTileDefinition extends NSObject implements NSCopying, NSSecureCod
     public native CGSize size();
 
     /**
-     * The textures used to draw the tile. Non-animated tiles use only one texture. When more than one texture is present, the tile will swap through them in sequence, showing each for the duration specified in the timePerFrame property. After displaying the last texture in the array, the sequence is repeated from the first texture.
+     * The textures used to draw the tile. Non-animated tiles use only one texture. When more than one texture is
+     * present, the tile will swap through them in sequence, showing each for the duration specified in the timePerFrame
+     * property. After displaying the last texture in the array, the sequence is repeated from the first texture.
      */
     @Generated
     @Selector("textures")
     public native NSArray<? extends SKTexture> textures();
 
     /**
-     * The duration, in seconds, that each texture in the textures array is displayed before switching to the next texture in the sequence. Only used when there is more than one texture available.
+     * The duration, in seconds, that each texture in the textures array is displayed before switching to the next
+     * texture in the sequence. Only used when there is more than one texture available.
      */
     @Generated
     @Selector("timePerFrame")

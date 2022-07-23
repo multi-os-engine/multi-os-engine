@@ -182,7 +182,9 @@ public class INRelativeReferenceResolutionResult extends INIntentResolutionResul
             @NInt long relativeReferenceToConfirm);
 
     /**
-     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given INRelativeReference. The resolvedValue can be different than the original INRelativeReference. This allows app extensions to apply business logic constraints.
+     * This resolution result is for when the app extension wants to tell Siri to proceed, with a given
+     * INRelativeReference. The resolvedValue can be different than the original INRelativeReference. This allows app
+     * extensions to apply business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
      */
     @Generated

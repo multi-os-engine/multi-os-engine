@@ -79,12 +79,12 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
     /**
      * +---------------------+
      * +-------------+<----|Specified layout size|
-     * |             |     +---------------------+
-     * |  +-------+  |     +--------------------------+
-     * |  |~~~~~~~|  |     |Final size (after         |
-     * |  |~~~~~~~|<-+-----|contentInsets are applied)|
-     * |  +-------+  |     +--------------------------+
-     * |             |
+     * | | +---------------------+
+     * | +-------+ | +--------------------------+
+     * | |~~~~~~~| | |Final size (after |
+     * | |~~~~~~~|<-+-----|contentInsets are applied)|
+     * | +-------+ | +--------------------------+
+     * | |
      * +-------------+
      * <p>
      * Use contentInsets on an item to adjust the final size of the item after layout is computed.
@@ -113,18 +113,18 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
 
     /**
      * +--------+
-     * |  Top   |
+     * | Top |
      * +--------+
      * |
      * |
      * +-------+--------------------------+
-     * |       v                          |
-     * |    +------+                      |
-     * +--------+     |    |~~~~~~|        +--------+    |
-     * |Leading |-----+->  |~~~~~~| <------|Trailing|    |
-     * +--------+     |    |~~~~~~|        +--------+    |
-     * |    +------+                      |
-     * |        ^                         |
+     * | v |
+     * | +------+ |
+     * +--------+ | |~~~~~~| +--------+ |
+     * |Leading |-----+-> |~~~~~~| <------|Trailing| |
+     * +--------+ | |~~~~~~| +--------+ |
+     * | +------+ |
+     * | ^ |
      * +--------+-------------------------+
      * |
      * |
@@ -199,12 +199,12 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
     /**
      * +---------------------+
      * +-------------+<----|Specified layout size|
-     * |             |     +---------------------+
-     * |  +-------+  |     +--------------------------+
-     * |  |~~~~~~~|  |     |Final size (after         |
-     * |  |~~~~~~~|<-+-----|contentInsets are applied)|
-     * |  +-------+  |     +--------------------------+
-     * |             |
+     * | | +---------------------+
+     * | +-------+ | +--------------------------+
+     * | |~~~~~~~| | |Final size (after |
+     * | |~~~~~~~|<-+-----|contentInsets are applied)|
+     * | +-------+ | +--------------------------+
+     * | |
      * +-------------+
      * <p>
      * Use contentInsets on an item to adjust the final size of the item after layout is computed.
@@ -218,18 +218,18 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
 
     /**
      * +--------+
-     * |  Top   |
+     * | Top |
      * +--------+
      * |
      * |
      * +-------+--------------------------+
-     * |       v                          |
-     * |    +------+                      |
-     * +--------+     |    |~~~~~~|        +--------+    |
-     * |Leading |-----+->  |~~~~~~| <------|Trailing|    |
-     * +--------+     |    |~~~~~~|        +--------+    |
-     * |    +------+                      |
-     * |        ^                         |
+     * | v |
+     * | +------+ |
+     * +--------+ | |~~~~~~| +--------+ |
+     * |Leading |-----+-> |~~~~~~| <------|Trailing| |
+     * +--------+ | |~~~~~~| +--------+ |
+     * | +------+ |
+     * | ^ |
      * +--------+-------------------------+
      * |
      * |

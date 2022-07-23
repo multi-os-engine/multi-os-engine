@@ -177,7 +177,7 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
      * <p>
      * Format (including number of components) of the attribute
      * <p>
-     * If the value is MDLVertexFormatInvalid.   Other values of this
+     * If the value is MDLVertexFormatInvalid. Other values of this
      * object will be ignored when setting the MDLVertexDescriptor object
      * in a Mesh. The initial value is MDLVertexFormatInvalid.
      */
@@ -235,7 +235,7 @@ public class MDLVertexAttribute extends NSObject implements NSCopying {
      * <p>
      * Format (including number of components) of the attribute
      * <p>
-     * If the value is MDLVertexFormatInvalid.   Other values of this
+     * If the value is MDLVertexFormatInvalid. Other values of this
      * object will be ignored when setting the MDLVertexDescriptor object
      * in a Mesh. The initial value is MDLVertexFormatInvalid.
      */

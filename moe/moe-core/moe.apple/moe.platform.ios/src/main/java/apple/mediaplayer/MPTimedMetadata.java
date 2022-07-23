@@ -152,7 +152,8 @@ public class MPTimedMetadata extends NSObject {
     public static native long version_static();
 
     /**
-     * A dictionary containing all metadata information associated with this object, which may hold additional key-specific data (see below).
+     * A dictionary containing all metadata information associated with this object, which may hold additional
+     * key-specific data (see below).
      */
     @Deprecated
     @Generated

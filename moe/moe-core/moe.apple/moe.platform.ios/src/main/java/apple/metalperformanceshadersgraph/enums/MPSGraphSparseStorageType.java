@@ -3,13 +3,13 @@ package apple.metalperformanceshadersgraph.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@typedef]    MPSGraphSparseStorageType
+ * [@typedef] MPSGraphSparseStorageType
  * <p>
  * Sparse Storage options in graph
  * <p>
- * [@constant]   MPSGraphSparseStorageCOO                                  COO Storage
- * [@constant]   MPSGraphSparseStorageCSC                                   CSC Storage
- * [@constant]   MPSGraphSparseStorageCSR                                   CSR Storage
+ * [@constant] MPSGraphSparseStorageCOO COO Storage
+ * [@constant] MPSGraphSparseStorageCSC CSC Storage
+ * [@constant] MPSGraphSparseStorageCSR CSR Storage
  */
 @Generated
 public final class MPSGraphSparseStorageType {

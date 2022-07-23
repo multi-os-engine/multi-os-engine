@@ -183,7 +183,7 @@ public class GKStateMachine extends NSObject {
      * [GKState didEnterWithPreviousState:] is called on the new state.
      *
      * @param stateClass the class of the state to switch to
-     * @return YES if state was entered.  NO otherwise.
+     * @return YES if state was entered. NO otherwise.
      */
     @Generated
     @Selector("enterState:")

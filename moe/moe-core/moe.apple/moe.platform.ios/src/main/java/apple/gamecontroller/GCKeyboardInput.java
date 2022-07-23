@@ -26,7 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Keyboard profile. Contains the current state of buttons specified in GCKeyCodes.h.
  * <p>
- * GCKeyboardInput is designed primarly for input polling. For the best text input experience, UIKit/AppKit usage is recommended.
+ * GCKeyboardInput is designed primarly for input polling. For the best text input experience, UIKit/AppKit usage is
+ * recommended.
  */
 @Generated
 @Library("GameController")

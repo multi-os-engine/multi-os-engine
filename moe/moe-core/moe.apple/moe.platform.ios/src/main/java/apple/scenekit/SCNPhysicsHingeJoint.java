@@ -45,7 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * SCNPhysicsHingeJoint
  * <p>
- * SCNPhysicsHingeJoint makes two bodies to move like they are connected by a hinge. It is for example suitable for doors, chains...
+ * SCNPhysicsHingeJoint makes two bodies to move like they are connected by a hinge. It is for example suitable for
+ * doors, chains...
  */
 @Generated
 @Library("SceneKit")
@@ -129,7 +130,8 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
 
     /**
      * Initializes and returns a physics hinge joint.
-     * The hinge attaches body to a specific location in 3d space specified by "anchor" and relative to the node that owns the body. "axis" specifies the axis of rotation for "body".
+     * The hinge attaches body to a specific location in 3d space specified by "anchor" and relative to the node that
+     * owns the body. "axis" specifies the axis of rotation for "body".
      */
     @Generated
     @Selector("jointWithBody:axis:anchor:")
@@ -138,7 +140,8 @@ public class SCNPhysicsHingeJoint extends SCNPhysicsBehavior {
 
     /**
      * Initializes and returns a physics hinge joint.
-     * The hinge attaches bodyA and bodyB on anchorA and anchorB respectively. "axisA" and "axisB" specify the axis of rotation for bodyA and bodyB.
+     * The hinge attaches bodyA and bodyB on anchorA and anchorB respectively. "axisA" and "axisB" specify the axis of
+     * rotation for bodyA and bodyB.
      */
     @Generated
     @Selector("jointWithBodyA:axisA:anchorA:bodyB:axisB:anchorB:")

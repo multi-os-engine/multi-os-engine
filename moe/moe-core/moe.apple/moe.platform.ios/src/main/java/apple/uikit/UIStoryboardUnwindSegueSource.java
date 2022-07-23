@@ -41,7 +41,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Encapsulates the source of a prospective unwind segue.
- * You do not create instances of this class directly. Instead, UIKit creates an instance of this class and sends -allowedChildViewControllersForUnwindingFromSource: to each ancestor of the sourceViewController until it finds a view controller which returns YES from -canPerformUnwindSegueAction:fromViewController:sender:.
+ * You do not create instances of this class directly. Instead, UIKit creates an instance of this class and sends
+ * -allowedChildViewControllersForUnwindingFromSource: to each ancestor of the sourceViewController until it finds a
+ * view controller which returns YES from -canPerformUnwindSegueAction:fromViewController:sender:.
  */
 @Generated
 @Library("UIKit")

@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]       EKRecurrenceFrequency
+ * [@enum] EKRecurrenceFrequency
  * <p>
  * The frequency of a recurrence
  * <p>

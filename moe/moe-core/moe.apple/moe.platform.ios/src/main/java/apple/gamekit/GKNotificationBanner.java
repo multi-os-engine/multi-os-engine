@@ -41,7 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Asynchronously shows a notification banner like the one used for Game Center’s “Welcome Back” message.
- * If a banner is already being displayed, additional banners will be shown in sequence. Use this to notify the user of game events, high scores, completed achievements, etc.
+ * If a banner is already being displayed, additional banners will be shown in sequence. Use this to notify the user of
+ * game events, high scores, completed achievements, etc.
  */
 @Generated
 @Library("GameKit")

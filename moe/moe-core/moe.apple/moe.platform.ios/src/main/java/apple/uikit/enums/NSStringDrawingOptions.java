@@ -34,7 +34,8 @@ public final class NSStringDrawingOptions {
      */
     @Generated @NInt public static final long UsesDeviceMetrics = 0x0000000000000008L;
     /**
-     * Truncates and adds the ellipsis character to the last visible line if the text doesn't fit into the bounds specified. Ignored if NSStringDrawingUsesLineFragmentOrigin is not also set.
+     * Truncates and adds the ellipsis character to the last visible line if the text doesn't fit into the bounds
+     * specified. Ignored if NSStringDrawingUsesLineFragmentOrigin is not also set.
      */
     @Generated @NInt public static final long TruncatesLastVisibleLine = 0x0000000000000020L;
 

@@ -7,8 +7,10 @@ import org.moe.natj.general.ann.NInt;
  * [@enum] APActivationPayloadErrorCode
  * <p>
  * Error code of the NSError object passed in completionHandler for location confirmation.
- * [@constant] APActivationPayloadErrorCodeDisallowed The location confirmation request is disalllowed by user or system; or the code is not acquired by QR/NFC scanning.
- * [@constant] APActivationPayloadErrorCodeDoesNotMatch The payload passed in by the application doesn't match the payload it was launched with.
+ * [@constant] APActivationPayloadErrorCodeDisallowed The location confirmation request is disalllowed by user or
+ * system; or the code is not acquired by QR/NFC scanning.
+ * [@constant] APActivationPayloadErrorCodeDoesNotMatch The payload passed in by the application doesn't match the
+ * payload it was launched with.
  */
 @Generated
 public final class APActivationPayloadErrorCode {

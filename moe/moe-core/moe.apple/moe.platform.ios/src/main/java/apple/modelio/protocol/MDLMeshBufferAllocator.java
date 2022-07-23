@@ -35,7 +35,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * Object for allocating buffers to back vertex and index data
  * <p>
- * Accepted by MDLAsset init method.  Implementor creates objects
+ * Accepted by MDLAsset init method. Implementor creates objects
  * implementing MDLMeshBuffer with memory to be filled with vertex and
  * index data during 3d file loading and parsing.
  */
@@ -71,8 +71,8 @@ public interface MDLMeshBufferAllocator {
      * @param zone Zone from which to allocate the memory
      * @param data Values with which to fill the buffer
      * @param type Type of data to be stored in this buffer
-     * @return An object conforming to the MDLMeshBuffer protocol.  Returns nil the
-     * buffer could not be allocated in the given zone
+     * @return An object conforming to the MDLMeshBuffer protocol. Returns nil the
+     *         buffer could not be allocated in the given zone
      */
     @Generated
     @Selector("newBufferFromZone:data:type:")
@@ -87,13 +87,13 @@ public interface MDLMeshBufferAllocator {
      * <p>
      * An implementing MDLMeshBufferAllocator object may increase the size
      * of the zone if the buffer could not be allocated with the current
-     * zone size.  Alternatively the implementation may return nil if the
+     * zone size. Alternatively the implementation may return nil if the
      * buffer could not be allocated.
      *
      * @param zone Zone from which to allocate the memory
      * @param type Type of data to be stored in this buffer
-     * @return An object conforming to the MDLMeshBuffer protocol.  Returns nil the
-     * buffer could not be allocated in the zone given.
+     * @return An object conforming to the MDLMeshBuffer protocol. Returns nil the
+     *         buffer could not be allocated in the zone given.
      */
     @Generated
     @Selector("newBufferFromZone:length:type:")
@@ -134,7 +134,7 @@ public interface MDLMeshBufferAllocator {
      * Create a zone which can be used to allocate MDLMeshBuffer objects
      * <p>
      * Will create a zone from which MDLMeshBuffer objects can be
-     * allocated.  This will allocate a zone with enough capacity
+     * allocated. This will allocate a zone with enough capacity
      * for each of the buffers with sizes and types specified even taking
      * into any alignment restrictions necessary to use these buffers.
      *

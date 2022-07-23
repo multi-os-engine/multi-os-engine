@@ -44,7 +44,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Mutable Ordered Set     ***************
+ * Mutable Ordered Set ***************
  */
 @Generated
 @Library("Foundation")

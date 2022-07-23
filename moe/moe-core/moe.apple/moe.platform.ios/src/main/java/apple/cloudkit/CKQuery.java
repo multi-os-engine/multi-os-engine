@@ -50,7 +50,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * Only AND compound predicates are allowed.
  * <p>
- * Key names must begin with either an upper or lower case character ([a-zA-Z]) and may be followed by characters, numbers, or underscores ([0-9a-zA-Z_]). Keypaths may only resolve to the currently evaluated object, so the '.' character is not allowed in key names.
+ * Key names must begin with either an upper or lower case character ([a-zA-Z]) and may be followed by characters,
+ * numbers, or underscores ([0-9a-zA-Z_]). Keypaths may only resolve to the currently evaluated object, so the '.'
+ * character is not allowed in key names.
  * <p>
  * A limited subset of classes are allowed as predicate arguments:
  * - NSString
@@ -197,7 +199,8 @@ public class CKQuery extends NSObject implements NSSecureCoding, NSCopying {
     public native CKQuery initWithCoder(NSCoder aDecoder);
 
     /**
-     * Use @code [NSPredicate predicateWithValue:YES] / NSPredicate(value: true) @endcode if you want to query for all records of a given type.
+     * Use @code [NSPredicate predicateWithValue:YES] / NSPredicate(value: true) @endcode if you want to query for all
+     * records of a given type.
      */
     @Generated
     @Selector("initWithRecordType:predicate:")

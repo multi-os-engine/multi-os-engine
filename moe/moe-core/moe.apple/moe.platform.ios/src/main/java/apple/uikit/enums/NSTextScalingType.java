@@ -4,7 +4,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * Supported values for NSTextScalingDocumentAttribute, NSSourceTextScalingDocumentAttribute, NSTargetTextScalingDocumentOption, NSSourceTextScalingDocumentOption
+ * Supported values for NSTextScalingDocumentAttribute, NSSourceTextScalingDocumentAttribute,
+ * NSTargetTextScalingDocumentOption, NSSourceTextScalingDocumentOption
  */
 @Generated
 public final class NSTextScalingType {
@@ -13,7 +14,8 @@ public final class NSTextScalingType {
     }
 
     /**
-     * Font sizes throughout the document should appear visually similar to how they would render on macOS and non-Apple platforms
+     * Font sizes throughout the document should appear visually similar to how they would render on macOS and non-Apple
+     * platforms
      */
     @Generated @NInt public static final long ScalingStandard = 0x0000000000000000L;
     /**

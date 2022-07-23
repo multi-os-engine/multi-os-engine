@@ -8,10 +8,10 @@ import org.moe.natj.general.ann.NUInt;
  * <p>
  * Values for AVAudioSessionInterruptionReasonKey in AVAudioSessionInterruptionNotification's userInfo dictionary.
  * <p>
- * [@var]   AVAudioSessionInterruptionReasonDefault
+ * [@var] AVAudioSessionInterruptionReasonDefault
  * The audio session was interrupted because another session was activated.
  * <p>
- * [@var]   AVAudioSessionInterruptionReasonAppWasSuspended
+ * [@var] AVAudioSessionInterruptionReasonAppWasSuspended
  * The audio session was interrupted due to the app being suspended by the operating sytem.
  * <p>
  * Starting in iOS 10, the system will deactivate the audio session of most apps in response to the
@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
  * deactivated by the system and the notification can only be delivered once the app is running
  * again.
  * <p>
- * [@var]   AVAudioSessionInterruptionReasonBuiltInMicMuted
+ * [@var] AVAudioSessionInterruptionReasonBuiltInMicMuted
  * The audio session was interrupted due to the built-in mic being muted e.g. due to an iPad's Smart Folio being closed.
  */
 @Generated

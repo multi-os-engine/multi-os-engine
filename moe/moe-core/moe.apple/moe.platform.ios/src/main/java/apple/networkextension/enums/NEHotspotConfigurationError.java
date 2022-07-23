@@ -11,13 +11,14 @@ import org.moe.natj.general.ann.NInt;
  * [@const] NEHotspotConfigurationErrorInvalidSSID The given SSID string is invalid.
  * [@const] NEHotspotConfigurationErrorInvalidWPAPassphrase The given WPA/WPA2 Personal passphrase is invalid.
  * [@const] NEHotspotConfigurationErrorInvalidWEPPassphrase The given WEP passphrase is invalid.
- * [@const] NEHotspotConfigurationErrorInvalidEAPSettings  Invalid EAP Settings.
+ * [@const] NEHotspotConfigurationErrorInvalidEAPSettings Invalid EAP Settings.
  * [@const] NEHotspotConfigurationErrorInvalidHS20Settings Invalid Hotspot 2.0 Settings.
  * [@const] NEHotspotConfigurationErrorInvalidHS20DomainName The given Hotspot 2.0 domain name is invalid.
  * [@const] NEHotspotConfigurationErrorUserDenied Failed to get the user's approval to add a new configuration.
  * [@const] NEHotspotConfigurationErrorInternal An internal error was encountered.
  * [@const] NEHotspotConfigurationErrorPending Previous request by the calling application is pending.
- * [@const] NEHotspotConfigurationErrorSystemConfiguration The calling application cannot modify the System(MDM/Carrier) configuration.
+ * [@const] NEHotspotConfigurationErrorSystemConfiguration The calling application cannot modify the System(MDM/Carrier)
+ * configuration.
  * [@const] NEHotspotConfigurationErrorUnknown An unknown configuration error occurred.
  * [@const] NEHotspotConfigurationErrorJoinOnceNotSupported JoinOnce option is not support for EAP configuration.
  * [@const] NEHotspotConfigurationErrorAlreadyAssociated Wi-Fi is already associated.

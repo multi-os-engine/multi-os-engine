@@ -221,7 +221,7 @@ public class MPSGraph extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * Create concat  op and return the result tensor
+     * Create concat op and return the result tensor
      * <p>
      * Concatenate two input tensors along sepecified dimension. Tensors must be broadcast
      * compatible along all other dimensions, and have the same type.
@@ -290,7 +290,8 @@ public class MPSGraph extends NSObject {
     public native MPSGraphTensor constantWithScalarDataType(double scalar, int dataType);
 
     /**
-     * Runs the graph for given feeds to return targetTensor values, ensuring all target operations also executed. This call blocks till execution has completed.
+     * Runs the graph for given feeds to return targetTensor values, ensuring all target operations also executed. This
+     * call blocks till execution has completed.
      *
      * @param operations     Operations maked as control dependency for all ops created inside the dependent block
      * @param dependentBlock MPSGraphControlFlowDependencyBlock which is provided by caller to create dependent ops
@@ -315,7 +316,7 @@ public class MPSGraph extends NSObject {
      * Create Convolution gradient op and return the result tensor
      * <p>
      * Computes the gradient of source input for the forward pass Convolution op with identical parameters.
-     * See discussion of convolution2DWithSourceTensor for more in depth description of  paramters.
+     * See discussion of convolution2DWithSourceTensor for more in depth description of paramters.
      *
      * @param gradient                     Incoming gradient tensor
      * @param weights                      Forward pass weights tensor
@@ -334,7 +335,7 @@ public class MPSGraph extends NSObject {
      * Create Convolution gradient op and return the result tensor
      * <p>
      * Computes the gradient of weights input for the forward pass Convolution op with identical parameters.
-     * See discussion of convolution2DWithSourceTensor for more in depth description of  paramters.
+     * See discussion of convolution2DWithSourceTensor for more in depth description of paramters.
      *
      * @param gradient                     Incoming gradient tensor
      * @param source                       Forward pass source tensor
@@ -358,7 +359,7 @@ public class MPSGraph extends NSObject {
      * Create ConvolutionTranspose gradient op and return the result tensor
      * <p>
      * Computes the gradient of source input for the forward pass ConvolutionTranspose op with identical parameters.
-     * See discussion of convolutionTranspose2DWithSourceTensor for more in depth description of  paramters.
+     * See discussion of convolutionTranspose2DWithSourceTensor for more in depth description of paramters.
      *
      * @param incomingGradient             Incoming gradient tensor
      * @param weights                      Forward pass weights tensor
@@ -377,7 +378,7 @@ public class MPSGraph extends NSObject {
      * Create ConvolutionTranspose gradient op and return the result tensor
      * <p>
      * Computes the gradient of weights input for the forward pass ConvolutionTranspose op with identical parameters.
-     * See discussion of convolutionTranspose2DWithSourceTensor for more in depth description of  paramters.
+     * See discussion of convolutionTranspose2DWithSourceTensor for more in depth description of paramters.
      *
      * @param incomingGradientTensor       Incoming gradient tensor
      * @param source                       Forward pass source tensor
@@ -395,18 +396,27 @@ public class MPSGraph extends NSObject {
     /**
      * Create ConvolutionTranspose op and return the result tensor
      * <p>
-     * Convolution Tranpose op is exactly the same as convolution gradint with respect to input image (convolution2DDataGradient)
-     * Weights tensor and source tensors are interpreted as they are in convolution2DDataGradientWithIncomingGradient. For example
-     * if weightsTensor layout is HWIO, inner most (fastest moving) dimension, denoted by O here should be equal to inputFeatureChannels
+     * Convolution Tranpose op is exactly the same as convolution gradint with respect to input image
+     * (convolution2DDataGradient)
+     * Weights tensor and source tensors are interpreted as they are in convolution2DDataGradientWithIncomingGradient.
+     * For example
+     * if weightsTensor layout is HWIO, inner most (fastest moving) dimension, denoted by O here should be equal to
+     * inputFeatureChannels
      * i.e. number of channels in source tensor
-     * and next fasted moving dimension denoated by I is equal to number of channels in returns (destination) tensor outputFeatureChannels.
-     * TensorFlow interprets the weights tensor same way excpet that it states weights are in HWOI format. We dont define another weights format enum
+     * and next fasted moving dimension denoated by I is equal to number of channels in returns (destination) tensor
+     * outputFeatureChannels.
+     * TensorFlow interprets the weights tensor same way excpet that it states weights are in HWOI format. We dont
+     * define another weights format enum
      * rather we reinterpret HWIO just like TensorFlow does for gradient with data.
-     * Normally in auto encoder, convoluton transpose is associated with regular convolution i.e. convolution downsamples by stride s
+     * Normally in auto encoder, convoluton transpose is associated with regular convolution i.e. convolution
+     * downsamples by stride s
      * and convolution tranpose upsamples by factor s.
-     * In that case, convolution transpose can map same source size to multiple destination sizes. The relationship between sourceWidth and destinationWidth is
-     * (sourceWidth - 1) * stride + 1 + (kernelWidth - 1) * dilationRate <= destinationWidth + paddingLeft + paddingRight
-     * so there are stride -1 destinationWidth that give same sourceWidth. In order to disambiguate, outputShape parameter is used.
+     * In that case, convolution transpose can map same source size to multiple destination sizes. The relationship
+     * between sourceWidth and destinationWidth is
+     * (sourceWidth - 1) * stride + 1 + (kernelWidth - 1) * dilationRate <= destinationWidth + paddingLeft +
+     * paddingRight
+     * so there are stride -1 destinationWidth that give same sourceWidth. In order to disambiguate, outputShape
+     * parameter is used.
      * This is what TensorFlow does.
      * PyTourch takes additional outputPadding that is applied to destination size.
      *
@@ -454,17 +464,18 @@ public class MPSGraph extends NSObject {
             String name);
 
     /**
-     * *  @abstract   Create 3d depthwise convolution operation and return the result tensor.
-     * *  @discussion Just like depthwise convolution2d, but in three dimensions. Different layouts are supported by using
-     * *              the @code channelDimensionIndex @endcode property. If your weights need a different layout
-     * *              add a permute operation on them before this operation.
+     * * @abstract Create 3d depthwise convolution operation and return the result tensor.
+     * * @discussion Just like depthwise convolution2d, but in three dimensions. Different layouts are supported by
+     * using
+     * * the @code channelDimensionIndex @endcode property. If your weights need a different layout
+     * * add a permute operation on them before this operation.
      * <p>
-     * *  @param      source              3d Image source as tensor - must be at least rank=4 (CDHW when channelDimensionIndex = -4).
-     * *  @param      weights             Weights tensor, must be rank=4 - axes are interpreted as CDHW when channelDimensionIndex = -4 .
-     * *  @param      descriptor      Specifies strides, dilation rates and paddings.
-     * *  @param      name                    The name for the operation.
+     * * @param source 3d Image source as tensor - must be at least rank=4 (CDHW when channelDimensionIndex = -4).
+     * * @param weights Weights tensor, must be rank=4 - axes are interpreted as CDHW when channelDimensionIndex = -4 .
+     * * @param descriptor Specifies strides, dilation rates and paddings.
+     * * @param name The name for the operation.
      * *
-     * *  @return     A valid MPSGraphTensor object
+     * * @return A valid MPSGraphTensor object
      */
     @Generated
     @Selector("depthwiseConvolution3DWithSourceTensor:weightsTensor:descriptor:name:")
@@ -568,15 +579,18 @@ public class MPSGraph extends NSObject {
     public native MPSGraphTensor floorWithTensorName(MPSGraphTensor tensor, String name);
 
     /**
-     * Adds a forLoop operation, The lower and upper bounds specify a half-open range: the range includes the lower bound but does not include the upper bound.
+     * Adds a forLoop operation, The lower and upper bounds specify a half-open range: the range includes the lower
+     * bound but does not include the upper bound.
      *
-     * @param lowerBound           lowerBound value of the loop, this is a scalar tensor, this is the index the loop will start with
+     * @param lowerBound           lowerBound value of the loop, this is a scalar tensor, this is the index the loop
+     *                             will start with
      * @param upperBound           upperBound value of the loop, this is a scalar tensor
      * @param step                 step value of the loop, this is a scalar tensor and must be positive
      * @param initialBodyArguments initial set of iteration arguments passed to the bodyBlock of the for loop
      * @param body                 bodyBlock, this will execute the body of the forLoop
      * @param name                 name of operation
-     * @return A valid MPSGraphTensor array with same count and corresponding elementTypes as initialIterationArguments and return types of the forLoop
+     * @return A valid MPSGraphTensor array with same count and corresponding elementTypes as initialIterationArguments
+     *         and return types of the forLoop
      */
     @Generated
     @Selector("forLoopWithLowerBound:upperBound:step:initialBodyArguments:body:name:")
@@ -599,9 +613,11 @@ public class MPSGraph extends NSObject {
      *
      * @param numberOfIterations   tensor with number of iterations the loop will execute
      * @param initialBodyArguments initial set of iteration arguments passed to the bodyBlock of the for loop
-     * @param body                 bodyBlock, this will execute the body of the forLoop, index will go from 0 to numberOfIterations-1
+     * @param body                 bodyBlock, this will execute the body of the forLoop, index will go from 0 to
+     *                             numberOfIterations-1
      * @param name                 name of operation
-     * @return A valid MPSGraphTensor array with same count and corresponding elementTypes as initialIterationArguments and return types of the forLoop
+     * @return A valid MPSGraphTensor array with same count and corresponding elementTypes as initialIterationArguments
+     *         and return types of the forLoop
      */
     @Generated
     @Selector("forLoopWithNumberOfIterations:initialBodyArguments:body:name:")
@@ -663,7 +679,7 @@ public class MPSGraph extends NSObject {
      * P = res.rank
      * Q = inds.rank
      * <p>
-     * res[p_{0},...p_{axis-1},                               i_{B},...,i_{Q}, ...,p_{axis+1},...,p{U-1}] =
+     * res[p_{0},...p_{axis-1}, i_{B},...,i_{Q}, ...,p_{axis+1},...,p{U-1}] =
      * updates[p_{0},...p_{axis-1}, indices[p_{0},...,p_{B-1},i_{B},...,i_{Q}, ...,p_{axis+1},...,p{U-1}]
      * <p>
      * [@endcode]
@@ -695,7 +711,8 @@ public class MPSGraph extends NSObject {
      * @param primaryTensor tensor to be differentiated (numerator)
      * @param tensors       tensors to do the differentiation with (denominator)
      * @param name          name for the gradient operation
-     * @return A valid MPSGraphTensor dictionary object containing partial derivative d(primaryTensor)/d(secondaryTensor) for each tensor as key
+     * @return A valid MPSGraphTensor dictionary object containing partial derivative
+     *         d(primaryTensor)/d(secondaryTensor) for each tensor as key
      */
     @Generated
     @Selector("gradientForPrimaryTensor:withTensors:name:")
@@ -728,8 +745,8 @@ public class MPSGraph extends NSObject {
      * @param thenBlock       If predicate is true operations in this block are executed
      * @param elseBlock       If predicate is false operations in this block are executed
      * @param name            name of operation
-     * @return results  If no error, the tensors returned by user. If not empty, user must define both then/else block,
-     * both should have same number of arguments and each corresponding argument should have same elementTypes.
+     * @return results If no error, the tensors returned by user. If not empty, user must define both then/else block,
+     *         both should have same number of arguments and each corresponding argument should have same elementTypes.
      */
     @Generated
     @Selector("ifWithPredicateTensor:thenBlock:elseBlock:name:")
@@ -866,7 +883,7 @@ public class MPSGraph extends NSObject {
             MPSGraphTensor secondaryTensor, String name);
 
     /**
-     * Create  MatMul op and return the result tensor, it supports broadcasting as well
+     * Create MatMul op and return the result tensor, it supports broadcasting as well
      * <p>
      * [@code]
      * resultTensor = matmul(primaryTensor, secondaryTensor)
@@ -903,7 +920,8 @@ public class MPSGraph extends NSObject {
             MPSGraphPooling4DOpDescriptor descriptor, String name);
 
     /**
-     * Create Maximum op and return the result tensor, it supports broadcasting as well. If any of the operands is NaN, NaN is returned
+     * Create Maximum op and return the result tensor, it supports broadcasting as well. If any of the operands is NaN,
+     * NaN is returned
      * <p>
      * [@code]
      * resultTensor = isNaN(primaryTensor) || isNan(secondaryTensor) ? NaN : max(primaryTensor, secondaryTensor)
@@ -927,7 +945,8 @@ public class MPSGraph extends NSObject {
     /**
      * Create a mean op and return the result tensor
      *
-     * @param axes A list of axes over which to perform the reduction. The order of dimensions goes from the slowest moving at axis=0 to the fastest moving dimension.
+     * @param axes A list of axes over which to perform the reduction. The order of dimensions goes from the slowest
+     *             moving at axis=0 to the fastest moving dimension.
      * @param name name for the placeholder operation
      * @return A valid MPSGraphTensor object.
      */
@@ -937,7 +956,8 @@ public class MPSGraph extends NSObject {
             String name);
 
     /**
-     * Create Minimum op and return the result tensor, it supports broadcasting as well. If any of the operands is NaN, NaN is returned
+     * Create Minimum op and return the result tensor, it supports broadcasting as well. If any of the operands is NaN,
+     * NaN is returned
      * <p>
      * [@code]
      * resultTensor = isNaN(primaryTensor) || isNan(secondaryTensor) ? NaN : min(primaryTensor, secondaryTensor)
@@ -1014,12 +1034,14 @@ public class MPSGraph extends NSObject {
     /**
      * Create a batch normalization op and return the result tensor
      * <p>
-     * The mean and variance tensors should be outputs of meanWithTensor:axes:name and varianceWithTensor:meanTensor:axes:name.
+     * The mean and variance tensors should be outputs of meanWithTensor:axes:name and
+     * varianceWithTensor:meanTensor:axes:name.
      * Use the axes parameter to achieve different types of normalizations.
      * For example (assuming your data is in NxHxWxC format)
      * Batch normalization: axes = [0, 1, 2]
      * Instance normalization: axes = [1, 2]
-     * Shapes for gamma and beta must match the input data along at least one dimension and will be broadcast along the rest.
+     * Shapes for gamma and beta must match the input data along at least one dimension and will be broadcast along the
+     * rest.
      * For batch normalization, gamma and beta would typically be 1x1x1xC i.e. one value per channel.
      *
      * @param mean     mean
@@ -1051,7 +1073,7 @@ public class MPSGraph extends NSObject {
             @NUInt long depth, @NUInt long axis, int dataType, String name);
 
     /**
-     * Create  oneHot op and return the result tensor
+     * Create oneHot op and return the result tensor
      * <p>
      * Creates a tensor of rank equal to the indicesTensor rank + 1.
      * A new axis is inserted at the axis specified, or the minor axis if axis is -1.
@@ -1064,9 +1086,11 @@ public class MPSGraph extends NSObject {
      *                      Defaults to -1, the minor axis
      * @param dataType      MPSDataType of the result tensor
      *                      Defaults to MPSDataTypeFloat
-     * @param onValue       The value for indices designated by the indicesTensor. This value must match the specified data type.
+     * @param onValue       The value for indices designated by the indicesTensor. This value must match the specified
+     *                      data type.
      *                      Defaults to 1.0f
-     * @param offValue      The value for indices not designated by the indicesTensor. This value must match the specified data type.
+     * @param offValue      The value for indices not designated by the indicesTensor. This value must match the
+     *                      specified data type.
      *                      Defaults to 0.0f
      * @param name          Name for the operation
      * @return A valid MPSGraphTensor object.
@@ -1098,7 +1122,7 @@ public class MPSGraph extends NSObject {
             String name);
 
     /**
-     * [@property]   options
+     * [@property] options
      * <p>
      * options for the graph, default value is MPSGraphOptionsDefault
      */
@@ -1107,7 +1131,7 @@ public class MPSGraph extends NSObject {
     public native long options();
 
     /**
-     * [@property]   placeholderTensors
+     * [@property] placeholderTensors
      * <p>
      * an array of all the placeholderTensors
      */
@@ -1145,7 +1169,7 @@ public class MPSGraph extends NSObject {
     public native MPSGraphTensor reciprocalWithTensorName(MPSGraphTensor tensor, String name);
 
     /**
-     * Create  reduction argMax op and return the result tensor.
+     * Create reduction argMax op and return the result tensor.
      *
      * @param tensor input tensor
      * @param axis   axis of reduction
@@ -1158,7 +1182,7 @@ public class MPSGraph extends NSObject {
             String name);
 
     /**
-     * Create  reduction argMin op and return the result tensor.
+     * Create reduction argMin op and return the result tensor.
      *
      * @param tensor input tensor
      * @param axis   axis of reduction
@@ -1171,7 +1195,7 @@ public class MPSGraph extends NSObject {
             String name);
 
     /**
-     * Create  reduction max op and return the result tensor.
+     * Create reduction max op and return the result tensor.
      *
      * @param tensor input tensor
      * @param axes   axes of reduction
@@ -1184,7 +1208,7 @@ public class MPSGraph extends NSObject {
             NSArray<? extends NSNumber> axes, String name);
 
     /**
-     * Create  reduction max op and return the result tensor.
+     * Create reduction max op and return the result tensor.
      *
      * @param tensor input tensor
      * @param axis   axis of reduction
@@ -1197,7 +1221,7 @@ public class MPSGraph extends NSObject {
             String name);
 
     /**
-     * Create  reduction min op and return the result tensor.
+     * Create reduction min op and return the result tensor.
      *
      * @param tensor input tensor
      * @param axes   axes of reduction
@@ -1210,7 +1234,7 @@ public class MPSGraph extends NSObject {
             NSArray<? extends NSNumber> axes, String name);
 
     /**
-     * Create  reduction minimum op and return the result tensor.
+     * Create reduction minimum op and return the result tensor.
      *
      * @param tensor input tensor
      * @param axis   axis of reduction
@@ -1223,7 +1247,7 @@ public class MPSGraph extends NSObject {
             String name);
 
     /**
-     * Create  reduction product op and return the result tensor.
+     * Create reduction product op and return the result tensor.
      *
      * @param tensor input tensor
      * @param axes   axes of reduction
@@ -1236,7 +1260,7 @@ public class MPSGraph extends NSObject {
             NSArray<? extends NSNumber> axes, String name);
 
     /**
-     * Create  reduction product op and return the result tensor.
+     * Create reduction product op and return the result tensor.
      *
      * @param tensor input tensor
      * @param axis   axis of reduction
@@ -1249,7 +1273,7 @@ public class MPSGraph extends NSObject {
             String name);
 
     /**
-     * Create  reduction sum op and return the result tensor.
+     * Create reduction sum op and return the result tensor.
      *
      * @param tensor input tensor
      * @param axes   axes of reduction
@@ -1262,7 +1286,7 @@ public class MPSGraph extends NSObject {
             String name);
 
     /**
-     * Create  reduction sum op and return the result tensor.
+     * Create reduction sum op and return the result tensor.
      *
      * @param tensor input tensor
      * @param axis   axis of reduction
@@ -1319,9 +1343,11 @@ public class MPSGraph extends NSObject {
      * @param imagesTensor Tensor containing input images.
      * @param size         1D Int32 or Int64 tensor. A 2-element shape as [newHeight, newWidth]
      * @param mode         The resampling mode to use.
-     * @param centerResult Controls if the result image is centered on the input image. When NO, the result will have the top left corner aligned
+     * @param centerResult Controls if the result image is centered on the input image. When NO, the result will have
+     *                     the top left corner aligned
      * @param alignCorners When YES, the result image will have the same value as the input image in the corners
-     * @param layout       Specifies what layout the provided tensor is in. The returned tensor will follow the same layout.
+     * @param layout       Specifies what layout the provided tensor is in. The returned tensor will follow the same
+     *                     layout.
      *                     Valid layouts are NHWC, NCHW, HWC, CHW, and HW.
      * @param name         The name for the operation
      * @return A valid MPSGraphTensor object
@@ -1341,9 +1367,11 @@ public class MPSGraph extends NSObject {
      * @param gradient     Incoming gradient tensor
      * @param input        Forward pass input tensor
      * @param mode         The resampling mode to use.
-     * @param centerResult Controls if the result image is centered on the input image. When NO, the result will have the top left corner aligned
+     * @param centerResult Controls if the result image is centered on the input image. When NO, the result will have
+     *                     the top left corner aligned
      * @param alignCorners When YES, the result image will have the same value as the input image in the corners
-     * @param layout       Specifies what layout the provided tensor is in. The returned tensor will follow the same layout.
+     * @param layout       Specifies what layout the provided tensor is in. The returned tensor will follow the same
+     *                     layout.
      *                     Valid layouts are NHWC, NCHW, HWC, CHW, and HW.
      * @param name         The name for the operation
      * @return A valid MPSGraphTensor object
@@ -1423,7 +1451,8 @@ public class MPSGraph extends NSObject {
     /**
      * Create ScatterND op and return the result tensor
      * <p>
-     * Scatters the slices in updatesTensor to the result tensor along the indices in indicesTensor, on top of dataTensor.
+     * Scatters the slices in updatesTensor to the result tensor along the indices in indicesTensor, on top of
+     * dataTensor.
      * The scatter is defined as
      * [@code]
      * B = batchDims
@@ -1433,9 +1462,11 @@ public class MPSGraph extends NSObject {
      * K = inds.shape[-1]
      * index_slice = indices[i_{b0},...,i_{bB},i_{0},..,i_{Q-1}]
      * res[...] = data[...]
-     * res[i_{b0},...,i_{bB},index_slice[0],...,index_slice[K-1]] += updates[i_{b0},...,i_{bB},i_{0},...,i_{Q-1}] // Note += is used but this depends on mode
+     * res[i_{b0},...,i_{bB},index_slice[0],...,index_slice[K-1]] += updates[i_{b0},...,i_{bB},i_{0},...,i_{Q-1}] //
+     * Note += is used but this depends on mode
      * [@endcode]
-     * Collsions will be updated according to mode, and slices not set by indices are set to 0. The tensors have the following shape requirements
+     * Collsions will be updated according to mode, and slices not set by indices are set to 0. The tensors have the
+     * following shape requirements
      * [@code]
      * K <= P
      * U = (P-K) + Q-1
@@ -1461,13 +1492,15 @@ public class MPSGraph extends NSObject {
     /**
      * Create Scatter op and return the result tensor
      * <p>
-     * Scatters the slices in updatesTensor to the result tensor along the indices in indicesTensor, on top of dataTensor.
+     * Scatters the slices in updatesTensor to the result tensor along the indices in indicesTensor, on top of
+     * dataTensor.
      * The scatter is defined as
      * [@code]
      * U = updates.rank
      * P = res.rank
      * res[...] = data[...]
-     * res[i_{0},...,i_{axis-1},indices[i_{axis}],i_{axis+1},...,i_{U-1}] += updates[i_{0},...,i_{axis-1},i_{axis},i_{axis+1},...,i_{U-1}] // Note += is used but this depends on mode
+     * res[i_{0},...,i_{axis-1},indices[i_{axis}],i_{axis+1},...,i_{U-1}] +=
+     * updates[i_{0},...,i_{axis-1},i_{axis},i_{axis+1},...,i_{U-1}] // Note += is used but this depends on mode
      * [@endcode]
      * Collsions will be updated according to mode. The tensors have the following shape requirements
      * [@code]
@@ -1475,7 +1508,7 @@ public class MPSGraph extends NSObject {
      * indices.rank = 1
      * data.shape = res.shape
      * updates.shape[0:axis-1] = res.shape[0:axis-1]
-     * updates.shape[axis]     = indices.shape[0]
+     * updates.shape[axis] = indices.shape[0]
      * updates.shape[axis+1:U] = res.shape[0:P]
      * [@endcode]
      *
@@ -1499,7 +1532,7 @@ public class MPSGraph extends NSObject {
             String name);
 
     /**
-     * [@property]   options
+     * [@property] options
      * <p>
      * options for the graph, default value is MPSGraphOptionsDefault
      */
@@ -1725,7 +1758,7 @@ public class MPSGraph extends NSObject {
      * variable = variable - (learningRate * g)
      * <p>
      * where,
-     * g    is gradient of error wrt variable
+     * g is gradient of error wrt variable
      */
     @Generated
     @Selector("stochasticGradientDescentWithLearningRateTensor:valuesTensor:gradientTensor:name:")
@@ -1847,7 +1880,8 @@ public class MPSGraph extends NSObject {
     /**
      * Create a variance op and return the result tensor
      *
-     * @param axes A list of axes over which to perform the reduction. Tthe order of dimensions goes from the slowest moving at axis=0 to the fastest moving dimension.
+     * @param axes A list of axes over which to perform the reduction. Tthe order of dimensions goes from the slowest
+     *             moving at axis=0 to the fastest moving dimension.
      * @param name name for the placeholder operation
      * @return A valid MPSGraphTensor object.
      */
@@ -1859,7 +1893,8 @@ public class MPSGraph extends NSObject {
     /**
      * Create a variance op when you already have a precomputed mean and return the result tensor
      *
-     * @param axes A list of axes over which to perform the reduction such that the order of dimensions goes from the slowest moving at axis=0 to the fastest moving dimension.
+     * @param axes A list of axes over which to perform the reduction such that the order of dimensions goes from the
+     *             slowest moving at axis=0 to the fastest moving dimension.
      * @param name name for the placeholder operation
      * @return A valid MPSGraphTensor object.
      */
@@ -1876,11 +1911,14 @@ public class MPSGraph extends NSObject {
     /**
      * Adds a whileLoop operation
      *
-     * @param initialInputs inputTensors to the whileBeforeBlock, for the 1st iteration will be same as initialInputs passed to the whileLoop
-     * @param before        beforeBlock, this will be run first and then call the afterBlock with results or return results from the loop
+     * @param initialInputs inputTensors to the whileBeforeBlock, for the 1st iteration will be same as initialInputs
+     *                      passed to the whileLoop
+     * @param before        beforeBlock, this will be run first and then call the afterBlock with results or return
+     *                      results from the loop
      * @param after         afterBlock, this will execute after the condition evaluation
      * @param name          name of operation
-     * @return A valid MPSGraphTensor array with results returned from the conditionBlock depending on the predicateTensor
+     * @return A valid MPSGraphTensor array with results returned from the conditionBlock depending on the
+     *         predicateTensor
      */
     @Generated
     @Selector("whileWithInitialInputs:before:after:name:")
@@ -1929,9 +1967,11 @@ public class MPSGraph extends NSObject {
      * <p>
      * A stateTensor generated with this API can be used in MPSGraph Random APIs which accept a stateTensor. The
      * updated stateTensor is returned alongside the random values, and can be fed to the following random layer. In
-     * most use cases, a stateTensor should only need to be initialized once at the start of the graph. A stateTensor can
+     * most use cases, a stateTensor should only need to be initialized once at the start of the graph. A stateTensor
+     * can
      * be set as a target tensor of an MPSGraph execution to obtain a stateTensor serialized as an NDArray. This can be
-     * used as input to a placeholder in the graph to avoid ever needing to have a state intilization layer in an MPSGraph.
+     * used as input to a placeholder in the graph to avoid ever needing to have a state intilization layer in an
+     * MPSGraph.
      * This can allow for a continued stream through multiple executions of a single MPSGraph by having the final
      * stateTensor as a target tensor passed into the following MPSGraph execution as a placeholder input. This may be
      * helpful for training graphs in particular.
@@ -1985,7 +2025,7 @@ public class MPSGraph extends NSObject {
             MPSGraphTensor shapeTensor, MPSGraphTensor state, String name);
 
     /**
-     * Create  reduction max propagate NaN op and return the result tensor.
+     * Create reduction max propagate NaN op and return the result tensor.
      *
      * @param tensor input tensor
      * @param axes   axes of reduction
@@ -1998,7 +2038,7 @@ public class MPSGraph extends NSObject {
             NSArray<? extends NSNumber> axes, String name);
 
     /**
-     * Create  reduction max propagate NaN op and return the result tensor.
+     * Create reduction max propagate NaN op and return the result tensor.
      *
      * @param tensor input tensor
      * @param axis   axis of reduction
@@ -2011,7 +2051,7 @@ public class MPSGraph extends NSObject {
             String name);
 
     /**
-     * Create  reduction min propagate NaN  op and return the result tensor.
+     * Create reduction min propagate NaN op and return the result tensor.
      *
      * @param tensor input tensor
      * @param axes   axes of reduction
@@ -2024,7 +2064,7 @@ public class MPSGraph extends NSObject {
             NSArray<? extends NSNumber> axes, String name);
 
     /**
-     * Create  reduction min propagate NaN op and return the result tensor.
+     * Create reduction min propagate NaN op and return the result tensor.
      *
      * @param tensor input tensor
      * @param axis   axis of reduction

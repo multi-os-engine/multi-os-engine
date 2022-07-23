@@ -156,11 +156,14 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
     /**
      * associatedMediaSelectionOptionInMediaSelectionGroup
      * <p>
-     * If a media selection option in another group is associated with the specified option, returns a reference to the associated option.
+     * If a media selection option in another group is associated with the specified option, returns a reference to the
+     * associated option.
      * <p>
-     * Audible media selection options often have associated legible media selection options; in particular, audible options are typically associated with forced-only subtitle options with the same locale. See AVMediaCharacteristicContainsOnlyForcedSubtitles in AVMediaFormat.h for a discussion of forced-only subtitles.
+     * Audible media selection options often have associated legible media selection options; in particular, audible
+     * options are typically associated with forced-only subtitle options with the same locale. See
+     * AVMediaCharacteristicContainsOnlyForcedSubtitles in AVMediaFormat.h for a discussion of forced-only subtitles.
      *
-     * @param        mediaSelectionGroup A media selection group in which an associated option is to be sought.
+     * @param mediaSelectionGroup A media selection group in which an associated option is to be sought.
      * @return An instance of AVMediaSelectionOption.
      */
     @Generated
@@ -169,9 +172,10 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
             AVMediaSelectionGroup mediaSelectionGroup);
 
     /**
-     * [@property]		availableMetadataFormats
+     * [@property] availableMetadataFormats
      * <p>
-     * Provides an NSArray of NSStrings, each representing a metadata format that contains metadata associated with the option (e.g. ID3, iTunes metadata, etc.).
+     * Provides an NSArray of NSStrings, each representing a metadata format that contains metadata associated with the
+     * option (e.g. ID3, iTunes metadata, etc.).
      * <p>
      * Metadata formats are defined in AVMetadataFormat.h.
      */
@@ -180,20 +184,24 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
     public native NSArray<String> availableMetadataFormats();
 
     /**
-     * [@property]		commonMetadata
+     * [@property] commonMetadata
      * <p>
      * Provides an array of AVMetadataItems for each common metadata key for which a value is available.
      * <p>
-     * The array of AVMetadataItems can be filtered according to language via +[AVMetadataItem metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:], according to locale via +[AVMetadataItem metadataItemsFromArray:withLocale:],
+     * The array of AVMetadataItems can be filtered according to language via +[AVMetadataItem
+     * metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:], according to locale via +[AVMetadataItem
+     * metadataItemsFromArray:withLocale:],
      * or according to key via +[AVMetadataItem metadataItemsFromArray:withKey:keySpace:].
      * Example: to obtain the name (or title) of a media selection option in any of the user's preferred languages.
      * <p>
      * NSString *title = nil;
-     * NSArray *titles = [AVMetadataItem metadataItemsFromArray:[mediaSelectionOption commonMetadata] withKey:AVMetadataCommonKeyTitle keySpace:AVMetadataKeySpaceCommon];
+     * NSArray *titles = [AVMetadataItem metadataItemsFromArray:[mediaSelectionOption commonMetadata]
+     * withKey:AVMetadataCommonKeyTitle keySpace:AVMetadataKeySpaceCommon];
      * if ([titles count] > 0)
      * {
      * // Try to get a title that matches one of the user's preferred languages.
-     * NSArray *titlesForPreferredLanguages = [AVMetadataItem metadataItemsFromArray:titles filteredAndSortedAccordingToPreferredLanguages:[NSLocale preferredLanguages]];
+     * NSArray *titlesForPreferredLanguages = [AVMetadataItem metadataItemsFromArray:titles
+     * filteredAndSortedAccordingToPreferredLanguages:[NSLocale preferredLanguages]];
      * if ([titlesForPreferredLanguages count] > 0)
      * {
      * title = [[titlesForPreferredLanguages objectAtIndex:0] stringValue];
@@ -217,12 +225,14 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * [@property]		displayName
+     * [@property] displayName
      * <p>
      * Provides an NSString suitable for display using the current system locale.
      * <p>
-     * May use this option's common metadata, media characteristics and locale properties in addition to the current system locale to formulate an NSString intended for display.
-     * In the event that common metadata is not available in the specified locale, displayName will fall back to considering locales with the multilingual ("mul") then undetermined ("und") locale identifiers.
+     * May use this option's common metadata, media characteristics and locale properties in addition to the current
+     * system locale to formulate an NSString intended for display.
+     * In the event that common metadata is not available in the specified locale, displayName will fall back to
+     * considering locales with the multilingual ("mul") then undetermined ("und") locale identifiers.
      * For a display name strictly with the specified locale use displayNameWithLocale: instead.
      */
     @Generated
@@ -234,16 +244,18 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * <p>
      * Provides an NSString suitable for display.
      * <p>
-     * May use this option's common metadata, media characteristics and locale properties in addition to the provided locale to formulate an NSString intended for display. Will only consider common metadata with the specified locale.
+     * May use this option's common metadata, media characteristics and locale properties in addition to the provided
+     * locale to formulate an NSString intended for display. Will only consider common metadata with the specified
+     * locale.
      *
-     * @param        locale Localize manufactured portions of the string using the specificed locale.
+     * @param locale Localize manufactured portions of the string using the specificed locale.
      */
     @Generated
     @Selector("displayNameWithLocale:")
     public native String displayNameWithLocale(NSLocale locale);
 
     /**
-     * [@property]		extendedLanguageTag
+     * [@property] extendedLanguageTag
      * <p>
      * Indicates the RFC 4646 language tag associated with the option. May be nil.
      */
@@ -256,7 +268,8 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * <p>
      * Reports whether the media selection option includes media with the specified media characteristic.
      *
-     * @param        mediaCharacteristic The media characteristic of interest, e.g. AVMediaCharacteristicVisual, AVMediaCharacteristicAudible, AVMediaCharacteristicLegible, etc.
+     * @param mediaCharacteristic The media characteristic of interest, e.g. AVMediaCharacteristicVisual,
+     *                            AVMediaCharacteristicAudible, AVMediaCharacteristicLegible, etc.
      * @return YES if the media selection option includes media with the specified characteristic, otherwise NO.
      */
     @Generated
@@ -268,7 +281,7 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
     public native AVMediaSelectionOption init();
 
     /**
-     * [@property]		playable
+     * [@property] playable
      * <p>
      * Indicates whether a media selection option is playable.
      * <p>
@@ -279,11 +292,12 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
     public native boolean isPlayable();
 
     /**
-     * [@property]		locale
+     * [@property] locale
      * <p>
      * Indicates the locale for which the media option was authored.
      * <p>
-     * Use -[NSLocale objectForKey:NSLocaleLanguageCode] to obtain the language code of the locale. See NSLocale.h for additional information.
+     * Use -[NSLocale objectForKey:NSLocaleLanguageCode] to obtain the language code of the locale. See NSLocale.h for
+     * additional information.
      */
     @Generated
     @Selector("locale")
@@ -298,21 +312,24 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
     public native MPNowPlayingInfoLanguageOption makeNowPlayingInfoLanguageOption();
 
     /**
-     * [@property]		mediaSubTypes
+     * [@property] mediaSubTypes
      * <p>
      * The mediaSubTypes of the media data associated with the option.
      * <p>
-     * An NSArray of NSNumbers carrying four character codes (of type FourCharCode) as defined in CoreAudioTypes.h for audio media and in CMFormatDescription.h for video media.
+     * An NSArray of NSNumbers carrying four character codes (of type FourCharCode) as defined in CoreAudioTypes.h for
+     * audio media and in CMFormatDescription.h for video media.
      * Also see CMFormatDescriptionGetMediaSubType in CMFormatDescription.h for more information about media subtypes.
      * <p>
-     * Note that if no information is available about the encoding of the media presented when a media option is selected, the value of mediaSubTypes will be an empty array. This can occur, for example, with streaming media. In these cases the value of mediaSubTypes should simply not be used as a criteria for selection.
+     * Note that if no information is available about the encoding of the media presented when a media option is
+     * selected, the value of mediaSubTypes will be an empty array. This can occur, for example, with streaming media.
+     * In these cases the value of mediaSubTypes should simply not be used as a criteria for selection.
      */
     @Generated
     @Selector("mediaSubTypes")
     public native NSArray<? extends NSNumber> mediaSubTypes();
 
     /**
-     * [@property]		mediaType
+     * [@property] mediaType
      * <p>
      * The media type of the media data, e.g. AVMediaTypeAudio, AVMediaTypeSubtitle, etc.
      */
@@ -325,7 +342,7 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
      * <p>
      * Provides an NSArray of AVMetadataItems, one for each metadata item in the container of the specified format.
      *
-     * @param        format The metadata format for which items are requested.
+     * @param format The metadata format for which items are requested.
      * @return An NSArray containing AVMetadataItems.
      */
     @Generated
@@ -335,9 +352,11 @@ public class AVMediaSelectionOption extends NSObject implements NSCopying {
     /**
      * propertyList
      * <p>
-     * Returns a serializable property list that can be used to obtain an instance of AVMediaSelectionOption representing the same option as the receiver via -[AVMediaSelectionGroup mediaSelectionOptionWithPropertyList:].
+     * Returns a serializable property list that can be used to obtain an instance of AVMediaSelectionOption
+     * representing the same option as the receiver via -[AVMediaSelectionGroup mediaSelectionOptionWithPropertyList:].
      *
-     * @return A serializable property list that's sufficient to identify the option within its group. For serialization utilities, see NSPropertyList.h.
+     * @return A serializable property list that's sufficient to identify the option within its group. For serialization
+     *         utilities, see NSPropertyList.h.
      */
     @Generated
     @Selector("propertyList")

@@ -127,9 +127,13 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
     /**
      * @param url                 The url of the file on disk for which a thumbnail is requested.
      * @param size                The desired size of the thumbnails that should be generated.
-     * @param scale               The desired scale of the thumbnails that should be generated. This will usually be the scale of the screen.
-     *                            You can for instance pass a scale different from the one of the screen if you would like to save generated thumbnails to a server to later download them on devices with a different screen scale.
-     * @param representationTypes The desired successive representations of the thumbnail that should be generated when possible.
+     * @param scale               The desired scale of the thumbnails that should be generated. This will usually be the
+     *                            scale of the screen.
+     *                            You can for instance pass a scale different from the one of the screen if you would
+     *                            like to save generated thumbnails to a server to later download them on devices with a
+     *                            different screen scale.
+     * @param representationTypes The desired successive representations of the thumbnail that should be generated when
+     *                            possible.
      */
     @Generated
     @Selector("initWithFileAtURL:size:scale:representationTypes:")
@@ -159,7 +163,8 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
 
     /**
      * Defaults to 0. If set, the thumbnail will have a width and height greater or equal to minimumDimension * scale.
-     * If set and it is not possible to generate thumbnails of minimumDimension for any of the requested QLThumbnailGenerationRequestRepresentationTypes, no thumbnail will be provided.
+     * If set and it is not possible to generate thumbnails of minimumDimension for any of the requested
+     * QLThumbnailGenerationRequestRepresentationTypes, no thumbnail will be provided.
      */
     @Generated
     @Selector("minimumDimension")
@@ -202,7 +207,8 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
 
     /**
      * Defaults to 0. If set, the thumbnail will have a width and height greater or equal to minimumDimension * scale.
-     * If set and it is not possible to generate thumbnails of minimumDimension for any of the requested QLThumbnailGenerationRequestRepresentationTypes, no thumbnail will be provided.
+     * If set and it is not possible to generate thumbnails of minimumDimension for any of the requested
+     * QLThumbnailGenerationRequestRepresentationTypes, no thumbnail will be provided.
      */
     @Generated
     @Selector("setMinimumDimension:")
@@ -237,14 +243,20 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
     public static native long version_static();
 
     /**
-     * The content type of the file being thumbnailed is used to determine the provider of the thumbnail and the icon styles applied if iconMode is requested. By default the content type is derived from the file extension. Setting this property will override the derived content type. This is useful for files that don't have meaningful extensions but for which you may already know the content type.
+     * The content type of the file being thumbnailed is used to determine the provider of the thumbnail and the icon
+     * styles applied if iconMode is requested. By default the content type is derived from the file extension. Setting
+     * this property will override the derived content type. This is useful for files that don't have meaningful
+     * extensions but for which you may already know the content type.
      */
     @Generated
     @Selector("contentType")
     public native UTType contentType();
 
     /**
-     * The content type of the file being thumbnailed is used to determine the provider of the thumbnail and the icon styles applied if iconMode is requested. By default the content type is derived from the file extension. Setting this property will override the derived content type. This is useful for files that don't have meaningful extensions but for which you may already know the content type.
+     * The content type of the file being thumbnailed is used to determine the provider of the thumbnail and the icon
+     * styles applied if iconMode is requested. By default the content type is derived from the file extension. Setting
+     * this property will override the derived content type. This is useful for files that don't have meaningful
+     * extensions but for which you may already know the content type.
      */
     @Generated
     @Selector("setContentType:")

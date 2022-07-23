@@ -30,7 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSRNNRecurrentImageState
  * [@dependency] This depends on Metal.framework
  * <p>
- * This class holds all the data that is passed from one sequence iteration of the image-based RNN layer (stack) to the next.
+ * This class holds all the data that is passed from one sequence iteration of the image-based RNN layer (stack) to the
+ * next.
  */
 @Generated
 @Library("MetalPerformanceShaders")

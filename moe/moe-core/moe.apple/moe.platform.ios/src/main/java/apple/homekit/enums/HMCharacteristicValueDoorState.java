@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueDoorState
+ * [@enum] HMCharacteristicValueDoorState
  * <p>
- * [@constant]  HMCharacteristicValueDoorStateOpen     The door is fully open.
- * [@constant]  HMCharacteristicValueDoorStateClosed   The door is fully closed.
- * [@constant]  HMCharacteristicValueDoorStateOpening  The door is actively opening.
- * [@constant]  HMCharacteristicValueDoorStateClosing  The door is actively closing.
- * [@constant]  HMCharacteristicValueDoorStateStopped  The door is not moving, and it is not fully open nor fully closed.
+ * [@constant] HMCharacteristicValueDoorStateOpen The door is fully open.
+ * [@constant] HMCharacteristicValueDoorStateClosed The door is fully closed.
+ * [@constant] HMCharacteristicValueDoorStateOpening The door is actively opening.
+ * [@constant] HMCharacteristicValueDoorStateClosing The door is actively closing.
+ * [@constant] HMCharacteristicValueDoorStateStopped The door is not moving, and it is not fully open nor fully closed.
  */
 @Generated
 public final class HMCharacteristicValueDoorState {

@@ -66,8 +66,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UITableView extends UIScrollView
-        implements NSCoding, UIDataSourceTranslating, UISpringLoadedInteractionSupporting {
+public class UITableView extends UIScrollView implements NSCoding, UIDataSourceTranslating,
+        UISpringLoadedInteractionSupporting {
     static {
         NatJ.register();
     }
@@ -424,7 +424,8 @@ public class UITableView extends UIScrollView
     }
 
     /**
-     * the background view will be automatically resized to track the size of the table view.  this will be placed as a subview of the table view behind all cells and headers/footers.  default may be non-nil for some devices.
+     * the background view will be automatically resized to track the size of the table view. this will be placed as a
+     * subview of the table view behind all cells and headers/footers. default may be non-nil for some devices.
      */
     @Generated
     @Selector("backgroundView")
@@ -438,7 +439,8 @@ public class UITableView extends UIScrollView
     public native void beginUpdates();
 
     /**
-     * Returns any existing visible or prepared cell for the index path. Returns nil when no cell exists, or if index path is out of range.
+     * Returns any existing visible or prepared cell for the index path. Returns nil when no cell exists, or if index
+     * path is out of range.
      */
     @Generated
     @Selector("cellForRowAtIndexPath:")
@@ -676,7 +678,8 @@ public class UITableView extends UIScrollView
 
     /**
      * Beginning in iOS 6, clients can register a nib or class for each cell.
-     * If all reuse identifiers are registered, use the newer -dequeueReusableCellWithIdentifier:forIndexPath: to guarantee that a cell instance is returned.
+     * If all reuse identifiers are registered, use the newer -dequeueReusableCellWithIdentifier:forIndexPath: to
+     * guarantee that a cell instance is returned.
      * Instances returned from the new dequeue method will also be properly sized when they are returned.
      */
     @Generated
@@ -688,7 +691,8 @@ public class UITableView extends UIScrollView
     public native void registerNibForHeaderFooterViewReuseIdentifier(UINib nib, String identifier);
 
     /**
-     * Reloads everything from scratch. Redisplays visible rows. Note that this will cause any existing drop placeholder rows to be removed.
+     * Reloads everything from scratch. Redisplays visible rows. Note that this will cause any existing drop placeholder
+     * rows to be removed.
      */
     @Generated
     @Selector("reloadData")
@@ -711,7 +715,8 @@ public class UITableView extends UIScrollView
     public native void reloadSectionsWithRowAnimation(NSIndexSet sections, @NInt long animation);
 
     /**
-     * defaults to NO. If YES, when focusing on a table view the last focused index path is focused automatically. If the table view has never been focused, then the preferred focused index path is used.
+     * defaults to NO. If YES, when focusing on a table view the last focused index path is focused automatically. If
+     * the table view has never been focused, then the preferred focused index path is used.
      */
     @Generated
     @Selector("remembersLastFocusedIndexPath")
@@ -780,7 +785,9 @@ public class UITableView extends UIScrollView
     public native UIColor sectionIndexTrackingBackgroundColor();
 
     /**
-     * Selects and deselects rows. These methods will not call the delegate methods (-tableView:willSelectRowAtIndexPath: or tableView:didSelectRowAtIndexPath:), nor will it send out a notification.
+     * Selects and deselects rows. These methods will not call the delegate methods
+     * (-tableView:willSelectRowAtIndexPath: or tableView:didSelectRowAtIndexPath:), nor will it send out a
+     * notification.
      */
     @Generated
     @Selector("selectRowAtIndexPath:animated:scrollPosition:")
@@ -802,7 +809,8 @@ public class UITableView extends UIScrollView
     public native UIVisualEffect separatorEffect();
 
     /**
-     * allows customization of the frame of cell separators; see also the separatorInsetReference property. Use UITableViewAutomaticDimension for the automatic inset for that edge.
+     * allows customization of the frame of cell separators; see also the separatorInsetReference property. Use
+     * UITableViewAutomaticDimension for the automatic inset for that edge.
      */
     @Generated
     @Selector("separatorInset")
@@ -846,7 +854,8 @@ public class UITableView extends UIScrollView
     public native void setAllowsSelectionDuringEditing(boolean value);
 
     /**
-     * the background view will be automatically resized to track the size of the table view.  this will be placed as a subview of the table view behind all cells and headers/footers.  default may be non-nil for some devices.
+     * the background view will be automatically resized to track the size of the table view. this will be placed as a
+     * subview of the table view behind all cells and headers/footers. default may be non-nil for some devices.
      */
     @Generated
     @Selector("setBackgroundView:")
@@ -934,7 +943,8 @@ public class UITableView extends UIScrollView
     }
 
     /**
-     * defaults to NO. If YES, when focusing on a table view the last focused index path is focused automatically. If the table view has never been focused, then the preferred focused index path is used.
+     * defaults to NO. If YES, when focusing on a table view the last focused index path is focused automatically. If
+     * the table view has never been focused, then the preferred focused index path is used.
      */
     @Generated
     @Selector("setRemembersLastFocusedIndexPath:")
@@ -1004,7 +1014,8 @@ public class UITableView extends UIScrollView
     public native void setSeparatorEffect(UIVisualEffect value);
 
     /**
-     * allows customization of the frame of cell separators; see also the separatorInsetReference property. Use UITableViewAutomaticDimension for the automatic inset for that edge.
+     * allows customization of the frame of cell separators; see also the separatorInsetReference property. Use
+     * UITableViewAutomaticDimension for the automatic inset for that edge.
      */
     @Generated
     @Selector("setSeparatorInset:")
@@ -1096,7 +1107,9 @@ public class UITableView extends UIScrollView
     public native boolean hasActiveDrop();
 
     /**
-     * Returns YES if the table view is in the middle of reordering, is displaying a drop target gap, or has drop placeholders. If possible, avoid calling -reloadData while there are uncommitted updates to avoid interfering with user-initiated interactions that have not yet completed.
+     * Returns YES if the table view is in the middle of reordering, is displaying a drop target gap, or has drop
+     * placeholders. If possible, avoid calling -reloadData while there are uncommitted updates to avoid interfering
+     * with user-initiated interactions that have not yet completed.
      */
     @Generated
     @Selector("hasUncommittedUpdates")
@@ -1151,7 +1164,8 @@ public class UITableView extends UIScrollView
     public native long presentationSectionIndexForDataSourceSectionIndex(@NInt long dataSourceSectionIndex);
 
     /**
-     * Changes how custom separatorInset values are interpreted. The default value is UITableViewSeparatorInsetFromCellEdges
+     * Changes how custom separatorInset values are interpreted. The default value is
+     * UITableViewSeparatorInsetFromCellEdges
      */
     @Generated
     @Selector("separatorInsetReference")
@@ -1206,7 +1220,8 @@ public class UITableView extends UIScrollView
     public native void setInsetsContentViewsToSafeArea(boolean value);
 
     /**
-     * Changes how custom separatorInset values are interpreted. The default value is UITableViewSeparatorInsetFromCellEdges
+     * Changes how custom separatorInset values are interpreted. The default value is
+     * UITableViewSeparatorInsetFromCellEdges
      */
     @Generated
     @Selector("setSeparatorInsetReference:")
@@ -1261,7 +1276,8 @@ public class UITableView extends UIScrollView
     public native UIContextMenuInteraction contextMenuInteraction();
 
     /**
-     * The height for filler rows added below the last row when there aren't enough rows to fill a plain style table view.
+     * The height for filler rows added below the last row when there aren't enough rows to fill a plain style table
+     * view.
      * Set 0 to disable filler rows entirely, use `UITableViewAutomaticDimension` for the default height.
      */
     @Generated
@@ -1274,8 +1290,10 @@ public class UITableView extends UIScrollView
     public native boolean isPrefetchingEnabled();
 
     /**
-     * Reconfigures any existing cells for the rows. Reconfiguring is more efficient than reloading a row, as it does not replace the
-     * existing cell with a new cell. Prefer reconfiguring over reloading unless you actually need an entirely new cell for the row.
+     * Reconfigures any existing cells for the rows. Reconfiguring is more efficient than reloading a row, as it does
+     * not replace the
+     * existing cell with a new cell. Prefer reconfiguring over reloading unless you actually need an entirely new cell
+     * for the row.
      */
     @Generated
     @Selector("reconfigureRowsAtIndexPaths:")
@@ -1308,7 +1326,8 @@ public class UITableView extends UIScrollView
     public native void setAllowsFocusDuringEditing(boolean value);
 
     /**
-     * The height for filler rows added below the last row when there aren't enough rows to fill a plain style table view.
+     * The height for filler rows added below the last row when there aren't enough rows to fill a plain style table
+     * view.
      * Set 0 to disable filler rows entirely, use `UITableViewAutomaticDimension` for the default height.
      */
     @Generated

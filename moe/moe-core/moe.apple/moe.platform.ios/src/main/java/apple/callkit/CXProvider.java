@@ -173,14 +173,16 @@ public class CXProvider extends NSObject {
     public native CXProvider initWithConfiguration(CXProviderConfiguration configuration);
 
     /**
-     * Invalidate the receiver. All existing calls will be marked as ended in failure. The provider must be invalidated before it is deallocated.
+     * Invalidate the receiver. All existing calls will be marked as ended in failure. The provider must be invalidated
+     * before it is deallocated.
      */
     @Generated
     @Selector("invalidate")
     public native void invalidate();
 
     /**
-     * Returns subset of call actions contained in any transaction in -pendingTransactions of the specified class and with the specified call UUID.
+     * Returns subset of call actions contained in any transaction in -pendingTransactions of the specified class and
+     * with the specified call UUID.
      */
     @Generated
     @Selector("pendingCallActionsOfClass:withCallUUID:")
@@ -211,7 +213,8 @@ public class CXProvider extends NSObject {
     /**
      * Report a new incoming call to the system.
      * <p>
-     * If completion is invoked with a non-nil `error`, the incoming call has been disallowed by the system and will not be displayed, so the provider should not proceed with the call.
+     * If completion is invoked with a non-nil `error`, the incoming call has been disallowed by the system and will not
+     * be displayed, so the provider should not proceed with the call.
      * <p>
      * Completion block will be called on delegate queue, if specified, otherwise on a private serial queue.
      */
@@ -221,14 +224,16 @@ public class CXProvider extends NSObject {
             @ObjCBlock(name = "call_reportNewIncomingCallWithUUIDUpdateCompletion") Block_reportNewIncomingCallWithUUIDUpdateCompletion completion);
 
     /**
-     * Report that an outgoing call connected. A nil value for `dateConnected` results in the connected date being set to now.
+     * Report that an outgoing call connected. A nil value for `dateConnected` results in the connected date being set
+     * to now.
      */
     @Generated
     @Selector("reportOutgoingCallWithUUID:connectedAtDate:")
     public native void reportOutgoingCallWithUUIDConnectedAtDate(NSUUID UUID, NSDate dateConnected);
 
     /**
-     * Report that an outgoing call started connecting. A nil value for `dateStartedConnecting` results in the started connecting date being set to now.
+     * Report that an outgoing call started connecting. A nil value for `dateStartedConnecting` results in the started
+     * connecting date being set to now.
      */
     @Generated
     @Selector("reportOutgoingCallWithUUID:startedConnectingAtDate:")
@@ -257,7 +262,8 @@ public class CXProvider extends NSObject {
     }
 
     /**
-     * From within a Notification Service Extension, request the containing application be launched to handle an incoming VoIP call. The application's PKPushRegistryDelegate must handle the push upon launch.
+     * From within a Notification Service Extension, request the containing application be launched to handle an
+     * incoming VoIP call. The application's PKPushRegistryDelegate must handle the push upon launch.
      */
     @Generated
     @Selector("reportNewIncomingVoIPPushPayload:completion:")

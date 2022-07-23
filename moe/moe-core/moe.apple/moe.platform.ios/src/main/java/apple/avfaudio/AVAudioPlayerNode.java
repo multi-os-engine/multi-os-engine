@@ -281,11 +281,12 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * NSError *nsErr = nil;
      * [_engine startAndReturnError:&nsErr];
      * if (!nsErr) {
-     * 	const float kStartDelayTime = 0.5; // sec
-     * 	AVAudioFormat *outputFormat = [_player outputFormatForBus:0];
-     * 	AVAudioFramePosition startSampleTime = _player.lastRenderTime.sampleTime + kStartDelayTime * outputFormat.sampleRate;
-     * 	AVAudioTime *startTime = [AVAudioTime timeWithSampleTime:startSampleTime atRate:outputFormat.sampleRate];
-     * 	[_player playAtTime:startTime];
+     * const float kStartDelayTime = 0.5; // sec
+     * AVAudioFormat *outputFormat = [_player outputFormatForBus:0];
+     * AVAudioFramePosition startSampleTime = _player.lastRenderTime.sampleTime + kStartDelayTime *
+     * outputFormat.sampleRate;
+     * AVAudioTime *startTime = [AVAudioTime timeWithSampleTime:startSampleTime atRate:outputFormat.sampleRate];
+     * [_player playAtTime:startTime];
      * }
      * </pre>
      *
@@ -390,7 +391,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * @param buffer            the buffer to play
      * @param when              the time at which to play the buffer. see the discussion of timestamps, above.
      * @param options           options for looping, interrupting other buffers, etc.
-     * @param completionHandler called after the buffer has been consumed by the player or the player is stopped. may be nil.
+     * @param completionHandler called after the buffer has been consumed by the player or the player is stopped. may be
+     *                          nil.
      */
     @Generated
     @Selector("scheduleBuffer:atTime:options:completionHandler:")
@@ -441,7 +443,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * or before the buffer is played completely.
      *
      * @param buffer            the buffer to play
-     * @param completionHandler called after the buffer has been consumed by the player or the player is stopped. may be nil.
+     * @param completionHandler called after the buffer has been consumed by the player or the player is stopped. may be
+     *                          nil.
      */
     @Generated
     @Selector("scheduleBuffer:completionHandler:")
@@ -489,7 +492,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      *
      * @param file              the file to play
      * @param when              the time at which to play the file. see the discussion of timestamps, above.
-     * @param completionHandler called after the file has been consumed by the player or the player is stopped. may be nil.
+     * @param completionHandler called after the file has been consumed by the player or the player is stopped. may be
+     *                          nil.
      */
     @Generated
     @Selector("scheduleFile:atTime:completionHandler:")
@@ -542,7 +546,8 @@ public class AVAudioPlayerNode extends AVAudioNode implements AVAudioMixing {
      * @param startFrame        the starting frame position in the stream
      * @param numberFrames      the number of frames to play
      * @param when              the time at which to play the region. see the discussion of timestamps, above.
-     * @param completionHandler called after the segment has been consumed by the player or the player is stopped. may be nil.
+     * @param completionHandler called after the segment has been consumed by the player or the player is stopped. may
+     *                          be nil.
      */
     @Generated
     @Selector("scheduleSegment:startingFrame:frameCount:atTime:completionHandler:")

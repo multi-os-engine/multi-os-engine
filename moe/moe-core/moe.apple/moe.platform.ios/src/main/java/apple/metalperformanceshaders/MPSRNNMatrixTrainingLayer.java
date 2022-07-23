@@ -45,20 +45,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * of vectors xi, yi and zi, then these can be inserted together as a batch to the sequence encoding kernel by
  * using the matrices:
  * [@code]
- * ( y1 )        ( y2 )        ( y3 )        ( y4 )
- * m1 = ( x1 ),  m2 = ( x2 ),  m3 = ( x3 ),  m4 =
- * ( z1 )        ( z2 )
+ * ( y1 ) ( y2 ) ( y3 ) ( y4 )
+ * m1 = ( x1 ), m2 = ( x2 ), m3 = ( x3 ), m4 =
+ * ( z1 ) ( z2 )
  * [@endcode]
  * The gradient computation pass is then achieved by passing the corresponding gradient sequence from the
  * previous layer ( dx1, dx2, dx3 ), ( dy1, dy2, dy3, dy4 ) and ( dz1, dz2 ) as matrices
  * [@code]
- * ( dy1 )         ( dy2 )         ( dy3 )         ( dy4 )
- * dm1 = ( dx1 ),  dm2 = ( dx2 ),  dm3 = ( dx3 ),  dm4 =
- * ( dz1 )         ( dz2 )
+ * ( dy1 ) ( dy2 ) ( dy3 ) ( dy4 )
+ * dm1 = ( dx1 ), dm2 = ( dx2 ), dm3 = ( dx3 ), dm4 =
+ * ( dz1 ) ( dz2 )
  * [@endcode]
  * <p>
  * The mathematical operation described in the linear transformations of @ref MPSRNNSingleGateDescriptor
- * [@ref] MPSLSTMDescriptor and @ref MPSGRUDescriptor are y^T = W x^T  <=> y = x W^T, where x is the matrix containing
+ * [@ref] MPSLSTMDescriptor and @ref MPSGRUDescriptor are y^T = W x^T <=> y = x W^T, where x is the matrix containing
  * the input vectors as rows, y is the matrix containing the output vectors as rows and W is the weight matrix.
  */
 @Generated
@@ -80,7 +80,7 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * [@property]   accumulateWeightGradients
+     * [@property] accumulateWeightGradients
      * <p>
      * If yes then the computed weight gradients are accumulated on top of existing values in
      * calls to the gradient computation functions: encodeGradientSequenceToCommandBuffer.
@@ -129,8 +129,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      * @param device The device for the new MPSKernel. If nil, then use
      *               self.device.
      * @return a pointer to a copy of this MPSKernel. This will fail, returning
-     * nil if the device is not supported. Devices must be
-     * MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     *         nil if the device is not supported. Devices must be
+     *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
     @Generated
     @Owned
@@ -139,12 +139,14 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
             @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
-     * As @ref createWeightGradientMatrices, but the matrices will be temporary with readCount = 1, which means that they
+     * As @ref createWeightGradientMatrices, but the matrices will be temporary with readCount = 1, which means that
+     * they
      * become invalid after the first encode call that reads them. Note also that as the matrices are temporary, their
      * storage mode will be private which means that you can only access the data using a kernel on the GPU.
      *
      * @param matricesOut   An array where the newly created matrices will be stored, will be initialized to zero.
-     * @param dataType      Datatype for the entries - currently MPSDataTypeFloat32 and MPSDataTypeFloat16 are supported.
+     * @param dataType      Datatype for the entries - currently MPSDataTypeFloat32 and MPSDataTypeFloat16 are
+     *                      supported.
      * @param commandBuffer The command buffer that the temporary matrices will live on.
      */
     @Generated
@@ -158,9 +160,11 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      * @param matricesOut An array where the newly created matrices will be stored, will be initialized to zero.
      * @param dataType    Datatype for the entries - currently MPSDataTypeFloat32 and MPSDataTypeFloat16 are supported.
      * @see encodeBackwardSequenceToCommandBuffer. Can be also used to easily create auxiliary matrices for example
-     * for ADAM and other advanced optimization schemes. The layout and number of matrices is the same as for the outputs of
+     *      for ADAM and other advanced optimization schemes. The layout and number of matrices is the same as for the
+     *      outputs of
      * @see initWithDevice, but the data type may differ. NOTE: These matrices cannot be used as weight matrices in the
-     * forward and backward encode calls, but matrices from initWithDevice() or createWeightMatrices() should be used instead.
+     *      forward and backward encode calls, but matrices from initWithDevice() or createWeightMatrices() should be
+     *      used instead.
      */
     @Generated
     @Selector("createWeightGradientMatrices:dataType:")
@@ -257,17 +261,21 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     /**
      * Encode an MPSRNNMatrixTrainingLayer gradient pass kernel for a sequence of input gradients into a command buffer.
      * NOTE: The time sequence indexing follows the array indexing in the inputs: sourceGradients[0] has to contain the
-     * gradients corresponding to the first matrix in the forward pass corresponding to the current subsequence, which is
+     * gradients corresponding to the first matrix in the forward pass corresponding to the current subsequence, which
+     * is
      * typically sourceMatrices[0].
      *
      * @param commandBuffer         A valid MTLCommandBuffer to receive the encoded filter
-     * @param forwardSources        An array of MPSMatrix objects containing the sequence of source matrices of the forward pass.
+     * @param forwardSources        An array of MPSMatrix objects containing the sequence of source matrices of the
+     *                              forward pass.
      * @param forwardSourceOffsets  An array of byte-offsets into the forwardSources, if nil zeros are assumed and
      *                              if not nil must contain offset for every matrix in forwardSources.
-     * @param sourceGradients       An array of valid MPSMatrix objects containing the sequence of source gradient matrices.
+     * @param sourceGradients       An array of valid MPSMatrix objects containing the sequence of source gradient
+     *                              matrices.
      * @param sourceGradientOffsets An array of byte-offsets into the sourceGradients, if nil zeros are assumed and
      *                              if not nil must contain offset for every matrix in sourceGradients.
-     * @param destinationGradients  An array valid MPSMatrix objects that will receive the backpropagated gradients, may be
+     * @param destinationGradients  An array valid MPSMatrix objects that will receive the backpropagated gradients, may
+     *                              be
      *                              nil if not needed (for example first layer in graph).
      * @param destinationOffsets    An array of byte-offsets into the destinationGradients, if nil zeros are assumed and
      *                              if not nil must contain offset for every matrix in destinationGradients.
@@ -275,7 +283,8 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
      *                              biases of the layer - should be the array that was produced either
      *                              by @see initWithDevice or @see createWeightMatrices. May be nil in which case
      *                              the gradients for the weights are not computed.
-     * @param trainingStates        An array containing the training states from the forward pass - the array must contain
+     * @param trainingStates        An array containing the training states from the forward pass - the array must
+     *                              contain
      *                              the states corresponding to the input gradients is sourceGradients.
      * @param recurrentInputState   An optional state containing the output matrices and memory cells (for LSTMs)
      *                              of the layer obtained from the previous input gradients in a sequence of inputs.
@@ -299,20 +308,24 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     /**
      * Encode an MPSRNNMatrixTrainingLayer gradient pass kernel for a sequence of input gradients into a command buffer.
      * NOTE: The time sequence indexing follows the array indexing in the inputs: sourceGradients[0] has to contain the
-     * gradients corresponding to the first matrix in the forward pass corresponding to the current subsequence, which is
+     * gradients corresponding to the first matrix in the forward pass corresponding to the current subsequence, which
+     * is
      * typically sourceMatrices[0].
      *
      * @param commandBuffer        A valid MTLCommandBuffer to receive the encoded filter
-     * @param forwardSources       An array of MPSMatrix objects containing the sequence of source matrices of the forward pass.
+     * @param forwardSources       An array of MPSMatrix objects containing the sequence of source matrices of the
+     *                             forward pass.
      * @param sourceGradients      An array of MPSMatrix objects containing the sequence of source gradient matrices.
-     * @param destinationGradients An array valid MPSMatrix objects that will receive the backpropagated gradients, may be
+     * @param destinationGradients An array valid MPSMatrix objects that will receive the backpropagated gradients, may
+     *                             be
      *                             nil if not needed (for example first layer in graph).
      * @param weightGradients      An array valid MPSMatrix objects that will receive the gradient wrt. weights and
      *                             biases of the layer - should be the array that was produced either
      *                             by @see initWithDevice or @see createWeightMatrices. May be nil in which case
      *                             the gradients for the weights are not computed.
      *                             NOTE: The weight gradients are accumulated on top of existing values so
-     * @param trainingStates       An array containing the training states from the forward pass - the array must contain
+     * @param trainingStates       An array containing the training states from the forward pass - the array must
+     *                             contain
      *                             the states corresponding to the input gradients is sourceGradients.
      * @param weights              An array of valid MPSMatrix objects containing the weights, should be the array
      *                             that was produced either by @see initWithDevice or @see createWeightMatrices.
@@ -379,7 +392,7 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
             NSMutableArray<MPSMatrix> trainableWeights);
 
     /**
-     * [@property]   inputFeatureChannels
+     * [@property] inputFeatureChannels
      * <p>
      * The number of feature channels input vector/matrix.
      */
@@ -415,7 +428,7 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     public static native MPSRNNMatrixTrainingLayer new_objc();
 
     /**
-     * [@property]   outputFeatureChannels
+     * [@property] outputFeatureChannels
      * <p>
      * The number of feature channels in the output vector/matrix.
      */
@@ -425,7 +438,7 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     public native long outputFeatureChannels();
 
     /**
-     * [@property]   recurrentOutputIsTemporary
+     * [@property] recurrentOutputIsTemporary
      * <p>
      * How recurrent output states from @ref encodeForwardSequenceToCommandBuffer
      * and encodeGradientSequenceToCommandBuffer are constructed.
@@ -444,7 +457,7 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   accumulateWeightGradients
+     * [@property] accumulateWeightGradients
      * <p>
      * If yes then the computed weight gradients are accumulated on top of existing values in
      * calls to the gradient computation functions: encodeGradientSequenceToCommandBuffer.
@@ -455,7 +468,7 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     public native void setAccumulateWeightGradients(boolean value);
 
     /**
-     * [@property]   recurrentOutputIsTemporary
+     * [@property] recurrentOutputIsTemporary
      * <p>
      * How recurrent output states from @ref encodeForwardSequenceToCommandBuffer
      * and encodeGradientSequenceToCommandBuffer are constructed.
@@ -466,7 +479,7 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     public native void setRecurrentOutputIsTemporary(boolean value);
 
     /**
-     * [@property]   storeAllIntermediateStates
+     * [@property] storeAllIntermediateStates
      * <p>
      * If YES then calls to functions @ref encodeForwardSequenceToCommandBuffer and
      * [@ref] encodeGradientSequenceToCommandBuffer return every recurrent state
@@ -478,7 +491,7 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     public native void setStoreAllIntermediateStates(boolean value);
 
     /**
-     * [@property]   trainingStateIsTemporary
+     * [@property] trainingStateIsTemporary
      * <p>
      * How training output states from @ref encodeForwardSequenceToCommandBuffer are constructed.
      * Defaults to NO. For reference @see MPSState.
@@ -492,7 +505,7 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   storeAllIntermediateStates
+     * [@property] storeAllIntermediateStates
      * <p>
      * If YES then calls to functions @ref encodeForwardSequenceToCommandBuffer and
      * [@ref] encodeGradientSequenceToCommandBuffer return every recurrent state
@@ -518,7 +531,7 @@ public class MPSRNNMatrixTrainingLayer extends MPSKernel {
     }
 
     /**
-     * [@property]   trainingStateIsTemporary
+     * [@property] trainingStateIsTemporary
      * <p>
      * How training output states from @ref encodeForwardSequenceToCommandBuffer are constructed.
      * Defaults to NO. For reference @see MPSState.

@@ -20,7 +20,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * NSWritingDirectionFormatType values used by NSWritingDirectionAttributeName. It is or'ed with either NSWritingDirectionLeftToRight or NSWritingDirectionRightToLeft. Can specify the formatting controls defined by Unicode Bidirectional Algorithm.
+ * NSWritingDirectionFormatType values used by NSWritingDirectionAttributeName. It is or'ed with either
+ * NSWritingDirectionLeftToRight or NSWritingDirectionRightToLeft. Can specify the formatting controls defined by
+ * Unicode Bidirectional Algorithm.
  */
 @Generated
 public final class NSWritingDirectionFormatType {

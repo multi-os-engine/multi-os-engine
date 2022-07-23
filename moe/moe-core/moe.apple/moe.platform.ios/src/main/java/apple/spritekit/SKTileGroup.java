@@ -44,7 +44,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A tile group encapsulates a collection of related tile definitions that are designed to be pieced together within a tile map. How those tiles are pieced together is governed by the set of rules. When a tile group is placed in a tile map, the map evaluates the rules to determine which tiles should be placed to achieve the desired outcome.
+ * A tile group encapsulates a collection of related tile definitions that are designed to be pieced together within a
+ * tile map. How those tiles are pieced together is governed by the set of rules. When a tile group is placed in a tile
+ * map, the map evaluates the rules to determine which tiles should be placed to achieve the desired outcome.
  */
 @Generated
 @Library("SpriteKit")
@@ -168,7 +170,8 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
     public static native SKTileGroup tileGroupWithRules(NSArray<? extends SKTileGroupRule> rules);
 
     /**
-     * Create a simple tile group for a single tile definition. This creates and initializes the SKTileGroupRule necessary to place the provided tile definition in a tile map.
+     * Create a simple tile group for a single tile definition. This creates and initializes the SKTileGroupRule
+     * necessary to place the provided tile definition in a tile map.
      *
      * @param tileDefinition the tile definition we wish to place in a tile map
      */
@@ -209,7 +212,8 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
     public native SKTileGroup initWithRules(NSArray<? extends SKTileGroupRule> rules);
 
     /**
-     * Initilize a simple tile group for a single tile definition. This creates and initializes the SKTileGroupRule necessary to place the provided tile definition in a tile map.
+     * Initilize a simple tile group for a single tile definition. This creates and initializes the SKTileGroupRule
+     * necessary to place the provided tile definition in a tile map.
      *
      * @param tileDefinition tile definition we wish to place in a tile map
      */

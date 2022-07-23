@@ -97,7 +97,8 @@ public class BGTaskRequest extends NSObject implements NSCopying {
     /**
      * The earliest date at which the task may run.
      * <p>
-     * Setting this property does not guarantee that the task will begin at the specified date, but only that it will not begin sooner. If not specified, no start delay is used.
+     * Setting this property does not guarantee that the task will begin at the specified date, but only that it will
+     * not begin sooner. If not specified, no start delay is used.
      */
     @Generated
     @Selector("earliestBeginDate")
@@ -156,7 +157,8 @@ public class BGTaskRequest extends NSObject implements NSCopying {
     /**
      * The earliest date at which the task may run.
      * <p>
-     * Setting this property does not guarantee that the task will begin at the specified date, but only that it will not begin sooner. If not specified, no start delay is used.
+     * Setting this property does not guarantee that the task will begin at the specified date, but only that it will
+     * not begin sooner. If not specified, no start delay is used.
      */
     @Generated
     @Selector("setEarliestBeginDate:")

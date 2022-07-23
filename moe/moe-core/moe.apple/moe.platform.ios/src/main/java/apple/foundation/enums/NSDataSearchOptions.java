@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * Data Search Options	***************
+ * Data Search Options ***************
  */
 @Generated
 public final class NSDataSearchOptions {

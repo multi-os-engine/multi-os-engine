@@ -520,7 +520,7 @@ public class WKWebView extends UIView {
      * Navigates to the back item in the back-forward list.
      *
      * @return A new navigation to the requested item, or nil if there is no back
-     * item in the back-forward list.
+     *         item in the back-forward list.
      */
     @Generated
     @Selector("goBack")
@@ -530,7 +530,7 @@ public class WKWebView extends UIView {
      * Navigates to the forward item in the back-forward list.
      *
      * @return A new navigation to the requested item, or nil if there is no
-     * forward item in the back-forward list.
+     *         forward item in the back-forward list.
      */
     @Generated
     @Selector("goForward")
@@ -543,7 +543,7 @@ public class WKWebView extends UIView {
      * @param item The item to which to navigate. Must be one of the items in the
      *             web view's back-forward list.
      * @return A new navigation to the requested item, or nil if it is already
-     * the current item or is not part of the web view's back-forward list.
+     *         the current item or is not part of the web view's back-forward list.
      * @see backForwardList
      */
     @Generated
@@ -586,7 +586,7 @@ public class WKWebView extends UIView {
      * @param frame         The frame for the new web view.
      * @param configuration The configuration for the new web view.
      * @return An initialized web view, or nil if the object could not be
-     * initialized.
+     *         initialized.
      */
     @Generated
     @Selector("initWithFrame:configuration:")
@@ -835,7 +835,8 @@ public class WKWebView extends UIView {
     /**
      * Create a PDF document representation from the web page currently displayed in the WKWebView
      * <p>
-     * If the WKPDFConfiguration is nil, the method will create a PDF document representing the bounds of the currently displayed web page.
+     * If the WKPDFConfiguration is nil, the method will create a PDF document representing the bounds of the currently
+     * displayed web page.
      * The completionHandler is passed the resulting PDF document data or an error.
      * The data can be used to create a PDFDocument object.
      * If the data is written to a file the resulting file is a valid PDF document.
@@ -859,7 +860,8 @@ public class WKWebView extends UIView {
      * Create WebKit web archive data representing the current web content of the WKWebView
      * <p>
      * WebKit web archive data represents a snapshot of web content.
-     * It can be used to represent web content on a pasteboard, loaded into a WKWebView directly, and saved to a file for later use.
+     * It can be used to represent web content on a pasteboard, loaded into a WKWebView directly, and saved to a file
+     * for later use.
      * The uniform type identifier kUTTypeWebArchive can be used get the related pasteboard type and MIME type.
      *
      * @param completionHandler A block to invoke when the web archive data is ready.
@@ -882,17 +884,22 @@ public class WKWebView extends UIView {
      * The completionHandler is passed the result of the script evaluation or an error.
      * <p>
      * Passing nil is equivalent to targeting the main frame.
-     * If the frame argument no longer represents a valid frame by the time WebKit attempts to call the JavaScript function your completion handler will be called with a WKErrorJavaScriptInvalidFrameTarget error.
+     * If the frame argument no longer represents a valid frame by the time WebKit attempts to call the JavaScript
+     * function your completion handler will be called with a WKErrorJavaScriptInvalidFrameTarget error.
      * This might happen for a number of reasons, including but not limited to:
      * - The target frame has been removed from the DOM via JavaScript
      * - A parent frame has navigated, destroying all of its previous child frames
      * <p>
-     * No matter which WKContentWorld you use to evaluate your JavaScript string, you can make changes to the underlying web content. (e.g. the Document and its DOM structure)
+     * No matter which WKContentWorld you use to evaluate your JavaScript string, you can make changes to the underlying
+     * web content. (e.g. the Document and its DOM structure)
      * Such changes will be visible to script executing in all WKContentWorlds.
-     * Evaluating your JavaScript string can leave behind other changes to global state visibile to JavaScript. (e.g. `window.myVariable = 1;`)
+     * Evaluating your JavaScript string can leave behind other changes to global state visibile to JavaScript. (e.g.
+     * `window.myVariable = 1;`)
      * Those changes will only be visibile to scripts executed in the same WKContentWorld.
-     * evaluateJavaScript: is a great way to set up global state for future JavaScript execution in a given world. (e.g. Importing libraries/utilities that future JavaScript execution will rely on)
-     * Once your global state is set up, consider using callAsyncJavaScript: for more flexible interaction with the JavaScript programming model.
+     * evaluateJavaScript: is a great way to set up global state for future JavaScript execution in a given world. (e.g.
+     * Importing libraries/utilities that future JavaScript execution will rely on)
+     * Once your global state is set up, consider using callAsyncJavaScript: for more flexible interaction with the
+     * JavaScript programming model.
      *
      * @param javaScriptString  The JavaScript string to evaluate.
      * @param frame             A WKFrameInfo identifying the frame in which to evaluate the JavaScript string.
@@ -1016,7 +1023,8 @@ public class WKWebView extends UIView {
     /**
      * The interaction state for the WKWebView
      * <p>
-     * The interaction state (back-forward list, currently loaded page, scroll position, form data...) for the WKWebView, which
+     * The interaction state (back-forward list, currently loaded page, scroll position, form data...) for the
+     * WKWebView, which
      * can be retrieved and set on another WKWebView to restore state.
      */
     @Generated
@@ -1106,7 +1114,8 @@ public class WKWebView extends UIView {
     /**
      * Pauses media playback in WKWebView.
      * <p>
-     * Pauses media playback. Media in the page can be restarted by calling play() on a media element or resume() on an AudioContext in JavaScript. A user can also use media controls to play media content after it has been paused.
+     * Pauses media playback. Media in the page can be restarted by calling play() on a media element or resume() on an
+     * AudioContext in JavaScript. A user can also use media controls to play media content after it has been paused.
      */
     @Generated
     @Selector("pauseAllMediaPlaybackWithCompletionHandler:")
@@ -1171,7 +1180,8 @@ public class WKWebView extends UIView {
      * <p>
      * The download needs its delegate to be set in the completionHandler to receive updates about its progress.
      *
-     * @param resumeData        Data from a WKDownloadDelegate's didFailWithError or a WKDownload's cancel completionHandler.
+     * @param resumeData        Data from a WKDownloadDelegate's didFailWithError or a WKDownload's cancel
+     *                          completionHandler.
      * @param completionHandler A block called when the download has resumed.
      */
     @Generated
@@ -1189,7 +1199,9 @@ public class WKWebView extends UIView {
     /**
      * Suspends or resumes all media playback in WKWebView.
      * <p>
-     * If suspended is true, this pauses media playback and blocks all attempts by the page or the user to resume until setAllMediaPlaybackSuspended is called again with suspended set to false. Media playback should always be suspended and resumed in pairs.
+     * If suspended is true, this pauses media playback and blocks all attempts by the page or the user to resume until
+     * setAllMediaPlaybackSuspended is called again with suspended set to false. Media playback should always be
+     * suspended and resumed in pairs.
      *
      * @param suspended Whether media playback should be suspended or resumed.
      */
@@ -1230,7 +1242,8 @@ public class WKWebView extends UIView {
     /**
      * The interaction state for the WKWebView
      * <p>
-     * The interaction state (back-forward list, currently loaded page, scroll position, form data...) for the WKWebView, which
+     * The interaction state (back-forward list, currently loaded page, scroll position, form data...) for the
+     * WKWebView, which
      * can be retrieved and set on another WKWebView to restore state.
      */
     @Generated
@@ -1264,7 +1277,8 @@ public class WKWebView extends UIView {
     public native void setUnderPageBackgroundColor(UIColor value);
 
     /**
-     * Begins a download in the context of the currently displayed webpage as if the WKNavigationDelegate turned a navigation into a download instead
+     * Begins a download in the context of the currently displayed webpage as if the WKNavigationDelegate turned a
+     * navigation into a download instead
      * <p>
      * The download needs its delegate to be set in the completionHandler to receive updates about its progress.
      *

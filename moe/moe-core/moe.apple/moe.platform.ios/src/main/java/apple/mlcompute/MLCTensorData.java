@@ -62,7 +62,7 @@ public class MLCTensorData extends NSObject {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   bytes
+     * [@property] bytes
      * <p>
      * Pointer to memory that contains or will be used for tensor data
      */
@@ -90,7 +90,8 @@ public class MLCTensorData extends NSObject {
 
     /**
      * Creates a data object that holds a given number of bytes from a given buffer.
-     * [@note]       The returned object will not take ownership of the \p bytes pointer and thus will not free it on deallocation.
+     * [@note] The returned object will not take ownership of the \p bytes pointer and thus will not free it on
+     * deallocation.
      *
      * @param bytes  A buffer containing data for the new object.
      * @param length The number of bytes to hold from \p bytes. This value must not exceed the length of \p bytes.
@@ -101,12 +102,13 @@ public class MLCTensorData extends NSObject {
     public static native MLCTensorData dataWithBytesNoCopyLength(VoidPtr bytes, @NUInt long length);
 
     /**
-     * [@absract]          Creates a data object that holds a given number of bytes from a given buffer. with a custom deallocator block.
+     * [@absract] Creates a data object that holds a given number of bytes from a given buffer. with a custom
+     * deallocator block.
      *
      * @param bytes       A buffer containing data for the new object.
      * @param length      The number of bytes to hold from \p bytes. This value must not exceed the length of \p bytes.
      * @param deallocator A block to invoke when the resulting object is deallocated.
-     * @return A new  \p MLCTensorData object.
+     * @return A new \p MLCTensorData object.
      */
     @Generated
     @Selector("dataWithBytesNoCopy:length:deallocator:")
@@ -122,7 +124,8 @@ public class MLCTensorData extends NSObject {
 
     /**
      * Creates a data object that holds a given number of bytes from a given buffer.
-     * [@note]       The returned object will not take ownership of the \p bytes pointer and thus will not free it on deallocation. The underlying bytes in the return object should not be mutated.
+     * [@note] The returned object will not take ownership of the \p bytes pointer and thus will not free it on
+     * deallocation. The underlying bytes in the return object should not be mutated.
      *
      * @param bytes  A buffer containing data for the new object.
      * @param length The number of bytes to hold from \p bytes. This value must not exceed the length of \p bytes.
@@ -171,7 +174,7 @@ public class MLCTensorData extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   length
+     * [@property] length
      * <p>
      * The size in bytes of the tensor data
      */

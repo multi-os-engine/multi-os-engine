@@ -220,7 +220,8 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     public native GKTurnBasedMatchmakerViewControllerDelegate turnBasedMatchmakerDelegate();
 
     /**
-     * This controls the mode of matchmaking to support in the UI (all, nearby only, automatch only, invite only). Throws an exception if you can not set to the desired mode (due to restrictions)
+     * This controls the mode of matchmaking to support in the UI (all, nearby only, automatch only, invite only).
+     * Throws an exception if you can not set to the desired mode (due to restrictions)
      */
     @Generated
     @Selector("matchmakingMode")
@@ -228,7 +229,8 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     public native long matchmakingMode();
 
     /**
-     * This controls the mode of matchmaking to support in the UI (all, nearby only, automatch only, invite only). Throws an exception if you can not set to the desired mode (due to restrictions)
+     * This controls the mode of matchmaking to support in the UI (all, nearby only, automatch only, invite only).
+     * Throws an exception if you can not set to the desired mode (due to restrictions)
      */
     @Generated
     @Selector("setMatchmakingMode:")

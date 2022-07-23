@@ -420,7 +420,8 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
     public native UITabBarDelegate delegate();
 
     /**
-     * hide customization sheet. normally you should let the user do it. check list of items to see new layout. returns YES if layout changed
+     * hide customization sheet. normally you should let the user do it. check list of items to see new layout. returns
+     * YES if layout changed
      */
     @Generated
     @Selector("endCustomizingAnimated:")
@@ -675,7 +676,9 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
     public native void setSelectionIndicatorImage(UIImage value);
 
     /**
-     * Default is nil. When non-nil, a custom shadow image to show instead of the default shadow image. For a custom shadow to be shown, a custom background image must also be set with -setBackgroundImage: (if the default background image is used, the default shadow image will be used).
+     * Default is nil. When non-nil, a custom shadow image to show instead of the default shadow image. For a custom
+     * shadow to be shown, a custom background image must also be set with -setBackgroundImage: (if the default
+     * background image is used, the default shadow image will be used).
      */
     @Generated
     @Selector("setShadowImage:")
@@ -691,14 +694,17 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
     public native void setTintColor(UIColor value);
 
     /**
-     * Unselected items in this tab bar will be tinted with this color. Setting this value to nil indicates that UITabBar should use its default value instead.
+     * Unselected items in this tab bar will be tinted with this color. Setting this value to nil indicates that
+     * UITabBar should use its default value instead.
      */
     @Generated
     @Selector("setUnselectedItemTintColor:")
     public native void setUnselectedItemTintColor(UIColor value);
 
     /**
-     * Default is nil. When non-nil, a custom shadow image to show instead of the default shadow image. For a custom shadow to be shown, a custom background image must also be set with -setBackgroundImage: (if the default background image is used, the default shadow image will be used).
+     * Default is nil. When non-nil, a custom shadow image to show instead of the default shadow image. For a custom
+     * shadow to be shown, a custom background image must also be set with -setBackgroundImage: (if the default
+     * background image is used, the default shadow image will be used).
      */
     @Generated
     @Selector("shadowImage")
@@ -714,7 +720,8 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
     public native UIColor tintColor();
 
     /**
-     * Unselected items in this tab bar will be tinted with this color. Setting this value to nil indicates that UITabBar should use its default value instead.
+     * Unselected items in this tab bar will be tinted with this color. Setting this value to nil indicates that
+     * UITabBar should use its default value instead.
      */
     @Generated
     @Selector("unselectedItemTintColor")
@@ -749,14 +756,16 @@ public class UITabBar extends UIView implements UISpringLoadedInteractionSupport
     public native UITabBarAppearance standardAppearance();
 
     /**
-     * Describes the appearance attributes for the tabBar to use when an observable scroll view is scrolled to the bottom. If not set, standardAppearance will be used instead.
+     * Describes the appearance attributes for the tabBar to use when an observable scroll view is scrolled to the
+     * bottom. If not set, standardAppearance will be used instead.
      */
     @Generated
     @Selector("scrollEdgeAppearance")
     public native UITabBarAppearance scrollEdgeAppearance();
 
     /**
-     * Describes the appearance attributes for the tabBar to use when an observable scroll view is scrolled to the bottom. If not set, standardAppearance will be used instead.
+     * Describes the appearance attributes for the tabBar to use when an observable scroll view is scrolled to the
+     * bottom. If not set, standardAppearance will be used instead.
      */
     @Generated
     @Selector("setScrollEdgeAppearance:")

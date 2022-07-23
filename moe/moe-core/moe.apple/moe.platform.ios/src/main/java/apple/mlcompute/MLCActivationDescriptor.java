@@ -44,7 +44,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
     }
 
     /**
-     * [@property]   a
+     * [@property] a
      * <p>
      * Parameter to the activation function
      */
@@ -57,7 +57,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * [@property]   activationType
+     * [@property] activationType
      * <p>
      * The type of activation function
      */
@@ -80,7 +80,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   b
+     * [@property] b
      * <p>
      * Parameter to the activation function
      */
@@ -89,7 +89,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
     public native float b();
 
     /**
-     * [@property]   c
+     * [@property] c
      * <p>
      * Parameter to the activation function
      */

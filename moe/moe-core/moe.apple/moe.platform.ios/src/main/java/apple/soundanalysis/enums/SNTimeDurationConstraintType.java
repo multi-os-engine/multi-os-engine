@@ -15,13 +15,15 @@ public final class SNTimeDurationConstraintType {
     /**
      * An 'enumerated' constraint type.
      * <p>
-     * In order for a duration to satisfy a constraint of this type, it must be a member of a particular set of discrete permissible values.
+     * In order for a duration to satisfy a constraint of this type, it must be a member of a particular set of discrete
+     * permissible values.
      */
     @Generated @NInt public static final long Enumerated = 0x0000000000000001L;
     /**
      * A 'range' constraint type.
      * <p>
-     * In order for a duration to satisfy a constraint of this type, it must be a member of a particular continuous range of permissible values.
+     * In order for a duration to satisfy a constraint of this type, it must be a member of a particular continuous
+     * range of permissible values.
      */
     @Generated @NInt public static final long Range = 0x0000000000000002L;
 }

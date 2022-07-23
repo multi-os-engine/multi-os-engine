@@ -214,8 +214,10 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
     public native String nickname();
 
     /**
-     * Each element of the phoneticRepresentation should correspond to an element of the original PersonNameComponents instance.
-     * The phoneticRepresentation of the phoneticRepresentation object itself will be ignored. nil by default, must be instantiated.
+     * Each element of the phoneticRepresentation should correspond to an element of the original PersonNameComponents
+     * instance.
+     * The phoneticRepresentation of the phoneticRepresentation object itself will be ignored. nil by default, must be
+     * instantiated.
      */
     @Generated
     @Selector("phoneticRepresentation")
@@ -264,8 +266,10 @@ public class NSPersonNameComponents extends NSObject implements NSCopying, NSSec
     public native void setNickname(String value);
 
     /**
-     * Each element of the phoneticRepresentation should correspond to an element of the original PersonNameComponents instance.
-     * The phoneticRepresentation of the phoneticRepresentation object itself will be ignored. nil by default, must be instantiated.
+     * Each element of the phoneticRepresentation should correspond to an element of the original PersonNameComponents
+     * instance.
+     * The phoneticRepresentation of the phoneticRepresentation object itself will be ignored. nil by default, must be
+     * instantiated.
      */
     @Generated
     @Selector("setPhoneticRepresentation:")

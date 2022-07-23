@@ -45,7 +45,8 @@ public final class ReplayKit {
     /**
      * [@key] RPVideoSampleOrientationKey
      * <p>
-     * Use this key in conjunction with CMGetAttachment on CMSampleBufferRef to get the orientation for the sample. The orientation will follow the enum CGImagePropertyOrientation
+     * Use this key in conjunction with CMGetAttachment on CMSampleBufferRef to get the orientation for the sample. The
+     * orientation will follow the enum CGImagePropertyOrientation
      */
     @Generated
     @CVariable()

@@ -13,7 +13,7 @@ public final class MPSCNNNeuronType {
      */
     @Generated public static final int None = 0x00000000;
     /**
-     * < f(x) = x >= 0 ? x : a * x;  rectified linear unit
+     * < f(x) = x >= 0 ? x : a * x; rectified linear unit
      */
     @Generated public static final int ReLU = 0x00000001;
     /**

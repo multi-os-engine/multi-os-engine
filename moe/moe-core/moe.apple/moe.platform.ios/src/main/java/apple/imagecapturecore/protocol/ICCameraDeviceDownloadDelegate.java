@@ -15,7 +15,9 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * [@protocol] ICCameraDeviceDownloadDelegate <NSObject>
  * <p>
- * The object passed in as 'downloadDelegate' in the 'requestDownloadFile:options:downloadDelegate:didDownloadSelector:contextInfo:' message must conform to ICCameraDeviceDownloadDelegate protocol.
+ * The object passed in as 'downloadDelegate' in the
+ * 'requestDownloadFile:options:downloadDelegate:didDownloadSelector:contextInfo:' message must conform to
+ * ICCameraDeviceDownloadDelegate protocol.
  */
 @Generated
 @Library("ImageCaptureCore")

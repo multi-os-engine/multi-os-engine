@@ -62,9 +62,10 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   batchFirst
+     * [@property] batchFirst
      * <p>
-     * LSTM only supports batchFirst=YES. This means the input and output will have shape [batch size, time steps, feature]. Default is YES.
+     * LSTM only supports batchFirst=YES. This means the input and output will have shape [batch size, time steps,
+     * feature]. Default is YES.
      */
     @Generated
     @Selector("batchFirst")
@@ -133,14 +134,19 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
      * @param inputSize        The number of expected features in the input
      * @param hiddenSize       The number of features in the hidden state
      * @param layerCount       Number of recurrent layers
-     * @param usesBiases       If NO, the layer does not use bias weights.  Default: YES
-     * @param batchFirst       LSTM only supports batchFirst=YES. This means the input and output will have shape [batch size, time steps, feature]. Default is YES.
-     * @param isBidirectional  If YES, becomes a bi-directional LSTM.  Default: NO
-     * @param returnsSequences if YES return output for all sequences else return output only for the last sequences. Default: YES
-     * @param dropout          If non-zero, introduces a dropout layer on the outputs of each LSTM layer except the last layer
+     * @param usesBiases       If NO, the layer does not use bias weights. Default: YES
+     * @param batchFirst       LSTM only supports batchFirst=YES. This means the input and output will have shape [batch
+     *                         size, time steps, feature]. Default is YES.
+     * @param isBidirectional  If YES, becomes a bi-directional LSTM. Default: NO
+     * @param returnsSequences if YES return output for all sequences else return output only for the last sequences.
+     *                         Default: YES
+     * @param dropout          If non-zero, introduces a dropout layer on the outputs of each LSTM layer except the last
+     *                         layer
      *                         with dropout probability equal to dropout.
-     * @param resultMode       expected result tensors. MLCLSTMResultModeOutput returns output data. MLCLSTMResultModeOutputAndStates returns
-     *                         output data, last hidden state h_n, and last cell state c_n. Default: MLCLSTMResultModeOutput.
+     * @param resultMode       expected result tensors. MLCLSTMResultModeOutput returns output data.
+     *                         MLCLSTMResultModeOutputAndStates returns
+     *                         output data, last hidden state h_n, and last cell state c_n. Default:
+     *                         MLCLSTMResultModeOutput.
      * @return A valid MLCLSTMDescriptor object or nil, if failure.
      */
     @Generated
@@ -155,9 +161,10 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
      * @param inputSize       The number of expected features in the input
      * @param hiddenSize      The number of features in the hidden state
      * @param layerCount      Number of recurrent layers
-     * @param usesBiases      If NO, the layer does not use bias weights.  Default: YES
-     * @param isBidirectional If YES, becomes a bi-directional LSTM.  Default: NO
-     * @param dropout         If non-zero, introduces a dropout layer on the outputs of each LSTM layer except the last layer
+     * @param usesBiases      If NO, the layer does not use bias weights. Default: YES
+     * @param isBidirectional If YES, becomes a bi-directional LSTM. Default: NO
+     * @param dropout         If non-zero, introduces a dropout layer on the outputs of each LSTM layer except the last
+     *                        layer
      *                        with dropout probability equal to dropout.
      * @return A valid MLCLSTMDescriptor object or nil, if failure.
      */
@@ -168,10 +175,10 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
             boolean isBidirectional, float dropout);
 
     /**
-     * [@property]   dropout
+     * [@property] dropout
      * <p>
      * If non-zero, intrdouces a dropout layer on the outputs of each LSTM layer
-     * except the last layer, with dropout probablity equal to dropout.  Default is 0.0.
+     * except the last layer, with dropout probablity equal to dropout. Default is 0.0.
      */
     @Generated
     @Selector("dropout")
@@ -183,7 +190,7 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
     public static native long hash_static();
 
     /**
-     * [@property]   hiddenSize
+     * [@property] hiddenSize
      * <p>
      * The number of feature channels in the hidden state
      */
@@ -197,7 +204,7 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
     public native MLCLSTMDescriptor init();
 
     /**
-     * [@property]   inputSize
+     * [@property] inputSize
      * <p>
      * The number of expected feature channels in the input
      */
@@ -220,9 +227,9 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * [@property]   isBidirectional
+     * [@property] isBidirectional
      * <p>
-     * If YES, becomes a bidirectional LSTM.  Default is NO.
+     * If YES, becomes a bidirectional LSTM. Default is NO.
      */
     @Generated
     @Selector("isBidirectional")
@@ -237,9 +244,9 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   layerCount
+     * [@property] layerCount
      * <p>
-     * The number of recurrent layers.  Default is 1.
+     * The number of recurrent layers. Default is 1.
      */
     @Generated
     @Selector("layerCount")
@@ -260,7 +267,7 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   resultMode
+     * [@property] resultMode
      * <p>
      * MLCLSTMResultModeOutput returns output data. MLCLSTMResultModeOutputAndStates returns
      * output data, last hidden state h_n, and last cell state c_n. Default MLCLSTMResultModeOutput.
@@ -270,7 +277,7 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
     public native long resultMode();
 
     /**
-     * [@property]   returnsSequences
+     * [@property] returnsSequences
      * <p>
      * if YES return output for all sequences else return output only for the last sequences. Default: YES
      */
@@ -287,9 +294,9 @@ public class MLCLSTMDescriptor extends NSObject implements NSCopying {
     public static native Class superclass_static();
 
     /**
-     * [@property]   usesBiases
+     * [@property] usesBiases
      * <p>
-     * If NO, the layer does not use bias terms.  Default is YES.
+     * If NO, the layer does not use bias terms. Default is YES.
      */
     @Generated
     @Selector("usesBiases")

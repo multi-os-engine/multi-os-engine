@@ -27,7 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A fully connected layer a.k.a a dense layer
  * <p>
- * For C:input feature channel, C':output feature channel, the layer maps (*,C) --> (*,C') where * can be 1, 2 or 3 dimesnion.
+ * For C:input feature channel, C':output feature channel, the layer maps (*,C) --> (*,C') where * can be 1, 2 or 3
+ * dimesnion.
  * There is an exception for the case of (N,C,1,1) which gets mapped to (N,C',1,1).
  */
 @Generated
@@ -63,7 +64,7 @@ public class MLCFullyConnectedLayer extends MLCLayer {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   biases
+     * [@property] biases
      * <p>
      * The bias tensor used by the convolution layer
      */
@@ -72,7 +73,7 @@ public class MLCFullyConnectedLayer extends MLCLayer {
     public native MLCTensor biases();
 
     /**
-     * [@property]   biasesParameter
+     * [@property] biasesParameter
      * <p>
      * The bias tensor parameter used for optimizer update
      */
@@ -107,7 +108,7 @@ public class MLCFullyConnectedLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   descriptor
+     * [@property] descriptor
      * <p>
      * The convolution descriptor
      */
@@ -189,7 +190,7 @@ public class MLCFullyConnectedLayer extends MLCLayer {
     public static native long version_static();
 
     /**
-     * [@property]   weights
+     * [@property] weights
      * <p>
      * The weights tensor used by the convolution layer
      */
@@ -198,7 +199,7 @@ public class MLCFullyConnectedLayer extends MLCLayer {
     public native MLCTensor weights();
 
     /**
-     * [@property]   weightsParameter
+     * [@property] weightsParameter
      * <p>
      * The weights tensor parameter used for optimizer update
      */

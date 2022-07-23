@@ -4,11 +4,12 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]          HKCategoryValueEnvironmentalAudioExposureEvent
+ * [@enum] HKCategoryValueEnvironmentalAudioExposureEvent
  * <p>
  * Specifies the kind of environmental audio exposure event associated with the sample.
  * <p>
- * [@constant]      HKCategoryValueEnvironmentalAudioExposureEventMomentaryLimit          This constant defines environmental events associated
+ * [@constant] HKCategoryValueEnvironmentalAudioExposureEventMomentaryLimit This constant defines environmental events
+ * associated
  * with the user being exposed to a loud environment during a short timespan.
  */
 @Generated

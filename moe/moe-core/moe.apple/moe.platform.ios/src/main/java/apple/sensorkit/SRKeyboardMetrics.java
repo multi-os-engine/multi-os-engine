@@ -544,7 +544,8 @@ public class SRKeyboardMetrics extends NSObject {
     public native NSMeasurement<NSUnitLength> totalPathLength();
 
     /**
-     * The total number of pauses made while entering the path for any words composed using continuous path during the session
+     * The total number of pauses made while entering the path for any words composed using continuous path during the
+     * session
      */
     @Generated
     @Selector("totalPathPauses")

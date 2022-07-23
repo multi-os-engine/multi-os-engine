@@ -19,33 +19,33 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]		AudioComponentFlags
+ * [@enum] AudioComponentFlags
  * <p>
  * Flags found in AudioComponentDescription.componentFlags.
  * <p>
- * [@constant]	kAudioComponentFlag_Unsearchable
+ * [@constant] kAudioComponentFlag_Unsearchable
  * <p>
  * When this bit in AudioComponentDescription's componentFlags is set, AudioComponentFindNext
  * will only return this component when performing a specific, non-wildcard search for the
  * component, i.e. with non-zero values of componentType, componentSubType, and
  * componentManufacturer. This can be useful when privately registering a component.
  * <p>
- * [@constant]	kAudioComponentFlag_SandboxSafe
+ * [@constant] kAudioComponentFlag_SandboxSafe
  * <p>
  * An AudioComponent sets this bit in its componentFlags to indicate to the system that the
  * AudioComponent is safe to open in a sandboxed process.
  * <p>
- * [@constant]	kAudioComponentFlag_IsV3AudioUnit
+ * [@constant] kAudioComponentFlag_IsV3AudioUnit
  * <p>
  * The system sets this flag automatically when registering components which implement a version 3
  * Audio Unit.
  * <p>
- * [@constant]	kAudioComponentFlag_RequiresAsyncInstantiation
+ * [@constant] kAudioComponentFlag_RequiresAsyncInstantiation
  * <p>
  * The system sets this flag automatically when registering components which require asynchronous
  * instantiation via AudioComponentInstantiate (v3 audio units with views).
  * <p>
- * [@constant]	kAudioComponentFlag_CanLoadInProcess
+ * [@constant] kAudioComponentFlag_CanLoadInProcess
  * <p>
  * The system sets this flag automatically when registering components which can be loaded into
  * the current process. This is always true for V2 audio units; it depends on the packaging

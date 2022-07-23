@@ -31,7 +31,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * VNFaceLandmarkRegion
  * <p>
- * VNFaceLandmarkRegion is an immutable object acting as a collection of landmark points for defining a specific region of the face (including potentially all of the landmark points for a face). The VNFaceLandmarkRegion is an abstract base class.
+ * VNFaceLandmarkRegion is an immutable object acting as a collection of landmark points for defining a specific region
+ * of the face (including potentially all of the landmark points for a face). The VNFaceLandmarkRegion is an abstract
+ * base class.
  */
 @Generated
 @Library("Vision")
@@ -127,7 +129,8 @@ public class VNFaceLandmarkRegion extends NSObject implements NSCopying, NSSecur
     public static native VNFaceLandmarkRegion new_objc();
 
     /**
-     * pointCount returns the amount of points in a given region. This can be zero if no points for a region could be found.
+     * pointCount returns the amount of points in a given region. This can be zero if no points for a region could be
+     * found.
      */
     @Generated
     @Selector("pointCount")

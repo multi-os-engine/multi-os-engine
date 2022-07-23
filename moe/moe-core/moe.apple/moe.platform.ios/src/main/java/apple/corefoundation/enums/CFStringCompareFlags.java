@@ -54,7 +54,9 @@ public final class CFStringCompareFlags {
      */
     @Generated @NUInt public static final long WidthInsensitive = 0x0000000000000100L;
     /**
-     * If specified, comparisons are forced to return either kCFCompareLessThan or kCFCompareGreaterThan if the strings are equivalent but not strictly equal, for stability when sorting (e.g. "aaa" > "AAA" with kCFCompareCaseInsensitive specified)
+     * If specified, comparisons are forced to return either kCFCompareLessThan or kCFCompareGreaterThan if the strings
+     * are equivalent but not strictly equal, for stability when sorting (e.g. "aaa" > "AAA" with
+     * kCFCompareCaseInsensitive specified)
      */
     @Generated @NUInt public static final long ForcedOrdering = 0x0000000000000200L;
 

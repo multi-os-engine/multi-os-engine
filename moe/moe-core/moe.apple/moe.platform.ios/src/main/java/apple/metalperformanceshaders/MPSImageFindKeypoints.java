@@ -108,7 +108,8 @@ public class MPSImageFindKeypoints extends MPSKernel {
      * @param regions                   An array of rectangles that describe regions in the image.
      *                                  The list of keypoints is generated for each individual rectangle specifed.
      * @param keypointCountBuffer       The list of keypoints for each specified region
-     * @param keypointCountBufferOffset Byte offset into keypointCountBufferOffset buffer at which to write the keypoint results.
+     * @param keypointCountBufferOffset Byte offset into keypointCountBufferOffset buffer at which to write the keypoint
+     *                                  results.
      *                                  Must be a multiple of 32 bytes.
      * @param keypointDataBuffer        A valid MTLBuffer to receive the keypoint data results for each rectangle.
      *                                  The keypoint data for keypoints in each rectangle are stored consecutively.
@@ -146,7 +147,7 @@ public class MPSImageFindKeypoints extends MPSKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -196,7 +197,7 @@ public class MPSImageFindKeypoints extends MPSKernel {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   keypointRangeInfo
+     * [@property] keypointRangeInfo
      * <p>
      * Return a structure describing the keypoint range info
      * <p>

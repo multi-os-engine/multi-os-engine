@@ -20,13 +20,13 @@ public interface NSFileProviderEnumerationObserver {
     void didEnumerateItems(NSArray<?> updatedItems);
 
     /**
-     * Call this method after enumerating a full page of items.  If you set a non-nil
+     * Call this method after enumerating a full page of items. If you set a non-nil
      * nextPage, -[NSFileProviderEnumerator enumerateItemsToObserver:startingAtPage:]
-     * might be called with nextPage to enumerate more items.  This is typically
+     * might be called with nextPage to enumerate more items. This is typically
      * driven by the user scrolling a UIDocumentBrowserViewController presenting a
      * directory containing more child items that would fit in the view.
      * <p>
-     * Page data is limited to 500 bytes.  Setting a larger nextPage interrupts the
+     * Page data is limited to 500 bytes. Setting a larger nextPage interrupts the
      * enumeration.
      */
     @Generated

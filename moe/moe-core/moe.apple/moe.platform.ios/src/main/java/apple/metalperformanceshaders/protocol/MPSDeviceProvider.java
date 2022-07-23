@@ -16,7 +16,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * When a object is initialized by a NSCoder, it calls -initWithCoder:, which is
  * missing the necessary MTLDevice to correctly initialize the MPSKernel, or MPSNNGraph.
  * If the coder does not conform to MPSDeviceProvider, the system default device
- * will be used.  If you would like to specify which device to use, subclass the
+ * will be used. If you would like to specify which device to use, subclass the
  * NSCoder (NSKeyedUnarchiver, etc.) to conform to MPSDeviceProvider so that
  * the device can be gotten from the NSCoder.
  * <p>

@@ -43,7 +43,7 @@ public interface MTLLibrary {
     /**
      * [@property] device
      * <p>
-     * The device this resource was created against.  This resource can only be used with this device.
+     * The device this resource was created against. This resource can only be used with this device.
      */
     @Generated
     @Selector("device")
@@ -155,7 +155,7 @@ public interface MTLLibrary {
     /**
      * newFunctionWithDescriptor:error:
      * <p>
-     * Create  a new MTLFunction object synchronously.
+     * Create a new MTLFunction object synchronously.
      */
     @Generated
     @Selector("newFunctionWithDescriptor:error:")
@@ -184,7 +184,7 @@ public interface MTLLibrary {
     /**
      * newIntersectionFunctionWithDescriptor:error:
      * <p>
-     * Create  a new MTLFunction object synchronously.
+     * Create a new MTLFunction object synchronously.
      */
     @Generated
     @Selector("newIntersectionFunctionWithDescriptor:error:")

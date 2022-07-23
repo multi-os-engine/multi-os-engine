@@ -20,7 +20,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("AVAudioPlayerDelegate")
 public interface AVAudioPlayerDelegate {
     /**
-     * audioPlayerBeginInterruption: is called when the audio session has been interrupted while the player was playing. The player will have been paused.
+     * audioPlayerBeginInterruption: is called when the audio session has been interrupted while the player was playing.
+     * The player will have been paused.
      */
     @Generated
     @IsOptional
@@ -41,7 +42,8 @@ public interface AVAudioPlayerDelegate {
     }
 
     /**
-     * audioPlayerDidFinishPlaying:successfully: is called when a sound has finished playing. This method is NOT called if the player is stopped due to an interruption.
+     * audioPlayerDidFinishPlaying:successfully: is called when a sound has finished playing. This method is NOT called
+     * if the player is stopped due to an interruption.
      */
     @Generated
     @IsOptional
@@ -51,7 +53,8 @@ public interface AVAudioPlayerDelegate {
     }
 
     /**
-     * audioPlayerEndInterruption: is called when the preferred method, audioPlayerEndInterruption:withFlags:, is not implemented.
+     * audioPlayerEndInterruption: is called when the preferred method, audioPlayerEndInterruption:withFlags:, is not
+     * implemented.
      */
     @Generated
     @IsOptional
@@ -70,7 +73,8 @@ public interface AVAudioPlayerDelegate {
     }
 
     /**
-     * audioPlayerEndInterruption:withOptions: is called when the audio session interruption has ended and this player had been interrupted while playing.
+     * audioPlayerEndInterruption:withOptions: is called when the audio session interruption has ended and this player
+     * had been interrupted while playing.
      * Currently the only flag is AVAudioSessionInterruptionFlags_ShouldResume.
      */
     @Generated

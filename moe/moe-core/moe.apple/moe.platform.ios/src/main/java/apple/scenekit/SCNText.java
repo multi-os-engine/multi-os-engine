@@ -197,7 +197,8 @@ public class SCNText extends SCNGeometry {
      * <p>
      * Determines how individual lines of text are horizontally aligned within the bounds.
      * <p>
-     * For the text to be aligned you first need to set its bounds, otherwise the text is not aligned. The default value is kCAAlignmentNatural. See alignments in CATextLayer.h.
+     * For the text to be aligned you first need to set its bounds, otherwise the text is not aligned. The default value
+     * is kCAAlignmentNatural. See alignments in CATextLayer.h.
      */
     @Generated
     @Selector("alignmentMode")
@@ -206,9 +207,11 @@ public class SCNText extends SCNGeometry {
     /**
      * [@property] chamferProfile
      * <p>
-     * Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path representing a quadrant.
+     * Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path
+     * representing a quadrant.
      * <p>
-     * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to flatten this path. The default value is nil.
+     * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to
+     * flatten this path. The default value is nil.
      */
     @Generated
     @Selector("chamferProfile")
@@ -219,7 +222,8 @@ public class SCNText extends SCNGeometry {
      * <p>
      * The chamfer radius. Animatable.
      * <p>
-     * Values are clamped to the range [0, extrusionDepth / 2]. The actual chamfer radius might be different to the one here specified: large values are clipped to a per-glyph max value. The default value is 0.
+     * Values are clamped to the range [0, extrusionDepth / 2]. The actual chamfer radius might be different to the one
+     * here specified: large values are clipped to a per-glyph max value. The default value is 0.
      */
     @Generated
     @Selector("chamferRadius")
@@ -231,7 +235,8 @@ public class SCNText extends SCNGeometry {
      * <p>
      * A container within which the text may be wrapped or truncated.
      * <p>
-     * The text will start at the top-left corner of the rect. You need to set this property for text truncation or alignment to work. Getting this property when it has never been set returns CGRectZero.
+     * The text will start at the top-left corner of the rect. You need to set this property for text truncation or
+     * alignment to work. Getting this property when it has never been set returns CGRectZero.
      */
     @Generated
     @Selector("containerFrame")
@@ -255,7 +260,8 @@ public class SCNText extends SCNGeometry {
      * <p>
      * Specifies the accuracy (or smoothness) with which fonts are rendered.
      * <p>
-     * Smaller numbers give smoother curves at the expense of more computation and heavier geometries in terms of vertices. The default value is 1.0, which yields smooth curves.
+     * Smaller numbers give smoother curves at the expense of more computation and heavier geometries in terms of
+     * vertices. The default value is 1.0, which yields smooth curves.
      */
     @Generated
     @Selector("flatness")
@@ -267,7 +273,8 @@ public class SCNText extends SCNGeometry {
      * <p>
      * The font used to represent the text.
      * <p>
-     * The font property is only used when the string property is not an NSAttributedString. Defaults to Helvetica 36 point.
+     * The font property is only used when the string property is not an NSAttributedString. Defaults to Helvetica 36
+     * point.
      */
     @Generated
     @Selector("font")
@@ -286,7 +293,8 @@ public class SCNText extends SCNGeometry {
      * <p>
      * Determines whether the text is wrapped to fit within the bounds.
      * <p>
-     * For the text to be wrapped you first need to set its bounds, otherwise the text is not wrapped. The default value is NO.
+     * For the text to be wrapped you first need to set its bounds, otherwise the text is not wrapped. The default value
+     * is NO.
      */
     @Generated
     @Selector("isWrapped")
@@ -297,7 +305,8 @@ public class SCNText extends SCNGeometry {
      * <p>
      * Determines whether the text is wrapped to fit within the bounds.
      * <p>
-     * For the text to be wrapped you first need to set its bounds, otherwise the text is not wrapped. The default value is NO.
+     * For the text to be wrapped you first need to set its bounds, otherwise the text is not wrapped. The default value
+     * is NO.
      */
     @Generated
     @Selector("setWrapped:")
@@ -308,7 +317,8 @@ public class SCNText extends SCNGeometry {
      * <p>
      * Determines how individual lines of text are horizontally aligned within the bounds.
      * <p>
-     * For the text to be aligned you first need to set its bounds, otherwise the text is not aligned. The default value is kCAAlignmentNatural. See alignments in CATextLayer.h.
+     * For the text to be aligned you first need to set its bounds, otherwise the text is not aligned. The default value
+     * is kCAAlignmentNatural. See alignments in CATextLayer.h.
      */
     @Generated
     @Selector("setAlignmentMode:")
@@ -317,9 +327,11 @@ public class SCNText extends SCNGeometry {
     /**
      * [@property] chamferProfile
      * <p>
-     * Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path representing a quadrant.
+     * Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path
+     * representing a quadrant.
      * <p>
-     * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to flatten this path. The default value is nil.
+     * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to
+     * flatten this path. The default value is nil.
      */
     @Generated
     @Selector("setChamferProfile:")
@@ -330,7 +342,8 @@ public class SCNText extends SCNGeometry {
      * <p>
      * The chamfer radius. Animatable.
      * <p>
-     * Values are clamped to the range [0, extrusionDepth / 2]. The actual chamfer radius might be different to the one here specified: large values are clipped to a per-glyph max value. The default value is 0.
+     * Values are clamped to the range [0, extrusionDepth / 2]. The actual chamfer radius might be different to the one
+     * here specified: large values are clipped to a per-glyph max value. The default value is 0.
      */
     @Generated
     @Selector("setChamferRadius:")
@@ -341,7 +354,8 @@ public class SCNText extends SCNGeometry {
      * <p>
      * A container within which the text may be wrapped or truncated.
      * <p>
-     * The text will start at the top-left corner of the rect. You need to set this property for text truncation or alignment to work. Getting this property when it has never been set returns CGRectZero.
+     * The text will start at the top-left corner of the rect. You need to set this property for text truncation or
+     * alignment to work. Getting this property when it has never been set returns CGRectZero.
      */
     @Generated
     @Selector("setContainerFrame:")
@@ -363,7 +377,8 @@ public class SCNText extends SCNGeometry {
      * <p>
      * Specifies the accuracy (or smoothness) with which fonts are rendered.
      * <p>
-     * Smaller numbers give smoother curves at the expense of more computation and heavier geometries in terms of vertices. The default value is 1.0, which yields smooth curves.
+     * Smaller numbers give smoother curves at the expense of more computation and heavier geometries in terms of
+     * vertices. The default value is 1.0, which yields smooth curves.
      */
     @Generated
     @Selector("setFlatness:")
@@ -374,7 +389,8 @@ public class SCNText extends SCNGeometry {
      * <p>
      * The font used to represent the text.
      * <p>
-     * The font property is only used when the string property is not an NSAttributedString. Defaults to Helvetica 36 point.
+     * The font property is only used when the string property is not an NSAttributedString. Defaults to Helvetica 36
+     * point.
      */
     @Generated
     @Selector("setFont:")
@@ -396,7 +412,8 @@ public class SCNText extends SCNGeometry {
      * <p>
      * Describes how the text is truncated to fit within the bounds.
      * <p>
-     * For the text to be truncated you first need to set its bounds, otherwise the text is not truncated. The default value is kCATruncationNone. See truncation modes in CATextLayer.h.
+     * For the text to be truncated you first need to set its bounds, otherwise the text is not truncated. The default
+     * value is kCATruncationNone. See truncation modes in CATextLayer.h.
      */
     @Generated
     @Selector("setTruncationMode:")
@@ -425,7 +442,8 @@ public class SCNText extends SCNGeometry {
      * <p>
      * Describes how the text is truncated to fit within the bounds.
      * <p>
-     * For the text to be truncated you first need to set its bounds, otherwise the text is not truncated. The default value is kCATruncationNone. See truncation modes in CATextLayer.h.
+     * For the text to be truncated you first need to set its bounds, otherwise the text is not truncated. The default
+     * value is kCATruncationNone. See truncation modes in CATextLayer.h.
      */
     @Generated
     @Selector("truncationMode")

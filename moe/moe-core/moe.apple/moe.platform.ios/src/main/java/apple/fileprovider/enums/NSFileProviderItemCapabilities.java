@@ -10,7 +10,7 @@ public final class NSFileProviderItemCapabilities {
     }
 
     /**
-     * Indicates that the file can be opened for reading.  If set on a folder
+     * Indicates that the file can be opened for reading. If set on a folder
      * this is equivalent to @c .allowsContentEnumerating.
      */
     @Generated @NUInt public static final long Reading = 0x0000000000000001L;

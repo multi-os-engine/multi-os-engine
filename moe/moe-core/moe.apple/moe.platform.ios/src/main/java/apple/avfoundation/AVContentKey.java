@@ -73,7 +73,7 @@ public class AVContentKey extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]      contentKeySpecifier
+     * [@property] contentKeySpecifier
      * <p>
      * Specifies the content key.
      */

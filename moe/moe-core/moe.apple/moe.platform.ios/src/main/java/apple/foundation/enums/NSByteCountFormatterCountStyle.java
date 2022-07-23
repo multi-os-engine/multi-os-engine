@@ -22,11 +22,13 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class NSByteCountFormatterCountStyle {
     /**
-     * Specifies display of file or storage byte counts. The actual behavior for this is platform-specific; on OS X 10.8, this uses the decimal style, but that may change over time.
+     * Specifies display of file or storage byte counts. The actual behavior for this is platform-specific; on OS X
+     * 10.8, this uses the decimal style, but that may change over time.
      */
     @Generated @NInt public static final long File = 0x0000000000000000L;
     /**
-     * Specifies display of memory byte counts. The actual behavior for this is platform-specific; on OS X 10.8, this uses the binary style, but that may change over time.
+     * Specifies display of memory byte counts. The actual behavior for this is platform-specific; on OS X 10.8, this
+     * uses the binary style, but that may change over time.
      */
     @Generated @NInt public static final long Memory = 0x0000000000000001L;
     /**

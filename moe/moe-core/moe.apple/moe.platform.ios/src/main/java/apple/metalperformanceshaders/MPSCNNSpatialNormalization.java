@@ -167,27 +167,27 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
     public static native long version_static();
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The value of alpha.  Default is 1.0. Must be non-negative.
+     * The value of alpha. Default is 1.0. Must be non-negative.
      */
     @Generated
     @Selector("alpha")
     public native float alpha();
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
-     * The value of beta.  Default is 5.0
+     * The value of beta. Default is 5.0
      */
     @Generated
     @Selector("beta")
     public native float beta();
 
     /**
-     * [@property]   delta
+     * [@property] delta
      * <p>
-     * The value of delta.  Default is 1.0
+     * The value of delta. Default is 1.0
      */
     @Generated
     @Selector("delta")
@@ -208,8 +208,8 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
      * @param kernelWidth  The width of the kernel
      * @param kernelHeight The height of the kernel
      * @return A valid MPSCNNSpatialNormalization object or nil, if failure.
-     * <p>
-     * NOTE:  For now, kernelWidth must be equal to kernelHeight
+     *         <p>
+     *         NOTE: For now, kernelWidth must be equal to kernelHeight
      */
     @Generated
     @Selector("initWithDevice:kernelWidth:kernelHeight:")
@@ -217,27 +217,27 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelWidth, @NUInt long kernelHeight);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The value of alpha.  Default is 1.0. Must be non-negative.
+     * The value of alpha. Default is 1.0. Must be non-negative.
      */
     @Generated
     @Selector("setAlpha:")
     public native void setAlpha(float value);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
-     * The value of beta.  Default is 5.0
+     * The value of beta. Default is 5.0
      */
     @Generated
     @Selector("setBeta:")
     public native void setBeta(float value);
 
     /**
-     * [@property]   delta
+     * [@property] delta
      * <p>
-     * The value of delta.  Default is 1.0
+     * The value of delta. Default is 1.0
      */
     @Generated
     @Selector("setDelta:")
@@ -253,7 +253,7 @@ public class MPSCNNSpatialNormalization extends MPSCNNKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel

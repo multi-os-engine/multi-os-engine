@@ -56,7 +56,8 @@ public interface EAWiFiUnconfiguredAccessoryBrowserDelegate {
     /**
      * accessoryBrowser:didFinishConfiguringAccessory:withStatus:
      * <p>
-     * Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser has completed configuring the selected EAWiFiUnconfiguredAccessory.
+     * Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser has completed configuring the selected
+     * EAWiFiUnconfiguredAccessory.
      *
      * @param browser   The EAWiFiUnconfiguredAccessoryBrowser instance generating the event.
      * @param accessory The EAWiFiUnconfiguredAccessory whose configuration process has completed.
@@ -70,11 +71,13 @@ public interface EAWiFiUnconfiguredAccessoryBrowserDelegate {
     /**
      * accessoryBrowser:didRemoveUnconfiguredAccessories:
      * <p>
-     * Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser has removed unconfigured accessories from the scan results
+     * Invoked whenever the EAWiFiUnconfiguredAccessoryBrowser has removed unconfigured accessories from the scan
+     * results
      * that match the filter predicate defined when starting the search.
      *
      * @param browser     The EAWiFiUnconfiguredAccessoryBrowser instance generating the event.
-     * @param accessories The set of EAWiFiUnconfiguredAccessory objects that have been removed from the scan results since the last update.
+     * @param accessories The set of EAWiFiUnconfiguredAccessory objects that have been removed from the scan results
+     *                    since the last update.
      */
     @Generated
     @Selector("accessoryBrowser:didRemoveUnconfiguredAccessories:")

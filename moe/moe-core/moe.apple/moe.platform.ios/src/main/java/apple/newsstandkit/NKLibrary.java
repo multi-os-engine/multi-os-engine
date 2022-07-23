@@ -179,7 +179,7 @@ public class NKLibrary extends NSObject {
     public native NKIssue addIssueWithNameDate(String name, NSDate date);
 
     /**
-     * [@property]   currentlyReadingIssue
+     * [@property] currentlyReadingIssue
      * <p>
      * The issue that is currently being read by the user. Clients should
      * set this property to the currently read issue to prevent data
@@ -190,7 +190,7 @@ public class NKLibrary extends NSObject {
     public native NKIssue currentlyReadingIssue();
 
     /**
-     * [@property]   downloadingAssets
+     * [@property] downloadingAssets
      * <p>
      * The assets that are currently being downloaded in this
      * Newsstand library. The issue that this asset is associated with
@@ -214,7 +214,7 @@ public class NKLibrary extends NSObject {
     public native NKIssue issueWithName(String name);
 
     /**
-     * [@property]   issues
+     * [@property] issues
      * <p>
      * The Newsstand issues in the library
      */
@@ -232,7 +232,7 @@ public class NKLibrary extends NSObject {
     public native void removeIssue(NKIssue issue);
 
     /**
-     * [@property]   currentlyReadingIssue
+     * [@property] currentlyReadingIssue
      * <p>
      * The issue that is currently being read by the user. Clients should
      * set this property to the currently read issue to prevent data

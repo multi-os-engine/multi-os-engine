@@ -16,7 +16,7 @@ import org.moe.natj.general.ann.NInt;
  * distanceGain = (distance / referenceDistance) ^ (-rolloffFactor)
  * <p>
  * AVAudioEnvironmentDistanceAttenuationModelInverse
- * distanceGain = referenceDistance /  (referenceDistance + rolloffFactor *
+ * distanceGain = referenceDistance / (referenceDistance + rolloffFactor *
  * (distance – referenceDistance))
  * <p>
  * AVAudioEnvironmentDistanceAttenuationModelLinear

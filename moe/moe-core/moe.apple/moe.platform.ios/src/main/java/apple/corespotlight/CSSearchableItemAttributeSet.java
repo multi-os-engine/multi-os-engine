@@ -50,7 +50,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CSSearchableItemAttribute encapsulates a set of properties of an CSSearchableItem.
- * CSSearchableItemAttribute set should only be mutated from one thread at a time. Concurrent access to properties has undefined behavior.
+ * CSSearchableItemAttribute set should only be mutated from one thread at a time. Concurrent access to properties has
+ * undefined behavior.
  */
 @Generated
 @Library("CoreSpotlight")
@@ -315,7 +316,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The altitude of the item in meters above sea level, expressed
-     * using the WGS84 datum.  Negative values lie below sea level.
+     * using the WGS84 datum. Negative values lie below sea level.
      */
     @Generated
     @Selector("altitude")
@@ -537,7 +538,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native NSArray<String> contentSources();
 
     /**
-     * UTI Type pedigree for an item.  Common types can be found in UTCoreTypes.h
+     * UTI Type pedigree for an item. Common types can be found in UTCoreTypes.h
      */
     @Generated
     @Selector("contentType")
@@ -594,7 +595,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * (a place name or geographic co-ordinates), temporal period (a period label, date, or date range)
      * or jurisdiction (such as a named administrative entity).
      * Recommended best practice is to select a value from a controlled vocabulary, and that, where appropriate,
-     * named places or time periods be used in preference to numeric identifiers such as sets of co-ordinates or date ranges.
+     * named places or time periods be used in preference to numeric identifiers such as sets of co-ordinates or date
+     * ranges.
      */
     @Generated
     @Selector("coverage")
@@ -609,7 +611,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native String creator();
 
     /**
-     * The delivery type of the item.  Should be 0 for fast start and 1 for RTSP.
+     * The delivery type of the item. Should be 0 for fast start and 1 for RTSP.
      */
     @Generated
     @Selector("deliveryType")
@@ -631,7 +633,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This property has the same semantics as -[CSSearchableItem domainIdentifier].
-     * It can be set on the contentAttributeSet property of a NSUserActivity instance and then used to delete the user activity
+     * It can be set on the contentAttributeSet property of a NSUserActivity instance and then used to delete the user
+     * activity
      * by calling [[CSSearchableIndex defaultSearchableIndex] deleteSearchableItemsWithDomainIdentifiers:].
      */
     @Generated
@@ -701,14 +704,15 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native NSDate endDate();
 
     /**
-     * Mode that was used for the exposure.  Should be 0 for AutoExposure, 1 for Manual, 2 for AutoBracket.
+     * Mode that was used for the exposure. Should be 0 for AutoExposure, 1 for Manual, 2 for AutoBracket.
      */
     @Generated
     @Selector("exposureMode")
     public native NSNumber exposureMode();
 
     /**
-     * The class of the program used by the camera to set exposure when the picture is taken (Manual, Normal, Aperture Priority, ...)
+     * The class of the program used by the camera to set exposure when the picture is taken (Manual, Normal, Aperture
+     * Priority, ...)
      */
     @Generated
     @Selector("exposureProgram")
@@ -722,7 +726,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native NSNumber exposureTime();
 
     /**
-     * The time  of the exposure as a string, e.g. "1/250 seconds".
+     * The time of the exposure as a string, e.g. "1/250 seconds".
      */
     @Generated
     @Selector("exposureTimeString")
@@ -771,7 +775,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native String genre();
 
     /**
-     * Indicates if this image file has an alpha channel.  Should be 0 for no alpha channel, 1 for alpha channel.
+     * Indicates if this image file has an alpha channel. Should be 0 for no alpha channel, 1 for alpha channel.
      */
     @Generated
     @Selector("hasAlphaChannel")
@@ -792,7 +796,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native NSArray<? extends CSPerson> hiddenAdditionalRecipients();
 
     /**
-     * Used  to reference to the resource within a given
+     * Used to reference to the resource within a given
      * context. Recommended best practice is to identify the resource by
      * means of a string or number conforming to a formal identification system.
      */
@@ -851,28 +855,29 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native String instructions();
 
     /**
-     * Indicates if the flash was used to take the picture.  Should be 1 if flash is on, 0 otherwise.
+     * Indicates if the flash was used to take the picture. Should be 1 if flash is on, 0 otherwise.
      */
     @Generated
     @Selector("isFlashOn")
     public native NSNumber isFlashOn();
 
     /**
-     * Indicates if the focal length is 35mm.  Should be 1 if true, 0 otherwise
+     * Indicates if the focal length is 35mm. Should be 1 if true, 0 otherwise
      */
     @Generated
     @Selector("isFocalLength35mm")
     public native NSNumber isFocalLength35mm();
 
     /**
-     * This attribute indicates whether the MIDI sequence contained in the file is setup for use with a General MIDI device.  Should be 1 if true, 0 otherwise.
+     * This attribute indicates whether the MIDI sequence contained in the file is setup for use with a General MIDI
+     * device. Should be 1 if true, 0 otherwise.
      */
     @Generated
     @Selector("isGeneralMIDISequence")
     public native NSNumber isGeneralMIDISequence();
 
     /**
-     * This attribute indicates if the document is likely to be considered junk.  Should be 1 if true, 0 otherwise
+     * This attribute indicates if the document is likely to be considered junk. Should be 1 if true, 0 otherwise
      */
     @Generated
     @Selector("isLikelyJunk")
@@ -886,14 +891,14 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native NSNumber isLocal();
 
     /**
-     * Indicates if red-eye reduction was used to take the picture.  Should be 0 for no red-eye, 1 for red-eye
+     * Indicates if red-eye reduction was used to take the picture. Should be 0 for no red-eye, 1 for red-eye
      */
     @Generated
     @Selector("isRedEyeOn")
     public native NSNumber isRedEyeOn();
 
     /**
-     * Whether the content is prepared for streaming.  Should be 0 for not streamable, 1 for streamable.
+     * Whether the content is prepared for streaming. Should be 0 for not streamable, 1 for streamable.
      */
     @Generated
     @Selector("isStreamable")
@@ -940,7 +945,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The latitude of the item in degrees north of the equator, expressed
-     * using the WGS84 datum.  Negative values lie south of the equator.
+     * using the WGS84 datum. Negative values lie south of the equator.
      */
     @Generated
     @Selector("latitude")
@@ -962,7 +967,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The longitude of the item in degrees east of the prime meridian,
-     * expressed using the WGS84 datum.  Negative values lie west of the prime meridian.
+     * expressed using the WGS84 datum. Negative values lie west of the prime meridian.
      */
     @Generated
     @Selector("longitude")
@@ -976,7 +981,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native String lyricist();
 
     /**
-     * Array of Mailbox identifiers associated with the item. e.g. CSMailboxInbox, CSMailboxDrafts, CSMailboxSent, or a custom identifier etc.
+     * Array of Mailbox identifiers associated with the item. e.g. CSMailboxInbox, CSMailboxDrafts, CSMailboxSent, or a
+     * custom identifier etc.
      */
     @Generated
     @Selector("mailboxIdentifiers")
@@ -1056,7 +1062,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native NSArray<String> organizations();
 
     /**
-     * The orientation of the data.  Should be 0 for Landscape or 1 for Portrait.
+     * The orientation of the data. Should be 0 for Landscape or 1 for Portrait.
      */
     @Generated
     @Selector("orientation")
@@ -1212,7 +1218,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native NSNumber rating();
 
     /**
-     * A description of the rating.  E.g. the number of reviewers.
+     * A description of the rating. E.g. the number of reviewers.
      */
     @Generated
     @Selector("ratingDescription")
@@ -1227,7 +1233,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This attribute indicates the reciepients email addresses.
-     * (This is always the email address,  and not the human readable version).
+     * (This is always the email address, and not the human readable version).
      */
     @Generated
     @Selector("recipientEmailAddresses")
@@ -1251,7 +1257,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native NSDate recordingDate();
 
     /**
-     * For activities, this is the unique identifier for the item this activity is related to. If the item doesn't exist in the index, the activity will not get stored. When the item is deleted, the activity will also be deleted.
+     * For activities, this is the unique identifier for the item this activity is related to. If the item doesn't exist
+     * in the index, the activity will not get stored. When the item is deleted, the activity will also be deleted.
      */
     @Generated
     @Selector("relatedUniqueIdentifier")
@@ -1367,7 +1374,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The altitude of the item in meters above sea level, expressed
-     * using the WGS84 datum.  Negative values lie below sea level.
+     * using the WGS84 datum. Negative values lie below sea level.
      */
     @Generated
     @Selector("setAltitude:")
@@ -1589,7 +1596,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setContentSources(NSArray<String> value);
 
     /**
-     * UTI Type pedigree for an item.  Common types can be found in UTCoreTypes.h
+     * UTI Type pedigree for an item. Common types can be found in UTCoreTypes.h
      */
     @Generated
     @Selector("setContentType:")
@@ -1640,7 +1647,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * (a place name or geographic co-ordinates), temporal period (a period label, date, or date range)
      * or jurisdiction (such as a named administrative entity).
      * Recommended best practice is to select a value from a controlled vocabulary, and that, where appropriate,
-     * named places or time periods be used in preference to numeric identifiers such as sets of co-ordinates or date ranges.
+     * named places or time periods be used in preference to numeric identifiers such as sets of co-ordinates or date
+     * ranges.
      */
     @Generated
     @Selector("setCoverage:")
@@ -1655,7 +1663,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setCreator(String value);
 
     /**
-     * The delivery type of the item.  Should be 0 for fast start and 1 for RTSP.
+     * The delivery type of the item. Should be 0 for fast start and 1 for RTSP.
      */
     @Generated
     @Selector("setDeliveryType:")
@@ -1677,7 +1685,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This property has the same semantics as -[CSSearchableItem domainIdentifier].
-     * It can be set on the contentAttributeSet property of a NSUserActivity instance and then used to delete the user activity
+     * It can be set on the contentAttributeSet property of a NSUserActivity instance and then used to delete the user
+     * activity
      * by calling [[CSSearchableIndex defaultSearchableIndex] deleteSearchableItemsWithDomainIdentifiers:].
      */
     @Generated
@@ -1757,14 +1766,15 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setEndDate(NSDate value);
 
     /**
-     * Mode that was used for the exposure.  Should be 0 for AutoExposure, 1 for Manual, 2 for AutoBracket.
+     * Mode that was used for the exposure. Should be 0 for AutoExposure, 1 for Manual, 2 for AutoBracket.
      */
     @Generated
     @Selector("setExposureMode:")
     public native void setExposureMode(NSNumber value);
 
     /**
-     * The class of the program used by the camera to set exposure when the picture is taken (Manual, Normal, Aperture Priority, ...)
+     * The class of the program used by the camera to set exposure when the picture is taken (Manual, Normal, Aperture
+     * Priority, ...)
      */
     @Generated
     @Selector("setExposureProgram:")
@@ -1778,7 +1788,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setExposureTime(NSNumber value);
 
     /**
-     * The time  of the exposure as a string, e.g. "1/250 seconds".
+     * The time of the exposure as a string, e.g. "1/250 seconds".
      */
     @Generated
     @Selector("setExposureTimeString:")
@@ -1799,14 +1809,14 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setFileSize(NSNumber value);
 
     /**
-     * Indicates if the flash was used to take the picture.  Should be 1 if flash is on, 0 otherwise.
+     * Indicates if the flash was used to take the picture. Should be 1 if flash is on, 0 otherwise.
      */
     @Generated
     @Selector("setFlashOn:")
     public native void setFlashOn(NSNumber value);
 
     /**
-     * Indicates if the focal length is 35mm.  Should be 1 if true, 0 otherwise
+     * Indicates if the focal length is 35mm. Should be 1 if true, 0 otherwise
      */
     @Generated
     @Selector("setFocalLength35mm:")
@@ -1889,7 +1899,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setGPSTrack(NSNumber value);
 
     /**
-     * This attribute indicates whether the MIDI sequence contained in the file is setup for use with a General MIDI device.  Should be 1 if true, 0 otherwise.
+     * This attribute indicates whether the MIDI sequence contained in the file is setup for use with a General MIDI
+     * device. Should be 1 if true, 0 otherwise.
      */
     @Generated
     @Selector("setGeneralMIDISequence:")
@@ -1910,7 +1921,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setHTMLContentData(NSData value);
 
     /**
-     * Indicates if this image file has an alpha channel.  Should be 0 for no alpha channel, 1 for alpha channel.
+     * Indicates if this image file has an alpha channel. Should be 0 for no alpha channel, 1 for alpha channel.
      */
     @Generated
     @Selector("setHasAlphaChannel:")
@@ -1938,7 +1949,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setISOSpeed(NSNumber value);
 
     /**
-     * Used  to reference to the resource within a given
+     * Used to reference to the resource within a given
      * context. Recommended best practice is to identify the resource by
      * means of a string or number conforming to a formal identification system.
      */
@@ -2022,7 +2033,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The latitude of the item in degrees north of the equator, expressed
-     * using the WGS84 datum.  Negative values lie south of the equator.
+     * using the WGS84 datum. Negative values lie south of the equator.
      */
     @Generated
     @Selector("setLatitude:")
@@ -2043,7 +2054,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setLensModel(String value);
 
     /**
-     * This attribute indicates if the document is likely to be considered junk.  Should be 1 if true, 0 otherwise
+     * This attribute indicates if the document is likely to be considered junk. Should be 1 if true, 0 otherwise
      */
     @Generated
     @Selector("setLikelyJunk:")
@@ -2058,7 +2069,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The longitude of the item in degrees east of the prime meridian,
-     * expressed using the WGS84 datum.  Negative values lie west of the prime meridian.
+     * expressed using the WGS84 datum. Negative values lie west of the prime meridian.
      */
     @Generated
     @Selector("setLongitude:")
@@ -2072,7 +2083,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setLyricist(String value);
 
     /**
-     * Array of Mailbox identifiers associated with the item. e.g. CSMailboxInbox, CSMailboxDrafts, CSMailboxSent, or a custom identifier etc.
+     * Array of Mailbox identifiers associated with the item. e.g. CSMailboxInbox, CSMailboxDrafts, CSMailboxSent, or a
+     * custom identifier etc.
      */
     @Generated
     @Selector("setMailboxIdentifiers:")
@@ -2152,7 +2164,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setOrganizations(NSArray<String> value);
 
     /**
-     * The orientation of the data.  Should be 0 for Landscape or 1 for Portrait.
+     * The orientation of the data. Should be 0 for Landscape or 1 for Portrait.
      */
     @Generated
     @Selector("setOrientation:")
@@ -2308,7 +2320,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setRating(NSNumber value);
 
     /**
-     * A description of the rating.  E.g. the number of reviewers.
+     * A description of the rating. E.g. the number of reviewers.
      */
     @Generated
     @Selector("setRatingDescription:")
@@ -2323,7 +2335,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * This attribute indicates the reciepients email addresses.
-     * (This is always the email address,  and not the human readable version).
+     * (This is always the email address, and not the human readable version).
      */
     @Generated
     @Selector("setRecipientEmailAddresses:")
@@ -2347,14 +2359,15 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setRecordingDate(NSDate value);
 
     /**
-     * Indicates if red-eye reduction was used to take the picture.  Should be 0 for no red-eye, 1 for red-eye
+     * Indicates if red-eye reduction was used to take the picture. Should be 0 for no red-eye, 1 for red-eye
      */
     @Generated
     @Selector("setRedEyeOn:")
     public native void setRedEyeOn(NSNumber value);
 
     /**
-     * For activities, this is the unique identifier for the item this activity is related to. If the item doesn't exist in the index, the activity will not get stored. When the item is deleted, the activity will also be deleted.
+     * For activities, this is the unique identifier for the item this activity is related to. If the item doesn't exist
+     * in the index, the activity will not get stored. When the item is deleted, the activity will also be deleted.
      */
     @Generated
     @Selector("setRelatedUniqueIdentifier:")
@@ -2424,7 +2437,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setStateOrProvince(String value);
 
     /**
-     * Whether the content is prepared for streaming.  Should be 0 for not streamable, 1 for streamable.
+     * Whether the content is prepared for streaming. Should be 0 for not streamable, 1 for streamable.
      */
     @Generated
     @Selector("setStreamable:")
@@ -2445,14 +2458,19 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setSubject(String value);
 
     /**
-     * If supportsNavigation is set to 1, and the item has the latitude and longitude properties set, then the latitude and longitude may be used for navigation. For example, supportsNavigation would be set on a restaurant review, but not on a photo.
+     * If supportsNavigation is set to 1, and the item has the latitude and longitude properties set, then the latitude
+     * and longitude may be used for navigation. For example, supportsNavigation would be set on a restaurant review,
+     * but not on a photo.
      */
     @Generated
     @Selector("setSupportsNavigation:")
     public native void setSupportsNavigation(NSNumber value);
 
     /**
-     * If supportsPhoneCall is 1 and the item has the phoneNumbers property, then the phone number may be used to initiate phone calls. This should be used to indicate that using the phone number is appropriate, and a primary action for the user. For example, supportsPhoneCall would be set on a business, but not an academic paper that happens to have phone numbers for the authors or the institution.
+     * If supportsPhoneCall is 1 and the item has the phoneNumbers property, then the phone number may be used to
+     * initiate phone calls. This should be used to indicate that using the phone number is appropriate, and a primary
+     * action for the user. For example, supportsPhoneCall would be set on a business, but not an academic paper that
+     * happens to have phone numbers for the authors or the institution.
      */
     @Generated
     @Selector("setSupportsPhoneCall:")
@@ -2509,7 +2527,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setTimeSignature(String value);
 
     /**
-     * The timestamp on the item.  This generally is used to indicate the time at
+     * The timestamp on the item. This generally is used to indicate the time at
      * which the event captured by the item took place.
      */
     @Generated
@@ -2558,14 +2576,15 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native void setVideoBitRate(NSNumber value);
 
     /**
-     * For activities, this is the unique identifier for an item this activity is related to. Unlike relatedUniqueIdentifier, this attribute does not link the life time of the items.
+     * For activities, this is the unique identifier for an item this activity is related to. Unlike
+     * relatedUniqueIdentifier, this attribute does not link the life time of the items.
      */
     @Generated
     @Selector("setWeakRelatedUniqueIdentifier:")
     public native void setWeakRelatedUniqueIdentifier(String value);
 
     /**
-     * The white balance setting of the camera when the image was acquired.  Should be 0 for Auto or 1 for Manual.
+     * The white balance setting of the camera when the image was acquired. Should be 0 for Auto or 1 for Manual.
      */
     @Generated
     @Selector("setWhiteBalance:")
@@ -2607,14 +2626,19 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native String subject();
 
     /**
-     * If supportsNavigation is set to 1, and the item has the latitude and longitude properties set, then the latitude and longitude may be used for navigation. For example, supportsNavigation would be set on a restaurant review, but not on a photo.
+     * If supportsNavigation is set to 1, and the item has the latitude and longitude properties set, then the latitude
+     * and longitude may be used for navigation. For example, supportsNavigation would be set on a restaurant review,
+     * but not on a photo.
      */
     @Generated
     @Selector("supportsNavigation")
     public native NSNumber supportsNavigation();
 
     /**
-     * If supportsPhoneCall is 1 and the item has the phoneNumbers property, then the phone number may be used to initiate phone calls. This should be used to indicate that using the phone number is appropriate, and a primary action for the user. For example, supportsPhoneCall would be set on a business, but not an academic paper that happens to have phone numbers for the authors or the institution.
+     * If supportsPhoneCall is 1 and the item has the phoneNumbers property, then the phone number may be used to
+     * initiate phone calls. This should be used to indicate that using the phone number is appropriate, and a primary
+     * action for the user. For example, supportsPhoneCall would be set on a business, but not an academic paper that
+     * happens to have phone numbers for the authors or the institution.
      */
     @Generated
     @Selector("supportsPhoneCall")
@@ -2677,7 +2701,7 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native String timeSignature();
 
     /**
-     * The timestamp on the item.  This generally is used to indicate the time at
+     * The timestamp on the item. This generally is used to indicate the time at
      * which the event captured by the item took place.
      */
     @Generated
@@ -2719,14 +2743,15 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     public native NSNumber videoBitRate();
 
     /**
-     * For activities, this is the unique identifier for an item this activity is related to. Unlike relatedUniqueIdentifier, this attribute does not link the life time of the items.
+     * For activities, this is the unique identifier for an item this activity is related to. Unlike
+     * relatedUniqueIdentifier, this attribute does not link the life time of the items.
      */
     @Generated
     @Selector("weakRelatedUniqueIdentifier")
     public native String weakRelatedUniqueIdentifier();
 
     /**
-     * The white balance setting of the camera when the image was acquired.  Should be 0 for Auto or 1 for Manual.
+     * The white balance setting of the camera when the image was acquired. Should be 0 for Auto or 1 for Manual.
      */
     @Generated
     @Selector("whiteBalance")
@@ -2782,7 +2807,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * This property allows content donors to provide a ranking signal to each indexed item
      * It will inform the ranker, allowing it to distinguish more easily between otherwise similar items
-     * This is query-independent and should be used to indicate the relative importance of an item w.r.t. all other items for the same application
+     * This is query-independent and should be used to indicate the relative importance of an item w.r.t. all other
+     * items for the same application
      * Expected value ∈ [0-100]; preferably integral values
      * Monotonically increasing with larger values being considered better results
      */
@@ -2814,7 +2840,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * This property allows content donors to provide a ranking signal to each indexed item
      * It will inform the ranker, allowing it to distinguish more easily between otherwise similar items
-     * This is query-independent and should be used to indicate the relative importance of an item w.r.t. all other items for the same application
+     * This is query-independent and should be used to indicate the relative importance of an item w.r.t. all other
+     * items for the same application
      * Expected value ∈ [0-100]; preferably integral values
      * Monotonically increasing with larger values being considered better results
      */

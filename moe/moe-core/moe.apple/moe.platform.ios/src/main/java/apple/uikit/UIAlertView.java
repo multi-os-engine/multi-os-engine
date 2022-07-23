@@ -527,7 +527,8 @@ public class UIAlertView extends UIView {
 
     /**
      * Retrieve a text field at an index
-     * The field at index 0 will be the first text field (the single field or the login field), the field at index 1 will be the password field.
+     * The field at index 0 will be the first text field (the single field or the login field), the field at index 1
+     * will be the password field.
      */
     @Generated
     @Selector("textFieldAtIndex:")

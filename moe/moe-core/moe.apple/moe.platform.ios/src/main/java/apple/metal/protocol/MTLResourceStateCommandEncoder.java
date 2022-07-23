@@ -25,7 +25,8 @@ public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
      * Update the fence to capture all GPU work so far enqueued by this encoder.
      * <p>
      * The fence is updated at kernel submission to maintain global order and prevent deadlock.
-     * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
+     * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of
+     * an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
      */
     @Generated
     @Selector("updateFence:")
@@ -34,7 +35,8 @@ public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
     /**
      * updateTextureMapping:indirectBuffer:indirectBufferOffset:
      * <p>
-     * Updates mapping for given sparse texture. Updates are driven via a MTLBuffer with the structure format defined by MTLMapIndirectBufferFormat.
+     * Updates mapping for given sparse texture. Updates are driven via a MTLBuffer with the structure format defined by
+     * MTLMapIndirectBufferFormat.
      * <p>
      * struct MTLMapIndirectBufferFormat{
      * uint32_t numMappings;
@@ -74,7 +76,8 @@ public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
      * Prevent further GPU work until the fence is reached.
      * <p>
      * The fence is evaluated at kernel submision to maintain global order and prevent deadlock.
-     * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
+     * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of
+     * an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
      */
     @Generated
     @Selector("waitForFence:")

@@ -22,10 +22,10 @@ import org.moe.natj.general.ann.Generated;
  * [@enum] MusicSequenceFileFlags
  * <p>
  * controls the behaviour of the create file calls
- * [@constant]	kMusicSequenceFileFlags_Default
- * Does not overwrite existing files.  Attempts to save over an existing file
+ * [@constant] kMusicSequenceFileFlags_Default
+ * Does not overwrite existing files. Attempts to save over an existing file
  * will return kAudio_FilePermissionError
- * [@constant]	kMusicSequenceFileFlags_EraseFile
+ * [@constant] kMusicSequenceFileFlags_EraseFile
  * Erase an existing file when creating a new file
  */
 @Generated

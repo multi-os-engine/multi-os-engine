@@ -31,8 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest extends ASAuthorizationRequest
-        implements ASAuthorizationPublicKeyCredentialRegistrationRequest {
+public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest extends ASAuthorizationRequest implements
+        ASAuthorizationPublicKeyCredentialRegistrationRequest {
     static {
         NatJ.register();
     }
@@ -93,7 +93,8 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * A list of parameters for the new credential which are supported by the Relying Party. The authenticator should choose from these parameters when creating the credential.
+     * A list of parameters for the new credential which are supported by the Relying Party. The authenticator should
+     * choose from these parameters when creating the credential.
      */
     @Generated
     @Selector("credentialParameters")
@@ -116,7 +117,9 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * A list of descriptors indicating credentials which must not already exist on the authenticator. If a credential already exists on the authenticator which matches one or more of these descriptors, a new credential will not be created and authentication will fail.
+     * A list of descriptors indicating credentials which must not already exist on the authenticator. If a credential
+     * already exists on the authenticator which matches one or more of these descriptors, a new credential will not be
+     * created and authentication will fail.
      */
     @Generated
     @Selector("excludedCredentials")
@@ -193,7 +196,8 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
     public native void setChallenge(NSData value);
 
     /**
-     * A list of parameters for the new credential which are supported by the Relying Party. The authenticator should choose from these parameters when creating the credential.
+     * A list of parameters for the new credential which are supported by the Relying Party. The authenticator should
+     * choose from these parameters when creating the credential.
      */
     @Generated
     @Selector("setCredentialParameters:")
@@ -204,7 +208,9 @@ public class ASAuthorizationSecurityKeyPublicKeyCredentialRegistrationRequest ex
     public native void setDisplayName(String value);
 
     /**
-     * A list of descriptors indicating credentials which must not already exist on the authenticator. If a credential already exists on the authenticator which matches one or more of these descriptors, a new credential will not be created and authentication will fail.
+     * A list of descriptors indicating credentials which must not already exist on the authenticator. If a credential
+     * already exists on the authenticator which matches one or more of these descriptors, a new credential will not be
+     * created and authentication will fail.
      */
     @Generated
     @Selector("setExcludedCredentials:")

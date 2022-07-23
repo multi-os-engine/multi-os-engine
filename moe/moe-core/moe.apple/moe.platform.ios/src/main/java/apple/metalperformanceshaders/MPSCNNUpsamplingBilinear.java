@@ -188,7 +188,8 @@ public class MPSCNNUpsamplingBilinear extends MPSCNNUpsampling {
      * @param device              The device the filter will run on.
      * @param integerScaleFactorX The upsampling factor for the x dimension.
      * @param integerScaleFactorY The upsampling factor for the y dimension.
-     * @param alignCorners        Specifier whether the centers of the 4 corner pixels of the input and output regions are aligned,
+     * @param alignCorners        Specifier whether the centers of the 4 corner pixels of the input and output regions
+     *                            are aligned,
      *                            preserving the values at the corner pixels.
      * @return A valid MPSCNNUpsamplingBilinear object or nil, if failure.
      */

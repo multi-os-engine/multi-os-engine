@@ -133,12 +133,14 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     /**
      * Initializes a point of interest to be used with @c CPPointOfInterestTemplate
      * <p>
-     * [@note] When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
+     * [@note] When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the
+     * image, provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
      * <p>
-     * CPPointOfInterest instances appear on the Point of Interest map view as both selectable items in the table view overlay and as map annotations.
+     * CPPointOfInterest instances appear on the Point of Interest map view as both selectable items in the table view
+     * overlay and as map annotations.
      *
      * @param location       Location indicator use by map annotations.
      * @param title          Primary title for this point of interest

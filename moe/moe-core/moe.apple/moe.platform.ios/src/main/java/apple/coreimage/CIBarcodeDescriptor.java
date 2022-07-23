@@ -30,10 +30,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * CIBarcodeDescriptor
  * <p>
- * CIBarcodeDescriptor is an abstract base class that defines an abstract representation of a machine readable code's symbol attributes.
+ * CIBarcodeDescriptor is an abstract base class that defines an abstract representation of a machine readable code's
+ * symbol attributes.
  * <p>
  * [@discsussion]
- * Each subclass is sufficient to recreate the symbol exactly as seen or to be used with a custom parser. Subclasses of CIBarcodeDescriptor are defined for each code type to contain the formal specification of each symbology.
+ * Each subclass is sufficient to recreate the symbol exactly as seen or to be used with a custom parser. Subclasses of
+ * CIBarcodeDescriptor are defined for each code type to contain the formal specification of each symbology.
  */
 @Generated
 @Library("CoreImage")

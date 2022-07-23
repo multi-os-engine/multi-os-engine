@@ -267,7 +267,8 @@ public class HMHome extends NSObject {
      * @param completion Block that is invoked once the request is processed.
      *                   The HMUser object provides a reference to the user that was added to the home.
      *                   The NSError provides more information on the status of the request, error
-     *                   will be nil on success. The userInfo dictionary will contain the HMUserFailedAccessoriesKey which provides
+     *                   will be nil on success. The userInfo dictionary will contain the HMUserFailedAccessoriesKey
+     *                   which provides
      *                   more details on the accessories that failed to add the user.
      */
     @Generated
@@ -313,7 +314,7 @@ public class HMHome extends NSObject {
      * @param actionSetType Type of the builtin action set. Supported action set types are HMActionSetTypeWakeUp,
      *                      HMActionSetTypeSleep, HMActionSetTypeHomeDeparture and HMActionSetTypeHomeArrival.
      * @return Reference to the built-in action set corresponding to type argument,
-     * nil if no matching action set is found.
+     *         nil if no matching action set is found.
      */
     @Generated
     @Selector("builtinActionSetOfType:")
@@ -373,7 +374,8 @@ public class HMHome extends NSObject {
      * @param completion Block that is invoked once user management is completed.
      *                   The completion block is fired to allow clients to know when the user has dismissed the view.
      *                   The NSError provides more information on the status of the request, error
-     *                   will be nil on success. If the user does not have administrator privileges the error code will be set to
+     *                   will be nil on success. If the user does not have administrator privileges the error code will
+     *                   be set to
      *                   HMErrorCodeInsufficientPrivileges.
      */
     @Generated
@@ -464,7 +466,8 @@ public class HMHome extends NSObject {
      * @param user       HMUser whose access is being revoked.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
-     *                   will be nil on success. The userInfo dictionary will contain the HMUserFailedAccessoriesKey which provides
+     *                   will be nil on success. The userInfo dictionary will contain the HMUserFailedAccessoriesKey
+     *                   which provides
      *                   more details on the accessories that failed to remove the user.
      */
     @Generated
@@ -515,7 +518,7 @@ public class HMHome extends NSObject {
      *
      * @param serviceTypes Array of NSString objects that specifies the service types to match.
      * @return Array of HMService objects that match the specified service types,
-     * nil if no matching services were found.
+     *         nil if no matching services were found.
      */
     @Generated
     @Selector("servicesWithTypes:")
@@ -553,8 +556,8 @@ public class HMHome extends NSObject {
     /**
      * unblock a blocked accessory.
      * <p>
-     * A misbehaving accessory will automatically be blocked.  After that all requests to
-     * the accessory will fail.  This API must be used to explicitly unblock the accessory
+     * A misbehaving accessory will automatically be blocked. After that all requests to
+     * the accessory will fail. This API must be used to explicitly unblock the accessory
      *
      * @param accessory  accessory to be unblocked
      * @param completion Block that is invoked once the request is processed.
@@ -751,7 +754,7 @@ public class HMHome extends NSObject {
 
     /**
      * Add accessory with the given setup payload to the home.
-     * [@note]  This SPI requires entitlement: com.apple.developer.homekit.allow-setup-payload
+     * [@note] This SPI requires entitlement: com.apple.developer.homekit.allow-setup-payload
      *
      * @param completion Block that is invoked once the request is processed.
      *                   Accessories provides the list of added accessories.

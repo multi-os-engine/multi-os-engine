@@ -340,7 +340,8 @@ public class NWTCPConnection extends NSObject {
      * before issuing another write.
      *
      * @param data       The data object whose content will be written
-     * @param completion The completion handler to be invoked when the data content has been written or an error has occurred.
+     * @param completion The completion handler to be invoked when the data content has been written or an error has
+     *                   occurred.
      *                   If the error is nil, the write succeeded and the caller can write more data.
      */
     @Generated

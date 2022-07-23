@@ -90,7 +90,8 @@ public class INVoiceShortcutCenter extends NSObject {
 
     /**
      * Get all of the shortcuts associated with this app that have been added to Siri.
-     * These could have either been added with `INUIAddVoiceShortcutViewController`, or separately by the user in the Shortcuts app.
+     * These could have either been added with `INUIAddVoiceShortcutViewController`, or separately by the user in the
+     * Shortcuts app.
      */
     @Generated
     @Selector("getAllVoiceShortcutsWithCompletion:")

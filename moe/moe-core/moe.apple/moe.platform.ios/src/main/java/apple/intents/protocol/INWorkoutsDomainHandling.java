@@ -26,7 +26,6 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INWorkoutsDomainHandling")
-public interface INWorkoutsDomainHandling
-        extends INStartWorkoutIntentHandling, INPauseWorkoutIntentHandling, INEndWorkoutIntentHandling,
-        INCancelWorkoutIntentHandling, INResumeWorkoutIntentHandling {
+public interface INWorkoutsDomainHandling extends INStartWorkoutIntentHandling, INPauseWorkoutIntentHandling,
+        INEndWorkoutIntentHandling, INCancelWorkoutIntentHandling, INResumeWorkoutIntentHandling {
 }

@@ -189,7 +189,10 @@ public class NSMutableAttributedString extends NSAttributedString {
     public native void endEditing();
 
     /**
-     * This method fixes attribute inconsistencies inside range.  It ensures NSFontAttributeName covers the characters, NSParagraphStyleAttributeName is only changing at paragraph boundaries, and NSTextAttachmentAttributeName is assigned to NSAttachmentCharacter.  NSTextStorage automatically invokes this method via -ensureAttributesAreFixedInRange:.
+     * This method fixes attribute inconsistencies inside range. It ensures NSFontAttributeName covers the characters,
+     * NSParagraphStyleAttributeName is only changing at paragraph boundaries, and NSTextAttachmentAttributeName is
+     * assigned to NSAttachmentCharacter. NSTextStorage automatically invokes this method via
+     * -ensureAttributesAreFixedInRange:.
      */
     @Generated
     @Selector("fixAttributesInRange:")
@@ -258,7 +261,11 @@ public class NSMutableAttributedString extends NSAttributedString {
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
-     * Methods replacing the receiver contents with an external document data.  options specify document attributes for interpreting the document contents.  NSDocumentTypeDocumentAttribute, NSCharacterEncodingDocumentAttribute, and NSDefaultAttributesDocumentAttribute are supported options key.  When they are not specified, these methods will examine the data and do their best to detect the appropriate attributes.  If dict is non-NULL, it will return a dictionary with various document-wide attributes accessible via NS...DocumentAttribute keys.
+     * Methods replacing the receiver contents with an external document data. options specify document attributes for
+     * interpreting the document contents. NSDocumentTypeDocumentAttribute, NSCharacterEncodingDocumentAttribute, and
+     * NSDefaultAttributesDocumentAttribute are supported options key. When they are not specified, these methods will
+     * examine the data and do their best to detect the appropriate attributes. If dict is non-NULL, it will return a
+     * dictionary with various document-wide attributes accessible via NS...DocumentAttribute keys.
      */
     @Generated
     @Selector("readFromURL:options:documentAttributes:error:")

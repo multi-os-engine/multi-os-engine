@@ -160,7 +160,7 @@ public class HMHomeManager extends NSObject {
     /**
      * Adds a new home to the collection.
      *
-     * @param homeName   Name of the  home to create and add to the collection.
+     * @param homeName   Name of the home to create and add to the collection.
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.

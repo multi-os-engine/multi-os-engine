@@ -272,7 +272,7 @@ public class HKSampleQuery extends HKQuery {
      *
      * @param sampleType      The type of sample to retrieve.
      * @param predicate       The predicate which samples should match.
-     * @param limit           The maximum number of samples to return.  Pass HKObjectQueryNoLimit for no limit.
+     * @param limit           The maximum number of samples to return. Pass HKObjectQueryNoLimit for no limit.
      * @param sortDescriptors The sort descriptors to use to order the resulting samples.
      * @param resultsHandler  The block to invoke with results when the query has finished executing.
      */
@@ -283,7 +283,7 @@ public class HKSampleQuery extends HKQuery {
             @ObjCBlock(name = "call_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler") Block_initWithSampleTypePredicateLimitSortDescriptorsResultsHandler resultsHandler);
 
     /**
-     * [@property]      limit
+     * [@property] limit
      * <p>
      * The maximum number of results the receiver will return upon completion.
      */
@@ -293,7 +293,7 @@ public class HKSampleQuery extends HKQuery {
     public native long limit();
 
     /**
-     * [@property]      sortDescriptors
+     * [@property] sortDescriptors
      * <p>
      * An array of NSSortDescriptors.
      */

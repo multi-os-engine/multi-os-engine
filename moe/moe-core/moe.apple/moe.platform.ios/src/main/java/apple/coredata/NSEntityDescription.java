@@ -181,8 +181,11 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
 
     /**
      * Getter returns an array of arrays of NSPropertyDescription objects describing the components of the indexes.
-     * Setter takes an array of arrays of NSPropertyDescription objects and/or strings that are the names of properties of the entity on which the index is created. The special strings @"self" and @"entity" can be used to indicate that an index should contain a reference to the object's primary or entity key.
-     * This value does not form part of the entity's version hash, and may be ignored by stores which do not natively support compound indexes.
+     * Setter takes an array of arrays of NSPropertyDescription objects and/or strings that are the names of properties
+     * of the entity on which the index is created. The special strings @"self" and @"entity" can be used to indicate
+     * that an index should contain a reference to the object's primary or entity key.
+     * This value does not form part of the entity's version hash, and may be ignored by stores which do not natively
+     * support compound indexes.
      */
     @Generated
     @Selector("compoundIndexes")
@@ -221,7 +224,8 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     public native void setAbstract(boolean value);
 
     /**
-     * Returns a boolean indicating if the receiver is a subentity of the specified entity.  (This method is the Core Data entity inheritance equivalent of -isKindOfClass:)
+     * Returns a boolean indicating if the receiver is a subentity of the specified entity. (This method is the Core
+     * Data entity inheritance equivalent of -isKindOfClass:)
      */
     @Generated
     @Selector("isKindOfEntity:")
@@ -262,8 +266,11 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
 
     /**
      * Getter returns an array of arrays of NSPropertyDescription objects describing the components of the indexes.
-     * Setter takes an array of arrays of NSPropertyDescription objects and/or strings that are the names of properties of the entity on which the index is created. The special strings @"self" and @"entity" can be used to indicate that an index should contain a reference to the object's primary or entity key.
-     * This value does not form part of the entity's version hash, and may be ignored by stores which do not natively support compound indexes.
+     * Setter takes an array of arrays of NSPropertyDescription objects and/or strings that are the names of properties
+     * of the entity on which the index is created. The special strings @"self" and @"entity" can be used to indicate
+     * that an index should contain a reference to the object's primary or entity key.
+     * This value does not form part of the entity's version hash, and may be ignored by stores which do not natively
+     * support compound indexes.
      */
     @Generated
     @Selector("setCompoundIndexes:")
@@ -290,12 +297,17 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     public native void setSubentities(NSArray<? extends NSEntityDescription> value);
 
     /**
-     * Returns/sets uniqueness constraints for the entity. A uniqueness constraint is a set of one or more attributes whose value must be unique over the set of instances of that entity.
+     * Returns/sets uniqueness constraints for the entity. A uniqueness constraint is a set of one or more attributes
+     * whose value must be unique over the set of instances of that entity.
      * <p>
-     * Sets an array of arrays, each of which contains one or more NSAttributeDescription or NSString instances (strings must be the names of attributes on the entity) on which the constraint is registered.
-     * Returns an array of arrays, each of which contains instances of NSString which identify the attributes on the entity that comprise the constraint.
-     * This value forms part of the entity's version hash. Stores which do not support uniqueness constraints should refuse to initialize when given a model containing such constraints.
-     * Discussion: uniqueness constraint violations can be computationally expensive to handle. It is highly suggested that there be only one uniqueness constraint per entity hierarchy,
+     * Sets an array of arrays, each of which contains one or more NSAttributeDescription or NSString instances (strings
+     * must be the names of attributes on the entity) on which the constraint is registered.
+     * Returns an array of arrays, each of which contains instances of NSString which identify the attributes on the
+     * entity that comprise the constraint.
+     * This value forms part of the entity's version hash. Stores which do not support uniqueness constraints should
+     * refuse to initialize when given a model containing such constraints.
+     * Discussion: uniqueness constraint violations can be computationally expensive to handle. It is highly suggested
+     * that there be only one uniqueness constraint per entity hierarchy,
      * although subentites may extend a sueprentity's constraint.
      */
     @Generated
@@ -307,7 +319,10 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     public native void setUserInfo(NSDictionary<?, ?> value);
 
     /**
-     * Returns/sets the version hash modifier for the entity.  This value is included in the version hash for the entity, allowing developers to mark/denote an entity as being a different "version" than another, even if all of the values which affect persistence are equal.  (Such a difference is important in cases where the structure of an entity is unchanged, but the format or content of data has changed.)
+     * Returns/sets the version hash modifier for the entity. This value is included in the version hash for the entity,
+     * allowing developers to mark/denote an entity as being a different "version" than another, even if all of the
+     * values which affect persistence are equal. (Such a difference is important in cases where the structure of an
+     * entity is unchanged, but the format or content of data has changed.)
      */
     @Generated
     @Selector("setVersionHashModifier:")
@@ -326,12 +341,17 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     public native NSEntityDescription superentity();
 
     /**
-     * Returns/sets uniqueness constraints for the entity. A uniqueness constraint is a set of one or more attributes whose value must be unique over the set of instances of that entity.
+     * Returns/sets uniqueness constraints for the entity. A uniqueness constraint is a set of one or more attributes
+     * whose value must be unique over the set of instances of that entity.
      * <p>
-     * Sets an array of arrays, each of which contains one or more NSAttributeDescription or NSString instances (strings must be the names of attributes on the entity) on which the constraint is registered.
-     * Returns an array of arrays, each of which contains instances of NSString which identify the attributes on the entity that comprise the constraint.
-     * This value forms part of the entity's version hash. Stores which do not support uniqueness constraints should refuse to initialize when given a model containing such constraints.
-     * Discussion: uniqueness constraint violations can be computationally expensive to handle. It is highly suggested that there be only one uniqueness constraint per entity hierarchy,
+     * Sets an array of arrays, each of which contains one or more NSAttributeDescription or NSString instances (strings
+     * must be the names of attributes on the entity) on which the constraint is registered.
+     * Returns an array of arrays, each of which contains instances of NSString which identify the attributes on the
+     * entity that comprise the constraint.
+     * This value forms part of the entity's version hash. Stores which do not support uniqueness constraints should
+     * refuse to initialize when given a model containing such constraints.
+     * Discussion: uniqueness constraint violations can be computationally expensive to handle. It is highly suggested
+     * that there be only one uniqueness constraint per entity hierarchy,
      * although subentites may extend a sueprentity's constraint.
      */
     @Generated
@@ -343,14 +363,22 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     public native NSDictionary<?, ?> userInfo();
 
     /**
-     * Returns the version hash for the entity.  The version hash is used to uniquely identify an entity based on the collection and configuration of properties for the entity.  The version hash uses only values which affect the persistence of data and the user-defined versionHashModifier value.  (The values which affect persistence are the name of the entity, the version hash of the superentity (if present), if the entity is abstract, and all of the version hashes for the properties.)  This value is stored as part of the version information in the metadata for stores which use this entity, as well as a definition of an entity involved in an NSEntityMapping.
+     * Returns the version hash for the entity. The version hash is used to uniquely identify an entity based on the
+     * collection and configuration of properties for the entity. The version hash uses only values which affect the
+     * persistence of data and the user-defined versionHashModifier value. (The values which affect persistence are the
+     * name of the entity, the version hash of the superentity (if present), if the entity is abstract, and all of the
+     * version hashes for the properties.) This value is stored as part of the version information in the metadata for
+     * stores which use this entity, as well as a definition of an entity involved in an NSEntityMapping.
      */
     @Generated
     @Selector("versionHash")
     public native NSData versionHash();
 
     /**
-     * Returns/sets the version hash modifier for the entity.  This value is included in the version hash for the entity, allowing developers to mark/denote an entity as being a different "version" than another, even if all of the values which affect persistence are equal.  (Such a difference is important in cases where the structure of an entity is unchanged, but the format or content of data has changed.)
+     * Returns/sets the version hash modifier for the entity. This value is included in the version hash for the entity,
+     * allowing developers to mark/denote an entity as being a different "version" than another, even if all of the
+     * values which affect persistence are equal. (Such a difference is important in cases where the structure of an
+     * entity is unchanged, but the format or content of data has changed.)
      */
     @Generated
     @Selector("versionHashModifier")
@@ -364,8 +392,12 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     public native NSExpression coreSpotlightDisplayNameExpression();
 
     /**
-     * Returns/sets the set of indexes for the entity. Returns/takes an array of NSFetchIndexDescription instances. This value does not form part of the entity's version hash, and may be ignored by stores which do not natively support indexing.
-     * IMPORTANT: Indexes should be the last things set in a model. Changing an entity hierarchy in any way that could affect the validity of indexes (adding or removing super/subentities, adding or removing properties anywhere in the hierarchy) will cause all exisiting indexes for entities in that hierarchy to be dropped.
+     * Returns/sets the set of indexes for the entity. Returns/takes an array of NSFetchIndexDescription instances. This
+     * value does not form part of the entity's version hash, and may be ignored by stores which do not natively support
+     * indexing.
+     * IMPORTANT: Indexes should be the last things set in a model. Changing an entity hierarchy in any way that could
+     * affect the validity of indexes (adding or removing super/subentities, adding or removing properties anywhere in
+     * the hierarchy) will cause all exisiting indexes for entities in that hierarchy to be dropped.
      */
     @Generated
     @Selector("indexes")
@@ -379,8 +411,12 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     public native void setCoreSpotlightDisplayNameExpression(NSExpression value);
 
     /**
-     * Returns/sets the set of indexes for the entity. Returns/takes an array of NSFetchIndexDescription instances. This value does not form part of the entity's version hash, and may be ignored by stores which do not natively support indexing.
-     * IMPORTANT: Indexes should be the last things set in a model. Changing an entity hierarchy in any way that could affect the validity of indexes (adding or removing super/subentities, adding or removing properties anywhere in the hierarchy) will cause all exisiting indexes for entities in that hierarchy to be dropped.
+     * Returns/sets the set of indexes for the entity. Returns/takes an array of NSFetchIndexDescription instances. This
+     * value does not form part of the entity's version hash, and may be ignored by stores which do not natively support
+     * indexing.
+     * IMPORTANT: Indexes should be the last things set in a model. Changing an entity hierarchy in any way that could
+     * affect the validity of indexes (adding or removing super/subentities, adding or removing properties anywhere in
+     * the hierarchy) will cause all exisiting indexes for entities in that hierarchy to be dropped.
      */
     @Generated
     @Selector("setIndexes:")

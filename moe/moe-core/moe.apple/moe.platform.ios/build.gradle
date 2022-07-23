@@ -13,6 +13,9 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
+plugins {
+    id "com.diffplug.spotless" version "6.8.0"
+}
 
 apply plugin: 'java'
 
@@ -55,4 +58,11 @@ jar {
 artifacts {
     archives javadocJar
     archives sourceJar
+}
+
+spotless {
+    java {
+        target("src/main/java/apple/**")
+        eclipse().configFile('Eclipse_Adjusted_NatJGen.xml')
+    }
 }

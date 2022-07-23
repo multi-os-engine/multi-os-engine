@@ -268,7 +268,8 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
      * // Obj-C
      * MLMultiArray *A = [[MLMultiArray alloc] initWithShape:@[@2, @3] dataType:MLMultiArrayDataTypeInt32 error:NULL];
      * MLMultiArray *B = [[MLMultiArray alloc] initWithShape:@[@2, @2] dataType:MLMultiArrayDataTypeInt32 error:NULL];
-     * MLMultiArray *C = [MLMultiArray multiArrayByConcatenatingMultiArrays:@[A, B] alongAxis:1 dataType:MLMultiArrayDataTypeInt32];
+     * MLMultiArray *C = [MLMultiArray multiArrayByConcatenatingMultiArrays:@[A, B] alongAxis:1
+     * dataType:MLMultiArrayDataTypeInt32];
      * assert(C.shape == @[@2, @5])
      * \endcode
      * <p>

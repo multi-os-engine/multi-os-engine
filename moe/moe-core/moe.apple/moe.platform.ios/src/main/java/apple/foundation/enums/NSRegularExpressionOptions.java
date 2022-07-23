@@ -20,7 +20,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * NSRegularExpression is a class used to represent and apply regular expressions.  An instance of this class is an immutable representation of a compiled regular expression pattern and various option flags.
+ * NSRegularExpression is a class used to represent and apply regular expressions. An instance of this class is an
+ * immutable representation of a compiled regular expression pattern and various option flags.
  */
 @Generated
 public final class NSRegularExpressionOptions {
@@ -49,7 +50,8 @@ public final class NSRegularExpressionOptions {
      */
     @Generated @NUInt public static final long UseUnixLineSeparators = 0x0000000000000020L;
     /**
-     * Use Unicode TR#29 to specify word boundaries (otherwise, traditional regular expression word boundaries are used).
+     * Use Unicode TR#29 to specify word boundaries (otherwise, traditional regular expression word boundaries are
+     * used).
      */
     @Generated @NUInt public static final long UseUnicodeWordBoundaries = 0x0000000000000040L;
 

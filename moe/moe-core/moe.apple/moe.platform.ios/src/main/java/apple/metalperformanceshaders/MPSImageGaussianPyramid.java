@@ -55,11 +55,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * "Downsample()" removes odd rows and columns from the input image.
  * The default convolution filter kernel for this operation is
  * [@code]
- * k = w w^T, where w = [ 1/16,  1/4,  3/8,  1/4,  1/16 ]^T,
+ * k = w w^T, where w = [ 1/16, 1/4, 3/8, 1/4, 1/16 ]^T,
  * [@endcode]
  * but the user may also tweak this kernel with a @ref centerWeight parameter: 'a':
  * [@code]
- * k = w w^T, where w = [ (1/4 - a/2),  1/4,  a,  1/4,  (1/4 - a/2) ]^T
+ * k = w w^T, where w = [ (1/4 - a/2), 1/4, a, 1/4, (1/4 - a/2) ]^T
  * [@endcode]
  * or the user can provide a completely custom kernel.
  * <p>

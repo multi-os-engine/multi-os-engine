@@ -44,7 +44,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * PHAssetChangeRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or -[PHPhotoLibrary performChangesAndWait:] block.
+ * PHAssetChangeRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or -[PHPhotoLibrary
+ * performChangesAndWait:] block.
  */
 @Generated
 @Library("Photos")
@@ -89,7 +90,8 @@ public class PHAssetChangeRequest extends PHChangeRequest {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * if the asset does not allow the type of change requested, these methods will raise an exception, call canPerformEditOperation: on the asset to determine if the type of edit operation is allowed.
+     * if the asset does not allow the type of change requested, these methods will raise an exception, call
+     * canPerformEditOperation: on the asset to determine if the type of edit operation is allowed.
      */
     @Generated
     @Selector("changeRequestForAsset:")
@@ -203,14 +205,16 @@ public class PHAssetChangeRequest extends PHChangeRequest {
     public native void setFavorite(boolean value);
 
     /**
-     * a hidden asset will be excluded from moment collections, but may still be included in other smart or regular album collections
+     * a hidden asset will be excluded from moment collections, but may still be included in other smart or regular
+     * album collections
      */
     @Generated
     @Selector("isHidden")
     public native boolean isHidden();
 
     /**
-     * a hidden asset will be excluded from moment collections, but may still be included in other smart or regular album collections
+     * a hidden asset will be excluded from moment collections, but may still be included in other smart or regular
+     * album collections
      */
     @Generated
     @Selector("setHidden:")
@@ -229,8 +233,10 @@ public class PHAssetChangeRequest extends PHChangeRequest {
     public native PHObjectPlaceholder placeholderForCreatedAsset();
 
     /**
-     * Reverting requires that all original resources are downloaded to the device first and this must be performed manually by the client if the original resources aren't already local.
-     * Use PHAssetResourceManager to ensure that original asset content is downloaded to the current device before making this request.
+     * Reverting requires that all original resources are downloaded to the device first and this must be performed
+     * manually by the client if the original resources aren't already local.
+     * Use PHAssetResourceManager to ensure that original asset content is downloaded to the current device before
+     * making this request.
      */
     @Generated
     @Selector("revertAssetContentToOriginal")

@@ -158,7 +158,8 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     public static native long version_static();
 
     /**
-     * Returns attributed string with annotations for each component. For each range, attributes can be obtained by querying
+     * Returns attributed string with annotations for each component. For each range, attributes can be obtained by
+     * querying
      * dictionary key NSPersonNameComponentKey , using NSPersonNameComponent constant values.
      */
     @Generated
@@ -194,28 +195,32 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     public native void setPhonetic(boolean value);
 
     /**
-     * Convenience method on getObjectValue:forString:error:. Returns an NSPersonNameComponents object representing the name components found in the provided string.
+     * Convenience method on getObjectValue:forString:error:. Returns an NSPersonNameComponents object representing the
+     * name components found in the provided string.
      */
     @Generated
     @Selector("personNameComponentsFromString:")
     public native NSPersonNameComponents personNameComponentsFromString(String string);
 
     /**
-     * Specify the formatting style for the formatted string on an instance. ShortStyle will fall back to user preferences and language-specific defaults
+     * Specify the formatting style for the formatted string on an instance. ShortStyle will fall back to user
+     * preferences and language-specific defaults
      */
     @Generated
     @Selector("setStyle:")
     public native void setStyle(@NInt long value);
 
     /**
-     * Convenience method on stringForObjectValue:. Returns a string containing the formatted value of the provided components object.
+     * Convenience method on stringForObjectValue:. Returns a string containing the formatted value of the provided
+     * components object.
      */
     @Generated
     @Selector("stringFromPersonNameComponents:")
     public native String stringFromPersonNameComponents(NSPersonNameComponents components);
 
     /**
-     * Specify the formatting style for the formatted string on an instance. ShortStyle will fall back to user preferences and language-specific defaults
+     * Specify the formatting style for the formatted string on an instance. ShortStyle will fall back to user
+     * preferences and language-specific defaults
      */
     @Generated
     @Selector("style")
@@ -223,14 +228,16 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     public native long style();
 
     /**
-     * Specifies the locale to format names. Defaults to autoupdatingCurrentLocale. Also resets to autoupdatingCurrentLocale on assignment of nil.
+     * Specifies the locale to format names. Defaults to autoupdatingCurrentLocale. Also resets to
+     * autoupdatingCurrentLocale on assignment of nil.
      */
     @Generated
     @Selector("locale")
     public native NSLocale locale();
 
     /**
-     * Specifies the locale to format names. Defaults to autoupdatingCurrentLocale. Also resets to autoupdatingCurrentLocale on assignment of nil.
+     * Specifies the locale to format names. Defaults to autoupdatingCurrentLocale. Also resets to
+     * autoupdatingCurrentLocale on assignment of nil.
      */
     @Generated
     @Selector("setLocale:")

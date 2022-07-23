@@ -42,7 +42,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * GKNoise is the object used to manipulate and combine noise in continuous 3D space.  It takes a GKNoiseSource as input.
+ * GKNoise is the object used to manipulate and combine noise in continuous 3D space. It takes a GKNoiseSource as input.
  * To extract and use a portion of the noise within the 3D space use the GKNoiseMap class.
  *
  * @see GKNoiseSource
@@ -138,10 +138,12 @@ public class GKNoise extends NSObject {
     public static native GKNoise new_objc();
 
     /**
-     * Initializes a composite noise from one or more component noises.  Useful for combining and layering noises together.
+     * Initializes a composite noise from one or more component noises. Useful for combining and layering noises
+     * together.
      *
      * @param noises         The component noises to combine.
-     * @param selectionNoise The noise that governs which component noise is chosen for each position of the resulting noise.
+     * @param selectionNoise The noise that governs which component noise is chosen for each position of the resulting
+     *                       noise.
      *                       The range of values is equally-subdivided for each component noise.
      */
     @Generated
@@ -150,15 +152,21 @@ public class GKNoise extends NSObject {
             GKNoise selectionNoise);
 
     /**
-     * Initializes a composite noise from one or more component noises.  Useful for combining and layering noises together.
+     * Initializes a composite noise from one or more component noises. Useful for combining and layering noises
+     * together.
      *
      * @param noises              The component noises to combine.
-     * @param selectionNoise      The noise that governs which component noise is chosen for each position of the resulting noise.
+     * @param selectionNoise      The noise that governs which component noise is chosen for each position of the
+     *                            resulting noise.
      *                            The range of values is equally-subdivided for each component noise.
-     * @param componentBoundaries The noise value boundaries of the selection noise to use for the component noises.  Specify
-     *                            one less boundary than the number of component noises.  This is a parallel array to blendDistances.
-     * @param blendDistances      The size of smoothing that is applied to boundaries where two component noises meet.  Specify
-     *                            one less blend distance than the number of component noises.  This is a parallel array to componentBoundaries.
+     * @param componentBoundaries The noise value boundaries of the selection noise to use for the component noises.
+     *                            Specify
+     *                            one less boundary than the number of component noises. This is a parallel array to
+     *                            blendDistances.
+     * @param blendDistances      The size of smoothing that is applied to boundaries where two component noises meet.
+     *                            Specify
+     *                            one less blend distance than the number of component noises. This is a parallel array
+     *                            to componentBoundaries.
      */
     @Generated
     @Selector("noiseWithComponentNoises:selectionNoise:componentBoundaries:boundaryBlendDistances:")
@@ -244,9 +252,12 @@ public class GKNoise extends NSObject {
     /**
      * Displaces all noise values by the values at the same positions of the specified noises.
      *
-     * @param xDisplacementNoise The noise from which to displace along the x-axis this noise's values at the same positions.
-     * @param yDisplacementNoise The noise from which to displace along the y-axis this noise's values at the same positions.
-     * @param zDisplacementNoise The noise from which to displace along the z-axis this noise's values at the same positions.
+     * @param xDisplacementNoise The noise from which to displace along the x-axis this noise's values at the same
+     *                           positions.
+     * @param yDisplacementNoise The noise from which to displace along the y-axis this noise's values at the same
+     *                           positions.
+     * @param zDisplacementNoise The noise from which to displace along the z-axis this noise's values at the same
+     *                           positions.
      */
     @Generated
     @Selector("displaceXWithNoise:yWithNoise:zWithNoise:")
@@ -254,7 +265,8 @@ public class GKNoise extends NSObject {
             GKNoise zDisplacementNoise);
 
     /**
-     * Color gradient of this noise, represented as 'value : color' pairs.  Utilized when this noise is rendered to a texture.
+     * Color gradient of this noise, represented as 'value : color' pairs. Utilized when this noise is rendered to a
+     * texture.
      */
     @Generated
     @Selector("gradientColors")
@@ -297,7 +309,8 @@ public class GKNoise extends NSObject {
     /**
      * Takes the maximum value between this noise and the specified noise at each position.
      *
-     * @param noise The noise to compare against this noise at each position in determining which to take the maximum value from.
+     * @param noise The noise to compare against this noise at each position in determining which to take the maximum
+     *              value from.
      */
     @Generated
     @Selector("maximumWithNoise:")
@@ -306,7 +319,8 @@ public class GKNoise extends NSObject {
     /**
      * Takes the minimum value between this noise and the specified noise at each position.
      *
-     * @param noise The noise to compare against this noise at each position in determining which to take the minimum value from.
+     * @param noise The noise to compare against this noise at each position in determining which to take the minimum
+     *              value from.
      */
     @Generated
     @Selector("minimumWithNoise:")
@@ -351,7 +365,7 @@ public class GKNoise extends NSObject {
             NSDictionary<? extends NSNumber, ? extends NSNumber> controlPoints);
 
     /**
-     * Remaps all noise values to one or more terraces with peaks.  Useful for creating valleys and trenches.
+     * Remaps all noise values to one or more terraces with peaks. Useful for creating valleys and trenches.
      *
      * @param peakInputValues Inputs positions of terrace peaks.
      * @param inverted        Governs the curve direction from peak to peak.
@@ -362,7 +376,8 @@ public class GKNoise extends NSObject {
             boolean inverted);
 
     /**
-     * Color gradient of this noise, represented as 'value : color' pairs.  Utilized when this noise is rendered to a texture.
+     * Color gradient of this noise, represented as 'value : color' pairs. Utilized when this noise is rendered to a
+     * texture.
      */
     @Generated
     @Selector("setGradientColors:")

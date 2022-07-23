@@ -127,7 +127,7 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
             MPSCNNBatchNormalizationState batchNormalizationState, MPSImage destinationImage);
 
     /**
-     * [@property]   epsilon
+     * [@property] epsilon
      * <p>
      * The epsilon value used in the batch normalization formula to
      * bias the variance when normalizing.
@@ -155,9 +155,9 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use a subclass of NSCoder that
-     * implements the <MPSDeviceProvider> protocol  to
+     * implements the <MPSDeviceProvider> protocol to
      * tell MPS the MTLDevice to use.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -178,7 +178,7 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
      *
      * @param device     The MTLDevice on which this filter will be used
      * @param dataSource A pointer to a object that conforms to the MPSCNNBatchNormalizationDataSource
-     *                   protocol.  The data source provides filter weights and bias terms and, optionally,
+     *                   protocol. The data source provides filter weights and bias terms and, optionally,
      *                   image statistics which may be used to perform the normalization.
      * @return A valid MPSCNNBatchNormalization object or nil, if failure.
      */
@@ -192,7 +192,7 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
      *
      * @param device                The MTLDevice on which this filter will be used
      * @param dataSource            A pointer to a object that conforms to the MPSCNNBatchNormalizationDataSource
-     *                              protocol.  The data source provides filter weights and bias terms and, optionally,
+     *                              protocol. The data source provides filter weights and bias terms and, optionally,
      *                              image statistics which may be used to perform the normalization.
      * @param fusedNeuronDescriptor A MPSNNNeuronDescriptor object which specifies a neuron activation function to
      *                              be applied to the result of the batch normalization.
@@ -232,7 +232,7 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
     public static native MPSCNNBatchNormalization new_objc();
 
     /**
-     * [@property]   numberOfFeatureChannels
+     * [@property] numberOfFeatureChannels
      * <p>
      * The number of feature channels in an image to be normalized.
      */
@@ -310,7 +310,7 @@ public class MPSCNNBatchNormalization extends MPSCNNKernel {
             MPSImage sourceImage, NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
 
     /**
-     * [@property]   epsilon
+     * [@property] epsilon
      * <p>
      * The epsilon value used in the batch normalization formula to
      * bias the variance when normalizing.

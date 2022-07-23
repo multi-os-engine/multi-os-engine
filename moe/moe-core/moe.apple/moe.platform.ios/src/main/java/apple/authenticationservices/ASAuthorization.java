@@ -76,7 +76,8 @@ public class ASAuthorization extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * The credential that was returned by the authorization provider. Authorization provider type should be used to determine how to introspect the credential.
+     * The credential that was returned by the authorization provider. Authorization provider type should be used to
+     * determine how to introspect the credential.
      */
     @Generated
     @Selector("credential")

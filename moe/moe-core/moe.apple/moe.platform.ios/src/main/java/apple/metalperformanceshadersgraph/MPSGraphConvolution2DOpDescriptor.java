@@ -117,7 +117,7 @@ public class MPSGraphConvolution2DOpDescriptor extends NSObject implements NSCop
     public native long dilationRateInY();
 
     /**
-     * [@property]   groups
+     * [@property] groups
      * <p>
      * groups of the operation
      */
@@ -212,7 +212,7 @@ public class MPSGraphConvolution2DOpDescriptor extends NSObject implements NSCop
             @NUInt long paddingRight, @NUInt long paddingTop, @NUInt long paddingBottom);
 
     /**
-     * [@property]   groups
+     * [@property] groups
      * <p>
      * groups of the operation
      */

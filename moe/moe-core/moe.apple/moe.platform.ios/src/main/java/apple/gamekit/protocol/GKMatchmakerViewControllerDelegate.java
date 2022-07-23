@@ -84,7 +84,8 @@ public interface GKMatchmakerViewControllerDelegate {
     }
 
     /**
-     * An invited player has accepted a hosted invite.  Apps should connect through the hosting server and then update the player's connected state (using setConnected:forHostedPlayer:)
+     * An invited player has accepted a hosted invite. Apps should connect through the hosting server and then update
+     * the player's connected state (using setConnected:forHostedPlayer:)
      */
     @Generated
     @IsOptional

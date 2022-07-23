@@ -35,14 +35,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The @c SHSignature class is an opaque data container that can be used to store recognition data.
  * <p>
  * Signatures are a compact lossy representation of the original audio. The original audio cannot
- * be recreated from a Signature, there exists only enough data to confirm that the signature matches a certain piece of audio
+ * be recreated from a Signature, there exists only enough data to confirm that the signature matches a certain piece of
+ * audio
  * when it is also converted into a Signature. It is similar in utility to a hashing function.
  * <p>
- * Signatures can be matched against any type of audio not just music. The only requirement for a match is that the reference and query
- * Signatures both contain the exact same pre recorded audio e.g. a live rendition of a song will not match against a studio recorded performance
+ * Signatures can be matched against any type of audio not just music. The only requirement for a match is that the
+ * reference and query
+ * Signatures both contain the exact same pre recorded audio e.g. a live rendition of a song will not match against a
+ * studio recorded performance
  * of the same piece.
  * <p>
- * There are exceptions to the requirement for exactly matching audio, a signature is robust against slight changes in frequency and speed.
+ * There are exceptions to the requirement for exactly matching audio, a signature is robust against slight changes in
+ * frequency and speed.
  */
 @Generated
 @Library("ShazamKit")

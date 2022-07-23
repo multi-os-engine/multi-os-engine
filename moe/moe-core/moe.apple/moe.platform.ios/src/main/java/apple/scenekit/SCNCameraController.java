@@ -214,7 +214,8 @@ public class SCNCameraController extends NSObject {
     public native float maximumVerticalAngle();
 
     /**
-     * Minimum and maximum horizontal view angles in degrees for SCNInteractionModeFly and SCNInteractionModeOrbitTurntable.
+     * Minimum and maximum horizontal view angles in degrees for SCNInteractionModeFly and
+     * SCNInteractionModeOrbitTurntable.
      * The angle constraints is not enforced if both horizontal angle properties values are set to 0.
      * The angle constraints will not be enforced if the initial orientation is outside the given range.
      * The minimum angle must be inferior to the maximum angle.
@@ -226,7 +227,8 @@ public class SCNCameraController extends NSObject {
     public native float minimumHorizontalAngle();
 
     /**
-     * Minimum and maximum vertical view angles in degrees for SCNInteractionModeFly and SCNInteractionModeOrbitTurntable.
+     * Minimum and maximum vertical view angles in degrees for SCNInteractionModeFly and
+     * SCNInteractionModeOrbitTurntable.
      * The angle constraints is not enforced if both vertical angle properties values are set to 0.
      * The angle constraints will not be enforced if the initial orientation is outside the given range.
      * The minimum angle must be inferior to the maximum angle.
@@ -330,7 +332,8 @@ public class SCNCameraController extends NSObject {
     public native void setMaximumVerticalAngle(float value);
 
     /**
-     * Minimum and maximum horizontal view angles in degrees for SCNInteractionModeFly and SCNInteractionModeOrbitTurntable.
+     * Minimum and maximum horizontal view angles in degrees for SCNInteractionModeFly and
+     * SCNInteractionModeOrbitTurntable.
      * The angle constraints is not enforced if both horizontal angle properties values are set to 0.
      * The angle constraints will not be enforced if the initial orientation is outside the given range.
      * The minimum angle must be inferior to the maximum angle.
@@ -342,7 +345,8 @@ public class SCNCameraController extends NSObject {
     public native void setMinimumHorizontalAngle(float value);
 
     /**
-     * Minimum and maximum vertical view angles in degrees for SCNInteractionModeFly and SCNInteractionModeOrbitTurntable.
+     * Minimum and maximum vertical view angles in degrees for SCNInteractionModeFly and
+     * SCNInteractionModeOrbitTurntable.
      * The angle constraints is not enforced if both vertical angle properties values are set to 0.
      * The angle constraints will not be enforced if the initial orientation is outside the given range.
      * The minimum angle must be inferior to the maximum angle.
@@ -370,7 +374,8 @@ public class SCNCameraController extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * The up vector in world space used as reference for SCNInteractionModeFly and SCNInteractionModeOrbitTurntable camera modes.
+     * The up vector in world space used as reference for SCNInteractionModeFly and SCNInteractionModeOrbitTurntable
+     * camera modes.
      * Defaults to (0, 1, 0).
      */
     @Generated
@@ -409,7 +414,8 @@ public class SCNCameraController extends NSObject {
     public static native long version_static();
 
     /**
-     * The up vector in world space used as reference for SCNInteractionModeFly and SCNInteractionModeOrbitTurntable camera modes.
+     * The up vector in world space used as reference for SCNInteractionModeFly and SCNInteractionModeOrbitTurntable
+     * camera modes.
      * Defaults to (0, 1, 0).
      */
     @Generated

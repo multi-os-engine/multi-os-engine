@@ -356,8 +356,10 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
             @NUInt long controlEvent);
 
     /**
-     * add target/action for particular event. you can call this multiple times and you can specify multiple target/actions for a particular event.
-     * passing in nil as the target goes up the responder chain. The action may optionally include the sender and the event in that order
+     * add target/action for particular event. you can call this multiple times and you can specify multiple
+     * target/actions for a particular event.
+     * passing in nil as the target goes up the responder chain. The action may optionally include the sender and the
+     * event in that order
      * the action cannot be NULL. Note that the target is not retained.
      */
     @Generated
@@ -533,7 +535,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
             @NUInt long controlEvents);
 
     /**
-     * Dispatch the target-action pair. This method is called repeatedly by -sendActionsForControlEvents: and is a point at which you can observe or override behavior.
+     * Dispatch the target-action pair. This method is called repeatedly by -sendActionsForControlEvents: and is a point
+     * at which you can observe or override behavior.
      */
     @Generated
     @Selector("sendAction:to:forEvent:")
@@ -573,7 +576,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
      * <p>Adds a action for a particular event (or events) to an internal dispatch
      * table.</p>
      *
-     * @param targetAction  <p>The targetAction object&mdash;that is, the object to which the action message is sent.</p>
+     * @param targetAction  <p>The targetAction object&mdash;that is, the object to which the action message is
+     *                      sent.</p>
      * @param controlEvents <p>A bitmask specifying the control events for which the action message is sent. See
      *                      &ldquo;Control Events&rdquo; for bitmask constants.</p>
      * @see ITargetAction
@@ -591,7 +595,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
      * <p>Removes a targetAction for a particular event (or events) from an internal dispatch
      * table.</p>
      *
-     * @param targetAction  <p>The targetAction object&mdash;that is, the object to which the action message is sent.</p>
+     * @param targetAction  <p>The targetAction object&mdash;that is, the object to which the action message is
+     *                      sent.</p>
      * @param controlEvents <p>A bitmask specifying the control events associated with
      *                      <i>target</i> and
      *                      <i>action</i>. See &ldquo;Control Events&rdquo;
@@ -603,8 +608,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
         for (Object o : targets.allObjects()) {
             if (o instanceof TargetActionProxy<?>) {
                 TargetActionProxy<?> proxy = (TargetActionProxy<?>)o;
-                if (proxy.targetAction != null && proxy.targetAction.equals(targetAction)
-                        && proxy.controlEvents == controlEvents) {
+                if (proxy.targetAction != null && proxy.targetAction.equals(targetAction) && proxy.controlEvents
+                        == controlEvents) {
                     removeTargetActionForControlEvents(proxy, new SEL("proxySelector::"), controlEvents);
                     ObjCRuntime.dissociateObjCObject(this, proxy);
                 }
@@ -613,7 +618,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     }
 
     /**
-     * how to position content horizontally inside control, guaranteed to return 'left' or 'right' for any 'leading' or 'trailing'
+     * how to position content horizontally inside control, guaranteed to return 'left' or 'right' for any 'leading' or
+     * 'trailing'
      */
     @Generated
     @Selector("effectiveContentHorizontalAlignment")
@@ -627,14 +633,18 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
-     * Adds the UIAction to a given event. UIActions are uniqued based on their identifier, and subsequent actions with the same identifier replace previously added actions. You may add multiple UIActions for corresponding controlEvents, and you may add the same action to multiple controlEvents.
+     * Adds the UIAction to a given event. UIActions are uniqued based on their identifier, and subsequent actions with
+     * the same identifier replace previously added actions. You may add multiple UIActions for corresponding
+     * controlEvents, and you may add the same action to multiple controlEvents.
      */
     @Generated
     @Selector("addAction:forControlEvents:")
     public native void addActionForControlEvents(UIAction action, @NUInt long controlEvents);
 
     /**
-     * Returns a UIContextMenuInteraction with this control set as its delegate. Before constructing the UIContextMenuInteraction, UIControl verifies 'self' is a viable delegate. See 'Implementing UIControl Menus' below for more details.
+     * Returns a UIContextMenuInteraction with this control set as its delegate. Before constructing the
+     * UIContextMenuInteraction, UIControl verifies 'self' is a viable delegate. See 'Implementing UIControl Menus'
+     * below for more details.
      */
     @Generated
     @Selector("contextMenuInteraction")
@@ -675,7 +685,9 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
             @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator);
 
     /**
-     * Iterate over the event handlers installed on this control at the time this method is called. For each call, either actionHandler or action will be non-nil. controlEvents is always non-zero. Setting *stop to YES will terminate the enumeration early. It is legal to manipulate the control's event handlers within the block.
+     * Iterate over the event handlers installed on this control at the time this method is called. For each call,
+     * either actionHandler or action will be non-nil. controlEvents is always non-zero. Setting *stop to YES will
+     * terminate the enumeration early. It is legal to manipulate the control's event handlers within the block.
      */
     @Generated
     @Selector("enumerateEventHandlers:")
@@ -691,7 +703,9 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     }
 
     /**
-     * Initializes the control and adds primaryAction for the UIControlEventPrimaryActionTriggered control event. Subclasses of UIControl may alter or add behaviors around the usage of primaryAction, see subclass documentation of this initializer for additional information.
+     * Initializes the control and adds primaryAction for the UIControlEventPrimaryActionTriggered control event.
+     * Subclasses of UIControl may alter or add behaviors around the usage of primaryAction, see subclass documentation
+     * of this initializer for additional information.
      */
     @Generated
     @Selector("initWithFrame:primaryAction:")
@@ -727,7 +741,9 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     public native void removeActionForIdentifierForControlEvents(String actionIdentifier, @NUInt long controlEvents);
 
     /**
-     * Like -sendAction:to:forEvent:, this method is called by -sendActionsForControlEvents:. You may override this method to observe or modify behavior. If you override this method, you should call super precisely once to dispatch the action, or not call super to suppress sending that action.
+     * Like -sendAction:to:forEvent:, this method is called by -sendActionsForControlEvents:. You may override this
+     * method to observe or modify behavior. If you override this method, you should call super precisely once to
+     * dispatch the action, or not call super to suppress sending that action.
      */
     @Generated
     @Selector("sendAction:")
@@ -755,14 +771,16 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     public native boolean showsMenuAsPrimaryAction();
 
     /**
-     * Assigning a value to this property causes the tool tip to be displayed for the view. Setting the property to nil cancels the display of the tool tip for the view.
+     * Assigning a value to this property causes the tool tip to be displayed for the view. Setting the property to nil
+     * cancels the display of the tool tip for the view.
      */
     @Generated
     @Selector("setToolTip:")
     public native void setToolTip(String value);
 
     /**
-     * Assigning a value to this property causes the tool tip to be displayed for the view. Setting the property to nil cancels the display of the tool tip for the view.
+     * Assigning a value to this property causes the tool tip to be displayed for the view. Setting the property to nil
+     * cancels the display of the tool tip for the view.
      */
     @Generated
     @Selector("toolTip")

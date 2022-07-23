@@ -223,7 +223,8 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
      * This method can only be used with Metal based programs.
      *
      * @param name      The name of the buffer to bind.
-     * @param frequency The frequency at which the block has to be invoked. Can be per frame, per node or per geometry or material. See SCNBufferBindingBlock above.
+     * @param frequency The frequency at which the block has to be invoked. Can be per frame, per node or per geometry
+     *                  or material. See SCNBufferBindingBlock above.
      * @param block     The block that binds the buffer.
      */
     @Generated
@@ -342,7 +343,8 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
      * <p>
      * Associates a SceneKit semantic to a symbol.
      * <p>
-     * Associates semantics handled by the SceneKit runtime to a symbol from the program. Supported semantics are listed in SCNGeometry.h and SCNNode.h.
+     * Associates semantics handled by the SceneKit runtime to a symbol from the program. Supported semantics are listed
+     * in SCNGeometry.h and SCNNode.h.
      *
      * @param semantic The SceneKit semantic to associate to the specified symbol.
      * @param symbol   A symbol from the program source code.

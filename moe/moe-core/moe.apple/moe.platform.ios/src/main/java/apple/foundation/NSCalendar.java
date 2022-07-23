@@ -87,7 +87,8 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     public static native NSCalendar autoupdatingCurrentCalendar();
 
     /**
-     * This method returns a new autoreleased calendar object of the given type, specified by a calendar identifier constant.
+     * This method returns a new autoreleased calendar object of the given type, specified by a calendar identifier
+     * constant.
      * The calendar defaults to having the current locale and default time zone, for those properties.
      */
     @Generated
@@ -196,7 +197,8 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     public native String calendarIdentifier();
 
     /**
-     * This API compares the given dates down to the given unit, reporting them equal if they are the same in the given unit and all larger units, otherwise either less than or greater than.
+     * This API compares the given dates down to the given unit, reporting them equal if they are the same in the given
+     * unit and all larger units, otherwise either less than or greater than.
      */
     @Generated
     @Selector("compareDate:toDate:toUnitGranularity:")
@@ -222,9 +224,13 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * This API returns the difference between two dates specified as date components.
-     * For units which are not specified in each NSDateComponents, but required to specify an absolute date, the base value of the unit is assumed.  For example, for an NSDateComponents with just a Year and a Month specified, a Day of 1, and an Hour, Minute, Second, and Nanosecond of 0 are assumed.
+     * For units which are not specified in each NSDateComponents, but required to specify an absolute date, the base
+     * value of the unit is assumed. For example, for an NSDateComponents with just a Year and a Month specified, a Day
+     * of 1, and an Hour, Minute, Second, and Nanosecond of 0 are assumed.
      * Calendrical calculations with unspecified Year or Year value prior to the start of a calendar are not advised.
-     * For each date components object, if its time zone property is set, that time zone is used for it; if the calendar property is set, that is used rather than the receiving calendar, and if both the calendar and time zone are set, the time zone property value overrides the time zone of the calendar property.
+     * For each date components object, if its time zone property is set, that time zone is used for it; if the calendar
+     * property is set, that is used rather than the receiving calendar, and if both the calendar and time zone are set,
+     * the time zone property value overrides the time zone of the calendar property.
      * No options are currently defined; pass 0.
      */
     @Generated
@@ -233,9 +239,11 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
             NSDateComponents startingDateComp, NSDateComponents resultDateComp, @NUInt long options);
 
     /**
-     * This API returns all the date components of a date, as if in a given time zone (instead of the receiving calendar's time zone).
+     * This API returns all the date components of a date, as if in a given time zone (instead of the receiving
+     * calendar's time zone).
      * The time zone overrides the time zone of the NSCalendar for the purposes of this calculation.
-     * Note: if you want "date information in a given time zone" in order to display it, you should use NSDateFormatter to format the date.
+     * Note: if you want "date information in a given time zone" in order to display it, you should use NSDateFormatter
+     * to format the date.
      */
     @Generated
     @Selector("componentsInTimeZone:fromDate:")
@@ -249,7 +257,8 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * This API returns YES if the date has all the matched components. Otherwise, it returns NO.
-     * It is useful to test the return value of the -nextDateAfterDate:matchingUnit:value:options:, to find out if the components were obeyed or if the method had to fudge the result value due to missing time.
+     * It is useful to test the return value of the -nextDateAfterDate:matchingUnit:value:options:, to find out if the
+     * components were obeyed or if the method had to fudge the result value due to missing time.
      */
     @Generated
     @Selector("date:matchesComponents:")
@@ -260,8 +269,10 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     public native NSDate dateByAddingComponentsToDateOptions(NSDateComponents comps, NSDate date, @NUInt long opts);
 
     /**
-     * This API returns a new NSDate object representing the date calculated by adding an amount of a specific component to a given date.
-     * The NSCalendarWrapComponents option specifies if the component should be incremented and wrap around to zero/one on overflow, and should not cause higher units to be incremented.
+     * This API returns a new NSDate object representing the date calculated by adding an amount of a specific component
+     * to a given date.
+     * The NSCalendarWrapComponents option specifies if the component should be incremented and wrap around to zero/one
+     * on overflow, and should not cause higher units to be incremented.
      */
     @Generated
     @Selector("dateByAddingUnit:value:toDate:options:")
@@ -269,9 +280,12 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
             @NUInt long options);
 
     /**
-     * This API returns a new NSDate object representing the date calculated by setting hour, minute, and second to a given time.
-     * If no such time exists, the next available time is returned (which could, for example, be in a different day than the nominal target date).
-     * The intent is to return a date on the same day as the original date argument.  This may result in a date which is earlier than the given date, of course.
+     * This API returns a new NSDate object representing the date calculated by setting hour, minute, and second to a
+     * given time.
+     * If no such time exists, the next available time is returned (which could, for example, be in a different day than
+     * the nominal target date).
+     * The intent is to return a date on the same day as the original date argument. This may result in a date which is
+     * earlier than the given date, of course.
      */
     @Generated
     @Selector("dateBySettingHour:minute:second:ofDate:options:")
@@ -279,10 +293,23 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
             NSDate date, @NUInt long opts);
 
     /**
-     * This API returns a new NSDate object representing the date calculated by setting a specific component to a given time, and trying to keep lower components the same.  If the unit already has that value, this may result in a date which is the same as the given date.
-     * Changing a component's value often will require higher or coupled components to change as well.  For example, setting the Weekday to Thursday usually will require the Day component to change its value, and possibly the Month and Year as well.
-     * If no such time exists, the next available time is returned (which could, for example, be in a different day, week, month, ... than the nominal target date).  Setting a component to something which would be inconsistent forces other units to change; for example, setting the Weekday to Thursday probably shifts the Day and possibly Month and Year.
-     * The specific behaviors here are as yet unspecified; for example, if I change the weekday to Thursday, does that move forward to the next, backward to the previous, or to the nearest Thursday?  A likely rule is that the algorithm will try to produce a result which is in the next-larger unit to the one given (there's a table of this mapping at the top of this document).  So for the "set to Thursday" example, find the Thursday in the Week in which the given date resides (which could be a forwards or backwards move, and not necessarily the nearest Thursday).  For forwards or backwards behavior, one can use the -nextDateAfterDate:matchingUnit:value:options: method above.
+     * This API returns a new NSDate object representing the date calculated by setting a specific component to a given
+     * time, and trying to keep lower components the same. If the unit already has that value, this may result in a date
+     * which is the same as the given date.
+     * Changing a component's value often will require higher or coupled components to change as well. For example,
+     * setting the Weekday to Thursday usually will require the Day component to change its value, and possibly the
+     * Month and Year as well.
+     * If no such time exists, the next available time is returned (which could, for example, be in a different day,
+     * week, month, ... than the nominal target date). Setting a component to something which would be inconsistent
+     * forces other units to change; for example, setting the Weekday to Thursday probably shifts the Day and possibly
+     * Month and Year.
+     * The specific behaviors here are as yet unspecified; for example, if I change the weekday to Thursday, does that
+     * move forward to the next, backward to the previous, or to the nearest Thursday? A likely rule is that the
+     * algorithm will try to produce a result which is in the next-larger unit to the one given (there's a table of this
+     * mapping at the top of this document). So for the "set to Thursday" example, find the Thursday in the Week in
+     * which the given date resides (which could be a forwards or backwards move, and not necessarily the nearest
+     * Thursday). For forwards or backwards behavior, one can use the -nextDateAfterDate:matchingUnit:value:options:
+     * method above.
      */
     @Generated
     @Selector("dateBySettingUnit:value:ofDate:options:")
@@ -318,26 +345,60 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * This method computes the dates which match (or most closely match) a given set of components, and calls the block once for each of them, until the enumeration is stopped.
-     * There will be at least one intervening date which does not match all the components (or the given date itself must not match) between the given date and any result.
-     * If the NSCalendarSearchBackwards option is used, this method finds the previous match before the given date.  The intent is that the same matches as for a forwards search will be found (that is, if you are enumerating forwards or backwards for each hour with minute "27", the seconds in the date you will get in forwards search would obviously be 00, and the same will be true in a backwards search in order to implement this rule.  Similarly for DST backwards jumps which repeats times, you'll get the first match by default, where "first" is defined from the point of view of searching forwards.  So, when searching backwards looking for a particular hour, with no minute and second specified, you don't get a minute and second of 59:59 for the matching hour (which would be the nominal first match within a given hour, given the other rules here, when searching backwards).
-     * If the NSCalendarMatchStrictly option is used, the algorithm travels as far forward or backward as necessary looking for a match, but there are ultimately implementation-defined limits in how far distant the search will go.  If the NSCalendarMatchStrictly option is not specified, the algorithm searches up to the end of the next instance of the next higher unit to the highest specified unit in the NSDateComponents argument.  If you want to find the next Feb 29 in the Gregorian calendar, for example, you have to specify the NSCalendarMatchStrictly option to guarantee finding it.
-     * If an exact match is not possible, and requested with the NSCalendarMatchStrictly option, nil is passed to the block and the enumeration ends.  (Logically, since an exact match searches indefinitely into the future, if no match is found there's no point in continuing the enumeration.)
+     * This method computes the dates which match (or most closely match) a given set of components, and calls the block
+     * once for each of them, until the enumeration is stopped.
+     * There will be at least one intervening date which does not match all the components (or the given date itself
+     * must not match) between the given date and any result.
+     * If the NSCalendarSearchBackwards option is used, this method finds the previous match before the given date. The
+     * intent is that the same matches as for a forwards search will be found (that is, if you are enumerating forwards
+     * or backwards for each hour with minute "27", the seconds in the date you will get in forwards search would
+     * obviously be 00, and the same will be true in a backwards search in order to implement this rule. Similarly for
+     * DST backwards jumps which repeats times, you'll get the first match by default, where "first" is defined from the
+     * point of view of searching forwards. So, when searching backwards looking for a particular hour, with no minute
+     * and second specified, you don't get a minute and second of 59:59 for the matching hour (which would be the
+     * nominal first match within a given hour, given the other rules here, when searching backwards).
+     * If the NSCalendarMatchStrictly option is used, the algorithm travels as far forward or backward as necessary
+     * looking for a match, but there are ultimately implementation-defined limits in how far distant the search will
+     * go. If the NSCalendarMatchStrictly option is not specified, the algorithm searches up to the end of the next
+     * instance of the next higher unit to the highest specified unit in the NSDateComponents argument. If you want to
+     * find the next Feb 29 in the Gregorian calendar, for example, you have to specify the NSCalendarMatchStrictly
+     * option to guarantee finding it.
+     * If an exact match is not possible, and requested with the NSCalendarMatchStrictly option, nil is passed to the
+     * block and the enumeration ends. (Logically, since an exact match searches indefinitely into the future, if no
+     * match is found there's no point in continuing the enumeration.)
      * <p>
-     * If the NSCalendarMatchStrictly option is NOT used, exactly one option from the set {NSCalendarMatchPreviousTimePreservingSmallerUnits, NSCalendarMatchNextTimePreservingSmallerUnits, NSCalendarMatchNextTime} must be specified, or an illegal argument exception will be thrown.
+     * If the NSCalendarMatchStrictly option is NOT used, exactly one option from the set
+     * {NSCalendarMatchPreviousTimePreservingSmallerUnits, NSCalendarMatchNextTimePreservingSmallerUnits,
+     * NSCalendarMatchNextTime} must be specified, or an illegal argument exception will be thrown.
      * <p>
-     * If the NSCalendarMatchPreviousTimePreservingSmallerUnits option is specified, and there is no matching time before the end of the next instance of the next higher unit to the highest specified unit in the NSDateComponents argument, the method will return the previous existing value of the missing unit and preserves the lower units' values (e.g., no 2:37am results in 1:37am, if that exists).
+     * If the NSCalendarMatchPreviousTimePreservingSmallerUnits option is specified, and there is no matching time
+     * before the end of the next instance of the next higher unit to the highest specified unit in the NSDateComponents
+     * argument, the method will return the previous existing value of the missing unit and preserves the lower units'
+     * values (e.g., no 2:37am results in 1:37am, if that exists).
      * <p>
-     * If the NSCalendarMatchNextTimePreservingSmallerUnits option is specified, and there is no matching time before the end of the next instance of the next higher unit to the highest specified unit in the NSDateComponents argument, the method will return the next existing value of the missing unit and preserves the lower units' values (e.g., no 2:37am results in 3:37am, if that exists).
+     * If the NSCalendarMatchNextTimePreservingSmallerUnits option is specified, and there is no matching time before
+     * the end of the next instance of the next higher unit to the highest specified unit in the NSDateComponents
+     * argument, the method will return the next existing value of the missing unit and preserves the lower units'
+     * values (e.g., no 2:37am results in 3:37am, if that exists).
      * <p>
-     * If the NSCalendarMatchNextTime option is specified, and there is no matching time before the end of the next instance of the next higher unit to the highest specified unit in the NSDateComponents argument, the method will return the next existing time which exists (e.g., no 2:37am results in 3:00am, if that exists).
-     * If the NSCalendarMatchFirst option is specified, and there are two or more matching times (all the components are the same, including isLeapMonth) before the end of the next instance of the next higher unit to the highest specified unit in the NSDateComponents argument, the method will return the first occurrence.
-     * If the NSCalendarMatchLast option is specified, and there are two or more matching times (all the components are the same, including isLeapMonth) before the end of the next instance of the next higher unit to the highest specified unit in the NSDateComponents argument, the method will return the last occurrence.
-     * If neither the NSCalendarMatchFirst or NSCalendarMatchLast option is specified, the default behavior is to act as if NSCalendarMatchFirst was specified.
+     * If the NSCalendarMatchNextTime option is specified, and there is no matching time before the end of the next
+     * instance of the next higher unit to the highest specified unit in the NSDateComponents argument, the method will
+     * return the next existing time which exists (e.g., no 2:37am results in 3:00am, if that exists).
+     * If the NSCalendarMatchFirst option is specified, and there are two or more matching times (all the components are
+     * the same, including isLeapMonth) before the end of the next instance of the next higher unit to the highest
+     * specified unit in the NSDateComponents argument, the method will return the first occurrence.
+     * If the NSCalendarMatchLast option is specified, and there are two or more matching times (all the components are
+     * the same, including isLeapMonth) before the end of the next instance of the next higher unit to the highest
+     * specified unit in the NSDateComponents argument, the method will return the last occurrence.
+     * If neither the NSCalendarMatchFirst or NSCalendarMatchLast option is specified, the default behavior is to act as
+     * if NSCalendarMatchFirst was specified.
      * There is no option to return middle occurrences of more than two occurrences of a matching time, if such exist.
      * <p>
-     * Result dates have an integer number of seconds (as if 0 was specified for the nanoseconds property of the NSDateComponents matching parameter), unless a value was set in the nanoseconds property, in which case the result date will have that number of nanoseconds (or as close as possible with floating point numbers).
-     * The enumeration is stopped by setting *stop = YES in the block and return.  It is not necessary to set *stop to NO to keep the enumeration going.
+     * Result dates have an integer number of seconds (as if 0 was specified for the nanoseconds property of the
+     * NSDateComponents matching parameter), unless a value was set in the nanoseconds property, in which case the
+     * result date will have that number of nanoseconds (or as close as possible with floating point numbers).
+     * The enumeration is stopped by setting *stop = YES in the block and return. It is not necessary to set *stop to NO
+     * to keep the enumeration going.
      */
     @Generated
     @Selector("enumerateDatesStartingAfterDate:matchingComponents:options:usingBlock:")
@@ -367,7 +428,8 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
             NIntPtr monthValuePointer, NIntPtr dayValuePointer, NSDate date);
 
     /**
-     * This API is a convenience for getting era, year for week-of-year calculations, week of year, and weekday of a given date.
+     * This API is a convenience for getting era, year for week-of-year calculations, week of year, and weekday of a
+     * given date.
      * Pass NULL for a NSInteger pointer parameter if you don't care about that value.
      */
     @Generated
@@ -397,7 +459,8 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     public native NSCalendar initWithCoder(NSCoder coder);
 
     /**
-     * This API compares the given dates down to the given unit, reporting them equal if they are the same in the given unit and all larger units.
+     * This API compares the given dates down to the given unit, reporting them equal if they are the same in the given
+     * unit and all larger units.
      */
     @Generated
     @Selector("isDate:equalToDate:toUnitGranularity:")
@@ -471,7 +534,8 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * This method computes the next date which matches (or most closely matches) a given set of components.
      * The general semantics follow those of the -enumerateDatesStartingAfterDate:... method above.
-     * To compute a sequence of results, use the -enumerateDatesStartingAfterDate:... method above, rather than looping and calling this method with the previous loop iteration's result.
+     * To compute a sequence of results, use the -enumerateDatesStartingAfterDate:... method above, rather than looping
+     * and calling this method with the previous loop iteration's result.
      */
     @Generated
     @Selector("nextDateAfterDate:matchingComponents:options:")
@@ -479,9 +543,11 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
             @NUInt long options);
 
     /**
-     * This API returns a new NSDate object representing the date found which matches the given hour, minute, and second values.
+     * This API returns a new NSDate object representing the date found which matches the given hour, minute, and second
+     * values.
      * The general semantics follow those of the -enumerateDatesStartingAfterDate:... method above.
-     * To compute a sequence of results, use the -enumerateDatesStartingAfterDate:... method above, rather than looping and calling this method with the previous loop iteration's result.
+     * To compute a sequence of results, use the -enumerateDatesStartingAfterDate:... method above, rather than looping
+     * and calling this method with the previous loop iteration's result.
      */
     @Generated
     @Selector("nextDateAfterDate:matchingHour:minute:second:options:")
@@ -491,7 +557,8 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * This API returns a new NSDate object representing the date found which matches a specific component value.
      * The general semantics follow those of the -enumerateDatesStartingAfterDate:... method above.
-     * To compute a sequence of results, use the -enumerateDatesStartingAfterDate:... method above, rather than looping and calling this method with the previous loop iteration's result.
+     * To compute a sequence of results, use the -enumerateDatesStartingAfterDate:... method above, rather than looping
+     * and calling this method with the previous loop iteration's result.
      */
     @Generated
     @Selector("nextDateAfterDate:matchingUnit:value:options:")
@@ -499,10 +566,12 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
             @NUInt long options);
 
     /**
-     * Returns the range of the next weekend, via two by-reference parameters, which starts strictly after the given date.
+     * Returns the range of the next weekend, via two by-reference parameters, which starts strictly after the given
+     * date.
      * The NSCalendarSearchBackwards option can be used to find the previous weekend range strictly before the date.
      * Returns NO if there are no such things as weekend in the calendar and its locale.
-     * Note that a given entire Day within a calendar is not necessarily all in a weekend or not; weekends can start in the middle of a Day in some calendars and locales.
+     * Note that a given entire Day within a calendar is not necessarily all in a weekend or not; weekends can start in
+     * the middle of a Day in some calendars and locales.
      */
     @Generated
     @Selector("nextWeekendStartDate:interval:options:afterDate:")
@@ -531,7 +600,8 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Find the range of the weekend around the given date, returned via two by-reference parameters.
      * Returns NO if the given date is not in a weekend.
-     * Note that a given entire Day within a calendar is not necessarily all in a weekend or not; weekends can start in the middle of a Day in some calendars and locales.
+     * Note that a given entire Day within a calendar is not necessarily all in a weekend or not; weekends can start in
+     * the middle of a Day in some calendars and locales.
      */
     @Generated
     @Selector("rangeOfWeekendStartDate:interval:containingDate:")
@@ -593,7 +663,7 @@ public class NSCalendar extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * This API returns the first moment date of a given date.
      * Pass in [NSDate date], for example, if you want the start of "today".
-     * If there were two midnights, it returns the first.  If there was none, it returns the first moment that did exist.
+     * If there were two midnights, it returns the first. If there was none, it returns the first moment that did exist.
      */
     @Generated
     @Selector("startOfDayForDate:")

@@ -1112,7 +1112,7 @@ public final class Enums {
      */
     @Generated public static final int kTRAKCurrentVersion = 0x00010000;
     /**
-     * kTRAKPerGlyphFormat         = 2
+     * kTRAKPerGlyphFormat = 2
      */
     @Generated public static final int kTRAKUniformFormat = 0x00000000;
     @Generated public static final int kDefaultUpperCaseSelector = 0x00000000;

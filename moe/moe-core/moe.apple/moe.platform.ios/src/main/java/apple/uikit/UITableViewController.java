@@ -52,7 +52,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Creates a table view with the correct dimensions and autoresizing, setting the datasource and delegate to self.
- * In -viewWillAppear:, it reloads the table's data if it's empty. Otherwise, it deselects all rows (with or without animation) if clearsSelectionOnViewWillAppear is YES.
+ * In -viewWillAppear:, it reloads the table's data if it's empty. Otherwise, it deselects all rows (with or without
+ * animation) if clearsSelectionOnViewWillAppear is YES.
  * In -viewDidAppear:, it flashes the table's scroll indicators.
  * Implements -setEditing:animated: to toggle the editing state of the table.
  */

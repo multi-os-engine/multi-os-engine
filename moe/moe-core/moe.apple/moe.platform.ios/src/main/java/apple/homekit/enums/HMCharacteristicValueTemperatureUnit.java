@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueTemperatureUnit
+ * [@enum] HMCharacteristicValueTemperatureUnit
  * <p>
- * [@constant]  HMCharacteristicValueTemperatureUnitCelsius     Celsius.
- * [@constant]  HMCharacteristicValueTemperatureUnitFahrenheit  Fahrenheit.
+ * [@constant] HMCharacteristicValueTemperatureUnitCelsius Celsius.
+ * [@constant] HMCharacteristicValueTemperatureUnitFahrenheit Fahrenheit.
  */
 @Generated
 public final class HMCharacteristicValueTemperatureUnit {

@@ -195,9 +195,13 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
     public native CKRecordID creatorUserRecordID();
 
     /**
-     * [@c] CKRecord supports @c NSSecureCoding.  When you invoke @c encodeWithCoder: on a @c CKRecord, it encodes all its values.  Including the record values you've set.
-     * If you want to store a @c CKRecord instance locally, AND you're already storing the record values locally, that's overkill.  In that case, you can use @c encodeSystemFieldsWithCoder:.  This will encode all parts of a @c CKRecord except the record keys / values you have access to via the @c changedKeys and @c objectForKey: methods.
-     * If you use @c initWithCoder: to reconstitute a @c CKRecord you encoded via @c encodeSystemFieldsWithCoder:, then be aware that
+     * [@c] CKRecord supports @c NSSecureCoding. When you invoke @c encodeWithCoder: on a @c CKRecord, it encodes all
+     * its values. Including the record values you've set.
+     * If you want to store a @c CKRecord instance locally, AND you're already storing the record values locally, that's
+     * overkill. In that case, you can use @c encodeSystemFieldsWithCoder:. This will encode all parts of a @c CKRecord
+     * except the record keys / values you have access to via the @c changedKeys and @c objectForKey: methods.
+     * If you use @c initWithCoder: to reconstitute a @c CKRecord you encoded via @c encodeSystemFieldsWithCoder:, then
+     * be aware that
      * - any record values you had set on the original instance, but had not saved, will be lost
      * - the reconstituted CKRecord's @c changedKeys will be empty
      */
@@ -258,19 +262,24 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
      * <p>
      * When a record is shared, all children of that record are also shared.
      * <p>
-     * A parent record reference must have @c CKReferenceActionNone set. You can create a separate reference with @c CKReferenceActionDeleteSelf if you would like your hierarchy cleaned up when the parent record is deleted.
+     * A parent record reference must have @c CKReferenceActionNone set. You can create a separate reference with @c
+     * CKReferenceActionDeleteSelf if you would like your hierarchy cleaned up when the parent record is deleted.
      * <p>
-     * The target of a parent reference must exist at save time - either already on the server, or part of the same @c CKModifyRecordsOperation batch.
+     * The target of a parent reference must exist at save time - either already on the server, or part of the same @c
+     * CKModifyRecordsOperation batch.
      * <p>
-     * You are encouraged to set up the @c parent relationships as part of normal record saves, even if you're not planning on sharing records at this time.
-     * This allows you to share and unshare a hierarchy of records at a later date by only modifying the "top level" record, setting or clearing its @c share reference.
+     * You are encouraged to set up the @c parent relationships as part of normal record saves, even if you're not
+     * planning on sharing records at this time.
+     * This allows you to share and unshare a hierarchy of records at a later date by only modifying the "top level"
+     * record, setting or clearing its @c share reference.
      */
     @Generated
     @Selector("parent")
     public native CKReference parent();
 
     /**
-     * Change tags are updated by the server to a unique value every time a record is modified.  A different change tag necessarily means that the contents of the record are different.
+     * Change tags are updated by the server to a unique value every time a record is modified. A different change tag
+     * necessarily means that the contents of the record are different.
      */
     @Generated
     @Selector("recordChangeTag")
@@ -297,19 +306,24 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
      * <p>
      * When a record is shared, all children of that record are also shared.
      * <p>
-     * A parent record reference must have @c CKReferenceActionNone set. You can create a separate reference with @c CKReferenceActionDeleteSelf if you would like your hierarchy cleaned up when the parent record is deleted.
+     * A parent record reference must have @c CKReferenceActionNone set. You can create a separate reference with @c
+     * CKReferenceActionDeleteSelf if you would like your hierarchy cleaned up when the parent record is deleted.
      * <p>
-     * The target of a parent reference must exist at save time - either already on the server, or part of the same @c CKModifyRecordsOperation batch.
+     * The target of a parent reference must exist at save time - either already on the server, or part of the same @c
+     * CKModifyRecordsOperation batch.
      * <p>
-     * You are encouraged to set up the @c parent relationships as part of normal record saves, even if you're not planning on sharing records at this time.
-     * This allows you to share and unshare a hierarchy of records at a later date by only modifying the "top level" record, setting or clearing its @c share reference.
+     * You are encouraged to set up the @c parent relationships as part of normal record saves, even if you're not
+     * planning on sharing records at this time.
+     * This allows you to share and unshare a hierarchy of records at a later date by only modifying the "top level"
+     * record, setting or clearing its @c share reference.
      */
     @Generated
     @Selector("setParent:")
     public native void setParent(CKReference value);
 
     /**
-     * Convenience wrappers around creating a @c CKReference to a parent record. The resulting @c CKReference will have @code referenceAction = CKReferenceActionNone @endcode
+     * Convenience wrappers around creating a @c CKReference to a parent record. The resulting @c CKReference will
+     * have @code referenceAction = CKReferenceActionNone @endcode
      */
     @Generated
     @Selector("setParentReferenceFromRecord:")
@@ -320,21 +334,25 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
     public native void setParentReferenceFromRecordID(CKRecordID parentRecordID);
 
     /**
-     * The share property on a record can be set by creating a share using @code -[CKShare initWithRootRecord:] @endcode.
+     * The share property on a record can be set by creating a share using @code -[CKShare
+     * initWithRootRecord:] @endcode.
      * <p>
-     * The share property on a record will be removed when the corresponding CKShare is deleted from the server. Send this record in the same batch as the share delete and this record's share property will be updated.
+     * The share property on a record will be removed when the corresponding CKShare is deleted from the server. Send
+     * this record in the same batch as the share delete and this record's share property will be updated.
      * <p>
-     * Sharing is only supported in zones with the @c CKRecordZoneCapabilitySharing capability. The default zone does not support sharing.
+     * Sharing is only supported in zones with the @c CKRecordZoneCapabilitySharing capability. The default zone does
+     * not support sharing.
      * <p>
      * If any records have a parent reference to this record, they are implicitly shared alongside this record.
      * <p>
-     * Note that records in a parent chain must only exist within one share. If a child record already has a share reference set then you will get a @c CKErrorAlreadyShared error if you try to share any of that record's parents.
+     * Note that records in a parent chain must only exist within one share. If a child record already has a share
+     * reference set then you will get a @c CKErrorAlreadyShared error if you try to share any of that record's parents.
      * <p>
-     * Child records can be shared independently, even if they have a common parent.  For example:
+     * Child records can be shared independently, even if they have a common parent. For example:
      * Record A has two child records, Record B and Record C.
      * A
      * / \
-     * B   C
+     * B C
      * <p>
      * These configurations are supported:
      * - Record A part of Share 1, or
@@ -344,13 +362,16 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
      * <p>
      * These configurations are not supported:
      * Record A part of Share 1, Record B part of Share 2, or
-     * -- This is not allowed because Record B would then be in two shares; Share 1 by being Record A's child, and Share 2
+     * -- This is not allowed because Record B would then be in two shares; Share 1 by being Record A's child, and Share
+     * 2
      * Record A part of Share 1, Record C part of Share 2, or
-     * -- This is not allowed because Record C would then be in two shares; Share 1 by being Record A's child, and Share 2
+     * -- This is not allowed because Record C would then be in two shares; Share 1 by being Record A's child, and Share
+     * 2
      * Record A part of Share 1, Record B part of Share 2, Record C part of Share 3
      * -- This is not allowed because both Record B and Record C would then each be in two shares.
      * <p>
-     * Whenever possible, it is suggested that you construct your parent hierarchies such that you will only need to share the topmost record of that hierarchy.
+     * Whenever possible, it is suggested that you construct your parent hierarchies such that you will only need to
+     * share the topmost record of that hierarchy.
      */
     @Generated
     @Selector("share")
@@ -363,8 +384,10 @@ public class CKRecord extends NSObject implements NSSecureCoding, NSCopying, CKR
     }
 
     /**
-     * Any values set here will be locally encrypted before being saved to the server and locally decrypted when fetched from the server. Encryption and decryption is handled by the CloudKit framework.
-     * Key material necessary for decryption are available to the owner of the record, as well as any users that can access this record via a CKShare.
+     * Any values set here will be locally encrypted before being saved to the server and locally decrypted when fetched
+     * from the server. Encryption and decryption is handled by the CloudKit framework.
+     * Key material necessary for decryption are available to the owner of the record, as well as any users that can
+     * access this record via a CKShare.
      * All CKRecordValue types can be set here except CKAsset and CKReference.
      */
     @Generated

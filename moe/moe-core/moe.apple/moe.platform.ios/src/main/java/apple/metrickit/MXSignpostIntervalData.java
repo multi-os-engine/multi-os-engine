@@ -34,11 +34,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A class that encapsulates metrics associated with app specific signpost intervals.
  * <p>
- * These metrics will be collected and aggregated if the associated signposts were emit using MXSignpost or MXSignpostAnimation APIs
+ * These metrics will be collected and aggregated if the associated signposts were emit using MXSignpost or
+ * MXSignpostAnimation APIs
  * <p>
- * To limit on-device overhead, the system will automatically limit the number of signposts (emitted using the MetricKit log handle) processed.
+ * To limit on-device overhead, the system will automatically limit the number of signposts (emitted using the MetricKit
+ * log handle) processed.
  * <p>
- * Avoid losing telemetry by limiting usage of signposts (emitted using the MetricKit log handle) to critical sections of code.
+ * Avoid losing telemetry by limiting usage of signposts (emitted using the MetricKit log handle) to critical sections
+ * of code.
  */
 @Generated
 @Library("MetricKit")
@@ -73,11 +76,12 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]      averageMemory
+     * [@property] averageMemory
      * <p>
      * Average value of memory snapshots taken at beginning and end of MXSignpost intervals
      * <p>
-     * This property is null when signposts with the associated signpostName and signpostCategory contain no interval metric data.
+     * This property is null when signposts with the associated signpostName and signpostCategory contain no interval
+     * metric data.
      */
     @Generated
     @Selector("averageMemory")
@@ -102,22 +106,24 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]      cumulativeCPUTime
+     * [@property] cumulativeCPUTime
      * <p>
      * Cumulative CPU time aggregated over the MXSignpost intervals.
      * <p>
-     * This property is null when signposts with the associated signpostName and signpostCategory contain no interval metric data.
+     * This property is null when signposts with the associated signpostName and signpostCategory contain no interval
+     * metric data.
      */
     @Generated
     @Selector("cumulativeCPUTime")
     public native NSMeasurement<NSUnitDuration> cumulativeCPUTime();
 
     /**
-     * [@property]      cumulativeLogicalWrites
+     * [@property] cumulativeLogicalWrites
      * <p>
      * Cumulative logical writes aggregated over the MXSignpost intervals.
      * <p>
-     * This property is null when signposts with the associated signpostName and signpostCategory contain no interval metric data.
+     * This property is null when signposts with the associated signpostName and signpostCategory contain no interval
+     * metric data.
      */
     @Generated
     @Selector("cumulativeLogicalWrites")
@@ -141,9 +147,10 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
     public static native long hash_static();
 
     /**
-     * [@property]      histogrammedSignpostDuration
+     * [@property] histogrammedSignpostDuration
      * <p>
-     * A histogram of signpost intervals durations associated with the given signposts with signpostName and signpostCategory.
+     * A histogram of signpost intervals durations associated with the given signposts with signpostName and
+     * signpostCategory.
      */
     @Generated
     @Selector("histogrammedSignpostDuration")
@@ -215,11 +222,12 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
     public static native long version_static();
 
     /**
-     * [@property]      cumulativeHitchTimeRatio
+     * [@property] cumulativeHitchTimeRatio
      * <p>
      * Cumulative hitch time ratio aggregated over the MXSignpostAnimation intervals.
      * <p>
-     * This property is null when signposts with the associated signpostName and signpostCategory contain no interval metric data.
+     * This property is null when signposts with the associated signpostName and signpostCategory contain no interval
+     * metric data.
      */
     @Generated
     @Selector("cumulativeHitchTimeRatio")

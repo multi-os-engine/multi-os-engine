@@ -204,7 +204,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
      * @param identity The identity of the EAP Peer. This is a SecIdentityRef object that contains
      *                 a SecKeyRef object and an associated SecCertificateRef object.
      * @return returns NO if the parameter is not an object of SecIdentityRef type or if the persistent reference
-     * is not found in the application's keychain else returns YES.
+     *         is not found in the application's keychain else returns YES.
      */
     @Generated
     @Selector("setIdentity:")
@@ -268,12 +268,14 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
      * the server certificate.
      *
      * @param certificates Each value in the array is a SecCertificateRef object. Application needs to store
-     *                     the certificates in keychain access group "$(TeamIdentifierPrefix)com.apple.networkextensionsharing".
-     *                     The API uses SecItemCopyMatching to obtain persistent reference for each certificate from application's
+     *                     the certificates in keychain access group
+     *                     "$(TeamIdentifierPrefix)com.apple.networkextensionsharing".
+     *                     The API uses SecItemCopyMatching to obtain persistent reference for each certificate from
+     *                     application's
      *                     keychain and uses that at the time os EAP authentication.
      *                     Number of elements in the array cannot be more than 10.
      * @return returns NO if any element in the array is not an object of type SecCertificateRef or if API
-     * fails to find persistent reference for each element from the application's keychain else return YES.
+     *         fails to find persistent reference for each element from the application's keychain else return YES.
      */
     @Generated
     @Selector("setTrustedServerCertificates:")

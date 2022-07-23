@@ -201,7 +201,7 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying, NSSecu
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * [@property]   dayOfTheWeek
+     * [@property] dayOfTheWeek
      * <p>
      * The day of the week.
      */
@@ -224,7 +224,7 @@ public class EKRecurrenceDayOfWeek extends NSObject implements NSCopying, NSSecu
     public native EKRecurrenceDayOfWeek initWithDayOfTheWeekWeekNumber(@NInt long dayOfTheWeek, @NInt long weekNumber);
 
     /**
-     * [@property]   weekNumber
+     * [@property] weekNumber
      * <p>
      * The week number.
      */

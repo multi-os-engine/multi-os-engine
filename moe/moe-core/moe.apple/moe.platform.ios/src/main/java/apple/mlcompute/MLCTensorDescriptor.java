@@ -63,7 +63,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   batchSizePerSequenceStep
+     * [@property] batchSizePerSequenceStep
      * <p>
      * The batch size for each sequence
      * <p>
@@ -146,9 +146,9 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * [@property]   dataType
+     * [@property] dataType
      * <p>
-     * The tensor data type.  The default is MLCDataTypeFloat32.
+     * The tensor data type. The default is MLCDataTypeFloat32.
      */
     @Generated
     @Selector("dataType")
@@ -226,7 +226,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
             int dataType);
 
     /**
-     * [@property]   dimensionCount
+     * [@property] dimensionCount
      * <p>
      * The number of dimensions in the tensor
      */
@@ -266,7 +266,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   maxTensorDimensions
+     * [@property] maxTensorDimensions
      * <p>
      * The maximum number of tensor dimensions supported
      */
@@ -289,7 +289,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   sequenceLengths
+     * [@property] sequenceLengths
      * <p>
      * TODO
      */
@@ -302,7 +302,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   shape
+     * [@property] shape
      * <p>
      * The size in each dimension
      */
@@ -311,7 +311,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
     public native NSArray<? extends NSNumber> shape();
 
     /**
-     * [@property]   sortedSequences
+     * [@property] sortedSequences
      * <p>
      * Specifies whether the sequences are sorted or not.
      */
@@ -320,7 +320,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
     public native boolean sortedSequences();
 
     /**
-     * [@property]   stride
+     * [@property] stride
      * <p>
      * The stride in bytes in each dimension
      */
@@ -333,7 +333,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
     public static native Class superclass_static();
 
     /**
-     * [@property]   tensorAllocationSizeInBytes
+     * [@property] tensorAllocationSizeInBytes
      * <p>
      * The allocation size in bytes for a tensor.
      */

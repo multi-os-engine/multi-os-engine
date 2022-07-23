@@ -23,7 +23,7 @@ import org.moe.natj.general.ann.NUInt;
  * Generic render stage enum
  * <p>
  * Can also be used for points at which a fence may be waited on or signaled.
- * [@constant] MTLRenderStageVertex   All vertex work prior to rasterization has completed.
+ * [@constant] MTLRenderStageVertex All vertex work prior to rasterization has completed.
  * [@constant] MTLRenderStageFragment All rendering work has completed.
  */
 @Generated

@@ -93,7 +93,7 @@ public class MXCellularConditionMetric extends MXMetric {
     public static native long hash_static();
 
     /**
-     * [@property]      cellularConditionTime
+     * [@property] cellularConditionTime
      * <p>
      * Application run time bucketized by cellular condition.
      * <p>

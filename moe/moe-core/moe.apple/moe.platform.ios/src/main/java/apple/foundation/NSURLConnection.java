@@ -54,9 +54,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * directly to memory, in which case an
  * NSURLConnectionDataDelegate should be supplied, or for
  * downloading of resource data directly to a file, in which case
- * an NSURLConnectionDownloadDelegate is used.  The delegate is
+ * an NSURLConnectionDownloadDelegate is used. The delegate is
  * retained by the NSURLConnection until a terminal condition is
- * encountered.  These two delegates are logically subclasses of
+ * encountered. These two delegates are logically subclasses of
  * the base protocol, NSURLConnectionDelegate.<p>
  * <p>
  * A terminal condition produced by the loader will result in a
@@ -66,9 +66,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * The -cancel message hints to the loader that a resource load
  * should be abandoned but does not guarantee that more delegate
- * messages will not be delivered.  If -cancel does cause the
+ * messages will not be delivered. If -cancel does cause the
  * load to be abandoned, the delegate will be released without
- * further messages.  In general, a caller should be prepared for
+ * further messages. In general, a caller should be prepared for
  * -cancel to have no effect, and internally ignore any delegate
  * callbacks until the delegate is released.
  * <p>
@@ -78,8 +78,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * implementation detail.<p>
  * <p>
  * When created, an NSURLConnection performs a deep-copy of the
- * NSURLRequest.  This copy is available through the
- * -originalRequest method.  As the connection performs the load,
+ * NSURLRequest. This copy is available through the
+ * -originalRequest method. As the connection performs the load,
  * this request may change as a result of protocol
  * canonicalization or due to following redirects.
  * -currentRequest can be used to retrieve this value.<p>
@@ -92,16 +92,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * NSURLConnections created with
  * -initWithRequest:delegate:startImmediately: are not
- * automatically scheduled.  Use -scheduleWithRunLoop:forMode: or
+ * automatically scheduled. Use -scheduleWithRunLoop:forMode: or
  * -setDelegateQueue: to specify the context for delegate
- * callbacks, and -start to begin the load.  If you do not
+ * callbacks, and -start to begin the load. If you do not
  * explicitly schedule the connection before -start, it will be
  * scheduled on the current runloop and mode automatically.<p>
  * <p>
  * The NSURLConnectionSynchronousLoading category adds
  * +sendSynchronousRequest:returningResponse:error, which blocks
  * the current thread until the resource data is available or an
- * error occurs.  It should be noted that using this method on an
+ * error occurs. It should be noted that using this method on an
  * applications main run loop may result in an unacceptably long
  * delay in a user interface and its use is strongly
  * discourage.<p>
@@ -165,8 +165,8 @@ public class NSURLConnection extends NSObject {
      *
      * @param request The request to preflight.
      * @return YES if it is likely that the given request can be used to
-     * initialize a connection and the associated I/O can be
-     * started, NO otherwise.
+     *         initialize a connection and the associated I/O can be
+     *         started, NO otherwise.
      */
     @Generated
     @Selector("canHandleRequest:")
@@ -252,10 +252,10 @@ public class NSURLConnection extends NSObject {
      * specified NSOperationQueue.
      * <p>
      * This is a convenience routine that allows for
-     * asynchronous loading of a url-based resource.  If
+     * asynchronous loading of a url-based resource. If
      * the resource load is successful, the data parameter
      * to the callback will contain the resource data and
-     * the error parameter will be nil.  If the resource
+     * the error parameter will be nil. If the resource
      * load fails, the data parameter will be nil and the
      * error will contain information about the failure.
      *
@@ -264,7 +264,7 @@ public class NSURLConnection extends NSObject {
      *                process. Changes made to the request argument after
      *                this method returns do not affect the request that
      *                is used for the loading process.
-     * @param queue   An NSOperationQueue upon which    the handler block will
+     * @param queue   An NSOperationQueue upon which the handler block will
      *                be dispatched.
      * @param handler A block which receives the results of the resource load.
      */
@@ -284,7 +284,7 @@ public class NSURLConnection extends NSObject {
      * <p>
      * A synchronous load for the given request is built on
      * top of the asynchronous loading code made available
-     * by the class.  The calling thread is blocked while
+     * by the class. The calling thread is blocked while
      * the asynchronous loading system performs the URL load
      * on a thread spawned specifically for this load
      * request. No special threading or run loop
@@ -303,7 +303,7 @@ public class NSURLConnection extends NSObject {
      *                 while processing the request. Will not be modified if the
      *                 load succeeds.
      * @return The content of the URL resulting from performing the load,
-     * or nil if the load failed.
+     *         or nil if the load failed.
      */
     @Generated
     @Deprecated
@@ -353,7 +353,7 @@ public class NSURLConnection extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object delegate, boolean startImmediately);
 
     /**
-     * [@property]   newsstandAssetDownload
+     * [@property] newsstandAssetDownload
      * <p>
      * A pointer to the asset download that this connection is associated with.
      */

@@ -153,14 +153,20 @@ public class UITabBarAppearance extends UIBarAppearance {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * An image that is rendered behind the selected UITabBarItem and above the tab bar's background. Modified by selectionIndicatorTintColor when appropriate.
+     * An image that is rendered behind the selected UITabBarItem and above the tab bar's background. Modified by
+     * selectionIndicatorTintColor when appropriate.
      */
     @Generated
     @Selector("selectionIndicatorImage")
     public native UIImage selectionIndicatorImage();
 
     /**
-     * A color to use for the selectionIndicator, its specific behavior depends on the value of selectionIndicatorImage. If selectionIndicatorImage is nil, then the selectionIndicatorTintColor is used to color the UITabBar's default selection indicator; a nil or clearColor selectionIndicatorTintColor will result in no indicator. If selectionIndicatorImage is a template image, then the selectionIndicatorTintColor is used to tint the image; a nil or clearColor selectionIndicatorTintColor will also result in no indicator. If the selectionIndicatorImage is not a template image, then it will be rendered without respect to the value of selectionIndicatorTintColor.
+     * A color to use for the selectionIndicator, its specific behavior depends on the value of selectionIndicatorImage.
+     * If selectionIndicatorImage is nil, then the selectionIndicatorTintColor is used to color the UITabBar's default
+     * selection indicator; a nil or clearColor selectionIndicatorTintColor will result in no indicator. If
+     * selectionIndicatorImage is a template image, then the selectionIndicatorTintColor is used to tint the image; a
+     * nil or clearColor selectionIndicatorTintColor will also result in no indicator. If the selectionIndicatorImage is
+     * not a template image, then it will be rendered without respect to the value of selectionIndicatorTintColor.
      */
     @Generated
     @Selector("selectionIndicatorTintColor")
@@ -181,14 +187,20 @@ public class UITabBarAppearance extends UIBarAppearance {
     public native void setInlineLayoutAppearance(UITabBarItemAppearance value);
 
     /**
-     * An image that is rendered behind the selected UITabBarItem and above the tab bar's background. Modified by selectionIndicatorTintColor when appropriate.
+     * An image that is rendered behind the selected UITabBarItem and above the tab bar's background. Modified by
+     * selectionIndicatorTintColor when appropriate.
      */
     @Generated
     @Selector("setSelectionIndicatorImage:")
     public native void setSelectionIndicatorImage(UIImage value);
 
     /**
-     * A color to use for the selectionIndicator, its specific behavior depends on the value of selectionIndicatorImage. If selectionIndicatorImage is nil, then the selectionIndicatorTintColor is used to color the UITabBar's default selection indicator; a nil or clearColor selectionIndicatorTintColor will result in no indicator. If selectionIndicatorImage is a template image, then the selectionIndicatorTintColor is used to tint the image; a nil or clearColor selectionIndicatorTintColor will also result in no indicator. If the selectionIndicatorImage is not a template image, then it will be rendered without respect to the value of selectionIndicatorTintColor.
+     * A color to use for the selectionIndicator, its specific behavior depends on the value of selectionIndicatorImage.
+     * If selectionIndicatorImage is nil, then the selectionIndicatorTintColor is used to color the UITabBar's default
+     * selection indicator; a nil or clearColor selectionIndicatorTintColor will result in no indicator. If
+     * selectionIndicatorImage is a template image, then the selectionIndicatorTintColor is used to tint the image; a
+     * nil or clearColor selectionIndicatorTintColor will also result in no indicator. If the selectionIndicatorImage is
+     * not a template image, then it will be rendered without respect to the value of selectionIndicatorTintColor.
      */
     @Generated
     @Selector("setSelectionIndicatorTintColor:")

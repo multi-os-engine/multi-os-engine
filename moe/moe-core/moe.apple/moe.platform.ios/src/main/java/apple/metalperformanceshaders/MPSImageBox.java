@@ -172,7 +172,7 @@ public class MPSImageBox extends MPSUnaryImageKernel {
      * Initialize a filter for a particular kernel size and device
      *
      * @param device       The device the filter will run on
-     * @param kernelWidth  the width of the kernel.  Must be an odd number.
+     * @param kernelWidth  the width of the kernel. Must be an odd number.
      * @param kernelHeight the height of the kernel. Must be an odd number.
      * @return A valid object or nil, if failure.
      */
@@ -211,7 +211,7 @@ public class MPSImageBox extends MPSUnaryImageKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel

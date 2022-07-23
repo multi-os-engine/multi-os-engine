@@ -19,7 +19,7 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]		AUParameterAutomationEventType
+ * [@enum] AUParameterAutomationEventType
  * <p>
  * Identifies the different types of parameter automation events.
  * <p>

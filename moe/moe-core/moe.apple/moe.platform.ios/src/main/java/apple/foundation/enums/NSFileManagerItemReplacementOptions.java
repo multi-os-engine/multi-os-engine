@@ -22,11 +22,15 @@ import org.moe.natj.general.ann.NUInt;
 @Generated
 public final class NSFileManagerItemReplacementOptions {
     /**
-     * NSFileManagerItemReplacementUsingNewMetadataOnly causes -replaceItemAtURL:withItemAtURL:backupItemName:options:resultingItemURL:error: to use metadata from the new item only and not to attempt to preserve metadata from the original item.
+     * NSFileManagerItemReplacementUsingNewMetadataOnly causes
+     * -replaceItemAtURL:withItemAtURL:backupItemName:options:resultingItemURL:error: to use metadata from the new item
+     * only and not to attempt to preserve metadata from the original item.
      */
     @Generated @NUInt public static final long UsingNewMetadataOnly = 0x0000000000000001L;
     /**
-     * NSFileManagerItemReplacementWithoutDeletingBackupItem causes -replaceItemAtURL:withItemAtURL:backupItemName:options:resultingItemURL:error: to leave the backup item in place after a successful replacement. The default behavior is to remove the item.
+     * NSFileManagerItemReplacementWithoutDeletingBackupItem causes
+     * -replaceItemAtURL:withItemAtURL:backupItemName:options:resultingItemURL:error: to leave the backup item in place
+     * after a successful replacement. The default behavior is to remove the item.
      */
     @Generated @NUInt public static final long WithoutDeletingBackupItem = 0x0000000000000002L;
 

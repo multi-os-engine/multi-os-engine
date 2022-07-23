@@ -27,7 +27,8 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] AVCaptureWhiteBalanceModeLocked
  * Indicates that the white balance should be locked at its current value.
  * [@constant] AVCaptureWhiteBalanceModeAutoWhiteBalance
- * Indicates that the device should automatically adjust white balance once and then change the white balance mode to AVCaptureWhiteBalanceModeLocked.
+ * Indicates that the device should automatically adjust white balance once and then change the white balance mode to
+ * AVCaptureWhiteBalanceModeLocked.
  * [@constant] AVCaptureWhiteBalanceModeContinuousAutoWhiteBalance
  * Indicates that the device should automatically adjust white balance when needed.
  */

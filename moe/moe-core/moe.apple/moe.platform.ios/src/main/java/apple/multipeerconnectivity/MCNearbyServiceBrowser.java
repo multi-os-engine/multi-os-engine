@@ -52,16 +52,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * peer, and a service type needs to be specified.
  * <p>
  * The serviceType parameter is a short text string used to describe the
- * app's networking protocol.  It should be in the same format as a
+ * app's networking protocol. It should be in the same format as a
  * Bonjour service type: up to 15 characters long and valid characters
- * include ASCII lowercase letters, numbers, and the hyphen.  A short name
+ * include ASCII lowercase letters, numbers, and the hyphen. A short name
  * that distinguishes itself from unrelated services is recommended; for
  * example, a text chat app made by ABC company could use the service type
  * "abc-txtchat". For more detailed information about service type
  * restrictions, see RFC 6335, Section 5.1.
  * <p>
  * A delegate that conforms to the MCNearbyServiceBrowserDelegate
- * protocol must also be provided.  The delegate is notified when nearby
+ * protocol must also be provided. The delegate is notified when nearby
  * peers are found and lost. No assumption should be made as to which queue
  * the callbacks are called on.
  * <p>
@@ -205,7 +205,7 @@ public class MCNearbyServiceBrowser extends NSObject {
      * describe the session or pass some additional identification
      * information to the invitee.
      * <p>
-     * The timeout parameter is seconds and should be a positive value.  If a
+     * The timeout parameter is seconds and should be a positive value. If a
      * timeout of <=0 is specified, a default value of 30 seconds will be
      * used instead.
      */

@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Basic protocols		**************
+ * Basic protocols **************
  */
 @Generated
 @Library("Foundation")

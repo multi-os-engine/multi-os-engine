@@ -186,7 +186,8 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     public native String body();
 
     /**
-     * The identifier for a registered UNNotificationCategory that will be used to determine the appropriate actions to display for the notification.
+     * The identifier for a registered UNNotificationCategory that will be used to determine the appropriate actions to
+     * display for the notification.
      */
     @Generated
     @Selector("categoryIdentifier")
@@ -244,7 +245,8 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     }
 
     /**
-     * The unique identifier for the thread or conversation related to this notification request. It will be used to visually group notifications together.
+     * The unique identifier for the thread or conversation related to this notification request. It will be used to
+     * visually group notifications together.
      */
     @Generated
     @Selector("threadIdentifier")
@@ -258,7 +260,8 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     public native String title();
 
     /**
-     * Apps can set the userInfo for locally scheduled notification requests. The contents of the push payload will be set as the userInfo for remote notifications.
+     * Apps can set the userInfo for locally scheduled notification requests. The contents of the push payload will be
+     * set as the userInfo for remote notifications.
      */
     @Generated
     @Selector("userInfo")
@@ -290,9 +293,16 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     public native String targetContentIdentifier();
 
     /**
-     * Contextualizes your UNNotificationContent object with other Apple SDK objects conforming to UNNotificationContentProviding. This will specialize the notification and decorate its look and behavior accordingly. For example, the notification will be treated as a message with an avatar and be promoted to the top of notification center if the object passed in is a valid INSendMessageIntent<UNNotificationContentProviding>. This throws an error with a UNErrorCode found in UNError.h if the UNNotificationContentProviding object is invalid. A valid UNNotificationContent result should not be mutated and be passed directly to UNUserNotificationCenter.
+     * Contextualizes your UNNotificationContent object with other Apple SDK objects conforming to
+     * UNNotificationContentProviding. This will specialize the notification and decorate its look and behavior
+     * accordingly. For example, the notification will be treated as a message with an avatar and be promoted to the top
+     * of notification center if the object passed in is a valid INSendMessageIntent<UNNotificationContentProviding>.
+     * This throws an error with a UNErrorCode found in UNError.h if the UNNotificationContentProviding object is
+     * invalid. A valid UNNotificationContent result should not be mutated and be passed directly to
+     * UNUserNotificationCenter.
      * <p>
-     * This should be called in the UNNotificationServiceExtension in didReceiveNotificationRequest:withContentHandler: and the returned UNNotificationContent should be passed to the contentHandler for incoming push notifications.
+     * This should be called in the UNNotificationServiceExtension in didReceiveNotificationRequest:withContentHandler:
+     * and the returned UNNotificationContent should be passed to the contentHandler for incoming push notifications.
      */
     @Generated
     @Selector("contentByUpdatingWithProvider:error:")
@@ -309,7 +319,8 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     public native long interruptionLevel();
 
     /**
-     * Relevance score determines the sorting for the notification across app notifications. The expected range is between 0.0f and 1.0f.
+     * Relevance score determines the sorting for the notification across app notifications. The expected range is
+     * between 0.0f and 1.0f.
      */
     @Generated
     @Selector("relevanceScore")

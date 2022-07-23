@@ -105,7 +105,8 @@ public class EKVirtualConferenceProvider extends NSObject implements NSExtension
      * an array of EKVirtualConferenceRoomTypeDescriptors. Most extensions will only need to provide one room type.
      *
      * @param completionHandler A block to call when your extension has finished retrieving available room types. If
-     *                          your extension is unable to provide any room types at this time, call this block with nil
+     *                          your extension is unable to provide any room types at this time, call this block with
+     *                          nil
      *                          for the first argument and an appropriate NSError object for the second argument. Do not
      *                          call this block with nil for both arguments. Similarly, do not call this block with both
      *                          a non-nil array and a non-nil NSError. This block must be called when your extension has
@@ -134,15 +135,20 @@ public class EKVirtualConferenceProvider extends NSObject implements NSExtension
      * EKVirtualConferenceDescriptor object containing the virtual conference details and call the completion handler
      * with the EKVirtualConferenceDescriptor object as the first argument.
      *
-     * @param identifier        Represents the room type that the user chose. This is the same identifier that your extension
+     * @param identifier        Represents the room type that the user chose. This is the same identifier that your
+     *                          extension
      *                          chose for this EKVirtualConferenceRoomTypeDescriptor in an earlier call to
      *                          fetchAvailableRoomTypesWithCompletionHandler:.
-     * @param completionHandler A block to call when your extension has finished retrieving the virtual conference details.
-     *                          If your extension is unable to retrieve virtual conference details at this time (for example,
-     *                          because network access is not available), call this block with nil for the first argument and
-     *                          an appropriate NSError object for the second argument. Do not call this block with nil for
+     * @param completionHandler A block to call when your extension has finished retrieving the virtual conference
+     *                          details.
+     *                          If your extension is unable to retrieve virtual conference details at this time (for
+     *                          example,
+     *                          because network access is not available), call this block with nil for the first
+     *                          argument and
+     *                          an appropriate NSError object for the second argument. Do not call this block with nil
+     *                          for
      *                          both arguments. Similarly, do not call this block with both a non-nil
-     *                          EKVirtualConferenceDescriptor and a non-nil NSError.  This block must be called when your
+     *                          EKVirtualConferenceDescriptor and a non-nil NSError. This block must be called when your
      *                          extension has finished its work.
      */
     @Generated

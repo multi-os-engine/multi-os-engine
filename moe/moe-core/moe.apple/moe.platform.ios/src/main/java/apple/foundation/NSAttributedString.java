@@ -60,8 +60,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class NSAttributedString extends NSObject
-        implements NSCopying, NSMutableCopying, NSSecureCoding, NSItemProviderReading, NSItemProviderWriting {
+public class NSAttributedString extends NSObject implements NSCopying, NSMutableCopying, NSSecureCoding,
+        NSItemProviderReading, NSItemProviderWriting {
     static {
         NatJ.register();
     }
@@ -86,7 +86,8 @@ public class NSAttributedString extends NSObject
     public static native NSAttributedString allocWithZone(VoidPtr zone);
 
     /**
-     * A convenience method for creating an attributed string containing attachment using NSAttachmentCharacter as the base character.
+     * A convenience method for creating an attributed string containing attachment using NSAttachmentCharacter as the
+     * base character.
      */
     @Generated
     @Selector("attributedStringWithAttachment:")
@@ -209,7 +210,8 @@ public class NSAttributedString extends NSObject
             NSStringDrawingContext context);
 
     /**
-     * Returns YES if the receiver contains a property configured (NSAttachmentAttributeName with NSAttachmentCharacter) in range
+     * Returns YES if the receiver contains a property configured (NSAttachmentAttributeName with NSAttachmentCharacter)
+     * in range
      */
     @Generated
     @Selector("containsAttachmentsInRange:")
@@ -222,7 +224,8 @@ public class NSAttributedString extends NSObject
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * Generates an NSData object for the receiver contents in range.  It requires a document attributes dict specifying at least the NSDocumentTypeDocumentAttribute to determine the format to be written.
+     * Generates an NSData object for the receiver contents in range. It requires a document attributes dict specifying
+     * at least the NSDocumentTypeDocumentAttribute to determine the format to be written.
      */
     @Generated
     @Selector("dataFromRange:documentAttributes:error:")
@@ -258,7 +261,10 @@ public class NSAttributedString extends NSObject
             @ObjCBlock(name = "call_enumerateAttributesInRangeOptionsUsingBlock") Block_enumerateAttributesInRangeOptionsUsingBlock block);
 
     /**
-     * Returns an NSFileWrapper object for the receiver contents in range.  It requires a document attributes dict specifying at least the NSDocumentTypeDocumentAttribute to determine the format to be written.  The method returns a directory file wrapper for those document types represented by a file package such as NSRTFDTextDocumentType; otherwise, it returns a regular-file file wrapper.
+     * Returns an NSFileWrapper object for the receiver contents in range. It requires a document attributes dict
+     * specifying at least the NSDocumentTypeDocumentAttribute to determine the format to be written. The method returns
+     * a directory file wrapper for those document types represented by a file package such as NSRTFDTextDocumentType;
+     * otherwise, it returns a regular-file file wrapper.
      */
     @Generated
     @Selector("fileWrapperFromRange:documentAttributes:error:")
@@ -300,7 +306,11 @@ public class NSAttributedString extends NSObject
     public native NSAttributedString initWithStringAttributes(String str, NSDictionary<String, ?> attrs);
 
     /**
-     * Methods initializing the receiver contents with an external document data.  options specify document attributes for interpreting the document contents.  NSDocumentTypeDocumentAttribute, NSCharacterEncodingDocumentAttribute, and NSDefaultAttributesDocumentAttribute are supported options key.  When they are not specified, these methods will examine the data and do their best to detect the appropriate attributes.  If dict is non-NULL, it will return a dictionary with various document-wide attributes accessible via NS...DocumentAttribute keys.
+     * Methods initializing the receiver contents with an external document data. options specify document attributes
+     * for interpreting the document contents. NSDocumentTypeDocumentAttribute, NSCharacterEncodingDocumentAttribute,
+     * and NSDefaultAttributesDocumentAttribute are supported options key. When they are not specified, these methods
+     * will examine the data and do their best to detect the appropriate attributes. If dict is non-NULL, it will return
+     * a dictionary with various document-wide attributes accessible via NS...DocumentAttribute keys.
      */
     @Generated
     @Selector("initWithURL:options:documentAttributes:error:")
@@ -426,7 +436,8 @@ public class NSAttributedString extends NSObject
      *
      * @param data              The HTML data to use as the contents.
      * @param options           Document attributes for interpreting the document contents.
-     *                          NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption, NSTextEncodingNameDocumentOption,
+     *                          NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption,
+     *                          NSTextEncodingNameDocumentOption,
      *                          and NSCharacterEncodingDocumentOption are supported option keys.
      * @param completionHandler A block to invoke when the operation completes or fails.
      */
@@ -453,7 +464,8 @@ public class NSAttributedString extends NSObject
      *
      * @param fileURL           The file URL to load.
      * @param options           Document attributes for interpreting the document contents.
-     *                          NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption and NSReadAccessURLDocumentOption
+     *                          NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption and
+     *                          NSReadAccessURLDocumentOption
      *                          are supported option keys.
      * @param completionHandler A block to invoke when the operation completes or fails.
      */
@@ -479,7 +491,8 @@ public class NSAttributedString extends NSObject
      *
      * @param request           The request specifying the URL to load.
      * @param options           Document attributes for interpreting the document contents.
-     *                          NSTextSizeMultiplierDocumentOption and NSTimeoutDocumentOption are supported option keys.
+     *                          NSTextSizeMultiplierDocumentOption and NSTimeoutDocumentOption are supported option
+     *                          keys.
      * @param completionHandler A block to invoke when the operation completes or fails.
      */
     @Generated
@@ -533,7 +546,8 @@ public class NSAttributedString extends NSObject
     public native NSAttributedString attributedStringByInflectingString();
 
     /**
-     * These constructors have a 'baseURL' parameter. If specified, links in the document will be relative to this URL, and images in the document will be looked for relative to this URL (if the other options allow image loading).
+     * These constructors have a 'baseURL' parameter. If specified, links in the document will be relative to this URL,
+     * and images in the document will be looked for relative to this URL (if the other options allow image loading).
      * Defaults to nil. If set to nil, paths will not be resolved.
      */
     @Generated

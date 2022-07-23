@@ -86,7 +86,7 @@ public class MLCMatMulLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   descriptor
+     * [@property] descriptor
      * <p>
      * The matrix multiplication descriptor
      */

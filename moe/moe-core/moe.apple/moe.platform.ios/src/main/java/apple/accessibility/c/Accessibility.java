@@ -44,7 +44,9 @@ public final class Accessibility {
     public static native boolean AXSupportsBidirectionalAXMFiHearingDeviceStreaming();
 
     /**
-     * Returns the CoreBluetooth UUIDs of the hearing device CBPeripherals. This requires that the value of the "hearing.aid.app" entitlement match the manufacturer of the CBPeripherals. For bimodal hearing devices the entitlement should be an array of the manufacturers.
+     * Returns the CoreBluetooth UUIDs of the hearing device CBPeripherals. This requires that the value of the
+     * "hearing.aid.app" entitlement match the manufacturer of the CBPeripherals. For bimodal hearing devices the
+     * entitlement should be an array of the manufacturers.
      */
     @Generated
     @CFunction

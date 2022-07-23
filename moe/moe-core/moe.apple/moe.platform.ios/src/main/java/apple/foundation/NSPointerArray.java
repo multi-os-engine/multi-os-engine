@@ -52,7 +52,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Using NSPointerFunctionsWeakMemory object references will turn to NULL on last release.
  * <p>
  * The copying and archiving protocols are applicable only when NSPointerArray is configured for Object uses.
- * The fast enumeration protocol (supporting the for..in statement) will yield NULLs if present.  It is defined for all types of pointers although the language syntax doesn't directly support this.
+ * The fast enumeration protocol (supporting the for..in statement) will yield NULLs if present. It is defined for all
+ * types of pointers although the language syntax doesn't directly support this.
  */
 @Generated
 @Library("Foundation")
@@ -254,7 +255,8 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     public native VoidPtr pointerAtIndex(@NUInt long index);
 
     /**
-     * return an NSPointerFunctions object reflecting the functions in use.  This is a new autoreleased object that can be subsequently modified and/or used directly in the creation of other pointer "collections".
+     * return an NSPointerFunctions object reflecting the functions in use. This is a new autoreleased object that can
+     * be subsequently modified and/or used directly in the creation of other pointer "collections".
      */
     @Generated
     @Selector("pointerFunctions")

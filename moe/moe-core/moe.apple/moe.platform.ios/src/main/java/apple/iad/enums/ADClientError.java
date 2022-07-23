@@ -44,12 +44,14 @@ import org.moe.natj.general.ann.NInt;
  * The response received from the Attribution Server had an HTTP 5xx status code.
  * <p>
  * [@const] ADClientErrorRequestNetworkError
- * The communication with the  Attribution Server had a network error. The underlying error will be provided in the user info dictionary if available.
+ * The communication with the Attribution Server had a network error. The underlying error will be provided in the user
+ * info dictionary if available.
  * <p>
  * [@const] ADClientErrorUnsupportedPlatform
  * The attribution API was called on an unsupported platform. Only iOS and iPadOS are supported.
  * <p>
- * Error codes for NSErrors passed to the completionHandler block when calling the requestAttributionDetailsWithBlock: method.
+ * Error codes for NSErrors passed to the completionHandler block when calling the requestAttributionDetailsWithBlock:
+ * method.
  */
 @Generated
 public final class ADClientError {

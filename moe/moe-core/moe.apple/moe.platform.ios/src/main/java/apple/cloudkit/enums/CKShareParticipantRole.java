@@ -8,7 +8,7 @@ import org.moe.natj.general.ann.NInt;
  * <p>
  * - Owners can add private users
  * - Private users can access the share
- * - Public users are "self-added" when the participant accesses the shareURL.  Owners cannot add public users.
+ * - Public users are "self-added" when the participant accesses the shareURL. Owners cannot add public users.
  */
 @Generated
 public final class CKShareParticipantRole {

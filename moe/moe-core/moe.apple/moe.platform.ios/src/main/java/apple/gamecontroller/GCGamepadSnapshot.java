@@ -41,7 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A GCGamepadSnapshot snapshot is a concrete GCGamepad implementation. It can be used directly in an
- * application to implement controller input replays. It is also returned as the result API_DEPRECATED("GCGamepad has been deprecated, use GCExtendedGamepad instead", macos(10.9, 10.15), ios(7.0, 13.0), tvos(7.0, 13.0))of polling
+ * application to implement controller input replays. It is also returned as the result API_DEPRECATED("GCGamepad has
+ * been deprecated, use GCExtendedGamepad instead", macos(10.9, 10.15), ios(7.0, 13.0), tvos(7.0, 13.0))of polling
  * a controller.
  * <p>
  * The current snapshotData is readily available to access as NSData. A developer can serialize this to any

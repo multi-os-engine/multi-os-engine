@@ -384,7 +384,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
     /**
      * These properties are always nil when a non-nil `backgroundConfiguration` is set.
      * The background view is a subview behind all other views.
-     * If selectedBackgroundView is different than backgroundView, it will be placed above the background view and animated in on selection.
+     * If selectedBackgroundView is different than backgroundView, it will be placed above the background view and
+     * animated in on selection.
      */
     @Generated
     @Selector("backgroundView")
@@ -444,7 +445,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
     /**
      * These properties are always nil when a non-nil `backgroundConfiguration` is set.
      * The background view is a subview behind all other views.
-     * If selectedBackgroundView is different than backgroundView, it will be placed above the background view and animated in on selection.
+     * If selectedBackgroundView is different than backgroundView, it will be placed above the background view and
+     * animated in on selection.
      */
     @Generated
     @Selector("setBackgroundView:")
@@ -471,7 +473,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
-     * When YES, the cell will automatically call -updatedConfigurationForState: on its `backgroundConfiguration` when the cell's
+     * When YES, the cell will automatically call -updatedConfigurationForState: on its `backgroundConfiguration` when
+     * the cell's
      * configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
      */
     @Generated
@@ -479,7 +482,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
     public native boolean automaticallyUpdatesBackgroundConfiguration();
 
     /**
-     * When YES, the cell will automatically call -updatedConfigurationForState: on its `contentConfiguration` when the cell's
+     * When YES, the cell will automatically call -updatedConfigurationForState: on its `contentConfiguration` when the
+     * cell's
      * configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
      */
     @Generated
@@ -487,7 +491,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
     public native boolean automaticallyUpdatesContentConfiguration();
 
     /**
-     * Setting a background configuration supersedes the cell's backgroundView and selectedBackgroundView. The default value is nil.
+     * Setting a background configuration supersedes the cell's backgroundView and selectedBackgroundView. The default
+     * value is nil.
      */
     @Generated
     @Selector("backgroundConfiguration")
@@ -503,9 +508,12 @@ public class UICollectionViewCell extends UICollectionReusableView {
     public native UICellConfigurationState configurationState();
 
     /**
-     * Setting a content configuration replaces the existing contentView of the cell with a new content view instance from the configuration,
-     * or directly applies the configuration to the existing content view if the configuration is compatible with the existing content view type.
-     * The default value is nil. After a configuration has been set, setting this property to nil will replace the current content view with a new content view.
+     * Setting a content configuration replaces the existing contentView of the cell with a new content view instance
+     * from the configuration,
+     * or directly applies the configuration to the existing content view if the configuration is compatible with the
+     * existing content view type.
+     * The default value is nil. After a configuration has been set, setting this property to nil will replace the
+     * current content view with a new content view.
      */
     @Generated
     @Selector("contentConfiguration")
@@ -513,7 +521,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
     public native UIContentConfiguration contentConfiguration();
 
     /**
-     * When YES, the cell will automatically call -updatedConfigurationForState: on its `backgroundConfiguration` when the cell's
+     * When YES, the cell will automatically call -updatedConfigurationForState: on its `backgroundConfiguration` when
+     * the cell's
      * configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
      */
     @Generated
@@ -521,7 +530,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
     public native void setAutomaticallyUpdatesBackgroundConfiguration(boolean value);
 
     /**
-     * When YES, the cell will automatically call -updatedConfigurationForState: on its `contentConfiguration` when the cell's
+     * When YES, the cell will automatically call -updatedConfigurationForState: on its `contentConfiguration` when the
+     * cell's
      * configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
      */
     @Generated
@@ -529,16 +539,20 @@ public class UICollectionViewCell extends UICollectionReusableView {
     public native void setAutomaticallyUpdatesContentConfiguration(boolean value);
 
     /**
-     * Setting a background configuration supersedes the cell's backgroundView and selectedBackgroundView. The default value is nil.
+     * Setting a background configuration supersedes the cell's backgroundView and selectedBackgroundView. The default
+     * value is nil.
      */
     @Generated
     @Selector("setBackgroundConfiguration:")
     public native void setBackgroundConfiguration(UIBackgroundConfiguration value);
 
     /**
-     * Setting a content configuration replaces the existing contentView of the cell with a new content view instance from the configuration,
-     * or directly applies the configuration to the existing content view if the configuration is compatible with the existing content view type.
-     * The default value is nil. After a configuration has been set, setting this property to nil will replace the current content view with a new content view.
+     * Setting a content configuration replaces the existing contentView of the cell with a new content view instance
+     * from the configuration,
+     * or directly applies the configuration to the existing content view if the configuration is compatible with the
+     * existing content view type.
+     * The default value is nil. After a configuration has been set, setting this property to nil will replace the
+     * current content view with a new content view.
      */
     @Generated
     @Selector("setContentConfiguration:")

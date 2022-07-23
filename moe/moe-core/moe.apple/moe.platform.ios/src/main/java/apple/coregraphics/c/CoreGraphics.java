@@ -475,7 +475,7 @@ public final class CoreGraphics {
 
     /**
      * Rotate `t' by `angle' radians and return the result:
-     * t' =  [ cos(angle) sin(angle) -sin(angle) cos(angle) 0 0 ] * t
+     * t' = [ cos(angle) sin(angle) -sin(angle) cos(angle) 0 0 ] * t
      */
     @Generated
     @CFunction
@@ -3680,7 +3680,7 @@ public final class CoreGraphics {
      * Create a bitmap context. The context draws into a bitmap which is `width'
      * pixels wide and `height' pixels high. The number of components for each
      * pixel is specified by `space', which may also specify a destination color
-     * profile.  Note that the only legal case when `space' can be NULL is when
+     * profile. Note that the only legal case when `space' can be NULL is when
      * alpha is specified as kCGImageAlphaOnly.The number of bits for each component
      * of a pixel is specified by `bitsPerComponent'. The number of bytes per pixel
      * is equal to `(bitsPerComponent * number of components + 7)/8'. Each row of
@@ -4437,7 +4437,8 @@ public final class CoreGraphics {
     public static native CFStringRef kCGFontVariationAxisDefaultValue();
 
     /**
-     * CFBooleanRef which can be used as option to create CGColorConversionInfoRef, when Black Point Compensation is desired
+     * CFBooleanRef which can be used as option to create CGColorConversionInfoRef, when Black Point Compensation is
+     * desired
      */
     @Generated
     @CVariable()
@@ -4720,7 +4721,7 @@ public final class CoreGraphics {
     public static native CFStringRef kCGColorSpaceGenericLab();
 
     /**
-     * Key:   kCGPDFOutlineTitle
+     * Key: kCGPDFOutlineTitle
      * Value: CFString
      */
     @Generated
@@ -4728,7 +4729,7 @@ public final class CoreGraphics {
     public static native CFStringRef kCGPDFOutlineTitle();
 
     /**
-     * Key:   kCGPDFOutlineChildren
+     * Key: kCGPDFOutlineChildren
      * Value: CFArray of CFDictionaries
      */
     @Generated
@@ -4736,7 +4737,7 @@ public final class CoreGraphics {
     public static native CFStringRef kCGPDFOutlineChildren();
 
     /**
-     * Key:   kCGPDFOutlineDestination
+     * Key: kCGPDFOutlineDestination
      * Value: CFNumber (for a one-indexed page number) or CFURL
      */
     @Generated
@@ -4744,7 +4745,7 @@ public final class CoreGraphics {
     public static native CFStringRef kCGPDFOutlineDestination();
 
     /**
-     * Key:   kCGPDFOutlineDestinationRect
+     * Key: kCGPDFOutlineDestinationRect
      * Value: CFDictionary from CGRectCreateDictionaryRepresentation. Only valid when the destination is a page number.
      */
     @Generated
@@ -4854,7 +4855,8 @@ public final class CoreGraphics {
             CGColorSpaceRef dst, CFDictionaryRef options);
 
     /**
-     * For a given CGPDFTagType, return a C-string that matches the names defined in section 10.7.3: Standard Structure Types.
+     * For a given CGPDFTagType, return a C-string that matches the names defined in section 10.7.3: Standard Structure
+     * Types.
      * These are defined on pages 899 - 912. Returns NULL for an unknown value.
      */
     @Generated
@@ -4863,13 +4865,20 @@ public final class CoreGraphics {
     public static native String CGPDFTagTypeGetName(int tagType);
 
     /**
-     * Sets the current tag to the given tagType with an associated tagProperties dictionary. The previous tag will be pushed
-     * to a tag-stack. The previous tag can be restored through CGPDFContextEndTag(...). This new tag will record any future
-     * drawing commands to the given context as part of itself, unless another tag is pushed or the tag is popped. When the
-     * PDF context is serialized to a PDF file, these tags will create marked content sequences around the associated draw commands
-     * around the page's content stream. Note that tagProperties is an optional dictionary that allows you to specificy additional
-     * properties of the marked content: content may want to re-declare how text should be extracted, any alt text for figures,
-     * or explicitly declare what language the text is in. All child-tags (tags pushed on top of other tags) will inherit their
+     * Sets the current tag to the given tagType with an associated tagProperties dictionary. The previous tag will be
+     * pushed
+     * to a tag-stack. The previous tag can be restored through CGPDFContextEndTag(...). This new tag will record any
+     * future
+     * drawing commands to the given context as part of itself, unless another tag is pushed or the tag is popped. When
+     * the
+     * PDF context is serialized to a PDF file, these tags will create marked content sequences around the associated
+     * draw commands
+     * around the page's content stream. Note that tagProperties is an optional dictionary that allows you to specificy
+     * additional
+     * properties of the marked content: content may want to re-declare how text should be extracted, any alt text for
+     * figures,
+     * or explicitly declare what language the text is in. All child-tags (tags pushed on top of other tags) will
+     * inherit their
      * parent tag's properties.
      */
     @Generated
@@ -4877,7 +4886,8 @@ public final class CoreGraphics {
     public static native void CGPDFContextBeginTag(CGContextRef context, int tagType, CFDictionaryRef tagProperties);
 
     /**
-     * Pop the current tag. Sets the current tag to the previous tag on the tag-stack. If there was no previous tag, then the
+     * Pop the current tag. Sets the current tag to the previous tag on the tag-stack. If there was no previous tag,
+     * then the
      * current tag will be set to the root document tag (of type CGPDFTagTypeDocument).
      */
     @Generated

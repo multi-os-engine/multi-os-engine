@@ -165,14 +165,16 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
     public native boolean opaque();
 
     /**
-     * indicates the bitmap context should draw into a context capable of rendering extended color images. The preferredFormat sets this according to the main screen's current configuration.
+     * indicates the bitmap context should draw into a context capable of rendering extended color images. The
+     * preferredFormat sets this according to the main screen's current configuration.
      */
     @Generated
     @Selector("prefersExtendedRange")
     public native boolean prefersExtendedRange();
 
     /**
-     * display scale of the context. The preferredFormat uses the scale most appropriate for the main screen's current configuration.
+     * display scale of the context. The preferredFormat uses the scale most appropriate for the main screen's current
+     * configuration.
      */
     @Generated
     @Selector("scale")
@@ -187,22 +189,26 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
     public native void setOpaque(boolean value);
 
     /**
-     * indicates the bitmap context should draw into a context capable of rendering extended color images. The preferredFormat sets this according to the main screen's current configuration.
+     * indicates the bitmap context should draw into a context capable of rendering extended color images. The
+     * preferredFormat sets this according to the main screen's current configuration.
      */
     @Generated
     @Selector("setPrefersExtendedRange:")
     public native void setPrefersExtendedRange(boolean value);
 
     /**
-     * display scale of the context. The preferredFormat uses the scale most appropriate for the main screen's current configuration.
+     * display scale of the context. The preferredFormat uses the scale most appropriate for the main screen's current
+     * configuration.
      */
     @Generated
     @Selector("setScale:")
     public native void setScale(@NFloat double value);
 
     /**
-     * Returns a format optimized for the specified trait collection, taking into account properties such as displayScale and displayGamut.
-     * Traits that are not specified will be ignored, with their corresponding format properties defaulting to the values in preferredFormat.
+     * Returns a format optimized for the specified trait collection, taking into account properties such as
+     * displayScale and displayGamut.
+     * Traits that are not specified will be ignored, with their corresponding format properties defaulting to the
+     * values in preferredFormat.
      */
     @Generated
     @Selector("formatForTraitCollection:")

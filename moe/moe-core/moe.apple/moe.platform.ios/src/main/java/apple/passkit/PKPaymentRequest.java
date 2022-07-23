@@ -164,8 +164,8 @@ public class PKPaymentRequest extends NSObject {
     public static native long version_static();
 
     /**
-     * Optional merchant-supplied information about the payment request.  Examples of this are an order
-     * or cart identifier.  It will be signed and included in the resulting PKPaymentToken.
+     * Optional merchant-supplied information about the payment request. Examples of this are an order
+     * or cart identifier. It will be signed and included in the resulting PKPaymentToken.
      */
     @Generated
     @Selector("applicationData")
@@ -210,7 +210,7 @@ public class PKPaymentRequest extends NSObject {
     public native long merchantCapabilities();
 
     /**
-     * Identifies the merchant, as previously agreed with Apple.  Must match one of the merchant
+     * Identifies the merchant, as previously agreed with Apple. Must match one of the merchant
      * identifiers in the application's entitlement.
      */
     @Generated
@@ -244,8 +244,8 @@ public class PKPaymentRequest extends NSObject {
     public native long requiredShippingAddressFields();
 
     /**
-     * Optional merchant-supplied information about the payment request.  Examples of this are an order
-     * or cart identifier.  It will be signed and included in the resulting PKPaymentToken.
+     * Optional merchant-supplied information about the payment request. Examples of this are an order
+     * or cart identifier. It will be signed and included in the resulting PKPaymentToken.
      */
     @Generated
     @Selector("setApplicationData:")
@@ -285,7 +285,7 @@ public class PKPaymentRequest extends NSObject {
     public native void setMerchantCapabilities(@NUInt long value);
 
     /**
-     * Identifies the merchant, as previously agreed with Apple.  Must match one of the merchant
+     * Identifies the merchant, as previously agreed with Apple. Must match one of the merchant
      * identifiers in the application's entitlement.
      */
     @Generated
@@ -348,7 +348,7 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * The payment networks supported by the merchant, for example @[ PKPaymentNetworkVisa,
-     * PKPaymentNetworkMasterCard ].  This property constrains payment cards that may fund the payment.
+     * PKPaymentNetworkMasterCard ]. This property constrains payment cards that may fund the payment.
      */
     @Generated
     @Selector("setSupportedNetworks:")
@@ -387,7 +387,7 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * The payment networks supported by the merchant, for example @[ PKPaymentNetworkVisa,
-     * PKPaymentNetworkMasterCard ].  This property constrains payment cards that may fund the payment.
+     * PKPaymentNetworkMasterCard ]. This property constrains payment cards that may fund the payment.
      */
     @Generated
     @Selector("supportedNetworks")
@@ -412,7 +412,8 @@ public class PKPaymentRequest extends NSObject {
             String localizedDescription);
 
     /**
-     * Convenience method to create a payment shipping address error with the supplied CNPostalAddressKey and description
+     * Convenience method to create a payment shipping address error with the supplied CNPostalAddressKey and
+     * description
      */
     @Generated
     @Selector("paymentShippingAddressInvalidErrorWithKey:localizedDescription:")
@@ -429,7 +430,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * Indicates which billing contact fields the merchant requires in order to process a transaction.
-     * Currently only postal address may be requested for billing contact. For all other fields use -requiredShippingContactFields
+     * Currently only postal address may be requested for billing contact. For all other fields use
+     * -requiredShippingContactFields
      */
     @Generated
     @Selector("requiredBillingContactFields")
@@ -444,7 +446,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * Indicates which billing contact fields the merchant requires in order to process a transaction.
-     * Currently only postal address may be requested for billing contact. For all other fields use -requiredShippingContactFields
+     * Currently only postal address may be requested for billing contact. For all other fields use
+     * -requiredShippingContactFields
      */
     @Generated
     @Selector("setRequiredBillingContactFields:")

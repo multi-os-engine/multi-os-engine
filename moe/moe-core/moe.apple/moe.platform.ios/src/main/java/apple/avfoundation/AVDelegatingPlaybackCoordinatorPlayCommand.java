@@ -93,9 +93,10 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
     public static native long hash_static();
 
     /**
-     * [@property]	hostClockTime
+     * [@property] hostClockTime
      * <p>
-     * This is the host clock time (see CMClockGetHostTimeClock()) defining when playback should start (or should have started) at the given itemTime.
+     * This is the host clock time (see CMClockGetHostTimeClock()) defining when playback should start (or should have
+     * started) at the given itemTime.
      */
     @Generated
     @Selector("hostClockTime")
@@ -124,14 +125,19 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * [@property]	itemTime
+     * [@property] itemTime
      * <p>
      * The itemTime that playback should begin at.
      * <p>
-     * The receiver of this command should verify that data is loaded for the requested time and potentially begin loading it before beginning playback.
-     * It is not important to load data for time exactly. If data "similar" to time is already loaded, it is acceptable to start playback with the loaded data. Playback should still start with the requested timing.
-     * Should the receiver be unable to start with the exact requested timing, playback will be out of sync with the group.
-     * If data for the requested time cannot be loaded, or playback stalls later, the command handler may want to indicate this to the coordinator by beginning a suspension with AVCoordinatedPlaybackSuspensionReasonStallRecovery.
+     * The receiver of this command should verify that data is loaded for the requested time and potentially begin
+     * loading it before beginning playback.
+     * It is not important to load data for time exactly. If data "similar" to time is already loaded, it is acceptable
+     * to start playback with the loaded data. Playback should still start with the requested timing.
+     * Should the receiver be unable to start with the exact requested timing, playback will be out of sync with the
+     * group.
+     * If data for the requested time cannot be loaded, or playback stalls later, the command handler may want to
+     * indicate this to the coordinator by beginning a suspension with
+     * AVCoordinatedPlaybackSuspensionReasonStallRecovery.
      */
     @Generated
     @Selector("itemTime")
@@ -148,7 +154,7 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
     public static native AVDelegatingPlaybackCoordinatorPlayCommand new_objc();
 
     /**
-     * [@property]	rate
+     * [@property] rate
      * <p>
      * Playback rate. Will always be non-zero.
      */

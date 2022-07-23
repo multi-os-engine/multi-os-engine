@@ -156,7 +156,8 @@ public class UIFeedbackGenerator extends NSObject {
     public native UIFeedbackGenerator init();
 
     /**
-     * informs self that it will likely receive events soon, so that it can ensure minimal latency for any feedback generated
+     * informs self that it will likely receive events soon, so that it can ensure minimal latency for any feedback
+     * generated
      * safe to call more than once before the generator receives an event, if events are still imminently possible
      */
     @Generated

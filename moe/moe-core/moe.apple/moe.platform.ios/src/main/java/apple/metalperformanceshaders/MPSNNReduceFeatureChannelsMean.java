@@ -27,7 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNReduceFeatureChannelsMean
  * <p>
- * The MPSNNReduceFeatureChannelsMean performs a reduction operation returning the mean value for each column of an image
+ * The MPSNNReduceFeatureChannelsMean performs a reduction operation returning the mean value for each column of an
+ * image
  */
 @Generated
 @Library("MetalPerformanceShaders")

@@ -9,7 +9,8 @@ import org.moe.natj.general.ann.NInt;
  * Constants indicating the current Center Stage control mode.
  * <p>
  * [@constant] AVCaptureCenterStageControlModeUser
- * Indicates that the application is unaware of the Center Stage feature. Its enablement is entirely under user control in Control Center.
+ * Indicates that the application is unaware of the Center Stage feature. Its enablement is entirely under user control
+ * in Control Center.
  * [@constant] AVCaptureCenterStageControlModeApp
  * Indicates that the application controls the Center Stage feature, disallowing input from the user in Control Center.
  * [@constant] AVCaptureCenterStageControlModeCooperative

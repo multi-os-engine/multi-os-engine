@@ -173,8 +173,10 @@ public class PHCachingImageManager extends PHImageManager {
     public native void setAllowsCachingHighQualityImages(boolean value);
 
     /**
-     * Asynchronous image preheating (aka caching), note that only image sources are cached (no crop or exact resize is ever done on them at the time of caching, only at the time of delivery when applicable).
-     * The options values shall exactly match the options values used in loading methods. If two or more caching requests are done on the same asset using different options or different targetSize the first
+     * Asynchronous image preheating (aka caching), note that only image sources are cached (no crop or exact resize is
+     * ever done on them at the time of caching, only at the time of delivery when applicable).
+     * The options values shall exactly match the options values used in loading methods. If two or more caching
+     * requests are done on the same asset using different options or different targetSize the first
      * caching request will have precedence (until it is stopped)
      */
     @Generated

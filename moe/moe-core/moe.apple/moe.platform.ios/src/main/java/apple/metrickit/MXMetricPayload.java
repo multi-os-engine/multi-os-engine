@@ -33,13 +33,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A wrapper class which contains a metric payload and associated properties of that payload.
  * <p>
- * MXMetricPayload encapsulates currently supported metric types that can be vended by MetricKit. MXMetric subclasses on MXMetricPayload are nullable. If an MXMetric subclass is nil, it indicates that the data is not available for this payload.
+ * MXMetricPayload encapsulates currently supported metric types that can be vended by MetricKit. MXMetric subclasses on
+ * MXMetricPayload are nullable. If an MXMetric subclass is nil, it indicates that the data is not available for this
+ * payload.
  * <p>
- * MXMetricPayload exposes a convenience function, JSONRepresentation, to convert the contents of the payload to a human readable JSON. This should be used in conjunction with other APIs that accept NSData.
+ * MXMetricPayload exposes a convenience function, JSONRepresentation, to convert the contents of the payload to a human
+ * readable JSON. This should be used in conjunction with other APIs that accept NSData.
  * <p>
- * An MXMetricPayload contains data that covers a 24 hour period of application usage. The properties timeStampBegin and timeStampEnd should be used to determine which time range the payload covers.
+ * An MXMetricPayload contains data that covers a 24 hour period of application usage. The properties timeStampBegin and
+ * timeStampEnd should be used to determine which time range the payload covers.
  * <p>
- * It is possible for an MXMetricPayload to cover regions of time where an application was updated, and thus had multiple different app version strings. The property latestApplicationVersion will always reflect the latest appVersion at the time the metric payload was created. Use includesMultipleApplicationVersions to determine if an application changed versions during the time range the payload covers.
+ * It is possible for an MXMetricPayload to cover regions of time where an application was updated, and thus had
+ * multiple different app version strings. The property latestApplicationVersion will always reflect the latest
+ * appVersion at the time the metric payload was created. Use includesMultipleApplicationVersions to determine if an
+ * application changed versions during the time range the payload covers.
  */
 @Generated
 @Library("MetricKit")
@@ -92,7 +99,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     public static native MXMetricPayload allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]      applicationLaunchMetrics
+     * [@property] applicationLaunchMetrics
      * <p>
      * An object containing launch metrics for this application.
      */
@@ -101,7 +108,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     public native MXAppLaunchMetric applicationLaunchMetrics();
 
     /**
-     * [@property]      applicationResponsivenessMetrics
+     * [@property] applicationResponsivenessMetrics
      * <p>
      * An object containing hang metrics for this application.
      */
@@ -110,7 +117,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     public native MXAppResponsivenessMetric applicationResponsivenessMetrics();
 
     /**
-     * [@property]      applicationTimeMetrics
+     * [@property] applicationTimeMetrics
      * <p>
      * An object containing running mode metrics for this application.
      */
@@ -133,7 +140,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * [@property]      cellularConditionMetrics
+     * [@property] cellularConditionMetrics
      * <p>
      * An object containing a cellular condition metrics for this application.
      */
@@ -150,7 +157,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]      cpuMetrics
+     * [@property] cpuMetrics
      * <p>
      * An object containing CPU metrics for this application.
      */
@@ -167,7 +174,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     public static native String description_static();
 
     /**
-     * [@property]      diskIOMetrics
+     * [@property] diskIOMetrics
      * <p>
      * An object containing disk IO metrics for this application.
      */
@@ -176,7 +183,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     public native MXDiskIOMetric diskIOMetrics();
 
     /**
-     * [@property]      displayMetrics
+     * [@property] displayMetrics
      * <p>
      * An object containing display metrics for this application.
      */
@@ -189,7 +196,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * [@property]      gpuMetrics
+     * [@property] gpuMetrics
      * <p>
      * An object containing GPU metrics for this application.
      */
@@ -203,13 +210,14 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     public static native long hash_static();
 
     /**
-     * [@property]      includesMultipleApplicationVersions
+     * [@property] includesMultipleApplicationVersions
      * <p>
      * A bool which indicates whether or not this payload contains data from multiple application versions.
      * <p>
      * A value of YES indicates that this payload's data reflects multiple application versions.
      * <p>
-     * A value of NO indicates that this payload only reflects data from the application version specified by latestApplicationVersion.
+     * A value of NO indicates that this payload only reflects data from the application version specified by
+     * latestApplicationVersion.
      */
     @Generated
     @Selector("includesMultipleApplicationVersions")
@@ -245,18 +253,19 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]      latestApplicationVersion
+     * [@property] latestApplicationVersion
      * <p>
      * An NSString representation of the application version from which this payload was generated.
      * <p>
-     * If the application version was changed during the aggregation of this data, this value will reflect the latest application version at the time of retrieval.
+     * If the application version was changed during the aggregation of this data, this value will reflect the latest
+     * application version at the time of retrieval.
      */
     @Generated
     @Selector("latestApplicationVersion")
     public native String latestApplicationVersion();
 
     /**
-     * [@property]      locationActivityMetrics
+     * [@property] locationActivityMetrics
      * <p>
      * An object containing location activity metrics for this application.
      */
@@ -265,7 +274,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     public native MXLocationActivityMetric locationActivityMetrics();
 
     /**
-     * [@property]      memoryMetrics
+     * [@property] memoryMetrics
      * <p>
      * An object containing memory metrics for this application.
      */
@@ -274,7 +283,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     public native MXMemoryMetric memoryMetrics();
 
     /**
-     * [@property]      metaData
+     * [@property] metaData
      * <p>
      * An object containing extra metadata for this payload.
      */
@@ -283,7 +292,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     public native MXMetaData metaData();
 
     /**
-     * [@property]      networkTransferMetrics
+     * [@property] networkTransferMetrics
      * <p>
      * An object containing network transfer metrics for this application.
      */
@@ -309,7 +318,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]      signpostMetrics
+     * [@property] signpostMetrics
      * <p>
      * An array containing signpost metrics for this application.
      */
@@ -332,7 +341,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     }
 
     /**
-     * [@property]      timeStampBegin
+     * [@property] timeStampBegin
      * <p>
      * An NSDate object that indicates the time which the payload was generated.
      */
@@ -341,7 +350,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     public native NSDate timeStampBegin();
 
     /**
-     * [@property]      timeStampEnd
+     * [@property] timeStampEnd
      * <p>
      * An NSDate object that indicates the time which the payload was generated.
      */
@@ -355,7 +364,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     public static native long version_static();
 
     /**
-     * [@property]      animationMetrics
+     * [@property] animationMetrics
      * <p>
      * An object containing animation metrics for this application.
      */
@@ -364,7 +373,7 @@ public class MXMetricPayload extends NSObject implements NSSecureCoding {
     public native MXAnimationMetric animationMetrics();
 
     /**
-     * [@property]      applicationExitMetrics
+     * [@property] applicationExitMetrics
      * <p>
      * An object containing exit metrics for this application.
      */

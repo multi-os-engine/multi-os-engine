@@ -183,7 +183,8 @@ public class NSStream extends NSObject {
     public native void open();
 
     /**
-     * By default, a stream is its own delegate, and subclassers of NSInputStream and NSOutputStream must maintain this contract. [someStream setDelegate:nil] must restore this behavior. As usual, delegates are not retained.
+     * By default, a stream is its own delegate, and subclassers of NSInputStream and NSOutputStream must maintain this
+     * contract. [someStream setDelegate:nil] must restore this behavior. As usual, delegates are not retained.
      */
     @Generated
     @Selector("propertyForKey:")

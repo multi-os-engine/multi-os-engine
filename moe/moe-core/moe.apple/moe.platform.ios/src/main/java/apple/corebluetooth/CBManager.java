@@ -169,7 +169,7 @@ public class CBManager extends NSObject {
      * The current authorization of the manager, initially set to <code>CBManagerAuthorizationNotDetermined</code>.
      * Updates are provided by required delegate method {@link managerDidUpdateState:}.
      *
-     * @see    state
+     * @see state
      */
     @Generated
     @Selector("authorization")
@@ -180,9 +180,10 @@ public class CBManager extends NSObject {
      * [@property] authorization
      * <p>
      * The current authorization of the manager, initially set to <code>CBManagerAuthorizationNotDetermined</code>.
-     * You can check this in your implementation of required delegate method {@link managerDidUpdateState:}. You can also use it to check authorization status before allocating CBManager.
+     * You can check this in your implementation of required delegate method {@link managerDidUpdateState:}. You can
+     * also use it to check authorization status before allocating CBManager.
      *
-     * @see    state
+     * @see state
      */
     @Generated
     @Selector("authorization")

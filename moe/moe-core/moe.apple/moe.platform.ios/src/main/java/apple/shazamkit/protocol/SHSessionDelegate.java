@@ -38,7 +38,8 @@ public interface SHSessionDelegate {
      *
      * @param session   The @c SHSession that attempted to match the @c SHSignature
      * @param signature The @c SHSignature that did not match
-     * @param error     An optional error. If simply no match was found this will be set to nil. It will be populated if there was an issue performing the match
+     * @param error     An optional error. If simply no match was found this will be set to nil. It will be populated if
+     *                  there was an issue performing the match
      */
     @Generated
     @IsOptional

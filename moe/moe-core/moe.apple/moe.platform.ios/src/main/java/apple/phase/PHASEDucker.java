@@ -160,18 +160,26 @@ public class PHASEDucker extends NSObject {
      * ducked by the given gain using the given attack and release times.
      * [@note]
      * The ducker is initialially inactive. The client must call activate() to make it active.
-     * Once a ducker is active, it will listen for generator nodes to start playback in source groups. Once triggered, it will duck its target groups.
-     * Deactivating a ducker will make it stop listening. Furthermore, it will enter the release phase if it has been previously triggered.
-     * Dealloc'ing a ducker will force the ducker into its release phase if it is actively ducking and remove it from the system when it finishes.
+     * Once a ducker is active, it will listen for generator nodes to start playback in source groups. Once triggered,
+     * it will duck its target groups.
+     * Deactivating a ducker will make it stop listening. Furthermore, it will enter the release phase if it has been
+     * previously triggered.
+     * Dealloc'ing a ducker will force the ducker into its release phase if it is actively ducking and remove it from
+     * the system when it finishes.
      *
      * @param engine       The engine to register this ducker with.
-     * @param sourceGroups The source groups that will trigger the ducker when a sound in one of the source groups starts playback.
-     * @param targetGroups The target groups that will be ducked when a sound in one of the source groups triggers the ducker.
-     * @param gain         The linear gain scalar to apply when the ducker is engaged. 0 means full attenuation. 1 is no attenuation. Values are clamped to the range [0, 1].
+     * @param sourceGroups The source groups that will trigger the ducker when a sound in one of the source groups
+     *                     starts playback.
+     * @param targetGroups The target groups that will be ducked when a sound in one of the source groups triggers the
+     *                     ducker.
+     * @param gain         The linear gain scalar to apply when the ducker is engaged. 0 means full attenuation. 1 is no
+     *                     attenuation. Values are clamped to the range [0, 1].
      * @param attackTime   The time for the attenuation gain to ramp into effect.
-     *                     This value is scaled by unitsPerSecond internally, so can be provided at the client's native time scale.
+     *                     This value is scaled by unitsPerSecond internally, so can be provided at the client's native
+     *                     time scale.
      * @param releaseTime  The time for the ducked sounds to ramp back to their original level.
-     *                     This value is scaled by unitsPerSecond internally, so can be provided at the client's native time scale.
+     *                     This value is scaled by unitsPerSecond internally, so can be provided at the client's native
+     *                     time scale.
      * @param attackCurve  The type of curve function to use during the attack phase of gain reduction.
      * @param releaseCurve The type of curve function to use during the release phase of gain reduction.
      */

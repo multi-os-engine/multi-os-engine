@@ -187,7 +187,7 @@ public class HKSample extends HKObject {
     }
 
     /**
-     * [@property]      hasUndeterminedDuration
+     * [@property] hasUndeterminedDuration
      * <p>
      * Indicates whether a sample has an undetermined duration.
      * <p>

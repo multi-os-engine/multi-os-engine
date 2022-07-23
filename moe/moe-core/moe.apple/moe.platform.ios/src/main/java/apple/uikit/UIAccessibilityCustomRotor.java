@@ -160,7 +160,8 @@ public class UIAccessibilityCustomRotor extends NSObject {
             @ObjCBlock(name = "call_initWithNameItemSearchBlock") Block_initWithNameItemSearchBlock itemSearchBlock);
 
     /**
-     * A block that takes a UIAccessibilityCustomRotorItemResult and the search direction and returns the next/previous instance of that rotor item.
+     * A block that takes a UIAccessibilityCustomRotorItemResult and the search direction and returns the next/previous
+     * instance of that rotor item.
      * If the currentItem is nil, that implies the first/last item should be returned.
      */
     @Generated
@@ -176,7 +177,8 @@ public class UIAccessibilityCustomRotor extends NSObject {
     public native String name();
 
     /**
-     * A block that takes a UIAccessibilityCustomRotorItemResult and the search direction and returns the next/previous instance of that rotor item.
+     * A block that takes a UIAccessibilityCustomRotorItemResult and the search direction and returns the next/previous
+     * instance of that rotor item.
      * If the currentItem is nil, that implies the first/last item should be returned.
      */
     @Generated

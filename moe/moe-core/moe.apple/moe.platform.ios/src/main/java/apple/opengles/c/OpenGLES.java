@@ -1919,7 +1919,7 @@ public final class OpenGLES {
      * Legal Values: True/False
      * Default Value: False
      * Description: True if EAGLDrawable contents are retained after a
-     * call to presentRenderbuffer.  False, if they are not
+     * call to presentRenderbuffer. False, if they are not
      * kEAGLDrawablePropertyColorFormat:
      * Type: NSString
      * Legal Values: kEAGLColorFormat*

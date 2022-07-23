@@ -36,7 +36,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A MPSMatrixNeuronGradient object computes the results of backpropagating
  * the gradients of a loss function with respect to the outputs of an
- * MPSMatrixNeuron object.  The corresponding properties and data used by
+ * MPSMatrixNeuron object. The corresponding properties and data used by
  * the MPSMatrixNeuronGradient object should correspond to those used by
  * the forward MPSMatrixNeuron object for which the gradient is being computed.
  */
@@ -69,7 +69,7 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
     public static native MPSMatrixNeuronGradient allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
      * The scale factor to apply to the input.
      */
@@ -106,8 +106,8 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
      * @param device The device for the new MPSKernel. If nil, then use
      *               self.device.
      * @return A pointer to a copy of this MPSKernel. This will fail, returning
-     * nil if the device is not supported. Devices must be
-     * MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     *         nil if the device is not supported. Devices must be
+     *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
     @Generated
     @Owned
@@ -239,7 +239,7 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
      * The scale factor to apply to the input.
      */
@@ -265,7 +265,8 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
      * -setNeuronType:parameterA:parameterB:
      *
      * @param A An array containing float values for neuron parameter A.
-     *          Number of entries must be equal to MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels)
+     *          Number of entries must be equal to MIN(inputMatrix.columns - sourceMatrixOrigin.y,
+     *          sourceInputFeatureChannels)
      */
     @Generated
     @Selector("setNeuronToPReLUWithParametersA:")
@@ -280,7 +281,7 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
      * parameters shared across all output values (or channels, in CNN nomenclature). It is an error to call
      * this method for neuron activation functions like MPSCNNNeuronTypePReLU,
      * which require per-channel parameter values. For those kind of neuron activation functions,
-     * use appropriate setter functions.  An MPSMatrixNeuron kernel is initialized
+     * use appropriate setter functions. An MPSMatrixNeuron kernel is initialized
      * with a default neuron function of MPSCNNNeuronTypeNone.
      *
      * @param neuronType Type of neuron activation function. For full list see MPSCNNNeuronType.h
@@ -294,7 +295,7 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
             float parameterC);
 
     /**
-     * [@property]   sourceInputFeatureChannels
+     * [@property] sourceInputFeatureChannels
      * <p>
      * The number of feature channels in the input vectors.
      */
@@ -303,7 +304,7 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
     public native void setSourceInputFeatureChannels(@NUInt long value);
 
     /**
-     * [@property]   sourceNumberOfFeatureVectors
+     * [@property] sourceNumberOfFeatureVectors
      * <p>
      * The number of input vectors which make up the input array.
      */
@@ -316,7 +317,7 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   sourceInputFeatureChannels
+     * [@property] sourceInputFeatureChannels
      * <p>
      * The number of feature channels in the input vectors.
      */
@@ -326,7 +327,7 @@ public class MPSMatrixNeuronGradient extends MPSMatrixBinaryKernel {
     public native long sourceInputFeatureChannels();
 
     /**
-     * [@property]   sourceNumberOfFeatureVectors
+     * [@property] sourceNumberOfFeatureVectors
      * <p>
      * The number of input vectors which make up the input array.
      */

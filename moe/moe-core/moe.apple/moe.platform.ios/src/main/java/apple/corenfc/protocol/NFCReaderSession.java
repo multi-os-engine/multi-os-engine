@@ -20,9 +20,11 @@ public interface NFCReaderSession {
     /**
      * [@property] alertMessage
      * <p>
-     * Descriptive text message that is displayed on the alert action sheet once tag scanning has started.  The string can be update
-     * dynamically in any thread context as long as the session is valid.  This should be set prior to calling @link beginSession @link/ to display
-     * the correct message.  Use this string to provide additional context about the NFC reader mode operation.
+     * Descriptive text message that is displayed on the alert action sheet once tag scanning has started. The string
+     * can be update
+     * dynamically in any thread context as long as the session is valid. This should be set prior to calling @link
+     * beginSession @link/ to display
+     * the correct message. Use this string to provide additional context about the NFC reader mode operation.
      */
     @Generated
     @Selector("alertMessage")
@@ -31,9 +33,12 @@ public interface NFCReaderSession {
     /**
      * beginSession:
      * <p>
-     * Starts the session.  The @link [NFCReaderSessionDelegate readerSessionDidBecomeActive:] @link/ will be called when the reader session
-     * is activated successfully.  @link [NFCReaderSessionDelegate readerSession:didDetectTags:] @link/ will return tag objects that are
-     * conformed to the @link NFCTag @link/ protocol.  @link [NFCReaderSessionDelegate readerSession:didInvalidateWithError:] will return
+     * Starts the session. The @link [NFCReaderSessionDelegate readerSessionDidBecomeActive:] @link/ will be called when
+     * the reader session
+     * is activated successfully. @link [NFCReaderSessionDelegate readerSession:didDetectTags:] @link/ will return tag
+     * objects that are
+     * conformed to the @link NFCTag @link/ protocol. @link [NFCReaderSessionDelegate
+     * readerSession:didInvalidateWithError:] will return
      * errors related to the session start.
      */
     @Generated
@@ -43,7 +48,7 @@ public interface NFCReaderSession {
     /**
      * invalidateSession
      * <p>
-     * Closes the reader session.  The session cannot be re-used.
+     * Closes the reader session. The session cannot be re-used.
      */
     @Generated
     @Selector("invalidateSession")
@@ -52,7 +57,8 @@ public interface NFCReaderSession {
     /**
      * invalidateSessionWithErrorMessage:
      * <p>
-     * Closes the reader session.  The session cannot be re-used.  The specified error message and an error symbol will be displayed momentarily
+     * Closes the reader session. The session cannot be re-used. The specified error message and an error symbol will be
+     * displayed momentarily
      * on the action sheet before it is automatically dismissed.
      */
     @Generated
@@ -74,9 +80,11 @@ public interface NFCReaderSession {
     /**
      * [@property] alertMessage
      * <p>
-     * Descriptive text message that is displayed on the alert action sheet once tag scanning has started.  The string can be update
-     * dynamically in any thread context as long as the session is valid.  This should be set prior to calling @link beginSession @link/ to display
-     * the correct message.  Use this string to provide additional context about the NFC reader mode operation.
+     * Descriptive text message that is displayed on the alert action sheet once tag scanning has started. The string
+     * can be update
+     * dynamically in any thread context as long as the session is valid. This should be set prior to calling @link
+     * beginSession @link/ to display
+     * the correct message. Use this string to provide additional context about the NFC reader mode operation.
      */
     @Generated
     @Selector("setAlertMessage:")

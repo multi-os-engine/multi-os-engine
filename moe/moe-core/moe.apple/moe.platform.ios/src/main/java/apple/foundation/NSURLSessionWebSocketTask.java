@@ -89,7 +89,8 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * A task can be queried for it's close code at any point. When the task is not closed, it will be set to NSURLSessionWebSocketCloseCodeInvalid
+     * A task can be queried for it's close code at any point. When the task is not closed, it will be set to
+     * NSURLSessionWebSocketCloseCodeInvalid
      */
     @Generated
     @Selector("closeCode")
@@ -97,7 +98,8 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
     public native long closeCode();
 
     /**
-     * A task can be queried for it's close reason at any point. A nil value indicates no closeReason or that the task is still running
+     * A task can be queried for it's close reason at any point. A nil value indicates no closeReason or that the task
+     * is still running
      */
     @Generated
     @Selector("closeReason")
@@ -142,7 +144,8 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * The maximum number of bytes to be buffered before erroring out. This includes the sum of all bytes from continuation frames. Recieve calls will error out if this value is reached
+     * The maximum number of bytes to be buffered before erroring out. This includes the sum of all bytes from
+     * continuation frames. Recieve calls will error out if this value is reached
      */
     @Generated
     @Selector("maximumMessageSize")
@@ -216,7 +219,8 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
     }
 
     /**
-     * The maximum number of bytes to be buffered before erroring out. This includes the sum of all bytes from continuation frames. Recieve calls will error out if this value is reached
+     * The maximum number of bytes to be buffered before erroring out. This includes the sum of all bytes from
+     * continuation frames. Recieve calls will error out if this value is reached
      */
     @Generated
     @Selector("setMaximumMessageSize:")

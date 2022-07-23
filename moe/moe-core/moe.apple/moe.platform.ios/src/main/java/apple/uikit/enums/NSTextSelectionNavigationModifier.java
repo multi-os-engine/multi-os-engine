@@ -18,7 +18,8 @@ public final class NSTextSelectionNavigationModifier {
      */
     @Generated @NUInt public static final long Visual = 0x0000000000000002L;
     /**
-     * Extends the selection visually inside the rectangular area defined by the anchor and dragged positions and produces an NSTextSelection per line
+     * Extends the selection visually inside the rectangular area defined by the anchor and dragged positions and
+     * produces an NSTextSelection per line
      */
     @Generated @NUInt public static final long Multiple = 0x0000000000000004L;
 }

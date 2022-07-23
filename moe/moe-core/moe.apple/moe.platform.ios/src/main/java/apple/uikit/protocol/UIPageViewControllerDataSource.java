@@ -38,9 +38,12 @@ public interface UIPageViewControllerDataSource {
             UIViewController viewController);
 
     /**
-     * In terms of navigation direction. For example, for 'UIPageViewControllerNavigationOrientationHorizontal', view controllers coming 'before' would be to the left of the argument view controller, those coming 'after' would be to the right.
+     * In terms of navigation direction. For example, for 'UIPageViewControllerNavigationOrientationHorizontal', view
+     * controllers coming 'before' would be to the left of the argument view controller, those coming 'after' would be
+     * to the right.
      * Return 'nil' to indicate that no more progress can be made in the given direction.
-     * For gesture-initiated transitions, the page view controller obtains view controllers via these methods, so use of setViewControllers:direction:animated:completion: is not required.
+     * For gesture-initiated transitions, the page view controller obtains view controllers via these methods, so use of
+     * setViewControllers:direction:animated:completion: is not required.
      */
     @Generated
     @Selector("pageViewController:viewControllerBeforeViewController:")

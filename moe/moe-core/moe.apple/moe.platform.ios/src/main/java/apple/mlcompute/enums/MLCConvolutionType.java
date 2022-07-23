@@ -3,7 +3,7 @@ package apple.mlcompute.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]       MLCConvolutionType
+ * [@enum] MLCConvolutionType
  * <p>
  * A convolution type that you specify for a convolution descriptor.
  */

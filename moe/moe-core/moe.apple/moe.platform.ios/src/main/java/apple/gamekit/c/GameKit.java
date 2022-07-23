@@ -48,7 +48,8 @@ public final class GameKit {
     public static native String GKGameSessionErrorDomain();
 
     /**
-     * Notification will be posted whenever the player details changes. The object of the notification will be the player.
+     * Notification will be posted whenever the player details changes. The object of the notification will be the
+     * player.
      */
     @Generated
     @CVariable()

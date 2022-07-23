@@ -212,7 +212,8 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     public native boolean evaluateWithObject(@Mapped(ObjCObjectMapper.class) Object object);
 
     /**
-     * single pass evaluation substituting variables from the bindings dictionary for any variable expressions encountered
+     * single pass evaluation substituting variables from the bindings dictionary for any variable expressions
+     * encountered
      */
     @Generated
     @Selector("evaluateWithObject:substitutionVariables:")

@@ -25,9 +25,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * AVPlayerInterstitialEventMonitor
  * <p>
- * An AVPlayerInterstitialEventMonitor allows you to observe the scheduling and progress of interstitial events, specified either intrinsically within the content of primary items, such as via use of directives carried by HLS media playlists, or via use of an AVPlayerInterstitialEventController.
+ * An AVPlayerInterstitialEventMonitor allows you to observe the scheduling and progress of interstitial events,
+ * specified either intrinsically within the content of primary items, such as via use of directives carried by HLS
+ * media playlists, or via use of an AVPlayerInterstitialEventController.
  * <p>
- * The schedule of interstitial events is provided as an array of AVPlayerInterstitialEvents. For each AVPlayerInterstitialEvent, when the primary player's current item is the primary item of the interstitial event and its currentDate reaches the date of the event, playback of the primary item by the primary player is temporarily suspended, i.e. its timeControlStatus changes to AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate and its reasonForWaitingToPlay will change to AVPlayerWaitingDuringInterstitialEventReason. During this suspension, playback of items that replicate the interstitial template items of the event are played by the interstitial player, which temporarily assumes the output configuration of the primary player; for example, its visual content will be routed to AVPlayerLayers that reference the primary player. Once the interstitial player has advanced through playback of the interstitial items specified by the event or its current item otherwise becomes nil, playback of the primary content will resume, at an offset from the time at which it was suspended as specified by the event.
+ * The schedule of interstitial events is provided as an array of AVPlayerInterstitialEvents. For each
+ * AVPlayerInterstitialEvent, when the primary player's current item is the primary item of the interstitial event and
+ * its currentDate reaches the date of the event, playback of the primary item by the primary player is temporarily
+ * suspended, i.e. its timeControlStatus changes to AVPlayerTimeControlStatusWaitingToPlayAtSpecifiedRate and its
+ * reasonForWaitingToPlay will change to AVPlayerWaitingDuringInterstitialEventReason. During this suspension, playback
+ * of items that replicate the interstitial template items of the event are played by the interstitial player, which
+ * temporarily assumes the output configuration of the primary player; for example, its visual content will be routed to
+ * AVPlayerLayers that reference the primary player. Once the interstitial player has advanced through playback of the
+ * interstitial items specified by the event or its current item otherwise becomes nil, playback of the primary content
+ * will resume, at an offset from the time at which it was suspended as specified by the event.
  */
 @Generated
 @Library("AVFoundation")
@@ -80,7 +91,7 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]     currentEvent
+     * [@property] currentEvent
      * <p>
      * The current interstitial event. Has a value of nil during playback of primary content by the primary player.
      */
@@ -97,12 +108,18 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
     public static native String description_static();
 
     /**
-     * [@property]     events
+     * [@property] events
      * <p>
-     * Provides the current schedule of interstitial events, specified either intrinsically within the content of primary items, such as via use of directives carried by HLS media playlists, or via use of an AVPlayerInterstitialEventController.
+     * Provides the current schedule of interstitial events, specified either intrinsically within the content of
+     * primary items, such as via use of directives carried by HLS media playlists, or via use of an
+     * AVPlayerInterstitialEventController.
      * <p>
-     * When interstitial events follow a schedule specified intrinsically within the content of primary items, the value of this property will typically change whenever the currentItem of the primaryPlayer changes. For HLS content that specifies interstitials via the use of DATERANGE tags, the value of this property may also change whenever the set of DATERANGE tags in the currentItem's media playlist changes.
-     * When interstitial events follow a schedule specified via use of an AVPlayerInterstitialEventController, the value of this property changes only when a new schedule is set on the AVPlayerInterstitialEventController.
+     * When interstitial events follow a schedule specified intrinsically within the content of primary items, the value
+     * of this property will typically change whenever the currentItem of the primaryPlayer changes. For HLS content
+     * that specifies interstitials via the use of DATERANGE tags, the value of this property may also change whenever
+     * the set of DATERANGE tags in the currentItem's media playlist changes.
+     * When interstitial events follow a schedule specified via use of an AVPlayerInterstitialEventController, the value
+     * of this property changes only when a new schedule is set on the AVPlayerInterstitialEventController.
      */
     @Generated
     @Selector("events")
@@ -148,7 +165,7 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
             AVPlayer primaryPlayer);
 
     /**
-     * [@property]     interstitialPlayer
+     * [@property] interstitialPlayer
      * <p>
      * The AVQueuePlayer that will play interstitial items during suspension of playback of primary items.
      */
@@ -170,7 +187,7 @@ public class AVPlayerInterstitialEventMonitor extends NSObject {
     public static native AVPlayerInterstitialEventMonitor new_objc();
 
     /**
-     * [@property]     primaryPlayer
+     * [@property] primaryPlayer
      * <p>
      * The AVPlayer that will play the primaryItems of the receiver's interstitial events.
      */

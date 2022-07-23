@@ -131,7 +131,7 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]   commandBuffer
+     * [@property] commandBuffer
      * <p>
      * The Metal Command Buffer that was used to initialize this object.
      */
@@ -152,7 +152,8 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
 
     /**
      * Initializes a MPSCommandBuffer object with given MTLCommandBuffer.
-     * Once we create this MPSCommandBuffer, any methods utilizing it could call commitAndContinue and so the users original commandBuffer may have been committed.
+     * Once we create this MPSCommandBuffer, any methods utilizing it could call commitAndContinue and so the users
+     * original commandBuffer may have been committed.
      * Please use the rootCommandBuffer method to get the current alive underlying MTLCommandBuffer.
      *
      * @return A pointer to the newly initialized MPSCommandBuffer object.
@@ -204,7 +205,7 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
      * hasn't been committed yet, it is formally a deadlock, resources may leak and Metal may
      * complain. Your application should ether call -commit before -waitUntilCompleted, or
      * capture the -rootCommandBuffer from before the call to -commitAndContinue and wait
-     * on that.  Similarly, your application should be sure to use the appropriate command buffer
+     * on that. Similarly, your application should be sure to use the appropriate command buffer
      * when querying the [MTLCommandBuffer status] property.
      * <p>
      * If the underlying MTLCommandBuffer also implements -commitAndContinue, then the message
@@ -260,7 +261,7 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     public static native long hash_static();
 
     /**
-     * [@property]   heapProvider
+     * [@property] heapProvider
      * <p>
      * A application supplied object to allocate MTLHeaps for MPS
      * <p>
@@ -270,7 +271,7 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
      * sized free stores which may be larger than is strictly necessary, and of course
      * fragmentation across multiple heaps. In such cases, the problem may be solved
      * either by using MPS' automatically managed heap (simple) or having MPS use
-     * your heap. The heapProvider allows you to implement the second case.  To use
+     * your heap. The heapProvider allows you to implement the second case. To use
      * the MPS heap, simply make temporary MPSImages, vectors and matrices.
      * <p>
      * If multiple MPSCommandBuffers reference the same MTLCommandBuffer, changing
@@ -287,7 +288,8 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
 
     /**
      * Initializes an empty MPSCommandBuffer object with given MTLCommandBuffer.
-     * Once we create this MPSCommandBuffer, any methods utilizing it could call commitAndContinue and so the users original commandBuffer may have been committed.
+     * Once we create this MPSCommandBuffer, any methods utilizing it could call commitAndContinue and so the users
+     * original commandBuffer may have been committed.
      * Please use the rootCommandBuffer method to get the current alive underlying MTLCommandBuffer.
      *
      * @return A pointer to the newly initialized MPSCommandBuffer object.
@@ -346,7 +348,7 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     public native void popDebugGroup();
 
     /**
-     * [@property]   predicate
+     * [@property] predicate
      * <p>
      * A GPU predicate object. Default: nil.
      */
@@ -357,8 +359,9 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     /**
      * Prefetch heap into the MPS command buffer heap cache.
      * <p>
-     * If there is not sufficient free storage in the MPS heap for the command buffer for allocations of total size size,
-     * pre-warm the MPS heap with a new MTLHeap allocation of sufficient size.  If this size turns out to be too small
+     * If there is not sufficient free storage in the MPS heap for the command buffer for allocations of total size
+     * size,
+     * pre-warm the MPS heap with a new MTLHeap allocation of sufficient size. If this size turns out to be too small
      * MPS may ask for more heaps later to cover additional allocations. If heapProvider is not nil, the heapProvider
      * will be used.
      *
@@ -410,7 +413,7 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     public native boolean retainedReferences();
 
     /**
-     * [@property]   rootCommandBuffer
+     * [@property] rootCommandBuffer
      * <p>
      * The base MTLCommandBuffer underlying the MPSCommandBuffer
      * <p>
@@ -427,7 +430,7 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     public native MTLCommandBuffer rootCommandBuffer();
 
     /**
-     * [@property]   heapProvider
+     * [@property] heapProvider
      * <p>
      * A application supplied object to allocate MTLHeaps for MPS
      * <p>
@@ -437,7 +440,7 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
      * sized free stores which may be larger than is strictly necessary, and of course
      * fragmentation across multiple heaps. In such cases, the problem may be solved
      * either by using MPS' automatically managed heap (simple) or having MPS use
-     * your heap. The heapProvider allows you to implement the second case.  To use
+     * your heap. The heapProvider allows you to implement the second case. To use
      * the MPS heap, simply make temporary MPSImages, vectors and matrices.
      * <p>
      * If multiple MPSCommandBuffers reference the same MTLCommandBuffer, changing
@@ -452,7 +455,7 @@ public class MPSCommandBuffer extends NSObject implements MTLCommandBuffer {
     public native void setLabel(String value);
 
     /**
-     * [@property]   predicate
+     * [@property] predicate
      * <p>
      * A GPU predicate object. Default: nil.
      */

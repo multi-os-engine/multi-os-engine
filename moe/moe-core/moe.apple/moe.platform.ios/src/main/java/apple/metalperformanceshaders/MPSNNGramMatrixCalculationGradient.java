@@ -60,7 +60,7 @@ public class MPSNNGramMatrixCalculationGradient extends MPSCNNGradientKernel {
     public static native MPSNNGramMatrixCalculationGradient allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
      * Scaling factor for the output. Default: 1.0f. NOTE: the value for alpha is automatically adjusted by
      * the @ref MPSNNGradientState when it is provided in the encode call.
@@ -118,7 +118,7 @@ public class MPSNNGramMatrixCalculationGradient extends MPSCNNGradientKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -188,7 +188,7 @@ public class MPSNNGramMatrixCalculationGradient extends MPSCNNGradientKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
      * Scaling factor for the output. Default: 1.0f. NOTE: the value for alpha is automatically adjusted by
      * the @ref MPSNNGradientState when it is provided in the encode call.

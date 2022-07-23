@@ -174,7 +174,7 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
     /**
      * Set the floating-point precision used by the convolution accumulator
      * <p>
-     * Default:  MPSNNConvolutionAccumulatorPrecisionOptionFloat
+     * Default: MPSNNConvolutionAccumulatorPrecisionOptionFloat
      */
     @Generated
     @Selector("accumulatorPrecision")
@@ -196,7 +196,7 @@ public class MPSCNNConvolutionNode extends MPSNNFilterNode implements MPSNNTrain
     /**
      * Set the floating-point precision used by the convolution accumulator
      * <p>
-     * Default:  MPSNNConvolutionAccumulatorPrecisionOptionFloat
+     * Default: MPSNNConvolutionAccumulatorPrecisionOptionFloat
      */
     @Generated
     @Selector("setAccumulatorPrecision:")

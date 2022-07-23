@@ -73,7 +73,7 @@ public class MPSGraphVariableOp extends MPSGraphOperation {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]   dataType
+     * [@property] dataType
      * <p>
      * dataType of the variable
      */

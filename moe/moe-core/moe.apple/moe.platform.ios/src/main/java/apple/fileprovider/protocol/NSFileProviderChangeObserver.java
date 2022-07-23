@@ -16,7 +16,7 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("NSFileProviderChangeObserver")
 public interface NSFileProviderChangeObserver {
     /**
-     * Delete existing items.  No-op if the item was unknown.
+     * Delete existing items. No-op if the item was unknown.
      */
     @Generated
     @Selector("didDeleteItemsWithIdentifiers:")
@@ -42,7 +42,7 @@ public interface NSFileProviderChangeObserver {
      * Additionally, if the client is up to date on all the changes on the server it
      * should set moreComing to NO.
      * <p>
-     * Sync anchor data is limited to 500 bytes.  Setting a larger anchor has the
+     * Sync anchor data is limited to 500 bytes. Setting a larger anchor has the
      * same effect as calling finishEnumeratingWithError with an expired sync anchor
      * error.
      */

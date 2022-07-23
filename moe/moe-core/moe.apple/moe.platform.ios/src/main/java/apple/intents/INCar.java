@@ -73,7 +73,8 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * An identifier for the vehicles. Use this same value as the carIdentifier property of INGetCarPowerLevelStatusResponse. Do not use the VIN (or the equivalent code) as the identifier.
+     * An identifier for the vehicles. Use this same value as the carIdentifier property of
+     * INGetCarPowerLevelStatusResponse. Do not use the VIN (or the equivalent code) as the identifier.
      */
     @Generated
     @Selector("carIdentifier")
@@ -204,7 +205,8 @@ public class INCar extends NSObject implements NSCopying, NSSecureCoding {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Use this method to set the maximum supported power for each charging connector type a vehicle supports. This function can be called multiple times for different connector types.
+     * Use this method to set the maximum supported power for each charging connector type a vehicle supports. This
+     * function can be called multiple times for different connector types.
      */
     @Generated
     @Selector("setMaximumPower:forChargingConnectorType:")

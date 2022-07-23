@@ -6,15 +6,16 @@ import org.moe.natj.general.ann.NInt;
 /**
  * [@typedef] AVPlayerAudiovisualBackgroundPlaybackPolicy
  * <p>
- * This policy describes how AVPlayer behaves when the application transitions to UIApplicationStateBackground while playing video.
+ * This policy describes how AVPlayer behaves when the application transitions to UIApplicationStateBackground while
+ * playing video.
  * <p>
- * [@constant]	AVPlayerAudiovisualBackgroundPlaybackPolicyAutomatic
+ * [@constant] AVPlayerAudiovisualBackgroundPlaybackPolicyAutomatic
  * Indicates that the system is free to decide. This is the default policy.
  * <p>
- * [@constant]  AVPlayerAudiovisualBackgroundPlaybackPolicyPauses
+ * [@constant] AVPlayerAudiovisualBackgroundPlaybackPolicyPauses
  * Indicates that the player must be paused on going to background.
  * <p>
- * [@constant]	AVPlayerAudiovisualBackgroundPlaybackPolicyContinuesIfPossible
+ * [@constant] AVPlayerAudiovisualBackgroundPlaybackPolicyContinuesIfPossible
  * Indicates that the player continues to play if possible in background.
  */
 @Generated

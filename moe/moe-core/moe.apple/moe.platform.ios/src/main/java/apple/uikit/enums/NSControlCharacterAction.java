@@ -26,7 +26,9 @@ public final class NSControlCharacterAction {
      */
     @Generated @NInt public static final long ZeroAdvancement = 0x0000000000000001L;
     /**
-     * the width for glyphs with this action are determined by -layoutManager:boundingBoxForControlGlyphAtIndex:forTextContainer:proposedLineFragment:glyphPosition:characterIndex: if the method is implemented; otherwise, same as NSControlCharacterZeroAdvancementAction
+     * the width for glyphs with this action are determined by
+     * -layoutManager:boundingBoxForControlGlyphAtIndex:forTextContainer:proposedLineFragment:glyphPosition:characterIndex:
+     * if the method is implemented; otherwise, same as NSControlCharacterZeroAdvancementAction
      */
     @Generated @NInt public static final long Whitespace = 0x0000000000000002L;
     /**

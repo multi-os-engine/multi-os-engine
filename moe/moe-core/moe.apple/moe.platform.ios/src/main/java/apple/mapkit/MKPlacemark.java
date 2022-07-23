@@ -173,7 +173,8 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     public native CLLocationCoordinate2D coordinate();
 
     /**
-     * To create an MKPlacemark from a CLPlacemark, call [MKPlacemark initWithPlacemark:] passing the CLPlacemark instance that is returned by CLGeocoder.
+     * To create an MKPlacemark from a CLPlacemark, call [MKPlacemark initWithPlacemark:] passing the CLPlacemark
+     * instance that is returned by CLGeocoder.
      * See CLGeocoder.h and CLPlacemark.h in CoreLocation for more information.
      */
     @Generated

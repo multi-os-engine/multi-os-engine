@@ -112,11 +112,13 @@ public class UIEventAttribution extends NSObject implements NSCopying {
      *
      * @param sourceIdentifier  An identifier associated with the attribution.
      * @param destinationURL    The destination URL of the attribution.
-     * @param sourceDescription A high-level description of the content to be attributed. Pass in an empty string if no description is available.
-     * @param purchaser         The name of the party that purchased the content to be attributed. Pass in an empty string if no name is available.
+     * @param sourceDescription A high-level description of the content to be attributed. Pass in an empty string if no
+     *                          description is available.
+     * @param purchaser         The name of the party that purchased the content to be attributed. Pass in an empty
+     *                          string if no name is available.
      * @return An instance of `UIEventAttribution` with the specified values for each field.
-     * <p>
-     * The `sourceDescription` and `purchaser` fields may be truncated by the system if they are too long.
+     *         <p>
+     *         The `sourceDescription` and `purchaser` fields may be truncated by the system if they are too long.
      */
     @Generated
     @Selector("initWithSourceIdentifier:destinationURL:sourceDescription:purchaser:")
@@ -150,7 +152,8 @@ public class UIEventAttribution extends NSObject implements NSCopying {
     public static native UIEventAttribution new_objc();
 
     /**
-     * The name of the party that purchased the content to be attributed. For example, this could be the name of the party that purchased the placement of an advertisement.
+     * The name of the party that purchased the content to be attributed. For example, this could be the name of the
+     * party that purchased the placement of an advertisement.
      * <p>
      * The system may truncate this field if it is too long.
      */
@@ -159,7 +162,8 @@ public class UIEventAttribution extends NSObject implements NSCopying {
     public native String purchaser();
 
     /**
-     * The URL to which the attribution report will be sent. You do not provide this field at creation time. Instead, you must define the URL
+     * The URL to which the attribution report will be sent. You do not provide this field at creation time. Instead,
+     * you must define the URL
      * as a string in your app's Info.plist under the `NSAdvertisingAttributionReportEndpoint` key.
      * <p>
      * This field corresponds to `source_site` in the subsequent attribution report.
@@ -181,7 +185,8 @@ public class UIEventAttribution extends NSObject implements NSCopying {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * A high-level description of the source of the attribution. For example, this could be a description of the content of an advertisement a user taps on.
+     * A high-level description of the source of the attribution. For example, this could be a description of the
+     * content of an advertisement a user taps on.
      * <p>
      * The system may truncate this field if it is too long.
      */
@@ -190,7 +195,8 @@ public class UIEventAttribution extends NSObject implements NSCopying {
     public native String sourceDescription();
 
     /**
-     * An identifier that is associated with the source of the attribution. For example, you may choose to use this as a campaign identifier to measure the effectiveness of different advertisement campaigns.
+     * An identifier that is associated with the source of the attribution. For example, you may choose to use this as a
+     * campaign identifier to measure the effectiveness of different advertisement campaigns.
      * <p>
      * This field corresponds to `source_id` in the subsequent attribution report.
      */

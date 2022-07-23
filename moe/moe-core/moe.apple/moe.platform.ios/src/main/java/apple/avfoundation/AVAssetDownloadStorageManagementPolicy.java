@@ -91,7 +91,7 @@ public class AVAssetDownloadStorageManagementPolicy extends NSObject implements 
     public static native String description_static();
 
     /**
-     * [@property]	expirationDate
+     * [@property] expirationDate
      * <p>
      * Returns the expiration date of asset.
      */
@@ -141,7 +141,7 @@ public class AVAssetDownloadStorageManagementPolicy extends NSObject implements 
     public static native AVAssetDownloadStorageManagementPolicy new_objc();
 
     /**
-     * [@property]	priority
+     * [@property] priority
      * <p>
      * Indicates the eviction priority of downloaded asset.
      * <p>

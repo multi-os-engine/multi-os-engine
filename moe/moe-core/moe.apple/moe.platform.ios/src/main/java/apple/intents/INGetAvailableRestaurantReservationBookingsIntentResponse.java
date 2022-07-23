@@ -186,7 +186,8 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
     public native String localizedBookingAdvisementText();
 
     /**
-     * An optional string to be displayed in UI that allows the vendor to specify details or history about the restaurant.
+     * An optional string to be displayed in UI that allows the vendor to specify details or history about the
+     * restaurant.
      */
     @Generated
     @Selector("localizedRestaurantDescriptionText")
@@ -200,7 +201,8 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
     public native void setLocalizedBookingAdvisementText(String value);
 
     /**
-     * An optional string to be displayed in UI that allows the vendor to specify details or history about the restaurant.
+     * An optional string to be displayed in UI that allows the vendor to specify details or history about the
+     * restaurant.
      */
     @Generated
     @Selector("setLocalizedRestaurantDescriptionText:")

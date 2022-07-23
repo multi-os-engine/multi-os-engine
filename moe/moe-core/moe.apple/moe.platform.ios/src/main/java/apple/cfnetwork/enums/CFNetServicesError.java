@@ -31,7 +31,7 @@ public final class CFNetServicesError {
      */
     @Generated public static final int Unknown = 0xFFFEE6C0;
     /**
-     * The given registration has had a name collision.  Registration
+     * The given registration has had a name collision. Registration
      * should be cancelled and should try again probably with a different
      * name.
      */

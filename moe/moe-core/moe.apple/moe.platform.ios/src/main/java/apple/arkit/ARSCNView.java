@@ -266,7 +266,8 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
      * Searches the current frame for objects corresponding to a point in the view.
      * <p>
      * A 2D point in the view’s coordinate space can refer to any point along a line segment
-     * in the 3D coordinate space. Hit-testing is the process of finding objects in the world located along this line segment.
+     * in the 3D coordinate space. Hit-testing is the process of finding objects in the world located along this line
+     * segment.
      *
      * @param point A point in the view’s coordinate system.
      * @param types The types of results to search for.
@@ -508,9 +509,11 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
-     * Creates a raycast query originating from the point on view, aligned along the center of the field of view of the camera.
+     * Creates a raycast query originating from the point on view, aligned along the center of the field of view of the
+     * camera.
      * <p>
-     * A 2D point in the view's coordinate space and the frame camera's field of view is used to create a ray in the 3D cooridnate space originating at the point.
+     * A 2D point in the view's coordinate space and the frame camera's field of view is used to create a ray in the 3D
+     * cooridnate space originating at the point.
      *
      * @param point     A point in the view’s coordinate system.
      * @param target    Type of target where the ray should terminate.

@@ -68,8 +68,10 @@ public interface UIWindowSceneDelegate extends UISceneDelegate {
     /**
      * Called after the user indicates they want to accept a CloudKit sharing invitation in your application
      * and the window scene is already connected.
-     * You should use the CKShareMetadata object's shareURL and containerIdentifier to schedule a CKAcceptSharesOperation, then start using
-     * the resulting CKShare and its associated record(s), which will appear in the CKContainer's shared database in a zone matching that of the record's owner.
+     * You should use the CKShareMetadata object's shareURL and containerIdentifier to schedule a
+     * CKAcceptSharesOperation, then start using
+     * the resulting CKShare and its associated record(s), which will appear in the CKContainer's shared database in a
+     * zone matching that of the record's owner.
      */
     @Generated
     @IsOptional

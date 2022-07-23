@@ -236,7 +236,8 @@ public class SKMutableTexture extends SKTexture {
      * Create a mutable texture with a specfic size and type.
      *
      * @param size   the dimension to use when creating the given texture.
-     * @param format the CoreVideo format type.  supported types include 'RGBA', 'RGhA', and 'RGfA' for byte, half-float, and float components.
+     * @param format the CoreVideo format type. supported types include 'RGBA', 'RGhA', and 'RGfA' for byte, half-float,
+     *               and float components.
      */
     @Generated
     @Selector("initWithSize:pixelFormat:")

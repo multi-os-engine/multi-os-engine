@@ -187,7 +187,7 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
     public native HKSourceRevision initWithSourceVersion(HKSource source, String version);
 
     /**
-     * [@property]      source
+     * [@property] source
      * <p>
      * The HKSource of the receiver.
      */
@@ -202,7 +202,7 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
     }
 
     /**
-     * [@property]      version
+     * [@property] version
      * <p>
      * The version of the source property.
      * <p>
@@ -224,7 +224,7 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
             String version, String productType, @ByValue NSOperatingSystemVersion operatingSystemVersion);
 
     /**
-     * [@property]      operatingSystemVersion
+     * [@property] operatingSystemVersion
      * <p>
      * Represents the operating system version of the device running HealthKit when the object was created.
      * <p>
@@ -237,7 +237,7 @@ public class HKSourceRevision extends NSObject implements NSSecureCoding, NSCopy
     public native NSOperatingSystemVersion operatingSystemVersion();
 
     /**
-     * [@property]      productType
+     * [@property] productType
      * <p>
      * Represents the product type of the device running HealthKit when the object was created.
      * <p>

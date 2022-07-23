@@ -66,7 +66,7 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]      averageQuantity
+     * [@property] averageQuantity
      * <p>
      * The average of the receiver's quantities
      */
@@ -135,7 +135,7 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]      maximumQuantity
+     * [@property] maximumQuantity
      * <p>
      * The maximum of the receiver's quantities
      */
@@ -144,7 +144,7 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
     public native HKQuantity maximumQuantity();
 
     /**
-     * [@property]      minimumQuantity
+     * [@property] minimumQuantity
      * <p>
      * The minimum of the receiver's quantities
      */
@@ -153,7 +153,7 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
     public native HKQuantity minimumQuantity();
 
     /**
-     * [@property]      mostRecentQuantity
+     * [@property] mostRecentQuantity
      * <p>
      * The receiver's quantity with most recent date interval
      */
@@ -162,7 +162,7 @@ public class HKDiscreteQuantitySample extends HKQuantitySample {
     public native HKQuantity mostRecentQuantity();
 
     /**
-     * [@property]      mostRecentQuantityDateInterval
+     * [@property] mostRecentQuantityDateInterval
      * <p>
      * The date interval for the receiver's most recent quantity
      */

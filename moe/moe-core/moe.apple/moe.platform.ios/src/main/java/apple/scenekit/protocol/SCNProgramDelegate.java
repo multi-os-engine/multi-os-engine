@@ -29,7 +29,8 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * [@protocol] SCNProgramDelegate
  * <p>
- * The SCNProgramDelegate protocol declares the methods that an instance of SCNProgram invokes to delegate the binding of parameters.
+ * The SCNProgramDelegate protocol declares the methods that an instance of SCNProgram invokes to delegate the binding
+ * of parameters.
  */
 @Generated
 @Library("SceneKit")

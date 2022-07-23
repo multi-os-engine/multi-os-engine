@@ -57,7 +57,15 @@ public class NSBundle extends NSObject {
     }
 
     /**
-     * Methods for locating bundle resources.  Instance methods locate resources in the bundle indicated by the receiver; class methods take an argument pointing to a bundle on disk.  In the class methods, bundleURL is a URL pointing to the location of a bundle on disk, and may not be nil; bundlePath is the path equivalent of bundleURL, an absolute path pointing to the location of a bundle on disk.  By contrast, subpath is a relative path to a subdirectory inside the relevant global or localized resource directory, and should be nil if the resource file in question is not in a subdirectory.  Where appropriate, localizationName is the name of a .lproj directory in the bundle, minus the .lproj extension; passing nil for localizationName retrieves only global resources, whereas using a method without this argument retrieves both global and localized resources (using the standard localization search algorithm).
+     * Methods for locating bundle resources. Instance methods locate resources in the bundle indicated by the receiver;
+     * class methods take an argument pointing to a bundle on disk. In the class methods, bundleURL is a URL pointing to
+     * the location of a bundle on disk, and may not be nil; bundlePath is the path equivalent of bundleURL, an absolute
+     * path pointing to the location of a bundle on disk. By contrast, subpath is a relative path to a subdirectory
+     * inside the relevant global or localized resource directory, and should be nil if the resource file in question is
+     * not in a subdirectory. Where appropriate, localizationName is the name of a .lproj directory in the bundle, minus
+     * the .lproj extension; passing nil for localizationName retrieves only global resources, whereas using a method
+     * without this argument retrieves both global and localized resources (using the standard localization search
+     * algorithm).
      */
     @Generated
     @Selector("URLForResource:withExtension:subdirectory:inBundleWithURL:")
@@ -375,7 +383,9 @@ public class NSBundle extends NSObject {
             String localizationName);
 
     /**
-     * a subset of this bundle's localizations, re-ordered into the preferred order for this process's current execution environment; the main bundle's preferred localizations indicate the language (of text) the user is most likely seeing in the UI
+     * a subset of this bundle's localizations, re-ordered into the preferred order for this process's current execution
+     * environment; the main bundle's preferred localizations indicate the language (of text) the user is most likely
+     * seeing in the UI
      */
     @Generated
     @Selector("preferredLocalizations")
@@ -410,7 +420,10 @@ public class NSBundle extends NSObject {
     public native NSURL resourceURL();
 
     /**
-     * Set a preservation priority for tags that are included in this bundle for the On Demand Resources system. Preservation priorities may be between 0.0 and 1.0, with higher values being the last choice for purging by the system. The exact meaning of this value is up to your application as it only has meaning within the set of tags your application uses.
+     * Set a preservation priority for tags that are included in this bundle for the On Demand Resources system.
+     * Preservation priorities may be between 0.0 and 1.0, with higher values being the last choice for purging by the
+     * system. The exact meaning of this value is up to your application as it only has meaning within the set of tags
+     * your application uses.
      * <p>
      * The default value is 0.0.
      * <p>

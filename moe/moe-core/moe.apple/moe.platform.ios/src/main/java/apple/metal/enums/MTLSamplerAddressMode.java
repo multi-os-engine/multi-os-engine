@@ -34,10 +34,11 @@ import org.moe.natj.general.ann.NUInt;
  * Wrap to the other side of the texture, effectively ignoring fractional parts of the texture coordinate.
  * <p>
  * [@constant] MTLSamplerAddressModeMirrorRepeat
- * Between -1 and 1 the texture is mirrored across the 0 axis.  The image is repeated outside of that range.
+ * Between -1 and 1 the texture is mirrored across the 0 axis. The image is repeated outside of that range.
  * <p>
  * [@constant] MTLSamplerAddressModeClampToZero
- * ClampToZero returns transparent zero (0,0,0,0) for images with an alpha channel, and returns opaque zero (0,0,0,1) for images without an alpha channel.
+ * ClampToZero returns transparent zero (0,0,0,0) for images with an alpha channel, and returns opaque zero (0,0,0,1)
+ * for images without an alpha channel.
  * <p>
  * [@constant] MTLSamplerAddressModeClampToBorderColor
  * Clamp to border color returns the value specified by the borderColor variable of the MTLSamplerDesc.

@@ -29,8 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, _ItemType> extends NSObject
-        implements NSCopying {
+public class UICollectionViewDiffableDataSourceReorderingHandlers<_SectionType, _ItemType> extends NSObject implements
+        NSCopying {
     static {
         NatJ.register();
     }

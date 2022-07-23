@@ -155,13 +155,13 @@ public class MPSCNNDropoutGradientState extends MPSNNGradientState {
      * Mask data accessor method.
      *
      * @return An autoreleased NSData object, containing the mask data.
-     * The mask data is populated in the -encode call, thus the contents
-     * are undefined until you -encode the filter.
-     * Use for debugging purposes only.
-     * <p>
-     * In order to gaurantee that the mask data is correctly synchronized for CPU side access,
-     * it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
-     * method before accessing the mask data.
+     *         The mask data is populated in the -encode call, thus the contents
+     *         are undefined until you -encode the filter.
+     *         Use for debugging purposes only.
+     *         <p>
+     *         In order to gaurantee that the mask data is correctly synchronized for CPU side access,
+     *         it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
+     *         method before accessing the mask data.
      */
     @Generated
     @Selector("maskData")

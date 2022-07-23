@@ -173,10 +173,14 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
 
     /**
      * An optional identifier that represents the "domain" or owner of this item.
-     * This might be an identifier for a mailbox in an account whose indexed data you may want to remove when the account is deleted.
-     * In that case the domainIdentifier should be of the form <account-id>.<mailbox-id> where <account-id> and <mailbox-id> should not contains periods.
-     * Calling deleteSearchableItemsWithDomainIdentifiers with <account-id>.<mailbox-id> will delete all items with that domain identifier.
-     * Calling deleteSearchableItemsWithDomainIdentifiers with <account-id> will delete all items with <account-id> and any <mailbox-id>.
+     * This might be an identifier for a mailbox in an account whose indexed data you may want to remove when the
+     * account is deleted.
+     * In that case the domainIdentifier should be of the form <account-id>.<mailbox-id> where <account-id> and
+     * <mailbox-id> should not contains periods.
+     * Calling deleteSearchableItemsWithDomainIdentifiers with <account-id>.<mailbox-id> will delete all items with that
+     * domain identifier.
+     * Calling deleteSearchableItemsWithDomainIdentifiers with <account-id> will delete all items with <account-id> and
+     * any <mailbox-id>.
      */
     @Generated
     @Selector("domainIdentifier")
@@ -187,7 +191,7 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * Searchable items have an expiration date or time to live.  By default it's set to 1 month.
+     * Searchable items have an expiration date or time to live. By default it's set to 1 month.
      */
     @Generated
     @Selector("expirationDate")
@@ -218,17 +222,21 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
 
     /**
      * An optional identifier that represents the "domain" or owner of this item.
-     * This might be an identifier for a mailbox in an account whose indexed data you may want to remove when the account is deleted.
-     * In that case the domainIdentifier should be of the form <account-id>.<mailbox-id> where <account-id> and <mailbox-id> should not contains periods.
-     * Calling deleteSearchableItemsWithDomainIdentifiers with <account-id>.<mailbox-id> will delete all items with that domain identifier.
-     * Calling deleteSearchableItemsWithDomainIdentifiers with <account-id> will delete all items with <account-id> and any <mailbox-id>.
+     * This might be an identifier for a mailbox in an account whose indexed data you may want to remove when the
+     * account is deleted.
+     * In that case the domainIdentifier should be of the form <account-id>.<mailbox-id> where <account-id> and
+     * <mailbox-id> should not contains periods.
+     * Calling deleteSearchableItemsWithDomainIdentifiers with <account-id>.<mailbox-id> will delete all items with that
+     * domain identifier.
+     * Calling deleteSearchableItemsWithDomainIdentifiers with <account-id> will delete all items with <account-id> and
+     * any <mailbox-id>.
      */
     @Generated
     @Selector("setDomainIdentifier:")
     public native void setDomainIdentifier(String value);
 
     /**
-     * Searchable items have an expiration date or time to live.  By default it's set to 1 month.
+     * Searchable items have an expiration date or time to live. By default it's set to 1 month.
      */
     @Generated
     @Selector("setExpirationDate:")
@@ -237,7 +245,8 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
     /**
      * Should be unique to your application group.
      * REQUIRED since this is the way you will refer to the item to update the index / delete it from the index
-     * Starts with an UUID for ease of use, but you can replace it with an UID of your own before the item is first indexed if you wish.
+     * Starts with an UUID for ease of use, but you can replace it with an UID of your own before the item is first
+     * indexed if you wish.
      */
     @Generated
     @Selector("setUniqueIdentifier:")
@@ -252,7 +261,8 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
     /**
      * Should be unique to your application group.
      * REQUIRED since this is the way you will refer to the item to update the index / delete it from the index
-     * Starts with an UUID for ease of use, but you can replace it with an UID of your own before the item is first indexed if you wish.
+     * Starts with an UUID for ease of use, but you can replace it with an UID of your own before the item is first
+     * indexed if you wish.
      */
     @Generated
     @Selector("uniqueIdentifier")

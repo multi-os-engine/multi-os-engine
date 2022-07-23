@@ -98,7 +98,7 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
      * @param primarySourceArray   The primary source for the filter in an NSArray.
      * @param secondarySourceArray The secondary source for the filter in an NSArray.
      * @return A newly allocated MPSNDArray that will contain the result of the calculation
-     * when the command buffer completes successfully.
+     *         when the command buffer completes successfully.
      */
     @Generated
     @Selector("encodeToCommandBuffer:primarySourceArray:secondarySourceArray:")
@@ -145,9 +145,10 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
      * @param primarySourceArray     The primary source for the filter in an NSArray.
      * @param secondarySourceArray   The secondary source for the filter in an NSArray.
      * @param outGradientState       If non-nil, the address output gradient state is written to this address
-     * @param outputStateIsTemporary If YES, the state if any will be allocated to contain temporary textures and buffers as needed
+     * @param outputStateIsTemporary If YES, the state if any will be allocated to contain temporary textures and
+     *                               buffers as needed
      * @return A newly allocated MPSNDArray that will contain the result of the calculation
-     * when the command buffer completes successfully.
+     *         when the command buffer completes successfully.
      */
     @Generated
     @Selector("encodeToCommandBuffer:primarySourceArray:secondarySourceArray:resultState:outputStateIsTemporary:")
@@ -213,7 +214,7 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
     public static native MPSNDArrayBinaryKernel new_objc();
 
     /**
-     * [@property]  primaryDilationRate
+     * [@property] primaryDilationRate
      * <p>
      * The stride in each dimension from one PSF tap to an adjacent
      * PSF tap. Default: 1
@@ -224,7 +225,7 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
     public native MPSNDArraySizes primaryDilationRates();
 
     /**
-     * [@property]  primaryEdgeMode
+     * [@property] primaryEdgeMode
      * <p>
      * The edge mode used for a source NDArray
      * Default: MPSImageEdgeModeZero
@@ -235,7 +236,7 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
     public native long primaryEdgeMode();
 
     /**
-     * [@property]  primaryKernelSizes
+     * [@property] primaryKernelSizes
      * <p>
      * The diameters of the point spread function in each dimension for a source NDArray
      * Default: 1
@@ -246,7 +247,7 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
     public native MPSNDArraySizes primaryKernelSizes();
 
     /**
-     * [@property]  primaryOffsets
+     * [@property] primaryOffsets
      * <p>
      * The coordinate of the position read from this source array which is
      * used to calculate the result value at [0,0,0,....]
@@ -261,7 +262,7 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
     public native MPSNDArrayOffsets primaryOffsets();
 
     /**
-     * [@property]  primaryStrides
+     * [@property] primaryStrides
      * <p>
      * If the filter is a "backwards" filter such as a gradient filter
      * or convolution transpose, then this is the upsampling ratio and
@@ -282,7 +283,7 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]  secondaryDilationRate
+     * [@property] secondaryDilationRate
      * <p>
      * The stride in each dimension from one PSF tap to an adjacent
      * PSF tap. Default: 1
@@ -293,7 +294,7 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
     public native MPSNDArraySizes secondaryDilationRates();
 
     /**
-     * [@property]  secondaryEdgeMode
+     * [@property] secondaryEdgeMode
      * <p>
      * The edge mode used for a source NDArray
      * Default: MPSImageEdgeModeZero
@@ -304,7 +305,7 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
     public native long secondaryEdgeMode();
 
     /**
-     * [@property]  secondaryKernelSizes
+     * [@property] secondaryKernelSizes
      * <p>
      * The diameters of the point spread function in each dimension for a source NDArray
      * Default: 1
@@ -315,7 +316,7 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
     public native MPSNDArraySizes secondaryKernelSizes();
 
     /**
-     * [@property]  secondaryOffsets
+     * [@property] secondaryOffsets
      * <p>
      * The coordinate of the position read from this source array which is
      * used to calculate the result value at [0,0,0,....]
@@ -330,7 +331,7 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
     public native MPSNDArrayOffsets secondaryOffsets();
 
     /**
-     * [@property]  secondaryStrides
+     * [@property] secondaryStrides
      * <p>
      * If the filter is a "backwards" filter such as a gradient filter
      * or convolution transpose, then this is the upsampling ratio and

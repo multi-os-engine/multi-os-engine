@@ -25,7 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A configuration for running body tracking.
  * <p>
- * Body tracking provides 6 degrees of freedom tracking of a detected body in the scene. By default, ARFrameSemanticBodyDetection will be
+ * Body tracking provides 6 degrees of freedom tracking of a detected body in the scene. By default,
+ * ARFrameSemanticBodyDetection will be
  * enabled.
  *
  * @see ARBodyAnchor
@@ -62,9 +63,12 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
     /**
      * Enables the estimation of a scale factor which may be used to correct the physical size of an image.
      * <p>
-     * If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the given physical size
-     * differs from the estimated one. The information about the estimated scale can be found as the property estimatedScaleFactor on the ARImageAnchor.
-     * [@note] When set to true the transform of a returned ARImageAnchor will use the estimated scale factor to correct the translation. Default value is NO.
+     * If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the
+     * given physical size
+     * differs from the estimated one. The information about the estimated scale can be found as the property
+     * estimatedScaleFactor on the ARImageAnchor.
+     * [@note] When set to true the transform of a returned ARImageAnchor will use the estimated scale factor to correct
+     * the translation. Default value is NO.
      */
     @Generated
     @Selector("automaticImageScaleEstimationEnabled")
@@ -73,9 +77,12 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
     /**
      * Enables the estimation of a scale factor which may be used to correct the physical size of a skeleton in 3D.
      * <p>
-     * If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the given physical size
-     * differs from the default one. The information about the estimated scale can be found as the property estimatedScaleFactor on the ARBodyAnchor.
-     * [@note] When set to true the transform of a returned ARBodyAnchor will use the estimated scale factor to correct the translation. Default value is NO.
+     * If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the
+     * given physical size
+     * differs from the default one. The information about the estimated scale can be found as the property
+     * estimatedScaleFactor on the ARBodyAnchor.
+     * [@note] When set to true the transform of a returned ARBodyAnchor will use the estimated scale factor to correct
+     * the translation. Default value is NO.
      */
     @Generated
     @Selector("automaticSkeletonScaleEstimationEnabled")
@@ -114,7 +121,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
     /**
      * Images to detect in the scene.
      * <p>
-     * If set the session will attempt to detect the specified images. When an image is detected an ARImageAnchor will be added to the session.
+     * If set the session will attempt to detect the specified images. When an image is detected an ARImageAnchor will
+     * be added to the session.
      */
     @Generated
     @Selector("detectionImages")
@@ -190,8 +198,10 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
     /**
      * Maximum number of images to track simultaneously.
      * <p>
-     * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given frame.
-     * If more than the maximum is visible, only the images already being tracked will continue to track until tracking is lost or another image is removed.
+     * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given
+     * frame.
+     * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
+     * is lost or another image is removed.
      * Images will continue to be detected regardless of images tracked. Default value is zero.
      */
     @Generated
@@ -207,8 +217,10 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
     /**
      * Type of planes to detect in the scene.
      * <p>
-     * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the session as
-     * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to ARPlaneDetectionNone.
+     * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the
+     * session as
+     * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
+     * ARPlaneDetectionNone.
      */
     @Generated
     @Selector("planeDetection")
@@ -235,9 +247,12 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
     /**
      * Enables the estimation of a scale factor which may be used to correct the physical size of an image.
      * <p>
-     * If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the given physical size
-     * differs from the estimated one. The information about the estimated scale can be found as the property estimatedScaleFactor on the ARImageAnchor.
-     * [@note] When set to true the transform of a returned ARImageAnchor will use the estimated scale factor to correct the translation. Default value is NO.
+     * If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the
+     * given physical size
+     * differs from the estimated one. The information about the estimated scale can be found as the property
+     * estimatedScaleFactor on the ARImageAnchor.
+     * [@note] When set to true the transform of a returned ARImageAnchor will use the estimated scale factor to correct
+     * the translation. Default value is NO.
      */
     @Generated
     @Selector("setAutomaticImageScaleEstimationEnabled:")
@@ -246,9 +261,12 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
     /**
      * Enables the estimation of a scale factor which may be used to correct the physical size of a skeleton in 3D.
      * <p>
-     * If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the given physical size
-     * differs from the default one. The information about the estimated scale can be found as the property estimatedScaleFactor on the ARBodyAnchor.
-     * [@note] When set to true the transform of a returned ARBodyAnchor will use the estimated scale factor to correct the translation. Default value is NO.
+     * If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the
+     * given physical size
+     * differs from the default one. The information about the estimated scale can be found as the property
+     * estimatedScaleFactor on the ARBodyAnchor.
+     * [@note] When set to true the transform of a returned ARBodyAnchor will use the estimated scale factor to correct
+     * the translation. Default value is NO.
      */
     @Generated
     @Selector("setAutomaticSkeletonScaleEstimationEnabled:")
@@ -257,7 +275,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
     /**
      * Images to detect in the scene.
      * <p>
-     * If set the session will attempt to detect the specified images. When an image is detected an ARImageAnchor will be added to the session.
+     * If set the session will attempt to detect the specified images. When an image is detected an ARImageAnchor will
+     * be added to the session.
      */
     @Generated
     @Selector("setDetectionImages:")
@@ -289,8 +308,10 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
     /**
      * Maximum number of images to track simultaneously.
      * <p>
-     * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given frame.
-     * If more than the maximum is visible, only the images already being tracked will continue to track until tracking is lost or another image is removed.
+     * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given
+     * frame.
+     * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
+     * is lost or another image is removed.
      * Images will continue to be detected regardless of images tracked. Default value is zero.
      */
     @Generated
@@ -300,8 +321,10 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
     /**
      * Type of planes to detect in the scene.
      * <p>
-     * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the session as
-     * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to ARPlaneDetectionNone.
+     * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the
+     * session as
+     * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
+     * ARPlaneDetectionNone.
      */
     @Generated
     @Selector("setPlaneDetection:")
@@ -343,14 +366,16 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
     public native boolean wantsHDREnvironmentTextures();
 
     /**
-     * Enable or disable app clip code tracking. Disabled by default. When enabled, detected app clip codes will be surfaced as an ARAppClipCodeAnchor.
+     * Enable or disable app clip code tracking. Disabled by default. When enabled, detected app clip codes will be
+     * surfaced as an ARAppClipCodeAnchor.
      */
     @Generated
     @Selector("appClipCodeTrackingEnabled")
     public native boolean appClipCodeTrackingEnabled();
 
     /**
-     * Enable or disable app clip code tracking. Disabled by default. When enabled, detected app clip codes will be surfaced as an ARAppClipCodeAnchor.
+     * Enable or disable app clip code tracking. Disabled by default. When enabled, detected app clip codes will be
+     * surfaced as an ARAppClipCodeAnchor.
      */
     @Generated
     @Selector("setAppClipCodeTrackingEnabled:")

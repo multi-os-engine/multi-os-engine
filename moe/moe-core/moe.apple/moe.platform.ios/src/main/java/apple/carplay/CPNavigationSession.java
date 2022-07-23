@@ -153,7 +153,8 @@ public class CPNavigationSession extends NSObject {
 
     /**
      * The next maneuvers that should be performed to follow the current route.
-     * Multiple maneuvers are displayed simultaneously, however the system may limit the number of maneuvers shown at the same time.
+     * Multiple maneuvers are displayed simultaneously, however the system may limit the number of maneuvers shown at
+     * the same time.
      */
     @Generated
     @Selector("setUpcomingManeuvers:")
@@ -176,7 +177,8 @@ public class CPNavigationSession extends NSObject {
 
     /**
      * The next maneuvers that should be performed to follow the current route.
-     * Multiple maneuvers are displayed simultaneously, however the system may limit the number of maneuvers shown at the same time.
+     * Multiple maneuvers are displayed simultaneously, however the system may limit the number of maneuvers shown at
+     * the same time.
      */
     @Generated
     @Selector("upcomingManeuvers")

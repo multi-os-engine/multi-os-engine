@@ -29,7 +29,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * ----------------------------------------------------------------------------------------------------------------- ICCameraFile
+ * -----------------------------------------------------------------------------------------------------------------
+ * ICCameraFile
  * <p>
  * ICCameraFile
  * <p>
@@ -273,7 +274,9 @@ public class ICCameraFile extends ICCameraItem {
      * <p>
      * ￼Desired orientation of image to use when it is downloaded.
      * <p>
-     * This property is set to ICEXIFOrientation1 initially. If the format of this file supports EXIF orientation tag, then this property will be updated to match the value of that tag, when the thumbnail or metadata for this file is received.
+     * This property is set to ICEXIFOrientation1 initially. If the format of this file supports EXIF orientation tag,
+     * then this property will be updated to match the value of that tag, when the thumbnail or metadata for this file
+     * is received.
      */
     @Generated
     @Selector("orientation")
@@ -351,7 +354,8 @@ public class ICCameraFile extends ICCameraItem {
      * [@note] The completion block will execute on an any available queue, often this will not be the main queue.
      *
      * @param options    Options dictionary
-     * @param completion Completion block called with an NSDictionary* object containing the metadata, and an NSError* for status.
+     * @param completion Completion block called with an NSDictionary* object containing the metadata, and an NSError*
+     *                   for status.
      */
     @Generated
     @Selector("requestMetadataDictionaryWithOptions:completion:")
@@ -373,7 +377,8 @@ public class ICCameraFile extends ICCameraItem {
      *
      * @param offset     The offset into the file to start reading from
      * @param length     The length of data to be read.
-     * @param completion Completion block called with an NSData* object representing the data, and an NSError* for status.
+     * @param completion Completion block called with an NSData* object representing the data, and an NSError* for
+     *                   status.
      */
     @Generated
     @Selector("requestReadDataAtOffset:length:completion:")
@@ -395,8 +400,10 @@ public class ICCameraFile extends ICCameraItem {
      *
      * @param options    Options dictionary
      *                   <p>
-     *                   - 'kCGImageSourceThumbnailMaxPixelSize' - Request a width different from the embedded EXIF thumbnail
-     * @param completion Completion block called with an NSData* object representing the JPG, and an NSError* for status.
+     *                   - 'kCGImageSourceThumbnailMaxPixelSize' - Request a width different from the embedded EXIF
+     *                   thumbnail
+     * @param completion Completion block called with an NSData* object representing the JPG, and an NSError* for
+     *                   status.
      */
     @Generated
     @Selector("requestThumbnailDataWithOptions:completion:")
@@ -423,7 +430,9 @@ public class ICCameraFile extends ICCameraItem {
      * <p>
      * ￼Desired orientation of image to use when it is downloaded.
      * <p>
-     * This property is set to ICEXIFOrientation1 initially. If the format of this file supports EXIF orientation tag, then this property will be updated to match the value of that tag, when the thumbnail or metadata for this file is received.
+     * This property is set to ICEXIFOrientation1 initially. If the format of this file supports EXIF orientation tag,
+     * then this property will be updated to match the value of that tag, when the thumbnail or metadata for this file
+     * is received.
      */
     @Generated
     @Selector("setOrientation:")
@@ -437,7 +446,8 @@ public class ICCameraFile extends ICCameraItem {
      * [@property] sidecarFiles
      * <p>
      * This property is NULL if there are no sidecar files associated with this file. Otherwise it is an array of
-     * ICCameraFile instances of sidecar files associated with this file. An example of a sidecar file is a file with the same base
+     * ICCameraFile instances of sidecar files associated with this file. An example of a sidecar file is a file with
+     * the same base
      * name as this file and having an extension XMP.
      */
     @Generated

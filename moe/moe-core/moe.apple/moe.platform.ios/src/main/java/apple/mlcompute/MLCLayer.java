@@ -89,13 +89,15 @@ public class MLCLayer extends NSObject {
     public static native String description_static();
 
     /**
-     * [@property]   deviceType
+     * [@property] deviceType
      * <p>
      * The device type where this layer will be executed
      * <p>
      * Typically the MLCDevice passed to compileWithOptions will be the device used to execute layers in the graph.
-     * If MLCDeviceTypeANE is selected, it is possible that some of the layers of the graph may not be executed on the ANE
-     * but instead on the CPU or GPU.  This property can be used to determine which device type the layer will be executed on.
+     * If MLCDeviceTypeANE is selected, it is possible that some of the layers of the graph may not be executed on the
+     * ANE
+     * but instead on the CPU or GPU. This property can be used to determine which device type the layer will be
+     * executed on.
      */
     @Generated
     @Selector("deviceType")
@@ -124,13 +126,13 @@ public class MLCLayer extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * [@property]   isDebuggingEnabled
+     * [@property] isDebuggingEnabled
      * <p>
      * A flag to identify if we want to debug this layer when executing a graph that includes this layer
      * <p>
      * If this is set, we will make sure that the result tensor and gradient tensors are available for reading on CPU
-     * The default is NO.  If isDebuggingEnabled is set to YES,  make sure to set options to enable debugging when
-     * compiling the graph.  Otherwise this property may be ignored.
+     * The default is NO. If isDebuggingEnabled is set to YES, make sure to set options to enable debugging when
+     * compiling the graph. Otherwise this property may be ignored.
      */
     @Generated
     @Selector("isDebuggingEnabled")
@@ -145,7 +147,7 @@ public class MLCLayer extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   label
+     * [@property] label
      * <p>
      * A string to help identify this object.
      */
@@ -154,11 +156,11 @@ public class MLCLayer extends NSObject {
     public native String label();
 
     /**
-     * [@property]   layerID
+     * [@property] layerID
      * <p>
      * The layer ID
      * <p>
-     * A unique number to identify each layer.  Assigned when the layer is created.
+     * A unique number to identify each layer. Assigned when the layer is created.
      */
     @Generated
     @Selector("layerID")
@@ -179,20 +181,20 @@ public class MLCLayer extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   isDebuggingEnabled
+     * [@property] isDebuggingEnabled
      * <p>
      * A flag to identify if we want to debug this layer when executing a graph that includes this layer
      * <p>
      * If this is set, we will make sure that the result tensor and gradient tensors are available for reading on CPU
-     * The default is NO.  If isDebuggingEnabled is set to YES,  make sure to set options to enable debugging when
-     * compiling the graph.  Otherwise this property may be ignored.
+     * The default is NO. If isDebuggingEnabled is set to YES, make sure to set options to enable debugging when
+     * compiling the graph. Otherwise this property may be ignored.
      */
     @Generated
     @Selector("setIsDebuggingEnabled:")
     public native void setIsDebuggingEnabled(boolean value);
 
     /**
-     * [@property]   label
+     * [@property] label
      * <p>
      * A string to help identify this object.
      */

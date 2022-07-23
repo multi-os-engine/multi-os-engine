@@ -30,7 +30,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * VNClassificationObservation returns the classifcation in form of a string.
  * <p>
- * VNClassificationObservation is the observation returned by VNCoreMLRequests that using a model that is a classifier. A classifier produces an arrary (this can be a single entry) of classifications which are labels (identifiers) and confidence scores.
+ * VNClassificationObservation is the observation returned by VNCoreMLRequests that using a model that is a classifier.
+ * A classifier produces an arrary (this can be a single entry) of classifications which are labels (identifiers) and
+ * confidence scores.
  */
 @Generated
 @Library("Vision")
@@ -96,7 +98,10 @@ public class VNClassificationObservation extends VNObservation {
     public static native long hash_static();
 
     /**
-     * The is the label or identifier of a classification request. An example classification could be a string like 'cat' or 'hotdog'. The string is defined in the model that was used for the classification. Usually these are technical labels that are not localized and not meant to be used directly to be presented to an end user in the UI.
+     * The is the label or identifier of a classification request. An example classification could be a string like
+     * 'cat' or 'hotdog'. The string is defined in the model that was used for the classification. Usually these are
+     * technical labels that are not localized and not meant to be used directly to be presented to an end user in the
+     * UI.
      */
     @Generated
     @Selector("identifier")
@@ -172,7 +177,8 @@ public class VNClassificationObservation extends VNObservation {
      *
      * @param minimumPrecision The minimum precision desired for an operation point.
      * @param recall           The recall value used to select the operation point.
-     * @return YES if the precision value for the operation point specified by a recall value has the minimum value; otherwise, NO.
+     * @return YES if the precision value for the operation point specified by a recall value has the minimum value;
+     *         otherwise, NO.
      */
     @Generated
     @Selector("hasMinimumPrecision:forRecall:")
@@ -183,7 +189,8 @@ public class VNClassificationObservation extends VNObservation {
      *
      * @param minimumRecall The minimum recall desired for an operation point.
      * @param precision     The precision value used to select the operation point.
-     * @return YES if the recall value for the operation point specified by a precision value has the minimum value; otherwise, NO.
+     * @return YES if the recall value for the operation point specified by a precision value has the minimum value;
+     *         otherwise, NO.
      */
     @Generated
     @Selector("hasMinimumRecall:forPrecision:")

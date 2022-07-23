@@ -31,8 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifierType> extends NSObject
-        implements UICollectionViewDataSource {
+public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifierType> extends NSObject implements
+        UICollectionViewDataSource {
     static {
         NatJ.register();
     }
@@ -59,13 +59,18 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     /**
      * Apply a snapshot to the collection view committing to the new data source state.
      * <p>
-     * animatingDifferences == YES: perform a diff between the current UICollectionView state and the snapshot, and animate the update.
-     * animatingDifferences == NO: perform a diff between the current UICollectionView state and the snapshot, but don't animate the update.
+     * animatingDifferences == YES: perform a diff between the current UICollectionView state and the snapshot, and
+     * animate the update.
+     * animatingDifferences == NO: perform a diff between the current UICollectionView state and the snapshot, but don't
+     * animate the update.
      * <p>
-     * If the (optional) completion block is specified, it will be called on the main queue when any animations are completed.
+     * If the (optional) completion block is specified, it will be called on the main queue when any animations are
+     * completed.
      * <p>
-     * Note: you may call this from a background queue which will cause the diff (if needed) to be generated on the calling queue and the
-     * final UI update to be applied back on the main queue. However, all applySnapshot invocations must be confined to the same queue.
+     * Note: you may call this from a background queue which will cause the diff (if needed) to be generated on the
+     * calling queue and the
+     * final UI update to be applied back on the main queue. However, all applySnapshot invocations must be confined to
+     * the same queue.
      * (if you violate this restriction and mix calls between the main queue and some background queue, the framework
      * will log and/or assert to avoid deadlocks)
      */
@@ -335,9 +340,12 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
     /**
      * Apply a snapshot to the collection view using reloadData.
      * <p>
-     * This always skips diffing, and immediately resets the UICollectionView to the new data source state without animation.
-     * Generally this should only be used for specific cases where you need to fully reset the collection view's data to the
-     * new state immediately (e.g. recycling the collection view for use with a completely different data set), or when you
+     * This always skips diffing, and immediately resets the UICollectionView to the new data source state without
+     * animation.
+     * Generally this should only be used for specific cases where you need to fully reset the collection view's data to
+     * the
+     * new state immediately (e.g. recycling the collection view for use with a completely different data set), or when
+     * you
      * specifically want to skip diffing (e.g. applying an exceptionally large changeset).
      */
     @Generated

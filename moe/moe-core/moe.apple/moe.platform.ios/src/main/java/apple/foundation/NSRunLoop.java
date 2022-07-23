@@ -194,7 +194,7 @@ public class NSRunLoop extends NSObject {
 
     /**
      * Schedules the execution of a block on the target run loop.
-     * - parameter: block   The block to execute
+     * - parameter: block The block to execute
      */
     @Generated
     @Selector("performBlock:")
@@ -202,8 +202,8 @@ public class NSRunLoop extends NSObject {
 
     /**
      * Schedules the execution of a block on the target run loop in given modes.
-     * - parameter: modes   An array of input modes for which the block may be executed.
-     * - parameter: block   The block to execute
+     * - parameter: modes An array of input modes for which the block may be executed.
+     * - parameter: block The block to execute
      */
     @Generated
     @Selector("performInModes:block:")

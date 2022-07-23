@@ -101,12 +101,15 @@ public class CPMessageListItemTrailingConfiguration extends NSObject {
      * @param trailingItem  An optional glyph displayed on the trailing side of the cell.
      * @param trailingImage An optional image displayed on the trailing side of the cell.
      *                      <p>
-     *                      When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image, provide
-     *                      light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
+     *                      When providing an image, your app should provide a @c UIImage that is display-ready. If
+     *                      necessary for the image, provide
+     *                      light and dark styles by using an asset from your asset catalog, prepared with light and
+     *                      dark styles
      *                      or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      *                      both styles.
      *                      <p>
-     *                      UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
+     *                      UIImageAsset is used to combine multiple UIImages with different trait collections into a
+     *                      single UIImage.
      */
     @Generated
     @Selector("initWithTrailingItem:trailingImage:")

@@ -175,9 +175,11 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * Returns an array of acceptable certificate issuing authorities for client certification authentication. Issuers are identified by their distinguished name and returned as a DER encoded data.
+     * Returns an array of acceptable certificate issuing authorities for client certification authentication. Issuers
+     * are identified by their distinguished name and returned as a DER encoded data.
      *
-     * @return An array of NSData objects.  (Nil if the authenticationMethod is not NSURLAuthenticationMethodClientCertificate)
+     * @return An array of NSData objects. (Nil if the authenticationMethod is not
+     *         NSURLAuthenticationMethodClientCertificate)
      */
     @Generated
     @Selector("distinguishedNames")
@@ -308,7 +310,8 @@ public class NSURLProtectionSpace extends NSObject implements NSSecureCoding, NS
     /**
      * Returns a SecTrustRef which represents the state of the servers SSL transaction state
      *
-     * @return A SecTrustRef from Security.framework.  (Nil if the authenticationMethod is not NSURLAuthenticationMethodServerTrust)
+     * @return A SecTrustRef from Security.framework. (Nil if the authenticationMethod is not
+     *         NSURLAuthenticationMethodServerTrust)
      */
     @Generated
     @Selector("serverTrust")

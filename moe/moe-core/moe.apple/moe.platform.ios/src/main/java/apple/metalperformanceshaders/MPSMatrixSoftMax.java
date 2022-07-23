@@ -99,8 +99,8 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
      * @param device The device for the new MPSKernel. If nil, then use
      *               self.device.
      * @return a pointer to a copy of this MPSKernel. This will fail, returning
-     * nil if the device is not supported. Devices must be
-     * MTLFeatureSet_iOS_GPUFamily2_v1 or later.
+     *         nil if the device is not supported. Devices must be
+     *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
     @Generated
     @Owned
@@ -213,7 +213,7 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   sourceColumns
+     * [@property] sourceColumns
      * <p>
      * The number of columns to consider from the source in the operation.
      * This property is modifiable and defaults to NSUIntegerMax and the number is
@@ -234,7 +234,7 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     public native void setSourceColumns(@NUInt long value);
 
     /**
-     * [@property]   sourceRows
+     * [@property] sourceRows
      * <p>
      * The number of rows to consider from the source in the operation.
      * This property is modifiable and defaults to NSUIntegerMax and the number is
@@ -259,7 +259,7 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   sourceColumns
+     * [@property] sourceColumns
      * <p>
      * The number of columns to consider from the source in the operation.
      * This property is modifiable and defaults to NSUIntegerMax and the number is
@@ -281,7 +281,7 @@ public class MPSMatrixSoftMax extends MPSMatrixUnaryKernel {
     public native long sourceColumns();
 
     /**
-     * [@property]   sourceRows
+     * [@property] sourceRows
      * <p>
      * The number of rows to consider from the source in the operation.
      * This property is modifiable and defaults to NSUIntegerMax and the number is

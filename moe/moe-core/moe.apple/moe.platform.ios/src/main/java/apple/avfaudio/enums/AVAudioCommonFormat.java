@@ -4,16 +4,16 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * [@enum]		AVAudioCommonFormat
- * [@constant]	AVAudioOtherFormat
+ * [@enum] AVAudioCommonFormat
+ * [@constant] AVAudioOtherFormat
  * A format other than one of the common ones below.
- * [@constant]	AVAudioPCMFormatFloat32
+ * [@constant] AVAudioPCMFormatFloat32
  * Native-endian floats (this is the standard format).
- * [@constant]	AVAudioPCMFormatFloat64
+ * [@constant] AVAudioPCMFormatFloat64
  * Native-endian doubles.
- * [@constant]	AVAudioPCMFormatInt16
+ * [@constant] AVAudioPCMFormatInt16
  * Signed 16-bit native-endian integers.
- * [@constant]	AVAudioPCMFormatInt32
+ * [@constant] AVAudioPCMFormatInt32
  * Signed 32-bit native-endian integers.
  */
 @Generated

@@ -203,7 +203,8 @@ public class ACAccountStore extends NSObject {
     public native ACAccountStore init();
 
     /**
-     * Removes an account from the account store. The completion handler for this method is called on an arbitrary queue.
+     * Removes an account from the account store. The completion handler for this method is called on an arbitrary
+     * queue.
      * This call will fail if you don't have sufficient rights to remove the account in question.
      */
     @Generated
@@ -213,9 +214,12 @@ public class ACAccountStore extends NSObject {
 
     /**
      * Call this if you discover that an ACAccount's credential is no longer valid.
-     * For Twitter and Sina Weibo accounts, this method will prompt the user to go to Settings to re-enter their password.
-     * For Facebook accounts, if your access token became invalid due to regular expiration, this method will obtain a new one.
-     * However, if the user has deauthorized your app, this renewal request will return ACAccountCredentialRenewResultRejected.
+     * For Twitter and Sina Weibo accounts, this method will prompt the user to go to Settings to re-enter their
+     * password.
+     * For Facebook accounts, if your access token became invalid due to regular expiration, this method will obtain a
+     * new one.
+     * However, if the user has deauthorized your app, this renewal request will return
+     * ACAccountCredentialRenewResultRejected.
      */
     @Generated
     @Selector("renewCredentialsForAccount:completion:")

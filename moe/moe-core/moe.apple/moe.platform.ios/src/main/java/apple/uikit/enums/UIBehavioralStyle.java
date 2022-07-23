@@ -4,7 +4,9 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * Behavioral Styles are values that determine how a class — such as a view or control — behaves. This includes how the control is drawn, and what behaviors it supports. For example, handling certain customizations in one style, but not another.
+ * Behavioral Styles are values that determine how a class — such as a view or control — behaves. This includes how the
+ * control is drawn, and what behaviors it supports. For example, handling certain customizations in one style, but not
+ * another.
  */
 @Generated
 public final class UIBehavioralStyle {

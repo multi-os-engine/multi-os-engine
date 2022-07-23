@@ -20,14 +20,17 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]          HKQuantityAggregationStyle
+ * [@enum] HKQuantityAggregationStyle
  * <p>
  * Describes how quantities can be aggregated over time.
  * <p>
- * [@constant]      HKQuantityAggregationStyleCumulative                        Samples may be summed over a time interval.
- * [@constant]      HKQuantityAggregationStyleDiscreteArithmetic                Samples may be averaged over a time interval using the arithmetic mean
- * [@constant]      HKQuantityAggregationStyleDiscreteTemporallyWeighted        Samples may be averaged over a time interval using a temporally weighted integration function
- * [@constant]      HKQuantityAggregationStyleDiscreteEquivalentContinuousLevel Samples may be combined over a time interval by computing the equivalent continuous sound level; see IEC 61672-1
+ * [@constant] HKQuantityAggregationStyleCumulative Samples may be summed over a time interval.
+ * [@constant] HKQuantityAggregationStyleDiscreteArithmetic Samples may be averaged over a time interval using the
+ * arithmetic mean
+ * [@constant] HKQuantityAggregationStyleDiscreteTemporallyWeighted Samples may be averaged over a time interval using a
+ * temporally weighted integration function
+ * [@constant] HKQuantityAggregationStyleDiscreteEquivalentContinuousLevel Samples may be combined over a time interval
+ * by computing the equivalent continuous sound level; see IEC 61672-1
  */
 @Generated
 public final class HKQuantityAggregationStyle {

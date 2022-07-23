@@ -85,11 +85,12 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]      cumulativeAbnormalExitCount
+     * [@property] cumulativeAbnormalExitCount
      * <p>
      * Cumulative number of times the application exited abnormally.
      * <p>
-     * The most common causes of crashes with this exception type are uncaught Objective-C/C++ exceptions and calls to abort().
+     * The most common causes of crashes with this exception type are uncaught Objective-C/C++ exceptions and calls to
+     * abort().
      */
     @Generated
     @Selector("cumulativeAbnormalExitCount")
@@ -97,7 +98,7 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
     public native long cumulativeAbnormalExitCount();
 
     /**
-     * [@property]      cumulativeAppWatchdogExitCount
+     * [@property] cumulativeAppWatchdogExitCount
      * <p>
      * Cumulative number of times the application was terminated because a watchdog timeout occured.
      * <p>
@@ -109,9 +110,10 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
     public native long cumulativeAppWatchdogExitCount();
 
     /**
-     * [@property]      cumulativeBadAccessExitCount
+     * [@property] cumulativeBadAccessExitCount
      * <p>
-     * Cumulative number of times the application was terminated for attempting to access invalid memory, or attempting to access memory in a manner not allowed by the memory's protection level (e.g. writing to read-only memory).
+     * Cumulative number of times the application was terminated for attempting to access invalid memory, or attempting
+     * to access memory in a manner not allowed by the memory's protection level (e.g. writing to read-only memory).
      */
     @Generated
     @Selector("cumulativeBadAccessExitCount")
@@ -119,9 +121,10 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
     public native long cumulativeBadAccessExitCount();
 
     /**
-     * [@property]      cumulativeIllegalInstructionExitCount
+     * [@property] cumulativeIllegalInstructionExitCount
      * <p>
-     * Cumulative number of times the application terminated for attempting to execute an illegal or undefined instruction.
+     * Cumulative number of times the application terminated for attempting to execute an illegal or undefined
+     * instruction.
      * <p>
      * The process may have attempted to jump to an invalid address via a misconfigured function pointer.
      */
@@ -131,7 +134,7 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
     public native long cumulativeIllegalInstructionExitCount();
 
     /**
-     * [@property]      cumulativeMemoryResourceLimitExitCount
+     * [@property] cumulativeMemoryResourceLimitExitCount
      * <p>
      * Cumulative number of times the application was terminated for exceeding a memory consumption limit.
      */
@@ -141,7 +144,7 @@ public class MXForegroundExitData extends NSObject implements NSSecureCoding {
     public native long cumulativeMemoryResourceLimitExitCount();
 
     /**
-     * [@property]      cumulativeNormalAppExitCount
+     * [@property] cumulativeNormalAppExitCount
      * <p>
      * Cumulative number of times the application exited normally, or was gracefully terminated by the system.
      */

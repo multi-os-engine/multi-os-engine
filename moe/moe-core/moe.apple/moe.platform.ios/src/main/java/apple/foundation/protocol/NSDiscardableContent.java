@@ -24,7 +24,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * Discardable Content		**********
+ * Discardable Content **********
  */
 @Generated
 @Library("Foundation")

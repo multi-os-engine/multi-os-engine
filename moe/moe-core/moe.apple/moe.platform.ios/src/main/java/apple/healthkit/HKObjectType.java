@@ -201,7 +201,7 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * [@property]      identifier
+     * [@property] identifier
      * <p>
      * A unique string identifying a type of health object.
      * <p>

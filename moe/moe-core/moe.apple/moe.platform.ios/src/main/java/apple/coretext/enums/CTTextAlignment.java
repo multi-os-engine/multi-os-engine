@@ -19,24 +19,24 @@ package apple.coretext.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]       CTTextAlignment
+ * [@enum] CTTextAlignment
  * <p>
  * These constants specify text alignment.
  * <p>
- * [@constant]   kCTTextAlignmentLeft
+ * [@constant] kCTTextAlignmentLeft
  * Text is visually left-aligned.
  * <p>
- * [@constant]   kCTTextAlignmentRight
+ * [@constant] kCTTextAlignmentRight
  * Text is visually right-aligned.
  * <p>
- * [@constant]   kCTTextAlignmentCenter
+ * [@constant] kCTTextAlignmentCenter
  * Text is visually center-aligned.
  * <p>
- * [@constant]   kCTTextAlignmentJustified
+ * [@constant] kCTTextAlignmentJustified
  * Text is fully justified. The last line in a paragraph is
  * naturally aligned.
  * <p>
- * [@constant]   kCTTextAlignmentNatural
+ * [@constant] kCTTextAlignmentNatural
  * Use the natural alignment of the text's script.
  */
 @Generated

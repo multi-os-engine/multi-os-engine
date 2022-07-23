@@ -174,7 +174,8 @@ public class VNRecognizedTextObservation extends VNRectangleObservation {
     /**
      * Returns the top N candidates sorted by decreasing confidence score
      * <p>
-     * This will return no more than N but can be less than N candidates. The maximum number of candidates returned cannot exceed 10 candidates.
+     * This will return no more than N but can be less than N candidates. The maximum number of candidates returned
+     * cannot exceed 10 candidates.
      */
     @Generated
     @Selector("topCandidates:")

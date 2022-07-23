@@ -123,13 +123,13 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      *
      * @param sampleBuffer The sample buffer to sample into
      * @param sampleIndex  The index into the counter buffer to write the sample
-     * @param barrier      Insert a barrier before taking the sample.  Passing
+     * @param barrier      Insert a barrier before taking the sample. Passing
      *                     YES will ensure that all work encoded before this operation in the encoder is
-     *                     complete but does not isolate the work with respect to other encoders.  Passing
+     *                     complete but does not isolate the work with respect to other encoders. Passing
      *                     NO will allow the sample to be taken concurrently with other operations in this
      *                     encoder.
      *                     In general, passing YES will lead to more repeatable counter results but
-     *                     may negatively impact performance.  Passing NO will generally be higher performance
+     *                     may negatively impact performance. Passing NO will generally be higher performance
      *                     but counter results may not be repeatable.
      */
     @Generated
@@ -144,7 +144,8 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      * Update the fence to capture all GPU work so far enqueued by this encoder.
      * <p>
      * The fence is updated at kernel submission to maintain global order and prevent deadlock.
-     * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
+     * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of
+     * an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
      */
     @Generated
     @Selector("updateFence:")
@@ -153,10 +154,16 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
     /**
      * useHeap:
      * <p>
-     * Declare that the resources allocated from a heap may be accessed as readonly by the render pass through an argument buffer
+     * Declare that the resources allocated from a heap may be accessed as readonly by the render pass through an
+     * argument buffer
      * <p>
-     * For tracked MTLHeaps, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resources allocated from the heap through an argument buffer. This method may cause all of the color attachments allocated from the heap to become decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be used for color attachments instead, with a minimal (i.e. read-only) usage.
-     * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
+     * For tracked MTLHeaps, this method protects against data hazards. This method must be called before encoding any
+     * dispatch commands which may access the resources allocated from the heap through an argument buffer. This method
+     * may cause all of the color attachments allocated from the heap to become decompressed. Therefore, it is
+     * recommended that the useResource:usage: or useResources:count:usage: methods be used for color attachments
+     * instead, with a minimal (i.e. read-only) usage.
+     * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying
+     * to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
      */
     @Generated
     @Selector("useHeap:")
@@ -165,10 +172,16 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
     /**
      * useHeaps:count:
      * <p>
-     * Declare that the resources allocated from an array of heaps may be accessed as readonly by the render pass through an argument buffer
+     * Declare that the resources allocated from an array of heaps may be accessed as readonly by the render pass
+     * through an argument buffer
      * <p>
-     * For tracked MTLHeaps, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resources allocated from the heaps through an argument buffer. This method may cause all of the color attachments allocated from the heaps to become decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be used for color attachments instead, with a minimal (i.e. read-only) usage.
-     * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
+     * For tracked MTLHeaps, this method protects against data hazards. This method must be called before encoding any
+     * dispatch commands which may access the resources allocated from the heaps through an argument buffer. This method
+     * may cause all of the color attachments allocated from the heaps to become decompressed. Therefore, it is
+     * recommended that the useResource:usage: or useResources:count:usage: methods be used for color attachments
+     * instead, with a minimal (i.e. read-only) usage.
+     * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying
+     * to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
      */
     @Generated
     @Selector("useHeaps:count:")
@@ -179,8 +192,10 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      * <p>
      * Declare that a resource may be accessed by the command encoder through an argument buffer
      * <p>
-     * For tracked MTLResources, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resource through an argument buffer.
-     * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
+     * For tracked MTLResources, this method protects against data hazards. This method must be called before encoding
+     * any dispatch commands which may access the resource through an argument buffer.
+     * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying
+     * to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
      */
     @Generated
     @Selector("useResource:usage:")
@@ -191,8 +206,10 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      * <p>
      * Declare that an array of resources may be accessed through an argument buffer by the command encoder
      * <p>
-     * For tracked MTL Resources, this method protects against data hazards. This method must be called before encoding any dispatch commands which may access the resources through an argument buffer.
-     * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
+     * For tracked MTL Resources, this method protects against data hazards. This method must be called before encoding
+     * any dispatch commands which may access the resources through an argument buffer.
+     * [@warning] Prior to iOS 13, macOS 10.15, this method does not protect against data hazards. If you are deploying
+     * to older versions of macOS or iOS, use fences to ensure data hazards are resolved.
      */
     @Generated
     @Selector("useResources:count:usage:")
@@ -205,7 +222,8 @@ public interface MTLAccelerationStructureCommandEncoder extends MTLCommandEncode
      * Prevent further GPU work until the fence is reached.
      * <p>
      * The fence is evaluated at kernel submision to maintain global order and prevent deadlock.
-     * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
+     * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of
+     * an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
      */
     @Generated
     @Selector("waitForFence:")

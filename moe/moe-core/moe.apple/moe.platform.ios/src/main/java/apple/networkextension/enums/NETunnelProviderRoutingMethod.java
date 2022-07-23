@@ -31,7 +31,8 @@ public final class NETunnelProviderRoutingMethod {
      */
     @Generated @NInt public static final long DestinationIP = 0x0000000000000001L;
     /**
-     * [@const] NETunnelProviderRoutingMethodSourceApplication Route network traffic to the tunnel based on source application
+     * [@const] NETunnelProviderRoutingMethodSourceApplication Route network traffic to the tunnel based on source
+     * application
      */
     @Generated @NInt public static final long SourceApplication = 0x0000000000000002L;
 

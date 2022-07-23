@@ -198,7 +198,8 @@ public class MDLVoxelArray extends MDLObject {
 
     /**
      * Difference modifies the voxel grid so that voxels also in the supplied voxel grid are removed.
-     * It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel grid.
+     * It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel
+     * grid.
      * Note that the shell level data will be cleared.
      */
     @Generated
@@ -221,7 +222,8 @@ public class MDLVoxelArray extends MDLObject {
 
     /**
      * Intersection modifies the voxel grid so that only voxels that are also in the supplied voxel grid are retained.
-     * It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel grid.
+     * It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel
+     * grid.
      * Note that the shell level data will be cleared.
      */
     @Generated
@@ -294,7 +296,8 @@ public class MDLVoxelArray extends MDLObject {
 
     /**
      * Union modifies the voxel grid to be the merger with the supplied voxel grid.
-     * It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel grid.
+     * It is assumed that the spatial voxel extent of one voxel in the supplied grid is the same as that of the voxel
+     * grid.
      * Note that the shell level data will be cleared.
      */
     @Generated

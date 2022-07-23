@@ -181,7 +181,7 @@ public class NSHTTPURLResponse extends NSURLResponse {
      * sophisticated or special-purpose HTTP clients.
      *
      * @return A dictionary containing all the HTTP header fields of the
-     * receiver.
+     *         receiver.
      */
     @Generated
     @Selector("allHeaderFields")
@@ -210,8 +210,9 @@ public class NSHTTPURLResponse extends NSURLResponse {
      * @param url          the URL from which the response was generated.
      * @param headerFields A dictionary representing the header keys and values of the server response.
      * @return the instance of the object, or NULL if an error occurred during initialization.
-     * @param    statusCode an HTTP status code.
-     * @param    HTTPVersion The version of the HTTP response as represented by the server.  This is typically represented as "HTTP/1.1".
+     * @param statusCode  an HTTP status code.
+     * @param HTTPVersion The version of the HTTP response as represented by the server. This is typically represented
+     *                    as "HTTP/1.1".
      */
     @Generated
     @Selector("initWithURL:statusCode:HTTPVersion:headerFields:")
@@ -244,7 +245,7 @@ public class NSHTTPURLResponse extends NSURLResponse {
      * @param field the header field name to use for the lookup
      *              (case-insensitive).
      * @return the value associated with the given header field, or nil if
-     * there is no value associated with the given header field.
+     *         there is no value associated with the given header field.
      */
     @Generated
     @Selector("valueForHTTPHeaderField:")

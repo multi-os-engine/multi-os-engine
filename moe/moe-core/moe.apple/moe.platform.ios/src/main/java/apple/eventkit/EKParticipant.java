@@ -172,7 +172,7 @@ public class EKParticipant extends EKObject implements NSCopying {
     public native ConstVoidPtr ABRecordWithAddressBook(ConstVoidPtr addressBook);
 
     /**
-     * [@property]   url
+     * [@property] url
      * <p>
      * URL representing this participant.
      */
@@ -204,7 +204,7 @@ public class EKParticipant extends EKObject implements NSCopying {
     public native EKParticipant init();
 
     /**
-     * [@property]   currentUser
+     * [@property] currentUser
      * <p>
      * A boolean indicating whether this participant represents the
      * owner of this account.
@@ -214,7 +214,7 @@ public class EKParticipant extends EKObject implements NSCopying {
     public native boolean isCurrentUser();
 
     /**
-     * [@property]   name
+     * [@property] name
      * <p>
      * Name of this participant.
      */
@@ -223,7 +223,7 @@ public class EKParticipant extends EKObject implements NSCopying {
     public native String name();
 
     /**
-     * [@property]   participantRole
+     * [@property] participantRole
      * <p>
      * The role of the attendee.
      * <p>
@@ -235,7 +235,7 @@ public class EKParticipant extends EKObject implements NSCopying {
     public native long participantRole();
 
     /**
-     * [@property]   participantStatus
+     * [@property] participantStatus
      * <p>
      * The status of the attendee.
      * <p>
@@ -247,7 +247,7 @@ public class EKParticipant extends EKObject implements NSCopying {
     public native long participantStatus();
 
     /**
-     * [@property]   participantType
+     * [@property] participantType
      * <p>
      * The type of the attendee.
      * <p>

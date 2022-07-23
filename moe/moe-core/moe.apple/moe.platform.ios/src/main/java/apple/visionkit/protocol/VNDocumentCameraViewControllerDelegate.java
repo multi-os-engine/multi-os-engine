@@ -29,7 +29,8 @@ public interface VNDocumentCameraViewControllerDelegate {
 
     /**
      * The client is responsible for dismissing the document camera in these callbacks.
-     * The delegate will receive one of the following calls, depending whether the user saves or cancels, or if the session fails.
+     * The delegate will receive one of the following calls, depending whether the user saves or cancels, or if the
+     * session fails.
      */
     @Generated
     @IsOptional

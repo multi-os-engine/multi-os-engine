@@ -25,7 +25,8 @@ public interface UIPointerInteractionDelegate {
      * @param interaction   This UIPointerInteraction.
      * @param request       Request object describing the pointer's location in the interaction's view.
      * @param defaultRegion Region representing the entire surface of the interaction's view.
-     * @return A UIPointerRegion in which to apply a pointer style. Return nil to indicate that this interaction should not customize the pointer for the current location.
+     * @return A UIPointerRegion in which to apply a pointer style. Return nil to indicate that this interaction should
+     *         not customize the pointer for the current location.
      */
     @Generated
     @IsOptional
@@ -36,7 +37,8 @@ public interface UIPointerInteractionDelegate {
     }
 
     /**
-     * Called after the interaction receives a new UIPointerRegion from pointerInteraction:regionForRequest:defaultRegion:.
+     * Called after the interaction receives a new UIPointerRegion from
+     * pointerInteraction:regionForRequest:defaultRegion:.
      *
      * @param interaction This UIPointerInteraction.
      * @param region      The UIPointerRegion for which a style is being requested.
@@ -54,7 +56,8 @@ public interface UIPointerInteractionDelegate {
      *
      * @param interaction This UIPointerInteraction.
      * @param region      The UIPointerRegion the pointer is about to enter.
-     * @param animator    Region entrance animator. Add animations to run them alongside the pointer's entrance animation.
+     * @param animator    Region entrance animator. Add animations to run them alongside the pointer's entrance
+     *                    animation.
      */
     @Generated
     @IsOptional

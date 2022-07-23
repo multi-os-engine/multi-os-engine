@@ -174,7 +174,8 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
     public static native long version_static();
 
     /**
-     * sorting an array of indexPaths using this comparison results in an array representing nodes in depth-first traversal order
+     * sorting an array of indexPaths using this comparison results in an array representing nodes in depth-first
+     * traversal order
      */
     @Generated
     @Selector("compare:")
@@ -203,8 +204,11 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
      * <p>
      * It is the developer’s responsibility to allocate the memory for the C array.
      *
-     * @param indexes       Buffer of at least as many NSUIntegers as specified by the length of positionRange. On return, this memory will hold the index path's indexes.
-     * @param positionRange A range of valid positions within this index path.  If the location plus the length of positionRange is greater than the length of this index path, this method raises an NSRangeException.
+     * @param indexes       Buffer of at least as many NSUIntegers as specified by the length of positionRange. On
+     *                      return, this memory will hold the index path's indexes.
+     * @param positionRange A range of valid positions within this index path. If the location plus the length of
+     *                      positionRange is greater than the length of this index path, this method raises an
+     *                      NSRangeException.
      */
     @Generated
     @Selector("getIndexes:range:")

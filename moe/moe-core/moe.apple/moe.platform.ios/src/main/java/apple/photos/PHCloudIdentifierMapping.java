@@ -24,7 +24,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Contains the cloud identifier result from looking up a local identifier via \c cloudIdentifierMappingsForLocalIdentifiers, or an \c error indicating why the lookup failed
+ * Contains the cloud identifier result from looking up a local identifier via \c
+ * cloudIdentifierMappingsForLocalIdentifiers, or an \c error indicating why the lookup failed
  */
 @Generated
 @Library("Photos")

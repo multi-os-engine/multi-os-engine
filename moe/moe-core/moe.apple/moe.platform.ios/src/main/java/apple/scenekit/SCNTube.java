@@ -225,7 +225,8 @@ public class SCNTube extends SCNGeometry {
      * <p>
      * The inner radius of the tube. Animatable.
      * <p>
-     * If the value is less than or equal to 0, or if it is greater than or equal to the outer radius, then the geometry is empty. The default value is 0.25.
+     * If the value is less than or equal to 0, or if it is greater than or equal to the outer radius, then the geometry
+     * is empty. The default value is 0.25.
      */
     @Generated
     @Selector("innerRadius")
@@ -237,7 +238,8 @@ public class SCNTube extends SCNGeometry {
      * <p>
      * The outer radius of the tube. Animatable.
      * <p>
-     * If the value is less than or equal to 0, or if it is less than or equal to the inner radius, then the geometry is empty. The default value is 0.5.
+     * If the value is less than or equal to 0, or if it is less than or equal to the inner radius, then the geometry is
+     * empty. The default value is 0.5.
      */
     @Generated
     @Selector("outerRadius")
@@ -283,7 +285,8 @@ public class SCNTube extends SCNGeometry {
      * <p>
      * The inner radius of the tube. Animatable.
      * <p>
-     * If the value is less than or equal to 0, or if it is greater than or equal to the outer radius, then the geometry is empty. The default value is 0.25.
+     * If the value is less than or equal to 0, or if it is greater than or equal to the outer radius, then the geometry
+     * is empty. The default value is 0.25.
      */
     @Generated
     @Selector("setInnerRadius:")
@@ -294,7 +297,8 @@ public class SCNTube extends SCNGeometry {
      * <p>
      * The outer radius of the tube. Animatable.
      * <p>
-     * If the value is less than or equal to 0, or if it is less than or equal to the inner radius, then the geometry is empty. The default value is 0.5.
+     * If the value is less than or equal to 0, or if it is less than or equal to the inner radius, then the geometry is
+     * empty. The default value is 0.5.
      */
     @Generated
     @Selector("setOuterRadius:")

@@ -170,7 +170,8 @@ public class UIGraphicsImageRenderer extends UIGraphicsRenderer {
 
     /**
      * Returns a UIImage rendered with the contents of the CGContext after the imageRenderBlock executes.
-     * If the options provided to the renderer contain a rect with a zero width or height size, this will return an empty UIImage.
+     * If the options provided to the renderer contain a rect with a zero width or height size, this will return an
+     * empty UIImage.
      */
     @Generated
     @Selector("imageWithActions:")

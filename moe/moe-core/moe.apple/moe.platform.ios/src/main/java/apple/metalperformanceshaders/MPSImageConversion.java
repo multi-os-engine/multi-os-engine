@@ -159,7 +159,7 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
     public static native long version_static();
 
     /**
-     * [@property]   destinationAlpha
+     * [@property] destinationAlpha
      * <p>
      * Premultiplication description for the destinationAlpha texture
      * <p>
@@ -191,7 +191,7 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
      * @param srcAlpha        The alpha encoding for the source texture
      * @param destAlpha       The alpha encoding for the destination texture
      * @param backgroundColor An array of CGFloats giving the background color to use when flattening an image.
-     *                        The color is in the source colorspace.  The length of the array is the number
+     *                        The color is in the source colorspace. The length of the array is the number
      *                        of color channels in the src colorspace. If NULL, use {0}.
      * @param conversionInfo  The colorspace conversion to use. May be NULL, indicating no
      *                        color space conversions need to be done.
@@ -204,7 +204,7 @@ public class MPSImageConversion extends MPSUnaryImageKernel {
             NFloatPtr backgroundColor, CGColorConversionInfoRef conversionInfo);
 
     /**
-     * [@property]   sourceAlpha
+     * [@property] sourceAlpha
      * <p>
      * Premultiplication description for the source texture
      * <p>

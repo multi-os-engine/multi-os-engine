@@ -160,15 +160,15 @@ public class MPSSVGFDenoiser extends NSObject {
      * parameters of the denoising process, modify the properties of the MPSSVGF object the
      * MPSSVGFDenoiser was initialized with.
      * <p>
-     * [@parameter] commandBuffer              Command buffer to encode into
-     * [@parameter] sourceTexture              Source image to denoiser
-     * [@parameter] destinationTexture         Denoised output image
-     * [@parameter] sourceTexture2             Optional second source image to denoise
-     * [@parameter] destinationTexture2        Denoised second output image, if there is a second source image
-     * [@parameter] motionVectorTexture        Motion vector texture describing how much each texel has moved,
+     * [@parameter] commandBuffer Command buffer to encode into
+     * [@parameter] sourceTexture Source image to denoiser
+     * [@parameter] destinationTexture Denoised output image
+     * [@parameter] sourceTexture2 Optional second source image to denoise
+     * [@parameter] destinationTexture2 Denoised second output image, if there is a second source image
+     * [@parameter] motionVectorTexture Motion vector texture describing how much each texel has moved,
      * in texels, since the previous frame. See the MPSSVGF object for
      * more details.
-     * [@parameter] depthNormalTexture         Texture containing linear depth in the X component and signed
+     * [@parameter] depthNormalTexture Texture containing linear depth in the X component and signed
      * normals in the YZW components. See the MPSSVGF object for more
      * details.
      * [@parameter] previousDepthNormalTexture Depth/normal texture from the previous frame. See the MPSSVGF
@@ -200,12 +200,12 @@ public class MPSSVGFDenoiser extends NSObject {
      * parameters of the denoising process, modify the properties of the MPSSVGF object the
      * MPSSVGFDenoiser was initialized with.
      * <p>
-     * [@parameter] commandBuffer              Command buffer to encode into
-     * [@parameter] sourceTexture              Source image to denoiser
-     * [@parameter] motionVectorTexture        Motion vector texture describing how much each texel has moved,
+     * [@parameter] commandBuffer Command buffer to encode into
+     * [@parameter] sourceTexture Source image to denoiser
+     * [@parameter] motionVectorTexture Motion vector texture describing how much each texel has moved,
      * in texels, since the previous frame. See the MPSSVGF object for
      * more details.
-     * [@parameter] depthNormalTexture         Texture containing linear depth in the X component and signed
+     * [@parameter] depthNormalTexture Texture containing linear depth in the X component and signed
      * normals in the YZW components. See the MPSSVGF object for more
      * details.
      * [@parameter] previousDepthNormalTexture Depth/normal texture from the previous frame. See the MPSSVGF
@@ -242,7 +242,7 @@ public class MPSSVGFDenoiser extends NSObject {
     /**
      * Initialize the MPSSVGFDenoiser object
      * <p>
-     * [@parameter] svgf             MPSSVGF kernels to use for denoising. This object can be used to
+     * [@parameter] svgf MPSSVGF kernels to use for denoising. This object can be used to
      * configure temporal reprojection, bilateral blur settings, etc.
      * [@parameter] textureAllocator An object conforming to the MPSSVGFTextureAllocator protocol. This
      * object will be used to allocate temporary intermediate and output

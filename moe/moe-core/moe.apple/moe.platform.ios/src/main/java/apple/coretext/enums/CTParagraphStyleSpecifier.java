@@ -19,7 +19,7 @@ package apple.coretext.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]       CTParagraphStyleSpecifier
+ * [@enum] CTParagraphStyleSpecifier
  * <p>
  * These constants are used to query and modify the CTParagraphStyle
  * object.
@@ -31,7 +31,7 @@ import org.moe.natj.general.ann.Generated;
  * the typesetter, and others only affect the behavior of the
  * framesetter; this is also noted below.
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierAlignment
+ * [@constant] kCTParagraphStyleSpecifierAlignment
  * The text alignment. Natural text alignment is realized as
  * left or right alignment, depending on the line sweep direction
  * of the first script contained in the paragraph.
@@ -41,7 +41,7 @@ import org.moe.natj.general.ann.Generated;
  * Application: CTFramesetter
  * <p>
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierFirstLineHeadIndent
+ * [@constant] kCTParagraphStyleSpecifierFirstLineHeadIndent
  * The distance in points from the leading margin of a frame to
  * the beginning of the paragraph's first line. This value is always
  * nonnegative.
@@ -51,7 +51,7 @@ import org.moe.natj.general.ann.Generated;
  * Application: CTFramesetter
  * <p>
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierHeadIndent
+ * [@constant] kCTParagraphStyleSpecifierHeadIndent
  * The distance in points from the leading margin of a text
  * container to the beginning of lines other than the first.
  * This value is always nonnegative.
@@ -61,7 +61,7 @@ import org.moe.natj.general.ann.Generated;
  * Application: CTFramesetter
  * <p>
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierTailIndent
+ * [@constant] kCTParagraphStyleSpecifierTailIndent
  * The distance in points from the margin of a frame to the end of
  * lines. If positive, this value is the distance from the leading
  * margin (for example, the left margin in left-to-right text).
@@ -72,7 +72,7 @@ import org.moe.natj.general.ann.Generated;
  * Application: CTFramesetter
  * <p>
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierTabStops
+ * [@constant] kCTParagraphStyleSpecifierTabStops
  * The CTTextTab objects, sorted by location, that define the tab
  * stops for the paragraph style.
  * <p>
@@ -81,7 +81,7 @@ import org.moe.natj.general.ann.Generated;
  * Application: CTFramesetter, CTTypesetter
  * <p>
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierDefaultTabInterval
+ * [@constant] kCTParagraphStyleSpecifierDefaultTabInterval
  * The document-wide default tab interval. Tabs after the last
  * specified by kCTParagraphStyleSpecifierTabStops are placed at
  * integer multiples of this distance (if positive).
@@ -91,7 +91,7 @@ import org.moe.natj.general.ann.Generated;
  * Application: CTFramesetter, CTTypesetter
  * <p>
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierLineBreakMode
+ * [@constant] kCTParagraphStyleSpecifierLineBreakMode
  * The mode that should be used to break lines when laying out
  * the paragraph's text.
  * <p>
@@ -100,7 +100,7 @@ import org.moe.natj.general.ann.Generated;
  * Application: CTFramesetter
  * <p>
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierLineHeightMultiple
+ * [@constant] kCTParagraphStyleSpecifierLineHeightMultiple
  * The line height multiple. The natural line height of the
  * receiver is multiplied by this factor (if positive) before
  * being constrained by minimum and maximum line height.
@@ -110,7 +110,7 @@ import org.moe.natj.general.ann.Generated;
  * Application: CTFramesetter
  * <p>
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierMaximumLineHeight
+ * [@constant] kCTParagraphStyleSpecifierMaximumLineHeight
  * The maximum height that any line in the frame will occupy,
  * regardless of the font size or size of any attached graphic.
  * Glyphs and graphics exceeding this height will overlap
@@ -122,7 +122,7 @@ import org.moe.natj.general.ann.Generated;
  * Application: CTFramesetter
  * <p>
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierMinimumLineHeight
+ * [@constant] kCTParagraphStyleSpecifierMinimumLineHeight
  * The minimum height that any line in the frame will occupy,
  * regardless of the font size or size of any attached graphic.
  * This value is always nonnegative.
@@ -132,14 +132,14 @@ import org.moe.natj.general.ann.Generated;
  * Application: CTFramesetter
  * <p>
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierLineSpacing
+ * [@constant] kCTParagraphStyleSpecifierLineSpacing
  * Deprecated.
  * Use kCTParagraphStyleSpecifierMaximumLineSpacing, kCTParagraphStyleSpecifierMinimumLineSpacing,
  * and kCTParagraphStyleSpecifierLineSpacingAdjustment to control
  * space between lines.
  * <p>
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierParagraphSpacing
+ * [@constant] kCTParagraphStyleSpecifierParagraphSpacing
  * The space added at the end of the paragraph to separate it from
  * the following paragraph. This value is always nonnegative and is
  * determined by adding the previous paragraph's
@@ -152,7 +152,7 @@ import org.moe.natj.general.ann.Generated;
  * Application: CTFramesetter
  * <p>
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierParagraphSpacingBefore
+ * [@constant] kCTParagraphStyleSpecifierParagraphSpacingBefore
  * The distance between the paragraph's top and the beginning of
  * its text content.
  * <p>
@@ -161,7 +161,7 @@ import org.moe.natj.general.ann.Generated;
  * Application: CTFramesetter
  * <p>
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierBaseWritingDirection
+ * [@constant] kCTParagraphStyleSpecifierBaseWritingDirection
  * The base writing direction of the lines.
  * <p>
  * Type: CTWritingDirection
@@ -169,7 +169,7 @@ import org.moe.natj.general.ann.Generated;
  * Application: CTFramesetter, CTTypesetter
  * <p>
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierMaximumLineSpacing
+ * [@constant] kCTParagraphStyleSpecifierMaximumLineSpacing
  * The maximum space in points between lines within the paragraph
  * (commonly known as leading).
  * <p>
@@ -178,7 +178,7 @@ import org.moe.natj.general.ann.Generated;
  * Application: CTFramesetter
  * <p>
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierMinimumLineSpacing
+ * [@constant] kCTParagraphStyleSpecifierMinimumLineSpacing
  * The minimum space in points between lines within the paragraph
  * (commonly known as leading).
  * <p>
@@ -187,7 +187,7 @@ import org.moe.natj.general.ann.Generated;
  * Application: CTFramesetter
  * <p>
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierLineSpacingAdjustment
+ * [@constant] kCTParagraphStyleSpecifierLineSpacingAdjustment
  * The space in points added between lines within the paragraph
  * (commonly known as leading).
  * <p>
@@ -196,7 +196,7 @@ import org.moe.natj.general.ann.Generated;
  * Application: CTFramesetter
  * <p>
  * <p>
- * [@constant]   kCTParagraphStyleSpecifierLineBoundsOptions
+ * [@constant] kCTParagraphStyleSpecifierLineBoundsOptions
  * The options controlling the alignment of the line edges with
  * the leading and trailing margins.
  * <p>

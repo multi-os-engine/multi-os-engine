@@ -41,7 +41,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * UIFocusUpdateContexts provide information relevant to a specific focus update from one view to another. They are ephemeral objects that are usually discarded after the update is finished.
+ * UIFocusUpdateContexts provide information relevant to a specific focus update from one view to another. They are
+ * ephemeral objects that are usually discarded after the update is finished.
  */
 @Generated
 @Library("UIKit")
@@ -166,7 +167,8 @@ public class UIFocusUpdateContext extends NSObject {
     public native UIFocusUpdateContext init();
 
     /**
-     * The item that is focused after the update, i.e. where focus is updating to. May be nil if no item is being focused, meaning focus is being lost.
+     * The item that is focused after the update, i.e. where focus is updating to. May be nil if no item is being
+     * focused, meaning focus is being lost.
      */
     @Generated
     @Selector("nextFocusedItem")
@@ -183,7 +185,8 @@ public class UIFocusUpdateContext extends NSObject {
     public native UIView nextFocusedView();
 
     /**
-     * The item that was focused before the update, i.e. where focus is updating from. May be nil if no item was focused, such as when focus is initially set.
+     * The item that was focused before the update, i.e. where focus is updating from. May be nil if no item was
+     * focused, such as when focus is initially set.
      */
     @Generated
     @Selector("previouslyFocusedItem")
@@ -191,7 +194,8 @@ public class UIFocusUpdateContext extends NSObject {
     public native UIFocusItem previouslyFocusedItem();
 
     /**
-     * The view that was focused before the update. May be nil if no view was focused, such as when setting initial focus.
+     * The view that was focused before the update. May be nil if no view was focused, such as when setting initial
+     * focus.
      * If previouslyFocusedItem is not a view, this returns that item's containing view, otherwise they are equal.
      * NOTE: This property will be deprecated in a future release. Use previouslyFocusedItem instead.
      */

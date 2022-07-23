@@ -85,7 +85,8 @@ public class VNFeaturePrintObservation extends VNObservation {
     /**
      * Computes the distance between two observations.
      * <p>
-     * The larger the distance the more dissimlar the feature prints are. In case of an error this method returns false with an error describing the error condition, for instance comparing two non-comparable feature prints.
+     * The larger the distance the more dissimlar the feature prints are. In case of an error this method returns false
+     * with an error describing the error condition, for instance comparing two non-comparable feature prints.
      */
     @Generated
     @Selector("computeDistance:toFeaturePrintObservation:error:")

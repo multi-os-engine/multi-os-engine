@@ -190,7 +190,8 @@ public class CBATTRequest extends NSObject {
      * [@property] value
      * <p>
      * The data being read or written.
-     * For read requests, <i>value</i> will be nil and should be set before responding via @link respondToRequest:withResult: @/link.
+     * For read requests, <i>value</i> will be nil and should be set before responding via @link
+     * respondToRequest:withResult: @/link.
      * For write requests, <i>value</i> will contain the data to be written.
      */
     @Generated
@@ -201,7 +202,8 @@ public class CBATTRequest extends NSObject {
      * [@property] value
      * <p>
      * The data being read or written.
-     * For read requests, <i>value</i> will be nil and should be set before responding via @link respondToRequest:withResult: @/link.
+     * For read requests, <i>value</i> will be nil and should be set before responding via @link
+     * respondToRequest:withResult: @/link.
      * For write requests, <i>value</i> will contain the data to be written.
      */
     @Generated

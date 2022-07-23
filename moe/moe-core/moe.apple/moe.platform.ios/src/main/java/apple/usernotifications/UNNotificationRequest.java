@@ -183,7 +183,8 @@ public class UNNotificationRequest extends NSObject implements NSCopying, NSSecu
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * The unique identifier for this notification request. It can be used to replace or remove a pending notification request or a delivered notification.
+     * The unique identifier for this notification request. It can be used to replace or remove a pending notification
+     * request or a delivered notification.
      */
     @Generated
     @Selector("identifier")

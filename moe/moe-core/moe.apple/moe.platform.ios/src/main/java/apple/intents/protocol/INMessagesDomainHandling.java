@@ -26,6 +26,6 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INMessagesDomainHandling")
-public interface INMessagesDomainHandling
-        extends INSendMessageIntentHandling, INSearchForMessagesIntentHandling, INSetMessageAttributeIntentHandling {
+public interface INMessagesDomainHandling extends INSendMessageIntentHandling, INSearchForMessagesIntentHandling,
+        INSetMessageAttributeIntentHandling {
 }

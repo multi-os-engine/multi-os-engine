@@ -162,7 +162,7 @@ public class PKPaymentSummaryItem extends NSObject {
     public static native long version_static();
 
     /**
-     * Same currency as the enclosing PKPaymentRequest.  Negative values are permitted, for example when
+     * Same currency as the enclosing PKPaymentRequest. Negative values are permitted, for example when
      * redeeming a coupon. An amount is always required unless the summary item's type is set to pending
      */
     @Generated
@@ -181,7 +181,7 @@ public class PKPaymentSummaryItem extends NSObject {
     public native String label();
 
     /**
-     * Same currency as the enclosing PKPaymentRequest.  Negative values are permitted, for example when
+     * Same currency as the enclosing PKPaymentRequest. Negative values are permitted, for example when
      * redeeming a coupon. An amount is always required unless the summary item's type is set to pending
      */
     @Generated

@@ -120,7 +120,9 @@ public class PKStrokePath extends NSObject implements NSCopying {
      * @param distanceStep The distance to step between points.
      * @param block        The block to execute for each point. This block takes two parameters
      *                     point The interpolated point on the spline.
-     *                     stop A reference to a Boolean value. Setting the value to YES within the block stops further enumeration of the array. If a block stops further enumeration, that block continues to run until it’s finished.
+     *                     stop A reference to a Boolean value. Setting the value to YES within the block stops further
+     *                     enumeration of the array. If a block stops further enumeration, that block continues to run
+     *                     until it’s finished.
      */
     @Generated
     @Selector("enumerateInterpolatedPointsInRange:strideByDistance:usingBlock:")
@@ -142,7 +144,9 @@ public class PKStrokePath extends NSObject implements NSCopying {
      * @param parametricStep The parametric step between points.
      * @param block          The block to execute for each point. This block takes two parameters
      *                       point The interpolated point on the spline.
-     *                       stop A reference to a Boolean value. Setting the value to YES within the block stops further enumeration of the array. If a block stops further enumeration, that block continues to run until it’s finished.
+     *                       stop A reference to a Boolean value. Setting the value to YES within the block stops
+     *                       further enumeration of the array. If a block stops further enumeration, that block
+     *                       continues to run until it’s finished.
      */
     @Generated
     @Selector("enumerateInterpolatedPointsInRange:strideByParametricStep:usingBlock:")
@@ -164,7 +168,9 @@ public class PKStrokePath extends NSObject implements NSCopying {
      * @param timeStep The time interval to step between points.
      * @param block    The block to execute for each point. This block takes two parameters
      *                 point The interpolated point on the spline.
-     *                 stop A reference to a Boolean value. Setting the value to YES within the block stops further enumeration of the array. If a block stops further enumeration, that block continues to run until it’s finished.
+     *                 stop A reference to a Boolean value. Setting the value to YES within the block stops further
+     *                 enumeration of the array. If a block stops further enumeration, that block continues to run until
+     *                 it’s finished.
      */
     @Generated
     @Selector("enumerateInterpolatedPointsInRange:strideByTime:usingBlock:")

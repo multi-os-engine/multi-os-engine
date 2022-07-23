@@ -106,7 +106,7 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
     public static native long hash_static();
 
     /**
-     * [@property]	height
+     * [@property] height
      * <p>
      * The height of the view, measured in points.
      * <p>
@@ -118,7 +118,7 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
     public native double height();
 
     /**
-     * [@property]	hostHasController
+     * [@property] hostHasController
      * <p>
      * Boolean property specifying whether the host displays its own control surface
      * when showing the view of the audio unit.
@@ -140,10 +140,10 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
      * <p>
      * Designated initializer.
      *
-     * @param        width The width associated with this view configuration.
-     * @param        height The height associated with this view configuration.
-     * @param        hostHasController This property controls whether the host shows its own control surface in this view
-     * configuration.
+     * @param width             The width associated with this view configuration.
+     * @param height            The height associated with this view configuration.
+     * @param hostHasController This property controls whether the host shows its own control surface in this view
+     *                          configuration.
      * @return Returns the newly created view configuration object.
      */
     @Generated
@@ -209,7 +209,7 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
     public static native long version_static();
 
     /**
-     * [@property]	width
+     * [@property] width
      * <p>
      * The width of the view, measured in points.
      * <p>

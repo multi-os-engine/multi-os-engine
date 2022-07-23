@@ -609,7 +609,7 @@ public final class Globals {
     public static native int setreuid(int arg1, int arg2);
 
     /**
-     * SUS places swab() in unistd.h.  It is listed here for source compatibility
+     * SUS places swab() in unistd.h. It is listed here for source compatibility
      */
     @Generated
     @CFunction
@@ -1503,7 +1503,7 @@ public final class Globals {
      * (daemons). For such processes, the main queue should be avoided.
      *
      * @return Returns the main queue. This queue is created automatically on behalf of
-     * the main thread before main() is called.
+     *         the main thread before main() is called.
      * @see dispatch_queue_main_t
      */
     @Generated
@@ -1532,14 +1532,14 @@ public final class Globals {
      *                   <p>
      *                   The global concurrent queues may still be identified by their priority,
      *                   which map to the following QOS classes:
-     *                   - DISPATCH_QUEUE_PRIORITY_HIGH:         QOS_CLASS_USER_INITIATED
-     *                   - DISPATCH_QUEUE_PRIORITY_DEFAULT:      QOS_CLASS_DEFAULT
-     *                   - DISPATCH_QUEUE_PRIORITY_LOW:          QOS_CLASS_UTILITY
-     *                   - DISPATCH_QUEUE_PRIORITY_BACKGROUND:   QOS_CLASS_BACKGROUND
+     *                   - DISPATCH_QUEUE_PRIORITY_HIGH: QOS_CLASS_USER_INITIATED
+     *                   - DISPATCH_QUEUE_PRIORITY_DEFAULT: QOS_CLASS_DEFAULT
+     *                   - DISPATCH_QUEUE_PRIORITY_LOW: QOS_CLASS_UTILITY
+     *                   - DISPATCH_QUEUE_PRIORITY_BACKGROUND: QOS_CLASS_BACKGROUND
      * @param flags      Reserved for future use. Passing any value other than zero may result in
      *                   a NULL return value.
      * @return Returns the requested global queue or NULL if the requested global queue
-     * does not exist.
+     *         does not exist.
      */
     @Generated
     @CFunction
@@ -1565,9 +1565,9 @@ public final class Globals {
      *
      * @param attr A queue attribute value to be combined with the initially inactive attribute.
      * @return Returns an attribute value which may be provided to dispatch_queue_create()
-     * and dispatch_queue_create_with_target().
-     * The new value combines the attributes specified by the 'attr' parameter with
-     * the initially inactive attribute.
+     *         and dispatch_queue_create_with_target().
+     *         The new value combines the attributes specified by the 'attr' parameter with
+     *         the initially inactive attribute.
      */
     @Generated
     @CFunction
@@ -1599,9 +1599,9 @@ public final class Globals {
      *                  frequency or NULL.
      * @param frequency The requested autorelease frequency.
      * @return Returns an attribute value which may be provided to dispatch_queue_create()
-     * or NULL if an invalid autorelease frequency was requested.
-     * This new value combines the attributes specified by the 'attr' parameter and
-     * the chosen autorelease frequency.
+     *         or NULL if an invalid autorelease frequency was requested.
+     *         This new value combines the attributes specified by the 'attr' parameter and
+     *         the chosen autorelease frequency.
      */
     @Generated
     @CFunction
@@ -1620,10 +1620,10 @@ public final class Globals {
      * any) as long that does not result in a lower QOS class and relative priority.
      * <p>
      * The global queue priorities map to the following QOS classes:
-     * - DISPATCH_QUEUE_PRIORITY_HIGH:         QOS_CLASS_USER_INITIATED
-     * - DISPATCH_QUEUE_PRIORITY_DEFAULT:      QOS_CLASS_DEFAULT
-     * - DISPATCH_QUEUE_PRIORITY_LOW:          QOS_CLASS_UTILITY
-     * - DISPATCH_QUEUE_PRIORITY_BACKGROUND:   QOS_CLASS_BACKGROUND
+     * - DISPATCH_QUEUE_PRIORITY_HIGH: QOS_CLASS_USER_INITIATED
+     * - DISPATCH_QUEUE_PRIORITY_DEFAULT: QOS_CLASS_DEFAULT
+     * - DISPATCH_QUEUE_PRIORITY_LOW: QOS_CLASS_UTILITY
+     * - DISPATCH_QUEUE_PRIORITY_BACKGROUND: QOS_CLASS_BACKGROUND
      * <p>
      * Example:
      * <code>
@@ -1651,10 +1651,10 @@ public final class Globals {
      *                          Passing a value greater than zero or less than QOS_MIN_RELATIVE_PRIORITY
      *                          results in NULL being returned.
      * @return Returns an attribute value which may be provided to dispatch_queue_create()
-     * and dispatch_queue_create_with_target(), or NULL if an invalid QOS class was
-     * requested.
-     * The new value combines the attributes specified by the 'attr' parameter and
-     * the new QOS class and relative priority.
+     *         and dispatch_queue_create_with_target(), or NULL if an invalid QOS class was
+     *         requested.
+     *         The new value combines the attributes specified by the 'attr' parameter and
+     *         the new QOS class and relative priority.
      */
     @Generated
     @CFunction
@@ -1787,12 +1787,12 @@ public final class Globals {
      * @param relative_priority_ptr A pointer to an int variable to be filled with the relative priority offset
      *                              within the QOS class, or NULL.
      * @return A QOS class value:
-     * - QOS_CLASS_USER_INTERACTIVE
-     * - QOS_CLASS_USER_INITIATED
-     * - QOS_CLASS_DEFAULT
-     * - QOS_CLASS_UTILITY
-     * - QOS_CLASS_BACKGROUND
-     * - QOS_CLASS_UNSPECIFIED
+     *         - QOS_CLASS_USER_INTERACTIVE
+     *         - QOS_CLASS_USER_INITIATED
+     *         - QOS_CLASS_DEFAULT
+     *         - QOS_CLASS_UTILITY
+     *         - QOS_CLASS_BACKGROUND
+     *         - QOS_CLASS_UNSPECIFIED
      */
     @Generated
     @CFunction
@@ -2142,8 +2142,8 @@ public final class Globals {
      *              results in NULL being returned.
      * @param block The block to create the dispatch block object from.
      * @return The newly created dispatch block object, or NULL.
-     * When not building with Objective-C ARC, must be released with a -[release]
-     * message or the Block_release() function.
+     *         When not building with Objective-C ARC, must be released with a -[release]
+     *         message or the Block_release() function.
      */
     @Generated
     @CFunction
@@ -2203,8 +2203,8 @@ public final class Globals {
      *                          results in NULL being returned.
      * @param block             The block to create the dispatch block object from.
      * @return The newly created dispatch block object, or NULL.
-     * When not building with Objective-C ARC, must be released with a -[release]
-     * message or the Block_release() function.
+     *         When not building with Objective-C ARC, must be released with a -[release]
+     *         message or the Block_release() function.
      */
     @Generated
     @CFunction
@@ -2274,7 +2274,7 @@ public final class Globals {
      * @param timeout When to timeout (see dispatch_time). As a convenience, there are the
      *                DISPATCH_TIME_NOW and DISPATCH_TIME_FOREVER constants.
      * @return Returns zero on success (the dispatch block object completed within the
-     * specified timeout) or non-zero on error (i.e. timed out).
+     *         specified timeout) or non-zero on error (i.e. timed out).
      */
     @Generated
     @CFunction
@@ -2362,14 +2362,14 @@ public final class Globals {
             @ObjCBlock(name = "call_dispatch_block_testcancel") Block_dispatch_block_testcancel block);
 
     /**
-     * Routine:	mach_msg_overwrite
+     * Routine: mach_msg_overwrite
      * Purpose:
-     * Send and/or receive a message.  If the message operation
+     * Send and/or receive a message. If the message operation
      * is interrupted, and the user did not request an indication
      * of that fact, then restart the appropriate parts of the
      * operation silently (trap version does not restart).
      * <p>
-     * Distinct send and receive buffers may be specified.  If
+     * Distinct send and receive buffers may be specified. If
      * no separate receive buffer is specified, the msg parameter
      * will be used for both send and receive operations.
      * <p>
@@ -2386,9 +2386,9 @@ public final class Globals {
             int rcv_limit);
 
     /**
-     * Routine:	mach_msg
+     * Routine: mach_msg
      * Purpose:
-     * Send and/or receive a message.  If the message operation
+     * Send and/or receive a message. If the message operation
      * is interrupted, and the user did not request an indication
      * of that fact, then restart the appropriate parts of the
      * operation silently (trap version does not restart).
@@ -2400,9 +2400,9 @@ public final class Globals {
             int send_size, int rcv_size, int rcv_name, int timeout, int notify_);
 
     /**
-     * Routine:	mach_voucher_deallocate
+     * Routine: mach_voucher_deallocate
      * Purpose:
-     * Deallocate a mach voucher created or received in a message.  Drops
+     * Deallocate a mach voucher created or received in a message. Drops
      * one (send right) reference to the voucher.
      */
     @Generated
@@ -2544,20 +2544,20 @@ public final class Globals {
      *
      * @param source The result of passing NULL in this parameter is undefined.
      * @return The return value should be interpreted according to the type of the dispatch
-     * source, and may be one of the following handles:
-     * <p>
-     * DISPATCH_SOURCE_TYPE_DATA_ADD:        n/a
-     * DISPATCH_SOURCE_TYPE_DATA_OR:         n/a
-     * DISPATCH_SOURCE_TYPE_DATA_REPLACE:    n/a
-     * DISPATCH_SOURCE_TYPE_MACH_SEND:       mach port (mach_port_t)
-     * DISPATCH_SOURCE_TYPE_MACH_RECV:       mach port (mach_port_t)
-     * DISPATCH_SOURCE_TYPE_MEMORYPRESSURE   n/a
-     * DISPATCH_SOURCE_TYPE_PROC:            process identifier (pid_t)
-     * DISPATCH_SOURCE_TYPE_READ:            file descriptor (int)
-     * DISPATCH_SOURCE_TYPE_SIGNAL:          signal number (int)
-     * DISPATCH_SOURCE_TYPE_TIMER:           n/a
-     * DISPATCH_SOURCE_TYPE_VNODE:           file descriptor (int)
-     * DISPATCH_SOURCE_TYPE_WRITE:           file descriptor (int)
+     *         source, and may be one of the following handles:
+     *         <p>
+     *         DISPATCH_SOURCE_TYPE_DATA_ADD: n/a
+     *         DISPATCH_SOURCE_TYPE_DATA_OR: n/a
+     *         DISPATCH_SOURCE_TYPE_DATA_REPLACE: n/a
+     *         DISPATCH_SOURCE_TYPE_MACH_SEND: mach port (mach_port_t)
+     *         DISPATCH_SOURCE_TYPE_MACH_RECV: mach port (mach_port_t)
+     *         DISPATCH_SOURCE_TYPE_MEMORYPRESSURE n/a
+     *         DISPATCH_SOURCE_TYPE_PROC: process identifier (pid_t)
+     *         DISPATCH_SOURCE_TYPE_READ: file descriptor (int)
+     *         DISPATCH_SOURCE_TYPE_SIGNAL: signal number (int)
+     *         DISPATCH_SOURCE_TYPE_TIMER: n/a
+     *         DISPATCH_SOURCE_TYPE_VNODE: file descriptor (int)
+     *         DISPATCH_SOURCE_TYPE_WRITE: file descriptor (int)
      */
     @Generated
     @CFunction
@@ -2571,20 +2571,20 @@ public final class Globals {
      *
      * @param source The result of passing NULL in this parameter is undefined.
      * @return The return value should be interpreted according to the type of the dispatch
-     * source, and may be one of the following flag sets:
-     * <p>
-     * DISPATCH_SOURCE_TYPE_DATA_ADD:        n/a
-     * DISPATCH_SOURCE_TYPE_DATA_OR:         n/a
-     * DISPATCH_SOURCE_TYPE_DATA_REPLACE:    n/a
-     * DISPATCH_SOURCE_TYPE_MACH_SEND:       dispatch_source_mach_send_flags_t
-     * DISPATCH_SOURCE_TYPE_MACH_RECV:       dispatch_source_mach_recv_flags_t
-     * DISPATCH_SOURCE_TYPE_MEMORYPRESSURE   dispatch_source_memorypressure_flags_t
-     * DISPATCH_SOURCE_TYPE_PROC:            dispatch_source_proc_flags_t
-     * DISPATCH_SOURCE_TYPE_READ:            n/a
-     * DISPATCH_SOURCE_TYPE_SIGNAL:          n/a
-     * DISPATCH_SOURCE_TYPE_TIMER:           dispatch_source_timer_flags_t
-     * DISPATCH_SOURCE_TYPE_VNODE:           dispatch_source_vnode_flags_t
-     * DISPATCH_SOURCE_TYPE_WRITE:           n/a
+     *         source, and may be one of the following flag sets:
+     *         <p>
+     *         DISPATCH_SOURCE_TYPE_DATA_ADD: n/a
+     *         DISPATCH_SOURCE_TYPE_DATA_OR: n/a
+     *         DISPATCH_SOURCE_TYPE_DATA_REPLACE: n/a
+     *         DISPATCH_SOURCE_TYPE_MACH_SEND: dispatch_source_mach_send_flags_t
+     *         DISPATCH_SOURCE_TYPE_MACH_RECV: dispatch_source_mach_recv_flags_t
+     *         DISPATCH_SOURCE_TYPE_MEMORYPRESSURE dispatch_source_memorypressure_flags_t
+     *         DISPATCH_SOURCE_TYPE_PROC: dispatch_source_proc_flags_t
+     *         DISPATCH_SOURCE_TYPE_READ: n/a
+     *         DISPATCH_SOURCE_TYPE_SIGNAL: n/a
+     *         DISPATCH_SOURCE_TYPE_TIMER: dispatch_source_timer_flags_t
+     *         DISPATCH_SOURCE_TYPE_VNODE: dispatch_source_vnode_flags_t
+     *         DISPATCH_SOURCE_TYPE_WRITE: n/a
      */
     @Generated
     @CFunction
@@ -2602,22 +2602,22 @@ public final class Globals {
      *
      * @param source The result of passing NULL in this parameter is undefined.
      * @return The return value should be interpreted according to the type of the dispatch
-     * source, and may be one of the following:
-     * <p>
-     * DISPATCH_SOURCE_TYPE_DATA_ADD:        application defined data
-     * DISPATCH_SOURCE_TYPE_DATA_OR:         application defined data
-     * DISPATCH_SOURCE_TYPE_DATA_REPLACE:    application defined data
-     * DISPATCH_SOURCE_TYPE_MACH_SEND:       dispatch_source_mach_send_flags_t
-     * DISPATCH_SOURCE_TYPE_MACH_RECV:       dispatch_source_mach_recv_flags_t
-     * DISPATCH_SOURCE_TYPE_MEMORYPRESSURE   dispatch_source_memorypressure_flags_t
-     * DISPATCH_SOURCE_TYPE_PROC:            dispatch_source_proc_flags_t
-     * DISPATCH_SOURCE_TYPE_READ:            estimated bytes available to read
-     * DISPATCH_SOURCE_TYPE_SIGNAL:          number of signals delivered since
-     * the last handler invocation
-     * DISPATCH_SOURCE_TYPE_TIMER:           number of times the timer has fired
-     * since the last handler invocation
-     * DISPATCH_SOURCE_TYPE_VNODE:           dispatch_source_vnode_flags_t
-     * DISPATCH_SOURCE_TYPE_WRITE:           estimated buffer space available
+     *         source, and may be one of the following:
+     *         <p>
+     *         DISPATCH_SOURCE_TYPE_DATA_ADD: application defined data
+     *         DISPATCH_SOURCE_TYPE_DATA_OR: application defined data
+     *         DISPATCH_SOURCE_TYPE_DATA_REPLACE: application defined data
+     *         DISPATCH_SOURCE_TYPE_MACH_SEND: dispatch_source_mach_send_flags_t
+     *         DISPATCH_SOURCE_TYPE_MACH_RECV: dispatch_source_mach_recv_flags_t
+     *         DISPATCH_SOURCE_TYPE_MEMORYPRESSURE dispatch_source_memorypressure_flags_t
+     *         DISPATCH_SOURCE_TYPE_PROC: dispatch_source_proc_flags_t
+     *         DISPATCH_SOURCE_TYPE_READ: estimated bytes available to read
+     *         DISPATCH_SOURCE_TYPE_SIGNAL: number of signals delivered since
+     *         the last handler invocation
+     *         DISPATCH_SOURCE_TYPE_TIMER: number of times the timer has fired
+     *         since the last handler invocation
+     *         DISPATCH_SOURCE_TYPE_VNODE: dispatch_source_vnode_flags_t
+     *         DISPATCH_SOURCE_TYPE_WRITE: estimated buffer space available
      */
     @Generated
     @CFunction
@@ -2775,7 +2775,7 @@ public final class Globals {
      * @param timeout When to timeout (see dispatch_time). As a convenience, there are the
      *                DISPATCH_TIME_NOW and DISPATCH_TIME_FOREVER constants.
      * @return Returns zero on success (all blocks associated with the group completed
-     * within the specified timeout) or non-zero on error (i.e. timed out).
+     *         within the specified timeout) or non-zero on error (i.e. timed out).
      */
     @Generated
     @CFunction
@@ -2885,7 +2885,7 @@ public final class Globals {
      * @param dsema The counting semaphore.
      *              The result of passing NULL in this parameter is undefined.
      * @return This function returns non-zero if a thread is woken. Otherwise, zero is
-     * returned.
+     *         returned.
      */
     @Generated
     @CFunction
@@ -2990,7 +2990,7 @@ public final class Globals {
      * @param data2 The data object representing the region(s) of memory to place
      *              at the end of the newly created object.
      * @return A newly created object representing the concatenation of the
-     * data1 and data2 objects.
+     *         data1 and data2 objects.
      */
     @Generated
     @CFunction
@@ -3009,7 +3009,7 @@ public final class Globals {
      *               starts.
      * @param length The length of the range.
      * @return A newly created object representing the specified
-     * subrange of the data object.
+     *         subrange of the data object.
      */
     @Generated
     @CFunction
@@ -3033,7 +3033,7 @@ public final class Globals {
      * @param applier The block to be invoked for every contiguous memory
      *                region in the data object.
      * @return A Boolean indicating whether traversal completed
-     * successfully.
+     *         successfully.
      */
     @Generated
     @CFunction
@@ -3094,8 +3094,8 @@ public final class Globals {
      *                submitted.
      * @param handler The handler to enqueue when data is ready to be
      *                delivered.
-     *                param data	The data read from the file descriptor.
-     *                param error	An errno condition for the read operation or
+     *                param data The data read from the file descriptor.
+     *                param error An errno condition for the read operation or
      *                zero if the read was successful.
      */
     @Generated
@@ -3128,9 +3128,9 @@ public final class Globals {
      * @param queue   The dispatch queue to which the handler should be
      *                submitted.
      * @param handler The handler to enqueue when the data has been written.
-     *                param data	The data that could not be written to the I/O
+     *                param data The data that could not be written to the I/O
      *                channel, or NULL.
-     *                param error	An errno condition for the write operation or
+     *                param error An errno condition for the write operation or
      *                zero if the write was successful.
      */
     @Generated
@@ -3158,10 +3158,10 @@ public final class Globals {
      * @param queue           The dispatch queue to which the handler should be submitted.
      * @param cleanup_handler The handler to enqueue when the system
      *                        relinquishes control over the file descriptor.
-     *                        param error		An errno condition if control is relinquished
+     *                        param error An errno condition if control is relinquished
      *                        because channel creation failed, zero otherwise.
      * @return The newly created dispatch I/O channel or NULL if an error
-     * occurred (invalid type specified).
+     *         occurred (invalid type specified).
      */
     @Generated
     @CFunction
@@ -3189,11 +3189,11 @@ public final class Globals {
      *                        submitted.
      * @param cleanup_handler The handler to enqueue when the system
      *                        has closed the file at path.
-     *                        param error		An errno condition if control is relinquished
+     *                        param error An errno condition if control is relinquished
      *                        because channel creation or opening of the
      *                        specified file failed, zero otherwise.
      * @return The newly created dispatch I/O channel or NULL if an error
-     * occurred (invalid type or non-absolute path specified).
+     *         occurred (invalid type or non-absolute path specified).
      */
     @Generated
     @CFunction
@@ -3228,10 +3228,10 @@ public final class Globals {
      *                        relinquishes control over the file descriptor
      *                        (resp. closes the file at path) associated with
      *                        the existing channel.
-     *                        param error		An errno condition if control is relinquished
+     *                        param error An errno condition if control is relinquished
      *                        because channel creation failed, zero otherwise.
      * @return The newly created dispatch I/O channel or NULL if an error
-     * occurred (invalid type specified).
+     *         occurred (invalid type specified).
      */
     @Generated
     @CFunction
@@ -3274,10 +3274,10 @@ public final class Globals {
      *                   submitted.
      * @param io_handler The I/O handler to enqueue when data is ready to be
      *                   delivered.
-     *                   param done	A flag indicating whether the operation is complete.
-     *                   param data	An object with the data most recently read from the
+     *                   param done A flag indicating whether the operation is complete.
+     *                   param data An object with the data most recently read from the
      *                   I/O channel as part of this read operation, or NULL.
-     *                   param error	An errno condition for the read operation or zero if
+     *                   param error An errno condition for the read operation or zero if
      *                   the read was successful.
      */
     @Generated
@@ -3321,11 +3321,11 @@ public final class Globals {
      * @param queue      The dispatch queue to which the I/O handler should be
      *                   submitted.
      * @param io_handler The I/O handler to enqueue when data has been delivered.
-     *                   param done	A flag indicating whether the operation is complete.
-     *                   param data	An object of the data remaining to be
+     *                   param done A flag indicating whether the operation is complete.
+     *                   param data An object of the data remaining to be
      *                   written to the I/O channel as part of this write
      *                   operation, or NULL.
-     *                   param error	An errno condition for the write operation or zero
+     *                   param error An errno condition for the write operation or zero
      *                   if the write was successful.
      */
     @Generated
@@ -3538,7 +3538,7 @@ public final class Globals {
 
     /**
      * *
-     * Math Functions                                *
+     * Math Functions *
      * *
      * ****************************************************************************
      */
@@ -4002,7 +4002,7 @@ public final class Globals {
     public static native double fma(double arg1, double arg2, double arg3);
 
     /**
-     * __exp10(x) returns 10**x.  Edge cases match those of exp( ) and exp2( ).
+     * __exp10(x) returns 10**x. Edge cases match those of exp( ) and exp2( ).
      */
     @Generated
     @CFunction
@@ -4030,12 +4030,12 @@ public final class Globals {
 
     /**
      * __sinpi(x) returns the sine of pi times x; __cospi(x) and __tanpi(x) return
-     * the cosine and tangent, respectively.  These functions can produce a more
+     * the cosine and tangent, respectively. These functions can produce a more
      * accurate answer than expressions of the form sin(M_PI * x) because they
      * avoid any loss of precision that results from rounding the result of the
-     * multiplication M_PI * x.  They may also be significantly more efficient in
+     * multiplication M_PI * x. They may also be significantly more efficient in
      * some cases because the argument reduction for these functions is easier
-     * to compute.  Consult the man pages for edge case details.
+     * to compute. Consult the man pages for edge case details.
      */
     @Generated
     @CFunction
@@ -4064,11 +4064,11 @@ public final class Globals {
     /**
      * __sincospi(x,sinp,cosp) computes the sine and cosine of pi times x with a
      * single function call, storing the sine in the memory pointed to by sinp,
-     * and the cosine in the memory pointed to by cosp.  Edge cases match those
+     * and the cosine in the memory pointed to by cosp. Edge cases match those
      * of separate calls to __sinpi( ) and __cospi( ), and are documented in the
      * man pages.
      * <p>
-     * These functions were introduced in OSX 10.9 and iOS 7.0.  Because they are
+     * These functions were introduced in OSX 10.9 and iOS 7.0. Because they are
      * implemented as header inlines, weak-linking does not function as normal,
      * and they are simply hidden when targeting earlier OS versions.
      */
@@ -6247,7 +6247,7 @@ public final class Globals {
      *
      * @param lock Pointer to an os_unfair_lock.
      * @return Returns true if the lock was succesfully locked and false if the lock was
-     * already locked.
+     *         already locked.
      */
     @Generated
     @CFunction
@@ -8630,7 +8630,7 @@ public final class Globals {
      * <p>
      * Avoid unnecessary work for a trace point by checking if additional
      * information is enabled. Generally trace points should not involve expensive
-     * operations, but some circumstances warrant it.  Use this function to avoid
+     * operations, but some circumstances warrant it. Use this function to avoid
      * doing the work unless debug level trace messages are requested.
      *
      * <code>
@@ -8654,8 +8654,8 @@ public final class Globals {
      * enabled.
      * <p>
      * Avoid unnecessary work for a trace point by checking if debug level is
-     * enabled.  Generally trace points should not involve expensive operations, but
-     * some circumstances warrant it.  Use this function to avoid doing the work
+     * enabled. Generally trace points should not involve expensive operations, but
+     * some circumstances warrant it. Use this function to avoid doing the work
      * unless debug level trace messages are requested.
      *
      * <code>
@@ -8710,8 +8710,8 @@ public final class Globals {
      * <p>
      * Creates a log object to be used with other log related functions.
      * <p>
-     * Creates a log object to be used with other log related functions.  The
-     * log object serves two purposes:  (1) tag related messages by subsystem
+     * Creates a log object to be used with other log related functions. The
+     * log object serves two purposes: (1) tag related messages by subsystem
      * and category name for easy filtering, and (2) control logging system
      * behavior for messages.
      *
@@ -8719,14 +8719,14 @@ public final class Globals {
      *                  (i.e., com.company.mysubsystem).
      * @param category  The category within the given subsystem that specifies the settings for
      *                  the log object.
-     * @return Returns an os_log_t value to be passed to other os_log API calls.  The
-     * logging runtime maintains a global collection of all os_log_t objects, one
-     * per subsystem/category pair.  The os_log_t for a given subsystem/category is
-     * created upon the first call to os_log_create and any subsequent calls return
-     * the same object.  These objects are never deallocated, so dynamic creation
-     * (e.g. on a per-operation basis) is generally inappropriate.
-     * <p>
-     * A value will always be returned to allow for dynamic enablement.
+     * @return Returns an os_log_t value to be passed to other os_log API calls. The
+     *         logging runtime maintains a global collection of all os_log_t objects, one
+     *         per subsystem/category pair. The os_log_t for a given subsystem/category is
+     *         created upon the first call to os_log_create and any subsequent calls return
+     *         the same object. These objects are never deallocated, so dynamic creation
+     *         (e.g. on a per-operation basis) is generally inappropriate.
+     *         <p>
+     *         A value will always be returned to allow for dynamic enablement.
      */
     @Generated
     @CFunction
@@ -8862,19 +8862,19 @@ public final class Globals {
     /**
      * DNSServiceGetProperty() Parameters:
      * <p>
-     * property:        The requested property.
+     * property: The requested property.
      * Currently the only property defined is kDNSServiceProperty_DaemonVersion.
      * <p>
-     * result:          Place to store result.
+     * result: Place to store result.
      * For retrieving DaemonVersion, this should be the address of a uint32_t.
      * <p>
-     * size:            Pointer to uint32_t containing size of the result location.
+     * size: Pointer to uint32_t containing size of the result location.
      * For retrieving DaemonVersion, this should be sizeof(uint32_t).
      * On return the uint32_t is updated to the size of the data returned.
      * For DaemonVersion, the returned size is always sizeof(uint32_t), but
      * future properties could be defined which return variable-sized results.
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success, or kDNSServiceErr_ServiceNotRunning
+     * return value: Returns kDNSServiceErr_NoError on success, or kDNSServiceErr_ServiceNotRunning
      * if the daemon (or "system service" on Windows) is not running.
      */
     @Generated
@@ -8904,9 +8904,9 @@ public final class Globals {
      * in a timely fashion -- if the client allows a large backlog of data to build up the daemon
      * may terminate the connection.
      * <p>
-     * sdRef:           A DNSServiceRef initialized by any of the DNSService calls.
+     * sdRef: A DNSServiceRef initialized by any of the DNSService calls.
      * <p>
-     * return value:    The DNSServiceRef's underlying socket descriptor, or -1 on
+     * return value: The DNSServiceRef's underlying socket descriptor, or -1 on
      * error.
      */
     @Generated
@@ -8925,10 +8925,10 @@ public final class Globals {
      * a reply from the daemon - the daemon may terminate its connection with a client that does not
      * process the daemon's responses.
      * <p>
-     * sdRef:           A DNSServiceRef initialized by any of the DNSService calls
+     * sdRef: A DNSServiceRef initialized by any of the DNSService calls
      * that take a callback parameter.
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success, otherwise returns
+     * return value: Returns kDNSServiceErr_NoError on success, otherwise returns
      * an error code indicating the specific failure that occurred.
      */
     @Generated
@@ -8959,7 +8959,7 @@ public final class Globals {
      * <p>
      * Note: This call is to be used only with the DNSServiceRef defined by this API.
      * <p>
-     * sdRef:           A DNSServiceRef initialized by any of the DNSService calls.
+     * sdRef: A DNSServiceRef initialized by any of the DNSService calls.
      */
     @Generated
     @CFunction
@@ -8968,7 +8968,7 @@ public final class Globals {
     /**
      * DNSServiceEnumerateDomains() Parameters:
      * <p>
-     * sdRef:           A pointer to an uninitialized DNSServiceRef
+     * sdRef: A pointer to an uninitialized DNSServiceRef
      * (or, if the kDNSServiceFlagsShareConnection flag is used,
      * a copy of the shared connection reference that is to be used).
      * If the call succeeds then it initializes (or updates) the DNSServiceRef,
@@ -8977,24 +8977,24 @@ public final class Globals {
      * by passing this DNSServiceRef to DNSServiceRefDeallocate()
      * (or by closing the underlying shared connection, if used).
      * <p>
-     * flags:           Possible values are:
+     * flags: Possible values are:
      * kDNSServiceFlagsShareConnection to use a shared connection.
      * kDNSServiceFlagsBrowseDomains to enumerate domains recommended for browsing.
      * kDNSServiceFlagsRegistrationDomains to enumerate domains recommended
      * for registration.
      * <p>
-     * interfaceIndex:  If non-zero, specifies the interface on which to look for domains.
+     * interfaceIndex: If non-zero, specifies the interface on which to look for domains.
      * (the index for a given interface is determined via the if_nametoindex()
      * family of calls.) Most applications will pass 0 to enumerate domains on
      * all interfaces. See "Constants for specifying an interface index" for more details.
      * <p>
-     * callBack:        The function to be called when a domain is found or the call asynchronously
+     * callBack: The function to be called when a domain is found or the call asynchronously
      * fails.
      * <p>
-     * context:         An application context pointer which is passed to the callback function
+     * context: An application context pointer which is passed to the callback function
      * (may be NULL).
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
+     * return value: Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
      * errors are delivered to the callback), otherwise returns an error code indicating
      * the error that occurred (the callback is not invoked and the DNSServiceRef
      * is not initialized).
@@ -9017,7 +9017,7 @@ public final class Globals {
     /**
      * DNSServiceRegister() Parameters:
      * <p>
-     * sdRef:           A pointer to an uninitialized DNSServiceRef
+     * sdRef: A pointer to an uninitialized DNSServiceRef
      * (or, if the kDNSServiceFlagsShareConnection flag is used,
      * a copy of the shared connection reference that is to be used).
      * If the call succeeds then it initializes (or updates) the DNSServiceRef,
@@ -9026,18 +9026,18 @@ public final class Globals {
      * by passing this DNSServiceRef to DNSServiceRefDeallocate()
      * (or by closing the underlying shared connection, if used).
      * <p>
-     * flags:           Possible values are:
+     * flags: Possible values are:
      * kDNSServiceFlagsShareConnection to use a shared connection.
      * Other flags indicate the renaming behavior on name conflict
      * (not required for most applications).
      * See flag definitions above for details.
      * <p>
-     * interfaceIndex:  If non-zero, specifies the interface on which to register the service
+     * interfaceIndex: If non-zero, specifies the interface on which to register the service
      * (the index for a given interface is determined via the if_nametoindex()
      * family of calls.) Most applications will pass 0 to register on all
      * available interfaces. See "Constants for specifying an interface index" for more details.
      * <p>
-     * name:            If non-NULL, specifies the service name to be registered.
+     * name: If non-NULL, specifies the service name to be registered.
      * Most applications will not specify a name, in which case the computer
      * name is used (this name is communicated to the client via the callback).
      * If a name is specified, it must be 1-63 bytes of UTF-8 text.
@@ -9045,7 +9045,7 @@ public final class Globals {
      * to a legal length, unless the NoAutoRename flag is set,
      * in which case kDNSServiceErr_BadParam will be returned.
      * <p>
-     * regtype:         The service type followed by the protocol, separated by a dot
+     * regtype: The service type followed by the protocol, separated by a dot
      * (e.g. "_ftp._tcp"). The service type must be an underscore, followed
      * by 1-15 characters, which may be letters, digits, or hyphens.
      * The transport protocol must be "_tcp" or "_udp". New service types
@@ -9066,10 +9066,10 @@ public final class Globals {
      * <p>
      * % dns-sd -R Simple _test._tcp "" 1001 &
      * % dns-sd -R Better _test._tcp,HasFeatureA "" 1002 &
-     * % dns-sd -R Best   _test._tcp,HasFeatureA,HasFeatureB "" 1003 &
+     * % dns-sd -R Best _test._tcp,HasFeatureA,HasFeatureB "" 1003 &
      * <p>
      * Now:
-     * % dns-sd -B _test._tcp             # will find all three services
+     * % dns-sd -B _test._tcp # will find all three services
      * % dns-sd -B _test._tcp,HasFeatureA # finds "Better" and "Best"
      * % dns-sd -B _test._tcp,HasFeatureB # finds only "Best"
      * <p>
@@ -9080,25 +9080,25 @@ public final class Globals {
      * <p>
      * % dns-sd -R Test '_test._tcp,s\.one,s\,two,s\\three,s\000four' local 123
      * <p>
-     * domain:          If non-NULL, specifies the domain on which to advertise the service.
+     * domain: If non-NULL, specifies the domain on which to advertise the service.
      * Most applications will not specify a domain, instead automatically
      * registering in the default domain(s).
      * <p>
-     * host:            If non-NULL, specifies the SRV target host name. Most applications
+     * host: If non-NULL, specifies the SRV target host name. Most applications
      * will not specify a host, instead automatically using the machine's
      * default host name(s). Note that specifying a non-NULL host does NOT
      * create an address record for that host - the application is responsible
      * for ensuring that the appropriate address record exists, or creating it
      * via DNSServiceRegisterRecord().
      * <p>
-     * port:            The port, in network byte order, on which the service accepts connections.
+     * port: The port, in network byte order, on which the service accepts connections.
      * Pass 0 for a "placeholder" service (i.e. a service that will not be discovered
      * by browsing, but will cause a name conflict if another client tries to
      * register that same name). Most clients will not use placeholder services.
      * <p>
-     * txtLen:          The length of the txtRecord, in bytes. Must be zero if the txtRecord is NULL.
+     * txtLen: The length of the txtRecord, in bytes. Must be zero if the txtRecord is NULL.
      * <p>
-     * txtRecord:       The TXT record rdata. A non-NULL txtRecord MUST be a properly formatted DNS
+     * txtRecord: The TXT record rdata. A non-NULL txtRecord MUST be a properly formatted DNS
      * TXT record, i.e. <length byte> <data> <length byte> <data> ...
      * Passing NULL for the txtRecord is allowed as a synonym for txtLen=1, txtRecord="",
      * i.e. it creates a TXT record of length one containing a single empty string.
@@ -9108,17 +9108,17 @@ public final class Globals {
      * data; e.g. if you allocated the storage for the txtRecord parameter with malloc()
      * then you can safely free that memory right after the DNSServiceRegister call returns.
      * <p>
-     * callBack:        The function to be called when the registration completes or asynchronously
-     * fails. The client MAY pass NULL for the callback -  The client will NOT be notified
+     * callBack: The function to be called when the registration completes or asynchronously
+     * fails. The client MAY pass NULL for the callback - The client will NOT be notified
      * of the default values picked on its behalf, and the client will NOT be notified of any
      * asynchronous errors (e.g. out of memory errors, etc.) that may prevent the registration
      * of the service. The client may NOT pass the NoAutoRename flag if the callback is NULL.
      * The client may still deregister the service at any time via DNSServiceRefDeallocate().
      * <p>
-     * context:         An application context pointer which is passed to the callback function
+     * context: An application context pointer which is passed to the callback function
      * (may be NULL).
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
+     * return value: Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
      * errors are delivered to the callback), otherwise returns an error code indicating
      * the error that occurred (the callback is never invoked and the DNSServiceRef
      * is not initialized).
@@ -9160,26 +9160,26 @@ public final class Globals {
      * <p>
      * Parameters;
      * <p>
-     * sdRef:           A DNSServiceRef initialized by DNSServiceRegister().
+     * sdRef: A DNSServiceRef initialized by DNSServiceRegister().
      * <p>
-     * RecordRef:       A pointer to an uninitialized DNSRecordRef. Upon succesfull completion of this
+     * RecordRef: A pointer to an uninitialized DNSRecordRef. Upon succesfull completion of this
      * call, this ref may be passed to DNSServiceUpdateRecord() or DNSServiceRemoveRecord().
      * If the above DNSServiceRef is passed to DNSServiceRefDeallocate(), RecordRef is also
      * invalidated and may not be used further.
      * <p>
-     * flags:           Currently ignored, reserved for future use.
+     * flags: Currently ignored, reserved for future use.
      * <p>
-     * rrtype:          The type of the record (e.g. kDNSServiceType_TXT, kDNSServiceType_SRV, etc)
+     * rrtype: The type of the record (e.g. kDNSServiceType_TXT, kDNSServiceType_SRV, etc)
      * <p>
-     * rdlen:           The length, in bytes, of the rdata.
+     * rdlen: The length, in bytes, of the rdata.
      * <p>
-     * rdata:           The raw rdata to be contained in the added resource record.
+     * rdata: The raw rdata to be contained in the added resource record.
      * <p>
-     * ttl:             The time to live of the resource record, in seconds.
+     * ttl: The time to live of the resource record, in seconds.
      * Most clients should pass 0 to indicate that the system should
      * select a sensible default value.
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success, otherwise returns an
+     * return value: Returns kDNSServiceErr_NoError on success, otherwise returns an
      * error code indicating the error that occurred (the RecordRef is not initialized).
      */
     @Generated
@@ -9197,23 +9197,23 @@ public final class Globals {
      * <p>
      * Parameters:
      * <p>
-     * sdRef:           A DNSServiceRef that was initialized by DNSServiceRegister()
+     * sdRef: A DNSServiceRef that was initialized by DNSServiceRegister()
      * or DNSServiceCreateConnection().
      * <p>
-     * RecordRef:       A DNSRecordRef initialized by DNSServiceAddRecord, or NULL to update the
+     * RecordRef: A DNSRecordRef initialized by DNSServiceAddRecord, or NULL to update the
      * service's primary txt record.
      * <p>
-     * flags:           Currently ignored, reserved for future use.
+     * flags: Currently ignored, reserved for future use.
      * <p>
-     * rdlen:           The length, in bytes, of the new rdata.
+     * rdlen: The length, in bytes, of the new rdata.
      * <p>
-     * rdata:           The new rdata to be contained in the updated resource record.
+     * rdata: The new rdata to be contained in the updated resource record.
      * <p>
-     * ttl:             The time to live of the updated resource record, in seconds.
+     * ttl: The time to live of the updated resource record, in seconds.
      * Most clients should pass 0 to indicate that the system should
      * select a sensible default value.
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success, otherwise returns an
+     * return value: Returns kDNSServiceErr_NoError on success, otherwise returns an
      * error code indicating the error that occurred.
      */
     @Generated
@@ -9229,17 +9229,17 @@ public final class Globals {
      * <p>
      * Parameters:
      * <p>
-     * sdRef:           A DNSServiceRef initialized by DNSServiceRegister() (if the
+     * sdRef: A DNSServiceRef initialized by DNSServiceRegister() (if the
      * record being removed was registered via DNSServiceAddRecord()) or by
      * DNSServiceCreateConnection() (if the record being removed was registered via
      * DNSServiceRegisterRecord()).
      * <p>
-     * recordRef:       A DNSRecordRef initialized by a successful call to DNSServiceAddRecord()
+     * recordRef: A DNSRecordRef initialized by a successful call to DNSServiceAddRecord()
      * or DNSServiceRegisterRecord().
      * <p>
-     * flags:           Currently ignored, reserved for future use.
+     * flags: Currently ignored, reserved for future use.
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success, otherwise returns an
+     * return value: Returns kDNSServiceErr_NoError on success, otherwise returns an
      * error code indicating the error that occurred.
      */
     @Generated
@@ -9249,7 +9249,7 @@ public final class Globals {
     /**
      * DNSServiceBrowse() Parameters:
      * <p>
-     * sdRef:           A pointer to an uninitialized DNSServiceRef
+     * sdRef: A pointer to an uninitialized DNSServiceRef
      * (or, if the kDNSServiceFlagsShareConnection flag is used,
      * a copy of the shared connection reference that is to be used).
      * If the call succeeds then it initializes (or updates) the DNSServiceRef,
@@ -9258,32 +9258,32 @@ public final class Globals {
      * by passing this DNSServiceRef to DNSServiceRefDeallocate()
      * (or by closing the underlying shared connection, if used).
      * <p>
-     * flags:           Possible values are:
+     * flags: Possible values are:
      * kDNSServiceFlagsShareConnection to use a shared connection.
      * <p>
-     * interfaceIndex:  If non-zero, specifies the interface on which to browse for services
+     * interfaceIndex: If non-zero, specifies the interface on which to browse for services
      * (the index for a given interface is determined via the if_nametoindex()
      * family of calls.) Most applications will pass 0 to browse on all available
      * interfaces. See "Constants for specifying an interface index" for more details.
      * <p>
-     * regtype:         The service type being browsed for followed by the protocol, separated by a
+     * regtype: The service type being browsed for followed by the protocol, separated by a
      * dot (e.g. "_ftp._tcp"). The transport protocol must be "_tcp" or "_udp".
      * A client may optionally specify a single subtype to perform filtered browsing:
      * e.g. browsing for "_primarytype._tcp,_subtype" will discover only those
      * instances of "_primarytype._tcp" that were registered specifying "_subtype"
      * in their list of registered subtypes.
      * <p>
-     * domain:          If non-NULL, specifies the domain on which to browse for services.
+     * domain: If non-NULL, specifies the domain on which to browse for services.
      * Most applications will not specify a domain, instead browsing on the
      * default domain(s).
      * <p>
-     * callBack:        The function to be called when an instance of the service being browsed for
+     * callBack: The function to be called when an instance of the service being browsed for
      * is found, or if the call asynchronously fails.
      * <p>
-     * context:         An application context pointer which is passed to the callback function
+     * context: An application context pointer which is passed to the callback function
      * (may be NULL).
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
+     * return value: Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
      * errors are delivered to the callback), otherwise returns an error code indicating
      * the error that occurred (the callback is not invoked and the DNSServiceRef
      * is not initialized).
@@ -9309,7 +9309,7 @@ public final class Globals {
     /**
      * DNSServiceResolve() Parameters
      * <p>
-     * sdRef:           A pointer to an uninitialized DNSServiceRef
+     * sdRef: A pointer to an uninitialized DNSServiceRef
      * (or, if the kDNSServiceFlagsShareConnection flag is used,
      * a copy of the shared connection reference that is to be used).
      * If the call succeeds then it initializes (or updates) the DNSServiceRef,
@@ -9318,13 +9318,13 @@ public final class Globals {
      * by passing this DNSServiceRef to DNSServiceRefDeallocate()
      * (or by closing the underlying shared connection, if used).
      * <p>
-     * flags:           Possible values are:
+     * flags: Possible values are:
      * kDNSServiceFlagsShareConnection to use a shared connection.
      * Specifying kDNSServiceFlagsForceMulticast will cause query to be
      * performed with a link-local mDNS query, even if the name is an
      * apparently non-local name (i.e. a name not ending in ".local.")
      * <p>
-     * interfaceIndex:  The interface on which to resolve the service. If this resolve call is
+     * interfaceIndex: The interface on which to resolve the service. If this resolve call is
      * as a result of a currently active DNSServiceBrowse() operation, then the
      * interfaceIndex should be the index reported in the DNSServiceBrowseReply
      * callback. If this resolve call is using information previously saved
@@ -9332,22 +9332,22 @@ public final class Globals {
      * the desired service may now be reachable via a different physical interface.
      * See "Constants for specifying an interface index" for more details.
      * <p>
-     * name:            The name of the service instance to be resolved, as reported to the
+     * name: The name of the service instance to be resolved, as reported to the
      * DNSServiceBrowseReply() callback.
      * <p>
-     * regtype:         The type of the service instance to be resolved, as reported to the
+     * regtype: The type of the service instance to be resolved, as reported to the
      * DNSServiceBrowseReply() callback.
      * <p>
-     * domain:          The domain of the service instance to be resolved, as reported to the
+     * domain: The domain of the service instance to be resolved, as reported to the
      * DNSServiceBrowseReply() callback.
      * <p>
-     * callBack:        The function to be called when a result is found, or if the call
+     * callBack: The function to be called when a result is found, or if the call
      * asynchronously fails.
      * <p>
-     * context:         An application context pointer which is passed to the callback function
+     * context: An application context pointer which is passed to the callback function
      * (may be NULL).
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
+     * return value: Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
      * errors are delivered to the callback), otherwise returns an error code indicating
      * the error that occurred (the callback is never invoked and the DNSServiceRef
      * is not initialized).
@@ -9375,7 +9375,7 @@ public final class Globals {
     /**
      * DNSServiceQueryRecord() Parameters:
      * <p>
-     * sdRef:           A pointer to an uninitialized DNSServiceRef
+     * sdRef: A pointer to an uninitialized DNSServiceRef
      * (or, if the kDNSServiceFlagsShareConnection flag is used,
      * a copy of the shared connection reference that is to be used).
      * If the call succeeds then it initializes (or updates) the DNSServiceRef,
@@ -9384,32 +9384,32 @@ public final class Globals {
      * by passing this DNSServiceRef to DNSServiceRefDeallocate()
      * (or by closing the underlying shared connection, if used).
      * <p>
-     * flags:           Possible values are:
+     * flags: Possible values are:
      * kDNSServiceFlagsShareConnection to use a shared connection.
      * kDNSServiceFlagsForceMulticast or kDNSServiceFlagsLongLivedQuery.
      * Pass kDNSServiceFlagsLongLivedQuery to create a "long-lived" unicast
      * query to a unicast DNS server that implements the protocol. This flag
      * has no effect on link-local multicast queries.
      * <p>
-     * interfaceIndex:  If non-zero, specifies the interface on which to issue the query
+     * interfaceIndex: If non-zero, specifies the interface on which to issue the query
      * (the index for a given interface is determined via the if_nametoindex()
      * family of calls.) Passing 0 causes the name to be queried for on all
      * interfaces. See "Constants for specifying an interface index" for more details.
      * <p>
-     * fullname:        The full domain name of the resource record to be queried for.
+     * fullname: The full domain name of the resource record to be queried for.
      * <p>
-     * rrtype:          The numerical type of the resource record to be queried for
+     * rrtype: The numerical type of the resource record to be queried for
      * (e.g. kDNSServiceType_PTR, kDNSServiceType_SRV, etc)
      * <p>
-     * rrclass:         The class of the resource record (usually kDNSServiceClass_IN).
+     * rrclass: The class of the resource record (usually kDNSServiceClass_IN).
      * <p>
-     * callBack:        The function to be called when a result is found, or if the call
+     * callBack: The function to be called when a result is found, or if the call
      * asynchronously fails.
      * <p>
-     * context:         An application context pointer which is passed to the callback function
+     * context: An application context pointer which is passed to the callback function
      * (may be NULL).
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
+     * return value: Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
      * errors are delivered to the callback), otherwise returns an error code indicating
      * the error that occurred (the callback is never invoked and the DNSServiceRef
      * is not initialized).
@@ -9433,7 +9433,7 @@ public final class Globals {
     /**
      * DNSServiceGetAddrInfo() Parameters:
      * <p>
-     * sdRef:           A pointer to an uninitialized DNSServiceRef
+     * sdRef: A pointer to an uninitialized DNSServiceRef
      * (or, if the kDNSServiceFlagsShareConnection flag is used,
      * a copy of the shared connection reference that is to be used).
      * If the call succeeds then it initializes (or updates) the DNSServiceRef,
@@ -9442,14 +9442,14 @@ public final class Globals {
      * by passing this DNSServiceRef to DNSServiceRefDeallocate()
      * (or by closing the underlying shared connection, if used).
      * <p>
-     * flags:           Possible values are:
+     * flags: Possible values are:
      * kDNSServiceFlagsShareConnection to use a shared connection.
      * kDNSServiceFlagsForceMulticast
      * <p>
-     * interfaceIndex:  The interface on which to issue the query.  Passing 0 causes the query to be
+     * interfaceIndex: The interface on which to issue the query. Passing 0 causes the query to be
      * sent on all active interfaces via Multicast or the primary interface via Unicast.
      * <p>
-     * protocol:        Pass in kDNSServiceProtocol_IPv4 to look up IPv4 addresses, or kDNSServiceProtocol_IPv6
+     * protocol: Pass in kDNSServiceProtocol_IPv4 to look up IPv4 addresses, or kDNSServiceProtocol_IPv6
      * to look up IPv6 addresses, or both to look up both kinds. If neither flag is
      * set, the system will apply an intelligent heuristic, which is (currently)
      * that it will attempt to look up both, except:
@@ -9460,14 +9460,14 @@ public final class Globals {
      * unlikely to be of any use anyway. Similarly, if this host has no routable
      * IPv4 address, the call will not try to look up IPv4 addresses for "hostname".
      * <p>
-     * hostname:        The fully qualified domain name of the host to be queried for.
+     * hostname: The fully qualified domain name of the host to be queried for.
      * <p>
-     * callBack:        The function to be called when the query succeeds or fails asynchronously.
+     * callBack: The function to be called when the query succeeds or fails asynchronously.
      * <p>
-     * context:         An application context pointer which is passed to the callback function
+     * context: An application context pointer which is passed to the callback function
      * (may be NULL).
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
+     * return value: Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
      * errors are delivered to the callback), otherwise returns an error code indicating
      * the error that occurred.
      */
@@ -9496,12 +9496,12 @@ public final class Globals {
      * <p>
      * Parameters:
      * <p>
-     * sdRef:           A pointer to an uninitialized DNSServiceRef.
+     * sdRef: A pointer to an uninitialized DNSServiceRef.
      * Deallocating the reference (via DNSServiceRefDeallocate())
      * severs the connection and cancels all operations and
      * deregisters all records registered on this connection.
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success, otherwise returns
+     * return value: Returns kDNSServiceErr_NoError on success, otherwise returns
      * an error code indicating the specific failure that occurred
      * (in which case the DNSServiceRef is not initialized).
      */
@@ -9512,15 +9512,15 @@ public final class Globals {
     /**
      * DNSServiceRegisterRecord() Parameters:
      * <p>
-     * sdRef:           A DNSServiceRef initialized by DNSServiceCreateConnection().
+     * sdRef: A DNSServiceRef initialized by DNSServiceCreateConnection().
      * <p>
-     * RecordRef:       A pointer to an uninitialized DNSRecordRef. Upon succesfull completion of this
+     * RecordRef: A pointer to an uninitialized DNSRecordRef. Upon succesfull completion of this
      * call, this ref may be passed to DNSServiceUpdateRecord() or DNSServiceRemoveRecord().
      * (To deregister ALL records registered on a single connected DNSServiceRef
      * and deallocate each of their corresponding DNSServiceRecordRefs, call
      * DNSServiceRefDeallocate()).
      * <p>
-     * flags:           Required values are:
+     * flags: Required values are:
      * One of kDNSServiceFlagsShared, kDNSServiceFlagsUnique or kDNSServiceFlagsKnownUnique flags.
      * <p>
      * Possible values are:
@@ -9528,32 +9528,32 @@ public final class Globals {
      * a link-local mDNS registration even if the name is an apparently non-local name (i.e. a name not
      * ending in ".local.")
      * <p>
-     * interfaceIndex:  If non-zero, specifies the interface on which to register the record
+     * interfaceIndex: If non-zero, specifies the interface on which to register the record
      * (the index for a given interface is determined via the if_nametoindex()
      * family of calls.) Passing 0 causes the record to be registered on all interfaces.
      * See "Constants for specifying an interface index" for more details.
      * <p>
-     * fullname:        The full domain name of the resource record.
+     * fullname: The full domain name of the resource record.
      * <p>
-     * rrtype:          The numerical type of the resource record (e.g. kDNSServiceType_PTR, kDNSServiceType_SRV, etc)
+     * rrtype: The numerical type of the resource record (e.g. kDNSServiceType_PTR, kDNSServiceType_SRV, etc)
      * <p>
-     * rrclass:         The class of the resource record (usually kDNSServiceClass_IN)
+     * rrclass: The class of the resource record (usually kDNSServiceClass_IN)
      * <p>
-     * rdlen:           Length, in bytes, of the rdata.
+     * rdlen: Length, in bytes, of the rdata.
      * <p>
-     * rdata:           A pointer to the raw rdata, as it is to appear in the DNS record.
+     * rdata: A pointer to the raw rdata, as it is to appear in the DNS record.
      * <p>
-     * ttl:             The time to live of the resource record, in seconds.
+     * ttl: The time to live of the resource record, in seconds.
      * Most clients should pass 0 to indicate that the system should
      * select a sensible default value.
      * <p>
-     * callBack:        The function to be called when a result is found, or if the call
+     * callBack: The function to be called when a result is found, or if the call
      * asynchronously fails (e.g. because of a name conflict.)
      * <p>
-     * context:         An application context pointer which is passed to the callback function
+     * context: An application context pointer which is passed to the callback function
      * (may be NULL).
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
+     * return value: Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
      * errors are delivered to the callback), otherwise returns an error code indicating
      * the error that occurred (the callback is never invoked and the DNSRecordRef is
      * not initialized).
@@ -9586,24 +9586,24 @@ public final class Globals {
      * <p>
      * Parameters:
      * <p>
-     * flags:           Not currently used.
+     * flags: Not currently used.
      * <p>
-     * interfaceIndex:  Specifies the interface of the record in question.
+     * interfaceIndex: Specifies the interface of the record in question.
      * The caller must specify the interface.
      * This API (by design) causes increased network traffic, so it requires
      * the caller to be precise about which record should be reconfirmed.
      * It is not possible to pass zero for the interface index to perform
      * a "wildcard" reconfirmation, where *all* matching records are reconfirmed.
      * <p>
-     * fullname:        The resource record's full domain name.
+     * fullname: The resource record's full domain name.
      * <p>
-     * rrtype:          The resource record's type (e.g. kDNSServiceType_PTR, kDNSServiceType_SRV, etc)
+     * rrtype: The resource record's type (e.g. kDNSServiceType_PTR, kDNSServiceType_SRV, etc)
      * <p>
-     * rrclass:         The class of the resource record (usually kDNSServiceClass_IN).
+     * rrclass: The class of the resource record (usually kDNSServiceClass_IN).
      * <p>
-     * rdlen:           The length, in bytes, of the resource record rdata.
+     * rdlen: The length, in bytes, of the resource record rdata.
      * <p>
-     * rdata:           The raw rdata of the resource record.
+     * rdata: The raw rdata of the resource record.
      */
     @Generated
     @CFunction
@@ -9616,40 +9616,40 @@ public final class Globals {
      * <p>
      * Release P2P connection resources associated with the service instance.
      * When a service is resolved over a P2P interface, a connection is brought up to the
-     * peer advertising the service instance.  This call will free the resources associated
-     * with that connection.  Note that the reference to the service instance will only
+     * peer advertising the service instance. This call will free the resources associated
+     * with that connection. Note that the reference to the service instance will only
      * be maintained by the daemon while the browse for the service type is still
-     * running.  Thus the sequence of calls to discover, resolve, and then terminate the connection
+     * running. Thus the sequence of calls to discover, resolve, and then terminate the connection
      * associated with a given P2P service instance would be:
      * <p>
      * DNSServiceRef BrowseRef, ResolveRef;
-     * DNSServiceBrowse(&BrowseRef, ...)    // browse for all instances of the service
-     * DNSServiceResolve(&ResolveRef, ...)  // resolving a service instance creates a
+     * DNSServiceBrowse(&BrowseRef, ...) // browse for all instances of the service
+     * DNSServiceResolve(&ResolveRef, ...) // resolving a service instance creates a
      * // connection to the peer device advertising that service
-     * DNSServiceRefDeallocate(ResolveRef)  // Stop the resolve, which does not close the peer connection
+     * DNSServiceRefDeallocate(ResolveRef) // Stop the resolve, which does not close the peer connection
      * <p>
      * // Communicate with the peer application.
      * <p>
-     * PeerConnectionRelease()  // release the connection to the peer device for the specified service instance
+     * PeerConnectionRelease() // release the connection to the peer device for the specified service instance
      * <p>
-     * DNSServiceRefDeallocate(BrowseRef)  // stop the browse
+     * DNSServiceRefDeallocate(BrowseRef) // stop the browse
      * // Any further calls to PeerConnectionRelease() will have no affect since the
      * // service instance to peer connection relationship is only maintained by the
      * // daemon while the browse is running.
      * <p>
      * <p>
-     * flags:           Not currently used.
+     * flags: Not currently used.
      * <p>
-     * name:            The name of the service instance to be resolved, as reported to the
+     * name: The name of the service instance to be resolved, as reported to the
      * DNSServiceBrowseReply() callback.
      * <p>
-     * regtype:         The type of the service instance to be resolved, as reported to the
+     * regtype: The type of the service instance to be resolved, as reported to the
      * DNSServiceBrowseReply() callback.
      * <p>
-     * domain:          The domain of the service instance to be resolved, as reported to the
+     * domain: The domain of the service instance to be resolved, as reported to the
      * DNSServiceBrowseReply() callback.
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success or the error that occurred.
+     * return value: Returns kDNSServiceErr_NoError on success or the error that occurred.
      */
     @Generated
     @CFunction
@@ -9661,7 +9661,7 @@ public final class Globals {
     /**
      * DNSServiceNATPortMappingCreate() Parameters:
      * <p>
-     * sdRef:           A pointer to an uninitialized DNSServiceRef
+     * sdRef: A pointer to an uninitialized DNSServiceRef
      * (or, if the kDNSServiceFlagsShareConnection flag is used,
      * a copy of the shared connection reference that is to be used).
      * If the call succeeds then it initializes (or updates) the DNSServiceRef,
@@ -9670,24 +9670,24 @@ public final class Globals {
      * by passing this DNSServiceRef to DNSServiceRefDeallocate()
      * (or by closing the underlying shared connection, if used).
      * <p>
-     * flags:           Possible values are:
+     * flags: Possible values are:
      * kDNSServiceFlagsShareConnection to use a shared connection.
      * <p>
-     * interfaceIndex:  The interface on which to create port mappings in a NAT gateway.
+     * interfaceIndex: The interface on which to create port mappings in a NAT gateway.
      * Passing 0 causes the port mapping request to be sent on the primary interface.
      * <p>
-     * protocol:        To request a port mapping, pass in kDNSServiceProtocol_UDP, or kDNSServiceProtocol_TCP,
+     * protocol: To request a port mapping, pass in kDNSServiceProtocol_UDP, or kDNSServiceProtocol_TCP,
      * or (kDNSServiceProtocol_UDP | kDNSServiceProtocol_TCP) to map both.
      * The local listening port number must also be specified in the internalPort parameter.
      * To just discover the NAT gateway's external IP address, pass zero for protocol,
      * internalPort, externalPort and ttl.
      * <p>
-     * internalPort:    The port number in network byte order on the local machine which is listening for packets.
+     * internalPort: The port number in network byte order on the local machine which is listening for packets.
      * <p>
-     * externalPort:    The requested external port in network byte order in the NAT gateway that you would
+     * externalPort: The requested external port in network byte order in the NAT gateway that you would
      * like to map to the internal port. Pass 0 if you don't care which external port is chosen for you.
      * <p>
-     * ttl:             The requested renewal period of the NAT port mapping, in seconds.
+     * ttl: The requested renewal period of the NAT port mapping, in seconds.
      * If the client machine crashes, suffers a power failure, is disconnected from
      * the network, or suffers some other unfortunate demise which causes it to vanish
      * unexpectedly without explicitly removing its NAT port mappings, then the NAT gateway
@@ -9699,12 +9699,12 @@ public final class Globals {
      * client vanishing, stale NAT port mappings will not be garbage-collected as quickly.
      * Most clients should pass 0 to use a system-wide default value.
      * <p>
-     * callBack:        The function to be called when the port mapping request succeeds or fails asynchronously.
+     * callBack: The function to be called when the port mapping request succeeds or fails asynchronously.
      * <p>
-     * context:         An application context pointer which is passed to the callback function
+     * context: An application context pointer which is passed to the callback function
      * (may be NULL).
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
+     * return value: Returns kDNSServiceErr_NoError on success (any subsequent, asynchronous
      * errors are delivered to the callback), otherwise returns an error code indicating
      * the error that occurred.
      * <p>
@@ -9736,21 +9736,21 @@ public final class Globals {
      * <p>
      * Parameters:
      * <p>
-     * fullName:        A pointer to a buffer that where the resulting full domain name is to be written.
+     * fullName: A pointer to a buffer that where the resulting full domain name is to be written.
      * The buffer must be kDNSServiceMaxDomainName (1009) bytes in length to
      * accommodate the longest legal domain name without buffer overrun.
      * <p>
-     * service:         The service name - any dots or backslashes must NOT be escaped.
+     * service: The service name - any dots or backslashes must NOT be escaped.
      * May be NULL (to construct a PTR record name, e.g.
      * "_ftp._tcp.apple.com.").
      * <p>
-     * regtype:         The service type followed by the protocol, separated by a dot
+     * regtype: The service type followed by the protocol, separated by a dot
      * (e.g. "_ftp._tcp").
      * <p>
-     * domain:          The domain name, e.g. "apple.com.". Literal dots or backslashes,
+     * domain: The domain name, e.g. "apple.com.". Literal dots or backslashes,
      * if any, must be escaped, e.g. "1st\. Floor.apple.com."
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError (0) on success, kDNSServiceErr_BadParam on error.
+     * return value: Returns kDNSServiceErr_NoError (0) on success, kDNSServiceErr_BadParam on error.
      */
     @Generated
     @CFunction
@@ -9782,8 +9782,8 @@ public final class Globals {
      * The caller can precompute the exact length required for all of the
      * key/value pairs to be added, or simply provide a fixed-sized buffer
      * known in advance to be large enough.
-     * A no-value (key-only) key requires  (1 + key length) bytes.
-     * A key with empty value requires     (1 + key length + 1) bytes.
+     * A no-value (key-only) key requires (1 + key length) bytes.
+     * A key with empty value requires (1 + key length + 1) bytes.
      * A key with non-empty value requires (1 + key length + 1 + value length).
      * For most applications, DNS-SD TXT records are generally
      * less than 100 bytes, so in most cases a simple fixed-sized
@@ -9796,11 +9796,11 @@ public final class Globals {
      * is the separator between the key and value in the on-the-wire
      * packet format; it is not part of either the key or the value.
      * <p>
-     * txtRecord:       A pointer to an uninitialized TXTRecordRef.
+     * txtRecord: A pointer to an uninitialized TXTRecordRef.
      * <p>
-     * bufferLen:       The size of the storage provided in the "buffer" parameter.
+     * bufferLen: The size of the storage provided in the "buffer" parameter.
      * <p>
-     * buffer:          Optional caller-supplied storage used to hold the TXTRecord data.
+     * buffer: Optional caller-supplied storage used to hold the TXTRecord data.
      * This storage must remain valid for as long as
      * the TXTRecordRef.
      */
@@ -9815,7 +9815,7 @@ public final class Globals {
      * using TXTRecordCreate()/TXTRecordSetValue()/TXTRecordRemoveValue().
      * Ownership of the buffer provided in TXTRecordCreate() returns to the client.
      * <p>
-     * txtRecord:           A TXTRecordRef initialized by calling TXTRecordCreate().
+     * txtRecord: A TXTRecordRef initialized by calling TXTRecordCreate().
      */
     @Generated
     @CFunction
@@ -9835,15 +9835,15 @@ public final class Globals {
      * For more details refer to "Data Syntax for DNS-SD TXT Records" in RFC 6763
      * <https://tools.ietf.org/html/rfc6763#section-6>
      * <p>
-     * txtRecord:       A TXTRecordRef initialized by calling TXTRecordCreate().
+     * txtRecord: A TXTRecordRef initialized by calling TXTRecordCreate().
      * <p>
-     * key:             A null-terminated string which only contains printable ASCII
+     * key: A null-terminated string which only contains printable ASCII
      * values (0x20-0x7E), excluding '=' (0x3D). Keys should be
      * 9 characters or fewer (not counting the terminating null).
      * <p>
-     * valueSize:       The size of the value.
+     * valueSize: The size of the value.
      * <p>
-     * value:           Any binary value. For values that represent
+     * value: Any binary value. For values that represent
      * textual data, UTF-8 is STRONGLY recommended.
      * For values that represent textual data, valueSize
      * should NOT include the terminating null (if any)
@@ -9852,7 +9852,7 @@ public final class Globals {
      * If non-NULL but valueSize is zero, then "key=" will be
      * added with empty value.
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success.
+     * return value: Returns kDNSServiceErr_NoError on success.
      * Returns kDNSServiceErr_Invalid if the "key" string contains
      * illegal characters.
      * Returns kDNSServiceErr_NoMemory if adding this key would
@@ -9870,11 +9870,11 @@ public final class Globals {
      * Removes a key from a TXTRecordRef. The "key" must be an
      * ASCII string which exists in the TXTRecordRef.
      * <p>
-     * txtRecord:       A TXTRecordRef initialized by calling TXTRecordCreate().
+     * txtRecord: A TXTRecordRef initialized by calling TXTRecordCreate().
      * <p>
-     * key:             A key name which exists in the TXTRecordRef.
+     * key: A key name which exists in the TXTRecordRef.
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success.
+     * return value: Returns kDNSServiceErr_NoError on success.
      * Returns kDNSServiceErr_NoSuchKey if the "key" does not
      * exist in the TXTRecordRef.
      */
@@ -9888,9 +9888,9 @@ public final class Globals {
      * <p>
      * Allows you to determine the length of the raw bytes within a TXTRecordRef.
      * <p>
-     * txtRecord:       A TXTRecordRef initialized by calling TXTRecordCreate().
+     * txtRecord: A TXTRecordRef initialized by calling TXTRecordCreate().
      * <p>
-     * return value:    Returns the size of the raw bytes inside a TXTRecordRef
+     * return value: Returns the size of the raw bytes inside a TXTRecordRef
      * which you can pass directly to DNSServiceRegister() or
      * to DNSServiceUpdateRecord().
      * Returns 0 if the TXTRecordRef is empty.
@@ -9904,9 +9904,9 @@ public final class Globals {
      * <p>
      * Allows you to retrieve a pointer to the raw bytes within a TXTRecordRef.
      * <p>
-     * txtRecord:       A TXTRecordRef initialized by calling TXTRecordCreate().
+     * txtRecord: A TXTRecordRef initialized by calling TXTRecordCreate().
      * <p>
-     * return value:    Returns a pointer to the raw bytes inside the TXTRecordRef
+     * return value: Returns a pointer to the raw bytes inside the TXTRecordRef
      * which you can pass directly to DNSServiceRegister() or
      * to DNSServiceUpdateRecord().
      */
@@ -9919,13 +9919,13 @@ public final class Globals {
      * <p>
      * Allows you to determine if a given TXT Record contains a specified key.
      * <p>
-     * txtLen:          The size of the received TXT Record.
+     * txtLen: The size of the received TXT Record.
      * <p>
-     * txtRecord:       Pointer to the received TXT Record bytes.
+     * txtRecord: Pointer to the received TXT Record bytes.
      * <p>
-     * key:             A null-terminated ASCII string containing the key name.
+     * key: A null-terminated ASCII string containing the key name.
      * <p>
-     * return value:    Returns 1 if the TXT Record contains the specified key.
+     * return value: Returns 1 if the TXT Record contains the specified key.
      * Otherwise, it returns 0.
      */
     @Generated
@@ -9938,15 +9938,15 @@ public final class Globals {
      * <p>
      * Allows you to retrieve the value for a given key from a TXT Record.
      * <p>
-     * txtLen:          The size of the received TXT Record
+     * txtLen: The size of the received TXT Record
      * <p>
-     * txtRecord:       Pointer to the received TXT Record bytes.
+     * txtRecord: Pointer to the received TXT Record bytes.
      * <p>
-     * key:             A null-terminated ASCII string containing the key name.
+     * key: A null-terminated ASCII string containing the key name.
      * <p>
-     * valueLen:        On output, will be set to the size of the "value" data.
+     * valueLen: On output, will be set to the size of the "value" data.
      * <p>
-     * return value:    Returns NULL if the key does not exist in this TXT record,
+     * return value: Returns NULL if the key does not exist in this TXT record,
      * or exists with no value (to differentiate between
      * these two cases use TXTRecordContainsKey()).
      * Returns pointer to location within TXT Record bytes
@@ -9966,11 +9966,11 @@ public final class Globals {
      * Returns the number of keys stored in the TXT Record. The count
      * can be used with TXTRecordGetItemAtIndex() to iterate through the keys.
      * <p>
-     * txtLen:          The size of the received TXT Record.
+     * txtLen: The size of the received TXT Record.
      * <p>
-     * txtRecord:       Pointer to the received TXT Record bytes.
+     * txtRecord: Pointer to the received TXT Record bytes.
      * <p>
-     * return value:    Returns the total number of keys in the TXT Record.
+     * return value: Returns the total number of keys in the TXT Record.
      */
     @Generated
     @CFunction
@@ -9990,26 +9990,26 @@ public final class Globals {
      * For keys with empty value, *value is non-NULL and *valueLen is zero.
      * For keys with non-empty value, *value is non-NULL and *valueLen is non-zero.
      * <p>
-     * txtLen:          The size of the received TXT Record.
+     * txtLen: The size of the received TXT Record.
      * <p>
-     * txtRecord:       Pointer to the received TXT Record bytes.
+     * txtRecord: Pointer to the received TXT Record bytes.
      * <p>
-     * itemIndex:       An index into the TXT Record.
+     * itemIndex: An index into the TXT Record.
      * <p>
-     * keyBufLen:       The size of the string buffer being supplied.
+     * keyBufLen: The size of the string buffer being supplied.
      * <p>
-     * key:             A string buffer used to store the key name.
+     * key: A string buffer used to store the key name.
      * On return, the buffer contains a null-terminated C-string
      * giving the key name. DNS-SD TXT keys are usually
      * 9 characters or fewer. To hold the maximum possible
      * key name, the buffer should be 256 bytes long.
      * <p>
-     * valueLen:        On output, will be set to the size of the "value" data.
+     * valueLen: On output, will be set to the size of the "value" data.
      * <p>
-     * value:           On output, *value is set to point to location within TXT
+     * value: On output, *value is set to point to location within TXT
      * Record bytes that holds the value data.
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success.
+     * return value: Returns kDNSServiceErr_NoError on success.
      * Returns kDNSServiceErr_NoMemory if keyBufLen is too short.
      * Returns kDNSServiceErr_Invalid if index is greater than
      * TXTRecordGetCount()-1.
@@ -10023,7 +10023,7 @@ public final class Globals {
      * DNSServiceSetDispatchQueue
      * <p>
      * Allows you to schedule a DNSServiceRef on a serial dispatch queue for receiving asynchronous
-     * callbacks.  It's the clients responsibility to ensure that the provided dispatch queue is running.
+     * callbacks. It's the clients responsibility to ensure that the provided dispatch queue is running.
      * <p>
      * A typical application that uses CFRunLoopRun or dispatch_main on its main thread will
      * usually schedule DNSServiceRefs on its main queue (which is always a serial queue)
@@ -10050,12 +10050,12 @@ public final class Globals {
      * Note that the call to DNSServiceRefDeallocate() must be done on the same queue originally passed
      * as an argument to DNSServiceSetDispatchQueue().
      * <p>
-     * service:         DNSServiceRef that was allocated and returned to the application, when the
+     * service: DNSServiceRef that was allocated and returned to the application, when the
      * application calls one of the DNSService API.
      * <p>
-     * queue:           dispatch queue where the application callback will be scheduled
+     * queue: dispatch queue where the application callback will be scheduled
      * <p>
-     * return value:    Returns kDNSServiceErr_NoError on success.
+     * return value: Returns kDNSServiceErr_NoError on success.
      * Returns kDNSServiceErr_NoMemory if it cannot create a dispatch source
      * Returns kDNSServiceErr_BadParam if the service param is invalid or the
      * queue param is invalid
@@ -10095,8 +10095,8 @@ public final class Globals {
      * @param ptr Any pointer that disambiguates among concurrent intervals with the same
      *            os_log_t and interval names.
      * @return Returns a valid os_signpost_id_t. Returns OS_SIGNPOST_ID_NULL if signposts
-     * are turned off. Returns OS_SIGNPOST_ID_INVALID if the log handle is
-     * system-scoped.
+     *         are turned off. Returns OS_SIGNPOST_ID_INVALID if the log handle is
+     *         system-scoped.
      */
     @Generated
     @CFunction
@@ -10113,7 +10113,7 @@ public final class Globals {
      *
      * @param log Log handle previously created with os_log_create.
      * @return Returns a valid os_signpost_id_t. Returns OS_SIGNPOST_ID_NULL if signposts
-     * are disabled.
+     *         are disabled.
      */
     @Generated
     @CFunction
@@ -10177,7 +10177,7 @@ public final class Globals {
      *
      * @param obj An Objective-C object.
      * @return A pointer to any extra bytes allocated with \e obj. If \e obj was
-     * not allocated with any extra bytes, then dereferencing the returned pointer is undefined.
+     *         not allocated with any extra bytes, then dereferencing the returned pointer is undefined.
      */
     @Generated
     @CFunction
@@ -10229,9 +10229,9 @@ public final class Globals {
      *                  <p>
      *                  Errors will be returned in the following cases:
      *                  <p>
-     *                  EALREADY		The thread is already part of a workgroup that the specified
+     *                  EALREADY The thread is already part of a workgroup that the specified
      *                  workgroup does not nest with
-     *                  EINVAL		The workgroup has been cancelled
+     *                  EINVAL The workgroup has been cancelled
      */
     @Generated
     @CFunction
@@ -10276,7 +10276,7 @@ public final class Globals {
      * @param arena       The client managed arena to associate with the workgroup. This value can
      *                    be NULL.
      * @param max_workers The maximum number of threads that will ever query the workgroup for the
-     *                    arena and request an index into it.  If the arena is not used to partition
+     *                    arena and request an index into it. If the arena is not used to partition
      *                    work amongst member threads, then this field can be 0.
      * @param destructor  A destructor to call on the previously assigned working arena, if any
      */
@@ -10556,7 +10556,7 @@ public final class Globals {
      * Returns the stack of nested activities associated with the current thread.
      * <p>
      * Activities have a sense of nesting and therefore there could be more than
-     * one activity involved on the current thread.  This should be used by
+     * one activity involved on the current thread. This should be used by
      * diagnostic tools only for making additional decisions about a situation.
      *
      * @param entries Pass a buffer of sufficient size to hold the the number of os_activity_id_t

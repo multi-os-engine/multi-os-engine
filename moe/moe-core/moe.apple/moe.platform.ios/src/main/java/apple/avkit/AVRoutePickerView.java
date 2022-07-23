@@ -62,7 +62,7 @@ public class AVRoutePickerView extends UIView {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * [@property]	activeTintColor
+     * [@property] activeTintColor
      * <p>
      * The view's tint color when AirPlay is active.
      */
@@ -233,7 +233,7 @@ public class AVRoutePickerView extends UIView {
     public static native String debugDescription_static();
 
     /**
-     * [@property]	delegate
+     * [@property] delegate
      * <p>
      * The route picker view's delegate.
      */
@@ -322,7 +322,7 @@ public class AVRoutePickerView extends UIView {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]	activeTintColor
+     * [@property] activeTintColor
      * <p>
      * The view's tint color when AirPlay is active.
      */
@@ -379,7 +379,7 @@ public class AVRoutePickerView extends UIView {
     public static native void setAnimationsEnabled(boolean enabled);
 
     /**
-     * [@property]	delegate
+     * [@property] delegate
      * <p>
      * The route picker view's delegate.
      */
@@ -388,7 +388,7 @@ public class AVRoutePickerView extends UIView {
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVRoutePickerViewDelegate value);
 
     /**
-     * [@property]	delegate
+     * [@property] delegate
      * <p>
      * The route picker view's delegate.
      */
@@ -448,18 +448,20 @@ public class AVRoutePickerView extends UIView {
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
-     * [@property]	prioritizesVideoDevices
+     * [@property] prioritizesVideoDevices
      * <p>
-     * Whether or not the route picker should sort video capable output devices to the top of the list. Setting this to YES will cause the route picker view to show a videocentric icon.
+     * Whether or not the route picker should sort video capable output devices to the top of the list. Setting this to
+     * YES will cause the route picker view to show a videocentric icon.
      */
     @Generated
     @Selector("prioritizesVideoDevices")
     public native boolean prioritizesVideoDevices();
 
     /**
-     * [@property]	prioritizesVideoDevices
+     * [@property] prioritizesVideoDevices
      * <p>
-     * Whether or not the route picker should sort video capable output devices to the top of the list. Setting this to YES will cause the route picker view to show a videocentric icon.
+     * Whether or not the route picker should sort video capable output devices to the top of the list. Setting this to
+     * YES will cause the route picker view to show a videocentric icon.
      */
     @Generated
     @Selector("setPrioritizesVideoDevices:")

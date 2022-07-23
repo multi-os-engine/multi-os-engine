@@ -73,7 +73,7 @@ public class MPSGraphShapedType extends MPSGraphType {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]   dataType
+     * [@property] dataType
      * <p>
      * dataType of the shapedType
      */
@@ -137,7 +137,7 @@ public class MPSGraphShapedType extends MPSGraphType {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   dataType
+     * [@property] dataType
      * <p>
      * dataType of the shapedType
      */

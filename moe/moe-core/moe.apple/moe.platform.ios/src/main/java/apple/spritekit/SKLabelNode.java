@@ -212,7 +212,9 @@ public class SKLabelNode extends SKNode {
     public native UIColor color();
 
     /**
-     * Controls the blending between the rendered text and a color. The valid interval of values is from 0.0 up to and including 1.0. A value above or below that interval is clamped to the minimum (0.0) if below or the maximum (1.0) if above.
+     * Controls the blending between the rendered text and a color. The valid interval of values is from 0.0 up to and
+     * including 1.0. A value above or below that interval is clamped to the minimum (0.0) if below or the maximum (1.0)
+     * if above.
      */
     @Generated
     @Selector("colorBlendFactor")
@@ -269,7 +271,9 @@ public class SKLabelNode extends SKNode {
     public native void setColor(UIColor value);
 
     /**
-     * Controls the blending between the rendered text and a color. The valid interval of values is from 0.0 up to and including 1.0. A value above or below that interval is clamped to the minimum (0.0) if below or the maximum (1.0) if above.
+     * Controls the blending between the rendered text and a color. The valid interval of values is from 0.0 up to and
+     * including 1.0. A value above or below that interval is clamped to the minimum (0.0) if below or the maximum (1.0)
+     * if above.
      */
     @Generated
     @Selector("setColorBlendFactor:")

@@ -151,7 +151,8 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
             @ObjCBlock(name = "call_reportScoresWithCompletionHandler") Block_reportScoresWithCompletionHandler completionHandler);
 
     /**
-     * Use this alternative to reportScores:withCompletionHandler: to allow only certain specific challenges to be completed. Pass nil to avoid completing any challenges.
+     * Use this alternative to reportScores:withCompletionHandler: to allow only certain specific challenges to be
+     * completed. Pass nil to avoid completing any challenges.
      */
     @Generated
     @Selector("reportScores:withEligibleChallenges:withCompletionHandler:")
@@ -206,7 +207,8 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
             @ObjCBlock(name = "call_challengeComposeControllerWithPlayersMessageCompletionHandler") Block_challengeComposeControllerWithPlayersMessageCompletionHandler completionHandler);
 
     /**
-     * optional additional context that allows a game to store and retrieve additional data associated with the store.  Default value of zero is returned if no value is set.
+     * optional additional context that allows a game to store and retrieve additional data associated with the store.
+     * Default value of zero is returned if no value is set.
      */
     @Generated
     @Selector("context")
@@ -259,7 +261,8 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     public native GKScore initWithLeaderboardIdentifierForPlayer(String identifier, String playerID);
 
     /**
-     * Initialize the achievement for a specific player. Use to submit participant scores when ending a turn-based match.
+     * Initialize the achievement for a specific player. Use to submit participant scores when ending a turn-based
+     * match.
      */
     @Generated
     @Selector("initWithLeaderboardIdentifier:player:")
@@ -315,7 +318,8 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     public native void setCategory(String value);
 
     /**
-     * optional additional context that allows a game to store and retrieve additional data associated with the store.  Default value of zero is returned if no value is set.
+     * optional additional context that allows a game to store and retrieve additional data associated with the store.
+     * Default value of zero is returned if no value is set.
      */
     @Generated
     @Selector("setContext:")
@@ -329,7 +333,8 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     public native void setLeaderboardIdentifier(String value);
 
     /**
-     * Convenience property to make the leaderboard associated with this GKScore, the default leaderboard for this player. Default value is false.
+     * Convenience property to make the leaderboard associated with this GKScore, the default leaderboard for this
+     * player. Default value is false.
      * If true, reporting that score will make the category this score belongs to, the default leaderboard for this user
      */
     @Generated
@@ -344,7 +349,8 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     public native void setValue(long value);
 
     /**
-     * Convenience property to make the leaderboard associated with this GKScore, the default leaderboard for this player. Default value is false.
+     * Convenience property to make the leaderboard associated with this GKScore, the default leaderboard for this
+     * player. Default value is false.
      * If true, reporting that score will make the category this score belongs to, the default leaderboard for this user
      */
     @Generated

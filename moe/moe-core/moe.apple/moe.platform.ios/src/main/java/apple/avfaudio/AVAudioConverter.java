@@ -67,7 +67,8 @@ public class AVAudioConverter extends NSObject {
     /**
      * [@property] applicableEncodeBitRates
      * <p>
-     * When encoding, an NSArray of NSNumber of bit rates that can be applied based on the current formats and settings. Returns nil if not encoding.
+     * When encoding, an NSArray of NSNumber of bit rates that can be applied based on the current formats and settings.
+     * Returns nil if not encoding.
      */
     @Generated
     @Selector("applicableEncodeBitRates")
@@ -76,7 +77,8 @@ public class AVAudioConverter extends NSObject {
     /**
      * [@property] applicableEncodeSampleRates
      * <p>
-     * When encoding, an NSArray of NSNumber of output sample rates that can be applied based on the current formats and settings. Returns nil if not encoding.
+     * When encoding, an NSArray of NSNumber of output sample rates that can be applied based on the current formats and
+     * settings. Returns nil if not encoding.
      */
     @Generated
     @Selector("applicableEncodeSampleRates")
@@ -98,7 +100,8 @@ public class AVAudioConverter extends NSObject {
     /**
      * [@property] availableEncodeChannelLayoutTags
      * <p>
-     * When encoding, an NSArray of NSNumber of all output channel layout tags provided by the codec. Returns nil if not encoding.
+     * When encoding, an NSArray of NSNumber of all output channel layout tags provided by the codec. Returns nil if not
+     * encoding.
      */
     @Generated
     @Selector("availableEncodeChannelLayoutTags")
@@ -107,7 +110,8 @@ public class AVAudioConverter extends NSObject {
     /**
      * [@property] availableEncodeSampleRates
      * <p>
-     * When encoding, an NSArray of NSNumber of all output sample rates provided by the codec. Returns nil if not encoding.
+     * When encoding, an NSArray of NSNumber of all output sample rates provided by the codec. Returns nil if not
+     * encoding.
      */
     @Generated
     @Selector("availableEncodeSampleRates")
@@ -126,7 +130,8 @@ public class AVAudioConverter extends NSObject {
     /**
      * [@property] bitRateStrategy
      * <p>
-     * When encoding, an AVEncoderBitRateStrategyKey value constant as defined in AVAudioSettings.h. Returns nil if not encoding.
+     * When encoding, an AVEncoderBitRateStrategyKey value constant as defined in AVAudioSettings.h. Returns nil if not
+     * encoding.
      */
     @Generated
     @Selector("bitRateStrategy")
@@ -173,7 +178,8 @@ public class AVAudioConverter extends NSObject {
      * It attempts to fill the buffer to its capacity. On return, the buffer's length indicates the number of
      * sample frames successfully converted.
      *
-     * @param inputBlock   A block which will be called to get input data as needed. See description for AVAudioConverterInputBlock.
+     * @param inputBlock   A block which will be called to get input data as needed. See description for
+     *                     AVAudioConverterInputBlock.
      * @param outputBuffer The output buffer.
      * @param outError     An error if the conversion fails.
      * @return An AVAudioConverterOutputStatus is returned.
@@ -220,7 +226,7 @@ public class AVAudioConverter extends NSObject {
     public static native String description_static();
 
     /**
-     * [@property]	dither
+     * [@property] dither
      * <p>
      * Setting YES will turn on dither, if dither makes sense in given the current formats
      * and settings. Default value is NO.
@@ -230,7 +236,7 @@ public class AVAudioConverter extends NSObject {
     public native boolean dither();
 
     /**
-     * [@property]	downmix
+     * [@property] downmix
      * <p>
      * If YES and channel remapping is necessary, then channels will be mixed as
      * appropriate instead of remapped. Default value is NO.
@@ -293,7 +299,7 @@ public class AVAudioConverter extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]	magicCookie
+     * [@property] magicCookie
      * <p>
      * Decoders require some data in the form of a magicCookie in order to decode properly.
      * Encoders will produce a magicCookie.
@@ -329,7 +335,7 @@ public class AVAudioConverter extends NSObject {
     public native AVAudioFormat outputFormat();
 
     /**
-     * [@property]	primeInfo
+     * [@property] primeInfo
      * <p>
      * Indicates the the number of priming frames.
      */
@@ -339,7 +345,7 @@ public class AVAudioConverter extends NSObject {
     public native AVAudioConverterPrimeInfo primeInfo();
 
     /**
-     * [@property]	primeMethod
+     * [@property] primeMethod
      * <p>
      * Indicates the priming method to be used by the sample rate converter or decoder.
      */
@@ -366,7 +372,7 @@ public class AVAudioConverter extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]	sampleRateConverterAlgorithm
+     * [@property] sampleRateConverterAlgorithm
      * <p>
      * An AVSampleRateConverterAlgorithmKey value as defined in AVAudioSettings.h.
      */
@@ -375,7 +381,7 @@ public class AVAudioConverter extends NSObject {
     public native String sampleRateConverterAlgorithm();
 
     /**
-     * [@property]	sampleRateConverterQuality
+     * [@property] sampleRateConverterQuality
      * <p>
      * An AVAudioQuality value as defined in AVAudioSettings.h.
      */
@@ -396,7 +402,8 @@ public class AVAudioConverter extends NSObject {
     /**
      * [@property] bitRateStrategy
      * <p>
-     * When encoding, an AVEncoderBitRateStrategyKey value constant as defined in AVAudioSettings.h. Returns nil if not encoding.
+     * When encoding, an AVEncoderBitRateStrategyKey value constant as defined in AVAudioSettings.h. Returns nil if not
+     * encoding.
      */
     @Generated
     @Selector("setBitRateStrategy:")
@@ -418,7 +425,7 @@ public class AVAudioConverter extends NSObject {
     public native void setChannelMap(NSArray<? extends NSNumber> value);
 
     /**
-     * [@property]	dither
+     * [@property] dither
      * <p>
      * Setting YES will turn on dither, if dither makes sense in given the current formats
      * and settings. Default value is NO.
@@ -428,7 +435,7 @@ public class AVAudioConverter extends NSObject {
     public native void setDither(boolean value);
 
     /**
-     * [@property]	downmix
+     * [@property] downmix
      * <p>
      * If YES and channel remapping is necessary, then channels will be mixed as
      * appropriate instead of remapped. Default value is NO.
@@ -438,7 +445,7 @@ public class AVAudioConverter extends NSObject {
     public native void setDownmix(boolean value);
 
     /**
-     * [@property]	magicCookie
+     * [@property] magicCookie
      * <p>
      * Decoders require some data in the form of a magicCookie in order to decode properly.
      * Encoders will produce a magicCookie.
@@ -448,7 +455,7 @@ public class AVAudioConverter extends NSObject {
     public native void setMagicCookie(NSData value);
 
     /**
-     * [@property]	primeInfo
+     * [@property] primeInfo
      * <p>
      * Indicates the the number of priming frames.
      */
@@ -457,7 +464,7 @@ public class AVAudioConverter extends NSObject {
     public native void setPrimeInfo(@ByValue AVAudioConverterPrimeInfo value);
 
     /**
-     * [@property]	primeMethod
+     * [@property] primeMethod
      * <p>
      * Indicates the priming method to be used by the sample rate converter or decoder.
      */
@@ -466,7 +473,7 @@ public class AVAudioConverter extends NSObject {
     public native void setPrimeMethod(@NInt long value);
 
     /**
-     * [@property]	sampleRateConverterAlgorithm
+     * [@property] sampleRateConverterAlgorithm
      * <p>
      * An AVSampleRateConverterAlgorithmKey value as defined in AVAudioSettings.h.
      */
@@ -475,7 +482,7 @@ public class AVAudioConverter extends NSObject {
     public native void setSampleRateConverterAlgorithm(String value);
 
     /**
-     * [@property]	sampleRateConverterQuality
+     * [@property] sampleRateConverterQuality
      * <p>
      * An AVAudioQuality value as defined in AVAudioSettings.h.
      */

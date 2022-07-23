@@ -20,19 +20,19 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
 /**
- * [@enum]		AUHostTransportStateFlags
+ * [@enum] AUHostTransportStateFlags
  * <p>
  * Flags describing the host's transport state.
- * [@constant]	AUHostTransportStateChanged
+ * [@constant] AUHostTransportStateChanged
  * True if, since the callback was last called, there was a change to the state of, or
  * discontinuities in, the host's transport. Can indicate such state changes as
  * start/stop, or seeking to another position in the timeline.
- * [@constant]	AUHostTransportStateMoving
+ * [@constant] AUHostTransportStateMoving
  * True if the transport is moving.
- * [@constant]	AUHostTransportStateRecording
+ * [@constant] AUHostTransportStateRecording
  * True if the host is recording, or prepared to record. Can be true with or without the
  * transport moving.
- * [@constant]	AUHostTransportStateCycling
+ * [@constant] AUHostTransportStateCycling
  * True if the host is cycling or looping.
  */
 @Generated

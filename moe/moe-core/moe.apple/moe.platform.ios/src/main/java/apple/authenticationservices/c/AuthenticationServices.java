@@ -112,7 +112,8 @@ public final class AuthenticationServices {
     @Generated @NInt public static final long ASCOSEEllipticCurveIdentifierP256 = 0x0000000000000001L;
 
     /**
-     * Indicates that the authenticator should try to verify the user if possible, but authentication should proceed even if user verification is not currently available.
+     * Indicates that the authenticator should try to verify the user if possible, but authentication should proceed
+     * even if user verification is not currently available.
      */
     @Generated
     @CVariable()
@@ -120,7 +121,8 @@ public final class AuthenticationServices {
     public static native String ASAuthorizationPublicKeyCredentialUserVerificationPreferencePreferred();
 
     /**
-     * Indicates that the authenticator must attempt to verify the user. If the authenticator is not currently capable of verifying the user, authentication will fail.
+     * Indicates that the authenticator must attempt to verify the user. If the authenticator is not currently capable
+     * of verifying the user, authentication will fail.
      */
     @Generated
     @CVariable()
@@ -128,7 +130,8 @@ public final class AuthenticationServices {
     public static native String ASAuthorizationPublicKeyCredentialUserVerificationPreferenceRequired();
 
     /**
-     * Indicates that the authenticator should prefer _not_ verifying the user, if possible. This may be used to streamline an authentication process where the user has already been verified.
+     * Indicates that the authenticator should prefer _not_ verifying the user, if possible. This may be used to
+     * streamline an authentication process where the user has already been verified.
      */
     @Generated
     @CVariable()
@@ -160,7 +163,9 @@ public final class AuthenticationServices {
     public static native String ASAuthorizationPublicKeyCredentialAttestationKindIndirect();
 
     /**
-     * Indicates that the authenticator should perform an attestation which may include information that uniquely identifies that authenticator. Authenticators should only allow enterprise attestation if they have been previously enrolled in enterprise management, and should restrict it to managed Relying Parties.
+     * Indicates that the authenticator should perform an attestation which may include information that uniquely
+     * identifies that authenticator. Authenticators should only allow enterprise attestation if they have been
+     * previously enrolled in enterprise management, and should restrict it to managed Relying Parties.
      */
     @Generated
     @CVariable()
@@ -184,7 +189,8 @@ public final class AuthenticationServices {
     public static native String ASAuthorizationPublicKeyCredentialResidentKeyPreferencePreferred();
 
     /**
-     * Indicates that the authenticator must store the private key, and that key creation should fail if the authenticator is not currently capable of storing the key.
+     * Indicates that the authenticator must store the private key, and that key creation should fail if the
+     * authenticator is not currently capable of storing the key.
      */
     @Generated
     @CVariable()

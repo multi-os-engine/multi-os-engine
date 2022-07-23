@@ -196,8 +196,10 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
     /**
      * Call to update the currently visible menu. This method does nothing if called before a menu is presented.
      *
-     * @param block Called with a mutable copy of the currently visible menu. Modify and return this menu (or an entirely
-     *              new one) to change the currently visible menu items. Starting in iOS 15, this block is called once for
+     * @param block Called with a mutable copy of the currently visible menu. Modify and return this menu (or an
+     *              entirely
+     *              new one) to change the currently visible menu items. Starting in iOS 15, this block is called once
+     *              for
      *              every visible submenu. For example, in the following hierarchy:
      *              <p>
      *              *- Root Menu

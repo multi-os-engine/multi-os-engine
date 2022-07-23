@@ -141,8 +141,13 @@ public class NSValueTransformer extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * name-based registry for shared objects (especially used when loading nib files with transformers specified by name in Interface Builder) - also useful for localization (developers can register different kind of transformers or differently configured transformers at application startup and refer to them by name from within nib files or other code)
-     * if valueTransformerForName: does not find a registered transformer instance, it will fall back to looking up a class with the specified name - if one is found, it will instantiate a transformer with the default -init method and automatically register it
+     * name-based registry for shared objects (especially used when loading nib files with transformers specified by
+     * name in Interface Builder) - also useful for localization (developers can register different kind of transformers
+     * or differently configured transformers at application startup and refer to them by name from within nib files or
+     * other code)
+     * if valueTransformerForName: does not find a registered transformer instance, it will fall back to looking up a
+     * class with the specified name - if one is found, it will instantiate a transformer with the default -init method
+     * and automatically register it
      */
     @Generated
     @Selector("setValueTransformer:forName:")

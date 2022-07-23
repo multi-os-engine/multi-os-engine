@@ -165,7 +165,8 @@ public class PHAssetResourceManager extends NSObject {
     public native PHAssetResourceManager init();
 
     /**
-     * Handlers are called on an arbitrary serial queue. The lifetime of the data is not guaranteed beyond that of the handler.
+     * Handlers are called on an arbitrary serial queue. The lifetime of the data is not guaranteed beyond that of the
+     * handler.
      */
     @Generated
     @Selector("requestDataForAssetResource:options:dataReceivedHandler:completionHandler:")

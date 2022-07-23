@@ -23,7 +23,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * NSTextElement is an abstract base class for representing the smallest text layout unit typically paragraphs, tables, or attachments. A text element is associated with an NSTextContentManager.
+ * NSTextElement is an abstract base class for representing the smallest text layout unit typically paragraphs, tables,
+ * or attachments. A text element is associated with an NSTextContentManager.
  */
 @Generated
 @Library("UIKit")

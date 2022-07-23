@@ -160,8 +160,10 @@ public class UIPointerShape extends NSObject implements NSCopying {
     /**
      * Morphs the pointer to a rounded rectangle with the provided rect and the standard system corner radius.
      *
-     * @param rect CGRect describing the pointer's frame. If used alongside a content effect, this rect must be in the effect's
-     *             preview's container view's coordinate space. Otherwise, it is centered about the pointer's current location
+     * @param rect CGRect describing the pointer's frame. If used alongside a content effect, this rect must be in the
+     *             effect's
+     *             preview's container view's coordinate space. Otherwise, it is centered about the pointer's current
+     *             location
      *             and the rect's origin is interpreted as an offset.
      */
     @Generated
@@ -171,7 +173,8 @@ public class UIPointerShape extends NSObject implements NSCopying {
     /**
      * Morphs the pointer to a rounded rectangle with the provided rect and cornerRadius.
      *
-     * @param rect         CGRect describing the pointer's frame. If used alongside a content effect, this rect must be in
+     * @param rect         CGRect describing the pointer's frame. If used alongside a content effect, this rect must be
+     *                     in
      *                     the effect's preview's container view's coordinate space. Otherwise, it is centered about the
      *                     pointer's current location and the rect's origin is interpreted as an offset.
      * @param cornerRadius Corner radius to apply to the pointer.

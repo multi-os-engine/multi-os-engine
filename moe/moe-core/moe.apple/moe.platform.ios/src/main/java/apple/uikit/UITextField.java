@@ -71,9 +71,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UITextField extends UIControl
-        implements UITextInput, NSCoding, UIContentSizeCategoryAdjusting, UITextDraggable, UITextDroppable,
-        UITextPasteConfigurationSupporting {
+public class UITextField extends UIControl implements UITextInput, NSCoding, UIContentSizeCategoryAdjusting,
+        UITextDraggable, UITextDroppable, UITextPasteConfigurationSupporting {
     static {
         NatJ.register();
     }
@@ -523,7 +522,8 @@ public class UITextField extends UIControl
     public native boolean clearsOnBeginEditing();
 
     /**
-     * defaults to NO. if YES, the selection UI is hidden, and inserting text will replace the contents of the field. changing the selection will automatically set this to NO.
+     * defaults to NO. if YES, the selection UI is hidden, and inserting text will replace the contents of the field.
+     * changing the selection will automatically set this to NO.
      */
     @Generated
     @Selector("clearsOnInsertion")
@@ -653,7 +653,7 @@ public class UITextField extends UIControl
     public native UITextInputDelegate inputDelegate();
 
     /**
-     * Presented when object becomes first responder.  If set to nil, reverts to following responder chain.  If
+     * Presented when object becomes first responder. If set to nil, reverts to following responder chain. If
      * set while first responder, will not take effect until reloadInputViews is called.
      */
     @Generated
@@ -897,7 +897,8 @@ public class UITextField extends UIControl
     public native void setClearsOnBeginEditing(boolean value);
 
     /**
-     * defaults to NO. if YES, the selection UI is hidden, and inserting text will replace the contents of the field. changing the selection will automatically set this to NO.
+     * defaults to NO. if YES, the selection UI is hidden, and inserting text will replace the contents of the field.
+     * changing the selection will automatically set this to NO.
      */
     @Generated
     @Selector("setClearsOnInsertion:")
@@ -972,7 +973,7 @@ public class UITextField extends UIControl
     }
 
     /**
-     * Presented when object becomes first responder.  If set to nil, reverts to following responder chain.  If
+     * Presented when object becomes first responder. If set to nil, reverts to following responder chain. If
      * set while first responder, will not take effect until reloadInputViews is called.
      */
     @Generated

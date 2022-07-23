@@ -73,7 +73,7 @@ public class CIBlendKernel extends CIColorKernel {
      * by blending a foreground and background images.
      * <p>
      * The 'extent' of the result image will be determined by the reciver and
-     * the extent of the forground and background images.  For most of the
+     * the extent of the forground and background images. For most of the
      * builtin blend kernels (as well as custom blend kernels) the result image
      * extent will be the union of the forground and background image
      * extents.
@@ -374,7 +374,7 @@ public class CIBlendKernel extends CIColorKernel {
      * by blending a foreground and background images in the specifid colorspace.
      * <p>
      * The 'extent' of the result image will be determined by the reciver and
-     * the extent of the forground and background images.  For most of the
+     * the extent of the forground and background images. For most of the
      * builtin blend kernels (as well as custom blend kernels) the result image
      * extent will be the union of the forground and background image
      * extents.

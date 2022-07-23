@@ -46,7 +46,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
     }
 
     /**
-     * [@property]      JWSRepresentation
+     * [@property] JWSRepresentation
      * <p>
      * The record's entirety as JSON Web Signature (JWS) data.
      */
@@ -99,7 +99,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
     public static native String description_static();
 
     /**
-     * [@property]      expirationDate
+     * [@property] expirationDate
      * <p>
      * The date this record expires.
      */
@@ -138,7 +138,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
     public static native boolean isSubclassOfClass(Class aClass);
 
     /**
-     * [@property]      issuedDate
+     * [@property] issuedDate
      * <p>
      * The date this record was issued.
      */
@@ -147,7 +147,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
     public native NSDate issuedDate();
 
     /**
-     * [@property]      issuerIdentifier
+     * [@property] issuerIdentifier
      * <p>
      * The identifier for the issuer of this record.
      */
@@ -156,7 +156,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
     public native String issuerIdentifier();
 
     /**
-     * [@property]      itemNames
+     * [@property] itemNames
      * <p>
      * A list of display names for each item contained in this record.
      */
@@ -174,7 +174,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
     public static native HKVerifiableClinicalRecord new_objc();
 
     /**
-     * [@property]      recordTypes
+     * [@property] recordTypes
      * <p>
      * The types present in this record.
      */
@@ -183,7 +183,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
     public native NSArray<String> recordTypes();
 
     /**
-     * [@property]      relevantDate
+     * [@property] relevantDate
      * <p>
      * A date most relevant to this record, like when a vaccine was
      * administered or a test was performed.
@@ -205,7 +205,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]      subject
+     * [@property] subject
      * <p>
      * The subject of this record.
      */

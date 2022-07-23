@@ -29,7 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSCNNNeuronHardSigmoid
  * [@dependency] This depends on Metal.framework
  * <p>
- * Specifies the hard sigmoid neuron filter.  For each pixel, applies the following function: f(x) = clamp((a * x) + b, 0, 1)
+ * Specifies the hard sigmoid neuron filter. For each pixel, applies the following function: f(x) = clamp((a * x) + b,
+ * 0, 1)
  */
 @Generated
 @Library("MetalPerformanceShaders")

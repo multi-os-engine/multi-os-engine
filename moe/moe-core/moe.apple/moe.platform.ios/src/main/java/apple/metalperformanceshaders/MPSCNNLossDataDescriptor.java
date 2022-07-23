@@ -68,7 +68,7 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   bytesPerImage
+     * [@property] bytesPerImage
      * <p>
      * Slice bytes of loss data.
      * <p>
@@ -80,7 +80,7 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
     public native long bytesPerImage();
 
     /**
-     * [@property]   bytesPerRow
+     * [@property] bytesPerRow
      * <p>
      * Row bytes of loss data.
      * <p>
@@ -170,7 +170,7 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   layout
+     * [@property] layout
      * <p>
      * Data layout of loss data. See MPSImage.h for more information.
      * <p>
@@ -195,7 +195,7 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   bytesPerImage
+     * [@property] bytesPerImage
      * <p>
      * Slice bytes of loss data.
      * <p>
@@ -206,7 +206,7 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
     public native void setBytesPerImage(@NUInt long value);
 
     /**
-     * [@property]   bytesPerRow
+     * [@property] bytesPerRow
      * <p>
      * Row bytes of loss data.
      * <p>
@@ -221,7 +221,7 @@ public class MPSCNNLossDataDescriptor extends NSObject implements NSCopying {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   size
+     * [@property] size
      * <p>
      * Size of loss data: (width, height, feature channels}.
      * <p>

@@ -391,7 +391,8 @@ public class MKAnnotationView extends UIView {
     }
 
     /**
-     * calloutOffset is the offset in screen points from the top-middle of the annotation view, where the anchor of the callout should be shown.
+     * calloutOffset is the offset in screen points from the top-middle of the annotation view, where the anchor of the
+     * callout should be shown.
      */
     @Generated
     @Selector("calloutOffset")
@@ -531,7 +532,8 @@ public class MKAnnotationView extends UIView {
     public native void setAnnotation(@Mapped(ObjCObjectMapper.class) MKAnnotation value);
 
     /**
-     * calloutOffset is the offset in screen points from the top-middle of the annotation view, where the anchor of the callout should be shown.
+     * calloutOffset is the offset in screen points from the top-middle of the annotation view, where the anchor of the
+     * callout should be shown.
      */
     @Generated
     @Selector("setCalloutOffset:")

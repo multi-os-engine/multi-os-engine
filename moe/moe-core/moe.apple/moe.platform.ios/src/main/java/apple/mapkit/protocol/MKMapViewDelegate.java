@@ -43,7 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCProtocolName("MKMapViewDelegate")
 public interface MKMapViewDelegate {
     /**
-     * mapView:annotationView:calloutAccessoryControlTapped: is called when the user taps on left & right callout accessory UIControls.
+     * mapView:annotationView:calloutAccessoryControlTapped: is called when the user taps on left & right callout
+     * accessory UIControls.
      */
     @Generated
     @IsOptional
@@ -221,7 +222,8 @@ public interface MKMapViewDelegate {
     }
 
     /**
-     * Return nil for default MKClusterAnnotation, it is illegal to return a cluster annotation not containing the identical array of member annotations given.
+     * Return nil for default MKClusterAnnotation, it is illegal to return a cluster annotation not containing the
+     * identical array of member annotations given.
      */
     @Generated
     @IsOptional

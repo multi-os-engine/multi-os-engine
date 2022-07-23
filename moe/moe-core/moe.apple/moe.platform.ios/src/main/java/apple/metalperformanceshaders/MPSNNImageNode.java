@@ -100,7 +100,7 @@ public class MPSNNImageNode extends NSObject {
      * Tag a image node for view later
      * <p>
      * Most image nodes are private to the graph. These alias memory heavily and
-     * consequently generally have invalid state when the graph exits.  When
+     * consequently generally have invalid state when the graph exits. When
      * exportFromGraph = YES, the image is preserved and made available through
      * the [MPSNNGraph encode... intermediateImages:... list.
      * <p>
@@ -108,7 +108,7 @@ public class MPSNNImageNode extends NSObject {
      * recycling memory. It will nearly always cause the
      * amount of memory used by the graph to increase by the size
      * of the image. There will probably be a performance
-     * regression accordingly.  This feature should generally
+     * regression accordingly. This feature should generally
      * be used only when the node is needed as an input for
      * further work and recomputing it is prohibitively costly.
      * <p>
@@ -141,7 +141,7 @@ public class MPSNNImageNode extends NSObject {
     /**
      * MPS resource identifier
      * <p>
-     * See MPSHandle protocol description.  Default: nil
+     * See MPSHandle protocol description. Default: nil
      */
     @Generated
     @Selector("handle")
@@ -214,7 +214,7 @@ public class MPSNNImageNode extends NSObject {
      * Tag a image node for view later
      * <p>
      * Most image nodes are private to the graph. These alias memory heavily and
-     * consequently generally have invalid state when the graph exits.  When
+     * consequently generally have invalid state when the graph exits. When
      * exportFromGraph = YES, the image is preserved and made available through
      * the [MPSNNGraph encode... intermediateImages:... list.
      * <p>
@@ -222,7 +222,7 @@ public class MPSNNImageNode extends NSObject {
      * recycling memory. It will nearly always cause the
      * amount of memory used by the graph to increase by the size
      * of the image. There will probably be a performance
-     * regression accordingly.  This feature should generally
+     * regression accordingly. This feature should generally
      * be used only when the node is needed as an input for
      * further work and recomputing it is prohibitively costly.
      * <p>
@@ -245,7 +245,7 @@ public class MPSNNImageNode extends NSObject {
     /**
      * MPS resource identifier
      * <p>
-     * See MPSHandle protocol description.  Default: nil
+     * See MPSHandle protocol description. Default: nil
      */
     @Generated
     @Selector("setHandle:")

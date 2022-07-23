@@ -166,7 +166,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     public static native long version_static();
 
     /**
-     * [@property]   URL
+     * [@property] URL
      * <p>
      * A HTTP(S) or data URL used to encode data to be transferred in message.
      * <p>
@@ -179,7 +179,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     public native NSURL URL();
 
     /**
-     * [@property]   accessibilityLabel
+     * [@property] accessibilityLabel
      * <p>
      * A localized string describing the message.
      * <p>
@@ -202,7 +202,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     public native void encodeWithCoder(NSCoder coder);
 
     /**
-     * [@property]   error
+     * [@property] error
      * <p>
      * An error object that indicates why a message failed to send.
      * <p>
@@ -243,7 +243,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     public native MSMessage initWithSession(MSSession session);
 
     /**
-     * [@property]   layout
+     * [@property] layout
      * <p>
      * A subclass of MSMessageLayout.
      * <p>
@@ -255,7 +255,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     public native MSMessageLayout layout();
 
     /**
-     * [@property]   senderParticipantIdentifier
+     * [@property] senderParticipantIdentifier
      * <p>
      * A NSUUID instance that identifies the participant that sent the message.
      * <p>
@@ -268,7 +268,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     public native NSUUID senderParticipantIdentifier();
 
     /**
-     * [@property]   session
+     * [@property] session
      * <p>
      * An MSSession that identifies the session that message belongs to.
      */
@@ -277,7 +277,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     public native MSSession session();
 
     /**
-     * [@property]   accessibilityLabel
+     * [@property] accessibilityLabel
      * <p>
      * A localized string describing the message.
      * <p>
@@ -290,7 +290,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     public native void setAccessibilityLabel(String value);
 
     /**
-     * [@property]   error
+     * [@property] error
      * <p>
      * An error object that indicates why a message failed to send.
      * <p>
@@ -302,7 +302,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     public native void setError(NSError value);
 
     /**
-     * [@property]   layout
+     * [@property] layout
      * <p>
      * A subclass of MSMessageLayout.
      * <p>
@@ -314,7 +314,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     public native void setLayout(MSMessageLayout value);
 
     /**
-     * [@property]   shouldExpire
+     * [@property] shouldExpire
      * <p>
      * A Boolean value that indicates whether the messages should expire after being read.
      * <p>
@@ -327,7 +327,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     public native void setShouldExpire(boolean value);
 
     /**
-     * [@property]   summaryText
+     * [@property] summaryText
      * <p>
      * A localized string describing the message.
      * <p>
@@ -339,7 +339,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     public native void setSummaryText(String value);
 
     /**
-     * [@property]   URL
+     * [@property] URL
      * <p>
      * A HTTP(S) or data URL used to encode data to be transferred in message.
      * <p>
@@ -352,7 +352,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     public native void setURL(NSURL value);
 
     /**
-     * [@property]   shouldExpire
+     * [@property] shouldExpire
      * <p>
      * A Boolean value that indicates whether the messages should expire after being read.
      * <p>
@@ -365,7 +365,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     public native boolean shouldExpire();
 
     /**
-     * [@property]   summaryText
+     * [@property] summaryText
      * <p>
      * A localized string describing the message.
      * <p>
@@ -383,11 +383,14 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     }
 
     /**
-     * [@property]   pending
+     * [@property] pending
      * <p>
      * A BOOL representing whether the message is a pending message or is a message that has been sent/received.
      * <p>
-     * This value starts as `YES` when creating an `MSMessage` for sending. After calling `-[MSConversation insertMessage:completionHandler:]`, `isPending` still returns `YES` until `-[MSMessagesAppViewController didStartSendingMessage:conversation]` is called. This property is useful for knowing if the `selectedMessage` of `-[MSMessagesAppViewController activeConversation]` represents an unsent message.
+     * This value starts as `YES` when creating an `MSMessage` for sending. After calling `-[MSConversation
+     * insertMessage:completionHandler:]`, `isPending` still returns `YES` until `-[MSMessagesAppViewController
+     * didStartSendingMessage:conversation]` is called. This property is useful for knowing if the `selectedMessage` of
+     * `-[MSMessagesAppViewController activeConversation]` represents an unsent message.
      */
     @Generated
     @Selector("isPending")

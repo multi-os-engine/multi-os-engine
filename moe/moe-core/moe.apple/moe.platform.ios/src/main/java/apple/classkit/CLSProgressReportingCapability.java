@@ -109,7 +109,9 @@ public class CLSProgressReportingCapability extends CLSObject {
      * Initialize and configure the type of progress reporting capability
      *
      * @param kind    The kind of progress reporting capability
-     * @param details An optional localized string describing the capability. For example: "Reports percentage of progress", "Reports overall score". Schoolwork will use an appropriate default string if one is not provided.
+     * @param details An optional localized string describing the capability. For example: "Reports percentage of
+     *                progress", "Reports overall score". Schoolwork will use an appropriate default string if one is
+     *                not provided.
      */
     @Generated
     @Selector("initWithKind:details:")

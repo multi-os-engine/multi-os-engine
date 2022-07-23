@@ -44,7 +44,10 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A tile group rule defines how a certain type of tile should be placed on the map. These tiles are like puzzle pieces, and the rules define how they should be pieced together. This is accomplished by defining which neighboring spaces need to be filled with tiles that belong to the same group, and which tiles are required to be empty. The required pattern of neighboring tiles is defined using the SKTileAdjacencyMask.
+ * A tile group rule defines how a certain type of tile should be placed on the map. These tiles are like puzzle pieces,
+ * and the rules define how they should be pieced together. This is accomplished by defining which neighboring spaces
+ * need to be filled with tiles that belong to the same group, and which tiles are required to be empty. The required
+ * pattern of neighboring tiles is defined using the SKTileAdjacencyMask.
  */
 @Generated
 @Library("SpriteKit")
@@ -154,7 +157,9 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
     /**
      * Create a tile group rule with the specified adjacency and tile definitions.
      *
-     * @param adjacency       the adjacency requirements for this rule; use the mask that covers the adjacent spaces that must be filled with tiles belonging to the same group; tiles not masked out must be empty
+     * @param adjacency       the adjacency requirements for this rule; use the mask that covers the adjacent spaces
+     *                        that must be filled with tiles belonging to the same group; tiles not masked out must be
+     *                        empty
      * @param tileDefinitions the tile definitions used for this rule
      */
     @Generated
@@ -168,7 +173,8 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
     public static native long version_static();
 
     /**
-     * The adjacency mask used by this rule. Set this to the mask that covers the adjacent spaces that must be filled with tiles belonging to the same group for this rule met.
+     * The adjacency mask used by this rule. Set this to the mask that covers the adjacent spaces that must be filled
+     * with tiles belonging to the same group for this rule met.
      */
     @Generated
     @Selector("adjacency")
@@ -192,7 +198,9 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
     /**
      * Initilize a tile group rule with the specified adjacency and tile definitions.
      *
-     * @param adjacency       the adjacency requirements for this rule; use the mask that covers the adjacent spaces that must be filled with tiles belonging to the same group; tiles not masked out must be empty
+     * @param adjacency       the adjacency requirements for this rule; use the mask that covers the adjacent spaces
+     *                        that must be filled with tiles belonging to the same group; tiles not masked out must be
+     *                        empty
      * @param tileDefinitions the tile definitions used for this rule
      */
     @Generated
@@ -212,7 +220,8 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
     public native String name();
 
     /**
-     * The adjacency mask used by this rule. Set this to the mask that covers the adjacent spaces that must be filled with tiles belonging to the same group for this rule met.
+     * The adjacency mask used by this rule. Set this to the mask that covers the adjacent spaces that must be filled
+     * with tiles belonging to the same group for this rule met.
      */
     @Generated
     @Selector("setAdjacency:")
@@ -226,14 +235,20 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
     public native void setName(String value);
 
     /**
-     * The tile definitions used by this rule. If the rule is evaluated and its conditions are met, one of the tile definitions within this array will be randomly selected for placement within the tile map. Each tile definitions' placement weight is taken into consideration to determine how likely each is to be selected; tile definitions with higher placement weights will be selected more frequently than those with lower placement weights.
+     * The tile definitions used by this rule. If the rule is evaluated and its conditions are met, one of the tile
+     * definitions within this array will be randomly selected for placement within the tile map. Each tile definitions'
+     * placement weight is taken into consideration to determine how likely each is to be selected; tile definitions
+     * with higher placement weights will be selected more frequently than those with lower placement weights.
      */
     @Generated
     @Selector("setTileDefinitions:")
     public native void setTileDefinitions(NSArray<? extends SKTileDefinition> value);
 
     /**
-     * The tile definitions used by this rule. If the rule is evaluated and its conditions are met, one of the tile definitions within this array will be randomly selected for placement within the tile map. Each tile definitions' placement weight is taken into consideration to determine how likely each is to be selected; tile definitions with higher placement weights will be selected more frequently than those with lower placement weights.
+     * The tile definitions used by this rule. If the rule is evaluated and its conditions are met, one of the tile
+     * definitions within this array will be randomly selected for placement within the tile map. Each tile definitions'
+     * placement weight is taken into consideration to determine how likely each is to be selected; tile definitions
+     * with higher placement weights will be selected more frequently than those with lower placement weights.
      */
     @Generated
     @Selector("tileDefinitions")

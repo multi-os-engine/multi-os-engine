@@ -125,7 +125,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * the given extension
      *
      * @return YES is returned if MDLAsset is able is able to export assets to
-     * resources with the given extension
+     *         resources with the given extension
      */
     @Generated
     @Selector("canExportFileExtension:")
@@ -138,7 +138,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * with the given extension
      *
      * @return YES is returned if MDLAsset is able to load and represent assets with
-     * the given extension
+     *         the given extension
      */
     @Generated
     @Selector("canImportFileExtension:")
@@ -366,7 +366,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * the indicated URL
      * <p>
      * Vertex layout (i.e. vertexDescriptor) will be specified by ModelIO
-     * depending on attributes of the resource.  Buffers will be allocated
+     * depending on attributes of the resource. Buffers will be allocated
      * using a default NSData based allocator
      * <p>
      * Submeshes will be converted to triangle topology.

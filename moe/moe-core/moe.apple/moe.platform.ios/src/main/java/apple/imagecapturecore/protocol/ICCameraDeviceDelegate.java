@@ -17,8 +17,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
 /**
- * ------------------------------------------------------------------------------------------------------- ICCameraDeviceDelegate
- * [@protocol] ICCameraDeviceDelegate  <ICDeviceDelegate>
+ * -------------------------------------------------------------------------------------------------------
+ * ICCameraDeviceDelegate
+ * [@protocol] ICCameraDeviceDelegate <ICDeviceDelegate>
  * <p>
  * A delegate of ICCameraDevice must conform to ICCameraDeviceDelegate protocol.
  * <p>
@@ -53,8 +54,10 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
     /**
      * cameraDevice:didCompleteDeleteFilesWithError:
      * <p>
-     * This message is sent after the camera device completes a delete operation initiated by sending a 'requestDeleteFiles:' message to that device.
-     * [@discusson] This message is sent after the camera device completes a delete operation initiated by sending a 'requestDeleteFiles:' message to that device.
+     * This message is sent after the camera device completes a delete operation initiated by sending a
+     * 'requestDeleteFiles:' message to that device.
+     * [@discusson] This message is sent after the camera device completes a delete operation initiated by sending a
+     * 'requestDeleteFiles:' message to that device.
      */
     @Generated
     @IsOptional
@@ -145,8 +148,10 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
     void cameraDeviceDidRenameItems(ICCameraDevice camera, NSArray<? extends ICCameraItem> items);
 
     /**
-     * This message is sent when the camera device is about to execute queued requests for the metadata of a specific item.
-     * If the request is no longer wanted, eg: the item is no longer displayed on the screen, the client can return NO and abort sending
+     * This message is sent when the camera device is about to execute queued requests for the metadata of a specific
+     * item.
+     * If the request is no longer wanted, eg: the item is no longer displayed on the screen, the client can return NO
+     * and abort sending
      * a request down to the camera device, speeding up the execution queue.
      */
     @Generated
@@ -159,8 +164,10 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
     /**
      * cameraDevice:shouldGetThumbnailOfItem:
      * <p>
-     * This message is sent when the camera device is about to execute queued requests for the thumbnail of a specific item.
-     * If the request is no longer wanted, eg: the item is no longer displayed on the screen, the client can return NO and abort sending
+     * This message is sent when the camera device is about to execute queued requests for the thumbnail of a specific
+     * item.
+     * If the request is no longer wanted, eg: the item is no longer displayed on the screen, the client can return NO
+     * and abort sending
      * a request down to the camera device, speeding up the exection queue.
      */
     @Generated

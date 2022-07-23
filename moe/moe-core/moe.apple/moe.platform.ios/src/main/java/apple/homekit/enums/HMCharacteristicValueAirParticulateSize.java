@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]      HMCharacteristicValueAirParticulateSize
+ * [@enum] HMCharacteristicValueAirParticulateSize
  * <p>
- * [@constant]  HMCharacteristicValueAirParticulateSize2_5          Air particulate size of 2.5 micrometers.
- * [@constant]  HMCharacteristicValueAirParticulateSize10           Air particulate size of 10 micrometers.
+ * [@constant] HMCharacteristicValueAirParticulateSize2_5 Air particulate size of 2.5 micrometers.
+ * [@constant] HMCharacteristicValueAirParticulateSize10 Air particulate size of 10 micrometers.
  */
 @Generated
 public final class HMCharacteristicValueAirParticulateSize {

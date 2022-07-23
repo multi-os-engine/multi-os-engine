@@ -72,7 +72,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
-     * [@property]    numberOfClasses
+     * [@property] numberOfClasses
      * <p>
      * The number of classes parameter. The default value is 1.
      * <p>
@@ -102,7 +102,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
     public static native String debugDescription_static();
 
     /**
-     * [@property]    delta
+     * [@property] delta
      * <p>
      * The delta parameter. The default value is 1.0f.
      * <p>
@@ -174,7 +174,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
             float delta);
 
     /**
-     * [@property]    epsilon
+     * [@property] epsilon
      * <p>
      * The epsilon parameter. The default value is 1e-7.
      * <p>
@@ -215,7 +215,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]    labelSmoothing
+     * [@property] labelSmoothing
      * <p>
      * The label smoothing parameter. The default value is 0.0.
      * <p>
@@ -227,7 +227,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
     public native float labelSmoothing();
 
     /**
-     * [@property]   lossType
+     * [@property] lossType
      * <p>
      * Specifies the loss function.
      */
@@ -241,7 +241,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
     public static native MLCLossDescriptor new_objc();
 
     /**
-     * [@property]   reductionType
+     * [@property] reductionType
      * <p>
      * The reduction operation performed by the loss function.
      */
@@ -271,9 +271,9 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
     public static native long version_static();
 
     /**
-     * [@property]   weight
+     * [@property] weight
      * <p>
-     * The scale factor to apply to each element of a result.  The default value is 1.0.
+     * The scale factor to apply to each element of a result. The default value is 1.0.
      */
     @Generated
     @Selector("weight")

@@ -238,7 +238,7 @@ public class GKCompositeBehavior extends GKBehavior {
 
     /**
      * Adds a new sub-behavior or changes the weight of the existing sub-behavior in this behavior.
-     * If the sub-behavior  does not exist in this behavior, it is added.
+     * If the sub-behavior does not exist in this behavior, it is added.
      *
      * @param weight   the weight for this goal
      * @param behavior the sub-behavior who's weight to change

@@ -65,7 +65,7 @@ public class MXHistogram<_UnitType> extends NSObject implements NSSecureCoding {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]      bucketEnumerator
+     * [@property] bucketEnumerator
      * <p>
      * An NSEnumerator that can be used to enumerate the buckets of this histogram.
      */
@@ -169,7 +169,7 @@ public class MXHistogram<_UnitType> extends NSObject implements NSSecureCoding {
     }
 
     /**
-     * [@property]      totalBucketCount
+     * [@property] totalBucketCount
      * <p>
      * The number of buckets contained within this histogram.
      * <p>

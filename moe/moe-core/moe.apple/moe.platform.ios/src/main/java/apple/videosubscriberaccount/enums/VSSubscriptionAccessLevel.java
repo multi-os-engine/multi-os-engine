@@ -18,7 +18,8 @@ public final class VSSubscriptionAccessLevel {
      */
     @Generated @NInt public static final long FreeWithAccount = 0x0000000000000001L;
     /**
-     * The customer has access to content that is offered for free to users with a valid account.  This value corresponds content in your availability feed with the "account" offering type.
+     * The customer has access to content that is offered for free to users with a valid account. This value corresponds
+     * content in your availability feed with the "account" offering type.
      */
     @Generated @NInt public static final long Paid = 0x0000000000000002L;
 }

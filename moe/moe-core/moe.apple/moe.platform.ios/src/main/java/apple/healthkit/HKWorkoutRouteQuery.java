@@ -113,8 +113,10 @@ public class HKWorkoutRouteQuery extends HKQuery {
      *
      * @param workoutRoute The HKWorkoutRoute for which the location data will be returned.
      * @param dataHandler  The block to invoke with results from the query. It is called repeatedly with an array of
-     *                     CLLocation objects until all data is returned and the done parameter is YES or if HKHealthStore
-     *                     stopQuery: is called. The stopQuery call can be made within the dataHandler block. The number of
+     *                     CLLocation objects until all data is returned and the done parameter is YES or if
+     *                     HKHealthStore
+     *                     stopQuery: is called. The stopQuery call can be made within the dataHandler block. The number
+     *                     of
      *                     objects returned in routeData per dataHandler call is unspecified. Once done is YES, or
      *                     stopQuery called, the query is complete and no more calls to the handler will be made.
      */

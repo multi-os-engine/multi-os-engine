@@ -37,17 +37,21 @@ public final class MPSImageEdgeMode {
 
     /**
      * Out of bound pixels are mirrored wrt. the nearest edge pixel center - ie. the edge of the image is not repeated.
-     * NOTE: The only filter that currently supports this mode is @ref MPSNNPad - using this with other filters results in undefined behavior.
+     * NOTE: The only filter that currently supports this mode is @ref MPSNNPad - using this with other filters results
+     * in undefined behavior.
      */
     @Generated @NUInt public static final long Mirror = 0x0000000000000002L;
     /**
-     * Out of bound pixels are mirrored wrt. the nearest edge pixel nearest border - ie. the edge of the image is repeated.
-     * NOTE: The only filter that currently supports this mode is @ref MPSNNPad - using this with other filters results in undefined behavior.
+     * Out of bound pixels are mirrored wrt. the nearest edge pixel nearest border - ie. the edge of the image is
+     * repeated.
+     * NOTE: The only filter that currently supports this mode is @ref MPSNNPad - using this with other filters results
+     * in undefined behavior.
      */
     @Generated @NUInt public static final long MirrorWithEdge = 0x0000000000000003L;
     /**
      * Out of bound pixels are filled with a constant value defined by the filter.
-     * NOTE: The only filter that currently supports this mode is @ref MPSNNPad - using this with other filters results in undefined behavior.
+     * NOTE: The only filter that currently supports this mode is @ref MPSNNPad - using this with other filters results
+     * in undefined behavior.
      */
     @Generated @NUInt public static final long Constant = 0x0000000000000004L;
 }

@@ -116,9 +116,17 @@ public class AVMutableComposition extends AVComposition {
      * <p>
      * Returns an empty AVMutableComposition.
      * <p>
-     * AVMutableCompositions create AVURLAssets internally for URLs specified by AVCompositionTrackSegments of AVMutableCompositionTracks, as needed, whenever AVCompositionTrackSegments are added to tracks via -[AVMutableCompositionTrack setSegments:] rather than by inserting timeranges of already existing AVAssets or AVAssetTracks.
+     * AVMutableCompositions create AVURLAssets internally for URLs specified by AVCompositionTrackSegments of
+     * AVMutableCompositionTracks, as needed, whenever AVCompositionTrackSegments are added to tracks via
+     * -[AVMutableCompositionTrack setSegments:] rather than by inserting timeranges of already existing AVAssets or
+     * AVAssetTracks.
      *
-     * @param URLAssetInitializationOptions Specifies the initialization options that the receiver should use when creating AVURLAssets internally, e.g. AVURLAssetPreferPreciseDurationAndTimingKey. The default behavior for creation of AVURLAssets by an AVMutableComposition is equivalent to the behavior of +[AVURLAsset URLAssetWithURL:options:] when specifying no initialization options.
+     * @param URLAssetInitializationOptions Specifies the initialization options that the receiver should use when
+     *                                      creating AVURLAssets internally, e.g.
+     *                                      AVURLAssetPreferPreciseDurationAndTimingKey. The default behavior for
+     *                                      creation of AVURLAssets by an AVMutableComposition is equivalent to the
+     *                                      behavior of +[AVURLAsset URLAssetWithURL:options:] when specifying no
+     *                                      initialization options.
      */
     @Generated
     @Selector("compositionWithURLAssetInitializationOptions:")
@@ -190,11 +198,16 @@ public class AVMutableComposition extends AVComposition {
      * <p>
      * Adds an empty track to a mutable composition.
      * <p>
-     * If the specified preferred track ID is not available, or kCMPersistentTrackID_Invalid was passed in, a unique track ID will be generated.
+     * If the specified preferred track ID is not available, or kCMPersistentTrackID_Invalid was passed in, a unique
+     * track ID will be generated.
      *
      * @param mediaType        The media type of the new track.
-     * @param preferredTrackID Specifies the preferred track ID for the new track. If you do not need to specify a preferred track ID, pass kCMPersistentTrackID_Invalid. Otherwise the preferred track ID will be used for the new track, provided that it is not currently in use and has not previously been used.
-     * @return An instance of AVMutableCompositionTrack representing the new track. Its actual trackID is available via its @"trackID" key.
+     * @param preferredTrackID Specifies the preferred track ID for the new track. If you do not need to specify a
+     *                         preferred track ID, pass kCMPersistentTrackID_Invalid. Otherwise the preferred track ID
+     *                         will be used for the new track, provided that it is not currently in use and has not
+     *                         previously been used.
+     * @return An instance of AVMutableCompositionTrack representing the new track. Its actual trackID is available via
+     *         its @"trackID" key.
      */
     @Generated
     @Selector("addMutableTrackWithMediaType:preferredTrackID:")
@@ -210,7 +223,9 @@ public class AVMutableComposition extends AVComposition {
      * <p>
      * Adds or extends an empty timeRange within all tracks of the composition.
      * <p>
-     * If you insert an empty timeRange into the composition, any media that was presented during that interval prior to the insertion will be presented instead immediately afterward. You can use this method to reserve an interval in which you want a subsequently created track to present its media.
+     * If you insert an empty timeRange into the composition, any media that was presented during that interval prior to
+     * the insertion will be presented instead immediately afterward. You can use this method to reserve an interval in
+     * which you want a subsequently created track to present its media.
      * Note that you cannot add empty time ranges to the end of a composition.
      *
      * @param timeRange Specifies the empty timeRange to be inserted.
@@ -224,18 +239,23 @@ public class AVMutableComposition extends AVComposition {
      * <p>
      * Inserts all the tracks of a timeRange of an asset into a composition.
      * <p>
-     * You provide a reference to an AVAsset and the timeRange within it that you want to insert. You specify the start time in the destination composition at which the timeRange should be inserted.
+     * You provide a reference to an AVAsset and the timeRange within it that you want to insert. You specify the start
+     * time in the destination composition at which the timeRange should be inserted.
      * <p>
      * This method may add new tracks to ensure that all tracks of the asset are represented in the inserted timeRange.
      * <p>
-     * Note that the media data for the inserted timeRange will be presented at its natural duration and rate. It can be scaled to a different duration and presented at a different rate via -scaleTimeRange:toDuration:.
+     * Note that the media data for the inserted timeRange will be presented at its natural duration and rate. It can be
+     * scaled to a different duration and presented at a different rate via -scaleTimeRange:toDuration:.
      * <p>
      * Existing content at the specified startTime will be pushed out by the duration of timeRange.
      *
      * @param timeRange Specifies the timeRange of the asset to be inserted.
-     * @param asset     Specifies the asset that contains the tracks that are to be inserted. Only instances of AVURLAsset and AVComposition are supported (AVComposition starting in MacOS X 10.10 and iOS 8.0).
+     * @param asset     Specifies the asset that contains the tracks that are to be inserted. Only instances of
+     *                  AVURLAsset and AVComposition are supported (AVComposition starting in MacOS X 10.10 and iOS
+     *                  8.0).
      * @param startTime Specifies the time at which the inserted tracks are to be presented by the composition.
-     * @param outError  Describes failures that may be reported to the user, e.g. the asset that was selected for insertion in the composition is restricted by copy-protection.
+     * @param outError  Describes failures that may be reported to the user, e.g. the asset that was selected for
+     *                  insertion in the composition is restricted by copy-protection.
      * @return A BOOL value indicating the success of the insertion.
      */
     @Generated
@@ -246,11 +266,17 @@ public class AVMutableComposition extends AVComposition {
     /**
      * mutableTrackCompatibleWithTrack:
      * <p>
-     * Provides a reference to a track of a mutable composition into which any timeRange of an AVAssetTrack can be inserted (via -[AVMutableCompositionTrack insertTimeRange:ofTrack:atTime:error:]).
+     * Provides a reference to a track of a mutable composition into which any timeRange of an AVAssetTrack can be
+     * inserted (via -[AVMutableCompositionTrack insertTimeRange:ofTrack:atTime:error:]).
      * <p>
-     * If a compatible track is desired but the result of this method is nil, a new track of the same mediaType as the AVAssetTrack can be created via -addMutableTrackWithMediaType:preferredTrackID:, and this new track will be compatible.
+     * If a compatible track is desired but the result of this method is nil, a new track of the same mediaType as the
+     * AVAssetTrack can be created via -addMutableTrackWithMediaType:preferredTrackID:, and this new track will be
+     * compatible.
      * <p>
-     * For best performance, the number of tracks of a composition should be kept to a minimum, corresponding to the number for which media data must be presented in parallel. If media data of the same type is to be presented serially, even from multiple assets, a single track of that media type should be used. This method, -mutableTrackCompatibleWithTrack:, can help the client to identify an existing target track for an insertion.
+     * For best performance, the number of tracks of a composition should be kept to a minimum, corresponding to the
+     * number for which media data must be presented in parallel. If media data of the same type is to be presented
+     * serially, even from multiple assets, a single track of that media type should be used. This method,
+     * -mutableTrackCompatibleWithTrack:, can help the client to identify an existing target track for an insertion.
      * <p>
      * Similar to -[AVAsset compatibleTrackForCompositionTrack:].
      *
@@ -262,11 +288,12 @@ public class AVMutableComposition extends AVComposition {
     public native AVMutableCompositionTrack mutableTrackCompatibleWithTrack(AVAssetTrack track);
 
     /**
-     * [@property]       naturalSize
+     * [@property] naturalSize
      * <p>
      * Indicates the authored size of the visual portion of the asset.
      * <p>
-     * If not set, the value is the size of the composition's first video track. Set to CGSizeZero to revert to default behavior.
+     * If not set, the value is the size of the composition's first video track. Set to CGSizeZero to revert to default
+     * behavior.
      */
     @Generated
     @Selector("naturalSize")
@@ -278,7 +305,9 @@ public class AVMutableComposition extends AVComposition {
      * <p>
      * Removes a specified timeRange from all tracks of the composition.
      * <p>
-     * Removal of a time range does not cause any existing tracks to be removed from the composition, even if removing timeRange results in an empty track. Instead, it removes or truncates track segments that intersect with the timeRange.
+     * Removal of a time range does not cause any existing tracks to be removed from the composition, even if removing
+     * timeRange results in an empty track. Instead, it removes or truncates track segments that intersect with the
+     * timeRange.
      * <p>
      * After removing, existing content after timeRange will be pulled in.
      *
@@ -293,7 +322,8 @@ public class AVMutableComposition extends AVComposition {
      * <p>
      * Removes a track of a mutable composition.
      * <p>
-     * If you retain a reference to the removed track, note that its @"composition" key will have the value nil, and the values of its other properties are undefined.
+     * If you retain a reference to the removed track, note that its @"composition" key will have the value nil, and the
+     * values of its other properties are undefined.
      *
      * @param track A reference to the AVCompositionTrack to be removed.
      */
@@ -306,7 +336,8 @@ public class AVMutableComposition extends AVComposition {
      * <p>
      * Changes the duration of a timeRange of all tracks.
      * <p>
-     * Each trackSegment affected by the scaling operation will be presented at a rate equal to source.duration / target.duration of its resulting timeMapping.
+     * Each trackSegment affected by the scaling operation will be presented at a rate equal to source.duration /
+     * target.duration of its resulting timeMapping.
      *
      * @param timeRange Specifies the timeRange of the composition to be scaled.
      * @param duration  Specifies the new duration of the timeRange.
@@ -316,11 +347,12 @@ public class AVMutableComposition extends AVComposition {
     public native void scaleTimeRangeToDuration(@ByValue CMTimeRange timeRange, @ByValue CMTime duration);
 
     /**
-     * [@property]       naturalSize
+     * [@property] naturalSize
      * <p>
      * Indicates the authored size of the visual portion of the asset.
      * <p>
-     * If not set, the value is the size of the composition's first video track. Set to CGSizeZero to revert to default behavior.
+     * If not set, the value is the size of the composition's first video track. Set to CGSizeZero to revert to default
+     * behavior.
      */
     @Generated
     @Selector("setNaturalSize:")
@@ -341,7 +373,7 @@ public class AVMutableComposition extends AVComposition {
     public native AVMutableCompositionTrack trackWithTrackID(int trackID);
 
     /**
-     * [@property]       tracks
+     * [@property] tracks
      * <p>
      * Provides the array of AVMutableCompositionTracks contained by the composition.
      */
@@ -352,12 +384,15 @@ public class AVMutableComposition extends AVComposition {
     /**
      * tracksWithMediaCharacteristic:
      * <p>
-     * Provides an array of AVMutableCompositionTracks of the asset that present media with the specified characteristic.
+     * Provides an array of AVMutableCompositionTracks of the asset that present media with the specified
+     * characteristic.
      * <p>
      * Becomes callable without blocking when the key @"tracks" has been loaded
      *
-     * @param mediaCharacteristic The media characteristic according to which the receiver filters its AVMutableCompositionTracks. (Media characteristics are defined in AVMediaFormat.h)
-     * @return An NSArray of AVMutableCompositionTracks; may be empty if no tracks with the specified characteristic are available.
+     * @param mediaCharacteristic The media characteristic according to which the receiver filters its
+     *                            AVMutableCompositionTracks. (Media characteristics are defined in AVMediaFormat.h)
+     * @return An NSArray of AVMutableCompositionTracks; may be empty if no tracks with the specified characteristic are
+     *         available.
      */
     @Generated
     @Selector("tracksWithMediaCharacteristic:")
@@ -371,8 +406,10 @@ public class AVMutableComposition extends AVComposition {
      * <p>
      * Becomes callable without blocking when the key @"tracks" has been loaded
      *
-     * @param mediaType The media type according to which the receiver filters its AVMutableCompositionTracks. (Media types are defined in AVMediaFormat.h)
-     * @return An NSArray of AVMutableCompositionTracks; may be empty if no tracks of the specified media type are available.
+     * @param mediaType The media type according to which the receiver filters its AVMutableCompositionTracks. (Media
+     *                  types are defined in AVMediaFormat.h)
+     * @return An NSArray of AVMutableCompositionTracks; may be empty if no tracks of the specified media type are
+     *         available.
      */
     @Generated
     @Selector("tracksWithMediaType:")
@@ -383,8 +420,9 @@ public class AVMutableComposition extends AVComposition {
      * <p>
      * Loads an instance of AVMutableCompositionTrack that represents the track of the specified trackID.
      *
-     * @param        trackID The trackID of the requested AVMutableCompositionTrack.
-     * @param        completionHandler A block that is called when the loading is finished, with either the loaded track (which may be nil if no track of the specified trackID is available) or an error.
+     * @param trackID           The trackID of the requested AVMutableCompositionTrack.
+     * @param completionHandler A block that is called when the loading is finished, with either the loaded track (which
+     *                          may be nil if no track of the specified trackID is available) or an error.
      */
     @Generated
     @Selector("loadTrackWithTrackID:completionHandler:")
@@ -403,8 +441,11 @@ public class AVMutableComposition extends AVComposition {
      * <p>
      * Loads an array of AVMutableCompositionTracks of the asset that present media with the specified characteristic.
      *
-     * @param        mediaCharacteristic The media characteristic according to which AVAsset filters its AVMutableCompositionTracks. (Media characteristics are defined in AVMediaFormat.h.)
-     * @param        completionHandler A block that is called when the loading is finished, with either the loaded tracks (which may be empty if no tracks with the specified characteristic are available) or an error.
+     * @param mediaCharacteristic The media characteristic according to which AVAsset filters its
+     *                            AVMutableCompositionTracks. (Media characteristics are defined in AVMediaFormat.h.)
+     * @param completionHandler   A block that is called when the loading is finished, with either the loaded tracks
+     *                            (which may be empty if no tracks with the specified characteristic are available) or
+     *                            an error.
      */
     @Generated
     @Selector("loadTracksWithMediaCharacteristic:completionHandler:")
@@ -424,8 +465,10 @@ public class AVMutableComposition extends AVComposition {
      * <p>
      * Loads an array of AVMutableCompositionTracks of the asset that present media of the specified media type.
      *
-     * @param        mediaType The media type according to which AVAsset filters its AVMutableCompositionTracks. (Media types are defined in AVMediaFormat.h.)
-     * @param        completionHandler A block that is called when the loading is finished, with either the loaded tracks (which may be empty if no tracks of the specified media type are available) or an error.
+     * @param mediaType         The media type according to which AVAsset filters its AVMutableCompositionTracks. (Media
+     *                          types are defined in AVMediaFormat.h.)
+     * @param completionHandler A block that is called when the loading is finished, with either the loaded tracks
+     *                          (which may be empty if no tracks of the specified media type are available) or an error.
      */
     @Generated
     @Selector("loadTracksWithMediaType:completionHandler:")

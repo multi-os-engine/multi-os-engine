@@ -181,7 +181,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * A message that includes warnings or disclaimers shown to the user before they confirm the request. For example: "This ride may make multiple stops", or "This ride may be shared with other passengers".
+     * A message that includes warnings or disclaimers shown to the user before they confirm the request. For example:
+     * "This ride may make multiple stops", or "This ride may be shared with other passengers".
      */
     @Generated
     @Selector("disclaimerMessage")
@@ -253,7 +254,8 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
     public native void setAvailablePartySizeOptionsSelectionPrompt(String value);
 
     /**
-     * A message that includes warnings or disclaimers shown to the user before they confirm the request. For example: "This ride may make multiple stops", or "This ride may be shared with other passengers".
+     * A message that includes warnings or disclaimers shown to the user before they confirm the request. For example:
+     * "This ride may make multiple stops", or "This ride may be shared with other passengers".
      */
     @Generated
     @Selector("setDisclaimerMessage:")
@@ -309,7 +311,10 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
     public native void setSpecialPricingBadgeImage(INImage value);
 
     /**
-     * If set, the user will be asked to open the ride booking application to book for this ride option. (When the user selects this option, the system will open your application and continue this NSUserActivity in it.) Leave this set to nil to allow an Apple client (e.g. Siri, Maps) to instead book the ride on your app's behalf, which is preferred where possible.
+     * If set, the user will be asked to open the ride booking application to book for this ride option. (When the user
+     * selects this option, the system will open your application and continue this NSUserActivity in it.) Leave this
+     * set to nil to allow an Apple client (e.g. Siri, Maps) to instead book the ride on your app's behalf, which is
+     * preferred where possible.
      */
     @Generated
     @Selector("setUserActivityForBookingInApplication:")
@@ -343,7 +348,10 @@ public class INRideOption extends NSObject implements NSCopying, NSSecureCoding 
     }
 
     /**
-     * If set, the user will be asked to open the ride booking application to book for this ride option. (When the user selects this option, the system will open your application and continue this NSUserActivity in it.) Leave this set to nil to allow an Apple client (e.g. Siri, Maps) to instead book the ride on your app's behalf, which is preferred where possible.
+     * If set, the user will be asked to open the ride booking application to book for this ride option. (When the user
+     * selects this option, the system will open your application and continue this NSUserActivity in it.) Leave this
+     * set to nil to allow an Apple client (e.g. Siri, Maps) to instead book the ride on your app's behalf, which is
+     * preferred where possible.
      */
     @Generated
     @Selector("userActivityForBookingInApplication")

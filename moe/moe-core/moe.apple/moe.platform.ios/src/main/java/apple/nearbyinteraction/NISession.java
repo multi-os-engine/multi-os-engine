@@ -144,7 +144,9 @@ public class NISession extends NSObject {
     /**
      * Invalidate an ongoing nearby interaction session.
      * <p>
-     * Invalidate sessions you wish to terminate and do not intend to restart. A peer device in a nearby interaction session will receive a callback to -didRemoveNearbyObject:withReason: some time after a call to invalidate (see NINearbyObjectRemovalReason).
+     * Invalidate sessions you wish to terminate and do not intend to restart. A peer device in a nearby interaction
+     * session will receive a callback to -didRemoveNearbyObject:withReason: some time after a call to invalidate (see
+     * NINearbyObjectRemovalReason).
      * calling -runWithConfiguration: after invalidation will result in an error.
      */
     @Generated
@@ -192,7 +194,8 @@ public class NISession extends NSObject {
      * Start a nearby interaction session.
      *
      * @param configuration Nearby interaction configuration for this session.
-     *                      Both devices must call -runWithConfiguration: with a valid configuration identifying the other device in order to receive nearby object updates.
+     *                      Both devices must call -runWithConfiguration: with a valid configuration identifying the
+     *                      other device in order to receive nearby object updates.
      */
     @Generated
     @Selector("runWithConfiguration:")

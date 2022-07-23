@@ -25,9 +25,11 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
      * Your app should create its view controller and assign it to the @c rootViewController property
      * of this window.
      * <p>
-     * [@note] The interfaceController object will be strongly retained by the CPTemplateApplicationScene, the delegate does not need to retain it.
+     * [@note] The interfaceController object will be strongly retained by the CPTemplateApplicationScene, the delegate
+     * does not need to retain it.
      * <p>
-     * [@note] This method is provided only for navigation apps; other apps should use the variant that does not provide a window.
+     * [@note] This method is provided only for navigation apps; other apps should use the variant that does not provide
+     * a window.
      */
     @Generated
     @IsOptional
@@ -41,7 +43,8 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
     /**
      * The CarPlay screen has disconnected.
      * <p>
-     * [@note] This method is provided only for navigation apps; other apps should use the variant that does not provide a window.
+     * [@note] This method is provided only for navigation apps; other apps should use the variant that does not provide
+     * a window.
      */
     @Generated
     @IsOptional
@@ -66,7 +69,8 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
     }
 
     /**
-     * If your application posts a @c CPNavigationAlert while backgrounded, a notification banner may be presented to the user.
+     * If your application posts a @c CPNavigationAlert while backgrounded, a notification banner may be presented to
+     * the user.
      * If the user taps on that banner, your application will launch on the car screen and this method will be called
      * with the alert the user tapped.
      */
@@ -84,7 +88,8 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
      * Your app should create its view controller and assign it to the @c rootViewController property
      * of this window.
      * <p>
-     * [@note] The interfaceController object will be strongly retained by the CPTemplateApplicationScene, the delegate does not need to retain it.
+     * [@note] The interfaceController object will be strongly retained by the CPTemplateApplicationScene, the delegate
+     * does not need to retain it.
      */
     @Generated
     @IsOptional

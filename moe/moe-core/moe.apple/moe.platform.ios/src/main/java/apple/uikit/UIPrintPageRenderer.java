@@ -178,7 +178,7 @@ public class UIPrintPageRenderer extends NSObject {
     public native void drawHeaderForPageAtIndexInRect(@NInt long pageIndex, @ByValue CGRect headerRect);
 
     /**
-     * override point. may be called from non-main thread.  calls the various draw methods below.
+     * override point. may be called from non-main thread. calls the various draw methods below.
      */
     @Generated
     @Selector("drawPageAtIndex:inRect:")
@@ -270,8 +270,10 @@ public class UIPrintPageRenderer extends NSObject {
 
     /**
      * If the print sheet is unresponsive or sluggish due to the time is takes you to fully render a page,
-     * you can override this method and read from requestedPrintRenderQuality to determine if the print operation prefers speed over fidelity.
-     * Please see the comments for UIPrintRenderingQuality. Most applications render each page fast enough and do not need to override this method.
+     * you can override this method and read from requestedPrintRenderQuality to determine if the print operation
+     * prefers speed over fidelity.
+     * Please see the comments for UIPrintRenderingQuality. Most applications render each page fast enough and do not
+     * need to override this method.
      * Return value is the quality you current actually used for the rendering.
      * Returns UIPrintRenderingQualityBest by default.
      */

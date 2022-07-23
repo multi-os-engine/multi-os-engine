@@ -359,7 +359,8 @@ public final class PDFKit {
     public static native String PDFAnnotationKeyWidgetValue();
 
     /**
-     * All PDF annotation subtypes that PDFKit can render: based on Adobe PDF specification, Table 8.20: Annotation types.
+     * All PDF annotation subtypes that PDFKit can render: based on Adobe PDF specification, Table 8.20: Annotation
+     * types.
      * Annotation subtypes not supported: Polygon, PolyLine, Squiggly, Caret, Caret, FileAttachment,
      * Sound, Movie, Screen, PrinterMark, TrapNet, Watermark, 3D, Rect.
      */

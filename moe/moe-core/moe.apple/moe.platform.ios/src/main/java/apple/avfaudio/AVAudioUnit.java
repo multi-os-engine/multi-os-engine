@@ -177,7 +177,8 @@ public class AVAudioUnit extends AVAudioNode {
      *
      * @param audioComponentDescription The component to instantiate.
      * @param options                   Instantiation options.
-     * @param completionHandler         Called in an arbitrary thread/queue context when instantiation is complete. The client
+     * @param completionHandler         Called in an arbitrary thread/queue context when instantiation is complete. The
+     *                                  client
      *                                  should retain the provided AVAudioUnit.
      */
     @Generated

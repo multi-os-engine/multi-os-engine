@@ -183,7 +183,7 @@ public class EKEventEditViewController extends UINavigationController {
     public native EKEventEditViewDelegate editViewDelegate();
 
     /**
-     * [@property]   event
+     * [@property] event
      * <p>
      * The event to edit.
      * <p>
@@ -197,7 +197,7 @@ public class EKEventEditViewController extends UINavigationController {
     public native EKEvent event();
 
     /**
-     * [@property]   eventStore
+     * [@property] eventStore
      * <p>
      * The event store to use to save events.
      * <p>
@@ -245,7 +245,7 @@ public class EKEventEditViewController extends UINavigationController {
     }
 
     /**
-     * [@property]   event
+     * [@property] event
      * <p>
      * The event to edit.
      * <p>
@@ -259,7 +259,7 @@ public class EKEventEditViewController extends UINavigationController {
     public native void setEvent(EKEvent value);
 
     /**
-     * [@property]   eventStore
+     * [@property] eventStore
      * <p>
      * The event store to use to save events.
      * <p>

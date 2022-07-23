@@ -143,7 +143,7 @@ public class VSSubscriptionRegistrationCenter extends NSObject {
      * <p>
      * You might also want to call this method opportunistically, if you happen to
      * have just confirmed the validity of the subscription, or in response to app
-     * lifecycle events, e.g. when your app becomes active.  The system may use
+     * lifecycle events, e.g. when your app becomes active. The system may use
      * this activity as a hint that the user is actively using the subscription.
      * <p>
      * It is an error to provide a current subscription with an unknown access

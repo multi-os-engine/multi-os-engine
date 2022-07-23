@@ -25,9 +25,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * HKElectrocardiogramVoltageMeasurement
  * <p>
- * An HKElectrocardiogramVoltageMeasurement contains voltage quantities for all leads at a single instance of measurement.
+ * An HKElectrocardiogramVoltageMeasurement contains voltage quantities for all leads at a single instance of
+ * measurement.
  * <p>
- * Each HKElectrocardiogramVoltageMeasurement object corresponds to the voltage quantities across all leads for a given instance in time.
+ * Each HKElectrocardiogramVoltageMeasurement object corresponds to the voltage quantities across all leads for a given
+ * instance in time.
  */
 @Generated
 @Library("HealthKit")

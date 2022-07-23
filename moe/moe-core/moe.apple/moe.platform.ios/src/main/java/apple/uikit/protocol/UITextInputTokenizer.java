@@ -35,21 +35,24 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("UITextInputTokenizer")
 public interface UITextInputTokenizer {
     /**
-     * Returns YES only if a position is at a boundary of a text unit of the specified granularity in the particular direction.
+     * Returns YES only if a position is at a boundary of a text unit of the specified granularity in the particular
+     * direction.
      */
     @Generated
     @Selector("isPosition:atBoundary:inDirection:")
     boolean isPositionAtBoundaryInDirection(UITextPosition position, @NInt long granularity, @NInt long direction);
 
     /**
-     * Returns YES if position is within a text unit of the given granularity.  If the position is at a boundary, returns YES only if the boundary is part of the text unit in the given direction.
+     * Returns YES if position is within a text unit of the given granularity. If the position is at a boundary, returns
+     * YES only if the boundary is part of the text unit in the given direction.
      */
     @Generated
     @Selector("isPosition:withinTextUnit:inDirection:")
     boolean isPositionWithinTextUnitInDirection(UITextPosition position, @NInt long granularity, @NInt long direction);
 
     /**
-     * Returns the next boundary position of a text unit of the given granularity in the given direction, or nil if there is no such position.
+     * Returns the next boundary position of a text unit of the given granularity in the given direction, or nil if
+     * there is no such position.
      */
     @Generated
     @Selector("positionFromPosition:toBoundary:inDirection:")
@@ -57,7 +60,9 @@ public interface UITextInputTokenizer {
             @NInt long direction);
 
     /**
-     * Returns range of the enclosing text unit of the given granularity, or nil if there is no such enclosing unit.  Whether a boundary position is enclosed depends on the given direction, using the same rule as isPosition:withinTextUnit:inDirection:
+     * Returns range of the enclosing text unit of the given granularity, or nil if there is no such enclosing unit.
+     * Whether a boundary position is enclosed depends on the given direction, using the same rule as
+     * isPosition:withinTextUnit:inDirection:
      */
     @Generated
     @Selector("rangeEnclosingPosition:withGranularity:inDirection:")

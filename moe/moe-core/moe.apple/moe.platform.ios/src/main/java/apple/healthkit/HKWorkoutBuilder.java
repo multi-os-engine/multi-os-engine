@@ -193,7 +193,7 @@ public class HKWorkoutBuilder extends NSObject {
     public static native String description_static();
 
     /**
-     * [@property]      device
+     * [@property] device
      * <p>
      * The HKDevice to be associated with the workout.
      */
@@ -245,7 +245,7 @@ public class HKWorkoutBuilder extends NSObject {
     }
 
     /**
-     * [@property]      endDate
+     * [@property] endDate
      * <p>
      * The end date for the workout, as provided by endCollectionWithEndDate:completion:
      */
@@ -323,7 +323,7 @@ public class HKWorkoutBuilder extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]      metadata
+     * [@property] metadata
      * <p>
      * The metadata that will be used when the workout is finished.
      */
@@ -363,7 +363,7 @@ public class HKWorkoutBuilder extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]      startDate
+     * [@property] startDate
      * <p>
      * The start date for the workout, as provided by beginCollectionWithStartDate:completion:
      */
@@ -393,7 +393,7 @@ public class HKWorkoutBuilder extends NSObject {
     public static native long version_static();
 
     /**
-     * [@property]      workoutConfiguration
+     * [@property] workoutConfiguration
      * <p>
      * The configuration for the workout being built.
      */
@@ -402,7 +402,7 @@ public class HKWorkoutBuilder extends NSObject {
     public native HKWorkoutConfiguration workoutConfiguration();
 
     /**
-     * [@property]      workoutEvents
+     * [@property] workoutEvents
      * <p>
      * Workout events that have been added to the builder.
      * <p>

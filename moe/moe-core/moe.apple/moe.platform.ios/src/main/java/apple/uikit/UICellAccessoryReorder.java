@@ -134,7 +134,8 @@ public class UICellAccessoryReorder extends UICellAccessory {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Whether a vertical separator is displayed before the accessory when it is placed after another accessory. Default is YES.
+     * Whether a vertical separator is displayed before the accessory when it is placed after another accessory. Default
+     * is YES.
      */
     @Generated
     @Selector("setShowsVerticalSeparator:")
@@ -145,7 +146,8 @@ public class UICellAccessoryReorder extends UICellAccessory {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Whether a vertical separator is displayed before the accessory when it is placed after another accessory. Default is YES.
+     * Whether a vertical separator is displayed before the accessory when it is placed after another accessory. Default
+     * is YES.
      */
     @Generated
     @Selector("showsVerticalSeparator")

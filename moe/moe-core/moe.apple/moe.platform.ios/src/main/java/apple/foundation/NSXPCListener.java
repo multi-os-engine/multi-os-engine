@@ -53,7 +53,8 @@ public class NSXPCListener extends NSObject {
     public static native NSXPCListener allocWithZone(VoidPtr zone);
 
     /**
-     * Create an anonymous listener connection. Other processes may connect to this listener by passing this listener object's endpoint to NSXPCConnection's -initWithListenerEndpoint: method.
+     * Create an anonymous listener connection. Other processes may connect to this listener by passing this listener
+     * object's endpoint to NSXPCConnection's -initWithListenerEndpoint: method.
      */
     @Generated
     @Selector("anonymousListener")
@@ -86,7 +87,8 @@ public class NSXPCListener extends NSObject {
     public static native String debugDescription_static();
 
     /**
-     * The delegate for the connection listener. If no delegate is set, all new connections will be rejected. See the protocol for more information on how to implement it.
+     * The delegate for the connection listener. If no delegate is set, all new connections will be rejected. See the
+     * protocol for more information on how to implement it.
      */
     @Generated
     @Selector("delegate")
@@ -98,7 +100,9 @@ public class NSXPCListener extends NSObject {
     public static native String description_static();
 
     /**
-     * Get an endpoint object which may be sent over an existing connection. This allows the receiver of the endpoint to create a new connection to this NSXPCListener. The NSXPCListenerEndpoint uniquely names this listener object across connections.
+     * Get an endpoint object which may be sent over an existing connection. This allows the receiver of the endpoint to
+     * create a new connection to this NSXPCListener. The NSXPCListenerEndpoint uniquely names this listener object
+     * across connections.
      */
     @Generated
     @Selector("endpoint")
@@ -127,7 +131,8 @@ public class NSXPCListener extends NSObject {
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
     /**
-     * Invalidate the listener. No more connections will be created. Once a listener is invalidated it may not be resumed or suspended.
+     * Invalidate the listener. No more connections will be created. Once a listener is invalidated it may not be
+     * resumed or suspended.
      */
     @Generated
     @Selector("invalidate")
@@ -155,28 +160,37 @@ public class NSXPCListener extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * All listeners start suspended and must be resumed before they will process incoming requests. If called on the serviceListener, this method will never return. Call it as the last step inside your main function in your XPC service after setting up desired initial state and the listener itself. If called on any other NSXPCListener, the connection is resumed and the method returns immediately.
+     * All listeners start suspended and must be resumed before they will process incoming requests. If called on the
+     * serviceListener, this method will never return. Call it as the last step inside your main function in your XPC
+     * service after setting up desired initial state and the listener itself. If called on any other NSXPCListener, the
+     * connection is resumed and the method returns immediately.
      */
     @Generated
     @Selector("resume")
     public native void resume();
 
     /**
-     * If your listener is an XPCService (that is, in the XPCServices folder of an application or framework), then use this method to get the shared, singleton NSXPCListener object that will await new connections. When the resume method is called on this listener, it will not return. Instead it hands over control to the object and allows it to service the listener as appropriate. This makes it ideal for use in your main() function. For more info on XPCServices, please refer to the developer documentation.
+     * If your listener is an XPCService (that is, in the XPCServices folder of an application or framework), then use
+     * this method to get the shared, singleton NSXPCListener object that will await new connections. When the resume
+     * method is called on this listener, it will not return. Instead it hands over control to the object and allows it
+     * to service the listener as appropriate. This makes it ideal for use in your main() function. For more info on
+     * XPCServices, please refer to the developer documentation.
      */
     @Generated
     @Selector("serviceListener")
     public static native NSXPCListener serviceListener();
 
     /**
-     * The delegate for the connection listener. If no delegate is set, all new connections will be rejected. See the protocol for more information on how to implement it.
+     * The delegate for the connection listener. If no delegate is set, all new connections will be rejected. See the
+     * protocol for more information on how to implement it.
      */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSXPCListenerDelegate value);
 
     /**
-     * The delegate for the connection listener. If no delegate is set, all new connections will be rejected. See the protocol for more information on how to implement it.
+     * The delegate for the connection listener. If no delegate is set, all new connections will be rejected. See the
+     * protocol for more information on how to implement it.
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) NSXPCListenerDelegate value) {

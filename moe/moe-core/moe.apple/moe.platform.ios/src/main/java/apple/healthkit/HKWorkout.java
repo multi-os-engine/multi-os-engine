@@ -182,7 +182,8 @@ public class HKWorkout extends HKSample {
      * @param workoutActivityType The activity type of the workout
      * @param startDate           The point in time that the workout was started
      * @param endDate             The point in time that the workout was ended
-     * @param duration            The duration of the workout. If 0, the difference between startDate and endDate is used.
+     * @param duration            The duration of the workout. If 0, the difference between startDate and endDate is
+     *                            used.
      * @param totalEnergyBurned   The amount of energy that was burned during the workout. (Optional)
      * @param totalDistance       The total distance that was traveled during the workout. (Optional)
      * @param device              The HKDevice associated with the workout. (Optional)
@@ -203,7 +204,8 @@ public class HKWorkout extends HKSample {
      * @param workoutActivityType The activity type of the workout
      * @param startDate           The point in time that the workout was started
      * @param endDate             The point in time that the workout was ended
-     * @param duration            The duration of the workout. If 0, the difference between startDate and endDate is used.
+     * @param duration            The duration of the workout. If 0, the difference between startDate and endDate is
+     *                            used.
      * @param totalEnergyBurned   The amount of energy that was burned during the workout. (Optional)
      * @param totalDistance       The total distance that was traveled during the workout. (Optional)
      * @param metadata            Metadata for the workout. (Optional)
@@ -223,7 +225,8 @@ public class HKWorkout extends HKSample {
      * @param workoutActivityType The activity type of the workout
      * @param startDate           The point in time that the workout was started
      * @param endDate             The point in time that the workout was ended
-     * @param workoutEvents       An array of HKWorkoutEvents. The workout's duration is derived from these events. (Optional)
+     * @param workoutEvents       An array of HKWorkoutEvents. The workout's duration is derived from these events.
+     *                            (Optional)
      * @param totalEnergyBurned   The amount of energy that was burned during the workout. (Optional)
      * @param totalDistance       The total distance that was traveled during the workout. (Optional)
      * @param device              The HKDevice associated with the workout. (Optional)
@@ -245,7 +248,8 @@ public class HKWorkout extends HKSample {
      * @param workoutActivityType The activity type of the workout
      * @param startDate           The point in time that the workout was started
      * @param endDate             The point in time that the workout was ended
-     * @param workoutEvents       An array of HKWorkoutEvents. The workout's duration is derived from these events. (Optional)
+     * @param workoutEvents       An array of HKWorkoutEvents. The workout's duration is derived from these events.
+     *                            (Optional)
      * @param totalEnergyBurned   The amount of energy that was burned during the workout. (Optional)
      * @param totalDistance       The total distance that was traveled during the workout. (Optional)
      * @param metadata            Metadata for the workout. (Optional)
@@ -266,10 +270,12 @@ public class HKWorkout extends HKSample {
      * @param workoutActivityType      The activity type of the workout
      * @param startDate                The point in time that the workout was started
      * @param endDate                  The point in time that the workout was ended
-     * @param workoutEvents            An array of HKWorkoutEvents. The workout's duration is derived from these events. (Optional)
+     * @param workoutEvents            An array of HKWorkoutEvents. The workout's duration is derived from these events.
+     *                                 (Optional)
      * @param totalEnergyBurned        The amount of energy that was burned during the workout. (Optional)
      * @param totalDistance            The total distance that was traveled during the workout. (Optional)
-     * @param totalSwimmingStrokeCount The total count of swimming strokes that was accumulated during the workout. (Optional)
+     * @param totalSwimmingStrokeCount The total count of swimming strokes that was accumulated during the workout.
+     *                                 (Optional)
      * @param device                   The HKDevice associated with the workout. (Optional)
      * @param metadata                 Metadata for the workout. (Optional)
      */
@@ -281,7 +287,7 @@ public class HKWorkout extends HKSample {
             HKQuantity totalSwimmingStrokeCount, HKDevice device, NSDictionary<String, ?> metadata);
 
     /**
-     * [@property]      duration
+     * [@property] duration
      * <p>
      * The length of time that a workout was recording
      * <p>
@@ -307,7 +313,7 @@ public class HKWorkout extends HKSample {
     }
 
     /**
-     * [@property]      totalDistance
+     * [@property] totalDistance
      * <p>
      * The total distance that was traveled during a workout
      * <p>
@@ -319,7 +325,7 @@ public class HKWorkout extends HKSample {
     public native HKQuantity totalDistance();
 
     /**
-     * [@property]      totalEnergyBurned
+     * [@property] totalEnergyBurned
      * <p>
      * The amount of energy that was burned during a workout
      * <p>
@@ -331,7 +337,7 @@ public class HKWorkout extends HKSample {
     public native HKQuantity totalEnergyBurned();
 
     /**
-     * [@property]      totalSwimmingStrokeCount
+     * [@property] totalSwimmingStrokeCount
      * <p>
      * The total count of swimming strokes that was accumulated during a workout
      * <p>
@@ -343,7 +349,7 @@ public class HKWorkout extends HKSample {
     public native HKQuantity totalSwimmingStrokeCount();
 
     /**
-     * [@property]      workoutActivityType
+     * [@property] workoutActivityType
      * <p>
      * Represents the activity that the user was performing during a workout
      */
@@ -353,7 +359,7 @@ public class HKWorkout extends HKSample {
     public native long workoutActivityType();
 
     /**
-     * [@property]      workoutEvents
+     * [@property] workoutEvents
      * <p>
      * An array of HKWorkoutEvents that occurred during a workout.
      * <p>
@@ -366,7 +372,7 @@ public class HKWorkout extends HKSample {
     public native NSArray<? extends HKWorkoutEvent> workoutEvents();
 
     /**
-     * [@property]      totalFlightsClimbed
+     * [@property] totalFlightsClimbed
      * <p>
      * The total count of flights climbed during a workout
      * <p>
@@ -387,7 +393,8 @@ public class HKWorkout extends HKSample {
      * @param workoutActivityType The activity type of the workout
      * @param startDate           The point in time that the workout was started
      * @param endDate             The point in time that the workout was ended
-     * @param workoutEvents       An array of HKWorkoutEvents. The workout's duration is derived from these events. (Optional)
+     * @param workoutEvents       An array of HKWorkoutEvents. The workout's duration is derived from these events.
+     *                            (Optional)
      * @param totalEnergyBurned   The amount of energy that was burned during the workout. (Optional)
      * @param totalDistance       The total distance that was traveled during the workout. (Optional)
      * @param totalFlightsClimbed The total count of flights climbed that was accumulated during the workout. (Optional)

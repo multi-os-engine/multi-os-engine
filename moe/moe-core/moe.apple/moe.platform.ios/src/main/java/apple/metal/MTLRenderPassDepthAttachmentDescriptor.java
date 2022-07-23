@@ -160,7 +160,7 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
     /**
      * [@property] resolveFilter
      * <p>
-     * The filter to be used for depth multisample resolve.  Defaults to MTLMultisampleDepthResolveFilterSample0.
+     * The filter to be used for depth multisample resolve. Defaults to MTLMultisampleDepthResolveFilterSample0.
      */
     @Generated
     @Selector("depthResolveFilter")
@@ -183,7 +183,7 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
     /**
      * [@property] resolveFilter
      * <p>
-     * The filter to be used for depth multisample resolve.  Defaults to MTLMultisampleDepthResolveFilterSample0.
+     * The filter to be used for depth multisample resolve. Defaults to MTLMultisampleDepthResolveFilterSample0.
      */
     @Generated
     @Selector("setDepthResolveFilter:")

@@ -30,7 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * SCNAvoidOccluderConstraint
  * <p>
- * A SCNAvoidOccluderConstraint constraints place the receiver at a position that prevent nodes with the specified category to occlude the target.
+ * A SCNAvoidOccluderConstraint constraints place the receiver at a position that prevent nodes with the specified
+ * category to occlude the target.
  * <p>
  * The target node and it's children are ignored as potential occluders.
  */

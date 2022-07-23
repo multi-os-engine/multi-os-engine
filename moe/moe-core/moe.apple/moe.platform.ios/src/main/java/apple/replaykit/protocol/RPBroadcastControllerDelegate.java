@@ -65,7 +65,8 @@ public interface RPBroadcastControllerDelegate {
      * Called when the broadcast service has updated broadcastURL.
      *
      * @param broadcastController The controller instance.
-     * @param broadcastURL        NSURL instance with URL of the resource where broacast can be viewed. Defined by broadcast service.
+     * @param broadcastURL        NSURL instance with URL of the resource where broacast can be viewed. Defined by
+     *                            broadcast service.
      */
     @Generated
     @IsOptional

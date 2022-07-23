@@ -74,9 +74,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIView extends UIResponder
-        implements NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem, UITraitEnvironment, UICoordinateSpace,
-        UIFocusItem, UIFocusItemContainer, CALayerDelegate, UIAccessibilityIdentification, UILargeContentViewerItem {
+public class UIView extends UIResponder implements NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem,
+        UITraitEnvironment, UICoordinateSpace, UIFocusItem, UIFocusItemContainer, CALayerDelegate,
+        UIAccessibilityIdentification, UILargeContentViewerItem {
     static {
         NatJ.register();
     }
@@ -91,7 +91,8 @@ public class UIView extends UIResponder
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * start time and duration are values between 0.0 and 1.0 specifying time and duration relative to the overall time of the keyframe animation
+     * start time and duration are values between 0.0 and 1.0 specifying time and duration relative to the overall time
+     * of the keyframe animation
      */
     @Generated
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
@@ -141,7 +142,13 @@ public class UIView extends UIResponder
             @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     /**
-     * Performs `animations` using a timing curve described by the motion of a spring. When `dampingRatio` is 1, the animation will smoothly decelerate to its final model values without oscillating. Damping ratios less than 1 will oscillate more and more before coming to a complete stop. You can use the initial spring velocity to specify how fast the object at the end of the simulated spring was moving before it was attached. It's a unit coordinate system, where 1 is defined as traveling the total animation distance in a second. So if you're changing an object's position by 200pt in this animation, and you want the animation to behave as if the object was moving at 100pt/s before the animation started, you'd pass 0.5. You'll typically want to pass 0 for the velocity.
+     * Performs `animations` using a timing curve described by the motion of a spring. When `dampingRatio` is 1, the
+     * animation will smoothly decelerate to its final model values without oscillating. Damping ratios less than 1 will
+     * oscillate more and more before coming to a complete stop. You can use the initial spring velocity to specify how
+     * fast the object at the end of the simulated spring was moving before it was attached. It's a unit coordinate
+     * system, where 1 is defined as traveling the total animation distance in a second. So if you're changing an
+     * object's position by 200pt in this animation, and you want the animation to behave as if the object was moving at
+     * 100pt/s before the animation started, you'd pass 0.5. You'll typically want to pass 0 for the velocity.
      */
     @Generated
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
@@ -273,7 +280,11 @@ public class UIView extends UIResponder
     public static native UIView new_objc();
 
     /**
-     * Performs the requested system-provided animation on one or more views. Specify additional animations in the parallelAnimations block. These additional animations will run alongside the system animation with the same timing and duration that the system animation defines/inherits. Additional animations should not modify properties of the view on which the system animation is being performed. Not all system animations honor all available options.
+     * Performs the requested system-provided animation on one or more views. Specify additional animations in the
+     * parallelAnimations block. These additional animations will run alongside the system animation with the same
+     * timing and duration that the system animation defines/inherits. Additional animations should not modify
+     * properties of the view on which the system animation is being performed. Not all system animations honor all
+     * available options.
      */
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
@@ -288,7 +299,10 @@ public class UIView extends UIResponder
             @ObjCBlock(name = "call_performWithoutAnimation") Block_performWithoutAnimation actionsWithoutAnimation);
 
     /**
-     * constraint-based layout engages lazily when someone tries to use it (e.g., adds a constraint to a view).  If you do all of your constraint set up in -updateConstraints, you might never even receive updateConstraints if no one makes a constraint.  To fix this chicken and egg problem, override this method to return YES if your view needs the window to use constraint-based layout.
+     * constraint-based layout engages lazily when someone tries to use it (e.g., adds a constraint to a view). If you
+     * do all of your constraint set up in -updateConstraints, you might never even receive updateConstraints if no one
+     * makes a constraint. To fix this chicken and egg problem, override this method to return YES if your view needs
+     * the window to use constraint-based layout.
      */
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -378,7 +392,8 @@ public class UIView extends UIResponder
             @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
 
     /**
-     * This method returns the layout direction implied by the provided semantic content attribute relative to the application-wide layout direction (as returned by UIApplication.sharedApplication.userInterfaceLayoutDirection).
+     * This method returns the layout direction implied by the provided semantic content attribute relative to the
+     * application-wide layout direction (as returned by UIApplication.sharedApplication.userInterfaceLayoutDirection).
      */
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
@@ -386,7 +401,11 @@ public class UIView extends UIResponder
     public static native long userInterfaceLayoutDirectionForSemanticContentAttribute(@NInt long attribute);
 
     /**
-     * This method returns the layout direction implied by the provided semantic content attribute relative to the provided layout direction. For example, when provided a layout direction of RightToLeft and a semantic content attribute of Playback, this method returns LeftToRight. Layout and drawing code can use this method to determine how to arrange elements, but might find it easier to query the container view’s effectiveUserInterfaceLayoutDirection property instead.
+     * This method returns the layout direction implied by the provided semantic content attribute relative to the
+     * provided layout direction. For example, when provided a layout direction of RightToLeft and a semantic content
+     * attribute of Playback, this method returns LeftToRight. Layout and drawing code can use this method to determine
+     * how to arrange elements, but might find it easier to query the container view’s
+     * effectiveUserInterfaceLayoutDirection property instead.
      */
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
@@ -410,14 +429,16 @@ public class UIView extends UIResponder
     public native CAAction actionForLayerForKey(CALayer layer, String event);
 
     /**
-     * This method will be deprecated in a future release and should be avoided.  Instead, set NSLayoutConstraint's active property to YES.
+     * This method will be deprecated in a future release and should be avoided.  Instead, set NSLayoutConstraint's
+     * active property to YES.
      */
     @Generated
     @Selector("addConstraint:")
     public native void addConstraint(NSLayoutConstraint constraint);
 
     /**
-     * This method will be deprecated in a future release and should be avoided.  Instead use +[NSLayoutConstraint activateConstraints:].
+     * This method will be deprecated in a future release and should be avoided.  Instead use +[NSLayoutConstraint
+     * activateConstraints:].
      */
     @Generated
     @Selector("addConstraints:")
@@ -450,10 +471,13 @@ public class UIView extends UIResponder
     public native void addSubview(UIView view);
 
     /**
-     * These two methods should be inverses of each other.  UIKit will call both as part of layout computation.
-     * They may be overridden to provide arbitrary transforms between frame and alignment rect, though the two methods must be inverses of each other.
-     * However, the default implementation uses -alignmentRectInsets, so just override that if it's applicable.  It's easier to get right.
-     * A view that displayed an image with some ornament would typically override these, because the ornamental part of an image would scale up with the size of the frame.
+     * These two methods should be inverses of each other. UIKit will call both as part of layout computation.
+     * They may be overridden to provide arbitrary transforms between frame and alignment rect, though the two methods
+     * must be inverses of each other.
+     * However, the default implementation uses -alignmentRectInsets, so just override that if it's applicable. It's
+     * easier to get right.
+     * A view that displayed an image with some ornament would typically override these, because the ornamental part of
+     * an image would scale up with the size of the frame.
      * Set the NSUserDefault UIViewShowAlignmentRects to YES to see alignment rects drawn.
      */
     @Generated
@@ -462,7 +486,8 @@ public class UIView extends UIResponder
     public native CGRect alignmentRectForFrame(@ByValue CGRect frame);
 
     /**
-     * override this if the alignment rect is obtained from the frame by insetting each edge by a fixed amount.  This is only called by alignmentRectForFrame: and frameForAlignmentRect:.
+     * override this if the alignment rect is obtained from the frame by insetting each edge by a fixed amount. This is
+     * only called by alignmentRectForFrame: and frameForAlignmentRect:.
      */
     @Generated
     @Selector("alignmentRectInsets")
@@ -571,7 +596,8 @@ public class UIView extends UIResponder
     public native NSLayoutYAxisAnchor centerYAnchor();
 
     /**
-     * default is YES. ignored for opaque views. for non-opaque views causes the active CGContext in drawRect: to be pre-filled with transparent pixels
+     * default is YES. ignored for opaque views. for non-opaque views causes the active CGContext in drawRect: to be
+     * pre-filled with transparent pixels
      */
     @Generated
     @Selector("clearsContextBeforeDrawing")
@@ -600,8 +626,11 @@ public class UIView extends UIResponder
     public native NSArray<? extends NSLayoutConstraint> constraints();
 
     /**
-     * This returns a list of all the constraints that are affecting the current location of the receiver.  The constraints do not necessarily involve the receiver, they may affect the frame indirectly.
-     * Pass UILayoutConstraintAxisHorizontal for the constraints affecting [self center].x and CGRectGetWidth([self bounds]), and UILayoutConstraintAxisVertical for the constraints affecting[self center].y and CGRectGetHeight([self bounds]).
+     * This returns a list of all the constraints that are affecting the current location of the receiver. The
+     * constraints do not necessarily involve the receiver, they may affect the frame indirectly.
+     * Pass UILayoutConstraintAxisHorizontal for the constraints affecting [self center].x and CGRectGetWidth([self
+     * bounds]), and UILayoutConstraintAxisVertical for the constraints affecting[self center].y and
+     * CGRectGetHeight([self bounds]).
      */
     @Generated
     @Selector("constraintsAffectingLayoutForAxis:")
@@ -629,7 +658,8 @@ public class UIView extends UIResponder
     public native double contentScaleFactor();
 
     /**
-     * animatable. default is unit rectangle {{0,0} {1,1}}. Now deprecated: please use -[UIImage resizableImageWithCapInsets:] to achieve the same effect.
+     * animatable. default is unit rectangle {{0,0} {1,1}}. Now deprecated: please use -[UIImage
+     * resizableImageWithCapInsets:] to achieve the same effect.
      */
     @Generated
     @Deprecated
@@ -724,14 +754,18 @@ public class UIView extends UIResponder
     public native void drawRectForViewPrintFormatter(@ByValue CGRect rect, UIViewPrintFormatter formatter);
 
     /**
-     * Use this method to render a snapshot of the view hierarchy into the current context. Returns NO if the snapshot is missing image data, YES if the snapshot is complete. Calling this method from layoutSubviews while the current transaction is committing will capture what is currently displayed regardless if afterUpdates is YES.
+     * Use this method to render a snapshot of the view hierarchy into the current context. Returns NO if the snapshot
+     * is missing image data, YES if the snapshot is complete. Calling this method from layoutSubviews while the current
+     * transaction is committing will capture what is currently displayed regardless if afterUpdates is YES.
      */
     @Generated
     @Selector("drawViewHierarchyInRect:afterScreenUpdates:")
     public native boolean drawViewHierarchyInRectAfterScreenUpdates(@ByValue CGRect rect, boolean afterUpdates);
 
     /**
-     * Returns the user interface layout direction appropriate for arranging the immediate content of this view. Always consult the effectiveUserInterfaceLayoutDirection of the view whose immediate content is being arranged or drawn. Do not assume that the value propagates through the view’s subtree.
+     * Returns the user interface layout direction appropriate for arranging the immediate content of this view. Always
+     * consult the effectiveUserInterfaceLayoutDirection of the view whose immediate content is being arranged or drawn.
+     * Do not assume that the value propagates through the view’s subtree.
      */
     @Generated
     @Selector("effectiveUserInterfaceLayoutDirection")
@@ -776,9 +810,11 @@ public class UIView extends UIResponder
     public native CGRect frameForAlignmentRect(@ByValue CGRect alignmentRect);
 
     /**
-     * called when the recognizer attempts to transition out of UIGestureRecognizerStatePossible if a touch hit-tested to this view will be cancelled as a result of gesture recognition
+     * called when the recognizer attempts to transition out of UIGestureRecognizerStatePossible if a touch hit-tested
+     * to this view will be cancelled as a result of gesture recognition
      * returns YES by default. return NO to cause the gesture recognizer to transition to UIGestureRecognizerStateFailed
-     * subclasses may override to prevent recognition of particular gestures. for example, UISlider prevents swipes parallel to the slider that start in the thumb
+     * subclasses may override to prevent recognition of particular gestures. for example, UISlider prevents swipes
+     * parallel to the slider that start in the thumb
      */
     @Generated
     @Selector("gestureRecognizerShouldBegin:")
@@ -789,10 +825,16 @@ public class UIView extends UIResponder
     public native NSArray<? extends UIGestureRecognizer> gestureRecognizers();
 
     /**
-     * If there aren't enough constraints in the system to uniquely determine layout, we say the layout is ambiguous.  For example, if the only constraint in the system was x = y + 100, then there are lots of different possible values for x and y.  This situation is not automatically detected by UIKit, due to performance considerations and details of the algorithm used for layout.
-     * The symptom of ambiguity is that views sometimes jump from place to place, or possibly are just in the wrong place.
-     * -hasAmbiguousLayout runs a check for whether there is another center and bounds the receiver could have that could also satisfy the constraints.
-     * -exerciseAmbiguousLayout does more.  It randomly changes the view layout to a different valid layout.  Making the UI jump back and forth can be helpful for figuring out where you're missing a constraint.
+     * If there aren't enough constraints in the system to uniquely determine layout, we say the layout is ambiguous.
+     * For example, if the only constraint in the system was x = y + 100, then there are lots of different possible
+     * values for x and y. This situation is not automatically detected by UIKit, due to performance considerations and
+     * details of the algorithm used for layout.
+     * The symptom of ambiguity is that views sometimes jump from place to place, or possibly are just in the wrong
+     * place.
+     * -hasAmbiguousLayout runs a check for whether there is another center and bounds the receiver could have that
+     * could also satisfy the constraints.
+     * -exerciseAmbiguousLayout does more. It randomly changes the view layout to a different valid layout. Making the
+     * UI jump back and forth can be helpful for figuring out where you're missing a constraint.
      */
     @Generated
     @Selector("hasAmbiguousLayout")
@@ -839,7 +881,8 @@ public class UIView extends UIResponder
     public native CGSize intrinsicContentSize();
 
     /**
-     * call this when something changes that affects the intrinsicContentSize.  Otherwise UIKit won't notice that it changed.
+     * call this when something changes that affects the intrinsicContentSize. Otherwise UIKit won't notice that it
+     * changed.
      */
     @Generated
     @Selector("invalidateIntrinsicContentSize")
@@ -899,14 +942,16 @@ public class UIView extends UIResponder
     public native void setMultipleTouchEnabled(boolean value);
 
     /**
-     * default is YES. opaque views must fill their entire bounds or the results are undefined. the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels
+     * default is YES. opaque views must fill their entire bounds or the results are undefined. the active CGContext in
+     * drawRect: will not have been cleared and may have non-zeroed pixels
      */
     @Generated
     @Selector("isOpaque")
     public native boolean isOpaque();
 
     /**
-     * default is YES. opaque views must fill their entire bounds or the results are undefined. the active CGContext in drawRect: will not have been cleared and may have non-zeroed pixels
+     * default is YES. opaque views must fill their entire bounds or the results are undefined. the active CGContext in
+     * drawRect: will not have been cleared and may have non-zeroed pixels
      */
     @Generated
     @Selector("setOpaque:")
@@ -954,14 +999,20 @@ public class UIView extends UIResponder
     public native void layoutIfNeeded();
 
     /**
-     * -layoutMargins returns a set of insets from the edge of the view's bounds that denote a default spacing for laying out content.
-     * If preservesSuperviewLayoutMargins is YES, margins cascade down the view tree, adjusting for geometry offsets, so that setting
-     * the left value of layoutMargins on a superview will affect the left value of layoutMargins for subviews positioned close to the
+     * -layoutMargins returns a set of insets from the edge of the view's bounds that denote a default spacing for
+     * laying out content.
+     * If preservesSuperviewLayoutMargins is YES, margins cascade down the view tree, adjusting for geometry offsets, so
+     * that setting
+     * the left value of layoutMargins on a superview will affect the left value of layoutMargins for subviews
+     * positioned close to the
      * left edge of their superview's bounds
-     * If your view subclass uses layoutMargins in its layout or drawing, override -layoutMarginsDidChange in order to refresh your
+     * If your view subclass uses layoutMargins in its layout or drawing, override -layoutMarginsDidChange in order to
+     * refresh your
      * view if the margins change.
-     * On iOS 11.0 and later, please support both user interface layout directions by setting the directionalLayoutMargins property
-     * instead of the layoutMargins property. After setting the directionalLayoutMargins property, the values in the left and right
+     * On iOS 11.0 and later, please support both user interface layout directions by setting the
+     * directionalLayoutMargins property
+     * instead of the layoutMargins property. After setting the directionalLayoutMargins property, the values in the
+     * left and right
      * fields of the layoutMargins property will depend on the user interface layout direction.
      */
     @Generated
@@ -986,7 +1037,8 @@ public class UIView extends UIResponder
     public native void layoutSublayersOfLayer(CALayer layer);
 
     /**
-     * override point. called by layoutIfNeeded automatically. As of iOS 6.0, when constraints-based layout is used the base implementation applies the constraints-based layout, otherwise it does nothing.
+     * override point. called by layoutIfNeeded automatically. As of iOS 6.0, when constraints-based layout is used the
+     * base implementation applies the constraints-based layout, otherwise it does nothing.
      */
     @Generated
     @Selector("layoutSubviews")
@@ -1032,28 +1084,33 @@ public class UIView extends UIResponder
     public native UIView preferredFocusedView();
 
     /**
-     * default is NO - set to enable pass-through or cascading behavior of margins from this view’s parent to its children
+     * default is NO - set to enable pass-through or cascading behavior of margins from this view’s parent to its
+     * children
      */
     @Generated
     @Selector("preservesSuperviewLayoutMargins")
     public native boolean preservesSuperviewLayoutMargins();
 
     /**
-     * This content guide provides a layout area that you can use to place text and related content whose width should generally be constrained to a size that is easy for the user to read. This guide provides a centered region that you can place content within to get this behavior for this view.
+     * This content guide provides a layout area that you can use to place text and related content whose width should
+     * generally be constrained to a size that is easy for the user to read. This guide provides a centered region that
+     * you can place content within to get this behavior for this view.
      */
     @Generated
     @Selector("readableContentGuide")
     public native UILayoutGuide readableContentGuide();
 
     /**
-     * This method will be deprecated in a future release and should be avoided.  Instead set NSLayoutConstraint's active property to NO.
+     * This method will be deprecated in a future release and should be avoided.  Instead set NSLayoutConstraint's
+     * active property to NO.
      */
     @Generated
     @Selector("removeConstraint:")
     public native void removeConstraint(NSLayoutConstraint constraint);
 
     /**
-     * This method will be deprecated in a future release and should be avoided.  Instead use +[NSLayoutConstraint deactivateConstraints:].
+     * This method will be deprecated in a future release and should be avoided.  Instead use +[NSLayoutConstraint
+     * deactivateConstraints:].
      */
     @Generated
     @Selector("removeConstraints:")
@@ -1151,7 +1208,8 @@ public class UIView extends UIResponder
     public native void setCenter(@ByValue CGPoint value);
 
     /**
-     * default is YES. ignored for opaque views. for non-opaque views causes the active CGContext in drawRect: to be pre-filled with transparent pixels
+     * default is YES. ignored for opaque views. for non-opaque views causes the active CGContext in drawRect: to be
+     * pre-filled with transparent pixels
      */
     @Generated
     @Selector("setClearsContextBeforeDrawing:")
@@ -1184,7 +1242,8 @@ public class UIView extends UIResponder
     public native void setContentScaleFactor(@NFloat double value);
 
     /**
-     * animatable. default is unit rectangle {{0,0} {1,1}}. Now deprecated: please use -[UIImage resizableImageWithCapInsets:] to achieve the same effect.
+     * animatable. default is unit rectangle {{0,0} {1,1}}. Now deprecated: please use -[UIImage
+     * resizableImageWithCapInsets:] to achieve the same effect.
      */
     @Generated
     @Deprecated
@@ -1192,7 +1251,8 @@ public class UIView extends UIResponder
     public native void setContentStretch(@ByValue CGRect value);
 
     /**
-     * animatable. do not use frame if view is transformed since it will not correctly reflect the actual location of the view. use bounds + center instead.
+     * animatable. do not use frame if view is transformed since it will not correctly reflect the actual location of
+     * the view. use bounds + center instead.
      */
     @Generated
     @Selector("setFrame:")
@@ -1203,14 +1263,20 @@ public class UIView extends UIResponder
     public native void setGestureRecognizers(NSArray<? extends UIGestureRecognizer> value);
 
     /**
-     * -layoutMargins returns a set of insets from the edge of the view's bounds that denote a default spacing for laying out content.
-     * If preservesSuperviewLayoutMargins is YES, margins cascade down the view tree, adjusting for geometry offsets, so that setting
-     * the left value of layoutMargins on a superview will affect the left value of layoutMargins for subviews positioned close to the
+     * -layoutMargins returns a set of insets from the edge of the view's bounds that denote a default spacing for
+     * laying out content.
+     * If preservesSuperviewLayoutMargins is YES, margins cascade down the view tree, adjusting for geometry offsets, so
+     * that setting
+     * the left value of layoutMargins on a superview will affect the left value of layoutMargins for subviews
+     * positioned close to the
      * left edge of their superview's bounds
-     * If your view subclass uses layoutMargins in its layout or drawing, override -layoutMarginsDidChange in order to refresh your
+     * If your view subclass uses layoutMargins in its layout or drawing, override -layoutMarginsDidChange in order to
+     * refresh your
      * view if the margins change.
-     * On iOS 11.0 and later, please support both user interface layout directions by setting the directionalLayoutMargins property
-     * instead of the layoutMargins property. After setting the directionalLayoutMargins property, the values in the left and right
+     * On iOS 11.0 and later, please support both user interface layout directions by setting the
+     * directionalLayoutMargins property
+     * instead of the layoutMargins property. After setting the directionalLayoutMargins property, the values in the
+     * left and right
      * fields of the layoutMargins property will depend on the user interface layout direction.
      */
     @Generated
@@ -1249,7 +1315,8 @@ public class UIView extends UIResponder
     public native void setNeedsUpdateConstraints();
 
     /**
-     * default is NO - set to enable pass-through or cascading behavior of margins from this view’s parent to its children
+     * default is NO - set to enable pass-through or cascading behavior of margins from this view’s parent to its
+     * children
      */
     @Generated
     @Selector("setPreservesSuperviewLayoutMargins:")
@@ -1271,20 +1338,26 @@ public class UIView extends UIResponder
     public native void setTag(@NInt long value);
 
     /**
-     * -tintAdjustmentMode always returns either UIViewTintAdjustmentModeNormal or UIViewTintAdjustmentModeDimmed. The value returned is the first non-default value in the receiver's superview chain (starting with itself).
+     * -tintAdjustmentMode always returns either UIViewTintAdjustmentModeNormal or UIViewTintAdjustmentModeDimmed. The
+     * value returned is the first non-default value in the receiver's superview chain (starting with itself).
      * If no non-default value is found, UIViewTintAdjustmentModeNormal is returned.
-     * When tintAdjustmentMode has a value of UIViewTintAdjustmentModeDimmed for a view, the color it returns from tintColor will be modified to give a dimmed appearance.
-     * When the tintAdjustmentMode of a view changes (either the view's value changing or by one of its superview's values changing), -tintColorDidChange will be called to allow the view to refresh its rendering.
+     * When tintAdjustmentMode has a value of UIViewTintAdjustmentModeDimmed for a view, the color it returns from
+     * tintColor will be modified to give a dimmed appearance.
+     * When the tintAdjustmentMode of a view changes (either the view's value changing or by one of its superview's
+     * values changing), -tintColorDidChange will be called to allow the view to refresh its rendering.
      */
     @Generated
     @Selector("setTintAdjustmentMode:")
     public native void setTintAdjustmentMode(@NInt long value);
 
     /**
-     * -tintColor always returns a color. The color returned is the first non-default value in the receiver's superview chain (starting with itself).
+     * -tintColor always returns a color. The color returned is the first non-default value in the receiver's superview
+     * chain (starting with itself).
      * If no non-default value is found, a system-defined color is returned.
-     * If this view's -tintAdjustmentMode returns Dimmed, then the color that is returned for -tintColor will automatically be dimmed.
-     * If your view subclass uses tintColor in its rendering, override -tintColorDidChange in order to refresh the rendering if the color changes.
+     * If this view's -tintAdjustmentMode returns Dimmed, then the color that is returned for -tintColor will
+     * automatically be dimmed.
+     * If your view subclass uses tintColor in its rendering, override -tintColorDidChange in order to refresh the
+     * rendering if the color changes.
      */
     @Generated
     @Selector("setTintColor:")
@@ -1321,18 +1394,24 @@ public class UIView extends UIResponder
     public native void sizeToFit();
 
     /**
-     * * When requesting a snapshot, 'afterUpdates' defines whether the snapshot is representative of what's currently on screen or if you wish to include any recent changes before taking the snapshot.
+     * * When requesting a snapshot, 'afterUpdates' defines whether the snapshot is representative of what's currently
+     * on screen or if you wish to include any recent changes before taking the snapshot.
      * <p>
-     * If called during layout from a committing transaction, snapshots occurring after the screen updates will include all changes made, regardless of when the snapshot is taken and the changes are made. For example:
+     * If called during layout from a committing transaction, snapshots occurring after the screen updates will include
+     * all changes made, regardless of when the snapshot is taken and the changes are made. For example:
      * <p>
      * - (void)layoutSubviews {
      * UIView *snapshot = [self snapshotViewAfterScreenUpdates:YES];
      * self.alpha = 0.0;
      * }
      * <p>
-     * The snapshot will appear to be empty since the change in alpha will be captured by the snapshot. If you need to animate the view during layout, animate the snapshot instead.
+     * The snapshot will appear to be empty since the change in alpha will be captured by the snapshot. If you need to
+     * animate the view during layout, animate the snapshot instead.
      * <p>
-     * * Creating snapshots from existing snapshots (as a method to duplicate, crop or create a resizable variant) is supported. In cases where many snapshots are needed, creating a snapshot from a common superview and making subsequent snapshots from it can be more performant. Please keep in mind that if 'afterUpdates' is YES, the original snapshot is committed and any changes made to it, not the view originally snapshotted, will be included.
+     * * Creating snapshots from existing snapshots (as a method to duplicate, crop or create a resizable variant) is
+     * supported. In cases where many snapshots are needed, creating a snapshot from a common superview and making
+     * subsequent snapshots from it can be more performant. Please keep in mind that if 'afterUpdates' is YES, the
+     * original snapshot is committed and any changes made to it, not the view originally snapshotted, will be included.
      */
     @Generated
     @Selector("snapshotViewAfterScreenUpdates:")
@@ -1347,7 +1426,8 @@ public class UIView extends UIResponder
     public native UIView superview();
 
     /**
-     * Equivalent to sending -systemLayoutSizeFittingSize:withHorizontalFittingPriority:verticalFittingPriority: with UILayoutPriorityFittingSizeLevel for both priorities.
+     * Equivalent to sending -systemLayoutSizeFittingSize:withHorizontalFittingPriority:verticalFittingPriority: with
+     * UILayoutPriorityFittingSizeLevel for both priorities.
      */
     @Generated
     @Selector("systemLayoutSizeFittingSize:")
@@ -1369,10 +1449,13 @@ public class UIView extends UIResponder
     public native long tag();
 
     /**
-     * -tintAdjustmentMode always returns either UIViewTintAdjustmentModeNormal or UIViewTintAdjustmentModeDimmed. The value returned is the first non-default value in the receiver's superview chain (starting with itself).
+     * -tintAdjustmentMode always returns either UIViewTintAdjustmentModeNormal or UIViewTintAdjustmentModeDimmed. The
+     * value returned is the first non-default value in the receiver's superview chain (starting with itself).
      * If no non-default value is found, UIViewTintAdjustmentModeNormal is returned.
-     * When tintAdjustmentMode has a value of UIViewTintAdjustmentModeDimmed for a view, the color it returns from tintColor will be modified to give a dimmed appearance.
-     * When the tintAdjustmentMode of a view changes (either the view's value changing or by one of its superview's values changing), -tintColorDidChange will be called to allow the view to refresh its rendering.
+     * When tintAdjustmentMode has a value of UIViewTintAdjustmentModeDimmed for a view, the color it returns from
+     * tintColor will be modified to give a dimmed appearance.
+     * When the tintAdjustmentMode of a view changes (either the view's value changing or by one of its superview's
+     * values changing), -tintColorDidChange will be called to allow the view to refresh its rendering.
      */
     @Generated
     @Selector("tintAdjustmentMode")
@@ -1380,17 +1463,22 @@ public class UIView extends UIResponder
     public native long tintAdjustmentMode();
 
     /**
-     * -tintColor always returns a color. The color returned is the first non-default value in the receiver's superview chain (starting with itself).
+     * -tintColor always returns a color. The color returned is the first non-default value in the receiver's superview
+     * chain (starting with itself).
      * If no non-default value is found, a system-defined color is returned.
-     * If this view's -tintAdjustmentMode returns Dimmed, then the color that is returned for -tintColor will automatically be dimmed.
-     * If your view subclass uses tintColor in its rendering, override -tintColorDidChange in order to refresh the rendering if the color changes.
+     * If this view's -tintAdjustmentMode returns Dimmed, then the color that is returned for -tintColor will
+     * automatically be dimmed.
+     * If your view subclass uses tintColor in its rendering, override -tintColorDidChange in order to refresh the
+     * rendering if the color changes.
      */
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();
 
     /**
-     * The -tintColorDidChange message is sent to appropriate subviews of a view when its tintColor is changed by client code or to subviews in the view hierarchy of a view whose tintColor is implicitly changed when its superview or tintAdjustmentMode changes.
+     * The -tintColorDidChange message is sent to appropriate subviews of a view when its tintColor is changed by client
+     * code or to subviews in the view hierarchy of a view whose tintColor is implicitly changed when its superview or
+     * tintAdjustmentMode changes.
      */
     @Generated
     @Selector("tintColorDidChange")
@@ -1432,7 +1520,8 @@ public class UIView extends UIResponder
     public native void updateConstraints();
 
     /**
-     * Updates the constraints from the bottom up for the view hierarchy rooted at the receiver. UIWindow's implementation creates a layout engine if necessary first.
+     * Updates the constraints from the bottom up for the view hierarchy rooted at the receiver. UIWindow's
+     * implementation creates a layout engine if necessary first.
      */
     @Generated
     @Selector("updateConstraintsIfNeeded")
@@ -1629,7 +1718,8 @@ public class UIView extends UIResponder
     public native void addInteraction(@Mapped(ObjCObjectMapper.class) UIInteraction interaction);
 
     /**
-     * directionalLayoutMargins.leading is used on the left when the user interface direction is LTR and on the right for RTL.
+     * directionalLayoutMargins.leading is used on the left when the user interface direction is LTR and on the right
+     * for RTL.
      * Vice versa for directionalLayoutMargins.trailing.
      */
     @Generated
@@ -1674,7 +1764,8 @@ public class UIView extends UIResponder
     public native void setAccessibilityIgnoresInvertColors(boolean value);
 
     /**
-     * directionalLayoutMargins.leading is used on the left when the user interface direction is LTR and on the right for RTL.
+     * directionalLayoutMargins.leading is used on the left when the user interface direction is LTR and on the right
+     * for RTL.
      * Vice versa for directionalLayoutMargins.trailing.
      */
     @Generated
@@ -1725,7 +1816,8 @@ public class UIView extends UIResponder
     public native String largeContentTitle();
 
     /**
-     * Call this method from within an animation block to repeat animations, otherwise has no effect. The total duration of a repeating animation can be computed via (outerAnimationDuration * repeatCount * autoreverses ? 2 : 1).
+     * Call this method from within an animation block to repeat animations, otherwise has no effect. The total duration
+     * of a repeating animation can be computed via (outerAnimationDuration * repeatCount * autoreverses ? 2 : 1).
      */
     @Generated
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
@@ -1742,7 +1834,8 @@ public class UIView extends UIResponder
 
     /**
      * Set `overrideUserInterfaceStyle` to cause this view and its subviews to have a specific `UIUserInterfaceStyle`.
-     * Reading this property does not return the current `UIUserInterfaceStyle`. Use `traitCollection.userInterfaceStyle` instead.
+     * Reading this property does not return the current `UIUserInterfaceStyle`. Use
+     * `traitCollection.userInterfaceStyle` instead.
      * <p>
      * Whenever possible, use the `overrideUserInterfaceStyle` property on `UIViewController` instead.
      * <p>
@@ -1799,7 +1892,8 @@ public class UIView extends UIResponder
 
     /**
      * Set `overrideUserInterfaceStyle` to cause this view and its subviews to have a specific `UIUserInterfaceStyle`.
-     * Reading this property does not return the current `UIUserInterfaceStyle`. Use `traitCollection.userInterfaceStyle` instead.
+     * Reading this property does not return the current `UIUserInterfaceStyle`. Use
+     * `traitCollection.userInterfaceStyle` instead.
      * <p>
      * Whenever possible, use the `overrideUserInterfaceStyle` property on `UIViewController` instead.
      * <p>
@@ -1838,7 +1932,8 @@ public class UIView extends UIResponder
     public native void setShowsLargeContentViewer(boolean value);
 
     /**
-     * default is CATransform3DIdentity. animatable. Please use this property instead of the transform property on the layer
+     * default is CATransform3DIdentity. animatable. Please use this property instead of the transform property on the
+     * layer
      */
     @Generated
     @Selector("setTransform3D:")
@@ -1849,7 +1944,8 @@ public class UIView extends UIResponder
     public native boolean showsLargeContentViewer();
 
     /**
-     * default is CATransform3DIdentity. animatable. Please use this property instead of the transform property on the layer
+     * default is CATransform3DIdentity. animatable. Please use this property instead of the transform property on the
+     * layer
      */
     @Generated
     @Selector("transform3D")
@@ -1861,7 +1957,8 @@ public class UIView extends UIResponder
     public native String focusGroupIdentifier();
 
     /**
-     * The identifier of the focus group that this view belongs to. If this is nil, subviews inherit their superview's focus group.
+     * The identifier of the focus group that this view belongs to. If this is nil, subviews inherit their superview's
+     * focus group.
      */
     @Generated
     @Selector("setFocusGroupIdentifier:")
@@ -1891,7 +1988,8 @@ public class UIView extends UIResponder
     public native boolean isTransparentFocusItem();
 
     /**
-     * Follows the keyboard when on screen and docked. When the keyboard is offscreen or undocked, keyboardLayoutGuide.topAnchor matches the view's safeAreaLayoutGuide.bottomAnchor.
+     * Follows the keyboard when on screen and docked. When the keyboard is offscreen or undocked,
+     * keyboardLayoutGuide.topAnchor matches the view's safeAreaLayoutGuide.bottomAnchor.
      */
     @Generated
     @Selector("keyboardLayoutGuide")
@@ -1922,15 +2020,19 @@ public class UIView extends UIResponder
     public native String minimumContentSizeCategory();
 
     /**
-     * Describes a visual effect to apply when this item is focused. If this property is nil no effect will be applied when this view becomes focused.
+     * Describes a visual effect to apply when this item is focused. If this property is nil no effect will be applied
+     * when this view becomes focused.
      */
     @Generated
     @Selector("setFocusEffect:")
     public native void setFocusEffect(UIFocusEffect value);
 
     /**
-     * The priority this item has in its focus group. The higher the priority, the more likely it is to get picked when focus moves into this group.
-     * Note: this method can only be used to increase an item's priority, not decrease it. For example if an item is currently selected, the actual priority of this item will be determined by MAX(focusGroupPriority, UIFocusGroupPrioritySelected).
+     * The priority this item has in its focus group. The higher the priority, the more likely it is to get picked when
+     * focus moves into this group.
+     * Note: this method can only be used to increase an item's priority, not decrease it. For example if an item is
+     * currently selected, the actual priority of this item will be determined by MAX(focusGroupPriority,
+     * UIFocusGroupPrioritySelected).
      */
     @Generated
     @Selector("setFocusGroupPriority:")

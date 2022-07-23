@@ -114,11 +114,14 @@ public class CPDashboardButton extends NSObject implements NSSecureCoding {
     /**
      * Initialize a button with title variants, optional subtitle variants, and image.
      *
-     * @param titleVariants    An array of title variants for this button, arranged from longest to shortest. You must provide at least one title.
+     * @param titleVariants    An array of title variants for this button, arranged from longest to shortest. You must
+     *                         provide at least one title.
      * @param subtitleVariants An array of subtitle variants for this button, arranged from longest to shortest.
      * @param image            The image displayed on the button. It must be non-nil for the button to be displayed.
-     * @param handler          A block to execute when the user selects the button. The block has no return value and takes the selected button as its only parameter.
-     *                         The image must be non-nil and the title must be a non-zero length string for the button to be displayed.
+     * @param handler          A block to execute when the user selects the button. The block has no return value and
+     *                         takes the selected button as its only parameter.
+     *                         The image must be non-nil and the title must be a non-zero length string for the button
+     *                         to be displayed.
      */
     @Generated
     @Selector("initWithTitleVariants:subtitleVariants:image:handler:")

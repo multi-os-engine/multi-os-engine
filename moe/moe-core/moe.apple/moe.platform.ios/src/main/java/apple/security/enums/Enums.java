@@ -755,82 +755,82 @@ public final class Enums {
      */
     @Generated public static final char TLS_RSA_PSK_WITH_NULL_SHA384 = 0x00B9;
     /**
-     * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
+     * Addenda from rfc 5289 Elliptic Curve Cipher Suites with
      * HMAC SHA-256/384.
      */
     @Generated public static final char TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256 = 0xC023;
     /**
-     * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
+     * Addenda from rfc 5289 Elliptic Curve Cipher Suites with
      * HMAC SHA-256/384.
      */
     @Generated public static final char TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 = 0xC024;
     /**
-     * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
+     * Addenda from rfc 5289 Elliptic Curve Cipher Suites with
      * HMAC SHA-256/384.
      */
     @Generated public static final char TLS_ECDH_ECDSA_WITH_AES_128_CBC_SHA256 = 0xC025;
     /**
-     * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
+     * Addenda from rfc 5289 Elliptic Curve Cipher Suites with
      * HMAC SHA-256/384.
      */
     @Generated public static final char TLS_ECDH_ECDSA_WITH_AES_256_CBC_SHA384 = 0xC026;
     /**
-     * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
+     * Addenda from rfc 5289 Elliptic Curve Cipher Suites with
      * HMAC SHA-256/384.
      */
     @Generated public static final char TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 = 0xC027;
     /**
-     * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
+     * Addenda from rfc 5289 Elliptic Curve Cipher Suites with
      * HMAC SHA-256/384.
      */
     @Generated public static final char TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 = 0xC028;
     /**
-     * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
+     * Addenda from rfc 5289 Elliptic Curve Cipher Suites with
      * HMAC SHA-256/384.
      */
     @Generated public static final char TLS_ECDH_RSA_WITH_AES_128_CBC_SHA256 = 0xC029;
     /**
-     * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
+     * Addenda from rfc 5289 Elliptic Curve Cipher Suites with
      * HMAC SHA-256/384.
      */
     @Generated public static final char TLS_ECDH_RSA_WITH_AES_256_CBC_SHA384 = 0xC02A;
     /**
-     * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
+     * Addenda from rfc 5289 Elliptic Curve Cipher Suites with
      * SHA-256/384 and AES Galois Counter Mode (GCM)
      */
     @Generated public static final char TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 = 0xC02B;
     /**
-     * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
+     * Addenda from rfc 5289 Elliptic Curve Cipher Suites with
      * SHA-256/384 and AES Galois Counter Mode (GCM)
      */
     @Generated public static final char TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 = 0xC02C;
     /**
-     * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
+     * Addenda from rfc 5289 Elliptic Curve Cipher Suites with
      * SHA-256/384 and AES Galois Counter Mode (GCM)
      */
     @Generated public static final char TLS_ECDH_ECDSA_WITH_AES_128_GCM_SHA256 = 0xC02D;
     /**
-     * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
+     * Addenda from rfc 5289 Elliptic Curve Cipher Suites with
      * SHA-256/384 and AES Galois Counter Mode (GCM)
      */
     @Generated public static final char TLS_ECDH_ECDSA_WITH_AES_256_GCM_SHA384 = 0xC02E;
     /**
-     * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
+     * Addenda from rfc 5289 Elliptic Curve Cipher Suites with
      * SHA-256/384 and AES Galois Counter Mode (GCM)
      */
     @Generated public static final char TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 = 0xC02F;
     /**
-     * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
+     * Addenda from rfc 5289 Elliptic Curve Cipher Suites with
      * SHA-256/384 and AES Galois Counter Mode (GCM)
      */
     @Generated public static final char TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 = 0xC030;
     /**
-     * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
+     * Addenda from rfc 5289 Elliptic Curve Cipher Suites with
      * SHA-256/384 and AES Galois Counter Mode (GCM)
      */
     @Generated public static final char TLS_ECDH_RSA_WITH_AES_128_GCM_SHA256 = 0xC031;
     /**
-     * Addenda from rfc 5289  Elliptic Curve Cipher Suites with
+     * Addenda from rfc 5289 Elliptic Curve Cipher Suites with
      * SHA-256/384 and AES Galois Counter Mode (GCM)
      */
     @Generated public static final char TLS_ECDH_RSA_WITH_AES_256_GCM_SHA384 = 0xC032;
@@ -2293,12 +2293,12 @@ public final class Enums {
      */
     @Generated public static final char TLS_AES_128_CCM_8_SHA256 = 0x1305;
     /**
-     * Addenda from rfc 7905  ChaCha20-Poly1305 Cipher Suites for
+     * Addenda from rfc 7905 ChaCha20-Poly1305 Cipher Suites for
      * Transport Layer Security (TLS).
      */
     @Generated public static final char TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256 = 0xCCA8;
     /**
-     * Addenda from rfc 7905  ChaCha20-Poly1305 Cipher Suites for
+     * Addenda from rfc 7905 ChaCha20-Poly1305 Cipher Suites for
      * Transport Layer Security (TLS).
      */
     @Generated public static final char TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256 = 0xCCA9;

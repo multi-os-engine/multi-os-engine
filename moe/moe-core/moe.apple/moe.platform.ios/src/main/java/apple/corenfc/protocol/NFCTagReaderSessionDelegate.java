@@ -39,7 +39,7 @@ public interface NFCTagReaderSessionDelegate {
     /**
      * tagReaderSession:didInvalidateWithError:
      * <p>
-     * Gets called when a session becomes invalid.  At this point the client is expected to discard
+     * Gets called when a session becomes invalid. At this point the client is expected to discard
      * the returned session object.
      *
      * @param session The session object that is invalidated.

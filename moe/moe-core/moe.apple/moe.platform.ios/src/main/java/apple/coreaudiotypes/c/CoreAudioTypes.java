@@ -26,7 +26,7 @@ public final class CoreAudioTypes {
     public static native int AudioChannelLayoutTag_GetNumberOfChannels(int inLayoutTag);
 
     /**
-     * [@constant]       kAudioStreamAnyRate
+     * [@constant] kAudioStreamAnyRate
      * The format can use any sample rate. Note that this constant can only appear
      * in listings of supported formats. It will never appear in a current format.
      */

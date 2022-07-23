@@ -181,7 +181,8 @@ public class MPSNNReshape extends MPSCNNKernel {
      * Encode a reshape to a command buffer for a given shape.
      *
      * @param commandBuffer           The command buffer on which to encode the reshape operation.
-     * @param outState                A state to be created and autoreleased which will hold information about this execution
+     * @param outState                A state to be created and autoreleased which will hold information about this
+     *                                execution
      *                                to be provided to a subsequent gradient pass.
      * @param isTemporary             YES if the state is to be created as a temporary state, NO otherwise.
      * @param sourceImage             The input image to be reshaped.

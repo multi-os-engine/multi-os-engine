@@ -29,9 +29,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * A class that encapsulates application exit metrics for both on screen and off screen exits.
  * <p>
- * Application exits can be expected, such as when the application is killed in the app switcher by the user, or unexpected, such as when a runtime error occurs.
+ * Application exits can be expected, such as when the application is killed in the app switcher by the user, or
+ * unexpected, such as when a runtime error occurs.
  * <p>
- * Minimizing unexpected exits and maximizing expected exits can improve performance and reliability of your application.
+ * Minimizing unexpected exits and maximizing expected exits can improve performance and reliability of your
+ * application.
  */
 @Generated
 @Library("MetricKit")
@@ -66,7 +68,7 @@ public class MXAppExitMetric extends MXMetric {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]      backgroundExitData
+     * [@property] backgroundExitData
      * <p>
      * Cumulative background exit data.
      * <p>
@@ -103,7 +105,7 @@ public class MXAppExitMetric extends MXMetric {
     public static native String description_static();
 
     /**
-     * [@property]      foregroundExitData
+     * [@property] foregroundExitData
      * <p>
      * Cumulative foreground exit data.
      * <p>

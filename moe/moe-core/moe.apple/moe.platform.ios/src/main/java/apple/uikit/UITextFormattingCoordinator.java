@@ -168,7 +168,8 @@ public class UITextFormattingCoordinator extends NSObject implements UIFontPicke
     }
 
     /**
-     * Informs the paragraph and character formatting UI when text in a selection has changed attributes. `isMultiple:` means that the attributes spans multiple text runs.
+     * Informs the paragraph and character formatting UI when text in a selection has changed attributes. `isMultiple:`
+     * means that the attributes spans multiple text runs.
      */
     @Generated
     @Selector("setSelectedAttributes:isMultiple:")

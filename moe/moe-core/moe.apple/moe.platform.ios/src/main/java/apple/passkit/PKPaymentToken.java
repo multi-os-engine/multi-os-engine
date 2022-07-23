@@ -157,7 +157,7 @@ public class PKPaymentToken extends NSObject {
     public native PKPaymentToken init();
 
     /**
-     * UTF-8 encoded JSON dictionary of encrypted payment data.  Ready for transmission to
+     * UTF-8 encoded JSON dictionary of encrypted payment data. Ready for transmission to
      * merchant's e-commerce backend for decryption and submission to a payment processor's
      * gateway.
      */

@@ -175,7 +175,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * Allows customization of the editingStyle for a particular cell located at 'indexPath'. If not implemented, all editable cells will have UITableViewCellEditingStyleDelete set for them when the table has editing property set to YES.
+     * Allows customization of the editingStyle for a particular cell located at 'indexPath'. If not implemented, all
+     * editable cells will have UITableViewCellEditingStyleDelete set for them when the table has editing property set
+     * to YES.
      */
     @Generated
     @IsOptional
@@ -202,8 +204,10 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * Use the estimatedHeight methods to quickly calculate guessed values which will allow for fast load times of the table.
-     * If these methods are implemented, the above -tableView:heightForXXX calls will be deferred until views are ready to be displayed, so more expensive logic can be placed there.
+     * Use the estimatedHeight methods to quickly calculate guessed values which will allow for fast load times of the
+     * table.
+     * If these methods are implemented, the above -tableView:heightForXXX calls will be deferred until views are ready
+     * to be displayed, so more expensive logic can be placed there.
      */
     @Generated
     @IsOptional
@@ -261,7 +265,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * -tableView:shouldHighlightRowAtIndexPath: is called when a touch comes down on a row.
-     * Returning NO to that message halts the selection process and does not cause the currently selected row to lose its selected look while the touch is down.
+     * Returning NO to that message halts the selection process and does not cause the currently selected row to lose
+     * its selected look while the touch is down.
      */
     @Generated
     @IsOptional
@@ -271,7 +276,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * Controls whether the background is indented while editing.  If not implemented, the default is YES.  This is unrelated to the indentation level below.  This method only applies to grouped style table views.
+     * Controls whether the background is indented while editing. If not implemented, the default is YES. This is
+     * unrelated to the indentation level below. This method only applies to grouped style table views.
      */
     @Generated
     @IsOptional
@@ -281,7 +287,7 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * Copy/Paste.  All three methods must be implemented by the delegate.
+     * Copy/Paste. All three methods must be implemented by the delegate.
      */
     @Generated
     @IsOptional
@@ -337,7 +343,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * The willBegin/didEnd methods are called whenever the 'editing' property is automatically changed by the table (allowing insert/delete/move). This is done by a swipe activating a single row
+     * The willBegin/didEnd methods are called whenever the 'editing' property is automatically changed by the table
+     * (allowing insert/delete/move). This is done by a swipe activating a single row
      */
     @Generated
     @IsOptional
@@ -403,7 +410,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Allows opting-out of spring loading for an particular row.
-     * If you want the interaction effect on a different subview of the spring loaded cell, modify the context.targetView property. The default is the cell.
+     * If you want the interaction effect on a different subview of the spring loaded cell, modify the
+     * context.targetView property. The default is the cell.
      * If this method is not implemented, the default is YES except when the row is part of a drag session.
      */
     @Generated
@@ -428,10 +436,13 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
      * @param tableView This UITableView.
      * @param indexPath IndexPath of the row for which a configuration is being requested.
      * @param point     Location of the interaction in the table view's coordinate space
-     * @return A UIContextMenuConfiguration describing the menu to be presented. Return nil to prevent the interaction from beginning.
-     * Returning an empty configuration causes the interaction to begin then fail with a cancellation effect. You might use this
-     * to indicate to users that it's possible for a menu to be presented from this element, but that there are no actions to
-     * present at this particular time.
+     * @return A UIContextMenuConfiguration describing the menu to be presented. Return nil to prevent the interaction
+     *         from beginning.
+     *         Returning an empty configuration causes the interaction to begin then fail with a cancellation effect.
+     *         You might use this
+     *         to indicate to users that it's possible for a menu to be presented from this element, but that there are
+     *         no actions to
+     *         present at this particular time.
      */
     @Generated
     @IsOptional
@@ -442,9 +453,11 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * Called right after the multi-select pan gesture begins and the table view is automatically transitioned into editing mode.
+     * Called right after the multi-select pan gesture begins and the table view is automatically transitioned into
+     * editing mode.
      * <p>
-     * In your app, this would be a good opportunity to update the state of your UI to reflect the fact that the user is now selecting
+     * In your app, this would be a good opportunity to update the state of your UI to reflect the fact that the user is
+     * now selecting
      * multiple items at once; such as updating buttons to say "Done" instead of "Select"/"Edit", for instance.
      */
     @Generated
@@ -456,7 +469,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal target.
+     * Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal
+     * target.
      * The interaction will animate the presented menu to the target. Use this to customize the dismissal animation.
      *
      * @param tableView     This UITableView.
@@ -471,7 +485,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * Called when the interaction begins. Return a UITargetedPreview to override the default preview created by the table view.
+     * Called when the interaction begins. Return a UITargetedPreview to override the default preview created by the
+     * table view.
      *
      * @param tableView     This UITableView.
      * @param configuration The configuration of the menu about to be displayed by this interaction.
@@ -485,10 +500,13 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     }
 
     /**
-     * Allows a two-finger pan gesture to automatically transition the table view into editing mode and start selecting cells.
+     * Allows a two-finger pan gesture to automatically transition the table view into editing mode and start selecting
+     * cells.
      * <p>
-     * If this method returns YES, allow the user to start selecting multiple contiguous cells via a two-finger pan gesture. If
-     * the table view is already in editing mode, the user can also select multiple cells via a one-finger pan gesture along the
+     * If this method returns YES, allow the user to start selecting multiple contiguous cells via a two-finger pan
+     * gesture. If
+     * the table view is already in editing mode, the user can also select multiple cells via a one-finger pan gesture
+     * along the
      * edge of the table that contains editing controls (checkboxes).
      * <p>
      * In order to support this behavior, you must also set allowsMultipleSelectionDuringEditing to YES.
@@ -522,7 +540,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     /**
      * Called when the multi-select interaction ends.
      * <p>
-     * At this point, the table view will remain in multi-select mode, but this delegate method is called to indicate that the multiple
+     * At this point, the table view will remain in multi-select mode, but this delegate method is called to indicate
+     * that the multiple
      * selection gesture or hardware keyboard interaction has ended.
      */
     @Generated
@@ -566,7 +585,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Determines if the row at the specified index path should also become selected when focus moves to it.
-     * If the table view's global selectionFollowsFocus is enabled, this method will allow you to override that behavior on a per-index path basis. This method is not called if selectionFollowsFocus is disabled.
+     * If the table view's global selectionFollowsFocus is enabled, this method will allow you to override that behavior
+     * on a per-index path basis. This method is not called if selectionFollowsFocus is disabled.
      */
     @Generated
     @IsOptional

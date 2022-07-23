@@ -20,7 +20,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("UIFocusItemScrollableContainer")
 public interface UIFocusItemScrollableContainer extends UIFocusItemContainer {
     /**
-     * The current content offset of this scrollable container. If the scrollable container has a `bounds` property, `bounds.origin` must be equal to `contentOffset`.
+     * The current content offset of this scrollable container. If the scrollable container has a `bounds` property,
+     * `bounds.origin` must be equal to `contentOffset`.
      */
     @Generated
     @Selector("contentOffset")
@@ -37,7 +38,8 @@ public interface UIFocusItemScrollableContainer extends UIFocusItemContainer {
     CGSize contentSize();
 
     /**
-     * The current content offset of this scrollable container. If the scrollable container has a `bounds` property, `bounds.origin` must be equal to `contentOffset`.
+     * The current content offset of this scrollable container. If the scrollable container has a `bounds` property,
+     * `bounds.origin` must be equal to `contentOffset`.
      */
     @Generated
     @Selector("setContentOffset:")

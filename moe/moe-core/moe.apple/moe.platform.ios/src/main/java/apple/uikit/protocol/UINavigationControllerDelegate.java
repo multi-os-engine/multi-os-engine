@@ -65,7 +65,8 @@ public interface UINavigationControllerDelegate {
     }
 
     /**
-     * Called when the navigation controller shows a new top view controller via a push, pop or setting of the view controller stack.
+     * Called when the navigation controller shows a new top view controller via a push, pop or setting of the view
+     * controller stack.
      */
     @Generated
     @IsOptional

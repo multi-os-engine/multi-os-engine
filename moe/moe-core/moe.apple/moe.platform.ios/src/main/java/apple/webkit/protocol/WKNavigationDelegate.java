@@ -48,13 +48,15 @@ public interface WKNavigationDelegate {
     /**
      * Decides whether to allow or cancel a navigation.
      * <p>
-     * If you do not implement this method, the web view will load the request or, if appropriate, forward it to another application.
+     * If you do not implement this method, the web view will load the request or, if appropriate, forward it to another
+     * application.
      *
      * @param webView          The web view invoking the delegate method.
      * @param navigationAction Descriptive information about the action
      *                         triggering the navigation request.
      * @param decisionHandler  The decision handler to call to allow or cancel the
-     *                         navigation. The argument is one of the constants of the enumerated type WKNavigationActionPolicy.
+     *                         navigation. The argument is one of the constants of the enumerated type
+     *                         WKNavigationActionPolicy.
      */
     @Generated
     @IsOptional
@@ -75,7 +77,8 @@ public interface WKNavigationDelegate {
      * @param navigationResponse Descriptive information about the navigation
      *                           response.
      * @param decisionHandler    The decision handler to call to allow or cancel the
-     *                           navigation. The argument is one of the constants of the enumerated type WKNavigationResponsePolicy.
+     *                           navigation. The argument is one of the constants of the enumerated type
+     *                           WKNavigationResponsePolicy.
      */
     @Generated
     @IsOptional
@@ -146,14 +149,17 @@ public interface WKNavigationDelegate {
     /**
      * Invoked when the web view needs to respond to an authentication challenge.
      * <p>
-     * If you do not implement this method, the web view will respond to the authentication challenge with the NSURLSessionAuthChallengeRejectProtectionSpace disposition.
+     * If you do not implement this method, the web view will respond to the authentication challenge with the
+     * NSURLSessionAuthChallengeRejectProtectionSpace disposition.
      *
      * @param webView           The web view that received the authentication challenge.
      * @param challenge         The authentication challenge.
      * @param completionHandler The completion handler you must invoke to respond to the challenge. The
      *                          disposition argument is one of the constants of the enumerated type
-     *                          NSURLSessionAuthChallengeDisposition. When disposition is NSURLSessionAuthChallengeUseCredential,
-     *                          the credential argument is the credential to use, or nil to indicate continuing without a
+     *                          NSURLSessionAuthChallengeDisposition. When disposition is
+     *                          NSURLSessionAuthChallengeUseCredential,
+     *                          the credential argument is the credential to use, or nil to indicate continuing without
+     *                          a
      *                          credential.
      */
     @Generated
@@ -263,7 +269,8 @@ public interface WKNavigationDelegate {
      *
      * @param webView         The web view initiating the connection.
      * @param challenge       The authentication challenge.
-     * @param decisionHandler The decision handler you must invoke to respond to indicate whether or not to continue with the connection establishment.
+     * @param decisionHandler The decision handler you must invoke to respond to indicate whether or not to continue
+     *                        with the connection establishment.
      */
     @Generated
     @IsOptional

@@ -139,8 +139,8 @@ public class VNClassifyImageRequest extends VNImageBasedRequest {
      * Obtain the collection of classifications currently recognized by the Vision framework.
      *
      * @return the collection of classifications for the revision, or nil if an error was encountered.
-     * @param    requestRevision        The revision of the request for which classifications should be reported.
-     * @param    error                The address of the variable that will be populated with the error when the call fails.
+     * @param requestRevision The revision of the request for which classifications should be reported.
+     * @param error           The address of the variable that will be populated with the error when the call fails.
      */
     @Generated
     @Selector("knownClassificationsForRevision:error:")
@@ -187,7 +187,8 @@ public class VNClassifyImageRequest extends VNImageBasedRequest {
     /**
      * Obtain the collection of identifiers supported by the target request.
      * <p>
-     * This method will return the collection of all possible classification identifiers that are produced by the target request based on its current state of configuration at the time of the call.
+     * This method will return the collection of all possible classification identifiers that are produced by the target
+     * request based on its current state of configuration at the time of the call.
      *
      * @param error The address of the variable that will be populated with the error if the call fails.
      * @return The collection of classification identifiers, or nil if a failure occurs.

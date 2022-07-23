@@ -178,7 +178,7 @@ public class EKCalendar extends EKObject {
     public static native long version_static();
 
     /**
-     * [@property]   color
+     * [@property] color
      * <p>
      * Returns the calendar color as a CGColorRef.
      * <p>
@@ -189,7 +189,7 @@ public class EKCalendar extends EKObject {
     public native CGColorRef CGColor();
 
     /**
-     * [@property]   allowedEntityTypes
+     * [@property] allowedEntityTypes
      * <p>
      * Returns the entity types this calendar can contain. While our API only allows creation
      * of single-entity calendars, other servers might allow mixed-entity calendars.
@@ -200,7 +200,7 @@ public class EKCalendar extends EKObject {
     public native long allowedEntityTypes();
 
     /**
-     * [@property]   allowsContentModifications
+     * [@property] allowsContentModifications
      * <p>
      * Represents whether you can this add, remove, or modify items in this calendar.
      */
@@ -209,7 +209,7 @@ public class EKCalendar extends EKObject {
     public native boolean allowsContentModifications();
 
     /**
-     * [@property]   calendarIdentifier
+     * [@property] calendarIdentifier
      * <p>
      * A unique identifier for the calendar. It is not sync-proof in that a full
      * sync will lose this identifier, so you should always have a back up plan for dealing
@@ -225,7 +225,7 @@ public class EKCalendar extends EKObject {
     public native EKCalendar init();
 
     /**
-     * [@property]   immutable
+     * [@property] immutable
      * <p>
      * If this is set to YES, it means you cannot modify any attributes of
      * the calendar or delete it. It does NOT imply that you cannot add events
@@ -236,7 +236,7 @@ public class EKCalendar extends EKObject {
     public native boolean isImmutable();
 
     /**
-     * [@property]   subscribed
+     * [@property] subscribed
      * <p>
      * YES if this calendar is a subscribed calendar.
      */
@@ -245,7 +245,7 @@ public class EKCalendar extends EKObject {
     public native boolean isSubscribed();
 
     /**
-     * [@property]   color
+     * [@property] color
      * <p>
      * Returns the calendar color as a CGColorRef.
      * <p>
@@ -256,7 +256,7 @@ public class EKCalendar extends EKObject {
     public native void setCGColor(CGColorRef value);
 
     /**
-     * [@property]   source
+     * [@property] source
      * <p>
      * The source representing the 'account' this calendar belongs to.
      * This is only settable when initially creating a calendar and then
@@ -270,7 +270,7 @@ public class EKCalendar extends EKObject {
     public native void setSource(EKSource value);
 
     /**
-     * [@property]   title
+     * [@property] title
      * <p>
      * The title of the calendar.
      */
@@ -279,7 +279,7 @@ public class EKCalendar extends EKObject {
     public native void setTitle(String value);
 
     /**
-     * [@property]   source
+     * [@property] source
      * <p>
      * The source representing the 'account' this calendar belongs to.
      * This is only settable when initially creating a calendar and then
@@ -293,7 +293,7 @@ public class EKCalendar extends EKObject {
     public native EKSource source();
 
     /**
-     * [@property]   supportedEventAvailabilities
+     * [@property] supportedEventAvailabilities
      * <p>
      * Returns a bitfield of supported event availabilities, or EKCalendarEventAvailabilityNone
      * if this calendar does not support setting availability on an event.
@@ -304,7 +304,7 @@ public class EKCalendar extends EKObject {
     public native long supportedEventAvailabilities();
 
     /**
-     * [@property]   title
+     * [@property] title
      * <p>
      * The title of the calendar.
      */
@@ -313,7 +313,7 @@ public class EKCalendar extends EKObject {
     public native String title();
 
     /**
-     * [@property]   type
+     * [@property] type
      * <p>
      * The type of the calendar as a EKCalendarType. This is actually based on
      * what source the calendar is in, as well as whether it is a subscribed calendar.

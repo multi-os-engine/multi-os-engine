@@ -42,7 +42,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * An instance of NSPersistentContainer includes all objects needed to represent a functioning Core Data stack, and provides convenience methods and properties for common patterns.
+ * An instance of NSPersistentContainer includes all objects needed to represent a functioning Core Data stack, and
+ * provides convenience methods and properties for common patterns.
  */
 @Generated
 @Library("CoreData")
@@ -183,7 +184,8 @@ public class NSPersistentContainer extends NSObject {
     public native NSPersistentContainer initWithNameManagedObjectModel(String name, NSManagedObjectModel model);
 
     /**
-     * Load stores from the storeDescriptions property that have not already been successfully added to the container. The completion handler is called once for each store that succeeds or fails.
+     * Load stores from the storeDescriptions property that have not already been successfully added to the container.
+     * The completion handler is called once for each store that succeeds or fails.
      */
     @Generated
     @Selector("loadPersistentStoresWithCompletionHandler:")

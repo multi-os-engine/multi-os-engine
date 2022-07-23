@@ -136,7 +136,9 @@ public class UIManagedDocument extends UIDocument {
     public static native UIManagedDocument new_objc();
 
     /**
-     * The name for the persistent store file inside the document's file wrapper.  When working with the Core Data APIs, this path component is appended to the document URL provided by the UIDocument APIs.  The default name is @"documentpersistentstore.db"
+     * The name for the persistent store file inside the document's file wrapper. When working with the Core Data APIs,
+     * this path component is appended to the document URL provided by the UIDocument APIs. The default name
+     * is @"documentpersistentstore.db"
      */
     @Generated
     @Selector("persistentStoreName")
@@ -164,7 +166,8 @@ public class UIManagedDocument extends UIDocument {
     public static native long version_static();
 
     /**
-     * An optional call out by contentsForType:error: to handle non-Core Data content in the document's file wrapper.  The returned object will be passed to -writeAdditionalContent: It is not necessary to call super.
+     * An optional call out by contentsForType:error: to handle non-Core Data content in the document's file wrapper.
+     * The returned object will be passed to -writeAdditionalContent: It is not necessary to call super.
      */
     @Generated
     @Selector("additionalContentForURL:error:")
@@ -190,14 +193,18 @@ public class UIManagedDocument extends UIDocument {
     public native UIManagedDocument initWithFileURL(NSURL url);
 
     /**
-     * Persistent documents always have a managed object context and a persistent store coordinator through that context.  The managed object context is required to be initialized with the concurrency type NSMainQueueConcurrencyType and it must have a parent context initialized with the concurrency type NSPrivateQueueConcurrencyType.
+     * Persistent documents always have a managed object context and a persistent store coordinator through that
+     * context. The managed object context is required to be initialized with the concurrency type
+     * NSMainQueueConcurrencyType and it must have a parent context initialized with the concurrency type
+     * NSPrivateQueueConcurrencyType.
      */
     @Generated
     @Selector("managedObjectContext")
     public native NSManagedObjectContext managedObjectContext();
 
     /**
-     * Persistent documents always have a managed object model.  The default model is the union of all models in the main bundle.
+     * Persistent documents always have a managed object model. The default model is the union of all models in the main
+     * bundle.
      */
     @Generated
     @Selector("managedObjectModel")
@@ -218,14 +225,16 @@ public class UIManagedDocument extends UIDocument {
     public native NSDictionary<?, ?> persistentStoreOptions();
 
     /**
-     * Returns the Core Data store type string for the given document fileType. The default returns NSSQLiteStoreType. See NSPersistentStoreCoordinator.h for store type information.
+     * Returns the Core Data store type string for the given document fileType. The default returns NSSQLiteStoreType.
+     * See NSPersistentStoreCoordinator.h for store type information.
      */
     @Generated
     @Selector("persistentStoreTypeForFileType:")
     public native String persistentStoreTypeForFileType(String fileType);
 
     /**
-     * An optional call out by readFromURL:error: to handle non-Core Data content in the document's file wrapper.  It is not necessary to call super.
+     * An optional call out by readFromURL:error: to handle non-Core Data content in the document's file wrapper. It is
+     * not necessary to call super.
      */
     @Generated
     @Selector("readAdditionalContentFromURL:error:")
@@ -247,7 +256,9 @@ public class UIManagedDocument extends UIDocument {
     public native void setPersistentStoreOptions(NSDictionary<?, ?> value);
 
     /**
-     * An optional call out by writeContents:andAttributes:safelyToURL:forSaveOperation:error: to handle non-Core Data content in the document's file wrapper.  The Core Data content is handled by the primary UIDocument -writeContents:andAttributes:safelyToURL:forSaveOperation:error: method.  It is not necessary to call super.
+     * An optional call out by writeContents:andAttributes:safelyToURL:forSaveOperation:error: to handle non-Core Data
+     * content in the document's file wrapper. The Core Data content is handled by the primary UIDocument
+     * -writeContents:andAttributes:safelyToURL:forSaveOperation:error: method. It is not necessary to call super.
      */
     @Generated
     @Selector("writeAdditionalContent:toURL:originalContentsURL:error:")

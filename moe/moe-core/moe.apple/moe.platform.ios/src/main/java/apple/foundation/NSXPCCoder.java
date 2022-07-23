@@ -21,7 +21,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * An NSXPCCoder is used to encode or decode objects sent over an NSXPCConnection. If you want to encode or decode objects differently when sent over an NSXPCConnection, you may use isKindOfClass: to check that the coder is a kind of NSXPCCoder.
+ * An NSXPCCoder is used to encode or decode objects sent over an NSXPCConnection. If you want to encode or decode
+ * objects differently when sent over an NSXPCConnection, you may use isKindOfClass: to check that the coder is a kind
+ * of NSXPCCoder.
  */
 @Generated
 @Library("Foundation")

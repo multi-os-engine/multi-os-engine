@@ -113,7 +113,8 @@ public class PDFBorder extends NSObject implements NSCopying, NSCoding {
 
     /**
      * Draw method. Not generally needed since the annotations themselves call this method when they are drawn.
-     * Call -[NSColor set] before calling (the various annotations do this often calling -[PDFAnnotation color] or whatever
+     * Call -[NSColor set] before calling (the various annotations do this often calling -[PDFAnnotation color] or
+     * whatever
      * is appropriate for their class.
      */
     @Generated

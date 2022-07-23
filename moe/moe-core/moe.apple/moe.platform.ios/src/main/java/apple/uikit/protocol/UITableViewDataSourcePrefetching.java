@@ -37,7 +37,8 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolName("UITableViewDataSourcePrefetching")
 public interface UITableViewDataSourcePrefetching {
     /**
-     * indexPaths that previously were considered as candidates for pre-fetching, but were not actually used; may be a subset of the previous call to -tableView:prefetchRowsAtIndexPaths:
+     * indexPaths that previously were considered as candidates for pre-fetching, but were not actually used; may be a
+     * subset of the previous call to -tableView:prefetchRowsAtIndexPaths:
      */
     @Generated
     @IsOptional

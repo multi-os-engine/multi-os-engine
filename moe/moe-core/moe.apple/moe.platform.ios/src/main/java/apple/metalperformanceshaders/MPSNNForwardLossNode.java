@@ -98,7 +98,8 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     public native MPSNNLossGradientNode gradientFilterWithSource(MPSNNImageNode sourceGradient);
 
     /**
-     * ! @abstract Returns the gradient filter for predictions, if you want also gradients for labels then use -gradientFiltersWithSource(s):
+     * ! @abstract Returns the gradient filter for predictions, if you want also gradients for labels then use
+     * -gradientFiltersWithSource(s):
      */
     @Generated
     @Selector("gradientFilterWithSources:")
@@ -206,7 +207,7 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     public native long numberOfClasses();
 
     /**
-     * [@property]   propertyCallBack
+     * [@property] propertyCallBack
      * <p>
      * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
      * Default value: nil.
@@ -229,7 +230,7 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   propertyCallBack
+     * [@property] propertyCallBack
      * <p>
      * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
      * Default value: nil.

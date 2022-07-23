@@ -87,7 +87,7 @@ public class MLCTransposeLayer extends MLCLayer {
     public static native String description_static();
 
     /**
-     * [@property]   dimensions
+     * [@property] dimensions
      * <p>
      * Permutes the dimensions according to 'dimensions'.
      * <p>
@@ -133,7 +133,7 @@ public class MLCTransposeLayer extends MLCLayer {
      * @param dimensions NSArray<NSNumber *> representing the desired ordering of dimensions
      *                   The dimensions array specifies the input axis source for each output axis, such that the
      *                   K'th element in the dimensions array specifies the input axis source for the K'th axis in the
-     *                   output.  The batch dimension which is typically axis 0 cannot be transposed.
+     *                   output. The batch dimension which is typically axis 0 cannot be transposed.
      * @return A new transpose layer.
      */
     @Generated

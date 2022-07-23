@@ -33,7 +33,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * Base class for sample synthesizers.
  * <p>
- * This base class represents audio units of type kAudioUnitType_MusicDevice or kAudioUnitType_RemoteInstrument. This can be used in a chain
+ * This base class represents audio units of type kAudioUnitType_MusicDevice or kAudioUnitType_RemoteInstrument. This
+ * can be used in a chain
  * that processes realtime input (live) and has general concept of music events i.e. notes.
  */
 @Generated
@@ -112,7 +113,8 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
      * <p>
      * initialize the node with the component description
      *
-     * @param description audio component description structure that describes the audio component of type kAudioUnitType_MusicDevice
+     * @param description audio component description structure that describes the audio component of type
+     *                    kAudioUnitType_MusicDevice
      *                    or kAudioUnitType_RemoteInstrument.
      */
     @Generated

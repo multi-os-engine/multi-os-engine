@@ -154,7 +154,8 @@ public class UIPopoverPresentationController extends UIPresentationController {
     public static native long version_static();
 
     /**
-     * Returns the direction the arrow is pointing on a presented popover. Before presentation, this returns UIPopoverArrowDirectionUnknown.
+     * Returns the direction the arrow is pointing on a presented popover. Before presentation, this returns
+     * UIPopoverArrowDirectionUnknown.
      */
     @Generated
     @Selector("arrowDirection")
@@ -174,7 +175,8 @@ public class UIPopoverPresentationController extends UIPresentationController {
 
     /**
      * By default, a popover is not allowed to overlap its source view rect.
-     * When this is set to YES, popovers with more content than available space are allowed to overlap the source view rect in order to accommodate the content.
+     * When this is set to YES, popovers with more content than available space are allowed to overlap the source view
+     * rect in order to accommodate the content.
      */
     @Generated
     @Selector("canOverlapSourceViewRect")
@@ -209,7 +211,8 @@ public class UIPopoverPresentationController extends UIPresentationController {
     public native long permittedArrowDirections();
 
     /**
-     * Clients may customize the popover background chrome by providing a class which subclasses `UIPopoverBackgroundView`
+     * Clients may customize the popover background chrome by providing a class which subclasses
+     * `UIPopoverBackgroundView`
      * and which implements the required instance and class methods on that class.
      */
     @Generated
@@ -218,9 +221,11 @@ public class UIPopoverPresentationController extends UIPresentationController {
     public native UIPopoverBackgroundViewMethods popoverBackgroundViewClass();
 
     /**
-     * Clients may wish to change the available area for popover display. The default implementation of this method always
+     * Clients may wish to change the available area for popover display. The default implementation of this method
+     * always
      * returns a system defined inset from the edges of the display, and presentation of popovers always accounts
-     * for the status bar. The rectangle being inset is always expressed in terms of the current device orientation; (0, 0)
+     * for the status bar. The rectangle being inset is always expressed in terms of the current device orientation; (0,
+     * 0)
      * is always in the upper-left of the device. This may require insets to change on device rotation.
      */
     @Generated
@@ -241,7 +246,8 @@ public class UIPopoverPresentationController extends UIPresentationController {
 
     /**
      * By default, a popover is not allowed to overlap its source view rect.
-     * When this is set to YES, popovers with more content than available space are allowed to overlap the source view rect in order to accommodate the content.
+     * When this is set to YES, popovers with more content than available space are allowed to overlap the source view
+     * rect in order to accommodate the content.
      */
     @Generated
     @Selector("setCanOverlapSourceViewRect:")
@@ -277,7 +283,8 @@ public class UIPopoverPresentationController extends UIPresentationController {
     public native void setPermittedArrowDirections(@NUInt long value);
 
     /**
-     * Clients may customize the popover background chrome by providing a class which subclasses `UIPopoverBackgroundView`
+     * Clients may customize the popover background chrome by providing a class which subclasses
+     * `UIPopoverBackgroundView`
      * and which implements the required instance and class methods on that class.
      */
     @Generated
@@ -286,9 +293,11 @@ public class UIPopoverPresentationController extends UIPresentationController {
             @Mapped(ObjCObjectMapper.class) UIPopoverBackgroundViewMethods value);
 
     /**
-     * Clients may wish to change the available area for popover display. The default implementation of this method always
+     * Clients may wish to change the available area for popover display. The default implementation of this method
+     * always
      * returns a system defined inset from the edges of the display, and presentation of popovers always accounts
-     * for the status bar. The rectangle being inset is always expressed in terms of the current device orientation; (0, 0)
+     * for the status bar. The rectangle being inset is always expressed in terms of the current device orientation; (0,
+     * 0)
      * is always in the upper-left of the device. This may require insets to change on device rotation.
      */
     @Generated
@@ -296,8 +305,11 @@ public class UIPopoverPresentationController extends UIPresentationController {
     public native void setPopoverLayoutMargins(@ByValue UIEdgeInsets value);
 
     /**
-     * The rectangle in the coordinate space of sourceView that the popover should point at. This property is ignored if a barButtonItem is set.
-     * Starting in iOS 13.2, a value of CGRectNull will cause the popover to point at the current frame of sourceView and automatically update when the size of sourceView changes. Prior to iOS 13.2, a null rectangle was not supported.
+     * The rectangle in the coordinate space of sourceView that the popover should point at. This property is ignored if
+     * a barButtonItem is set.
+     * Starting in iOS 13.2, a value of CGRectNull will cause the popover to point at the current frame of sourceView
+     * and automatically update when the size of sourceView changes. Prior to iOS 13.2, a null rectangle was not
+     * supported.
      * The default value in iOS 13.2 is CGRectNull. Prior to iOS 13.2, the default value was CGRectZero.
      */
     @Generated
@@ -309,8 +321,11 @@ public class UIPopoverPresentationController extends UIPresentationController {
     public native void setSourceView(UIView value);
 
     /**
-     * The rectangle in the coordinate space of sourceView that the popover should point at. This property is ignored if a barButtonItem is set.
-     * Starting in iOS 13.2, a value of CGRectNull will cause the popover to point at the current frame of sourceView and automatically update when the size of sourceView changes. Prior to iOS 13.2, a null rectangle was not supported.
+     * The rectangle in the coordinate space of sourceView that the popover should point at. This property is ignored if
+     * a barButtonItem is set.
+     * Starting in iOS 13.2, a value of CGRectNull will cause the popover to point at the current frame of sourceView
+     * and automatically update when the size of sourceView changes. Prior to iOS 13.2, a null rectangle was not
+     * supported.
      * The default value in iOS 13.2 is CGRectNull. Prior to iOS 13.2, the default value was CGRectZero.
      */
     @Generated
@@ -323,7 +338,8 @@ public class UIPopoverPresentationController extends UIPresentationController {
     public native UIView sourceView();
 
     /**
-     * The UISheetPresentationController instance this popover will adapt to in compact size classes. Access this instance to customize or adjust the adaptive sheet.
+     * The UISheetPresentationController instance this popover will adapt to in compact size classes. Access this
+     * instance to customize or adjust the adaptive sheet.
      */
     @Generated
     @Selector("adaptiveSheetPresentationController")

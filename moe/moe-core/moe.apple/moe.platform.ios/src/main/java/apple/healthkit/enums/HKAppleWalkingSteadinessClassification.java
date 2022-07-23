@@ -4,12 +4,12 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
 /**
- * [@enum]          HKAppleWalkingSteadinessClassification
+ * [@enum] HKAppleWalkingSteadinessClassification
  * <p>
  * This enumerated type is used to represent the classification for the user's walking steadiness.
- * [@constant]      HKAppleWalkingSteadinessClassificationOK         Walking steadiness is OK.
- * [@constant]      HKAppleWalkingSteadinessClassificationLow        Walking steadiness is Low.
- * [@constant]      HKAppleWalkingSteadinessClassificationVeryLow    Walking steadiness is Very Low.
+ * [@constant] HKAppleWalkingSteadinessClassificationOK Walking steadiness is OK.
+ * [@constant] HKAppleWalkingSteadinessClassificationLow Walking steadiness is Low.
+ * [@constant] HKAppleWalkingSteadinessClassificationVeryLow Walking steadiness is Very Low.
  */
 @Generated
 public final class HKAppleWalkingSteadinessClassification {

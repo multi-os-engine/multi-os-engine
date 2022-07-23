@@ -262,12 +262,14 @@ public class HKActivitySummaryQuery extends HKQuery {
     /**
      *  @method        initWithPredicate:resultsHandler:
      *  @abstract      Returns a query that will retrieve HKActivitySummaries matching the given predicate.
-     *  @discussion    If no updateHandler is set on the query, the query will automatically stop after calling resultsHandler.
-     *                 Otherwise, the query continues to run and calls the updateHandler as HKActivitySummaries matching the
+     *  @discussion    If no updateHandler is set on the query, the query will automatically stop after calling
+     * resultsHandler.
+     *                 Otherwise, the query continues to run and calls the updateHandler as HKActivitySummaries matching
+     * the
      * predicate are updated.
      *  
-     *  @param         predicate  The predicate which HKActivitySummaries should match.
-     *  @param         handler    The block to invoke with results when the query has finished.
+     *  @param predicate The predicate which HKActivitySummaries should match.
+     *  @param handler The block to invoke with results when the query has finished.
      *  
      */
     @Generated
@@ -277,8 +279,10 @@ public class HKActivitySummaryQuery extends HKQuery {
 
     /**
      *  @property      updateHandler
-     *  @abstract      An optional handler to be called when activity summaries matching the given predicate are updated.
-     *  @discussion    This property may not be modified once the query has been executed. If this property is nonnull, then
+     *  @abstract      An optional handler to be called when activity summaries matching the given predicate are
+     * updated.
+     *  @discussion    This property may not be modified once the query has been executed. If this property is nonnull,
+     * then
      *                 the query must be manually stopped.
      *  
      */
@@ -288,8 +292,10 @@ public class HKActivitySummaryQuery extends HKQuery {
 
     /**
      *  @property      updateHandler
-     *  @abstract      An optional handler to be called when activity summaries matching the given predicate are updated.
-     *  @discussion    This property may not be modified once the query has been executed. If this property is nonnull, then
+     *  @abstract      An optional handler to be called when activity summaries matching the given predicate are
+     * updated.
+     *  @discussion    This property may not be modified once the query has been executed. If this property is nonnull,
+     * then
      *                 the query must be manually stopped.
      *  
      */

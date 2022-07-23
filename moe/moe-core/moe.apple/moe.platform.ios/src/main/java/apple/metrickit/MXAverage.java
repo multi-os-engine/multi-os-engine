@@ -65,7 +65,7 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]      averageMeasurement
+     * [@property] averageMeasurement
      * <p>
      * An NSMeasurement that contains the average measurement.
      */
@@ -151,7 +151,7 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]      sampleCount
+     * [@property] sampleCount
      * <p>
      * An NSInteger representation of the number of samples in the distribution used to formulate the average.
      * <p>
@@ -167,7 +167,7 @@ public class MXAverage<_UnitType> extends NSObject implements NSSecureCoding {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]      standardDeviation
+     * [@property] standardDeviation
      * <p>
      * An double representation of the standard deviation of the distribution.
      * <p>

@@ -46,7 +46,8 @@ public final class VideoSubscriberAccount {
     public static native String VSErrorDomain();
 
     /**
-     * A key that can be used to obtain the subscription provider's SAML response string from an error user info dictionary.
+     * A key that can be used to obtain the subscription provider's SAML response string from an error user info
+     * dictionary.
      */
     @Generated
     @CVariable()
@@ -54,7 +55,8 @@ public final class VideoSubscriberAccount {
     public static native String VSErrorInfoKeySAMLResponse();
 
     /**
-     * A key that can be used to obtain the subscription provider's SAML status code string from an error user info dictionary.
+     * A key that can be used to obtain the subscription provider's SAML status code string from an error user info
+     * dictionary.
      */
     @Generated
     @CVariable()
@@ -70,7 +72,8 @@ public final class VideoSubscriberAccount {
     public static native String VSErrorInfoKeyAccountProviderResponse();
 
     /**
-     * A key that can be used to obtain the identifier string of the user's unsupported subscription provider from an error user info dictionary.
+     * A key that can be used to obtain the identifier string of the user's unsupported subscription provider from an
+     * error user info dictionary.
      */
     @Generated
     @CVariable()

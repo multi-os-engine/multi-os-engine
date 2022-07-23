@@ -161,8 +161,10 @@ public class UIFocusHaloEffect extends UIFocusEffect {
     public native long position();
 
     /**
-     * When set, the halo is placed above this view. If a @c containerView is also set, the @c referenceView must be a descendant
-     * of the @c containerView. The system will ensure that the halo is in the container but visually above the @c referenceView.
+     * When set, the halo is placed above this view. If a @c containerView is also set, the @c referenceView must be a
+     * descendant
+     * of the @c containerView. The system will ensure that the halo is in the container but visually above the @c
+     * referenceView.
      */
     @Generated
     @Selector("referenceView")
@@ -208,16 +210,20 @@ public class UIFocusHaloEffect extends UIFocusEffect {
     public native void setPosition(@NInt long value);
 
     /**
-     * When set, the halo is placed above this view. If a @c containerView is also set, the @c referenceView must be a descendant
-     * of the @c containerView. The system will ensure that the halo is in the container but visually above the @c referenceView.
+     * When set, the halo is placed above this view. If a @c containerView is also set, the @c referenceView must be a
+     * descendant
+     * of the @c containerView. The system will ensure that the halo is in the container but visually above the @c
+     * referenceView.
      */
     @Generated
     @Selector("setReferenceView:")
     public native void setReferenceView_unsafe(UIView value);
 
     /**
-     * When set, the halo is placed above this view. If a @c containerView is also set, the @c referenceView must be a descendant
-     * of the @c containerView. The system will ensure that the halo is in the container but visually above the @c referenceView.
+     * When set, the halo is placed above this view. If a @c containerView is also set, the @c referenceView must be a
+     * descendant
+     * of the @c containerView. The system will ensure that the halo is in the container but visually above the @c
+     * referenceView.
      */
     @Generated
     public void setReferenceView(UIView value) {

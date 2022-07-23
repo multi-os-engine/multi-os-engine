@@ -201,7 +201,8 @@ public class SKPhysicsWorld extends NSObject implements NSSecureCoding {
             @ObjCBlock(name = "call_enumerateBodiesInRectUsingBlock") Block_enumerateBodiesInRectUsingBlock block);
 
     /**
-     * A global 2D vector specifying the field force acceleration due to gravity. The unit is meters per second so standard earth gravity would be { 0.0, +/-9.8 }.
+     * A global 2D vector specifying the field force acceleration due to gravity. The unit is meters per second so
+     * standard earth gravity would be { 0.0, +/-9.8 }.
      */
     @Generated
     @Selector("gravity")
@@ -241,7 +242,8 @@ public class SKPhysicsWorld extends NSObject implements NSSecureCoding {
     }
 
     /**
-     * A global 2D vector specifying the field force acceleration due to gravity. The unit is meters per second so standard earth gravity would be { 0.0, +/-9.8 }.
+     * A global 2D vector specifying the field force acceleration due to gravity. The unit is meters per second so
+     * standard earth gravity would be { 0.0, +/-9.8 }.
      */
     @Generated
     @Selector("setGravity:")

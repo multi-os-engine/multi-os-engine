@@ -225,7 +225,8 @@ public class GKGraphNode extends NSObject implements NSSecureCoding {
      * Nothing happens if a particular connection does not exist.
      *
      * @param nodes         The array of nodes that are end points of the edges to be removed
-     * @param bidirectional should the connection also be added the destination node back to this node also be removed if it exists?
+     * @param bidirectional should the connection also be added the destination node back to this node also be removed
+     *                      if it exists?
      */
     @Generated
     @Selector("removeConnectionsToNodes:bidirectional:")

@@ -385,7 +385,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     }
 
     /**
-     * For segments whose width value is 0, setting this property to YES attempts to adjust segment widths based on their content widths. Default is NO.
+     * For segments whose width value is 0, setting this property to YES attempts to adjust segment widths based on
+     * their content widths. Default is NO.
      */
     @Generated
     @Selector("apportionsSegmentWidthsByContent")
@@ -432,7 +433,9 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     public native UISegmentedControl initWithFrame(@ByValue CGRect frame);
 
     /**
-     * Initializes the segmented control with the given items. Items may be NSStrings, UIImages, or (as of iOS 14.0) UIActions. When constructing from a UIAction segments will prefer images over titles when both are provided. The segmented control is automatically sized to fit content.
+     * Initializes the segmented control with the given items. Items may be NSStrings, UIImages, or (as of iOS 14.0)
+     * UIActions. When constructing from a UIAction segments will prefer images over titles when both are provided. The
+     * segmented control is automatically sized to fit content.
      */
     @Generated
     @Selector("initWithItems:")
@@ -487,8 +490,10 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     public native long segmentedControlStyle();
 
     /**
-     * ignored in momentary mode. returns last segment pressed. default is UISegmentedControlNoSegment until a segment is pressed
-     * the UIControlEventValueChanged action is invoked when the segment changes via a user event. set to UISegmentedControlNoSegment to turn off selection
+     * ignored in momentary mode. returns last segment pressed. default is UISegmentedControlNoSegment until a segment
+     * is pressed
+     * the UIControlEventValueChanged action is invoked when the segment changes via a user event. set to
+     * UISegmentedControlNoSegment to turn off selection
      */
     @Generated
     @Selector("selectedSegmentIndex")
@@ -496,19 +501,25 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     public native long selectedSegmentIndex();
 
     /**
-     * For segments whose width value is 0, setting this property to YES attempts to adjust segment widths based on their content widths. Default is NO.
+     * For segments whose width value is 0, setting this property to YES attempts to adjust segment widths based on
+     * their content widths. Default is NO.
      */
     @Generated
     @Selector("setApportionsSegmentWidthsByContent:")
     public native void setApportionsSegmentWidthsByContent(boolean value);
 
     /**
-     * If backgroundImage is an image returned from -[UIImage resizableImageWithCapInsets:] the cap widths will be calculated from that information, otherwise, the cap width will be calculated by subtracting one from the image's width then dividing by 2. The cap widths will also be used as the margins for text placement. To adjust the margin use the margin adjustment methods.
+     * If backgroundImage is an image returned from -[UIImage resizableImageWithCapInsets:] the cap widths will be
+     * calculated from that information, otherwise, the cap width will be calculated by subtracting one from the image's
+     * width then dividing by 2. The cap widths will also be used as the margins for text placement. To adjust the
+     * margin use the margin adjustment methods.
      * <p>
-     * In general, you should specify a value for the normal state to be used by other states which don't have a custom value set.
+     * In general, you should specify a value for the normal state to be used by other states which don't have a custom
+     * value set.
      * <p>
      * Similarly, when a property is dependent on the bar metrics, be sure to specify a value for UIBarMetricsDefault.
-     * In the case of the segmented control, appearance properties for UIBarMetricsCompact are only respected for segmented controls in the smaller navigation and toolbars.
+     * In the case of the segmented control, appearance properties for UIBarMetricsCompact are only respected for
+     * segmented controls in the smaller navigation and toolbars.
      */
     @Generated
     @Selector("setBackgroundImage:forState:barMetrics:")
@@ -531,7 +542,11 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
             @NInt long leftCenterRightOrAlone, @NInt long barMetrics);
 
     /**
-     * To customize the segmented control appearance you will need to provide divider images to go between two unselected segments (leftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal), selected on the left and unselected on the right (leftSegmentState:UIControlStateSelected rightSegmentState:UIControlStateNormal), and unselected on the left and selected on the right (leftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected).
+     * To customize the segmented control appearance you will need to provide divider images to go between two
+     * unselected segments (leftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateNormal), selected on
+     * the left and unselected on the right (leftSegmentState:UIControlStateSelected
+     * rightSegmentState:UIControlStateNormal), and unselected on the left and selected on the right
+     * (leftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected).
      */
     @Generated
     @Selector("setDividerImage:forLeftSegmentState:rightSegmentState:barMetrics:")
@@ -558,8 +573,10 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     public native void setSegmentedControlStyle(@NInt long value);
 
     /**
-     * ignored in momentary mode. returns last segment pressed. default is UISegmentedControlNoSegment until a segment is pressed
-     * the UIControlEventValueChanged action is invoked when the segment changes via a user event. set to UISegmentedControlNoSegment to turn off selection
+     * ignored in momentary mode. returns last segment pressed. default is UISegmentedControlNoSegment until a segment
+     * is pressed
+     * the UIControlEventValueChanged action is invoked when the segment changes via a user event. set to
+     * UISegmentedControlNoSegment to turn off selection
      */
     @Generated
     @Selector("setSelectedSegmentIndex:")
@@ -573,7 +590,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     public native void setTitleForSegmentAtIndex(String title, @NUInt long segment);
 
     /**
-     * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary, using the keys found in NSAttributedString.h.
+     * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary,
+     * using the keys found in NSAttributedString.h.
      */
     @Generated
     @Selector("setTitleTextAttributes:forState:")
@@ -635,7 +653,9 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     public native UIAction actionForSegmentAtIndex(@NUInt long segment);
 
     /**
-     * Initializes the segmented control with the given frame and segments constructed from the given UIActions. Segments will prefer images over titles when both are provided. Selecting a segment calls UIAction.actionHandler as well as handlers for the ValueChanged and PrimaryActionTriggered control events.
+     * Initializes the segmented control with the given frame and segments constructed from the given UIActions.
+     * Segments will prefer images over titles when both are provided. Selecting a segment calls UIAction.actionHandler
+     * as well as handlers for the ValueChanged and PrimaryActionTriggered control events.
      */
     @Generated
     @Selector("initWithFrame:actions:")
@@ -646,14 +666,18 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     public native UISegmentedControl initWithFramePrimaryAction(@ByValue CGRect frame, UIAction primaryAction);
 
     /**
-     * Insert a segment with the given action at the given index. Segments will prefer images over titles when both are provided. When the segment is selected UIAction.actionHandler is called. If a segment already exists with the action's identifier that segment will either be updated (if the index is the same) or it will be removed (if different).
+     * Insert a segment with the given action at the given index. Segments will prefer images over titles when both are
+     * provided. When the segment is selected UIAction.actionHandler is called. If a segment already exists with the
+     * action's identifier that segment will either be updated (if the index is the same) or it will be removed (if
+     * different).
      */
     @Generated
     @Selector("insertSegmentWithAction:atIndex:animated:")
     public native void insertSegmentWithActionAtIndexAnimated(UIAction action, @NUInt long segment, boolean animated);
 
     /**
-     * Returns the index of the segment associated with the given actionIdentifier, or NSNotFound if the identifier could not be found.
+     * Returns the index of the segment associated with the given actionIdentifier, or NSNotFound if the identifier
+     * could not be found.
      */
     @Generated
     @Selector("segmentIndexForActionIdentifier:")
@@ -661,7 +685,10 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     public native long segmentIndexForActionIdentifier(String actionIdentifier);
 
     /**
-     * Reconfigures the given segment with this action. Segments will prefer images over titles when both are provided. When the segment is selected UIAction.actionHandler is called. UIAction.identifier must either match the action of the existing segment at this index, or be unique within all actions associated with the segmented control, or this method will assert.
+     * Reconfigures the given segment with this action. Segments will prefer images over titles when both are provided.
+     * When the segment is selected UIAction.actionHandler is called. UIAction.identifier must either match the action
+     * of the existing segment at this index, or be unique within all actions associated with the segmented control, or
+     * this method will assert.
      */
     @Generated
     @Selector("setAction:forSegmentAtIndex:")

@@ -223,7 +223,8 @@ public interface UITextInput extends UIKeyInput {
     UITextPosition positionFromPositionOffset(UITextPosition position, @NInt long offset);
 
     /**
-     * To be implemented if there is not a one-to-one correspondence between text positions within range and character offsets into the associated string.
+     * To be implemented if there is not a one-to-one correspondence between text positions within range and character
+     * offsets into the associated string.
      */
     @Generated
     @IsOptional
@@ -255,8 +256,8 @@ public interface UITextInput extends UIKeyInput {
     void replaceRangeWithText(UITextRange range, String text);
 
     /**
-     * Text may have a selection, either zero-length (a caret) or ranged.  Editing operations are
-     * always performed on the text from this selection.  nil corresponds to no selection.
+     * Text may have a selection, either zero-length (a caret) or ranged. Editing operations are
+     * always performed on the text from this selection. nil corresponds to no selection.
      */
     @Generated
     @Selector("selectedTextRange")
@@ -308,8 +309,8 @@ public interface UITextInput extends UIKeyInput {
     void setMarkedTextStyle(NSDictionary<String, ?> value);
 
     /**
-     * Text may have a selection, either zero-length (a caret) or ranged.  Editing operations are
-     * always performed on the text from this selection.  nil corresponds to no selection.
+     * Text may have a selection, either zero-length (a caret) or ranged. Editing operations are
+     * always performed on the text from this selection. nil corresponds to no selection.
      */
     @Generated
     @Selector("setSelectedTextRange:")
@@ -393,7 +394,8 @@ public interface UITextInput extends UIKeyInput {
     }
 
     /**
-     * This is an optional method for clients that wish to support text phrase alternatives. If they do not implement this method,
+     * This is an optional method for clients that wish to support text phrase alternatives. If they do not implement
+     * this method,
      * the text will be inserted by -insertText: without the phase alternatives.
      */
     @Generated

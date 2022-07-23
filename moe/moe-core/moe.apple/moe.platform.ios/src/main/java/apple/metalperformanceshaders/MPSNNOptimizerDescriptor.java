@@ -26,9 +26,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSNNOptimizerDescriptor
  * <p>
  * The MPSNNOptimizerDescriptor base class. Optimizers are generally used to update trainable neural network parameters.
- * Users are usually expected to call these MPSKernels from the update methods on their Convolution or BatchNormalization data sources.
+ * Users are usually expected to call these MPSKernels from the update methods on their Convolution or
+ * BatchNormalization data sources.
  * <p>
- * Before the gradient is used to update the original value, some preprocessing occurs on each gradient where it is scaled or clipped
+ * Before the gradient is used to update the original value, some preprocessing occurs on each gradient where it is
+ * scaled or clipped
  * If regularization is chosen the appropriate regularization loss gradient is added to the value gradient.
  */
 @Generated
@@ -60,7 +62,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public static native MPSNNOptimizerDescriptor allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   applyGradientClipping
+     * [@property] applyGradientClipping
      * <p>
      * A bool which decides if gradient will be clipped
      * <p>
@@ -101,7 +103,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public static native String description_static();
 
     /**
-     * [@property]   gradientClipMax
+     * [@property] gradientClipMax
      * <p>
      * The maximum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
      */
@@ -110,7 +112,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public native float gradientClipMax();
 
     /**
-     * [@property]   gradientClipMin
+     * [@property] gradientClipMin
      * <p>
      * The minimum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
      */
@@ -119,7 +121,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public native float gradientClipMin();
 
     /**
-     * [@property]   gradientRescale
+     * [@property] gradientRescale
      * <p>
      * The gradientRescale at which we apply to incoming gradient values
      * <p>
@@ -192,7 +194,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@property]   learningRate
+     * [@property] learningRate
      * <p>
      * The learningRate at which we update values
      * <p>
@@ -226,7 +228,8 @@ public class MPSNNOptimizerDescriptor extends NSObject {
             float gradientClipMin, @NUInt long regularizationType, float regularizationScale);
 
     /**
-     * Creates a descriptor on autoreleaspool for the MPSNNOptimizerDescriptor object, no gradient clipping would be applied
+     * Creates a descriptor on autoreleaspool for the MPSNNOptimizerDescriptor object, no gradient clipping would be
+     * applied
      *
      * @param learningRate        The learningRate which will be applied
      * @param gradientRescale     The gradientRescale which will be applied
@@ -240,7 +243,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
             float learningRate, float gradientRescale, @NUInt long regularizationType, float regularizationScale);
 
     /**
-     * [@property]   regularizationScale
+     * [@property] regularizationScale
      * <p>
      * The regularizationScale at which we apply L1 or L2 regularization, it gets ignored if regularization is None
      * <p>
@@ -251,7 +254,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public native float regularizationScale();
 
     /**
-     * [@property]   regularizationType
+     * [@property] regularizationType
      * <p>
      * The regularizationType which we apply.
      * <p>
@@ -271,7 +274,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   applyGradientClipping
+     * [@property] applyGradientClipping
      * <p>
      * A bool which decides if gradient will be clipped
      * <p>
@@ -282,7 +285,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public native void setApplyGradientClipping(boolean value);
 
     /**
-     * [@property]   gradientClipMax
+     * [@property] gradientClipMax
      * <p>
      * The maximum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
      */
@@ -291,7 +294,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public native void setGradientClipMax(float value);
 
     /**
-     * [@property]   gradientClipMin
+     * [@property] gradientClipMin
      * <p>
      * The minimum value at which incoming gradient will be clipped before rescaling, applyGradientClipping must be true
      */
@@ -300,7 +303,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public native void setGradientClipMin(float value);
 
     /**
-     * [@property]   gradientRescale
+     * [@property] gradientRescale
      * <p>
      * The gradientRescale at which we apply to incoming gradient values
      * <p>
@@ -311,7 +314,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public native void setGradientRescale(float value);
 
     /**
-     * [@property]   learningRate
+     * [@property] learningRate
      * <p>
      * The learningRate at which we update values
      * <p>
@@ -322,7 +325,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public native void setLearningRate(float value);
 
     /**
-     * [@property]   regularizationScale
+     * [@property] regularizationScale
      * <p>
      * The regularizationScale at which we apply L1 or L2 regularization, it gets ignored if regularization is None
      * <p>
@@ -333,7 +336,7 @@ public class MPSNNOptimizerDescriptor extends NSObject {
     public native void setRegularizationScale(float value);
 
     /**
-     * [@property]   regularizationType
+     * [@property] regularizationType
      * <p>
      * The regularizationType which we apply.
      * <p>

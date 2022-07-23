@@ -21,7 +21,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface NSTextLayoutManagerDelegate {
     /**
      * Rendering attributes
-     * Returns a dictionary of rendering attributes for rendering NSLinkAttributeName. Just as other rendering attributes, specifying NSNull removes the attribute from the final attributes used for rendering. It has priority over the general rendering attributes.
+     * Returns a dictionary of rendering attributes for rendering NSLinkAttributeName. Just as other rendering
+     * attributes, specifying NSNull removes the attribute from the final attributes used for rendering. It has priority
+     * over the general rendering attributes.
      */
     @Generated
     @IsOptional
@@ -34,7 +36,8 @@ public interface NSTextLayoutManagerDelegate {
 
     /**
      * Layout behavior
-     * Invoked while determining the soft line break point.  When hyphenating=NO, NSTextLayoutManager tries to find the next line break opportunity before location. When hyphenating=YES, it is an auto-hyphenation point.
+     * Invoked while determining the soft line break point. When hyphenating=NO, NSTextLayoutManager tries to find the
+     * next line break opportunity before location. When hyphenating=YES, it is an auto-hyphenation point.
      */
     @Generated
     @IsOptional
@@ -46,7 +49,8 @@ public interface NSTextLayoutManagerDelegate {
 
     /**
      * NSTextLayoutFragment management
-     * Returns NSTextLayoutFragment for location in textElement. NSTextLayoutManagerDelegate could provide an NSTextLayoutFragment specialized for an NSTextElement subclass targeted for the rendering surface.
+     * Returns NSTextLayoutFragment for location in textElement. NSTextLayoutManagerDelegate could provide an
+     * NSTextLayoutFragment specialized for an NSTextElement subclass targeted for the rendering surface.
      */
     @Generated
     @IsOptional

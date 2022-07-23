@@ -51,9 +51,9 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
     public static native MPSCNNLocalContrastNormalizationGradientNode allocWithZone(VoidPtr zone);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The value of alpha.  Default is 0.0
+     * The value of alpha. Default is 0.0
      * <p>
      * The default value 0.0 is not recommended and is
      * preserved for backwards compatibility. With alpha 0,
@@ -70,9 +70,9 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
-     * The value of beta.  Default is 0.5
+     * The value of beta. Default is 0.5
      */
     @Generated
     @Selector("beta")
@@ -101,9 +101,9 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
     public static native String debugDescription_static();
 
     /**
-     * [@property]   delta
+     * [@property] delta
      * <p>
-     * The value of delta.  Default is 1/1024
+     * The value of delta. Default is 1/1024
      */
     @Generated
     @Selector("delta")
@@ -171,27 +171,27 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
             @NUInt long kernelWidth, @NUInt long kernelHeight);
 
     /**
-     * [@property]   p0
+     * [@property] p0
      * <p>
-     * The value of p0.  Default is 1.0
+     * The value of p0. Default is 1.0
      */
     @Generated
     @Selector("p0")
     public native float p0();
 
     /**
-     * [@property]   pm
+     * [@property] pm
      * <p>
-     * The value of pm.  Default is 0.0
+     * The value of pm. Default is 0.0
      */
     @Generated
     @Selector("pm")
     public native float pm();
 
     /**
-     * [@property]   ps
+     * [@property] ps
      * <p>
-     * The value of ps.  Default is 1.0
+     * The value of ps. Default is 1.0
      */
     @Generated
     @Selector("ps")
@@ -206,9 +206,9 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   alpha
+     * [@property] alpha
      * <p>
-     * The value of alpha.  Default is 0.0
+     * The value of alpha. Default is 0.0
      * <p>
      * The default value 0.0 is not recommended and is
      * preserved for backwards compatibility. With alpha 0,
@@ -221,45 +221,45 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
     public native void setAlpha(float value);
 
     /**
-     * [@property]   beta
+     * [@property] beta
      * <p>
-     * The value of beta.  Default is 0.5
+     * The value of beta. Default is 0.5
      */
     @Generated
     @Selector("setBeta:")
     public native void setBeta(float value);
 
     /**
-     * [@property]   delta
+     * [@property] delta
      * <p>
-     * The value of delta.  Default is 1/1024
+     * The value of delta. Default is 1/1024
      */
     @Generated
     @Selector("setDelta:")
     public native void setDelta(float value);
 
     /**
-     * [@property]   p0
+     * [@property] p0
      * <p>
-     * The value of p0.  Default is 1.0
+     * The value of p0. Default is 1.0
      */
     @Generated
     @Selector("setP0:")
     public native void setP0(float value);
 
     /**
-     * [@property]   pm
+     * [@property] pm
      * <p>
-     * The value of pm.  Default is 0.0
+     * The value of pm. Default is 0.0
      */
     @Generated
     @Selector("setPm:")
     public native void setPm(float value);
 
     /**
-     * [@property]   ps
+     * [@property] ps
      * <p>
-     * The value of ps.  Default is 1.0
+     * The value of ps. Default is 1.0
      */
     @Generated
     @Selector("setPs:")

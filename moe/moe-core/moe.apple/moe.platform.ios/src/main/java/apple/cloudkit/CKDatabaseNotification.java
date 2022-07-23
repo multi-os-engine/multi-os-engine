@@ -43,7 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * CKDatabaseNotification
  * <p>
  * [@c] notificationType == @c CKNotificationTypeDatabase
- * When properties must be dropped (see @c isPruned), here's the order of importance.  The most important properties are first, they'll be the last ones to be dropped.
+ * When properties must be dropped (see @c isPruned), here's the order of importance. The most important properties are
+ * first, they'll be the last ones to be dropped.
  * - notificationID
  * - badge
  * - alertLocalizationKey

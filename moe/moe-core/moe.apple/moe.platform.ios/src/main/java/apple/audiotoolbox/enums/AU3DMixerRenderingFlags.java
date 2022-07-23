@@ -19,7 +19,7 @@ package apple.audiotoolbox.enums;
 import org.moe.natj.general.ann.Generated;
 
 /**
- * [@enum]	3D Mixer Rendering Flags
+ * [@enum] 3D Mixer Rendering Flags
  */
 @Generated
 public final class AU3DMixerRenderingFlags {

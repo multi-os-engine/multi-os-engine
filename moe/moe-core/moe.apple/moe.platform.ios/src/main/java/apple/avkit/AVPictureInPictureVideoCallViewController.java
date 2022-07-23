@@ -28,7 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * AVPictureInPictureVideoCallViewController
  * <p>
- * Subclass or directly use `AVPictureInPictureVideoCallViewController` as the container for content to be shown in Picture in Picture while video calls are active.
+ * Subclass or directly use `AVPictureInPictureVideoCallViewController` as the container for content to be shown in
+ * Picture in Picture while video calls are active.
  */
 @Generated
 @Library("AVKit")

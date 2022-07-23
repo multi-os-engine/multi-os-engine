@@ -26,12 +26,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * NFCISO15693ReaderSession
  * <p>
- * Reader session for processing ISO15693 tags.  @link [NFCReaderSessionDelegate readerSession:didDetectTags:] @link/ will return tag objects that
- * are conformed to the NFCISO15693Tag protocol.  This session requires the "com.apple.developer.nfc.readersession.formats" entitlement in your process.
+ * Reader session for processing ISO15693 tags. @link [NFCReaderSessionDelegate readerSession:didDetectTags:] @link/
+ * will return tag objects that
+ * are conformed to the NFCISO15693Tag protocol. This session requires the
+ * "com.apple.developer.nfc.readersession.formats" entitlement in your process.
  * <p>
  * NOTE:
- * Only one NFCReaderSession can be active at any time in the system. Subsequent opened sessions will get queued up and processed by the system in FIFO order.
- * The NFCISO15693 tag object returned by this session will only respond to the legacy APIs that are introducted in iOS11.
+ * Only one NFCReaderSession can be active at any time in the system. Subsequent opened sessions will get queued up and
+ * processed by the system in FIFO order.
+ * The NFCISO15693 tag object returned by this session will only respond to the legacy APIs that are introducted in
+ * iOS11.
  */
 @Generated
 @Library("CoreNFC")
@@ -104,8 +108,10 @@ public class NFCISO15693ReaderSession extends NFCReaderSession {
      * initWithQueue:
      *
      * @param delegate The session will hold a weak ARC reference to this @link NFCReaderSessionDelegate @link/ object.
-     * @param queue    A dispatch queue where NFCReaderSessionDelegate delegate callbacks will be dispatched to.  A <i>nil</i> value will
-     *                 cause the creation of a serial dispatch queue internally for the session.  The session object will retain the provided dispatch queue.
+     * @param queue    A dispatch queue where NFCReaderSessionDelegate delegate callbacks will be dispatched to. A
+     *                 <i>nil</i> value will
+     *                 cause the creation of a serial dispatch queue internally for the session. The session object will
+     *                 retain the provided dispatch queue.
      * @return A new NFCISO15693ReaderSession instance.
      */
     @Generated
@@ -154,9 +160,11 @@ public class NFCISO15693ReaderSession extends NFCReaderSession {
     /**
      * restartPolling
      * <p>
-     * Restart the polling sequence in this session to discover new tags.  Tags that are returned previously by @link [NFCReaderSessionDelegate readerSession:didDetectTags:]
+     * Restart the polling sequence in this session to discover new tags. Tags that are returned previously by @link
+     * [NFCReaderSessionDelegate readerSession:didDetectTags:]
      *
-     * @link/ will become invalid, and all references to these tags shall be removed to properly release the resources.  Calling this method on an invalidated session
+     * @link/ will become invalid, and all references to these tags shall be removed to properly release the resources.
+     * Calling this method on an invalidated session
      * will have no effect; a new reader session is required to restart the reader.
      */
     @Generated

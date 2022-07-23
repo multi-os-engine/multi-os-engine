@@ -423,7 +423,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeBrightness();
 
     /**
-     * Characteristic type for temperature units. The value of the characteristic is one of the values defined for HMCharacteristicValueTemperatureUnit.
+     * Characteristic type for temperature units. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueTemperatureUnit.
      */
     @Generated
     @CVariable()
@@ -447,7 +448,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeTargetTemperature();
 
     /**
-     * Characteristic type for current heating/cooling. The value of the characteristic is one of the values defined for HMCharacteristicValueCurrentHeatingCooling.
+     * Characteristic type for current heating/cooling. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueCurrentHeatingCooling.
      */
     @Generated
     @CVariable()
@@ -455,7 +457,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeCurrentHeatingCooling();
 
     /**
-     * Characteristic type for target heating/cooling. The value of the characteristic is one of the values defined for HMCharacteristicValueHeatingCooling.
+     * Characteristic type for target heating/cooling. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueHeatingCooling.
      */
     @Generated
     @CVariable()
@@ -495,7 +498,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeTargetRelativeHumidity();
 
     /**
-     * Characteristic type for current door state. The value of the characteristic is one of the values defined for HMCharacteristicValueDoorState.
+     * Characteristic type for current door state. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueDoorState.
      */
     @Generated
     @CVariable()
@@ -503,7 +507,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeCurrentDoorState();
 
     /**
-     * Characteristic type for target door state. The value of the characteristic is one of the values defined for HMCharacteristicValueTargetDoorState.
+     * Characteristic type for target door state. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueTargetDoorState.
      */
     @Generated
     @CVariable()
@@ -559,7 +564,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeIdentify();
 
     /**
-     * Characteristic type for rotation direction. The value of the characteristic is one of the values defined for HMCharacteristicValueRotationDirection.
+     * Characteristic type for rotation direction. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueRotationDirection.
      */
     @Generated
     @CVariable()
@@ -634,7 +640,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeMotionDetected();
 
     /**
-     * Characteristic type for current lock mechanism state. The value of the characteristic is one of the values defined for HMCharacteristicValueLockMechanismState.
+     * Characteristic type for current lock mechanism state. The value of the characteristic is one of the values
+     * defined for HMCharacteristicValueLockMechanismState.
      */
     @Generated
     @CVariable()
@@ -642,7 +649,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeCurrentLockMechanismState();
 
     /**
-     * Characteristic type for target lock mechanism state. The value of the characteristic is one of the values defined for HMCharacteristicValueTargetLockMechanismState.
+     * Characteristic type for target lock mechanism state. The value of the characteristic is one of the values defined
+     * for HMCharacteristicValueTargetLockMechanismState.
      */
     @Generated
     @CVariable()
@@ -650,7 +658,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeTargetLockMechanismState();
 
     /**
-     * Characteristic type for the last known action for a lock mechanism. The value of the characteristic is one of the values
+     * Characteristic type for the last known action for a lock mechanism. The value of the characteristic is one of the
+     * values
      * defined for HMCharacteristicValueLockMechanismLastKnownAction.
      */
     @Generated
@@ -659,7 +668,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeLockMechanismLastKnownAction();
 
     /**
-     * Characteristic type for the control point for lock management. The characteristic is write-only that takes TLV8 data wrapped in an NSData.
+     * Characteristic type for the control point for lock management. The characteristic is write-only that takes TLV8
+     * data wrapped in an NSData.
      */
     @Generated
     @CVariable()
@@ -667,7 +677,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeLockManagementControlPoint();
 
     /**
-     * * @brief Characteristic type for the auto secure timeout for lock management. The value of the characteristic is an unsigned
+     * * @brief Characteristic type for the auto secure timeout for lock management. The value of the characteristic is
+     * an unsigned
      * 32-bit integer representing the number of seconds.
      */
     @Generated
@@ -765,7 +776,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeCarbonMonoxidePeakLevel();
 
     /**
-     * Characteristic type for charging state. The value of the characteristic is one of the values defined for HMCharacteristicValueChargingState.
+     * Characteristic type for charging state. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueChargingState.
      */
     @Generated
     @CVariable()
@@ -782,7 +794,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeContactState();
 
     /**
-     * Characteristic type for current horizontal tilt angle. The value is a float representing the angle in arc degrees.
+     * Characteristic type for current horizontal tilt angle. The value is a float representing the angle in arc
+     * degrees.
      */
     @Generated
     @CVariable()
@@ -850,7 +863,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeHoldPosition();
 
     /**
-     * Characteristic type for input event. The value of the characteristic is one of the values defined for HMCharacteristicValueInputEvent.
+     * Characteristic type for input event. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueInputEvent.
      */
     @Generated
     @CVariable()
@@ -894,7 +908,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypePositionState();
 
     /**
-     * Characteristic type for smoke detected. The value of the characteristic is one of the values defined for HMCharacteristicValueSmokeDetectionStatus.
+     * Characteristic type for smoke detected. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueSmokeDetectionStatus.
      */
     @Generated
     @CVariable()
@@ -935,7 +950,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeStatusJammed();
 
     /**
-     * Characteristic type for status low battery. The value of the characteristic is one of the values defined for HMCharacteristicValueBatteryStatus.
+     * Characteristic type for status low battery. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueBatteryStatus.
      */
     @Generated
     @CVariable()
@@ -943,7 +959,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeStatusLowBattery();
 
     /**
-     * Characteristic type to indicate status of a service is tampered. The value of the characteristic is a uint8 value.
+     * Characteristic type to indicate status of a service is tampered. The value of the characteristic is a uint8
+     * value.
      * A value of 0 indicates no tampering has been detected; a value of 1 indicates that a tampering has been detected.
      */
     @Generated
@@ -1011,7 +1028,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeSupportedVideoStreamConfiguration();
 
     /**
-     * Characteristic type for supported audio stream configuration. The value of the characteristic is TLV8 encoded data.
+     * Characteristic type for supported audio stream configuration. The value of the characteristic is TLV8 encoded
+     * data.
      */
     @Generated
     @CVariable()
@@ -1091,7 +1109,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeImageMirroring();
 
     /**
-     * Characteristic type for active. The value of the characteristic is one of the values defined for HMCharacteristicValueActivationState.
+     * Characteristic type for active. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueActivationState.
      */
     @Generated
     @CVariable()
@@ -1117,7 +1136,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeTargetAirPurifierState();
 
     /**
-     * Characteristic type for current fan state. The value of the characteristic is one of the values defined for HMCharacteristicValueCurrentFanState.
+     * Characteristic type for current fan state. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueCurrentFanState.
      */
     @Generated
     @CVariable()
@@ -1125,7 +1145,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeCurrentFanState();
 
     /**
-     * Characteristic type for current heater-cooler state. The value of the characteristic is one of the values defined for HMCharacteristicValueCurrentHeaterCoolerState.
+     * Characteristic type for current heater-cooler state. The value of the characteristic is one of the values defined
+     * for HMCharacteristicValueCurrentHeaterCoolerState.
      */
     @Generated
     @CVariable()
@@ -1133,7 +1154,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeCurrentHeaterCoolerState();
 
     /**
-     * Characteristic type for current humidifier-dehumidifier state. The value of the characteristic is one of the values defined for HMCharacteristicValueCurrentHumidifierDehumidifierState.
+     * Characteristic type for current humidifier-dehumidifier state. The value of the characteristic is one of the
+     * values defined for HMCharacteristicValueCurrentHumidifierDehumidifierState.
      */
     @Generated
     @CVariable()
@@ -1184,7 +1206,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeFilterResetChangeIndication();
 
     /**
-     * Characteristic type for lock physical controls. The value of the characteristic is one of the values defined for HMCharacteristicValueLockPhysicalControlsState.
+     * Characteristic type for lock physical controls. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueLockPhysicalControlsState.
      */
     @Generated
     @CVariable()
@@ -1192,7 +1215,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeLockPhysicalControls();
 
     /**
-     * Characteristic type for swing mode. The value of the characteristic is one of the values defined for HMCharacteristicValueSwingMode.
+     * Characteristic type for swing mode. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueSwingMode.
      */
     @Generated
     @CVariable()
@@ -1200,7 +1224,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeSwingMode();
 
     /**
-     * Characteristic type for target heater-cooler state. The value of the characteristic is one of the values defined for HMCharacteristicValueTargetHeaterCoolerState.
+     * Characteristic type for target heater-cooler state. The value of the characteristic is one of the values defined
+     * for HMCharacteristicValueTargetHeaterCoolerState.
      */
     @Generated
     @CVariable()
@@ -1208,7 +1233,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeTargetHeaterCoolerState();
 
     /**
-     * Characteristic type for target humidifier-dehumidifier state. The value of the characteristic is one of the values defined for HMCharacteristicValueTargetHumidifierDehumidifierState.
+     * Characteristic type for target humidifier-dehumidifier state. The value of the characteristic is one of the
+     * values defined for HMCharacteristicValueTargetHumidifierDehumidifierState.
      */
     @Generated
     @CVariable()
@@ -1216,7 +1242,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeTargetHumidifierDehumidifierState();
 
     /**
-     * Characteristic type for target fan state. The value of the characteristic is one of the values defined for HMCharacteristicValueTargetFanState.
+     * Characteristic type for target fan state. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueTargetFanState.
      */
     @Generated
     @CVariable()
@@ -1431,7 +1458,8 @@ public final class HomeKit {
     /**
      * Describes that the value format is a TLV8.
      * <p>
-     * The value is an NSData containing a set of one or more TLV8's, which are packed type-length-value items with an 8-bit type, 8-bit length, and N-byte value.
+     * The value is an NSData containing a set of one or more TLV8's, which are packed type-length-value items with an
+     * 8-bit type, 8-bit length, and N-byte value.
      */
     @Generated
     @CVariable()
@@ -1892,7 +1920,8 @@ public final class HomeKit {
     public static native String HMCharacteristicTypeValveType();
 
     /**
-     * Characteristic type for is configured. The value of the characteristic is one of the values defined for HMCharacteristicValueConfigurationState.
+     * Characteristic type for is configured. The value of the characteristic is one of the values defined for
+     * HMCharacteristicValueConfigurationState.
      */
     @Generated
     @CVariable()

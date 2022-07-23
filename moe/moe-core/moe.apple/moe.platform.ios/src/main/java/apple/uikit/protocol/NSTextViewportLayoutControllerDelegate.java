@@ -20,7 +20,8 @@ public interface NSTextViewportLayoutControllerDelegate {
     /**
      * Called when textViewportLayoutController lays out a given textLayoutFragment.
      * The delegate should arrange to present the text layout fragment in the UI, e.g. a sublayer/subview.
-     * Layout information such as viewportBounds on textViewportLayoutController is not up-to-date at the point of this call.
+     * Layout information such as viewportBounds on textViewportLayoutController is not up-to-date at the point of this
+     * call.
      */
     @Generated
     @Selector("textViewportLayoutController:configureRenderingSurfaceForTextLayoutFragment:")

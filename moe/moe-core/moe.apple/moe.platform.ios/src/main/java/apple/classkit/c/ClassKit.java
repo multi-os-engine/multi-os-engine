@@ -35,7 +35,8 @@ public final class ClassKit {
     public static native String CLSErrorObjectKey();
 
     /**
-     * If multiple objects cause errors we return an error with code `CLSErrorCodePartialFailure` which will contain an array of errors in - [NSError userInfo]; under this key.
+     * If multiple objects cause errors we return an error with code `CLSErrorCodePartialFailure` which will contain an
+     * array of errors in - [NSError userInfo]; under this key.
      */
     @Generated
     @CVariable()
@@ -113,7 +114,8 @@ public final class ClassKit {
     public static native String CLSContextTopicHealthAndFitness();
 
     /**
-     * Errors with the code `CLSErrorCodePartialFailure` may contain an array of successful entities in - [NSError userInfo]; under this key.
+     * Errors with the code `CLSErrorCodePartialFailure` may contain an array of successful entities in - [NSError
+     * userInfo]; under this key.
      */
     @Generated
     @CVariable()

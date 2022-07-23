@@ -24,12 +24,15 @@ import org.moe.natj.general.ann.NInt;
  * <p>
  * Represents the current state of a CBPeripheralManager.
  * <p>
- * [@constant] CBPeripheralManagerStateUnknown       State unknown, update imminent.
- * [@constant] CBPeripheralManagerStateResetting     The connection with the system service was momentarily lost, update imminent.
- * [@constant] CBPeripheralManagerStateUnsupported   The platform doesn't support the Bluetooth Low Energy Peripheral/Server role.
- * [@constant] CBPeripheralManagerStateUnauthorized  The application is not authorized to use the Bluetooth Low Energy Peripheral/Server role.
- * [@constant] CBPeripheralManagerStatePoweredOff    Bluetooth is currently powered off.
- * [@constant] CBPeripheralManagerStatePoweredOn     Bluetooth is currently powered on and available to use.
+ * [@constant] CBPeripheralManagerStateUnknown State unknown, update imminent.
+ * [@constant] CBPeripheralManagerStateResetting The connection with the system service was momentarily lost, update
+ * imminent.
+ * [@constant] CBPeripheralManagerStateUnsupported The platform doesn't support the Bluetooth Low Energy
+ * Peripheral/Server role.
+ * [@constant] CBPeripheralManagerStateUnauthorized The application is not authorized to use the Bluetooth Low Energy
+ * Peripheral/Server role.
+ * [@constant] CBPeripheralManagerStatePoweredOff Bluetooth is currently powered off.
+ * [@constant] CBPeripheralManagerStatePoweredOn Bluetooth is currently powered on and available to use.
  */
 @Generated
 public final class CBPeripheralManagerState {

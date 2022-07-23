@@ -28,11 +28,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * <p>
  * An instance of this class can be used to retrieve periodic, aggregated power and performance metrics.
  * <p>
- * To receive metrics, clients must acquire a reference to the shared instance of the metric manager and add an eligible MXMetricManagerSubscriber.
+ * To receive metrics, clients must acquire a reference to the shared instance of the metric manager and add an eligible
+ * MXMetricManagerSubscriber.
  * <p>
  * Metrics are not guaranteed to be delivered, but can be expected atleast once per day when conditions permit.
  * <p>
- * Subscribers to the metric manager can remove themselves using removeSubscriber:subscriber if they no longer wish to receive metrics.
+ * Subscribers to the metric manager can remove themselves using removeSubscriber:subscriber if they no longer wish to
+ * receive metrics.
  */
 @Generated
 @Library("MetricKit")
@@ -155,7 +157,7 @@ public class MXMetricManager extends NSObject {
     public static native MXMetricManager new_objc();
 
     /**
-     * [@property]      pastPayloads
+     * [@property] pastPayloads
      * <p>
      * A list of past metric payloads received.
      */
@@ -189,7 +191,7 @@ public class MXMetricManager extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]      sharedManager
+     * [@property] sharedManager
      * <p>
      * Singleton instance of MXMetricManager.
      */
@@ -207,7 +209,7 @@ public class MXMetricManager extends NSObject {
     public static native long version_static();
 
     /**
-     * [@property]      pastDiagnosticPayloads
+     * [@property] pastDiagnosticPayloads
      * <p>
      * A list of past diagnostic payloads received.
      */

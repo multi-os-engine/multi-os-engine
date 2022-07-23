@@ -29,7 +29,8 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] AVCaptureColorSpace_P3_D65
  * The P3 D65 wide color space which uses Illuminant D65 as the white point.
  * [@constant] AVCaptureColorSpace_HLG_BT2020
- * The BT2020 wide color space which uses Illuminant D65 as the white point and Hybrid Log-Gamma as the transfer function.
+ * The BT2020 wide color space which uses Illuminant D65 as the white point and Hybrid Log-Gamma as the transfer
+ * function.
  */
 @Generated
 public final class AVCaptureColorSpace {

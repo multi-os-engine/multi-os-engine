@@ -263,7 +263,7 @@ public class HMTimerTrigger extends HMTrigger {
      *                   HMErrorCodeRecurrenceTooSmall is returned if the recurrence interval is less than
      *                   5 minutes;
      *                   HMErrorCodeRecurrenceTooLarge is returned if the recurrence interval is
-     *                   greater than 5 weeks. *                   error will be nil on success.
+     *                   greater than 5 weeks. * error will be nil on success.
      */
     @Generated
     @Selector("updateRecurrence:completionHandler:")

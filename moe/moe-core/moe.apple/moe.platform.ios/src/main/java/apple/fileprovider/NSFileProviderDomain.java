@@ -34,7 +34,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * By default, a file provider extension does not have any domain.
  * <p>
  * On the extension side, a separate instance of NSFileProviderExtension will be
- * created for each @c NSFileProviderDomain registered.  In that case, the
+ * created for each @c NSFileProviderDomain registered. In that case, the
  * [@c] NSFileProviderExtension.domain properties will indicate which domain the
  * NSFileProviderExtension belongs to (or nil if none).
  * <p>

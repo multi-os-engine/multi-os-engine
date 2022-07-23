@@ -30,7 +30,8 @@ public final class CNAuthorizationStatus {
     @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
     /**
      * The application is not authorized to access contact data.
-     * The user cannot change this application’s status, possibly due to active restrictions such as parental controls being in place.
+     * The user cannot change this application’s status, possibly due to active restrictions such as parental controls
+     * being in place.
      */
     @Generated @NInt public static final long Restricted = 0x0000000000000001L;
     /**

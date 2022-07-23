@@ -75,7 +75,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
     public static native Class classForKeyedUnarchiver();
 
     /**
-     * [@property]   completionHandler
+     * [@property] completionHandler
      * <p>
      * completionHandler for the graph executable, default value is nil
      */
@@ -143,7 +143,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   scheduledHandler
+     * [@property] scheduledHandler
      * <p>
      * scheduledHandler for the graph executable, default value is nil
      */
@@ -160,7 +160,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
     }
 
     /**
-     * [@property]   completionHandler
+     * [@property] completionHandler
      * <p>
      * completionHandler for the graph executable, default value is nil
      */
@@ -177,7 +177,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
     }
 
     /**
-     * [@property]   scheduledHandler
+     * [@property] scheduledHandler
      * <p>
      * scheduledHandler for the graph executable, default value is nil
      */
@@ -198,7 +198,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * [@property]   waitUntilCompleted
+     * [@property] waitUntilCompleted
      * <p>
      * waitUntilCompleted for the graph executable, default value is false
      */
@@ -216,7 +216,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
     public static native long version_static();
 
     /**
-     * [@property]   waitUntilCompleted
+     * [@property] waitUntilCompleted
      * <p>
      * waitUntilCompleted for the graph executable, default value is false
      */

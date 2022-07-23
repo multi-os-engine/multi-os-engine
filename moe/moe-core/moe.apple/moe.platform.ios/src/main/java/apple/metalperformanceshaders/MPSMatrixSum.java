@@ -138,7 +138,7 @@ public class MPSMatrixSum extends MPSKernel {
      * @param offsetVector   A MPSVector of type MPSDataTypeUInt32 containing the list of
      *                       offsets, stored as a packed array of MPSMatrixOffset values.
      * @param biasVector     A MPSVector containing the bias terms to add to the result
-     *                       prior to applying the neuron function, if any.  May be nil.
+     *                       prior to applying the neuron function, if any. May be nil.
      * @param startIndex     The starting index into the scale and offset vectors.
      */
     @Generated
@@ -256,11 +256,11 @@ public class MPSMatrixSum extends MPSKernel {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * [@property]   resultMatrixOrigin
+     * [@property] resultMatrixOrigin
      * <p>
      * The origin, relative to [0, 0] in the result matrix, at which to
-     * start writing results.  This property is modifiable and defaults
-     * to [0, 0] at initialization time.  If a different origin is desired
+     * start writing results. This property is modifiable and defaults
+     * to [0, 0] at initialization time. If a different origin is desired
      * then this should be modified prior to encoding the kernel.
      */
     @Generated
@@ -298,11 +298,11 @@ public class MPSMatrixSum extends MPSKernel {
             float parameterC);
 
     /**
-     * [@property]   resultMatrixOrigin
+     * [@property] resultMatrixOrigin
      * <p>
      * The origin, relative to [0, 0] in the result matrix, at which to
-     * start writing results.  This property is modifiable and defaults
-     * to [0, 0] at initialization time.  If a different origin is desired
+     * start writing results. This property is modifiable and defaults
+     * to [0, 0] at initialization time. If a different origin is desired
      * then this should be modified prior to encoding the kernel.
      */
     @Generated

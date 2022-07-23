@@ -70,7 +70,8 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
      * <p>
      * This class method returns a verdict indicating that safe search URL for the new should be specified
      *
-     * @param urlAppendMapKey URL Append map key to be used by the data plugin to notify what the url should be appended with
+     * @param urlAppendMapKey URL Append map key to be used by the data plugin to notify what the url should be appended
+     *                        with
      * @return The NEFilterNewFlowVerdict object.
      */
     @Generated
@@ -192,7 +193,8 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
      * needRulesVerdict
      * <p>
      * This class method returns a verdict indicating that control provider needs to be asked how to handle
-     * the new flow. The control provider can either drop or allow the flow, or update the rules and ask the data provider
+     * the new flow. The control provider can either drop or allow the flow, or update the rules and ask the data
+     * provider
      * to decide on the new flow again.
      *
      * @return The NEFilterNewFlowVerdict object.

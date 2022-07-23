@@ -54,7 +54,8 @@ public class PHASEEngine extends NSObject {
      * <p>
      * The active group mixer preset in the system
      * <p>
-     * Returns nil if there are no active group presets in the engine. Activate or Deactivate the preset via [PHASEGroupPreset activate] and [PHASEGroupPreset deactivate]
+     * Returns nil if there are no active group presets in the engine. Activate or Deactivate the preset via
+     * [PHASEGroupPreset activate] and [PHASEGroupPreset deactivate]
      */
     @Generated
     @Selector("activeGroupPreset")
@@ -243,7 +244,8 @@ public class PHASEEngine extends NSObject {
      * <p>
      * The root object of the engine's scene graph.
      * <p>
-     * Attach objects to the engine's rootObject or one of its children to make them active within the engine's scene graph.
+     * Attach objects to the engine's rootObject or one of its children to make them active within the engine's scene
+     * graph.
      * This will ensure they take part in the simulation.
      * [@note]
      * The rootObject is created and owned by the engine.
@@ -324,7 +326,8 @@ public class PHASEEngine extends NSObject {
      * <p>
      * An array of the active sound event objects in the system
      * <p>
-     * Returns a dictionary of the sound events at the time it is retrieved. This includes all sound events that are registered with the engine, including those that are preparing, playing, paused or stopping.
+     * Returns a dictionary of the sound events at the time it is retrieved. This includes all sound events that are
+     * registered with the engine, including those that are preparing, playing, paused or stopping.
      */
     @Generated
     @Selector("soundEvents")

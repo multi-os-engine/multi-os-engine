@@ -31,7 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSCNNBinaryConvolution
  * [@dependency] This depends on Metal.framework
  * <p>
- * The MPSCNNBinaryConvolution specifies a convolution with binary weights and an input image using binary approximations.
+ * The MPSCNNBinaryConvolution specifies a convolution with binary weights and an input image using binary
+ * approximations.
  * The MPSCNNBinaryConvolution optionally first binarizes the input image and then convolves the result with a set of
  * binary-valued filters, each producing one feature map in the output image (which is a normal image)
  * <p>
@@ -65,15 +66,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * This means that for a dot-product of two 32-bit words the result is:
  * r = popcount(x & y) = { 0, ..., 31, 32 }.
  * <p>
- * The input data can be pre-offset and scaled by providing the 'inputBiasTerms' and 'inputScaleTerms' parameters for the
- * initialization functions and this can be used for example to accomplish batch normalization of the data. The scaling of
+ * The input data can be pre-offset and scaled by providing the 'inputBiasTerms' and 'inputScaleTerms' parameters for
+ * the
+ * initialization functions and this can be used for example to accomplish batch normalization of the data. The scaling
+ * of
  * input values happens before possible beta-image computation.
  * <p>
- * The parameter 'beta' above is an optional image which is used to compute scaling factors for each spatial position and image index.
- * For the XNOR-Net based networks this is computed as follows: beta[i,x,y] = sum_{dx,dy} A[i, x+dx, y+dy] / (kx * ky), where
+ * The parameter 'beta' above is an optional image which is used to compute scaling factors for each spatial position
+ * and image index.
+ * For the XNOR-Net based networks this is computed as follows: beta[i,x,y] = sum_{dx,dy} A[i, x+dx, y+dy] / (kx * ky),
+ * where
  * (dx,dy) are summed over the convolution filter window [ -kx/2, (kx-1)/2], [ -ky/2, (ky-1)/2 ] and
  * A[i,x,y] = sum_{c} abs( in[i,x,y,c] ) / Nc, where 'in' is the original input image (in full precision) and Nc is the
- * number of input channels in the input image. Parameter 'beta' is not passed as input and to enable beta-scaling the user can
+ * number of input channels in the input image. Parameter 'beta' is not passed as input and to enable beta-scaling the
+ * user can
  * provide 'MPSCNNBinaryConvolutionFlagsUseBetaScaling' in the flags parameter in the initialization functions.
  * <p>
  * Finally the normal activation neuron is applied and the result is written to the output image.
@@ -157,7 +163,7 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
-     * have to guess and may guess incorrectly.  To avoid
+     * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
      *
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
@@ -179,7 +185,8 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
      * @param device           The MTLDevice on which this MPSCNNBinaryConvolution filter will be used
      * @param convolutionData  A pointer to a object that conforms to the MPSCNNConvolutionDataSource protocol.
      *                         The MPSCNNConvolutionDataSource protocol declares the methods that an
-     *                         instance of MPSCNNBinaryConvolution uses to obtain the weights and the convolution descriptor.
+     *                         instance of MPSCNNBinaryConvolution uses to obtain the weights and the convolution
+     *                         descriptor.
      *                         Each entry in the convolutionData:weights array is a 32-bit unsigned integer value
      *                         and each bit represents one filter weight (given in machine byte order).
      *                         The featurechannel indices increase from the least significant bit within the 32-bits.
@@ -187,21 +194,33 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
      *                         ceil( inputFeatureChannels/32.0 ) * outputFeatureChannels * kernelHeight * kernelWidth
      *                         The layout of filter weight is so that it can be reinterpreted as a 4D tensor (array)
      *                         weight[ outputChannels ][ kernelHeight ][ kernelWidth ][ ceil( inputChannels / 32.0 ) ]
-     *                         (The ordering of the reduction from 4D tensor to 1D is per C convention. The index based on
+     *                         (The ordering of the reduction from 4D tensor to 1D is per C convention. The index based
+     *                         on
      *                         inputchannels varies most rapidly, followed by kernelWidth, then kernelHeight and finally
      *                         outputChannels varies least rapidly.)
-     * @param outputBiasTerms  A pointer to bias terms to be applied to the convolution output.  Each entry is a float value.
+     * @param outputBiasTerms  A pointer to bias terms to be applied to the convolution output. Each entry is a float
+     *                         value.
      *                         The number of entries is = numberOfOutputFeatureMaps. If nil then 0.0 is used for bias.
-     *                         The values stored in the pointer are copied in and the array can be freed after this function returns.
-     * @param outputScaleTerms A pointer to scale terms to be applied to binary convolution results per output feature channel.
-     *                         Each entry is a float value. The number of entries is = numberOfOutputFeatureMaps. If nil then 1.0 is used.
-     *                         The values stored in the pointer are copied in and the array can be freed after this function returns.
-     * @param inputBiasTerms   A pointer to offset terms to be applied to the input before convolution and before input scaling.
-     *                         Each entry is a float value. The number of entries is 'inputFeatureChannels'. If NULL then 0.0 is used for bias.
-     *                         The values stored in the pointer are copied in and the array can be freed after this function returns.
-     * @param inputScaleTerms  A pointer to scale terms to be applied to the input before convolution, but after input biasing.
-     *                         Each entry is a float value. The number of entries is 'inputFeatureChannels'. If nil then 1.0 is used.
-     *                         The values stored in the pointer are copied in and the array can be freed after this function returns.
+     *                         The values stored in the pointer are copied in and the array can be freed after this
+     *                         function returns.
+     * @param outputScaleTerms A pointer to scale terms to be applied to binary convolution results per output feature
+     *                         channel.
+     *                         Each entry is a float value. The number of entries is = numberOfOutputFeatureMaps. If nil
+     *                         then 1.0 is used.
+     *                         The values stored in the pointer are copied in and the array can be freed after this
+     *                         function returns.
+     * @param inputBiasTerms   A pointer to offset terms to be applied to the input before convolution and before input
+     *                         scaling.
+     *                         Each entry is a float value. The number of entries is 'inputFeatureChannels'. If NULL
+     *                         then 0.0 is used for bias.
+     *                         The values stored in the pointer are copied in and the array can be freed after this
+     *                         function returns.
+     * @param inputScaleTerms  A pointer to scale terms to be applied to the input before convolution, but after input
+     *                         biasing.
+     *                         Each entry is a float value. The number of entries is 'inputFeatureChannels'. If nil then
+     *                         1.0 is used.
+     *                         The values stored in the pointer are copied in and the array can be freed after this
+     *                         function returns.
      * @param type             What kind of binarization strategy is to be used.
      * @param flags            See documentation above and documentation of MPSCNNBinaryConvolutionFlags.
      * @return A valid MPSCNNBinaryConvolution object or nil, if failure.
@@ -229,7 +248,8 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
      *                        ceil( inputFeatureChannels/32.0 ) * outputFeatureChannels * kernelHeight * kernelWidth
      *                        The layout of filter weight is so that it can be reinterpreted as a 4D tensor (array)
      *                        weight[ outputChannels ][ kernelHeight ][ kernelWidth ][ ceil( inputChannels / 32.0 ) ]
-     *                        (The ordering of the reduction from 4D tensor to 1D is per C convention. The index based on
+     *                        (The ordering of the reduction from 4D tensor to 1D is per C convention. The index based
+     *                        on
      *                        inputchannels varies most rapidly, followed by kernelWidth, then kernelHeight and finally
      *                        outputChannels varies least rapidly.)
      * @param scaleValue      A floating point value used to scale the entire convolution.
@@ -276,7 +296,7 @@ public class MPSCNNBinaryConvolution extends MPSCNNKernel {
     public static native MPSCNNBinaryConvolution new_objc();
 
     /**
-     * [@property]   outputFeatureChannels
+     * [@property] outputFeatureChannels
      * <p>
      * The number of feature channels per pixel in the output image.
      */

@@ -163,7 +163,8 @@ public class MPMovieErrorLog extends NSObject implements NSCopying {
     public native Object copyWithZone(VoidPtr zone);
 
     /**
-     * An ordered collection of MPMovieErrorLogEvent instances that represent the chronological sequence of events contained in the error log.
+     * An ordered collection of MPMovieErrorLogEvent instances that represent the chronological sequence of events
+     * contained in the error log.
      */
     @Deprecated
     @Generated
@@ -171,7 +172,8 @@ public class MPMovieErrorLog extends NSObject implements NSCopying {
     public native NSArray<?> events();
 
     /**
-     * Returns the webserver error log into a textual format that conforms to the W3C Extended Log File Format for web server log files.
+     * Returns the webserver error log into a textual format that conforms to the W3C Extended Log File Format for web
+     * server log files.
      * For more information see: http://www.w3.org/pub/WWW/TR/WD-logfile.html
      */
     @Deprecated
