@@ -57,6 +57,8 @@ public class ModuleObserver implements ModuleListener {
     }
 
     public static void checkMoeSDK(@NotNull Module module) {
+        assert MOESdkPlugin.isValidMoeModule(module) : module;
+
         final ModuleRootManager manager = ModuleRootManager.getInstance(module);
         final ModifiableRootModel rootModel = manager.getModifiableModel();
 
@@ -98,6 +100,8 @@ public class ModuleObserver implements ModuleListener {
     }
 
     public static void checkRunConfiguration(@NotNull Project project, @NotNull Module module) {
+        assert MOESdkPlugin.isValidMoeModule(module) : module;
+
         LOG.debug("Check run configuration for the module " + module.getName()
                 + " in the project " + project.getName());
         // Find run config for the module
