@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 plugins {
-    id "org.jetbrains.intellij" version "0.7.3"
+    id "org.jetbrains.intellij" version "1.7.0"
     id "org.jetbrains.kotlin.jvm"
 }
 
@@ -36,11 +36,11 @@ def PLUGIN_NAME = 'moe_intellij_plugin'
 //}
 
 intellij {
-    version 'IC-202.7660.26'
-    plugins = ['gradle', 'java']
-    pluginName PLUGIN_NAME
-    downloadSources false
-    updateSinceUntilBuild false
+    version = 'IC-212.5712.43'
+    plugins = ['com.intellij.gradle', 'com.intellij.java']
+    pluginName = PLUGIN_NAME
+    downloadSources = false
+    updateSinceUntilBuild = false
 }
 
 publishPlugin {

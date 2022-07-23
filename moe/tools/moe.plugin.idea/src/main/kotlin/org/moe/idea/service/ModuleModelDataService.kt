@@ -16,7 +16,7 @@ import org.moe.idea.model.ModuleModel
 
 abstract class ModuleModelDataService<T : ModuleModel> : AbstractProjectDataService<T, Module>() {
     override fun importData(
-        toImport: MutableCollection<DataNode<T>>,
+        toImport: MutableCollection<out DataNode<T>>,
         projectData: ProjectData?,
         project: Project,
         modelsProvider: IdeModifiableModelsProvider
@@ -31,14 +31,14 @@ abstract class ModuleModelDataService<T : ModuleModel> : AbstractProjectDataServ
     }
 
     protected abstract fun importData(
-        toImport: MutableCollection<DataNode<T>>,
+        toImport: MutableCollection<out DataNode<T>>,
         project: Project,
         modelsProvider: IdeModifiableModelsProvider,
         modelsByModuleName: Map<String, T>
     )
 
     override fun computeOrphanData(
-        toImport: MutableCollection<DataNode<T>>,
+        toImport: MutableCollection<out DataNode<T>>,
         projectData: ProjectData,
         project: Project,
         modelsProvider: IdeModifiableModelsProvider

@@ -95,7 +95,7 @@ public class ModuleObserver implements ModuleListener {
     }
 
     @Override
-    public void modulesRenamed(@NotNull Project project, @NotNull List<Module> list, @NotNull Function<Module, String> function) {
+    public void modulesRenamed(@NotNull Project project, @NotNull List<? extends Module> list, @NotNull Function<? super Module, String> function) {
 
     }
 

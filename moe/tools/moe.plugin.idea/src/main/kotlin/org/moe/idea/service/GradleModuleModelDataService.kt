@@ -20,7 +20,7 @@ class GradleModuleModelDataService : ModuleModelDataService<GradleModuleModel>()
     override fun getTargetDataKey(): Key<GradleModuleModel> = GradleModuleModel.KEY
 
     override fun importData(
-        toImport: MutableCollection<DataNode<GradleModuleModel>>,
+        toImport: MutableCollection<out DataNode<GradleModuleModel>>,
         project: Project,
         modelsProvider: IdeModifiableModelsProvider,
         modelsByModuleName: Map<String, GradleModuleModel>
@@ -47,8 +47,8 @@ class GradleModuleModelDataService : ModuleModelDataService<GradleModuleModel>()
     }
 
     override fun removeData(
-        toRemoveComputable: Computable<MutableCollection<Module>>,
-        toIgnore: MutableCollection<DataNode<GradleModuleModel>>,
+        toRemoveComputable: Computable<out MutableCollection<out Module>>,
+        toIgnore: MutableCollection<out DataNode<GradleModuleModel>>,
         projectData: ProjectData,
         project: Project,
         modelsProvider: IdeModifiableModelsProvider
