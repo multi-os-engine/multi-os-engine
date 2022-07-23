@@ -402,6 +402,29 @@ public class NatJ {
      */
     private static Map<String, String> resolvedLibraries = new HashMap<String, String>();
 
+
+    private static String darwinSystemFrameworkRootDir = null;
+
+    private static String getDarwinSystemFrameworkRootDir() {
+        if (darwinSystemFrameworkRootDir == null) {
+            String simulatorFrameworkPath = getSimulatorFrameworkPath();
+            if (simulatorFrameworkPath == null || simulatorFrameworkPath.isEmpty()) {
+                darwinSystemFrameworkRootDir = "/System/Library/Frameworks/";
+            } else {
+                int index = simulatorFrameworkPath.indexOf("CoreFoundation.framework");
+                if (index < 0) {
+                    // Not good
+                    System.err.println("Error: Unexpected framework path: " + simulatorFrameworkPath);
+                    darwinSystemFrameworkRootDir = "/System/Library/Frameworks/";
+                } else {
+                    darwinSystemFrameworkRootDir = simulatorFrameworkPath.substring(0, index);
+                }
+            }
+        }
+
+        return darwinSystemFrameworkRootDir;
+    }
+
     /**
      * Looks up a library by its name in the file system.
      *
@@ -478,7 +501,7 @@ public class NatJ {
 
             if (isDarwin()) {
                 for (String path : new String[] {
-                        "/System/Library/Frameworks/" + name + ".framework"
+                    getDarwinSystemFrameworkRootDir() + name + ".framework"
                 }) {
                     String exec_path = path + "/" + name;
                     File file = new File(path);
@@ -1182,4 +1205,11 @@ public class NatJ {
      * all other cases
      */
     public static native boolean loadFramework(String path);
+
+    /**
+     * Get the runtime system framework path on simulator.
+     *
+     * @return The path to the CoreFoundation.framework if running on simulator, or NULL on read device.
+     */
+    private static native String getSimulatorFrameworkPath();
 }

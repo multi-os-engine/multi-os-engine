@@ -578,6 +578,27 @@ jstring JNICALL Java_org_moe_natj_general_NatJ_getPlatformName(JNIEnv* env,
   return env->NewStringUTF(NATJ_PLATFORM);
 }
 
+jstring JNICALL Java_org_moe_natj_general_NatJ_getSimulatorFrameworkPath(JNIEnv* env,
+                                                                         jclass clazz) {
+  
+#ifdef __APPLE__
+#if TARGET_OS_SIMULATOR
+  Dl_info di;
+  int ret = dladdr((const void *)CFArrayContainsValue, &di);
+  if (!ret) {
+      LOGF << "Failed to get framework path!";
+  }
+  return env->NewStringUTF(di.dli_fname);
+#else
+  // Only for simulator builds
+  return NULL;
+#endif
+#else
+  // Only for Darwin systems
+  return NULL;
+#endif
+}
+
 jboolean JNICALL Java_org_moe_natj_general_NatJ_loadFramework(JNIEnv* env,
                                                                  jclass clazz,
                                                                  jstring path) {
@@ -593,7 +614,6 @@ jboolean JNICALL Java_org_moe_natj_general_NatJ_loadFramework(JNIEnv* env,
   return false;
 #endif
 }
-
 
 void handleShutdown(JNIEnv* env) { gJVMIsRunning = false; }
 
