@@ -30,14 +30,14 @@ fun File.classpathIterator(consumer: (path: String, inputStream: InputStream) ->
                 consumer(relPath.path, it) }
         }
     } else if (this.name.endsWith(".jar")) {
-        val file = JarFile(this)
+        JarFile(this).use { file ->
+            file.stream().forEach jar@{ entry ->
+                if (entry.isDirectory || !filter(entry.name)) {
+                    return@jar
+                }
 
-        file.stream().forEach jar@{ entry ->
-            if (entry.isDirectory || !filter(entry.name)) {
-                return@jar
+                file.getInputStream(entry).use { consumer(entry.name, it) }
             }
-
-            file.getInputStream(entry).use { consumer(entry.name, it) }
         }
     }
 }
