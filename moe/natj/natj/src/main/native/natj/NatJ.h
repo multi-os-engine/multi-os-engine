@@ -182,11 +182,14 @@ limitations under the License.
  * If ObjCRuntime is disabled, this does nothing.
  */
 #ifdef __APPLE__
-#define HANDLE_JAVA_EXCEPTION(env)                      \
-  jthrowable JAVA_EXC = env->ExceptionOccurred();       \
-  if (JAVA_EXC) {                                       \
-    JAVA_EXC = (jthrowable)env->NewGlobalRef(JAVA_EXC); \
-    env->ExceptionClear();                              \
+#define HANDLE_JAVA_EXCEPTION(env)                          \
+  jthrowable JAVA_EXC = NULL;                               \
+  if (hasObjCRuntimeBeenInitialized()) {                    \
+       JAVA_EXC = env->ExceptionOccurred();                 \
+      if (JAVA_EXC) {                                       \
+        JAVA_EXC = (jthrowable)env->NewGlobalRef(JAVA_EXC); \
+        env->ExceptionClear();                              \
+      }                                                     \
   }
 #else
 #define HANDLE_JAVA_EXCEPTION(env) jthrowable JAVA_EXC = NULL
