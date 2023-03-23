@@ -47,6 +47,9 @@ public final class CXIdxEntityKind {
     @Generated public static final int CXIdxEntity_CXXConversionFunction = 0x00000018;
     @Generated public static final int CXIdxEntity_CXXTypeAlias = 0x00000019;
     @Generated public static final int CXIdxEntity_CXXInterface = 0x0000001A;
+    // Custom constant
+    public static final int CXIdxEntity_Macro = 0x0000001B;
+
 
     @Generated
     private CXIdxEntityKind() {
