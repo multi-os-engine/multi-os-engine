@@ -28,6 +28,11 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * see documentation for GKTurnBasedEventListener for the equivalent methods
+ * 
+ * API-Since: 5.0
+ * Deprecated-Since: 7.0
+ * Deprecated-Message: Use registerListener on GKLocalPlayer with an object that implements the GKTurnBasedEventListener
+ * protocol
  */
 @Deprecated
 @Generated
@@ -35,11 +40,19 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("GKTurnBasedEventHandlerDelegate")
 public interface GKTurnBasedEventHandlerDelegate {
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("handleInviteFromGameCenter:")
     void handleInviteFromGameCenter(NSArray<String> playersToInvite);
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -48,6 +61,10 @@ public interface GKTurnBasedEventHandlerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -56,6 +73,10 @@ public interface GKTurnBasedEventHandlerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("handleTurnEventForMatch:didBecomeActive:")

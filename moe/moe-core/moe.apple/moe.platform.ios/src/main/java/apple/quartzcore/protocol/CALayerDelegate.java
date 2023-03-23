@@ -79,6 +79,8 @@ public interface CALayerDelegate {
      * Allows the delegate to configure any layer state affecting contents prior
      * to -drawLayer:InContext: such as `contentsFormat' and `opaque'. It will not
      * be called if the delegate implements -displayLayer.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional

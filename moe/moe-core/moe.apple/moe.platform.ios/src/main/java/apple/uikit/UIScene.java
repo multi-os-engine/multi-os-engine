@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -233,6 +236,9 @@ public class UIScene extends UIResponder {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("pointerLockState")
     public native UIPointerLockState pointerLockState();
@@ -248,6 +254,8 @@ public class UIScene extends UIResponder {
     /**
      * A subtitle that may be displayed adjacent to or below the primary title on supported platforms.
      * If set to an empty string, the system will not display a subtitle.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSubtitle:")
@@ -256,6 +264,8 @@ public class UIScene extends UIResponder {
     /**
      * A subtitle that may be displayed adjacent to or below the primary title on supported platforms.
      * If set to an empty string, the system will not display a subtitle.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("subtitle")

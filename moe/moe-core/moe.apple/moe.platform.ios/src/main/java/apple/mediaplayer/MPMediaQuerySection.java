@@ -47,6 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An MPMediaQuerySection object represents a single section grouping for a query.
+ * 
+ * API-Since: 4.2
  */
 @Generated
 @Library("MediaPlayer")

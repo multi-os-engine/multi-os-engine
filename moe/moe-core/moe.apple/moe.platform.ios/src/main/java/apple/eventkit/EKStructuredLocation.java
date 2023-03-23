@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("EventKit")
 @Runtime(ObjCRuntime.class)
@@ -126,6 +129,9 @@ public class EKStructuredLocation extends EKObject implements NSCopying {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("locationWithMapItem:")
     public static native EKStructuredLocation locationWithMapItem(MKMapItem mapItem);

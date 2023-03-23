@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueActivationState
- * <p>
+ * 
  * [@constant] HMCharacteristicValueActivationStateInactive Inactive.
  * [@constant] HMCharacteristicValueActivationStateActive Active.
+ * 
+ * API-Since: 10.2
  */
 @Generated
 public final class HMCharacteristicValueActivationState {
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Inactive = 0x0000000000000000L;
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Active = 0x0000000000000001L;
 
     @Generated

@@ -2,7 +2,6 @@ package apple.quicklookthumbnailing;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGContextRef;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -26,13 +25,16 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * To provide a thumbnail for a request, you have to return a QLThumbnailReply object.
- * <p>
+ * 
  * To provide a thumbnail, you have two options:
  * 1. Draw the thumbnail, by providing a QLThumbnailReply created with a drawing block.
  * 2. Pass the thumbnail file URL, by providing a QLThumbnailReply created with a file URL.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("QuickLookThumbnailing")
@@ -130,11 +132,11 @@ public class QLThumbnailReply extends NSObject {
     /**
      * You can create a reply with a drawing block that will draw into the current context with the coordinate system of
      * UIKit or AppKit.
-     *
+     * 
      * @param contextSize  The desired size of the context that will be passed to the drawing block.
      *                     It should be as close as possible to the maximumSize of the QLFileThumbnailRequest and it has
      *                     to be greater than or equal to its minimumSize.
-     *                     <p>
+     * 
      *                     Ideally, at least either contextSize's width matches maximumSize's width or contextSize's
      *                     height matches maximumSize's height.
      *                     The context size will be scaled to QLFileThumbnailRequest's scale value (if you pass (x, y),
@@ -161,11 +163,11 @@ public class QLThumbnailReply extends NSObject {
     /**
      * You can create a reply with a drawing block that will draw into a given context with the coordinate system of
      * Core Graphics.
-     *
+     * 
      * @param contextSize  The desired size of the context that will be passed to the drawing block.
      *                     It should be as close as possible to the maximumSize of the QLFileThumbnailRequest and it has
      *                     to be greater than or equal to its minimumSize.
-     *                     <p>
+     * 
      *                     Ideally, at least either contextSize's width matches maximumSize's width or contextSize's
      *                     height matches maximumSize's height.
      *                     The context size will be scaled to QLFileThumbnailRequest's scale value (if you pass (x, y),
@@ -217,6 +219,8 @@ public class QLThumbnailReply extends NSObject {
 
     /**
      * The extensionBadge is a short string identifying the file type used as a badge when producing an icon.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("extensionBadge")
@@ -224,6 +228,8 @@ public class QLThumbnailReply extends NSObject {
 
     /**
      * The extensionBadge is a short string identifying the file type used as a badge when producing an icon.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setExtensionBadge:")

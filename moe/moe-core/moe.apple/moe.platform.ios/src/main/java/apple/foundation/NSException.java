@@ -165,10 +165,16 @@ public class NSException extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("callStackReturnAddresses")
     public native NSArray<? extends NSNumber> callStackReturnAddresses();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("callStackSymbols")
     public native NSArray<String> callStackSymbols();

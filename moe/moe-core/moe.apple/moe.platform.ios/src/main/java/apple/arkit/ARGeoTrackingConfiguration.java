@@ -25,12 +25,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.avfoundation.AVCaptureDevice;
 
 /**
  * A configuration for running geographical world tracking.
- * <p>
+ * 
  * It allows placing geo-referenced anchors (ARGeoAnchor) in the scene by running world tracking with location and
  * compass.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("ARKit")
@@ -62,7 +65,7 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enables the estimation of a scale factor which may be used to correct the physical size of an image.
-     * <p>
+     * 
      * If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the
      * given physical size
      * differs from the estimated one. The information about the estimated scale can be found as the property
@@ -90,7 +93,7 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     /**
      * Determines the availability of geo tracking at the given location.
-     *
+     * 
      * @param coordinate        Location at which to check.
      * @param completionHandler Completion handler that is called when availability has been determined. This handler is
      *                          executed on an arbitrary serial queue. It takes the following parameters:
@@ -111,9 +114,9 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     /**
      * Determines the availability of geo tracking at the current location.
-     * <p>
+     * 
      * This method will attempt to acquire a location fix on a background thread, then check availability.
-     *
+     * 
      * @param completionHandler Completion handler that is called when availability has been determined. This handler is
      *                          executed on an arbitrary serial queue. It takes the following parameters:
      *                          isAvailable - True if geo tracking is available at the current location, otherwise
@@ -151,7 +154,7 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     /**
      * Images to detect in the scene.
-     * <p>
+     * 
      * If set the session will attempt to detect the specified images. When an image is detected an ARImageAnchor will
      * be added to the session.
      */
@@ -161,7 +164,7 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     /**
      * Objects to detect in the scene.
-     * <p>
+     * 
      * If set the session will attempt to detect the specified objects. When an object is detected an ARObjectAnchor
      * will be added to the session.
      */
@@ -171,7 +174,7 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     /**
      * The mode of environment texturing to run.
-     * <p>
+     * 
      * If set, texture information will be accumulated and updated. Adding an AREnvironmentProbeAnchor to the session
      * will get the current environment texture available from that probe's perspective which can be used for lighting
      * virtual objects in the scene. Defaults to AREnvironmentTexturingNone.
@@ -217,7 +220,7 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     /**
      * Maximum number of images to track simultaneously.
-     * <p>
+     * 
      * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given
      * frame.
      * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
@@ -236,7 +239,7 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     /**
      * Type of planes to detect in the scene.
-     * <p>
+     * 
      * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
@@ -257,7 +260,7 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enables the estimation of a scale factor which may be used to correct the physical size of an image.
-     * <p>
+     * 
      * If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the
      * given physical size
      * differs from the estimated one. The information about the estimated scale can be found as the property
@@ -271,7 +274,7 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     /**
      * Images to detect in the scene.
-     * <p>
+     * 
      * If set the session will attempt to detect the specified images. When an image is detected an ARImageAnchor will
      * be added to the session.
      */
@@ -281,7 +284,7 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     /**
      * Objects to detect in the scene.
-     * <p>
+     * 
      * If set the session will attempt to detect the specified objects. When an object is detected an ARObjectAnchor
      * will be added to the session.
      */
@@ -291,7 +294,7 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     /**
      * The mode of environment texturing to run.
-     * <p>
+     * 
      * If set, texture information will be accumulated and updated. Adding an AREnvironmentProbeAnchor to the session
      * will get the current environment texture available from that probe's perspective which can be used for lighting
      * virtual objects in the scene. Defaults to AREnvironmentTexturingNone.
@@ -302,7 +305,7 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     /**
      * Maximum number of images to track simultaneously.
-     * <p>
+     * 
      * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given
      * frame.
      * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
@@ -315,7 +318,7 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     /**
      * Type of planes to detect in the scene.
-     * <p>
+     * 
      * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
@@ -363,6 +366,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
     /**
      * Enable or disable app clip code tracking. Disabled by default. When enabled, detected app clip codes will be
      * surfaced as an ARAppClipCodeAnchor.
+     * 
+     * API-Since: 14.3
      */
     @Generated
     @Selector("appClipCodeTrackingEnabled")
@@ -371,6 +376,8 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
     /**
      * Enable or disable app clip code tracking. Disabled by default. When enabled, detected app clip codes will be
      * surfaced as an ARAppClipCodeAnchor.
+     * 
+     * API-Since: 14.3
      */
     @Generated
     @Selector("setAppClipCodeTrackingEnabled:")
@@ -378,8 +385,22 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     /**
      * Indicates whether app clip code tracking can be enabled on this device.
+     * 
+     * API-Since: 14.3
      */
     @Generated
     @Selector("supportsAppClipCodeTracking")
     public static native boolean supportsAppClipCodeTracking();
+
+    @Generated
+    @Selector("configurableCaptureDeviceForPrimaryCamera")
+    public static native AVCaptureDevice configurableCaptureDeviceForPrimaryCamera();
+
+    @Generated
+    @Selector("recommendedVideoFormatFor4KResolution")
+    public static native ARVideoFormat recommendedVideoFormatFor4KResolution();
+
+    @Generated
+    @Selector("recommendedVideoFormatForHighResolutionFrameCapturing")
+    public static native ARVideoFormat recommendedVideoFormatForHighResolutionFrameCapturing();
 }

@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A disclosure chevron that points in the trailing direction.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")

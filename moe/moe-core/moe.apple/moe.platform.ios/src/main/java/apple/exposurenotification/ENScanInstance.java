@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * ===========================================================================================================================
- * <p>
+ * 
  * Aggregation of attenuations of all of this TEK's beacons received during a scan.
+ * 
+ * API-Since: 12.5
  */
 @Generated
 @Library("ExposureNotification")

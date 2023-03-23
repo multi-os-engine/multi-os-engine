@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("CoreSpotlight")
 @Runtime(ObjCRuntime.class)
@@ -267,4 +270,14 @@ public class CSSearchableItem extends NSObject implements NSSecureCoding, NSCopy
     @Generated
     @Selector("uniqueIdentifier")
     public native String uniqueIdentifier();
+
+    /**
+     * For comparison of items ranked by the query
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("compareByRank:")
+    @NInt
+    public native long compareByRank(CSSearchableItem other);
 }

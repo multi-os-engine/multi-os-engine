@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface SKPaymentTransactionObserver {
     /**
      * Sent when transactions are removed from the queue (via finishTransaction:).
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @IsOptional
@@ -49,6 +51,8 @@ public interface SKPaymentTransactionObserver {
 
     /**
      * Sent when an error is encountered while adding transactions from the user's purchase history back to the queue.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @IsOptional
@@ -59,7 +63,12 @@ public interface SKPaymentTransactionObserver {
 
     /**
      * Sent when the download state has changed.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("paymentQueue:updatedDownloads:")
@@ -70,6 +79,8 @@ public interface SKPaymentTransactionObserver {
     /**
      * Sent when the transaction array has changed (additions or state changes). Client should check state of
      * transactions and finish as appropriate.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("paymentQueue:updatedTransactions:")
@@ -77,6 +88,8 @@ public interface SKPaymentTransactionObserver {
 
     /**
      * Sent when all transactions from the user's purchase history have successfully been added back to the queue.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @IsOptional
@@ -87,6 +100,8 @@ public interface SKPaymentTransactionObserver {
 
     /**
      * Sent when a user initiates an IAP buy from the App Store
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -96,6 +111,9 @@ public interface SKPaymentTransactionObserver {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("paymentQueueDidChangeStorefront:")
@@ -105,6 +123,8 @@ public interface SKPaymentTransactionObserver {
 
     /**
      * Sent when entitlements for a user have changed and access to the specified IAPs has been revoked.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional

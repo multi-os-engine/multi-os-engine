@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("AutomaticAssessmentConfiguration")
 @Runtime(ObjCRuntime.class)
@@ -78,6 +81,9 @@ public class AEAssessmentSession extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("configuration")
     public native AEAssessmentConfiguration configuration();

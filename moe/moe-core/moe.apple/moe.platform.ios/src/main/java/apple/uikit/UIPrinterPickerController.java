@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
@@ -43,7 +42,11 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -135,7 +138,7 @@ public class UIPrinterPickerController extends NSObject {
 
     /**
      * printerPickerControllerWithInitiallySelectedPrinter:
-     * <p>
+     * 
      * This method returns a printer picker controller object for showing the
      * UI that allows the user to select a printer. This is only used with the
      * UIPrintInteractionController's printWithoutUIToPrinter: method.

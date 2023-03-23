@@ -28,8 +28,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MIDICIDeviceInfo
- * <p>
+ * 
  * An NSObject containing basic information about a MIDI-CI-capable node.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CoreMIDI")

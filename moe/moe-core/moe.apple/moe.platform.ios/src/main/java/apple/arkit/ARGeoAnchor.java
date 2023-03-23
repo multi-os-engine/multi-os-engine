@@ -29,9 +29,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An anchor representing a geographical location in the world.
- * <p>
+ * 
  * The anchor's transform will be automatically updated by the session based on location and heading.
  * The session needs to be configured with ARGeoTrackingConfiguration.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("ARKit")
@@ -63,7 +65,7 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * The distance to mean sea level, in meters (negative values indicate it's below sea level).
-     * <p>
+     * 
      * Only valid when altitudeSource is not ARAltitudeSourceUnknown.
      */
     @Generated
@@ -103,7 +105,7 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * The coordinate where this anchor will be placed.
-     * <p>
+     * 
      * The anchor's transform will be automatically updated by the session when ARGeoTrackingConfiguration is set.
      */
     @Generated
@@ -138,10 +140,10 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * Initializes a new ARGeoAnchor with the given coordinates.
-     * <p>
+     * 
      * ARKit will query the ground level altitude during runtime, and populate the altitude as soon as that information
      * becomes available.
-     *
+     * 
      * @param coordinate Coordinates.
      */
     @Generated
@@ -150,7 +152,7 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * Initializes a new ARGeoAnchor with the given coordinates and altitude.
-     *
+     * 
      * @param coordinate Coordinates.
      * @param altitude   Altitude in meters.
      */
@@ -160,10 +162,10 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * Initializes a new named ARGeoAnchor with the given coordinates.
-     * <p>
+     * 
      * ARKit will query the ground level altitude during runtime, and populate the altitude as soon as that information
      * becomes available.
-     *
+     * 
      * @param name       Name of the anchor.
      * @param coordinate Coordinates.
      */
@@ -173,7 +175,7 @@ public class ARGeoAnchor extends ARAnchor implements ARTrackable {
 
     /**
      * Initializes a new named ARGeoAnchor with the given coordinates and altitude.
-     *
+     * 
      * @param name       Name of the anchor.
      * @param coordinate Coordinates.
      * @param altitude   Altitude in meters.

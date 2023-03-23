@@ -26,11 +26,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSGraphTensor
- * <p>
+ * 
  * Symbolic representation of a compute datatype
- * <p>
+ * 
  * NSCopy will cause a refrence to be taken, this is so NSDictionary can work with the tensor.
  * All tensors are created, owned and destroyed by the MPSGraph
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MetalPerformanceShadersGraph")
@@ -90,7 +92,7 @@ public class MPSGraphTensor extends NSObject implements NSCopying {
 
     /**
      * [@property] dataType
-     * <p>
+     * 
      * dataType of the tensor
      */
     @Generated
@@ -142,7 +144,7 @@ public class MPSGraphTensor extends NSObject implements NSCopying {
 
     /**
      * [@property] operation
-     * <p>
+     * 
      * operation responsible for creating this tensor
      */
     @Generated

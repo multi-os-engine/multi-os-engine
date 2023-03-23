@@ -51,6 +51,8 @@ public final class CoreData {
     /**
      * if multiple validation errors occur in one operation, they are collected in an array and added with this key to
      * the "top-level error" of the operation
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -59,6 +61,8 @@ public final class CoreData {
 
     /**
      * object that failed to validate for a validation error
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -67,6 +71,8 @@ public final class CoreData {
 
     /**
      * key that failed to validate for a validation error
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -75,6 +81,8 @@ public final class CoreData {
 
     /**
      * for predicate-based validation, the predicate for the condition that failed to validate
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -83,6 +91,8 @@ public final class CoreData {
 
     /**
      * if non-nil, the value for the key that failed to validate for a validation error
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -91,6 +101,8 @@ public final class CoreData {
 
     /**
      * stores prompting an error
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -99,6 +111,8 @@ public final class CoreData {
 
     /**
      * objects prompting an error
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -107,6 +121,8 @@ public final class CoreData {
 
     /**
      * key in NSError's userInfo specifying the NSArray of NSMergeConflict
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -115,6 +131,8 @@ public final class CoreData {
 
     /**
      * Predefined domain for SQLite errors, value of "code" will correspond to preexisting values in SQLite.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -124,12 +142,17 @@ public final class CoreData {
     /**
      * Notifications immediately before and immediately after the context saves. The user info dictionary contains
      * information about the objects that changed and what changed
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSManagedObjectContextWillSaveNotification();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -138,6 +161,8 @@ public final class CoreData {
     /**
      * Notification when objects in a context changed: the user info dictionary contains information about the objects
      * that changed and what changed
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -147,32 +172,49 @@ public final class CoreData {
     /**
      * User info keys for NSManagedObjectContextObjectsDidChangeNotification: the values for these keys are sets of
      * managed objects
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSInsertedObjectsKey();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUpdatedObjectsKey();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSDeletedObjectsKey();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSRefreshedObjectsKey();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSInvalidatedObjectsKey();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -180,6 +222,8 @@ public final class CoreData {
 
     /**
      * All objects in the context have been invalidated
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -189,6 +233,8 @@ public final class CoreData {
     /**
      * Default policy for all managed object contexts - save returns with an error that contains the object IDs of the
      * objects that had conflicts(NSInsertedObjectsKey, NSUpdatedObjectsKey).
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -199,6 +245,8 @@ public final class CoreData {
      * This singleton policy merges conflicts between the persistent store's version of the object and the current in
      * memory version. The merge occurs by individual property. For properties which have been changed in both the
      * external source and in memory, the external changes trump the in memory ones.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -209,6 +257,8 @@ public final class CoreData {
      * This singleton policy merges conflicts between the persistent store's version of the object and the current in
      * memory version. The merge occurs by individual property. For properties which have been changed in both the
      * external source and in memory, the in memory changes trump the external ones.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -218,6 +268,8 @@ public final class CoreData {
     /**
      * This singleton policy overwrites all state for the changed objects in conflict The current object's state is
      * pushed upon the persistent store.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -227,6 +279,8 @@ public final class CoreData {
     /**
      * This singleton policy discards all state for the changed objects in conflict. The persistent store's version of
      * the object is used.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -235,17 +289,25 @@ public final class CoreData {
 
     /**
      * Persistent store types supported by Core Data:
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSSQLiteStoreType();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSBinaryStoreType();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -253,6 +315,8 @@ public final class CoreData {
 
     /**
      * key in the metadata dictionary to identify the store type
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -265,6 +329,8 @@ public final class CoreData {
      * users can freely copy files and thus the UUID stored inside, so developers that track/reference stores explicitly
      * do need to be aware of duplicate UUIDs and potentially override the UUID when a new store is added to the list of
      * known stores in their application)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -275,6 +341,8 @@ public final class CoreData {
      * A notification posted before the list of open persistent stores changes, similar to
      * NSPersistentStoreCoordinatorStoresDidChangeNotification. If the application is running, Core Data will post this
      * before responding to iCloud account changes or "Delete All" from Documents & Data.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -283,6 +351,8 @@ public final class CoreData {
 
     /**
      * user info dictionary contains information about the stores that were added or removed
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -292,6 +362,8 @@ public final class CoreData {
     /**
      * sent during the invocation of NSPersistentStore's willRemoveFromPersistentStoreCoordinator during store
      * deallocation or removal
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -301,12 +373,17 @@ public final class CoreData {
     /**
      * The object values for NSAddedPersistentStoresKey and NSRemovedPersistentStoresKey will be arrays containing
      * added/removed stores
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSAddedPersistentStoresKey();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -315,6 +392,8 @@ public final class CoreData {
     /**
      * The object value for NSUUIDChangedPersistentStoresKey will be an array where the object at index 0 will be the
      * old store instance, and the object at index 1 the new
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -323,6 +402,8 @@ public final class CoreData {
 
     /**
      * flag indicating whether a store is treated as read-only or not - default is NO
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -333,6 +414,8 @@ public final class CoreData {
      * Options key specifying the connection timeout for Core Data stores. This value (an NSNumber) represents the
      * duration, in seconds, Core Data will wait while attempting to create a connection to a persistent store. If a
      * connection is unable to be made within that timeframe, the operation is aborted and an error is returned.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -344,6 +427,8 @@ public final class CoreData {
      * pragma values must be specified as strings. The fullfsync and synchronous pragmas control the tradeoff between
      * write performance (write to disk speed & cache utilization) and durability (data loss/corruption sensitivity to
      * power interruption). For more information on pragma settings visit <http://sqlite.org/pragma.html>
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -353,6 +438,8 @@ public final class CoreData {
     /**
      * Option key to run an analysis of the store data to optimize indices based on statistical information when the
      * store is added to the coordinator. This invokes SQLite's ANALYZE command. Ignored by other stores.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -362,6 +449,8 @@ public final class CoreData {
     /**
      * Option key to rebuild the store file, forcing a database wide defragmentation when the store is added to the
      * coordinator. This invokes SQLite's VACUUM command. Ignored by other stores.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -374,6 +463,8 @@ public final class CoreData {
      * model in the coordinator and the metadata for the loaded store. (It will, however, continue to update the version
      * hash information in the metadata.) This key is specified by default for all applications linked on or before Mac
      * OS X 10.4.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -385,6 +476,8 @@ public final class CoreData {
      * evaluates to YES (using boolValue) Core Data will, if the version hash information for added store is determined
      * to be incompatible with the model for the coordinator, attempt to locate the source and mapping models in the
      * application bundles, and perform a migration.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -394,6 +487,8 @@ public final class CoreData {
     /**
      * When combined with NSMigratePersistentStoresAutomaticallyOption, coordinator will attempt to infer a mapping
      * model if none can be found
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -403,6 +498,8 @@ public final class CoreData {
     /**
      * Key to represent the version hash information (dictionary) for the model used to create a persistent store. This
      * key is used in the metadata for a persistent store.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -412,6 +509,8 @@ public final class CoreData {
     /**
      * Key to represent the version identifier for the model used to create the store. This key is used in the metadata
      * for a persistent store.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -421,6 +520,8 @@ public final class CoreData {
     /**
      * Key to represent the earliest version of MacOS X the persistent store should support. Backward compatibility may
      * preclude some features. The numeric values are defined in AvailabilityMacros.h
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -433,6 +534,8 @@ public final class CoreData {
      * store can handle concurrently, and should be a function of how many contexts are attempting to access store data
      * at any time. Generally, application developers should not set this, and should use the default value. The default
      * connection pool size is implementation dependent and may vary by store type and/or platform.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -442,6 +545,8 @@ public final class CoreData {
     /**
      * store option for the destroy... and replace... to indicate that the store file should be destroyed even if the
      * operation might be unsafe (overriding locks
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -453,6 +558,8 @@ public final class CoreData {
      * features. The acceptable values are those defined in Foundation for the NSFileProtectionKey. The default value of
      * NSPersistentStoreFileProtectionKey is NSFileProtectionCompleteUntilFirstUserAuthentication for all applications
      * built on or after iOS5. The default value for all older applications is NSFileProtectionNone.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -462,7 +569,12 @@ public final class CoreData {
     /**
      * option indicating that a persistent store has a given name in ubiquity, this option is required for ubiquity to
      * function
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Please see the release notes and Core Data documentation.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -471,7 +583,12 @@ public final class CoreData {
     /**
      * option indicating the log path to use for ubiquity logs, this option is optional for ubiquity, a default path
      * will be generated for the store if none is provided
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Please see the release notes and Core Data documentation.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -480,7 +597,12 @@ public final class CoreData {
     /**
      * Notification sent after records are imported from the ubiquity store. The notification is sent with the object
      * set to the NSPersistentStoreCoordinator instance which registered the store.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Please see the release notes and Core Data documentation.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -490,7 +612,12 @@ public final class CoreData {
      * In the NSPersistentStoreCoordinatorStoresWillChangeNotification /
      * NSPersistentStoreCoordinatorStoresDidChangeNotification userInfo dictionaries, this identifies the type of event.
      * This could be one of the NSPersistentStoreUbiquitousTransitionType enum values as an NSNumber
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Please see the release notes and Core Data documentation.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -501,7 +628,12 @@ public final class CoreData {
      * be an alphanumeric string without any special characters, whitespace or punctuation. The primary use for this
      * option is to allow multiple applications on the same peer (device) to share a Core Data store integrated with
      * iCloud. Each application will require its own store file.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Please see the release notes and Core Data documentation.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -511,7 +643,12 @@ public final class CoreData {
      * NSNumber boolean indicating that the receiver should remove all associated ubiquity metadata from a persistent
      * store. This is mostly used during migration or copying to disassociate a persistent store file from an iCloud
      * account
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Please see the release notes and Core Data documentation.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -520,7 +657,12 @@ public final class CoreData {
     /**
      * NSString specifying the iCloud container identifier Core Data should pass to
      * -URLForUbiquitousContainerIdentifier:
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Please see the release notes and Core Data documentation.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -529,7 +671,12 @@ public final class CoreData {
     /**
      * NSNumber boolean indicating that the receiver should erase the local store file and rebuild it from the iCloud
      * data in Mobile Documents.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Please see the release notes and Core Data documentation.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -545,32 +692,49 @@ public final class CoreData {
      * NSMigrationEntityMappingKey $entityMapping
      * NSMigrationPropertyMappingKey $propertyMapping
      * NSMigrationEntityPolicyKey $entityPolicy
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMigrationManagerKey();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMigrationSourceObjectKey();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMigrationDestinationObjectKey();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMigrationEntityMappingKey();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMigrationPropertyMappingKey();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -578,6 +742,8 @@ public final class CoreData {
 
     /**
      * Spotlight indexing and external record support keys
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -586,6 +752,8 @@ public final class CoreData {
 
     /**
      * Dictionary key for enabling persistent history - default is NO
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -597,6 +765,8 @@ public final class CoreData {
      * used while
      * decoding a binary store.
      * Using this option is preferable to using NSBinaryStoreInsecureDecodingCompatibilityOption.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -610,6 +780,8 @@ public final class CoreData {
      * NSBinaryStoreSecureDecodingClasses option
      * to specify the contained classes, allowing the binary store to to be securely decoded.
      * Applications linked before the availability date will default to using this option.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -620,6 +792,8 @@ public final class CoreData {
      * When NSPersistentStoreRemoteChangeNotificationPostOptionKey is set to YES, a
      * NSPersistentStoreRemoteChangeNotification is posted for every
      * write to the store, this includes writes that are done by other processes
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -630,6 +804,8 @@ public final class CoreData {
      * NSPersistentStoreRemoteChangeNotification is posted for all cross process writes to the store
      * The payload is the store UUID (NSStoreUUIDKey), store URL (NSPersistentStoreURLKey), and NSPersistentHistoryToken
      * for the transaction (if NSPersistentHistoryTrackingKey was also set)
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @CVariable()
@@ -638,12 +814,17 @@ public final class CoreData {
 
     /**
      * Keys found in the UserInfo for a NSPersistentStoreRemoteChangeNotification
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSPersistentStoreURLKey();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -652,12 +833,17 @@ public final class CoreData {
     /**
      * Notification when objects in a context changed: the user info dictionary contains information about the objectIDs
      * that changed
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSManagedObjectContextDidSaveObjectIDsNotification();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -666,37 +852,57 @@ public final class CoreData {
     /**
      * User info keys for NSManagedObjectContextDidSaveObjectIDsNotification: the values for these keys are sets of
      * objectIDs
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSInsertedObjectIDsKey();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUpdatedObjectIDsKey();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSDeletedObjectIDsKey();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSRefreshedObjectIDsKey();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSInvalidatedObjectIDsKey();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSPersistentCloudKitContainerEventChangedNotification();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -709,11 +915,13 @@ public final class CoreData {
      * * when the index is updated.
      * *
      * * This notification will have a .userInfo that contains two key-value pairs:
-     * <p>
+     * 
      * * NSStoreUUIDKey: A NSString UUID of the store that contains the
      * * NSCoreDataCoreSpotlightDelegate that updated its index.
      * * NSPersistentHistoryTokenKey: The NSPersistentHistoryToken of the store that
      * * contains the NSCoreDataCoreSpotlightDelegate that updated its index.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()

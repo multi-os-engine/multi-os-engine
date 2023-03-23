@@ -46,10 +46,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageHistogramSpecification
- * <p>
+ * 
  * The MPSImageHistogramSpecification performs a histogram specification operation on an image.
  * It is a generalized version of histogram equalization operation. The histogram specificaiton filter
  * converts the image so that its histogram matches the desired histogram.
+ * 
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -164,11 +167,11 @@ public class MPSImageHistogramSpecification extends MPSUnaryImageKernel {
     /**
      * Encode the transform function to a command buffer using a MTLComputeCommandEncoder.
      * The transform function computes the specification lookup table.
-     * <p>
+     * 
      * The transform function will not begin to execute until after the command
      * buffer has been enqueued and committed. This step will need to be repeated
      * with the new MPSKernel if -copyWithZone:device or -copyWithZone: is called.
-     *
+     * 
      * @param commandBuffer          A valid MTLCommandBuffer.
      * @param source                 A valid MTLTexture containing the source image for the filter.
      * @param sourceHistogram        A valid MTLBuffer containing the histogram results for the source image. This
@@ -218,13 +221,13 @@ public class MPSImageHistogramSpecification extends MPSUnaryImageKernel {
 
     /**
      * Specifies information about the histogram for the channels of an image.
-     * <p>
+     * 
      * The MPSImageHistogramSpecification applies a transfor to convert the histogram
      * to a specified histogram. The process is divided into three steps:
-     * <p>
+     * 
      * -# Call -initWithDevice:histogramInfo: This creates a MPSImageHistogramSpecification
      * object. It is done when the method returns.
-     * <p>
+     * 
      * -# Call -encodeTransform:sourceTexture:sourceHistogram:sourceHistogramOffset:desiredHistogram:
      * desiredHistogramOffset: This creates a privately held image transform which will convert the
      * the distribution of the source histogram to the desired histogram. This process runs on a
@@ -233,16 +236,16 @@ public class MPSImageHistogramSpecification extends MPSUnaryImageKernel {
      * is used by encodeTransform to determine the number of channels and therefore which histogram data
      * in sourceHistogram buffer to use. The sourceHistogram and desiredHistogram must have been computed
      * either on the CPU or using the MPSImageHistogram kernel
-     * <p>
+     * 
      * -# Call -encodeToCommandBuffer:sourceTexture:destinationTexture: to read data from
      * sourceTexture, apply the transform to it and write to destination texture.
      * This step is also done on the GPU on a MTLCommandQueue.
-     * <p>
+     * 
      * You can reuse the same specification transform on other images to perform the
      * same transform on those images. (Since their starting distribution is probably
      * different, they will probably not arrive at the same distribution as the desired
      * histogram.) This filter usually will not be able to work in place.
-     *
+     * 
      * @param device        The device the filter will run on
      * @param histogramInfo Pointer to the MPSHistogramInfo struct
      * @return A valid MPSImageHistogramSpecification object or nil, if failure.
@@ -258,16 +261,18 @@ public class MPSImageHistogramSpecification extends MPSUnaryImageKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")

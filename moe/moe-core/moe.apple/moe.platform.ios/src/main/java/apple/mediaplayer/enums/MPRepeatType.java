@@ -19,15 +19,25 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 public final class MPRepeatType {
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long Off = 0x0000000000000000L;
     /**
      * Nothing is repeated during playback.
+     * 
+     * API-Since: 3.0
      */
     @Generated @NInt public static final long One = 0x0000000000000001L;
     /**
      * Repeat a single item indefinitely.
+     * 
+     * API-Since: 3.0
      */
     @Generated @NInt public static final long All = 0x0000000000000002L;
 

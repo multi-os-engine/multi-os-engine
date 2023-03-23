@@ -17,6 +17,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -36,6 +39,10 @@ public interface UIWindowSceneDelegate extends UISceneDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * Called when the coordinate space, interface orientation, or trait collection of a UIWindowScene changes
+     * Always called when a UIWindowScene moves between screens
+     */
     @Generated
     @IsOptional
     @Selector("windowScene:didUpdateCoordinateSpace:interfaceOrientation:traitCollection:")

@@ -18,7 +18,6 @@ package apple.quartzcore;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGColorRef;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
@@ -47,7 +46,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)

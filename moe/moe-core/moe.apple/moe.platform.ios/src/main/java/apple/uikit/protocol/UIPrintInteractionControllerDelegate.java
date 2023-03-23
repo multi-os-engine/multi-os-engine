@@ -35,6 +35,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIPrintInteractionControllerDelegate")
 public interface UIPrintInteractionControllerDelegate {
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("printInteractionController:chooseCutterBehavior:")
@@ -52,6 +55,9 @@ public interface UIPrintInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("printInteractionController:cutLengthForPaper:")

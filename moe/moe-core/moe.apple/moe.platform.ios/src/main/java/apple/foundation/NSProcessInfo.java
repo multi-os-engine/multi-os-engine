@@ -153,6 +153,9 @@ public class NSProcessInfo extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("activeProcessorCount")
     @NUInt
@@ -166,6 +169,8 @@ public class NSProcessInfo extends NSObject {
      * Pass in an activity to this API, and a non-NULL, non-empty reason string. Indicate completion of the activity by
      * calling the corresponding endActivity: method with the result of the beginActivityWithOptions:reason: method. The
      * reason string is used for debugging.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("beginActivityWithOptions:reason:")
@@ -174,6 +179,8 @@ public class NSProcessInfo extends NSObject {
 
     /**
      * The argument to this method is the result of beginActivityWithOptions:reason:.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("endActivity:")
@@ -198,26 +205,46 @@ public class NSProcessInfo extends NSObject {
     /**
      * Retrieve the current setting of the system for the low power mode setting. On systems where the low power mode is
      * unknown or unsupported, the value returned from the lowPowerModeEnabled property is always NO
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isLowPowerModeEnabled")
     public native boolean isLowPowerModeEnabled();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("isOperatingSystemAtLeastVersion:")
     public native boolean isOperatingSystemAtLeastVersion(@ByValue NSOperatingSystemVersion version);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: -operatingSystem always returns NSMACHOperatingSystem, use -operatingSystemVersion or
+     * -isOperatingSystemAtLeastVersion: instead
+     */
     @Generated
     @Deprecated
     @Selector("operatingSystem")
     @NUInt
     public native long operatingSystem();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: -operatingSystemName always returns NSMACHOperatingSystem, use -operatingSystemVersionString
+     * instead
+     */
     @Generated
     @Deprecated
     @Selector("operatingSystemName")
     public native String operatingSystemName();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("operatingSystemVersion")
     @ByValue
@@ -234,6 +261,8 @@ public class NSProcessInfo extends NSObject {
     /**
      * Synchronously perform an activity. The activity will be automatically ended after your block argument returns.
      * The reason string is used for debugging.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("performActivityWithOptions:reason:usingBlock:")
@@ -246,12 +275,17 @@ public class NSProcessInfo extends NSObject {
      * concurrent queue. After a system-specified time, the block will be called with the `expired` parameter set to
      * YES. The `expired` parameter will also be YES if the system decides to prematurely terminate a previous
      * non-expiration invocation of the block.
+     * 
+     * API-Since: 8.2
      */
     @Generated
     @Selector("performExpiringActivityWithReason:usingBlock:")
     public native void performExpiringActivityWithReasonUsingBlock(String reason,
             @ObjCBlock(name = "call_performExpiringActivityWithReasonUsingBlock") Block_performExpiringActivityWithReasonUsingBlock block);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("physicalMemory")
     public native long physicalMemory();
@@ -264,6 +298,9 @@ public class NSProcessInfo extends NSObject {
     @Selector("processName")
     public native String processName();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("processorCount")
     @NUInt
@@ -273,6 +310,9 @@ public class NSProcessInfo extends NSObject {
     @Selector("setProcessName:")
     public native void setProcessName(String value);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("systemUptime")
     public native double systemUptime();
@@ -294,16 +334,24 @@ public class NSProcessInfo extends NSObject {
     /**
      * Retrieve the current thermal state of the system. On systems where thermal state is unknown or unsupported, the
      * value returned from the thermalState property is always NSProcessInfoThermalStateNominal.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("thermalState")
     @NInt
     public native long thermalState();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("isMacCatalystApp")
     public native boolean isMacCatalystApp();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("isiOSAppOnMac")
     public native boolean isiOSAppOnMac();

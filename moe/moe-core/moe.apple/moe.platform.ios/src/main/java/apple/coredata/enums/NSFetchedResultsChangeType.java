@@ -19,11 +19,26 @@ package apple.coredata.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 public final class NSFetchedResultsChangeType {
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NUInt public static final long Insert = 0x0000000000000001L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NUInt public static final long Delete = 0x0000000000000002L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NUInt public static final long Move = 0x0000000000000003L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NUInt public static final long Update = 0x0000000000000004L;
 
     @Generated

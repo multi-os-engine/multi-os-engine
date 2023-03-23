@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -47,7 +45,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +156,7 @@ public class UIWindow extends UIView {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -179,6 +183,7 @@ public class UIWindow extends UIView {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -254,46 +259,57 @@ public class UIWindow extends UIView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -464,6 +480,8 @@ public class UIWindow extends UIView {
 
     /**
      * default is nil
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("rootViewController")
@@ -472,6 +490,8 @@ public class UIWindow extends UIView {
     /**
      * default is [UIScreen mainScreen]. changing the screen may be an expensive operation and should not be done in
      * performance-sensitive code
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("screen")
@@ -486,11 +506,18 @@ public class UIWindow extends UIView {
 
     /**
      * default is nil
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setRootViewController:")
     public native void setRootViewController(UIViewController value);
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated
     @Generated
     @Selector("setScreen:")
     public native void setScreen(UIScreen screen);
@@ -521,6 +548,8 @@ public class UIWindow extends UIView {
     /**
      * instantiate a UIWindow already associated with a given UIWindowScene instance, with matching frame & interface
      * orientations.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithWindowScene:")
@@ -543,6 +572,8 @@ public class UIWindow extends UIView {
     /**
      * If nil, window will not appear on any screen.
      * changing the UIWindowScene may be an expensive operation and should not be done in performance-sensitive code
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setWindowScene:")
@@ -551,6 +582,8 @@ public class UIWindow extends UIView {
     /**
      * If nil, window will not appear on any screen.
      * changing the UIWindowScene may be an expensive operation and should not be done in performance-sensitive code
+     * 
+     * API-Since: 13.0
      */
     @Generated
     public void setWindowScene(UIWindowScene value) {
@@ -567,6 +600,8 @@ public class UIWindow extends UIView {
     /**
      * If nil, window will not appear on any screen.
      * changing the UIWindowScene may be an expensive operation and should not be done in performance-sensitive code
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("windowScene")
@@ -574,8 +609,39 @@ public class UIWindow extends UIView {
 
     /**
      * Default is YES. Return NO to indicate the window cannot become the key window.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("canBecomeKeyWindow")
     public native boolean canBecomeKeyWindow();
+
+    /**
+     * This layout guide is designed specifically for full-screen media content, and attaching constraints from deep in
+     * the window's view heirarchy will raise an exception.
+     * 
+     * This guide provides a layout area for placing media content of a given aspect ratio (width over height) such that
+     * the content will be completely visible within the window.
+     * Compared to the standard `safeAreaLayoutGuide` on a view, this guide takes into account the aspect ratio of the
+     * content, allowing it the maximum size within the window's
+     * true safe area, including the actual shape of the screen when that is the only factor contributing to the safe
+     * area. The rect defined by this guide will be centered within the
+     * window.
+     * 
+     * This layout guide should only be used for fixed aspect ratio content that is indended to fill the window (such as
+     * image or video content) and is not a replacement for the
+     * standard `safeAreaLayoutGuide` on each UIView which should be used for most content layout. The
+     * `safeAreaAspectFitLayoutGuide` should only be used with views
+     * that are direct subviews of, or very close descendants of, the guide's window. Creating constraints from this
+     * layout guide to views deeper in the view heirarchy or across
+     * views owned by child view controllers can significantly degrade performance and possibly raise an exception.
+     * Additionally, the safe area insets added by child view
+     * controllers will not be reflected in these cases. For anything other than full-screen/window media content, the
+     * standard `safeAreaLayoutGuide` on UIView should be used.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("safeAreaAspectFitLayoutGuide")
+    public native UILayoutGuide safeAreaAspectFitLayoutGuide();
 }

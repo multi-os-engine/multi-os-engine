@@ -49,6 +49,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -78,6 +81,7 @@ public class UISearchController extends UIViewController implements UIViewContro
     @Selector("allocWithZone:")
     public static native UISearchController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -199,7 +203,11 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     /**
      * default is YES, and has the same behavior as obscuresBackgroundDuringPresentation.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 12.0
      */
+    @Deprecated
     @Generated
     @Selector("dimsBackgroundDuringPresentation")
     public native boolean dimsBackgroundDuringPresentation();
@@ -276,6 +284,8 @@ public class UISearchController extends UIViewController implements UIViewContro
     /**
      * On iOS, default is NO for apps linked on iOS 15.0 and later, YES otherwise.
      * On tvOS, default is NO when contained in UISearchContainerViewController, YES otherwise.
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("obscuresBackgroundDuringPresentation")
@@ -324,7 +334,11 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     /**
      * default is YES, and has the same behavior as obscuresBackgroundDuringPresentation.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 12.0
      */
+    @Deprecated
     @Generated
     @Selector("setDimsBackgroundDuringPresentation:")
     public native void setDimsBackgroundDuringPresentation(boolean value);
@@ -339,6 +353,8 @@ public class UISearchController extends UIViewController implements UIViewContro
     /**
      * On iOS, default is NO for apps linked on iOS 15.0 and later, YES otherwise.
      * On tvOS, default is NO when contained in UISearchContainerViewController, YES otherwise.
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("setObscuresBackgroundDuringPresentation:")
@@ -373,14 +389,31 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     /**
      * Default YES
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("automaticallyShowsCancelButton")
     public native boolean automaticallyShowsCancelButton();
 
     /**
-     * Defaults to YES
+     * By default, UISearchController will show the search bar's scope bar
+     * (when there are at least two scope button titles for the search bar)
+     * when search becomes active and hide it when search is dismissed.
+     * 
+     * Clients can take over showing and hiding the scope bar by setting automaticallyShowsScopeBar
+     * to NO and using UISearchBar's showsScopeBar property to manage scope bar visibility.
+     * 
+     * Additionally, setting the showsScopeBar property on the searchController's searchBar
+     * will change the UISearchController's automaticallyShowsScopeBar property to NO.
+     * 
+     * On iOS, this will be fully deprecated in a future release in favor of `scopeBarActivation`
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use scopeBarActivation instead
      */
+    @Deprecated
     @Generated
     @Selector("automaticallyShowsScopeBar")
     public native boolean automaticallyShowsScopeBar();
@@ -388,6 +421,8 @@ public class UISearchController extends UIViewController implements UIViewContro
     /**
      * When true, UISearchController will automatically show its results controller based on the contents of its text
      * property. Defaults to true. Setting the showsSearchResultsController property will change this property to false.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("automaticallyShowsSearchResultsController")
@@ -395,14 +430,31 @@ public class UISearchController extends UIViewController implements UIViewContro
 
     /**
      * Default YES
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAutomaticallyShowsCancelButton:")
     public native void setAutomaticallyShowsCancelButton(boolean value);
 
     /**
-     * Defaults to YES
+     * By default, UISearchController will show the search bar's scope bar
+     * (when there are at least two scope button titles for the search bar)
+     * when search becomes active and hide it when search is dismissed.
+     * 
+     * Clients can take over showing and hiding the scope bar by setting automaticallyShowsScopeBar
+     * to NO and using UISearchBar's showsScopeBar property to manage scope bar visibility.
+     * 
+     * Additionally, setting the showsScopeBar property on the searchController's searchBar
+     * will change the UISearchController's automaticallyShowsScopeBar property to NO.
+     * 
+     * On iOS, this will be fully deprecated in a future release in favor of `scopeBarActivation`
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use scopeBarActivation instead
      */
+    @Deprecated
     @Generated
     @Selector("setAutomaticallyShowsScopeBar:")
     public native void setAutomaticallyShowsScopeBar(boolean value);
@@ -410,6 +462,8 @@ public class UISearchController extends UIViewController implements UIViewContro
     /**
      * When true, UISearchController will automatically show its results controller based on the contents of its text
      * property. Defaults to true. Setting the showsSearchResultsController property will change this property to false.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAutomaticallyShowsSearchResultsController:")
@@ -418,6 +472,8 @@ public class UISearchController extends UIViewController implements UIViewContro
     /**
      * Set this property to directly control the visibility of the search results controller. Setting this property
      * changes the automaticallyShowsSearchResultsController property to false.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setShowsSearchResultsController:")
@@ -426,8 +482,112 @@ public class UISearchController extends UIViewController implements UIViewContro
     /**
      * Set this property to directly control the visibility of the search results controller. Setting this property
      * changes the automaticallyShowsSearchResultsController property to false.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("showsSearchResultsController")
     public native boolean showsSearchResultsController();
+
+    /**
+     * Default NO. When YES, the UISearchController will not create its internal child view controller
+     * for presenting the list of search suggestions when the searchBarPlacement is stacked.
+     * This property is intended to be set at the time that the search controller is initialized.
+     * If set after that point, the internal view controller will not be destroyed, but its view will be hidden and
+     * remain so.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("ignoresSearchSuggestionsForSearchBarPlacementStacked")
+    public native boolean ignoresSearchSuggestionsForSearchBarPlacementStacked();
+
+    /**
+     * Controls if and when the UISearchController shows and hides the scope bar
+     * However, UISearchBar will not show the scope bar if `scopeButtonTitles` contains fewer than two titles
+     * Defaults to `UISearchControllerScopeBarActivationAutomatic`
+     * `UISearchControllerScopeBarActivationAutomatic` is equivalent to earlier `automaticallyShowsScopeBar == YES`
+     * `UISearchControllerScopeBarActivationManual` is equivalent to earlier `automaticallyShowsScopeBar == NO`
+     * Similar to the behavior of `automaticallyShowsScopeBar`, setting the `showsScopeBar` property on the
+     * `searchController`'s `searchBar`
+     * will change `scopeBarActivation` to `UISearchControllerScopeBarActivationManual`
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("scopeBarActivation")
+    @NInt
+    public native long scopeBarActivation();
+
+    /**
+     * For inspecting the current placement of the search bar when the search controller has been assigned to a
+     * UINavigationItem
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("searchBarPlacement")
+    @NInt
+    public native long searchBarPlacement();
+
+    /**
+     * List of search hint objects to be displayed under keyboard on tvOS,
+     * as a menu under the search field when the search bar is placed inline on iOS 16,
+     * or as a list in front of the searchResultsController when the search bar is stacked.
+     * Assigning with new array immediately updates the list on screen.
+     * searchSuggestions is set to nil when user interaction selects a suggestion,
+     * or when the user otherwise interacts with search (e.g., typing in the search field, choosing a different search
+     * scope, canceling search)
+     * after dismissing the menu by tapping outside
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("searchSuggestions")
+    public native NSArray<?> searchSuggestions();
+
+    /**
+     * Default NO. When YES, the UISearchController will not create its internal child view controller
+     * for presenting the list of search suggestions when the searchBarPlacement is stacked.
+     * This property is intended to be set at the time that the search controller is initialized.
+     * If set after that point, the internal view controller will not be destroyed, but its view will be hidden and
+     * remain so.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setIgnoresSearchSuggestionsForSearchBarPlacementStacked:")
+    public native void setIgnoresSearchSuggestionsForSearchBarPlacementStacked(boolean value);
+
+    /**
+     * Controls if and when the UISearchController shows and hides the scope bar
+     * However, UISearchBar will not show the scope bar if `scopeButtonTitles` contains fewer than two titles
+     * Defaults to `UISearchControllerScopeBarActivationAutomatic`
+     * `UISearchControllerScopeBarActivationAutomatic` is equivalent to earlier `automaticallyShowsScopeBar == YES`
+     * `UISearchControllerScopeBarActivationManual` is equivalent to earlier `automaticallyShowsScopeBar == NO`
+     * Similar to the behavior of `automaticallyShowsScopeBar`, setting the `showsScopeBar` property on the
+     * `searchController`'s `searchBar`
+     * will change `scopeBarActivation` to `UISearchControllerScopeBarActivationManual`
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setScopeBarActivation:")
+    public native void setScopeBarActivation(@NInt long value);
+
+    /**
+     * List of search hint objects to be displayed under keyboard on tvOS,
+     * as a menu under the search field when the search bar is placed inline on iOS 16,
+     * or as a list in front of the searchResultsController when the search bar is stacked.
+     * Assigning with new array immediately updates the list on screen.
+     * searchSuggestions is set to nil when user interaction selects a suggestion,
+     * or when the user otherwise interacts with search (e.g., typing in the search field, choosing a different search
+     * scope, canceling search)
+     * after dismissing the menu by tapping outside
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSearchSuggestions:")
+    public native void setSearchSuggestions(NSArray<?> value);
 }

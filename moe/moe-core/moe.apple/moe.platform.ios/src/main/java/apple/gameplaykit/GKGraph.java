@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Representation of a directed graph of GKGraphNodes
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -167,7 +169,7 @@ public class GKGraph extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Adds nodes to this graph. No new connections are added.
      * If the node already exists in this graph this does nothing.
-     *
+     * 
      * @param nodes and array of nodes to be added
      */
     @Generated
@@ -176,7 +178,7 @@ public class GKGraph extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Connects the node to this graph via the lowest cost node to reach in this graph
-     *
+     * 
      * @param node          the node to connect
      * @param bidirectional should the connection be bidirectional? Otherwise it is one way connected into the graph
      */
@@ -199,7 +201,7 @@ public class GKGraph extends NSObject implements NSCopying, NSSecureCoding {
      * If such a path exists, it is returned in start to end order.
      * If it doesn't exist, the array returned will be empty.
      * Asserts if neither of these nodes are in this graph. Use [GKGraphNode findPathFromNode:] instead.
-     *
+     * 
      * @param startNode node to start pathing from
      * @param endNode   goal node of the pathfinding attempt
      */
@@ -229,7 +231,7 @@ public class GKGraph extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Removes nodes from this graph.
      * All connections starting and/or ending with this node are removed.
-     *
+     * 
      * @param nodes an array of nodes to be removed
      */
     @Generated

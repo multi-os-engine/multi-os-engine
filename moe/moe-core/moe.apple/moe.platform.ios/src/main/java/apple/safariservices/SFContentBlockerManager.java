@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("SafariServices")
 @Runtime(ObjCRuntime.class)
@@ -98,6 +101,9 @@ public class SFContentBlockerManager extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("getStateOfContentBlockerWithIdentifier:completionHandler:")
     public static native void getStateOfContentBlockerWithIdentifierCompletionHandler(String identifier,

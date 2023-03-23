@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * PHASESpatialPipelineEntry
- * <p>
+ * 
  * Spatial Pipeline Entry.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -130,7 +132,7 @@ public class PHASESpatialPipelineEntry extends NSObject {
 
     /**
      * [@property] sendLevel
-     * <p>
+     * 
      * Send level.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
@@ -141,7 +143,7 @@ public class PHASESpatialPipelineEntry extends NSObject {
 
     /**
      * [@property] sendLevelMetaParameterDefinition
-     * <p>
+     * 
      * An optional metaparameter used to drive the send level during playback.
      */
     @Generated
@@ -150,7 +152,7 @@ public class PHASESpatialPipelineEntry extends NSObject {
 
     /**
      * [@property] sendLevel
-     * <p>
+     * 
      * Send level.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
@@ -161,7 +163,7 @@ public class PHASESpatialPipelineEntry extends NSObject {
 
     /**
      * [@property] sendLevelMetaParameterDefinition
-     * <p>
+     * 
      * An optional metaparameter used to drive the send level during playback.
      */
     @Generated

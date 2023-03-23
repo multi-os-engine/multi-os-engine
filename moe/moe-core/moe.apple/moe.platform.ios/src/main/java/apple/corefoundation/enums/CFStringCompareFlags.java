@@ -47,16 +47,22 @@ public final class CFStringCompareFlags {
     @Generated @NUInt public static final long Numerically = 0x0000000000000040L;
     /**
      * If specified, ignores diacritics (o-umlaut == o)
+     * 
+     * API-Since: 2.0
      */
     @Generated @NUInt public static final long DiacriticInsensitive = 0x0000000000000080L;
     /**
      * If specified, ignores width differences ('a' == UFF41)
+     * 
+     * API-Since: 2.0
      */
     @Generated @NUInt public static final long WidthInsensitive = 0x0000000000000100L;
     /**
      * If specified, comparisons are forced to return either kCFCompareLessThan or kCFCompareGreaterThan if the strings
      * are equivalent but not strictly equal, for stability when sorting (e.g. "aaa" > "AAA" with
      * kCFCompareCaseInsensitive specified)
+     * 
+     * API-Since: 2.0
      */
     @Generated @NUInt public static final long ForcedOrdering = 0x0000000000000200L;
 

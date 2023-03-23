@@ -21,32 +21,49 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * error codes for the MPErrorDomain
+ * 
+ * API-Since: 9.3
  */
 @Generated
 public final class MPErrorCode {
+    /**
+     * API-Since: 9.3
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     /**
      * the user has not granted permission for this request.
+     * 
+     * API-Since: 9.3
      */
     @Generated @NInt public static final long PermissionDenied = 0x0000000000000001L;
     /**
      * the user has not enabled this capability
+     * 
+     * API-Since: 9.3
      */
     @Generated @NInt public static final long CloudServiceCapabilityMissing = 0x0000000000000002L;
     /**
      * the device could not connect to the network
+     * 
+     * API-Since: 9.3
      */
     @Generated @NInt public static final long NetworkConnectionFailed = 0x0000000000000003L;
     /**
      * the id could not be found in the current storefront
+     * 
+     * API-Since: 9.3
      */
     @Generated @NInt public static final long NotFound = 0x0000000000000004L;
     /**
      * the request is not supported (ex: trying to add items to a smart playlist)
+     * 
+     * API-Since: 9.3
      */
     @Generated @NInt public static final long NotSupported = 0x0000000000000005L;
     /**
      * the request was cancelled before it could complete
+     * 
+     * API-Since: 10.1
      */
     @Generated @NInt public static final long Cancelled = 0x0000000000000006L;
 
@@ -56,6 +73,8 @@ public final class MPErrorCode {
 
     /**
      * the request was cancelled before it could complete
+     * 
+     * API-Since: 10.3
      */
     @Generated @NInt public static final long RequestTimedOut = 0x0000000000000007L;
 }

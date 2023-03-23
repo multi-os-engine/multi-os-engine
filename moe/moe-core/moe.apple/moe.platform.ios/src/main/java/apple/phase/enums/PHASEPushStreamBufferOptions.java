@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] PHASEPushStreamBufferOptions
- * <p>
+ * 
  * Options controlling buffer scheduling.
  * [@constant] PHASEPushStreamBufferDefault
  * The buffer plays following any previously scheduled buffer(s).

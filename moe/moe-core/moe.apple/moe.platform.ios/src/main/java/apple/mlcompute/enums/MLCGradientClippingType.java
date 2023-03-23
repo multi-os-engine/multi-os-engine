@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MLCGradientClippingType
- * <p>
+ * 
  * The type of clipping applied to gradient
  */
 @Generated

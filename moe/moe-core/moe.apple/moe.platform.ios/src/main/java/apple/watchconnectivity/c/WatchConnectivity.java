@@ -37,6 +37,9 @@ public final class WatchConnectivity {
     private WatchConnectivity() {
     }
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

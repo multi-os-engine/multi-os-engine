@@ -1,7 +1,6 @@
 package apple.vision;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -25,14 +24,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
 /**
  * VNRecognizedPoint
- * <p>
+ * 
  * An extension of VNDetectedPoint that associates an identifier to the point.
- * <p>
+ * 
  * It should be noted that VNRecognizedPoint is not intended as an overall replacement of CGPoint, NSPoint or vec2, but
  * is used by observations that recognize labeled points of interest.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -92,6 +94,7 @@ public class VNRecognizedPoint extends VNDetectedPoint {
     @Selector("description")
     public static native String description_static();
 
+    @Deprecated
     @Generated
     @Selector("distanceBetweenPoint:point:")
     public static native double distanceBetweenPointPoint(VNPoint point1, VNPoint point2);
@@ -103,7 +106,7 @@ public class VNRecognizedPoint extends VNDetectedPoint {
 
     /**
      * The is the identifier that provides context as to the kind of point that was recognized.
-     * <p>
+     * 
      * The string is defined by the model that recognized the point. Usually these are technical labels that are not
      * localized and not meant to be used directly to be presented to an end user in the UI.
      */

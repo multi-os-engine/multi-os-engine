@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request that will detect regions of text in an image.
- * <p>
+ * 
  * This request will generate VNTextObservation objects describing the locations of text detected in an image.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")

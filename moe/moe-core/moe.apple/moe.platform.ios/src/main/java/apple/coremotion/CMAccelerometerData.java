@@ -44,9 +44,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMAccelerometerData
- * <p>
+ * 
  * Discussion:
  * Contains a single accelerometer measurement.
+ * 
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("CoreMotion")
@@ -164,7 +167,7 @@ public class CMAccelerometerData extends CMLogItem {
 
     /**
      * acceleration
-     * <p>
+     * 
      * Discussion:
      * The acceleration measured by the accelerometer.
      */

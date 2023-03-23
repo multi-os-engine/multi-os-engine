@@ -19,16 +19,30 @@ package apple.notificationcenter.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 14.0
+ * Deprecated-Message: Use WidgetKit instead. Today View extensions have been deprecated.
+ */
+@Deprecated
 @Generated
 public final class NCWidgetDisplayMode {
     /**
      * Fixed height
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use WidgetKit instead. Today View extensions have been deprecated.
      */
-    @Generated @NInt public static final long Compact = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long Compact = 0x0000000000000000L;
     /**
      * Variable height
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use WidgetKit instead. Today View extensions have been deprecated.
      */
-    @Generated @NInt public static final long Expanded = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long Expanded = 0x0000000000000001L;
 
     @Generated
     private NCWidgetDisplayMode() {

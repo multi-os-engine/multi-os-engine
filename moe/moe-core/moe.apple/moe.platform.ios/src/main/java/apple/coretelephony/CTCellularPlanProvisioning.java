@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("CoreTelephony")
 @Runtime(ObjCRuntime.class)
@@ -41,6 +44,9 @@ public class CTCellularPlanProvisioning extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("addPlanWith:completionHandler:")
     public native void addPlanWithCompletionHandler(CTCellularPlanProvisioningRequest request,
@@ -144,6 +150,9 @@ public class CTCellularPlanProvisioning extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("supportsCellularPlan")
     public native boolean supportsCellularPlan();
@@ -152,4 +161,11 @@ public class CTCellularPlanProvisioning extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("supportsEmbeddedSIM")
+    public native boolean supportsEmbeddedSIM();
 }

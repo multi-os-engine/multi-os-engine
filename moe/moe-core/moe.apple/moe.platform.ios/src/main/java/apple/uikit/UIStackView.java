@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -46,27 +45,30 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * UIStackView is a non-rendering subclass of UIView, intended for managing layout of its subviews.
  * You may not override +[UIStackView layerClass], and -drawLayer:inContext: will not be sent to
  * UIStackView.
- * <p>
+ * 
  * UIStackView arranges its subviews in its arrangedSubviews list in the order of
  * that list along a vertical or horizontal axis, with exact arrangement determined
  * by the distribution, alignment, and spacing properties.
- * <p>
+ * 
  * The layout will update automatically when arrangedSubviews list changes
  * due to adding, removing, or inserting arrangedSubviews, and also when
  * views in the arrangedSubviews list change their hidden property.
- * <p>
+ * 
  * A horizontal UIStackView will return its tallest view for -viewForFirst/LastBaselineLayout,
  * or if that is another stack view, then the relevant viewForFirst/LastBaselineLayout from that
  * stack view.
- * <p>
+ * 
  * A vertical UIStackView will return its first view for -viewForFirstBaselineLayout and its
  * last view for -viewForLastBaselineLayout, or if that is another stack view, then the relevant
  * viewForFirst/LastBaselineLayout from that stack view.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("UIKit")
@@ -173,6 +175,7 @@ public class UIStackView extends UIView {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -199,6 +202,7 @@ public class UIStackView extends UIView {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -274,46 +278,57 @@ public class UIStackView extends UIView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -553,14 +568,14 @@ public class UIStackView extends UIView {
      * Used as a strict spacing for the Fill distributions, and
      * as a minimum spacing for the EqualCentering and EqualSpacing
      * distributions. Use negative values to allow overlap.
-     * <p>
+     * 
      * On iOS 11.0 or later, use UIStackViewSpacingUseSystem (Swift: UIStackView.spacingUseSystem)
      * to get a system standard spacing value. Setting spacing to UIStackViewSpacingUseDefault
      * (Swift: UIStackView.spacingUseDefault) will result in a spacing of 0.
-     * <p>
+     * 
      * System spacing between views depends on the views involved, and may vary across the
      * stack view.
-     * <p>
+     * 
      * In vertical stack views with baselineRelativeArrangement == YES, the spacing between
      * text-containing views (such as UILabels) will depend on the fonts involved.
      */
@@ -573,14 +588,14 @@ public class UIStackView extends UIView {
      * Used as a strict spacing for the Fill distributions, and
      * as a minimum spacing for the EqualCentering and EqualSpacing
      * distributions. Use negative values to allow overlap.
-     * <p>
+     * 
      * On iOS 11.0 or later, use UIStackViewSpacingUseSystem (Swift: UIStackView.spacingUseSystem)
      * to get a system standard spacing value. Setting spacing to UIStackViewSpacingUseDefault
      * (Swift: UIStackView.spacingUseDefault) will result in a spacing of 0.
-     * <p>
+     * 
      * System spacing between views depends on the views involved, and may vary across the
      * stack view.
-     * <p>
+     * 
      * In vertical stack views with baselineRelativeArrangement == YES, the spacing between
      * text-containing views (such as UILabels) will depend on the fonts involved.
      */
@@ -589,6 +604,9 @@ public class UIStackView extends UIView {
     @NFloat
     public native double spacing();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("customSpacingAfterView:")
     @NFloat
@@ -596,21 +614,23 @@ public class UIStackView extends UIView {
 
     /**
      * Set and get custom spacing after a view.
-     * <p>
+     * 
      * This custom spacing takes precedence over any other value that might otherwise be used
      * for the space following the arranged subview.
-     * <p>
+     * 
      * Defaults to UIStackViewSpacingUseDefault (Swift: UIStackView.spacingUseDefault), where
      * resolved value will match the spacing property.
-     * <p>
+     * 
      * You may also set the custom spacing to UIStackViewSpacingUseSystem (Swift: UIStackView.spacingUseSystem),
      * where the resolved value will match the system-defined value for the space to the neighboring view,
      * independent of the spacing property.
-     * <p>
+     * 
      * Maintained when the arranged subview changes position in the stack view, but not after it
      * is removed from the arrangedSubviews list.
-     * <p>
+     * 
      * Ignored if arrangedSubview is not actually an arranged subview.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCustomSpacing:afterView:")

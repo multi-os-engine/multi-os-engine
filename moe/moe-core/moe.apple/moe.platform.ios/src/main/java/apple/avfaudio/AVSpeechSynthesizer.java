@@ -27,10 +27,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVSpeechSynthesizer
- * <p>
+ * 
  * AVSpeechSynthesizer allows speaking of speech utterances with a basic queuing mechanism.
- * <p>
+ * 
  * Create an instance of AVSpeechSynthesizer to start generating synthesized speech by using AVSpeechUtterance objects.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("AVFAudio")
@@ -140,6 +142,8 @@ public class AVSpeechSynthesizer extends NSObject {
     /**
      * Set to YES to send synthesized speech into an outgoing telephony audio stream.
      * If there's no active call, setting this property has no effect.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("mixToTelephonyUplink")
@@ -155,6 +159,8 @@ public class AVSpeechSynthesizer extends NSObject {
      * AVAudioSession's current route.
      * Speech audio will be replicated to each specified channel.
      * Default is nil, which implies system defaults.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("outputChannels")
@@ -191,6 +197,8 @@ public class AVSpeechSynthesizer extends NSObject {
     /**
      * Set to YES to send synthesized speech into an outgoing telephony audio stream.
      * If there's no active call, setting this property has no effect.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMixToTelephonyUplink:")
@@ -201,6 +209,8 @@ public class AVSpeechSynthesizer extends NSObject {
      * AVAudioSession's current route.
      * Speech audio will be replicated to each specified channel.
      * Default is nil, which implies system defaults.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setOutputChannels:")
@@ -213,6 +223,8 @@ public class AVSpeechSynthesizer extends NSObject {
      * The separate audio session will use AVAudioSessionRouteSharingPolicyDefault, which means that it may have a
      * different route from the app’s shared instance session.
      * Default is YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setUsesApplicationAudioSession:")
@@ -248,6 +260,8 @@ public class AVSpeechSynthesizer extends NSObject {
      * The separate audio session will use AVAudioSessionRouteSharingPolicyDefault, which means that it may have a
      * different route from the app’s shared instance session.
      * Default is YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("usesApplicationAudioSession")
@@ -261,6 +275,8 @@ public class AVSpeechSynthesizer extends NSObject {
     /**
      * Use this method to receive audio buffers that can be used to store or further process synthesized speech.
      * The dictionary provided by -[AVSpeechSynthesisVoice audioFileSettings] can be used to create an AVAudioFile.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("writeUtterance:toBufferCallback:")
@@ -272,5 +288,32 @@ public class AVSpeechSynthesizer extends NSObject {
     public interface Block_writeUtteranceToBufferCallback {
         @Generated
         void call_writeUtteranceToBufferCallback(AVAudioBuffer buffer);
+    }
+
+    /**
+     * Use this method to receive audio buffers and associated metadata that can be used to store or further process
+     * synthesized speech.
+     * The dictionary provided by -[AVSpeechSynthesisVoice audioFileSettings] can be used to create an AVAudioFile.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("writeUtterance:toBufferCallback:toMarkerCallback:")
+    public native void writeUtteranceToBufferCallbackToMarkerCallback(AVSpeechUtterance utterance,
+            @ObjCBlock(name = "call_writeUtteranceToBufferCallbackToMarkerCallback_1") Block_writeUtteranceToBufferCallbackToMarkerCallback_1 bufferCallback,
+            @ObjCBlock(name = "call_writeUtteranceToBufferCallbackToMarkerCallback_2") Block_writeUtteranceToBufferCallbackToMarkerCallback_2 markerCallback);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeUtteranceToBufferCallbackToMarkerCallback_1 {
+        @Generated
+        void call_writeUtteranceToBufferCallbackToMarkerCallback_1(AVAudioBuffer buffer);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_writeUtteranceToBufferCallbackToMarkerCallback_2 {
+        @Generated
+        void call_writeUtteranceToBufferCallbackToMarkerCallback_2(NSArray<? extends AVSpeechSynthesisMarker> markers);
     }
 }

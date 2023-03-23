@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * location and terminating location. They are the two basic properties, location and endLocation, respectively. The
  * terminating location, endLocation, is directly following the last location in the range. So, a location is contained
  * in a range if (range.location <= location) && (location < range.endLocation).
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")

@@ -36,11 +36,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * webpage, the user can authenticate herself and grant access to the app. On completion, the service will send a
  * callback URL with
  * an authentication token, and this URL will be passed to the app by SFAuthenticationCompletionHandler.
- * <p>
+ * 
  * The callback URL usually has a custom URL scheme. For the app to receive the callback URL, it needs to either
  * register the
  * custom URL scheme in its Info.plist, or set the scheme to callbackURLScheme argument in the initializer.
- * <p>
+ * 
  * If the user has already logged into the web service in Safari or other apps via SFAuthenticationSession, it is
  * possible to
  * share the existing login information. An alert will be presented to get the user's consent for sharing their existing
@@ -48,15 +48,19 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * information. If the user cancels the alert, the session will be canceled, and the completion handler will be called
  * with
  * the error code SFAuthenticationErrorCanceledLogin.
- * <p>
+ * 
  * If the user taps Cancel when showing the login webpage for the web service, the session will be canceled, and the
  * completion handler
  * will be called with the error code SFAuthenticationErrorCanceledLogin.
- * <p>
+ * 
  * The app can cancel the session by calling -[SFAuthenticationSession cancel]. This will also dismiss the view
  * controller that
  * is showing the web service's login page.
+ * 
+ * API-Since: 11.0
+ * Deprecated-Since: 12.0
  */
+@Deprecated
 @Generated
 @Library("SafariServices")
 @Runtime(ObjCRuntime.class)
@@ -135,7 +139,7 @@ public class SFAuthenticationSession extends NSObject {
 
     /**
      * Returns a SFAuthenticationSession object.
-     *
+     * 
      * @param URL               the initial URL pointing to the authentication webpage. Only supports URLs with http://
      *                          or https:// schemes.
      * @param callbackURLScheme the custom URL scheme that the app expects in the callback URL.
@@ -195,10 +199,10 @@ public class SFAuthenticationSession extends NSObject {
 
     /**
      * Starts the SFAuthenticationSession instance after it is instantiated.
-     * <p>
+     * 
      * start can only be called once for an SFAuthenticationSession instance. This also means calling start on a
      * canceled session will fail.
-     *
+     * 
      * @return Returns YES if the session starts successfully.
      */
     @Generated

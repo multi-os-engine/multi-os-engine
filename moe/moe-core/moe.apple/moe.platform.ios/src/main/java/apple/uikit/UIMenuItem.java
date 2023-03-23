@@ -38,6 +38,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.2
+ * Deprecated-Since: 16.0
+ * Deprecated-Message: UIMenuItem is deprecated. Use UIEditMenuInteraction instead.
+ */
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)

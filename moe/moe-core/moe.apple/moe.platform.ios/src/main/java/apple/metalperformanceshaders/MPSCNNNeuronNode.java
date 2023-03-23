@@ -24,13 +24,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * virtual base class for MPSCNNNeuron nodes
- * <p>
+ * 
  * This is a virtual base class only. Please create a
  * subclass using +newNeuronNodeWithSouce:descriptor or
  * by making one of the subclasses directly. Better yet, skip
  * the node entirely and specify the neuron function directly in
  * your MPSCNNConvolutionDataSource.descriptor.neuronDescriptor.
- * <p>
+ * 
  * MPSCNNNeuronNodes are provided as a representational convenience.
  * However, you are usually better off incorporating your neuron
  * into the MPSCNNConvolutionDataSource when possible. The MPSNNGraph
@@ -39,6 +39,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * if the neuron pass has a custom padding method or more than one
  * node reads from the convolution result. The graph -debugDescription
  * should reveal what happened.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -177,6 +179,8 @@ public class MPSCNNNeuronNode extends MPSNNFilterNode {
 
     /**
      * Create a neuron node of the appropriate type with a MPSNNNeuronDescriptor
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("nodeWithSource:descriptor:")

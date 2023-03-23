@@ -21,21 +21,29 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * The following values describe how the receiver's elements should be navigated by an assistive technology.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class UIAccessibilityNavigationStyle {
     /**
      * The assistive technology will automatically determine how the receiver's elements should be navigated.
      * This is the default value.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Automatic = 0x0000000000000000L;
     /**
      * The receiver's elements should be navigated as separate elements.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Separate = 0x0000000000000001L;
     /**
      * The receiver’s elements should be combined and navigated as a single item.
      * When the combined item has been selected, the assistive technology will navigate each element separately.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Combined = 0x0000000000000002L;
 

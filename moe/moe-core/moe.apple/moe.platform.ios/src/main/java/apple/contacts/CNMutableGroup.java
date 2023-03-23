@@ -43,8 +43,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A mutable value object representing a group.
- * <p>
+ * 
  * CNMutableGroup is not thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")

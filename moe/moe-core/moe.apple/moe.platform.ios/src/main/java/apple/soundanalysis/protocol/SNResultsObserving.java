@@ -13,6 +13,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The interface through which clients receive the results of an analysis request
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("SoundAnalysis")
@@ -21,7 +23,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface SNResultsObserving {
     /**
      * Informs the client of an error produced during analysis
-     * <p>
+     * 
      * If an error is produced by a request, that request will not produce any more results, and is in a terminal state.
      * The request:didFailWithError and requestDidComplete methods are mutually exclusive.
      */
@@ -34,7 +36,7 @@ public interface SNResultsObserving {
 
     /**
      * Provides a new analysis result to the client with the specified time range
-     * <p>
+     * 
      * This function will be called each time a new analysis result is available. Different types of analysis may
      * produce results at different rates, spanning different time ranges.
      */
@@ -45,7 +47,7 @@ public interface SNResultsObserving {
 
     /**
      * Informs the client that the analysis request was completed normally
-     * <p>
+     * 
      * If an analysis request completes normally, that request will not produce any more results, and is in a terminal
      * state. The request:didFailWithError and requestDidComplete methods are mutually exclusive.
      */

@@ -19,14 +19,28 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 public final class MPMusicShuffleMode {
     /**
      * the user's preference for shuffle mode
+     * 
+     * API-Since: 3.0
      */
     @Generated @NInt public static final long Default = 0x0000000000000000L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long Off = 0x0000000000000001L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long Songs = 0x0000000000000002L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long Albums = 0x0000000000000003L;
 
     @Generated

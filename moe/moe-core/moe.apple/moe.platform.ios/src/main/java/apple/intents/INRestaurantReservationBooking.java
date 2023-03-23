@@ -46,6 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * represents a booking at a restaurant during a given time for a given party size
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Intents")

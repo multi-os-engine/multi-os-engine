@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UserNotifications")
 @Runtime(ObjCRuntime.class)
@@ -201,6 +204,8 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
      * The name of a sound file to be played for an critical alert. Critical alerts will bypass the mute switch and Do
      * Not Disturb. The sound file must be contained in the app’s bundle or in the Library/Sounds folder of the app’s
      * data container. If files exist in both locations then the file in the app’s data container will be preferred.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("criticalSoundNamed:")
@@ -211,6 +216,8 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
      * will bypass the mute switch and Do Not Disturb. The sound file must be contained in the app’s bundle or in the
      * Library/Sounds folder of the app’s data container. If files exist in both locations then the file in the app’s
      * data container will be preferred. The audio volume is expected to be between 0.0f and 1.0f.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("criticalSoundNamed:withAudioVolume:")
@@ -218,6 +225,8 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
 
     /**
      * The default sound used for critical alerts. Critical alerts will bypass the mute switch and Do Not Disturb.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("defaultCriticalSound")
@@ -226,6 +235,8 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
     /**
      * The default sound used for critical alerts with a custom audio volume level. Critical alerts will bypass the mute
      * switch and Do Not Disturb. The audio volume is expected to be between 0.0f and 1.0f.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("defaultCriticalSoundWithAudioVolume:")
@@ -237,6 +248,8 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
      * extension via -[UNNotificationContent contentByUpdatingWithProvider:error:] where the provider is an
      * INStartCallIntent with a destinationType of INCallDestinationTypeNormal. Please use CallKit instead of
      * UserNotifications for this use case when available.
+     * 
+     * API-Since: 15.2
      */
     @Generated
     @Selector("defaultRingtoneSound")
@@ -250,6 +263,8 @@ public class UNNotificationSound extends NSObject implements NSCopying, NSSecure
      * must be created in the notification service extension via -[UNNotificationContent
      * contentByUpdatingWithProvider:error:] where the provider is an INStartCallIntent with a destinationType of
      * INCallDestinationTypeNormal. Please use CallKit instead of UserNotifications for this use case when available.
+     * 
+     * API-Since: 15.2
      */
     @Generated
     @Selector("ringtoneSoundNamed:")

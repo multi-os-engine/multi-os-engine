@@ -27,9 +27,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVCoordinatedPlaybackSuspension
- * <p>
+ * 
  * A representation of a temporary break in participation.
  * [@note] See AVPlaybackCoordinator's beginSuspensionForReason: method for details on use.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVFoundation")
@@ -65,7 +67,7 @@ public class AVCoordinatedPlaybackSuspension extends NSObject {
 
     /**
      * [@property] beginDate
-     * <p>
+     * 
      * The begin time of the suspension.
      */
     @Generated
@@ -100,9 +102,9 @@ public class AVCoordinatedPlaybackSuspension extends NSObject {
 
     /**
      * end
-     * <p>
+     * 
      * Ends the suspension.
-     * <p>
+     * 
      * If this is the last suspension, the coordinator will adjust timing of its playback object to match the group.
      * Also see endProposingNewTime: for a way to end a suspension and simultaneously proposing a new time to the group.
      */
@@ -112,9 +114,9 @@ public class AVCoordinatedPlaybackSuspension extends NSObject {
 
     /**
      * endProposingNewTime:
-     * <p>
+     * 
      * Ends the suspension and proposes a new time that everyone should seek to.
-     * <p>
+     * 
      * If this is the last suspension, the coordinator will propose the new time to the group without changing the
      * groups playback rate.
      * If this is not the last suspension, the time will be ignored.
@@ -161,7 +163,7 @@ public class AVCoordinatedPlaybackSuspension extends NSObject {
 
     /**
      * [@property] reason
-     * <p>
+     * 
      * The reason for the suspension. This will be communicated to other participants while coordination is suspended.
      */
     @Generated

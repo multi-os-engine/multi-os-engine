@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCOptimizer
- * <p>
+ * 
  * The MLCOptimizer specifies a base optimizer.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -59,7 +61,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
 
     /**
      * [@property] appliesGradientClipping
-     * <p>
+     * 
      * Whether gradient clipping should be applied or not.
      */
     @Generated
@@ -96,8 +98,10 @@ public class MLCOptimizer extends NSObject implements NSCopying {
 
     /**
      * [@property] customGlobalNorm
-     * <p>
+     * 
      * Used only with MLCGradientClippingTypeByGlobalNorm. If non zero, this norm will be used in place of global norm.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("customGlobalNorm")
@@ -113,7 +117,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
 
     /**
      * [@property] gradientClipMax
-     * <p>
+     * 
      * The maximum gradient value if gradient clipping is enabled before gradient is rescaled.
      */
     @Generated
@@ -122,7 +126,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
 
     /**
      * [@property] gradientClipMin
-     * <p>
+     * 
      * The minimum gradient value if gradient clipping is enabled before gradient is rescaled.
      */
     @Generated
@@ -131,8 +135,10 @@ public class MLCOptimizer extends NSObject implements NSCopying {
 
     /**
      * [@property] gradientClippingType
-     * <p>
+     * 
      * The type of clipping applied to gradient
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("gradientClippingType")
@@ -140,7 +146,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
 
     /**
      * [@property] gradientRescale
-     * <p>
+     * 
      * The rescale value applied to gradients during optimizer update
      */
     @Generated
@@ -179,7 +185,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
 
     /**
      * [@property] learningRate
-     * <p>
+     * 
      * The learning rate. This property is 'readwrite' so that callers can implement a 'decay' during training
      */
     @Generated
@@ -188,8 +194,10 @@ public class MLCOptimizer extends NSObject implements NSCopying {
 
     /**
      * [@property] maximumClippingNorm
-     * <p>
+     * 
      * The maximum clipping value
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("maximumClippingNorm")
@@ -202,7 +210,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
 
     /**
      * [@property] regularizationScale
-     * <p>
+     * 
      * The regularization scale.
      */
     @Generated
@@ -211,7 +219,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
 
     /**
      * [@property] regularizationType
-     * <p>
+     * 
      * The regularization type.
      */
     @Generated
@@ -228,7 +236,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
 
     /**
      * [@property] appliesGradientClipping
-     * <p>
+     * 
      * Whether gradient clipping should be applied or not.
      */
     @Generated
@@ -237,7 +245,7 @@ public class MLCOptimizer extends NSObject implements NSCopying {
 
     /**
      * [@property] learningRate
-     * <p>
+     * 
      * The learning rate. This property is 'readwrite' so that callers can implement a 'decay' during training
      */
     @Generated

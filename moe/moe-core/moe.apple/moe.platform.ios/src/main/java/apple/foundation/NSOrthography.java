@@ -47,6 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * typically used for Japanese and Korean text, Hans and Hant for Chinese text; the tag Zyyy is used if a specific
  * script cannot be identified. Languages are uniformly described by BCP-47 tags, preferably in canonical form; the tag
  * und is used if a specific language cannot be determined.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("Foundation")
@@ -137,6 +139,9 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
     @Selector("new")
     public static native NSOrthography new_objc();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("orthographyWithDominantScript:languageMap:")
     public static native NSOrthography orthographyWithDominantScriptLanguageMap(String script,
@@ -167,10 +172,16 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("allLanguages")
     public native NSArray<String> allLanguages();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("allScripts")
     public native NSArray<String> allScripts();
@@ -185,11 +196,16 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
      * The dominantLanguage is the first in the list of languages for the dominant script, allScripts includes the
      * dominant script and all others appearing as keys in the language map, and allLanguages includes all languages
      * appearing in the values of the language map.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("dominantLanguage")
     public native String dominantLanguage();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("dominantLanguageForScript:")
     public native String dominantLanguageForScript(String script);
@@ -215,6 +231,9 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
     @Selector("initWithCoder:")
     public native NSOrthography initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("initWithDominantScript:languageMap:")
     public native NSOrthography initWithDominantScriptLanguageMap(String script,
@@ -227,6 +246,8 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
     /**
      * languagesForScript: returns the list of languages for the specified script, and dominantLanguageForScript:
      * returns the first item on that list.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("languagesForScript:")
@@ -238,6 +259,9 @@ public class NSOrthography extends NSObject implements NSCopying, NSSecureCoding
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("defaultOrthographyForLanguage:")
     public static native NSOrthography defaultOrthographyForLanguage(String language);

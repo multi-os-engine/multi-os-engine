@@ -21,16 +21,25 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * Connection types
+ * 
+ * API-Since: 3.0
+ * Deprecated-Since: 7.0
  */
 @Deprecated
 @Generated
 public final class GKPeerPickerConnectionType {
     /**
      * Online (Internet) based multiplayer connection
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Deprecated @Generated @NUInt public static final long Online = 0x0000000000000001L;
     /**
      * Nearby (Bluetooth) based multiplayer connection
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Deprecated @Generated @NUInt public static final long Nearby = 0x0000000000000002L;
 

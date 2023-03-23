@@ -25,10 +25,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASERandomNodeDefinition
- * <p>
+ * 
  * An object for defining a random sound event node when building a sound event.
- * <p>
+ * 
  * A random node selects one of its children based on a weighted random choice.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -50,11 +52,13 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * addSubtree
-     * <p>
+     * 
      * Add a subtree to a random node
-     *
-     * @param subtree A PHASESoundEventNodeDefinition that will be a child node of this random node
-     * @param weight  The probability weight of this subtree. Higher numbers compared to other subtree weights will
+     * 
+     * @param subtree
+     *                A PHASESoundEventNodeDefinition that will be a child node of this random node
+     * @param weight
+     *                The probability weight of this subtree. Higher numbers compared to other subtree weights will
      *                increase the likelihood of being
      *                chosen. This value must be greater than or equal to 1, and is clamped otherwise.
      */
@@ -109,10 +113,11 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * init
-     * <p>
+     * 
      * Create a random node definition
-     *
-     * @return A new PHASERandomNodeDefinition object
+     * 
+     * @return
+     *         A new PHASERandomNodeDefinition object
      */
     @Generated
     @Selector("init")
@@ -120,11 +125,13 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * initWithIdentifier
-     * <p>
+     * 
      * Create a random node definition
-     *
-     * @param identifier An optional custom identifier to give to this object
-     * @return A new PHASERandomNodeDefinition object
+     * 
+     * @param identifier
+     *                   An optional custom identifier to give to this object
+     * @return
+     *         A new PHASERandomNodeDefinition object
      */
     @Generated
     @Selector("initWithIdentifier:")
@@ -166,7 +173,7 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * [@property] uniqueSelectionQueueLength
-     * <p>
+     * 
      * Subtrees will not be repeated until after this random node is activated uniqueSelectionQueueLength number of
      * times.
      */
@@ -184,7 +191,7 @@ public class PHASERandomNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * [@property] uniqueSelectionQueueLength
-     * <p>
+     * 
      * Subtrees will not be repeated until after this random node is activated uniqueSelectionQueueLength number of
      * times.
      */

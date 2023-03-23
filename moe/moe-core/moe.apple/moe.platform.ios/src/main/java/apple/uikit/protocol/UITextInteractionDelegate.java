@@ -1,6 +1,5 @@
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
 import apple.uikit.UITextInteraction;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -10,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGPoint;
 
 @Generated
 @Library("UIKit")

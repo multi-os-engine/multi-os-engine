@@ -19,7 +19,6 @@ package apple.mapkit;
 import apple.NSObject;
 import apple.coregraphics.opaque.CGContextRef;
 import apple.coregraphics.opaque.CGPathRef;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -52,10 +51,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * Prefer MKOverlayPathRenderer
+ * 
+ * API-Since: 4.0
+ * Deprecated-Since: 13.0
  */
+@Deprecated
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -161,6 +165,7 @@ public class MKOverlayPathView extends MKOverlayView {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -187,6 +192,7 @@ public class MKOverlayPathView extends MKOverlayView {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -262,46 +268,57 @@ public class MKOverlayPathView extends MKOverlayView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -388,6 +405,10 @@ public class MKOverlayPathView extends MKOverlayView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("applyFillPropertiesToContext:atZoomScale:")
@@ -395,6 +416,9 @@ public class MKOverlayPathView extends MKOverlayView {
 
     /**
      * subclassers may override these
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -404,17 +428,28 @@ public class MKOverlayPathView extends MKOverlayView {
     /**
      * subclassers should override this to create a path and then set it on
      * themselves with self.path = newPath;
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
     @Selector("createPath")
     public native void createPath();
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("fillColor")
     public native UIColor fillColor();
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("fillPath:inContext:")
@@ -437,6 +472,10 @@ public class MKOverlayPathView extends MKOverlayView {
     @Selector("initWithOverlay:")
     public native MKOverlayPathView initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("invalidatePath")
@@ -444,6 +483,9 @@ public class MKOverlayPathView extends MKOverlayView {
 
     /**
      * defaults to kCGLineCapRound
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -452,6 +494,9 @@ public class MKOverlayPathView extends MKOverlayView {
 
     /**
      * an array of NSNumbers, defaults to nil
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -460,6 +505,9 @@ public class MKOverlayPathView extends MKOverlayView {
 
     /**
      * defaults to 0
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -469,6 +517,9 @@ public class MKOverlayPathView extends MKOverlayView {
 
     /**
      * defaults to kCGLineJoinRound
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -477,6 +528,9 @@ public class MKOverlayPathView extends MKOverlayView {
 
     /**
      * defaults to 0, which is MKRoadWidthAtZoomScale(currentZoomScale)
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -486,6 +540,9 @@ public class MKOverlayPathView extends MKOverlayView {
 
     /**
      * defaults to 10
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -495,12 +552,19 @@ public class MKOverlayPathView extends MKOverlayView {
 
     /**
      * path will be retained
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
     @Selector("path")
     public native CGPathRef path();
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("setFillColor:")
@@ -508,6 +572,9 @@ public class MKOverlayPathView extends MKOverlayView {
 
     /**
      * defaults to kCGLineCapRound
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -516,6 +583,9 @@ public class MKOverlayPathView extends MKOverlayView {
 
     /**
      * an array of NSNumbers, defaults to nil
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -524,6 +594,9 @@ public class MKOverlayPathView extends MKOverlayView {
 
     /**
      * defaults to 0
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -532,6 +605,9 @@ public class MKOverlayPathView extends MKOverlayView {
 
     /**
      * defaults to kCGLineJoinRound
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -540,6 +616,9 @@ public class MKOverlayPathView extends MKOverlayView {
 
     /**
      * defaults to 0, which is MKRoadWidthAtZoomScale(currentZoomScale)
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -548,6 +627,9 @@ public class MKOverlayPathView extends MKOverlayView {
 
     /**
      * defaults to 10
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -556,22 +638,37 @@ public class MKOverlayPathView extends MKOverlayView {
 
     /**
      * path will be retained
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
     @Selector("setPath:")
     public native void setPath(CGPathRef value);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("setStrokeColor:")
     public native void setStrokeColor(UIColor value);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("strokeColor")
     public native UIColor strokeColor();
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("strokePath:inContext:")

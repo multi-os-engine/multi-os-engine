@@ -17,7 +17,6 @@ limitations under the License.
 package apple.quartzcore;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -44,7 +43,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)

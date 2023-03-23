@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.1
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -69,6 +72,7 @@ public class UIVideoEditorController extends UINavigationController {
     @Selector("allocWithZone:")
     public static native UIVideoEditorController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -77,6 +81,9 @@ public class UIVideoEditorController extends UINavigationController {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * API-Since: 3.1
+     */
     @Generated
     @Selector("canEditVideoAtPath:")
     public static native boolean canEditVideoAtPath(String videoPath);

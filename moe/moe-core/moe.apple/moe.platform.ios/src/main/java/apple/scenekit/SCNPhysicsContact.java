@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNPhysicsContact
- * <p>
+ * 
  * SCNPhysicsContact contains information about a physics contact.
  */
 @Generated
@@ -199,6 +199,8 @@ public class SCNPhysicsContact extends NSObject {
 
     /**
      * Value between 0 and 1 giving the relative position of the physic shape when performing a convex sweep test.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("sweepTestFraction")

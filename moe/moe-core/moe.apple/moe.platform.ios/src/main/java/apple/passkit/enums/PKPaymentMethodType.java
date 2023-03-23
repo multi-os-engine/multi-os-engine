@@ -19,17 +19,38 @@ package apple.passkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 public final class PKPaymentMethodType {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long Debit = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long Credit = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long Prepaid = 0x0000000000000003L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long Store = 0x0000000000000004L;
 
     @Generated
     private PKPaymentMethodType() {
     }
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long EMoney = 0x0000000000000005L;
 }

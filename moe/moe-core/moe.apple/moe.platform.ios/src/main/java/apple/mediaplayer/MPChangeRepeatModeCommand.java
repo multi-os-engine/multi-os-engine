@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * update the system's current representation of your app's repeat mode, set
  * the currentRepeatType property on this command to the proper repeat type
  * value.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("MediaPlayer")

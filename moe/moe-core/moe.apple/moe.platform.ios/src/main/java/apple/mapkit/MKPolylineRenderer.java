@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -166,6 +169,9 @@ public class MKPolylineRenderer extends MKOverlayPathRenderer {
     @Selector("polyline")
     public native MKPolyline polyline();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setStrokeEnd:")
     public native void setStrokeEnd(@NFloat double value);
@@ -176,11 +182,16 @@ public class MKPolylineRenderer extends MKOverlayPathRenderer {
      * representing the start of the polyline and one the end. Values in
      * between zero and one are interpolated linearly along the polyline
      * length. strokeStart defaults to 0 and strokeEnd to 1
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setStrokeStart:")
     public native void setStrokeStart(@NFloat double value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("strokeEnd")
     @NFloat
@@ -192,6 +203,8 @@ public class MKPolylineRenderer extends MKOverlayPathRenderer {
      * representing the start of the polyline and one the end. Values in
      * between zero and one are interpolated linearly along the polyline
      * length. strokeStart defaults to 0 and strokeEnd to 1
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("strokeStart")

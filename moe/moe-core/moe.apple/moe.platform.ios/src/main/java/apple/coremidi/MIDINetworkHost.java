@@ -42,12 +42,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * __________________________________________________________________________________________________
  * MIDINetworkHost
- * <p>
+ * 
  * Represents a network address.
  * name: the user's tag for this object.
  * Representations are either:
  * - address (IP address or hostname) and UDP port
  * - netServiceName and netServiceDomain
+ * 
+ * API-Since: 4.2
  */
 @Generated
 @Library("CoreMIDI")

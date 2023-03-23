@@ -24,12 +24,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A node representing a MPSCNNNeuronReLU kernel
- * <p>
+ * 
  * For each pixel, applies the following function:
  * [@code]
  * f(x) = x if x >= 0
  * = a * x if x < 0
  * [@endcode]
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")

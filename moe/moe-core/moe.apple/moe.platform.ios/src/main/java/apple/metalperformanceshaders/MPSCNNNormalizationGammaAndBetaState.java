@@ -33,6 +33,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@description] A state which contains gamma and beta terms used to apply a scale
  * and bias in either an MPSCNNInstanceNormalization or MPSCNNBatchNormalization
  * operation.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -68,7 +70,7 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * A MTLBuffer containing the beta terms.
      */
     @Generated
@@ -104,7 +106,7 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
 
     /**
      * [@property] gamma
-     * <p>
+     * 
      * A MTLBuffer containing the gamma terms.
      */
     @Generated
@@ -139,8 +141,9 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
     /**
      * Initialize a MPSCNNNormalizationGammaAndBetaState object using values
      * contained in MTLBuffers.
-     *
+     * 
      * @param gamma The MTLBuffer containing gamma terms.
+     * 
      * @param beta  The MTLBuffer containing beta terms.
      */
     @Generated
@@ -213,9 +216,10 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
      * Create a temporary MPSCNNNormalizationGammaAndBetaState suitable
      * for a normalization operation on images containing no more than
      * the specified number of feature channels.
-     *
+     * 
      * @param commandBuffer           The command buffer on which the temporary state will
      *                                be used.
+     * 
      * @param numberOfFeatureChannels The number of feature channels used to size the
      *                                state.
      */

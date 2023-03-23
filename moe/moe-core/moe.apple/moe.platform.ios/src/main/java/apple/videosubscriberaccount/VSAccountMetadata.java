@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A collection of information about a subscriber's account.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("VideoSubscriberAccount")
@@ -174,6 +176,8 @@ public class VSAccountMetadata extends NSObject {
      * The response received from the account provider.
      * The value might be nil if your account metadata request did not specify any
      * attributes, or if the user does not have a valid authentication.
+     * 
+     * API-Since: 10.2
      */
     @Generated
     @Selector("accountProviderResponse")

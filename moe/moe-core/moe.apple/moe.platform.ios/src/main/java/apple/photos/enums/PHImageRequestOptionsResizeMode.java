@@ -19,20 +19,29 @@ package apple.photos.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class PHImageRequestOptionsResizeMode {
     /**
      * no resize
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long None = 0x0000000000000000L;
     /**
      * use targetSize as a hint for optimal decoding when the source image is a compressed format (i.e. subsampling),
      * the delivered image may be larger than targetSize
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Fast = 0x0000000000000001L;
     /**
      * same as above but also guarantees the delivered image is exactly targetSize (must be set when a
      * normalizedCropRect is specified)
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Exact = 0x0000000000000002L;
 

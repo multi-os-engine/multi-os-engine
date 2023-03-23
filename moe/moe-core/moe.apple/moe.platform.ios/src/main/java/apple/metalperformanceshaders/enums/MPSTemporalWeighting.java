@@ -5,6 +5,8 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * Controls how samples are weighted over time
+ * 
+ * API-Since: 13.0
  */
 @Generated
 public final class MPSTemporalWeighting {
@@ -15,6 +17,8 @@ public final class MPSTemporalWeighting {
     /**
      * Compute an average of all samples. This will fully utilize all samples but may lead
      * to excessive ghosting artifacts under motion. Therefore, this is best for static images.
+     * 
+     * API-Since: 13.0
      */
     @Generated @NUInt public static final long Average = 0x0000000000000000L;
     /**
@@ -23,6 +27,8 @@ public final class MPSTemporalWeighting {
      * property. This will cause older samples to lose their contribution over time, which will
      * prevent ghosting artifacts but will also never converge to a stable value. Therefore, this
      * is best for images with motion.
+     * 
+     * API-Since: 13.0
      */
     @Generated @NUInt public static final long ExponentialMovingAverage = 0x0000000000000001L;
 }

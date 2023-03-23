@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGRect;
 import apple.uikit.UIFocusEffect;
 import apple.uikit.UIFocusMovementHint;
 import org.moe.natj.general.ann.ByValue;
@@ -28,10 +27,13 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * Objects conforming to UIFocusItem are considered capable of participating in focus. Only UIFocusItems can ever be
  * focused.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("UIKit")
@@ -50,6 +52,8 @@ public interface UIFocusItem extends UIFocusEnvironment {
     /**
      * Called whenever this focus item is hinting to the user a focus movement might occur.
      * The provided object is mutated by the focus engine whenever the user's finger moves.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -61,6 +65,8 @@ public interface UIFocusItem extends UIFocusEnvironment {
     /**
      * The geometric frame of this item, represented in the `coordinateSpace` of the UIFocusItemContainer in which it is
      * contained.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("frame")
@@ -72,6 +78,8 @@ public interface UIFocusItem extends UIFocusEnvironment {
      * default effect for this item.
      * Returning nil indicates that the system should not apply any visual effects, and that the app will handle
      * applying the appropriate visuals.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional
@@ -86,6 +94,8 @@ public interface UIFocusItem extends UIFocusEnvironment {
      * Note: this method can only be used to increase an item's priority, not decrease it. For example if an item is
      * currently selected, the actual priority of this item will be determined by MAX(focusGroupPriority,
      * UIFocusGroupPrioritySelected).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional
@@ -99,6 +109,8 @@ public interface UIFocusItem extends UIFocusEnvironment {
      * If this returns YES, the focus item is considered transparent in terms of occlusion. Items that are behind it are
      * focusable.
      * This value is ignored when the item is focusable, in which case the item is never considered transparent.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional

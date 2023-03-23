@@ -44,6 +44,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ * Deprecated-Since: 7.0
+ * Deprecated-Message: Use MCSession from the MultipeerConnectivity framework instead
+ */
 @Deprecated
 @Generated
 @Library("GameKit")
@@ -170,7 +175,7 @@ public class GKSession extends NSObject {
     /**
      * Attempt connection to a remote peer. Remote peer gets a callback to
      * -session:didReceiveConnectionRequestFromPeer:.
-     * <p>
+     * 
      * Success results in a call to delegate -session:peer:didChangeState: GKPeerStateConnected
      * Failure results in a call to delegate -session:connectionWithPeerFailed:withError:
      */
@@ -178,6 +183,10 @@ public class GKSession extends NSObject {
     @Selector("connectToPeer:withTimeout:")
     public native void connectToPeerWithTimeout(String peerID, double timeout);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
     @Deprecated
     @Generated
     @Selector("delegate")
@@ -224,6 +233,10 @@ public class GKSession extends NSObject {
     @Selector("init")
     public native GKSession init();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("initWithSessionID:displayName:sessionMode:")
@@ -254,6 +267,9 @@ public class GKSession extends NSObject {
 
     /**
      * Returns peers according to connection state
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -263,6 +279,9 @@ public class GKSession extends NSObject {
     /**
      * Asynchronous delivery of data to one or more peers. Returns YES if delivery started, NO if unable to start
      * sending, and error will be set. Delivery will be reliable or unreliable as set by mode.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -272,6 +291,9 @@ public class GKSession extends NSObject {
 
     /**
      * errors: buffer full, data too big
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -283,6 +305,10 @@ public class GKSession extends NSObject {
     @Selector("sessionID")
     public native String sessionID();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("sessionMode")
@@ -296,11 +322,19 @@ public class GKSession extends NSObject {
     public native void setDataReceiveHandlerWithContext(@Mapped(ObjCObjectMapper.class) Object handler,
             VoidPtr context);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
     @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKSessionDelegate value);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
     @Deprecated
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) GKSessionDelegate value) {

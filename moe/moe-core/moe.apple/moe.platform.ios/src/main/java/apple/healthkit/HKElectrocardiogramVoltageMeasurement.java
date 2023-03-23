@@ -21,21 +21,25 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.protocol.NSCopying;
+import org.moe.natj.general.ann.MappedReturn;
 
 /**
  * HKElectrocardiogramVoltageMeasurement
- * <p>
+ * 
  * An HKElectrocardiogramVoltageMeasurement contains voltage quantities for all leads at a single instance of
  * measurement.
- * <p>
+ * 
  * Each HKElectrocardiogramVoltageMeasurement object corresponds to the voltage quantities across all leads for a given
  * instance in time.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class HKElectrocardiogramVoltageMeasurement extends NSObject {
+public class HKElectrocardiogramVoltageMeasurement extends NSObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -126,9 +130,9 @@ public class HKElectrocardiogramVoltageMeasurement extends NSObject {
 
     /**
      * quantityForLead:
-     * <p>
+     * 
      * Returns an HKQuantity for the specified lead with a unit compatible with [HKUnit voltageUnit].
-     *
+     * 
      * @param lead The HKElectrocardiogramLead for which voltage quantity will be returned.
      */
     @Generated
@@ -162,4 +166,10 @@ public class HKElectrocardiogramVoltageMeasurement extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
 }

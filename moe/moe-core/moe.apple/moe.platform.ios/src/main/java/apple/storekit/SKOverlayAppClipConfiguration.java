@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An overlay configuration that can be used to show an app clip's full app.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("StoreKit")
@@ -107,7 +109,7 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
 
     /**
      * Creates a new app overlay configuration that will show an app clip's full app.
-     *
+     * 
      * @param position the desired position of the overlay.
      */
     @Generated
@@ -203,6 +205,8 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
 
     /**
      * An optional identifier for a parent app's custom product page.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("customProductPageIdentifier")
@@ -210,6 +214,8 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
 
     /**
      * An optional extra parameter for specifying the version of your app that will be shown to the user.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("latestReleaseID")
@@ -217,6 +223,8 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
 
     /**
      * An optional identifier for a parent app's custom product page.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setCustomProductPageIdentifier:")
@@ -224,6 +232,8 @@ public class SKOverlayAppClipConfiguration extends SKOverlayConfiguration {
 
     /**
      * An optional extra parameter for specifying the version of your app that will be shown to the user.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setLatestReleaseID:")

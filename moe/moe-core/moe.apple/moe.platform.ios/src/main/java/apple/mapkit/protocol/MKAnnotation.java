@@ -42,6 +42,8 @@ public interface MKAnnotation {
 
     /**
      * Called as a result of dragging an annotation view.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @IsOptional

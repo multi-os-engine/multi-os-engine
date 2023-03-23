@@ -19,24 +19,95 @@ package apple.intents.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INCarSeat is deprecated. There is no replacement.
+ */
+@Deprecated
 @Generated
 public final class INCarSeat {
-    @Generated @NInt public static final long Unknown = 0x0000000000000000L;
-    @Generated @NInt public static final long Driver = 0x0000000000000001L;
-    @Generated @NInt public static final long Passenger = 0x0000000000000002L;
-    @Generated @NInt public static final long FrontLeft = 0x0000000000000003L;
-    @Generated @NInt public static final long FrontRight = 0x0000000000000004L;
-    @Generated @NInt public static final long Front = 0x0000000000000005L;
-    @Generated @NInt public static final long RearLeft = 0x0000000000000006L;
-    @Generated @NInt public static final long RearRight = 0x0000000000000007L;
-    @Generated @NInt public static final long Rear = 0x0000000000000008L;
-    @Generated @NInt public static final long ThirdRowLeft = 0x0000000000000009L;
-    @Generated @NInt public static final long ThirdRowRight = 0x000000000000000AL;
-    @Generated @NInt public static final long ThirdRow = 0x000000000000000BL;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarSeat is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarSeat is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long Driver = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarSeat is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long Passenger = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarSeat is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long FrontLeft = 0x0000000000000003L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarSeat is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long FrontRight = 0x0000000000000004L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarSeat is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long Front = 0x0000000000000005L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarSeat is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long RearLeft = 0x0000000000000006L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarSeat is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long RearRight = 0x0000000000000007L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarSeat is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long Rear = 0x0000000000000008L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarSeat is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long ThirdRowLeft = 0x0000000000000009L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarSeat is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long ThirdRowRight = 0x000000000000000AL;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarSeat is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long ThirdRow = 0x000000000000000BL;
 
     @Generated
     private INCarSeat() {
     }
 
-    @Generated @NInt public static final long All = 0x000000000000000CL;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarSeat is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long All = 0x000000000000000CL;
 }

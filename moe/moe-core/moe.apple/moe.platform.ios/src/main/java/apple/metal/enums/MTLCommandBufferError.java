@@ -21,63 +21,96 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLCommandBufferError
- * <p>
+ * 
  * Error codes that can be found in MTLCommandBuffer.error
- * <p>
+ * 
  * [@constant] MTLCommandBufferErrorInternal
  * An internal error that doesn't fit into the other categories. The actual low level error code is encoded in the local
  * description.
- * <p>
+ * 
  * [@constant] MTLCommandBufferErrorTimeout
  * Execution of this command buffer took too long, execution of this command was interrupted and aborted.
- * <p>
+ * 
  * [@constant] MTLCommandBufferErrorPageFault
  * Execution of this command buffer generated an unserviceable GPU page fault. This can caused by buffer read write
  * attribute mismatch or out of boundary access.
- * <p>
+ * 
  * [@constant] MTLCommandBufferErrorAccessRevoked
  * Access to this device has been revoked because this client has been responsible for too many timeouts or hangs.
- * <p>
+ * 
  * [@constant] MTLCommandBufferErrorNotPermitted
  * This process does not have access to use this device.
- * <p>
+ * 
  * [@constant] MTLCommandBufferErrorOutOfMemory
  * Insufficient memory was available to execute this command buffer.
- * <p>
+ * 
  * [@constant] MTLCommandBufferErrorInvalidResource
  * The command buffer referenced an invalid resource. This is most commonly caused when the caller deletes a resource
  * before executing a command buffer that refers to it.
- * <p>
+ * 
  * [@constant] MTLCommandBufferErrorMemoryless
  * One or more internal resources limits reached that prevent using memoryless render pass attachments. See error string
  * for more detail.
- * <p>
+ * 
  * [@constant] MTLCommandBufferErrorDeviceRemoved
  * The device was physically removed before the command could finish execution
- * <p>
+ * 
  * [@constant] MTLCommandBufferErrorStackOverflow
  * Execution of the command buffer was stopped due to Stack Overflow Exception. [MTLComputePipelineDescriptor
  * maxCallStackDepth] setting needs to be checked.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class MTLCommandBufferError {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Internal = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Timeout = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long PageFault = 0x0000000000000003L;
     /**
-     * Deprecated. Please use MTLCommandBufferErrorAccessRevoked.
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
      */
-    @Generated @NUInt public static final long Blacklisted = 0x0000000000000004L;
+    @Deprecated @Generated @NUInt public static final long Blacklisted = 0x0000000000000004L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long NotPermitted = 0x0000000000000007L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long OutOfMemory = 0x0000000000000008L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long InvalidResource = 0x0000000000000009L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Memoryless = 0x000000000000000AL;
 
     @Generated
     private MTLCommandBufferError() {
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long AccessRevoked = 0x0000000000000004L;
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NUInt public static final long StackOverflow = 0x000000000000000CL;
 }

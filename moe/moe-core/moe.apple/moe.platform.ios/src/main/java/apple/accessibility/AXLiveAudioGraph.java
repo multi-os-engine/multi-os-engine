@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("Accessibility")
 @Runtime(ObjCRuntime.class)

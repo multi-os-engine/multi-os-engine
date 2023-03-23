@@ -41,7 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CBMutableCharacteristic
- * <p>
+ * 
  * Used to create a local characteristic, which can be added to the local database via <code>CBPeripheralManager</code>.
  * Once a characteristic
  * is published, it is cached and can no longer be changed.
@@ -51,6 +51,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * published <code>CBService</code>, it is considered a dynamic value and will be requested on-demand. Dynamic values
  * are identified by a
  * <i>value</i> of <i>nil</i>.
+ * 
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -172,9 +175,9 @@ public class CBMutableCharacteristic extends CBCharacteristic {
 
     /**
      * initWithType:properties:value:permissions
-     * <p>
+     * 
      * Returns an initialized characteristic.
-     *
+     * 
      * @param UUID        The Bluetooth UUID of the characteristic.
      * @param properties  The properties of the characteristic.
      * @param value       The characteristic value to be cached. If <i>nil</i>, the value will be dynamic and requested
@@ -188,9 +191,9 @@ public class CBMutableCharacteristic extends CBCharacteristic {
 
     /**
      * [@property] permissions
-     * <p>
+     * 
      * The permissions of the characteristic value.
-     *
+     * 
      * @see CBAttributePermissions
      */
     @Generated
@@ -209,9 +212,9 @@ public class CBMutableCharacteristic extends CBCharacteristic {
 
     /**
      * [@property] permissions
-     * <p>
+     * 
      * The permissions of the characteristic value.
-     *
+     * 
      * @see CBAttributePermissions
      */
     @Generated
@@ -228,8 +231,10 @@ public class CBMutableCharacteristic extends CBCharacteristic {
 
     /**
      * [@property] subscribedCentrals
-     * <p>
+     * 
      * For notifying characteristics, the set of currently subscribed centrals.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("subscribedCentrals")

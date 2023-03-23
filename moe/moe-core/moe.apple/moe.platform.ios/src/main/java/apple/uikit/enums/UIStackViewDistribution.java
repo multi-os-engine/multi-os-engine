@@ -21,9 +21,11 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Distribution—the layout along the stacking axis.
- * <p>
+ * 
  * All UIStackViewDistribution enum values fit first and last arranged subviews tightly to the container,
  * and except for UIStackViewDistributionFillEqually, fit all items to intrinsicContentSize when possible.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class UIStackViewDistribution {
@@ -32,6 +34,8 @@ public final class UIStackViewDistribution {
      * adjustments occur according to compressionResistance or hugging
      * priorities of items, or when that is ambiguous, according to arrangement
      * order.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Fill = 0x0000000000000000L;
     /**
@@ -39,17 +43,23 @@ public final class UIStackViewDistribution {
      * When space allows, this will be the size of the item with the largest
      * intrinsicContentSize (along the axis of the stack).
      * Overflow or underflow adjustments are distributed equally among the items.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long FillEqually = 0x0000000000000001L;
     /**
      * Overflow or underflow adjustments are distributed among the items proportional
      * to their intrinsicContentSizes.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long FillProportionally = 0x0000000000000002L;
     /**
      * Additional underflow spacing is divided equally in the spaces between the items.
      * Overflow squeezing is controlled by compressionResistance priorities followed by
      * arrangement order.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long EqualSpacing = 0x0000000000000003L;
     /**
@@ -60,6 +70,8 @@ public final class UIStackViewDistribution {
      * squeezing is distributed first according to compressionResistance priorities
      * of items, then according to subview order while maintaining the configured
      * (edge-to-edge) spacing as a minimum.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long EqualCentering = 0x0000000000000004L;
 

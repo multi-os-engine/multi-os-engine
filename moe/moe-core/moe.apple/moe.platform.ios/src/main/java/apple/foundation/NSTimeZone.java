@@ -152,6 +152,9 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("setAbbreviationDictionary:")
     public static native void setAbbreviationDictionary(NSDictionary<String, String> value);
@@ -176,6 +179,9 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("systemTimeZone")
     public static native NSTimeZone systemTimeZone();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("timeZoneDataVersion")
     public static native String timeZoneDataVersion();
@@ -230,11 +236,16 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * for current instant
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("daylightSavingTimeOffset")
     public native double daylightSavingTimeOffset();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("daylightSavingTimeOffsetForDate:")
     public native double daylightSavingTimeOffsetForDate(NSDate aDate);
@@ -275,6 +286,9 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isEqualToTimeZone:")
     public native boolean isEqualToTimeZone(NSTimeZone aTimeZone);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("localizedName:locale:")
     public native String localizedNameLocale(@NInt long style, NSLocale locale);
@@ -285,11 +299,16 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * after current instant
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("nextDaylightSavingTimeTransition")
     public native NSDate nextDaylightSavingTimeTransition();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("nextDaylightSavingTimeTransitionAfterDate:")
     public native NSDate nextDaylightSavingTimeTransitionAfterDate(NSDate aDate);

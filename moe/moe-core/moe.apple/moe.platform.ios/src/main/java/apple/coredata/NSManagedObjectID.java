@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Managed object IDs are opaque identifiers for managed objects.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("CoreData")

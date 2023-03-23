@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -47,7 +46,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +156,7 @@ public class UISwitch extends UIControl implements NSCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -179,6 +183,7 @@ public class UISwitch extends UIControl implements NSCoding {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -254,46 +259,57 @@ public class UISwitch extends UIControl implements NSCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -407,18 +423,30 @@ public class UISwitch extends UIControl implements NSCoding {
     @Selector("setOn:")
     public native void setOn(boolean value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("offImage")
     public native UIImage offImage();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("onImage")
     public native UIImage onImage();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("onTintColor")
     public native UIColor onTintColor();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setOffImage:")
     public native void setOffImage(UIImage value);
@@ -430,18 +458,30 @@ public class UISwitch extends UIControl implements NSCoding {
     @Selector("setOn:animated:")
     public native void setOnAnimated(boolean on, boolean animated);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setOnImage:")
     public native void setOnImage(UIImage value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setOnTintColor:")
     public native void setOnTintColor(UIColor value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setThumbTintColor:")
     public native void setThumbTintColor(UIColor value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("thumbTintColor")
     public native UIColor thumbTintColor();
@@ -458,6 +498,8 @@ public class UISwitch extends UIControl implements NSCoding {
 
     /**
      * Request a style for the switch. If the style changed, then the switch may resize.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("preferredStyle")
@@ -466,6 +508,8 @@ public class UISwitch extends UIControl implements NSCoding {
 
     /**
      * Request a style for the switch. If the style changed, then the switch may resize.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPreferredStyle:")
@@ -474,6 +518,8 @@ public class UISwitch extends UIControl implements NSCoding {
     /**
      * The title displayed alongside the switch, positioned appropriately for the @c UIUserInterfaceIdiom.
      * [@note] This property is only supported for Catalyst in the Mac idiom.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setTitle:")
@@ -482,6 +528,8 @@ public class UISwitch extends UIControl implements NSCoding {
     /**
      * The switch's display style. This property always returns a concrete, resolved style (never
      * UISwitchStyleAutomatic).
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("style")
@@ -491,6 +539,8 @@ public class UISwitch extends UIControl implements NSCoding {
     /**
      * The title displayed alongside the switch, positioned appropriately for the @c UIUserInterfaceIdiom.
      * [@note] This property is only supported for Catalyst in the Mac idiom.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("title")

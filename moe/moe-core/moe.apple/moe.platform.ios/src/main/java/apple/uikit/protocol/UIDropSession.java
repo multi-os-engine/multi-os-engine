@@ -16,6 +16,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -55,7 +58,7 @@ public interface UIDropSession extends UIDragDropSession, NSProgressReporting {
     /**
      * The kind of progress and cancellation UI that UIKit will display
      * if handling this session's drop takes a significant amount of time.
-     * <p>
+     * 
      * The default value is UIDropSessionProgressIndicatorStyleDefault,
      * meaning that some progress UI will be shown. If you show your own
      * progress indicator, hide the system progress UI by setting this
@@ -69,7 +72,7 @@ public interface UIDropSession extends UIDragDropSession, NSProgressReporting {
     /**
      * The kind of progress and cancellation UI that UIKit will display
      * if handling this session's drop takes a significant amount of time.
-     * <p>
+     * 
      * The default value is UIDropSessionProgressIndicatorStyleDefault,
      * meaning that some progress UI will be shown. If you show your own
      * progress indicator, hide the system progress UI by setting this

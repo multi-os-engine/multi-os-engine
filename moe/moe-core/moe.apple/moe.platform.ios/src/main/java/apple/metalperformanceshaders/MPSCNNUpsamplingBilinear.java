@@ -28,8 +28,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNUpsamplingBilinear
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * Specifies the bilinear spatial upsampling filter.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -113,7 +115,7 @@ public class MPSCNNUpsamplingBilinear extends MPSCNNUpsampling {
 
     /**
      * Initialize the bilinear spatial upsampling filter.
-     *
+     * 
      * @param device              The device the filter will run on.
      * @param integerScaleFactorX The upsampling factor for the x dimension.
      * @param integerScaleFactorY The upsampling factor for the y dimension.
@@ -184,7 +186,7 @@ public class MPSCNNUpsamplingBilinear extends MPSCNNUpsampling {
 
     /**
      * Initialize the bilinear spatial upsampling filter.
-     *
+     * 
      * @param device              The device the filter will run on.
      * @param integerScaleFactorX The upsampling factor for the x dimension.
      * @param integerScaleFactorY The upsampling factor for the y dimension.

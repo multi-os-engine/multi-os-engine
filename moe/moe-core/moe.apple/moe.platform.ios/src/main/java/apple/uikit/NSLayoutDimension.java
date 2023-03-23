@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This layout anchor subclass is used for sizes (width & height).
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("UIKit")

@@ -48,14 +48,20 @@ public final class UITouchPhase {
 
     /**
      * whenever a touch is entering the region of a user interface
+     * 
+     * API-Since: 13.4
      */
     @Generated @NInt public static final long RegionEntered = 0x0000000000000005L;
     /**
      * when a touch is inside the region of a user interface, but hasn’t yet made contact or left the region
+     * 
+     * API-Since: 13.4
      */
     @Generated @NInt public static final long RegionMoved = 0x0000000000000006L;
     /**
      * when a touch is exiting the region of a user interface
+     * 
+     * API-Since: 13.4
      */
     @Generated @NInt public static final long RegionExited = 0x0000000000000007L;
 }

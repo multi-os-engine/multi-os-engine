@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * An instance of this class is a reference to an NSXPCListener that may be encoded and sent over a connection. The
  * receiver may use the object to create a new connection to the listener that supplied the NSXPCListenerEndpoint
  * object.
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("Foundation")

@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSAttributedString;
 import apple.foundation.NSCoder;
@@ -52,7 +50,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -159,6 +162,7 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -189,6 +193,7 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -264,46 +269,57 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -351,14 +367,26 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * default is YES. if YES, image is drawn lighter when disabled
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: This property is ignored when using UIButtonConfiguration, you may customize to replicate
+     * this behavior via a configurationUpdateHandler
      */
+    @Deprecated
     @Generated
     @Selector("adjustsImageWhenDisabled")
     public native boolean adjustsImageWhenDisabled();
 
     /**
      * default is YES. if YES, image is drawn darker when highlighted(pressed)
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: This property is ignored when using UIButtonConfiguration, you may customize to replicate
+     * this behavior via a configurationUpdateHandler
      */
+    @Deprecated
     @Generated
     @Selector("adjustsImageWhenHighlighted")
     public native boolean adjustsImageWhenHighlighted();
@@ -404,6 +432,9 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("attributedTitleForState:")
     public native NSAttributedString attributedTitleForState(@NUInt long state);
@@ -416,7 +447,12 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
      * These methods will not be called when using a configuration.
      * To change the layout of button content, override -layoutSubviews, call super, and then position views as you see
      * fit.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Override layoutSubviews, call super, and position views as you desire.
      */
+    @Deprecated
     @Generated
     @Selector("backgroundRectForBounds:")
     @ByValue
@@ -429,12 +465,23 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * default is UIEdgeInsetsZero. On tvOS 10 or later, default is nonzero except for custom buttons.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: This property is ignored when using UIButtonConfiguration
      */
+    @Deprecated
     @Generated
     @Selector("contentEdgeInsets")
     @ByValue
     public native UIEdgeInsets contentEdgeInsets();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Override layoutSubviews, call super, and position views as you desire.
+     */
+    @Deprecated
     @Generated
     @Selector("contentRectForBounds:")
     @ByValue
@@ -442,6 +489,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * normal/highlighted/selected/disabled. can return nil
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("currentAttributedTitle")
@@ -486,6 +535,11 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
+     * Deprecated-Message: Specify an attributed title with a custom font
+     */
     @Generated
     @Deprecated
     @Selector("font")
@@ -493,7 +547,12 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * default is UIEdgeInsetsZero
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: This property is ignored when using UIButtonConfiguration
      */
+    @Deprecated
     @Generated
     @Selector("imageEdgeInsets")
     @ByValue
@@ -503,11 +562,20 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     @Selector("imageForState:")
     public native UIImage imageForState(@NUInt long state);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Override layoutSubviews, call super, and position views as you desire.
+     */
+    @Deprecated
     @Generated
     @Selector("imageRectForContentRect:")
     @ByValue
     public native CGRect imageRectForContentRect(@ByValue CGRect contentRect);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("imageView")
     public native UIImageView imageView();
@@ -524,6 +592,11 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     @Selector("initWithFrame:")
     public native UIButton initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
+     * Deprecated-Message: Specify an attributed title with a customized paragraph style
+     */
     @Generated
     @Deprecated
     @Selector("lineBreakMode")
@@ -532,27 +605,47 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * default is NO. if YES, shadow reverses to shift between engrave and emboss appearance
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: This property is ignored when using UIButtonConfiguration, you may customize to replicate
+     * this behavior via a configurationUpdateHandler
      */
+    @Deprecated
     @Generated
     @Selector("reversesTitleShadowWhenHighlighted")
     public native boolean reversesTitleShadowWhenHighlighted();
 
     /**
      * default is YES. if YES, image is drawn lighter when disabled
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: This property is ignored when using UIButtonConfiguration, you may customize to replicate
+     * this behavior via a configurationUpdateHandler
      */
+    @Deprecated
     @Generated
     @Selector("setAdjustsImageWhenDisabled:")
     public native void setAdjustsImageWhenDisabled(boolean value);
 
     /**
      * default is YES. if YES, image is drawn darker when highlighted(pressed)
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: This property is ignored when using UIButtonConfiguration, you may customize to replicate
+     * this behavior via a configurationUpdateHandler
      */
+    @Deprecated
     @Generated
     @Selector("setAdjustsImageWhenHighlighted:")
     public native void setAdjustsImageWhenHighlighted(boolean value);
 
     /**
      * default is nil. title is assumed to be single line
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setAttributedTitle:forState:")
@@ -567,11 +660,21 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * default is UIEdgeInsetsZero. On tvOS 10 or later, default is nonzero except for custom buttons.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: This property is ignored when using UIButtonConfiguration
      */
+    @Deprecated
     @Generated
     @Selector("setContentEdgeInsets:")
     public native void setContentEdgeInsets(@ByValue UIEdgeInsets value);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
+     * Deprecated-Message: Specify an attributed title with a custom font
+     */
     @Generated
     @Deprecated
     @Selector("setFont:")
@@ -586,11 +689,21 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * default is UIEdgeInsetsZero
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: This property is ignored when using UIButtonConfiguration
      */
+    @Deprecated
     @Generated
     @Selector("setImageEdgeInsets:")
     public native void setImageEdgeInsets(@ByValue UIEdgeInsets value);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
+     * Deprecated-Message: Specify an attributed title with a customized paragraph style
+     */
     @Generated
     @Deprecated
     @Selector("setLineBreakMode:")
@@ -598,20 +711,33 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * default is NO. if YES, shadow reverses to shift between engrave and emboss appearance
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: This property is ignored when using UIButtonConfiguration, you may customize to replicate
+     * this behavior via a configurationUpdateHandler
      */
+    @Deprecated
     @Generated
     @Selector("setReversesTitleShadowWhenHighlighted:")
     public native void setReversesTitleShadowWhenHighlighted(boolean value);
 
     /**
      * These properties are ignored when a configuration is set and have no replacement.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: This property is ignored when using UIButtonConfiguration
      */
+    @Deprecated
     @Generated
     @Selector("setShowsTouchWhenHighlighted:")
     public native void setShowsTouchWhenHighlighted(boolean value);
 
     /**
      * The tintColor is inherited through the superview hierarchy. See UIView for more information.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setTintColor:")
@@ -633,7 +759,12 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * default is UIEdgeInsetsZero
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: This property is ignored when using UIButtonConfiguration
      */
+    @Deprecated
     @Generated
     @Selector("setTitleEdgeInsets:")
     public native void setTitleEdgeInsets(@ByValue UIEdgeInsets value);
@@ -645,6 +776,11 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     @Selector("setTitleShadowColor:forState:")
     public native void setTitleShadowColorForState(UIColor color, @NUInt long state);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
+     * Deprecated-Message: Specify an attributed title with a customized shadow style
+     */
     @Generated
     @Deprecated
     @Selector("setTitleShadowOffset:")
@@ -652,13 +788,20 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * These properties are ignored when a configuration is set and have no replacement.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: This property is ignored when using UIButtonConfiguration
      */
+    @Deprecated
     @Generated
     @Selector("showsTouchWhenHighlighted")
     public native boolean showsTouchWhenHighlighted();
 
     /**
      * The tintColor is inherited through the superview hierarchy. See UIView for more information.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("tintColor")
@@ -670,7 +813,12 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * default is UIEdgeInsetsZero
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: This property is ignored when using UIButtonConfiguration
      */
+    @Deprecated
     @Generated
     @Selector("titleEdgeInsets")
     @ByValue
@@ -685,11 +833,19 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * return title and image views. will always create them if necessary. always returns nil for system buttons
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("titleLabel")
     public native UILabel titleLabel();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Override layoutSubviews, call super, and position views as you desire.
+     */
+    @Deprecated
     @Generated
     @Selector("titleRectForContentRect:")
     @ByValue
@@ -699,6 +855,11 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     @Selector("titleShadowColorForState:")
     public native UIColor titleShadowColorForState(@NUInt long state);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
+     * Deprecated-Message: Specify an attributed title with a customized shadow style
+     */
     @Generated
     @Deprecated
     @Selector("titleShadowOffset")
@@ -723,6 +884,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * normal/highlighted/selected/disabled. can return nil
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("currentPreferredSymbolConfiguration")
@@ -734,15 +897,24 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("preferredSymbolConfigurationForImageInState:")
     public native UIImageSymbolConfiguration preferredSymbolConfigurationForImageInState(@NUInt long state);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setPreferredSymbolConfiguration:forImageInState:")
     public native void setPreferredSymbolConfigurationForImageInState(UIImageSymbolConfiguration configuration,
             @NUInt long state);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("systemButtonWithImage:target:action:")
     public static native UIButton systemButtonWithImageTargetAction(UIImage image,
@@ -750,6 +922,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * Enables this button's built-in pointer interaction.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("isPointerInteractionEnabled")
@@ -761,6 +935,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
      * a customized version of the system provided style or return an entirely custom one.
      * Setting this property automatically enables the button's pointer interaction and sets @c
      * pointerInteractionEnabled to true.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("pointerStyleProvider")
@@ -777,6 +953,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * Enables this button's built-in pointer interaction.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setPointerInteractionEnabled:")
@@ -788,6 +966,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
      * a customized version of the system provided style or return an entirely custom one.
      * Setting this property automatically enables the button's pointer interaction and sets @c
      * pointerInteractionEnabled to true.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setPointerStyleProvider:")
@@ -805,6 +985,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     /**
      * Creates a button of the given type, registers primaryAction for the UIControlEventPrimaryActionTriggered control
      * event, and if appropriate uses primaryAction's title & image as the button's title & image.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("buttonWithType:primaryAction:")
@@ -813,6 +995,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     /**
      * Initializes a custom button, registers primaryAction for the UIControlEventPrimaryActionTriggered control event,
      * and uses primaryAction's title & image as the button's title & image.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithFrame:primaryAction:")
@@ -821,6 +1005,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     /**
      * An optional menu for the button to display. The button will automatically enable or disable its
      * contextMenuInteraction when a non-nil or nil menu is set. Defaults to nil.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("menu")
@@ -828,6 +1014,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * default is UIButtonRoleNormal.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("role")
@@ -837,6 +1025,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     /**
      * An optional menu for the button to display. The button will automatically enable or disable its
      * contextMenuInteraction when a non-nil or nil menu is set. Defaults to nil.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMenu:")
@@ -844,6 +1034,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * default is UIButtonRoleNormal.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setRole:")
@@ -852,6 +1044,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     /**
      * Creates a system button, registers primaryAction for the UIControlEventPrimaryActionTriggered control event, and
      * uses primaryAction's title & image as the button's title & image.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("systemButtonWithPrimaryAction:")
@@ -860,6 +1054,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     /**
      * When YES, the button will automatically call -updatedConfigurationForButton: on its `configuration ` when the
      * button's state changes, and apply the updated configuration to the button. The default value is YES.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("automaticallyUpdatesConfiguration")
@@ -868,6 +1064,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     /**
      * The button's behavioral style. This property always returns a concrete, resolved style (never
      * UIBehavioralStyleAutomatic).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("behavioralStyle")
@@ -878,6 +1076,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
      * Construct a new UIButton. `configuration` will be installed on the created button, and `primaryAction` added to
      * handle the .primaryActionTriggered control event. If `primaryAction` has a title or image, they will be copied to
      * `configuration`
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("buttonWithConfiguration:primaryAction:")
@@ -889,6 +1089,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
      * This shows the menu as options for selection if a menu is populated and showsMenuAsPrimaryAction is enabled.
      * If no menu is provided or it is not the primary action, UIControlStateSelected is toggled on and off for the
      * primary action.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("changesSelectionAsPrimaryAction")
@@ -897,6 +1099,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     /**
      * Setting a non-nil value for `configuration` will opt into configuration-based behavior on UIButton, update the
      * button in a platform specific manner, and enable/disable some API.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("configuration")
@@ -906,6 +1110,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
      * Block-based equivalent to overriding -updateConfiguration in a subclass. Setting this handler will force the
      * button into configuration-based behavior (see the `configuration` property). This block is called after
      * `-updateConfiguration`
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("configurationUpdateHandler")
@@ -921,6 +1127,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * Returns true while the button is presenting a menu.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isHeld")
@@ -928,6 +1136,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * If pointer effects are enabled for the button, this will return true when an effect is active.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isHovered")
@@ -935,6 +1145,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * Request a style for the button. If the style changed, the button will redraw and its metrics may change.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("preferredBehavioralStyle")
@@ -944,6 +1156,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     /**
      * When YES, the button will automatically call -updatedConfigurationForButton: on its `configuration ` when the
      * button's state changes, and apply the updated configuration to the button. The default value is YES.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAutomaticallyUpdatesConfiguration:")
@@ -954,6 +1168,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
      * This shows the menu as options for selection if a menu is populated and showsMenuAsPrimaryAction is enabled.
      * If no menu is provided or it is not the primary action, UIControlStateSelected is toggled on and off for the
      * primary action.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setChangesSelectionAsPrimaryAction:")
@@ -962,6 +1178,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     /**
      * Setting a non-nil value for `configuration` will opt into configuration-based behavior on UIButton, update the
      * button in a platform specific manner, and enable/disable some API.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setConfiguration:")
@@ -971,6 +1189,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
      * Block-based equivalent to overriding -updateConfiguration in a subclass. Setting this handler will force the
      * button into configuration-based behavior (see the `configuration` property). This block is called after
      * `-updateConfiguration`
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setConfigurationUpdateHandler:")
@@ -988,6 +1208,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
      * Requests the view update its configuration for its current state. This method is called automatically when the
      * button's state may have changed, as well as in other circumstances where an update may be required. Multiple
      * requests may be coalesced into a single update at the appropriate time.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setNeedsUpdateConfiguration")
@@ -995,6 +1217,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * Request a style for the button. If the style changed, the button will redraw and its metrics may change.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPreferredBehavioralStyle:")
@@ -1002,6 +1226,8 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
 
     /**
      * The label used to display the subtitle, when present.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("subtitleLabel")
@@ -1010,8 +1236,29 @@ public class UIButton extends UIControl implements NSCoding, UISpringLoadedInter
     /**
      * Subclasses should override this method and update the button's `configuration`. This method should not be called
      * directly, use `setNeedsUpdateConfiguration` to request an update.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("updateConfiguration")
     public native void updateConfiguration();
+
+    /**
+     * Preferred menu element ordering strategy for menus displayed by this button.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("preferredMenuElementOrder")
+    @NInt
+    public native long preferredMenuElementOrder();
+
+    /**
+     * Preferred menu element ordering strategy for menus displayed by this button.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setPreferredMenuElementOrder:")
+    public native void setPreferredMenuElementOrder(@NInt long value);
 }

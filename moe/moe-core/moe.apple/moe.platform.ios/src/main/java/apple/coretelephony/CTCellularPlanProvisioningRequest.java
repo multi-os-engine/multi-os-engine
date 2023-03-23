@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("CoreTelephony")
 @Runtime(ObjCRuntime.class)
@@ -39,14 +42,23 @@ public class CTCellularPlanProvisioningRequest extends NSObject implements NSSec
         super(peer);
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("EID")
     public native String EID();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("ICCID")
     public native String ICCID();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("OID")
     public native String OID();
@@ -55,6 +67,9 @@ public class CTCellularPlanProvisioningRequest extends NSObject implements NSSec
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("address")
     public native String address();
@@ -91,6 +106,9 @@ public class CTCellularPlanProvisioningRequest extends NSObject implements NSSec
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("confirmationCode")
     public native String confirmationCode();
@@ -141,6 +159,9 @@ public class CTCellularPlanProvisioningRequest extends NSObject implements NSSec
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("matchingID")
     public native String matchingID();
@@ -158,26 +179,44 @@ public class CTCellularPlanProvisioningRequest extends NSObject implements NSSec
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setAddress:")
     public native void setAddress(String value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setConfirmationCode:")
     public native void setConfirmationCode(String value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setEID:")
     public native void setEID(String value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setICCID:")
     public native void setICCID(String value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setMatchingID:")
     public native void setMatchingID(String value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setOID:")
     public native void setOID(String value);

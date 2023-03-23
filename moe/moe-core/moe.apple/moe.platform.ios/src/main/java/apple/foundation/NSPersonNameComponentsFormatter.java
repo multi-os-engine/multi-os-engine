@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -197,6 +200,8 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     /**
      * Convenience method on getObjectValue:forString:error:. Returns an NSPersonNameComponents object representing the
      * name components found in the provided string.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("personNameComponentsFromString:")
@@ -230,6 +235,8 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     /**
      * Specifies the locale to format names. Defaults to autoupdatingCurrentLocale. Also resets to
      * autoupdatingCurrentLocale on assignment of nil.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("locale")
@@ -238,6 +245,8 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     /**
      * Specifies the locale to format names. Defaults to autoupdatingCurrentLocale. Also resets to
      * autoupdatingCurrentLocale on assignment of nil.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setLocale:")

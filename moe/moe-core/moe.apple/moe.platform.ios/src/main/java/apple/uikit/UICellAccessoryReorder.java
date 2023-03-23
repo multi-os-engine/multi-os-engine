@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A reorder control (three horizontal lines) with default gray color that automatically initiates interactive
  * reordering on the collection view when dragged (if supported).
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")

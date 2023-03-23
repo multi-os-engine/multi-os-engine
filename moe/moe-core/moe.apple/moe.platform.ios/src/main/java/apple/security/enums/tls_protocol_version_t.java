@@ -4,9 +4,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] tls_protocol_version_t enumeration
- * <p>
+ * 
  * Enumerations for the set of supported TLS and DTLS protocol versions.
- * <p>
+ * 
  * [@constant] tls_protocol_version_TLSv10 TLS 1.0 [https://tools.ietf.org/html/rfc4346]
  * [@constant] tls_protocol_version_TLSv11 TLS 1.1 [https://tools.ietf.org/html/rfc2246]
  * [@constant] tls_protocol_version_TLSv12 TLS 1.2 [https://tools.ietf.org/html/rfc5246]
@@ -20,10 +20,25 @@ public final class tls_protocol_version_t {
     private tls_protocol_version_t() {
     }
 
-    @Generated public static final char TLSv10 = 0x0301;
-    @Generated public static final char TLSv11 = 0x0302;
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use tls_protocol_version_TLSv12 or tls_protocol_version_TLSv13 instead.
+     */
+    @Deprecated @Generated public static final char TLSv10 = 0x0301;
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use tls_protocol_version_TLSv12 or tls_protocol_version_TLSv13 instead.
+     */
+    @Deprecated @Generated public static final char TLSv11 = 0x0302;
     @Generated public static final char TLSv12 = 0x0303;
     @Generated public static final char TLSv13 = 0x0304;
-    @Generated public static final char DTLSv10 = 0xFEFF;
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use tls_protocol_version_DTLSv12 instead.
+     */
+    @Deprecated @Generated public static final char DTLSv10 = 0xFEFF;
     @Generated public static final char DTLSv12 = 0xFEFD;
 }

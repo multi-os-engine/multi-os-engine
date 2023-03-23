@@ -45,11 +45,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEFilterControlVerdict
- * <p>
+ * 
  * The NEFilterControlVerdict declares the programmatic interface of an object that is the verdict for a
  * new flow of network data by the control provider.
- * <p>
+ * 
  * NEFilterControlVerdict is part of NetworkExtension.framework
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -89,13 +91,15 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
 
     /**
      * allowVerdictWithUpdateRules:
-     * <p>
+     * 
      * This class method returns a verdict indicating that the flow should be allowed to go through, and also
      * tell the data provider whether to update its rules or not.
-     *
+     * 
      * @param updateRules YES if the control provider has updated the rules and wants to communicate that to the data
      *                    provider
      * @return The NEFilterControlVerdict object.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("allowVerdictWithUpdateRules:")
@@ -137,13 +141,15 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
 
     /**
      * dropVerdictWithUpdateRules:
-     * <p>
+     * 
      * This class method returns a verdict indicating that the flow should be dropped, and also tell the data
      * provider whether to update its rules or not.
-     *
+     * 
      * @param updateRules YES if the control provider has updated the rules and wants to communicate that to the data
      *                    provider
      * @return The NEFilterControlVerdict object.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("dropVerdictWithUpdateRules:")
@@ -216,11 +222,13 @@ public class NEFilterControlVerdict extends NEFilterNewFlowVerdict implements NS
 
     /**
      * updateRules
-     * <p>
+     * 
      * This class method returns a verdict indicating that the flow should be handled by the data provider,
      * and the rules needed by the data provider have been set.
-     *
+     * 
      * @return The NEFilterControlVerdict object.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("updateRules")

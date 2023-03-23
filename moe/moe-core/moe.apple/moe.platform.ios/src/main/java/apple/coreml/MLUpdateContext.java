@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Provides context for the update process when the progress or completion handlers are invoked.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreML")

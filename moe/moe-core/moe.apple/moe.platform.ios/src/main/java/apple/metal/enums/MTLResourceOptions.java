@@ -19,27 +19,60 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class MTLResourceOptions {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long CPUCacheModeDefaultCache = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long CPUCacheModeWriteCombined = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long StorageModeShared = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long StorageModePrivate = 0x0000000000000020L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long StorageModeMemoryless = 0x0000000000000030L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long HazardTrackingModeUntracked = 0x0000000000000100L;
     /**
      * Deprecated spellings
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
      */
-    @Generated @NUInt public static final long OptionCPUCacheModeDefault = 0x0000000000000000L;
+    @Deprecated @Generated @NUInt public static final long OptionCPUCacheModeDefault = 0x0000000000000000L;
     /**
      * Deprecated spellings
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
      */
-    @Generated @NUInt public static final long OptionCPUCacheModeWriteCombined = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long OptionCPUCacheModeWriteCombined = 0x0000000000000001L;
 
     @Generated
     private MTLResourceOptions() {
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long HazardTrackingModeDefault = 0x0000000000000000L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NUInt public static final long HazardTrackingModeTracked = 0x0000000000000200L;
 }

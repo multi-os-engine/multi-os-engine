@@ -40,12 +40,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CBMutableService
- * <p>
+ * 
  * Used to create a local service or included service, which can be added to the local database via
  * <code>CBPeripheralManager</code>.
  * Once a service is published, it is cached and can no longer be changed. This class adds write access to all
  * properties in the
  * [@link] CBService @/link class.
+ * 
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -171,9 +174,9 @@ public class CBMutableService extends CBService {
 
     /**
      * initWithType:primary:
-     * <p>
+     * 
      * Returns a service, initialized with a service type and UUID.
-     *
+     * 
      * @param UUID      The Bluetooth UUID of the service.
      * @param isPrimary The type of the service (primary or secondary).
      */

@@ -39,6 +39,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * An NSURLSessionDataTask does not provide any additional
  * functionality over an NSURLSessionTask and its presence is merely
  * to provide lexical differentiation from download and upload tasks.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("Foundation")
@@ -124,6 +126,13 @@ public class NSURLSessionDataTask extends NSURLSessionTask {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use -[NSURLSession dataTaskWithRequest:] or other NSURLSession methods to create
+     * instances
+     */
+    @Deprecated
     @Generated
     @Owned
     @Selector("new")
@@ -150,6 +159,13 @@ public class NSURLSessionDataTask extends NSURLSessionTask {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use -[NSURLSession dataTaskWithRequest:] or other NSURLSession methods to create
+     * instances
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSURLSessionDataTask init();

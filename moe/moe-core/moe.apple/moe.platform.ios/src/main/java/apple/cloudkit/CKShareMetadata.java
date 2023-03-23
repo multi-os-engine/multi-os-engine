@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -193,6 +196,11 @@ public class CKShareMetadata extends NSObject implements NSCopying, NSSecureCodi
     @NInt
     public native long participantStatus();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("participantType")
     @NInt
@@ -206,6 +214,11 @@ public class CKShareMetadata extends NSObject implements NSCopying, NSSecureCodi
     @Selector("rootRecord")
     public native CKRecord rootRecord();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated
     @Generated
     @Selector("rootRecordID")
     public native CKRecordID rootRecordID();
@@ -222,12 +235,17 @@ public class CKShareMetadata extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * These properties reflect the participant properties of the user invoking CKFetchShareMetadataOperation
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("participantRole")
     @NInt
     public native long participantRole();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("hierarchicalRootRecordID")
     public native CKRecordID hierarchicalRootRecordID();

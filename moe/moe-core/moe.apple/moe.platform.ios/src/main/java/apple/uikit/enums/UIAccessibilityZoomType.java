@@ -22,11 +22,15 @@ import org.moe.natj.general.ann.NInt;
 /**
  * Use to inform system Zoom that focus has changed to a new location.
  * The frame should be in the coordinate space of the view.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 public final class UIAccessibilityZoomType {
     /**
      * Used when the text insertion point has moved
+     * 
+     * API-Since: 5.0
      */
     @Generated @NInt public static final long UIAccessibilityZoomTypeInsertionPoint = 0x0000000000000000L;
 

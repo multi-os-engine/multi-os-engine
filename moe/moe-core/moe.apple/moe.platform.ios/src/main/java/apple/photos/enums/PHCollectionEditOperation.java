@@ -19,34 +19,51 @@ package apple.photos.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class PHCollectionEditOperation {
     /**
      * Delete things it contains
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long DeleteContent = 0x0000000000000001L;
     /**
      * Remove things it contains, they're not deleted from the library
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long RemoveContent = 0x0000000000000002L;
     /**
      * Add things from other collection
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long AddContent = 0x0000000000000003L;
     /**
      * Create new things, or duplicate them from others in the same container
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long CreateContent = 0x0000000000000004L;
     /**
      * Change the order of things
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long RearrangeContent = 0x0000000000000005L;
     /**
      * Deleting of the container, not the content
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Delete = 0x0000000000000006L;
     /**
      * Renaming of the container, not the content
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Rename = 0x0000000000000007L;
 

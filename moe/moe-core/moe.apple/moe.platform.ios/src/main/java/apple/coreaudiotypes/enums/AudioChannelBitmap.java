@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] AudioChannelBitmap
- * <p>
+ * 
  * These constants are for use in the mChannelBitmap field of an
  * AudioChannelLayout structure.
  */

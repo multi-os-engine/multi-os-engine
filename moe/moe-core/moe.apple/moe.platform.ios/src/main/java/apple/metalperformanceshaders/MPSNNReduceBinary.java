@@ -29,10 +29,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNNReduceBinary
- * <p>
+ * 
  * The MPSNNReduce performs a reduction operation
  * The reduction operations supported are:
  * - Reduce feature channels mean
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -142,12 +144,12 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
 
     /**
      * The source rectangle to use when reading data from primary source
-     * <p>
+     * 
      * A MTLRegion that indicates which part of the primary source to read. If the clipRectPrimarySource does not lie
      * completely within the primary source image, the intersection of the image bounds and clipRectPrimarySource will
      * be used. The primarySourceClipRect replaces the MPSBinaryImageKernel primaryOffset parameter for this filter.
      * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
-     * <p>
+     * 
      * The clipRect specified in MPSBinaryImageKernel is used to control the origin in the destination texture
      * where the min, max values are written. The clipRect.width must be >=2. The clipRect.height must be >= 1.
      */
@@ -166,14 +168,14 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
 
     /**
      * The source rectangle to use when reading data from secondary source
-     * <p>
+     * 
      * A MTLRegion that indicates which part of the secondary source to read. If the clipRectSecondarySource does not
      * lie
      * completely within the secondary source image, the intersection of the image bounds and clipRectSecondarySource
      * will
      * be used. The secondarySourceClipRect replaces the MPSBinaryImageKernel secondaryOffset parameter for this filter.
      * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
-     * <p>
+     * 
      * The clipRect specified in MPSBinaryImageKernel is used to control the origin in the destination texture
      * where the min, max values are written. The clipRect.width must be >=2. The clipRect.height must be >= 1.
      */
@@ -184,12 +186,12 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
 
     /**
      * The source rectangle to use when reading data from primary source
-     * <p>
+     * 
      * A MTLRegion that indicates which part of the primary source to read. If the clipRectPrimarySource does not lie
      * completely within the primary source image, the intersection of the image bounds and clipRectPrimarySource will
      * be used. The primarySourceClipRect replaces the MPSBinaryImageKernel primaryOffset parameter for this filter.
      * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
-     * <p>
+     * 
      * The clipRect specified in MPSBinaryImageKernel is used to control the origin in the destination texture
      * where the min, max values are written. The clipRect.width must be >=2. The clipRect.height must be >= 1.
      */
@@ -199,14 +201,14 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
 
     /**
      * The source rectangle to use when reading data from secondary source
-     * <p>
+     * 
      * A MTLRegion that indicates which part of the secondary source to read. If the clipRectSecondarySource does not
      * lie
      * completely within the secondary source image, the intersection of the image bounds and clipRectSecondarySource
      * will
      * be used. The secondarySourceClipRect replaces the MPSBinaryImageKernel secondaryOffset parameter for this filter.
      * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
-     * <p>
+     * 
      * The clipRect specified in MPSBinaryImageKernel is used to control the origin in the destination texture
      * where the min, max values are written. The clipRect.width must be >=2. The clipRect.height must be >= 1.
      */
@@ -240,7 +242,11 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
     /**
      * Since the clipRectSource replaces the MPSCNNKernel offset parameter for this filter,
      * this property is deprecated..
+     * 
+     * API-Since: 11.3
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("primaryOffset")
     @ByValue
@@ -249,7 +255,11 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
     /**
      * Since the clipRectSource replaces the MPSCNNKernel offset parameter for this filter,
      * this property is deprecated..
+     * 
+     * API-Since: 11.3
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("secondaryOffset")
     @ByValue
@@ -258,7 +268,11 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
     /**
      * Since the clipRectSource replaces the MPSCNNKernel offset parameter for this filter,
      * this property is deprecated..
+     * 
+     * API-Since: 11.3
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("setPrimaryOffset:")
     public native void setPrimaryOffset(@ByValue MPSOffset value);
@@ -266,7 +280,11 @@ public class MPSNNReduceBinary extends MPSCNNBinaryKernel {
     /**
      * Since the clipRectSource replaces the MPSCNNKernel offset parameter for this filter,
      * this property is deprecated..
+     * 
+     * API-Since: 11.3
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("setSecondaryOffset:")
     public native void setSecondaryOffset(@ByValue MPSOffset value);

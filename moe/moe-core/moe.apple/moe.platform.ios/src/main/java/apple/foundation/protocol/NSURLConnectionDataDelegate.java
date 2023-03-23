@@ -33,10 +33,10 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] NSURLConnectionDataDelegate
- * <p>
+ * 
  * Delegate methods used for loading data to memory.
  * These delegate methods are all optional.
- * <p>
+ * 
  * connection:willSendRequest:redirectResponse: is
  * called whenever an connection determines that it
  * must change URLs in order to continue loading a
@@ -45,7 +45,7 @@ import org.moe.natj.objc.ann.Selector;
  * delegate can cause the request to abort by either
  * calling the connections -cancel method, or by
  * returning nil from this callback.<p>
- * <p>
+ * 
  * There is one subtle difference which results from
  * this choice. If -cancel is called in the delegate
  * method, all processing for the connection stops,
@@ -57,7 +57,7 @@ import org.moe.natj.objc.ann.Selector;
  * is loaded for the connection will be sent to the
  * delegate, and the delegate will receive a finished
  * or failure delegate callback as appropriate.<p>
- * <p>
+ * 
  * connection:didReceiveResponse: is called when
  * enough data has been read to construct an
  * NSURLResponse object. In the event of a protocol
@@ -65,14 +65,14 @@ import org.moe.natj.objc.ann.Selector;
  * multipart/x-mixed-replace) the delegate should be
  * prepared to inspect the new response and make
  * itself ready for data callbacks as appropriate.<p>
- * <p>
+ * 
  * connection:didReceiveData: is called with a single
  * immutable NSData object to the delegate,
  * representing the next portion of the data loaded
  * from the connection. This is the only guaranteed
  * for the delegate to receive the data from the
  * resource load.<p>
- * <p>
+ * 
  * connection:needNewBodyStream: is called when the
  * loader must retransmit a requests payload, due to
  * connection errors or authentication challenges.
@@ -82,13 +82,13 @@ import org.moe.natj.objc.ann.Selector;
  * be uploaded to disk, a potentially expensive
  * operation. Returning nil will cancel the
  * connection.
- * <p>
+ * 
  * connection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:
  * is called during an upload operation to provide
  * progress feedback. Note that the values may
  * change in unexpected ways if the request needs to
  * be retransmitted.<p>
- * <p>
+ * 
  * connection:willCacheResponse: gives the delegate
  * an opportunity to inspect and modify the
  * NSCachedURLResponse which will be cached by the
@@ -100,11 +100,13 @@ import org.moe.natj.objc.ann.Selector;
  * data, and should not be used as an alternative to
  * receiving and accumulating the data through
  * connection:didReceiveData:<p>
- * <p>
+ * 
  * connectionDidFinishLoading: is called when all
  * connection processing has completed successfully,
  * before the delegate is released by the
  * connection.<p>
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")

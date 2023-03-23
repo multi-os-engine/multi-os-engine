@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -179,10 +182,16 @@ public class INPersonHandle extends NSObject implements NSCopying, NSSecureCodin
     @Selector("initWithValue:type:")
     public native INPersonHandle initWithValueType(String value, @NInt long type);
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @Selector("initWithValue:type:label:")
     public native INPersonHandle initWithValueTypeLabel(String value, @NInt long type, String label);
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @Selector("label")
     public native String label();

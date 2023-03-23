@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Node representing a @ref MPSNNForwardLoss kernel
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -135,7 +137,7 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
 
     /**
      * Init a forward loss node from multiple images
-     *
+     * 
      * @param sourceNodes The MPSNNImageNode representing the source MPSImages for the filter
      *                    Node0: logits, Node1: labels, Node2: weights
      * @return A new MPSNNFilter node.
@@ -191,7 +193,7 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
 
     /**
      * Init a forward loss node from multiple images
-     *
+     * 
      * @param sourceNodes The MPSNNImageNode representing the source MPSImages for the filter
      *                    Node0: logits, Node1: labels, Node2: weights
      * @return A new MPSNNFilter node.
@@ -208,7 +210,7 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
 
     /**
      * [@property] propertyCallBack
-     * <p>
+     * 
      * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
      * Default value: nil.
      */
@@ -231,7 +233,7 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
 
     /**
      * [@property] propertyCallBack
-     * <p>
+     * 
      * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
      * Default value: nil.
      */
@@ -256,6 +258,9 @@ public class MPSNNForwardLossNode extends MPSNNFilterNode {
     @Selector("weight")
     public native float weight();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("reduceAcrossBatch")
     public native boolean reduceAcrossBatch();

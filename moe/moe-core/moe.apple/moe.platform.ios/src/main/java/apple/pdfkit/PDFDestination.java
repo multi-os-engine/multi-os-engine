@@ -1,7 +1,6 @@
 package apple.pdfkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -26,7 +25,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("PDFKit")
 @Runtime(ObjCRuntime.class)
@@ -89,6 +92,8 @@ public class PDFDestination extends NSObject implements NSCopying {
      * An exception will be raised if either destination does not have a page associated with it or if the pages of the
      * two
      * destinations are associated with different documents.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("compare:")
@@ -182,6 +187,8 @@ public class PDFDestination extends NSObject implements NSCopying {
     /**
      * Get / set the scale factor the PDF viewer should assume for this destination.
      * kPDFDestinationUnspecifiedValue indicates the scale factor is unaffected.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setZoom:")
@@ -199,6 +206,8 @@ public class PDFDestination extends NSObject implements NSCopying {
     /**
      * Get / set the scale factor the PDF viewer should assume for this destination.
      * kPDFDestinationUnspecifiedValue indicates the scale factor is unaffected.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("zoom")

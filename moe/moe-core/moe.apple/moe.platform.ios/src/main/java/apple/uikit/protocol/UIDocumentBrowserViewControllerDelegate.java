@@ -16,6 +16,9 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -44,7 +47,11 @@ public interface UIDocumentBrowserViewControllerDelegate {
      * Called when the user validates a selection of items to open or pick.
      * If you have created this document manager to open files, you should then open the document, potentially using
      * a @c UIDocumentBrowserTransitionController for the transition.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 12.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("documentBrowser:didPickDocumentURLs:")
@@ -103,6 +110,9 @@ public interface UIDocumentBrowserViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @IsOptional
     @Selector("documentBrowser:didPickDocumentsAtURLs:")

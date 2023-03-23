@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("QuickLook")
 @Runtime(ObjCRuntime.class)
@@ -73,6 +76,7 @@ public class QLPreviewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native QLPreviewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -196,7 +200,7 @@ public class QLPreviewController extends UIViewController {
 
     /**
      * The Preview Controller delegate.
-     * <p>
+     * 
      * Should implement the <QLPreviewControllerDelegate> protocol
      */
     @Generated
@@ -225,7 +229,7 @@ public class QLPreviewController extends UIViewController {
 
     /**
      * Asks the Preview Controller to reload its data from its data source.
-     * <p>
+     * 
      * This method does not refresh the visible item if it has not changed.
      */
     @Generated
@@ -263,7 +267,7 @@ public class QLPreviewController extends UIViewController {
 
     /**
      * The Preview Controller delegate.
-     * <p>
+     * 
      * Should implement the <QLPreviewControllerDelegate> protocol
      */
     @Generated
@@ -272,7 +276,7 @@ public class QLPreviewController extends UIViewController {
 
     /**
      * The Preview Controller delegate.
-     * <p>
+     * 
      * Should implement the <QLPreviewControllerDelegate> protocol
      */
     @Generated

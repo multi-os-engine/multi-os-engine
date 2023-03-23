@@ -31,16 +31,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKQuantitySeriesSampleBuilder
- * <p>
+ * 
  * An HKQuantitySeriesSampleBuilder is used to generate HKQuantitySample(s) with multiple
  * quantities.
- * <p>
+ * 
  * An HKQuantitySeriesSampleBuilder is used to incrementally create a new quantity series
  * sample in the HealthKit database. This class may be used to create long-running quantity
  * series samples that are associated with an activity like a workout. After inserting each
  * of the quantities that make up the series, the series may be finalized by calling
  * -finishSeriesWithMetadata:completion:. Calling -discard invalidates the series and
  * discards any data that was previously associated with it.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("HealthKit")
@@ -109,9 +111,9 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
 
     /**
      * discard
-     * <p>
+     * 
      * Discards all previously inserted data and invalidates the series.
-     * <p>
+     * 
      * Calling this method will delete all quantities that were previously inserted into
      * the series and invalidate the receiver. Calling other methods on the receiver
      * after calling -discard will result in an exception.
@@ -122,9 +124,9 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
 
     /**
      * finishSeriesWithMetadata:completion:
-     * <p>
+     * 
      * Finalizes the series and returns the resulting HKQuantitySample(s).
-     * <p>
+     * 
      * Call this method when all quantities for the series have been inserted.
      * The completion handler will return the resulting HKQuantitySample(s)
      * Note that it is possible for a single HKQuantitySeriesSampleBuilder to produce
@@ -133,7 +135,7 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
      * finishSeriesWithMetadata:endDate:completion: when endDate is nil.
      * After calling this method, the receiver will be considered invalid
      * and calling any other method will result in an error.
-     *
+     * 
      * @param metadata   Optional metadata may be added to associate with the series.
      *                   Predefined keys are found in HKMetadata.h, or custom NSString
      *                   keys used by the client are allowed. Acceptable metadata value types
@@ -165,16 +167,16 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
 
     /**
      * finishSeriesWithMetadata:endDate:completion:
-     * <p>
+     * 
      * Finalizes the series and returns the resulting HKQuantitySample(s).
-     * <p>
+     * 
      * Call this method when all quantities for the series have been inserted.
      * The completion handler will return the resulting HKQuantitySample(s)
      * Note that it is possible for a single HKQuantitySeriesSampleBuilder to produce
      * multiple samples. If no quantity data was added, then samples will be nil and
      * an error will be returned. After calling this method, the receiver will be
      * considered invalid and calling any other method will result in an error.
-     *
+     * 
      * @param metadata   Optional metadata may be added to associate with the series.
      *                   Predefined keys are found in HKMetadata.h, or custom NSString
      *                   keys used by the client are allowed. Acceptable metadata value types
@@ -219,12 +221,12 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
 
     /**
      * initWithHealthStore:quantityType:device:
-     * <p>
+     * 
      * The designated initializer to create an HKQuantitySeriesSampleBuilder.
-     * <p>
+     * 
      * The HKHealthStore is retained during the life of the object for the saving of the
      * series data and final return of the series sample.
-     *
+     * 
      * @param healthStore  Specifies the HKHealthStore object to use for building the series.
      * @param quantityType Specifies the quantity type for which to build the series.
      * @param startDate    The date from which the produced sample(s) start.
@@ -238,13 +240,13 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
 
     /**
      * insertQuantity:date:completion:
-     * <p>
+     * 
      * Associate a new quantity with the receiver at a specific instantaneous
      * date interval.
-     * <p>
+     * 
      * This method acts as a convenience for insertQuantity:dateInterval:completion:
      * where dateInterval has a duration of 0.
-     *
+     * 
      * @param quantity The quantity to insert.
      * @param date     The start date associated with the quantity. If this is the same
      *                 start date as a previously-provided quantity, the new value will
@@ -258,21 +260,23 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
 
     /**
      * insertQuantity:dateInterval:completion:
-     * <p>
+     * 
      * Associate a new quantity with the receiver with a specific date interval.
-     * <p>
+     * 
      * Use this method to add a quantity to the series. The quantity must have a unit
      * that is compatible with the receiver's quantity type.
      * See -[HKQuantityType isCompatibleWithUnit:].
      * Note that quantities may be inserted in any order,
      * but will be sorted by dateInterval.startDate when the series is finished.
-     *
+     * 
      * @param quantity     The quantity to insert.
      * @param dateInterval The dateInterval associated with the quantity.
      *                     If dateInterval.startDate is the same as a previously-provided
      *                     quantity, the new value will replace the old value.
      *                     An HKErrorInvalidArgument will be returned if
      *                     dateInterval.startDate is earlier than the receiver's startDate.
+     * 
+     *                     API-Since: 13.0
      */
     @Generated
     @Selector("insertQuantity:dateInterval:error:")

@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class is used to represent an accessory category.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("HomeKit")

@@ -20,13 +20,23 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * Delivery options for GKSession's -(BOOL)sendData... methods.
+ * 
+ * API-Since: 3.0
+ * Deprecated-Since: 7.0
  */
 @Deprecated
 @Generated
 public final class GKSendDataMode {
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
     @Deprecated @Generated public static final int Reliable = 0x00000000;
     /**
      * a.s.a.p. but requires fragmentation and reassembly for large messages, may stall if network congestion occurs
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Deprecated @Generated public static final int Unreliable = 0x00000001;
 

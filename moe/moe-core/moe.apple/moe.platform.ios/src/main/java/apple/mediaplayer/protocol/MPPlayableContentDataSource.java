@@ -35,7 +35,12 @@ import org.moe.natj.objc.ann.Selector;
  * Data sources are responsible for providing metadata about your media to these
  * systems in a meaningful way, so that features like user interfaces and play
  * queues can be setup automatically.
+ * 
+ * API-Since: 7.1
+ * Deprecated-Since: 14.0
+ * Deprecated-Message: Use CarPlay framework
  */
+@Deprecated
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -85,7 +90,12 @@ public interface MPPlayableContentDataSource {
      * to be retrieved.
      * Client applications should always call the completion handler after loading
      * has finished, if this method is implemented.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("contentItemForIdentifier:completionHandler:")

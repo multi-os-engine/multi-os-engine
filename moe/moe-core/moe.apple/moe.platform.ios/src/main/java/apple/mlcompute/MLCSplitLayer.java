@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCSplitLayer
- * <p>
+ * 
  * A split layer
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -88,7 +90,7 @@ public class MLCSplitLayer extends MLCLayer {
 
     /**
      * [@property] dimension
-     * <p>
+     * 
      * The dimension (or axis) along which to split tensor
      */
     @Generated
@@ -128,7 +130,7 @@ public class MLCSplitLayer extends MLCLayer {
 
     /**
      * Create a split layer
-     *
+     * 
      * @param splitCount The number of splits.
      * @param dimension  The dimension along which the tensor should be split.
      * @return A new split layer
@@ -139,7 +141,7 @@ public class MLCSplitLayer extends MLCLayer {
 
     /**
      * Create a split layer
-     *
+     * 
      * @param splitSectionLengths Lengths of each split section.
      * @param dimension           The dimension along which the tensor should be split.
      * @return A new split layer
@@ -168,9 +170,9 @@ public class MLCSplitLayer extends MLCLayer {
 
     /**
      * [@property] splitCount
-     * <p>
+     * 
      * The number of splits.
-     * <p>
+     * 
      * The tensor will be split into equally sized chunks. The last chunk may be smaller in size.
      */
     @Generated
@@ -180,9 +182,9 @@ public class MLCSplitLayer extends MLCLayer {
 
     /**
      * [@property] splitSectionLengths
-     * <p>
+     * 
      * Lengths of each split section.
-     * <p>
+     * 
      * The tensor will be split into chunks along dimensions with sizes given in \p splitSectionLengths .
      */
     @Generated

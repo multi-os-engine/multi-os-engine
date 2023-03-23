@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] CBCharacteristicProperties
- * <p>
+ * 
  * Characteristic properties determine how the characteristic value can be used, or how the descriptor(s) can be
  * accessed. Can be combined. Unless
  * otherwise specified, properties are valid for local characteristics published via @link CBPeripheralManager @/link.
- * <p>
+ * 
  * [@constant] CBCharacteristicPropertyBroadcast Permits broadcasts of the characteristic value using a characteristic
  * configuration descriptor. Not allowed for local characteristics.
  * [@constant] CBCharacteristicPropertyRead Permits reads of the characteristic value.
@@ -52,7 +52,13 @@ public final class CBCharacteristicProperties {
     @Generated @NUInt public static final long Indicate = 0x0000000000000020L;
     @Generated @NUInt public static final long AuthenticatedSignedWrites = 0x0000000000000040L;
     @Generated @NUInt public static final long ExtendedProperties = 0x0000000000000080L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long NotifyEncryptionRequired = 0x0000000000000100L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long IndicateEncryptionRequired = 0x0000000000000200L;
 
     @Generated

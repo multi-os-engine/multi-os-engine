@@ -5,9 +5,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] MPSGraphScatterMode
- * <p>
+ * 
  * Scatter mode
- * <p>
+ * 
  * [@constant] MPSGraphScatterModeAdd Add
  * [@constant] MPSGraphScatterModeSub Sub
  * [@constant] MPSGraphScatterModeMul Multiply
@@ -22,11 +22,32 @@ public final class MPSGraphScatterMode {
     private MPSGraphScatterMode() {
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long Add = 0x0000000000000000L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long Sub = 0x0000000000000001L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long Mul = 0x0000000000000002L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long Div = 0x0000000000000003L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long Min = 0x0000000000000004L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long Max = 0x0000000000000005L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long Set = 0x0000000000000006L;
 }

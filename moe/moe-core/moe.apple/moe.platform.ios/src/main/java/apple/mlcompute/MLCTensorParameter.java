@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCTensorParameter
- * <p>
+ * 
  * A tensor parameter object. This is used to describe input tensors that are updated by the optimizer during training.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -113,7 +115,7 @@ public class MLCTensorParameter extends NSObject {
 
     /**
      * [@property] isUpdatable
-     * <p>
+     * 
      * Specifies whether this tensor parameter is updatable
      */
     @Generated
@@ -131,7 +133,7 @@ public class MLCTensorParameter extends NSObject {
 
     /**
      * Create a tensor parameter
-     *
+     * 
      * @param tensor The unedrlying tensor
      * @return A new tensor parameter object
      */
@@ -141,7 +143,7 @@ public class MLCTensorParameter extends NSObject {
 
     /**
      * Create a tensor parameter
-     *
+     * 
      * @param tensor        The unedrlying tensor
      * @param optimizerData The optimizer data needed for this input tensor
      * @return A new tensor parameter object
@@ -161,7 +163,7 @@ public class MLCTensorParameter extends NSObject {
 
     /**
      * [@property] isUpdatable
-     * <p>
+     * 
      * Specifies whether this tensor parameter is updatable
      */
     @Generated
@@ -178,7 +180,7 @@ public class MLCTensorParameter extends NSObject {
 
     /**
      * [@property] tensor
-     * <p>
+     * 
      * The underlying tensor
      */
     @Generated

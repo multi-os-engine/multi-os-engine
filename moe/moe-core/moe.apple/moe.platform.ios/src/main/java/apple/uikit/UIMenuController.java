@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -39,7 +38,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 3.0
+ * Deprecated-Since: 16.0
+ * Deprecated-Message: UIMenuController is deprecated. Use UIEditMenuInteraction instead.
+ */
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +162,8 @@ public class UIMenuController extends NSObject {
 
     /**
      * default is UIMenuControllerArrowDefault
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("arrowDirection")
@@ -173,6 +181,12 @@ public class UIMenuController extends NSObject {
     @Selector("isMenuVisible")
     public native boolean isMenuVisible();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use showMenuFromView:rect: or hideMenuFromView: instead.
+     */
+    @Deprecated
     @Generated
     @Selector("setMenuVisible:")
     public native void setMenuVisible(boolean menuVisible);
@@ -184,6 +198,8 @@ public class UIMenuController extends NSObject {
 
     /**
      * default is nil. these are in addition to the standard items
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("menuItems")
@@ -191,6 +207,8 @@ public class UIMenuController extends NSObject {
 
     /**
      * default is UIMenuControllerArrowDefault
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setArrowDirection:")
@@ -198,15 +216,29 @@ public class UIMenuController extends NSObject {
 
     /**
      * default is nil. these are in addition to the standard items
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setMenuItems:")
     public native void setMenuItems(NSArray<? extends UIMenuItem> value);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use showMenuFromView:rect: or hideMenuFromView: instead.
+     */
+    @Deprecated
     @Generated
     @Selector("setMenuVisible:animated:")
     public native void setMenuVisibleAnimated(boolean menuVisible, boolean animated);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use showMenuFromView:rect: instead.
+     */
+    @Deprecated
     @Generated
     @Selector("setTargetRect:inView:")
     public native void setTargetRectInView(@ByValue CGRect targetRect, UIView targetView);
@@ -215,14 +247,23 @@ public class UIMenuController extends NSObject {
     @Selector("update")
     public native void update();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("hideMenu")
     public native void hideMenu();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("hideMenuFromView:")
     public native void hideMenuFromView(UIView targetView);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("showMenuFromView:rect:")
     public native void showMenuFromViewRect(UIView targetView, @ByValue CGRect targetRect);

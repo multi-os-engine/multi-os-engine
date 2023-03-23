@@ -19,18 +19,27 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 public final class UISearchBarStyle {
     /**
      * currently UISearchBarStyleProminent
+     * 
+     * API-Since: 7.0
      */
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
     /**
      * used my Mail, Messages and Contacts
+     * 
+     * API-Since: 7.0
      */
     @Generated @NUInt public static final long Prominent = 0x0000000000000001L;
     /**
      * used by Calendar, Notes and Music
+     * 
+     * API-Since: 7.0
      */
     @Generated @NUInt public static final long Minimal = 0x0000000000000002L;
 

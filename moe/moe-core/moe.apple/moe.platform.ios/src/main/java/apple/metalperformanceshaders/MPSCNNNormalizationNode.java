@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * virtual base class for CNN normalization nodes
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -55,7 +57,7 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The value of alpha. Default is 1.0. Must be non-negative.
      */
     @Generated
@@ -68,7 +70,7 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The value of beta. Default is 5.0
      */
     @Generated
@@ -99,7 +101,7 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
 
     /**
      * [@property] delta
-     * <p>
+     * 
      * The value of delta. Default is 1.0
      */
     @Generated
@@ -163,7 +165,7 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The value of alpha. Default is 1.0. Must be non-negative.
      */
     @Generated
@@ -172,7 +174,7 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The value of beta. Default is 5.0
      */
     @Generated
@@ -181,7 +183,7 @@ public class MPSCNNNormalizationNode extends MPSNNFilterNode {
 
     /**
      * [@property] delta
-     * <p>
+     * 
      * The value of delta. Default is 1.0
      */
     @Generated

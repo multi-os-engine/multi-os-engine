@@ -45,7 +45,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -82,6 +86,9 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("camera")
     public static native MKMapCamera camera();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("cameraLookingAtCenterCoordinate:fromDistance:pitch:heading:")
     public static native MKMapCamera cameraLookingAtCenterCoordinateFromDistancePitchHeading(
@@ -175,6 +182,12 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use centerCoordinateDistance
+     */
+    @Deprecated
     @Generated
     @Selector("altitude")
     public native double altitude();
@@ -214,6 +227,12 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
     @NFloat
     public native double pitch();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use centerCoordinateDistance
+     */
+    @Deprecated
     @Generated
     @Selector("setAltitude:")
     public native void setAltitude(double value);
@@ -239,11 +258,25 @@ public class MKMapCamera extends NSObject implements NSSecureCoding, NSCopying {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("centerCoordinateDistance")
     public native double centerCoordinateDistance();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setCenterCoordinateDistance:")
     public native void setCenterCoordinateDistance(double value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("cameraLookingAtMapItem:forViewSize:allowPitch:")
+    public static native MKMapCamera cameraLookingAtMapItemForViewSizeAllowPitch(MKMapItem mapItem,
+            @ByValue CGSize viewSize, boolean allowPitch);
 }

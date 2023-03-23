@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Any property that is not set will be ignored
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CallKit")

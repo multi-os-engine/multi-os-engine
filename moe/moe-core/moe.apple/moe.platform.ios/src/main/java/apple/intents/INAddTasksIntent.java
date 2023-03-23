@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -95,6 +98,11 @@ public class INAddTasksIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INAddTasksIntent initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithTargetTaskList:taskTitles:spatialEventTrigger:temporalEventTrigger:")
     public native INAddTasksIntent initWithTargetTaskListTaskTitlesSpatialEventTriggerTemporalEventTrigger(
@@ -174,6 +182,9 @@ public class INAddTasksIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithTargetTaskList:taskTitles:spatialEventTrigger:temporalEventTrigger:priority:")
     public native INAddTasksIntent initWithTargetTaskListTaskTitlesSpatialEventTriggerTemporalEventTriggerPriority(
@@ -181,6 +192,9 @@ public class INAddTasksIntent extends INIntent {
             INSpatialEventTrigger spatialEventTrigger, INTemporalEventTrigger temporalEventTrigger,
             @NInt long priority);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("priority")
     @NInt

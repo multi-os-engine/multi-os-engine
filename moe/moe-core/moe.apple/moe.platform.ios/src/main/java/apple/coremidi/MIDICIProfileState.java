@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MIDICIProfileState
- * <p>
+ * 
  * Lists the enabled and disabled profiles for a MIDI channel or port on a device.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CoreMIDI")
@@ -113,6 +115,11 @@ public class MIDICIProfileState extends NSObject implements NSSecureCoding {
     @Selector("initWithCoder:")
     public native MIDICIProfileState initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 12.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithEnabledProfiles:disabledProfiles:")
     public native MIDICIProfileState initWithEnabledProfilesDisabledProfiles(NSArray<? extends MIDICIProfile> enabled,
@@ -175,6 +182,9 @@ public class MIDICIProfileState extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithChannel:enabledProfiles:disabledProfiles:")
     public native MIDICIProfileState initWithChannelEnabledProfilesDisabledProfiles(byte midiChannelNum,

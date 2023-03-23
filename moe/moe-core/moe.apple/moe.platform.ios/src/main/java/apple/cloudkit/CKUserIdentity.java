@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -204,18 +207,21 @@ public class CKUserIdentity extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * Link to the Contacts database.
-     * <p>
+     * 
      * Identities discovered via @c CKDiscoverAllUserIdentitiesOperation correspond to entries in the local Contacts
      * database. These identities will have @c contactIdentifiers filled out, which your app may use to get additional
      * information about the contacts that were discovered. Multiple @c contactIdentifiers may exist for a single
      * discovered user, as multiple contacts may contain the same email addresses or phone numbers.
-     * <p>
+     * 
      * To transform these identifiers into an array of unified contact identifiers, pass a @c
      * CNContact.predicateForContacts(withIdentifiers:) predicate into @c
      * CNContactStore.unifiedContacts(matching:keysToFetch:)
-     *
+     * 
      * @return individual, non-unified contacts.
+     * 
      * @see Contacts.framework and CNContact.identifier
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("contactIdentifiers")

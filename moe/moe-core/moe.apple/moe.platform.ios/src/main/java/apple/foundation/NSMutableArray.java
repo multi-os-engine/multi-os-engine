@@ -298,6 +298,11 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Selector("removeObjectsAtIndexes:")
     public native void removeObjectsAtIndexes(NSIndexSet indexes);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 4.0
+     * Deprecated-Message: Not supported
+     */
     @Generated
     @Deprecated
     @Selector("removeObjectsFromIndices:numIndices:")
@@ -334,10 +339,16 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Selector("setArray:")
     public native void setArray(NSArray<_ObjectType> otherArray);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setObject:atIndexedSubscript:")
     public native void setObjectAtIndexedSubscript(@Mapped(ObjCObjectMapper.class) _ObjectType obj, @NUInt long idx);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("sortUsingComparator:")
     public native void sortUsingComparator(
@@ -360,6 +371,9 @@ public class NSMutableArray<_ObjectType> extends NSArray<_ObjectType> {
     @Selector("sortUsingSelector:")
     public native void sortUsingSelector(SEL comparator);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("sortWithOptions:usingComparator:")
     public native void sortWithOptionsUsingComparator(@NUInt long opts,

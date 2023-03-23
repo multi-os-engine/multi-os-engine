@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -66,10 +69,16 @@ public class PHAssetResource extends NSObject {
     @Selector("allocWithZone:")
     public static native PHAssetResource allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("assetResourcesForAsset:")
     public static native NSArray<? extends PHAssetResource> assetResourcesForAsset(PHAsset asset);
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @Selector("assetResourcesForLivePhoto:")
     public static native NSArray<? extends PHAssetResource> assetResourcesForLivePhoto(PHLivePhoto livePhoto);
@@ -156,6 +165,9 @@ public class PHAssetResource extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("assetLocalIdentifier")
     public native String assetLocalIdentifier();
@@ -164,16 +176,41 @@ public class PHAssetResource extends NSObject {
     @Selector("init")
     public native PHAssetResource init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("originalFilename")
     public native String originalFilename();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("type")
     @NInt
     public native long type();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("uniformTypeIdentifier")
     public native String uniformTypeIdentifier();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("pixelHeight")
+    @NInt
+    public native long pixelHeight();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("pixelWidth")
+    @NInt
+    public native long pixelWidth();
 }

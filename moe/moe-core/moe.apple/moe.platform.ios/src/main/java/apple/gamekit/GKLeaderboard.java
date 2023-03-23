@@ -49,6 +49,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Leaderboards can be of the following types:
  * 1. Classic - Traditional, non-expiring leaderboards
  * 2. Recurring - Periodic timed leaderboards that follow a recurrence rule defined in App Store Connect.
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -134,6 +136,11 @@ public class GKLeaderboard extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Use loadLeaderboardsWithIDs:completionHandler: instead
+     */
     @Generated
     @Deprecated
     @Selector("loadCategoriesWithCompletionHandler:")
@@ -146,7 +153,12 @@ public class GKLeaderboard extends NSObject {
      * 1. Communications problem
      * 2. Unauthenticated player
      * 3. Leaderboard not present
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use class method loadLeaderboardsWithIDs:completionHandler:
      */
+    @Deprecated
     @Generated
     @Selector("loadLeaderboardsWithCompletionHandler:")
     public static native void loadLeaderboardsWithCompletionHandler(
@@ -165,6 +177,11 @@ public class GKLeaderboard extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use setDefaultLeaderboardIdentifier:completionHandler: on GKLocalPlayer instead
+     */
     @Generated
     @Deprecated
     @Selector("setDefaultLeaderboard:withCompletionHandler:")
@@ -186,6 +203,10 @@ public class GKLeaderboard extends NSObject {
 
     /**
      * Deprecated. Use identifier instead.
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use identifier instead
      */
     @Generated
     @Deprecated
@@ -195,6 +216,8 @@ public class GKLeaderboard extends NSObject {
     /**
      * set when leaderboards have been designated a game group; set when loadLeaderboardsWithCompletionHandler has been
      * called for leaderboards that support game groups
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("groupIdentifier")
@@ -202,7 +225,12 @@ public class GKLeaderboard extends NSObject {
 
     /**
      * leaderboardID. If nil, fetch the aggregate leaderboard.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: instead.
      */
+    @Deprecated
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -210,11 +238,22 @@ public class GKLeaderboard extends NSObject {
     /**
      * Default is the range 1-10 with Global/AllTime scopes.
      * If you want to change the scopes or range, set the properites before loading the scores.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Do not instantiate GKLeaderboard directly. Use class method
+     * loadLeaderboardsWithIDs:completionHandler: to get the leaderboards.
      */
+    @Deprecated
     @Generated
     @Selector("init")
     public native GKLeaderboard init();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use initWithPlayers: instead
+     */
     @Generated
     @Deprecated
     @Selector("initWithPlayerIDs:")
@@ -224,18 +263,31 @@ public class GKLeaderboard extends NSObject {
      * Specify an array of GKPlayers. For example, the players who are in a match together
      * Defaults to AllTime score, if you want to change the timeScope, set the property before loading the scores. Range
      * and playerScope are not applicable. players may not be nil.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use instance method loadEntriesForPlayers:timeScope:completionHandler: instead.
      */
+    @Deprecated
     @Generated
     @Selector("initWithPlayers:")
     public native GKLeaderboard initWithPlayers(NSArray<? extends GKPlayer> players);
 
     /**
      * This property is true if the leaderboard is currently loading
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: method to obtain scores.
      */
+    @Deprecated
     @Generated
     @Selector("isLoading")
     public native boolean isLoading();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("loadImageWithCompletionHandler:")
     public native void loadImageWithCompletionHandler(
@@ -246,7 +298,12 @@ public class GKLeaderboard extends NSObject {
      * Possible reasons for error:
      * 1. Communications problem
      * 2. Unauthenticated player
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler:.
      */
+    @Deprecated
     @Generated
     @Selector("loadScoresWithCompletionHandler:")
     public native void loadScoresWithCompletionHandler(
@@ -254,14 +311,25 @@ public class GKLeaderboard extends NSObject {
 
     /**
      * The local player's score
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: method to obtain scores.
      */
+    @Deprecated
     @Generated
     @Selector("localPlayerScore")
     public native GKScore localPlayerScore();
 
     /**
      * The maxRange which represents the size of the leaderboard is not valid until loadScores: has completed.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: method to obtain the size of
+     * the leaderboard.
      */
+    @Deprecated
     @Generated
     @Selector("maxRange")
     @NUInt
@@ -269,7 +337,12 @@ public class GKLeaderboard extends NSObject {
 
     /**
      * Filter on friends. Does not apply to leaderboard initialized with players.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: instead.
      */
+    @Deprecated
     @Generated
     @Selector("playerScope")
     @NInt
@@ -278,7 +351,12 @@ public class GKLeaderboard extends NSObject {
     /**
      * Leaderboards start at index 1 and the length should be less than 100. Does not apply to leaderboards initialized
      * with players. Exception will be thrown if developer tries to set an invalid range.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: instead.
      */
+    @Deprecated
     @Generated
     @Selector("range")
     @ByValue
@@ -286,13 +364,22 @@ public class GKLeaderboard extends NSObject {
 
     /**
      * Scores are not valid until loadScores: has completed.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: to obtain scores.
      */
+    @Deprecated
     @Generated
     @Selector("scores")
     public native NSArray<? extends GKScore> scores();
 
     /**
      * Deprecated. Use identifier instead.
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use identifier instead
      */
     @Generated
     @Deprecated
@@ -301,14 +388,24 @@ public class GKLeaderboard extends NSObject {
 
     /**
      * leaderboardID. If nil, fetch the aggregate leaderboard.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: instead.
      */
+    @Deprecated
     @Generated
     @Selector("setIdentifier:")
     public native void setIdentifier(String value);
 
     /**
      * Filter on friends. Does not apply to leaderboard initialized with players.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: instead.
      */
+    @Deprecated
     @Generated
     @Selector("setPlayerScope:")
     public native void setPlayerScope(@NInt long value);
@@ -316,15 +413,32 @@ public class GKLeaderboard extends NSObject {
     /**
      * Leaderboards start at index 1 and the length should be less than 100. Does not apply to leaderboards initialized
      * with players. Exception will be thrown if developer tries to set an invalid range.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: instead.
      */
+    @Deprecated
     @Generated
     @Selector("setRange:")
     public native void setRange(@ByValue NSRange value);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: instead.
+     */
+    @Deprecated
     @Generated
     @Selector("setTimeScope:")
     public native void setTimeScope(@NInt long value);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use loadEntriesForPlayerScope:timeScope:range:completionHandler: instead.
+     */
+    @Deprecated
     @Generated
     @Selector("timeScope")
     @NInt
@@ -375,6 +489,8 @@ public class GKLeaderboard extends NSObject {
 
     /**
      * Leaderboard ID defined in App Store Connect that this instance is associated with
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("baseLeaderboardID")
@@ -383,6 +499,8 @@ public class GKLeaderboard extends NSObject {
     /**
      * Duration from startDate during which this leaderboard instance accepts score submissions (only applicable to
      * recurring leaderboards)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("duration")
@@ -397,6 +515,8 @@ public class GKLeaderboard extends NSObject {
      * localPlayerEntry - entry for the local player
      * entries - requested entries matching supplied parameters
      * totalPlayerCount - total player count matching specified scope
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("loadEntriesForPlayerScope:timeScope:range:completionHandler:")
@@ -419,6 +539,8 @@ public class GKLeaderboard extends NSObject {
      * Upon completion, will return:
      * localPlayerEntry - entry for the local player
      * entries - requested entries matching supplied parameters
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("loadEntriesForPlayers:timeScope:completionHandler:")
@@ -437,6 +559,8 @@ public class GKLeaderboard extends NSObject {
     /**
      * Loads classic and recurring leaderboards associated with the supplied App Store Connect leaderboard IDs.
      * If leaderboardIDs is nil, this loads all classic and recurring leaderboards for this game.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("loadLeaderboardsWithIDs:completionHandler:")
@@ -455,6 +579,8 @@ public class GKLeaderboard extends NSObject {
      * Loads the occurrence preceding this occurrence for a recurring leaderboard in which the local player submitted a
      * score. If no previous occurrence is found that the player submitted a score to, then the most recent previous
      * occurrence is returned.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("loadPreviousOccurrenceWithCompletionHandler:")
@@ -471,6 +597,8 @@ public class GKLeaderboard extends NSObject {
     /**
      * Date and time the next instance will start accepting score submissions (only applicable to recurring
      * leaderboards)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("nextStartDate")
@@ -478,6 +606,8 @@ public class GKLeaderboard extends NSObject {
 
     /**
      * Date and time this instance started accepting score submissions (only applicable to recurring leaderboards)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("startDate")
@@ -488,6 +618,8 @@ public class GKLeaderboard extends NSObject {
      * score - earned by the player
      * context - developer supplied metadata associated with the player's score
      * player - the player for whom this score is being submitted
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("submitScore:context:player:completionHandler:")
@@ -507,6 +639,8 @@ public class GKLeaderboard extends NSObject {
      * context - developer supplied metadata associated with the player's score
      * player - the player for whom this score is being submitted
      * leaderboardIDs - one or more leaderboard IDs defined in App Store Connect
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("submitScore:context:player:leaderboardIDs:completionHandler:")
@@ -523,6 +657,8 @@ public class GKLeaderboard extends NSObject {
 
     /**
      * Type of leaderboard
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("type")

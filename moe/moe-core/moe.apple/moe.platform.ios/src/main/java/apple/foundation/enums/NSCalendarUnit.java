@@ -30,28 +30,114 @@ public final class NSCalendarUnit {
     @Generated @NUInt public static final long CalendarUnitSecond = 0x0000000000000080L;
     @Generated @NUInt public static final long CalendarUnitWeekday = 0x0000000000000200L;
     @Generated @NUInt public static final long CalendarUnitWeekdayOrdinal = 0x0000000000000400L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NUInt public static final long CalendarUnitQuarter = 0x0000000000000800L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NUInt public static final long CalendarUnitWeekOfMonth = 0x0000000000001000L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NUInt public static final long CalendarUnitWeekOfYear = 0x0000000000002000L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NUInt public static final long CalendarUnitYearForWeekOfYear = 0x0000000000004000L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NUInt public static final long CalendarUnitNanosecond = 0x0000000000008000L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NUInt public static final long CalendarUnitCalendar = 0x0000000000100000L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NUInt public static final long CalendarUnitTimeZone = 0x0000000000200000L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated @NUInt public static final long EraCalendarUnit = 0x0000000000000002L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated @NUInt public static final long YearCalendarUnit = 0x0000000000000004L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated @NUInt public static final long MonthCalendarUnit = 0x0000000000000008L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated @NUInt public static final long DayCalendarUnit = 0x0000000000000010L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated @NUInt public static final long HourCalendarUnit = 0x0000000000000020L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated @NUInt public static final long MinuteCalendarUnit = 0x0000000000000040L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated @NUInt public static final long SecondCalendarUnit = 0x0000000000000080L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: NSCalendarUnitWeekOfMonth or NSCalendarUnitWeekOfYear, depending on which you mean
+     */
     @Deprecated @Generated @NUInt public static final long WeekCalendarUnit = 0x0000000000000100L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated @NUInt public static final long WeekdayCalendarUnit = 0x0000000000000200L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated @NUInt public static final long WeekdayOrdinalCalendarUnit = 0x0000000000000400L;
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated @NUInt public static final long QuarterCalendarUnit = 0x0000000000000800L;
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated @NUInt public static final long WeekOfMonthCalendarUnit = 0x0000000000001000L;
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated @NUInt public static final long WeekOfYearCalendarUnit = 0x0000000000002000L;
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated @NUInt public static final long YearForWeekOfYearCalendarUnit = 0x0000000000004000L;
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated @NUInt public static final long CalendarCalendarUnit = 0x0000000000100000L;
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated @Generated @NUInt public static final long TimeZoneCalendarUnit = 0x0000000000200000L;
 
     @Generated

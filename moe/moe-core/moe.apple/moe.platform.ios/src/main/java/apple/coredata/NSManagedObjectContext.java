@@ -50,6 +50,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -142,12 +145,19 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
      * NSManagedObjectContextObjectsDidChangeNotification: NSInsertedObjectsKey, NSUpdatedObjectsKey, etc.
      * the values should be an NSArray of either NSManagedObjectID or NSURL objects conforming to valid results from
      * -URIRepresentation
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("mergeChangesFromRemoteContextSave:intoContexts:")
     public static native void mergeChangesFromRemoteContextSaveIntoContexts(NSDictionary<?, ?> changeNotificationData,
             NSArray<? extends NSManagedObjectContext> contexts);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use -initWithConcurrencyType: instead
+     */
     @Generated
     @Owned
     @Deprecated
@@ -187,11 +197,16 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     /**
      * Whether the context automatically merges changes saved to its coordinator or parent context. Setting this
      * property to YES when the context is pinned to a non-current query generation is not supported.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("automaticallyMergesChangesFromParent")
     public native boolean automaticallyMergesChangesFromParent();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("concurrencyType")
     @NUInt
@@ -201,6 +216,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
      * returns the number of objects a fetch request would have returned if it had been passed to
      * -executeFetchRequest:error:. If an error occurred during the processing of the request, this method will return
      * NSNotFound.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("countForFetchRequest:error:")
@@ -250,6 +267,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
      * A request may succeed in some stores and fail in others. In this case, the error will contain information
      * about each individual store failure.
      * Will always reject NSSaveChangesRequests.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("executeRequest:error:")
@@ -260,6 +279,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
      * returns the object for the specified ID if it is already registered in the context, or faults the object into the
      * context. It might perform I/O if the data is uncached. If the object cannot be fetched, or does not exist, or
      * cannot be faulted, it returns nil. Unlike -objectWithID: it never returns a fault.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("existingObjectWithID:error:")
@@ -270,6 +291,11 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Selector("hasChanges")
     public native boolean hasChanges();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use -initWithConcurrencyType: instead
+     */
     @Generated
     @Deprecated
     @Selector("init")
@@ -279,6 +305,9 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Selector("initWithCoder:")
     public native NSManagedObjectContext initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithConcurrencyType:")
     public native NSManagedObjectContext initWithConcurrencyType(@NUInt long ct);
@@ -301,6 +330,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
      * NSManagedObjectContextDidSaveNotification into the receiver. This method will refresh any objects which have been
      * updated in the other context, fault in any newly inserted objects, and invoke deleteObject: on those which have
      * been deleted. The developer is only responsible for the thread safety of the receiver.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("mergeChangesFromContextDidSaveNotification:")
@@ -316,6 +347,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     /**
      * custom label for a context. NSPrivateQueueConcurrencyType contexts will set the label on their queue
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("name")
@@ -353,12 +386,17 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
      * supporting the entity, and appropriate for the instance and its related items.) Although the object will have a
      * permanent ID, it will still respond positively to -isInserted until it is saved. If an error is encountered
      * obtaining an identifier, the return value will be NO.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("obtainPermanentIDsForObjects:error:")
     public native boolean obtainPermanentIDsForObjectsError(NSArray<? extends NSManagedObject> objects,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("parentContext")
     public native NSManagedObjectContext parentContext();
@@ -366,6 +404,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     /**
      * asynchronously performs the block on the context's queue. Encapsulates an autorelease pool and a call to
      * processPendingChanges
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("performBlock:")
@@ -373,6 +413,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     /**
      * synchronously performs the block on the context's queue. May safely be called reentrantly.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("performBlockAndWait:")
@@ -405,8 +447,10 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
      * Return the query generation currently in use by this context. Will be one of the following:
      * - nil, default value => this context is not using generational querying
      * - an opaque token => specifies the generation of data this context is vending
-     * <p>
+     * 
      * All child contexts will return nil.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("queryGenerationToken")
@@ -419,6 +463,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     /**
      * calls -refreshObject:mergeChanges: on all currently registered objects with this context. It handles dirtied
      * objects and clearing the context reference queue
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @Selector("refreshAllObjects")
@@ -459,6 +505,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     /**
      * Whether the context automatically merges changes saved to its coordinator or parent context. Setting this
      * property to YES when the context is pinned to a non-current query generation is not supported.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAutomaticallyMergesChangesFromParent:")
@@ -473,11 +521,16 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
 
     /**
      * custom label for a context. NSPrivateQueueConcurrencyType contexts will set the label on their queue
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setParentContext:")
     public native void setParentContext(NSManagedObjectContext value);
@@ -503,20 +556,22 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
      * the generation of the database when it first loads data
      * - the result of calling -[NSManagedObjectContext queryGenerationToken] on another managed object context => this
      * context will be set to whatever query generation the original context is currently using;
-     * <p>
+     * 
      * Query generations are for fetched data only; they are not used during saving. If a pinned context saves,
      * its query generation will be updated after the save. Executing a NSBatchUpdateRequest or NSBatchDeleteRequest
      * will not cause the query generation to advance, since these do not otherwise consider or affect the
      * managed object context's content.
-     * <p>
+     * 
      * All nested contexts will defer to their parent context’s data. It is a programmer error to try to set
      * the queryGenerationToken on a child context.
-     * <p>
+     * 
      * Query generations are tracked across the union of stores. Additions to the persistent store coordinator's
      * persistent stores will be ignored until the context's query generation is updated to include them.
-     * <p>
+     * 
      * May partially fail if one or more stores being tracked by the token are removed from the persistent
      * store coordinator.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setQueryGenerationFromToken:error:")
@@ -535,6 +590,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
      * properties, including scalars, nonnullable, and mandatory properties, will be nil or zero’d out. If NO, the
      * context will throw an exception. Managed objects that are inaccessible because their context is nil due to memory
      * management issues will throw an exception regardless.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setShouldDeleteInaccessibleFaults:")
@@ -556,6 +613,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
      * properties, including scalars, nonnullable, and mandatory properties, will be nil or zero’d out. If NO, the
      * context will throw an exception. Managed objects that are inaccessible because their context is nil due to memory
      * management issues will throw an exception regardless.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("shouldDeleteInaccessibleFaults")
@@ -569,6 +628,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
      * be deleted. triggeringProperty may be nil when either all properties are involved, or Core Data is unable to
      * determine the reason for firing the fault. the default implementation logs and then returns the value of
      * -shouldDeleteInaccessibleFaults.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("shouldHandleInaccessibleFault:forObjectID:triggeredByProperty:")
@@ -582,6 +643,11 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Selector("stalenessInterval")
     public native double stalenessInterval();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use a queue style context and -performBlock: instead
+     */
     @Generated
     @Deprecated
     @Selector("tryLock")
@@ -604,6 +670,9 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     @Selector("updatedObjects")
     public native NSSet<? extends NSManagedObject> updatedObjects();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("userInfo")
     public native NSMutableDictionary<?, ?> userInfo();
@@ -625,6 +694,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     /**
      * Set the author for the context, this will be used as an identifier in the Persistent History Transactions
      * (NSPersistentHistoryTransaction)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTransactionAuthor:")
@@ -633,6 +704,8 @@ public class NSManagedObjectContext extends NSObject implements NSCoding, NSLock
     /**
      * Set the author for the context, this will be used as an identifier in the Persistent History Transactions
      * (NSPersistentHistoryTransaction)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("transactionAuthor")

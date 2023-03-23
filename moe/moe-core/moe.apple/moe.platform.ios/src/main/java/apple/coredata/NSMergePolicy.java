@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -99,6 +102,9 @@ public class NSMergePolicy extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("errorMergePolicy")
     public static native NSMergePolicy errorMergePolicy();
@@ -129,10 +135,16 @@ public class NSMergePolicy extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("mergeByPropertyObjectTrumpMergePolicy")
     public static native NSMergePolicy mergeByPropertyObjectTrumpMergePolicy();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("mergeByPropertyStoreTrumpMergePolicy")
     public static native NSMergePolicy mergeByPropertyStoreTrumpMergePolicy();
@@ -142,6 +154,9 @@ public class NSMergePolicy extends NSObject {
     @Selector("new")
     public static native NSMergePolicy new_objc();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("overwriteMergePolicy")
     public static native NSMergePolicy overwriteMergePolicy();
@@ -154,6 +169,9 @@ public class NSMergePolicy extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("rollbackMergePolicy")
     public static native NSMergePolicy rollbackMergePolicy();
@@ -207,6 +225,8 @@ public class NSMergePolicy extends NSObject {
     /**
      * Resolve uniqueness constraint violations for the list of failures.
      * Will be called after -resolveOptimisticLockingVersionConflicts:error:
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("resolveConstraintConflicts:error:")
@@ -220,6 +240,8 @@ public class NSMergePolicy extends NSObject {
      * relationships is very challenging and
      * any mistakes will cause permanent data corruption in the form of dangling foreign keys.
      * Will be called before -resolveConstraintConflicts:error:
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("resolveOptimisticLockingVersionConflicts:error:")

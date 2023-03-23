@@ -27,14 +27,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAudioMixerNode
- * <p>
+ * 
  * A node that mixes its inputs to a single output.
- * <p>
+ * 
  * Mixers may have any number of inputs.
- * <p>
+ * 
  * The mixer accepts input at any sample rate and efficiently combines sample rate
  * conversions. It also accepts any channel count and will correctly upmix or downmix
  * to the output channel count.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -135,9 +137,9 @@ public class AVAudioMixerNode extends AVAudioNode implements AVAudioMixing {
 
     /**
      * [@property] nextAvailableInputBus
-     * <p>
+     * 
      * Find an unused input bus.
-     * <p>
+     * 
      * This will find and return the first input bus to which no other node is connected.
      */
     @Generated
@@ -155,9 +157,9 @@ public class AVAudioMixerNode extends AVAudioNode implements AVAudioMixing {
 
     /**
      * [@property] outputVolume
-     * <p>
+     * 
      * The mixer's output volume.
-     * <p>
+     * 
      * This accesses the mixer's output volume (0.0-1.0, inclusive).
      */
     @Generated
@@ -209,9 +211,9 @@ public class AVAudioMixerNode extends AVAudioNode implements AVAudioMixing {
 
     /**
      * [@property] outputVolume
-     * <p>
+     * 
      * The mixer's output volume.
-     * <p>
+     * 
      * This accesses the mixer's output volume (0.0-1.0, inclusive).
      */
     @Generated

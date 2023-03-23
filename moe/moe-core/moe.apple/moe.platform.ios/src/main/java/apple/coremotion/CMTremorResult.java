@@ -30,11 +30,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMTremorResult
- * <p>
+ * 
  * A CMTremorResult object describes the presence and prevalence of tremor symptoms (specifically, resting tremor)
  * during a one minute result period when subjects wear the Apple Watch on their most affected arm.
  * percentUnknown + percentNoTremor + percentTremorSlight + percentTremorMild + percentTremorModerate +
  * percentTremorStrong = 1.0
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CoreMotion")

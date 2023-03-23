@@ -24,10 +24,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASESamplerNodeDefinition
- * <p>
+ * 
  * Sampler node definition.
- * <p>
+ * 
  * Sampler nodes play back registered sound assets.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -59,7 +61,7 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
 
     /**
      * [@property] assetIdentifier
-     * <p>
+     * 
      * The identifier that uniquely represents the registered sound asset this sampler will play.
      */
     @Generated
@@ -90,9 +92,9 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
 
     /**
      * [@property] cullOption
-     * <p>
+     * 
      * The cull option for the sampler.
-     * <p>
+     * 
      * The default value is PHASECullOptionTerminate.
      */
     @Generated
@@ -119,12 +121,15 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
 
     /**
      * initWithSoundAssetIdentifier:mixerDefinition
-     * <p>
+     * 
      * Create a sampler node definition
-     *
-     * @param soundAssetIdentifier The identifier of the registered sound asset this sampler will play
-     * @param mixerDefinition      The mixer definition this sampler will be assigned to
-     * @return A new PHASESamplerNodeDefinition object
+     * 
+     * @param soundAssetIdentifier
+     *                             The identifier of the registered sound asset this sampler will play
+     * @param mixerDefinition
+     *                             The mixer definition this sampler will be assigned to
+     * @return
+     *         A new PHASESamplerNodeDefinition object
      */
     @Generated
     @Selector("initWithSoundAssetIdentifier:mixerDefinition:")
@@ -133,13 +138,17 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
 
     /**
      * initWithSoundAssetIdentifier:mixerDefinition:identifier
-     * <p>
+     * 
      * Create a sampler node definition
-     *
-     * @param soundAssetIdentifier The identifier of the registered sound asset this sampler will play
-     * @param mixerDefinition      The mixer definition this sampler will be assigned to
-     * @param identifier           An optional custom identifier to give to this object
-     * @return A new PHASESamplerNodeDefinition object
+     * 
+     * @param soundAssetIdentifier
+     *                             The identifier of the registered sound asset this sampler will play
+     * @param mixerDefinition
+     *                             The mixer definition this sampler will be assigned to
+     * @param identifier
+     *                             An optional custom identifier to give to this object
+     * @return
+     *         A new PHASESamplerNodeDefinition object
      */
     @Generated
     @Selector("initWithSoundAssetIdentifier:mixerDefinition:identifier:")
@@ -174,9 +183,9 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
 
     /**
      * [@property] playbackMode
-     * <p>
+     * 
      * The playback mode for the sampler.
-     * <p>
+     * 
      * If the playback mode is set to PHASEPlaybackModeOneShot, you need to make sure the the audio data in the
      * registered sound asset associated with this sampler
      * begins and ends at zero crossings. Otherwise, you'll hear a click when beginning playback and / or ending
@@ -202,9 +211,9 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
 
     /**
      * [@property] cullOption
-     * <p>
+     * 
      * The cull option for the sampler.
-     * <p>
+     * 
      * The default value is PHASECullOptionTerminate.
      */
     @Generated
@@ -213,9 +222,9 @@ public class PHASESamplerNodeDefinition extends PHASEGeneratorNodeDefinition {
 
     /**
      * [@property] playbackMode
-     * <p>
+     * 
      * The playback mode for the sampler.
-     * <p>
+     * 
      * If the playback mode is set to PHASEPlaybackModeOneShot, you need to make sure the the audio data in the
      * registered sound asset associated with this sampler
      * begins and ends at zero crossings. Otherwise, you'll hear a click when beginning playback and / or ending

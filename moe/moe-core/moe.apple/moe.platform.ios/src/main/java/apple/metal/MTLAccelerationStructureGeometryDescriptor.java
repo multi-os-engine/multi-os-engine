@@ -23,10 +23,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.metal.protocol.MTLBuffer;
 
 /**
  * Base class for all geometry descriptors. Do not use this class directly. Use one of the derived
  * classes instead.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Metal")
@@ -189,6 +192,8 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
 
     /**
      * Label
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("label")
@@ -196,8 +201,96 @@ public class MTLAccelerationStructureGeometryDescriptor extends NSObject impleme
 
     /**
      * Label
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setLabel:")
     public native void setLabel(String value);
+
+    /**
+     * Data buffer containing per-primitive data. May be nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("primitiveDataBuffer")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLBuffer primitiveDataBuffer();
+
+    /**
+     * Primitive data buffer offset in bytes. Must be aligned to the platform's buffer offset alignment. Defaults to 0
+     * bytes.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("primitiveDataBufferOffset")
+    @NUInt
+    public native long primitiveDataBufferOffset();
+
+    /**
+     * Size, in bytes, of the data for each primitive in the primitive data buffer. Must be at most primitiveDataStride
+     * and must be a
+     * multiple of 4 bytes. Defaults to 0 bytes.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("primitiveDataElementSize")
+    @NUInt
+    public native long primitiveDataElementSize();
+
+    /**
+     * Stride, in bytes, between per-primitive data in the primitive data buffer. Must be at least
+     * primitiveDataElementSize and must be a
+     * multiple of 4 bytes. Defaults to 0 bytes. Assumed to be equal to primitiveDataElementSize if zero.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("primitiveDataStride")
+    @NUInt
+    public native long primitiveDataStride();
+
+    /**
+     * Data buffer containing per-primitive data. May be nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setPrimitiveDataBuffer:")
+    public native void setPrimitiveDataBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+
+    /**
+     * Primitive data buffer offset in bytes. Must be aligned to the platform's buffer offset alignment. Defaults to 0
+     * bytes.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setPrimitiveDataBufferOffset:")
+    public native void setPrimitiveDataBufferOffset(@NUInt long value);
+
+    /**
+     * Size, in bytes, of the data for each primitive in the primitive data buffer. Must be at most primitiveDataStride
+     * and must be a
+     * multiple of 4 bytes. Defaults to 0 bytes.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setPrimitiveDataElementSize:")
+    public native void setPrimitiveDataElementSize(@NUInt long value);
+
+    /**
+     * Stride, in bytes, between per-primitive data in the primitive data buffer. Must be at least
+     * primitiveDataElementSize and must be a
+     * multiple of 4 bytes. Defaults to 0 bytes. Assumed to be equal to primitiveDataElementSize if zero.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setPrimitiveDataStride:")
+    public native void setPrimitiveDataStride(@NUInt long value);
 }

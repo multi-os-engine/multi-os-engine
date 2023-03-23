@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A list configuration can be used to layout a section inside a UICollectionViewCompositionalLayout as a list.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")
@@ -290,6 +292,8 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
 
     /**
      * Padding above each section header. The default value is `UICollectionViewLayoutAutomaticDimension`
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("headerTopPadding")
@@ -302,6 +306,8 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
      * a resolved separator configuration are passed in to this block. The configuration returned from this block will
      * be treated as the final
      * separator configuration for this item.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("itemSeparatorHandler")
@@ -319,6 +325,8 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     /**
      * The preferred configuration for separators. Used as a baseline for a section in a list using this \c
      * UICollectionLayoutListConfiguration
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("separatorConfiguration")
@@ -326,6 +334,8 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
 
     /**
      * Padding above each section header. The default value is `UICollectionViewLayoutAutomaticDimension`
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setHeaderTopPadding:")
@@ -337,6 +347,8 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
      * a resolved separator configuration are passed in to this block. The configuration returned from this block will
      * be treated as the final
      * separator configuration for this item.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setItemSeparatorHandler:")
@@ -354,6 +366,8 @@ public class UICollectionLayoutListConfiguration extends NSObject implements NSC
     /**
      * The preferred configuration for separators. Used as a baseline for a section in a list using this \c
      * UICollectionLayoutListConfiguration
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setSeparatorConfiguration:")

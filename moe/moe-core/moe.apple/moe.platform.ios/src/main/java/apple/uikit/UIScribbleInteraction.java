@@ -35,6 +35,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * In some cases it is necessary to suppress Scribble, for example if a text view also supports drawing with Apple
  * Pencil. You may also need to suppress Scribble in views that handle Pencil events directly, like a drawing canvas,
  * since nearby text fields could take over the Pencil events for writing.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")

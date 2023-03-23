@@ -868,7 +868,7 @@ public final class Enums {
     private Enums() {
     }
 
-    @Deprecated @Generated public static final int errSecDskFull = 0xFFFFFFDE;
+    @Generated public static final int errSecDskFull = 0xFFFFFFDE;
     /**
      * Write permissions error.
      */
@@ -1980,7 +1980,11 @@ public final class Enums {
      * The certificate authority was not valid.
      */
     @Generated public static final int errSecInvalidCertAuthority = 0xFFFEF70E;
-    @Generated public static final int errSecInvaldCRLAuthority = 0xFFFEF70D;
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 15.0
+     */
+    @Deprecated @Generated public static final int errSecInvaldCRLAuthority = 0xFFFEF70D;
     /**
      * The CRL encoding was not valid.
      */
@@ -2077,7 +2081,11 @@ public final class Enums {
      * The base ACLs are not valid.
      */
     @Generated public static final int errSecInvalidBaseACLs = 0xFFFEF6F5;
-    @Generated public static final int errSecInvalidTupleCredendtials = 0xFFFEF6F4;
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 15.0
+     */
+    @Deprecated @Generated public static final int errSecInvalidTupleCredendtials = 0xFFFEF6F4;
     /**
      * The encoding was not valid.
      */

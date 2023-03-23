@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSCoder;
@@ -49,6 +48,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
 /**
  * Creates a table view with the correct dimensions and autoresizing, setting the datasource and delegate to self.
@@ -56,6 +56,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * animation) if clearsSelectionOnViewWillAppear is YES.
  * In -viewDidAppear:, it flashes the table's scroll indicators.
  * Implements -setEditing:animated: to toggle the editing state of the table.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("UIKit")
@@ -85,6 +87,7 @@ public class UITableViewController extends UIViewController implements UITableVi
     @Selector("allocWithZone:")
     public static native UITableViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -177,6 +180,8 @@ public class UITableViewController extends UIViewController implements UITableVi
 
     /**
      * defaults to YES. If YES, any selection is cleared in viewWillAppear:
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("clearsSelectionOnViewWillAppear")
@@ -209,6 +214,9 @@ public class UITableViewController extends UIViewController implements UITableVi
     @NInt
     public native long numberOfSectionsInTableView(UITableView tableView);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("refreshControl")
     public native UIRefreshControl refreshControl();
@@ -282,11 +290,16 @@ public class UITableViewController extends UIViewController implements UITableVi
 
     /**
      * defaults to YES. If YES, any selection is cleared in viewWillAppear:
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setClearsSelectionOnViewWillAppear:")
     public native void setClearsSelectionOnViewWillAppear(boolean value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setRefreshControl:")
     public native void setRefreshControl(UIRefreshControl value);
@@ -326,6 +339,7 @@ public class UITableViewController extends UIViewController implements UITableVi
     @Selector("tableView:canMoveRowAtIndexPath:")
     public native boolean tableViewCanMoveRowAtIndexPath(UITableView tableView, NSIndexPath indexPath);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("tableView:canPerformAction:forRowAtIndexPath:withSender:")
@@ -391,6 +405,7 @@ public class UITableViewController extends UIViewController implements UITableVi
     public native void tableViewDidUpdateFocusInContextWithAnimationCoordinator(UITableView tableView,
             UITableViewFocusUpdateContext context, UIFocusAnimationCoordinator coordinator);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("tableView:editActionsForRowAtIndexPath:")
@@ -456,6 +471,7 @@ public class UITableViewController extends UIViewController implements UITableVi
     @NInt
     public native long tableViewNumberOfRowsInSection(UITableView tableView, @NInt long section);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("tableView:performAction:forRowAtIndexPath:withSender:")
@@ -479,6 +495,7 @@ public class UITableViewController extends UIViewController implements UITableVi
     @Selector("tableView:shouldIndentWhileEditingRowAtIndexPath:")
     public native boolean tableViewShouldIndentWhileEditingRowAtIndexPath(UITableView tableView, NSIndexPath indexPath);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("tableView:shouldShowMenuForRowAtIndexPath:")
@@ -641,4 +658,15 @@ public class UITableViewController extends UIViewController implements UITableVi
     @IsOptional
     @Selector("tableView:selectionFollowsFocusForRowAtIndexPath:")
     public native boolean tableViewSelectionFollowsFocusForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:canPerformPrimaryActionForRowAtIndexPath:")
+    public native boolean tableViewCanPerformPrimaryActionForRowAtIndexPath(UITableView tableView,
+            NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("tableView:performPrimaryActionForRowAtIndexPath:")
+    public native void tableViewPerformPrimaryActionForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath);
 }

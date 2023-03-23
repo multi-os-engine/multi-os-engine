@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class can be used to take an image snapshot from a camera.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("HomeKit")

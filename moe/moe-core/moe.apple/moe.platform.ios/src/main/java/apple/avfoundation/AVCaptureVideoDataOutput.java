@@ -46,12 +46,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVCaptureVideoDataOutput
- * <p>
+ * 
  * AVCaptureVideoDataOutput is a concrete subclass of AVCaptureOutput that can be used to process uncompressed or
  * compressed frames from the video being captured.
- * <p>
+ * 
  * Instances of AVCaptureVideoDataOutput produce video frames suitable for processing using other media APIs.
  * Applications can access the frames with the captureOutput:didOutputSampleBuffer:fromConnection: delegate method.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("AVFoundation")
@@ -165,10 +167,10 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] alwaysDiscardsLateVideoFrames
-     * <p>
+     * 
      * Specifies whether the receiver should always discard any video frame that is not processed before the next frame
      * is captured.
-     * <p>
+     * 
      * When the value of this property is YES, the receiver will immediately discard frames that are captured while the
      * dispatch queue handling existing frames is blocked in the captureOutput:didOutputSampleBuffer:fromConnection:
      * delegate method. When the value of this property is NO, delegates will be allowed more time to process old frames
@@ -181,12 +183,15 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] availableVideoCVPixelFormatTypes
-     * <p>
+     * 
      * Indicates the supported video pixel formats that can be specified in videoSettings.
-     * <p>
+     * 
      * The value of this property is an NSArray of NSNumbers that can be used as values for the
-     * kCVPixelBufferPixelFormatTypeKey in the receiver's videoSettings property. The first format in the returned list
-     * is the most efficient output format.
+     * kCVPixelBufferPixelFormatTypeKey in the receiver's videoSettings property. The formats are listed in an
+     * unspecified order. This list can may change if the activeFormat of the AVCaptureDevice connected to the receiver
+     * changes.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("availableVideoCVPixelFormatTypes")
@@ -194,11 +199,13 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] availableVideoCodecTypes
-     * <p>
+     * 
      * Indicates the supported video codec formats that can be specified in videoSettings.
-     * <p>
+     * 
      * The value of this property is an NSArray of AVVideoCodecTypes that can be used as values for the AVVideoCodecKey
      * in the receiver's videoSettings property.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("availableVideoCodecTypes")
@@ -210,14 +217,18 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] minFrameDuration
-     * <p>
+     * 
      * Specifies the minimum time interval between which the receiver should output consecutive video frames.
-     * <p>
+     * 
      * The value of this property is a CMTime specifying the minimum duration of each video frame output by the
      * receiver, placing a lower bound on the amount of time that should separate consecutive frames. This is equivalent
      * to the inverse of the maximum frame rate. A value of kCMTimeZero or kCMTimeInvalid indicates an unlimited maximum
      * frame rate. The default value is kCMTimeInvalid. As of iOS 5.0, minFrameDuration is deprecated. Use
      * AVCaptureConnection's videoMinFrameDuration property instead.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 5.0
+     * Deprecated-Message: Use AVCaptureConnection's videoMinFrameDuration property instead.
      */
     @Generated
     @Deprecated
@@ -227,28 +238,32 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * recommendedVideoSettingsForAssetWriterWithOutputFileType:
-     * <p>
+     * 
      * Specifies the recommended settings for use with an AVAssetWriterInput.
-     * <p>
+     * 
      * The value of this property is an NSDictionary containing values for compression settings keys defined in
      * AVVideoSettings.h. This dictionary is suitable for use as the "outputSettings" parameter when creating an
      * AVAssetWriterInput, such as,
-     * <p>
+     * 
      * [AVAssetWriterInput assetWriterInputWithMediaType:AVMediaTypeVideo outputSettings:outputSettings
      * sourceFormatHint:hint];
-     * <p>
+     * 
      * The dictionary returned contains all necessary keys and values needed by AVAssetWriter (see AVAssetWriterInput.h,
      * -initWithMediaType:outputSettings: for a more in depth discussion). For QuickTime movie and ISO file types, the
      * recommended video settings will produce output comparable to that of AVCaptureMovieFileOutput.
-     * <p>
+     * 
      * Note that the dictionary of settings is dependent on the current configuration of the receiver's AVCaptureSession
      * and its inputs. The settings dictionary may change if the session's configuration changes. As such, you should
      * configure your session first, then query the recommended video settings. As of iOS 8.3, movies produced with
      * these settings successfully import into the iOS camera roll and sync to and from like devices via iTunes.
-     *
-     * @param outputFileType Specifies the UTI of the file type to be written (see AVMediaFormat.h for a list of file
+     * 
+     * API-Since: 7.0
+     * 
+     * @param outputFileType
+     *                       Specifies the UTI of the file type to be written (see AVMediaFormat.h for a list of file
      *                       format UTIs).
-     * @return A fully populated dictionary of keys and values that are compatible with AVAssetWriter.
+     * @return
+     *         A fully populated dictionary of keys and values that are compatible with AVAssetWriter.
      */
     @Generated
     @Selector("recommendedVideoSettingsForAssetWriterWithOutputFileType:")
@@ -257,9 +272,9 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] sampleBufferCallbackQueue
-     * <p>
+     * 
      * The dispatch queue on which all sample buffer delegate methods will be called.
-     * <p>
+     * 
      * The value of this property is a dispatch_queue_t. The queue is set using the setSampleBufferDelegate:queue:
      * method.
      */
@@ -269,9 +284,9 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] sampleBufferDelegate
-     * <p>
+     * 
      * The receiver's delegate.
-     * <p>
+     * 
      * The value of this property is an object conforming to the AVCaptureVideoDataOutputSampleBufferDelegate protocol
      * that will receive sample buffers after they are captured. The delegate is set using the
      * setSampleBufferDelegate:queue: method.
@@ -283,10 +298,10 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] alwaysDiscardsLateVideoFrames
-     * <p>
+     * 
      * Specifies whether the receiver should always discard any video frame that is not processed before the next frame
      * is captured.
-     * <p>
+     * 
      * When the value of this property is YES, the receiver will immediately discard frames that are captured while the
      * dispatch queue handling existing frames is blocked in the captureOutput:didOutputSampleBuffer:fromConnection:
      * delegate method. When the value of this property is NO, delegates will be allowed more time to process old frames
@@ -299,14 +314,18 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] minFrameDuration
-     * <p>
+     * 
      * Specifies the minimum time interval between which the receiver should output consecutive video frames.
-     * <p>
+     * 
      * The value of this property is a CMTime specifying the minimum duration of each video frame output by the
      * receiver, placing a lower bound on the amount of time that should separate consecutive frames. This is equivalent
      * to the inverse of the maximum frame rate. A value of kCMTimeZero or kCMTimeInvalid indicates an unlimited maximum
      * frame rate. The default value is kCMTimeInvalid. As of iOS 5.0, minFrameDuration is deprecated. Use
      * AVCaptureConnection's videoMinFrameDuration property instead.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 5.0
+     * Deprecated-Message: Use AVCaptureConnection's videoMinFrameDuration property instead.
      */
     @Generated
     @Deprecated
@@ -315,10 +334,10 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * setSampleBufferDelegate:queue:
-     * <p>
+     * 
      * Sets the receiver's delegate that will accept captured buffers and dispatch queue on which the delegate will be
      * called.
-     * <p>
+     * 
      * When a new video sample buffer is captured it will be vended to the sample buffer delegate using the
      * captureOutput:didOutputSampleBuffer:fromConnection: delegate method. All delegate methods will be called on the
      * specified dispatch queue. If the queue is blocked when new frames are captured, those frames will be
@@ -328,18 +347,20 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * If their frame processing is consistently unable to keep up with the rate of incoming frames, clients should
      * consider using the minFrameDuration property, which will generally yield better performance characteristics and
      * more consistent frame rates than frame dropping alone.
-     * <p>
+     * 
      * Clients that need to minimize the chances of frames being dropped should specify a queue on which a sufficiently
      * small amount of processing is being done outside of receiving sample buffers. However, if such clients migrate
      * extra processing to another queue, they are responsible for ensuring that memory usage does not grow without
      * bound from frames that have not been processed.
-     * <p>
+     * 
      * A serial dispatch queue must be used to guarantee that video frames will be delivered in order. The
      * sampleBufferCallbackQueue parameter may not be NULL, except when setting the sampleBufferDelegate to nil.
-     *
-     * @param sampleBufferDelegate      An object conforming to the AVCaptureVideoDataOutputSampleBufferDelegate
+     * 
+     * @param sampleBufferDelegate
+     *                                  An object conforming to the AVCaptureVideoDataOutputSampleBufferDelegate
      *                                  protocol that will receive sample buffers after they are captured.
-     * @param sampleBufferCallbackQueue A dispatch queue on which all sample buffer delegate methods will be called.
+     * @param sampleBufferCallbackQueue
+     *                                  A dispatch queue on which all sample buffer delegate methods will be called.
      */
     @Generated
     @Selector("setSampleBufferDelegate:queue:")
@@ -349,18 +370,24 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] videoSettings
-     * <p>
+     * 
      * Specifies the settings used to decode or re-encode video before it is output by the receiver.
-     * <p>
+     * 
      * See AVVideoSettings.h for more information on how to construct a video settings dictionary. To receive samples in
      * their device native format, set this property to an empty dictionary (i.e. [NSDictionary dictionary]). To receive
      * samples in a default uncompressed format, set this property to nil. Note that after this property is set to nil,
      * subsequent querying of this property will yield a non-nil dictionary reflecting the settings used by the
      * AVCaptureSession's current sessionPreset.
-     * <p>
-     * On iOS, the only supported key is kCVPixelBufferPixelFormatTypeKey. Supported pixel formats are
-     * kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange, kCVPixelFormatType_420YpCbCr8BiPlanarFullRange and
-     * kCVPixelFormatType_32BGRA.
+     * 
+     * On iOS versions prior to iOS 16.0, the only supported key is kCVPixelBufferPixelFormatTypeKey. Use
+     * -availableVideoCVPixelFormatTypes for the list of supported pixel formats. For apps linked on or after iOS 16.0,
+     * kCVPixelBufferPixelFormatTypeKey, kCVPixelBufferWidthKey, and kCVPixelBufferHeightKey are supported. The width
+     * and height must match the videoOrientation specified on the output's AVCaptureConnection or an
+     * NSInvalidArgumentException is thrown. The aspect ratio of width and height must match the aspect ratio of the
+     * source's activeFormat (corrected for the connection's videoOrientation) or an NSInvalidArgumentException is
+     * thrown. If width or height exceeds the source's activeFormat's width or height, an NSInvalidArgumentException is
+     * thrown. Changing width and height when deliversPreviewSizedOutputBuffers is set to YES is not supported and
+     * throws an NSInvalidArgumentException.
      */
     @Generated
     @Selector("setVideoSettings:")
@@ -368,18 +395,24 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] videoSettings
-     * <p>
+     * 
      * Specifies the settings used to decode or re-encode video before it is output by the receiver.
-     * <p>
+     * 
      * See AVVideoSettings.h for more information on how to construct a video settings dictionary. To receive samples in
      * their device native format, set this property to an empty dictionary (i.e. [NSDictionary dictionary]). To receive
      * samples in a default uncompressed format, set this property to nil. Note that after this property is set to nil,
      * subsequent querying of this property will yield a non-nil dictionary reflecting the settings used by the
      * AVCaptureSession's current sessionPreset.
-     * <p>
-     * On iOS, the only supported key is kCVPixelBufferPixelFormatTypeKey. Supported pixel formats are
-     * kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange, kCVPixelFormatType_420YpCbCr8BiPlanarFullRange and
-     * kCVPixelFormatType_32BGRA.
+     * 
+     * On iOS versions prior to iOS 16.0, the only supported key is kCVPixelBufferPixelFormatTypeKey. Use
+     * -availableVideoCVPixelFormatTypes for the list of supported pixel formats. For apps linked on or after iOS 16.0,
+     * kCVPixelBufferPixelFormatTypeKey, kCVPixelBufferWidthKey, and kCVPixelBufferHeightKey are supported. The width
+     * and height must match the videoOrientation specified on the output's AVCaptureConnection or an
+     * NSInvalidArgumentException is thrown. The aspect ratio of width and height must match the aspect ratio of the
+     * source's activeFormat (corrected for the connection's videoOrientation) or an NSInvalidArgumentException is
+     * thrown. If width or height exceeds the source's activeFormat's width or height, an NSInvalidArgumentException is
+     * thrown. Changing width and height when deliversPreviewSizedOutputBuffers is set to YES is not supported and
+     * throws an NSInvalidArgumentException.
      */
     @Generated
     @Selector("videoSettings")
@@ -387,17 +420,21 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * availableVideoCodecTypesForAssetWriterWithOutputFileType:
-     * <p>
+     * 
      * Specifies the available video codecs for use with AVAssetWriter and a given file type.
-     * <p>
+     * 
      * This method allows you to query the available video codecs that may be used when specifying an AVVideoCodecKey in
      * -recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:. When specifying an outputFileType of
      * AVFileTypeQuickTimeMovie, video codecs are ordered identically to -[AVCaptureMovieFileOutput
      * availableVideoCodecTypes].
-     *
-     * @param outputFileType Specifies the UTI of the file type to be written (see AVMediaFormat.h for a list of file
+     * 
+     * API-Since: 11.0
+     * 
+     * @param outputFileType
+     *                       Specifies the UTI of the file type to be written (see AVMediaFormat.h for a list of file
      *                       format UTIs).
-     * @return An array of video codecs; see AVVideoSettings.h for a full list.
+     * @return
+     *         An array of video codecs; see AVVideoSettings.h for a full list.
      */
     @Generated
     @Selector("availableVideoCodecTypesForAssetWriterWithOutputFileType:")
@@ -405,32 +442,37 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:
-     * <p>
+     * 
      * Specifies the recommended settings for a particular video codec type, to be used with an AVAssetWriterInput.
-     * <p>
+     * 
      * The value of this property is an NSDictionary containing values for compression settings keys defined in
      * AVVideoSettings.h. This dictionary is suitable for use as the "outputSettings" parameter when creating an
      * AVAssetWriterInput, such as,
-     * <p>
+     * 
      * [AVAssetWriterInput assetWriterInputWithMediaType:AVMediaTypeVideo outputSettings:outputSettings
      * sourceFormatHint:hint];
-     * <p>
+     * 
      * The dictionary returned contains all necessary keys and values needed by AVAssetWriter (see AVAssetWriterInput.h,
      * -initWithMediaType:outputSettings: for a more in depth discussion). For QuickTime movie and ISO file types, the
      * recommended video settings will produce output comparable to that of AVCaptureMovieFileOutput.
-     * <p>
+     * 
      * The videoCodecType string provided must be present in the
      * availableVideoCodecTypesForAssetWriterWithOutputFileType: array, or an NSInvalidArgumentException is thrown.
-     * <p>
+     * 
      * Note that the dictionary of settings is dependent on the current configuration of the receiver's AVCaptureSession
      * and its inputs. The settings dictionary may change if the session's configuration changes. As such, you should
      * configure your session first, then query the recommended video settings. As of iOS 8.3, movies produced with
      * these settings successfully import into the iOS camera roll and sync to and from like devices via iTunes.
-     *
-     * @param videoCodecType Specifies the desired AVVideoCodecKey to be used for compression (see AVVideoSettings.h).
-     * @param outputFileType Specifies the UTI of the file type to be written (see AVMediaFormat.h for a list of file
+     * 
+     * API-Since: 11.0
+     * 
+     * @param videoCodecType
+     *                       Specifies the desired AVVideoCodecKey to be used for compression (see AVVideoSettings.h).
+     * @param outputFileType
+     *                       Specifies the UTI of the file type to be written (see AVMediaFormat.h for a list of file
      *                       format UTIs).
-     * @return A fully populated dictionary of keys and values that are compatible with AVAssetWriter.
+     * @return
+     *         A fully populated dictionary of keys and values that are compatible with AVAssetWriter.
      */
     @Generated
     @Selector("recommendedVideoSettingsForVideoCodecType:assetWriterOutputFileType:")
@@ -439,9 +481,9 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] automaticallyConfiguresOutputBufferDimensions
-     * <p>
+     * 
      * Indicates whether the receiver automatically configures the size of output buffers.
-     * <p>
+     * 
      * Default value is YES. In most configurations, AVCaptureVideoDataOutput delivers full-resolution buffers, that is,
      * buffers with the same dimensions as the source AVCaptureDevice's activeFormat's videoDimensions. When this
      * property is set to YES, the receiver is free to configure the dimensions of the buffers delivered to
@@ -454,6 +496,8 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * dimensions is currently downscaling buffers to a preview size. You can also query the videoSettings property to
      * find out the exact width and height being delivered. If you wish to manually set
      * deliversPreviewSizedOutputBuffers, you must first set automaticallyConfiguresOutputBufferDimensions to NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("automaticallyConfiguresOutputBufferDimensions")
@@ -461,13 +505,15 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] deliversPreviewSizedOutputBuffers
-     * <p>
+     * 
      * Indicates whether the receiver is currently configured to deliver preview sized buffers.
-     * <p>
+     * 
      * If you wish to manually set deliversPreviewSizedOutputBuffers, you must first set
      * automaticallyConfiguresOutputBufferDimensions to NO. When deliversPreviewSizedOutputBuffers is set to YES, auto
      * focus, exposure, and white balance changes are quicker. AVCaptureVideoDataOutput assumes that the buffers are
      * being used for on-screen preview rather than recording.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("deliversPreviewSizedOutputBuffers")
@@ -475,9 +521,9 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] automaticallyConfiguresOutputBufferDimensions
-     * <p>
+     * 
      * Indicates whether the receiver automatically configures the size of output buffers.
-     * <p>
+     * 
      * Default value is YES. In most configurations, AVCaptureVideoDataOutput delivers full-resolution buffers, that is,
      * buffers with the same dimensions as the source AVCaptureDevice's activeFormat's videoDimensions. When this
      * property is set to YES, the receiver is free to configure the dimensions of the buffers delivered to
@@ -490,6 +536,8 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
      * dimensions is currently downscaling buffers to a preview size. You can also query the videoSettings property to
      * find out the exact width and height being delivered. If you wish to manually set
      * deliversPreviewSizedOutputBuffers, you must first set automaticallyConfiguresOutputBufferDimensions to NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAutomaticallyConfiguresOutputBufferDimensions:")
@@ -497,13 +545,15 @@ public class AVCaptureVideoDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] deliversPreviewSizedOutputBuffers
-     * <p>
+     * 
      * Indicates whether the receiver is currently configured to deliver preview sized buffers.
-     * <p>
+     * 
      * If you wish to manually set deliversPreviewSizedOutputBuffers, you must first set
      * automaticallyConfiguresOutputBufferDimensions to NO. When deliversPreviewSizedOutputBuffers is set to YES, auto
      * focus, exposure, and white balance changes are quicker. AVCaptureVideoDataOutput assumes that the buffers are
      * being used for on-screen preview rather than recording.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDeliversPreviewSizedOutputBuffers:")

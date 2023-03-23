@@ -28,11 +28,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Configure a custom catalog of @c SHSignature objects to match against
- * <p>
+ * 
  * Use a custom catalog if you intend to search against reference signatures that you have provided yourself. All
  * matches will be performed locally on the device against the signatures added to this Catalog.
  * [@c] SHMediaItem can be built using custom data that will be returned when a match is made.
  * Once this catalog has been built it can be written to disk and loaded again at a later date.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("ShazamKit")
@@ -53,10 +55,11 @@ public class SHCustomCatalog extends SHCatalog {
     public static native boolean accessInstanceVariablesDirectly();
 
     /**
-     * Load a pre made Custom catalog from disk
-     *
-     * @param customCatalogURL The path to the assets
-     * @param error            An error if the bundle could not be loaded
+     * Load a `shazamcatalog` file from a file path URL
+     * 
+     * @param customCatalogURL The path to the `shazamcatalog` file.
+     * @param error            An error if the catalog could not be loaded
+     * @return YES if the data was successfully added, NO on failure with a populated error parameter
      */
     @Generated
     @Selector("addCustomCatalogFromURL:error:")
@@ -65,11 +68,12 @@ public class SHCustomCatalog extends SHCatalog {
 
     /**
      * Add a reference @c SHSignature and its associated @c SHMediaItem for matching
-     * <p>
+     * 
      * Once the @c SHCatalog had been added to a @c SHSession further calls to this method will be ignored
-     *
+     * 
      * @param signature  The reference to match against
      * @param mediaItems The metadata associated with the @c SHSignature
+     * @return YES if the data was successfully added, NO on failure with a populated error parameter
      */
     @Generated
     @Selector("addReferenceSignature:representingMediaItems:error:")
@@ -121,6 +125,9 @@ public class SHCustomCatalog extends SHCatalog {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("init")
     public native SHCustomCatalog init();
@@ -146,6 +153,9 @@ public class SHCustomCatalog extends SHCatalog {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Owned
     @Selector("new")
@@ -173,11 +183,11 @@ public class SHCustomCatalog extends SHCatalog {
     public static native long version_static();
 
     /**
-     * Write this Catalog to disk
-     * <p>
+     * Write this Catalog to a URL
+     * 
      * A Catalog can safely be shared among devices
      * [@note] If the `destinationURL` is a directory, a file named Signatures.shazamcatalog will be created
-     *
+     * 
      * @param destinationURL The location to write to
      * @param error          populated on error, otherwise nil
      * @return YES on success, NO on failure with a populated error parameter

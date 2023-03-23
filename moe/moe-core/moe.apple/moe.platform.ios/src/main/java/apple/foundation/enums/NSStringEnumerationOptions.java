@@ -54,10 +54,14 @@ public final class NSStringEnumerationOptions {
 
     /**
      * Enumerate text editing cursor positions. It could separate characters within a grapheme cluster.
+     * 
+     * API-Since: 14.0
      */
     @Generated @NUInt public static final long ByCaretPositions = 0x0000000000000005L;
     /**
      * Enumerate text editing positions for backwards deletion. It could separate characters within a grapheme cluster.
+     * 
+     * API-Since: 14.0
      */
     @Generated @NUInt public static final long ByDeletionClusters = 0x0000000000000006L;
 }

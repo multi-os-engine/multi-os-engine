@@ -21,6 +21,9 @@ public final class AutomaticAssessmentConfiguration {
     private AutomaticAssessmentConfiguration() {
     }
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

@@ -3,10 +3,6 @@ package apple.pdfkit;
 import apple.NSObject;
 import apple.coregraphics.opaque.CGContextRef;
 import apple.coregraphics.opaque.CGPDFPageRef;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSAttributedString;
 import apple.foundation.NSData;
@@ -34,7 +30,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSDictionary;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("PDFKit")
 @Runtime(ObjCRuntime.class)
@@ -186,6 +190,8 @@ public class PDFPage extends NSObject implements NSCopying {
      * Drawing method takes into account page rotation, draws in page space relative to and clipped to the box bounds.
      * If
      * -[displaysAnnotations] is true, also draws any page annotations. Does not clear the background (page white).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("drawWithBox:toContext:")
@@ -205,7 +211,9 @@ public class PDFPage extends NSObject implements NSCopying {
     public native PDFPage init();
 
     /**
-     * Returns a PDFPage for the passed in image. An easy way to create a PDFPage from an image to add to a PDFDocument.
+     * Returns a PDFPage for the given image. Equivalent to initWithImage:options: with empty options
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithImage:")
@@ -371,6 +379,8 @@ public class PDFPage extends NSObject implements NSCopying {
      * Convenience function that returns an image of this page, with annotations, that fits the given size.
      * Note that the produced image is "size to fit": it retains the original page aspect-ratio. The size you give
      * may not match the size of the returned image, but the returned image is guaranteed to be equal or less.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("thumbnailOfSize:forBox:")
@@ -380,6 +390,8 @@ public class PDFPage extends NSObject implements NSCopying {
      * Given a display box, will transform the given context to take into account the rotation of the page as well as
      * the origin of the box with respect to the page's base coordinates system. This is a convenience method to call
      * from within -[PDFView drawPage:toContext:] or -[PDFAnnotation drawWithBox:inContext:].
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("transformContext:forBox:")
@@ -388,6 +400,8 @@ public class PDFPage extends NSObject implements NSCopying {
     /**
      * This transform correctly rotates and offsets based on the given page's rotation property and the display box
      * type.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("transformForBox:")
@@ -398,4 +412,13 @@ public class PDFPage extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Returns a PDFPage for the given image, using the given options
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("initWithImage:options:")
+    public native PDFPage initWithImageOptions(UIImage image, NSDictionary<String, ?> options);
 }

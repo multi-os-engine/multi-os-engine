@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -42,10 +45,14 @@ public class AVFragmentedAssetMinder extends NSObject {
 
     /**
      * addFragmentedAsset:
-     * <p>
+     * 
      * Adds a fragmented asset to the array of assets being minded.
-     *
-     * @param asset The fragmented asset to add to the minder.
+     * 
+     * This method throws an exception if the asset is not a supported type (AVFragmentedAsset, AVFragmentedMovie), or
+     * if the asset is already being minded by another fragment minder.
+     * 
+     * @param asset
+     *              The fragmented asset to add to the minder.
      */
     @Generated
     @Selector("addFragmentedAsset:")
@@ -63,7 +70,7 @@ public class AVFragmentedAssetMinder extends NSObject {
 
     /**
      * [@property] assets
-     * <p>
+     * 
      * An NSArray of the AVFragmentedAsset objects being minded.
      */
     @Generated
@@ -102,12 +109,14 @@ public class AVFragmentedAssetMinder extends NSObject {
 
     /**
      * fragmentedAssetMinderWithAsset:mindingInterval:
-     * <p>
+     * 
      * Creates an AVFragmentedAssetMinder, adds the specified asset to it, and sets the mindingInterval to the specified
      * value.
-     *
-     * @param asset           An instance of AVFragmentedAsset to add to the AVFragmentedAssetMinder
-     * @param mindingInterval The initial minding interval of the AVFragmentedAssetMinder.
+     * 
+     * @param asset
+     *                        An instance of AVFragmentedAsset to add to the AVFragmentedAssetMinder
+     * @param mindingInterval
+     *                        The initial minding interval of the AVFragmentedAssetMinder.
      * @return A new instance of AVFragmentedAssetMinder.
      */
     @Generated
@@ -126,12 +135,14 @@ public class AVFragmentedAssetMinder extends NSObject {
 
     /**
      * initWithAsset:mindingInterval:
-     * <p>
+     * 
      * Creates an AVFragmentedAssetMinder, adds the specified asset to it, and sets the mindingInterval to the specified
      * value.
-     *
-     * @param asset           An instance of AVFragmentedAsset to add to the AVFragmentedAssetMinder
-     * @param mindingInterval The initial minding interval of the AVFragmentedAssetMinder.
+     * 
+     * @param asset
+     *                        An instance of AVFragmentedAsset to add to the AVFragmentedAssetMinder
+     * @param mindingInterval
+     *                        The initial minding interval of the AVFragmentedAssetMinder.
      * @return A new instance of AVFragmentedAssetMinder.
      */
     @Generated
@@ -161,9 +172,11 @@ public class AVFragmentedAssetMinder extends NSObject {
 
     /**
      * [@property] mindingInterval
-     * <p>
+     * 
      * An NSTimeInterval indicating how often a check for additional fragments should be performed. The default interval
      * is 10.0.
+     * 
+     * This property throws an excepion if a value is set less than one millisecond (0.001) in duration.
      */
     @Generated
     @Selector("mindingInterval")
@@ -176,10 +189,13 @@ public class AVFragmentedAssetMinder extends NSObject {
 
     /**
      * removeFragmentedAsset:
-     * <p>
+     * 
      * Removes a fragmented asset from the array of assets being minded.
-     *
-     * @param asset The fragmented asset to remove from the minder.
+     * 
+     * This method throws an exception if the asset is not a supported type (AVFragmentedAsset, AVFragmentedMovie).
+     * 
+     * @param asset
+     *              The fragmented asset to remove from the minder.
      */
     @Generated
     @Selector("removeFragmentedAsset:")
@@ -195,9 +211,11 @@ public class AVFragmentedAssetMinder extends NSObject {
 
     /**
      * [@property] mindingInterval
-     * <p>
+     * 
      * An NSTimeInterval indicating how often a check for additional fragments should be performed. The default interval
      * is 10.0.
+     * 
+     * This property throws an excepion if a value is set less than one millisecond (0.001) in duration.
      */
     @Generated
     @Selector("setMindingInterval:")

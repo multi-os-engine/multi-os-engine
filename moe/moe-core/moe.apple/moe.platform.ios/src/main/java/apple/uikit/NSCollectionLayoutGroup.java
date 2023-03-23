@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -118,18 +121,12 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     /**
      * Specifies a group that will have N items equally sized along the horizontal axis. use interItemSpacing to insert
      * space between items
-     * <p>
-     * +------+--+------+--+------+
-     * |~~~~~~| |~~~~~~| |~~~~~~|
-     * |~~~~~~| |~~~~~~| |~~~~~~|
-     * |~~~~~~| |~~~~~~| |~~~~~~|
-     * +------+--+------+--+------+
-     * ^ ^
-     * | |
-     * +-----------------------+
-     * | Inter Item Spacing |
-     * +-----------------------+
+     * Forces the width dimension of the subitem to .fractionalWidth(1.0/count).
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("horizontalGroupWithLayoutSize:subitem:count:")
     public static native NSCollectionLayoutGroup horizontalGroupWithLayoutSizeSubitemCount(
@@ -239,24 +236,12 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     /**
      * Specifies a group that will have N items equally sized along the vertical axis. use interItemSpacing to insert
      * space between items
-     * +------+
-     * |~~~~~~|
-     * |~~~~~~|
-     * |~~~~~~|
-     * +------+
-     * | |<--+
-     * +------+ |
-     * |~~~~~~| | +-----------------------+
-     * |~~~~~~| +----| Inter Item Spacing |
-     * |~~~~~~| | +-----------------------+
-     * +------+ |
-     * | |<--+
-     * +------+
-     * |~~~~~~|
-     * |~~~~~~|
-     * |~~~~~~|
-     * +------+
+     * Forces the height dimension of the subitem to .fractionalHeight(1.0/count).
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("verticalGroupWithLayoutSize:subitem:count:")
     public static native NSCollectionLayoutGroup verticalGroupWithLayoutSizeSubitemCount(
@@ -277,4 +262,34 @@ public class NSCollectionLayoutGroup extends NSCollectionLayoutItem implements N
     @Generated
     @Selector("visualDescription")
     public native String visualDescription();
+
+    /**
+     * Specifies a group that will horizontally repeat its subitem a fixed number of times.
+     * 
+     * @param layoutSize The group's size.
+     * @param subitem    The subitem to repeat. It is the caller's responsibility to ensure that the group's @c
+     *                   layoutSize can fit @c count repetitions of this item.
+     * @param count      The number of times to repeat the passed in subitem.
+     * 
+     *                   API-Since: 16.0
+     */
+    @Generated
+    @Selector("horizontalGroupWithLayoutSize:repeatingSubitem:count:")
+    public static native NSCollectionLayoutGroup horizontalGroupWithLayoutSizeRepeatingSubitemCount(
+            NSCollectionLayoutSize layoutSize, NSCollectionLayoutItem subitem, @NInt long count);
+
+    /**
+     * Specifies a group that will vertically repeat its subitem a fixed number of times.
+     * 
+     * @param layoutSize The group's size.
+     * @param subitem    The subitem to repeat. It is the caller's responsibility to ensure that the group's @c
+     *                   layoutSize can fit @c count repetitions of this item.
+     * @param count      The number of times to repeat the passed in subitem.
+     * 
+     *                   API-Since: 16.0
+     */
+    @Generated
+    @Selector("verticalGroupWithLayoutSize:repeatingSubitem:count:")
+    public static native NSCollectionLayoutGroup verticalGroupWithLayoutSizeRepeatingSubitemCount(
+            NSCollectionLayoutSize layoutSize, NSCollectionLayoutItem subitem, @NInt long count);
 }

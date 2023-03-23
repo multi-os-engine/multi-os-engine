@@ -15,9 +15,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MTLDynamicLibrary
- * <p>
+ * 
  * A container for the binary representation of code compiled for a MTLDevice.
- * <p>
+ * 
  * MTLDynamicLibrary can be created in two ways:
  * 1) MTLDevice newDynamicLibrary:error:
  * This method takes an MTLLibrary (which has .type set to MTLLibraryTypeDynamic) and then compiles the code in the
@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * If any unresolved symbols remain after searching the set, the creation of the MTLComputePipelineState fails.
  * Otherwise, the MTLComputePipelineState creation succeeds, and the set of MTLDynamicLibraries used are retained by the
  * MTLComputePipelineState.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Metal")
@@ -53,7 +55,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLDynamicLibrary {
     /**
      * [@property] device
-     * <p>
+     * 
      * The device this resource was created against. This resource can only be used with this device.
      */
     @Generated
@@ -63,7 +65,7 @@ public interface MTLDynamicLibrary {
 
     /**
      * [@property] installName
-     * <p>
+     * 
      * The installName of this dynamic library. Can not be nil.
      */
     @Generated
@@ -72,7 +74,7 @@ public interface MTLDynamicLibrary {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
@@ -81,15 +83,15 @@ public interface MTLDynamicLibrary {
 
     /**
      * serializeToURL:error:
-     * <p>
+     * 
      * Writes the contents of the MTLDynamicLibrary to a file.
-     * <p>
+     * 
      * On success, the file will contain a representation of the MTLLibrary from which the MTLDynamicLibrary was
      * originally created, as well as the compiled code for the current device.
      * Such files may be combined with offline tools to contain the compiled code for multiple devices.
      * If this MTLDynamicLibrary was created from a file that contained compiled code for multiple devices, the compiled
      * code for all other devices is not written (since only compiled code for the current device was loaded).
-     *
+     * 
      * @param url   The file URL to which to write the content of the dynamic library. It the URL does not refer to a
      *              file, the function fails.
      * @param error If the function fails, this will be set to describe the failure. This can be (but is not required to
@@ -103,7 +105,7 @@ public interface MTLDynamicLibrary {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated

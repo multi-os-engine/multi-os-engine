@@ -41,15 +41,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Configuration options for an NSURLSession. When a session is
  * created, a copy of the configuration object is made - you cannot
  * modify the configuration of a session after it has been created.
- * <p>
+ * 
  * The shared session uses the global singleton credential, cache
  * and cookie storage objects.
- * <p>
+ * 
  * An ephemeral session has no persistent disk storage for cookies,
  * cache or credentials.
- * <p>
+ * 
  * A background session can be used to perform networking operations
  * on behalf of a suspended application, within certain constraints.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("Foundation")
@@ -83,11 +85,18 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @Deprecated
     @Selector("backgroundSessionConfiguration:")
     public static native NSURLSessionConfiguration backgroundSessionConfiguration(String identifier);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("backgroundSessionConfigurationWithIdentifier:")
     public static native NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier(String identifier);
@@ -152,6 +161,13 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use NSURLSessionConfiguration.defaultSessionConfiguration or other class methods to
+     * create instances
+     */
+    @Deprecated
     @Generated
     @Owned
     @Selector("new")
@@ -202,7 +218,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     public native NSHTTPCookieStorage HTTPCookieStorage();
 
     /**
-     * The maximum number of simultanous persistent connections per host
+     * The maximum number of simultaneous persistent connections per host
      */
     @Generated
     @Selector("HTTPMaximumConnectionsPerHost")
@@ -225,14 +241,22 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * The maximum allowable versions of the TLS protocol, from <Security/SecureTransport.h>
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("TLSMaximumSupportedProtocol")
     public native int TLSMaximumSupportedProtocol();
 
     /**
      * The minimum allowable versions of the TLS protocol, from <Security/SecureTransport.h>
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("TLSMinimumSupportedProtocol")
     public native int TLSMinimumSupportedProtocol();
@@ -278,12 +302,21 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Selector("identifier")
     public native String identifier();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use NSURLSessionConfiguration.defaultSessionConfiguration or other class methods to
+     * create instances
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSURLSessionConfiguration init();
 
     /**
      * allows background tasks to be scheduled at the discretion of the system for optimal performance.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("isDiscretionary")
@@ -291,6 +324,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * allows background tasks to be scheduled at the discretion of the system for optimal performance.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setDiscretionary:")
@@ -331,8 +366,10 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * or when auth is required. This only applies to configurations created with
      * +backgroundSessionConfigurationWithIdentifier:
      * and the default value is YES.
-     * <p>
+     * 
      * NOTE: macOS apps based on AppKit do not support background launch.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("sessionSendsLaunchEvents")
@@ -375,7 +412,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     public native void setHTTPCookieStorage(NSHTTPCookieStorage value);
 
     /**
-     * The maximum number of simultanous persistent connections per host
+     * The maximum number of simultaneous persistent connections per host
      */
     @Generated
     @Selector("setHTTPMaximumConnectionsPerHost:")
@@ -428,8 +465,10 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * or when auth is required. This only applies to configurations created with
      * +backgroundSessionConfigurationWithIdentifier:
      * and the default value is YES.
-     * <p>
+     * 
      * NOTE: macOS apps based on AppKit do not support background launch.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setSessionSendsLaunchEvents:")
@@ -439,6 +478,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * The identifier of the shared data container into which files in background sessions should be downloaded.
      * App extensions wishing to use background sessions *must* set this property to a valid container identifier, or
      * all transfers in that session will fail with NSURLErrorBackgroundSessionRequiresSharedContainer.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSharedContainerIdentifier:")
@@ -449,6 +490,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * socket open
      * and delay reclaiming it when the process moves to the background (see
      * https://developer.apple.com/library/ios/technotes/tn2277/_index.html)
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setShouldUseExtendedBackgroundIdleMode:")
@@ -456,14 +499,22 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * The maximum allowable versions of the TLS protocol, from <Security/SecureTransport.h>
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("setTLSMaximumSupportedProtocol:")
     public native void setTLSMaximumSupportedProtocol(int value);
 
     /**
      * The minimum allowable versions of the TLS protocol, from <Security/SecureTransport.h>
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("setTLSMinimumSupportedProtocol:")
     public native void setTLSMinimumSupportedProtocol(int value);
@@ -502,6 +553,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * The identifier of the shared data container into which files in background sessions should be downloaded.
      * App extensions wishing to use background sessions *must* set this property to a valid container identifier, or
      * all transfers in that session will fail with NSURLErrorBackgroundSessionRequiresSharedContainer.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("sharedContainerIdentifier")
@@ -512,6 +565,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * socket open
      * and delay reclaiming it when the process moves to the background (see
      * https://developer.apple.com/library/ios/technotes/tn2277/_index.html)
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("shouldUseExtendedBackgroundIdleMode")
@@ -535,6 +590,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * multipath service type to use for connections. The default is NSURLSessionMultipathServiceTypeNone
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("multipathServiceType")
@@ -543,6 +600,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * multipath service type to use for connections. The default is NSURLSessionMultipathServiceTypeNone
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMultipathServiceType:")
@@ -553,14 +612,16 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * than immediately failing with an error (such as NSURLErrorNotConnectedToInternet)
      * when it is not. When waiting for connectivity, the timeoutIntervalForRequest
      * property does not apply, but the timeoutIntervalForResource property does.
-     * <p>
+     * 
      * Unsatisfactory connectivity (that requires waiting) includes cases where the
      * device has limited or insufficient connectivity for a task (e.g., only has a
      * cellular connection but the allowsCellularAccess property is NO, or requires
      * a VPN connection in order to reach the desired host).
-     * <p>
+     * 
      * Default value is NO. Ignored by background sessions, as background sessions
      * always wait for connectivity.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setWaitsForConnectivity:")
@@ -571,14 +632,16 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * than immediately failing with an error (such as NSURLErrorNotConnectedToInternet)
      * when it is not. When waiting for connectivity, the timeoutIntervalForRequest
      * property does not apply, but the timeoutIntervalForResource property does.
-     * <p>
+     * 
      * Unsatisfactory connectivity (that requires waiting) includes cases where the
      * device has limited or insufficient connectivity for a task (e.g., only has a
      * cellular connection but the allowsCellularAccess property is NO, or requires
      * a VPN connection in order to reach the desired host).
-     * <p>
+     * 
      * Default value is NO. Ignored by background sessions, as background sessions
      * always wait for connectivity.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("waitsForConnectivity")
@@ -586,6 +649,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * The maximum allowable versions of the TLS protocol, from <Security/SecProtocolTypes.h>
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("TLSMaximumSupportedProtocolVersion")
@@ -593,6 +658,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * The minimum allowable versions of the TLS protocol, from <Security/SecProtocolTypes.h>
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("TLSMinimumSupportedProtocolVersion")
@@ -600,6 +667,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * allow request to route over networks in constrained mode. Defaults to YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("allowsConstrainedNetworkAccess")
@@ -607,6 +676,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * allow request to route over expensive networks. Defaults to YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("allowsExpensiveNetworkAccess")
@@ -614,6 +685,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * allow request to route over networks in constrained mode. Defaults to YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAllowsConstrainedNetworkAccess:")
@@ -621,6 +694,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * allow request to route over expensive networks. Defaults to YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAllowsExpensiveNetworkAccess:")
@@ -628,6 +703,8 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * The maximum allowable versions of the TLS protocol, from <Security/SecProtocolTypes.h>
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTLSMaximumSupportedProtocolVersion:")
@@ -635,8 +712,28 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     /**
      * The minimum allowable versions of the TLS protocol, from <Security/SecProtocolTypes.h>
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTLSMinimumSupportedProtocolVersion:")
     public native void setTLSMinimumSupportedProtocolVersion(short value);
+
+    /**
+     * requires requests from the session to be made with DNSSEC validation enabled. Defaults to NO.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("requiresDNSSECValidation")
+    public native boolean requiresDNSSECValidation();
+
+    /**
+     * requires requests from the session to be made with DNSSEC validation enabled. Defaults to NO.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setRequiresDNSSECValidation:")
+    public native void setRequiresDNSSECValidation(boolean value);
 }

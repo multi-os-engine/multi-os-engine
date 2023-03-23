@@ -21,22 +21,33 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MSMessagesAppPresentationStyle
- * <p>
+ * 
  * Describes how the extension is presented in Messages.
  * [@constant] MSMessagesAppPresentationStyleCompact The extension's UI is presented compact in the keyboard area.
  * [@constant] MSMessagesAppPresentationStyleExpanded The extension's UI is presented expanded taking up most of the
  * screen.
  * [@constant] MSMessagesAppPresentationStyleTranscript The extension's UI is presented in the transcript of the
  * conversation in Messages.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class MSMessagesAppPresentationStyle {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Compact = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Expanded = 0x0000000000000001L;
 
     @Generated
     private MSMessagesAppPresentationStyle() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NUInt public static final long Transcript = 0x0000000000000002L;
 }

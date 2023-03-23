@@ -23,7 +23,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSData;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -135,8 +139,10 @@ public class NEDNSOverTLSSettings extends NEDNSSettings {
 
     /**
      * [@property] serverName
-     * <p>
+     * 
      * The name of the server to use for TLS certificate validation.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("serverName")
@@ -144,8 +150,10 @@ public class NEDNSOverTLSSettings extends NEDNSSettings {
 
     /**
      * [@property] serverName
-     * <p>
+     * 
      * The name of the server to use for TLS certificate validation.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setServerName:")
@@ -173,4 +181,26 @@ public class NEDNSOverTLSSettings extends NEDNSSettings {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] identityReference
+     * 
+     * The optional certificate identity keychain reference to use as a TLS client certificate.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("identityReference")
+    public native NSData identityReference();
+
+    /**
+     * [@property] identityReference
+     * 
+     * The optional certificate identity keychain reference to use as a TLS client certificate.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setIdentityReference:")
+    public native void setIdentityReference(NSData value);
 }

@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -153,9 +156,9 @@ public class HKStatisticsCollection extends NSObject {
 
     /**
      * enumerateStatisticsFromDate:toDate:withBlock:
-     * <p>
+     * 
      * Enumerates all statistics objects from startDate to endDate.
-     * <p>
+     * 
      * Statistics objects will be enumerated in chronological order. If there are no samples for an interval
      * between the start and end date, then the HKStatistics object for that interval will have nil quantities.
      */
@@ -170,9 +173,9 @@ public class HKStatisticsCollection extends NSObject {
 
     /**
      * sources
-     * <p>
+     * 
      * Returns all HKSources found in the contained HKStatistics objects.
-     * <p>
+     * 
      * Sources will be empty unless HKStatisticsOptionSeparateBySource is specified in the
      * HKStatisticsCollectionQuery options.
      */
@@ -182,9 +185,9 @@ public class HKStatisticsCollection extends NSObject {
 
     /**
      * statistics
-     * <p>
+     * 
      * Returns a copy of the populated statistics objects.
-     * <p>
+     * 
      * The statistics objects are ordered chronologically.
      */
     @Generated
@@ -193,9 +196,9 @@ public class HKStatisticsCollection extends NSObject {
 
     /**
      * statisticsForDate:
-     * <p>
+     * 
      * Returns the statistics object that this date is inside of
-     * <p>
+     * 
      * If there are no samples for the given date, an HKStatistics instance with nil quantities will be returned.
      */
     @Generated

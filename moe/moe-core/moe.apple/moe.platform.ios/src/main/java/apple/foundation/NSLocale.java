@@ -39,9 +39,6 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
-/**
- * Toll-free bridged with CFLocaleRef
- */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -88,6 +85,8 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * generally you should use this property
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("autoupdatingCurrentLocale")
@@ -115,6 +114,9 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("canonicalLocaleIdentifierFromString:")
     public static native String canonicalLocaleIdentifierFromString(String string);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("characterDirectionForLanguage:")
     @NUInt
@@ -128,6 +130,9 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("commonISOCurrencyCodes")
     public static native NSArray<String> commonISOCurrencyCodes();
@@ -177,6 +182,9 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("lineDirectionForLanguage:")
     @NUInt
@@ -186,10 +194,16 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("localeIdentifierFromComponents:")
     public static native String localeIdentifierFromComponents(NSDictionary<String, String> dict);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("localeIdentifierFromWindowsLocaleCode:")
     public static native String localeIdentifierFromWindowsLocaleCode(int lcid);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("localeWithLocaleIdentifier:")
     public static native NSLocale localeWithLocaleIdentifier(String ident);
@@ -202,6 +216,8 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * note that this list does not indicate what language the app is actually running in; the NSBundle.mainBundle
      * object determines that at launch and knows that information
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("preferredLanguages")
@@ -239,26 +255,44 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("windowsLocaleCodeFromLocaleIdentifier:")
     public static native int windowsLocaleCodeFromLocaleIdentifier(String localeIdentifier);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("alternateQuotationBeginDelimiter")
     public native String alternateQuotationBeginDelimiter();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("alternateQuotationEndDelimiter")
     public native String alternateQuotationEndDelimiter();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("calendarIdentifier")
     public native String calendarIdentifier();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("collationIdentifier")
     public native String collationIdentifier();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("collatorIdentifier")
     public native String collatorIdentifier();
@@ -269,18 +303,30 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("countryCode")
     public native String countryCode();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("currencyCode")
     public native String currencyCode();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("currencySymbol")
     public native String currencySymbol();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("decimalSeparator")
     public native String decimalSeparator();
@@ -293,10 +339,16 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("exemplarCharacterSet")
     public native NSCharacterSet exemplarCharacterSet();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("groupingSeparator")
     public native String groupingSeparator();
@@ -313,6 +365,9 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithLocaleIdentifier:")
     public native NSLocale initWithLocaleIdentifier(String string);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("languageCode")
     public native String languageCode();
@@ -324,38 +379,65 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("localeIdentifier")
     public native String localeIdentifier();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("localizedStringForCalendarIdentifier:")
     public native String localizedStringForCalendarIdentifier(String calendarIdentifier);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("localizedStringForCollationIdentifier:")
     public native String localizedStringForCollationIdentifier(String collationIdentifier);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("localizedStringForCollatorIdentifier:")
     public native String localizedStringForCollatorIdentifier(String collatorIdentifier);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("localizedStringForCountryCode:")
     public native String localizedStringForCountryCode(String countryCode);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("localizedStringForCurrencyCode:")
     public native String localizedStringForCurrencyCode(String currencyCode);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("localizedStringForLanguageCode:")
     public native String localizedStringForLanguageCode(String languageCode);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("localizedStringForLocaleIdentifier:")
     public native String localizedStringForLocaleIdentifier(String localeIdentifier);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("localizedStringForScriptCode:")
     public native String localizedStringForScriptCode(String scriptCode);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("localizedStringForVariantCode:")
     public native String localizedStringForVariantCode(String variantCode);
@@ -365,14 +447,23 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object objectForKey(String key);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("quotationBeginDelimiter")
     public native String quotationBeginDelimiter();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("quotationEndDelimiter")
     public native String quotationEndDelimiter();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("scriptCode")
     public native String scriptCode();
@@ -383,10 +474,16 @@ public class NSLocale extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("usesMetricSystem")
     public native boolean usesMetricSystem();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("variantCode")
     public native String variantCode();

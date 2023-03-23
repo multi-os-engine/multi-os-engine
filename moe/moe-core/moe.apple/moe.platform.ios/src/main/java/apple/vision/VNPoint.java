@@ -1,7 +1,6 @@
 package apple.vision;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -28,14 +27,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
 /**
  * VNPoint
- * <p>
+ * 
  * VNPoint represents a single, immutable, two-dimensional point in an image.
- * <p>
+ * 
  * It should be noted that VNPoint is not intended as an overall replacement of CGPoint, NSPoint or vec2, but is used by
  * observations that need to present points which may contain additional metadata.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -103,14 +105,18 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns the Euclidean distance between two VNPoint objects.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("distanceBetweenPoint:point:")
     public static native double distanceBetweenPointPoint(VNPoint point1, VNPoint point2);
 
     /**
      * Returns the Euclidean distance to another point.
-     *
+     * 
      * @param point The destination point.
      * @return the Euclidean distance between the target and specified points.
      */
@@ -186,7 +192,7 @@ public class VNPoint extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns a new VNPoint object that is shifted by X and Y offsets of the vector.
-     *
+     * 
      * @param vector The vector offset to be applied to a source point.
      * @param point  The source point.
      * @return the translated point.

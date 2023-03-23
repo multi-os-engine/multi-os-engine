@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -157,8 +160,8 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
     /**
      * Insert After: respect any destination item's children and inserts the new items after them
      * at the same level as the destination item.
-     * <p>
-     * <p>
+     * 
+     * 
      * +---------+
      * | 0 |
      * +---------+ +-+-------+-+
@@ -170,11 +173,11 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
      * +-+-------+-+ +---------+
      * | 3 | | 3 |
      * +---------+ +---------+
-     * <p>
+     * 
      * +--------------------------------+
      * | insertAfter(INS, after:0) |
      * +--------------------------------+
-     * <p>
+     * 
      * +---------+
      * | 0 |
      * +---------+ +-+-------+-+
@@ -188,7 +191,7 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
      * +---+-----+---+ +-+-------+-+
      * | 4 | | 4 |
      * +---------+ +---------+
-     * <p>
+     * 
      * +--------------------------------+
      * | insertAfter(INS, after:2) |
      * +--------------------------------+
@@ -200,9 +203,9 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
 
     /**
      * Insert Before will always match the level of the destination item.
-     * <p>
+     * 
      * Examples:
-     * <p>
+     * 
      * +---------+
      * | 0 |
      * +---------+ +-+-------+-+
@@ -214,11 +217,11 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
      * +-+-------+-+ +-+-------+-+
      * | 3 | | 3 |
      * +---------+ +---------+
-     * <p>
+     * 
      * +--------------------------------+
      * | insertBefore(1) |
      * +--------------------------------+
-     * <p>
+     * 
      * +---------+
      * | INS |
      * +---------+ +---------+
@@ -230,7 +233,7 @@ public class NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> extends NS
      * +-+-------+-+ +-+-------+-+
      * | 3 | | 3 |
      * +---------+ +---------+
-     * <p>
+     * 
      * +--------------------------------+
      * | insertBefore(0) |
      * +--------------------------------+

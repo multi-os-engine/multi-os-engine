@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -142,6 +145,8 @@ public class NSPersistentStore extends NSObject {
      * Returns the NSMigrationManager class optimized for this store class. Subclasses of NSPersistentStore can override
      * this to provide a custom migration manager subclass (eg to take advantage of store-specific functionality to
      * improve migration performance).
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("migrationManagerClass")
@@ -161,7 +166,7 @@ public class NSPersistentStore extends NSObject {
     public static native boolean resolveInstanceMethod(SEL sel);
 
     /**
-     * Set the medatada of the store at url to metadata. Must be overriden by subclasses.
+     * Set the metadata of the store at url to metadata. Must be overriden by subclasses.
      */
     @Generated
     @Selector("setMetadata:forPersistentStoreWithURL:error:")
@@ -291,6 +296,8 @@ public class NSPersistentStore extends NSObject {
     /**
      * Return the Core Spotlight exporter if one exists for this store. The exporter
      * can be set as part of the store options when it is added to the coordinator.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("coreSpotlightExporter")

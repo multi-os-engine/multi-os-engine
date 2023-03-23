@@ -19,10 +19,22 @@ package apple.spritekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 public final class SKParticleRenderOrder {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long OldestLast = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long OldestFirst = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long DontCare = 0x0000000000000002L;
 
     @Generated

@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("ExternalAccessory")
 @Runtime(ObjCRuntime.class)
@@ -142,6 +145,9 @@ public class EAAccessoryManager extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("sharedAccessoryManager")
     public static native EAAccessoryManager sharedAccessoryManager();
@@ -155,6 +161,9 @@ public class EAAccessoryManager extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("connectedAccessories")
     public native NSArray<? extends EAAccessory> connectedAccessories();
@@ -163,15 +172,24 @@ public class EAAccessoryManager extends NSObject {
     @Selector("init")
     public native EAAccessoryManager init();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("registerForLocalNotifications")
     public native void registerForLocalNotifications();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("showBluetoothAccessoryPickerWithNameFilter:completion:")
     public native void showBluetoothAccessoryPickerWithNameFilterCompletion(NSPredicate predicate,
             @ObjCBlock(name = "call_showBluetoothAccessoryPickerWithNameFilterCompletion") Block_showBluetoothAccessoryPickerWithNameFilterCompletion completion);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("unregisterForLocalNotifications")
     public native void unregisterForLocalNotifications();

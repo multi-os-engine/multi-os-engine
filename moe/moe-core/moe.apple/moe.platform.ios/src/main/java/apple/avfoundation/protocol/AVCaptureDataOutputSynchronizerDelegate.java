@@ -9,6 +9,9 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -16,14 +19,16 @@ import org.moe.natj.objc.ann.Selector;
 public interface AVCaptureDataOutputSynchronizerDelegate {
     /**
      * captureOutputSynchronizer:didOutputSynchronizedData:
-     * <p>
+     * 
      * Called when an AVCaptureDataOutputSynchronizer instance outputs synchronized data from one or more data outputs.
-     * <p>
+     * 
      * The synchronized data collection only contains synchronized data for capture outputs with synchronized data
      * ready.
-     *
-     * @param synchronizer               The AVCaptureDataOutputSynchronizer instance delivering synchronized data.
-     * @param synchronizedDataCollection A collection of synchronized data objects indexed by data output.
+     * 
+     * @param synchronizer
+     *                                   The AVCaptureDataOutputSynchronizer instance delivering synchronized data.
+     * @param synchronizedDataCollection
+     *                                   A collection of synchronized data objects indexed by data output.
      */
     @Generated
     @Selector("dataOutputSynchronizer:didOutputSynchronizedDataCollection:")

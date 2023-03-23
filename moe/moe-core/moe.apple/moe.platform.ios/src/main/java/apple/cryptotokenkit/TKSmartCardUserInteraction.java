@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Represents handle to a user interaction involving the SmartCard reader.
- * <p>
+ * 
  * It is a proxy object obtained as a result of invoking the userInteractionFor*** family of methods in TKSmartCardSlot
  * and TKSmartCard.
  */
@@ -67,7 +67,7 @@ public class TKSmartCardUserInteraction extends NSObject {
     /**
      * Attempts to cancel a running interaction. Note that for some interactions, this functionality might not be
      * available.
-     *
+     * 
      * @return Returns NO if the operation is not running, or cancelling is not supported.
      */
     @Generated

@@ -34,8 +34,14 @@ public final class UIScreenOverscanCompensation {
     @Generated @NInt public static final long InsetBounds = 0x0000000000000001L;
     /**
      * no scaling will occur. use overscanCompensationInsets to determine the necessary insets to avoid clipping
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long None = 0x0000000000000002L;
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     */
     @Deprecated @Generated @NInt public static final long InsetApplicationFrame = 0x0000000000000002L;
 
     @Generated

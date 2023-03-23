@@ -30,6 +30,10 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * All clients will need to implement this protocol
+ * 
+ * API-Since: 3.0
+ * Deprecated-Since: 7.0
+ * Deprecated-Message: Use GKVoiceChat instead
  */
 @Deprecated
 @Generated

@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * CMMagneticFieldCalibrationAccuracy
- * <p>
+ * 
  * Discussion:
  * CMMagneticFieldCalibrationAccuracy indicates the calibration
  * accuracy of a magnetic field estimate.

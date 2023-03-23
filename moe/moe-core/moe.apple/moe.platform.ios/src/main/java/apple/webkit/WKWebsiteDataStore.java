@@ -47,6 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * A WKWebsiteDataStore represents various types of data that a website might
  * make use of. This includes cookies, disk and memory caches, and persistent data such as WebSQL,
  * IndexedDB databases, and local storage.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("WebKit")
@@ -153,7 +155,7 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
 
     /**
      * Returns a new non-persistent data store.
-     * <p>
+     * 
      * If a WKWebView is associated with a non-persistent data store, no data will
      * be written to the file system. This is useful for implementing "private browsing" in a web view.
      */
@@ -188,7 +190,7 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
 
     /**
      * Fetches data records containing the given website data types.
-     *
+     * 
      * @param dataTypes         The website data types to fetch records for.
      * @param completionHandler A block to invoke when the data records have been fetched.
      */
@@ -214,7 +216,7 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
 
     /**
      * Removes website data of the given types for the given data records.
-     *
+     * 
      * @param dataTypes         The website data types that should be removed.
      * @param dataRecords       The website data records to delete website data for.
      * @param completionHandler A block to invoke when the website data for the records has been removed.
@@ -227,7 +229,7 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
 
     /**
      * Removes all website data of the given types that has been modified since the given date.
-     *
+     * 
      * @param dataTypes         The website data types that should be removed.
      * @param date              A date. All website data modified after this date will be removed.
      * @param completionHandler A block to invoke when the website data has been removed.
@@ -260,6 +262,8 @@ public class WKWebsiteDataStore extends NSObject implements NSSecureCoding {
 
     /**
      * Returns the cookie store representing HTTP cookies in this website data store.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("httpCookieStore")

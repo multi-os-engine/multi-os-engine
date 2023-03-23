@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UserNotifications")
 @Runtime(ObjCRuntime.class)
@@ -214,6 +217,9 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("categoryWithIdentifier:actions:intentIdentifiers:hiddenPreviewsBodyPlaceholder:options:")
     public static native UNNotificationCategory categoryWithIdentifierActionsIntentIdentifiersHiddenPreviewsBodyPlaceholderOptions(
@@ -222,6 +228,8 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
 
     /**
      * The format string that will replace the notification body if previews are hidden.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("hiddenPreviewsBodyPlaceholder")
@@ -234,11 +242,16 @@ public class UNNotificationCategory extends NSObject implements NSCopying, NSSec
      * of notifications and the list created by joining the argument in each grouped notification.
      * For example: "%u new messages from %@".
      * The arguments list is optional, "%u new messages" is also accepted.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("categorySummaryFormat")
     public native String categorySummaryFormat();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("categoryWithIdentifier:actions:intentIdentifiers:hiddenPreviewsBodyPlaceholder:categorySummaryFormat:options:")
     public static native UNNotificationCategory categoryWithIdentifierActionsIntentIdentifiersHiddenPreviewsBodyPlaceholderCategorySummaryFormatOptions(

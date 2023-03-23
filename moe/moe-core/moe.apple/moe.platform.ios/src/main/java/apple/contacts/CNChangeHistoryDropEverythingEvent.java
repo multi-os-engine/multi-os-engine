@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Drop all cached information your app has persisted
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Contacts")

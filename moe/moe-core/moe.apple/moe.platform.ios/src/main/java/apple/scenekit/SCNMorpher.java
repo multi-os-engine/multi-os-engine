@@ -48,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNMorpher
- * <p>
+ * 
  * SCNMorpher controls the deformation of morphed geometries
  */
 @Generated
@@ -169,6 +169,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Selector("addAnimation:forKey:")
     public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
 
+    @Deprecated
     @Generated
     @Selector("animationForKey:")
     public native CAAnimation animationForKey(String key);
@@ -179,7 +180,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * [@property] calculationMode
-     * <p>
+     * 
      * Specifies how the morph result is calculated by the receiver. Defaults to SCNMorpherCalculationModeNormalized.
      */
     @Generated
@@ -199,10 +200,12 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Selector("initWithCoder:")
     public native SCNMorpher initWithCoder(NSCoder coder);
 
+    @Deprecated
     @Generated
     @Selector("isAnimationForKeyPaused:")
     public native boolean isAnimationForKeyPaused(String key);
 
+    @Deprecated
     @Generated
     @Selector("pauseAnimationForKey:")
     public native void pauseAnimationForKey(String key);
@@ -215,32 +218,35 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Selector("removeAnimationForKey:")
     public native void removeAnimationForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
     public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
 
+    @Deprecated
     @Generated
     @Selector("resumeAnimationForKey:")
     public native void resumeAnimationForKey(String key);
 
     /**
      * [@property] calculationMode
-     * <p>
+     * 
      * Specifies how the morph result is calculated by the receiver. Defaults to SCNMorpherCalculationModeNormalized.
      */
     @Generated
     @Selector("setCalculationMode:")
     public native void setCalculationMode(@NInt long value);
 
+    @Deprecated
     @Generated
     @Selector("setSpeed:forAnimationKey:")
     public native void setSpeedForAnimationKey(@NFloat double speed, String key);
 
     /**
      * [@property] targets
-     * <p>
+     * 
      * Specifies the morph targets as an array of SCNGeometry.
-     * <p>
+     * 
      * The target geometries must have the same number of entries in their geometry sources and the same topology as the
      * base geometry.
      */
@@ -250,7 +256,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * setWeight:forTargetAtIndex:
-     * <p>
+     * 
      * Sets the weight for the target at the specified index. Animatable implicitly or explicitly with the keyPath
      * "weights[index]" or "weights["targetName"]" (targetName is the name of the target geometry).
      */
@@ -266,9 +272,9 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * [@property] targets
-     * <p>
+     * 
      * Specifies the morph targets as an array of SCNGeometry.
-     * <p>
+     * 
      * The target geometries must have the same number of entries in their geometry sources and the same topology as the
      * base geometry.
      */
@@ -278,7 +284,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * weightForTargetAtIndex:
-     * <p>
+     * 
      * Retrieves the weight for the target at the specified index.
      */
     @Generated
@@ -300,9 +306,11 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * [@property] unifiesNormals
-     * <p>
+     * 
      * When set to YES the normals are not morphed but are recomputed after morphing the vertex instead. When set to NO,
      * the morpher will morph the normals if the geometry targets have normals. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setUnifiesNormals:")
@@ -310,8 +318,10 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * setWeight:forTargetNamed:
-     * <p>
+     * 
      * Sets the weight for the target with the specified name (targetName is the name of the target geometry).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setWeight:forTargetNamed:")
@@ -319,8 +329,10 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * [@property] weights
-     * <p>
+     * 
      * Access to all the weights of all the targets.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setWeights:")
@@ -328,9 +340,11 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * [@property] unifiesNormals
-     * <p>
+     * 
      * When set to YES the normals are not morphed but are recomputed after morphing the vertex instead. When set to NO,
      * the morpher will morph the normals if the geometry targets have normals. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("unifiesNormals")
@@ -338,8 +352,10 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * weightForTargetNamed:
-     * <p>
+     * 
      * Retrieves the weight for the target with the specified name (targetName is the name of the target geometry).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("weightForTargetNamed:")
@@ -348,8 +364,10 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     /**
      * [@property] weights
-     * <p>
+     * 
      * Access to all the weights of all the targets.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("weights")

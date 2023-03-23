@@ -21,19 +21,36 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueDoorState
- * <p>
+ * 
  * [@constant] HMCharacteristicValueDoorStateOpen The door is fully open.
  * [@constant] HMCharacteristicValueDoorStateClosed The door is fully closed.
  * [@constant] HMCharacteristicValueDoorStateOpening The door is actively opening.
  * [@constant] HMCharacteristicValueDoorStateClosing The door is actively closing.
  * [@constant] HMCharacteristicValueDoorStateStopped The door is not moving, and it is not fully open nor fully closed.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class HMCharacteristicValueDoorState {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Open = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Closed = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Opening = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Closing = 0x0000000000000003L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Stopped = 0x0000000000000004L;
 
     @Generated

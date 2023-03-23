@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MTLbuffer and description how the data is stored in it.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Metal")

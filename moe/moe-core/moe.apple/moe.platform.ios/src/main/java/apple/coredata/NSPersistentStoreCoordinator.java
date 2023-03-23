@@ -47,6 +47,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -131,6 +134,12 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use -metadataForPersistentStoreOfType:URL:options:error: and pass in an options dictionary
+     * matching addPersistentStoreWithType
+     */
     @Generated
     @Deprecated
     @Selector("metadataForPersistentStoreOfType:URL:error:")
@@ -141,6 +150,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      * Allows to access the metadata stored in a persistent store without warming up a CoreData stack; the guaranteed
      * keys in this dictionary are NSStoreTypeKey and NSStoreUUIDKey. If storeType is nil, Core Data will guess which
      * store class should be used to get/set the store file's metadata.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("metadataForPersistentStoreOfType:URL:options:error:")
@@ -156,6 +167,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      * Registers the specified NSPersistentStore subclass for the specified store type string. This method must be
      * invoked before a custom subclass of NSPersistentStore can be loaded into a persistent store coordinator. Passing
      * nil for the store class argument will unregister the specified store type.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("registerStoreClass:forStoreType:")
@@ -164,6 +177,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     /**
      * Returns a dictionary of the registered store types: the keys are the store type strings and the values are the
      * NSPersistentStore subclasses wrapped in NSValues.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("registeredStoreTypes")
@@ -174,7 +189,12 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      * store file. storeOptions should contain the options normally passed to
      * addPersistentStoreWithType:URL:options:error. Errors may be returned as a result of file I/O, iCloud network or
      * iCloud account issues.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Please see the release notes and Core Data documentation.
      */
+    @Deprecated
     @Generated
     @Selector("removeUbiquitousContentAndPersistentStoreAtURL:options:error:")
     public static native boolean removeUbiquitousContentAndPersistentStoreAtURLOptionsError(NSURL storeURL,
@@ -188,12 +208,21 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use -setMetadata:forPersistentStoreOfType:URL:options:error: and pass in an options
+     * dictionary matching addPersistentStoreWithType
+     */
     @Generated
     @Deprecated
     @Selector("setMetadata:forPersistentStoreOfType:URL:error:")
     public static native boolean setMetadataForPersistentStoreOfTypeURLError(NSDictionary<String, ?> metadata,
             String storeType, NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setMetadata:forPersistentStoreOfType:URL:options:error:")
     public static native boolean setMetadataForPersistentStoreOfTypeURLOptionsError(NSDictionary<String, ?> metadata,
@@ -217,6 +246,9 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     @Selector("URLForPersistentStore:")
     public native NSURL URLForPersistentStore(NSPersistentStore store);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("addPersistentStoreWithDescription:completionHandler:")
     public native void addPersistentStoreWithDescriptionCompletionHandler(NSPersistentStoreDescription storeDescription,
@@ -238,6 +270,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      * to pass similar options as addPersistentStoreWithType: ... SQLite stores will honor file locks, journal files,
      * journaling modes, and other intricacies. It is not possible to unlink a database file safely out from underneath
      * another thread or process, so this API performs a truncation. Other stores will default to using NSFileManager.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("destroyPersistentStoreAtURL:withType:options:error:")
@@ -251,6 +285,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      * managed objects, managed object IDs, or NSDictionaries;
      * NSSaveChangesRequests will an empty array. User defined requests will return arrays of arrays, where the nested
      * array is the result returned form a single store.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("executeRequest:withContext:error:")
@@ -303,6 +339,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
 
     /**
      * custom name for a coordinator. Coordinators will set the label on their queue
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("name")
@@ -310,6 +348,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
 
     /**
      * asynchronously performs the block on the coordinator's queue. Encapsulates an autorelease pool.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("performBlock:")
@@ -318,6 +358,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     /**
      * synchronously performs the block on the coordinator's queue. May safely be called reentrantly. Encapsulates an
      * autorelease pool.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("performBlockAndWait:")
@@ -341,6 +383,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      * copy or overwrite the target persistent store in accordance with the store class's requirements. It is important
      * to pass similar options as addPersistentStoreWithType: ... SQLite stores will honor file locks, journal files,
      * journaling modes, and other intricacies. Other stores will default to using NSFileManager.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("replacePersistentStoreAtURL:destinationOptions:withPersistentStoreFromURL:sourceOptions:storeType:error:")
@@ -360,6 +404,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
 
     /**
      * custom name for a coordinator. Coordinators will set the label on their queue
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setName:")
@@ -370,11 +416,18 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
      * the next save operation will persist the file; for non-atomic stores, invoking this method will release the
      * existing connection and create a new one at the specified URL. (For non-atomic stores, a store must pre-exist at
      * the destination URL; a new store will not be created.)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setURL:forPersistentStore:")
     public native boolean setURLForPersistentStore(NSURL url, NSPersistentStore store);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use -performBlock: instead
+     */
     @Generated
     @Deprecated
     @Selector("tryLock")
@@ -409,6 +462,8 @@ public class NSPersistentStoreCoordinator extends NSObject implements NSLocking 
     /**
      * Constructs a combined NSPersistentHistoryToken given an array of persistent stores. If stores is nil or an empty
      * array, the NSPersistentHistoryToken will be constructed with all of the persistent stores in the coordinator.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("currentPersistentHistoryTokenFromStores:")

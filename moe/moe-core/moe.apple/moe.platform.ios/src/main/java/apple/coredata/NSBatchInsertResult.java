@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The result returned when executing an NSBatchInsertRequest
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreData")

@@ -42,7 +42,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPPlayableContentManagerContext represents the current state of
  * the playable content endpoint. A context is retrievable from an instance
  * of MPPlayableContentManager.
+ * 
+ * API-Since: 8.4
+ * Deprecated-Since: 14.0
+ * Deprecated-Message: Use CarPlay framework
  */
+@Deprecated
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +158,10 @@ public class MPPlayableContentManagerContext extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.4
+     * Deprecated-Since: 9.0
+     */
     @Generated
     @Deprecated
     @Selector("contentLimitsEnabled")

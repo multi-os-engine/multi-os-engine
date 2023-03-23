@@ -28,11 +28,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * VNCoreMLFeatureValueObservation
  * [@superclass] VNObservation
- * <p>
+ * 
  * VNCoreMLFeatureValueObservation returns the prediction of a model as an MLFeatureValue.
- * <p>
+ * 
  * This is the returned observations for models that are not classifiers and that do not return an image as a
  * prediction. The confidence for these observations is always 1.0.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -173,6 +176,9 @@ public class VNCoreMLFeatureValueObservation extends VNObservation {
     /**
      * The name used in the model description of the CoreML model that produced this observation allowing to correlate
      * the observation back to the output of the model.
+     * 
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("featureName")

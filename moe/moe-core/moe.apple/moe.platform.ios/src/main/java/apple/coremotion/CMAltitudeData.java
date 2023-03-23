@@ -43,9 +43,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMAltitudeData
- * <p>
+ * 
  * Discussion:
  * Contains a single altimeter measurement.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("CoreMotion")
@@ -171,7 +173,7 @@ public class CMAltitudeData extends CMLogItem {
 
     /**
      * pressure
-     * <p>
+     * 
      * Discussion:
      * The pressure in kPa.
      */
@@ -181,7 +183,7 @@ public class CMAltitudeData extends CMLogItem {
 
     /**
      * relativeAltitude
-     * <p>
+     * 
      * Discussion:
      * The relative altitude in meters to the starting altitude.
      */

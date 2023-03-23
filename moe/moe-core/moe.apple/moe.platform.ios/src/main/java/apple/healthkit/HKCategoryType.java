@@ -42,8 +42,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKCategoryType
- * <p>
+ * 
  * Represent a type of HKCategorySample.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -216,4 +218,8 @@ public class HKCategoryType extends HKSampleType {
     @Generated
     @Selector("electrocardiogramType")
     public static native HKElectrocardiogramType electrocardiogramType();
+
+    @Generated
+    @Selector("visionPrescriptionType")
+    public static native HKPrescriptionType visionPrescriptionType();
 }

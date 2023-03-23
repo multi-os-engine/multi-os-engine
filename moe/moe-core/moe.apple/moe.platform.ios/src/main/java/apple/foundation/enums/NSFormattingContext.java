@@ -19,10 +19,15 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class NSFormattingContext {
     /**
      * The capitalization context to be used is unknown (this is the default value).
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
     /**
@@ -34,26 +39,36 @@ public final class NSFormattingContext {
      * NSFormattingContextUnknown. When the string proxy is used in stringWithFormat:, we can determine where the %@ is
      * and then set the context accordingly. With the new context, the string in the string proxy will be formatted
      * again and be put into the final string returned from stringWithFormat:.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Dynamic = 0x0000000000000001L;
     /**
      * The capitalization context if a date or date symbol is to be formatted with capitalization appropriate for
      * stand-alone usage such as an isolated name on a calendar page.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Standalone = 0x0000000000000002L;
     /**
      * The capitalization context if a date or date symbol is to be formatted with capitalization appropriate for a list
      * or menu item.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long ListItem = 0x0000000000000003L;
     /**
      * The capitalization context if a date or date symbol is to be formatted with capitalization appropriate for the
      * beginning of a sentence.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long BeginningOfSentence = 0x0000000000000004L;
     /**
      * The capitalization context if a date or date symbol is to be formatted with capitalization appropriate for the
      * middle of a sentence.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long MiddleOfSentence = 0x0000000000000005L;
 

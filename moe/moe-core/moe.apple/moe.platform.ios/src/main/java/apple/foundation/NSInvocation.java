@@ -218,4 +218,15 @@ public class NSInvocation extends NSObject {
     @Selector("target")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object target();
+
+    @Generated
+    @Selector("invokeUsingIMP:")
+    public native void invokeUsingIMP(@FunctionPtr(name = "call_invokeUsingIMP") Function_invokeUsingIMP imp);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Function_invokeUsingIMP {
+        @Generated
+        void call_invokeUsingIMP();
+    }
 }

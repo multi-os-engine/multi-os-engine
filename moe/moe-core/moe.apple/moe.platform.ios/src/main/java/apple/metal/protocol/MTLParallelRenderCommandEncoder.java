@@ -28,9 +28,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MTLParallelRenderCommandEncoder
- * <p>
+ * 
  * The MTLParallelRenderCommandEncoder protocol is designed to allow a single render to texture operation to be
  * efficiently (and safely) broken up across multiple threads.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Metal")
@@ -39,7 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLParallelRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * renderCommandEncoder
-     * <p>
+     * 
      * Return a new autoreleased object that conforms to <MTLRenderCommandEncoder> that may be used to encode on a
      * different thread.
      */
@@ -50,14 +52,16 @@ public interface MTLParallelRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setColorStoreAction:atIndex:
-     * <p>
+     * 
      * If the the store action for a given color attachment was set to MTLStoreActionUnknown when the render command
      * encoder was created,
      * setColorStoreAction:atIndex: must be used to finalize the store action before endEncoding is called.
-     *
+     * 
      * @param storeAction          The desired store action for the given color attachment. This may be set to any value
      *                             other than MTLStoreActionUnknown.
      * @param colorAttachmentIndex The index of the color attachment
+     * 
+     *                             API-Since: 10.0
      */
     @Generated
     @Selector("setColorStoreAction:atIndex:")
@@ -65,10 +69,12 @@ public interface MTLParallelRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setDepthStoreAction:
-     * <p>
+     * 
      * If the the store action for the depth attachment was set to MTLStoreActionUnknown when the render command encoder
      * was created,
      * setDepthStoreAction: must be used to finalize the store action before endEncoding is called.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDepthStoreAction:")
@@ -76,10 +82,12 @@ public interface MTLParallelRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setStencilStoreAction:
-     * <p>
+     * 
      * If the the store action for the stencil attachment was set to MTLStoreActionUnknown when the render command
      * encoder was created,
      * setStencilStoreAction: must be used to finalize the store action before endEncoding is called.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setStencilStoreAction:")
@@ -87,14 +95,16 @@ public interface MTLParallelRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setColorStoreActionOptions:atIndex:
-     * <p>
+     * 
      * If the the store action for a given color attachment was set to MTLStoreActionUnknown when the render command
      * encoder was created,
      * setColorStoreActionOptions:atIndex: may be used to finalize the store action options before endEncoding is
      * called.
-     *
+     * 
      * @param storeActionOptions   The desired store action options for the given color attachment.
      * @param colorAttachmentIndex The index of the color attachment
+     * 
+     *                             API-Since: 11.0
      */
     @Generated
     @Selector("setColorStoreActionOptions:atIndex:")
@@ -102,10 +112,12 @@ public interface MTLParallelRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setDepthStoreActionOptions:
-     * <p>
+     * 
      * If the the store action for the depth attachment was set to MTLStoreActionUnknown when the render command encoder
      * was created,
      * setDepthStoreActionOptions: may be used to finalize the store action options before endEncoding is called.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDepthStoreActionOptions:")
@@ -113,10 +125,12 @@ public interface MTLParallelRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setStencilStoreActionOptions:
-     * <p>
+     * 
      * If the the store action for the stencil attachment was set to MTLStoreActionUnknown when the render command
      * encoder was created,
      * setStencilStoreActionOptions: may be used to finalize the store action options before endEncoding is called.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setStencilStoreActionOptions:")

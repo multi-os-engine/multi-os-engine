@@ -46,9 +46,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GLKMeshBufferAllocator
- * <p>
+ * 
  * Allocator passed to MDLAsset init method to load vertex and index data directly into OpenGL buffer object
+ * 
+ * API-Since: 9.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
  */
+@Deprecated
 @Generated
 @Library("GLKit")
 @Runtime(ObjCRuntime.class)

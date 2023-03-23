@@ -41,8 +41,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CBATTRequest
- * <p>
+ * 
  * Represents a read or write request from a central.
+ * 
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -156,7 +159,7 @@ public class CBATTRequest extends NSObject {
 
     /**
      * [@property] central
-     * <p>
+     * 
      * The central that originated the request.
      */
     @Generated
@@ -165,7 +168,7 @@ public class CBATTRequest extends NSObject {
 
     /**
      * [@property] characteristic
-     * <p>
+     * 
      * The characteristic whose value will be read or written.
      */
     @Generated
@@ -178,7 +181,7 @@ public class CBATTRequest extends NSObject {
 
     /**
      * [@property] offset
-     * <p>
+     * 
      * The zero-based index of the first byte for the read or write.
      */
     @Generated
@@ -188,7 +191,7 @@ public class CBATTRequest extends NSObject {
 
     /**
      * [@property] value
-     * <p>
+     * 
      * The data being read or written.
      * For read requests, <i>value</i> will be nil and should be set before responding via @link
      * respondToRequest:withResult: @/link.
@@ -200,7 +203,7 @@ public class CBATTRequest extends NSObject {
 
     /**
      * [@property] value
-     * <p>
+     * 
      * The data being read or written.
      * For read requests, <i>value</i> will be nil and should be set before responding via @link
      * respondToRequest:withResult: @/link.

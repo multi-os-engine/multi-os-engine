@@ -24,11 +24,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A node representing a MPSCNNNeuronReLUN kernel
- * <p>
+ * 
  * For each pixel, applies the following function:
  * [@code]
  * f(x) = min((x >= 0 ? x : a * x), b)
  * [@endcode]
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")

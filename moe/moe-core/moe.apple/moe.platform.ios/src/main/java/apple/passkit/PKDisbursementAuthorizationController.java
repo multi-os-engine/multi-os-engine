@@ -57,6 +57,8 @@ public class PKDisbursementAuthorizationController extends NSObject {
     /**
      * This presents the Apple Pay sheet. If the sheet is presented successfully, success is YES. Otherwise, an error
      * will be returned.
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("authorizeDisbursementWithCompletion:")
@@ -98,6 +100,8 @@ public class PKDisbursementAuthorizationController extends NSObject {
 
     /**
      * The controller's delegate.
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("delegate")
@@ -119,6 +123,8 @@ public class PKDisbursementAuthorizationController extends NSObject {
 
     /**
      * Initializes and returns a newly created controller for the supplied disbursement request.
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("initWithDisbursementRequest:delegate:")
@@ -170,6 +176,8 @@ public class PKDisbursementAuthorizationController extends NSObject {
 
     /**
      * Determine whether this user's account supports disbursements.
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("supportsDisbursements")

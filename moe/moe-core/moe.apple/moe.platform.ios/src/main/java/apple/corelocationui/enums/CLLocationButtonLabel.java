@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * CLLocationButtonLabel
- * <p>
+ * 
  * Discussion:
  * Specifies the text of the label on the button. Button must not be CLLocationButtonLabelNone if CLLocationButtonIcon
  * is CLLocationButtonIconNone.

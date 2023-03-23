@@ -19,18 +19,25 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 public final class NSFileManagerItemReplacementOptions {
     /**
      * NSFileManagerItemReplacementUsingNewMetadataOnly causes
      * -replaceItemAtURL:withItemAtURL:backupItemName:options:resultingItemURL:error: to use metadata from the new item
      * only and not to attempt to preserve metadata from the original item.
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long UsingNewMetadataOnly = 0x0000000000000001L;
     /**
      * NSFileManagerItemReplacementWithoutDeletingBackupItem causes
      * -replaceItemAtURL:withItemAtURL:backupItemName:options:resultingItemURL:error: to leave the backup item in place
      * after a successful replacement. The default behavior is to remove the item.
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long WithoutDeletingBackupItem = 0x0000000000000002L;
 

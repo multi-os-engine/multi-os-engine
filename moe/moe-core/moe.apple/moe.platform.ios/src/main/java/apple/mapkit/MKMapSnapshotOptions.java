@@ -17,7 +17,6 @@ limitations under the License.
 package apple.mapkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -45,7 +44,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -187,7 +190,12 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
 
     /**
      * Defaults to the device's screen scale
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use traitCollection.displayScale
      */
+    @Deprecated
     @Generated
     @Selector("scale")
     @NFloat
@@ -211,7 +219,12 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
 
     /**
      * Defaults to the device's screen scale
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use traitCollection.displayScale
      */
+    @Deprecated
     @Generated
     @Selector("setScale:")
     public native void setScale(@NFloat double value);
@@ -225,7 +238,12 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
 
     /**
      * Affects MKMapTypeStandard and MKMapTypeHybrid
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use pointOfInterestFilter
      */
+    @Deprecated
     @Generated
     @Selector("setShowsPointsOfInterest:")
     public native void setShowsPointsOfInterest(boolean value);
@@ -243,7 +261,12 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
 
     /**
      * Affects MKMapTypeStandard and MKMapTypeHybrid
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use pointOfInterestFilter
      */
+    @Deprecated
     @Generated
     @Selector("showsPointsOfInterest")
     public native boolean showsPointsOfInterest();
@@ -253,18 +276,30 @@ public class MKMapSnapshotOptions extends NSObject implements NSCopying {
     @ByValue
     public native CGSize size();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("pointOfInterestFilter")
     public native MKPointOfInterestFilter pointOfInterestFilter();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setPointOfInterestFilter:")
     public native void setPointOfInterestFilter(MKPointOfInterestFilter value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setTraitCollection:")
     public native void setTraitCollection(UITraitCollection value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();

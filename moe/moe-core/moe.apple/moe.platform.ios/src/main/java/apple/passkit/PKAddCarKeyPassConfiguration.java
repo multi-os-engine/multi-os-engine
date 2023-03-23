@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -144,12 +147,46 @@ public class PKAddCarKeyPassConfiguration extends PKAddSecureElementPassConfigur
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.5
+     */
     @Generated
     @Selector("setSupportedRadioTechnologies:")
     public native void setSupportedRadioTechnologies(@NUInt long value);
 
+    /**
+     * API-Since: 14.5
+     */
     @Generated
     @Selector("supportedRadioTechnologies")
     @NUInt
     public native long supportedRadioTechnologies();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("manufacturerIdentifier")
+    public native String manufacturerIdentifier();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("provisioningTemplateIdentifier")
+    public native String provisioningTemplateIdentifier();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setManufacturerIdentifier:")
+    public native void setManufacturerIdentifier(String value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setProvisioningTemplateIdentifier:")
+    public native void setProvisioningTemplateIdentifier(String value);
 }

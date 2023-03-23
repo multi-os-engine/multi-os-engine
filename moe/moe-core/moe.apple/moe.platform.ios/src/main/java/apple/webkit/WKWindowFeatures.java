@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * WKWindowFeatures specifies optional attributes for the containing window when a new WKWebView is requested.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("WebKit")

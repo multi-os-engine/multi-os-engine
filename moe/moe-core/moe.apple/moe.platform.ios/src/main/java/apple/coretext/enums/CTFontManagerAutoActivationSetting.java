@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum]
- * <p>
+ * 
  * Auto-activation settings.
  * [@constant] kCTFontManagerAutoActivationDefault
  * Default auto-activation setting. When specified, the application will use the global setting.

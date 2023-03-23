@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A controller light is an abstract representation of the light-emitting capabilities of a GCController instance.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("GameController")

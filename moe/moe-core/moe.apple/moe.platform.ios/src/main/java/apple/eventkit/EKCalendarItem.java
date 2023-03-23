@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("EventKit")
 @Runtime(ObjCRuntime.class)
@@ -151,14 +154,20 @@ public class EKCalendarItem extends EKObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
     /**
      * [@property] UUID
-     * <p>
+     * 
      * This is now deprecated; use calendarItemIdentifier instead.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
     @Generated
     @Deprecated
@@ -167,9 +176,9 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * addAlarm:
-     * <p>
+     * 
      * Adds an alarm to this item.
-     * <p>
+     * 
      * This method add an alarm to an item. Be warned that some calendars can only
      * allow a certain maximum number of alarms. When this item is saved, it will
      * truncate any extra alarms from the array.
@@ -198,9 +207,9 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * [@property] calendar
-     * <p>
+     * 
      * The calendar that this calendar item belongs to.
-     * <p>
+     * 
      * This will be nil for new calendar items until you set it.
      */
     @Generated
@@ -209,13 +218,13 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * [@property] calendarItemExternalIdentifier
-     * <p>
+     * 
      * A server-provided identifier for this calendar item
-     * <p>
+     * 
      * This identifier, provided by the server, allows you to reference the same event or reminder across
      * multiple devices. For calendars stored locally on the device, including the birthday calendar,
      * it simply passes through to calendarItemIdentifier.
-     * <p>
+     * 
      * This identifier is unique as of creation for every calendar item. However, there are some
      * cases where duplicate copies of a calendar item can exist in the same database, including:
      * - A calendar item was imported from an ICS file into multiple calendars
@@ -224,15 +233,17 @@ public class EKCalendarItem extends EKObject {
      * - A subscribed calendar was added to multiple accounts
      * In such cases, you should choose between calendar items based on other factors, such as
      * the calendar or source.
-     * <p>
+     * 
      * This identifier is the same for all occurrences of a recurring event. If you wish to differentiate
      * between occurrences, you may want to use the start date.
-     * <p>
+     * 
      * This may be nil for new calendar items that do not yet belong to a calendar.
-     * <p>
+     * 
      * In addition, there are two caveats for Exchange-based calendars:
      * - This identifier will be different between EventKit on iOS versus OS X
      * - This identifier will be different between devices for EKReminders
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("calendarItemExternalIdentifier")
@@ -240,18 +251,23 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * [@property] calendarItemIdentifier
-     * <p>
+     * 
      * A unique identifier for a calendar item.
-     * <p>
+     * 
      * Item identifiers are not sync-proof in that a full sync will lose
      * this identifier, so you should always have a back up plan for dealing
      * with a reminder that is no longer fetchable by this property, e.g. by title, etc.
      * Use [EKEventStore calendarItemWithIdentifier:] to look up the item by this value.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("calendarItemIdentifier")
     public native String calendarItemIdentifier();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
@@ -262,19 +278,30 @@ public class EKCalendarItem extends EKObject {
      * fast path, it is a good idea to use these if you only need to know
      * the data exists anyway since at some point they will all be a
      * simple check.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("hasAlarms")
     public native boolean hasAlarms();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("hasAttendees")
     public native boolean hasAttendees();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("hasNotes")
     public native boolean hasNotes();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("hasRecurrenceRules")
     public native boolean hasRecurrenceRules();
@@ -297,8 +324,10 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * [@property] recurrenceRules
-     * <p>
+     * 
      * An array of EKRecurrenceRules, or nil if none.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("recurrenceRules")
@@ -306,7 +335,7 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * removeAlarm:
-     * <p>
+     * 
      * Removes an alarm from this item.
      */
     @Generated
@@ -326,9 +355,9 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * [@property] calendar
-     * <p>
+     * 
      * The calendar that this calendar item belongs to.
-     * <p>
+     * 
      * This will be nil for new calendar items until you set it.
      */
     @Generated
@@ -345,42 +374,53 @@ public class EKCalendarItem extends EKObject {
 
     /**
      * [@property] recurrenceRules
-     * <p>
+     * 
      * An array of EKRecurrenceRules, or nil if none.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setRecurrenceRules:")
     public native void setRecurrenceRules(NSArray<? extends EKRecurrenceRule> value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setTimeZone:")
     public native void setTimeZone(NSTimeZone value);
 
     /**
      * [@property] title
-     * <p>
+     * 
      * The title of this calendar item.
-     * <p>
-     * This will be nill for new calendar items until you set it.
+     * 
+     * This will be an empty string for new calendar items until you set it.
      */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setURL:")
     public native void setURL(NSURL value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
 
     /**
      * [@property] title
-     * <p>
+     * 
      * The title of this calendar item.
-     * <p>
-     * This will be nill for new calendar items until you set it.
+     * 
+     * This will be an empty string for new calendar items until you set it.
      */
     @Generated
     @Selector("title")

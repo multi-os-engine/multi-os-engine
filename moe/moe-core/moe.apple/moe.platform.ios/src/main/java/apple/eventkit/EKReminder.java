@@ -42,8 +42,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * EKReminder
- * <p>
+ * 
  * The EKReminder class represents a reminder (task/todo).
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("EventKit")
@@ -136,7 +138,7 @@ public class EKReminder extends EKCalendarItem {
 
     /**
      * reminderWithEventStore:
-     * <p>
+     * 
      * Creates a new reminder in the given event store.
      */
     @Generated
@@ -166,7 +168,7 @@ public class EKReminder extends EKCalendarItem {
 
     /**
      * [@property] completionDate
-     * <p>
+     * 
      * The date on which this reminder was completed.
      */
     @Generated
@@ -175,15 +177,15 @@ public class EKReminder extends EKCalendarItem {
 
     /**
      * [@property] dueDateComponents
-     * <p>
+     * 
      * The date by which this reminder should be completed.
-     * <p>
+     * 
      * The use of date components allows the due date and its time zone to be represented in a single property.
      * A nil time zone represents a floating date. Setting a date component without a hour, minute and second component
      * will set allDay to YES.
      * If you set this property, the calendar must be set to NSCalendarIdentifierGregorian. An exception is raised
      * otherwise.
-     * <p>
+     * 
      * On iOS, if you set the due date for a reminder, you must also set a start date, otherwise you will receive
      * an error (EKErrorNoStartDate) when attempting to save this reminder. This is not a requirement on OS X.
      */
@@ -197,9 +199,9 @@ public class EKReminder extends EKCalendarItem {
 
     /**
      * [@property] completed
-     * <p>
+     * 
      * Whether or not the reminder is completed.
-     * <p>
+     * 
      * Setting it to YES will set the completed date to the current date.
      * Setting it to NO will set the completed date to nil.
      */
@@ -209,9 +211,9 @@ public class EKReminder extends EKCalendarItem {
 
     /**
      * [@property] completed
-     * <p>
+     * 
      * Whether or not the reminder is completed.
-     * <p>
+     * 
      * Setting it to YES will set the completed date to the current date.
      * Setting it to NO will set the completed date to nil.
      */
@@ -221,9 +223,9 @@ public class EKReminder extends EKCalendarItem {
 
     /**
      * [@property] priority
-     * <p>
+     * 
      * The priority of the reminder.
-     * <p>
+     * 
      * Priorities run from 1 (highest) to 9 (lowest). A priority of 0 means no priority.
      * Saving a reminder with any other priority will fail.
      * Per RFC 5545, priorities of 1-4 are considered "high," a priority of 5 is "medium," and priorities of 6-9 are
@@ -236,7 +238,7 @@ public class EKReminder extends EKCalendarItem {
 
     /**
      * [@property] completionDate
-     * <p>
+     * 
      * The date on which this reminder was completed.
      */
     @Generated
@@ -245,15 +247,15 @@ public class EKReminder extends EKCalendarItem {
 
     /**
      * [@property] dueDateComponents
-     * <p>
+     * 
      * The date by which this reminder should be completed.
-     * <p>
+     * 
      * The use of date components allows the due date and its time zone to be represented in a single property.
      * A nil time zone represents a floating date. Setting a date component without a hour, minute and second component
      * will set allDay to YES.
      * If you set this property, the calendar must be set to NSCalendarIdentifierGregorian. An exception is raised
      * otherwise.
-     * <p>
+     * 
      * On iOS, if you set the due date for a reminder, you must also set a start date, otherwise you will receive
      * an error (EKErrorNoStartDate) when attempting to save this reminder. This is not a requirement on OS X.
      */
@@ -263,9 +265,9 @@ public class EKReminder extends EKCalendarItem {
 
     /**
      * [@property] priority
-     * <p>
+     * 
      * The priority of the reminder.
-     * <p>
+     * 
      * Priorities run from 1 (highest) to 9 (lowest). A priority of 0 means no priority.
      * Saving a reminder with any other priority will fail.
      * Per RFC 5545, priorities of 1-4 are considered "high," a priority of 5 is "medium," and priorities of 6-9 are
@@ -277,9 +279,9 @@ public class EKReminder extends EKCalendarItem {
 
     /**
      * [@property] startDateComponents
-     * <p>
+     * 
      * The start date of the task, as date components.
-     * <p>
+     * 
      * The use of date components allows the start date and its time zone to be represented in a single property.
      * A nil time zone represents a floating date. Setting a date component without a hour, minute and second component
      * will set allDay to YES.
@@ -292,9 +294,9 @@ public class EKReminder extends EKCalendarItem {
 
     /**
      * [@property] startDateComponents
-     * <p>
+     * 
      * The start date of the task, as date components.
-     * <p>
+     * 
      * The use of date components allows the start date and its time zone to be represented in a single property.
      * A nil time zone represents a floating date. Setting a date component without a hour, minute and second component
      * will set allDay to YES.

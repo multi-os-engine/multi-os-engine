@@ -24,9 +24,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEOccluder
- * <p>
+ * 
  * A PHASEOccluder represents a shape (with associated materials) that can affect sound transmission within the
  * simulated acoustic scene.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -101,9 +103,9 @@ public class PHASEOccluder extends PHASEObject {
 
     /**
      * initWithEngine:shapes:
-     * <p>
+     * 
      * Initialize a new occluder with shapes.
-     * <p>
+     * 
      * The shapes array cannot be empty, otherwise an exception is thrown.
      * [@note]
      * This function is thread-safe.
@@ -153,7 +155,7 @@ public class PHASEOccluder extends PHASEObject {
 
     /**
      * [@property] shapes
-     * <p>
+     * 
      * Array of shapes associated with this occluder.
      */
     @Generated

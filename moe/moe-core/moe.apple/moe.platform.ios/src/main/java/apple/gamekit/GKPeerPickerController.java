@@ -44,13 +44,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The GKPeerPickerController class manages the system-supplied user interface for choosing peers to connect with for
  * multiplayer games. The class manages the actual user interactions with the views and reports the results of those
  * interactions to your delegate object.
- * <p>
+ * 
  * Because the GKPeerPickerController class handles all of the user interactions, all you have to do is tell it which
  * GKSession selected peers should be connected to, tell it to start, and then wait to receive a delegate callback when
  * the picker finished connecting peers or cancels.
- * <p>
+ * 
  * You must provide a delegate that conforms to the GKPeerPickerControllerDelegate protocol in order to use this class.
  * After the user interface starts, this class notifies your delegate of the user’s actions.
+ * 
+ * API-Since: 3.0
+ * Deprecated-Since: 7.0
+ * Deprecated-Message: Use MCBrowserViewController from the MultipeerConnectivity framework
  */
 @Deprecated
 @Generated
@@ -166,7 +170,7 @@ public class GKPeerPickerController extends NSObject {
     /**
      * An integer bit mask that determines what connection types are supported by the application, and displays
      * system-supplied UI as appropriate.
-     * <p>
+     * 
      * This mask can be specified by combining, using the C bitwise OR operator, any of the options described in
      * GKPickerConnectionType. If not set, the default supported type is GKPickerConnectionTypeNearby. If multiple
      * connection types are supported, system-supplied UI will be presented to allow the user to select a connection
@@ -182,6 +186,9 @@ public class GKPeerPickerController extends NSObject {
     /**
      * The delegate receives notifications when the user interacts with the picker interface. If this property is nil,
      * the picker is dismissed immediately if you try to show it.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Deprecated
     @Generated
@@ -207,7 +214,7 @@ public class GKPeerPickerController extends NSObject {
     /**
      * An integer bit mask that determines what connection types are supported by the application, and displays
      * system-supplied UI as appropriate.
-     * <p>
+     * 
      * This mask can be specified by combining, using the C bitwise OR operator, any of the options described in
      * GKPickerConnectionType. If not set, the default supported type is GKPickerConnectionTypeNearby. If multiple
      * connection types are supported, system-supplied UI will be presented to allow the user to select a connection
@@ -222,6 +229,9 @@ public class GKPeerPickerController extends NSObject {
     /**
      * The delegate receives notifications when the user interacts with the picker interface. If this property is nil,
      * the picker is dismissed immediately if you try to show it.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Deprecated
     @Generated
@@ -231,6 +241,9 @@ public class GKPeerPickerController extends NSObject {
     /**
      * The delegate receives notifications when the user interacts with the picker interface. If this property is nil,
      * the picker is dismissed immediately if you try to show it.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Deprecated
     @Generated

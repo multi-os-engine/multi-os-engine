@@ -47,6 +47,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.0
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use +[CNContactViewController viewControllerForContact:] from ContactsUI.framework instead
+ */
 @Deprecated
 @Generated
 @Library("AddressBookUI")
@@ -76,6 +81,7 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     @Selector("allocWithZone:")
     public static native ABPersonViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -182,6 +188,8 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     /**
      * Specifies whether buttons appear to let the user perform actions such as sharing the contact,
      * initiating a FaceTime call, or sending a text message.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("allowsActions")
@@ -242,6 +250,8 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
     /**
      * Specifies whether buttons appear to let the user perform actions such as sharing the contact,
      * initiating a FaceTime call, or sending a text message.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setAllowsActions:")
@@ -304,6 +314,8 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
 
     /**
      * Indicates whether to show data from people linked to the displayedPerson, defaults to NO
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setShouldShowLinkedPeople:")
@@ -311,6 +323,8 @@ public class ABPersonViewController extends UIViewController implements UIViewCo
 
     /**
      * Indicates whether to show data from people linked to the displayedPerson, defaults to NO
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("shouldShowLinkedPeople")

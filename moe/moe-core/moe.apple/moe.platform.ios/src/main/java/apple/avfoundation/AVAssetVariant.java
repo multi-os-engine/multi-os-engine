@@ -24,10 +24,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAssetVariant
- * <p>
+ * 
  * An AVAssetVariant represents a bit rate variant.
  * Each asset contains a collection of variants that represent a combination of audio, video, text, closed captions, and
  * subtitles for a particular bit rate.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVFoundation")
@@ -59,7 +61,7 @@ public class AVAssetVariant extends NSObject {
 
     /**
      * [@property] audioAttributes
-     * <p>
+     * 
      * Provides variant's audio rendition attributes. If no audio attributes are declared, it will be nil.
      */
     @Generated
@@ -72,7 +74,7 @@ public class AVAssetVariant extends NSObject {
 
     /**
      * [@property] averageBitRate
-     * <p>
+     * 
      * If it is not declared, the value will be negative.
      */
     @Generated
@@ -142,7 +144,7 @@ public class AVAssetVariant extends NSObject {
 
     /**
      * [@property] peakBitRate
-     * <p>
+     * 
      * If it is not declared, the value will be negative.
      */
     @Generated
@@ -172,7 +174,7 @@ public class AVAssetVariant extends NSObject {
 
     /**
      * [@property] videoAttributes
-     * <p>
+     * 
      * Provides variant's video rendition attributes. If no video attributes are declared, it will be nil.
      */
     @Generated

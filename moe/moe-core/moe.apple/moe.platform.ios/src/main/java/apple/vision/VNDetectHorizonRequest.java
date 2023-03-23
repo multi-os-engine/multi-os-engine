@@ -26,9 +26,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Determine what the horizon tilt of an image is.
- * <p>
+ * 
  * If the horizon tilt is detected in an image, the request will provide a VNHorizonObservation in the results which
  * describe how to transform the image so that the horizon line becomes level.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")

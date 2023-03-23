@@ -29,8 +29,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Represents a color used by a GCDeviceLight.
- *
+ * 
  * @see GCDeviceLight
+ * 
+ *      API-Since: 14.0
  */
 @Generated
 @Library("GameController")

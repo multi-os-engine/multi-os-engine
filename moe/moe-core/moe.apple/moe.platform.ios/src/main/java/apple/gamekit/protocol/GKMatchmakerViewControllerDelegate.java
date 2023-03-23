@@ -36,6 +36,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface GKMatchmakerViewControllerDelegate {
     /**
      * Matchmaking has failed with an error
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("matchmakerViewController:didFailWithError:")
@@ -43,6 +45,8 @@ public interface GKMatchmakerViewControllerDelegate {
 
     /**
      * Players have been found for a server-hosted game, the game should start
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -54,6 +58,8 @@ public interface GKMatchmakerViewControllerDelegate {
 
     /**
      * A peer-to-peer match has been found, the game should start
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @IsOptional
@@ -64,6 +70,11 @@ public interface GKMatchmakerViewControllerDelegate {
 
     /**
      * These protocol methods are obsoleted. They will never be invoked and their implementation does nothing**
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use
+     * matchmakerViewController:didFindHostedPlayers:
      */
     @Generated
     @IsOptional
@@ -74,6 +85,12 @@ public interface GKMatchmakerViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use
+     * matchmakerViewController:hostedPlayerDidAccept:
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -86,6 +103,8 @@ public interface GKMatchmakerViewControllerDelegate {
     /**
      * An invited player has accepted a hosted invite. Apps should connect through the hosting server and then update
      * the player's connected state (using setConnected:forHostedPlayer:)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -97,6 +116,8 @@ public interface GKMatchmakerViewControllerDelegate {
 
     /**
      * The user has cancelled matchmaking
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @Selector("matchmakerViewControllerWasCancelled:")

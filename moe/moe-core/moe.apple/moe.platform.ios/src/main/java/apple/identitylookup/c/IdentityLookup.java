@@ -21,6 +21,9 @@ public final class IdentityLookup {
     private IdentityLookup() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

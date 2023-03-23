@@ -27,9 +27,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMRecordedRotationRateData
- * <p>
+ * 
  * Discussion:
  * CMRecordedRotationRateData contains data for each rotation rate sample.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CoreMotion")
@@ -142,7 +144,7 @@ public class CMRecordedRotationRateData extends CMRotationRateData {
 
     /**
      * startDate
-     * <p>
+     * 
      * Discussion:
      * Time at which the rotation rate was observed.
      */

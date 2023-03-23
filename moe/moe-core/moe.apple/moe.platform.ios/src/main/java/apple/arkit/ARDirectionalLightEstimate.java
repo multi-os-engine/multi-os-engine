@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A directional light estimate representing the light intensity and direction in the scene.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ARKit")
@@ -142,7 +144,7 @@ public class ARDirectionalLightEstimate extends ARLightEstimate {
 
     /**
      * Second degree spherical harmonics coefficients representing the intensity of light.
-     * <p>
+     * 
      * The data is an array of 27 32-bit floating-point values, containing three non-interleaved data sets
      * corresponding to the red, green, and blue sets of coefficients.
      */

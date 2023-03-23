@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -50,7 +53,7 @@ public interface NSURLSessionStreamDelegate extends NSURLSessionTaskDelegate {
     }
 
     /**
-     * Indiciates that the read side of a connection has been closed. Any
+     * Indicates that the read side of a connection has been closed. Any
      * outstanding reads complete, but future reads will immediately fail.
      * This may be sent even when no reads are in progress. However, when
      * this delegate message is received, there may still be bytes
@@ -80,7 +83,7 @@ public interface NSURLSessionStreamDelegate extends NSURLSessionTaskDelegate {
     }
 
     /**
-     * Indiciates that the write side of a connection has been closed.
+     * Indicates that the write side of a connection has been closed.
      * Any outstanding writes complete, but future writes will immediately
      * fail.
      */

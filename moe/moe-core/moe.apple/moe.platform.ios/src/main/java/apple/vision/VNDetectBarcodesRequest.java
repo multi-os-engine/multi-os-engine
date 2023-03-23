@@ -29,9 +29,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request that detects barcodes in an image.
- * <p>
+ * 
  * This request will return zero or more VNBarcodeObservation objects objects which describe the barcodes detected in an
  * image.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -158,12 +160,16 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
 
     /**
      * Obtain the collection of barcode symbologies currently recognized by the Vision framework.
-     * <p>
+     * 
      * Calling this method could be a potentially expensive operation.
-     *
+     * 
      * @return An array of VNBarcodeSymbology objects describing the symbologies currently supported by the Vision
      *         framework.
+     * 
+     *         API-Since: 11.0
+     *         Deprecated-Since: 15.0
      */
+    @Deprecated
     @Generated
     @Selector("supportedSymbologies")
     public static native NSArray<String> supportedSymbologies();
@@ -205,11 +211,13 @@ public class VNDetectBarcodesRequest extends VNImageBasedRequest {
 
     /**
      * Obtain the collection of barcode symbologies that can be recognized by the request in its current configuration.
-     * <p>
+     * 
      * Calling this method could be a potentially expensive operation.
-     *
+     * 
      * @return An array of VNBarcodeSymbology objects describing the symbologies recognized by the request in its
      *         current configuration.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("supportedSymbologiesAndReturnError:")

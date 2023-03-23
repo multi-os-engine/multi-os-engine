@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCInstanceNormalizationLayer
- * <p>
+ * 
  * An instance normalization layer. For more information refer to https://pytorch.org/docs/stable/nn.html#instancenorm2d
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -61,7 +63,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The beta tensor
      */
     @Generated
@@ -70,7 +72,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] betaParameter
-     * <p>
+     * 
      * The beta tensor parameter used for optimizer update
      */
     @Generated
@@ -105,7 +107,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] featureChannelCount
-     * <p>
+     * 
      * The number of feature channels
      */
     @Generated
@@ -115,7 +117,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] gamma
-     * <p>
+     * 
      * The gamma tensor
      */
     @Generated
@@ -124,7 +126,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] gammaParameter
-     * <p>
+     * 
      * The gamma tensor parameter used for optimizer update
      */
     @Generated
@@ -163,7 +165,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
 
     /**
      * Create an instance normalization layer
-     *
+     * 
      * @param featureChannelCount The number of feature channels
      * @param beta                The beta tensor
      * @param gamma               The gamma tensor
@@ -177,7 +179,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
 
     /**
      * Create an instance normalization layer
-     *
+     * 
      * @param featureChannelCount The number of feature channels
      * @param beta                The beta tensor
      * @param gamma               The gamma tensor
@@ -192,7 +194,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
 
     /**
      * Create an instance normalization layer
-     *
+     * 
      * @param featureChannelCount The number of feature channels
      * @param mean                The running mean tensor
      * @param variance            The running variance tensor
@@ -201,6 +203,8 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
      * @param varianceEpsilon     The epslion value
      * @param momentum            The momentum value for the running mean and variance computation
      * @return A new instance normalization layer.
+     * 
+     *         API-Since: 14.5
      */
     @Generated
     @Selector("layerWithFeatureChannelCount:mean:variance:beta:gamma:varianceEpsilon:momentum:")
@@ -210,8 +214,10 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] mean
-     * <p>
+     * 
      * The running mean tensor
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("mean")
@@ -219,9 +225,9 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] momentum
-     * <p>
+     * 
      * The value used for the running mean and variance computation
-     * <p>
+     * 
      * The default is 0.99f.
      */
     @Generated
@@ -255,8 +261,10 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] variance
-     * <p>
+     * 
      * The running variance tensor
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("variance")
@@ -264,7 +272,7 @@ public class MLCInstanceNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] varianceEpsilon
-     * <p>
+     * 
      * A value used for numerical stability
      */
     @Generated

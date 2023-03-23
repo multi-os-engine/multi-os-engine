@@ -28,15 +28,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AUAudioUnitViewConfiguration
- * <p>
+ * 
  * Properties of the configuration that a host uses to embed the view of an audio unit.
- * <p>
+ * 
  * Hosts may support embedding the view of an audio unit in different configurations. These
  * configurations may vary in the size reserved for the audio unit's view and the additional
  * control surfaces that are displayed along with it. The host can propose several view
  * configurations and the audio unit should report the ones which it supports.
- * <p>
+ * 
  * See the documentation for supportedViewConfigurations.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreAudioKit")
@@ -107,9 +109,9 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
 
     /**
      * [@property] height
-     * <p>
+     * 
      * The height of the view, measured in points.
-     * <p>
+     * 
      * Setting the height to 0 will match any height.
      */
     @Generated
@@ -119,7 +121,7 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
 
     /**
      * [@property] hostHasController
-     * <p>
+     * 
      * Boolean property specifying whether the host displays its own control surface
      * when showing the view of the audio unit.
      */
@@ -137,12 +139,15 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
 
     /**
      * initWithWidth
-     * <p>
+     * 
      * Designated initializer.
-     *
-     * @param width             The width associated with this view configuration.
-     * @param height            The height associated with this view configuration.
-     * @param hostHasController This property controls whether the host shows its own control surface in this view
+     * 
+     * @param width
+     *                          The width associated with this view configuration.
+     * @param height
+     *                          The height associated with this view configuration.
+     * @param hostHasController
+     *                          This property controls whether the host shows its own control surface in this view
      *                          configuration.
      * @return Returns the newly created view configuration object.
      */
@@ -210,9 +215,9 @@ public class AUAudioUnitViewConfiguration extends NSObject implements NSSecureCo
 
     /**
      * [@property] width
-     * <p>
+     * 
      * The width of the view, measured in points.
-     * <p>
+     * 
      * Setting the width to 0 will match any width.
      */
     @Generated

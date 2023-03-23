@@ -39,6 +39,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.0
+ * Deprecated-Since: 10.0
+ * Deprecated-Message: Replaced by CXCallObserver from CallKit.framework
+ */
+@Deprecated
 @Generated
 @Library("CoreTelephony")
 @Runtime(ObjCRuntime.class)
@@ -151,12 +157,17 @@ public class CTCallCenter extends NSObject {
 
     /**
      * callEventHandler
-     * <p>
+     * 
      * Discussion:
      * A block that will be dispatched on the default priority global dispatch
      * queue when a new call event occurs. Set this property to a block
      * that is defined in your application to handle call events.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Replaced by <CallKit/CXCallObserver.h>
      */
+    @Deprecated
     @Generated
     @Selector("callEventHandler")
     @ObjCBlock(name = "call_callEventHandler_ret")
@@ -164,11 +175,17 @@ public class CTCallCenter extends NSObject {
 
     /**
      * currentCalls
-     * <p>
+     * 
      * Discussion:
      * An array containing CTCall objects for all calls that are currently
      * in progress. If no calls are active, this will be nil.
+     * 
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Replaced by <CallKit/CXCallObserver.h>
      */
+    @Deprecated
     @Generated
     @Selector("currentCalls")
     public native NSSet<? extends CTCall> currentCalls();
@@ -179,12 +196,17 @@ public class CTCallCenter extends NSObject {
 
     /**
      * callEventHandler
-     * <p>
+     * 
      * Discussion:
      * A block that will be dispatched on the default priority global dispatch
      * queue when a new call event occurs. Set this property to a block
      * that is defined in your application to handle call events.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Replaced by <CallKit/CXCallObserver.h>
      */
+    @Deprecated
     @Generated
     @Selector("setCallEventHandler:")
     public native void setCallEventHandler(

@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -100,7 +103,7 @@ public class CPContactMessageButton extends CPButton {
      * Create a contact button that, when tapped, launches to Siri to compose a message to this entity.
      * When tapped, this button does NOT call a handler in your app. Instead, it will launch to Siri.
      * To compose a message, you must provide a phone OR email for this contact.
-     *
+     * 
      * @param phoneOrEmail A phone or email address for this contact. This will not be displayed in the button,
      *                     but it is necessary for Siri to compose a message to this contact entity.
      */

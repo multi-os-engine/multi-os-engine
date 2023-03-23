@@ -1,8 +1,6 @@
 package apple.pencilkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -27,11 +25,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * A point value stores all the attributes of a PKStroke at a specific point.
  * `PKStrokePoint` stores its properties compressed, the value read for a property may not
  * exactly equal the value set for a property.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("PencilKit")

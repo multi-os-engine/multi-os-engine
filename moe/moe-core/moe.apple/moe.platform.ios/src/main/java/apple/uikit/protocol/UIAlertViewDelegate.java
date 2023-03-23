@@ -33,6 +33,10 @@ import org.moe.natj.objc.ann.Selector;
 public interface UIAlertViewDelegate {
     /**
      * Called when a button is clicked. The view will be automatically dismissed after this call returns
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use UIAlertController instead.
      */
     @Generated
     @IsOptional
@@ -44,6 +48,10 @@ public interface UIAlertViewDelegate {
 
     /**
      * after animation
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use UIAlertController instead.
      */
     @Generated
     @IsOptional
@@ -55,6 +63,10 @@ public interface UIAlertViewDelegate {
 
     /**
      * before animation and hiding view
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use UIAlertController instead.
      */
     @Generated
     @IsOptional
@@ -68,6 +80,10 @@ public interface UIAlertViewDelegate {
      * Called when we cancel a view (eg. the user clicks the Home button). This is not called when the user clicks the
      * cancel button.
      * If not defined in the delegate, we simulate a click in the cancel button
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use UIAlertController instead.
      */
     @Generated
     @IsOptional
@@ -79,6 +95,10 @@ public interface UIAlertViewDelegate {
 
     /**
      * Called after edits in any of the default fields added by the style
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use UIAlertController instead.
      */
     @Generated
     @IsOptional
@@ -90,6 +110,10 @@ public interface UIAlertViewDelegate {
 
     /**
      * after animation
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use UIAlertController instead.
      */
     @Generated
     @IsOptional
@@ -101,6 +125,10 @@ public interface UIAlertViewDelegate {
 
     /**
      * before animation and showing view
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use UIAlertController instead.
      */
     @Generated
     @IsOptional

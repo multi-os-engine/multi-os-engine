@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -48,7 +47,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -154,6 +157,7 @@ public class UICollectionViewCell extends UICollectionReusableView {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -180,6 +184,7 @@ public class UICollectionViewCell extends UICollectionReusableView {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -255,46 +260,57 @@ public class UICollectionViewCell extends UICollectionReusableView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -459,8 +475,11 @@ public class UICollectionViewCell extends UICollectionReusableView {
     /**
      * Override this method to modify the visual appearance for a particular
      * dragState.
-     * <p>
+     * 
      * Call super if you want to add to the existing default implementation.
+     * 
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dragStateDidChange:")
@@ -476,6 +495,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
      * When YES, the cell will automatically call -updatedConfigurationForState: on its `backgroundConfiguration` when
      * the cell's
      * configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("automaticallyUpdatesBackgroundConfiguration")
@@ -485,6 +506,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
      * When YES, the cell will automatically call -updatedConfigurationForState: on its `contentConfiguration` when the
      * cell's
      * configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("automaticallyUpdatesContentConfiguration")
@@ -493,6 +516,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
     /**
      * Setting a background configuration supersedes the cell's backgroundView and selectedBackgroundView. The default
      * value is nil.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("backgroundConfiguration")
@@ -502,6 +527,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
      * Returns the current configuration state for the cell.
      * To add your own custom state(s), override the getter and call super to obtain an instance with the
      * system properties set, then set your own custom states as desired.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("configurationState")
@@ -514,6 +541,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
      * existing content view type.
      * The default value is nil. After a configuration has been set, setting this property to nil will replace the
      * current content view with a new content view.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("contentConfiguration")
@@ -524,6 +553,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
      * When YES, the cell will automatically call -updatedConfigurationForState: on its `backgroundConfiguration` when
      * the cell's
      * configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAutomaticallyUpdatesBackgroundConfiguration:")
@@ -533,6 +564,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
      * When YES, the cell will automatically call -updatedConfigurationForState: on its `contentConfiguration` when the
      * cell's
      * configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAutomaticallyUpdatesContentConfiguration:")
@@ -541,6 +574,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
     /**
      * Setting a background configuration supersedes the cell's backgroundView and selectedBackgroundView. The default
      * value is nil.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setBackgroundConfiguration:")
@@ -553,6 +588,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
      * existing content view type.
      * The default value is nil. After a configuration has been set, setting this property to nil will replace the
      * current content view with a new content view.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setContentConfiguration:")
@@ -562,6 +599,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
      * Requests the cell update its configuration for its current state. This method is called automatically
      * when the cell's `configurationState` may have changed, as well as in other circumstances where an
      * update may be required. Multiple requests may be coalesced into a single update at the appropriate time.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setNeedsUpdateConfiguration")
@@ -570,6 +609,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
     /**
      * Subclasses should override this method and update the cell's configuration using the state provided.
      * This method should not be called directly, use `setNeedsUpdateConfiguration` to request an update.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("updateConfigurationUsingState:")
@@ -578,6 +619,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
     /**
      * Optional block-based alternative to overriding `-updateConfigurationUsingState:` in a subclass. This handler
      * is called after `-updateConfigurationUsingState:`. Setting a new handler triggers `setNeedsUpdateConfiguration`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("configurationUpdateHandler")
@@ -594,6 +637,8 @@ public class UICollectionViewCell extends UICollectionReusableView {
     /**
      * Optional block-based alternative to overriding `-updateConfigurationUsingState:` in a subclass. This handler
      * is called after `-updateConfigurationUsingState:`. Setting a new handler triggers `setNeedsUpdateConfiguration`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setConfigurationUpdateHandler:")
@@ -606,4 +651,14 @@ public class UICollectionViewCell extends UICollectionReusableView {
         @Generated
         void call_setConfigurationUpdateHandler(UICollectionViewCell cell, UICellConfigurationState state);
     }
+
+    /**
+     * Returns a default background configuration for the cell's style.
+     * This background configuration represents the default appearance that the cell will use.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("defaultBackgroundConfiguration")
+    public native UIBackgroundConfiguration defaultBackgroundConfiguration();
 }

@@ -26,11 +26,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * ===========================================================================================================================
- * <p>
+ * 
  * Configuration parameters for exposure detection.
- * <p>
+ * 
  * Configuration parameters are used to calculate an exposure duration for each exposure using the following formula.
- * <p>
+ * 
  * exposureDuration =
  * ( ( immediateDuration * immediateDurationWeight ) +
  * ( nearDuration * nearDurationWeight ) +
@@ -38,6 +38,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * ( otherDuration * otherDurationWeight ) )
  * * infectiousnessWeight )
  * * reportTypeWeight )
+ * 
+ * API-Since: 12.5
  */
 @Generated
 @Library("ExposureNotification")
@@ -69,7 +71,7 @@ public class ENExposureConfiguration extends NSObject {
 
     /**
      * Thresholds for calculating attenuationDurations. Defaults to [50, 70, 90].
-     * <p>
+     * 
      * Index |0 |1 |2
      * Variable |X |Y |Z
      */
@@ -117,6 +119,8 @@ public class ENExposureConfiguration extends NSObject {
 
     /**
      * Exclude exposures with daysSinceLastExposure > this value. Defaults to 0 (don't filter).
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("daysSinceLastExposureThreshold")
@@ -150,6 +154,8 @@ public class ENExposureConfiguration extends NSObject {
 
     /**
      * Weights to apply to durations at each proximity level based on attenuation. Range is 0-250%.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("immediateDurationWeight")
@@ -160,17 +166,24 @@ public class ENExposureConfiguration extends NSObject {
      * Key is a daysSinceOnsetOfSymptoms: -14 to 14. Value is an ENInfectiousness.
      * Defaults to ENInfectiousnessNone for days not specified.
      * If a value is set to ENInfectiousnessNone, diagnosis keys for it should be ignored.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("infectiousnessForDaysSinceOnsetOfSymptoms")
     public native NSDictionary<? extends NSNumber, ? extends NSNumber> infectiousnessForDaysSinceOnsetOfSymptoms();
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("infectiousnessHighWeight")
     public native double infectiousnessHighWeight();
 
     /**
      * Weights to apply for infectiousness. Range is 0-250%.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("infectiousnessStandardWeight")
@@ -201,6 +214,9 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("mediumDurationWeight")
     public native double mediumDurationWeight();
@@ -221,6 +237,9 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("minimumRiskScoreFullRange")
     public native double minimumRiskScoreFullRange();
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("nearDurationWeight")
     public native double nearDurationWeight();
@@ -230,16 +249,24 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("new")
     public static native ENExposureConfiguration new_objc();
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("otherDurationWeight")
     public native double otherDurationWeight();
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("reportTypeConfirmedClinicalDiagnosisWeight")
     public native double reportTypeConfirmedClinicalDiagnosisWeight();
 
     /**
      * Weights to apply for each report type. Range is 0-250%.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("reportTypeConfirmedTestWeight")
@@ -248,15 +275,23 @@ public class ENExposureConfiguration extends NSObject {
     /**
      * Maps scenarios when Report Type is not present into one of the available report types.
      * If this is set to ENDiagnosisReportTypeUnknown, the key will be ignored if it does not contain a report type.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("reportTypeNoneMap")
     public native int reportTypeNoneMap();
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("reportTypeRecursiveWeight")
     public native double reportTypeRecursiveWeight();
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("reportTypeSelfReportedWeight")
     public native double reportTypeSelfReportedWeight();
@@ -271,7 +306,7 @@ public class ENExposureConfiguration extends NSObject {
 
     /**
      * Thresholds for calculating attenuationDurations. Defaults to [50, 70, 90].
-     * <p>
+     * 
      * Index |0 |1 |2
      * Variable |X |Y |Z
      */
@@ -297,6 +332,8 @@ public class ENExposureConfiguration extends NSObject {
 
     /**
      * Exclude exposures with daysSinceLastExposure > this value. Defaults to 0 (don't filter).
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setDaysSinceLastExposureThreshold:")
@@ -316,6 +353,8 @@ public class ENExposureConfiguration extends NSObject {
 
     /**
      * Weights to apply to durations at each proximity level based on attenuation. Range is 0-250%.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setImmediateDurationWeight:")
@@ -326,23 +365,33 @@ public class ENExposureConfiguration extends NSObject {
      * Key is a daysSinceOnsetOfSymptoms: -14 to 14. Value is an ENInfectiousness.
      * Defaults to ENInfectiousnessNone for days not specified.
      * If a value is set to ENInfectiousnessNone, diagnosis keys for it should be ignored.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setInfectiousnessForDaysSinceOnsetOfSymptoms:")
     public native void setInfectiousnessForDaysSinceOnsetOfSymptoms(
             NSDictionary<? extends NSNumber, ? extends NSNumber> value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setInfectiousnessHighWeight:")
     public native void setInfectiousnessHighWeight(double value);
 
     /**
      * Weights to apply for infectiousness. Range is 0-250%.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setInfectiousnessStandardWeight:")
     public native void setInfectiousnessStandardWeight(double value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setMediumDurationWeight:")
     public native void setMediumDurationWeight(double value);
@@ -363,20 +412,31 @@ public class ENExposureConfiguration extends NSObject {
     @Selector("setMinimumRiskScoreFullRange:")
     public native void setMinimumRiskScoreFullRange(double value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setNearDurationWeight:")
     public native void setNearDurationWeight(double value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setOtherDurationWeight:")
     public native void setOtherDurationWeight(double value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setReportTypeConfirmedClinicalDiagnosisWeight:")
     public native void setReportTypeConfirmedClinicalDiagnosisWeight(double value);
 
     /**
      * Weights to apply for each report type. Range is 0-250%.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setReportTypeConfirmedTestWeight:")
@@ -385,15 +445,23 @@ public class ENExposureConfiguration extends NSObject {
     /**
      * Maps scenarios when Report Type is not present into one of the available report types.
      * If this is set to ENDiagnosisReportTypeUnknown, the key will be ignored if it does not contain a report type.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setReportTypeNoneMap:")
     public native void setReportTypeNoneMap(int value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setReportTypeRecursiveWeight:")
     public native void setReportTypeRecursiveWeight(double value);
 
+    /**
+     * API-Since: 12.5
+     */
     @Generated
     @Selector("setReportTypeSelfReportedWeight:")
     public native void setReportTypeSelfReportedWeight(double value);

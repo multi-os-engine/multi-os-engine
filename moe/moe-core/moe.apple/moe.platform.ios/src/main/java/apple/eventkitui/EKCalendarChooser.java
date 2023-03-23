@@ -73,6 +73,7 @@ public class EKCalendarChooser extends UIViewController {
     @Selector("allocWithZone:")
     public static native EKCalendarChooser allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();

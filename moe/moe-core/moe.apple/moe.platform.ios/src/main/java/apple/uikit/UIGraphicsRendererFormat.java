@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -41,10 +40,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * UIGraphicsRendererFormat is an object that describes the particular properties of the
  * context created by its associated renderer class.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("UIKit")
@@ -102,6 +104,8 @@ public class UIGraphicsRendererFormat extends NSObject implements NSCopying {
 
     /**
      * returns a default configured format object, best suited for the current device.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("defaultFormat")
@@ -183,6 +187,8 @@ public class UIGraphicsRendererFormat extends NSObject implements NSCopying {
 
     /**
      * Returns a new format object best suited for the main screen’s current configuration.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("preferredFormat")

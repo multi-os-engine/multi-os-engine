@@ -17,7 +17,6 @@ limitations under the License.
 package apple.scenekit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -51,12 +50,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * SCNCamera
- * <p>
+ * 
  * SCNCamera represents a camera that can be attached to a SCNNode.
- * <p>
+ * 
  * A node with a camera can be used as a point of view to visualize a 3D scene.
  */
 @Generated
@@ -93,13 +93,16 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * camera
-     * <p>
+     * 
      * Creates and returns a camera instance.
      */
     @Generated
     @Selector("camera")
     public static native SCNCamera camera();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("cameraWithMDLCamera:")
     public static native SCNCamera cameraWithMDLCamera(MDLCamera mdlCamera);
@@ -190,6 +193,7 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Selector("addAnimation:forKey:")
     public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
 
+    @Deprecated
     @Generated
     @Selector("animationForKey:")
     public native CAAnimation animationForKey(String key);
@@ -200,11 +204,16 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] aperture
-     * <p>
+     * 
      * Determines the receiver's aperture. Animatable.
-     * <p>
+     * 
      * Defaults to 1/8.0.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use -[SCNCamera fStop] instead with fStop = sensorHeight / aperture.
      */
+    @Deprecated
     @Generated
     @Selector("aperture")
     @NFloat
@@ -212,9 +221,9 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] automaticallyAdjustsZRange
-     * <p>
+     * 
      * Determines whether the receiver automatically adjusts the zFar value. Defaults to NO.
-     * <p>
+     * 
      * When set to YES, the near and far planes are automatically set to fit the bounding box of the entire scene at
      * render time.
      */
@@ -224,8 +233,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] averageGray
-     * <p>
+     * 
      * Determines the average gray level desired in the final image. Defaults to 0.18.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("averageGray")
@@ -234,8 +245,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] bloomBlurRadius
-     * <p>
+     * 
      * Determines the radius of the bloom effect in points. Animatable. Defaults to 4.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("bloomBlurRadius")
@@ -244,8 +257,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] bloomIntensity
-     * <p>
+     * 
      * Determines the intensity of the bloom effect. Animatable. Defaults to 0 (no effect).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("bloomIntensity")
@@ -254,8 +269,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] bloomThreshold
-     * <p>
+     * 
      * Determines the luminance threshold for the bloom effect. Animatable. Defaults to 1.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("bloomThreshold")
@@ -264,7 +281,7 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] categoryBitMask
-     * <p>
+     * 
      * Determines the node categories that are visible from the receiver. Defaults to all bits set.
      */
     @Generated
@@ -274,8 +291,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] colorFringeIntensity
-     * <p>
+     * 
      * Controls the intensity of the color shift effect. Defaults to 1.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("colorFringeIntensity")
@@ -284,8 +303,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] colorFringeStrength
-     * <p>
+     * 
      * Controls the strength of the color shift effect. Defaults to 0 (no effect).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("colorFringeStrength")
@@ -294,10 +315,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] colorGrading
-     * <p>
+     * 
      * Specifies a lookup texture to apply color grading. The contents must a 2D image representing `n` slices of a unit
      * color cube texture, arranged in an horizontal row of `n` images. For instance, a color cube of dimension 16x16x16
      * should be provided as an image of size 256x16.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("colorGrading")
@@ -305,8 +328,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] contrast
-     * <p>
+     * 
      * Controls the overall contrast of the scene. Defaults to 0 (no effect).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("contrast")
@@ -325,8 +350,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] exposureAdaptationBrighteningSpeedFactor
-     * <p>
+     * 
      * Determines the exposure adaptation speed when going from bright areas to dark areas. Defaults to 0.4.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("exposureAdaptationBrighteningSpeedFactor")
@@ -335,8 +362,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] exposureAdaptationDarkeningSpeedFactor
-     * <p>
+     * 
      * Determines the exposure adaptation speed when going from dark areas to bright areas. Defaults to 0.6.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("exposureAdaptationDarkeningSpeedFactor")
@@ -345,8 +374,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] exposureOffset
-     * <p>
+     * 
      * Determines the logarithmic exposure biasing, in EV. Defaults to 0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("exposureOffset")
@@ -355,11 +386,16 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] focalBlurRadius
-     * <p>
+     * 
      * Determines the receiver's focal radius. Animatable.
-     * <p>
+     * 
      * Determines the maximum amount of blur for objects out of focus. Defaults to 0.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use fStop instead
      */
+    @Deprecated
     @Generated
     @Selector("focalBlurRadius")
     @NFloat
@@ -367,12 +403,16 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] focalDistance
-     * <p>
+     * 
      * Determines the receiver's focal distance. Animatable.
-     * <p>
+     * 
      * When non zero, the focal distance determines how the camera focuses the objects in the 3d scene. Defaults to 10.0
      * prior to macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to 2.5 otherwise.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
      */
+    @Deprecated
     @Generated
     @Selector("focalDistance")
     @NFloat
@@ -380,11 +420,15 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] focalSize
-     * <p>
+     * 
      * Determines the receiver's focal size. Animatable.
-     * <p>
+     * 
      * Determines the size of the area around focalDistance where the objects are in focus. Defaults to 0.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
      */
+    @Deprecated
     @Generated
     @Selector("focalSize")
     @NFloat
@@ -398,14 +442,17 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Selector("initWithCoder:")
     public native SCNCamera initWithCoder(NSCoder coder);
 
+    @Deprecated
     @Generated
     @Selector("isAnimationForKeyPaused:")
     public native boolean isAnimationForKeyPaused(String key);
 
     /**
      * [@property] maximumExposure
-     * <p>
+     * 
      * Determines the maximum exposure offset of the adaptation, in EV. Defaults to -15.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("maximumExposure")
@@ -414,8 +461,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] minimumExposure
-     * <p>
+     * 
      * Determines the minimum exposure offset of the adaptation, in EV. Defaults to -15.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("minimumExposure")
@@ -424,10 +473,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] motionBlurIntensity
-     * <p>
+     * 
      * Determines the intensity of the motion blur. Animatable. Defaults to 0.
-     * <p>
+     * 
      * An intensity of zero means no motion blur. The intensity should not exceeed 1.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("motionBlurIntensity")
@@ -436,7 +487,7 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] name
-     * <p>
+     * 
      * Determines the name of the receiver.
      */
     @Generated
@@ -445,9 +496,9 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] orthographicScale
-     * <p>
+     * 
      * Determines the receiver's orthographic scale value. Animatable. Defaults to 1.
-     * <p>
+     * 
      * This setting determines the size of the camera's visible area. This is only enabled when
      * usesOrthographicProjection is set to YES.
      */
@@ -455,13 +506,14 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Selector("orthographicScale")
     public native double orthographicScale();
 
+    @Deprecated
     @Generated
     @Selector("pauseAnimationForKey:")
     public native void pauseAnimationForKey(String key);
 
     /**
      * [@property] projectionTransform
-     * <p>
+     * 
      * Determines the projection transform used by the camera to project the world onscreen.
      */
     @Generated
@@ -477,18 +529,22 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
     @Selector("removeAnimationForKey:")
     public native void removeAnimationForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
     public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
 
+    @Deprecated
     @Generated
     @Selector("resumeAnimationForKey:")
     public native void resumeAnimationForKey(String key);
 
     /**
      * [@property] saturation
-     * <p>
+     * 
      * Controls the overall saturation of the scene. Defaults to 1 (no effect).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("saturation")
@@ -497,20 +553,25 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] aperture
-     * <p>
+     * 
      * Determines the receiver's aperture. Animatable.
-     * <p>
+     * 
      * Defaults to 1/8.0.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use -[SCNCamera fStop] instead with fStop = sensorHeight / aperture.
      */
+    @Deprecated
     @Generated
     @Selector("setAperture:")
     public native void setAperture(@NFloat double value);
 
     /**
      * [@property] automaticallyAdjustsZRange
-     * <p>
+     * 
      * Determines whether the receiver automatically adjusts the zFar value. Defaults to NO.
-     * <p>
+     * 
      * When set to YES, the near and far planes are automatically set to fit the bounding box of the entire scene at
      * render time.
      */
@@ -520,8 +581,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] averageGray
-     * <p>
+     * 
      * Determines the average gray level desired in the final image. Defaults to 0.18.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAverageGray:")
@@ -529,8 +592,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] bloomBlurRadius
-     * <p>
+     * 
      * Determines the radius of the bloom effect in points. Animatable. Defaults to 4.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setBloomBlurRadius:")
@@ -538,8 +603,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] bloomIntensity
-     * <p>
+     * 
      * Determines the intensity of the bloom effect. Animatable. Defaults to 0 (no effect).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setBloomIntensity:")
@@ -547,8 +614,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] bloomThreshold
-     * <p>
+     * 
      * Determines the luminance threshold for the bloom effect. Animatable. Defaults to 1.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setBloomThreshold:")
@@ -556,7 +625,7 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] categoryBitMask
-     * <p>
+     * 
      * Determines the node categories that are visible from the receiver. Defaults to all bits set.
      */
     @Generated
@@ -565,8 +634,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] colorFringeIntensity
-     * <p>
+     * 
      * Controls the intensity of the color shift effect. Defaults to 1.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setColorFringeIntensity:")
@@ -574,8 +645,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] colorFringeStrength
-     * <p>
+     * 
      * Controls the strength of the color shift effect. Defaults to 0 (no effect).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setColorFringeStrength:")
@@ -583,8 +656,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] contrast
-     * <p>
+     * 
      * Controls the overall contrast of the scene. Defaults to 0 (no effect).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setContrast:")
@@ -592,8 +667,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] exposureAdaptationBrighteningSpeedFactor
-     * <p>
+     * 
      * Determines the exposure adaptation speed when going from bright areas to dark areas. Defaults to 0.4.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setExposureAdaptationBrighteningSpeedFactor:")
@@ -601,8 +678,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] exposureAdaptationDarkeningSpeedFactor
-     * <p>
+     * 
      * Determines the exposure adaptation speed when going from dark areas to bright areas. Defaults to 0.6.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setExposureAdaptationDarkeningSpeedFactor:")
@@ -610,8 +689,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] exposureOffset
-     * <p>
+     * 
      * Determines the logarithmic exposure biasing, in EV. Defaults to 0.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setExposureOffset:")
@@ -619,42 +700,57 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] focalBlurRadius
-     * <p>
+     * 
      * Determines the receiver's focal radius. Animatable.
-     * <p>
+     * 
      * Determines the maximum amount of blur for objects out of focus. Defaults to 0.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use fStop instead
      */
+    @Deprecated
     @Generated
     @Selector("setFocalBlurRadius:")
     public native void setFocalBlurRadius(@NFloat double value);
 
     /**
      * [@property] focalDistance
-     * <p>
+     * 
      * Determines the receiver's focal distance. Animatable.
-     * <p>
+     * 
      * When non zero, the focal distance determines how the camera focuses the objects in the 3d scene. Defaults to 10.0
      * prior to macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to 2.5 otherwise.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
      */
+    @Deprecated
     @Generated
     @Selector("setFocalDistance:")
     public native void setFocalDistance(@NFloat double value);
 
     /**
      * [@property] focalSize
-     * <p>
+     * 
      * Determines the receiver's focal size. Animatable.
-     * <p>
+     * 
      * Determines the size of the area around focalDistance where the objects are in focus. Defaults to 0.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
      */
+    @Deprecated
     @Generated
     @Selector("setFocalSize:")
     public native void setFocalSize(@NFloat double value);
 
     /**
      * [@property] maximumExposure
-     * <p>
+     * 
      * Determines the maximum exposure offset of the adaptation, in EV. Defaults to -15.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setMaximumExposure:")
@@ -662,8 +758,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] minimumExposure
-     * <p>
+     * 
      * Determines the minimum exposure offset of the adaptation, in EV. Defaults to -15.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setMinimumExposure:")
@@ -671,10 +769,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] motionBlurIntensity
-     * <p>
+     * 
      * Determines the intensity of the motion blur. Animatable. Defaults to 0.
-     * <p>
+     * 
      * An intensity of zero means no motion blur. The intensity should not exceeed 1.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setMotionBlurIntensity:")
@@ -682,7 +782,7 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] name
-     * <p>
+     * 
      * Determines the name of the receiver.
      */
     @Generated
@@ -691,9 +791,9 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] orthographicScale
-     * <p>
+     * 
      * Determines the receiver's orthographic scale value. Animatable. Defaults to 1.
-     * <p>
+     * 
      * This setting determines the size of the camera's visible area. This is only enabled when
      * usesOrthographicProjection is set to YES.
      */
@@ -703,7 +803,7 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] projectionTransform
-     * <p>
+     * 
      * Determines the projection transform used by the camera to project the world onscreen.
      */
     @Generated
@@ -712,13 +812,16 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] saturation
-     * <p>
+     * 
      * Controls the overall saturation of the scene. Defaults to 1 (no effect).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setSaturation:")
     public native void setSaturation(@NFloat double value);
 
+    @Deprecated
     @Generated
     @Selector("setSpeed:forAnimationKey:")
     public native void setSpeedForAnimationKey(@NFloat double speed, String key);
@@ -729,7 +832,7 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] usesOrthographicProjection
-     * <p>
+     * 
      * Determines whether the receiver uses an orthographic projection or not. Defaults to NO.
      */
     @Generated
@@ -738,8 +841,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] vignettingIntensity
-     * <p>
+     * 
      * Controls the intensity of the vignetting effect. Defaults to 0 (no effect).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setVignettingIntensity:")
@@ -747,8 +852,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] vignettingPower
-     * <p>
+     * 
      * Controls the shape of the vignetting effect. Defaults to 0 (no effect).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setVignettingPower:")
@@ -756,8 +863,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] wantsExposureAdaptation
-     * <p>
+     * 
      * Determines if the receiver should simulate an eye and continuously adjust to luminance. Defaults to YES.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setWantsExposureAdaptation:")
@@ -765,8 +874,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] wantsHDR
-     * <p>
+     * 
      * Determines if the receiver has a high dynamic range. Defaults to NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setWantsHDR:")
@@ -774,8 +885,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] whitePoint
-     * <p>
+     * 
      * Determines the smallest luminance level that will be mapped to white in the final image. Defaults to 1.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setWhitePoint:")
@@ -783,33 +896,43 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] xFov
-     * <p>
+     * 
      * Determines the receiver's field of view on the X axis (in degree). Animatable.
-     * <p>
+     * 
      * When both xFov and yFov are null an yFov of 60° is used. When both are set, the one that best fits the renderer's
      * aspect ratio is used. When only one is set, it is used. Defaults to 0.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use -[SCNCamera fieldOfView] or -[SCNCamera focalLength] instead
      */
+    @Deprecated
     @Generated
     @Selector("setXFov:")
     public native void setXFov(double value);
 
     /**
      * [@property] yFov
-     * <p>
+     * 
      * Determines the receiver's field of view on the Y axis (in degree). Animatable.
-     * <p>
+     * 
      * When both xFov and yFov are null an yFov of 60° is used. When both are set, the one that best fits the renderer's
      * aspect ratio is used. When only one is set, it is used. Defaults to 0.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use -[SCNCamera fieldOfView] or -[SCNCamera focalLength] instead
      */
+    @Deprecated
     @Generated
     @Selector("setYFov:")
     public native void setYFov(double value);
 
     /**
      * [@property] zFar
-     * <p>
+     * 
      * Determines the receiver's far value. Animatable.
-     * <p>
+     * 
      * The far value determines the maximal distance between the camera and a visible surface. If a surface is further
      * from the camera than this maximal distance, then the surface is clipped. Defaults to 100.
      */
@@ -819,9 +942,9 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] zNear
-     * <p>
+     * 
      * Determines the receiver's near value. Animatable.
-     * <p>
+     * 
      * The near value determines the minimal distance between the camera and a visible surface. If a surface is closer
      * to the camera than this minimal distance, then the surface is clipped. The near value must be different than
      * zero. Defaults to 1.
@@ -842,7 +965,7 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] usesOrthographicProjection
-     * <p>
+     * 
      * Determines whether the receiver uses an orthographic projection or not. Defaults to NO.
      */
     @Generated
@@ -851,8 +974,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] vignettingIntensity
-     * <p>
+     * 
      * Controls the intensity of the vignetting effect. Defaults to 0 (no effect).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("vignettingIntensity")
@@ -861,8 +986,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] vignettingPower
-     * <p>
+     * 
      * Controls the shape of the vignetting effect. Defaults to 0 (no effect).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("vignettingPower")
@@ -871,8 +998,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] wantsExposureAdaptation
-     * <p>
+     * 
      * Determines if the receiver should simulate an eye and continuously adjust to luminance. Defaults to YES.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("wantsExposureAdaptation")
@@ -880,8 +1009,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] wantsHDR
-     * <p>
+     * 
      * Determines if the receiver has a high dynamic range. Defaults to NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("wantsHDR")
@@ -889,8 +1020,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] whitePoint
-     * <p>
+     * 
      * Determines the smallest luminance level that will be mapped to white in the final image. Defaults to 1.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("whitePoint")
@@ -899,33 +1032,43 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] xFov
-     * <p>
+     * 
      * Determines the receiver's field of view on the X axis (in degree). Animatable.
-     * <p>
+     * 
      * When both xFov and yFov are null an yFov of 60° is used. When both are set, the one that best fits the renderer's
      * aspect ratio is used. When only one is set, it is used. Defaults to 0.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use -[SCNCamera fieldOfView] or -[SCNCamera focalLength] instead
      */
+    @Deprecated
     @Generated
     @Selector("xFov")
     public native double xFov();
 
     /**
      * [@property] yFov
-     * <p>
+     * 
      * Determines the receiver's field of view on the Y axis (in degree). Animatable.
-     * <p>
+     * 
      * When both xFov and yFov are null an yFov of 60° is used. When both are set, the one that best fits the renderer's
      * aspect ratio is used. When only one is set, it is used. Defaults to 0.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use -[SCNCamera fieldOfView] or -[SCNCamera focalLength] instead
      */
+    @Deprecated
     @Generated
     @Selector("yFov")
     public native double yFov();
 
     /**
      * [@property] zFar
-     * <p>
+     * 
      * Determines the receiver's far value. Animatable.
-     * <p>
+     * 
      * The far value determines the maximal distance between the camera and a visible surface. If a surface is further
      * from the camera than this maximal distance, then the surface is clipped. Defaults to 100.
      */
@@ -935,9 +1078,9 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] zNear
-     * <p>
+     * 
      * Determines the receiver's near value. Animatable.
-     * <p>
+     * 
      * The near value determines the minimal distance between the camera and a visible surface. If a surface is closer
      * to the camera than this minimal distance, then the surface is clipped. The near value must be different than
      * zero. Defaults to 1.
@@ -956,10 +1099,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] apertureBladeCount
-     * <p>
+     * 
      * Determines the receiver's blade count of the aperture.
-     * <p>
+     * 
      * Defaults to 6.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("apertureBladeCount")
@@ -968,10 +1113,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] fStop
-     * <p>
+     * 
      * Determines the receiver's fstop. Animatable.
-     * <p>
+     * 
      * Defaults to 5.6.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("fStop")
@@ -980,11 +1127,13 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] fieldOfView
-     * <p>
+     * 
      * Determines the receiver's field of view (in degree). Defaults to 60°. Animatable.
-     * <p>
+     * 
      * The fieldOfView is automatically updated when the sensorHeight or focalLength are set. Setting the fieldOfView
      * will update the focalLength according to the new fieldOfView and the current sensorHeight.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("fieldOfView")
@@ -993,10 +1142,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] focalBlurSampleCount
-     * <p>
+     * 
      * Determines the receiver's sample count for depth of field effect.
-     * <p>
+     * 
      * Defaults to 25.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("focalBlurSampleCount")
@@ -1005,11 +1156,13 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] focalLength
-     * <p>
+     * 
      * Determines the receiver's focal length in millimeter. Defaults to 50mm. Animatable.
-     * <p>
+     * 
      * The focalLength is automatically updated when the sensorHeight or fieldOfView are set. Setting the focalLength
      * will update the fieldOfView according to the new focalLength and the current sensorHeight.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("focalLength")
@@ -1018,10 +1171,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] focusDistance
-     * <p>
+     * 
      * Determines the receiver's focus distance. Animatable.
-     * <p>
+     * 
      * Defaults to 2.5
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("focusDistance")
@@ -1030,8 +1185,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] projectionDirection
-     * <p>
+     * 
      * Determines whether the fieldOfView (or orthographicScale) is vertical or horizontal. Defaults to vertical.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("projectionDirection")
@@ -1044,10 +1201,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] screenSpaceAmbientOcclusionBias
-     * <p>
+     * 
      * Determines self occlusion bias in scene unit.
-     * <p>
+     * 
      * defaults to 0.03.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("screenSpaceAmbientOcclusionBias")
@@ -1056,10 +1215,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] screenSpaceAmbientOcclusionDepthThreshold
-     * <p>
+     * 
      * Determines the depth blur threshold in scene unit.
-     * <p>
+     * 
      * defaults to 0.2.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("screenSpaceAmbientOcclusionDepthThreshold")
@@ -1068,10 +1229,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] screenSpaceAmbientOcclusionIntensity
-     * <p>
+     * 
      * Determines the intensity of the screen space ambient occlusion. Animatable.
-     * <p>
+     * 
      * defaults to 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("screenSpaceAmbientOcclusionIntensity")
@@ -1080,10 +1243,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] screenSpaceAmbientOcclusionNormalThreshold
-     * <p>
+     * 
      * Determines the normal blur threshold.
-     * <p>
+     * 
      * defaults to 0.3.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("screenSpaceAmbientOcclusionNormalThreshold")
@@ -1092,10 +1257,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] screenSpaceAmbientOcclusionRadius
-     * <p>
+     * 
      * Determines the screen space ambient occlusion radius in scene unit. Animatable.
-     * <p>
+     * 
      * defaults to 5.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("screenSpaceAmbientOcclusionRadius")
@@ -1104,11 +1271,13 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] sensorHeight
-     * <p>
+     * 
      * Determines the vertical size of the sensor in millimeter. Defaults to 24mm. Animatable.
-     * <p>
+     * 
      * Setting the sensorHeight will automatically update the fieldOfView according to the new sensorHeight and the
      * current focalLength.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("sensorHeight")
@@ -1117,10 +1286,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] apertureBladeCount
-     * <p>
+     * 
      * Determines the receiver's blade count of the aperture.
-     * <p>
+     * 
      * Defaults to 6.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setApertureBladeCount:")
@@ -1128,10 +1299,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] fStop
-     * <p>
+     * 
      * Determines the receiver's fstop. Animatable.
-     * <p>
+     * 
      * Defaults to 5.6.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFStop:")
@@ -1139,11 +1312,13 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] fieldOfView
-     * <p>
+     * 
      * Determines the receiver's field of view (in degree). Defaults to 60°. Animatable.
-     * <p>
+     * 
      * The fieldOfView is automatically updated when the sensorHeight or focalLength are set. Setting the fieldOfView
      * will update the focalLength according to the new fieldOfView and the current sensorHeight.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFieldOfView:")
@@ -1151,10 +1326,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] focalBlurSampleCount
-     * <p>
+     * 
      * Determines the receiver's sample count for depth of field effect.
-     * <p>
+     * 
      * Defaults to 25.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFocalBlurSampleCount:")
@@ -1162,11 +1339,13 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] focalLength
-     * <p>
+     * 
      * Determines the receiver's focal length in millimeter. Defaults to 50mm. Animatable.
-     * <p>
+     * 
      * The focalLength is automatically updated when the sensorHeight or fieldOfView are set. Setting the focalLength
      * will update the fieldOfView according to the new focalLength and the current sensorHeight.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFocalLength:")
@@ -1174,10 +1353,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] focusDistance
-     * <p>
+     * 
      * Determines the receiver's focus distance. Animatable.
-     * <p>
+     * 
      * Defaults to 2.5
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFocusDistance:")
@@ -1185,8 +1366,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] projectionDirection
-     * <p>
+     * 
      * Determines whether the fieldOfView (or orthographicScale) is vertical or horizontal. Defaults to vertical.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setProjectionDirection:")
@@ -1194,10 +1377,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] screenSpaceAmbientOcclusionBias
-     * <p>
+     * 
      * Determines self occlusion bias in scene unit.
-     * <p>
+     * 
      * defaults to 0.03.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setScreenSpaceAmbientOcclusionBias:")
@@ -1205,10 +1390,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] screenSpaceAmbientOcclusionDepthThreshold
-     * <p>
+     * 
      * Determines the depth blur threshold in scene unit.
-     * <p>
+     * 
      * defaults to 0.2.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setScreenSpaceAmbientOcclusionDepthThreshold:")
@@ -1216,10 +1403,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] screenSpaceAmbientOcclusionIntensity
-     * <p>
+     * 
      * Determines the intensity of the screen space ambient occlusion. Animatable.
-     * <p>
+     * 
      * defaults to 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setScreenSpaceAmbientOcclusionIntensity:")
@@ -1227,10 +1416,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] screenSpaceAmbientOcclusionNormalThreshold
-     * <p>
+     * 
      * Determines the normal blur threshold.
-     * <p>
+     * 
      * defaults to 0.3.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setScreenSpaceAmbientOcclusionNormalThreshold:")
@@ -1238,10 +1429,12 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] screenSpaceAmbientOcclusionRadius
-     * <p>
+     * 
      * Determines the screen space ambient occlusion radius in scene unit. Animatable.
-     * <p>
+     * 
      * defaults to 5.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setScreenSpaceAmbientOcclusionRadius:")
@@ -1249,11 +1442,13 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] sensorHeight
-     * <p>
+     * 
      * Determines the vertical size of the sensor in millimeter. Defaults to 24mm. Animatable.
-     * <p>
+     * 
      * Setting the sensorHeight will automatically update the fieldOfView according to the new sensorHeight and the
      * current focalLength.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSensorHeight:")
@@ -1261,8 +1456,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] wantsDepthOfField
-     * <p>
+     * 
      * Determines if the receiver has depth of field. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setWantsDepthOfField:")
@@ -1270,8 +1467,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] wantsDepthOfField
-     * <p>
+     * 
      * Determines if the receiver has depth of field. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("wantsDepthOfField")
@@ -1279,8 +1478,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] bloomIteration
-     * <p>
+     * 
      * Determines the number of blur iterations. Defaults to 1.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("bloomIterationCount")
@@ -1289,8 +1490,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] bloomIterationSpread
-     * <p>
+     * 
      * Determines how the bloom iterations are spread. Defaults to 0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("bloomIterationSpread")
@@ -1299,8 +1502,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] grainIntensity
-     * <p>
+     * 
      * Controls the intensity of the grain. Defaults to 0 (no effect).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("grainIntensity")
@@ -1309,8 +1514,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] grainIsColored
-     * <p>
+     * 
      * Determines if the grain is colored or not. Defaults to NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("grainIsColored")
@@ -1318,14 +1525,19 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] grainScale
-     * <p>
+     * 
      * Controls the scale of the grain. Defaults to 1.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("grainScale")
     @NFloat
     public native double grainScale();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("projectionTransformWithViewportSize:")
     @ByValue
@@ -1333,8 +1545,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] bloomIteration
-     * <p>
+     * 
      * Determines the number of blur iterations. Defaults to 1.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBloomIterationCount:")
@@ -1342,8 +1556,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] bloomIterationSpread
-     * <p>
+     * 
      * Determines how the bloom iterations are spread. Defaults to 0.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setBloomIterationSpread:")
@@ -1351,8 +1567,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] grainIntensity
-     * <p>
+     * 
      * Controls the intensity of the grain. Defaults to 0 (no effect).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setGrainIntensity:")
@@ -1360,8 +1578,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] grainIsColored
-     * <p>
+     * 
      * Determines if the grain is colored or not. Defaults to NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setGrainIsColored:")
@@ -1369,8 +1589,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] grainScale
-     * <p>
+     * 
      * Controls the scale of the grain. Defaults to 1.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setGrainScale:")
@@ -1378,8 +1600,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] whiteBalanceTemperature
-     * <p>
+     * 
      * Controls the overall white balance temperature of the scene. Defaults to 0 (no effect).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setWhiteBalanceTemperature:")
@@ -1387,8 +1611,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] whiteBalanceTint
-     * <p>
+     * 
      * Controls the overall white balance tint of the scene. Defaults to 0 (no effect).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setWhiteBalanceTint:")
@@ -1396,8 +1622,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] whiteBalanceTemperature
-     * <p>
+     * 
      * Controls the overall white balance temperature of the scene. Defaults to 0 (no effect).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("whiteBalanceTemperature")
@@ -1406,8 +1634,10 @@ public class SCNCamera extends NSObject implements SCNAnimatable, SCNTechniqueSu
 
     /**
      * [@property] whiteBalanceTint
-     * <p>
+     * 
      * Controls the overall white balance tint of the scene. Defaults to 0 (no effect).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("whiteBalanceTint")

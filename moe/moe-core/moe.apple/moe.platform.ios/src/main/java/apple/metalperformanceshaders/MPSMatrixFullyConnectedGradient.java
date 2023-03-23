@@ -28,12 +28,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSMatrixFullyConnectedGradient
- * <p>
+ * 
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * Computes the gradient of the fully connected layer with respect
  * to either the weights and bias terms or the input feature vectors.
- * <p>
+ * 
  * An MPSMatrixFullyConnectedGradient kernel may be used to compute
  * the gradients corresponding to a MPSMatrixFullyConnected kernel.
  * The properties, input, and weight data must match those values
@@ -42,6 +42,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * activation function which may have been applied in the forward
  * kernel. Such a kernel must be expressed using both MPSMatrixFullyConnected
  * and MPSMatrixNeuron if a gradient is to be computed.
+ * 
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -73,7 +76,7 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * Scale factor to apply to the product. This value should be equal
      * to the corresponding value in the forward fully connected kernel.
      */
@@ -105,7 +108,7 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
 
     /**
      * Make a copy of this kernel for a new device - @see MPSKernel
-     *
+     * 
      * @param zone   The NSZone in which to allocate the object
      * @param device The device for the new MPSKernel. If nil, then use
      *               self.device.
@@ -130,14 +133,17 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
     /**
      * Encode a MPSMatrixFullyConnectedGradient object to a command buffer and
      * produce the gradient of the loss function with respect to the input data.
-     * <p>
+     * 
      * This operation computes the resulting gradient of the loss function with respect
      * to the forward kernel's input data. weightMatrix should contain the same values
      * used to compute the result of the forward kernel.
-     *
+     * 
      * @param commandBuffer               A valid MTLCommandBuffer to receive the encoded kernel.
+     * 
      * @param gradientMatrix              A valid MPSMatrix object which specifies the input gradient.
+     * 
      * @param weightMatrix                A valid MPSMatrix object which specifies the weight array.
+     * 
      * @param resultGradientForDataMatrix A valid MPSMatrix object which specifies the result gradient.
      */
     @Generated
@@ -150,16 +156,20 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
      * Encode a MPSMatrixFullyConnectedGradient object to a command buffer and
      * produce the gradient of the loss function with respect to the weight matrix
      * and bias vector.
-     * <p>
+     * 
      * This operation computes the resulting gradient of the loss function with respect
      * to the forward kernel's weight data. inputMatrix should contain the same values
      * used to compute the result of the forward kernel.
-     *
+     * 
      * @param commandBuffer                 A valid MTLCommandBuffer to receive the encoded kernel.
+     * 
      * @param gradientMatrix                A valid MPSMatrix object which specifies the input gradient.
+     * 
      * @param inputMatrix                   A valid MPSMatrix object which specifies the input array.
+     * 
      * @param resultGradientForWeightMatrix A valid MPSMatrix object which specifies the resulting gradients
      *                                      with respect to the weights.
+     * 
      * @param resultGradientForBiasVector   A valid MPSVector object which specifies the resulting gradients
      *                                      with respect to the bias terms. If NULL these values will not be
      *                                      returned.
@@ -185,9 +195,9 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSMatrixFullyConnectedGradient
      * @param device   The MTLDevice on which to make the MPSMatrixFullyConnectedGradient object.
      * @return A new MPSMatrixFullyConnected object, or nil if failure.
@@ -237,7 +247,7 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * Scale factor to apply to the product. This value should be equal
      * to the corresponding value in the forward fully connected kernel.
      */
@@ -247,11 +257,11 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
 
     /**
      * [@property] sourceInputFeatureChannels
-     * <p>
+     * 
      * The number of feature channels in the input to the forward
      * fully connected layer.
      * This is equivalent to the number of columns in the input matrix.
-     * <p>
+     * 
      * This value should be equal to the corresponding value in the
      * forward fully connected kernel.
      */
@@ -261,11 +271,11 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
 
     /**
      * [@property] sourceNumberOfFeatureVectors
-     * <p>
+     * 
      * The number of input vectors which make up the input array.
      * This is equivalent to the number of rows in both the input
      * matrix and the source gradient matrix.
-     * <p>
+     * 
      * This value should be equal to the corresponding value in the
      * forward fully connected kernel.
      */
@@ -275,12 +285,12 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
 
     /**
      * [@property] sourceOutputFeatureChannels
-     * <p>
+     * 
      * The number of feature channels in the output of the forward
      * fully connected layer.
      * This is equivalent to the number of columns in both the weight
      * matrix and the source gradient matrix.
-     * <p>
+     * 
      * This value should be equal to the corresponding value in the
      * forward fully connected kernel.
      */
@@ -294,11 +304,11 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
 
     /**
      * [@property] sourceInputFeatureChannels
-     * <p>
+     * 
      * The number of feature channels in the input to the forward
      * fully connected layer.
      * This is equivalent to the number of columns in the input matrix.
-     * <p>
+     * 
      * This value should be equal to the corresponding value in the
      * forward fully connected kernel.
      */
@@ -309,11 +319,11 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
 
     /**
      * [@property] sourceNumberOfFeatureVectors
-     * <p>
+     * 
      * The number of input vectors which make up the input array.
      * This is equivalent to the number of rows in both the input
      * matrix and the source gradient matrix.
-     * <p>
+     * 
      * This value should be equal to the corresponding value in the
      * forward fully connected kernel.
      */
@@ -324,12 +334,12 @@ public class MPSMatrixFullyConnectedGradient extends MPSMatrixBinaryKernel {
 
     /**
      * [@property] sourceOutputFeatureChannels
-     * <p>
+     * 
      * The number of feature channels in the output of the forward
      * fully connected layer.
      * This is equivalent to the number of columns in both the weight
      * matrix and the source gradient matrix.
-     * <p>
+     * 
      * This value should be equal to the corresponding value in the
      * forward fully connected kernel.
      */

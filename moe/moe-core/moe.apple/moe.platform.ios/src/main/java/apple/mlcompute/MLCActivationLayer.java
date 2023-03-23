@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("MLCompute")
 @Runtime(ObjCRuntime.class)
@@ -38,7 +41,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create an absolute activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -75,7 +78,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a CELU activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -84,7 +87,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a CELU activation layer
-     *
+     * 
      * @param a The \p a value for the CELU formation
      * @return A new activation layer
      */
@@ -94,7 +97,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a clamp activation layer
-     *
+     * 
      * @param minValue The minimum range used by clamp
      * @param maxValue The maximum range used by clamp
      * @return A new activation layer
@@ -121,7 +124,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * [@property] descriptor
-     * <p>
+     * 
      * The activation descriptor
      */
     @Generated
@@ -130,7 +133,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create an ELU activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -139,7 +142,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create an ELU activation layer
-     *
+     * 
      * @param a The \p a value for the ELU formation
      * @return A new activation layer
      */
@@ -149,7 +152,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a GELU activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -158,7 +161,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a hard shrink activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -167,7 +170,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a hard shrink activation layer
-     *
+     * 
      * @param a The \p a value for the hard shrink formation
      * @return A new activation layer
      */
@@ -177,7 +180,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a hard sigmoid activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -186,7 +189,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a hardswish activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -225,7 +228,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create an activation layer
-     *
+     * 
      * @param descriptor The activation descriptor
      * @return A new activation layer
      */
@@ -235,7 +238,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a leaky ReLU activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -244,7 +247,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a leaky ReLU activation layer
-     *
+     * 
      * @param negativeSlope Controls the angle of the negative slope
      * @return A new activation layer
      */
@@ -254,7 +257,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a linear activation layer
-     *
+     * 
      * @param scale The scale factor
      * @param bias  The bias value
      * @return A new activation layer
@@ -265,7 +268,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a log sigmoid activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -279,7 +282,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a ReLU6 activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -288,7 +291,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a ReLU activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -297,9 +300,9 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a ReLUN activation layer
-     * <p>
+     * 
      * This can be used to implement layers such as ReLU6 for example.
-     *
+     * 
      * @param a The \p a value
      * @param b The \p b value
      * @return A new activation layer
@@ -318,7 +321,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a SELU activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -331,7 +334,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a sigmoid activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -340,7 +343,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a soft plus activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -349,7 +352,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a soft plus activation layer
-     *
+     * 
      * @param beta The beta value for the softplus formation
      * @return A new activation layer
      */
@@ -359,7 +362,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a soft shrink activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -368,7 +371,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a soft shrink activation layer
-     *
+     * 
      * @param a The \p a value for the soft shrink formation
      * @return A new activation layer
      */
@@ -378,7 +381,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a soft sign activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -395,7 +398,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a tanh activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -404,7 +407,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a TanhShrink activation layer
-     *
+     * 
      * @return A new activation layer
      */
     @Generated
@@ -413,7 +416,7 @@ public class MLCActivationLayer extends MLCLayer {
 
     /**
      * Create a threshold activation layer
-     *
+     * 
      * @param threshold   The value to threshold at
      * @param replacement The value to replace with
      * @return A new activation layer

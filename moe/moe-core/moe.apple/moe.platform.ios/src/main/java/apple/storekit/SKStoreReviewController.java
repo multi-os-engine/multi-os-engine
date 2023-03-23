@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Controller class to request a review from the current user
+ * 
+ * API-Since: 10.3
  */
 @Generated
 @Library("StoreKit")
@@ -122,13 +124,17 @@ public class SKStoreReviewController extends NSObject {
     /**
      * Request StoreKit to ask the user for an app review. Uses the keyWindow's UIWindowScene which may or may not be
      * the scene a user is interacting with.
-     * <p>
+     * 
      * This may or may not show any UI.
-     * <p>
+     * 
      * Given this may not successfully present an alert to the user, it is not appropriate for use
      * from a button or any other user action. For presenting a write review form, a deep link is
      * available to the App Store by appending the query params "action=write-review" to a product URL.
+     * 
+     * API-Since: 10.3
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("requestReview")
     public static native void requestReview();
@@ -156,12 +162,14 @@ public class SKStoreReviewController extends NSObject {
 
     /**
      * Request StoreKit to ask the user for an app review in a given UIWindowScene.
-     * <p>
+     * 
      * This may or may not show any UI.
-     * <p>
+     * 
      * Given this may not successfully present an alert to the user, it is not appropriate for use
      * from a button or any other user action. For presenting a write review form, a deep link is
      * available to the App Store by appending the query params "action=write-review" to a product URL.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("requestReviewInScene:")

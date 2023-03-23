@@ -48,6 +48,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GKAchievement represents a game achievement that the player has started or completely achieved.
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -154,6 +156,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
      * 1. Local player not authenticated
      * 2. Communications failure
      * 3. Reported Achievement does not exist
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("reportAchievements:withCompletionHandler:")
@@ -163,6 +167,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     /**
      * Use this alternative to reportAchievements:withCompletionHandler: to allow only certain specific challenges to be
      * completed. Pass nil to avoid completing any challenges.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("reportAchievements:withEligibleChallenges:withCompletionHandler:")
@@ -207,6 +213,9 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("challengeComposeControllerWithMessage:players:completionHandler:")
     public native UIViewController challengeComposeControllerWithMessagePlayersCompletionHandler(String message,
@@ -215,6 +224,11 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * rb= GameKit.unavailableForTVOS
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, pass GKPlayers to
+     * challengeComposeControllerWithMessage:players: instead
      */
     @Generated
     @Deprecated
@@ -251,6 +265,10 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * This method is obsolete. Calling this initialiser does nothing and will return nil **
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use initWithIdentifier:player:
      */
     @Generated
     @Deprecated
@@ -260,6 +278,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     /**
      * Initialize the achievement for a specific player. Use to submit participant achievements when ending a turn-based
      * match.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithIdentifier:player:")
@@ -272,6 +292,11 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     @Selector("isCompleted")
     public native boolean isCompleted();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Use isHidden on the GKAchievementDescription class instead
+     */
     @Generated
     @Deprecated
     @Selector("isHidden")
@@ -279,6 +304,11 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, pass GKPlayers to
+     * challengeComposeControllerWithMessage:players:completionHandler: and present the view controller instead
      */
     @Generated
     @Deprecated
@@ -301,6 +331,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * The identifier of the player that earned the achievement.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("player")
@@ -308,12 +340,21 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * This property is obsolete. **
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This will return a null string, use player instead
      */
     @Generated
     @Deprecated
     @Selector("playerID")
     public native String playerID();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use +reportAchievements:withCompletionHandler:
+     */
     @Generated
     @Deprecated
     @Selector("reportAchievementWithCompletionHandler:")
@@ -322,6 +363,11 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, pass GKPlayers to
+     * selectChallengeablePlayers:
      */
     @Generated
     @Deprecated
@@ -332,6 +378,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
     /**
      * Given a list of players, return a subset of that list containing only players that are eligible to receive a
      * challenge for the achievement.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("selectChallengeablePlayers:withCompletionHandler:")
@@ -354,6 +402,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * A banner will be momentarily displayed after reporting a completed achievement
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setShowsCompletionBanner:")
@@ -361,6 +411,8 @@ public class GKAchievement extends NSObject implements NSCoding, NSSecureCoding 
 
     /**
      * A banner will be momentarily displayed after reporting a completed achievement
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("showsCompletionBanner")

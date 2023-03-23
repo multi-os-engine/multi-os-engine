@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * ______________________________
+ * 
+ * API-Since: 4.2
  */
 @Generated
 @Library("UIKit")

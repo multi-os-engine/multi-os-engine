@@ -29,9 +29,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMHeadphoneMotionManager
- * <p>
+ * 
  * Discussion:
  * The CMHeadphoneMotionManager object is your entry point to the headphone motion service.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CoreMotion")
@@ -63,7 +65,7 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * authorizationStatus
-     * <p>
+     * 
      * Discussion:
      * Returns the current authorization status for headphone motion.
      */
@@ -100,7 +102,7 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * delegate
-     * <p>
+     * 
      * Discussion:
      * The delegate object to receive motion manager events.
      */
@@ -115,7 +117,7 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * deviceMotion
-     * <p>
+     * 
      * Discussion:
      * Returns the latest sample of device motion data, or nil if none is available.
      */
@@ -147,7 +149,7 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * deviceMotionActive
-     * <p>
+     * 
      * Discussion:
      * Determines whether the CMHeadphoneMotionManager is currently providing device
      * motion updates.
@@ -158,7 +160,7 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * deviceMotionAvailable
-     * <p>
+     * 
      * Discussion:
      * Determines whether device motion is available.
      */
@@ -189,7 +191,7 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * delegate
-     * <p>
+     * 
      * Discussion:
      * The delegate object to receive motion manager events.
      */
@@ -199,7 +201,7 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * delegate
-     * <p>
+     * 
      * Discussion:
      * The delegate object to receive motion manager events.
      */
@@ -221,7 +223,7 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * startDeviceMotionUpdates
-     * <p>
+     * 
      * Discussion:
      * Starts device motion updates with no handler. To receive the latest device motion data
      * when desired, examine the deviceMotion property.
@@ -232,7 +234,7 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * startDeviceMotionUpdatesToQueue:withHandler:
-     * <p>
+     * 
      * Discussion:
      * Starts device motion updates, providing data to the given handler through the given queue.
      */
@@ -250,7 +252,7 @@ public class CMHeadphoneMotionManager extends NSObject {
 
     /**
      * stopDeviceMotionUpdates
-     * <p>
+     * 
      * Discussion:
      * Stops device motion updates.
      */

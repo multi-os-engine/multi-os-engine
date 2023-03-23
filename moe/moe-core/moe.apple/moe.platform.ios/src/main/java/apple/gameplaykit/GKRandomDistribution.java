@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A random distribution is a random source itself with a specific mapping from the input source to the output values.
  * The distribution is uniform, meaning there is no bias towards any of the possible outcomes.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -122,7 +124,7 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
      * grab input values from.
      * This is equivalent to calling alloc followed by initWithSource:lowest:highest:, where source is [[GKRandomSource
      * alloc] init].
-     *
+     * 
      * @see initWithRandomSource:lowestValue:highestValue:
      */
     @Generated
@@ -134,7 +136,7 @@ public class GKRandomDistribution extends NSObject implements GKRandom {
      * input values from.
      * This is equivalent to calling alloc followed by initWithSource:lowest:highest:, where source is [[GKRandomSource
      * alloc] init].
-     *
+     * 
      * @see initWithRandomSource:lowestValue:highestValue:
      */
     @Generated

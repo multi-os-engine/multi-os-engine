@@ -33,6 +33,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIResponderStandardEditActions")
 public interface UIResponderStandardEditActions {
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("copy:")
@@ -40,6 +43,9 @@ public interface UIResponderStandardEditActions {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("cut:")
@@ -47,6 +53,9 @@ public interface UIResponderStandardEditActions {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("decreaseSize:")
@@ -54,6 +63,9 @@ public interface UIResponderStandardEditActions {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @IsOptional
     @Selector("delete:")
@@ -61,6 +73,9 @@ public interface UIResponderStandardEditActions {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("increaseSize:")
@@ -68,6 +83,9 @@ public interface UIResponderStandardEditActions {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @IsOptional
     @Selector("makeTextWritingDirectionLeftToRight:")
@@ -75,6 +93,9 @@ public interface UIResponderStandardEditActions {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @IsOptional
     @Selector("makeTextWritingDirectionRightToLeft:")
@@ -82,6 +103,9 @@ public interface UIResponderStandardEditActions {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("paste:")
@@ -89,6 +113,9 @@ public interface UIResponderStandardEditActions {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("select:")
@@ -96,6 +123,9 @@ public interface UIResponderStandardEditActions {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("selectAll:")
@@ -103,6 +133,9 @@ public interface UIResponderStandardEditActions {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Selector("toggleBoldface:")
@@ -110,6 +143,9 @@ public interface UIResponderStandardEditActions {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Selector("toggleItalics:")
@@ -117,6 +153,9 @@ public interface UIResponderStandardEditActions {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Selector("toggleUnderline:")
@@ -124,6 +163,9 @@ public interface UIResponderStandardEditActions {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("updateTextAttributesWithConversionHandler:")
@@ -139,6 +181,9 @@ public interface UIResponderStandardEditActions {
         NSDictionary<String, ?> call_updateTextAttributesWithConversionHandler(NSDictionary<String, ?> arg0);
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @IsOptional
     @Selector("pasteAndGo:")
@@ -146,6 +191,9 @@ public interface UIResponderStandardEditActions {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @IsOptional
     @Selector("pasteAndMatchStyle:")
@@ -153,6 +201,9 @@ public interface UIResponderStandardEditActions {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @IsOptional
     @Selector("pasteAndSearch:")
@@ -160,10 +211,103 @@ public interface UIResponderStandardEditActions {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @IsOptional
     @Selector("print:")
     default void print(@Mapped(ObjCObjectMapper.class) Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("duplicate:")
+    default void duplicate(@Mapped(ObjCObjectMapper.class) Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("export:")
+    default void export(@Mapped(ObjCObjectMapper.class) Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("find:")
+    default void find(@Mapped(ObjCObjectMapper.class) Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("findAndReplace:")
+    default void findAndReplace(@Mapped(ObjCObjectMapper.class) Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("findNext:")
+    default void findNext(@Mapped(ObjCObjectMapper.class) Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("findPrevious:")
+    default void findPrevious(@Mapped(ObjCObjectMapper.class) Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("move:")
+    default void move(@Mapped(ObjCObjectMapper.class) Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("rename:")
+    default void rename(@Mapped(ObjCObjectMapper.class) Object sender) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("useSelectionForFind:")
+    default void useSelectionForFind(@Mapped(ObjCObjectMapper.class) Object sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

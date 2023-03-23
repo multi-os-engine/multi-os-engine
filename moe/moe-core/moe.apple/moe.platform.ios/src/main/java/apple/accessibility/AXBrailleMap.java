@@ -2,8 +2,6 @@ package apple.accessibility;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGImageRef;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -30,12 +28,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGSize;
 
 /**
- * A BrailleMap object represents a connected two-dimensional braille display.
+ * An AXBrailleMap object represents a connected two-dimensional braille display.
  * A display is comprised of a grid of pins that can be raised and lowered.
  * This is useful for representing graphics, images, and other visual data to VoiceOver users.
- * - Post an accessibility announcement notification with a braille map as an argument to update.-
+ * 
+ * API-Since: 15.2
  */
 @Generated
 @Library("Accessibility")

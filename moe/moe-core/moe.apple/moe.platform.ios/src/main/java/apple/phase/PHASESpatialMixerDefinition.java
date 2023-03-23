@@ -24,10 +24,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASESpatialMixerDefinition
- * <p>
+ * 
  * Spatial mixer definition.
- * <p>
+ * 
  * Spatial mixers render audio with spatialization and environmental effects.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -89,7 +91,7 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
 
     /**
      * [@property] distanceModelParameters
-     * <p>
+     * 
      * Distance model parameters (optional).
      */
     @Generated
@@ -107,11 +109,13 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
 
     /**
      * initWithSpatialPipeline
-     * <p>
+     * 
      * Create a new PHASESpatialMixerDefinition
-     *
-     * @param spatialPipeline A spatial pipeline.
-     * @return A new PHASESpatialMixerDefinition object
+     * 
+     * @param spatialPipeline
+     *                        A spatial pipeline.
+     * @return
+     *         A new PHASESpatialMixerDefinition object
      */
     @Generated
     @Selector("initWithSpatialPipeline:")
@@ -119,12 +123,15 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
 
     /**
      * initWithSpatialPipeline:identifier
-     * <p>
+     * 
      * Create a new PHASESpatialMixerDefinition
-     *
-     * @param spatialPipeline A spatial pipeline.
-     * @param identifier      An optional custom identifier to give to this object
-     * @return A new PHASESpatialMixerDefinition object
+     * 
+     * @param spatialPipeline
+     *                        A spatial pipeline.
+     * @param identifier
+     *                        An optional custom identifier to give to this object
+     * @return
+     *         A new PHASESpatialMixerDefinition object
      */
     @Generated
     @Selector("initWithSpatialPipeline:identifier:")
@@ -154,7 +161,7 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
 
     /**
      * [@property] listenerDirectivityModelParameters
-     * <p>
+     * 
      * Listener directivity model parameters (optional).
      */
     @Generated
@@ -176,7 +183,7 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
 
     /**
      * [@property] distanceModelParameters
-     * <p>
+     * 
      * Distance model parameters (optional).
      */
     @Generated
@@ -185,7 +192,7 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
 
     /**
      * [@property] listenerDirectivityModelParameters
-     * <p>
+     * 
      * Listener directivity model parameters (optional).
      */
     @Generated
@@ -194,7 +201,7 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
 
     /**
      * [@property] sourceDirectivityModelParameters
-     * <p>
+     * 
      * Source directivity model parameters (optional).
      */
     @Generated
@@ -207,7 +214,7 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
 
     /**
      * [@property] sourceDirectivityModelParameters
-     * <p>
+     * 
      * Source directivity model parameters (optional).
      */
     @Generated
@@ -216,7 +223,7 @@ public class PHASESpatialMixerDefinition extends PHASEMixerDefinition {
 
     /**
      * [@property] spatialPipeline
-     * <p>
+     * 
      * Spatial Pipeline.
      */
     @Generated

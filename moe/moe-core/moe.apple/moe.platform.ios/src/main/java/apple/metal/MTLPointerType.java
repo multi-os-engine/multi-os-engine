@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -101,14 +104,23 @@ public class MTLPointerType extends MTLType {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("elementArrayType")
     public native MTLArrayType elementArrayType();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("elementIsArgumentBuffer")
     public native boolean elementIsArgumentBuffer();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("elementStructType")
     public native MTLStructType elementStructType();

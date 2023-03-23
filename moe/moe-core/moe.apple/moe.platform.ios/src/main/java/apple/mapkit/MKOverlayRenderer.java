@@ -18,8 +18,6 @@ package apple.mapkit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGContextRef;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -46,7 +44,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -235,4 +238,18 @@ public class MKOverlayRenderer extends NSObject {
     @Generated
     @Selector("setNeedsDisplayInMapRect:zoomScale:")
     public native void setNeedsDisplayInMapRectZoomScale(@ByValue MKMapRect mapRect, @NFloat double zoomScale);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("blendMode")
+    public native int blendMode();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setBlendMode:")
+    public native void setBlendMode(int value);
 }

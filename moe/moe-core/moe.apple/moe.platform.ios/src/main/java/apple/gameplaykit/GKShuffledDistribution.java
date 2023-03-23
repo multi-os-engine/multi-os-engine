@@ -45,9 +45,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * over time. This is often referred to as fair or less random, as the predicatability of the outcomes in a series is
  * vastly increased,
  * yet the distribution of values is uniform.
- * <p>
+ * 
  * Do not use with distributions ranging more than 256 between lowest and highest as the shuffling seqeunce is stored
  * internally in memory.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")

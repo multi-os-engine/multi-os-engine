@@ -30,6 +30,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * Protocol that describes a single frame of a live photo
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Photos")
@@ -38,6 +40,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface PHLivePhotoFrame {
     /**
      * Input image for the frame
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("image")
@@ -45,6 +49,8 @@ public interface PHLivePhotoFrame {
 
     /**
      * The scale of the frame relative to the full-size image
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("renderScale")
@@ -53,6 +59,8 @@ public interface PHLivePhotoFrame {
 
     /**
      * The time of the frame relative to the beginning of the live photo
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("time")
@@ -61,6 +69,8 @@ public interface PHLivePhotoFrame {
 
     /**
      * The type of frame
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("type")

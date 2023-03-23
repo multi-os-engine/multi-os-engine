@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -258,6 +261,9 @@ public class INBookRestaurantReservationIntent extends INIntent implements NSCop
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithRestaurant:bookingDateComponents:partySize:bookingIdentifier:guest:selectedOffer:guestProvidedSpecialRequestText:")
     public native INBookRestaurantReservationIntent initWithRestaurantBookingDateComponentsPartySizeBookingIdentifierGuestSelectedOfferGuestProvidedSpecialRequestText(

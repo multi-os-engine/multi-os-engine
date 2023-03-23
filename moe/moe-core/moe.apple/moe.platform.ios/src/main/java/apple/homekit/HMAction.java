@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class is used to represent a generic action.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -158,6 +160,8 @@ public class HMAction extends NSObject {
 
     /**
      * A unique identifier for the action.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("uniqueIdentifier")

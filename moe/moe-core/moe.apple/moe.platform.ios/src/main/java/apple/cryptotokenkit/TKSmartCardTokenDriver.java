@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * TKSmartCardTokenDriver represents driver for specific SmartCard type.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CryptoTokenKit")

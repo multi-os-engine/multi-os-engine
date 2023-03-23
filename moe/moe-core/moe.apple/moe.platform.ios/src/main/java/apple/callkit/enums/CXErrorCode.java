@@ -19,14 +19,29 @@ package apple.callkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class CXErrorCode {
     @Generated
     private CXErrorCode() {
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long UnknownError = 0x0000000000000000L;
+    /**
+     * API-Since: 13.2
+     */
     @Generated @NInt public static final long Unentitled = 0x0000000000000001L;
+    /**
+     * API-Since: 13.2
+     */
     @Generated @NInt public static final long InvalidArgument = 0x0000000000000002L;
+    /**
+     * API-Since: 14.5
+     */
     @Generated @NInt public static final long MissingVoIPBackgroundMode = 0x0000000000000003L;
 }

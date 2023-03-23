@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CoreSpotlight")
 @Runtime(ObjCRuntime.class)
@@ -259,4 +262,13 @@ public class CSSearchQuery extends NSObject {
         @Generated
         void call_setFoundItemsHandler(NSArray<? extends CSSearchableItem> arg0);
     }
+
+    /**
+     * queryString: The query string (e.g., 'contentType == "public.email-message" && subject != "Re:*"')
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("initWithQueryString:queryContext:")
+    public native CSSearchQuery initWithQueryStringQueryContext(String queryString, CSSearchQueryContext queryContext);
 }

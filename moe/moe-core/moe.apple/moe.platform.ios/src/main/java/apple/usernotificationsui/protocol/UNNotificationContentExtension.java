@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.usernotificationsui.protocol;
 
-import apple.coregraphics.struct.CGRect;
 import apple.uikit.UIColor;
 import apple.usernotifications.UNNotification;
 import apple.usernotifications.UNNotificationResponse;
@@ -30,7 +29,11 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UserNotificationsUI")
 @Runtime(ObjCRuntime.class)

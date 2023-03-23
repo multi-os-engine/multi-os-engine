@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -182,11 +185,11 @@ public class MDLStereoscopicCamera extends MDLCamera {
      * ray projected from the center of either sensor and lens meets at a point. A
      * parallel binocular stereoscopic camera accomplishes the same thing by shifting
      * the relative centers of the sensor and lens.
-     * <p>
+     * 
      * If a parallel binocular stereoscopic camera is modeled, the sensor should be
      * considered to have shifted by an amount h. If left and right vergence are equal,
      * h = (focal length * interOcularDistance) / distance to vergence point.
-     * <p>
+     * 
      * Vergence is measured in degrees towards center and is usually positive.
      */
     @Generated
@@ -220,11 +223,11 @@ public class MDLStereoscopicCamera extends MDLCamera {
      * ray projected from the center of either sensor and lens meets at a point. A
      * parallel binocular stereoscopic camera accomplishes the same thing by shifting
      * the relative centers of the sensor and lens.
-     * <p>
+     * 
      * If a parallel binocular stereoscopic camera is modeled, the sensor should be
      * considered to have shifted by an amount h. If left and right vergence are equal,
      * h = (focal length * interOcularDistance) / distance to vergence point.
-     * <p>
+     * 
      * Vergence is measured in degrees towards center and is usually positive.
      */
     @Generated

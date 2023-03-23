@@ -55,6 +55,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -522,6 +525,9 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     @Selector("setUndoManager:")
     public native void setUndoManager(NSUndoManager value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setUserActivity:")
     public native void setUserActivity(NSUserActivity value);
@@ -550,10 +556,16 @@ public class UIDocument extends NSObject implements NSFilePresenter, NSProgressR
     public native void updateChangeCountWithTokenForSaveOperation(
             @Mapped(ObjCObjectMapper.class) Object changeCountToken, @NInt long saveOperation);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("updateUserActivityState:")
     public native void updateUserActivityState(NSUserActivity userActivity);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("userActivity")
     public native NSUserActivity userActivity();

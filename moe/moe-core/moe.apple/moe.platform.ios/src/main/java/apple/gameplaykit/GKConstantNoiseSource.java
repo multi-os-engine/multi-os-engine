@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Produces a single, constant value at all positions in the space.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")

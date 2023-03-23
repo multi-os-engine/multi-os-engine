@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNNReduceColumnMin
- * <p>
+ * 
  * The MPSNNReduceColumnMin performs a reduction operation returning the mininmum value for each column of an image
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -102,9 +104,9 @@ public class MPSNNReduceColumnMin extends MPSNNReduceUnary {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSNNReduceColumnMin object, or nil if failure.
@@ -116,7 +118,7 @@ public class MPSNNReduceColumnMin extends MPSNNReduceUnary {
 
     /**
      * Specifies information to apply the reduction operation on an image.
-     *
+     * 
      * @param device The device the filter will run on
      * @return A valid MPSNNReduceColumnMin object or nil, if failure.
      */

@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -102,11 +105,16 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * Expression that returns a collection containing the results of other expressions
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("expressionForAggregate:")
     public static native NSExpression expressionForAggregate(NSArray<? extends NSExpression> subexpressions);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("expressionForAnyKey")
     public static native NSExpression expressionForAnyKey();
@@ -114,6 +122,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * Expression that invokes the block with the parameters; note that block expressions are not encodable or
      * representable as parseable strings.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("expressionForBlock:arguments:")
@@ -123,6 +133,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * Expression that will return the result of trueExpression or falseExpression depending on the value of predicate
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("expressionForConditional:trueExpression:falseExpression:")
@@ -154,6 +166,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * Expression that invokes the selector on target with parameters. Will throw at runtime if target does not
      * implement selector or if parameters are wrong.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("expressionForFunction:selectorName:arguments:")
@@ -162,6 +176,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * return an expression that will return the intersection of the collections expressed by left and right
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("expressionForIntersectSet:with:")
@@ -176,6 +192,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * return an expression that will return the disjunction of the collections expressed by left and right
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("expressionForMinusSet:with:")
@@ -186,6 +204,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
      * the elements for which qualifer returns true; variable is used as a local variable, and will shadow any instances
      * of variable in the bindings dictionary, the variable is removed or the old value replaced once evaluation
      * completes
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("expressionForSubquery:usingIteratorVariable:predicate:")
@@ -194,6 +214,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * return an expression that will return the union of the collections expressed by left and right
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("expressionForUnionSet:with:")
@@ -206,15 +228,24 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("expressionForVariable:")
     public static native NSExpression expressionForVariable(String string);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Variadic()
     @Selector("expressionWithFormat:")
     public static native NSExpression expressionWithFormat(String expressionFormat, Object... varargs);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("expressionWithFormat:argumentArray:")
     public static native NSExpression expressionWithFormatArgumentArray(String expressionFormat, NSArray<?> arguments);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("expressionWithFormat:arguments:")
     public static native NSExpression expressionWithFormatArguments(String expressionFormat, BytePtr argList);
@@ -277,6 +308,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * Force an expression which was securely decoded to allow evaluation
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("allowEvaluation")
@@ -290,6 +323,9 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("arguments")
     public native NSArray<? extends NSExpression> arguments();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("collection")
     @MappedReturn(ObjCObjectMapper.class)
@@ -310,6 +346,9 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("expressionBlock")
     @ObjCBlock(name = "call_expressionBlock_ret")
@@ -335,6 +374,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * expression which will be evaluated if a conditional expression's predicate evaluates to false
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("falseExpression")
@@ -362,6 +403,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * expression which represents the left side of a set expression
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("leftExpression")
@@ -375,12 +418,17 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("operand")
     public native NSExpression operand();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
 
     /**
      * expression which represents the right side of a set expression
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("rightExpression")
@@ -394,6 +442,8 @@ public class NSExpression extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * expression which will be evaluated if a conditional expression's predicate evaluates to true
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("trueExpression")

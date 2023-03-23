@@ -43,10 +43,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVCaptureConnection
- * <p>
+ * 
  * AVCaptureConnection represents a connection between an AVCaptureInputPort or ports, and an AVCaptureOutput or
  * AVCaptureVideoPreviewLayer present in an AVCaptureSession.
- * <p>
+ * 
  * AVCaptureInputs have one or more AVCaptureInputPorts. AVCaptureOutputs can accept data from one or more sources
  * (example - an AVCaptureMovieFileOutput accepts both video and audio data). AVCaptureVideoPreviewLayers can accept
  * data from one AVCaptureInputPort whose mediaType is AVMediaTypeVideo. When an input or output is added to a session,
@@ -54,11 +54,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * compatible AVCaptureInputs' ports and AVCaptureOutputs or AVCaptureVideoPreviewLayers. Iterating through an output's
  * connections or a video preview layer's sole connection, a client may enable or disable the flow of data from a given
  * input to a given output or preview layer.
- * <p>
+ * 
  * Connections involving audio expose an array of AVCaptureAudioChannel objects, which can be used for monitoring
  * levels.
- * <p>
+ * 
  * Connections involving video expose video specific properties, such as videoMirrored and videoOrientation.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("AVFoundation")
@@ -112,19 +114,24 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * connectionWithInputPort:videoPreviewLayer:
-     * <p>
+     * 
      * Returns an AVCaptureConnection instance describing a connection between the specified inputPort and the specified
      * AVCaptureVideoPreviewLayer instance.
-     * <p>
+     * 
      * This method returns an instance of AVCaptureConnection that may be subsequently added to an AVCaptureSession
      * instance using AVCaptureSession's -addConnection: method. When using AVCaptureVideoPreviewLayer's
      * -initWithSession: or -setSession:, a connection is formed between the first compatible input port and the video
      * preview layer automatically. You do not need to manually create and add connections to the session unless you use
      * AVCaptureVideoPreviewLayer's primitive -initWithSessionWithNoConnection: or -setSessionWithNoConnection: methods.
-     *
-     * @param port  An AVCaptureInputPort object associated with an AVCaptureInput object.
-     * @param layer An AVCaptureVideoPreviewLayer object.
-     * @return An AVCaptureConnection instance joining the specified inputPort to the specified video preview layer.
+     * 
+     * API-Since: 8.0
+     * 
+     * @param port
+     *              An AVCaptureInputPort object associated with an AVCaptureInput object.
+     * @param layer
+     *              An AVCaptureVideoPreviewLayer object.
+     * @return
+     *         An AVCaptureConnection instance joining the specified inputPort to the specified video preview layer.
      */
     @Generated
     @Selector("connectionWithInputPort:videoPreviewLayer:")
@@ -133,19 +140,24 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * connectionWithInputPorts:output:
-     * <p>
+     * 
      * Returns an AVCaptureConnection instance describing a connection between the specified inputPorts and the
      * specified output.
-     * <p>
+     * 
      * This method returns an instance of AVCaptureConnection that may be subsequently added to an AVCaptureSession
      * instance using AVCaptureSession's -addConnection: method. When using -addInput: or -addOutput:, connections are
      * formed between all compatible inputs and outputs automatically. You do not need to manually create and add
      * connections to the session unless you use the primitive -addInputWithNoConnections: or
      * -addOutputWithNoConnections: methods.
-     *
-     * @param ports  An array of AVCaptureInputPort objects associated with AVCaptureInput objects.
-     * @param output An AVCaptureOutput object.
-     * @return An AVCaptureConnection instance joining the specified inputPorts to the specified output port.
+     * 
+     * API-Since: 8.0
+     * 
+     * @param ports
+     *               An array of AVCaptureInputPort objects associated with AVCaptureInput objects.
+     * @param output
+     *               An AVCaptureOutput object.
+     * @return
+     *         An AVCaptureConnection instance joining the specified inputPorts to the specified output port.
      */
     @Generated
     @Selector("connectionWithInputPorts:output:")
@@ -214,14 +226,16 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] activeVideoStabilizationMode
-     * <p>
+     * 
      * Indicates the stabilization mode currently being applied to video flowing through the receiver.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. On devices where the video
      * stabilization feature is supported, only a subset of available source formats may be stabilized. The
      * activeVideoStabilizationMode property returns a value other than AVCaptureVideoStabilizationModeOff if video
      * stabilization is currently in use. This property never returns AVCaptureVideoStabilizationModeAuto. This property
      * is key-value observable.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("activeVideoStabilizationMode")
@@ -230,10 +244,10 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] audioChannels
-     * <p>
+     * 
      * An array of AVCaptureAudioChannel objects representing individual channels of audio data flowing through the
      * connection.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving audio. In such connections, the
      * audioChannels array contains one AVCaptureAudioChannel object for each channel of audio data flowing through this
      * connection.
@@ -244,12 +258,14 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] automaticallyAdjustsVideoMirroring
-     * <p>
+     * 
      * Specifies whether or not the value of @"videoMirrored" can change based on configuration of the session.
-     * <p>
+     * 
      * For some session configurations, video data flowing through the connection will be mirrored by default. When the
      * value of this property is YES, the value of @"videoMirrored" may change depending on the configuration of the
      * session, for example after switching to a different AVCaptureDeviceInput. The default value is YES.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("automaticallyAdjustsVideoMirroring")
@@ -257,10 +273,10 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] enablesVideoStabilizationWhenAvailable
-     * <p>
+     * 
      * Indicates whether stabilization should be applied to video flowing through the receiver when the feature is
      * available.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. On devices where the video
      * stabilization feature is supported, only a subset of available source formats and resolutions may be available
      * for stabilization. By setting the enablesVideoStabilizationWhenAvailable property to YES, video flowing through
@@ -269,6 +285,10 @@ public class AVCaptureConnection extends NSObject {
      * stabilization is in use or not. The default value is NO. For apps linked before iOS 6.0, the default value is YES
      * for a video connection attached to an AVCaptureMovieFileOutput instance. For apps linked on or after iOS 6.0, the
      * default value is always NO. This property is deprecated. Use preferredVideoStabilizationMode instead.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use preferredVideoStabilizationMode instead.
      */
     @Generated
     @Deprecated
@@ -281,19 +301,24 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * initWithInputPort:videoPreviewLayer:
-     * <p>
+     * 
      * Returns an AVCaptureConnection instance describing a connection between the specified inputPort
      * and the specified AVCaptureVideoPreviewLayer instance.
-     * <p>
+     * 
      * This method returns an instance of AVCaptureConnection that may be subsequently added to an AVCaptureSession
      * instance using AVCaptureSession's -addConnection: method. When using AVCaptureVideoPreviewLayer's
      * -initWithSession: or -setSession:, a connection is formed between the first compatible input port and the video
      * preview layer automatically. You do not need to manually create and add connections to the session unless you use
      * AVCaptureVideoPreviewLayer's primitive -initWithSessionWithNoConnection: or -setSessionWithNoConnection: methods.
-     *
-     * @param port  An AVCaptureInputPort object associated with an AVCaptureInput object.
-     * @param layer An AVCaptureVideoPreviewLayer object.
-     * @return An AVCaptureConnection instance joining the specified inputPort to the specified video preview layer.
+     * 
+     * API-Since: 8.0
+     * 
+     * @param port
+     *              An AVCaptureInputPort object associated with an AVCaptureInput object.
+     * @param layer
+     *              An AVCaptureVideoPreviewLayer object.
+     * @return
+     *         An AVCaptureConnection instance joining the specified inputPort to the specified video preview layer.
      */
     @Generated
     @Selector("initWithInputPort:videoPreviewLayer:")
@@ -302,19 +327,24 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * initWithInputPorts:output:
-     * <p>
+     * 
      * Returns an AVCaptureConnection instance describing a connection between the specified inputPorts and the
      * specified output.
-     * <p>
+     * 
      * This method returns an instance of AVCaptureConnection that may be subsequently added to an AVCaptureSession
      * instance using AVCaptureSession's -addConnection: method. When using -addInput: or -addOutput:, connections are
      * formed between all compatible inputs and outputs automatically. You do not need to manually create and add
      * connections to the session unless you use the primitive -addInputWithNoConnections: or
      * -addOutputWithNoConnections: methods.
-     *
-     * @param ports  An array of AVCaptureInputPort objects associated with AVCaptureInput objects.
-     * @param output An AVCaptureOutput object.
-     * @return An AVCaptureConnection instance joining the specified inputPorts to the specified output port.
+     * 
+     * API-Since: 8.0
+     * 
+     * @param ports
+     *               An array of AVCaptureInputPort objects associated with AVCaptureInput objects.
+     * @param output
+     *               An AVCaptureOutput object.
+     * @return
+     *         An AVCaptureConnection instance joining the specified inputPorts to the specified output port.
      */
     @Generated
     @Selector("initWithInputPorts:output:")
@@ -323,9 +353,9 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] inputPorts
-     * <p>
+     * 
      * An array of AVCaptureInputPort instances providing data through this connection.
-     * <p>
+     * 
      * An AVCaptureConnection may involve one or more AVCaptureInputPorts producing data to the connection's
      * AVCaptureOutput. This property is read-only. An AVCaptureConnection's inputPorts remain static for the life of
      * the object.
@@ -336,13 +366,13 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] active
-     * <p>
+     * 
      * Indicates whether the receiver's output is currently capable of consuming data through this connection.
-     * <p>
+     * 
      * The value of this property is a BOOL that determines whether the receiver's output can consume data provided
      * through this connection. This property is read-only. Clients may key-value observe this property to know when a
      * session's configuration forces a connection to become inactive. The default value is YES.
-     * <p>
+     * 
      * Prior to iOS 11, the audio connection feeding an AVCaptureAudioDataOutput is made inactive when using
      * AVCaptureSessionPresetPhoto or the equivalent photo format using -[AVCaptureDevice activeFormat]. On iOS 11 and
      * later, the audio connection feeding AVCaptureAudioDataOutput is active for all presets and device formats.
@@ -353,9 +383,9 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] enabled
-     * <p>
+     * 
      * Indicates whether the connection's output should consume data.
-     * <p>
+     * 
      * The value of this property is a BOOL that determines whether the receiver's output should consume data from its
      * connected inputPorts when a session is running. Clients can set this property to stop the flow of data to a given
      * output during capture. The default value is YES.
@@ -366,9 +396,9 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] enabled
-     * <p>
+     * 
      * Indicates whether the connection's output should consume data.
-     * <p>
+     * 
      * The value of this property is a BOOL that determines whether the receiver's output should consume data from its
      * connected inputPorts when a session is running. Clients can set this property to stop the flow of data to a given
      * output during capture. The default value is YES.
@@ -379,16 +409,20 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] supportsVideoMaxFrameDuration
-     * <p>
+     * 
      * Indicates whether the connection supports setting the videoMaxFrameDuration property.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. In such connections, the
      * videoMaxFrameDuration property may only be set if -isVideoMaxFrameDurationSupported returns YES.
-     * <p>
+     * 
      * This property is deprecated on iOS, where min and max frame rate adjustments are applied exclusively at the
-     * AVCaptureDevice using the activeVideoMinFrameDuration and activeVideoMaxFrameDuration properties. On Mac OS X,
-     * frame rate adjustments are supported both at the AVCaptureDevice and at AVCaptureConnection, enabling connections
-     * to output different frame rates.
+     * AVCaptureDevice using the activeVideoMinFrameDuration and activeVideoMaxFrameDuration properties. On macOS, frame
+     * rate adjustments are supported both at the AVCaptureDevice and at AVCaptureConnection, enabling connections to
+     * output different frame rates.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use AVCaptureDevice's activeFormat.videoSupportedFrameRateRanges instead.
      */
     @Generated
     @Deprecated
@@ -397,16 +431,20 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] supportsVideoMinFrameDuration
-     * <p>
+     * 
      * Indicates whether the connection supports setting the videoMinFrameDuration property.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. In such connections, the
      * videoMinFrameDuration property may only be set if -isVideoMinFrameDurationSupported returns YES.
-     * <p>
+     * 
      * This property is deprecated on iOS, where min and max frame rate adjustments are applied exclusively at the
-     * AVCaptureDevice using the activeVideoMinFrameDuration and activeVideoMaxFrameDuration properties. On Mac OS X,
-     * frame rate adjustments are supported both at the AVCaptureDevice and at AVCaptureConnection, enabling connections
-     * to output different frame rates.
+     * AVCaptureDevice using the activeVideoMinFrameDuration and activeVideoMaxFrameDuration properties. On macOS, frame
+     * rate adjustments are supported both at the AVCaptureDevice and at AVCaptureConnection, enabling connections to
+     * output different frame rates.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use AVCaptureDevice's activeFormat.videoSupportedFrameRateRanges instead.
      */
     @Generated
     @Deprecated
@@ -415,9 +453,9 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] videoMirrored
-     * <p>
+     * 
      * Indicates whether the video flowing through the connection should be mirrored about its vertical axis.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. if -isVideoMirroringSupported
      * returns YES, videoMirrored may be set to flip the video about its vertical axis and produce a mirror-image
      * effect.
@@ -428,9 +466,9 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] videoMirrored
-     * <p>
+     * 
      * Indicates whether the video flowing through the connection should be mirrored about its vertical axis.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. if -isVideoMirroringSupported
      * returns YES, videoMirrored may be set to flip the video about its vertical axis and produce a mirror-image
      * effect.
@@ -441,9 +479,9 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] supportsVideoMirroring
-     * <p>
+     * 
      * Indicates whether the connection supports setting the videoMirrored property.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. In such connections, the
      * videoMirrored property may only be set if
      * -isVideoMirroringSupported returns YES.
@@ -454,9 +492,9 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] supportsVideoOrientation
-     * <p>
+     * 
      * Indicates whether the connection supports setting the videoOrientation property.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. In such connections, the
      * videoOrientation property may only be set if -isVideoOrientationSupported returns YES.
      */
@@ -466,13 +504,17 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] videoStabilizationEnabled
-     * <p>
+     * 
      * Indicates whether stabilization is currently being applied to video flowing through the receiver.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. On devices where the video
      * stabilization feature is supported, only a subset of available source formats and resolutions may be available
      * for stabilization. The videoStabilizationEnabled property returns YES if video stabilization is currently in use.
      * This property is key-value observable. This property is deprecated. Use activeVideoStabilizationMode instead.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use activeVideoStabilizationMode instead.
      */
     @Generated
     @Deprecated
@@ -481,15 +523,17 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] supportsVideoStabilization
-     * <p>
+     * 
      * Indicates whether the connection supports video stabilization.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. In such connections, the
      * -enablesVideoStabilizationWhenAvailable property may only be set if -supportsVideoStabilization returns YES. This
      * property returns YES if the connection's input device has one or more formats that support video stabilization
      * and the connection's output supports video stabilization. See [AVCaptureDeviceFormat
      * isVideoStabilizationModeSupported:] to check which video stabilization modes are supported by the active device
      * format.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("isVideoStabilizationSupported")
@@ -497,9 +541,9 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] output
-     * <p>
+     * 
      * The AVCaptureOutput instance consuming data from this connection's inputPorts.
-     * <p>
+     * 
      * An AVCaptureConnection may involve one or more AVCaptureInputPorts producing data to the connection's
      * AVCaptureOutput. This property is read-only. An AVCaptureConnection's output remains static for the life of the
      * object. Note that a connection can either be to an output or a video preview layer, but never to both.
@@ -510,9 +554,9 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] preferredVideoStabilizationMode
-     * <p>
+     * 
      * Indicates the stabilization mode to apply to video flowing through the receiver when it is supported.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. On devices where the video
      * stabilization feature is supported, only a subset of available source formats may be available for stabilization.
      * By setting the preferredVideoStabilizationMode property to a value other than AVCaptureVideoStabilizationModeOff,
@@ -527,6 +571,8 @@ public class AVCaptureConnection extends NSObject {
      * AVCaptureMovieFileOutput instance. For apps linked on or after iOS 6.0, the default value is always
      * AVCaptureVideoStabilizationModeOff. Setting a video stabilization mode using this property may change the value
      * of enablesVideoStabilizationWhenAvailable.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("preferredVideoStabilizationMode")
@@ -535,12 +581,14 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] automaticallyAdjustsVideoMirroring
-     * <p>
+     * 
      * Specifies whether or not the value of @"videoMirrored" can change based on configuration of the session.
-     * <p>
+     * 
      * For some session configurations, video data flowing through the connection will be mirrored by default. When the
      * value of this property is YES, the value of @"videoMirrored" may change depending on the configuration of the
      * session, for example after switching to a different AVCaptureDeviceInput. The default value is YES.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setAutomaticallyAdjustsVideoMirroring:")
@@ -548,10 +596,10 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] enablesVideoStabilizationWhenAvailable
-     * <p>
+     * 
      * Indicates whether stabilization should be applied to video flowing through the receiver when the feature is
      * available.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. On devices where the video
      * stabilization feature is supported, only a subset of available source formats and resolutions may be available
      * for stabilization. By setting the enablesVideoStabilizationWhenAvailable property to YES, video flowing through
@@ -560,6 +608,10 @@ public class AVCaptureConnection extends NSObject {
      * stabilization is in use or not. The default value is NO. For apps linked before iOS 6.0, the default value is YES
      * for a video connection attached to an AVCaptureMovieFileOutput instance. For apps linked on or after iOS 6.0, the
      * default value is always NO. This property is deprecated. Use preferredVideoStabilizationMode instead.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use preferredVideoStabilizationMode instead.
      */
     @Generated
     @Deprecated
@@ -568,9 +620,9 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] preferredVideoStabilizationMode
-     * <p>
+     * 
      * Indicates the stabilization mode to apply to video flowing through the receiver when it is supported.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. On devices where the video
      * stabilization feature is supported, only a subset of available source formats may be available for stabilization.
      * By setting the preferredVideoStabilizationMode property to a value other than AVCaptureVideoStabilizationModeOff,
@@ -585,6 +637,8 @@ public class AVCaptureConnection extends NSObject {
      * AVCaptureMovieFileOutput instance. For apps linked on or after iOS 6.0, the default value is always
      * AVCaptureVideoStabilizationModeOff. Setting a video stabilization mode using this property may change the value
      * of enablesVideoStabilizationWhenAvailable.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPreferredVideoStabilizationMode:")
@@ -592,18 +646,22 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] videoMaxFrameDuration
-     * <p>
+     * 
      * Indicates the maximum time interval at which the receiver should output consecutive video frames.
-     * <p>
+     * 
      * The value of this property is a CMTime specifying the maximum duration of each video frame output by the
      * receiver, placing an upper bound on the amount of time that should separate consecutive frames. This is
      * equivalent to the reciprocal of the minimum frame rate. A value of kCMTimeZero or kCMTimeInvalid indicates an
      * unlimited minimum frame rate. The default value is kCMTimeInvalid.
-     * <p>
+     * 
      * This property is deprecated on iOS, where min and max frame rate adjustments are applied exclusively at the
-     * AVCaptureDevice using the activeVideoMinFrameDuration and activeVideoMaxFrameDuration properties. On Mac OS X,
-     * frame rate adjustments are supported both at the AVCaptureDevice and at AVCaptureConnection, enabling connections
-     * to output different frame rates.
+     * AVCaptureDevice using the activeVideoMinFrameDuration and activeVideoMaxFrameDuration properties. On macOS, frame
+     * rate adjustments are supported both at the AVCaptureDevice and at AVCaptureConnection, enabling connections to
+     * output different frame rates.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use AVCaptureDevice's activeVideoMaxFrameDuration instead.
      */
     @Generated
     @Deprecated
@@ -612,18 +670,22 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] videoMinFrameDuration
-     * <p>
+     * 
      * Indicates the minimum time interval at which the receiver should output consecutive video frames.
-     * <p>
+     * 
      * The value of this property is a CMTime specifying the minimum duration of each video frame output by the
      * receiver, placing a lower bound on the amount of time that should separate consecutive frames. This is equivalent
      * to the reciprocal of the maximum frame rate. A value of kCMTimeZero or kCMTimeInvalid indicates an unlimited
      * maximum frame rate. The default value is kCMTimeInvalid.
-     * <p>
+     * 
      * This property is deprecated on iOS, where min and max frame rate adjustments are applied exclusively at the
-     * AVCaptureDevice using the activeVideoMinFrameDuration and activeVideoMaxFrameDuration properties. On Mac OS X,
-     * frame rate adjustments are supported both at the AVCaptureDevice and at AVCaptureConnection, enabling connections
-     * to output different frame rates.
+     * AVCaptureDevice using the activeVideoMinFrameDuration and activeVideoMaxFrameDuration properties. On macOS, frame
+     * rate adjustments are supported both at the AVCaptureDevice and at AVCaptureConnection, enabling connections to
+     * output different frame rates.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use AVCaptureDevice's activeVideoMinFrameDuration instead.
      */
     @Generated
     @Deprecated
@@ -632,9 +694,9 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] videoOrientation
-     * <p>
+     * 
      * Indicates whether the video flowing through the connection should be rotated to a given orientation.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. If
      * -isVideoOrientationSupported returns YES, videoOrientation may be set to rotate the video buffers being consumed
      * by the connection's output. Note that setting videoOrientation does not necessarily result in a physical rotation
@@ -647,16 +709,18 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] videoScaleAndCropFactor
-     * <p>
+     * 
      * Indicates the current video scale and crop factor in use by the receiver.
-     * <p>
+     * 
      * This property only applies to AVCaptureStillImageOutput connections. In such connections, the
      * videoScaleAndCropFactor property may be set to a value in the range of 1.0 to videoMaxScaleAndCropFactor. At a
      * factor of 1.0, the image is its original size. At a factor greater than 1.0, the image is scaled by the factor
      * and center-cropped to its original dimensions. This factor is applied in addition to any magnification from
      * AVCaptureDevice's videoZoomFactor property.
-     *
+     * 
      * @see -[AVCaptureDevice videoZoomFactor]
+     * 
+     *      API-Since: 5.0
      */
     @Generated
     @Selector("setVideoScaleAndCropFactor:")
@@ -664,18 +728,22 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] videoMaxFrameDuration
-     * <p>
+     * 
      * Indicates the maximum time interval at which the receiver should output consecutive video frames.
-     * <p>
+     * 
      * The value of this property is a CMTime specifying the maximum duration of each video frame output by the
      * receiver, placing an upper bound on the amount of time that should separate consecutive frames. This is
      * equivalent to the reciprocal of the minimum frame rate. A value of kCMTimeZero or kCMTimeInvalid indicates an
      * unlimited minimum frame rate. The default value is kCMTimeInvalid.
-     * <p>
+     * 
      * This property is deprecated on iOS, where min and max frame rate adjustments are applied exclusively at the
-     * AVCaptureDevice using the activeVideoMinFrameDuration and activeVideoMaxFrameDuration properties. On Mac OS X,
-     * frame rate adjustments are supported both at the AVCaptureDevice and at AVCaptureConnection, enabling connections
-     * to output different frame rates.
+     * AVCaptureDevice using the activeVideoMinFrameDuration and activeVideoMaxFrameDuration properties. On macOS, frame
+     * rate adjustments are supported both at the AVCaptureDevice and at AVCaptureConnection, enabling connections to
+     * output different frame rates.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use AVCaptureDevice's activeVideoMaxFrameDuration instead.
      */
     @Generated
     @Deprecated
@@ -685,12 +753,14 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] videoMaxScaleAndCropFactor
-     * <p>
+     * 
      * Indicates the maximum video scale and crop factor supported by the receiver.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. In such connections, the
      * videoMaxScaleAndCropFactor property specifies the maximum CGFloat value that may be used when setting the
      * videoScaleAndCropFactor property.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("videoMaxScaleAndCropFactor")
@@ -699,18 +769,22 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] videoMinFrameDuration
-     * <p>
+     * 
      * Indicates the minimum time interval at which the receiver should output consecutive video frames.
-     * <p>
+     * 
      * The value of this property is a CMTime specifying the minimum duration of each video frame output by the
      * receiver, placing a lower bound on the amount of time that should separate consecutive frames. This is equivalent
      * to the reciprocal of the maximum frame rate. A value of kCMTimeZero or kCMTimeInvalid indicates an unlimited
      * maximum frame rate. The default value is kCMTimeInvalid.
-     * <p>
+     * 
      * This property is deprecated on iOS, where min and max frame rate adjustments are applied exclusively at the
-     * AVCaptureDevice using the activeVideoMinFrameDuration and activeVideoMaxFrameDuration properties. On Mac OS X,
-     * frame rate adjustments are supported both at the AVCaptureDevice and at AVCaptureConnection, enabling connections
-     * to output different frame rates.
+     * AVCaptureDevice using the activeVideoMinFrameDuration and activeVideoMaxFrameDuration properties. On macOS, frame
+     * rate adjustments are supported both at the AVCaptureDevice and at AVCaptureConnection, enabling connections to
+     * output different frame rates.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use AVCaptureDevice's activeVideoMinFrameDuration instead.
      */
     @Generated
     @Deprecated
@@ -720,9 +794,9 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] videoOrientation
-     * <p>
+     * 
      * Indicates whether the video flowing through the connection should be rotated to a given orientation.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. If
      * -isVideoOrientationSupported returns YES, videoOrientation may be set to rotate the video buffers being consumed
      * by the connection's output. Note that setting videoOrientation does not necessarily result in a physical rotation
@@ -736,12 +810,14 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] videoPreviewLayer
-     * <p>
+     * 
      * The AVCaptureVideoPreviewLayer instance consuming data from this connection's inputPort.
-     * <p>
+     * 
      * An AVCaptureConnection may involve one AVCaptureInputPort producing data to an AVCaptureVideoPreviewLayer object.
      * This property is read-only. An AVCaptureConnection's videoPreviewLayer remains static for the life of the object.
      * Note that a connection can either be to an output or a video preview layer, but never to both.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("videoPreviewLayer")
@@ -749,16 +825,18 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] videoScaleAndCropFactor
-     * <p>
+     * 
      * Indicates the current video scale and crop factor in use by the receiver.
-     * <p>
+     * 
      * This property only applies to AVCaptureStillImageOutput connections. In such connections, the
      * videoScaleAndCropFactor property may be set to a value in the range of 1.0 to videoMaxScaleAndCropFactor. At a
      * factor of 1.0, the image is its original size. At a factor greater than 1.0, the image is scaled by the factor
      * and center-cropped to its original dimensions. This factor is applied in addition to any magnification from
      * AVCaptureDevice's videoZoomFactor property.
-     *
+     * 
      * @see -[AVCaptureDevice videoZoomFactor]
+     * 
+     *      API-Since: 5.0
      */
     @Generated
     @Selector("videoScaleAndCropFactor")
@@ -767,13 +845,15 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] cameraIntrinsicMatrixDeliveryEnabled
-     * <p>
+     * 
      * Indicates whether camera intrinsic matrix delivery should be enabled.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. Refer to property
      * cameraIntrinsicMatrixDeliverySupported before setting this property. When this property is set to YES, the
      * receiver's output will add the kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix sample buffer attachment to all
      * vended sample buffers. This property must be set before the session starts running.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isCameraIntrinsicMatrixDeliveryEnabled")
@@ -781,9 +861,9 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] cameraIntrinsicMatrixDeliverySupported
-     * <p>
+     * 
      * Indicates whether the connection supports camera intrinsic matrix delivery.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. For such connections, the
      * cameraIntrinsicMatrixDeliveryEnabled property may only be set to YES if -isCameraIntrinsicMatrixDeliverySupported
      * returns YES. This property returns YES if both the connection's input device format and the connection's output
@@ -791,6 +871,8 @@ public class AVCaptureConnection extends NSObject {
      * Note that if video stabilization is enabled (preferredVideoStabilizationMode is set to something other than
      * AVCaptureVideoStabilizationModeOff), camera intrinsic matrix delivery is not supported. Starting in iOS 14.3,
      * camera intrinsics are delivered with video buffers on which geometric distortion correction is applied.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isCameraIntrinsicMatrixDeliverySupported")
@@ -798,13 +880,15 @@ public class AVCaptureConnection extends NSObject {
 
     /**
      * [@property] cameraIntrinsicMatrixDeliveryEnabled
-     * <p>
+     * 
      * Indicates whether camera intrinsic matrix delivery should be enabled.
-     * <p>
+     * 
      * This property is only applicable to AVCaptureConnection instances involving video. Refer to property
      * cameraIntrinsicMatrixDeliverySupported before setting this property. When this property is set to YES, the
      * receiver's output will add the kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix sample buffer attachment to all
      * vended sample buffers. This property must be set before the session starts running.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCameraIntrinsicMatrixDeliveryEnabled:")

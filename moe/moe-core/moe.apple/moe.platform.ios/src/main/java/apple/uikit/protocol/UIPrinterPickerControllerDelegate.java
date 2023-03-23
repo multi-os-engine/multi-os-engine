@@ -34,7 +34,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface UIPrinterPickerControllerDelegate {
     /**
      * printerPickerController:shouldShowPrinter:
-     * <p>
+     * 
      * Use to filter out specific printers from the printer picker.
      * Evaluate the UIPrinter object and returns YES if the printer should
      * be shown, NO otherwise.

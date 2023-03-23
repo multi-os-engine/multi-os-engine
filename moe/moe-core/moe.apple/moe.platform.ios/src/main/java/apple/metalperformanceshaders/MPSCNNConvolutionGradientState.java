@@ -31,7 +31,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSCNNConvolutionGradientState
- * <p>
+ * 
  * The MPSCNNConvolutionGradientState is returned by resultStateForSourceImage:sourceStates method on MPSCNNConvolution
  * object.
  * Note that resultStateForSourceImage:sourceStates:destinationImage creates the object on autoreleasepool.
@@ -40,18 +40,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Note that state objects are not usable across batches i.e. when batch is done you should nuke the state object and
  * create
  * new one for next batch.
- * <p>
+ * 
  * This state exposes the gradient with respect to weights and biases, as computed by the MPSCNNConvolutionGradient
  * kernel, as a metal buffer to be used
  * during weights and biases update. The standard weights and biases update formula is:
- * <p>
+ * 
  * weights(t+1) = f(weights(t), gradientForWeights(t)) and
  * biases(t+1) = f(biases(t), gradientForBiases(t)),
- * <p>
+ * 
  * where the weights(t)/biases(t) are the wegihts and the biases at step t that are provided by data source provider
  * used to create MPSCNNConvolution and
  * MPSCNNConvoltuionGradient objects. There are multiple ways user can update weights and biases as described below:
- * <p>
+ * 
  * 1) For check pointing, i.e. updating weights/biases and storing:
  * once the command buffer on which MPSCNNConvolutionGradient is enqueued is done (e.g. in command
  * buffer completion callback), the application can simply use
@@ -69,13 +69,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * synchronized for CPU side access, it is the application's responsibility to call
  * [gradientState synchronizeOnCommandBuffer:]
  * before accessing data from the buffer.
- * <p>
+ * 
  * 2) For a CPU side update, once the weights and biases in the data source provider are updated as above, the original
  * MPSCNNConvolution and
  * MPSCNNConvolutionGradient objects need to be updated with the new weigths and biases by calling the
  * -(void) reloadWeightsAndBiasesFromDataSource
  * method. Again application needs to call [gradientState synchronizeOnCommandBuffer:] before touching data on CPU side.
- * <p>
+ * 
  * 3) The above CPU side update requires command buffer to be done. If the application doesn't want to update its data
  * source provider object and would prefer to directly
  * enqueue an update of the internal MPSCNNConvolution and MPSCNNConvolutionGradient weights/biases buffers on the GPU
@@ -88,6 +88,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * iv) call reloadWeightsAndBiasesWithCommandBuffer:dest:weightsOffset:biasesOffset on MPSCNNConvolution and
  * MPSCNNConvolutionGradient objects. This
  * will reload the weights from application's update kernel in dest on GPU without CPU side involvement.
+ * 
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -141,7 +144,7 @@ public class MPSCNNConvolutionGradientState extends MPSNNGradientState implement
 
     /**
      * [@property] convolution
-     * <p>
+     * 
      * The convolution filter that produced the state.
      * For child MPSCNNConvolutionTrasposeGradientState object, convolution
      * below refers to MPSCNNConvolution object that produced MPSCNNConvolutionGradientState object
@@ -163,7 +166,7 @@ public class MPSCNNConvolutionGradientState extends MPSNNGradientState implement
 
     /**
      * [@property] gradientForBiases
-     * <p>
+     * 
      * A buffer that contains the loss function gradients with respect to biases.
      */
     @Generated
@@ -173,11 +176,11 @@ public class MPSCNNConvolutionGradientState extends MPSNNGradientState implement
 
     /**
      * [@property] gradientForWeights
-     * <p>
+     * 
      * A buffer that contains the loss function gradients with respect to weights.
      * Each value in the buffer is a float. The layout of the gradients with respect to the weights is the same as
      * the weights layout provided by data source i.e. it can be interpreted as 4D array
-     * <p>
+     * 
      * gradientForWeights[outputFeatureChannels][kernelHeight][kernelWidth][inputFeatureChannels/groups]
      * For depthwise convolution it will be (since we only support channel multiplier of 1 currently)
      * gradientForWeights[outputFeatureChannels][kernelHeight][kernelWidth]
@@ -189,9 +192,11 @@ public class MPSCNNConvolutionGradientState extends MPSNNGradientState implement
 
     /**
      * [@property] gradientForWeightsLayout
-     * <p>
+     * 
      * Layout of gradient with respect to weights in gradientForWeights buffer.
      * Currently only MPSCNNConvolutionWeightsLayoutOHWI is supported.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("gradientForWeightsLayout")

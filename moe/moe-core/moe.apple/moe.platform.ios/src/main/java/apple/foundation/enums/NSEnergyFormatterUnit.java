@@ -19,16 +19,29 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class NSEnergyFormatterUnit {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Joule = 0x000000000000000BL;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Kilojoule = 0x000000000000000EL;
     /**
      * chemistry "calories", abbr "cal"
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Calorie = 0x0000000000000701L;
     /**
      * kilocalories in general, abbr “kcal”, or “C” in some locales (e.g. US) when usesFoodEnergy is set to YES
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Kilocalorie = 0x0000000000000702L;
 

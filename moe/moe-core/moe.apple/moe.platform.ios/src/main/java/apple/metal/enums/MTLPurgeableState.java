@@ -21,26 +21,40 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLPurgeableOption
- * <p>
+ * 
  * Options for setPurgeable call.
- * <p>
+ * 
  * [@constant] MTLPurgeableStateNonVolatile
  * The contents of this resource may not be discarded.
- * <p>
+ * 
  * [@constant] MTLPurgeableStateVolatile
  * The contents of this resource may be discarded.
- * <p>
+ * 
  * [@constant] MTLPurgeableStateEmpty
  * The contents of this are discarded.
- * <p>
+ * 
  * [@constant] MTLPurgeableStateKeepCurrent
  * The purgeabelity state is not changed.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class MTLPurgeableState {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long KeepCurrent = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long NonVolatile = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Volatile = 0x0000000000000003L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Empty = 0x0000000000000004L;
 
     @Generated

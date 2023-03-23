@@ -17,7 +17,6 @@ limitations under the License.
 package apple.spritekit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -44,10 +43,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
 /**
  * SKConstraints are evaluated each frame after actions and physics.
  * The node's transform will be changed to staisfy the constarint
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("SpriteKit")

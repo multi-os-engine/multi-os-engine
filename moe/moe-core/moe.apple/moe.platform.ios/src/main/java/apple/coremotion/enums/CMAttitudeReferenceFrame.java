@@ -21,11 +21,11 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * CMAttitudeReferenceFrame
- * <p>
+ * 
  * Discussion:
  * CMAttitudeReferenceFrame indicates the reference frame from which all CMAttitude
  * samples are referenced.
- * <p>
+ * 
  * Definitions of each reference frame is as follows:
  * - CMAttitudeReferenceFrameXArbitraryZVertical describes a reference frame in
  * which the Z axis is vertical and the X axis points in an arbitrary direction

@@ -19,10 +19,23 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 8.0
+ * Deprecated-Since: 11.0
+ */
+@Deprecated
 @Generated
 public final class UIDocumentMenuOrder {
-    @Generated @NUInt public static final long First = 0x0000000000000000L;
-    @Generated @NUInt public static final long Last = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated @Generated @NUInt public static final long First = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated @Generated @NUInt public static final long Last = 0x0000000000000001L;
 
     @Generated
     private UIDocumentMenuOrder() {

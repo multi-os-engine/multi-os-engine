@@ -21,10 +21,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.UIColor;
 
 /**
  * [@c] CPNavigationSession represents the active navigation session. A @c CPNavigationSession will be created for you
  * when calling startNavigationSessionForTrip: on @c CYMapTemplate
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CarPlay")
@@ -135,7 +138,7 @@ public class CPNavigationSession extends NSObject {
 
     /**
      * Pause the current trip.
-     *
+     * 
      * @param reason      The reason navigation was paused.
      * @param description An optional description of the pause reason. If @c nil, a system-provided string will be used.
      */
@@ -186,7 +189,7 @@ public class CPNavigationSession extends NSObject {
 
     /**
      * Update the travel estimates for the active navigation session and maneuver.
-     *
+     * 
      * @param estimates The updated travel estimates.
      * @param maneuver  The maneuver pertaining to this update.
      */
@@ -198,4 +201,21 @@ public class CPNavigationSession extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Pause the current trip.
+     * 
+     * @param reason        The reason navigation was paused.
+     * @param description   An optional description of the pause reason. If @c nil, a system-provided string will be
+     *                      used.
+     * @param turnCardColor An optional color of the pause card. If @c nil, will fallback to the @c
+     *                      guidanceBackgroundColor on @c CPMapTemplate. If no color is specified there, will default to
+     *                      a system-provided color.
+     * 
+     *                      API-Since: 15.4
+     */
+    @Generated
+    @Selector("pauseTripForReason:description:turnCardColor:")
+    public native void pauseTripForReasonDescriptionTurnCardColor(@NUInt long reason, String description,
+            UIColor turnCardColor);
 }

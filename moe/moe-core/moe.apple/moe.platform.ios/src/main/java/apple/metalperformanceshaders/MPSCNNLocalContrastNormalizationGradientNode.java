@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.3
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -52,9 +55,9 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The value of alpha. Default is 0.0
-     * <p>
+     * 
      * The default value 0.0 is not recommended and is
      * preserved for backwards compatibility. With alpha 0,
      * it performs a local mean subtraction. The
@@ -71,7 +74,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The value of beta. Default is 0.5
      */
     @Generated
@@ -102,7 +105,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] delta
-     * <p>
+     * 
      * The value of delta. Default is 1/1024
      */
     @Generated
@@ -172,7 +175,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] p0
-     * <p>
+     * 
      * The value of p0. Default is 1.0
      */
     @Generated
@@ -181,7 +184,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] pm
-     * <p>
+     * 
      * The value of pm. Default is 0.0
      */
     @Generated
@@ -190,7 +193,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] ps
-     * <p>
+     * 
      * The value of ps. Default is 1.0
      */
     @Generated
@@ -207,9 +210,9 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The value of alpha. Default is 0.0
-     * <p>
+     * 
      * The default value 0.0 is not recommended and is
      * preserved for backwards compatibility. With alpha 0,
      * it performs a local mean subtraction. The
@@ -222,7 +225,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The value of beta. Default is 0.5
      */
     @Generated
@@ -231,7 +234,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] delta
-     * <p>
+     * 
      * The value of delta. Default is 1/1024
      */
     @Generated
@@ -240,7 +243,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] p0
-     * <p>
+     * 
      * The value of p0. Default is 1.0
      */
     @Generated
@@ -249,7 +252,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] pm
-     * <p>
+     * 
      * The value of pm. Default is 0.0
      */
     @Generated
@@ -258,7 +261,7 @@ public class MPSCNNLocalContrastNormalizationGradientNode extends MPSNNGradientF
 
     /**
      * [@property] ps
-     * <p>
+     * 
      * The value of ps. Default is 1.0
      */
     @Generated

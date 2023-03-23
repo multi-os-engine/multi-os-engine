@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MLCDataType
- * <p>
+ * 
  * A tensor data type.
  */
 @Generated
@@ -20,6 +20,8 @@ public final class MLCDataType {
     @Generated public static final int Float32 = 0x00000001;
     /**
      * The 16-bit floating-point data type.
+     * 
+     * API-Since: 15.0
      */
     @Generated public static final int Float16 = 0x00000003;
     /**
@@ -36,10 +38,14 @@ public final class MLCDataType {
     @Generated public static final int Int32 = 0x00000007;
     /**
      * The 8-bit integer data type.
+     * 
+     * API-Since: 15.0
      */
     @Generated public static final int Int8 = 0x00000008;
     /**
      * The 8-bit unsigned integer data type.
+     * 
+     * API-Since: 15.0
      */
     @Generated public static final int UInt8 = 0x00000009;
     /**

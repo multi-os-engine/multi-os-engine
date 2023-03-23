@@ -101,12 +101,21 @@ public class NSStream extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("getBoundStreamsWithBufferSize:inputStream:outputStream:")
     public static native void getBoundStreamsWithBufferSizeInputStreamOutputStream(@NUInt long bufferSize,
             @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
             @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t in Network framework instead
+     */
+    @Deprecated
     @Generated
     @Selector("getStreamsToHostWithName:port:inputStream:outputStream:")
     public static native void getStreamsToHostWithNamePortInputStreamOutputStream(String hostname, @NInt long port,

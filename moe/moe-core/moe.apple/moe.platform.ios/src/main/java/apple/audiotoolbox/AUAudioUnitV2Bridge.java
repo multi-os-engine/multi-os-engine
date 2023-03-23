@@ -43,19 +43,22 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.audiotoolbox.opaque.AudioComponentInstance;
 
 /**
  * Wraps a v2 audio unit in an AUAudioUnit subclass.
- * <p>
+ * 
  * Implementors of version 3 audio units may derive their implementations from
  * AUAudioUnitV2Bridge. It expects the component description with which it is initialized to
  * refer to a registered component with a v2 implementation using an
  * AudioComponentFactoryFunction. The bridge will instantiate the v2 audio unit via the factory
  * function and communicate it with it using the v2 AudioUnit API's (AudioUnitSetProperty,
  * etc.)
- * <p>
+ * 
  * Hosts should not access this class; it will be instantiated when needed when creating an
  * AUAudioUnit.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AudioToolbox")
@@ -193,4 +196,23 @@ public class AUAudioUnitV2Bridge extends AUAudioUnit {
     public native AUAudioUnitV2Bridge initWithComponentDescriptionOptionsError(
             @ByValue AudioComponentDescription componentDescription, int options,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+
+    /**
+     * [@property] audioUnit
+     * 
+     * The underlying v2 AudioUnit
+     * 
+     * We generally discourage interacting with the underlying v2 AudioUnit directly and
+     * recommend using the v3 equivalent methods and properties from AUAudioUnitV2Bridge.
+     * 
+     * In some rare cases it may be desirable to interact with the v2 AudioUnit.
+     * For example, a v2 plugin may define custom properties that are not bridged to v3.
+     * Implementors can sublcass AUAudioUnitV2Bridge and call the v2 API methods
+     * AudioUnitGetProperty / AudioUnitSetProperty with the v2 AudioUnit.
+     * 
+     * API-Since: 14.0
+     */
+    @Generated
+    @Selector("audioUnit")
+    public native AudioComponentInstance audioUnit();
 }

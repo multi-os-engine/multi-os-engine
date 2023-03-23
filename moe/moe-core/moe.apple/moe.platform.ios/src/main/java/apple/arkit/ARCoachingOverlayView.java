@@ -2,7 +2,6 @@ package apple.arkit;
 
 import apple.NSObject;
 import apple.arkit.protocol.ARCoachingOverlayViewDelegate;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -34,12 +33,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * A view that guides users through session initialization
- * <p>
+ * 
  * The view will use context aware messaging and animations to instruct the user on gathering required info for the AR
  * session.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("ARKit")
@@ -62,7 +64,7 @@ public class ARCoachingOverlayView extends UIView {
     /**
      * Whether or not the view should activate/deactivate automatically, depending on the current state of the session
      * Defaults to `YES`
-     * <p>
+     * 
      * When set to automatically activate, the view will transition to active when the session loses normal tracking for
      * a set amount
      * of time.
@@ -200,6 +202,7 @@ public class ARCoachingOverlayView extends UIView {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -226,6 +229,7 @@ public class ARCoachingOverlayView extends UIView {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -291,7 +295,7 @@ public class ARCoachingOverlayView extends UIView {
 
     /**
      * Whether or not the view is currently active.
-     *
+     * 
      * @see -[ARCoachingOverlayView setActive:animated:]
      */
     @Generated
@@ -354,7 +358,7 @@ public class ARCoachingOverlayView extends UIView {
 
     /**
      * A provider of a session to use
-     * <p>
+     * 
      * This property can be used to set the `session` when loading from a storyboard. Setting this property at runtime
      * will also
      * set the `session` property.
@@ -366,7 +370,7 @@ public class ARCoachingOverlayView extends UIView {
     /**
      * Whether or not the view should activate/deactivate automatically, depending on the current state of the session
      * Defaults to `YES`
-     * <p>
+     * 
      * When set to automatically activate, the view will transition to active when the session loses normal tracking for
      * a set amount
      * of time.
@@ -378,61 +382,73 @@ public class ARCoachingOverlayView extends UIView {
 
     /**
      * Transition the view to either an activated or deactivated state
-     * <p>
+     * 
      * On activation the view will check the current session, and if relocalization is needed it will present a modified
      * UI with
      * relocalization coaching and a reset button.
-     * <p>
+     * 
      * On deactivation the view will become hidden
-     *
+     * 
      * @param active   Whether the view should activate, or deactivate
      * @param animated Whether the view animated to activated/deactivated states, or transitions instantly
+     * 
      * @see -[ARCoachingOverlayViewDelegate coachingOverlayViewDidTriggerReset:]
      */
     @Generated
     @Selector("setActive:animated:")
     public native void setActiveAnimated(boolean active, boolean animated);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -480,7 +496,7 @@ public class ARCoachingOverlayView extends UIView {
 
     /**
      * A provider of a session to use
-     * <p>
+     * 
      * This property can be used to set the `session` when loading from a storyboard. Setting this property at runtime
      * will also
      * set the `session` property.
@@ -491,7 +507,7 @@ public class ARCoachingOverlayView extends UIView {
 
     /**
      * A provider of a session to use
-     * <p>
+     * 
      * This property can be used to set the `session` when loading from a storyboard. Setting this property at runtime
      * will also
      * set the `session` property.

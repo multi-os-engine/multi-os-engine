@@ -1,7 +1,6 @@
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -26,7 +25,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -61,7 +64,7 @@ public class UIPointerShape extends NSObject implements NSCopying {
 
     /**
      * Morphs the pointer to a beam with the given length and axis.
-     *
+     * 
      * @param length The beam's length. Limited to the region's width or height, depending on the beam's axis.
      * @param axis   The axis along which to draw the beam. Axis must be either UIAxisVertical or UIAxisHorizontal.
      */
@@ -159,7 +162,7 @@ public class UIPointerShape extends NSObject implements NSCopying {
 
     /**
      * Morphs the pointer to a rounded rectangle with the provided rect and the standard system corner radius.
-     *
+     * 
      * @param rect CGRect describing the pointer's frame. If used alongside a content effect, this rect must be in the
      *             effect's
      *             preview's container view's coordinate space. Otherwise, it is centered about the pointer's current
@@ -172,7 +175,7 @@ public class UIPointerShape extends NSObject implements NSCopying {
 
     /**
      * Morphs the pointer to a rounded rectangle with the provided rect and cornerRadius.
-     *
+     * 
      * @param rect         CGRect describing the pointer's frame. If used alongside a content effect, this rect must be
      *                     in
      *                     the effect's preview's container view's coordinate space. Otherwise, it is centered about the

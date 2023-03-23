@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -89,13 +92,13 @@ public class CPButton extends NSObject {
 
     /**
      * An optional image, displayed only in templates that support custom images, like the Contact template.
-     * <p>
+     * 
      * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
      * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * <p>
+     * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
      */
     @Generated
@@ -109,18 +112,18 @@ public class CPButton extends NSObject {
     /**
      * Initialize a button for the Contact, POI, or Information templates with a custom image and a handler, called when
      * the user taps this button.
-     * <p>
+     * 
      * [@note] This class is only available in templates that support buttons with custom images, like the Contact
      * template.
-     * <p>
+     * 
      * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
      * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * <p>
+     * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
-     *
+     * 
      * @param image   An image to be displayed in this button. The maximum image size is given by @c
      *                CPButtonMaximumImageSize.
      * @param handler A block that will be called when the user taps this button.
@@ -152,7 +155,7 @@ public class CPButton extends NSObject {
 
     /**
      * A Boolean value indicating whether the button is enabled.
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
      * property is @c YES.
      */
@@ -183,7 +186,7 @@ public class CPButton extends NSObject {
 
     /**
      * A Boolean value indicating whether the button is enabled.
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
      * property is @c YES.
      */

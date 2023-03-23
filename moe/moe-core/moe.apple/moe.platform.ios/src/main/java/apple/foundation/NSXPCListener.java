@@ -23,6 +23,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Each NSXPCListener instance has a private serial queue. This queue is used when sending the delegate messages.
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("Foundation")
@@ -164,6 +166,7 @@ public class NSXPCListener extends NSObject {
      * serviceListener, this method will never return. Call it as the last step inside your main function in your XPC
      * service after setting up desired initial state and the listener itself. If called on any other NSXPCListener, the
      * connection is resumed and the method returns immediately.
+     * For new code, calling `-activate` is preferred for the initial activation of the listener.
      */
     @Generated
     @Selector("resume")
@@ -223,4 +226,18 @@ public class NSXPCListener extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Activates the listener.
+     * Listeners start in an inactive state. You must call `-activate` on a listener before it will send or receive any
+     * messages.
+     * Calling `-activate` on an active listener has no effect.
+     * For backward compatibility reasons, `-resume` on an inactive and otherwise not suspended NSXPCListener has the
+     * same effect as calling `-activate`. For new code, using `-activate` is preferred.
+     * 
+     * API-Since: 14.0
+     */
+    @Generated
+    @Selector("activate")
+    public native void activate();
 }

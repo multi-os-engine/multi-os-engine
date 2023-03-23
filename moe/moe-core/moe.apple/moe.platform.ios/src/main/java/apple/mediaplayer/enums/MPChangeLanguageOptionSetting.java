@@ -19,15 +19,25 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 9.3
+ */
 @Generated
 public final class MPChangeLanguageOptionSetting {
+    /**
+     * API-Since: 9.3
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
     /**
      * No Language Option Change
+     * 
+     * API-Since: 9.3
      */
     @Generated @NInt public static final long NowPlayingItemOnly = 0x0000000000000001L;
     /**
      * The Language Option change applies only the the now playing item
+     * 
+     * API-Since: 9.3
      */
     @Generated @NInt public static final long Permanent = 0x0000000000000002L;
 

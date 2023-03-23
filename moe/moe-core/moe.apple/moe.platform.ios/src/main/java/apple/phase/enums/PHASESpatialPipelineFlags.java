@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] PHASESpatialPipelineFlags
- * <p>
+ * 
  * Spatial pipeline flags.
  * [@constant] PHASESpatialPipelineFlagDirectPathTransmission
  * Direct Path Transmission.

@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A WKBackForwardListItem object represents a webpage in the back-forward list of a web view.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("WebKit")

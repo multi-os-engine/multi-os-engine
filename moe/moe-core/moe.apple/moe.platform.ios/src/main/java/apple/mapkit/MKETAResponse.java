@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -155,15 +158,23 @@ public class MKETAResponse extends NSObject {
 
     /**
      * overall route distance in meters
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("distance")
     public native double distance();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("expectedArrivalDate")
     public native NSDate expectedArrivalDate();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("expectedDepartureDate")
     public native NSDate expectedDepartureDate();
@@ -183,6 +194,9 @@ public class MKETAResponse extends NSObject {
     @Selector("source")
     public native MKMapItem source();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("transportType")
     @NUInt

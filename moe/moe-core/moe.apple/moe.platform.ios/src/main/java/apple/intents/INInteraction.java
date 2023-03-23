@@ -48,9 +48,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An app can use an INInteraction to donate an action (represented as an intent) and its state to the system.
- * <p>
+ * 
  * The system may also launch the app with an NSUserActivity containing an INInteraction such that the app can perform
  * the action if it chooses.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Intents")
@@ -332,6 +334,9 @@ public class INInteraction extends NSObject implements NSSecureCoding, NSCopying
         void call_donateInteractionWithCompletion(NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("parameterValueForParameter:")
     @MappedReturn(ObjCObjectMapper.class)

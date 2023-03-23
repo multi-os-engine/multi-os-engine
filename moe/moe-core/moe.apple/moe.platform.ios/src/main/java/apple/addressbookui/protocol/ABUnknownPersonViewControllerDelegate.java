@@ -47,6 +47,8 @@ public interface ABUnknownPersonViewControllerDelegate {
      * kABMultiValueInvalidIdentifier if a single value property was selected.
      * Return NO if you do not want anything to be done or if you are handling the actions yourself.
      * Return YES if you want the ABUnknownPersonViewController to perform its default action.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @IsOptional

@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] EKRecurrenceFrequency
- * <p>
+ * 
  * The frequency of a recurrence
- * <p>
+ * 
  * EKRecurrenceFrequency designates the unit of time used to describe the recurrence.
  * It has four possible values, which correspond to recurrence rules that are defined
  * in terms of days, weeks, months, and years.

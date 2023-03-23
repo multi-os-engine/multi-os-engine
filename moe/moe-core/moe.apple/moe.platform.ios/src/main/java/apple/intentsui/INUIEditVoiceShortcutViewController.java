@@ -30,10 +30,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A view controller that shows the details of a voice shortcut, and lets the user edit the phrase.
- * <p>
+ * 
  * To have the user edit a voice shortcut, create an @c INUIEditVoiceShortcutViewController object with the @c
  * INVoiceShortcut that they wish to edit, and set its delegate. Then, present the view controller modally from another
  * view controller in your app. Your delegate must dismiss the view controller when the user finishes editing.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("IntentsUI")
@@ -63,6 +65,7 @@ public class INUIEditVoiceShortcutViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native INUIEditVoiceShortcutViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();

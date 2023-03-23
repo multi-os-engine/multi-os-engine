@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_listener_state_t
- * <p>
+ * 
  * Listener states sent by nw_listener_set_state_changed_handler.
  * States progress forward and do not move backwards.
  */

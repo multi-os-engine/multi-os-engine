@@ -42,9 +42,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSImageDescriptor
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * A MPSImageDescriptor object describes a attributes of MPSImage and is used to
  * create one (see MPSImage discussion below)
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -175,7 +177,7 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] channelFormat
-     * <p>
+     * 
      * The storage format to use for each channel in the image.
      */
     @Generated
@@ -185,7 +187,7 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] cpuCacheMode
-     * <p>
+     * 
      * Options to specify CPU cache mode of texture resource. Default = MTLCPUCacheModeDefaultCache
      */
     @Generated
@@ -195,7 +197,7 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] featureChannels
-     * <p>
+     * 
      * The number of feature channels per pixel. Default = 1.
      */
     @Generated
@@ -205,9 +207,9 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] height
-     * <p>
+     * 
      * The height of the CNN image.
-     * <p>
+     * 
      * The formal height of the CNN image in pixels. Default = 1.
      */
     @Generated
@@ -221,7 +223,7 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] numberOfImages
-     * <p>
+     * 
      * The number of images for batch processing. Default = 1.
      */
     @Generated
@@ -231,7 +233,7 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] pixelFormat
-     * <p>
+     * 
      * The MTLPixelFormat expected for the underlying texture.
      */
     @Generated
@@ -241,7 +243,7 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] channelFormat
-     * <p>
+     * 
      * The storage format to use for each channel in the image.
      */
     @Generated
@@ -250,7 +252,7 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] cpuCacheMode
-     * <p>
+     * 
      * Options to specify CPU cache mode of texture resource. Default = MTLCPUCacheModeDefaultCache
      */
     @Generated
@@ -259,7 +261,7 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] featureChannels
-     * <p>
+     * 
      * The number of feature channels per pixel. Default = 1.
      */
     @Generated
@@ -268,9 +270,9 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] height
-     * <p>
+     * 
      * The height of the CNN image.
-     * <p>
+     * 
      * The formal height of the CNN image in pixels. Default = 1.
      */
     @Generated
@@ -279,7 +281,7 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] numberOfImages
-     * <p>
+     * 
      * The number of images for batch processing. Default = 1.
      */
     @Generated
@@ -288,9 +290,9 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] storageMode
-     * <p>
+     * 
      * To specify storage mode of texture resource.
-     * <p>
+     * 
      * Storage mode options:
      * [@code]
      * Default = MTLStorageModeShared on iOS
@@ -305,7 +307,7 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] usage
-     * <p>
+     * 
      * Description of texture usage. Default = MTLTextureUsageShaderRead/Write
      */
     @Generated
@@ -314,9 +316,9 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] width
-     * <p>
+     * 
      * The width of the CNN image.
-     * <p>
+     * 
      * The formal width of the CNN image in pixels. Default = 1.
      */
     @Generated
@@ -325,9 +327,9 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] storageMode
-     * <p>
+     * 
      * To specify storage mode of texture resource.
-     * <p>
+     * 
      * Storage mode options:
      * [@code]
      * Default = MTLStorageModeShared on iOS
@@ -343,7 +345,7 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] usage
-     * <p>
+     * 
      * Description of texture usage. Default = MTLTextureUsageShaderRead/Write
      */
     @Generated
@@ -353,9 +355,9 @@ public class MPSImageDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] width
-     * <p>
+     * 
      * The width of the CNN image.
-     * <p>
+     * 
      * The formal width of the CNN image in pixels. Default = 1.
      */
     @Generated

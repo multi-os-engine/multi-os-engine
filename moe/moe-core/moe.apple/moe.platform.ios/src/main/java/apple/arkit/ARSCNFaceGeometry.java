@@ -31,6 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A SceneKit geometry representing a face.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ARKit")
@@ -92,7 +94,7 @@ public class ARSCNFaceGeometry extends SCNGeometry {
 
     /**
      * Creates a new face geometry using a Metal device.
-     *
+     * 
      * @param device A Metal device.
      * @return A new face geometry.
      */
@@ -102,15 +104,16 @@ public class ARSCNFaceGeometry extends SCNGeometry {
 
     /**
      * Creates a new face geometry using a Metal device.
-     * <p>
+     * 
      * By default the regions between the eye lids as well as the region
      * between the lips are not covered by geometry. For using the face geometry as an
      * occlusion geometry set \p fillMesh to YES. This will fill
      * in additional geometry into the gaps between the eye lids as well as into the
      * gap between the lips.
-     *
+     * 
      * @param fillMesh Whether to fill in additional geometry into the
      *                 gaps between the eye lids as well as into the gap between the lips.
+     * 
      * @return A new face geometry.
      */
     @Generated
@@ -198,7 +201,7 @@ public class ARSCNFaceGeometry extends SCNGeometry {
 
     /**
      * Updates the geometry with the vertices of a face geometry.
-     *
+     * 
      * @param faceGeometry A face geometry.
      */
     @Generated

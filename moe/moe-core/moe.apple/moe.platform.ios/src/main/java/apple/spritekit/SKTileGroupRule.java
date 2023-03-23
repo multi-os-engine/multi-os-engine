@@ -48,6 +48,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * and the rules define how they should be pieced together. This is accomplished by defining which neighboring spaces
  * need to be filled with tiles that belong to the same group, and which tiles are required to be empty. The required
  * pattern of neighboring tiles is defined using the SKTileAdjacencyMask.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("SpriteKit")
@@ -156,7 +158,7 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * Create a tile group rule with the specified adjacency and tile definitions.
-     *
+     * 
      * @param adjacency       the adjacency requirements for this rule; use the mask that covers the adjacent spaces
      *                        that must be filled with tiles belonging to the same group; tiles not masked out must be
      *                        empty
@@ -197,7 +199,7 @@ public class SKTileGroupRule extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * Initilize a tile group rule with the specified adjacency and tile definitions.
-     *
+     * 
      * @param adjacency       the adjacency requirements for this rule; use the mask that covers the adjacent spaces
      *                        that must be filled with tiles belonging to the same group; tiles not masked out must be
      *                        empty

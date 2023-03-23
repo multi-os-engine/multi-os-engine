@@ -19,18 +19,27 @@ package apple.callkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class CXPlayDTMFCallActionType {
     /**
      * The user tapped a digit on the in-call keypad
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long SingleTone = 0x0000000000000001L;
     /**
      * The user included digits after a soft pause in their dial string
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long SoftPause = 0x0000000000000002L;
     /**
      * The user included digits after a hard pause in their dial string
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long HardPause = 0x0000000000000003L;
 

@@ -13,6 +13,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Formalizes a protocol for getting and setting keys on a CKRecord. Not intended to be used directly by client code
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("CloudKit")

@@ -19,15 +19,42 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class MTLStencilOperation {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Keep = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Zero = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Replace = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long IncrementClamp = 0x0000000000000003L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long DecrementClamp = 0x0000000000000004L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Invert = 0x0000000000000005L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long IncrementWrap = 0x0000000000000006L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long DecrementWrap = 0x0000000000000007L;
 
     @Generated

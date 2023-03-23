@@ -1,8 +1,6 @@
 package apple.pencilkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSData;
@@ -35,9 +33,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * The data model object for storing drawing data created from PKCanvasView.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("PencilKit")
@@ -106,7 +108,7 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Generate a data representation of the drawing.
-     *
+     * 
      * @return A NSData object containing a representation of the drawing.
      */
     @Generated
@@ -123,7 +125,7 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns a new drawing by appending the contents of `drawing` on top of the receiver’s contents.
-     *
+     * 
      * @param drawing The drawing to append.
      * @return A new copy of this drawing with `drawing` appended onto it.
      */
@@ -133,7 +135,7 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns a new drawing with `transform` applied.
-     *
+     * 
      * @param transform The transform to apply to this drawing.
      * @return A new copy of this drawing with `transform` applied.
      */
@@ -167,7 +169,7 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Initializes and returns the drawing with the specified data.
-     *
+     * 
      * @param data  The data containing the drawing data.
      * @param error If an error occurs, upon return the NSError object describes the error.
      *              Set to NULL to ignore errors.
@@ -238,9 +240,11 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Create a new drawing by appending an array of strokes to this drawing.
      * This is a convenience method, to quickly add strokes to a drawing.
-     *
+     * 
      * @param strokes The strokes to append.
      * @return A new copy of this drawing with `strokes` appended onto it.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("drawingByAppendingStrokes:")
@@ -248,6 +252,8 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Initializes a drawing with an array of strokes.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithStrokes:")
@@ -255,6 +261,8 @@ public class PKDrawing extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * The strokes that this drawing contains.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("strokes")

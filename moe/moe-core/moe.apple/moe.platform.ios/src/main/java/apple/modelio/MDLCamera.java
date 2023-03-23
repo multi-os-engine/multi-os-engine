@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -73,6 +76,9 @@ public class MDLCamera extends MDLObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("cameraWithSCNCamera:")
     public static native MDLCamera cameraWithSCNCamera(SCNCamera scnCamera);
@@ -199,7 +205,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * The field of view, in degrees.
-     *
+     * 
      * @see focalLength
      */
     @Generated
@@ -215,7 +221,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Lens focal length in mm.
-     *
+     * 
      * @see fieldOfView
      */
     @Generated
@@ -255,7 +261,6 @@ public class MDLCamera extends MDLObject {
     public native float opticalVignetting();
 
     /**
-     *
      */
     @Generated
     @Selector("projection")
@@ -264,7 +269,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Sensor or film gate aperture aspect ratio, default is 1.5
-     *
+     * 
      * @see sensorVerticalAperture
      */
     @Generated
@@ -273,7 +278,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * vertical aperture of the sensor or film gate, default is 24mm
-     *
+     * 
      * @see sensorAspect
      */
     @Generated
@@ -314,7 +319,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * The field of view, in degrees.
-     *
+     * 
      * @see focalLength
      */
     @Generated
@@ -330,7 +335,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Lens focal length in mm.
-     *
+     * 
      * @see fieldOfView
      */
     @Generated
@@ -366,7 +371,6 @@ public class MDLCamera extends MDLObject {
     public native void setOpticalVignetting(float value);
 
     /**
-     *
      */
     @Generated
     @Selector("setProjection:")
@@ -374,7 +378,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * Sensor or film gate aperture aspect ratio, default is 1.5
-     *
+     * 
      * @see sensorVerticalAperture
      */
     @Generated
@@ -383,7 +387,7 @@ public class MDLCamera extends MDLObject {
 
     /**
      * vertical aperture of the sensor or film gate, default is 24mm
-     *
+     * 
      * @see sensorAspect
      */
     @Generated

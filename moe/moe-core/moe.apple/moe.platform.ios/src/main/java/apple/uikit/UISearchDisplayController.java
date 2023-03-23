@@ -42,6 +42,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ * Deprecated-Since: 8.0
+ * Deprecated-Message: UISearchDisplayController has been replaced with UISearchController
+ */
 @Deprecated
 @Generated
 @Library("UIKit")
@@ -161,6 +166,8 @@ public class UISearchDisplayController extends NSObject {
     /**
      * Displaying the search bar in a navigation bar will override the contentsController's navigationItem if it has
      * one.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("displaysSearchBarInNavigationBar")
@@ -189,6 +196,9 @@ public class UISearchDisplayController extends NSObject {
     @Selector("setActive:")
     public native void setActive(boolean value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("navigationItem")
     public native UINavigationItem navigationItem();
@@ -229,6 +239,8 @@ public class UISearchDisplayController extends NSObject {
 
     /**
      * default is nil. If nil, the controller uses the default title string
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("searchResultsTitle")
@@ -260,6 +272,8 @@ public class UISearchDisplayController extends NSObject {
     /**
      * Displaying the search bar in a navigation bar will override the contentsController's navigationItem if it has
      * one.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setDisplaysSearchBarInNavigationBar:")
@@ -311,6 +325,8 @@ public class UISearchDisplayController extends NSObject {
 
     /**
      * default is nil. If nil, the controller uses the default title string
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setSearchResultsTitle:")

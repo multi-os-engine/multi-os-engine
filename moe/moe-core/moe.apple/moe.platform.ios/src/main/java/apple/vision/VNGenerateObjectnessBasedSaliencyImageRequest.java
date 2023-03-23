@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * a human is likely to see as an object).
  * The resulting observation, VNSaliencyImageObservation, encodes this data as a heat map which can be used highlight
  * regions of interest.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Vision")

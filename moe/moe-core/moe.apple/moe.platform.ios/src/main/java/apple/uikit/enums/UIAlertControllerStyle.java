@@ -19,9 +19,18 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class UIAlertControllerStyle {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long ActionSheet = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Alert = 0x0000000000000001L;
 
     @Generated

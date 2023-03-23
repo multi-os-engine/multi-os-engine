@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCGraph
- * <p>
+ * 
  * A graph of layers that can be used to build a training or inference graph
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -64,13 +66,13 @@ public class MLCGraph extends NSObject {
     /**
      * Associates data with input tensors. If the device is GPU, also copies the data to the device memory.
      * Returns true if the data is successfully associated with input tensors.
-     * <p>
+     * 
      * This function should be used if you execute the forward, gradient and optimizer updates independently.
      * Before the forward pass is executed, the inputs should be written to device memory. Similarly, before the
      * gradient pass is executed, the inputs (typically the initial gradient tensor) should be written to device
      * memory. The caller must guarantee the lifetime of the underlying memory of each value of \p inputsData
      * for the entirety of each corresponding input tensor's lifetime.
-     *
+     * 
      * @param inputsData   The input data to use to write to device memory
      * @param inputTensors The list of tensors to perform writes on
      * @param device       The device
@@ -91,13 +93,13 @@ public class MLCGraph extends NSObject {
     /**
      * Associates data with input tensors. If the device is GPU, also copies the data to the device memory.
      * Returns true if the data is successfully associated with input tensors.
-     * <p>
+     * 
      * This function should be used if you execute the forward, gradient and optimizer updates independently.
      * Before the forward pass is executed, the inputs should be written to device memory. Similarly, before the
      * gradient pass is executed, the inputs (typically the initial gradient tensor) should be written to device
      * memory. The caller must guarantee the lifetime of the underlying memory of each value of \p inputsData
      * for the entirety of each corresponding input tensor's lifetime.
-     *
+     * 
      * @param inputsData   The input data to use to write to device memory
      * @param inputTensors The list of tensors to perform writes on
      * @param device       The device
@@ -131,7 +133,7 @@ public class MLCGraph extends NSObject {
 
     /**
      * Add a concat layer to the graph
-     *
+     * 
      * @param sources   The source tensors to concatenate
      * @param dimension The concatenation dimension
      * @return A result tensor
@@ -158,11 +160,13 @@ public class MLCGraph extends NSObject {
 
     /**
      * Add a gather layer to the graph
-     *
+     * 
      * @param dimension The dimension along which to index
      * @param source    The source tensor
      * @param indices   The index of elements to gather
      * @return A result tensor
+     * 
+     *         API-Since: 14.5
      */
     @Generated
     @Selector("gatherWithDimension:source:indices:")
@@ -171,7 +175,7 @@ public class MLCGraph extends NSObject {
 
     /**
      * Creates a new graph.
-     *
+     * 
      * @return A new graph.
      */
     @Generated
@@ -222,7 +226,7 @@ public class MLCGraph extends NSObject {
 
     /**
      * Add a layer to the graph
-     *
+     * 
      * @param layer  The layer
      * @param source The source tensor
      * @return A result tensor
@@ -233,10 +237,10 @@ public class MLCGraph extends NSObject {
 
     /**
      * Add a layer to the graph
-     * <p>
+     * 
      * For variable length sequences of LSTMs/RNNs layers, create an MLCTensor of sortedSequenceLengths and pass it as
      * the last index (i.e. index 2 or 4) of sources. This tensor must of be type MLCDataTypeInt32.
-     *
+     * 
      * @param layer   The layer
      * @param sources A list of source tensors
      * @return A result tensor
@@ -247,10 +251,10 @@ public class MLCGraph extends NSObject {
 
     /**
      * Add a layer to the graph
-     * <p>
+     * 
      * For variable length sequences of LSTMs/RNNs layers, create an MLCTensor of sortedSequenceLengths and pass it as
      * the last index (i.e. index 2 or 4) of sources. This tensor must of be type MLCDataTypeInt32.
-     *
+     * 
      * @param layer         The layer
      * @param sources       A list of source tensors
      * @param disableUpdate A flag to indicate if optimizer update should be disabled for this layer
@@ -263,10 +267,10 @@ public class MLCGraph extends NSObject {
 
     /**
      * Add a loss layer to the graph
-     * <p>
+     * 
      * For variable length sequences of LSTMs/RNNs layers, create an MLCTensor of sortedSequenceLengths and pass it as
      * the last index (i.e. index 2 or 4) of sources. This tensor must of be type MLCDataTypeInt32.
-     *
+     * 
      * @param layer      The loss layer
      * @param lossLabels The loss labels tensor
      * @return A result tensor
@@ -278,7 +282,7 @@ public class MLCGraph extends NSObject {
 
     /**
      * Add a reshape layer to the graph
-     *
+     * 
      * @param shape  An array representing the shape of result tensor
      * @param source The source tensor
      * @return A result tensor
@@ -297,7 +301,7 @@ public class MLCGraph extends NSObject {
 
     /**
      * Get the result tensors for a layer in the training graph
-     *
+     * 
      * @param layer A layer in the training graph
      * @return A list of tensors
      */
@@ -307,7 +311,7 @@ public class MLCGraph extends NSObject {
 
     /**
      * Add a scatter layer to the graph
-     *
+     * 
      * @param dimension     The dimension along which to index
      * @param source        The updates to use with scattering with index positions specified in indices to result
      *                      tensor
@@ -317,6 +321,8 @@ public class MLCGraph extends NSObject {
      *                      location in the result tensor.
      *                      Must be: MLCReductionTypeNone or MLCReductionTypeSum.
      * @return A result tensor
+     * 
+     *         API-Since: 14.5
      */
     @Generated
     @Selector("scatterWithDimension:source:indices:copyFrom:reductionType:")
@@ -325,10 +331,12 @@ public class MLCGraph extends NSObject {
 
     /**
      * Add a select layer to the graph
-     *
+     * 
      * @param sources   The source tensors
      * @param condition The condition mask
      * @return A result tensor
+     * 
+     *         API-Since: 14.5
      */
     @Generated
     @Selector("selectWithSources:condition:")
@@ -340,7 +348,7 @@ public class MLCGraph extends NSObject {
 
     /**
      * Get the source tensors for a layer in the training graph
-     *
+     * 
      * @param layer A layer in the training graph
      * @return A list of tensors
      */
@@ -350,7 +358,7 @@ public class MLCGraph extends NSObject {
 
     /**
      * Add a split layer to the graph
-     *
+     * 
      * @param source     The source tensor
      * @param splitCount The number of splits
      * @param dimension  The dimension to split the source tensor
@@ -363,7 +371,7 @@ public class MLCGraph extends NSObject {
 
     /**
      * Add a split layer to the graph
-     *
+     * 
      * @param source              The source tensor
      * @param splitSectionLengths The lengths of each split section
      * @param dimension           The dimension to split the source tensor
@@ -376,7 +384,7 @@ public class MLCGraph extends NSObject {
 
     /**
      * A DOT representation of the graph.
-     * <p>
+     * 
      * For more info on the DOT language, refer to https://en.wikipedia.org/wiki/DOT_(graph_description_language).
      * Edges that have a dashed lines are those that have stop gradients, while those with solid lines don't.
      */
@@ -390,7 +398,7 @@ public class MLCGraph extends NSObject {
 
     /**
      * Add a transpose layer to the graph
-     *
+     * 
      * @param dimensions NSArray<NSNumber *> representing the desired ordering of dimensions
      *                   The dimensions array specifies the input axis source for each output axis, such that the
      *                   K'th element in the dimensions array specifies the input axis source for the K'th axis in the

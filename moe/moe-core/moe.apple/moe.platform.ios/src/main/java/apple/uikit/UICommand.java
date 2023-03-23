@@ -24,15 +24,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.protocol.UIMenuLeaf;
+import apple.uikit.protocol.UIPopoverPresentationControllerSourceItem;
 
 /**
  * Represents an action to take.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UICommand extends UIMenuElement {
+public class UICommand extends UIMenuElement implements UIMenuLeaf {
     static {
         NatJ.register();
     }
@@ -102,7 +106,7 @@ public class UICommand extends UIMenuElement {
 
     /**
      * Initializes a keyless command.
-     *
+     * 
      * @param title        Short display title. This should be localized.
      * @param image        Image that can appear next to this command, if needed.
      * @param action       Action to take on choosing this command.
@@ -116,7 +120,7 @@ public class UICommand extends UIMenuElement {
 
     /**
      * Initializes a keyless command with alternates.
-     *
+     * 
      * @param title        Short display title. This should be localized.
      * @param image        Image that can appear next to this command, if needed.
      * @param action       Action to take on choosing this command.
@@ -279,4 +283,19 @@ public class UICommand extends UIMenuElement {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("performWithSender:target:")
+    public native void performWithSenderTarget(@Mapped(ObjCObjectMapper.class) Object sender,
+            @Mapped(ObjCObjectMapper.class) Object target);
+
+    @Generated
+    @Selector("presentationSourceItem")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIPopoverPresentationControllerSourceItem presentationSourceItem();
+
+    @Generated
+    @Selector("sender")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object sender();
 }

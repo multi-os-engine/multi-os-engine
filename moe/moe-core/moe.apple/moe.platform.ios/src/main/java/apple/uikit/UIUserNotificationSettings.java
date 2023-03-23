@@ -38,6 +38,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ * Deprecated-Since: 10.0
+ * Deprecated-Message: Use UserNotifications Framework's UNNotificationSettings
+ */
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)

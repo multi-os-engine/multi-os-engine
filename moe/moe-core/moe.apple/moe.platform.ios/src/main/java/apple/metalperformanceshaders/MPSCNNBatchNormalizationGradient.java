@@ -29,15 +29,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNBatchNormalizationGradient
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * MPSCNNBatchNormalizationGradient computes the gradients of a
  * loss function resulting from a network containing a corresponding
  * MPSCNNBatchNormalization kernel.
- * <p>
+ * 
  * Two sets of values are computed: the gradient of the loss function
  * with respect to the batch normalization source images, and the
  * gradient of the loss function with respect to the scale and bias
  * terms used to compute the batch normalization.
+ * 
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -111,7 +114,7 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
 
     /**
      * Encode this operation to a command buffer for a single image.
-     *
+     * 
      * @param commandBuffer           The command buffer.
      * @param sourceGradient          An MPSImage containing the gradient of the loss function with
      *                                respect to the results of batch normalization on the source image.
@@ -144,7 +147,7 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
@@ -152,7 +155,7 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
      * that problem, use a subclass of NSCoder that
      * implements the <MPSDeviceProvider> protocol to
      * tell MPS the MTLDevice to use.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSCNNBatchNormalizationGradient object, or nil if failure.
@@ -168,7 +171,7 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
 
     /**
      * Initializes a batch normalization gradient kernel using a device and neuron descriptor.
-     *
+     * 
      * @param device                The MTLDevice on which this filter will be used
      * @param fusedNeuronDescriptor A MPSNNNeuronDescriptor object which specifies a neuron activation function whose
      *                              gradient should be applied prior to computing the resulting gradient.
@@ -176,7 +179,10 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
      *                              normalization kernel as well as the preceeding batch normalization statistics
      *                              gradient
      *                              kernel.
+     * 
      * @return A valid MPSCNNBatchNormalizationGradient object or nil, if failure.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("initWithDevice:fusedNeuronDescriptor:")

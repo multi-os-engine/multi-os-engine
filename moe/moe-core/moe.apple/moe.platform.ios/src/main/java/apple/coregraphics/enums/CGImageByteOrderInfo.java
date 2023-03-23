@@ -18,17 +18,38 @@ package apple.coregraphics.enums;
 
 import org.moe.natj.general.ann.Generated;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 public final class CGImageByteOrderInfo {
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int OrderMask = 0x00007000;
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int Order16Little = 0x00001000;
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int Order32Little = 0x00002000;
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int Order16Big = 0x00003000;
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int Order32Big = 0x00004000;
 
     @Generated
     private CGImageByteOrderInfo() {
     }
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated public static final int OrderDefault = 0x00000000;
 }

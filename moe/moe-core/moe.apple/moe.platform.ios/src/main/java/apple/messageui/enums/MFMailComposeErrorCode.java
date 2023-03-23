@@ -21,18 +21,26 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] MFMailComposeErrorCode
- * <p>
+ * 
  * Error codes for NSError values stemming from the MFMailCompose API.
- * <p>
+ * 
  * These error codes are used as the codes for all NSError instances stemmming from the
  * MFMailCompose API. These are the only valid values for NSError instances with the
  * <tt>MFMailComposeErrorDomain</tt> domain.
  * [@constant] MFMailComposeErrorCodeSaveFailed Generic error indicating a save failed.
  * [@constant] MFMailComposeErrorCodeSendFailed Generic error indicating a send failed.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 public final class MFMailComposeErrorCode {
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long SaveFailed = 0x0000000000000000L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long SendFailed = 0x0000000000000001L;
 
     @Generated

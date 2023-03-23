@@ -138,7 +138,7 @@ public final class Enums {
      */
     @Generated public static final int kCVPixelFormatType_4444AYpCbCr16 = 0x79343136;
     /**
-     * Component Y'CbCr 8-bit 4:4:4
+     * Component Y'CbCr 8-bit 4:4:4, ordered Cr Y' Cb, video range Y'CbCr
      */
     @Generated public static final int kCVPixelFormatType_444YpCbCr8 = 0x76333038;
     /**

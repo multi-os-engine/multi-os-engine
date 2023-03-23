@@ -46,6 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * A WKPreferences object encapsulates the preference settings for a web
  * view. The preferences object associated with a web view is specified by
  * its web view configuration.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("WebKit")
@@ -172,20 +174,27 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     /**
      * A Boolean value indicating whether JavaScript can open
      * windows without user interaction.
-     * <p>
+     * 
      * The default value is NO in iOS and YES in OS X.
      */
     @Generated
     @Selector("javaScriptCanOpenWindowsAutomatically")
     public native boolean javaScriptCanOpenWindowsAutomatically();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use WKWebPagePreferences.allowsContentJavaScript to disable content JavaScript on a
+     * per-navigation basis
+     */
+    @Deprecated
     @Generated
     @Selector("javaScriptEnabled")
     public native boolean javaScriptEnabled();
 
     /**
      * The minimum font size in points.
-     * <p>
+     * 
      * The default value is 0.
      */
     @Generated
@@ -196,20 +205,27 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     /**
      * A Boolean value indicating whether JavaScript can open
      * windows without user interaction.
-     * <p>
+     * 
      * The default value is NO in iOS and YES in OS X.
      */
     @Generated
     @Selector("setJavaScriptCanOpenWindowsAutomatically:")
     public native void setJavaScriptCanOpenWindowsAutomatically(boolean value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use WKWebPagePreferences.allowsContentJavaScript to disable content JavaScript on a
+     * per-navigation basis
+     */
+    @Deprecated
     @Generated
     @Selector("setJavaScriptEnabled:")
     public native void setJavaScriptEnabled(boolean value);
 
     /**
      * The minimum font size in points.
-     * <p>
+     * 
      * The default value is 0.
      */
     @Generated
@@ -219,8 +235,10 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     /**
      * A Boolean value indicating whether warnings should be
      * shown for suspected fraudulent content such as phishing or malware.
-     * <p>
+     * 
      * The default value is YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isFraudulentWebsiteWarningEnabled")
@@ -229,8 +247,10 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
     /**
      * A Boolean value indicating whether warnings should be
      * shown for suspected fraudulent content such as phishing or malware.
-     * <p>
+     * 
      * The default value is YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setFraudulentWebsiteWarningEnabled:")
@@ -248,6 +268,8 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
 
     /**
      * A Boolean value indicating whether text interaction is disabled.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("isTextInteractionEnabled")
@@ -255,8 +277,54 @@ public class WKPreferences extends NSObject implements NSSecureCoding {
 
     /**
      * A Boolean value indicating whether text interaction is disabled.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setTextInteractionEnabled:")
     public native void setTextInteractionEnabled(boolean value);
+
+    /**
+     * A Boolean value indicating whether Fullscreen API is enabled.
+     * 
+     * The default value is NO. We can set it to YES to enable support for the fullscreen API.
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @Selector("isElementFullscreenEnabled")
+    public native boolean isElementFullscreenEnabled();
+
+    /**
+     * A Boolean value indicating whether WebKit will apply built-in workarounds (quirks)
+     * to improve compatibility with certain known websites. You can disable site-specific quirks
+     * to help test your website without these workarounds. Enabled by default.
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @Selector("isSiteSpecificQuirksModeEnabled")
+    public native boolean isSiteSpecificQuirksModeEnabled();
+
+    /**
+     * A Boolean value indicating whether Fullscreen API is enabled.
+     * 
+     * The default value is NO. We can set it to YES to enable support for the fullscreen API.
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @Selector("setElementFullscreenEnabled:")
+    public native void setElementFullscreenEnabled(boolean value);
+
+    /**
+     * A Boolean value indicating whether WebKit will apply built-in workarounds (quirks)
+     * to improve compatibility with certain known websites. You can disable site-specific quirks
+     * to help test your website without these workarounds. Enabled by default.
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @Selector("setSiteSpecificQuirksModeEnabled:")
+    public native void setSiteSpecificQuirksModeEnabled(boolean value);
 }

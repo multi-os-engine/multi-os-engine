@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An Xcode quicklook of this object will show a graph visualization of the render
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreImage")

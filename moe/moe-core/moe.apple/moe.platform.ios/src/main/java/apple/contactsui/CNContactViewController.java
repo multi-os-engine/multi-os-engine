@@ -50,9 +50,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The @c CNContactViewController is used to display a contact.
- * <p>
+ * 
  * This class can display a new contact, unknown contact or existing contact.
  * You must use one of the class factory methods.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ContactsUI")
@@ -82,6 +84,7 @@ public class CNContactViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native CNContactViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -122,7 +125,7 @@ public class CNContactViewController extends UIViewController {
 
     /**
      * Descriptor for all keys that must be fetched on a contact before setting it on the view controller.
-     * <p>
+     * 
      * If you want to display an existing contact in a @c CNContactViewController,
      * this descriptor must have been included in the @c keysToFetch property of the
      * [@c] CNContactFetchRequest. (A newly created @c CNMutableContact may be used safely.)
@@ -186,12 +189,12 @@ public class CNContactViewController extends UIViewController {
 
     /**
      * Initializes a contact view controller for a known contact.
-     * <p>
+     * 
      * Use this view controller for a contact that has been fetched
      * from the user’s contacts database.
      * Allows editing of the contact by default.
      * [@note] All keys of the given contact must be fetched.
-     *
+     * 
      * @see contactStore
      * @see allowsEditing
      */
@@ -201,7 +204,7 @@ public class CNContactViewController extends UIViewController {
 
     /**
      * Initializes a contact view controller for creating a new contact.
-     * <p>
+     * 
      * Use this view controller with a contact to be added to the user's contacts.
      * [@note] The given contact should be a newly initialized contact and
      * not one fetched from the user's contacts.
@@ -212,13 +215,13 @@ public class CNContactViewController extends UIViewController {
 
     /**
      * Initializes a contact view controller for an unknown contact.
-     * <p>
+     * 
      * Use this view controller for a populated contact not fetched from the user’s contacts.
      * Such a contact might be obtained by parsing a vCard or setting properties on a newly
      * created @c CNMutableContact.
      * This controller does not allow editing, but by default does allow actions
      * for adding the contact to the contacts database.
-     *
+     * 
      * @see contactStore
      */
     @Generated
@@ -255,17 +258,17 @@ public class CNContactViewController extends UIViewController {
 
     /**
      * The @c CNContactStore where the contact was fetched from or will be saved to.
-     * <p>
+     * 
      * If @c contactStore is not set, actions for adding the contact to the
      * user's contacts are disabled. This does not affect the ability to edit
      * the contact.
-     * <p>
+     * 
      * If the user edits the contact and the editing is committed, the contact
      * will be updated in the user's contacts database or added to the user's
      * contacts database if not already present.
-     * <p>
+     * 
      * To prevent editing of a known contact, set @c allowsEditing to @c NO.
-     *
+     * 
      * @see allowsEditing
      */
     @Generated
@@ -282,7 +285,7 @@ public class CNContactViewController extends UIViewController {
 
     /**
      * The @c CNContact property keys to display.
-     * <p>
+     * 
      * If @c nil, all properties are displayed. (The property is @c nil by default.)
      * [@note] All properties are visible when editing the contact.
      */
@@ -292,7 +295,7 @@ public class CNContactViewController extends UIViewController {
 
     /**
      * Highlight a property.
-     * <p>
+     * 
      * Indicates whether to highlight a certain property value for the contact.
      * If a single value property key is specified, identifier will be ignored.
      */
@@ -321,7 +324,7 @@ public class CNContactViewController extends UIViewController {
 
     /**
      * A @c CNContainer where the new contact will be created.
-     * <p>
+     * 
      * If not set the contact is added to the default container.
      */
     @Generated
@@ -330,7 +333,7 @@ public class CNContactViewController extends UIViewController {
 
     /**
      * A @c CNGroup where the new contact will be assigned membership.
-     * <p>
+     * 
      * If not set the contact is added only to the default @c CNContainer with no group membership.
      * [@note] When set to a group not in the default container, the container
      * property must also be set to the container of parentGroup.
@@ -362,17 +365,17 @@ public class CNContactViewController extends UIViewController {
 
     /**
      * The @c CNContactStore where the contact was fetched from or will be saved to.
-     * <p>
+     * 
      * If @c contactStore is not set, actions for adding the contact to the
      * user's contacts are disabled. This does not affect the ability to edit
      * the contact.
-     * <p>
+     * 
      * If the user edits the contact and the editing is committed, the contact
      * will be updated in the user's contacts database or added to the user's
      * contacts database if not already present.
-     * <p>
+     * 
      * To prevent editing of a known contact, set @c allowsEditing to @c NO.
-     *
+     * 
      * @see allowsEditing
      */
     @Generated
@@ -403,7 +406,7 @@ public class CNContactViewController extends UIViewController {
 
     /**
      * The @c CNContact property keys to display.
-     * <p>
+     * 
      * If @c nil, all properties are displayed. (The property is @c nil by default.)
      * [@note] All properties are visible when editing the contact.
      */
@@ -420,7 +423,7 @@ public class CNContactViewController extends UIViewController {
 
     /**
      * A @c CNContainer where the new contact will be created.
-     * <p>
+     * 
      * If not set the contact is added to the default container.
      */
     @Generated
@@ -429,7 +432,7 @@ public class CNContactViewController extends UIViewController {
 
     /**
      * A @c CNGroup where the new contact will be assigned membership.
-     * <p>
+     * 
      * If not set the contact is added only to the default @c CNContainer with no group membership.
      * [@note] When set to a group not in the default container, the container
      * property must also be set to the container of parentGroup.

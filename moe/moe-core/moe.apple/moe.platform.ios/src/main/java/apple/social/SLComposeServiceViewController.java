@@ -17,7 +17,6 @@ limitations under the License.
 package apple.social;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSCoder;
@@ -52,7 +51,14 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.UIMenu;
+import apple.uikit.UIMenuElement;
+import apple.uikit.protocol.UIEditMenuInteractionAnimating;
+import apple.corefoundation.struct.CGPoint;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Social")
 @Runtime(ObjCRuntime.class)
@@ -81,6 +87,7 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @Selector("allocWithZone:")
     public static native SLComposeServiceViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -419,6 +426,7 @@ public class SLComposeServiceViewController extends UIViewController implements 
     public native boolean textViewShouldChangeTextInRangeReplacementText(UITextView textView, @ByValue NSRange range,
             String text);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithTextAttachment:inRange:")
@@ -431,6 +439,7 @@ public class SLComposeServiceViewController extends UIViewController implements 
     public native boolean textViewShouldInteractWithTextAttachmentInRangeInteraction(UITextView textView,
             NSTextAttachment textAttachment, @ByValue NSRange characterRange, @NInt long interaction);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithURL:inRange:")
@@ -492,4 +501,22 @@ public class SLComposeServiceViewController extends UIViewController implements 
     @IsOptional
     @Selector("scrollViewDidChangeAdjustedContentInset:")
     public native void scrollViewDidChangeAdjustedContentInset(UIScrollView scrollView);
+
+    @Generated
+    @IsOptional
+    @Selector("textView:editMenuForTextInRange:suggestedActions:")
+    public native UIMenu textViewEditMenuForTextInRangeSuggestedActions(UITextView textView, @ByValue NSRange range,
+            NSArray<? extends UIMenuElement> suggestedActions);
+
+    @Generated
+    @IsOptional
+    @Selector("textView:willDismissEditMenuWithAnimator:")
+    public native void textViewWillDismissEditMenuWithAnimator(UITextView textView,
+            @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator);
+
+    @Generated
+    @IsOptional
+    @Selector("textView:willPresentEditMenuWithAnimator:")
+    public native void textViewWillPresentEditMenuWithAnimator(UITextView textView,
+            @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator);
 }

@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -157,9 +160,11 @@ public class AVAssetResourceLoadingRequest extends NSObject {
 
     /**
      * [@property] contentInformationRequest
-     * <p>
+     * 
      * An instance of AVAssetResourceLoadingContentInformationRequest that you should populate with information about
      * the resource. The value of this property will be nil if no such information is being requested.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("contentInformationRequest")
@@ -167,9 +172,11 @@ public class AVAssetResourceLoadingRequest extends NSObject {
 
     /**
      * [@property] dataRequest
-     * <p>
+     * 
      * An instance of AVAssetResourceLoadingDataRequest that indicates the range of resource data that's being
      * requested. The value of this property will be nil if no data is being requested.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("dataRequest")
@@ -177,13 +184,15 @@ public class AVAssetResourceLoadingRequest extends NSObject {
 
     /**
      * finishLoading
-     * <p>
+     * 
      * Causes the receiver to treat the processing of the request as complete.
-     * <p>
+     * 
      * If a dataRequest is present and the resource does not contain the full extent of the data that has been requested
      * according to the values of the requestedOffset and requestedLength properties of the dataRequest, or if
      * requestsAllDataToEndOfResource has a value of YES, you may invoke -finishLoading after you have provided as much
      * of the requested data as the resource contains.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("finishLoading")
@@ -191,10 +200,11 @@ public class AVAssetResourceLoadingRequest extends NSObject {
 
     /**
      * finishLoadingWithError:
-     * <p>
+     * 
      * Causes the receiver to treat the request as having failed.
-     *
-     * @param error An instance of NSError indicating the reason for failure.
+     * 
+     * @param error
+     *              An instance of NSError indicating the reason for failure.
      */
     @Generated
     @Selector("finishLoadingWithError:")
@@ -202,20 +212,29 @@ public class AVAssetResourceLoadingRequest extends NSObject {
 
     /**
      * finishLoadingWithResponse:data:redirect:
-     * <p>
+     * 
      * Causes the receiver to finish loading a resource that a delegate has previously assumed responsibility for
      * loading by returning YES as the result of -resourceLoader:shouldWaitForLoadingOfRequestedResource:.
-     * <p>
+     * 
      * This method is deprecated. Use the following methods instead.
      * -[AVAssetResourceLoadingRequest setResponse:] to set the response property,
      * -[AVAssetResourceLoadingRequest setRedirect:] to set the redirect property,
      * -[AVAssetResourceLoadingDataRequest respondWithData:] to provide data, and
      * -[AVAssetResourceLoadingRequest finishLoading] to indicate that loading is finished.
-     *
-     * @param response The NSURLResponse for the NSURLRequest of the receiver. Should be nil if no response is required.
-     * @param data     An instance of NSData containing the data of the resource. Should be nil if no such data is
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use -[AVAssetResourceLoadingRequest setResponse:], -[AVAssetResourceLoadingRequest
+     * setRedirect:], -[AVAssetResourceLoadingDataRequest respondWithData:], -[AVAssetResourceLoadingRequest
+     * finishLoading]
+     * 
+     * @param response
+     *                 The NSURLResponse for the NSURLRequest of the receiver. Should be nil if no response is required.
+     * @param data
+     *                 An instance of NSData containing the data of the resource. Should be nil if no such data is
      *                 available.
-     * @param redirect An instance of NSURLRequest indicating a redirect of the loading request. Should be nil if no
+     * @param redirect
+     *                 An instance of NSURLRequest indicating a redirect of the loading request. Should be nil if no
      *                 redirect is needed.
      */
     @Generated
@@ -230,11 +249,13 @@ public class AVAssetResourceLoadingRequest extends NSObject {
 
     /**
      * [@property] cancelled
-     * <p>
+     * 
      * Indicates whether the request has been cancelled.
-     * <p>
+     * 
      * The value of this property becomes YES when the resource loader cancels the loading of a request, just prior to
      * sending the message -resourceLoader:didCancelLoadingRequest: to its delegate.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("isCancelled")
@@ -242,9 +263,9 @@ public class AVAssetResourceLoadingRequest extends NSObject {
 
     /**
      * [@property] finished
-     * <p>
+     * 
      * Indicates whether loading of the resource has been finished.
-     * <p>
+     * 
      * The value of this property becomes YES only in response to an invocation of either -finishLoading or
      * -finishLoadingWithError:.
      */
@@ -254,22 +275,29 @@ public class AVAssetResourceLoadingRequest extends NSObject {
 
     /**
      * persistentContentKeyFromKeyVendorResponse:options:error:
-     * <p>
+     * 
      * Obtains a persistable content key from a context.
-     * <p>
+     * 
      * The data returned from this method may be used to immediately satisfy an AVAssetResourceLoadingDataRequest, as
      * well as any subsequent requests for the same key url. The value of
      * AVAssetResourceLoadingContentInformationRequest.contentType must be set to
      * AVStreamingKeyDeliveryPersistentContentKeyType when responding with data created with this method.
-     *
-     * @param keyVendorResponse The response returned from the key vendor as a result of a request generated from
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 100000.0
+     * 
+     * @param keyVendorResponse
+     *                          The response returned from the key vendor as a result of a request generated from
      *                          streamingContentKeyRequestDataForApp:contentIdentifier:options:error:.
-     * @param options           Additional information necessary to obtain the persistable content key, or nil if none.
-     * @param outError          If obtaining the persistable content key fails, will be set to an instance of NSError
+     * @param options
+     *                          Additional information necessary to obtain the persistable content key, or nil if none.
+     * @param outError
+     *                          If obtaining the persistable content key fails, will be set to an instance of NSError
      *                          describing the failure.
      * @return The persistable content key data that may be stored offline to answer future loading requests of the same
      *         content key.
      */
+    @Deprecated
     @Generated
     @Selector("persistentContentKeyFromKeyVendorResponse:options:error:")
     public native NSData persistentContentKeyFromKeyVendorResponseOptionsError(NSData keyVendorResponse,
@@ -277,12 +305,14 @@ public class AVAssetResourceLoadingRequest extends NSObject {
 
     /**
      * [@property] redirect
-     * <p>
+     * 
      * Set the value of this property to an instance of NSURLRequest indicating a redirection of the loading request to
      * another URL. If no redirection is needed, leave the value of this property set to nil.
-     * <p>
+     * 
      * AVAssetResourceLoader supports redirects to HTTP URLs only. Redirects to other URLs will result in a loading
      * failure.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("redirect")
@@ -290,7 +320,7 @@ public class AVAssetResourceLoadingRequest extends NSObject {
 
     /**
      * [@property] request
-     * <p>
+     * 
      * An NSURLRequest for the requested resource.
      */
     @Generated
@@ -299,9 +329,11 @@ public class AVAssetResourceLoadingRequest extends NSObject {
 
     /**
      * [@property] response
-     * <p>
+     * 
      * Set the value of this property to an instance of NSURLResponse indicating a response to the loading request. If
      * no response is needed, leave the value of this property set to nil.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("response")
@@ -309,12 +341,14 @@ public class AVAssetResourceLoadingRequest extends NSObject {
 
     /**
      * [@property] redirect
-     * <p>
+     * 
      * Set the value of this property to an instance of NSURLRequest indicating a redirection of the loading request to
      * another URL. If no redirection is needed, leave the value of this property set to nil.
-     * <p>
+     * 
      * AVAssetResourceLoader supports redirects to HTTP URLs only. Redirects to other URLs will result in a loading
      * failure.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setRedirect:")
@@ -322,9 +356,11 @@ public class AVAssetResourceLoadingRequest extends NSObject {
 
     /**
      * [@property] response
-     * <p>
+     * 
      * Set the value of this property to an instance of NSURLResponse indicating a response to the loading request. If
      * no response is needed, leave the value of this property set to nil.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setResponse:")
@@ -332,18 +368,26 @@ public class AVAssetResourceLoadingRequest extends NSObject {
 
     /**
      * streamingContentKeyRequestDataForApp:contentIdentifier:options:error:
-     * <p>
+     * 
      * Obtains a streaming content key request for a specific combination of application and content.
-     *
-     * @param appIdentifier     An opaque identifier for the application. The value of this identifier depends on the
+     * 
+     * @param appIdentifier
+     *                          An opaque identifier for the application. The value of this identifier depends on the
      *                          particular system used to provide the decryption key.
-     * @param contentIdentifier An opaque identifier for the content. The value of this identifier depends on the
+     * @param contentIdentifier
+     *                          An opaque identifier for the content. The value of this identifier depends on the
      *                          particular system used to provide the decryption key.
-     * @param options           Additional information necessary to obtain the key, or nil if none.
-     * @param outError          If obtaining the streaming content key request fails, will be set to an instance of
+     * @param options
+     *                          Additional information necessary to obtain the key, or nil if none.
+     * @param outError
+     *                          If obtaining the streaming content key request fails, will be set to an instance of
      *                          NSError describing the failure.
      * @return The key request data that must be transmitted to the key vendor to obtain the content key.
+     * 
+     *         API-Since: 7.0
+     *         Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("streamingContentKeyRequestDataForApp:contentIdentifier:options:error:")
     public native NSData streamingContentKeyRequestDataForAppContentIdentifierOptionsError(NSData appIdentifier,
@@ -352,8 +396,10 @@ public class AVAssetResourceLoadingRequest extends NSObject {
 
     /**
      * [@property] requestor
-     * <p>
+     * 
      * The AVAssetResourceLoadingRequestor that made this request
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("requestor")

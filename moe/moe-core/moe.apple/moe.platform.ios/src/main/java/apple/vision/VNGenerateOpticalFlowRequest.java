@@ -35,19 +35,19 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * VNGenerateOpticalFlowRequest will determine directional change vectors for each pixel in the targeted image to
  * transform it into the image processed
  * by the request handler, reporting this result with a single VNPixelBufferObservation.
- * <p>
+ * 
  * Because this request works at the pixel level, both images must have the same dimensions in order for the request to
  * be successfully performed.
  * Setting a region of interest will isolate where the change determination is performed; however, the resultant
  * observation will still be reported
  * with a full resolution VNPixelBufferObservation.
- * <p>
+ * 
  * Optical flow requests are very resource intensive, so it is recommended that only one request at a time be created
  * and that the handler
  * where the request was issued be released immediately after generating optical flows.
- * <p>
+ * 
  * Example usage:
- * <p>
+ * 
  * - (nullable VNPixelBufferObservation*) opticalFlowFromImage:(CVPixelBufferRef)fromImage
  * toImage:(CVPixelBuffer)toImage error:(NSError**)error
  * {
@@ -59,9 +59,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * {
  * return nil;
  * }
- * <p>
+ * 
  * return [[request results] firstObject];
  * }
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -116,9 +118,11 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
     /**
      * The level of accuracy used to compute the optical flow. Default is
      * VNGenerateOpticalFlowRequestComputationAccuracyMedium.
-     * <p>
+     * 
      * The computational time typically trends with the accuracy level. This parameter allows for selective tuning by
      * the client application.
+     * Computational accuracy settings are only available for VNGenerateOpticalFlowRequestRevision1.
+     * VNGenerateOpticalFlowRequestRevision2 uses a neural network to generate the optical flow.
      */
     @Generated
     @Selector("computationAccuracy")
@@ -335,9 +339,11 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
     /**
      * The level of accuracy used to compute the optical flow. Default is
      * VNGenerateOpticalFlowRequestComputationAccuracyMedium.
-     * <p>
+     * 
      * The computational time typically trends with the accuracy level. This parameter allows for selective tuning by
      * the client application.
+     * Computational accuracy settings are only available for VNGenerateOpticalFlowRequestRevision1.
+     * VNGenerateOpticalFlowRequestRevision2 uses a neural network to generate the optical flow.
      */
     @Generated
     @Selector("setComputationAccuracy:")
@@ -375,4 +381,26 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
     @Generated
     @Selector("results")
     public native NSArray<? extends VNPixelBufferObservation> results();
+
+    /**
+     * Setting this to YES will keep the raw pixel buffer coming the the ML network. The default is NO.
+     * 
+     * When set to YES, the outputPixelFormat is ignored. Setting this for revision 1 is a no-op as it is not ML-based.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("keepNetworkOutput")
+    public native boolean keepNetworkOutput();
+
+    /**
+     * Setting this to YES will keep the raw pixel buffer coming the the ML network. The default is NO.
+     * 
+     * When set to YES, the outputPixelFormat is ignored. Setting this for revision 1 is a no-op as it is not ML-based.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setKeepNetworkOutput:")
+    public native void setKeepNetworkOutput(boolean value);
 }

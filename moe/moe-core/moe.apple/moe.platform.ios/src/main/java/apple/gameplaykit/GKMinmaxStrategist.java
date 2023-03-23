@@ -50,6 +50,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * to the player in question, extrapolating the potential moves opposing players may take, projecting out
  * maxLookAheadDepth number of turns. The selected update will result in the greatest potential gain, balanced
  * against the potential gain of other players.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")

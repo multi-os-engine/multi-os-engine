@@ -45,12 +45,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.protocol.UIPopoverPresentationControllerSourceItem;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UITabBarItem extends UIBarItem implements UISpringLoadedInteractionSupporting {
+public class UITabBarItem extends UIBarItem implements UISpringLoadedInteractionSupporting,
+        UIPopoverPresentationControllerSourceItem {
     static {
         NatJ.register();
     }
@@ -231,6 +236,8 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
     /**
      * If this item displays a badge, this color will be used for the badge's background. If set to nil, the default
      * background color will be used instead.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("badgeColor")
@@ -238,6 +245,8 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
 
     /**
      * Returns attributes previously set via -setBadgeTextAttributes:forState:.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("badgeTextAttributesForState:")
@@ -250,11 +259,19 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
     @Selector("badgeValue")
     public native String badgeValue();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("finishedSelectedImage")
     public native UIImage finishedSelectedImage();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("finishedUnselectedImage")
@@ -272,6 +289,9 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
     @Selector("initWithTabBarSystemItem:tag:")
     public native UITabBarItem initWithTabBarSystemItemTag(@NInt long systemItem, @NInt long tag);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithTitle:image:selectedImage:")
     public native UITabBarItem initWithTitleImageSelectedImage(String title, UIImage image, UIImage selectedImage);
@@ -285,6 +305,9 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
     @Selector("initWithTitle:image:tag:")
     public native UITabBarItem initWithTitleImageTag(String title, UIImage image, @NInt long tag);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("selectedImage")
     public native UIImage selectedImage();
@@ -292,6 +315,8 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
     /**
      * If this item displays a badge, this color will be used for the badge's background. If set to nil, the default
      * background color will be used instead.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setBadgeColor:")
@@ -301,6 +326,8 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
      * Provide text attributes to use to draw the badge text for the given singular control state (Normal, Disabled,
      * Focused, Selected, or Highlighted). Default values will be supplied for keys that are not provided by this
      * dictionary. See NSAttributedString.h for details on what keys are available.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setBadgeTextAttributes:forState:")
@@ -315,6 +342,11 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
 
     /**
      * These methods are now deprecated. Please use -initWithTitle:image:selectedImage:.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use initWithTitle:image:selectedImage: or the image and selectedImage properties along with
+     * UIImageRenderingModeAlwaysOriginal
      */
     @Generated
     @Deprecated
@@ -322,15 +354,20 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
     public native void setFinishedSelectedImageWithFinishedUnselectedImage(UIImage selectedImage,
             UIImage unselectedImage);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setSelectedImage:")
     public native void setSelectedImage(UIImage value);
 
     /**
      * To set item label text attributes use the appearance selectors available on the superclass, UIBarItem.
-     * <p>
+     * 
      * Use the following to tweak the relative position of the label within the tab button (for handling visual
      * centering corrections if needed because of custom text attributes)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setTitlePositionAdjustment:")
@@ -338,9 +375,11 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
 
     /**
      * To set item label text attributes use the appearance selectors available on the superclass, UIBarItem.
-     * <p>
+     * 
      * Use the following to tweak the relative position of the label within the tab button (for handling visual
      * centering corrections if needed because of custom text attributes)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("titlePositionAdjustment")
@@ -357,6 +396,8 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
 
     /**
      * When set and this item is selected, overrides the hosting tab bar's standardAppearance.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setStandardAppearance:")
@@ -364,6 +405,8 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
 
     /**
      * When set and this item is selected, overrides the hosting tab bar's standardAppearance.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("standardAppearance")
@@ -371,6 +414,8 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
 
     /**
      * When set and this item is selected, overrides the hosting tab bar's scrollEdgeAppearance.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("scrollEdgeAppearance")
@@ -378,6 +423,8 @@ public class UITabBarItem extends UIBarItem implements UISpringLoadedInteraction
 
     /**
      * When set and this item is selected, overrides the hosting tab bar's scrollEdgeAppearance.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setScrollEdgeAppearance:")

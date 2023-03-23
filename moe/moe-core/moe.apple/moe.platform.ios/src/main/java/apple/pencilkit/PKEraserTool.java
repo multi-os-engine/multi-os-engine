@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An eraser tool for erasing parts of a drawing.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("PencilKit")

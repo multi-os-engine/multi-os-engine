@@ -26,9 +26,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKElectrocardiogram
- * <p>
+ * 
  * An HKElectrocardiogram is a collection of voltage values as waveforms
  * from one or more leads
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("HealthKit")

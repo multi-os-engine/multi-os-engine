@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -187,11 +190,35 @@ public class INSendMessageIntentResponse extends INIntentResponse {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated
     @Generated
     @Selector("sentMessage")
     public native INMessage sentMessage();
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated
     @Generated
     @Selector("setSentMessage:")
     public native void setSentMessage(INMessage value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("sentMessages")
+    public native NSArray<? extends INMessage> sentMessages();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSentMessages:")
+    public native void setSentMessages(NSArray<? extends INMessage> value);
 }

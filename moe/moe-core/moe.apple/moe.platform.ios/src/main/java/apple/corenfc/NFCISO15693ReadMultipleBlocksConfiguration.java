@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NFCISO15693ReadMultipleBlocksConfiguration
- * <p>
+ * 
  * Configuration options for the Read Multiple Blocks command.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreNFC")
@@ -73,6 +75,8 @@ public class NFCISO15693ReadMultipleBlocksConfiguration extends NFCTagCommandCon
 
     /**
      * Number of blocks to read per Read Multiple Blocks command. This may be limited by the tag hardware.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("chunkSize")
@@ -106,6 +110,8 @@ public class NFCISO15693ReadMultipleBlocksConfiguration extends NFCTagCommandCon
 
     /**
      * Initialize with default zero maximum retry and zero retry interval.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithRange:chunkSize:")
@@ -114,11 +120,13 @@ public class NFCISO15693ReadMultipleBlocksConfiguration extends NFCTagCommandCon
 
     /**
      * initWithRange:chunkSize:maximumRetries:retryInterval:
-     *
+     * 
      * @param range          Read range specify by the starting block index and the total number of blocks.
      * @param chunkSize      Specify number of blocks parameter for the Read multiple blocks command.
      * @param maximumRetries Maximum number of retry attempt when tag response is not recevied.
      * @param retryInterval  Time interval wait between each retry attempt.
+     * 
+     *                       API-Since: 11.0
      */
     @Generated
     @Selector("initWithRange:chunkSize:maximumRetries:retryInterval:")
@@ -153,6 +161,8 @@ public class NFCISO15693ReadMultipleBlocksConfiguration extends NFCTagCommandCon
 
     /**
      * Range to read in blocks. Valid start index range is 0x00 to 0xFF. Length shall not be 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("range")
@@ -169,6 +179,8 @@ public class NFCISO15693ReadMultipleBlocksConfiguration extends NFCTagCommandCon
 
     /**
      * Number of blocks to read per Read Multiple Blocks command. This may be limited by the tag hardware.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setChunkSize:")
@@ -176,6 +188,8 @@ public class NFCISO15693ReadMultipleBlocksConfiguration extends NFCTagCommandCon
 
     /**
      * Range to read in blocks. Valid start index range is 0x00 to 0xFF. Length shall not be 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRange:")

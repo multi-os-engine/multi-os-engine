@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Billow noise is similar to Perlin noise, with more rounded shapes and clearly-defined transitions beween values.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")

@@ -17,7 +17,6 @@ limitations under the License.
 package apple.coreimage;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -39,9 +38,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * Generic feature found by a CIDetector.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("CoreImage")

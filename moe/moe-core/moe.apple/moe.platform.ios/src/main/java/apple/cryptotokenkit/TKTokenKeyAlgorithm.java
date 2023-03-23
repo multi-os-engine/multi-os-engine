@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * TKTokenKeyAlgorithm Encapsulates cryptographic algorithm, possibly with additional associated required algorithms.
- * <p>
+ * 
  * An algorithm supported by a key can be usually described by one value of @c SecKeyAlgorithm enumeration. However,
  * some tokens (notably smartcards) require that input data for the operation are in generic format, but that generic
  * format must be formatted according to some more specific algorithm. An example for this would be token accepting raw
@@ -33,6 +33,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * express such requirement, TKTokenKeyAlgorithm defines target algorithm (@c kSecKeyAlgorithmRSASignatureRaw in our
  * example) and a set of other algorithms which were used (continuing example above, @c
  * kSecKeyAlgorithmRSASignatureDigestPKCS1v15SHA1 will be reported as supported).
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CryptoTokenKit")

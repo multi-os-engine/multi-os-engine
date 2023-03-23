@@ -19,10 +19,22 @@ package apple.photosui.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 9.1
+ */
 @Generated
 public final class PHLivePhotoViewPlaybackStyle {
+    /**
+     * API-Since: 9.1
+     */
     @Generated @NInt public static final long Undefined = 0x0000000000000000L;
+    /**
+     * API-Since: 9.1
+     */
     @Generated @NInt public static final long Full = 0x0000000000000001L;
+    /**
+     * API-Since: 9.1
+     */
     @Generated @NInt public static final long Hint = 0x0000000000000002L;
 
     @Generated

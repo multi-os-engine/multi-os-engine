@@ -47,6 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * configuration. Each web view is given its own web content process until an
  * implementation-defined process limit is reached; after that, web views
  * with the same process pool end up sharing web content processes.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("WebKit")

@@ -19,24 +19,35 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 public final class NSURLSessionAuthChallengeDisposition {
     /**
      * Use the specified credential, which may be nil
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long UseCredential = 0x0000000000000000L;
     /**
      * Default handling for the challenge - as if this delegate were not implemented; the credential parameter is
      * ignored.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long PerformDefaultHandling = 0x0000000000000001L;
     /**
      * The entire request will be canceled; the credential parameter is ignored.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long CancelAuthenticationChallenge = 0x0000000000000002L;
     /**
      * This challenge is rejected and the next authentication protection space should be tried; the credential parameter
      * is ignored.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long RejectProtectionSpace = 0x0000000000000003L;
 

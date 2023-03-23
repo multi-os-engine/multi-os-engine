@@ -44,12 +44,10 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSNumber;
 
 /**
- * HKAnchoredObjectQuery
- * <p>
- * This query can be used by an application to find out about new or deleted samples in the HealthKit
- * database.
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -221,16 +219,19 @@ public class HKAnchoredObjectQuery extends HKQuery {
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeDuration(@NUInt long operatorType,
             double duration);
 
+    @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalDistance:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalDistance(@NUInt long operatorType,
             HKQuantity totalDistance);
 
+    @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalEnergyBurned:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalEnergyBurned(@NUInt long operatorType,
             HKQuantity totalEnergyBurned);
 
+    @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalSwimmingStrokeCount:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalSwimmingStrokeCount(
@@ -265,6 +266,10 @@ public class HKAnchoredObjectQuery extends HKQuery {
     @Selector("init")
     public native HKAnchoredObjectQuery init();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     */
     @Generated
     @Deprecated
     @Selector("initWithType:predicate:anchor:limit:completionHandler:")
@@ -274,14 +279,14 @@ public class HKAnchoredObjectQuery extends HKQuery {
 
     /**
      * initWithType:predicate:anchor:limit:resultsHandler:
-     * <p>
+     * 
      * Returns a query that will retrieve HKSamples and HKDeletedObjects matching the given predicate that are
      * newer than the given anchor.
-     * <p>
+     * 
      * If no updateHandler is set on the query, the query will automatically stop after calling resultsHandler.
      * Otherwise, the query continues to run and call updateHandler as samples matching the predicate are
      * created or deleted.
-     *
+     * 
      * @param type      The type of sample to retrieve.
      * @param predicate The predicate which samples should match.
      * @param anchor    The anchor which was returned by a previous HKAnchoredObjectQuery result or update
@@ -289,6 +294,8 @@ public class HKAnchoredObjectQuery extends HKQuery {
      * @param limit     The maximum number of samples and deleted objects to return. Pass HKObjectQueryNoLimit
      *                  for no limit.
      * @param handler   The block to invoke with results when the query has finished finding.
+     * 
+     *                  API-Since: 9.0
      */
     @Generated
     @Selector("initWithType:predicate:anchor:limit:resultsHandler:")
@@ -298,11 +305,13 @@ public class HKAnchoredObjectQuery extends HKQuery {
 
     /**
      * [@property] updateHandler
-     * <p>
+     * 
      * An optional handler to be called when samples matching the given predicate are added or deleted.
-     * <p>
+     * 
      * This property may not be modified once the query has been executed. It may only be set if the query has
      * no limit.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setUpdateHandler:")
@@ -310,11 +319,13 @@ public class HKAnchoredObjectQuery extends HKQuery {
 
     /**
      * [@property] updateHandler
-     * <p>
+     * 
      * An optional handler to be called when samples matching the given predicate are added or deleted.
-     * <p>
+     * 
      * This property may not be modified once the query has been executed. It may only be set if the query has
      * no limit.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("updateHandler")
@@ -354,6 +365,7 @@ public class HKAnchoredObjectQuery extends HKQuery {
                 NSArray<? extends HKDeletedObject> arg2, HKQueryAnchor arg3, NSError arg4);
     }
 
+    @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
@@ -383,14 +395,14 @@ public class HKAnchoredObjectQuery extends HKQuery {
 
     /**
      * initWithQueryDescriptors:anchor:limit:resultsHandler
-     * <p>
+     * 
      * Returns a query that will retrieve HKSamples and HKDeletedObjects matching the given query descriptors
      * that are newer than the given anchor.
-     * <p>
+     * 
      * If no updateHandler is set on the query, the query will automatically stop after calling resultsHandler.
      * Otherwise, the query continues to run and call updateHandler as samples matching the query descriptors
      * are created or deleted.
-     *
+     * 
      * @param queryDescriptors An array of query descriptors that describes the sample types and predicates that
      *                         you are interested in getting notified for.
      * @param anchor           The anchor which was returned by a previous HKAnchoredObjectQuery result or update
@@ -398,6 +410,8 @@ public class HKAnchoredObjectQuery extends HKQuery {
      * @param limit            The maximum number of samples and deleted objects to return. Pass
      *                         HKObjectQueryNoLimit for no limit.
      * @param handler          The block to invoke with results when the query has finished finding.
+     * 
+     *                         API-Since: 15.0
      */
     @Generated
     @Selector("initWithQueryDescriptors:anchor:limit:resultsHandler:")
@@ -418,4 +432,67 @@ public class HKAnchoredObjectQuery extends HKQuery {
     @Selector("predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval:")
     public static native NSPredicate predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval(
             NSDateInterval dateInterval);
+
+    @Generated
+    @Selector("predicateForCategorySamplesEqualToValues:")
+    public static native NSPredicate predicateForCategorySamplesEqualToValues(NSSet<? extends NSNumber> values);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:duration:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeDuration(@NUInt long operatorType,
+            double duration);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:averageQuantity:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeAverageQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity averageQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:maximumQuantity:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeMaximumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity maximumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:minimumQuantity:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeMinimumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity minimumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeSumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity sumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithStartDate:endDate:options:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithStartDateEndDateOptions(NSDate startDate,
+            NSDate endDate, @NUInt long options);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithWorkoutActivityType:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithWorkoutActivityType(
+            @NUInt long workoutActivityType);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithActivityPredicate:")
+    public static native NSPredicate predicateForWorkoutsWithActivityPredicate(NSPredicate activityPredicate);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:quantityType:averageQuantity:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeAverageQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity averageQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:quantityType:maximumQuantity:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeMaximumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity maximumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:quantityType:minimumQuantity:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeMinimumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity minimumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:quantityType:sumQuantity:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeSumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity sumQuantity);
 }

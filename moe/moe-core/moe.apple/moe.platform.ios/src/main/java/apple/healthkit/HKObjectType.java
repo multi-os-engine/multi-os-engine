@@ -45,8 +45,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKObjectType
- * <p>
+ * 
  * An abstract class representing a type of object that can be stored by HealthKit.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -66,6 +68,9 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("activitySummaryType")
     public static native HKActivitySummaryType activitySummaryType();
@@ -122,6 +127,9 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("documentTypeForIdentifier:")
     public static native HKDocumentType documentTypeForIdentifier(String identifier);
@@ -202,9 +210,9 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * [@property] identifier
-     * <p>
+     * 
      * A unique string identifying a type of health object.
-     * <p>
+     * 
      * See HKTypeIdentifiers.h for possible values.
      */
     @Generated
@@ -225,19 +233,47 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("seriesTypeForIdentifier:")
     public static native HKSeriesType seriesTypeForIdentifier(String identifier);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("audiogramSampleType")
     public static native HKAudiogramSampleType audiogramSampleType();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("clinicalTypeForIdentifier:")
     public static native HKClinicalType clinicalTypeForIdentifier(String identifier);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("electrocardiogramType")
     public static native HKElectrocardiogramType electrocardiogramType();
+
+    /**
+     * requiresPerObjectAuthorization
+     * 
+     * Returns YES if the authorization for the object type needs to be requested on per object basis.
+     */
+    @Generated
+    @Selector("requiresPerObjectAuthorization")
+    public native boolean requiresPerObjectAuthorization();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("visionPrescriptionType")
+    public static native HKPrescriptionType visionPrescriptionType();
 }

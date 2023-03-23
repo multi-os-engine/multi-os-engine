@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSCoder;
@@ -49,7 +48,11 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -79,6 +82,7 @@ public class UICollectionViewController extends UIViewController implements UICo
     @Selector("allocWithZone:")
     public static native UICollectionViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -191,6 +195,7 @@ public class UICollectionViewController extends UIViewController implements UICo
     @Selector("collectionView:canMoveItemAtIndexPath:")
     public native boolean collectionViewCanMoveItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:canPerformAction:forItemAtIndexPath:withSender:")
@@ -253,6 +258,7 @@ public class UICollectionViewController extends UIViewController implements UICo
     @NInt
     public native long collectionViewNumberOfItemsInSection(UICollectionView collectionView, @NInt long section);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:performAction:forItemAtIndexPath:withSender:")
@@ -277,6 +283,7 @@ public class UICollectionViewController extends UIViewController implements UICo
     public native boolean collectionViewShouldSelectItemAtIndexPath(UICollectionView collectionView,
             NSIndexPath indexPath);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:shouldShowMenuForItemAtIndexPath:")
@@ -296,6 +303,7 @@ public class UICollectionViewController extends UIViewController implements UICo
     public native CGPoint collectionViewTargetContentOffsetForProposedContentOffset(UICollectionView collectionView,
             @ByValue CGPoint proposedContentOffset);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:targetIndexPathForMoveFromItemAtIndexPath:toProposedIndexPath:")
@@ -328,6 +336,8 @@ public class UICollectionViewController extends UIViewController implements UICo
 
     /**
      * The layout object is needed when defining interactive layout to layout transitions.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("collectionViewLayout")
@@ -356,6 +366,8 @@ public class UICollectionViewController extends UIViewController implements UICo
 
     /**
      * Defaults to YES, and if YES, a system standard reordering gesture is used to drive collection view reordering
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("installsStandardGestureForInteractiveMovement")
@@ -443,6 +455,8 @@ public class UICollectionViewController extends UIViewController implements UICo
 
     /**
      * Defaults to YES, and if YES, a system standard reordering gesture is used to drive collection view reordering
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setInstallsStandardGestureForInteractiveMovement:")
@@ -454,6 +468,8 @@ public class UICollectionViewController extends UIViewController implements UICo
      * must be a UICollectionViewController that was pushed with this property set
      * to NO. This property should NOT be changed on a UICollectionViewController that
      * has already been pushed onto a UINavigationController.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setUseLayoutToLayoutNavigationTransitions:")
@@ -465,6 +481,8 @@ public class UICollectionViewController extends UIViewController implements UICo
      * must be a UICollectionViewController that was pushed with this property set
      * to NO. This property should NOT be changed on a UICollectionViewController that
      * has already been pushed onto a UINavigationController.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("useLayoutToLayoutNavigationTransitions")
@@ -497,6 +515,7 @@ public class UICollectionViewController extends UIViewController implements UICo
     @Selector("scrollViewDidChangeAdjustedContentInset:")
     public native void scrollViewDidChangeAdjustedContentInset(UIScrollView scrollView);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:contextMenuConfigurationForItemAtIndexPath:point:")
@@ -509,12 +528,14 @@ public class UICollectionViewController extends UIViewController implements UICo
     public native void collectionViewDidBeginMultipleSelectionInteractionAtIndexPath(UICollectionView collectionView,
             NSIndexPath indexPath);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:previewForDismissingContextMenuWithConfiguration:")
     public native UITargetedPreview collectionViewPreviewForDismissingContextMenuWithConfiguration(
             UICollectionView collectionView, UIContextMenuConfiguration configuration);
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:previewForHighlightingContextMenuWithConfiguration:")
@@ -576,4 +597,34 @@ public class UICollectionViewController extends UIViewController implements UICo
     public native NSIndexPath collectionViewTargetIndexPathForMoveOfItemFromOriginalIndexPathAtCurrentIndexPathToProposedIndexPath(
             UICollectionView collectionView, NSIndexPath originalIndexPath, NSIndexPath currentIndexPath,
             NSIndexPath proposedIndexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:canPerformPrimaryActionForItemAtIndexPath:")
+    public native boolean collectionViewCanPerformPrimaryActionForItemAtIndexPath(UICollectionView collectionView,
+            NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:contextMenuConfiguration:dismissalPreviewForItemAtIndexPath:")
+    public native UITargetedPreview collectionViewContextMenuConfigurationDismissalPreviewForItemAtIndexPath(
+            UICollectionView collectionView, UIContextMenuConfiguration configuration, NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:contextMenuConfiguration:highlightPreviewForItemAtIndexPath:")
+    public native UITargetedPreview collectionViewContextMenuConfigurationHighlightPreviewForItemAtIndexPath(
+            UICollectionView collectionView, UIContextMenuConfiguration configuration, NSIndexPath indexPath);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:contextMenuConfigurationForItemsAtIndexPaths:point:")
+    public native UIContextMenuConfiguration collectionViewContextMenuConfigurationForItemsAtIndexPathsPoint(
+            UICollectionView collectionView, NSArray<? extends NSIndexPath> indexPaths, @ByValue CGPoint point);
+
+    @Generated
+    @IsOptional
+    @Selector("collectionView:performPrimaryActionForItemAtIndexPath:")
+    public native void collectionViewPerformPrimaryActionForItemAtIndexPath(UICollectionView collectionView,
+            NSIndexPath indexPath);
 }

@@ -17,9 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -53,7 +50,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -159,6 +162,7 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -185,6 +189,7 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -260,46 +265,57 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -441,6 +457,9 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     @ByValue
     public native CGSize contentSize();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("decelerationRate")
     @NFloat
@@ -573,6 +592,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default is UIScrollViewKeyboardDismissModeNone
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("keyboardDismissMode")
@@ -597,6 +618,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * Change `panGestureRecognizer.allowedTouchTypes` to limit scrolling to a particular set of touch types.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("panGestureRecognizer")
@@ -604,15 +627,27 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * `pinchGestureRecognizer` will return nil when zooming is disabled.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("pinchGestureRecognizer")
     public native UIPinchGestureRecognizer pinchGestureRecognizer();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("refreshControl")
     public native UIRefreshControl refreshControl();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: The scrollIndicatorInsets getter is deprecated, use the verticalScrollIndicatorInsets and
+     * horizontalScrollIndicatorInsets getters instead.
+     */
+    @Deprecated
     @Generated
     @Selector("scrollIndicatorInsets")
     @ByValue
@@ -694,6 +729,9 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     @Selector("setContentSize:")
     public native void setContentSize(@ByValue CGSize value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setDecelerationRate:")
     public native void setDecelerationRate(@NFloat double value);
@@ -737,6 +775,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default is UIScrollViewKeyboardDismissModeNone
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setKeyboardDismissMode:")
@@ -756,6 +796,9 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     @Selector("setMinimumZoomScale:")
     public native void setMinimumZoomScale(@NFloat double value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setRefreshControl:")
     public native void setRefreshControl(UIRefreshControl value);
@@ -792,11 +835,16 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default is 1.0
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setZoomScale:")
     public native void setZoomScale(@NFloat double value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setZoomScale:animated:")
     public native void setZoomScaleAnimated(@NFloat double scale, boolean animated);
@@ -839,12 +887,17 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default is 1.0
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("zoomScale")
     @NFloat
     public native double zoomScale();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("zoomToRect:animated:")
     public native void zoomToRectAnimated(@ByValue CGRect rect, boolean animated);
@@ -852,6 +905,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     /**
      * When contentInsetAdjustmentBehavior allows, UIScrollView may incorporate
      * its safeAreaInsets into the adjustedContentInset.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("adjustedContentInset")
@@ -860,6 +915,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * Also see -scrollViewDidChangeAdjustedContentInset: in the UIScrollViewDelegate protocol.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("adjustedContentInsetDidChange")
@@ -868,6 +925,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     /**
      * Configure the behavior of adjustedContentInset.
      * Default is UIScrollViewContentInsetAdjustmentAutomatic.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("contentInsetAdjustmentBehavior")
@@ -877,6 +936,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     /**
      * contentLayoutGuide anchors (e.g., contentLayoutGuide.centerXAnchor, etc.) refer to
      * the untranslated content area of the scroll view.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("contentLayoutGuide")
@@ -894,6 +955,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     /**
      * frameLayoutGuide anchors (e.g., frameLayoutGuide.centerXAnchor) refer to
      * the untransformed frame of the scroll view.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("frameLayoutGuide")
@@ -907,6 +970,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     /**
      * Configure the behavior of adjustedContentInset.
      * Default is UIScrollViewContentInsetAdjustmentAutomatic.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setContentInsetAdjustmentBehavior:")
@@ -919,6 +984,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     /**
      * Configures whether the scroll indicator insets are automatically adjusted by the system.
      * Default is YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("automaticallyAdjustsScrollIndicatorInsets")
@@ -935,6 +1002,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default is UIEdgeInsetsZero.
+     * 
+     * API-Since: 11.1
      */
     @Generated
     @Selector("horizontalScrollIndicatorInsets")
@@ -950,6 +1019,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
     /**
      * Configures whether the scroll indicator insets are automatically adjusted by the system.
      * Default is YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAutomaticallyAdjustsScrollIndicatorInsets:")
@@ -957,6 +1028,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default is UIEdgeInsetsZero.
+     * 
+     * API-Since: 11.1
      */
     @Generated
     @Selector("setHorizontalScrollIndicatorInsets:")
@@ -964,6 +1037,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default is UIEdgeInsetsZero.
+     * 
+     * API-Since: 11.1
      */
     @Generated
     @Selector("setVerticalScrollIndicatorInsets:")
@@ -971,6 +1046,8 @@ public class UIScrollView extends UIView implements NSCoding, UIFocusItemScrolla
 
     /**
      * default is UIEdgeInsetsZero.
+     * 
+     * API-Since: 11.1
      */
     @Generated
     @Selector("verticalScrollIndicatorInsets")

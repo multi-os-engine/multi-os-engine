@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -73,6 +76,7 @@ public class UIInputViewController extends UIViewController implements UITextInp
     @Selector("allocWithZone:")
     public static native UIInputViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -176,6 +180,8 @@ public class UIInputViewController extends UIViewController implements UITextInp
      * Advance to nextInputMode when short tapping on the view.
      * Example: [KeyboardButton addTarget:self action:@selector(handleInputModeListFromView:withEvent:)
      * forControlEvents:UIControlEventAllTouchEvents].
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("handleInputModeListFromView:withEvent:")
@@ -254,10 +260,16 @@ public class UIInputViewController extends UIViewController implements UITextInp
         void call_requestSupplementaryLexiconWithCompletion(UILexicon arg0);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("hasFullAccess")
     public native boolean hasFullAccess();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("needsInputModeSwitchKey")
     public native boolean needsInputModeSwitchKey();

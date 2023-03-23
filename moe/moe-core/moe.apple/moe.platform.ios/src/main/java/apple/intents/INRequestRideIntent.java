@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -171,6 +174,12 @@ public class INRequestRideIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INRequestRideIntent initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.3
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithPickupLocation:dropOffLocation:rideOptionName:partySize:paymentMethod:")
     public native INRequestRideIntent initWithPickupLocationDropOffLocationRideOptionNamePartySizePaymentMethod(
@@ -205,12 +214,18 @@ public class INRequestRideIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("initWithPickupLocation:dropOffLocation:rideOptionName:partySize:paymentMethod:scheduledPickupTime:")
     public native INRequestRideIntent initWithPickupLocationDropOffLocationRideOptionNamePartySizePaymentMethodScheduledPickupTime(
             CLPlacemark pickupLocation, CLPlacemark dropOffLocation, INSpeakableString rideOptionName,
             NSNumber partySize, INPaymentMethod paymentMethod, INDateComponentsRange scheduledPickupTime);
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("scheduledPickupTime")
     public native INDateComponentsRange scheduledPickupTime();

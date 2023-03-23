@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@c] CPAlertTemplate represents a modal alert that must be dismissed with a button press
  * before the user may return to using the app.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CarPlay")
@@ -105,10 +107,11 @@ public class CPAlertTemplate extends CPTemplate {
 
     /**
      * Initialize a @c CPAlertTemplate by specifying a list of title variants and at least one action.
-     *
+     * 
      * @param titleVariants An array of strings, ordered longest to shortest. The template will display
      *                      the longest string that fits in the available space on the current size of the car screen,
      *                      dropping down to shorter strings as necessary.
+     * 
      * @param actions       An array of alert actions to display in this alert template. You must specify at
      *                      least one action.
      */
@@ -182,6 +185,8 @@ public class CPAlertTemplate extends CPTemplate {
      * Maximum number of action buttons that may appear in any @c CPAlertTemplate.
      * If you add more than this number of buttons, only the most recently-added buttons
      * (up to this count) will be kept.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("maximumActionCount")

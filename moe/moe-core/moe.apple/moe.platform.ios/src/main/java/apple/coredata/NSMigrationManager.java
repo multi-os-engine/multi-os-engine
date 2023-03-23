@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -266,6 +269,8 @@ public class NSMigrationManager extends NSObject {
      * migration manager class is not guaranteed to perform any of the migration manager delegate callbacks or update
      * values for the observable properties.
      * Defaults to YES
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setUsesStoreSpecificMigrationManager:")
@@ -314,6 +319,8 @@ public class NSMigrationManager extends NSObject {
      * migration manager class is not guaranteed to perform any of the migration manager delegate callbacks or update
      * values for the observable properties.
      * Defaults to YES
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("usesStoreSpecificMigrationManager")

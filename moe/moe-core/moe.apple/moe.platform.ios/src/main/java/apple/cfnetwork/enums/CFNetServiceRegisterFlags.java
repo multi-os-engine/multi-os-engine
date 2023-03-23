@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * CFNetService flags
- * <p>
+ * 
  * Discussion:
  * Bit flags to be used for registration of a service with CFNetServiceRegisterWithOptions.
  */

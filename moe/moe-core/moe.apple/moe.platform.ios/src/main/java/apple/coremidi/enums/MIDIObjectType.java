@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MIDIObjectType
- * <p>
+ * 
  * Signifies the type of a MIDIObject.
- * <p>
+ * 
  * Signifies the real type of a MIDIObjectRef instance.
  */
 @Generated

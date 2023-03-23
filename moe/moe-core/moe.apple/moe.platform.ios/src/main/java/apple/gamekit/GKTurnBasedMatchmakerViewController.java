@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -72,6 +75,7 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     @Selector("allocWithZone:")
     public static native GKTurnBasedMatchmakerViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -222,6 +226,8 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     /**
      * This controls the mode of matchmaking to support in the UI (all, nearby only, automatch only, invite only).
      * Throws an exception if you can not set to the desired mode (due to restrictions)
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("matchmakingMode")
@@ -231,6 +237,8 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     /**
      * This controls the mode of matchmaking to support in the UI (all, nearby only, automatch only, invite only).
      * Throws an exception if you can not set to the desired mode (due to restrictions)
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMatchmakingMode:")

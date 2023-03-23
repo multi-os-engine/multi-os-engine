@@ -40,11 +40,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVCaptureBracketedStillImageSettings
- * <p>
+ * 
  * AVCaptureBracketedStillImageSettings is an abstract base class that defines an interface for settings pertaining to a
  * bracketed capture.
- * <p>
+ * 
  * AVCaptureBracketedStillImageSettings may not be instantiated directly.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFoundation")

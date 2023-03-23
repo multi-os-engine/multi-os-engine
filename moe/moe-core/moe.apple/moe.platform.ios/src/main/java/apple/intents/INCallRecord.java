@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -75,6 +78,11 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
     @NInt
     public native long callRecordType();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 14.5
+     */
+    @Deprecated
     @Generated
     @Selector("caller")
     public native INPerson caller();
@@ -136,6 +144,13 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("initWithCoder:")
     public native INCallRecord initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 14.5
+     * Deprecated-Message: Replaced by
+     * -initWithIdentifier:dateCreated:callRecordType:callCapability:callDuration:unseen:participants:numberOfCalls:isCallerIdBlocked
+     */
+    @Deprecated
     @Generated
     @Selector("initWithIdentifier:dateCreated:caller:callRecordType:callCapability:callDuration:unseen:")
     public native INCallRecord initWithIdentifierDateCreatedCallerCallRecordTypeCallCapabilityCallDurationUnseen(
@@ -203,12 +218,22 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 14.5
+     * Deprecated-Message: Replaced by
+     * -initWithIdentifier:dateCreated:callRecordType:callCapability:callDuration:unseen:participants:numberOfCalls:isCallerIdBlocked
+     */
+    @Deprecated
     @Generated
     @Selector("initWithIdentifier:dateCreated:caller:callRecordType:callCapability:callDuration:unseen:numberOfCalls:")
     public native INCallRecord initWithIdentifierDateCreatedCallerCallRecordTypeCallCapabilityCallDurationUnseenNumberOfCalls(
             String identifier, NSDate dateCreated, INPerson caller, @NInt long callRecordType,
             @NInt long callCapability, NSNumber callDuration, NSNumber unseen, NSNumber numberOfCalls);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("numberOfCalls")
     public native NSNumber numberOfCalls();
@@ -219,12 +244,18 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
             String identifier, NSDate dateCreated, @NInt long callRecordType, @NInt long callCapability,
             NSNumber callDuration, NSNumber unseen);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithIdentifier:dateCreated:callRecordType:callCapability:callDuration:unseen:numberOfCalls:")
     public native INCallRecord initWithIdentifierDateCreatedCallRecordTypeCallCapabilityCallDurationUnseenNumberOfCalls(
             String identifier, NSDate dateCreated, @NInt long callRecordType, @NInt long callCapability,
             NSNumber callDuration, NSNumber unseen, NSNumber numberOfCalls);
 
+    /**
+     * API-Since: 14.5
+     */
     @Generated
     @Selector("initWithIdentifier:dateCreated:callRecordType:callCapability:callDuration:unseen:participants:numberOfCalls:isCallerIdBlocked:")
     public native INCallRecord initWithIdentifierDateCreatedCallRecordTypeCallCapabilityCallDurationUnseenParticipantsNumberOfCallsIsCallerIdBlocked(
@@ -232,10 +263,16 @@ public class INCallRecord extends NSObject implements NSCopying, NSSecureCoding 
             NSNumber callDuration, NSNumber unseen, NSArray<? extends INPerson> participants, NSNumber numberOfCalls,
             NSNumber isCallerIdBlocked);
 
+    /**
+     * API-Since: 14.5
+     */
     @Generated
     @Selector("isCallerIdBlocked")
     public native NSNumber isCallerIdBlocked();
 
+    /**
+     * API-Since: 14.5
+     */
     @Generated
     @Selector("participants")
     public native NSArray<? extends INPerson> participants();

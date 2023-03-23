@@ -1,8 +1,6 @@
 package apple.pdfkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -36,7 +34,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("PDFKit")
 @Runtime(ObjCRuntime.class)
@@ -197,6 +200,7 @@ public class PDFThumbnailView extends UIView implements NSCoding {
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -223,12 +227,15 @@ public class PDFThumbnailView extends UIView implements NSCoding {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
 
     /**
      * Inset for the placement of icons within the thumbnail view. Default UIEdgeInsetsZero.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("contentInset")
@@ -296,6 +303,8 @@ public class PDFThumbnailView extends UIView implements NSCoding {
     /**
      * Defines if the thumbnail view is to be displayed vertically or horizontally.
      * Default PDFThumbnailLayoutModeVertical.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("layoutMode")
@@ -344,46 +353,57 @@ public class PDFThumbnailView extends UIView implements NSCoding {
     @Selector("selectedPages")
     public native NSArray<? extends PDFPage> selectedPages();
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -401,6 +421,8 @@ public class PDFThumbnailView extends UIView implements NSCoding {
 
     /**
      * Inset for the placement of icons within the thumbnail view. Default UIEdgeInsetsZero.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setContentInset:")
@@ -409,6 +431,8 @@ public class PDFThumbnailView extends UIView implements NSCoding {
     /**
      * Defines if the thumbnail view is to be displayed vertically or horizontally.
      * Default PDFThumbnailLayoutModeVertical.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLayoutMode:")

@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -196,19 +199,31 @@ public class INDateComponentsRange extends NSObject implements NSCopying, NSSecu
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("EKRecurrenceRule")
     public native EKRecurrenceRule EKRecurrenceRule();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithEKRecurrenceRule:")
     public native INDateComponentsRange initWithEKRecurrenceRule(EKRecurrenceRule recurrenceRule);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithStartDateComponents:endDateComponents:recurrenceRule:")
     public native INDateComponentsRange initWithStartDateComponentsEndDateComponentsRecurrenceRule(
             NSDateComponents startDateComponents, NSDateComponents endDateComponents, INRecurrenceRule recurrenceRule);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("recurrenceRule")
     public native INRecurrenceRule recurrenceRule();

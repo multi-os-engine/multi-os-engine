@@ -1,7 +1,6 @@
 package apple.spritekit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -28,9 +27,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * A renderer for displaying a SpriteKit scene in an existing Metal workflow.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("SpriteKit")
@@ -100,10 +102,10 @@ public class SKRenderer extends NSObject {
      * possible.
      * This will require zPosition to be used in the scenes to properly guarantee elements are in front or behind each
      * other.
-     * <p>
+     * 
      * This defaults to NO, meaning that sibling order overrides efficiency heuristics in the rendering of the scenes in
      * the view.
-     * <p>
+     * 
      * Setting this to YES for a complex scene may substantially increase performance, but care must be taken as only
      * zPosition
      * determines render order before the efficiency heuristics are used.
@@ -144,7 +146,7 @@ public class SKRenderer extends NSObject {
 
     /**
      * Render the scene content in the specified Metal command buffer.
-     *
+     * 
      * @param viewport             The pixel dimensions in which to render.
      * @param commandBuffer        The Metal command buffer in which SpriteKit should schedule rendering commands.
      * @param renderPassDescriptor The Metal render pass descriptor describing the rendering target.
@@ -157,7 +159,7 @@ public class SKRenderer extends NSObject {
 
     /**
      * Render the scene content using a specific Metal command encoder.
-     *
+     * 
      * @param viewport             The pixel dimensions in which to render.
      * @param renderCommandEncoder The Metal render command encoder that SpriteKit will use to encode rendering
      *                             commands. This method will not call endEncoding.
@@ -172,7 +174,7 @@ public class SKRenderer extends NSObject {
 
     /**
      * Creates a renderer with the specified Metal device.
-     *
+     * 
      * @param device A Metal device.
      * @return A new renderer object.
      */
@@ -200,10 +202,10 @@ public class SKRenderer extends NSObject {
      * possible.
      * This will require zPosition to be used in the scenes to properly guarantee elements are in front or behind each
      * other.
-     * <p>
+     * 
      * This defaults to NO, meaning that sibling order overrides efficiency heuristics in the rendering of the scenes in
      * the view.
-     * <p>
+     * 
      * Setting this to YES for a complex scene may substantially increase performance, but care must be taken as only
      * zPosition
      * determines render order before the efficiency heuristics are used.
@@ -289,7 +291,7 @@ public class SKRenderer extends NSObject {
 
     /**
      * Update the scene at the specified system time.
-     *
+     * 
      * @param currentTime The timestamp in seconds.
      */
     @Generated

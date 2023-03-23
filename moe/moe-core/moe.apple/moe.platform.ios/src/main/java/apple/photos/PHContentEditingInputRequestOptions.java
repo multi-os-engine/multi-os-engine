@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +156,8 @@ public class PHContentEditingInputRequestOptions extends NSObject {
     /**
      * Block to be provided by the client, used to determine if the given adjustment data can be handled (i.e. can be
      * decoded and rendered).
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("canHandleAdjustmentData")
@@ -165,6 +170,8 @@ public class PHContentEditingInputRequestOptions extends NSObject {
 
     /**
      * Used if data is not available locally and needs to be retrieved from iCloud.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isNetworkAccessAllowed")
@@ -172,11 +179,16 @@ public class PHContentEditingInputRequestOptions extends NSObject {
 
     /**
      * Used if data is not available locally and needs to be retrieved from iCloud.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setNetworkAccessAllowed:")
     public native void setNetworkAccessAllowed(boolean value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("progressHandler")
     @ObjCBlock(name = "call_progressHandler_ret")
@@ -185,12 +197,17 @@ public class PHContentEditingInputRequestOptions extends NSObject {
     /**
      * Block to be provided by the client, used to determine if the given adjustment data can be handled (i.e. can be
      * decoded and rendered).
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setCanHandleAdjustmentData:")
     public native void setCanHandleAdjustmentData(
             @ObjCBlock(name = "call_setCanHandleAdjustmentData") Block_setCanHandleAdjustmentData value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setProgressHandler:")
     public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);

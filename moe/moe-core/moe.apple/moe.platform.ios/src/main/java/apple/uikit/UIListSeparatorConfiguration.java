@@ -31,8 +31,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This configuration allows for fine grained control of separator appearance in a UICollectionView List section.
- *
+ * 
  * @see UICollectionLayoutListConfiguration.separatorConfiguration
+ * 
+ *      API-Since: 14.5
  */
 @Generated
 @Library("UIKit")
@@ -141,7 +143,7 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
 
     /**
      * Initializes a list separator configuration with the appropriate defaults for the passed in list appearance.
-     *
+     * 
      * @param listAppearance The appearance of the list consuming this separator configuration
      */
     @Generated
@@ -241,6 +243,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
 
     /**
      * The visual effect to use for the separators of the item this configuration is applied to.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setVisualEffect:")
@@ -284,6 +288,8 @@ public class UIListSeparatorConfiguration extends NSObject implements NSCopying,
 
     /**
      * The visual effect to use for the separators of the item this configuration is applied to.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("visualEffect")

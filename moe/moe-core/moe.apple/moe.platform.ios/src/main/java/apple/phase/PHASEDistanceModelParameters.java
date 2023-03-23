@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEDistanceModelParameters
- * <p>
+ * 
  * Distance model parameters.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -87,7 +89,7 @@ public class PHASEDistanceModelParameters extends NSObject {
 
     /**
      * [@property] fadeOutParameters
-     * <p>
+     * 
      * Fade out parameters (optional).
      */
     @Generated
@@ -139,7 +141,7 @@ public class PHASEDistanceModelParameters extends NSObject {
 
     /**
      * [@property] fadeOutParameters
-     * <p>
+     * 
      * Fade out parameters (optional).
      */
     @Generated

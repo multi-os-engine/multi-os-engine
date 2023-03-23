@@ -27,12 +27,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNNFilterNode
- * <p>
+ * 
  * A placeholder node denoting a neural network filter stage
- * <p>
+ * 
  * There are as many MPSNNFilterNode subclasses as there are
  * MPS neural network filter objects. Make one of those.
  * This class defines an polymorphic interface for them.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -124,7 +126,7 @@ public class MPSNNFilterNode extends NSObject {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
@@ -138,7 +140,7 @@ public class MPSNNFilterNode extends NSObject {
 
     /**
      * The padding method used for the filter node
-     * <p>
+     * 
      * The padding policy configures how the filter centers
      * the region of interest in the source image. It principally
      * is responsible for setting the MPSCNNKernel.offset and
@@ -152,15 +154,15 @@ public class MPSNNFilterNode extends NSObject {
      * networking frameworks with particularly complex or unexpected
      * behavior for specific nodes. See MPSNNDefaultPadding class methods
      * in MPSNeuralNetworkTypes.h for more.
-     * <p>
+     * 
      * BUG: MPS doesn't provide a good way to reset the MPSKernel properties
      * in the context of a MPSNNGraph after the kernel is finished encoding.
      * These values carry on to the next time the graph is used. Consequently,
      * if your custom padding policy modifies the property as a function of the
      * previous value, e.g.:
-     * <p>
+     * 
      * kernel.someProperty += 2;
-     * <p>
+     * 
      * then the second time the graph runs, the property may have an inconsistent
      * value, leading to unexpected behavior. The default padding computation
      * runs before the custom padding method to provide it with a sense of
@@ -184,7 +186,7 @@ public class MPSNNFilterNode extends NSObject {
 
     /**
      * Get the node representing the image result of the filter
-     * <p>
+     * 
      * Except where otherwise noted, the precision used for the
      * result image (see format property) is copied from the precision
      * from the first input image node.
@@ -195,7 +197,7 @@ public class MPSNNFilterNode extends NSObject {
 
     /**
      * convenience method for resultStates[0]
-     * <p>
+     * 
      * If resultStates is nil, returns nil
      */
     @Generated
@@ -204,7 +206,7 @@ public class MPSNNFilterNode extends NSObject {
 
     /**
      * Get the node representing the state result of the filter
-     * <p>
+     * 
      * If more than one, see description of subclass for ordering.
      */
     @Generated
@@ -213,7 +215,7 @@ public class MPSNNFilterNode extends NSObject {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
@@ -222,7 +224,7 @@ public class MPSNNFilterNode extends NSObject {
 
     /**
      * The padding method used for the filter node
-     * <p>
+     * 
      * The padding policy configures how the filter centers
      * the region of interest in the source image. It principally
      * is responsible for setting the MPSCNNKernel.offset and
@@ -236,15 +238,15 @@ public class MPSNNFilterNode extends NSObject {
      * networking frameworks with particularly complex or unexpected
      * behavior for specific nodes. See MPSNNDefaultPadding class methods
      * in MPSNeuralNetworkTypes.h for more.
-     * <p>
+     * 
      * BUG: MPS doesn't provide a good way to reset the MPSKernel properties
      * in the context of a MPSNNGraph after the kernel is finished encoding.
      * These values carry on to the next time the graph is used. Consequently,
      * if your custom padding policy modifies the property as a function of the
      * previous value, e.g.:
-     * <p>
+     * 
      * kernel.someProperty += 2;
-     * <p>
+     * 
      * then the second time the graph runs, the property may have an inconsistent
      * value, leading to unexpected behavior. The default padding computation
      * runs before the custom padding method to provide it with a sense of
@@ -272,11 +274,11 @@ public class MPSNNFilterNode extends NSObject {
 
     /**
      * Return the gradient (backwards) version of this filter.
-     * <p>
+     * 
      * The backwards training version of the filter will be returned.
      * The non-gradient image and state arguments for the filter are automatically
      * obtained from the target.
-     *
+     * 
      * @param gradientImage The gradient images corresponding with the resultImage
      *                      of the target
      */
@@ -286,11 +288,11 @@ public class MPSNNFilterNode extends NSObject {
 
     /**
      * Return the gradient (backwards) version of this filter.
-     * <p>
+     * 
      * The backwards training version of the filter will be returned.
      * The non-gradient image and state arguments for the filter are automatically
      * obtained from the target.
-     *
+     * 
      * @param gradientImages The gradient images corresponding with the resultImage
      *                       of the target
      */
@@ -300,7 +302,7 @@ public class MPSNNFilterNode extends NSObject {
 
     /**
      * Return multiple gradient versions of the filter
-     * <p>
+     * 
      * MPSNNFilters that consume multiple inputs generally result in
      * multiple conjugate filters for the gradient computation at
      * the end of training. For example, a single concatenation operation
@@ -313,7 +315,7 @@ public class MPSNNFilterNode extends NSObject {
 
     /**
      * Return multiple gradient versions of the filter
-     * <p>
+     * 
      * MPSNNFilters that consume multiple inputs generally result in
      * multiple conjugate filters for the gradient computation at
      * the end of training. For example, a single concatenation operation
@@ -327,24 +329,24 @@ public class MPSNNFilterNode extends NSObject {
 
     /**
      * Build training graph from inference graph
-     * <p>
+     * 
      * This method will iteratively build the training portion of a graph based
      * on an inference graph. Self should be the last node in the
      * inference graph. It is typically a loss layer, but can be anything.
      * Typically, the "inference graph" used here is the desired inference
      * graph with a dropout node and a loss layer node appended.
-     * <p>
+     * 
      * The nodes that are created will have default properties. In certain cases,
      * these may not be appropriate (e.g. if you want to do CPU based updates
      * of convolution weights instead of default GPU updates.) In such cases, your
      * application should use the nodeHandler to configure the new nodes as they are
      * created.
-     * <p>
+     * 
      * BUG: This method can not follow links to regions of the graph that are
      * connected to the rest of the graph solely via MPSNNStateNodes. A gradient
      * image input is required to construct a MPSNNGradientFilterNode from a
      * inference filter node.
-     *
+     * 
      * @param gradientImage The input gradient image for the first gradient
      *                      node in the training section of the graph. If nil,
      *                      self.resultImage is used. This results in a standard monolithic
@@ -361,6 +363,8 @@ public class MPSNNFilterNode extends NSObject {
      * @return The list of new MPSNNFilterNode training graph termini. These MPSNNFilterNodes
      *         are not necessarily all MPSNNGradientFilterNodes. To build a full list of nodes
      *         created, use a custom nodeHandler. If no nodes are created nil is returned.
+     * 
+     *         API-Since: 12.0
      */
     @Generated
     @Selector("trainingGraphWithSourceGradient:nodeHandler:")

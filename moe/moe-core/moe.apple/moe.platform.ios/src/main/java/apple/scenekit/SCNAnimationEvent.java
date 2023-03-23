@@ -73,11 +73,11 @@ public class SCNAnimationEvent extends NSObject {
 
     /**
      * animationEventWithKeyTime:block:
-     * <p>
+     * 
      * Returns an animation event instance
-     * <p>
+     * 
      * "time" is relative to animation duration and therefor it has to be a value in the range [0,1].
-     *
+     * 
      * @param time       The relative time to trigger the event.
      * @param eventBlock The block to call when the event is triggered.
      */

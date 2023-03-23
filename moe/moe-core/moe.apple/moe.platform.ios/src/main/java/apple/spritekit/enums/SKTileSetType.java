@@ -21,19 +21,33 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * The tile set type is used to describe how the tiles will be arranged in a tile map.
- * <p>
+ * 
  * [@enum] SKTileSetTypeGrid Specifies that the tiles will be axis-alligned rectangles that are placed in rows and
  * columns at right angles to one another. This is the default type.
  * [@enum] SKTileSetTypeIsometric Specifies that the tiles will be rectangles that are rotated and scaled to give the
  * appearance of 3/4 perspective.
  * [@enum] SKTileSetTypeHexagonalFlat Specifies that the tiles will be flat bottomed hexagons.
  * [@enum] SKTileSetTypeHexagonalPointy Specifies that the tiles will be "pointy" bottomed hexagons.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class SKTileSetType {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Grid = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Isometric = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long HexagonalFlat = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long HexagonalPointy = 0x0000000000000003L;
 
     @Generated

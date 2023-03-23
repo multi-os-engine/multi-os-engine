@@ -32,6 +32,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UISearchDisplayDelegate")
 public interface UISearchDisplayDelegate {
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -43,6 +47,9 @@ public interface UISearchDisplayDelegate {
 
     /**
      * called when the table is created destroyed, shown or hidden. configure as necessary.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -53,6 +60,10 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -62,6 +73,10 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -74,6 +89,9 @@ public interface UISearchDisplayDelegate {
     /**
      * return YES to reload table. called when search string/option changes. convenience methods on top UISearchBar
      * delegate methods
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -84,6 +102,10 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -95,6 +117,9 @@ public interface UISearchDisplayDelegate {
 
     /**
      * called when table is shown/hidden
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -105,6 +130,10 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -114,6 +143,10 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -122,6 +155,10 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -132,6 +169,9 @@ public interface UISearchDisplayDelegate {
 
     /**
      * when we start/end showing the search UI
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -141,6 +181,10 @@ public interface UISearchDisplayDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Deprecated

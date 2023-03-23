@@ -25,12 +25,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.carplay.protocol.CPBarButtonProviding;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class CPPointOfInterestTemplate extends CPTemplate {
+public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButtonProviding {
     static {
         NatJ.register();
     }
@@ -99,9 +103,9 @@ public class CPPointOfInterestTemplate extends CPTemplate {
 
     /**
      * CPPointOfInterestTemplate displays a map view with selectable points of interest.
-     * <p>
+     * 
      * [@note] the maximum number of POIs is 12. If you provide more than 12, only the first 12 will be used.
-     *
+     * 
      * @param title            Template title
      * @param pointsOfInterest Points of interest to be presented in the map.
      * @param selectedIndex    Index of selected point of interest instance referenced in the pointsOfInterest array.
@@ -191,9 +195,9 @@ public class CPPointOfInterestTemplate extends CPTemplate {
 
     /**
      * Update the template with a list of points of interests to dispay
-     * <p>
+     * 
      * [@note] the maximum number of POIs is 12. If you provide more than 12, only the first 12 will be used.
-     *
+     * 
      * @param pointsOfInterest Points of interest to be presented in the map.
      * @param selectedIndex    Index of selected point of interest instance referenced in the pointsOfInterest array.
      *                         Use NSNotFound to indicate no selection.
@@ -246,4 +250,28 @@ public class CPPointOfInterestTemplate extends CPTemplate {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("backButton")
+    public native CPBarButton backButton();
+
+    @Generated
+    @Selector("leadingNavigationBarButtons")
+    public native NSArray<? extends CPBarButton> leadingNavigationBarButtons();
+
+    @Generated
+    @Selector("setBackButton:")
+    public native void setBackButton(CPBarButton value);
+
+    @Generated
+    @Selector("setLeadingNavigationBarButtons:")
+    public native void setLeadingNavigationBarButtons(NSArray<? extends CPBarButton> value);
+
+    @Generated
+    @Selector("setTrailingNavigationBarButtons:")
+    public native void setTrailingNavigationBarButtons(NSArray<? extends CPBarButton> value);
+
+    @Generated
+    @Selector("trailingNavigationBarButtons")
+    public native NSArray<? extends CPBarButton> trailingNavigationBarButtons();
 }

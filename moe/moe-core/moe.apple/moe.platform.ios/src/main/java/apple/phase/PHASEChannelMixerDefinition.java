@@ -25,13 +25,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEChannelMixerDefinition
- * <p>
+ * 
  * Channel mixer definition.
- * <p>
+ * 
  * Channel mixers render audio without spatialization or environmental effects.
  * Use channel mixers for regular stem-based content that needs be rendered directly to the output device, such as
  * stereo music
  * or center channel narrative dialogue.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -102,13 +104,15 @@ public class PHASEChannelMixerDefinition extends PHASEMixerDefinition {
 
     /**
      * initWithChannelLayout
-     * <p>
+     * 
      * Create a new PHASEChannelMixerDefinition
      * [@note]
      * Any connected sampler must match this channel layout.
-     *
-     * @param layout The input channel layout. Any connected sampler must match this channel layout.
-     * @return A new PHASEChannelMixerDefinition object
+     * 
+     * @param layout
+     *               The input channel layout. Any connected sampler must match this channel layout.
+     * @return
+     *         A new PHASEChannelMixerDefinition object
      */
     @Generated
     @Selector("initWithChannelLayout:")
@@ -116,14 +120,17 @@ public class PHASEChannelMixerDefinition extends PHASEMixerDefinition {
 
     /**
      * initWithChannelLayout:identifier
-     * <p>
+     * 
      * Create a new PHASEChannelMixerDefinition
      * [@note]
      * Any connected sampler must match this channel layout.
-     *
-     * @param layout     The input channel layout.
-     * @param identifier An optional custom identifier to give to this object
-     * @return A new PHASEChannelMixerDefinition object
+     * 
+     * @param layout
+     *                   The input channel layout.
+     * @param identifier
+     *                   An optional custom identifier to give to this object
+     * @return
+     *         A new PHASEChannelMixerDefinition object
      */
     @Generated
     @Selector("initWithChannelLayout:identifier:")
@@ -132,7 +139,7 @@ public class PHASEChannelMixerDefinition extends PHASEMixerDefinition {
 
     /**
      * [@property] inputChannelLayout
-     * <p>
+     * 
      * A readonly value of the input channel layout this mixer was initialized with.
      */
     @Generated

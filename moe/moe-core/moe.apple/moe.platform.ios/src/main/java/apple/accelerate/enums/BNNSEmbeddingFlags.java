@@ -8,5 +8,8 @@ public final class BNNSEmbeddingFlags {
     private BNNSEmbeddingFlags() {
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated public static final int BNNSEmbeddingFlagScaleGradientByFrequency = 0x00000001;
 }

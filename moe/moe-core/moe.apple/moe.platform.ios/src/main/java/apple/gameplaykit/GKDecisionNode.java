@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -152,7 +155,7 @@ public class GKDecisionNode extends NSObject {
 
     /**
      * Creates a predicated branch to a node containing the specified attribute
-     *
+     * 
      * @param predicate The predicate to create a branch with
      * @param attribute The attribute of the created node
      * @return The node lead to by the branch
@@ -164,7 +167,7 @@ public class GKDecisionNode extends NSObject {
 
     /**
      * Creates a numeric branch to a node containing the specified attribute
-     *
+     * 
      * @param value     The value to create a branch with
      * @param attribute The attribute of the created node
      * @return The node lead to by the branch
@@ -176,10 +179,11 @@ public class GKDecisionNode extends NSObject {
 
     /**
      * Creates a random branch to a node containing the specified attribute
-     *
+     * 
      * @param weight    The weight to create a branch with (weighted for random selection)
      * @param attribute The attribute of the created node
      * @return The node lead to by the branch
+     * 
      * @see GKDecisionTree
      */
     @Generated

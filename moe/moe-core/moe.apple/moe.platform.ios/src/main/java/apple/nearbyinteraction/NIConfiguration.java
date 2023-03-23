@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An object to describe and configure parameters to be used in a nearby interaction session.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("NearbyInteraction")

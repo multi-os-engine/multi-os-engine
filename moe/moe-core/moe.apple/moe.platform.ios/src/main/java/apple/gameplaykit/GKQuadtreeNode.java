@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * The individual node(s) that make up a GKQuadtree.
  * Used as a hint for faster removal via [GKQuadtree removeData:WithNode:]
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")

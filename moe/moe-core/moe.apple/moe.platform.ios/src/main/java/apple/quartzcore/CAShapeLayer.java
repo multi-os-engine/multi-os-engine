@@ -48,27 +48,29 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The shape layer draws a cubic Bezier spline in its coordinate space.
- * <p>
+ * 
  * The spline is described using a CGPath object and may have both fill
  * and stroke components (in which case the stroke is composited over
  * the fill). The shape as a whole is composited between the layer's
  * contents and its first sublayer.
- * <p>
+ * 
  * The path object may be animated using any of the concrete subclasses
  * of CAPropertyAnimation. Paths will interpolate as a linear blend of
  * the "on-line" points; "off-line" points may be interpolated
  * non-linearly (e.g. to preserve continuity of the curve's
  * derivative). If the two paths have a different number of control
  * points or segments the results are undefined.
- * <p>
+ * 
  * The shape will be drawn antialiased, and whenever possible it will
  * be mapped into screen space before being rasterized to preserve
  * resolution independence. (However, certain kinds of image processing
  * operations, e.g. CoreImage filters, applied to the layer or its
  * ancestors may force rasterization in a local coordinate space.)
- * <p>
+ * 
  * Note: rasterization may favor speed over accuracy, e.g. pixels with
  * multiple intersecting path segments may not give exact results.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("QuartzCore")

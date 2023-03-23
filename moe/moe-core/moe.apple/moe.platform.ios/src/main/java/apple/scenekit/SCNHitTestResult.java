@@ -17,7 +17,6 @@ limitations under the License.
 package apple.scenekit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -41,10 +40,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
 /**
  * SCNHitTestResult
- * <p>
+ * 
  * Results returned by the hit-test methods.
  */
 @Generated
@@ -159,6 +159,8 @@ public class SCNHitTestResult extends NSObject {
 
     /**
      * The hit bone. Only available if the node hit has a SCNSkinner attached.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("boneNode")
@@ -217,9 +219,9 @@ public class SCNHitTestResult extends NSObject {
 
     /**
      * textureCoordinatesWithMappingChannel:
-     * <p>
+     * 
      * Returns the texture coordinates at the point of intersection, for a given mapping channel.
-     *
+     * 
      * @param channel The texture coordinates source index of the geometry to use. The channel must exists on the
      *                geometry otherwise {0,0} will be returned.
      */

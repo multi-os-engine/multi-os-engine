@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -152,7 +155,7 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     /**
      * All face buttons are required to be analog in the Extended profile. These must be arranged
      * in the diamond pattern given below:
-     * <p>
+     * 
      * Y
      * / \
      * X B
@@ -237,10 +240,15 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
      * independent
      * format that can be serialized and used at a later date. This is useful for features such as quality assurance,
      * save game or replay functionality among many.
-     * <p>
+     * 
      * If your application is heavily multithreaded this may also be useful to guarantee atomicity of input handling as
      * a snapshot will not change based on user input once it is taken.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController capture] instead
      */
+    @Deprecated
     @Generated
     @Selector("saveSnapshot")
     public native GCExtendedGamepadSnapshot saveSnapshot();
@@ -271,6 +279,8 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
 
     /**
      * Button menu is the primary menu button, and should be used to enter the main menu and pause the game.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("buttonMenu")
@@ -279,6 +289,8 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     /**
      * Button options is the secondary menu button. It should be used to enter a secondary menu, such as graphics and
      * sound configuration, and pause the game.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("buttonOptions")
@@ -286,21 +298,28 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
 
     /**
      * A thumbstick may also have a clickable component, which is treated as a non-analog button.
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("leftThumbstickButton")
     public native GCControllerButtonInput leftThumbstickButton();
 
+    /**
+     * API-Since: 12.1
+     */
     @Generated
     @Selector("rightThumbstickButton")
     public native GCControllerButtonInput rightThumbstickButton();
 
     /**
      * Sets the state vector of the extended gamepad to a copy of the input extended gamepad's state vector.
-     * <p>
+     * 
      * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
-     *
+     * 
      * @see GCController.snapshot
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("setStateFromExtendedGamepad:")
@@ -309,6 +328,8 @@ public class GCExtendedGamepad extends GCPhysicalInputProfile {
     /**
      * Button home is a special menu button. If the system does not consume button home events, they will be passed to
      * your application and should be used to enter a secondary menu, and pause the game.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("buttonHome")

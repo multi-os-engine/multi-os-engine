@@ -31,6 +31,8 @@ public interface UIAccessibilityIdentification {
     /**
      * A string that identifies the user interface element.
      * default == nil
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("accessibilityIdentifier")
@@ -39,6 +41,8 @@ public interface UIAccessibilityIdentification {
     /**
      * A string that identifies the user interface element.
      * default == nil
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setAccessibilityIdentifier:")

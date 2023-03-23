@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -47,7 +46,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +156,7 @@ public class UISlider extends UIControl implements NSCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -179,6 +183,7 @@ public class UISlider extends UIControl implements NSCoding {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -254,46 +259,57 @@ public class UISlider extends UIControl implements NSCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -426,6 +442,9 @@ public class UISlider extends UIControl implements NSCoding {
     @Selector("maximumTrackImageForState:")
     public native UIImage maximumTrackImageForState(@NUInt long state);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("maximumTrackTintColor")
     public native UIColor maximumTrackTintColor();
@@ -453,6 +472,9 @@ public class UISlider extends UIControl implements NSCoding {
     @Selector("minimumTrackImageForState:")
     public native UIImage minimumTrackImageForState(@NUInt long state);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("minimumTrackTintColor")
     public native UIColor minimumTrackTintColor();
@@ -483,6 +505,9 @@ public class UISlider extends UIControl implements NSCoding {
     @Selector("setMaximumTrackImage:forState:")
     public native void setMaximumTrackImageForState(UIImage image, @NUInt long state);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setMaximumTrackTintColor:")
     public native void setMaximumTrackTintColor(UIColor value);
@@ -505,6 +530,9 @@ public class UISlider extends UIControl implements NSCoding {
     @Selector("setMinimumTrackImage:forState:")
     public native void setMinimumTrackImageForState(UIImage image, @NUInt long state);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setMinimumTrackTintColor:")
     public native void setMinimumTrackTintColor(UIColor value);
@@ -533,6 +561,9 @@ public class UISlider extends UIControl implements NSCoding {
     @Selector("setThumbImage:forState:")
     public native void setThumbImageForState(UIImage image, @NUInt long state);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setThumbTintColor:")
     public native void setThumbTintColor(UIColor value);
@@ -560,6 +591,9 @@ public class UISlider extends UIControl implements NSCoding {
     @ByValue
     public native CGRect thumbRectForBoundsTrackRectValue(@ByValue CGRect bounds, @ByValue CGRect rect, float value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("thumbTintColor")
     public native UIColor thumbTintColor();
@@ -589,6 +623,8 @@ public class UISlider extends UIControl implements NSCoding {
     /**
      * The slider's behavioral style. This property always returns a concrete, resolved style (never
      * UIBehavioralStyleAutomatic).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("behavioralStyle")
@@ -597,6 +633,8 @@ public class UISlider extends UIControl implements NSCoding {
 
     /**
      * Request a style for the slider. If the style changes, the slider will redraw and its metrics may change.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("preferredBehavioralStyle")
@@ -605,6 +643,8 @@ public class UISlider extends UIControl implements NSCoding {
 
     /**
      * Request a style for the slider. If the style changes, the slider will redraw and its metrics may change.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPreferredBehavioralStyle:")

@@ -6,6 +6,9 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)

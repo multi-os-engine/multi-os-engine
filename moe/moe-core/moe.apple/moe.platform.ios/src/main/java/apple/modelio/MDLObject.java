@@ -48,11 +48,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MDLObject
- * <p>
+ * 
  * Base class for object in a ModelIO asset hierarchy
- * <p>
+ * 
  * Includes transformation and bounds info, links to parent and
  * children in the hierachy
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -143,10 +145,16 @@ public class MDLObject extends NSObject implements MDLNamed {
     @Selector("new")
     public static native MDLObject new_objc();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("objectWithSCNNode:")
     public static native MDLObject objectWithSCNNode(SCNNode scnNode);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("objectWithSCNNode:bufferAllocator:")
     public static native MDLObject objectWithSCNNodeBufferAllocator(SCNNode scnNode,
@@ -175,14 +183,14 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * addChild:
-     * <p>
+     * 
      * Short hand for adding a child to the current container component and
      * setting the parent to this object.
-     * <p>
+     * 
      * It will create a default container if none exists. If children are
      * explicitly disallowed for an object, then add a container component
      * that throws on addition.
-     *
+     * 
      * @see MDLObjectContainer
      */
     @Generated
@@ -191,11 +199,11 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] children
-     * <p>
+     * 
      * Short hand property for the MDLObjectContainerComponent.
-     * <p>
-     * The default value is nil
-     *
+     * 
+     * The default value is an empty MDLObjectContainer
+     * 
      * @see MDLObjectContainerComponent
      */
     @Generated
@@ -203,6 +211,9 @@ public class MDLObject extends NSObject implements MDLNamed {
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLObjectContainerComponent children();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("enumerateChildObjectsOfClass:root:usingBlock:stopPointer:")
     public native void enumerateChildObjectsOfClassRootUsingBlockStopPointer(Class objectClass, MDLObject root,
@@ -211,9 +222,9 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] hidden
-     * <p>
+     * 
      * Visibility of the node
-     * <p>
+     * 
      * default is NO
      */
     @Generated
@@ -226,9 +237,9 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] instance
-     * <p>
+     * 
      * Instance object
-     * <p>
+     * 
      * nil, unless this object refers to original data to be instanced. The
      * original data object can be any MDLObject that does not have a parent.
      * If an MDLAsset has been created from a data file, any original objects
@@ -256,9 +267,9 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] parent
-     * <p>
+     * 
      * Parent object. Nil if no parent.
-     * <p>
+     * 
      * Set to nil when you remove this from an object container inside the
      * parent object.
      */
@@ -268,9 +279,9 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] path
-     * <p>
+     * 
      * a string representing a path to the object
-     * <p>
+     * 
      * a path is of the form /path/to/object where the path is formed by
      * concatenating the names of the objects up the parent chain.
      * Requesting a path will force any unnamed objects to became uniquely
@@ -283,11 +294,11 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] children
-     * <p>
+     * 
      * Short hand property for the MDLObjectContainerComponent.
-     * <p>
-     * The default value is nil
-     *
+     * 
+     * The default value is an empty MDLObjectContainer
+     * 
      * @see MDLObjectContainerComponent
      */
     @Generated
@@ -296,9 +307,9 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] hidden
-     * <p>
+     * 
      * Visibility of the node
-     * <p>
+     * 
      * default is NO
      */
     @Generated
@@ -307,9 +318,9 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] instance
-     * <p>
+     * 
      * Instance object
-     * <p>
+     * 
      * nil, unless this object refers to original data to be instanced. The
      * original data object can be any MDLObject that does not have a parent.
      * If an MDLAsset has been created from a data file, any original objects
@@ -330,9 +341,9 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] parent
-     * <p>
+     * 
      * Parent object. Nil if no parent.
-     * <p>
+     * 
      * Set to nil when you remove this from an object container inside the
      * parent object.
      */
@@ -342,9 +353,9 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] parent
-     * <p>
+     * 
      * Parent object. Nil if no parent.
-     * <p>
+     * 
      * Set to nil when you remove this from an object container inside the
      * parent object.
      */
@@ -362,11 +373,11 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] transform
-     * <p>
+     * 
      * Short hand property for the MDLTransformComponent.
-     * <p>
+     * 
      * The default value is nil
-     *
+     * 
      * @see MDLTransformComponent
      */
     @Generated
@@ -375,11 +386,11 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] transform
-     * <p>
+     * 
      * Short hand property for the MDLTransformComponent.
-     * <p>
+     * 
      * The default value is nil
-     *
+     * 
      * @see MDLTransformComponent
      */
     @Generated
@@ -396,7 +407,7 @@ public class MDLObject extends NSObject implements MDLNamed {
 
     /**
      * [@property] components
-     * <p>
+     * 
      * Allows applications to introspect the components on the objects.
      */
     @Generated

@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A class to specify list of supported model update metrics.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreML")

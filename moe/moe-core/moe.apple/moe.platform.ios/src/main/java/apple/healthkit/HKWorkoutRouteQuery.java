@@ -29,14 +29,10 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSNumber;
 
 /**
- * HKWorkoutRouteQuery
- * <p>
- * An HKWorkoutRouteQuery is used to access data associated with an HKWorkoutRoute.
- * <p>
- * Once instantiated, call HKHealthStore executeQuery to begin enumerating the route data. Call
- * HKHealthStore stopQuery to discontinue further route data reporting.
+ * API-Since: 11.0
  */
 @Generated
 @Library("HealthKit")
@@ -106,11 +102,10 @@ public class HKWorkoutRouteQuery extends HKQuery {
     public native HKWorkoutRouteQuery init();
 
     /**
-     * initWithRoute:handler:
-     * <p>
-     * Returns a query that will retrieve CLLocation objects for the specified
-     * workoutRoute.
-     *
+     * initWithRoute:dataHandler:
+     * 
+     * Returns a query that will retrieve CLLocation objects for the specified workoutRoute.
+     * 
      * @param workoutRoute The HKWorkoutRoute for which the location data will be returned.
      * @param dataHandler  The block to invoke with results from the query. It is called repeatedly with an array of
      *                     CLLocation objects until all data is returned and the done parameter is YES or if
@@ -240,21 +235,25 @@ public class HKWorkoutRouteQuery extends HKQuery {
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeDuration(@NUInt long operatorType,
             double duration);
 
+    @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalDistance:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalDistance(@NUInt long operatorType,
             HKQuantity totalDistance);
 
+    @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalEnergyBurned:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalEnergyBurned(@NUInt long operatorType,
             HKQuantity totalEnergyBurned);
 
+    @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
             HKQuantity totalFlightsClimbed);
 
+    @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalSwimmingStrokeCount:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalSwimmingStrokeCount(
@@ -311,4 +310,104 @@ public class HKWorkoutRouteQuery extends HKQuery {
     @Selector("predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval:")
     public static native NSPredicate predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval(
             NSDateInterval dateInterval);
+
+    /**
+     * initWithRoute:dateInterval:dataHandler:
+     * 
+     * Returns a query that will retrieve CLLocation objects for the specified workoutRoute and dateInterval.
+     * 
+     * @param workoutRoute The HKWorkoutRoute for which the location data will be returned.
+     * @param dateInterval The date interval for which the location data will be returned. If the requested interval
+     *                     does
+     *                     not overlap with the specified workout route sample, an empty array of results is returned.
+     *                     If
+     *                     the requested interval partially overlaps with the specified workout route sample, only
+     *                     location
+     *                     data from within that overlapping time period is returned.
+     * @param dataHandler  The block to invoke with results from the query. It is called repeatedly with an array of
+     *                     CLLocation objects until all data is returned and the done parameter is YES or if
+     *                     HKHealthStore
+     *                     stopQuery: is called. The stopQuery call can be made within the dataHandler block. The number
+     *                     of
+     *                     objects returned in routeData per dataHandler call is unspecified. Once done is YES, or
+     *                     stopQuery called, the query is complete and no more calls to the handler will be made.
+     * 
+     *                     API-Since: 16.0
+     */
+    @Generated
+    @Selector("initWithRoute:dateInterval:dataHandler:")
+    public native HKWorkoutRouteQuery initWithRouteDateIntervalDataHandler(HKWorkoutRoute workoutRoute,
+            NSDateInterval dateInterval,
+            @ObjCBlock(name = "call_initWithRouteDateIntervalDataHandler") Block_initWithRouteDateIntervalDataHandler dataHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithRouteDateIntervalDataHandler {
+        @Generated
+        void call_initWithRouteDateIntervalDataHandler(HKWorkoutRouteQuery query,
+                NSArray<? extends CLLocation> routeData, boolean done, NSError error);
+    }
+
+    @Generated
+    @Selector("predicateForCategorySamplesEqualToValues:")
+    public static native NSPredicate predicateForCategorySamplesEqualToValues(NSSet<? extends NSNumber> values);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:duration:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeDuration(@NUInt long operatorType,
+            double duration);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:averageQuantity:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeAverageQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity averageQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:maximumQuantity:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeMaximumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity maximumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:minimumQuantity:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeMinimumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity minimumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeSumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity sumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithStartDate:endDate:options:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithStartDateEndDateOptions(NSDate startDate,
+            NSDate endDate, @NUInt long options);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithWorkoutActivityType:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithWorkoutActivityType(
+            @NUInt long workoutActivityType);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithActivityPredicate:")
+    public static native NSPredicate predicateForWorkoutsWithActivityPredicate(NSPredicate activityPredicate);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:quantityType:averageQuantity:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeAverageQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity averageQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:quantityType:maximumQuantity:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeMaximumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity maximumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:quantityType:minimumQuantity:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeMinimumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity minimumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:quantityType:sumQuantity:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeSumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity sumQuantity);
 }

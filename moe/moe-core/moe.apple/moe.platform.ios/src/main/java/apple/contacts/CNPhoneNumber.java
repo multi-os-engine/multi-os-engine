@@ -45,8 +45,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An immutable value object representing a phone number.
- * <p>
+ * 
  * CNPhoneNumber is thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -132,6 +134,12 @@ public class CNPhoneNumber extends NSObject implements NSCopying, NSSecureCoding
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use phoneNumberWithStringValue:
+     */
+    @Deprecated
     @Generated
     @Owned
     @Selector("new")
@@ -179,6 +187,12 @@ public class CNPhoneNumber extends NSObject implements NSCopying, NSSecureCoding
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use initWithStringValue:
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native CNPhoneNumber init();

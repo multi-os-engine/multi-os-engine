@@ -47,6 +47,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.0
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use CNContactPickerViewController from ContactsUI.framework instead
+ */
 @Deprecated
 @Generated
 @Library("AddressBookUI")
@@ -76,6 +81,7 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
     @Selector("allocWithZone:")
     public static native ABPeoplePickerNavigationController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -218,6 +224,9 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
     /**
      * Optionally determines if a person can be selected or not.
      * If not set, all persons will be selectable.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("predicateForEnablingPerson")
@@ -230,6 +239,9 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      * to the app,
      * or if not set and -peoplePickerNavigationController:didSelectPerson:identifier: is implemented the selected
      * person is displayed.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("predicateForSelectionOfPerson")
@@ -240,6 +252,9 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      * or if the default action for the property should be performed (predicate evaluates to FALSE).
      * If not set and -peoplePickerNavigationController:didSelectPerson:identifier: is implemented the selected property
      * is returned to the app.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("predicateForSelectionOfProperty")
@@ -291,6 +306,9 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
     /**
      * Optionally determines if a person can be selected or not.
      * If not set, all persons will be selectable.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPredicateForEnablingPerson:")
@@ -303,6 +321,9 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      * to the app,
      * or if not set and -peoplePickerNavigationController:didSelectPerson:identifier: is implemented the selected
      * person is displayed.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPredicateForSelectionOfPerson:")
@@ -313,6 +334,9 @@ public class ABPeoplePickerNavigationController extends UINavigationController {
      * or if the default action for the property should be performed (predicate evaluates to FALSE).
      * If not set and -peoplePickerNavigationController:didSelectPerson:identifier: is implemented the selected property
      * is returned to the app.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPredicateForSelectionOfProperty:")

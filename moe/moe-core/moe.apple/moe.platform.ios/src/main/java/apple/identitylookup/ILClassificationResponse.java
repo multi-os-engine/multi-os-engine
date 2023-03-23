@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A response to an ILClassificationRequest.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("IdentityLookup")
@@ -150,7 +152,7 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
     /**
      * The JSON representation of this dictionary will be sent when a value for
      * ILClassificationExtensionNetworkReportDestination has been set in the extension's Info.plist
-     * <p>
+     * 
      * The keys and values in this dictionary must conform to the NSJSONSerialization specifications:
      * - Top level object is an NSDictionary
      * - All objects are NSString, NSNumber, NSArray, NSDictionary, or NSNull
@@ -164,6 +166,8 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
     /**
      * The value of this string will be sent when a value for
      * ILClassificationExtensionSMSReportDestination has been set in the extension's Info.plist
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("setUserString:")
@@ -190,7 +194,7 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
     /**
      * The JSON representation of this dictionary will be sent when a value for
      * ILClassificationExtensionNetworkReportDestination has been set in the extension's Info.plist
-     * <p>
+     * 
      * The keys and values in this dictionary must conform to the NSJSONSerialization specifications:
      * - Top level object is an NSDictionary
      * - All objects are NSString, NSNumber, NSArray, NSDictionary, or NSNull
@@ -204,6 +208,8 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
     /**
      * The value of this string will be sent when a value for
      * ILClassificationExtensionSMSReportDestination has been set in the extension's Info.plist
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("userString")

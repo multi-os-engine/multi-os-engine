@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Represents a camera stream.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("HomeKit")
@@ -167,17 +169,23 @@ public class HMCameraStream extends HMCameraSource {
 
     /**
      * Sets the audio stream setting.
-     *
+     * 
      * @param audioStreamSetting New audio stream setting.
+     * 
+     * 
+     *                           API-Since: 10.0
+     *                           Deprecated-Since: 10.0
      */
+    @Deprecated
     @Generated
     @Selector("setAudioStreamSetting:")
     public native void setAudioStreamSetting(@NUInt long audioStreamSetting);
 
     /**
      * Updates the settings of the audio stream.
-     *
+     * 
      * @param audioStreamSetting New audio stream setting. Bidirectional audio is not allowed on TVOS.
+     * 
      * @param completion         Block that is invoked once the request is processed.
      *                           The NSError provides more information on the status of the request, error
      *                           will be nil on success.

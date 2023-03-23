@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request that will detect rectangles in an image.
- * <p>
+ * 
  * This request will generate VNRectangleObservation objects describing the location of rectangles detected in an image.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")

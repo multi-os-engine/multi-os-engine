@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_ws_response_status_t
- * <p>
+ * 
  * The status of a WebSocket server's response to a client's request to
  * connect.
  */

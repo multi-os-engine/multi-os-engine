@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Parent class for a MessageFilter extension's principal class.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("IdentityLookup")

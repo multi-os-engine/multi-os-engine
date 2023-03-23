@@ -17,7 +17,6 @@ limitations under the License.
 package apple.mapkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
@@ -48,9 +47,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * MKTileOverlay represents a data source for raster image tiles in the spherical mercator projection (EPSG:3857).
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("MapKit")

@@ -68,11 +68,24 @@ public class NSKeyedArchiver extends NSCoder {
     @Selector("allocWithZone:")
     public static native NSKeyedArchiver allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use +archivedDataWithRootObject:requiringSecureCoding:error: and -writeToURL:options:error:
+     * instead
+     */
+    @Deprecated
     @Generated
     @Selector("archiveRootObject:toFile:")
     public static native boolean archiveRootObjectToFile(@Mapped(ObjCObjectMapper.class) Object rootObject,
             String path);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use +archivedDataWithRootObject:requiringSecureCoding:error: instead
+     */
+    @Deprecated
     @Generated
     @Selector("archivedDataWithRootObject:")
     public static native NSData archivedDataWithRootObject(@Mapped(ObjCObjectMapper.class) Object rootObject);
@@ -223,6 +236,8 @@ public class NSKeyedArchiver extends NSCoder {
      * If encoding has not yet finished, then invoking this property will call finishEncoding and return the data. If
      * you initialized the keyed archiver with a specific mutable data instance, then it will be returned from this
      * property after finishEncoding is called.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("encodedData")
@@ -234,11 +249,22 @@ public class NSKeyedArchiver extends NSCoder {
 
     /**
      * Initialize the archiver with empty data, ready for writing.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use -initRequiringSecureCoding: instead
      */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSKeyedArchiver init();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use -initRequiringSecureCoding: instead
+     */
+    @Deprecated
     @Generated
     @Selector("initForWritingWithMutableData:")
     public native NSKeyedArchiver initForWritingWithMutableData(NSMutableData data);
@@ -254,6 +280,8 @@ public class NSKeyedArchiver extends NSCoder {
      * all classes that are encoded conform with NSSecureCoding (it will throw an exception if a class which does not
      * NSSecureCoding is archived). Note that the getter is on the superclass, NSCoder. See NSCoder for more information
      * about secure coding.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("requiresSecureCoding")
@@ -289,6 +317,8 @@ public class NSKeyedArchiver extends NSCoder {
      * all classes that are encoded conform with NSSecureCoding (it will throw an exception if a class which does not
      * NSSecureCoding is archived). Note that the getter is on the superclass, NSCoder. See NSCoder for more information
      * about secure coding.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setRequiresSecureCoding:")
@@ -297,13 +327,15 @@ public class NSKeyedArchiver extends NSCoder {
     /**
      * Returns an \c NSData object containing the encoded form of the object graph whose root object is given,
      * optionally disabling secure coding.
-     * <p>
+     * 
      * If \c NSSecureCoding cannot be used, \c requiresSecureCoding may be turned off here; for improved security,
      * however, \c requiresSecureCoding should be left enabled whenever possible. \c requiresSecureCoding ensures that
      * all encoded objects conform to \c NSSecureCoding, preventing the possibility of encoding objects which cannot be
      * decoded later.
-     * <p>
+     * 
      * If the object graph cannot be encoded, returns \c nil and sets the \c error out parameter.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("archivedDataWithRootObject:requiringSecureCoding:error:")
@@ -313,14 +345,16 @@ public class NSKeyedArchiver extends NSCoder {
 
     /**
      * Initializes the receiver for encoding an archive, optionally disabling secure coding.
-     * <p>
+     * 
      * If \c NSSecureCoding cannot be used, \c requiresSecureCoding may be turned off here; for improved security,
      * however, \c requiresSecureCoding should be left enabled whenever possible. \c requiresSecureCoding ensures that
      * all encoded objects conform to \c NSSecureCoding, preventing the possibility of encoding objects which cannot be
      * decoded later.
-     * <p>
+     * 
      * To produce archives whose structure matches those previously encoded using \c +archivedDataWithRootObject, encode
      * the top-level object in your archive for the \c NSKeyedArchiveRootObjectKey.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initRequiringSecureCoding:")

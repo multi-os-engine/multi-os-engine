@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -121,8 +124,8 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
     @Generated
     public interface Block_initWithSectionProvider {
         @Generated
-        NSCollectionLayoutSection call_initWithSectionProvider(@NInt long arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        NSCollectionLayoutSection call_initWithSectionProvider(@NInt long sectionIndex,
+                @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
     }
 
     @Generated
@@ -135,8 +138,8 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
     @Generated
     public interface Block_initWithSectionProviderConfiguration {
         @Generated
-        NSCollectionLayoutSection call_initWithSectionProviderConfiguration(@NInt long arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        NSCollectionLayoutSection call_initWithSectionProviderConfiguration(@NInt long sectionIndex,
+                @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
     }
 
     @Generated
@@ -204,6 +207,8 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
 
     /**
      * Creates a compositional layout containing only list sections of the specified configuration.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("layoutWithListConfiguration:")

@@ -52,6 +52,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * upwards.
  * It will do this until the budget has been reached, then returning the choice it has deemed best suited for the player
  * in question.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")

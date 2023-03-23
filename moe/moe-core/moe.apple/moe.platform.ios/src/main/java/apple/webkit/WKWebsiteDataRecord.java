@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A WKWebsiteDataRecord represents website data, grouped by domain name using the public suffix list.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("WebKit")

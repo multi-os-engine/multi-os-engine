@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("EAAccessoryDelegate")
 public interface EAAccessoryDelegate {
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("accessoryDidDisconnect:")

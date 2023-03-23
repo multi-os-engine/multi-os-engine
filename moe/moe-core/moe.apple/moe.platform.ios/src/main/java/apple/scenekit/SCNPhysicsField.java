@@ -49,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNPhysicsField
- * <p>
+ * 
  * SCNPhysicsField is an abstract class that describes a force field that applies in the physics world.
  */
 @Generated
@@ -263,7 +263,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * [@property] categoryBitMask
-     * <p>
+     * 
      * Determines the node physicsBody's categories that will be influenced by the receiver. Defaults to all bit set.
      */
     @Generated
@@ -368,7 +368,7 @@ public class SCNPhysicsField extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * [@property] categoryBitMask
-     * <p>
+     * 
      * Determines the node physicsBody's categories that will be influenced by the receiver. Defaults to all bit set.
      */
     @Generated

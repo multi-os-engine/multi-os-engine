@@ -28,12 +28,29 @@ public final class CFCalendarUnit {
     @Generated @NUInt public static final long Hour = 0x0000000000000020L;
     @Generated @NUInt public static final long Minute = 0x0000000000000040L;
     @Generated @NUInt public static final long Second = 0x0000000000000080L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use kCFCalendarUnitWeekOfYear or kCFCalendarUnitWeekOfMonth instead
+     */
     @Deprecated @Generated @NUInt public static final long Week = 0x0000000000000100L;
     @Generated @NUInt public static final long Weekday = 0x0000000000000200L;
     @Generated @NUInt public static final long WeekdayOrdinal = 0x0000000000000400L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NUInt public static final long Quarter = 0x0000000000000800L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NUInt public static final long WeekOfMonth = 0x0000000000001000L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NUInt public static final long WeekOfYear = 0x0000000000002000L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NUInt public static final long YearForWeekOfYear = 0x0000000000004000L;
 
     @Generated

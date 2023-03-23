@@ -25,6 +25,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GCVirtualControllerElementConfiguration
+ * 
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("GameController")

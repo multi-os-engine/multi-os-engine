@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * UITextInputTraits
- * <p>
+ * 
  * Controls features of text widgets (or other custom objects that might wish
  * to respond to keyboard input).
  */
@@ -186,6 +186,8 @@ public interface UITextInputTraits {
 
     /**
      * default is UITextSpellCheckingTypeDefault;
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @IsOptional
@@ -196,6 +198,8 @@ public interface UITextInputTraits {
 
     /**
      * default is nil
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -206,6 +210,8 @@ public interface UITextInputTraits {
 
     /**
      * default is UITextSpellCheckingTypeDefault;
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @IsOptional
@@ -217,6 +223,8 @@ public interface UITextInputTraits {
 
     /**
      * default is nil
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -227,6 +235,8 @@ public interface UITextInputTraits {
 
     /**
      * default is UITextSmartDashesTypeDefault;
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -237,6 +247,8 @@ public interface UITextInputTraits {
 
     /**
      * default is UITextSmartInsertDeleteTypeDefault;
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -247,6 +259,8 @@ public interface UITextInputTraits {
 
     /**
      * default is UITextSmartQuotesTypeDefault;
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -257,6 +271,8 @@ public interface UITextInputTraits {
 
     /**
      * default is UITextSmartDashesTypeDefault;
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -268,6 +284,8 @@ public interface UITextInputTraits {
 
     /**
      * default is UITextSmartInsertDeleteTypeDefault;
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -279,6 +297,8 @@ public interface UITextInputTraits {
 
     /**
      * default is UITextSmartQuotesTypeDefault;
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -290,6 +310,8 @@ public interface UITextInputTraits {
 
     /**
      * default is nil
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional
@@ -300,6 +322,8 @@ public interface UITextInputTraits {
 
     /**
      * default is nil
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional

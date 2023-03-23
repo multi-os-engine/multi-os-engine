@@ -43,19 +43,24 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GLKEffectPropertyTransformm
- * <p>
+ * 
  * GLKEffectPropertyTransform maintains three primary matrices:
- * <p>
+ * 
  * _projectionMatrix
  * _modelviewMatrix
- * <p>
+ * 
  * and 1 derived matrix: _normalMatrix.
- * <p>
+ * 
  * When the modelview matrix is changed the normalMatrix is marked as stale.
  * If the normalMatrix is subsequently retrieved after being marked stale
  * the normalMatrix selector will recalculate the normalMatrix to return
  * a current result with respect to the modelviewMatrix.
+ * 
+ * API-Since: 5.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
  */
+@Deprecated
 @Generated
 @Library("GLKit")
 @Runtime(ObjCRuntime.class)

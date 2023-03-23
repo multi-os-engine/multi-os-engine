@@ -38,6 +38,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ * Deprecated-Since: 7.0
+ * Deprecated-Message: Use registerListener on GKLocalPlayer with an object that implements the GKTurnBasedEventListener
+ * protocol
+ */
 @Deprecated
 @Generated
 @Library("GameKit")
@@ -140,6 +146,10 @@ public class GKTurnBasedEventHandler extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("sharedTurnBasedEventHandler")
@@ -154,6 +164,10 @@ public class GKTurnBasedEventHandler extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("delegate")
@@ -163,11 +177,19 @@ public class GKTurnBasedEventHandler extends NSObject {
     @Selector("init")
     public native GKTurnBasedEventHandler init();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(NSObject value);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     public void setDelegate(NSObject value) {

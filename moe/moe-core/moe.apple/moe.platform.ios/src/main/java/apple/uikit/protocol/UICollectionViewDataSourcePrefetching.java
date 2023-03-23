@@ -35,6 +35,8 @@ public interface UICollectionViewDataSourcePrefetching {
     /**
      * indexPaths that previously were considered as candidates for pre-fetching, but were not actually used; may be a
      * subset of the previous call to -collectionView:prefetchItemsAtIndexPaths:
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -46,6 +48,8 @@ public interface UICollectionViewDataSourcePrefetching {
 
     /**
      * indexPaths are ordered ascending by geometric distance from the collection view
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("collectionView:prefetchItemsAtIndexPaths:")

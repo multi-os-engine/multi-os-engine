@@ -44,9 +44,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMGyroData
- * <p>
+ * 
  * Discussion:
  * Contains a single gyro measurement.
+ * 
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("CoreMotion")
@@ -172,7 +175,7 @@ public class CMGyroData extends CMLogItem {
 
     /**
      * rotationRate
-     * <p>
+     * 
      * Discussion:
      * The rotation rate as measured by the gyro.
      */

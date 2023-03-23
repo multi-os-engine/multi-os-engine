@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -43,7 +42,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 4.2
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -154,6 +157,11 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("contentInsets")
     @ByValue
@@ -228,6 +236,11 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     @Selector("removeFromPrintPageRenderer")
     public native void removeFromPrintPageRenderer();
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("setContentInsets:")
     public native void setContentInsets(@ByValue UIEdgeInsets value);
@@ -268,4 +281,14 @@ public class UIPrintFormatter extends NSObject implements NSCopying {
     @Selector("startPage")
     @NInt
     public native long startPage();
+
+    /**
+     * override point to decide if the drawing and page count calculation for each UIPrintFormatter are required to be
+     * called on the main thread; the default value is YES.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("requiresMainThread")
+    public native boolean requiresMainThread();
 }

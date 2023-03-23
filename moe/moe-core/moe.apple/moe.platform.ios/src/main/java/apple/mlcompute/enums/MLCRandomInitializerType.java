@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MLCRandomInitializerType
- * <p>
+ * 
  * An initializer type you use to create a tensor with random data.
  */
 @Generated

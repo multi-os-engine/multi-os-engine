@@ -17,7 +17,6 @@ limitations under the License.
 package apple.webkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSData;
@@ -61,7 +60,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.UIFindInteraction;
+import apple.uikit.struct.UIEdgeInsets;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -167,6 +172,7 @@ public class WKWebView extends UIView {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -193,6 +199,7 @@ public class WKWebView extends UIView {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -268,46 +275,57 @@ public class WKWebView extends UIView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -363,7 +381,7 @@ public class WKWebView extends UIView {
 
     /**
      * The active URL.
-     * <p>
+     * 
      * This is the URL that should be reflected in the user
      * interface.
      * [@link] WKWebView @/link is key-value observing (KVO) compliant for this
@@ -376,7 +394,7 @@ public class WKWebView extends UIView {
     /**
      * A Boolean value indicating whether horizontal swipe gestures
      * will trigger back-forward list navigations.
-     * <p>
+     * 
      * The default value is NO.
      */
     @Generated
@@ -386,8 +404,10 @@ public class WKWebView extends UIView {
     /**
      * A Boolean value indicating whether link preview is allowed for any
      * links inside this WKWebView.
-     * <p>
+     * 
      * The default value is YES on Mac and iOS.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("allowsLinkPreview")
@@ -444,10 +464,10 @@ public class WKWebView extends UIView {
     /**
      * A Boolean value indicating whether there is a back item in
      * the back-forward list that can be navigated to.
-     * <p>
+     * 
      * [@link] WKWebView @/link is key-value observing (KVO) compliant
      * for this property.
-     *
+     * 
      * @see backForwardList.
      */
     @Generated
@@ -457,16 +477,21 @@ public class WKWebView extends UIView {
     /**
      * A Boolean value indicating whether there is a forward item in
      * the back-forward list that can be navigated to.
-     * <p>
+     * 
      * [@link] WKWebView @/link is key-value observing (KVO) compliant
      * for this property.
-     *
+     * 
      * @see backForwardList.
      */
     @Generated
     @Selector("canGoForward")
     public native boolean canGoForward();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("certificateChain")
     public native NSArray<?> certificateChain();
@@ -481,6 +506,8 @@ public class WKWebView extends UIView {
 
     /**
      * The custom user agent string or nil if no custom user agent string has been set.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("customUserAgent")
@@ -488,7 +515,7 @@ public class WKWebView extends UIView {
 
     /**
      * An estimate of what fraction of the current navigation has been completed.
-     * <p>
+     * 
      * This value ranges from 0.0 to 1.0 based on the total number of
      * bytes expected to be received, including the main document and all of its
      * potential subresources. After a navigation completes, the value remains at 1.0
@@ -502,12 +529,12 @@ public class WKWebView extends UIView {
 
     /**
      * Evaluates the given JavaScript string.
-     * <p>
+     * 
      * The completionHandler is passed the result of the script evaluation or an error.
      * Calling this method is equivalent to calling `evaluateJavaScript:inFrame:inContentWorld:completionHandler:` with:
      * - A `frame` value of `nil` to represent the main frame
      * - A `contentWorld` value of `WKContentWorld.pageWorld`
-     *
+     * 
      * @param javaScriptString  The JavaScript string to evaluate.
      * @param completionHandler A block to invoke when script evaluation completes or fails.
      */
@@ -518,7 +545,7 @@ public class WKWebView extends UIView {
 
     /**
      * Navigates to the back item in the back-forward list.
-     *
+     * 
      * @return A new navigation to the requested item, or nil if there is no back
      *         item in the back-forward list.
      */
@@ -528,7 +555,7 @@ public class WKWebView extends UIView {
 
     /**
      * Navigates to the forward item in the back-forward list.
-     *
+     * 
      * @return A new navigation to the requested item, or nil if there is no
      *         forward item in the back-forward list.
      */
@@ -539,7 +566,7 @@ public class WKWebView extends UIView {
     /**
      * Navigates to an item from the back-forward list and sets it
      * as the current item.
-     *
+     * 
      * @param item The item to which to navigate. Must be one of the items in the
      *             web view's back-forward list.
      * @return A new navigation to the requested item, or nil if it is already
@@ -553,7 +580,7 @@ public class WKWebView extends UIView {
     /**
      * A Boolean value indicating whether all resources on the page
      * have been loaded over securely encrypted connections.
-     * <p>
+     * 
      * [@link] WKWebView @/link is key-value observing (KVO) compliant
      * for this property.
      */
@@ -576,13 +603,13 @@ public class WKWebView extends UIView {
     /**
      * Returns a web view initialized with a specified frame and
      * configuration.
-     * <p>
+     * 
      * This is a designated initializer. You can use
      * [@link] -initWithFrame: @/link to initialize an instance with the default
      * configuration. The initializer copies the specified configuration, so
      * mutating the configuration after invoking the initializer has no effect
      * on the web view.
-     *
+     * 
      * @param frame         The frame for the new web view.
      * @param configuration The configuration for the new web view.
      * @return An initialized web view, or nil if the object could not be
@@ -595,7 +622,7 @@ public class WKWebView extends UIView {
     /**
      * A Boolean value indicating whether the view is currently
      * loading content.
-     * <p>
+     * 
      * [@link] WKWebView @/link is key-value observing (KVO) compliant
      * for this property.
      */
@@ -605,12 +632,14 @@ public class WKWebView extends UIView {
 
     /**
      * Sets the webpage contents and base URL.
-     *
+     * 
      * @param data                  The data to use as the contents of the webpage.
      * @param MIMEType              The MIME type of the data.
      * @param characterEncodingName The data's character encoding name.
      * @param baseURL               A URL that is used to resolve relative URLs within the document.
      * @return A new navigation.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("loadData:MIMEType:characterEncodingName:baseURL:")
@@ -619,13 +648,15 @@ public class WKWebView extends UIView {
 
     /**
      * Navigates to the requested file URL on the filesystem.
-     * <p>
+     * 
      * If readAccessURL references a single file, only that file may be loaded by WebKit.
      * If readAccessURL references a directory, files inside that file may be loaded by WebKit.
-     *
+     * 
      * @param URL           The file URL to which to navigate.
      * @param readAccessURL The URL to allow read access to.
      * @return A new navigation for the given file URL.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("loadFileURL:allowingReadAccessToURL:")
@@ -633,7 +664,7 @@ public class WKWebView extends UIView {
 
     /**
      * Sets the webpage contents and base URL.
-     *
+     * 
      * @param string  The string to use as the contents of the webpage.
      * @param baseURL A URL that is used to resolve relative URLs within the document.
      * @return A new navigation.
@@ -644,7 +675,7 @@ public class WKWebView extends UIView {
 
     /**
      * Navigates to a requested URL.
-     *
+     * 
      * @param request The request specifying the URL to which to navigate.
      * @return A new navigation for the given request.
      */
@@ -662,7 +693,7 @@ public class WKWebView extends UIView {
 
     /**
      * Reloads the current page.
-     *
+     * 
      * @return A new navigation representing the reload.
      */
     @Generated
@@ -672,7 +703,7 @@ public class WKWebView extends UIView {
     /**
      * Reloads the current page, performing end-to-end revalidation
      * using cache-validating conditionals if possible.
-     *
+     * 
      * @return A new navigation representing the reload.
      */
     @Generated
@@ -688,9 +719,11 @@ public class WKWebView extends UIView {
 
     /**
      * A SecTrustRef for the currently committed navigation.
-     * <p>
+     * 
      * [@link] WKWebView @/link is key-value observing (KVO) compliant
      * for this property.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("serverTrust")
@@ -699,7 +732,7 @@ public class WKWebView extends UIView {
     /**
      * A Boolean value indicating whether horizontal swipe gestures
      * will trigger back-forward list navigations.
-     * <p>
+     * 
      * The default value is NO.
      */
     @Generated
@@ -709,8 +742,10 @@ public class WKWebView extends UIView {
     /**
      * A Boolean value indicating whether link preview is allowed for any
      * links inside this WKWebView.
-     * <p>
+     * 
      * The default value is YES on Mac and iOS.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAllowsLinkPreview:")
@@ -718,6 +753,8 @@ public class WKWebView extends UIView {
 
     /**
      * The custom user agent string or nil if no custom user agent string has been set.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCustomUserAgent:")
@@ -776,7 +813,7 @@ public class WKWebView extends UIView {
 
     /**
      * The page title.
-     * <p>
+     * 
      * [@link] WKWebView @/link is key-value observing (KVO) compliant
      * for this property.
      */
@@ -793,8 +830,10 @@ public class WKWebView extends UIView {
 
     /**
      * Checks whether or not WKWebViews handle the given URL scheme by default.
-     *
+     * 
      * @param scheme The URL scheme to check.
+     * 
+     *               API-Since: 11.0
      */
     @Generated
     @Selector("handlesURLScheme:")
@@ -806,6 +845,9 @@ public class WKWebView extends UIView {
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("takeSnapshotWithConfiguration:completionHandler:")
     public native void takeSnapshotWithConfigurationCompletionHandler(WKSnapshotConfiguration snapshotConfiguration,
@@ -818,6 +860,9 @@ public class WKWebView extends UIView {
         void call_takeSnapshotWithConfigurationCompletionHandler(UIImage snapshotImage, NSError error);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("callAsyncJavaScript:arguments:inFrame:inContentWorld:completionHandler:")
     public native void callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler(String functionBody,
@@ -834,13 +879,15 @@ public class WKWebView extends UIView {
 
     /**
      * Create a PDF document representation from the web page currently displayed in the WKWebView
-     * <p>
+     * 
      * If the WKPDFConfiguration is nil, the method will create a PDF document representing the bounds of the currently
      * displayed web page.
      * The completionHandler is passed the resulting PDF document data or an error.
      * The data can be used to create a PDFDocument object.
      * If the data is written to a file the resulting file is a valid PDF document.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param pdfConfiguration  An object that specifies how the PDF capture is configured.
      * @param completionHandler A block to invoke when the pdf document data is ready.
      */
@@ -858,12 +905,14 @@ public class WKWebView extends UIView {
 
     /**
      * Create WebKit web archive data representing the current web content of the WKWebView
-     * <p>
+     * 
      * WebKit web archive data represents a snapshot of web content.
      * It can be used to represent web content on a pasteboard, loaded into a WKWebView directly, and saved to a file
      * for later use.
      * The uniform type identifier kUTTypeWebArchive can be used get the related pasteboard type and MIME type.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param completionHandler A block to invoke when the web archive data is ready.
      */
     @Generated
@@ -880,16 +929,16 @@ public class WKWebView extends UIView {
 
     /**
      * Evaluates the given JavaScript string.
-     * <p>
+     * 
      * The completionHandler is passed the result of the script evaluation or an error.
-     * <p>
+     * 
      * Passing nil is equivalent to targeting the main frame.
      * If the frame argument no longer represents a valid frame by the time WebKit attempts to call the JavaScript
      * function your completion handler will be called with a WKErrorJavaScriptInvalidFrameTarget error.
      * This might happen for a number of reasons, including but not limited to:
      * - The target frame has been removed from the DOM via JavaScript
      * - A parent frame has navigated, destroying all of its previous child frames
-     * <p>
+     * 
      * No matter which WKContentWorld you use to evaluate your JavaScript string, you can make changes to the underlying
      * web content. (e.g. the Document and its DOM structure)
      * Such changes will be visible to script executing in all WKContentWorlds.
@@ -900,7 +949,9 @@ public class WKWebView extends UIView {
      * Importing libraries/utilities that future JavaScript execution will rely on)
      * Once your global state is set up, consider using callAsyncJavaScript: for more flexible interaction with the
      * JavaScript programming model.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param javaScriptString  The JavaScript string to evaluate.
      * @param frame             A WKFrameInfo identifying the frame in which to evaluate the JavaScript string.
      * @param contentWorld      The WKContentWorld in which to evaluate the JavaScript string.
@@ -922,11 +973,13 @@ public class WKWebView extends UIView {
 
     /**
      * Searches the page contents for the given string.
-     * <p>
+     * 
      * If the WKFindConfiguration is nil, all of the default WKFindConfiguration values will be used.
      * A match found by the search is selected and the page is scrolled to reveal the selection.
      * The completion handler is called after the search completes.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param string            The string to search for.
      * @param configuration     A set of options configuring the search.
      * @param completionHandler A block to invoke when the search completes.
@@ -945,10 +998,12 @@ public class WKWebView extends UIView {
 
     /**
      * The media type for the WKWebView
-     * <p>
+     * 
      * The value of mediaType will override the normal value of the CSS media property.
      * Setting the value to nil will restore the normal value.
      * The default value is nil.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("mediaType")
@@ -956,10 +1011,12 @@ public class WKWebView extends UIView {
 
     /**
      * The factor by which page content is scaled relative to the viewport.
-     * <p>
+     * 
      * The default value is 1.0.
      * Changing this value is equivalent to web content setting the CSS "zoom"
      * property on all page content.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("pageZoom")
@@ -968,10 +1025,12 @@ public class WKWebView extends UIView {
 
     /**
      * The media type for the WKWebView
-     * <p>
+     * 
      * The value of mediaType will override the normal value of the CSS media property.
      * Setting the value to nil will restore the normal value.
      * The default value is nil.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMediaType:")
@@ -979,10 +1038,12 @@ public class WKWebView extends UIView {
 
     /**
      * The factor by which page content is scaled relative to the viewport.
-     * <p>
+     * 
      * The default value is 1.0.
      * Changing this value is equivalent to web content setting the CSS "zoom"
      * property on all page content.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPageZoom:")
@@ -990,23 +1051,32 @@ public class WKWebView extends UIView {
 
     /**
      * The state of camera capture on a web page.
-     * <p>
+     * 
      * [@link] WKWebView @/link is key-value observing (KVO) compliant
      * for this property.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("cameraCaptureState")
     @NInt
     public native long cameraCaptureState();
 
+    /**
+     * API-Since: 14.5
+     * Deprecated-Since: 15.0
+     */
+    @Deprecated
     @Generated
     @Selector("closeAllMediaPresentations")
     public native void closeAllMediaPresentations();
 
     /**
      * Closes all out-of-window media presentations in a WKWebView.
-     * <p>
+     * 
      * Includes picture-in-picture and fullscreen.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("closeAllMediaPresentationsWithCompletionHandler:")
@@ -1022,10 +1092,12 @@ public class WKWebView extends UIView {
 
     /**
      * The interaction state for the WKWebView
-     * <p>
+     * 
      * The interaction state (back-forward list, currently loaded page, scroll position, form data...) for the
      * WKWebView, which
      * can be retrieved and set on another WKWebView to restore state.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("interactionState")
@@ -1034,14 +1106,16 @@ public class WKWebView extends UIView {
 
     /**
      * Navigates to the requested file URL on the filesystem.
-     * <p>
+     * 
      * If readAccessURL references a single file, only that file may be
      * loaded by WebKit.
      * If readAccessURL references a directory, files inside that file may be loaded by WebKit.
-     *
+     * 
      * @param request       The request specifying the file URL to which to navigate.
      * @param readAccessURL The URL to allow read access to.
      * @return A new navigation for the given file URL.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("loadFileRequest:allowingReadAccessToURL:")
@@ -1052,12 +1126,14 @@ public class WKWebView extends UIView {
      * response to the supplied request. The request is never actually sent to the
      * supplied URL, though loads of resources defined in the NSData object would
      * be performed.
-     *
+     * 
      * @param request  The request specifying the base URL and other loading details
      *                 to be used while interpreting the supplied data object.
      * @param response A response that is used to interpret the supplied data object.
      * @param data     The data to use as the contents of the webpage.
      * @return A new navigation.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("loadSimulatedRequest:response:responseData:")
@@ -1069,36 +1145,55 @@ public class WKWebView extends UIView {
      * the response to the supplied request. The request is never actually sent to the
      * supplied URL, though loads of resources defined in the HTML string would be
      * performed.
-     *
+     * 
      * @param request The request specifying the base URL and other loading details
      *                to be used while interpreting the supplied data object.
      * @param string  The data to use as the contents of the webpage.
      * @return A new navigation.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("loadSimulatedRequest:responseHTMLString:")
     public native WKNavigation loadSimulatedRequestResponseHTMLString(NSURLRequest request, String string);
 
+    /**
+     * API-Since: 15.0
+     * Deprecated-Since: 15.0
+     */
+    @Deprecated
     @Generated
     @Selector("loadSimulatedRequest:withResponse:responseData:")
     public native WKNavigation loadSimulatedRequestWithResponseResponseData(NSURLRequest request,
             NSURLResponse response, NSData data);
 
+    /**
+     * API-Since: 15.0
+     * Deprecated-Since: 15.0
+     */
+    @Deprecated
     @Generated
     @Selector("loadSimulatedRequest:withResponseHTMLString:")
     public native WKNavigation loadSimulatedRequestWithResponseHTMLString(NSURLRequest request, String string);
 
     /**
      * The state of microphone capture on a web page.
-     * <p>
+     * 
      * [@link] WKWebView @/link is key-value observing (KVO) compliant
      * for this property.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("microphoneCaptureState")
     @NInt
     public native long microphoneCaptureState();
 
+    /**
+     * API-Since: 14.5
+     * Deprecated-Since: 15.0
+     */
+    @Deprecated
     @Generated
     @Selector("pauseAllMediaPlayback:")
     public native void pauseAllMediaPlayback(
@@ -1113,9 +1208,11 @@ public class WKWebView extends UIView {
 
     /**
      * Pauses media playback in WKWebView.
-     * <p>
+     * 
      * Pauses media playback. Media in the page can be restarted by calling play() on a media element or resume() on an
      * AudioContext in JavaScript. A user can also use media controls to play media content after it has been paused.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("pauseAllMediaPlaybackWithCompletionHandler:")
@@ -1129,6 +1226,11 @@ public class WKWebView extends UIView {
         void call_pauseAllMediaPlaybackWithCompletionHandler();
     }
 
+    /**
+     * API-Since: 14.5
+     * Deprecated-Since: 15.0
+     */
+    @Deprecated
     @Generated
     @Selector("requestMediaPlaybackState:")
     public native void requestMediaPlaybackState(
@@ -1143,12 +1245,14 @@ public class WKWebView extends UIView {
 
     /**
      * Get the current media playback state of a WKWebView.
-     * <p>
+     * 
      * If media playback exists, WKMediaPlaybackState will be one of three
      * values: WKMediaPlaybackPaused, WKMediaPlaybackSuspended, or WKMediaPlaybackPlaying.
      * If no media playback exists in the current WKWebView, WKMediaPlaybackState will equal
      * WKMediaPlaybackStateNone.
-     *
+     * 
+     * API-Since: 15.0
+     * 
      * @param completionHandler A block to invoke with the return value of the function call.
      */
     @Generated
@@ -1163,6 +1267,11 @@ public class WKWebView extends UIView {
         void call_requestMediaPlaybackStateWithCompletionHandler(@NInt long arg0);
     }
 
+    /**
+     * API-Since: 14.5
+     * Deprecated-Since: 15.0
+     */
+    @Deprecated
     @Generated
     @Selector("resumeAllMediaPlayback:")
     public native void resumeAllMediaPlayback(
@@ -1177,9 +1286,11 @@ public class WKWebView extends UIView {
 
     /**
      * Resumes a download that failed or was canceled.
-     * <p>
+     * 
      * The download needs its delegate to be set in the completionHandler to receive updates about its progress.
-     *
+     * 
+     * API-Since: 14.5
+     * 
      * @param resumeData        Data from a WKDownloadDelegate's didFailWithError or a WKDownload's cancel
      *                          completionHandler.
      * @param completionHandler A block called when the download has resumed.
@@ -1198,11 +1309,13 @@ public class WKWebView extends UIView {
 
     /**
      * Suspends or resumes all media playback in WKWebView.
-     * <p>
+     * 
      * If suspended is true, this pauses media playback and blocks all attempts by the page or the user to resume until
      * setAllMediaPlaybackSuspended is called again with suspended set to false. Media playback should always be
      * suspended and resumed in pairs.
-     *
+     * 
+     * API-Since: 15.0
+     * 
      * @param suspended Whether media playback should be suspended or resumed.
      */
     @Generated
@@ -1219,11 +1332,13 @@ public class WKWebView extends UIView {
 
     /**
      * Set camera capture state of a WKWebView.
-     * <p>
+     * 
      * If value is WKMediaCaptureStateNone, this will stop any camera capture.
      * If value is WKMediaCaptureStateMuted, any active camera capture will become muted.
      * If value is WKMediaCaptureStateActive, any muted camera capture will become active.
-     *
+     * 
+     * API-Since: 15.0
+     * 
      * @param state             State to apply for capture.
      * @param completionHandler A block to invoke after the camera state has been changed.
      */
@@ -1241,10 +1356,12 @@ public class WKWebView extends UIView {
 
     /**
      * The interaction state for the WKWebView
-     * <p>
+     * 
      * The interaction state (back-forward list, currently loaded page, scroll position, form data...) for the
      * WKWebView, which
      * can be retrieved and set on another WKWebView to restore state.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setInteractionState:")
@@ -1252,13 +1369,15 @@ public class WKWebView extends UIView {
 
     /**
      * Set microphone capture state of a WKWebView.
-     * <p>
+     * 
      * If value is WKMediaCaptureStateNone, this will stop any microphone capture.
      * If value is WKMediaCaptureStateMuted, any active microphone capture will become muted.
      * If value is WKMediaCaptureStateActive, any muted microphone capture will become active.
-     *
+     * 
+     * API-Since: 15.0
+     * 
      * @param state             state to apply for capture.
-     * @param completionHandler A block to invoke after the camera state has been changed.
+     * @param completionHandler A block to invoke after the microphone state has been changed.
      */
     @Generated
     @Selector("setMicrophoneCaptureState:completionHandler:")
@@ -1272,6 +1391,9 @@ public class WKWebView extends UIView {
         void call_setMicrophoneCaptureStateCompletionHandler();
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setUnderPageBackgroundColor:")
     public native void setUnderPageBackgroundColor(UIColor value);
@@ -1279,9 +1401,11 @@ public class WKWebView extends UIView {
     /**
      * Begins a download in the context of the currently displayed webpage as if the WKNavigationDelegate turned a
      * navigation into a download instead
-     * <p>
+     * 
      * The download needs its delegate to be set in the completionHandler to receive updates about its progress.
-     *
+     * 
+     * API-Since: 14.5
+     * 
      * @param request           The request specifying the URL to download.
      * @param completionHandler A block called when the download has started.
      */
@@ -1297,6 +1421,11 @@ public class WKWebView extends UIView {
         void call_startDownloadUsingRequestCompletionHandler(WKDownload arg0);
     }
 
+    /**
+     * API-Since: 14.5
+     * Deprecated-Since: 15.0
+     */
+    @Deprecated
     @Generated
     @Selector("suspendAllMediaPlayback:")
     public native void suspendAllMediaPlayback(
@@ -1309,11 +1438,86 @@ public class WKWebView extends UIView {
         void call_suspendAllMediaPlayback();
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("themeColor")
     public native UIColor themeColor();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("underPageBackgroundColor")
     public native UIColor underPageBackgroundColor();
+
+    /**
+     * If @link findInteractionEnabled @/link is set to true, returns this web view's built-in find interaction.
+     * Otherwise, nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("findInteraction")
+    public native UIFindInteraction findInteraction();
+
+    /**
+     * A WKWebView's fullscreen state.
+     * 
+     * [@link] WKWebView @link is key-value observing (KVO) compliant for this property. When an element
+     * in the WKWebView enters fullscreen, WebKit will replace the WKWebView in the application view hierarchy with
+     * a "placeholder" view, and move the WKWebView into a fullscreen window. When the element exits fullscreen later,
+     * the WKWebView will be moved back into the application view hierarchy. An application may need to adjust/restore
+     * its native UI components when the fullscreen state changes. The application should observe the fullscreenState
+     * property of WKWebView in order to receive notifications regarding the fullscreen state change.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("fullscreenState")
+    @NInt
+    public native long fullscreenState();
+
+    /**
+     * Enables the web view's built-in find interaction.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isFindInteractionEnabled")
+    public native boolean isFindInteractionEnabled();
+
+    /**
+     * API-Since: 15.5
+     */
+    @Generated
+    @Selector("maximumViewportInset")
+    @ByValue
+    public native UIEdgeInsets maximumViewportInset();
+
+    /**
+     * API-Since: 15.5
+     */
+    @Generated
+    @Selector("minimumViewportInset")
+    @ByValue
+    public native UIEdgeInsets minimumViewportInset();
+
+    /**
+     * Enables the web view's built-in find interaction.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setFindInteractionEnabled:")
+    public native void setFindInteractionEnabled(boolean value);
+
+    /**
+     * API-Since: 15.5
+     */
+    @Generated
+    @Selector("setMinimumViewportInset:maximumViewportInset:")
+    public native void setMinimumViewportInsetMaximumViewportInset(@ByValue UIEdgeInsets minimumViewportInset,
+            @ByValue UIEdgeInsets maximumViewportInset);
 }

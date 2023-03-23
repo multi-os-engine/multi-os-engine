@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -95,9 +98,13 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * Dismiss the current modally-presented template, optionally animating the dismissal.
-     * <p>
+     * 
      * [@note] If there is no current modally-presented template, this method will have no effect.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("dismissTemplateAnimated:")
     public native void dismissTemplateAnimated(boolean animated);
@@ -139,23 +146,35 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * Pop back a single level in the template navigation hierarchy.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("popTemplateAnimated:")
     public native void popTemplateAnimated(boolean animated);
 
     /**
      * Pop back to the first template in the template navigation hierarchy.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("popToRootTemplateAnimated:")
     public native void popToRootTemplateAnimated(boolean animated);
 
     /**
      * Pop back to a specified template.
-     * <p>
+     * 
      * targetTemplate must exist in the current template navigation hierarchy.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("popToTemplate:animated:")
     public native void popToTemplateAnimated(CPTemplate targetTemplate, boolean animated);
@@ -165,6 +184,8 @@ public class CPInterfaceController extends NSObject {
      * setting a root template
      * or pushing any templates for first appearance to have style UIUserInterfaceStyleDark. The default value is NO
      * which will allow templates to change between light and dark styles.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("prefersDarkUserInterfaceStyle")
@@ -172,16 +193,20 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * Present a template modally over the navigation hierarchy. Only one template may be presented at a time.
-     * <p>
+     * 
      * [@note] Supported template types: @c CPActionSheetTemplate, @c CPAlertTemplate, @c CPVoiceControlTemplate
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("presentTemplate:animated:")
     public native void presentTemplateAnimated(CPTemplate templateToPresent, boolean animated);
 
     /**
      * The current modally-presented template.
-     * <p>
+     * 
      * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current presented
      * template.
      */
@@ -191,7 +216,11 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * Push a new template onto the template navigation hierarchy, showing it immediately.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("pushTemplate:animated:")
     public native void pushTemplateAnimated(CPTemplate templateToPush, boolean animated);
@@ -238,6 +267,8 @@ public class CPInterfaceController extends NSObject {
      * setting a root template
      * or pushing any templates for first appearance to have style UIUserInterfaceStyleDark. The default value is NO
      * which will allow templates to change between light and dark styles.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPrefersDarkUserInterfaceStyle:")
@@ -248,7 +279,11 @@ public class CPInterfaceController extends NSObject {
      * will be ignored.
      * If there is an existing template navigation hierarchy, the existing stack will be replaced by the new root
      * template.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("setRootTemplate:animated:")
     public native void setRootTemplateAnimated(CPTemplate rootTemplate, boolean animated);
@@ -263,7 +298,7 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * The current stack of templates in the navigation hierarchy.
-     * <p>
+     * 
      * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current stack of
      * templates.
      */
@@ -273,7 +308,7 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * The top template in the navigation hierarchy.
-     * <p>
+     * 
      * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current top-most template.
      */
     @Generated
@@ -287,11 +322,13 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * The trait collection for the car's primary screen.
-     * <p>
+     * 
      * Your app should use this trait collection when deriving metrics, like screen scale, for
      * your templates. For example, images you display in any template should be sized to a
      * display scale matching the scale of the @c carTraitCollection, not the scale of the
      * iOS device's main screen.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("carTraitCollection")
@@ -299,13 +336,15 @@ public class CPInterfaceController extends NSObject {
 
     /**
      * Dismiss the current modally-presented template, optionally animating the dismissal.
-     * <p>
+     * 
      * [@note] If there is no current modally-presented template, this method will have no effect.
-     * <p>
+     * 
      * The completion block will be called after the template has been dismissed. If the template was dismissed
      * successfully,
      * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided
      * describing the failure.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("dismissTemplateAnimated:completion:")
@@ -316,13 +355,15 @@ public class CPInterfaceController extends NSObject {
     @Generated
     public interface Block_dismissTemplateAnimatedCompletion {
         @Generated
-        void call_dismissTemplateAnimatedCompletion(boolean arg0, NSError arg1);
+        void call_dismissTemplateAnimatedCompletion(boolean success, NSError error);
     }
 
     /**
      * Pop back a single level in the template navigation hierarchy.
      * The completion block will be called after the pop completes.
      * The success parameter in the completion block indicates if any template was popped.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("popTemplateAnimated:completion:")
@@ -333,13 +374,15 @@ public class CPInterfaceController extends NSObject {
     @Generated
     public interface Block_popTemplateAnimatedCompletion {
         @Generated
-        void call_popTemplateAnimatedCompletion(boolean arg0, NSError arg1);
+        void call_popTemplateAnimatedCompletion(boolean success, NSError error);
     }
 
     /**
      * Pop back to the first template in the template navigation hierarchy.
      * The completion block will be called after the pop completes.
      * The success parameter in the completion block indicates if any templates were popped.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("popToRootTemplateAnimated:completion:")
@@ -350,17 +393,19 @@ public class CPInterfaceController extends NSObject {
     @Generated
     public interface Block_popToRootTemplateAnimatedCompletion {
         @Generated
-        void call_popToRootTemplateAnimatedCompletion(boolean arg0, NSError arg1);
+        void call_popToRootTemplateAnimatedCompletion(boolean success, NSError error);
     }
 
     /**
      * Pop back to a specified template.
-     * <p>
+     * 
      * targetTemplate must exist in the current template navigation hierarchy.
-     * <p>
+     * 
      * The completion block will be called after the pop completes.
      * If the specified template does not exist in the template stack,
      * the completion block will be called with a success parameter of NO and a non-nil NSError.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("popToTemplate:animated:completion:")
@@ -371,21 +416,23 @@ public class CPInterfaceController extends NSObject {
     @Generated
     public interface Block_popToTemplateAnimatedCompletion {
         @Generated
-        void call_popToTemplateAnimatedCompletion(boolean arg0, NSError arg1);
+        void call_popToTemplateAnimatedCompletion(boolean success, NSError error);
     }
 
     /**
      * Present a template modally over the navigation hierarchy. Only one template may be presented at a time.
-     * <p>
+     * 
      * [@note] Supported template types: @c CPActionSheetTemplate, @c CPAlertTemplate, @c CPVoiceControlTemplate
-     * <p>
+     * 
      * The completion block will be called after the template has been presented. If the template was presented
      * successfully,
      * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided
      * describing the failure.
-     * <p>
+     * 
      * [@note] If the template presentation is not successful AND no completion block is specified, an exception will be
      * thrown.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("presentTemplate:animated:completion:")
@@ -396,19 +443,21 @@ public class CPInterfaceController extends NSObject {
     @Generated
     public interface Block_presentTemplateAnimatedCompletion {
         @Generated
-        void call_presentTemplateAnimatedCompletion(boolean arg0, NSError arg1);
+        void call_presentTemplateAnimatedCompletion(boolean success, NSError error);
     }
 
     /**
      * Push a new template onto the template navigation hierarchy, showing it immediately.
-     * <p>
+     * 
      * The completion block will be called after the template has been presented. If the template was presented
      * successfully,
      * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided
      * describing the failure.
-     * <p>
+     * 
      * [@note] If the template presentation is not successful AND no completion block is specified, an exception will be
      * thrown.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("pushTemplate:animated:completion:")
@@ -419,7 +468,7 @@ public class CPInterfaceController extends NSObject {
     @Generated
     public interface Block_pushTemplateAnimatedCompletion {
         @Generated
-        void call_pushTemplateAnimatedCompletion(boolean arg0, NSError arg1);
+        void call_pushTemplateAnimatedCompletion(boolean success, NSError error);
     }
 
     /**
@@ -427,14 +476,16 @@ public class CPInterfaceController extends NSObject {
      * will be ignored.
      * If there is an existing template navigation hierarchy, the existing stack will be replaced by the new root
      * template.
-     * <p>
+     * 
      * The completion block will be called after the template has been presented. If the template was presented
      * successfully,
      * the boolean parameter will be YES. Otherwise, the boolean parameter will be NO and an @c NSError will be provided
      * describing the failure.
-     * <p>
+     * 
      * [@note] If the template presentation is not successful AND no completion block is specified, an exception will be
      * thrown.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setRootTemplate:animated:completion:")
@@ -445,6 +496,6 @@ public class CPInterfaceController extends NSObject {
     @Generated
     public interface Block_setRootTemplateAnimatedCompletion {
         @Generated
-        void call_setRootTemplateAnimatedCompletion(boolean arg0, NSError arg1);
+        void call_setRootTemplateAnimatedCompletion(boolean success, NSError error);
     }
 }

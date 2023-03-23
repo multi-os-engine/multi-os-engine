@@ -21,26 +21,29 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSData;
 
 /**
  * File provider domain.
- * <p>
+ * 
  * A file provider domain can be used to represent accounts or different locations
  * exposed within a given file provider.
- * <p>
+ * 
  * Domains can be registered to the system using
  * [@c] -[NSFileProviderMananger addDomain:completionHandler:]
- * <p>
+ * 
  * By default, a file provider extension does not have any domain.
- * <p>
+ * 
  * On the extension side, a separate instance of NSFileProviderExtension will be
  * created for each @c NSFileProviderDomain registered. In that case, the
  * [@c] NSFileProviderExtension.domain properties will indicate which domain the
  * NSFileProviderExtension belongs to (or nil if none).
- * <p>
+ * 
  * All the files on disk belonging to the same domain must be grouped inside a
  * common directory. That directory path is indicated by the
  * [@p] pathRelativeToDocumentStorage property.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("FileProvider")
@@ -124,15 +127,20 @@ public class NSFileProviderDomain extends NSObject {
     public native NSFileProviderDomain init();
 
     /**
-     * Initialize a new NSFileProviderDomain
-     * <p>
+     * Initialize a new non-replicated NSFileProviderDomain
+     * 
+     * The extension will be implementing NSFileProviderExtension.
+     * 
      * The file provider extension implementation can pick any @c identifier as it sees
      * fit to identify the group of items. The identifier must not contain any characters from this set: [/:]
-     * <p>
+     * 
      * [@c] NSFileProviderExtension.documentStorageURL.
-     *
+     * 
+     * API-Since: 11.0
+     * 
      * @param displayName                   a user visible string representing the group of items the
      *                                      file provider extension is using.
+     * 
      * @param pathRelativeToDocumentStorage a path relative to
      */
     @Generated
@@ -169,6 +177,8 @@ public class NSFileProviderDomain extends NSObject {
     /**
      * The path relative to the document storage of the file provider extension.
      * Files belonging to this domains should be stored under this path.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("pathRelativeToDocumentStorage")
@@ -194,4 +204,123 @@ public class NSFileProviderDomain extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Identity of the backing store of the domain on the system.
+     * 
+     * This property only applies for extensions that implement NSFileProviderReplicatedExtension.
+     * 
+     * This provides an identifier that uniquely identifies the backing store used by the system for
+     * the domain. When this identifier has changed, the system has dropped its backing store and is
+     * building a new one.
+     * 
+     * The system may decide to rebuild its backing store if it got corrupted. The backing store can also
+     * be rebuilt as a response to the provider calling `-[NSFileProviderManager
+     * reimportItemsBelowItemWithIdentifier:completionHandler:]`.
+     * It is guaranteed that calling reimport on the root item will cause the backing store to be rebuilt,
+     * but the system can also decide to do so when reimport is called on other items.
+     * 
+     * When rebuilding the backing store, the system will invalidate any extension instance associated
+     * to that domain. As a consequence, the identity of the backing store associated with that domain
+     * is guaranteed to be stable for the lifetime of the NSFileProviderReplicatedExtension instance.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("backingStoreIdentity")
+    public native NSData backingStoreIdentity();
+
+    /**
+     * Initialize a new replicated NSFileProviderDomain
+     * 
+     * The extension will be implementing NSFileProviderReplicatedExtension.
+     * 
+     * The file provider extension implementation can pick any @c identifier as it sees
+     * fit to identify the group of items. The identifier must not contain any characters from this set: [/:]
+     * 
+     * In order to migrate a non-replicated domain to a replicated one, implementers have to make sure that they do not
+     * use the default domain, and then call +[NSFileProviderManager addDomain:completionHandler:] using
+     * the NSFileProviderDomain object returned by that init method.
+     * 
+     * A domain with a specific identifier can be added multiple times; subsequent adds will update the properties
+     * of the existing domain.
+     * If a replicated domain is added "on top" of a non-replicated domain, the domain will be migrated to be
+     * replicated;
+     * existing bookmarks will remain valid, but the (externally visible) location of items will change to reflect the
+     * replicated location.
+     * 
+     * It is not possible to migrate the default domain in this manner (since the default domain can not be added).
+     * It is recommended to migrate usage of the default domain to a domain with an explicit identifier instead.
+     * 
+     * @param displayName a user visible string representing the group of items the
+     *                    file provider extension is using.
+     * 
+     *                    API-Since: 16.0
+     */
+    @Generated
+    @Selector("initWithIdentifier:displayName:")
+    public native NSFileProviderDomain initWithIdentifierDisplayName(String identifier, String displayName);
+
+    /**
+     * If the domain is a replicated domain.
+     * 
+     * If set to YES, it means the domain is replicated. By default, on macOS, the value will always be YES.
+     * 
+     * On iOS, it will depend on the way the NSFileProviderDomain object is contructed. Calling
+     * -[NSFileProviderDomain initWithIdentifier:displayName:] will initialize a replicated domain.
+     * -[NSFileProviderDomain initWithIdentifier:displayName:pathRelativeToDocumentStorage:] will
+     * initialize a non-replicated domain.
+     * 
+     * To know whether a domain is replicated or not, users are advised to rely on the output of
+     * +[NSFileProviderManager getDomainsForProviderIdentifier:completionHandler:]
+     * 
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isReplicated")
+    public native boolean isReplicated();
+
+    /**
+     * Testing modes.
+     * 
+     * Testing modes are exposed as a means for the provider to have more control over the system in
+     * a testing environment. Enabling a testing mode alters the behavior of the system and enables
+     * some APIs for that mode.
+     * 
+     * A process must have the com.apple.developer.fileprovider.testing-mode entitlement in order to
+     * configure a domain with non-empty testing modes.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setTestingModes:")
+    public native void setTestingModes(@NUInt long value);
+
+    /**
+     * Testing modes.
+     * 
+     * Testing modes are exposed as a means for the provider to have more control over the system in
+     * a testing environment. Enabling a testing mode alters the behavior of the system and enables
+     * some APIs for that mode.
+     * 
+     * A process must have the com.apple.developer.fileprovider.testing-mode entitlement in order to
+     * configure a domain with non-empty testing modes.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("testingModes")
+    @NUInt
+    public native long testingModes();
+
+    /**
+     * If user has disabled this domain from Files.app on iOS or System Settings on macOS, this will be set
+     * to NO.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("userEnabled")
+    public native boolean userEnabled();
 }

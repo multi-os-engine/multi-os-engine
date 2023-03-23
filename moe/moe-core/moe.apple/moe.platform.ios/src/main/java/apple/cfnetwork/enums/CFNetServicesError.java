@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * CFNetServicesError
- * <p>
+ * 
  * Discussion:
  * Errors from the kCFStreamErrorDomainNetServices domain.
  */
@@ -70,6 +70,8 @@ public final class CFNetServicesError {
 
     /**
      * Missing required configuration for local network access.
+     * 
+     * API-Since: 14.0
      */
     @Generated public static final int MissingRequiredConfiguration = 0xFFFEE6B8;
 }

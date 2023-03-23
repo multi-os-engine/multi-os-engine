@@ -1,6 +1,5 @@
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
 import apple.uikit.UIView;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -13,9 +12,12 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
 /**
  * UISpringLoadedContext supplies information about the springloading state and current drag.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("UIKit")
@@ -24,7 +26,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface UISpringLoadedInteractionContext {
     /**
      * Returns the point computed as the location of the current drag in a given view.
-     *
+     * 
      * @param view A view on which the drag is taking place. Specify nil to indicate the window.
      * @return A point in the local coordinate system of `view`.
      */

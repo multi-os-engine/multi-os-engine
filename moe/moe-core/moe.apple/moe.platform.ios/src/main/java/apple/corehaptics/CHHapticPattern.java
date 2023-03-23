@@ -25,14 +25,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSURL;
 
 /**
  * CHHapticPattern
- * <p>
+ * 
  * A set of one or more haptic events and/or Dynamic parameters/parameter curves.
- * <p>
+ * 
  * The passed-in arrays' contents are not owned by the pattern object. Changes made to those arrays
  * after a CHHapticPattern object is created have no effect on that object.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreHaptics")
@@ -103,9 +106,9 @@ public class CHHapticPattern extends NSObject {
 
     /**
      * exportDictionaryAndReturnError:error
-     * <p>
+     * 
      * Returns a NSDictionary representation of the contents of the pattern.
-     * <p>
+     * 
      * Patterns containing custom audio resource IDs cannot be exported and will return nil
      * with the error code set to CHHapticErrorCodeOperationNotPermitted.
      */
@@ -125,10 +128,11 @@ public class CHHapticPattern extends NSObject {
 
     /**
      * initWithDictionary:error
-     * <p>
+     * 
      * Initialize a new CHHapticPattern using the passed-in NSDictionary.
-     *
-     * @param patternDict NSDictionary containing a pattern property list.
+     * 
+     * @param patternDict
+     *                    NSDictionary containing a pattern property list.
      */
     @Generated
     @Selector("initWithDictionary:error:")
@@ -137,11 +141,13 @@ public class CHHapticPattern extends NSObject {
 
     /**
      * initWithEvents:parameterCurves:error
-     * <p>
+     * 
      * Initialize a new CHHapticPattern with parameters modulated by parameter curves.
-     *
-     * @param events          An NSArray of CHHapticEvents. Can be empty.
-     * @param parameterCurves An NSArray of CHHapticParameterCurves. Can be empty.
+     * 
+     * @param events
+     *                        An NSArray of CHHapticEvents. Can be empty.
+     * @param parameterCurves
+     *                        An NSArray of CHHapticParameterCurves. Can be empty.
      */
     @Generated
     @Selector("initWithEvents:parameterCurves:error:")
@@ -151,11 +157,13 @@ public class CHHapticPattern extends NSObject {
 
     /**
      * initWithEvents:parameters:error
-     * <p>
+     * 
      * Initialize a new CHHapticPattern.
-     *
-     * @param events     An NSArray of CHHapticEvents. Can be empty.
-     * @param parameters An NSArray of CHHapticDynamicParameters. Can be empty.
+     * 
+     * @param events
+     *                   An NSArray of CHHapticEvents. Can be empty.
+     * @param parameters
+     *                   An NSArray of CHHapticDynamicParameters. Can be empty.
      */
     @Generated
     @Selector("initWithEvents:parameters:error:")
@@ -209,4 +217,21 @@ public class CHHapticPattern extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * initWithContentsOfURL:error
+     * 
+     * Initialize a new CHHapticPattern using the contents of the passed-in NSURL.
+     * 
+     * This URL must reference a valid AHAP file.
+     * 
+     * API-Since: 16.0
+     * 
+     * @param ahapURL
+     *                NSURL of an ahap file.
+     */
+    @Generated
+    @Selector("initWithContentsOfURL:error:")
+    public native CHHapticPattern initWithContentsOfURLError(NSURL ahapURL,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

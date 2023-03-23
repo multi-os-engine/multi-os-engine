@@ -117,12 +117,21 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     /**
      * These methods are deprecated, and will be marked with API_DEPRECATED in a subsequent release. Use the variants
      * that use errors instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("dictionaryWithContentsOfFile:")
     public static native <_KeyType, _ObjectType> NSDictionary<_KeyType, _ObjectType> dictionaryWithContentsOfFile(
             String path);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("dictionaryWithContentsOfURL:")
     public static native <_KeyType, _ObjectType> NSDictionary<_KeyType, _ObjectType> dictionaryWithContentsOfURL(
@@ -208,6 +217,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
      * As for any usage of hashing, is recommended that the keys have a well-distributed implementation of -hash, and
      * the hash codes must satisfy the hash/isEqual: invariant.
      * Keys with duplicate hash codes are allowed, but will cause lower performance and increase memory usage.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("sharedKeySetForKeys:")
@@ -276,11 +287,17 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateKeysAndObjectsUsingBlock:")
     public native void enumerateKeysAndObjectsUsingBlock(
             @ObjCBlock(name = "call_enumerateKeysAndObjectsUsingBlock") Block_enumerateKeysAndObjectsUsingBlock block);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateKeysAndObjectsWithOptions:usingBlock:")
     public native void enumerateKeysAndObjectsWithOptionsUsingBlock(@NUInt long opts,
@@ -356,7 +373,12 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     /**
      * This method is unsafe because it could potentially cause buffer overruns. You should use
      * -getObjects:andKeys:count:
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use -getObjects:andKeys:count: instead
      */
+    @Deprecated
     @Generated
     @Selector("getObjects:andKeys:")
     public native void getObjectsAndKeys(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
@@ -364,6 +386,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
 
     /**
      * count refers to the number of elements in the dictionary
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("getObjects:andKeys:count:")
@@ -378,10 +402,20 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @Selector("initWithCoder:")
     public native NSDictionary<?, ?> initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithContentsOfFile:")
     public native NSDictionary<_KeyType, _ObjectType> initWithContentsOfFile(String path);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithContentsOfURL:")
     public native NSDictionary<_KeyType, _ObjectType> initWithContentsOfURL(NSURL url);
@@ -419,16 +453,25 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @Selector("keyEnumerator")
     public native NSEnumerator<_KeyType> keyEnumerator();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("keysOfEntriesPassingTest:")
     public native NSSet<_KeyType> keysOfEntriesPassingTest(
             @ObjCBlock(name = "call_keysOfEntriesPassingTest") Block_keysOfEntriesPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("keysOfEntriesWithOptions:passingTest:")
     public native NSSet<_KeyType> keysOfEntriesWithOptionsPassingTest(@NUInt long opts,
             @ObjCBlock(name = "call_keysOfEntriesWithOptionsPassingTest") Block_keysOfEntriesWithOptionsPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("keysSortedByValueUsingComparator:")
     public native NSArray<_KeyType> keysSortedByValueUsingComparator(
@@ -438,6 +481,9 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @Selector("keysSortedByValueUsingSelector:")
     public native NSArray<_KeyType> keysSortedByValueUsingSelector(SEL comparator);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("keysSortedByValueWithOptions:usingComparator:")
     public native NSArray<_KeyType> keysSortedByValueWithOptionsUsingComparator(@NUInt long opts,
@@ -458,6 +504,9 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectForKey(@Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("objectForKeyedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -482,13 +531,22 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType valueForKey(String key);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("writeToFile:atomically:")
     public native boolean writeToFileAtomically(String path, boolean useAuxiliaryFile);
 
     /**
      * the atomically flag is ignored if url of a type that cannot be written atomically.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("writeToURL:atomically:")
     public native boolean writeToURLAtomically(NSURL url, boolean atomically);
@@ -1125,6 +1183,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
 
     /**
      * Reads dictionary stored in NSPropertyList format from the specified url.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dictionaryWithContentsOfURL:error:")
@@ -1133,6 +1193,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
 
     /**
      * Reads dictionary stored in NSPropertyList format from the specified url.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithContentsOfURL:error:")
@@ -1142,6 +1204,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     /**
      * Serializes this instance to the specified URL in the NSPropertyList format (using NSPropertyListXMLFormat_v1_0).
      * For other formats use NSPropertyListSerialization directly.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("writeToURL:error:")

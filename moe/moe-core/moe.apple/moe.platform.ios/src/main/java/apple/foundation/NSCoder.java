@@ -17,11 +17,6 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
-import apple.coregraphics.struct.CGVector;
 import apple.coremedia.struct.CMTime;
 import apple.coremedia.struct.CMTimeMapping;
 import apple.coremedia.struct.CMTimeRange;
@@ -55,6 +50,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import apple.corefoundation.struct.CGVector;
 
 @Generated
 @Library("Foundation")
@@ -168,6 +168,8 @@ public class NSCoder extends NSObject {
 
     /**
      * Get the current set of allowed classes.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("allowedClasses")
@@ -226,16 +228,25 @@ public class NSCoder extends NSObject {
     @ByValue
     public native CGVector decodeCGVectorForKey(String key);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("decodeCMTimeForKey:")
     @ByValue
     public native CMTime decodeCMTimeForKey(String key);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("decodeCMTimeMappingForKey:")
     @ByValue
     public native CMTimeMapping decodeCMTimeMappingForKey(String key);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("decodeCMTimeRangeForKey:")
     @ByValue
@@ -265,6 +276,9 @@ public class NSCoder extends NSObject {
     @Selector("decodeIntForKey:")
     public native int decodeIntForKey(String key);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("decodeIntegerForKey:")
     @NInt
@@ -286,6 +300,8 @@ public class NSCoder extends NSObject {
      * isKindOfClass: of the argument. If the coder responds NO to -requiresSecureCoding, then the class argument is
      * ignored and no check of the class of the decoded object is performed, exactly as if decodeObjectForKey: had been
      * called.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("decodeObjectOfClass:forKey:")
@@ -295,6 +311,8 @@ public class NSCoder extends NSObject {
     /**
      * The class of the object may be any class in the provided NSSet, or a subclass of any class in the set. Otherwise,
      * the behavior is the same as -decodeObjectOfClass:forKey:.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("decodeObjectOfClasses:forKey:")
@@ -303,29 +321,43 @@ public class NSCoder extends NSObject {
 
     /**
      * Calls -decodeObjectOfClasses:forKey: with a set allowing only property list types.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("decodePropertyListForKey:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object decodePropertyListForKey(String key);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("decodeTopLevelObjectAndReturnError:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object decodeTopLevelObjectAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("decodeTopLevelObjectForKey:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object decodeTopLevelObjectForKeyError(String key,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("decodeTopLevelObjectOfClass:forKey:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object decodeTopLevelObjectOfClassForKeyError(Class aClass, String key,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("decodeTopLevelObjectOfClasses:forKey:error:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -337,6 +369,9 @@ public class NSCoder extends NSObject {
     @ByValue
     public native UIEdgeInsets decodeUIEdgeInsetsForKey(String key);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("decodeUIOffsetForKey:")
     @ByValue
@@ -345,7 +380,11 @@ public class NSCoder extends NSObject {
     /**
      * This method is unsafe because it could potentially cause buffer overruns. You should use
      * -decodeValueOfObjCType:at:size: instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("decodeValueOfObjCType:at:")
     public native void decodeValueOfObjCTypeAt(@Mapped(CStringMapper.class) String type, VoidPtr data);
@@ -357,9 +396,11 @@ public class NSCoder extends NSObject {
 
     /**
      * Defines the behavior this NSCoder should take on decode failure (i.e. corrupt archive, invalid data, etc.).
-     * <p>
+     * 
      * The default result of this property is NSDecodingFailurePolicyRaiseException, subclasses can change this to an
      * alternative policy.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("decodingFailurePolicy")
@@ -411,14 +452,23 @@ public class NSCoder extends NSObject {
     @Selector("encodeCGVector:forKey:")
     public native void encodeCGVectorForKey(@ByValue CGVector vector, String key);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("encodeCMTime:forKey:")
     public native void encodeCMTimeForKey(@ByValue CMTime time, String key);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("encodeCMTimeMapping:forKey:")
     public native void encodeCMTimeMappingForKey(@ByValue CMTimeMapping timeMapping, String key);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("encodeCMTimeRange:forKey:")
     public native void encodeCMTimeRangeForKey(@ByValue CMTimeRange timeRange, String key);
@@ -455,6 +505,9 @@ public class NSCoder extends NSObject {
     @Selector("encodeInt:forKey:")
     public native void encodeIntForKey(int value, String key);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("encodeInteger:forKey:")
     public native void encodeIntegerForKey(@NInt long value, String key);
@@ -475,6 +528,9 @@ public class NSCoder extends NSObject {
     @Selector("encodeUIEdgeInsets:forKey:")
     public native void encodeUIEdgeInsetsForKey(@ByValue UIEdgeInsets insets, String key);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("encodeUIOffset:forKey:")
     public native void encodeUIOffsetForKey(@ByValue UIOffset offset, String key);
@@ -490,16 +546,18 @@ public class NSCoder extends NSObject {
 
     /**
      * The current error (if there is one) for the current TopLevel decode.
-     * <p>
+     * 
      * The meaning of this property changes based on the result of the decodingFailurePolicy property:
      * For NSDecodingFailurePolicyRaiseException, this property will always be nil.
      * For NSDecodingFailurePolicySetErrorAndReturn, this property can be non-nil, and if so, indicates that there was a
      * failure while decoding the archive (specifically its the very first error encountered).
-     * <p>
+     * 
      * While .error is non-nil, all attempts to decode data from this coder will return a nil/zero-equivalent value.
-     * <p>
+     * 
      * This error is consumed by a TopLevel decode API (which resets this coder back to a being able to potentially
      * decode data).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("error")
@@ -508,21 +566,21 @@ public class NSCoder extends NSObject {
     /**
      * Signals to this coder that the decode has failed.
      * [@parameter] non-nil error that describes the reason why the decode failed
-     * <p>
+     * 
      * Sets an error on this NSCoder once per TopLevel decode; calling it repeatedly will have no effect until the call
      * stack unwinds to one of the TopLevel decode entry-points.
-     * <p>
+     * 
      * This method is only meaningful to call for decodes.
-     * <p>
+     * 
      * Typically, you would want to call this method in your -initWithCoder: implementation when you detect situations
      * like:
      * - lack of secure coding
      * - corruption of your data
      * - domain validation failures
-     * <p>
+     * 
      * After calling -failWithError: within your -initWithCoder: implementation, you should clean up and return nil as
      * early as possible.
-     * <p>
+     * 
      * Once an error has been signaled to a decoder, it remains set until it has handed off to the first TopLevel decode
      * invocation above it. For example, consider the following call graph:
      * A -decodeTopLevelObjectForKey:error:
@@ -531,16 +589,18 @@ public class NSCoder extends NSObject {
      * D -initWithCoder:
      * E -decodeObjectForKey:
      * F -failWithError:
-     * <p>
+     * 
      * In this case the error provided in stack-frame F will be returned via the outError in stack-frame A. Furthermore
      * the result object from decodeTopLevelObjectForKey:error: will be nil, regardless of the result of stack-frame B.
-     * <p>
+     * 
      * NSCoder implementations support two mechanisms for the stack-unwinding from F to A:
      * - forced (NSException based)
      * - particpatory (error based)
-     * <p>
+     * 
      * The kind of unwinding you get is determined by the decodingFailurePolicy property of this NSCoder (which defaults
      * to NSDecodingFailurePolicyRaiseException to match historical behavior).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("failWithError:")
@@ -553,6 +613,8 @@ public class NSCoder extends NSObject {
     /**
      * Returns YES if this coder requires secure coding. Secure coders check a list of allowed classes before decoding
      * objects, and all objects must implement NSSecureCoding.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("requiresSecureCoding")
@@ -567,17 +629,26 @@ public class NSCoder extends NSObject {
     @NInt
     public native long versionForClassName(String className);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("decodeDirectionalEdgeInsetsForKey:")
     @ByValue
     public native NSDirectionalEdgeInsets decodeDirectionalEdgeInsetsForKey(String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("decodeValueOfObjCType:at:size:")
     public native void decodeValueOfObjCTypeAtSize(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String type,
             VoidPtr data, @NUInt long size);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("encodeDirectionalEdgeInsets:forKey:")
     public native void encodeDirectionalEdgeInsetsForKey(@ByValue NSDirectionalEdgeInsets insets, String key);
@@ -585,12 +656,14 @@ public class NSCoder extends NSObject {
     /**
      * Decodes the \c NSArray object for the given \c key, which should be an \c NSArray<cls>, containing the given
      * non-collection class (no nested arrays or arrays of dictionaries, etc) from the coder.
-     * <p>
+     * 
      * Requires \c NSSecureCoding otherwise an exception is thrown and sets the \c decodingFailurePolicy to \c
      * NSDecodingFailurePolicySetErrorAndReturn.
-     * <p>
+     * 
      * Returns \c nil if the object for \c key is not of the expected types, or cannot be decoded, and sets the \c error
      * on the decoder.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("decodeArrayOfObjectsOfClass:forKey:")
@@ -599,12 +672,14 @@ public class NSCoder extends NSObject {
     /**
      * Decodes the \c NSArray object for the given \c key, which should be an \c NSArray, containing the given
      * non-collection classes (no nested arrays or arrays of dictionaries, etc) from the coder.
-     * <p>
+     * 
      * Requires \c NSSecureCoding otherwise an exception is thrown and sets the \c decodingFailurePolicy to \c
      * NSDecodingFailurePolicySetErrorAndReturn.
-     * <p>
+     * 
      * Returns \c nil if the object for \c key is not of the expected types, or cannot be decoded, and sets the \c error
      * on the decoder.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("decodeArrayOfObjectsOfClasses:forKey:")
@@ -614,12 +689,14 @@ public class NSCoder extends NSObject {
      * Decodes the \c NSDictionary object for the given \c key, which should be an \c NSDictionary<keyCls,objectCls> ,
      * with keys of type given in \c keyCls and objects of the given non-collection class \c objectCls (no nested
      * dictionaries or other dictionaries contained in the dictionary, etc) from the coder.
-     * <p>
+     * 
      * Requires \c NSSecureCoding otherwise an exception is thrown and sets the \c decodingFailurePolicy to \c
      * NSDecodingFailurePolicySetErrorAndReturn.
-     * <p>
+     * 
      * Returns \c nil if the object for \c key is not of the expected types, or cannot be decoded, and sets the \c error
      * on the decoder.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("decodeDictionaryWithKeysOfClass:objectsOfClass:forKey:")
@@ -630,12 +707,14 @@ public class NSCoder extends NSObject {
      * Decodes the \c NSDictionary object for the given \c key, which should be an \c NSDictionary, with keys of the
      * types given in \c keyClasses and objects of the given non-collection classes in \c objectClasses (no nested
      * dictionaries or other dictionaries contained in the dictionary, etc) from the given coder.
-     * <p>
+     * 
      * Requires \c NSSecureCoding otherwise an exception is thrown and sets the \c decodingFailurePolicy to \c
      * NSDecodingFailurePolicySetErrorAndReturn.
-     * <p>
+     * 
      * Returns \c nil if the object for \c key is not of the expected types, or cannot be decoded, and sets the \c error
      * on the decoder.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("decodeDictionaryWithKeysOfClasses:objectsOfClasses:forKey:")

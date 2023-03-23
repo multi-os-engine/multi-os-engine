@@ -47,6 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Substrings of a hypothesized transcription
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Speech")
@@ -220,6 +222,12 @@ public class SFTranscriptionSegment extends NSObject implements NSCopying, NSSec
     @Selector("timestamp")
     public native double timestamp();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 14.5
+     * Deprecated-Message: voiceAnalytics is moved to SFSpeechRecognitionMetadata
+     */
+    @Deprecated
     @Generated
     @Selector("voiceAnalytics")
     public native SFVoiceAnalytics voiceAnalytics();

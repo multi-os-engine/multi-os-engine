@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -84,7 +87,7 @@ public class ASPasswordCredential extends NSObject implements ASAuthorizationCre
 
     /**
      * Creates and initializes a new ASPasswordCredential object.
-     *
+     * 
      * @param user     the user.
      * @param password the password.
      */
@@ -119,7 +122,7 @@ public class ASPasswordCredential extends NSObject implements ASAuthorizationCre
 
     /**
      * Initializes an ASPasswordCredential object.
-     *
+     * 
      * @param user     the user.
      * @param password the password.
      */
@@ -155,7 +158,7 @@ public class ASPasswordCredential extends NSObject implements ASAuthorizationCre
 
     /**
      * The password of this credential.
-     *
+     * 
      * @return The password string.
      */
     @Generated
@@ -190,7 +193,7 @@ public class ASPasswordCredential extends NSObject implements ASAuthorizationCre
 
     /**
      * The user name of this credential.
-     *
+     * 
      * @return The user string.
      */
     @Generated

@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -84,6 +87,8 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
 
     /**
      * Provides a "diff" between 2 PHFetchResult objects.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("changeDetailsFromFetchResult:toFetchResult:changedObjects:")
@@ -162,11 +167,16 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     /**
      * The indexes of the updated items, relative to the 'after' state of the fetch result
      * returns nil if hasIncrementalChanges is NO
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("changedIndexes")
     public native NSIndexSet changedIndexes();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("changedObjects")
     public native NSArray<? extends PHObject> changedObjects();
@@ -174,6 +184,8 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     /**
      * Enumerates the indexes of the moved items, relative to the 'before' state of the fetch result after applying the
      * removedIndexes and insertedIndexes
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("enumerateMovesWithBlock:")
@@ -182,6 +194,8 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
 
     /**
      * fetch result with the state of the fetched objects after this change
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fetchResultAfterChanges")
@@ -190,6 +204,8 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     /**
      * fetch result with the state of the fetched objects before this change (returns the fetch result passed in to
      * changeDetailsForFetchResult:)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fetchResultBeforeChanges")
@@ -199,6 +215,8 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
      * YES if the changes to this fetch result are described by the removed/inserted/changed details.
      * NO indicates that the scope of changes were too large and UI clients should do a full reload, incremental changes
      * could not be provided
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("hasIncrementalChanges")
@@ -207,6 +225,8 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     /**
      * YES if there are moved items
      * returns NO if hasIncrementalChanges is NO
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("hasMoves")
@@ -220,11 +240,16 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
      * The indexes of the inserted items, relative to the 'before' state of the fetch result after applying the
      * removedIndexes
      * returns nil if hasIncrementalChanges is NO
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("insertedIndexes")
     public native NSIndexSet insertedIndexes();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("insertedObjects")
     public native NSArray<? extends PHObject> insertedObjects();
@@ -232,11 +257,16 @@ public class PHFetchResultChangeDetails<_ObjectType> extends NSObject {
     /**
      * The indexes of the removed items, relative to the 'before' state of the fetch result
      * returns nil if hasIncrementalChanges is NO
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("removedIndexes")
     public native NSIndexSet removedIndexes();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("removedObjects")
     public native NSArray<? extends PHObject> removedObjects();

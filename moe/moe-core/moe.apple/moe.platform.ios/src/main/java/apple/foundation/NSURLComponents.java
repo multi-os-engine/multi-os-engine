@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -236,6 +239,12 @@ public class NSURLComponents extends NSObject implements NSCopying {
     @Selector("percentEncodedFragment")
     public native String percentEncodedFragment();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use encodedHost instead
+     */
+    @Deprecated
     @Generated
     @Selector("percentEncodedHost")
     public native String percentEncodedHost();
@@ -276,58 +285,78 @@ public class NSURLComponents extends NSObject implements NSCopying {
 
     /**
      * The query component as an array of NSURLQueryItems for this NSURLComponents.
-     * <p>
+     * 
      * Each NSURLQueryItem represents a single key-value pair,
-     * <p>
+     * 
      * Note that a name may appear more than once in a single query string, so the name values are not guaranteed to be
      * unique. If the NSURLComponents has an empty query component, returns an empty array. If the NSURLComponents has
      * no query component, returns nil.
-     * <p>
+     * 
      * The queryItems getter returns an array of NSURLQueryItems in the order in which they appear in the original query
      * string. Any percent-encoding in a NSURLQueryItem name or value is removed.
-     * <p>
+     * 
      * The queryItems setter combines an array containing any number of NSURLQueryItems, each of which represents a
      * single key-value pair, into a query string and sets the NSURLComponents query property. If the NSURLQueryItems
      * name or value strings contain any characters not allowed in a URL's query component, those characters are
      * percent-encoded. In addition, any '&' and '=' characters in a NSURLQueryItem name are percent-encoded. Passing an
      * empty array sets the query component of the NSURLComponents to an empty string. Passing nil removes the query
      * component of the NSURLComponents.
-     * <p>
+     * 
      * - note: If a NSURLQueryItem name-value pair is empty (i.e. the query string starts with '&', ends with '&', or
      * has "&&" within it), you get a NSURLQueryItem with a zero-length name and a nil value. If a NSURLQueryItem
      * name-value pair has nothing before the equals sign, you get a zero-length name. If a NSURLQueryItem name-value
      * pair has nothing after the equals sign, you get a zero-length value. If a NSURLQueryItem name-value pair has no
      * equals sign, the NSURLQueryItem name-value pair string is the name and you get a nil value.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("queryItems")
     public native NSArray<? extends NSURLQueryItem> queryItems();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("rangeOfFragment")
     @ByValue
     public native NSRange rangeOfFragment();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("rangeOfHost")
     @ByValue
     public native NSRange rangeOfHost();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("rangeOfPassword")
     @ByValue
     public native NSRange rangeOfPassword();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("rangeOfPath")
     @ByValue
     public native NSRange rangeOfPath();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("rangeOfPort")
     @ByValue
     public native NSRange rangeOfPort();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("rangeOfQuery")
     @ByValue
@@ -338,12 +367,17 @@ public class NSURLComponents extends NSObject implements NSCopying {
      * string]. If the component does not exist in the NSURLComponents object, {NSNotFound, 0} is returned. Note: Zero
      * length components are legal. For example, the URL string "scheme://:@/?#" has a zero length user, password, host,
      * query and fragment; the URL strings "scheme:" and "" both have a zero length path.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("rangeOfScheme")
     @ByValue
     public native NSRange rangeOfScheme();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("rangeOfUser")
     @ByValue
@@ -376,6 +410,12 @@ public class NSURLComponents extends NSObject implements NSCopying {
     @Selector("setPercentEncodedFragment:")
     public native void setPercentEncodedFragment(String value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use encodedHost instead
+     */
+    @Deprecated
     @Generated
     @Selector("setPercentEncodedHost:")
     public native void setPercentEncodedHost(String value);
@@ -416,28 +456,30 @@ public class NSURLComponents extends NSObject implements NSCopying {
 
     /**
      * The query component as an array of NSURLQueryItems for this NSURLComponents.
-     * <p>
+     * 
      * Each NSURLQueryItem represents a single key-value pair,
-     * <p>
+     * 
      * Note that a name may appear more than once in a single query string, so the name values are not guaranteed to be
      * unique. If the NSURLComponents has an empty query component, returns an empty array. If the NSURLComponents has
      * no query component, returns nil.
-     * <p>
+     * 
      * The queryItems getter returns an array of NSURLQueryItems in the order in which they appear in the original query
      * string. Any percent-encoding in a NSURLQueryItem name or value is removed.
-     * <p>
+     * 
      * The queryItems setter combines an array containing any number of NSURLQueryItems, each of which represents a
      * single key-value pair, into a query string and sets the NSURLComponents query property. If the NSURLQueryItems
      * name or value strings contain any characters not allowed in a URL's query component, those characters are
      * percent-encoded. In addition, any '&' and '=' characters in a NSURLQueryItem name are percent-encoded. Passing an
      * empty array sets the query component of the NSURLComponents to an empty string. Passing nil removes the query
      * component of the NSURLComponents.
-     * <p>
+     * 
      * - note: If a NSURLQueryItem name-value pair is empty (i.e. the query string starts with '&', ends with '&', or
      * has "&&" within it), you get a NSURLQueryItem with a zero-length name and a nil value. If a NSURLQueryItem
      * name-value pair has nothing before the equals sign, you get a zero-length name. If a NSURLQueryItem name-value
      * pair has nothing after the equals sign, you get a zero-length value. If a NSURLQueryItem name-value pair has no
      * equals sign, the NSURLQueryItem name-value pair string is the name and you get a nil value.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setQueryItems:")
@@ -459,6 +501,8 @@ public class NSURLComponents extends NSObject implements NSCopying {
      * password, host or port) and a path component, then the path must either begin with "/" or be an empty string. If
      * the NSURLComponents does not have an authority component (user, password, host or port) and has a path component,
      * the path component must not start with "//". If those requirements are not met, nil is returned.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("string")
@@ -471,13 +515,15 @@ public class NSURLComponents extends NSObject implements NSCopying {
     /**
      * The percentEncodedQueryItems getter returns an array of NSURLQueryItems in the order in which they appear in the
      * original query string. Any percent-encoding in a NSURLQueryItem name or value is retained.
-     * <p>
+     * 
      * The percentEncodedQueryItems setter combines an array containing any number of NSURLQueryItems, each of which
      * represents a single key-value pair, into a query string and sets the NSURLComponents query property. This
      * property assumes the NSURLQueryItem names and values are already correctly percent-encoded, and that the
      * NSURLQueryItem names do not contain the query item delimiter characters '&' and '='. Attempting to set an
      * incorrectly percent-encoded NSURLQueryItem or a NSURLQueryItem name with the query item delimiter characters '&'
      * and '=' will cause an exception.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("percentEncodedQueryItems")
@@ -486,15 +532,31 @@ public class NSURLComponents extends NSObject implements NSCopying {
     /**
      * The percentEncodedQueryItems getter returns an array of NSURLQueryItems in the order in which they appear in the
      * original query string. Any percent-encoding in a NSURLQueryItem name or value is retained.
-     * <p>
+     * 
      * The percentEncodedQueryItems setter combines an array containing any number of NSURLQueryItems, each of which
      * represents a single key-value pair, into a query string and sets the NSURLComponents query property. This
      * property assumes the NSURLQueryItem names and values are already correctly percent-encoded, and that the
      * NSURLQueryItem names do not contain the query item delimiter characters '&' and '='. Attempting to set an
      * incorrectly percent-encoded NSURLQueryItem or a NSURLQueryItem name with the query item delimiter characters '&'
      * and '=' will cause an exception.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPercentEncodedQueryItems:")
     public native void setPercentEncodedQueryItems(NSArray<? extends NSURLQueryItem> value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("encodedHost")
+    public native String encodedHost();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setEncodedHost:")
+    public native void setEncodedHost(String value);
 }

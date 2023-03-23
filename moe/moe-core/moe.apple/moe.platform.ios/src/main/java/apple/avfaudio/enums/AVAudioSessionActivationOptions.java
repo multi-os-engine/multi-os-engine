@@ -5,9 +5,9 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] AVAudioSessionActivationOptions
- * <p>
+ * 
  * For use with activateWithOptions:completionHandler:
- * <p>
+ * 
  * Reserved for future use. Added in watchOS 5.0.
  */
 @Generated

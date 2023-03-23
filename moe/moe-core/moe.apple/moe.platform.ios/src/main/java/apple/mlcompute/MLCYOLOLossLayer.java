@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCYOLOLossLayer
- * <p>
+ * 
  * A YOLO loss layer
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -154,7 +156,7 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
 
     /**
      * Create a YOLO loss layer
-     *
+     * 
      * @param lossDescriptor The loss descriptor
      * @return A new YOLO loss layer.
      */
@@ -247,7 +249,7 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
 
     /**
      * [@property] yoloLossDescriptor
-     * <p>
+     * 
      * The YOLO loss descriptor
      */
     @Generated

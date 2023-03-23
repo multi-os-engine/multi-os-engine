@@ -40,17 +40,29 @@ public final class PushKit {
     /**
      * PKPushType constants can be used to register for a PKPushType-specific push token or to identify received push
      * notifications.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKPushTypeVoIP();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Complication pushes are supported directly on watchOS now, so this should no longer be used
+     * on iOS.
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKPushTypeComplication();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

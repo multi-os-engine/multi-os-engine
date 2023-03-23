@@ -13,8 +13,10 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] NFCReaderSession
- * <p>
+ * 
  * General reader session callbacks
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreNFC")
@@ -23,9 +25,11 @@ import org.moe.natj.objc.ann.Selector;
 public interface NFCReaderSessionDelegate {
     /**
      * readerSession:didDetectTags:
-     * <p>
+     * 
      * Gets called when the reader detects NFC tag(s) in the polling sequence.
-     *
+     * 
+     * API-Since: 11.0
+     * 
      * @param session The session object used for tag detection.
      * @param tags    Array of @link NFCTag @link/ objects.
      */
@@ -38,10 +42,12 @@ public interface NFCReaderSessionDelegate {
 
     /**
      * readerSession:didInvalidateWithError:
-     * <p>
+     * 
      * Gets called when a session becomes invalid. At this point the client is expected to discard
      * the returned session object.
-     *
+     * 
+     * API-Since: 11.0
+     * 
      * @param session The session object that is invalidated.
      * @param error   The error indicates the invalidation reason.
      */
@@ -51,10 +57,12 @@ public interface NFCReaderSessionDelegate {
 
     /**
      * readerSessionDidBecomeActive:
-     * <p>
+     * 
      * Gets called when the NFC reader session has become active. RF is enabled and reader is scanning for tags.
      * The @link readerSession:didDetectTags: @link/ will be called when a tag is detected.
-     *
+     * 
+     * API-Since: 11.0
+     * 
      * @param session The session object in the active state.
      */
     @Generated

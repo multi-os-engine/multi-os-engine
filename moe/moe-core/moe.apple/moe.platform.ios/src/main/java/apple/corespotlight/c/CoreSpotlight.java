@@ -45,12 +45,17 @@ public final class CoreSpotlight {
      * with an NSUserActivity where the userInfo dictionary has a key value pair where
      * CSSearchableItemActivityIdentifier is the key
      * and the value is the uniqueIdentifier used when creating the item.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CSSearchableItemActionType();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -64,20 +69,29 @@ public final class CoreSpotlight {
      * and the value is the string the application should use when performing its query.
      * The application should declare that it supports the query continuation by adding the CoreSpotlightContinuation
      * key to its Info.plist:
-     *
+     * 
      * <key>CoreSpotlightContinuation</key>
      * <true/>
+     * 
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CSQueryContinuationActionType();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CSSearchQueryString();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -85,37 +99,57 @@ public final class CoreSpotlight {
 
     /**
      * Well-known mailbox identifiers
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CSMailboxInbox();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CSMailboxDrafts();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CSMailboxSent();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CSMailboxJunk();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CSMailboxTrash();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CSMailboxArchive();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -139,9 +173,19 @@ public final class CoreSpotlight {
      * For custom actions on iOS, the userInfo dictionary also has another key value pair where CSActionIdentifier is
      * the key
      * and the value is the action tapped in the UI based on what was indexed by the app.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CSActionIdentifier();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CSSuggestionHighlightAttributeName();
 }

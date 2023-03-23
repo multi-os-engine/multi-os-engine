@@ -43,9 +43,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMAltimeter
- * <p>
+ * 
  * Discussion:
  * CMAltimeter provides information about the altitude of the device.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("CoreMotion")
@@ -125,7 +127,7 @@ public class CMAltimeter extends NSObject {
 
     /**
      * isRelativeAltitudeAvailable
-     * <p>
+     * 
      * Discussion:
      * Determines whether the device supports reporting relative altitude changes.
      */
@@ -173,12 +175,12 @@ public class CMAltimeter extends NSObject {
 
     /**
      * startRelativeAltitudeUpdatesToQueue:withHandler:
-     * <p>
+     * 
      * Discussion:
      * Starts relative altitude updates, providing data to the given handler on the given queue
      * every few seconds. The first altitude update will be established as the reference altitude
      * and have relative altitude 0.
-     * <p>
+     * 
      * Calls to start must be balanced with calls to stopRelativeAltitudeUpdates even if an error
      * is returned to the handler.
      */
@@ -189,7 +191,7 @@ public class CMAltimeter extends NSObject {
 
     /**
      * stopRelativeAltitudeUpdates
-     * <p>
+     * 
      * Discussion:
      * Stops relative altitude updates.
      */
@@ -206,9 +208,11 @@ public class CMAltimeter extends NSObject {
 
     /**
      * authorizationStatus
-     * <p>
+     * 
      * Discussion:
      * Returns the current authorization status for altimeter.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("authorizationStatus")
@@ -217,9 +221,11 @@ public class CMAltimeter extends NSObject {
 
     /**
      * isAbsoluteAltitudeAvailable
-     * <p>
+     * 
      * Discussion:
      * Determines whether the device supports reporting the absolute altitude.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isAbsoluteAltitudeAvailable")
@@ -227,13 +233,15 @@ public class CMAltimeter extends NSObject {
 
     /**
      * startAbsoluteAltitudeUpdatesToQueue:withHandler:
-     * <p>
+     * 
      * Discussion:
      * Starts real-time absolute altitude updates, providing data to the given handler on the given queue, whenever a
      * change in elevation is detected.
-     * <p>
+     * 
      * Calls to start must be balanced with calls to stopAbsoluteAltitudeUpdates even if an error
      * is returned to the handler.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("startAbsoluteAltitudeUpdatesToQueue:withHandler:")
@@ -249,9 +257,11 @@ public class CMAltimeter extends NSObject {
 
     /**
      * stopAbsoluteAltitudeUpdates
-     * <p>
+     * 
      * Discussion:
      * Stops absolute altitude updates.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("stopAbsoluteAltitudeUpdates")

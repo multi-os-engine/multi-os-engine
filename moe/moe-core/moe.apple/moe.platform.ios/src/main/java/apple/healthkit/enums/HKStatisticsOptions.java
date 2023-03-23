@@ -21,16 +21,16 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] HKStatisticsOptions
- * <p>
+ * 
  * Options for specifying which statistics to calculate
- * <p>
+ * 
  * When querying for HKStatistics objects, an options bitmask will specify which statistics will be
  * calculated.
- * <p>
+ * 
  * Statistics are classified as discrete or cumulative. If a discrete statistics option is specified for a
  * cumulative HKQuantityType, an exception will be thrown. If a cumulative statistics options is specified
  * for a discrete HKQuantityType, an exception will also be thrown.
- * <p>
+ * 
  * [@constant] HKStatisticsOptionNone
  * [@constant] HKStatisticsOptionSeparateBySource
  * [@constant] HKStatisticsOptionDiscreteAverage Calculate averageQuantity when creating statistics.
@@ -39,21 +39,51 @@ import org.moe.natj.general.ann.NUInt;
  * [@constant] HKStatisticsOptionCumulativeSum Calculate sumQuantity when creating statistics.
  * [@constant] HKStatisticsOptionMostRecent Calculate mostRecentQuantity when creating statistics.
  * [@constant] HKStatisticsOptionDuration Calculate duration when creating statistics.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class HKStatisticsOptions {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long SeparateBySource = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long DiscreteAverage = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long DiscreteMin = 0x0000000000000004L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long DiscreteMax = 0x0000000000000008L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long CumulativeSum = 0x0000000000000010L;
 
     @Generated
     private HKStatisticsOptions() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NUInt public static final long MostRecent = 0x0000000000000020L;
-    @Generated @NUInt public static final long DiscreteMostRecent = 0x0000000000000020L;
+    /**
+     * API-Since: 12.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated @NUInt public static final long DiscreteMostRecent = 0x0000000000000020L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NUInt public static final long Duration = 0x0000000000000040L;
 }

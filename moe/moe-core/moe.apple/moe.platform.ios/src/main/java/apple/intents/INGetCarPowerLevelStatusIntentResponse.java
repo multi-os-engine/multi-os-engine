@@ -31,6 +31,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.3
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -208,18 +211,30 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("charging")
     public native NSNumber charging();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("minutesToFull")
     public native NSNumber minutesToFull();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setCharging:")
     public native void setCharging(NSNumber value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setMinutesToFull:")
     public native void setMinutesToFull(NSNumber value);
@@ -227,6 +242,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * The current connector being used to deliver charge to the vehicle’s battery. If isCharging is set, this property
      * should contain the active connector that is currently being used to charge the vehicle.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("activeConnector")
@@ -235,6 +252,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * An identifier for the vehicles. Use this same value as the carIdentifier property of INCar. Do not use the VIN
      * (or the equivalent code) as the identifier.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("carIdentifier")
@@ -246,6 +265,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * at a station. The keys of this dictionary describe the parameters that fit into the Charging model of the
      * electric vehicle. The values of this dictionary represent the parameter values. model_id is a mandatory key in
      * this dictionary.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("chargingFormulaArguments")
@@ -257,6 +278,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * consumption as the user drives. The keys of this dictionary describe the parameters that fit into the consumption
      * model of the electric vehicle. The values of this dictionary represent the parameter values. model_id is a
      * mandatory key in this dictionary.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("consumptionFormulaArguments")
@@ -265,6 +288,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * The current capacity of the battery. currentBatteryCapacity should be set such that maximumBatteryCapacity >=
      * currentBatteryCapacity >= minimumBatteryCapacity.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("currentBatteryCapacity")
@@ -273,6 +298,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * A time stamp for an instance of the state of charge. This time stamp should ideally indicate when the actual
      * state of charge was captured from the vehicle.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("dateOfLastStateUpdate")
@@ -280,6 +307,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
 
     /**
      * The maximum distance an electric vehicle can travel with the remaining charge.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("distanceRemainingElectric")
@@ -287,6 +316,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
 
     /**
      * The maximum distance a vehicle can travel with the remaining fuel.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("distanceRemainingFuel")
@@ -295,6 +326,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * The maximum rated capacity of the vehicle’s battery. maximumBatteryCapacity should be set such that
      * maximumBatteryCapacity >= currentBatteryCapacity >= minimumBatteryCapacity.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("maximumBatteryCapacity")
@@ -303,6 +336,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * The maximum distance a vehicle can travel with full resources. As the vehicle drives, this value can change over
      * time as a result of driving characteristics.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("maximumDistance")
@@ -311,6 +346,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * The maximum distance an electric vehicle can travel on a full charge. This value can change overtime (and over
      * several instances of the state of charge) as the vehicle drives.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("maximumDistanceElectric")
@@ -319,6 +356,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * The maximum distance a vehicle can travel with full resources. As the vehicle drives, this value can change over
      * time as a result of driving characteristics.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("maximumDistanceFuel")
@@ -328,6 +367,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * Minimum battery capacity. Used to display to the user as the minimum (not to be confused with the absolute 0 Wh).
      * This represents the value that is displayed to the driver as 0% battery. minimumBatteryCapacity should be set
      * such that maximumBatteryCapacity >= currentBatteryCapacity >= minimumBatteryCapacity.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("minimumBatteryCapacity")
@@ -336,6 +377,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * The current connector being used to deliver charge to the vehicle’s battery. If isCharging is set, this property
      * should contain the active connector that is currently being used to charge the vehicle.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setActiveConnector:")
@@ -344,6 +387,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * An identifier for the vehicles. Use this same value as the carIdentifier property of INCar. Do not use the VIN
      * (or the equivalent code) as the identifier.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setCarIdentifier:")
@@ -355,6 +400,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * at a station. The keys of this dictionary describe the parameters that fit into the Charging model of the
      * electric vehicle. The values of this dictionary represent the parameter values. model_id is a mandatory key in
      * this dictionary.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setChargingFormulaArguments:")
@@ -366,6 +413,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * consumption as the user drives. The keys of this dictionary describe the parameters that fit into the consumption
      * model of the electric vehicle. The values of this dictionary represent the parameter values. model_id is a
      * mandatory key in this dictionary.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setConsumptionFormulaArguments:")
@@ -374,6 +423,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * The current capacity of the battery. currentBatteryCapacity should be set such that maximumBatteryCapacity >=
      * currentBatteryCapacity >= minimumBatteryCapacity.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setCurrentBatteryCapacity:")
@@ -382,6 +433,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * A time stamp for an instance of the state of charge. This time stamp should ideally indicate when the actual
      * state of charge was captured from the vehicle.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDateOfLastStateUpdate:")
@@ -389,6 +442,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
 
     /**
      * The maximum distance an electric vehicle can travel with the remaining charge.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDistanceRemainingElectric:")
@@ -396,6 +451,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
 
     /**
      * The maximum distance a vehicle can travel with the remaining fuel.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDistanceRemainingFuel:")
@@ -404,6 +461,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * The maximum rated capacity of the vehicle’s battery. maximumBatteryCapacity should be set such that
      * maximumBatteryCapacity >= currentBatteryCapacity >= minimumBatteryCapacity.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMaximumBatteryCapacity:")
@@ -412,6 +471,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * The maximum distance a vehicle can travel with full resources. As the vehicle drives, this value can change over
      * time as a result of driving characteristics.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMaximumDistance:")
@@ -420,6 +481,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * The maximum distance an electric vehicle can travel on a full charge. This value can change overtime (and over
      * several instances of the state of charge) as the vehicle drives.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMaximumDistanceElectric:")
@@ -428,6 +491,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
     /**
      * The maximum distance a vehicle can travel with full resources. As the vehicle drives, this value can change over
      * time as a result of driving characteristics.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMaximumDistanceFuel:")
@@ -437,6 +502,8 @@ public class INGetCarPowerLevelStatusIntentResponse extends INIntentResponse {
      * Minimum battery capacity. Used to display to the user as the minimum (not to be confused with the absolute 0 Wh).
      * This represents the value that is displayed to the driver as 0% battery. minimumBatteryCapacity should be set
      * such that maximumBatteryCapacity >= currentBatteryCapacity >= minimumBatteryCapacity.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMinimumBatteryCapacity:")

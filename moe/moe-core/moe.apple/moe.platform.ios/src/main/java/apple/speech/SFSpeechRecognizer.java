@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Speech")
 @Runtime(ObjCRuntime.class)
@@ -283,6 +286,8 @@ public class SFSpeechRecognizer extends NSObject {
 
     /**
      * True if this recognition can handle requests with requiresOnDeviceRecognition set to true
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setSupportsOnDeviceRecognition:")
@@ -290,6 +295,8 @@ public class SFSpeechRecognizer extends NSObject {
 
     /**
      * True if this recognition can handle requests with requiresOnDeviceRecognition set to true
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("supportsOnDeviceRecognition")

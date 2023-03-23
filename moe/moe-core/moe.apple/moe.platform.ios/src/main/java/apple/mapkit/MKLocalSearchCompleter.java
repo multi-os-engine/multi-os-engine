@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.3
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -163,7 +166,12 @@ public class MKLocalSearchCompleter extends NSObject {
 
     /**
      * Defaults to MKSearchCompletionFilterTypeLocationsAndQueries
+     * 
+     * API-Since: 9.3
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use resultTypes
      */
+    @Deprecated
     @Generated
     @Selector("filterType")
     @NInt
@@ -208,7 +216,12 @@ public class MKLocalSearchCompleter extends NSObject {
 
     /**
      * Defaults to MKSearchCompletionFilterTypeLocationsAndQueries
+     * 
+     * API-Since: 9.3
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use resultTypes
      */
+    @Deprecated
     @Generated
     @Selector("setFilterType:")
     public native void setFilterType(@NInt long value);
@@ -221,19 +234,31 @@ public class MKLocalSearchCompleter extends NSObject {
     @Selector("setRegion:")
     public native void setRegion(@ByValue MKCoordinateRegion value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("pointOfInterestFilter")
     public native MKPointOfInterestFilter pointOfInterestFilter();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("resultTypes")
     @NUInt
     public native long resultTypes();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setPointOfInterestFilter:")
     public native void setPointOfInterestFilter(MKPointOfInterestFilter value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setResultTypes:")
     public native void setResultTypes(@NUInt long value);

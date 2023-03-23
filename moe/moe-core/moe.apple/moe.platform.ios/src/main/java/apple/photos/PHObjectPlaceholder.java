@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * PHObjectPlaceholder is a read-only object and may be used as a proxy for the real object that will be created both
  * inside and outside of the change block. Will compare isEqual: to the fetched model object after the change block is
  * performed.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Photos")

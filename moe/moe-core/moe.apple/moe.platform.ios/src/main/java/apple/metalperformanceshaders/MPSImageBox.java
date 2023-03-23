@@ -43,12 +43,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageBox
- * <p>
+ * 
  * The MPSImageBox convolves an image with given filter of odd width and height. The kernel elements
  * all have equal weight, achieving a blur effect. (Each result is the unweighted average of the
  * surrounding pixels.) This allows for much faster algorithms, espcially for larger blur radii.
  * The box height and width must be odd numbers. The box blur is a separable filter. The implementation
  * is aware of this and will act accordingly to give best performance for multi-dimensional blurs.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -170,7 +172,7 @@ public class MPSImageBox extends MPSUnaryImageKernel {
 
     /**
      * Initialize a filter for a particular kernel size and device
-     *
+     * 
      * @param device       The device the filter will run on
      * @param kernelWidth  the width of the kernel. Must be an odd number.
      * @param kernelHeight the height of the kernel. Must be an odd number.
@@ -183,7 +185,7 @@ public class MPSImageBox extends MPSUnaryImageKernel {
 
     /**
      * [@property] kernelHeight
-     * <p>
+     * 
      * The height of the filter window.
      */
     @Generated
@@ -193,7 +195,7 @@ public class MPSImageBox extends MPSUnaryImageKernel {
 
     /**
      * [@property] kernelWidth
-     * <p>
+     * 
      * The width of the filter window.
      */
     @Generated
@@ -207,16 +209,18 @@ public class MPSImageBox extends MPSUnaryImageKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")

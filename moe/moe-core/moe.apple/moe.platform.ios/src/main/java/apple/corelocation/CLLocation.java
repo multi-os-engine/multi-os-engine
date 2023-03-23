@@ -49,9 +49,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CLLocation
- * <p>
+ * 
  * Discussion:
  * Represents a geographical coordinate along with accuracy and timestamp information.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("CoreLocation")
@@ -169,7 +171,7 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * altitude
-     * <p>
+     * 
      * Discussion:
      * Returns the altitude of the location. Can be positive (above sea level) or negative (below sea level).
      */
@@ -179,7 +181,7 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * coordinate
-     * <p>
+     * 
      * Discussion:
      * Returns the coordinate of the current location.
      */
@@ -196,12 +198,14 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * course
-     * <p>
+     * 
      * Discussion:
      * Returns the course of the location in degrees true North. Negative if course is invalid.
-     * <p>
+     * 
      * Range:
      * 0.0 - 359.9 degrees, 0 being true North
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("course")
@@ -209,9 +213,11 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * distanceFromLocation:
-     * <p>
+     * 
      * Discussion:
      * Returns the lateral distance between two locations.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("distanceFromLocation:")
@@ -223,11 +229,13 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * floor
-     * <p>
+     * 
      * Discussion:
      * Contains information about the logical floor that you are on
      * in the current building if you are inside a supported venue.
      * This will be nil if the floor is unavailable.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("floor")
@@ -235,9 +243,12 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * getDistanceFrom:
-     * <p>
+     * 
      * Discussion:
      * Deprecated. Use -distanceFromLocation: instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.2
      */
     @Generated
     @Deprecated
@@ -246,7 +257,7 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * horizontalAccuracy
-     * <p>
+     * 
      * Discussion:
      * Returns the horizontal accuracy of the location. Negative if the lateral location is invalid.
      */
@@ -264,9 +275,11 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:speed:timestamp:
-     * <p>
+     * 
      * Discussion:
      * Initialize with the specified parameters.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:speed:timestamp:")
@@ -276,7 +289,7 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:timestamp:
-     * <p>
+     * 
      * Discussion:
      * Initialize with the specified parameters.
      */
@@ -288,7 +301,7 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * initWithLatitude:longitude:
-     * <p>
+     * 
      * Discussion:
      * Initialize with the specified latitude and longitude.
      */
@@ -298,9 +311,11 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * speed
-     * <p>
+     * 
      * Discussion:
      * Returns the speed of the location in m/s. Negative if speed is invalid.
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @Selector("speed")
@@ -314,7 +329,7 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * timestamp
-     * <p>
+     * 
      * Discussion:
      * Returns the timestamp when this location was determined.
      */
@@ -324,7 +339,7 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * verticalAccuracy
-     * <p>
+     * 
      * Discussion:
      * Returns the vertical accuracy of the location. Negative if the altitude is invalid.
      */
@@ -334,9 +349,11 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * courseAccuracy
-     * <p>
+     * 
      * Discussion:
      * Returns the course accuracy of the location in degrees. Returns negative if course is invalid.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("courseAccuracy")
@@ -344,9 +361,11 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:
-     * <p>
+     * 
      * Discussion:
      * Initialize with the specified parameters.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:")
@@ -356,9 +375,11 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * speedAccuracy
-     * <p>
+     * 
      * Discussion:
      * Returns the speed accuracy of the location in m/s. Returns -1 if invalid.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("speedAccuracy")
@@ -366,10 +387,12 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * ellipsoidalAltitude
-     * <p>
+     * 
      * Discussion:
      * Returns the ellipsoidal altitude of the location under the WGS 84 reference frame.
      * Can be positive or negative.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("ellipsoidalAltitude")
@@ -377,9 +400,11 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:sourceInfo
-     * <p>
+     * 
      * Discussion:
      * Initialize with the specified parameters.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithCoordinate:altitude:horizontalAccuracy:verticalAccuracy:course:courseAccuracy:speed:speedAccuracy:timestamp:sourceInfo:")
@@ -390,9 +415,11 @@ public class CLLocation extends NSObject implements NSCopying, NSSecureCoding, C
 
     /**
      * sourceInformation
-     * <p>
+     * 
      * Discussion:
      * Contains information about the source of this location.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("sourceInformation")

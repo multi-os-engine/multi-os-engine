@@ -22,6 +22,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ * Deprecated-Since: 13.0
+ * Deprecated-Message: This resolution result is no longer used
+ */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)

@@ -44,6 +44,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.0
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use +[CNContactViewController viewControllerForNewContact:] from ContactsUI.framework instead
+ */
 @Deprecated
 @Generated
 @Library("AddressBookUI")
@@ -73,6 +78,7 @@ public class ABNewPersonViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native ABNewPersonViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();

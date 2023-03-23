@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.3
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -84,6 +87,8 @@ public class PKTransitPassProperties extends PKStoredValuePassProperties {
 
     /**
      * nil if pass does not expire
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("expirationDate")
@@ -111,6 +116,11 @@ public class PKTransitPassProperties extends PKStoredValuePassProperties {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 11.3
+     * Deprecated-Since: 15.0
+     */
+    @Deprecated
     @Generated
     @Selector("isBlacklisted")
     public native boolean isBlacklisted();
@@ -152,10 +162,20 @@ public class PKTransitPassProperties extends PKStoredValuePassProperties {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 11.3
+     * Deprecated-Since: 15.0
+     */
+    @Deprecated
     @Generated
     @Selector("transitBalance")
     public native NSDecimalNumber transitBalance();
 
+    /**
+     * API-Since: 11.3
+     * Deprecated-Since: 15.0
+     */
+    @Deprecated
     @Generated
     @Selector("transitBalanceCurrencyCode")
     public native String transitBalanceCurrencyCode();
@@ -165,6 +185,9 @@ public class PKTransitPassProperties extends PKStoredValuePassProperties {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.5
+     */
     @Generated
     @Selector("isBlocked")
     public native boolean isBlocked();

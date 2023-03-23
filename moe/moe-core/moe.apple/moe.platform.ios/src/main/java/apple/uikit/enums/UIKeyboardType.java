@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * UIKeyboardType
- * <p>
+ * 
  * Requests that a particular keyboard type be displayed when a text widget
  * becomes first responder.
  * Note: Some keyboard/input methods types may not support every variant.
@@ -65,18 +65,26 @@ public final class UIKeyboardType {
     @Generated @NInt public static final long EmailAddress = 0x0000000000000007L;
     /**
      * A number pad with a decimal point.
+     * 
+     * API-Since: 4.1
      */
     @Generated @NInt public static final long DecimalPad = 0x0000000000000008L;
     /**
      * A type optimized for twitter text entry (easy access to @ #)
+     * 
+     * API-Since: 5.0
      */
     @Generated @NInt public static final long Twitter = 0x0000000000000009L;
     /**
      * A default keyboard type with URL-oriented addition (shows space . prominently).
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long WebSearch = 0x000000000000000AL;
     /**
      * A number pad (0-9) that will always be ASCII digits.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long ASCIICapableNumberPad = 0x000000000000000BL;
     /**

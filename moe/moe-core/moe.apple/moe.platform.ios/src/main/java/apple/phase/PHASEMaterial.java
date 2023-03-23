@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEMaterial
- * <p>
+ * 
  * A PHASEMaterial describes the acoustic properties of a material.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -96,7 +98,7 @@ public class PHASEMaterial extends NSObject {
 
     /**
      * initWithEngine:preset
-     * <p>
+     * 
      * Initialize a new material from a preset.
      */
     @Generated

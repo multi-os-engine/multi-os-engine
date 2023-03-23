@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.5
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -63,11 +66,11 @@ public class WKDownload extends NSObject implements NSProgressReporting {
 
     /**
      * Cancel the download.
-     * <p>
+     * 
      * To attempt to resume the download, call WKWebView resumeDownloadFromResumeData: with the data given to the
      * completionHandler.
      * If no resume attempt is possible with this server, completionHandler will be called with nil.
-     *
+     * 
      * @param completionHandler A block to invoke when cancellation is finished.
      */
     @Generated
@@ -152,7 +155,7 @@ public class WKDownload extends NSObject implements NSProgressReporting {
 
     /**
      * The request used to initiate this download.
-     * <p>
+     * 
      * If the original request redirected to a different URL, originalRequest
      * will be unchanged after the download follows the redirect.
      */

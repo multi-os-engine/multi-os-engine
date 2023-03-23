@@ -21,17 +21,31 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueCurrentHumidifierDehumidifierState
- * <p>
+ * 
  * [@constant] HMCharacteristicValueCurrentHumidifierDehumidifierStateInactive Inactive.
  * [@constant] HMCharacteristicValueCurrentHumidifierDehumidifierStateIdle Idle.
  * [@constant] HMCharacteristicValueCurrentHumidifierDehumidifierStateHumidifying Humidifying.
  * [@constant] HMCharacteristicValueCurrentHumidifierDehumidifierStateDehumidifying Dehumidifying.
+ * 
+ * API-Since: 10.2
  */
 @Generated
 public final class HMCharacteristicValueCurrentHumidifierDehumidifierState {
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Inactive = 0x0000000000000000L;
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Idle = 0x0000000000000001L;
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Humidifying = 0x0000000000000002L;
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Dehumidifying = 0x0000000000000003L;
 
     @Generated

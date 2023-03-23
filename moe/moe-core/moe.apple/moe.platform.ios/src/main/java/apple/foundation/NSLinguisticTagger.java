@@ -42,6 +42,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+ */
+@Deprecated
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -78,7 +84,12 @@ public class NSLinguisticTagger extends NSObject {
      * Clients wishing to know the tag schemes supported in NSLinguisticTagger for a particular language at the word
      * level may query them with this method. The language should be specified using a standard abbreviation as with
      * NSOrthography.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @Selector("availableTagSchemesForLanguage:")
     public static native NSArray<String> availableTagSchemesForLanguage(String language);
@@ -163,7 +174,12 @@ public class NSLinguisticTagger extends NSObject {
 
     /**
      * Methods that do not specify a unit act at the word level.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @Selector("enumerateTagsInRange:scheme:options:usingBlock:")
     public native void enumerateTagsInRangeSchemeOptionsUsingBlock(@ByValue NSRange range, String tagScheme,
@@ -177,18 +193,34 @@ public class NSLinguisticTagger extends NSObject {
     /**
      * An instance of NSLinguisticTagger is created with an array of tag schemes. The tagger will be able to supply tags
      * corresponding to any of the schemes in this array.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @Selector("initWithTagSchemes:options:")
     public native NSLinguisticTagger initWithTagSchemesOptions(NSArray<String> tagSchemes, @NUInt long opts);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @Selector("orthographyAtIndex:effectiveRange:")
     public native NSOrthography orthographyAtIndexEffectiveRange(@NUInt long charIndex, NSRange effectiveRange);
 
     /**
      * Deprecated method for obtaining a list of possible tags for the token at a given index.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @Selector("possibleTagsAtIndex:scheme:tokenRange:sentenceRange:scores:")
     public native NSArray<String> possibleTagsAtIndexSchemeTokenRangeSentenceRangeScores(@NUInt long charIndex,
@@ -197,7 +229,12 @@ public class NSLinguisticTagger extends NSObject {
 
     /**
      * Returns a range covering all sentences intersecting the given range.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @Selector("sentenceRangeForRange:")
     @ByValue
@@ -207,15 +244,32 @@ public class NSLinguisticTagger extends NSObject {
      * If clients know the orthography for a given portion of the string, they may supply it to the tagger. Otherwise,
      * the tagger will infer the language from the contents of the text. In each case, the charIndex or range passed in
      * must not extend beyond the end of the tagger's string, or the methods will raise an exception.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @Selector("setOrthography:range:")
     public native void setOrthographyRange(NSOrthography orthography, @ByValue NSRange range);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @Selector("setString:")
     public native void setString(String value);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @Selector("string")
     public native String string();
@@ -226,20 +280,43 @@ public class NSLinguisticTagger extends NSObject {
      * change in length from the previous version to the current version of the string. Alternatively, the client may
      * call setString: again to reset all information about the string, but this has the disadvantage of not preserving
      * information about portions of the string that have not changed.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @Selector("stringEditedInRange:changeInLength:")
     public native void stringEditedInRangeChangeInLength(@ByValue NSRange newRange, @NInt long delta);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @Selector("tagAtIndex:scheme:tokenRange:sentenceRange:")
     public native String tagAtIndexSchemeTokenRangeSentenceRange(@NUInt long charIndex, String scheme,
             NSRange tokenRange, NSRange sentenceRange);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @Selector("tagSchemes")
     public native NSArray<String> tagSchemes();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @Selector("tagsInRange:scheme:options:tokenRanges:")
     public native NSArray<String> tagsInRangeSchemeOptionsTokenRanges(@ByValue NSRange range, String tagScheme,
@@ -257,7 +334,12 @@ public class NSLinguisticTagger extends NSObject {
      * Clients wishing to know the tag schemes supported in NSLinguisticTagger for a particular unit and language may
      * query them with this method. The language should be specified using a standard BCP-47 language tag as with
      * NSOrthography.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @Selector("availableTagSchemesForUnit:language:")
     public static native NSArray<String> availableTagSchemesForUnitLanguage(@NInt long unit, String language);
@@ -265,7 +347,12 @@ public class NSLinguisticTagger extends NSObject {
     /**
      * Returns the top identified language (if any) for the entire string. Convenience for tagAtIndex: with
      * NSLinguisticTagSchemeLanguage and NSLinguisticTaggerUnitDocument.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @Selector("dominantLanguage")
     public native String dominantLanguage();
@@ -274,11 +361,22 @@ public class NSLinguisticTagger extends NSObject {
      * The following class methods are conveniences for clients who wish to perform a single analysis on a string
      * without having to create an instance of NSLinguisticTagger. If more than one tagging operation is needed on a
      * given string, it is more efficient to use an explicit NSLinguisticTagger instance.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @Selector("dominantLanguageForString:")
     public static native String dominantLanguageForString(String string);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @Selector("enumerateTagsForString:range:unit:scheme:options:orthography:usingBlock:")
     public static native void enumerateTagsForStringRangeUnitSchemeOptionsOrthographyUsingBlock(String string,
@@ -301,7 +399,12 @@ public class NSLinguisticTagger extends NSObject {
      * obtaining information about all tokens intersecting a given range at once, in arrays. In each case, the charIndex
      * or range passed in must not extend beyond the end of the tagger's string, or the methods will raise an exception.
      * Note that a given instance of NSLinguisticTagger should not be used from more than one thread simultaneously.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @Selector("enumerateTagsInRange:unit:scheme:options:usingBlock:")
     public native void enumerateTagsInRangeUnitSchemeOptionsUsingBlock(@ByValue NSRange range, @NInt long unit,
@@ -316,23 +419,47 @@ public class NSLinguisticTagger extends NSObject {
                 BoolPtr stop);
     }
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @Selector("tagAtIndex:unit:scheme:tokenRange:")
     public native String tagAtIndexUnitSchemeTokenRange(@NUInt long charIndex, @NInt long unit, String scheme,
             @UncertainArgument("Options: reference, array Fallback: reference") NSRange tokenRange);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @Selector("tagForString:atIndex:unit:scheme:orthography:tokenRange:")
     public static native String tagForStringAtIndexUnitSchemeOrthographyTokenRange(String string, @NUInt long charIndex,
             @NInt long unit, String scheme, NSOrthography orthography,
             @UncertainArgument("Options: reference, array Fallback: reference") NSRange tokenRange);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @Selector("tagsForString:range:unit:scheme:options:orthography:tokenRanges:")
     public static native NSArray<String> tagsForStringRangeUnitSchemeOptionsOrthographyTokenRanges(String string,
             @ByValue NSRange range, @NInt long unit, String scheme, @NUInt long options, NSOrthography orthography,
             @ReferenceInfo(type = NSArray.class) Ptr<NSArray<? extends NSValue>> tokenRanges);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @Selector("tagsInRange:unit:scheme:options:tokenRanges:")
     public native NSArray<String> tagsInRangeUnitSchemeOptionsTokenRanges(@ByValue NSRange range, @NInt long unit,
@@ -341,7 +468,12 @@ public class NSLinguisticTagger extends NSObject {
 
     /**
      * Returns the range corresponding to the token for the given unit that contains the given character index.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @Selector("tokenRangeAtIndex:unit:")
     @ByValue

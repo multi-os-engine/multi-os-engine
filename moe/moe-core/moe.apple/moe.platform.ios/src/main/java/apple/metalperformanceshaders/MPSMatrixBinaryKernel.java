@@ -29,9 +29,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSMatrixBinaryKernel
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * A MPSMatrixBinaryKernel consumes two MPSMatrix objects and produces
  * one MPSMatrix object.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -67,7 +69,7 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
 
     /**
      * [@property] batchSize
-     * <p>
+     * 
      * The number of matrices in the batch to process. This property
      * is modifiable and by default allows all matrices available at
      * encoding time to be processed. If a single matrix should be
@@ -80,7 +82,7 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
 
     /**
      * [@property] batchStart
-     * <p>
+     * 
      * The index of the first matrix in the batch. This property is
      * modifiable and defaults to 0 at initialization time. If
      * batch processing should begin at a different matrix this value
@@ -167,7 +169,7 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
 
     /**
      * [@property] primarySourceMatrixOrigin
-     * <p>
+     * 
      * The origin, relative to [0, 0] in the primary source matrix, at which to
      * start reading values. This property is modifiable and defaults to
      * [0, 0] at initialization time. If a different origin is desired then
@@ -189,7 +191,7 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
 
     /**
      * [@property] resultMatrixOrigin
-     * <p>
+     * 
      * The origin, relative to [0, 0] in the result matrix, at which to
      * start writing results. This property is modifiable and defaults
      * to [0, 0] at initialization time. If a different origin is desired
@@ -203,7 +205,7 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
 
     /**
      * [@property] secondarySourceMatrixOrigin
-     * <p>
+     * 
      * The origin, relative to [0, 0] in the secondary source matrix, at which to
      * start reading values. This property is modifiable and defaults to
      * [0, 0] at initialization time. If a different origin is desired then
@@ -217,7 +219,7 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
 
     /**
      * [@property] batchSize
-     * <p>
+     * 
      * The number of matrices in the batch to process. This property
      * is modifiable and by default allows all matrices available at
      * encoding time to be processed. If a single matrix should be
@@ -229,7 +231,7 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
 
     /**
      * [@property] batchStart
-     * <p>
+     * 
      * The index of the first matrix in the batch. This property is
      * modifiable and defaults to 0 at initialization time. If
      * batch processing should begin at a different matrix this value
@@ -241,7 +243,7 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
 
     /**
      * [@property] primarySourceMatrixOrigin
-     * <p>
+     * 
      * The origin, relative to [0, 0] in the primary source matrix, at which to
      * start reading values. This property is modifiable and defaults to
      * [0, 0] at initialization time. If a different origin is desired then
@@ -254,7 +256,7 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
 
     /**
      * [@property] resultMatrixOrigin
-     * <p>
+     * 
      * The origin, relative to [0, 0] in the result matrix, at which to
      * start writing results. This property is modifiable and defaults
      * to [0, 0] at initialization time. If a different origin is desired
@@ -267,7 +269,7 @@ public class MPSMatrixBinaryKernel extends MPSKernel {
 
     /**
      * [@property] secondarySourceMatrixOrigin
-     * <p>
+     * 
      * The origin, relative to [0, 0] in the secondary source matrix, at which to
      * start reading values. This property is modifiable and defaults to
      * [0, 0] at initialization time. If a different origin is desired then

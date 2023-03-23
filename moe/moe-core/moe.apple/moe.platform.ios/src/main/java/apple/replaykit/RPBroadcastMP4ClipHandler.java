@@ -43,10 +43,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * RPBroadcastMP4ClipHandler
- * <p>
+ * 
  * Subclass this class to handle movie clips as they are recorded by ReplayKit during the broadcast flow. ReplayKit will
  * call processMP4ClipWithURL when a movie clip is available for processing.
+ * 
+ * API-Since: 10.0
+ * Deprecated-Since: 11.0
+ * Deprecated-Message: No longer supported, use RPBroadcastSampleHandler instead.
  */
+@Deprecated
 @Generated
 @Library("ReplayKit")
 @Runtime(ObjCRuntime.class)
@@ -159,7 +164,7 @@ public class RPBroadcastMP4ClipHandler extends RPBroadcastHandler {
 
     /**
      * Method that should be called when processing is complete.
-     *
+     * 
      * @param broadcastConfiguration Optional updated configuration that will be applied to the next MP4 clip.
      * @param error                  Optional error to communicate to ReplayKit and the host application that there was
      *                               an issue with the broadcast and to stop broadcasting. Note that once this is
@@ -177,7 +182,7 @@ public class RPBroadcastMP4ClipHandler extends RPBroadcastHandler {
 
     /**
      * Method which ReplayKit will call when an MP4 movie clip is ready for processing.
-     *
+     * 
      * @param mp4ClipURL URL that points to the location of the movie clip recorded by ReplayKit. Note that the URL may
      *                   be nil in certain cases such as an error.
      * @param setupInfo  Dictionary supplied by the UI extension that may contain setup information required for

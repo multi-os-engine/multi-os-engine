@@ -46,6 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPMediaPickerController is a UIViewController for visually selecting media items.
  * To display it, present it modally on an existing view controller.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("MediaPlayer")
@@ -75,6 +77,7 @@ public class MPMediaPickerController extends UIViewController {
     @Selector("allocWithZone:")
     public static native MPMediaPickerController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -237,6 +240,8 @@ public class MPMediaPickerController extends UIViewController {
 
     /**
      * default is YES
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setShowsCloudItems:")
@@ -244,6 +249,8 @@ public class MPMediaPickerController extends UIViewController {
 
     /**
      * default is YES
+     * 
+     * API-Since: 9.2
      */
     @Generated
     @Selector("setShowsItemsWithProtectedAssets:")
@@ -251,6 +258,8 @@ public class MPMediaPickerController extends UIViewController {
 
     /**
      * default is YES
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("showsCloudItems")
@@ -258,6 +267,8 @@ public class MPMediaPickerController extends UIViewController {
 
     /**
      * default is YES
+     * 
+     * API-Since: 9.2
      */
     @Generated
     @Selector("showsItemsWithProtectedAssets")

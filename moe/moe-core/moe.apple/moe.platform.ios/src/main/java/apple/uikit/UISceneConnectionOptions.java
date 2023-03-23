@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This object is vended to your application by UIKit when a UIScene connects to a session
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")

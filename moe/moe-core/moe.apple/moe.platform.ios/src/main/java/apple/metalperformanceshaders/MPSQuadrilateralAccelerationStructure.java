@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An acceleration structure built over quadrilaterals
- * <p>
+ * 
  * See MPSPolygonAccelerationStructure for more information
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")

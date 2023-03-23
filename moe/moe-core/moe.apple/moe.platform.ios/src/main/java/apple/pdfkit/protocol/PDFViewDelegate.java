@@ -24,6 +24,8 @@ public interface PDFViewDelegate {
      * indicated by the URL and go to the page and point indicated. The easiest way to do the latter is to create a
      * PDFDestination with the page index and point once a PDFDocument from the URL is created - then you can call:
      * -[PDFView goToDestination:]. The default implementation simply beeps.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -36,6 +38,8 @@ public interface PDFViewDelegate {
      * A delegate that should return the main view controller the PDFView resides in. This is to add additional
      * support to one's view such as 'Lookup' from the text selection menu, along with support of entering text for
      * notes.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -47,6 +51,8 @@ public interface PDFViewDelegate {
     /**
      * Certain PDFAction's may request that the PDF viewer application perform a Find. Delegates responding to the below
      * method will be called when the user clicks on an annotation with such an action.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -60,6 +66,8 @@ public interface PDFViewDelegate {
      * specific page number. Delegates responding to the below method will be called when the user clicks on an
      * annotation
      * with such an action.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -71,6 +79,8 @@ public interface PDFViewDelegate {
     /**
      * Delegates implementing the following method will be called to handle clicks on URL links within the PDFView. The
      * default implementation calls [[NSWorkspace sharedWorkspace] openURL: url].
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional

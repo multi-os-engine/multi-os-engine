@@ -57,6 +57,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -140,10 +143,16 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     @Selector("colorWithCGColor:")
     public static native UIColor colorWithCGColor(CGColorRef cgColor);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("colorWithCIColor:")
     public static native UIColor colorWithCIColor(CIColor ciColor);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("colorWithDisplayP3Red:green:blue:alpha:")
     public static native UIColor colorWithDisplayP3RedGreenBlueAlpha(@NFloat double displayP3Red, @NFloat double green,
@@ -215,7 +224,11 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * groupTableViewBackgroundColor is now the same as systemGroupedBackgroundColor.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("groupTableViewBackgroundColor")
     public static native UIColor groupTableViewBackgroundColor();
@@ -301,6 +314,10 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("scrollViewTexturedBackgroundColor")
@@ -318,6 +335,10 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("underPageBackgroundColor")
@@ -328,6 +349,10 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("viewFlipsideBackgroundColor")
@@ -351,6 +376,9 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     @Selector("CGColor")
     public native CGColorRef CGColor();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("CIColor")
     public native CIColor CIColor();
@@ -372,11 +400,17 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("getHue:saturation:brightness:alpha:")
     public native boolean getHueSaturationBrightnessAlpha(NFloatPtr hue, NFloatPtr saturation, NFloatPtr brightness,
             NFloatPtr alpha);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("getRed:green:blue:alpha:")
     public native boolean getRedGreenBlueAlpha(NFloatPtr red, NFloatPtr green, NFloatPtr blue, NFloatPtr alpha);
@@ -385,6 +419,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
      * Convenience methods for getting components.
      * If the receiver is of a compatible color space, any non-NULL parameters are populated and 'YES' is returned.
      * Otherwise, the parameters are left unchanged and 'NO' is returned.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("getWhite:alpha:")
@@ -398,6 +434,9 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     @Selector("initWithCGColor:")
     public native UIColor initWithCGColor(CGColorRef cgColor);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithCIColor:")
     public native UIColor initWithCIColor(CIColor ciColor);
@@ -406,6 +445,9 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     @Selector("initWithCoder:")
     public native UIColor initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithDisplayP3Red:green:blue:alpha:")
     public native UIColor initWithDisplayP3RedGreenBlueAlpha(@NFloat double displayP3Red, @NFloat double green,
@@ -459,11 +501,16 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * load from main bundle
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("colorNamed:")
     public static native UIColor colorNamed(String name);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("colorNamed:inBundle:compatibleWithTraitCollection:")
     public static native UIColor colorNamedInBundleCompatibleWithTraitCollection(String name, NSBundle bundle,
@@ -537,6 +584,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
      * the provider is called with UITraitCollection.currentTraitCollection.
      * The provider should use that trait collection to decide a more fundamental UIColor to return.
      * As much as possible, use the given trait collection to make that decision, not other state.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("colorWithDynamicProvider:")
@@ -550,6 +599,9 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
         UIColor call_colorWithDynamicProvider(UITraitCollection traitCollection);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithDynamicProvider:")
     public native UIColor initWithDynamicProvider(
@@ -564,6 +616,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * Foreground colors for static text and related elements.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("labelColor")
@@ -571,22 +625,32 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * Foreground color for standard system links.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("linkColor")
     public static native UIColor linkColor();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("opaqueSeparatorColor")
     public static native UIColor opaqueSeparatorColor();
 
     /**
      * Foreground color for placeholder text in controls or text fields or text views.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("placeholderTextColor")
     public static native UIColor placeholderTextColor();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("quaternaryLabelColor")
     public static native UIColor quaternaryLabelColor();
@@ -594,6 +658,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     /**
      * quaternarySystemFillColor is appropriate for filling large areas containing complex content.
      * Example: Expanded table cells.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("quaternarySystemFillColor")
@@ -601,15 +667,23 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * Resolve any color to its most fundamental form (a non-dynamic color) for a specific trait collection.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("resolvedColorWithTraitCollection:")
     public native UIColor resolvedColorWithTraitCollection(UITraitCollection traitCollection);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("secondaryLabelColor")
     public static native UIColor secondaryLabelColor();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("secondarySystemBackgroundColor")
     public static native UIColor secondarySystemBackgroundColor();
@@ -617,11 +691,16 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     /**
      * secondarySystemFillColor is appropriate for filling medium-size shapes.
      * Example: The background of a switch.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("secondarySystemFillColor")
     public static native UIColor secondarySystemFillColor();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("secondarySystemGroupedBackgroundColor")
     public static native UIColor secondarySystemGroupedBackgroundColor();
@@ -631,6 +710,8 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
      * `separatorColor` may be partially transparent, so it can go on top of any content.
      * `opaqueSeparatorColor` is intended to look similar, but is guaranteed to be opaque, so it will
      * completely cover anything behind it. Depending on the situation, you may need one or the other.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("separatorColor")
@@ -638,23 +719,28 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
 
     /**
      * We provide two design systems (also known as "stacks") for structuring an iOS app's backgrounds.
-     * <p>
+     * 
      * Each stack has three "levels" of background colors. The first color is intended to be the
      * main background, farthest back. Secondary and tertiary colors are layered on top
      * of the main background, when appropriate.
-     * <p>
+     * 
      * Inside of a discrete piece of UI, choose a stack, then use colors from that stack.
      * We do not recommend mixing and matching background colors between stacks.
      * The foreground colors above are designed to work in both stacks.
-     * <p>
+     * 
      * 1. systemBackground
      * Use this stack for views with standard table views, and designs which have a white
      * primary background in light mode.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("systemBackgroundColor")
     public static native UIColor systemBackgroundColor();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("systemBlueColor")
     public static native UIColor systemBlueColor();
@@ -662,9 +748,11 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     /**
      * Fill colors for UI elements.
      * These are meant to be used over the background colors, since their alpha component is less than 1.
-     * <p>
+     * 
      * systemFillColor is appropriate for filling thin and small shapes.
      * Example: The track of a slider.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("systemFillColor")
@@ -673,39 +761,58 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     /**
      * The numbered variations, systemGray2 through systemGray6, are grays which increasingly
      * trend away from systemGray and in the direction of systemBackgroundColor.
-     * <p>
-     * In UIUserInterfaceStyleLight: systemGray1 is slightly lighter than systemGray.
-     * systemGray2 is lighter than that, and so on.
-     * In UIUserInterfaceStyleDark: systemGray1 is slightly darker than systemGray.
-     * systemGray2 is darker than that, and so on.
+     * 
+     * In UIUserInterfaceStyleLight: systemGray2 is slightly lighter than systemGray.
+     * systemGray3 is lighter than that, and so on.
+     * In UIUserInterfaceStyleDark: systemGray2 is slightly darker than systemGray.
+     * systemGray3 is darker than that, and so on.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("systemGray2Color")
     public static native UIColor systemGray2Color();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("systemGray3Color")
     public static native UIColor systemGray3Color();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("systemGray4Color")
     public static native UIColor systemGray4Color();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("systemGray5Color")
     public static native UIColor systemGray5Color();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("systemGray6Color")
     public static native UIColor systemGray6Color();
 
     /**
      * Shades of gray. systemGray is the base gray color.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("systemGrayColor")
     public static native UIColor systemGrayColor();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("systemGreenColor")
     public static native UIColor systemGreenColor();
@@ -715,23 +822,37 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
      * Use this stack for views with grouped content, such as grouped tables and
      * platter-based designs. These are like grouped table views, but you may use these
      * colors in places where a table view wouldn't make sense.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("systemGroupedBackgroundColor")
     public static native UIColor systemGroupedBackgroundColor();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("systemIndigoColor")
     public static native UIColor systemIndigoColor();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("systemOrangeColor")
     public static native UIColor systemOrangeColor();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("systemPinkColor")
     public static native UIColor systemPinkColor();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("systemPurpleColor")
     public static native UIColor systemPurpleColor();
@@ -740,23 +861,37 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
      * Some colors that are used by system elements and applications.
      * These return named colors whose values may vary between different contexts and releases.
      * Do not make assumptions about the color spaces or actual colors used.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("systemRedColor")
     public static native UIColor systemRedColor();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("systemTealColor")
     public static native UIColor systemTealColor();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("systemYellowColor")
     public static native UIColor systemYellowColor();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("tertiaryLabelColor")
     public static native UIColor tertiaryLabelColor();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("tertiarySystemBackgroundColor")
     public static native UIColor tertiarySystemBackgroundColor();
@@ -764,11 +899,16 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     /**
      * tertiarySystemFillColor is appropriate for filling large shapes.
      * Examples: Input fields, search bars, buttons.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("tertiarySystemFillColor")
     public static native UIColor tertiarySystemFillColor();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("tertiarySystemGroupedBackgroundColor")
     public static native UIColor tertiarySystemGroupedBackgroundColor();
@@ -776,34 +916,47 @@ public class UIColor extends NSObject implements NSSecureCoding, NSCopying, NSIt
     /**
      * Provides an accessible name for the UIColor for use in accessibility attribute APIs, such as when using
      * accessibilityLabel.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("accessibilityName")
     public native String accessibilityName();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("systemBrownColor")
     public static native UIColor systemBrownColor();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("systemCyanColor")
     public static native UIColor systemCyanColor();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("systemMintColor")
     public static native UIColor systemMintColor();
 
     /**
      * This color represents the tint color of a view.
-     * <p>
+     * 
      * Like other dynamic colors, UIColor.tintColor relies on UITraitCollection.currentTraitCollection
      * being set to a view's trait collection when it is used, so that it can resolve to that view's
      * tint color. If you use UIColor.tintColor outside a view's context, and do not resolve it
      * manually with a view's trait collection, it will return the system default tint color.
-     * <p>
+     * 
      * Setting UIColor.tintColor directly to a view's tintColor property behaves the same as setting nil.
      * However, you cannot set a custom dynamic color (e.g. using +[UIColor colorWithDynamicProvider:])
      * that can resolve to UIColor.tintColor to a view's tintColor property.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("tintColor")

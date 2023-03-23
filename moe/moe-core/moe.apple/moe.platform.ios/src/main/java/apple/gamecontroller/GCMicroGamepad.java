@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -152,7 +155,7 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
     /**
      * Allows the Micro profile to monitor the orientation of the controller, if the controller is positioned in
      * landscape orientation, D-pad input values will be transposed 90 degrees to match the new orientation.
-     * <p>
+     * 
      * The default value for this property is NO.
      */
     @Generated
@@ -172,10 +175,10 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
      * Button X is the secondary action button, it indicates an alternate affirmative action and should be used to
      * perform
      * a secondary action. If there is no secondary action it should be used as equivalent to buttonA.
-     * <p>
+     * 
      * Unlike on other profiles there is no negative button on this profile. Instead the menu button should be
      * used to present menu content or to retreat in a menu flow.
-     *
+     * 
      * @see buttonA
      */
     @Generated
@@ -200,14 +203,14 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
     /**
      * The Micro profile can use the raw position values of the touchpad on the remote as D-pad values, or it can create
      * a virtual dpad centered around the first contact point with the surface.
-     * <p>
+     * 
      * If NO; a smaller sliding window is created around the initial touch point and subsequent movement is relative to
      * that center. Movement outside the window will slide the window with it to re-center it. This is great for
      * surfaces where there is no clear sense of a middle and drift over time is an issue.
-     * <p>
+     * 
      * If YES; the absolute values are used and any drift will have to managed manually either through user traning or
      * by a developer using the dpad.
-     * <p>
+     * 
      * The default value for this property is NO, meaning a sliding window is used for the dpad.
      */
     @Generated
@@ -219,12 +222,17 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
      * independent
      * format that can be serialized and used at a later date. This is useful for features such as quality assurance,
      * save game or replay functionality among many.
-     * <p>
+     * 
      * If your application is heavily multithreaded this may also be useful to guarantee atomicity of input handling as
      * a snapshot will not change based on user input once it is taken.
-     *
+     * 
      * @see GCMicroGamepadSnapshot
+     * 
+     *      API-Since: 7.0
+     *      Deprecated-Since: 13.0
+     *      Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController capture] instead
      */
+    @Deprecated
     @Generated
     @Selector("saveSnapshot")
     public native GCMicroGamepadSnapshot saveSnapshot();
@@ -232,7 +240,7 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
     /**
      * Allows the Micro profile to monitor the orientation of the controller, if the controller is positioned in
      * landscape orientation, D-pad input values will be transposed 90 degrees to match the new orientation.
-     * <p>
+     * 
      * The default value for this property is NO.
      */
     @Generated
@@ -242,14 +250,14 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
     /**
      * The Micro profile can use the raw position values of the touchpad on the remote as D-pad values, or it can create
      * a virtual dpad centered around the first contact point with the surface.
-     * <p>
+     * 
      * If NO; a smaller sliding window is created around the initial touch point and subsequent movement is relative to
      * that center. Movement outside the window will slide the window with it to re-center it. This is great for
      * surfaces where there is no clear sense of a middle and drift over time is an issue.
-     * <p>
+     * 
      * If YES; the absolute values are used and any drift will have to managed manually either through user traning or
      * by a developer using the dpad.
-     * <p>
+     * 
      * The default value for this property is NO, meaning a sliding window is used for the dpad.
      */
     @Generated
@@ -282,6 +290,8 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
 
     /**
      * Button menu is the primary menu button, and should be used to enter the main menu and pause the game.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("buttonMenu")
@@ -289,10 +299,12 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
 
     /**
      * Sets the state vector of the micro gamepad to a copy of the input micro gamepad's state vector.
-     * <p>
+     * 
      * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
-     *
+     * 
      * @see GCController.snapshot
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("setStateFromMicroGamepad:")

@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -109,6 +112,12 @@ public class INSearchForNotebookItemsIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INSearchForNotebookItemsIntent initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 11.2
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithTitle:content:itemType:status:location:locationSearchType:dateTime:dateSearchType:")
     public native INSearchForNotebookItemsIntent initWithTitleContentItemTypeStatusLocationLocationSearchTypeDateTimeDateSearchType(
@@ -195,6 +204,12 @@ public class INSearchForNotebookItemsIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 11.2
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithTitle:content:itemType:status:location:locationSearchType:dateTime:dateSearchType:notebookItemIdentifier:")
     public native INSearchForNotebookItemsIntent initWithTitleContentItemTypeStatusLocationLocationSearchTypeDateTimeDateSearchTypeNotebookItemIdentifier(
@@ -202,6 +217,9 @@ public class INSearchForNotebookItemsIntent extends INIntent {
             @NInt long locationSearchType, INDateComponentsRange dateTime, @NInt long dateSearchType,
             String notebookItemIdentifier);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithTitle:content:itemType:status:location:locationSearchType:dateTime:dateSearchType:temporalEventTriggerTypes:taskPriority:notebookItemIdentifier:")
     public native INSearchForNotebookItemsIntent initWithTitleContentItemTypeStatusLocationLocationSearchTypeDateTimeDateSearchTypeTemporalEventTriggerTypesTaskPriorityNotebookItemIdentifier(
@@ -209,15 +227,24 @@ public class INSearchForNotebookItemsIntent extends INIntent {
             @NInt long locationSearchType, INDateComponentsRange dateTime, @NInt long dateSearchType,
             @NUInt long temporalEventTriggerTypes, @NInt long taskPriority, String notebookItemIdentifier);
 
+    /**
+     * API-Since: 11.2
+     */
     @Generated
     @Selector("notebookItemIdentifier")
     public native String notebookItemIdentifier();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("taskPriority")
     @NInt
     public native long taskPriority();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("temporalEventTriggerTypes")
     @NUInt

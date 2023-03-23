@@ -20,25 +20,44 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * Specifies the type of peers to return in method -peersWithConnectionState:
+ * 
+ * API-Since: 3.0
+ * Deprecated-Since: 7.0
  */
 @Deprecated
 @Generated
 public final class GKPeerConnectionState {
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
     @Deprecated @Generated public static final int Available = 0x00000000;
     /**
      * not connected to session, but available for connectToPeer:withTimeout:
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Deprecated @Generated public static final int Unavailable = 0x00000001;
     /**
      * no longer available
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Deprecated @Generated public static final int Connected = 0x00000002;
     /**
      * connected to the session
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Deprecated @Generated public static final int Disconnected = 0x00000003;
     /**
      * disconnected from the session
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Deprecated @Generated public static final int Connecting = 0x00000004;
 
@@ -48,6 +67,9 @@ public final class GKPeerConnectionState {
 
     /**
      * waiting for accept, or deny response
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Deprecated @Generated public static final int ConnectedRelay = 0x00000005;
 }

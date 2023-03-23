@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCLossDescriptor
- * <p>
+ * 
  * The MLCLossDescriptor specifies a loss filter descriptor.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -73,9 +75,9 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] numberOfClasses
-     * <p>
+     * 
      * The number of classes parameter. The default value is 1.
-     * <p>
+     * 
      * This parameter is valid only for the loss function MLCLossTypeSoftmaxCrossEntropy.
      */
     @Generated
@@ -103,9 +105,9 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] delta
-     * <p>
+     * 
      * The delta parameter. The default value is 1.0f.
-     * <p>
+     * 
      * This parameter is valid only for the loss function MLCLossTypeHuber.
      */
     @Generated
@@ -118,7 +120,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a loss descriptor object
-     *
+     * 
      * @param lossType      The loss function.
      * @param reductionType The reduction operation
      * @return A new MLCLossDescriptor object
@@ -129,7 +131,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a loss descriptor object
-     *
+     * 
      * @param lossType      The loss function.
      * @param reductionType The reduction operation
      * @param weight        The scale factor to apply to each element of a result.
@@ -142,7 +144,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a loss descriptor object
-     *
+     * 
      * @param lossType       The loss function.
      * @param reductionType  The reduction operation
      * @param weight         The scale factor to apply to each element of a result.
@@ -157,7 +159,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a loss descriptor object
-     *
+     * 
      * @param lossType       The loss function.
      * @param reductionType  The reduction operation
      * @param weight         The scale factor to apply to each element of a result.
@@ -175,9 +177,9 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] epsilon
-     * <p>
+     * 
      * The epsilon parameter. The default value is 1e-7.
-     * <p>
+     * 
      * This parameter is valid only for the loss function MLCLossTypeLog.
      */
     @Generated
@@ -216,9 +218,9 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] labelSmoothing
-     * <p>
+     * 
      * The label smoothing parameter. The default value is 0.0.
-     * <p>
+     * 
      * This parameter is valid only for the loss functions of the following type(s):
      * MLCLossTypeSoftmaxCrossEntropy and MLCLossTypeSigmoidCrossEntropy.
      */
@@ -228,7 +230,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] lossType
-     * <p>
+     * 
      * Specifies the loss function.
      */
     @Generated
@@ -242,7 +244,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] reductionType
-     * <p>
+     * 
      * The reduction operation performed by the loss function.
      */
     @Generated
@@ -272,7 +274,7 @@ public class MLCLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] weight
-     * <p>
+     * 
      * The scale factor to apply to each element of a result. The default value is 1.0.
      */
     @Generated

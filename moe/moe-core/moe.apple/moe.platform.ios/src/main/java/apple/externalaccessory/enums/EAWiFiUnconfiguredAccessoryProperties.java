@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@options] EAWiFiUnconfiguredAccessoryProperties
- * <p>
+ * 
  * Represents the properties of an EAWiFiUnconfiguredAccessory.
- * <p>
+ * 
  * [@constant] EAWiFiUnconfiguredAccessoryPropertySupportsAirPlay Option set if the accessory is advertising that it
  * supports AirPlay.
  * [@constant] EAWiFiUnconfiguredAccessoryPropertySupportsAirPrint Option set if the accessory is advertising that it

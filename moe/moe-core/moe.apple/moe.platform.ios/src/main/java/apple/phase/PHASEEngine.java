@@ -28,8 +28,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEEngine
- * <p>
+ * 
  * PHASE engine instance.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -51,9 +53,9 @@ public class PHASEEngine extends NSObject {
 
     /**
      * [@property] activeGroupPreset
-     * <p>
+     * 
      * The active group mixer preset in the system
-     * <p>
+     * 
      * Returns nil if there are no active group presets in the engine. Activate or Deactivate the preset via
      * [PHASEGroupPreset activate] and [PHASEGroupPreset deactivate]
      */
@@ -73,7 +75,7 @@ public class PHASEEngine extends NSObject {
 
     /**
      * [@property] assetRegistry
-     * <p>
+     * 
      * A registry for assets available to the engine
      */
     @Generated
@@ -108,9 +110,9 @@ public class PHASEEngine extends NSObject {
 
     /**
      * [@property] defaultMedium
-     * <p>
+     * 
      * The default medium in the engine.
-     * <p>
+     * 
      * The default value is PHASEMediumPresetAir.
      */
     @Generated
@@ -119,9 +121,9 @@ public class PHASEEngine extends NSObject {
 
     /**
      * [@property] defaultReverbPreset
-     * <p>
+     * 
      * The default reverb preset in the engine.
-     * <p>
+     * 
      * The default value is PHASEReverbPresetNone.
      */
     @Generated
@@ -135,9 +137,9 @@ public class PHASEEngine extends NSObject {
 
     /**
      * [@property] duckers
-     * <p>
+     * 
      * An array of the ducker objects in the system
-     * <p>
+     * 
      * Returns a dictionary of the ducker objects at the time it is retrieved.
      */
     @Generated
@@ -146,9 +148,9 @@ public class PHASEEngine extends NSObject {
 
     /**
      * [@property] groups
-     * <p>
+     * 
      * A dictionary of the groups in the system
-     * <p>
+     * 
      * Returns a dictionary of the groups at the time it is retrieved.
      */
     @Generated
@@ -166,10 +168,11 @@ public class PHASEEngine extends NSObject {
 
     /**
      * initWithUpdateMode:
-     * <p>
+     * 
      * Initialize a new engine with an update mode.
-     *
-     * @param updateMode Defines how the engine will be updated.
+     * 
+     * @param updateMode
+     *                   Defines how the engine will be updated.
      */
     @Generated
     @Selector("initWithUpdateMode:")
@@ -203,7 +206,7 @@ public class PHASEEngine extends NSObject {
 
     /**
      * [@property] outputSpatializationMode
-     * <p>
+     * 
      * When set to a value other than PHASESpatializationModeAutomatic,
      * overrides the default output spatializer and uses the specified one instead.
      */
@@ -214,7 +217,7 @@ public class PHASEEngine extends NSObject {
 
     /**
      * pause
-     * <p>
+     * 
      * Pause the engine.
      */
     @Generated
@@ -223,7 +226,7 @@ public class PHASEEngine extends NSObject {
 
     /**
      * [@property] renderingState
-     * <p>
+     * 
      * The engine's current rendering state.
      */
     @Generated
@@ -241,9 +244,9 @@ public class PHASEEngine extends NSObject {
 
     /**
      * [@property] rootObject
-     * <p>
+     * 
      * The root object of the engine's scene graph.
-     * <p>
+     * 
      * Attach objects to the engine's rootObject or one of its children to make them active within the engine's scene
      * graph.
      * This will ensure they take part in the simulation.
@@ -259,9 +262,9 @@ public class PHASEEngine extends NSObject {
 
     /**
      * [@property] defaultMedium
-     * <p>
+     * 
      * The default medium in the engine.
-     * <p>
+     * 
      * The default value is PHASEMediumPresetAir.
      */
     @Generated
@@ -270,9 +273,9 @@ public class PHASEEngine extends NSObject {
 
     /**
      * [@property] defaultReverbPreset
-     * <p>
+     * 
      * The default reverb preset in the engine.
-     * <p>
+     * 
      * The default value is PHASEReverbPresetNone.
      */
     @Generated
@@ -281,7 +284,7 @@ public class PHASEEngine extends NSObject {
 
     /**
      * [@property] outputSpatializationMode
-     * <p>
+     * 
      * When set to a value other than PHASESpatializationModeAutomatic,
      * overrides the default output spatializer and uses the specified one instead.
      */
@@ -291,9 +294,9 @@ public class PHASEEngine extends NSObject {
 
     /**
      * [@property] unitsPerMeter
-     * <p>
+     * 
      * The number of units in a meter.
-     * <p>
+     * 
      * The unitsPerMeter is used internally to scale metric values passed to the API.
      * This allows clients to pass metric values in their own native spatial scale.
      * [@note]
@@ -305,9 +308,9 @@ public class PHASEEngine extends NSObject {
 
     /**
      * [@property] unitsPerSecond
-     * <p>
+     * 
      * The number of units in a second.
-     * <p>
+     * 
      * The unitsPerSecond is used internally to scale time/duration values passed to the API.
      * This allows clients to pass time/duration values in their own native time scale.
      * [@note]
@@ -323,9 +326,9 @@ public class PHASEEngine extends NSObject {
 
     /**
      * [@property] soundEvents
-     * <p>
+     * 
      * An array of the active sound event objects in the system
-     * <p>
+     * 
      * Returns a dictionary of the sound events at the time it is retrieved. This includes all sound events that are
      * registered with the engine, including those that are preparing, playing, paused or stopping.
      */
@@ -335,10 +338,11 @@ public class PHASEEngine extends NSObject {
 
     /**
      * startAndReturnError:
-     * <p>
+     * 
      * Start or resume the engine.
-     *
-     * @return YES for success.
+     * 
+     * @return
+     *         YES for success.
      */
     @Generated
     @Selector("startAndReturnError:")
@@ -346,7 +350,7 @@ public class PHASEEngine extends NSObject {
 
     /**
      * stop
-     * <p>
+     * 
      * Stop the engine.
      */
     @Generated
@@ -359,9 +363,9 @@ public class PHASEEngine extends NSObject {
 
     /**
      * [@property] unitsPerMeter
-     * <p>
+     * 
      * The number of units in a meter.
-     * <p>
+     * 
      * The unitsPerMeter is used internally to scale metric values passed to the API.
      * This allows clients to pass metric values in their own native spatial scale.
      * [@note]
@@ -373,9 +377,9 @@ public class PHASEEngine extends NSObject {
 
     /**
      * [@property] unitsPerSecond
-     * <p>
+     * 
      * The number of units in a second.
-     * <p>
+     * 
      * The unitsPerSecond is used internally to scale time/duration values passed to the API.
      * This allows clients to pass time/duration values in their own native time scale.
      * [@note]
@@ -387,9 +391,9 @@ public class PHASEEngine extends NSObject {
 
     /**
      * update:
-     * <p>
+     * 
      * Manually update the engine instance on the calling thread.
-     * <p>
+     * 
      * This will kick off all of the API commands called since the last call to update,
      * update any systems and objects that need to be kept current, and call any registered handlers.
      * [@note]

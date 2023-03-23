@@ -17,7 +17,6 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.intents.INIntent;
 import apple.replaykit.RPBroadcastConfiguration;
 import apple.uikit.UIImage;
@@ -41,9 +40,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * Class representing the extension request's context
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Foundation")
@@ -176,16 +178,28 @@ public class NSExtensionContext extends NSObject {
     public native void completeRequestReturningItemsCompletionHandler(NSArray<?> items,
             @ObjCBlock(name = "call_completeRequestReturningItemsCompletionHandler") Block_completeRequestReturningItemsCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: No longer supported
+     */
+    @Deprecated
     @Generated
     @Selector("completeRequestWithBroadcastURL:broadcastConfiguration:setupInfo:")
     public native void completeRequestWithBroadcastURLBroadcastConfigurationSetupInfo(NSURL broadcastURL,
             RPBroadcastConfiguration broadcastConfiguration, NSDictionary<String, ? extends NSObject> setupInfo);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("hostedViewMaximumAllowedSize")
     @ByValue
     public native CGSize hostedViewMaximumAllowedSize();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("hostedViewMinimumAllowedSize")
     @ByValue
@@ -205,7 +219,7 @@ public class NSExtensionContext extends NSObject {
 
     /**
      * Load information about the broadcasting app.
-     *
+     * 
      * @param handler block which will be supplied a bundleID, displayName and an optional appIcon.
      */
     @Generated
@@ -213,6 +227,9 @@ public class NSExtensionContext extends NSObject {
     public native void loadBroadcastingApplicationInfoWithCompletion(
             @ObjCBlock(name = "call_loadBroadcastingApplicationInfoWithCompletion") Block_loadBroadcastingApplicationInfoWithCompletion handler);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("mediaPlayingPaused")
     public native void mediaPlayingPaused();
@@ -220,6 +237,8 @@ public class NSExtensionContext extends NSObject {
     /**
      * Call these methods when the playback state changes in the content
      * extension to update the state of the media control button.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("mediaPlayingStarted")
@@ -238,11 +257,22 @@ public class NSExtensionContext extends NSObject {
      * messaging the extension context.
      * Modifying this property more than once during the lifetime of the widget (perhaps due to changes in the amount of
      * available content) is supported.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use WidgetKit instead. Today View extensions have been deprecated.
      */
+    @Deprecated
     @Generated
     @Selector("setWidgetLargestAvailableDisplayMode:")
     public native void setWidgetLargestAvailableDisplayMode(@NInt long value);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use WidgetKit instead. Today View extensions have been deprecated.
+     */
+    @Deprecated
     @Generated
     @Selector("widgetActiveDisplayMode")
     @NInt
@@ -253,12 +283,23 @@ public class NSExtensionContext extends NSObject {
      * messaging the extension context.
      * Modifying this property more than once during the lifetime of the widget (perhaps due to changes in the amount of
      * available content) is supported.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use WidgetKit instead. Today View extensions have been deprecated.
      */
+    @Deprecated
     @Generated
     @Selector("widgetLargestAvailableDisplayMode")
     @NInt
     public native long widgetLargestAvailableDisplayMode();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use WidgetKit instead. Today View extensions have been deprecated.
+     */
+    @Deprecated
     @Generated
     @Selector("widgetMaximumSizeForDisplayMode:")
     @ByValue
@@ -285,34 +326,54 @@ public class NSExtensionContext extends NSObject {
         void call_openURLCompletionHandler(boolean success);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("completeRequestWithBroadcastURL:setupInfo:")
     public native void completeRequestWithBroadcastURLSetupInfo(NSURL broadcastURL,
             NSDictionary<String, ? extends NSObject> setupInfo);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("interfaceParametersDescription")
     public native String interfaceParametersDescription();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("dismissNotificationContentExtension")
     public native void dismissNotificationContentExtension();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("intent")
     public native INIntent intent();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("notificationActions")
     public native NSArray<? extends UNNotificationAction> notificationActions();
 
     /**
      * Opens the corresponding applicaton and delivers it the default notification action response
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("performNotificationDefaultAction")
     public native void performNotificationDefaultAction();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setNotificationActions:")
     public native void setNotificationActions(NSArray<? extends UNNotificationAction> value);

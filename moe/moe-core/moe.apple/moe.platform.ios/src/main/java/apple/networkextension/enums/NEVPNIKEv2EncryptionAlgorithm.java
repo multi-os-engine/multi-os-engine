@@ -21,33 +21,47 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEVPNIKEv2EncryptionAlgorithm
- * <p>
+ * 
  * IKEv2 Encryption Algorithms
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class NEVPNIKEv2EncryptionAlgorithm {
     /**
      * [@const] NEVPNIKEv2EncryptionAlgorithmDES Data Encryption Standard (DES)
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long AlgorithmDES = 0x0000000000000001L;
     /**
      * [@const] NEVPNIKEv2EncryptionAlgorithm3DES Triple Data Encryption Algorithm (aka 3DES)
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Algorithm3DES = 0x0000000000000002L;
     /**
      * [@const] NEVPNIKEv2EncryptionAlgorithmAES128 Advanced Encryption Standard 128 bit (AES128)
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long AlgorithmAES128 = 0x0000000000000003L;
     /**
      * [@const] NEVPNIKEv2EncryptionAlgorithmAES256 Advanced Encryption Standard 256 bit (AES256)
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long AlgorithmAES256 = 0x0000000000000004L;
     /**
      * [@const] NEVPNIKEv2EncryptionAlgorithmAES128GCM Advanced Encryption Standard 128 bit (AES128GCM)
+     * 
+     * API-Since: 8.3
      */
     @Generated @NInt public static final long AlgorithmAES128GCM = 0x0000000000000005L;
     /**
      * [@const] NEVPNIKEv2EncryptionAlgorithmAES256GCM Advanced Encryption Standard 256 bit (AES256GCM)
+     * 
+     * API-Since: 8.3
      */
     @Generated @NInt public static final long AlgorithmAES256GCM = 0x0000000000000006L;
 
@@ -57,6 +71,8 @@ public final class NEVPNIKEv2EncryptionAlgorithm {
 
     /**
      * [@const] NEVPNIKEv2EncryptionAlgorithmChaCha20Poly1305 ChaCha20 and Poly1305 (ChaCha20Poly1305)
+     * 
+     * API-Since: 13.0
      */
     @Generated @NInt public static final long AlgorithmChaCha20Poly1305 = 0x0000000000000007L;
 }

@@ -21,33 +21,47 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEVPNError
- * <p>
+ * 
  * VPN error codes
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class NEVPNError {
     /**
      * [@const] NEVPNErrorConfigurationInvalid The VPN configuration is invalid
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long ConfigurationInvalid = 0x0000000000000001L;
     /**
      * [@const] NEVPNErrorConfigurationDisabled The VPN configuration is not enabled.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long ConfigurationDisabled = 0x0000000000000002L;
     /**
      * [@const] NEVPNErrorConnectionFailed The connection to the VPN server failed.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long ConnectionFailed = 0x0000000000000003L;
     /**
      * [@const] NEVPNErrorConfigurationStale The VPN configuration is stale and needs to be loaded.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long ConfigurationStale = 0x0000000000000004L;
     /**
      * [@const] NEVPNErrorConfigurationReadWriteFailed The VPN configuration cannot be read from or written to disk.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long ConfigurationReadWriteFailed = 0x0000000000000005L;
     /**
      * [@const] NEVPNErrorConfigurationUnknown An unknown configuration error occurred.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long ConfigurationUnknown = 0x0000000000000006L;
 

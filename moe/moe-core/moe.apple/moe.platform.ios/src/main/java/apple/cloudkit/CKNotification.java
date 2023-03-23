@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -202,6 +205,8 @@ public class CKNotification extends NSObject {
 
     /**
      * The category for user-initiated actions in the notification
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("category")
@@ -217,7 +222,7 @@ public class CKNotification extends NSObject {
 
     /**
      * Whether or not the notification fully represents what the server wanted to send.
-     * <p>
+     * 
      * Push notifications have a limited size. In some cases, CloudKit servers may not be able to send you a full @c
      * CKNotification's worth of info in one push. In those cases, isPruned returns YES. The order in which we'll drop
      * properties is defined in each @c CKNotification subclass below.
@@ -249,6 +254,8 @@ public class CKNotification extends NSObject {
 
     /**
      * The ID of the subscription that caused this notification to fire
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("subscriptionID")
@@ -256,6 +263,8 @@ public class CKNotification extends NSObject {
 
     /**
      * Optional subtitle of the alert to display in a push notification.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("subtitle")
@@ -264,6 +273,8 @@ public class CKNotification extends NSObject {
     /**
      * A list of field names to take from the matching record that is used as substitution variables in a formatted
      * subtitle string.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("subtitleLocalizationArgs")
@@ -272,6 +283,8 @@ public class CKNotification extends NSObject {
     /**
      * Instead of a raw subtitle string, you may optionally specify a key for a localized string in your app's
      * Localizable.strings file.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("subtitleLocalizationKey")
@@ -279,6 +292,8 @@ public class CKNotification extends NSObject {
 
     /**
      * Optional title of the alert to display in a push notification.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("title")
@@ -287,6 +302,8 @@ public class CKNotification extends NSObject {
     /**
      * A list of field names to take from the matching record that is used as substitution variables in a formatted
      * title string.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("titleLocalizationArgs")
@@ -295,6 +312,8 @@ public class CKNotification extends NSObject {
     /**
      * Instead of a raw title string, you may optionally specify a key for a localized string in your app's
      * Localizable.strings file.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("titleLocalizationKey")
@@ -302,6 +321,8 @@ public class CKNotification extends NSObject {
 
     /**
      * The user recordID of the owner of the subscription for which this notification was generated
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("subscriptionOwnerUserRecordID")

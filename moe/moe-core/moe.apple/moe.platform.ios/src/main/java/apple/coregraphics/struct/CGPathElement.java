@@ -24,6 +24,7 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ptr.Ptr;
+import apple.corefoundation.struct.CGPoint;
 
 @Generated
 @Structure()

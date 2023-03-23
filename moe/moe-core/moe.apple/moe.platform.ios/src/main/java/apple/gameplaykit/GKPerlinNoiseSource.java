@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Perlin noise is useful for creating natural-looking textures and realistic-looking terrain.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")

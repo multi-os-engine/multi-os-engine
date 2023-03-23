@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * ===========================================================================================================================
- * <p>
+ * 
  * Summary of exposure info for a single day.
+ * 
+ * API-Since: 12.5
  */
 @Generated
 @Library("ExposureNotification")

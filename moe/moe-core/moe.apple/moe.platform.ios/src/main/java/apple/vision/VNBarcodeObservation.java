@@ -1,8 +1,6 @@
 package apple.vision;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.coreimage.CIBarcodeDescriptor;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
@@ -27,12 +25,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * VNBarcodeObservation
  * [@superclass] VNRectangleObservation
- * <p>
+ * 
  * VNBarcodeObservation Describes an area containing a barcode detected by the VNRequestNameDetectBarcodes request.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")

@@ -37,6 +37,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.0
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: Use nw_browser_t in Network framework instead
+ */
+@Deprecated
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -158,6 +164,8 @@ public class NSNetServiceBrowser extends NSObject {
     /**
      * Initially set to NO. Set to YES to also browse over peer to peer Wi-Fi (if available). Must be set before
      * starting to search.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("includesPeerToPeer")
@@ -234,6 +242,8 @@ public class NSNetServiceBrowser extends NSObject {
     /**
      * Initially set to NO. Set to YES to also browse over peer to peer Wi-Fi (if available). Must be set before
      * starting to search.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setIncludesPeerToPeer:")

@@ -27,9 +27,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCInferenceGraph
- * <p>
+ * 
  * An inference graph created from one or more MLCGraph objects
  * plus additional layers added directly to the inference graph.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -51,7 +53,7 @@ public class MLCInferenceGraph extends MLCGraph {
 
     /**
      * Add the list of inputs to the inference graph
-     *
+     * 
      * @param inputs The inputs
      * @return A boolean indicating success or failure
      */
@@ -61,12 +63,12 @@ public class MLCInferenceGraph extends MLCGraph {
 
     /**
      * Add the list of inputs to the inference graph
-     * <p>
+     * 
      * Each input, loss label or label weights tensor is identified by a NSString.
      * When the inference graph is executed, this NSString is used to identify which data object
      * should be as input data for each tensor whose device memory needs to be updated
      * before the graph is executed.
-     *
+     * 
      * @param inputs           The inputs
      * @param lossLabels       The loss label inputs
      * @param lossLabelWeights The loss label weights
@@ -80,7 +82,7 @@ public class MLCInferenceGraph extends MLCGraph {
 
     /**
      * Add the list of outputs to the inference graph
-     *
+     * 
      * @param outputs The outputs
      * @return A boolean indicating success or failure
      */
@@ -122,7 +124,7 @@ public class MLCInferenceGraph extends MLCGraph {
 
     /**
      * Compile the training graph for a device.
-     *
+     * 
      * @param options The compiler options to use when compiling the training graph
      * @param device  The MLCDevice object
      * @return A boolean indicating success or failure
@@ -133,15 +135,17 @@ public class MLCInferenceGraph extends MLCGraph {
 
     /**
      * Compile the inference graph for a device.
-     * <p>
+     * 
      * Specifying the list of constant tensors when we compile the graph allows MLCompute to perform additional
      * optimizations at compile time.
-     *
+     * 
      * @param options          The compiler options to use when compiling the inference graph
      * @param device           The MLCDevice object
      * @param inputTensors     The list of input tensors that are constants
      * @param inputTensorsData The tensor data to be used with these constant input tensors
      * @return A boolean indicating success or failure
+     * 
+     *         API-Since: 14.5
      */
     @Generated
     @Selector("compileWithOptions:device:inputTensors:inputTensorsData:")
@@ -159,9 +163,9 @@ public class MLCInferenceGraph extends MLCGraph {
 
     /**
      * [@property] The device memory size used by the inference graph
-     * <p>
+     * 
      * Returns the total size in bytes of device memory used by all intermediate tensors in the inference graph
-     *
+     * 
      * @return A NSUInteger value
      */
     @Generated
@@ -171,13 +175,13 @@ public class MLCInferenceGraph extends MLCGraph {
 
     /**
      * Execute the inference graph with given input data
-     * <p>
+     * 
      * Execute the inference graph given input data.
      * If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been
      * executed.
      * Otherwise, this method returns after the graph has been queued for execution. The completion handler is called
      * after the graph has finished execution.
-     *
+     * 
      * @param inputsData        The data objects to use for inputs
      * @param batchSize         The batch size to use. For a graph where batch size changes between layers this value
      *                          must be 0.
@@ -201,13 +205,13 @@ public class MLCInferenceGraph extends MLCGraph {
 
     /**
      * Execute the inference graph with given input data
-     * <p>
+     * 
      * Execute the inference graph given input data.
      * If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been
      * executed.
      * Otherwise, this method returns after the graph has been queued for execution. The completion handler is called
      * after the graph has finished execution.
-     *
+     * 
      * @param inputsData           The data objects to use for inputs
      * @param lossLabelsData       The data objects to use for loss labels
      * @param lossLabelWeightsData The data objects to use for loss label weights
@@ -235,13 +239,13 @@ public class MLCInferenceGraph extends MLCGraph {
 
     /**
      * Execute the inference graph with given input data
-     * <p>
+     * 
      * Execute the inference graph given input data.
      * If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been
      * executed.
      * Otherwise, this method returns after the graph has been queued for execution. The completion handler is called
      * after the graph has finished execution.
-     *
+     * 
      * @param inputsData           The data objects to use for inputs
      * @param lossLabelsData       The data objects to use for loss labels
      * @param lossLabelWeightsData The data objects to use for loss label weights
@@ -271,13 +275,13 @@ public class MLCInferenceGraph extends MLCGraph {
 
     /**
      * Execute the inference graph with given input data
-     * <p>
+     * 
      * Execute the inference graph given input data.
      * If MLCExecutionOptionsSynchronous is specified in 'options', this method returns after the graph has been
      * executed.
      * Otherwise, this method returns after the graph has been queued for execution. The completion handler is called
      * after the graph has finished execution.
-     *
+     * 
      * @param inputsData        The data objects to use for inputs
      * @param outputsData       The data objects to use for outputs
      * @param batchSize         The batch size to use. For a graph where batch size changes between layers this value
@@ -307,7 +311,7 @@ public class MLCInferenceGraph extends MLCGraph {
 
     /**
      * Create an inference graph
-     *
+     * 
      * @param graphObjects The layers from these graph objects will be added to the training graph
      * @return A new inference graph object
      */
@@ -347,10 +351,10 @@ public class MLCInferenceGraph extends MLCGraph {
 
     /**
      * Link mutiple inference graphs
-     * <p>
+     * 
      * This is used to link subsequent inference graphs with first inference sub-graph.
      * This method should be used when we have tensors shared by one or more layers in multiple sub-graphs
-     *
+     * 
      * @param graphs The list of inference graphs to link
      * @return A boolean indicating success or failure
      */

@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGRect;
 import apple.uikit.UIDocumentInteractionController;
 import apple.uikit.UIView;
 import apple.uikit.UIViewController;
@@ -29,7 +28,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 3.2
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -38,6 +41,9 @@ public interface UIDocumentInteractionControllerDelegate {
     /**
      * Used to handle additional menu items that can be performed on the item specified by URL. Currently only supports
      * the "copy:", "print:" and "saveToCameraRoll:" actions.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 6.0
      */
     @Generated
     @IsOptional
@@ -56,6 +62,10 @@ public interface UIDocumentInteractionControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Deprecated

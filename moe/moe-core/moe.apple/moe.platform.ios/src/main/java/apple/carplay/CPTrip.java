@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@c] CPTrip represents an origin and destination with route choices.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CarPlay")

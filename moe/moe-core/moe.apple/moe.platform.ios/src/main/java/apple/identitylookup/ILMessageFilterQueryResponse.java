@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A response to an ILMessageFilterQueryRequest.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("IdentityLookup")
@@ -174,4 +176,23 @@ public class ILMessageFilterQueryResponse extends NSObject implements NSSecureCo
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * SubAction to take for the received message.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSubAction:")
+    public native void setSubAction(@NInt long value);
+
+    /**
+     * SubAction to take for the received message.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("subAction")
+    @NInt
+    public native long subAction();
 }

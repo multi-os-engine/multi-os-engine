@@ -26,7 +26,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSCNNDepthWiseConvolutionDescriptor can be used to create MPSCNNConvolution object that does depthwise convolution
- * <p>
+ * 
  * Depthwise convolution applies different filter to each input feature channel i.e. no cross channel mixing.
  * Number of outputFeatureChannels can be greater than number of inputFeatureChannels, in which case convolution
  * expects channelMultipler = outputFeactureChannels/inputFeatureChannels number of filters for each input channel.
@@ -41,8 +41,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Weights [inputFeatureChannels] [channelMultiplier] [kH] [kW]
  * = Weights [ inputFeatureChannels * channelMultiplier ] [kH] [kW]
  * = Weights [ outputFeatureChannels ] [kH] [kW]
- * <p>
+ * 
  * Currently only channel multipler of 1 is supported i.e. inputFeatureChannels == outputFeatureChannels
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -88,7 +90,7 @@ public class MPSCNNDepthWiseConvolutionDescriptor extends MPSCNNConvolutionDescr
 
     /**
      * [@property] channelMultiplier
-     * <p>
+     * 
      * Ratio of outputFeactureChannel to inputFeatureChannels for depthwise convolution i.e. how many output feature
      * channels are
      * produced by each input channel.
@@ -112,6 +114,7 @@ public class MPSCNNDepthWiseConvolutionDescriptor extends MPSCNNConvolutionDescr
             @NUInt long kernelWidth, @NUInt long kernelHeight, @NUInt long inputFeatureChannels,
             @NUInt long outputFeatureChannels);
 
+    @Deprecated
     @Generated
     @Selector("cnnConvolutionDescriptorWithKernelWidth:kernelHeight:inputFeatureChannels:outputFeatureChannels:neuronFilter:")
     public static native MPSCNNDepthWiseConvolutionDescriptor cnnConvolutionDescriptorWithKernelWidthKernelHeightInputFeatureChannelsOutputFeatureChannelsNeuronFilter(

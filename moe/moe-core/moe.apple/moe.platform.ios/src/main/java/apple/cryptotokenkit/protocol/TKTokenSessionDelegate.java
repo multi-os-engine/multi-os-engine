@@ -22,6 +22,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * TKTokenSessionDelegate contains operations with token objects provided by token implementors which should be
  * performed in the context of authentication session.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -30,7 +32,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface TKTokenSessionDelegate {
     /**
      * Establishes a context for the requested authentication operation.
-     *
+     * 
      * @param session    Related TKTokenSession instance.
      * @param operation  Identifier of the operation.
      * @param constraint Constraint to be satisfied by this authentication operation.
@@ -53,7 +55,7 @@ public interface TKTokenSessionDelegate {
 
     /**
      * Decrypts ciphertext using private key.
-     *
+     * 
      * @param session     Related TKTokenSession instance.
      * @param ciphertext  Encrypted data to decrypt.
      * @param keyObjectID Identifier of the private key object.
@@ -73,7 +75,7 @@ public interface TKTokenSessionDelegate {
 
     /**
      * Performs Diffie-Hellman style key exchange operation.
-     *
+     * 
      * @param session                 Related TKTokenSession instance.
      * @param otherPartyPublicKeyData Raw public data of other party public key.
      * @param objectID                Identifier of the private key object.
@@ -96,7 +98,7 @@ public interface TKTokenSessionDelegate {
 
     /**
      * Performs cryptographic signature operation.
-     *
+     * 
      * @param session     Related TKTokenSession instance.
      * @param dataToSign  Input data for the signature operation.
      * @param keyObjectID Identifier of the private key object.
@@ -116,7 +118,7 @@ public interface TKTokenSessionDelegate {
 
     /**
      * Checks whether specified operation and algorithm is supported on specified key.
-     *
+     * 
      * @param session     Related TKTokenSession instance.
      * @param operation   Type of cryptographic operation for which the list of supported algorithms should be
      *                    retrieved.

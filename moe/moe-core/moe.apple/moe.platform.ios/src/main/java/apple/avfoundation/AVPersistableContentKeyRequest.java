@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.3
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -122,9 +125,9 @@ public class AVPersistableContentKeyRequest extends AVContentKeyRequest {
 
     /**
      * persistableContentKeyFromKeyVendorResponse:options:error:
-     * <p>
+     * 
      * Obtains a persistable content key from a context.
-     * <p>
+     * 
      * The data returned from this method may be used to immediately satisfy an AVPersistableContentKeyRequest, as well
      * as any subsequent requests for the same key url using processContentKeyResponse: method. When you receive an
      * AVContentKeyRequest via -contentKeySession:didProvideContentKeyRequest: and you want to use existing persistent
@@ -133,11 +136,14 @@ public class AVPersistableContentKeyRequest extends AVContentKeyRequest {
      * underlying protocol supports persistable content keys, in response your delegate will receive an
      * AVPersistableContentKeyRequest via -contentKeySession:didProvidePersistableContentKeyRequest:. You can set the
      * persistent key from storage on the AVPersistableContentKeyRequest using processContentKeyResponse:.
-     *
-     * @param keyVendorResponse The response returned from the key vendor as a result of a request generated from
+     * 
+     * @param keyVendorResponse
+     *                          The response returned from the key vendor as a result of a request generated from
      *                          makeStreamingContentKeyRequestDataForApp:contentIdentifier:options:completionHandler:.
-     * @param options           Additional information necessary to obtain the persistable content key, or nil if none.
-     * @param outError          If obtaining the persistable content key fails, will be set to an instance of NSError
+     * @param options
+     *                          Additional information necessary to obtain the persistable content key, or nil if none.
+     * @param outError
+     *                          If obtaining the persistable content key fails, will be set to an instance of NSError
      *                          describing the failure.
      * @return The persistable content key data that may be stored offline to answer future loading requests of the same
      *         content key.

@@ -28,8 +28,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * ===========================================================================================================================
- * <p>
+ * 
  * Manages Exposure Notification functionality.
+ * 
+ * API-Since: 12.5
  */
 @Generated
 @Library("ExposureNotification")
@@ -69,6 +71,8 @@ public class ENManager extends NSObject {
      * Invoked when the app is launched for an activity while it might not be running.
      * When the app is launched, it should create an ENManager instance, set this handler, and then activate the
      * manager.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("activityHandler")
@@ -135,6 +139,8 @@ public class ENManager extends NSObject {
      * Detects exposures using the specified configuration to control the scoring algorithm.
      * This uses the diagnosis keys already known to the system.
      * Only available to apps with ENAPIVersion 2 or higher.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("detectExposuresWithConfiguration:completionHandler:")
@@ -169,6 +175,8 @@ public class ENManager extends NSObject {
 
     /**
      * Invoked after requestPreAuthorizedDiagnosisKeys if user authorization is still valid.
+     * 
+     * API-Since: 14.4
      */
     @Generated
     @Selector("diagnosisKeysAvailableHandler")
@@ -224,7 +232,12 @@ public class ENManager extends NSObject {
      * Gets info about each exposure from the summary provided when exposure detection completes.
      * Using this API will inform the user that their exposure details have been revealed to the app.
      * The user explanation string will be displayed as part of the UI to inform the user of using this API.
+     * 
+     * API-Since: 13.5
+     * Deprecated-Since: 13.6
+     * Deprecated-Message: Use getExposureWindowsFromSummary, if needed.
      */
+    @Deprecated
     @Generated
     @Selector("getExposureInfoFromSummary:userExplanation:completionHandler:")
     public native NSProgress getExposureInfoFromSummaryUserExplanationCompletionHandler(
@@ -241,6 +254,8 @@ public class ENManager extends NSObject {
 
     /**
      * Gets info about each exposure window from the summary provided when exposure detection completes.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("getExposureWindowsFromSummary:completionHandler:")
@@ -277,6 +292,8 @@ public class ENManager extends NSObject {
 
     /**
      * Reports if the user traveled within an exposure period (e.g. 14 days).
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("getUserTraveledWithCompletionHandler:")
@@ -355,6 +372,8 @@ public class ENManager extends NSObject {
      * This allows the user to authorize ahead of time in case they are unable to approve at the time of positive
      * diagnosis.
      * WARNING: Application should be in foreground to request the authorization
+     * 
+     * API-Since: 14.4
      */
     @Generated
     @Selector("preAuthorizeDiagnosisKeysWithCompletionHandler:")
@@ -372,6 +391,8 @@ public class ENManager extends NSObject {
      * Requests diagnosis keys after previously using preAuthorizeDiagnosisKeys successfully.
      * This will display a notification to the user for the user to know the keys will be returned.
      * Keys are returned by invoking diagnosisKeysAvailable, which must be set before calling this.
+     * 
+     * API-Since: 14.4
      */
     @Generated
     @Selector("requestPreAuthorizedDiagnosisKeysWithCompletionHandler:")
@@ -397,6 +418,8 @@ public class ENManager extends NSObject {
      * Invoked when the app is launched for an activity while it might not be running.
      * When the app is launched, it should create an ENManager instance, set this handler, and then activate the
      * manager.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("setActivityHandler:")
@@ -411,6 +434,8 @@ public class ENManager extends NSObject {
 
     /**
      * Invoked after requestPreAuthorizedDiagnosisKeys if user authorization is still valid.
+     * 
+     * API-Since: 14.4
      */
     @Generated
     @Selector("setDiagnosisKeysAvailableHandler:")

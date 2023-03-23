@@ -44,9 +44,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MDLPhysicallyPlausibleLight
- * <p>
+ * 
  * A light with characteristics representing plausible real world lights
- * <p>
+ * 
  * [@property] color The color of the light.
  * [@property] lumens The brightness of the light.
  * [@property] innerConeAngle Within this cone, light is at maximum brightness. Units are degrees.
@@ -55,6 +55,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@property] attenuationStartDistance. Within the attenuation start distance, the
  * light is maximally bright.
  * [@property] attenuationEndDistance. Beyond this distance, there is no light.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -229,7 +231,7 @@ public class MDLPhysicallyPlausibleLight extends MDLLight {
 
     /**
      * Light color specified by color temperature, in degrees Kelvin
-     * <p>
+     * 
      * default color is 6500K, cool daylight.
      */
     @Generated

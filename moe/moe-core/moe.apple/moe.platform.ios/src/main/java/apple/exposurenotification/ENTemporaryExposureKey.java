@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * ===========================================================================================================================
- * <p>
+ * 
  * Key used to generate rolling proximity identifiers.
+ * 
+ * API-Since: 12.5
  */
 @Generated
 @Library("ExposureNotification")

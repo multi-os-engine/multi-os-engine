@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -152,7 +155,7 @@ public class MDLSubmeshTopology extends NSObject {
 
     /**
      * [@property] edgeCreaseCount
-     * <p>
+     * 
      * The number of edge creases encoded in edgeCreases
      */
     @Generated
@@ -185,7 +188,7 @@ public class MDLSubmeshTopology extends NSObject {
 
     /**
      * [@property] faceCount
-     * <p>
+     * 
      * The number of faces encoded in faceTopologyBuffer
      */
     @Generated
@@ -195,15 +198,15 @@ public class MDLSubmeshTopology extends NSObject {
 
     /**
      * [@property] faceTopologyBuffer
-     * <p>
+     * 
      * A buffer of 8 bit unsigned integer values, where each entry corresponds
      * to the number of vertices making up a face.
-     * <p>
+     * 
      * A submesh containing two triangles, a four sided polygon, and a
      * line, would contain the data 3 3 4 2.
      * If geometryType is of a fixed type, such as triangles, the buffer
      * is optional, and will be created on demand if read.
-     * <p>
+     * 
      * Indices to the vertex buffer will be stored in the index buffer
      * correspondingly. In the example above, the indices would be stored
      * in order, three indices for the first triangle, followed by three
@@ -217,7 +220,7 @@ public class MDLSubmeshTopology extends NSObject {
 
     /**
      * [@property] holeCount
-     * <p>
+     * 
      * The number of holes encoded in holes
      */
     @Generated
@@ -244,7 +247,7 @@ public class MDLSubmeshTopology extends NSObject {
 
     /**
      * initWithSubmesh:
-     * <p>
+     * 
      * create a topology object corresponding to the topology in the submesh
      */
     @Generated
@@ -253,7 +256,7 @@ public class MDLSubmeshTopology extends NSObject {
 
     /**
      * [@property] edgeCreaseCount
-     * <p>
+     * 
      * The number of edge creases encoded in edgeCreases
      */
     @Generated
@@ -283,7 +286,7 @@ public class MDLSubmeshTopology extends NSObject {
 
     /**
      * [@property] faceCount
-     * <p>
+     * 
      * The number of faces encoded in faceTopologyBuffer
      */
     @Generated
@@ -292,15 +295,15 @@ public class MDLSubmeshTopology extends NSObject {
 
     /**
      * [@property] faceTopologyBuffer
-     * <p>
+     * 
      * A buffer of 8 bit unsigned integer values, where each entry corresponds
      * to the number of vertices making up a face.
-     * <p>
+     * 
      * A submesh containing two triangles, a four sided polygon, and a
      * line, would contain the data 3 3 4 2.
      * If geometryType is of a fixed type, such as triangles, the buffer
      * is optional, and will be created on demand if read.
-     * <p>
+     * 
      * Indices to the vertex buffer will be stored in the index buffer
      * correspondingly. In the example above, the indices would be stored
      * in order, three indices for the first triangle, followed by three
@@ -313,7 +316,7 @@ public class MDLSubmeshTopology extends NSObject {
 
     /**
      * [@property] holeCount
-     * <p>
+     * 
      * The number of holes encoded in holes
      */
     @Generated
@@ -334,7 +337,7 @@ public class MDLSubmeshTopology extends NSObject {
 
     /**
      * [@property] vertexCreaseCount
-     * <p>
+     * 
      * The number of vertex creases encoded in vertexCreases
      */
     @Generated
@@ -362,7 +365,7 @@ public class MDLSubmeshTopology extends NSObject {
 
     /**
      * [@property] vertexCreaseCount
-     * <p>
+     * 
      * The number of vertex creases encoded in vertexCreases
      */
     @Generated

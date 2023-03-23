@@ -21,19 +21,27 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Peer states
+ * 
+ * API-Since: 7.0
  */
 @Generated
 public final class MCSessionState {
     /**
      * Not connected to the session.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long NotConnected = 0x0000000000000000L;
     /**
      * Peer is connecting to the session.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Connecting = 0x0000000000000001L;
     /**
      * Peer is connected to the session.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Connected = 0x0000000000000002L;
 

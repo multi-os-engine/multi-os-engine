@@ -43,13 +43,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEAppProxyUDPFlow
- * <p>
+ * 
  * The NEAppProxyUDPFlow class declares the programmatic interface of an object that is used by NEAppProxyProvider
  * implementations to proxy the payload of UDP datagrams.
- * <p>
+ * 
  * NEAppProxyUDPFlow is part of NetworkExtension.framework.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -167,8 +169,10 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
 
     /**
      * [@property] localEndpoint
-     * <p>
+     * 
      * An NWEndpoint object containing the local endpoint of the flow's corresponding socket.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("localEndpoint")
@@ -176,13 +180,15 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
 
     /**
      * readDatagramWithCompletionHandler:
-     * <p>
+     * 
      * Read a datagram from the flow.
-     *
+     * 
      * @param completionHandler A block that will be executed when datagrams have been read from the flow. The block
      *                          takes the datagrams that were read, the destination endpoints of the datagrams, and an
      *                          NSError. If an error occurred while reading then the error parameter will be non-nil. If
      *                          the datagrams and remoteEndpoints arrays are non-nill but
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("readDatagramsWithCompletionHandler:")
@@ -191,13 +197,15 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
 
     /**
      * writeDatagram:sentByEndpoint:completionHandler:
-     * <p>
+     * 
      * Write a datagram to the flow.
-     *
+     * 
      * @param datagrams         An array of NSData objects containing the data to be written.
      * @param remoteEndpoints   The source endpoints of the datagrams.
      * @param completionHandler A block that will be executed when the datagrams have been written to the corresponding
      *                          socket's receive buffer.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("writeDatagrams:sentByEndpoints:completionHandler:")

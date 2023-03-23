@@ -380,6 +380,8 @@ public final class CFStringEncodings {
     @Generated @NInt public static final long JIS_C6226_78 = 0x0000000000000624L;
     /**
      * Shift-JIS format encoding of JIS X0213 planes 1 and 2
+     * 
+     * API-Since: 2.0
      */
     @Generated @NInt public static final long ShiftJIS_X0213 = 0x0000000000000628L;
     /**
@@ -497,10 +499,14 @@ public final class CFStringEncodings {
     @Generated @NInt public static final long EBCDIC_CP037 = 0x0000000000000C02L;
     /**
      * kTextEncodingUnicodeDefault + kUnicodeUTF7Format RFC2152
+     * 
+     * API-Since: 4.0
      */
     @Generated @NInt public static final long UTF7 = 0x0000000004000100L;
     /**
      * UTF-7 (IMAP folder variant) RFC3501
+     * 
+     * API-Since: 4.0
      */
     @Generated @NInt public static final long UTF7_IMAP = 0x0000000000000A10L;
     /**

@@ -21,6 +21,9 @@ public final class CryptoTokenKit {
     private CryptoTokenKit() {
     }
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

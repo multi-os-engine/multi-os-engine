@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -100,6 +103,8 @@ public class SKOverlay extends NSObject {
 
     /**
      * Dismisses an overlay being presented in a `UIWindowScene`.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("dismissOverlayInScene:")
@@ -116,7 +121,7 @@ public class SKOverlay extends NSObject {
 
     /**
      * Creates an overlay with the provided configuration.
-     *
+     * 
      * @param configuration the configuration for the overlay.
      */
     @Generated
@@ -151,6 +156,8 @@ public class SKOverlay extends NSObject {
 
     /**
      * Attempts to present an app overlay in a `UIWindowScene`.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("presentInScene:")

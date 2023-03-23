@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] Pixel Buffer Locking Flags
- * <p>
+ * 
  * Flags to pass to CVPixelBufferLockBaseAddress() / CVPixelBufferUnlockBaseAddress()
  * [@constant] kCVPixelBufferLock_ReadOnly
  * If you are not going to modify the data while you hold the lock, you should set this flag

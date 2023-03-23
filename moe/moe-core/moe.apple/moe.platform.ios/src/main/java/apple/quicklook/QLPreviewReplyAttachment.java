@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * QLPreviewReplyAttachment is used to provide data for attachment in html data-based previews.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("QuickLook")
@@ -110,7 +112,7 @@ public class QLPreviewReplyAttachment extends NSObject {
 
     /**
      * Create an attachment for html previews by providing the data and mime type of the attachment.
-     *
+     * 
      * @param data        The data content of an html preview
      * @param contentType The UTType of the attachment for an html preview
      */

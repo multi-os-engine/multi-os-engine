@@ -20,13 +20,30 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * Named vertex attributes for mapping GLKEffects logic to client vertex attrib enables
+ * 
+ * API-Since: 5.0
  */
 @Generated
 public final class GLKVertexAttrib {
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int Position = 0x00000000;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int Normal = 0x00000001;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int Color = 0x00000002;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int TexCoord0 = 0x00000003;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int TexCoord1 = 0x00000004;
 
     @Generated

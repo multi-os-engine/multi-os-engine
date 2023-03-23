@@ -35,6 +35,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UICollectionViewDataSource")
 public interface UICollectionViewDataSource {
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("collectionView:canMoveItemAtIndexPath:")
@@ -49,6 +52,9 @@ public interface UICollectionViewDataSource {
     @Selector("collectionView:cellForItemAtIndexPath:")
     UICollectionViewCell collectionViewCellForItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("collectionView:moveItemAtIndexPath:toIndexPath:")
@@ -85,6 +91,8 @@ public interface UICollectionViewDataSource {
     /**
      * Returns the index path that corresponds to the given title / index. (e.g. "B",1)
      * Return an index path with a single index to indicate an entire section, instead of a specific item.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -96,6 +104,8 @@ public interface UICollectionViewDataSource {
 
     /**
      * Returns a list of index titles to display in the index view (e.g. ["A", "B", "C" ... "Z", "#"])
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional

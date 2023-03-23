@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MDLSkyCubeTexture
  * [@summary] A physically realistic sky as a cube texture
- * <p>
+ * 
  * [@property] sunElevation A value of zero is at the zenith, 0.5 is at the horizon,
  * 1.0 is at the nadir. Use in conjunction with turbidity to give a dawn,
  * dusk, or noon look.
@@ -57,11 +57,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@property] groundAlbedo controls the amount of light that bounces back up into
  * the sky from the ground. A value of zero will yield a clear sky, a
  * value of one will reduce the contrast of the sky, making it a bit foggy.
- * <p>
+ * 
  * [@property] horizonElevation If the lower half of the environment is being replaced
  * by a color, horizonElevation is angle, in radians, below which the
  * replacement should occur. Negative values are below the horizon.
- * <p>
+ * 
  * [@property] groundColor If this value is set, the environment will be replaced with
  * the color below the horizonElevation value blended with the w factor up to
  * Pi/2.0 past the horizon.
@@ -74,7 +74,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * 3 component treats the first 3 components as color and 0 as blend factor
  * 2 component treats the first component as greyscale color and y as blend factor
  * 1 component treats the scalar component as greyscale color and 0 as blend factor
- * <p>
+ * 
  * [@property] gamma Modifies the amount of gamma correction applied during
  * tone mapping.
  * [@property] exposure Modifies the exposure applied during tone mapping.
@@ -85,9 +85,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * are not compressed during tone mapping. Values between the x component
  * and y component are compressed to the maximum brightness value during
  * tone mapping. Values above the limit are clamped.
- * <p>
+ * 
  * the texture will be created if data is referenced, otherwise, this
  * object is merely a description. All parameters have legal values between zero and one.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -315,10 +317,16 @@ public class MDLSkyCubeTexture extends MDLTexture {
     @Selector("upperAtmosphereScattering")
     public native float upperAtmosphereScattering();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setSunAzimuth:")
     public native void setSunAzimuth(float value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("sunAzimuth")
     public native float sunAzimuth();

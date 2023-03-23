@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A container for depth data and its associated confidence.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("ARKit")
@@ -78,7 +80,7 @@ public class ARDepthData extends NSObject {
 
     /**
      * A pixel buffer containing the confidence level for each depth value in the `depthMap`.
-     *
+     * 
      * @see ARConfidenceLevel
      */
     @Generated

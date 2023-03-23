@@ -1,7 +1,6 @@
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
 import apple.foundation.NSMethodSignature;
@@ -26,9 +25,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
 /**
  * An interaction that facilitates activating a @c UIWindowScene when the user pinches out on the interaction's view.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")
@@ -103,7 +105,7 @@ public class UIWindowSceneActivationInteraction extends NSObject implements UIIn
 
     /**
      * Returns a new @c UIWindowSceneActivationInteraction
-     *
+     * 
      * @param configurationProvider Called when the interaction has been triggered. It should return a @c
      *                              UIWindowSceneActivationConfiguration whose user activity will be used to request
      *                              scene activation.

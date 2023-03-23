@@ -27,17 +27,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNDArrayGather
- * <p>
+ * 
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * Applies a gather operation along a given axis. The encoded primary source array
  * contains the data and the secondary array is a 1-D MPSNDArray containing the
  * indices.
- * <p>
+ * 
  * For each dimension other than axis
  * result[i] = source[i]; 0 <= i < array slice length along dimension
  * Along the specified axis
  * result[i] = source[indices[i]]; 0 <= i < number of indices
+ * 
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -73,7 +76,7 @@ public class MPSNDArrayGather extends MPSNDArrayBinaryKernel {
 
     /**
      * [@property] axis
-     * <p>
+     * 
      * The axis along which to apply the gather operation.
      * Defaults to zero.
      */
@@ -170,7 +173,7 @@ public class MPSNDArrayGather extends MPSNDArrayBinaryKernel {
 
     /**
      * [@property] axis
-     * <p>
+     * 
      * The axis along which to apply the gather operation.
      * Defaults to zero.
      */

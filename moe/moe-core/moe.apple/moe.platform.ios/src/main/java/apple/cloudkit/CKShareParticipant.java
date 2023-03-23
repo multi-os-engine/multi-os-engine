@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -197,7 +200,11 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * The default participant type is @c CKShareParticipantTypePrivateUser.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
      */
+    @Deprecated
     @Generated
     @Selector("setType:")
     public native void setType(@NInt long value);
@@ -210,7 +217,11 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * The default participant type is @c CKShareParticipantTypePrivateUser.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
      */
+    @Deprecated
     @Generated
     @Selector("type")
     @NInt
@@ -222,6 +233,8 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * The default participant role is @c CKShareParticipantRolePrivateUser.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("role")
@@ -230,6 +243,8 @@ public class CKShareParticipant extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * The default participant role is @c CKShareParticipantRolePrivateUser.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setRole:")

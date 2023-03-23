@@ -30,6 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Note: IOSurface objects are "toll free bridged" to IOSurfaceRef objects
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("IOSurface")
@@ -227,12 +229,12 @@ public class IOSurface extends NSObject implements NSSecureCoding {
      * use count facility to know when it is safe to recycle an IOSurface backed CVPixelBuffer object. This is
      * particularly important when IOSurface objects are being shared across process boundaries and the normal
      * mechanisms one might use would not be viable.
-     * <p>
+     * 
      * The IOSurface use count is similar in concept to any other reference counting scheme. When the global use
      * count of an IOSurface goes to zero, it is no longer considered "in use". When it is anything other than
      * zero, then the IOSurface is still "in use" by someone and therefore anyone attempting to maintain a pool
      * of IOSurfaces to be recycled should not reclaim that IOSurface.
-     * <p>
+     * 
      * Note that IOSurface maintains both a per-process and an internal system wide usage count. In the current
      * implementation, when the per-process usage count goes from zero to one, the system wide usage count is
      * incremented by one. When the per-process usage count drops back to zero (either via explicit decrement
@@ -261,21 +263,21 @@ public class IOSurface extends NSObject implements NSSecureCoding {
 
     /**
      * "Lock" or "Unlock" a IOSurface for reading or writing.
-     * <p>
+     * 
      * The term "lock" is used loosely in this context, and is simply used along with the
      * "unlock" information to put a bound on CPU access to the raw IOSurface data.
-     * <p>
+     * 
      * If the seed parameter is non-NULL, IOSurfaceLock() will store the buffer's
      * internal modification seed value at the time you made the lock call. You can compare
      * this value to a value returned previously to determine of the contents of the buffer
      * has been changed since the last lock.
-     * <p>
+     * 
      * In the case of IOSurfaceUnlock(), the seed value returned will be the internal
      * seed value at the time of the unlock. If you locked the buffer for writing, this value
      * will be incremented as the unlock is performed and the new value will be returned.
-     * <p>
+     * 
      * See the IOSurfacePropertyKeyLock enums for more information.
-     * <p>
+     * 
      * Note: Locking and unlocking a IOSurface is not a particularly cheap operation,
      * so care should be taken to avoid the calls whenever possible. The seed values are
      * particularly useful for keeping a cache of the buffer contents.
@@ -340,6 +342,8 @@ public class IOSurface extends NSObject implements NSSecureCoding {
 
     /**
      * See comments in IOSurfaceAPI.h
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPurgeable:oldState:")

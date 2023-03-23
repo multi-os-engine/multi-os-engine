@@ -5,6 +5,8 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * Options for the MPSRayIntersector bounding box intersection test type property
+ * 
+ * API-Since: 12.0
  */
 @Generated
 public final class MPSBoundingBoxIntersectionTestType {
@@ -15,12 +17,14 @@ public final class MPSBoundingBoxIntersectionTestType {
     /**
      * Use the default MPSBoundingBoxIntersectionTestTypeAxisAligned ray/bounding box
      * intersection test.
-     * <p>
+     * 
      * Note: this option was equivalent to MPSBoundingBoxIntersectionTestTypeFast in
      * macOS 10.14/iOS 12.0. This option was changed in macOS 10.15/iOS 13.0 to handle axis-aligned
      * rays correctly by default. The old behavior can be restored by explicitly setting the
      * intersection test type to MPSBoundingBoxIntersectionTestTypeFast on macOS 10.15/iOS 13.0
      * and above.
+     * 
+     * API-Since: 12.0
      */
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
     /**
@@ -31,6 +35,8 @@ public final class MPSBoundingBoxIntersectionTestType {
      * randomized ray distributions. However, synthetic ray distributions or orthographic
      * projections can generate these rays. It may be faster to slightly perturb the ray
      * direction and use the fast intersection test type.
+     * 
+     * API-Since: 12.0
      */
     @Generated @NUInt public static final long AxisAligned = 0x0000000000000001L;
     /**
@@ -40,6 +46,8 @@ public final class MPSBoundingBoxIntersectionTestType {
      * zero). These rays often do not come up in practice due to perspective projections and
      * randomized ray distributions. However, synthetic ray distributions or orthographic
      * projections can generate these rays.
+     * 
+     * API-Since: 13.0
      */
     @Generated @NUInt public static final long Fast = 0x0000000000000002L;
 }

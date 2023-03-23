@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * This class represents an event when a characteristic's value falls within the specified
  * number range.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("HomeKit")

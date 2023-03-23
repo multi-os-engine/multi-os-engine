@@ -14,7 +14,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] AVSpeechSynthesizerDelegate
- * <p>
+ * 
  * Defines an interface for delegates of AVSpeechSynthesizer to receive notifications of important speech utterance
  * events.
  */
@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AVSpeechSynthesizerDelegate")
 public interface AVSpeechSynthesizerDelegate {
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("speechSynthesizer:didCancelSpeechUtterance:")
@@ -31,6 +34,9 @@ public interface AVSpeechSynthesizerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("speechSynthesizer:didContinueSpeechUtterance:")
@@ -39,6 +45,9 @@ public interface AVSpeechSynthesizerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("speechSynthesizer:didFinishSpeechUtterance:")
@@ -47,6 +56,9 @@ public interface AVSpeechSynthesizerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("speechSynthesizer:didPauseSpeechUtterance:")
@@ -55,6 +67,9 @@ public interface AVSpeechSynthesizerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("speechSynthesizer:didStartSpeechUtterance:")
@@ -63,6 +78,9 @@ public interface AVSpeechSynthesizerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("speechSynthesizer:willSpeakRangeOfSpeechString:utterance:")

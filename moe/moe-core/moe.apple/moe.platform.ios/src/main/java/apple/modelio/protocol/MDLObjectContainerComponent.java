@@ -27,6 +27,9 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -47,11 +50,17 @@ public interface MDLObjectContainerComponent extends MDLComponent, NSFastEnumera
     @Selector("removeObject:")
     void removeObject(MDLObject object);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("count")
     @NUInt
     long count();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     MDLObject objectAtIndexedSubscript(@NUInt long index);

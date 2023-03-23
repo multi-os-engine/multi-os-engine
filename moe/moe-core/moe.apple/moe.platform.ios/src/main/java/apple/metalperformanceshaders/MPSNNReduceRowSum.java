@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNNReduceRowSum
- * <p>
+ * 
  * The MPSNNReduceRowSum performs a reduction operation returning the sum for each row of an image
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -102,9 +104,9 @@ public class MPSNNReduceRowSum extends MPSNNReduceUnary {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSNNReduceRowSum object, or nil if failure.
@@ -116,7 +118,7 @@ public class MPSNNReduceRowSum extends MPSNNReduceUnary {
 
     /**
      * Specifies information to apply the reduction operation on an image.
-     *
+     * 
      * @param device The device the filter will run on
      * @return A valid MPSNNReduceRowSum object or nil, if failure.
      */

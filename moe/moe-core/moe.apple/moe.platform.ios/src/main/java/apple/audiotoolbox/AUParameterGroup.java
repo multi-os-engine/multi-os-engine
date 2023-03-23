@@ -43,11 +43,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AUParameterGroup
- * <p>
+ * 
  * A group of related parameters.
- * <p>
+ * 
  * A parameter group is KVC-compliant for its children; e.g. valueForKey:@"volume" will
  * return a child parameter whose identifier is "volume".
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AudioToolbox")

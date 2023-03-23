@@ -37,7 +37,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * CLLocationManagerDelegate
- * <p>
+ * 
  * Discussion:
  * Delegate for CLLocationManager.
  */
@@ -48,10 +48,14 @@ import org.moe.natj.objc.ann.Selector;
 public interface CLLocationManagerDelegate {
     /**
      * locationManager:didChangeAuthorizationStatus:
-     * <p>
+     * 
      * Discussion:
      * Invoked when the authorization status changes for this application.
+     * 
+     * API-Since: 4.2
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("locationManager:didChangeAuthorizationStatus:")
@@ -61,10 +65,12 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didDetermineState:forRegion:
-     * <p>
+     * 
      * Discussion:
      * Invoked when there's a state transition for a monitored region or in response to a request for state via a
      * a call to requestStateForRegion:.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -76,10 +82,12 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didEnterRegion:
-     * <p>
+     * 
      * Discussion:
      * Invoked when the user enters a monitored region. This callback will be invoked for every allocated
      * CLLocationManager instance with a non-nil delegate that implements this method.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @IsOptional
@@ -90,10 +98,12 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didExitRegion:
-     * <p>
+     * 
      * Discussion:
      * Invoked when the user exits a monitored region. This callback will be invoked for every allocated
      * CLLocationManager instance with a non-nil delegate that implements this method.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @IsOptional
@@ -104,7 +114,7 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didFailWithError:
-     * <p>
+     * 
      * Discussion:
      * Invoked when an error has occurred. Error types are defined in "CLError.h".
      */
@@ -117,14 +127,16 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didFinishDeferredUpdatesWithError:
-     * <p>
+     * 
      * Discussion:
      * Invoked when deferred updates will no longer be delivered. Stopping
      * location, disallowing deferred updates, and meeting a specified criterion
      * are all possible reasons for finishing deferred updates.
-     * <p>
+     * 
      * An error will be returned if deferred updates end before the specified
      * criteria are met (see CLError), otherwise error will be nil.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @IsOptional
@@ -135,14 +147,18 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didRangeBeacons:inRegion:
-     * <p>
+     * 
      * Discussion:
      * Invoked when a new set of beacons are available in the specified region.
      * beacons is an array of CLBeacon objects.
      * If beacons is empty, it may be assumed no beacons that match the specified region are nearby.
      * Similarly if a specific beacon no longer appears in beacons, it may be assumed the beacon is no longer received
      * by the device.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("locationManager:didRangeBeacons:inRegion:")
@@ -153,9 +169,11 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didStartMonitoringForRegion:
-     * <p>
+     * 
      * Discussion:
      * Invoked when a monitoring for a region started successfully.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @IsOptional
@@ -166,9 +184,11 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didUpdateHeading:
-     * <p>
+     * 
      * Discussion:
      * Invoked when a new heading is available.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @IsOptional
@@ -179,13 +199,15 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didUpdateLocations:
-     * <p>
+     * 
      * Discussion:
      * Invoked when new locations are available. Required for delivery of
      * deferred locations. If implemented, updates will
      * not be delivered to locationManager:didUpdateToLocation:fromLocation:
-     * <p>
+     * 
      * locations is an array of CLLocation objects in chronological order.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @IsOptional
@@ -196,13 +218,17 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didUpdateToLocation:fromLocation:
-     * <p>
+     * 
      * Discussion:
      * Invoked when a new location is available. oldLocation may be nil if there is no previous location
      * available.
-     * <p>
+     * 
      * This method is deprecated. If locationManager:didUpdateLocations: is
      * implemented, this method will not be called.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Implement -locationManager:didUpdateLocations: instead
      */
     @Generated
     @IsOptional
@@ -215,11 +241,13 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:didVisit:
-     * <p>
+     * 
      * Discussion:
      * Invoked when the CLLocationManager determines that the device has visited
      * a location, if visit monitoring is currently started (possibly from a
      * prior launch).
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -230,9 +258,11 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:monitoringDidFailForRegion:withError:
-     * <p>
+     * 
      * Discussion:
      * Invoked when a region monitoring error has occurred. Error types are defined in "CLError.h".
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @IsOptional
@@ -244,10 +274,14 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManager:rangingBeaconsDidFailForRegion:withError:
-     * <p>
+     * 
      * Discussion:
      * Invoked when an error has occurred ranging beacons in a region. Error types are defined in "CLError.h".
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("locationManager:rangingBeaconsDidFailForRegion:withError:")
@@ -259,6 +293,8 @@ public interface CLLocationManagerDelegate {
     /**
      * Discussion:
      * Invoked when location updates are automatically paused.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @IsOptional
@@ -270,9 +306,11 @@ public interface CLLocationManagerDelegate {
     /**
      * Discussion:
      * Invoked when location updates are automatically resumed.
-     * <p>
+     * 
      * In the event that your application is terminated while suspended, you will
      * not receive this notification.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @IsOptional
@@ -283,10 +321,12 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManagerShouldDisplayHeadingCalibration:
-     * <p>
+     * 
      * Discussion:
      * Invoked when a new heading is available. Return YES to display heading calibration info. The display
      * will remain until heading is calibrated, unless dismissed early via dismissHeadingCalibrationDisplay.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @IsOptional
@@ -295,6 +335,9 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("locationManager:didFailRangingBeaconsForConstraint:error:")
@@ -303,6 +346,9 @@ public interface CLLocationManagerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("locationManager:didRangeBeacons:satisfyingConstraint:")
@@ -313,10 +359,12 @@ public interface CLLocationManagerDelegate {
 
     /**
      * locationManagerDidChangeAuthorization:
-     * <p>
+     * 
      * Discussion:
      * Invoked when either the authorizationStatus or
      * accuracyAuthorization properties change
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional

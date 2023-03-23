@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * ===========================================================================================================================
- * <p>
+ * 
  * Summary of exposure detection.
+ * 
+ * API-Since: 12.5
  */
 @Generated
 @Library("ExposureNotification")
@@ -93,6 +95,8 @@ public class ENExposureDetectionSummary extends NSObject {
 
     /**
      * Summary of each day containing an exposure.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("daySummaries")

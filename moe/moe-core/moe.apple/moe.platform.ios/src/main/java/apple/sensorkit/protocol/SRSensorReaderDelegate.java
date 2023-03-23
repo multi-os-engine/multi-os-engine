@@ -15,6 +15,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("SensorKit")
 @Runtime(ObjCRuntime.class)
@@ -56,17 +59,19 @@ public interface SRSensorReaderDelegate {
 
     /**
      * Invoked when a sample has been fetched
-     * <p>
+     * 
      * [@description] This callback can be called multiple times
      * when there are multiple results.
-     * <p>
+     * 
      * [@note] The fetchResult is not valid after the callback is complete. If the caller needs
      * to access the result at a later time, it must be copied not merely retained
-     *
+     * 
      * @param fetchRequest The request corresponding to the this result
      * @param result       One result of the fetch. The caller is expected to
      *                     know what type of sample is returned.
-     * @return The delegate should return YES if the fetch should continue, NO if the fetch should stop
+     * 
+     * @return
+     *         The delegate should return YES if the fetch should continue, NO if the fetch should stop
      */
     @Generated
     @IsOptional

@@ -154,6 +154,9 @@ public class NSXMLParser extends NSObject {
     @Selector("abortParsing")
     public native void abortParsing();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("allowedExternalEntityURLs")
     public native NSSet<? extends NSURL> allowedExternalEntityURLs();
@@ -173,6 +176,8 @@ public class NSXMLParser extends NSObject {
 
     /**
      * defaults to NSXMLNodeLoadExternalEntitiesNever
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("externalEntityResolvingPolicy")
@@ -199,6 +204,8 @@ public class NSXMLParser extends NSObject {
 
     /**
      * create a parser that incrementally pulls data from the specified stream and parses it.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("initWithStream:")
@@ -227,6 +234,9 @@ public class NSXMLParser extends NSObject {
     @Selector("publicID")
     public native String publicID();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setAllowedExternalEntityURLs:")
     public native void setAllowedExternalEntityURLs(NSSet<? extends NSURL> value);
@@ -255,6 +265,8 @@ public class NSXMLParser extends NSObject {
 
     /**
      * defaults to NSXMLNodeLoadExternalEntitiesNever
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setExternalEntityResolvingPolicy:")

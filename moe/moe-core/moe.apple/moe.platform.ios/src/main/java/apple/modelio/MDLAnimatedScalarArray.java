@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AUTO-GENERATED FROM CodeGenArray.h
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ModelIO")

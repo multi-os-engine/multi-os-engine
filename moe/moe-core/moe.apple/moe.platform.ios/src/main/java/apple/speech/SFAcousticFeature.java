@@ -30,6 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An acoustic feature
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Speech")

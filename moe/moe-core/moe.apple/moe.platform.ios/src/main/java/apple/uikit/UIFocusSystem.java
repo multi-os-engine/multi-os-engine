@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * UIFocusSystem instances manage focus state within a part of the user interface. They are in charge of tracking the
  * current focused item, as well as processing focus updates.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("UIKit")
@@ -152,6 +154,9 @@ public class UIFocusSystem extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("focusSystemForEnvironment:")
     public static native UIFocusSystem focusSystemForEnvironment(
@@ -159,6 +164,8 @@ public class UIFocusSystem extends NSObject {
 
     /**
      * The currently focused item in this focus system.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("focusedItem")
@@ -168,6 +175,8 @@ public class UIFocusSystem extends NSObject {
     /**
      * Requests a focus update to the specified environment. If accepted, the focus update will happen
      * in the next run loop cycle.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("requestFocusUpdateToEnvironment:")
@@ -175,6 +184,8 @@ public class UIFocusSystem extends NSObject {
 
     /**
      * Forces any pending focus update to be committed immediately.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("updateFocusIfNeeded")

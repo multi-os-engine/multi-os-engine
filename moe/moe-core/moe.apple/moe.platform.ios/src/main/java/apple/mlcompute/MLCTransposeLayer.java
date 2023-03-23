@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCTransposeLayer
- * <p>
+ * 
  * A transpose layer
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -88,9 +90,9 @@ public class MLCTransposeLayer extends MLCLayer {
 
     /**
      * [@property] dimensions
-     * <p>
+     * 
      * Permutes the dimensions according to 'dimensions'.
-     * <p>
+     * 
      * The returned tensor's dimension i will correspond to dimensions[i].
      */
     @Generated
@@ -129,7 +131,7 @@ public class MLCTransposeLayer extends MLCLayer {
 
     /**
      * Create a transpose layer
-     *
+     * 
      * @param dimensions NSArray<NSNumber *> representing the desired ordering of dimensions
      *                   The dimensions array specifies the input axis source for each output axis, such that the
      *                   K'th element in the dimensions array specifies the input axis source for the K'th axis in the

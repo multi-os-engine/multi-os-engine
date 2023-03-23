@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -219,11 +222,16 @@ public class UIAccessibilityCustomRotor extends NSObject {
     /**
      * Underlying attributed version of the "name" property. Setting this property will change the
      * value of the "name" property and vice-versa.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("attributedName")
     public native NSAttributedString attributedName();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithAttributedName:itemSearchBlock:")
     public native UIAccessibilityCustomRotor initWithAttributedNameItemSearchBlock(NSAttributedString attributedName,
@@ -237,6 +245,9 @@ public class UIAccessibilityCustomRotor extends NSObject {
                 UIAccessibilityCustomRotorSearchPredicate predicate);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithSystemType:itemSearchBlock:")
     public native UIAccessibilityCustomRotor initWithSystemTypeItemSearchBlock(@NInt long type,
@@ -253,6 +264,8 @@ public class UIAccessibilityCustomRotor extends NSObject {
     /**
      * Underlying attributed version of the "name" property. Setting this property will change the
      * value of the "name" property and vice-versa.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAttributedName:")
@@ -261,6 +274,8 @@ public class UIAccessibilityCustomRotor extends NSObject {
     /**
      * The system rotor type that was optionally used during initialization.
      * default = UIAccessibilityCustomSystemRotorTypeNone
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("systemRotorType")

@@ -41,21 +41,23 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAssetWriterInputGroup
- * <p>
+ * 
  * Associates tracks corresponding to inputs with each other in a mutually exclusive relationship.
- * <p>
+ * 
  * This class is used to associate tracks corresponding to multiple AVAssetWriterInputs as mutually exclusive to each
  * other for playback or other processing. For example, if you are creating an asset with multiple audio tracks using
  * different spoken languages, only one of which should be played at a time, group the inputs corresponding to those
  * tracks into a single instance of AVAssetWriterInputGroup and add the group to the AVAssetWriter via -[AVAssetWriter
  * addInputGroup:]. If the output format supports mutually exlusive relationships among tracks, the AVAssetWriter will
  * mark the tracks as mutually exclusive to each other.
- * <p>
+ * 
  * Note that because AVAssetWriterInputGroup is a subclass of AVMediaSelectionGroup, clients can examine the media
  * selection options that will be available on the output asset before the asset is written. Best results for examining
  * the options of the AVAssetWriterInputGroup will be obtained after associating the AVAssetWriterInputs of the AVAsset
  * as appropriate via -[AVAssetWriterInput addTrackAssociationWithTrackOfInput:type:] and by initializing each
  * AVAssetWriterInput with a source format hint, where appropriate.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("AVFoundation")
@@ -87,15 +89,18 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
 
     /**
      * assetWriterInputGroupWithInputs:defaultInput:
-     * <p>
+     * 
      * Creates an instance of AVAssetWriterInputGroup, for use with -[AVAssetWriter addInputGroup:].
-     *
-     * @param inputs       The collection of AVAssetWriterInputs to be grouped together.
-     * @param defaultInput The instance of AVAssetWriterInput in the group to designate as the default. When the input
+     * 
+     * @param inputs
+     *                     The collection of AVAssetWriterInputs to be grouped together.
+     * @param defaultInput
+     *                     The instance of AVAssetWriterInput in the group to designate as the default. When the input
      *                     group is added to an AVAssetWriter via -addInputGroup:, the value of
      *                     marksOutputTrackAsEnabled will automatically be set to YES for the default input and set to
      *                     NO for all of the other inputs in the group.
-     * @return An instance of AVAssetWriterInputGroup, for use with -[AVAssetWriter addInputGroup:].
+     * @return
+     *         An instance of AVAssetWriterInputGroup, for use with -[AVAssetWriter addInputGroup:].
      */
     @Generated
     @Selector("assetWriterInputGroupWithInputs:defaultInput:")
@@ -211,9 +216,9 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
 
     /**
      * [@property] defaultInput
-     * <p>
+     * 
      * The input designated at the defaultInput of the receiver.
-     * <p>
+     * 
      * The value of this property is a concrete instance of AVAssetWriterInput.
      */
     @Generated
@@ -226,15 +231,18 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
 
     /**
      * initWithInputs:defaultInput:
-     * <p>
+     * 
      * Creates an instance of AVAssetWriterInputGroup, for use with -[AVAssetWriter addInputGroup:].
-     *
-     * @param inputs       The collection of AVAssetWriterInputs to be grouped together.
-     * @param defaultInput The instance of AVAssetWriterInput in the group to designate as the default. When the input
+     * 
+     * @param inputs
+     *                     The collection of AVAssetWriterInputs to be grouped together.
+     * @param defaultInput
+     *                     The instance of AVAssetWriterInput in the group to designate as the default. When the input
      *                     group is added to an AVAssetWriter via -addInputGroup:, the value of
      *                     marksOutputTrackAsEnabled will automatically be set to YES for the default input and set to
      *                     NO for all of the other inputs in the group.
-     * @return An instance of AVAssetWriterInputGroup, for use with -[AVAssetWriter addInputGroup:].
+     * @return
+     *         An instance of AVAssetWriterInputGroup, for use with -[AVAssetWriter addInputGroup:].
      */
     @Generated
     @Selector("initWithInputs:defaultInput:")
@@ -243,9 +251,9 @@ public class AVAssetWriterInputGroup extends AVMediaSelectionGroup {
 
     /**
      * [@property] inputs
-     * <p>
+     * 
      * The inputs grouped together by the receiver.
-     * <p>
+     * 
      * The value of this property is an NSArray containing concrete instances of AVAssetWriterInput.
      */
     @Generated

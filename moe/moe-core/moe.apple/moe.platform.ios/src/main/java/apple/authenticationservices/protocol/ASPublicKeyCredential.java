@@ -10,6 +10,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * The base protocol for all PublicKeyCredential credential types.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AuthenticationServices")

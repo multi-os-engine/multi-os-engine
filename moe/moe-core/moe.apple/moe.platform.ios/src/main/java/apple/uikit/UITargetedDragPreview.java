@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -129,12 +132,17 @@ public class UITargetedDragPreview extends UITargetedPreview {
     @Selector("new")
     public static native UITargetedDragPreview new_objc();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("previewForURL:target:")
     public static native UITargetedDragPreview previewForURLTarget(NSURL url, UIDragPreviewTarget target);
 
     /**
      * If the title is nil or empty, this is the same as `previewForURL:target:`.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("previewForURL:title:target:")
@@ -151,7 +159,7 @@ public class UITargetedDragPreview extends UITargetedPreview {
 
     /**
      * Returns a preview with the same view and parameters, but a new target.
-     * <p>
+     * 
      * You might call this in a UIDropInteractionDelegate in
      * -dropInteraction:previewForDroppingItem:withDefault:, or in
      * a UIDropInteractionDelegate in -dropInteraction:previewForCancellingItem:withDefault:,

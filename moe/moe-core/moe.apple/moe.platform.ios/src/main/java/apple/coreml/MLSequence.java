@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * An immutable container holding an ordered collection of feature values
  * of the same type.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CoreML")

@@ -1559,7 +1559,7 @@ public final class GLKit {
 
     /**
      * [@struct] GLKVertexAttributeParametersFromModelIO
-     * <p>
+     * 
      * Returns parameters to use in a call to glVertexAttribPointer given a MDLVertexFormat
      */
     @Generated
@@ -1584,7 +1584,12 @@ public final class GLKit {
 
     /**
      * [@constant] kGLKModelErrorDomain
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1592,7 +1597,12 @@ public final class GLKit {
 
     /**
      * [@constant] kGLKModelErrorKey
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1604,6 +1614,8 @@ public final class GLKit {
      * Non-alpha channels are premultiplied by corresponding alpha channel values.
      * For compressed formats, this option must be omitted, or false.
      * False by default.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -1616,6 +1628,8 @@ public final class GLKit {
      * Generates mipmap levels for all faces when used with cube maps.
      * Sets GL_TEXTURE_MIN_FILTER parameter to GL_LINEAR_MIPMAP_LINEAR when true.
      * False by default.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -1626,6 +1640,8 @@ public final class GLKit {
      * GLKTextureLoaderOriginBottomLeft - A boolean NSNumber.
      * Transform image data to match OpenGL's bottom left orientation specification.
      * False by default.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -1644,6 +1660,12 @@ public final class GLKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String GLKTextureLoaderGrayscaleAsAlpha();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1651,7 +1673,12 @@ public final class GLKit {
 
     /**
      * Error domain for GLKTextureLoader
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1659,12 +1686,23 @@ public final class GLKit {
 
     /**
      * Error keys for obtaining more error information
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GLKTextureLoaderErrorKey();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -207,31 +210,49 @@ public class INMessage extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("conversationIdentifier")
     public native String conversationIdentifier();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("groupName")
     public native INSpeakableString groupName();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithIdentifier:conversationIdentifier:content:dateSent:sender:recipients:groupName:messageType:")
     public native INMessage initWithIdentifierConversationIdentifierContentDateSentSenderRecipientsGroupNameMessageType(
             String identifier, String conversationIdentifier, String content, NSDate dateSent, INPerson sender,
             NSArray<? extends INPerson> recipients, INSpeakableString groupName, @NInt long messageType);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithIdentifier:conversationIdentifier:content:dateSent:sender:recipients:messageType:")
     public native INMessage initWithIdentifierConversationIdentifierContentDateSentSenderRecipientsMessageType(
             String identifier, String conversationIdentifier, String content, NSDate dateSent, INPerson sender,
             NSArray<? extends INPerson> recipients, @NInt long messageType);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("messageType")
     @NInt
     public native long messageType();
 
+    /**
+     * API-Since: 13.2
+     */
     @Generated
     @Selector("initWithIdentifier:conversationIdentifier:content:dateSent:sender:recipients:groupName:messageType:serviceName:")
     public native INMessage initWithIdentifierConversationIdentifierContentDateSentSenderRecipientsGroupNameMessageTypeServiceName(
@@ -239,7 +260,24 @@ public class INMessage extends NSObject implements NSCopying, NSSecureCoding {
             NSArray<? extends INPerson> recipients, INSpeakableString groupName, @NInt long messageType,
             String serviceName);
 
+    /**
+     * API-Since: 13.2
+     */
     @Generated
     @Selector("serviceName")
     public native String serviceName();
+
+    @Generated
+    @Selector("audioMessageFile")
+    public native INFile audioMessageFile();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("initWithIdentifier:conversationIdentifier:content:dateSent:sender:recipients:groupName:messageType:serviceName:audioMessageFile:")
+    public native INMessage initWithIdentifierConversationIdentifierContentDateSentSenderRecipientsGroupNameMessageTypeServiceNameAudioMessageFile(
+            String identifier, String conversationIdentifier, String content, NSDate dateSent, INPerson sender,
+            NSArray<? extends INPerson> recipients, INSpeakableString groupName, @NInt long messageType,
+            String serviceName, INFile audioMessageFile);
 }

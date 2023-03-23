@@ -17,7 +17,6 @@ limitations under the License.
 package apple.mapkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -50,7 +49,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 3.0
+ * Deprecated-Since: 16.0
+ */
+@Deprecated
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +161,7 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -182,6 +188,7 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -194,6 +201,9 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("greenPinColor")
     public static native UIColor greenPinColor();
@@ -249,10 +259,16 @@ public class MKPinAnnotationView extends MKAnnotationView {
     public static native void performWithoutAnimation(
             @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("purplePinColor")
     public static native UIColor purplePinColor();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("redPinColor")
     public static native UIColor redPinColor();
@@ -269,46 +285,57 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -416,12 +443,20 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @Selector("initWithFrame:")
     public native MKPinAnnotationView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use pinTintColor instead
+     */
     @Generated
     @Deprecated
     @Selector("pinColor")
     @NUInt
     public native long pinColor();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("pinTintColor")
     public native UIColor pinTintColor();
@@ -430,11 +465,19 @@ public class MKPinAnnotationView extends MKAnnotationView {
     @Selector("setAnimatesDrop:")
     public native void setAnimatesDrop(boolean value);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use pinTintColor instead
+     */
     @Generated
     @Deprecated
     @Selector("setPinColor:")
     public native void setPinColor(@NUInt long value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setPinTintColor:")
     public native void setPinTintColor(UIColor value);

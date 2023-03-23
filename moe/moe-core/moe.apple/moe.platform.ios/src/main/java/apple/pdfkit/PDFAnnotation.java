@@ -2,8 +2,6 @@ package apple.pdfkit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGContextRef;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -36,7 +34,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("PDFKit")
 @Runtime(ObjCRuntime.class)
@@ -67,6 +70,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     /**
      * Optional action performed when a user clicks / taps an annotation. PDF readers ignore actions except
      * for those associated with Link or button Widget annotations.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("action")
@@ -115,6 +120,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * introduing a memory cycle. If you would like to get the /Parent propery, use -[PDFAnnotation
      * valueForAnnotationKey:]
      * with key PDFAnnotationKeyParent.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("annotationKeyValues")
@@ -137,6 +144,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * annotations (Circle, Ink, Line, Square), the border indicates the line width and whether to draw with a dash
      * pattern
      * or solid pattern. PDFAnnotation markup types (Highlight, Strikethrough, Underline) ignores the border.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("border")
@@ -205,6 +214,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
 
     /**
      * For many annotations ("Circle", "Square") the stroke color. Used for other annotations as well.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("color")
@@ -213,6 +224,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     /**
      * A string of text associated with an annotation. Often displayed in a window when the annotation is clicked on
      * ("FreeText" and "Text" especially).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("contents")
@@ -244,6 +257,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
 
     /**
      * Draw method. Draws in page-space relative to origin of "box" passed in and to the given context
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("drawWithBox:inContext:")
@@ -328,6 +343,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     /**
      * Create a custom annotation with bounds, a type (PDFAnnotationSubtype), and an (optional) dictionary of annotation
      * properties.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithBounds:forType:withProperties:")
@@ -363,6 +380,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * The highlight state dictates how the annotation is drawn. For example, if a user has clicked on a
      * "Link" annotation, you should set highlighted to YES and redraw it. When the user lets up, set highlighted to
      * NO and redraw again.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isHighlighted")
@@ -446,6 +465,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
 
     /**
      * Optional (-[modificationDate] may return nil). Modification date of the annotation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("modificationDate")
@@ -476,6 +497,9 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     @Selector("paths")
     public native NSArray<? extends UIBezierPath> paths();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("popup")
     public native PDFAnnotation popup();
@@ -507,6 +531,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
 
     /**
      * Remove the key-value pair from the annotation dictionary. Returns true on successful removal.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("removeValueForAnnotationKey:")
@@ -523,6 +549,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     /**
      * Optional action performed when a user clicks / taps an annotation. PDF readers ignore actions except
      * for those associated with Link or button Widget annotations.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAction:")
@@ -553,6 +581,9 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setBoolean:forAnnotationKey:")
     public native boolean setBooleanForAnnotationKey(boolean value, String key);
@@ -562,6 +593,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * annotations (Circle, Ink, Line, Square), the border indicates the line width and whether to draw with a dash
      * pattern
      * or solid pattern. PDFAnnotation markup types (Highlight, Strikethrough, Underline) ignores the border.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setBorder:")
@@ -610,6 +643,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
 
     /**
      * For many annotations ("Circle", "Square") the stroke color. Used for other annotations as well.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setColor:")
@@ -628,6 +663,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     /**
      * A string of text associated with an annotation. Often displayed in a window when the annotation is clicked on
      * ("FreeText" and "Text" especially).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setContents:")
@@ -680,6 +717,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * The highlight state dictates how the annotation is drawn. For example, if a user has clicked on a
      * "Link" annotation, you should set highlighted to YES and redraw it. When the user lets up, set highlighted to
      * NO and redraw again.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setHighlighted:")
@@ -729,6 +768,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
 
     /**
      * Optional (-[modificationDate] may return nil). Modification date of the annotation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setModificationDate:")
@@ -772,6 +813,9 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
         }
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setPopup:")
     public native void setPopup(PDFAnnotation value);
@@ -805,6 +849,9 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     @Selector("setReadOnly:")
     public native void setReadOnly(boolean value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setRect:forAnnotationKey:")
     public native boolean setRectForAnnotationKey(@ByValue CGRect value, String key);
@@ -870,6 +917,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
 
     /**
      * Optional (-[userName] may return nil). Name of the user who created the annotation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setUserName:")
@@ -885,6 +934,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
      * a convenience, these kind of keys will directly accept NSColor / UIColor values. Other convenience
      * functions provide similar support can be found in PDFAnnotationUtilities header file. Note that you
      * can set the environment variable "PDFKIT_LOG_ANNOTATIONS" to log any key-value assignment failures.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setValue:forAnnotationKey:")
@@ -992,6 +1043,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
 
     /**
      * Optional (-[userName] may return nil). Name of the user who created the annotation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("userName")
@@ -1000,6 +1053,8 @@ public class PDFAnnotation extends NSObject implements NSCopying, NSCoding {
     /**
      * Retrieves a deep copy of the key-value pair based on the given key; key can either be
      * from the keys PDFAnnotationKey, or an appropriate string from the PDF specification.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("valueForAnnotationKey:")

@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -167,6 +170,9 @@ public class UIStoryboard extends NSObject {
     @Selector("instantiateViewControllerWithIdentifier:")
     public native UIViewController instantiateViewControllerWithIdentifier(String identifier);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("instantiateInitialViewControllerWithCreator:")
     public native UIViewController instantiateInitialViewControllerWithCreator(
@@ -179,6 +185,9 @@ public class UIStoryboard extends NSObject {
         UIViewController call_instantiateInitialViewControllerWithCreator(NSCoder coder);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("instantiateViewControllerWithIdentifier:creator:")
     public native UIViewController instantiateViewControllerWithIdentifierCreator(String identifier,

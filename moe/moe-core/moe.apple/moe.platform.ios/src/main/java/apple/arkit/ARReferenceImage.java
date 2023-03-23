@@ -2,7 +2,6 @@ package apple.arkit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGImageRef;
-import apple.coregraphics.struct.CGSize;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
@@ -29,9 +28,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * A reference image to be detected in the scene.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("ARKit")
@@ -102,7 +104,7 @@ public class ARReferenceImage extends NSObject {
 
     /**
      * Creates a new reference image.
-     *
+     * 
      * @param image         The reference image as CGImage.
      * @param orientation   The image orientation.
      * @param physicalWidth The width in meters of the physical object.
@@ -114,7 +116,7 @@ public class ARReferenceImage extends NSObject {
 
     /**
      * Creates a new reference image.
-     *
+     * 
      * @param pixelBuffer   The reference image as CVPixelBuffer.
      * @param physicalWidth The width in meters of the physical object.
      * @param orientation   The image orientation.
@@ -167,7 +169,7 @@ public class ARReferenceImage extends NSObject {
 
     /**
      * Returns the set of ARReferenceImages in the specified resource group and bundle.
-     *
+     * 
      * @param name   The name of the resource group.
      * @param bundle The bundle containing the image file or asset catalog. Specify nil to search the app’s main bundle.
      * @return The set of reference images or nil on error.
@@ -187,10 +189,12 @@ public class ARReferenceImage extends NSObject {
 
     /**
      * The AR resource group name for this image.
-     * <p>
+     * 
      * If this image was loaded via an AR resource group in the Xcode asset catalogue this property will have the name
      * of the resource group,
      * else be set to nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("resourceGroupName")
@@ -213,15 +217,17 @@ public class ARReferenceImage extends NSObject {
 
     /**
      * Validate if this image can be used for image detection or tracking.
-     * <p>
+     * 
      * When loading reference images from the asset catalog this verification is not needed as the same verification
      * happens
      * at compile time.
-     *
+     * 
      * @param completionHandler Completion handler invoked when validation is done. The completion handler takes the
      *                          following parameters:
      *                          error - An error that indicates why the image is not suitable for tracking, or nil if no
      *                          error occured.
+     * 
+     *                          API-Since: 13.0
      */
     @Generated
     @Selector("validateWithCompletionHandler:")

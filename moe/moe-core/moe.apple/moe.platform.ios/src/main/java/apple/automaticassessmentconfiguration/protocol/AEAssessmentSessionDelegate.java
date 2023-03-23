@@ -10,6 +10,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("AutomaticAssessmentConfiguration")
 @Runtime(ObjCRuntime.class)

@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] AudioBalanceFadeType
- * <p>
+ * 
  * used for mType field of AudioBalanceFade struct
  * [@constant] kAudioBalanceFadeType_MaxUnityGain
  * the gain value never exceeds 1.0, the opposite channel fades out.

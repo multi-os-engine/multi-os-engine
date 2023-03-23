@@ -36,8 +36,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * NSDateIntervalFormatter is used to format the range between two NSDates in a locale-sensitive way.
- * NSDateIntervalFormatter returns nil and NO for all methods in NSFormatter.
+ * API-Since: 8.0
  */
 @Generated
 @Library("Foundation")
@@ -232,7 +231,7 @@ public class NSDateIntervalFormatter extends NSFormatter {
      * If the range smaller than the resolution specified by the dateTemplate, a single date format will be produced. If
      * the range is larger than the format specified by the dateTemplate, a locale-specific fallback will be used to
      * format the items missing from the pattern.
-     * <p>
+     * 
      * For example, if the range is 2010-03-04 07:56 - 2010-03-04 19:56 (12 hours)
      * - The pattern jm will produce
      * for en_US, "7:56 AM - 7:56 PM"
@@ -252,6 +251,9 @@ public class NSDateIntervalFormatter extends NSFormatter {
     @Selector("stringFromDate:toDate:")
     public native String stringFromDateToDate(NSDate fromDate, NSDate toDate);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("stringFromDateInterval:")
     public native String stringFromDateInterval(NSDateInterval dateInterval);

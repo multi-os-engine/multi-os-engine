@@ -37,6 +37,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITabBarControllerDelegate")
 public interface UITabBarControllerDelegate {
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("tabBarController:animationControllerForTransitionFromViewController:toViewController:")
@@ -62,6 +65,9 @@ public interface UITabBarControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("tabBarController:interactionControllerForAnimationController:")
@@ -72,6 +78,9 @@ public interface UITabBarControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("tabBarController:shouldSelectViewController:")
@@ -80,6 +89,9 @@ public interface UITabBarControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("tabBarController:willBeginCustomizingViewControllers:")
@@ -88,6 +100,9 @@ public interface UITabBarControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("tabBarController:willEndCustomizingViewControllers:changed:")
@@ -96,6 +111,9 @@ public interface UITabBarControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("tabBarControllerPreferredInterfaceOrientationForPresentation:")
@@ -104,6 +122,9 @@ public interface UITabBarControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("tabBarControllerSupportedInterfaceOrientations:")

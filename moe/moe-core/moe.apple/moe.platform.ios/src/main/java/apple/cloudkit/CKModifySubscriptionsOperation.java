@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -161,7 +164,7 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of
      * subscriptionIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
@@ -176,7 +179,7 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of
      * subscriptionIDs to errors keyed off of @c CKPartialErrorsByItemIDKey.
@@ -223,8 +226,10 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
 
     /**
      * Called on success or failure of a subscription deletion
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("perSubscriptionDeleteBlock")
@@ -240,8 +245,10 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
 
     /**
      * Called on success or failure of a subscription save
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("perSubscriptionSaveBlock")
@@ -257,8 +264,10 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
 
     /**
      * Called on success or failure of a subscription deletion
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPerSubscriptionDeleteBlock:")
@@ -274,8 +283,10 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
 
     /**
      * Called on success or failure of a subscription save
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPerSubscriptionSaveBlock:")

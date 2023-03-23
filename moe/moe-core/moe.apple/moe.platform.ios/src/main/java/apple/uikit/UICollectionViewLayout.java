@@ -17,9 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSIndexPath;
@@ -44,7 +41,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -123,6 +126,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     /**
      * override this method to provide a custom class to be used for invalidation contexts
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("invalidationContextClass")
@@ -224,11 +229,16 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     /**
      * called inside an animation block after the transition
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("finalizeLayoutTransition")
     public native void finalizeLayoutTransition();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("indexPathsToDeleteForDecorationViewOfKind:")
     public native NSArray<? extends NSIndexPath> indexPathsToDeleteForDecorationViewOfKind(String elementKind);
@@ -237,15 +247,23 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
      * These methods are called by collection view during an update block.
      * Return an array of index paths to indicate views that the layout is deleting or inserting in response to the
      * update.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("indexPathsToDeleteForSupplementaryViewOfKind:")
     public native NSArray<? extends NSIndexPath> indexPathsToDeleteForSupplementaryViewOfKind(String elementKind);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("indexPathsToInsertForDecorationViewOfKind:")
     public native NSArray<? extends NSIndexPath> indexPathsToInsertForDecorationViewOfKind(String elementKind);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("indexPathsToInsertForSupplementaryViewOfKind:")
     public native NSArray<? extends NSIndexPath> indexPathsToInsertForSupplementaryViewOfKind(String elementKind);
@@ -289,27 +307,42 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     @Selector("invalidateLayout")
     public native void invalidateLayout();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("invalidateLayoutWithContext:")
     public native void invalidateLayoutWithContext(UICollectionViewLayoutInvalidationContext context);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("invalidationContextForBoundsChange:")
     public native UICollectionViewLayoutInvalidationContext invalidationContextForBoundsChange(
             @ByValue CGRect newBounds);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("invalidationContextForEndingInteractiveMovementOfItemsToFinalIndexPaths:previousIndexPaths:movementCancelled:")
     public native UICollectionViewLayoutInvalidationContext invalidationContextForEndingInteractiveMovementOfItemsToFinalIndexPathsPreviousIndexPathsMovementCancelled(
             NSArray<? extends NSIndexPath> indexPaths, NSArray<? extends NSIndexPath> previousIndexPaths,
             boolean movementCancelled);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("invalidationContextForInteractivelyMovingItems:withTargetPosition:previousIndexPaths:previousPosition:")
     public native UICollectionViewLayoutInvalidationContext invalidationContextForInteractivelyMovingItemsWithTargetPositionPreviousIndexPathsPreviousPosition(
             NSArray<? extends NSIndexPath> targetIndexPaths, @ByValue CGPoint targetPosition,
             NSArray<? extends NSIndexPath> previousIndexPaths, @ByValue CGPoint previousPosition);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("invalidationContextForPreferredLayoutAttributes:withOriginalAttributes:")
     public native UICollectionViewLayoutInvalidationContext invalidationContextForPreferredLayoutAttributesWithOriginalAttributes(
@@ -328,6 +361,9 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     public native NSArray<? extends UICollectionViewLayoutAttributes> layoutAttributesForElementsInRect(
             @ByValue CGRect rect);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("layoutAttributesForInteractivelyMovingItemAtIndexPath:withTargetPosition:")
     public native UICollectionViewLayoutAttributes layoutAttributesForInteractivelyMovingItemAtIndexPathWithTargetPosition(
@@ -361,12 +397,17 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     @Selector("prepareForCollectionViewUpdates:")
     public native void prepareForCollectionViewUpdates(NSArray<? extends UICollectionViewUpdateItem> updateItems);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("prepareForTransitionFromLayout:")
     public native void prepareForTransitionFromLayout(UICollectionViewLayout oldLayout);
 
     /**
      * UICollectionView calls this when prior the layout transition animation on the incoming and outgoing layout
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("prepareForTransitionToLayout:")
@@ -397,6 +438,9 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     @Selector("shouldInvalidateLayoutForBoundsChange:")
     public native boolean shouldInvalidateLayoutForBoundsChange(@ByValue CGRect newBounds);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("shouldInvalidateLayoutForPreferredLayoutAttributes:withOriginalAttributes:")
     public native boolean shouldInvalidateLayoutForPreferredLayoutAttributesWithOriginalAttributes(
@@ -404,6 +448,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     /**
      * a layout can return the content offset to be applied during transition or update animations
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("targetContentOffsetForProposedContentOffset:")
@@ -419,6 +465,9 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     public native CGPoint targetContentOffsetForProposedContentOffsetWithScrollingVelocity(
             @ByValue CGPoint proposedContentOffset, @ByValue CGPoint velocity);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("targetIndexPathForInteractivelyMovingItem:withPosition:")
     public native NSIndexPath targetIndexPathForInteractivelyMovingItemWithPosition(NSIndexPath previousIndexPath,

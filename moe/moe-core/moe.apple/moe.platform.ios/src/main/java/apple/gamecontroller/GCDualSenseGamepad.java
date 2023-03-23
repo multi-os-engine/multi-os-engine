@@ -24,9 +24,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The GCDualSenseGamepad profile represents any supported DualSense controller.
- *
+ * 
  * @see GCExtendedGamepad
  * @see GCMotion
+ * 
+ *      API-Since: 14.5
  */
 @Generated
 @Library("GameController")
@@ -119,7 +121,7 @@ public class GCDualSenseGamepad extends GCExtendedGamepad {
     /**
      * Triggers are required to be analog inputs. Common uses would be acceleration and decelleration in a driving game
      * for example.
-     * <p>
+     * 
      * The DualSense has adaptive triggers, allowing you to specify a dynamic resistance force that is applied when
      * pulling the trigger. This can,
      * for example, be used to emulate the feeling of pulling back a bow string, firing a weapon, or pulling a lever.

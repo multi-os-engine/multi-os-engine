@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] MTLFunctionStitchingInputNode
- * <p>
+ * 
  * An indexed input node of the produced stitched function.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Metal")

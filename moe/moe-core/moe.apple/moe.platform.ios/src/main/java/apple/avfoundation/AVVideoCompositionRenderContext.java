@@ -19,8 +19,6 @@ package apple.avfoundation;
 import apple.NSObject;
 import apple.avfoundation.struct.AVEdgeWidths;
 import apple.avfoundation.struct.AVPixelAspectRatio;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGSize;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
@@ -43,7 +41,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)

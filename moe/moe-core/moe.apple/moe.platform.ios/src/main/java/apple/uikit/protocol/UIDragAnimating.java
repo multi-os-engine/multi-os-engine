@@ -9,6 +9,9 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -17,7 +20,7 @@ public interface UIDragAnimating {
     /**
      * Instances of UIDragAnimating provide you a way to animate your own changes
      * alongside the drag and drop system's animations.
-     * <p>
+     * 
      * Animatable view properties that are set by the animation block will be
      * animated to their new values.
      */

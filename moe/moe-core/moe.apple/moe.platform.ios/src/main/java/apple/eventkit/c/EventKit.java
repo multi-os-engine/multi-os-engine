@@ -39,7 +39,7 @@ public final class EventKit {
 
     /**
      * [@constant] EKEventStoreChangedNotification
-     * <p>
+     * 
      * Notification name sent out when the database is changed by either an external process,
      * another event store in the same process, or by calling saveEvent: or removeEvent: on a
      * store you are managing. When you receive this notification, you should consider all EKEvent
@@ -51,6 +51,8 @@ public final class EventKit {
      * otherwise, you should release it and abandon what you were doing with it. The view
      * controllers provided by EventKitUI automatically deal with this for you.
      * This notification will also be posted if access to events or reminders is changed by the user.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -59,11 +61,13 @@ public final class EventKit {
 
     /**
      * [@const] EKErrorDomain
-     * <p>
+     * 
      * Error domain for NSError values stemming from the EventKit Framework API.
-     * <p>
+     * 
      * This error domain is used as the domain for all NSError instances stemming from the
      * EventKit Framework.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()

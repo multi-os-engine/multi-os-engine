@@ -42,9 +42,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MSMessageTemplateLayout
- * <p>
+ * 
  * The MSMessageTemplateLayout encapsulates properties used in the construction of UI
  * representing a message using the default message layout template.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Messages")
@@ -158,7 +160,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
 
     /**
      * [@property] caption
-     * <p>
+     * 
      * Text to be used as a caption related to the message content.
      */
     @Generated
@@ -167,9 +169,9 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
 
     /**
      * [@property] image
-     * <p>
+     * 
      * A UIImage object used to construct the message representation in the conversation transcript.
-     * <p>
+     * 
      * When this property and the mediaURL property are both set, the mediaURL
      * property will be ignored.
      */
@@ -179,7 +181,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
 
     /**
      * [@property] imageSubtitle
-     * <p>
+     * 
      * Subtitle text associated with the image or media .
      */
     @Generated
@@ -188,7 +190,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
 
     /**
      * [@property] imageTitle
-     * <p>
+     * 
      * Title text associated with the image or media .
      */
     @Generated
@@ -201,9 +203,9 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
 
     /**
      * [@property] mediaFileURL
-     * <p>
+     * 
      * The URL to a media file used to construct the message representation in the conversation transcript.
-     * <p>
+     * 
      * This must be a file URL, the data contained in the file must conform to
      * kUTTypeImage or kUTTypeMovie. When image property and
      * this property are both set, then this property will be ignored.
@@ -214,7 +216,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
 
     /**
      * [@property] caption
-     * <p>
+     * 
      * Text to be used as a caption related to the message content.
      */
     @Generated
@@ -223,9 +225,9 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
 
     /**
      * [@property] image
-     * <p>
+     * 
      * A UIImage object used to construct the message representation in the conversation transcript.
-     * <p>
+     * 
      * When this property and the mediaURL property are both set, the mediaURL
      * property will be ignored.
      */
@@ -235,7 +237,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
 
     /**
      * [@property] imageSubtitle
-     * <p>
+     * 
      * Subtitle text associated with the image or media .
      */
     @Generated
@@ -244,7 +246,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
 
     /**
      * [@property] imageTitle
-     * <p>
+     * 
      * Title text associated with the image or media .
      */
     @Generated
@@ -253,9 +255,9 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
 
     /**
      * [@property] mediaFileURL
-     * <p>
+     * 
      * The URL to a media file used to construct the message representation in the conversation transcript.
-     * <p>
+     * 
      * This must be a file URL, the data contained in the file must conform to
      * kUTTypeImage or kUTTypeMovie. When image property and
      * this property are both set, then this property will be ignored.
@@ -266,7 +268,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
 
     /**
      * [@property] subcaption
-     * <p>
+     * 
      * Text to be used as a subcaption related to the message content.
      */
     @Generated
@@ -275,7 +277,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
 
     /**
      * [@property] trailingCaption
-     * <p>
+     * 
      * Text to be drawn right aligned on the same line as the caption text.
      */
     @Generated
@@ -284,7 +286,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
 
     /**
      * [@property] trailingSubcaption
-     * <p>
+     * 
      * Text to be drawn right aligned on the same line as the subcaption text.
      */
     @Generated
@@ -293,7 +295,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
 
     /**
      * [@property] subcaption
-     * <p>
+     * 
      * Text to be used as a subcaption related to the message content.
      */
     @Generated
@@ -302,7 +304,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
 
     /**
      * [@property] trailingCaption
-     * <p>
+     * 
      * Text to be drawn right aligned on the same line as the caption text.
      */
     @Generated
@@ -311,7 +313,7 @@ public class MSMessageTemplateLayout extends MSMessageLayout {
 
     /**
      * [@property] trailingSubcaption
-     * <p>
+     * 
      * Text to be drawn right aligned on the same line as the subcaption text.
      */
     @Generated

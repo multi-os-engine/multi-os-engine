@@ -17,7 +17,6 @@ limitations under the License.
 package apple.photosui;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -53,7 +52,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 9.1
+ */
 @Generated
 @Library("PhotosUI")
 @Runtime(ObjCRuntime.class)
@@ -159,6 +162,7 @@ public class PHLivePhotoView extends UIView {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -185,6 +189,7 @@ public class PHLivePhotoView extends UIView {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -233,6 +238,8 @@ public class PHLivePhotoView extends UIView {
 
     /**
      * System badge images representing Live Photo content
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("livePhotoBadgeImageWithOptions:")
@@ -267,46 +274,57 @@ public class PHLivePhotoView extends UIView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -393,6 +411,9 @@ public class PHLivePhotoView extends UIView {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -412,6 +433,8 @@ public class PHLivePhotoView extends UIView {
 
     /**
      * Indicates whether the audio of the Live Photo is muted.
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("isMuted")
@@ -419,6 +442,8 @@ public class PHLivePhotoView extends UIView {
 
     /**
      * Indicates whether the audio of the Live Photo is muted.
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("setMuted:")
@@ -426,6 +451,8 @@ public class PHLivePhotoView extends UIView {
 
     /**
      * Live photo displayed in the receiver.
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("livePhoto")
@@ -433,15 +460,23 @@ public class PHLivePhotoView extends UIView {
 
     /**
      * Gesture used to trigger playback. By default, added to the receiver. Can be moved to a different view.
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("playbackGestureRecognizer")
     public native UIGestureRecognizer playbackGestureRecognizer();
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) PHLivePhotoViewDelegate value);
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) PHLivePhotoViewDelegate value) {
         Object __old = delegate();
@@ -456,6 +491,8 @@ public class PHLivePhotoView extends UIView {
 
     /**
      * Live photo displayed in the receiver.
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("setLivePhoto:")
@@ -464,11 +501,16 @@ public class PHLivePhotoView extends UIView {
     /**
      * The following methods allow the client to manually trigger playback. If the live photo is changed during
      * playback, it will be immediately interrupted.
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("startPlaybackWithStyle:")
     public native void startPlaybackWithStyle(@NInt long playbackStyle);
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @Selector("stopPlayback")
     public native void stopPlayback();

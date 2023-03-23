@@ -43,8 +43,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKSample
- * <p>
+ * 
  * An abstract class representing measurements taken over a period of time.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -188,10 +190,12 @@ public class HKSample extends HKObject {
 
     /**
      * [@property] hasUndeterminedDuration
-     * <p>
+     * 
      * Indicates whether a sample has an undetermined duration.
-     * <p>
+     * 
      * Computed based on the endDate of a sample.
+     * 
+     * API-Since: 14.3
      */
     @Generated
     @Selector("hasUndeterminedDuration")

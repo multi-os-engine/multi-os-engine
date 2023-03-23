@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -169,10 +172,22 @@ public class INSearchForMessagesIntent extends INIntent {
     @Selector("dateTimeRange")
     public native INDateComponentsRange dateTimeRange();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use speakableGroupNames instead
+     */
+    @Deprecated
     @Generated
     @Selector("groupNames")
     public native NSArray<String> groupNames();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use speakableGroupNamesOperator instead
+     */
+    @Deprecated
     @Generated
     @Selector("groupNamesOperator")
     @NInt
@@ -201,6 +216,12 @@ public class INSearchForMessagesIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INSearchForMessagesIntent initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithRecipients:senders:searchTerms:attributes:dateTimeRange:identifiers:notificationIdentifiers:groupNames:")
     public native INSearchForMessagesIntent initWithRecipientsSendersSearchTermsAttributesDateTimeRangeIdentifiersNotificationIdentifiersGroupNames(
@@ -268,6 +289,12 @@ public class INSearchForMessagesIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithRecipients:senders:searchTerms:attributes:dateTimeRange:identifiers:notificationIdentifiers:speakableGroupNames:")
     public native INSearchForMessagesIntent initWithRecipientsSendersSearchTermsAttributesDateTimeRangeIdentifiersNotificationIdentifiersSpeakableGroupNames(
@@ -275,30 +302,43 @@ public class INSearchForMessagesIntent extends INIntent {
             @NUInt long attributes, INDateComponentsRange dateTimeRange, NSArray<String> identifiers,
             NSArray<String> notificationIdentifiers, NSArray<? extends INSpeakableString> speakableGroupNames);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("speakableGroupNames")
     public native NSArray<? extends INSpeakableString> speakableGroupNames();
 
     /**
      * Describes how to combine the contents of the speakableGroupName array.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("speakableGroupNamesOperator")
     @NInt
     public native long speakableGroupNamesOperator();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("conversationIdentifiers")
     public native NSArray<String> conversationIdentifiers();
 
     /**
      * Describes how to combine the contents of the conversationIdentifier array.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("conversationIdentifiersOperator")
     @NInt
     public native long conversationIdentifiersOperator();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithRecipients:senders:searchTerms:attributes:dateTimeRange:identifiers:notificationIdentifiers:speakableGroupNames:conversationIdentifiers:")
     public native INSearchForMessagesIntent initWithRecipientsSendersSearchTermsAttributesDateTimeRangeIdentifiersNotificationIdentifiersSpeakableGroupNamesConversationIdentifiers(

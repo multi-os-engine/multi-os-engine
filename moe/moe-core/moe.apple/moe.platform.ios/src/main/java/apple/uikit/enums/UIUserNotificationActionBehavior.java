@@ -19,16 +19,30 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 9.0
+ * Deprecated-Since: 10.0
+ * Deprecated-Message: Use UserNotifications Framework's UNNotificationAction or UNTextInputNotificationAction
+ */
+@Deprecated
 @Generated
 public final class UIUserNotificationActionBehavior {
     /**
      * the default action behavior
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationAction or UNTextInputNotificationAction
      */
-    @Generated @NUInt public static final long Default = 0x0000000000000000L;
+    @Deprecated @Generated @NUInt public static final long Default = 0x0000000000000000L;
     /**
      * system provided action behavior, allows text input from the user
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationAction or UNTextInputNotificationAction
      */
-    @Generated @NUInt public static final long TextInput = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long TextInput = 0x0000000000000001L;
 
     @Generated
     private UIUserNotificationActionBehavior() {

@@ -17,11 +17,6 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
-import apple.coregraphics.struct.CGVector;
 import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.coremedia.struct.CMTime;
 import apple.coremedia.struct.CMTimeMapping;
@@ -58,10 +53,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.coremedia.struct.CMVideoDimensions;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import apple.corefoundation.struct.CGVector;
 
-/**
- * NSDecimalNumber: the class **********
- */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -553,4 +551,8 @@ public class NSDecimalNumber extends NSNumber {
     @Generated
     @Selector("valueWithDirectionalEdgeInsets:")
     public static native NSValue valueWithDirectionalEdgeInsets(@ByValue NSDirectionalEdgeInsets insets);
+
+    @Generated
+    @Selector("valueWithCMVideoDimensions:")
+    public static native NSValue valueWithCMVideoDimensions(@ByValue CMVideoDimensions dimensions);
 }

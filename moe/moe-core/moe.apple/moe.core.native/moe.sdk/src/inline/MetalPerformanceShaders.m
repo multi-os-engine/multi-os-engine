@@ -7,6 +7,10 @@
 
 #define EXPORT __attribute__ ((visibility ("default")))
 
+EXPORT size_t __natj_inline_MPSSizeofMPSDataType(MPSDataType t) {
+	return MPSSizeofMPSDataType(t);
+}
+
 EXPORT MPSIntegerDivisionParams __natj_inline_MPSFindIntegerDivisionParams(uint16_t divisor) {
 	return MPSFindIntegerDivisionParams(divisor);
 }

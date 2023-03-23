@@ -19,20 +19,50 @@ package apple.intents.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class INCallRecordType {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Outgoing = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Missed = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Received = 0x0000000000000003L;
 
     @Generated
     private INCallRecordType() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long Latest = 0x0000000000000004L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long Voicemail = 0x0000000000000005L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long Ringing = 0x0000000000000006L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long InProgress = 0x0000000000000007L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long OnHold = 0x0000000000000008L;
 }

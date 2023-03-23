@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_ip_local_address_preference_t
- * <p>
+ * 
  * Preference for local addresses selection.
  */
 @Generated

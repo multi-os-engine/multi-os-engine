@@ -28,8 +28,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * OSLogEntry
- * <p>
+ * 
  * A single entry from the unified logging system.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("OSLog")
@@ -83,8 +85,10 @@ public class OSLogEntry extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] composedMessage
-     * <p>
+     * 
      * The fully formatted message for the entry.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("composedMessage")
@@ -92,8 +96,10 @@ public class OSLogEntry extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] date
-     * <p>
+     * 
      * The timestamp of the entry.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("date")
@@ -164,8 +170,10 @@ public class OSLogEntry extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] storeCategory
-     * <p>
+     * 
      * This entry's storage tag. See OSLogEntryStoreCategory.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("storeCategory")

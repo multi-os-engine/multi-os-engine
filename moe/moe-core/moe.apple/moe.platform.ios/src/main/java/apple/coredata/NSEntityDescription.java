@@ -51,6 +51,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Entities describe the "types" of objects available.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("CoreData")
@@ -186,7 +188,12 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      * that an index should contain a reference to the object's primary or entity key.
      * This value does not form part of the entity's version hash, and may be ignored by stores which do not natively
      * support compound indexes.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use NSEntityDescription.indexes instead
      */
+    @Deprecated
     @Generated
     @Selector("compoundIndexes")
     public native NSArray<? extends NSArray<?>> compoundIndexes();
@@ -226,6 +233,8 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     /**
      * Returns a boolean indicating if the receiver is a subentity of the specified entity. (This method is the Core
      * Data entity inheritance equivalent of -isKindOfClass:)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isKindOfEntity:")
@@ -260,6 +269,9 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     public native NSArray<? extends NSRelationshipDescription> relationshipsWithDestinationEntity(
             NSEntityDescription entity);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("renamingIdentifier")
     public native String renamingIdentifier();
@@ -271,7 +283,12 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      * that an index should contain a reference to the object's primary or entity key.
      * This value does not form part of the entity's version hash, and may be ignored by stores which do not natively
      * support compound indexes.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use NSEntityDescription.indexes instead
      */
+    @Deprecated
     @Generated
     @Selector("setCompoundIndexes:")
     public native void setCompoundIndexes(NSArray<? extends NSArray<?>> value);
@@ -288,6 +305,9 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Selector("setProperties:")
     public native void setProperties(NSArray<? extends NSPropertyDescription> value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setRenamingIdentifier:")
     public native void setRenamingIdentifier(String value);
@@ -299,7 +319,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     /**
      * Returns/sets uniqueness constraints for the entity. A uniqueness constraint is a set of one or more attributes
      * whose value must be unique over the set of instances of that entity.
-     * <p>
+     * 
      * Sets an array of arrays, each of which contains one or more NSAttributeDescription or NSString instances (strings
      * must be the names of attributes on the entity) on which the constraint is registered.
      * Returns an array of arrays, each of which contains instances of NSString which identify the attributes on the
@@ -309,6 +329,8 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      * Discussion: uniqueness constraint violations can be computationally expensive to handle. It is highly suggested
      * that there be only one uniqueness constraint per entity hierarchy,
      * although subentites may extend a sueprentity's constraint.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setUniquenessConstraints:")
@@ -323,6 +345,8 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      * allowing developers to mark/denote an entity as being a different "version" than another, even if all of the
      * values which affect persistence are equal. (Such a difference is important in cases where the structure of an
      * entity is unchanged, but the format or content of data has changed.)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setVersionHashModifier:")
@@ -343,7 +367,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     /**
      * Returns/sets uniqueness constraints for the entity. A uniqueness constraint is a set of one or more attributes
      * whose value must be unique over the set of instances of that entity.
-     * <p>
+     * 
      * Sets an array of arrays, each of which contains one or more NSAttributeDescription or NSString instances (strings
      * must be the names of attributes on the entity) on which the constraint is registered.
      * Returns an array of arrays, each of which contains instances of NSString which identify the attributes on the
@@ -353,6 +377,8 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      * Discussion: uniqueness constraint violations can be computationally expensive to handle. It is highly suggested
      * that there be only one uniqueness constraint per entity hierarchy,
      * although subentites may extend a sueprentity's constraint.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("uniquenessConstraints")
@@ -369,6 +395,8 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      * name of the entity, the version hash of the superentity (if present), if the entity is abstract, and all of the
      * version hashes for the properties.) This value is stored as part of the version information in the metadata for
      * stores which use this entity, as well as a definition of an entity involved in an NSEntityMapping.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("versionHash")
@@ -379,6 +407,8 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      * allowing developers to mark/denote an entity as being a different "version" than another, even if all of the
      * values which affect persistence are equal. (Such a difference is important in cases where the structure of an
      * entity is unchanged, but the format or content of data has changed.)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("versionHashModifier")
@@ -386,6 +416,8 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
 
     /**
      * Expression used to compute the CoreSpotlight display name for instance of this entity.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("coreSpotlightDisplayNameExpression")
@@ -398,6 +430,8 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      * IMPORTANT: Indexes should be the last things set in a model. Changing an entity hierarchy in any way that could
      * affect the validity of indexes (adding or removing super/subentities, adding or removing properties anywhere in
      * the hierarchy) will cause all exisiting indexes for entities in that hierarchy to be dropped.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("indexes")
@@ -405,6 +439,8 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
 
     /**
      * Expression used to compute the CoreSpotlight display name for instance of this entity.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCoreSpotlightDisplayNameExpression:")
@@ -417,6 +453,8 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      * IMPORTANT: Indexes should be the last things set in a model. Changing an entity hierarchy in any way that could
      * affect the validity of indexes (adding or removing super/subentities, adding or removing properties anywhere in
      * the hierarchy) will cause all exisiting indexes for entities in that hierarchy to be dropped.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setIndexes:")

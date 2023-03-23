@@ -28,22 +28,24 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAudioSinkNode
- * <p>
+ * 
  * AVAudioSinkNode wraps a client provided block to receive input audio on the audio IO thread.
- * <p>
+ * 
  * AVAudioSinkNode is restricted to be used in the input chain and does not support format
  * conversion. Hence when connecting to an AVAudioSinkNode node, the format for the connection
  * should be the output scope format of the input node (essentialy the format should match the input hardware
  * sample rate).
- * <p>
+ * 
  * The voice processing IO unit is an exception to the above as it supports sample rate conversion.
  * The input scope format (HW format) and output scope format (client format) of the input node can differ
  * in that case.
- * <p>
+ * 
  * This node is only supported when the engine is rendering to the audio device and not in
  * manual rendering mode.
- * <p>
+ * 
  * AVAudioSinkNode does not have an output bus and therefore it does not support tapping.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("AVFAudio")
@@ -114,20 +116,21 @@ public class AVAudioSinkNode extends AVAudioNode {
 
     /**
      * initWithReceiverBlock:
-     * <p>
+     * 
      * Create a node with a receiver block.
-     * <p>
+     * 
      * The receiver block is called when the input data is available.
-     * <p>
+     * 
      * The block will be called on the realtime thread and it is the client's responsibility to
      * handle it in a thread-safe manner and to not make any blocking calls.
-     * <p>
+     * 
      * The audio format for the input bus will be set from the connection format when connecting
      * to another node.
-     * <p>
+     * 
      * The audio format for the data received by the block will be set to the node's input format.
-     *
-     * @param block The block that receives audio data from the input.
+     * 
+     * @param block
+     *              The block that receives audio data from the input.
      */
     @Generated
     @Selector("initWithReceiverBlock:")

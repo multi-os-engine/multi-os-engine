@@ -44,20 +44,22 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AUParameterTree
- * <p>
+ * 
  * The top level group node, representing all of an audio unit's parameters.
- * <p>
+ * 
  * An audio unit's parameters are organized into a tree containing groups and parameters.
  * Groups may be nested.
- * <p>
+ * 
  * The tree is KVO-compliant. For example, if the tree contains a group named "LFO" ,
  * containing a parameter named rate, then "LFO.rate" refers to that parameter object, and
  * "LFO.rate.value" refers to that parameter's value.
- * <p>
+ * 
  * An audio unit may choose to dynamically rearrange the tree. When doing so, it must
  * issue a KVO notification on the audio unit's parameterTree property. The tree's elements are
  * mostly immutable (except for values and implementor hooks); the only way to modify them
  * is to publish a new tree.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AudioToolbox")
@@ -111,7 +113,7 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
 
     /**
      * Initialize a group as a copied instance of a template group.
-     *
+     * 
      * @param templateGroup A group to be used as a template and largely copied.
      * @param identifier    An identifier for the new group (non-localized, persistent).
      * @param name          The new group's human-readable name (localized).
@@ -125,10 +127,10 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
 
     /**
      * Create a template group which may be used as a prototype for further group instances.
-     * <p>
+     * 
      * Template groups provide a way to construct multiple instances of identical parameter
      * groups, sharing certain immutable state between the instances.
-     * <p>
+     * 
      * Template groups may not appear in trees except at the root.
      */
     @Generated
@@ -137,7 +139,7 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
 
     /**
      * Create an AUParameterGroup.
-     *
+     * 
      * @param identifier An identifier for the group (non-localized, persistent).
      * @param name       The group's human-readable name (localized).
      * @param children   The group's child nodes.
@@ -159,7 +161,7 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
 
     /**
      * Create an AUParameterTree.
-     *
+     * 
      * @param children The tree's top-level child nodes.
      */
     @Generated
@@ -244,10 +246,11 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
 
     /**
      * parameterWithAddress:
-     * <p>
+     * 
      * Search a tree for a parameter with a specific address.
-     *
-     * @return The parameter corresponding to the supplied address, or nil if no such parameter exists.
+     * 
+     * @return
+     *         The parameter corresponding to the supplied address, or nil if no such parameter exists.
      */
     @Generated
     @Selector("parameterWithAddress:")
@@ -255,14 +258,15 @@ public class AUParameterTree extends AUParameterGroup implements NSSecureCoding 
 
     /**
      * parameterWithID:scope:element:
-     * <p>
+     * 
      * Search a tree for a specific v2 audio unit parameter.
-     * <p>
+     * 
      * V2 audio units publish parameters identified by a parameter ID, scope, and element.
      * A host that knows that it is dealing with a v2 unit can locate parameters using this method,
      * for example, for the Apple-supplied system audio units.
-     *
-     * @return The parameter corresponding to the supplied ID/scope/element, or nil if no such parameter
+     * 
+     * @return
+     *         The parameter corresponding to the supplied ID/scope/element, or nil if no such parameter
      *         exists, or if the audio unit is not a v2 unit.
      */
     @Generated

@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -166,6 +169,9 @@ public class MKCircleRenderer extends MKOverlayPathRenderer {
     @Selector("initWithOverlay:")
     public native MKCircleRenderer initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setStrokeEnd:")
     public native void setStrokeEnd(@NFloat double value);
@@ -175,11 +181,16 @@ public class MKCircleRenderer extends MKOverlayPathRenderer {
      * stroke. The values must be in the range [0,1] with zero
      * representing North, and positive values increasing in the clockwise direction.
      * strokeStart defaults to 0 and strokeEnd to 1
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setStrokeStart:")
     public native void setStrokeStart(@NFloat double value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("strokeEnd")
     @NFloat
@@ -190,6 +201,8 @@ public class MKCircleRenderer extends MKOverlayPathRenderer {
      * stroke. The values must be in the range [0,1] with zero
      * representing North, and positive values increasing in the clockwise direction.
      * strokeStart defaults to 0 and strokeEnd to 1
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("strokeStart")

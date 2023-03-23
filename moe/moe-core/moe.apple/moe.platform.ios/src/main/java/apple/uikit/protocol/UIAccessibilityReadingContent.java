@@ -16,8 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSAttributedString;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -28,10 +26,12 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * UIAccessibilityReadingContent
- * <p>
+ * 
  * Implemented on an element that represents content meant to be read, like a book or periodical.
  * Use in conjunction with UIAccessibilityTraitCausesPageTurn to provide a continuous reading experience with VoiceOver.
  */
@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface UIAccessibilityReadingContent {
     /**
      * Returns the content associated with a line number as a string.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("accessibilityContentForLineNumber:")
@@ -49,6 +51,8 @@ public interface UIAccessibilityReadingContent {
 
     /**
      * Returns the on-screen rectangle for a line number.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("accessibilityFrameForLineNumber:")
@@ -57,6 +61,8 @@ public interface UIAccessibilityReadingContent {
 
     /**
      * Returns the line number given a point in the view's coordinate space.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("accessibilityLineNumberForPoint:")
@@ -65,6 +71,8 @@ public interface UIAccessibilityReadingContent {
 
     /**
      * Returns a string representing the text displayed on the current page.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("accessibilityPageContent")
@@ -73,6 +81,8 @@ public interface UIAccessibilityReadingContent {
     /**
      * If an object adopting this protocol responds to these methods, the system will try sending them before sending
      * the non-attributed versions.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -81,6 +91,9 @@ public interface UIAccessibilityReadingContent {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("accessibilityAttributedPageContent")

@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
@@ -118,7 +121,7 @@ public class MPSGraphConvolution2DOpDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] groups
-     * <p>
+     * 
      * groups of the operation
      */
     @Generated
@@ -213,7 +216,7 @@ public class MPSGraphConvolution2DOpDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] groups
-     * <p>
+     * 
      * groups of the operation
      */
     @Generated

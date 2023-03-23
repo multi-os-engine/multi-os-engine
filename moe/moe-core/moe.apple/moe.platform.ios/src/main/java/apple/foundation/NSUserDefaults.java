@@ -39,7 +39,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * NSUserDefaults is a hierarchical persistent interprocess (optionally distributed) key-value store, optimized for
  * storing user settings.
- * <p>
+ * 
  * Hierarchical: NSUserDefaults has a list of places to look for data called the "search list". A search list is
  * referred to by an arbitrary string called the "suite identifier" or "domain identifier". When queried, NSUserDefaults
  * checks each entry of its search list until it finds one that contains the key in question, or has searched the whole
@@ -56,29 +56,29 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * - Preferences for the current domain, for all users, in the current host
  * - Preferences global to all apps for all users, in the current host
  * - Preferences registered with -registerDefaults:
- * <p>
+ * 
  * Persistent: Preferences stored in NSUserDefaults persist across reboots and relaunches of apps unless otherwise
  * specified.
- * <p>
+ * 
  * Interprocess: Preferences may be accessible to and modified from multiple processes simultaneously (for example
  * between an application and an extension).
- * <p>
+ * 
  * Optionally distributed (Currently only supported in Shared iPad for Students mode): Data stored in user defaults can
  * be made "ubiqitous", i.e. synchronized between devices via the cloud. Ubiquitous user defaults are automatically
  * propagated to all devices logged into the same iCloud account. When reading defaults (via -*ForKey: methods on
  * NSUserDefaults), ubiquitous defaults are searched before local defaults. All operations on ubiquitous defaults are
  * asynchronous, so registered defaults may be returned in place of ubiquitous defaults if downloading from iCloud
  * hasn't finished. Ubiquitous defaults are specified in the Defaults Configuration File for an application.
- * <p>
+ * 
  * Key-Value Store: NSUserDefaults stores Property List objects (NSString, NSData, NSNumber, NSDate, NSArray, and
  * NSDictionary) identified by NSString keys, similar to an NSMutableDictionary.
- * <p>
+ * 
  * Optimized for storing user settings: NSUserDefaults is intended for relatively small amounts of data, queried very
  * frequently, and modified occasionally. Using it in other ways may be slow or use more memory than solutions more
  * suited to those uses.
- * <p>
+ * 
  * The 'App' CFPreferences functions in CoreFoundation act on the same search lists that NSUserDefaults does.
- * <p>
+ * 
  * NSUserDefaults can be observed using Key-Value Observing for any key stored in it. Using
  * NSKeyValueObservingOptionPrior to observe changes from other processes or devices will behave as though
  * NSKeyValueObservingOptionPrior was not specified.
@@ -215,6 +215,8 @@ public class NSUserDefaults extends NSObject {
      * is an NSString path, then it will construct a file URL to that path. If the value is an archived URL from
      * -setURL:forKey: it will be unarchived. If the value is absent or can't be converted to an NSURL, nil will be
      * returned.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("URLForKey:")
@@ -297,6 +299,8 @@ public class NSUserDefaults extends NSObject {
      * for the domain 'suitename'. For example, using the identifier of an application group will cause the receiver to
      * search the preferences for that group. Passing the current application's bundle identifier, NSGlobalDomain, or
      * the corresponding CFPreferences constants is an error. Passing nil will search the default search list.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("initWithSuiteName:")
@@ -304,6 +308,10 @@ public class NSUserDefaults extends NSObject {
 
     /**
      * -initWithUser: is equivalent to -init
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use -init instead
      */
     @Generated
     @Deprecated
@@ -358,6 +366,10 @@ public class NSUserDefaults extends NSObject {
 
     /**
      * -persistentDomainNames returns an incomplete list of domains that have preferences stored in them.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Not recommended
      */
     @Generated
     @Deprecated
@@ -369,7 +381,7 @@ public class NSUserDefaults extends NSObject {
      * NSUserDefaults has looked for a value in every other valid location, it will look in registered defaults, making
      * them useful as a "fallback" value. Registered defaults are never stored between runs of an application, and are
      * visible only to the application that registers them.
-     * <p>
+     * 
      * Default values from Defaults Configuration Files will automatically be registered.
      */
     @Generated
@@ -454,6 +466,8 @@ public class NSUserDefaults extends NSObject {
     /**
      * -setURL:forKey is equivalent to -setObject:forKey: except that the value is archived to an NSData. Use
      * -URLForKey: to retrieve values set this way.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setURL:forKey:")
@@ -481,7 +495,7 @@ public class NSUserDefaults extends NSObject {
 
     /**
      * -synchronize is deprecated and will be marked with the API_DEPRECATED macro in a future release.
-     * <p>
+     * 
      * -synchronize blocks the calling thread until all in-progress set operations have completed. This is no longer
      * necessary. Replacements for previous uses of -synchronize depend on what the intent of calling synchronize was.
      * If you synchronized...

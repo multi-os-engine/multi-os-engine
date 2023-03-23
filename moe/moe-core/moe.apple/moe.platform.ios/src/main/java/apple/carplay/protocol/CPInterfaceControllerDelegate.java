@@ -12,6 +12,8 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * CPInterfaceControllerDelegate allows your app to observe template visibility lifecycles for
  * the templates presented by your app.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CarPlay")

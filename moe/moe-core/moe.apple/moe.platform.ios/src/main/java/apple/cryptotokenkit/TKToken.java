@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Class representing single token. When implementing SmartCard based token, it is recommended to inherit the
  * implementation from TKSmartCardToken. Token object serves as synchronization point, all operations invoked upon token
  * and all its sessions are serialized.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -81,6 +83,8 @@ public class TKToken extends NSObject {
 
     /**
      * Token configuration associated with this token instance.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("configuration")
@@ -110,7 +114,7 @@ public class TKToken extends NSObject {
 
     /**
      * Initializes token instance
-     *
+     * 
      * @param tokenDriver Creating token driver.
      * @param instanceID  Unique, persistent identifier of this token.
      */

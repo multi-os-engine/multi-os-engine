@@ -49,9 +49,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * height maps for 2D and 3D game world terrain, tile maps for 2D games, and intentionally imperfect game object and
  * camera movements in 2D and 3D games.
  * This class is not intended to be instantiated.
- *
+ * 
  * @see GKNoise
  * @see GKNoiseMap
+ * 
+ *      API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")

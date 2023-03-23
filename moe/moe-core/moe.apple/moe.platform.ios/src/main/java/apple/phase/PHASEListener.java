@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEListener
- * <p>
+ * 
  * A PHASEListener represents the listener's point of view within the simulated acoustic scene.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -87,7 +89,7 @@ public class PHASEListener extends PHASEObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
@@ -107,7 +109,7 @@ public class PHASEListener extends PHASEObject {
 
     /**
      * initWithEngine:
-     * <p>
+     * 
      * Initialize a new listener.
      */
     @Generated
@@ -150,7 +152,7 @@ public class PHASEListener extends PHASEObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.

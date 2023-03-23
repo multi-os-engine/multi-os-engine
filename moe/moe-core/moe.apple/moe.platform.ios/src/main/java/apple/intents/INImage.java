@@ -18,7 +18,6 @@ package apple.intents;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGImageRef;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSData;
@@ -49,7 +48,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -119,12 +122,17 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns the image size at which the image for an INIntentResponse will be displayed
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("imageSizeForIntentResponse:")
     @ByValue
     public static native CGSize imageSizeForIntentResponse(INIntentResponse response);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("imageWithCGImage:")
     public static native INImage imageWithCGImage(CGImageRef imageRef);
@@ -133,6 +141,9 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("imageWithImageData:")
     public static native INImage imageWithImageData(NSData imageData);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("imageWithUIImage:")
     public static native INImage imageWithUIImage(UIImage image);
@@ -216,6 +227,9 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("fetchUIImageWithCompletion:")
     public native void fetchUIImageWithCompletion(
@@ -228,10 +242,16 @@ public class INImage extends NSObject implements NSCopying, NSSecureCoding {
         void call_fetchUIImageWithCompletion(UIImage image);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("imageWithURL:width:height:")
     public static native INImage imageWithURLWidthHeight(NSURL URL, double width, double height);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("systemImageNamed:")
     public static native INImage systemImageNamed(String systemImageName);

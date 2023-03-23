@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("NaturalLanguage")
 @Runtime(ObjCRuntime.class)
@@ -79,6 +82,9 @@ public class NLModel extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("configuration")
     public native NLModelConfiguration configuration();
@@ -121,11 +127,17 @@ public class NLModel extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("modelWithContentsOfURL:error:")
     public static native NLModel modelWithContentsOfURLError(NSURL url,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("modelWithMLModel:error:")
     public static native NLModel modelWithMLModelError(MLModel mlModel,
@@ -142,11 +154,16 @@ public class NLModel extends NSObject {
      * use a model to make an individual prediction, either of the label for a given pieces of text (for a classifier
      * model), or of the labels for a given sequence of tokens (for a sequence model). In addition, it is possible to
      * obtain multiple hypotheses for a given label with associated probability scores.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("predictedLabelForString:")
     public native String predictedLabelForString(String string);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("predictedLabelsForTokens:")
     public native NSArray<String> predictedLabelsForTokens(NSArray<String> tokens);
@@ -172,11 +189,17 @@ public class NLModel extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("predictedLabelHypothesesForString:maximumCount:")
     public native NSDictionary<String, ? extends NSNumber> predictedLabelHypothesesForStringMaximumCount(String string,
             @NUInt long maximumCount);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("predictedLabelHypothesesForTokens:maximumCount:")
     public native NSArray<? extends NSDictionary<String, ? extends NSNumber>> predictedLabelHypothesesForTokensMaximumCount(

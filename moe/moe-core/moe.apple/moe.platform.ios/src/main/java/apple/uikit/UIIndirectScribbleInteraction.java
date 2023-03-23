@@ -35,6 +35,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * when tapped
  * - A view that contains multiple virtual text fields which the user can normally tap and type into, but are not full
  * blown text fields all the time
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")

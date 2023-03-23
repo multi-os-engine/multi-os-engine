@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLDictionaryConstraint
- * <p>
+ * 
  * Constraint describing expected NSDictionary properties
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreML")

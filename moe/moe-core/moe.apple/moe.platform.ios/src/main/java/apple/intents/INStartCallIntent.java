@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -111,6 +114,11 @@ public class INStartCallIntent extends INIntent implements UNNotificationContent
     @Selector("init")
     public native INStartCallIntent init();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithAudioRoute:destinationType:contacts:recordTypeForRedialing:callCapability:")
     public native INStartCallIntent initWithAudioRouteDestinationTypeContactsRecordTypeForRedialingCallCapability(
@@ -147,6 +155,11 @@ public class INStartCallIntent extends INIntent implements UNNotificationContent
     @Selector("new")
     public static native INStartCallIntent new_objc();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("recordTypeForRedialing")
     @NInt
@@ -183,14 +196,23 @@ public class INStartCallIntent extends INIntent implements UNNotificationContent
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("callRecordFilter")
     public native INCallRecordFilter callRecordFilter();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("callRecordToCallBack")
     public native INCallRecord callRecordToCallBack();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithCallRecordFilter:callRecordToCallBack:audioRoute:destinationType:contacts:callCapability:")
     public native INStartCallIntent initWithCallRecordFilterCallRecordToCallBackAudioRouteDestinationTypeContactsCallCapability(

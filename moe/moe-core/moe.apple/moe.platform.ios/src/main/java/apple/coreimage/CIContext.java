@@ -21,9 +21,6 @@ import apple.coregraphics.opaque.CGColorSpaceRef;
 import apple.coregraphics.opaque.CGContextRef;
 import apple.coregraphics.opaque.CGImageRef;
 import apple.coregraphics.opaque.IOSurfaceRef;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
@@ -57,7 +54,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -108,26 +111,45 @@ public class CIContext extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("context")
     public static native CIContext context();
 
     /**
      * Create a context specifying a destination CGContext.
-     * <p>
+     * 
      * Core Image will use an internal destination context when methods such
      * as [context render:to...] or [context createCGImage:...] are called.
-     * <p>
+     * 
      * The [context drawImage:...] render methods will render to the CGContext.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("contextWithCGContext:options:")
     public static native CIContext contextWithCGContextOptions(CGContextRef cgctx, NSDictionary<String, ?> options);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Core Image OpenGLES API deprecated. (Define CI_SILENCE_GL_DEPRECATION to silence these
+     * warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("contextWithEAGLContext:")
     public static native CIContext contextWithEAGLContext(EAGLContext eaglContext);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Core Image OpenGLES API deprecated. (Define CI_SILENCE_GL_DEPRECATION to silence these
+     * warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("contextWithEAGLContext:options:")
     public static native CIContext contextWithEAGLContextOptions(EAGLContext eaglContext,
@@ -137,11 +159,16 @@ public class CIContext extends NSObject {
      * If a system has more than one MTLDevice, then you can create a CIContext
      * that uses a specific device. If a client wishes to use the default MTLDevice
      * then call [CIContext contextWithOptions:] instead.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("contextWithMTLDevice:")
     public static native CIContext contextWithMTLDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("contextWithMTLDevice:options:")
     public static native CIContext contextWithMTLDeviceOptions(@Mapped(ObjCObjectMapper.class) MTLDevice device,
@@ -149,12 +176,14 @@ public class CIContext extends NSObject {
 
     /**
      * Create a context without specifying a destination CG/GL/Metal context.
-     * <p>
+     * 
      * Core Image will use an internal destination context when methods such
      * as [context render:to...] or [context createCGImage:...] are called.
-     * <p>
+     * 
      * The [context drawImage:...] render methods will not operate on this type
      * of context.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("contextWithOptions:")
@@ -225,6 +254,8 @@ public class CIContext extends NSObject {
      * The CGColorSpace must be kCGColorSpaceModelRGB or kCGColorSpaceModelMonochrome.
      * Supported options keys are kCGImageDestinationLossyCompressionQuality,
      * and the depth, disparity, and matte options.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("JPEGRepresentationOfImage:colorSpace:options:")
@@ -236,6 +267,8 @@ public class CIContext extends NSObject {
      * The CGColorSpace must be kCGColorSpaceModelRGB or kCGColorSpaceModelMonochrome
      * and must match the specified CIFormat.
      * No options keys are supported at this time.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("TIFFRepresentationOfImage:format:colorSpace:options:")
@@ -245,6 +278,8 @@ public class CIContext extends NSObject {
     /**
      * Frees any cached data (such as temporary images) associated with the
      * context. This also runs the garbage collector.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("clearCaches")
@@ -281,6 +316,8 @@ public class CIContext extends NSObject {
      * This will return null if fromRect is empty or infinite or the format isn't supported.
      * If deferred is NO, then the CIImage will be rendered once when this method is called.
      * If deferred is YES, then the CIImage will be rendered whenever the CGImage is rendered.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("createCGImage:fromRect:format:colorSpace:deferred:")
@@ -290,6 +327,9 @@ public class CIContext extends NSObject {
     /**
      * DEPRECATED, please use drawImage:inRect:fromRect: instead.
      * Render the subregion 'fromRect' of 'image' to point 'atPoint' in the context's destination.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
      */
     @Generated
     @Deprecated
@@ -304,10 +344,16 @@ public class CIContext extends NSObject {
     @Selector("drawImage:inRect:fromRect:")
     public native void drawImageInRectFromRect(CIImage image, @ByValue CGRect inRect, @ByValue CGRect fromRect);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("init")
     public native CIContext init();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithOptions:")
     public native CIContext initWithOptions(NSDictionary<String, ?> options);
@@ -315,6 +361,8 @@ public class CIContext extends NSObject {
     /**
      * Returns the maximum dimension for input images that can be processed
      * on the context.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("inputImageMaximumSize")
@@ -324,6 +372,8 @@ public class CIContext extends NSObject {
     /**
      * Returns the maximum dimension for image that can be rendered
      * on the context.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("outputImageMaximumSize")
@@ -352,6 +402,8 @@ public class CIContext extends NSObject {
      * CI will color match to the colorspace of the buffer.
      * otherwise
      * CI will color match to the context's output colorspace.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("render:toCVPixelBuffer:")
@@ -359,13 +411,11 @@ public class CIContext extends NSObject {
 
     /**
      * Render 'image' to the given CVPixelBufferRef.
-     * The 'bounds' parameter has the following behavior:
-     * In OS X and iOS 9 and later: The 'image' is rendered into 'buffer' so that
-     * point (0,0) of 'image' aligns to the lower left corner of 'buffer'.
-     * The 'bounds' acts like a clip rect to limit what region of 'buffer' is modified.
-     * In iOS 8 and earlier: The 'bounds' parameter acts to specify the region of 'image' to render.
-     * This region (regardless of its origin) is rendered at upper-left corner of 'buffer'.
+     * Point (0,0) in the image coordinate sysyem will align to the lower left corner of 'buffer'.
+     * The 'bounds' parameter acts as a clip rect to limit what region of 'buffer' is modified.
      * If 'colorSpace' is nil, CI will not color match to the destination.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("render:toCVPixelBuffer:bounds:colorSpace:")
@@ -380,6 +430,8 @@ public class CIContext extends NSObject {
      * This may impact system responsiveness and may result in higher memory usage if the image requires many passes to
      * render.
      * To avoid this impact, it is recommended to create a context using [CIContext contextWithMTLCommandQueue:].
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("render:toMTLTexture:commandBuffer:bounds:colorSpace:")
@@ -391,6 +443,8 @@ public class CIContext extends NSObject {
     /**
      * The working color space of the CIContext
      * The property will be null if the context was created with color management disabled.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("workingColorSpace")
@@ -398,6 +452,8 @@ public class CIContext extends NSObject {
 
     /**
      * The working pixel format of the CIContext used for intermediate buffers
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("workingFormat")
@@ -408,6 +464,8 @@ public class CIContext extends NSObject {
      * The CGColorSpace must be kCGColorSpaceModelRGB or kCGColorSpaceModelMonochrome.
      * Supported options keys are kCGImageDestinationLossyCompressionQuality,
      * and the depth, disparity, and matte options.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("writeJPEGRepresentationOfImage:toURL:colorSpace:options:error:")
@@ -420,6 +478,8 @@ public class CIContext extends NSObject {
      * The CGColorSpace must be kCGColorSpaceModelRGB or kCGColorSpaceModelMonochrome
      * and must match the specified CIFormat.
      * No options keys are supported at this time.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("writeTIFFRepresentationOfImage:toURL:format:colorSpace:options:error:")
@@ -433,6 +493,8 @@ public class CIContext extends NSObject {
      * and must match the specified CIFormat.
      * Supported options keys are kCGImageDestinationLossyCompressionQuality,
      * and the depth, disparity, and matte options.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("HEIFRepresentationOfImage:format:colorSpace:options:")
@@ -444,6 +506,8 @@ public class CIContext extends NSObject {
      * The CGColorSpace must be kCGColorSpaceModelRGB or kCGColorSpaceModelMonochrome
      * and must match the specified CIFormat.
      * No options keys are supported at this time.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("PNGRepresentationOfImage:format:colorSpace:options:")
@@ -456,6 +520,9 @@ public class CIContext extends NSObject {
      * By making this call, Core Image will ensure that
      * - any needed kernels will be compiled
      * - any intermedate buffers are allocated and marked volatile
+     * 
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("prepareRender:fromRect:toDestination:atPoint:error:")
@@ -465,10 +532,11 @@ public class CIContext extends NSObject {
 
     /**
      * Render 'image' to the given IOSurface.
-     * The 'bounds' parameter has the following behavior:
-     * The 'image' is rendered into 'surface' so that
-     * point (0,0) of 'image' aligns to the lower left corner of 'surface'.
-     * The 'bounds' acts like a clip rect to limit what region of 'surface' is modified.
+     * Point (0,0) in the image coordinate sysyem will align to the lower left corner of 'surface'.
+     * The 'bounds' parameter acts as a clip rect to limit what region of 'surface' is modified.
+     * If 'colorSpace' is nil, CI will not color match to the destination.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("render:toIOSurface:bounds:colorSpace:")
@@ -478,6 +546,9 @@ public class CIContext extends NSObject {
     /**
      * Fill the entire destination with black (0,0,0,1) if its alphaMode is None
      * or clear (0,0,0,0) if its alphaMode is Premultiplied or Unpremultiplied.
+     * 
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("startTaskToClear:error:")
@@ -488,30 +559,33 @@ public class CIContext extends NSObject {
      * Renders a portion of image to a point of destination
      * It renders as if 'image' is cropped to 'fromRect'
      * and the origin of the result is placed at 'atPoint'
-     * <p>
+     * 
      * If image.extent and fromRect are infinite, then it renders
      * so that point (0,0) of image is placed at 'atPoint'
-     * <p>
+     * 
      * MTLTexture-backed CIRenderDestinations are only supported by MTLTexture-backed CIContexts.
      * GLTexture-backed CIRenderDestinations are only supported by GLContext-backed CIContexts.
-     * <p>
+     * 
      * For contexts that are initialized with a command queue, this call will return as soon as all the work for the
      * render is enqueued on the
      * context's device.
      * Otherwise, it will return as soon as all the work is scheduled.
-     * <p>
+     * 
      * In many situations, after issuing a render, the client can use the destination
      * or its backing object without waiting for the enqueued work to complete.
      * For example, after rendering a surface CIRenderDestination, the surface can be passed
      * on for further processing by the GPU.
-     * <p>
+     * 
      * In other situations, the client may need to wait for the render to be complete.
      * For example, after rendering a surface CIRenderDestination, the surface can be accessed
      * by CPU code by calling IOSurfaceGetBytePointer only after the render is completed.
-     * <p>
+     * 
      * In this case the client can use the returned CIRenderTask like this:
      * CIRenderTask* task = [context render:...];
      * [task waitUntilCompletedAndReturnError:&error];
+     * 
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("startTaskToRender:fromRect:toDestination:atPoint:error:")
@@ -522,6 +596,9 @@ public class CIContext extends NSObject {
     /**
      * Renders an image to a destination so that point (0,0) of image.
      * is placed at point (0,0) of the destination.
+     * 
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("startTaskToRender:toDestination:error:")
@@ -534,6 +611,8 @@ public class CIContext extends NSObject {
      * and must match the specified CIFormat.
      * Supported options keys are kCGImageDestinationLossyCompressionQuality,
      * and the depth, disparity, and matte options.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("writeHEIFRepresentationOfImage:toURL:format:colorSpace:options:error:")
@@ -546,6 +625,8 @@ public class CIContext extends NSObject {
      * The CGColorSpace must be kCGColorSpaceModelRGB or kCGColorSpaceModelMonochrome
      * and must match the specified CIFormat.
      * No options keys are supported at this time.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("writePNGRepresentationOfImage:toURL:format:colorSpace:options:error:")
@@ -555,17 +636,25 @@ public class CIContext extends NSObject {
 
     /**
      * Create a CIContext that commits commands to a specific queue.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("contextWithMTLCommandQueue:")
     public static native CIContext contextWithMTLCommandQueue(
             @Mapped(ObjCObjectMapper.class) MTLCommandQueue commandQueue);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("contextWithMTLCommandQueue:options:")
     public static native CIContext contextWithMTLCommandQueueOptions(
             @Mapped(ObjCObjectMapper.class) MTLCommandQueue commandQueue, NSDictionary<String, ?> options);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("depthBlurEffectFilterForImage:disparityImage:portraitEffectsMatte:hairSemanticSegmentation:orientation:options:")
     public native CIFilter depthBlurEffectFilterForImageDisparityImagePortraitEffectsMatteHairSemanticSegmentationOrientationOptions(
@@ -574,13 +663,16 @@ public class CIContext extends NSObject {
 
     /**
      * Create and CIFilter instance for 'image' that can be used to apply the CIDepthBlurEffect.
-     * <p>
+     * 
      * The receiver context is user to render the image in order to get the facial landmarks
-     * <p>
+     * 
      * The 'orientation' parameter should be CGImagePropertyOrientation enum value
      * as defined in the TIFF spec.
-     * <p>
+     * 
      * The 'options' parameter is a key value/pair reserved for future use.
+     * 
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("depthBlurEffectFilterForImage:disparityImage:portraitEffectsMatte:orientation:options:")
@@ -591,6 +683,9 @@ public class CIContext extends NSObject {
     /**
      * This is the same as the method above expect it uses NSData to instantiate the image data
      * instead of the contents of a NSURL.
+     * 
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("depthBlurEffectFilterForImageData:options:")
@@ -598,15 +693,21 @@ public class CIContext extends NSObject {
 
     /**
      * Create and CIFilter instance for 'image' that can be used to apply the CIDepthBlurEffect.
-     * <p>
+     * 
      * The receiver context is user to render the image in order to get the facial landmarks
-     * <p>
+     * 
      * The 'options' parameter is a key value/pair reserved for future use.
+     * 
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("depthBlurEffectFilterForImageURL:options:")
     public native CIFilter depthBlurEffectFilterForImageURLOptions(NSURL url, NSDictionary<?, ?> options);
 
+    /**
+     * API-Since: 14.1
+     */
     @Generated
     @Selector("depthBlurEffectFilterForImage:disparityImage:portraitEffectsMatte:hairSemanticSegmentation:glassesMatte:gainMap:orientation:options:")
     public native CIFilter depthBlurEffectFilterForImageDisparityImagePortraitEffectsMatteHairSemanticSegmentationGlassesMatteGainMapOrientationOptions(
@@ -618,6 +719,8 @@ public class CIContext extends NSObject {
      * The CGColorSpace must be kCGColorSpaceModelRGB or kCGColorSpaceModelMonochrome.
      * Supported options keys are kCGImageDestinationLossyCompressionQuality,
      * and the depth, disparity, and matte options.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("HEIF10RepresentationOfImage:colorSpace:options:error:")
@@ -629,6 +732,8 @@ public class CIContext extends NSObject {
      * The CGColorSpace must be kCGColorSpaceModelRGB or kCGColorSpaceModelMonochrome.
      * Supported options keys are kCGImageDestinationLossyCompressionQuality,
      * and the depth, disparity, and matte options.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("writeHEIF10RepresentationOfImage:toURL:colorSpace:options:error:")

@@ -11,6 +11,9 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("CoreML")
 @Runtime(ObjCRuntime.class)

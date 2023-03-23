@@ -38,7 +38,7 @@ public interface UIAppearance {
      * To customize the appearance of all instances of a class, send the relevant appearance modification messages to
      * the appearance proxy for the class. For example, to modify the bar tint color for all UINavigationBar instances:
      * [[UINavigationBar appearance] setBarTintColor:myColor];
-     * <p>
+     * 
      * Note for iOS7: On iOS7 the tintColor property has moved to UIView, and now has special inherited behavior
      * described in UIView.h.
      * This inherited behavior can conflict with the appearance proxy, and therefore tintColor is now disallowed with
@@ -49,11 +49,18 @@ public interface UIAppearance {
     @ProtocolClassMethod("appearance")
     UIAppearance _appearance();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("appearanceForTraitCollection:")
     @ProtocolClassMethod("appearanceForTraitCollection")
     UIAppearance _appearanceForTraitCollection(UITraitCollection trait);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     */
     @Generated
     @Variadic()
     @Deprecated
@@ -62,6 +69,9 @@ public interface UIAppearance {
     UIAppearance _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
             @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
@@ -72,18 +82,21 @@ public interface UIAppearance {
      * To customize the appearances for instances of a class contained within an instance of a container class, or
      * instances in a hierarchy, use +appearanceWhenContainedInInstancesOfClasses: for the appropriate appearance proxy.
      * For example:
-     * <p>
+     * 
      * [[UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[UISplitViewController class]]]
      * setBarTintColor:myColor];
      * [[UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[UITabBarController class],
      * [UISplitViewController class]]] setBarTintColor:myTabbedNavBarColor];
-     * <p>
+     * 
      * In any given view hierarchy the outermost appearance proxy wins. Specificity (depth of the chain) is the
      * tie-breaker.
-     * <p>
+     * 
      * In other words, the containment statement is treated as a partial ordering. Given a concrete ordering (actual
      * subview hierarchy), we select the partial ordering that is the first unique match when reading the actual
      * hierarchy from the window down.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
      */
     @Generated
     @Variadic()
@@ -93,6 +106,9 @@ public interface UIAppearance {
     UIAppearance _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
             Object... varargs);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")

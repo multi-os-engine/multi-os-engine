@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +154,8 @@ public class PHAdjustmentData extends NSObject {
 
     /**
      * Binary blob that describes the adjustments applied to the asset.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("data")
@@ -158,11 +163,16 @@ public class PHAdjustmentData extends NSObject {
 
     /**
      * Used to identify the format of the data blob (e.g. identifier "com.apple.myapp" and version "1.0")
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("formatIdentifier")
     public native String formatIdentifier();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("formatVersion")
     public native String formatVersion();
@@ -171,6 +181,9 @@ public class PHAdjustmentData extends NSObject {
     @Selector("init")
     public native PHAdjustmentData init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithFormatIdentifier:formatVersion:data:")
     public native PHAdjustmentData initWithFormatIdentifierFormatVersionData(String formatIdentifier,

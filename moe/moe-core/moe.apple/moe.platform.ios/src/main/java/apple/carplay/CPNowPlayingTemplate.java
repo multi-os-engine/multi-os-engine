@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -119,9 +122,9 @@ public class CPNowPlayingTemplate extends CPTemplate {
     /**
      * A Boolean value indicating whether the string that displays the album and artist above the playback controls
      * should be a tappable button
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button.
-     * <p>
+     * 
      * Defaults to NO.
      */
     @Generated
@@ -134,9 +137,9 @@ public class CPNowPlayingTemplate extends CPTemplate {
 
     /**
      * A Boolean value indicating whether the "Up Next" button on the upper right of a Now Playing view is enabled.
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button.
-     * <p>
+     * 
      * Defaults to NO.
      */
     @Generated
@@ -154,9 +157,9 @@ public class CPNowPlayingTemplate extends CPTemplate {
 
     /**
      * Playback control buttons on the Now Playing screen, like repeat, shuffle, and more.
-     * <p>
+     * 
      * Your application may specify a maximum of 5 now playing buttons.
-     * <p>
+     * 
      * Buttons are filled in array order, from the leading side to the trailing side of the screen.
      */
     @Generated
@@ -181,9 +184,9 @@ public class CPNowPlayingTemplate extends CPTemplate {
     /**
      * A Boolean value indicating whether the string that displays the album and artist above the playback controls
      * should be a tappable button
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button.
-     * <p>
+     * 
      * Defaults to NO.
      */
     @Generated
@@ -192,9 +195,9 @@ public class CPNowPlayingTemplate extends CPTemplate {
 
     /**
      * A Boolean value indicating whether the "Up Next" button on the upper right of a Now Playing view is enabled.
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button.
-     * <p>
+     * 
      * Defaults to NO.
      */
     @Generated
@@ -205,7 +208,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
      * If your template elects to display the "Up Next" button, you may optionally specify a string
      * indicating the title for the up next button. If no title is specified, a default system title
      * will be used.
-     *
+     * 
      * @see -[CPNowPlayingTemplate upNextButtonEnabled].
      */
     @Generated
@@ -219,10 +222,10 @@ public class CPNowPlayingTemplate extends CPTemplate {
     /**
      * Access the shared now playing template for your app. Instead of creating your own
      * now playing template, you should configure the properties of this shared instance.
-     * <p>
+     * 
      * You should present this shared instance when your app needs to present now playing,
      * for example in response to the user selecting a playable item.
-     * <p>
+     * 
      * When the system needs to present now playing on behalf of your app, it will present
      * this shared instance.
      */
@@ -248,7 +251,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
      * If your template elects to display the "Up Next" button, you may optionally specify a string
      * indicating the title for the up next button. If no title is specified, a default system title
      * will be used.
-     *
+     * 
      * @see -[CPNowPlayingTemplate upNextButtonEnabled].
      */
     @Generated

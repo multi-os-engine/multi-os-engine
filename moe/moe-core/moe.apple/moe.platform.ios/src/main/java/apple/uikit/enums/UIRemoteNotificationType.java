@@ -19,13 +19,49 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 3.0
+ * Deprecated-Since: 8.0
+ * Deprecated-Message: Use UserNotifications Framework's UNAuthorizationOptions for user notifications and
+ * registerForRemoteNotifications for receiving remote notifications instead.
+ */
 @Deprecated
 @Generated
 public final class UIRemoteNotificationType {
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use UserNotifications Framework's UNAuthorizationOptions for user notifications and
+     * registerForRemoteNotifications for receiving remote notifications instead.
+     */
     @Deprecated @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use UserNotifications Framework's UNAuthorizationOptions for user notifications and
+     * registerForRemoteNotifications for receiving remote notifications instead.
+     */
     @Deprecated @Generated @NUInt public static final long Badge = 0x0000000000000001L;
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use UserNotifications Framework's UNAuthorizationOptions for user notifications and
+     * registerForRemoteNotifications for receiving remote notifications instead.
+     */
     @Deprecated @Generated @NUInt public static final long Sound = 0x0000000000000002L;
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use UserNotifications Framework's UNAuthorizationOptions for user notifications and
+     * registerForRemoteNotifications for receiving remote notifications instead.
+     */
     @Deprecated @Generated @NUInt public static final long Alert = 0x0000000000000004L;
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use UserNotifications Framework's UNAuthorizationOptions for user notifications and
+     * registerForRemoteNotifications for receiving remote notifications instead.
+     */
     @Deprecated @Generated @NUInt public static final long NewsstandContentAvailability = 0x0000000000000008L;
 
     @Generated

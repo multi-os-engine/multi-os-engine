@@ -5,8 +5,10 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HKCategoryValueAppetiteChanges
- * <p>
+ * 
  * Set of values to indicate the direction of appetite changes.
+ * 
+ * API-Since: 13.6
  */
 @Generated
 public final class HKCategoryValueAppetiteChanges {
@@ -14,8 +16,20 @@ public final class HKCategoryValueAppetiteChanges {
     private HKCategoryValueAppetiteChanges() {
     }
 
+    /**
+     * API-Since: 13.6
+     */
     @Generated @NInt public static final long Unspecified = 0x0000000000000000L;
+    /**
+     * API-Since: 13.6
+     */
     @Generated @NInt public static final long NoChange = 0x0000000000000001L;
+    /**
+     * API-Since: 13.6
+     */
     @Generated @NInt public static final long Decreased = 0x0000000000000002L;
+    /**
+     * API-Since: 13.6
+     */
     @Generated @NInt public static final long Increased = 0x0000000000000003L;
 }

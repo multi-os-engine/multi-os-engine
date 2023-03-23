@@ -12,8 +12,22 @@ public final class NFCFeliCaEncryptionId {
     private NFCFeliCaEncryptionId() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long NFCFeliCaEncryptionIdAES = 0x000000000000004FL;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long NFCFeliCaEncryptionIdAES_DES = 0x0000000000000041L;
-    @Generated @NInt public static final long EncryptionIdAES = 0x000000000000004FL;
-    @Generated @NInt public static final long EncryptionIdAES_DES = 0x0000000000000041L;
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated @Generated @NInt public static final long EncryptionIdAES = 0x000000000000004FL;
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated @Generated @NInt public static final long EncryptionIdAES_DES = 0x0000000000000041L;
 }

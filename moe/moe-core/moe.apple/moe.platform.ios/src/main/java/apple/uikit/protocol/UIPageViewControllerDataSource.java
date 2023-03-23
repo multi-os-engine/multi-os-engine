@@ -52,6 +52,8 @@ public interface UIPageViewControllerDataSource {
 
     /**
      * The number of items reflected in the page indicator.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @IsOptional
@@ -63,6 +65,8 @@ public interface UIPageViewControllerDataSource {
 
     /**
      * The selected item reflected in the page indicator.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @IsOptional

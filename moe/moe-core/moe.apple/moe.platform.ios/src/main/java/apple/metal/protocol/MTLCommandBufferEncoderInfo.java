@@ -11,6 +11,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * Provides execution status information for a Metal command encoder.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Metal")

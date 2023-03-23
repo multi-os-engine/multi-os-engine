@@ -25,15 +25,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEAmbientMixerDefinition
- * <p>
+ * 
  * Ambient mixer definition.
- * <p>
+ * 
  * Ambient mixers render audio with spatialization but without environmental effects.
  * Use ambient mixers for content that isn't being simulated in the environment,
  * but should still sound like it's coming from somewhere out in space.
  * [@note]
  * Ambient mixers do not support distance modeling or directivity modeling.
  * Clients can however set the orientation at initialization time.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -104,7 +106,7 @@ public class PHASEAmbientMixerDefinition extends PHASEMixerDefinition {
 
     /**
      * [@property] inputChannelLayout
-     * <p>
+     * 
      * A readonly value of the input channel layout this mixer was initialized with.
      */
     @Generated

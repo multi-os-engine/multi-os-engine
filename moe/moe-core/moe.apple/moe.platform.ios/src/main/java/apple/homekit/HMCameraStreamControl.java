@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class can be used to control the stream from a camera.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("HomeKit")

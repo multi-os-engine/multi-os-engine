@@ -42,10 +42,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NSURLRequest
- * <p>
+ * 
  * An NSURLRequest object represents a URL load request in a
  * manner independent of protocol and URL scheme.
- * <p>
+ * 
  * NSURLRequest encapsulates two basic data elements about
  * a URL load request:
  * <ul>
@@ -70,6 +70,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Objects of this class are used to create NSURLConnection instances,
  * which can are used to perform the load of a URL, or as input to the
  * NSURLConnection class method which performs synchronous loads.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")
@@ -162,14 +164,14 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     /**
      * requestWithURL:
-     * <p>
+     * 
      * Allocates and initializes an NSURLRequest with the given
      * URL.
-     * <p>
+     * 
      * Default values are used for cache policy
      * (NSURLRequestUseProtocolCachePolicy) and timeout interval (60
      * seconds).
-     *
+     * 
      * @param URL The URL for the request.
      * @return A newly-created and autoreleased NSURLRequest instance.
      */
@@ -179,10 +181,10 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     /**
      * requestWithURL:cachePolicy:timeoutInterval:
-     * <p>
+     * 
      * Allocates and initializes a NSURLRequest with the given
      * URL and cache policy.
-     *
+     * 
      * @param URL             The URL for the request.
      * @param cachePolicy     The cache policy for the request.
      * @param timeoutInterval The timeout interval for the request. See the
@@ -222,10 +224,10 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     /**
      * Returns the request body data of the receiver.
-     * <p>
+     * 
      * This data is sent as the message body of the request, as
      * in done in an HTTP POST request.
-     *
+     * 
      * @return The request body data of the receiver.
      */
     @Generated
@@ -235,14 +237,14 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     /**
      * Returns the request body stream of the receiver
      * if any has been set
-     * <p>
+     * 
      * The stream is returned for examination only; it is
      * not safe for the caller to manipulate the stream in any way. Also
      * note that the HTTPBodyStream and HTTPBody are mutually exclusive - only
      * one can be set on a given request. Also note that the body stream is
      * preserved across copies, but is LOST when the request is coded via the
      * NSCoding protocol
-     *
+     * 
      * @return The request body stream of the receiver.
      */
     @Generated
@@ -251,7 +253,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     /**
      * Returns the HTTP request method of the receiver.
-     *
+     * 
      * @return the HTTP request method of the receiver.
      */
     @Generated
@@ -261,9 +263,9 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     /**
      * Determine whether default cookie handling will happen for
      * this request.
-     * <p>
+     * 
      * NOTE: This value is not used prior to 10.3
-     *
+     * 
      * @return YES if cookies will be sent with and set for this request;
      *         otherwise NO.
      */
@@ -274,10 +276,12 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     /**
      * Reports whether the receiver is not expected to wait for the
      * previous response before transmitting.
-     *
+     * 
      * @return YES if the receiver should transmit before the previous response
      *         is received. NO if the receiver should wait for the previous response
      *         before transmitting.
+     * 
+     *         API-Since: 4.0
      */
     @Generated
     @Selector("HTTPShouldUsePipelining")
@@ -285,7 +289,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     /**
      * Returns the URL of the receiver.
-     *
+     * 
      * @return The URL of the receiver.
      */
     @Generated
@@ -295,7 +299,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     /**
      * Returns a dictionary containing all the HTTP header fields
      * of the receiver.
-     *
+     * 
      * @return a dictionary containing all the HTTP header fields of the
      *         receiver.
      */
@@ -306,9 +310,11 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     /**
      * returns whether a connection created with this request is allowed to use
      * the built in cellular radios (if present).
-     *
+     * 
      * @return YES if the receiver is allowed to use the built in cellular radios to
-     *         satify the request, NO otherwise.
+     *         satisfy the request, NO otherwise.
+     * 
+     *         API-Since: 6.0
      */
     @Generated
     @Selector("allowsCellularAccess")
@@ -316,7 +322,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     /**
      * Returns the cache policy of the receiver.
-     *
+     * 
      * @return The cache policy of the receiver.
      */
     @Generated
@@ -344,13 +350,13 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     /**
      * initWithURL:
-     * <p>
+     * 
      * Initializes an NSURLRequest with the given URL.
-     * <p>
+     * 
      * Default values are used for cache policy
      * (NSURLRequestUseProtocolCachePolicy) and timeout interval (60
      * seconds).
-     *
+     * 
      * @param URL The URL for the request.
      * @return An initialized NSURLRequest.
      */
@@ -360,13 +366,13 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     /**
      * initWithURL:
-     * <p>
+     * 
      * Initializes an NSURLRequest with the given URL and
      * cache policy.
-     * <p>
+     * 
      * This is the designated initializer for the
      * NSURLRequest class.
-     *
+     * 
      * @param URL             The URL for the request.
      * @param cachePolicy     The cache policy for the request.
      * @param timeoutInterval The timeout interval for the request. See the
@@ -381,12 +387,12 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     /**
      * The main document URL associated with this load.
-     * <p>
+     * 
      * This URL is used for the cookie "same domain as main
      * document" policy, and attributing the request as a sub-resource
      * of a user-specified URL. There may also be other future uses.
      * See setMainDocumentURL:
-     *
+     * 
      * @return The main document URL.
      */
     @Generated
@@ -401,11 +407,13 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     /**
      * Returns the NSURLRequestNetworkServiceType associated with this request.
-     * <p>
+     * 
      * This will return NSURLNetworkServiceTypeDefault for requests that have
      * not explicitly set a networkServiceType (using the setNetworkServiceType method).
-     *
+     * 
      * @return The NSURLRequestNetworkServiceType associated with this request.
+     * 
+     *         API-Since: 4.0
      */
     @Generated
     @Selector("networkServiceType")
@@ -420,9 +428,9 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     /**
      * Returns the timeout interval of the receiver.
-     * <p>
+     * 
      * The timeout interval specifies the limit on the idle
-     * interval alloted to a request in the process of loading. The "idle
+     * interval allotted to a request in the process of loading. The "idle
      * interval" is defined as the period of time that has passed since the
      * last instance of load activity occurred for a request that is in the
      * process of loading. Hence, when an instance of load activity occurs
@@ -431,7 +439,7 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
      * becomes greater than or equal to the timeout interval, the request
      * is considered to have timed out. This timeout interval is measured
      * in seconds.
-     *
+     * 
      * @return The timeout interval of the receiver.
      */
     @Generated
@@ -440,11 +448,11 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     /**
      * valueForHTTPHeaderField:
-     * <p>
+     * 
      * Returns the value which corresponds to the given header
      * field. Note that, in keeping with the HTTP RFC, HTTP header field
      * names are case-insensitive.
-     *
+     * 
      * @param field the header field name to use for the lookup
      *              (case-insensitive).
      * @return the value associated with the given header field, or nil if
@@ -457,9 +465,11 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     /**
      * returns whether a connection created with this request is allowed to use
      * network interfaces which have been marked as constrained.
-     *
+     * 
      * @return YES if the receiver is allowed to use an interface marked as constrained to
-     *         satify the request, NO otherwise.
+     *         satisfy the request, NO otherwise.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("allowsConstrainedNetworkAccess")
@@ -468,9 +478,11 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     /**
      * returns whether a connection created with this request is allowed to use
      * network interfaces which have been marked as expensive.
-     *
+     * 
      * @return YES if the receiver is allowed to use an interface marked as expensive to
-     *         satify the request, NO otherwise.
+     *         satisfy the request, NO otherwise.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("allowsExpensiveNetworkAccess")
@@ -479,9 +491,11 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
     /**
      * returns whether we assume that server supports HTTP/3. Enables QUIC
      * racing without HTTP/3 service discovery.
-     *
+     * 
      * @return YES if server endpoint is known to support HTTP/3. Defaults to NO.
      *         The default may be YES in a future OS update.
+     * 
+     *         API-Since: 14.5
      */
     @Generated
     @Selector("assumesHTTP3Capable")
@@ -489,14 +503,28 @@ public class NSURLRequest extends NSObject implements NSSecureCoding, NSCopying,
 
     /**
      * Returns the NSURLRequestAttribution associated with this request.
-     * <p>
+     * 
      * This will return NSURLRequestAttributionDeveloper for requests that
      * have not explicitly set an attribution.
-     *
+     * 
      * @return The NSURLRequestAttribution associated with this request.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("attribution")
     @NUInt
     public native long attribution();
+
+    /**
+     * sets whether a request is required to do DNSSEC validation during DNS lookup.
+     * 
+     * YES, if the DNS lookup for this request should require DNSSEC validation,
+     * No otherwise. Defaults to NO.
+     * 
+     * API-Since: 16.1
+     */
+    @Generated
+    @Selector("requiresDNSSECValidation")
+    public native boolean requiresDNSSECValidation();
 }

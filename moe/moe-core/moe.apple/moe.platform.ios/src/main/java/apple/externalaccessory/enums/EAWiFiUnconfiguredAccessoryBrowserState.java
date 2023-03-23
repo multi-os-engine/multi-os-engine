@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] EAWiFiUnconfiguredAccessoryBrowserState
- * <p>
+ * 
  * Represents the current state of a EAWiFiUnconfiguredAccessoryBrowser.
- * <p>
+ * 
  * [@constant] EAWiFiUnconfiguredAccessoryBrowserStateWiFiUnavailable Wi-Fi is unavailable due to the user placing the
  * device in Airplane Mode or explicitly turning Wi-Fi off.
  * [@constant] EAWiFiUnconfiguredAccessoryBrowserStateStopped The browser is not actively searching for unconfigured

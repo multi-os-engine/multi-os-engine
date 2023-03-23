@@ -27,10 +27,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSImageSubtract
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * Specifies the subtraction operator.
  * For each pixel in the primary source image (x) and each pixel in a secondary source image (y),
  * it applies the following function: result = ((primaryScale * x) - (secondaryScale * y)) + bias.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -109,7 +111,7 @@ public class MPSImageSubtract extends MPSImageArithmetic {
 
     /**
      * Initialize the subtraction operator
-     *
+     * 
      * @param device The device the filter will run on.
      * @return A valid MPSImageSubtract object or nil, if failure.
      */

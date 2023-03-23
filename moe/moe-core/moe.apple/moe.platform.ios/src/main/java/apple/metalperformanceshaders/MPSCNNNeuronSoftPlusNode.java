@@ -24,11 +24,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A node representing a MPSCNNNeuronSoftPlus kernel
- * <p>
+ * 
  * For each pixel, applies the following function:
  * [@code]
  * f(x) = a * log(1 + e^(b * x))
  * [@endcode]
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -106,7 +108,7 @@ public class MPSCNNNeuronSoftPlusNode extends MPSCNNNeuronNode {
 
     /**
      * Init a node representing a MPSCNNNeuronSoftPlus kernel
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param a          See discussion above.
      * @param b          See discussion above.

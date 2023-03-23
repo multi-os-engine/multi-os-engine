@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -101,6 +104,8 @@ public class PHCollectionList extends PHCollection {
      * A PHAssetCollectionTypeMoment will be contained by a PHCollectionListSubtypeMomentListCluster and a
      * PHCollectionListSubtypeMomentListYear
      * Non-moment PHAssetCollections will only be contained by a single collection list
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fetchCollectionListsContainingCollection:options:")
@@ -110,6 +115,8 @@ public class PHCollectionList extends PHCollection {
     /**
      * Fetch collection lists of a single type matching the provided local identifiers (type is inferred from the local
      * identifiers)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fetchCollectionListsWithLocalIdentifiers:options:")
@@ -119,6 +126,8 @@ public class PHCollectionList extends PHCollection {
     /**
      * Fetch asset collections of a single type and subtype provided (use PHCollectionListSubtypeAny to match all
      * subtypes)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fetchCollectionListsWithType:subtype:options:")
@@ -130,11 +139,23 @@ public class PHCollectionList extends PHCollection {
     public static native PHFetchResult<? extends PHCollection> fetchCollectionsInCollectionListOptions(
             PHCollectionList collectionList, PHFetchOptions options);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Will be removed in a future release
+     */
+    @Deprecated
     @Generated
     @Selector("fetchMomentListsWithSubtype:containingMoment:options:")
     public static native PHFetchResult<? extends PHCollectionList> fetchMomentListsWithSubtypeContainingMomentOptions(
             @NInt long momentListSubtype, PHAssetCollection moment, PHFetchOptions options);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Will be removed in a future release
+     */
+    @Deprecated
     @Generated
     @Selector("fetchMomentListsWithSubtype:options:")
     public static native PHFetchResult<? extends PHCollectionList> fetchMomentListsWithSubtypeOptions(
@@ -194,12 +215,17 @@ public class PHCollectionList extends PHCollection {
 
     /**
      * These collection lists are only in-memory and are not persisted to disk
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("transientCollectionListWithCollections:title:")
     public static native PHCollectionList transientCollectionListWithCollectionsTitle(
             NSArray<? extends PHCollection> collections, String title);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("transientCollectionListWithCollectionsFetchResult:title:")
     public static native PHCollectionList transientCollectionListWithCollectionsFetchResultTitle(
@@ -210,16 +236,25 @@ public class PHCollectionList extends PHCollection {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("collectionListSubtype")
     @NInt
     public native long collectionListSubtype();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("collectionListType")
     @NInt
     public native long collectionListType();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
@@ -228,10 +263,16 @@ public class PHCollectionList extends PHCollection {
     @Selector("init")
     public native PHCollectionList init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("localizedLocationNames")
     public native NSArray<String> localizedLocationNames();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("startDate")
     public native NSDate startDate();

@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.2
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -115,6 +118,9 @@ public class SKProductSubscriptionPeriod extends NSObject {
     @Selector("new")
     public static native SKProductSubscriptionPeriod new_objc();
 
+    /**
+     * API-Since: 11.2
+     */
     @Generated
     @Selector("numberOfUnits")
     @NUInt
@@ -136,6 +142,9 @@ public class SKProductSubscriptionPeriod extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 11.2
+     */
     @Generated
     @Selector("unit")
     @NUInt

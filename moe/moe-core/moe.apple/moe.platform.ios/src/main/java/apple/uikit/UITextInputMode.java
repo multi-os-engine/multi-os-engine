@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * The UITextInputMode class should not be subclassed. It is to allow other in-app functionality to adapt
  * based on the keyboard language. Different UITextInputMode objects may have the same primaryLanguage.
+ * 
+ * API-Since: 4.2
  */
 @Generated
 @Library("UIKit")
@@ -104,6 +106,9 @@ public class UITextInputMode extends NSObject implements NSSecureCoding {
 
     /**
      * The current input mode. Nil if unset.
+     * 
+     * API-Since: 4.2
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated

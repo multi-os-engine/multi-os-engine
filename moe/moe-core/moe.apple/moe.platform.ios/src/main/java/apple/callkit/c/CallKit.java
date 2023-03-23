@@ -39,26 +39,41 @@ public final class CallKit {
     private CallKit() {
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CXErrorDomain();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CXErrorDomainIncomingCall();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CXErrorDomainRequestTransaction();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CXErrorDomainCallDirectoryManager();
 
+    /**
+     * API-Since: 14.5
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

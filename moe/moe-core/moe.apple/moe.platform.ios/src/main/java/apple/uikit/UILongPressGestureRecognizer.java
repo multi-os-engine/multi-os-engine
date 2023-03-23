@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Begins: when numberOfTouchesRequired have tapped numberOfTapsRequired times and been held for minimumPressDuration
  * Changes: when a finger moves
  * Ends: when a finger is lifted
+ * 
+ * API-Since: 3.2
  */
 @Generated
 @Library("UIKit")

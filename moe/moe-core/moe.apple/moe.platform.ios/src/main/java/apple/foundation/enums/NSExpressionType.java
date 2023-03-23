@@ -49,22 +49,40 @@ public final class NSExpressionType {
     /**
      * Expression that returns the result of doing a unionSet: on two expressions that evaluate to flat collections
      * (arrays or sets)
+     * 
+     * API-Since: 3.0
      */
     @Generated @NUInt public static final long UnionSetExpressionType = 0x0000000000000005L;
     /**
      * Expression that returns the result of doing an intersectSet: on two expressions that evaluate to flat collections
      * (arrays or sets)
+     * 
+     * API-Since: 3.0
      */
     @Generated @NUInt public static final long IntersectSetExpressionType = 0x0000000000000006L;
     /**
      * Expression that returns the result of doing a minusSet: on two expressions that evaluate to flat collections
      * (arrays or sets)
+     * 
+     * API-Since: 3.0
      */
     @Generated @NUInt public static final long MinusSetExpressionType = 0x0000000000000007L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NUInt public static final long SubqueryExpressionType = 0x000000000000000DL;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NUInt public static final long AggregateExpressionType = 0x000000000000000EL;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NUInt public static final long AnyKeyExpressionType = 0x000000000000000FL;
     @Generated @NUInt public static final long BlockExpressionType = 0x0000000000000013L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long ConditionalExpressionType = 0x0000000000000014L;
 
     @Generated

@@ -24,12 +24,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * OSLogPosition
- * <p>
+ * 
  * An opaque abstraction representing a point in a sequence of
  * entries in the unified logging system.
- * <p>
+ * 
  * Generate positions with OSLogStore instance methods and use them
  * to start viewing entries from a particular starting point.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("OSLog")

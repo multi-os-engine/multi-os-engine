@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -53,6 +56,9 @@ public class SKArcadeService extends NSObject {
     @Selector("allocWithZone:")
     public static native SKArcadeService allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("arcadeSubscriptionStatusWithNonce:resultHandler:")
     public static native void arcadeSubscriptionStatusWithNonceResultHandler(long nonce,
@@ -131,6 +137,9 @@ public class SKArcadeService extends NSObject {
     @Selector("new")
     public static native SKArcadeService new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("registerArcadeAppWithRandomFromLib:randomFromLibLength:resultHandler:")
     public static native void registerArcadeAppWithRandomFromLibRandomFromLibLengthResultHandler(NSData randomFromLib,
@@ -145,6 +154,9 @@ public class SKArcadeService extends NSObject {
                 int randomFromFPLength, NSData cmacOfAppPID, int cmacOfAppPIDLength, NSError error);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("repairArcadeApp")
     public static native void repairArcadeApp();

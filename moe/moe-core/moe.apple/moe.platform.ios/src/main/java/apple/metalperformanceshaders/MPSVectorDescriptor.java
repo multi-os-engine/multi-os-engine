@@ -24,12 +24,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSVectorDescriptor
- * <p>
+ * 
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * A MPSVectorDescriptor describes the length and data type of a
  * an array of 1-dimensional vectors. All vectors are stored as
  * contiguous arrays of data.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -83,7 +85,7 @@ public class MPSVectorDescriptor extends NSObject {
 
     /**
      * [@property] dataType
-     * <p>
+     * 
      * The type of the data which makes up the values of the vector.
      */
     @Generated
@@ -130,7 +132,7 @@ public class MPSVectorDescriptor extends NSObject {
 
     /**
      * [@property] length
-     * <p>
+     * 
      * The number of elements in the vector.
      */
     @Generated
@@ -153,7 +155,7 @@ public class MPSVectorDescriptor extends NSObject {
 
     /**
      * [@property] dataType
-     * <p>
+     * 
      * The type of the data which makes up the values of the vector.
      */
     @Generated
@@ -162,7 +164,7 @@ public class MPSVectorDescriptor extends NSObject {
 
     /**
      * [@property] length
-     * <p>
+     * 
      * The number of elements in the vector.
      */
     @Generated
@@ -179,7 +181,7 @@ public class MPSVectorDescriptor extends NSObject {
 
     /**
      * [@property] vectorBytes
-     * <p>
+     * 
      * The stride, in bytes, between corresponding elements of
      * consecutive vectors. Must be a multiple of the element size
      */
@@ -191,14 +193,15 @@ public class MPSVectorDescriptor extends NSObject {
     /**
      * Return the recommended stride, in bytes, to be used for an array
      * of vectors of a given length.
-     * <p>
+     * 
      * To achieve best performance the optimal stride between vectors within an array of
      * vectors is not necessarily equivalent to the number of elements per vector. This method
      * returns the stride, in bytes, which gives best performance for a given vector length.
      * Using this stride to construct your array is recommended, but not required (provided that
      * the stride used is still large enough to allocate a full vector of data).
-     *
+     * 
      * @param length   The number of elements in a single vector.
+     * 
      * @param dataType The type of vector data values.
      */
     @Generated
@@ -208,11 +211,12 @@ public class MPSVectorDescriptor extends NSObject {
 
     /**
      * Create a MPSVectorDescriptor with the specified length and data type.
-     * <p>
+     * 
      * Use this function for creating a descriptor of a MPSVector object
      * containing a single vector.
-     *
+     * 
      * @param length   The number of elements in a single vector.
+     * 
      * @param dataType The type of the data to be stored in the vector.
      */
     @Generated
@@ -221,15 +225,18 @@ public class MPSVectorDescriptor extends NSObject {
 
     /**
      * Create a MPSVectorDescriptor with the specified length and data type.
-     * <p>
+     * 
      * For performance considerations the optimal stride between vectors may not necessarily be equal
      * to the vector length. The MPSVectorDescriptor class provides a method which
      * may be used to determine this value, see the vectorBytesForLength API.
-     *
+     * 
      * @param length      The number of elements in a single vector.
+     * 
      * @param vectors     The number of vectors in the MPSVector object.
+     * 
      * @param vectorBytes The number of bytes between starting elements of consecutive
      *                    vectors.
+     * 
      * @param dataType    The type of the data to be stored in the vector.
      */
     @Generated
@@ -239,7 +246,7 @@ public class MPSVectorDescriptor extends NSObject {
 
     /**
      * [@property] vectors
-     * <p>
+     * 
      * The number of vectors.
      */
     @Generated

@@ -21,11 +21,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.avfoundation.AVCaptureDevice;
 
 /**
  * A configuration for running orientation tracking.
- * <p>
+ * 
  * Orientation tracking provides 3 degrees of freedom tracking of the device.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ARKit")
@@ -147,8 +150,10 @@ public class AROrientationTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable continuous auto focus.
-     * <p>
+     * 
      * Enabled by default.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("isAutoFocusEnabled")
@@ -156,8 +161,10 @@ public class AROrientationTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable continuous auto focus.
-     * <p>
+     * 
      * Enabled by default.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setAutoFocusEnabled:")
@@ -170,4 +177,16 @@ public class AROrientationTrackingConfiguration extends ARConfiguration {
     @Generated
     @Selector("supportsFrameSemantics:")
     public static native boolean supportsFrameSemantics(@NUInt long frameSemantics);
+
+    @Generated
+    @Selector("configurableCaptureDeviceForPrimaryCamera")
+    public static native AVCaptureDevice configurableCaptureDeviceForPrimaryCamera();
+
+    @Generated
+    @Selector("recommendedVideoFormatFor4KResolution")
+    public static native ARVideoFormat recommendedVideoFormatFor4KResolution();
+
+    @Generated
+    @Selector("recommendedVideoFormatForHighResolutionFrameCapturing")
+    public static native ARVideoFormat recommendedVideoFormatForHighResolutionFrameCapturing();
 }

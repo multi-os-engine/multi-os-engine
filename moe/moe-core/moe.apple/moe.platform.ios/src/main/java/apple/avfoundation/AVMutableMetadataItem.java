@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -144,7 +147,7 @@ public class AVMutableMetadataItem extends AVMetadataItem {
 
     /**
      * metadataItem
-     * <p>
+     * 
      * Returns an instance of AVMutableMetadataItem.
      */
     @Generated
@@ -212,6 +215,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     /**
      * indicates the data type of the metadata item's value. Publicly defined data types are declared in
      * <CoreMedia/CMMetadata.h>
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("dataType")
@@ -219,6 +224,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
 
     /**
      * indicates the duration of the metadata item
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("duration")
@@ -228,6 +235,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     /**
      * indicates the IETF BCP 47 (RFC 4646) language identifier of the metadata item; may be nil if no language tag
      * information is available
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("extendedLanguageTag")
@@ -243,7 +252,9 @@ public class AVMutableMetadataItem extends AVMetadataItem {
 
     /**
      * Indicates the identifier of the metadata item. Publicly defined identifiers are declared in
-     * AVMetadataIdentifiers.h.
+     * AVMetadataIdentifiers.h. This property throws an exception if identifier is not of the form \"<keySpace>/<key>\".
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("identifier")
@@ -281,6 +292,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     /**
      * indicates the data type of the metadata item's value. Publicly defined data types are declared in
      * <CoreMedia/CMMetadata.h>
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDataType:")
@@ -288,6 +301,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
 
     /**
      * indicates the duration of the metadata item
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setDuration:")
@@ -296,6 +311,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
     /**
      * indicates the IETF BCP 47 (RFC 4646) language identifier of the metadata item; may be nil if no language tag
      * information is available
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setExtendedLanguageTag:")
@@ -311,7 +328,9 @@ public class AVMutableMetadataItem extends AVMetadataItem {
 
     /**
      * Indicates the identifier of the metadata item. Publicly defined identifiers are declared in
-     * AVMetadataIdentifiers.h.
+     * AVMetadataIdentifiers.h. This property throws an exception if identifier is not of the form \"<keySpace>/<key>\".
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setIdentifier:")
@@ -343,6 +362,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
 
     /**
      * indicates the start date of the timed metadata; nil if no date is indicated
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setStartDate:")
@@ -364,6 +385,8 @@ public class AVMutableMetadataItem extends AVMetadataItem {
 
     /**
      * indicates the start date of the timed metadata; nil if no date is indicated
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("startDate")

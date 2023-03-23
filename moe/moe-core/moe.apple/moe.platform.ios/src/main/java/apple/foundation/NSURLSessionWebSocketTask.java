@@ -25,10 +25,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * a list of protocols it wishes to advertise during the WebSocket handshake phase.
  * Once the handshake is successfully completed the client will be notified through an optional delegate.
  * All reads and writes enqueued before the completion of the handshake will be queued up and
- * executed once the hanshake succeeds. Before the handshake completes, the client can be called to handle
+ * executed once the handshake succeeds. Before the handshake completes, the client can be called to handle
  * redirection or authentication using the same delegates as NSURLSessionTask. WebSocket task will also provide
  * support for cookies and will store cookies to the cookie storage on the session and will attach cookies to
  * outgoing HTTP handshake requests.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Foundation")
@@ -145,7 +147,7 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
 
     /**
      * The maximum number of bytes to be buffered before erroring out. This includes the sum of all bytes from
-     * continuation frames. Recieve calls will error out if this value is reached
+     * continuation frames. Receive calls will error out if this value is reached
      */
     @Generated
     @Selector("maximumMessageSize")
@@ -220,7 +222,7 @@ public class NSURLSessionWebSocketTask extends NSURLSessionTask {
 
     /**
      * The maximum number of bytes to be buffered before erroring out. This includes the sum of all bytes from
-     * continuation frames. Recieve calls will error out if this value is reached
+     * continuation frames. Receive calls will error out if this value is reached
      */
     @Generated
     @Selector("setMaximumMessageSize:")

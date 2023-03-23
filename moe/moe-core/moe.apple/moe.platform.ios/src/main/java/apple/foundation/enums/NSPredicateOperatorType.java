@@ -60,8 +60,13 @@ public final class NSPredicateOperatorType {
     @Generated @NUInt public static final long CustomSelectorPredicateOperatorType = 0x000000000000000BL;
     /**
      * lhs contains rhs returns true
+     * 
+     * API-Since: 3.0
      */
     @Generated @NUInt public static final long ContainsPredicateOperatorType = 0x0000000000000063L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NUInt public static final long BetweenPredicateOperatorType = 0x0000000000000064L;
 
     @Generated

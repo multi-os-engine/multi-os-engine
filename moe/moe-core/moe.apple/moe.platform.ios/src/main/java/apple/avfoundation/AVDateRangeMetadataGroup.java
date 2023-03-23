@@ -44,9 +44,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVDateRangeMetadataGroup
- * <p>
+ * 
  * AVDateRangeMetadataGroup is used to represent a collection of metadata items that are valid for use within a specific
  * range of dates.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AVFoundation")
@@ -177,12 +179,15 @@ public class AVDateRangeMetadataGroup extends AVMetadataGroup implements NSCopyi
 
     /**
      * initWithItems:startDate:endDate:
-     * <p>
+     * 
      * Initializes an instance of AVDateRangeMetadataGroup with a collection of metadata items.
-     *
-     * @param items     An NSArray of AVMetadataItems.
-     * @param startDate The start date of the collection of AVMetadataItems.
-     * @param endDate   The end date of the collection of AVMetadataItems. If the receiver is intended to represent
+     * 
+     * @param items
+     *                  An NSArray of AVMetadataItems.
+     * @param startDate
+     *                  The start date of the collection of AVMetadataItems.
+     * @param endDate
+     *                  The end date of the collection of AVMetadataItems. If the receiver is intended to represent
      *                  information about an instantaneous event, the value of endDate should be equal to the value of
      *                  startDate. A value of nil for endDate indicates that the endDate is indefinite.
      * @return An instance of AVDateRangeMetadataGroup.

@@ -8,6 +8,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 
 /**
  * The base protocol to which analysis results conform
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("SoundAnalysis")

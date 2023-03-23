@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * This class represents an event that is evaluated based on entry to and/or
  * exit from a Region
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("HomeKit")

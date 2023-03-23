@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * UIFeedbackGenerator is an abstract class that should not be used directly
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("UIKit")

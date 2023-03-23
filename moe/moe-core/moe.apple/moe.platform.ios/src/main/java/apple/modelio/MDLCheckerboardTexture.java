@@ -44,9 +44,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MDLCheckerboardTexture
  * A two color checkboard with a certain number of divisions
- * <p>
+ * 
  * the texture will be created if data is referenced, otherwise, this
  * object is merely a description
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")

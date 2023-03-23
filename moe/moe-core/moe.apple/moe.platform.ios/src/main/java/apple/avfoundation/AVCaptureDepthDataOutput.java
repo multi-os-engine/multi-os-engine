@@ -26,17 +26,19 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVCaptureDepthDataOutput
- * <p>
+ * 
  * AVCaptureDepthDataOutput is a concrete subclass of AVCaptureOutput that can be used to process depth data in a
  * streaming fashion.
- * <p>
+ * 
  * Instances of AVCaptureDepthDataOutput capture AVDepthData objects expressing disparity/depth. Applications can access
  * the frames with the depthDataOutput:didOutputDepthData:fromConnection: delegate method.
- * <p>
+ * 
  * AVCaptureDepthDataOutput always provides depth data in the format expressed by its source's -[AVCaptureDevice
  * activeDepthDataFormat] property. If you wish to receive depth data in another format, you may choose from the
  * -[AVCaptureDevice activeFormat]'s -[AVCaptureDeviceFormat supportedDepthDataFormats], and set it using
  * -[AVCaptureDevice setActiveDepthDataFormat:].
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("AVFoundation")
@@ -68,10 +70,10 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] alwaysDiscardsLateDepthData
-     * <p>
+     * 
      * Specifies whether the receiver should always discard any depth data that is not processed before the next depth
      * data is captured.
-     * <p>
+     * 
      * When the value of this property is YES, the receiver will immediately discard depth data that are captured while
      * the delegateCallbackQueue is blocked. When the value of this property is NO, delegates will be allowed more time
      * to process old depth data before new depth data are discarded, but application memory usage may increase as a
@@ -109,9 +111,9 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The receiver's delegate.
-     * <p>
+     * 
      * The value of this property is an object conforming to the AVCaptureDepthDataOutputDelegate protocol that receives
      * depth data as it is captured. The delegate is set using the setDelegate:callbackQueue: method.
      */
@@ -122,9 +124,9 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] delegateCallbackQueue
-     * <p>
+     * 
      * The dispatch queue on which all delegate methods are called.
-     * <p>
+     * 
      * The value of this property is a dispatch_queue_t. The queue is set using the setDelegate:queue: method.
      */
     @Generated
@@ -159,9 +161,9 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] filteringEnabled
-     * <p>
+     * 
      * Specifies whether the depth data output should filter depth data to smooth out noise and fill invalid values.
-     * <p>
+     * 
      * When the value of this property is YES, the receiver temporally filters the stream of AVDepthData objects to
      * reduce noise, as well as fill invalid values. Invalid values (NaN) may be present in AVDepthData pixel buffer
      * maps due to factors such as low light or lens occlusion. When filtering is enabled, the depth data output
@@ -195,10 +197,10 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] alwaysDiscardsLateDepthData
-     * <p>
+     * 
      * Specifies whether the receiver should always discard any depth data that is not processed before the next depth
      * data is captured.
-     * <p>
+     * 
      * When the value of this property is YES, the receiver will immediately discard depth data that are captured while
      * the delegateCallbackQueue is blocked. When the value of this property is NO, delegates will be allowed more time
      * to process old depth data before new depth data are discarded, but application memory usage may increase as a
@@ -210,28 +212,30 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
 
     /**
      * setDelegate:queue:
-     * <p>
+     * 
      * Sets the receiver's delegate that receives captured depth data and the dispatch queue on which the delegate is
      * called.
-     * <p>
+     * 
      * The depth data output vends captured depth data to its delegate using the methods specified in the
      * AVCaptureDepthOutputDelegate protocol. All delegate methods are called on the specified dispatch queue. If the
      * callback queue is blocked when new depth data is captured, that depth data is automatically dropped at a time
      * determined by the value of the alwaysDiscardsLateDepthData property. This allows clients to process existing
      * depth data on the same queue without having to manage the potential memory usage increases that would otherwise
      * occur when that processing is unable to keep up with the rate of incoming depth data.
-     * <p>
+     * 
      * Clients who need to minimize the chances of depth data being dropped should provide a dedicated queue and not
      * share it with other data outputs. Processing of depth data may be deferred to another queue, but beware that the
      * depth data pixel buffer maps may come from a finite buffer pool, which may be starved if your deferred processing
      * fails to keep up.
-     * <p>
+     * 
      * A serial dispatch queue must be used to guarantee that depth data will be delivered in order. The callbackQueue
      * parameter may not be NULL, except when setting the delegate to nil.
-     *
-     * @param delegate      An object conforming to the AVCaptureDepthDataOutputDelegate protocol that receives depth
+     * 
+     * @param delegate
+     *                      An object conforming to the AVCaptureDepthDataOutputDelegate protocol that receives depth
      *                      data in a streaming fashion.
-     * @param callbackQueue A dispatch queue on which all delegate methods are called.
+     * @param callbackQueue
+     *                      A dispatch queue on which all delegate methods are called.
      */
     @Generated
     @Selector("setDelegate:callbackQueue:")
@@ -240,9 +244,9 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
 
     /**
      * [@property] filteringEnabled
-     * <p>
+     * 
      * Specifies whether the depth data output should filter depth data to smooth out noise and fill invalid values.
-     * <p>
+     * 
      * When the value of this property is YES, the receiver temporally filters the stream of AVDepthData objects to
      * reduce noise, as well as fill invalid values. Invalid values (NaN) may be present in AVDepthData pixel buffer
      * maps due to factors such as low light or lens occlusion. When filtering is enabled, the depth data output

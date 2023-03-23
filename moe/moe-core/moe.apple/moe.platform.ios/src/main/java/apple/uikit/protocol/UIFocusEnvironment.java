@@ -33,6 +33,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Objects conforming to UIFocusEnvironment influence and respond to focus behavior within a specific area of the screen
  * that they control.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("UIKit")
@@ -60,6 +62,11 @@ public interface UIFocusEnvironment {
     @Selector("preferredFocusEnvironments")
     NSArray<?> preferredFocusEnvironments();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("preferredFocusedView")
@@ -99,6 +106,8 @@ public interface UIFocusEnvironment {
 
     /**
      * The container of any child focus items in this focus environment, or nil if no container exists.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("focusItemContainer")
@@ -109,6 +118,8 @@ public interface UIFocusEnvironment {
      * The parent focus environment of this environment, or nil if no parent exists.
      * NOTE: If you implement this method, you must return a non-nil value for parent focus environment, otherwise your
      * focus environment will not participate in focus interactions.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("parentFocusEnvironment")
@@ -118,6 +129,8 @@ public interface UIFocusEnvironment {
     /**
      * The identifier of the focus group that this view belongs to. If this is nil, subviews inherit their superview's
      * focus group.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional

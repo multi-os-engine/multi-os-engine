@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -199,10 +202,16 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Selector("setRasterizationEnabled:")
     public native void setRasterizationEnabled(boolean value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("isTessellationFactorScaleEnabled")
     public native boolean isTessellationFactorScaleEnabled();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setTessellationFactorScaleEnabled:")
     public native void setTessellationFactorScaleEnabled(boolean value);
@@ -211,6 +220,9 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Selector("label")
     public native String label();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("maxTessellationFactor")
     @NUInt
@@ -218,7 +230,7 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * reset
-     * <p>
+     * 
      * Restore all pipeline descriptor properties to their default values.
      */
     @Generated
@@ -226,8 +238,12 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     public native void reset();
 
     /**
-     * DEPRECATED - aliases rasterSampleCount property
+     * Rasterization and visibility state
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("sampleCount")
     @NUInt
@@ -245,13 +261,20 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Selector("setLabel:")
     public native void setLabel(String value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setMaxTessellationFactor:")
     public native void setMaxTessellationFactor(@NUInt long value);
 
     /**
-     * DEPRECATED - aliases rasterSampleCount property
+     * Rasterization and visibility state
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("setSampleCount:")
     public native void setSampleCount(@NUInt long value);
@@ -260,22 +283,37 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Selector("setStencilAttachmentPixelFormat:")
     public native void setStencilAttachmentPixelFormat(@NUInt long value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setTessellationControlPointIndexType:")
     public native void setTessellationControlPointIndexType(@NUInt long value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setTessellationFactorFormat:")
     public native void setTessellationFactorFormat(@NUInt long value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setTessellationFactorStepFunction:")
     public native void setTessellationFactorStepFunction(@NUInt long value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setTessellationOutputWindingOrder:")
     public native void setTessellationOutputWindingOrder(@NUInt long value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setTessellationPartitionMode:")
     public native void setTessellationPartitionMode(@NUInt long value);
@@ -293,26 +331,41 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @NUInt
     public native long stencilAttachmentPixelFormat();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("tessellationControlPointIndexType")
     @NUInt
     public native long tessellationControlPointIndexType();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("tessellationFactorFormat")
     @NUInt
     public native long tessellationFactorFormat();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("tessellationFactorStepFunction")
     @NUInt
     public native long tessellationFactorStepFunction();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("tessellationOutputWindingOrder")
     @NUInt
     public native long tessellationOutputWindingOrder();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("tessellationPartitionMode")
     @NUInt
@@ -327,6 +380,9 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLFunction vertexFunction();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("fragmentBuffers")
     public native MTLPipelineBufferDescriptorArray fragmentBuffers();
@@ -340,45 +396,68 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
     @Selector("setRasterSampleCount:")
     public native void setRasterSampleCount(@NUInt long value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("vertexBuffers")
     public native MTLPipelineBufferDescriptorArray vertexBuffers();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("inputPrimitiveTopology")
     @NUInt
     public native long inputPrimitiveTopology();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("maxVertexAmplificationCount")
     @NUInt
     public native long maxVertexAmplificationCount();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setInputPrimitiveTopology:")
     public native void setInputPrimitiveTopology(@NUInt long value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setMaxVertexAmplificationCount:")
     public native void setMaxVertexAmplificationCount(@NUInt long value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setSupportIndirectCommandBuffers:")
     public native void setSupportIndirectCommandBuffers(boolean value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("supportIndirectCommandBuffers")
     public native boolean supportIndirectCommandBuffers();
 
     /**
      * [@property] binaryArchives
-     * <p>
+     * 
      * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
-     * <p>
+     * 
      * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to
      * happen on the fast path.
-     *
+     * 
      * @see MTLBinaryArchive
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("binaryArchives")
@@ -386,13 +465,15 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] binaryArchives
-     * <p>
+     * 
      * The set of MTLBinaryArchive to search for compiled code when creating the pipeline state.
-     * <p>
+     * 
      * Accelerate pipeline state creation by providing archives of compiled code such that no compilation needs to
      * happen on the fast path.
-     *
+     * 
      * @see MTLBinaryArchive
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("setBinaryArchives:")
@@ -400,10 +481,12 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] fragmentLinkedFunctions
-     * <p>
+     * 
      * The set of functions to be linked with the pipeline state and accessed from the fragment function.
-     *
+     * 
      * @see MTLLinkedFunctions
+     * 
+     *      API-Since: 15.0
      */
     @Generated
     @Selector("fragmentLinkedFunctions")
@@ -411,18 +494,20 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] fragmentPreloadedLibraries
-     * <p>
+     * 
      * The set of MTLDynamicLibrary to use to resolve external symbols for the fragmentFunction before considering
      * symbols from dependent MTLDynamicLibrary.
-     * <p>
+     * 
      * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time
      * without having to use fragmentPreloadedLibraries.
      * This property can be used to override symbols from dependent libraries for experimentation or evaluating
      * alternative implementations.
      * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that
      * have no stable installName that can be used to automatically load from the file system.
-     *
+     * 
      * @see MTLDynamicLibrary
+     * 
+     *      API-Since: 15.0
      */
     @Generated
     @Selector("fragmentPreloadedLibraries")
@@ -430,8 +515,10 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] maxFragmentCallStackDepth
-     * <p>
+     * 
      * The maximum depth of the call stack in stack frames from the shader. Defaults to 1 additional stack frame.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("maxFragmentCallStackDepth")
@@ -440,8 +527,10 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] maxVertexCallStackDepth
-     * <p>
+     * 
      * The maximum depth of the call stack in stack frames from the shader. Defaults to 1 additional stack frame.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("maxVertexCallStackDepth")
@@ -450,10 +539,12 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] fragmentLinkedFunctions
-     * <p>
+     * 
      * The set of functions to be linked with the pipeline state and accessed from the fragment function.
-     *
+     * 
      * @see MTLLinkedFunctions
+     * 
+     *      API-Since: 15.0
      */
     @Generated
     @Selector("setFragmentLinkedFunctions:")
@@ -461,18 +552,20 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] fragmentPreloadedLibraries
-     * <p>
+     * 
      * The set of MTLDynamicLibrary to use to resolve external symbols for the fragmentFunction before considering
      * symbols from dependent MTLDynamicLibrary.
-     * <p>
+     * 
      * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time
      * without having to use fragmentPreloadedLibraries.
      * This property can be used to override symbols from dependent libraries for experimentation or evaluating
      * alternative implementations.
      * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that
      * have no stable installName that can be used to automatically load from the file system.
-     *
+     * 
      * @see MTLDynamicLibrary
+     * 
+     *      API-Since: 15.0
      */
     @Generated
     @Selector("setFragmentPreloadedLibraries:")
@@ -480,8 +573,10 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] maxFragmentCallStackDepth
-     * <p>
+     * 
      * The maximum depth of the call stack in stack frames from the shader. Defaults to 1 additional stack frame.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMaxFragmentCallStackDepth:")
@@ -489,8 +584,10 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] maxVertexCallStackDepth
-     * <p>
+     * 
      * The maximum depth of the call stack in stack frames from the shader. Defaults to 1 additional stack frame.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMaxVertexCallStackDepth:")
@@ -498,8 +595,10 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] supportFragmentAddingBinaryFunctions
-     * <p>
+     * 
      * This flag makes this pipeline support creating a new pipeline by adding binary functions.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSupportAddingFragmentBinaryFunctions:")
@@ -507,8 +606,10 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] supportAddingVertexBinaryFunctions
-     * <p>
+     * 
      * This flag makes this pipeline support creating a new pipeline by adding binary functions.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSupportAddingVertexBinaryFunctions:")
@@ -516,10 +617,12 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] vertexLinkedFunctions
-     * <p>
+     * 
      * The set of functions to be linked with the pipeline state and accessed from the vertex function.
-     *
+     * 
      * @see MTLLinkedFunctions
+     * 
+     *      API-Since: 15.0
      */
     @Generated
     @Selector("setVertexLinkedFunctions:")
@@ -527,18 +630,20 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] vertexPreloadedLibraries
-     * <p>
+     * 
      * The set of MTLDynamicLibrary to use to resolve external symbols for the vertexFunction before considering symbols
      * from dependent MTLDynamicLibrary.
-     * <p>
+     * 
      * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time
      * without having to use vertexPreloadedLibraries.
      * This property can be used to override symbols from dependent libraries for experimentation or evaluating
      * alternative implementations.
      * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that
      * have no stable installName that can be used to automatically load from the file system.
-     *
+     * 
      * @see MTLDynamicLibrary
+     * 
+     *      API-Since: 15.0
      */
     @Generated
     @Selector("setVertexPreloadedLibraries:")
@@ -546,8 +651,10 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] supportFragmentAddingBinaryFunctions
-     * <p>
+     * 
      * This flag makes this pipeline support creating a new pipeline by adding binary functions.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("supportAddingFragmentBinaryFunctions")
@@ -555,8 +662,10 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] supportAddingVertexBinaryFunctions
-     * <p>
+     * 
      * This flag makes this pipeline support creating a new pipeline by adding binary functions.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("supportAddingVertexBinaryFunctions")
@@ -564,10 +673,12 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] vertexLinkedFunctions
-     * <p>
+     * 
      * The set of functions to be linked with the pipeline state and accessed from the vertex function.
-     *
+     * 
      * @see MTLLinkedFunctions
+     * 
+     *      API-Since: 15.0
      */
     @Generated
     @Selector("vertexLinkedFunctions")
@@ -575,18 +686,20 @@ public class MTLRenderPipelineDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] vertexPreloadedLibraries
-     * <p>
+     * 
      * The set of MTLDynamicLibrary to use to resolve external symbols for the vertexFunction before considering symbols
      * from dependent MTLDynamicLibrary.
-     * <p>
+     * 
      * Typical workflows use the libraries property of MTLCompileOptions to record dependent libraries at compile time
      * without having to use vertexPreloadedLibraries.
      * This property can be used to override symbols from dependent libraries for experimentation or evaluating
      * alternative implementations.
      * It can also be used to provide dynamic libraries that are dynamically created (for example, from source) that
      * have no stable installName that can be used to automatically load from the file system.
-     *
+     * 
      * @see MTLDynamicLibrary
+     * 
+     *      API-Since: 15.0
      */
     @Generated
     @Selector("vertexPreloadedLibraries")

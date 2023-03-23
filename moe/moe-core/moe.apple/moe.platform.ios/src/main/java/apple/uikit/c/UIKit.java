@@ -17,11 +17,6 @@ limitations under the License.
 package apple.uikit.c;
 
 import apple.coregraphics.opaque.CGContextRef;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
-import apple.coregraphics.struct.CGVector;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
@@ -60,6 +55,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import apple.corefoundation.struct.CGVector;
 
 @Generated
 @Library("UIKit")
@@ -67,14 +67,20 @@ import org.moe.natj.objc.map.ObjCStringMapper;
 public final class UIKit {
     /**
      * A required constraint. Do not exceed this.
+     * 
+     * API-Since: 6.0
      */
     @Generated public static final float UILayoutPriorityRequired = (float)1000.0;
     /**
      * This is the priority level with which a button resists compressing its content.
+     * 
+     * API-Since: 6.0
      */
     @Generated public static final float UILayoutPriorityDefaultHigh = (float)750.0;
     /**
      * This is the priority level at which a button hugs its contents horizontally.
+     * 
+     * API-Since: 6.0
      */
     @Generated public static final float UILayoutPriorityDefaultLow = (float)250.0;
     /**
@@ -82,6 +88,8 @@ public final class UIKit {
      * argument) is computed. UILayoutPriorityFittingSizeLevel is the priority level with which the view wants to
      * conform to the target size in that computation. It's quite low. It is generally not appropriate to make a
      * constraint at exactly this priority. You want to be higher or lower.
+     * 
+     * API-Since: 6.0
      */
     @Generated public static final float UILayoutPriorityFittingSizeLevel = (float)50.0;
 
@@ -107,7 +115,12 @@ public final class UIKit {
      * The UI_USER_INTERFACE_IDIOM() function is provided for use when deploying to a version of the iOS less than 3.2.
      * If the earliest version of iPhone/iOS that you will be deploying for is 3.2 or greater, you may use -[UIDevice
      * userInterfaceIdiom] directly.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use -[UIDevice userInterfaceIdiom] directly.
      */
+    @Deprecated
     @Generated
     @Inline
     @CFunction
@@ -214,6 +227,9 @@ public final class UIKit {
     @ByValue
     public static native UIOffset UIOffsetFromString(@Mapped(ObjCStringMapper.class) String string);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Variadic()
     @CFunction
@@ -221,10 +237,16 @@ public final class UIKit {
             @Mapped(ObjCStringMapper.class) String commaSeparatedKeysString,
             @Mapped(ObjCObjectMapper.class) Object firstValue, Object... varargs);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @CFunction
     public static native byte NSTextAlignmentToCTTextAlignment(@NInt long nsTextAlignment);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @CFunction
     @NInt
@@ -260,6 +282,9 @@ public final class UIKit {
     @CFunction
     public static native NSData UIImageJPEGRepresentation(UIImage image, @NFloat double compressionQuality);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native void UIAccessibilityZoomFocusChanged(@NInt long type, @ByValue CGRect frame, UIView view);
@@ -267,6 +292,8 @@ public final class UIKit {
     /**
      * If your app uses multi-finger gestures that conflict with system Zoom gestures (by using three fingers),
      * calling this method will warn users of the conflict.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CFunction
@@ -274,6 +301,8 @@ public final class UIKit {
 
     /**
      * Returns the state of the restriction associated with the identifier.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -285,6 +314,8 @@ public final class UIKit {
      * The accessibilityFrame is expected to be in screen coordinates.
      * To help convert the frame to screen coordinates, use the following method.
      * The rect should exist in the view space of the UIView argument.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -295,6 +326,8 @@ public final class UIKit {
      * The accessibilityPath is expected to be in screen coordinates.
      * To help convert the path to screen coordinates, use the following method.
      * The path should exist in the view space of the UIView argument.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -306,6 +339,8 @@ public final class UIKit {
      * Pass in a specific identifier (e.g. UIAccessibilityNotificationVoiceOverIdentifier) in order to choose the
      * focused element for a specific product.
      * If no argument is used, the function will returned the element that was most recently focused.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CFunction
@@ -315,7 +350,7 @@ public final class UIKit {
 
     /**
      * UIAccessibilityPostNotification
-     * <p>
+     * 
      * This function posts a notification to assistive applications.
      * Some notifications specify a required or optional argument.
      * Pass nil for the argument if the notification does not specify otherwise.
@@ -328,9 +363,11 @@ public final class UIKit {
 
     /**
      * Assistive Technology
-     * <p>
+     * 
      * Use UIAccessibilityIsVoiceOverRunning() to determine if VoiceOver is running.
      * Listen for UIAccessibilityVoiceOverStatusDidChangeNotification to know when VoiceOver starts or stops.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CFunction
@@ -338,6 +375,8 @@ public final class UIKit {
 
     /**
      * Returns whether system audio is mixed down from stereo to mono.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CFunction
@@ -345,6 +384,8 @@ public final class UIKit {
 
     /**
      * Returns whether the system preference for closed captioning is enabled.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CFunction
@@ -352,6 +393,8 @@ public final class UIKit {
 
     /**
      * Returns whether the system preference for invert colors is enabled.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CFunction
@@ -359,6 +402,8 @@ public final class UIKit {
 
     /**
      * Returns whether the app is running under Guided Access mode.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CFunction
@@ -366,6 +411,8 @@ public final class UIKit {
 
     /**
      * Returns whether the system preference for bold text is enabled
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -373,6 +420,8 @@ public final class UIKit {
 
     /**
      * Returns whether the system preference for grayscale is enabled
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -380,6 +429,8 @@ public final class UIKit {
 
     /**
      * Returns whether the system preference for reduce transparency is enabled
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -387,6 +438,8 @@ public final class UIKit {
 
     /**
      * Returns whether the system preference for reduce motion is enabled
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -394,6 +447,8 @@ public final class UIKit {
 
     /**
      * Returns whether the system preference for darker colors is enabled
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -402,6 +457,8 @@ public final class UIKit {
     /**
      * Use UIAccessibilityIsSwitchControlRunning() to determine if Switch Control is running.
      * Listen for UIAccessibilitySwitchControlStatusDidChangeNotification to know when Switch Control starts or stops.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -409,6 +466,8 @@ public final class UIKit {
 
     /**
      * Returns whether the system preference for Speak Selection is enabled
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -416,6 +475,8 @@ public final class UIKit {
 
     /**
      * Returns whether the system preference for Speak Screen is enabled
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -423,6 +484,8 @@ public final class UIKit {
 
     /**
      * Returns whether the system preference for Shake to Undo is enabled
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CFunction
@@ -431,6 +494,8 @@ public final class UIKit {
     /**
      * Returns whether the system preference for AssistiveTouch is enabled.
      * This always returns false if Guided Access is not enabled.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -443,6 +508,8 @@ public final class UIKit {
      * and the app's bundle identifier has been whitelisted using Mobile Device Management. If you successfully request
      * Single
      * App mode, it is your responsibility to release the device by balancing this call.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -451,6 +518,8 @@ public final class UIKit {
 
     /**
      * Returns the current pairing status of MFi hearing aids
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -497,6 +566,9 @@ public final class UIKit {
     @CFunction
     public static native void UIGraphicsBeginImageContext(@ByValue CGSize size);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CFunction
     public static native void UIGraphicsBeginImageContextWithOptions(@ByValue CGSize size, boolean opaque,
@@ -512,43 +584,69 @@ public final class UIKit {
 
     /**
      * PDF context
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @CFunction
     public static native boolean UIGraphicsBeginPDFContextToFile(@Mapped(ObjCStringMapper.class) String path,
             @ByValue CGRect bounds, NSDictionary<?, ?> documentInfo);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @CFunction
     public static native void UIGraphicsBeginPDFContextToData(NSMutableData data, @ByValue CGRect bounds,
             NSDictionary<?, ?> documentInfo);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @CFunction
     public static native void UIGraphicsEndPDFContext();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @CFunction
     public static native void UIGraphicsBeginPDFPage();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @CFunction
     public static native void UIGraphicsBeginPDFPageWithInfo(@ByValue CGRect bounds, NSDictionary<?, ?> pageInfo);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @CFunction
     @ByValue
     public static native CGRect UIGraphicsGetPDFContextBounds();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @CFunction
     public static native void UIGraphicsSetPDFContextURLForRect(NSURL url, @ByValue CGRect rect);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @CFunction
     public static native void UIGraphicsAddPDFContextDestinationAtPoint(@Mapped(ObjCStringMapper.class) String name,
             @ByValue CGPoint point);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @CFunction
     public static native void UIGraphicsSetPDFContextDestinationForRect(@Mapped(ObjCStringMapper.class) String name,
@@ -565,6 +663,8 @@ public final class UIKit {
 
     /**
      * Is a specific video eligible to be saved to the saved photos album?
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @CFunction
@@ -574,12 +674,17 @@ public final class UIKit {
     /**
      * Adds a video to the saved photos album. The optional completionSelector should have the form:
      * - (void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @CFunction
     public static native void UISaveVideoAtPathToSavedPhotosAlbum(@Mapped(ObjCStringMapper.class) String videoPath,
             @Mapped(ObjCObjectMapper.class) Object completionTarget, SEL completionSelector, VoidPtr contextInfo);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CFunction
     public static native boolean UIFloatRangeIsInfinite(@ByValue UIFloatRange range);
@@ -598,27 +703,41 @@ public final class UIKit {
 
     /**
      * These are pre-defined constants for use with the input property of UIKeyCommand objects.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputUpArrow();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputDownArrow();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputLeftArrow();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputRightArrow();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -626,27 +745,41 @@ public final class UIKit {
 
     /**
      * Predefined font attributes not defined in NSAttributedString.h
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontDescriptorFamilyAttribute();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontDescriptorNameAttribute();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontDescriptorFaceAttribute();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontDescriptorSizeAttribute();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -654,6 +787,8 @@ public final class UIKit {
 
     /**
      * An NSValue containing a CGAffineTransform. (default: identity matrix)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -663,6 +798,8 @@ public final class UIKit {
     /**
      * An NSCharacterSet instance representing a set of Unicode characters covered by the font. (default: supplied by
      * font)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -672,6 +809,8 @@ public final class UIKit {
     /**
      * An NSArray instance. Each member of the array is a sub-descriptor. (default: the system default cascading list
      * for user's locale)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -680,6 +819,8 @@ public final class UIKit {
 
     /**
      * An NSDictionary instance fully describing font traits. (default: supplied by font)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -689,6 +830,8 @@ public final class UIKit {
     /**
      * A float represented as an NSNumber. The value overrides glyph advancement specified by the font. (default:
      * supplied by each glyph)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -698,6 +841,8 @@ public final class UIKit {
     /**
      * An array of dictionaries representing non-default font feature settings. Each dictionary contains
      * UIFontFeatureTypeIdentifierKey and UIFontFeatureSelectorIdentifierKey.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -706,6 +851,8 @@ public final class UIKit {
 
     /**
      * An NSString containing the desired Text Style
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -715,6 +862,8 @@ public final class UIKit {
     /**
      * Font traits keys
      * This key is used with a trait dictionary to get the symbolic traits value as an NSNumber.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -724,6 +873,8 @@ public final class UIKit {
     /**
      * This key is used with a trait dictionary to get the normalized weight value as an NSNumber. The valid value range
      * is from -1.0 to 1.0. The value of 0.0 corresponds to the regular or medium font weight.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -733,6 +884,8 @@ public final class UIKit {
     /**
      * This key is used with a trait dictionary to get the relative inter-glyph spacing value as an NSNumber. The valid
      * value range is from -1.0 to 1.0. The value of 0.0 corresponds to the regular glyph spacing.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -743,6 +896,8 @@ public final class UIKit {
      * This key is used with a trait dictionary to get the relative slant angle value as an NSNumber. The valid value
      * range is from -1.0 to 1.0. The value or 0.0 corresponds to 0 degree clockwise rotation from the vertical and 1.0
      * corresponds to 30 degrees clockwise rotation.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -752,47 +907,73 @@ public final class UIKit {
     /**
      * Suggested values for use with UIFontWeightTrait, and UIFont's systemFontOfSize:weight:
      * Beware that most fonts will _not_ have variants available in all these weights!
+     * 
+     * API-Since: 8.2
      */
     @Generated
     @CVariable()
     @NFloat
     public static native double UIFontWeightUltraLight();
 
+    /**
+     * API-Since: 8.2
+     */
     @Generated
     @CVariable()
     @NFloat
     public static native double UIFontWeightThin();
 
+    /**
+     * API-Since: 8.2
+     */
     @Generated
     @CVariable()
     @NFloat
     public static native double UIFontWeightLight();
 
+    /**
+     * API-Since: 8.2
+     */
     @Generated
     @CVariable()
     @NFloat
     public static native double UIFontWeightRegular();
 
+    /**
+     * API-Since: 8.2
+     */
     @Generated
     @CVariable()
     @NFloat
     public static native double UIFontWeightMedium();
 
+    /**
+     * API-Since: 8.2
+     */
     @Generated
     @CVariable()
     @NFloat
     public static native double UIFontWeightSemibold();
 
+    /**
+     * API-Since: 8.2
+     */
     @Generated
     @CVariable()
     @NFloat
     public static native double UIFontWeightBold();
 
+    /**
+     * API-Since: 8.2
+     */
     @Generated
     @CVariable()
     @NFloat
     public static native double UIFontWeightHeavy();
 
+    /**
+     * API-Since: 8.2
+     */
     @Generated
     @CVariable()
     @NFloat
@@ -800,6 +981,8 @@ public final class UIKit {
 
     /**
      * A number object specifying font feature type such as ligature, character shape, etc.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -808,57 +991,89 @@ public final class UIKit {
 
     /**
      * A number object specifying font feature selector such as common ligature off, traditional character shape, etc.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontFeatureSelectorIdentifierKey();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontTextStyleTitle1();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontTextStyleTitle2();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontTextStyleTitle3();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontTextStyleHeadline();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontTextStyleSubheadline();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontTextStyleBody();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontTextStyleCallout();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontTextStyleFootnote();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontTextStyleCaption1();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -869,16 +1084,25 @@ public final class UIKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIDeviceOrientationDidChangeNotification();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIDeviceBatteryStateDidChangeNotification();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIDeviceBatteryLevelDidChangeNotification();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -896,42 +1120,65 @@ public final class UIKit {
 
     /**
      * Content size category constants
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIContentSizeCategoryUnspecified();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIContentSizeCategoryExtraSmall();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIContentSizeCategorySmall();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIContentSizeCategoryMedium();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIContentSizeCategoryLarge();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIContentSizeCategoryExtraLarge();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIContentSizeCategoryExtraExtraLarge();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -939,27 +1186,41 @@ public final class UIKit {
 
     /**
      * Accessibility sizes
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIContentSizeCategoryAccessibilityMedium();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIContentSizeCategoryAccessibilityLarge();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIContentSizeCategoryAccessibilityExtraLarge();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIContentSizeCategoryAccessibilityExtraExtraLarge();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -967,6 +1228,8 @@ public final class UIKit {
 
     /**
      * userInfo dictionary will contain new value for UIContentSizeCategoryNewValueKey
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -975,6 +1238,8 @@ public final class UIKit {
 
     /**
      * NSString instance with new content size category in userInfo
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -983,6 +1248,8 @@ public final class UIKit {
 
     /**
      * -1
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -991,12 +1258,17 @@ public final class UIKit {
 
     /**
      * Size To Fit
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
     @ByValue
     public static native CGSize UILayoutFittingCompressedSize();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @CVariable()
     @ByValue
@@ -1006,6 +1278,8 @@ public final class UIKit {
      * An attribute for NSTextTab options. The value is NSCharacterSet. The character set is used to determine the tab
      * column terminating character. The tab and newline characters are implied even if not included in the character
      * set.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -1019,6 +1293,9 @@ public final class UIKit {
      * in NSAttributedString.h.
      * Key to the font in the text attributes dictionary. A UIFont instance is expected. Use a font with size 0.0 to get
      * the default font size for the situation.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
      */
     @Deprecated
     @Generated
@@ -1028,6 +1305,9 @@ public final class UIKit {
 
     /**
      * Key to the text color in the text attributes dictionary. A UIColor instance is expected.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
      */
     @Deprecated
     @Generated
@@ -1037,6 +1317,10 @@ public final class UIKit {
 
     /**
      * Key to the text shadow color in the text attributes dictionary. A UIColor instance is expected.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use NSShadowAttributeName with an NSShadow instance as the value
      */
     @Deprecated
     @Generated
@@ -1047,6 +1331,10 @@ public final class UIKit {
     /**
      * Key to the offset used for the text shadow in the text attributes dictionary. An NSValue instance wrapping a
      * UIOffset struct is expected.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use NSShadowAttributeName with an NSShadow instance as the value
      */
     @Deprecated
     @Generated
@@ -1054,116 +1342,185 @@ public final class UIKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextAttributeTextShadowOffset();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeName();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeNamePrefix();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeGivenName();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeMiddleName();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeFamilyName();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeNameSuffix();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeNickname();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeJobTitle();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeOrganizationName();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeLocation();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeFullStreetAddress();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeStreetAddressLine1();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeStreetAddressLine2();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeAddressCity();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeAddressState();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeAddressCityAndState();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeSublocality();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeCountryName();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypePostalCode();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeTelephoneNumber();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeEmailAddress();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeURL();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1171,6 +1528,9 @@ public final class UIKit {
 
     /**
      * Key to a UIColor
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 8.0
      */
     @Deprecated
     @Generated
@@ -1180,6 +1540,9 @@ public final class UIKit {
 
     /**
      * Key to a UIColor
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 8.0
      */
     @Deprecated
     @Generated
@@ -1189,6 +1552,9 @@ public final class UIKit {
 
     /**
      * Key to a UIFont
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 8.0
      */
     @Deprecated
     @Generated
@@ -1196,6 +1562,9 @@ public final class UIKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextInputTextFontKey();
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1216,6 +1585,9 @@ public final class UIKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextFieldTextDidChangeNotification();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1225,25 +1597,42 @@ public final class UIKit {
      * This exception is raised if supportedInterfaceOrientations returns 0, or if
      * preferredInterfaceOrientationForPresentation
      * returns an orientation that is not supported.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationInvalidInterfaceOrientationException();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @NUInt
     public static native long UIBackgroundTaskInvalid();
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use PushKit for VoIP applications.
+     */
+    @Deprecated
     @Generated
     @CVariable()
     public static native double UIMinimumKeepAliveTimeout();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     public static native double UIApplicationBackgroundFetchIntervalMinimum();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     public static native double UIApplicationBackgroundFetchIntervalNever();
@@ -1255,12 +1644,17 @@ public final class UIKit {
 
     /**
      * These notifications are sent out after the equivalent delegate message is called
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationDidEnterBackgroundNotification();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1298,7 +1692,12 @@ public final class UIKit {
 
     /**
      * userInfo contains NSNumber with new orientation
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use viewWillTransitionToSize:withTransitionCoordinator: instead.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1306,7 +1705,12 @@ public final class UIKit {
 
     /**
      * userInfo contains NSNumber with old orientation
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use viewWillTransitionToSize:withTransitionCoordinator: instead.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1314,7 +1718,12 @@ public final class UIKit {
 
     /**
      * userInfo dictionary key for status bar orientation
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use viewWillTransitionToSize:withTransitionCoordinator: instead.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1322,7 +1731,12 @@ public final class UIKit {
 
     /**
      * userInfo contains NSValue with new frame
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use viewWillTransitionToSize:withTransitionCoordinator: instead.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1330,7 +1744,12 @@ public final class UIKit {
 
     /**
      * userInfo contains NSValue with old frame
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use viewWillTransitionToSize:withTransitionCoordinator: instead.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1338,22 +1757,36 @@ public final class UIKit {
 
     /**
      * userInfo dictionary key for status bar frame
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use viewWillTransitionToSize:withTransitionCoordinator: instead.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationStatusBarFrameUserInfoKey();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationBackgroundRefreshStatusDidChangeNotification();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationProtectedDataWillBecomeUnavailable();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1361,6 +1794,8 @@ public final class UIKit {
 
     /**
      * userInfo contains NSURL with launch URL
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -1370,6 +1805,8 @@ public final class UIKit {
     /**
      * userInfo contains NSString with bundle ID of the originating application; non-nil if the originating application
      * and this application share the same team identifier
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -1378,6 +1815,8 @@ public final class UIKit {
 
     /**
      * userInfo contains NSDictionary with payload
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -1386,7 +1825,13 @@ public final class UIKit {
 
     /**
      * userInfo contains a UILocalNotification
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's -[UNUserNotificationCenterDelegate
+     * didReceiveNotificationResponse:withCompletionHandler:]
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1394,7 +1839,12 @@ public final class UIKit {
 
     /**
      * userInfo contains object with annotation property list
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: This dictionary key is no longer used.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1402,6 +1852,8 @@ public final class UIKit {
 
     /**
      * app was launched in response to a CoreLocation event.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1410,6 +1862,8 @@ public final class UIKit {
 
     /**
      * userInfo contains an NSArray of NKAssetDownload identifiers
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -1418,6 +1872,8 @@ public final class UIKit {
 
     /**
      * userInfo contains an NSArray of CBCentralManager restore identifiers
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -1426,6 +1882,8 @@ public final class UIKit {
 
     /**
      * userInfo contains an NSArray of CBPeripheralManager restore identifiers
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -1434,6 +1892,8 @@ public final class UIKit {
 
     /**
      * userInfo contains the UIApplicationShortcutItem used to launch the app.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1442,6 +1902,8 @@ public final class UIKit {
 
     /**
      * Sub-Dictionary present in launch options when user activity is present
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1450,6 +1912,8 @@ public final class UIKit {
 
     /**
      * Key in user activity dictionary for the activity type
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1459,12 +1923,17 @@ public final class UIKit {
     /**
      * The presence of this key indicates that the app was launched in order to handle a CloudKit sharing invitation.
      * The value of this key is a CKShareMetadata object.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIApplicationLaunchOptionsCloudKitShareMetadataKey();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1473,6 +1942,8 @@ public final class UIKit {
     /**
      * value is an NSString containing the bundle ID of the originating application; non-nil if the originating
      * application and this application share the same team identifier
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1482,6 +1953,8 @@ public final class UIKit {
     /**
      * value is a property-list typed object corresponding to what the originating application passed in
      * UIDocumentInteractionController's annotation property
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1490,6 +1963,8 @@ public final class UIKit {
 
     /**
      * value is a bool NSNumber. Copy the file before use if this value is NO, or is not present.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1499,6 +1974,8 @@ public final class UIKit {
     /**
      * This notification is posted after the user takes a screenshot (for example by pressing both the home and lock
      * screen buttons)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -1507,6 +1984,8 @@ public final class UIKit {
 
     /**
      * Extension point identifier constants
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1518,6 +1997,8 @@ public final class UIKit {
      * configured to open it
      * If there is no application configured, or the user disabled using it to open the link, completion handler called
      * with NO
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -1526,6 +2007,8 @@ public final class UIKit {
 
     /**
      * UIStoryBoard that originally created the ViewController that saved state, nil if no UIStoryboard
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -1534,6 +2017,8 @@ public final class UIKit {
 
     /**
      * NSString with value of info.plist's Bundle Version (app version) when state was last saved for the app
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -1542,6 +2027,8 @@ public final class UIKit {
 
     /**
      * NSNumber containing the UIUserInterfaceIdiom enum value of the app that saved state
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -1550,6 +2037,8 @@ public final class UIKit {
 
     /**
      * NSDate specifying the date/time the state restoration archive was saved. This is in UTC.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -1558,6 +2047,8 @@ public final class UIKit {
 
     /**
      * NSString with value of the system version (iOS version) when state was last saved for the app
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -1569,6 +2060,8 @@ public final class UIKit {
      * need to know when the split view controller environment above it has changed. This notification will be posted
      * when that happens (for example, when a split view controller is collapsing or expanding). The NSNotification's
      * object will be the view controller that caused the change.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1579,6 +2072,8 @@ public final class UIKit {
      * This exception is raised when a child view controller's view is added into the view hierarchy and the first
      * superview of the child view controller's view that has a view controller is NOT the child view controller's
      * parent.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -1590,11 +2085,17 @@ public final class UIKit {
     @NFloat
     public static native double UINavigationControllerHideShowBarDuration();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @NFloat
     public static native double UIScrollViewDecelerationRateNormal();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @NFloat
@@ -1623,6 +2124,8 @@ public final class UIKit {
 
     /**
      * Used when an element acts as a header for a content section (e.g. the title of a navigation bar).
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -1699,6 +2202,8 @@ public final class UIKit {
     /**
      * Used when activating an element starts a media session (e.g. playing a movie, recording audio)
      * that should not be interrupted by output from an assistive technology, like VoiceOver.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1707,6 +2212,8 @@ public final class UIKit {
     /**
      * Used when an element can be "adjusted" (e.g. a slider). The element must also
      * implement accessibilityIncrement and accessibilityDecrement.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1715,6 +2222,8 @@ public final class UIKit {
     /**
      * Used when an element allows direct touch interaction for VoiceOver users (for example, a view representing a
      * piano keyboard).
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -1724,6 +2233,8 @@ public final class UIKit {
      * Informs VoiceOver that it should scroll to the next page when it finishes reading the contents of the
      * element. VoiceOver will scroll by calling accessibilityScroll: with UIAccessibilityScrollDirectionNext and will
      * stop scrolling when it detects the content has not changed.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -1732,6 +2243,8 @@ public final class UIKit {
     /**
      * Used when a view or accessibility container represents an ordered list of tabs.
      * The object with this trait should return NO for isAccessibilityElement.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -1758,6 +2271,8 @@ public final class UIKit {
      * Should be posted when an announcement needs to be conveyed to VoiceOver.
      * VoiceOver will output the announcement string that is used as the argument.
      * The argument is a NSString.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1767,6 +2282,8 @@ public final class UIKit {
      * Listen for this notification to know when VoiceOver finishes outputting an announcement.
      * The userInfo dictionary contains UIAccessibilityAnnouncementKeyString and
      * UIAccessibilityAnnouncementKeyWasSuccessful.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -1775,6 +2292,8 @@ public final class UIKit {
 
     /**
      * The corresponding value is the string that was used for the announcement.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -1783,6 +2302,8 @@ public final class UIKit {
 
     /**
      * The corresponding value is an NSNumber representing whether VoiceOver successfully outputted the announcement.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -1793,6 +2314,8 @@ public final class UIKit {
      * In order to know when an assistive technology has focused on an element listen to this notification
      * The newly focused element will be referenced by UIAccessibilityElementFocusedKeyElement in the userInfo
      * dictionary.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1801,6 +2324,8 @@ public final class UIKit {
 
     /**
      * The corresponding value is the element that is now focused by the assistive technology.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1809,6 +2334,8 @@ public final class UIKit {
 
     /**
      * The corresponding value is the element that had previously been focused by the assistive technology.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1817,6 +2344,8 @@ public final class UIKit {
 
     /**
      * The corresponding value is the identifier of the assistive technology
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1829,6 +2358,8 @@ public final class UIKit {
      * (e.g. "Page 2 of 5"). If the same status is used repeatedly, the assistive technology will
      * indicate a border has been reached.
      * The argument is a NSString.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @CVariable()
@@ -1844,11 +2375,16 @@ public final class UIKit {
      * If the user performs an action that requires the assistive technology to resume operations,
      * it may do so before it receives the corresponding UIAccessibilityResumeAssistiveTechnologyNotification.
      * The argument is a NSString.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
     public static native int UIAccessibilityPauseAssistiveTechnologyNotification();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native int UIAccessibilityResumeAssistiveTechnologyNotification();
@@ -1857,6 +2393,8 @@ public final class UIKit {
      * The following identifier should be used as the argument when posting a
      * UIAccessibilityPauseAssistiveTechnologyNotification
      * or a UIAccessibilityResumeAssistiveTechnologyNotification.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1865,6 +2403,8 @@ public final class UIKit {
 
     /**
      * Used to identify VoiceOver as the assistive technology.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1876,6 +2416,8 @@ public final class UIKit {
      * If YES, then all punctuation will be spoken (e.g. when displaying code).
      * If NO, then no punctuation will be spoken.
      * By default, if this attribute is not present, the user's settings will be used.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -1884,6 +2426,8 @@ public final class UIKit {
 
     /**
      * Use an NSString with a BCP-47 language code to identify the language of a segment of a string.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -1895,97 +2439,155 @@ public final class UIKit {
      * For example, you may want to lower the pitch when an object is deleted, or raise the pitch if an object is
      * inserted.
      * Default value == 1.0f.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilitySpeechAttributePitch();
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityVoiceOverStatusChanged();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityMonoAudioStatusDidChangeNotification();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityClosedCaptioningStatusDidChangeNotification();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityInvertColorsStatusDidChangeNotification();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityGuidedAccessStatusDidChangeNotification();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityBoldTextStatusDidChangeNotification();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityGrayscaleStatusDidChangeNotification();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityReduceTransparencyStatusDidChangeNotification();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityReduceMotionStatusDidChangeNotification();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityDarkerSystemColorsStatusDidChangeNotification();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilitySwitchControlStatusDidChangeNotification();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilitySpeakSelectionStatusDidChangeNotification();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilitySpeakScreenStatusDidChangeNotification();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityShakeToUndoDidChangeNotification();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityAssistiveTouchStatusDidChangeNotification();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityHearingDevicePairedEarDidChangeNotification();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityTypePostToFacebook();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1993,92 +2595,145 @@ public final class UIKit {
 
     /**
      * SinaWeibo
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityTypePostToWeibo();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityTypeMessage();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityTypeMail();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityTypePrint();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityTypeCopyToPasteboard();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityTypeAssignToContact();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityTypeSaveToCameraRoll();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityTypeAddToReadingList();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityTypePostToFlickr();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityTypePostToVimeo();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityTypePostToTencentWeibo();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityTypeAirDrop();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityTypeOpenInIBooks();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UICollectionElementKindSectionHeader();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UICollectionElementKindSectionFooter();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @ByValue
     public static native CGSize UICollectionViewFlowLayoutAutomaticSize();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIDocumentStateChangedNotification();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2126,7 +2781,12 @@ public final class UIKit {
 
     /**
      * an NSURL that references an asset in the AssetsLibrary framework
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Will be removed in a future release, use PHPicker.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2134,6 +2794,8 @@ public final class UIKit {
 
     /**
      * an NSDictionary containing metadata from a captured photo
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @CVariable()
@@ -2142,57 +2804,114 @@ public final class UIKit {
 
     /**
      * a PHLivePhoto
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIImagePickerControllerLivePhoto();
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's +[UNNotificationSound defaultSound]
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UILocalNotificationDefaultSoundName();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's -[UNTextInputNotificationAction textInputButtonTitle]
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIUserNotificationTextInputActionButtonTitleKey();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's -[UNTextInputNotificationResponse userText]
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIUserNotificationActionResponseTypedTextKey();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: UIMenuController is deprecated. Use UIEditMenuInteraction instead.
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIMenuControllerWillShowMenuNotification();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: UIMenuController is deprecated. Use UIEditMenuInteraction instead.
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIMenuControllerDidShowMenuNotification();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: UIMenuController is deprecated. Use UIEditMenuInteraction instead.
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIMenuControllerWillHideMenuNotification();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: UIMenuController is deprecated. Use UIEditMenuInteraction instead.
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIMenuControllerDidHideMenuNotification();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: UIMenuController is deprecated. Use UIEditMenuInteraction instead.
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIMenuControllerMenuFrameDidChangeNotification();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UINibExternalObjects();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
+     */
     @Deprecated
     @Generated
     @CVariable()
@@ -2216,6 +2935,8 @@ public final class UIKit {
      * initWithTransitionStyle:navigationOrientation:options:.
      * Value should be a CGFloat wrapped in an NSNumber. Default is '0'.
      * Only valid for use with page view controllers with transition style 'UIPageViewControllerTransitionStyleScroll'.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -2227,6 +2948,12 @@ public final class UIKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIPasteboardNameGeneral();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: The Find pasteboard is no longer available.
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2234,6 +2961,8 @@ public final class UIKit {
 
     /**
      * Value: NSDate.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -2242,6 +2971,8 @@ public final class UIKit {
 
     /**
      * Value: NSNumber, boolean.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -2294,6 +3025,8 @@ public final class UIKit {
      * Use the following type in setItems: or setItems:options: to automatically insert appropriate UTIs for supported
      * types.
      * Supported types are: NSString, NSURL, UIImage, UIColor, NSAttributedString.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -2308,7 +3041,13 @@ public final class UIKit {
     /**
      * Object is the UIScreen that represents the new screen. Connection notifications are not sent for screens present
      * when the application is first launched
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Use UISceneDelegate or related notifications to be informed of connecting scenes from other
+     * screens
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2316,7 +3055,13 @@ public final class UIKit {
 
     /**
      * Object is the UIScreen that represented the disconnected screen.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Use UISceneDelegate or related notifications to be informed of disconnecting scenes from
+     * other screens
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2324,12 +3069,17 @@ public final class UIKit {
 
     /**
      * Object is the UIScreen which changed. [object currentMode] is the new UIScreenMode.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIScreenModeDidChangeNotification();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2338,22 +3088,33 @@ public final class UIKit {
     /**
      * The following keys are understood by UIViewControllerContextTransitioning context objects
      * that are created by the system.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITransitionContextFromViewControllerKey();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITransitionContextToViewControllerKey();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITransitionContextFromViewKey();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2363,6 +3124,8 @@ public final class UIKit {
      * Including this constant string in the array of strings returned by sectionIndexTitlesForTableView: will cause a
      * magnifying glass icon to be displayed at that location in the index.
      * This should generally only be used as the first title in the index.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -2373,6 +3136,8 @@ public final class UIKit {
      * Returning this value from tableView:heightForHeaderInSection: or tableView:heightForFooterInSection: results in a
      * height that fits the value returned from
      * tableView:titleForHeaderInSection: or tableView:titleForFooterInSection: if the title is not nil.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2387,6 +3152,8 @@ public final class UIKit {
     /**
      * This constant can be used with any sizing-related `UISplitViewController` properties to get the default system
      * behavior.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -2462,9 +3229,9 @@ public final class UIKit {
     public static native String UIWindowDidResignKeyNotification();
 
     /**
-     * Each notification includes a nil object and a userInfo dictionary containing the
-     * beginning and ending keyboard frame in screen coordinates. Use the various UIView and
-     * UIWindow convertRect facilities to get the frame in the desired coordinate system.
+     * The notification object is the UIScreen that contains the keyboard. Each notification includes
+     * a userInfo dictionary containing the beginning and ending keyboard frame in screen coordinates.
+     * Use the various UICoordinateSpace convertRect facilities to get the frame in the desired coordinate system.
      * Animation key/value pairs are only available for the "will" family of notification.
      */
     @Generated
@@ -2489,6 +3256,8 @@ public final class UIKit {
 
     /**
      * NSValue of CGRect
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @CVariable()
@@ -2497,6 +3266,8 @@ public final class UIKit {
 
     /**
      * NSValue of CGRect
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @CVariable()
@@ -2505,6 +3276,8 @@ public final class UIKit {
 
     /**
      * NSNumber of double
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -2513,6 +3286,8 @@ public final class UIKit {
 
     /**
      * NSNumber of NSUInteger (UIViewAnimationCurve)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -2521,6 +3296,8 @@ public final class UIKit {
 
     /**
      * NSNumber of BOOL
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -2530,12 +3307,17 @@ public final class UIKit {
     /**
      * Like the standard keyboard notifications above, these additional notifications include
      * a nil object and begin/end frames of the keyboard in screen coordinates in the userInfo dictionary.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyboardWillChangeFrameNotification();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2543,6 +3325,9 @@ public final class UIKit {
 
     /**
      * These keys are superseded by UIKeyboardFrameBeginUserInfoKey and UIKeyboardFrameEndUserInfoKey.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.2
      */
     @Deprecated
     @Generated
@@ -2550,12 +3335,20 @@ public final class UIKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyboardCenterBeginUserInfoKey();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 3.2
+     */
     @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyboardCenterEndUserInfoKey();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 3.2
+     */
     @Deprecated
     @Generated
     @CVariable()
@@ -2564,6 +3357,8 @@ public final class UIKit {
 
     /**
      * UIFont, default Helvetica(Neue) 12
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -2572,6 +3367,8 @@ public final class UIKit {
 
     /**
      * NSParagraphStyle, default defaultParagraphStyle
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -2580,6 +3377,8 @@ public final class UIKit {
 
     /**
      * UIColor, default blackColor
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -2588,6 +3387,8 @@ public final class UIKit {
 
     /**
      * UIColor, default nil: no background
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -2596,6 +3397,8 @@ public final class UIKit {
 
     /**
      * NSNumber containing integer, default 1: default ligatures, 0: no ligatures
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -2605,6 +3408,8 @@ public final class UIKit {
     /**
      * NSNumber containing floating point value, in points; amount to modify default kerning. 0 means kerning is
      * disabled.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -2613,6 +3418,8 @@ public final class UIKit {
 
     /**
      * NSNumber containing integer, default 0: no strikethrough
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -2621,6 +3428,8 @@ public final class UIKit {
 
     /**
      * NSNumber containing integer, default 0: no underline
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -2629,6 +3438,8 @@ public final class UIKit {
 
     /**
      * UIColor, default nil: same as foreground color
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -2638,6 +3449,8 @@ public final class UIKit {
     /**
      * NSNumber containing floating point value, in percent of font point size, default 0: no stroke; positive for
      * stroke alone, negative for stroke and fill (a typical value for outlined text would be 3.0)
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -2646,6 +3459,8 @@ public final class UIKit {
 
     /**
      * NSShadow, default nil: no shadow
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -2654,6 +3469,8 @@ public final class UIKit {
 
     /**
      * NSString, default nil: no text effect
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2662,6 +3479,8 @@ public final class UIKit {
 
     /**
      * NSTextAttachment, default nil
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2670,6 +3489,8 @@ public final class UIKit {
 
     /**
      * NSURL (preferred) or NSString
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2678,6 +3499,8 @@ public final class UIKit {
 
     /**
      * NSNumber containing floating point value, in points; offset from baseline, default 0
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2686,6 +3509,8 @@ public final class UIKit {
 
     /**
      * UIColor, default nil: same as foreground color
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2694,6 +3519,8 @@ public final class UIKit {
 
     /**
      * UIColor, default nil: same as foreground color
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2702,6 +3529,8 @@ public final class UIKit {
 
     /**
      * NSNumber containing floating point value; skew to be applied to glyphs, default 0: no skew
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2711,6 +3540,8 @@ public final class UIKit {
     /**
      * NSNumber containing floating point value; log of expansion factor to be applied to glyphs, default 0: no
      * expansion
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2724,6 +3555,8 @@ public final class UIKit {
      * NSWritingDirectionRightToLeft|NSWritingDirectionEmbedding, LRO:
      * NSWritingDirectionLeftToRight|NSWritingDirectionOverride, RLO:
      * NSWritingDirectionRightToLeft|NSWritingDirectionOverride,
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2734,12 +3567,17 @@ public final class UIKit {
      * An NSNumber containing an integer value. 0 means horizontal text. 1 indicates vertical text. If not specified, it
      * could follow higher-level vertical orientation settings. Currently on iOS, it's always horizontal. The behavior
      * for any other value is undefined.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSVerticalGlyphFormAttributeName();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2747,22 +3585,33 @@ public final class UIKit {
 
     /**
      * Supported document types for the NSDocumentTypeDocumentAttribute key in the document attributes dictionary.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSPlainTextDocumentType();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSRTFTextDocumentType();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSRTFDTextDocumentType();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2770,6 +3619,8 @@ public final class UIKit {
 
     /**
      * NSNumber containing NSTextLayoutOrientation value. default: NSTextLayoutOrientationHorizontal
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2778,6 +3629,8 @@ public final class UIKit {
 
     /**
      * NSValue containing NSRange representing a character range. default: a range covering the whole document
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2789,6 +3642,8 @@ public final class UIKit {
      * the document type for interpreting the contents. Upon return, the document attributes can contain this key for
      * indicating the actual format used to read the contents. For write methods, this key specifies the format for
      * generating the data.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2800,6 +3655,8 @@ public final class UIKit {
      * text is the default encoding. This key in options can specify the string encoding for reading the data. Upon
      * return, the document attributes can contain the actual encoding used. For writing methods, this value is used for
      * generating the plain text data.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2810,6 +3667,8 @@ public final class UIKit {
      * @"DefaultAttributes", NSDictionary containing attributes to be applied to plain files. Used by reader methods.
      * This key in options can specify the default attributes applied to the entire document contents. The document
      * attributes can contain this key indicating the actual attributes used.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2818,6 +3677,8 @@ public final class UIKit {
 
     /**
      * @"PaperSize", NSValue containing CGSize (in points)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2826,6 +3687,8 @@ public final class UIKit {
 
     /**
      * @"PaperMargin", NSValue containing UIEdgeInsets
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2834,6 +3697,8 @@ public final class UIKit {
 
     /**
      * @"ViewSize", NSValue containing CGSize (in points)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2842,6 +3707,8 @@ public final class UIKit {
 
     /**
      * @"ViewZoom", NSNumber containing floating point value (100 == 100% zoom)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2850,6 +3717,8 @@ public final class UIKit {
 
     /**
      * @"ViewMode", NSNumber containing integer; 0 = normal; 1 = page layout
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2860,6 +3729,8 @@ public final class UIKit {
      * @"ReadOnly", NSNumber containing integer; if missing, or 0 or negative, not readonly; 1 or more, readonly. Note
      * that this has nothing to do with the file system protection on the file, but instead, on how the file should be
      * displayed to the user
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2868,6 +3739,8 @@ public final class UIKit {
 
     /**
      * @"BackgroundColor", UIColor, representing the document-wide page background color
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2876,6 +3749,8 @@ public final class UIKit {
 
     /**
      * @"HyphenationFactor", NSNumber containing floating point value (0=off, 1=full hyphenation)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2885,6 +3760,8 @@ public final class UIKit {
     /**
      * @"DefaultTabInterval", NSNumber containing floating point value, representing the document-wide default tab stop
      * interval, in points
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2895,6 +3772,8 @@ public final class UIKit {
      * NSArray of dictionaries. Each dictionary describing a layout orientation section. The dictionary can have two
      * attributes: NSTextLayoutSectionOrientation and NSTextLayoutSectionRange. When there is a gap between sections,
      * it's assumed to have NSTextLayoutOrientationHorizontal.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2903,22 +3782,33 @@ public final class UIKit {
 
     /**
      * Notifications ***
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSTextStorageWillProcessEditingNotification();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSTextStorageDidProcessEditingNotification();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @ByValue
     public static native UIFloatRange UIFloatRangeZero();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @ByValue
@@ -2931,6 +3821,9 @@ public final class UIKit {
         void call_UIAccessibilityRequestGuidedAccessSession(boolean arg0);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Inline
     @CFunction
@@ -2938,28 +3831,43 @@ public final class UIKit {
     public static native NSDirectionalEdgeInsets NSDirectionalEdgeInsetsMake(@NFloat double top, @NFloat double leading,
             @NFloat double bottom, @NFloat double trailing);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Inline
     @CFunction
     public static native boolean NSDirectionalEdgeInsetsEqualToDirectionalEdgeInsets(
             @ByValue NSDirectionalEdgeInsets insets1, @ByValue NSDirectionalEdgeInsets insets2);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromDirectionalEdgeInsets(@ByValue NSDirectionalEdgeInsets insets);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CFunction
     @ByValue
     public static native NSDirectionalEdgeInsets NSDirectionalEdgeInsetsFromString(
             @Mapped(ObjCStringMapper.class) String string);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CFunction
     public static native boolean UIContentSizeCategoryIsAccessibilityCategory(
             @Mapped(ObjCStringMapper.class) String category);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CFunction
     @NInt
@@ -2969,42 +3877,65 @@ public final class UIKit {
     /**
      * Font text styles, semantic descriptions of the intended use for a font returned by +[UIFont
      * preferredFontForTextStyle:]
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontTextStyleLargeTitle();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @ByValue
     public static native NSDirectionalEdgeInsets NSDirectionalEdgeInsetsZero();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFocusDidUpdateNotification();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFocusMovementDidFailNotification();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFocusUpdateContextKey();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFocusUpdateAnimationCoordinatorKey();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeUsername();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3015,6 +3946,8 @@ public final class UIKit {
      * If YES, then this announcement will be queued behind existing speech; if NO, then it will interrupt existing
      * speech.
      * Default behavior is to interrupt existing speech.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -3024,6 +3957,8 @@ public final class UIKit {
     /**
      * Use an NSString, containing International Phonetic Alphabet (IPA) symbols.
      * Controls the pronunciation of a word or phrase, e.g. a proper name.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -3032,6 +3967,8 @@ public final class UIKit {
 
     /**
      * Use an NSNumber where the value is [0, 6]. Use 0 to indicate the absence of a specific heading level.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -3041,17 +3978,25 @@ public final class UIKit {
     /**
      * Use an NSArray of localized NSStrings to convey custom text attributes.
      * For example, a range of text may have multiple custom 'annotation styles, which can be described with this key.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityTextAttributeCustom();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityVoiceOverStatusDidChangeNotification();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3059,7 +4004,12 @@ public final class UIKit {
 
     /**
      * a PHAsset
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Will be removed in a future release, use PHPicker.
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3067,6 +4017,8 @@ public final class UIKit {
 
     /**
      * an NSURL
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -3075,6 +4027,8 @@ public final class UIKit {
 
     /**
      * Object is the UIScreen which changed. [object isCaptured] is the new value of captured property.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -3110,8 +4064,10 @@ public final class UIKit {
     /**
      * Used when setting custom spacing after an arranged subview to indicate reverting to
      * the value specified by the spacing property.
-     * <p>
+     * 
      * See -setCustomSpacing:afterView:, -customSpacingAfterView:
+     * 
+     * API-Since: 11.0
      */
     @Generated @NFloat public static final double UIStackViewSpacingUseDefault = org.moe.natj.general.NatJ.is64Bit() ?
             3.4028234663852886E38 :
@@ -3119,16 +4075,21 @@ public final class UIKit {
     /**
      * Used when setting custom spacing after an arranged subview to request the system
      * spacing to the neighboring view.
-     * <p>
+     * 
      * Also used as a token for the spacing property to request system spacing between
      * arranged subviews.
-     * <p>
+     * 
      * See spacing, -setCustomSpacing:afterView:, -customSpacingAfterView:
+     * 
+     * API-Since: 11.0
      */
     @Generated @NFloat public static final double UIStackViewSpacingUseSystem = org.moe.natj.general.NatJ.is64Bit() ?
             1.1754943508222875E-38 :
             (float)1.17549435E-38;
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3144,6 +4105,9 @@ public final class UIKit {
     @CFunction
     public static native boolean UIDeviceOrientationIsValidInterfaceOrientation(@NInt long orientation);
 
+    /**
+     * API-Since: 12.2
+     */
     @Generated
     @CFunction
     public static native void UIGuidedAccessConfigureAccessibilityFeatures(@NUInt long features, boolean enabled,
@@ -3158,6 +4122,8 @@ public final class UIKit {
 
     /**
      * Returns whether the system preference for auto-play videos is enabled
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CFunction
@@ -3165,6 +4131,8 @@ public final class UIKit {
 
     /**
      * Returns whether the system preference for Differentiate without Color is enabled.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CFunction
@@ -3172,16 +4140,24 @@ public final class UIKit {
 
     /**
      * Returns whether the system preference for On/Off labels is enabled.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CFunction
     public static native boolean UIAccessibilityIsOnOffSwitchLabelsEnabled();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CFunction
     @NFloat
     public static native double UIFontWeightForImageSymbolWeight(@NInt long symbolWeight);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CFunction
     @NInt
@@ -3189,6 +4165,8 @@ public final class UIKit {
 
     /**
      * Application menu top-level menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3197,6 +4175,8 @@ public final class UIKit {
 
     /**
      * File menu top-level menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3205,6 +4185,8 @@ public final class UIKit {
 
     /**
      * Edit menu top-level menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3213,6 +4195,8 @@ public final class UIKit {
 
     /**
      * View menu top-level menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3221,6 +4205,8 @@ public final class UIKit {
 
     /**
      * Window menu top-level menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3229,6 +4215,8 @@ public final class UIKit {
 
     /**
      * Help menu top-level menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3237,6 +4225,8 @@ public final class UIKit {
 
     /**
      * About menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3245,6 +4235,8 @@ public final class UIKit {
 
     /**
      * Preferences menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3253,6 +4245,8 @@ public final class UIKit {
 
     /**
      * Services menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3261,6 +4255,8 @@ public final class UIKit {
 
     /**
      * Hide, Hide Others, Show All menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3269,6 +4265,8 @@ public final class UIKit {
 
     /**
      * Quit menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3277,6 +4275,8 @@ public final class UIKit {
 
     /**
      * New scene menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3285,6 +4285,8 @@ public final class UIKit {
 
     /**
      * Close menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3293,6 +4295,8 @@ public final class UIKit {
 
     /**
      * Print menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3301,6 +4305,8 @@ public final class UIKit {
 
     /**
      * Undo, Redo menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3309,6 +4315,8 @@ public final class UIKit {
 
     /**
      * Cut, Copy, Paste, Delete, Select, Select All menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3318,6 +4326,8 @@ public final class UIKit {
     /**
      * Find menu; empty in the default menubar configuration. Applications should use this when adding their own
      * Find-related menu items.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3326,6 +4336,8 @@ public final class UIKit {
 
     /**
      * Replace..., Transliterate Chinese menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3334,6 +4346,8 @@ public final class UIKit {
 
     /**
      * Share menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3342,6 +4356,8 @@ public final class UIKit {
 
     /**
      * Bold, Italics, Underline menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3350,6 +4366,8 @@ public final class UIKit {
 
     /**
      * Spelling menu contained within Edit menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3358,6 +4376,8 @@ public final class UIKit {
 
     /**
      * Show Spelling, Check Document Now menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3366,6 +4386,8 @@ public final class UIKit {
 
     /**
      * Check Spelling While Typing and other spelling and grammar-checking options menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3374,6 +4396,8 @@ public final class UIKit {
 
     /**
      * Substitutions menu contained within Edit menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3382,6 +4406,8 @@ public final class UIKit {
 
     /**
      * Show Substitutions menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3390,6 +4416,8 @@ public final class UIKit {
 
     /**
      * Smart Copy, Smart Paste, Smart Quotes, and other substitution options menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3398,6 +4426,8 @@ public final class UIKit {
 
     /**
      * Transformations menu contained within Edit menu (contains Make Uppercase, Make Lowercase, Capitalize)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3406,6 +4436,8 @@ public final class UIKit {
 
     /**
      * Speech menu contained within Edit menu (contains Speak, Speak..., Pause)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3414,6 +4446,8 @@ public final class UIKit {
 
     /**
      * Lookup menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3422,6 +4456,8 @@ public final class UIKit {
 
     /**
      * Learn menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3430,6 +4466,8 @@ public final class UIKit {
 
     /**
      * Format top-level menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3438,6 +4476,8 @@ public final class UIKit {
 
     /**
      * Font menu contained within Format menu (contains UIMenuTextStyle)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3446,6 +4486,8 @@ public final class UIKit {
 
     /**
      * Bigger and Smaller menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3454,6 +4496,8 @@ public final class UIKit {
 
     /**
      * Show Colors menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3462,6 +4506,8 @@ public final class UIKit {
 
     /**
      * Copy Style and Paste Style menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3470,6 +4516,8 @@ public final class UIKit {
 
     /**
      * Text menu contained within Format menu (contains UIMenuAlignment and UIMenuWritingDirection)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3478,6 +4526,8 @@ public final class UIKit {
 
     /**
      * Default, Right to Left, Left to Right menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3486,6 +4536,8 @@ public final class UIKit {
 
     /**
      * Align Left, Center, Justify, Align Right menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3494,6 +4546,8 @@ public final class UIKit {
 
     /**
      * Show/Hide and Customize Toolbar menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3502,6 +4556,8 @@ public final class UIKit {
 
     /**
      * Fullscreen menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3510,6 +4566,8 @@ public final class UIKit {
 
     /**
      * Minimize, Zoom menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3518,6 +4576,8 @@ public final class UIKit {
 
     /**
      * Bring All to Front, Arrange in Front menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3526,6 +4586,8 @@ public final class UIKit {
 
     /**
      * Root-level menu
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3535,27 +4597,41 @@ public final class UIKit {
     /**
      * UICommand.propertyList value to indicate that a command is a Sharing menu item. Such an item automatically
      * receives a standard Share submenu.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UICommandTagShare();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontDescriptorSystemDesignDefault();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontDescriptorSystemDesignRounded();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIFontDescriptorSystemDesignSerif();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3575,55 +4651,97 @@ public final class UIKit {
      */
     @Generated public static final float UILayoutPriorityDragThatCannotResizeScene = (float)490.0;
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeNewPassword();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UITextContentTypeOneTimeCode();
 
-    @Generated @NInt public static final long UITextWritingDirectionNatural = 0xFFFFFFFFFFFFFFFFL;
-    @Generated @NInt public static final long UITextWritingDirectionLeftToRight = 0x0000000000000000L;
-    @Generated @NInt public static final long UITextWritingDirectionRightToLeft = 0x0000000000000001L;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated @NInt public static final long UITextWritingDirectionNatural = 0xFFFFFFFFFFFFFFFFL;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated @NInt public static final long UITextWritingDirectionLeftToRight = 0x0000000000000000L;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated @NInt public static final long UITextWritingDirectionRightToLeft = 0x0000000000000001L;
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UISceneErrorDomain();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityTextualContextWordProcessing();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityTextualContextNarrative();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityTextualContextMessaging();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityTextualContextSpreadsheet();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityTextualContextFileSystem();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityTextualContextSourceCode();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3631,6 +4749,8 @@ public final class UIKit {
 
     /**
      * Use an NSNumber with a YES or NO value to specify whether each letter in the string should be spoken separately.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3640,27 +4760,41 @@ public final class UIKit {
     /**
      * Use a UIAccessibilityTextualContext to specify how this text content should be interpreted by assistive
      * technologies.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityTextAttributeContext();
 
+    /**
+     * API-Since: 12.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIGuidedAccessErrorDomain();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityVideoAutoplayStatusDidChangeNotification();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityShouldDifferentiateWithoutColorDidChangeNotification();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3668,6 +4802,8 @@ public final class UIKit {
 
     /**
      * Posted when the large content viewer gets enabled or disabled on the device.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3676,6 +4812,8 @@ public final class UIKit {
 
     /**
      * NSString or NSAttributedString - title
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3684,6 +4822,8 @@ public final class UIKit {
 
     /**
      * NSString or NSAttributedString - message body
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3692,6 +4832,8 @@ public final class UIKit {
 
     /**
      * Full size preview image
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3700,12 +4842,17 @@ public final class UIKit {
 
     /**
      * Thumbnail preview image
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityItemsConfigurationPreviewIntentThumbnail();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3718,6 +4865,8 @@ public final class UIKit {
      * the document, but will not perform any conversion on the font sizes in the document, or (2) Passing both this
      * attribute and NSSourceTextScalingDocumentAttribute will convert the font sizes in the document from the source
      * text scaling type to the text scaling type specified by this attribute.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3730,6 +4879,8 @@ public final class UIKit {
      * conversion. Use this in conjunction with NSTextScalingDocumentAttribute to convert font point sizes between text
      * scalings when writing attributed strings to RTF. This attribute is optional and does nothing unless
      * NSTextScalingDocumentAttribute is also specified.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3743,6 +4894,8 @@ public final class UIKit {
      * 10.3; values greater than 102 correspond to values of NSAppKitVersionNumber on 10.4-10.14 systems. Beginning with
      * iOS 13 and macOS 10.15, this version number does not have a one-to-one correspondence with any single system
      * framework version, but is guaranteed to monotonically increase with each OS version.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3754,6 +4907,8 @@ public final class UIKit {
      * methods, you can pass this option to request that the returned attributed string uses the specified scaling. The
      * font point sizes in the document may be converted if necessary. If this option is not provided, the system will
      * deduce the target text scaling type based on application framework and platform.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3767,6 +4922,8 @@ public final class UIKit {
      * sizes in the returned attributed string. This option does nothing unless NSTargetTextScalingDocumentOption is
      * also specified. If this option is not provided, the system will deduce the source text scaling type based on the
      * information in the document.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3787,38 +4944,58 @@ public final class UIKit {
     @Generated @NInt public static final long NSUnderlinePatternDashDotDot = 0x0000000000000400L;
     @Generated @NInt public static final long NSUnderlineByWord = 0x0000000000008000L;
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UISceneWillConnectNotification();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UISceneDidDisconnectNotification();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UISceneDidActivateNotification();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UISceneWillDeactivateNotification();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UISceneWillEnterForegroundNotification();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UISceneDidEnterBackgroundNotification();
 
     /**
-     * A session role which defines a typical interactive application on a device's main display
+     * A session role which defines a typical interactive application
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -3826,8 +5003,10 @@ public final class UIKit {
     public static native String UIWindowSceneSessionRoleApplication();
 
     /**
-     * A session role which defines an interface for a non-main external display
+     * API-Since: 13.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3838,87 +5017,137 @@ public final class UIKit {
      * device
      * .button(1) == .primary
      * .button(2) == .secondary
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @CFunction
     @NInt
     public static native long UIEventButtonMaskForButtonNumber(@NInt long buttonNumber);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputPageUp();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputPageDown();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputHome();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputEnd();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputF1();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputF2();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputF3();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputF4();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputF5();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputF6();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputF7();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputF8();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputF9();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputF10();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputF11();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3926,6 +5155,8 @@ public final class UIKit {
 
     /**
      * Returns whether the system preference for button shapes is enabled
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CFunction
@@ -3933,6 +5164,8 @@ public final class UIKit {
 
     /**
      * Returns whether the system preference for reduce motion: prefer cross-fade transitions is enabled
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CFunction
@@ -3940,6 +5173,8 @@ public final class UIKit {
 
     /**
      * Positions the accessory before the accessory matching the class specified, or at the beginning if not found.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CFunction
@@ -3957,6 +5192,8 @@ public final class UIKit {
 
     /**
      * Positions the accessory after the accessory matching the class specified, or at the end if not found.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CFunction
@@ -3974,6 +5211,8 @@ public final class UIKit {
 
     /**
      * Open Recent menu
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -3983,6 +5222,8 @@ public final class UIKit {
     /**
      * NSNumber containing floating point value, in points; amount to modify default tracking. 0 means tracking is
      * disabled.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -3992,22 +5233,33 @@ public final class UIKit {
     /**
      * A notification that is posted when UIPointerLockState.locked changes values for a scene.
      * It contains the related UIScene in the user info dictionary of the notification.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIPointerLockStateDidChangeNotification();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIPointerLockStateSceneUserInfoKey();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIAccessibilityButtonShapesEnabledStatusDidChangeNotification();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4016,6 +5268,8 @@ public final class UIKit {
     /**
      * A special constant that can be set to the `reservedLayoutWidth` property. This requests the
      * system standard layout width.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -4026,6 +5280,8 @@ public final class UIKit {
      * A special constant that can be set to the `reservedLayoutSize` width or height. This
      * forces the system standard value that a symbol image would use for that dimension,
      * even when the image is not a symbol image.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -4034,6 +5290,8 @@ public final class UIKit {
 
     /**
      * NSString value, suitable for implementing "Paste and Go"
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -4042,6 +5300,8 @@ public final class UIKit {
 
     /**
      * NSString value, suitable for implementing "Paste and Search"
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -4050,12 +5310,17 @@ public final class UIKit {
 
     /**
      * NSNumber value
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIPasteboardDetectionPatternNumber();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Inline
     @CFunction
@@ -4065,41 +5330,69 @@ public final class UIKit {
 
     /**
      * Sidebar menu
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIMenuSidebar();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIKeyInputDelete();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NInt public static final long UIFocusGroupPriorityIgnored = 0x0000000000000000L;
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NInt public static final long UIFocusGroupPriorityPreviouslyFocused = 0x00000000000003E8L;
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NInt public static final long UIFocusGroupPriorityPrioritized = 0x00000000000007D0L;
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NInt public static final long UIFocusGroupPriorityCurrentlyFocused = org.moe.natj.general.NatJ
             .is64Bit() ? 0x7FFFFFFFFFFFFFFFL : 0x000000007FFFFFFFL;
 
     /**
      * Default action identifiers for paste variants
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActionPaste();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActionPasteAndMatchStyle();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActionPasteAndGo();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4107,6 +5400,8 @@ public final class UIKit {
 
     /**
      * Parcel tracking numbers such as "FedEx 8602 9191 3550", "1Z50T0536891664106", and "729445720428778".
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -4115,6 +5410,8 @@ public final class UIKit {
 
     /**
      * Airline flight numbers such as "CZ # 1234", "AA212", and "SW Flight 573".
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -4123,6 +5420,8 @@ public final class UIKit {
 
     /**
      * Dates, times, or durations such as "7-3-2021" or "This Saturday", "12:30", and "10-11am", respectively.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -4131,6 +5430,8 @@ public final class UIKit {
 
     /**
      * userInfo contains a UIEventAttribution to go along with a URL open on launch
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @CVariable()
@@ -4139,6 +5440,8 @@ public final class UIKit {
 
     /**
      * value is a UIEventAttribution to go along with the URL to open
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @CVariable()
@@ -4147,6 +5450,8 @@ public final class UIKit {
 
     /**
      * value is a UIEventAttribution
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @CVariable()
@@ -4157,6 +5462,8 @@ public final class UIKit {
      * The UICollectionViewLayout class is provided as an abstract class for subclassing to define custom collection
      * layouts.
      * Defining a custom layout is an advanced operation intended for applications with complex needs.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -4167,6 +5474,8 @@ public final class UIKit {
      * Use the values from the edges in this constant to indicate to the consumer of a UIListSeparatorConfiguration that
      * the value for that
      * edge should be replaced with an appropriate inset.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @CVariable()
@@ -4175,6 +5484,8 @@ public final class UIKit {
 
     /**
      * Array of DDMatchLink values
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -4183,6 +5494,8 @@ public final class UIKit {
 
     /**
      * Array of DDMatchPhoneNumber values
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -4191,6 +5504,8 @@ public final class UIKit {
 
     /**
      * Array of DDMatchEmailAddress values
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -4199,6 +5514,8 @@ public final class UIKit {
 
     /**
      * Array of DDMatchAddress values
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -4207,6 +5524,8 @@ public final class UIKit {
 
     /**
      * Array of DDMatchCalendarEvent values
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -4215,6 +5534,8 @@ public final class UIKit {
 
     /**
      * Array of DDMatchShipmentTrackingNumber values
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -4223,6 +5544,8 @@ public final class UIKit {
 
     /**
      * Array of DDMatchFlightNumber values
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -4231,6 +5554,8 @@ public final class UIKit {
 
     /**
      * Array of DDMatchMoneyAmount values
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -4239,6 +5564,8 @@ public final class UIKit {
 
     /**
      * LPLinkMetadata
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -4247,6 +5574,8 @@ public final class UIKit {
 
     /**
      * The identifier for the system medium detent.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -4255,52 +5584,81 @@ public final class UIKit {
 
     /**
      * The identifier for the system large detent.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UISheetPresentationControllerDetentIdentifierLarge();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @NFloat
     public static native double UISheetPresentationControllerAutomaticDimension();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @ByValue
     public static native UIPointerAccessoryPosition UIPointerAccessoryPositionTop();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @ByValue
     public static native UIPointerAccessoryPosition UIPointerAccessoryPositionTopRight();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @ByValue
     public static native UIPointerAccessoryPosition UIPointerAccessoryPositionRight();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @ByValue
     public static native UIPointerAccessoryPosition UIPointerAccessoryPositionBottomRight();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @ByValue
     public static native UIPointerAccessoryPosition UIPointerAccessoryPositionBottom();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @ByValue
     public static native UIPointerAccessoryPosition UIPointerAccessoryPositionBottomLeft();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @ByValue
     public static native UIPointerAccessoryPosition UIPointerAccessoryPositionLeft();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @ByValue
@@ -4309,9 +5667,257 @@ public final class UIKit {
     /**
      * Posted by NSTextContentStorage when a text attribute unsupported by NSTextContentStorage is added to the
      * underlying text storage.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSTextContentStorageUnsupportedAttributeAddedNotification();
+
+    /**
+     * Suggested values for use with UIFontWidthTrait.
+     * Beware that most fonts will _not_ have variants available in all these widths!
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @NFloat
+    public static native double UIFontWidthCondensed();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @NFloat
+    public static native double UIFontWidthStandard();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @NFloat
+    public static native double UIFontWidthExpanded();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @NFloat
+    public static native double UIFontWidthCompressed();
+
+    /**
+     * Document-related menu items: Duplicate, Move, Rename, Export. The `.document` menu is added to Mac Catalyst
+     * applications by default. iOS Apps on the Mac will have the `.document` menu inserted when and if
+     * `UINavigationItem.titleMenuProvider` is set to a nonnull value, and from launch on subsequent executions.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIMenuDocument();
+
+    /**
+     * API-Since: 15.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIApplicationOpenNotificationSettingsURLString();
+
+    /**
+     * A session role which defines an interface for a non-interactive external display
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIWindowSceneSessionRoleExternalDisplayNonInteractive();
+
+    /**
+     * Object is the UIScreen which changed. [object referenceDisplayModeStatus] is the screen's new reference display
+     * mode status.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIScreenReferenceDisplayModeStatusDidChangeNotification();
+
+    /**
+     * A sentinel value indicating a detent that is inactive.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @NFloat
+    public static native double UISheetPresentationControllerDetentInactive();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextListMarkerBox();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextListMarkerCheck();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextListMarkerCircle();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextListMarkerDiamond();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextListMarkerDisc();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextListMarkerHyphen();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextListMarkerSquare();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextListMarkerLowercaseHexadecimal();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextListMarkerUppercaseHexadecimal();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextListMarkerOctal();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextListMarkerLowercaseAlpha();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextListMarkerUppercaseAlpha();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextListMarkerLowercaseLatin();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextListMarkerUppercaseLatin();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextListMarkerLowercaseRoman();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextListMarkerUppercaseRoman();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSTextListMarkerDecimal();
+
+    /**
+     * API-Since: 15.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIActivityTypeSharePlay();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIActivityTypeCollaborationInviteWithLink();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String UIActivityTypeCollaborationCopyLink();
 }

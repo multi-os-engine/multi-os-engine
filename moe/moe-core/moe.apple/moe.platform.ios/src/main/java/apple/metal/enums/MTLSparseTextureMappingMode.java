@@ -5,8 +5,10 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLSparseTextureMappingMode
- * <p>
+ * 
  * Type of mapping operation for sparse texture
+ * 
+ * API-Since: 13.0
  */
 @Generated
 public final class MTLSparseTextureMappingMode {
@@ -14,6 +16,12 @@ public final class MTLSparseTextureMappingMode {
     private MTLSparseTextureMappingMode() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NUInt public static final long Map = 0x0000000000000000L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NUInt public static final long Unmap = 0x0000000000000001L;
 }

@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
 import apple.uikit.UIScrollView;
 import apple.uikit.UIView;
 import org.moe.natj.general.ann.ByValue;
@@ -28,6 +27,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGPoint;
 
 @Generated
 @Library("UIKit")
@@ -96,6 +96,8 @@ public interface UIScrollViewDelegate {
 
     /**
      * any zoom scale changes
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @IsOptional
@@ -136,6 +138,8 @@ public interface UIScrollViewDelegate {
 
     /**
      * called before the scroll view begins zooming its content
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @IsOptional
@@ -147,6 +151,8 @@ public interface UIScrollViewDelegate {
     /**
      * called on finger up if the user dragged. velocity is in points/millisecond. targetContentOffset may be changed to
      * adjust where the scroll view comes to rest
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @IsOptional
@@ -168,6 +174,8 @@ public interface UIScrollViewDelegate {
 
     /**
      * Also see -[UIScrollView adjustedContentInsetDidChange]
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional

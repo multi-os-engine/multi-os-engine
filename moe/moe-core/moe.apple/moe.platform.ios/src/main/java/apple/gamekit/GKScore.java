@@ -48,7 +48,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GKScore represents a score in the leaderboards.
+ * 
+ * API-Since: 4.1
+ * Deprecated-Since: 14.0
+ * Deprecated-Message: Replaced by GKLeaderboardScore
  */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -144,6 +149,8 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
      * 1. Value not set
      * 2. Local player not authenticated
      * 3. Communications problem
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("reportScores:withCompletionHandler:")
@@ -153,7 +160,13 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     /**
      * Use this alternative to reportScores:withCompletionHandler: to allow only certain specific challenges to be
      * completed. Pass nil to avoid completing any challenges.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: pass GKLeaderboardScore to
+     * reportLeaderboardScores:withEligibleChallenges:withCompletionHandler instead
      */
+    @Deprecated
     @Generated
     @Selector("reportScores:withEligibleChallenges:withCompletionHandler:")
     public static native void reportScoresWithEligibleChallengesWithCompletionHandler(NSArray<? extends GKScore> scores,
@@ -185,11 +198,19 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use leaderboardIdentifier instead
+     */
     @Generated
     @Deprecated
     @Selector("category")
     public native String category();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("challengeComposeControllerWithMessage:players:completionHandler:")
     public native UIViewController challengeComposeControllerWithMessagePlayersCompletionHandler(String message,
@@ -198,6 +219,11 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * rb= GameKit.unavailableForTVOS
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, pass GKPlayers to
+     * challengeComposeControllerWithMessage:players: instead
      */
     @Generated
     @Deprecated
@@ -209,6 +235,8 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     /**
      * optional additional context that allows a game to store and retrieve additional data associated with the store.
      * Default value of zero is returned if no value is set.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("context")
@@ -236,6 +264,11 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @Selector("init")
     public native GKScore init();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use initWithLeaderboardIdentifier: instead
+     */
     @Generated
     @Deprecated
     @Selector("initWithCategory:")
@@ -254,6 +287,11 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * This method is obsolete. Calling this initialiser does nothing and will return nil **
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use
+     * initWithLeaderboardIdentifier:player:
      */
     @Generated
     @Deprecated
@@ -263,6 +301,8 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     /**
      * Initialize the achievement for a specific player. Use to submit participant scores when ending a turn-based
      * match.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithLeaderboardIdentifier:player:")
@@ -270,6 +310,11 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, pass GKPlayers to
+     * challengeComposeControllerWithMessage:players:completionHandler: and present the view controller instead
      */
     @Generated
     @Deprecated
@@ -278,6 +323,8 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * leaderboard identifier (required)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("leaderboardIdentifier")
@@ -285,6 +332,8 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * The player that recorded the score.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("player")
@@ -292,6 +341,10 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * The identifier of the player that recorded the score.
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: use player instead
      */
     @Generated
     @Deprecated
@@ -306,12 +359,22 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     @NInt
     public native long rank();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use +reportScores:withCompletionhandler: instead
+     */
     @Generated
     @Deprecated
     @Selector("reportScoreWithCompletionHandler:")
     public native void reportScoreWithCompletionHandler(
             @ObjCBlock(name = "call_reportScoreWithCompletionHandler") Block_reportScoreWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use leaderboardIdentifier instead
+     */
     @Generated
     @Deprecated
     @Selector("setCategory:")
@@ -320,6 +383,8 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
     /**
      * optional additional context that allows a game to store and retrieve additional data associated with the store.
      * Default value of zero is returned if no value is set.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setContext:")
@@ -327,6 +392,8 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * leaderboard identifier (required)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setLeaderboardIdentifier:")
@@ -336,6 +403,8 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
      * Convenience property to make the leaderboard associated with this GKScore, the default leaderboard for this
      * player. Default value is false.
      * If true, reporting that score will make the category this score belongs to, the default leaderboard for this user
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setShouldSetDefaultLeaderboard:")
@@ -352,6 +421,8 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
      * Convenience property to make the leaderboard associated with this GKScore, the default leaderboard for this
      * player. Default value is false.
      * If true, reporting that score will make the category this score belongs to, the default leaderboard for this user
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("shouldSetDefaultLeaderboard")
@@ -407,6 +478,9 @@ public class GKScore extends NSObject implements NSCoding, NSSecureCoding {
         void call_reportScoresWithEligibleChallengesWithCompletionHandler(NSError error);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("reportLeaderboardScores:withEligibleChallenges:withCompletionHandler:")
     public static native void reportLeaderboardScoresWithEligibleChallengesWithCompletionHandler(

@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * UIFocusGuides are UILayoutGuide subclasses that participate in the focus system from within their owning view. A
  * UIFocusGuide may be used to expose non-view areas as focusable.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("UIKit")
@@ -182,6 +184,8 @@ public class UIFocusGuide extends UILayoutGuide {
      * this guide is effectively disabled.
      * If focused, the guide attempts to redirect focus to each environment in the array, in order, stopping when a
      * focusable item in an environment has been found.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("preferredFocusEnvironments")
@@ -190,7 +194,11 @@ public class UIFocusGuide extends UILayoutGuide {
     /**
      * Setting a preferred focused view marks this guide's layoutFrame as focusable, and if focused, redirects focus to
      * its preferred focused view. If nil, this guide is effectively disabled.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Generated
     @Selector("preferredFocusedView")
     public native UIView preferredFocusedView();
@@ -200,6 +208,8 @@ public class UIFocusGuide extends UILayoutGuide {
      * this guide is effectively disabled.
      * If focused, the guide attempts to redirect focus to each environment in the array, in order, stopping when a
      * focusable item in an environment has been found.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPreferredFocusEnvironments:")
@@ -208,7 +218,11 @@ public class UIFocusGuide extends UILayoutGuide {
     /**
      * Setting a preferred focused view marks this guide's layoutFrame as focusable, and if focused, redirects focus to
      * its preferred focused view. If nil, this guide is effectively disabled.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Generated
     @Selector("setPreferredFocusedView:")
     public native void setPreferredFocusedView_unsafe(UIView value);
@@ -216,7 +230,11 @@ public class UIFocusGuide extends UILayoutGuide {
     /**
      * Setting a preferred focused view marks this guide's layoutFrame as focusable, and if focused, redirects focus to
      * its preferred focused view. If nil, this guide is effectively disabled.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Generated
     public void setPreferredFocusedView(UIView value) {
         Object __old = preferredFocusedView();

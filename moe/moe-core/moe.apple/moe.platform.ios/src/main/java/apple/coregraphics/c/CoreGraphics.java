@@ -49,7 +49,6 @@ import apple.coregraphics.opaque.CGPathRef;
 import apple.coregraphics.opaque.CGPatternRef;
 import apple.coregraphics.opaque.CGShadingRef;
 import apple.coregraphics.opaque.ColorSyncProfileRef;
-import apple.coregraphics.struct.CGAffineTransform;
 import apple.coregraphics.struct.CGColorDataFormat;
 import apple.coregraphics.struct.CGDataConsumerCallbacks;
 import apple.coregraphics.struct.CGDataProviderDirectCallbacks;
@@ -57,10 +56,6 @@ import apple.coregraphics.struct.CGDataProviderSequentialCallbacks;
 import apple.coregraphics.struct.CGFunctionCallbacks;
 import apple.coregraphics.struct.CGPathElement;
 import apple.coregraphics.struct.CGPatternCallbacks;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
-import apple.coregraphics.struct.CGVector;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.ann.CFunction;
 import org.moe.natj.c.ann.CVariable;
@@ -89,6 +84,12 @@ import org.moe.natj.general.ptr.NIntPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.ann.ObjCBlock;
+import apple.corefoundation.struct.CGAffineTransformComponents;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import apple.corefoundation.struct.CGVector;
 
 @Generated
 @Library("CoreGraphics")
@@ -154,6 +155,8 @@ public final class CoreGraphics {
 
     /**
      * Return the leftmost x-value of `rect'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -162,6 +165,8 @@ public final class CoreGraphics {
 
     /**
      * Return the midpoint x-value of `rect'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -170,6 +175,8 @@ public final class CoreGraphics {
 
     /**
      * Return the rightmost x-value of `rect'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -177,7 +184,9 @@ public final class CoreGraphics {
     public static native double CGRectGetMaxX(@ByValue CGRect rect);
 
     /**
-     * Return the bottommost y-value of `rect'.
+     * Return the smallest y-value of `rect'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -186,6 +195,8 @@ public final class CoreGraphics {
 
     /**
      * Return the midpoint y-value of `rect'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -193,7 +204,9 @@ public final class CoreGraphics {
     public static native double CGRectGetMidY(@ByValue CGRect rect);
 
     /**
-     * Return the topmost y-value of `rect'.
+     * Return the largest y-value of `rect'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -202,6 +215,8 @@ public final class CoreGraphics {
 
     /**
      * Return the width of `rect'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -210,6 +225,8 @@ public final class CoreGraphics {
 
     /**
      * Return the height of `rect'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -218,6 +235,8 @@ public final class CoreGraphics {
 
     /**
      * Return true if `point1' and `point2' are the same, false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -225,6 +244,8 @@ public final class CoreGraphics {
 
     /**
      * Return true if `size1' and `size2' are the same, false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -232,6 +253,8 @@ public final class CoreGraphics {
 
     /**
      * Return true if `rect1' and `rect2' are the same, false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -240,6 +263,8 @@ public final class CoreGraphics {
     /**
      * Standardize `rect' -- i.e., convert it to an equivalent rect which has
      * positive width and height.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -249,6 +274,8 @@ public final class CoreGraphics {
     /**
      * Return true if `rect' is empty (that is, if it has zero width or height),
      * false otherwise. A null rect is defined to be empty.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -256,6 +283,8 @@ public final class CoreGraphics {
 
     /**
      * Return true if `rect' is the null rectangle, false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -263,6 +292,8 @@ public final class CoreGraphics {
 
     /**
      * Return true if `rect' is the infinite rectangle, false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -271,6 +302,8 @@ public final class CoreGraphics {
     /**
      * Inset `rect' by `(dx, dy)' -- i.e., offset its origin by `(dx, dy)', and
      * decrease its size by `(2*dx, 2*dy)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -280,6 +313,8 @@ public final class CoreGraphics {
     /**
      * Expand `rect' to the smallest rect containing it with integral origin and
      * size.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -288,6 +323,8 @@ public final class CoreGraphics {
 
     /**
      * Return the union of `r1' and `r2'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -296,6 +333,8 @@ public final class CoreGraphics {
 
     /**
      * Return the intersection of `r1' and `r2'. This may return a null rect.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -304,6 +343,8 @@ public final class CoreGraphics {
 
     /**
      * Offset `rect' by `(dx, dy)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -316,6 +357,8 @@ public final class CoreGraphics {
      * `CGRectMinXEdge', `CGRectMinYEdge', `CGRectMaxXEdge', or
      * `CGRectMaxYEdge'. The size of `slice' is determined by `amount', which
      * measures the distance from the specified edge.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -326,6 +369,8 @@ public final class CoreGraphics {
 
     /**
      * Return true if `point' is contained in `rect', false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -335,6 +380,8 @@ public final class CoreGraphics {
      * Return true if `rect2' is contained in `rect1', false otherwise. `rect2'
      * is contained in `rect1' if the union of `rect1' and `rect2' is equal to
      * `rect1'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -344,6 +391,8 @@ public final class CoreGraphics {
      * Return true if `rect1' intersects `rect2', false otherwise. `rect1'
      * intersects `rect2' if the intersection of `rect1' and `rect2' is not the
      * null rect.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -351,6 +400,8 @@ public final class CoreGraphics {
 
     /**
      * Return a dictionary representation of `point'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -360,6 +411,8 @@ public final class CoreGraphics {
      * Make a CGPoint from the contents of `dict' (presumably returned earlier
      * from `CGPointCreateDictionaryRepresentation') and store the value in
      * `point'. Returns true on success; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -368,6 +421,8 @@ public final class CoreGraphics {
 
     /**
      * Return a dictionary representation of `size'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -377,6 +432,8 @@ public final class CoreGraphics {
      * Make a CGSize from the contents of `dict' (presumably returned earlier
      * from `CGSizeCreateDictionaryRepresentation') and store the value in
      * `size'. Returns true on success; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -385,6 +442,8 @@ public final class CoreGraphics {
 
     /**
      * Return a dictionary representation of `rect'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -394,6 +453,8 @@ public final class CoreGraphics {
      * Make a CGRect from the contents of `dict' (presumably returned earlier
      * from `CGRectCreateDictionaryRepresentation') and store the value in
      * `rect'. Returns true on success; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -412,6 +473,8 @@ public final class CoreGraphics {
 
     /**
      * Return the transform [ a b c d tx ty ].
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -422,6 +485,8 @@ public final class CoreGraphics {
     /**
      * Return a transform which translates by `(tx, ty)':
      * t' = [ 1 0 0 1 tx ty ]
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -431,6 +496,8 @@ public final class CoreGraphics {
     /**
      * Return a transform which scales by `(sx, sy)':
      * t' = [ sx 0 0 sy 0 0 ]
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -440,6 +507,8 @@ public final class CoreGraphics {
     /**
      * Return a transform which rotates by `angle' radians:
      * t' = [ cos(angle) sin(angle) -sin(angle) cos(angle) 0 0 ]
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -448,6 +517,8 @@ public final class CoreGraphics {
 
     /**
      * Return true if `t' is the identity transform, false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -456,6 +527,8 @@ public final class CoreGraphics {
     /**
      * Translate `t' by `(tx, ty)' and return the result:
      * t' = [ 1 0 0 1 tx ty ] * t
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -466,6 +539,8 @@ public final class CoreGraphics {
     /**
      * Scale `t' by `(sx, sy)' and return the result:
      * t' = [ sx 0 0 sy 0 0 ] * t
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -476,6 +551,8 @@ public final class CoreGraphics {
     /**
      * Rotate `t' by `angle' radians and return the result:
      * t' = [ cos(angle) sin(angle) -sin(angle) cos(angle) 0 0 ] * t
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -485,6 +562,8 @@ public final class CoreGraphics {
     /**
      * Invert `t' and return the result. If `t' has zero determinant, then `t'
      * is returned unchanged.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -494,6 +573,8 @@ public final class CoreGraphics {
     /**
      * Concatenate `t2' to `t1' and return the result:
      * t' = t1 * t2
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -503,6 +584,8 @@ public final class CoreGraphics {
 
     /**
      * Return true if `t1' and `t2' are equal, false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -513,6 +596,8 @@ public final class CoreGraphics {
      * Transform `point' by `t' and return the result:
      * p' = p * t
      * where p = [ x y 1 ].
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -523,6 +608,8 @@ public final class CoreGraphics {
      * Transform `size' by `t' and return the result:
      * s' = s * t
      * where s = [ width height 0 ].
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -536,6 +623,8 @@ public final class CoreGraphics {
      * consists solely of scales, flips and translations, then the returned
      * rectangle coincides with the rectangle constructed from the four
      * transformed corners.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -566,6 +655,8 @@ public final class CoreGraphics {
 
     /**
      * Return the CFTypeID for CGDataProviderRefs.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -575,6 +666,8 @@ public final class CoreGraphics {
     /**
      * Create a sequential-access data provider using `callbacks' to provide the
      * data. `info' is passed to each of the callback functions.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -585,6 +678,8 @@ public final class CoreGraphics {
      * Create a direct-access data provider using `callbacks' to supply `size'
      * bytes of data. `info' is passed to each of the callback functions.
      * The underlying data must not change for the life of the data provider.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -595,6 +690,8 @@ public final class CoreGraphics {
      * Create a direct-access data provider using `data', an array of `size'
      * bytes. `releaseData' is called when the data provider is freed, and is
      * passed `info' as its first argument.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -604,6 +701,8 @@ public final class CoreGraphics {
 
     /**
      * Create a direct-access data provider which reads from `data'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -611,6 +710,8 @@ public final class CoreGraphics {
 
     /**
      * Create a data provider reading from `url'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -618,6 +719,8 @@ public final class CoreGraphics {
 
     /**
      * Create a data provider reading from `filename'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -627,6 +730,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRetain(provider)', but doesn't crash (as CFRetain does)
      * if `provider' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -635,6 +740,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRelease(provider)', but doesn't crash (as CFRelease
      * does) if `provider' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -644,6 +751,8 @@ public final class CoreGraphics {
      * Return a copy of the data specified by provider. Returns NULL if a
      * complete copy of the data can't be obtained (for example, if the
      * underlying data is too large to fit in memory).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -651,6 +760,8 @@ public final class CoreGraphics {
 
     /**
      * Create a DeviceGray color space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -658,6 +769,8 @@ public final class CoreGraphics {
 
     /**
      * Create a DeviceRGB color space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -665,6 +778,8 @@ public final class CoreGraphics {
 
     /**
      * Create a DeviceCMYK color space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -672,7 +787,12 @@ public final class CoreGraphics {
 
     /**
      * Please use `CGColorSpaceCreateWithICCData'
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CGColorSpaceRef CGColorSpaceCreateWithICCProfile(CFDataRef data);
@@ -690,6 +810,8 @@ public final class CoreGraphics {
      * have `nComponents' color components. If `alternate' is NULL, then the
      * color space used will be DeviceGray, DeviceRGB, or DeviceCMYK, depending
      * on whether `nComponents' is 1, 3, or 4, respectively.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -706,6 +828,8 @@ public final class CoreGraphics {
      * components in the base color space. Each byte is an unsigned integer in
      * the range 0 to 255 that is scaled to the range of the corresponding color
      * component in the base color space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -717,6 +841,8 @@ public final class CoreGraphics {
      * of the pattern color space. For colored patterns, `baseSpace' should be
      * NULL; for uncolored patterns, `baseSpace' specifies the color space of
      * colors which will be painted through the pattern.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -724,7 +850,12 @@ public final class CoreGraphics {
 
     /**
      * Please use `CGColorSpaceCreateWithColorSyncProfile'
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CGColorSpaceRef CGColorSpaceCreateWithPlatformColorSpace(ConstVoidPtr ref);
@@ -732,6 +863,8 @@ public final class CoreGraphics {
     /**
      * Create a color space using `name' as the identifier for the color
      * space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -740,6 +873,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRetain(space)', except it doesn't crash (as CFRetain
      * does) if `space' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -748,6 +883,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRelease(space)', except it doesn't crash (as CFRelease
      * does) if `space' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -755,6 +892,8 @@ public final class CoreGraphics {
 
     /**
      * Same as `CGColorSpaceGetName' but with ownership released to the caller.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -762,6 +901,8 @@ public final class CoreGraphics {
 
     /**
      * Return the CFTypeID for CGColorSpaces.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -770,6 +911,8 @@ public final class CoreGraphics {
 
     /**
      * Return the number of color components in the color space `space'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -778,6 +921,8 @@ public final class CoreGraphics {
 
     /**
      * Return the color space model of `space'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -787,6 +932,8 @@ public final class CoreGraphics {
      * Return the base color space of `space' if `space' is a pattern or indexed
      * color space; otherwise, return NULL. To determine whether a color space
      * is an indexed or pattern color space, use `CGColorSpaceGetModel'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -796,6 +943,8 @@ public final class CoreGraphics {
      * Return the number of entries in the color table of `space' if `space' is
      * an indexed color space; otherwise, return 0. To determine whether a color
      * space is an indexed color space, use `CGColorSpaceGetModel'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -809,6 +958,8 @@ public final class CoreGraphics {
      * table; the returned data is in the same format as that passed to
      * `CGColorSpaceCreateIndexed'. To determine whether a color space is an
      * indexed color space, use `CGColorSpaceGetModel'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -816,7 +967,12 @@ public final class CoreGraphics {
 
     /**
      * Please use `CGColorSpaceCopyICCData'
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFDataRef CGColorSpaceCopyICCProfile(CGColorSpaceRef space);
@@ -824,6 +980,8 @@ public final class CoreGraphics {
     /**
      * Return a copy of the ICC profile data of `space', or NULL if the color space
      * doesn't have an ICC profile.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -831,6 +989,8 @@ public final class CoreGraphics {
 
     /**
      * Return true if gamut of the RGB color space is greater than 85% of NTSC gamut
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -839,6 +999,8 @@ public final class CoreGraphics {
     /**
      * Return true if `space' can be used as a destination color space; false
      * otherwise.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -846,6 +1008,8 @@ public final class CoreGraphics {
 
     /**
      * Return the CFTypeID for CGPatternRefs.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -854,6 +1018,8 @@ public final class CoreGraphics {
 
     /**
      * Create a pattern.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -865,6 +1031,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRetain(pattern)', except it doesn't crash (as CF does)
      * if `pattern' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -873,6 +1041,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRelease(pattern)', except it doesn't crash (as CF does)
      * if `pattern' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -882,6 +1052,8 @@ public final class CoreGraphics {
      * Create a color in the color space `space' with color components
      * (including alpha) specified by `components'. `space' may be any color
      * space except a pattern color space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -890,6 +1062,8 @@ public final class CoreGraphics {
     /**
      * Create a color in color space `space' with pattern `pattern' and
      * components `components'. `space' must be a pattern color space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -898,6 +1072,8 @@ public final class CoreGraphics {
 
     /**
      * Create a copy of `color'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -905,6 +1081,8 @@ public final class CoreGraphics {
 
     /**
      * Create a copy of `color' with alpha set to `alpha'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -912,6 +1090,8 @@ public final class CoreGraphics {
 
     /**
      * Create a copy of `color' by matching existing color to destination color space.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CFunction
@@ -921,6 +1101,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRetain(color)', except it doesn't crash (as CFRetain
      * does) if `color' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -929,6 +1111,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRelease(color)', except it doesn't crash (as CFRelease
      * does) if `color' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -936,6 +1120,8 @@ public final class CoreGraphics {
 
     /**
      * Return true if `color1' is equal to `color2'; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -944,6 +1130,8 @@ public final class CoreGraphics {
     /**
      * Return the number of color components (including alpha) associated with
      * `color'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -952,6 +1140,8 @@ public final class CoreGraphics {
 
     /**
      * Return the color components (including alpha) associated with `color'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -959,6 +1149,8 @@ public final class CoreGraphics {
 
     /**
      * Return the alpha component associated with `color'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -967,6 +1159,8 @@ public final class CoreGraphics {
 
     /**
      * Return the color space associated with `color'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -975,6 +1169,8 @@ public final class CoreGraphics {
     /**
      * Return the pattern associated with `color', if it's a color in a pattern
      * color space; NULL otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -982,6 +1178,8 @@ public final class CoreGraphics {
 
     /**
      * Return the CFTypeID for CGColors.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -990,6 +1188,8 @@ public final class CoreGraphics {
 
     /**
      * Return the CFTypeID for CGFontRefs.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -999,6 +1199,8 @@ public final class CoreGraphics {
     /**
      * Return the font defined by the data provided by `provider', or NULL if
      * the font can't be created.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1008,6 +1210,8 @@ public final class CoreGraphics {
      * Return the font identified by `name', corresponding to the font's
      * PostScript name or its full name, or NULL if the font can't be
      * created.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1021,6 +1225,8 @@ public final class CoreGraphics {
      * specified for that particular variation axis represented as a
      * CFNumberRef. If a variation axis name is not specified in `variations',
      * then the current value from `font' is used.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1029,6 +1235,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRetain(font)', except it doesn't crash (as CFRetain
      * does) if `font' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1037,6 +1245,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRelease(font)', except it doesn't crash (as CFRelease
      * does) if `font' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1044,6 +1254,8 @@ public final class CoreGraphics {
 
     /**
      * Return the number of glyphs in `font'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1052,6 +1264,8 @@ public final class CoreGraphics {
 
     /**
      * Return the glyph space units/em for `font'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1059,6 +1273,8 @@ public final class CoreGraphics {
 
     /**
      * Return the PostScript name of `font'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1066,6 +1282,8 @@ public final class CoreGraphics {
 
     /**
      * Return the "full name" of `font'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1075,6 +1293,8 @@ public final class CoreGraphics {
      * Return the ascent of `font'. The ascent is the maximum distance above the
      * baseline of glyphs in a font. The value is specified in glyph space
      * units.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1084,6 +1304,8 @@ public final class CoreGraphics {
      * Return the descent of `font'. The descent is the maximum distance below
      * the baseline of glyphs in a font. The value is specified in glyph space
      * units.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1093,6 +1315,8 @@ public final class CoreGraphics {
      * Return the leading of `font'. The leading is the spacing between
      * consecutive lines of text in a font. The value is specified in glyph
      * space units.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1102,6 +1326,8 @@ public final class CoreGraphics {
      * Return the cap height of `font'. The cap height is the distance above the
      * baseline of the top of flat capital letters of glyphs in a font. The
      * value is specified in glyph space units.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1111,6 +1337,8 @@ public final class CoreGraphics {
      * Return the x-height of `font'. The x-height is the distance above the
      * baseline of the top of flat, non-ascending lowercase letters (such as
      * "x") of glyphs in a font. The value is specified in glyph space units.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1120,6 +1348,8 @@ public final class CoreGraphics {
      * Return the font bounding box of `font'. The font bounding box is the
      * union of all of the bounding boxes for all the glyphs in a font. The
      * value is specified in glyph space units.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1129,6 +1359,8 @@ public final class CoreGraphics {
     /**
      * Return the italic angle of `font', measured in degrees counter-clockwise
      * from the vertical.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1138,6 +1370,8 @@ public final class CoreGraphics {
     /**
      * Return the thickness of the dominant vertical stems of glyphs in `font'.
      * The value is specified in glyph space units.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1149,6 +1383,8 @@ public final class CoreGraphics {
      * variation axis dictionary contains values for the variation axis keys
      * listed below. This function returns NULL if `font' doesn't support
      * variations.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1161,6 +1397,8 @@ public final class CoreGraphics {
      * value specified for that particular variation axis represented as a
      * CFNumberRef. This function returns NULL if `font' doesn't support
      * variations.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1171,6 +1409,8 @@ public final class CoreGraphics {
      * and return it in the corresponding entry of `advances', an array of
      * `count' integers. The advances are specified in glyph space. Returns
      * false if advances can't be retrieved for any reason; true otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1183,6 +1423,8 @@ public final class CoreGraphics {
      * `count' rectangles. The bounding boxes are specified in glyph space.
      * Returns false if bounding boxes can't be retrieved for any reason; true
      * otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1192,6 +1434,8 @@ public final class CoreGraphics {
     /**
      * Return the glyph associated with `name' in `font'. If `name' isn't found
      * in the font, return 0.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1200,6 +1444,8 @@ public final class CoreGraphics {
     /**
      * Return the glyph name of `glyph' in `font', or NULL if `glyph' does not
      * appear in `font'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1208,6 +1454,8 @@ public final class CoreGraphics {
     /**
      * Return true if a subset in the PostScript format `format' can be created
      * for `font'; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1217,6 +1465,8 @@ public final class CoreGraphics {
      * Return an array of font table tags in `font'. Each entry in the array is
      * a four-byte value representing a single TrueType or OpenType font table
      * tag.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1225,6 +1475,8 @@ public final class CoreGraphics {
     /**
      * Return the table in `font' corresponding to `tag', or NULL if no such
      * table exists.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1232,6 +1484,8 @@ public final class CoreGraphics {
 
     /**
      * Return the CFTypeID for CGGradients.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1251,6 +1505,8 @@ public final class CoreGraphics {
      * of color components of `space'. If no color is provided for 0 or 1, the
      * gradient will use the color provided at the locations closest to 0 and 1
      * for those values.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1273,6 +1529,8 @@ public final class CoreGraphics {
      * as `colors'. If no color is provided for 0 or 1, the gradient will use
      * the color provided at the locations closest to 0 and 1 for those
      * values.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1282,6 +1540,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRetain' except that it doesn't crash (as `CFRetain'
      * does) if `gradient' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1290,6 +1550,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRelease' except that it doesn't crash (as `CFRelease'
      * does) if `gradient' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1297,6 +1559,8 @@ public final class CoreGraphics {
 
     /**
      * Return the CFTypeID for CGImageRefs.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1305,6 +1569,8 @@ public final class CoreGraphics {
 
     /**
      * Create an image.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1316,6 +1582,8 @@ public final class CoreGraphics {
      * Create an image mask. Legal values for bits per component are 1, 2, 4 and 8.
      * Bits per pixel must be either the same as bits per component or 8, with
      * exception of 8 bits per component where bits per pixel can be also 16 or 32.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1326,6 +1594,8 @@ public final class CoreGraphics {
     /**
      * Return a copy of `image'. Only the image structure itself is copied; the
      * underlying data is not.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1333,6 +1603,8 @@ public final class CoreGraphics {
 
     /**
      * Create an image from `source', a data provider of JPEG-encoded data.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1341,6 +1613,8 @@ public final class CoreGraphics {
 
     /**
      * Create an image using `source', a data provider for PNG-encoded data.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1350,7 +1624,7 @@ public final class CoreGraphics {
     /**
      * Create an image using the data contained within the subrectangle `rect'
      * of `image'.
-     * <p>
+     * 
      * The new image is created by
      * 1) adjusting `rect' to integral bounds by calling "CGRectIntegral";
      * 2) intersecting the result with a rectangle with origin (0, 0) and size
@@ -1359,15 +1633,17 @@ public final class CoreGraphics {
      * first pixel of the image data as the origin of the image.
      * If the resulting rectangle is the null rectangle, this function returns
      * NULL.
-     * <p>
+     * 
      * If W and H are the width and height of image, respectively, then the
      * point (0,0) corresponds to the first pixel of the image data; the point
      * (W-1, 0) is the last pixel of the first row of the image data; (0, H-1)
      * is the first pixel of the last row of the image data; and (W-1, H-1) is
      * the last pixel of the last row of the image data.
-     * <p>
+     * 
      * The resulting image retains a reference to the original image, so you may
      * release the original image after calling this function.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1376,7 +1652,7 @@ public final class CoreGraphics {
     /**
      * Create a new image from `image' masked by `mask', which may be an image
      * mask or an image.
-     * <p>
+     * 
      * If `mask' is an image mask, then it indicates which parts of the context
      * are to be painted with the image when drawn in a context, and which are
      * to be masked out (left unchanged). The source samples of the image mask
@@ -1385,20 +1661,22 @@ public final class CoreGraphics {
      * region in `image' is blended with the destination using an alpha of
      * (1-S). (For example, if S is 1, then the region is not painted, while if
      * S is 0, the region is fully painted.)
-     * <p>
+     * 
      * If `mask' is an image, then it serves as alpha mask for blending the
      * image onto the destination. The source samples of `mask' determine which
      * areas are painted: if the value of the source sample in mask is S, then
      * the corresponding region in image is blended with the destination with an
      * alpha of S. (For example, if S is 0, then the region is not painted,
      * while if S is 1, the region is fully painted.)
-     * <p>
+     * 
      * The parameter `image' may not be an image mask and may not have an image
      * mask or masking color associated with it.
-     * <p>
+     * 
      * If `mask' is an image, then it must be in a monochrome color space
      * (e.g. DeviceGray, GenericGray, etc...), may not have alpha, and may not
      * itself be masked by an image mask or a masking color.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1410,16 +1688,18 @@ public final class CoreGraphics {
      * components in color space of `image'. Any image sample with color value
      * {c[1], ... c[N]} where min[i] <= c[i] <= max[i] for 1 <= i <= N is masked
      * out (that is, not painted).
-     * <p>
+     * 
      * Each value in `components' must be a valid image sample value: if `image'
      * has integral pixel components, then each value of must be in the range
      * [0..2**bitsPerComponent - 1] (where `bitsPerComponent' is the number of
      * bits/component of `image'); if `image' has floating-point pixel
      * components, then each value may be any floating-point number which is a
      * valid color component.
-     * <p>
+     * 
      * The parameter `image' may not be an image mask, and may not already have
      * an image mask or masking color associated with it.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1430,6 +1710,8 @@ public final class CoreGraphics {
      * Returns NULL if `image' is an image mask, or if the number of components
      * of `space' isn't the same as the number of components of the color space
      * of `image'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1437,6 +1719,8 @@ public final class CoreGraphics {
 
     /**
      * Equivalent to `CFRetain(image)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1444,6 +1728,8 @@ public final class CoreGraphics {
 
     /**
      * Equivalent to `CFRelease(image)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1451,6 +1737,8 @@ public final class CoreGraphics {
 
     /**
      * Return true if `image' is an image mask, false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1458,6 +1746,8 @@ public final class CoreGraphics {
 
     /**
      * Return the width of `image'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1466,6 +1756,8 @@ public final class CoreGraphics {
 
     /**
      * Return the height of `image'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1474,6 +1766,8 @@ public final class CoreGraphics {
 
     /**
      * Return the number of bits/component of `image'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1482,6 +1776,8 @@ public final class CoreGraphics {
 
     /**
      * Return the number of bits/pixel of `image'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1490,6 +1786,8 @@ public final class CoreGraphics {
 
     /**
      * Return the number of bytes/row of `image'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1499,6 +1797,8 @@ public final class CoreGraphics {
     /**
      * Return the color space of `image', or NULL if `image' is an image
      * mask.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1506,6 +1806,8 @@ public final class CoreGraphics {
 
     /**
      * Return the alpha info of `image'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1513,6 +1815,8 @@ public final class CoreGraphics {
 
     /**
      * Return the data provider of `image'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1520,6 +1824,8 @@ public final class CoreGraphics {
 
     /**
      * Return the decode array of `image'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1527,6 +1833,8 @@ public final class CoreGraphics {
 
     /**
      * Return the interpolation parameter of `image'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1534,6 +1842,8 @@ public final class CoreGraphics {
 
     /**
      * Return the rendering intent of `image'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1541,6 +1851,8 @@ public final class CoreGraphics {
 
     /**
      * Return the bitmap info of `image'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1548,6 +1860,8 @@ public final class CoreGraphics {
 
     /**
      * Return the UTType of `image'.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CFunction
@@ -1555,6 +1869,8 @@ public final class CoreGraphics {
 
     /**
      * Return the CFTypeID for CGPathRefs.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1563,6 +1879,8 @@ public final class CoreGraphics {
 
     /**
      * Create a mutable path.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1570,6 +1888,8 @@ public final class CoreGraphics {
 
     /**
      * Create a copy of `path'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1577,6 +1897,8 @@ public final class CoreGraphics {
 
     /**
      * Create a copy of `path' transformed by `transform'.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CFunction
@@ -1585,6 +1907,8 @@ public final class CoreGraphics {
 
     /**
      * Create a mutable copy of `path'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1592,6 +1916,8 @@ public final class CoreGraphics {
 
     /**
      * Create a mutable copy of `path' transformed by `transform'.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CFunction
@@ -1605,6 +1931,8 @@ public final class CoreGraphics {
      * direction. If `transform' is non-NULL, then the lines representing the
      * rectangle will be transformed by `transform' before they are added to the
      * path.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CFunction
@@ -1623,6 +1951,8 @@ public final class CoreGraphics {
      * `transform' is non-NULL, then the constructed Bézier curves representing
      * the ellipse will be transformed by `transform' before they are added to
      * the path.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CFunction
@@ -1638,6 +1968,8 @@ public final class CoreGraphics {
      * subpath" --- oriented in the clockwise direction. If `transform' is
      * non-NULL, then the path elements representing the rounded rectangle will
      * be transformed by `transform' before they are added to the path.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -1654,6 +1986,8 @@ public final class CoreGraphics {
      * clockwise direction. If `transform' is non-NULL, then the path elements
      * representing the rounded rectangle will be transformed by `transform'
      * before they are added to the path.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CFunction
@@ -1667,6 +2001,8 @@ public final class CoreGraphics {
      * `CGContextSetLineDash'. If `transform' is non-NULL, then the elements of
      * the constructed path will be transformed by `transform' before they are
      * added to the path.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CFunction
@@ -1680,6 +2016,8 @@ public final class CoreGraphics {
      * CGContext parameters. If `transform' is non-NULL, then the elements of
      * the constructed path will be transformed by `transform' before they are
      * added to the path.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CFunction
@@ -1690,6 +2028,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRetain(path)', except it doesn't crash (as CFRetain
      * does) if `path' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1698,6 +2038,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRelease(path)', except it doesn't crash (as CFRelease
      * does) if `path' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1705,6 +2047,8 @@ public final class CoreGraphics {
 
     /**
      * Return true if `path1' is equal to `path2'; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1713,6 +2057,8 @@ public final class CoreGraphics {
     /**
      * Move the current point to `(x, y)' in `path' and begin a new subpath. If
      * `m' is non-NULL, then transform `(x, y)' by `m' first.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1724,6 +2070,8 @@ public final class CoreGraphics {
      * Append a straight line segment from the current point to `(x, y)' in
      * `path' and move the current point to `(x, y)'. If `m' is non-NULL, then
      * transform `(x, y)' by `m' first.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1735,6 +2083,8 @@ public final class CoreGraphics {
      * Append a quadratic curve from the current point to `(x, y)' with control
      * point `(cpx, cpy)' in `path' and move the current point to `(x, y)'. If
      * `m' is non-NULL, then transform all points by `m' first.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1747,6 +2097,8 @@ public final class CoreGraphics {
      * control points `(cp1x, cp1y)' and `(cp2x, cp2y)' in `path' and move the
      * current point to `(x, y)'. If `m' is non-NULL, then transform all points
      * by `m' first.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1758,6 +2110,8 @@ public final class CoreGraphics {
     /**
      * Append a line from the current point to the starting point of the current
      * subpath of `path' and end the subpath.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1766,6 +2120,8 @@ public final class CoreGraphics {
     /**
      * Add `rect' to `path'. If `m' is non-NULL, then first transform `rect' by
      * `m' before adding it to `path'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1777,6 +2133,8 @@ public final class CoreGraphics {
      * Add each rectangle specified by `rects', an array of `count' CGRects, to
      * `path'. If `m' is non-NULL, then first transform each rectangle by `m'
      * before adding it to `path'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1788,6 +2146,8 @@ public final class CoreGraphics {
      * Move to the first element of `points', an array of `count' CGPoints, and
      * append a line from each point to the next point in `points'. If `m' is
      * non-NULL, then first transform each point by `m'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1806,6 +2166,8 @@ public final class CoreGraphics {
      * ends with a "close subpath" --- oriented in the clockwise direction. If
      * `m' is non-NULL, then the constructed Bézier curves representing the
      * ellipse will be transformed by `m' before they are added to `path'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1824,6 +2186,8 @@ public final class CoreGraphics {
      * measured in radians. If `matrix' is non-NULL, then the constructed Bézier
      * curves representing the arc will be transformed by `matrix' before they
      * are added to the path.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CFunction
@@ -1841,7 +2205,7 @@ public final class CoreGraphics {
      * measured in radians. If `m' is non-NULL, then the constructed Bézier
      * curves representing the arc will be transformed by `m' before they are
      * added to `path'.
-     * <p>
+     * 
      * Note that using values very near 2π can be problematic. For example,
      * setting `startAngle' to 0, `endAngle' to 2π, and `clockwise' to true will
      * draw nothing. (It's easy to see this by considering, instead of 0 and 2π,
@@ -1849,10 +2213,12 @@ public final class CoreGraphics {
      * however, it's possible that passing the value `2 * M_PI' to approximate
      * 2π will numerically equal to 2π + δ, for some small δ; this will cause a
      * full circle to be drawn.
-     * <p>
+     * 
      * If you want a full circle to be drawn clockwise, you should set
      * `startAngle' to 2π, `endAngle' to 0, and `clockwise' to true. This avoids
      * the instability problems discussed above.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1869,6 +2235,8 @@ public final class CoreGraphics {
      * to `(x2, y2)'. If `m' is non-NULL, then the constructed Bézier curves
      * representing the arc will be transformed by `m' before they are added to
      * `path'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1879,6 +2247,8 @@ public final class CoreGraphics {
     /**
      * Add `path2' to `path1'. If `m' is non-NULL, then the points in `path2'
      * will be transformed by `m' before they are added to `path1'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1887,6 +2257,8 @@ public final class CoreGraphics {
 
     /**
      * Return true if `path' contains no elements, false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1894,6 +2266,8 @@ public final class CoreGraphics {
 
     /**
      * Return true if `path' represents a rectangle, false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1903,6 +2277,8 @@ public final class CoreGraphics {
     /**
      * Return the current point of the current subpath of `path'. If there is no
      * current point, then return CGPointZero.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1914,6 +2290,8 @@ public final class CoreGraphics {
      * rectangle completely enclosing all points in the path, including control
      * points for Bézier cubic and quadratic curves. If the path is empty, then
      * return `CGRectNull'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1925,6 +2303,8 @@ public final class CoreGraphics {
      * smallest rectangle completely enclosing all points in the path, *not*
      * including control points for Bézier cubic and quadratic curves. If the
      * path is empty, then return `CGRectNull'.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CFunction
@@ -1938,6 +2318,8 @@ public final class CoreGraphics {
      * evaluate the painted region of the path, otherwise, the winding-number
      * fill rule is used. If `m' is non-NULL, then the point is transformed by
      * `m' before determining whether the path contains it.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1948,6 +2330,8 @@ public final class CoreGraphics {
     /**
      * For element of `path', call `function', passing it the path element and
      * `info'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1956,6 +2340,8 @@ public final class CoreGraphics {
 
     /**
      * Return the type of `object'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1968,6 +2354,8 @@ public final class CoreGraphics {
      * `type' is equal to `kCGPDFObjectTypeReal', then convert the value of
      * `object' to floating point and copy the result to `value' (if it's
      * non-NULL) and return true. Otherwise, return false.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1975,6 +2363,8 @@ public final class CoreGraphics {
 
     /**
      * Return the dictionary of `stream'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1982,6 +2372,8 @@ public final class CoreGraphics {
 
     /**
      * Return the data of `stream'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1989,6 +2381,8 @@ public final class CoreGraphics {
 
     /**
      * Return the length of `string'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1997,6 +2391,8 @@ public final class CoreGraphics {
 
     /**
      * Return a pointer to the bytes of `string'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2007,6 +2403,8 @@ public final class CoreGraphics {
      * Return a CFString representing `string' as a "text string". See Section
      * 3.8.1 "Text Strings", PDF Reference: Adobe PDF version 1.6 (5th ed.) for
      * more information.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2015,11 +2413,16 @@ public final class CoreGraphics {
     /**
      * Convert `string' to a CFDate. See Section 3.8.3 "Dates", PDF Reference:
      * Adobe PDF version 1.6 (5th ed.) for more information.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
     public static native CFDateRef CGPDFStringCopyDate(CGPDFStringRef string);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @CFunction
     @NUInt
@@ -2028,6 +2431,8 @@ public final class CoreGraphics {
     /**
      * Look up the object at `index' in `array' and return the result in
      * `value'. Return true on success; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2036,6 +2441,8 @@ public final class CoreGraphics {
     /**
      * Look up the object at `index' in `array' and, if it's a null, return
      * true; otherwise, return false.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2044,6 +2451,8 @@ public final class CoreGraphics {
     /**
      * Look up the object at `index' in `array' and, if it's a boolean, return
      * the result in `value'. Return true on success; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2052,6 +2461,8 @@ public final class CoreGraphics {
     /**
      * Look up the object at `index' in `array' and, if it's an integer, return
      * the result in `value'. Return true on success; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2061,6 +2472,8 @@ public final class CoreGraphics {
      * Look up the object at `index' in `array' and, if it's a number (real or
      * integer), return the result in `value'. Return true on success; false
      * otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2069,6 +2482,8 @@ public final class CoreGraphics {
     /**
      * Look up the object at `index' in `array' and, if it's a name, return the
      * result in `value'. Return true on success; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2078,6 +2493,8 @@ public final class CoreGraphics {
     /**
      * Look up the object at `index' in `array' and, if it's a string, return
      * the result in `value'. Return true on success; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2086,6 +2503,8 @@ public final class CoreGraphics {
     /**
      * Look up the object at `index' in `array' and, if it's an array, return it
      * in `value'. Return true on success; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2094,6 +2513,8 @@ public final class CoreGraphics {
     /**
      * Look up the object at `index' in `array' and, if it's a dictionary,
      * return it in `value'. Return true on success; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2103,6 +2524,8 @@ public final class CoreGraphics {
     /**
      * Look up the object at `index' in `array' and, if it's a stream, return it
      * in `value'. Return true on success; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2110,6 +2533,8 @@ public final class CoreGraphics {
 
     /**
      * Return the number of entries in `dictionary'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2119,6 +2544,8 @@ public final class CoreGraphics {
     /**
      * Look up the object associated with `key' in `dict' and return the result
      * in `value'. Return true on success; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2130,6 +2557,8 @@ public final class CoreGraphics {
      * Look up the object associated with `key' in `dict' and, if it's a
      * boolean, return the result in `value'. Return true on success; false
      * otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2141,6 +2570,8 @@ public final class CoreGraphics {
      * Look up the object associated with `key' in `dict' and, if it's an
      * integer, return the result in `value'. Return true on success; false
      * otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2152,6 +2583,8 @@ public final class CoreGraphics {
      * Look up the object associated with `key' in `dict' and, if it's a number
      * (real or integer), return the result in `value'. Return true on success;
      * false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2162,6 +2595,8 @@ public final class CoreGraphics {
     /**
      * Look up the object associated with `key' in `dict' and, if it's a name,
      * return the result in `value'. Return true on success; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2172,6 +2607,8 @@ public final class CoreGraphics {
     /**
      * Look up the object associated with `key' in `dict' and, if it's a string,
      * return the result in `value'. Return true on success; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2182,6 +2619,8 @@ public final class CoreGraphics {
     /**
      * Look up the object associated with `key' in `dict' and, if it's an array,
      * return the result in `value'. Return true on success; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2193,6 +2632,8 @@ public final class CoreGraphics {
      * Look up the object associated with `key' in `dict' and, if it's a
      * dictionary, return the result in `value'. Return true on success; false
      * otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2203,6 +2644,8 @@ public final class CoreGraphics {
     /**
      * Look up the object associated with `key' in `dict' and, if it's a stream,
      * return the result in `value'. Return true on success; false otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2214,6 +2657,8 @@ public final class CoreGraphics {
      * Enumerate all of the keys in `dict', calling `function' once for each
      * key/value pair. Passes the current key, the associated value, and `info'
      * to `function'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2224,6 +2669,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRetain(page)', except it doesn't crash (as CFRetain
      * does) if `page' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2232,6 +2679,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRelease(page)', except it doesn't crash (as CFRelease
      * does) if `page' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2239,6 +2688,8 @@ public final class CoreGraphics {
 
     /**
      * Return the document of `page'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2246,6 +2697,8 @@ public final class CoreGraphics {
 
     /**
      * Return the page number of `page'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2257,6 +2710,8 @@ public final class CoreGraphics {
      * of the corresponding entry (such as /MediaBox, /ArtBox, and so on) in the
      * page's dictionary. Return CGRectNull if `page' is not a valid CGPDFPageRef
      * or `box' is not a valid CGPDFBox.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2267,6 +2722,8 @@ public final class CoreGraphics {
      * Return the rotation angle (in degrees) of `page'. This is the value of
      * the /Rotate entry in the page's dictionary. Return 0 if `page' is not a valid
      * CGPDFPageRef.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2285,6 +2742,8 @@ public final class CoreGraphics {
      * edges of `rect'. If `preserveAspectRatio' is true, then the final
      * rect will coincide with the edges of `rect' only in the more
      * restrictive dimension.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2294,6 +2753,8 @@ public final class CoreGraphics {
 
     /**
      * Return the dictionary of `page'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2301,6 +2762,8 @@ public final class CoreGraphics {
 
     /**
      * Return the CFTypeID for CGPDFPageRefs.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2309,6 +2772,8 @@ public final class CoreGraphics {
 
     /**
      * Create a PDF document, using `provider' to obtain the document's data.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2316,6 +2781,8 @@ public final class CoreGraphics {
 
     /**
      * Create a PDF document from `url'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2324,6 +2791,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRetain(document)', except it doesn't crash (as CFRetain
      * does) if `document' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2332,6 +2801,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRelease(document)', except it doesn't crash (as
      * CFRelease does) if `document' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2339,6 +2810,8 @@ public final class CoreGraphics {
 
     /**
      * Return the major and minor version numbers of `document'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2350,6 +2823,8 @@ public final class CoreGraphics {
      * false otherwise. If the PDF file is encrypted, then a password must be
      * supplied before certain operations are enabled; different passwords may
      * enable different operations.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2359,6 +2834,8 @@ public final class CoreGraphics {
      * Use `password' to decrypt `document' and grant permission for certain
      * operations. Returns true if `password' is a valid password; false
      * otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2369,6 +2846,8 @@ public final class CoreGraphics {
      * Return true if `document' is unlocked; false otherwise. A document is
      * unlocked if it isn't encrypted, or if it is encrypted and a valid
      * password was specified with `CGPDFDocumentUnlockWithPassword'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2379,6 +2858,8 @@ public final class CoreGraphics {
      * this function returns false only if the document is encrypted and the
      * document's current password doesn't grant permission to perform
      * printing.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2389,6 +2870,8 @@ public final class CoreGraphics {
      * this function returns false only if the document is encrypted and the
      * document's current password doesn't grant permission to perform
      * copying.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2396,6 +2879,8 @@ public final class CoreGraphics {
 
     /**
      * Return the number of pages in `document'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2405,6 +2890,8 @@ public final class CoreGraphics {
     /**
      * Return the page corresponding to `pageNumber', or NULL if no such page
      * exists in the document. Pages are numbered starting at 1.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2412,6 +2899,8 @@ public final class CoreGraphics {
 
     /**
      * Return the document catalog of `document'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2419,6 +2908,8 @@ public final class CoreGraphics {
 
     /**
      * Return the info dictionary of `document'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2426,6 +2917,8 @@ public final class CoreGraphics {
 
     /**
      * Return the "file identifier" array of `document'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2433,6 +2926,8 @@ public final class CoreGraphics {
 
     /**
      * Return the CFTypeID for CGPDFDocumentRefs.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2441,6 +2936,8 @@ public final class CoreGraphics {
 
     /**
      * Return the CFTypeID for CGFunctionRefs.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2452,7 +2949,7 @@ public final class CoreGraphics {
      * passed to each of the callback functions. `domainDimension' is the number
      * of input values to the function; `rangeDimension' is the number of output
      * values from the function.
-     * <p>
+     * 
      * `domain' is an array of 2M values, where M is the number of input values.
      * For each k from 0 to M-1, domain[2*k] must be less than or equal to
      * domain[2*k+1]. The k'th input value (in[k]) will be clipped to lie in
@@ -2461,7 +2958,7 @@ public final class CoreGraphics {
      * strongly recommended that `domain' be specified; each domain interval
      * should specify reasonable values for the minimum and maximum in that
      * dimension.
-     * <p>
+     * 
      * `range' is an array of 2N values, where N is the number of output values.
      * For each k from 0 to N-1, range[2*k] must be less than or equal to
      * range[2*k+1]. The k'th output value (out[k]) will be clipped to lie in
@@ -2470,9 +2967,11 @@ public final class CoreGraphics {
      * strongly recommended that `range' be specified; each range interval
      * should specify reasonable values for the minimum and maximum in that
      * dimension.
-     * <p>
+     * 
      * The contents of the callbacks structure is copied, so, for example, a
      * pointer to a structure on the stack can be passed to this function.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2483,6 +2982,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRetain(function)', except it doesn't crash (as CFRetain
      * does) if `function' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2491,6 +2992,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRelease(function)', except it doesn't crash (as
      * CFRelease does) if `function' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2498,6 +3001,8 @@ public final class CoreGraphics {
 
     /**
      * Return the CFTypeID for CGShadingRefs.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2519,6 +3024,8 @@ public final class CoreGraphics {
      * of the shading. If `extendStart' is true, then the shading will extend
      * beyond the starting point of the axis. If `extendEnd' is true, then the
      * shading will extend beyond the ending point of the axis.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2540,6 +3047,8 @@ public final class CoreGraphics {
      * is true, then the shading will extend beyond the starting circle. If
      * `extendEnd' is true, then the shading will extend beyond the ending
      * circle.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2550,6 +3059,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRetain(shading)', except it doesn't crash (as CFRetain
      * does) if `shading' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2558,6 +3069,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRelease(shading)', except it doesn't crash (as CFRelease
      * does) if `shading' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2565,6 +3078,8 @@ public final class CoreGraphics {
 
     /**
      * Return the CFTypeID for CGContextRefs.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2575,6 +3090,8 @@ public final class CoreGraphics {
      * Push a copy of the current graphics state onto the graphics state stack.
      * Note that the path is not considered part of the graphics state, and is
      * not saved.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2583,6 +3100,8 @@ public final class CoreGraphics {
     /**
      * Restore the current graphics state from the one on the top of the
      * graphics state stack, popping the graphics state stack in the process.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2591,6 +3110,8 @@ public final class CoreGraphics {
     /**
      * Scale the current graphics state's transformation matrix (the CTM) by
      * `(sx, sy)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2599,6 +3120,8 @@ public final class CoreGraphics {
     /**
      * Translate the current graphics state's transformation matrix (the CTM) by
      * `(tx, ty)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2607,6 +3130,8 @@ public final class CoreGraphics {
     /**
      * Rotate the current graphics state's transformation matrix (the CTM) by
      * `angle' radians.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2615,6 +3140,8 @@ public final class CoreGraphics {
     /**
      * Concatenate the current graphics state's transformation matrix (the CTM)
      * with the affine transform `transform'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2623,6 +3150,8 @@ public final class CoreGraphics {
     /**
      * Return the current graphics state's transformation matrix. Returns
      * CGAffineTransformIdentity in case of inavlid context.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2631,6 +3160,8 @@ public final class CoreGraphics {
 
     /**
      * Set the line width in the current graphics state to `width'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2638,6 +3169,8 @@ public final class CoreGraphics {
 
     /**
      * Set the line cap in the current graphics state to `cap'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2645,6 +3178,8 @@ public final class CoreGraphics {
 
     /**
      * Set the line join in the current graphics state to `join'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2652,6 +3187,8 @@ public final class CoreGraphics {
 
     /**
      * Set the miter limit in the current graphics state to `limit'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2659,6 +3196,8 @@ public final class CoreGraphics {
 
     /**
      * Set the line dash patttern in the current graphics state of `c'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2668,6 +3207,8 @@ public final class CoreGraphics {
     /**
      * Set the path flatness parameter in the current graphics state of `c' to
      * `flatness'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2675,6 +3216,8 @@ public final class CoreGraphics {
 
     /**
      * Set the alpha value in the current graphics state of `c' to `alpha'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2682,6 +3225,8 @@ public final class CoreGraphics {
 
     /**
      * Set the blend mode of `context' to `mode'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2689,6 +3234,8 @@ public final class CoreGraphics {
 
     /**
      * Begin a new path. The old path is discarded.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2696,6 +3243,8 @@ public final class CoreGraphics {
 
     /**
      * Start a new subpath at point `(x, y)' in the context's path.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2703,6 +3252,8 @@ public final class CoreGraphics {
 
     /**
      * Append a straight line segment from the current point to `(x, y)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2711,6 +3262,8 @@ public final class CoreGraphics {
     /**
      * Append a cubic Bezier curve from the current point to `(x,y)', with
      * control points `(cp1x, cp1y)' and `(cp2x, cp2y)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2720,6 +3273,8 @@ public final class CoreGraphics {
     /**
      * Append a quadratic curve from the current point to `(x, y)', with control
      * point `(cpx, cpy)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2728,6 +3283,8 @@ public final class CoreGraphics {
 
     /**
      * Close the current subpath of the context's path.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2735,6 +3292,8 @@ public final class CoreGraphics {
 
     /**
      * Add a single rect to the context's path.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2742,6 +3301,8 @@ public final class CoreGraphics {
 
     /**
      * Add a set of rects to the context's path.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2750,6 +3311,8 @@ public final class CoreGraphics {
 
     /**
      * Add a set of lines to the context's path.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2760,6 +3323,8 @@ public final class CoreGraphics {
      * Add an ellipse inside `rect' to the current path of `context'. See the
      * function `CGPathAddEllipseInRect' for more information on how the path
      * for the ellipse is constructed.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2772,6 +3337,8 @@ public final class CoreGraphics {
      * `endAngle' is the angle to the second endpoint of the arc; and
      * `clockwise' is 1 if the arc is to be drawn clockwise, 0 otherwise.
      * `startAngle' and `endAngle' are measured in radians.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2783,6 +3350,8 @@ public final class CoreGraphics {
      * straight line segment. `radius' is the radius of the arc. The arc is
      * tangent to the line from the current point to `(x1, y1)', and the line
      * from `(x1, y1)' to `(x2, y2)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2792,6 +3361,8 @@ public final class CoreGraphics {
     /**
      * Add `path' to the path of context. The points in `path' are transformed
      * by the CTM of context before they are added.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2805,6 +3376,8 @@ public final class CoreGraphics {
      * path in the same way you can use the path of any context; for example,
      * you can clip to the stroked version of a path by calling this function
      * followed by a call to "CGContextClip".
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2813,6 +3386,8 @@ public final class CoreGraphics {
     /**
      * Return true if the path of `context' contains no elements, false
      * otherwise.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2821,6 +3396,8 @@ public final class CoreGraphics {
     /**
      * Return the current point of the current subpath of the path of
      * `context'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2831,6 +3408,8 @@ public final class CoreGraphics {
      * Return the bounding box of the path of `context'. The bounding box is the
      * smallest rectangle completely enclosing all points in the path, including
      * control points for Bezier and quadratic curves.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2840,6 +3419,8 @@ public final class CoreGraphics {
     /**
      * Return a copy of the path of `context'. The returned path is specified in
      * the current user space of `context'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2850,6 +3431,8 @@ public final class CoreGraphics {
      * point is contained within a context's path if it is inside the painted
      * region when the path is stroked or filled with opaque colors using the
      * path drawing mode `mode'. `point' is specified is user space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2857,6 +3440,8 @@ public final class CoreGraphics {
 
     /**
      * Draw the context's path using drawing mode `mode'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2865,6 +3450,8 @@ public final class CoreGraphics {
     /**
      * Fill the context's path using the winding-number fill rule. Any open
      * subpath of the path is implicitly closed.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2873,6 +3460,8 @@ public final class CoreGraphics {
     /**
      * Fill the context's path using the even-odd fill rule. Any open subpath of
      * the path is implicitly closed.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2880,6 +3469,8 @@ public final class CoreGraphics {
 
     /**
      * Stroke the context's path.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2887,6 +3478,8 @@ public final class CoreGraphics {
 
     /**
      * Fill `rect' with the current fill color.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2895,6 +3488,8 @@ public final class CoreGraphics {
     /**
      * Fill `rects', an array of `count' CGRects, with the current fill
      * color.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2903,6 +3498,8 @@ public final class CoreGraphics {
 
     /**
      * Stroke `rect' with the current stroke color and the current linewidth.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2911,6 +3508,8 @@ public final class CoreGraphics {
     /**
      * Stroke `rect' with the current stroke color, using `width' as the the
      * line width.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2918,6 +3517,8 @@ public final class CoreGraphics {
 
     /**
      * Clear `rect' (that is, set the region within the rect to transparent).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2925,6 +3526,8 @@ public final class CoreGraphics {
 
     /**
      * Fill an ellipse (an oval) inside `rect'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2932,6 +3535,8 @@ public final class CoreGraphics {
 
     /**
      * Stroke an ellipse (an oval) inside `rect'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2941,13 +3546,15 @@ public final class CoreGraphics {
      * Stroke a sequence of line segments one after another in `context'. The
      * line segments are specified by `points', an array of `count' CGPoints.
      * This function is equivalent to
-     * <p>
+     * 
      * CGContextBeginPath(context);
      * for (k = 0; k < count; k += 2) {
      * CGContextMoveToPoint(context, s[k].x, s[k].y);
      * CGContextAddLineToPoint(context, s[k+1].x, s[k+1].y);
      * }
      * CGContextStrokePath(context);
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2958,6 +3565,8 @@ public final class CoreGraphics {
      * Intersect the context's path with the current clip path and use the
      * resulting path as the clip path for subsequent rendering operations. Use
      * the winding-number fill rule for deciding what's inside the path.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2967,6 +3576,8 @@ public final class CoreGraphics {
      * Intersect the context's path with the current clip path and use the
      * resulting path as the clip path for subsequent rendering operations. Use
      * the even-odd fill rule for deciding what's inside the path.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2977,7 +3588,7 @@ public final class CoreGraphics {
      * mask, which may be either an image mask or an image, is mapped into the
      * specified rectangle and intersected with the current clipping area of the
      * context.
-     * <p>
+     * 
      * If `mask' is an image mask, then it clips in a manner identical to the
      * behavior if it were used with "CGContextDrawImage": it indicates an area
      * to be masked out (left unchanged) when drawing. The source samples of the
@@ -2987,7 +3598,7 @@ public final class CoreGraphics {
      * area will be multiplied by an alpha of (1-S). (For example, if S is 1,
      * then the point in the clipping area becomes clear, while if S is 0, the
      * point in the clipping area is unchanged.
-     * <p>
+     * 
      * If `mask' is an image, then it serves as alpha mask and is blended with
      * the current clipping area. The source samples of mask determine which
      * points of the clipping area are changed: if the value of the source
@@ -2995,10 +3606,12 @@ public final class CoreGraphics {
      * area will be multiplied by an alpha of S. (For example, if S is 0, then
      * the point in the clipping area becomes clear, while if S is 1, the point
      * in the clipping area is unchanged.
-     * <p>
+     * 
      * If `mask' is an image, then its color space must be of kCGColorSpaceModelMonochrome
      * model, may not have alpha, and may not be masked by an image mask or masking
      * color.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3008,6 +3621,8 @@ public final class CoreGraphics {
      * Return the bounding box of the clip path of `c' in user space. The
      * bounding box is the smallest rectangle completely enclosing all points in
      * the clip.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3017,6 +3632,8 @@ public final class CoreGraphics {
     /**
      * Intersect the current clipping path with `rect'. Note that this function
      * resets the context's path to the empty path.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3026,6 +3643,8 @@ public final class CoreGraphics {
      * Intersect the current clipping path with the clipping region formed by
      * creating a path consisting of all rects in `rects'. Note that this
      * function resets the context's path to the empty path.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3034,6 +3653,8 @@ public final class CoreGraphics {
 
     /**
      * Set the current fill color in the context `c' to `color'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3041,6 +3662,8 @@ public final class CoreGraphics {
 
     /**
      * Set the current stroke color in the context `c' to `color'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3050,6 +3673,8 @@ public final class CoreGraphics {
      * Set the current fill color space in `context' to `space'. As a
      * side-effect, set the fill color to a default value appropriate for the
      * color space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3059,6 +3684,8 @@ public final class CoreGraphics {
      * Set the current stroke color space in `context' to `space'. As a
      * side-effect, set the stroke color to a default value appropriate for the
      * color space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3070,6 +3697,8 @@ public final class CoreGraphics {
      * one greater than the number of components in the current fill color space
      * (N color components + 1 alpha component). The current fill color space
      * must not be a pattern color space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3081,6 +3710,8 @@ public final class CoreGraphics {
      * one greater than the number of components in the current stroke color
      * space (N color components + 1 alpha component). The current stroke color
      * space must not be a pattern color space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3093,6 +3724,8 @@ public final class CoreGraphics {
      * number of components in the current fill color space (N color components
      * + 1 alpha component). The current fill color space must be a pattern
      * color space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3105,6 +3738,8 @@ public final class CoreGraphics {
      * than the number of components in the current stroke color space (N color
      * components + 1 alpha component). The current stroke color space must be a
      * pattern color space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3114,6 +3749,8 @@ public final class CoreGraphics {
     /**
      * Set the pattern phase in the current graphics state of `context' to
      * `phase'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3122,6 +3759,8 @@ public final class CoreGraphics {
     /**
      * Set the current fill color space in `context' to `DeviceGray' and set the
      * components of the current fill color to `(gray, alpha)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3130,6 +3769,8 @@ public final class CoreGraphics {
     /**
      * Set the current stroke color space in `context' to `DeviceGray' and set
      * the components of the current stroke color to `(gray, alpha)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3138,6 +3779,8 @@ public final class CoreGraphics {
     /**
      * Set the current fill color space in `context' to `DeviceRGB' and set the
      * components of the current fill color to `(red, green, blue, alpha)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3148,6 +3791,8 @@ public final class CoreGraphics {
      * Set the current stroke color space in `context' to `DeviceRGB' and set
      * the components of the current stroke color to `(red, green, blue,
      * alpha)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3158,6 +3803,8 @@ public final class CoreGraphics {
      * Set the current fill color space in `context' to `DeviceCMYK' and set the
      * components of the current fill color to `(cyan, magenta, yellow, black,
      * alpha)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3168,6 +3815,8 @@ public final class CoreGraphics {
      * Set the current stroke color space in `context' to `DeviceCMYK' and set
      * the components of the current stroke color to `(cyan, magenta, yellow,
      * black, alpha)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3177,6 +3826,8 @@ public final class CoreGraphics {
     /**
      * Set the rendering intent in the current graphics state of `context' to
      * `intent'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3185,6 +3836,8 @@ public final class CoreGraphics {
     /**
      * Draw `image' in the rectangular area specified by `rect' in the context
      * `c'. The image is scaled, if necessary, to fit into `rect'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3197,6 +3850,8 @@ public final class CoreGraphics {
      * and the height of `rect' vertically, to fill the current clip region.
      * Unlike patterns, the image is tiled in user space, so transformations
      * applied to the CTM affect the final result.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3208,6 +3863,8 @@ public final class CoreGraphics {
      * interpolation performed when an image is interpolated (for example, when
      * scaling the image). Note that it is merely a hint to the context: not all
      * contexts support all interpolation quality levels.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3215,6 +3872,8 @@ public final class CoreGraphics {
 
     /**
      * Set the interpolation quality of `context' to `quality'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3229,6 +3888,8 @@ public final class CoreGraphics {
      * shadow is specified, all objects drawn subsequently will be shadowed. To
      * turn off shadowing, set the shadow color to a fully transparent color (or
      * pass NULL as the color), or use the standard gsave/grestore mechanism.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3240,6 +3901,8 @@ public final class CoreGraphics {
      * CGContextSetShadowWithColor(context, offset, blur, color)
      * where color is black with 1/3 alpha (i.e., RGBA = {0, 0, 0, 1.0/3.0}) in
      * the DeviceRGB color space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3252,6 +3915,8 @@ public final class CoreGraphics {
      * colors are linearly interpolated between these two points based on the
      * values of the gradient's locations. The option flags control whether the
      * gradient is drawn before the start point or after the end point.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3267,6 +3932,8 @@ public final class CoreGraphics {
      * colors are linearly interpolated between these two circles based on the
      * values of the gradient's locations. The option flags control whether the
      * gradient is drawn before the start circle or after the end circle.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3276,6 +3943,8 @@ public final class CoreGraphics {
 
     /**
      * Fill the current clipping region of `context' with `shading'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3285,6 +3954,8 @@ public final class CoreGraphics {
      * Set the current character spacing in `context' to `spacing'. The
      * character spacing is added to the displacement between the origin of one
      * character and the origin of the next.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3293,6 +3964,8 @@ public final class CoreGraphics {
     /**
      * Set the user-space point at which text will be drawn in the context `c'
      * to `(x, y)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3300,6 +3973,8 @@ public final class CoreGraphics {
 
     /**
      * Return the user-space point at which text will be drawn in `context'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3308,6 +3983,8 @@ public final class CoreGraphics {
 
     /**
      * Set the text matrix in the context `c' to `t'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3316,6 +3993,8 @@ public final class CoreGraphics {
     /**
      * Return the text matrix in the context `c'. Returns CGAffineTransformIdentity
      * if `c' is not a valid context.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3325,6 +4004,8 @@ public final class CoreGraphics {
     /**
      * Set the text drawing mode in the current graphics state of the context
      * `c' to `mode'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3333,6 +4014,8 @@ public final class CoreGraphics {
     /**
      * Set the font in the current graphics state of the context `c' to
      * `font'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3341,6 +4024,8 @@ public final class CoreGraphics {
     /**
      * Set the font size in the current graphics state of the context `c' to
      * `size'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3350,6 +4035,8 @@ public final class CoreGraphics {
      * Draw `glyphs', an array of `count' CGGlyphs, at the points specified by
      * `positions'. Each element of `positions' specifies the position from the
      * associated glyph; the positions are specified in user space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3358,6 +4045,8 @@ public final class CoreGraphics {
 
     /**
      * Draw `page' in the current user space of the context `c'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3365,6 +4054,8 @@ public final class CoreGraphics {
 
     /**
      * Begin a new page.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3373,6 +4064,8 @@ public final class CoreGraphics {
 
     /**
      * End the current page.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3380,6 +4073,8 @@ public final class CoreGraphics {
 
     /**
      * Equivalent to `CFRetain(c)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3387,6 +4082,8 @@ public final class CoreGraphics {
 
     /**
      * Equivalent to `CFRelease(c)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3394,6 +4091,8 @@ public final class CoreGraphics {
 
     /**
      * Flush all drawing to the destination.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3401,6 +4100,8 @@ public final class CoreGraphics {
 
     /**
      * Synchronized drawing.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3409,6 +4110,8 @@ public final class CoreGraphics {
     /**
      * Turn on antialiasing if `shouldAntialias' is true; turn it off otherwise.
      * This parameter is part of the graphics state.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3419,6 +4122,8 @@ public final class CoreGraphics {
      * allow it otherwise. This parameter is not part of the graphics state. A
      * context will perform antialiasing if both `allowsAntialiasing' and the
      * graphics state parameter `shouldAntialias' are true.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3429,6 +4134,8 @@ public final class CoreGraphics {
      * otherwise. This parameter is part of the graphics state. Note that this
      * doesn't guarantee that font smoothing will occur: not all destination
      * contexts support font smoothing.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3440,6 +4147,8 @@ public final class CoreGraphics {
      * parameter is not part of the graphics state. Fonts will be smoothed if
      * they are antialiased when drawn and if both `allowsFontSmoothing' and the
      * graphics state parameter `shouldSmoothFonts' are true.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3450,6 +4159,8 @@ public final class CoreGraphics {
      * subpixel positions (if allowed) when displaying text in `context';
      * otherwise, glyphs will be forced to integer pixel boundaries. This
      * parameter is part of the graphics state.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3463,6 +4174,8 @@ public final class CoreGraphics {
      * context will place glyphs at subpixel positions if fonts will be
      * antialiased when drawn and if both `allowsFontSubpixelPositioning' and
      * the graphics state parameter `shouldSubpixelPositionFonts' are true.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3474,6 +4187,8 @@ public final class CoreGraphics {
      * positions of glyphs when displaying text in `context'; otherwise, don't
      * quantize the subpixel positions. This parameter is part of the graphics
      * state.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3487,6 +4202,8 @@ public final class CoreGraphics {
      * A context quantizes subpixel positions if glyphs will be drawn at
      * subpixel positions and `allowsFontSubpixelQuantization' and the graphics
      * state parameter `shouldSubpixelQuantizeFonts' are both true.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3509,6 +4226,8 @@ public final class CoreGraphics {
      * Ending the transparency layer restores these parameters to the values
      * they had before `CGContextBeginTransparencyLayer' was called.
      * Transparency layers may be nested.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3518,6 +4237,8 @@ public final class CoreGraphics {
      * Begin a transparency layer in `context'. This function is identical to
      * `CGContextBeginTransparencyLayer' except that the content of the
      * transparency layer will be bounded by `rect' (specified in user space).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3526,6 +4247,8 @@ public final class CoreGraphics {
 
     /**
      * End a tranparency layer.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3534,6 +4257,8 @@ public final class CoreGraphics {
     /**
      * Return the affine transform mapping the user space (abstract coordinates)
      * of `context' to device space (pixels).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3542,6 +4267,8 @@ public final class CoreGraphics {
 
     /**
      * Transform `point' from the user space of `context' to device space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3550,6 +4277,8 @@ public final class CoreGraphics {
 
     /**
      * Transform `point' from device space to the user space of `context'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3558,6 +4287,8 @@ public final class CoreGraphics {
 
     /**
      * Transform `size' from the user space of `context' to device space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3566,6 +4297,8 @@ public final class CoreGraphics {
 
     /**
      * Transform `size' from device space to the user space of `context'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3577,6 +4310,8 @@ public final class CoreGraphics {
      * affine transforms do not preserve rectangles in general, this function
      * returns the smallest rectangle which contains the transformed corner
      * points of `rect'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3588,6 +4323,8 @@ public final class CoreGraphics {
      * affine transforms do not preserve rectangles in general, this function
      * returns the smallest rectangle which contains the transformed corner
      * points of `rect'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3596,6 +4333,10 @@ public final class CoreGraphics {
 
     /**
      * DEPRECATED; use the CoreText API instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Generated
     @Deprecated
@@ -3606,6 +4347,10 @@ public final class CoreGraphics {
 
     /**
      * DEPRECATED; use the CoreText API instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Generated
     @Deprecated
@@ -3616,6 +4361,10 @@ public final class CoreGraphics {
 
     /**
      * DEPRECATED; use the CoreText API instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Generated
     @Deprecated
@@ -3626,6 +4375,10 @@ public final class CoreGraphics {
 
     /**
      * DEPRECATED; use the CoreText API instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Generated
     @Deprecated
@@ -3634,6 +4387,10 @@ public final class CoreGraphics {
 
     /**
      * DEPRECATED; use the CoreText API instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Generated
     @Deprecated
@@ -3643,6 +4400,10 @@ public final class CoreGraphics {
 
     /**
      * DEPRECATED; use the CoreText API instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: No longer supported
      */
     @Generated
     @Deprecated
@@ -3668,6 +4429,8 @@ public final class CoreGraphics {
      * whether the components are floating-point or integer. If `releaseCallback' is
      * non-NULL, it is called when the context is freed with `releaseInfo' and
      * `data' as arguments.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CFunction
@@ -3692,6 +4455,8 @@ public final class CoreGraphics {
      * when the context is deallocated. `bitmapInfo' specifies whether the bitmap
      * should contain an alpha channel and how it's to be generated, along with
      * whether the components are floating-point or integer.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3701,6 +4466,8 @@ public final class CoreGraphics {
     /**
      * Return the data associated with the bitmap context `context', or NULL if
      * `context' is not a bitmap context.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3709,6 +4476,8 @@ public final class CoreGraphics {
     /**
      * Return the width of the bitmap context `context', or 0 if `context' is
      * not a bitmap context.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3718,6 +4487,8 @@ public final class CoreGraphics {
     /**
      * Return the height of the bitmap context `context', or 0 if `context' is
      * not a bitmap context.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3727,6 +4498,8 @@ public final class CoreGraphics {
     /**
      * Return the bits per component of the bitmap context `context', or 0 if
      * `context' is not a bitmap context.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3736,6 +4509,8 @@ public final class CoreGraphics {
     /**
      * Return the bits per pixel of the bitmap context `context', or 0 if
      * `context' is not a bitmap context.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3745,6 +4520,8 @@ public final class CoreGraphics {
     /**
      * Return the bytes per row of the bitmap context `context', or 0 if
      * `context' is not a bitmap context.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3754,6 +4531,8 @@ public final class CoreGraphics {
     /**
      * Return the color space of the bitmap context `context', or NULL if
      * `context' is not a bitmap context.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3762,6 +4541,8 @@ public final class CoreGraphics {
     /**
      * Return the alpha info of the bitmap context `context', or
      * "kCGImageAlphaNone" if `context' is not a bitmap context.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3770,6 +4551,8 @@ public final class CoreGraphics {
     /**
      * Return the bitmap info of the bitmap context `context', or 0 if `context'
      * is not a bitmap context.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3781,13 +4564,15 @@ public final class CoreGraphics {
      * any reason, this function returns NULL. This is a "copy" operation ---
      * subsequent changes to context will not affect the contents of the
      * returned image.
-     * <p>
+     * 
      * Note that in some cases the copy will actually follow "copy-on-write"
      * semantics, so that the actual physical copy of the bits will only occur
      * if the underlying data in the bitmap context is modified. As a
      * consequence, you may wish to use the resulting image and release it
      * before performing more drawing into the bitmap context; in this way, the
      * actual physical copy of the data may be avoided.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3802,6 +4587,8 @@ public final class CoreGraphics {
      * Create CGColorConversionInfoRef for converting color from `src' color space to `dst' color space
      * using kCGRenderingIntentDefault rendering intent.
      * Requirements: CG color spaces must be calibrated (no Device{Gray,RGB,CMYK}, Indexed or DeviceN are allowed).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -3812,6 +4599,8 @@ public final class CoreGraphics {
      * ColorSpaces are iterated from first to last. The list of triples:
      * {CGColorSpaceRef, CGColorConversionInfoTransformType, CGColorRenderingIntent} must be terminated with NULL
      * Requirements: CG color spaces must be calibrated (no Device{Gray,RGB,CMYK}, Indexed or DeviceN are allowed).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Variadic()
@@ -3821,6 +4610,8 @@ public final class CoreGraphics {
 
     /**
      * Return the CFTypeID for CGDataConsumerRefs.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3830,6 +4621,8 @@ public final class CoreGraphics {
     /**
      * Create a data consumer using `callbacks' to handle the data. `info' is
      * passed to each of the callback functions.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3838,6 +4631,8 @@ public final class CoreGraphics {
 
     /**
      * Create a data consumer which writes data to `url'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3845,6 +4640,8 @@ public final class CoreGraphics {
 
     /**
      * Create a data consumer which writes to `data'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3852,6 +4649,8 @@ public final class CoreGraphics {
 
     /**
      * Equivalent to `CFRetain(consumer)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3859,6 +4658,8 @@ public final class CoreGraphics {
 
     /**
      * Equivalent to `CFRelease(consumer)'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3869,6 +4670,8 @@ public final class CoreGraphics {
      * value of `size' is specified in default user space (base space) units.
      * The parameter `auxiliaryInfo' should be NULL; it is reserved for future
      * expansion.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3878,6 +4681,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRetain(layer)', except it doesn't crash (as CFRetain
      * does) if `layer' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3886,6 +4691,8 @@ public final class CoreGraphics {
     /**
      * Equivalent to `CFRelease(layer)', except it doesn't crash (as CFRelease
      * does) if `layer' is NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3893,6 +4700,8 @@ public final class CoreGraphics {
 
     /**
      * Return the size of the layer `layer'. CGSizeZero if invalid `layer'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3901,6 +4710,8 @@ public final class CoreGraphics {
 
     /**
      * Return the context of `layer'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3910,6 +4721,8 @@ public final class CoreGraphics {
      * Draw the contents of `layer' into `rect' of `context'. The contents are
      * scaled, if necessary, to fit into `rect'; the rectangle `rect' is in user
      * space.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3919,6 +4732,8 @@ public final class CoreGraphics {
      * Draw the contents of `layer' at `point' in `context'. This is equivalent
      * to calling "CGContextDrawLayerInRect" with a rectangle having origin at
      * `point' and size equal to the size of `layer'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3926,6 +4741,8 @@ public final class CoreGraphics {
 
     /**
      * Return the CFTypeID for CGLayerRefs.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3934,6 +4751,8 @@ public final class CoreGraphics {
 
     /**
      * Create a content stream from `page'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3941,6 +4760,8 @@ public final class CoreGraphics {
 
     /**
      * Create a content stream from `stream'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3949,6 +4770,8 @@ public final class CoreGraphics {
 
     /**
      * Increment the retain count of `cs'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3956,6 +4779,8 @@ public final class CoreGraphics {
 
     /**
      * Decrement the retain count of `cs'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3964,6 +4789,8 @@ public final class CoreGraphics {
     /**
      * Return the array of CGPDFStreamRefs comprising the entire content stream
      * of `cs'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3972,6 +4799,8 @@ public final class CoreGraphics {
     /**
      * Return the resource named `name' in category `category' of the resource
      * dictionaries of `cs'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3987,6 +4816,8 @@ public final class CoreGraphics {
      * `auxiliaryInfo' are described below. If `mediaBox' is non-NULL, then its
      * value overrides the value of `kCGPDFContextMediaBox' if specified in the
      * `auxiliaryInfo' dictionary.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -3998,6 +4829,8 @@ public final class CoreGraphics {
      * Create a PDF context for writing to `url'. This function behaves in the
      * same manner as the above function, except that the output data will be
      * written to `url'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4010,6 +4843,8 @@ public final class CoreGraphics {
      * written to the context's destination, and the PDF file is completed. No
      * additional data will be written to the context's destionation after
      * closing.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4017,6 +4852,8 @@ public final class CoreGraphics {
 
     /**
      * Begin a new page in the PDF context `context'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4024,6 +4861,8 @@ public final class CoreGraphics {
 
     /**
      * End the current page in the PDF context `context'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4036,6 +4875,8 @@ public final class CoreGraphics {
      * be XML formatted according to the Extensible Metadata Platform, as
      * described in section 10.2.2, "Metadata Streams", of the PDF 1.7
      * specification.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CFunction
@@ -4044,6 +4885,8 @@ public final class CoreGraphics {
     /**
      * Set the URL associated with `rect' to `url' in the PDF context
      * `context'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4052,6 +4895,8 @@ public final class CoreGraphics {
     /**
      * Create a PDF destination named `name' at `point' in the current page of
      * the PDF context `context'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4061,6 +4906,8 @@ public final class CoreGraphics {
     /**
      * Specify a destination named `name' to jump to when clicking in `rect' of
      * the current page of the PDF context `context'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4069,6 +4916,8 @@ public final class CoreGraphics {
 
     /**
      * Create a scanner.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4077,6 +4926,8 @@ public final class CoreGraphics {
 
     /**
      * Retain `scanner'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4084,6 +4935,8 @@ public final class CoreGraphics {
 
     /**
      * Release `scanner'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4093,6 +4946,8 @@ public final class CoreGraphics {
      * Scan the content stream of `scanner'. Returns true if the entire stream
      * was scanned successfully; false if scanning failed for some reason (for
      * example, if the stream's data is corrupted).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4100,6 +4955,8 @@ public final class CoreGraphics {
 
     /**
      * Return the content stream associated with `scanner'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4107,6 +4964,8 @@ public final class CoreGraphics {
 
     /**
      * Pop an object from the stack of `scanner' and return it in `value'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4115,6 +4974,8 @@ public final class CoreGraphics {
     /**
      * Pop an object from the stack of `scanner' and, if it's a boolean, return
      * it in `value'. Return false if the top of the stack isn't a boolean.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4123,6 +4984,8 @@ public final class CoreGraphics {
     /**
      * Pop an object from the stack of `scanner' and, if it's an integer, return
      * it in `value'. Return false if the top of the stack isn't an integer.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4131,6 +4994,8 @@ public final class CoreGraphics {
     /**
      * Pop an object from the stack of `scanner' and, if it's a number, return
      * it in `value'. Return false if the top of the stack isn't a number.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4139,6 +5004,8 @@ public final class CoreGraphics {
     /**
      * Pop an object from the stack of `scanner' and, if it's a name, return it
      * in `value'. Return false if the top of the stack isn't a name.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4148,6 +5015,8 @@ public final class CoreGraphics {
     /**
      * Pop an object from the stack of `scanner' and, if it's a string, return
      * it in `value'. Return false if the top of the stack isn't a string.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4156,6 +5025,8 @@ public final class CoreGraphics {
     /**
      * Pop an object from the stack of `scanner' and, if it's an array, return
      * it in `value'. Return false if the top of the stack isn't an array.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4165,6 +5036,8 @@ public final class CoreGraphics {
      * Pop an object from the stack of `scanner' and, if it's a dictionary,
      * return it in `value'. Return false if the top of the stack isn't a
      * dictionary.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4173,6 +5046,8 @@ public final class CoreGraphics {
     /**
      * Pop an object from the stack of `scanner' and, if it's a stream, return
      * it in `value'. Return false if the top of the stack isn't a stream.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4180,6 +5055,8 @@ public final class CoreGraphics {
 
     /**
      * Return an empty operator table.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4187,6 +5064,8 @@ public final class CoreGraphics {
 
     /**
      * Increment the retain count of `table'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4194,6 +5073,8 @@ public final class CoreGraphics {
 
     /**
      * Decrement the retain count of `table'.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4201,6 +5082,8 @@ public final class CoreGraphics {
 
     /**
      * Set the callback for the operator named `name' to `callback'
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -4210,6 +5093,8 @@ public final class CoreGraphics {
 
     /**
      * The "zero" point -- equivalent to CGPointMake(0, 0).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4218,6 +5103,8 @@ public final class CoreGraphics {
 
     /**
      * The "zero" size -- equivalent to CGSizeMake(0, 0).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4226,6 +5113,8 @@ public final class CoreGraphics {
 
     /**
      * The "zero" rectangle -- equivalent to CGRectMake(0, 0, 0, 0).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4236,6 +5125,8 @@ public final class CoreGraphics {
      * The "empty" rect. This is the rectangle returned when, for example, we
      * intersect two disjoint rectangles. Note that the null rect is not the
      * same as the zero rect.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4244,6 +5135,8 @@ public final class CoreGraphics {
 
     /**
      * The infinite rectangle.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4252,6 +5145,8 @@ public final class CoreGraphics {
 
     /**
      * The identity transform: [ 1 0 0 1 0 0 ].
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4265,6 +5160,8 @@ public final class CoreGraphics {
      * please use Generic Gray Gamma 2.2, i.e. use
      * kCGColorSpaceGenericGrayGamma2_2 name instead of
      * kCGColorSpaceGenericGray.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -4276,6 +5173,8 @@ public final class CoreGraphics {
      * need it. If you need just a reasonable RGB color space,
      * please use sRGB, i.e. use kCGColorSpaceSRGB name
      * instead of kCGColorSpaceGenericRGB.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -4283,11 +5182,16 @@ public final class CoreGraphics {
 
     /**
      * The name of the "Generic" CMYK color space.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceGenericCMYK();
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceDisplayP3();
@@ -4295,6 +5199,8 @@ public final class CoreGraphics {
     /**
      * The name of the "Generic" linear RGB color space. This is the same as
      * `kCGColorSpaceGenericRGB' but with a 1.0 gamma.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -4304,6 +5210,8 @@ public final class CoreGraphics {
      * The name of the Adobe RGB (1998) color space. For more information, see
      * "Adobe RGB (1998) Color Image Encoding", Version 2005-05, Adobe Systems
      * Inc. (http://www.adobe.com).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -4315,6 +5223,8 @@ public final class CoreGraphics {
      * information, see IEC 61966-2-1 (1999-10): "Multimedia systems and
      * equipment - Colour measurement and management - Part 2-1: Colour
      * management - Default RGB colour space - sRGB".
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -4322,31 +5232,51 @@ public final class CoreGraphics {
 
     /**
      * The "Generic" gray color space with γ = 2.2.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceGenericGrayGamma2_2();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceGenericXYZ();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceACESCGLinear();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceITUR_709();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceITUR_2020();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceROMMRGB();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceDCIP3();
@@ -4358,6 +5288,8 @@ public final class CoreGraphics {
      * The negative values will be encoded as the signed reflection of original encoding functions,
      * i.e. y(x) = sign(x)*f(abs(x)) where f(x) represents the encoding function.
      * The capitalization in the name is for avoiding interpretational ambiguity.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4365,6 +5297,8 @@ public final class CoreGraphics {
 
     /**
      * The name of the sRGB color space variant with linear gamma
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4372,6 +5306,8 @@ public final class CoreGraphics {
 
     /**
      * The name of the extended sRGB color space variant with linear gamma
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4381,6 +5317,8 @@ public final class CoreGraphics {
      * The name of the extended Gray color space. This color space has the same colorimetry as Generic Gray 2.2.
      * The negative values will be encoded as the signed reflection of original encoding functions,
      * i.e. y(x) = sign(x)*f(abs(x)) where f(x) represents the encoding function.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4388,6 +5326,8 @@ public final class CoreGraphics {
 
     /**
      * The name of the Generic Gray 2.2 color space variant with linear gamma
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4395,6 +5335,8 @@ public final class CoreGraphics {
 
     /**
      * The name of the extended Generic Gray 2.2 color space variant with linear gamma
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4404,6 +5346,8 @@ public final class CoreGraphics {
      * The key used to obtain the variation axis name from a variation axis
      * dictionary. The value obtained with this key is a CFStringRef specifying
      * the name of the variation axis.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4413,6 +5357,8 @@ public final class CoreGraphics {
      * The key used to obtain the minimum variation axis value from a variation
      * axis dictionary. The value obtained with this key is a CFNumberRef
      * specifying the minimum value of the variation axis.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4422,6 +5368,8 @@ public final class CoreGraphics {
      * The key used to obtain the maximum variation axis value from a variation
      * axis dictionary. The value obtained with this key is a CFNumberRef
      * specifying the maximum value of the variation axis.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4431,6 +5379,8 @@ public final class CoreGraphics {
      * The key used to obtain the default variation axis value from a variation
      * axis dictionary. The value obtained with this key is a CFNumberRef
      * specifying the default value of the variation axis.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4439,6 +5389,8 @@ public final class CoreGraphics {
     /**
      * CFBooleanRef which can be used as option to create CGColorConversionInfoRef, when Black Point Compensation is
      * desired
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4448,6 +5400,8 @@ public final class CoreGraphics {
      * The media box for the document or for a given page. Optional; if present,
      * the value of this key must be a CFData containing a CGRect (stored by
      * value, not by reference).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4457,6 +5411,8 @@ public final class CoreGraphics {
      * The crop box for the document or for a given page. Optional; if present,
      * the value of this key must be a CFData containing a CGRect (stored by
      * value, not by reference).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4466,6 +5422,8 @@ public final class CoreGraphics {
      * The bleed box for the document or for a given page. Optional; if present,
      * the value of this key must be a CFData containing a CGRect (stored by
      * value, not by reference).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4475,6 +5433,8 @@ public final class CoreGraphics {
      * The trim box for the document or for a given page. Optional; if present,
      * the value of this key must be a CFData containing a CGRect (stored by
      * value, not by reference).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4484,6 +5444,8 @@ public final class CoreGraphics {
      * The art box for the document or for a given page. Optional; if present,
      * the value of this key must be a CFData containing a CGRect (stored by
      * value, not by reference).
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4492,6 +5454,8 @@ public final class CoreGraphics {
     /**
      * The document's title. Optional; if present, the value of this key must be
      * a CFString.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4500,6 +5464,8 @@ public final class CoreGraphics {
     /**
      * The name of the person who created this document. Optional; if present,
      * the value of this key must be a CFString.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4508,6 +5474,8 @@ public final class CoreGraphics {
     /**
      * The subject of a document. Optional; if present, the value of this key
      * must be a CFString.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4523,6 +5491,8 @@ public final class CoreGraphics {
      * dictionary; its value is an array consisting of each of the specified
      * strings. The value of this key must be in one of the above forms;
      * otherwise, this key is ignored.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4532,6 +5502,8 @@ public final class CoreGraphics {
      * The name of the application that created the original data used to create
      * this document. Optional; if present, the value of this key must be a
      * CFString.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4544,9 +5516,11 @@ public final class CoreGraphics {
      * be a CFStringRef which can be represented in ASCII encoding; only the
      * first 32 bytes will be used for the password. There is no default value
      * for this key.
-     * <p>
+     * 
      * If the value of this key cannot be represented in ASCII, the document
      * will not be created and the creation function will return NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4558,9 +5532,11 @@ public final class CoreGraphics {
      * unspecified, the user password will be the empty string. The value of
      * this key must be a CFStringRef which can be represented in ASCII
      * encoding; only the first 32 bytes will be used for the password.
-     * <p>
+     * 
      * If the value of this key cannot be represented in ASCII, the document
      * will not be created and the creation function will return NULL.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4573,6 +5549,8 @@ public final class CoreGraphics {
      * must be a CFNumber with value which is a multiple of 8 between 40 and
      * 128, inclusive. If this key is absent or invalid, the encryption key
      * length defaults to 40 bits.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4582,6 +5560,8 @@ public final class CoreGraphics {
      * Used to specify whether the document allows printing when unlocked with
      * the user password. The value of this key must be a CFBooleanRef. The
      * default value of this key is "kCFBooleanTrue".
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4591,6 +5571,8 @@ public final class CoreGraphics {
      * Used to specify whether the document allows copying when unlocked with
      * the user password. The value of this key must be a CFBooleanRef. The
      * default value of this key is "kCFBooleanTrue".
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4634,6 +5616,9 @@ public final class CoreGraphics {
         void call_CGPDFOperatorTableSetCallback(CGPDFScannerRef arg0, VoidPtr arg1);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CFunction
     public static native VoidPtr CGDataProviderGetInfo(CGDataProviderRef provider);
@@ -4641,6 +5626,8 @@ public final class CoreGraphics {
     /**
      * Create an ICC-based color space using the ICC profile raw data specified by
      * `data' which can be either CFDataRef or CGDataProviderRef
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -4659,11 +5646,16 @@ public final class CoreGraphics {
      * // your color space is Display P3
      * ...
      * }
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CFunction
     public static native CFStringRef CGColorSpaceGetName(CGColorSpaceRef space);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CFunction
     public static native void CGPathApplyWithBlock(CGPathRef path,
@@ -4679,6 +5671,8 @@ public final class CoreGraphics {
 
     /**
      * Return the document outline in the form of a CFDictionary tree containing the kCGPDFOutline keys.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CFunction
@@ -4686,6 +5680,8 @@ public final class CoreGraphics {
 
     /**
      * Return the document access permissions.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CFunction
@@ -4698,6 +5694,9 @@ public final class CoreGraphics {
     @CFunction
     public static native void CGContextResetClip(CGContextRef c);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CFunction
     public static native CGColorConversionInfoRef CGColorConversionInfoCreateFromListWithArguments(
@@ -4705,6 +5704,8 @@ public final class CoreGraphics {
 
     /**
      * Set the outline in the PDF created by a CGPDFContext (no effect in other types of CGContexts).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CFunction
@@ -4715,6 +5716,8 @@ public final class CoreGraphics {
      * L*a*b* colorspace created by `CGColorSpaceCreateLab' with
      * white_point[0.9642, 1.0, 0.8249] (i.e. D50), black_point[0.0, 0.0, 0.0]
      * and range [-128, 128, -128, 128].
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -4723,6 +5726,8 @@ public final class CoreGraphics {
     /**
      * Key: kCGPDFOutlineTitle
      * Value: CFString
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -4731,6 +5736,8 @@ public final class CoreGraphics {
     /**
      * Key: kCGPDFOutlineChildren
      * Value: CFArray of CFDictionaries
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -4739,6 +5746,8 @@ public final class CoreGraphics {
     /**
      * Key: kCGPDFOutlineDestination
      * Value: CFNumber (for a one-indexed page number) or CFURL
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -4747,11 +5756,16 @@ public final class CoreGraphics {
     /**
      * Key: kCGPDFOutlineDestinationRect
      * Value: CFDictionary from CGRectCreateDictionaryRepresentation. Only valid when the destination is a page number.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFOutlineDestinationRect();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorConversionTRCSize();
@@ -4759,6 +5773,8 @@ public final class CoreGraphics {
     /**
      * The document's access permissions, expressed as a CFNumber. The number is
      * defined by ORing together the desired CGPDFAccessPermissions values.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -4767,21 +5783,34 @@ public final class CoreGraphics {
     /**
      * Return true if color space uses transfer functions defined in ITU Rec.2100
      * Please use CGColorSpaceUsesITUR_2100TF instead
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 13.4
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native boolean CGColorSpaceIsHDR(CGColorSpaceRef arg1);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CFunction
     public static native ConstVoidPtr CGColorSpaceCopyPropertyList(CGColorSpaceRef space);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CFunction
     public static native CGColorSpaceRef CGColorSpaceCreateWithPropertyList(ConstVoidPtr plist);
 
     /**
      * Create a color in the "Generic Gray Gamma 2.2 color space.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CFunction
@@ -4789,6 +5818,8 @@ public final class CoreGraphics {
 
     /**
      * Create a color in sRGB color space.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CFunction
@@ -4797,6 +5828,8 @@ public final class CoreGraphics {
 
     /**
      * Return the byte order info of `image'.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @CFunction
@@ -4804,6 +5837,8 @@ public final class CoreGraphics {
 
     /**
      * Return the pixel format of `image'.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @CFunction
@@ -4815,6 +5850,8 @@ public final class CoreGraphics {
      * value, and `info' to `block'. If `block' returns true, iteration will continue
      * over all values. If `block' returns false, iteration will stop and return
      * early.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @CFunction
@@ -4834,6 +5871,8 @@ public final class CoreGraphics {
      * `info' to `block'. If `block' returns true, iteration will continue over all
      * key/value pairs. If `block' returns false, iteration will stop and return
      * early.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @CFunction
@@ -4849,6 +5888,9 @@ public final class CoreGraphics {
                 CGPDFObjectRef value, VoidPtr info);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CFunction
     public static native CGColorConversionInfoRef CGColorConversionInfoCreateWithOptions(CGColorSpaceRef src,
@@ -4858,6 +5900,8 @@ public final class CoreGraphics {
      * For a given CGPDFTagType, return a C-string that matches the names defined in section 10.7.3: Standard Structure
      * Types.
      * These are defined on pages 899 - 912. Returns NULL for an unknown value.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CFunction
@@ -4880,6 +5924,8 @@ public final class CoreGraphics {
      * or explicitly declare what language the text is in. All child-tags (tags pushed on top of other tags) will
      * inherit their
      * parent tag's properties.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CFunction
@@ -4889,31 +5935,60 @@ public final class CoreGraphics {
      * Pop the current tag. Sets the current tag to the previous tag on the tag-stack. If there was no previous tag,
      * then the
      * current tag will be set to the root document tag (of type CGPDFTagTypeDocument).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CFunction
     public static native void CGPDFContextEndTag(CGContextRef context);
 
+    /**
+     * API-Since: 12.3
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceExtendedLinearITUR_2020();
 
+    /**
+     * API-Since: 12.3
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceExtendedLinearDisplayP3();
 
+    /**
+     * API-Since: 12.6
+     * Deprecated-Since: 13.4
+     * Deprecated-Message: No longer supported
+     */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceITUR_2020_PQ_EOTF();
 
+    /**
+     * API-Since: 12.6
+     * Deprecated-Since: 13.4
+     * Deprecated-Message: No longer supported
+     */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceDisplayP3_PQ_EOTF();
 
+    /**
+     * API-Since: 12.6
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceDisplayP3_HLG();
 
+    /**
+     * API-Since: 12.6
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: No longer supported
+     */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceITUR_2020_HLG();
@@ -4924,6 +5999,8 @@ public final class CoreGraphics {
      * "...useful when extracting the document’s contents in support of accessibility..."
      * This can be used to more precisely control what string is extracted by a user when
      * they copy and paste from a document.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -4933,6 +6010,8 @@ public final class CoreGraphics {
      * Alternative text, defined on page 860:
      * "An alternate description of the structure element and its children in human-readable form".
      * This is typically used for graphical content, like an image.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -4942,6 +6021,8 @@ public final class CoreGraphics {
      * Title, defined on page 859:
      * Title of the node in a human-readable form. This should *not* be used for accessibility,
      * but can be useful when presenting the structure of a tagged node tree.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -4952,15 +6033,26 @@ public final class CoreGraphics {
      * Typically you should use the document's catalog to get its language, but if a section
      * of text is not the same language as the document, this may be set and allow you to
      * look at what language it is hinting at.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCGPDFTagPropertyLanguageText();
 
+    /**
+     * API-Since: 13.4
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: No longer supported
+     */
+    @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceITUR_2020_PQ();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceDisplayP3_PQ();
@@ -4968,6 +6060,8 @@ public final class CoreGraphics {
     /**
      * Return true if `space' uses extended range [-Inf, +Inf]; false
      * otherwise.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CFunction
@@ -4975,6 +6069,8 @@ public final class CoreGraphics {
 
     /**
      * Create a color in the "Generic" gray color space.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CFunction
@@ -4982,6 +6078,8 @@ public final class CoreGraphics {
 
     /**
      * Create a color in the "Generic" RGB color space.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CFunction
@@ -4990,6 +6088,8 @@ public final class CoreGraphics {
 
     /**
      * Create a color in the "Generic" CMYK color space.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CFunction
@@ -5003,30 +6103,46 @@ public final class CoreGraphics {
      * value. However, colors returned from `CGColorGetConstantColor' can be
      * retained and released in a properly nested fashion, just like any other
      * CF type.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CFunction
     public static native CGColorRef CGColorGetConstantColor(CFStringRef colorName);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceITUR_2100_PQ();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceITUR_2100_HLG();
 
     /**
      * Colors in the "Generic" gray color space.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorWhite();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorBlack();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorClear();
@@ -5038,6 +6154,8 @@ public final class CoreGraphics {
      * values contained in the dictionary must match those specified in section
      * 9.10.4 of the PDF 1.4 specification, ISO/DIS 15930-3 document published
      * by ISO/TC 130, and Adobe Technical Note #5413.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -5045,10 +6163,12 @@ public final class CoreGraphics {
 
     /**
      * The following keys are supported in the output intent dictionary:
-     * <p>
+     * 
      * kCGPDFXOutputIntentSubtype ("S"): The output intent subtype. This key is
      * required; the value of this key must be a CFString equal to "GTS_PDFX";
      * otherwise, the dictionary is ignored.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -5060,6 +6180,8 @@ public final class CoreGraphics {
      * human- or machine-readable form. This key is required; the value of this
      * key must be a CFString. For best results, the string should be
      * representable losslessly in ASCII encoding.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -5070,6 +6192,8 @@ public final class CoreGraphics {
      * intended output device or production condition in a human-readable form.
      * This key is optional; if present, the value of this key must be a
      * CFString.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -5081,6 +6205,8 @@ public final class CoreGraphics {
      * is defined. This key is optional; if present, the value of this key must
      * be a CFString. For best results, the string should be representable
      * losslessly in ASCII encoding.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -5092,6 +6218,8 @@ public final class CoreGraphics {
      * This key is required if the value of `kCGPDFXOutputConditionIdentifier'
      * does not specify a standard production condition; it is optional
      * otherwise. If present, the value of this key must be a CFString.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -5104,6 +6232,8 @@ public final class CoreGraphics {
      * `kCGPDFXOutputConditionIdentifier' does not specify a standard production
      * condition; it is optional otherwise. If present, the value of this key
      * must be a ICC-based CGColorSpaceRef.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -5119,6 +6249,8 @@ public final class CoreGraphics {
      * ("S") key with a value of "GTS_PDFX". If both `kCGPDFContextOutputIntent'
      * and `kCGPDFContextOutputIntents' keys are specified, the former is
      * ignored.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -5126,6 +6258,8 @@ public final class CoreGraphics {
 
     /**
      * Output a linearized PDF
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -5134,6 +6268,8 @@ public final class CoreGraphics {
     /**
      * Output a PDF that conforms to PDF/A-2u (ISO 19005-2). The value of this key
      * must be a CFBooleanRef. The default value of this key is "kCFBooleanFalse".
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -5141,6 +6277,8 @@ public final class CoreGraphics {
 
     /**
      * Return true if color space uses transfer functions defined in ITU Rec.2100
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CFunction
@@ -5149,6 +6287,8 @@ public final class CoreGraphics {
     /**
      * Create a linearized copy of the color space if the color space is matrix based.
      * Return NULL if otherwise
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CFunction
@@ -5157,6 +6297,8 @@ public final class CoreGraphics {
     /**
      * Create a copy of the color space which uses extended range [-Inf, +Inf] if the color space is
      * matrix based. Return NULL if otherwise
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CFunction
@@ -5165,15 +6307,23 @@ public final class CoreGraphics {
     /**
      * Create a linearized copy of the color space which uses extended range [-Inf, +Inf]
      * if the color space is matrix based. Return NULL if otherwise
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CFunction
     public static native CGColorSpaceRef CGColorSpaceCreateExtendedLinearized(CGColorSpaceRef space);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceExtendedITUR_2020();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceExtendedDisplayP3();
@@ -5182,16 +6332,24 @@ public final class CoreGraphics {
      * Create a color space using ColorSyncProfileRef.
      * To create an extended color space include kCGColorSpaceExtendedRange/kCFBooleanTrue
      * key/value pair in `options' dictionary.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CFunction
     public static native CGColorSpaceRef CGColorSpaceCreateWithColorSyncProfile(ColorSyncProfileRef arg1,
             CFDictionaryRef options);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CFunction
     public static native boolean CGColorSpaceIsPQBased(CGColorSpaceRef s);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CFunction
     public static native boolean CGColorSpaceIsHLGBased(CGColorSpaceRef s);
@@ -5219,10 +6377,16 @@ public final class CoreGraphics {
         void call_CGErrorSetCallback();
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceLinearITUR_2020();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceLinearDisplayP3();
@@ -5231,11 +6395,186 @@ public final class CoreGraphics {
     @CVariable()
     public static native CFStringRef kCGColorSpaceExtendedRange();
 
+    /**
+     * API-Since: 15.1
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceITUR_709_PQ();
 
+    /**
+     * API-Since: 15.1
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kCGColorSpaceITUR_2020_sRGBGamma();
+
+    /**
+     * Decompose a CGAffineTransform into a scale * shear * rotation * translation
+     * 
+     * This decomposition method may be used to provide insight into what a
+     * arbitrary CGAffineTransform does. This may be necessary, for example, because
+     * an algorithm would like to know what the scaling portion of a transform is before rotation,
+     * or perhaps because some part of a transform is undesired and your application would like
+     * to replace a portion of it with a different transformation.
+     * 
+     * Since there are many ways to make a affine transform out of other affine transforms
+     * this method can not tell us the ordering of geometric steps used to create the original
+     * CGAffineTransform. It tells us what the transform does, not how it was made.
+     * 
+     * @param transform The CGAffineTransform to decompose
+     * @return A decomposed set of geometric operations, the product of which is the CGAffineTransform.
+     * 
+     *         API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native CGAffineTransformComponents CGAffineTransformDecompose(@ByValue CGAffineTransform transform);
+
+    /**
+     * Create CGAffineTransform from scale * shear * rotation * translation CGAffineTransformComponents
+     * 
+     * @param components The set of CGAffineTransformComponents to use to create a new CGAffineTransform
+     * @return A new CGAffineTransform built from the provided components
+     * 
+     *         API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native CGAffineTransform CGAffineTransformMakeWithComponents(
+            @ByValue CGAffineTransformComponents components);
+
+    /**
+     * Create a copy of the color space which uses standard range [0.0, 1.0].
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    public static native CGColorSpaceRef CGColorSpaceCreateCopyWithStandardRange(CGColorSpaceRef s);
+
+    /**
+     * Returns a new weakly-simple path without self-intersections and with a normalized orientation. Filling the
+     * resulting path using even-odd or non-zero filling is identical.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    public static native CGPathRef CGPathCreateCopyByNormalizing(CGPathRef path, boolean evenOddFillRule);
+
+    /**
+     * Returns a new path created by unioning `path` and `maskPath`. Any unclosed subpaths in either path are assumed to
+     * be closed. The resulting path is suitable for either even-odd or non-zero filling.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    public static native CGPathRef CGPathCreateCopyByUnioningPath(CGPathRef path, CGPathRef maskPath,
+            boolean evenOddFillRule);
+
+    /**
+     * Returns a new path created by intersecting `path` and `maskPath`. Any unclosed subpaths in either path are
+     * assumed to be closed. The resulting path is suitable for either even-odd or non-zero filling.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    public static native CGPathRef CGPathCreateCopyByIntersectingPath(CGPathRef path, CGPathRef maskPath,
+            boolean evenOddFillRule);
+
+    /**
+     * Returns a new path created by subtracting `maskPath` from `path`. Any unclosed subpaths in either path are
+     * assumed to be closed. The resulting path is suitable for either even-odd or non-zero filling.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    public static native CGPathRef CGPathCreateCopyBySubtractingPath(CGPathRef path, CGPathRef maskPath,
+            boolean evenOddFillRule);
+
+    /**
+     * Returns a new path created by exclusive or-ing `path` and `maskPath`. Any unclosed subpaths in either path are
+     * assumed to be closed. The resulting path is suitable for either even-odd or non-zero filling.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    public static native CGPathRef CGPathCreateCopyBySymmetricDifferenceOfPath(CGPathRef path, CGPathRef maskPath,
+            boolean evenOddFillRule);
+
+    /**
+     * Returns a new path created by subtracting the `maskPath` from the line of `path` with the fill of `maskPath`.
+     * This returns a potentially open path.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    public static native CGPathRef CGPathCreateCopyOfLineBySubtractingPath(CGPathRef path, CGPathRef maskPath,
+            boolean evenOddFillRule);
+
+    /**
+     * Returns a new path created by intersecting the line of `path` and the fill of `maskPath`. This returns a
+     * potentially open path.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    public static native CGPathRef CGPathCreateCopyOfLineByIntersectingPath(CGPathRef path, CGPathRef maskPath,
+            boolean evenOddFillRule);
+
+    /**
+     * Return an array of the visually separated components of a path.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    public static native CFArrayRef CGPathCreateSeparateComponents(CGPathRef path, boolean evenOddFillRule);
+
+    /**
+     * Returns a new path that is flattened, converting all curved line segments into straight line approximations. The
+     * granularity of the approximations is controlled by `flatteningThreshold` the maximum error tolerance (measured in
+     * points) for curves.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    public static native CGPathRef CGPathCreateCopyByFlattening(CGPathRef path, @NFloat double flatteningThreshold);
+
+    /**
+     * Returns true if path1 and path2 overlap.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    public static native boolean CGPathIntersectsPath(CGPathRef path1, CGPathRef path2, boolean evenOddFillRule);
+
+    /**
+     * Cleanly stop the scanner on the current operator, releasing any
+     * temporary resources.
+     */
+    @Generated
+    @CFunction
+    public static native void CGPDFScannerStop(CGPDFScannerRef s);
+
+    /**
+     * API-Since: 15.1
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kCGColorSpaceITUR_709_HLG();
+
+    @Generated public static final int kCGBitmapByteOrder16Host = 0x00001000;
+    @Generated public static final int kCGBitmapByteOrder32Host = 0x00002000;
 }

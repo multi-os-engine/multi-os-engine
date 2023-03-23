@@ -54,6 +54,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -212,6 +215,9 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     @Selector("setPhoneNumber:")
     public native void setPhoneNumber(String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setTimeZone:")
     public native void setTimeZone(NSTimeZone value);
@@ -220,6 +226,9 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     @Selector("setUrl:")
     public native void setUrl(NSURL value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
@@ -310,6 +319,8 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
 
     /**
      * fromScene is used to indicate the UIScene where the user interaction took place.
+     * 
+     * API-Since: 13.2
      */
     @Generated
     @Selector("openInMapsWithLaunchOptions:fromScene:completionHandler:")
@@ -324,6 +335,9 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
         void call_openInMapsWithLaunchOptionsFromSceneCompletionHandler(boolean success);
     }
 
+    /**
+     * API-Since: 13.2
+     */
     @Generated
     @Selector("openMapsWithItems:launchOptions:fromScene:completionHandler:")
     public static native void openMapsWithItemsLaunchOptionsFromSceneCompletionHandler(
@@ -337,10 +351,16 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
         void call_openMapsWithItemsLaunchOptionsFromSceneCompletionHandler(boolean success);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("pointOfInterestCategory")
     public native String pointOfInterestCategory();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setPointOfInterestCategory:")
     public native void setPointOfInterestCategory(String value);

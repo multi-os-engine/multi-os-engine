@@ -47,6 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * A tile group encapsulates a collection of related tile definitions that are designed to be pieced together within a
  * tile map. How those tiles are pieced together is governed by the set of rules. When a tile group is placed in a tile
  * map, the map evaluates the rules to determine which tiles should be placed to achieve the desired outcome.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("SpriteKit")
@@ -162,7 +164,7 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a tile group with the specified rules.
-     *
+     * 
      * @param rules the rules the group will use to determine tile placement
      */
     @Generated
@@ -172,7 +174,7 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Create a simple tile group for a single tile definition. This creates and initializes the SKTileGroupRule
      * necessary to place the provided tile definition in a tile map.
-     *
+     * 
      * @param tileDefinition the tile definition we wish to place in a tile map
      */
     @Generated
@@ -204,7 +206,7 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Initilize a tile group with the specified rules.
-     *
+     * 
      * @param rules the rules the group will use to determine tile placement
      */
     @Generated
@@ -214,7 +216,7 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Initilize a simple tile group for a single tile definition. This creates and initializes the SKTileGroupRule
      * necessary to place the provided tile definition in a tile map.
-     *
+     * 
      * @param tileDefinition tile definition we wish to place in a tile map
      */
     @Generated

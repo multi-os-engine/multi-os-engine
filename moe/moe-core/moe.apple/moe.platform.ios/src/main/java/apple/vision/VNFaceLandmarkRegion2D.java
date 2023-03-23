@@ -1,8 +1,6 @@
 package apple.vision;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -28,12 +26,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * VNFaceLandmarkRegion2D
- * <p>
+ * 
  * VNFaceLandmarkRegion2D gives access to the 2D landmark points for the region. The points are stored as vector_float2
  * and must not be modified.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -130,10 +132,10 @@ public class VNFaceLandmarkRegion2D extends VNFaceLandmarkRegion {
 
     /**
      * Obtains the array of normalized landmark points.
-     * <p>
+     * 
      * Provides the address of a buffer containing the array of CGPoints representing the landmark points. This buffer
      * is owned by the target object and is guaranteed to exist as long as the VNFaceLandmarkRegion2D does.
-     *
+     * 
      * @return the address of the array of pointCount points.
      */
     @Generated
@@ -143,13 +145,14 @@ public class VNFaceLandmarkRegion2D extends VNFaceLandmarkRegion {
 
     /**
      * Provides the array of landmark points in the coordinate space of a specific image size.
-     * <p>
+     * 
      * Provides the address of a buffer containing the array of CGPoints representing the landmark points in the
      * coordinate space of a specific image size. This buffer is owned by the target object and is guaranteed to exist
      * as long as the VNFaceLandmarkRegion2D does.
-     *
-     * @return the address of the array of pointCount points, or NULL if the conversion could not take place.
+     * 
      * @param imageSize The pixel dimensions of the image in which the landmark points are being presented.
+     * 
+     * @return the address of the array of pointCount points, or NULL if the conversion could not take place.
      */
     @Generated
     @Selector("pointsInImageOfSize:")
@@ -183,14 +186,16 @@ public class VNFaceLandmarkRegion2D extends VNFaceLandmarkRegion {
 
     /**
      * Obtains the array of accuracy placement estimates per landmark point.
-     * <p>
+     * 
      * Provides the NSArray object containing landmarks accuracy placement estimates per landmark point. This property
      * is only
      * populated when VNDetectFaceLandmarksRequest object is configured with
      * VNRequestFaceLandmarksConstellation76Points. It is
      * set to nil for other constellations
-     *
+     * 
      * @return NSArray object of NSNumber(s) initialized to floating point values.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("precisionEstimatesPerPoint")
@@ -205,4 +210,14 @@ public class VNFaceLandmarkRegion2D extends VNFaceLandmarkRegion {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * Describes how to interpret the points provided by the region.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("pointsClassification")
+    @NInt
+    public native long pointsClassification();
 }

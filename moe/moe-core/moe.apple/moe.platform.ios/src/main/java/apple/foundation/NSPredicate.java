@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Predicates wrap some combination of expressions and operators and when evaluated return a BOOL.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("Foundation")
@@ -134,6 +136,9 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("new")
     public static native NSPredicate new_objc();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("predicateWithBlock:")
     public static native NSPredicate predicateWithBlock(
@@ -189,6 +194,8 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Force a predicate which was securely decoded to allow evaluation
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("allowEvaluation")
@@ -214,6 +221,8 @@ public class NSPredicate extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * single pass evaluation substituting variables from the bindings dictionary for any variable expressions
      * encountered
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("evaluateWithObject:substitutionVariables:")

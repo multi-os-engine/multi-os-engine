@@ -28,9 +28,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MDLMeshBufferZone
- * <p>
+ * 
  * A reference to a logical pool of memory from which mesh buffers would
  * be allocated
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -39,7 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MDLMeshBufferZone {
     /**
      * [@property] allocator
-     * <p>
+     * 
      * Allocator used to create the zone
      */
     @Generated
@@ -49,7 +51,7 @@ public interface MDLMeshBufferZone {
 
     /**
      * [@property] capacity
-     * <p>
+     * 
      * Total size of memory in the zone
      */
     @Generated

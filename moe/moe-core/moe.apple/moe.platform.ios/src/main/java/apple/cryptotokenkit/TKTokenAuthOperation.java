@@ -30,6 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Context of a pending authentication operation.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -95,7 +97,7 @@ public class TKTokenAuthOperation extends NSObject implements NSSecureCoding {
 
     /**
      * Handler triggered by the system in order to let the token finalize the authentication operation.
-     *
+     * 
      * @param error Error details (see TKError.h).
      * @return Finalization status.
      */

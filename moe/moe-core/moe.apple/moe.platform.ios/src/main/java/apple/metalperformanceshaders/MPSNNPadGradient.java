@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNPadGradient
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Computes the gradient for the @ref MPSNNPad layer.
  * Since the padding forward operation typically increases the size of the image, the gradient operation
  * decreases it. In case of zero or constant padding forward operation the gradient operation slices the
@@ -79,11 +79,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * | d0+d4 | d1+d3+d5+d7 | d2+d6 |
  * |-----------------------------|
  * [@endcode]
- * <p>
+ * 
  * NOTE: There are no channel fill-values to use with @ref MPSImageEdgeModeConstant
  * since the gradient values are independent of the constant of the forward pass.
  * NOTE: In case the forward pass defined a slice operation in feature channels then
  * the channels not read in the forward pass will be filled with zeros in the gradient pass.
+ * 
+ * API-Since: 12.1
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -158,9 +160,9 @@ public class MPSNNPadGradient extends MPSCNNGradientKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSNNPadGradient.
      * @param device   The MTLDevice on which to make the MPSNNPadGradient.
      * @return A new MPSNNPadGradient object, or nil if failure.
@@ -171,8 +173,9 @@ public class MPSNNPadGradient extends MPSCNNGradientKernel {
 
     /**
      * Initializes a MPSNNPadGradient filter
-     *
+     * 
      * @param device The MTLDevice on which this filter will be used
+     * 
      * @return A valid MPSNNPadGradient object or nil, if failure.
      */
     @Generated

@@ -30,7 +30,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] AVPlayerItemMetadataOutputPushDelegate
- * <p>
+ * 
  * Extends AVPlayerItemOutputPushDelegate to provide additional methods specific to metadata output.
  */
 @Generated
@@ -40,9 +40,9 @@ import org.moe.natj.objc.ann.Selector;
 public interface AVPlayerItemMetadataOutputPushDelegate extends AVPlayerItemOutputPushDelegate {
     /**
      * metadataOutput:didOutputTimedMetadataGroups:fromPlayerItemTrack:
-     * <p>
+     * 
      * A delegate callback that delivers a new collection of metadata items.
-     * <p>
+     * 
      * Each group provided in a single invocation of this method will have timing that does not overlap with any other
      * group in the array.
      * Note that for some timed metadata formats carried by HTTP live streaming, the timeRange of each group must be
@@ -54,11 +54,16 @@ public interface AVPlayerItemMetadataOutputPushDelegate extends AVPlayerItemOutp
      * this method can be invoked for each one separately, each with reference to the associated AVPlayerItemTrack.
      * Note that the associated AVPlayerItemTrack parameter can be nil which implies that the metadata describes the
      * asset as a whole, not just a single track of the asset.
-     *
-     * @param output The AVPlayerItemMetadataOutput source.
-     * @param groups An NSArray of AVTimedMetadataGroups that may contain metadata items with requested identifiers,
+     * 
+     * API-Since: 8.0
+     * 
+     * @param output
+     *               The AVPlayerItemMetadataOutput source.
+     * @param groups
+     *               An NSArray of AVTimedMetadataGroups that may contain metadata items with requested identifiers,
      *               according to the format descriptions associated with the underlying tracks.
-     * @param track  An instance of AVPlayerItemTrack that indicates the source of the metadata items in the group.
+     * @param track
+     *               An instance of AVPlayerItemTrack that indicates the source of the metadata items in the group.
      */
     @Generated
     @IsOptional

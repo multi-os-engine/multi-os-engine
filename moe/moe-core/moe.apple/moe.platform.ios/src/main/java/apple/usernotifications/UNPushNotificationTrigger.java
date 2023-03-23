@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * UNPushNotificationTrigger can be sent from a server using Apple Push Notification Service.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("UserNotifications")

@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("CoreAudioKit")
 @Runtime(ObjCRuntime.class)
@@ -71,6 +74,7 @@ public class AUViewController extends UIViewController implements NSExtensionReq
     @Selector("allocWithZone:")
     public static native AUViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();

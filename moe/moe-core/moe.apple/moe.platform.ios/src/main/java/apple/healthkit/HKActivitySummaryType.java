@@ -42,8 +42,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKActivitySummaryType
- * <p>
+ * 
  * Represents an HKActivitySummary
+ * 
+ * API-Since: 9.3
  */
 @Generated
 @Library("HealthKit")
@@ -216,4 +218,8 @@ public class HKActivitySummaryType extends HKObjectType {
     @Generated
     @Selector("electrocardiogramType")
     public static native HKElectrocardiogramType electrocardiogramType();
+
+    @Generated
+    @Selector("visionPrescriptionType")
+    public static native HKPrescriptionType visionPrescriptionType();
 }

@@ -13,6 +13,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Describes a CPU-recorded indirect render command
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("Metal")
@@ -57,6 +59,9 @@ public interface MTLIndirectRenderCommand {
     void setFragmentBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
             @NUInt long index);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setRenderPipelineState:")
     void setRenderPipelineState(@Mapped(ObjCObjectMapper.class) MTLRenderPipelineState pipelineState);

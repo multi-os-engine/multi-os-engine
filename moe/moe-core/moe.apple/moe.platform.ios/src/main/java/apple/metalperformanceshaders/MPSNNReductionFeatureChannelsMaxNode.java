@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.1
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)

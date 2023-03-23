@@ -74,19 +74,19 @@ public final class AVFAudio {
 
     /**
      * [@constant] AVAudioEngineConfigurationChangeNotification
-     * <p>
+     * 
      * A notification generated on engine configuration changes when rendering to/from an audio
      * device.
-     * <p>
+     * 
      * Register for this notification on your engine instances, as follows:
-     * <p>
+     * 
      * ```
      * [[NSNotificationCenter defaultCenter] addObserver: myObject
      * selector: @selector(handleInterruption:)
      * name: AVAudioEngineConfigurationChangeNotification
      * object: engine];
      * ```
-     * <p>
+     * 
      * When the engine's I/O unit observes a change to the audio input or output hardware's
      * channel count or sample rate, the engine stops itself (see `AVAudioEngine(stop)`), and
      * issues this notification.
@@ -94,10 +94,12 @@ public final class AVFAudio {
      * must reestablish connections if the connection formats need to change (e.g. in an
      * input node chain, connections must follow the hardware sample rate, while in an output only
      * chain, the output node supports rate conversion).
-     * <p>
+     * 
      * Note that the engine must not be deallocated from within the client's notification handler
      * because the callback happens on an internal dispatch queue and can deadlock while trying to
      * synchronously teardown the engine.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -106,6 +108,8 @@ public final class AVFAudio {
 
     /**
      * value is an integer (format ID) from CoreAudioTypes.h
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -114,6 +118,8 @@ public final class AVFAudio {
 
     /**
      * value is floating point in Hertz
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -122,6 +128,8 @@ public final class AVFAudio {
 
     /**
      * value is an integer
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -130,6 +138,8 @@ public final class AVFAudio {
 
     /**
      * value is an integer, one of: 8, 16, 24, 32
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -138,6 +148,8 @@ public final class AVFAudio {
 
     /**
      * value is a BOOL
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -146,6 +158,8 @@ public final class AVFAudio {
 
     /**
      * value is a BOOL
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -154,6 +168,8 @@ public final class AVFAudio {
 
     /**
      * value is a BOOL
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -162,6 +178,8 @@ public final class AVFAudio {
 
     /**
      * value is an integer (audio file type) from AudioFile.h
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -170,6 +188,8 @@ public final class AVFAudio {
 
     /**
      * value is an integer from enum AVAudioQuality
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -178,6 +198,8 @@ public final class AVFAudio {
 
     /**
      * value is an integer from enum AVAudioQuality. only relevant for AVAudioBitRateStrategy_Variable
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -186,6 +208,8 @@ public final class AVFAudio {
 
     /**
      * value is an integer.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -194,6 +218,8 @@ public final class AVFAudio {
 
     /**
      * value is an integer
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -202,6 +228,8 @@ public final class AVFAudio {
 
     /**
      * value is an AVAudioBitRateStrategy constant. see below.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -210,6 +238,8 @@ public final class AVFAudio {
 
     /**
      * value is an integer from 8 to 32
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -218,6 +248,8 @@ public final class AVFAudio {
 
     /**
      * value is an AVSampleRateConverterAlgorithm constant. see below.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -226,6 +258,8 @@ public final class AVFAudio {
 
     /**
      * value is an integer from enum AVAudioQuality
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -234,6 +268,8 @@ public final class AVFAudio {
 
     /**
      * value is an NSData containing an AudioChannelLayout
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -242,22 +278,33 @@ public final class AVFAudio {
 
     /**
      * values for AVEncoderBitRateStrategyKey
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioBitRateStrategy_Constant();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioBitRateStrategy_LongTermAverage();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioBitRateStrategy_VariableConstrained();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -265,17 +312,25 @@ public final class AVFAudio {
 
     /**
      * values for AVSampleRateConverterAlgorithmKey
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVSampleRateConverterAlgorithm_Normal();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVSampleRateConverterAlgorithm_Mastering();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -284,6 +339,8 @@ public final class AVFAudio {
     /**
      * input port types
      * Line level input on a dock connector
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -292,6 +349,8 @@ public final class AVFAudio {
 
     /**
      * Built-in microphone on an iOS device
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -301,6 +360,8 @@ public final class AVFAudio {
     /**
      * Microphone on a wired headset. Headset refers to an accessory that has headphone outputs paired with a
      * microphone.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -309,6 +370,8 @@ public final class AVFAudio {
 
     /**
      * Line level output on a dock connector
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -317,6 +380,8 @@ public final class AVFAudio {
 
     /**
      * Headphone or headset output
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -325,6 +390,8 @@ public final class AVFAudio {
 
     /**
      * Output on a Bluetooth A2DP device
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -333,6 +400,8 @@ public final class AVFAudio {
 
     /**
      * The speaker you hold to your ear when on a phone call
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -341,6 +410,8 @@ public final class AVFAudio {
 
     /**
      * Built-in speaker on an iOS device
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -349,6 +420,8 @@ public final class AVFAudio {
 
     /**
      * Output via High-Definition Multimedia Interface
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -357,6 +430,8 @@ public final class AVFAudio {
 
     /**
      * Output on a remote Air Play device
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -365,6 +440,8 @@ public final class AVFAudio {
 
     /**
      * Output on a Bluetooth Low Energy device
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -373,6 +450,8 @@ public final class AVFAudio {
 
     /**
      * Input or output on a Bluetooth Hands-Free Profile device
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -381,6 +460,8 @@ public final class AVFAudio {
 
     /**
      * Input or output on a Universal Serial Bus device
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -389,6 +470,8 @@ public final class AVFAudio {
 
     /**
      * Input or output via Car Audio
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -397,6 +480,8 @@ public final class AVFAudio {
 
     /**
      * Input or output that does not correspond to real audio hardware
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -405,6 +490,8 @@ public final class AVFAudio {
 
     /**
      * Input or output connected via the PCI (Peripheral Component Interconnect) bus
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -413,6 +500,8 @@ public final class AVFAudio {
 
     /**
      * Input or output connected via FireWire
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -421,6 +510,8 @@ public final class AVFAudio {
 
     /**
      * Input or output connected via DisplayPort
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -429,6 +520,8 @@ public final class AVFAudio {
 
     /**
      * Input or output connected via AVB (Audio Video Bridging)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -437,6 +530,8 @@ public final class AVFAudio {
 
     /**
      * Input or output connected via Thunderbolt
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -446,6 +541,8 @@ public final class AVFAudio {
     /**
      * Use this category for background sounds such as rain, car engine noise, etc.
      * Mixes with other music.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -454,6 +551,8 @@ public final class AVFAudio {
 
     /**
      * Use this category for background sounds. Other music will stop playing.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -462,6 +561,8 @@ public final class AVFAudio {
 
     /**
      * Use this category for music tracks.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -470,6 +571,8 @@ public final class AVFAudio {
 
     /**
      * Use this category when recording audio.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -478,6 +581,8 @@ public final class AVFAudio {
 
     /**
      * Use this category when recording and playing back audio.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -487,7 +592,12 @@ public final class AVFAudio {
     /**
      * Use this category when using a hardware codec or signal processor while
      * not playing or recording audio.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -507,6 +617,8 @@ public final class AVFAudio {
      * and AVAudioSessionPortBuiltInSpeaker.
      * Note that AVAudioSessionPortBuiltInSpeaker is only allowed to be used when there are no other eligible
      * outputs connected.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -515,6 +627,8 @@ public final class AVFAudio {
 
     /**
      * The default mode
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -526,6 +640,8 @@ public final class AVFAudio {
      * (VoIP) applications. Reduces the number of allowable audio routes to be only those
      * that are appropriate for VoIP applications and may engage appropriate system-supplied
      * signal processing. Has the side effect of setting AVAudioSessionCategoryOptionAllowBluetooth
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -537,6 +653,8 @@ public final class AVFAudio {
      * only with the AVAudioSessionCategoryPlayAndRecord category.
      * Do not set this mode directly. If you need similar behavior and are not using
      * a GKVoiceChat object, use AVAudioSessionModeVoiceChat instead.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -546,6 +664,8 @@ public final class AVFAudio {
     /**
      * Only valid with AVAudioSessionCategoryPlayAndRecord or AVAudioSessionCategoryRecord.
      * Modifies the audio routing options and may engage appropriate system-supplied signal processing.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -555,6 +675,8 @@ public final class AVFAudio {
     /**
      * Appropriate for applications that wish to minimize the effect of system-supplied signal
      * processing for input and/or output audio signals.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -564,6 +686,8 @@ public final class AVFAudio {
     /**
      * Engages appropriate output signal processing for movie playback scenarios. Currently
      * only applied during playback over built-in speaker.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -575,6 +699,8 @@ public final class AVFAudio {
      * routes to be only those that are appropriate for video chat applications. May engage appropriate
      * system-supplied signal processing. Has the side effect of setting
      * AVAudioSessionCategoryOptionAllowBluetooth and AVAudioSessionCategoryOptionDefaultToSpeaker.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -588,6 +714,8 @@ public final class AVFAudio {
      * podcast players and
      * audio books. For more information, see the related category option
      * AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -602,62 +730,97 @@ public final class AVFAudio {
      * plays short prompts to the user. Typically, these same types of applications would also configure their session
      * to use
      * AVAudioSessionCategoryOptionDuckOthers and AVAudioSessionCategoryOptionInterruptSpokenAudioAndMixWithOthers
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioSessionModeVoicePrompt();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioSessionLocationUpper();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioSessionLocationLower();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioSessionOrientationTop();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioSessionOrientationBottom();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioSessionOrientationFront();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioSessionOrientationBack();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioSessionOrientationLeft();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioSessionOrientationRight();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioSessionPolarPatternOmnidirectional();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioSessionPolarPatternCardioid();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -667,6 +830,8 @@ public final class AVFAudio {
      * If you select a data source with AVAudioSessionPolarPatternStereo, then you must call
      * setPreferredInputOrientation:error: on your Audio Session so that left and right are presented from the correct
      * directions.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -676,12 +841,14 @@ public final class AVFAudio {
     /**
      * Notification sent to registered listeners when the system has interrupted the audio
      * session and when the interruption has ended.
-     * <p>
+     * 
      * Check the notification's userInfo dictionary for the interruption type, which is either
      * Begin or End. In the case of an end interruption notification, check the userInfo dictionary
      * for AVAudioSessionInterruptionOptions that indicate whether audio playback should resume.
      * In the case of a begin interruption notification, the reason for the interruption can be found
      * within the info dictionary under the key AVAudioSessionInterruptionReasonKey.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -690,9 +857,11 @@ public final class AVFAudio {
 
     /**
      * Notification sent to registered listeners when an audio route change has occurred.
-     * <p>
+     * 
      * Check the notification's userInfo dictionary for the route change reason and for a description
      * of the previous audio route.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -701,9 +870,11 @@ public final class AVFAudio {
 
     /**
      * Notification sent to registered listeners if the media server is killed.
-     * <p>
+     * 
      * In the event that the server is killed, take appropriate steps to handle requests that come in
      * before the server resets. See Technical Q&A QA1749.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -712,9 +883,11 @@ public final class AVFAudio {
 
     /**
      * Notification sent to registered listeners when the media server restarts.
-     * <p>
+     * 
      * In the event that the server restarts, take appropriate steps to re-initialize any audio objects
      * used by your application. See Technical Q&A QA1749.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -724,11 +897,13 @@ public final class AVFAudio {
     /**
      * Notification sent to registered listeners when they are in the foreground with an active
      * audio session and primary audio from other applications starts and stops.
-     * <p>
+     * 
      * Check the notification's userInfo dictionary for the notification type, which is either Begin or
      * End. Foreground applications may use this notification as a hint to enable or disable audio that
      * is secondary to the functionality of the application. For more information, see the related
      * property secondaryAudioShouldBeSilencedHint.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -738,14 +913,16 @@ public final class AVFAudio {
     /**
      * Notification sent to registered listeners when spatial playback capabilities are changed due to a
      * change in user preference.
-     * <p>
+     * 
      * Check the notification's userInfo dictionary for AVAudioSessionSpatialAudioEnabledKey to check if spatial
      * audio is enabled.
-     * <p>
+     * 
      * Observers of this notification should also observe AVAudioSessionRouteChangeNotification since a route change
      * may also result in a change in the ability for the system to play spatial audio. Use
      * AVAudioSessionPortDescription's isSpatialAudioEnabled property to check if the current route supports
      * spatialized playback.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -755,6 +932,8 @@ public final class AVFAudio {
     /**
      * keys for AVAudioSessionSpatialPlaybackCapabilitiesChangedNotification
      * value is an NSNumber whose boolean value indicates if spatial audio enabled.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -764,6 +943,8 @@ public final class AVFAudio {
     /**
      * keys for AVAudioSessionInterruptionNotification
      * Value is an NSNumber representing an AVAudioSessionInterruptionType
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -772,6 +953,8 @@ public final class AVFAudio {
 
     /**
      * Only present for end interruption events. Value is of type AVAudioSessionInterruptionOptions.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -780,6 +963,8 @@ public final class AVFAudio {
 
     /**
      * Only present in begin interruption events. Value is of type AVAudioSessionInterruptionReason.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @CVariable()
@@ -791,14 +976,19 @@ public final class AVFAudio {
      * application being suspended by the operating sytem. Value is a boolean NSNumber, where a true
      * value indicates that the interruption is the result of the application being suspended, rather
      * than being interrupted by another audio session.
-     * <p>
+     * 
      * Starting in iOS 10, the system will deactivate the audio session of most apps in response to the
      * app process being suspended. When the app starts running again, it will receive the notification
      * that its session has been deactivated by the system. Note that the notification is necessarily
      * delayed in time, due to the fact that the application was suspended at the time the session was
      * deactivated by the system and the notification can only be delivered once the app is running
      * again.
+     * 
+     * API-Since: 10.3
+     * Deprecated-Since: 14.5
+     * Deprecated-Message: No longer supported - see AVAudioSessionInterruptionReasonKey
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -807,6 +997,8 @@ public final class AVFAudio {
     /**
      * keys for AVAudioSessionRouteChangeNotification
      * value is an NSNumber representing an AVAudioSessionRouteChangeReason
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -815,6 +1007,8 @@ public final class AVFAudio {
 
     /**
      * value is AVAudioSessionRouteDescription *
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -824,6 +1018,8 @@ public final class AVFAudio {
     /**
      * keys for AVAudioSessionSilenceSecondaryAudioHintNotification
      * value is an NSNumber representing an AVAudioSessionSilenceSecondaryAudioHintType
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -832,52 +1028,81 @@ public final class AVFAudio {
 
     /**
      * Standard Audio Unit Types
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioUnitTypeOutput();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioUnitTypeMusicDevice();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioUnitTypeMusicEffect();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioUnitTypeFormatConverter();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioUnitTypeEffect();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioUnitTypeMixer();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioUnitTypePanner();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioUnitTypeGenerator();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioUnitTypeOfflineEffect();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -885,6 +1110,8 @@ public final class AVFAudio {
 
     /**
      * Standard Audio Unit Manufacturers
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -893,6 +1120,8 @@ public final class AVFAudio {
 
     /**
      * The notification object is an AVAudioUnitComponent object
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -901,32 +1130,43 @@ public final class AVFAudio {
 
     /**
      * [@constant] AVAudioUnitComponentManagerRegistrationsChangedNotification
-     * <p>
+     * 
      * A notification generated when AVAudioUnitComponentManager updates its list of components.
-     * <p>
+     * 
      * Register for this notification on the shared AVAudioUnitComponentManager instance,
      * as follows:
-     * <p>
+     * 
      * ```
      * [[NSNotificationCenter defaultCenter] addObserver: myObject
      * selector: @selector(registrationsChanged:)
      * name: AVAudioUnitComponentManagerRegistrationsChangedNotification
      * object: [AVAudioUnitComponentManager sharedAudioUnitComponentManager]];
      * ```
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVAudioUnitComponentManagerRegistrationsChangedNotification();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     public static native float AVSpeechUtteranceMinimumSpeechRate();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     public static native float AVSpeechUtteranceMaximumSpeechRate();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     public static native float AVSpeechUtteranceDefaultSpeechRate();
@@ -934,6 +1174,8 @@ public final class AVFAudio {
     /**
      * Use the Alex identifier with voiceWithIdentifier:. If the voice is present on the system,
      * an AVSpeechSynthesisVoice will be returned. Alex is en-US only.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -943,9 +1185,200 @@ public final class AVFAudio {
     /**
      * NSString, containing International Phonetic Alphabet (IPA) symbols. Controls pronunciation of a certain word or
      * phrase, e.g. a proper name.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String AVSpeechSynthesisIPANotationAttribute();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyAlbum();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyApproximateDurationInSeconds();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyArtist();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyChannelLayout();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyComments();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyComposer();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyCopyright();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyEncodingApplication();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyGenre();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyISRC();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyKeySignature();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyLyricist();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyNominalBitRate();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyRecordedDate();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeySourceBitDepth();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeySourceEncoder();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeySubTitle();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyTempo();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyTimeSignature();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyTitle();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyTrackNumber();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String AVAudioSequencerInfoDictionaryKeyYear();
+
+    /**
+     * [@constant] AVExtendedNoteOnEventDefaultInstrument
+     * 
+     * A constant representing the default instrument ID to use for an AVExtendedNoteOnEvent. This indicates to the
+     * system to use the instrument currently loaded on the channel referenced by the groupID. This is the only
+     * supported value at this time.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    public static native int AVExtendedNoteOnEventDefaultInstrument();
 }

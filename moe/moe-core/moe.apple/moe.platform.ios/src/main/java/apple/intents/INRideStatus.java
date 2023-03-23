@@ -46,6 +46,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -335,6 +338,8 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * Time range for the scheduled pickup.
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @Selector("scheduledPickupTime")
@@ -342,6 +347,8 @@ public class INRideStatus extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * Time range for the scheduled pickup.
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @Selector("setScheduledPickupTime:")

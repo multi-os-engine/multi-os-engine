@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -101,6 +104,8 @@ public class PHAssetCollection extends PHCollection {
 
     /**
      * Smart Albums are not supported, only Albums and Moments
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fetchAssetCollectionsContainingAsset:withType:options:")
@@ -109,7 +114,12 @@ public class PHAssetCollection extends PHCollection {
 
     /**
      * assetGroupURLs are URLs retrieved from ALAssetGroup's ALAssetsGroupPropertyURL
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Will be removed in a future release
      */
+    @Deprecated
     @Generated
     @Selector("fetchAssetCollectionsWithALAssetGroupURLs:options:")
     public static native PHFetchResult<? extends PHAssetCollection> fetchAssetCollectionsWithALAssetGroupURLsOptions(
@@ -118,6 +128,8 @@ public class PHAssetCollection extends PHCollection {
     /**
      * Fetch asset collections of a single type matching the provided local identifiers (type is inferred from the local
      * identifiers)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fetchAssetCollectionsWithLocalIdentifiers:options:")
@@ -127,6 +139,8 @@ public class PHAssetCollection extends PHCollection {
     /**
      * Fetch asset collections of a single type and subtype provided (use PHAssetCollectionSubtypeAny to match all
      * subtypes)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fetchAssetCollectionsWithType:subtype:options:")
@@ -138,11 +152,23 @@ public class PHAssetCollection extends PHCollection {
     public static native PHFetchResult<? extends PHCollection> fetchCollectionsInCollectionListOptions(
             PHCollectionList collectionList, PHFetchOptions options);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Will be removed in a future release
+     */
+    @Deprecated
     @Generated
     @Selector("fetchMomentsInMomentList:options:")
     public static native PHFetchResult<? extends PHAssetCollection> fetchMomentsInMomentListOptions(
             PHCollectionList momentList, PHFetchOptions options);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Will be removed in a future release
+     */
+    @Deprecated
     @Generated
     @Selector("fetchMomentsWithOptions:")
     public static native PHFetchResult<? extends PHAssetCollection> fetchMomentsWithOptions(PHFetchOptions options);
@@ -199,6 +225,9 @@ public class PHAssetCollection extends PHCollection {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("transientAssetCollectionWithAssetFetchResult:title:")
     public static native PHAssetCollection transientAssetCollectionWithAssetFetchResultTitle(
@@ -206,6 +235,8 @@ public class PHAssetCollection extends PHCollection {
 
     /**
      * These asset collections are only in-memory and are not persisted to disk
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("transientAssetCollectionWithAssets:title:")
@@ -217,20 +248,32 @@ public class PHAssetCollection extends PHCollection {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("approximateLocation")
     public native CLLocation approximateLocation();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("assetCollectionSubtype")
     @NInt
     public native long assetCollectionSubtype();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("assetCollectionType")
     @NInt
     public native long assetCollectionType();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
@@ -238,6 +281,8 @@ public class PHAssetCollection extends PHCollection {
     /**
      * These counts are just estimates; the actual count of objects returned from a fetch should be used if you care
      * about accuracy. Returns NSNotFound if a count cannot be quickly returned.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("estimatedAssetCount")
@@ -248,10 +293,16 @@ public class PHAssetCollection extends PHCollection {
     @Selector("init")
     public native PHAssetCollection init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("localizedLocationNames")
     public native NSArray<String> localizedLocationNames();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("startDate")
     public native NSDate startDate();

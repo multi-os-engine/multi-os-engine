@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -71,6 +74,7 @@ public class UIActivityViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native UIActivityViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -163,6 +167,9 @@ public class UIActivityViewController extends UIViewController {
 
     /**
      * set to nil after activity performs or view controller is dismissed
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @Deprecated
@@ -172,6 +179,8 @@ public class UIActivityViewController extends UIViewController {
 
     /**
      * set to nil after activity performs or view controller is dismissed
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("completionWithItemsHandler")
@@ -204,6 +213,9 @@ public class UIActivityViewController extends UIViewController {
 
     /**
      * set to nil after activity performs or view controller is dismissed
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @Deprecated
@@ -213,6 +225,8 @@ public class UIActivityViewController extends UIViewController {
 
     /**
      * set to nil after activity performs or view controller is dismissed
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setCompletionWithItemsHandler:")
@@ -256,8 +270,33 @@ public class UIActivityViewController extends UIViewController {
                 NSError activityError);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithActivityItemsConfiguration:")
     public native UIActivityViewController initWithActivityItemsConfiguration(
             @Mapped(ObjCObjectMapper.class) UIActivityItemsConfigurationReading activityItemsConfiguration);
+
+    /**
+     * In some contexts, the activity view controller can elevate a specific activity in the header view to enhance it.
+     * The prominent activity can only be chosen by the system.
+     * Defaults to YES.
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @Selector("allowsProminentActivity")
+    public native boolean allowsProminentActivity();
+
+    /**
+     * In some contexts, the activity view controller can elevate a specific activity in the header view to enhance it.
+     * The prominent activity can only be chosen by the system.
+     * Defaults to YES.
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @Selector("setAllowsProminentActivity:")
+    public native void setAllowsProminentActivity(boolean value);
 }

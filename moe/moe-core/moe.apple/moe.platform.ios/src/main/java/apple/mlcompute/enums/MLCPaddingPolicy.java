@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MLCPaddingPolicy
- * <p>
+ * 
  * A padding policy that you specify for a convolution or pooling layer.
  */
 @Generated

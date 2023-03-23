@@ -49,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNPhysicsBody
- * <p>
+ * 
  * The SCNPhysicsBody class describes the physics properties (such as mass, friction...) of a node.
  */
 @Generated
@@ -294,6 +294,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
      * A mask that defines which categories of bodies cause intersection notifications with this physics body. Defaults
      * to 0.
      * On iOS 8 and macOS 10.10 and lower the intersection notifications are always sent when a collision occurs.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("contactTestBitMask")
@@ -337,6 +339,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * If set to YES this node will be affected by gravity. The default is YES.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isAffectedByGravity")
@@ -344,6 +348,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * If set to YES this node will be affected by gravity. The default is YES.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAffectedByGravity:")
@@ -369,6 +375,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     /**
      * Specifies the moment of inertia of the body as a vector in 3D. Disable usesDefaultMomentOfInertia for this value
      * to be used instead of the default moment of inertia that is calculated from the shape geometry.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("momentOfInertia")
@@ -467,6 +475,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
      * A mask that defines which categories of bodies cause intersection notifications with this physics body. Defaults
      * to 0.
      * On iOS 8 and macOS 10.10 and lower the intersection notifications are always sent when a collision occurs.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setContactTestBitMask:")
@@ -497,6 +507,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
     /**
      * Specifies the moment of inertia of the body as a vector in 3D. Disable usesDefaultMomentOfInertia for this value
      * to be used instead of the default moment of inertia that is calculated from the shape geometry.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMomentOfInertia:")
@@ -533,6 +545,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Permits to disable the use of the default moment of inertia in favor of the one stored in momentOfInertia.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setUsesDefaultMomentOfInertia:")
@@ -569,6 +583,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Permits to disable the use of the default moment of inertia in favor of the one stored in momentOfInertia.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("usesDefaultMomentOfInertia")
@@ -593,6 +609,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Angular velocity threshold under which the body may be considered resting. Defaults to 0.1.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("angularRestingThreshold")
@@ -601,6 +619,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Specifies an offset for the center of mass of the body. Defaults to (0,0,0).
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("centerOfMassOffset")
@@ -611,6 +631,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
      * Use discrete collision detection if the body’s distance traveled in one step is at or below this threshold, or
      * continuous collision detection otherwise. Defaults to zero, indicating that continuous collision detection is
      * always disabled.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("continuousCollisionDetectionThreshold")
@@ -619,6 +641,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Linear velocity threshold under which the body may be considered resting. Defaults to 0.1.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("linearRestingThreshold")
@@ -627,6 +651,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Angular velocity threshold under which the body may be considered resting. Defaults to 0.1.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setAngularRestingThreshold:")
@@ -634,6 +660,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Specifies an offset for the center of mass of the body. Defaults to (0,0,0).
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setCenterOfMassOffset:")
@@ -643,6 +671,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
      * Use discrete collision detection if the body’s distance traveled in one step is at or below this threshold, or
      * continuous collision detection otherwise. Defaults to zero, indicating that continuous collision detection is
      * always disabled.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setContinuousCollisionDetectionThreshold:")
@@ -650,6 +680,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Linear velocity threshold under which the body may be considered resting. Defaults to 0.1.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setLinearRestingThreshold:")
@@ -657,6 +689,8 @@ public class SCNPhysicsBody extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Sets a physics body at rest (or not)
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setResting:")

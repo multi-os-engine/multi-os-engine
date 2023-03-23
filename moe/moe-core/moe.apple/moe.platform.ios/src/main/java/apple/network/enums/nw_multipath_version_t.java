@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_multipath_version_t
- * <p>
+ * 
  * Multipath versions represent the MPTCP standard versions
  */
 @Generated

@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -223,4 +226,94 @@ public class UIBarButtonItemGroup extends NSObject implements NSCoding {
     @Generated
     @Selector("setRepresentativeItem:")
     public native void setRepresentativeItem(UIBarButtonItem value);
+
+    /**
+     * Instructs UIKit to ensure that the functionality in this group is made available to the user regardless of
+     * customization status. On iPhone and iPad idioms, UIKit currently places these items in the overflow menu; this
+     * property has no effect on macOS idiom.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("alwaysAvailable")
+    public native boolean alwaysAvailable();
+
+    /**
+     * Construct a UIBarButtonItemGroup that cannot be moved or removed under UINavigationBar customization.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("fixedGroupWithRepresentativeItem:items:")
+    public static native UIBarButtonItemGroup fixedGroupWithRepresentativeItemItems(UIBarButtonItem representativeItem,
+            NSArray<? extends UIBarButtonItem> items);
+
+    /**
+     * If the group should be hidden from display.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isHidden")
+    public native boolean isHidden();
+
+    /**
+     * A UIMenuElement that should substitute for the UIBarButtonItemGroup when displayed in a menu.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("menuRepresentation")
+    public native UIMenuElement menuRepresentation();
+
+    /**
+     * Construct a UIBarButtonItemGroup that can be moved but cannot be removed under UINavigationBar customization.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("movableGroupWithCustomizationIdentifier:representativeItem:items:")
+    public static native UIBarButtonItemGroup movableGroupWithCustomizationIdentifierRepresentativeItemItems(
+            String customizationIdentifier, UIBarButtonItem representativeItem,
+            NSArray<? extends UIBarButtonItem> items);
+
+    /**
+     * Construct a UIBarButtonItemGroup that can be moved or added/removed under UINavigationBar customization.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("optionalGroupWithCustomizationIdentifier:inDefaultCustomization:representativeItem:items:")
+    public static native UIBarButtonItemGroup optionalGroupWithCustomizationIdentifierInDefaultCustomizationRepresentativeItemItems(
+            String customizationIdentifier, boolean inDefaultCustomization, UIBarButtonItem representativeItem,
+            NSArray<? extends UIBarButtonItem> items);
+
+    /**
+     * Instructs UIKit to ensure that the functionality in this group is made available to the user regardless of
+     * customization status. On iPhone and iPad idioms, UIKit currently places these items in the overflow menu; this
+     * property has no effect on macOS idiom.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setAlwaysAvailable:")
+    public native void setAlwaysAvailable(boolean value);
+
+    /**
+     * If the group should be hidden from display.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setHidden:")
+    public native void setHidden(boolean value);
+
+    /**
+     * A UIMenuElement that should substitute for the UIBarButtonItemGroup when displayed in a menu.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setMenuRepresentation:")
+    public native void setMenuRepresentation(UIMenuElement value);
 }

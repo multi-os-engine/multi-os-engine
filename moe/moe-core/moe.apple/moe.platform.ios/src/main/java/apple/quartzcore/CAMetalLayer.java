@@ -18,7 +18,6 @@ package apple.quartzcore;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGColorSpaceRef;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -47,10 +46,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSDictionary;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * Note: The default value of the `opaque' property for CAMetalLayer
  * instances is true.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("QuartzCore")
@@ -317,6 +320,8 @@ public class CAMetalLayer extends CALayer {
      * nil if * the system does not have a free drawable available. The default
      * value is YES. If set to NO, then `-nextDrawable' will block forever until a
      * free drawable is available.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsNextDrawableTimeout")
@@ -327,6 +332,8 @@ public class CAMetalLayer extends CALayer {
      * nil if * the system does not have a free drawable available. The default
      * value is YES. If set to NO, then `-nextDrawable' will block forever until a
      * free drawable is available.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAllowsNextDrawableTimeout:")
@@ -360,6 +367,8 @@ public class CAMetalLayer extends CALayer {
      * Controls the number maximum number of drawables in the swap queue. The
      * default value is 3. Values set outside of range [2, 3] are ignored and an
      * exception will be thrown.
+     * 
+     * API-Since: 11.2
      */
     @Generated
     @Selector("maximumDrawableCount")
@@ -368,6 +377,8 @@ public class CAMetalLayer extends CALayer {
 
     /**
      * This property returns the preferred MTLDevice for this CAMetalLayer.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("preferredDevice")
@@ -387,8 +398,78 @@ public class CAMetalLayer extends CALayer {
      * Controls the number maximum number of drawables in the swap queue. The
      * default value is 3. Values set outside of range [2, 3] are ignored and an
      * exception will be thrown.
+     * 
+     * API-Since: 11.2
      */
     @Generated
     @Selector("setMaximumDrawableCount:")
     public native void setMaximumDrawableCount(@NUInt long value);
+
+    /**
+     * Metadata describing extended dynamic range content in the layer's drawable.
+     * Must be set before calling nextDrawable. If non-nil, content may be
+     * tone mapped to match the current display characteristics. If nil, samples
+     * will be rendered without tone mapping and values above the maximum EDR value
+     * -[NSScreen maximumExtendedDynamicRangeColorComponentValue] may be clamped.
+     * Defaults to nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("EDRMetadata")
+    public native CAEDRMetadata EDRMetadata();
+
+    /**
+     * When non-nil, controls the options of developer HUD. Defaults to nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("developerHUDProperties")
+    public native NSDictionary<?, ?> developerHUDProperties();
+
+    /**
+     * When non-nil, controls the options of developer HUD. Defaults to nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setDeveloperHUDProperties:")
+    public native void setDeveloperHUDProperties(NSDictionary<?, ?> value);
+
+    /**
+     * Metadata describing extended dynamic range content in the layer's drawable.
+     * Must be set before calling nextDrawable. If non-nil, content may be
+     * tone mapped to match the current display characteristics. If nil, samples
+     * will be rendered without tone mapping and values above the maximum EDR value
+     * -[NSScreen maximumExtendedDynamicRangeColorComponentValue] may be clamped.
+     * Defaults to nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setEDRMetadata:")
+    public native void setEDRMetadata(CAEDRMetadata value);
+
+    /**
+     * If any rendering context on the screen has this enabled, all content will be
+     * clamped to its NSScreen’s maximumExtendedDynamicRangeColorComponentValue
+     * rather than 1.0. The default is NO.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setWantsExtendedDynamicRangeContent:")
+    public native void setWantsExtendedDynamicRangeContent(boolean value);
+
+    /**
+     * If any rendering context on the screen has this enabled, all content will be
+     * clamped to its NSScreen’s maximumExtendedDynamicRangeColorComponentValue
+     * rather than 1.0. The default is NO.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("wantsExtendedDynamicRangeContent")
+    public native boolean wantsExtendedDynamicRangeContent();
 }

@@ -12,6 +12,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -19,7 +22,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
     /**
      * Called when a new node has been mapped to the given anchor.
-     *
+     * 
      * @param view   The view that will render the scene.
      * @param node   The node that maps to the anchor.
      * @param anchor The added anchor.
@@ -33,7 +36,7 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
 
     /**
      * Called when a mapped node has been removed from the scene graph for the given anchor.
-     *
+     * 
      * @param view   The view that will render the scene.
      * @param node   The node that was removed.
      * @param anchor The anchor that was removed.
@@ -47,7 +50,7 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
 
     /**
      * Called when a node has been updated with data from the given anchor.
-     *
+     * 
      * @param view   The view that will render the scene.
      * @param node   The node that was updated.
      * @param anchor The anchor that was updated.
@@ -61,11 +64,11 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
 
     /**
      * Implement this to provide a custom node for the given anchor.
-     * <p>
+     * 
      * This node will automatically be added to the scene graph.
      * If this method is not implemented, a node will be automatically created.
      * If nil is returned the anchor will be ignored.
-     *
+     * 
      * @param view   The view that will render the scene.
      * @param anchor The added anchor.
      * @return Node that will be mapped to the anchor or nil.
@@ -79,7 +82,7 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
 
     /**
      * Called when a node will be updated with data from the given anchor.
-     *
+     * 
      * @param view   The view that will render the scene.
      * @param node   The node that will be updated.
      * @param anchor The anchor that was updated.

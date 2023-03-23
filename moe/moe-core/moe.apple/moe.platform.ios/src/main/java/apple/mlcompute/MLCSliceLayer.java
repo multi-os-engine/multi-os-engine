@@ -25,10 +25,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Slice layer is used to slice a given source.
- * <p>
+ * 
  * Slicing should not decrease the tensor dimension.
  * The start, end and stride vectors must have the same number of dimension as the source tensor.
  * Only positive stride is supported.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -90,7 +92,7 @@ public class MLCSliceLayer extends MLCLayer {
 
     /**
      * [@property] end
-     * <p>
+     * 
      * A vector of length equal to that of source. The element at index i specifies the end of slice in dimension i.
      */
     @Generated
@@ -146,7 +148,7 @@ public class MLCSliceLayer extends MLCLayer {
 
     /**
      * Create a slice layer
-     *
+     * 
      * @param stride If set to nil, it will be set to 1.
      * @return A new layer for slicing tensors.
      */
@@ -157,7 +159,7 @@ public class MLCSliceLayer extends MLCLayer {
 
     /**
      * [@property] start
-     * <p>
+     * 
      * A vector of length equal to that of source. The element at index i specifies the beginning of slice in dimension
      * i.
      */
@@ -167,7 +169,7 @@ public class MLCSliceLayer extends MLCLayer {
 
     /**
      * [@property] stride
-     * <p>
+     * 
      * A vector of length equal to that of source. The element at index i specifies the stride of slice in dimension i.
      */
     @Generated

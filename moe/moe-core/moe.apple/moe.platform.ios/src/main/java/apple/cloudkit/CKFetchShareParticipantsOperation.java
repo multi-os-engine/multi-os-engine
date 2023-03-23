@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -152,7 +155,7 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of lookup infos
      * to errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
@@ -175,7 +178,7 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of lookup infos
      * to errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
@@ -189,10 +192,15 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
 
     /**
      * Called once for each share participant created from a submitted user identity lookup info.
-     * <p>
+     * 
      * If the replacement callback @c perShareParticipantCompletionBlock is set, this callback block is ignored.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use perShareParticipantCompletionBlock instead, which surfaces per-share-participant errors
      */
+    @Deprecated
     @Generated
     @Selector("setShareParticipantFetchedBlock:")
     public native void setShareParticipantFetchedBlock(
@@ -204,10 +212,15 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
 
     /**
      * Called once for each share participant created from a submitted user identity lookup info.
-     * <p>
+     * 
      * If the replacement callback @c perShareParticipantCompletionBlock is set, this callback block is ignored.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use perShareParticipantCompletionBlock instead, which surfaces per-share-participant errors
      */
+    @Deprecated
     @Generated
     @Selector("shareParticipantFetchedBlock")
     @ObjCBlock(name = "call_shareParticipantFetchedBlock_ret")
@@ -247,7 +260,7 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
 
     /**
      * Called once for each lookup info.
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -265,7 +278,7 @@ public class CKFetchShareParticipantsOperation extends CKOperation {
 
     /**
      * Called once for each lookup info.
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated

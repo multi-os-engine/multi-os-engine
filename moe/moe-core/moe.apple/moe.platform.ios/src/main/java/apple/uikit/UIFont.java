@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -128,6 +131,8 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Returns a font matching the font descriptor. If fontSize is greater than 0.0, it has precedence over
      * UIFontDescriptorSizeAttribute in fontDescriptor.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("fontWithDescriptor:size:")
@@ -175,6 +180,9 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     @NFloat
     public static native double labelFontSize();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("monospacedDigitSystemFontOfSize:weight:")
     public static native UIFont monospacedDigitSystemFontOfSizeWeight(@NFloat double fontSize, @NFloat double weight);
@@ -187,6 +195,8 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Returns an instance of the font associated with the text style and scaled appropriately for the user's selected
      * content size category. See UIFontDescriptor.h for the complete list.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("preferredFontForTextStyle:")
@@ -195,6 +205,8 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Returns an instance of the font associated with the text style and scaled appropriately for the content size
      * category defined in the trait collection.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("preferredFontForTextStyle:compatibleWithTraitCollection:")
@@ -234,6 +246,8 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
      * Weights used here are analogous to those used with UIFontDescriptor's UIFontWeightTrait.
      * See the UIFontWeight... constants in UIFontDescriptor.h for suggested values.
      * The caveat above about the use of ...systemFont... methods applies to these methods too.
+     * 
+     * API-Since: 8.2
      */
     @Generated
     @Selector("systemFontOfSize:weight:")
@@ -279,6 +293,8 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns a font descriptor which describes the font.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("fontDescriptor")
@@ -304,6 +320,9 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     @NFloat
     public native double leading();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("lineHeight")
     @NFloat
@@ -325,6 +344,8 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
      * displaying text like source code. For the characters it does not cover, the substituted fonts are usually not the
      * same width as the monospaced system font, they can be wider, narrower, or variable. To ensure fixed advances in
      * text layout, clients can consider using string attributes like UIFontDescriptorFixedAdvanceAttribute.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("monospacedSystemFontOfSize:weight:")
@@ -347,4 +368,14 @@ public class UIFont extends NSObject implements NSCopying, NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * Returns an instance with the specified weight and width. Width values are declared in UIFontDescriptor.h.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("systemFontOfSize:weight:width:")
+    public static native UIFont systemFontOfSizeWeightWidth(@NFloat double fontSize, @NFloat double weight,
+            @NFloat double width);
 }

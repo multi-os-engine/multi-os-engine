@@ -202,33 +202,33 @@ public final class SceneKit {
 
     /**
      * [@function] SCNExportJavaScriptModule
-     * <p>
+     * 
      * Exports SceneKit's symbols (constants and class definition) into the specified JavaScript context.
-     * <p>
+     * 
      * SceneKit's classes, properties and constants are exported as global object with their original name. Selectors
      * are exported using the rules defined in JavaScriptCore's JSExport.h.
-     * <p>
+     * 
      * For example to instanciate a node in JavaScript:
-     * <p>
+     * 
      * var aNode = SCNNode.node();
-     * <p>
+     * 
      * to change its opacity:
-     * <p>
+     * 
      * aNode.opacity = 0.5;
-     * <p>
+     * 
      * to remove from its parent node:
-     * <p>
+     * 
      * aNode.removeFromParentNode();
-     * <p>
+     * 
      * to animate a node opacity:
-     * <p>
+     * 
      * SCNTransaction.begin();
      * SCNTransaction.setAnimationDuration(1.0);
      * aNode.opacity = 0.5;
      * SCNTransaction.commit();
-     * <p>
+     * 
      * The following special objects are also exported:
-     * <p>
+     * 
      * class name constructor Objective-C class
      * SCNColor SCNColor.color(r,g,b,a) NSColor
      * CATimingFunction CATimingFunction.functionWithName(name) CATimingFunction
@@ -237,10 +237,10 @@ public final class SceneKit {
      * CAKeyframeAnimation CAKeyframeAnimation.animationWithKeyPath(aPath) CAKeyframeAnimation
      * SCNImage SCNImage.imageWithURL(aURL) NSImage / UIImage
      * SCNImage.imageWithPath(aPath)
-     * <p>
+     * 
      * Vectors use this syntax:
      * aNode.scale = {x:2, y:2, z:2};
-     * <p>
+     * 
      * Matrices use this syntax:
      * aNode.transform = {m11:1, m12:0, m13:0 ... m44:1};
      */
@@ -346,6 +346,8 @@ public final class SceneKit {
 
     /**
      * Determines the node categories to test. Defaults to all bits set.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -365,13 +367,13 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNShaderModifierEntryPointGeometry
-     * <p>
+     * 
      * This is the entry point to operate on the geometry vertices, for example deforming them.
-     * <p>
+     * 
      * It operates entirely in the vertex shader stage. It's input is the geometry structure:
-     * <p>
+     * 
      * Structures available from the SCNShaderModifierEntryPointGeometry entry point:
-     * <p>
+     * 
      * | struct SCNShaderGeometry {
      * | float4 position;
      * | float3 normal;
@@ -382,24 +384,24 @@ public final class SceneKit {
      * |
      * | Access: ReadWrite
      * | Stages: Vertex shader only
-     * <p>
+     * 
      * kSCNTexcoordCount is a constant integer set to the number of texture coordinates used.
-     * <p>
+     * 
      * All the geometric fields (position, normal and tangent) are in model space. You can use one of the provided
      * automatic uniforms
      * such as u_modelTransform or u_modelViewTransform if you want to operate in another space (but the results must
      * stay in the model space, otherwise remaining computations won't be correct).
      * The texture coordinates are the raw values found in the mesh, they have not been transformed yet by their
      * optional contentsTransform. The contentsTransform if any is applied after the geometry shader modifier.
-     * <p>
+     * 
      * Example: Simple sinusoidal deformation
-     * <p>
+     * 
      * GLSL
      * | uniform float Amplitude = 0.1;
      * |
      * | _geometry.position.xyz += _geometry.normal * (Amplitude * _geometry.position.y * _geometry.position.x) *
      * sin(u_time);
-     * <p>
+     * 
      * Metal Shading Language
      * | #pragma arguments
      * | float Amplitude;
@@ -414,11 +416,11 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNShaderModifierEntryPointSurface
-     * <p>
+     * 
      * This is the entry point to alter the surface representation of the material, before the lighting has taken place.
-     * <p>
+     * 
      * Structures available from the SCNShaderModifierEntryPointSurface entry point:
-     * <p>
+     * 
      * | struct SCNShaderSurface {
      * | float3 view; // Direction from the point on the surface toward the camera (V)
      * | float3 position; // Position of the fragment
@@ -469,16 +471,16 @@ public final class SceneKit {
      * |
      * | Access: ReadWrite
      * | Stages: Fragment shader only
-     * <p>
+     * 
      * All geometric fields are in view space.
      * All the other properties will be colors (texture have already been sampled at this stage) or floats. You can
      * however do an extra sampling of standard textures if you want.
      * In this case the naming pattern is u_<property>Texture. For example u_diffuseTexture or u_reflectiveTexture. Note
      * that you have to be sure that the material do have a texture
      * set for this property, otherwise you'll trigger a shader compilation error.
-     * <p>
+     * 
      * Example: Procedural black and white stripes
-     * <p>
+     * 
      * GLSL
      * | uniform float Scale = 12.0;
      * | uniform float Width = 0.25;
@@ -490,7 +492,7 @@ public final class SceneKit {
      * | f1 = f1 * (1.0 - f2);
      * | f1 = f1 * f1 * 2.0 * (3. * 2. * f1);
      * | _surface.diffuse = mix(vec4(1.0), vec4(0.0), f1);
-     * <p>
+     * 
      * Metal Shading Language
      * | #pragma arguments
      * | float Scale;
@@ -511,18 +513,18 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNShaderModifierEntryPointLightingModel
-     * <p>
+     * 
      * This is the entry point to provide custom lighting equation. The fragment will be called for each active light
      * of the scene and will need to accumulate lighting contribution for the vertex or the fragment in the
      * _lightingContribution structure, using the light structure given.
-     * <p>
+     * 
      * Structures available from the SCNShaderModifierEntryPointLightingModel entry point:
-     * <p>
+     * 
      * | All the structures available from the SCNShaderModifierEntryPointSurface entry point
      * |
      * | Access: ReadOnly
      * | Stages: Vertex shader and fragment shader
-     * <p>
+     * 
      * | struct SCNShaderLightingContribution {
      * | float3 ambient;
      * | float3 diffuse;
@@ -531,7 +533,7 @@ public final class SceneKit {
      * |
      * | Access: ReadWrite
      * | Stages: Vertex shader and fragment shader
-     * <p>
+     * 
      * | struct SCNShaderLight {
      * | float4 intensity;
      * | float3 direction; // Direction from the point on the surface toward the light (L)
@@ -539,9 +541,9 @@ public final class SceneKit {
      * |
      * | Access: ReadOnly
      * | Stages: Vertex shader and fragment shader
-     * <p>
+     * 
      * Example: Wrap diffuse lighting
-     * <p>
+     * 
      * GLSL
      * | uniform float WrapFactor = 0.5;
      * |
@@ -550,7 +552,7 @@ public final class SceneKit {
      * | vec3 halfVector = normalize(_light.direction + _surface.view);
      * | dotProduct = max(0.0, pow(max(0.0, dot(_surface.normal, halfVector)), _surface.shininess));
      * | _lightingContribution.specular += (dotProduct * _light.intensity.rgb);
-     * <p>
+     * 
      * Metal Shading Language
      * | #pragma arguments
      * | float WrapFactor;
@@ -568,30 +570,37 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNShaderModifierEntryPointFragment
-     * <p>
+     * 
      * This is the last entry point in the fragment shader, where you can alter the final color returned by the shader.
-     * <p>
+     * 
      * You can alter the final color by reading and writing to the output color via the output structure below.
-     * <p>
+     * 
      * Structures available from the SCNShaderModifierEntryPointFragment entry point:
-     * <p>
+     * 
      * | All the structures available from the SCNShaderModifierEntryPointSurface entry point
      * |
      * | Access: ReadOnly
      * | Stages: Fragment shader only
-     * <p>
+     * 
+     * | struct SCNFramebuffer {
+     * | float4 color; // Contents of the destination framebuffer corresponding to the fragment being processed
+     * | } _framebuffer; // Available since macOS 13, iOS 16, tvOS 16 and watchOS 9.
+     * |
+     * | Access: ReadOnly
+     * | Stages: Fragment shader only
+     * 
      * | struct SCNShaderOutput {
      * | float4 color;
      * | } _output;
      * |
      * | Access: ReadWrite
      * | Stages: Fragment shader only
-     * <p>
+     * 
      * Example: Inverse final color
-     * <p>
+     * 
      * GLSL
      * | _output.color.rgb = vec3(1.0) - _output.color.rgb;
-     * <p>
+     * 
      * Metal Shading Language
      * | _output.color.rgb = 1.0 - _output.color.rgb;
      */
@@ -602,10 +611,12 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNViewOptionPreferredRenderingAPI Specifies the preferred rendering API to be used by the renderer.
-     * <p>
+     * 
      * Pass it as the key in the options dictionary given to initWithFrame:options:. The value is a NSNumber wrapping a
      * SCNRenderingAPI. You can also select the preferred rendering API directly from the SCNView inspector in
      * InterfaceBuilder.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -614,8 +625,10 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNViewOptionPreferredDevice Specifies the preferred Metal device to be used by the renderer.
-     * <p>
+     * 
      * The value is directly a id <MTLDevice>.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -624,8 +637,10 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNViewOptionPreferLowPowerDevice Specifies if the renderer should prefer a low power Metal device.
-     * <p>
+     * 
      * The value is a NSNumber wrapping a BOOL. Defaults to NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -712,9 +727,9 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNSceneSourceCreateNormalsIfAbsentKey
-     * <p>
+     * 
      * Enable to try to guess acceptable normals for the vertices if none are given in the file
-     * <p>
+     * 
      * Use this with a boolean value encapsulated in a NSNumber. The default value is NO.
      */
     @Generated
@@ -724,9 +739,9 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNSceneSourceCheckConsistencyKey
-     * <p>
+     * 
      * Pass YES in order to perform the document validation.
-     * <p>
+     * 
      * This option can be set in the options dictionary of the SCNScene and SCNSceneSource loading methods.
      * The value for this option should be a boolean NSNumber. If its boolean value is YES (the default is NO),
      * SceneKit will attempt to check the document for consistency.
@@ -741,9 +756,9 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNSceneSourceFlattenSceneKey
-     * <p>
+     * 
      * Pass YES to flatten the scene graph when possible.
-     * <p>
+     * 
      * This option can be set in the options dictionary of the SCNScene and SCNSceneSource loading methods.
      * The value for this option should be a boolean NSNumber. If its boolean value is YES (the default is NO),
      * SceneKit will attempt to reduce the scene graph by merging the geometries.
@@ -756,15 +771,20 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNSceneSourceUseSafeModeKey
-     * <p>
+     * 
      * Pass YES in order to enable the safe mode.
-     * <p>
+     * 
      * This option can be set in the options dictionary of the SCNScene and SCNSceneSource loading methods.
      * The value for this option should be a boolean NSNumber. If its boolean value is YES (the default is NO),
      * SceneKit will forbid network accesses, prevent the loading of resources from arbitrary directories, and will not
      * execute
      * any code present in the loaded files.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -772,9 +792,9 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNSceneSourceAssetDirectoryURLsKey
-     * <p>
+     * 
      * Pass an array of directory URLs where SceneKit should look for resources
-     * <p>
+     * 
      * By default, SceneKit will look for the external resources it cannot find in the parent directory of the imported
      * file.
      * You can add additional directories by setting an array of URLs for this key when calling sceneWithOptions:error:.
@@ -788,9 +808,9 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNSceneSourceOverrideAssetURLsKey
-     * <p>
+     * 
      * Pass YES in order to override assets URLs with the directory URLs passed via SCNSceneSourceAssetDirectoryURLsKey.
-     * <p>
+     * 
      * By default, SceneKit will look for the external resources using the paths/urls as described in the imported file.
      * You can force SceneKit to only search for extern resources within the directories specified by the
      * SCNSceneSourceAssetDirectoryURLsKey key.
@@ -803,9 +823,9 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNSceneSourceStrictConformanceKey
-     * <p>
+     * 
      * Pass YES to interpret the 3D format of the file in a strict way.
-     * <p>
+     * 
      * This option defaults to NO. In this case SceneKit will try to read any additional metadata present in the file to
      * enable additional features and make the rendering as close as possible to the original intent. If you pass YES,
      * SceneKit will instead only consider features which are part of the file format specification.
@@ -817,9 +837,9 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNSceneSourceAnimationImportPolicyKey
-     * <p>
+     * 
      * Pass one of the value below to specify what to do with loaded animations.
-     * <p>
+     * 
      * See below for the description of each individual key. Defaults to
      * SCNSceneSourceAnimationImportPolicyPlayRepeatedly. On 10.9 and before the behavior is
      * SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase. For compatibility reason if the application was built
@@ -832,11 +852,13 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNSceneSourceLoadingOptionPreserveOriginalTopology
-     * <p>
+     * 
      * Pass YES to make SceneKit preserve the original topology instead of triangulating at load time. This can be
      * useful to get better results when subdividing a geometry.
-     * <p>
+     * 
      * Defaults to YES starting macOS 10.15, iOS 13, tvOS 13 and watchOS 6. Defaults to NO in previous versions.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -845,7 +867,7 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNSceneSourceAnimationImportPolicyPlay
-     * <p>
+     * 
      * Add animations to the scene and play them once (repeatCount set to 1).
      */
     @Generated
@@ -855,7 +877,7 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNSceneSourceAnimationImportPolicyPlayRepeatedly
-     * <p>
+     * 
      * Add animations to the scene and play them repeatedly (repeatCount set to infinity).
      */
     @Generated
@@ -865,7 +887,7 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNSceneSourceAnimationImportPolicyDoNotPlay
-     * <p>
+     * 
      * Only keep animations in the SCNSceneSource and don't add to the animatable elements of the scene.
      */
     @Generated
@@ -875,7 +897,7 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNSceneSourceAnimationImportPolicyPlayUsingSceneTimeBase
-     * <p>
+     * 
      * Add animations to the scene and play them using the SCNView/SCNRenderer's scene time (usesSceneTimeBase set to
      * YES)
      */
@@ -886,9 +908,9 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNDetailedErrorsKey
-     * <p>
+     * 
      * Key to access the detailed validation errors.
-     * <p>
+     * 
      * This key will be present in the user info dictionary of errors created by the various sceneWithOptions: methods.
      * When present, the value associated with it is an array of detailed errors found by the consistency checker
      * which represent consistency errors in the 3D file. Some metadata about these detailed errors is available
@@ -901,9 +923,9 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNConsistencyElementIDErrorKey
-     * <p>
+     * 
      * For XML-based formats, the ID of the element where the error occurred.
-     * <p>
+     * 
      * When the element does not have an ID, the ID of the closest parent element which has one is returned.
      */
     @Generated
@@ -913,7 +935,7 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNConsistencyElementTypeErrorKey
-     * <p>
+     * 
      * For XML-based formats, the tag name of the element where the error occurred.
      */
     @Generated
@@ -923,7 +945,7 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNConsistencyLineNumberErrorKey
-     * <p>
+     * 
      * For text-based formats, the line number where an error occurred.
      */
     @Generated
@@ -933,9 +955,9 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNSceneExportDestinationURL
-     * <p>
+     * 
      * Specifies the final destination (as a NSURL) of the scene being exported.
-     * <p>
+     * 
      * The destination URL is required if the scene is exported to a temporary directory and then moved to a final
      * destination. This enables the exported document to get correct relative paths to referenced images.
      */
@@ -979,7 +1001,7 @@ public final class SceneKit {
 
     /**
      * [@group] Rendering arguments
-     * <p>
+     * 
      * These keys are used for the 'semantic' argument of -[SCNProgram setSemantic:forSymbol:options:]
      * Transforms are SCNMatrix4 wrapped in NSValues.
      */
@@ -1047,6 +1069,8 @@ public final class SceneKit {
 
     /**
      * IES light
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -1055,6 +1079,8 @@ public final class SceneKit {
 
     /**
      * Light probe
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -1081,6 +1107,9 @@ public final class SceneKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNLightingModelConstant();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1106,6 +1135,9 @@ public final class SceneKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNGeometrySourceSemanticTexcoord();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1286,6 +1318,8 @@ public final class SceneKit {
 
     /**
      * Collision margin of the physics shape (as an NSNumber)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -1359,6 +1393,8 @@ public final class SceneKit {
 
     /**
      * Determines whether the search should be exhaustive. Defaults to SCNHitTestSearchModeClosest.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -1367,15 +1403,17 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNSceneSourceConvertUnitsToMetersKey
-     * <p>
+     * 
      * Pass the units you want the scene to be converted to (in meter).
-     * <p>
+     * 
      * Use this with a floating value encapsulated in a NSNumber. The default value is nil which means no conversion
      * done. Passing a non-zero value will convert the scene coordinates so that 1 unit corresponds to N meters. For
      * example pass 0.01 for 1 unit == 1 centimeter, pass 0.3048 for 1 unit == 1 foot...
      * For better physics simulation it is recommended to use 1 unit equals to 1 meter.
      * This option has no effect for SCN files or if the asset is already compressed by Xcode (use the compression
      * options instead).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -1384,12 +1422,14 @@ public final class SceneKit {
 
     /**
      * [@constant] SCNSceneSourceConvertToYUpKey
-     * <p>
+     * 
      * Pass YES if a scene should be converted to Y up if it currently has a different up axis.
-     * <p>
+     * 
      * Use this with a boolean value encapsulated in a NSNumber. The default value is NO.
      * This option has no effect for SCN files or if the asset is already compressed by Xcode (use the compression
      * options instead).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -1398,6 +1438,8 @@ public final class SceneKit {
 
     /**
      * Determines whether the shape of an area light should not be taken into account. Defaults to YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -1406,12 +1448,17 @@ public final class SceneKit {
 
     /**
      * Area light
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNLightTypeArea();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

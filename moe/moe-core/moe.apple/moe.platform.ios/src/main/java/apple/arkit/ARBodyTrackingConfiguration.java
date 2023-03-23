@@ -21,16 +21,19 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.avfoundation.AVCaptureDevice;
 
 /**
  * A configuration for running body tracking.
- * <p>
+ * 
  * Body tracking provides 6 degrees of freedom tracking of a detected body in the scene. By default,
  * ARFrameSemanticBodyDetection will be
  * enabled.
- *
+ * 
  * @see ARBodyAnchor
  * @see -[ARFrame detectedBody]
+ * 
+ *      API-Since: 13.0
  */
 @Generated
 @Library("ARKit")
@@ -62,7 +65,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enables the estimation of a scale factor which may be used to correct the physical size of an image.
-     * <p>
+     * 
      * If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the
      * given physical size
      * differs from the estimated one. The information about the estimated scale can be found as the property
@@ -76,7 +79,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enables the estimation of a scale factor which may be used to correct the physical size of a skeleton in 3D.
-     * <p>
+     * 
      * If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the
      * given physical size
      * differs from the default one. The information about the estimated scale can be found as the property
@@ -120,7 +123,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * Images to detect in the scene.
-     * <p>
+     * 
      * If set the session will attempt to detect the specified images. When an image is detected an ARImageAnchor will
      * be added to the session.
      */
@@ -130,7 +133,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * The mode of environment texturing to run.
-     * <p>
+     * 
      * If set, texture information will be accumulated and updated. Adding an AREnvironmentProbeAnchor to the session
      * will get the current environment texture available from that probe's perspective which can be used for lighting
      * virtual objects in the scene. Defaults to AREnvironmentTexturingNone.
@@ -151,7 +154,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * The initial map of the physical space that world tracking will localize to and track.
-     * <p>
+     * 
      * If set, the session will attempt to localize to the provided map with
      * a limited tracking state until localization is successful or run is called again
      * with a different (or no) initial map specified. Once localized, the map will be extended
@@ -176,7 +179,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable continuous auto focus.
-     * <p>
+     * 
      * Enabled by default.
      */
     @Generated
@@ -197,7 +200,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * Maximum number of images to track simultaneously.
-     * <p>
+     * 
      * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given
      * frame.
      * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
@@ -216,7 +219,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * Type of planes to detect in the scene.
-     * <p>
+     * 
      * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
@@ -237,7 +240,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable continuous auto focus.
-     * <p>
+     * 
      * Enabled by default.
      */
     @Generated
@@ -246,7 +249,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enables the estimation of a scale factor which may be used to correct the physical size of an image.
-     * <p>
+     * 
      * If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the
      * given physical size
      * differs from the estimated one. The information about the estimated scale can be found as the property
@@ -260,7 +263,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * Enables the estimation of a scale factor which may be used to correct the physical size of a skeleton in 3D.
-     * <p>
+     * 
      * If set to true ARKit will attempt to use the computed camera positions in order to compute the scale by which the
      * given physical size
      * differs from the default one. The information about the estimated scale can be found as the property
@@ -274,7 +277,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * Images to detect in the scene.
-     * <p>
+     * 
      * If set the session will attempt to detect the specified images. When an image is detected an ARImageAnchor will
      * be added to the session.
      */
@@ -284,7 +287,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * The mode of environment texturing to run.
-     * <p>
+     * 
      * If set, texture information will be accumulated and updated. Adding an AREnvironmentProbeAnchor to the session
      * will get the current environment texture available from that probe's perspective which can be used for lighting
      * virtual objects in the scene. Defaults to AREnvironmentTexturingNone.
@@ -295,7 +298,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * The initial map of the physical space that world tracking will localize to and track.
-     * <p>
+     * 
      * If set, the session will attempt to localize to the provided map with
      * a limited tracking state until localization is successful or run is called again
      * with a different (or no) initial map specified. Once localized, the map will be extended
@@ -307,7 +310,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * Maximum number of images to track simultaneously.
-     * <p>
+     * 
      * Setting the maximum number of tracked images will limit the number of images that can be tracked in a given
      * frame.
      * If more than the maximum is visible, only the images already being tracked will continue to track until tracking
@@ -320,7 +323,7 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * Type of planes to detect in the scene.
-     * <p>
+     * 
      * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
@@ -368,6 +371,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
     /**
      * Enable or disable app clip code tracking. Disabled by default. When enabled, detected app clip codes will be
      * surfaced as an ARAppClipCodeAnchor.
+     * 
+     * API-Since: 14.3
      */
     @Generated
     @Selector("appClipCodeTrackingEnabled")
@@ -376,6 +381,8 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
     /**
      * Enable or disable app clip code tracking. Disabled by default. When enabled, detected app clip codes will be
      * surfaced as an ARAppClipCodeAnchor.
+     * 
+     * API-Since: 14.3
      */
     @Generated
     @Selector("setAppClipCodeTrackingEnabled:")
@@ -383,8 +390,22 @@ public class ARBodyTrackingConfiguration extends ARConfiguration {
 
     /**
      * Indicates whether app clip code tracking can be enabled on this device.
+     * 
+     * API-Since: 14.3
      */
     @Generated
     @Selector("supportsAppClipCodeTracking")
     public static native boolean supportsAppClipCodeTracking();
+
+    @Generated
+    @Selector("configurableCaptureDeviceForPrimaryCamera")
+    public static native AVCaptureDevice configurableCaptureDeviceForPrimaryCamera();
+
+    @Generated
+    @Selector("recommendedVideoFormatFor4KResolution")
+    public static native ARVideoFormat recommendedVideoFormatFor4KResolution();
+
+    @Generated
+    @Selector("recommendedVideoFormatForHighResolutionFrameCapturing")
+    public static native ARVideoFormat recommendedVideoFormatForHighResolutionFrameCapturing();
 }

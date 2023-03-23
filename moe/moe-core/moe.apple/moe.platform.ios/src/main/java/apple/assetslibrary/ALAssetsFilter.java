@@ -38,6 +38,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.0
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use fetchAssetsInAssetCollection:options: on PHAsset and set a mediaType predicate on the
+ * PHFetchOptions from the Photos framework instead
+ */
 @Deprecated
 @Generated
 @Library("AssetsLibrary")

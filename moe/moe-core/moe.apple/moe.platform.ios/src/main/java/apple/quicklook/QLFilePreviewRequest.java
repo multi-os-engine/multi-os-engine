@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class contains information about the preview that should be provided.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("QuickLook")

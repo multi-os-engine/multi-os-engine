@@ -19,15 +19,42 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class MTLCompareFunction {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Never = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Less = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Equal = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long LessEqual = 0x0000000000000003L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Greater = 0x0000000000000004L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long NotEqual = 0x0000000000000005L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long GreaterEqual = 0x0000000000000006L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Always = 0x0000000000000007L;
 
     @Generated

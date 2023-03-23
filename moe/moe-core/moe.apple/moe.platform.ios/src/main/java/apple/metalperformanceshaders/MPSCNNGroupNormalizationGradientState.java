@@ -31,12 +31,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNGroupNormalizationGradientState
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * A state to hold information necessary to execute a gradient
  * pass for MPSCNNGroupNormalization. Gradient states should
  * be created by using the forward kernel's methods. This will
  * ensure that the state captures all information necessary to
  * execute the corresponding gradient pass.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")

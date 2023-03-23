@@ -24,7 +24,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNNGradientStateNode
- * <p>
+ * 
  * During training, each MPSNNFilterNode has a corresponding
  * MPSNNGradientFilterNode for the gradient computation for
  * trainable parameter update. The two communicate through a
@@ -36,6 +36,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * the necessary extra information like MPSNNGradientState
  * nodes and inference filter source image nodes to the object as
  * needed.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")

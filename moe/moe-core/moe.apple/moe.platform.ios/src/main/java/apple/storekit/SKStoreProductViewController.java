@@ -46,6 +46,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -74,6 +77,7 @@ public class SKStoreProductViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native SKStoreProductViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -166,6 +170,8 @@ public class SKStoreProductViewController extends UIViewController {
 
     /**
      * Delegate for product page events
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("delegate")
@@ -187,6 +193,8 @@ public class SKStoreProductViewController extends UIViewController {
     /**
      * Load product view for the product with the given parameters. See below for parameters (SKStoreProductParameter*).
      * Block is invoked when the load finishes.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("loadProductWithParameters:completionBlock:")
@@ -195,6 +203,8 @@ public class SKStoreProductViewController extends UIViewController {
 
     /**
      * Delegate for product page events
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -202,6 +212,8 @@ public class SKStoreProductViewController extends UIViewController {
 
     /**
      * Delegate for product page events
+     * 
+     * API-Since: 6.0
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) SKStoreProductViewControllerDelegate value) {
@@ -220,5 +232,25 @@ public class SKStoreProductViewController extends UIViewController {
     public interface Block_loadProductWithParametersCompletionBlock {
         @Generated
         void call_loadProductWithParametersCompletionBlock(boolean result, NSError error);
+    }
+
+    /**
+     * Load product view for the product with the given parameters and impression.
+     * See below for parameters (SKStoreProductParameter*) and SKAdImpression for impression properties.
+     * Block is invoked when the load finishes.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("loadProductWithParameters:impression:completionBlock:")
+    public native void loadProductWithParametersImpressionCompletionBlock(NSDictionary<String, ?> parameters,
+            SKAdImpression impression,
+            @ObjCBlock(name = "call_loadProductWithParametersImpressionCompletionBlock") Block_loadProductWithParametersImpressionCompletionBlock block);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadProductWithParametersImpressionCompletionBlock {
+        @Generated
+        void call_loadProductWithParametersImpressionCompletionBlock(boolean result, NSError error);
     }
 }

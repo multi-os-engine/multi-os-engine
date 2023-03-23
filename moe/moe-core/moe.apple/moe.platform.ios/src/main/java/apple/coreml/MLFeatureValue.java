@@ -37,9 +37,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An immutable variant holding a data value of a supported MLFeatureType
- * <p>
+ * 
  * MLFeatureValue does not support type conversion in its accessor properties. It
  * can also have a missing or undefined value of a well defined type.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreML")
@@ -188,6 +190,22 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
     @Selector("int64Value")
     public native long int64Value();
 
+    /**
+     * Returns a Boolean value that indicates whether a feature value is equal to another.
+     * 
+     * If the types of the MLFeatureValue objects "self" and "value" are integer in one case and
+     * double in the other (in either order) then those mixed mode numeric values are compared as NSNumbers.
+     * Otherwise if the types of the MLFeatureValue objects are different NO is returned.
+     * When "self" and "value" are both PixelBuffer MLFeatureValue types, only their CVPixelBufferRef values are
+     * compared for equality,
+     * the underlying arrays of pixelValues are not examined.
+     * [So, distinct PixelBuffer MLFeatureValue objects with distinct CVPixelBufferRef values which encapsulate the same
+     * array of pixels will compare *not* equal.]
+     * For all other (matching) MLFeatureValue types, the BOOL value returned is the result of comparing "self" with
+     * "value" via
+     * isEqualToNumber:, isEqualToString:, isEqualtoDictionary:, isEqualToMultiArray:, isEqualToArray: as chosen by the
+     * MLFeatureValue types.
+     */
     @Generated
     @Selector("isEqualToFeatureValue:")
     public native boolean isEqualToFeatureValue(MLFeatureValue value);
@@ -338,12 +356,17 @@ public class MLFeatureValue extends NSObject implements NSCopying, NSSecureCodin
             NSURL url, @NInt long pixelsWide, @NInt long pixelsHigh, int pixelFormatType,
             NSDictionary<String, ?> options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("featureValueWithSequence:")
     public static native MLFeatureValue featureValueWithSequence(MLSequence sequence);
 
     /**
      * Populated value if the type is MLFeatureTypeSequence
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("sequenceValue")

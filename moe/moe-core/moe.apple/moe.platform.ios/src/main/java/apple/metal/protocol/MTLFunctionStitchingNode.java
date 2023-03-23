@@ -9,8 +9,10 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 
 /**
  * [@protocol] MTLFunctionStitchingNode
- * <p>
+ * 
  * A node used in a graph for stitching.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Metal")

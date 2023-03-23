@@ -27,13 +27,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAudioMixingDestination
- * <p>
+ * 
  * An object representing a connection to a mixer node from a node that
  * conforms to AVAudioMixing protocol
- * <p>
+ * 
  * A standalone instance of AVAudioMixingDestination cannot be created.
  * Only an instance vended by a source node (e.g. AVAudioPlayerNode) can be used
  * (see `AVAudioMixing`).
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AVFAudio")
@@ -87,7 +89,7 @@ public class AVAudioMixingDestination extends NSObject implements AVAudioMixing 
 
     /**
      * [@property] connectionPoint
-     * <p>
+     * 
      * Returns the underlying mixer connection point
      */
     @Generated

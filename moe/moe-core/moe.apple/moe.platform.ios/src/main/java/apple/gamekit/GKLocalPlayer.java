@@ -48,6 +48,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.1
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -136,6 +139,7 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("loadPlayersForIdentifiers:withCompletionHandler:")
     public static native void loadPlayersForIdentifiersWithCompletionHandler(NSArray<String> identifiers,
@@ -171,11 +175,19 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("authenticateHandler")
     @ObjCBlock(name = "call_authenticateHandler_ret")
     public native Block_authenticateHandler_ret authenticateHandler();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Set the authenticateHandler instead
+     */
     @Generated
     @Deprecated
     @Selector("authenticateWithCompletionHandler:")
@@ -185,6 +197,8 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     /**
      * Asynchronously delete saved games with the given name. The completion handler will indicate whether or not the
      * deletion was successful.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("deleteSavedGamesWithName:completionHandler:")
@@ -196,6 +210,8 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
      * If there is more than one saved game with the same name then a conflict exists. The application should determine
      * the correct data to use and call resolveConflictingSavedGames:withData:completionHandler:. This may require data
      * merging or asking the user.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fetchSavedGamesWithCompletionHandler:")
@@ -205,6 +221,10 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     /**
      * Array of player identifiers of friends for the local player. Not valid until loadFriendsWithCompletionHandler:
      * has completed.
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This property is obsolete, Use loadFriendPlayersWithCompletionHandler: instead
      */
     @Generated
     @Deprecated
@@ -216,7 +236,13 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
      * Possible reasons for error:
      * 1. Communications problem
      * 2. Unauthenticated player
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.5
+     * Deprecated-Message: API deprecated. Use fetchItemsForIdentityVerificationSignature: and the teamPlayerID value to
+     * verify a user identity.
      */
+    @Deprecated
     @Generated
     @Selector("generateIdentityVerificationSignatureWithCompletionHandler:")
     public native void generateIdentityVerificationSignatureWithCompletionHandler(
@@ -240,6 +266,11 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     @Selector("isUnderage")
     public native boolean isUnderage();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use loadDefaultLeaderboardIdentifierWithCompletionHandler: instead
+     */
     @Generated
     @Deprecated
     @Selector("loadDefaultLeaderboardCategoryIDWithCompletionHandler:")
@@ -252,12 +283,19 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
      * 1. Communications problem
      * 2. Unauthenticated player
      * 3. Leaderboard not present
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("loadDefaultLeaderboardIdentifierWithCompletionHandler:")
     public native void loadDefaultLeaderboardIdentifierWithCompletionHandler(
             @ObjCBlock(name = "call_loadDefaultLeaderboardIdentifierWithCompletionHandler") Block_loadDefaultLeaderboardIdentifierWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("loadFriendPlayersWithCompletionHandler:")
     public native void loadFriendPlayersWithCompletionHandler(
@@ -265,6 +303,11 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use
+     * loadRecentPlayersWithCompletionHandler: instead
      */
     @Generated
     @Deprecated
@@ -279,6 +322,8 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
      * Possible reasons for error:
      * 1. Communications problem
      * 2. Unauthenticated player
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("loadRecentPlayersWithCompletionHandler:")
@@ -298,6 +343,8 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     /**
      * A single listener may be registered once. Registering multiple times results in undefined behavior. The
      * registered listener will receive callbacks for any selector it responds to.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("registerListener:")
@@ -307,6 +354,8 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
      * Asynchronously resolve a saved game conflict. This deletes all versions included in conflictingSavedGames and
      * creates a new version with the given data. The completion handler is called with the newly created save and all
      * other remaining versions or an error.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("resolveConflictingSavedGames:withData:completionHandler:")
@@ -319,17 +368,27 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
      * one is created. The completion handler is called with the new / modified GKSavedGame or an error.
      * If the saved game was in conflict then the overwritten version will be the one with the same deviceName if
      * present, otherwise the most recent overall.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("saveGameData:withName:completionHandler:")
     public native void saveGameDataWithNameCompletionHandler(NSData data, String name,
             @ObjCBlock(name = "call_saveGameDataWithNameCompletionHandler") Block_saveGameDataWithNameCompletionHandler handler);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setAuthenticateHandler:")
     public native void setAuthenticateHandler(
             @ObjCBlock(name = "call_setAuthenticateHandler") Block_setAuthenticateHandler value);
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use setDefaultLeaderboardIdentifier:completionHandler: instead
+     */
     @Generated
     @Deprecated
     @Selector("setDefaultLeaderboardCategoryID:completionHandler:")
@@ -342,16 +401,24 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
      * 1. Communications problem
      * 2. Unauthenticated player
      * 3. Leaderboard not present
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setDefaultLeaderboardIdentifier:completionHandler:")
     public native void setDefaultLeaderboardIdentifierCompletionHandler(String leaderboardIdentifier,
             @ObjCBlock(name = "call_setDefaultLeaderboardIdentifierCompletionHandler") Block_setDefaultLeaderboardIdentifierCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("unregisterAllListeners")
     public native void unregisterAllListeners();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("unregisterListener:")
     public native void unregisterListener(@Mapped(ObjCObjectMapper.class) GKLocalPlayerListener listener);
@@ -465,6 +532,8 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
 
     /**
      * A Boolean value that declares whether or not multiplayer gaming is restricted on this device.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isMultiplayerGamingRestricted")
@@ -494,6 +563,8 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
      * Obtain the primary GKLocalPlayer object.
      * The player is only available for offline play until logged in.
      * A temporary player is created if no account is set up.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("local")
@@ -504,6 +575,8 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
      * Possible reasons for error:
      * 1. Communications problem
      * 2. Unauthenticated player
+     * 
+     * API-Since: 13.5
      */
     @Generated
     @Selector("fetchItemsForIdentityVerificationSignature:")
@@ -522,6 +595,8 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
      * A Boolean value that declares whether personalized communication is restricted on this device. If it is
      * restricted, the player will not be able to read or write personalized messages on game invites, challenges, or
      * enable voice communication in multiplayer games. Note: this value will always be true when isUnderage is true.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isPersonalizedCommunicationRestricted")
@@ -530,6 +605,8 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
     /**
      * observable property that becomes true when the friend request view controller is displayed. It becomes false when
      * it is dismissed
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isPresentingFriendRequestViewController")
@@ -554,13 +631,15 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
      * * The NSGKFriendListUsageDescription key must be specified in your
      * * Info.plist; otherwise, GKErrorFriendListUsageDescriptionMissing will be returned,
      * * as your app will be assumed not to support friend list.
-     * <p>
+     * 
      * * Possible reasons for error:
      * * - Communication error with server.
      * * - AuthorizationStatus != GKFriendsAuthorizationStatusAuthorized
      * * - NSGKFriendListUsageDescription missing from your Info.plist
      * * - User is not online
      * * - Unauthenticated player
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("loadFriends:")
@@ -575,19 +654,21 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
 
     /**
      * loadFriendsAuthorizationStatus:
-     * <p>
+     * 
      * Discussion:
      * Calling this will asynchronously load the current friend list authorization status
      * of calling application.
      * There may be an server call involve so there could be some slight delay
      * in getting the authorization status via handler block.
      * Calls handler when finished. Error will be nil on success.
-     * <p>
+     * 
      * Possible reasons for error:
      * - Communication error with server.
      * - NSGKFriendListUsageDescription missing from your Info.plist
      * - User is not online
      * - Unauthenticated player
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("loadFriendsAuthorizationStatus:")
@@ -603,33 +684,35 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
 
     /**
      * loadFriendsWithIdentifiers:completionHandler:
-     * <p>
+     * 
      * Discussion:
      * Calling this method will asynchronously return a list of GKPlayers to the provided
      * scoped identifiers (gamePlayerID or teamPlayerID) that you can use to interact with
      * GameKit framework.
      * Calls handler when finished.
-     * <p>
+     * 
      * When -loadFriendsAuthorizationStatus == GKFriendsAuthorizationStatusNotDetermined or
      * GKFriendsAuthorizationStatusRemoved, calling this method will trigger a
      * prompt to request friend list authorization from the user.
-     * <p>
+     * 
      * This method accepts gamePlayerID or teamPlayerID, and if the identifier
      * is valid, we will return a GKPlayer object correspond to that identifier.
-     * <p>
+     * 
      * No GKPlayer object will be returned for invalid identifiers. If all supplied
      * identifiers are invalid, and empty array will be returned.
-     * <p>
+     * 
      * If a player's friend revoke the friend list authorization for your application,
      * we will no longer return the GKPlayer object and you should delete the data
      * you've collected for the player with gamePlayerID or teamPlayerID on your end.
-     * <p>
+     * 
      * Possible reasons for error:
      * - Communication error with server.
      * - AuthorizationStatus != GKFriendsAuthorizationStatusAuthorized
      * - NSGKFriendListUsageDescription missing from your Info.plist
      * - Unauthenticated player
      * - User is not online
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("loadFriendsWithIdentifiers:completionHandler:")
@@ -645,15 +728,17 @@ public class GKLocalPlayer extends GKPlayer implements GKSavedGameListener {
 
     /**
      * presentFriendRequestCreatorFromViewController:
-     * <p>
+     * 
      * Discussion:
      * iOS only. When invoked, a Messages sheet will be presented on the viewController passed in, using the existing
      * flow of presentation on behalf of an application.
      * If an error is returned, control are returned directly to the application, without presentation.
-     * <p>
+     * 
      * Possible reasons for error:
      * - The local player user account is not allowed to add friends
      * - The device is not allowing outgoing traffic at the time of the operation
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("presentFriendRequestCreatorFromViewController:error:")

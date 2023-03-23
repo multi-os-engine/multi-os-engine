@@ -25,28 +25,53 @@ import org.moe.natj.general.ann.NUInt;
  * the new account.
  * It is only possible to discern this state when the application is running, and therefore this transition type will
  * only be posted if the account changes while the application is running or in the background.
- * <p>
+ * 
  * NSPersistentStoreUbiquitousTransitionTypeAccountRemoved
  * This value indicates that no iCloud account is available, and the persistent store in use will / did transition to
  * the “local” store.
  * It is only possible to discern this state when the application is running, and therefore this transition type will
  * only be posted if the account is removed while the application is running or in the background.
- * <p>
+ * 
  * NSPersistentStoreUbiquitousTransitionTypeContentRemoved
  * This value indicates that the user has wiped the contents of the iCloud account, usually using Delete All from
  * Documents & Data in Settings. The Core Data integration will transition to an empty store file as a result of this
  * event.
- * <p>
+ * 
  * NSPersistentStoreUbiquitousTransitionTypeInitialImportCompleted
  * This value indicates that the Core Data integration has finished building a store file that is consistent with the
  * contents of the iCloud account, and is readyto replace the fallback store with that file.
+ * 
+ * API-Since: 7.0
+ * Deprecated-Since: 10.0
+ * Deprecated-Message: Please see the release notes and Core Data documentation.
  */
+@Deprecated
 @Generated
 public final class NSPersistentStoreUbiquitousTransitionType {
-    @Generated @NUInt public static final long AccountAdded = 0x0000000000000001L;
-    @Generated @NUInt public static final long AccountRemoved = 0x0000000000000002L;
-    @Generated @NUInt public static final long ContentRemoved = 0x0000000000000003L;
-    @Generated @NUInt public static final long InitialImportCompleted = 0x0000000000000004L;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Please see the release notes and Core Data documentation.
+     */
+    @Deprecated @Generated @NUInt public static final long AccountAdded = 0x0000000000000001L;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Please see the release notes and Core Data documentation.
+     */
+    @Deprecated @Generated @NUInt public static final long AccountRemoved = 0x0000000000000002L;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Please see the release notes and Core Data documentation.
+     */
+    @Deprecated @Generated @NUInt public static final long ContentRemoved = 0x0000000000000003L;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Please see the release notes and Core Data documentation.
+     */
+    @Deprecated @Generated @NUInt public static final long InitialImportCompleted = 0x0000000000000004L;
 
     @Generated
     private NSPersistentStoreUbiquitousTransitionType() {

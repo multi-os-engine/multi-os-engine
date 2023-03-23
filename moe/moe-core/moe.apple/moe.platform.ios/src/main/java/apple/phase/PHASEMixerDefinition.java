@@ -24,10 +24,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEMixerDefinition
- * <p>
+ * 
  * The base class for a mixer definition.
- * <p>
+ * 
  * Mixer definitions control how audio will be rendered to the output in PHASE.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -89,7 +91,7 @@ public class PHASEMixerDefinition extends PHASEDefinition {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
@@ -100,7 +102,7 @@ public class PHASEMixerDefinition extends PHASEDefinition {
 
     /**
      * [@property] gainMetaParameterDefinition
-     * <p>
+     * 
      * Optionally attach a metaparameter definition here to enable real-time control of the gain during playback.
      */
     @Generated
@@ -152,7 +154,7 @@ public class PHASEMixerDefinition extends PHASEDefinition {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
@@ -163,7 +165,7 @@ public class PHASEMixerDefinition extends PHASEDefinition {
 
     /**
      * [@property] gainMetaParameterDefinition
-     * <p>
+     * 
      * Optionally attach a metaparameter definition here to enable real-time control of the gain during playback.
      */
     @Generated

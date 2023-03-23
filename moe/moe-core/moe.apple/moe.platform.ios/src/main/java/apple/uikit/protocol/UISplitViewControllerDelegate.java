@@ -43,6 +43,8 @@ public interface UISplitViewControllerDelegate {
      * the horizontally-compact size class. If you return `nil`, then the argument will perform its default behavior
      * (i.e. to use its current primary view
      * controller).
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -58,6 +60,8 @@ public interface UISplitViewControllerDelegate {
      * to the horizontally-regular size class. If you return `nil`, then the argument will perform its default behavior
      * (i.e. to use its current
      * primary view controller.)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -77,6 +81,8 @@ public interface UISplitViewControllerDelegate {
      * using `secondaryViewController` to do so. Return YES to prevent UIKit from applying its default behavior; return
      * NO to request that UIKit
      * perform its default collapsing behavior.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -89,6 +95,9 @@ public interface UISplitViewControllerDelegate {
 
     /**
      * Called when the view controller is shown in a popover so the delegate can take action like hiding other popovers.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -109,6 +118,8 @@ public interface UISplitViewControllerDelegate {
      * have been configured for display in a regular-width split view controller. If you return `nil`, then
      * `UISplitViewController` will perform
      * its default behavior.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -121,6 +132,9 @@ public interface UISplitViewControllerDelegate {
     /**
      * Returns YES if a view controller should be hidden by the split view controller in a given orientation.
      * (This method is only called on the leftmost view controller and only discriminates portrait from landscape.)
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -135,6 +149,8 @@ public interface UISplitViewControllerDelegate {
      * Override this method to customize the behavior of `showDetailViewController:` on a split view controller. Return
      * YES to indicate that you've
      * handled the action yourself; return NO to cause the default behavior to be executed.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -148,6 +164,8 @@ public interface UISplitViewControllerDelegate {
      * Override this method to customize the behavior of `showViewController:` on a split view controller. Return YES to
      * indicate that you've handled
      * the action yourself; return NO to cause the default behavior to be executed.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -159,6 +177,8 @@ public interface UISplitViewControllerDelegate {
 
     /**
      * This method allows a client to update any bar button items etc.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -171,6 +191,10 @@ public interface UISplitViewControllerDelegate {
      * Called when a button should be added to a toolbar for a hidden view controller.
      * Implementing this method allows the hidden view controller to be presented via a swipe gesture if
      * 'presentsWithGesture' is 'YES' (the default).
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use splitViewController:willChangeToDisplayMode: and displayModeButtonItem instead
      */
     @Generated
     @IsOptional
@@ -184,6 +208,10 @@ public interface UISplitViewControllerDelegate {
 
     /**
      * Called when the view is shown again in the split view, invalidating the button and popover controller.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use splitViewController:willChangeToDisplayMode: and displayModeButtonItem instead
      */
     @Generated
     @IsOptional
@@ -194,6 +222,9 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("splitViewControllerPreferredInterfaceOrientationForPresentation:")
@@ -203,6 +234,9 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("splitViewControllerSupportedInterfaceOrientations:")
@@ -215,6 +249,8 @@ public interface UISplitViewControllerDelegate {
      * Called by the gesture AND barButtonItem to determine what they will set the display mode to (and what the
      * displayModeButtonItem's appearance will be.) Return UISplitViewControllerDisplayModeAutomatic to get the default
      * behavior.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -224,6 +260,9 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("splitViewController:displayModeForExpandingToProposedDisplayMode:")
@@ -233,6 +272,9 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("splitViewController:topColumnForCollapsingToProposedTopColumn:")
@@ -242,6 +284,9 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("splitViewController:willHideColumn:")
@@ -249,6 +294,9 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("splitViewController:willShowColumn:")
@@ -256,6 +304,9 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("splitViewControllerDidCollapse:")
@@ -263,6 +314,9 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("splitViewControllerDidExpand:")
@@ -270,6 +324,9 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("splitViewControllerInteractivePresentationGestureDidEnd:")
@@ -277,6 +334,9 @@ public interface UISplitViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("splitViewControllerInteractivePresentationGestureWillBegin:")

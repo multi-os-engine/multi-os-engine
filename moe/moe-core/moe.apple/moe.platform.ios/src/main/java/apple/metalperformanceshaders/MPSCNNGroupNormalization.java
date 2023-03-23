@@ -31,15 +31,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNGroupNormalization
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * This kernel normalizes each image, on a per-group basis, to
  * have zero mean and unit variance:
- * <p>
+ * 
  * for each image:
  * for each channel:
  * y = (x - mean) * gamma / sqrt(variance + epsilon) + beta;
- * <p>
+ * 
  * The mean and variance are computed per group of channels, as given by the dataSource.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -109,7 +111,7 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
 
     /**
      * [@property] epsilon
-     * <p>
+     * 
      * The epsilon value used to bias the variance when normalizing.
      */
     @Generated
@@ -131,13 +133,13 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSCNNGroupNormalization object, or nil if failure.
@@ -153,7 +155,7 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
 
     /**
      * Initialize a MPSCNNGroupNormalization kernel on a device.
-     *
+     * 
      * @param dataSource An object conforming to the MPSCNNGroupNormalizationDataSource
      *                   protocol which
      */
@@ -198,8 +200,9 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
     /**
      * Reload data using new gamma and beta terms contained within an
      * MPSCNNGroupNormalizationGradientState object.
-     *
+     * 
      * @param commandBuffer     The command buffer on which to encode the reload.
+     * 
      * @param gammaAndBetaState The state containing the updated weights which are to
      *                          be reloaded.
      */
@@ -228,7 +231,7 @@ public class MPSCNNGroupNormalization extends MPSCNNKernel {
 
     /**
      * [@property] epsilon
-     * <p>
+     * 
      * The epsilon value used to bias the variance when normalizing.
      */
     @Generated

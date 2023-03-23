@@ -14,7 +14,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.metal.struct.MTLResourceID;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -28,4 +32,16 @@ public interface MTLVisibleFunctionTable extends MTLResource {
     @Selector("setFunctions:withRange:")
     void setFunctionsWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> functions,
             @ByValue NSRange range);
+
+    /**
+     * [@property] gpuResourceID
+     * 
+     * Handle of the GPU resource suitable for storing in an Argument Buffer
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("gpuResourceID")
+    @ByValue
+    MTLResourceID gpuResourceID();
 }

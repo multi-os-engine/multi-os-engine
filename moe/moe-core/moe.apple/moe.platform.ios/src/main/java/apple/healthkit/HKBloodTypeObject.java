@@ -45,8 +45,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKBloodTypeObject
- * <p>
+ * 
  * A wrapper object for HKBloodType enumeration.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")

@@ -21,16 +21,24 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] WKUserScriptInjectionTime
- * <p>
+ * 
  * when a user script should be injected into a webpage.
  * [@constant] WKUserScriptInjectionTimeAtDocumentStart Inject the script after the document element has been created,
  * but before any other content has been loaded.
  * [@constant] WKUserScriptInjectionTimeAtDocumentEnd Inject the script after the document has finished loading, but
  * before any subresources may have finished loading.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class WKUserScriptInjectionTime {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Start = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long End = 0x0000000000000001L;
 
     @Generated

@@ -28,12 +28,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXHangDiagnostic
- * <p>
+ * 
  * An MXDiagnostic subclass that encapsulates hang diagnostic reports.
- * <p>
+ * 
  * Applications are considered to be "hanging" when they are unable to handle user input responsively.
- * <p>
+ * 
  * This generally occurs when your applications main thread is blocked.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MetricKit")
@@ -69,7 +71,7 @@ public class MXHangDiagnostic extends MXDiagnostic {
 
     /**
      * [@property] callStackTree
-     * <p>
+     * 
      * The application call stack tree associated with the hang.
      */
     @Generated
@@ -104,9 +106,9 @@ public class MXHangDiagnostic extends MXDiagnostic {
 
     /**
      * [@property] hangDuration
-     * <p>
+     * 
      * Total hang duration for this diagnostic.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
      */
     @Generated

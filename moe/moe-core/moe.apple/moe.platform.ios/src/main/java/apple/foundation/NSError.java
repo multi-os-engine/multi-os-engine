@@ -151,20 +151,22 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
      * NSLocalizedDescriptionKey for localizedDescription. The provider should return nil for any keys it is not able to
      * provide and, very importantly, any keys it does not recognize (since we may extend the list of keys in future
      * releases).
-     * <p>
+     * 
      * The specified block will be called synchronously at the time when the above properties are queried. The results
      * are not cached.
-     * <p>
+     * 
      * This provider is optional. It enables localization and formatting of error messages to be done lazily; rather
      * than populating the userInfo at NSError creation time, these keys will be fetched on-demand when asked for.
-     * <p>
+     * 
      * It is expected that only the “owner” of an NSError domain specifies the provider for the domain, and this is done
      * once. This facility is not meant for consumers of errors to customize the userInfo entries. This facility should
      * not be used to customize the behaviors of error domains provided by the system.
-     * <p>
+     * 
      * If an appropriate result for the requested key cannot be provided, return nil rather than choosing to manufacture
      * a generic fallback response such as "Operation could not be completed, error 42." NSError will take care of the
      * fallback cases.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setUserInfoValueProviderForDomain:provider:")
@@ -183,6 +185,9 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("userInfoValueProviderForDomain:")
     @ObjCBlock(name = "call_userInfoValueProviderForDomain_ret")
@@ -342,11 +347,17 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
         Object call_userInfoValueProviderForDomain_ret(NSError arg0, String arg1);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("fileProviderErrorForCollisionWithItem:")
     public static native NSError fileProviderErrorForCollisionWithItem(
             @Mapped(ObjCObjectMapper.class) NSFileProviderItem existingItem);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("fileProviderErrorForNonExistentItemWithIdentifier:")
     public static native NSError fileProviderErrorForNonExistentItemWithIdentifier(String itemIdentifier);
@@ -354,8 +365,18 @@ public class NSError extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Return a list of underlying errors, if any. It includes the values of both NSUnderlyingErrorKey and
      * NSMultipleUnderlyingErrorsKey. If there are no underlying errors, returns an empty array.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("underlyingErrors")
     public native NSArray<? extends NSError> underlyingErrors();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("fileProviderErrorForRejectedDeletionOfItem:")
+    public static native NSError fileProviderErrorForRejectedDeletionOfItem(
+            @Mapped(ObjCObjectMapper.class) NSFileProviderItem updatedVersion);
 }

@@ -17,9 +17,6 @@ limitations under the License.
 package apple.foundation;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.protocol.NSCopying;
 import apple.foundation.protocol.NSItemProviderReading;
 import apple.foundation.protocol.NSItemProviderWriting;
@@ -55,7 +52,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 3.2
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -88,6 +91,8 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     /**
      * A convenience method for creating an attributed string containing attachment using NSAttachmentCharacter as the
      * base character.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("attributedStringWithAttachment:")
@@ -203,6 +208,9 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     public native NSDictionary<String, ?> attributesAtIndexLongestEffectiveRangeInRange(@NUInt long location,
             NSRange range, @ByValue NSRange rangeLimit);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("boundingRectWithSize:options:context:")
     @ByValue
@@ -212,6 +220,8 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     /**
      * Returns YES if the receiver contains a property configured (NSAttachmentAttributeName with NSAttachmentCharacter)
      * in range
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("containsAttachmentsInRange:")
@@ -226,20 +236,31 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     /**
      * Generates an NSData object for the receiver contents in range. It requires a document attributes dict specifying
      * at least the NSDocumentTypeDocumentAttribute to determine the format to be written.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("dataFromRange:documentAttributes:error:")
     public native NSData dataFromRangeDocumentAttributesError(@ByValue NSRange range, NSDictionary<String, ?> dict,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("drawAtPoint:")
     public native void drawAtPoint(@ByValue CGPoint point);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("drawInRect:")
     public native void drawInRect(@ByValue CGRect rect);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("drawWithRect:options:context:")
     public native void drawWithRectOptionsContext(@ByValue CGRect rect, @NInt long options,
@@ -249,12 +270,18 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateAttribute:inRange:options:usingBlock:")
     public native void enumerateAttributeInRangeOptionsUsingBlock(String attrName, @ByValue NSRange enumerationRange,
             @NUInt long opts,
             @ObjCBlock(name = "call_enumerateAttributeInRangeOptionsUsingBlock") Block_enumerateAttributeInRangeOptionsUsingBlock block);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateAttributesInRange:options:usingBlock:")
     public native void enumerateAttributesInRangeOptionsUsingBlock(@ByValue NSRange enumerationRange, @NUInt long opts,
@@ -265,6 +292,8 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
      * specifying at least the NSDocumentTypeDocumentAttribute to determine the format to be written. The method returns
      * a directory file wrapper for those document types represented by a file package such as NSRTFDTextDocumentType;
      * otherwise, it returns a regular-file file wrapper.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("fileWrapperFromRange:documentAttributes:error:")
@@ -283,6 +312,9 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @Selector("initWithCoder:")
     public native NSAttributedString initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithData:options:documentAttributes:error:")
     public native NSAttributedString initWithDataOptionsDocumentAttributesError(NSData data,
@@ -290,6 +322,10 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
             @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<String, ?>> dict,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 9.0
+     */
     @Generated
     @Deprecated
     @Selector("initWithFileURL:options:documentAttributes:error:")
@@ -311,6 +347,8 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
      * and NSDefaultAttributesDocumentAttribute are supported options key. When they are not specified, these methods
      * will examine the data and do their best to detect the appropriate attributes. If dict is non-NULL, it will return
      * a dictionary with various document-wide attributes accessible via NS...DocumentAttribute keys.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithURL:options:documentAttributes:error:")
@@ -334,11 +372,17 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("size")
     @ByValue
     public native CGSize size();
 
+    /**
+     * Override these two APIs when subclassing NSAttributedString
+     */
     @Generated
     @Selector("string")
     public native String string();
@@ -429,11 +473,13 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
 
     /**
      * Converts HTML data into an attributed string.
-     * <p>
+     * 
      * The completionHandler is passed the attributed string result along with any
      * document-level attributes, or an error. If neither NSTextEncodingNameDocumentOption nor
      * NSCharacterEncodingDocumentOption is supplied, a best-guess encoding is used.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param data              The HTML data to use as the contents.
      * @param options           Document attributes for interpreting the document contents.
      *                          NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption,
@@ -456,12 +502,14 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
 
     /**
      * Converts a local HTML file into an attributed string.
-     * <p>
+     * 
      * The completionHandler is passed the attributed string result along with any
      * document-level attributes, or an error. If NSReadAccessURLDocumentOption references a single file,
      * only that file may be loaded by WebKit. If NSReadAccessURLDocumentOption references a directory,
      * files inside that directory may be loaded by WebKit.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param fileURL           The file URL to load.
      * @param options           Document attributes for interpreting the document contents.
      *                          NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption and
@@ -485,10 +533,12 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
 
     /**
      * Loads an HTML URL request and converts the contents into an attributed string.
-     * <p>
+     * 
      * The completionHandler is passed the attributed string result along with any
      * document-level attributes, or an error.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param request           The request specifying the URL to load.
      * @param options           Document attributes for interpreting the document contents.
      *                          NSTextSizeMultiplierDocumentOption and NSTimeoutDocumentOption are supported option
@@ -511,11 +561,13 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
 
     /**
      * Converts an HTML string into an attributed string.
-     * <p>
+     * 
      * The completionHandler is passed the attributed string result along with any
      * document-level attributes, or an error. NSBaseURLDocumentOption is used to resolve relative URLs
      * within the document.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param string            The HTML string to use as the contents.
      * @param options           Document attributes for interpreting the document contents.
      *                          NSTextSizeMultiplierDocumentOption, NSTimeoutDocumentOption and NSBaseURLDocumentOption
@@ -540,6 +592,8 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
      * If the string has portions tagged with NSInflectionRuleAttributeName
      * that have no format specifiers, create a new string with those portions inflected
      * by following the rule in the attribute.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("attributedStringByInflectingString")
@@ -549,6 +603,8 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
      * These constructors have a 'baseURL' parameter. If specified, links in the document will be relative to this URL,
      * and images in the document will be looked for relative to this URL (if the other options allow image loading).
      * Defaults to nil. If set to nil, paths will not be resolved.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithContentsOfMarkdownFileAtURL:options:baseURL:error:")
@@ -558,6 +614,8 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
 
     /**
      * Formats the string using the specified locale (or the canonical one, if nil).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Variadic()
@@ -567,18 +625,26 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
 
     /**
      * Formats the string using the arguments list and the specified locale (or the canonical one, if nil).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithFormat:options:locale:arguments:")
     public native NSAttributedString initWithFormatOptionsLocaleArguments(NSAttributedString format,
             @NUInt long options, NSLocale locale, BytePtr arguments);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithMarkdown:options:baseURL:error:")
     public native NSAttributedString initWithMarkdownOptionsBaseURLError(NSData markdown,
             NSAttributedStringMarkdownParsingOptions options, NSURL baseURL,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithMarkdownString:options:baseURL:error:")
     public native NSAttributedString initWithMarkdownStringOptionsBaseURLError(String markdownString,
@@ -587,6 +653,8 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
 
     /**
      * Formats the string using the current locale and default options.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Variadic()
@@ -596,6 +664,8 @@ public class NSAttributedString extends NSObject implements NSCopying, NSMutable
 
     /**
      * Formats the string using the current locale and the specified options.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Variadic()

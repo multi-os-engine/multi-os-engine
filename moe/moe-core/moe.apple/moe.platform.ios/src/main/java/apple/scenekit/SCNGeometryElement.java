@@ -49,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNGeometryElement
- * <p>
+ * 
  * A geometry element describes how vertices from a geometry source are connected together.
  */
 @Generated
@@ -112,9 +112,9 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * geometryElementWithData:primitiveType:primitiveCount:bytesPerIndex:
-     * <p>
+     * 
      * Creates and returns a geometry element from the given data and data format info.
-     *
+     * 
      * @param data           The data that contains element indexes. You can pass nil to use an implicit vertex ordering
      *                       (0,1,2...).
      * @param primitiveType  The primitive type, as listed in the SCNGeometryPrimitiveType enumeration.
@@ -126,6 +126,9 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
     public static native SCNGeometryElement geometryElementWithDataPrimitiveTypePrimitiveCountBytesPerIndex(NSData data,
             @NInt long primitiveType, @NInt long primitiveCount, @NInt long bytesPerIndex);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("geometryElementWithMDLSubmesh:")
     public static native SCNGeometryElement geometryElementWithMDLSubmesh(MDLSubmesh mdlSubMesh);
@@ -188,7 +191,7 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] bytesPerIndex
-     * <p>
+     * 
      * The number of bytes that represent an index value
      */
     @Generated
@@ -198,7 +201,7 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] data
-     * <p>
+     * 
      * The data for the geometry element
      */
     @Generated
@@ -219,7 +222,7 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] primitiveCount
-     * <p>
+     * 
      * The number of primitives in the data.
      */
     @Generated
@@ -229,7 +232,7 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] primitiveType
-     * <p>
+     * 
      * The type of the geometry element. Possible values are listed in the SCNGeometryPrimitiveType enumeration.
      */
     @Generated
@@ -245,8 +248,10 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] maximumPointScreenSpaceRadius
-     * <p>
+     * 
      * Specifies the maximum size in screen-space (in pixel). Defaults to 1
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("maximumPointScreenSpaceRadius")
@@ -255,8 +260,10 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] minimumPointScreenSpaceRadius
-     * <p>
+     * 
      * Specifies the minimum size in screen-space (in pixel). Defaults to 1
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("minimumPointScreenSpaceRadius")
@@ -265,8 +272,10 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] pointSize
-     * <p>
+     * 
      * Specifies the size of the point in local space. Defaults to 1
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("pointSize")
@@ -275,11 +284,13 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] primitiveRange
-     * <p>
+     * 
      * Specifies the subrange of primitves to render within NSMakeRange(0, primitiveCount). Defaults to
      * NSMakeRange(NSNotFound, 0).
-     * <p>
+     * 
      * When the location of the range is set to NSNotFound, the entire geometry element is rendered.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("primitiveRange")
@@ -288,8 +299,10 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] maximumPointScreenSpaceRadius
-     * <p>
+     * 
      * Specifies the maximum size in screen-space (in pixel). Defaults to 1
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMaximumPointScreenSpaceRadius:")
@@ -297,8 +310,10 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] minimumPointScreenSpaceRadius
-     * <p>
+     * 
      * Specifies the minimum size in screen-space (in pixel). Defaults to 1
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMinimumPointScreenSpaceRadius:")
@@ -306,8 +321,10 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] pointSize
-     * <p>
+     * 
      * Specifies the size of the point in local space. Defaults to 1
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPointSize:")
@@ -315,11 +332,13 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] primitiveRange
-     * <p>
+     * 
      * Specifies the subrange of primitves to render within NSMakeRange(0, primitiveCount). Defaults to
      * NSMakeRange(NSNotFound, 0).
-     * <p>
+     * 
      * When the location of the range is set to NSNotFound, the entire geometry element is rendered.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPrimitiveRange:")
@@ -327,13 +346,15 @@ public class SCNGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * geometryElementWithBuffer:primitiveType:primitiveCount:bytesPerIndex
-     * <p>
+     * 
      * Creates and returns a geometry element from the given Metal buffer and parameters.
-     *
+     * 
      * @param buffer         The buffer that contains element indexes.
      * @param primitiveType  The primitive type, as listed in the SCNGeometryPrimitiveType enumeration.
      * @param primitiveCount The number of primitives in the data.
      * @param bytesPerIndex  The number of bytes that represent a single index value in the data.
+     * 
+     *                       API-Since: 14.0
      */
     @Generated
     @Selector("geometryElementWithBuffer:primitiveType:primitiveCount:bytesPerIndex:")

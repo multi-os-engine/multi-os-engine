@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MLCSampleMode
- * <p>
+ * 
  * A sampling mode for an upsample layer.
  */
 @Generated

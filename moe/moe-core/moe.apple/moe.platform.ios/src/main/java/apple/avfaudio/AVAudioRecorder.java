@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("AVFAudio")
 @Runtime(ObjCRuntime.class)
@@ -80,6 +83,8 @@ public class AVAudioRecorder extends NSObject {
 
     /**
      * Array of AVAudioSessionChannelDescription objects
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("channelAssignments")
@@ -125,6 +130,8 @@ public class AVAudioRecorder extends NSObject {
 
     /**
      * get the device current time - always valid
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("deviceCurrentTime")
@@ -132,6 +139,8 @@ public class AVAudioRecorder extends NSObject {
 
     /**
      * this object is fully valid only when prepareToRecord has been called
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("format")
@@ -149,6 +158,8 @@ public class AVAudioRecorder extends NSObject {
     /**
      * The file type to create can be set through the corresponding settings key. If not set, it will be inferred from
      * the file extension. Will overwrite a file at the specified url if a file exists.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithURL:format:error:")
@@ -235,6 +246,8 @@ public class AVAudioRecorder extends NSObject {
     /**
      * start recording at specified time in the future. time is an absolute time based on and greater than
      * deviceCurrentTime.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("recordAtTime:")
@@ -243,6 +256,8 @@ public class AVAudioRecorder extends NSObject {
     /**
      * record a file of a specified duration starting at specified time. time is an absolute time based on and greater
      * than deviceCurrentTime.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("recordAtTime:forDuration:")
@@ -265,6 +280,8 @@ public class AVAudioRecorder extends NSObject {
 
     /**
      * Array of AVAudioSessionChannelDescription objects
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setChannelAssignments:")

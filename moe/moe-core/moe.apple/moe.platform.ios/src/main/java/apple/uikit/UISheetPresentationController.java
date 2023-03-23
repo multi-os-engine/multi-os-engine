@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -359,4 +362,17 @@ public class UISheetPresentationController extends UIPresentationController {
     @Generated
     @Selector("widthFollowsPreferredContentSizeWhenEdgeAttached")
     public native boolean widthFollowsPreferredContentSizeWhenEdgeAttached();
+
+    /**
+     * If an external input (e.g. a captured property) to a custom detent changes, call this to notify the sheet to
+     * re-evaluate the detent in the next layout pass.
+     * There is no need to call this if `detents` only contains system detents, or if custom detents only use
+     * information from the passed in context.
+     * Call within an `animateChanges:` block to animate custom detents to their new heights.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("invalidateDetents")
+    public native void invalidateDetents();
 }

@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MLCArithmeticOperation
- * <p>
+ * 
  * The list of supported arithmetic operations.
  */
 @Generated
@@ -120,18 +120,26 @@ public final class MLCArithmeticOperation {
     /**
      * An operation that calculates the elementwise product of its two inputs. Returns 0 if y in x * y is zero, even if
      * x is NaN or INF
+     * 
+     * API-Since: 14.5
      */
     @Generated public static final int MultiplyNoNaN = 0x0000001A;
     /**
      * An operations that calculates the elementwise division of its two inputs. Returns 0 if the denominator is 0.
+     * 
+     * API-Since: 14.5
      */
     @Generated public static final int DivideNoNaN = 0x0000001B;
     /**
      * An operation that calculates the elementwise min of two inputs.
+     * 
+     * API-Since: 14.5
      */
     @Generated public static final int Min = 0x0000001C;
     /**
      * An operations that calculates the elementwise max of two inputs.
+     * 
+     * API-Since: 14.5
      */
     @Generated public static final int Max = 0x0000001D;
     /**

@@ -32,6 +32,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * Messages related to the URL session as a whole
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("Foundation")
@@ -77,6 +79,8 @@ public interface NSURLSessionDelegate {
      * delivered. At this time it is safe to invoke the previously stored
      * completion handler, or to begin any internal updates that will
      * result in invoking the completion handler.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional

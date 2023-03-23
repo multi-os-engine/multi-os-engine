@@ -8,6 +8,12 @@ public final class BNNSPointerSpecifier {
     private BNNSPointerSpecifier() {
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated public static final int BNNSPointerSpecifierAlpha = 0x00000000;
+    /**
+     * API-Since: 14.0
+     */
     @Generated public static final int BNNSPointerSpecifierBeta = 0x00000001;
 }

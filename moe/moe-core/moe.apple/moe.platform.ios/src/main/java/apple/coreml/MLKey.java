@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A class representing key used to store any value against
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreML")

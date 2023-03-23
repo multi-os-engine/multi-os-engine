@@ -25,12 +25,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCReductionLayer
- * <p>
+ * 
  * Reduce tensor values across a given dimension to a scalar value.
- * <p>
+ * 
  * The layer is used to perform reductionType operation on a given dimension.
  * Result of this layer is a tensor of the same shape as source tensor,
  * except for the given dimension which is set to 1.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -92,7 +94,7 @@ public class MLCReductionLayer extends MLCLayer {
 
     /**
      * [@property] dimension
-     * <p>
+     * 
      * The dimension over which to perform the reduction operation
      */
     @Generated
@@ -102,8 +104,10 @@ public class MLCReductionLayer extends MLCLayer {
 
     /**
      * [@property] dimensions
-     * <p>
+     * 
      * The dimensions over which to perform the reduction operation
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("dimensions")
@@ -141,7 +145,7 @@ public class MLCReductionLayer extends MLCLayer {
 
     /**
      * Create a reduction layer.
-     *
+     * 
      * @param reductionType The reduction type.
      * @param dimension     The reduction dimension.
      * @return A new reduction layer.
@@ -152,10 +156,12 @@ public class MLCReductionLayer extends MLCLayer {
 
     /**
      * Create a reduction layer.
-     *
+     * 
      * @param reductionType The reduction type.
      * @param dimensions    The list of dimensions to reduce over
      * @return A new reduction layer.
+     * 
+     *         API-Since: 14.5
      */
     @Generated
     @Selector("layerWithReductionType:dimensions:")
@@ -169,7 +175,7 @@ public class MLCReductionLayer extends MLCLayer {
 
     /**
      * [@property] reductionType
-     * <p>
+     * 
      * The reduction type
      */
     @Generated

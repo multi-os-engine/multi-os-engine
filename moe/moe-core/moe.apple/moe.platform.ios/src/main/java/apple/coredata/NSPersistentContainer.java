@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * An instance of NSPersistentContainer includes all objects needed to represent a functioning Core Data stack, and
  * provides convenience methods and properties for common patterns.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CoreData")

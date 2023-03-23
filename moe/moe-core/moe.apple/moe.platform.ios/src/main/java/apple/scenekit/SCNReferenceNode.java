@@ -46,8 +46,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNReferenceNode
- * <p>
+ * 
  * Node that references an external file.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("SceneKit")
@@ -152,7 +154,7 @@ public class SCNReferenceNode extends SCNNode {
 
     /**
      * referenceNodeWithURL:
-     * <p>
+     * 
      * Creates a reference node with a url.
      */
     @Generated
@@ -190,7 +192,7 @@ public class SCNReferenceNode extends SCNNode {
 
     /**
      * initWithCoder:
-     * <p>
+     * 
      * Support coding and decoding via NSKeyedArchiver.
      */
     @Generated
@@ -199,7 +201,7 @@ public class SCNReferenceNode extends SCNNode {
 
     /**
      * initWithURL:
-     * <p>
+     * 
      * Creates a reference node with a url.
      */
     @Generated
@@ -208,7 +210,7 @@ public class SCNReferenceNode extends SCNNode {
 
     /**
      * [@property] loaded
-     * <p>
+     * 
      * Indicates whether the referenced URL has been loaded.
      */
     @Generated
@@ -217,7 +219,7 @@ public class SCNReferenceNode extends SCNNode {
 
     /**
      * load
-     * <p>
+     * 
      * Force the reference to be loaded if it hasn't been loaded already. The resolved nodes will be added
      * as child nodes of the receiver.
      */
@@ -227,7 +229,7 @@ public class SCNReferenceNode extends SCNNode {
 
     /**
      * [@property] loadingPolicy
-     * <p>
+     * 
      * Specifies when to load the reference. see SCNReferenceLoadingPolicy above. Defaults to
      * SCNReferenceLoadingPolicyImmediately.
      */
@@ -238,7 +240,7 @@ public class SCNReferenceNode extends SCNNode {
 
     /**
      * [@property] referenceURL
-     * <p>
+     * 
      * Specifies the url to resolve.
      */
     @Generated
@@ -247,7 +249,7 @@ public class SCNReferenceNode extends SCNNode {
 
     /**
      * [@property] loadingPolicy
-     * <p>
+     * 
      * Specifies when to load the reference. see SCNReferenceLoadingPolicy above. Defaults to
      * SCNReferenceLoadingPolicyImmediately.
      */
@@ -257,7 +259,7 @@ public class SCNReferenceNode extends SCNNode {
 
     /**
      * [@property] referenceURL
-     * <p>
+     * 
      * Specifies the url to resolve.
      */
     @Generated
@@ -272,7 +274,7 @@ public class SCNReferenceNode extends SCNNode {
 
     /**
      * unload
-     * <p>
+     * 
      * Remove the child nodes and mark as unloaded.
      */
     @Generated

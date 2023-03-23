@@ -20,6 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class BNNSFlags {
+    /**
+     * API-Since: 10.0
+     */
     @Generated public static final int BNNSFlagsUseClientPtr = 0x00000001;
 
     @Generated

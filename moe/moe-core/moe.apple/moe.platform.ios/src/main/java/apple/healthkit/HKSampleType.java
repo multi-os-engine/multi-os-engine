@@ -42,8 +42,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKSampleType
- * <p>
+ * 
  * Represents a type of HKSample.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -215,8 +217,10 @@ public class HKSampleType extends HKObjectType {
 
     /**
      * [@property] isMaximumDurationRestricted
-     * <p>
+     * 
      * Returns YES if the start and end date for samples of this type are restricted by a maximum duration.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isMaximumDurationRestricted")
@@ -224,8 +228,10 @@ public class HKSampleType extends HKObjectType {
 
     /**
      * [@property] isMinimumDurationRestricted
-     * <p>
+     * 
      * Returns YES if the start and end date for samples of this type are restricted by a minimum duration.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isMinimumDurationRestricted")
@@ -233,11 +239,13 @@ public class HKSampleType extends HKObjectType {
 
     /**
      * [@property] maximumAllowedDuration
-     * <p>
+     * 
      * When the duration is restricted for samples of this type, returns the maximum duration allowed,
      * calculated as the difference between end and start dates.
-     * <p>
+     * 
      * Throws an exception if there is no maximum restriction on duration for samples of this type.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("maximumAllowedDuration")
@@ -245,11 +253,13 @@ public class HKSampleType extends HKObjectType {
 
     /**
      * [@property] minimumAllowedDuration
-     * <p>
+     * 
      * When the duration is restricted for samples of this type, returns the minimum duration allowed,
      * calculated as the difference between end and start dates.
-     * <p>
+     * 
      * Throws an exception if there is no minimum restriction on duration for samples of this type.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("minimumAllowedDuration")
@@ -261,12 +271,18 @@ public class HKSampleType extends HKObjectType {
 
     /**
      * [@property] allowsRecalibrationForEstimates
-     * <p>
+     * 
      * Returns YES if first-party samples of this type are produced using a prediction algorithm, and that algorithm
      * supports recalibration. To recalibrate the
      * estimates for a sample type, see -[HKHealthStore recalibrateEstimatesForSampleType:atDate:completion:]
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("allowsRecalibrationForEstimates")
     public native boolean allowsRecalibrationForEstimates();
+
+    @Generated
+    @Selector("visionPrescriptionType")
+    public static native HKPrescriptionType visionPrescriptionType();
 }

@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -45,6 +48,12 @@ public class INMediaSearch extends NSObject implements NSCopying, NSSecureCoding
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use `moodNames` property instead.
+     */
+    @Deprecated
     @Generated
     @Selector("activityNames")
     public native NSArray<String> activityNames();

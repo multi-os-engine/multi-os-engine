@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -189,14 +192,24 @@ public class PKContact extends NSObject {
 
     /**
      * This property is now deprecated. Use the -subLocality property on [PKContact -postalAddress] instead
+     * 
+     * API-Since: 9.2
+     * Deprecated-Since: 10.3
+     * Deprecated-Message: Use subLocality and subAdministrativeArea on -postalAddress instead
      */
+    @Deprecated
     @Generated
     @Selector("setSupplementarySubLocality:")
     public native void setSupplementarySubLocality(String value);
 
     /**
      * This property is now deprecated. Use the -subLocality property on [PKContact -postalAddress] instead
+     * 
+     * API-Since: 9.2
+     * Deprecated-Since: 10.3
+     * Deprecated-Message: Use subLocality and subAdministrativeArea on -postalAddress instead
      */
+    @Deprecated
     @Generated
     @Selector("supplementarySubLocality")
     public native String supplementarySubLocality();

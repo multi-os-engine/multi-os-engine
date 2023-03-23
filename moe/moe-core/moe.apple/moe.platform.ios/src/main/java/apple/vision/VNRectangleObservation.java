@@ -1,8 +1,6 @@
 package apple.vision;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -26,17 +24,22 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * VNRectangleObservation
  * [@superclass] VNObservation
- * <p>
+ * 
  * VNRectangleObservation is the result of a rectangle detector
- * <p>
+ * 
  * The VNRectangleObservation has a bounding box that encompasses the rectangle found in the image. The rectangle itself
  * is defined by the four corner point properties. The rectangle can be rotated in or even out of plane. A common use
  * case is to use the CIPerspectiveTransform filter to correct a detected rectangle to its 'flat upright'
  * representation. All coordinates are normalized and the coordinates can be outside the image.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -195,6 +198,9 @@ public class VNRectangleObservation extends VNDetectedObjectObservation {
     public static native VNRectangleObservation observationWithRequestRevisionBoundingBox(@NUInt long requestRevision,
             @ByValue CGRect boundingBox);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("rectangleObservationWithRequestRevision:topLeft:bottomLeft:bottomRight:topRight:")
     public static native VNRectangleObservation rectangleObservationWithRequestRevisionTopLeftBottomLeftBottomRightTopRight(

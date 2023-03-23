@@ -3,16 +3,45 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 13.0
+ * Deprecated-Since: 13.0
+ */
+@Deprecated
 @Generated
 public final class UIDirectionalRectEdge {
     @Generated
     private UIDirectionalRectEdge() {
     }
 
-    @Generated @NUInt public static final long None = 0x0000000000000000L;
-    @Generated @NUInt public static final long Top = 0x0000000000000001L;
-    @Generated @NUInt public static final long Leading = 0x0000000000000002L;
-    @Generated @NUInt public static final long Bottom = 0x0000000000000004L;
-    @Generated @NUInt public static final long Trailing = 0x0000000000000008L;
-    @Generated @NUInt public static final long All = 0x000000000000000FL;
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated @NUInt public static final long Top = 0x0000000000000001L;
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated @NUInt public static final long Leading = 0x0000000000000002L;
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated @NUInt public static final long Bottom = 0x0000000000000004L;
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated @NUInt public static final long Trailing = 0x0000000000000008L;
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated @NUInt public static final long All = 0x000000000000000FL;
 }

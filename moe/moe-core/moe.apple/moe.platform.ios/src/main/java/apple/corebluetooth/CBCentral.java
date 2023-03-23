@@ -40,8 +40,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CBCentral
- * <p>
+ * 
  * Represents a remote central.
+ * 
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -159,9 +162,9 @@ public class CBCentral extends CBPeer {
 
     /**
      * [@property] maximumUpdateValueLength
-     * <p>
+     * 
      * The maximum amount of data, in bytes, that can be received by the central in a single notification or indication.
-     *
+     * 
      * @see updateValue:forCharacteristic:onSubscribedCentrals:
      */
     @Generated

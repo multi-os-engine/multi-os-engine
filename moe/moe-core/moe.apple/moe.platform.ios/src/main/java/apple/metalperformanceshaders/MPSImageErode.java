@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageErode
- * <p>
+ * 
  * The MPSImageErode filter finds the minimum pixel value in a rectangular region centered around each pixel in the
  * source image. It is like the MPSImageAreaMin, except that the intensity at each position is calculated relative
  * to a different value before determining which is the maximum pixel value, allowing for shaped, non-rectangular
@@ -59,11 +59,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@endcode]
  * A filter that contains all zeros is identical to a MPSImageAreaMin filter. The center filter element
  * is assumed to be 0, to avoid causing a general lightening of the image.
- * <p>
+ * 
  * The definition of the filter for MPSImageErode is different from vImage. (MPSErode_filter_value =
  * 1.0f-vImageErode_filter_value.)
  * This allows MPSImageDilate and MPSImageErode to use the same filter, making open and close operators easier to write.
  * The edgeMode property is assumed to always be MPSImageEdgeModeClamp for this filter.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalPerformanceShaders")

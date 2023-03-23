@@ -166,6 +166,8 @@ public class NSDirectoryEnumerator<_ObjectType> extends NSEnumerator<_ObjectType
      * This method returns the number of levels deep the current object is in the directory hierarchy being enumerated.
      * The directory passed to -enumeratorAtURL:includingPropertiesForKeys:options:errorHandler: is considered to be
      * level 0.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("level")
@@ -174,6 +176,8 @@ public class NSDirectoryEnumerator<_ObjectType> extends NSEnumerator<_ObjectType
 
     /**
      * This method is spelled correctly.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("skipDescendants")
@@ -187,6 +191,8 @@ public class NSDirectoryEnumerator<_ObjectType> extends NSEnumerator<_ObjectType
      * For NSDirectoryEnumerators created with -enumeratorAtURL:includingPropertiesForKeys:options:errorHandler: and the
      * NSDirectoryEnumerationIncludesDirectoriesPostOrder option, this property is YES when the current object is a
      * directory that is being enumerated after all of its contents have been enumerated.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isEnumeratingDirectoryPostOrder")

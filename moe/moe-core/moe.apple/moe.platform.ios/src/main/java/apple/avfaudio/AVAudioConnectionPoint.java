@@ -24,13 +24,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAudioConnectionPoint
- * <p>
+ * 
  * A representation of either a source or destination connection point in AVAudioEngine.
- * <p>
+ * 
  * AVAudioConnectionPoint describes either a source or destination connection point (node, bus)
  * in AVAudioEngine's graph.
- * <p>
+ * 
  * Instances of this class are immutable.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AVFAudio")
@@ -66,7 +68,7 @@ public class AVAudioConnectionPoint extends NSObject {
 
     /**
      * [@property] bus
-     * <p>
+     * 
      * Returns the bus on the node in the connection point.
      */
     @Generated
@@ -111,11 +113,11 @@ public class AVAudioConnectionPoint extends NSObject {
 
     /**
      * initWithNode:bus:
-     * <p>
+     * 
      * Create a connection point object.
-     * <p>
+     * 
      * If the node is nil, this method fails (returns nil).
-     *
+     * 
      * @param node the source or destination node
      * @param bus  the output or input bus on the node
      */
@@ -151,7 +153,7 @@ public class AVAudioConnectionPoint extends NSObject {
 
     /**
      * [@property] node
-     * <p>
+     * 
      * Returns the node in the connection point.
      */
     @Generated

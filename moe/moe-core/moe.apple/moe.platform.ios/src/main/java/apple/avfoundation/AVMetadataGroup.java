@@ -40,11 +40,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVMetadataGroup
- * <p>
+ * 
  * AVMetadataGroup is the common superclass for AVTimedMetadataGroup and AVDateRangeMetadataGroup; each represents a
  * collection of metadata items associated with a segment of a timeline. AVTimedMetadataGroup is typically used with
  * content that defines an independent timeline, while AVDateRangeMetadataGroup is typically used with content that's
  * associated with a specific range of dates.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AVFoundation")
@@ -158,6 +160,8 @@ public class AVMetadataGroup extends NSObject {
 
     /**
      * indicates the classifyingLabel of the group; nil if no classifyingLabel is indicated
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("classifyingLabel")
@@ -173,6 +177,8 @@ public class AVMetadataGroup extends NSObject {
 
     /**
      * indicates the unique identifier of the group; nil if no unique identifier is indicated
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("uniqueID")

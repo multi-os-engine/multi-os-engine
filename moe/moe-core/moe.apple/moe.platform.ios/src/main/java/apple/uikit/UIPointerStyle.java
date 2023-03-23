@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -144,7 +147,7 @@ public class UIPointerStyle extends NSObject implements NSCopying {
 
     /**
      * Applies the provided content effect and pointer shape within the current region.
-     *
+     * 
      * @param effect The desired pointer effect.
      * @param shape  The desired pointer shape. If omitted, a pointer will be generated automatically from the effect's
      *               preview view.
@@ -155,7 +158,7 @@ public class UIPointerStyle extends NSObject implements NSCopying {
 
     /**
      * Morphs the pointer into the provided shape when hovering over the current region.
-     *
+     * 
      * @param shape The desired pointer shape.
      * @param axes  Axes along which to recenter the pointer on touch up.
      */
@@ -175,6 +178,8 @@ public class UIPointerStyle extends NSObject implements NSCopying {
     /**
      * Accessories to display alongside this UIPointerStyle. Supports up to 4 accessories.
      * The system will attempt to animate between neighboring or similar accessories.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("accessories")
@@ -183,6 +188,8 @@ public class UIPointerStyle extends NSObject implements NSCopying {
     /**
      * Accessories to display alongside this UIPointerStyle. Supports up to 4 accessories.
      * The system will attempt to animate between neighboring or similar accessories.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAccessories:")
@@ -191,6 +198,8 @@ public class UIPointerStyle extends NSObject implements NSCopying {
     /**
      * Pointer style that displays an unconstrained system pointer. Use this to display accessories alongside the
      * default pointer.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("systemPointerStyle")

@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -150,6 +153,8 @@ public class PHObjectChangeDetails<_ObjectType> extends NSObject {
 
     /**
      * YES if the image or video content for this object has been changed
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("assetContentChanged")
@@ -161,13 +166,18 @@ public class PHObjectChangeDetails<_ObjectType> extends NSObject {
 
     /**
      * the object in the state after this change
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("objectAfterChanges")
     public native PHObject objectAfterChanges();
 
     /**
-     * the object in the state before this change (returns the object that was passed in to changeDetailsForObject:)
+     * returns the object that was passed in to changeDetailsForObject: (used to determine the changes to the object vs.
+     * the objectAfterChanges)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("objectBeforeChanges")
@@ -175,6 +185,8 @@ public class PHObjectChangeDetails<_ObjectType> extends NSObject {
 
     /**
      * YES if the object was deleted
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("objectWasDeleted")

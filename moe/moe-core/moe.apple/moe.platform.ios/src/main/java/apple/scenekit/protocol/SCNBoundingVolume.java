@@ -27,9 +27,9 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] SCNBoundingVolume
- * <p>
+ * 
  * The SCNBoundingVolume protocol is implemented by objects which can compute their bounding boxes.
- * <p>
+ * 
  * You can currently use this protocol to get the bounding boxes of nodes and geometries.
  */
 @Generated
@@ -39,11 +39,11 @@ import org.moe.natj.objc.ann.Selector;
 public interface SCNBoundingVolume {
     /**
      * getBoundingBoxMin:max:
-     * <p>
+     * 
      * Fill the min and max vectors with the min and max vertex of the bounding box.
-     * <p>
+     * 
      * the returned bounding box is in local space of the receiver.
-     *
+     * 
      * @param min A pointer to a SCNVector3 to store the min vertex of the bounding box into.
      * @param max A pointer to a SCNVector3 to store the max vertex of the bounding box into.
      */
@@ -53,12 +53,12 @@ public interface SCNBoundingVolume {
 
     /**
      * getBoundingSphereCenter:radius:
-     * <p>
+     * 
      * Fill the center vector with the center of the bounding sphere and store the radius of the bounding sphere in
      * 'radius'.
-     * <p>
+     * 
      * the returned bounding sphere is in local space of the receiver.
-     *
+     * 
      * @param center A pointer to a SCNVector3 to store the center of the bounding sphere into.
      * @param radius A pointer to a CGFloat to store the radius of the bounding sphere into.
      */
@@ -68,11 +68,11 @@ public interface SCNBoundingVolume {
 
     /**
      * setBoundingBoxMin:max:
-     * <p>
+     * 
      * Override the receiver bounding box with the min and max vectors provided (in local space of the receiver).
-     * <p>
+     * 
      * Passing nil as arguments will recompute the original bounding box of the receiver.
-     *
+     * 
      * @param min A pointer to a SCNVector3 representing the min vertex of the desired bounding box.
      * @param max A pointer to a SCNVector3 representing the max vertex of the desired bounding box.
      */

@@ -1,7 +1,6 @@
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
 import apple.coremedia.struct.CMTime;
 import apple.coremedia.struct.CMTimeRange;
 import apple.foundation.NSArray;
@@ -32,18 +31,22 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSLocale;
+import apple.corefoundation.struct.CGAffineTransform;
 
 /**
  * AVMutableMovie
- * <p>
+ * 
  * AVMutableMovie adds to its immutable superclass, AVMovie, several categories of methods for editing QuickTime movie
  * files, e.g. inserting and removing time ranges of media, adding and removing tracks, and modifying the metadata
  * collections stored therein.
- * <p>
+ * 
  * By default, after creating an AVMutableMovie the defaultMediaDataStorage property will be nil and each associated
  * AVMutableMovieTrack's mediaDataStorage property will be nil. If you want to create an AVMutableMovie from a file and
  * then append sample buffers to any of its tracks, you must first set one of these properties to indicate where the
  * sample data should be written.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("AVFoundation")
@@ -65,16 +68,20 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * addMutableTrackWithMediaType:copySettingsFromTrack:options:
-     * <p>
+     * 
      * Adds an empty track to the target movie.
-     * <p>
+     * 
      * The trackID of the newly added track is a property of the returned instance of AVMutableMovieTrack.
-     *
-     * @param mediaType The media type of the new track (e.g. AVMediaTypeVideo for a video track).
-     * @param track     If you wish to transfer settings from an existing track, including track userdata and metadata,
-     *                  width, height, preferred volume, etc., pass a reference to an AVAssetTrack representing that
-     *                  track. Otherwise pass nil.
-     * @param options   An NSDictionary object that contains keys for specifying options for the initialization of the
+     * This method throws an exception if media type is not equal to the track's media type.
+     * Note that metadata will not be automatically copied.
+     * 
+     * @param mediaType
+     *                  The media type of the new track (e.g. AVMediaTypeVideo for a video track).
+     * @param track
+     *                  If you wish to transfer settings from an existing track, including width, height, preferred
+     *                  volume, etc., pass a reference to an AVAssetTrack representing that track. Otherwise pass nil.
+     * @param options
+     *                  An NSDictionary object that contains keys for specifying options for the initialization of the
      *                  new AVMutableMovieTrack object. Pass nil for default initialization behavior.
      * @return An AVMutableMovieTrack object
      */
@@ -85,16 +92,18 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * addMutableTracksCopyingSettingsFromTracks:options:
-     * <p>
+     * 
      * Adds one or more empty tracks to the target movie, copying track settings from the source tracks.
-     * <p>
+     * 
      * This method creates one or more empty tracks in the target movie and configures those tracks with settings (such
      * as track userdata and metadata, width, height, and preferred volume) copied from the source tracks in the
      * existingTracks array. Also, properties involving pairs of tracks (such as track references) are copied from the
      * source tracks to the target tracks.
-     *
-     * @param existingTracks An array of AVAssetTrack objects.
-     * @param options        An NSDictionary object that contains keys for specifying options for the initialization of
+     * 
+     * @param existingTracks
+     *                       An array of AVAssetTrack objects.
+     * @param options
+     *                       An NSDictionary object that contains keys for specifying options for the initialization of
      *                       the new AVMutableMovieTrack objects. Pass nil for default initialization behavior.
      * @return An array of AVMutableMovieTrack objects; the index of a track in this array is the same as the index of
      *         its source track in the existingTracks array.
@@ -146,9 +155,9 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * [@property] defaultMediaDataStorage
-     * <p>
+     * 
      * The default storage container for media data added to a movie.
-     * <p>
+     * 
      * The value of this property is an AVMediaDataStorage object that indicates where sample data that is added to a
      * movie should be written, for any track for whose mediaDataStorage property is nil.
      */
@@ -175,21 +184,24 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * initWithData:options:error:
-     * <p>
+     * 
      * Creates an AVMutableMovie object from a movie header stored in an NSData object.
-     * <p>
+     * 
      * You can use this method to operate on movie headers that are not stored in files. In general you should avoid
      * loading an entire movie file with its media data into an instance of NSData!
-     * <p>
+     * 
      * By default, the defaultMediaDataStorage property will be nil and each associated AVMutableMovieTrack's
      * mediaDataStorage property will be nil. If you want to create an AVMutableMovie from an NSData object and then
      * append sample buffers to any of its tracks, you must first set one of these properties to indicate where the
      * sample data should be written.
-     *
-     * @param data     An NSData object containing a movie header.
-     * @param options  An NSDictionary object that contains keys for specifying options for the initialization of the
+     * 
+     * @param data
+     *                 An NSData object containing a movie header.
+     * @param options
+     *                 An NSDictionary object that contains keys for specifying options for the initialization of the
      *                 AVMutableMovie object.
-     * @param outError If an error occurs creating a movie, describes the nature of the failure.
+     * @param outError
+     *                 If an error occurs creating a movie, describes the nature of the failure.
      * @return An AVMutableMovie object
      */
     @Generated
@@ -199,22 +211,25 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * initWithSettingsFromMovie:options:error:
-     * <p>
+     * 
      * Creates an AVMutableMovie object without tracks (and therefore without media).
-     * <p>
+     * 
      * By default, the defaultMediaDataStorage property will be nil and each associated AVMovieTrack's mediaDataStorage
      * property will be nil.
      * If you want to create an AVMutableMovie from an NSData object and then append sample buffers to any of its
      * tracks, you must first set one of these properties to indicate where the sample data should be written.
-     *
-     * @param movie    If you wish to transfer settings from an existing movie (including movie userdata and metadata,
+     * 
+     * @param movie
+     *                 If you wish to transfer settings from an existing movie (including movie userdata and metadata,
      *                 preferred rate, preferred volume, etc.), pass a reference to an AVMovie object representing that
      *                 movie. Otherwise pass nil. The userdata and metadata from the source movie may need to be
      *                 converted if the format of that movie differs from fileType; you may wish to inspect the userdata
      *                 or metadata of the receiver to ensure that important data was copied.
-     * @param options  An NSDictionary object that contains keys for specifying options for the initialization of the
+     * @param options
+     *                 An NSDictionary object that contains keys for specifying options for the initialization of the
      *                 AVMutableMovie object. Pass nil for default initialization behavior.
-     * @param outError If an error occurs creating a movie, describes the nature of the failure.
+     * @param outError
+     *                 If an error occurs creating a movie, describes the nature of the failure.
      * @return An AVMutableMovie object
      */
     @Generated
@@ -228,19 +243,22 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * initWithURL:options:error:
-     * <p>
+     * 
      * Creates an AVMutableMovie object from a movie header stored in a QuickTime movie file or ISO base media file.
-     * <p>
+     * 
      * By default, the defaultMediaDataStorage property will be nil and each associated AVMutableMovieTrack's
      * mediaDataStorage property will be nil.
      * If you want to create an AVMutableMovie from a file and then append sample buffers to any of its tracks, you must
      * first set one of these properties
      * to indicate where the sample data should be written.
-     *
-     * @param URL      An NSURL object that specifies a file containing a movie header.
-     * @param options  An NSDictionary object that contains keys for specifying options for the initialization of the
+     * 
+     * @param URL
+     *                 An NSURL object that specifies a file containing a movie header.
+     * @param options
+     *                 An NSDictionary object that contains keys for specifying options for the initialization of the
      *                 AVMutableMovie object.
-     * @param outError If an error occurs creating a movie, describes the nature of the failure.
+     * @param outError
+     *                 If an error occurs creating a movie, describes the nature of the failure.
      * @return An AVMutableMovie object
      */
     @Generated
@@ -250,10 +268,11 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * insertEmptyTimeRange:
-     * <p>
+     * 
      * Adds an empty time range to the target movie.
-     *
-     * @param timeRange The time range to be made empty. Note that you cannot add empty time ranges to the end of a
+     * 
+     * @param timeRange
+     *                  The time range to be made empty. Note that you cannot add empty time ranges to the end of a
      *                  movie.
      */
     @Generated
@@ -262,19 +281,24 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * insertTimeRange:ofAsset:atTime:copySampleData:error:
-     * <p>
+     * 
      * Inserts all the tracks of a timeRange of an asset into a movie.
-     * <p>
+     * 
      * This method may add new tracks to the target movie to ensure that all tracks of the asset are represented in the
      * inserted timeRange.
      * Existing content at the specified startTime will be pushed out by the duration of timeRange.
-     *
-     * @param timeRange      The time range of the asset to be inserted.
-     * @param asset          An AVAsset object indicating the source of the inserted media. Only instances of AVURLAsset
+     * Note that metadata will not be automatically copied.
+     * 
+     * @param timeRange
+     *                       The time range of the asset to be inserted.
+     * @param asset
+     *                       An AVAsset object indicating the source of the inserted media. Only instances of AVURLAsset
      *                       and AVComposition are supported.
      *                       Must not be nil.
-     * @param startTime      The time in the target movie at which the media is to be inserted.
-     * @param copySampleData A BOOL value that indicates whether sample data is to be copied from the source to the
+     * @param startTime
+     *                       The time in the target movie at which the media is to be inserted.
+     * @param copySampleData
+     *                       A BOOL value that indicates whether sample data is to be copied from the source to the
      *                       destination during edits.
      *                       If YES, the sample data is written to the location specified by the track property
      *                       mediaDataStorage if non-nil,
@@ -284,7 +308,8 @@ public class AVMutableMovie extends AVMovie {
      *                       original container will be added as necessary.
      *                       Note that in this case, this method will fail if the source AVAsset is not able to provide
      *                       sample reference information for the original container.
-     * @param outError       If the insertion fails, an NSError object that describes the nature of the failure.
+     * @param outError
+     *                       If the insertion fails, an NSError object that describes the nature of the failure.
      * @return A BOOL value that indicates the success of the insertion.
      */
     @Generated
@@ -308,9 +333,9 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * [@property] interleavingPeriod
-     * <p>
+     * 
      * A CMTime that indicates the duration for interleaving runs of samples of each track.
-     * <p>
+     * 
      * The default interleaving period is 0.5 seconds.
      */
     @Generated
@@ -320,9 +345,9 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * [@property] modified
-     * <p>
+     * 
      * Whether a movie has been modified.
-     * <p>
+     * 
      * The value of this property is a BOOL that indicates whether the AVMutableMovie object has been modified since it
      * was created, was last written, or had its modified state cleared via a call to setModified:NO.
      */
@@ -340,9 +365,9 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * [@property] metadata
-     * <p>
+     * 
      * A collection of metadata stored by the movie.
-     * <p>
+     * 
      * The value of this property is an array of AVMetadataItem objects representing the collection of metadata stored
      * by the movie.
      */
@@ -360,21 +385,26 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * movieWithData:options:error:
-     * <p>
+     * 
      * Creates an AVMutableMovie object from a movie header stored in an NSData object.
-     * <p>
+     * 
      * You can use this method to operate on movie headers that are not stored in files. In general you should avoid
      * loading an entire movie file with its media data into an instance of NSData!
-     * <p>
+     * 
      * By default, the defaultMediaDataStorage property will be nil and each associated AVMutableMovieTrack's
      * mediaDataStorage property will be nil. If you want to create an AVMutableMovie from an NSData object and then
      * append sample buffers to any of its tracks, you must first set one of these properties to indicate where the
      * sample data should be written.
-     *
-     * @param data     An NSData object containing a movie header.
-     * @param options  An NSDictionary object that contains keys for specifying options for the initialization of the
+     * 
+     * API-Since: 13.0
+     * 
+     * @param data
+     *                 An NSData object containing a movie header.
+     * @param options
+     *                 An NSDictionary object that contains keys for specifying options for the initialization of the
      *                 AVMutableMovie object.
-     * @param outError If an error occurs creating a movie, describes the nature of the failure.
+     * @param outError
+     *                 If an error occurs creating a movie, describes the nature of the failure.
      * @return An AVMutableMovie object
      */
     @Generated
@@ -384,22 +414,25 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * movieWithSettingsFromMovie:options:error:
-     * <p>
+     * 
      * Creates an AVMutableMovie object without tracks (and therefore without media).
-     * <p>
+     * 
      * By default, the defaultMediaDataStorage property will be nil and each associated AVMovieTrack's mediaDataStorage
      * property will be nil.
      * If you want to create an AVMutableMovie from an NSData object and then append sample buffers to any of its
      * tracks, you must first set one of these properties to indicate where the sample data should be written.
-     *
-     * @param movie    If you wish to transfer settings from an existing movie (including movie userdata and metadata,
+     * 
+     * @param movie
+     *                 If you wish to transfer settings from an existing movie (including movie userdata and metadata,
      *                 preferred rate, preferred volume, etc.), pass a reference to an AVMovie object representing that
      *                 movie. Otherwise pass nil. The userdata and metadata from the source movie may need to be
      *                 converted if the format of that movie differs from fileType; you may wish to inspect the userdata
      *                 or metadata of the receiver to ensure that important data was copied.
-     * @param options  An NSDictionary object that contains keys for specifying options for the initialization of the
+     * @param options
+     *                 An NSDictionary object that contains keys for specifying options for the initialization of the
      *                 AVMutableMovie object. Pass nil for default initialization behavior.
-     * @param outError If an error occurs creating a movie, describes the nature of the failure.
+     * @param outError
+     *                 If an error occurs creating a movie, describes the nature of the failure.
      * @return An AVMutableMovie object
      */
     @Generated
@@ -413,19 +446,22 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * movieWithURL:options:error:
-     * <p>
+     * 
      * Creates an AVMutableMovie object from a movie header stored in a QuickTime movie file or ISO base media file.
-     * <p>
+     * 
      * By default, the defaultMediaDataStorage property will be nil and each associated AVMutableMovieTrack's
      * mediaDataStorage property will be nil.
      * If you want to create an AVMutableMovie from a file and then append sample buffers to any of its tracks, you must
      * first set one of these properties
      * to indicate where the sample data should be written.
-     *
-     * @param URL      An NSURL object that specifies a file containing a movie header.
-     * @param options  An NSDictionary object that contains keys for specifying options for the initialization of the
+     * 
+     * @param URL
+     *                 An NSURL object that specifies a file containing a movie header.
+     * @param options
+     *                 An NSDictionary object that contains keys for specifying options for the initialization of the
      *                 AVMutableMovie object.
-     * @param outError If an error occurs creating a movie, describes the nature of the failure.
+     * @param outError
+     *                 If an error occurs creating a movie, describes the nature of the failure.
      * @return An AVMutableMovie object
      */
     @Generated
@@ -435,16 +471,17 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * mutableTrackCompatibleWithTrack:
-     * <p>
+     * 
      * Provides a reference to a track of a mutable movie into which any time range of an AVAssetTrack
      * can be inserted (via -[AVMutableMovieTrack insertTimeRange:ofTrack:atTime:copySampleData:error:]).
-     * <p>
+     * 
      * For best performance, the number of tracks in a movie should be kept to a minimum, corresponding to the
      * number for which media data must be presented in parallel. If media data of the same type is to be presented
      * serially, even from multiple assets, a single track of that media type should be used. This method,
      * -mutableTrackCompatibleWithTrack:, can help the client to identify an existing target track for an insertion.
-     *
-     * @param track A reference to the AVAssetTrack from which a time range may be inserted.
+     * 
+     * @param track
+     *              A reference to the AVAssetTrack from which a time range may be inserted.
      * @return An AVMutableMovieTrack that can accommodate the insertion.
      *         If no such track is available, the result is nil. A new track of the same media type
      *         as the AVAssetTrack can be created via -addMutableTrackWithMediaType:copySettingsFromTrack:options:,
@@ -461,7 +498,7 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * [@property] preferredRate
-     * <p>
+     * 
      * The natural rate at which the movie is to be played; often but not always 1.0.
      */
     @Generated
@@ -470,7 +507,7 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * [@property] preferredTransform
-     * <p>
+     * 
      * A CGAffineTransform indicating the transform specified in the movie's storage container as the preferred
      * transformation of the visual media data for display purposes; the value is often but not always
      * CGAffineTransformIdentity.
@@ -482,7 +519,7 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * [@property] preferredVolume
-     * <p>
+     * 
      * The preferred volume of the audible media data of the movie; often but not always 1.0.
      */
     @Generated
@@ -491,10 +528,11 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * removeTimeRange:
-     * <p>
+     * 
      * Removes a specified time range from a movie.
-     *
-     * @param timeRange The time range to be removed.
+     * 
+     * @param timeRange
+     *                  The time range to be removed.
      */
     @Generated
     @Selector("removeTimeRange:")
@@ -502,10 +540,11 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * removeTrack:
-     * <p>
+     * 
      * Removes a track from the target movie.
-     *
-     * @param track The track to be removed.
+     * 
+     * @param track
+     *              The track to be removed.
      */
     @Generated
     @Selector("removeTrack:")
@@ -521,11 +560,13 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * scaleTimeRange:toDuration:
-     * <p>
+     * 
      * Changes the duration of a time range of a movie.
-     *
-     * @param timeRange The time range to be scaled.
-     * @param duration  The new duration of the time range.
+     * 
+     * @param timeRange
+     *                  The time range to be scaled.
+     * @param duration
+     *                  The new duration of the time range.
      */
     @Generated
     @Selector("scaleTimeRange:toDuration:")
@@ -533,9 +574,9 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * [@property] defaultMediaDataStorage
-     * <p>
+     * 
      * The default storage container for media data added to a movie.
-     * <p>
+     * 
      * The value of this property is an AVMediaDataStorage object that indicates where sample data that is added to a
      * movie should be written, for any track for whose mediaDataStorage property is nil.
      */
@@ -545,9 +586,9 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * [@property] interleavingPeriod
-     * <p>
+     * 
      * A CMTime that indicates the duration for interleaving runs of samples of each track.
-     * <p>
+     * 
      * The default interleaving period is 0.5 seconds.
      */
     @Generated
@@ -556,9 +597,9 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * [@property] metadata
-     * <p>
+     * 
      * A collection of metadata stored by the movie.
-     * <p>
+     * 
      * The value of this property is an array of AVMetadataItem objects representing the collection of metadata stored
      * by the movie.
      */
@@ -568,9 +609,9 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * [@property] modified
-     * <p>
+     * 
      * Whether a movie has been modified.
-     * <p>
+     * 
      * The value of this property is a BOOL that indicates whether the AVMutableMovie object has been modified since it
      * was created, was last written, or had its modified state cleared via a call to setModified:NO.
      */
@@ -580,7 +621,7 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * [@property] preferredRate
-     * <p>
+     * 
      * The natural rate at which the movie is to be played; often but not always 1.0.
      */
     @Generated
@@ -589,7 +630,7 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * [@property] preferredTransform
-     * <p>
+     * 
      * A CGAffineTransform indicating the transform specified in the movie's storage container as the preferred
      * transformation of the visual media data for display purposes; the value is often but not always
      * CGAffineTransformIdentity.
@@ -600,7 +641,7 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * [@property] preferredVolume
-     * <p>
+     * 
      * The preferred volume of the audible media data of the movie; often but not always 1.0.
      */
     @Generated
@@ -609,14 +650,14 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * [@property] timescale
-     * <p>
+     * 
      * For file types that contain a 'moov' atom, such as QuickTime Movie files, specifies the time scale of the movie.
-     * <p>
+     * 
      * The default movie time scale is 600. In certain cases, you may want to set this to a different value. For
      * instance, a movie that
      * contains a single audio track should typically have the movie time scale set to the media time scale of that
      * track.
-     * <p>
+     * 
      * This property should be set on a new empty movie before any edits are performed on the movie.
      */
     @Generated
@@ -633,14 +674,14 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * [@property] timescale
-     * <p>
+     * 
      * For file types that contain a 'moov' atom, such as QuickTime Movie files, specifies the time scale of the movie.
-     * <p>
+     * 
      * The default movie time scale is 600. In certain cases, you may want to set this to a different value. For
      * instance, a movie that
      * contains a single audio track should typically have the movie time scale set to the media time scale of that
      * track.
-     * <p>
+     * 
      * This property should be set on a new empty movie before any edits are performed on the movie.
      */
     @Generated
@@ -649,12 +690,13 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * trackWithTrackID:
-     * <p>
+     * 
      * Provides an instance of AVMutableMovieTrack that represents the track of the specified trackID.
-     * <p>
+     * 
      * Becomes callable without blocking when the key @"tracks" has been loaded
-     *
-     * @param trackID The trackID of the requested AVMutableMovieTrack.
+     * 
+     * @param trackID
+     *                The trackID of the requested AVMutableMovieTrack.
      * @return An instance of AVMutableMovieTrack; may be nil if no track of the specified trackID is available.
      */
     @Generated
@@ -663,9 +705,9 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * [@property] tracks
-     * <p>
+     * 
      * The tracks in a mutable movie.
-     * <p>
+     * 
      * The value of this property is an array of tracks the mutable movie contains; the tracks are of type
      * AVMutableMovieTrack.
      */
@@ -675,12 +717,13 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * tracksWithMediaCharacteristic:
-     * <p>
+     * 
      * Provides an array of AVMutableMovieTracks of the asset that present media with the specified characteristic.
-     * <p>
+     * 
      * Becomes callable without blocking when the key @"tracks" has been loaded
-     *
-     * @param mediaCharacteristic The media characteristic according to which the receiver filters its
+     * 
+     * @param mediaCharacteristic
+     *                            The media characteristic according to which the receiver filters its
      *                            AVMutableMovieTracks. (Media characteristics are defined in AVMediaFormat.h)
      * @return An NSArray of AVMutableMovieTracks; may be empty if no tracks with the specified characteristic are
      *         available.
@@ -691,12 +734,13 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * tracksWithMediaType:
-     * <p>
+     * 
      * Provides an array of AVMutableMovieTracks of the asset that present media of the specified media type.
-     * <p>
+     * 
      * Becomes callable without blocking when the key @"tracks" has been loaded
-     *
-     * @param mediaType The media type according to which the receiver filters its AVMutableMovieTracks. (Media types
+     * 
+     * @param mediaType
+     *                  The media type according to which the receiver filters its AVMutableMovieTracks. (Media types
      *                  are defined in AVMediaFormat.h)
      * @return An NSArray of AVMutableMovieTracks; may be empty if no tracks of the specified media type are available.
      */
@@ -711,12 +755,16 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * loadTrackWithTrackID:completionHandler:
-     * <p>
+     * 
      * Loads an instance of AVMutableMovieTrack that represents the track of the specified trackID.
-     *
-     * @param trackID           The trackID of the requested AVMutableMovieTrack.
-     * @param completionHandler A block that is called when the loading is finished, with either the loaded track (which
+     * 
+     * @param trackID
+     *                          The trackID of the requested AVMutableMovieTrack.
+     * @param completionHandler
+     *                          A block that is called when the loading is finished, with either the loaded track (which
      *                          may be nil if no track of the specified trackID is available) or an error.
+     * 
+     *                          API-Since: 15.0
      */
     @Generated
     @Selector("loadTrackWithTrackID:completionHandler:")
@@ -732,14 +780,18 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * loadTracksWithMediaCharacteristic:completionHandler:
-     * <p>
+     * 
      * Loads an array of AVMutableMovieTracks of the asset that present media with the specified characteristic.
-     *
-     * @param mediaCharacteristic The media characteristic according to which AVAsset filters its AVMutableMovieTracks.
+     * 
+     * @param mediaCharacteristic
+     *                            The media characteristic according to which AVAsset filters its AVMutableMovieTracks.
      *                            (Media characteristics are defined in AVMediaFormat.h.)
-     * @param completionHandler   A block that is called when the loading is finished, with either the loaded tracks
+     * @param completionHandler
+     *                            A block that is called when the loading is finished, with either the loaded tracks
      *                            (which may be empty if no tracks with the specified characteristic are available) or
      *                            an error.
+     * 
+     *                            API-Since: 15.0
      */
     @Generated
     @Selector("loadTracksWithMediaCharacteristic:completionHandler:")
@@ -756,13 +808,17 @@ public class AVMutableMovie extends AVMovie {
 
     /**
      * loadTracksWithMediaType:completionHandler:
-     * <p>
+     * 
      * Loads an array of AVMutableMovieTracks of the asset that present media of the specified media type.
-     *
-     * @param mediaType         The media type according to which AVAsset filters its AVMutableMovieTracks. (Media types
+     * 
+     * @param mediaType
+     *                          The media type according to which AVAsset filters its AVMutableMovieTracks. (Media types
      *                          are defined in AVMediaFormat.h.)
-     * @param completionHandler A block that is called when the loading is finished, with either the loaded tracks
+     * @param completionHandler
+     *                          A block that is called when the loading is finished, with either the loaded tracks
      *                          (which may be empty if no tracks of the specified media type are available) or an error.
+     * 
+     *                          API-Since: 15.0
      */
     @Generated
     @Selector("loadTracksWithMediaType:completionHandler:")
@@ -775,4 +831,26 @@ public class AVMutableMovie extends AVMovie {
         @Generated
         void call_loadTracksWithMediaTypeCompletionHandler(NSArray<? extends AVMutableMovieTrack> arg0, NSError arg1);
     }
+
+    @Generated
+    @Selector("chapterMetadataGroupsBestMatchingPreferredLanguages:")
+    public native NSArray<? extends AVTimedMetadataGroup> chapterMetadataGroupsBestMatchingPreferredLanguages(
+            NSArray<String> preferredLanguages);
+
+    @Generated
+    @Selector("chapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:")
+    public native NSArray<? extends AVTimedMetadataGroup> chapterMetadataGroupsWithTitleLocaleContainingItemsWithCommonKeys(
+            NSLocale locale, NSArray<String> commonKeys);
+
+    @Generated
+    @Selector("mediaSelectionGroupForMediaCharacteristic:")
+    public native AVMediaSelectionGroup mediaSelectionGroupForMediaCharacteristic(String mediaCharacteristic);
+
+    @Generated
+    @Selector("metadataForFormat:")
+    public native NSArray<? extends AVMetadataItem> metadataForFormat(String format);
+
+    @Generated
+    @Selector("unusedTrackID")
+    public native int unusedTrackID();
 }

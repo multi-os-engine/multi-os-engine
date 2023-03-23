@@ -22,11 +22,25 @@ import org.moe.natj.general.ann.NInt;
 /**
  * -----------------------------------------------------------------------------
  * Thumbnails
+ * 
+ * API-Since: 3.2
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use AVPlayerViewController in AVKit
  */
 @Deprecated
 @Generated
 public final class MPMovieTimeOption {
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated @Generated @NInt public static final long NearestKeyFrame = 0x0000000000000000L;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated @Generated @NInt public static final long Exact = 0x0000000000000001L;
 
     @Generated

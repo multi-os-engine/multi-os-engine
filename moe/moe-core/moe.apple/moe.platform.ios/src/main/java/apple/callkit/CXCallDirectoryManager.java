@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CallKit")
 @Runtime(ObjCRuntime.class)
@@ -182,6 +185,9 @@ public class CXCallDirectoryManager extends NSObject {
         void call_reloadExtensionWithIdentifierCompletionHandler(NSError error);
     }
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("openSettingsWithCompletionHandler:")
     public native void openSettingsWithCompletionHandler(

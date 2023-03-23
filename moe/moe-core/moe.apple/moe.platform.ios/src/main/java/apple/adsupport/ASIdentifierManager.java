@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("AdSupport")
 @Runtime(ObjCRuntime.class)
@@ -161,6 +164,12 @@ public class ASIdentifierManager extends NSObject {
     @Selector("init")
     public native ASIdentifierManager init();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: This has been replaced by functionality in AppTrackingTransparency's ATTrackingManager class.
+     */
+    @Deprecated
     @Generated
     @Selector("isAdvertisingTrackingEnabled")
     public native boolean isAdvertisingTrackingEnabled();

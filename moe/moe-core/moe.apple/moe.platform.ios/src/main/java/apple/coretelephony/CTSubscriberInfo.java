@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("CoreTelephony")
 @Runtime(ObjCRuntime.class)
@@ -139,6 +142,11 @@ public class CTSubscriberInfo extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 12.1
+     */
+    @Deprecated
     @Generated
     @Selector("subscriber")
     public static native CTSubscriber subscriber();
@@ -156,6 +164,9 @@ public class CTSubscriberInfo extends NSObject {
     @Selector("init")
     public native CTSubscriberInfo init();
 
+    /**
+     * API-Since: 12.1
+     */
     @Generated
     @Selector("subscribers")
     public static native NSArray<? extends CTSubscriber> subscribers();

@@ -17,9 +17,6 @@ limitations under the License.
 package apple.spritekit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGSize;
-import apple.coregraphics.struct.CGVector;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
@@ -50,6 +47,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGSize;
+import apple.corefoundation.struct.CGVector;
 
 /**
  * An emitter of particle sprites.
@@ -202,6 +202,8 @@ public class SKEmitterNode extends SKNode {
     /**
      * Optional dictionary of SKAttributeValues
      * Attributes can be used with custom SKShaders.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("attributeValues")
@@ -419,6 +421,8 @@ public class SKEmitterNode extends SKNode {
 
     /**
      * The order in which particles will be rendered. Defaults to SKParticleRenderOrderOldestLast.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("particleRenderOrder")
@@ -520,6 +524,9 @@ public class SKEmitterNode extends SKNode {
 
     /**
      * The random variance about the starting z-position for each particle. Defaults to 0.0.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @Deprecated
@@ -529,6 +536,9 @@ public class SKEmitterNode extends SKNode {
 
     /**
      * The rate at which to modify the z-position for each particle. Defaults to 0.0.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @Deprecated
@@ -546,6 +556,8 @@ public class SKEmitterNode extends SKNode {
     /**
      * Optional dictionary of SKAttributeValues
      * Attributes can be used with custom SKShaders.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAttributeValues:")
@@ -732,6 +744,8 @@ public class SKEmitterNode extends SKNode {
 
     /**
      * The order in which particles will be rendered. Defaults to SKParticleRenderOrderOldestLast.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setParticleRenderOrder:")
@@ -822,6 +836,9 @@ public class SKEmitterNode extends SKNode {
 
     /**
      * The random variance about the starting z-position for each particle. Defaults to 0.0.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @Deprecated
@@ -830,6 +847,9 @@ public class SKEmitterNode extends SKNode {
 
     /**
      * The rate at which to modify the z-position for each particle. Defaults to 0.0.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @Deprecated
@@ -866,6 +886,9 @@ public class SKEmitterNode extends SKNode {
         }
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setValue:forAttributeNamed:")
     public native void setValueForAttributeNamed(SKAttributeValue value, String key);
@@ -895,6 +918,9 @@ public class SKEmitterNode extends SKNode {
     @Selector("targetNode")
     public native SKNode targetNode();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("valueForAttributeNamed:")
     public native SKAttributeValue valueForAttributeNamed(String key);

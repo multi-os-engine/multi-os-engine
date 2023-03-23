@@ -19,10 +19,24 @@ package apple.coredata.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 public final class NSManagedObjectContextConcurrencyType {
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use another NSManagedObjectContextConcurrencyType
+     */
     @Deprecated @Generated @NUInt public static final long ConfinementConcurrencyType = 0x0000000000000000L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NUInt public static final long PrivateQueueConcurrencyType = 0x0000000000000001L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NUInt public static final long MainQueueConcurrencyType = 0x0000000000000002L;
 
     @Generated

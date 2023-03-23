@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Contains the user's payment credentials, encrypted to the merchant.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("PassKit")
@@ -168,6 +170,10 @@ public class PKPaymentToken extends NSObject {
     /**
      * A string that describes the payment instrument the user has selected to fund the payment.
      * Suitable for display, e.g. "Amex 1234".
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use paymentMethod instead
      */
     @Generated
     @Deprecated
@@ -176,6 +182,8 @@ public class PKPaymentToken extends NSObject {
 
     /**
      * Describes the properties of the underlying payment instrument selected to fund the payment
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("paymentMethod")
@@ -183,6 +191,10 @@ public class PKPaymentToken extends NSObject {
 
     /**
      * Payment network for the card that funds the payment.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use paymentMethod instead
      */
     @Generated
     @Deprecated

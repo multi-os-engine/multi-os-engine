@@ -46,6 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * WARNING:
  * It is up to the developer creating the request to ensure that changes made by the request to
  * the underlying store do not violate any validation rules specified in the model.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("CoreData")

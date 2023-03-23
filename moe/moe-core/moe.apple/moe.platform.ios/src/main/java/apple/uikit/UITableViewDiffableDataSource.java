@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -58,15 +61,15 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
 
     /**
      * Apply a snapshot to the table view committing to the new data source state.
-     * <p>
+     * 
      * animatingDifferences == YES: perform a diff between the current UITableView state and the snapshot, and animate
      * the update.
      * animatingDifferences == NO: perform a diff between the current UITableView state and the snapshot, but don't
      * animate the update.
-     * <p>
+     * 
      * If the (optional) completion block is specified, it will be called on the main queue when any animations are
      * completed.
-     * <p>
+     * 
      * Note: you may call this from a background queue which will cause the diff (if needed) to be generated on the
      * calling queue and the
      * final UI update to be applied back on the main queue. However, all applySnapshot invocations must be confined to
@@ -290,17 +293,22 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
 
     /**
      * Apply a snapshot to the table view using reloadData.
-     * <p>
+     * 
      * This always skips diffing, and immediately resets the UITableView to the new data source state without animation.
      * Generally this should only be used for specific cases where you need to fully reset the table view's data to the
      * new state immediately (e.g. recycling the table view for use with a completely different data set), or when you
      * specifically want to skip diffing (e.g. applying an exceptionally large changeset).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("applySnapshotUsingReloadData:")
     public native void applySnapshotUsingReloadData(
             NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifierType> snapshot);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("applySnapshotUsingReloadData:completion:")
     public native void applySnapshotUsingReloadDataCompletion(
@@ -314,6 +322,9 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
         void call_applySnapshotUsingReloadDataCompletion();
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("indexForSectionIdentifier:")
     @NInt
@@ -321,6 +332,8 @@ public class UITableViewDiffableDataSource<_SectionIdentifierType, _ItemIdentifi
 
     /**
      * convert section index <-> SectionIdentifierType
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("sectionIdentifierForIndex:")

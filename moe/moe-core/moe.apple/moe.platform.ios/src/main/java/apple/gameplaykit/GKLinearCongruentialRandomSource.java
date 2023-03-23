@@ -45,9 +45,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * This is a deterministic random source suitable for creating reliable gameplay mechanics.
  * It is slightly faster than an Arc4 source, but less random. In particular the lower bits
  * of the generated values are less random than the higher bits.
- * <p>
+ * 
  * While deterministic, this is not a cryptographic random source. It is also not suitable
  * for obfuscation of gameplay data.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")

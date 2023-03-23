@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -258,6 +261,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Team identifier of the calling application.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("callerTeamIdentifier")
@@ -265,6 +270,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Indicates whether the calling application is managed.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isCallerManaged")
@@ -272,6 +279,8 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Localized display name of the calling application.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("localizedCallerDisplayName")
@@ -279,9 +288,24 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     /**
      * Call when authorization succeeded with @see ASAuthorizationProviderExtensionAuthorizationResult.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("completeWithAuthorizationResult:")
     public native void completeWithAuthorizationResult(
             ASAuthorizationProviderExtensionAuthorizationResult authorizationResult);
+
+    /**
+     * Indicates whether the authorization user interface is enabled.
+     * 
+     * If user interface is not enabled, then the authorization will fail with @see ASAuthorizationErrorNotInteractive
+     * if it attempts to display the authorization user interface via @see
+     * presentAuthorizationViewControllerWithCompletion.
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @Selector("isUserInterfaceEnabled")
+    public native boolean isUserInterfaceEnabled();
 }

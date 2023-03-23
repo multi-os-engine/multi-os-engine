@@ -19,17 +19,38 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class MTLStoreAction {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long DontCare = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Store = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long MultisampleResolve = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long StoreAndMultisampleResolve = 0x0000000000000003L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Unknown = 0x0000000000000004L;
 
     @Generated
     private MTLStoreAction() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NUInt public static final long CustomSampleDepthStore = 0x0000000000000005L;
 }

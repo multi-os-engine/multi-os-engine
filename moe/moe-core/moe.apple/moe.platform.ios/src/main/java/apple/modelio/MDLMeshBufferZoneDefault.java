@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A default zone that can be use for convenience
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ModelIO")

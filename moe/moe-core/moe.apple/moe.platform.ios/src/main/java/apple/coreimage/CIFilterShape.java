@@ -17,8 +17,6 @@ limitations under the License.
 package apple.coreimage;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -42,7 +40,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)

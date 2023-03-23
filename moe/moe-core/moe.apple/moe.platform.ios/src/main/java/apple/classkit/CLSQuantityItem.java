@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CLSQuantityItem represents user generated quantity information.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("ClassKit")
@@ -100,7 +102,7 @@ public class CLSQuantityItem extends CLSActivityItem {
 
     /**
      * Create a quantity item with an identifier and title.
-     *
+     * 
      * @param identifier An identifier that is unique within activity.
      * @param title      Title of the quantity. Ex @em Hints
      */

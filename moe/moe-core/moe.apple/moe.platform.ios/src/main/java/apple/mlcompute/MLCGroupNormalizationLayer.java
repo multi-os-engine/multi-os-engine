@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCGroupNormalizationLayer
- * <p>
+ * 
  * A group normalizaion layer. For more information, refer to https://pytorch.org/docs/stable/nn.html#groupnorm
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -61,7 +63,7 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The beta tensor
      */
     @Generated
@@ -70,7 +72,7 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] betaParameter
-     * <p>
+     * 
      * The beta tensor parameter used for optimizer update
      */
     @Generated
@@ -105,7 +107,7 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] featureChannelCount
-     * <p>
+     * 
      * The number of feature channels
      */
     @Generated
@@ -115,7 +117,7 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] gamma
-     * <p>
+     * 
      * The gamma tensor
      */
     @Generated
@@ -124,7 +126,7 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] gammaParameter
-     * <p>
+     * 
      * The gamma tensor parameter used for optimizer update
      */
     @Generated
@@ -133,7 +135,7 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] groupCount
-     * <p>
+     * 
      * The number of groups to separate the channels into
      */
     @Generated
@@ -173,7 +175,7 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
 
     /**
      * Create a group normalization layer
-     *
+     * 
      * @param featureChannelCount The number of feature channels
      * @param beta                Training parameter
      * @param gamma               Training parameter
@@ -214,7 +216,7 @@ public class MLCGroupNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] varianceEpsilon
-     * <p>
+     * 
      * A value used for numerical stability
      */
     @Generated

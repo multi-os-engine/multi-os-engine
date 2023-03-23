@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
@@ -83,8 +86,8 @@ public class MPSGraphDevice extends NSObject {
     public static native String description_static();
 
     /**
-     * Creates a MEtal MPSGraphDevice from a MTLDevice
-     *
+     * Creates a Metal MPSGraphDevice from a MTLDevice
+     * 
      * @param metalDevice MTLDevice to create an MPSGraphDevice from
      * @return A valid MPSGraphDevice
      */
@@ -124,7 +127,7 @@ public class MPSGraphDevice extends NSObject {
 
     /**
      * [@property] metalDevice
-     * <p>
+     * 
      * if deviceType GPU then returns MTLDevice or nil
      */
     @Generated

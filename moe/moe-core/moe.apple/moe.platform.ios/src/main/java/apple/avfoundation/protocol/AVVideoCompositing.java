@@ -30,9 +30,9 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] AVVideoCompositing
- * <p>
+ * 
  * Defines properties and methods for custom video compositors
- * <p>
+ * 
  * For each AVFoundation object of class AVPlayerItem, AVAssetExportSession, AVAssetImageGenerator, or
  * AVAssetReaderVideoCompositionOutput that has a non-nil value for its videoComposition property, when the value of the
  * customVideoCompositorClass property of the AVVideoComposition is not Nil, AVFoundation creates and uses an instance
@@ -40,15 +40,17 @@ import org.moe.natj.objc.ann.Selector;
  * video compositor instance will be created when you invoke -setVideoComposition: with an instance of
  * AVVideoComposition that's associated with a different custom video compositor class than the object was previously
  * using.
- * <p>
+ * 
  * When creating instances of custom video compositors, AVFoundation initializes them by calling -init and then makes
  * them available to you for further set-up or communication, if any is needed, as the value of the
  * customVideoCompositor property of the object on which -setVideoComposition: was invoked.
- * <p>
+ * 
  * Custom video compositor instances will then be retained by the AVFoundation object for as long as the value of its
  * videoComposition property indicates that an instance of the same custom video compositor class should be used, even
  * if the value is changed from one instance of AVVideoComposition to another instance that's associated with the same
  * custom video compositor class.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("AVFoundation")
@@ -57,9 +59,9 @@ import org.moe.natj.objc.ann.Selector;
 public interface AVVideoCompositing {
     /**
      * cancelAllPendingVideoCompositionRequests
-     * <p>
+     * 
      * Directs a custom video compositor object to cancel or finish all pending video composition requests
-     * <p>
+     * 
      * When receiving this message, a custom video compositor must block until it has either cancelled all pending frame
      * requests,
      * and called the finishCancelledRequest callback for each of them, or, if cancellation is not possible, finished
@@ -75,15 +77,16 @@ public interface AVVideoCompositing {
 
     /**
      * renderContextChanged:
-     * <p>
+     * 
      * Called to notify the custom compositor that a composition will switch to a different render context
-     * <p>
+     * 
      * Instances of classes implementing the AVVideoComposting protocol can implement this method to be notified when
      * the AVVideoCompositionRenderContext instance handing a video composition changes. AVVideoCompositionRenderContext
      * instances
      * being immutable, such a change will occur every time there is a change in the video composition parameters.
-     *
-     * @param newRenderContext The render context that will be handling the video composition from this point
+     * 
+     * @param newRenderContext
+     *                         The render context that will be handling the video composition from this point
      */
     @Generated
     @Selector("renderContextChanged:")
@@ -124,10 +127,10 @@ public interface AVVideoCompositing {
 
     /**
      * startVideoCompositionRequest:
-     * <p>
+     * 
      * Directs a custom video compositor object to create a new pixel buffer composed asynchronously from a collection
      * of sources.
-     * <p>
+     * 
      * The custom compositor is expected to invoke, either subsequently or immediately, either:
      * -[AVAsynchronousVideoCompositionRequest finishWithComposedVideoFrame:] or
      * -[AVAsynchronousVideoCompositionRequest finishWithError:]. If you intend to finish rendering the frame after your
@@ -138,12 +141,13 @@ public interface AVVideoCompositing {
      * it may be invoked again with another composition request before the prior request is finished; therefore in such
      * cases the custom compositor should
      * be prepared to manage multiple composition requests.
-     * <p>
+     * 
      * If the rendered frame is exactly the same as one of the source frames, with no letterboxing, pillboxing or
      * cropping needed,
      * then the appropriate source pixel buffer may be returned (after CFRetain has been called on it).
-     *
-     * @param asyncVideoCompositionRequest An instance of AVAsynchronousVideoCompositionRequest that provides context
+     * 
+     * @param asyncVideoCompositionRequest
+     *                                     An instance of AVAsynchronousVideoCompositionRequest that provides context
      *                                     for the requested composition.
      */
     @Generated
@@ -152,11 +156,13 @@ public interface AVVideoCompositing {
 
     /**
      * [@property] supportsWideColorSourceFrames
-     * <p>
+     * 
      * Indicates that clients can handle frames that contains wide color properties.
-     * <p>
+     * 
      * Controls whether the client will receive frames that contain wide color information. Care should be taken to
      * avoid clamping.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -167,27 +173,30 @@ public interface AVVideoCompositing {
 
     /**
      * anticipateRenderingUsingHint:
-     * <p>
+     * 
      * Informs a custom video compositor about upcoming rendering requests.
-     * <p>
+     * 
      * In the method the compositor can load composition resources such as overlay images which will be needed in the
      * anticipated rendering time range.
-     * <p>
+     * 
      * Unlike -startVideoCompositionRequest, which is invoked only when the frame compositing is necessary, the
      * framework typically calls this method every frame duration. It allows the custom compositor to load and unload a
      * composition resource such as overlay images at an appropriate timing.
-     * <p>
+     * 
      * In forward playback, renderHint's startCompositionTime is less than endCompositionTime. In reverse playback, its
      * endCompositionTime is less than startCompositionTime. For seeking, startCompositionTime == endCompositionTime,
      * which means the upcoming composition request time range is unknown and the compositor shouldn’t preload time
      * associated composition resources eagerly.
-     * <p>
+     * 
      * The method is guaranteed to be called before -startVideoCompositionRequest: for a given composition time.
-     * <p>
+     * 
      * The method is synchronous. The implementation should return quickly because otherwise the playback would stall
      * and cause frame drops.
-     *
-     * @param renderHint Information about the upcoming composition requests.
+     * 
+     * API-Since: 13.0
+     * 
+     * @param renderHint
+     *                   Information about the upcoming composition requests.
      */
     @Generated
     @IsOptional
@@ -198,20 +207,23 @@ public interface AVVideoCompositing {
 
     /**
      * prerollForRenderingUsingHint:
-     * <p>
+     * 
      * Tell a custom video compositor to perform any work in prerolling phase.
-     * <p>
+     * 
      * The framework may perform prerolling to load media data to prime the render pipelines for smoother playback. This
      * method is called in the prerolling phase so that the compositor can load composition resources such as overlay
      * images which will be needed as soon as the playback starts.
-     * <p>
+     * 
      * Not all rendering scenarios use prerolling. For example, the method won't be called while seeking.
-     * <p>
+     * 
      * If called, the method is guaranteed to be invoked before the first -startVideoCompositionRequest: call.
-     * <p>
+     * 
      * The method is synchronous. The prerolling won't finish until the method returns.
-     *
-     * @param renderHint Information about the upcoming composition requests.
+     * 
+     * API-Since: 13.0
+     * 
+     * @param renderHint
+     *                   Information about the upcoming composition requests.
      */
     @Generated
     @IsOptional
@@ -222,13 +234,15 @@ public interface AVVideoCompositing {
 
     /**
      * [@property] supportsHDRSourceFrames
-     * <p>
+     * 
      * Indicates that the client's video compositor can handle frames that contain high dynamic range (HDR) properties.
-     * <p>
+     * 
      * Controls whether the client will receive frames that contain HDR information.
      * If this field is omitted or set to NO, the framework will convert HDR frames to standard dynamic range (SDR) with
      * BT.709 transfer function before sending to the client.
      * If this field is set to YES, the value of supportsWideColorSourceFrames will be ignored and assumed to be YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -237,6 +251,9 @@ public interface AVVideoCompositing {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @IsOptional
     @Selector("canConformColorOfSourceFrames")

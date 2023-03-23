@@ -34,13 +34,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Performs requests on a single image.
- * <p>
+ * 
  * The VNImageRequestHandler is created with an image that is used to be used for the requests a client might want to
  * schedule. The VNImageRequestHandler retains, but never modifies, the image source for its entire lifetime. The client
  * also must not modify the content of the image source once the VNImageRequestHandler is created otherwise the results
  * are undefined.
  * The VNImageRequestHandler can choose to also cache intermediate representation of the image or other request-specific
  * information for the purposes of runtime performance.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -112,7 +114,7 @@ public class VNImageRequestHandler extends NSObject {
     /**
      * initWithCGImage:options creates a VNImageRequestHandler to be used for performing requests against the image
      * passed in as a CGImageRef.
-     *
+     * 
      * @param image   A CGImageRef containing the image to be used for performing the requests. The content of the image
      *                cannot be modified.
      * @param options A dictionary with options specifying auxiliary information for the buffer/image like
@@ -125,7 +127,7 @@ public class VNImageRequestHandler extends NSObject {
     /**
      * initWithCGImage:options creates a VNImageRequestHandler to be used for performing requests against the image
      * passed in as a CGImageRef.
-     *
+     * 
      * @param image       A CGImageRef containing the image to be used for performing the requests. The content of the
      *                    image cannot be modified.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see
@@ -142,11 +144,11 @@ public class VNImageRequestHandler extends NSObject {
     /**
      * initWithCIImage:options creates a VNImageRequestHandler to be used for performing requests against the image
      * passed in as a CIImage.
-     * <p>
+     * 
      * [@note] Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in
      * the simulator. The orientation of the original image should be applied for instance by using
      * imageByApplyingOrientation or use the initWithCIImage:options:orientation API.
-     *
+     * 
      * @param image   A CIImage containing the image to be used for performing the requests. The content of the image
      *                cannot be modified.
      * @param options A dictionary with options specifying auxiliary information for the buffer/image like
@@ -159,10 +161,10 @@ public class VNImageRequestHandler extends NSObject {
     /**
      * initWithCIImage:options:orientation creates a VNImageRequestHandler to be used for performing requests against
      * the image passed in as a CIImage.
-     * <p>
+     * 
      * [@note] Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in
      * the simulator
-     *
+     * 
      * @param image       A CIImage containing the image to be used for performing the requests. The content of the
      *                    image cannot be modified.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see
@@ -179,7 +181,7 @@ public class VNImageRequestHandler extends NSObject {
     /**
      * initWithCVPixelBuffer:options creates a VNImageRequestHandler to be used for performing requests against the
      * image passed in as buffer.
-     *
+     * 
      * @param pixelBuffer A CVPixelBuffer containing the image to be used for performing the requests. The content of
      *                    the buffer cannot be modified for the lifetime of the VNImageRequestHandler.
      * @param options     A dictionary with options specifying auxiliary information for the buffer/image like
@@ -193,7 +195,7 @@ public class VNImageRequestHandler extends NSObject {
     /**
      * initWithCVPixelBuffer:options creates a VNImageRequestHandler to be used for performing requests against the
      * image passed in as buffer.
-     *
+     * 
      * @param pixelBuffer A CVPixelBuffer containing the image to be used for performing the requests. The content of
      *                    the buffer cannot be modified for the lifetime of the VNImageRequestHandler.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see
@@ -210,10 +212,10 @@ public class VNImageRequestHandler extends NSObject {
     /**
      * initWithData:options creates a VNImageRequestHandler to be used for performing requests against an image
      * contained in an NSData object.
-     * <p>
+     * 
      * [@note] Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in
      * the simulator
-     *
+     * 
      * @param imageData An NSData object containing the content of the image to be used for performing the requests. See
      *                  CIImage imageWithData for supported format. The content of the image cannot be modified.
      * @param options   A dictionary with options specifying auxiliary information for the buffer/image like
@@ -226,10 +228,10 @@ public class VNImageRequestHandler extends NSObject {
     /**
      * initWithData:options creates a VNImageRequestHandler to be used for performing requests against an image
      * contained in an NSData object.
-     * <p>
+     * 
      * [@note] Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in
      * the simulator
-     *
+     * 
      * @param imageData   An NSData object containing the content of the image to be used for performing the requests.
      *                    See CIImage imageWithData for supported format. The content of the image cannot be modified.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see
@@ -246,10 +248,10 @@ public class VNImageRequestHandler extends NSObject {
     /**
      * initWithURL:options creates a VNImageRequestHandler to be used for performing requests against an image specified
      * by it's URL
-     * <p>
+     * 
      * [@note] Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in
      * the simulator
-     *
+     * 
      * @param imageURL A URL pointing at an image to be used for performing the requests. The image has to be in a
      *                 format that is supported by ImageIO. The content of the image cannot be modified.
      * @param options  A dictionary with options specifying auxiliary information for the buffer/image like
@@ -262,10 +264,10 @@ public class VNImageRequestHandler extends NSObject {
     /**
      * initWithURL:options creates a VNImageRequestHandler to be used for performing requests against an image specified
      * by it's URL
-     * <p>
+     * 
      * [@note] Request results may not be accurate in simulator due to CI's inability to render certain pixel formats in
      * the simulator
-     *
+     * 
      * @param imageURL    A URL pointing at an image to be used for performing the requests. The image has to be in a
      *                    format that is supported by ImageIO. The content of the image cannot be modified.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see
@@ -308,10 +310,10 @@ public class VNImageRequestHandler extends NSObject {
     /**
      * performRequests schedules one or more VNRequests to be performed. The function returns once all requests have
      * been finished.
-     * <p>
+     * 
      * The results of the VNRequests as well any possible errors of the individual requests are reported in the
      * VNRequests results and error properties.
-     *
+     * 
      * @param requests An NSArray of VNRequests that are to be performed.
      * @param error    Returns an error that happened during scheduling of the requests. Check individual requests
      *                 results and errors for their respective success and failures. This parameter is optional.
@@ -347,10 +349,12 @@ public class VNImageRequestHandler extends NSObject {
     /**
      * Creates a VNImageRequestHandler to be used for performing requests against the image buffer contained in the
      * CMSampleBufferRef
-     * <p>
+     * 
      * [@note] CMSampleBuffers can contain metadata like camera intrinsics that will be used by algorithms supporting it
      * unless overwritten by the options.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param sampleBuffer A CMSampleBuffer containing the imageBuffer that will be used for performing the requests.
      *                     Not all types of sample buffers are supported. They need to contain a CVImageBuffer, be valid
      *                     and ready.
@@ -365,12 +369,14 @@ public class VNImageRequestHandler extends NSObject {
     /**
      * Creates a VNImageRequestHandler to be used for performing requests against the image buffer contained in the
      * CMSampleBufferRef
-     * <p>
+     * 
      * [@note] CMSampleBuffers can contain metadata like camera intrinsics that will be used by algorithms supporting it
      * unless overwritten by the options.
      * [@note] Because CoreImage is unable to render certain pixel formats in the iOS simulator, request results may not
      * be accurate in those cases.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param sampleBuffer A CMSampleBuffer containing the imageBuffer that will be used for performing the requests.
      *                     Not all types of sample buffers are supported. They need to contain a CVImageBuffer, be valid
      *                     and ready.

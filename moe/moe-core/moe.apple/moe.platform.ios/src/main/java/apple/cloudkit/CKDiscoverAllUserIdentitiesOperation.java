@@ -42,11 +42,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CKDiscoverAllUserIdentitiesOperation
- * <p>
+ * 
  * Finds all discoverable users in the device's contacts database. No Contacts access dialog will be displayed.
- * <p>
+ * 
  * This operation scales linearly with the number of email addresses and phone numbers in the device's address book. It
  * may take some time to complete.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CloudKit")
@@ -160,7 +162,7 @@ public class CKDiscoverAllUserIdentitiesOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
@@ -175,7 +177,7 @@ public class CKDiscoverAllUserIdentitiesOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
@@ -186,7 +188,7 @@ public class CKDiscoverAllUserIdentitiesOperation extends CKOperation {
 
     /**
      * Called once for each successfully-discovered user identity from the device's address book.
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -196,7 +198,7 @@ public class CKDiscoverAllUserIdentitiesOperation extends CKOperation {
 
     /**
      * Called once for each successfully-discovered user identity from the device's address book.
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated

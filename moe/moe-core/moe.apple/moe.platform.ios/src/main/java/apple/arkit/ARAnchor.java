@@ -30,6 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Object representing a physical location and orientation in 3D space.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ARKit")
@@ -172,6 +174,8 @@ public class ARAnchor extends NSObject implements ARAnchorCopying, NSSecureCodin
 
     /**
      * An optional name used to associate with the anchor.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("name")
@@ -179,8 +183,10 @@ public class ARAnchor extends NSObject implements ARAnchorCopying, NSSecureCodin
 
     /**
      * Identifier of the session that owns the anchor.
-     * <p>
+     * 
      * The session identifier will be assigned to anchor when added to the session.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("sessionIdentifier")

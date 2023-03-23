@@ -40,7 +40,11 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSDictionary;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -99,6 +103,9 @@ public class PKPassLibrary extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("endAutomaticPassPresentationSuppressionWithRequestToken:")
     public static native void endAutomaticPassPresentationSuppressionWithRequestToken(@NUInt long requestToken);
@@ -123,6 +130,8 @@ public class PKPassLibrary extends NSObject {
 
     /**
      * The library is not available on iPad in 6.0.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("isPassLibraryAvailable")
@@ -130,6 +139,10 @@ public class PKPassLibrary extends NSObject {
 
     /**
      * If device supports adding payment passes, this method will return YES. Otherwise, NO will be returned.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use -[PKPassLibrary isPaymentPassActivationAvailable] instead
      */
     @Generated
     @Deprecated
@@ -140,6 +153,9 @@ public class PKPassLibrary extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("isSuppressingAutomaticPassPresentation")
     public static native boolean isSuppressingAutomaticPassPresentation();
@@ -158,6 +174,8 @@ public class PKPassLibrary extends NSObject {
      * contactless field.
      * Use of these methods require an entitlement. Otherwise, requesting will always return a
      * PKAutomaticPassPresentationSuppressionResultDenied as the result.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("requestAutomaticPassPresentationSuppressionWithResponseHandler:")
@@ -186,6 +204,11 @@ public class PKPassLibrary extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use activatePaymentPass:withActivationData:completion: instead
+     */
     @Generated
     @Deprecated
     @Selector("activatePaymentPass:withActivationCode:completion:")
@@ -196,7 +219,12 @@ public class PKPassLibrary extends NSObject {
      * These methods may be utilized to activate a payment pass that is provisioned but currently in the inactive state,
      * by providing
      * either a cryptographic OTP, or an activation code.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use activateSecureElementPass:withActivationData:completion: instead
      */
+    @Deprecated
     @Generated
     @Selector("activatePaymentPass:withActivationData:completion:")
     public native void activatePaymentPassWithActivationDataCompletion(PKPaymentPass paymentPass, NSData activationData,
@@ -212,6 +240,8 @@ public class PKPassLibrary extends NSObject {
      * initialized with the passes so that the user may review and add the passes manually. The completion handler for
      * this method is
      * called on an arbitrary queue - dispatch to the main queue if you're presenting UI.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("addPasses:withCompletionHandler:")
@@ -220,6 +250,8 @@ public class PKPassLibrary extends NSObject {
 
     /**
      * If the library can add Felica passes, this method will return YES. Otherwise, NO will be returned.
+     * 
+     * API-Since: 10.1
      */
     @Generated
     @Selector("canAddFelicaPass")
@@ -229,7 +261,12 @@ public class PKPassLibrary extends NSObject {
      * Returns YES if either the current device or an attached device both supports adding payment passes and does not
      * already contain
      * a payment pass with the supplied primary account identifier.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use -[PKPassLibrary canAddSecureElementPassWithPrimaryAccountIdentifier] instead
      */
+    @Deprecated
     @Generated
     @Selector("canAddPaymentPassWithPrimaryAccountIdentifier:")
     public native boolean canAddPaymentPassWithPrimaryAccountIdentifier(String primaryAccountIdentifier);
@@ -251,7 +288,12 @@ public class PKPassLibrary extends NSObject {
     /**
      * If this pass library supports activating payment passes, this method will return YES. Otherwise, NO will be
      * returned.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use -[PKPassLibrary isSecureElementPassActivationAvailable] instead
      */
+    @Deprecated
     @Generated
     @Selector("isPaymentPassActivationAvailable")
     public native boolean isPaymentPassActivationAvailable();
@@ -259,6 +301,8 @@ public class PKPassLibrary extends NSObject {
     /**
      * Opens the card setup flow (in Wallet on iPhone, Settings on iPad). Use this to direct a user to card setup
      * directly from your app.
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @Selector("openPaymentSetup")
@@ -275,6 +319,9 @@ public class PKPassLibrary extends NSObject {
     @Selector("passes")
     public native NSArray<? extends PKPass> passes();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("passesOfType:")
     public native NSArray<? extends PKPass> passesOfType(@NUInt long passType);
@@ -282,14 +329,24 @@ public class PKPassLibrary extends NSObject {
     /**
      * Presents the pass for use above the current application. The pass must already be in the pass library for this to
      * have effect.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use -[PKPassLibrary presentSecureElementPass:] instead
      */
+    @Deprecated
     @Generated
     @Selector("presentPaymentPass:")
     public native void presentPaymentPass(PKPaymentPass pass);
 
     /**
      * This returns the remote payment passes from attached devices
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use -[PKPassLibrary remoteSecureElementPasses] instead
      */
+    @Deprecated
     @Generated
     @Selector("remotePaymentPasses")
     public native NSArray<? extends PKPaymentPass> remotePaymentPasses();
@@ -335,6 +392,9 @@ public class PKPassLibrary extends NSObject {
         void call_requestAutomaticPassPresentationSuppressionWithResponseHandler(@NUInt long result);
     }
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("activateSecureElementPass:withActivationData:completion:")
     public native void activateSecureElementPassWithActivationDataCompletion(PKSecureElementPass secureElementPass,
@@ -348,24 +408,38 @@ public class PKPassLibrary extends NSObject {
         void call_activateSecureElementPassWithActivationDataCompletion(boolean success, NSError error);
     }
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("canAddSecureElementPassWithPrimaryAccountIdentifier:")
     public native boolean canAddSecureElementPassWithPrimaryAccountIdentifier(String primaryAccountIdentifier);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("isSecureElementPassActivationAvailable")
     public native boolean isSecureElementPassActivationAvailable();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("presentSecureElementPass:")
     public native void presentSecureElementPass(PKSecureElementPass pass);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("remoteSecureElementPasses")
     public native NSArray<? extends PKSecureElementPass> remoteSecureElementPasses();
 
     /**
      * Sign a payload using the pass
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("signData:withSecureElementPass:completion:")
@@ -381,6 +455,8 @@ public class PKPassLibrary extends NSObject {
 
     /**
      * Returns custom data for a given secure element pass, if supported by that pass
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("serviceProviderDataForSecureElementPass:completion:")
@@ -392,5 +468,21 @@ public class PKPassLibrary extends NSObject {
     public interface Block_serviceProviderDataForSecureElementPassCompletion {
         @Generated
         void call_serviceProviderDataForSecureElementPassCompletion(NSData serviceProviderData, NSError error);
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("encryptedServiceProviderDataForSecureElementPass:completion:")
+    public native void encryptedServiceProviderDataForSecureElementPassCompletion(PKSecureElementPass secureElementPass,
+            @ObjCBlock(name = "call_encryptedServiceProviderDataForSecureElementPassCompletion") Block_encryptedServiceProviderDataForSecureElementPassCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_encryptedServiceProviderDataForSecureElementPassCompletion {
+        @Generated
+        void call_encryptedServiceProviderDataForSecureElementPassCompletion(
+                NSDictionary<?, ?> encryptedServiceProviderData, NSError error);
     }
 }

@@ -11,9 +11,11 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] OSLogEntryWithPayload
- * <p>
+ * 
  * Entry subclasses conforming to this protocol represent
  * entries that were made using a handle and a format string.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("OSLog")
@@ -22,8 +24,10 @@ import org.moe.natj.objc.ann.Selector;
 public interface OSLogEntryWithPayload {
     /**
      * [@property] category
-     * <p>
+     * 
      * The category from the os_log_t handle used.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("category")
@@ -31,8 +35,10 @@ public interface OSLogEntryWithPayload {
 
     /**
      * [@property] components
-     * <p>
+     * 
      * An array of the various parts of the composed message.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("components")
@@ -40,8 +46,10 @@ public interface OSLogEntryWithPayload {
 
     /**
      * [@property] formatString
-     * <p>
+     * 
      * The format string used.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("formatString")
@@ -49,8 +57,10 @@ public interface OSLogEntryWithPayload {
 
     /**
      * [@property] subsystem
-     * <p>
+     * 
      * The subsystem of the os_log_t handle used.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("subsystem")

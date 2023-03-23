@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -164,7 +167,7 @@ public class GCControllerAxisInput extends GCControllerElement {
      * so there is no value ouside the range. Deadzoning does not remove values from the range, the full 0 to 1
      * magnitude of values
      * are possible from the input.
-     * <p>
+     * 
      * As an axis is often used in a digital sense, you can rely on a value of 0 meaning the axis is inside the
      * deadzone.
      * Any value greater than or less than zero is not in the deadzone.
@@ -194,11 +197,13 @@ public class GCControllerAxisInput extends GCControllerElement {
 
     /**
      * Sets the normalized value for the input.
-     * <p>
+     * 
      * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
-     *
+     * 
      * @param value the value to set the input to.
      * @see value
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("setValue:")

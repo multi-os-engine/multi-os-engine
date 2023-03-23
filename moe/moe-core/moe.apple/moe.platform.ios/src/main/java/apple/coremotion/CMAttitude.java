@@ -46,6 +46,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -180,7 +183,7 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * multiplyByInverseOfAttitude:
-     * <p>
+     * 
      * Discussion:
      * Multiplies attitude by the inverse of the specified attitude. This gives
      * the attitude change from the specified attitude.
@@ -191,7 +194,7 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * pitch
-     * <p>
+     * 
      * Discussion:
      * Returns the pitch of the device in radians.
      */
@@ -201,7 +204,7 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * quaternion
-     * <p>
+     * 
      * Discussion:
      * Returns a quaternion representing the device's attitude.
      */
@@ -212,7 +215,7 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * roll
-     * <p>
+     * 
      * Discussion:
      * Returns the roll of the device in radians.
      */
@@ -222,7 +225,7 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * rotationMatrix
-     * <p>
+     * 
      * Discussion:
      * Returns a rotation matrix representing the device's attitude.
      */
@@ -239,7 +242,7 @@ public class CMAttitude extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * yaw
-     * <p>
+     * 
      * Discussion:
      * Returns the yaw of the device in radians.
      */

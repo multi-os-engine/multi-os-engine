@@ -28,9 +28,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNDilatedPoolingMaxGradient
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Specifies the filter for computing the gradient of the dilated max pooling filter.
  * For details see comments on MPSCNNPoolingMaxGradient.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -105,9 +107,9 @@ public class MPSCNNDilatedPoolingMaxGradient extends MPSCNNPoolingGradient {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPoolingMaxGradient
      * @param device   The MTLDevice on which to make the MPSCNNPoolingMaxGradient
      * @return A new MPSCNNPoolingMaxGradient object, or nil if failure.
@@ -128,7 +130,7 @@ public class MPSCNNDilatedPoolingMaxGradient extends MPSCNNPoolingGradient {
 
     /**
      * Initialize a MPSCNNDilatedPoolingMaxGradient pooling filter
-     *
+     * 
      * @param device          The device the filter will run on
      * @param kernelWidth     The width of the kernel. Can be an odd or even value.
      * @param kernelHeight    The height of the kernel. Can be an odd or even value.

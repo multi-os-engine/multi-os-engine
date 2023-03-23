@@ -50,7 +50,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * In iOS 8.0 and later, your application must register for user notifications using -[UIApplication
  * registerUserNotificationSettings:] before being able to schedule and present UILocalNotifications
+ * 
+ * API-Since: 4.0
+ * Deprecated-Since: 10.0
+ * Deprecated-Message: Use UserNotifications Framework's UNNotificationRequest
  */
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -184,6 +189,8 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     /**
      * defaults to nil. pass a string or localized string key
+     * 
+     * API-Since: 8.2
      */
     @Generated
     @Selector("alertTitle")
@@ -200,6 +207,8 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     /**
      * category identifier of the local notification, as set on a UIUserNotificationCategory and passed to
      * +[UIUserNotificationSettings settingsForTypes:categories:]
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("category")
@@ -244,6 +253,8 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
      * UILocalNotifications that may be registered at any one time is internally limited. in order to use
      * region-triggered notifications, applications must have "when-in-use" authorization through CoreLocation. see the
      * CoreLocation documentation for more information.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("region")
@@ -252,6 +263,8 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     /**
      * when YES, the notification will only fire one time. when NO, the notification will fire every time the region is
      * entered or exited (depending upon the CLRegion object's configuration). default is YES.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("regionTriggersOnce")
@@ -292,6 +305,8 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     /**
      * defaults to nil. pass a string or localized string key
+     * 
+     * API-Since: 8.2
      */
     @Generated
     @Selector("setAlertTitle:")
@@ -307,6 +322,8 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     /**
      * category identifier of the local notification, as set on a UIUserNotificationCategory and passed to
      * +[UIUserNotificationSettings settingsForTypes:categories:]
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setCategory:")
@@ -333,6 +350,8 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
      * UILocalNotifications that may be registered at any one time is internally limited. in order to use
      * region-triggered notifications, applications must have "when-in-use" authorization through CoreLocation. see the
      * CoreLocation documentation for more information.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setRegion:")
@@ -341,6 +360,8 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     /**
      * when YES, the notification will only fire one time. when NO, the notification will fire every time the region is
      * entered or exited (depending upon the CLRegion object's configuration). default is YES.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setRegionTriggersOnce:")

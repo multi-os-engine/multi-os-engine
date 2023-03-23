@@ -66,12 +66,17 @@ public class NSBundle extends NSObject {
      * the .lproj extension; passing nil for localizationName retrieves only global resources, whereas using a method
      * without this argument retrieves both global and localized resources (using the standard localization search
      * algorithm).
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("URLForResource:withExtension:subdirectory:inBundleWithURL:")
     public static native NSURL URLForResourceWithExtensionSubdirectoryInBundleWithURL(String name, String ext,
             String subpath, NSURL bundleURL);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("URLsForResourcesWithExtension:subdirectory:inBundleWithURL:")
     public static native NSArray<? extends NSURL> URLsForResourcesWithExtensionSubdirectoryInBundleWithURL(String ext,
@@ -115,6 +120,9 @@ public class NSBundle extends NSObject {
     @Selector("bundleWithPath:")
     public static native NSBundle bundleWithPath(String path);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("bundleWithURL:")
     public static native NSBundle bundleWithURL(NSURL url);
@@ -221,32 +229,53 @@ public class NSBundle extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("URLForAuxiliaryExecutable:")
     public native NSURL URLForAuxiliaryExecutable(String executableName);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("URLForResource:withExtension:")
     public native NSURL URLForResourceWithExtension(String name, String ext);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("URLForResource:withExtension:subdirectory:")
     public native NSURL URLForResourceWithExtensionSubdirectory(String name, String ext, String subpath);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("URLForResource:withExtension:subdirectory:localization:")
     public native NSURL URLForResourceWithExtensionSubdirectoryLocalization(String name, String ext, String subpath,
             String localizationName);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("URLsForResourcesWithExtension:subdirectory:")
     public native NSArray<? extends NSURL> URLsForResourcesWithExtensionSubdirectory(String ext, String subpath);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("URLsForResourcesWithExtension:subdirectory:localization:")
     public native NSArray<? extends NSURL> URLsForResourcesWithExtensionSubdirectoryLocalization(String ext,
             String subpath, String localizationName);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("appStoreReceiptURL")
     public native NSURL appStoreReceiptURL();
@@ -255,6 +284,9 @@ public class NSBundle extends NSObject {
     @Selector("builtInPlugInsPath")
     public native String builtInPlugInsPath();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("builtInPlugInsURL")
     public native NSURL builtInPlugInsURL();
@@ -272,6 +304,8 @@ public class NSBundle extends NSObject {
 
     /**
      * Methods for locating various components of a bundle.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("bundleURL")
@@ -285,6 +319,9 @@ public class NSBundle extends NSObject {
     @Selector("developmentLocalization")
     public native String developmentLocalization();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("executableArchitectures")
     public native NSArray<? extends NSNumber> executableArchitectures();
@@ -293,6 +330,9 @@ public class NSBundle extends NSObject {
     @Selector("executablePath")
     public native String executablePath();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("executableURL")
     public native NSURL executableURL();
@@ -309,6 +349,9 @@ public class NSBundle extends NSObject {
     @Selector("initWithPath:")
     public native NSBundle initWithPath(String path);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("initWithURL:")
     public native NSBundle initWithURL(NSURL url);
@@ -324,6 +367,9 @@ public class NSBundle extends NSObject {
     @Selector("load")
     public native boolean load_objc();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("loadAndReturnError:")
     public native boolean loadAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
@@ -391,10 +437,16 @@ public class NSBundle extends NSObject {
     @Selector("preferredLocalizations")
     public native NSArray<String> preferredLocalizations();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("preflightAndReturnError:")
     public native boolean preflightAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("preservationPriorityForTag:")
     public native double preservationPriorityForTag(String tag);
@@ -407,6 +459,9 @@ public class NSBundle extends NSObject {
     @Selector("privateFrameworksPath")
     public native String privateFrameworksPath();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("privateFrameworksURL")
     public native NSURL privateFrameworksURL();
@@ -415,6 +470,9 @@ public class NSBundle extends NSObject {
     @Selector("resourcePath")
     public native String resourcePath();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("resourceURL")
     public native NSURL resourceURL();
@@ -424,10 +482,12 @@ public class NSBundle extends NSObject {
      * Preservation priorities may be between 0.0 and 1.0, with higher values being the last choice for purging by the
      * system. The exact meaning of this value is up to your application as it only has meaning within the set of tags
      * your application uses.
-     * <p>
+     * 
      * The default value is 0.0.
-     * <p>
+     * 
      * This method will throw an exception if the receiver bundle has no on demand resource tag information.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPreservationPriority:forTags:")
@@ -437,6 +497,9 @@ public class NSBundle extends NSObject {
     @Selector("sharedFrameworksPath")
     public native String sharedFrameworksPath();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("sharedFrameworksURL")
     public native NSURL sharedFrameworksURL();
@@ -445,6 +508,9 @@ public class NSBundle extends NSObject {
     @Selector("sharedSupportPath")
     public native String sharedSupportPath();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("sharedSupportURL")
     public native NSURL sharedSupportURL();
@@ -453,6 +519,9 @@ public class NSBundle extends NSObject {
     @Selector("unload")
     public native boolean unload();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("localizedAttributedStringForKey:value:table:")
     public native NSAttributedString localizedAttributedStringForKeyValueTable(String key, String value,

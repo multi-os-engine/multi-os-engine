@@ -17,8 +17,6 @@ limitations under the License.
 package apple.mapkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
@@ -58,7 +56,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -164,6 +167,7 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -190,6 +194,7 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -265,46 +270,57 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -363,8 +379,10 @@ public class MKMapView extends UIView implements NSCoding {
     public native void addAnnotations(NSArray<?> annotations);
 
     /**
-     * These methods operate implicitly on overlays in MKOverlayLevelAboveLabels and may be deprecated in a future
+     * These methods operate implicitly on overlays in MKOverlayLevelAboveRoads and may be deprecated in a future
      * release in favor of the methods that specify the level.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("addOverlay:")
@@ -374,15 +392,23 @@ public class MKMapView extends UIView implements NSCoding {
      * Overlays are models used to represent areas to be drawn on top of the map.
      * This is in contrast to annotations, which represent points on the map.
      * Implement -mapView:rendererForOverlay: on MKMapViewDelegate to return the renderer for each overlay.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("addOverlay:level:")
     public native void addOverlayLevel(@Mapped(ObjCObjectMapper.class) MKOverlay overlay, @NInt long level);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("addOverlays:")
     public native void addOverlays(NSArray<?> overlays);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("addOverlays:level:")
     public native void addOverlaysLevel(NSArray<?> overlays, @NInt long level);
@@ -401,6 +427,9 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("annotations")
     public native NSArray<?> annotations();
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("annotationsInMapRect:")
     public native NSSet<?> annotationsInMapRect(@ByValue MKMapRect mapRect);
@@ -446,6 +475,9 @@ public class MKMapView extends UIView implements NSCoding {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("camera")
     public native MKMapCamera camera();
@@ -500,11 +532,17 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("exchangeOverlay:withOverlay:")
     public native void exchangeOverlayWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay1,
             @Mapped(ObjCObjectMapper.class) MKOverlay overlay2);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("exchangeOverlayAtIndex:withOverlayAtIndex:")
     public native void exchangeOverlayAtIndexWithOverlayAtIndex(@NUInt long index1, @NUInt long index2);
@@ -521,35 +559,55 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("initWithFrame:")
     public native MKMapView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("insertOverlay:aboveOverlay:")
     public native void insertOverlayAboveOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay,
             @Mapped(ObjCObjectMapper.class) MKOverlay sibling);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("insertOverlay:atIndex:")
     public native void insertOverlayAtIndex(@Mapped(ObjCObjectMapper.class) MKOverlay overlay, @NUInt long index);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("insertOverlay:atIndex:level:")
     public native void insertOverlayAtIndexLevel(@Mapped(ObjCObjectMapper.class) MKOverlay overlay, @NUInt long index,
             @NInt long level);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("insertOverlay:belowOverlay:")
     public native void insertOverlayBelowOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay,
             @Mapped(ObjCObjectMapper.class) MKOverlay sibling);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("isPitchEnabled")
     public native boolean isPitchEnabled();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setPitchEnabled:")
     public native void setPitchEnabled(boolean value);
 
     /**
      * Rotate and pitch are enabled by default on Mac OS X and on iOS 7.0 and later.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("isRotateEnabled")
@@ -557,6 +615,8 @@ public class MKMapView extends UIView implements NSCoding {
 
     /**
      * Rotate and pitch are enabled by default on Mac OS X and on iOS 7.0 and later.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setRotateEnabled:")
@@ -609,16 +669,26 @@ public class MKMapView extends UIView implements NSCoding {
     /**
      * Changing the map type or region can cause the map to start loading map content.
      * The loading delegate methods will be called as map content is loaded.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("mapType")
     @NUInt
     public native long mapType();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("overlays")
     public native NSArray<?> overlays();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("overlaysInLevel:")
     public native NSArray<?> overlaysInLevel(@NInt long level);
@@ -648,16 +718,24 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("removeAnnotations:")
     public native void removeAnnotations(NSArray<?> annotations);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("removeOverlay:")
     public native void removeOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("removeOverlays:")
     public native void removeOverlays(NSArray<?> overlays);
 
     /**
      * Current renderer for overlay; returns nil if the overlay is not shown.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("rendererForOverlay:")
@@ -675,10 +753,16 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("selectedAnnotations")
     public native NSArray<?> selectedAnnotations();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setCamera:")
     public native void setCamera(MKMapCamera value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setCamera:animated:")
     public native void setCameraAnimated(MKMapCamera camera, boolean animated);
@@ -713,7 +797,11 @@ public class MKMapView extends UIView implements NSCoding {
     /**
      * Changing the map type or region can cause the map to start loading map content.
      * The loading delegate methods will be called as map content is loaded.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("setMapType:")
     public native void setMapType(@NUInt long value);
@@ -736,29 +824,49 @@ public class MKMapView extends UIView implements NSCoding {
 
     /**
      * Affects MKMapTypeStandard
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: None
      */
+    @Deprecated
     @Generated
     @Selector("setShowsBuildings:")
     public native void setShowsBuildings(boolean value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setShowsCompass:")
     public native void setShowsCompass(boolean value);
 
     /**
      * Affects MKMapTypeStandard and MKMapTypeHybrid
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use pointOfInterestFilter
      */
+    @Deprecated
     @Generated
     @Selector("setShowsPointsOfInterest:")
     public native void setShowsPointsOfInterest(boolean value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setShowsScale:")
     public native void setShowsScale(boolean value);
 
     /**
      * Affects MKMapTypeStandard and MKMapTypeHybrid
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("setShowsTraffic:")
     public native void setShowsTraffic(boolean value);
@@ -770,10 +878,16 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("setShowsUserLocation:")
     public native void setShowsUserLocation(boolean value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setUserTrackingMode:")
     public native void setUserTrackingMode(@NInt long value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setUserTrackingMode:animated:")
     public native void setUserTrackingModeAnimated(@NInt long mode, boolean animated);
@@ -796,6 +910,8 @@ public class MKMapView extends UIView implements NSCoding {
 
     /**
      * Position the map such that the provided array of annotations are all visible to the fullest extent possible.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("showAnnotations:animated:")
@@ -803,29 +919,49 @@ public class MKMapView extends UIView implements NSCoding {
 
     /**
      * Affects MKMapTypeStandard
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: None
      */
+    @Deprecated
     @Generated
     @Selector("showsBuildings")
     public native boolean showsBuildings();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("showsCompass")
     public native boolean showsCompass();
 
     /**
      * Affects MKMapTypeStandard and MKMapTypeHybrid
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use pointOfInterestFilter
      */
+    @Deprecated
     @Generated
     @Selector("showsPointsOfInterest")
     public native boolean showsPointsOfInterest();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("showsScale")
     public native boolean showsScale();
 
     /**
      * Affects MKMapTypeStandard and MKMapTypeHybrid
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("showsTraffic")
     public native boolean showsTraffic();
@@ -844,6 +980,9 @@ public class MKMapView extends UIView implements NSCoding {
     @Selector("userLocation")
     public native MKUserLocation userLocation();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("userTrackingMode")
     @NInt
@@ -859,7 +998,11 @@ public class MKMapView extends UIView implements NSCoding {
     /**
      * Currently displayed view for overlay; returns nil if the view has not been created yet.
      * Prefer using MKOverlayRenderer and -rendererForOverlay.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("viewForOverlay:")
     public native MKOverlayView viewForOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
@@ -875,6 +1018,8 @@ public class MKMapView extends UIView implements NSCoding {
     /**
      * Used by the delegate to acquire a reusable annotation view, or create a new view for registered class, in lieu of
      * allocating a new one. Throws an exception if view could not be aquired.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dequeueReusableAnnotationViewWithIdentifier:forAnnotation:")
@@ -884,15 +1029,23 @@ public class MKMapView extends UIView implements NSCoding {
     /**
      * Register a MKAnnotationView subclass to be instantiated when dequeueReusableAnnotationViewWithIdentifier: does
      * not have a view to reuse.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("registerClass:forAnnotationViewWithReuseIdentifier:")
     public native void registerClassForAnnotationViewWithReuseIdentifier(Class viewClass, String identifier);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("cameraBoundary")
     public native MKMapCameraBoundary cameraBoundary();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("cameraZoomRange")
     public native MKMapCameraZoomRange cameraZoomRange();
@@ -903,27 +1056,78 @@ public class MKMapView extends UIView implements NSCoding {
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("pointOfInterestFilter")
     public native MKPointOfInterestFilter pointOfInterestFilter();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setCameraBoundary:")
     public native void setCameraBoundary(MKMapCameraBoundary value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setCameraBoundary:animated:")
     public native void setCameraBoundaryAnimated(MKMapCameraBoundary cameraBoundary, boolean animated);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setCameraZoomRange:")
     public native void setCameraZoomRange(MKMapCameraZoomRange value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setCameraZoomRange:animated:")
     public native void setCameraZoomRangeAnimated(MKMapCameraZoomRange cameraZoomRange, boolean animated);
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("setPointOfInterestFilter:")
     public native void setPointOfInterestFilter(MKPointOfInterestFilter value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("preferredConfiguration")
+    public native MKMapConfiguration preferredConfiguration();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("selectableMapFeatures")
+    @NInt
+    public native long selectableMapFeatures();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setPreferredConfiguration:")
+    public native void setPreferredConfiguration(MKMapConfiguration value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSelectableMapFeatures:")
+    public native void setSelectableMapFeatures(@NInt long value);
 }

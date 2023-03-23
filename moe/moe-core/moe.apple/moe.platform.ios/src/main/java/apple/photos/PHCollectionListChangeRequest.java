@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * PHCollectionListChangeRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or
  * -[PHPhotoLibrary performChangesAndWait:] block.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Photos")
@@ -89,6 +91,8 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
     /**
      * if the collection list does not allow the type of change requested, these methods will raise an exception, call
      * canPerformEditOperation: on the collection list to determine if the type of edit operation is allowed.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("changeRequestForCollectionList:")
@@ -98,6 +102,8 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
      * to add, remove or rearrange child collections in a collection list, passing in the fetched collections in that
      * collection list will ensure that the child collection positions are tracked correctly in the case that the
      * collection list has been externally edited after the fetch, but before this change is applied
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("changeRequestForCollectionList:childCollections:")
@@ -112,6 +118,9 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("creationRequestForCollectionListWithTitle:")
     public static native PHCollectionListChangeRequest creationRequestForCollectionListWithTitle(String title);
@@ -122,6 +131,8 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
 
     /**
      * requests that the specified collection lists and all their child collections (recursively) be deleted
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("deleteCollectionLists:")
@@ -185,6 +196,8 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
 
     /**
      * A PHCollection can only belong to a single parent PHCollection
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("addChildCollections:")
@@ -194,6 +207,9 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
     @Selector("init")
     public native PHCollectionListChangeRequest init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("insertChildCollections:atIndexes:")
     public native void insertChildCollectionsAtIndexes(@Mapped(ObjCObjectMapper.class) NSFastEnumeration collections,
@@ -203,6 +219,8 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
      * The move removes the child collections at fromIndexes first then inserts those collections at the toIndex, so
      * toIndex should point to a location based on the updated indexes after having removed the child collections at
      * fromIndexes
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("moveChildCollectionsAtIndexes:toIndex:")
@@ -212,28 +230,45 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
      * This can be used to fetch the newly created collection list after the change block has completed by using
      * -localIdentifier
      * It can also be added directly to collection lists within the current change block
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("placeholderForCreatedCollectionList")
     public native PHObjectPlaceholder placeholderForCreatedCollectionList();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("removeChildCollections:")
     public native void removeChildCollections(@Mapped(ObjCObjectMapper.class) NSFastEnumeration collections);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("removeChildCollectionsAtIndexes:")
     public native void removeChildCollectionsAtIndexes(NSIndexSet indexes);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("replaceChildCollectionsAtIndexes:withChildCollections:")
     public native void replaceChildCollectionsAtIndexesWithChildCollections(NSIndexSet indexes,
             @Mapped(ObjCObjectMapper.class) NSFastEnumeration collections);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("title")
     public native String title();
@@ -242,6 +277,8 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
      * to add, remove or rearrange child collections in the TOP LEVEL collection list, passing in the fetched
      * collections in that collection list will ensure that the child collection positions are tracked correctly in the
      * case that the collection list has been externally edited after the fetch, but before this change is applied
+     * 
+     * API-Since: 14.2
      */
     @Generated
     @Selector("changeRequestForTopLevelCollectionListUserCollections:")

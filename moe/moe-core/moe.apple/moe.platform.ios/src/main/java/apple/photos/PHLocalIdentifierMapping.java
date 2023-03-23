@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Contains the local identifier result from looking up a cloud identifier via \c
  * localIdentifierMappingsForCloudIdentifiers, or an \c error indicating why the lookup failed
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Photos")
@@ -88,6 +90,8 @@ public class PHLocalIdentifierMapping extends NSObject {
     /**
      * The \c NSString representing the local identifier of the resource found for this cloud identifier, or nil if the
      * match was not found.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("error")
@@ -123,6 +127,9 @@ public class PHLocalIdentifierMapping extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("localIdentifier")
     public native String localIdentifier();

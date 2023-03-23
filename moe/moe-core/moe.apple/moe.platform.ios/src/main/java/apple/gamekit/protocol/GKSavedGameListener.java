@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -34,6 +37,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface GKSavedGameListener {
     /**
      * Called when a player’s saved game data has been modified.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -47,6 +52,8 @@ public interface GKSavedGameListener {
      * multiple devices write to the same saved game while one or more is offline. The application should determine the
      * correct data to use, then call resolveConflictingSavedGames:withData:completionHandler:. This may require data
      * merging or asking the user.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional

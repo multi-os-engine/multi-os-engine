@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -177,6 +180,8 @@ public class PKPaymentRequestUpdate extends NSObject {
     /**
      * The new shipping methods to update the payment request with. An empty array, the default value,
      * indicates that the shipping methods don't need updating.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setShippingMethods:")
@@ -185,8 +190,90 @@ public class PKPaymentRequestUpdate extends NSObject {
     /**
      * The new shipping methods to update the payment request with. An empty array, the default value,
      * indicates that the shipping methods don't need updating.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("shippingMethods")
     public native NSArray<? extends PKShippingMethod> shippingMethods();
+
+    /**
+     * The new automatic reload payment request to update the payment request with.
+     * The default value is `nil`, which indicates no update is needed.
+     * 
+     * The billing agreement cannot be changed.
+     * 
+     * This property cannot be used simultaneously with multi token contexts or recurring payment requests.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("automaticReloadPaymentRequest")
+    public native PKAutomaticReloadPaymentRequest automaticReloadPaymentRequest();
+
+    /**
+     * The new array of payment token contexts to update the payment request with.
+     * The default value is `nil`, which indicates no update is needed.
+     * 
+     * This property cannot be used simultaneously with recurring or automatic reload payment requests.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("multiTokenContexts")
+    public native NSArray<? extends PKPaymentTokenContext> multiTokenContexts();
+
+    /**
+     * The new recurring payment request to update the payment request with.
+     * The default value is `nil`, which indicates no update is needed.
+     * 
+     * The billing agreement cannot be changed.
+     * 
+     * This property cannot be used simultaneously with multi token contexts or automatic reload payment requests.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("recurringPaymentRequest")
+    public native PKRecurringPaymentRequest recurringPaymentRequest();
+
+    /**
+     * The new automatic reload payment request to update the payment request with.
+     * The default value is `nil`, which indicates no update is needed.
+     * 
+     * The billing agreement cannot be changed.
+     * 
+     * This property cannot be used simultaneously with multi token contexts or recurring payment requests.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setAutomaticReloadPaymentRequest:")
+    public native void setAutomaticReloadPaymentRequest(PKAutomaticReloadPaymentRequest value);
+
+    /**
+     * The new array of payment token contexts to update the payment request with.
+     * The default value is `nil`, which indicates no update is needed.
+     * 
+     * This property cannot be used simultaneously with recurring or automatic reload payment requests.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setMultiTokenContexts:")
+    public native void setMultiTokenContexts(NSArray<? extends PKPaymentTokenContext> value);
+
+    /**
+     * The new recurring payment request to update the payment request with.
+     * The default value is `nil`, which indicates no update is needed.
+     * 
+     * The billing agreement cannot be changed.
+     * 
+     * This property cannot be used simultaneously with multi token contexts or automatic reload payment requests.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setRecurringPaymentRequest:")
+    public native void setRecurringPaymentRequest(PKRecurringPaymentRequest value);
 }

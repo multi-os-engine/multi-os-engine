@@ -19,18 +19,74 @@ package apple.intents.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INCarAudioSource is deprecated. There is no replacement.
+ */
+@Deprecated
 @Generated
 public final class INCarAudioSource {
-    @Generated @NInt public static final long SourceUnknown = 0x0000000000000000L;
-    @Generated @NInt public static final long SourceCarPlay = 0x0000000000000001L;
-    @Generated @NInt public static final long SourceiPod = 0x0000000000000002L;
-    @Generated @NInt public static final long SourceRadio = 0x0000000000000003L;
-    @Generated @NInt public static final long SourceBluetooth = 0x0000000000000004L;
-    @Generated @NInt public static final long SourceAUX = 0x0000000000000005L;
-    @Generated @NInt public static final long SourceUSB = 0x0000000000000006L;
-    @Generated @NInt public static final long SourceMemoryCard = 0x0000000000000007L;
-    @Generated @NInt public static final long SourceOpticalDrive = 0x0000000000000008L;
-    @Generated @NInt public static final long SourceHardDrive = 0x0000000000000009L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarAudioSource is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long SourceUnknown = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarAudioSource is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long SourceCarPlay = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarAudioSource is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long SourceiPod = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarAudioSource is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long SourceRadio = 0x0000000000000003L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarAudioSource is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long SourceBluetooth = 0x0000000000000004L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarAudioSource is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long SourceAUX = 0x0000000000000005L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarAudioSource is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long SourceUSB = 0x0000000000000006L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarAudioSource is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long SourceMemoryCard = 0x0000000000000007L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarAudioSource is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long SourceOpticalDrive = 0x0000000000000008L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: INCarAudioSource is deprecated. There is no replacement.
+     */
+    @Deprecated @Generated @NInt public static final long SourceHardDrive = 0x0000000000000009L;
 
     @Generated
     private INCarAudioSource() {

@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -116,6 +119,9 @@ public class MKDirectionsRequest extends NSObject {
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("isDirectionsRequestURL:")
     public static native boolean isDirectionsRequestURL(NSURL url);
@@ -154,12 +160,17 @@ public class MKDirectionsRequest extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("arrivalDate")
     public native NSDate arrivalDate();
 
     /**
      * Set either departure or arrival date to hint to the route server when the trip will take place.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("departureDate")
@@ -173,6 +184,9 @@ public class MKDirectionsRequest extends NSObject {
     @Selector("init")
     public native MKDirectionsRequest init();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("initWithContentsOfURL:")
     public native MKDirectionsRequest initWithContentsOfURL(NSURL url);
@@ -180,22 +194,32 @@ public class MKDirectionsRequest extends NSObject {
     /**
      * if YES and there is more than one reasonable way to route from source to destination, allow the route server to
      * return multiple routes. Default is NO.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("requestsAlternateRoutes")
     public native boolean requestsAlternateRoutes();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setArrivalDate:")
     public native void setArrivalDate(NSDate value);
 
     /**
      * Set either departure or arrival date to hint to the route server when the trip will take place.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setDepartureDate:")
     public native void setDepartureDate(NSDate value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setDestination:")
     public native void setDestination(MKMapItem destination);
@@ -203,17 +227,24 @@ public class MKDirectionsRequest extends NSObject {
     /**
      * if YES and there is more than one reasonable way to route from source to destination, allow the route server to
      * return multiple routes. Default is NO.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setRequestsAlternateRoutes:")
     public native void setRequestsAlternateRoutes(boolean value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setSource:")
     public native void setSource(MKMapItem source);
 
     /**
      * Default is MKDirectionsTransportTypeAny
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setTransportType:")
@@ -225,9 +256,49 @@ public class MKDirectionsRequest extends NSObject {
 
     /**
      * Default is MKDirectionsTransportTypeAny
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("transportType")
     @NUInt
     public native long transportType();
+
+    /**
+     * Default is MKDirectionsRoutePreferenceAny
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("highwayPreference")
+    @NInt
+    public native long highwayPreference();
+
+    /**
+     * Default is MKDirectionsRoutePreferenceAny
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setHighwayPreference:")
+    public native void setHighwayPreference(@NInt long value);
+
+    /**
+     * Default is MKDirectionsRoutePreferenceAny
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setTollPreference:")
+    public native void setTollPreference(@NInt long value);
+
+    /**
+     * Default is MKDirectionsRoutePreferenceAny
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("tollPreference")
+    @NInt
+    public native long tollPreference();
 }

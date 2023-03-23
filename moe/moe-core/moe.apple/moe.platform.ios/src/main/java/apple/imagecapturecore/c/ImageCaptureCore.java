@@ -23,8 +23,10 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICTransportTypeUSB
-     * <p>
+     * 
      * Indicates that the device uses USB transport.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -33,8 +35,10 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICTransportTypeMassStorage
-     * <p>
+     * 
      * Indicates that the device use mounts as a mass-storage volume.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -43,8 +47,10 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICTransportTypeExFAT
-     * <p>
+     * 
      * Indicates that the device use mounts as a exFat storage volume.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -53,8 +59,10 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICTransportTypeTCPIP
-     * <p>
+     * 
      * Indicates that the device uses TCP/IP transport. These devices are discovered using Bonjour.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -65,8 +73,10 @@ public final class ImageCaptureCore {
      * ------------------------------------------------------------------------------------------------------------------------------
      * Constants used for device status notifications.
      * [@const] ICStatusNotificationKey
-     * <p>
+     * 
      * Key for a non-localized notification string.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -77,15 +87,20 @@ public final class ImageCaptureCore {
      * ------------------------------------------------------------------------------------------------------------------------------
      * Constants used to describe capabilities of a device
      * [@const] ICDeviceCanEjectOrDisconnect
-     * <p>
+     * 
      * Indicates either the device is mounted as a mass-storage volume and can be ejected or the it is a remote device
      * with an active connection that can be disconnected.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ICDeviceCanEjectOrDisconnect();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -94,26 +109,30 @@ public final class ImageCaptureCore {
     /**
      * ------------------------------------------------------------------------------------------------------------------------------
      * [@ICEXIFOrientationType]
-     * <p>
+     * 
      * Type representing EXIF Orientation tag value
-     * <p>
+     * 
      * The meaning of this value is defined by the EXIF specification. Here is what the letter F would look like if it
      * were tagged correctly and displayed by a program that ignores the orientation tag (thus showing the stored
      * image):
-     * <p>
+     * 
      * 1 2 3 4
-     * <p>
+     * 
      * 8888888 8888888 88 88
      * 88 88 88 88
      * 8888 8888 8888 8888
      * 88 88 88 88
      * 88 88 8888888 8888888
-     * <p>
+     * 
      * 5 6 7 8
-     * <p>
+     * 
      * 8888888888 88 88 8888888888
      * 88 88 88 88 88 88 88 88
      * 88 8888888888 8888888888 88
+     * 
+     * 
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -122,35 +141,40 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICCameraItemThumbnailOption
-     * <p>
+     * 
      * [@enum] ICImageSourceShouldCache
-     * <p>
+     * 
      * Use of this key will override any custom thumbnail size requested, ignoring the
      * ICImageSourceThumbnailMaxPixelSize
      * option entirely.
-     * <p>
+     * 
      * [@enum] ICImageSourceThumbnailMaxPixelSize
-     * <p>
+     * 
      * Use of this key will be ignored if ICImageSourceShouldCache has also been passed in. Custom thumbnail requests
      * will never be
      * cached.
-     * <p>
+     * 
      * Only the embedded EXIF thumbnail, or a created thumbnail of EXIF standard size (160x120) will
      * be cached. Use of the ICImageSourceShouldCache flag is discouraged, as the framework shall not act as a
      * backing store out of convienence.
-     * <p>
+     * 
      * If use of this flag is required, it is highly recommeded to only keep the image cached within the framework
      * temporarily,
      * using the method -[ICCameraItem flushThumbnailCache] to evict the thumbnail.
-     * <p>
+     * 
      * Multiple calls to both cache the EXIF thumbnail, and subsequently retrieve a larger thumbnail will work as
      * defined.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ICImageSourceThumbnailMaxPixelSize();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -158,11 +182,13 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICDownloadsDirectoryURL
-     * <p>
+     * 
      * ICDownloadsDirectoryURL
-     * <p>
+     * 
      * The value for this key should be an NSURL object referencing a writable directory. The downloaded files will be
      * saved in that directory.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -171,10 +197,12 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICSaveAsFilename
-     * <p>
+     * 
      * ICSaveAsFilename
-     * <p>
+     * 
      * The value for this key should be an NSString object containing the name to be used for the downloaded file.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -183,11 +211,13 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICSavedFilename
-     * <p>
+     * 
      * ICSavedFilename
-     * <p>
+     * 
      * The value for this key will be an NSString object containing the actual name of the saved file. The options
      * dictionary returned in didDownloadFile:error:options:contextInfo: will have this key.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -196,11 +226,13 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICSavedAncillaryFiles
-     * <p>
+     * 
      * ICSavedAncillaryFiles
-     * <p>
+     * 
      * The value for this key will be an NSArray object containing names of files associated with the primary file that
      * is downloaded. The options dictionary returned in didDownloadFile:error:options:contextInfo: may have this key.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -209,11 +241,13 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICOverwrite
-     * <p>
+     * 
      * ICOverwrite
-     * <p>
+     * 
      * The value for this key should be an NSNumber object representing a boolean value. If this value is YES, the
      * downloaded file will overwrite an existing file with the same name and extension.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -222,11 +256,13 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICDeleteAfterSuccessfulDownload
-     * <p>
+     * 
      * ICDeleteAfterSuccessfulDownload
-     * <p>
+     * 
      * The value for this key should be an NSNumber object representing a boolean value. If this value is YES, the file
      * will be deleted from the device after it is succcessfully downloaded.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -235,11 +271,13 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICDownloadSidecarFiles
-     * <p>
+     * 
      * ICDownloadSidecarFiles
-     * <p>
+     * 
      * The value for this key should be an NSNumber object representing a boolean value. If this value is YES, all
      * sidecar files will be downloaded along with the media file.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -248,9 +286,11 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICCameraDeviceCanTakePicture
-     * <p>
+     * 
      * Indicates that the camera can capture a picture while it is connected, if the client sends a 'requestTakePicture'
      * message to it.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -259,9 +299,11 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICCameraDeviceCanTakePictureUsingShutterReleaseOnCamera
-     * <p>
+     * 
      * Indicates that the camera can capture a picture while it is connected, if the user presses the shutter release on
      * the camera.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -270,8 +312,10 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICCameraDeviceCanDeleteOneFile
-     * <p>
+     * 
      * Indicates that the camera can delete a file at a time while it is connected.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -280,8 +324,10 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICCameraDeviceCanDeleteAllFiles
-     * <p>
+     * 
      * Indicates that the camera can delete all files in a single operation while it is connected.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -290,8 +336,10 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICCameraDeviceCanSyncClock
-     * <p>
+     * 
      * Indicates that the camera can synchronize its date and time with that of the host computer.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -300,8 +348,10 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICCameraDeviceCanReceiveFile
-     * <p>
+     * 
      * Indicates that the host can upload files to the camera.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -310,8 +360,10 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICCameraDeviceCanAcceptPTPCommands
-     * <p>
+     * 
      * Indicates that the camera can accept PTP commands.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -320,8 +372,10 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICDeleteSuccessful
-     * <p>
+     * 
      * The value for this key should be an NSArray<ICCameraItem*>*
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -330,8 +384,10 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICDeleteCanceled
-     * <p>
+     * 
      * The value for this key should be an NSArray<ICCameraItem*>*
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -340,8 +396,10 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICDeleteFailed
-     * <p>
+     * 
      * The value for this key should be an NSArray<ICCameraItem*>*
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -350,8 +408,10 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICDeleteErrorReadOnly
-     * <p>
+     * 
      * The value for this key should be an ICCameraItem*
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -360,8 +420,10 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICDeleteErrorFileMissing
-     * <p>
+     * 
      * The value for this key should be an ICCameraItem*
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -370,8 +432,10 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICDeleteErrorDeviceMissing
-     * <p>
+     * 
      * The value for this key should be an ICCameraItem*
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -380,8 +444,10 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICDeleteErrorDeviceMissing
-     * <p>
+     * 
      * The value for this key should be an ICCameraItem*
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -390,12 +456,14 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICTruncateAfterSuccessfulDownload
-     * <p>
+     * 
      * The value for this key should be an NSNumber object representing a boolean value. If this value is YES, and the
      * file is a JPG converted from HEIC on device,
      * the padding will be stripped from the end of the file. Note that the file size property of the ICCameraItem
      * object will not be updated to reflect the newly truncated image. This
      * option has no effect for images coming from devices without the ability to convert from HEIC to JPG.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -404,32 +472,97 @@ public final class ImageCaptureCore {
 
     /**
      * [@const] ICCameraDeviceSupportsHEIF
-     * <p>
+     * 
      * Indicates that the camera supports HEIF transcoding, and can change the presentation of converted assets and
      * original assets on the fly.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ICCameraDeviceSupportsHEIF();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ICAuthorizationStatusNotDetermined();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ICAuthorizationStatusRestricted();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ICAuthorizationStatusDenied();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String ICAuthorizationStatusAuthorized();
+
+    /**
+     * ------------------------------------------------------------------------------------------------------------------------------
+     * Constants used for device location description.
+     * [@const] ICDeviceLocationDescriptionUSB
+     * 
+     * This description is returned for locationDescription property of a device connected to a USB port.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ICDeviceLocationDescriptionUSB();
+
+    /**
+     * [@const] ICDeviceLocationDescriptionFireWire
+     * 
+     * This description is returned for locationDescription property of a device connected to a FireWire port.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ICDeviceLocationDescriptionFireWire();
+
+    /**
+     * [@const] ICDeviceLocationDescriptionBluetooth
+     * 
+     * This description is returned for locationDescription property of a device connected via Bluetooth.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ICDeviceLocationDescriptionBluetooth();
+
+    /**
+     * [@const] ICDeviceLocationDescriptionMassStorage
+     * 
+     * This description is returned for locationDescription property of a device that is mounted as a mass-storage
+     * volume.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String ICDeviceLocationDescriptionMassStorage();
 }

@@ -23,6 +23,8 @@ public interface PDFDocumentDelegate {
      * If implemented by the delegate, will be called when a PDFAnnotation is instantiated by a page. PDFPage by default
      * will instantiate object of class. This allows you to instead return your own PDFAnnotation subclass.
      * Return nil for annotation types you do not subclass.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -34,6 +36,8 @@ public interface PDFDocumentDelegate {
     /**
      * If implemented by the delegate, will be called when a PDFPage is instantiated. PDFDocument's implementation calls
      * -[PDFDocument pageClass] (see above).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional

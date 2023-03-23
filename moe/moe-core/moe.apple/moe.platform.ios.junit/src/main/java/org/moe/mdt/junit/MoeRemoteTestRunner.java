@@ -17,7 +17,7 @@ limitations under the License.
 package org.moe.mdt.junit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
+import apple.corefoundation.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSCharacterSet;

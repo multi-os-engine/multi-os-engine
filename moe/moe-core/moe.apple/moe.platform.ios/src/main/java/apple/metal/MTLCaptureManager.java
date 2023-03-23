@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -190,7 +193,12 @@ public class MTLCaptureManager extends NSObject {
     /**
      * Starts capturing, for the given command queue, command buffers that are created after invoking this method and
      * committed before invoking -[stopCapture] or clicking Xcode’s stop capture button.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use startCaptureWithDescriptor:error: instead
      */
+    @Deprecated
     @Generated
     @Selector("startCaptureWithCommandQueue:")
     public native void startCaptureWithCommandQueue(@Mapped(ObjCObjectMapper.class) MTLCommandQueue commandQueue);
@@ -198,7 +206,12 @@ public class MTLCaptureManager extends NSObject {
     /**
      * Starts capturing, for all queues of the given device, new MTLCommandBuffer's until -[stopCapture] or Xcode’s stop
      * capture button is pressed
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use startCaptureWithDescriptor:error: instead
      */
+    @Deprecated
     @Generated
     @Selector("startCaptureWithDevice:")
     public native void startCaptureWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
@@ -206,7 +219,12 @@ public class MTLCaptureManager extends NSObject {
     /**
      * Start a capture with the given scope: from the scope's begin until its end, restricting the capture to the
      * scope's device(s) and, if selected, the scope's command queue
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use startCaptureWithDescriptor:error: instead
      */
+    @Deprecated
     @Generated
     @Selector("startCaptureWithScope:")
     public native void startCaptureWithScope(@Mapped(ObjCObjectMapper.class) MTLCaptureScope captureScope);
@@ -231,7 +249,9 @@ public class MTLCaptureManager extends NSObject {
     /**
      * Start capturing until stopCapture is called.
      * [@remarks] Only MTLCommandBuffer​s created after starting and committed before stopping it are captured.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param descriptor MTLCaptureDescriptor specifies the parameters.
      * @param error      Optional error output to check why a capture could not be started.
      * @return true if the capture was successfully started, otherwise false.
@@ -243,6 +263,8 @@ public class MTLCaptureManager extends NSObject {
 
     /**
      * Checks if a given capture destination is supported.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("supportsDestination:")

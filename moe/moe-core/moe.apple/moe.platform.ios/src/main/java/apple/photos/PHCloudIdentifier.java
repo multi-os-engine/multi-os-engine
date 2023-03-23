@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -104,6 +107,8 @@ public class PHCloudIdentifier extends NSObject implements NSSecureCoding, NSCop
 
     /**
      * For use in serialization
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithStringValue:")
@@ -147,6 +152,9 @@ public class PHCloudIdentifier extends NSObject implements NSSecureCoding, NSCop
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("stringValue")
     public native String stringValue();

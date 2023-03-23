@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -101,6 +104,11 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSBatchInsertRequest init();
@@ -187,6 +195,9 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("batchInsertRequestWithEntityName:dictionaryHandler:")
     public static native NSBatchInsertRequest batchInsertRequestWithEntityNameDictionaryHandler(String entityName,
@@ -199,6 +210,9 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
         boolean call_batchInsertRequestWithEntityNameDictionaryHandler(NSMutableDictionary<String, Object> obj);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("batchInsertRequestWithEntityName:managedObjectHandler:")
     public static native NSBatchInsertRequest batchInsertRequestWithEntityNameManagedObjectHandler(String entityName,
@@ -211,6 +225,9 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
         boolean call_batchInsertRequestWithEntityNameManagedObjectHandler(NSManagedObject obj);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("dictionaryHandler")
     @ObjCBlock(name = "call_dictionaryHandler_ret")
@@ -223,6 +240,9 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
         boolean call_dictionaryHandler_ret(NSMutableDictionary<String, Object> arg0);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithEntity:dictionaryHandler:")
     public native NSBatchInsertRequest initWithEntityDictionaryHandler(NSEntityDescription entity,
@@ -235,6 +255,9 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
         boolean call_initWithEntityDictionaryHandler(NSMutableDictionary<String, Object> obj);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithEntity:managedObjectHandler:")
     public native NSBatchInsertRequest initWithEntityManagedObjectHandler(NSEntityDescription entity,
@@ -247,6 +270,9 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
         boolean call_initWithEntityManagedObjectHandler(NSManagedObject obj);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithEntityName:dictionaryHandler:")
     public native NSBatchInsertRequest initWithEntityNameDictionaryHandler(String entityName,
@@ -259,6 +285,9 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
         boolean call_initWithEntityNameDictionaryHandler(NSMutableDictionary<String, Object> obj);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithEntityName:managedObjectHandler:")
     public native NSBatchInsertRequest initWithEntityNameManagedObjectHandler(String entityName,
@@ -271,6 +300,9 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
         boolean call_initWithEntityNameManagedObjectHandler(NSManagedObject obj);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("managedObjectHandler")
     @ObjCBlock(name = "call_managedObjectHandler_ret")
@@ -283,6 +315,9 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
         boolean call_managedObjectHandler_ret(NSManagedObject arg0);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setDictionaryHandler:")
     public native void setDictionaryHandler(
@@ -295,6 +330,9 @@ public class NSBatchInsertRequest extends NSPersistentStoreRequest {
         boolean call_setDictionaryHandler(NSMutableDictionary<String, Object> arg0);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setManagedObjectHandler:")
     public native void setManagedObjectHandler(

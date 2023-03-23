@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * virtual base class for basic arithmetic nodes
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -94,7 +96,7 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
 
     /**
      * init an arithemtic node with two sources
-     *
+     * 
      * @param left  the left operand
      * @param right the right operand
      */
@@ -104,7 +106,7 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
 
     /**
      * init an arithemtic node with an array of sources
-     *
+     * 
      * @param sourceNodes A valid NSArray containing two sources
      */
     @Generated
@@ -139,7 +141,7 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
 
     /**
      * create an autoreleased arithemtic node with two sources
-     *
+     * 
      * @param left  the left operand
      * @param right the right operand
      */
@@ -150,7 +152,7 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
 
     /**
      * create an autoreleased arithemtic node with an array of sources
-     *
+     * 
      * @param sourceNodes A valid NSArray containing two sources
      */
     @Generated
@@ -188,9 +190,11 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
 
     /**
      * create new arithmetic gradient nodes
-     * <p>
+     * 
      * Create two new arithmetic gradient nodes - one that computes the gradient for the primary
      * source image and one that computes the gradient for the secondary sourcefrom the inference pass.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("gradientFiltersWithSources:")

@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -207,6 +210,9 @@ public class INTask extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithTitle:status:taskType:spatialEventTrigger:temporalEventTrigger:createdDateComponents:modifiedDateComponents:identifier:priority:")
     public native INTask initWithTitleStatusTaskTypeSpatialEventTriggerTemporalEventTriggerCreatedDateComponentsModifiedDateComponentsIdentifierPriority(
@@ -214,6 +220,9 @@ public class INTask extends NSObject implements NSCopying, NSSecureCoding {
             INTemporalEventTrigger temporalEventTrigger, NSDateComponents createdDateComponents,
             NSDateComponents modifiedDateComponents, String identifier, @NInt long priority);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("priority")
     @NInt

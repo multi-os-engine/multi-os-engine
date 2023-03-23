@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * UIAccessibilityCustomRotorSearchPredicate is a container for search parameters.
  * It should be examined to determine the next matching UIAccessibilityCustomRotorItemResult.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("UIKit")

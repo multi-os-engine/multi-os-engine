@@ -44,9 +44,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CLCircularRegion
- * <p>
+ * 
  * Discussion:
  * A circular geographic area.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("CoreLocation")
@@ -164,7 +166,7 @@ public class CLCircularRegion extends CLRegion {
 
     /**
      * center
-     * <p>
+     * 
      * Discussion:
      * Returns the coordinate of the center of the region.
      */
@@ -175,7 +177,7 @@ public class CLCircularRegion extends CLRegion {
 
     /**
      * containsCoordinate:
-     * <p>
+     * 
      * Discussion:
      * Returns YES if the coordinate lies inside the region, and NO otherwise.
      */
@@ -195,7 +197,7 @@ public class CLCircularRegion extends CLRegion {
 
     /**
      * initWithCenter:radius:identifier:
-     * <p>
+     * 
      * Discussion:
      * Initialize a region. center gives the coordinates of center of the region, while radius gives
      * the distance in meters between the center and the region's boundary. identifier is a description
@@ -212,7 +214,7 @@ public class CLCircularRegion extends CLRegion {
 
     /**
      * radius
-     * <p>
+     * 
      * Discussion:
      * Returns the radius of the region.
      */

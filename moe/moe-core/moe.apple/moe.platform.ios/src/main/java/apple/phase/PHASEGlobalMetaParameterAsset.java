@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEGlobalMetaParameterAsset
- * <p>
+ * 
  * An object that represents a registered global metaparameter asset in the asset registry.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")

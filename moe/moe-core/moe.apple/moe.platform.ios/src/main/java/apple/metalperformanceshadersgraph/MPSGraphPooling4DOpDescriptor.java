@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSGraphPooling4DOpDescriptor
- * <p>
+ * 
  * Defines a 4d pooling operation
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("MetalPerformanceShadersGraph")
@@ -74,7 +76,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] ceilMode
-     * <p>
+     * 
      * If set then the output size is computed by rounding up instead of down when
      * dividing by stride.
      * Default value: @code NO @endcode
@@ -107,7 +109,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * Creates a 4d pooling descriptor with default values.
-     *
+     * 
      * @param kernelSizes  See corresponding property above.
      * @param paddingStyle See corresponding property above.
      * @return The descriptor on autoreleasepool.
@@ -119,7 +121,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * Creates a 4d pooling descriptor with given values.
-     *
+     * 
      * @param kernelSizes   See corresponding property above.
      * @param strides       See corresponding property above.
      * @param dilationRates See corresponding property above.
@@ -136,7 +138,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] dilationRates
-     * <p>
+     * 
      * Must be four numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1, @1 ] @endcode
      */
@@ -151,7 +153,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] includeZeroPadToAverage
-     * <p>
+     * 
      * For average pooling use a mode where samples outside the input tensor count as
      * zeroes in the average computation. Otherwise the result is sum over samples divided by
      * number of samples that didn't come from padding.
@@ -184,7 +186,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] kernelSizes
-     * <p>
+     * 
      * Defines the pooling window size.
      * Must be four numbers, one for each spatial dimension, fastest running index last.
      */
@@ -203,7 +205,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] paddingStyle
-     * <p>
+     * 
      * Defines what kind of padding to apply to operation.
      * Default value: @code MPSGraphPaddingStyleExplicit @endcode
      */
@@ -214,7 +216,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] paddingValues
-     * <p>
+     * 
      * Must be eight numbers, two for each spatial dimension. `paddingValues[0]` defines the explicit padding
      * amount before the first spatial dimension (slowest running index of spatial dimensions),
      * `paddingValues[1]` defines the padding amount after the first spatial dimension etc.
@@ -235,7 +237,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] ceilMode
-     * <p>
+     * 
      * If set then the output size is computed by rounding up instead of down when
      * dividing by stride.
      * Default value: @code NO @endcode
@@ -246,7 +248,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] dilationRates
-     * <p>
+     * 
      * Must be four numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1, @1 ] @endcode
      */
@@ -256,7 +258,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] includeZeroPadToAverage
-     * <p>
+     * 
      * For average pooling use a mode where samples outside the input tensor count as
      * zeroes in the average computation. Otherwise the result is sum over samples divided by
      * number of samples that didn't come from padding.
@@ -268,7 +270,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] kernelSizes
-     * <p>
+     * 
      * Defines the pooling window size.
      * Must be four numbers, one for each spatial dimension, fastest running index last.
      */
@@ -278,7 +280,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] paddingStyle
-     * <p>
+     * 
      * Defines what kind of padding to apply to operation.
      * Default value: @code MPSGraphPaddingStyleExplicit @endcode
      */
@@ -288,7 +290,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] paddingValues
-     * <p>
+     * 
      * Must be eight numbers, two for each spatial dimension. `paddingValues[0]` defines the explicit padding
      * amount before the first spatial dimension (slowest running index of spatial dimensions),
      * `paddingValues[1]` defines the padding amount after the first spatial dimension etc.
@@ -301,7 +303,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] strides
-     * <p>
+     * 
      * Must be four numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1, @1 ] @endcode
      */
@@ -315,7 +317,7 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
 
     /**
      * [@property] strides
-     * <p>
+     * 
      * Must be four numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1, @1 ] @endcode
      */
@@ -331,4 +333,59 @@ public class MPSGraphPooling4DOpDescriptor extends NSObject implements NSCopying
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] returnIndicesDataType
+     * 
+     * Used in conjunction with maxPooling4DAndReturnIndicesWithSourceTensor API.
+     * If MPSGraphPoolingReturnIndicesNone, this property is not used.
+     * Currently supports MPSDataTypeInt32
+     * Default value: @code MPSDataTypeInt32 @endcode
+     * 
+     * API-Since: 15.3
+     */
+    @Generated
+    @Selector("returnIndicesDataType")
+    public native int returnIndicesDataType();
+
+    /**
+     * [@property] returnIndicesMode
+     * 
+     * Used in conjunction with maxPooling4DAndReturnIndicesWithSourceTensor API.
+     * If MPSGraphPoolingReturnIndicesNone, returns a nil tensor for indices.
+     * Default value: @code MPSGraphPoolingReturnIndicesNone @endcode
+     * 
+     * API-Since: 15.3
+     */
+    @Generated
+    @Selector("returnIndicesMode")
+    @NUInt
+    public native long returnIndicesMode();
+
+    /**
+     * [@property] returnIndicesDataType
+     * 
+     * Used in conjunction with maxPooling4DAndReturnIndicesWithSourceTensor API.
+     * If MPSGraphPoolingReturnIndicesNone, this property is not used.
+     * Currently supports MPSDataTypeInt32
+     * Default value: @code MPSDataTypeInt32 @endcode
+     * 
+     * API-Since: 15.3
+     */
+    @Generated
+    @Selector("setReturnIndicesDataType:")
+    public native void setReturnIndicesDataType(int value);
+
+    /**
+     * [@property] returnIndicesMode
+     * 
+     * Used in conjunction with maxPooling4DAndReturnIndicesWithSourceTensor API.
+     * If MPSGraphPoolingReturnIndicesNone, returns a nil tensor for indices.
+     * Default value: @code MPSGraphPoolingReturnIndicesNone @endcode
+     * 
+     * API-Since: 15.3
+     */
+    @Generated
+    @Selector("setReturnIndicesMode:")
+    public native void setReturnIndicesMode(@NUInt long value);
 }

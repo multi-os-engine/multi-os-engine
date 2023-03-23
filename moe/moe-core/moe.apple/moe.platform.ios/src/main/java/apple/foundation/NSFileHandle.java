@@ -103,6 +103,9 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Selector("fileHandleForReadingAtPath:")
     public static native NSFileHandle fileHandleForReadingAtPath(String path);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("fileHandleForReadingFromURL:error:")
     public static native NSFileHandle fileHandleForReadingFromURLError(NSURL url,
@@ -112,6 +115,9 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Selector("fileHandleForUpdatingAtPath:")
     public static native NSFileHandle fileHandleForUpdatingAtPath(String path);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("fileHandleForUpdatingURL:error:")
     public static native NSFileHandle fileHandleForUpdatingURLError(NSURL url,
@@ -121,6 +127,9 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Selector("fileHandleForWritingAtPath:")
     public static native NSFileHandle fileHandleForWritingAtPath(String path);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("fileHandleForWritingToURL:error:")
     public static native NSFileHandle fileHandleForWritingToURLError(NSURL url,
@@ -210,6 +219,11 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Selector("availableData")
     public native NSData availableData();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("closeFile")
     public native void closeFile();
@@ -238,10 +252,20 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Selector("initWithFileDescriptor:closeOnDealloc:")
     public native NSFileHandle initWithFileDescriptorCloseOnDealloc(int fd, boolean closeopt);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("offsetInFile")
     public native long offsetInFile();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("readDataOfLength:")
     public native NSData readDataOfLength(@NUInt long length);
@@ -249,7 +273,11 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     /**
      * The API below may throw exceptions and will be deprecated in a future version of the OS.
      * Use their replacements instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("readDataToEndOfFile")
     public native NSData readDataToEndOfFile();
@@ -270,24 +298,43 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Selector("readToEndOfFileInBackgroundAndNotifyForModes:")
     public native void readToEndOfFileInBackgroundAndNotifyForModes(NSArray<String> modes);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("readabilityHandler")
     @ObjCBlock(name = "call_readabilityHandler_ret")
     public native Block_readabilityHandler_ret readabilityHandler();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("seekToEndOfFile")
     public native long seekToEndOfFile();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("seekToFileOffset:")
     public native void seekToFileOffset(long offset);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setReadabilityHandler:")
     public native void setReadabilityHandler(
             @ObjCBlock(name = "call_setReadabilityHandler") Block_setReadabilityHandler value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setWriteabilityHandler:")
     public native void setWriteabilityHandler(
@@ -299,10 +346,20 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("synchronizeFile")
     public native void synchronizeFile();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("truncateFileAtOffset:")
     public native void truncateFileAtOffset(long offset);
@@ -315,10 +372,18 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
     @Selector("waitForDataInBackgroundAndNotifyForModes:")
     public native void waitForDataInBackgroundAndNotifyForModes(NSArray<String> modes);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("writeData:")
     public native void writeData(NSData data);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("writeabilityHandler")
     @ObjCBlock(name = "call_writeabilityHandler_ret")
@@ -352,40 +417,67 @@ public class NSFileHandle extends NSObject implements NSSecureCoding {
         void call_writeabilityHandler_ret(NSFileHandle arg0);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("closeAndReturnError:")
     public native boolean closeAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("getOffset:error:")
     public native boolean getOffsetError(LongPtr offsetInFile, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("readDataToEndOfFileAndReturnError:")
     public native NSData readDataToEndOfFileAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("readDataUpToLength:error:")
     public native NSData readDataUpToLengthError(@NUInt long length,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("seekToEndReturningOffset:error:")
     public native boolean seekToEndReturningOffsetError(LongPtr offsetInFile,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("seekToOffset:error:")
     public native boolean seekToOffsetError(long offset, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("synchronizeAndReturnError:")
     public native boolean synchronizeAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("truncateAtOffset:error:")
     public native boolean truncateAtOffsetError(long offset, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("writeData:error:")
     public native boolean writeDataError(NSData data, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);

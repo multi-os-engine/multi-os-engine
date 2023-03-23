@@ -17,7 +17,6 @@ limitations under the License.
 package apple.photos;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSData;
@@ -53,7 +52,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 9.1
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -88,6 +91,8 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding, 
 
     /**
      * Cancels the loading of a PHLivePhoto. The request's completion handler will be called.
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("cancelLivePhotoRequestWithRequestID:")
@@ -159,6 +164,8 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding, 
      * equal to CGRectZero, content will not be resized.
      * When using this method to provide content for a PHLivePhotoView, each live photo instance delivered via the
      * result handler should be passed to -[PHLivePhotoView setLivePhoto:].
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("requestLivePhotoWithResourceFileURLs:placeholderImage:targetSize:contentMode:resultHandler:")
@@ -211,6 +218,8 @@ public class PHLivePhoto extends NSObject implements NSCopying, NSSecureCoding, 
 
     /**
      * The dimensions of the live photo measured in pixels.
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("size")

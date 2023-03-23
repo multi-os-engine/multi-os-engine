@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSGraphDepthwiseConvolution3DOpDescriptor
- * <p>
+ * 
  * Defines a 3d depthwise convolution operation
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("MetalPerformanceShadersGraph")
@@ -74,7 +76,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
 
     /**
      * [@property] channelDimensionIndex
-     * <p>
+     * 
      * Defines which axis contains the channels in the input and the weights, within
      * the 4d tile of the last dimensions. For example the value of @code -1 @endcode
      * corresponds to @code NDHWC, NHWC @endcode layouts. This allows the placement
@@ -113,7 +115,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
 
     /**
      * Creates a 3d depthwise convolution descriptor with default values.
-     *
+     * 
      * @param paddingStyle See corresponding property above.
      * @return The descriptor on autoreleasepool.
      */
@@ -124,7 +126,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
 
     /**
      * Creates a 3d depthwise convolution descriptor with given values.
-     *
+     * 
      * @param strides       See corresponding property above.
      * @param dilationRates See corresponding property above.
      * @param paddingValues See corresponding property above.
@@ -139,7 +141,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
 
     /**
      * [@property] dilationRates
-     * <p>
+     * 
      * Must be three numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1 ] @endcode
      */
@@ -184,7 +186,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
 
     /**
      * [@property] paddingStyle
-     * <p>
+     * 
      * Defines what kind of padding to apply to operation.
      * Default value: @code MPSGraphPaddingStyleExplicit @endcode
      */
@@ -195,7 +197,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
 
     /**
      * [@property] paddingValues
-     * <p>
+     * 
      * Must be six numbers, two for each spatial dimension. `paddingValues[0]` defines the explicit padding
      * amount before the first spatial dimension (slowest running index of spatial dimensions),
      * `paddingValues[1]` defines the padding amount after the first spatial dimension etc.
@@ -216,7 +218,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
 
     /**
      * [@property] channelDimensionIndex
-     * <p>
+     * 
      * Defines which axis contains the channels in the input and the weights, within
      * the 4d tile of the last dimensions. For example the value of @code -1 @endcode
      * corresponds to @code NDHWC, NHWC @endcode layouts. This allows the placement
@@ -232,7 +234,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
 
     /**
      * [@property] dilationRates
-     * <p>
+     * 
      * Must be three numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1 ] @endcode
      */
@@ -242,7 +244,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
 
     /**
      * [@property] paddingStyle
-     * <p>
+     * 
      * Defines what kind of padding to apply to operation.
      * Default value: @code MPSGraphPaddingStyleExplicit @endcode
      */
@@ -252,7 +254,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
 
     /**
      * [@property] paddingValues
-     * <p>
+     * 
      * Must be six numbers, two for each spatial dimension. `paddingValues[0]` defines the explicit padding
      * amount before the first spatial dimension (slowest running index of spatial dimensions),
      * `paddingValues[1]` defines the padding amount after the first spatial dimension etc.
@@ -265,7 +267,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
 
     /**
      * [@property] strides
-     * <p>
+     * 
      * Must be three numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1 ] @endcode
      */
@@ -279,7 +281,7 @@ public class MPSGraphDepthwiseConvolution3DOpDescriptor extends NSObject impleme
 
     /**
      * [@property] strides
-     * <p>
+     * 
      * Must be three numbers, one for each spatial dimension, fastest running index last.
      * Default value: @code @[ @1, @1, @1 ] @endcode
      */

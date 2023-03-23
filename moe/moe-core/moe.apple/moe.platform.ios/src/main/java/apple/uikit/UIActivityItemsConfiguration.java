@@ -1,7 +1,6 @@
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSItemProvider;
 import apple.foundation.NSMethodSignature;
@@ -28,9 +27,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * A configuration that allows a responder to export data through a variety of interactions.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")

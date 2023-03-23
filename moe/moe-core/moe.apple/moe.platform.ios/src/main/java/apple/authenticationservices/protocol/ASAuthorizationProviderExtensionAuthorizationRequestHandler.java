@@ -9,6 +9,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)

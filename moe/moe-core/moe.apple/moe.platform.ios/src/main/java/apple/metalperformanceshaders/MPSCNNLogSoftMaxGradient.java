@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNLogSoftMaxGradient
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The logSoftMax gradient filter calculates the gradient to be backpropagated.
  * The logSoftMax gradient just as the log softMax filter, is applied across feature channels and at all spatial
  * locations.
@@ -40,9 +40,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * outputGradient(x,y,k) = inputGradient(x,y,k) - exp(logSoftMax(x,y,k)) * sum(inputGradient(x,y,0) ...
  * inputGradient(x,y,N-1))
  * where N is the number of feature channels
- * <p>
+ * 
  * The incoming gradient is the primary source.
  * The original output of corresponding logSoftMax is the secondary source.
+ * 
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -117,13 +120,13 @@ public class MPSCNNLogSoftMaxGradient extends MPSCNNGradientKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
@@ -135,8 +138,9 @@ public class MPSCNNLogSoftMaxGradient extends MPSCNNGradientKernel {
 
     /**
      * Initializes a MPSCNNLogSoftMaxGradient function
-     *
+     * 
      * @param device The MTLDevice on which this MPSCNNLogSoftMaxGradient filter will be used
+     * 
      * @return A valid MPSCNNLogSoftMaxGradient object or nil, if failure.
      */
     @Generated

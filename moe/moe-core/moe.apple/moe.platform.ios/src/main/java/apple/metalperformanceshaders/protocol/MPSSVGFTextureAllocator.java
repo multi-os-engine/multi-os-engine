@@ -16,6 +16,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Protocol dictating how texture allocator objects should operate so that they can be used
  * by an MPSSVGFDenoiser object to allocate and reuse intermediate and output textures during the
  * denoising process.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")

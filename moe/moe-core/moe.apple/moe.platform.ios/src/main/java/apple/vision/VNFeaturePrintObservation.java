@@ -30,7 +30,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- *
+ * API-Since: 13.0
  */
 @Generated
 @Library("Vision")
@@ -84,7 +84,7 @@ public class VNFeaturePrintObservation extends VNObservation {
 
     /**
      * Computes the distance between two observations.
-     * <p>
+     * 
      * The larger the distance the more dissimlar the feature prints are. In case of an error this method returns false
      * with an error describing the error condition, for instance comparing two non-comparable feature prints.
      */

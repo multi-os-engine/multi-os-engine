@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class describes a user in the home.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -165,6 +167,8 @@ public class HMUser extends NSObject {
 
     /**
      * A unique identifier for the user.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("uniqueIdentifier")

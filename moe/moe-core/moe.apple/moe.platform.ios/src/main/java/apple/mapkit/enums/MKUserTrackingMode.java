@@ -19,14 +19,21 @@ package apple.mapkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 public final class MKUserTrackingMode {
     /**
      * the user's location is not followed
+     * 
+     * API-Since: 5.0
      */
     @Generated @NInt public static final long None = 0x0000000000000000L;
     /**
      * the map follows the user's location
+     * 
+     * API-Since: 5.0
      */
     @Generated @NInt public static final long Follow = 0x0000000000000001L;
     /**

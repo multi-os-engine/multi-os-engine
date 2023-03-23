@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -96,12 +99,21 @@ public class INPlayMediaIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INPlayMediaIntent initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 12.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithMediaItems:mediaContainer:playShuffled:playbackRepeatMode:resumePlayback:")
     public native INPlayMediaIntent initWithMediaItemsMediaContainerPlayShuffledPlaybackRepeatModeResumePlayback(
             NSArray<? extends INMediaItem> mediaItems, INMediaItem mediaContainer, NSNumber playShuffled,
             @NInt long playbackRepeatMode, NSNumber resumePlayback);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithMediaItems:mediaContainer:playShuffled:playbackRepeatMode:resumePlayback:playbackQueueLocation:playbackSpeed:mediaSearch:")
     public native INPlayMediaIntent initWithMediaItemsMediaContainerPlayShuffledPlaybackRepeatModeResumePlaybackPlaybackQueueLocationPlaybackSpeedMediaSearch(
@@ -138,6 +150,9 @@ public class INPlayMediaIntent extends INIntent {
     @Selector("mediaItems")
     public native NSArray<? extends INMediaItem> mediaItems();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("mediaSearch")
     public native INMediaSearch mediaSearch();
@@ -154,6 +169,9 @@ public class INPlayMediaIntent extends INIntent {
     @Selector("playShuffled")
     public native NSNumber playShuffled();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("playbackQueueLocation")
     @NInt
@@ -164,6 +182,9 @@ public class INPlayMediaIntent extends INIntent {
     @NInt
     public native long playbackRepeatMode();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("playbackSpeed")
     public native NSNumber playbackSpeed();

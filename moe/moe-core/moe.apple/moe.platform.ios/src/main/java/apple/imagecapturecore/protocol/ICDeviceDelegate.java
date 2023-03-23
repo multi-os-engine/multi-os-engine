@@ -15,7 +15,7 @@ import org.moe.natj.objc.ann.Selector;
  * -------------------------------------------------------------------------------------------------------------
  * ICDeviceDelegate
  * [@protocol] ICDeviceDelegate <NSObject>
- * <p>
+ * 
  * A delegate of ICDevice must conform to ICDeviceDelegate protocol.
  * [@note] Unless otherwise noted, all delegate callbacks will occur on the main thread.
  */
@@ -26,12 +26,14 @@ import org.moe.natj.objc.ann.Selector;
 public interface ICDeviceDelegate {
     /**
      * device:didCloseSessionWithError:
-     * <p>
+     * 
      * This message is sent when a session is closed on a device.
-     * <p>
+     * 
      * This message completes the process initiated by the message "requestCloseSession" sent to the device object. This
      * message is also sent if the device module in control of the device ceases to control the device.
      * [@note] Execution of the delegate callback will occur on the main thread.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("device:didCloseSessionWithError:")
@@ -39,9 +41,11 @@ public interface ICDeviceDelegate {
 
     /**
      * device:didEjectWithError:
-     * <p>
+     * 
      * This message is sent to the device delegate when the eject has completed.
      * [@note] Execution of the delegate callback will occur on the main thread.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -52,9 +56,11 @@ public interface ICDeviceDelegate {
 
     /**
      * device:didEncounterError:
-     * <p>
+     * 
      * This message is sent to the device delegate a device encounters an error.
      * [@note] Execution of the delegate callback will occur on the main thread.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -65,11 +71,13 @@ public interface ICDeviceDelegate {
 
     /**
      * device:didOpenSessionWithError:
-     * <p>
+     * 
      * This message is sent when a session is opened on a device.
-     * <p>
+     * 
      * This message completes the process initiated by the message "requestOpenSession" sent to the device object.
      * [@note] Execution of the delegate callback will occur on the main thread.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("device:didOpenSessionWithError:")
@@ -77,12 +85,14 @@ public interface ICDeviceDelegate {
 
     /**
      * device:didReceiveStatusInformation:
-     * <p>
+     * 
      * This message is sent to the device delegate when status information is received from a device.
-     * <p>
+     * 
      * The 'status' dictionary contains two keys, ICStatusNotificationKey and ICLocalizedStatusNotificationKey, which
      * are defined above. Status information keys are located in their respective ICDevice type class header.
      * [@note] Execution of the delegate callback will occur on the main thread.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -93,9 +103,11 @@ public interface ICDeviceDelegate {
 
     /**
      * deviceDidBecomeReady:
-     * <p>
+     * 
      * This message is sent when the device is ready to receive requests.
      * [@note] Execution of the delegate callback will occur on the main thread.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -106,8 +118,10 @@ public interface ICDeviceDelegate {
 
     /**
      * didRemoveDevice:
-     * <p>
+     * 
      * This message is sent to the delegate to inform that a device has been removed.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("didRemoveDevice:")

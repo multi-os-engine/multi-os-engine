@@ -35,6 +35,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -119,6 +122,12 @@ public class NSURLSessionTaskMetrics extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Not supported
+     */
+    @Deprecated
     @Generated
     @Owned
     @Selector("new")
@@ -145,6 +154,12 @@ public class NSURLSessionTaskMetrics extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Not supported
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSURLSessionTaskMetrics init();

@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Represent a characteristic on a service of an accessory.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -165,9 +167,10 @@ public class HMCharacteristic extends NSObject {
 
     /**
      * Enables/disables notifications or indications for the value of a specified characteristic.
-     *
+     * 
      * @param enable     A Boolean value indicating whether you wish to receive notifications or
      *                   indications whenever the characteristic’s value changes.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -183,7 +186,7 @@ public class HMCharacteristic extends NSObject {
 
     /**
      * Specifies whether the characteristic has been enabled to send notifications.
-     * <p>
+     * 
      * This property is reset to NO if the reachability of the accessory is NO.
      */
     @Generated
@@ -192,6 +195,8 @@ public class HMCharacteristic extends NSObject {
 
     /**
      * The localized description of the characteristic.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("localizedDescription")
@@ -206,7 +211,7 @@ public class HMCharacteristic extends NSObject {
 
     /**
      * Array that describes the properties of the characteristic.
-     * <p>
+     * 
      * This value corresponds to the properties associated with this characteristic.
      * The contents of the array are one or more HMCharacteristicProperty constants.
      */
@@ -217,7 +222,7 @@ public class HMCharacteristic extends NSObject {
     /**
      * Reads the value of the characteristic. The updated value can be read from the 'value' property of the
      * characteristic.
-     *
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -236,6 +241,8 @@ public class HMCharacteristic extends NSObject {
 
     /**
      * A unique identifier for the characteristic.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("uniqueIdentifier")
@@ -243,8 +250,9 @@ public class HMCharacteristic extends NSObject {
 
     /**
      * Sets/clears authorization data used when writing to the characteristic.
-     *
+     * 
      * @param data       New authorization data to use. Specify nil to remove authorization data.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -256,7 +264,7 @@ public class HMCharacteristic extends NSObject {
 
     /**
      * The value of the characteristic.
-     * <p>
+     * 
      * The value is a cached value that may have been updated as a result of prior
      * interaction with the accessory.
      */
@@ -267,13 +275,14 @@ public class HMCharacteristic extends NSObject {
 
     /**
      * Modifies the value of the characteristic.
-     * <p>
+     * 
      * The value being written is validated against the metadata, format and permissions.
      * The value written may be bounded by metadata for characteristics with int and
      * float format. If validation fails, the error provided to the completion handler
      * indicates the type of failure.
-     *
+     * 
      * @param value      The value to be written.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.

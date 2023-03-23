@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -75,6 +78,7 @@ public class UIAlertController extends UIViewController implements UISpringLoade
     @Selector("allocWithZone:")
     public static native UIAlertController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -194,6 +198,9 @@ public class UIAlertController extends UIViewController implements UISpringLoade
     @Selector("message")
     public native String message();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("preferredAction")
     public native UIAlertAction preferredAction();
@@ -207,6 +214,9 @@ public class UIAlertController extends UIViewController implements UISpringLoade
     @Selector("setMessage:")
     public native void setMessage(String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setPreferredAction:")
     public native void setPreferredAction(UIAlertAction value);
@@ -237,4 +247,19 @@ public class UIAlertController extends UIViewController implements UISpringLoade
     @Generated
     @Selector("setSpringLoaded:")
     public native void setSpringLoaded(boolean value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSeverity:")
+    public native void setSeverity(@NInt long value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("severity")
+    @NInt
+    public native long severity();
 }

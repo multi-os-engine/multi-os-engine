@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -43,7 +42,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
+/**
+ * API-Since: 3.2
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -163,6 +166,8 @@ public class UIGestureRecognizer extends NSObject {
 
     /**
      * Array of UIPressTypes as NSNumbers.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("allowedPressTypes")
@@ -170,6 +175,8 @@ public class UIGestureRecognizer extends NSObject {
 
     /**
      * Array of UITouchTypes as NSNumbers.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("allowedTouchTypes")
@@ -280,6 +287,8 @@ public class UIGestureRecognizer extends NSObject {
 
     /**
      * defaults to YES
+     * 
+     * API-Since: 9.2
      */
     @Generated
     @Selector("requiresExclusiveTouchType")
@@ -287,6 +296,8 @@ public class UIGestureRecognizer extends NSObject {
 
     /**
      * Array of UIPressTypes as NSNumbers.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAllowedPressTypes:")
@@ -294,6 +305,8 @@ public class UIGestureRecognizer extends NSObject {
 
     /**
      * Array of UITouchTypes as NSNumbers.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAllowedTouchTypes:")
@@ -349,6 +362,8 @@ public class UIGestureRecognizer extends NSObject {
 
     /**
      * defaults to YES
+     * 
+     * API-Since: 9.2
      */
     @Generated
     @Selector("setRequiresExclusiveTouchType:")
@@ -372,6 +387,8 @@ public class UIGestureRecognizer extends NSObject {
 
     /**
      * name for debugging to appear in logging
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("name")
@@ -379,6 +396,8 @@ public class UIGestureRecognizer extends NSObject {
 
     /**
      * name for debugging to appear in logging
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setName:")
@@ -397,6 +416,9 @@ public class UIGestureRecognizer extends NSObject {
     @Selector("canPreventGestureRecognizer:")
     public native boolean canPreventGestureRecognizer(UIGestureRecognizer preventedGestureRecognizer);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("ignorePress:forEvent:")
     public native void ignorePressForEvent(UIPress button, UIPressesEvent event);
@@ -413,18 +435,30 @@ public class UIGestureRecognizer extends NSObject {
     @Selector("initWithCoder:")
     public native UIGestureRecognizer initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("pressesBegan:withEvent:")
     public native void pressesBeganWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("pressesCancelled:withEvent:")
     public native void pressesCancelledWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("pressesChanged:withEvent:")
     public native void pressesChangedWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("pressesEnded:withEvent:")
     public native void pressesEndedWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
@@ -447,6 +481,9 @@ public class UIGestureRecognizer extends NSObject {
     @Selector("setState:")
     public native void setState(@NInt long value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("shouldBeRequiredToFailByGestureRecognizer:")
     public native boolean shouldBeRequiredToFailByGestureRecognizer(UIGestureRecognizer otherGestureRecognizer);
@@ -454,6 +491,8 @@ public class UIGestureRecognizer extends NSObject {
     /**
      * same behavior as the equivalent delegate methods, but can be used by subclasses to define class-wide failure
      * requirements
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("shouldRequireFailureOfGestureRecognizer:")
@@ -477,6 +516,9 @@ public class UIGestureRecognizer extends NSObject {
     @Selector("touchesEnded:withEvent:")
     public native void touchesEndedWithEvent(NSSet<? extends UITouch> touches, UIEvent event);
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @Selector("touchesEstimatedPropertiesUpdated:")
     public native void touchesEstimatedPropertiesUpdated(NSSet<? extends UITouch> touches);
@@ -485,6 +527,9 @@ public class UIGestureRecognizer extends NSObject {
     @Selector("touchesMoved:withEvent:")
     public native void touchesMovedWithEvent(NSSet<? extends UITouch> touches, UIEvent event);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("buttonMask")
     @NInt
@@ -493,6 +538,8 @@ public class UIGestureRecognizer extends NSObject {
     /**
      * Values from the last event processed.
      * These values are not considered as requirements for the gesture.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("modifierFlags")
@@ -501,6 +548,8 @@ public class UIGestureRecognizer extends NSObject {
 
     /**
      * same behavior as the equivalent delegate method
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("shouldReceiveEvent:")

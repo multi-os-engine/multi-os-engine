@@ -33,6 +33,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIGestureRecognizerDelegate")
 public interface UIGestureRecognizerDelegate {
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldBeRequiredToFailByGestureRecognizer:")
@@ -67,7 +70,7 @@ public interface UIGestureRecognizerDelegate {
      * called when the recognition of one of gestureRecognizer or otherGestureRecognizer would be blocked by the other
      * return YES to allow both to recognize simultaneously. the default implementation returns NO (by default no two
      * gestures can be recognized simultaneously)
-     * <p>
+     * 
      * note: returning YES is guaranteed to allow simultaneous recognition. returning NO is not guaranteed to prevent
      * simultaneous recognition, as the other gesture's delegate may return YES
      */
@@ -83,9 +86,11 @@ public interface UIGestureRecognizerDelegate {
      * called once per attempt to recognize, so failure requirements can be determined lazily and may be set up between
      * recognizers across view hierarchies
      * return YES to set up a dynamic failure requirement between gestureRecognizer and otherGestureRecognizer
-     * <p>
+     * 
      * note: returning YES is guaranteed to set up the failure requirement. returning NO does not guarantee that there
      * will not be a failure requirement as the other gesture's counterpart delegate or subclass methods may return YES
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -109,6 +114,8 @@ public interface UIGestureRecognizerDelegate {
     /**
      * called once before either -gestureRecognizer:shouldReceiveTouch: or -gestureRecognizer:shouldReceivePress:
      * return NO to prevent the gesture recognizer from seeing this event
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @IsOptional

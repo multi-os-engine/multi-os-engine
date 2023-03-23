@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -159,20 +162,20 @@ public class NSMergeConflict extends NSObject {
 
     /**
      * There are two situations in which a conflict may occur:
-     * <p>
+     * 
      * 1. Between the NSManagedObjectContext and its in-memory cached state at the NSPersistentStoreCoordinator layer.
      * In this case, the merge conflict has a source object and a cached snapshot but no persisted snapshot (persnap is
      * nil).
-     * <p>
+     * 
      * 2. Between the cached state at the NSPersistentStoreCoordinator and the external store (file, database, etc.).
      * In this case, the merge conflict has a cached snapshot and a persisted snapshot. The source object is also
      * provided as a convenience,
      * but it is not directly involved in the conflict.
-     * <p>
+     * 
      * Snapshot dictionaries include values for all attributes and to-one relationships, but not to-many relationships.
      * Relationship values are NSManagedObjectID references. to-many relationships must be pulled from the persistent
      * store as needed.
-     * <p>
+     * 
      * A newVersion number of 0 means the object was deleted and the corresponding snapshot is nil.
      */
     @Generated

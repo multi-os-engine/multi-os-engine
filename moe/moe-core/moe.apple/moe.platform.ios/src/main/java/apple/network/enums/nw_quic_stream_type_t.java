@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_quic_stream_type_t
- * <p>
+ * 
  * Represents the type of a QUIC stream.
  */
 @Generated

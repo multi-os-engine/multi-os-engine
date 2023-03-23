@@ -28,8 +28,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * OSLogEntrySignpost
- * <p>
+ * 
  * Entries made by the os_signpost API.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("OSLog")
@@ -170,8 +172,10 @@ public class OSLogEntrySignpost extends OSLogEntry implements OSLogEntryFromProc
 
     /**
      * [@property] signpostIdentifier
-     * <p>
+     * 
      * The signpost ID associated with this entry.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("signpostIdentifier")
@@ -179,8 +183,10 @@ public class OSLogEntrySignpost extends OSLogEntry implements OSLogEntryFromProc
 
     /**
      * [@property] signpostName
-     * <p>
+     * 
      * The signpost name associated with this entry.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("signpostName")
@@ -188,8 +194,10 @@ public class OSLogEntrySignpost extends OSLogEntry implements OSLogEntryFromProc
 
     /**
      * [@property] signpostType
-     * <p>
+     * 
      * The signpost type associated with this entry.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("signpostType")

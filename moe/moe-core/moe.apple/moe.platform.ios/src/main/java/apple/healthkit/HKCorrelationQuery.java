@@ -45,15 +45,18 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSNumber;
 
 /**
  * HKCorrelationQuery
- * <p>
+ * 
  * A query to find HKCorrelations
- * <p>
+ * 
  * Correlations are HKSamples that contain a set of correlated samples. HKCorrelationQuery
  * accepts a predicate to filter HKCorrelations and a dictionary of predicates to filter the
  * correlated samples.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -225,16 +228,19 @@ public class HKCorrelationQuery extends HKQuery {
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeDuration(@NUInt long operatorType,
             double duration);
 
+    @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalDistance:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalDistance(@NUInt long operatorType,
             HKQuantity totalDistance);
 
+    @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalEnergyBurned:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalEnergyBurned(@NUInt long operatorType,
             HKQuantity totalEnergyBurned);
 
+    @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalSwimmingStrokeCount:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalSwimmingStrokeCount(
@@ -275,11 +281,13 @@ public class HKCorrelationQuery extends HKQuery {
 
     /**
      * initWithTypes:predicate:samplePredicate:completion:
-     * <p>
+     * 
      * The designated initializer for HKCorrelationQuery.
-     *
+     * 
      * @param correlationType  The type of correlation that is being queried for
+     * 
      * @param predicate        The predicate for scoping which HKCorrelations are returned
+     * 
      * @param samplePredicates A dictionary mapping HKSampleTypes to NSPredicates. If no predicate for a particular type
      *                         is provided, it is assumed to be a nil predicate and objects of that type will not be
      *                         filtered.
@@ -292,9 +300,9 @@ public class HKCorrelationQuery extends HKQuery {
 
     /**
      * [@property] samplePredicates
-     * <p>
+     * 
      * A dictionary of predicates for the HKCorrelation's objects
-     * <p>
+     * 
      * samplePredicates maps HKSampleTypes to NSPredicates. The predicate value will apply
      * to objects of the key type.
      */
@@ -310,6 +318,7 @@ public class HKCorrelationQuery extends HKQuery {
                 NSArray<? extends HKCorrelation> correlations, NSError error);
     }
 
+    @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
@@ -341,4 +350,67 @@ public class HKCorrelationQuery extends HKQuery {
     @Selector("predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval:")
     public static native NSPredicate predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval(
             NSDateInterval dateInterval);
+
+    @Generated
+    @Selector("predicateForCategorySamplesEqualToValues:")
+    public static native NSPredicate predicateForCategorySamplesEqualToValues(NSSet<? extends NSNumber> values);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:duration:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeDuration(@NUInt long operatorType,
+            double duration);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:averageQuantity:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeAverageQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity averageQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:maximumQuantity:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeMaximumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity maximumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:minimumQuantity:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeMinimumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity minimumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeSumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity sumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithStartDate:endDate:options:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithStartDateEndDateOptions(NSDate startDate,
+            NSDate endDate, @NUInt long options);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithWorkoutActivityType:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithWorkoutActivityType(
+            @NUInt long workoutActivityType);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithActivityPredicate:")
+    public static native NSPredicate predicateForWorkoutsWithActivityPredicate(NSPredicate activityPredicate);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:quantityType:averageQuantity:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeAverageQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity averageQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:quantityType:maximumQuantity:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeMaximumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity maximumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:quantityType:minimumQuantity:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeMinimumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity minimumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:quantityType:sumQuantity:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeSumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity sumQuantity);
 }

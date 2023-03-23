@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.moe.natj.general.ann.NInt;
 
 @Generated
 @Library("UIKit")
@@ -65,6 +66,19 @@ public interface UINavigationBarDelegate extends UIBarPositioningDelegate {
     @IsOptional
     @Selector("navigationBar:shouldPushItem:")
     default boolean navigationBarShouldPushItem(UINavigationBar navigationBar, UINavigationItem item) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Which section of the NSToolbar this navigation bar should use when attempting to host in an NSToolbar. Returning
+     * 'None' will disable NSToolbar hosting as if preferredBehavioralStyle were set to 'Pad' The specific section
+     * returned will also affect how the navigation bar presents in that section.
+     */
+    @Generated
+    @IsOptional
+    @Selector("navigationBarNSToolbarSection:")
+    @NInt
+    default long navigationBarNSToolbarSection(UINavigationBar navigationBar) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

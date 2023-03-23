@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -165,11 +168,17 @@ public class NSMetadataQuery extends NSObject {
     @Selector("enableUpdates")
     public native void enableUpdates();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("enumerateResultsUsingBlock:")
     public native void enumerateResultsUsingBlock(
             @ObjCBlock(name = "call_enumerateResultsUsingBlock") Block_enumerateResultsUsingBlock block);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("enumerateResultsWithOptions:usingBlock:")
     public native void enumerateResultsWithOptionsUsingBlock(@NUInt long opts,
@@ -214,6 +223,8 @@ public class NSMetadataQuery extends NSObject {
     /**
      * items can be a mixture of NSMetadataItem, NSURL objects (file URLs only)
      * and/or string paths; the getter returns the same mixture as was set
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("operationQueue")
@@ -248,6 +259,8 @@ public class NSMetadataQuery extends NSObject {
      * paths and/or the special string constants below, which specifies the
      * locations to which the search is limited; an empty array means no
      * limits, which is the default state.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("searchItems")
@@ -284,6 +297,8 @@ public class NSMetadataQuery extends NSObject {
     /**
      * items can be a mixture of NSMetadataItem, NSURL objects (file URLs only)
      * and/or string paths; the getter returns the same mixture as was set
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setOperationQueue:")
@@ -298,6 +313,8 @@ public class NSMetadataQuery extends NSObject {
      * paths and/or the special string constants below, which specifies the
      * locations to which the search is limited; an empty array means no
      * limits, which is the default state.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setSearchItems:")

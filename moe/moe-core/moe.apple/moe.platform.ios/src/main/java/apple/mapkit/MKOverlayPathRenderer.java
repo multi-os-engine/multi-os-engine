@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -313,10 +316,12 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
     /**
      * For renderers which support vector drawing, controls whether the overlay is rendered
      * as a bitmap when being composited with the map.
-     * <p>
+     * 
      * When false (the default), the overlay will be rendered as vector geometry whenever possible.
      * Note that certain geometry or configurations may force rasterization even when the value
      * of this property is false.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setShouldRasterize:")
@@ -325,10 +330,12 @@ public class MKOverlayPathRenderer extends MKOverlayRenderer {
     /**
      * For renderers which support vector drawing, controls whether the overlay is rendered
      * as a bitmap when being composited with the map.
-     * <p>
+     * 
      * When false (the default), the overlay will be rendered as vector geometry whenever possible.
      * Note that certain geometry or configurations may force rasterization even when the value
      * of this property is false.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("shouldRasterize")

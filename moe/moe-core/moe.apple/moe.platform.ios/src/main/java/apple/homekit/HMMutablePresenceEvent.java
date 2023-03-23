@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class is used to represent the presence of users in a home.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("HomeKit")

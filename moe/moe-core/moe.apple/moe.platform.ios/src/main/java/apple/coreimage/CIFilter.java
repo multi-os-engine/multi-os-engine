@@ -17,7 +17,6 @@ limitations under the License.
 package apple.coreimage;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.coreimage.protocol.CIFilterConstructor;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.foundation.NSArray;
@@ -53,16 +52,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * CIFilter are filter objects for Core Image that encapsulate the filter with its attributes
- * <p>
+ * 
  * The CIFilter class produces a CIImage object as output. Typically, a filter takes one or more images as input. Some
  * filters, however, generate an image based on other types of input parameters. The parameters of a CIFilter object are
  * set and retrieved through the use of key-value pairs. You use the CIFilter object in conjunction with the CIImage,
  * CIContext, CIVector, CIImageAccumulator, and CIColor objects to take advantage of the built-in Core Image filters
  * when processing images. CIFilter objects are also used along with CIKernel, CISampler, and CIFilterShape objects to
  * create custom filters.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("CoreImage")
@@ -124,6 +126,8 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Return an array of CIFilters de-serialized from XMP data.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("filterArrayFromSerializedXMP:inputImageExtent:error:")
@@ -146,13 +150,18 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Returns a CIFilter that will in turn return a properly processed CIImage as "outputImage".
-     * <p>
+     * 
      * Note that when using this initializer, you should pass in a CVPixelBufferRef with one of the following Raw pixel
      * format types
      * kCVPixelFormatType_14Bayer_GRBG, kCVPixelFormatType_14Bayer_RGGB, kCVPixelFormatType_14Bayer_BGGR,
      * kCVPixelFormatType_14Bayer_GBRG
      * as well as the root properties attachment from the CMSampleBufferRef.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use new CIRAWFilter class instead.
      */
+    @Deprecated
     @Generated
     @Selector("filterWithCVPixelBuffer:properties:options:")
     public static native CIFilter filterWithCVPixelBufferPropertiesOptions(CVBufferRef pixelBuffer,
@@ -160,18 +169,28 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Returns a CIFilter that will in turn return a properly processed CIImage as "outputImage".
-     * <p>
+     * 
      * Note that when using this initializer, you should pass in a source type identifier hint
      * (kCGImageSourceTypeIdentifierHint) key/value pair in order to help the decoder determine the file type, as
      * otherwise confusion and incorrect results are possible.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use new CIRAWFilter class instead.
      */
+    @Deprecated
     @Generated
     @Selector("filterWithImageData:options:")
     public static native CIFilter filterWithImageDataOptions(NSData data, NSDictionary<String, ?> options);
 
     /**
      * Returns a CIFilter that will in turn return a properly processed CIImage as "outputImage".
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use new CIRAWFilter class instead.
      */
+    @Deprecated
     @Generated
     @Selector("filterWithImageURL:options:")
     public static native CIFilter filterWithImageURLOptions(NSURL url, NSDictionary<String, ?> options);
@@ -202,6 +221,8 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
      * The filter's input parameters are set from the dictionary of key-value pairs.
      * On OSX, any of the filter input parameters not specified in the dictionary will be undefined.
      * On iOS, any of the filter input parameters not specified in the dictionary will be set to default values.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("filterWithName:withInputParameters:")
@@ -235,6 +256,8 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Returns the localized description of a filter for display in the UI.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("localizedDescriptionForFilterName:")
@@ -242,6 +265,8 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Returns the localized name of a category for display in the UI.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("localizedNameForCategory:")
@@ -249,6 +274,8 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Returns the localized name of a filter for display in the UI.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("localizedNameForFilterName:")
@@ -256,9 +283,11 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Returns the URL to the localized reference documentation describing the filter.
-     * <p>
+     * 
      * The URL can be a local file or a remote document on a webserver. It is possible, that this method returns nil
      * (like filters that predate this feature). A client of this API has to handle this case gracefully.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("localizedReferenceDocumentationForFilterName:")
@@ -271,12 +300,14 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Publishes a new filter called 'name'.
-     * <p>
+     * 
      * The constructor object 'anObject' should implement the filterWithName: method.
      * That method will be invoked with the name of the filter to create.
      * The class attributes must have a kCIAttributeFilterCategories key associated with a set of categories.
-     *
+     * 
      * @param attributes Dictionary of the registration attributes of the filter. See below for attribute keys.
+     * 
+     *                   API-Since: 9.0
      */
     @Generated
     @Selector("registerFilterName:constructor:classAttributes:")
@@ -299,6 +330,8 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
      * [CIImage autoAdjustmentFilters].
      * The parameters of other filter classes will not be serialized.
      * The return value will be null if none of the filters can be serialized.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("serializedXMPFromFilters:inputImageExtent:")
@@ -354,10 +387,16 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("inputKeys")
     public native NSArray<String> inputKeys();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("outputImage")
     public native CIImage outputImage();
@@ -376,6 +415,9 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("setDefaults")
     public native void setDefaults();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String aString);
@@ -388,7 +430,12 @@ public class CIFilter extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Returns a NSArray containing the names of all supported RAW cameras.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use new CIRAWFilter class instead.
      */
+    @Deprecated
     @Generated
     @Selector("supportedRawCameraModels")
     public static native NSArray<String> supportedRawCameraModels();

@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Produces noise in a checkerboard pattern.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")

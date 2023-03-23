@@ -34,6 +34,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * attributes of a render that pertain to the render's destination.
  * It is intended to be used for issuing renders that return to the
  * caller as soon as all the work has been issued but before it completes/
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreImage")
@@ -147,9 +150,9 @@ public class CIRenderDestination extends NSObject {
 
     /**
      * Create a CIRenderDestination based on client-managed buffer.
-     * <p>
+     * 
      * The 'data' parameter must point to a buffer that is at least bytesPerRow * height bytes in size.
-     * <p>
+     * 
      * The destination's 'colorspace' property will default a CGColorSpace created with kCGColorSpaceSRGB,
      * kCGColorSpaceExtendedSRGB, or kCGColorSpaceGenericGrayGamma2_2.
      */
@@ -160,10 +163,10 @@ public class CIRenderDestination extends NSObject {
 
     /**
      * Create a CIRenderDestination based on an OpenGL texture.
-     * <p>
+     * 
      * Rendering to a GLTexture-backed CIRenderDestination is only supported by GLContext-backed CIContexts.
      * The texture id must be bound to a GLContext that is shared with that of the GLContext-backed CIContext.
-     * <p>
+     * 
      * The destination's 'colorspace' property will default a CGColorSpace created with kCGColorSpaceSRGB,
      * kCGColorSpaceExtendedSRGB, or kCGColorSpaceGenericGrayGamma2_2.
      */
@@ -174,7 +177,7 @@ public class CIRenderDestination extends NSObject {
 
     /**
      * Create a CIRenderDestination based on an IOSurface object.
-     * <p>
+     * 
      * The destination's 'colorspace' property will default a CGColorSpace created by,
      * querying the IOSurface attributes.
      */
@@ -185,7 +188,7 @@ public class CIRenderDestination extends NSObject {
     /**
      * A render to a MTLTexture-backed CIRenderDestination is only supported by MTLTexture-backed CIContexts.
      * The texture must have a MTLTextureType of MTLTextureType2D
-     * <p>
+     * 
      * An optional MTLCommandBuffer can be specified, with which to use for rendering to the MTLTexture.
      * NOTE: Rendering to a texture initialized with a commandBuffer requires encoding all the commands to render an
      * image into the specified buffer.
@@ -193,7 +196,7 @@ public class CIRenderDestination extends NSObject {
      * render.
      * To avoid this impact, it is recommended to create a context using [CIContext contextWithMTLCommandQueue:] and
      * create the CIRenderDestination without specifying a buffer.
-     * <p>
+     * 
      * The destination's 'colorspace' property will default a CGColorSpace created with kCGColorSpaceSRGB,
      * kCGColorSpaceExtendedSRGB, or kCGColorSpaceGenericGrayGamma2_2.
      */
@@ -205,7 +208,7 @@ public class CIRenderDestination extends NSObject {
 
     /**
      * Create a CIRenderDestination based on a CVPixelBufferRef object.
-     * <p>
+     * 
      * The destination's 'colorspace' property will default a CGColorSpace created by,
      * querying the CVPixelBufferRef attributes.
      */
@@ -215,13 +218,13 @@ public class CIRenderDestination extends NSObject {
 
     /**
      * Create a CIRenderDestination based on a Metal texture.
-     * <p>
+     * 
      * Rendering to a MTLTexture-backed CIRenderDestination is only supported by MTLTexture-backed CIContexts.
      * The provider 'block' will be called lazily when the destination is rendered to.
      * The block must return a texture with a MTLTextureType of MTLTextureType2D.
      * The 'width', 'height' and 'pixelFormat' argument values should be the same as the
      * width, height and pixelFormat of the MTLTexture that will be returned by 'block'
-     * <p>
+     * 
      * An optional MTLCommandBuffer can be specified, with which to use for rendering to the MTLTexture.
      * NOTE: Rendering to a texture initialized with a commandBuffer requires encoding all the commands to render an
      * image into the specified buffer.
@@ -229,7 +232,7 @@ public class CIRenderDestination extends NSObject {
      * render.
      * To avoid this impact, it is recommended to create a context using [CIContext contextWithMTLCommandQueue:] and
      * create the CIRenderDestination without specifying a buffer.
-     * <p>
+     * 
      * The destination's 'colorspace' property will default a CGColorSpace created with kCGColorSpaceSRGB,
      * kCGColorSpaceExtendedSRGB, or kCGColorSpaceGenericGrayGamma2_2.
      */
@@ -283,13 +286,13 @@ public class CIRenderDestination extends NSObject {
      * (0.5,0.5) represents the lower-left pixel center
      * (pixelsWide-0.5,pixelsHigh-0.5) represents the upper-right pixel center
      * (pixelsWide,pixelsHigh) represents the upper-right corner.
-     * <p>
+     * 
      * The 'flipped' property controls how pixels this logical coordinate system
      * are stored into the memory of the object backing the destination.
-     * <p>
+     * 
      * If 'flipped' is false, then the base address of the backing stores the
      * pixel centered on the logical coordinate (0.5,0.5)
-     * <p>
+     * 
      * If 'flipped' is true, then the base address of the backing stores the
      * pixel centered on the logical coordinate (0.5,height-0.5)
      */
@@ -378,13 +381,13 @@ public class CIRenderDestination extends NSObject {
      * (0.5,0.5) represents the lower-left pixel center
      * (pixelsWide-0.5,pixelsHigh-0.5) represents the upper-right pixel center
      * (pixelsWide,pixelsHigh) represents the upper-right corner.
-     * <p>
+     * 
      * The 'flipped' property controls how pixels this logical coordinate system
      * are stored into the memory of the object backing the destination.
-     * <p>
+     * 
      * If 'flipped' is false, then the base address of the backing stores the
      * pixel centered on the logical coordinate (0.5,0.5)
-     * <p>
+     * 
      * If 'flipped' is true, then the base address of the backing stores the
      * pixel centered on the logical coordinate (0.5,height-0.5)
      */

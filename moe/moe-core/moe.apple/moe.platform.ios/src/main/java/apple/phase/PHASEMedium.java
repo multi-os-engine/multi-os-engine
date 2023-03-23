@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEMedium
- * <p>
+ * 
  * A PHASEMedium describes the acoustic properties of a medium.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -96,7 +98,7 @@ public class PHASEMedium extends NSObject {
 
     /**
      * initWithEngine:preset
-     * <p>
+     * 
      * Initialize a new medium from a preset.
      */
     @Generated

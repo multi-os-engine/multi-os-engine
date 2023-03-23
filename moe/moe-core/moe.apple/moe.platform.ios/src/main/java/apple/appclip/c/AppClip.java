@@ -21,6 +21,9 @@ public final class AppClip {
     private AppClip() {
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

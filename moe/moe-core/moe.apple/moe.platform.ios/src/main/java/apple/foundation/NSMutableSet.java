@@ -199,6 +199,8 @@ public class NSMutableSet<_ObjectType> extends NSSet<_ObjectType> {
 
     /**
      * evaluate a predicate against a set of objects and filter the mutable set directly
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("filterUsingPredicate:")

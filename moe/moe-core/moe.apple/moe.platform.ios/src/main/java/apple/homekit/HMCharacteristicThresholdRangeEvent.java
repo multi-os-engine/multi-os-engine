@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * This class represents an event when a characteristic's value falls within the specified
  * number range.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("HomeKit")
@@ -111,10 +113,12 @@ public class HMCharacteristicThresholdRangeEvent extends HMEvent implements NSCo
 
     /**
      * Initializes a new characteristic number range event object
-     *
+     * 
      * @param characteristic The characteristic bound to the event. The characteristic must
      *                       support notification. An exception will be thrown otherwise.
+     * 
      * @param thresholdRange The range for the characteristic value to trigger the event.
+     * 
      * @return Instance object representing the characteristic event.
      */
     @Generated

@@ -41,6 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.1
+ * Deprecated-Since: 14.5
+ * Deprecated-Message: This has been replaced by functionality in AdServices.framework's AAAttribution class.
+ */
+@Deprecated
 @Generated
 @Library("iAd")
 @Runtime(ObjCRuntime.class)
@@ -144,11 +150,17 @@ public class ADClient extends NSObject {
 
     /**
      * sharedClient
-     * <p>
+     * 
      * This is no longer a singleton and returns a new instance for every call.
-     *
-     * @return An instance of ADClient.
+     * 
+     * API-Since: 7.1
+     * Deprecated-Since: 14.5
+     * Deprecated-Message: This has been replaced by functionality in AdServices.framework's AAAttribution class.
+     * 
+     * @return
+     *         An instance of ADClient.
      */
+    @Deprecated
     @Generated
     @Selector("sharedClient")
     public static native ADClient sharedClient();
@@ -164,12 +176,19 @@ public class ADClient extends NSObject {
 
     /**
      * addClientToSegments:replaceExisting:
-     * <p>
+     * 
      * This method does nothing and immediately returns.
-     *
-     * @param segmentIdentifiers This parameter is unused.
-     * @param replaceExisting    This parameter is unused.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * 
+     * @param segmentIdentifiers
+     *                           This parameter is unused.
+     * 
+     * @param replaceExisting
+     *                           This parameter is unused.
      */
+    @Deprecated
     @Generated
     @Selector("addClientToSegments:replaceExisting:")
     public native void addClientToSegmentsReplaceExisting(NSArray<String> segmentIdentifiers, boolean replaceExisting);
@@ -180,17 +199,23 @@ public class ADClient extends NSObject {
 
     /**
      * requestAttributionDetailsWithBlock:
-     * <p>
+     * 
      * Provides a way for an app to determine when an an was shown to the user
      * which resulted in the user's purchase of the app.
-     *
-     * @param completionHandler A block which will be called with details related to the attribution status of the app.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 14.5
+     * Deprecated-Message: This has been replaced by functionality in AdServices.framework's AAAttribution class.
+     * 
+     * @param completionHandler
+     *                          A block which will be called with details related to the attribution status of the app.
      *                          The attributionDetails dictionary will contain purchase and impression dates
      *                          as well as other specific campaign related information. If the attributionDetails
      *                          dictionary is nil, an NSError is passed with an ADClientError enum.
-     *                          <p>
+     * 
      *                          The handler will be called on an arbitrary queue.
      */
+    @Deprecated
     @Generated
     @Selector("requestAttributionDetailsWithBlock:")
     public native void requestAttributionDetailsWithBlock(

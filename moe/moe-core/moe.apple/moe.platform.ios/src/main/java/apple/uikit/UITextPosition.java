@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * evaluating characters at indices is an expensive proposition, a position within a text input
  * document is represented as an object, not an integer. UITextRange and UITextPosition are abstract
  * classes provided to be subclassed when adopting UITextInput
+ * 
+ * API-Since: 3.2
  */
 @Generated
 @Library("UIKit")

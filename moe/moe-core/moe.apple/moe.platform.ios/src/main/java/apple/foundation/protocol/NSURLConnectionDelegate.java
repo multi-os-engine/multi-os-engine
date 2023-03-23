@@ -30,17 +30,17 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] NSURLConnectionDelegate
- * <p>
+ * 
  * Delegate methods that are common to all forms of
  * NSURLConnection. These are all optional. This
  * protocol should be considered a base class for the
  * NSURLConnectionDataDelegate and
  * NSURLConnectionDownloadDelegate protocols.
- * <p>
+ * 
  * connection:didFailWithError: will be called at
  * most once, if an error occurs during a resource
  * load. No other callbacks will be made after.<p>
- * <p>
+ * 
  * connectionShouldUseCredentialStorage: will be
  * called at most once, before a resource load begins
  * (which means it may be called during construction
@@ -50,7 +50,7 @@ import org.moe.natj.objc.ann.Selector;
  * authentication challenges. Regardless of the
  * result, the authentication challenge methods may
  * still be called.
- * <p>
+ * 
  * connection:willSendRequestForAuthenticationChallenge:
  * is the preferred (Mac OS X 10.7 and iOS 5.0 or
  * later) mechanism for responding to authentication
@@ -58,21 +58,28 @@ import org.moe.natj.objc.ann.Selector;
  * <Foundation/NSURLAuthenticationChallenge.h> for
  * more information on dealing with the various types
  * of authentication challenges.
- * <p>
+ * 
  * connection:canAuthenticateAgainstProtectionSpace:
- * connection:didReciveAuthenticationChallenge:
+ * connection:didReceiveAuthenticationChallenge:
  * connection:didCancelAuthenticationChallenge: are
- * deprected and new code should adopt
+ * deprecated and new code should adopt
  * connection:willSendRequestForAuthenticationChallenge.
  * The older delegates will still be called for
- * compatability, but incur more latency in dealing
+ * compatibility, but incur more latency in dealing
  * with the authentication challenge.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("NSURLConnectionDelegate")
 public interface NSURLConnectionDelegate {
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use -connection:willSendRequestForAuthenticationChallenge: instead.
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -82,6 +89,11 @@ public interface NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use -connection:willSendRequestForAuthenticationChallenge: instead.
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -98,6 +110,11 @@ public interface NSURLConnectionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use -connection:willSendRequestForAuthenticationChallenge: instead.
+     */
     @Generated
     @IsOptional
     @Deprecated

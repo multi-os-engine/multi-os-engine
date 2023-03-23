@@ -13,6 +13,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * A protocol for delegates of AVAudioRecorder
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("AVFAudio")
@@ -22,6 +24,9 @@ public interface AVAudioRecorderDelegate {
     /**
      * audioRecorderBeginInterruption: is called when the audio session has been interrupted while the recorder was
      * recording. The recorded file will be closed.
+     * 
+     * API-Since: 2.2
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -55,6 +60,9 @@ public interface AVAudioRecorderDelegate {
     /**
      * audioRecorderEndInterruption: is called when the preferred method, audioRecorderEndInterruption:withFlags:, is
      * not implemented.
+     * 
+     * API-Since: 2.2
+     * Deprecated-Since: 6.0
      */
     @Generated
     @IsOptional
@@ -64,6 +72,10 @@ public interface AVAudioRecorderDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -76,6 +88,9 @@ public interface AVAudioRecorderDelegate {
      * audioRecorderEndInterruption:withOptions: is called when the audio session interruption has ended and this
      * recorder had been interrupted while recording.
      * Currently the only flag is AVAudioSessionInterruptionFlags_ShouldResume.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional

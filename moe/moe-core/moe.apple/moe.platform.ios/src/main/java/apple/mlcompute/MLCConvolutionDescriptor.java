@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCConvolutionDescriptor
- * <p>
+ * 
  * The MLCConvolutionDescriptor specifies a convolution descriptor
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -82,7 +84,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCConvolutionDescriptor object for convolution transpose
-     *
+     * 
      * @param kernelSizes               The kernel sizes in x and y
      * @param inputFeatureChannelCount  The number of feature channels in the input tensor
      * @param outputFeatureChannelCount The number of feature channels in the output tensor
@@ -102,7 +104,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCConvolutionDescriptor object for convolution transpose
-     *
+     * 
      * @param kernelSizes               The kernel sizes in x and y
      * @param inputFeatureChannelCount  The number of feature channels in the input tensor
      * @param outputFeatureChannelCount The number of feature channels in the output tensor
@@ -120,7 +122,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCConvolutionDescriptor object for convolution transpose
-     *
+     * 
      * @param kernelWidth               The kernel size in x
      * @param kernelHeight              The kernel size in x
      * @param inputFeatureChannelCount  The number of feature channels in the input tensor
@@ -135,7 +137,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] convolutionType
-     * <p>
+     * 
      * The type of convolution.
      */
     @Generated
@@ -154,7 +156,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCConvolutionDescriptor object for depthwise convolution
-     *
+     * 
      * @param kernelSizes              The kernel sizes in x and y
      * @param inputFeatureChannelCount The number of feature channels in the input tensor
      * @param channelMultiplier        The channel multiplier
@@ -173,7 +175,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCConvolutionDescriptor object for depthwise convolution
-     *
+     * 
      * @param kernelSizes              The kernel sizes in x and y
      * @param inputFeatureChannelCount The number of feature channels in the input tensor
      * @param channelMultiplier        The channel multiplier
@@ -191,7 +193,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCConvolutionDescriptor object for depthwise convolution
-     *
+     * 
      * @param kernelWidth              The kernel size in x
      * @param kernelHeight             The kernel size in x
      * @param inputFeatureChannelCount The number of feature channels in the input tensor
@@ -210,7 +212,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCConvolutionDescriptor object
-     *
+     * 
      * @param kernelSizes               The kernel sizes in x and y
      * @param inputFeatureChannelCount  The number of feature channels in the input tensor
      * @param outputFeatureChannelCount The number of feature channels in the output tensor
@@ -230,7 +232,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCConvolutionDescriptor object
-     *
+     * 
      * @param kernelSizes               The kernel sizes in x and y
      * @param inputFeatureChannelCount  The number of feature channels in the input tensor
      * @param outputFeatureChannelCount The number of feature channels in the output tensor
@@ -248,7 +250,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCConvolutionDescriptor object
-     *
+     * 
      * @param kernelWidth               The kernel size in x
      * @param kernelHeight              The kernel size in x
      * @param inputFeatureChannelCount  The number of feature channels in the input tensor
@@ -263,7 +265,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * Creates a convolution descriptor with the specified convolution type.
-     *
+     * 
      * @param convolutionType           The type of convolution.
      * @param kernelSizes               The kernel sizes in x and y.
      * @param inputFeatureChannelCount  The number of feature channels in the input tensor.
@@ -287,7 +289,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] dilationRateInX
-     * <p>
+     * 
      * The dilation rate i.e. stride of elements in the kernel in x.
      */
     @Generated
@@ -297,7 +299,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] dilationRateInY
-     * <p>
+     * 
      * The dilation rate i.e. stride of elements in the kernel in y.
      */
     @Generated
@@ -307,7 +309,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] groupCount
-     * <p>
+     * 
      * Number of blocked connections from input channels to output channels
      */
     @Generated
@@ -326,7 +328,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] inputFeatureChannelCount
-     * <p>
+     * 
      * Number of channels in the input tensor
      */
     @Generated
@@ -349,7 +351,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] isConvolutionTranspose
-     * <p>
+     * 
      * A flag to indicate if this is a convolution transpose
      */
     @Generated
@@ -362,7 +364,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] kernelHeight
-     * <p>
+     * 
      * The convolution kernel size in y.
      */
     @Generated
@@ -372,7 +374,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] kernelWidth
-     * <p>
+     * 
      * The convolution kernel size in x.
      */
     @Generated
@@ -391,7 +393,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] outputFeatureChannelCount
-     * <p>
+     * 
      * Number of channels in the output tensor
      */
     @Generated
@@ -401,7 +403,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] paddingPolicy
-     * <p>
+     * 
      * The padding policy to use.
      */
     @Generated
@@ -410,7 +412,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] paddingSizeInX
-     * <p>
+     * 
      * The pooling size in x (left and right) to use if paddingPolicy is MLCPaddingPolicyUsePaddingSize
      */
     @Generated
@@ -420,7 +422,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] paddingSizeInY
-     * <p>
+     * 
      * The pooling size in y (top and bottom) to use if paddingPolicy is MLCPaddingPolicyUsePaddingSize
      */
     @Generated
@@ -442,7 +444,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] strideInX
-     * <p>
+     * 
      * The stride of the kernel in x.
      */
     @Generated
@@ -452,7 +454,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] strideInY
-     * <p>
+     * 
      * The stride of the kernel in y.
      */
     @Generated
@@ -466,7 +468,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] usesDepthwiseConvolution
-     * <p>
+     * 
      * A flag to indicate depthwise convolution
      */
     @Generated

@@ -20,10 +20,18 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * Enums for MSAA.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 public final class GLKViewDrawableMultisample {
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int MultisampleNone = 0x00000000;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int Multisample4X = 0x00000001;
 
     @Generated

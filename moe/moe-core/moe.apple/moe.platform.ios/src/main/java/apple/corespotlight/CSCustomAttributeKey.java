@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CSCustomAttributeKey allows you to specify a custom attribute as well as various other properties of that attribute.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("CoreSpotlight")

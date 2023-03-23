@@ -14,6 +14,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * All communication about matches is performed through this delegate.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("ShazamKit")
@@ -22,7 +24,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface SHSessionDelegate {
     /**
      * A match was found in the @c SHCatalog for the provided @c SHSignature
-     *
+     * 
      * @param session The @c SHSession that made the match
      * @param match   The @c SHMatch of the matching audio
      */
@@ -35,7 +37,7 @@ public interface SHSessionDelegate {
 
     /**
      * The @c SHSignature did not match anything
-     *
+     * 
      * @param session   The @c SHSession that attempted to match the @c SHSignature
      * @param signature The @c SHSignature that did not match
      * @param error     An optional error. If simply no match was found this will be set to nil. It will be populated if

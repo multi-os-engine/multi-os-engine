@@ -43,9 +43,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * GKTurnBasedMatch represents an ongoing turn-based game among the matched group of participants
  * Existing matches can be shown and new matches created using GKTurnBasedMatchmakerViewController
  * A list of existing matches can be retrieved using +loadMatchesWithCompletionHandler:
- * <p>
+ * 
  * By default turn based events will badge your app. To opt out of this add GKGameCenterBadgingDisabled with a boolean
  * value of YES to your info plist
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("GameKit")
@@ -170,12 +172,19 @@ public class GKTurnBasedParticipant extends NSObject {
     @NInt
     public native long matchOutcome();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("player")
     public native GKPlayer player();
 
     /**
      * This property is obsolete. **
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: use player
      */
     @Generated
     @Deprecated
@@ -191,6 +200,9 @@ public class GKTurnBasedParticipant extends NSObject {
     @NInt
     public native long status();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("timeoutDate")
     public native NSDate timeoutDate();

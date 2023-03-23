@@ -28,16 +28,19 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNNOptimizerRMSProp
- * <p>
+ * 
  * The MPSNNOptimizerRMSProp performs an RMSProp Update
  * RMSProp is also known as root mean square propagation.
- * <p>
+ * 
  * s[t] = decay * s[t-1] + (1 - decay) * (g ^ 2)
  * variable = variable - learningRate * g / (sqrt(s[t]) + epsilon)
- * <p>
+ * 
  * where,
  * g is gradient of error wrt variable
  * s[t] is weighted sum of squares of gradients
+ * 
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -95,9 +98,9 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
 
     /**
      * [@property] decay
-     * <p>
+     * 
      * The decay at which we update sumOfSquares
-     * <p>
+     * 
      * Default value is 0.9
      */
     @Generated
@@ -110,17 +113,17 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
 
     /**
      * Encode an MPSNNOptimizerRMSProp object to a command buffer to perform out of place update
-     * <p>
+     * 
      * The following operations would be applied
-     * <p>
-     * <p>
+     * 
+     * 
      * s[t] = decay * s[t-1] + (1 - decay) * (g ^ 2)
      * variable = variable - learningRate * g / (sqrt(s[t]) + epsilon)
-     * <p>
+     * 
      * where,
      * g is gradient of error wrt variable
      * s[t] is weighted sum of squares of gradients
-     *
+     * 
      * @param commandBuffer                   A valid MTLCommandBuffer to receive the encoded kernel.
      * @param batchNormalizationGradientState A valid MPSCNNBatchNormalizationState object which specifies the input
      *                                        state with gradients for this update.
@@ -145,17 +148,17 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
 
     /**
      * Encode an MPSNNOptimizerRMSProp object to a command buffer to perform out of place update
-     * <p>
+     * 
      * The following operations would be applied
-     * <p>
-     * <p>
+     * 
+     * 
      * s[t] = decay * s[t-1] + (1 - decay) * (g ^ 2)
      * variable = variable - learningRate * g / (sqrt(s[t]) + epsilon)
-     * <p>
+     * 
      * where,
      * g is gradient of error wrt variable
      * s[t] is weighted sum of squares of gradients
-     *
+     * 
      * @param commandBuffer            A valid MTLCommandBuffer to receive the encoded kernel.
      * @param batchNormalizationState  A valid MPSCNNBatchNormalizationState object which specifies the input state with
      *                                 gradients and original gamma/beta for this update.
@@ -177,17 +180,17 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
 
     /**
      * Encode an MPSNNOptimizerRMSProp object to a command buffer to perform out of place update
-     * <p>
+     * 
      * The following operations would be applied
-     * <p>
-     * <p>
+     * 
+     * 
      * s[t] = decay * s[t-1] + (1 - decay) * (g ^ 2)
      * variable = variable - learningRate * g / (sqrt(s[t]) + epsilon)
-     * <p>
+     * 
      * where,
      * g is gradient of error wrt variable
      * s[t] is weighted sum of squares of gradients
-     *
+     * 
      * @param commandBuffer            A valid MTLCommandBuffer to receive the encoded kernel.
      * @param convolutionGradientState A valid MPSCNNConvolutionGradientState object which specifies the input state
      *                                 with gradients for this update.
@@ -210,6 +213,9 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
             MPSCNNConvolutionWeightsAndBiasesState convolutionSourceState,
             NSArray<? extends MPSVector> inputSumOfSquaresVectors, MPSCNNConvolutionWeightsAndBiasesState resultState);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("encodeToCommandBuffer:inputGradientMatrix:inputValuesMatrix:inputSumOfSquaresMatrix:resultValuesMatrix:")
     public native void encodeToCommandBufferInputGradientMatrixInputValuesMatrixInputSumOfSquaresMatrixResultValuesMatrix(
@@ -218,17 +224,17 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
 
     /**
      * Encode an MPSNNOptimizerRMSProp object to a command buffer to perform out of place update
-     * <p>
+     * 
      * The following operations would be applied
-     * <p>
-     * <p>
+     * 
+     * 
      * s[t] = decay * s[t-1] + (1 - decay) * (g ^ 2)
      * variable = variable - learningRate * g / (sqrt(s[t]) + epsilon)
-     * <p>
+     * 
      * where,
      * g is gradient of error wrt variable
      * s[t] is weighted sum of squares of gradients
-     *
+     * 
      * @param commandBuffer           A valid MTLCommandBuffer to receive the encoded kernel.
      * @param inputGradientVector     A valid MPSVector object which specifies the input vector of gradients for this
      *                                update.
@@ -246,9 +252,9 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
 
     /**
      * [@property] epsilon
-     * <p>
+     * 
      * The epsilon at which we update values
-     * <p>
+     * 
      * This value is usually used to ensure to avoid divide by 0, default value is 1e-8
      */
     @Generated
@@ -279,11 +285,13 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
 
     /**
      * Full initialization for the rmsProp update
-     *
+     * 
      * @param device              The device on which the kernel will execute.
      * @param decay               The decay to update sumOfSquares
      * @param epsilon             The epsilon which will be applied
      * @param optimizerDescriptor The optimizerDescriptor which will have a bunch of properties to be applied
+     * 
+     * 
      * @return A valid MPSNNOptimizerRMSProp object or nil, if failure.
      */
     @Generated
@@ -294,9 +302,10 @@ public class MPSNNOptimizerRMSProp extends MPSNNOptimizer {
 
     /**
      * Convenience initialization for the RMSProp update
-     *
+     * 
      * @param device       The device on which the kernel will execute.
      * @param learningRate The learningRate which will be applied
+     * 
      * @return A valid MPSNNOptimizerRMSProp object or nil, if failure.
      */
     @Generated

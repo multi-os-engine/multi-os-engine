@@ -38,6 +38,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.0
+ * Deprecated-Since: 16.0
+ * Deprecated-Message: Deprecated with no replacement
+ */
+@Deprecated
 @Generated
 @Library("CoreTelephony")
 @Runtime(ObjCRuntime.class)
@@ -150,21 +156,31 @@ public class CTCarrier extends NSObject {
 
     /**
      * allowsVOIP
-     * <p>
+     * 
      * Discussion:
      * A BOOL value that is YES if this carrier allows VOIP calls to be
      * made on its network, NO otherwise.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Deprecated; returns YES at some point in the future
      */
+    @Deprecated
     @Generated
     @Selector("allowsVOIP")
     public native boolean allowsVOIP();
 
     /**
      * carrierName
-     * <p>
+     * 
      * Discussion:
      * An NSString containing the name of the subscriber's cellular service provider.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Deprecated; returns '--' at some point in the future
      */
+    @Deprecated
     @Generated
     @Selector("carrierName")
     public native String carrierName();
@@ -175,34 +191,49 @@ public class CTCarrier extends NSObject {
 
     /**
      * isoCountryCode
-     * <p>
+     * 
      * Discussion:
      * Returns an NSString object that contains country code for
      * the subscriber's cellular service provider, represented as an ISO 3166-1
      * country code string
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Deprecated; returns '--' at some point in the future
      */
+    @Deprecated
     @Generated
     @Selector("isoCountryCode")
     public native String isoCountryCode();
 
     /**
      * mobileCountryCode
-     * <p>
+     * 
      * Discussion:
      * An NSString containing the mobile country code for the subscriber's
      * cellular service provider, in its numeric representation
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Deprecated; returns '65535' at some point in the future
      */
+    @Deprecated
     @Generated
     @Selector("mobileCountryCode")
     public native String mobileCountryCode();
 
     /**
      * mobileNetworkCode
-     * <p>
+     * 
      * Discussion:
      * An NSString containing the mobile network code for the subscriber's
      * cellular service provider, in its numeric representation
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Deprecated; returns '65535' at some point in the future
      */
+    @Deprecated
     @Generated
     @Selector("mobileNetworkCode")
     public native String mobileNetworkCode();

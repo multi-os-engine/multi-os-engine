@@ -43,9 +43,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AUAudioUnitPreset
- * <p>
+ * 
  * A collection of parameter settings provided by the audio unit implementor, producing a
  * useful sound or starting point.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AudioToolbox")
@@ -175,7 +177,7 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] name
-     * <p>
+     * 
      * The preset's name.
      */
     @Generated
@@ -184,7 +186,7 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] number
-     * <p>
+     * 
      * The preset's unique numeric identifier.
      */
     @Generated
@@ -194,7 +196,7 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] name
-     * <p>
+     * 
      * The preset's name.
      */
     @Generated
@@ -203,7 +205,7 @@ public class AUAudioUnitPreset extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] number
-     * <p>
+     * 
      * The preset's unique numeric identifier.
      */
     @Generated

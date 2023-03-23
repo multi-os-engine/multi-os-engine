@@ -23,8 +23,11 @@ import org.moe.natj.general.ann.NUInt;
 public final class MPSCNNConvolutionFlags {
     /**
      * Use default options
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
      */
-    @Generated @NUInt public static final long MPSCNNConvolutionFlagsNone = 0x0000000000000000L;
+    @Deprecated @Generated @NUInt public static final long MPSCNNConvolutionFlagsNone = 0x0000000000000000L;
 
     @Generated
     private MPSCNNConvolutionFlags() {

@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UserNotifications")
 @Runtime(ObjCRuntime.class)
@@ -212,6 +215,9 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
     @Selector("title")
     public native String title();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("actionWithIdentifier:title:options:icon:")
     public static native UNNotificationAction actionWithIdentifierTitleOptionsIcon(String identifier, String title,
@@ -219,6 +225,8 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
 
     /**
      * The icon configured for this action.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("icon")

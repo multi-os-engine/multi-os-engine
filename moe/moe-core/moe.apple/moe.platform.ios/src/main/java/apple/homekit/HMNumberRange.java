@@ -25,6 +25,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class describes a range of numbers: [min, max]
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("HomeKit")
@@ -135,7 +138,7 @@ public class HMNumberRange extends NSObject {
 
     /**
      * Initializes a new range of numbers. The minimum value is set to a small value.
-     *
+     * 
      * @param maxValue The maximum value of the range.
      */
     @Generated
@@ -144,7 +147,7 @@ public class HMNumberRange extends NSObject {
 
     /**
      * Initializes a new range of numbers. The maximum value is set to a large value.
-     *
+     * 
      * @param minValue The minimum value of the range.
      */
     @Generated
@@ -153,8 +156,9 @@ public class HMNumberRange extends NSObject {
 
     /**
      * Initializes a new range of numbers
-     *
+     * 
      * @param minValue The minimum value of the range.
+     * 
      * @param maxValue The maximum value of the range.
      */
     @Generated

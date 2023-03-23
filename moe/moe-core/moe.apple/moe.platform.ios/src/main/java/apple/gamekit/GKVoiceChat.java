@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GKVoiceChat represents an instance of a named voice communications channel
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -183,18 +185,30 @@ public class GKVoiceChat extends NSObject {
 
     /**
      * This property is obsolete. **
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: use players
      */
     @Generated
     @Deprecated
     @Selector("playerIDs")
     public native NSArray<String> playerIDs();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: use setPlayerVoiceChatStateDidChangeHandler:
+     */
     @Generated
     @Deprecated
     @Selector("playerStateUpdateHandler")
     @ObjCBlock(name = "call_playerStateUpdateHandler_ret")
     public native Block_playerStateUpdateHandler_ret playerStateUpdateHandler();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("playerVoiceChatStateDidChangeHandler")
     @ObjCBlock(name = "call_playerVoiceChatStateDidChangeHandler_ret")
@@ -202,6 +216,8 @@ public class GKVoiceChat extends NSObject {
 
     /**
      * array of GKPlayer *
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("players")
@@ -209,6 +225,10 @@ public class GKVoiceChat extends NSObject {
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use setPlayer:muted:
      */
     @Generated
     @Deprecated
@@ -217,17 +237,27 @@ public class GKVoiceChat extends NSObject {
 
     /**
      * stop receiving audio from the chat
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPlayer:muted:")
     public native void setPlayerMuted(GKPlayer player, boolean isMuted);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: use setPlayerVoiceChatStateDidChangeHandler:
+     */
     @Generated
     @Deprecated
     @Selector("setPlayerStateUpdateHandler:")
     public native void setPlayerStateUpdateHandler(
             @ObjCBlock(name = "call_setPlayerStateUpdateHandler") Block_setPlayerStateUpdateHandler value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setPlayerVoiceChatStateDidChangeHandler:")
     public native void setPlayerVoiceChatStateDidChangeHandler(

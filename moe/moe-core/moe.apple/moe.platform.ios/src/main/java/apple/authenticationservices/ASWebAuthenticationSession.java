@@ -39,11 +39,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * On completion, the service will send a callback URL with an authentication token, and this URL will be passed to the
  * app by
  * ASWebAuthenticationSessionCompletionHandler.
- * <p>
+ * 
  * The callback URL usually has a custom URL scheme. For the app to receive the callback URL, it needs to either
  * register the
  * custom URL scheme in its Info.plist, or set the scheme to callbackURLScheme argument in the initializer.
- * <p>
+ * 
  * If the user has already logged into the web service in Safari or other apps via ASWebAuthenticationSession, it is
  * possible to
  * share the existing login information. An alert will be presented to get the user's consent for sharing their existing
@@ -51,14 +51,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * information. If the user cancels the alert, the session will be canceled, and the completion handler will be called
  * with
  * the error code ASWebAuthenticationSessionErrorCodeCanceledLogin.
- * <p>
+ * 
  * If the user taps Cancel when showing the login webpage for the web service, the session will be canceled, and the
  * completion
  * handler will be called with the error code ASWebAuthenticationSessionErrorCodeCanceledLogin.
- * <p>
+ * 
  * The app can cancel the session by calling -[ASWebAuthenticationSession cancel]. This will also dismiss the view
  * controller that
  * is showing the web service's login page.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("AuthenticationServices")
@@ -137,7 +139,7 @@ public class ASWebAuthenticationSession extends NSObject {
 
     /**
      * Returns an ASWebAuthenticationSession object.
-     *
+     * 
      * @param URL               the initial URL pointing to the authentication webpage. Only supports URLs with http://
      *                          or https:// schemes.
      * @param callbackURLScheme the custom URL scheme that the app expects in the callback URL.
@@ -185,11 +187,13 @@ public class ASWebAuthenticationSession extends NSObject {
 
     /**
      * Indicates whether this session should ask the browser for an ephemeral session.
-     * <p>
+     * 
      * Ephemeral web browser sessions do not not share cookies or other browsing data with a user's normal browser
      * session.
      * This value is NO by default. Setting this property after calling -[ASWebAuthenticationSession start] has no
      * effect.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("prefersEphemeralWebBrowserSession")
@@ -200,6 +204,8 @@ public class ASWebAuthenticationSession extends NSObject {
      * must be set prior to calling -start, otherwise the authorization view cannot be displayed. If deploying to iOS
      * prior to
      * 13.0, the desired window is inferred by the application's key window.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("presentationContextProvider")
@@ -216,11 +222,13 @@ public class ASWebAuthenticationSession extends NSObject {
 
     /**
      * Indicates whether this session should ask the browser for an ephemeral session.
-     * <p>
+     * 
      * Ephemeral web browser sessions do not not share cookies or other browsing data with a user's normal browser
      * session.
      * This value is NO by default. Setting this property after calling -[ASWebAuthenticationSession start] has no
      * effect.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPrefersEphemeralWebBrowserSession:")
@@ -231,6 +239,8 @@ public class ASWebAuthenticationSession extends NSObject {
      * must be set prior to calling -start, otherwise the authorization view cannot be displayed. If deploying to iOS
      * prior to
      * 13.0, the desired window is inferred by the application's key window.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPresentationContextProvider:")
@@ -242,6 +252,8 @@ public class ASWebAuthenticationSession extends NSObject {
      * must be set prior to calling -start, otherwise the authorization view cannot be displayed. If deploying to iOS
      * prior to
      * 13.0, the desired window is inferred by the application's key window.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     public void setPresentationContextProvider(
@@ -262,10 +274,10 @@ public class ASWebAuthenticationSession extends NSObject {
 
     /**
      * Starts the ASWebAuthenticationSession instance after it is instantiated.
-     * <p>
+     * 
      * start can only be called once for an ASWebAuthenticationSession instance. This also means calling start on a
      * canceled session will fail.
-     *
+     * 
      * @return Returns YES if the session starts successfully.
      */
     @Generated
@@ -284,6 +296,8 @@ public class ASWebAuthenticationSession extends NSObject {
     /**
      * Returns whether the session can be successfully started. This property returns the same value as calling -start,
      * but without the side effect of actually starting the session.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("canStart")

@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Subclass for basic (single-keyframe) animations. *
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("QuartzCore")
@@ -179,22 +181,22 @@ public class CABasicAnimation extends CAPropertyAnimation {
      * type should match the type of the property being animated (using the
      * standard rules described in CALayer.h). The supported modes of
      * animation are:
-     * <p>
+     * 
      * - both `fromValue' and `toValue' non-nil. Interpolates between
      * `fromValue' and `toValue'.
-     * <p>
+     * 
      * - `fromValue' and `byValue' non-nil. Interpolates between
      * `fromValue' and `fromValue' plus `byValue'.
-     * <p>
+     * 
      * - `byValue' and `toValue' non-nil. Interpolates between `toValue'
      * minus `byValue' and `toValue'.
-     * <p>
+     * 
      * - `fromValue' non-nil. Interpolates between `fromValue' and the
      * current presentation value of the property.
-     * <p>
+     * 
      * - `toValue' non-nil. Interpolates between the layer's current value
      * of the property in the render tree and `toValue'.
-     * <p>
+     * 
      * - `byValue' non-nil. Interpolates between the layer's current value
      * of the property in the render tree and that plus `byValue'.
      */
@@ -221,22 +223,22 @@ public class CABasicAnimation extends CAPropertyAnimation {
      * type should match the type of the property being animated (using the
      * standard rules described in CALayer.h). The supported modes of
      * animation are:
-     * <p>
+     * 
      * - both `fromValue' and `toValue' non-nil. Interpolates between
      * `fromValue' and `toValue'.
-     * <p>
+     * 
      * - `fromValue' and `byValue' non-nil. Interpolates between
      * `fromValue' and `fromValue' plus `byValue'.
-     * <p>
+     * 
      * - `byValue' and `toValue' non-nil. Interpolates between `toValue'
      * minus `byValue' and `toValue'.
-     * <p>
+     * 
      * - `fromValue' non-nil. Interpolates between `fromValue' and the
      * current presentation value of the property.
-     * <p>
+     * 
      * - `toValue' non-nil. Interpolates between the layer's current value
      * of the property in the render tree and `toValue'.
-     * <p>
+     * 
      * - `byValue' non-nil. Interpolates between the layer's current value
      * of the property in the render tree and that plus `byValue'.
      */

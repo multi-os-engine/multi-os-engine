@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * PHAssetCollectionChangeRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or
  * -[PHPhotoLibrary performChangesAndWait:] block.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Photos")
@@ -89,6 +91,8 @@ public class PHAssetCollectionChangeRequest extends PHChangeRequest {
     /**
      * if the asset collection does not allow the type of change requested, these methods will raise an exception, call
      * canPerformEditOperation: on the asset collection to determine if the type of edit operation is allowed.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("changeRequestForAssetCollection:")
@@ -99,6 +103,8 @@ public class PHAssetCollectionChangeRequest extends PHChangeRequest {
      * to add, remove or rearrange assets in a collection, passing in the fetched assets in that collection will ensure
      * that the asset positions are tracked correctly in the case that the collection has been externally edited after
      * the fetch, but before this change is applied
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("changeRequestForAssetCollection:assets:")
@@ -113,6 +119,9 @@ public class PHAssetCollectionChangeRequest extends PHChangeRequest {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("creationRequestForAssetCollectionWithTitle:")
     public static native PHAssetCollectionChangeRequest creationRequestForAssetCollectionWithTitle(String title);
@@ -123,6 +132,8 @@ public class PHAssetCollectionChangeRequest extends PHChangeRequest {
 
     /**
      * requests that the specified asset collections be deleted
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("deleteAssetCollections:")
@@ -185,6 +196,9 @@ public class PHAssetCollectionChangeRequest extends PHChangeRequest {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("addAssets:")
     public native void addAssets(@Mapped(ObjCObjectMapper.class) NSFastEnumeration assets);
@@ -193,6 +207,9 @@ public class PHAssetCollectionChangeRequest extends PHChangeRequest {
     @Selector("init")
     public native PHAssetCollectionChangeRequest init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("insertAssets:atIndexes:")
     public native void insertAssetsAtIndexes(@Mapped(ObjCObjectMapper.class) NSFastEnumeration assets,
@@ -201,6 +218,8 @@ public class PHAssetCollectionChangeRequest extends PHChangeRequest {
     /**
      * The move removes the assets at fromIndexes first then inserts those assets at the toIndex, so toIndex should
      * point to a location based on the updated indexes after having removed the assets at fromIndexes
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("moveAssetsAtIndexes:toIndex:")
@@ -210,28 +229,45 @@ public class PHAssetCollectionChangeRequest extends PHChangeRequest {
      * This can be used to fetch the newly created asset collection after the change block has completed by using
      * -localIdentifier
      * It can also be added directly to collection lists within the current change block
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("placeholderForCreatedAssetCollection")
     public native PHObjectPlaceholder placeholderForCreatedAssetCollection();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("removeAssets:")
     public native void removeAssets(@Mapped(ObjCObjectMapper.class) NSFastEnumeration assets);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("removeAssetsAtIndexes:")
     public native void removeAssetsAtIndexes(NSIndexSet indexes);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("replaceAssetsAtIndexes:withAssets:")
     public native void replaceAssetsAtIndexesWithAssets(NSIndexSet indexes,
             @Mapped(ObjCObjectMapper.class) NSFastEnumeration assets);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setTitle:")
     public native void setTitle(String value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("title")
     public native String title();

@@ -21,30 +21,47 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] SecKeyOperationType
- * <p>
+ * 
  * Defines types of cryptographic operations available with SecKey instance.
- * <p>
+ * 
  * [@constant] kSecKeyOperationTypeSign
  * Represents SecKeyCreateSignature()
- * <p>
+ * 
  * [@constant] kSecKeyOperationTypeVerify
  * Represents SecKeyVerifySignature()
- * <p>
+ * 
  * [@constant] kSecKeyOperationTypeEncrypt
  * Represents SecKeyCreateEncryptedData()
- * <p>
+ * 
  * [@constant] kSecKeyOperationTypeDecrypt
  * Represents SecKeyCreateDecryptedData()
- * <p>
+ * 
  * [@constant] kSecKeyOperationTypeKeyExchange
  * Represents SecKeyCopyKeyExchangeResult()
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class SecKeyOperationType {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Sign = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Verify = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Encrypt = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Decrypt = 0x0000000000000003L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long KeyExchange = 0x0000000000000004L;
 
     @Generated

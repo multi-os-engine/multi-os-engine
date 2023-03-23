@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * update the system's current representation of your app's shuffle mode, set
  * the currentShuffleType property on this command to the proper shuffle type
  * value.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("MediaPlayer")

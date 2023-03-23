@@ -18,8 +18,6 @@ package apple.spritekit;
 
 import apple.NSObject;
 import apple.avfoundation.AVPlayer;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSError;
@@ -48,6 +46,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGSize;
 
 @Generated
 @Library("SpriteKit")
@@ -192,16 +192,25 @@ public class SKVideoNode extends SKNode {
     @Selector("videoNodeWithAVPlayer:")
     public static native SKVideoNode videoNodeWithAVPlayer(AVPlayer player);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("videoNodeWithFileNamed:")
     public static native SKVideoNode videoNodeWithFileNamed(String videoFile);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("videoNodeWithURL:")
     public static native SKVideoNode videoNodeWithURL(NSURL videoURL);
 
     /**
      * Create a video node from a file.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 9.0
      */
     @Generated
     @Deprecated
@@ -210,6 +219,9 @@ public class SKVideoNode extends SKNode {
 
     /**
      * Create a video node from a URL.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 9.0
      */
     @Generated
     @Deprecated
@@ -230,7 +242,7 @@ public class SKVideoNode extends SKNode {
 
     /**
      * Designated Initializer.
-     * <p>
+     * 
      * Initialize a video node from an AVPlayer. You can use the AVPlayer to control playback.
      */
     @Generated
@@ -244,22 +256,35 @@ public class SKVideoNode extends SKNode {
     @Selector("initWithCoder:")
     public native SKVideoNode initWithCoder(NSCoder aDecoder);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithFileNamed:")
     public native SKVideoNode initWithFileNamed(String videoFile);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithURL:")
     public native SKVideoNode initWithURL(NSURL url);
 
     /**
      * Initialize a video node from a file.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @Deprecated
     @Selector("initWithVideoFileNamed:")
     public native SKVideoNode initWithVideoFileNamed(String videoFile);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @Deprecated
     @Selector("initWithVideoURL:")

@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("AutomaticAssessmentConfiguration")
 @Runtime(ObjCRuntime.class)
@@ -52,38 +55,65 @@ public class AEAssessmentConfiguration extends NSObject implements NSCopying {
     @Selector("allocWithZone:")
     public static native AEAssessmentConfiguration allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("allowsAccessibilitySpeech")
     public native boolean allowsAccessibilitySpeech();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("allowsActivityContinuation")
     public native boolean allowsActivityContinuation();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("allowsContinuousPathKeyboard")
     public native boolean allowsContinuousPathKeyboard();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("allowsDictation")
     public native boolean allowsDictation();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("allowsKeyboardShortcuts")
     public native boolean allowsKeyboardShortcuts();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("allowsPasswordAutoFill")
     public native boolean allowsPasswordAutoFill();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("allowsPredictiveKeyboard")
     public native boolean allowsPredictiveKeyboard();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("allowsSpellCheck")
     public native boolean allowsSpellCheck();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("autocorrectMode")
     @NUInt
@@ -168,38 +198,65 @@ public class AEAssessmentConfiguration extends NSObject implements NSCopying {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAllowsAccessibilitySpeech:")
     public native void setAllowsAccessibilitySpeech(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAllowsActivityContinuation:")
     public native void setAllowsActivityContinuation(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAllowsContinuousPathKeyboard:")
     public native void setAllowsContinuousPathKeyboard(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAllowsDictation:")
     public native void setAllowsDictation(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAllowsKeyboardShortcuts:")
     public native void setAllowsKeyboardShortcuts(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAllowsPasswordAutoFill:")
     public native void setAllowsPasswordAutoFill(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAllowsPredictiveKeyboard:")
     public native void setAllowsPredictiveKeyboard(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAllowsSpellCheck:")
     public native void setAllowsSpellCheck(boolean value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setAutocorrectMode:")
     public native void setAutocorrectMode(@NUInt long value);

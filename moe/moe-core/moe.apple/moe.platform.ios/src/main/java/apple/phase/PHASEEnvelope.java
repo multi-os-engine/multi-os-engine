@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEEnvelope
- * <p>
+ * 
  * A segmented envelope.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -87,9 +89,9 @@ public class PHASEEnvelope extends NSObject {
 
     /**
      * [@property] domain
-     * <p>
+     * 
      * The domain (along the x-axis).
-     * <p>
+     * 
      * The first value in the pair is the minimum value of the domain.
      * The second value in the pair is the maximum value of the domain.
      */
@@ -99,13 +101,15 @@ public class PHASEEnvelope extends NSObject {
 
     /**
      * evaluateForValue
-     * <p>
+     * 
      * Evaluates the envelope.
-     * <p>
+     * 
      * If required, x will be clamped to the envelope's domain.
-     *
-     * @param x The input along the x-axis.
-     * @return The output along the y-axis.
+     * 
+     * @param x
+     *          The input along the x-axis.
+     * @return
+     *         The output along the y-axis.
      */
     @Generated
     @Selector("evaluateForValue:")
@@ -148,9 +152,9 @@ public class PHASEEnvelope extends NSObject {
 
     /**
      * [@property] range
-     * <p>
+     * 
      * The range (along the y-axis).
-     * <p>
+     * 
      * The first value in the pair is the minimum value of the range.
      * The second value in the pair is the maximum value of the range.
      */
@@ -168,7 +172,7 @@ public class PHASEEnvelope extends NSObject {
 
     /**
      * [@property] segments
-     * <p>
+     * 
      * The segments of the envelope.
      */
     @Generated

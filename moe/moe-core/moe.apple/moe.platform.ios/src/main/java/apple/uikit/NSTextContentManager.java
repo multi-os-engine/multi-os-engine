@@ -37,6 +37,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * It is the root object strongly referencing the rest of objects in the TextKit network via an array of
  * NSTextLayoutManager. Also, it manages the editing transaction by tracking the active NSTextLayoutManager focused to
  * be editing.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")
@@ -336,7 +338,7 @@ public class NSTextContentManager extends NSObject implements NSTextElementProvi
     /**
      * Returns an array of NSTextElement intersecting the specified range in sequence. It can return a set of elements
      * not filling the entire range specified if the entire range is not synchronously available. Uses
-     * -enumerateTextElementsFromLocation:options:usingBlocK: to fill the array.
+     * -enumerateTextElementsFromLocation:options:usingBlock: to fill the array.
      */
     @Generated
     @Selector("textElementsForRange:")

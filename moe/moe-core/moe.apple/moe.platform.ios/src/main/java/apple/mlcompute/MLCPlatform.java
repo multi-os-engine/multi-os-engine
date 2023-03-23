@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCPlatform
- * <p>
+ * 
  * Utility class to set MLCompute global properties
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("MLCompute")
@@ -88,7 +90,7 @@ public class MLCPlatform extends NSObject {
 
     /**
      * getRNGseed
-     * <p>
+     * 
      * gets the RNG seed value. If the value is not set it would return nil
      */
     @Generated
@@ -140,7 +142,7 @@ public class MLCPlatform extends NSObject {
 
     /**
      * setRNGSeedTo
-     * <p>
+     * 
      * sets the RNG seed. The seed should be of type long int.
      */
     @Generated

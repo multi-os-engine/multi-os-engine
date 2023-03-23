@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("VisionKit")
 @Runtime(ObjCRuntime.class)
@@ -55,6 +58,7 @@ public class VNDocumentCameraViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native VNDocumentCameraViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();

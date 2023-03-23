@@ -18,7 +18,6 @@ package apple.avfoundation;
 
 import apple.NSObject;
 import apple.avfoundation.protocol.AVVideoCompositing;
-import apple.coregraphics.struct.CGSize;
 import apple.coremedia.struct.CMTime;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
@@ -44,7 +43,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSError;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -157,9 +161,9 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     /**
      * videoComposition
-     * <p>
+     * 
      * Returns a new instance of AVMutableVideoComposition.
-     * <p>
+     * 
      * The returned AVMutableVideoComposition will have a frameDuration of kCMTimeZero, a renderSize of {0.0, 0.0}, a
      * nil array of instructions, and a nil animationTool.
      */
@@ -168,11 +172,11 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     public static native AVMutableVideoComposition videoComposition();
 
     /**
-     * videoCompositionWithAsset:options:applyingCIFiltersWithHandler:
-     * <p>
+     * videoCompositionWithAsset:applyingCIFiltersWithHandler:
+     * 
      * Returns a new instance of AVMutableVideoComposition with values and instructions that will apply the specified
      * handler block to video frames represented as instances of CIImage.
-     * <p>
+     * 
      * The returned AVMutableVideoComposition will cause the specified handler block to be called to filter each frame
      * of the asset's first enabled video track. The handler block should use the properties of the provided
      * AVAsynchronousCIImageFilteringRequest and respond using finishWithImage:context: with a "filtered" new CIImage
@@ -181,20 +185,20 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * AVPlayerItemFailedToPlayToEndTimeErrorKey in notification payload. The client can set sourceTrackIDForFrameTiming
      * to kCMPersistentTrackID_Invalid and frameDuration to an appropriate value in order to specify the maximum output
      * frame rate independent of the source track timing.
-     * <p>
+     * 
      * The video composition will also have the following values for its properties:
-     * <p>
+     * 
      * - The original timing of the asset's first enabled video track will be used.
      * - A renderSize that encompasses the asset's first enabled video track respecting the track's preferredTransform.
      * - A renderScale of 1.0.
-     * <p>
+     * 
      * The default CIContext has the following properties:
-     * <p>
+     * 
      * - iOS: Device RGB color space
      * - OS X: sRGB color space
-     * <p>
+     * 
      * Example usage:
-     * <p>
+     * 
      * playerItem.videoComposition = [AVMutableVideoComposition videoCompositionWithAsset:srcAsset
      * applyingCIFiltersWithHandler:
      * ^(AVAsynchronousCIImageFilteringRequest *request)
@@ -206,11 +210,15 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * else
      * [request finishWithError:err];
      * }];
-     *
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 100000.0
+     * 
      * @param asset An instance of AVAsset. For best performance, ensure that the duration and tracks properties of the
      *              asset are already loaded before invoking this method.
      * @return An instance of AVMutableVideoComposition.
      */
+    @Deprecated
     @Generated
     @Selector("videoCompositionWithAsset:applyingCIFiltersWithHandler:")
     public static native AVMutableVideoComposition videoCompositionWithAssetApplyingCIFiltersWithHandler(AVAsset asset,
@@ -218,16 +226,16 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     /**
      * videoCompositionWithPropertiesOfAsset:
-     * <p>
+     * 
      * Returns a new instance of AVMutableVideoComposition with values and instructions suitable for presenting the
      * video tracks of the specified asset according to its temporal and geometric properties and those of its tracks.
-     * <p>
+     * 
      * The returned AVMutableVideoComposition will have instructions that respect the spatial properties and timeRanges
      * of the specified asset's video tracks. The client can set sourceTrackIDForFrameTiming to
      * kCMPersistentTrackID_Invalid and frameDuration to an appropriate value in order to specify the maximum output
      * frame rate independent of the source track timing.
      * It will also have the following values for its properties:
-     * <p>
+     * 
      * - If the asset has exactly one video track, the original timing of the source video track will be used. If the
      * asset has more than one video track, and the nominal frame rate of any of video tracks is known, the reciprocal
      * of the greatest known nominalFrameRate will be used as the value of frameDuration. Otherwise, a default framerate
@@ -236,14 +244,19 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * AVComposition; otherwise the renderSize will be set to a value that encompasses all of the asset's video tracks.
      * - A renderScale of 1.0.
      * - A nil animationTool.
-     * <p>
+     * 
      * If the specified asset has no video tracks, this method will return an AVMutableVideoComposition instance with an
      * empty collection of instructions.
-     *
+     * 
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 100000.0
+     * 
      * @param asset An instance of AVAsset. For best performance, ensure that the duration and tracks properties of the
      *              asset are already loaded before invoking this method.
      * @return An instance of AVMutableVideoComposition.
      */
+    @Deprecated
     @Generated
     @Selector("videoCompositionWithPropertiesOfAsset:")
     public static native AVMutableVideoComposition videoCompositionWithPropertiesOfAsset(AVAsset asset);
@@ -257,12 +270,14 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     /**
      * [@property] colorPrimaries
-     * <p>
+     * 
      * Rendering will use these primaries and frames will be tagged as such. If the value of this property is nil then
      * the source's primaries will be propagated and used.
-     * <p>
+     * 
      * Default is nil. Valid values are those suitable for AVVideoColorPrimariesKey. Generally set as a triple along
      * with colorYCbCrMatrix and colorTransferFunction.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("colorPrimaries")
@@ -270,12 +285,14 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     /**
      * [@property] colorTransferFunction
-     * <p>
+     * 
      * Rendering will use this transfer function and frames will be tagged as such. If the value of this property is nil
      * then the source's transfer function will be propagated and used.
-     * <p>
+     * 
      * Default is nil. Valid values are those suitable for AVVideoTransferFunctionKey. Generally set as a triple along
      * with colorYCbCrMatrix and colorYCbCrMatrix.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("colorTransferFunction")
@@ -283,12 +300,14 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     /**
      * [@property] colorYCbCrMatrix
-     * <p>
+     * 
      * Rendering will use this matrix and frames will be tagged as such. If the value of this property is nil then the
      * source's matrix will be propagated and used.
-     * <p>
+     * 
      * Default is nil. Valid values are those suitable for AVVideoYCbCrMatrixKey. Generally set as a triple along with
      * colorPrimaries and colorTransferFunction.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("colorYCbCrMatrix")
@@ -296,6 +315,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     /**
      * indicates the custom compositor class to use. If nil, the default, internal video compositor is used
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("customVideoCompositorClass")
@@ -332,6 +353,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     /**
      * indicates the scale at which the video composition should render. May only be other than 1.0 for a video
      * composition set on an AVPlayerItem
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("renderScale")
@@ -354,12 +377,14 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     /**
      * [@property] colorPrimaries
-     * <p>
+     * 
      * Rendering will use these primaries and frames will be tagged as such. If the value of this property is nil then
      * the source's primaries will be propagated and used.
-     * <p>
+     * 
      * Default is nil. Valid values are those suitable for AVVideoColorPrimariesKey. Generally set as a triple along
      * with colorYCbCrMatrix and colorTransferFunction.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setColorPrimaries:")
@@ -367,12 +392,14 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     /**
      * [@property] colorTransferFunction
-     * <p>
+     * 
      * Rendering will use this transfer function and frames will be tagged as such. If the value of this property is nil
      * then the source's transfer function will be propagated and used.
-     * <p>
+     * 
      * Default is nil. Valid values are those suitable for AVVideoTransferFunctionKey. Generally set as a triple along
      * with colorYCbCrMatrix and colorYCbCrMatrix.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setColorTransferFunction:")
@@ -380,12 +407,14 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     /**
      * [@property] colorYCbCrMatrix
-     * <p>
+     * 
      * Rendering will use this matrix and frames will be tagged as such. If the value of this property is nil then the
      * source's matrix will be propagated and used.
-     * <p>
+     * 
      * Default is nil. Valid values are those suitable for AVVideoYCbCrMatrixKey. Generally set as a triple along with
      * colorPrimaries and colorTransferFunction.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setColorYCbCrMatrix:")
@@ -393,6 +422,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     /**
      * indicates the custom compositor class to use. If nil, the default, internal video compositor is used
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setCustomVideoCompositorClass:")
@@ -423,6 +454,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     /**
      * indicates the scale at which the video composition should render. May only be other than 1.0 for a video
      * composition set on an AVPlayerItem
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setRenderScale:")
@@ -447,6 +480,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * derived from the source asset's track with the corresponding ID. This may be used to preserve a source asset's
      * variable frame timing. If an empty edit is encountered in the source asset’s track, the compositor composes
      * frames as needed up to the frequency specified in frameDuration property.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSourceTrackIDForFrameTiming:")
@@ -457,6 +492,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * derived from the source asset's track with the corresponding ID. This may be used to preserve a source asset's
      * variable frame timing. If an empty edit is encountered in the source asset’s track, the compositor composes
      * frames as needed up to the frequency specified in frameDuration property.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("sourceTrackIDForFrameTiming")
@@ -464,11 +501,11 @@ public class AVMutableVideoComposition extends AVVideoComposition {
 
     /**
      * videoCompositionWithPropertiesOfAsset:prototypeInstruction:
-     * <p>
+     * 
      * Returns a new instance of AVMutableVideoComposition with values and instructions suitable for presenting the
      * video tracks of the specified asset according to its temporal and geometric properties and those of its tracks,
      * and also overrides default properties with those from a prototypeInstruction.
-     * <p>
+     * 
      * Also see videoCompositionWithPropertiesOfAsset:.
      * The returned AVVideoComposition will have instructions that respect the spatial properties and timeRanges of the
      * specified asset's video tracks. Anything not pertaining to spatial layout and timing, such as background color
@@ -478,12 +515,17 @@ public class AVMutableVideoComposition extends AVVideoComposition {
      * myPrototypeInstruction.backgroundColor = myCGColorRef; // Do not use constant CGColorRef colors here.
      * myVideoComposition = [AVVideoComposition videoCompositionWithPropertiesOfAsset:myAsset
      * prototypeInstruction:myPrototypeInstruction];
-     *
+     * 
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 100000.0
+     * 
      * @param asset                An instance of AVAsset. For best performance, ensure that the duration and tracks
      *                             properties of the asset are already loaded before invoking this method.
      * @param prototypeInstruction Custom instructions that the client can choose to override.
      * @return An instance of AVMutableVideoComposition.
      */
+    @Deprecated
     @Generated
     @Selector("videoCompositionWithPropertiesOfAsset:prototypeInstruction:")
     public static native AVMutableVideoComposition videoCompositionWithPropertiesOfAssetPrototypeInstruction(
@@ -492,6 +534,8 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     /**
      * List of all track IDs for tracks from which sample data should be presented to the compositor at any point in the
      * overall composition. Currently only tracks of type kCMMediaType_Metadata are allowed to be specified.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSourceSampleDataTrackIDs:")
@@ -500,8 +544,186 @@ public class AVMutableVideoComposition extends AVVideoComposition {
     /**
      * List of all track IDs for tracks from which sample data should be presented to the compositor at any point in the
      * overall composition. Currently only tracks of type kCMMediaType_Metadata are allowed to be specified.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("sourceSampleDataTrackIDs")
     public native NSArray<? extends NSNumber> sourceSampleDataTrackIDs();
+
+    /**
+     * videoCompositionWithAsset:applyingCIFiltersWithHandler:completionHandler:
+     * 
+     * Vends a new instance of AVMutableVideoComposition with values and instructions that will apply the specified
+     * handler block to video frames represented as instances of CIImage.
+     * 
+     * The new AVMutableVideoComposition will cause the specified handler block to be called to filter each frame of the
+     * asset's first enabled video track. The handler block should use the properties of the provided
+     * AVAsynchronousCIImageFilteringRequest and respond using finishWithImage:context: with a "filtered" new CIImage
+     * (or the provided source image for no affect). In the event of an error, respond to the request using
+     * finishWithError:. The error can be observed via AVPlayerItemFailedToPlayToEndTimeNotification, see
+     * AVPlayerItemFailedToPlayToEndTimeErrorKey in notification payload. The client can set sourceTrackIDForFrameTiming
+     * to kCMPersistentTrackID_Invalid and frameDuration to an appropriate value in order to specify the maximum output
+     * frame rate independent of the source track timing.
+     * 
+     * The video composition will also have the following values for its properties:
+     * 
+     * - The original timing of the asset's first enabled video track will be used.
+     * - A renderSize that encompasses the asset's first enabled video track respecting the track's preferredTransform.
+     * - A renderScale of 1.0.
+     * 
+     * The default CIContext has the following properties:
+     * 
+     * - iOS: Device RGB color space
+     * - OS X: sRGB color space
+     * 
+     * Example usage:
+     * 
+     * [AVMutableVideoComposition videoCompositionWithAsset:srcAsset applyingCIFiltersWithHandler:
+     * ^(AVAsynchronousCIImageFilteringRequest *request)
+     * {
+     * NSError *err = nil;
+     * CIImage *filtered = myRenderer(request, &err);
+     * if (filtered)
+     * [request finishWithImage:filtered context:nil];
+     * else
+     * [request finishWithError:err];
+     * } completionHandler:
+     * ^(AVMutableVideoComposition * _Nullable videoComposition, NSError * _Nullable error)
+     * {
+     * if (videoComposition != nil) {
+     * playerItem.videoComposition = videoComposition
+     * else {
+     * // handle error
+     * }];
+     * 
+     * API-Since: 16.0
+     * 
+     * @param asset
+     *                          An instance of AVAsset.
+     * @param completionHandler
+     *                          A block that is invoked when the new video composition has finished being created. If
+     *                          the `videoComposition` parameter is nil, the `error` parameter describes the failure
+     *                          that occurred.
+     */
+    @Generated
+    @Selector("videoCompositionWithAsset:applyingCIFiltersWithHandler:completionHandler:")
+    public static native void videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler(AVAsset asset,
+            @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_1") Block_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_1 applier,
+            @ObjCBlock(name = "call_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_2") Block_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_2 completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_1 {
+        @Generated
+        void call_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_1(
+                AVAsynchronousCIImageFilteringRequest request);
+    }
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_2 {
+        @Generated
+        void call_videoCompositionWithAssetApplyingCIFiltersWithHandlerCompletionHandler_2(
+                AVMutableVideoComposition videoComposition, NSError error);
+    }
+
+    /**
+     * videoCompositionWithPropertiesOfAsset:completionHandler:
+     * 
+     * Vends a new instance of AVMutableVideoComposition with values and instructions suitable for presenting the video
+     * tracks of the specified asset according to its temporal and geometric properties and those of its tracks.
+     * 
+     * The new AVMutableVideoComposition will have instructions that respect the spatial properties and timeRanges of
+     * the specified asset's video tracks. The client can set sourceTrackIDForFrameTiming to
+     * kCMPersistentTrackID_Invalid and frameDuration to an appropriate value in order to specify the maximum output
+     * frame rate independent of the source track timing.
+     * It will also have the following values for its properties:
+     * 
+     * - If the asset has exactly one video track, the original timing of the source video track will be used. If the
+     * asset has more than one video track, and the nominal frame rate of any of video tracks is known, the reciprocal
+     * of the greatest known nominalFrameRate will be used as the value of frameDuration. Otherwise, a default framerate
+     * of 30fps is used.
+     * - If the specified asset is an instance of AVComposition, the renderSize will be set to the naturalSize of the
+     * AVComposition; otherwise the renderSize will be set to a value that encompasses all of the asset's video tracks.
+     * - A renderScale of 1.0.
+     * - A nil animationTool.
+     * 
+     * If the specified asset has no video tracks, this method will return an AVMutableVideoComposition instance with an
+     * empty collection of instructions.
+     * 
+     * 
+     * API-Since: 16.0
+     * 
+     * @param asset
+     *                          An instance of AVAsset.
+     * @param completionHandler
+     *                          A block that is invoked when the new video composition has finished being created. If
+     *                          the `videoComposition` parameter is nil, the `error` parameter describes the failure
+     *                          that occurred.
+     */
+    @Generated
+    @Selector("videoCompositionWithPropertiesOfAsset:completionHandler:")
+    public static native void videoCompositionWithPropertiesOfAssetCompletionHandler(AVAsset asset,
+            @ObjCBlock(name = "call_videoCompositionWithPropertiesOfAssetCompletionHandler") Block_videoCompositionWithPropertiesOfAssetCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_videoCompositionWithPropertiesOfAssetCompletionHandler {
+        @Generated
+        void call_videoCompositionWithPropertiesOfAssetCompletionHandler(AVMutableVideoComposition videoComposition,
+                NSError error);
+    }
+
+    /**
+     * videoCompositionWithPropertiesOfAsset:prototypeInstruction:completionHandler:
+     * 
+     * Vends a new instance of AVMutableVideoComposition with values and instructions suitable for presenting the video
+     * tracks of the specified asset according to its temporal and geometric properties and those of its tracks, and
+     * also overrides default properties with those from a prototypeInstruction.
+     * 
+     * Also see videoCompositionWithPropertiesOfAsset:completionHandler:.
+     * The new AVMutableVideoComposition will have instructions that respect the spatial properties and timeRanges of
+     * the specified asset's video tracks. Anything not pertaining to spatial layout and timing, such as background
+     * color for their composition or post-processing behaviors, is eligible to be specified via a prototype
+     * instruction.
+     * Example: To add a background color,
+     * myPrototypeInstruction = [[AVMutableVideoCompositionInstruction alloc] init];
+     * myPrototypeInstruction.backgroundColor = myCGColorRef; // Do not use constant CGColorRef colors here.
+     * myVideoComposition = [AVVideoComposition videoCompositionWithPropertiesOfAsset:myAsset
+     * prototypeInstruction:myPrototypeInstruction completionHandler:^(AVMutableVideoComposition * _Nullable
+     * myVideoComposition, NSError * _Nullable error) {
+     * if (myVideoComposition != nil) {
+     * // use myVideoComposition
+     * }
+     * else {
+     * // handle error
+     * }
+     * }];
+     * 
+     * 
+     * API-Since: 16.0
+     * 
+     * @param asset
+     *                             An instance of AVAsset.
+     * @param prototypeInstruction
+     *                             Custom instructions that the client can choose to override.
+     * @param completionHandler
+     *                             A block that is invoked when the new video composition has finished being created. If
+     *                             the `videoComposition` parameter is nil, the `error` parameter describes the failure
+     *                             that occurred.
+     */
+    @Generated
+    @Selector("videoCompositionWithPropertiesOfAsset:prototypeInstruction:completionHandler:")
+    public static native void videoCompositionWithPropertiesOfAssetPrototypeInstructionCompletionHandler(AVAsset asset,
+            AVVideoCompositionInstruction prototypeInstruction,
+            @ObjCBlock(name = "call_videoCompositionWithPropertiesOfAssetPrototypeInstructionCompletionHandler") Block_videoCompositionWithPropertiesOfAssetPrototypeInstructionCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_videoCompositionWithPropertiesOfAssetPrototypeInstructionCompletionHandler {
+        @Generated
+        void call_videoCompositionWithPropertiesOfAssetPrototypeInstructionCompletionHandler(
+                AVMutableVideoComposition videoComposition, NSError error);
+    }
 }

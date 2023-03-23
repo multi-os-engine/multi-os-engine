@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * PHASESpatialPipeline
- * <p>
+ * 
  * Spatial Pipeline.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -88,9 +90,9 @@ public class PHASESpatialPipeline extends NSObject {
 
     /**
      * [@property] entries
-     * <p>
+     * 
      * A dictionary of entries in the Spatial Pipeline.
-     * <p>
+     * 
      * Upon initialization, an entry will be created for every flag in the PHASESpatialPipelineFlags passed to
      * PHASESpatialPipeline:initWithFlags.
      */
@@ -100,7 +102,7 @@ public class PHASESpatialPipeline extends NSObject {
 
     /**
      * [@property] flags
-     * <p>
+     * 
      * Spatial Pipeline Flags.
      */
     @Generated
@@ -119,12 +121,13 @@ public class PHASESpatialPipeline extends NSObject {
 
     /**
      * initWithFlags
-     * <p>
+     * 
      * Initialize a Spatial Pipeline with the provided flags.
-     * <p>
+     * 
      * It's invalid to pass flags == 0 to this function. Doing so will return nil.
-     *
-     * @param flags Options for direct path transmission, early reflections, late reverb, etc.
+     * 
+     * @param flags
+     *              Options for direct path transmission, early reflections, late reverb, etc.
      */
     @Generated
     @Selector("initWithFlags:")

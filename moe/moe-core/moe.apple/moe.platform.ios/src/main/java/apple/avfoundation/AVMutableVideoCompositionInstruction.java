@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -160,9 +163,9 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
 
     /**
      * videoCompositionInstruction
-     * <p>
+     * 
      * Returns a new instance of AVMutableVideoCompositionInstruction.
-     * <p>
+     * 
      * The returned AVMutableVideoCompositionInstruction will have a timeRange of kCMTimeRangeInvalid, a NULL
      * backgroundColor, and a nil array of layerInstructions.
      */
@@ -269,6 +272,8 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
      * sample data is considered to be required for this instruction. Note that you must also specify all tracks for
      * which sample data is required for ANY instruction in the AVVideoComposition, in AVVideoComposition's property
      * sourceSampleDataTrackIDs.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("requiredSourceSampleDataTrackIDs")
@@ -280,6 +285,8 @@ public class AVMutableVideoCompositionInstruction extends AVVideoCompositionInst
      * sample data is considered to be required for this instruction. Note that you must also specify all tracks for
      * which sample data is required for ANY instruction in the AVVideoComposition, in AVVideoComposition's property
      * sourceSampleDataTrackIDs.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setRequiredSourceSampleDataTrackIDs:")

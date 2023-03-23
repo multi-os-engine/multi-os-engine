@@ -28,8 +28,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An object managed by ClassKit.
- * <p>
+ * 
  * See @c CLSContext for more details.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("ClassKit")

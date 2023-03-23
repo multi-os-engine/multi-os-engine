@@ -17,8 +17,6 @@ limitations under the License.
 package apple.spritekit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -49,6 +47,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
 @Generated
 @Library("SpriteKit")
@@ -155,6 +155,7 @@ public class SKView extends UIView {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -181,6 +182,7 @@ public class SKView extends UIView {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -256,46 +258,57 @@ public class SKView extends UIView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -344,6 +357,8 @@ public class SKView extends UIView {
     /**
      * Toggles whether the view allows transparent rendering. This allows content under the view to show through if
      * a non-opaque backgroundColor is set on the scene. Defaults to NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("allowsTransparency")
@@ -392,7 +407,7 @@ public class SKView extends UIView {
 
     /**
      * Converts a point from scene space to view space.
-     *
+     * 
      * @param point the point to convert.
      * @param scene the scene to convert the point into.
      */
@@ -403,7 +418,7 @@ public class SKView extends UIView {
 
     /**
      * Converts a point from view space to scene space.
-     *
+     * 
      * @param point the point to convert.
      * @param scene the scene to convert the point into.
      */
@@ -414,6 +429,8 @@ public class SKView extends UIView {
 
     /**
      * Optional view delegate, see SKViewDelegate.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("delegate")
@@ -423,7 +440,11 @@ public class SKView extends UIView {
      * Deprecated, please use preferredFramesPerSecond.
      * Number of frames to skip between renders, defaults to 1 (render every frame)
      * Actual requested rate will be preferredFramesPerSecond / frameInterval.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Generated
     @Selector("frameInterval")
     @NInt
@@ -434,10 +455,10 @@ public class SKView extends UIView {
      * possible.
      * This will require zPosition to be used in the scenes to properly guarantee elements are in front or behind each
      * other.
-     * <p>
+     * 
      * This defaults to NO, meaning that sibling order overrides efficiency heuristics in the rendering of the scenes in
      * the view.
-     * <p>
+     * 
      * Setting this to YES for a complex scene may substantially increase performance, but care must be taken as only
      * zPosition
      * determines render order before the efficiency heuristics are used.
@@ -491,7 +512,11 @@ public class SKView extends UIView {
     /**
      * Deprecated, please use preferredFramesPerSecond.
      * FIXME: remove from public headers once all clinets adopt preferredFramesPerSecond.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Generated
     @Selector("preferredFrameRate")
     public native float preferredFrameRate();
@@ -499,6 +524,8 @@ public class SKView extends UIView {
     /**
      * Defines the desired rate for this SKView to it's content.
      * Actual rate maybe be limited by hardware or other software.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("preferredFramesPerSecond")
@@ -507,7 +534,7 @@ public class SKView extends UIView {
 
     /**
      * Present an SKScene in the view, replacing the current scene.
-     *
+     * 
      * @param scene the scene to present.
      */
     @Generated
@@ -516,9 +543,9 @@ public class SKView extends UIView {
 
     /**
      * Present an SKScene in the view, replacing the current scene.
-     * <p>
+     * 
      * If there is currently a scene being presented in the view, the transition is used to swap between them.
-     *
+     * 
      * @param scene      the scene to present.
      * @param transition the transition to use when presenting the scene.
      */
@@ -536,6 +563,8 @@ public class SKView extends UIView {
     /**
      * Toggles whether the view allows transparent rendering. This allows content under the view to show through if
      * a non-opaque backgroundColor is set on the scene. Defaults to NO.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAllowsTransparency:")
@@ -543,6 +572,8 @@ public class SKView extends UIView {
 
     /**
      * Optional view delegate, see SKViewDelegate.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -550,6 +581,8 @@ public class SKView extends UIView {
 
     /**
      * Optional view delegate, see SKViewDelegate.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     public void setDelegate(NSObject value) {
@@ -567,7 +600,11 @@ public class SKView extends UIView {
      * Deprecated, please use preferredFramesPerSecond.
      * Number of frames to skip between renders, defaults to 1 (render every frame)
      * Actual requested rate will be preferredFramesPerSecond / frameInterval.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Generated
     @Selector("setFrameInterval:")
     public native void setFrameInterval(@NInt long value);
@@ -577,10 +614,10 @@ public class SKView extends UIView {
      * possible.
      * This will require zPosition to be used in the scenes to properly guarantee elements are in front or behind each
      * other.
-     * <p>
+     * 
      * This defaults to NO, meaning that sibling order overrides efficiency heuristics in the rendering of the scenes in
      * the view.
-     * <p>
+     * 
      * Setting this to YES for a complex scene may substantially increase performance, but care must be taken as only
      * zPosition
      * determines render order before the efficiency heuristics are used.
@@ -592,7 +629,11 @@ public class SKView extends UIView {
     /**
      * Deprecated, please use preferredFramesPerSecond.
      * FIXME: remove from public headers once all clinets adopt preferredFramesPerSecond.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Generated
     @Selector("setPreferredFrameRate:")
     public native void setPreferredFrameRate(float value);
@@ -600,11 +641,16 @@ public class SKView extends UIView {
     /**
      * Defines the desired rate for this SKView to it's content.
      * Actual rate maybe be limited by hardware or other software.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setPreferredFramesPerSecond:")
     public native void setPreferredFramesPerSecond(@NInt long value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setShouldCullNonVisibleNodes:")
     public native void setShouldCullNonVisibleNodes(boolean value);
@@ -620,6 +666,9 @@ public class SKView extends UIView {
     @Selector("setShowsFPS:")
     public native void setShowsFPS(boolean value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setShowsFields:")
     public native void setShowsFields(boolean value);
@@ -628,14 +677,23 @@ public class SKView extends UIView {
     @Selector("setShowsNodeCount:")
     public native void setShowsNodeCount(boolean value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setShowsPhysics:")
     public native void setShowsPhysics(boolean value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setShowsQuadCount:")
     public native void setShowsQuadCount(boolean value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("shouldCullNonVisibleNodes")
     public native boolean shouldCullNonVisibleNodes();
@@ -651,6 +709,9 @@ public class SKView extends UIView {
     @Selector("showsFPS")
     public native boolean showsFPS();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("showsFields")
     public native boolean showsFields();
@@ -659,10 +720,16 @@ public class SKView extends UIView {
     @Selector("showsNodeCount")
     public native boolean showsNodeCount();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("showsPhysics")
     public native boolean showsPhysics();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("showsQuadCount")
     public native boolean showsQuadCount();
@@ -670,7 +737,7 @@ public class SKView extends UIView {
     /**
      * Create an SKTexture containing a snapshot of how it would have been rendered in this view.
      * The texture is tightly cropped to the size of the node.
-     *
+     * 
      * @param node the node subtree to render to the texture.
      */
     @Generated
@@ -680,7 +747,7 @@ public class SKView extends UIView {
     /**
      * Create an SKTexture containing a snapshot of how it would have been rendered in this view.
      * The texture is cropped to the specified rectangle
-     *
+     * 
      * @param node the node subtree to render to the texture.
      * @param crop the crop
      */

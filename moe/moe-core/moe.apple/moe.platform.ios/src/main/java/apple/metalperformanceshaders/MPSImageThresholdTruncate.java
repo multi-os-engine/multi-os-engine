@@ -44,13 +44,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageThresholdTruncate
- * <p>
+ * 
  * The MPSImageThresholdTruncate filter applies a fixed-level threshold to each pixel in the image:
  * The threshold functions convert a single channel image to a binary image.
  * If the input image is not a single channel image, convert the inputimage to a single channel
  * luminance image using the linearGrayColorTransform and then apply the threshold.
  * The ThresholdTruncate function is:
  * destinationPixelValue = sourcePixelValue > thresholdValue ? thresholdValue : sourcePixelValue
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -172,7 +174,7 @@ public class MPSImageThresholdTruncate extends MPSUnaryImageKernel {
 
     /**
      * initialize a MPSImageThresholdTruncate filter
-     *
+     * 
      * @param device         The device the filter will run on
      * @param thresholdValue The threshold value to use
      * @param transform      This matrix is an array of 3 floats.
@@ -185,7 +187,7 @@ public class MPSImageThresholdTruncate extends MPSUnaryImageKernel {
 
     /**
      * [@property] thresholdValue
-     * <p>
+     * 
      * The threshold value used to init the threshold filter
      */
     @Generated
@@ -194,7 +196,7 @@ public class MPSImageThresholdTruncate extends MPSUnaryImageKernel {
 
     /**
      * [@property] transform
-     * <p>
+     * 
      * The color transform used to init the threshold filter
      */
     @Generated
@@ -207,16 +209,18 @@ public class MPSImageThresholdTruncate extends MPSUnaryImageKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")

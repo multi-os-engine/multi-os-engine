@@ -24,14 +24,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNNInitialGradientNode
- * <p>
+ * 
  * A node for a MPSNNInitialGradient kernel
- * <p>
+ * 
  * This node can be used to generate a starting point for an arbitrary gradient computation.
  * Simply add this node after the node for which you want to compute gradients and then
  * call the function @ref trainingGraphWithSourceGradient: of this node to automatically
  * generate the nodes needed for gradient computations or add the desired nodes manually.
  * This is generally used with MPSNNLossGradientNode and MPSNNForwardLossNode
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -102,7 +104,7 @@ public class MPSNNInitialGradientNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a MPSNNInitialGradient MPSNNPad kernel
-     *
+     * 
      * @param source The MPSNNImageNode representing the source MPSImage for the filter
      * @return A new MPSNNFilter node for a MPSNNInitialGradient kernel.
      */
@@ -138,7 +140,7 @@ public class MPSNNInitialGradientNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a MPSNNInitialGradient MPSNNPad kernel
-     *
+     * 
      * @param source The MPSNNImageNode representing the source MPSImage for the filter
      * @return A new MPSNNFilter node for a MPSNNInitialGradient kernel.
      */

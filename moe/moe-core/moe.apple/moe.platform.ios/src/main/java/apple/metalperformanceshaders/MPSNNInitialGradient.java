@@ -27,7 +27,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNInitialGradient
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The MPSCNNInitialGradient filter specifies a layer which computes the initial gradient for
  * an aribitrary input image. The operation itself is extremely simple: it computes the gradient of the input image
  * with itself, resulting in an output image which is filled with '1's for all the inputs that were used.
@@ -42,12 +42,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * f = MPSCNNMultiply(L1, L2), where
  * L1 = MPSNNForwardLoss1(x1) and
  * L2 = MPSNNForwardLoss1(x2)
- * <p>
+ * 
  * To compute df/dx1 we apply the chain rule:
- * <p>
+ * 
  * df/dx1 = d(L1 * L2)/dx1 = d(L1 * L2)/dL1 * dL1/dx1 + d(L1 * L2)/dL2 * dL2/dx1
  * = d(L1 * L2)/dL1 * dL1/dx1 = L2 * dL1/dx1
- * <p>
+ * 
  * The MPSCNNMultiplyGradient filter computes for f = L1 * L2 forward op:
  * dL/dL1 = dL/df * df/dL1 = dL/df * L2 and
  * dL/dL2 = dL/df * df/dL2 = dL/df * L1 where
@@ -58,6 +58,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * L = f, which means that dL/dL1 = df/df * df/dL1 = 1 * L2, which
  * shows that we get the correct gradient by providing unit input as input gradient to
  * the MPSCNNMultiplyGradient.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -137,7 +139,7 @@ public class MPSNNInitialGradient extends MPSCNNKernel {
 
     /**
      * Initializes a MPSNNInitialGradient kernel.
-     *
+     * 
      * @param device The MTLDevice on which this MPSNNInitialGradient filter will be used.
      * @return A valid MPSNNInitialGradient object or nil, if failure.
      */

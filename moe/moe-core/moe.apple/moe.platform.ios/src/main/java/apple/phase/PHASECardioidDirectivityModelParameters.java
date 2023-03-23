@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASECardioidDirectivityModelParameters
- * <p>
+ * 
  * Cardioid directivity model parameters.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -139,7 +141,7 @@ public class PHASECardioidDirectivityModelParameters extends PHASEDirectivityMod
 
     /**
      * [@property] subbandParameters
-     * <p>
+     * 
      * An array of subband parameters.
      */
     @Generated

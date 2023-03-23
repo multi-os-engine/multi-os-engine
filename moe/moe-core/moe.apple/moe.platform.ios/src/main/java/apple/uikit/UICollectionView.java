@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -56,7 +54,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -163,6 +166,7 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -189,6 +193,7 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -264,46 +269,57 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -414,15 +430,23 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     /**
      * returns NO if reordering was prevented from beginning - otherwise YES
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("beginInteractiveMovementForItemAtIndexPath:")
     public native boolean beginInteractiveMovementForItemAtIndexPath(NSIndexPath indexPath);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("cancelInteractiveMovement")
     public native void cancelInteractiveMovement();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("cancelInteractiveTransition")
     public native void cancelInteractiveTransition();
@@ -471,10 +495,16 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("deselectItemAtIndexPath:animated:")
     public native void deselectItemAtIndexPathAnimated(NSIndexPath indexPath, boolean animated);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("endInteractiveMovement")
     public native void endInteractiveMovement();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("finishInteractiveTransition")
     public native void finishInteractiveTransition();
@@ -498,6 +528,9 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("indexPathsForVisibleItems")
     public native NSArray<? extends NSIndexPath> indexPathsForVisibleItems();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("indexPathsForVisibleSupplementaryElementsOfKind:")
     public native NSArray<? extends NSIndexPath> indexPathsForVisibleSupplementaryElementsOfKind(String elementKind);
@@ -530,10 +563,16 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("insertSections:")
     public native void insertSections(NSIndexSet sections);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("isPrefetchingEnabled")
     public native boolean isPrefetchingEnabled();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setPrefetchingEnabled:")
     public native void setPrefetchingEnabled(boolean value);
@@ -577,6 +616,9 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
             @ObjCBlock(name = "call_performBatchUpdatesCompletion_0") Block_performBatchUpdatesCompletion_0 updates,
             @ObjCBlock(name = "call_performBatchUpdatesCompletion_1") Block_performBatchUpdatesCompletion_1 completion);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("prefetchDataSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -624,6 +666,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * defaults to NO. If YES, when focusing on a collection view the last focused index path is focused automatically.
      * If the collection view has never been focused, then the preferred focused index path is used.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("remembersLastFocusedIndexPath")
@@ -675,6 +719,9 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("setCollectionViewLayout:animated:")
     public native void setCollectionViewLayoutAnimated(UICollectionViewLayout layout, boolean animated);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setCollectionViewLayout:animated:completion:")
     public native void setCollectionViewLayoutAnimatedCompletion(UICollectionViewLayout layout, boolean animated,
@@ -712,11 +759,17 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
         }
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setPrefetchDataSource:")
     public native void setPrefetchDataSource_unsafe(
             @Mapped(ObjCObjectMapper.class) UICollectionViewDataSourcePrefetching value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     public void setPrefetchDataSource(@Mapped(ObjCObjectMapper.class) UICollectionViewDataSourcePrefetching value) {
         Object __old = prefetchDataSource();
@@ -732,22 +785,33 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * defaults to NO. If YES, when focusing on a collection view the last focused index path is focused automatically.
      * If the collection view has never been focused, then the preferred focused index path is used.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRemembersLastFocusedIndexPath:")
     public native void setRemembersLastFocusedIndexPath(boolean value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("startInteractiveTransitionToCollectionViewLayout:completion:")
     public native UICollectionViewTransitionLayout startInteractiveTransitionToCollectionViewLayoutCompletion(
             UICollectionViewLayout layout,
             @ObjCBlock(name = "call_startInteractiveTransitionToCollectionViewLayoutCompletion") Block_startInteractiveTransitionToCollectionViewLayoutCompletion completion);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("supplementaryViewForElementKind:atIndexPath:")
     public native UICollectionReusableView supplementaryViewForElementKindAtIndexPath(String elementKind,
             NSIndexPath indexPath);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("updateInteractiveMovementTargetPosition:")
     public native void updateInteractiveMovementTargetPosition(@ByValue CGPoint targetPosition);
@@ -756,6 +820,9 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @Selector("visibleCells")
     public native NSArray<? extends UICollectionViewCell> visibleCells();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("visibleSupplementaryViewsOfKind:")
     public native NSArray<? extends UICollectionReusableView> visibleSupplementaryViewsOfKind(String elementKind);
@@ -797,6 +864,9 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     @NInt
     public native long dataSourceSectionIndexForPresentationSectionIndex(@NInt long presentationSectionIndex);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("dragDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -805,11 +875,16 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * You can force drags to be disabled for this collection view by setting this to NO.
      * As of iOS 15, this is true for both iPhone and iPad by default. Prior to iOS 15, it defaulted to false on iPhone.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dragInteractionEnabled")
     public native boolean dragInteractionEnabled();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("dropDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -818,6 +893,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * YES if a drag session is currently active. A drag session begins after items are "lifted" from the collection
      * view.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("hasActiveDrag")
@@ -825,6 +902,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     /**
      * YES if collection view is currently tracking a drop session.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("hasActiveDrop")
@@ -832,6 +911,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     /**
      * Returns YES if the collection view is reordering or has drop placeholders.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("hasUncommittedUpdates")
@@ -858,16 +939,24 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * Reordering cadence affects how easily reordering occurs while dragging around a reorder-capable drop destination.
      * Default is UICollectionViewReorderingCadenceImmediate.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("reorderingCadence")
     @NInt
     public native long reorderingCadence();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setDragDelegate:")
     public native void setDragDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UICollectionViewDragDelegate value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     public void setDragDelegate(@Mapped(ObjCObjectMapper.class) UICollectionViewDragDelegate value) {
         Object __old = dragDelegate();
@@ -883,15 +972,23 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * You can force drags to be disabled for this collection view by setting this to NO.
      * As of iOS 15, this is true for both iPhone and iPad by default. Prior to iOS 15, it defaulted to false on iPhone.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDragInteractionEnabled:")
     public native void setDragInteractionEnabled(boolean value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setDropDelegate:")
     public native void setDropDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UICollectionViewDropDelegate value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     public void setDropDelegate(@Mapped(ObjCObjectMapper.class) UICollectionViewDropDelegate value) {
         Object __old = dropDelegate();
@@ -907,6 +1004,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * Reordering cadence affects how easily reordering occurs while dragging around a reorder-capable drop destination.
      * Default is UICollectionViewReorderingCadenceImmediate.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setReorderingCadence:")
@@ -925,6 +1024,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * Controls whether multiple item selection can occur when the receiver is editing.
      * Defaults to NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("allowsMultipleSelectionDuringEditing")
@@ -933,17 +1034,25 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * Controls whether an item can be selected when the receiver is editing.
      * Defaults to NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("allowsSelectionDuringEditing")
     public native boolean allowsSelectionDuringEditing();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("dequeueConfiguredReusableCellWithRegistration:forIndexPath:item:")
     public native UICollectionViewCell dequeueConfiguredReusableCellWithRegistrationForIndexPathItem(
             UICollectionViewCellRegistration registration, NSIndexPath indexPath,
             @Mapped(ObjCObjectMapper.class) Object item);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("dequeueConfiguredReusableSupplementaryViewWithRegistration:forIndexPath:")
     public native UICollectionReusableView dequeueConfiguredReusableSupplementaryViewWithRegistrationForIndexPath(
@@ -951,6 +1060,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     /**
      * Controls the editing state for the receiver.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isEditing")
@@ -959,6 +1070,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * When enabled, the collection view ensures that selection is automatically triggered when focus moves to a cell.
      * Defaults to a system derived value based on platform and other properties of the collection view.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("selectionFollowsFocus")
@@ -967,6 +1080,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * Controls whether multiple item selection can occur when the receiver is editing.
      * Defaults to NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAllowsMultipleSelectionDuringEditing:")
@@ -975,6 +1090,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * Controls whether an item can be selected when the receiver is editing.
      * Defaults to NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAllowsSelectionDuringEditing:")
@@ -982,6 +1099,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
 
     /**
      * Controls the editing state for the receiver.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setEditing:")
@@ -990,6 +1109,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
     /**
      * When enabled, the collection view ensures that selection is automatically triggered when focus moves to a cell.
      * Defaults to a system derived value based on platform and other properties of the collection view.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSelectionFollowsFocus:")
@@ -999,6 +1120,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
      * Determines if the collection view allows its cells to become focused.
      * When collectionView:canFocusItemAtIndexPath: is implemented, its return value takes precedence over this method.
      * Defaults to a system derived value based on platform and other properties of the collection view.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("allowsFocus")
@@ -1008,11 +1131,16 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
      * Determines if the collection view allows its cells to become focused while editing.
      * When collectionView:canFocusItemAtIndexPath: is implemented, its return value takes precedence over this method.
      * Defaults to a system derived value based on platform and other properties of the collection view.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("allowsFocusDuringEditing")
     public native boolean allowsFocusDuringEditing();
 
+    /**
+     * API-Since: 13.2
+     */
     @Generated
     @Selector("contextMenuInteraction")
     public native UIContextMenuInteraction contextMenuInteraction();
@@ -1022,6 +1150,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
      * not replace the
      * existing cell with a new cell. Prefer reconfiguring over reloading unless you actually need an entirely new cell
      * for the item.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("reconfigureItemsAtIndexPaths:")
@@ -1031,6 +1161,8 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
      * Determines if the collection view allows its cells to become focused.
      * When collectionView:canFocusItemAtIndexPath: is implemented, its return value takes precedence over this method.
      * Defaults to a system derived value based on platform and other properties of the collection view.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAllowsFocus:")
@@ -1040,8 +1172,25 @@ public class UICollectionView extends UIScrollView implements UIDataSourceTransl
      * Determines if the collection view allows its cells to become focused while editing.
      * When collectionView:canFocusItemAtIndexPath: is implemented, its return value takes precedence over this method.
      * Defaults to a system derived value based on platform and other properties of the collection view.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAllowsFocusDuringEditing:")
     public native void setAllowsFocusDuringEditing(boolean value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("selfSizingInvalidation")
+    @NInt
+    public native long selfSizingInvalidation();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSelfSizingInvalidation:")
+    public native void setSelfSizingInvalidation(@NInt long value);
 }

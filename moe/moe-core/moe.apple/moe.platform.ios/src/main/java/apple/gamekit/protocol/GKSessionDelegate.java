@@ -28,6 +28,11 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * Callbacks to the GKSession delegate.
+ * 
+ * API-Since: 3.0
+ * Deprecated-Since: 7.0
+ * Deprecated-Message: Use MCSession in association with MCSessionDelegate from the MultipeerConnectivity framework
+ * instead
  */
 @Deprecated
 @Generated
@@ -58,7 +63,7 @@ public interface GKSessionDelegate {
 
     /**
      * Indicates a connection request was received from another peer.
-     * <p>
+     * 
      * Accept by calling -acceptConnectionFromPeer:
      * Deny by calling -denyConnectionFromPeer:
      */

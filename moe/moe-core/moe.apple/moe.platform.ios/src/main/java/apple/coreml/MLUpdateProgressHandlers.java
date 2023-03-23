@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Allows applications to register for progress and completion handlers.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreML")

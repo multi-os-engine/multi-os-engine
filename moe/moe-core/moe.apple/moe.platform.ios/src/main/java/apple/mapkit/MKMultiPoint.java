@@ -48,6 +48,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -185,12 +188,17 @@ public class MKMultiPoint extends MKShape implements MKGeoJSONObject {
     /**
      * Conveniences for determining the location/fraction (0.0 -> 1.0) distance-wise
      * at which a point or set of points exists on the shape
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("locationAtPointIndex:")
     @NFloat
     public native double locationAtPointIndex(@NUInt long index);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("locationsAtPointIndexes:")
     public native NSArray<? extends NSNumber> locationsAtPointIndexes(NSIndexSet indexes);

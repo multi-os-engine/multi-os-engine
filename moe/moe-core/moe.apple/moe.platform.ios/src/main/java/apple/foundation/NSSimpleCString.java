@@ -448,4 +448,40 @@ public class NSSimpleCString extends NSString {
     @Selector("initWithCharactersNoCopy:length:deallocator:")
     public native NSSimpleCString initWithCharactersNoCopyLengthDeallocator(CharPtr chars, @NUInt long len,
             @ObjCBlock(name = "call_initWithCharactersNoCopyLengthDeallocator") NSString.Block_initWithCharactersNoCopyLengthDeallocator deallocator);
+
+    @Generated
+    @Selector("initWithValidatedFormat:validFormatSpecifiers:arguments:error:")
+    public native NSSimpleCString initWithValidatedFormatValidFormatSpecifiersArgumentsError(String format,
+            String validFormatSpecifiers, BytePtr argList, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Variadic()
+    @Selector("initWithValidatedFormat:validFormatSpecifiers:error:")
+    public native NSSimpleCString initWithValidatedFormatValidFormatSpecifiersError(String format,
+            String validFormatSpecifiers, @ReferenceInfo(type = NSError.class) Ptr<NSError> error, Object... varargs);
+
+    @Generated
+    @Selector("initWithValidatedFormat:validFormatSpecifiers:locale:arguments:error:")
+    public native NSSimpleCString initWithValidatedFormatValidFormatSpecifiersLocaleArgumentsError(String format,
+            String validFormatSpecifiers, @Mapped(ObjCObjectMapper.class) Object locale, BytePtr argList,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    @Generated
+    @Variadic()
+    @Selector("initWithValidatedFormat:validFormatSpecifiers:locale:error:")
+    public native NSSimpleCString initWithValidatedFormatValidFormatSpecifiersLocaleError(String format,
+            String validFormatSpecifiers, @Mapped(ObjCObjectMapper.class) Object locale,
+            @ReferenceInfo(type = NSError.class) Ptr<NSError> error, Object... varargs);
+
+    @Generated
+    @Variadic()
+    @Selector("localizedStringWithValidatedFormat:validFormatSpecifiers:error:")
+    public static native NSSimpleCString localizedStringWithValidatedFormatValidFormatSpecifiersError(String format,
+            String validFormatSpecifiers, @ReferenceInfo(type = NSError.class) Ptr<NSError> error, Object... varargs);
+
+    @Generated
+    @Variadic()
+    @Selector("stringWithValidatedFormat:validFormatSpecifiers:error:")
+    public static native NSSimpleCString stringWithValidatedFormatValidFormatSpecifiersError(String format,
+            String validFormatSpecifiers, @ReferenceInfo(type = NSError.class) Ptr<NSError> error, Object... varargs);
 }

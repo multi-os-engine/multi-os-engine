@@ -37,11 +37,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MTLFunction
- * <p>
+ * 
  * A handle to intermediate code used as inputs for either a MTLComputePipelineState or a MTLRenderPipelineState.
- * <p>
+ * 
  * MTLFunction is a single vertex shader, fragment shader, or compute function. A Function can only be used with the
  * device that it was created against.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Metal")
@@ -50,7 +52,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLFunction {
     /**
      * [@property] device
-     * <p>
+     * 
      * The device this resource was created against. This resource can only be used with this device.
      */
     @Generated
@@ -60,8 +62,10 @@ public interface MTLFunction {
 
     /**
      * [@property] functionConstantsDictionary
-     * <p>
+     * 
      * A dictionary containing information about all function contents, keyed by the constant names.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("functionConstantsDictionary")
@@ -69,7 +73,7 @@ public interface MTLFunction {
 
     /**
      * [@property] functionType
-     * <p>
+     * 
      * The overall kind of entry point: compute, vertex, or fragment.
      */
     @Generated
@@ -79,8 +83,10 @@ public interface MTLFunction {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("label")
@@ -88,7 +94,7 @@ public interface MTLFunction {
 
     /**
      * [@property] name
-     * <p>
+     * 
      * The name of the function in the shading language.
      */
     @Generated
@@ -97,9 +103,11 @@ public interface MTLFunction {
 
     /**
      * [@property] patchControlPointCount
-     * <p>
+     * 
      * Returns the number of patch control points if it was specified in the shader. Returns -1 if it
      * was not specified.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("patchControlPointCount")
@@ -108,8 +116,10 @@ public interface MTLFunction {
 
     /**
      * [@property] patchType
-     * <p>
+     * 
      * Returns the patch type. MTLPatchTypeNone if it is not a post tessellation vertex shader.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("patchType")
@@ -118,8 +128,10 @@ public interface MTLFunction {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setLabel:")
@@ -127,8 +139,10 @@ public interface MTLFunction {
 
     /**
      * [@property] stageInputAttributes
-     * <p>
+     * 
      * Returns an array describing the attributes
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("stageInputAttributes")
@@ -140,9 +154,11 @@ public interface MTLFunction {
 
     /**
      * newArgumentEncoderWithBufferIndex:
-     * <p>
+     * 
      * Creates an argument encoder which will encode arguments matching the layout of the argument buffer at the given
      * bind point index.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("newArgumentEncoderWithBufferIndex:")
@@ -151,9 +167,11 @@ public interface MTLFunction {
 
     /**
      * newArgumentEncoderWithBufferIndex:
-     * <p>
+     * 
      * Creates an argument encoder which will encode arguments matching the layout of the argument buffer at the given
      * bind point index.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("newArgumentEncoderWithBufferIndex:reflection:")
@@ -163,8 +181,10 @@ public interface MTLFunction {
 
     /**
      * [@property] options
-     * <p>
+     * 
      * The options this function was created with.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("options")

@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A lasso tool for selection parts of a drawing.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("PencilKit")

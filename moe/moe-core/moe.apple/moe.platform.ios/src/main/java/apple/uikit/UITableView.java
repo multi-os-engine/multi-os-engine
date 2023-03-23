@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -58,9 +56,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * _______________________________________________________________________________________________________________
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("UIKit")
@@ -168,6 +170,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -194,6 +197,7 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -269,46 +273,57 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -356,6 +371,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is NO. Controls whether multiple rows can be selected simultaneously
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("allowsMultipleSelection")
@@ -363,6 +380,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is NO. Controls whether multiple rows can be selected simultaneously in editing mode
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("allowsMultipleSelectionDuringEditing")
@@ -370,6 +389,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is YES. Controls whether rows can be selected when not in editing mode
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("allowsSelection")
@@ -426,6 +447,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * the background view will be automatically resized to track the size of the table view. this will be placed as a
      * subview of the table view behind all cells and headers/footers. default may be non-nil for some devices.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("backgroundView")
@@ -448,6 +471,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * if cell layout margins are derived from the width of the readableContentGuide. default is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("cellLayoutMarginsFollowReadableWidth")
@@ -481,6 +506,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * newer dequeue method guarantees a cell is returned and resized properly, assuming identifier is registered
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("dequeueReusableCellWithIdentifier:forIndexPath:")
@@ -489,6 +516,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * like dequeueReusableCellWithIdentifier:, but for headers/footers
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("dequeueReusableHeaderFooterViewWithIdentifier:")
@@ -508,6 +537,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is UITableViewAutomaticDimension, set to 0 to disable
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("estimatedRowHeight")
@@ -516,6 +547,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is UITableViewAutomaticDimension, set to 0 to disable
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("estimatedSectionFooterHeight")
@@ -524,16 +557,24 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is UITableViewAutomaticDimension, set to 0 to disable
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("estimatedSectionHeaderHeight")
     @NFloat
     public native double estimatedSectionHeaderHeight();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("footerViewForSection:")
     public native UITableViewHeaderFooterView footerViewForSection(@NInt long section);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("headerViewForSection:")
     public native UITableViewHeaderFooterView headerViewForSection(@NInt long section);
@@ -568,6 +609,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * returns nil or a set of index paths representing the sections and rows of the selection.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("indexPathsForSelectedRows")
@@ -619,10 +662,16 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Selector("setEditing:")
     public native void setEditing(boolean value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("moveRowAtIndexPath:toIndexPath:")
     public native void moveRowAtIndexPathToIndexPath(NSIndexPath indexPath, NSIndexPath newIndexPath);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("moveSection:toSection:")
     public native void moveSectionToSection(@NInt long section, @NInt long newSection);
@@ -640,6 +689,9 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @NInt
     public native long numberOfSections();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("prefetchDataSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -668,10 +720,16 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @ByValue
     public native CGRect rectForSection(@NInt long section);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("registerClass:forCellReuseIdentifier:")
     public native void registerClassForCellReuseIdentifier(Class cellClass, String identifier);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("registerClass:forHeaderFooterViewReuseIdentifier:")
     public native void registerClassForHeaderFooterViewReuseIdentifier(Class aClass, String identifier);
@@ -681,11 +739,16 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      * If all reuse identifiers are registered, use the newer -dequeueReusableCellWithIdentifier:forIndexPath: to
      * guarantee that a cell instance is returned.
      * Instances returned from the new dequeue method will also be properly sized when they are returned.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("registerNib:forCellReuseIdentifier:")
     public native void registerNibForCellReuseIdentifier(UINib nib, String identifier);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("registerNib:forHeaderFooterViewReuseIdentifier:")
     public native void registerNibForHeaderFooterViewReuseIdentifier(UINib nib, String identifier);
@@ -698,6 +761,9 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @Selector("reloadData")
     public native void reloadData();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("reloadRowsAtIndexPaths:withRowAnimation:")
     public native void reloadRowsAtIndexPathsWithRowAnimation(NSArray<? extends NSIndexPath> indexPaths,
@@ -705,11 +771,16 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * Reloads the section index bar.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("reloadSectionIndexTitles")
     public native void reloadSectionIndexTitles();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("reloadSections:withRowAnimation:")
     public native void reloadSectionsWithRowAnimation(NSIndexSet sections, @NInt long animation);
@@ -717,6 +788,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * defaults to NO. If YES, when focusing on a table view the last focused index path is focused automatically. If
      * the table view has never been focused, then the preferred focused index path is used.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("remembersLastFocusedIndexPath")
@@ -757,6 +830,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * the background color of the section index while not being touched
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("sectionIndexBackgroundColor")
@@ -764,6 +839,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * color used for text of the section index
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("sectionIndexColor")
@@ -779,6 +856,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * the background color of the section index while it is being touched
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("sectionIndexTrackingBackgroundColor")
@@ -803,6 +882,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * effect to apply to table separators
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("separatorEffect")
@@ -811,6 +892,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * allows customization of the frame of cell separators; see also the separatorInsetReference property. Use
      * UITableViewAutomaticDimension for the automatic inset for that edge.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("separatorInset")
@@ -827,6 +910,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is NO. Controls whether multiple rows can be selected simultaneously
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setAllowsMultipleSelection:")
@@ -834,6 +919,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is NO. Controls whether multiple rows can be selected simultaneously in editing mode
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setAllowsMultipleSelectionDuringEditing:")
@@ -841,6 +928,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is YES. Controls whether rows can be selected when not in editing mode
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setAllowsSelection:")
@@ -856,6 +945,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * the background view will be automatically resized to track the size of the table view. this will be placed as a
      * subview of the table view behind all cells and headers/footers. default may be non-nil for some devices.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setBackgroundView:")
@@ -863,6 +954,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * if cell layout margins are derived from the width of the readableContentGuide. default is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCellLayoutMarginsFollowReadableWidth:")
@@ -906,6 +999,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is UITableViewAutomaticDimension, set to 0 to disable
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setEstimatedRowHeight:")
@@ -913,6 +1008,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is UITableViewAutomaticDimension, set to 0 to disable
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setEstimatedSectionFooterHeight:")
@@ -920,16 +1017,24 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default is UITableViewAutomaticDimension, set to 0 to disable
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setEstimatedSectionHeaderHeight:")
     public native void setEstimatedSectionHeaderHeight(@NFloat double value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setPrefetchDataSource:")
     public native void setPrefetchDataSource_unsafe(
             @Mapped(ObjCObjectMapper.class) UITableViewDataSourcePrefetching value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     public void setPrefetchDataSource(@Mapped(ObjCObjectMapper.class) UITableViewDataSourcePrefetching value) {
         Object __old = prefetchDataSource();
@@ -945,6 +1050,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * defaults to NO. If YES, when focusing on a table view the last focused index path is focused automatically. If
      * the table view has never been focused, then the preferred focused index path is used.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRemembersLastFocusedIndexPath:")
@@ -973,6 +1080,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * the background color of the section index while not being touched
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setSectionIndexBackgroundColor:")
@@ -980,6 +1089,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * color used for text of the section index
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setSectionIndexColor:")
@@ -994,6 +1105,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * the background color of the section index while it is being touched
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setSectionIndexTrackingBackgroundColor:")
@@ -1008,6 +1121,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * effect to apply to table separators
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSeparatorEffect:")
@@ -1016,6 +1131,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * allows customization of the frame of cell separators; see also the separatorInsetReference property. Use
      * UITableViewAutomaticDimension for the automatic inset for that edge.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setSeparatorInset:")
@@ -1074,6 +1191,9 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     @NInt
     public native long dataSourceSectionIndexForPresentationSectionIndex(@NInt long presentationSectionIndex);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("dragDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -1082,11 +1202,16 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * You can force drags to be disabled for this table view by setting this to NO.
      * As of iOS 15, this is true for both iPhone and iPad by default. Prior to iOS 15, it defaulted to false on iPhone.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dragInteractionEnabled")
     public native boolean dragInteractionEnabled();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("dropDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -1094,6 +1219,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * YES if a drag session is currently active. A drag session begins after rows are "lifted" from the table view.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("hasActiveDrag")
@@ -1101,6 +1228,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * YES if table view is currently tracking a drop session.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("hasActiveDrop")
@@ -1110,6 +1239,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      * Returns YES if the table view is in the middle of reordering, is displaying a drop target gap, or has drop
      * placeholders. If possible, avoid calling -reloadData while there are uncommitted updates to avoid interfering
      * with user-initiated interactions that have not yet completed.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("hasUncommittedUpdates")
@@ -1117,6 +1248,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default value is YES
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("insetsContentViewsToSafeArea")
@@ -1128,6 +1261,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * Allows multiple insert/delete/reload/move calls to be animated simultaneously. Nestable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("performBatchUpdates:completion:")
@@ -1166,16 +1301,24 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * Changes how custom separatorInset values are interpreted. The default value is
      * UITableViewSeparatorInsetFromCellEdges
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("separatorInsetReference")
     @NInt
     public native long separatorInsetReference();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setDragDelegate:")
     public native void setDragDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITableViewDragDelegate value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     public void setDragDelegate(@Mapped(ObjCObjectMapper.class) UITableViewDragDelegate value) {
         Object __old = dragDelegate();
@@ -1191,15 +1334,23 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * You can force drags to be disabled for this table view by setting this to NO.
      * As of iOS 15, this is true for both iPhone and iPad by default. Prior to iOS 15, it defaulted to false on iPhone.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDragInteractionEnabled:")
     public native void setDragInteractionEnabled(boolean value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setDropDelegate:")
     public native void setDropDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITableViewDropDelegate value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     public void setDropDelegate(@Mapped(ObjCObjectMapper.class) UITableViewDropDelegate value) {
         Object __old = dropDelegate();
@@ -1214,6 +1365,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * default value is YES
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setInsetsContentViewsToSafeArea:")
@@ -1222,6 +1375,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * Changes how custom separatorInset values are interpreted. The default value is
      * UITableViewSeparatorInsetFromCellEdges
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSeparatorInsetReference:")
@@ -1240,6 +1395,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * When enabled, the table view ensures that selection is automatically triggered when focus moves to a cell.
      * Defaults to a system derived value based on platform and other properties of the table view.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("selectionFollowsFocus")
@@ -1248,6 +1405,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
     /**
      * When enabled, the table view ensures that selection is automatically triggered when focus moves to a cell.
      * Defaults to a system derived value based on platform and other properties of the table view.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSelectionFollowsFocus:")
@@ -1257,6 +1416,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      * Determines if the table view allows its cells to become focused.
      * When tableView:canFocusRowAtIndexPath: is implemented, its return value takes precedence over this method.
      * Defaults to a system derived value based on platform and other properties of the table view.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("allowsFocus")
@@ -1266,11 +1427,16 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      * Determines if the table view allows its cells to become focused while editing.
      * When tableView:canFocusRowAtIndexPath: is implemented, its return value takes precedence over this method.
      * Defaults to a system derived value based on platform and other properties of the table view.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("allowsFocusDuringEditing")
     public native boolean allowsFocusDuringEditing();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("contextMenuInteraction")
     public native UIContextMenuInteraction contextMenuInteraction();
@@ -1279,12 +1445,17 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      * The height for filler rows added below the last row when there aren't enough rows to fill a plain style table
      * view.
      * Set 0 to disable filler rows entirely, use `UITableViewAutomaticDimension` for the default height.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("fillerRowHeight")
     @NFloat
     public native double fillerRowHeight();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("isPrefetchingEnabled")
     public native boolean isPrefetchingEnabled();
@@ -1294,6 +1465,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      * not replace the
      * existing cell with a new cell. Prefer reconfiguring over reloading unless you actually need an entirely new cell
      * for the row.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("reconfigureRowsAtIndexPaths:")
@@ -1301,6 +1474,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
 
     /**
      * Padding above each section header. The default value is `UITableViewAutomaticDimension`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("sectionHeaderTopPadding")
@@ -1311,6 +1486,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      * Determines if the table view allows its cells to become focused.
      * When tableView:canFocusRowAtIndexPath: is implemented, its return value takes precedence over this method.
      * Defaults to a system derived value based on platform and other properties of the table view.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAllowsFocus:")
@@ -1320,6 +1497,8 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      * Determines if the table view allows its cells to become focused while editing.
      * When tableView:canFocusRowAtIndexPath: is implemented, its return value takes precedence over this method.
      * Defaults to a system derived value based on platform and other properties of the table view.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAllowsFocusDuringEditing:")
@@ -1329,19 +1508,41 @@ public class UITableView extends UIScrollView implements NSCoding, UIDataSourceT
      * The height for filler rows added below the last row when there aren't enough rows to fill a plain style table
      * view.
      * Set 0 to disable filler rows entirely, use `UITableViewAutomaticDimension` for the default height.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setFillerRowHeight:")
     public native void setFillerRowHeight(@NFloat double value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setPrefetchingEnabled:")
     public native void setPrefetchingEnabled(boolean value);
 
     /**
      * Padding above each section header. The default value is `UITableViewAutomaticDimension`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSectionHeaderTopPadding:")
     public native void setSectionHeaderTopPadding(@NFloat double value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("selfSizingInvalidation")
+    @NInt
+    public native long selfSizingInvalidation();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSelfSizingInvalidation:")
+    public native void setSelfSizingInvalidation(@NInt long value);
 }

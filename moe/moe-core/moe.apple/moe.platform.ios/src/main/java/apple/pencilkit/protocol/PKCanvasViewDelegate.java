@@ -13,6 +13,8 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * The optional methods a delegate can receive from editing-related changes
  * to a PKCanvasView.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("PencilKit")
@@ -21,9 +23,9 @@ import org.moe.natj.objc.ann.Selector;
 public interface PKCanvasViewDelegate extends UIScrollViewDelegate {
     /**
      * Called when the user starts using a tool, eg. selecting, drawing, or erasing.
-     * <p>
+     * 
      * This does not include moving the ruler.
-     *
+     * 
      * @param canvasView The canvas view that the user started interacting with.
      */
     @Generated
@@ -35,7 +37,7 @@ public interface PKCanvasViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the user stops using a tool, eg. selecting, drawing, or erasing.
-     *
+     * 
      * @param canvasView The canvas view that the user ended interacting with.
      */
     @Generated
@@ -47,13 +49,13 @@ public interface PKCanvasViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called after setting `drawing` when the entire drawing is rendered and visible.
-     * <p>
+     * 
      * This method lets you know when the canvas view finishes rendering all of the currently
      * visible content. This can be used to delay showing the canvas view until all content is visible.
-     * <p>
+     * 
      * This is called every time the canvasView transitions from partially rendered to fully rendered,
      * including after setting the drawing, and after zooming or scrolling.
-     *
+     * 
      * @param canvasView The canvas view that finished rendering.
      */
     @Generated
@@ -65,15 +67,15 @@ public interface PKCanvasViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called after the drawing on the canvas did change.
-     * <p>
+     * 
      * This may be called some time after the `canvasViewDidEndUsingTool:` delegate method.
      * For example, when using the Apple Pencil, pressure data is delayed from touch data, this
      * means that the user can stop drawing (`canvasViewDidEndUsingTool:` is called), but the
      * canvas view is still waiting for final pressure values; only when the final pressure values
      * are received is the drawing updated and this delegate method called.
-     * <p>
+     * 
      * It is also possible that this method is not called, if the drawing interaction is cancelled.
-     *
+     * 
      * @param canvasView The canvas view that changed.
      */
     @Generated

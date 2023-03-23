@@ -43,6 +43,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 12.0
+ */
+@Deprecated
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)

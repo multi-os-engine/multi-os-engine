@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_browser_state_t
- * <p>
+ * 
  * Browser states sent by nw_browser_set_state_changed_handler.
  */
 @Generated

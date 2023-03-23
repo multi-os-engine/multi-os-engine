@@ -21,49 +21,67 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Alignment—the layout transverse to the stacking axis.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class UIStackViewAlignment {
     /**
      * Align the leading and trailing edges of vertically stacked items
      * or the top and bottom edges of horizontally stacked items tightly to the container.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Fill = 0x0000000000000000L;
     /**
      * Align the leading edges of vertically stacked items
      * or the top edges of horizontally stacked items tightly to the relevant edge
      * of the container
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Leading = 0x0000000000000001L;
     /**
      * Align the leading edges of vertically stacked items
      * or the top edges of horizontally stacked items tightly to the relevant edge
      * of the container
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Top = 0x0000000000000001L;
     /**
      * Valid for horizontal axis only
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long FirstBaseline = 0x0000000000000002L;
     /**
      * Center the items in a vertical stack horizontally
      * or the items in a horizontal stack vertically
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Center = 0x0000000000000003L;
     /**
      * Align the trailing edges of vertically stacked items
      * or the bottom edges of horizontally stacked items tightly to the relevant
      * edge of the container
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Trailing = 0x0000000000000004L;
     /**
      * Align the trailing edges of vertically stacked items
      * or the bottom edges of horizontally stacked items tightly to the relevant
      * edge of the container
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Bottom = 0x0000000000000004L;
     /**
      * Valid for horizontal axis only
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long LastBaseline = 0x0000000000000005L;
 

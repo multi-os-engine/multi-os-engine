@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -58,7 +61,7 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
 
     /**
      * The direction to search from the current selection
-     * <p>
+     * 
      * The search will respect the writing direction of the document.
      * The initial value is NO.
      */
@@ -78,7 +81,7 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
 
     /**
      * Whether or not the search should be case sensitive
-     * <p>
+     * 
      * The initial value is NO.
      */
     @Generated
@@ -152,7 +155,7 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
 
     /**
      * The direction to search from the current selection
-     * <p>
+     * 
      * The search will respect the writing direction of the document.
      * The initial value is NO.
      */
@@ -162,7 +165,7 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
 
     /**
      * Whether or not the search should be case sensitive
-     * <p>
+     * 
      * The initial value is NO.
      */
     @Generated
@@ -175,7 +178,7 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
 
     /**
      * Whether the search should start at the beginning of the document once it reaches the end
-     * <p>
+     * 
      * The initial value is YES.
      */
     @Generated
@@ -193,7 +196,7 @@ public class WKFindConfiguration extends NSObject implements NSCopying {
 
     /**
      * Whether the search should start at the beginning of the document once it reaches the end
-     * <p>
+     * 
      * The initial value is YES.
      */
     @Generated

@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVCaptureVideoStabilizationMode
- * <p>
+ * 
  * Constants indicating the modes of video stabilization supported by the device's format.
- * <p>
+ * 
  * [@constant] AVCaptureVideoStabilizationModeOff
  * Indicates that video should not be stabilized.
  * [@constant] AVCaptureVideoStabilizationModeStandard
@@ -43,17 +43,34 @@ import org.moe.natj.general.ann.NInt;
  * to use identical or similar min and max frame durations in conjunction with this mode.
  * [@constant] AVCaptureVideoStabilizationModeAuto
  * Indicates that the most appropriate video stabilization mode for the device and format should be chosen.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class AVCaptureVideoStabilizationMode {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Off = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Standard = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Cinematic = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Auto = 0xFFFFFFFFFFFFFFFFL;
 
     @Generated
     private AVCaptureVideoStabilizationMode() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long CinematicExtended = 0x0000000000000003L;
 }

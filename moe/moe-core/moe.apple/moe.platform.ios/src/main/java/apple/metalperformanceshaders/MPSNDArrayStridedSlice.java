@@ -29,10 +29,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNDStridedSlice
- * <p>
+ * 
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * Extracts a subset of the source array using the specified slice strides.
+ * 
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -155,7 +158,7 @@ public class MPSNDArrayStridedSlice extends MPSNDArrayUnaryKernel {
 
     /**
      * [@property] strides
-     * <p>
+     * 
      * The strides to use when slicing the input array.
      */
     @Generated
@@ -168,7 +171,7 @@ public class MPSNDArrayStridedSlice extends MPSNDArrayUnaryKernel {
 
     /**
      * [@property] strides
-     * <p>
+     * 
      * The strides to use when slicing the input array.
      */
     @Generated

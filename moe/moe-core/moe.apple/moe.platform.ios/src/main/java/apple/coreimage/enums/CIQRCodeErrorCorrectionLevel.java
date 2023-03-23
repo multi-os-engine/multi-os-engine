@@ -5,9 +5,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CIQRCodeErrorCorrectionLevel
- * <p>
+ * 
  * Constants indicating the percentage of the symbol that is dedicated to error correction.
- * <p>
+ * 
  * [@constant] CIQRCodeErrorCorrectionLevelL
  * Indicates that approximately 20% of the symbol data is dedicated to error correction.
  * [@constant] CIQRCodeErrorCorrectionLevelM

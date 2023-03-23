@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -104,7 +107,7 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
     /**
      * Initialize a now playing button with a handler. The handler will be called when the user
      * selects this button.
-     * <p>
+     * 
      * [@note] Your app should use this method in one of the six concrete subclasses of @c CPNowPlayingButton.
      * Do not initialize this class directly.
      */
@@ -135,7 +138,7 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
 
     /**
      * A Boolean value indicating whether the button is enabled.
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
      * property is @c YES.
      */
@@ -147,7 +150,7 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
      * A Boolean value indicating whether the button is selected. When selected, the button draws with a selected
      * appearance to
      * indicate its selected state.
-     * <p>
+     * 
      * Only custom image buttons may display a custom selected state. Other system-provided buttons, like repeat
      * and shuffle, change their selected states depending on what your app reports for current repeat and shuffle
      * states.
@@ -179,7 +182,7 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
 
     /**
      * A Boolean value indicating whether the button is enabled.
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
      * property is @c YES.
      */
@@ -191,7 +194,7 @@ public class CPNowPlayingButton extends NSObject implements NSSecureCoding {
      * A Boolean value indicating whether the button is selected. When selected, the button draws with a selected
      * appearance to
      * indicate its selected state.
-     * <p>
+     * 
      * Only custom image buttons may display a custom selected state. Other system-provided buttons, like repeat
      * and shuffle, change their selected states depending on what your app reports for current repeat and shuffle
      * states.

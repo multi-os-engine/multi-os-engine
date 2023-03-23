@@ -44,8 +44,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * This motion effect maps movement of a particular type (e.g. left/right tilt) to an
  * interpolated output between two relative values provided by the client. Uses Core
  * Animation's implementation of interpolation for all the standard types.
- * <p>
+ * 
  * `keyPath` should be expressed relative to the effect's target view.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("UIKit")

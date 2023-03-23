@@ -40,12 +40,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MDLVertexAttributeData
- * <p>
+ * 
  * convenience object to quickly access vertex attribute data
- * <p>
+ * 
  * created by MDLMesh's vertexAttributeData selector
  * Setting values on this object has no effect on the
  * underlying objects.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -195,11 +197,17 @@ public class MDLVertexAttributeData extends NSObject {
     @NUInt
     public native long stride();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("bufferSize")
     @NUInt
     public native long bufferSize();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setBufferSize:")
     public native void setBufferSize(@NUInt long value);

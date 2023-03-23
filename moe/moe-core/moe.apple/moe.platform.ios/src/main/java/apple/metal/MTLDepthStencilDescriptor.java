@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -196,7 +199,7 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify the created object.
      */
     @Generated
@@ -224,7 +227,7 @@ public class MTLDepthStencilDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify the created object.
      */
     @Generated

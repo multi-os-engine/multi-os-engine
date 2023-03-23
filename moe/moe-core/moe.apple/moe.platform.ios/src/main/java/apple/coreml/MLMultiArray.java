@@ -29,9 +29,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corevideo.opaque.CVBufferRef;
+import org.moe.natj.general.ptr.ConstVoidPtr;
 
 /**
  * Multidimensional Array
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreML")
@@ -93,7 +97,13 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
 
     /**
      * Unsafe pointer to underlying buffer holding the data
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use getBytesWithHandler or getMutableBytesWithHandler instead. For Swift, use withUnsafeBytes
+     * or withUnsafeMutableBytes.
      */
+    @Deprecated
     @Generated
     @Selector("dataPointer")
     public native VoidPtr dataPointer();
@@ -249,13 +259,13 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
 
     /**
      * Concatenate MLMultiArrays to form a new MLMultiArray.
-     * <p>
+     * 
      * All the source MLMultiArrays must have a same shape except the specified axis. The resultant
      * MLMultiArray has the same shape as inputs except this axis, which dimension will be the sum of
      * all the input dimensions of the axis.
-     * <p>
+     * 
      * For example,
-     * <p>
+     * 
      * \code
      * // Swift
      * let A = try MLMultiArray(shape: [2, 3], dataType: .int32)
@@ -263,7 +273,7 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
      * let C = MLMultiArray(concatenating: [A, B], axis: 1, dataType: .int32)
      * assert(C.shape == [2, 5])
      * \endcode
-     * <p>
+     * 
      * \code
      * // Obj-C
      * MLMultiArray *A = [[MLMultiArray alloc] initWithShape:@[@2, @3] dataType:MLMultiArrayDataTypeInt32 error:NULL];
@@ -272,16 +282,20 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
      * dataType:MLMultiArrayDataTypeInt32];
      * assert(C.shape == @[@2, @5])
      * \endcode
-     * <p>
+     * 
      * Numeric data will be up or down casted as needed.
-     * <p>
+     * 
      * The method raises NSInvalidArgumentException if the shapes of input multi arrays are not
      * compatible for concatenation.
-     *
+     * 
      * @param multiArrays Array of MLMultiArray instances to be concatenated.
+     * 
      * @param axis        Axis index with which the concatenation will performed. The value is wrapped by the
      *                    dimension of the axis. For example, -1 is the last axis.
+     * 
      * @param dataType    The data type of the resultant MLMultiArray
+     * 
+     *                    API-Since: 14.0
      */
     @Generated
     @Selector("multiArrayByConcatenatingMultiArrays:alongAxis:dataType:")
@@ -297,4 +311,114 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * Get the underlying buffer pointer to read.
+     * 
+     * The buffer pointer is valid only within the block.
+     * 
+     * \code
+     * MLMultiArray * A = [[MLMultiArray alloc] initWithShape:@[@3, @2] dataType:MLMultiArrayDataTypeInt32 error:NULL];
+     * A[@[@1, @2]] = @42;
+     * [A getBytesWithHandler:^(const void *bytes, NSInteger size) {
+     * const int32_t *scalarBuffer = (const int32_t *)bytes;
+     * const int strideY = A.strides[0].intValue;
+     * // Print 42
+     * NSLog(@"Scalar at (1, 2): %d", scalarBuffer[1 * strideY + 2]);
+     * }];
+     * \endcode
+     * 
+     * @param handler The block to receive the buffer pointer and its size in bytes.
+     * 
+     *                API-Since: 15.4
+     */
+    @Generated
+    @Selector("getBytesWithHandler:")
+    public native void getBytesWithHandler(
+            @ObjCBlock(name = "call_getBytesWithHandler") Block_getBytesWithHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getBytesWithHandler {
+        @Generated
+        void call_getBytesWithHandler(ConstVoidPtr bytes, @NInt long size);
+    }
+
+    /**
+     * Get the underlying buffer pointer to mutate.
+     * 
+     * The buffer pointer is valid only within the block.
+     * 
+     * Use `strides` parameter passed in the block because the method may switch to a new backing buffer with different
+     * strides.
+     * 
+     * \code
+     * MLMultiArray * A = [[MLMultiArray alloc] initWithShape:@[@3, @2] dataType:MLMultiArrayDataTypeInt32 error:NULL];
+     * [A getMutableBytesWithHandler:^(void *bytes, NSInteger __unused size, NSArray<NSNumber *> *strides) {
+     * int32_t *scalarBuffer = (int32_t *)bytes;
+     * const int strideY = strides[0].intValue;
+     * scalarBuffer[1 * strideY + 2] = 42; // Set 42 at A[1, 2]
+     * }];
+     * \endcode
+     * 
+     * @param handler The block to receive the buffer pointer, size in bytes, and strides.
+     * 
+     * 
+     *                API-Since: 15.4
+     */
+    @Generated
+    @Selector("getMutableBytesWithHandler:")
+    public native void getMutableBytesWithHandler(
+            @ObjCBlock(name = "call_getMutableBytesWithHandler") Block_getMutableBytesWithHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_getMutableBytesWithHandler {
+        @Generated
+        void call_getMutableBytesWithHandler(VoidPtr mutableBytes, @NInt long size,
+                NSArray<? extends NSNumber> strides);
+    }
+
+    /**
+     * Create by wrapping a pixel buffer.
+     * 
+     * Use this initializer to create IOSurface backed MLMultiArray, which can reduce the inference latency by avoiding
+     * the buffer copy.
+     * 
+     * The instance will own the pixel buffer and release it on the deallocation.
+     * 
+     * The pixel buffer's pixel format type must be OneComponent16Half. As such, MLMultiArray's data type will be
+     * MLMultiArrayDataTypeFloat16.
+     * 
+     * \code
+     * CVPixelBufferRef pixelBuffer = NULL;
+     * NSDictionary* pixelBufferAttributes = @{
+     * (id)kCVPixelBufferIOSurfacePropertiesKey: @{}
+     * };
+     * 
+     * // Since shape == [2, 3, 4], width is 4 (= shape[2]) and height is 6 (= shape[0] * shape[1]).
+     * CVPixelBufferCreate(kCFAllocatorDefault, 4, 6, kCVPixelFormatType_OneComponent16Half, (__bridge
+     * CFDictionaryRef)pixelBufferAttributes, &pixelBuffer);
+     * MLMultiArray *multiArray = [[MLMultiArray alloc] initWithPixelBuffer:pixelBuffer shape:@[@2, @3, @4]];
+     * \endcode
+     * 
+     * @param pixelBuffer The pixel buffer to be owned by the instance.
+     * 
+     * @param shape       The shape of the MLMultiArray. The last dimension of `shape` must match the pixel buffer's
+     *                    width. The product of the rest of the dimensions must match the height.
+     * 
+     *                    API-Since: 16.0
+     */
+    @Generated
+    @Selector("initWithPixelBuffer:shape:")
+    public native MLMultiArray initWithPixelBufferShape(CVBufferRef pixelBuffer, NSArray<? extends NSNumber> shape);
+
+    /**
+     * Returns the backing pixel buffer if exists, otherwise nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("pixelBuffer")
+    public native CVBufferRef pixelBuffer();
 }

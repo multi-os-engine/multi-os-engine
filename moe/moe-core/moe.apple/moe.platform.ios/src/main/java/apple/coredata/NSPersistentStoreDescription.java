@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An instance of NSPersistentStoreDescription encapsulates all information needed to describe a persistent store.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CoreData")
@@ -272,6 +274,8 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     /**
      * Use this property to apply customized instances of NSPersistentCloudKitContainerOptions to
      * a store description you wish to use with CloudKit.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cloudKitContainerOptions")
@@ -280,6 +284,8 @@ public class NSPersistentStoreDescription extends NSObject implements NSCopying 
     /**
      * Use this property to apply customized instances of NSPersistentCloudKitContainerOptions to
      * a store description you wish to use with CloudKit.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setCloudKitContainerOptions:")

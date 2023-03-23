@@ -17,7 +17,6 @@ limitations under the License.
 package apple.photos;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -39,7 +38,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +159,8 @@ public class PHCachingImageManager extends PHImageManager {
 
     /**
      * Defaults to YES
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("allowsCachingHighQualityImages")
@@ -167,6 +172,8 @@ public class PHCachingImageManager extends PHImageManager {
 
     /**
      * Defaults to YES
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAllowsCachingHighQualityImages:")
@@ -178,16 +185,24 @@ public class PHCachingImageManager extends PHImageManager {
      * The options values shall exactly match the options values used in loading methods. If two or more caching
      * requests are done on the same asset using different options or different targetSize the first
      * caching request will have precedence (until it is stopped)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("startCachingImagesForAssets:targetSize:contentMode:options:")
     public native void startCachingImagesForAssetsTargetSizeContentModeOptions(NSArray<? extends PHAsset> assets,
             @ByValue CGSize targetSize, @NInt long contentMode, PHImageRequestOptions options);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("stopCachingImagesForAllAssets")
     public native void stopCachingImagesForAllAssets();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("stopCachingImagesForAssets:targetSize:contentMode:options:")
     public native void stopCachingImagesForAssetsTargetSizeContentModeOptions(NSArray<? extends PHAsset> assets,

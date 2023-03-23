@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -46,7 +49,7 @@ public class UIPointerAccessory extends NSObject implements NSCopying {
 
     /**
      * Creates an accessory with the given pointer shape and position.
-     *
+     * 
      * @param shape    The desired accessory shape.
      * @param position The desired accessory position.
      */

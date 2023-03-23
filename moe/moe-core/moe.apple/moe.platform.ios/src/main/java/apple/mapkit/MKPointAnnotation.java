@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -164,10 +167,16 @@ public class MKPointAnnotation extends MKShape implements MKGeoJSONObject {
     @Selector("setCoordinate:")
     public native void setCoordinate(@ByValue CLLocationCoordinate2D value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithCoordinate:")
     public native MKPointAnnotation initWithCoordinate(@ByValue CLLocationCoordinate2D coordinate);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithCoordinate:title:subtitle:")
     public native MKPointAnnotation initWithCoordinateTitleSubtitle(@ByValue CLLocationCoordinate2D coordinate,

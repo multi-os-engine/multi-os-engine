@@ -1,7 +1,6 @@
 package apple.quicklookthumbnailing;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -31,7 +30,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("QuickLookThumbnailing")
 @Runtime(ObjCRuntime.class)
@@ -247,6 +250,8 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
      * styles applied if iconMode is requested. By default the content type is derived from the file extension. Setting
      * this property will override the derived content type. This is useful for files that don't have meaningful
      * extensions but for which you may already know the content type.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("contentType")
@@ -257,6 +262,8 @@ public class QLThumbnailGenerationRequest extends NSObject implements NSCopying,
      * styles applied if iconMode is requested. By default the content type is derived from the file extension. Setting
      * this property will override the derived content type. This is useful for files that don't have meaningful
      * extensions but for which you may already know the content type.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setContentType:")

@@ -25,6 +25,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INTransferMoneyIntentResponse is deprecated. There is no replacement.
+ */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)

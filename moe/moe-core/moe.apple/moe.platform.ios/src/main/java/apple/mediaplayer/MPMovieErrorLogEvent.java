@@ -44,6 +44,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * -----------------------------------------------------------------------------
  * An MPMovieErrorLogEvent repesents a single error log entry.
+ * 
+ * API-Since: 4.3
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use AVFoundation.
  */
 @Deprecated
 @Generated
@@ -158,6 +162,10 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
 
     /**
      * The URI of the playback item.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -172,6 +180,10 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
 
     /**
      * The date and time when the error occured.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -180,6 +192,10 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
 
     /**
      * A description of the error encountered.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -188,6 +204,10 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
 
     /**
      * The domain of the error.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -196,6 +216,10 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
 
     /**
      * A unique error code identifier. The value is negative if unknown.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -209,6 +233,10 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
 
     /**
      * A GUID that identifies the playback session. This value is used in HTTP requests.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -217,6 +245,10 @@ public class MPMovieErrorLogEvent extends NSObject implements NSCopying {
 
     /**
      * The IP address of the server that was the source of the error.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated

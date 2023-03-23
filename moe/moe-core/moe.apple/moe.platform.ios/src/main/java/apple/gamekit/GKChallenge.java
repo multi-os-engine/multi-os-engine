@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -204,6 +207,8 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * The GKPlayer who issued the challenge
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("issuingPlayer")
@@ -211,6 +216,10 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * This property is obsolete. **
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This property is obsolete, Use issuingPlayer instead
      */
     @Generated
     @Deprecated
@@ -226,6 +235,8 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * The GKPlayer who has received the challenge
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("receivingPlayer")
@@ -233,6 +244,10 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
 
     /**
      * This property is obsolete. **
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This property is obsolete, Use receivingPlayer instead
      */
     @Generated
     @Deprecated

@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] EKAlarmType
- * <p>
+ * 
  * A value which specifies the action that occurs when the alarm is triggered.
- * <p>
+ * 
  * [@constant] EKAlarmTypeDisplay The alarm displays a message.
  * [@constant] EKAlarmTypeAudio The alarm plays a sound.
  * [@constant] EKAlarmTypeProcedure The alarm opens a URL.

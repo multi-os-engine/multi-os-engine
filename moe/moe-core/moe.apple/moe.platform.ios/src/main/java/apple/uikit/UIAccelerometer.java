@@ -40,6 +40,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.0
+ * Deprecated-Since: 5.0
+ * Deprecated-Message: UIAccelerometer has been replaced by the CoreMotion framework
+ */
 @Deprecated
 @Generated
 @Library("UIKit")

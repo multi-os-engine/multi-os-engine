@@ -4,10 +4,10 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * Segmentation classes which defines a pixel's semantic label.
- * <p>
+ * 
  * When running a configuration with 'ARFrameSemanticPersonSegmentation' every pixel in the
  * segmentationBuffer on the ARFrame will conform to one of these classes.
- *
+ * 
  * @see -[ARConfiguration setFrameSemantics:]
  * @see -[ARFrame segmentationBuffer]
  */

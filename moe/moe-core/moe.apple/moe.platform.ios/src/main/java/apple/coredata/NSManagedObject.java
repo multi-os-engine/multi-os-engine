@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -100,6 +103,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
      * earlier default to NO. 10.6 and later default to YES.
      * Similarly, transient attributes may be individually flagged as not dirtying the object by adding
      * +(BOOL)contextShouldIgnoreChangesFor<key> where <key> is the property name.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("contextShouldIgnoreUnmodeledPropertyChanges")
@@ -116,11 +121,16 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     /**
      * The Entity represented by this subclass. This method is only legal to call on subclasses of NSManagedObject that
      * represent a single entity in the model.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("entity")
     public static native NSEntityDescription entity_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("fetchRequest")
     public static native NSFetchRequest<?> fetchRequest();
@@ -194,6 +204,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
 
     /**
      * Callback for undo, redo, and other multi-property state resets
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("awakeFromSnapshotEvents:")
@@ -207,6 +219,9 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     @Selector("changedValues")
     public native NSDictionary<String, ?> changedValues();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("changedValuesForCurrentEvent")
     public native NSDictionary<String, ?> changedValuesForCurrentEvent();
@@ -258,12 +273,17 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     /**
      * Allow developers to determine if an object is in a transitional phase when receiving a KVO notification. Returns
      * 0 if the object is fully initialized as a managed object and not transitioning to or from another state
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("faultingState")
     @NUInt
     public native long faultingState();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("hasChanges")
     public native boolean hasChanges();
@@ -272,6 +292,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
      * returns a Boolean indicating if the relationship for the specified key is a fault. If a value of NO is returned,
      * the resulting relationship is a realized object; otherwise the relationship is a fault. If the specified
      * relationship is a fault, calling this method does not result in the fault firing.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("hasFaultForRelationshipNamed:")
@@ -281,6 +303,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
      * returns YES if any persistent properties do not compare isEqual to their last saved state. Relationship faults
      * will not be unnecessarily fired. This differs from the existing -hasChanges method which is a simple dirty flag
      * and also includes transient properties
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("hasPersistentChangedValues")
@@ -293,6 +317,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     /**
      * Returns a new object, inserted into managedObjectContext. This method is only legal to call on subclasses of
      * NSManagedObject that represent a single entity in the model.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithContext:")
@@ -345,6 +371,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
      * returns an array of objectIDs for the contents of a relationship. to-one relationships will return an NSArray
      * with a single NSManagedObjectID. Optional relationships may return an empty NSArray. The objectIDs will be
      * returned in an NSArray regardless of the type of the relationship.
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @Selector("objectIDsForRelationshipNamed:")
@@ -353,6 +381,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
     /**
      * Callback before delete propagation while the object is still alive. Useful to perform custom propagation before
      * the relationships are torn down or reconfigure KVO observers.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("prepareForDeletion")
@@ -437,6 +467,8 @@ public class NSManagedObject extends NSObject implements NSFetchRequestResult {
      * invoked automatically by the Core Data framework before receiver is converted (back) to a fault. This method is
      * the companion of the -didTurnIntoFault method, and may be used to (re)set state which requires access to property
      * values (for example, observers across keypaths.) The default implementation does nothing.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("willTurnIntoFault")

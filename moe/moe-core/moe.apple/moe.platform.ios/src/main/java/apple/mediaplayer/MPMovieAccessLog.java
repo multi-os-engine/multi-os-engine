@@ -46,6 +46,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * An MPMovieAccessLog accumulates key metrics about network playback and presents them as a collection of
  * MPMovieAccessLogEvent instances.
  * Each MPMovieAccessLogEvent instance collates the data that relates to each uninterrupted period of playback.
+ * 
+ * API-Since: 4.3
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use AVFoundation.
  */
 @Deprecated
 @Generated
@@ -167,6 +171,10 @@ public class MPMovieAccessLog extends NSObject implements NSCopying {
     /**
      * An ordered collection of MPMovieAccessLogEvent instances that represent the chronological sequence of events
      * contained in the access log.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -177,6 +185,10 @@ public class MPMovieAccessLog extends NSObject implements NSCopying {
      * Returns the webserver access log into a textual format that conforms to the W3C Extended Log File Format for web
      * server log files.
      * For more information see: http://www.w3.org/pub/WWW/TR/WD-logfile.html
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -185,6 +197,10 @@ public class MPMovieAccessLog extends NSObject implements NSCopying {
 
     /**
      * Returns the string encoding of the extendedLogData property.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated

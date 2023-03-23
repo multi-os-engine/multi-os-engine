@@ -36,6 +36,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface GKMatchDelegate {
     /**
      * The match was unable to be established with any players due to an error.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @IsOptional
@@ -44,6 +46,9 @@ public interface GKMatchDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("match:didReceiveData:forRecipient:fromRemotePlayer:")
@@ -54,6 +59,11 @@ public interface GKMatchDelegate {
 
     /**
      * These protocol methods are obsoleted. They will never be invoked and their implementation does nothing**
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use
+     * match:didReceiveData:fromRemotePlayer:
      */
     @Generated
     @IsOptional
@@ -65,6 +75,8 @@ public interface GKMatchDelegate {
 
     /**
      * The match received data sent from the player.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -75,6 +87,8 @@ public interface GKMatchDelegate {
 
     /**
      * The player state changed (eg. connected or disconnected)
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @IsOptional
@@ -83,6 +97,12 @@ public interface GKMatchDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use
+     * match:player:didChangeConnectionState:
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -94,6 +114,8 @@ public interface GKMatchDelegate {
     /**
      * This method is called when the match is interrupted; if it returns YES, a new invite will be sent to attempt
      * reconnection. This is supported only for 1v1 games
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -102,6 +124,12 @@ public interface GKMatchDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use
+     * shouldReinviteDisconnectedPlayer:
+     */
     @Generated
     @IsOptional
     @Deprecated

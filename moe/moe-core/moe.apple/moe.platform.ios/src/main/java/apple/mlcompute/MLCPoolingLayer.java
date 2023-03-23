@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCPoolingLayer
- * <p>
+ * 
  * A pooling layer
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -87,7 +89,7 @@ public class MLCPoolingLayer extends MLCLayer {
 
     /**
      * [@property] descriptor
-     * <p>
+     * 
      * The pooling descriptor
      */
     @Generated
@@ -126,7 +128,7 @@ public class MLCPoolingLayer extends MLCLayer {
 
     /**
      * Create a pooling layer
-     *
+     * 
      * @param descriptor The pooling descriptor
      * @return A new pooling layer
      */

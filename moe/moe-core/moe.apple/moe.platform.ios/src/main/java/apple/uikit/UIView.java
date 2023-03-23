@@ -18,10 +18,6 @@ package apple.uikit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGContextRef;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -69,14 +65,22 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.protocol.UIPopoverPresentationControllerSourceItem;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class UIView extends UIResponder implements NSCoding, UIAppearance, UIAppearanceContainer, UIDynamicItem,
         UITraitEnvironment, UICoordinateSpace, UIFocusItem, UIFocusItemContainer, CALayerDelegate,
-        UIAccessibilityIdentification, UILargeContentViewerItem {
+        UIAccessibilityIdentification, UILargeContentViewerItem, UIPopoverPresentationControllerSourceItem {
     static {
         NatJ.register();
     }
@@ -93,6 +97,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * start time and duration are values between 0.0 and 1.0 specifying time and duration relative to the overall time
      * of the keyframe animation
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
@@ -110,6 +116,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("allocWithZone:")
     public static native UIView allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
     public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
@@ -119,6 +128,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * delay = 0.0, options = 0, completion = NULL
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("animateWithDuration:animations:")
@@ -127,6 +138,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * delay = 0.0, options = 0
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("animateWithDuration:animations:completion:")
@@ -134,6 +147,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
             @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") Block_animateWithDurationAnimationsCompletion_1 animations,
             @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") Block_animateWithDurationAnimationsCompletion_2 completion);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("animateWithDuration:delay:options:animations:completion:")
     public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
@@ -149,6 +165,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * system, where 1 is defined as traveling the total animation distance in a second. So if you're changing an
      * object's position by 200pt in this animation, and you want the animation to behave as if the object was moving at
      * 100pt/s before the animation started, you'd pass 0.5. You'll typically want to pass 0 for the velocity.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
@@ -198,7 +216,12 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * Deprecated in iOS 13.0. Please use the block-based animation API instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the block-based animation API instead
      */
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -225,6 +248,12 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the block-based animation API instead
+     */
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -242,6 +271,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("inheritedAnimationDuration")
     public static native double inheritedAnimationDuration();
@@ -285,6 +317,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * timing and duration that the system animation defines/inherits. Additional animations should not modify
      * properties of the view on which the system animation is being performed. Not all system animations honor all
      * available options.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
@@ -293,6 +327,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
             @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
             @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("performWithoutAnimation:")
     public static native void performWithoutAnimation(
@@ -303,6 +340,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * do all of your constraint set up in -updateConstraints, you might never even receive updateConstraints if no one
      * makes a constraint. To fix this chicken and egg problem, override this method to return YES if your view needs
      * the window to use constraint-based layout.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -316,46 +355,112 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the block-based animation API instead
+     */
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the block-based animation API instead
+     */
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the block-based animation API instead
+     */
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the block-based animation API instead
+     */
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the block-based animation API instead
+     */
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the block-based animation API instead
+     */
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the block-based animation API instead
+     */
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the block-based animation API instead
+     */
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the block-based animation API instead
+     */
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the block-based animation API instead
+     */
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the block-based animation API instead
+     */
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -377,6 +482,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * toView added to fromView.superview, fromView removed from its superview
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
@@ -384,6 +491,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
             double duration, @NUInt long options,
             @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") Block_transitionFromViewToViewDurationOptionsCompletion completion);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("transitionWithView:duration:options:animations:completion:")
     public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
@@ -394,6 +504,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * This method returns the layout direction implied by the provided semantic content attribute relative to the
      * application-wide layout direction (as returned by UIApplication.sharedApplication.userInterfaceLayoutDirection).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
@@ -406,6 +518,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * attribute of Playback, this method returns LeftToRight. Layout and drawing code can use this method to determine
      * how to arrange elements, but might find it easier to query the container view’s
      * effectiveUserInterfaceLayoutDirection property instead.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:relativeToLayoutDirection:")
@@ -431,6 +545,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * This method will be deprecated in a future release and should be avoided.  Instead, set NSLayoutConstraint's
      * active property to YES.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("addConstraint:")
@@ -439,17 +555,24 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * This method will be deprecated in a future release and should be avoided.  Instead use +[NSLayoutConstraint
      * activateConstraints:].
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("addConstraints:")
     public native void addConstraints(NSArray<? extends NSLayoutConstraint> constraints);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("addGestureRecognizer:")
     public native void addGestureRecognizer(UIGestureRecognizer gestureRecognizer);
 
     /**
      * Adds layoutGuide to the receiver, passing the receiver in -setOwningView: to layoutGuide.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("addLayoutGuide:")
@@ -458,9 +581,11 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * Begins applying `effect` to the receiver. The effect's emitted keyPath/value pairs will be
      * applied to the view's presentation layer.
-     * <p>
+     * 
      * Animates the transition to the motion effect's values using the present UIView animation
      * context.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("addMotionEffect:")
@@ -479,6 +604,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * A view that displayed an image with some ornament would typically override these, because the ornamental part of
      * an image would scale up with the size of the frame.
      * Set the NSUserDefault UIViewShowAlignmentRects to YES to see alignment rects drawn.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("alignmentRectForFrame:")
@@ -488,6 +615,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * override this if the alignment rect is obtained from the frame by insetting each edge by a fixed amount. This is
      * only called by alignmentRectForFrame: and frameForAlignmentRect:.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("alignmentRectInsets")
@@ -565,6 +694,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("bottomAnchor")
     public native NSLayoutYAxisAnchor bottomAnchor();
@@ -587,10 +719,16 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @ByValue
     public native CGPoint center();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("centerXAnchor")
     public native NSLayoutXAxisAnchor centerXAnchor();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("centerYAnchor")
     public native NSLayoutYAxisAnchor centerYAnchor();
@@ -621,6 +759,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @NUInt
     public native long collisionBoundsType();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("constraints")
     public native NSArray<? extends NSLayoutConstraint> constraints();
@@ -631,15 +772,23 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * Pass UILayoutConstraintAxisHorizontal for the constraints affecting [self center].x and CGRectGetWidth([self
      * bounds]), and UILayoutConstraintAxisVertical for the constraints affecting[self center].y and
      * CGRectGetHeight([self bounds]).
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("constraintsAffectingLayoutForAxis:")
     public native NSArray<? extends NSLayoutConstraint> constraintsAffectingLayoutForAxis(@NInt long axis);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("contentCompressionResistancePriorityForAxis:")
     public native float contentCompressionResistancePriorityForAxis(@NInt long axis);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("contentHuggingPriorityForAxis:")
     public native float contentHuggingPriorityForAxis(@NInt long axis);
@@ -652,6 +801,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @NInt
     public native long contentMode();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("contentScaleFactor")
     @NFloat
@@ -660,6 +812,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * animatable. default is unit rectangle {{0,0} {1,1}}. Now deprecated: please use -[UIImage
      * resizableImageWithCapInsets:] to achieve the same effect.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 6.0
      */
     @Generated
     @Deprecated
@@ -711,6 +866,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @ByValue
     public native CGRect convertRectToView(@ByValue CGRect rect, UIView view);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("decodeRestorableStateWithCoder:")
     public native void decodeRestorableStateWithCoder(NSCoder coder);
@@ -757,6 +915,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * Use this method to render a snapshot of the view hierarchy into the current context. Returns NO if the snapshot
      * is missing image data, YES if the snapshot is complete. Calling this method from layoutSubviews while the current
      * transaction is committing will capture what is currently displayed regardless if afterUpdates is YES.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("drawViewHierarchyInRect:afterScreenUpdates:")
@@ -766,12 +926,17 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * Returns the user interface layout direction appropriate for arranging the immediate content of this view. Always
      * consult the effectiveUserInterfaceLayoutDirection of the view whose immediate content is being arranged or drawn.
      * Do not assume that the value propagates through the view’s subtree.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("effectiveUserInterfaceLayoutDirection")
     @NInt
     public native long effectiveUserInterfaceLayoutDirection();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("encodeRestorableStateWithCoder:")
     public native void encodeRestorableStateWithCoder(NSCoder coder);
@@ -791,10 +956,16 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("exchangeSubviewAtIndex:withSubviewAtIndex:")
     public native void exchangeSubviewAtIndexWithSubviewAtIndex(@NInt long index1, @NInt long index2);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("exerciseAmbiguityInLayout")
     public native void exerciseAmbiguityInLayout();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("firstBaselineAnchor")
     public native NSLayoutYAxisAnchor firstBaselineAnchor();
@@ -804,6 +975,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @ByValue
     public native CGRect frame();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("frameForAlignmentRect:")
     @ByValue
@@ -815,11 +989,16 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * returns YES by default. return NO to cause the gesture recognizer to transition to UIGestureRecognizerStateFailed
      * subclasses may override to prevent recognition of particular gestures. for example, UISlider prevents swipes
      * parallel to the slider that start in the thumb
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("gestureRecognizerShouldBegin:")
     public native boolean gestureRecognizerShouldBegin(UIGestureRecognizer gestureRecognizer);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("gestureRecognizers")
     public native NSArray<? extends UIGestureRecognizer> gestureRecognizers();
@@ -835,11 +1014,16 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * could also satisfy the constraints.
      * -exerciseAmbiguousLayout does more. It randomly changes the view layout to a different valid layout. Making the
      * UI jump back and forth can be helpful for figuring out where you're missing a constraint.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("hasAmbiguousLayout")
     public native boolean hasAmbiguousLayout();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("heightAnchor")
     public native NSLayoutDimension heightAnchor();
@@ -875,6 +1059,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("insertSubview:belowSubview:")
     public native void insertSubviewBelowSubview(UIView view, UIView siblingSubview);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("intrinsicContentSize")
     @ByValue
@@ -883,6 +1070,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * call this when something changes that affects the intrinsicContentSize. Otherwise UIKit won't notice that it
      * changed.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("invalidateIntrinsicContentSize")
@@ -909,6 +1098,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("setExclusiveTouch:")
     public native void setExclusiveTouch(boolean value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("isFocused")
     public native boolean isFocused();
@@ -971,6 +1163,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("setUserInteractionEnabled:")
     public native void setUserInteractionEnabled(boolean value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("lastBaselineAnchor")
     public native NSLayoutYAxisAnchor lastBaselineAnchor();
@@ -989,6 +1184,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * UILayoutGuide objects owned by the receiver.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("layoutGuides")
@@ -1014,18 +1211,25 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * instead of the layoutMargins property. After setting the directionalLayoutMargins property, the values in the
      * left and right
      * fields of the layoutMargins property will depend on the user interface layout direction.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("layoutMargins")
     @ByValue
     public native UIEdgeInsets layoutMargins();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("layoutMarginsDidChange")
     public native void layoutMarginsDidChange();
 
     /**
      * The edges of this guide are constrained to equal the edges of the view inset by the layoutMargins
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("layoutMarginsGuide")
@@ -1046,23 +1250,37 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * Constraint creation conveniences. See NSLayoutAnchor.h for details.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("leadingAnchor")
     public native NSLayoutXAxisAnchor leadingAnchor();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("leftAnchor")
     public native NSLayoutXAxisAnchor leftAnchor();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("maskView")
     public native UIView maskView();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("motionEffects")
     public native NSArray<? extends UIMotionEffect> motionEffects();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("needsUpdateConstraints")
     public native boolean needsUpdateConstraints();
@@ -1078,6 +1296,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("preferredFocusEnvironments")
     public native NSArray<?> preferredFocusEnvironments();
 
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("preferredFocusedView")
@@ -1086,6 +1305,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * default is NO - set to enable pass-through or cascading behavior of margins from this view’s parent to its
      * children
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("preservesSuperviewLayoutMargins")
@@ -1095,6 +1316,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * This content guide provides a layout area that you can use to place text and related content whose width should
      * generally be constrained to a size that is easy for the user to read. This guide provides a centered region that
      * you can place content within to get this behavior for this view.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("readableContentGuide")
@@ -1103,6 +1326,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * This method will be deprecated in a future release and should be avoided.  Instead set NSLayoutConstraint's
      * active property to NO.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("removeConstraint:")
@@ -1111,6 +1336,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * This method will be deprecated in a future release and should be avoided.  Instead use +[NSLayoutConstraint
      * deactivateConstraints:].
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("removeConstraints:")
@@ -1120,12 +1347,17 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("removeFromSuperview")
     public native void removeFromSuperview();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("removeGestureRecognizer:")
     public native void removeGestureRecognizer(UIGestureRecognizer gestureRecognizer);
 
     /**
      * Removes layoutGuide from the receiver, passing nil in -setOwningView: to layoutGuide.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("removeLayoutGuide:")
@@ -1134,6 +1366,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * Stops applying `effect` to the receiver. Any affected presentation values will animate to
      * their post-removal values using the present UIView animation context.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("removeMotionEffect:")
@@ -1141,20 +1375,31 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * Resizable snapshots will default to stretching the center
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("resizableSnapshotViewFromRect:afterScreenUpdates:withCapInsets:")
     public native UIView resizableSnapshotViewFromRectAfterScreenUpdatesWithCapInsets(@ByValue CGRect rect,
             boolean afterUpdates, @ByValue UIEdgeInsets capInsets);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("restorationIdentifier")
     public native String restorationIdentifier();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("rightAnchor")
     public native NSLayoutXAxisAnchor rightAnchor();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("semanticContentAttribute")
     @NInt
@@ -1222,10 +1467,16 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("setClipsToBounds:")
     public native void setClipsToBounds(boolean value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setContentCompressionResistancePriority:forAxis:")
     public native void setContentCompressionResistancePriorityForAxis(float priority, @NInt long axis);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setContentHuggingPriority:forAxis:")
     public native void setContentHuggingPriorityForAxis(float priority, @NInt long axis);
@@ -1237,6 +1488,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("setContentMode:")
     public native void setContentMode(@NInt long value);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("setContentScaleFactor:")
     public native void setContentScaleFactor(@NFloat double value);
@@ -1244,6 +1498,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * animatable. default is unit rectangle {{0,0} {1,1}}. Now deprecated: please use -[UIImage
      * resizableImageWithCapInsets:] to achieve the same effect.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 6.0
      */
     @Generated
     @Deprecated
@@ -1258,6 +1515,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("setFrame:")
     public native void setFrame(@ByValue CGRect value);
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("setGestureRecognizers:")
     public native void setGestureRecognizers(NSArray<? extends UIGestureRecognizer> value);
@@ -1278,15 +1538,23 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * instead of the layoutMargins property. After setting the directionalLayoutMargins property, the values in the
      * left and right
      * fields of the layoutMargins property will depend on the user interface layout direction.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLayoutMargins:")
     public native void setLayoutMargins(@ByValue UIEdgeInsets value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setMaskView:")
     public native void setMaskView(UIView value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setMotionEffects:")
     public native void setMotionEffects(NSArray<? extends UIMotionEffect> value);
@@ -1310,6 +1578,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("setNeedsLayout")
     public native void setNeedsLayout();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setNeedsUpdateConstraints")
     public native void setNeedsUpdateConstraints();
@@ -1317,15 +1588,23 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * default is NO - set to enable pass-through or cascading behavior of margins from this view’s parent to its
      * children
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setPreservesSuperviewLayoutMargins:")
     public native void setPreservesSuperviewLayoutMargins(boolean value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setRestorationIdentifier:")
     public native void setRestorationIdentifier(String value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setSemanticContentAttribute:")
     public native void setSemanticContentAttribute(@NInt long value);
@@ -1345,6 +1624,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * tintColor will be modified to give a dimmed appearance.
      * When the tintAdjustmentMode of a view changes (either the view's value changing or by one of its superview's
      * values changing), -tintColorDidChange will be called to allow the view to refresh its rendering.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setTintAdjustmentMode:")
@@ -1358,6 +1639,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * automatically be dimmed.
      * If your view subclass uses tintColor in its rendering, override -tintColorDidChange in order to refresh the
      * rendering if the color changes.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setTintColor:")
@@ -1369,6 +1652,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * Default YES
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setTranslatesAutoresizingMaskIntoConstraints:")
@@ -1396,22 +1681,24 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * * When requesting a snapshot, 'afterUpdates' defines whether the snapshot is representative of what's currently
      * on screen or if you wish to include any recent changes before taking the snapshot.
-     * <p>
+     * 
      * If called during layout from a committing transaction, snapshots occurring after the screen updates will include
      * all changes made, regardless of when the snapshot is taken and the changes are made. For example:
-     * <p>
+     * 
      * - (void)layoutSubviews {
      * UIView *snapshot = [self snapshotViewAfterScreenUpdates:YES];
      * self.alpha = 0.0;
      * }
-     * <p>
+     * 
      * The snapshot will appear to be empty since the change in alpha will be captured by the snapshot. If you need to
      * animate the view during layout, animate the snapshot instead.
-     * <p>
+     * 
      * * Creating snapshots from existing snapshots (as a method to duplicate, crop or create a resizable variant) is
      * supported. In cases where many snapshots are needed, creating a snapshot from a common superview and making
      * subsequent snapshots from it can be more performant. Please keep in mind that if 'afterUpdates' is YES, the
      * original snapshot is committed and any changes made to it, not the view originally snapshotted, will be included.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("snapshotViewAfterScreenUpdates:")
@@ -1428,12 +1715,17 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * Equivalent to sending -systemLayoutSizeFittingSize:withHorizontalFittingPriority:verticalFittingPriority: with
      * UILayoutPriorityFittingSizeLevel for both priorities.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("systemLayoutSizeFittingSize:")
     @ByValue
     public native CGSize systemLayoutSizeFittingSize(@ByValue CGSize targetSize);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("systemLayoutSizeFittingSize:withHorizontalFittingPriority:verticalFittingPriority:")
     @ByValue
@@ -1456,6 +1748,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * tintColor will be modified to give a dimmed appearance.
      * When the tintAdjustmentMode of a view changes (either the view's value changing or by one of its superview's
      * values changing), -tintColorDidChange will be called to allow the view to refresh its rendering.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("tintAdjustmentMode")
@@ -1470,6 +1764,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * automatically be dimmed.
      * If your view subclass uses tintColor in its rendering, override -tintColorDidChange in order to refresh the
      * rendering if the color changes.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("tintColor")
@@ -1479,15 +1775,23 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * The -tintColorDidChange message is sent to appropriate subviews of a view when its tintColor is changed by client
      * code or to subviews in the view hierarchy of a view whose tintColor is implicitly changed when its superview or
      * tintAdjustmentMode changes.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("tintColorDidChange")
     public native void tintColorDidChange();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("topAnchor")
     public native NSLayoutYAxisAnchor topAnchor();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("trailingAnchor")
     public native NSLayoutXAxisAnchor trailingAnchor();
@@ -1507,6 +1811,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * Default YES
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("translatesAutoresizingMaskIntoConstraints")
@@ -1514,6 +1820,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * Override this to adjust your special constraints during a constraints update pass
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("updateConstraints")
@@ -1522,6 +1830,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * Updates the constraints from the bottom up for the view hierarchy rooted at the receiver. UIWindow's
      * implementation creates a layout engine if necessary first.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("updateConstraintsIfNeeded")
@@ -1531,6 +1841,11 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("updateFocusIfNeeded")
     public native void updateFocusIfNeeded();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Override -viewForFirstBaselineLayout or -viewForLastBaselineLayout as appropriate, instead
+     */
     @Generated
     @Deprecated
     @Selector("viewForBaselineLayout")
@@ -1545,6 +1860,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * UIView's implementation returns [self viewForLastBaselineLayout], so if the same
      * descendant is appropriate for both first- and last-baseline layout you may override
      * just -viewForLastBaselineLayout.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("viewForFirstBaselineLayout")
@@ -1557,6 +1874,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * (i.e., UILabel or non-scrollable UITextView) descendant of the receiver whose last baseline
      * is appropriate for alignment.
      * UIView's implementation returns self.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("viewForLastBaselineLayout")
@@ -1576,6 +1895,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("viewWithTag:")
     public native UIView viewWithTag(@NInt long tag);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("widthAnchor")
     public native NSLayoutDimension widthAnchor();
@@ -1709,10 +2031,16 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
         void call_transitionWithViewDurationOptionsAnimationsCompletion_4(boolean finished);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("accessibilityIgnoresInvertColors")
     public native boolean accessibilityIgnoresInvertColors();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("addInteraction:")
     public native void addInteraction(@Mapped(ObjCObjectMapper.class) UIInteraction interaction);
@@ -1721,6 +2049,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * directionalLayoutMargins.leading is used on the left when the user interface direction is LTR and on the right
      * for RTL.
      * Vice versa for directionalLayoutMargins.trailing.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("directionalLayoutMargins")
@@ -1729,24 +2059,38 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * Default: YES
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("insetsLayoutMarginsFromSafeArea")
     public native boolean insetsLayoutMarginsFromSafeArea();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("interactions")
     public native NSArray<?> interactions();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("removeInteraction:")
     public native void removeInteraction(@Mapped(ObjCObjectMapper.class) UIInteraction interaction);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("safeAreaInsets")
     @ByValue
     public native UIEdgeInsets safeAreaInsets();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("safeAreaInsetsDidChange")
     public native void safeAreaInsetsDidChange();
@@ -1754,11 +2098,16 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * The top of the safeAreaLayoutGuide indicates the unobscured top edge of the view (e.g, not behind
      * the status bar or navigation bar, if present). Similarly for the other edges.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("safeAreaLayoutGuide")
     public native UILayoutGuide safeAreaLayoutGuide();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setAccessibilityIgnoresInvertColors:")
     public native void setAccessibilityIgnoresInvertColors(boolean value);
@@ -1767,6 +2116,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * directionalLayoutMargins.leading is used on the left when the user interface direction is LTR and on the right
      * for RTL.
      * Vice versa for directionalLayoutMargins.trailing.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDirectionalLayoutMargins:")
@@ -1774,11 +2125,16 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * Default: YES
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setInsetsLayoutMarginsFromSafeArea:")
     public native void setInsetsLayoutMarginsFromSafeArea(boolean value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setInteractions:")
     public native void setInteractions(NSArray<?> value);
@@ -1818,6 +2174,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * Call this method from within an animation block to repeat animations, otherwise has no effect. The total duration
      * of a repeating animation can be computed via (outerAnimationDuration * repeatCount * autoreverses ? 2 : 1).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
@@ -1836,24 +2194,26 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * Set `overrideUserInterfaceStyle` to cause this view and its subviews to have a specific `UIUserInterfaceStyle`.
      * Reading this property does not return the current `UIUserInterfaceStyle`. Use
      * `traitCollection.userInterfaceStyle` instead.
-     * <p>
+     * 
      * Whenever possible, use the `overrideUserInterfaceStyle` property on `UIViewController` instead.
-     * <p>
+     * 
      * Use this property only when:
      * - You want a particular style on a single view or small view hierarchy.
      * - You want a particular style on an entire `UIWindow` and its view controllers and presentations,
      * but don't want to force your entire application to have that style.
-     * <p>
+     * 
      * (If you do want your entire application to have a certain style, don't use this, but instead
      * set the `UIUserInterfaceStyle" key in your Info.plist.)
-     * <p>
+     * 
      * When set on an ordinary `UIView`:
      * - This property affects only the traits of this view and its subviews.
      * - It does not affect any view controllers, or any subviews that are owned by different view controllers.
-     * <p>
+     * 
      * When set on a `UIWindow`:
      * - This property affects the `rootViewController` and thus the entire view controller and view hierarchy.
      * - It also affects presentations that happen inside the window.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("overrideUserInterfaceStyle")
@@ -1871,6 +2231,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * Defaults to nil, or an appropriate default value for UIKit classes.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setLargeContentImage:")
@@ -1878,6 +2240,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * Defaults to UIEdgeInsetsZero.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setLargeContentImageInsets:")
@@ -1885,6 +2249,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * Defaults to nil, or an appropriate default value for UIKit classes.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setLargeContentTitle:")
@@ -1894,24 +2260,26 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * Set `overrideUserInterfaceStyle` to cause this view and its subviews to have a specific `UIUserInterfaceStyle`.
      * Reading this property does not return the current `UIUserInterfaceStyle`. Use
      * `traitCollection.userInterfaceStyle` instead.
-     * <p>
+     * 
      * Whenever possible, use the `overrideUserInterfaceStyle` property on `UIViewController` instead.
-     * <p>
+     * 
      * Use this property only when:
      * - You want a particular style on a single view or small view hierarchy.
      * - You want a particular style on an entire `UIWindow` and its view controllers and presentations,
      * but don't want to force your entire application to have that style.
-     * <p>
+     * 
      * (If you do want your entire application to have a certain style, don't use this, but instead
      * set the `UIUserInterfaceStyle" key in your Info.plist.)
-     * <p>
+     * 
      * When set on an ordinary `UIView`:
      * - This property affects only the traits of this view and its subviews.
      * - It does not affect any view controllers, or any subviews that are owned by different view controllers.
-     * <p>
+     * 
      * When set on a `UIWindow`:
      * - This property affects the `rootViewController` and thus the entire view controller and view hierarchy.
      * - It also affects presentations that happen inside the window.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setOverrideUserInterfaceStyle:")
@@ -1919,6 +2287,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * Defaults to NO, or an appropriate default value for UIKit classes.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setScalesLargeContentImage:")
@@ -1926,6 +2296,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     /**
      * Defaults to NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setShowsLargeContentViewer:")
@@ -1934,6 +2306,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * default is CATransform3DIdentity. animatable. Please use this property instead of the transform property on the
      * layer
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTransform3D:")
@@ -1946,6 +2320,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * default is CATransform3DIdentity. animatable. Please use this property instead of the transform property on the
      * layer
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("transform3D")
@@ -1959,6 +2335,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * The identifier of the focus group that this view belongs to. If this is nil, subviews inherit their superview's
      * focus group.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setFocusGroupIdentifier:")
@@ -1968,6 +2346,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * Will return a string with a log of all the superviews of this view, alongside with what
      * content size category each view has and if that view has limits applied.
      * This is for debugging purposes only.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("appliedContentSizeCategoryLimitsDescription")
@@ -1990,11 +2370,16 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * Follows the keyboard when on screen and docked. When the keyboard is offscreen or undocked,
      * keyboardLayoutGuide.topAnchor matches the view's safeAreaLayoutGuide.bottomAnchor.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("keyboardLayoutGuide")
     public native UIKeyboardLayoutGuide keyboardLayoutGuide();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("maximumContentSizeCategory")
     public native String maximumContentSizeCategory();
@@ -2005,15 +2390,17 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * You can use this to limit the support content size categories on part of your view hierarchy.
      * Setting this to nil removes the limit on the minimum or maximum.
      * Limits will be applied immediately and when future content size category updates occur.
-     * <p>
+     * 
      * Specifying a minimum limit that is greater than the maximum limit (or vice versa) will effectively
      * only use the maximum limit.
-     * <p>
+     * 
      * Example:
-     * <p>
+     * 
      * // limit the support content size categories between .medium and .accessibilityExtraLarge (included).
      * view.minimumContentSizeCategory = UIContentSizeCategoryMedium;
      * view.maximumContentSizeCategory = UIContentSizeCategoryAccessibilityExtraLarge;
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("minimumContentSizeCategory")
@@ -2022,6 +2409,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * Describes a visual effect to apply when this item is focused. If this property is nil no effect will be applied
      * when this view becomes focused.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setFocusEffect:")
@@ -2033,11 +2422,16 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * Note: this method can only be used to increase an item's priority, not decrease it. For example if an item is
      * currently selected, the actual priority of this item will be determined by MAX(focusGroupPriority,
      * UIFocusGroupPrioritySelected).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setFocusGroupPriority:")
     public native void setFocusGroupPriority(@NInt long value);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setMaximumContentSizeCategory:")
     public native void setMaximumContentSizeCategory(String value);
@@ -2048,17 +2442,44 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * You can use this to limit the support content size categories on part of your view hierarchy.
      * Setting this to nil removes the limit on the minimum or maximum.
      * Limits will be applied immediately and when future content size category updates occur.
-     * <p>
+     * 
      * Specifying a minimum limit that is greater than the maximum limit (or vice versa) will effectively
      * only use the maximum limit.
-     * <p>
+     * 
      * Example:
-     * <p>
+     * 
      * // limit the support content size categories between .medium and .accessibilityExtraLarge (included).
      * view.minimumContentSizeCategory = UIContentSizeCategoryMedium;
      * view.maximumContentSizeCategory = UIContentSizeCategoryAccessibilityExtraLarge;
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMinimumContentSizeCategory:")
     public native void setMinimumContentSizeCategory(String value);
+
+    /**
+     * Defines the anchor point of the layer's bounds rect, as a point in
+     * normalized layer coordinates - '(0, 0)' is the bottom left corner of
+     * the bounds rect, '(1, 1)' is the top right corner. Defaults to
+     * '(0.5, 0.5)', i.e. the center of the bounds rect.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("anchorPoint")
+    @ByValue
+    public native CGPoint anchorPoint();
+
+    /**
+     * Defines the anchor point of the layer's bounds rect, as a point in
+     * normalized layer coordinates - '(0, 0)' is the bottom left corner of
+     * the bounds rect, '(1, 1)' is the top right corner. Defaults to
+     * '(0.5, 0.5)', i.e. the center of the bounds rect.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setAnchorPoint:")
+    public native void setAnchorPoint(@ByValue CGPoint value);
 }

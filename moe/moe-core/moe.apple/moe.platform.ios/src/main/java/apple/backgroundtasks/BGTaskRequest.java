@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An abstract class that represents a request for the app to be launched in the background to perform work.
- * <p>
+ * 
  * Do not instantiate instances of this class directly. Instead, use one of its concrete subclasses.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("BackgroundTasks")
@@ -96,7 +98,7 @@ public class BGTaskRequest extends NSObject implements NSCopying {
 
     /**
      * The earliest date at which the task may run.
-     * <p>
+     * 
      * Setting this property does not guarantee that the task will begin at the specified date, but only that it will
      * not begin sooner. If not specified, no start delay is used.
      */
@@ -156,7 +158,7 @@ public class BGTaskRequest extends NSObject implements NSCopying {
 
     /**
      * The earliest date at which the task may run.
-     * <p>
+     * 
      * Setting this property does not guarantee that the task will begin at the specified date, but only that it will
      * not begin sooner. If not specified, no start delay is used.
      */

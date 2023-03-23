@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCPaddingLayer
- * <p>
+ * 
  * A padding layer
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -82,7 +84,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
 
     /**
      * [@property] constantValue
-     * <p>
+     * 
      * The constant value to use if padding type is constant.
      */
     @Generated
@@ -135,7 +137,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
 
     /**
      * Create a padding layer with constant padding
-     *
+     * 
      * @param padding       The padding sizes.
      * @param constantValue The constant value to pad the source tensor.
      * @return A new padding layer
@@ -147,7 +149,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
 
     /**
      * Create a padding layer with reflection padding
-     *
+     * 
      * @param padding The padding sizes.
      * @return A new padding layer
      */
@@ -157,7 +159,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
 
     /**
      * Create a padding layer with symmetric padding
-     *
+     * 
      * @param padding The padding sizes.
      * @return A new padding layer
      */
@@ -167,7 +169,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
 
     /**
      * Create a padding layer with zero padding
-     *
+     * 
      * @param padding The padding sizes.
      * @return A new padding layer
      */
@@ -182,7 +184,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
 
     /**
      * [@property] paddingBottom
-     * <p>
+     * 
      * The bottom padding size
      */
     @Generated
@@ -192,7 +194,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
 
     /**
      * [@property] paddingLeft
-     * <p>
+     * 
      * The left padding size
      */
     @Generated
@@ -202,7 +204,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
 
     /**
      * [@property] paddingRight
-     * <p>
+     * 
      * The right padding size
      */
     @Generated
@@ -212,7 +214,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
 
     /**
      * [@property] paddingTop
-     * <p>
+     * 
      * The top padding size
      */
     @Generated
@@ -222,7 +224,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
 
     /**
      * [@property] paddingType
-     * <p>
+     * 
      * The padding type i.e. constant, zero, reflect or symmetric
      */
     @Generated

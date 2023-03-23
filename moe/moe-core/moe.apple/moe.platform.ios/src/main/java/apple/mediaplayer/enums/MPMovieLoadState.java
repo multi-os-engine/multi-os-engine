@@ -19,17 +19,40 @@ package apple.mediaplayer.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 3.2
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use AVPlayerViewController in AVKit
+ */
 @Deprecated
 @Generated
 public final class MPMovieLoadState {
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated @Generated @NUInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated @Generated @NUInt public static final long Playable = 0x0000000000000001L;
     /**
      * Playback will be automatically started in this state when shouldAutoplay is YES
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated @Generated @NUInt public static final long PlaythroughOK = 0x0000000000000002L;
     /**
      * Playback will be automatically paused in this state, if started
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated @Generated @NUInt public static final long Stalled = 0x0000000000000004L;
 

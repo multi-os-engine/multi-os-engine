@@ -40,8 +40,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] MTLFunctionConstant
- * <p>
+ * 
  * describe an uberShader constant used by the function
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Metal")

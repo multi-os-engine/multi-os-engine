@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Represents an in-flight request to an account manger.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("VideoSubscriberAccount")

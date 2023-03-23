@@ -39,6 +39,8 @@ public final class LocalAuthentication {
 
     /**
      * The maximum value for LAContext touchIDAuthenticationAllowableReuseDuration property.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -46,6 +48,8 @@ public final class LocalAuthentication {
 
     /**
      * LocalAuthentication error domain.
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @CVariable()

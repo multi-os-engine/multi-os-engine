@@ -21,16 +21,27 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HKWheelchairUse
- * <p>
+ * 
  * This enumerated type is used to represent whether the user uses a wheelchair.
- * <p>
+ * 
  * [@constant] HKWheelchairUseNo The user does not use a wheelchair.
  * [@constant] HKWheelchairUseYes The user does use a wheelchair.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class HKWheelchairUse {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long NotSet = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long No = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Yes = 0x0000000000000002L;
 
     @Generated

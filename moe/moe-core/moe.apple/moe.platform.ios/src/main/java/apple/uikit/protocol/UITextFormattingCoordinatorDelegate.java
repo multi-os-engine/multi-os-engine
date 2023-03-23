@@ -9,11 +9,17 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextFormattingCoordinatorDelegate")
 public interface UITextFormattingCoordinatorDelegate {
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("updateTextAttributesWithConversionHandler:")
     void updateTextAttributesWithConversionHandler(

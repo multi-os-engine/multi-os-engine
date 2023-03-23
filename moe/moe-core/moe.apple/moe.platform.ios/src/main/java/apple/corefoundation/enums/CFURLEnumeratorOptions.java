@@ -64,6 +64,8 @@ public final class CFURLEnumeratorOptions {
     /**
      * The directory enumerator always generates file path URLs relative to the directory URL. This can reduce the size
      * of each URL object returned during enumeration.
+     * 
+     * API-Since: 13.0
      */
     @Generated @NUInt public static final long GenerateRelativePathURLs = 0x0000000000000040L;
 }

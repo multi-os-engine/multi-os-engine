@@ -26,19 +26,21 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSMatrixLogSoftMaxGradient
- * <p>
+ * 
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * Computes the gradient corresponding to a forward MPSMatrixLogSoftMax object.
- * <p>
+ * 
  * A MPSMatrixLogSoftMaxGradient object computes:
- * <p>
+ * 
  * dL_dX_ij = dL_dY_ij - exp(Y_ij * sum_k(dL_dY_ik))
- * <p>
+ * 
  * Where dL_dX is the resulting gradient of the loss function with respect to
  * the original input to the forward MPSMatrixLogSoftMax operation, Y is
  * the output of the forward MPSMatrixLogSoftMax operation, and dL_dY is the
  * gradient of the loss function with respect to Y.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("MetalPerformanceShaders")

@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -152,7 +155,7 @@ public class CKAcceptSharesOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of shareURLs to
      * errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
@@ -174,7 +177,7 @@ public class CKAcceptSharesOperation extends CKOperation {
 
     /**
      * Called once for each share metadata that the server processed
-     * <p>
+     * 
      * If error is nil then the share was successfully accepted.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
@@ -185,7 +188,7 @@ public class CKAcceptSharesOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of shareURLs to
      * errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
@@ -199,7 +202,7 @@ public class CKAcceptSharesOperation extends CKOperation {
 
     /**
      * Called once for each share metadata that the server processed
-     * <p>
+     * 
      * If error is nil then the share was successfully accepted.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */

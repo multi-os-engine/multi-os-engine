@@ -28,11 +28,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNNeuronExponential
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * Specifies the Exponential neuron filter.
  * For each pixel, applies the following function: f(x) = c ^ (a * x + b).
- * <p>
+ * 
  * If the value of c is -1.0f, the base (c) is set to e.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -116,13 +118,17 @@ public class MPSCNNNeuronExponential extends MPSCNNNeuron {
 
     /**
      * Initialize a Exponential neuron filter.
-     *
+     * 
      * @param device The device the filter will run on.
      * @param a      Filter property "a". See class discussion.
      * @param b      Filter property "b". See class discussion.
      * @param c      Filter property "c". See class discussion.
      * @return A valid MPSCNNNeuronExponential object or nil, if failure.
+     * 
+     *         API-Since: 10.0
+     *         Deprecated-Since: 12.0
      */
+    @Deprecated
     @Generated
     @Selector("initWithDevice:a:b:c:")
     public native MPSCNNNeuronExponential initWithDeviceABC(@Mapped(ObjCObjectMapper.class) MTLDevice device, float a,

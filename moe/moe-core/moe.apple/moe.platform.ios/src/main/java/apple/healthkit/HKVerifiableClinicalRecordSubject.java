@@ -30,8 +30,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKVerifiableClinicalRecordSubject
- * <p>
+ * 
  * An NSObject that represents a verifiable clinical record subject.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("HealthKit")
@@ -91,7 +93,7 @@ public class HKVerifiableClinicalRecordSubject extends NSObject implements NSSec
 
     /**
      * [@property] dateOfBirthComponents
-     * <p>
+     * 
      * The subject's date of birth components.
      */
     @Generated
@@ -112,7 +114,7 @@ public class HKVerifiableClinicalRecordSubject extends NSObject implements NSSec
 
     /**
      * [@property] fullName
-     * <p>
+     * 
      * The subject's full name.
      */
     @Generated

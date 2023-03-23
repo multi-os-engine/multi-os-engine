@@ -48,6 +48,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Abstract class defining the API through which Core Data communicates with a store.
  * This API is designed to allow users to create persistent stores which load and save
  * data incrementally, allowing for the management of large and/or shared datasets.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("CoreData")

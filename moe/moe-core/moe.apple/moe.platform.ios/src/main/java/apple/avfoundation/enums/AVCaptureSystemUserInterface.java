@@ -5,13 +5,15 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVCaptureSystemUserInterface
- * <p>
+ * 
  * Constants describing the system user interfaces available to +showSystemUserInterface:.
- * <p>
+ * 
  * [@constant] AVCaptureSystemUserInterfaceVideoEffects
  * Indicates the system UI for enabling / disabling video effects.
  * [@constant] AVCaptureSystemUserInterfaceMicrophoneModes
  * Indicates the system UI for selecting microphone modes.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 public final class AVCaptureSystemUserInterface {
@@ -19,6 +21,12 @@ public final class AVCaptureSystemUserInterface {
     private AVCaptureSystemUserInterface() {
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NInt public static final long VideoEffects = 0x0000000000000001L;
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NInt public static final long MicrophoneModes = 0x0000000000000002L;
 }

@@ -19,32 +19,62 @@ package apple.storekit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 6.0
+ * Deprecated-Since: 16.0
+ * Deprecated-Message: Hosted content is no longer supported
+ */
+@Deprecated
 @Generated
 public final class SKDownloadState {
     /**
      * Download is inactive, waiting to be downloaded
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
-    @Generated @NInt public static final long Waiting = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long Waiting = 0x0000000000000000L;
     /**
      * Download is actively downloading
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
-    @Generated @NInt public static final long Active = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long Active = 0x0000000000000001L;
     /**
      * Download was paused by the user
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
-    @Generated @NInt public static final long Paused = 0x0000000000000002L;
+    @Deprecated @Generated @NInt public static final long Paused = 0x0000000000000002L;
     /**
      * Download is finished, content is available
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
-    @Generated @NInt public static final long Finished = 0x0000000000000003L;
+    @Deprecated @Generated @NInt public static final long Finished = 0x0000000000000003L;
     /**
      * Download failed
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
-    @Generated @NInt public static final long Failed = 0x0000000000000004L;
+    @Deprecated @Generated @NInt public static final long Failed = 0x0000000000000004L;
     /**
      * Download was cancelled
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
-    @Generated @NInt public static final long Cancelled = 0x0000000000000005L;
+    @Deprecated @Generated @NInt public static final long Cancelled = 0x0000000000000005L;
 
     @Generated
     private SKDownloadState() {

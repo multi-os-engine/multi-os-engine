@@ -2,8 +2,6 @@ package apple.arkit;
 
 import apple.NSObject;
 import apple.arkit.protocol.ARSessionProviding;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -39,12 +37,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * A view that integrates ARSession rendering into SceneKit.
- * <p>
+ * 
  * The view draws the camera background, provides and updates a camera,
  * manages nodes for anchors, and updates lighting.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ARKit")
@@ -82,7 +84,7 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Searches the scene hierarchy for an anchor associated with the provided node.
-     *
+     * 
      * @param node A node in the view’s scene.
      */
     @Generated
@@ -203,7 +205,7 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Determines whether the view will update the scene’s lighting.
-     * <p>
+     * 
      * When set, the view will automatically create and update lighting for
      * light estimates the session provides. Defaults to YES.
      */
@@ -211,6 +213,7 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
     @Selector("automaticallyUpdatesLighting")
     public native boolean automaticallyUpdatesLighting();
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -237,6 +240,7 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -264,15 +268,20 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Searches the current frame for objects corresponding to a point in the view.
-     * <p>
+     * 
      * A 2D point in the view’s coordinate space can refer to any point along a line segment
      * in the 3D coordinate space. Hit-testing is the process of finding objects in the world located along this line
      * segment.
-     *
+     * 
      * @param point A point in the view’s coordinate system.
      * @param types The types of results to search for.
      * @return An array of all hit-test results sorted from nearest to farthest.
+     * 
+     *         API-Since: 11.0
+     *         Deprecated-Since: 14.0
+     *         Deprecated-Message: Use [ARSCNView raycastQueryFromPoint:allowingTarget:alignment]
      */
+    @Deprecated
     @Generated
     @Selector("hitTest:types:")
     public native NSArray<? extends ARHitTestResult> hitTestTypes(@ByValue CGPoint point, @NUInt long types);
@@ -329,7 +338,7 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Returns the node that has been mapped to a specific anchor.
-     *
+     * 
      * @param anchor An anchor with an existing node mapping.
      */
     @Generated
@@ -371,46 +380,57 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
     @Selector("session")
     public native ARSession session();
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -421,7 +441,7 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Determines whether the view will update the scene’s lighting.
-     * <p>
+     * 
      * When set, the view will automatically create and update lighting for
      * light estimates the session provides. Defaults to YES.
      */
@@ -511,13 +531,15 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
     /**
      * Creates a raycast query originating from the point on view, aligned along the center of the field of view of the
      * camera.
-     * <p>
+     * 
      * A 2D point in the view's coordinate space and the frame camera's field of view is used to create a ray in the 3D
      * cooridnate space originating at the point.
-     *
+     * 
      * @param point     A point in the view’s coordinate system.
      * @param target    Type of target where the ray should terminate.
      * @param alignment Alignment of the target.
+     * 
+     *                  API-Since: 13.0
      */
     @Generated
     @Selector("raycastQueryFromPoint:allowingTarget:alignment:")
@@ -526,9 +548,11 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Determines whether view renders camera grain.
-     * <p>
+     * 
      * When set, the view will automatically add camera grain to rendered
      * content that matches the grainy noise of the camera stream. Enabled by default.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("rendersCameraGrain")
@@ -536,10 +560,12 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Determines whether view renders motion blur.
-     * <p>
+     * 
      * When set, the view will automatically add motion blur to rendered
      * content that matches the motion blur of the camera stream.
      * Overwrites SCNCamera's motionBlurIntensity property. Disabled by default.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("rendersMotionBlur")
@@ -547,9 +573,11 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Determines whether view renders camera grain.
-     * <p>
+     * 
      * When set, the view will automatically add camera grain to rendered
      * content that matches the grainy noise of the camera stream. Enabled by default.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRendersCameraGrain:")
@@ -557,10 +585,12 @@ public class ARSCNView extends SCNView implements ARSessionProviding {
 
     /**
      * Determines whether view renders motion blur.
-     * <p>
+     * 
      * When set, the view will automatically add motion blur to rendered
      * content that matches the motion blur of the camera stream.
      * Overwrites SCNCamera's motionBlurIntensity property. Disabled by default.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRendersMotionBlur:")

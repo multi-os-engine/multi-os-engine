@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -348,4 +351,18 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Whether the full text will be shown when a pointer hovers over truncated text.
+     */
+    @Generated
+    @Selector("setShowsExpansionTextWhenTruncated:")
+    public native void setShowsExpansionTextWhenTruncated(boolean value);
+
+    /**
+     * Whether the full text will be shown when a pointer hovers over truncated text.
+     */
+    @Generated
+    @Selector("showsExpansionTextWhenTruncated")
+    public native boolean showsExpansionTextWhenTruncated();
 }

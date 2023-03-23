@@ -24,10 +24,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEBlendNodeDefinition
- * <p>
+ * 
  * An object for defining a blend sound event node when building a sound event.
- * <p>
+ * 
  * A blend node blends between its children based on a numeric parameter.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -49,15 +51,19 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * addRangeForInputValuesAbove:fullGainAtValue:fadeCurveType:subtree
-     * <p>
+     * 
      * Create a blend range that is active for all values above a given threshold.
-     *
-     * @param value           The value for which the range will be active if the blend node's input value is above this
+     * 
+     * @param value
+     *                        The value for which the range will be active if the blend node's input value is above this
      *                        threshold.
-     * @param fullGainAtValue This value defines a threshold for which a fade curve will be applied to the gain, when
+     * @param fullGainAtValue
+     *                        This value defines a threshold for which a fade curve will be applied to the gain, when
      *                        the input value is between "value" and "fullGainAtValue".
-     * @param fadeCurveType   A curve type that defines which kind of fade curve to apply.
-     * @param subtree         A PHASESoundEventNodeDefinition subtree that will be active for this range.
+     * @param fadeCurveType
+     *                        A curve type that defines which kind of fade curve to apply.
+     * @param subtree
+     *                        A PHASESoundEventNodeDefinition subtree that will be active for this range.
      */
     @Generated
     @Selector("addRangeForInputValuesAbove:fullGainAtValue:fadeCurveType:subtree:")
@@ -66,15 +72,19 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * addRangeForInputValuesBelow:fullGainAtValue:fadeCurveType:subtree
-     * <p>
+     * 
      * Create a blend range that is active for all values below a given threshold.
-     *
-     * @param value           The value for which the range will be active if the blend node's input value is below this
+     * 
+     * @param value
+     *                        The value for which the range will be active if the blend node's input value is below this
      *                        threshold.
-     * @param fullGainAtValue This value defines a threshold for which a fade curve will be applied to the gain, when
+     * @param fullGainAtValue
+     *                        This value defines a threshold for which a fade curve will be applied to the gain, when
      *                        the input value is between "value" and "fullGainAtValue".
-     * @param fadeCurveType   A curve type that defines which kind of fade curve to apply.
-     * @param subtree         A PHASESoundEventNodeDefinition subtree that will be active for this range.
+     * @param fadeCurveType
+     *                        A curve type that defines which kind of fade curve to apply.
+     * @param subtree
+     *                        A PHASESoundEventNodeDefinition subtree that will be active for this range.
      */
     @Generated
     @Selector("addRangeForInputValuesBelow:fullGainAtValue:fadeCurveType:subtree:")
@@ -83,18 +93,25 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * addRangeForInputValuesBetween:highValue:fullGainAtLowValue:fullGainAtHighValue:lowFadeCurveType:highFadeCurveType:subtree
-     * <p>
+     * 
      * Create a blend range that is active for all input values between lowValue and highValue
-     *
-     * @param lowValue            The lower bound for which this range is active.
-     * @param highValue           The upper bound for which this range is active.
-     * @param fullGainAtLowValue  The threshold for which a fade curve defined by lowFadeCurveType will be applied to
+     * 
+     * @param lowValue
+     *                            The lower bound for which this range is active.
+     * @param highValue
+     *                            The upper bound for which this range is active.
+     * @param fullGainAtLowValue
+     *                            The threshold for which a fade curve defined by lowFadeCurveType will be applied to
      *                            the gain when the input value is between lowValue and fullGainAtLowValue
-     * @param fullGainAtHighValue The threshold for which a fade curve defined by highFadeCurveType will be applied to
+     * @param fullGainAtHighValue
+     *                            The threshold for which a fade curve defined by highFadeCurveType will be applied to
      *                            the gain when the input value is between highValue and fullGainAtHighValue
-     * @param lowFadeCurveType    A curve type that defines which kind of fade curve to apply for the low fade range.
-     * @param highFadeCurveType   A curve type that defines which kind of fade curve to apply for the high fade range..
-     * @param subtree             A PHASESoundEventNodeDefinition subtree that will be active for this range.
+     * @param lowFadeCurveType
+     *                            A curve type that defines which kind of fade curve to apply for the low fade range.
+     * @param highFadeCurveType
+     *                            A curve type that defines which kind of fade curve to apply for the high fade range..
+     * @param subtree
+     *                            A PHASESoundEventNodeDefinition subtree that will be active for this range.
      */
     @Generated
     @Selector("addRangeForInputValuesBetween:highValue:fullGainAtLowValue:fullGainAtHighValue:lowFadeCurveType:highFadeCurveType:subtree:")
@@ -104,11 +121,13 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * addRangeWithEnvelope:subtree
-     * <p>
+     * 
      * Create a blend range defined by a PHASEEnvelope object.
-     *
-     * @param envelope The PHASEEnvelope object that defines the output gain for a range.
-     * @param subtree  A PHASESoundEventNodeDefinition subtree that will be active for this range.
+     * 
+     * @param envelope
+     *                 The PHASEEnvelope object that defines the output gain for a range.
+     * @param subtree
+     *                 A PHASESoundEventNodeDefinition subtree that will be active for this range.
      */
     @Generated
     @Selector("addRangeWithEnvelope:subtree:")
@@ -130,7 +149,7 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * [@property] blendParameterDefinition
-     * <p>
+     * 
      * The readonly property that returns the PHASENumberMetaParameterDefinition this blend node was created with and
      * assigned to.
      */
@@ -175,12 +194,14 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * initDistanceBlendWithSpatialMixerDefinition
-     * <p>
+     * 
      * Create a blend node definition
-     *
-     * @param spatialMixerDefinition A PHASESpatialMixerDefinition that will bind the blend parameter to the distance
+     * 
+     * @param spatialMixerDefinition
+     *                               A PHASESpatialMixerDefinition that will bind the blend parameter to the distance
      *                               between the source and listener.
-     * @return A new PHASEBlendNodeDefinition object
+     * @return
+     *         A new PHASEBlendNodeDefinition object
      */
     @Generated
     @Selector("initDistanceBlendWithSpatialMixerDefinition:")
@@ -189,13 +210,16 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * initDistanceBlendWithSpatialMixerDefinition:identifier
-     * <p>
+     * 
      * Create a blend node definition
-     *
-     * @param spatialMixerDefinition A PHASESpatialMixerDefinition that will bind the blend parameter to the distance
+     * 
+     * @param spatialMixerDefinition
+     *                               A PHASESpatialMixerDefinition that will bind the blend parameter to the distance
      *                               between the source and listener.
-     * @param identifier             An optional custom identifier to give to this object
-     * @return A new PHASEBlendNodeDefinition object
+     * @param identifier
+     *                               An optional custom identifier to give to this object
+     * @return
+     *         A new PHASEBlendNodeDefinition object
      */
     @Generated
     @Selector("initDistanceBlendWithSpatialMixerDefinition:identifier:")
@@ -204,12 +228,14 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * initWithBlendMetaParameterDefinition
-     * <p>
+     * 
      * Create a blend node definition
-     *
-     * @param blendMetaParameterDefinition A metaparameter definition that wil be used to control the parameter of the
+     * 
+     * @param blendMetaParameterDefinition
+     *                                     A metaparameter definition that wil be used to control the parameter of the
      *                                     blend node at runtime.
-     * @return A new PHASEBlendNodeDefinition object
+     * @return
+     *         A new PHASEBlendNodeDefinition object
      */
     @Generated
     @Selector("initWithBlendMetaParameterDefinition:")
@@ -218,13 +244,16 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * initWithBlendMetaParameterDefinition:identifier
-     * <p>
+     * 
      * Create a blend node definition
-     *
-     * @param blendMetaParameterDefinition A metaparameter definition that wil be used to control the parameter of the
+     * 
+     * @param blendMetaParameterDefinition
+     *                                     A metaparameter definition that wil be used to control the parameter of the
      *                                     blend node at runtime.
-     * @param identifier                   An optional custom identifier to give to this object
-     * @return A new PHASEBlendNodeDefinition object
+     * @param identifier
+     *                                     An optional custom identifier to give to this object
+     * @return
+     *         A new PHASEBlendNodeDefinition object
      */
     @Generated
     @Selector("initWithBlendMetaParameterDefinition:identifier:")
@@ -271,7 +300,7 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * [@property] distanceSpatialMixerDefinition
-     * <p>
+     * 
      * The readonly property that returns the PHASESpatialMixerDefinition this blend node was created with and assigned
      * to.
      */

@@ -51,6 +51,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Immutable Ordered Set ***************
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("Foundation")
@@ -285,6 +287,8 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
 
     /**
      * evaluate a predicate against an ordered set of objects and return a filtered ordered set
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("filteredOrderedSetUsingPredicate:")
@@ -441,6 +445,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectAtIndex(@NUInt long idx);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -458,6 +465,9 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
     @Selector("removeObserver:forKeyPath:")
     public native void removeObserverForKeyPath(NSObject observer, String keyPath);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("removeObserver:forKeyPath:context:")
     public native void removeObserverForKeyPathContext(NSObject observer, String keyPath, VoidPtr context);
@@ -476,6 +486,8 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
 
     /**
      * Invoke -setValue:forKey: on each of the receiver's members.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setValue:forKey:")
@@ -488,6 +500,8 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
 
     /**
      * returns a new array by sorting the objects of the receiver
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("sortedArrayUsingDescriptors:")
@@ -508,6 +522,8 @@ public class NSOrderedSet<_ObjectType> extends NSObject implements NSCopying, NS
      * Return an ordered set containing the results of invoking -valueForKey: on each of the receiver's members. The
      * returned ordered set might not have the same number of members as the receiver. The returned ordered set will not
      * contain any elements corresponding to instances of -valueForKey: returning nil, nor will it contain duplicates.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("valueForKey:")

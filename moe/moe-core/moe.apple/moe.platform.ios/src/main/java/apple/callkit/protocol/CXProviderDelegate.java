@@ -35,6 +35,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CallKit")
 @Runtime(ObjCRuntime.class)
@@ -59,11 +62,11 @@ public interface CXProviderDelegate {
 
     /**
      * Called whenever a new transaction should be executed. Return whether or not the transaction was handled:
-     * <p>
+     * 
      * - NO: the transaction was not handled indicating that the perform*CallAction methods should be called
      * sequentially for each action in the transaction
      * - YES: the transaction was handled and the perform*CallAction methods should not be called sequentially
-     * <p>
+     * 
      * If the method is not implemented, NO is assumed.
      */
     @Generated

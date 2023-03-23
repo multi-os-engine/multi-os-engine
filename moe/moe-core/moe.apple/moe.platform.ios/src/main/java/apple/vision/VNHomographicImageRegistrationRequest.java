@@ -34,11 +34,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * An image registration request that will calculate a homographic transformation for morphing a "floating" image onto
  * an unchanging "reference" image.
- * <p>
+ * 
  * The request is created with the targeted image acting as the floating image. Processing the request will calculate
  * the matrix warp transform that morph the floating image onto the reference image.
  * Note that the request will fail unless the pixel dimensions of the reference image do not exactly match the resolved
  * region of interest of the floating image.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")

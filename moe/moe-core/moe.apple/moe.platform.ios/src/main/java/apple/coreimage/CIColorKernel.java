@@ -17,7 +17,6 @@ limitations under the License.
 package apple.coreimage;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSError;
@@ -43,19 +42,22 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * CIColorKernel is an object that encapsulates a Core Image Kernel Language
  * routine that processes only the color information in images.
- * <p>
+ * 
  * Color kernel functions are declared akin to this example:
  * kernel vec4 myColorKernel (__sample fore, __sample back, vec4 params)
- * <p>
+ * 
  * The function must take a __sample argument for each input image.
  * Additional arguments can be of type float, vec2, vec3, vec4, or __color.
  * The destination pixel location is obtained by calling destCoord().
  * The kernel should not call sample(), samplerCoord(), or samplerTransform().
  * The function must return a vec4 pixel color.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("CoreImage")
@@ -142,11 +144,18 @@ public class CIColorKernel extends CIKernel {
      * On iOS8 [CIColorKernel kernelWithString:] can return a CIKernel, CIColorKernel, or CIWarpKernel object.
      * On iOS9 [CIColorKernel kernelWithString:] will return a CIColorKernel object or nil.
      * On OS X [CIColorKernel kernelWithString:] will return a CIColorKernel object or nil.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Core Image Kernel Language API deprecated. (Define CI_SILENCE_GL_DEPRECATION to silence these
+     * warnings)
      */
+    @Deprecated
     @Generated
     @Selector("kernelWithString:")
     public static native CIColorKernel kernelWithString(String string);
 
+    @Deprecated
     @Generated
     @Selector("kernelsWithString:")
     public static native NSArray<? extends CIKernel> kernelsWithString(String string);
@@ -183,9 +192,9 @@ public class CIColorKernel extends CIKernel {
 
     /**
      * Apply the receiver CIColorKernel to produce a new CIImage object.
-     * <p>
+     * 
      * The 'extent' is the bounding box of all non-clear pixels produced by the kernel.
-     * <p>
+     * 
      * The 'args' is an array of parameters needed to describe the new image.
      * The object types of the items in the array correspond to the argument types of the
      * kernel function. For example, if the first argument in the kernel is a __sample,

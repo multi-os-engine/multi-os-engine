@@ -24,10 +24,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CHHapticEvent
- * <p>
+ * 
  * The description of a single haptic/audio event, plus optional Event parameters which modify the event.
- * <p>
+ * 
  * CHHapticEvents have a relative time property to allow specifying the time relationship between events in a pattern.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreHaptics")
@@ -114,13 +116,16 @@ public class CHHapticEvent extends NSObject {
 
     /**
      * initWithAudioResourceID:parameters:relativeTime
-     * <p>
+     * 
      * Initialize a new CHHapticEvent using a previously-loaded audio resource.
-     *
-     * @param resID       A previously-registered audio resource ID (see
+     * 
+     * @param resID
+     *                    A previously-registered audio resource ID (see
      *                    `CHHapticEngine(registerAudioResource:options:error)`).
-     * @param eventParams An NSArray of Event parameters. Can be empty.
-     * @param time        The relative time for this event versus the other events in the CHHapticPattern.
+     * @param eventParams
+     *                    An NSArray of Event parameters. Can be empty.
+     * @param time
+     *                    The relative time for this event versus the other events in the CHHapticPattern.
      */
     @Generated
     @Selector("initWithAudioResourceID:parameters:relativeTime:")
@@ -129,17 +134,21 @@ public class CHHapticEvent extends NSObject {
 
     /**
      * initWithAudioResourceID:parameters:relativeTime:duration
-     * <p>
+     * 
      * Initialize a new CHHapticEvent using a previously-loaded audio resource.
-     * <p>
+     * 
      * If the specified duration is less than the duration of the audio resource, its playback will be truncated. If it
      * is greater, its playback will be padded with silence. If zero, it will be ignored.
-     *
-     * @param resID       A previously-registered audio resource ID (see
+     * 
+     * @param resID
+     *                    A previously-registered audio resource ID (see
      *                    `CHHapticEngine(registerAudioResource:options:error)`).
-     * @param eventParams An NSArray of Event parameters. Can be empty.
-     * @param time        The relative time for this event versus the other events in the CHHapticPattern.
-     * @param duration    The duration of this event in seconds.
+     * @param eventParams
+     *                    An NSArray of Event parameters. Can be empty.
+     * @param time
+     *                    The relative time for this event versus the other events in the CHHapticPattern.
+     * @param duration
+     *                    The duration of this event in seconds.
      */
     @Generated
     @Selector("initWithAudioResourceID:parameters:relativeTime:duration:")
@@ -148,13 +157,16 @@ public class CHHapticEvent extends NSObject {
 
     /**
      * initWithEventType:parameters:relativeTime
-     * <p>
+     * 
      * Initialize a new CHHapticEvent. This can only be used to create Transient event types (which do not require a
      * duration).
-     *
-     * @param type        The type of event.
-     * @param eventParams An NSArray of Event parameters. Can be empty.
-     * @param time        The relative time for this event versus the other events in the CHHapticPattern.
+     * 
+     * @param type
+     *                    The type of event.
+     * @param eventParams
+     *                    An NSArray of Event parameters. Can be empty.
+     * @param time
+     *                    The relative time for this event versus the other events in the CHHapticPattern.
      */
     @Generated
     @Selector("initWithEventType:parameters:relativeTime:")
@@ -163,13 +175,17 @@ public class CHHapticEvent extends NSObject {
 
     /**
      * initWithEventType:parameters:relativeTime:duration
-     * <p>
+     * 
      * Initialize a new CHHapticEvent, providing a duration.
-     *
-     * @param type        The type of event.
-     * @param eventParams An NSArray of Event parameters. Can be empty.
-     * @param time        The relative time for this event versus the other events in the CHHapticPattern.
-     * @param duration    For Continuous event types, the length of time before the event playback begins its release.
+     * 
+     * @param type
+     *                    The type of event.
+     * @param eventParams
+     *                    An NSArray of Event parameters. Can be empty.
+     * @param time
+     *                    The relative time for this event versus the other events in the CHHapticPattern.
+     * @param duration
+     *                    For Continuous event types, the length of time before the event playback begins its release.
      *                    For Transient event types, the logical length of the event (used to determine pattern end and
      *                    loop points).
      */

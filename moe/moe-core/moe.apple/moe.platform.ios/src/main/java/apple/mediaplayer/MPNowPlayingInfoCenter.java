@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -183,6 +186,8 @@ public class MPNowPlayingInfoCenter extends NSObject {
      * the application's audio session. This property must be set every time
      * the app begins or halts playback, otherwise remote control functionality may
      * not work as expected.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("playbackState")
@@ -195,6 +200,8 @@ public class MPNowPlayingInfoCenter extends NSObject {
      * the application's audio session. This property must be set every time
      * the app begins or halts playback, otherwise remote control functionality may
      * not work as expected.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPlaybackState:")

@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * SSReadingList
  * Provides an interface for adding to a user's Reading List.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("SafariServices")
@@ -102,9 +104,9 @@ public class SSReadingList extends NSObject {
 
     /**
      * defaultReadingList
-     * <p>
+     * 
      * This class method to obtain the instance of SSReadingList should used instead of direct alloc and init.
-     *
+     * 
      * @return Returns a pointer to a shared instance of SSReadingList, or nil if access to Reading List is not
      *         permitted.
      */
@@ -165,9 +167,9 @@ public class SSReadingList extends NSObject {
 
     /**
      * supportsURL:
-     * <p>
+     * 
      * Determines if the provided URL can be added to Reading List.
-     *
+     * 
      * @param URL The URL to be tested for Reading List support.
      * @return Returns YES if the URL is supported by Reading List, NO if not.
      */
@@ -182,11 +184,11 @@ public class SSReadingList extends NSObject {
 
     /**
      * addReadingListItemWithURL:title:previewText:error:
-     * <p>
+     * 
      * Adds an item to the Reading List.
-     * <p>
+     * 
      * Only URLs with http:// or https:// schemes are supported by Reading List.
-     *
+     * 
      * @param URL         The URL of the item.
      * @param title       The title string of the item, or nil.
      * @param previewText A string shown as detail text for the item, or nil.

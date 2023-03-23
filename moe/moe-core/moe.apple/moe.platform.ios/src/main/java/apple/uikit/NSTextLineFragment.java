@@ -2,8 +2,6 @@ package apple.uikit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGContextRef;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSAttributedString;
 import apple.foundation.NSCoder;
@@ -32,9 +30,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * NSTextLineFragment represents a single textual layout and rendering unit inside NSTextLayoutFragment.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")

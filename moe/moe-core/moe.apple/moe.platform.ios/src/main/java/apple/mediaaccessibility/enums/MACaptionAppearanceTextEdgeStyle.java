@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] MACaptionAppearanceTextEdgeStyle
- * <p>
+ * 
  * MACaptionAppearanceTextEdgeStyle is used to specify a text-edge style.
- * <p>
+ * 
  * [@constant] kMACaptionAppearanceTextEdgeStyleUndefined
  * Undefined edge style.
  * [@constant] kMACaptionAppearanceTextEdgeStyleNone
@@ -36,14 +36,34 @@ import org.moe.natj.general.ann.NInt;
  * Uniform edge style.
  * [@constant] kMACaptionAppearanceTextEdgeStyleDropShadow
  * Shadow edge style.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 public final class MACaptionAppearanceTextEdgeStyle {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Undefined = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000001L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Raised = 0x0000000000000002L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Depressed = 0x0000000000000003L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Uniform = 0x0000000000000004L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long DropShadow = 0x0000000000000005L;
 
     @Generated

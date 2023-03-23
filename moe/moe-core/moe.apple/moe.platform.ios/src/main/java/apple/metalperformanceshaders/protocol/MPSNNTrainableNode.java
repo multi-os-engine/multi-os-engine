@@ -15,7 +15,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface MPSNNTrainableNode {
     /**
      * Configure whether and when neural network training parameters are updated
-     * <p>
+     * 
      * Default: MPSNNTrainingStyleUpdateDeviceGPU
      */
     @Generated
@@ -24,7 +24,7 @@ public interface MPSNNTrainableNode {
 
     /**
      * Configure whether and when neural network training parameters are updated
-     * <p>
+     * 
      * Default: MPSNNTrainingStyleUpdateDeviceGPU
      */
     @Generated

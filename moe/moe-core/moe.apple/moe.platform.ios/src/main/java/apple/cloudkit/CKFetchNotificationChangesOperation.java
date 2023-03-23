@@ -42,14 +42,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CKFetchNotificationChangesOperation
- * <p>
+ * 
  * An operation that fetches all notification changes.
- * <p>
+ * 
  * If a change token from a previous @c CKFetchNotificationChangesOperation is passed in, only the notifications that
  * have changed since that token will be fetched.
  * If this is your first fetch, pass nil for the change token.
  * Change tokens are opaque tokens and clients should not infer any behavior based on their content.
+ * 
+ * API-Since: 8.0
+ * Deprecated-Since: 11.0
+ * Deprecated-Message: Instead of iterating notifications to enumerate changed record zones, use CKDatabaseSubscription,
+ * CKFetchDatabaseChangesOperation, and CKFetchRecordZoneChangesOperation
  */
+@Deprecated
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -162,7 +168,7 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * Clients are responsible for saving the change token at the end of the operation and passing it in to the next
      * call to @c CKFetchNotificationChangesOperation.
      * Note that a fetch can fail partway. If that happens, an updated change token may be returned in the completion
@@ -188,7 +194,7 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
 
     /**
      * If true, then the server wasn't able to return all the changes in this response.
-     * <p>
+     * 
      * Will be set before @c fetchNotificationChangesCompletionBlock is called.
      * Another @c CKFetchNotificationChangesOperation operation should be run with the updated @c serverChangeToken
      * token from this operation.
@@ -199,7 +205,7 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
 
     /**
      * Called once for each updated notification fetch from the server
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -218,7 +224,7 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * Clients are responsible for saving the change token at the end of the operation and passing it in to the next
      * call to @c CKFetchNotificationChangesOperation.
      * Note that a fetch can fail partway. If that happens, an updated change token may be returned in the completion
@@ -235,7 +241,7 @@ public class CKFetchNotificationChangesOperation extends CKOperation {
 
     /**
      * Called once for each updated notification fetch from the server
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated

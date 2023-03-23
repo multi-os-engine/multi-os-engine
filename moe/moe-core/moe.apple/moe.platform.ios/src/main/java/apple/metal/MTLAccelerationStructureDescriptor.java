@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Base class for acceleration structure descriptors. Do not use this class directly. Use
  * one of the derived classes instead.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Metal")

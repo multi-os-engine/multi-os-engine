@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -152,7 +155,7 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
@@ -172,7 +175,7 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
@@ -183,7 +186,7 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
 
     /**
      * Called once for each user identity lookup info that was successfully discovered on the server
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -197,7 +200,7 @@ public class CKDiscoverUserIdentitiesOperation extends CKOperation {
 
     /**
      * Called once for each user identity lookup info that was successfully discovered on the server
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated

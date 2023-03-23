@@ -24,9 +24,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEGeneratorParameters
- * <p>
+ * 
  * An object that holds a standard set of audio parameters common to several objects
+ * 
+ * API-Since: 14.0
+ * Deprecated-Since: 14.0
  */
+@Deprecated
 @Generated
 @Library("PHASE")
 @Runtime(ObjCRuntime.class)
@@ -87,7 +91,7 @@ public class PHASEGeneratorParameters extends NSObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note] Values are clamped to the range [0, 1]. Default value is 1.
      */
@@ -132,7 +136,7 @@ public class PHASEGeneratorParameters extends NSObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note] Values are clamped to the range [0.25, 4]. Default value is 1.
      */
@@ -150,7 +154,7 @@ public class PHASEGeneratorParameters extends NSObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note] Values are clamped to the range [0, 1]. Default value is 1.
      */
@@ -160,7 +164,7 @@ public class PHASEGeneratorParameters extends NSObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note] Values are clamped to the range [0.25, 4]. Default value is 1.
      */

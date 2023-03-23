@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCMatMulDescriptor
- * <p>
+ * 
  * The MLCMatMulDescriptor specifies a batched matrix multiplication descriptor
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -102,7 +104,7 @@ public class MLCMatMulDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] descriptor
-     * <p>
+     * 
      * A matrix multiplication layer descriptor
      */
     @Generated
@@ -111,7 +113,7 @@ public class MLCMatMulDescriptor extends NSObject implements NSCopying {
 
     /**
      * A matrix multiplication layer descriptor
-     *
+     * 
      * @param alpha       a scalar to scale the left hand side, C = alpha x X x Y
      * @param transposesX if true, transposes the last two dimensions of X
      * @param transposesY if true, transposes the last two dimensions of Y

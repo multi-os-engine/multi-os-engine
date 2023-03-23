@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -53,6 +56,7 @@ public class ASCredentialProviderViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native ASCredentialProviderViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -141,7 +145,7 @@ public class ASCredentialProviderViewController extends UIViewController {
 
     /**
      * Prepare the view controller to show a list of credentials.
-     * <p>
+     * 
      * This method is called by the system to prepare the extension's view controller to present the list of
      * credentials.
      * A service identifier array is passed which can be used to filter or prioritize the credentials that closely match
@@ -154,7 +158,7 @@ public class ASCredentialProviderViewController extends UIViewController {
      * credential.
      * If the array of service identifiers is empty, it is expected that the credential list should still show
      * credentials that the user can pick from.
-     *
+     * 
      * @param serviceIdentifiers the array of service identifiers.
      */
     @Generated
@@ -164,7 +168,7 @@ public class ASCredentialProviderViewController extends UIViewController {
 
     /**
      * Prepare the view controller to show user interface when the user enables your extension.
-     * <p>
+     * 
      * The system calls this method after your extension is enabled by the user in Settings. You can
      * use this method to give the user a chance to configure the extension or to provide credential identities
      * to the system. After the configuration is done, call -[ASCredentialProviderExtensionContext
@@ -178,7 +182,7 @@ public class ASCredentialProviderViewController extends UIViewController {
 
     /**
      * Prepare the view controller to show user interface for providing the user-requested credential.
-     * <p>
+     * 
      * The system calls this method when your extension cannot provide the requested credential without user
      * interaction.
      * Set up the view controller for any user interaction required to provide the requested credential only. The user
@@ -193,7 +197,7 @@ public class ASCredentialProviderViewController extends UIViewController {
      * ASExtensionErrorDomain and an appropriate error code from ASExtensionErrorCode. For example, if the credential
      * identity cannot
      * be found in the database, pass an error with code ASExtensionErrorCodeCredentialIdentityNotFound.
-     *
+     * 
      * @param credentialIdentity the credential identity for which a credential should be provided.
      */
     @Generated
@@ -202,7 +206,7 @@ public class ASCredentialProviderViewController extends UIViewController {
 
     /**
      * Attempt to provide the user-requested credential without any user interaction.
-     * <p>
+     * 
      * After the user selects a credential identity, the system may ask your extension to provide the credential without
      * showing any
      * user interface if possible to enhance the user experience. If your extension can accomplish this (for example,
@@ -219,7 +223,7 @@ public class ASCredentialProviderViewController extends UIViewController {
      * [@note] When this method is called, your extension's view controller is not present on the screen. Do not attempt
      * or expect to show any user
      * interface in this method.
-     *
+     * 
      * @param credentialIdentity the credential identity for which a credential should be provided.
      */
     @Generated

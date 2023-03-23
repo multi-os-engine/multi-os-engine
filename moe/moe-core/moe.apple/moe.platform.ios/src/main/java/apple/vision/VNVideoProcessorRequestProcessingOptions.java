@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Options applied to a request's processing of the video.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -61,7 +63,7 @@ public class VNVideoProcessorRequestProcessingOptions extends NSObject implement
 
     /**
      * The cadence at which the request should be performed.
-     * <p>
+     * 
      * If this property is not defined, then every frame will be processed.
      */
     @Generated
@@ -145,7 +147,7 @@ public class VNVideoProcessorRequestProcessingOptions extends NSObject implement
 
     /**
      * The cadence at which the request should be performed.
-     * <p>
+     * 
      * If this property is not defined, then every frame will be processed.
      */
     @Generated

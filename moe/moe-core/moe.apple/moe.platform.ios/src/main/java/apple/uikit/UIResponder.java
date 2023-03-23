@@ -50,6 +50,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -103,6 +106,8 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
 
     /**
      * This call is to remove stored app identifier state that is no longer needed.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("clearTextInputContextIdentifier:")
@@ -179,6 +184,9 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     @Selector("canBecomeFirstResponder")
     public native boolean canBecomeFirstResponder();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("canPerformAction:withSender:")
     public native boolean canPerformActionWithSender(SEL action, @Mapped(ObjCObjectMapper.class) Object sender);
@@ -219,10 +227,16 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     @Selector("init")
     public native UIResponder init();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("inputAccessoryView")
     public native UIView inputAccessoryView();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("inputAccessoryViewController")
     public native UIInputViewController inputAccessoryViewController();
@@ -232,6 +246,8 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
      * You may modify the returned inputAssistantItem to add to or replace the existing items on the bar.
      * Modifications made to the returned UITextInputAssistantItem are reflected automatically.
      * This method should not be overridden. Goes up the responder chain.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("inputAssistantItem")
@@ -239,6 +255,8 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
 
     /**
      * Called and presented when object becomes first responder. Goes up the responder chain.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("inputView")
@@ -247,6 +265,8 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     /**
      * For viewController equivalents of -inputView and -inputAccessoryView
      * Called and presented when object becomes first responder. Goes up the responder chain.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("inputViewController")
@@ -258,6 +278,8 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
 
     /**
      * returns an array of UIKeyCommand objects<
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("keyCommands")
@@ -273,14 +295,23 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     @Selector("makeTextWritingDirectionRightToLeft:")
     public native void makeTextWritingDirectionRightToLeft(@Mapped(ObjCObjectMapper.class) Object sender);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("motionBegan:withEvent:")
     public native void motionBeganWithEvent(@NInt long motion, UIEvent event);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("motionCancelled:withEvent:")
     public native void motionCancelledWithEvent(@NInt long motion, UIEvent event);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("motionEnded:withEvent:")
     public native void motionEndedWithEvent(@NInt long motion, UIEvent event);
@@ -302,19 +333,30 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
      * (like thumbsticks or analog push buttons)
      * *** You must handle cancelled presses to ensure correct behavior in your application. Failure to
      * do so is very likely to lead to incorrect behavior or crashes.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("pressesBegan:withEvent:")
     public native void pressesBeganWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("pressesCancelled:withEvent:")
     public native void pressesCancelledWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("pressesChanged:withEvent:")
     public native void pressesChangedWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("pressesEnded:withEvent:")
     public native void pressesEndedWithEvent(NSSet<? extends UIPress> presses, UIPressesEvent event);
@@ -322,11 +364,16 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     /**
      * If called while object is first responder, reloads inputView, inputAccessoryView, and textInputMode. Otherwise
      * ignored.
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("reloadInputViews")
     public native void reloadInputViews();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("remoteControlReceivedWithEvent:")
     public native void remoteControlReceivedWithEvent(UIEvent event);
@@ -349,6 +396,9 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     @Selector("selectAll:")
     public native void selectAll(@Mapped(ObjCObjectMapper.class) Object sender);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setUserActivity:")
     public native void setUserActivity(NSUserActivity value);
@@ -356,6 +406,8 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     /**
      * Allows an action to be forwarded to another target. By default checks -canPerformAction:withSender: to either
      * return self, or go up the responder chain.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("targetForAction:withSender:")
@@ -367,6 +419,8 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
      * track the textInputMode automatically. The system will save and restore the state of that context to
      * the user defaults via the app identifier. Use of -textInputMode above will supersede use of
      * -textInputContextIdentifier.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("textInputContextIdentifier")
@@ -376,6 +430,8 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
      * When queried, returns the current UITextInputMode, from which the keyboard language can be determined.
      * When overridden it should return a previously-queried UITextInputMode object, which will attempt to be
      * set inside that app, but not persistently affect the user's system-wide keyboard settings.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("textInputMode")
@@ -415,6 +471,9 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     @Selector("touchesEnded:withEvent:")
     public native void touchesEndedWithEvent(NSSet<? extends UITouch> touches, UIEvent event);
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @Selector("touchesEstimatedPropertiesUpdated:")
     public native void touchesEstimatedPropertiesUpdated(NSSet<? extends UITouch> touches);
@@ -423,14 +482,23 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     @Selector("touchesMoved:withEvent:")
     public native void touchesMovedWithEvent(NSSet<? extends UITouch> touches, UIEvent event);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("undoManager")
     public native NSUndoManager undoManager();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("updateUserActivityState:")
     public native void updateUserActivityState(NSUserActivity activity);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("userActivity")
     public native NSUserActivity userActivity();
@@ -460,6 +528,8 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
 
     /**
      * Overrides for menu building and validation
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("buildMenuWithBuilder:")
@@ -467,12 +537,17 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
 
     /**
      * Productivity editing interaction support for undo/redo/cut/copy/paste gestures
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("editingInteractionConfiguration")
     @NInt
     public native long editingInteractionConfiguration();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setActivityItemsConfiguration:")
     public native void setActivityItemsConfiguration(
@@ -484,10 +559,16 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     public native void updateTextAttributesWithConversionHandler(
             @ObjCBlock(name = "call_updateTextAttributesWithConversionHandler") UIResponderStandardEditActions.Block_updateTextAttributesWithConversionHandler conversionHandler);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("validateCommand:")
     public native void validateCommand(UICommand command);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("captureTextFromCamera:")
     public native void captureTextFromCamera(@Mapped(ObjCObjectMapper.class) Object sender);
@@ -511,4 +592,49 @@ public class UIResponder extends NSObject implements UIResponderStandardEditActi
     @IsOptional
     @Selector("print:")
     public native void print(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("duplicate:")
+    public native void duplicate(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("export:")
+    public native void export(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("find:")
+    public native void find(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("findAndReplace:")
+    public native void findAndReplace(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("findNext:")
+    public native void findNext(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("findPrevious:")
+    public native void findPrevious(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("move:")
+    public native void move(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("rename:")
+    public native void rename(@Mapped(ObjCObjectMapper.class) Object sender);
+
+    @Generated
+    @IsOptional
+    @Selector("useSelectionForFind:")
+    public native void useSelectionForFind(@Mapped(ObjCObjectMapper.class) Object sender);
 }

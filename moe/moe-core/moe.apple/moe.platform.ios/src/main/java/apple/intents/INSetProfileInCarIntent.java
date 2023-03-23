@@ -41,6 +41,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INSetProfileInCarIntent is deprecated. There is no replacement.
+ */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -167,20 +173,38 @@ public class INSetProfileInCarIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INSetProfileInCarIntent initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.2
+     */
+    @Deprecated
     @Generated
     @Selector("initWithProfileNumber:profileLabel:defaultProfile:")
     public native INSetProfileInCarIntent initWithProfileNumberProfileLabelDefaultProfile(NSNumber profileNumber,
             String profileLabel, NSNumber defaultProfile);
 
+    /**
+     * API-Since: 10.2
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithProfileNumber:profileName:defaultProfile:")
     public native INSetProfileInCarIntent initWithProfileNumberProfileNameDefaultProfile(NSNumber profileNumber,
             String profileName, NSNumber defaultProfile);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.2
+     */
+    @Deprecated
     @Generated
     @Selector("profileLabel")
     public native String profileLabel();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @Selector("profileName")
     public native String profileName();
@@ -195,10 +219,16 @@ public class INSetProfileInCarIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("carName")
     public native INSpeakableString carName();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithProfileNumber:profileName:defaultProfile:carName:")
     public native INSetProfileInCarIntent initWithProfileNumberProfileNameDefaultProfileCarName(NSNumber profileNumber,

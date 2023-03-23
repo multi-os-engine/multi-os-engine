@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -48,7 +47,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +159,7 @@ public class UITableViewHeaderFooterView extends UIView {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -182,6 +186,7 @@ public class UITableViewHeaderFooterView extends UIView {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -257,46 +262,57 @@ public class UITableViewHeaderFooterView extends UIView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -396,7 +412,12 @@ public class UITableViewHeaderFooterView extends UIView {
 
     /**
      * only supported for headers in grouped style
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use UIListContentConfiguration instead, this property will be deprecated in a future release.
      */
+    @Deprecated
     @Generated
     @Selector("detailTextLabel")
     public native UILabel detailTextLabel();
@@ -438,7 +459,12 @@ public class UITableViewHeaderFooterView extends UIView {
 
     /**
      * These properties will always return nil when a non-nil `contentConfiguration` is set.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use UIListContentConfiguration instead, this property will be deprecated in a future release.
      */
+    @Deprecated
     @Generated
     @Selector("textLabel")
     public native UILabel textLabel();
@@ -454,6 +480,8 @@ public class UITableViewHeaderFooterView extends UIView {
      * `backgroundConfiguration` when the header/footer's
      * configuration state changes, and apply the updated configuration back to the header/footer. The default value is
      * YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("automaticallyUpdatesBackgroundConfiguration")
@@ -464,6 +492,8 @@ public class UITableViewHeaderFooterView extends UIView {
      * when the header/footer's
      * configuration state changes, and apply the updated configuration back to the header/footer. The default value is
      * YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("automaticallyUpdatesContentConfiguration")
@@ -471,6 +501,8 @@ public class UITableViewHeaderFooterView extends UIView {
 
     /**
      * Setting a background configuration supersedes the header/footer's backgroundView. The default value is nil.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("backgroundConfiguration")
@@ -480,6 +512,8 @@ public class UITableViewHeaderFooterView extends UIView {
      * Returns the current configuration state for the header/footer.
      * To add your own custom state(s), override the getter and call super to obtain an instance with the
      * system properties set, then set your own custom states as desired.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("configurationState")
@@ -492,6 +526,8 @@ public class UITableViewHeaderFooterView extends UIView {
      * existing content view type.
      * The default value is nil. After a configuration has been set, setting this property to nil will replace the
      * current content view with a new content view.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("contentConfiguration")
@@ -500,6 +536,8 @@ public class UITableViewHeaderFooterView extends UIView {
 
     /**
      * Returns a default list content configuration for the header/footer view's style.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("defaultContentConfiguration")
@@ -510,6 +548,8 @@ public class UITableViewHeaderFooterView extends UIView {
      * `backgroundConfiguration` when the header/footer's
      * configuration state changes, and apply the updated configuration back to the header/footer. The default value is
      * YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAutomaticallyUpdatesBackgroundConfiguration:")
@@ -520,6 +560,8 @@ public class UITableViewHeaderFooterView extends UIView {
      * when the header/footer's
      * configuration state changes, and apply the updated configuration back to the header/footer. The default value is
      * YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAutomaticallyUpdatesContentConfiguration:")
@@ -527,6 +569,8 @@ public class UITableViewHeaderFooterView extends UIView {
 
     /**
      * Setting a background configuration supersedes the header/footer's backgroundView. The default value is nil.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setBackgroundConfiguration:")
@@ -539,6 +583,8 @@ public class UITableViewHeaderFooterView extends UIView {
      * existing content view type.
      * The default value is nil. After a configuration has been set, setting this property to nil will replace the
      * current content view with a new content view.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setContentConfiguration:")
@@ -548,6 +594,8 @@ public class UITableViewHeaderFooterView extends UIView {
      * Requests the view update its configuration for its current state. This method is called automatically
      * when the view's `configurationState` may have changed, as well as in other circumstances where an
      * update may be required. Multiple requests may be coalesced into a single update at the appropriate time.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setNeedsUpdateConfiguration")
@@ -556,6 +604,8 @@ public class UITableViewHeaderFooterView extends UIView {
     /**
      * Subclasses should override this method and update the view's configuration using the state provided.
      * This method should not be called directly, use `setNeedsUpdateConfiguration` to request an update.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("updateConfigurationUsingState:")
@@ -564,6 +614,8 @@ public class UITableViewHeaderFooterView extends UIView {
     /**
      * Optional block-based alternative to overriding `-updateConfigurationUsingState:` in a subclass. This handler
      * is called after `-updateConfigurationUsingState:`. Setting a new handler triggers `setNeedsUpdateConfiguration`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("configurationUpdateHandler")
@@ -581,6 +633,8 @@ public class UITableViewHeaderFooterView extends UIView {
     /**
      * Optional block-based alternative to overriding `-updateConfigurationUsingState:` in a subclass. This handler
      * is called after `-updateConfigurationUsingState:`. Setting a new handler triggers `setNeedsUpdateConfiguration`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setConfigurationUpdateHandler:")
@@ -594,4 +648,14 @@ public class UITableViewHeaderFooterView extends UIView {
         void call_setConfigurationUpdateHandler(UITableViewHeaderFooterView headerFooterView,
                 UIViewConfigurationState state);
     }
+
+    /**
+     * Returns a default background configuration for the header/footer's style.
+     * This background configuration represents the default appearance that the header/footer will use.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("defaultBackgroundConfiguration")
+    public native UIBackgroundConfiguration defaultBackgroundConfiguration();
 }

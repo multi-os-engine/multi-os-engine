@@ -41,13 +41,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVCaptureSession
- * <p>
+ * 
  * AVCaptureSession is the central hub of the AVFoundation capture classes.
- * <p>
+ * 
  * To perform a real-time capture, a client may instantiate AVCaptureSession and add appropriate AVCaptureInputs, such
  * as AVCaptureDeviceInput, and outputs, such as AVCaptureMovieFileOutput. [AVCaptureSession startRunning] starts the
  * flow of data from the inputs to the outputs, and [AVCaptureSession stopRunning] stops the flow. A client may set the
  * sessionPreset property to customize the quality level or bitrate of the output.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("AVFoundation")
@@ -161,15 +163,18 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * addConnection:
-     * <p>
+     * 
      * Adds an AVCaptureConnection to the session.
-     * <p>
+     * 
      * An AVCaptureConnection instance can only be added to a session using -addConnection: if canAddConnection: returns
      * YES. When using -addInput: or -addOutput:, connections are formed automatically between all compatible inputs and
      * outputs. Manually adding connections is only necessary when adding an input or output with no connections.
      * -addConnection: may be called while the session is running.
-     *
-     * @param connection An AVCaptureConnection instance.
+     * 
+     * API-Since: 8.0
+     * 
+     * @param connection
+     *                   An AVCaptureConnection instance.
      */
     @Generated
     @Selector("addConnection:")
@@ -177,13 +182,14 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * addInput:
-     * <p>
+     * 
      * Adds an AVCaptureInput to the session.
-     * <p>
+     * 
      * An AVCaptureInput instance can only be added to a session using -addInput: if -canAddInput: returns YES.
      * -addInput: may be called while the session is running.
-     *
-     * @param input An AVCaptureInput instance.
+     * 
+     * @param input
+     *              An AVCaptureInput instance.
      */
     @Generated
     @Selector("addInput:")
@@ -191,14 +197,17 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * addInputWithNoConnections:
-     * <p>
+     * 
      * Adds an AVCaptureInput to the session without forming any connections.
-     * <p>
+     * 
      * -addInputWithNoConnections: may be called while the session is running. The -addInput: method is the preferred
      * method for adding an input to an AVCaptureSession. -addInputWithNoConnections: may be called if you need
      * fine-grained control over which inputs are connected to which outputs.
-     *
-     * @param input An AVCaptureInput instance.
+     * 
+     * API-Since: 8.0
+     * 
+     * @param input
+     *              An AVCaptureInput instance.
      */
     @Generated
     @Selector("addInputWithNoConnections:")
@@ -206,13 +215,14 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * addOutput:
-     * <p>
+     * 
      * Adds an AVCaptureOutput to the session.
-     * <p>
+     * 
      * An AVCaptureOutput instance can only be added to a session using -addOutput: if -canAddOutput: returns YES.
      * -addOutput: may be called while the session is running.
-     *
-     * @param output An AVCaptureOutput instance.
+     * 
+     * @param output
+     *               An AVCaptureOutput instance.
      */
     @Generated
     @Selector("addOutput:")
@@ -220,14 +230,17 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * addOutputWithNoConnections:
-     * <p>
+     * 
      * Adds an AVCaptureOutput to the session without forming any connections.
-     * <p>
+     * 
      * -addOutputWithNoConnections: may be called while the session is running. The -addOutput: method is the preferred
      * method for adding an output to an AVCaptureSession. -addOutputWithNoConnections: may be called if you need
      * fine-grained control over which inputs are connected to which outputs.
-     *
-     * @param output An AVCaptureOutput instance.
+     * 
+     * API-Since: 8.0
+     * 
+     * @param output
+     *               An AVCaptureOutput instance.
      */
     @Generated
     @Selector("addOutputWithNoConnections:")
@@ -235,15 +248,17 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * [@property] automaticallyConfiguresApplicationAudioSession
-     * <p>
+     * 
      * Indicates whether the receiver should configure the application's audio session for recording.
-     * <p>
+     * 
      * The value of this property is a BOOL indicating whether the receiver should configure the application's audio
      * session when needed for optimal recording. When set to YES, the receiver ensures the application's audio session
      * is set to the PlayAndRecord category, and picks an appropriate microphone and polar pattern to match the video
      * camera being used. When set to NO, and -usesApplicationAudioSession is set to YES, the receiver will use the
      * application's audio session, but will not change any of its properties. If the session is not set up correctly
      * for input, audio recording may fail. The default value is YES.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("automaticallyConfiguresApplicationAudioSession")
@@ -251,10 +266,10 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * [@property] automaticallyConfiguresCaptureDeviceForWideColor
-     * <p>
+     * 
      * Indicates whether the receiver automatically configures its video device's activeFormat and activeColorSpace
      * properties, preferring wide color for photos.
-     * <p>
+     * 
      * The default value is YES. By default, the receiver automatically adjusts its source video AVCaptureDevice's
      * activeFormat and activeColorSpace properties based on the supportedColorSpaces of the device's formats and the
      * current AVCaptureSession topology. Wide color spaces are preferred over sRGB if an AVCapturePhotoOutput is
@@ -262,6 +277,8 @@ public class AVCaptureSession extends NSObject {
      * AVCaptureSession from undoing your work, you must set automaticallyConfiguresCaptureDeviceForWideColor to NO. If
      * the receiver's sessionPreset is set to AVCaptureSessionPresetInputPriority, the session will not alter the
      * capture device's activeFormat, but might still alter its activeColorSpace.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("automaticallyConfiguresCaptureDeviceForWideColor")
@@ -269,10 +286,10 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * beginConfiguration
-     * <p>
+     * 
      * When paired with commitConfiguration, allows a client to batch multiple configuration operations on a running
      * session into atomic updates.
-     * <p>
+     * 
      * -beginConfiguration / -commitConfiguration are AVCaptureSession's mechanism for batching multiple configuration
      * operations on a running session into atomic updates. After calling [session beginConfiguration], clients may add
      * or remove outputs, alter the sessionPreset, or configure individual AVCaptureInput or Output properties. All
@@ -286,14 +303,17 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * canAddConnection:
-     * <p>
+     * 
      * Returns whether the proposed connection can be added to the receiver.
-     * <p>
+     * 
      * An AVCaptureConnection instance can only be added to a session using -addConnection: if canAddConnection: returns
      * YES. When using -addInput: or -addOutput:, connections are formed automatically between all compatible inputs and
      * outputs. Manually adding connections is only necessary when adding an input or output with no connections.
-     *
-     * @param connection An AVCaptureConnection instance.
+     * 
+     * API-Since: 8.0
+     * 
+     * @param connection
+     *                   An AVCaptureConnection instance.
      */
     @Generated
     @Selector("canAddConnection:")
@@ -301,13 +321,15 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * canAddInput:
-     * <p>
+     * 
      * Returns whether the proposed input can be added to the receiver.
-     * <p>
+     * 
      * An AVCaptureInput instance can only be added to a session using -addInput: if -canAddInput: returns YES.
-     *
-     * @param input An AVCaptureInput instance.
-     * @return YES if the proposed input can be added to the receiver, NO otherwise.
+     * 
+     * @param input
+     *              An AVCaptureInput instance.
+     * @return
+     *         YES if the proposed input can be added to the receiver, NO otherwise.
      */
     @Generated
     @Selector("canAddInput:")
@@ -315,13 +337,31 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * canAddOutput:
-     * <p>
+     * 
      * Returns whether the proposed output can be added to the receiver.
-     * <p>
+     * 
      * An AVCaptureOutput instance can only be added to a session using -addOutput: if -canAddOutput: returns YES.
-     *
-     * @param output An AVCaptureOutput instance.
-     * @return YES if the proposed output can be added to the receiver, NO otherwise.
+     * 
+     * On iOS and Mac Catalyst, some limitations to adding combinations of different types of outputs apply:
+     * - A maximum of one output of each type may be added. For applications linked on or after iOS 16.0, this
+     * restriction no longer applies to AVCaptureVideoDataOutputs. When adding more than one AVCaptureVideoDataOutput,
+     * AVCaptureSession.hardwareCost must be taken into account.
+     * - A session cannot contain both an AVCaptureStillImageOutput and an AVCapturePhotoOutput at the same time.
+     * - Prior to iOS 16.0, an AVCaptureVideoDataOutput and an AVCaptureMovieFileOutput may be added to the same
+     * session, but only one may have its connection active. When both have their connections enabled, the
+     * AVCaptureMovieFileOutput "wins" and the AVCaptureVideoDataOutput's connection becomes inactive. For applications
+     * linked on or after iOS 16.0, this restriction has been lifted. When adding multiple AVCaptureVideoDataOutputs or
+     * a combination of AVCaptureVideoDataOutputs and an AVCaptureMovieFileOutput, AVCaptureSession.hardwareCost must be
+     * taken into account.
+     * - Similarly, prior to iOS 16.0, an AVCaptureAudioDataOutput and an AVCaptureMovieFileOutput may be added to the
+     * same session, but only one may have its connection active. When both have their connections enabled, the
+     * AVCaptureMovieFileOutput "wins" and the AVCaptureAudioDataOutput's connection becomes inactive. For applications
+     * linked on or after iOS 16.0, this restriction has been lifted.
+     * 
+     * @param output
+     *               An AVCaptureOutput instance.
+     * @return
+     *         YES if the proposed output can be added to the receiver, NO otherwise.
      */
     @Generated
     @Selector("canAddOutput:")
@@ -329,16 +369,18 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * canSetSessionPreset:
-     * <p>
+     * 
      * Returns whether the receiver can be configured with the given preset.
-     * <p>
+     * 
      * An AVCaptureSession instance can be associated with a preset that configures its inputs and outputs to fulfill
      * common use cases. This method can be used to determine if the receiver supports the desired preset given its
      * current input and output configuration. The receiver's sessionPreset property may only be set to a certain preset
      * if this method returns YES for that preset.
-     *
-     * @param preset An AVCaptureSession preset.
-     * @return YES if the receiver can be set to the given preset, NO otherwise.
+     * 
+     * @param preset
+     *               An AVCaptureSession preset.
+     * @return
+     *         YES if the receiver can be set to the given preset, NO otherwise.
      */
     @Generated
     @Selector("canSetSessionPreset:")
@@ -346,10 +388,10 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * commitConfiguration
-     * <p>
+     * 
      * When preceded by beginConfiguration, allows a client to batch multiple configuration operations on a running
      * session into atomic updates.
-     * <p>
+     * 
      * -beginConfiguration / -commitConfiguration are AVCaptureSession's mechanism for batching multiple configuration
      * operations on a running session into atomic updates. After calling [session beginConfiguration], clients may add
      * or remove outputs, alter the sessionPreset, or configure individual AVCaptureInput or Output properties. All
@@ -367,9 +409,9 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * [@property] inputs
-     * <p>
+     * 
      * An NSArray of AVCaptureInputs currently added to the receiver.
-     * <p>
+     * 
      * The value of this property is an NSArray of AVCaptureInputs currently added to the receiver. Clients can add
      * AVCaptureInputs to a session by calling -addInput:.
      */
@@ -379,12 +421,14 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * [@property] interrupted
-     * <p>
+     * 
      * Indicates whether the session is being interrupted.
-     * <p>
+     * 
      * The value of this property is a BOOL indicating whether the receiver is currently being interrupted, such as by a
      * phone call or alarm. Clients can key value observe the value of this property to be notified when the session
      * ceases to be interrupted and again has access to needed hardware resources.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isInterrupted")
@@ -392,9 +436,9 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * [@property] running
-     * <p>
+     * 
      * Indicates whether the session is currently running.
-     * <p>
+     * 
      * The value of this property is a BOOL indicating whether the receiver is running. Clients can key value observe
      * the value of this property to be notified when the session automatically starts or stops running.
      */
@@ -404,32 +448,24 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * [@property] masterClock
-     * <p>
-     * Provides the master clock being used for output synchronization.
-     * <p>
-     * The masterClock is readonly. Use masterClock to synchronize AVCaptureOutput data with external data sources (e.g
-     * motion samples). All capture output sample buffer timestamps are on the masterClock timebase.
-     * <p>
-     * For example, if you want to reverse synchronize the output timestamps to the original timestamps, you can do the
-     * following: In captureOutput:didOutputSampleBuffer:fromConnection:
-     * <p>
-     * AVCaptureInputPort *port = [[connection inputPorts] objectAtIndex:0];
-     * CMClockRef originalClock = [port clock];
-     * <p>
-     * CMTime syncedPTS = CMSampleBufferGetPresentationTime( sampleBuffer );
-     * CMTime originalPTS = CMSyncConvertTime( syncedPTS, [session masterClock], originalClock );
-     * <p>
-     * This property is key-value observable.
+     * 
+     * Provides the clock being used for synchronization.
+     * 
+     * Deprecated. Please use synchronizationClock instead.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 15.4
      */
+    @Deprecated
     @Generated
     @Selector("masterClock")
     public native CMClockRef masterClock();
 
     /**
      * [@property] outputs
-     * <p>
+     * 
      * An NSArray of AVCaptureOutputs currently added to the receiver.
-     * <p>
+     * 
      * The value of this property is an NSArray of AVCaptureOutputs currently added to the receiver. Clients can add
      * AVCaptureOutputs to a session by calling -addOutput:.
      */
@@ -439,12 +475,15 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * removeConnection:
-     * <p>
+     * 
      * Removes an AVCaptureConnection from the session.
-     * <p>
+     * 
      * -removeConnection: may be called while the session is running.
-     *
-     * @param connection An AVCaptureConnection instance.
+     * 
+     * API-Since: 8.0
+     * 
+     * @param connection
+     *                   An AVCaptureConnection instance.
      */
     @Generated
     @Selector("removeConnection:")
@@ -452,12 +491,13 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * removeInput:
-     * <p>
+     * 
      * Removes an AVCaptureInput from the session.
-     * <p>
+     * 
      * -removeInput: may be called while the session is running.
-     *
-     * @param input An AVCaptureInput instance.
+     * 
+     * @param input
+     *              An AVCaptureInput instance.
      */
     @Generated
     @Selector("removeInput:")
@@ -465,12 +505,13 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * removeOutput:
-     * <p>
+     * 
      * Removes an AVCaptureOutput from the session.
-     * <p>
+     * 
      * -removeOutput: may be called while the session is running.
-     *
-     * @param output An AVCaptureOutput instance.
+     * 
+     * @param output
+     *               An AVCaptureOutput instance.
      */
     @Generated
     @Selector("removeOutput:")
@@ -478,9 +519,9 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * [@property] sessionPreset
-     * <p>
+     * 
      * Indicates the session preset currently in use by the receiver.
-     * <p>
+     * 
      * The value of this property is an AVCaptureSessionPreset indicating the current session preset in use by the
      * receiver. The sessionPreset property may be set while the receiver is running.
      */
@@ -490,15 +531,17 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * [@property] automaticallyConfiguresApplicationAudioSession
-     * <p>
+     * 
      * Indicates whether the receiver should configure the application's audio session for recording.
-     * <p>
+     * 
      * The value of this property is a BOOL indicating whether the receiver should configure the application's audio
      * session when needed for optimal recording. When set to YES, the receiver ensures the application's audio session
      * is set to the PlayAndRecord category, and picks an appropriate microphone and polar pattern to match the video
      * camera being used. When set to NO, and -usesApplicationAudioSession is set to YES, the receiver will use the
      * application's audio session, but will not change any of its properties. If the session is not set up correctly
      * for input, audio recording may fail. The default value is YES.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setAutomaticallyConfiguresApplicationAudioSession:")
@@ -506,10 +549,10 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * [@property] automaticallyConfiguresCaptureDeviceForWideColor
-     * <p>
+     * 
      * Indicates whether the receiver automatically configures its video device's activeFormat and activeColorSpace
      * properties, preferring wide color for photos.
-     * <p>
+     * 
      * The default value is YES. By default, the receiver automatically adjusts its source video AVCaptureDevice's
      * activeFormat and activeColorSpace properties based on the supportedColorSpaces of the device's formats and the
      * current AVCaptureSession topology. Wide color spaces are preferred over sRGB if an AVCapturePhotoOutput is
@@ -517,6 +560,8 @@ public class AVCaptureSession extends NSObject {
      * AVCaptureSession from undoing your work, you must set automaticallyConfiguresCaptureDeviceForWideColor to NO. If
      * the receiver's sessionPreset is set to AVCaptureSessionPresetInputPriority, the session will not alter the
      * capture device's activeFormat, but might still alter its activeColorSpace.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAutomaticallyConfiguresCaptureDeviceForWideColor:")
@@ -524,9 +569,9 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * [@property] sessionPreset
-     * <p>
+     * 
      * Indicates the session preset currently in use by the receiver.
-     * <p>
+     * 
      * The value of this property is an AVCaptureSessionPreset indicating the current session preset in use by the
      * receiver. The sessionPreset property may be set while the receiver is running.
      */
@@ -536,15 +581,17 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * [@property] usesApplicationAudioSession
-     * <p>
+     * 
      * Indicates whether the receiver will use the application's AVAudioSession for recording.
-     * <p>
+     * 
      * The value of this property is a BOOL indicating whether the receiver is currently using the application's
      * AVAudioSession (see AVAudioSession.h). Prior to iOS 7, AVCaptureSession uses its own audio session, which can
      * lead to unwanted interruptions when interacting with the application's audio session. In applications linked on
      * or after iOS 7, AVCaptureSession shares the application's audio session, allowing for simultaneous play back and
      * recording without unwanted interruptions. Clients desiring the pre-iOS 7 behavior may opt out by setting
      * usesApplicationAudioSession to NO. The default value is YES.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setUsesApplicationAudioSession:")
@@ -552,9 +599,9 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * startRunning
-     * <p>
+     * 
      * Starts an AVCaptureSession instance running.
-     * <p>
+     * 
      * Clients invoke -startRunning to start the flow of data from inputs to outputs connected to the AVCaptureSession
      * instance. This call blocks until the session object has completely started up or failed. A failure to start
      * running is reported through the AVCaptureSessionRuntimeErrorNotification mechanism.
@@ -565,9 +612,9 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * stopRunning
-     * <p>
+     * 
      * Stops an AVCaptureSession instance that is currently running.
-     * <p>
+     * 
      * Clients invoke -stopRunning to stop the flow of data from inputs to outputs connected to the AVCaptureSession
      * instance. This call blocks until the session object has completely stopped.
      */
@@ -577,15 +624,17 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * [@property] usesApplicationAudioSession
-     * <p>
+     * 
      * Indicates whether the receiver will use the application's AVAudioSession for recording.
-     * <p>
+     * 
      * The value of this property is a BOOL indicating whether the receiver is currently using the application's
      * AVAudioSession (see AVAudioSession.h). Prior to iOS 7, AVCaptureSession uses its own audio session, which can
      * lead to unwanted interruptions when interacting with the application's audio session. In applications linked on
      * or after iOS 7, AVCaptureSession shares the application's audio session, allowing for simultaneous play back and
      * recording without unwanted interruptions. Clients desiring the pre-iOS 7 behavior may opt out by setting
      * usesApplicationAudioSession to NO. The default value is YES.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("usesApplicationAudioSession")
@@ -593,14 +642,147 @@ public class AVCaptureSession extends NSObject {
 
     /**
      * [@property] connections
-     * <p>
+     * 
      * An NSArray of AVCaptureConnections currently added to the receiver.
-     * <p>
+     * 
      * The value of this property is an NSArray of AVCaptureConnections currently added to the receiver. Connections are
      * formed implicitly by the receiver when a client calls -addInput: or -addOutput:. Connections are formed
      * explicitly when a client calls -addConnection:.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("connections")
     public native NSArray<? extends AVCaptureConnection> connections();
+
+    /**
+     * [@property] hardwareCost
+     * 
+     * Indicates the percentage of the session's available hardware budget currently in use.
+     * 
+     * The value of this property is a float from 0.0 => 1.0 indicating how much of the session's available hardware is
+     * in use as a percentage, given the currently connected inputs and outputs and the features for which you've opted
+     * in. When your hardwareCost is greater than 1.0, the capture session cannot run your desired configuration due to
+     * hardware constraints, so you receive an AVCaptureSessionRuntimeErrorNotification when attempting to start it
+     * running. Default value is 0.
+     * 
+     * Contributors to hardwareCost include:
+     * - Whether the source devices' active formats use the full sensor (4:3) or a crop (16:9). Cropped formats require
+     * lower hardware bandwidth, and therefore lower the cost.
+     * - The max frame rate supported by the source devices' active formats. The higher the max frame rate, the higher
+     * the cost.
+     * - Whether the source devices' active formats are binned or not. Binned formats require substantially less
+     * hardware bandwidth, and therefore result in a lower cost.
+     * - The number of sources configured to deliver streaming disparity / depth via AVCaptureDepthDataOutput. The
+     * higher the number of cameras configured to produce depth, the higher the cost.
+     * In order to reduce hardwareCost, consider picking a sensor-cropped activeFormat, or a binned format. You may also
+     * use AVCaptureDeviceInput's videoMinFrameDurationOverride property to artificially limit the max frame rate (which
+     * is the reciprocal of the min frame duration) of a source device to a lower value. By doing so, you only pay the
+     * hardware cost for the max frame rate you intend to use.
+     * 
+     * AVCaptureMultiCamSessions always computes this hardwareCost. AVCaptureSessions only computes a non-zero
+     * hardwareCost when multiple AVCaptureVideoDataOutputs or an AVCaptureMovieFileOutput and one or more
+     * AVCaptureVideoDataOutputs are added to the session.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("hardwareCost")
+    public native float hardwareCost();
+
+    /**
+     * [@property] multitaskingCameraAccessEnabled
+     * 
+     * Indicates whether the session is configured to use the camera while multitasking.
+     * 
+     * The default value is NO. This property may only be set if -isMultitaskingCameraAccessSupported returns YES. This
+     * property must be set before the session starts running.
+     * 
+     * AVCaptureSessions that are configured to use the camera while multitasking will not be interrupted with
+     * AVCaptureSessionInterruptionReasonVideoDeviceNotAvailableWithMultipleForegroundApps.
+     * 
+     * For applications that have the com.apple.developer.avfoundation.multitasking-camera-access entitlement, this
+     * property defaults to YES if -isMultitaskingCameraAccessSupported returns YES.
+     * 
+     * To learn about best practices for using the camera while multitasking, refer to the Accessing the Camera While
+     * Multitasking article on developer.apple.com. See
+     * https://developer.apple.com/documentation/avkit/accessing_the_camera_while_multitasking\.
+     * 
+     * This property is key-value observable.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isMultitaskingCameraAccessEnabled")
+    public native boolean isMultitaskingCameraAccessEnabled();
+
+    /**
+     * [@property] multitaskingCameraAccessSupported
+     * 
+     * Returns whether the session can be configured to use the camera while multitasking.
+     * 
+     * This property can be used to determine whether multitaskingCameraAccessEnabled may be set to YES. When this
+     * property changes from YES to NO, multitaskingCameraAccessEnabled also reverts to NO.
+     * 
+     * This property returns true on iPads that support Stage Manager with an extended display.
+     * 
+     * This property is key-value observable.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isMultitaskingCameraAccessSupported")
+    public native boolean isMultitaskingCameraAccessSupported();
+
+    /**
+     * [@property] multitaskingCameraAccessEnabled
+     * 
+     * Indicates whether the session is configured to use the camera while multitasking.
+     * 
+     * The default value is NO. This property may only be set if -isMultitaskingCameraAccessSupported returns YES. This
+     * property must be set before the session starts running.
+     * 
+     * AVCaptureSessions that are configured to use the camera while multitasking will not be interrupted with
+     * AVCaptureSessionInterruptionReasonVideoDeviceNotAvailableWithMultipleForegroundApps.
+     * 
+     * For applications that have the com.apple.developer.avfoundation.multitasking-camera-access entitlement, this
+     * property defaults to YES if -isMultitaskingCameraAccessSupported returns YES.
+     * 
+     * To learn about best practices for using the camera while multitasking, refer to the Accessing the Camera While
+     * Multitasking article on developer.apple.com. See
+     * https://developer.apple.com/documentation/avkit/accessing_the_camera_while_multitasking\.
+     * 
+     * This property is key-value observable.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setMultitaskingCameraAccessEnabled:")
+    public native void setMultitaskingCameraAccessEnabled(boolean value);
+
+    /**
+     * [@property] synchronizationClock
+     * 
+     * Provides the clock being used for synchronization.
+     * 
+     * synchronizationClock is readonly. Use synchronizationClock to synchronize AVCaptureOutput data with external data
+     * sources (e.g motion samples). All capture output sample buffer timestamps are on the synchronizationClock
+     * timebase.
+     * 
+     * For example, if you want to reverse synchronize the output timestamps to the original timestamps, you can do the
+     * following: In captureOutput:didOutputSampleBuffer:fromConnection:
+     * 
+     * AVCaptureInputPort *port = [[connection inputPorts] objectAtIndex:0];
+     * CMClockRef originalClock = [port clock];
+     * 
+     * CMTime syncedPTS = CMSampleBufferGetPresentationTime( sampleBuffer );
+     * CMTime originalPTS = CMSyncConvertTime( syncedPTS, [session synchronizationClock], originalClock );
+     * 
+     * This property is key-value observable.
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @Selector("synchronizationClock")
+    public native CMClockRef synchronizationClock();
 }

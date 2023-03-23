@@ -26,9 +26,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSCNNBatchNormalizationNode
- * <p>
+ * 
  * A node representing batch normalization for inference or training
- * <p>
+ * 
  * Batch normalization operates differently for inference and training.
  * For inference, the normalization is done according to a static statistical
  * representation of data saved during training. For training, this representation
@@ -38,7 +38,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * by normalization once the statistics are known for the entire batch.
  * These are MPSCNNBatchNormalizationStatistics and MPSCNNBatchNormalization,
  * respectively.
- * <p>
+ * 
  * When this node appears in a graph and is not required to produce a
  * MPSCNNBatchNormalizationState -- that is, MPSCNNBatchNormalizationNode.resultState
  * is not used within the graph -- then it operates in inference mode
@@ -49,6 +49,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSCNNBatchNormalizationStatisticsGradient as necessary. This should
  * allow you to construct an identical sequence of nodes for inference
  * and training and expect the right thing to happen.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -110,7 +112,7 @@ public class MPSCNNBatchNormalizationNode extends MPSNNFilterNode implements MPS
 
     /**
      * Options controlling how batch normalization is calculated
-     * <p>
+     * 
      * Default: MPSCNNBatchNormalizationFlagsDefault
      */
     @Generated
@@ -173,7 +175,7 @@ public class MPSCNNBatchNormalizationNode extends MPSNNFilterNode implements MPS
 
     /**
      * Options controlling how batch normalization is calculated
-     * <p>
+     * 
      * Default: MPSCNNBatchNormalizationFlagsDefault
      */
     @Generated

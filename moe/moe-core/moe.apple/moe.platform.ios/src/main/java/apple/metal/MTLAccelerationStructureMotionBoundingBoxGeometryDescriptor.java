@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Descriptor for motion bounding box geometry
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Metal")

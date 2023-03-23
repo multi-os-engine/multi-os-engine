@@ -41,6 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
+ */
+@Deprecated
 @Generated
 @Library("GLKit")
 @Runtime(ObjCRuntime.class)

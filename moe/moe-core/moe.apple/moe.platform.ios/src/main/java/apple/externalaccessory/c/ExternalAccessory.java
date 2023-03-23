@@ -44,12 +44,17 @@ public final class ExternalAccessory {
 
     /**
      * EAAccessoryManager Notifications
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String EAAccessoryDidConnectNotification();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -57,6 +62,8 @@ public final class ExternalAccessory {
 
     /**
      * EAAccessory
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -65,6 +72,8 @@ public final class ExternalAccessory {
 
     /**
      * EAAccessory
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()

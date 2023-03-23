@@ -46,6 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * PHAssetCreationRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or -[PHPhotoLibrary
  * performChangesAndWait:] block.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("Photos")
@@ -101,6 +103,9 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("creationRequestForAsset")
     public static native PHAssetCreationRequest creationRequestForAsset();
@@ -180,6 +185,8 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
      * Whether we support a given combination of PHAssetResourceTypes.
      * Note: Adding resources to a creation request always succeeds; validation of the request is performed later, and
      * any errors are reported after the performChanges block.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("supportsAssetResourceTypes:")
@@ -190,11 +197,17 @@ public class PHAssetCreationRequest extends PHAssetChangeRequest {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("addResourceWithType:data:options:")
     public native void addResourceWithTypeDataOptions(@NInt long type, NSData data,
             PHAssetResourceCreationOptions options);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("addResourceWithType:fileURL:options:")
     public native void addResourceWithTypeFileURLOptions(@NInt long type, NSURL fileURL,

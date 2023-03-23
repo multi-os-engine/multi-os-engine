@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCTensorData
- * <p>
+ * 
  * An object to encapsulate memory to be used as tensor data
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -63,7 +65,7 @@ public class MLCTensorData extends NSObject {
 
     /**
      * [@property] bytes
-     * <p>
+     * 
      * Pointer to memory that contains or will be used for tensor data
      */
     @Generated
@@ -92,7 +94,7 @@ public class MLCTensorData extends NSObject {
      * Creates a data object that holds a given number of bytes from a given buffer.
      * [@note] The returned object will not take ownership of the \p bytes pointer and thus will not free it on
      * deallocation.
-     *
+     * 
      * @param bytes  A buffer containing data for the new object.
      * @param length The number of bytes to hold from \p bytes. This value must not exceed the length of \p bytes.
      * @return A new \p MLCTensorData object.
@@ -104,11 +106,13 @@ public class MLCTensorData extends NSObject {
     /**
      * [@absract] Creates a data object that holds a given number of bytes from a given buffer. with a custom
      * deallocator block.
-     *
+     * 
      * @param bytes       A buffer containing data for the new object.
      * @param length      The number of bytes to hold from \p bytes. This value must not exceed the length of \p bytes.
      * @param deallocator A block to invoke when the resulting object is deallocated.
      * @return A new \p MLCTensorData object.
+     * 
+     *         API-Since: 14.5
      */
     @Generated
     @Selector("dataWithBytesNoCopy:length:deallocator:")
@@ -126,7 +130,7 @@ public class MLCTensorData extends NSObject {
      * Creates a data object that holds a given number of bytes from a given buffer.
      * [@note] The returned object will not take ownership of the \p bytes pointer and thus will not free it on
      * deallocation. The underlying bytes in the return object should not be mutated.
-     *
+     * 
      * @param bytes  A buffer containing data for the new object.
      * @param length The number of bytes to hold from \p bytes. This value must not exceed the length of \p bytes.
      * @return A new \p MLCTensorData object.
@@ -175,7 +179,7 @@ public class MLCTensorData extends NSObject {
 
     /**
      * [@property] length
-     * <p>
+     * 
      * The size in bytes of the tensor data
      */
     @Generated

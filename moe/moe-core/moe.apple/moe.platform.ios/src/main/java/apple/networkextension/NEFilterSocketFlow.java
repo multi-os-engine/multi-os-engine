@@ -45,11 +45,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEFilterSocketFlow
- * <p>
+ * 
  * The NEFilterSocketFlow class declares the programmatic interface of an object that represents a flow of network data
  * to be filtered, which is originated from the socket.
- * <p>
+ * 
  * NEFilterSocketFlow is part of NetworkExtension.framework
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -189,6 +191,8 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
      * handleNewFlow:] is invoked and if so will be populated upon receiving network data.
      * In such a case, filtering on the flow may still be performed based on its socket type, socket family or socket
      * protocol.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("localEndpoint")
@@ -200,6 +204,8 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
      * handleNewFlow:] is invoked and if so will be populated upon receiving network data.
      * In such a case, filtering on the flow may still be performed based on its socket type, socket family or socket
      * protocol.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("remoteEndpoint")
@@ -207,8 +213,10 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
 
     /**
      * [@property] socketFamily
-     * <p>
+     * 
      * Socket family of the socket flow, such as PF_INET.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("socketFamily")
@@ -216,8 +224,10 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
 
     /**
      * [@property] socketProtocol
-     * <p>
+     * 
      * Socket protocol of the socket flow, such as IPPROTO_TCP.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("socketProtocol")
@@ -225,8 +235,10 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
 
     /**
      * [@property] socketType
-     * <p>
+     * 
      * Socket type of the socket flow, such as SOCK_STREAM.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("socketType")
@@ -240,9 +252,11 @@ public class NEFilterSocketFlow extends NEFilterFlow implements NSSecureCoding, 
 
     /**
      * [@property] remoteHostname
-     * <p>
+     * 
      * The flow's remote hostname. This property is only non-nil if the flow was created using Network.framework or
      * NSURLSession.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("remoteHostname")

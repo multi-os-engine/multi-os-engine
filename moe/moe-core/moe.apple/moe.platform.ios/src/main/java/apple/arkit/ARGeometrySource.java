@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A container for vector data of a geometry.
+ * 
+ * API-Since: 13.4
  */
 @Generated
 @Library("ARKit")

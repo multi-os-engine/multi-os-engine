@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -155,6 +158,8 @@ public class NSLayoutXAxisAnchor extends NSLayoutAnchor<NSLayoutXAxisAnchor> {
 
     /**
      * A composite anchor for creating constraints relating horizontal distances between locations.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("anchorWithOffsetToAnchor:")
@@ -166,17 +171,25 @@ public class NSLayoutXAxisAnchor extends NSLayoutAnchor<NSLayoutXAxisAnchor> {
      * where the value of the system space is determined from information available from the anchors.
      * The constraint affects how far the receiver will be positioned trailing 'anchor', per the effective user
      * interface layout direction.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("constraintEqualToSystemSpacingAfterAnchor:multiplier:")
     public native NSLayoutConstraint constraintEqualToSystemSpacingAfterAnchorMultiplier(NSLayoutXAxisAnchor anchor,
             @NFloat double multiplier);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("constraintGreaterThanOrEqualToSystemSpacingAfterAnchor:multiplier:")
     public native NSLayoutConstraint constraintGreaterThanOrEqualToSystemSpacingAfterAnchorMultiplier(
             NSLayoutXAxisAnchor anchor, @NFloat double multiplier);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("constraintLessThanOrEqualToSystemSpacingAfterAnchor:multiplier:")
     public native NSLayoutConstraint constraintLessThanOrEqualToSystemSpacingAfterAnchorMultiplier(

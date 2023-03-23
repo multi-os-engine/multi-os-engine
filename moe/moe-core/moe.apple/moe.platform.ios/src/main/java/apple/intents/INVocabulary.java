@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -175,6 +178,9 @@ public class INVocabulary extends NSObject {
     @Selector("setVocabularyStrings:ofType:")
     public native void setVocabularyStringsOfType(NSOrderedSet<String> vocabulary, @NInt long type);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setVocabulary:ofType:")
     public native void setVocabularyOfType(NSOrderedSet<?> vocabulary, @NInt long type);

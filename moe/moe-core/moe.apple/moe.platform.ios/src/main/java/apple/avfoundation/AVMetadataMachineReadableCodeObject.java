@@ -42,15 +42,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVMetadataMachineReadableCodeObject
- * <p>
+ * 
  * AVMetadataMachineReadableCodeObject is a concrete subclass of AVMetadataObject defining the features of a detected
  * one-dimensional or two-dimensional barcode.
- * <p>
+ * 
  * AVMetadataMachineReadableCodeObject represents a single detected machine readable code in a picture. It is an
  * immutable object describing the features and payload of a barcode.
- * <p>
+ * 
  * On supported platforms, AVCaptureMetadataOutput outputs arrays of detected machine readable code objects. See
  * AVCaptureMetadataOutput.h.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("AVFoundation")
@@ -164,9 +166,9 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
 
     /**
      * [@property] corners
-     * <p>
+     * 
      * The points defining the (X,Y) locations of the corners of the machine-readable code.
-     * <p>
+     * 
      * The value of this property is an NSArray of NSDictionaries, each of which has been created from a CGPoint using
      * CGPointCreateDictionaryRepresentation(), representing the coordinates of the corners of the object with respect
      * to the image in which it resides. If the metadata originates from video, the points may be expressed as scalar
@@ -185,9 +187,9 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
 
     /**
      * [@property] stringValue
-     * <p>
+     * 
      * Returns the receiver's errorCorrectedData decoded into a human-readable string.
-     * <p>
+     * 
      * The value of this property is an NSString created by decoding the binary payload according to the format of the
      * machine readable code. Returns nil if a string representation cannot be created from the payload.
      */
@@ -197,11 +199,13 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
 
     /**
      * [@property] descriptor
-     * <p>
+     * 
      * An abstract representation of a machine readable code's symbol attributes.
-     * <p>
+     * 
      * The value may be nil if an abstract representation of a machine readable code object is not defined for the code
      * type or could not be detected.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("descriptor")

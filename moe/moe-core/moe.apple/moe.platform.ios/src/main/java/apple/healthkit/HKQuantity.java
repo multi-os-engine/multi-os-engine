@@ -45,8 +45,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKQuantity
- * <p>
+ * 
  * The HKQuantity class provides an encapsulation of a quantity value and the unit of measurement.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -139,7 +141,7 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * quantityWithUnit:doubleValue:
-     * <p>
+     * 
      * Returns a new object representing a quantity measurement with the given unit.
      */
     @Generated
@@ -173,10 +175,10 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * compare:
-     * <p>
+     * 
      * Returns an NSComparisonResult value that indicates whether the receiver is greater than, equal to, or
      * less than a given quantity.
-     * <p>
+     * 
      * Throws an exception if the unit of the given quantity is not compatible with the receiver's unit.
      */
     @Generated
@@ -192,9 +194,9 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * doubleValueForUnit:
-     * <p>
+     * 
      * Returns the quantity value converted to the given unit.
-     * <p>
+     * 
      * Throws an exception if the receiver's value cannot be converted to one of the requested unit.
      */
     @Generated
@@ -215,7 +217,7 @@ public class HKQuantity extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * isCompatibleWithUnit:
-     * <p>
+     * 
      * Returns yes if the receiver's value can be converted to a value of the given unit.
      */
     @Generated

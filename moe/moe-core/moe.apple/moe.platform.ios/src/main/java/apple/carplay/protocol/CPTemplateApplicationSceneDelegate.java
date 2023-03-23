@@ -13,7 +13,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -21,13 +25,13 @@ import org.moe.natj.objc.ann.Selector;
 public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
     /**
      * The CarPlay screen has connected and is ready to present content.
-     * <p>
+     * 
      * Your app should create its view controller and assign it to the @c rootViewController property
      * of this window.
-     * <p>
+     * 
      * [@note] The interfaceController object will be strongly retained by the CPTemplateApplicationScene, the delegate
      * does not need to retain it.
-     * <p>
+     * 
      * [@note] This method is provided only for navigation apps; other apps should use the variant that does not provide
      * a window.
      */
@@ -42,7 +46,7 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
 
     /**
      * The CarPlay screen has disconnected.
-     * <p>
+     * 
      * [@note] This method is provided only for navigation apps; other apps should use the variant that does not provide
      * a window.
      */
@@ -84,12 +88,14 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
 
     /**
      * The CarPlay screen has connected and is ready to present content.
-     * <p>
+     * 
      * Your app should create its view controller and assign it to the @c rootViewController property
      * of this window.
-     * <p>
+     * 
      * [@note] The interfaceController object will be strongly retained by the CPTemplateApplicationScene, the delegate
      * does not need to retain it.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -101,12 +107,26 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
 
     /**
      * The CarPlay screen has disconnected.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional
     @Selector("templateApplicationScene:didDisconnectInterfaceController:")
     default void templateApplicationSceneDidDisconnectInterfaceController(
             CPTemplateApplicationScene templateApplicationScene, CPInterfaceController interfaceController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * The CarPlay system suggested content style for this scene has changed.
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @IsOptional
+    @Selector("contentStyleDidChange:")
+    default void contentStyleDidChange(@NInt long contentStyle) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

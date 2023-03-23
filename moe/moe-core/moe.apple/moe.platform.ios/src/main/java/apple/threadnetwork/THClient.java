@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("ThreadNetwork")
 @Runtime(ObjCRuntime.class)
@@ -81,13 +84,16 @@ public class THClient extends NSObject {
 
     /**
      * [@function] deleteActiveDataSetRecordForBorderAgent
-     * <p>
+     * 
      * Delete Credentials For The given Border Agent identifier, stored by the client
-     * <p>
+     * 
      * [@parameter]
      * borderAgentID : Thread Network Border Agent Identifier
      * [@parameter]
      * completion : Callback function to return the status of the delete operation
+     * 
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("deleteCredentialsForBorderAgent:completion:")
@@ -112,11 +118,13 @@ public class THClient extends NSObject {
 
     /**
      * [@function] init
-     * <p>
+     * 
      * Initialize instance of THClient
-     * <p>
+     * 
      * [@parameter]
      * no parameters
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("init")
@@ -158,11 +166,14 @@ public class THClient extends NSObject {
 
     /**
      * [@function] retrieveAllCredentials
-     * <p>
+     * 
      * Retrieve All Credentials, stored by the client
-     * <p>
+     * 
      * [@parameter]
      * completion : Callback function to receive all credentials
+     * 
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("retrieveAllCredentials:")
@@ -178,11 +189,14 @@ public class THClient extends NSObject {
 
     /**
      * [@function] retrieveCredentialsForBorderAgent
-     * <p>
+     * 
      * Retrieve Credentials For The given Thread Border Agent identifier, stored by the client
-     * <p>
+     * 
      * [@parameter]
      * completion : Callback function to receive the matching active dataset record
+     * 
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("retrieveCredentialsForBorderAgent:completion:")
@@ -198,13 +212,16 @@ public class THClient extends NSObject {
 
     /**
      * [@function] retrieveActiveDataSetRecordForExtendedPANID
-     * <p>
+     * 
      * Retrieve Credentials For The given Extended-PAN Id
      * Invoking this API will result into UI Alert prompt seeking user's permission to access the credentials
-     * <p>
+     * 
      * [@parameter]
      * extendedPANID : Extended PAN Id identifying the thread network
      * completion : Callback function to receive the matching active dataset record
+     * 
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("retrieveCredentialsForExtendedPANID:completion:")
@@ -220,12 +237,15 @@ public class THClient extends NSObject {
 
     /**
      * [@function] retrievePreferredCredentials
-     * <p>
+     * 
      * Retrieve Preferred Thread Network Credentials.
      * Invoking this API will result into UI Alert prompt seeking user's permission to access the credentials
-     * <p>
+     * 
      * [@parameter]
      * completion : Callback function to receive preferred network active dataset record
+     * 
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("retrievePreferredCredentials:")
@@ -245,13 +265,16 @@ public class THClient extends NSObject {
 
     /**
      * [@function] storeCredentialsForBorderAgent
-     * <p>
+     * 
      * Store the Credentials Record
-     * <p>
+     * 
      * [@parameters]
      * borderAgent : Border Agent Identifier
      * activeOperationalDataSet : byte array of active operational dataset
      * completion : Callback function to return the status of the store operation
+     * 
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("storeCredentialsForBorderAgent:activeOperationalDataSet:completion:")
@@ -274,4 +297,28 @@ public class THClient extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@function] checkPreferredNetworkForActiveOperationalDataset
+     * 
+     * Returns true if the dataset matches to the preferred network
+     * 
+     * [@parameters]
+     * activeOperationalDataSet : byte array of active operational dataset
+     * completion : Callback function gives true if dataset matches to preferred network, else false
+     * 
+     * 
+     * API-Since: 15.0
+     */
+    @Generated
+    @Selector("checkPreferredNetworkForActiveOperationalDataset:completion:")
+    public native void checkPreferredNetworkForActiveOperationalDatasetCompletion(NSData activeOperationalDataSet,
+            @ObjCBlock(name = "call_checkPreferredNetworkForActiveOperationalDatasetCompletion") Block_checkPreferredNetworkForActiveOperationalDatasetCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_checkPreferredNetworkForActiveOperationalDatasetCompletion {
+        @Generated
+        void call_checkPreferredNetworkForActiveOperationalDatasetCompletion(boolean isPreferred);
+    }
 }

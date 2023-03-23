@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -132,15 +135,18 @@ public class AVPlayerLooper extends NSObject {
 
     /**
      * playerLooperWithPlayer:templateItem:
-     * <p>
+     * 
      * Returns an instance of AVPlayerLooper to loop specified AVPlayerItem with specified AVQueuePlayer.
-     * <p>
+     * 
      * Equivalent to +playerLooperWithPlayer:templateItem:timeRange: and passing in kCMTimeRangeInvalid for timeRange
      * parameter.
-     *
-     * @param player     Must not be nil
-     * @param itemToLoop Must not be nil
-     * @return An instance of AVPlayerLooper.
+     * 
+     * @param player
+     *                   Must not be nil
+     * @param itemToLoop
+     *                   Must not be nil
+     * @return
+     *         An instance of AVPlayerLooper.
      */
     @Generated
     @Selector("playerLooperWithPlayer:templateItem:")
@@ -149,10 +155,10 @@ public class AVPlayerLooper extends NSObject {
 
     /**
      * playerLooperWithPlayer:templateItem:timeRange:
-     * <p>
+     * 
      * Returns an instance of AVPlayerLooper to loop specified AVPlayerItem within the specified time range with
      * specified AVQueuePlayer.
-     * <p>
+     * 
      * The specified AVPlayerItem will be used as a template to generate at least 3 AVPlayerItem replicas and the
      * replicas will be inserted into specified AVQueuePlayer's play queue to accomplish the looping playback. The
      * specified AVPlayerItem should have its asset's duration property loaded beforehand so looping setup work would
@@ -175,12 +181,16 @@ public class AVPlayerLooper extends NSObject {
      * if the player and template item are not specified or the template item has a 0 duration. An
      * NSInvalidArgumentException will be raised if a valid time range has a duration of 0 or is not contained within
      * time 0 and duration of the templateItem.
-     *
-     * @param player     Must not be nil
-     * @param itemToLoop Must not be nil
-     * @param loopRange  Playback time range in [0, itemToLoop's duration]. kCMTimeRangeInvalid means [0, itemToLoop's
+     * 
+     * @param player
+     *                   Must not be nil
+     * @param itemToLoop
+     *                   Must not be nil
+     * @param loopRange
+     *                   Playback time range in [0, itemToLoop's duration]. kCMTimeRangeInvalid means [0, itemToLoop's
      *                   duration].
-     * @return An instance of AVPlayerLooper.
+     * @return
+     *         An instance of AVPlayerLooper.
      */
     @Generated
     @Selector("playerLooperWithPlayer:templateItem:timeRange:")
@@ -210,9 +220,9 @@ public class AVPlayerLooper extends NSObject {
 
     /**
      * disableLooping
-     * <p>
+     * 
      * Disables the item looping
-     * <p>
+     * 
      * AVPlayerLooper will stop performing player queue operations for looping and let the current looping item replica
      * play to the end. The player's original actionAtItemEnd property will be restored afterwards. After this method is
      * called, the value of the receiver's status property will be AVPlayerLooperStatusCancelled.
@@ -223,9 +233,9 @@ public class AVPlayerLooper extends NSObject {
 
     /**
      * [@property] error
-     * <p>
+     * 
      * If the receiver's status is AVPlayerLooperStatusFailed, this describes the error that caused the failure.
-     * <p>
+     * 
      * The value of this property is a NSError that describes what caused the receiver to not be able to perform looping
      * playback. If the receiver's status is not AVPlayerLooperStatusFailed, the value of this property is nil.
      */
@@ -239,10 +249,10 @@ public class AVPlayerLooper extends NSObject {
 
     /**
      * initWithPlayer:templateItem:timeRange:
-     * <p>
+     * 
      * Initializes an instance of AVPlayerLooper to loop specified AVPlayerItem within the specified time range with
      * specified AVQueuePlayer.
-     * <p>
+     * 
      * The specified AVPlayerItem will be used as a template to generate at least 3 AVPlayerItem replicas and the
      * replicas will be inserted into specified AVQueuePlayer's play queue to accomplish the looping playback. The
      * specified AVPlayerItem should have its asset's duration property loaded beforehand so looping setup work would
@@ -265,12 +275,16 @@ public class AVPlayerLooper extends NSObject {
      * if the player and template item are not specified or the template item has a 0 duration. An
      * NSInvalidArgumentException will be raised if a valid time range has a duration of 0 or is not contained within
      * time 0 and duration of the templateItem.
-     *
-     * @param player     Must not be nil
-     * @param itemToLoop Must not be nil
-     * @param loopRange  Playback time range in [0, itemToLoop's duration]. kCMTimeRangeInvalid means [0, itemToLoop's
+     * 
+     * @param player
+     *                   Must not be nil
+     * @param itemToLoop
+     *                   Must not be nil
+     * @param loopRange
+     *                   Playback time range in [0, itemToLoop's duration]. kCMTimeRangeInvalid means [0, itemToLoop's
      *                   duration].
-     * @return An initialized AVPlayerLooper.
+     * @return
+     *         An initialized AVPlayerLooper.
      */
     @Generated
     @Selector("initWithPlayer:templateItem:timeRange:")
@@ -279,9 +293,9 @@ public class AVPlayerLooper extends NSObject {
 
     /**
      * [@property] loopCount
-     * <p>
+     * 
      * Number of times the specified AVPlayerItem has been played
-     * <p>
+     * 
      * Starts at 0 and increments when the player starts playback of the AVPlayerItem again. This property is key value
      * observable.
      */
@@ -292,9 +306,9 @@ public class AVPlayerLooper extends NSObject {
 
     /**
      * [@property] loopingPlayerItems
-     * <p>
+     * 
      * Returns an array containing replicas of specified AVPlayerItem used to accomplish the looping
-     * <p>
+     * 
      * AVPlayerLooper creates replicas of the template AVPlayerItem using -copyWithZone: and inserts the replicas in the
      * specified AVQueuePlayer to accomplish the looping. The AVPlayerItem replicas are for informational purposes and
      * to allow the client to apply properties that are not transferred from the template AVPlayerItem to the replicas.
@@ -303,8 +317,9 @@ public class AVPlayerLooper extends NSObject {
      * replicas so the client should add them to each replica if desired. The client shall not modify the properties on
      * the replicas that would disrupt looping playback. Examples of such properties are playhead time/date, selected
      * media option, and forward playback end time. This property is key value observable.
-     *
-     * @return Array containing replicas of specified AVPlayerItem
+     * 
+     * @return
+     *         Array containing replicas of specified AVPlayerItem
      */
     @Generated
     @Selector("loopingPlayerItems")
@@ -312,9 +327,9 @@ public class AVPlayerLooper extends NSObject {
 
     /**
      * [@property] status
-     * <p>
+     * 
      * The ability of the receiver to be used for looping playback.
-     * <p>
+     * 
      * The value of this property is an AVPlayerLooperStatus that indicates whether the receiver is ready for looping
      * playback. When the value of this property is AVPlayerStatusFailed, the receiver can no longer be used for
      * playback and a new instance needs to be created in its place. When this happens, clients can check the value of

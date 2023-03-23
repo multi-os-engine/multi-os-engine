@@ -31,6 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A concrete convenience class conforming to MLBatchProvider.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CoreML")

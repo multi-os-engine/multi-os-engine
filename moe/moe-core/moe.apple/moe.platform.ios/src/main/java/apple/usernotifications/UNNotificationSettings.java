@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UserNotifications")
 @Runtime(ObjCRuntime.class)
@@ -221,35 +224,56 @@ public class UNNotificationSettings extends NSObject implements NSCopying, NSSec
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("showPreviewsSetting")
     @NInt
     public native long showPreviewsSetting();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("announcementSetting")
     @NInt
     public native long announcementSetting();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("criticalAlertSetting")
     @NInt
     public native long criticalAlertSetting();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("providesAppNotificationSettings")
     public native boolean providesAppNotificationSettings();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("directMessagesSetting")
     @NInt
     public native long directMessagesSetting();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("scheduledDeliverySetting")
     @NInt
     public native long scheduledDeliverySetting();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("timeSensitiveSetting")
     @NInt

@@ -18,8 +18,6 @@ package apple.avfoundation;
 
 import apple.NSObject;
 import apple.avfoundation.protocol.AVAsynchronousKeyValueLoading;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGSize;
 import apple.coremedia.struct.CMTime;
 import apple.foundation.NSArray;
 import apple.foundation.NSError;
@@ -50,7 +48,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -81,12 +84,13 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * assetWithURL:
-     * <p>
+     * 
      * Returns an instance of AVAsset for inspection of a media resource.
-     * <p>
+     * 
      * Returns a newly allocated instance of a subclass of AVAsset initialized with the specified URL.
-     *
-     * @param URL An instance of NSURL that references a media resource.
+     * 
+     * @param URL
+     *            An instance of NSURL that references a media resource.
      * @return An instance of AVAsset.
      */
     @Generated
@@ -177,6 +181,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * array of NSLocale
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("availableChapterLocales")
@@ -185,6 +191,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     /**
      * Provides an NSArray of NSStrings, each NSString indicating a media characteristic for which a media selection
      * option is available.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("availableMediaCharacteristicsWithMediaSelectionOptions")
@@ -200,11 +208,13 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * [@property] canContainFragments
-     * <p>
+     * 
      * Indicates whether the asset is capable of being extended by fragments.
-     * <p>
+     * 
      * For QuickTime movie files and MPEG-4 files, the value of canContainFragments is YES if an 'mvex' box is present
      * in the 'moov' box. For those types, the 'mvex' box signals the possible presence of later 'moof' boxes.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("canContainFragments")
@@ -212,9 +222,9 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * cancelLoading
-     * <p>
+     * 
      * Cancels the loading of all values for all observers.
-     * <p>
+     * 
      * Deallocation or finalization of an instance of AVAsset will implicitly cancel loading if any loading requests are
      * still outstanding.
      */
@@ -224,33 +234,38 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * chapterMetadataGroupsBestMatchingPreferredLanguages:
-     * <p>
+     * 
      * Tests, in order of preference, for a match between language identifiers in the specified array of preferred
      * languages and the available chapter locales, and returns the array of chapters corresponding to the first match
      * that's found.
-     * <p>
+     * 
      * Safe to call without blocking when the AVAsset key availableChapterLocales has status AVKeyValueStatusLoaded.
-     * <p>
+     * 
      * Returns an array of AVTimedMetadataGroup objects. Each object in the array always contains an AVMetadataItem
      * representing the chapter title; the timeRange property of the AVTimedMetadataGroup object is equal to the time
      * range of the chapter title item.
-     * <p>
+     * 
      * All of the available chapter metadata is included in the metadata groups, including items with the common key
      * AVMetadataCommonKeyArtwork, if such items are present. Items not carrying chapter titles will be added to an
      * existing AVTimedMetadataGroup object if the time range (timestamp and duration) of the metadata item and that of
      * the metadata group overlaps. The locale of such items need not match the locale of the chapter titles.
-     * <p>
+     * 
      * Further filtering of the metadata items in AVTimedMetadataGroups according to language can be accomplished using
      * +[AVMetadataItem metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:]; filtering of the
      * metadata items according to locale can be accomplished using +[AVMetadataItem
      * metadataItemsFromArray:withLocale:].
      * .
-     *
-     * @param preferredLanguages An array of language identifiers in order of preference, each of which is an IETF BCP
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 100000.0
+     * 
+     * @param preferredLanguages
+     *                           An array of language identifiers in order of preference, each of which is an IETF BCP
      *                           47 (RFC 4646) language identifier. Use +[NSLocale preferredLanguages] to obtain the
      *                           user's list of preferred languages.
      * @return An NSArray of AVTimedMetadataGroup.
      */
+    @Deprecated
     @Generated
     @Selector("chapterMetadataGroupsBestMatchingPreferredLanguages:")
     public native NSArray<? extends AVTimedMetadataGroup> chapterMetadataGroupsBestMatchingPreferredLanguages(
@@ -258,28 +273,34 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * chapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:
-     * <p>
+     * 
      * Provides an array of chapters.
-     * <p>
+     * 
      * This method returns an array of AVTimedMetadataGroup objects. Each object in the array always contains an
      * AVMetadataItem representing the chapter title; the timeRange property of the AVTimedMetadataGroup object is equal
      * to the time range of the chapter title item.
-     * <p>
+     * 
      * An AVMetadataItem with the specified common key will be added to an existing AVTimedMetadataGroup object if the
      * time range (timestamp and duration) of the metadata item and the metadata group overlaps. The locale of items not
      * carrying chapter titles need not match the specified locale parameter.
-     * <p>
+     * 
      * Further filtering of the metadata items in AVTimedMetadataGroups according to language can be accomplished using
      * +[AVMetadataItem metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:]; filtering of the
      * metadata items according to locale can be accomplished using +[AVMetadataItem
      * metadataItemsFromArray:withLocale:].
-     *
-     * @param locale     Locale of the metadata items carrying chapter titles to be returned (supports the IETF BCP 47
+     * 
+     * API-Since: 4.3
+     * Deprecated-Since: 100000.0
+     * 
+     * @param locale
+     *                   Locale of the metadata items carrying chapter titles to be returned (supports the IETF BCP 47
      *                   specification).
-     * @param commonKeys Array of common keys of AVMetadataItem to be included; can be nil.
+     * @param commonKeys
+     *                   Array of common keys of AVMetadataItem to be included; can be nil.
      *                   AVMetadataCommonKeyArtwork is the only supported key for now.
      * @return An NSArray of AVTimedMetadataGroup.
      */
+    @Deprecated
     @Generated
     @Selector("chapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:")
     public native NSArray<? extends AVTimedMetadataGroup> chapterMetadataGroupsWithTitleLocaleContainingItemsWithCommonKeys(
@@ -297,11 +318,13 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * [@property] containsFragments
-     * <p>
+     * 
      * Indicates whether the asset is extended by at least one fragment.
-     * <p>
+     * 
      * For QuickTime movie files and MPEG-4 files, the value of this property is YES if canContainFragments is YES and
      * at least one 'moof' box is present after the 'moov' box.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("containsFragments")
@@ -318,6 +341,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * the asset in a form that can be converted to an NSDate, the dateValue property of the AVMetadataItem will provide
      * an instance of NSDate. Otherwise the creation date is available only as a string value, via -[AVMetadataItem
      * stringValue].
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("creationDate")
@@ -336,13 +361,15 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * [@property] hasProtectedContent
-     * <p>
+     * 
      * Indicates whether or not the asset has protected content.
-     * <p>
+     * 
      * Assets containing protected content may not be playable without successful authorization, even if the value of
      * the "playable" property is YES. See the properties in the AVAssetUsability category for details on how such an
      * asset may be used. On OS X, clients can use the interfaces in AVPlayerItemProtectedContentAdditions.h to request
      * authorization to play the asset.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("hasProtectedContent")
@@ -354,10 +381,12 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * [@property] compatibleWithAirPlayVideo
-     * <p>
+     * 
      * Indicates whether the asset is compatible with AirPlay Video.
-     * <p>
+     * 
      * YES if an AVPlayerItem initialized with the receiver can be played by an external device via AirPlay Video.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isCompatibleWithAirPlayVideo")
@@ -365,6 +394,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * indicates whether the receiver can be written to the saved photos album
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("isCompatibleWithSavedPhotosAlbum")
@@ -372,6 +403,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * indicates whether the receiver can be used to build an AVMutableComposition
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("isComposable")
@@ -379,6 +412,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * indicates whether an AVAssetExportSession can be used with the receiver for export
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("isExportable")
@@ -386,10 +421,12 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * [@property] playable
-     * <p>
+     * 
      * Indicates whether an AVPlayer can play the contents of the asset in a manner that meets user expectations.
-     * <p>
+     * 
      * A client can attempt playback when playable is NO, this however may lead to a substandard playback experience.
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("isPlayable")
@@ -397,6 +434,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * indicates whether an AVAssetReader can be used with the receiver for extracting media data
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("isReadable")
@@ -416,24 +455,28 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * mediaSelectionGroupForMediaCharacteristic:
-     * <p>
+     * 
      * Provides an instance of AVMediaSelectionGroup that contains one or more options with the specified media
      * characteristic.
-     * <p>
+     * 
      * Becomes callable without blocking when the key @"availableMediaCharacteristicsWithMediaSelectionOptions" has been
      * loaded.
-     * <p>
+     * 
      * If the asset has no AVMediaSelectionGroup containing options with the specified media characteristic, the return
      * value will be nil.
-     * <p>
+     * 
      * Filtering of the options in the returned AVMediaSelectionGroup according to playability, locale, and additional
      * media characteristics can be accomplished using the category AVMediaSelectionOptionFiltering defined on
      * AVMediaSelectionGroup.
-     *
-     * @param mediaCharacteristic A media characteristic for which you wish to obtain the available media selection
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * 
+     * @param mediaCharacteristic
+     *                            A media characteristic for which you wish to obtain the available media selection
      *                            options. AVMediaCharacteristicAudible, AVMediaCharacteristicLegible, and
      *                            AVMediaCharacteristicVisual are currently supported.
-     *                            <p>
+     * 
      *                            Pass AVMediaCharacteristicAudible to obtain the group of available options for audio
      *                            media in various languages and for various purposes, such as descriptive audio.
      *                            Pass AVMediaCharacteristicLegible to obtain the group of available options for
@@ -442,6 +485,7 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      *                            media.
      * @return An instance of AVMediaSelectionGroup. May be nil.
      */
+    @Deprecated
     @Generated
     @Selector("mediaSelectionGroupForMediaCharacteristic:")
     public native AVMediaSelectionGroup mediaSelectionGroupForMediaCharacteristic(String mediaCharacteristic);
@@ -451,6 +495,8 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
      * can be filtered according to language via +[AVMetadataItem
      * metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:] and according to identifier via
      * +[AVMetadataItem metadataItemsFromArray:filteredByIdentifier:].
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("metadata")
@@ -458,18 +504,23 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * metadataForFormat:
-     * <p>
+     * 
      * Provides an NSArray of AVMetadataItems, one for each metadata item in the container of the specified format; can
      * subsequently be filtered according to language via +[AVMetadataItem
      * metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:], according to locale via +[AVMetadataItem
      * metadataItemsFromArray:withLocale:], or according to key via +[AVMetadataItem
      * metadataItemsFromArray:withKey:keySpace:].
-     * <p>
+     * 
      * Becomes callable without blocking when the key @"availableMetadataFormats" has been loaded
-     *
-     * @param format The metadata format for which items are requested.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 100000.0
+     * 
+     * @param format
+     *               The metadata format for which items are requested.
      * @return An NSArray containing AVMetadataItems; may be empty if there is no metadata of the specified format.
      */
+    @Deprecated
     @Generated
     @Selector("metadataForFormat:")
     public native NSArray<? extends AVMetadataItem> metadataForFormat(String format);
@@ -477,6 +528,11 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
     /**
      * The following property is deprecated. Instead, use the naturalSize and preferredTransform, as appropriate, of the
      * receiver's video tracks. See -tracksWithMediaType: below.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 5.0
+     * Deprecated-Message: Use the naturalSize and preferredTransform, as appropriate, of the receiver's video tracks.
+     * See -tracksWithMediaType:
      */
     @Generated
     @Deprecated
@@ -486,13 +542,15 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * [@property] overallDurationHint
-     * <p>
+     * 
      * Indicates the total duration of fragments that either exist now or may be appended in the future in order to
      * extend the duration of the asset.
-     * <p>
+     * 
      * For QuickTime movie files and MPEG-4 files, the value of this property is obtained from the 'mehd' box of the
      * 'mvex' box, if present. If no total fragment duration hint is available, the value of this property is
      * kCMTimeInvalid.
+     * 
+     * API-Since: 10.2
      */
     @Generated
     @Selector("overallDurationHint")
@@ -501,9 +559,11 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * [@property] preferredMediaSelection
-     * <p>
+     * 
      * Provides an instance of AVMediaSelection with default selections for each of the receiver's media selection
      * groups.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("preferredMediaSelection")
@@ -542,12 +602,14 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * [@property] referenceRestrictions
-     * <p>
+     * 
      * Indicates the reference restrictions being used by the receiver.
-     * <p>
+     * 
      * For AVURLAsset, this property reflects the value passed in for AVURLAssetReferenceRestrictionsKey, if any. See
      * AVURLAssetReferenceRestrictionsKey below for a full discussion of reference restrictions. The default value for
      * this property is AVAssetReferenceRestrictionForbidLocalReferenceToRemote.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("referenceRestrictions")
@@ -561,11 +623,13 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * [@property] trackGroups
-     * <p>
+     * 
      * All track groups in the receiver.
-     * <p>
+     * 
      * The value of this property is an NSArray of AVAssetTrackGroups, each representing a different grouping of tracks
      * in the receiver.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("trackGroups")
@@ -573,21 +637,26 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * trackWithTrackID:
-     * <p>
+     * 
      * Provides an instance of AVAssetTrack that represents the track of the specified trackID.
-     * <p>
+     * 
      * Becomes callable without blocking when the key @"tracks" has been loaded
-     *
-     * @param trackID The trackID of the requested AVAssetTrack.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 100000.0
+     * 
+     * @param trackID
+     *                The trackID of the requested AVAssetTrack.
      * @return An instance of AVAssetTrack; may be nil if no track of the specified trackID is available.
      */
+    @Deprecated
     @Generated
     @Selector("trackWithTrackID:")
     public native AVAssetTrack trackWithTrackID(int trackID);
 
     /**
      * [@property] tracks
-     * <p>
+     * 
      * Provides the array of AVAssetTracks contained by the asset
      */
     @Generated
@@ -596,42 +665,59 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * tracksWithMediaCharacteristic:
-     * <p>
+     * 
      * Provides an array of AVAssetTracks of the asset that present media with the specified characteristic.
-     * <p>
+     * 
      * Becomes callable without blocking when the key @"tracks" has been loaded
-     *
-     * @param mediaCharacteristic The media characteristic according to which AVAsset filters its AVAssetTracks. (Media
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 100000.0
+     * 
+     * @param mediaCharacteristic
+     *                            The media characteristic according to which AVAsset filters its AVAssetTracks. (Media
      *                            characteristics are defined in AVMediaFormat.h.)
      * @return An NSArray of AVAssetTracks; may be empty if no tracks with the specified characteristic are available.
      */
+    @Deprecated
     @Generated
     @Selector("tracksWithMediaCharacteristic:")
     public native NSArray<? extends AVAssetTrack> tracksWithMediaCharacteristic(String mediaCharacteristic);
 
     /**
      * tracksWithMediaType:
-     * <p>
+     * 
      * Provides an array of AVAssetTracks of the asset that present media of the specified media type.
-     * <p>
+     * 
      * Becomes callable without blocking when the key @"tracks" has been loaded
-     *
-     * @param mediaType The media type according to which AVAsset filters its AVAssetTracks. (Media types are defined in
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 100000.0
+     * 
+     * @param mediaType
+     *                  The media type according to which AVAsset filters its AVAssetTracks. (Media types are defined in
      *                  AVMediaFormat.h.)
      * @return An NSArray of AVAssetTracks; may be empty if no tracks of the specified media type are available.
      */
+    @Deprecated
     @Generated
     @Selector("tracksWithMediaType:")
     public native NSArray<? extends AVAssetTrack> tracksWithMediaType(String mediaType);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("unusedTrackID")
     public native int unusedTrackID();
 
     /**
      * [@property] allMediaSelections
-     * <p>
+     * 
      * Provides an array of all permutations of AVMediaSelection for this asset.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allMediaSelections")
@@ -639,10 +725,12 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * [@property] minimumTimeOffsetFromLive
-     * <p>
+     * 
      * Indicates how close to the latest content in a live stream playback can be sustained.
-     * <p>
+     * 
      * For non-live assets this value is kCMTimeInvalid.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("minimumTimeOffsetFromLive")
@@ -651,10 +739,13 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * findUnusedTrackIDWithCompletionHandler:
-     * <p>
+     * 
      * Loads a track ID that will not collide with any existing track
-     *
-     * @param completionHandler A block that is invoked when loading is complete, vending the track ID or an error.
+     * 
+     * @param completionHandler
+     *                          A block that is invoked when loading is complete, vending the track ID or an error.
+     * 
+     *                          API-Since: 15.0
      */
     @Generated
     @Selector("findUnusedTrackIDWithCompletionHandler:")
@@ -670,29 +761,33 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * loadChapterMetadataGroupsBestMatchingPreferredLanguages:completionHandler:
-     * <p>
+     * 
      * Tests, in order of preference, for a match between language identifiers in the specified array of preferred
      * languages and the available chapter locales, and loads the array of chapters corresponding to the first match
      * that's found.
-     * <p>
+     * 
      * Returns an array of AVTimedMetadataGroup objects. Each object in the array always contains an AVMetadataItem
      * representing the chapter title; the timeRange property of the AVTimedMetadataGroup object is equal to the time
      * range of the chapter title item.
-     * <p>
+     * 
      * All of the available chapter metadata is included in the metadata groups, including items with the common key
      * AVMetadataCommonKeyArtwork, if such items are present. Items not carrying chapter titles will be added to an
      * existing AVTimedMetadataGroup object if the time range (timestamp and duration) of the metadata item and that of
      * the metadata group overlaps. The locale of such items need not match the locale of the chapter titles.
-     * <p>
+     * 
      * Further filtering of the metadata items in AVTimedMetadataGroups according to language can be accomplished using
      * +[AVMetadataItem metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:]; filtering of the
      * metadata items according to locale can be accomplished using +[AVMetadataItem
      * metadataItemsFromArray:withLocale:].
-     *
-     * @param preferredLanguages An array of language identifiers in order of preference, each of which is an IETF BCP
+     * 
+     * API-Since: 15.0
+     * 
+     * @param preferredLanguages
+     *                           An array of language identifiers in order of preference, each of which is an IETF BCP
      *                           47 (RFC 4646) language identifier. Use +[NSLocale preferredLanguages] to obtain the
      *                           user's list of preferred languages.
-     * @param completionHandler  A block that is invoked when loading is complete, vending the array of timed metadata
+     * @param completionHandler
+     *                           A block that is invoked when loading is complete, vending the array of timed metadata
      *                           groups or an error.
      */
     @Generated
@@ -711,28 +806,33 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * loadChapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:completionHandler:
-     * <p>
+     * 
      * Loads an array of chapters.
-     * <p>
+     * 
      * This method vends an array of AVTimedMetadataGroup objects. Each object in the array always contains an
      * AVMetadataItem representing the chapter title; the timeRange property of the AVTimedMetadataGroup object is equal
      * to the time range of the chapter title item.
-     * <p>
+     * 
      * An AVMetadataItem with the specified common key will be added to an existing AVTimedMetadataGroup object if the
      * time range (timestamp and duration) of the metadata item and the metadata group overlaps. The locale of items not
      * carrying chapter titles need not match the specified locale parameter.
-     * <p>
+     * 
      * Further filtering of the metadata items in AVTimedMetadataGroups according to language can be accomplished using
      * +[AVMetadataItem metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:]; filtering of the
      * metadata items according to locale can be accomplished using +[AVMetadataItem
      * metadataItemsFromArray:withLocale:].
-     *
-     * @param locale            Locale of the metadata items carrying chapter titles to be returned (supports the IETF
+     * 
+     * API-Since: 15.0
+     * 
+     * @param locale
+     *                          Locale of the metadata items carrying chapter titles to be returned (supports the IETF
      *                          BCP 47 specification).
-     * @param commonKeys        Array of common keys of AVMetadataItem to be included; if no common keys are required,
+     * @param commonKeys
+     *                          Array of common keys of AVMetadataItem to be included; if no common keys are required,
      *                          send an empty list.
      *                          AVMetadataCommonKeyArtwork is the only supported key for now.
-     * @param completionHandler A block that is invoked when loading is complete, vending the array of timed metadata
+     * @param completionHandler
+     *                          A block that is invoked when loading is complete, vending the array of timed metadata
      *                          groups or an error.
      */
     @Generated
@@ -751,28 +851,32 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * loadMediaSelectionGroupForMediaCharacteristic:completionHandler:
-     * <p>
+     * 
      * Loads an instance of AVMediaSelectionGroup that contains one or more options with the specified media
      * characteristic.
-     * <p>
+     * 
      * If the asset has no AVMediaSelectionGroup containing options with the specified media characteristic, the return
      * value will be nil.
-     * <p>
+     * 
      * Filtering of the options in the returned AVMediaSelectionGroup according to playability, locale, and additional
      * media characteristics can be accomplished using the category AVMediaSelectionOptionFiltering defined on
      * AVMediaSelectionGroup.
-     *
-     * @param mediaCharacteristic A media characteristic for which you wish to obtain the available media selection
+     * 
+     * API-Since: 15.0
+     * 
+     * @param mediaCharacteristic
+     *                            A media characteristic for which you wish to obtain the available media selection
      *                            options. AVMediaCharacteristicAudible, AVMediaCharacteristicLegible, and
      *                            AVMediaCharacteristicVisual are currently supported.
-     *                            <p>
+     * 
      *                            Pass AVMediaCharacteristicAudible to obtain the group of available options for audio
      *                            media in various languages and for various purposes, such as descriptive audio.
      *                            Pass AVMediaCharacteristicLegible to obtain the group of available options for
      *                            subtitles in various languages and for various purposes.
      *                            Pass AVMediaCharacteristicVisual to obtain the group of available options for video
      *                            media.
-     * @param completionHandler   A block that is invoked when loading is complete, vending an instance of
+     * @param completionHandler
+     *                            A block that is invoked when loading is complete, vending an instance of
      *                            AVMediaSelectionGroup (which may be nil) or an error.
      */
     @Generated
@@ -790,16 +894,20 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * loadMetadataForFormat:completionHandler:
-     * <p>
+     * 
      * Loads an NSArray of AVMetadataItems, one for each metadata item in the container of the specified format; can
      * subsequently be filtered according to language via +[AVMetadataItem
      * metadataItemsFromArray:filteredAndSortedAccordingToPreferredLanguages:], according to locale via +[AVMetadataItem
      * metadataItemsFromArray:withLocale:], or according to key via +[AVMetadataItem
      * metadataItemsFromArray:withKey:keySpace:].
-     *
-     * @param format            The metadata format for which items are requested.
-     * @param completionHandler A block that is invoked when loading is complete, vending the array of metadata items
+     * 
+     * @param format
+     *                          The metadata format for which items are requested.
+     * @param completionHandler
+     *                          A block that is invoked when loading is complete, vending the array of metadata items
      *                          (which may be empty if there is no metadata of the specified format) or an error.
+     * 
+     *                          API-Since: 15.0
      */
     @Generated
     @Selector("loadMetadataForFormat:completionHandler:")
@@ -815,12 +923,16 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * loadTrackWithTrackID:completionHandler:
-     * <p>
+     * 
      * Loads an instance of AVAssetTrack that represents the track of the specified trackID.
-     *
-     * @param trackID           The trackID of the requested AVAssetTrack.
-     * @param completionHandler A block that is called when the loading is finished, with either the loaded track (which
+     * 
+     * @param trackID
+     *                          The trackID of the requested AVAssetTrack.
+     * @param completionHandler
+     *                          A block that is called when the loading is finished, with either the loaded track (which
      *                          may be nil if no track of the specified trackID is available) or an error.
+     * 
+     *                          API-Since: 15.0
      */
     @Generated
     @Selector("loadTrackWithTrackID:completionHandler:")
@@ -836,14 +948,18 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * loadTracksWithMediaCharacteristic:completionHandler:
-     * <p>
+     * 
      * Loads an array of AVAssetTracks of the asset that present media with the specified characteristic.
-     *
-     * @param mediaCharacteristic The media characteristic according to which AVAsset filters its AVAssetTracks. (Media
+     * 
+     * @param mediaCharacteristic
+     *                            The media characteristic according to which AVAsset filters its AVAssetTracks. (Media
      *                            characteristics are defined in AVMediaFormat.h.)
-     * @param completionHandler   A block that is called when the loading is finished, with either the loaded tracks
+     * @param completionHandler
+     *                            A block that is called when the loading is finished, with either the loaded tracks
      *                            (which may be empty if no tracks with the specified characteristic are available) or
      *                            an error.
+     * 
+     *                            API-Since: 15.0
      */
     @Generated
     @Selector("loadTracksWithMediaCharacteristic:completionHandler:")
@@ -860,13 +976,17 @@ public class AVAsset extends NSObject implements NSCopying, AVAsynchronousKeyVal
 
     /**
      * loadTracksWithMediaType:completionHandler:
-     * <p>
+     * 
      * Loads an array of AVAssetTracks of the asset that present media of the specified media type.
-     *
-     * @param mediaType         The media type according to which AVAsset filters its AVAssetTracks. (Media types are
+     * 
+     * @param mediaType
+     *                          The media type according to which AVAsset filters its AVAssetTracks. (Media types are
      *                          defined in AVMediaFormat.h.)
-     * @param completionHandler A block that is called when the loading is finished, with either the loaded tracks
+     * @param completionHandler
+     *                          A block that is called when the loading is finished, with either the loaded tracks
      *                          (which may be empty if no tracks of the specified media type are available) or an error.
+     * 
+     *                          API-Since: 15.0
      */
     @Generated
     @Selector("loadTracksWithMediaType:completionHandler:")

@@ -182,6 +182,11 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 4.0
+     * Deprecated-Message: Use dateByAddingTimeInterval instead
+     */
     @Generated
     @Deprecated
     @Selector("addTimeInterval:")
@@ -199,6 +204,9 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("dateByAddingTimeInterval:")
     public native NSDate dateByAddingTimeInterval(double ti);
@@ -273,6 +281,9 @@ public class NSDate extends NSObject implements NSCopying, NSSecureCoding, CKRec
     @Selector("timeIntervalSinceReferenceDate")
     public native double timeIntervalSinceReferenceDate();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("now")
     public static native NSDate now();

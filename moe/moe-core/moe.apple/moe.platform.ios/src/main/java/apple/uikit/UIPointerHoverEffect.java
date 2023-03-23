@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Pointer retains the system shape while over the given view. Visual changes applied to the view are dictated by the
  * effect's properties.
+ * 
+ * API-Since: 13.4
  */
 @Generated
 @Library("UIKit")

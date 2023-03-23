@@ -41,6 +41,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INSetAudioSourceInCarIntentResponse is deprecated. There is no replacement.
+ */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)

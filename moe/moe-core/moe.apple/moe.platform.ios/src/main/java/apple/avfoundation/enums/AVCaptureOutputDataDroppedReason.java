@@ -5,9 +5,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVCaptureOutputDataDroppedReason
- * <p>
+ * 
  * Constants indicating the reason a capture data output dropped data.
- * <p>
+ * 
  * [@constant] AVCaptureOutputDataDroppedReasonNone
  * No data was dropped.
  * [@constant] AVCaptureOutputDataDroppedReasonLateData
@@ -19,6 +19,8 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] AVCaptureOutputDataDroppedReasonDiscontinuity
  * Data was dropped because the device providing the data experienced a discontinuity, and an unknown number of data
  * objects have been lost. This condition is typically caused by the system being too busy.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 public final class AVCaptureOutputDataDroppedReason {
@@ -26,8 +28,20 @@ public final class AVCaptureOutputDataDroppedReason {
     private AVCaptureOutputDataDroppedReason() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long LateData = 0x0000000000000001L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long OutOfBuffers = 0x0000000000000002L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long Discontinuity = 0x0000000000000003L;
 }

@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCMultiheadAttentionDescriptor
- * <p>
+ * 
  * The MLCMultiheadAttentionDescriptor specifies a Multi-Head Attention descriptor
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -102,7 +104,7 @@ public class MLCMultiheadAttentionDescriptor extends NSObject implements NSCopyi
 
     /**
      * A multi-head attention layer descriptor
-     *
+     * 
      * @param modelDimension total dimension of model space
      * @param headCount      number of parallel attention heads
      * @return A valid MultiheadAttention layer descriptor
@@ -114,7 +116,7 @@ public class MLCMultiheadAttentionDescriptor extends NSObject implements NSCopyi
 
     /**
      * A multi-head attention layer descriptor
-     *
+     * 
      * @param modelDimension     total dimension of model space
      * @param keyDimension       total dimension of key space. Default = modelDimension
      * @param valueDimension     total dimension of value space. Default = modelDimension

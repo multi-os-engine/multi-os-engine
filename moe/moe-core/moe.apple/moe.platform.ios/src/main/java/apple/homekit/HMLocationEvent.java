@@ -47,6 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * This class represents an event that is evaluated based on entry to and/or
  * exit from a Region
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("HomeKit")
@@ -164,8 +166,9 @@ public class HMLocationEvent extends HMEvent implements NSCopying, NSMutableCopy
 
     /**
      * Initializes a new location event object
-     *
+     * 
      * @param region - Region with at least one property of notifyOnEntry or notifyOnExit set to TRUE.
+     * 
      * @return Instance object representing the location event.
      */
     @Generated
@@ -182,12 +185,18 @@ public class HMLocationEvent extends HMEvent implements NSCopying, NSMutableCopy
 
     /**
      * Updates the region
-     *
+     * 
      * @param region     - New region with at least one property of notifyOnEntry or notifyOnExit set to TRUE.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
+     * 
+     *                   API-Since: 9.0
+     *                   Deprecated-Since: 11.0
+     *                   Deprecated-Message: No longer supported.
      */
+    @Deprecated
     @Generated
     @Selector("updateRegion:completionHandler:")
     public native void updateRegionCompletionHandler(CLRegion region,

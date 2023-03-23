@@ -46,10 +46,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMDeviceMotion
- * <p>
+ * 
  * Discussion:
  * A CMDeviceMotion object contains basic information about the device's
  * motion.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("CoreMotion")
@@ -167,7 +169,7 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * attitude
-     * <p>
+     * 
      * Discussion:
      * Returns the attitude of the device.
      */
@@ -177,7 +179,7 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * gravity
-     * <p>
+     * 
      * Discussion:
      * Returns the gravity vector expressed in the device's reference frame. Note
      * that the total acceleration of the device is equal to gravity plus
@@ -198,12 +200,14 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * magneticField
-     * <p>
+     * 
      * Discussion:
      * Returns the magnetic field vector with respect to the device for devices with a magnetometer.
      * Note that this is the total magnetic field in the device's vicinity without device
      * bias (Earth's magnetic field plus surrounding fields, without device bias),
      * unlike CMMagnetometerData magneticField.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("magneticField")
@@ -212,7 +216,7 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * rotationRate
-     * <p>
+     * 
      * Discussion:
      * Returns the rotation rate of the device for devices with a gyro.
      */
@@ -229,7 +233,7 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * userAcceleration
-     * <p>
+     * 
      * Discussion:
      * Returns the acceleration that the user is giving to the device. Note
      * that the total acceleration of the device is equal to gravity plus
@@ -242,11 +246,14 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * heading
-     * <p>
+     * 
      * Discussion:
      * Returns heading angle in the range [0,360) degrees with respect to the CMAttitude reference frame. A negative
      * value is returned
      * for CMAttitudeReferenceFrameXArbitraryZVertical and CMAttitudeReferenceFrameXArbitraryCorrectedZVertical.
+     * 
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("heading")
@@ -254,9 +261,12 @@ public class CMDeviceMotion extends CMLogItem {
 
     /**
      * sensorLocation
-     * <p>
+     * 
      * Discussion:
      * Returns the location of the sensors used to compute the device motion data.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("sensorLocation")

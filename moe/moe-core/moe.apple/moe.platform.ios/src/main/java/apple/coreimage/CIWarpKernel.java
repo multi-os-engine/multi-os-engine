@@ -17,7 +17,6 @@ limitations under the License.
 package apple.coreimage;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSError;
@@ -44,18 +43,21 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * CIWarpKernel is an object that encapsulates a Core Image Kernel Language
  * function that processes only the geometry of an image.
- * <p>
+ * 
  * Warp kernel functions are declared akin to this example:
  * kernel vec2 myWarpKernel (vec4 params)
- * <p>
+ * 
  * Additional arguments can be of type float, vec2, vec3, vec4.
  * The destination pixel location is obtained by calling destCoord().
  * The kernel should not call sample(), samplerCoord(), or samplerTransform().
  * The function must return a vec2 source location.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("CoreImage")
@@ -142,11 +144,18 @@ public class CIWarpKernel extends CIKernel {
      * On iOS8 [CIWarpKernel kernelWithString:] can return a CIKernel, CIColorKernel, or CIWarpKernel object.
      * On iOS9 [CIWarpKernel kernelWithString:] will return a CIWarpKernel object or nil.
      * On OS X [CIWarpKernel kernelWithString:] will return a CIWarpKernel object or nil.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Core Image Kernel Language API deprecated. (Define CI_SILENCE_GL_DEPRECATION to silence these
+     * warnings)
      */
+    @Deprecated
     @Generated
     @Selector("kernelWithString:")
     public static native CIWarpKernel kernelWithString(String string);
 
+    @Deprecated
     @Generated
     @Selector("kernelsWithString:")
     public static native NSArray<? extends CIKernel> kernelsWithString(String string);
@@ -183,16 +192,16 @@ public class CIWarpKernel extends CIKernel {
 
     /**
      * Apply the receiver CIWarpKernel to produce a new CIImage object.
-     * <p>
+     * 
      * The 'extent' is the bounding box of all pixel coordinates that are warped by the
      * kernel to fall within the extent of 'image'.
-     * <p>
+     * 
      * The 'image' is the input image that will be warped into a new image.
-     * <p>
+     * 
      * The 'callback' is a block that should return the rectangle of the input image
      * that is needed to produce a given rectangle in the coordinate space of the
      * new image.
-     * <p>
+     * 
      * The 'args' is an array of parameters needed to describe the warping function.
      * The object types of the items in the array correspond to the argument types of the
      * kernel function. For example, if the first argument in the kernel is a vec3,

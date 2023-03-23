@@ -22,38 +22,59 @@ import org.moe.natj.general.ann.NInt;
 /**
  * To check the app's access to contact data. Based upon the access, the app could
  * display or hide its UI elements that would access any AddressBook API.
- * <p>
+ * 
  * kABAuthorizationStatusNotDetermined
  * The user has not yet made a choice regarding whether this app can access the data class.
- * <p>
+ * 
  * kABAuthorizationStatusRestricted
  * This application is not authorized to access the data class. The user cannot change
  * this application’s status, possibly due to active restrictions such as parental controls
  * being in place.
- * <p>
+ * 
  * kABAuthorizationStatusDenied
  * The user explicitly denied access to the data class for this application.
- * <p>
+ * 
  * kABAuthorizationStatusAuthorized
  * This application is authorized to access the data class.
+ * 
+ * 
+ * API-Since: 2.0
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: use CNAuthorizationStatus
  */
 @Deprecated
 @Generated
 public final class ABAuthorizationStatus {
     /**
      * deprecated, use CNAuthorizationStatusNotDetermined
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: use CNAuthorizationStatus
      */
     @Deprecated @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
     /**
      * deprecated, use CNAuthorizationStatusRestricted
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: use CNAuthorizationStatus
      */
     @Deprecated @Generated @NInt public static final long Restricted = 0x0000000000000001L;
     /**
      * deprecated, use CNAuthorizationStatusDenied
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: use CNAuthorizationStatus
      */
     @Deprecated @Generated @NInt public static final long Denied = 0x0000000000000002L;
     /**
      * deprecated, use CNAuthorizationStatusAuthorized
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: use CNAuthorizationStatus
      */
     @Deprecated @Generated @NInt public static final long Authorized = 0x0000000000000003L;
 

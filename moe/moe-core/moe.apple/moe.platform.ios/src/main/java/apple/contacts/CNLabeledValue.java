@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A contact property that has a value and label.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -140,10 +142,10 @@ public class CNLabeledValue<_ValueType> extends NSObject implements NSCopying, N
 
     /**
      * Get a localized label.
-     * <p>
+     * 
      * Some labels are special keys representing generic labels. Use this to obtain a localized string for a label to
      * display to a user.
-     *
+     * 
      * @param label to localize.
      * @return The localized string if a Contacts framework defined label, otherwise just returns the label.
      */

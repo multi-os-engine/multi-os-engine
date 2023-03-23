@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -190,6 +193,8 @@ public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The element's subtitle.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSubtitle:")
@@ -197,6 +202,8 @@ public class UIMenuElement extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The element's subtitle.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("subtitle")

@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An anchor representing a planar surface in the world.
- * <p>
+ * 
  * Planes are defined in the X and Z direction, where Y is the surface’s normal.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ARKit")
@@ -153,6 +155,8 @@ public class ARPlaneAnchor extends ARAnchor {
 
     /**
      * Classification of the plane.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("classification")
@@ -161,6 +165,8 @@ public class ARPlaneAnchor extends ARAnchor {
 
     /**
      * Classification status of the plane.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("classificationStatus")
@@ -169,6 +175,8 @@ public class ARPlaneAnchor extends ARAnchor {
 
     /**
      * Geometry of the plane in the anchor's coordinate space.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("geometry")
@@ -184,6 +192,8 @@ public class ARPlaneAnchor extends ARAnchor {
 
     /**
      * Determines whether plane classification is supported on this device.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("isClassificationSupported")
@@ -198,4 +208,13 @@ public class ARPlaneAnchor extends ARAnchor {
     public boolean _supportsSecureCoding() {
         return supportsSecureCoding();
     }
+
+    /**
+     * The extent of the plane in the anchor’s coordinate space.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("planeExtent")
+    public native ARPlaneExtent planeExtent();
 }

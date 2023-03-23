@@ -24,11 +24,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAssetSegmentReport
- * <p>
+ * 
  * This class provides information on a segment data.
- * <p>
+ * 
  * Clients may get an instance of AVAssetSegmentReport through the
  * -assetWriter:didOutputSegmentData:segmentType:segmentReport: delegate method, which is defined in AVAssetWriter.h.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("AVFoundation")
@@ -133,7 +135,7 @@ public class AVAssetSegmentReport extends NSObject {
 
     /**
      * [@property] segmentType
-     * <p>
+     * 
      * A segment type of the segment data.
      */
     @Generated
@@ -151,7 +153,7 @@ public class AVAssetSegmentReport extends NSObject {
 
     /**
      * [@property] trackReports
-     * <p>
+     * 
      * Provides an array of AVAssetSegmentTrackReport in the segment data.
      */
     @Generated

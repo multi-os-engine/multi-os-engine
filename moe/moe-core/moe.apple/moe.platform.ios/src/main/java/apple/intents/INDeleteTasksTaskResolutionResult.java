@@ -22,6 +22,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INDeleteTasksTaskResolutionResult is deprecated. There is no replacement.
+ */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)

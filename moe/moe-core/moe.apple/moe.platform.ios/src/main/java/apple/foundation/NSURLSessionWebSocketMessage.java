@@ -23,6 +23,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The client can create a WebSocket message object that will be passed to the send calls
  * and will be delivered from the receive calls. The message can be initialized with data or string.
  * If initialized with data, the string property will be nil and vice versa.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Foundation")

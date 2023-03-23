@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A NSExtensionItem is an immutable collection of values representing different aspects of an item for the extension to
  * act upon.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Foundation")

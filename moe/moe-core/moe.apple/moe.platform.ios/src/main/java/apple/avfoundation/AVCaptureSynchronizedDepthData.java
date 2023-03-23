@@ -24,10 +24,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVCaptureSynchronizedDepthData
- * <p>
+ * 
  * An concrete subclass of AVCaptureSynchronizedData representing the data delivered by an AVCaptureDepthDataOutput.
- * <p>
+ * 
  * Depth data, like video, may be dropped if not serviced in a timely fashion.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("AVFoundation")
@@ -85,9 +87,9 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
 
     /**
      * [@property] depthData
-     * <p>
+     * 
      * An instance of AVDepthData.
-     * <p>
+     * 
      * If depthDataWasDropped is YES, the returned depthData was dropped before it could be delivered to you, and thus
      * this AVDepthData is a shell containing format information and calibration data, but no actual pixel map data.
      * This property is never nil. If a data output has no data to return, it is simply not present in the dictionary of
@@ -100,9 +102,9 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
 
     /**
      * [@property] depthDataWasDropped
-     * <p>
+     * 
      * YES if the depth data was dropped.
-     * <p>
+     * 
      * If YES, inspect -droppedReason for the reason.
      */
     @Generated
@@ -115,9 +117,9 @@ public class AVCaptureSynchronizedDepthData extends AVCaptureSynchronizedData {
 
     /**
      * [@property] droppedReason
-     * <p>
+     * 
      * If depthDataWasDropped is YES, the reason for the drop, otherwise AVCaptureOutputDataDroppedReasonNone.
-     * <p>
+     * 
      * AVCaptureOutputDataDroppedReasons are defined in AVCaptureOutputBase.h.
      */
     @Generated

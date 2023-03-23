@@ -28,11 +28,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXLocationActivityMetric
- * <p>
+ * 
  * An MXMetric subclass that encapsulates location metrics
- * <p>
+ * 
  * The metrics contained in this class describe properties of location activity. See MXAppRunTimeMetric for time spent
  * performing location activities.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetricKit")
@@ -86,9 +88,9 @@ public class MXLocationActivityMetric extends MXMetric {
 
     /**
      * [@property] cumulativeBestAccuracyForNavigationTime
-     * <p>
+     * 
      * Cumulative time spent acquiring location at kCLLocationAccuracyBestForNavigation.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
      */
     @Generated
@@ -97,9 +99,9 @@ public class MXLocationActivityMetric extends MXMetric {
 
     /**
      * [@property] cumulativeBestAccuracyTime
-     * <p>
+     * 
      * Cumulative time spent acquiring location at kCLLocationAccuracyBest.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
      */
     @Generated
@@ -108,9 +110,9 @@ public class MXLocationActivityMetric extends MXMetric {
 
     /**
      * [@property] cumulativeHundredMetersAccuracyTime
-     * <p>
+     * 
      * Cumulative time spent acquiring location at kCLLocationAccuracyHundredMeters.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
      */
     @Generated
@@ -119,9 +121,9 @@ public class MXLocationActivityMetric extends MXMetric {
 
     /**
      * [@property] cumulativeKilometerAccuracyTime
-     * <p>
+     * 
      * Cumulative time spent acquiring location at kCLLocationAccuracyKilometer.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
      */
     @Generated
@@ -130,9 +132,9 @@ public class MXLocationActivityMetric extends MXMetric {
 
     /**
      * [@property] cumulativeNearestTenMetersAccuracyTime
-     * <p>
+     * 
      * Cumulative time spent acquiring location at kCLLocationAccuracyNearestTenMeters.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
      */
     @Generated
@@ -141,9 +143,9 @@ public class MXLocationActivityMetric extends MXMetric {
 
     /**
      * [@property] cumulativeThreeKilometersAccuracyTime
-     * <p>
+     * 
      * Cumulative time spent acquiring location at kCLLocationAccuracyThreeKilometers.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
      */
     @Generated

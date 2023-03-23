@@ -44,8 +44,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Manages collection of one or more homes.
- * <p>
+ * 
  * This class is responsible for managing a collection of homes.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -159,8 +161,9 @@ public class HMHomeManager extends NSObject {
 
     /**
      * Adds a new home to the collection.
-     *
+     * 
      * @param homeName   Name of the home to create and add to the collection.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -180,7 +183,7 @@ public class HMHomeManager extends NSObject {
 
     /**
      * Array of HMHome objects that represents the homes associated with the home manager.
-     * <p>
+     * 
      * When a new home manager is created, this array is initialized as an empty array. It is
      * not guaranteed to be filled with the list of homes, represented as HMHome objects,
      * until the homeManagerDidUpdateHomes: delegate method has been invoked.
@@ -195,15 +198,21 @@ public class HMHomeManager extends NSObject {
 
     /**
      * The primary home for this collection.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 16.1
+     * Deprecated-Message: No longer supported.
      */
+    @Deprecated
     @Generated
     @Selector("primaryHome")
     public native HMHome primaryHome();
 
     /**
      * Removes an existing home from the collection.
-     *
+     * 
      * @param home       Home object that needs to be removed from the collection.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -237,12 +246,18 @@ public class HMHomeManager extends NSObject {
 
     /**
      * This method is used to change the primary home.
-     *
+     * 
      * @param home       New primary home.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
+     * 
+     *                   API-Since: 8.0
+     *                   Deprecated-Since: 16.1
+     *                   Deprecated-Message: No longer supported.
      */
+    @Deprecated
     @Generated
     @Selector("updatePrimaryHome:completionHandler:")
     public native void updatePrimaryHomeCompletionHandler(HMHome home,
@@ -271,8 +286,10 @@ public class HMHomeManager extends NSObject {
 
     /**
      * The current authorization status of the application.
-     * <p>
+     * 
      * The authorization is managed by the system, there is no need to explicitly request authorization.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("authorizationStatus")

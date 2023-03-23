@@ -23,6 +23,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * NSRelativeDateTimeFormatter provides locale-aware formatting of a relative date or time, such as "1 hour ago", "in 2
  * weeks", "yesterday", and "tomorrow." Note that the string produced by the formatter should only be used in a
  * standalone manner as it may not be grammatically correct to embed the string in longer strings.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Foundation")
@@ -159,7 +161,7 @@ public class NSRelativeDateTimeFormatter extends NSFormatter {
      * Convenience method for formatting a relative time represented by an NSDateComponents object. Negative component
      * values are evaluated as a date in the past. This method formats the value of the least granular unit in the
      * NSDateComponents object, and does not provide a compound format of the date component.
-     * <p>
+     * 
      * Note this method only supports the following components: year, month, week of month, day, hour, minute, and
      * second. The rest will be ignored.
      */

@@ -36,6 +36,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -158,10 +161,16 @@ public class NSCondition extends NSObject implements NSLocking {
     @Selector("lock")
     public native void lock();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);

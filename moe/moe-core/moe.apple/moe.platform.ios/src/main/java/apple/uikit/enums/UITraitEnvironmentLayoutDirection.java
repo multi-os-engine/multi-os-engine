@@ -24,11 +24,22 @@ import org.moe.natj.general.ann.NInt;
  * direction of views. To determine the effective layout direction of a view, consult the
  * UIView.effectiveUserInterfaceLayoutDirection property, whose values are members of the UIUserInterfaceLayoutDirection
  * enum.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class UITraitEnvironmentLayoutDirection {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Unspecified = 0xFFFFFFFFFFFFFFFFL;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long LeftToRight = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long RightToLeft = 0x0000000000000001L;
 
     @Generated

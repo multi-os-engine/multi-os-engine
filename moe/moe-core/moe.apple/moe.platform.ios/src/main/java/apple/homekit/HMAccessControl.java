@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The HMAccessControl class represents a generic access control.
+ * 
+ * API-Since: 11.2
  */
 @Generated
 @Library("HomeKit")

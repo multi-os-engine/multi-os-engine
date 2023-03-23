@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -137,15 +140,15 @@ public class UIDragItem extends NSObject {
 
     /**
      * Use `previewProvider` to change the preview for an item.
-     * <p>
+     * 
      * Each item is usually given a preview when the drag begins,
      * either by the UIDragInteractionDelegate's `-dragInteraction:previewForLiftingItem:session:`
      * method, or by creating a preview from the dragging view.
-     * <p>
+     * 
      * During the drag, applications may attempt to change the item's preview,
      * by setting `previewProvider` to a block that returns a preview.
      * It will be called when and if the system requests it.
-     * <p>
+     * 
      * To use the default preview, set `previewProvider` to nil.
      * To hide the preview, set `previewProvider` to a block that returns nil.
      */
@@ -179,15 +182,15 @@ public class UIDragItem extends NSObject {
 
     /**
      * Use `previewProvider` to change the preview for an item.
-     * <p>
+     * 
      * Each item is usually given a preview when the drag begins,
      * either by the UIDragInteractionDelegate's `-dragInteraction:previewForLiftingItem:session:`
      * method, or by creating a preview from the dragging view.
-     * <p>
+     * 
      * During the drag, applications may attempt to change the item's preview,
      * by setting `previewProvider` to a block that returns a preview.
      * It will be called when and if the system requests it.
-     * <p>
+     * 
      * To use the default preview, set `previewProvider` to nil.
      * To hide the preview, set `previewProvider` to a block that returns nil.
      */

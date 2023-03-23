@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("ReplayKit")
 @Runtime(ObjCRuntime.class)
@@ -36,7 +39,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface RPBroadcastControllerDelegate {
     /**
      * Called when broadcasting finishes due to an error.
-     *
+     * 
      * @param broadcastController The controller instance.
      * @param error               Required error in the RPRecordingErrorCode domain.
      */
@@ -49,7 +52,7 @@ public interface RPBroadcastControllerDelegate {
 
     /**
      * Called when the broadcast service has data to pass back to broadcasting app.
-     *
+     * 
      * @param broadcastController The controller instance.
      * @param serviceInfo         NSDictionary instance with keys and values defined by the broadcasting service.
      */
@@ -63,10 +66,12 @@ public interface RPBroadcastControllerDelegate {
 
     /**
      * Called when the broadcast service has updated broadcastURL.
-     *
+     * 
      * @param broadcastController The controller instance.
      * @param broadcastURL        NSURL instance with URL of the resource where broacast can be viewed. Defined by
      *                            broadcast service.
+     * 
+     *                            API-Since: 11.0
      */
     @Generated
     @IsOptional

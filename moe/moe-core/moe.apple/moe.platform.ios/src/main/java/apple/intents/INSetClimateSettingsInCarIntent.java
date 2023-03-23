@@ -43,6 +43,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INSetClimateSettingsInCarIntent is deprecated. There is no replacement.
+ */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -199,6 +205,11 @@ public class INSetClimateSettingsInCarIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INSetClimateSettingsInCarIntent initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithEnableFan:enableAirConditioner:enableClimateControl:enableAutoMode:airCirculationMode:fanSpeedIndex:fanSpeedPercentage:relativeFanSpeedSetting:temperature:relativeTemperatureSetting:climateZone:")
     public native INSetClimateSettingsInCarIntent initWithEnableFanEnableAirConditionerEnableClimateControlEnableAutoModeAirCirculationModeFanSpeedIndexFanSpeedPercentageRelativeFanSpeedSettingTemperatureRelativeTemperatureSettingClimateZone(
@@ -227,10 +238,16 @@ public class INSetClimateSettingsInCarIntent extends INIntent {
     @Selector("temperature")
     public native NSMeasurement<NSUnitTemperature> temperature();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("carName")
     public native INSpeakableString carName();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithEnableFan:enableAirConditioner:enableClimateControl:enableAutoMode:airCirculationMode:fanSpeedIndex:fanSpeedPercentage:relativeFanSpeedSetting:temperature:relativeTemperatureSetting:climateZone:carName:")
     public native INSetClimateSettingsInCarIntent initWithEnableFanEnableAirConditionerEnableClimateControlEnableAutoModeAirCirculationModeFanSpeedIndexFanSpeedPercentageRelativeFanSpeedSettingTemperatureRelativeTemperatureSettingClimateZoneCarName(

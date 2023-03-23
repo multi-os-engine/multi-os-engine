@@ -17,9 +17,6 @@ limitations under the License.
 package apple.javascriptcore;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSDate;
 import apple.foundation.NSDictionary;
@@ -48,19 +45,24 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * [@interface]
- * <p>
+ * 
  * A JSValue is a reference to a JavaScript value. Every JSValue
  * originates from a JSContext and holds a strong reference to it.
  * When a JSValue instance method creates a new JSValue, the new value
  * originates from the same JSContext.
- * <p>
+ * 
  * All JSValues values also originate from a JSVirtualMachine
  * (available indirectly via the context property). It is an error to pass a
  * JSValue to a method or property of a JSValue or JSContext originating from a
  * different JSVirtualMachine. Doing so will raise an Objective-C exception.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("JavaScriptCore")
@@ -169,7 +171,7 @@ public class JSValue extends NSObject {
 
     /**
      * Create a JavaScript value from a BOOL primitive.
-     *
+     * 
      * @param context The JSContext in which the resulting JSValue will be created.
      * @return The new JSValue representing the equivalent boolean value.
      */
@@ -179,7 +181,7 @@ public class JSValue extends NSObject {
 
     /**
      * Create a JavaScript value from a double primitive.
-     *
+     * 
      * @param context The JSContext in which the resulting JSValue will be created.
      * @return The new JSValue representing the equivalent boolean value.
      */
@@ -189,7 +191,7 @@ public class JSValue extends NSObject {
 
     /**
      * Create a JavaScript value from an <code>int32_t</code> primitive.
-     *
+     * 
      * @param context The JSContext in which the resulting JSValue will be created.
      * @return The new JSValue representing the equivalent boolean value.
      */
@@ -199,7 +201,7 @@ public class JSValue extends NSObject {
 
     /**
      * Creates a JSValue, wrapping its C API counterpart.
-     *
+     * 
      * @return The Objective-C API equivalent of the specified JSValueRef.
      */
     @Generated
@@ -208,7 +210,7 @@ public class JSValue extends NSObject {
 
     /**
      * Create a new, empty JavaScript array.
-     *
+     * 
      * @param context The JSContext in which the resulting array will be created.
      * @return The new JavaScript array.
      */
@@ -218,7 +220,7 @@ public class JSValue extends NSObject {
 
     /**
      * Create a new JavaScript error object.
-     *
+     * 
      * @param message The error message.
      * @param context The JSContext in which the resulting error object will be created.
      * @return The new JavaScript error object.
@@ -229,7 +231,7 @@ public class JSValue extends NSObject {
 
     /**
      * Create a new, empty JavaScript object.
-     *
+     * 
      * @param context The JSContext in which the resulting object will be created.
      * @return The new JavaScript object.
      */
@@ -239,7 +241,7 @@ public class JSValue extends NSObject {
 
     /**
      * Create a new JavaScript regular expression object.
-     *
+     * 
      * @param pattern The regular expression pattern.
      * @param flags   The regular expression flags.
      * @param context The JSContext in which the resulting regular expression object will be created.
@@ -252,7 +254,7 @@ public class JSValue extends NSObject {
 
     /**
      * Create the JavaScript value <code>null</code>.
-     *
+     * 
      * @param context The JSContext to which the resulting JSValue belongs.
      * @return The JSValue representing the JavaScript value <code>null</code>.
      */
@@ -262,11 +264,11 @@ public class JSValue extends NSObject {
 
     /**
      * [@methodgroup] Creating JavaScript Values
-     * <p>
+     * 
      * Create a JSValue by converting an Objective-C object.
-     * <p>
+     * 
      * The resulting JSValue retains the provided Objective-C object.
-     *
+     * 
      * @param value The Objective-C object to be converted.
      * @return The new JSValue.
      */
@@ -277,7 +279,7 @@ public class JSValue extends NSObject {
 
     /**
      * Create a JSValue from a CGPoint.
-     *
+     * 
      * @return A newly allocated JavaScript object containing properties
      *         named <code>x</code> and <code>y</code>, with values from the CGPoint.
      */
@@ -287,7 +289,7 @@ public class JSValue extends NSObject {
 
     /**
      * Create a JSValue from a NSRange.
-     *
+     * 
      * @return A newly allocated JavaScript object containing properties
      *         named <code>location</code> and <code>length</code>, with values from the NSRange.
      */
@@ -297,7 +299,7 @@ public class JSValue extends NSObject {
 
     /**
      * Create a JSValue from a CGRect.
-     *
+     * 
      * @return A newly allocated JavaScript object containing properties
      *         named <code>x</code>, <code>y</code>, <code>width</code>, and <code>height</code>, with values from the
      *         CGRect.
@@ -308,7 +310,7 @@ public class JSValue extends NSObject {
 
     /**
      * Create a JSValue from a CGSize.
-     *
+     * 
      * @return A newly allocated JavaScript object containing properties
      *         named <code>width</code> and <code>height</code>, with values from the CGSize.
      */
@@ -318,7 +320,7 @@ public class JSValue extends NSObject {
 
     /**
      * Create a JavaScript value from a <code>uint32_t</code> primitive.
-     *
+     * 
      * @param context The JSContext in which the resulting JSValue will be created.
      * @return The new JSValue representing the equivalent boolean value.
      */
@@ -328,7 +330,7 @@ public class JSValue extends NSObject {
 
     /**
      * Create the JavaScript value <code>undefined</code>.
-     *
+     * 
      * @param context The JSContext to which the resulting JSValue belongs.
      * @return The JSValue representing the JavaScript value <code>undefined</code>.
      */
@@ -343,9 +345,9 @@ public class JSValue extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * Returns the C API counterpart wrapped by a JSContext.
-     *
+     * 
      * @return The C API equivalent of this JSValue.
      */
     @Generated
@@ -354,12 +356,12 @@ public class JSValue extends NSObject {
 
     /**
      * [@methodgroup] Calling Functions and Constructors
-     * <p>
+     * 
      * Invoke a JSValue as a function.
-     * <p>
+     * 
      * In JavaScript, if a function doesn't explicitly return a value then it
      * implicitly returns the JavaScript value <code>undefined</code>.
-     *
+     * 
      * @param arguments The arguments to pass to the function.
      * @return The return value of the function call.
      */
@@ -369,9 +371,9 @@ public class JSValue extends NSObject {
 
     /**
      * Invoke a JSValue as a constructor.
-     * <p>
+     * 
      * This is equivalent to using the <code>new</code> syntax in JavaScript.
-     *
+     * 
      * @param arguments The arguments to pass to the constructor.
      * @return The return value of the constructor call.
      */
@@ -381,7 +383,7 @@ public class JSValue extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * The JSContext that this value originates from.
      */
     @Generated
@@ -390,7 +392,7 @@ public class JSValue extends NSObject {
 
     /**
      * Define properties with custom descriptors on JSValues.
-     * <p>
+     * 
      * This method may be used to create a data or accessor property on an object.
      * This method operates in accordance with the Object.defineProperty method in the JavaScript language. Starting
      * with macOS 10.15 and iOS 13, 'property' can be any 'id' and will be converted to a JSValue using the conversion
@@ -403,12 +405,12 @@ public class JSValue extends NSObject {
 
     /**
      * Delete a property from a JSValue.
-     * <p>
+     * 
      * Corresponds to the JavaScript operation <code>delete object[property]</code>. Starting with macOS 10.15 and iOS
      * 13, 'property' can be any 'id' and will be converted to a JSValue using the conversion rules of
      * <code>valueWithObject:inContext:</code>. Prior to macOS 10.15 and iOS 13, 'property' was expected to be an
      * NSString *.
-     *
+     * 
      * @return YES if deletion is successful, NO otherwise.
      */
     @Generated
@@ -417,14 +419,14 @@ public class JSValue extends NSObject {
 
     /**
      * Check if a JSValue has a property.
-     * <p>
+     * 
      * This method has the same function as the JavaScript operator <code>in</code>.
-     * <p>
+     * 
      * Corresponds to the JavaScript operation <code>property in object</code>. Starting with macOS 10.15 and iOS 13,
      * 'property' can be any 'id' and will be converted to a JSValue using the conversion rules of
      * <code>valueWithObject:inContext:</code>. Prior to macOS 10.15 and iOS 13, 'property' was expected to be an
      * NSString *.
-     *
+     * 
      * @return Returns YES if property is present on the value.
      */
     @Generated
@@ -437,11 +439,11 @@ public class JSValue extends NSObject {
 
     /**
      * Invoke a method on a JSValue.
-     * <p>
+     * 
      * Accesses the property named <code>method</code> from this value and
      * calls the resulting value as a function, passing this JSValue as the <code>this</code>
      * value along with the specified arguments.
-     *
+     * 
      * @param method    The name of the method to be invoked.
      * @param arguments The arguments to pass to the method.
      * @return The return value of the method call.
@@ -452,8 +454,10 @@ public class JSValue extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * Check if a JSValue is an array.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isArray")
@@ -461,7 +465,7 @@ public class JSValue extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * Check if a JSValue is a boolean.
      */
     @Generated
@@ -470,8 +474,10 @@ public class JSValue extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * Check if a JSValue is a date.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isDate")
@@ -493,7 +499,7 @@ public class JSValue extends NSObject {
 
     /**
      * Check if a JSValue is an instance of another object.
-     * <p>
+     * 
      * This method has the same function as the JavaScript operator <code>instanceof</code>.
      * If an object other than a JSValue is passed, it will first be converted according to
      * the aforementioned rules.
@@ -504,7 +510,7 @@ public class JSValue extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * Check if a JSValue corresponds to the JavaScript value <code>null</code>.
      */
     @Generated
@@ -513,9 +519,9 @@ public class JSValue extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * Check if a JSValue is a number.
-     * <p>
+     * 
      * In JavaScript, there is no differentiation between types of numbers.
      * Semantically all numbers behave like doubles except in special cases like bit
      * operations.
@@ -526,7 +532,7 @@ public class JSValue extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * Check if a JSValue is an object.
      */
     @Generated
@@ -535,7 +541,7 @@ public class JSValue extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * Check if a JSValue is a string.
      */
     @Generated
@@ -544,7 +550,7 @@ public class JSValue extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * Check if a JSValue corresponds to the JavaScript value <code>undefined</code>.
      */
     @Generated
@@ -570,7 +576,7 @@ public class JSValue extends NSObject {
 
     /**
      * Set an indexed (numerical) property on a JSValue.
-     * <p>
+     * 
      * For JSValues that are JavaScript arrays, indices greater than
      * UINT_MAX - 1 will not affect the length of the array.
      */
@@ -580,7 +586,7 @@ public class JSValue extends NSObject {
 
     /**
      * Set a property on a JSValue.
-     * <p>
+     * 
      * Corresponds to the JavaScript operation <code>object[property] = value</code>. Starting with macOS 10.15 and iOS
      * 13, 'property' can be any 'id' and will be converted to a JSValue using the conversion rules of
      * <code>valueWithObject:inContext:</code>. Prior to macOS 10.15 and iOS 13, 'property' was expected to be an
@@ -592,14 +598,14 @@ public class JSValue extends NSObject {
 
     /**
      * Convert a JSValue to a NSArray.
-     * <p>
+     * 
      * If the value is <code>null</code> or <code>undefined</code> then <code>nil</code> is returned.
      * If the value is not an object then a JavaScript TypeError will be thrown.
      * The property <code>length</code> is read from the object, converted to an unsigned
      * integer, and an NSArray of this size is allocated. Properties corresponding
-     * to indicies within the array bounds will be copied to the array, with
+     * to indices within the array bounds will be copied to the array, with
      * JSValues converted to equivalent Objective-C objects as specified.
-     *
+     * 
      * @return The NSArray containing the recursively converted contents of the
      *         converted JavaScript array.
      */
@@ -609,10 +615,10 @@ public class JSValue extends NSObject {
 
     /**
      * Convert a JSValue to a boolean.
-     * <p>
+     * 
      * The JSValue is converted to a boolean according to the rules specified
      * by the JavaScript language.
-     *
+     * 
      * @return The boolean result of the conversion.
      */
     @Generated
@@ -621,10 +627,10 @@ public class JSValue extends NSObject {
 
     /**
      * Convert a JSValue to a NSDate.
-     * <p>
+     * 
      * The value is converted to a number representing a time interval
      * since 1970 which is then used to create a new NSDate instance.
-     *
+     * 
      * @return The NSDate created using the converted time interval.
      */
     @Generated
@@ -633,12 +639,12 @@ public class JSValue extends NSObject {
 
     /**
      * Convert a JSValue to a NSDictionary.
-     * <p>
+     * 
      * If the value is <code>null</code> or <code>undefined</code> then <code>nil</code> is returned.
      * If the value is not an object then a JavaScript TypeError will be thrown.
      * All enumerable properties of the object are copied to the dictionary, with
      * JSValues converted to equivalent Objective-C objects as specified.
-     *
+     * 
      * @return The NSDictionary containing the recursively converted contents of
      *         the converted JavaScript object.
      */
@@ -648,10 +654,10 @@ public class JSValue extends NSObject {
 
     /**
      * Convert a JSValue to a double.
-     * <p>
+     * 
      * The JSValue is converted to a number according to the rules specified
      * by the JavaScript language.
-     *
+     * 
      * @return The double result of the conversion.
      */
     @Generated
@@ -660,10 +666,10 @@ public class JSValue extends NSObject {
 
     /**
      * Convert a JSValue to an <code>int32_t</code>.
-     * <p>
+     * 
      * The JSValue is converted to an integer according to the rules specified
      * by the JavaScript language.
-     *
+     * 
      * @return The <code>int32_t</code> result of the conversion.
      */
     @Generated
@@ -672,11 +678,11 @@ public class JSValue extends NSObject {
 
     /**
      * Convert a JSValue to a NSNumber.
-     * <p>
+     * 
      * If the JSValue represents a boolean, a NSNumber value of YES or NO
      * will be returned. For all other types the value will be converted to a number according
      * to the rules specified by the JavaScript language.
-     *
+     * 
      * @return The NSNumber result of the conversion.
      */
     @Generated
@@ -685,14 +691,14 @@ public class JSValue extends NSObject {
 
     /**
      * [@methodgroup] Converting to Objective-C Types
-     * <p>
+     * 
      * When converting between JavaScript values and Objective-C objects a copy is
      * performed. Values of types listed below are copied to the corresponding
      * types on conversion in each direction. For NSDictionaries, entries in the
      * dictionary that are keyed by strings are copied onto a JavaScript object.
      * For dictionaries and arrays, conversion is recursive, with the same object
      * conversion being applied to all entries in the collection.
-     *
+     * 
      * <pre>
      * 
      * @textblock
@@ -710,32 +716,32 @@ public class JSValue extends NSObject {
      *            Class (3) | Constructor object (3)
      * @/textblock
      *             </pre>
-     *             <p>
+     * 
      *             (1) Instances of NSBlock with supported arguments types will be presented to
      *             JavaScript as a callable Function object. For more information on supported
      *             argument types see JSExport.h. If a JavaScript Function originating from an
      *             Objective-C block is converted back to an Objective-C object the block will
      *             be returned. All other JavaScript functions will be converted in the same
      *             manner as a JavaScript object of type Object.
-     *             <p>
+     * 
      *             (2) For Objective-C instances that do not derive from the set of types listed
      *             above, a wrapper object to provide a retaining handle to the Objective-C
      *             instance from JavaScript. For more information on these wrapper objects, see
      *             JSExport.h. When a JavaScript wrapper object is converted back to Objective-C
      *             the Objective-C instance being retained by the wrapper is returned.
-     *             <p>
+     * 
      *             (3) For Objective-C Class objects a constructor object containing exported
      *             class methods will be returned. See JSExport.h for more information on
      *             constructor objects.
-     *             <p>
+     * 
      *             For all methods taking arguments of type id, arguments will be converted
      *             into a JavaScript value according to the above conversion.
-     *             <p>
+     * 
      *             Convert this JSValue to an Objective-C object.
-     *             <p>
+     * 
      *             The JSValue is converted to an Objective-C object according
      *             to the conversion rules specified above.
-     *
+     * 
      * @return The Objective-C representation of this JSValue.
      */
     @Generated
@@ -745,10 +751,10 @@ public class JSValue extends NSObject {
 
     /**
      * Convert a JSValue to an Objective-C object of a specific class.
-     * <p>
+     * 
      * The JSValue is converted to an Objective-C object of the specified Class.
      * If the result is not of the specified Class then <code>nil</code> will be returned.
-     *
+     * 
      * @return An Objective-C object of the specified Class or <code>nil</code>.
      */
     @Generated
@@ -758,10 +764,10 @@ public class JSValue extends NSObject {
 
     /**
      * Convert a JSValue to a CGPoint.
-     * <p>
+     * 
      * Reads the properties named <code>x</code> and <code>y</code> from
      * this JSValue, and converts the results to double.
-     *
+     * 
      * @return The new CGPoint.
      */
     @Generated
@@ -771,10 +777,10 @@ public class JSValue extends NSObject {
 
     /**
      * Convert a JSValue to an NSRange.
-     * <p>
+     * 
      * Reads the properties named <code>location</code> and
      * <code>length</code> from this JSValue and converts the results to double.
-     *
+     * 
      * @return The new NSRange.
      */
     @Generated
@@ -784,10 +790,10 @@ public class JSValue extends NSObject {
 
     /**
      * Convert a JSValue to a CGRect.
-     * <p>
+     * 
      * Reads the properties named <code>x</code>, <code>y</code>,
      * <code>width</code>, and <code>height</code> from this JSValue and converts the results to double.
-     *
+     * 
      * @return The new CGRect.
      */
     @Generated
@@ -797,10 +803,10 @@ public class JSValue extends NSObject {
 
     /**
      * Convert a JSValue to a CGSize.
-     * <p>
+     * 
      * Reads the properties named <code>width</code> and
      * <code>height</code> from this JSValue and converts the results to double.
-     *
+     * 
      * @return The new CGSize.
      */
     @Generated
@@ -810,10 +816,10 @@ public class JSValue extends NSObject {
 
     /**
      * Convert a JSValue to a NSString.
-     * <p>
+     * 
      * The JSValue is converted to a string according to the rules specified
      * by the JavaScript language.
-     *
+     * 
      * @return The NSString containing the result of the conversion.
      */
     @Generated
@@ -822,10 +828,10 @@ public class JSValue extends NSObject {
 
     /**
      * Convert a JSValue to a <code>uint32_t</code>.
-     * <p>
+     * 
      * The JSValue is converted to an integer according to the rules specified
      * by the JavaScript language.
-     *
+     * 
      * @return The <code>uint32_t</code> result of the conversion.
      */
     @Generated
@@ -834,7 +840,7 @@ public class JSValue extends NSObject {
 
     /**
      * Access an indexed (numerical) property on a JSValue.
-     *
+     * 
      * @return The JSValue for the property at the specified index.
      *         Returns the JavaScript value <code>undefined</code> if no property exists at that index.
      */
@@ -844,12 +850,12 @@ public class JSValue extends NSObject {
 
     /**
      * Access a property of a JSValue.
-     * <p>
+     * 
      * Corresponds to the JavaScript operation <code>object[property]</code>. Starting with macOS 10.15 and iOS 13,
      * 'property' can be any 'id' and will be converted to a JSValue using the conversion rules of
      * <code>valueWithObject:inContext:</code>. Prior to macOS 10.15 and iOS 13, 'property' was expected to be an
      * NSString *.
-     *
+     * 
      * @return The JSValue for the requested property or the JSValue <code>undefined</code>
      *         if the property does not exist.
      */
@@ -859,8 +865,10 @@ public class JSValue extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * Check if a JSValue is a symbol.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isSymbol")
@@ -868,12 +876,14 @@ public class JSValue extends NSObject {
 
     /**
      * Create a new promise object using the provided executor callback.
-     * <p>
+     * 
      * This method is equivalent to calling the Promise constructor in JavaScript. the resolve and reject callbacks each
      * normally take a single value, which they forward to all relevent pending reactions. While inside the executor
      * callback context will act as if it were in any other callback, except calleeFunction will be <code>nil</code>.
      * This also means means the new promise object may be accessed via <code>[context thisValue]</code>.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param callback A callback block invoked while the promise object is being initialized. The resolve and reject
      *                 parameters are functions that can be called to notify any pending reactions about the state of
      *                 the new promise object.
@@ -894,10 +904,12 @@ public class JSValue extends NSObject {
 
     /**
      * Create a new rejected promise object with the provided value.
-     * <p>
+     * 
      * This method is equivalent to calling <code>[JSValue valueWithNewPromiseFromExecutor:^(JSValue *resolve, JSValue
      * *reject) { [reject callWithArguments:@[reason]]; } inContext:context]</code>
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param reason  The result value to be passed to any reactions.
      * @param context The JSContext to which the resulting JSValue belongs.
      * @return The JSValue representing a new promise JavaScript object.
@@ -909,10 +921,12 @@ public class JSValue extends NSObject {
 
     /**
      * Create a new resolved promise object with the provided value.
-     * <p>
+     * 
      * This method is equivalent to calling <code>[JSValue valueWithNewPromiseFromExecutor:^(JSValue *resolve, JSValue
      * *reject) { [resolve callWithArguments:@[result]]; } inContext:context]</code>
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param result  The result value to be passed to any reactions.
      * @param context The JSContext to which the resulting JSValue belongs.
      * @return The JSValue representing a new promise JavaScript object.
@@ -924,10 +938,12 @@ public class JSValue extends NSObject {
 
     /**
      * Create a new, unique, symbol object.
-     *
+     * 
      * @param description The description of the symbol object being created.
      * @param context     The JSContext to which the resulting JSValue belongs.
      * @return The JSValue representing a unique JavaScript value with type symbol.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("valueWithNewSymbolFromDescription:inContext:")

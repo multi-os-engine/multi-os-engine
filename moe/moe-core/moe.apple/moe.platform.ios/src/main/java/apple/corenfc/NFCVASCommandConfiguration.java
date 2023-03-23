@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NFCVASCommandConfiguration
- * <p>
+ * 
  * Configuration for one GET VAS DATA command.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreNFC")
@@ -105,7 +107,7 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * initWithVASMode:passTypeIdentifier:url:
-     *
+     * 
      * @param mode               VAS operation mode
      * @param passTypeIdentifier Pass type identifier of the Wallet pass.
      * @param url                URL for VAR URL Only mode. Set to <i>nil</i> for VAS normal mode.
@@ -138,8 +140,10 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * [@property] mode
-     * <p>
+     * 
      * VAS protocol mode.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("mode")
@@ -153,9 +157,11 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * [@property] passTypeIdentifier
-     * <p>
+     * 
      * Wallet Pass Type Identifier of the Wallet Pass. The string value will be used to calculate the
      * Merchant ID value for the GET VAS DATA command.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("passTypeIdentifier")
@@ -171,8 +177,10 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * [@property] mode
-     * <p>
+     * 
      * VAS protocol mode.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMode:")
@@ -180,9 +188,11 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * [@property] passTypeIdentifier
-     * <p>
+     * 
      * Wallet Pass Type Identifier of the Wallet Pass. The string value will be used to calculate the
      * Merchant ID value for the GET VAS DATA command.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPassTypeIdentifier:")
@@ -190,9 +200,11 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * [@property] url
-     * <p>
+     * 
      * Merchant URL object. Maximum length of the URL is 64 characters, including the schema.
      * Set to nil to disable the merchant URL.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setUrl:")
@@ -208,9 +220,11 @@ public class NFCVASCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * [@property] url
-     * <p>
+     * 
      * Merchant URL object. Maximum length of the URL is 64 characters, including the schema.
      * Set to nil to disable the merchant URL.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("url")

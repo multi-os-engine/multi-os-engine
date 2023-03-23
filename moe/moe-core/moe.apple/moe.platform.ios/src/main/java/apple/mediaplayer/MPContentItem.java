@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * representation outside the client application. Examples of media items that a
  * developer might want to represent include song files, streaming audio URLs,
  * or radio stations.
+ * 
+ * API-Since: 7.1
  */
 @Generated
 @Library("MediaPlayer")
@@ -199,6 +201,8 @@ public class MPContentItem extends NSObject {
 
     /**
      * Represents whether this content item is explicit content
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isExplicitContent")
@@ -206,6 +210,8 @@ public class MPContentItem extends NSObject {
 
     /**
      * Represents whether this content item is explicit content
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setExplicitContent:")
@@ -236,6 +242,8 @@ public class MPContentItem extends NSObject {
     /**
      * Represents whether this content item is streaming content, i.e. from the cloud
      * where the content is not stored locally.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isStreamingContent")
@@ -244,6 +252,8 @@ public class MPContentItem extends NSObject {
     /**
      * Represents whether this content item is streaming content, i.e. from the cloud
      * where the content is not stored locally.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setStreamingContent:")

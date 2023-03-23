@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueSlatType
- * <p>
+ * 
  * [@constant] HMCharacteristicValueSlatTypeHorizontal Slat type is horizontal.
  * [@constant] HMCharacteristicValueSlatTypeVertical Slat type is vertical.
+ * 
+ * API-Since: 10.2
  */
 @Generated
 public final class HMCharacteristicValueSlatType {
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Horizontal = 0x0000000000000000L;
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Vertical = 0x0000000000000001L;
 
     @Generated

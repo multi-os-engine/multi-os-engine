@@ -39,6 +39,8 @@ public final class ModelIO {
 
     /**
      * Alembic file format, file extension ABC, UTI public.alembic
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -47,6 +49,8 @@ public final class ModelIO {
 
     /**
      * 3d Object file format, file extension OBJ, UTI public.geometry-definition-format
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -55,6 +59,8 @@ public final class ModelIO {
 
     /**
      * Polygon file format, file extension PLY, UTI public.polygon-file-format
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -63,6 +69,8 @@ public final class ModelIO {
 
     /**
      * Stereolithography file format, file extension STL, UTI public.standard-tesselated-geometry-format
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -71,6 +79,8 @@ public final class ModelIO {
 
     /**
      * Universal Scene Description file format, file extension USDA or USDC, UTI com.pixar.universal-scene-description
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -202,6 +212,8 @@ public final class ModelIO {
     /**
      * Universal Scene Description Mobile file format, file extension USDZ, UTI
      * com.pixar.universal-scene-description-mobile
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()

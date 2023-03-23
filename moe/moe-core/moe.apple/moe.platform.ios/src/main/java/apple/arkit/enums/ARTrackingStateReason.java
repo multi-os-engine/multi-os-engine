@@ -30,6 +30,8 @@ public final class ARTrackingStateReason {
     @Generated @NInt public static final long InsufficientFeatures = 0x0000000000000003L;
     /**
      * Tracking is limited due to a relocalization in progress.
+     * 
+     * API-Since: 11.3
      */
     @Generated @NInt public static final long Relocalizing = 0x0000000000000004L;
 }

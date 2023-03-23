@@ -34,6 +34,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request that requires an initial image as a starting point for its work.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -109,7 +111,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted CGImage.
-     *
+     * 
      * @param cgImage The CGImageRef of the targeted image.
      * @param options A dictionary with options specifying auxiliary information for the image.
      */
@@ -120,7 +122,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted CGImage.
-     *
+     * 
      * @param cgImage           The CGImageRef of the targeted image.
      * @param options           A dictionary with options specifying auxiliary information for the image.
      * @param completionHandler The block that is invoked when the request has been performed.
@@ -140,7 +142,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted CGImage.
-     *
+     * 
      * @param cgImage     The CGImageRef of the targeted image.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see
      *                    kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every
@@ -154,7 +156,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted CGImage.
-     *
+     * 
      * @param cgImage           The CGImageRef of the targeted image.
      * @param orientation       The orientation of the image/buffer based on the EXIF specification. For details see
      *                          kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes
@@ -177,7 +179,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted CIImage.
-     *
+     * 
      * @param ciImage The CIImage of the targeted image.
      * @param options A dictionary with options specifying auxiliary information for the image.
      */
@@ -188,7 +190,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted CIImage.
-     *
+     * 
      * @param ciImage           The CIImage of the targeted image.
      * @param options           A dictionary with options specifying auxiliary information for the image.
      * @param completionHandler The block that is invoked when the request has been performed.
@@ -208,7 +210,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted CIImage.
-     *
+     * 
      * @param ciImage     The CIImage of the targeted image.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see
      *                    kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every
@@ -222,7 +224,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted CIImage.
-     *
+     * 
      * @param ciImage           The CIImage of the targeted image.
      * @param orientation       The orientation of the image/buffer based on the EXIF specification. For details see
      *                          kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes
@@ -245,7 +247,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request that targets an image in a pixel buffer.
-     *
+     * 
      * @param pixelBuffer The pixel buffer containing the targeted image.
      * @param options     A dictionary with options specifying auxiliary information for the image.
      */
@@ -256,7 +258,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request that targets an image in a pixel buffer.
-     *
+     * 
      * @param pixelBuffer       The pixel buffer containing the targeted image.
      * @param options           A dictionary with options specifying auxiliary information for the image.
      * @param completionHandler The block that is invoked when the request has been performed.
@@ -276,7 +278,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request that targets an image in a pixel buffer.
-     *
+     * 
      * @param pixelBuffer The pixel buffer containing the targeted image.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see
      *                    kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every
@@ -290,7 +292,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request that targets an image in a pixel buffer.
-     *
+     * 
      * @param pixelBuffer       The pixel buffer containing the targeted image.
      * @param orientation       The orientation of the image/buffer based on the EXIF specification. For details see
      *                          kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes
@@ -313,7 +315,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted image data.
-     *
+     * 
      * @param imageData The data of the targeted image.
      * @param options   A dictionary with options specifying auxiliary information for the image.
      */
@@ -324,7 +326,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted image data.
-     *
+     * 
      * @param imageData         The data of the targeted image.
      * @param options           A dictionary with options specifying auxiliary information for the image.
      * @param completionHandler The block that is invoked when the request has been performed.
@@ -344,7 +346,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted image data.
-     *
+     * 
      * @param imageData   The data of the targeted image.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see
      *                    kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every
@@ -358,7 +360,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted image data.
-     *
+     * 
      * @param imageData         The data of the targeted image.
      * @param orientation       The orientation of the image/buffer based on the EXIF specification. For details see
      *                          kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes
@@ -381,7 +383,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted image URL.
-     *
+     * 
      * @param imageURL The URL of the targeted image.
      * @param options  A dictionary with options specifying auxiliary information for the image.
      */
@@ -392,7 +394,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted image URL.
-     *
+     * 
      * @param imageURL          The URL of the targeted image.
      * @param options           A dictionary with options specifying auxiliary information for the image.
      * @param completionHandler The block that is invoked when the request has been performed.
@@ -412,7 +414,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted image URL.
-     *
+     * 
      * @param imageURL    The URL of the targeted image.
      * @param orientation The orientation of the image/buffer based on the EXIF specification. For details see
      *                    kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes every
@@ -426,7 +428,7 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted image URL.
-     *
+     * 
      * @param imageURL          The URL of the targeted image.
      * @param orientation       The orientation of the image/buffer based on the EXIF specification. For details see
      *                          kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes
@@ -510,9 +512,11 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted CMSampleBuffer.
-     *
+     * 
      * @param sampleBuffer The CMSampleBuffer containing the CVImageBuffer to be used by the request.
      * @param options      A dictionary with options specifying auxiliary information for the image.
+     * 
+     *                     API-Since: 14.0
      */
     @Generated
     @Selector("initWithTargetedCMSampleBuffer:options:")
@@ -521,10 +525,12 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted CMSampleBuffer.
-     *
+     * 
      * @param sampleBuffer      The CMSampleBuffer containing the CVImageBuffer to be used by the request.
      * @param options           A dictionary with options specifying auxiliary information for the image.
      * @param completionHandler The block that is invoked after the request has been performed.
+     * 
+     *                          API-Since: 14.0
      */
     @Generated
     @Selector("initWithTargetedCMSampleBuffer:options:completionHandler:")
@@ -541,12 +547,14 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted CMSampleBuffer.
-     *
+     * 
      * @param sampleBuffer The CMSampleBuffer containing the CVImageBuffer to be used by the request.
      * @param orientation  The orientation of the image/buffer based on the EXIF specification. For details see
      *                     kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes
      *                     every other orientation information.
      * @param options      A dictionary with options specifying auxiliary information for the image.
+     * 
+     *                     API-Since: 14.0
      */
     @Generated
     @Selector("initWithTargetedCMSampleBuffer:orientation:options:")
@@ -555,13 +563,15 @@ public class VNTargetedImageRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a targeted CMSampleBuffer.
-     *
+     * 
      * @param sampleBuffer      The CMSampleBuffer containing the CVImageBuffer to be used by the request.
      * @param orientation       The orientation of the image/buffer based on the EXIF specification. For details see
      *                          kCGImagePropertyOrientation. The value has to be an integer from 1 to 8. This supersedes
      *                          every other orientation information.
      * @param options           A dictionary with options specifying auxiliary information for the image.
      * @param completionHandler The block that is invoked after the request has been performed.
+     * 
+     *                          API-Since: 14.0
      */
     @Generated
     @Selector("initWithTargetedCMSampleBuffer:orientation:options:completionHandler:")

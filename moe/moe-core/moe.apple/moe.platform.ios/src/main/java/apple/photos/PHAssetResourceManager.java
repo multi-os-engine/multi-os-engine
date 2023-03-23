@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -96,6 +99,9 @@ public class PHAssetResourceManager extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("defaultManager")
     public static native PHAssetResourceManager defaultManager();
@@ -156,6 +162,9 @@ public class PHAssetResourceManager extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("cancelDataRequest:")
     public native void cancelDataRequest(int requestID);
@@ -167,6 +176,8 @@ public class PHAssetResourceManager extends NSObject {
     /**
      * Handlers are called on an arbitrary serial queue. The lifetime of the data is not guaranteed beyond that of the
      * handler.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("requestDataForAssetResource:options:dataReceivedHandler:completionHandler:")
@@ -177,6 +188,8 @@ public class PHAssetResourceManager extends NSObject {
 
     /**
      * Handlers are called on an arbitrary serial queue.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("writeDataForAssetResource:toFile:options:completionHandler:")

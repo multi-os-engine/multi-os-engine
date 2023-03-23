@@ -45,10 +45,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEProxyServer
- * <p>
+ * 
  * The NEProxyServer class declares the programmatic interface for an object that contains settings for a proxy server.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -166,8 +168,10 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] address
-     * <p>
+     * 
      * The string representation of the proxy server IP address.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("address")
@@ -175,8 +179,10 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] authenticationRequired
-     * <p>
+     * 
      * A flag indicating if the server requires authentication credentials.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("authenticationRequired")
@@ -198,11 +204,13 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * initWithAddress:port:
-     * <p>
+     * 
      * This function initializes a newly-allocated NEProxyServer object
-     *
+     * 
      * @param address The string representation of the proxy server IP address.
      * @param port    The TCP port of the proxy server.
+     * 
+     *                API-Since: 9.0
      */
     @Generated
     @Selector("initWithAddress:port:")
@@ -214,10 +222,12 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] password
-     * <p>
+     * 
      * The password portion of the authentication credential to use when communicating with the proxy server. This
      * property is only saved persistently if the username property is non-nil and non-empty and if the
      * authenticationRequired flag is set.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("password")
@@ -225,8 +235,10 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] port
-     * <p>
+     * 
      * The TCP port of the proxy server.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("port")
@@ -235,8 +247,10 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] authenticationRequired
-     * <p>
+     * 
      * A flag indicating if the server requires authentication credentials.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAuthenticationRequired:")
@@ -244,10 +258,12 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] password
-     * <p>
+     * 
      * The password portion of the authentication credential to use when communicating with the proxy server. This
      * property is only saved persistently if the username property is non-nil and non-empty and if the
      * authenticationRequired flag is set.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPassword:")
@@ -255,8 +271,10 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] username
-     * <p>
+     * 
      * The username portion of the authentication credential to use when communicating with the proxy server.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setUsername:")
@@ -270,8 +288,10 @@ public class NEProxyServer extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] username
-     * <p>
+     * 
      * The username portion of the authentication credential to use when communicating with the proxy server.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("username")

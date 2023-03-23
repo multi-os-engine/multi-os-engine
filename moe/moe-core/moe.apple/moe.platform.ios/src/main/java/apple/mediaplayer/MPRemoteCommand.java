@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.1
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -155,7 +158,7 @@ public class MPRemoteCommand extends NSObject {
      * Actions receive an MPRemoteCommandEvent as the first parameter.
      * Targets are not retained by addTarget:action:, and should be removed from the
      * command when the target is deallocated.
-     * <p>
+     * 
      * Your selector should return a MPRemoteCommandHandlerStatus value when
      * possible. This allows the system to respond appropriately to commands that
      * may not have been able to be executed in accordance with the application's

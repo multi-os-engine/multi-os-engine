@@ -42,15 +42,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEOnDemandRuleEvaluateConnection
- * <p>
+ * 
  * The NEOnDemandRuleEvaluateConnection class declares the programmatic interface for an object that defines an On
  * Demand rule with the "Evaluate Connection" action.
- * <p>
+ * 
  * When rules of this class match, the properties of the network connection being established are matched against a set
  * of connection rules. The action of the matched rule (if any) is used to determine whether or not the VPN will be
  * started.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -168,9 +170,11 @@ public class NEOnDemandRuleEvaluateConnection extends NEOnDemandRule {
 
     /**
      * [@property] connectionRules
-     * <p>
+     * 
      * An array of NEEvaluateConnectionRule objects. Each NEEvaluateConnectionRule object is evaluated in order against
      * the properties of the network connection being established.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("connectionRules")
@@ -186,9 +190,11 @@ public class NEOnDemandRuleEvaluateConnection extends NEOnDemandRule {
 
     /**
      * [@property] connectionRules
-     * <p>
+     * 
      * An array of NEEvaluateConnectionRule objects. Each NEEvaluateConnectionRule object is evaluated in order against
      * the properties of the network connection being established.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setConnectionRules:")

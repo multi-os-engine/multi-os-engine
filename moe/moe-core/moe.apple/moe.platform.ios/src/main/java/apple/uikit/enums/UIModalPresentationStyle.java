@@ -22,18 +22,45 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class UIModalPresentationStyle {
     @Generated @NInt public static final long FullScreen = 0x0000000000000000L;
+    /**
+     * API-Since: 3.2
+     */
     @Generated @NInt public static final long PageSheet = 0x0000000000000001L;
+    /**
+     * API-Since: 3.2
+     */
     @Generated @NInt public static final long FormSheet = 0x0000000000000002L;
+    /**
+     * API-Since: 3.2
+     */
     @Generated @NInt public static final long CurrentContext = 0x0000000000000003L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Custom = 0x0000000000000004L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long OverFullScreen = 0x0000000000000005L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long OverCurrentContext = 0x0000000000000006L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Popover = 0x0000000000000007L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long None = 0xFFFFFFFFFFFFFFFFL;
 
     @Generated
     private UIModalPresentationStyle() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long Automatic = 0xFFFFFFFFFFFFFFFEL;
 }

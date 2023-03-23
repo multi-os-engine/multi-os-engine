@@ -28,11 +28,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageStatisticsMinAndMax
- * <p>
+ * 
  * The MPSImageStatisticsMinAndMax computes the minimum and maximum pixel values for a given region of an image.
  * The min and max values are written to the destination image at the following pixel locations:
  * - min value is written at pixel location (0, 0)
  * - max value is written at pixel location (1, 0)
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -86,14 +89,14 @@ public class MPSImageStatisticsMinAndMax extends MPSUnaryImageKernel {
 
     /**
      * [@property] clipRectSource
-     * <p>
+     * 
      * The source rectangle to use when reading data.
-     * <p>
+     * 
      * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
      * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
-     * <p>
+     * 
      * The clipRect specified in MPSUnaryImageKernel is used to control the origin in the destination texture
      * where the min, max values are written. The clipRect.width must be >=2. The clipRect.height must be >= 1.
      */
@@ -125,13 +128,13 @@ public class MPSImageStatisticsMinAndMax extends MPSUnaryImageKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
@@ -143,7 +146,7 @@ public class MPSImageStatisticsMinAndMax extends MPSUnaryImageKernel {
 
     /**
      * Specifies information to apply the statistics min-max operation on an image.
-     *
+     * 
      * @param device The device the filter will run on
      * @return A valid MPSImageStatisticsMinAndMax object or nil, if failure.
      */
@@ -187,14 +190,14 @@ public class MPSImageStatisticsMinAndMax extends MPSUnaryImageKernel {
 
     /**
      * [@property] clipRectSource
-     * <p>
+     * 
      * The source rectangle to use when reading data.
-     * <p>
+     * 
      * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSUnaryImageKernel offset parameter for this filter.
      * The latter is ignored. Default: MPSRectNoClip, use the entire source texture.
-     * <p>
+     * 
      * The clipRect specified in MPSUnaryImageKernel is used to control the origin in the destination texture
      * where the min, max values are written. The clipRect.width must be >=2. The clipRect.height must be >= 1.
      */

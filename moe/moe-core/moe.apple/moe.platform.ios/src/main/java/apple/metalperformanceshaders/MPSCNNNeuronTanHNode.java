@@ -24,11 +24,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A node representing a MPSCNNNeuronTanH kernel
- * <p>
+ * 
  * For each pixel, applies the following function:
  * [@code]
  * f(x) = a * tanh(b * x)
  * [@endcode]
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -106,12 +108,12 @@ public class MPSCNNNeuronTanHNode extends MPSCNNNeuronNode {
 
     /**
      * Init a node representing a MPSCNNNeuronTanH kernel
-     * <p>
+     * 
      * For each pixel, applies the following function:
      * [@code]
      * f(x) = a * tanh(b * x)
      * [@endcode]
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param a          See discussion above.
      * @param b          See discussion above.

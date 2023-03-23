@@ -33,10 +33,12 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] NSURLProtocolClient
- * <p>
+ * 
  * NSURLProtocolClient provides the interface to the URL
  * loading system that is intended for use by NSURLProtocol
  * implementors.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")
@@ -45,11 +47,11 @@ import org.moe.natj.objc.ann.Selector;
 public interface NSURLProtocolClient {
     /**
      * URLProtocol:cachedResponseIsValid:
-     * <p>
+     * 
      * Indicates to an NSURLProtocolClient that the protocol
      * implementation has examined a cached response and has
      * determined that it is valid.
-     *
+     * 
      * @param protocol       the NSURLProtocol object sending the message.
      * @param cachedResponse the NSCachedURLResponse object that has
      *                       examined and is valid.
@@ -60,9 +62,9 @@ public interface NSURLProtocolClient {
 
     /**
      * URLProtocol:didCancelAuthenticationChallenge:
-     * <p>
+     * 
      * Cancel authentication for the specified request
-     *
+     * 
      * @param protocol  The protocol object cancelling authentication.
      * @param challenge The authentication challenge.
      */
@@ -72,10 +74,10 @@ public interface NSURLProtocolClient {
 
     /**
      * URLProtocol:didFailWithError:
-     * <p>
+     * 
      * Indicates to an NSURLProtocolClient that the protocol
      * implementation has failed to load successfully.
-     *
+     * 
      * @param protocol the NSURLProtocol object sending the message.
      * @param error    The error that caused the load to fail.
      */
@@ -85,14 +87,14 @@ public interface NSURLProtocolClient {
 
     /**
      * URLProtocol:didLoadData:
-     * <p>
+     * 
      * Indicates to an NSURLProtocolClient that the protocol
      * implementation has loaded URL data.
-     * <p>
+     * 
      * The data object must contain only new data loaded since
      * the previous call to this method (if any), not cumulative data for
      * the entire load.
-     *
+     * 
      * @param protocol the NSURLProtocol object sending the message.
      * @param data     URL load data being made available.
      */
@@ -102,14 +104,14 @@ public interface NSURLProtocolClient {
 
     /**
      * URLProtocol:didReceiveAuthenticationChallenge:
-     * <p>
+     * 
      * Start authentication for the specified request
-     * <p>
+     * 
      * The protocol client guarantees that it will answer the
      * request on the same thread that called this method. It may add a
      * default credential to the challenge it issues to the connection delegate,
      * if the protocol did not provide one.
-     *
+     * 
      * @param protocol  The protocol object requesting authentication.
      * @param challenge The authentication challenge.
      */
@@ -119,10 +121,10 @@ public interface NSURLProtocolClient {
 
     /**
      * URLProtocol:didReceiveResponse:
-     * <p>
+     * 
      * Indicates to an NSURLProtocolClient that the protocol
      * implementation has created an NSURLResponse for the current load.
-     *
+     * 
      * @param protocol the NSURLProtocol object sending the message.
      * @param response the NSURLResponse object the protocol implementation
      *                 has created.
@@ -137,10 +139,10 @@ public interface NSURLProtocolClient {
 
     /**
      * URLProtocol:wasRedirectedToRequest:
-     * <p>
+     * 
      * Indicates to an NSURLProtocolClient that a redirect has
      * occurred.
-     *
+     * 
      * @param protocol the NSURLProtocol object sending the message.
      * @param request  the NSURLRequest to which the protocol implementation
      *                 has redirected.
@@ -152,10 +154,10 @@ public interface NSURLProtocolClient {
 
     /**
      * URLProtocolDidFinishLoading:
-     * <p>
+     * 
      * Indicates to an NSURLProtocolClient that the protocol
      * implementation has finished loading successfully.
-     *
+     * 
      * @param protocol the NSURLProtocol object sending the message.
      */
     @Generated

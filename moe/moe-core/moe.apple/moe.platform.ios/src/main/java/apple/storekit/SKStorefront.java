@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -74,6 +77,8 @@ public class SKStorefront extends NSObject {
 
     /**
      * The three letter country code for the current storefront
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("countryCode")
@@ -94,6 +99,8 @@ public class SKStorefront extends NSObject {
 
     /**
      * The App Store storefront identifier
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("identifier")

@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Represents the access control of a user associated with a home.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("HomeKit")

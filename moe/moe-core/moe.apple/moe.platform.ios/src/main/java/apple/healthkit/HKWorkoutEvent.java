@@ -48,8 +48,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKWorkoutEvent
- * <p>
+ * 
  * Represents a particular event that occurred during a workout.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -165,10 +167,20 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @Selector("workoutEventWithType:date:")
     public static native HKWorkoutEvent workoutEventWithTypeDate(@NInt long type, NSDate date);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @Selector("workoutEventWithType:date:metadata:")
     public static native HKWorkoutEvent workoutEventWithTypeDateMetadata(@NInt long type, NSDate date,
@@ -180,6 +192,11 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @Selector("date")
     public native NSDate date();
@@ -198,11 +215,13 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] metadata
-     * <p>
+     * 
      * Extra information describing properties of the receiver.
-     * <p>
+     * 
      * Keys must be NSString and values must be either NSString, NSNumber, NSDate, or
      * HKQuantity. See HKMetadata.h for potential metadata keys and values.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("metadata")
@@ -216,7 +235,7 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] workoutEventType
-     * <p>
+     * 
      * Represents the type of event that occurred during a workout.
      */
     @Generated
@@ -226,11 +245,13 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] dateInterval
-     * <p>
+     * 
      * Date interval representing the time period for which the event is valid.
-     * <p>
+     * 
      * Most event types only support date intervals with zero duration. Events of type HKWorkoutEventTypeLap
      * and HKWorkoutEventTypeSegment are currently the only events that support a nonzero duration.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dateInterval")
@@ -238,12 +259,14 @@ public class HKWorkoutEvent extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * workoutEventWithType:dateInterval:metadata:
-     * <p>
+     * 
      * Creates an event with a date interval with or without a duration.
-     *
+     * 
      * @param type         The type of event to create
      * @param dateInterval The dateInterval over which the event occurs
      * @param metadata     Dictionary of metadata associated with the event, nullable
+     * 
+     *                     API-Since: 11.0
      */
     @Generated
     @Selector("workoutEventWithType:dateInterval:metadata:")

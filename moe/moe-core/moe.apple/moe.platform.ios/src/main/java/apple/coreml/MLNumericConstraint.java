@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Allows enforcement of constraints on the values of update parameters.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreML")

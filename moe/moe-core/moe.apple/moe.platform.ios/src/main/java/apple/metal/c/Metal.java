@@ -37,6 +37,10 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.moe.natj.general.ann.NInt;
+import org.moe.natj.general.ann.UncertainArgument;
+import org.moe.natj.general.ptr.ConstVoidPtr;
+import org.moe.natj.general.ptr.VoidPtr;
 
 @Generated
 @Library("Metal")
@@ -83,11 +87,13 @@ public final class Metal {
 
     /**
      * Returns a reference to the preferred system default Metal device.
-     * <p>
+     * 
      * On Mac OS X systems that support automatic graphics switching, calling
      * this API to get a Metal device will cause the system to switch to the high power
      * GPU. On other systems that support more than one GPU it will return the GPU that
      * is associated with the main display.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -102,8 +108,10 @@ public final class Metal {
 
     /**
      * [@constant] MTLLibraryErrorDomain
-     * <p>
+     * 
      * NSErrors raised when creating a library.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -112,14 +120,19 @@ public final class Metal {
 
     /**
      * [@constant] MTLCommandBufferErrorDomain
-     * <p>
+     * 
      * An error domain for NSError objects produced by MTLCommandBuffer
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommandBufferErrorDomain();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Inline
     @CFunction
@@ -128,7 +141,7 @@ public final class Metal {
 
     /**
      * [@function] MTLCoordinate2DMake
-     * <p>
+     * 
      * Convenience function to create a 2D coordinate from 2 values.
      */
     @Generated
@@ -137,12 +150,18 @@ public final class Metal {
     @ByValue
     public static native MTLSamplePosition MTLCoordinate2DMake(float x, float y);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Inline
     @CFunction
     @ByValue
     public static native MTLTextureSwizzleChannels MTLTextureSwizzleChannelsMake(byte r, byte g, byte b, byte a);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Inline
     @CFunction
@@ -150,96 +169,153 @@ public final class Metal {
     public static native MTLIndirectCommandBufferExecutionRange MTLIndirectCommandBufferExecutionRangeMake(int location,
             int length);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCaptureErrorDomain();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommonCounterTimestamp();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommonCounterTessellationInputPatches();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommonCounterVertexInvocations();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommonCounterPostTessellationVertexInvocations();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommonCounterClipperInvocations();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommonCounterClipperPrimitivesOut();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommonCounterFragmentInvocations();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommonCounterFragmentsPassed();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommonCounterComputeKernelInvocations();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommonCounterTotalCycles();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommonCounterVertexCycles();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommonCounterTessellationCycles();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommonCounterPostTessellationVertexCycles();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommonCounterFragmentCycles();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommonCounterRenderTargetWriteCycles();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommonCounterSetTimestamp();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommonCounterSetStageUtilization();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -247,8 +323,10 @@ public final class Metal {
 
     /**
      * [@constant] MTLCounterErrorDomain
-     * <p>
+     * 
      * NSErrors raised when creating a counter sample buffer.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -259,17 +337,25 @@ public final class Metal {
      * Key in the userInfo for MTLCommandBufferError NSErrors. Value is an NSArray of MTLCommandBufferEncoderInfo
      * objects in recorded order if an appropriate MTLCommandBufferErrorOption was set, otherwise the key will not exist
      * in the userInfo dictionary.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLCommandBufferEncoderInfoErrorKey();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLDynamicLibraryDomain();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -280,4 +366,62 @@ public final class Metal {
     @CFunction
     @ByValue
     public static native MTLPackedFloat3 MTLPackedFloat3Make(float x, float y, float z);
+
+    /**
+     * [@function] MTLIOCompressionContextDefaultChunkSize
+     * 
+     * The default chunk size to use for a compression context.
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long MTLIOCompressionContextDefaultChunkSize();
+
+    /**
+     * [@function] MTLIOCreateCompressionContext
+     * 
+     * used to create a context that writes a stream of data to
+     * a path using a given codec and chunk size.
+     * 
+     * An invalid type will cause a nil to be returned. If path is
+     * invalid or fails to open a nil will be returned and errno will be set.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    public static native VoidPtr MTLIOCreateCompressionContext(
+            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String path,
+            @NInt long type, @NUInt long chunkSize);
+
+    /**
+     * [@function] MTLIOCompressionContextAppendData
+     * 
+     * append data to a compression context.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    public static native void MTLIOCompressionContextAppendData(VoidPtr context, ConstVoidPtr data, @NUInt long size);
+
+    /**
+     * [@function] MTLIOFlushAndDestroyCompressionContext
+     * 
+     * close the compression context and write the pack file.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    @NInt
+    public static native long MTLIOFlushAndDestroyCompressionContext(VoidPtr context);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String MTLIOErrorDomain();
 }

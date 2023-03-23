@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A MPSNNFilterNode representing a MPSCNNBinaryFullyConnected kernel
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -101,7 +103,7 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
 
     /**
      * Init a node representing a MPSCNNBinaryFullyConnected kernel
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param weights    A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
      *                   protocol. This object is provided by you to encapsulate storage for
@@ -150,7 +152,7 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
 
     /**
      * Init an autoreleased node representing a MPSCNNBinaryFullyConnected kernel
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param weights    A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
      *                   protocol. This object is provided by you to encapsulate storage for
@@ -189,7 +191,7 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
 
     /**
      * Init a node representing a MPSCNNBinaryFullyConnected kernel
-     *
+     * 
      * @param sourceNode       The MPSNNImageNode representing the source MPSImage for the filter
      * @param weights          A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
      *                         protocol. This object is provided by you to encapsulate storage for
@@ -205,6 +207,8 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
      * @param type             What kind of binarization strategy is to be used.
      * @param flags            See documentation of MPSCNNBinaryConvolutionFlags.
      * @return A new MPSNNFilter node for a MPSCNNBinaryFullyConnected kernel.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithSource:weights:outputBiasTerms:outputScaleTerms:inputBiasTerms:inputScaleTerms:type:flags:")
@@ -215,7 +219,7 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
 
     /**
      * Init an autoreleased node representing a MPSCNNBinaryFullyConnected kernel
-     *
+     * 
      * @param sourceNode       The MPSNNImageNode representing the source MPSImage for the filter
      * @param weights          A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
      *                         protocol. This object is provided by you to encapsulate storage for
@@ -231,6 +235,8 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
      * @param type             What kind of binarization strategy is to be used.
      * @param flags            See documentation of MPSCNNBinaryConvolutionFlags.
      * @return A new MPSNNFilter node for a MPSCNNBinaryFullyConnected kernel.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("nodeWithSource:weights:outputBiasTerms:outputScaleTerms:inputBiasTerms:inputScaleTerms:type:flags:")

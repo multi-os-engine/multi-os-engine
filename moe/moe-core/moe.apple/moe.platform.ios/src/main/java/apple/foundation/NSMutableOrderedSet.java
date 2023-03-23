@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Mutable Ordered Set ***************
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("Foundation")
@@ -230,6 +232,8 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
 
     /**
      * evaluate a predicate against an ordered set of objects and filter the mutable ordered set directly
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("filterUsingPredicate:")
@@ -366,6 +370,9 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
     @Selector("setObject:atIndex:")
     public native void setObjectAtIndex(@Mapped(ObjCObjectMapper.class) _ObjectType obj, @NUInt long idx);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setObject:atIndexedSubscript:")
     public native void setObjectAtIndexedSubscript(@Mapped(ObjCObjectMapper.class) _ObjectType obj, @NUInt long idx);
@@ -382,6 +389,8 @@ public class NSMutableOrderedSet<_ObjectType> extends NSOrderedSet<_ObjectType> 
 
     /**
      * sorts the ordered set itself
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("sortUsingDescriptors:")

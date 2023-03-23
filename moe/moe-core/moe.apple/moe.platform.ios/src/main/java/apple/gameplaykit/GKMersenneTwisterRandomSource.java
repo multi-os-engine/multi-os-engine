@@ -44,9 +44,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * A deterministic pseudo-random source that generates random numbers based on a mersenne twister algorithm.
  * This is a deterministic random source suitable for creating reliable gameplay mechanics.
  * It is slightly slower than an Arc4 source, but more random, in that it has a longer period until repeating sequences.
- * <p>
+ * 
  * While deterministic, this is not a cryptographic random source. It is however suitable
  * for obfuscation of gameplay data.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")

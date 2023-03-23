@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Represents a single language option option.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MediaPlayer")

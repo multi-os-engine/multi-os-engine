@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * EKVirtualConferenceDescriptor
- * <p>
+ * 
  * Describes a virtual conference.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("EventKit")
@@ -104,9 +106,9 @@ public class EKVirtualConferenceDescriptor extends NSObject {
 
     /**
      * initWithTitle:URLDescriptors:conferenceDetails:
-     * <p>
+     * 
      * Initializes an instance of EKVirtualConferenceDescriptor.
-     *
+     * 
      * @param title             A user-readable title describing this virtual conference. This string
      *                          may be displayed in the UI. This string is optional and may be left nil.
      * @param URLDescriptors    An array of EKVirtualConferenceURLDescriptors, representing the various

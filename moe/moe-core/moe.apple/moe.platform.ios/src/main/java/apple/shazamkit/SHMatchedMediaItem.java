@@ -29,11 +29,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@c] SHMatchedMediaItem represents metadata that has been matched against a @c SHCatalog
- * <p>
+ * 
  * Extra information is presented that can only be generated from a match. The properties provided here
  * that are not available on @c SHMediaItem are ephemeral and can differ each time there is a match of the @c
  * SHSignature that this
  * object represents
+ * 
+ * [@note] @c SHMatchedMediaItem is not intended to be subclassed
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("ShazamKit")
@@ -104,7 +108,7 @@ public class SHMatchedMediaItem extends SHMediaItem implements NSSecureCoding {
 
     /**
      * The frequency difference between the reference and sample audio
-     * <p>
+     * 
      * A value of 0.0 indicates the matched audio at the original frequency,
      * a value of 0.1 indicates 100hz is now 110hz
      */

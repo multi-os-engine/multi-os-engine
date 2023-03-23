@@ -28,12 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A picker that manages the system interfaces for choosing assets from the user's photos library and delivers the
- * results of those interactions to a delegate.
- * <p>
- * \c PHPickerViewController is intended to be used as-is and does not support subclassing. The view hierarchy for the
- * picker is private and must not be modified. A picker can only be presented once and should not be used for multiple
- * sessions.
+ * API-Since: 14.0
  */
 @Generated
 @Library("PhotosUI")
@@ -63,6 +58,7 @@ public class PHPickerViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native PHPickerViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -95,6 +91,8 @@ public class PHPickerViewController extends UIViewController {
 
     /**
      * The configuration passed in during initialization.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("configuration")
@@ -106,6 +104,8 @@ public class PHPickerViewController extends UIViewController {
 
     /**
      * The delegate to be notified.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("delegate")
@@ -131,6 +131,8 @@ public class PHPickerViewController extends UIViewController {
 
     /**
      * Initializes a new picker with the \c configuration the picker should use.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithConfiguration:")
@@ -176,6 +178,8 @@ public class PHPickerViewController extends UIViewController {
 
     /**
      * The delegate to be notified.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -183,6 +187,8 @@ public class PHPickerViewController extends UIViewController {
 
     /**
      * The delegate to be notified.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) PHPickerViewControllerDelegate value) {
@@ -208,4 +214,28 @@ public class PHPickerViewController extends UIViewController {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Deselects selected assets in the picker.
+     * 
+     * Does nothing if asset identifiers are invalid or not selected, or \c photoLibrary is not specified in the
+     * configuration.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("deselectAssetsWithIdentifiers:")
+    public native void deselectAssetsWithIdentifiers(NSArray<String> identifiers);
+
+    /**
+     * Reorders selected assets in the picker. A \c nil \c afterIdentifier means moving to the front.
+     * 
+     * Does nothing if asset identifiers are invalid or not selected, or \c photoLibrary is not specified in the
+     * configuration.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("moveAssetWithIdentifier:afterAssetWithIdentifier:")
+    public native void moveAssetWithIdentifierAfterAssetWithIdentifier(String identifier, String afterIdentifier);
 }

@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -40,7 +39,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
+/**
+ * API-Since: 3.2
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -214,11 +217,17 @@ public class UIPanGestureRecognizer extends UIGestureRecognizer {
     @Selector("initWithCoder:")
     public native UIPanGestureRecognizer initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("allowedScrollTypesMask")
     @NInt
     public native long allowedScrollTypesMask();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("setAllowedScrollTypesMask:")
     public native void setAllowedScrollTypesMask(@NInt long value);

@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Specifies which information the app wants to obtain about the subscriber's account.
  * You should only request the information you need to fulfill your contractual obligations.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("VideoSubscriberAccount")
@@ -271,6 +273,8 @@ public class VSAccountMetadataRequest extends NSObject {
      * The collection of authentication schemes that the app supports for this request.
      * This list may be used to determine compatibility of the app with providers.
      * Defaults to SAML.
+     * 
+     * API-Since: 10.2
      */
     @Generated
     @Selector("setSupportedAuthenticationSchemes:")
@@ -294,6 +298,8 @@ public class VSAccountMetadataRequest extends NSObject {
      * The collection of authentication schemes that the app supports for this request.
      * This list may be used to determine compatibility of the app with providers.
      * Defaults to SAML.
+     * 
+     * API-Since: 10.2
      */
     @Generated
     @Selector("supportedAuthenticationSchemes")
@@ -309,6 +315,8 @@ public class VSAccountMetadataRequest extends NSObject {
     /**
      * If non-empty, specifies providers which may be given more prominent placement
      * when choosing an account provider during authentication.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("featuredAccountProviderIdentifiers")
@@ -317,6 +325,8 @@ public class VSAccountMetadataRequest extends NSObject {
     /**
      * If non-empty, specifies providers which may be given more prominent placement
      * when choosing an account provider during authentication.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFeaturedAccountProviderIdentifiers:")
@@ -325,6 +335,8 @@ public class VSAccountMetadataRequest extends NSObject {
     /**
      * A value that an account provider application may set to pass an existing authentication session.
      * For use by TV Provider applications only.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("accountProviderAuthenticationToken")
@@ -333,6 +345,8 @@ public class VSAccountMetadataRequest extends NSObject {
     /**
      * A value that an account provider application may set to pass an existing authentication session.
      * For use by TV Provider applications only.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAccountProviderAuthenticationToken:")
@@ -340,6 +354,8 @@ public class VSAccountMetadataRequest extends NSObject {
 
     /**
      * Application-specific providers to be added to the list of account providers.
+     * 
+     * API-Since: 14.2
      */
     @Generated
     @Selector("applicationAccountProviders")
@@ -347,6 +363,8 @@ public class VSAccountMetadataRequest extends NSObject {
 
     /**
      * Application-specific providers to be added to the list of account providers.
+     * 
+     * API-Since: 14.2
      */
     @Generated
     @Selector("setApplicationAccountProviders:")

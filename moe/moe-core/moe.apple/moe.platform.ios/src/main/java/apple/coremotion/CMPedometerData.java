@@ -47,11 +47,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMPedometerData
- * <p>
+ * 
  * Discussion:
  * A description of the user's pedestrian activity. At a minimum this
  * object contains a step count. On supported platforms it also contains
  * distance, flights of stairs, pace, and cadence.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("CoreMotion")
@@ -169,20 +171,23 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
 
     /**
      * averageActivePace
-     * <p>
-     * <p>
+     * 
+     * 
      * Discussion:
-     * <p>
+     * 
      * For updates this returns the average active pace since
      * startPedometerUpdatesFromDate:withHandler:, in s/m (seconds per meter).
      * For historical queries this returns average active pace between startDate
      * and endDate. The average active pace omits the non-active time, giving
      * the average pace from when the user was moving. Value is nil if any of
      * the following are true:
-     * <p>
+     * 
      * (1) (For historical queries) this information is not available,
      * e.g. the user did not move between startDate and endDate;
      * (2) Unsupported platform.
+     * 
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("averageActivePace")
@@ -196,15 +201,18 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
 
     /**
      * currentCadence
-     * <p>
-     * <p>
+     * 
+     * 
      * Discussion:
      * For updates this returns the rate at which steps are taken, in steps per second.
      * Value is nil if any of the following are true:
-     * <p>
+     * 
      * (1) Information not yet available;
      * (2) Historical query;
      * (3) Unsupported platform.
+     * 
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("currentCadence")
@@ -212,15 +220,18 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
 
     /**
      * currentPace
-     * <p>
-     * <p>
+     * 
+     * 
      * Discussion:
      * For updates this returns the current pace, in s/m (seconds per meter).
      * Value is nil if any of the following are true:
-     * <p>
+     * 
      * (1) Information not yet available;
      * (2) Historical query;
      * (3) Unsupported platform.
+     * 
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("currentPace")
@@ -228,7 +239,7 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
 
     /**
      * distance
-     * <p>
+     * 
      * Discussion:
      * Estimated distance in meters traveled by the user while walking and
      * running. Value is nil unsupported platforms.
@@ -243,10 +254,10 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
 
     /**
      * endDate
-     * <p>
+     * 
      * Discussion:
      * The end time of the period for which the pedometer data is valid.
-     * <p>
+     * 
      * For updates this is the time for the most recent update. For historical
      * queries this is the end time requested.
      */
@@ -256,7 +267,7 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
 
     /**
      * floorsAscended
-     * <p>
+     * 
      * Discussion:
      * Approximate number of floors ascended by way of stairs. Value is nil
      * on unsupported platforms.
@@ -267,7 +278,7 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
 
     /**
      * floorsDescended
-     * <p>
+     * 
      * Discussion:
      * Approximate number of floors descended by way of stairs. Value is nil
      * on unsupported platforms.
@@ -286,7 +297,7 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
 
     /**
      * numberOfSteps
-     * <p>
+     * 
      * Discussion:
      * Number of steps taken by the user.
      */
@@ -296,10 +307,10 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
 
     /**
      * startDate
-     * <p>
+     * 
      * Discussion:
      * The start time of the period for which the pedometer data is valid.
-     * <p>
+     * 
      * This is the start time requested for the session or historical query.
      */
     @Generated

@@ -28,8 +28,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * OSLogEntryLog
- * <p>
+ * 
  * Entries made by the os_log API.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("OSLog")
@@ -141,8 +143,10 @@ public class OSLogEntryLog extends OSLogEntry implements OSLogEntryFromProcess, 
 
     /**
      * [@property] level
-     * <p>
+     * 
      * The level of the entry, e.g., info, debug.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("level")

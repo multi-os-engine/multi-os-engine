@@ -42,8 +42,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKDocumentSample
- * <p>
+ * 
  * An abstract class representing a health document.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("HealthKit")

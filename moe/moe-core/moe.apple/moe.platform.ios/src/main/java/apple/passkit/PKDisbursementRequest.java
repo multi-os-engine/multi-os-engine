@@ -56,6 +56,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * An amount is always required. If the disbursement amount is pending, the amount should be zero
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("amount")
@@ -85,6 +87,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * The merchant's ISO country code.
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("countryCode")
@@ -92,6 +96,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * Currency code for this disbursement. The currency code is required unless the requestType is future
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("currencyCode")
@@ -142,6 +148,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * Specifies if the disbursement is a one time request or a future request
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("requestSchedule")
@@ -158,6 +166,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * An amount is always required. If the disbursement amount is pending, the amount should be zero
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("setAmount:")
@@ -165,6 +175,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * The merchant's ISO country code.
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("setCountryCode:")
@@ -172,6 +184,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * Currency code for this disbursement. The currency code is required unless the requestType is future
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("setCurrencyCode:")
@@ -179,6 +193,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * Specifies if the disbursement is a one time request or a future request
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("setRequestSchedule:")
@@ -186,6 +202,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * The summary items are optional. The final amount summary item will be prepopulated by the amount specified above.
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("setSummaryItems:")
@@ -197,6 +215,8 @@ public class PKDisbursementRequest extends NSObject {
 
     /**
      * The summary items are optional. The final amount summary item will be prepopulated by the amount specified above.
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("summaryItems")

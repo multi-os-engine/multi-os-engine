@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -227,11 +230,16 @@ public class UIAccessibilityCustomAction extends NSObject {
     /**
      * Underlying attributed version of the "name" property. Setting this property will change the
      * value of the "name" property and vice-versa.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("attributedName")
     public native NSAttributedString attributedName();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithAttributedName:target:selector:")
     public native UIAccessibilityCustomAction initWithAttributedNameTargetSelector(NSAttributedString attributedName,
@@ -240,6 +248,8 @@ public class UIAccessibilityCustomAction extends NSObject {
     /**
      * Underlying attributed version of the "name" property. Setting this property will change the
      * value of the "name" property and vice-versa.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAttributedName:")
@@ -247,6 +257,8 @@ public class UIAccessibilityCustomAction extends NSObject {
 
     /**
      * If the actionHandler is set, it will be preferred over the target/selector.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("actionHandler")
@@ -260,6 +272,9 @@ public class UIAccessibilityCustomAction extends NSObject {
         boolean call_actionHandler_ret(UIAccessibilityCustomAction customAction);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithAttributedName:actionHandler:")
     public native UIAccessibilityCustomAction initWithAttributedNameActionHandler(NSAttributedString attributedName,
@@ -272,6 +287,9 @@ public class UIAccessibilityCustomAction extends NSObject {
         boolean call_initWithAttributedNameActionHandler(UIAccessibilityCustomAction customAction);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithName:actionHandler:")
     public native UIAccessibilityCustomAction initWithNameActionHandler(String name,
@@ -286,6 +304,8 @@ public class UIAccessibilityCustomAction extends NSObject {
 
     /**
      * If the actionHandler is set, it will be preferred over the target/selector.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setActionHandler:")
@@ -305,6 +325,9 @@ public class UIAccessibilityCustomAction extends NSObject {
     @Selector("image")
     public native UIImage image();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithAttributedName:image:actionHandler:")
     public native UIAccessibilityCustomAction initWithAttributedNameImageActionHandler(
@@ -318,12 +341,18 @@ public class UIAccessibilityCustomAction extends NSObject {
         boolean call_initWithAttributedNameImageActionHandler(UIAccessibilityCustomAction customAction);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithAttributedName:image:target:selector:")
     public native UIAccessibilityCustomAction initWithAttributedNameImageTargetSelector(
             NSAttributedString attributedName, UIImage image, @Mapped(ObjCObjectMapper.class) Object target,
             SEL selector);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithName:image:actionHandler:")
     public native UIAccessibilityCustomAction initWithNameImageActionHandler(String name, UIImage image,
@@ -336,6 +365,9 @@ public class UIAccessibilityCustomAction extends NSObject {
         boolean call_initWithNameImageActionHandler(UIAccessibilityCustomAction customAction);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithName:image:target:selector:")
     public native UIAccessibilityCustomAction initWithNameImageTargetSelector(String name, UIImage image,

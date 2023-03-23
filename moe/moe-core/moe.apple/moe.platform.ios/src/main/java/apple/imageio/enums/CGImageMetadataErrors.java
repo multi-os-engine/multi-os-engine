@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] CGImageMetadataErrors
- * <p>
+ * 
  * the list of all error codes returned under the error domain kCFErrorDomainCGImageMetadata
  */
 @Generated

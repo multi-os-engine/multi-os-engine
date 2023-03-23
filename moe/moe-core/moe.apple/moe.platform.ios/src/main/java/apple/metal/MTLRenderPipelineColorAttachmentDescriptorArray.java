@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -161,7 +164,7 @@ public class MTLRenderPipelineColorAttachmentDescriptorArray extends NSObject {
 
     /**
      * This always uses 'copy' semantics. It is safe to set the attachment state at any legal index to nil, which resets
-     * that attachment descriptor state to default vaules.
+     * that attachment descriptor state to default values.
      */
     @Generated
     @Selector("setObject:atIndexedSubscript:")

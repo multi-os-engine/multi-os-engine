@@ -32,6 +32,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * NLModelConfiguration is a class representing the metadata about a model, including specifying whether it is a
  * sequence or classifier model, what language it is intended to support, and what revision of the model training was
  * used to produce the model.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("NaturalLanguage")
@@ -89,6 +91,9 @@ public class NLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("currentRevisionForType:")
     @NUInt
@@ -143,6 +148,8 @@ public class NLModelConfiguration extends NSObject implements NSCopying, NSSecur
     /**
      * Most models will be trained to support tagging for a specific language, specified using a standard language
      * abbreviation.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("language")
@@ -168,6 +175,8 @@ public class NLModelConfiguration extends NSObject implements NSCopying, NSSecur
      * revisions for backward compatibility. A given revision will be supported for a number of system versions, but not
      * indefinitely, and the set of supported revisions can be used to determine whether a given revision is still
      * supported. Attempting to use a model from a revision that is no longer supported will fail with a suitable error.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("revision")
@@ -182,6 +191,9 @@ public class NLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("supportedRevisionsForType:")
     public static native NSIndexSet supportedRevisionsForType(@NInt long type);
@@ -196,6 +208,9 @@ public class NLModelConfiguration extends NSObject implements NSCopying, NSSecur
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("type")
     @NInt

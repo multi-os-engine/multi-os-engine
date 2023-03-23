@@ -47,7 +47,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * provides the content manager with a data source, which allows the media player
  * to browse the media content offered by the application, as well as a delegate,
  * which allows the media player to relay non-media remote playback commands to the application.
+ * 
+ * API-Since: 7.1
+ * Deprecated-Since: 14.0
+ * Deprecated-Message: Use CarPlay framework
  */
+@Deprecated
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -172,6 +177,12 @@ public class MPPlayableContentManager extends NSObject {
     @Selector("beginUpdates")
     public native void beginUpdates();
 
+    /**
+     * API-Since: 8.4
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
+     */
+    @Deprecated
     @Generated
     @Selector("context")
     public native MPPlayableContentManagerContext context();
@@ -199,7 +210,12 @@ public class MPPlayableContentManager extends NSObject {
 
     /**
      * Tells the content manager which MPContentItems are currently playing based on their identifiers.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @Generated
     @Selector("nowPlayingIdentifiers")
     public native NSArray<String> nowPlayingIdentifiers();
@@ -246,7 +262,12 @@ public class MPPlayableContentManager extends NSObject {
 
     /**
      * Tells the content manager which MPContentItems are currently playing based on their identifiers.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @Generated
     @Selector("setNowPlayingIdentifiers:")
     public native void setNowPlayingIdentifiers(NSArray<String> value);

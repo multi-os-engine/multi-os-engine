@@ -133,6 +133,9 @@ public class NSMachPort extends NSPort {
     @Selector("portWithMachPort:")
     public static native NSPort portWithMachPort(int machPort);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("portWithMachPort:options:")
     public static native NSPort portWithMachPortOptions(int machPort, @NUInt long f);
@@ -175,6 +178,9 @@ public class NSMachPort extends NSPort {
     @Selector("initWithMachPort:")
     public native NSMachPort initWithMachPort(int machPort);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithMachPort:options:")
     public native NSMachPort initWithMachPortOptions(int machPort, @NUInt long f);

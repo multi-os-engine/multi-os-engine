@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -74,6 +77,12 @@ public class PKAddShareablePassConfiguration extends PKAddSecureElementPassConfi
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Use configurationForPassMetadata:primaryAction:completion:
+     */
+    @Deprecated
     @Generated
     @Selector("configurationForPassMetadata:provisioningPolicyIdentifier:primaryAction:completion:")
     public static native void configurationForPassMetadataProvisioningPolicyIdentifierPrimaryActionCompletion(
@@ -141,6 +150,13 @@ public class PKAddShareablePassConfiguration extends PKAddSecureElementPassConfi
     @NUInt
     public native long primaryAction();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: provisioningPolicyIdentifier has been deprecated. You can stop setting this property in the
+     * init with no repercussions.
+     */
+    @Deprecated
     @Generated
     @Selector("provisioningPolicyIdentifier")
     public native String provisioningPolicyIdentifier();
@@ -165,4 +181,21 @@ public class PKAddShareablePassConfiguration extends PKAddSecureElementPassConfi
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("configurationForPassMetadata:primaryAction:completion:")
+    public static native void configurationForPassMetadataPrimaryActionCompletion(
+            NSArray<? extends PKShareablePassMetadata> passMetadata, @NUInt long action,
+            @ObjCBlock(name = "call_configurationForPassMetadataPrimaryActionCompletion") Block_configurationForPassMetadataPrimaryActionCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_configurationForPassMetadataPrimaryActionCompletion {
+        @Generated
+        void call_configurationForPassMetadataPrimaryActionCompletion(
+                PKAddShareablePassConfiguration shareableCredentialConfiguration, NSError error);
+    }
 }

@@ -27,15 +27,19 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.coremidi.struct.MIDIEventList;
+import org.moe.natj.general.ann.UncertainArgument;
 
 /**
  * AVAudioUnitMIDIInstrument
- * <p>
+ * 
  * Base class for sample synthesizers.
- * <p>
+ * 
  * This base class represents audio units of type kAudioUnitType_MusicDevice or kAudioUnitType_RemoteInstrument. This
  * can be used in a chain
  * that processes realtime input (live) and has general concept of music events i.e. notes.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -110,10 +114,11 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
 
     /**
      * initWithAudioComponentDescription:
-     * <p>
+     * 
      * initialize the node with the component description
-     *
-     * @param description audio component description structure that describes the audio component of type
+     * 
+     * @param description
+     *                    audio component description structure that describes the audio component of type
      *                    kAudioUnitType_MusicDevice
      *                    or kAudioUnitType_RemoteInstrument.
      */
@@ -199,14 +204,17 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
 
     /**
      * sendController:withValue:onChannel:
-     * <p>
+     * 
      * send a MIDI controller event to the instrument.
-     *
-     * @param controller a standard MIDI controller number.
+     * 
+     * @param controller
+     *                   a standard MIDI controller number.
      *                   Range: 0 -> 127
-     * @param value      value for the controller.
+     * @param value
+     *                   value for the controller.
      *                   Range: 0 -> 127
-     * @param channel    the channel number to which the event is sent.
+     * @param channel
+     *                   the channel number to which the event is sent.
      *                   Range: 0 -> 15
      */
     @Generated
@@ -215,11 +223,13 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
 
     /**
      * sendMIDIEvent:data1:
-     * <p>
+     * 
      * sends a MIDI event which contains one data byte to the instrument.
-     *
-     * @param midiStatus the STATUS value of the MIDI event
-     * @param data1      the first data byte of the MIDI event
+     * 
+     * @param midiStatus
+     *                   the STATUS value of the MIDI event
+     * @param data1
+     *                   the first data byte of the MIDI event
      */
     @Generated
     @Selector("sendMIDIEvent:data1:")
@@ -227,12 +237,15 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
 
     /**
      * sendMIDIEvent:data1:data2:
-     * <p>
+     * 
      * sends a MIDI event which contains two data bytes to the instrument.
-     *
-     * @param midiStatus the STATUS value of the MIDI event
-     * @param data1      the first data byte of the MIDI event
-     * @param data2      the second data byte of the MIDI event.
+     * 
+     * @param midiStatus
+     *                   the STATUS value of the MIDI event
+     * @param data1
+     *                   the first data byte of the MIDI event
+     * @param data2
+     *                   the second data byte of the MIDI event.
      */
     @Generated
     @Selector("sendMIDIEvent:data1:data2:")
@@ -240,10 +253,11 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
 
     /**
      * sendMIDISysExEvent:
-     * <p>
+     * 
      * sends a MIDI System Exclusive event to the instrument.
-     *
-     * @param midiData a NSData object containing the complete SysEx data including start(F0) and termination(F7) bytes.
+     * 
+     * @param midiData
+     *                 a NSData object containing the complete SysEx data including start(F0) and termination(F7) bytes.
      */
     @Generated
     @Selector("sendMIDISysExEvent:")
@@ -251,12 +265,14 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
 
     /**
      * sendPitchBend:onChannel:
-     * <p>
+     * 
      * sends MIDI Pitch Bend event to the instrument.
-     *
-     * @param pitchbend value of the pitchbend
+     * 
+     * @param pitchbend
+     *                  value of the pitchbend
      *                  Range: 0 -> 16383
-     * @param channel   the channel number to which the event is sent.
+     * @param channel
+     *                  the channel number to which the event is sent.
      *                  Range: 0 -> 15
      */
     @Generated
@@ -265,12 +281,14 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
 
     /**
      * sendPressure:onChannel:
-     * <p>
+     * 
      * sends MIDI channel pressure event to the instrument.
-     *
-     * @param pressure value of the pressure.
+     * 
+     * @param pressure
+     *                 value of the pressure.
      *                 Range: 0 -> 127
-     * @param channel  the channel number to which the event is sent.
+     * @param channel
+     *                 the channel number to which the event is sent.
      *                 Range: 0 -> 15
      */
     @Generated
@@ -279,14 +297,17 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
 
     /**
      * sendPressureForKey:withValue:onChannel:
-     * <p>
+     * 
      * sends MIDI Polyphonic key pressure event to the instrument
-     *
-     * @param key     the key (note) number to which the pressure event applies
+     * 
+     * @param key
+     *                the key (note) number to which the pressure event applies
      *                Range: 0 -> 127
-     * @param value   value of the pressure
+     * @param value
+     *                value of the pressure
      *                Range: 0 -> 127
-     * @param channel the channel number to which the event is sent.
+     * @param channel
+     *                the channel number to which the event is sent.
      *                Range: 0 -> 15
      */
     @Generated
@@ -295,16 +316,20 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
 
     /**
      * sendProgramChange:bankMSB:bankLSB:onChannel:
-     * <p>
+     * 
      * sends a MIDI Program Change and Bank Select events to the instrument
-     *
-     * @param program specifies the program (preset) number within the bank to load.
+     * 
+     * @param program
+     *                specifies the program (preset) number within the bank to load.
      *                Range: 0 -> 127
-     * @param bankMSB specifies the most significant byte value for the bank to select.
+     * @param bankMSB
+     *                specifies the most significant byte value for the bank to select.
      *                Range: 0 -> 127
-     * @param bankLSB specifies the least significant byte value for the bank to select.
+     * @param bankLSB
+     *                specifies the least significant byte value for the bank to select.
      *                Range: 0 -> 127
-     * @param channel the channel number to which the event is sent.
+     * @param channel
+     *                the channel number to which the event is sent.
      *                Range: 0 -> 15
      */
     @Generated
@@ -313,15 +338,17 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
 
     /**
      * sendProgramChange:onChannel:
-     * <p>
+     * 
      * sends MIDI Program Change event to the instrument
-     * <p>
+     * 
      * the instrument will be loaded from the bank that has been previous set by MIDI Bank Select
      * controller messages (0 and 31). If none has been set, bank 0 will be used.
-     *
-     * @param program the program number.
+     * 
+     * @param program
+     *                the program number.
      *                Range: 0 -> 127
-     * @param channel the channel number to which the event is sent.
+     * @param channel
+     *                the channel number to which the event is sent.
      *                Range: 0 -> 15
      */
     @Generated
@@ -379,14 +406,17 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
 
     /**
      * startNote:withVelocity:onChannel:
-     * <p>
+     * 
      * sends a MIDI Note On event to the instrument
-     *
-     * @param note     the note number (key) to play.
+     * 
+     * @param note
+     *                 the note number (key) to play.
      *                 Range: 0 -> 127
-     * @param velocity specifies the volume with which the note is played.
+     * @param velocity
+     *                 specifies the volume with which the note is played.
      *                 Range: 0 -> 127
-     * @param channel  the channel number to which the event is sent
+     * @param channel
+     *                 the channel number to which the event is sent
      *                 Range: 0 -> 15
      */
     @Generated
@@ -395,12 +425,14 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
 
     /**
      * stopNote:onChannel:
-     * <p>
+     * 
      * sends a MIDI Note Off event to the instrument
-     *
-     * @param note    the note number (key) to stop
+     * 
+     * @param note
+     *                the note number (key) to stop
      *                Range: 0 -> 127
-     * @param channel the channel number to which the event is sent.
+     * @param channel
+     *                the channel number to which the event is sent.
      *                Range: 0 -> 15
      */
     @Generated
@@ -419,4 +451,19 @@ public class AVAudioUnitMIDIInstrument extends AVAudioUnit implements AVAudioMix
     @Generated
     @Selector("volume")
     public native float volume();
+
+    /**
+     * sendMIDIEventList:eventList:
+     * 
+     * sends a MIDI event list to the instrument.
+     * 
+     * @param eventList
+     *                  the MIDIEventList
+     * 
+     *                  API-Since: 16.0
+     */
+    @Generated
+    @Selector("sendMIDIEventList:")
+    public native void sendMIDIEventList(
+            @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList eventList);
 }

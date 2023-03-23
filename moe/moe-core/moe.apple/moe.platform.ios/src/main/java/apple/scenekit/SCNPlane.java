@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNPlane
- * <p>
+ * 
  * SCNPlane represents a rectangle with controllable width and height. The plane has one visible side.
  */
 @Generated
@@ -151,9 +151,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * planeWithWidth:height:
-     * <p>
+     * 
      * Creates and returns a plane with given width and height.
-     *
+     * 
      * @param width  The width of the plane.
      * @param height The height of the plane.
      */
@@ -188,9 +188,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] cornerRadius
-     * <p>
+     * 
      * The corner radius. Animatable.
-     * <p>
+     * 
      * If the value is strictly less than 0, the geometry is empty. The default value is 0.
      */
     @Generated
@@ -200,9 +200,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] cornerSegmentCount
-     * <p>
+     * 
      * The number of subdivisions for the rounded corners. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 10.
      */
     @Generated
@@ -212,9 +212,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] height
-     * <p>
+     * 
      * The plane extent along the Y axis. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -224,9 +224,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] heightSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the Y axis. The default value is 1. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -244,9 +244,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] cornerRadius
-     * <p>
+     * 
      * The corner radius. Animatable.
-     * <p>
+     * 
      * If the value is strictly less than 0, the geometry is empty. The default value is 0.
      */
     @Generated
@@ -255,9 +255,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] cornerSegmentCount
-     * <p>
+     * 
      * The number of subdivisions for the rounded corners. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 10.
      */
     @Generated
@@ -266,9 +266,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] height
-     * <p>
+     * 
      * The plane extent along the Y axis. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -277,9 +277,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] heightSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the Y axis. The default value is 1. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -288,9 +288,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] width
-     * <p>
+     * 
      * The plane extent along the X axis. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -299,9 +299,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] widthSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the X axis. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -316,9 +316,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] width
-     * <p>
+     * 
      * The plane extent along the X axis. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -328,9 +328,9 @@ public class SCNPlane extends SCNGeometry {
 
     /**
      * [@property] widthSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the X axis. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated

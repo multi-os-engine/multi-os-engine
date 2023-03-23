@@ -32,6 +32,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("NaturalLanguage")
 @Runtime(ObjCRuntime.class)
@@ -82,10 +85,16 @@ public class NLEmbedding extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("containsString:")
     public native boolean containsString(String string);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("currentRevisionForLanguage:")
     @NUInt
@@ -99,21 +108,33 @@ public class NLEmbedding extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("dimension")
     @NUInt
     public native long dimension();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("distanceBetweenString:andString:distanceType:")
     public native double distanceBetweenStringAndStringDistanceType(String firstString, String secondString,
             @NInt long distanceType);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("embeddingWithContentsOfURL:error:")
     public static native NLEmbedding embeddingWithContentsOfURLError(NSURL url,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("enumerateNeighborsForString:maximumCount:distanceType:usingBlock:")
     public native void enumerateNeighborsForStringMaximumCountDistanceTypeUsingBlock(String string,
@@ -128,6 +149,9 @@ public class NLEmbedding extends NSObject {
                 BoolPtr stop);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("enumerateNeighborsForString:maximumCount:maximumDistance:distanceType:usingBlock:")
     public native void enumerateNeighborsForStringMaximumCountMaximumDistanceDistanceTypeUsingBlock(String string,
@@ -142,6 +166,9 @@ public class NLEmbedding extends NSObject {
                 double distance, BoolPtr stop);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("enumerateNeighborsForVector:maximumCount:distanceType:usingBlock:")
     public native void enumerateNeighborsForVectorMaximumCountDistanceTypeUsingBlock(NSArray<? extends NSNumber> vector,
@@ -156,6 +183,9 @@ public class NLEmbedding extends NSObject {
                 BoolPtr stop);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("enumerateNeighborsForVector:maximumCount:maximumDistance:distanceType:usingBlock:")
     public native void enumerateNeighborsForVectorMaximumCountMaximumDistanceDistanceTypeUsingBlock(
@@ -170,6 +200,9 @@ public class NLEmbedding extends NSObject {
                 double distance, BoolPtr stop);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("getVector:forString:")
     public native boolean getVectorForString(FloatPtr vector, String string);
@@ -204,25 +237,40 @@ public class NLEmbedding extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("language")
     public native String language();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("neighborsForString:maximumCount:distanceType:")
     public native NSArray<String> neighborsForStringMaximumCountDistanceType(String string, @NUInt long maxCount,
             @NInt long distanceType);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("neighborsForString:maximumCount:maximumDistance:distanceType:")
     public native NSArray<String> neighborsForStringMaximumCountMaximumDistanceDistanceType(String string,
             @NUInt long maxCount, double maxDistance, @NInt long distanceType);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("neighborsForVector:maximumCount:distanceType:")
     public native NSArray<String> neighborsForVectorMaximumCountDistanceType(NSArray<? extends NSNumber> vector,
             @NUInt long maxCount, @NInt long distanceType);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("neighborsForVector:maximumCount:maximumDistance:distanceType:")
     public native NSArray<String> neighborsForVectorMaximumCountMaximumDistanceDistanceType(
@@ -241,6 +289,9 @@ public class NLEmbedding extends NSObject {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("revision")
     @NUInt
@@ -254,10 +305,16 @@ public class NLEmbedding extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("supportedRevisionsForLanguage:")
     public static native NSIndexSet supportedRevisionsForLanguage(String language);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("vectorForString:")
     public native NSArray<? extends NSNumber> vectorForString(String string);
@@ -267,38 +324,62 @@ public class NLEmbedding extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("vocabularySize")
     @NUInt
     public native long vocabularySize();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("wordEmbeddingForLanguage:")
     public static native NLEmbedding wordEmbeddingForLanguage(String language);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("wordEmbeddingForLanguage:revision:")
     public static native NLEmbedding wordEmbeddingForLanguageRevision(String language, @NUInt long revision);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("writeEmbeddingForDictionary:language:revision:toURL:error:")
     public static native boolean writeEmbeddingForDictionaryLanguageRevisionToURLError(
             NSDictionary<String, ? extends NSArray<? extends NSNumber>> dictionary, String language,
             @NUInt long revision, NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("currentSentenceEmbeddingRevisionForLanguage:")
     @NUInt
     public static native long currentSentenceEmbeddingRevisionForLanguage(String language);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("sentenceEmbeddingForLanguage:")
     public static native NLEmbedding sentenceEmbeddingForLanguage(String language);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("sentenceEmbeddingForLanguage:revision:")
     public static native NLEmbedding sentenceEmbeddingForLanguageRevision(String language, @NUInt long revision);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("supportedSentenceEmbeddingRevisionsForLanguage:")
     public static native NSIndexSet supportedSentenceEmbeddingRevisionsForLanguage(String language);

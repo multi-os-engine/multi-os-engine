@@ -19,11 +19,36 @@ package apple.newsstandkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 5.0
+ * Deprecated-Since: 13.0
+ * Deprecated-Message: Use the Remote Notifications Background Modes instead:
+ * https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_updates_to_your_app_silently
+ */
+@Deprecated
 @Generated
 public final class NKIssueContentStatus {
-    @Generated @NInt public static final long None = 0x0000000000000000L;
-    @Generated @NInt public static final long Downloading = 0x0000000000000001L;
-    @Generated @NInt public static final long Available = 0x0000000000000002L;
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the Remote Notifications Background Modes instead:
+     * https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_updates_to_your_app_silently
+     */
+    @Deprecated @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the Remote Notifications Background Modes instead:
+     * https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_updates_to_your_app_silently
+     */
+    @Deprecated @Generated @NInt public static final long Downloading = 0x0000000000000001L;
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the Remote Notifications Background Modes instead:
+     * https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_updates_to_your_app_silently
+     */
+    @Deprecated @Generated @NInt public static final long Available = 0x0000000000000002L;
 
     @Generated
     private NKIssueContentStatus() {

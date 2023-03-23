@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -284,6 +287,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
      * The ride completed but there is feedback outstanding that the user may provide to the system. See
      * INSendRideFeedbackIntent.
      * If feedbackType includes INRideFeedbackTypeOptionTip, the .defaultTippingOptions should be set.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("completedWithOutstandingFeedbackType:")
@@ -291,6 +296,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     /**
      * Default options the user can choose from when adding a tip.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("defaultTippingOptions")
@@ -298,6 +305,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     /**
      * The type of feedback requested, if any.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("feedbackType")
@@ -306,6 +315,8 @@ public class INRideCompletionStatus extends NSObject implements NSCopying, NSSec
 
     /**
      * Default options the user can choose from when adding a tip.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDefaultTippingOptions:")

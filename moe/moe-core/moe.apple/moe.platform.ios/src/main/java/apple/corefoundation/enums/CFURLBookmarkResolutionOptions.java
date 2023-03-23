@@ -19,17 +19,30 @@ package apple.corefoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 public final class CFURLBookmarkResolutionOptions {
     /**
      * don't perform any user interaction during bookmark resolution
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long CFURLBookmarkResolutionWithoutUIMask = 0x0000000000000100L;
     /**
      * don't mount a volume during bookmark resolution
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long CFURLBookmarkResolutionWithoutMountingMask = 0x0000000000000200L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NUInt public static final long CFBookmarkResolutionWithoutUIMask = 0x0000000000000100L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NUInt public static final long CFBookmarkResolutionWithoutMountingMask = 0x0000000000000200L;
 
     @Generated
@@ -40,6 +53,8 @@ public final class CFURLBookmarkResolutionOptions {
      * Disable implicitly starting access of the ephemeral security-scoped resource during resolution. Instead, call
      * `CFURLStartAccessingSecurityScopedResource` on the returned URL when ready to use the resource. Not applicable to
      * security-scoped bookmarks.
+     * 
+     * API-Since: 14.2
      */
     @Generated @NUInt public static final long CFURLBookmarkResolutionWithoutImplicitStartAccessing = 0x0000000000008000L;
 }

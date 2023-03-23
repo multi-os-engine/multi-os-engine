@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * Recognition result receiver, to be used for complex or multi-utterance speech recognition requests
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Speech")

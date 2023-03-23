@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCTensorDescriptor
- * <p>
+ * 
  * The MLCTensorDescriptor specifies a tensor descriptor.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -64,9 +66,9 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] batchSizePerSequenceStep
-     * <p>
+     * 
      * The batch size for each sequence
-     * <p>
+     * 
      * We populate this only when sequenceLengths is valid. The length of this array should be
      * the maximum sequence length in sequenceLengths (i.e sequenceLengths[0]).
      */
@@ -94,9 +96,9 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensorDescriptor object
-     * <p>
+     * 
      * This method is provided as an easy to use API to create a bias tensor.
-     *
+     * 
      * @param featureChannelCount The number of input feature channels
      * @param dataType            The tensor data type
      * @return A new MLCTensorDescriptor object or nil if failure.
@@ -108,9 +110,9 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensorDescriptor object
-     * <p>
+     * 
      * This method is provided as an easy to use API to create a weight tensor for a kernel of size 1.
-     *
+     * 
      * @param inputFeatureChannelCount  The number of input feature channels
      * @param outputFeatureChannelCount The number of output feature channels
      * @param dataType                  The tensor data type
@@ -123,9 +125,9 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensorDescriptor object
-     * <p>
+     * 
      * This method is provided as an easy to use API to create a weight tensor.
-     *
+     * 
      * @param width                     The tensor width
      * @param height                    The tensor height
      * @param inputFeatureChannelCount  The number of input feature channels
@@ -147,7 +149,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] dataType
-     * <p>
+     * 
      * The tensor data type. The default is MLCDataTypeFloat32.
      */
     @Generated
@@ -164,7 +166,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensorDescriptor object
-     *
+     * 
      * @param shape    The tensor shape
      * @param dataType The tensor data type
      * @return A new MLCTensorDescriptor object or nil if failure.
@@ -176,9 +178,9 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensorDescriptor object
-     * <p>
+     * 
      * This method is provided as an easy to use API to create sequence tensors used by recurrent layers.
-     *
+     * 
      * @param shape           The tensor shape
      * @param sequenceLengths The sequence lengths in tensor
      * @param sortedSequences A boolean to indicate whether sequences are sorted
@@ -193,9 +195,9 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensorDescriptor object
-     * <p>
+     * 
      * This method is provided as an easy to use API to create [NCHW] tensors used by convolutional layers.
-     *
+     * 
      * @param width           The tensor width
      * @param height          The tensor height
      * @param featureChannels The number of feature channels
@@ -209,9 +211,9 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensorDescriptor object
-     * <p>
+     * 
      * This method is provided as an easy to use API to create [NCHW] tensors used by convolutional layers.
-     *
+     * 
      * @param width               The tensor width
      * @param height              The tensor height
      * @param featureChannelCount The number of feature channels
@@ -227,7 +229,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] dimensionCount
-     * <p>
+     * 
      * The number of dimensions in the tensor
      */
     @Generated
@@ -267,7 +269,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] maxTensorDimensions
-     * <p>
+     * 
      * The maximum number of tensor dimensions supported
      */
     @Generated
@@ -290,7 +292,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] sequenceLengths
-     * <p>
+     * 
      * TODO
      */
     @Generated
@@ -303,7 +305,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] shape
-     * <p>
+     * 
      * The size in each dimension
      */
     @Generated
@@ -312,7 +314,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] sortedSequences
-     * <p>
+     * 
      * Specifies whether the sequences are sorted or not.
      */
     @Generated
@@ -321,7 +323,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] stride
-     * <p>
+     * 
      * The stride in bytes in each dimension
      */
     @Generated
@@ -334,7 +336,7 @@ public class MLCTensorDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] tensorAllocationSizeInBytes
-     * <p>
+     * 
      * The allocation size in bytes for a tensor.
      */
     @Generated

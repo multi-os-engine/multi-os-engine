@@ -24,10 +24,14 @@ public final class MPSImageEdgeMode {
     /**
      * Out of bound pixels are (0,0,0,1) for image with pixel format without alpha channel
      * and (0,0,0,0) for image with pixel format that has an alpha channel
+     * 
+     * API-Since: 9.0
      */
     @Generated @NUInt public static final long Zero = 0x0000000000000000L;
     /**
      * Out of bound pixels are clamped to nearest edge pixel
+     * 
+     * API-Since: 9.0
      */
     @Generated @NUInt public static final long Clamp = 0x0000000000000001L;
 
@@ -39,6 +43,8 @@ public final class MPSImageEdgeMode {
      * Out of bound pixels are mirrored wrt. the nearest edge pixel center - ie. the edge of the image is not repeated.
      * NOTE: The only filter that currently supports this mode is @ref MPSNNPad - using this with other filters results
      * in undefined behavior.
+     * 
+     * API-Since: 12.1
      */
     @Generated @NUInt public static final long Mirror = 0x0000000000000002L;
     /**
@@ -46,12 +52,16 @@ public final class MPSImageEdgeMode {
      * repeated.
      * NOTE: The only filter that currently supports this mode is @ref MPSNNPad - using this with other filters results
      * in undefined behavior.
+     * 
+     * API-Since: 12.1
      */
     @Generated @NUInt public static final long MirrorWithEdge = 0x0000000000000003L;
     /**
      * Out of bound pixels are filled with a constant value defined by the filter.
      * NOTE: The only filter that currently supports this mode is @ref MPSNNPad - using this with other filters results
      * in undefined behavior.
+     * 
+     * API-Since: 12.1
      */
     @Generated @NUInt public static final long Constant = 0x0000000000000004L;
 }

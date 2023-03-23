@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVCaptureColorSpace
- * <p>
+ * 
  * Constants indicating active or supported video color space.
- * <p>
+ * 
  * [@constant] AVCaptureColorSpace_sRGB
  * The sGRB color space ( https://www.w3.org/Graphics/Color/srgb )
  * [@constant] AVCaptureColorSpace_P3_D65
@@ -31,15 +31,26 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] AVCaptureColorSpace_HLG_BT2020
  * The BT2020 wide color space which uses Illuminant D65 as the white point and Hybrid Log-Gamma as the transfer
  * function.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class AVCaptureColorSpace {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long _sRGB = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long _P3_D65 = 0x0000000000000001L;
 
     @Generated
     private AVCaptureColorSpace() {
     }
 
+    /**
+     * API-Since: 14.1
+     */
     @Generated @NInt public static final long _HLG_BT2020 = 0x0000000000000002L;
 }

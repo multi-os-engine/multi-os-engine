@@ -27,9 +27,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSUUID;
 
 /**
  * A session configuration that enables interaction with supported accessories.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("NearbyInteraction")
@@ -51,7 +54,7 @@ public class NINearbyAccessoryConfiguration extends NIConfiguration {
 
     /**
      * The discovery token identifying the accessory device for this session configuration.
-     * <p>
+     * 
      * NINearbyObject updates for this accessory will contain this discovery token.
      */
     @Generated
@@ -113,7 +116,7 @@ public class NINearbyAccessoryConfiguration extends NIConfiguration {
 
     /**
      * Create a new nearby accessory configuration using data received from the accessory.
-     *
+     * 
      * @param data  Configuration data received from the accessory.
      * @param error An optional out error parameter that will be populated with an error if the provided data is invalid
      *              or unsupported.
@@ -179,4 +182,54 @@ public class NINearbyAccessoryConfiguration extends NIConfiguration {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Create a new nearby accessory configuration for an accessory that is also a paired Bluetooth device
+     * 
+     * The accessory must be a Bluetooth LE peripheral that is paired, actively connected, and implements the Nearby
+     * Interaction Service and Accessory Configuration Characteristic.
+     * 
+     * API-Since: 16.0
+     * 
+     * @param accessoryData           Configuration data received from the accessory
+     * @param bluetoothPeerIdentifier The accessory's Bluetooth identifier
+     * @param error                   An optional out error parameter that will be populated with an error if the
+     *                                provided inputs are invalid or unsupported.
+     */
+    @Generated
+    @Selector("initWithAccessoryData:bluetoothPeerIdentifier:error:")
+    public native NINearbyAccessoryConfiguration initWithAccessoryDataBluetoothPeerIdentifierError(NSData accessoryData,
+            NSUUID identifier, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    /**
+     * Enables camera assistance during the NISession run with this configuration
+     * 
+     * If YES, optionally call -setARSession: on the NISession before calling -runWithConfiguration:
+     * If YES and setARSession: is not called, an ARSession will automatically be created
+     * If YES and the platform does not support camera assistance, the NISession will generate an error when
+     * runWithConfiguration: is called
+     * [@note] Check supportsCameraAssistance property in NIDeviceCapability returned from deviceCapabilities properties
+     * on NISession
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isCameraAssistanceEnabled")
+    public native boolean isCameraAssistanceEnabled();
+
+    /**
+     * Enables camera assistance during the NISession run with this configuration
+     * 
+     * If YES, optionally call -setARSession: on the NISession before calling -runWithConfiguration:
+     * If YES and setARSession: is not called, an ARSession will automatically be created
+     * If YES and the platform does not support camera assistance, the NISession will generate an error when
+     * runWithConfiguration: is called
+     * [@note] Check supportsCameraAssistance property in NIDeviceCapability returned from deviceCapabilities properties
+     * on NISession
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setCameraAssistanceEnabled:")
+    public native void setCameraAssistanceEnabled(boolean value);
 }

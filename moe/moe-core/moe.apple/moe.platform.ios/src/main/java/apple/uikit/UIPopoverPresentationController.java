@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -42,7 +41,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.protocol.UIPopoverPresentationControllerSourceItem;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -169,6 +173,11 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("barButtonItem")
     public native UIBarButtonItem barButtonItem();
@@ -177,6 +186,8 @@ public class UIPopoverPresentationController extends UIPresentationController {
      * By default, a popover is not allowed to overlap its source view rect.
      * When this is set to YES, popovers with more content than available space are allowed to overlap the source view
      * rect in order to accommodate the content.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("canOverlapSourceViewRect")
@@ -240,6 +251,11 @@ public class UIPopoverPresentationController extends UIPresentationController {
     @Selector("setBackgroundColor:")
     public native void setBackgroundColor(UIColor value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("setBarButtonItem:")
     public native void setBarButtonItem(UIBarButtonItem value);
@@ -248,6 +264,8 @@ public class UIPopoverPresentationController extends UIPresentationController {
      * By default, a popover is not allowed to overlap its source view rect.
      * When this is set to YES, popovers with more content than available space are allowed to overlap the source view
      * rect in order to accommodate the content.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCanOverlapSourceViewRect:")
@@ -340,8 +358,29 @@ public class UIPopoverPresentationController extends UIPresentationController {
     /**
      * The UISheetPresentationController instance this popover will adapt to in compact size classes. Access this
      * instance to customize or adjust the adaptive sheet.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("adaptiveSheetPresentationController")
     public native UISheetPresentationController adaptiveSheetPresentationController();
+
+    /**
+     * Accepts UIBarButtonItem as well as NSToolbarItem in Catalyst.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSourceItem:")
+    public native void setSourceItem(@Mapped(ObjCObjectMapper.class) UIPopoverPresentationControllerSourceItem value);
+
+    /**
+     * Accepts UIBarButtonItem as well as NSToolbarItem in Catalyst.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("sourceItem")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIPopoverPresentationControllerSourceItem sourceItem();
 }

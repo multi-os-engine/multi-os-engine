@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NSTextParagraph represents a single paragraph backed by NSAttributedString as the contents.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")

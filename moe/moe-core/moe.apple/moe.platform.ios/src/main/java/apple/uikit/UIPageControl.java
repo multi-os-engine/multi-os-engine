@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -47,7 +45,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +156,7 @@ public class UIPageControl extends UIControl {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -179,6 +183,7 @@ public class UIPageControl extends UIControl {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -254,46 +259,57 @@ public class UIPageControl extends UIControl {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -390,6 +406,8 @@ public class UIPageControl extends UIControl {
 
     /**
      * The tint color for the currently-selected indicators. Default is nil.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("currentPageIndicatorTintColor")
@@ -398,7 +416,12 @@ public class UIPageControl extends UIControl {
     /**
      * if set, tapping to a new page won't update the currently displayed page until -updateCurrentPageDisplay is
      * called. default is NO
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: defersCurrentPageDisplay no longer does anything reasonable with the new interaction mode.
      */
+    @Deprecated
     @Generated
     @Selector("defersCurrentPageDisplay")
     public native boolean defersCurrentPageDisplay();
@@ -432,6 +455,8 @@ public class UIPageControl extends UIControl {
 
     /**
      * The tint color for non-selected indicators. Default is nil.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("pageIndicatorTintColor")
@@ -446,6 +471,8 @@ public class UIPageControl extends UIControl {
 
     /**
      * The tint color for the currently-selected indicators. Default is nil.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setCurrentPageIndicatorTintColor:")
@@ -454,7 +481,12 @@ public class UIPageControl extends UIControl {
     /**
      * if set, tapping to a new page won't update the currently displayed page until -updateCurrentPageDisplay is
      * called. default is NO
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: defersCurrentPageDisplay no longer does anything reasonable with the new interaction mode.
      */
+    @Deprecated
     @Generated
     @Selector("setDefersCurrentPageDisplay:")
     public native void setDefersCurrentPageDisplay(boolean value);
@@ -475,6 +507,8 @@ public class UIPageControl extends UIControl {
 
     /**
      * The tint color for non-selected indicators. Default is nil.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setPageIndicatorTintColor:")
@@ -492,7 +526,12 @@ public class UIPageControl extends UIControl {
     /**
      * update page display to match the currentPage. ignored if defersCurrentPageDisplay is NO. setting the page value
      * directly will update immediately
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: updateCurrentPageDisplay no longer does anything reasonable with the new interaction mode.
      */
+    @Deprecated
     @Generated
     @Selector("updateCurrentPageDisplay")
     public native void updateCurrentPageDisplay();
@@ -505,6 +544,8 @@ public class UIPageControl extends UIControl {
 
     /**
      * Returns YES if the continuous interaction is enabled, NO otherwise. Default is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("allowsContinuousInteraction")
@@ -513,6 +554,8 @@ public class UIPageControl extends UIControl {
     /**
      * The preferred background style. Default is UIPageControlBackgroundStyleAutomatic on iOS, and
      * UIPageControlBackgroundStyleProminent on tvOS.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("backgroundStyle")
@@ -521,8 +564,10 @@ public class UIPageControl extends UIControl {
 
     /**
      * Returns the override indicator image for the specific page, nil if no override image was set.
-     *
+     * 
      * @param page Must be in the range of 0..numberOfPages
+     * 
+     *             API-Since: 14.0
      */
     @Generated
     @Selector("indicatorImageForPage:")
@@ -534,6 +579,8 @@ public class UIPageControl extends UIControl {
 
     /**
      * The current interaction state for when the current page changes. Default is UIPageControlInteractionStateNone
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("interactionState")
@@ -542,6 +589,8 @@ public class UIPageControl extends UIControl {
 
     /**
      * The preferred image for indicators. Symbol images are recommended. Default is nil.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("preferredIndicatorImage")
@@ -549,6 +598,8 @@ public class UIPageControl extends UIControl {
 
     /**
      * Returns YES if the continuous interaction is enabled, NO otherwise. Default is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAllowsContinuousInteraction:")
@@ -557,6 +608,8 @@ public class UIPageControl extends UIControl {
     /**
      * The preferred background style. Default is UIPageControlBackgroundStyleAutomatic on iOS, and
      * UIPageControlBackgroundStyleProminent on tvOS.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setBackgroundStyle:")
@@ -564,9 +617,11 @@ public class UIPageControl extends UIControl {
 
     /**
      * Override the indicator image for a specific page. Symbol images are recommended.
-     *
+     * 
      * @param image The image for the indicator. Resets to the default if image is nil.
      * @param page  Must be in the range of 0..numberOfPages
+     * 
+     *              API-Since: 14.0
      */
     @Generated
     @Selector("setIndicatorImage:forPage:")
@@ -574,8 +629,74 @@ public class UIPageControl extends UIControl {
 
     /**
      * The preferred image for indicators. Symbol images are recommended. Default is nil.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPreferredIndicatorImage:")
     public native void setPreferredIndicatorImage(UIImage value);
+
+    /**
+     * Returns the override current page indicator image for the specific page, nil if no override image was set.
+     * 
+     * @param page Must be in the range of 0..numberOfPages
+     * 
+     *             API-Since: 16.0
+     */
+    @Generated
+    @Selector("currentPageIndicatorImageForPage:")
+    public native UIImage currentPageIndicatorImageForPage(@NInt long page);
+
+    /**
+     * The layout direction of the page indicators. The default value is \c UIPageControlDirectionNatural.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("direction")
+    @NInt
+    public native long direction();
+
+    /**
+     * The preferred image for the current page indicator. Symbol images are recommended. Default is nil.
+     * If this value is nil, then UIPageControl will use \c preferredPageIndicatorImage (or its per-page variant) as
+     * the indicator image.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("preferredCurrentPageIndicatorImage")
+    public native UIImage preferredCurrentPageIndicatorImage();
+
+    /**
+     * Override the current page indicator image for a specific page. Symbol images are recommended.
+     * 
+     * @param image The image for the indicator. Resets to the default if image is nil.
+     * @param page  Must be in the range of 0..numberOfPages
+     * 
+     *              API-Since: 16.0
+     */
+    @Generated
+    @Selector("setCurrentPageIndicatorImage:forPage:")
+    public native void setCurrentPageIndicatorImageForPage(UIImage image, @NInt long page);
+
+    /**
+     * The layout direction of the page indicators. The default value is \c UIPageControlDirectionNatural.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setDirection:")
+    public native void setDirection(@NInt long value);
+
+    /**
+     * The preferred image for the current page indicator. Symbol images are recommended. Default is nil.
+     * If this value is nil, then UIPageControl will use \c preferredPageIndicatorImage (or its per-page variant) as
+     * the indicator image.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setPreferredCurrentPageIndicatorImage:")
+    public native void setPreferredCurrentPageIndicatorImage(UIImage value);
 }

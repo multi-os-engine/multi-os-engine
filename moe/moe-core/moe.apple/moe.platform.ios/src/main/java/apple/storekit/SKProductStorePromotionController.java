@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -78,6 +81,9 @@ public class SKProductStorePromotionController extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("defaultController")
     public static native SKProductStorePromotionController defaultController();
@@ -86,6 +92,9 @@ public class SKProductStorePromotionController extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("fetchStorePromotionOrderWithCompletionHandler:")
     public native void fetchStorePromotionOrderWithCompletionHandler(
@@ -99,6 +108,9 @@ public class SKProductStorePromotionController extends NSObject {
                 NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("fetchStorePromotionVisibilityForProduct:completionHandler:")
     public native void fetchStorePromotionVisibilityForProductCompletionHandler(SKProduct product,
@@ -163,6 +175,9 @@ public class SKProductStorePromotionController extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("updateStorePromotionOrder:completionHandler:")
     public native void updateStorePromotionOrderCompletionHandler(NSArray<? extends SKProduct> promotionOrder,
@@ -175,6 +190,9 @@ public class SKProductStorePromotionController extends NSObject {
         void call_updateStorePromotionOrderCompletionHandler(NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("updateStorePromotionVisibility:forProduct:completionHandler:")
     public native void updateStorePromotionVisibilityForProductCompletionHandler(@NInt long promotionVisibility,

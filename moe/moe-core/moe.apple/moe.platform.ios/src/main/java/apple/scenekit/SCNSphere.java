@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNSphere
- * <p>
+ * 
  * SCNSphere represents a sphere with controllable radius
  */
 @Generated
@@ -163,9 +163,9 @@ public class SCNSphere extends SCNGeometry {
 
     /**
      * sphereWithRadius:
-     * <p>
+     * 
      * Creates and returns a sphere with given radius.
-     *
+     * 
      * @param radius The radius of the sphere.
      */
     @Generated
@@ -195,9 +195,9 @@ public class SCNSphere extends SCNGeometry {
 
     /**
      * [@property] geodesic
-     * <p>
+     * 
      * Indicate if the geometry is a geosphere.
-     * <p>
+     * 
      * The default value is NO.
      */
     @Generated
@@ -206,9 +206,9 @@ public class SCNSphere extends SCNGeometry {
 
     /**
      * [@property] geodesic
-     * <p>
+     * 
      * Indicate if the geometry is a geosphere.
-     * <p>
+     * 
      * The default value is NO.
      */
     @Generated
@@ -217,9 +217,9 @@ public class SCNSphere extends SCNGeometry {
 
     /**
      * [@property] radius
-     * <p>
+     * 
      * The sphere radius. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
@@ -229,9 +229,9 @@ public class SCNSphere extends SCNGeometry {
 
     /**
      * [@property] segmentCount
-     * <p>
+     * 
      * The number of segments along both spherical coordinates. Animatable.
-     * <p>
+     * 
      * If the value is less than 3, the behavior is undefined. The default value is 24.
      */
     @Generated
@@ -241,9 +241,9 @@ public class SCNSphere extends SCNGeometry {
 
     /**
      * [@property] radius
-     * <p>
+     * 
      * The sphere radius. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
@@ -252,9 +252,9 @@ public class SCNSphere extends SCNGeometry {
 
     /**
      * [@property] segmentCount
-     * <p>
+     * 
      * The number of segments along both spherical coordinates. Animatable.
-     * <p>
+     * 
      * If the value is less than 3, the behavior is undefined. The default value is 24.
      */
     @Generated

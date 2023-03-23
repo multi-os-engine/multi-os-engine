@@ -53,6 +53,8 @@ public interface NSXPCProxyCreating {
      * Make a synchronous IPC call instead of the default async behavior. The error handler block and reply block will
      * be invoked on the calling thread before the message to the proxy returns, instead of on the queue for the
      * connection.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional

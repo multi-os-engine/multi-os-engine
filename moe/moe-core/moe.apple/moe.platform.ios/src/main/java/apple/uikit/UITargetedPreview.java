@@ -1,7 +1,6 @@
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -25,7 +24,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -164,7 +167,7 @@ public class UITargetedPreview extends NSObject implements NSCopying {
 
     /**
      * Returns a preview with the same view and parameters, but a new target.
-     * <p>
+     * 
      * You might call this in a UIDropInteractionDelegate in
      * -dropInteraction:previewForDroppingItem:withDefault:, or in
      * a UIDropInteractionDelegate in -dropInteraction:previewForCancellingItem:withDefault:,

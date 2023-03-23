@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UserNotifications")
 @Runtime(ObjCRuntime.class)
@@ -202,6 +205,9 @@ public class UNTextInputNotificationAction extends UNNotificationAction {
     public static native UNTextInputNotificationAction actionWithIdentifierTitleOptionsIcon(String identifier,
             String title, @NUInt long options, UNNotificationActionIcon icon);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("actionWithIdentifier:title:options:icon:textInputButtonTitle:textInputPlaceholder:")
     public static native UNTextInputNotificationAction actionWithIdentifierTitleOptionsIconTextInputButtonTitleTextInputPlaceholder(

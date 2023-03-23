@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAssetDownloadContentConfiguration
- * <p>
+ * 
  * Represents the configuration consisting of variant and the variant's media options.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVFoundation")
@@ -125,9 +127,9 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
 
     /**
      * [@property] mediaSelections
-     * <p>
+     * 
      * An array of media selections obtained from the AVAsset.
-     * <p>
+     * 
      * If a media selection is not provided, automatic media selection associated with the asset will be used.
      */
     @Generated
@@ -149,9 +151,9 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
 
     /**
      * [@property] mediaSelections
-     * <p>
+     * 
      * An array of media selections obtained from the AVAsset.
-     * <p>
+     * 
      * If a media selection is not provided, automatic media selection associated with the asset will be used.
      */
     @Generated
@@ -160,9 +162,9 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
 
     /**
      * [@property] variantQualifiers
-     * <p>
+     * 
      * An array of variant qualifiers.
-     * <p>
+     * 
      * The qualifiers are expected to be added in the preferential order and will be evaluated in that order until the
      * qualifier matches one or more AVAssetVariants. Only those variants which can be played on the current device
      * configuration will be initially chosen for evaluation. If there is more than one match, automatic variant
@@ -187,9 +189,9 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
 
     /**
      * [@property] variantQualifiers
-     * <p>
+     * 
      * An array of variant qualifiers.
-     * <p>
+     * 
      * The qualifiers are expected to be added in the preferential order and will be evaluated in that order until the
      * qualifier matches one or more AVAssetVariants. Only those variants which can be played on the current device
      * configuration will be initially chosen for evaluation. If there is more than one match, automatic variant

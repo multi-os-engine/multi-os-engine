@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A tracked raycast representation.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("ARKit")
@@ -132,7 +134,7 @@ public class ARTrackedRaycast extends NSObject {
 
     /**
      * Stop raycasting.
-     * <p>
+     * 
      * The raycast will be continuously tracked until stopped.
      * Resetting session's tracking, changing its configuration or deallocation of ARTrackedRaycast object cause the
      * raycast to stop.

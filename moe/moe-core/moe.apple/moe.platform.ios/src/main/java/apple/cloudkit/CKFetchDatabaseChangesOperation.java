@@ -42,9 +42,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CKFetchDatabaseChangesOperation
- * <p>
+ * 
  * This operation will fetch changes to record zones within a database
- * <p>
+ * 
  * If a change anchor from a previous @c CKFetchDatabaseChangesOperation is passed in, only the zones that have changed
  * since that anchor will be returned.
  * This per-database @c serverChangeToken is not to be confused with the per-recordZone @c serverChangeToken from @c
@@ -52,6 +52,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * If this is your first fetch or if you wish to re-fetch all zones, pass nil for the change token.
  * Change token are opaque tokens and clients should not infer any behavior based on their content.
  * [@c] CKFetchDatabaseChangesOperation is supported in a @c privateCloudDatabase and @c sharedCloudDatabase
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CloudKit")
@@ -175,7 +177,7 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     /**
      * When set to YES, this operation will send repeated requests to the server until all record zone changes have been
      * fetched.
-     * <p>
+     * 
      * [@c] changeTokenUpdatedBlock will be invoked periodically, to give clients an updated change token so that
      * already-fetched record zone changes don't need to be re-fetched on a subsequent operation.
      * When set to NO, it is the responsibility of the caller to issue subsequent fetch-changes operations when
@@ -189,7 +191,7 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * Clients are responsible for saving the change token at the end of the operation and passing it in to the next
      * call to @c CKFetchDatabaseChangesOperation.
      * If the server returns a @c CKErrorChangeTokenExpired error, the @c previousServerChangeToken value was too old
@@ -245,7 +247,7 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     /**
      * When set to YES, this operation will send repeated requests to the server until all record zone changes have been
      * fetched.
-     * <p>
+     * 
      * [@c] changeTokenUpdatedBlock will be invoked periodically, to give clients an updated change token so that
      * already-fetched record zone changes don't need to be re-fetched on a subsequent operation.
      * When set to NO, it is the responsibility of the caller to issue subsequent fetch-changes operations when
@@ -259,7 +261,7 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * Clients are responsible for saving the change token at the end of the operation and passing it in to the next
      * call to @c CKFetchDatabaseChangesOperation.
      * If the server returns a @c CKErrorChangeTokenExpired error, the @c previousServerChangeToken value was too old
@@ -352,10 +354,12 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     /**
      * If this block is set it will be called instead of @c recordZoneWithIDWasDeletedBlock if the user deleted this
      * zone via the iCloud storage UI.
-     * <p>
+     * 
      * This is an indication that the user wanted all data deleted, so local cached data should be wiped and not
      * re-uploaded to the server.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("recordZoneWithIDWasPurgedBlock")
@@ -372,10 +376,12 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     /**
      * If this block is set it will be called instead of @c recordZoneWithIDWasDeletedBlock if the user deleted this
      * zone via the iCloud storage UI.
-     * <p>
+     * 
      * This is an indication that the user wanted all data deleted, so local cached data should be wiped and not
      * re-uploaded to the server.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRecordZoneWithIDWasPurgedBlock:")
@@ -392,10 +398,12 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     /**
      * If this block is set it will be called instead of @c recordZoneWithIDWasDeletedBlock if the user chose to reset
      * all encrypted data for their account.
-     * <p>
+     * 
      * This is an indication that the user had to reset encrypted data during account recovery, so local cached data
      * should be re-uploaded to the server to minimize data loss.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("recordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock")
@@ -412,10 +420,12 @@ public class CKFetchDatabaseChangesOperation extends CKDatabaseOperation {
     /**
      * If this block is set it will be called instead of @c recordZoneWithIDWasDeletedBlock if the user chose to reset
      * all encrypted data for their account.
-     * <p>
+     * 
      * This is an indication that the user had to reset encrypted data during account recovery, so local cached data
      * should be re-uploaded to the server to minimize data loss.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setRecordZoneWithIDWasDeletedDueToUserEncryptedDataResetBlock:")

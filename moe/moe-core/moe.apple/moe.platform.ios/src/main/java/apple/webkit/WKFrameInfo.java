@@ -43,10 +43,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A WKFrameInfo object contains information about a frame on a webpage.
- * <p>
+ * 
  * An instance of this class is a transient, data-only object;
  * it does not uniquely identify a frame across multiple delegate method
  * calls.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("WebKit")
@@ -185,6 +187,8 @@ public class WKFrameInfo extends NSObject implements NSCopying {
 
     /**
      * The frame's current security origin.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("securityOrigin")
@@ -192,6 +196,8 @@ public class WKFrameInfo extends NSObject implements NSCopying {
 
     /**
      * The web view of the webpage that contains this frame.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("webView")

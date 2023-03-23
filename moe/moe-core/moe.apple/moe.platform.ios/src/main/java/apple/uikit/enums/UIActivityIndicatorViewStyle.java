@@ -21,14 +21,32 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIActivityIndicatorViewStyle {
-    @Generated @NInt public static final long WhiteLarge = 0x0000000000000000L;
-    @Generated @NInt public static final long White = 0x0000000000000001L;
-    @Generated @NInt public static final long Gray = 0x0000000000000002L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated @NInt public static final long WhiteLarge = 0x0000000000000000L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated @NInt public static final long White = 0x0000000000000001L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated @NInt public static final long Gray = 0x0000000000000002L;
 
     @Generated
     private UIActivityIndicatorViewStyle() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long Medium = 0x0000000000000064L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long Large = 0x0000000000000065L;
 }

@@ -37,7 +37,12 @@ import org.moe.natj.objc.ann.Selector;
  * MPPlayableContentDataSource) and selects a content item to play. If the media
  * player decides that it wants to play the item, it will ask the application's
  * content delegate to initiate playback.
+ * 
+ * API-Since: 7.1
+ * Deprecated-Since: 14.0
+ * Deprecated-Message: Use CarPlay framework
  */
+@Deprecated
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -45,7 +50,12 @@ import org.moe.natj.objc.ann.Selector;
 public interface MPPlayableContentDelegate {
     /**
      * This method is called when the content server notifies the manager that the current context has changed.
+     * 
+     * API-Since: 8.4
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("playableContentManager:didUpdateContext:")
@@ -61,7 +71,12 @@ public interface MPPlayableContentDelegate {
      * received or if the playable content manager requests to play something else.
      * The app should call the provided completion handler once it is ready to play
      * something.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 9.3
+     * Deprecated-Message: Use Intents framework for initiating playback queues.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("playableContentManager:initializePlaybackQueueWithCompletionHandler:")
@@ -81,7 +96,12 @@ public interface MPPlayableContentDelegate {
      * anything it deems appropriate.
      * The app should call the provided completion handler once it is ready to play
      * something.
+     * 
+     * API-Since: 9.3
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use Intents framework for initiating playback queues.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("playableContentManager:initializePlaybackQueueWithContentItems:completionHandler:")
@@ -95,7 +115,12 @@ public interface MPPlayableContentDelegate {
      * This method is called when a media player interface wants to play a requested
      * content item. The application should call the completion handler with an
      * appropriate error if there was an error beginning playback for the item.
+     * 
+     * API-Since: 7.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use CarPlay framework
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("playableContentManager:initiatePlaybackOfContentItemAtIndexPath:completionHandler:")

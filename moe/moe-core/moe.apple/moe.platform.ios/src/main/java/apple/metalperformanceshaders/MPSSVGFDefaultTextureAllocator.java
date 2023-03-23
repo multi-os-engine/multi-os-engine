@@ -30,6 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * A default implementation of the MPSSVGFTextureAllocator protocol. Maintains a cache of
  * textures which is checked first when a texture is requested. If there is no suitable texture in
  * the cache, allocates a texture directly from the Metal device.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")

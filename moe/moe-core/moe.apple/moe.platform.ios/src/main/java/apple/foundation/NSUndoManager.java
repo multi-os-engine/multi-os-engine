@@ -37,6 +37,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -240,6 +243,9 @@ public class NSUndoManager extends NSObject {
     @Selector("redo")
     public native void redo();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("redoActionIsDiscardable")
     public native boolean redoActionIsDiscardable();
@@ -258,10 +264,12 @@ public class NSUndoManager extends NSObject {
 
     /**
      * records single undo operation for the specified target
-     * <p>
+     * 
      * As with other undo operations, this does not strongly retain target. Care should be taken to avoid introducing
      * retain cycles by other references captured by the block.
-     *
+     * 
+     * API-Since: 9.0
+     * 
      * @param target      non-nil target of the undo operation
      * @param undoHandler non-nil block to be executed for the undo operation
      */
@@ -296,6 +304,9 @@ public class NSUndoManager extends NSObject {
     @Selector("runLoopModes")
     public native NSArray<String> runLoopModes();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setActionIsDiscardable:")
     public native void setActionIsDiscardable(boolean discardable);
@@ -336,6 +347,9 @@ public class NSUndoManager extends NSObject {
     @Selector("undo")
     public native void undo();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("undoActionIsDiscardable")
     public native boolean undoActionIsDiscardable();

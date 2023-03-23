@@ -165,9 +165,11 @@ public class NSFileManager extends NSObject {
      * -URLForDirectory:inDomain:appropriateForURL:create:error: is a URL-based replacement for FSFindFolder(). It
      * allows for the specification and (optional) creation of a specific directory for a particular purpose (e.g. the
      * replacement of a particular item on disk, or a particular Library directory.
-     * <p>
+     * 
      * You may pass only one of the values from the NSSearchPathDomainMask enumeration, and you may not pass
      * NSAllDomainsMask.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("URLForDirectory:inDomain:appropriateForURL:create:error:")
@@ -178,6 +180,8 @@ public class NSFileManager extends NSObject {
      * Returns a URL that can be shared with other users to allow them download a copy of the specified ubiquitous item.
      * Also returns the date after which the item will no longer be accessible at the returned URL. The URL must be
      * prefixed with a URL from -URLForUbiquityContainerIdentifier:.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("URLForPublishingUbiquitousItemAtURL:expirationDate:error:")
@@ -188,6 +192,8 @@ public class NSFileManager extends NSObject {
     /**
      * Returns a file URL for the root of the ubiquity container directory corresponding to the supplied container ID.
      * Returns nil if the mobile container does not exist or could not be determined.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("URLForUbiquityContainerIdentifier:")
@@ -197,6 +203,8 @@ public class NSFileManager extends NSObject {
      * -URLsForDirectory:inDomains: is analogous to NSSearchPathForDirectoriesInDomains(), but returns an array of NSURL
      * instances for use with URL-taking APIs. This API is suitable when you need to search for a file or files which
      * may live in one of a variety of locations in the domains specified.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("URLsForDirectory:inDomains:")
@@ -206,8 +214,10 @@ public class NSFileManager extends NSObject {
      * attributesOfFileSystemForPath:error: returns an NSDictionary of key/value pairs containing the attributes of the
      * filesystem containing the provided path. If this method returns 'nil', an NSError will be returned by reference
      * in the 'error' parameter. This method does not traverse a terminal symlink.
-     * <p>
+     * 
      * This method replaces fileSystemAttributesAtPath:.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("attributesOfFileSystemForPath:error:")
@@ -218,8 +228,10 @@ public class NSFileManager extends NSObject {
      * attributesOfItemAtPath:error: returns an NSDictionary of key/value pairs containing the attributes of the item
      * (file, directory, symlink, etc.) at the path in question. If this method returns 'nil', an NSError will be
      * returned by reference in the 'error' parameter. This method does not traverse a terminal symlink.
-     * <p>
+     * 
      * This method replaces fileAttributesAtPath:traverseLink:.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("attributesOfItemAtPath:error:")
@@ -230,6 +242,11 @@ public class NSFileManager extends NSObject {
     @Selector("changeCurrentDirectoryPath:")
     public native boolean changeCurrentDirectoryPath(String path);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -setAttributes:ofItemAtPath:error: instead
+     */
     @Generated
     @Deprecated
     @Selector("changeFileAttributes:atPath:")
@@ -246,6 +263,8 @@ public class NSFileManager extends NSObject {
 
     /**
      * Available for OS X in 10.8.3.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("containerURLForSecurityApplicationGroupIdentifier:")
@@ -272,8 +291,10 @@ public class NSFileManager extends NSObject {
      * contentsOfDirectoryAtPath:error: returns an NSArray of NSStrings representing the filenames of the items in the
      * directory. If this method returns 'nil', an NSError will be returned by reference in the 'error' parameter. If
      * the directory contains no items, this method will return the empty array.
-     * <p>
+     * 
      * This method replaces directoryContentsAtPath:
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("contentsOfDirectoryAtPath:error:")
@@ -286,14 +307,16 @@ public class NSFileManager extends NSObject {
      * parameter. If the directory contains no entries, this method will return the empty array. When an array is
      * specified for the 'keys' parameter, the specified property values will be pre-fetched and cached with each
      * enumerated URL.
-     * <p>
+     * 
      * This method always does a shallow enumeration of the specified directory (i.e. it always acts as if
      * NSDirectoryEnumerationSkipsSubdirectoryDescendants has been specified). If you need to perform a deep
      * enumeration, use -[NSFileManager enumeratorAtURL:includingPropertiesForKeys:options:errorHandler:].
-     * <p>
+     * 
      * If you wish to only receive the URLs and no other attributes, then pass '0' for 'options' and an empty NSArray
      * ('[NSArray array]') for 'keys'. If you wish to have the property caches of the vended URLs pre-populated with a
      * default set of attributes, then pass '0' for 'options' and 'nil' for 'keys'.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("contentsOfDirectoryAtURL:includingPropertiesForKeys:options:error:")
@@ -303,6 +326,8 @@ public class NSFileManager extends NSObject {
     /**
      * These methods replace their non-error returning counterparts below. See the NSFileManagerDelegate protocol below
      * for methods that are dispatched to the NSFileManager instance's delegate.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("copyItemAtPath:toPath:error:")
@@ -312,12 +337,19 @@ public class NSFileManager extends NSObject {
     /**
      * These methods are URL-taking equivalents of the four methods above. Their delegate methods are defined in the
      * NSFileManagerDelegate protocol below.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("copyItemAtURL:toURL:error:")
     public native boolean copyItemAtURLToURLError(NSURL srcURL, NSURL dstURL,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -createDirectoryAtPath:withIntermediateDirectories:attributes:error: instead
+     */
     @Generated
     @Deprecated
     @Selector("createDirectoryAtPath:attributes:")
@@ -331,8 +363,10 @@ public class NSFileManager extends NSObject {
      * specified by the dictionary passed to 'attributes'. If no dictionary is supplied, directories are created
      * according to the umask of the process. This method returns NO if a failure occurs at any stage of the operation.
      * If an error parameter was provided, a presentable NSError will be returned by reference.
-     * <p>
+     * 
      * This method replaces createDirectoryAtPath:attributes:
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("createDirectoryAtPath:withIntermediateDirectories:attributes:error:")
@@ -348,6 +382,8 @@ public class NSFileManager extends NSObject {
      * with attributes specified by the dictionary passed to 'attributes'. If no dictionary is supplied, directories are
      * created according to the umask of the process. This method returns NO if a failure occurs at any stage of the
      * operation. If an error parameter was provided, a presentable NSError will be returned by reference.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("createDirectoryAtURL:withIntermediateDirectories:attributes:error:")
@@ -359,6 +395,11 @@ public class NSFileManager extends NSObject {
     @Selector("createFileAtPath:contents:attributes:")
     public native boolean createFileAtPathContentsAttributes(String path, NSData data, NSDictionary<String, ?> attr);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -createSymbolicLinkAtPath:error: instead
+     */
     @Generated
     @Deprecated
     @Selector("createSymbolicLinkAtPath:pathContent:")
@@ -369,8 +410,10 @@ public class NSFileManager extends NSObject {
      * able to be created at the location specified by 'path'. If this method returns NO, the link was unable to be
      * created and an NSError will be returned by reference in the 'error' parameter. This method does not traverse a
      * terminal symlink.
-     * <p>
+     * 
      * This method replaces createSymbolicLinkAtPath:pathContent:
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("createSymbolicLinkAtPath:withDestinationPath:error:")
@@ -383,6 +426,8 @@ public class NSFileManager extends NSObject {
      * has one. If 'destURL' has no base URL and it's 'relativePath' is indeed a relative path, then a relative symlink
      * will be created. If this method returns NO, the link was unable to be created and an NSError will be returned by
      * reference in the 'error' parameter. This method does not traverse a terminal symlink.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("createSymbolicLinkAtURL:withDestinationURL:error:")
@@ -403,6 +448,8 @@ public class NSFileManager extends NSObject {
      * retained. In versions of Mac OS X prior to 10.5, the behavior of calling [[NSFileManager alloc] init] was
      * undefined. In Mac OS X 10.5 "Leopard" and later, calling [[NSFileManager alloc] init] returns a new instance of
      * an NSFileManager.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("delegate")
@@ -413,14 +460,21 @@ public class NSFileManager extends NSObject {
      * destinationOfSymbolicLinkAtPath:error: returns an NSString containing the path of the item pointed at by the
      * symlink specified by 'path'. If this method returns 'nil', an NSError will be returned by reference in the
      * 'error' parameter.
-     * <p>
+     * 
      * This method replaces pathContentOfSymbolicLinkAtPath:
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("destinationOfSymbolicLinkAtPath:error:")
     public native String destinationOfSymbolicLinkAtPathError(String path,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -contentsOfDirectoryAtPath:error: instead
+     */
     @Generated
     @Deprecated
     @Selector("directoryContentsAtPath:")
@@ -451,10 +505,12 @@ public class NSFileManager extends NSObject {
      * each enumerated URL. The optional 'errorHandler' block argument is invoked when an error occurs. Parameters to
      * the block are the URL on which an error occurred and the error. When the error handler returns YES, enumeration
      * continues if possible. Enumeration stops immediately when the error handler returns NO.
-     * <p>
+     * 
      * If you wish to only receive the URLs and no other attributes, then pass '0' for 'options' and an empty NSArray
      * ('[NSArray array]') for 'keys'. If you wish to have the property caches of the vended URLs pre-populated with a
      * default set of attributes, then pass '0' for 'options' and 'nil' for 'keys'.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("enumeratorAtURL:includingPropertiesForKeys:options:errorHandler:")
@@ -465,6 +521,8 @@ public class NSFileManager extends NSObject {
     /**
      * Removes the local instance of the ubiquitous item at the given URL. Returns YES if removal was successful, NO
      * otherwise.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("evictUbiquitousItemAtURL:error:")
@@ -474,6 +532,10 @@ public class NSFileManager extends NSObject {
     /**
      * The following methods are deprecated on Mac OS X 10.5. Their URL-based and/or error-returning replacements are
      * listed above.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -attributesOfItemAtPath:error: instead
      */
     @Generated
     @Deprecated
@@ -494,6 +556,11 @@ public class NSFileManager extends NSObject {
     @Selector("fileExistsAtPath:isDirectory:")
     public native boolean fileExistsAtPathIsDirectory(String path, BoolPtr isDirectory);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -attributesOfFileSystemForPath:error: instead
+     */
     @Generated
     @Deprecated
     @Selector("fileSystemAttributesAtPath:")
@@ -514,6 +581,8 @@ public class NSFileManager extends NSObject {
      * method to automatically choose the domain appropriate for 'url'. For example, to discover if a file is contained
      * by a Trash directory, call [fileManager getRelationship:&result ofDirectory:NSTrashDirectory inDomain:0
      * toItemAtURL:url error:&error].
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("getRelationship:ofDirectory:inDomain:toItemAtURL:error:")
@@ -528,6 +597,8 @@ public class NSFileManager extends NSObject {
      * item, meaning they have the same NSURLFileResourceIdentifierKey value. If 'directoryURL' is not a directory, or
      * does not contain 'otherURL' and they do not locate the same file, then sets 'outRelationship' to
      * NSURLRelationshipOther. If an error occurs, returns NO and sets 'error'.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("getRelationship:ofDirectoryAtURL:toItemAtURL:error:")
@@ -552,6 +623,8 @@ public class NSFileManager extends NSObject {
 
     /**
      * Returns YES if the item for the specified URL is ubiquitous, NO otherwise.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("isUbiquitousItemAtURL:")
@@ -561,11 +634,17 @@ public class NSFileManager extends NSObject {
     @Selector("isWritableFileAtPath:")
     public native boolean isWritableFileAtPath(String path);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("linkItemAtPath:toPath:error:")
     public native boolean linkItemAtPathToPathError(String srcPath, String dstPath,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("linkItemAtURL:toURL:error:")
     public native boolean linkItemAtURLToURLError(NSURL srcURL, NSURL dstURL,
@@ -574,31 +653,50 @@ public class NSFileManager extends NSObject {
     /**
      * -mountedVolumeURLsIncludingResourceValuesForKeys:options: returns an NSArray of NSURLs locating the mounted
      * volumes available on the computer. The property keys that can be requested are available in <Foundation/NSURL.h>.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("mountedVolumeURLsIncludingResourceValuesForKeys:options:")
     public native NSArray<? extends NSURL> mountedVolumeURLsIncludingResourceValuesForKeysOptions(
             NSArray<String> propertyKeys, @NUInt long options);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("moveItemAtPath:toPath:error:")
     public native boolean moveItemAtPathToPathError(String srcPath, String dstPath,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("moveItemAtURL:toURL:error:")
     public native boolean moveItemAtURLToURLError(NSURL srcURL, NSURL dstURL,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Use -destinationOfSymbolicLinkAtPath:error:
+     */
     @Generated
     @Deprecated
     @Selector("pathContentOfSymbolicLinkAtPath:")
     public native String pathContentOfSymbolicLinkAtPath(String path);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("removeItemAtPath:error:")
     public native boolean removeItemAtPathError(String path, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("removeItemAtURL:error:")
     public native boolean removeItemAtURLError(NSURL URL, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
@@ -606,7 +704,7 @@ public class NSFileManager extends NSObject {
     /**
      * -replaceItemAtURL:withItemAtURL:backupItemName:options:resultingItemURL:error: is for developers who wish to
      * perform a safe-save without using the full NSDocument machinery that is available in the AppKit.
-     * <p>
+     * 
      * The `originalItemURL` is the item being replaced.
      * `newItemURL` is the item which will replace the original item. This item should be placed in a temporary
      * directory as provided by the OS, or in a uniquely named directory placed in the same directory as the original
@@ -619,6 +717,8 @@ public class NSFileManager extends NSObject {
      * For `options`, pass `0` to get the default behavior, which uses only the metadata from the new item while
      * adjusting some properties using values from the original item. Pass
      * `NSFileManagerItemReplacementUsingNewMetadataOnly` in order to use all possible metadata from the new item.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("replaceItemAtURL:withItemAtURL:backupItemName:options:resultingItemURL:error:")
@@ -631,8 +731,10 @@ public class NSFileManager extends NSObject {
      * setAttributes:ofItemAtPath:error: returns YES when the attributes specified in the 'attributes' dictionary are
      * set successfully on the item specified by 'path'. If this method returns NO, a presentable NSError will be
      * provided by-reference in the 'error' parameter. If no error is required, you may pass 'nil' for the error.
-     * <p>
+     * 
      * This method replaces changeFileAttributes:atPath:.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setAttributes:ofItemAtPath:error:")
@@ -644,6 +746,8 @@ public class NSFileManager extends NSObject {
      * retained. In versions of Mac OS X prior to 10.5, the behavior of calling [[NSFileManager alloc] init] was
      * undefined. In Mac OS X 10.5 "Leopard" and later, calling [[NSFileManager alloc] init] returns a new instance of
      * an NSFileManager.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -654,6 +758,8 @@ public class NSFileManager extends NSObject {
      * retained. In versions of Mac OS X prior to 10.5, the behavior of calling [[NSFileManager alloc] init] was
      * undefined. In Mac OS X 10.5 "Leopard" and later, calling [[NSFileManager alloc] init] returns a new instance of
      * an NSFileManager.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) NSFileManagerDelegate value) {
@@ -671,6 +777,8 @@ public class NSFileManager extends NSObject {
      * Changes whether the item for the specified URL is ubiquitous and moves the item to the destination URL. When
      * making an item ubiquitous, the destination URL must be prefixed with a URL from
      * -URLForUbiquityContainerIdentifier:. Returns YES if the change is successful, NO otherwise.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setUbiquitous:itemAtURL:destinationURL:error:")
@@ -680,6 +788,8 @@ public class NSFileManager extends NSObject {
     /**
      * Start downloading a local instance of the specified ubiquitous item, if necessary. Returns YES if the download
      * started successfully or wasn't necessary, NO otherwise.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("startDownloadingUbiquitousItemAtURL:error:")
@@ -707,14 +817,19 @@ public class NSFileManager extends NSObject {
      * specified directory and all its subdirectories recursively. If this method returns 'nil', an NSError will be
      * returned by reference in the 'error' parameter. If the directory contains no items, this method will return the
      * empty array.
-     * <p>
+     * 
      * This method replaces subpathsAtPath:
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("subpathsOfDirectoryAtPath:error:")
     public native NSArray<String> subpathsOfDirectoryAtPathError(String path,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("temporaryDirectory")
     public native NSURL temporaryDirectory();
@@ -724,9 +839,11 @@ public class NSFileManager extends NSObject {
      * compared with isEqual:. When ubiquity containers are unavailable because the user has disabled them, or when the
      * user is simply not logged in, this method will return nil. The NSUbiquityIdentityDidChangeNotification
      * notification is posted after this value changes.
-     * <p>
+     * 
      * If you don't need the container URL and just want to check if ubiquity containers are available you should use
      * this method instead of checking -URLForUbiquityContainerIdentifier:.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("ubiquityIdentityToken")
@@ -748,6 +865,8 @@ public class NSFileManager extends NSObject {
      * need to refer to external documentation or an SDK supplied by the provider to get this information. Once an
      * NSXPCConnection is obtained, you must finish configuring it and send it -resume. Failure to do so will result in
      * leaking system resources.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("getFileProviderServicesForItemAtURL:completionHandler:")
@@ -767,9 +886,11 @@ public class NSFileManager extends NSObject {
      * the operation may require renaming the file to avoid collisions, it also returns by reference the resulting URL
      * that the item was moved to. If this method returns NO, the item was not moved and an NSError will be returned by
      * reference in the 'error' parameter.
-     * <p>
+     * 
      * To easily discover if an item is in the Trash, you may use [fileManager getRelationship:&result
      * ofDirectory:NSTrashDirectory inDomain:0 toItemAtURL:url error:&error] && result == NSURLRelationshipContains.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("trashItemAtURL:resultingItemURL:error:")

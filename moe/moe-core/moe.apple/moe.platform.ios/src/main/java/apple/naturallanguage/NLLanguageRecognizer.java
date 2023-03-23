@@ -30,6 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * set of language candidates with probabilities. It is also possible to constrain the identification by specifying
  * either a list of hints about known prior probabilities for languages, or a list of constraint languages into which
  * the predictions are constrained to fall, or both.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("NaturalLanguage")
@@ -94,6 +96,8 @@ public class NLLanguageRecognizer extends NSObject {
      * dominantLanguage, or a set of language candidates with probabilities, via languageHypothesesWithMaximum:. The
      * latter method returns a dictionary mapping languages to their estimated probabilities, up to a maximum number
      * given by maxHypotheses.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("dominantLanguage")
@@ -102,6 +106,8 @@ public class NLLanguageRecognizer extends NSObject {
     /**
      * dominantLanguageForString: is a convenience method used to get the single most likely language for a specific
      * piece of text, without having to create an NLLanguageRecognizer object.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("dominantLanguageForString:")
@@ -117,6 +123,8 @@ public class NLLanguageRecognizer extends NSObject {
      * process method. After this, identification of the text can be obtained from the object. The object can be
      * restored to its initial state by calling reset, so that it can then be reused for a new analysis. Note that a
      * given instance of NLLanguageRecognizer should not be used from more than one thread simultaneously.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("init")
@@ -146,6 +154,8 @@ public class NLLanguageRecognizer extends NSObject {
     /**
      * Allows clients to constrain the space of identified languages. For example, setting Spanish, French and English
      * as constraints would yield identification only from these three languages.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("languageConstraints")
@@ -154,11 +164,16 @@ public class NLLanguageRecognizer extends NSObject {
     /**
      * Allows clients to specify known prior probabilities for languages as hints for the language identification
      * process. This should be a dictionary mapping languages to their prior probabilities.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("languageHints")
     public native NSDictionary<String, ? extends NSNumber> languageHints();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("languageHypothesesWithMaximum:")
     public native NSDictionary<String, ? extends NSNumber> languageHypothesesWithMaximum(@NUInt long maxHypotheses);
@@ -168,10 +183,16 @@ public class NLLanguageRecognizer extends NSObject {
     @Selector("new")
     public static native NLLanguageRecognizer new_objc();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("processString:")
     public native void processString(String string);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("reset")
     public native void reset();
@@ -187,6 +208,8 @@ public class NLLanguageRecognizer extends NSObject {
     /**
      * Allows clients to constrain the space of identified languages. For example, setting Spanish, French and English
      * as constraints would yield identification only from these three languages.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setLanguageConstraints:")
@@ -195,6 +218,8 @@ public class NLLanguageRecognizer extends NSObject {
     /**
      * Allows clients to specify known prior probabilities for languages as hints for the language identification
      * process. This should be a dictionary mapping languages to their prior probabilities.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setLanguageHints:")

@@ -32,6 +32,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface SKStoreProductViewControllerDelegate {
     /**
      * Sent after the page is dismissed
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @IsOptional

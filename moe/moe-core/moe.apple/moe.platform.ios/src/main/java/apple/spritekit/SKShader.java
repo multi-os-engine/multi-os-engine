@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -151,12 +154,12 @@ public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Loads a shader source file named 'name' from the main bundle. This is simpler yet functionally equivalent to the
      * following code
-     * <p>
+     * 
      * [SKShader shaderWithSource:[NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name
      * ofType:@"fsh"]
      * encoding:NSUTF8StringEncoding
      * error:NULL]];
-     * <p>
+     * 
      * The encoding is assumed to be NSUTF8StringEncoding.
      */
     @Generated
@@ -184,6 +187,9 @@ public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("addUniform:")
     public native void addUniform(SKUniform uniform);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("attributes")
     public native NSArray<? extends SKAttribute> attributes();
@@ -208,7 +214,7 @@ public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a custom shader with source code.
-     *
+     * 
      * @param source the source code for the custom fragment shader.
      */
     @Generated
@@ -217,7 +223,7 @@ public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a custom shader with source code and uniforms.
-     *
+     * 
      * @param source   the source code for the custom fragment shader.
      * @param uniforms the array of uniforms supplied to this shader
      */
@@ -229,33 +235,36 @@ public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("removeUniformNamed:")
     public native void removeUniformNamed(String name);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setAttributes:")
     public native void setAttributes(NSArray<? extends SKAttribute> value);
 
     /**
      * Shader source must define the 'main' method of the fragment shader
-     * <p>
+     * 
      * Your shader must assign a premultipled fragment value to 'gl_FragColor'
-     * <p>
+     * 
      * The following implicit uniforms are available:
-     * <p>
+     * 
      * 1. sampler2D u_texture (the primary texuture attached the the sprite)
-     * <p>
+     * 
      * The following varyings are available:
-     * <p>
+     * 
      * 1. vec2 v_tex_coord (normalized texture coordiantes for the primary texture)
      * 2. vec4 v_color_mix (premultiplied color value based on color & alpha)
-     * <p>
-     * <p>
+     * 
+     * 
      * The following functions are available:
-     * <p>
+     * 
      * 1. vec4 SKDefaultShading() (returns the fragment value that would have been output if no shader was used)
-     * <p>
-     * <p>
-     * <p>
+     * 
+     * 
+     * 
      * Sample shader source that produces the same result are SpriteKit's normal rendering:
-     * <p>
+     * 
      * "void main() { gl_FragColor = SKDefaultShading(); }"
      */
     @Generated
@@ -265,7 +274,7 @@ public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * You may define additional uniforms to be used in your shader here.
      * There is no need to declare them in you source, just use them by name.
-     * <p>
+     * 
      * All uniforms declared must be used within the source.
      */
     @Generated
@@ -274,27 +283,27 @@ public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Shader source must define the 'main' method of the fragment shader
-     * <p>
+     * 
      * Your shader must assign a premultipled fragment value to 'gl_FragColor'
-     * <p>
+     * 
      * The following implicit uniforms are available:
-     * <p>
+     * 
      * 1. sampler2D u_texture (the primary texuture attached the the sprite)
-     * <p>
+     * 
      * The following varyings are available:
-     * <p>
+     * 
      * 1. vec2 v_tex_coord (normalized texture coordiantes for the primary texture)
      * 2. vec4 v_color_mix (premultiplied color value based on color & alpha)
-     * <p>
-     * <p>
+     * 
+     * 
      * The following functions are available:
-     * <p>
+     * 
      * 1. vec4 SKDefaultShading() (returns the fragment value that would have been output if no shader was used)
-     * <p>
-     * <p>
-     * <p>
+     * 
+     * 
+     * 
      * Sample shader source that produces the same result are SpriteKit's normal rendering:
-     * <p>
+     * 
      * "void main() { gl_FragColor = SKDefaultShading(); }"
      */
     @Generated
@@ -308,7 +317,7 @@ public class SKShader extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * You may define additional uniforms to be used in your shader here.
      * There is no need to declare them in you source, just use them by name.
-     * <p>
+     * 
      * All uniforms declared must be used within the source.
      */
     @Generated

@@ -1,7 +1,6 @@
 package apple.vision;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -26,14 +25,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
 
 /**
  * VNHorizonObservation
  * [@superclass] VNObservation
- * <p>
+ * 
  * VNHorizonObservation is the result of a VNDetectHorizonRequest
- * <p>
+ * 
  * Use the transform or angle to upright the image and make the detected horizon level.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -63,6 +65,9 @@ public class VNHorizonObservation extends VNObservation {
     @Selector("allocWithZone:")
     public static native VNHorizonObservation allocWithZone(VoidPtr zone);
 
+    /**
+     * Angle of the observed horizon.
+     */
     @Generated
     @Selector("angle")
     @NFloat
@@ -163,6 +168,11 @@ public class VNHorizonObservation extends VNObservation {
         return supportsSecureCoding();
     }
 
+    /**
+     * Transform applied to the detected horizon in image coordinates.
+     * 
+     * This is the transform in image coordinates and not a normalized transform.
+     */
     @Generated
     @Selector("transform")
     @ByValue
@@ -172,4 +182,14 @@ public class VNHorizonObservation extends VNObservation {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Creates a transform for the specified width and height.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("transformForImageWidth:height:")
+    @ByValue
+    public native CGAffineTransform transformForImageWidthHeight(@NUInt long width, @NUInt long height);
 }

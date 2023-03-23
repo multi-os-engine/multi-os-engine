@@ -24,11 +24,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A node representing a MPSCNNNeuronHardSigmoid kernel
- * <p>
+ * 
  * For each pixel, applies the following function:
  * [@code]
  * f(x) = clamp((a * x) + b, 0, 1)
  * [@endcode]
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -106,7 +108,7 @@ public class MPSCNNNeuronHardSigmoidNode extends MPSCNNNeuronNode {
 
     /**
      * Init a node representing a MPSCNNNeuronHardSigmoid kernel
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param a          See discussion above.
      * @param b          See discussion above.

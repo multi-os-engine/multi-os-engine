@@ -70,6 +70,9 @@ public interface UIViewControllerTransitioningDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @IsOptional
     @Selector("presentationControllerForPresentedViewController:presentingViewController:sourceViewController:")

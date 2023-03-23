@@ -29,13 +29,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAudioUnitGenerator
- * <p>
+ * 
  * an AVAudioUnit that generates audio output
- * <p>
+ * 
  * An AVAudioUnitGenerator represents an audio unit of type kAudioUnitType_Generator or
  * kAudioUnitType_RemoteGenerator.
  * A generator will have no audio input, but will just produce audio output.
  * A tone generator is an example of this.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -71,7 +73,7 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
 
     /**
      * [@property] bypass
-     * <p>
+     * 
      * Bypass state of the audio unit.
      */
     @Generated
@@ -119,12 +121,13 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
 
     /**
      * initWithAudioComponentDescription:
-     * <p>
+     * 
      * Create an AVAudioUnitGenerator object.
-     * <p>
+     * 
      * The componentType must be kAudioUnitType_Generator or kAudioUnitType_RemoteGenerator
-     *
-     * @param audioComponentDescription AudioComponentDescription of the audio unit to be instantiated.
+     * 
+     * @param audioComponentDescription
+     *                                  AudioComponentDescription of the audio unit to be instantiated.
      */
     @Generated
     @Selector("initWithAudioComponentDescription:")
@@ -208,7 +211,7 @@ public class AVAudioUnitGenerator extends AVAudioUnit implements AVAudioMixing {
 
     /**
      * [@property] bypass
-     * <p>
+     * 
      * Bypass state of the audio unit.
      */
     @Generated

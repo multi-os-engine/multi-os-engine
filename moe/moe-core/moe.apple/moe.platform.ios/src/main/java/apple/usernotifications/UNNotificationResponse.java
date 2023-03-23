@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UserNotifications")
 @Runtime(ObjCRuntime.class)
@@ -201,6 +204,8 @@ public class UNNotificationResponse extends NSObject implements NSCopying, NSSec
 
     /**
      * default nil
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("targetScene")

@@ -21,12 +21,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.avfoundation.AVCaptureDevice;
 
 /**
  * A configuration for running positional tracking.
- * <p>
+ * 
  * Positional tracking provides 6 degrees of freedom tracking of the device by running the camera at lowest possible
  * resolution and frame rate.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("ARKit")
@@ -97,7 +100,7 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
 
     /**
      * The initial map of the physical space that world tracking will localize to and track.
-     * <p>
+     * 
      * If set, the session will attempt to localize to the provided map with
      * a limited tracking state until localization is successful or run is called again
      * with a different (or no) initial map specified. Once localized, the map will be extended
@@ -139,7 +142,7 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
 
     /**
      * Type of planes to detect in the scene.
-     * <p>
+     * 
      * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
@@ -160,7 +163,7 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
 
     /**
      * The initial map of the physical space that world tracking will localize to and track.
-     * <p>
+     * 
      * If set, the session will attempt to localize to the provided map with
      * a limited tracking state until localization is successful or run is called again
      * with a different (or no) initial map specified. Once localized, the map will be extended
@@ -172,7 +175,7 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
 
     /**
      * Type of planes to detect in the scene.
-     * <p>
+     * 
      * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
@@ -202,4 +205,16 @@ public class ARPositionalTrackingConfiguration extends ARConfiguration {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("configurableCaptureDeviceForPrimaryCamera")
+    public static native AVCaptureDevice configurableCaptureDeviceForPrimaryCamera();
+
+    @Generated
+    @Selector("recommendedVideoFormatFor4KResolution")
+    public static native ARVideoFormat recommendedVideoFormatFor4KResolution();
+
+    @Generated
+    @Selector("recommendedVideoFormatForHighResolutionFrameCapturing")
+    public static native ARVideoFormat recommendedVideoFormatForHighResolutionFrameCapturing();
 }

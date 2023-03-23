@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Node representing a @ref MPSNNGramMatrixCalculationGradient kernel
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -55,7 +57,7 @@ public class MPSNNGramMatrixCalculationGradientNode extends MPSNNGradientFilterN
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * Scaling factor for the output. Default: 1.0f.
      */
     @Generated

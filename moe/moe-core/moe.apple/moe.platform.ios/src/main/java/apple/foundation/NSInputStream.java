@@ -107,6 +107,7 @@ public class NSInputStream extends NSStream {
             @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
             @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
 
+    @Deprecated
     @Generated
     @Selector("getStreamsToHostWithName:port:inputStream:outputStream:")
     public static native void getStreamsToHostWithNamePortInputStreamOutputStream(String hostname, @NInt long port,
@@ -126,6 +127,9 @@ public class NSInputStream extends NSStream {
     @Selector("inputStreamWithFileAtPath:")
     public static native NSInputStream inputStreamWithFileAtPath(String path);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("inputStreamWithURL:")
     public static native NSInputStream inputStreamWithURL(NSURL url);
@@ -210,6 +214,9 @@ public class NSInputStream extends NSStream {
     @Selector("initWithFileAtPath:")
     public native NSInputStream initWithFileAtPath(String path);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("initWithURL:")
     public native NSInputStream initWithURL(NSURL url);

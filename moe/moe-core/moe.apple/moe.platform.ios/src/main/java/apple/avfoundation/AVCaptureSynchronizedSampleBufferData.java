@@ -25,13 +25,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVCaptureSynchronizedSampleBufferData
- * <p>
+ * 
  * An concrete subclass of AVCaptureSynchronizedData representing the data delivered by an AVCaptureVideoDataOutput or
  * AVCaptureAudioDataOutput.
- * <p>
+ * 
  * Synchronized sample buffer data is valid for the duration of AVCaptureDataOutputSynchronizer's
  * -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback. To extend the sample buffer data beyond the
  * callback, you must CFRetain it, and later call CFRelease when you're done with it.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("AVFoundation")
@@ -93,9 +95,9 @@ public class AVCaptureSynchronizedSampleBufferData extends AVCaptureSynchronized
 
     /**
      * [@property] droppedReason
-     * <p>
+     * 
      * If sampleBufferWasDropped is YES, the reason for the drop, otherwise AVCaptureOutputDataDroppedReasonNone.
-     * <p>
+     * 
      * AVCaptureOutputDataDroppedReasons are defined in AVCaptureOutputBase.h.
      */
     @Generated
@@ -148,9 +150,9 @@ public class AVCaptureSynchronizedSampleBufferData extends AVCaptureSynchronized
 
     /**
      * [@property] sampleBuffer
-     * <p>
+     * 
      * A sample buffer containing video or audio data.
-     * <p>
+     * 
      * If sampleBufferWasDropped is YES, the returned sampleBuffer was dropped before it could be delivered to you, and
      * thus this sample buffer is a shell containing metadata and format information, but no actual pixel data. This
      * property is never NULL. If a data output has no data to return, it is simply not present in the dictionary of
@@ -163,9 +165,9 @@ public class AVCaptureSynchronizedSampleBufferData extends AVCaptureSynchronized
 
     /**
      * [@property] sampleBufferWasDropped
-     * <p>
+     * 
      * YES if the sample buffer was dropped.
-     * <p>
+     * 
      * AVCaptureVideoDataOutput has a delegate callback for dropped sample buffers. AVCaptureAudioDataOutput does not.
      * Therefore, sampleBufferWasDropped may be YES for video, but never for audio.
      */

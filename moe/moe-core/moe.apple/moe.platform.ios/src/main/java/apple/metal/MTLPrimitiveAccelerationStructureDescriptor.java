@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Descriptor for a primitive acceleration structure
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Metal")
@@ -162,6 +164,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     /**
      * Motion border mode describing what happens if acceleration structure is sampled after
      * motionEndTime. If not set defaults to MTLMotionBorderModeClamp.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("motionEndBorderMode")
@@ -169,6 +173,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
 
     /**
      * Motion end time of this geometry. If not set defaults to 1.0f.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("motionEndTime")
@@ -176,6 +182,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
 
     /**
      * Motion keyframe count. Is 1 by default which means no motion.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("motionKeyframeCount")
@@ -185,6 +193,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     /**
      * Motion border mode describing what happens if acceleration structure is sampled before
      * motionStartTime. If not set defaults to MTLMotionBorderModeClamp.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("motionStartBorderMode")
@@ -192,6 +202,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
 
     /**
      * Motion start time of this geometry. If not set defaults to 0.0f.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("motionStartTime")
@@ -200,6 +212,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     /**
      * Motion border mode describing what happens if acceleration structure is sampled after
      * motionEndTime. If not set defaults to MTLMotionBorderModeClamp.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMotionEndBorderMode:")
@@ -207,6 +221,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
 
     /**
      * Motion end time of this geometry. If not set defaults to 1.0f.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMotionEndTime:")
@@ -214,6 +230,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
 
     /**
      * Motion keyframe count. Is 1 by default which means no motion.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMotionKeyframeCount:")
@@ -222,6 +240,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
     /**
      * Motion border mode describing what happens if acceleration structure is sampled before
      * motionStartTime. If not set defaults to MTLMotionBorderModeClamp.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMotionStartBorderMode:")
@@ -229,6 +249,8 @@ public class MTLPrimitiveAccelerationStructureDescriptor extends MTLAcceleration
 
     /**
      * Motion start time of this geometry. If not set defaults to 0.0f.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMotionStartTime:")

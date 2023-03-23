@@ -26,9 +26,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MTLResourceStatePassDescriptor
- * <p>
+ * 
  * MTLResourceStatePassDescriptor represents a collection of attachments to be used to create a concrete resourceState
  * command encoder
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Metal")
@@ -139,7 +141,7 @@ public class MTLResourceStatePassDescriptor extends NSObject implements NSCopyin
 
     /**
      * resourceStatePassDescriptor
-     * <p>
+     * 
      * Create an autoreleased default frame buffer descriptor
      */
     @Generated
@@ -148,8 +150,10 @@ public class MTLResourceStatePassDescriptor extends NSObject implements NSCopyin
 
     /**
      * [@property] sampleBufferAttachments
-     * <p>
+     * 
      * An array of sample buffers and associated sample indices.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("sampleBufferAttachments")

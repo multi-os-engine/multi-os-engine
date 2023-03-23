@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVDelegatingPlaybackCoordinatorPauseCommand
- * <p>
+ * 
  * A playback command requesting a pause
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVFoundation")
@@ -57,7 +59,7 @@ public class AVDelegatingPlaybackCoordinatorPauseCommand extends AVDelegatingPla
 
     /**
      * [@property] anticipatedPlaybackRate
-     * <p>
+     * 
      * The rate to prepare for if shouldBufferInAnticipationOfPlayback is YES.
      */
     @Generated
@@ -143,9 +145,9 @@ public class AVDelegatingPlaybackCoordinatorPauseCommand extends AVDelegatingPla
 
     /**
      * [@property] shouldBufferInAnticipationOfPlayback
-     * <p>
+     * 
      * Indicates that playback is anticipated and the player should begin buffering if necessary.
-     * <p>
+     * 
      * When shouldBufferInAnticipationOfPlayback is YES, some participant wants to resume playback at the rate indicated
      * by the anticipatedPlaybackRate property.
      * This should be treated similar to receiving a separate AVDelegatingPlaybackCoordinatorBufferingCommand.

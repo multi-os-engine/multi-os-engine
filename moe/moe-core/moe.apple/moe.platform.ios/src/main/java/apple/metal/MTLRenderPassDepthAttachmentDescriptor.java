@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -150,7 +153,7 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
 
     /**
      * [@property] clearDepth
-     * <p>
+     * 
      * The clear depth value to be used if the loadAction property is MTLLoadActionClear
      */
     @Generated
@@ -159,8 +162,10 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
 
     /**
      * [@property] resolveFilter
-     * <p>
+     * 
      * The filter to be used for depth multisample resolve. Defaults to MTLMultisampleDepthResolveFilterSample0.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("depthResolveFilter")
@@ -173,7 +178,7 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
 
     /**
      * [@property] clearDepth
-     * <p>
+     * 
      * The clear depth value to be used if the loadAction property is MTLLoadActionClear
      */
     @Generated
@@ -182,8 +187,10 @@ public class MTLRenderPassDepthAttachmentDescriptor extends MTLRenderPassAttachm
 
     /**
      * [@property] resolveFilter
-     * <p>
+     * 
      * The filter to be used for depth multisample resolve. Defaults to MTLMultisampleDepthResolveFilterSample0.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDepthResolveFilter:")

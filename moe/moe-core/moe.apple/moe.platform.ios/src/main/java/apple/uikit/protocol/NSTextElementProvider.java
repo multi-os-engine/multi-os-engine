@@ -21,6 +21,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * NSTextElementProvider is a protocol conformed by NSTextContentManager and its concrete subclasses. It defines the
  * base interface for interacting with a custom text document content type.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")

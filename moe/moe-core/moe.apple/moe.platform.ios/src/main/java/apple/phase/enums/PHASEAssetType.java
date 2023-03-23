@@ -5,9 +5,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] PHASEAssetType
- * <p>
+ * 
  * Asset types.
- * <p>
+ * 
  * Determines how assets are loaded into memory and prepared for playback.
  * 'Preparing' an asset for playback may include decompression and/or format conversion,
  * depending on the type of the underlying asset data.

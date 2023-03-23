@@ -5,6 +5,8 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * Specifies the type of a @c CPBarButton.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 public final class CPBarButtonType {
@@ -12,6 +14,12 @@ public final class CPBarButtonType {
     private CPBarButtonType() {
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NUInt public static final long Text = 0x0000000000000000L;
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NUInt public static final long Image = 0x0000000000000001L;
 }

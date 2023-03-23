@@ -14,7 +14,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] ICCameraDeviceDownloadDelegate <NSObject>
- * <p>
+ * 
  * The object passed in as 'downloadDelegate' in the
  * 'requestDownloadFile:options:downloadDelegate:didDownloadSelector:contextInfo:' message must conform to
  * ICCameraDeviceDownloadDelegate protocol.
@@ -26,7 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface ICCameraDeviceDownloadDelegate {
     /**
      * didDownloadFile:error:options:contextInfo:
-     * <p>
+     * 
      * This message is sent to the delegate when the requested download operation is complete.
      */
     @Generated
@@ -39,8 +39,10 @@ public interface ICCameraDeviceDownloadDelegate {
 
     /**
      * didReceiveDownloadProgressForFile:downloadedBytes:maxBytes:
-     * <p>
+     * 
      * This message is sent to the delegate to provide status of the download operation.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional

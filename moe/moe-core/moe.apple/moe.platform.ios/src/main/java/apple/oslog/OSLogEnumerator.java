@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * OSLogEnumerator
- * <p>
+ * 
  * An enumerator that views entries in the unified logging system.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("OSLog")

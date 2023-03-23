@@ -48,7 +48,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNPhysicsVehicleWheel
- * <p>
+ * 
  * SCNPhysicsVehicleWheel represents a wheel that can be attached to a SCNPhysicsVehicle instance.
  */
 @Generated

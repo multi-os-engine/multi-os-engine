@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This object is created by your application and passed with a UISceneSession destruction request
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")

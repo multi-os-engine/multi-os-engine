@@ -17,7 +17,6 @@ limitations under the License.
 package apple.photos;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.coreimage.CIImage;
 import apple.coremedia.struct.CMTime;
 import apple.foundation.NSArray;
@@ -46,7 +45,11 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -161,6 +164,8 @@ public class PHLivePhotoEditingContext extends NSObject {
      * Specify the audio volume of the edited live photo
      * Must be between 0.0 and 1.0
      * Default to 1.0
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("audioVolume")
@@ -170,6 +175,8 @@ public class PHLivePhotoEditingContext extends NSObject {
      * Cancel the current asynchronous operation
      * This is implicitly called whenever prepare or save is called
      * A canceled operation will call its completion handler with an appropriate error code
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("cancel")
@@ -177,6 +184,8 @@ public class PHLivePhotoEditingContext extends NSObject {
 
     /**
      * The duration of the live photo
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("duration")
@@ -186,6 +195,8 @@ public class PHLivePhotoEditingContext extends NSObject {
     /**
      * A block that can be set to process each frame of the live photo
      * Note that the context uses a copy of the processor block during processing
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("frameProcessor")
@@ -194,6 +205,8 @@ public class PHLivePhotoEditingContext extends NSObject {
 
     /**
      * The original full-size image from the input live photo
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("fullSizeImage")
@@ -206,6 +219,8 @@ public class PHLivePhotoEditingContext extends NSObject {
     /**
      * Initializer from the specified live photo input
      * Return nil if the specified input is not for a live photo
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithLivePhotoEditingInput:")
@@ -213,6 +228,8 @@ public class PHLivePhotoEditingContext extends NSObject {
 
     /**
      * The orientation of the live photo
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("orientation")
@@ -220,6 +237,8 @@ public class PHLivePhotoEditingContext extends NSObject {
 
     /**
      * The time of the still image within the live photo
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("photoTime")
@@ -229,6 +248,8 @@ public class PHLivePhotoEditingContext extends NSObject {
     /**
      * Asynchronously generate a new live photo suitable for playback in a PHLivePhotoView of the specified target size
      * The options dictionary can contain additional options, see below
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("prepareLivePhotoForPlaybackWithTargetSize:options:completionHandler:")
@@ -239,6 +260,8 @@ public class PHLivePhotoEditingContext extends NSObject {
     /**
      * Asynchronously process and save the edited live photo to the specified content editing output
      * Options dictionary should be nil, reserved for future expansion
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("saveLivePhotoToOutput:options:completionHandler:")
@@ -250,6 +273,8 @@ public class PHLivePhotoEditingContext extends NSObject {
      * Specify the audio volume of the edited live photo
      * Must be between 0.0 and 1.0
      * Default to 1.0
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAudioVolume:")
@@ -258,6 +283,8 @@ public class PHLivePhotoEditingContext extends NSObject {
     /**
      * A block that can be set to process each frame of the live photo
      * Note that the context uses a copy of the processor block during processing
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setFrameProcessor:")

@@ -36,10 +36,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNBinaryKernel
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Describes a convolution neural network kernel.
- * <p>
+ * 
  * A MPSCNNKernel consumes two MPSImages, primary and secondary, and produces one MPSImage.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -93,15 +95,15 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] clipRect
-     * <p>
+     * 
      * An optional clip rectangle to use when writing data. Only the pixels in the rectangle will be overwritten.
-     * <p>
+     * 
      * A MTLRegion that indicates which part of the destination to overwrite. If the clipRect does not lie
      * completely within the destination image, the intersection between clip rectangle and destination bounds is
      * used. Default: MPSRectNoClip (MPSKernel::MPSRectNoClip) indicating the entire image.
      * clipRect.origin.z is the index of starting destination image in batch processing mode. clipRect.size.depth
      * is the number of images to process in batch processing mode.
-     * <p>
+     * 
      * See Also: @ref subsubsection_clipRect
      */
     @Generated
@@ -119,9 +121,9 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] destinationFeatureChannelOffset
-     * <p>
+     * 
      * The number of channels in the destination MPSImage to skip before writing output.
-     * <p>
+     * 
      * This is the starting offset into the destination image in the feature channel dimension
      * at which destination data is written.
      * This allows an application to pass a subset of all the channels in MPSImage as output of MPSKernel.
@@ -142,7 +144,7 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * Method to allocate the result image for -encodeToCommandBuffer:sourceImage:
-     * <p>
+     * 
      * Default: MPSTemporaryImage.defaultAllocator
      */
     @Generated
@@ -152,17 +154,17 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * Encode a MPSCNNKernel into a command Buffer. Create a texture to hold the result and return it.
-     * <p>
+     * 
      * In the first iteration on this method, encodeToCommandBuffer:sourceImage:destinationImage:
      * some work was left for the developer to do in the form of correctly setting the offset property
      * and sizing the result buffer. With the introduction of the padding policy (see padding property)
      * the filter can do this work itself. If you would like to have some input into what sort of MPSImage
      * (e.g. temporary vs. regular) or what size it is or where it is allocated, you may set the
      * destinationImageAllocator to allocate the image yourself.
-     * <p>
+     * 
      * This method uses the MPSNNPadding padding property to figure out how to size
      * the result image and to set the offset property. See discussion in MPSNeuralNetworkTypes.h.
-     *
+     * 
      * @param commandBuffer  The command buffer
      * @param primaryImage   A MPSImages to use as the primary source images for the filter.
      * @param secondaryImage A MPSImages to use as the secondary source images for the filter.
@@ -179,10 +181,10 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * Encode a MPSCNNKernel into a command Buffer. The operation shall proceed out-of-place.
-     * <p>
+     * 
      * This is the older style of encode which reads the offset, doesn't change it,
      * and ignores the padding method.
-     *
+     * 
      * @param commandBuffer    A valid MTLCommandBuffer to receive the encoded filter
      * @param primaryImage     A valid MPSImage object containing the primary source image.
      * @param secondaryImage   A valid MPSImage object containing the secondary source image.
@@ -210,13 +212,13 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
@@ -228,7 +230,7 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * Standard init with default properties per filter type
-     *
+     * 
      * @param device The device that the filter will be used on. May not be NULL.
      * @return A pointer to the newly initialized object. This will fail, returning
      *         nil if the device is not supported. Devices must be
@@ -253,9 +255,9 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] isBackwards
-     * <p>
+     * 
      * YES if the filter operates backwards.
-     * <p>
+     * 
      * This influences how strideInPixelsX/Y should be interpreted.
      */
     @Generated
@@ -277,9 +279,9 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] padding
-     * <p>
+     * 
      * The padding method used by the filter
-     * <p>
+     * 
      * This influences how strideInPixelsX/Y should be interpreted.
      * Default: MPSNNPaddingMethodAlignCentered | MPSNNPaddingMethodAddRemainderToTopLeft | MPSNNPaddingMethodSizeSame
      * Some object types (e.g. MPSCNNFullyConnected) may override this default with something appropriate to its
@@ -292,14 +294,14 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] primaryEdgeMode
-     * <p>
+     * 
      * The MPSImageEdgeMode to use when texture reads stray off the edge of the primary source image
-     * <p>
+     * 
      * Most MPSKernel objects can read off the edge of the source image. This can happen
      * because of a negative offset property, because the offset + clipRect.size is larger
      * than the source image or because the filter looks at neighboring pixels, such as a
      * Convolution filter. Default: MPSImageEdgeModeZero.
-     * <p>
+     * 
      * See Also: @ref subsubsection_edgemode
      */
     @Generated
@@ -309,13 +311,13 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] primaryOffset
-     * <p>
+     * 
      * The position of the destination clip rectangle origin relative to the primary source buffer.
-     * <p>
+     * 
      * The offset is defined to be the position of clipRect.origin in source coordinates.
      * Default: {0,0,0}, indicating that the top left corners of the clipRect and primary source image align.
      * offset.z is the index of starting source image in batch processing mode.
-     * <p>
+     * 
      * See Also: @ref subsubsection_mpsoffset
      */
     @Generated
@@ -325,11 +327,13 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] primaryStrideInPixelsX
-     * <p>
+     * 
      * The downsampling (or upsampling if a backwards filter) factor in the horizontal dimension
      * for the primary source image
-     * <p>
+     * 
      * If the filter does not do up or downsampling, 1 is returned.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("primaryStrideInPixelsX")
@@ -338,11 +342,13 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] primaryStrideInPixelsY
-     * <p>
+     * 
      * The downsampling (or upsampling if a backwards filter) factor in the vertical dimension
      * for the primary source image
-     * <p>
+     * 
      * If the filter does not do up or downsampling, 1 is returned.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("primaryStrideInPixelsY")
@@ -359,14 +365,14 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] secondaryEdgeMode
-     * <p>
+     * 
      * The MPSImageEdgeMode to use when texture reads stray off the edge of the primary source image
-     * <p>
+     * 
      * Most MPSKernel objects can read off the edge of the source image. This can happen
      * because of a negative offset property, because the offset + clipRect.size is larger
      * than the source image or because the filter looks at neighboring pixels, such as a
      * Convolution filter. Default: MPSImageEdgeModeZero.
-     * <p>
+     * 
      * See Also: @ref subsubsection_edgemode
      */
     @Generated
@@ -376,13 +382,13 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] secondaryOffset
-     * <p>
+     * 
      * The position of the destination clip rectangle origin relative to the secondary source buffer.
-     * <p>
+     * 
      * The offset is defined to be the position of clipRect.origin in source coordinates.
      * Default: {0,0,0}, indicating that the top left corners of the clipRect and secondary source image align.
      * offset.z is the index of starting source image in batch processing mode.
-     * <p>
+     * 
      * See Also: @ref subsubsection_mpsoffset
      */
     @Generated
@@ -392,11 +398,13 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] secondaryStrideInPixelsX
-     * <p>
+     * 
      * The downsampling (or upsampling if a backwards filter) factor in the horizontal dimension
      * for the secondary source image
-     * <p>
+     * 
      * If the filter does not do up or downsampling, 1 is returned.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("secondaryStrideInPixelsX")
@@ -405,11 +413,13 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] secondaryStrideInPixelsY
-     * <p>
+     * 
      * The downsampling (or upsampling if a backwards filter) factor in the vertical dimension
      * for the secondary source image
-     * <p>
+     * 
      * If the filter does not do up or downsampling, 1 is returned.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("secondaryStrideInPixelsY")
@@ -418,15 +428,15 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] clipRect
-     * <p>
+     * 
      * An optional clip rectangle to use when writing data. Only the pixels in the rectangle will be overwritten.
-     * <p>
+     * 
      * A MTLRegion that indicates which part of the destination to overwrite. If the clipRect does not lie
      * completely within the destination image, the intersection between clip rectangle and destination bounds is
      * used. Default: MPSRectNoClip (MPSKernel::MPSRectNoClip) indicating the entire image.
      * clipRect.origin.z is the index of starting destination image in batch processing mode. clipRect.size.depth
      * is the number of images to process in batch processing mode.
-     * <p>
+     * 
      * See Also: @ref subsubsection_clipRect
      */
     @Generated
@@ -435,9 +445,9 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] destinationFeatureChannelOffset
-     * <p>
+     * 
      * The number of channels in the destination MPSImage to skip before writing output.
-     * <p>
+     * 
      * This is the starting offset into the destination image in the feature channel dimension
      * at which destination data is written.
      * This allows an application to pass a subset of all the channels in MPSImage as output of MPSKernel.
@@ -457,7 +467,7 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * Method to allocate the result image for -encodeToCommandBuffer:sourceImage:
-     * <p>
+     * 
      * Default: MPSTemporaryImage.defaultAllocator
      */
     @Generated
@@ -466,9 +476,9 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] padding
-     * <p>
+     * 
      * The padding method used by the filter
-     * <p>
+     * 
      * This influences how strideInPixelsX/Y should be interpreted.
      * Default: MPSNNPaddingMethodAlignCentered | MPSNNPaddingMethodAddRemainderToTopLeft | MPSNNPaddingMethodSizeSame
      * Some object types (e.g. MPSCNNFullyConnected) may override this default with something appropriate to its
@@ -480,14 +490,14 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] primaryEdgeMode
-     * <p>
+     * 
      * The MPSImageEdgeMode to use when texture reads stray off the edge of the primary source image
-     * <p>
+     * 
      * Most MPSKernel objects can read off the edge of the source image. This can happen
      * because of a negative offset property, because the offset + clipRect.size is larger
      * than the source image or because the filter looks at neighboring pixels, such as a
      * Convolution filter. Default: MPSImageEdgeModeZero.
-     * <p>
+     * 
      * See Also: @ref subsubsection_edgemode
      */
     @Generated
@@ -496,13 +506,13 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] primaryOffset
-     * <p>
+     * 
      * The position of the destination clip rectangle origin relative to the primary source buffer.
-     * <p>
+     * 
      * The offset is defined to be the position of clipRect.origin in source coordinates.
      * Default: {0,0,0}, indicating that the top left corners of the clipRect and primary source image align.
      * offset.z is the index of starting source image in batch processing mode.
-     * <p>
+     * 
      * See Also: @ref subsubsection_mpsoffset
      */
     @Generated
@@ -511,14 +521,14 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] secondaryEdgeMode
-     * <p>
+     * 
      * The MPSImageEdgeMode to use when texture reads stray off the edge of the primary source image
-     * <p>
+     * 
      * Most MPSKernel objects can read off the edge of the source image. This can happen
      * because of a negative offset property, because the offset + clipRect.size is larger
      * than the source image or because the filter looks at neighboring pixels, such as a
      * Convolution filter. Default: MPSImageEdgeModeZero.
-     * <p>
+     * 
      * See Also: @ref subsubsection_edgemode
      */
     @Generated
@@ -527,13 +537,13 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] secondaryOffset
-     * <p>
+     * 
      * The position of the destination clip rectangle origin relative to the secondary source buffer.
-     * <p>
+     * 
      * The offset is defined to be the position of clipRect.origin in source coordinates.
      * Default: {0,0,0}, indicating that the top left corners of the clipRect and secondary source image align.
      * offset.z is the index of starting source image in batch processing mode.
-     * <p>
+     * 
      * See Also: @ref subsubsection_mpsoffset
      */
     @Generated
@@ -566,20 +576,22 @@ public class MPSCNNBinaryKernel extends MPSKernel {
     /**
      * Returns YES if the filter must be run over the entire batch before its
      * results may be considered complete
-     * <p>
+     * 
      * The MPSNNGraph may split batches into sub-batches to save memory. However,
      * some filters, like batch statistics calculations, need to operate over
      * the entire batch to calculate a valid result, in this case, the mean and
      * variance per channel over the set of images.
-     * <p>
+     * 
      * In such cases, the accumulated result is commonly stored in a MPSState
      * containing a MTLBuffer. (MTLTextures may not be able to be read from
      * and written to in the same filter on some devices.) -isResultStateReusedAcrossBatch
      * is set to YES, so that the state is allocated once and passed in for each
      * sub-batch and the filter accumulates its results into it, one sub-batch
      * at a time. Note that sub-batches may frequently be as small as 1.
-     * <p>
+     * 
      * Default: NO
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("appendBatchBarrier")
@@ -587,21 +599,21 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * Get a suggested destination image descriptor for a source image
-     * <p>
+     * 
      * Your application is certainly free to pass in any destinationImage
      * it likes to encodeToCommandBuffer:sourceImage:destinationImage,
      * within reason. This is the basic design for iOS 10. This method
      * is therefore not required.
-     * <p>
+     * 
      * However, calculating the MPSImage size and MPSCNNBinaryKernel properties
      * for each filter can be tedious and complicated work, so this method
      * is made available to automate the process. The application may
      * modify the properties of the descriptor before a MPSImage is made from
      * it, so long as the choice is sensible for the kernel in question.
      * Please see individual kernel descriptions for restrictions.
-     * <p>
+     * 
      * The expected timeline for use is as follows:
-     * <p>
+     * 
      * 1) This method is called:
      * a) The default MPS padding calculation is applied. It
      * uses the MPSNNPaddingMethod of the .padding property to
@@ -609,37 +621,37 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * It creates the MPSImageDescriptor and adjusts the .offset
      * property of the MPSNNKernel. When using a MPSNNGraph, the
      * padding is set using the MPSNNFilterNode as a proxy.
-     * <p>
+     * 
      * b) This method may be overridden by MPSCNNBinaryKernel subclass
      * to achieve any customization appropriate to the object type.
-     * <p>
+     * 
      * c) Source states are then applied in order. These may modify the
      * descriptor and may update other object properties. See:
      * -destinationImageDescriptorForSourceImages:sourceStates:
      * forKernel:suggestedDescriptor: This is the typical way
      * in which MPS may attempt to influence the operation of
      * its kernels.
-     * <p>
+     * 
      * d) If the .padding property has a custom padding policy method
      * of the same name, it is called. Similarly, it may also adjust
      * the descriptor and any MPSCNNBinaryKernel properties. This is the
      * typical way in which your application may attempt to influence
      * the operation of the MPS kernels.
-     * <p>
+     * 
      * 2) A result is returned from this method and the caller
      * may further adjust the descriptor and kernel properties
      * directly.
-     * <p>
+     * 
      * 3) The caller uses the descriptor to make a new MPSImage to
      * use as the destination image for the -encode call in step 5.
-     * <p>
+     * 
      * 4) The caller calls -resultStateForSourceImage:sourceStates:destinationImage:
      * to make any result states needed for the kernel. If there isn't
      * one, it will return nil. A variant is available to return a
      * temporary state instead.
-     * <p>
+     * 
      * 5) a -encode method is called to encode the kernel.
-     * <p>
+     * 
      * The entire process 1-5 is more simply achieved by just calling an -encode...
      * method that returns a MPSImage out the left hand sid of the method. Simpler
      * still, use the MPSNNGraph to coordinate the entire process from end to end.
@@ -651,12 +663,12 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * a MPSImage (without passing it a texture), and then call -resourceSize. As long
      * as the MPSImage is not used in an encode call and the .texture property is not
      * invoked, the underlying MTLTexture is not created.
-     * <p>
+     * 
      * No destination state or destination image is provided as an argument to this
      * function because it is expected they will be made / configured after this
      * is called. This method is expected to auto-configure important object properties
      * that may be needed in the ensuing destination image and state creation steps.
-     *
+     * 
      * @param sourceImages A array of source images that will be passed into the -encode call
      *                     Since MPSCNNBinaryKernel is a binary kernel, it is an array of length 2.
      * @param sourceStates An optional array of source states that will be passed into the -encode call
@@ -669,18 +681,18 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * Encode a MPSCNNKernel into a command Buffer. Create a texture and state to hold the results and return them.
-     * <p>
+     * 
      * In the first iteration on this method, encodeToCommandBuffer:sourceImage:destinationState:destinationImage:
      * some work was left for the developer to do in the form of correctly setting the offset property
      * and sizing the result buffer. With the introduction of the padding policy (see padding property)
      * the filter can do this work itself. If you would like to have some input into what sort of MPSImage
      * (e.g. temporary vs. regular) or what size it is or where it is allocated, you may set the
      * destinationImageAllocator to allocate the image yourself.
-     * <p>
+     * 
      * This method uses the MPSNNPadding padding property to figure out how to size
      * the result image and to set the offset property. See discussion in MPSNeuralNetworkTypes.h.
      * All images in a batch must have MPSImage.numberOfImages = 1.
-     *
+     * 
      * @param commandBuffer  The command buffer
      * @param primaryImage   A MPSImage to use as the source images for the filter.
      * @param secondaryImage A MPSImage to use as the source images for the filter.
@@ -691,6 +703,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      *         The offset property will be adjusted to reflect the offset used during the encode.
      *         The returned image will be automatically released when the command buffer completes. If you want to
      *         keep it around for longer, retain the image. (ARC will do this for you if you use it later.)
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("encodeToCommandBuffer:primaryImage:secondaryImage:destinationState:destinationStateIsTemporary:")
@@ -700,11 +714,13 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * The size of extra MPS heap storage allocated while the kernel is encoding
-     * <p>
+     * 
      * This is best effort and just describes things that are likely to end up on the MPS heap. It does not
      * describe all allocation done by the -encode call. It is intended for use with high water calculations
      * for MTLHeap sizing. Allocations are typically for temporary storage needed for multipass algorithms.
      * This interface should not be used to detect multipass algorithms.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("encodingStorageSizeForPrimaryImage:secondaryImage:sourceStates:destinationImage:")
@@ -715,11 +731,13 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * Returns YES if the same state is used for every operation in a batch
-     * <p>
+     * 
      * If NO, then each image in a MPSImageBatch will need a corresponding
      * (and different) state to go with it. Set to YES to avoid allocating
      * redundant state in the case when the same state is used all the time.
      * Default: NO
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("isResultStateReusedAcrossBatch")
@@ -727,6 +745,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * Returns true if the -encode call modifies the state object it accepts.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("isStateModified")
@@ -734,8 +754,10 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] dilationRateX
-     * <p>
+     * 
      * Stride in source coordinates from one kernel tap to the next in the X dimension.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("primaryDilationRateX")
@@ -744,8 +766,10 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] dilationRate
-     * <p>
+     * 
      * Stride in source coordinates from one kernel tap to the next in the Y dimension.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("primaryDilationRateY")
@@ -754,12 +778,14 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] primaryKernelHeight
-     * <p>
+     * 
      * The height of the MPSCNNBinaryKernel filter window
-     * <p>
+     * 
      * This is the vertical diameter of the region read by the filter for each
      * result pixel. If the MPSCNNKernel does not have a filter window, then
      * 1 will be returned.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("primaryKernelHeight")
@@ -768,12 +794,14 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] primaryKernelWidth
-     * <p>
+     * 
      * The width of the MPSCNNBinaryKernel filter window
-     * <p>
+     * 
      * This is the horizontal diameter of the region read by the filter for each
      * result pixel. If the MPSCNNKernel does not have a filter window, then
      * 1 will be returned.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("primaryKernelWidth")
@@ -782,9 +810,9 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] primarySourceFeatureChannelMaxCount
-     * <p>
+     * 
      * The maximum number of channels in the primary source MPSImage to use
-     * <p>
+     * 
      * Most filters can insert a slice operation into the filter for free.
      * Use this to limit the size of the feature channel slice taken from
      * the input image. If the value is too large, it is truncated to be
@@ -798,9 +826,9 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] primarySourceFeatureChannelOffset
-     * <p>
+     * 
      * The number of channels in the primary source MPSImage to skip before reading the input.
-     * <p>
+     * 
      * This is the starting offset into the primary source image in the feature channel dimension
      * at which source data is read. Unit: feature channels
      * This allows an application to read a subset of all the channels in MPSImage as input of MPSKernel.
@@ -813,6 +841,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * image with insufficient number of feature channels will result in an error.
      * E.g. if the MPSCNNConvolution inputs 32 channels, and the source has 64 channels, then it is an error to set
      * primarySourceFeatureChannelOffset > 32.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("primarySourceFeatureChannelOffset")
@@ -821,7 +851,7 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * Allocate a MPSState (subclass) to hold the results from a -encodeBatchToCommandBuffer... operation
-     * <p>
+     * 
      * A graph may need to allocate storage up front before executing. This may be
      * necessary to avoid using too much memory and to manage large batches. The function
      * should allocate a MPSState object (if any) that will be produced by an -encode call
@@ -830,20 +860,20 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * be initialized with all important data and all MTLResource storage allocated.
      * The data stored in the MTLResource need not be initialized, unless the ensuing
      * -encode call expects it to be.
-     * <p>
+     * 
      * The MTLDevice used by the result is derived from the source image.
      * The padding policy will be applied to the filter before this is called
      * to give it the chance to configure any properties like MPSCNNKernel.offset.
-     * <p>
+     * 
      * CAUTION: the result state should be made after the kernel properties are
      * configured for the -encode call that will write to the state, and
      * after -destinationImageDescriptorForSourceImages:sourceStates:
      * is called (if it is called). Otherwise, behavior is undefined.
      * Please see the description of
      * -[MPSCNNKernel resultStateForSourceImage:sourceStates:destinationImage:] for more.
-     * <p>
+     * 
      * Default: returns nil
-     *
+     * 
      * @param primaryImage   The MPSImage consumed by the associated -encode call.
      * @param secondaryImage The MPSImage consumed by the associated -encode call.
      * @param sourceStates   The list of MPSStates consumed by the associated -encode call,
@@ -853,6 +883,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      *         -isResultStateReusedAcrossBatch returns YES. If -isResultStateReusedAcrossBatch
      *         returns YES, then it will be called once per batch and the MPSStateBatch array will
      *         contain MPSStateBatch.length references to the same object.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("resultStateForPrimaryImage:secondaryImage:sourceStates:destinationImage:")
@@ -861,10 +893,12 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] dilationRateX
-     * <p>
+     * 
      * Stride in source coordinates from one kernel tap to the next in the X dimension.
-     * <p>
+     * 
      * As applied to the secondary source image.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("secondaryDilationRateX")
@@ -873,10 +907,12 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] dilationRate
-     * <p>
+     * 
      * Stride in source coordinates from one kernel tap to the next in the Y dimension.
-     * <p>
+     * 
      * As applied to the secondary source image.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("secondaryDilationRateY")
@@ -885,12 +921,14 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] kernelHeight
-     * <p>
+     * 
      * The height of the MPSCNNBinaryKernel filter window for the second image source
-     * <p>
+     * 
      * This is the vertical diameter of the region read by the filter for each
      * result pixel. If the MPSCNNBinaryKernel does not have a filter window, then
      * 1 will be returned.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("secondaryKernelHeight")
@@ -899,12 +937,14 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] kernelWidth
-     * <p>
+     * 
      * The width of the MPSCNNBinaryKernel filter window for the second image source
-     * <p>
+     * 
      * This is the horizontal diameter of the region read by the filter for each
      * result pixel. If the MPSCNNBinaryKernel does not have a filter window, then
      * 1 will be returned.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("secondaryKernelWidth")
@@ -913,9 +953,9 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] secondarySourceFeatureChannelMaxCount
-     * <p>
+     * 
      * The maximum number of channels in the secondary source MPSImage to use
-     * <p>
+     * 
      * Most filters can insert a slice operation into the filter for free.
      * Use this to limit the size of the feature channel slice taken from
      * the input image. If the value is too large, it is truncated to be
@@ -929,9 +969,9 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] secondarySourceFeatureChannelOffset
-     * <p>
+     * 
      * The number of channels in the secondary source MPSImage to skip before reading the input.
-     * <p>
+     * 
      * This is the starting offset into the secondary source image in the feature channel dimension
      * at which source data is read. Unit: feature channels
      * This allows an application to read a subset of all the channels in MPSImage as input of MPSKernel.
@@ -945,6 +985,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * image with insufficient number of feature channels will result in an error.
      * E.g. if the MPSCNNConvolution inputs 32 channels, and the source has 64 channels, then it is an error to set
      * primarySourceFeatureChannelOffset > 32.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("secondarySourceFeatureChannelOffset")
@@ -953,9 +995,9 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] primarySourceFeatureChannelMaxCount
-     * <p>
+     * 
      * The maximum number of channels in the primary source MPSImage to use
-     * <p>
+     * 
      * Most filters can insert a slice operation into the filter for free.
      * Use this to limit the size of the feature channel slice taken from
      * the input image. If the value is too large, it is truncated to be
@@ -968,9 +1010,9 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] primarySourceFeatureChannelOffset
-     * <p>
+     * 
      * The number of channels in the primary source MPSImage to skip before reading the input.
-     * <p>
+     * 
      * This is the starting offset into the primary source image in the feature channel dimension
      * at which source data is read. Unit: feature channels
      * This allows an application to read a subset of all the channels in MPSImage as input of MPSKernel.
@@ -983,6 +1025,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * image with insufficient number of feature channels will result in an error.
      * E.g. if the MPSCNNConvolution inputs 32 channels, and the source has 64 channels, then it is an error to set
      * primarySourceFeatureChannelOffset > 32.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setPrimarySourceFeatureChannelOffset:")
@@ -990,11 +1034,13 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] primaryStrideInPixelsX
-     * <p>
+     * 
      * The downsampling (or upsampling if a backwards filter) factor in the horizontal dimension
      * for the primary source image
-     * <p>
+     * 
      * If the filter does not do up or downsampling, 1 is returned.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setPrimaryStrideInPixelsX:")
@@ -1002,11 +1048,13 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] primaryStrideInPixelsY
-     * <p>
+     * 
      * The downsampling (or upsampling if a backwards filter) factor in the vertical dimension
      * for the primary source image
-     * <p>
+     * 
      * If the filter does not do up or downsampling, 1 is returned.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setPrimaryStrideInPixelsY:")
@@ -1014,9 +1062,9 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] secondarySourceFeatureChannelMaxCount
-     * <p>
+     * 
      * The maximum number of channels in the secondary source MPSImage to use
-     * <p>
+     * 
      * Most filters can insert a slice operation into the filter for free.
      * Use this to limit the size of the feature channel slice taken from
      * the input image. If the value is too large, it is truncated to be
@@ -1029,9 +1077,9 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] secondarySourceFeatureChannelOffset
-     * <p>
+     * 
      * The number of channels in the secondary source MPSImage to skip before reading the input.
-     * <p>
+     * 
      * This is the starting offset into the secondary source image in the feature channel dimension
      * at which source data is read. Unit: feature channels
      * This allows an application to read a subset of all the channels in MPSImage as input of MPSKernel.
@@ -1045,6 +1093,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * image with insufficient number of feature channels will result in an error.
      * E.g. if the MPSCNNConvolution inputs 32 channels, and the source has 64 channels, then it is an error to set
      * primarySourceFeatureChannelOffset > 32.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setSecondarySourceFeatureChannelOffset:")
@@ -1052,11 +1102,13 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] secondaryStrideInPixelsX
-     * <p>
+     * 
      * The downsampling (or upsampling if a backwards filter) factor in the horizontal dimension
      * for the secondary source image
-     * <p>
+     * 
      * If the filter does not do up or downsampling, 1 is returned.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setSecondaryStrideInPixelsX:")
@@ -1064,11 +1116,13 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * [@property] secondaryStrideInPixelsY
-     * <p>
+     * 
      * The downsampling (or upsampling if a backwards filter) factor in the vertical dimension
      * for the secondary source image
-     * <p>
+     * 
      * If the filter does not do up or downsampling, 1 is returned.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setSecondaryStrideInPixelsY:")
@@ -1076,7 +1130,7 @@ public class MPSCNNBinaryKernel extends MPSKernel {
 
     /**
      * Allocate a temporary MPSState (subclass) to hold the results from a -encodeBatchToCommandBuffer... operation
-     * <p>
+     * 
      * A graph may need to allocate storage up front before executing. This may be
      * necessary to avoid using too much memory and to manage large batches. The function
      * should allocate any MPSState objects that will be produced by an -encode call
@@ -1085,20 +1139,20 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      * be initialized with all important data and all MTLResource storage allocated.
      * The data stored in the MTLResource need not be initialized, unless the ensuing
      * -encode call expects it to be.
-     * <p>
+     * 
      * The MTLDevice used by the result is derived from the command buffer.
      * The padding policy will be applied to the filter before this is called
      * to give it the chance to configure any properties like MPSCNNKernel.offset.
-     * <p>
+     * 
      * CAUTION: the result state should be made after the kernel properties are
      * configured for the -encode call that will write to the state, and
      * after -destinationImageDescriptorForSourceImages:sourceStates:
      * is called (if it is called). Otherwise, behavior is undefined.
      * Please see the description of
      * -[MPSCNNKernel resultStateForSourceImage:sourceStates:destinationImage] for more.
-     * <p>
+     * 
      * Default: returns nil
-     *
+     * 
      * @param commandBuffer  The command buffer to allocate the temporary storage against
      *                       The state will only be valid on this command buffer.
      * @param primaryImage   The MPSImage consumed by the associated -encode call.
@@ -1110,6 +1164,8 @@ public class MPSCNNBinaryKernel extends MPSKernel {
      *         -isResultStateReusedAcrossBatch returns YES. If -isResultStateReusedAcrossBatch
      *         returns YES, then it will be called once per batch and the MPSStateBatch array will
      *         contain MPSStateBatch.length references to the same object.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("temporaryResultStateForCommandBuffer:primaryImage:secondaryImage:sourceStates:destinationImage:")

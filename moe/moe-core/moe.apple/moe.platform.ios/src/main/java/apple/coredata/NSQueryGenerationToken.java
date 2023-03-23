@@ -46,6 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Class used to track database generations for generational querying.
  * See NSManagedObjectContext for details on how it is used.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CoreData")

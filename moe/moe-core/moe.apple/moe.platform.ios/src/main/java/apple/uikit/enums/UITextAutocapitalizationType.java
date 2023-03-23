@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * UITextAutocapitalizationType
- * <p>
+ * 
  * Controls autocapitalization behavior for a text widget.
  * Note: Capitalization does not apply in all script systems. In such
  * cases, these values are ignored by the keyboard/input method implementation.

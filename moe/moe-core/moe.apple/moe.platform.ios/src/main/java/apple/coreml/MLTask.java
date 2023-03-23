@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Class that abstracts state transitions and basic task controls.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreML")

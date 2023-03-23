@@ -24,6 +24,13 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * HKClinicalType
+ * 
+ * A type that identifies samples that contain clinical record data.
+ * 
+ * API-Since: 12.0
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -195,4 +202,8 @@ public class HKClinicalType extends HKSampleType {
     @Generated
     @Selector("electrocardiogramType")
     public static native HKElectrocardiogramType electrocardiogramType();
+
+    @Generated
+    @Selector("visionPrescriptionType")
+    public static native HKPrescriptionType visionPrescriptionType();
 }

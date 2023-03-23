@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -153,10 +156,16 @@ public class SKReceiptRefreshRequest extends SKRequest {
     @Selector("init")
     public native SKReceiptRefreshRequest init();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithReceiptProperties:")
     public native SKReceiptRefreshRequest initWithReceiptProperties(NSDictionary<String, ?> properties);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("receiptProperties")
     public native NSDictionary<String, ?> receiptProperties();

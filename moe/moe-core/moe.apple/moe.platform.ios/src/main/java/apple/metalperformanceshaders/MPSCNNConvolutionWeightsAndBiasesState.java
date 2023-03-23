@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSCNNConvolutionWeightsAndBiasesState
- * <p>
+ * 
  * The MPSCNNConvolutionWeightsAndBiasesState is returned by exportWeightsAndBiasesWithCommandBuffer: method on
  * MPSCNNConvolution object.
  * This is mainly used for GPU side weights/biases update process.
@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MTLBuffer. If application does not want to keep a copy of weights/biases, it can call [MPSCNNConvolution
  * exportWeightsAndBiasesWithCommandBuffer:] to get
  * the current weights from convolution itself, do the updated and call reloadWithCommandBuffer.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -76,7 +78,7 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
 
     /**
      * [@property] biases
-     * <p>
+     * 
      * A buffer that contains the biases. Each value is float and there are ouputFeatureChannels values.
      */
     @Generated
@@ -86,7 +88,7 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
 
     /**
      * [@property] biasesOffset
-     * <p>
+     * 
      * Offset at which weights start in biases buffer
      * Default value is 0.
      */
@@ -137,7 +139,7 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
 
     /**
      * Create and initialize MPSCNNConvolutionWeightsAndBiasesState with application provided convolution descriptor
-     * <p>
+     * 
      * Create weights and biases buffers of appropriate size
      */
     @Generated
@@ -167,7 +169,7 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
     /**
      * Create and initialize MPSCNNConvolutionWeightsAndBiasesState with application
      * provided weights and biases buffers.
-     * <p>
+     * 
      * This is the convinience API when buffers of exact size i.e.
      * [weights length] = inputFeatureChannels*kernelWidth*kernelHeight*channelMultiplier*sizeof(float) // for depthwise
      * convolution
@@ -182,7 +184,7 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
     /**
      * Create and initialize MPSCNNConvolutionWeightsAndBiasesState with application
      * provided weights and biases buffers.
-     * <p>
+     * 
      * It gives finer allocation control to application e.g. application can pass same buffer for weights and biases
      * with
      * appropriate offsets. Or offset into some larger buffer from application managed heap etc. Number of weights
@@ -199,6 +201,8 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
      * weightsOffset + weightsLength <= [weights length]
      * and biasesOffset + biasesLength <= [biases length]
      * Offsets must of sizeof(float) aligned i.e. multiple of 4.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initWithWeights:weightsOffset:biases:biasesOffset:cnnConvolutionDescriptor:")
@@ -252,7 +256,7 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
     /**
      * Create and initialize temporary MPSCNNConvolutionWeightsAndBiasesState with application provided convolution
      * descriptor
-     * <p>
+     * 
      * Create weights and biases buffers of appropriate size from command buffer cache.
      */
     @Generated
@@ -287,11 +291,11 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
 
     /**
      * [@property] weights
-     * <p>
+     * 
      * A buffer that contains the weights.
      * Each value in the buffer is a float. The layout of the weights with respect to the weights is the same as
      * the weights layout provided by data source i.e. it can be interpreted as 4D array
-     * <p>
+     * 
      * weights[outputFeatureChannels][kernelHeight][kernelWidth][inputFeatureChannels/groups]
      * for regular convolution. For depthwise convolution
      * weights[outputFeatureChannels][kernelHeight][kernelWidth] as we currently only support channel multiplier of 1.
@@ -303,7 +307,7 @@ public class MPSCNNConvolutionWeightsAndBiasesState extends MPSState {
 
     /**
      * [@property] weightsOffset
-     * <p>
+     * 
      * Offset at which weights start in weights buffer
      * Default value is 0.
      */

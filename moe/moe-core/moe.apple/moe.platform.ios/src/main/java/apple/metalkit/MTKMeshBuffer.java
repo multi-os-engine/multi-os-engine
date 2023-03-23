@@ -47,11 +47,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MTKMeshBuffer
- * <p>
+ * 
  * Mesh buffer created by MTKMeshBufferAllocator when Model I/O needs to memory for vertex or index data backing.
- * <p>
+ * 
  * Memory backing these buffer are Metal buffers. Model I/O will load index and vertex data from from a model asset
  * directly in to the Metal buffer.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalKit")
@@ -169,9 +171,9 @@ public class MTKMeshBuffer extends NSObject implements MDLMeshBuffer, MDLNamed {
 
     /**
      * [@property] buffer
-     * <p>
+     * 
      * Metal Buffer backing vertex/index data.
-     * <p>
+     * 
      * Many MTKMeshBuffers may reference the same buffer, but each with it's own offset. (i.e. Many MTKMeshBuffers may
      * be suballocated from a single buffer)
      */
@@ -209,7 +211,7 @@ public class MTKMeshBuffer extends NSObject implements MDLMeshBuffer, MDLNamed {
 
     /**
      * [@property] offset
-     * <p>
+     * 
      * Byte offset of the data within the metal buffer.
      */
     @Generated

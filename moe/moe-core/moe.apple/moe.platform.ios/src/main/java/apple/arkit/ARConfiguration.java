@@ -23,9 +23,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.avfoundation.AVCaptureDevice;
 
 /**
  * An object to describe and configure the Augmented Reality techniques to be used in an ARSession.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ARKit")
@@ -115,7 +118,7 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * Enable or disable light estimation.
-     * <p>
+     * 
      * Enabled by default.
      */
     @Generated
@@ -144,7 +147,7 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * Determines whether to capture and provide audio data.
-     * <p>
+     * 
      * Disabled by default.
      */
     @Generated
@@ -161,7 +164,7 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * Enable or disable light estimation.
-     * <p>
+     * 
      * Enabled by default.
      */
     @Generated
@@ -170,7 +173,7 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * Determines whether to capture and provide audio data.
-     * <p>
+     * 
      * Disabled by default.
      */
     @Generated
@@ -183,7 +186,7 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * Determines how the coordinate system should be aligned with the world.
-     * <p>
+     * 
      * The default is ARWorldAlignmentGravity.
      */
     @Generated
@@ -201,7 +204,7 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * Determines how the coordinate system should be aligned with the world.
-     * <p>
+     * 
      * The default is ARWorldAlignmentGravity.
      */
     @Generated
@@ -211,16 +214,18 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * The type of semantic understanding to provide with each frame.
-     * <p>
+     * 
      * Use the `supportsFrameSemantics` class method to check if the configuration type you intend to run supports the
      * set of frame semantics. For example, when running a session with
      * a configuration of type ARWorldTrackingConfiguration one would need to use `+[ ARWorldTrackingConfiguration
      * supportsFrameSemantics:]` to perform said check.
      * An exception is thrown if the option
      * is not supported. Defaults to ARFrameSemanticNone.
-     *
+     * 
      * @see ARFrameSemantics
      * @see +[ARConfiguration supportsFrameSemantics:]
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("frameSemantics")
@@ -229,16 +234,18 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * The type of semantic understanding to provide with each frame.
-     * <p>
+     * 
      * Use the `supportsFrameSemantics` class method to check if the configuration type you intend to run supports the
      * set of frame semantics. For example, when running a session with
      * a configuration of type ARWorldTrackingConfiguration one would need to use `+[ ARWorldTrackingConfiguration
      * supportsFrameSemantics:]` to perform said check.
      * An exception is thrown if the option
      * is not supported. Defaults to ARFrameSemanticNone.
-     *
+     * 
      * @see ARFrameSemantics
      * @see +[ARConfiguration supportsFrameSemantics:]
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("setFrameSemantics:")
@@ -246,6 +253,8 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * Video format of the session output.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setVideoFormat:")
@@ -253,8 +262,10 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * A list of supported video formats for this configuration and device.
-     * <p>
+     * 
      * The first element in the list is the default format for session output.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("supportedVideoFormats")
@@ -262,14 +273,16 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * Determines whether the type of frame semantics is supported by the device and ARConfiguration class.
-     * <p>
+     * 
      * Semantic frame understanding is not supported on all devices. Use the `supportsFrameSemantics` class method to
      * check if the configuration type you intend to run supports the
      * set of frame semantics. For example, when running a session with a configuration of type
      * ARWorldTrackingConfiguration one would need to use
      * `+[ ARWorldTrackingConfiguration supportsFrameSemantics:]` to perform said check.
-     *
+     * 
      * @see ARFrameSemantics
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("supportsFrameSemantics:")
@@ -277,8 +290,67 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     /**
      * Video format of the session output.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("videoFormat")
     public native ARVideoFormat videoFormat();
+
+    /**
+     * Returns a pointer to the capture device of the camera that's used for rendering, so developers can adjust capture
+     * settings.
+     * 
+     * May return nil if it is not recommended to modify capture settings, for example if the primary camera is used for
+     * tracking.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("configurableCaptureDeviceForPrimaryCamera")
+    public static native AVCaptureDevice configurableCaptureDeviceForPrimaryCamera();
+
+    /**
+     * Returns a video format using a 4K resolution from the list of supported video formats.
+     * 
+     * May return nil if 4K is not supported for this configuration or device.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("recommendedVideoFormatFor4KResolution")
+    public static native ARVideoFormat recommendedVideoFormatFor4KResolution();
+
+    /**
+     * Returns a recommended video format that supports capturing high resolution frames with a significantly higher
+     * resolution than the streaming camera resolution.
+     * 
+     * Using this format may consume more power. Other video formats may support capturing high resolution frames as
+     * well, albeit at a lower quality or resolution.
+     * 
+     * @see [ARSession captureHighResolutionFrameWithCompletion:]
+     * 
+     *      API-Since: 16.0
+     */
+    @Generated
+    @Selector("recommendedVideoFormatForHighResolutionFrameCapturing")
+    public static native ARVideoFormat recommendedVideoFormatForHighResolutionFrameCapturing();
+
+    /**
+     * Whether HDR capturing is allowed if the current video format supports it. Defaults to @c NO.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setVideoHDRAllowed:")
+    public native void setVideoHDRAllowed(boolean value);
+
+    /**
+     * Whether HDR capturing is allowed if the current video format supports it. Defaults to @c NO.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("videoHDRAllowed")
+    public native boolean videoHDRAllowed();
 }

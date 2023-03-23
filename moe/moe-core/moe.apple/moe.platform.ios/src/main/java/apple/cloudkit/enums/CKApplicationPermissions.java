@@ -19,10 +19,15 @@ package apple.cloudkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class CKApplicationPermissions {
     /**
      * Allows the user's record in CloudKit to be discoverable via the user's email address
+     * 
+     * API-Since: 8.0
      */
     @Generated @NUInt public static final long CKApplicationPermissionUserDiscoverability = 0x0000000000000001L;
 

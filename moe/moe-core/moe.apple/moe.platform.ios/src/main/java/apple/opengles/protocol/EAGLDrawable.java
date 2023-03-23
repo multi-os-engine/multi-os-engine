@@ -26,7 +26,12 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * EAGLDrawable Interface
+ * 
+ * API-Since: 2.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
  */
+@Deprecated
 @Generated
 @Library("OpenGLES")
 @Runtime(ObjCRuntime.class)

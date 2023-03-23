@@ -17,9 +17,6 @@ limitations under the License.
 package apple.coreimage;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -48,7 +45,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -160,6 +163,8 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * the CGAffineTransform's six values are stored in the first six values of the CIVector.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("vectorWithCGAffineTransform:")
@@ -167,6 +172,8 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * the CGPoint x and y values are stored in the first X and Y values of the CIVector.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("vectorWithCGPoint:")
@@ -174,6 +181,8 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * the CGRect x, y, width, height values are stored in the first X, Y, Z, W values of the CIVector.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("vectorWithCGRect:")
@@ -212,16 +221,25 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("CGAffineTransformValue")
     @ByValue
     public native CGAffineTransform CGAffineTransformValue();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("CGPointValue")
     @ByValue
     public native CGPoint CGPointValue();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("CGRectValue")
     @ByValue
@@ -272,14 +290,23 @@ public class CIVector extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("init")
     public native CIVector init();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithCGAffineTransform:")
     public native CIVector initWithCGAffineTransform(@ByValue CGAffineTransform r);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithCGPoint:")
     public native CIVector initWithCGPoint(@ByValue CGPoint p);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithCGRect:")
     public native CIVector initWithCGRect(@ByValue CGRect r);

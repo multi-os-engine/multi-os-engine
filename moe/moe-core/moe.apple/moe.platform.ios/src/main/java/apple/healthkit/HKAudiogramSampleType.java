@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKAudiogramSampleType
- * <p>
+ * 
  * Represents an audiogram sample.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("HealthKit")
@@ -200,4 +202,8 @@ public class HKAudiogramSampleType extends HKSampleType {
     @Generated
     @Selector("electrocardiogramType")
     public static native HKElectrocardiogramType electrocardiogramType();
+
+    @Generated
+    @Selector("visionPrescriptionType")
+    public static native HKPrescriptionType visionPrescriptionType();
 }

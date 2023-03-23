@@ -89,6 +89,9 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("dateFormatFromTemplate:options:locale:")
     public static native String dateFormatFromTemplateOptionsLocale(String tmplate, @NUInt long opts, NSLocale locale);
@@ -135,6 +138,9 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("localizedStringFromDate:dateStyle:timeStyle:")
     public static native String localizedStringFromDateDateStyleTimeStyle(NSDate date, @NUInt long dstyle,
@@ -202,6 +208,9 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("defaultDate")
     public native NSDate defaultDate();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("doesRelativeDateFormatting")
     public native boolean doesRelativeDateFormatting();
@@ -217,6 +226,8 @@ public class NSDateFormatter extends NSFormatter {
 
     /**
      * default is NSFormattingContextUnknown
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("formattingContext")
@@ -235,6 +246,9 @@ public class NSDateFormatter extends NSFormatter {
     public native boolean getObjectValueForStringRangeError(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj,
             String string, NSRange rangep, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("gregorianStartDate")
     public native NSDate gregorianStartDate();
@@ -259,6 +273,9 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("locale")
     public native NSLocale locale();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("longEraSymbols")
     public native NSArray<String> longEraSymbols();
@@ -267,6 +284,9 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("monthSymbols")
     public native NSArray<String> monthSymbols();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("quarterSymbols")
     public native NSArray<String> quarterSymbols();
@@ -291,6 +311,9 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("setDefaultDate:")
     public native void setDefaultDate(NSDate value);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("setDoesRelativeDateFormatting:")
     public native void setDoesRelativeDateFormatting(boolean value);
@@ -305,6 +328,8 @@ public class NSDateFormatter extends NSFormatter {
 
     /**
      * default is NSFormattingContextUnknown
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFormattingContext:")
@@ -314,6 +339,9 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("setGeneratesCalendarDates:")
     public native void setGeneratesCalendarDates(boolean value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setGregorianStartDate:")
     public native void setGregorianStartDate(NSDate value);
@@ -324,20 +352,25 @@ public class NSDateFormatter extends NSFormatter {
 
     /**
      * A convenient way to generate an appropriate localized date format, and set it, in a single operation.
-     * <p>
+     * 
      * Equivalent to, though not necessarily implemented as:
      * formatter.dateFormat = [NSDateFormatter dateFormatFromTemplate:dateFormatTemplate options:0
      * locale:formatter.locale];
-     * <p>
+     * 
      * Note that the template string is used only to specify which date format components should be included. Ordering
      * and other text will not be preserved.
      * The parameter is also not stored, or updated when the locale or other options change, just as with the
      * ‘dateFormat’ property.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLocalizedDateFormatFromTemplate:")
     public native void setLocalizedDateFormatFromTemplate(String dateFormatTemplate);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setLongEraSymbols:")
     public native void setLongEraSymbols(NSArray<String> value);
@@ -350,6 +383,9 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("setPMSymbol:")
     public native void setPMSymbol(String value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setQuarterSymbols:")
     public native void setQuarterSymbols(NSArray<String> value);
@@ -358,18 +394,30 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("setShortMonthSymbols:")
     public native void setShortMonthSymbols(NSArray<String> value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setShortQuarterSymbols:")
     public native void setShortQuarterSymbols(NSArray<String> value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setShortStandaloneMonthSymbols:")
     public native void setShortStandaloneMonthSymbols(NSArray<String> value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setShortStandaloneQuarterSymbols:")
     public native void setShortStandaloneQuarterSymbols(NSArray<String> value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setShortStandaloneWeekdaySymbols:")
     public native void setShortStandaloneWeekdaySymbols(NSArray<String> value);
@@ -378,14 +426,23 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("setShortWeekdaySymbols:")
     public native void setShortWeekdaySymbols(NSArray<String> value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setStandaloneMonthSymbols:")
     public native void setStandaloneMonthSymbols(NSArray<String> value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setStandaloneQuarterSymbols:")
     public native void setStandaloneQuarterSymbols(NSArray<String> value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setStandaloneWeekdaySymbols:")
     public native void setStandaloneWeekdaySymbols(NSArray<String> value);
@@ -402,18 +459,30 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("setTwoDigitStartDate:")
     public native void setTwoDigitStartDate(NSDate value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setVeryShortMonthSymbols:")
     public native void setVeryShortMonthSymbols(NSArray<String> value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setVeryShortStandaloneMonthSymbols:")
     public native void setVeryShortStandaloneMonthSymbols(NSArray<String> value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setVeryShortStandaloneWeekdaySymbols:")
     public native void setVeryShortStandaloneWeekdaySymbols(NSArray<String> value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setVeryShortWeekdaySymbols:")
     public native void setVeryShortWeekdaySymbols(NSArray<String> value);
@@ -426,18 +495,30 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("shortMonthSymbols")
     public native NSArray<String> shortMonthSymbols();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("shortQuarterSymbols")
     public native NSArray<String> shortQuarterSymbols();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("shortStandaloneMonthSymbols")
     public native NSArray<String> shortStandaloneMonthSymbols();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("shortStandaloneQuarterSymbols")
     public native NSArray<String> shortStandaloneQuarterSymbols();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("shortStandaloneWeekdaySymbols")
     public native NSArray<String> shortStandaloneWeekdaySymbols();
@@ -446,14 +527,23 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("shortWeekdaySymbols")
     public native NSArray<String> shortWeekdaySymbols();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("standaloneMonthSymbols")
     public native NSArray<String> standaloneMonthSymbols();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("standaloneQuarterSymbols")
     public native NSArray<String> standaloneQuarterSymbols();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("standaloneWeekdaySymbols")
     public native NSArray<String> standaloneWeekdaySymbols();
@@ -479,18 +569,30 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("twoDigitStartDate")
     public native NSDate twoDigitStartDate();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("veryShortMonthSymbols")
     public native NSArray<String> veryShortMonthSymbols();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("veryShortStandaloneMonthSymbols")
     public native NSArray<String> veryShortStandaloneMonthSymbols();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("veryShortStandaloneWeekdaySymbols")
     public native NSArray<String> veryShortStandaloneWeekdaySymbols();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("veryShortWeekdaySymbols")
     public native NSArray<String> veryShortWeekdaySymbols();

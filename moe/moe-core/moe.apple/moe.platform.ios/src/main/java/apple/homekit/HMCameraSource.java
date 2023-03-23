@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Abstract class for source of data from a camera.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("HomeKit")
@@ -157,6 +159,8 @@ public class HMCameraSource extends NSObject {
 
     /**
      * Represents the aspect ratio of the camera source, defined as width over height.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("aspectRatio")

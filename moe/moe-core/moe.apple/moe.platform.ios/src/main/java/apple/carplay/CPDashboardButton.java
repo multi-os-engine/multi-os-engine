@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -96,7 +99,7 @@ public class CPDashboardButton extends NSObject implements NSSecureCoding {
 
     /**
      * The image displayed on the button. Maximum supported size is 30x30 points.
-     * <p>
+     * 
      * Animated images are not supported. If an animated image is assigned, only the first image will be used.
      */
     @Generated
@@ -113,7 +116,7 @@ public class CPDashboardButton extends NSObject implements NSSecureCoding {
 
     /**
      * Initialize a button with title variants, optional subtitle variants, and image.
-     *
+     * 
      * @param titleVariants    An array of title variants for this button, arranged from longest to shortest. You must
      *                         provide at least one title.
      * @param subtitleVariants An array of subtitle variants for this button, arranged from longest to shortest.

@@ -37,6 +37,8 @@ public final class NSNetServiceOptions {
      * NSNetServicesBadArgumentError if the NSNetService type does not end with "_tcp".
      * New incoming connections will be delivered in the form of NSStreams via the
      * -netService:didAcceptConnectionWithInputStream:outputStream: delegate method.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NUInt public static final long ListenForConnections = 0x0000000000000002L;
 

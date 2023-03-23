@@ -48,6 +48,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * GKAchievementDescription is a full description of the achievement as defined before app submission in App Store
  * Connect.
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -198,6 +200,8 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
 
     /**
      * The group identifier for the achievement, if one exists.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("groupIdentifier")
@@ -210,6 +214,10 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     /**
      * Image for completed achievement. Not valid until loadImage: has completed. Deprecated -- use
      * loadImageWithCompletionHandler: instead.
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use loadImageWithCompletionHandler: instead
      */
     @Generated
     @Deprecated
@@ -234,6 +242,8 @@ public class GKAchievementDescription extends NSObject implements NSCoding, NSSe
     /**
      * Whether or not the achievement will be reported by the game when the user earns it again. This allows the
      * achievement to be used for challenges when the recipient has previously earned it.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("isReplayable")

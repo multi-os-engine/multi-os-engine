@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -191,11 +194,16 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * A human-understandable string representation of the intent's user-facing behavior
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("intentDescription")
     public native String intentDescription();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("imageForParameterNamed:")
     public native INImage imageForParameterNamed(String parameterName);
@@ -211,6 +219,8 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Set an image associated with a parameter on the receiver. This image will be used in display of the receiver
      * throughout the system.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setImage:forParameterNamed:")
@@ -219,6 +229,8 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * A human-understandable string that can be shown to the user as an suggestion of the phrase they might want to use
      * when adding intent as a shortcut to Siri.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setSuggestedInvocationPhrase:")
@@ -227,6 +239,8 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * A human-understandable string that can be shown to the user as an suggestion of the phrase they might want to use
      * when adding intent as a shortcut to Siri.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("suggestedInvocationPhrase")
@@ -235,6 +249,8 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Defines additional contexts in which this intent is relevant to be suggested to the user. Applies to intents
      * donated using INInteraction or set as suggested using INVoiceShortcutCenter.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setShortcutAvailability:")
@@ -243,6 +259,8 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Defines additional contexts in which this intent is relevant to be suggested to the user. Applies to intents
      * donated using INInteraction or set as suggested using INVoiceShortcutCenter.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("shortcutAvailability")
@@ -251,6 +269,8 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * A metadata object to attach additional metadata to this intent when donated
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("donationMetadata")
@@ -258,6 +278,8 @@ public class INIntent extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * A metadata object to attach additional metadata to this intent when donated
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDonationMetadata:")

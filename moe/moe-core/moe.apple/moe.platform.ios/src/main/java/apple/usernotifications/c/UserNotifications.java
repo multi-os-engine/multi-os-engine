@@ -30,8 +30,17 @@ import org.moe.natj.objc.map.ObjCStringMapper;
 @Library("UserNotifications")
 @Runtime(CRuntime.class)
 public final class UserNotifications {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long UNNotificationActionOptionNone = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long UNAuthorizationOptionNone = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long UNNotificationPresentationOptionNone = 0x0000000000000000L;
 
     static {
@@ -42,6 +51,9 @@ public final class UserNotifications {
     private UserNotifications() {
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -50,6 +62,8 @@ public final class UserNotifications {
     /**
      * Key to manually provide a type hint for the attachment. If not set the type hint will be guessed from the
      * attachment's file extension. Value must be an NSString.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -58,6 +72,8 @@ public final class UserNotifications {
 
     /**
      * Key to specify if the thumbnail for this attachment is hidden. Defaults to NO. Value must be a boolean NSNumber.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -67,6 +83,8 @@ public final class UserNotifications {
     /**
      * Key to specify a normalized clipping rectangle to use for the attachment thumbnail. Value must be a CGRect
      * encoded using CGRectCreateDictionaryRepresentation.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -77,21 +95,32 @@ public final class UserNotifications {
      * Key to specify the animated image frame number or the movie time to use as the thumbnail.
      * An animated image frame number must be an NSNumber. A movie time must either be an NSNumber with the time in
      * seconds or a CMTime encoded using CMTimeCopyAsDictionary.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UNNotificationAttachmentOptionsThumbnailTimeKey();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UNNotificationDefaultActionIdentifier();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UNNotificationDismissActionIdentifier();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long UNNotificationCategoryOptionNone = 0x0000000000000000L;
 }

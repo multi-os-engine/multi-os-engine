@@ -31,6 +31,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -91,9 +94,9 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * Inference encode calls
-     * <p>
+     * 
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
-     *
+     * 
      * @param cmdBuf               The command buffer into which to encode the kernel
      * @param primarySourceArray   The primary source for the filter in an NSArray.
      * @param secondarySourceArray The secondary source for the filter in an NSArray.
@@ -108,7 +111,7 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
-     *
+     * 
      * @param cmdBuf               The command buffer into which to encode the kernel
      * @param primarySourceArray   The primary source for the filter in an NSArray.
      * @param secondarySourceArray The secondary source for the filter in an NSArray.
@@ -122,7 +125,7 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
-     *
+     * 
      * @param cmdBuf               The command buffer into which to encode the kernel
      * @param primarySourceArray   The primary source for the filter in an NSArray.
      * @param secondarySourceArray The secondary source for the filter in an NSArray.
@@ -138,9 +141,9 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * Forward training encode calls
-     * <p>
+     * 
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
-     *
+     * 
      * @param cmdBuf                 The command buffer into which to encode the kernel
      * @param primarySourceArray     The primary source for the filter in an NSArray.
      * @param secondarySourceArray   The secondary source for the filter in an NSArray.
@@ -215,10 +218,14 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] primaryDilationRate
-     * <p>
+     * 
      * The stride in each dimension from one PSF tap to an adjacent
      * PSF tap. Default: 1
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("primaryDilationRates")
     @ByValue
@@ -226,10 +233,14 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] primaryEdgeMode
-     * <p>
+     * 
      * The edge mode used for a source NDArray
      * Default: MPSImageEdgeModeZero
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("primaryEdgeMode")
     @NUInt
@@ -237,10 +248,14 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] primaryKernelSizes
-     * <p>
+     * 
      * The diameters of the point spread function in each dimension for a source NDArray
      * Default: 1
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("primaryKernelSizes")
     @ByValue
@@ -248,14 +263,18 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] primaryOffsets
-     * <p>
+     * 
      * The coordinate of the position read from this source array which is
      * used to calculate the result value at [0,0,0,....]
      * If the position read is actually a contiguous region (e.g. the area covered by
      * a convolution kernel) then this is the center of that region, rounded down, for
      * each dimension.
      * Default: 0,0,0...
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("primaryOffsets")
     @ByValue
@@ -263,12 +282,16 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] primaryStrides
-     * <p>
+     * 
      * If the filter is a "backwards" filter such as a gradient filter
      * or convolution transpose, then this is the upsampling ratio and
      * zeros are inserted in the result.
      * Default: 1
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("primaryStrides")
     @ByValue
@@ -284,10 +307,14 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] secondaryDilationRate
-     * <p>
+     * 
      * The stride in each dimension from one PSF tap to an adjacent
      * PSF tap. Default: 1
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("secondaryDilationRates")
     @ByValue
@@ -295,10 +322,14 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] secondaryEdgeMode
-     * <p>
+     * 
      * The edge mode used for a source NDArray
      * Default: MPSImageEdgeModeZero
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("secondaryEdgeMode")
     @NUInt
@@ -306,10 +337,14 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] secondaryKernelSizes
-     * <p>
+     * 
      * The diameters of the point spread function in each dimension for a source NDArray
      * Default: 1
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("secondaryKernelSizes")
     @ByValue
@@ -317,14 +352,18 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] secondaryOffsets
-     * <p>
+     * 
      * The coordinate of the position read from this source array which is
      * used to calculate the result value at [0,0,0,....]
      * If the position read is actually a contiguous region (e.g. the area covered by
      * a convolution kernel) then this is the center of that region, rounded down, for
      * each dimension.
      * Default: 0,0,0...
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("secondaryOffsets")
     @ByValue
@@ -332,12 +371,16 @@ public class MPSNDArrayBinaryKernel extends MPSNDArrayMultiaryKernel {
 
     /**
      * [@property] secondaryStrides
-     * <p>
+     * 
      * If the filter is a "backwards" filter such as a gradient filter
      * or convolution transpose, then this is the upsampling ratio and
      * zeros are inserted in the result.
      * Default: 1
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("secondaryStrides")
     @ByValue

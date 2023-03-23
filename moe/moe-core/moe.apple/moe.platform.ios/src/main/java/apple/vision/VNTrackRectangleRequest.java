@@ -27,13 +27,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * VNTrackRectangleRequest tracks a rectangle in a sequence of images.
- * <p>
+ * 
  * The VNTrackRectangleRequest is a special tracker to track rectangular shape objects. The VNTrackRectangleRequest is
  * initialized with a VNRectangleObservation object that contains a rectangle bounding box and four corners locations.
  * VNRectangleObservation can be obtained by running rectangle detector (VNDetectRectanglesRequest). The
  * VNTrackRectangleRequest is processed using one of the [VNSequenceRequestHandler performRequests:...] methods.
  * [@note] The rectangular object doesn't have to look like a rectangle when projected into the plane of the image of
  * interest. For example, it may look like trapezoid.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -109,7 +111,7 @@ public class VNTrackRectangleRequest extends VNTrackingRequest {
 
     /**
      * Create a new rectangle tracking request with rectangle observation.
-     *
+     * 
      * @param observation Rectangle observation with bounding box and rectangle corners location info.
      */
     @Generated
@@ -118,7 +120,7 @@ public class VNTrackRectangleRequest extends VNTrackingRequest {
 
     /**
      * Create a new rectangle tracking request with rectangle observation.
-     *
+     * 
      * @param observation       Rectangle observation with bounding box and rectangle corners location info.
      * @param completionHandler The block that is invoked when the request has been performed.
      */

@@ -1,7 +1,6 @@
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -29,7 +28,11 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -205,7 +208,11 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
 
     /**
      * by default, section supplementaries will follow any section-specific contentInsets
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("setSupplementariesFollowContentInsets:")
     public native void setSupplementariesFollowContentInsets(boolean value);
@@ -236,7 +243,11 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
 
     /**
      * by default, section supplementaries will follow any section-specific contentInsets
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("supplementariesFollowContentInsets")
     public native boolean supplementariesFollowContentInsets();
@@ -264,6 +275,8 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
 
     /**
      * default is UIContentInsetsReferenceAutomatic i.e. following the layout configuration's contentInsetsReference
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("contentInsetsReference")
@@ -273,6 +286,8 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
     /**
      * Creates a list section using the specified configuration. You should pass the layoutEnvironment from inside the
      * UICollectionViewCompositionalLayoutSectionProvider.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("sectionWithListConfiguration:layoutEnvironment:")
@@ -282,8 +297,35 @@ public class NSCollectionLayoutSection extends NSObject implements NSCopying {
 
     /**
      * default is UIContentInsetsReferenceAutomatic i.e. following the layout configuration's contentInsetsReference
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setContentInsetsReference:")
     public native void setContentInsetsReference(@NInt long value);
+
+    /**
+     * Specifies the content insets reference for boundary supplementaries in this section.
+     * The default value of this property is UIContentInsetsReference.automatic, which means that any insets specified
+     * on a @c NSCollectionLayoutBoundarySupplementaryItem
+     * will follow the layout configuration's @c contentInsetsReference.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSupplementaryContentInsetsReference:")
+    public native void setSupplementaryContentInsetsReference(@NInt long value);
+
+    /**
+     * Specifies the content insets reference for boundary supplementaries in this section.
+     * The default value of this property is UIContentInsetsReference.automatic, which means that any insets specified
+     * on a @c NSCollectionLayoutBoundarySupplementaryItem
+     * will follow the layout configuration's @c contentInsetsReference.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("supplementaryContentInsetsReference")
+    @NInt
+    public native long supplementaryContentInsetsReference();
 }

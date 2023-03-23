@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -177,7 +180,7 @@ public class CKSubscription extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * Describes the notification that will be sent when the subscription fires.
-     * <p>
+     * 
      * This property must be set to a non-nil value before saving the @c CKSubscription.
      */
     @Generated
@@ -186,7 +189,7 @@ public class CKSubscription extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * Describes the notification that will be sent when the subscription fires.
-     * <p>
+     * 
      * This property must be set to a non-nil value before saving the @c CKSubscription.
      */
     @Generated

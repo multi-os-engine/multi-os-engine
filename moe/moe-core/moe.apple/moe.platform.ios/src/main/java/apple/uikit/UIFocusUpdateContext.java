@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * UIFocusUpdateContexts provide information relevant to a specific focus update from one view to another. They are
  * ephemeral objects that are usually discarded after the update is finished.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("UIKit")
@@ -169,6 +171,8 @@ public class UIFocusUpdateContext extends NSObject {
     /**
      * The item that is focused after the update, i.e. where focus is updating to. May be nil if no item is being
      * focused, meaning focus is being lost.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("nextFocusedItem")
@@ -187,6 +191,8 @@ public class UIFocusUpdateContext extends NSObject {
     /**
      * The item that was focused before the update, i.e. where focus is updating from. May be nil if no item was
      * focused, such as when focus is initially set.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("previouslyFocusedItem")

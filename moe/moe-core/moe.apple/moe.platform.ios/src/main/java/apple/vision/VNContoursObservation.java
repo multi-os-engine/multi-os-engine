@@ -31,9 +31,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An observation that provides all of the detected contours in an image.
- * <p>
+ * 
  * Contours can be referenced as a flattened array or as a tree of enclosing parent contours to enclosed child contours.
- * <p>
+ * 
  * ┌ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
  * ┌───────────────────┐ │
  * │ Λ │ ┌─────────┐ │
@@ -47,10 +47,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * │ V
  * │
  * └ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
- * <p>
+ * 
  * Contour A index 0, index path [0].
  * Contour B index 1, index path [1].
  * Contour C index 2, index path [1, 0].
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -104,7 +106,7 @@ public class VNContoursObservation extends VNObservation {
 
     /**
      * Returns the VNContour object at the specified index, irrespective of hierarchy.
-     *
+     * 
      * @param contourIndex The index of the contour to request. Valid values are in the range [0..contourCount-1].
      * @param error        The error returned if the index path is out of range.
      * @return The detected VNContour at the specified index without regard to hierarchy.
@@ -116,9 +118,9 @@ public class VNContoursObservation extends VNObservation {
 
     /**
      * Returns the VNContour object at the specified index path.
-     * <p>
+     * 
      * Use the indexPath property from a VNContour instance to pass to this method.
-     *
+     * 
      * @param indexPath The index path is the heirarchical path to the contour.
      * @param error     The error returned if the index path is out of range.
      * @return The VNContour object at the specified index path.
@@ -185,7 +187,7 @@ public class VNContoursObservation extends VNObservation {
 
     /**
      * Obtain all of the contours represented as a CGPath in normalized coordinates.
-     * <p>
+     * 
      * The path is owned by the observation and therefore will be alive as long as the the observation is alive.
      */
     @Generated
@@ -228,10 +230,10 @@ public class VNContoursObservation extends VNObservation {
 
     /**
      * An array of the top level contours (i.e. contours that are not enclosed inside another contour),.
-     * <p>
+     * 
      * This array constitutes the top of the contour hierarchy. Each contour object can be further iterated to determine
      * its children.
-     *
+     * 
      * @see VNContour for more information.
      */
     @Generated

@@ -31,7 +31,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSRNNMatrixInferenceLayer
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The MPSRNNMatrixInferenceLayer specifies a recurrent neural network layer for inference on MPSMatrices.
  * Currently two types of recurrent layers are supported: ones that operate with convolutions on
  * images: @ref MPSRNNImageInferenceLayer and one that operates on matrices: @ref MPSRNNMatrixInferenceLayer.
@@ -70,6 +70,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The mathematical operation described in the linear transformations of @ref MPSRNNSingleGateDescriptor
  * [@ref] MPSLSTMDescriptor and @ref MPSGRUDescriptor are y^T = W x^T <=> y = x W^T, where x is the matrix containing
  * the input vectors as rows, y is the matrix containing the output vectors as rows and W is the weight matrix.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -105,7 +108,7 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
 
     /**
      * [@property] bidirectionalCombineMode
-     * <p>
+     * 
      * Defines how to combine the output-results, when encoding bidirectional layers using
      * [@ref] encodeBidirectionalSequenceToCommandBuffer.
      * Defaults to @ref MPSRNNBidirectionalCombineModeNone.
@@ -135,7 +138,7 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
 
     /**
      * Make a copy of this kernel for a new device - @see MPSKernel
-     *
+     * 
      * @param zone   The NSZone in which to allocate the object
      * @param device The device for the new MPSKernel. If nil, then use
      *               self.device.
@@ -179,7 +182,7 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
      * yb(N-1)) },
      * where '+' stands either for sum, or concatenation along feature channels, as specified by @ref
      * bidirectionalCombineMode.
-     *
+     * 
      * @param commandBuffer               A valid MTLCommandBuffer to receive the encoded filter
      * @param sourceSequence              An array of valid MPSMatrix objects containing the source matrix sequence (x0,
      *                                    x1, ... x_n-1).
@@ -225,12 +228,14 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSRNNMatrixInferenceLayer
      * @param device   The MTLDevice on which to make the MPSRNNMatrixInferenceLayer
      * @return A new MPSRNNMatrixInferenceLayer object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -243,10 +248,12 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
 
     /**
      * Initializes a linear (fully connected) RNN kernel
-     *
+     * 
      * @param device        The MTLDevice on which this MPSRNNMatrixLayer filter will be used
      * @param rnnDescriptor The descriptor that defines the RNN layer
      * @return A valid MPSRNNMatrixInferenceLayer object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:rnnDescriptor:")
@@ -255,12 +262,14 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
 
     /**
      * Initializes a kernel that implements a stack of linear (fully connected) RNN layers
-     *
+     * 
      * @param device         The MTLDevice on which this MPSRNNMatrixLayer filter will be used
      * @param rnnDescriptors An array of RNN descriptors that defines a stack of RNN layers, starting at index zero.
      *                       The number of layers in stack is the number of entries in the array.
      *                       All entries in the array must be valid MPSRNNDescriptors.
      * @return A valid MPSRNNMatrixInferenceLayer object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:rnnDescriptors:")
@@ -269,7 +278,7 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
 
     /**
      * [@property] inputFeatureChannels
-     * <p>
+     * 
      * The number of feature channels input vector/matrix.
      */
     @Generated
@@ -305,7 +314,7 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
 
     /**
      * [@property] numberOfLayers
-     * <p>
+     * 
      * Number of layers in the filter-stack. This will be one when using initWithDevice:rnnDescriptor to initialize
      * this filter and the number of entries in the array 'rnnDescriptors' when initializing this filter with
      * initWithDevice:rnnDescriptors.
@@ -317,7 +326,7 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
 
     /**
      * [@property] outputFeatureChannels
-     * <p>
+     * 
      * The number of feature channels in the output vector/matrix.
      */
     @Generated
@@ -327,7 +336,7 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
 
     /**
      * [@property] recurrentOutputIsTemporary
-     * <p>
+     * 
      * How output states from @ref encodeSequenceToCommandBuffer are constructed.
      * Defaults to NO. For reference @see MPSState.
      */
@@ -345,7 +354,7 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
 
     /**
      * [@property] bidirectionalCombineMode
-     * <p>
+     * 
      * Defines how to combine the output-results, when encoding bidirectional layers using
      * [@ref] encodeBidirectionalSequenceToCommandBuffer.
      * Defaults to @ref MPSRNNBidirectionalCombineModeNone.
@@ -356,7 +365,7 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
 
     /**
      * [@property] recurrentOutputIsTemporary
-     * <p>
+     * 
      * How output states from @ref encodeSequenceToCommandBuffer are constructed.
      * Defaults to NO. For reference @see MPSState.
      */
@@ -366,7 +375,7 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
 
     /**
      * [@property] storeAllIntermediateStates
-     * <p>
+     * 
      * If YES then calls to @ref encodeSequenceToCommandBuffer return every recurrent state
      * in the array: recurrentOutputStates.
      * Defaults to NO.
@@ -381,7 +390,7 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
 
     /**
      * [@property] storeAllIntermediateStates
-     * <p>
+     * 
      * If YES then calls to @ref encodeSequenceToCommandBuffer return every recurrent state
      * in the array: recurrentOutputStates.
      * Defaults to NO.
@@ -441,7 +450,9 @@ public class MPSRNNMatrixInferenceLayer extends MPSKernel {
      * recurrentInputState: recurrent0
      * recurrentOutputState: nil];
      * [@endcode]
-     *
+     * 
+     * API-Since: 12.0
+     * 
      * @param commandBuffer         A valid MTLCommandBuffer to receive the encoded filter
      * @param sourceMatrices        An array of valid MPSMatrix objects containing the sequence of source matrices.
      * @param sourceOffsets         An array of byte-offsets into the sourceMatrices, if nil zeros are assumed and

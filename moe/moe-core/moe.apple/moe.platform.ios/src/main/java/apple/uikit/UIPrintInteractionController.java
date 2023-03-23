@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSError;
@@ -45,7 +44,11 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 4.2
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -335,11 +338,19 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * default is YES.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setShowsNumberOfCopies:")
     public native void setShowsNumberOfCopies(boolean value);
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Pages can be removed from the print preview, so page range is always shown.
+     */
+    @Deprecated
     @Generated
     @Selector("setShowsPageRange:")
     public native void setShowsPageRange(boolean value);
@@ -347,6 +358,8 @@ public class UIPrintInteractionController extends NSObject {
     /**
      * default is NO. Paper selection for loaded papers is always shown for UIPrintInfoOutputPhoto and
      * UIPrintInfoOutputPhotoGrayscale
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setShowsPaperSelectionForLoadedPapers:")
@@ -354,11 +367,19 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * default is YES.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("showsNumberOfCopies")
     public native boolean showsNumberOfCopies();
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Pages can be removed from the print preview, so page range is always shown.
+     */
+    @Deprecated
     @Generated
     @Selector("showsPageRange")
     public native boolean showsPageRange();
@@ -366,6 +387,8 @@ public class UIPrintInteractionController extends NSObject {
     /**
      * default is NO. Paper selection for loaded papers is always shown for UIPrintInfoOutputPhoto and
      * UIPrintInfoOutputPhotoGrayscale
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("showsPaperSelectionForLoadedPapers")
@@ -405,6 +428,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * default is YES. Indicates whether the the printing options include the paper orientation control when available.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setShowsPaperOrientation:")
@@ -412,6 +437,8 @@ public class UIPrintInteractionController extends NSObject {
 
     /**
      * default is YES. Indicates whether the the printing options include the paper orientation control when available.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("showsPaperOrientation")

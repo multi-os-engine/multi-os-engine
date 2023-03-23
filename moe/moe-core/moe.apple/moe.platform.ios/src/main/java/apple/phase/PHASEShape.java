@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEShape
- * <p>
+ * 
  * The physical representation of an object within the simulated acoustic scene.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -96,7 +98,7 @@ public class PHASEShape extends NSObject implements NSCopying {
 
     /**
      * [@property] elements
-     * <p>
+     * 
      * List of all the shape elements associated with this shape.
      */
     @Generated
@@ -114,18 +116,21 @@ public class PHASEShape extends NSObject implements NSCopying {
 
     /**
      * initWithEngine:mesh
-     * <p>
+     * 
      * Initialize a shape from a mesh.
-     * <p>
+     * 
      * One PHASEShapeElement will be created for every submesh within the mesh.
      * [@note]
      * A single shape can be used to create multiple instances of sources and occluders.
      * For example, a client could create a single shape for a window, then create multiple occluders from it.
      * The same can be done with with sources.
-     *
-     * @param engine The engine this shape will be used with.
-     * @param mesh   A Model I/O mesh object.
-     * @return A new shape object
+     * 
+     * @param engine
+     *               The engine this shape will be used with.
+     * @param mesh
+     *               A Model I/O mesh object.
+     * @return
+     *         A new shape object
      */
     @Generated
     @Selector("initWithEngine:mesh:")
@@ -133,9 +138,9 @@ public class PHASEShape extends NSObject implements NSCopying {
 
     /**
      * initWithEngine:mesh
-     * <p>
+     * 
      * Initialize a shape from an MDLMesh and a list of materials
-     * <p>
+     * 
      * The materials array cannot be empty and cannot contain nil entries, otherwise an exception is thrown.
      * If the number of submeshes within the mesh are less than or equal to the size of the material array, the material
      * will be assigned
@@ -144,11 +149,15 @@ public class PHASEShape extends NSObject implements NSCopying {
      * assigned to the element will be the index of the element modulo the number of materials. IE: given a mesh with 6
      * submeshes and an array
      * of 3 materials, the element at index 5 will be assigned the material at index: 5 % 3 = 2.
-     *
-     * @param engine    The engine this shape will be used with
-     * @param mesh      A Model I/O mesh object.
-     * @param materials An array of PHASEMaterial objects that overrides any acoustical materials within the mesh object
-     * @return A new shape object
+     * 
+     * @param engine
+     *                  The engine this shape will be used with
+     * @param mesh
+     *                  A Model I/O mesh object.
+     * @param materials
+     *                  An array of PHASEMaterial objects that overrides any acoustical materials within the mesh object
+     * @return
+     *         A new shape object
      */
     @Generated
     @Selector("initWithEngine:mesh:materials:")

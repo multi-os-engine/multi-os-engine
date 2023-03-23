@@ -13,6 +13,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Defines a text droppable control.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("UIKit")

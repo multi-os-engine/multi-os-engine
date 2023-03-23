@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("ContactsUI")
 @Runtime(ObjCRuntime.class)
@@ -34,7 +37,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface CNContactViewControllerDelegate {
     /**
      * Called when the view has completed.
-     * <p>
+     * 
      * If creating a new contact, the new contact added to the contacts list will be passed.
      * If adding to an existing contact, the existing contact will be passed.
      * [@note] It is up to the delegate to dismiss the view controller.
@@ -49,9 +52,9 @@ public interface CNContactViewControllerDelegate {
 
     /**
      * Called when the user selects a single property.
-     * <p>
+     * 
      * Return @c NO if you do not want anything to be done or if you are handling the actions yourself.
-     *
+     * 
      * @return @c YES if you want the default action performed for the property otherwise return @c NO.
      */
     @Generated

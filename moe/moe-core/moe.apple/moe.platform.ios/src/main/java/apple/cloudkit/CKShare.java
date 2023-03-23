@@ -46,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CKShare
- * <p>
+ * 
  * Like CKRecords, CKShares can store arbitrary key-value pairs. They are modified and fetched in the same manner.
  * A share, its root record, and its root record's children records will only appear in a participant's
  * CKFetchRecordChangesOperation's results after the share has been accepted by that participant.
@@ -55,6 +55,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * CKFetchShareMetadataOperation requesting the root record.
  * A CKShare will appear in a CKFetchRecordChangesOperation's results set whenever the participant list is updated. For
  * that reason, you shouldn't place heavy key-value pairs in it.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CloudKit")
@@ -172,7 +174,7 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
 
     /**
      * A URL that can be used to invite participants to this share.
-     * <p>
+     * 
      * Only available after share record has been saved to the server. This url is stable, and is tied to the
      * rootRecord. That is, if you share a rootRecord, delete the share, and re-share the same rootRecord via a newly
      * created share, that newly created share's url will be identical to the prior share's url
@@ -188,7 +190,7 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
      * CKShareParticipantPermissionNone. That is, you cannot mix-and-match private users and public users in the same
      * share.
      * Only certain participant types may be added via this API
-     *
+     * 
      * @see CKShareParticipantRole
      */
     @Generated
@@ -240,7 +242,7 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
 
     /**
      * All participants on the share that the current user has permissions to see.
-     * <p>
+     * 
      * At the minimum that will include the owner and the current user.
      */
     @Generated
@@ -249,7 +251,7 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
 
     /**
      * Defines what permission a user has when not explicitly added to the share.
-     * <p>
+     * 
      * Shares with @c publicPermission more permissive than @c CKShareParticipantPermissionNone can be joined by any
      * user with access to the share's shareURL.
      * By default, public permission is @c CKShareParticipantPermissionNone.
@@ -271,7 +273,7 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
 
     /**
      * Defines what permission a user has when not explicitly added to the share.
-     * <p>
+     * 
      * Shares with @c publicPermission more permissive than @c CKShareParticipantPermissionNone can be joined by any
      * user with access to the share's shareURL.
      * By default, public permission is @c CKShareParticipantPermissionNone.
@@ -306,16 +308,18 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
      * Creates a zone-wide @c CKShare. A zone-wide @c CKShare can only exist in a zone with sharing capability @c
      * CKRecordZoneCapabilityZoneWideSharing.
      * Only one such share can exist in a zone at a time.
-     * <p>
+     * 
      * All records in this zone will appear in a participant's @c CKFetchRecordZoneChangesOperation results in the
      * shared database after the
      * share has been accepted by the participant.
-     * <p>
+     * 
      * Since these shares do not have an associated root record, @c shouldFetchRootRecord and @c rootRecordDesiredKeys
      * are always ignored when
      * running a @c CKFetchShareMetadataOperation on a zone-wide share URL. Additionally, @c rootRecordID on the
      * resulting @c CKShareMetadata is
      * always absent.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithRecordZoneID:")

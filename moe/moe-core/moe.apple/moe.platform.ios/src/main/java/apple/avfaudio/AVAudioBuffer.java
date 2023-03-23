@@ -28,10 +28,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAudioBuffer
- * <p>
+ * 
  * A buffer of audio data, with a format.
- * <p>
+ * 
  * AVAudioBuffer represents a buffer of audio data and its format.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -63,13 +65,13 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
 
     /**
      * [@property] audioBufferList
-     * <p>
+     * 
      * The buffer's underlying AudioBufferList.
-     * <p>
+     * 
      * For compatibility with lower-level CoreAudio and AudioToolbox API's, this method accesses
      * the buffer implementation's internal AudioBufferList. The buffer list structure must
      * not be modified, though you may modify buffer contents.
-     * <p>
+     * 
      * The mDataByteSize fields of this AudioBufferList express the buffer's current frameLength.
      */
     @Generated
@@ -114,7 +116,7 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
 
     /**
      * [@property] format
-     * <p>
+     * 
      * The format of the audio in the buffer.
      */
     @Generated
@@ -153,12 +155,12 @@ public class AVAudioBuffer extends NSObject implements NSCopying, NSMutableCopyi
 
     /**
      * [@property] mutableAudioBufferList
-     * <p>
+     * 
      * A mutable version of the buffer's underlying AudioBufferList.
-     * <p>
+     * 
      * Some lower-level CoreAudio and AudioToolbox API's require a mutable AudioBufferList,
      * for example, AudioConverterConvertComplexBuffer.
-     * <p>
+     * 
      * The mDataByteSize fields of this AudioBufferList express the buffer's current frameCapacity.
      * If they are altered, you should modify the buffer's frameLength to match.
      */

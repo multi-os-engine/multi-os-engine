@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NFCISO15693CustomCommandConfiguration
- * <p>
+ * 
  * Configuration options for the Manufacturer Custom command.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreNFC")
@@ -80,6 +82,8 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
 
     /**
      * Manufacturer Custom Command Index. Valid range is 0xA0 to 0xDF.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("customCommandCode")
@@ -105,9 +109,11 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
 
     /**
      * initWithManufacturerCode:customCommandCode:requestParameters:
-     * <p>
+     * 
      * Initialize with default zero maximum retry and zero retry interval.
-     *
+     * 
+     * API-Since: 11.0
+     * 
      * @param manufacturerCode  8 bits manufacturer code.
      * @param customCommandCode 8 bits custom command code. Valid range is 0xA0 to 0xDF.
      * @param requestParameters Optional custom request parameters.
@@ -119,12 +125,14 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
 
     /**
      * initWithManufacturerCode:customCommandCode:requestParameters:maximumRetries:retryInterval:
-     *
+     * 
      * @param manufacturerCode  8 bits manufacturer code.
      * @param customCommandCode 8 bits custom command code. Valid range is 0xA0 to 0xDF.
      * @param requestParameters Optional custom request parameters.
      * @param maximumRetries    Maximum number of retry attempt when tag response is not recevied.
      * @param retryInterval     Time interval wait between each retry attempt.
+     * 
+     *                          API-Since: 11.0
      */
     @Generated
     @Selector("initWithManufacturerCode:customCommandCode:requestParameters:maximumRetries:retryInterval:")
@@ -155,6 +163,8 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
 
     /**
      * Manufacturer code. Valid range is 0x00 to 0xFF.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("manufacturerCode")
@@ -168,6 +178,8 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
 
     /**
      * Custom request data.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("requestParameters")
@@ -183,6 +195,8 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
 
     /**
      * Manufacturer Custom Command Index. Valid range is 0xA0 to 0xDF.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCustomCommandCode:")
@@ -190,6 +204,8 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
 
     /**
      * Manufacturer code. Valid range is 0x00 to 0xFF.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setManufacturerCode:")
@@ -197,6 +213,8 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
 
     /**
      * Custom request data.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRequestParameters:")

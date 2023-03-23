@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -176,26 +179,41 @@ public class INRideDriver extends INPerson implements NSCopying, NSSecureCoding 
     @Selector("initWithCoder:")
     public native INRideDriver initWithCoder(NSCoder coder);
 
+    @Deprecated
     @Generated
     @Selector("initWithHandle:displayName:contactIdentifier:")
     public native INRideDriver initWithHandleDisplayNameContactIdentifier(String handle, String displayName,
             String contactIdentifier);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithHandle:displayName:image:rating:phoneNumber:")
     public native INRideDriver initWithHandleDisplayNameImageRatingPhoneNumber(String handle, String displayName,
             INImage image, String rating, String phoneNumber);
 
+    @Deprecated
     @Generated
     @Selector("initWithHandle:nameComponents:contactIdentifier:")
     public native INRideDriver initWithHandleNameComponentsContactIdentifier(String handle,
             NSPersonNameComponents nameComponents, String contactIdentifier);
 
+    @Deprecated
     @Generated
     @Selector("initWithHandle:nameComponents:displayName:image:contactIdentifier:")
     public native INRideDriver initWithHandleNameComponentsDisplayNameImageContactIdentifier(String handle,
             NSPersonNameComponents nameComponents, String displayName, INImage image, String contactIdentifier);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithHandle:nameComponents:image:rating:phoneNumber:")
     public native INRideDriver initWithHandleNameComponentsImageRatingPhoneNumber(String handle,
@@ -214,12 +232,21 @@ public class INRideDriver extends INPerson implements NSCopying, NSSecureCoding 
             String contactIdentifier, String customIdentifier, NSArray<? extends INPersonHandle> aliases,
             @NInt long suggestionType);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.2
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:rating:phoneNumber:")
     public native INRideDriver initWithPersonHandleNameComponentsDisplayNameImageRatingPhoneNumber(
             INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
             String rating, String phoneNumber);
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @Selector("initWithPhoneNumber:nameComponents:displayName:image:rating:")
     public native INRideDriver initWithPhoneNumberNameComponentsDisplayNameImageRating(String phoneNumber,

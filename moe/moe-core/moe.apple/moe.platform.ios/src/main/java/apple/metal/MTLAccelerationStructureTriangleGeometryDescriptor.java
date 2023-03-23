@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Descriptor for triangle geometry
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Metal")
@@ -191,8 +193,8 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Vertex buffer containing triangle vertices. Each vertex must consist of three 32-bit floats
-     * encoding X, Y, and Z position. Must not be nil.
+     * Vertex buffer containing triangle vertices. Each vertex position must be formatted
+     * according to the vertex format. Must not be nil.
      */
     @Generated
     @Selector("setVertexBuffer:")
@@ -207,8 +209,10 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public native void setVertexBufferOffset(@NUInt long value);
 
     /**
-     * Stride, in bytes, between vertices in the vertex buffer. Must be at least 12 bytes and must be a
-     * multiple of 4 bytes. Defaults to 12 bytes.
+     * Stride, in bytes, between vertices in the vertex buffer. Must be a multiple of the vertex format data type size
+     * and must be aligned to
+     * the vertex format data type's alignment. Defaults to 0, which will result in a stride of the vertex format data
+     * size.
      */
     @Generated
     @Selector("setVertexStride:")
@@ -232,8 +236,8 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public static native long version_static();
 
     /**
-     * Vertex buffer containing triangle vertices. Each vertex must consist of three 32-bit floats
-     * encoding X, Y, and Z position. Must not be nil.
+     * Vertex buffer containing triangle vertices. Each vertex position must be formatted
+     * according to the vertex format. Must not be nil.
      */
     @Generated
     @Selector("vertexBuffer")
@@ -250,11 +254,76 @@ public class MTLAccelerationStructureTriangleGeometryDescriptor extends MTLAccel
     public native long vertexBufferOffset();
 
     /**
-     * Stride, in bytes, between vertices in the vertex buffer. Must be at least 12 bytes and must be a
-     * multiple of 4 bytes. Defaults to 12 bytes.
+     * Stride, in bytes, between vertices in the vertex buffer. Must be a multiple of the vertex format data type size
+     * and must be aligned to
+     * the vertex format data type's alignment. Defaults to 0, which will result in a stride of the vertex format data
+     * size.
      */
     @Generated
     @Selector("vertexStride")
     @NUInt
     public native long vertexStride();
+
+    /**
+     * Buffer containing packed float4x3 transformation matrix. Transform is applied to the vertex data when building
+     * the acceleration structure. Input vertex buffers are not modified.
+     * When set to nil, transformation matrix is not applied to vertex data.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setTransformationMatrixBuffer:")
+    public native void setTransformationMatrixBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+
+    /**
+     * Transformation matrix buffer offset. Must be a multiple of 4 bytes. Defaults to 0.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setTransformationMatrixBufferOffset:")
+    public native void setTransformationMatrixBufferOffset(@NUInt long value);
+
+    /**
+     * Format type of the vertex buffer.
+     * Defaults to MTLAttributeFormatFloat3 (packed).
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setVertexFormat:")
+    public native void setVertexFormat(@NUInt long value);
+
+    /**
+     * Buffer containing packed float4x3 transformation matrix. Transform is applied to the vertex data when building
+     * the acceleration structure. Input vertex buffers are not modified.
+     * When set to nil, transformation matrix is not applied to vertex data.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("transformationMatrixBuffer")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLBuffer transformationMatrixBuffer();
+
+    /**
+     * Transformation matrix buffer offset. Must be a multiple of 4 bytes. Defaults to 0.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("transformationMatrixBufferOffset")
+    @NUInt
+    public native long transformationMatrixBufferOffset();
+
+    /**
+     * Format type of the vertex buffer.
+     * Defaults to MTLAttributeFormatFloat3 (packed).
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("vertexFormat")
+    @NUInt
+    public native long vertexFormat();
 }

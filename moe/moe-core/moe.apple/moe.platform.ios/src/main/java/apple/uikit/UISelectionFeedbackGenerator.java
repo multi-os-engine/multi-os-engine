@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * UISelectionFeedbackGenerator is used to give user feedback when a selection changes
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("UIKit")

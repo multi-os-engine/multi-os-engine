@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -154,6 +157,9 @@ public class CKDatabase extends NSObject {
     @Selector("addOperation:")
     public native void addOperation(CKDatabaseOperation operation);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("databaseScope")
     @NInt
@@ -169,6 +175,9 @@ public class CKDatabase extends NSObject {
     public native void deleteRecordZoneWithIDCompletionHandler(CKRecordZoneID zoneID,
             @ObjCBlock(name = "call_deleteRecordZoneWithIDCompletionHandler") Block_deleteRecordZoneWithIDCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("deleteSubscriptionWithID:completionHandler:")
     public native void deleteSubscriptionWithIDCompletionHandler(String subscriptionID,
@@ -183,6 +192,9 @@ public class CKDatabase extends NSObject {
     public native void fetchAllRecordZonesWithCompletionHandler(
             @ObjCBlock(name = "call_fetchAllRecordZonesWithCompletionHandler") Block_fetchAllRecordZonesWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("fetchAllSubscriptionsWithCompletionHandler:")
     public native void fetchAllSubscriptionsWithCompletionHandler(
@@ -205,6 +217,8 @@ public class CKDatabase extends NSObject {
     /**
      * [@c] CKFetchSubscriptionsOperation and @c CKModifySubscriptionsOperation are the more configurable, @c
      * CKOperation -based alternative to these methods
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fetchSubscriptionWithID:completionHandler:")
@@ -240,6 +254,9 @@ public class CKDatabase extends NSObject {
     public native void saveRecordZoneCompletionHandler(CKRecordZone zone,
             @ObjCBlock(name = "call_saveRecordZoneCompletionHandler") Block_saveRecordZoneCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("saveSubscription:completionHandler:")
     public native void saveSubscriptionCompletionHandler(CKSubscription subscription,

@@ -24,9 +24,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An abstract base class for storing signatures
- * <p>
+ * 
  * You should not create instances of this class directly, instead use subclasses to provide the
  * functionality that you need
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("ShazamKit")
@@ -118,7 +120,7 @@ public class SHCatalog extends NSObject {
 
     /**
      * The maximum @c SHSignature duration that can be used to perform searches against this Catalog
-     * <p>
+     * 
      * A @c SHSignature over this duration will be rejected without matching. A well scoped @c SHSignature
      * is more likely to provide accurate matches.
      */
@@ -128,7 +130,7 @@ public class SHCatalog extends NSObject {
 
     /**
      * The minimum @c SHSignature duration that can be used to perform searches against this Catalog
-     * <p>
+     * 
      * A @c SHSignature that contains less than the minimum duration in seconds will be discarded without matching.
      * [@note] A @c SHSignature under this duration does not have enough entropy to provide accurate matches.
      */

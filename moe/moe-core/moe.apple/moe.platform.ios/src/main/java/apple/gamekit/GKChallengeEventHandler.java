@@ -42,6 +42,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A singleton object responsible for dispatching challenge-related events to its delegate
+ * 
+ * API-Since: 6.0
+ * Deprecated-Since: 7.0
+ * Deprecated-Message: You should instead implement the GKChallengeListener protocol and register a listener with
+ * GKLocalPlayer.
  */
 @Deprecated
 @Generated
@@ -86,6 +91,10 @@ public class GKChallengeEventHandler extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("challengeEventHandler")
@@ -159,6 +168,10 @@ public class GKChallengeEventHandler extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("delegate")
@@ -169,11 +182,19 @@ public class GKChallengeEventHandler extends NSObject {
     @Selector("init")
     public native GKChallengeEventHandler init();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKChallengeEventHandlerDelegate value);
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) GKChallengeEventHandlerDelegate value) {

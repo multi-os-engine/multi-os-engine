@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -53,12 +52,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * UISearchBar officially conformed to UITextInputTraits in iOS 8.0 and privately conformed in iOS 7.0. Prior to 7.0,
  * UISearchBar only implemented these four traits: autocapitalizationType, autocorrectionType, spellCheckingType and
  * keyboardType. If your deployment target is <7.0 and you are using any trait other than one of the four mentioned, you
  * must check its availability with respondsToSelector:
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("UIKit")
@@ -165,6 +167,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -191,6 +194,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -266,46 +270,57 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -407,11 +422,16 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     /**
      * 1pt wide images and resizable images will be scaled or tiled according to the resizable area, otherwise the image
      * will be tiled
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("backgroundImage")
     public native UIImage backgroundImage();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("backgroundImageForBarPosition:barMetrics:")
     public native UIImage backgroundImageForBarPositionBarMetrics(@NInt long barPosition, @NInt long barMetrics);
@@ -431,6 +451,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * default is nil
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("barTintColor")
@@ -449,6 +471,9 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("enablesReturnKeyAutomatically")
     public native boolean enablesReturnKeyAutomatically();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("imageForSearchBarIcon:state:")
     public native UIImage imageForSearchBarIconState(@NInt long icon, @NUInt long state);
@@ -477,6 +502,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      * engaged.
      * You may modify the returned inputAssistantItem to add to or replace the existing items on the bar.
      * Modifications made to the returned UITextInputAssistantItem are reflected automatically.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("inputAssistantItem")
@@ -484,6 +511,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * default is NO
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("isSearchResultsButtonSelected")
@@ -491,6 +520,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * default is NO
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setSearchResultsButtonSelected:")
@@ -508,6 +539,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * Default is NO on iOS 6 and earlier. Always YES if barStyle is set to UIBarStyleBlackTranslucent
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isTranslucent")
@@ -515,6 +548,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * Default is NO on iOS 6 and earlier. Always YES if barStyle is set to UIBarStyleBlackTranslucent
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setTranslucent:")
@@ -539,6 +574,9 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("placeholder")
     public native String placeholder();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("positionAdjustmentForSearchBarIcon:")
     @ByValue
@@ -557,41 +595,63 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @NInt
     public native long returnKeyType();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("scopeBarBackgroundImage")
     public native UIImage scopeBarBackgroundImage();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("scopeBarButtonBackgroundImageForState:")
     public native UIImage scopeBarButtonBackgroundImageForState(@NUInt long state);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("scopeBarButtonDividerImageForLeftSegmentState:rightSegmentState:")
     public native UIImage scopeBarButtonDividerImageForLeftSegmentStateRightSegmentState(@NUInt long leftState,
             @NUInt long rightState);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("scopeBarButtonTitleTextAttributesForState:")
     public native NSDictionary<String, ?> scopeBarButtonTitleTextAttributesForState(@NUInt long state);
 
     /**
      * array of NSStrings. no scope bar shown unless 2 or more items
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("scopeButtonTitles")
     public native NSArray<String> scopeButtonTitles();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("searchBarStyle")
     @NUInt
     public native long searchBarStyle();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("searchFieldBackgroundImageForState:")
     public native UIImage searchFieldBackgroundImageForState(@NUInt long state);
 
     /**
      * To nudge the position of the search text field background in the search bar
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("searchFieldBackgroundPositionAdjustment")
@@ -600,6 +660,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * To nudge the position of the text within the search text field background
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("searchTextPositionAdjustment")
@@ -608,6 +670,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * index into array of scope button titles. default is 0. ignored if out of range
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("selectedScopeButtonIndex")
@@ -627,6 +691,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     /**
      * 1pt wide images and resizable images will be scaled or tiled according to the resizable area, otherwise the image
      * will be tiled
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setBackgroundImage:")
@@ -634,6 +700,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * Use UIBarMetricsDefaultPrompt to set a separate backgroundImage for a search bar with a prompt
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setBackgroundImage:forBarPosition:barMetrics:")
@@ -649,6 +717,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * default is nil
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setBarTintColor:")
@@ -681,6 +751,9 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("setEnablesReturnKeyAutomatically:")
     public native void setEnablesReturnKeyAutomatically(boolean value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setImage:forSearchBarIcon:state:")
     public native void setImageForSearchBarIconState(UIImage iconImage, @NInt long icon, @NUInt long state);
@@ -711,6 +784,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * To nudge the position of the icon within the search text field
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setPositionAdjustment:forSearchBarIcon:")
@@ -728,6 +803,9 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("setReturnKeyType:")
     public native void setReturnKeyType(@NInt long value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setScopeBarBackgroundImage:")
     public native void setScopeBarBackgroundImage(UIImage value);
@@ -737,6 +815,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      * calculated from the edge insets, otherwise, the cap width will be calculated by subtracting one from the image's
      * width then dividing by 2. The cap widths will also be used as the margins for text placement. To adjust the
      * margin use the margin adjustment methods.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setScopeBarButtonBackgroundImage:forState:")
@@ -748,6 +828,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      * the left and unselected on the right (leftSegmentState:UIControlStateSelected
      * rightSegmentState:UIControlStateNormal), and unselected on the left and selected on the right
      * (leftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected).
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setScopeBarButtonDividerImage:forLeftSegmentState:rightSegmentState:")
@@ -757,6 +839,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     /**
      * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary,
      * using the keys found in NSAttributedString.h.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setScopeBarButtonTitleTextAttributes:forState:")
@@ -765,17 +849,24 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * array of NSStrings. no scope bar shown unless 2 or more items
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setScopeButtonTitles:")
     public native void setScopeButtonTitles(NSArray<String> value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setSearchBarStyle:")
     public native void setSearchBarStyle(@NUInt long value);
 
     /**
      * The rounded-rect search text field image. Valid states are UIControlStateNormal and UIControlStateDisabled
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setSearchFieldBackgroundImage:forState:")
@@ -783,6 +874,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * To nudge the position of the search text field background in the search bar
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setSearchFieldBackgroundPositionAdjustment:")
@@ -790,6 +883,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * To nudge the position of the text within the search text field background
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setSearchTextPositionAdjustment:")
@@ -797,6 +892,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * index into array of scope button titles. default is 0. ignored if out of range
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setSelectedScopeButtonIndex:")
@@ -816,12 +913,17 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("setShowsCancelButton:")
     public native void setShowsCancelButton(boolean value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setShowsCancelButton:animated:")
     public native void setShowsCancelButtonAnimated(boolean showsCancelButton, boolean animated);
 
     /**
      * default is NO. if YES, shows the scope bar. call sizeToFit: to update frame
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setShowsScopeBar:")
@@ -829,6 +931,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * default is NO
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setShowsSearchResultsButton:")
@@ -876,6 +980,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * default is NO. if YES, shows the scope bar. call sizeToFit: to update frame
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("showsScopeBar")
@@ -883,6 +989,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     /**
      * default is NO
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("showsSearchResultsButton")
@@ -959,6 +1067,9 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("passwordRules")
     public native UITextInputPasswordRules passwordRules();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("searchTextField")
     public native UISearchTextField searchTextField();
@@ -968,6 +1079,9 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("setPasswordRules:")
     public native void setPasswordRules(UITextInputPasswordRules value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setShowsScopeBar:animated:")
     public native void setShowsScopeBarAnimated(boolean show, boolean animate);

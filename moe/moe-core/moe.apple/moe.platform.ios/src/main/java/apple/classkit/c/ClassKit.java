@@ -21,6 +21,9 @@ public final class ClassKit {
     private ClassKit() {
     }
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -28,6 +31,8 @@ public final class ClassKit {
 
     /**
      * Any object that caused a failure will be available in - [NSError userInfo]; under this key.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @CVariable()
@@ -37,77 +42,121 @@ public final class ClassKit {
     /**
      * If multiple objects cause errors we return an error with code `CLSErrorCodePartialFailure` which will contain an
      * array of errors in - [NSError userInfo]; under this key.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLSErrorUnderlyingErrorsKey();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLSPredicateKeyPathDateCreated();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLSPredicateKeyPathIdentifier();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLSPredicateKeyPathTitle();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLSPredicateKeyPathUniversalLinkURL();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLSPredicateKeyPathTopic();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLSPredicateKeyPathParent();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLSContextTopicMath();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLSContextTopicScience();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLSContextTopicLiteracyAndWriting();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLSContextTopicWorldLanguage();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLSContextTopicSocialScience();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLSContextTopicComputerScienceAndEngineering();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CLSContextTopicArtsAndMusic();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -116,6 +165,8 @@ public final class ClassKit {
     /**
      * Errors with the code `CLSErrorCodePartialFailure` may contain an array of successful entities in - [NSError
      * userInfo]; under this key.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()

@@ -29,8 +29,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEObject
- * <p>
+ * 
  * A PHASEObject represents a 3D object in the engine, which can be organized into a hierarchy with relative transforms.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -52,12 +54,15 @@ public class PHASEObject extends NSObject implements NSCopying {
 
     /**
      * addChild:error:
-     * <p>
+     * 
      * Add a child to this object
-     *
-     * @param child The child object
-     * @param error Returns an error if the child already has a parent different from this object.
-     * @return YES for success
+     * 
+     * @param child
+     *              The child object
+     * @param error
+     *              Returns an error if the child already has a parent.
+     * @return
+     *         YES for success
      */
     @Generated
     @Selector("addChild:error:")
@@ -89,7 +94,7 @@ public class PHASEObject extends NSObject implements NSCopying {
 
     /**
      * [@property] children
-     * <p>
+     * 
      * The children of this object.
      */
     @Generated
@@ -129,7 +134,7 @@ public class PHASEObject extends NSObject implements NSCopying {
 
     /**
      * initWithEngine:
-     * <p>
+     * 
      * Initialize a new object.
      */
     @Generated
@@ -164,7 +169,7 @@ public class PHASEObject extends NSObject implements NSCopying {
 
     /**
      * [@property] parent
-     * <p>
+     * 
      * The parent of this object, or nil if this object doesn't have a parent object.
      */
     @Generated
@@ -173,7 +178,7 @@ public class PHASEObject extends NSObject implements NSCopying {
 
     /**
      * removeChild:
-     * <p>
+     * 
      * Remove a child from this object.
      */
     @Generated
@@ -182,7 +187,7 @@ public class PHASEObject extends NSObject implements NSCopying {
 
     /**
      * removeChildren
-     * <p>
+     * 
      * Remove all the children from this object
      */
     @Generated

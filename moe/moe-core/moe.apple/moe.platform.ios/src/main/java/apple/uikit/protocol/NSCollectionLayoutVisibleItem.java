@@ -1,8 +1,5 @@
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSIndexPath;
 import apple.quartzcore.struct.CATransform3D;
 import org.moe.natj.general.ann.ByValue;
@@ -15,7 +12,13 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)

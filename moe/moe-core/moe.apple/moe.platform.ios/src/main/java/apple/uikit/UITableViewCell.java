@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -52,7 +51,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -158,6 +161,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -184,6 +188,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -259,46 +264,57 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -346,6 +362,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * action to call on accessory view clicked. set by UITableView
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -425,17 +444,28 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is nil. label will be created if necessary (and the current style supports a detail label).
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use UIListContentConfiguration instead, this property will be deprecated in a future release.
      */
+    @Deprecated
     @Generated
     @Selector("detailTextLabel")
     public native UILabel detailTextLabel();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("didTransitionToState:")
     public native void didTransitionToState(@NUInt long state);
 
     /**
      * action to call on insert/delete call. set by UITableView
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -470,6 +500,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("focusStyle")
     @NInt
@@ -477,6 +510,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is nil (Use default font)
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -518,6 +554,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is YES
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -526,6 +565,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is nil. appears on left next to title.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -534,7 +576,12 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is nil. image view will be created if necessary.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use UIListContentConfiguration instead, this property will be deprecated in a future release.
      */
+    @Deprecated
     @Generated
     @Selector("imageView")
     public native UIImageView imageView();
@@ -569,6 +616,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * Frame is ignored. The size will be specified by the table view width and row height.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -578,6 +628,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * Designated initializer. If the cell can be reused, you must pass in a reuse identifier. You should use the same
      * reuse identifier for all cells of the same form.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("initWithStyle:reuseIdentifier:")
@@ -629,6 +681,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is UILineBreakModeTailTruncation
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -639,6 +694,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * Always nil when a non-nil `backgroundConfiguration` is set. If not nil, takes the place of the
      * selectedBackgroundView when using multiple selection.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("multipleSelectionBackgroundView")
@@ -668,6 +725,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -676,6 +736,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is nil (text draws white)
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -692,6 +755,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * allows customization of the separator frame
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("separatorInset")
@@ -700,6 +765,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * action to call on accessory view clicked. set by UITableView
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -730,6 +798,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * action to call on insert/delete call. set by UITableView
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -754,12 +825,18 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("setEditingAccessoryView:")
     public native void setEditingAccessoryView(UIView value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setFocusStyle:")
     public native void setFocusStyle(@NInt long value);
 
     /**
      * default is nil (Use default font)
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -768,6 +845,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is YES
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -783,6 +863,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is nil. appears on left next to title.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -805,6 +888,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is UILineBreakModeTailTruncation
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -814,6 +900,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * Always nil when a non-nil `backgroundConfiguration` is set. If not nil, takes the place of the
      * selectedBackgroundView when using multiple selection.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setMultipleSelectionBackgroundView:")
@@ -838,6 +926,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -846,6 +937,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is nil (text draws white)
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -861,6 +955,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * allows customization of the separator frame
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setSeparatorInset:")
@@ -882,6 +978,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * target for insert/delete/accessory clicks. default is nil (i.e. go up responder chain). weak reference
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -890,6 +989,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * target for insert/delete/accessory clicks. default is nil (i.e. go up responder chain). weak reference
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -906,6 +1008,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -914,6 +1019,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is UITextAlignmentLeft
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -922,6 +1030,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is nil (text draws black)
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -951,6 +1062,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * target for insert/delete/accessory clicks. default is nil (i.e. go up responder chain). weak reference
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -960,6 +1074,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is nil
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -968,6 +1085,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is UITextAlignmentLeft
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -977,6 +1097,9 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is nil (text draws black)
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @Deprecated
@@ -985,7 +1108,12 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * default is nil. label will be created if necessary.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use UIListContentConfiguration instead, this property will be deprecated in a future release.
      */
+    @Deprecated
     @Generated
     @Selector("textLabel")
     public native UILabel textLabel();
@@ -995,6 +1123,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * Note that when the cell is swiped, the cell will be transitioned into the
      * UITableViewCellStateShowingDeleteConfirmationMask state,
      * but the UITableViewCellStateShowingEditControlMask will not be set.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("willTransitionToState:")
@@ -1003,6 +1133,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * Override this method to receive notifications that the cell's drag state has changed.
      * Call super if you want to apply the default appearance.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dragStateDidChange:")
@@ -1012,6 +1144,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * Controls whether the cell in the table view allows user interaction once it is part of a drag
      * (UITableViewCellDragStateDragging).
      * Default is NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setUserInteractionEnabledWhileDragging:")
@@ -1021,6 +1155,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * Controls whether the cell in the table view allows user interaction once it is part of a drag
      * (UITableViewCellDragStateDragging).
      * Default is NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("userInteractionEnabledWhileDragging")
@@ -1041,6 +1177,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * When YES, the cell will automatically call -updatedConfigurationForState: on its `backgroundConfiguration` when
      * the cell's
      * configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("automaticallyUpdatesBackgroundConfiguration")
@@ -1050,6 +1188,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * When YES, the cell will automatically call -updatedConfigurationForState: on its `contentConfiguration` when the
      * cell's
      * configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("automaticallyUpdatesContentConfiguration")
@@ -1058,6 +1198,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * Setting a background configuration supersedes the cell's backgroundView, selectedBackgroundView, and
      * multipleSelectionBackgroundView. The default value is nil.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("backgroundConfiguration")
@@ -1067,6 +1209,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * Returns the current configuration state for the cell.
      * To add your own custom state(s), override the getter and call super to obtain an instance with the
      * system properties set, then set your own custom states as desired.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("configurationState")
@@ -1079,6 +1223,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * existing content view type.
      * The default value is nil. After a configuration has been set, setting this property to nil will replace the
      * current content view with a new content view.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("contentConfiguration")
@@ -1087,6 +1233,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     /**
      * Returns a default list content configuration for the cell's style.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("defaultContentConfiguration")
@@ -1096,6 +1244,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * When YES, the cell will automatically call -updatedConfigurationForState: on its `backgroundConfiguration` when
      * the cell's
      * configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAutomaticallyUpdatesBackgroundConfiguration:")
@@ -1105,6 +1255,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * When YES, the cell will automatically call -updatedConfigurationForState: on its `contentConfiguration` when the
      * cell's
      * configuration state changes, and apply the updated configuration back to the cell. The default value is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAutomaticallyUpdatesContentConfiguration:")
@@ -1113,6 +1265,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * Setting a background configuration supersedes the cell's backgroundView, selectedBackgroundView, and
      * multipleSelectionBackgroundView. The default value is nil.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setBackgroundConfiguration:")
@@ -1125,6 +1279,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * existing content view type.
      * The default value is nil. After a configuration has been set, setting this property to nil will replace the
      * current content view with a new content view.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setContentConfiguration:")
@@ -1134,6 +1290,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * Requests the cell update its configuration for its current state. This method is called automatically
      * when the cell's `configurationState` may have changed, as well as in other circumstances where an
      * update may be required. Multiple requests may be coalesced into a single update at the appropriate time.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setNeedsUpdateConfiguration")
@@ -1142,6 +1300,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * Subclasses should override this method and update the cell's configuration using the state provided.
      * This method should not be called directly, use `setNeedsUpdateConfiguration` to request an update.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("updateConfigurationUsingState:")
@@ -1150,6 +1310,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * Optional block-based alternative to overriding `-updateConfigurationUsingState:` in a subclass. This handler
      * is called after `-updateConfigurationUsingState:`. Setting a new handler triggers `setNeedsUpdateConfiguration`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("configurationUpdateHandler")
@@ -1166,6 +1328,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * Optional block-based alternative to overriding `-updateConfigurationUsingState:` in a subclass. This handler
      * is called after `-updateConfigurationUsingState:`. Setting a new handler triggers `setNeedsUpdateConfiguration`.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setConfigurationUpdateHandler:")
@@ -1178,4 +1342,14 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
         @Generated
         void call_setConfigurationUpdateHandler(UITableViewCell cell, UICellConfigurationState state);
     }
+
+    /**
+     * Returns a default background configuration for the cell's style.
+     * This background configuration represents the default appearance that the cell will use.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("defaultBackgroundConfiguration")
+    public native UIBackgroundConfiguration defaultBackgroundConfiguration();
 }

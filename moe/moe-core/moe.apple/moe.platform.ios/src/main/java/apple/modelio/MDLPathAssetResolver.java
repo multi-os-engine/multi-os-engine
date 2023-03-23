@@ -26,15 +26,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MDLPathAssetResolver
- * <p>
+ * 
  * The path asset resolver searches for referenced files
  * by prepending path.
- * <p>
+ * 
  * Path should resolve to a well formed URI. A file system
  * path might take the form @"file:///path/to/all/assets/
- * <p>
+ * 
  * A trailing slash is automatically appended to path if
  * not provided.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ModelIO")

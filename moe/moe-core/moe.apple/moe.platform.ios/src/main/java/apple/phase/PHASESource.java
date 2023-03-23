@@ -24,12 +24,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * PHASESource
- * <p>
+ * 
  * A PHASESource represents where sound originates within the simulated acoustic scene.
- * <p>
+ * 
  * PHASE supports both point sources and volumetric sources.
  * A point source simulates the sound from a point in space.
  * A volumetric source simulates the sound from a shape.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -91,7 +93,7 @@ public class PHASESource extends PHASEObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
@@ -111,7 +113,7 @@ public class PHASESource extends PHASEObject {
 
     /**
      * initWithEngine:
-     * <p>
+     * 
      * Initialize a new point source.
      */
     @Generated
@@ -120,15 +122,16 @@ public class PHASESource extends PHASEObject {
 
     /**
      * initWithEngine:shapes:
-     * <p>
+     * 
      * Initialize a new volumetric source with shapes.
-     * <p>
+     * 
      * The shapes array cannot be empty, otherwise an exception is thrown.
      * [@note]
      * This function is thread-safe.
      * Clients can safely run this function to create multiple sources from multiple threads, if required.
-     *
-     * @param shapes The shape(s) of the source within the world
+     * 
+     * @param shapes
+     *               The shape(s) of the source within the world
      */
     @Generated
     @Selector("initWithEngine:shapes:")
@@ -170,7 +173,7 @@ public class PHASESource extends PHASEObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
@@ -185,7 +188,7 @@ public class PHASESource extends PHASEObject {
 
     /**
      * [@property] shapes
-     * <p>
+     * 
      * Array of shapes associated with this source.
      */
     @Generated

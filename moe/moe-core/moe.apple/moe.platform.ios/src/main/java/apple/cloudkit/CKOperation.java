@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -150,10 +153,22 @@ public class CKOperation extends NSOperation {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use CKOperationConfiguration
+     */
+    @Deprecated
     @Generated
     @Selector("allowsCellularAccess")
     public native boolean allowsCellularAccess();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use CKOperationConfiguration
+     */
+    @Deprecated
     @Generated
     @Selector("container")
     public native CKContainer container();
@@ -162,19 +177,33 @@ public class CKOperation extends NSOperation {
     @Selector("init")
     public native CKOperation init();
 
+    /**
+     * API-Since: 9.3
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use CKOperationConfiguration
+     */
+    @Deprecated
     @Generated
     @Selector("isLongLived")
     public native boolean isLongLived();
 
+    /**
+     * API-Since: 9.3
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use CKOperationConfiguration
+     */
+    @Deprecated
     @Generated
     @Selector("setLongLived:")
     public native void setLongLived(boolean value);
 
     /**
      * This callback is called after a long lived operation has begun running and is persisted.
-     * <p>
+     * 
      * Once this callback is called the operation will continue running even if the current process exits.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("longLivedOperationWasPersistedBlock")
@@ -183,45 +212,85 @@ public class CKOperation extends NSOperation {
 
     /**
      * This is an identifier unique to this CKOperation.
-     * <p>
+     * 
      * This value is chosen by the system, and will be unique to this instance of a CKOperation. This identifier will be
      * sent to Apple's servers, and can be used to identify any server-side logging associated with this operation.
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("operationID")
     public native String operationID();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use CKOperationConfiguration
+     */
+    @Deprecated
     @Generated
     @Selector("setAllowsCellularAccess:")
     public native void setAllowsCellularAccess(boolean value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use CKOperationConfiguration
+     */
+    @Deprecated
     @Generated
     @Selector("setContainer:")
     public native void setContainer(CKContainer value);
 
     /**
      * This callback is called after a long lived operation has begun running and is persisted.
-     * <p>
+     * 
      * Once this callback is called the operation will continue running even if the current process exits.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("setLongLivedOperationWasPersistedBlock:")
     public native void setLongLivedOperationWasPersistedBlock(
             @ObjCBlock(name = "call_setLongLivedOperationWasPersistedBlock") Block_setLongLivedOperationWasPersistedBlock value);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use CKOperationConfiguration
+     */
+    @Deprecated
     @Generated
     @Selector("setTimeoutIntervalForRequest:")
     public native void setTimeoutIntervalForRequest(double value);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use CKOperationConfiguration
+     */
+    @Deprecated
     @Generated
     @Selector("setTimeoutIntervalForResource:")
     public native void setTimeoutIntervalForResource(double value);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use CKOperationConfiguration
+     */
+    @Deprecated
     @Generated
     @Selector("timeoutIntervalForRequest")
     public native double timeoutIntervalForRequest();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use CKOperationConfiguration
+     */
+    @Deprecated
     @Generated
     @Selector("timeoutIntervalForResource")
     public native double timeoutIntervalForResource();
@@ -242,9 +311,11 @@ public class CKOperation extends NSOperation {
 
     /**
      * This defines per-operation configuration settings.
-     * <p>
+     * 
      * See the CKOperationConfiguration class description for info on how this configuration composes with
      * CKOperationGroup.defaultConfiguration
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("configuration")
@@ -252,6 +323,8 @@ public class CKOperation extends NSOperation {
 
     /**
      * The group this operation is associated with
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("group")
@@ -259,9 +332,11 @@ public class CKOperation extends NSOperation {
 
     /**
      * This defines per-operation configuration settings.
-     * <p>
+     * 
      * See the CKOperationConfiguration class description for info on how this configuration composes with
      * CKOperationGroup.defaultConfiguration
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setConfiguration:")
@@ -269,6 +344,8 @@ public class CKOperation extends NSOperation {
 
     /**
      * The group this operation is associated with
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setGroup:")

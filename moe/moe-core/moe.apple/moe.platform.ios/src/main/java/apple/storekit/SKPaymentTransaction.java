@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -153,13 +156,20 @@ public class SKPaymentTransaction extends NSObject {
 
     /**
      * Available downloads (SKDownload) for this transaction
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Hosted content is no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("downloads")
     public native NSArray<? extends SKDownload> downloads();
 
     /**
      * Only set if state is SKPaymentTransactionFailed
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("error")
@@ -171,11 +181,16 @@ public class SKPaymentTransaction extends NSObject {
 
     /**
      * Only valid if state is SKPaymentTransactionStateRestored.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("originalTransaction")
     public native SKPaymentTransaction originalTransaction();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("payment")
     public native SKPayment payment();
@@ -183,6 +198,8 @@ public class SKPaymentTransaction extends NSObject {
     /**
      * The date when the transaction was added to the server queue. Only valid if state is
      * SKPaymentTransactionStatePurchased or SKPaymentTransactionStateRestored.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("transactionDate")
@@ -191,6 +208,8 @@ public class SKPaymentTransaction extends NSObject {
     /**
      * The unique server-provided identifier. Only valid if state is SKPaymentTransactionStatePurchased or
      * SKPaymentTransactionStateRestored.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("transactionIdentifier")
@@ -198,12 +217,18 @@ public class SKPaymentTransaction extends NSObject {
 
     /**
      * Only valid if state is SKPaymentTransactionStatePurchased.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
     @Selector("transactionReceipt")
     public native NSData transactionReceipt();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("transactionState")
     @NInt

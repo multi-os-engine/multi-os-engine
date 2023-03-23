@@ -44,14 +44,19 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * application to implement controller input replays. It is also returned as the result API_DEPRECATED("GCGamepad has
  * been deprecated, use GCExtendedGamepad instead", macos(10.9, 10.15), ios(7.0, 13.0), tvos(7.0, 13.0))of polling
  * a controller.
- * <p>
+ * 
  * The current snapshotData is readily available to access as NSData. A developer can serialize this to any
  * destination necessary using the NSData API.
- * <p>
+ * 
  * The data contains some version of a GCGamepadSnapShotData structure.
- *
+ * 
  * @see -[GCGamepad saveSnapshot]
+ * 
+ *      API-Since: 7.0
+ *      Deprecated-Since: 13.0
+ *      Deprecated-Message: GCGamepad has been deprecated, use GCExtendedGamepad instead
  */
+@Deprecated
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)

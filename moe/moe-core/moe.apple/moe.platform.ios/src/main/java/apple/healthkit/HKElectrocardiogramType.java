@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKElectrocardiogramType
- * <p>
+ * 
  * Represents an electrocardiogram sample.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("HealthKit")
@@ -200,4 +202,8 @@ public class HKElectrocardiogramType extends HKSampleType {
     @Generated
     @Selector("workoutType")
     public static native HKWorkoutType workoutType();
+
+    @Generated
+    @Selector("visionPrescriptionType")
+    public static native HKPrescriptionType visionPrescriptionType();
 }

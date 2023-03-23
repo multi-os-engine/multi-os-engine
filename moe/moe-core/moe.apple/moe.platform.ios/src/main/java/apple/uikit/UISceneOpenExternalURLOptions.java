@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This object is created by your application and passed into a UIScene's openURL method.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")
@@ -155,6 +157,8 @@ public class UISceneOpenExternalURLOptions extends NSObject {
 
     /**
      * An event attribution associated with the external URL to open.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("eventAttribution")
@@ -162,6 +166,8 @@ public class UISceneOpenExternalURLOptions extends NSObject {
 
     /**
      * An event attribution associated with the external URL to open.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setEventAttribution:")

@@ -43,10 +43,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * A gaussian distribution is biased towards the mean value, the possible outcomes are spread out from the mean
  * with decreasing probability. Values within 1 deviation of the mean make up 68.27% of the distribution, values
  * within 2 deviations make up 95% and values within 3 deviations make up 99.7%.
- * <p>
+ * 
  * Note that a gaussian distribution's unbounded behavior beyond 3 deviations is undesired,
  * thus this distribution deviates nominally by modifying the bounds to 3 deviations.
  * Thus values within 3 deviations actually make up 100% of the distribution.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -193,13 +195,13 @@ public class GKGaussianDistribution extends GKRandomDistribution {
      * Initializes a Gaussian random distribution within the range [lowest, highest] using a source to grab input values
      * from.
      * This sets the gaussian parameters to:
-     * <p>
+     * 
      * mean = (highest + lowest) / 2
      * deviation = (highest - lowest) / 6
-     * <p>
+     * 
      * The mean and deviation will be floating point numbers even if the distribution is meant to produce integer
      * values.
-     *
+     * 
      * @see mean
      * @see deviation
      */

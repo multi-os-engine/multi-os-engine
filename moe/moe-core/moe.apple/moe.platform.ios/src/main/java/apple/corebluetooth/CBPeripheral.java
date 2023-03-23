@@ -44,8 +44,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CBPeripheral
- * <p>
+ * 
  * Represents a peripheral.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("CoreBluetooth")
@@ -159,10 +161,13 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * [@property] RSSI
-     * <p>
+     * 
      * The most recently read RSSI, in decibels.
-     *
+     * 
      * @deprecated Use {@link peripheral:didReadRSSI:error:} instead.
+     * 
+     *             API-Since: 5.0
+     *             Deprecated-Since: 8.0
      */
     @Generated
     @Deprecated
@@ -171,7 +176,7 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate object that will receive peripheral events.
      */
     @Generated
@@ -181,13 +186,14 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * discoverCharacteristics:forService:
-     * <p>
+     * 
      * Discovers the specified characteristic(s) of <i>service</i>.
-     *
+     * 
      * @param characteristicUUIDs A list of <code>CBUUID</code> objects representing the characteristic types to be
      *                            discovered. If <i>nil</i>,
      *                            all characteristics of <i>service</i> will be discovered.
      * @param service             A GATT service.
+     * 
      * @see peripheral:didDiscoverCharacteristicsForService:error:
      */
     @Generated
@@ -197,10 +203,11 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * discoverDescriptorsForCharacteristic:
-     * <p>
+     * 
      * Discovers the characteristic descriptor(s) of <i>characteristic</i>.
-     *
+     * 
      * @param characteristic A GATT characteristic.
+     * 
      * @see peripheral:didDiscoverDescriptorsForCharacteristic:error:
      */
     @Generated
@@ -209,14 +216,15 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * discoverIncludedServices:forService:
-     * <p>
+     * 
      * Discovers the specified included service(s) of <i>service</i>.
-     *
+     * 
      * @param includedServiceUUIDs A list of <code>CBUUID</code> objects representing the included service types to be
      *                             discovered. If <i>nil</i>,
      *                             all of <i>service</i>s included services will be discovered, which is considerably
      *                             slower and not recommended.
      * @param service              A GATT service.
+     * 
      * @see peripheral:didDiscoverIncludedServicesForService:error:
      */
     @Generated
@@ -226,12 +234,13 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * discoverServices:
-     * <p>
+     * 
      * Discovers available service(s) on the peripheral.
-     *
+     * 
      * @param serviceUUIDs A list of <code>CBUUID</code> objects representing the service types to be discovered. If
      *                     <i>nil</i>,
      *                     all services will be discovered.
+     * 
      * @see peripheral:didDiscoverServices:
      */
     @Generated
@@ -244,10 +253,12 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * maximumWriteValueLengthForType:
-     * <p>
+     * 
      * The maximum amount of data, in bytes, that can be sent to a characteristic in a single write type.
-     *
+     * 
      * @see writeValue:forCharacteristic:type:
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("maximumWriteValueLengthForType:")
@@ -256,7 +267,7 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * [@property] name
-     * <p>
+     * 
      * The name of the peripheral.
      */
     @Generated
@@ -265,9 +276,9 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * readRSSI
-     * <p>
+     * 
      * While connected, retrieves the current RSSI of the link.
-     *
+     * 
      * @see peripheral:didReadRSSI:error:
      */
     @Generated
@@ -276,10 +287,11 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * readValueForCharacteristic:
-     * <p>
+     * 
      * Reads the characteristic value for <i>characteristic</i>.
-     *
+     * 
      * @param characteristic A GATT characteristic.
+     * 
      * @see peripheral:didUpdateValueForCharacteristic:error:
      */
     @Generated
@@ -288,10 +300,11 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * readValueForDescriptor:
-     * <p>
+     * 
      * Reads the value of <i>descriptor</i>.
-     *
+     * 
      * @param descriptor A GATT characteristic descriptor.
+     * 
      * @see peripheral:didUpdateValueForDescriptor:error:
      */
     @Generated
@@ -300,7 +313,7 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * [@property] services
-     * <p>
+     * 
      * A list of <code>CBService</code> objects that have been discovered on the peripheral.
      */
     @Generated
@@ -309,7 +322,7 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate object that will receive peripheral events.
      */
     @Generated
@@ -318,7 +331,7 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate object that will receive peripheral events.
      */
     @Generated
@@ -335,7 +348,7 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * setNotifyValue:forCharacteristic:
-     * <p>
+     * 
      * Enables or disables notifications/indications for the characteristic value of <i>characteristic</i>. If
      * <i>characteristic</i>
      * allows both, notifications will be used.
@@ -344,9 +357,10 @@ public class CBPeripheral extends CBPeer {
      * [@link] peripheral:didUpdateValueForCharacteristic:error: @/link. Since it is the peripheral that chooses when to
      * send an update,
      * the application should be prepared to handle them as long as notifications/indications remain enabled.
-     *
+     * 
      * @param enabled        Whether or not notifications/indications should be enabled.
      * @param characteristic The characteristic containing the client characteristic configuration descriptor.
+     * 
      * @see peripheral:didUpdateNotificationStateForCharacteristic:error:
      * @see CBConnectPeripheralOptionNotifyOnNotificationKey
      */
@@ -356,7 +370,7 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * [@property] state
-     * <p>
+     * 
      * The current connection state of the peripheral.
      */
     @Generated
@@ -366,7 +380,7 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * writeValue:forCharacteristic:type:
-     * <p>
+     * 
      * Writes <i>value</i> to <i>characteristic</i>'s characteristic value.
      * If the <code>CBCharacteristicWriteWithResponse</code> type is specified,
      * {@link peripheral:didWriteValueForCharacteristic:error:}
@@ -374,10 +388,11 @@ public class CBPeripheral extends CBPeer {
      * If the <code>CBCharacteristicWriteWithoutResponse</code> type is specified, and canSendWriteWithoutResponse is
      * false, the delivery
      * of the data is best-effort and may not be guaranteed.
-     *
+     * 
      * @param data           The value to write.
      * @param characteristic The characteristic whose characteristic value will be written.
      * @param type           The type of write to be executed.
+     * 
      * @see peripheral:didWriteValueForCharacteristic:error:
      * @see peripheralIsReadyToSendWriteWithoutResponse:
      * @see canSendWriteWithoutResponse
@@ -389,13 +404,14 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * writeValue:forDescriptor:
-     * <p>
+     * 
      * Writes <i>data</i> to <i>descriptor</i>'s value. Client characteristic configuration descriptors cannot be
      * written using
      * this method, and should instead use @link setNotifyValue:forCharacteristic: @/link.
-     *
+     * 
      * @param data       The value to write.
      * @param descriptor A GATT characteristic descriptor.
+     * 
      * @see peripheral:didWriteValueForCharacteristic:error:
      */
     @Generated
@@ -404,10 +420,12 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * [@property] canSendWriteWithoutResponse
-     * <p>
+     * 
      * YES if the remote device has space to send a write without response. If this value is NO,
      * the value will be set to YES after the current writes have been flushed, and
      * <link>peripheralIsReadyToSendWriteWithoutResponse:</link> will be called.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("canSendWriteWithoutResponse")
@@ -415,11 +433,14 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * openL2CAPChannel:
-     * <p>
+     * 
      * Attempt to open an L2CAP channel to the peripheral using the supplied PSM.
-     *
+     * 
      * @param PSM The PSM of the channel to open
+     * 
      * @see peripheral:didWriteValueForCharacteristic:error:
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("openL2CAPChannel:")
@@ -427,11 +448,13 @@ public class CBPeripheral extends CBPeer {
 
     /**
      * [@property] ancsAuthorized
-     * <p>
+     * 
      * YES if the remote device has been authorized to receive data over ANCS (Apple Notification Service Center)
      * protocol. If this value is NO,
      * the value will be set to YES after a user authorization occurs and
      * <link>didUpdateANCSAuthorizationForPeripheral:</link> will be called.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("ancsAuthorized")

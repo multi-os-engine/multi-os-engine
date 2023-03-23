@@ -26,7 +26,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCRMSPropOptimizer
- * <p>
+ * 
  * The MLCRMSPropOptimizer specifies the RMSProp optimizer.
  */
 @Generated
@@ -59,9 +59,9 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The smoothing constant.
-     * <p>
+     * 
      * The default is 0.99.
      */
     @Generated
@@ -106,9 +106,9 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] epsilon
-     * <p>
+     * 
      * A term added to improve numerical stability.
-     * <p>
+     * 
      * The default is 1e-8.
      */
     @Generated
@@ -139,9 +139,9 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] isCentered
-     * <p>
+     * 
      * If True, compute the centered RMSProp, the gradient is normalized by an estimation of its variance.
-     * <p>
+     * 
      * The default is false.
      */
     @Generated
@@ -158,9 +158,9 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] momentumScale
-     * <p>
+     * 
      * The momentum factor. A hyper-parameter.
-     * <p>
+     * 
      * The default is 0.0.
      */
     @Generated
@@ -174,7 +174,7 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * Create a MLCRMSPropOptimizer object with defaults
-     *
+     * 
      * @return A new MLCRMSPropOptimizer object.
      */
     @Generated
@@ -183,7 +183,7 @@ public class MLCRMSPropOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * Create a MLCRMSPropOptimizer object
-     *
+     * 
      * @param optimizerDescriptor The optimizer descriptor object
      * @param momentumScale       The momentum scale
      * @param alpha               The smoothing constant value

@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASENumberMetaParameter
- * <p>
+ * 
  * An object that represents an active numeric metaparameter in the system
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -87,11 +89,13 @@ public class PHASENumberMetaParameter extends PHASEMetaParameter {
 
     /**
      * fadeToValue
-     * <p>
+     * 
      * Fades to a new value over an interval of time
-     *
-     * @param value    The new destination value to fade to
-     * @param duration The length of time it takes to arrive at the destination value
+     * 
+     * @param value
+     *                 The new destination value to fade to
+     * @param duration
+     *                 The length of time it takes to arrive at the destination value
      */
     @Generated
     @Selector("fadeToValue:duration:")
@@ -129,7 +133,7 @@ public class PHASENumberMetaParameter extends PHASEMetaParameter {
 
     /**
      * [@property] maximum
-     * <p>
+     * 
      * The maximum value this metaparameter can be set to
      */
     @Generated
@@ -138,7 +142,7 @@ public class PHASENumberMetaParameter extends PHASEMetaParameter {
 
     /**
      * [@property] minimum
-     * <p>
+     * 
      * The minimum value this metaparameter can be set to
      */
     @Generated

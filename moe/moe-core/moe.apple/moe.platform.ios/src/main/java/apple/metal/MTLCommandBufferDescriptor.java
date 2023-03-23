@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MTLCommandBufferDescriptor
- * <p>
+ * 
  * An object that you use to configure new Metal command buffer objects.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Metal")
@@ -95,7 +97,7 @@ public class MTLCommandBufferDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] errorOptions
-     * <p>
+     * 
      * A set of options to influence the error reporting of the created command buffer. See MTLCommandBufferErrorOption.
      */
     @Generated
@@ -148,7 +150,7 @@ public class MTLCommandBufferDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] retainedReferences
-     * <p>
+     * 
      * If YES, the created command buffer holds strong references to objects needed for it to execute. If NO, the
      * created command buffer does not hold strong references to objects needed for it to execute.
      */
@@ -158,7 +160,7 @@ public class MTLCommandBufferDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] errorOptions
-     * <p>
+     * 
      * A set of options to influence the error reporting of the created command buffer. See MTLCommandBufferErrorOption.
      */
     @Generated
@@ -167,7 +169,7 @@ public class MTLCommandBufferDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] retainedReferences
-     * <p>
+     * 
      * If YES, the created command buffer holds strong references to objects needed for it to execute. If NO, the
      * created command buffer does not hold strong references to objects needed for it to execute.
      */

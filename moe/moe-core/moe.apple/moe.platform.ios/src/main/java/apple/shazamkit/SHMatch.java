@@ -27,10 +27,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A @c SHMatch indicates that a Signature matched a reference Signature in the target @c SHCatalog
- * <p>
+ * 
  * A @c SHSignature can match many reference Signatures in a catalog and in turn a Signature can map to
  * many @c SHMediaItem. Therefore a match encapsulates the query signature and all of the various @c SHMediaItem it
  * matched
+ * 
+ * [@note] @c SHMatch is not intended to be subclassed
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("ShazamKit")
@@ -130,7 +134,7 @@ public class SHMatch extends NSObject implements NSSecureCoding {
 
     /**
      * The @c SHMatchedMediaItem belonging to the instance of @c SHSignature that we matched
-     * <p>
+     * 
      * One signature may match multiple @c SHMediaItem, especially in the case of audio that uses samples. The @c
      * SHMatchedMediaItem
      * are ordered by the quality of the match. Use the first @c SHMediaItem if you intend to only show one result

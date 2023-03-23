@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@c] CPAssistantCellConfiguration encapsulates the configuration options for your assistant cell.
- * <p>
+ * 
  * [@note] The Assistant Cell is only supported by CarPlay Audio and Communication apps.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("CarPlay")
@@ -150,7 +152,7 @@ public class CPAssistantCellConfiguration extends NSObject implements NSSecureCo
 
     /**
      * The position of the Assistant Cell.
-     * <p>
+     * 
      * [@note] The default value of this property is @c CPAssistantCellPositionTop.
      */
     @Generated
@@ -191,7 +193,7 @@ public class CPAssistantCellConfiguration extends NSObject implements NSSecureCo
 
     /**
      * The visibility of the Assistant Cell.
-     * <p>
+     * 
      * [@note] The default value of this property is @c CPAssistantCellVisibilityOff.
      */
     @Generated

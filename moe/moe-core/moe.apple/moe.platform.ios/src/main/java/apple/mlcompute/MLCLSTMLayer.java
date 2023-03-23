@@ -24,11 +24,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCLSTMLayer
- * <p>
+ * 
  * A LSTM layer
- * <p>
+ * 
  * The hidden and cell state for inputs and outputs have a layout of [numberOfLayers, numberOfDirections, batchSize,
  * hiddenSize].
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -64,7 +66,7 @@ public class MLCLSTMLayer extends MLCLayer {
 
     /**
      * [@property] biases
-     * <p>
+     * 
      * The array of tensors describing the bias terms for the input, hidden, cell and output gates
      */
     @Generated
@@ -73,7 +75,7 @@ public class MLCLSTMLayer extends MLCLayer {
 
     /**
      * [@property] biasesParameters
-     * <p>
+     * 
      * The bias tensor parameter used for optimizer update
      */
     @Generated
@@ -108,7 +110,7 @@ public class MLCLSTMLayer extends MLCLayer {
 
     /**
      * [@property] descriptor
-     * <p>
+     * 
      * The LSTM descriptor
      */
     @Generated
@@ -117,9 +119,9 @@ public class MLCLSTMLayer extends MLCLayer {
 
     /**
      * [@property] gateActivations
-     * <p>
+     * 
      * The array of gate activations for input, hidden, cell and output gates
-     * <p>
+     * 
      * The default gate activations are: sigmoid, sigmoid, tanh, sigmoid
      */
     @Generated
@@ -133,7 +135,7 @@ public class MLCLSTMLayer extends MLCLayer {
 
     /**
      * [@property] hiddenWeights
-     * <p>
+     * 
      * The array of tensors describing the hidden weights for the input, hidden, cell and output gates
      */
     @Generated
@@ -142,7 +144,7 @@ public class MLCLSTMLayer extends MLCLayer {
 
     /**
      * [@property] hiddenWeightsParameters
-     * <p>
+     * 
      * The hidden weights tensor parameters used for optimizer update
      */
     @Generated
@@ -155,7 +157,7 @@ public class MLCLSTMLayer extends MLCLayer {
 
     /**
      * [@property] inputWeights
-     * <p>
+     * 
      * The array of tensors describing the input weights for the input, hidden, cell and output gates
      */
     @Generated
@@ -164,7 +166,7 @@ public class MLCLSTMLayer extends MLCLayer {
 
     /**
      * [@property] inputWeightsParameters
-     * <p>
+     * 
      * The input weights tensor parameters used for optimizer update
      */
     @Generated
@@ -194,7 +196,7 @@ public class MLCLSTMLayer extends MLCLayer {
 
     /**
      * Create a LSTM layer
-     *
+     * 
      * @param descriptor    The LSTM descriptor
      * @param inputWeights  An array of (layerCount * 4) tensors describing the input weights for the
      *                      input, hidden, cell and output gates for layer0, layer1.. layer(n-1) for layerCount=n.
@@ -210,7 +212,7 @@ public class MLCLSTMLayer extends MLCLayer {
 
     /**
      * Create a LSTM layer
-     *
+     * 
      * @param descriptor      The LSTM descriptor
      * @param inputWeights    An array of (layerCount * 4) tensors describing the input weights for the
      *                        input, hidden, cell and output gates for layer0, layer1.. layer(n-1) for layerCount=n.
@@ -229,7 +231,7 @@ public class MLCLSTMLayer extends MLCLayer {
 
     /**
      * Create a LSTM layer
-     *
+     * 
      * @param descriptor             The LSTM descriptor
      * @param inputWeights           An array of (layerCount * 4) tensors describing the input weights for the
      *                               input, hidden, cell and output gates for layer0, layer1.. layer(n-1) for
@@ -270,7 +272,7 @@ public class MLCLSTMLayer extends MLCLayer {
 
     /**
      * [@property] outputResultActivation
-     * <p>
+     * 
      * The output activation descriptor
      */
     @Generated
@@ -279,7 +281,7 @@ public class MLCLSTMLayer extends MLCLayer {
 
     /**
      * [@property] peepholeWeights
-     * <p>
+     * 
      * The array of tensors describing the peephole weights for the input, hidden, cell and output gates
      */
     @Generated
@@ -288,7 +290,7 @@ public class MLCLSTMLayer extends MLCLayer {
 
     /**
      * [@property] peepholeWeightsParameters
-     * <p>
+     * 
      * The peephole weights tensor parameters used for optimizer update
      */
     @Generated

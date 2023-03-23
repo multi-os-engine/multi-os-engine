@@ -182,6 +182,8 @@ public final class GCExtendedGamepadSnapshotData extends StructObject {
 
     /**
      * Boolean indicating whether the controller supports clickable thumbsticks (1) or not (0)
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @StructureField(order = 16, isGetter = true)
@@ -189,6 +191,8 @@ public final class GCExtendedGamepadSnapshotData extends StructObject {
 
     /**
      * Boolean indicating whether the controller supports clickable thumbsticks (1) or not (0)
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @StructureField(order = 16, isGetter = false)
@@ -196,6 +200,8 @@ public final class GCExtendedGamepadSnapshotData extends StructObject {
 
     /**
      * Left and right thumbstick clickable values (0, 1)
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @StructureField(order = 17, isGetter = true)
@@ -203,15 +209,23 @@ public final class GCExtendedGamepadSnapshotData extends StructObject {
 
     /**
      * Left and right thumbstick clickable values (0, 1)
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @StructureField(order = 17, isGetter = false)
     public native void setLeftThumbstickButton(boolean value);
 
+    /**
+     * API-Since: 12.1
+     */
     @Generated
     @StructureField(order = 18, isGetter = true)
     public native boolean rightThumbstickButton();
 
+    /**
+     * API-Since: 12.1
+     */
     @Generated
     @StructureField(order = 18, isGetter = false)
     public native void setRightThumbstickButton(boolean value);

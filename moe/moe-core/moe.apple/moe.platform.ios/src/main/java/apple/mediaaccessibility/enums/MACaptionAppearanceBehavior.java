@@ -21,18 +21,26 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] MACaptionAppearanceBehavior
- * <p>
+ * 
  * MACaptionAppearanceBehavior is used to determine how a preference value should be used.
- * <p>
+ * 
  * [@constant] kMACaptionAppearanceBehaviorUseValue
  * The value should override any content, application, or otherwise-defined values.
  * [@constant] kMACaptionAppearanceBehaviorUseContentIfAvailable
  * Content, application, or otherwise-defined values should override the returned value. If no other value is defined,
  * then the return value should be used.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 public final class MACaptionAppearanceBehavior {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Value = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long ContentIfAvailable = 0x0000000000000001L;
 
     @Generated

@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.3
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -68,6 +71,9 @@ public class SKCloudServiceController extends NSObject {
     @Selector("allocWithZone:")
     public static native SKCloudServiceController allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("authorizationStatus")
     @NInt
@@ -134,6 +140,9 @@ public class SKCloudServiceController extends NSObject {
     @Selector("new")
     public static native SKCloudServiceController new_objc();
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("requestAuthorization:")
     public static native void requestAuthorization(
@@ -164,11 +173,17 @@ public class SKCloudServiceController extends NSObject {
     @Selector("init")
     public native SKCloudServiceController init();
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("requestCapabilitiesWithCompletionHandler:")
     public native void requestCapabilitiesWithCompletionHandler(
             @ObjCBlock(name = "call_requestCapabilitiesWithCompletionHandler") Block_requestCapabilitiesWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("requestStorefrontIdentifierWithCompletionHandler:")
     public native void requestStorefrontIdentifierWithCompletionHandler(
@@ -195,6 +210,11 @@ public class SKCloudServiceController extends NSObject {
         void call_requestStorefrontIdentifierWithCompletionHandler(String storefrontIdentifier, NSError error);
     }
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @Selector("requestPersonalizationTokenForClientToken:withCompletionHandler:")
     public native void requestPersonalizationTokenForClientTokenWithCompletionHandler(String clientToken,
@@ -208,6 +228,9 @@ public class SKCloudServiceController extends NSObject {
                 NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("requestStorefrontCountryCodeWithCompletionHandler:")
     public native void requestStorefrontCountryCodeWithCompletionHandler(
@@ -220,6 +243,9 @@ public class SKCloudServiceController extends NSObject {
         void call_requestStorefrontCountryCodeWithCompletionHandler(String storefrontCountryCode, NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("requestUserTokenForDeveloperToken:completionHandler:")
     public native void requestUserTokenForDeveloperTokenCompletionHandler(String developerToken,

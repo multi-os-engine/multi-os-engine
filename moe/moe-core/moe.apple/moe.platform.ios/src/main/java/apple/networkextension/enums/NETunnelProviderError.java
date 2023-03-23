@@ -21,22 +21,30 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NETunnelProviderError
- * <p>
+ * 
  * Tunnel Provider error codes
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class NETunnelProviderError {
     /**
      * [@const] NETunnelProviderErrorNetworkSettingsInvalid The provided tunnel network settings are invalid.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Invalid = 0x0000000000000001L;
     /**
      * [@const] NETunnelProviderErrorNetworkSettingsCanceled The request to set/clear the tunnel network settings was
      * canceled.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Canceled = 0x0000000000000002L;
     /**
      * [@const] NETunnelProviderErrorNetworkSettingsFailed The request to set/clear the tunnel network settings failed.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Failed = 0x0000000000000003L;
 

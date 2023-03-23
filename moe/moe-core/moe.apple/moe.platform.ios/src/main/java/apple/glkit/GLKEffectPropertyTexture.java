@@ -40,9 +40,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GLKEffectPropertyTexture
- * <p>
+ * 
  * GLKEffectPropertyTexture simply contains properties to configure GL texture rendering.
+ * 
+ * 
+ * API-Since: 5.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
  */
+@Deprecated
 @Generated
 @Library("GLKit")
 @Runtime(ObjCRuntime.class)

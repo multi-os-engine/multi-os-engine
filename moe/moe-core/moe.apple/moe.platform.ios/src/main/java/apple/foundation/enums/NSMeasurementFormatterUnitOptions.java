@@ -19,10 +19,15 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class NSMeasurementFormatterUnitOptions {
     /**
      * e.g This ensures the formatter uses this unit even if it is not the preferred unit of the set locale.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NUInt public static final long ProvidedUnit = 0x0000000000000001L;
     /**
@@ -30,10 +35,14 @@ public final class NSMeasurementFormatterUnitOptions {
      * NSMeasurementFormatterUnitOptionsNaturalScale results in scaling within the unit system of the preferred unit of
      * the locale. To scale within the unit system of the provided unit, set
      * NSMeasurementFormatterUnitOptionsNaturalScale | NSMeasurementFormatterUnitOptionsProvidedUnit.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NUInt public static final long NaturalScale = 0x0000000000000002L;
     /**
      * e.g. This would display "90°" rather than "90°F" or "90°C"
+     * 
+     * API-Since: 10.0
      */
     @Generated @NUInt public static final long TemperatureWithoutUnit = 0x0000000000000004L;
 

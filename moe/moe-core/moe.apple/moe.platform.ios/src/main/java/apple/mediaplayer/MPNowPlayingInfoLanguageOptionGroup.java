@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Represents a mutually exclusive group of language options.
  * Only one language option within a given group may be active at a time.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MediaPlayer")

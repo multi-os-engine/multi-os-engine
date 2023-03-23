@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Node representing a MPSCNNUpsamplingBilinear kernel
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -94,7 +96,7 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a MPSCNNUpsamplingBilinear kernel
-     *
+     * 
      * @param sourceNode          The MPSNNImageNode representing the source MPSImage for the filter
      * @param integerScaleFactorX The upsampling factor for the x dimension.
      * @param integerScaleFactorY The upsampling factor for the y dimension.
@@ -133,7 +135,7 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
 
     /**
      * Init a autoreleased node representing a MPSCNNUpsamplingBilinear kernel
-     *
+     * 
      * @param sourceNode          The MPSNNImageNode representing the source MPSImage for the filter
      * @param integerScaleFactorX The upsampling factor for the x dimension.
      * @param integerScaleFactorY The upsampling factor for the y dimension.
@@ -179,7 +181,7 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a MPSCNNUpsamplingBilinear kernel
-     *
+     * 
      * @param sourceNode          The MPSNNImageNode representing the source MPSImage for the filter
      * @param integerScaleFactorX The upsampling factor for the x dimension.
      * @param integerScaleFactorY The upsampling factor for the y dimension.
@@ -195,7 +197,7 @@ public class MPSCNNUpsamplingBilinearNode extends MPSNNFilterNode {
 
     /**
      * Init a autoreleased node representing a MPSCNNUpsamplingBilinear kernel
-     *
+     * 
      * @param sourceNode          The MPSNNImageNode representing the source MPSImage for the filter
      * @param integerScaleFactorX The upsampling factor for the x dimension.
      * @param integerScaleFactorY The upsampling factor for the y dimension.

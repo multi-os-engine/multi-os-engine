@@ -48,6 +48,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -277,6 +280,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     /**
      * default is nil
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("landscapeImagePhone")
@@ -284,6 +289,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     /**
      * default is UIEdgeInsetsZero. These insets apply only when the landscapeImagePhone property is set.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("landscapeImagePhoneInsets")
@@ -310,6 +317,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     /**
      * default is nil
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setLandscapeImagePhone:")
@@ -317,6 +326,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     /**
      * default is UIEdgeInsetsZero. These insets apply only when the landscapeImagePhone property is set.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setLandscapeImagePhoneInsets:")
@@ -339,6 +350,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     /**
      * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary,
      * using the keys found in NSAttributedString.h.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setTitleTextAttributes:forState:")
@@ -359,6 +372,9 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @Selector("title")
     public native String title();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("titleTextAttributesForState:")
     public native NSDictionary<String, ?> titleTextAttributesForState(@NUInt long state);
@@ -367,6 +383,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
      * Higher-resolution version of the standard image. Default is nil. Used for rendering assistive UI (e.g. for users
      * with visual impairments who need large text). If not provided, the system may attempt to generate an image based
      * on the standard image (for instance, by rasterizing matching PDF representations at a higher resolution).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("largeContentSizeImage")
@@ -374,6 +392,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     /**
      * default is UIEdgeInsetsZero. These insets apply only when the largeContentSizeImage property is set.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("largeContentSizeImageInsets")
@@ -384,6 +404,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
      * Higher-resolution version of the standard image. Default is nil. Used for rendering assistive UI (e.g. for users
      * with visual impairments who need large text). If not provided, the system may attempt to generate an image based
      * on the standard image (for instance, by rasterizing matching PDF representations at a higher resolution).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLargeContentSizeImage:")
@@ -391,6 +413,8 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     /**
      * default is UIEdgeInsetsZero. These insets apply only when the largeContentSizeImage property is set.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLargeContentSizeImageInsets:")

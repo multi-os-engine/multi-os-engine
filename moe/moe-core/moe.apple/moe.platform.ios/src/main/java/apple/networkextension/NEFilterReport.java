@@ -29,11 +29,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEFilterReport
- * <p>
+ * 
  * The NEFilterReport declares the programmatic interface of an object that is a report of actions taken by
  * the data provider.
- * <p>
+ * 
  * NEFilterReport is part of NetworkExtension.framework
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -55,8 +57,10 @@ public class NEFilterReport extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] action
-     * <p>
+     * 
      * The action taken upon the reported flow.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("action")
@@ -115,8 +119,10 @@ public class NEFilterReport extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] flow
-     * <p>
+     * 
      * The flow on which the described action was taken.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("flow")
@@ -194,9 +200,11 @@ public class NEFilterReport extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] bytesInboundCount
-     * <p>
+     * 
      * The number of inbound bytes received from the flow. This property is only non-zero when the report event is
      * NEFilterReportEventFlowClosed or NEFilterReportEventFlowStatistics.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("bytesInboundCount")
@@ -205,9 +213,11 @@ public class NEFilterReport extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] bytesOutboundCount
-     * <p>
+     * 
      * The number of outbound bytes sent on the flow. This property is only non-zero when the report event is
      * NEFilterReportEventFlowClosed or NEFilterReportEventFlowStatistics.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("bytesOutboundCount")
@@ -216,8 +226,10 @@ public class NEFilterReport extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] event
-     * <p>
+     * 
      * The type of event that the report is reporting.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("event")

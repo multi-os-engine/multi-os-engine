@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Describes the limits and features that can be used in an indirect command
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("Metal")
@@ -79,7 +81,7 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
 
     /**
      * A bitfield of the command types that be encoded.
-     * <p>
+     * 
      * MTLCommandTypeDispatch cannot be mixed with any other command type.
      */
     @Generated
@@ -109,6 +111,8 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
 
     /**
      * Whether the render or compute pipeline are inherited from the encoder
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("inheritPipelineState")
@@ -140,7 +144,6 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * [@absract]
      * The maximum bind index of fragment argument buffers that can be set per command.
      */
     @Generated
@@ -149,8 +152,9 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     public native long maxFragmentBufferBindCount();
 
     /**
-     * [@absract]
      * The maximum bind index of kernel (or tile) argument buffers that can be set per command.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("maxKernelBufferBindCount")
@@ -180,7 +184,7 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
 
     /**
      * A bitfield of the command types that be encoded.
-     * <p>
+     * 
      * MTLCommandTypeDispatch cannot be mixed with any other command type.
      */
     @Generated
@@ -196,13 +200,14 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
 
     /**
      * Whether the render or compute pipeline are inherited from the encoder
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setInheritPipelineState:")
     public native void setInheritPipelineState(boolean value);
 
     /**
-     * [@absract]
      * The maximum bind index of fragment argument buffers that can be set per command.
      */
     @Generated
@@ -210,8 +215,9 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     public native void setMaxFragmentBufferBindCount(@NUInt long value);
 
     /**
-     * [@absract]
      * The maximum bind index of kernel (or tile) argument buffers that can be set per command.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setMaxKernelBufferBindCount:")
@@ -242,4 +248,22 @@ public class MTLIndirectCommandBufferDescriptor extends NSObject implements NSCo
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * Whether the render or compute commands can use ray tracing. Default value is NO.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSupportRayTracing:")
+    public native void setSupportRayTracing(boolean value);
+
+    /**
+     * Whether the render or compute commands can use ray tracing. Default value is NO.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("supportRayTracing")
+    public native boolean supportRayTracing();
 }

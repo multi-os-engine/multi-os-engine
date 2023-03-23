@@ -52,6 +52,9 @@ public final class Intents {
     @CVariable()
     public static native ConstBytePtr IntentsVersionString();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -59,7 +62,13 @@ public final class Intents {
 
     /**
      * Identifier for INStartAudioCallIntent class.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: INStartAudioCallIntentIdentifier is deprecated. Please adopt INStartCallIntentIdentifier
+     * instead
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -67,7 +76,13 @@ public final class Intents {
 
     /**
      * Identifier for INStartVideoCallIntent class.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: INStartVideoCallIntentIdentifier is deprecated. Please adopt INStartCallIntentIdentifier
+     * instead
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -75,6 +90,8 @@ public final class Intents {
 
     /**
      * Identifier for INSearchCallHistoryIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -83,6 +100,8 @@ public final class Intents {
 
     /**
      * Identifier for INSetAudioSourceInCarIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -91,6 +110,8 @@ public final class Intents {
 
     /**
      * Identifier for INSetClimateSettingsInCarIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -99,6 +120,8 @@ public final class Intents {
 
     /**
      * Identifier for INSetDefrosterSettingsInCarIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -107,6 +130,8 @@ public final class Intents {
 
     /**
      * Identifier for INSetSeatSettingsInCarIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -115,6 +140,8 @@ public final class Intents {
 
     /**
      * Identifier for INSetProfileInCarIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -123,6 +150,8 @@ public final class Intents {
 
     /**
      * Identifier for INSaveProfileInCarIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -131,6 +160,8 @@ public final class Intents {
 
     /**
      * Identifier for INStartWorkoutIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -139,6 +170,8 @@ public final class Intents {
 
     /**
      * Identifier for INPauseWorkoutIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -147,6 +180,8 @@ public final class Intents {
 
     /**
      * Identifier for INEndWorkoutIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -155,6 +190,8 @@ public final class Intents {
 
     /**
      * Identifier for INCancelWorkoutIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -163,6 +200,8 @@ public final class Intents {
 
     /**
      * Identifier for INResumeWorkoutIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -171,6 +210,8 @@ public final class Intents {
 
     /**
      * Identifier for INSetRadioStationIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -179,6 +220,8 @@ public final class Intents {
 
     /**
      * Identifier for INSendMessageIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -187,6 +230,8 @@ public final class Intents {
 
     /**
      * Identifier for INSearchForMessagesIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -195,6 +240,8 @@ public final class Intents {
 
     /**
      * Identifier for INSetMessageAttributeIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -203,6 +250,8 @@ public final class Intents {
 
     /**
      * Identifier for INSendPaymentIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -211,6 +260,8 @@ public final class Intents {
 
     /**
      * Identifier for INRequestPaymentIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -219,6 +270,8 @@ public final class Intents {
 
     /**
      * Identifier for INSearchForPhotosIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -227,6 +280,8 @@ public final class Intents {
 
     /**
      * Identifier for INStartPhotoPlaybackIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -235,6 +290,8 @@ public final class Intents {
 
     /**
      * Identifier for INListRideOptionsIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -243,6 +300,8 @@ public final class Intents {
 
     /**
      * Identifier for INRequestRideIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -251,222 +310,353 @@ public final class Intents {
 
     /**
      * Identifier for INGetRideStatusIntent class.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INGetRideStatusIntentIdentifier();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonHandleLabelHome();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonHandleLabelWork();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonHandleLabeliPhone();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonHandleLabelMobile();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonHandleLabelMain();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonHandleLabelHomeFax();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonHandleLabelWorkFax();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonHandleLabelPager();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonHandleLabelOther();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonRelationshipFather();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonRelationshipMother();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonRelationshipParent();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonRelationshipBrother();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonRelationshipSister();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonRelationshipChild();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonRelationshipFriend();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonRelationshipSpouse();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonRelationshipPartner();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonRelationshipAssistant();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonRelationshipManager();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierRun();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierSit();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierSteps();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierStand();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierMove();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierWalk();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierYoga();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierDance();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierCrosstraining();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierElliptical();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierRower();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierCycle();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierStairs();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierOther();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierIndoorrun();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierIndoorcycle();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierIndoorwalk();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierExercise();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonRelationshipSon();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonRelationshipDaughter();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierHike();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INWorkoutNameIdentifierHighIntensityIntervalTraining();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -474,54 +664,103 @@ public final class Intents {
 
     /**
      * Identifier for INStartCallIntent class.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INStartCallIntentIdentifier();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INCarChargingConnectorTypeJ1772();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INCarChargingConnectorTypeCCS1();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INCarChargingConnectorTypeCCS2();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INCarChargingConnectorTypeCHAdeMO();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INCarChargingConnectorTypeGBTAC();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INCarChargingConnectorTypeGBTDC();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INCarChargingConnectorTypeTesla();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INCarChargingConnectorTypeMennekes();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String INPersonHandleLabelSchool();
+
+    /**
+     * Identifier for INAnswerCallIntent class.
+     * 
+     * API-Since: 16.2
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INAnswerCallIntentIdentifier();
+
+    /**
+     * Identifier for INHangUpCallIntent class.
+     * 
+     * API-Since: 16.2
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String INHangUpCallIntentIdentifier();
 }

@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -90,10 +93,10 @@ public class UIPointerEffect extends NSObject implements NSCopying {
 
     /**
      * Creates a pointer content effect with the given preview's view.
-     * <p>
+     * 
      * UIPointerEffect attempts to determine the appropriate effect for the given preview automatically.
      * Use one of its subclasses to request a specific system-provided effect.
-     *
+     * 
      * @param preview A UITargetedPreview object describing a view with which to construct the effect.
      */
     @Generated

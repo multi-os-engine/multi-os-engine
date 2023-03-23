@@ -21,15 +21,28 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * A playlist may have any number of MPMediaPlaylistAttributes associated.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 public final class MPMediaPlaylistAttribute {
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     /**
      * if set, the playlist was created on a device rather than synced from iTunes
+     * 
+     * API-Since: 3.0
      */
     @Generated @NUInt public static final long OnTheGo = 0x0000000000000001L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NUInt public static final long Smart = 0x0000000000000002L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NUInt public static final long Genius = 0x0000000000000004L;
 
     @Generated

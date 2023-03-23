@@ -1,6 +1,5 @@
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
 import apple.uikit.NSTextRange;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -18,7 +17,11 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)

@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * NSTextElement is an abstract base class for representing the smallest text layout unit typically paragraphs, tables,
  * or attachments. A text element is associated with an NSTextContentManager.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")
@@ -186,4 +188,33 @@ public class NSTextElement extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * A concrete NSTextElement subclass can be structured in a tree. An element can have zero or more child elements.
+     * This section provides interface for supporting such a configuration.
+     * Returns an array of children. The array can contain zero or more elements.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("childElements")
+    public native NSArray<? extends NSTextElement> childElements();
+
+    /**
+     * Returns YES if it is an element represented in text layout. It is enumerated by NSTextContentManager.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isRepresentedElement")
+    public native boolean isRepresentedElement();
+
+    /**
+     * Returns the parent element if the receiver is a child.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("parentElement")
+    public native NSTextElement parentElement();
 }

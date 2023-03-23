@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.3
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -119,7 +122,12 @@ public class SKAdNetwork extends NSObject {
 
     /**
      * Participating apps should call this on launch to complete the install+open action associated with a product view
+     * 
+     * API-Since: 11.3
+     * Deprecated-Since: 15.4
+     * Deprecated-Message: Use updatePostbackConversionValue:completionHandler: instead
      */
+    @Deprecated
     @Generated
     @Selector("registerAppForAdNetworkAttribution")
     public static native void registerAppForAdNetworkAttribution();
@@ -145,10 +153,19 @@ public class SKAdNetwork extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 15.4
+     * Deprecated-Message: Use updatePostbackConversionValue:completionHandler: instead
+     */
+    @Deprecated
     @Generated
     @Selector("updateConversionValue:")
     public static native void updateConversionValue(@NInt long conversionValue);
 
+    /**
+     * API-Since: 14.5
+     */
     @Generated
     @Selector("endImpression:completionHandler:")
     public static native void endImpressionCompletionHandler(SKAdImpression impression,
@@ -163,6 +180,8 @@ public class SKAdNetwork extends NSObject {
 
     /**
      * Source apps should call these methods for performing a non-mediated attribution
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("startImpression:completionHandler:")
@@ -174,5 +193,52 @@ public class SKAdNetwork extends NSObject {
     public interface Block_startImpressionCompletionHandler {
         @Generated
         void call_startImpressionCompletionHandler(NSError error);
+    }
+
+    /**
+     * API-Since: 16.1
+     */
+    @Generated
+    @Selector("updatePostbackConversionValue:coarseValue:completionHandler:")
+    public static native void updatePostbackConversionValueCoarseValueCompletionHandler(@NInt long fineValue,
+            String coarseValue,
+            @ObjCBlock(name = "call_updatePostbackConversionValueCoarseValueCompletionHandler") Block_updatePostbackConversionValueCoarseValueCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updatePostbackConversionValueCoarseValueCompletionHandler {
+        @Generated
+        void call_updatePostbackConversionValueCoarseValueCompletionHandler(NSError error);
+    }
+
+    /**
+     * API-Since: 16.1
+     */
+    @Generated
+    @Selector("updatePostbackConversionValue:coarseValue:lockWindow:completionHandler:")
+    public static native void updatePostbackConversionValueCoarseValueLockWindowCompletionHandler(@NInt long fineValue,
+            String coarseValue, boolean lockWindow,
+            @ObjCBlock(name = "call_updatePostbackConversionValueCoarseValueLockWindowCompletionHandler") Block_updatePostbackConversionValueCoarseValueLockWindowCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updatePostbackConversionValueCoarseValueLockWindowCompletionHandler {
+        @Generated
+        void call_updatePostbackConversionValueCoarseValueLockWindowCompletionHandler(NSError error);
+    }
+
+    /**
+     * API-Since: 15.4
+     */
+    @Generated
+    @Selector("updatePostbackConversionValue:completionHandler:")
+    public static native void updatePostbackConversionValueCompletionHandler(@NInt long conversionValue,
+            @ObjCBlock(name = "call_updatePostbackConversionValueCompletionHandler") Block_updatePostbackConversionValueCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updatePostbackConversionValueCompletionHandler {
+        @Generated
+        void call_updatePostbackConversionValueCompletionHandler(NSError error);
     }
 }

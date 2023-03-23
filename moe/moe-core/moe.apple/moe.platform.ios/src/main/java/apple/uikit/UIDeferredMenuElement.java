@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -88,7 +91,7 @@ public class UIDeferredMenuElement extends UIMenuElement {
      * completion handler. A loading UI takes the place of the element in the menu
      * until it is fulfilled. While the element may be stored and re-used across menus, its block is
      * called only once, when the element is first encountered in a menu.
-     *
+     * 
      * @param elementProvider Called by the system to request the deferred menu items when the containing menu is
      *                        presented.
      *                        Call this block's completion handler when the menu items are available.
@@ -188,10 +191,12 @@ public class UIDeferredMenuElement extends UIMenuElement {
      * completion handler. A loading UI takes the place of the element in the menu
      * until it is fulfilled. Elements created using this initializer are "uncached",
      * so their @c elementProvider block is called every time the element is displayed.
-     *
+     * 
      * @param elementProvider Called by the system to request the deferred menu items when the containing menu is
      *                        presented.
      *                        Call this block's completion handler when the menu items are available.
+     * 
+     *                        API-Since: 15.0
      */
     @Generated
     @Selector("elementWithUncachedProvider:")

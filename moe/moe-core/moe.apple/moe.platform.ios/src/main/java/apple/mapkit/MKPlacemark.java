@@ -48,6 +48,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -189,6 +192,9 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     @Selector("initWithCoder:")
     public native MKPlacemark initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCoordinate:")
     public native MKPlacemark initWithCoordinate(@ByValue CLLocationCoordinate2D coordinate);
@@ -202,6 +208,9 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     public native MKPlacemark initWithCoordinateAddressDictionary(@ByValue CLLocationCoordinate2D coordinate,
             NSDictionary<String, ?> addressDictionary);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithCoordinate:postalAddress:")
     public native MKPlacemark initWithCoordinatePostalAddress(@ByValue CLLocationCoordinate2D coordinate,

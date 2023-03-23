@@ -27,10 +27,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * VNSaliencyImageObservation
  * [@superclass] VNPixelBufferObservation
- * <p>
+ * 
  * VNSaliencyImageObservation provides a grayscale "heat" map of important areas of an image.
- * <p>
+ * 
  * In the revision1, the "heat" map is a OneComponent32Float pixel format CVPixelBuffer.
+ * 
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Vision")

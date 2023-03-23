@@ -1,8 +1,6 @@
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -26,7 +24,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGPoint;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -118,7 +121,7 @@ public class UIPreviewTarget extends NSObject implements NSCopying {
 
     /**
      * UIPreviewTarget specifies where a preview should come from, or go to.
-     * <p>
+     * 
      * `container` must be a view that is currently in a window.
      * `center` specifies where the center of the preview should go,
      * in `container`'s coordinate system.

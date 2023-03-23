@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@c] CPActionSheetTemplate represents an action sheet that must be dismissed with a button press
  * before the user may return to using the app.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CarPlay")
@@ -105,7 +107,7 @@ public class CPActionSheetTemplate extends CPTemplate {
 
     /**
      * Initialize a @c CPActionSheetTemplate with a title and/or message, and at least one action.
-     *
+     * 
      * @param title   The title of the action sheet.
      * @param message Descriptive message that provides more detail about the reason for the action sheet.
      * @param actions The actions for the action sheet.

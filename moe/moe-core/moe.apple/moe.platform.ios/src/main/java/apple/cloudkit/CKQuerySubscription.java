@@ -46,10 +46,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CKQuerySubscription
- * <p>
+ * 
  * A subscription that fires whenever a change matching the predicate occurs.
- * <p>
+ * 
  * [@c] CKQuerySubscriptions are not supported in a @c sharedCloudDatabase
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CloudKit")
@@ -202,7 +204,7 @@ public class CKQuerySubscription extends CKSubscription implements NSSecureCodin
 
     /**
      * Options flags describing the firing behavior subscription.
-     * <p>
+     * 
      * One of
      * [@c] CKQuerySubscriptionOptionsFiresOnRecordCreation,
      * [@c] CKQuerySubscriptionOptionsFiresOnRecordUpdate, or

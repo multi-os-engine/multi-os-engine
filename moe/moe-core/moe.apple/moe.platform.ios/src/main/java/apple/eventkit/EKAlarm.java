@@ -43,11 +43,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * EKAlarm
- * <p>
+ * 
  * The EKAlarm class provides an interface for accessing and manipulating calendar event alarms.
- * <p>
+ * 
  * The EKAlarm class represents alarms on an event. An alarm can be relative (e.g. 15 mins before)
  * or absolute (specific time).
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("EventKit")
@@ -69,9 +71,9 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     /**
      * alarmWithAbsoluteDate:
-     * <p>
+     * 
      * Creates a new autoreleased alarm with an absolute trigger time.
-     *
+     * 
      * @param date The date the alarm should fire.
      */
     @Generated
@@ -80,12 +82,12 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     /**
      * alarmWithRelativeOffset:
-     * <p>
+     * 
      * Creates a new autoreleased alarm with a relative trigger time.
-     * <p>
+     * 
      * Creates a new autoreleased alarm with a relative trigger time. This offset
      * is added to the start date of the event.
-     *
+     * 
      * @param offset The offset from the event start that the alarm should fire.
      */
     @Generated
@@ -186,9 +188,9 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     /**
      * [@property] absoluteDate
-     * <p>
+     * 
      * Represents an alarm that fires at a specific date.
-     * <p>
+     * 
      * Set this property to a date to establish an absolute alarm trigger. Setting this
      * clears any relative interval trigger.
      */
@@ -208,7 +210,7 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     /**
      * [@property] proximity
-     * <p>
+     * 
      * Defines whether this alarm triggers via entering/exiting a geofence as defined by
      * structuredLocation.
      */
@@ -219,9 +221,9 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     /**
      * [@property] relativeOffset
-     * <p>
+     * 
      * Specifies a relative offset from an event start date to fire an alarm.
-     * <p>
+     * 
      * Set this property to an appropriate negative value to establish an alarm trigger
      * relative to the start date/time of an event. Setting this clears any existing
      * date trigger.
@@ -232,9 +234,9 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     /**
      * [@property] absoluteDate
-     * <p>
+     * 
      * Represents an alarm that fires at a specific date.
-     * <p>
+     * 
      * Set this property to a date to establish an absolute alarm trigger. Setting this
      * clears any relative interval trigger.
      */
@@ -244,7 +246,7 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     /**
      * [@property] proximity
-     * <p>
+     * 
      * Defines whether this alarm triggers via entering/exiting a geofence as defined by
      * structuredLocation.
      */
@@ -254,9 +256,9 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     /**
      * [@property] relativeOffset
-     * <p>
+     * 
      * Specifies a relative offset from an event start date to fire an alarm.
-     * <p>
+     * 
      * Set this property to an appropriate negative value to establish an alarm trigger
      * relative to the start date/time of an event. Setting this clears any existing
      * date trigger.
@@ -267,7 +269,7 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     /**
      * [@property] structuredLocation
-     * <p>
+     * 
      * Allows you to set a structured location (a location with a potential geo-coordinate)
      * on an alarm. This is used in conjunction with proximity to do geofence-based
      * triggering of reminders.
@@ -278,7 +280,7 @@ public class EKAlarm extends EKObject implements NSCopying {
 
     /**
      * [@property] structuredLocation
-     * <p>
+     * 
      * Allows you to set a structured location (a location with a potential geo-coordinate)
      * on an alarm. This is used in conjunction with proximity to do geofence-based
      * triggering of reminders.

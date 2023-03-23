@@ -24,9 +24,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The GCDualShockGamepad profile represents any supported DualShock 4 controller.
- *
+ * 
  * @see GCExtendedGamepad
  * @see GCMotion
+ * 
+ *      API-Since: 14.0
  */
 @Generated
 @Library("GameController")

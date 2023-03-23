@@ -24,6 +24,8 @@ public final class PDFKit {
 
     /**
      * "/AP": Dictionary
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -32,6 +34,8 @@ public final class PDFKit {
 
     /**
      * "/AS": Name
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -40,6 +44,8 @@ public final class PDFKit {
 
     /**
      * "/Border": Array of Integers; or a PDFBorder object
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -48,6 +54,8 @@ public final class PDFKit {
 
     /**
      * "/C": Array of Floats; or a PDFKitPlatformColor object
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -56,6 +64,8 @@ public final class PDFKit {
 
     /**
      * "/Contents": String
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -64,6 +74,8 @@ public final class PDFKit {
 
     /**
      * "/F": Integer
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -72,6 +84,8 @@ public final class PDFKit {
 
     /**
      * "/M": Date or String
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -80,6 +94,8 @@ public final class PDFKit {
 
     /**
      * "/NM": String
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -88,6 +104,8 @@ public final class PDFKit {
 
     /**
      * "/P": Dictionary; or a PDFPage object.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -96,6 +114,8 @@ public final class PDFKit {
 
     /**
      * "/Rect": CGRect
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -104,6 +124,8 @@ public final class PDFKit {
 
     /**
      * "/Subtype": Name (See Table 8.20: Annotation types)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -112,6 +134,8 @@ public final class PDFKit {
 
     /**
      * "/A": Dictionary; or a PDFAction object
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -120,6 +144,8 @@ public final class PDFKit {
 
     /**
      * "/AA": Dictionary; or a PDFAction object
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -128,6 +154,8 @@ public final class PDFKit {
 
     /**
      * "/BS": Dictionary
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -136,6 +164,8 @@ public final class PDFKit {
 
     /**
      * "/DA": String
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -144,6 +174,8 @@ public final class PDFKit {
 
     /**
      * "/Dest": Array, Name, or String
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -152,6 +184,8 @@ public final class PDFKit {
 
     /**
      * "/H": Name
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -160,6 +194,8 @@ public final class PDFKit {
 
     /**
      * "/Inklist": Array of Arrays (each array representing a stroked path)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -168,6 +204,8 @@ public final class PDFKit {
 
     /**
      * "/IC": Array of Floats; or a PDFKitPlatformColor object
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -176,6 +214,8 @@ public final class PDFKit {
 
     /**
      * "/L": Array of Floats
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -184,6 +224,8 @@ public final class PDFKit {
 
     /**
      * "/LE": Array of Strings
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -192,6 +234,8 @@ public final class PDFKit {
 
     /**
      * "/Name": Name
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -200,6 +244,8 @@ public final class PDFKit {
 
     /**
      * "/Open": Boolean
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -208,6 +254,8 @@ public final class PDFKit {
 
     /**
      * "/Parent": Dictionary; or a PDFAnnotation object
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -216,6 +264,8 @@ public final class PDFKit {
 
     /**
      * "/Popup": Dictionary; or a PDFAnnotation object of type "Popup"
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -224,6 +274,8 @@ public final class PDFKit {
 
     /**
      * "/Q": Integer
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -232,6 +284,8 @@ public final class PDFKit {
 
     /**
      * "/QuadPoints": Array of Floats
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -240,6 +294,8 @@ public final class PDFKit {
 
     /**
      * "/T": String
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -248,6 +304,8 @@ public final class PDFKit {
 
     /**
      * "/AC": String
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -256,6 +314,8 @@ public final class PDFKit {
 
     /**
      * "/BC": Array of Floats; or a PDFKitPlatformColor object
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -264,6 +324,8 @@ public final class PDFKit {
 
     /**
      * "/BG": Array of Floats; or a PDFKitPlatformColor object
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -272,6 +334,8 @@ public final class PDFKit {
 
     /**
      * "/CA": String
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -280,6 +344,8 @@ public final class PDFKit {
 
     /**
      * "/DV": (various)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -288,6 +354,8 @@ public final class PDFKit {
 
     /**
      * "/Ff": Integer
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -296,6 +364,8 @@ public final class PDFKit {
 
     /**
      * "/FT": Name
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -304,6 +374,8 @@ public final class PDFKit {
 
     /**
      * "/MK": Dictionary; or PDFAppearanceCharacteristics object
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -312,6 +384,8 @@ public final class PDFKit {
 
     /**
      * "/MaxLen": Integer
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -320,6 +394,8 @@ public final class PDFKit {
 
     /**
      * "/Opt": Array (each element is either a string, or an array of two strings)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -328,6 +404,8 @@ public final class PDFKit {
 
     /**
      * "/R": Integer
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -336,6 +414,8 @@ public final class PDFKit {
 
     /**
      * "/RC": String
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -344,6 +424,8 @@ public final class PDFKit {
 
     /**
      * "/TU": String
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -352,6 +434,8 @@ public final class PDFKit {
 
     /**
      * "/V": (various)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -363,217 +447,345 @@ public final class PDFKit {
      * types.
      * Annotation subtypes not supported: Polygon, PolyLine, Squiggly, Caret, Caret, FileAttachment,
      * Sound, Movie, Screen, PrinterMark, TrapNet, Watermark, 3D, Rect.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationSubtypeText();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationSubtypeLink();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationSubtypeFreeText();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationSubtypeLine();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationSubtypeSquare();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationSubtypeCircle();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationSubtypeHighlight();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationSubtypeUnderline();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationSubtypeStrikeOut();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationSubtypeInk();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationSubtypeStamp();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationSubtypePopup();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationSubtypeWidget();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationWidgetSubtypeButton();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationWidgetSubtypeChoice();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationWidgetSubtypeSignature();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationWidgetSubtypeText();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationLineEndingStyleNone();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationLineEndingStyleSquare();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationLineEndingStyleCircle();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationLineEndingStyleDiamond();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationLineEndingStyleOpenArrow();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationLineEndingStyleClosedArrow();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationTextIconTypeComment();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationTextIconTypeKey();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationTextIconTypeNote();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationTextIconTypeHelp();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationTextIconTypeNewParagraph();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationTextIconTypeParagraph();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationTextIconTypeInsert();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationHighlightingModeNone();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationHighlightingModeInvert();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationHighlightingModeOutline();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAnnotationHighlightingModePush();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAppearanceCharacteristicsKeyBackgroundColor();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAppearanceCharacteristicsKeyBorderColor();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAppearanceCharacteristicsKeyRotation();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAppearanceCharacteristicsKeyCaption();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAppearanceCharacteristicsKeyRolloverCaption();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFAppearanceCharacteristicsKeyDownCaption();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFBorderKeyLineWidth();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFBorderKeyStyle();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -581,6 +793,8 @@ public final class PDFKit {
 
     /**
      * To specify a destination point where you don't care about the x or y value (or either), use this value.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -589,6 +803,8 @@ public final class PDFKit {
 
     /**
      * The notification object is self.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -597,6 +813,8 @@ public final class PDFKit {
 
     /**
      * The notification object is self, no userInfo dictionary.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -605,6 +823,8 @@ public final class PDFKit {
 
     /**
      * The notification object is self, no userInfo dictionary.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -615,6 +835,8 @@ public final class PDFKit {
      * The notification object is self, the userInfo dictionary
      * contains the page index as an NSNumber for the key
      * PDFDocumentPageIndexKey.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -625,6 +847,8 @@ public final class PDFKit {
      * The notification object is self, the userInfo dictionary
      * contains the page index as an NSNumber for the key
      * PDFDocumentPageIndexKey.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -634,8 +858,9 @@ public final class PDFKit {
     /**
      * The notification object is self, the userInfo dictionary
      * contains a PDFSelection (found instance) for the key
-     *
      * @"PDFDocumentFoundSelection".
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -644,6 +869,8 @@ public final class PDFKit {
 
     /**
      * The notification object is self, no userInfo dictionary.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -652,6 +879,8 @@ public final class PDFKit {
 
     /**
      * The notification object is self, no userInfo dictionary.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -662,6 +891,8 @@ public final class PDFKit {
      * The notification object is self, the userInfo dictionary
      * contains the page index as an NSNumber for the key
      * PDFDocumentPageIndexKey.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -672,6 +903,8 @@ public final class PDFKit {
      * The notification object is self, the userInfo dictionary
      * contains the page index as an NSNumber for the key
      * PDFDocumentPageIndexKey.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -680,6 +913,8 @@ public final class PDFKit {
 
     /**
      * NSString containing document title.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -688,6 +923,8 @@ public final class PDFKit {
 
     /**
      * NSString containing document author.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -696,6 +933,8 @@ public final class PDFKit {
 
     /**
      * NSString containing document title.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -704,6 +943,8 @@ public final class PDFKit {
 
     /**
      * NSString containing name of app that created document.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -712,6 +953,8 @@ public final class PDFKit {
 
     /**
      * NSString containing name of app that produced PDF data.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -720,6 +963,8 @@ public final class PDFKit {
 
     /**
      * NSDate representing document creation date.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -728,6 +973,8 @@ public final class PDFKit {
 
     /**
      * NSDate representing last document modification date.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -736,6 +983,8 @@ public final class PDFKit {
 
     /**
      * NSArray of NSStrings containing document keywords.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -745,6 +994,8 @@ public final class PDFKit {
     /**
      * NSString for the owner's password. Required for encryption.
      * Owners have full privilege over the document.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -754,6 +1005,8 @@ public final class PDFKit {
     /**
      * NSString for the user's password. Optional for encryption.
      * Users can have limited access to modify, print, or write the file.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -762,6 +1015,8 @@ public final class PDFKit {
 
     /**
      * Notification when PDFDocument is modified.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -770,6 +1025,8 @@ public final class PDFKit {
 
     /**
      * Notification when a new document is associated with view.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -778,6 +1035,8 @@ public final class PDFKit {
 
     /**
      * Notification when the page history changes.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -786,6 +1045,8 @@ public final class PDFKit {
 
     /**
      * Notification when a new page becomes current.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -794,6 +1055,8 @@ public final class PDFKit {
 
     /**
      * Notification when the scale changes.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -802,6 +1065,8 @@ public final class PDFKit {
 
     /**
      * Notification when the user clicks on an annotation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -810,6 +1075,8 @@ public final class PDFKit {
 
     /**
      * Notification when the user is denied copy (permissions).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -818,6 +1085,8 @@ public final class PDFKit {
 
     /**
      * Notification when the user is denied print (permissions).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -826,6 +1095,8 @@ public final class PDFKit {
 
     /**
      * Notification before user clicks on an annotation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -834,6 +1105,8 @@ public final class PDFKit {
 
     /**
      * Notification when the current selection has changed.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -842,6 +1115,8 @@ public final class PDFKit {
 
     /**
      * Notification when the display mode has changed.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -850,6 +1125,8 @@ public final class PDFKit {
 
     /**
      * Notification when the display box has changed.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -858,6 +1135,8 @@ public final class PDFKit {
 
     /**
      * Notification when the scroll view has scrolled into the bounds of a new page.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -867,6 +1146,8 @@ public final class PDFKit {
     /**
      * User info dictionary key to get PDFSelection from some
      * notifications described above
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -876,6 +1157,8 @@ public final class PDFKit {
     /**
      * User info dictionary key to get page index from some
      * notifications described above
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -884,9 +1167,75 @@ public final class PDFKit {
 
     /**
      * NSNumber containing a PDFAccessPermissions
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PDFDocumentAccessPermissionsOption();
+
+    /**
+     * Value: CGRect as NSValue. If present, the page will have the given media box. Otherwise, the media box will be
+     * [0, 0, imageWidth, imageHeight].
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PDFPageImageInitializationOptionMediaBox();
+
+    /**
+     * Value: int as NSNumber. If present, the image will be drawn on the page with the given rotation (in degrees
+     * counterclockwise). The value must be a multiple of 90 or an exception will be thrown.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PDFPageImageInitializationOptionRotation();
+
+    /**
+     * Value: BOOL as NSNumber. If true, and the image is smaller then the media box, the image will be upscaled to fit
+     * the media box, while maintaining aspect ratio.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PDFPageImageInitializationOptionUpscaleIfSmaller();
+
+    /**
+     * Value double as NSNumber. The value must be in the range 0.0 to 1.0 or an exception will be thrown. A value of
+     * 0.0 implies that maximum compression is desired. A value of 1.0 implies that maximum quality is desired.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PDFPageImageInitializationOptionCompressionQuality();
+
+    /**
+     * [@YES] to enable, disabled by default
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PDFDocumentBurnInAnnotationsOption();
+
+    /**
+     * [@YES] to enable, disabled by default
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String PDFDocumentSaveTextFromOCROption();
 }

@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.2
+ */
 @Generated
 @Library("AVFAudio")
 @Runtime(ObjCRuntime.class)
@@ -81,6 +84,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * Array of AVAudioSessionChannelDescription objects
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("channelAssignments")
@@ -127,6 +132,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * returns the current time associated with the output device
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("deviceCurrentTime")
@@ -142,6 +149,8 @@ public class AVAudioPlayer extends NSObject {
     /**
      * You must set enableRate to YES for the rate property to take effect. You must set this before calling
      * prepareToPlay.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("enableRate")
@@ -149,6 +158,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * returns the format of the audio data
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("format")
@@ -177,6 +188,8 @@ public class AVAudioPlayer extends NSObject {
      * Sometimes the type of a file cannot be determined from the data, or it is actually corrupt. The file type hint
      * tells the parser what kind of data to look for so that files which are not self identifying or possibly even
      * corrupt can be successfully parsed.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("initWithContentsOfURL:fileTypeHint:error:")
@@ -188,6 +201,9 @@ public class AVAudioPlayer extends NSObject {
     public native AVAudioPlayer initWithDataError(NSData data,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithData:fileTypeHint:error:")
     public native AVAudioPlayer initWithDataFileTypeHintError(NSData data, String utiString,
@@ -251,6 +267,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * set panning. -1.0 is left, 0.0 is center, 1.0 is right.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("pan")
@@ -282,6 +300,8 @@ public class AVAudioPlayer extends NSObject {
      * This method starts the audio hardware synchronously (if not already running), and triggers the sound playback
      * which is streamed asynchronously at the specified time in the future.
      * Time is an absolute time based on and greater than deviceCurrentTime.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("playAtTime:")
@@ -298,6 +318,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * See enableRate. The playback rate for the sound. 1.0 is normal, 0.5 is half speed, 2.0 is double speed.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("rate")
@@ -313,6 +335,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * Array of AVAudioSessionChannelDescription objects
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setChannelAssignments:")
@@ -351,6 +375,8 @@ public class AVAudioPlayer extends NSObject {
     /**
      * You must set enableRate to YES for the rate property to take effect. You must set this before calling
      * prepareToPlay.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setEnableRate:")
@@ -375,6 +401,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * set panning. -1.0 is left, 0.0 is center, 1.0 is right.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setPan:")
@@ -382,6 +410,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * See enableRate. The playback rate for the sound. 1.0 is normal, 0.5 is half speed, 2.0 is double speed.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setRate:")
@@ -400,6 +430,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * fade to a new volume over a duration
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setVolume:fadeDuration:")
@@ -407,6 +439,8 @@ public class AVAudioPlayer extends NSObject {
 
     /**
      * returns a settings dictionary with keys as described in AVAudioSettings.h
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("settings")

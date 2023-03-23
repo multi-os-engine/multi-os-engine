@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNLogSoftMax
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The logarithmic softMax filter can be achieved by taking the natural logarithm of the
  * the result of the softMax filter. The results are often used to construct a loss function to be
  * minimized when training neural networks.
@@ -51,6 +51,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * computes the following:
  * result channel in pixel = pixel(x,y,k)) - ln{sum(exp(pixel(x,y,0)) ... exp(pixel(x,y,N-1))}
  * where N is the number of feature channels and y = ln{x} satisfies e^y = x.
+ * 
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("MetalPerformanceShaders")

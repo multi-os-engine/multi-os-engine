@@ -28,6 +28,12 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: Use GKLocalPlayerListener for multiplayer event notifications.
+ */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)

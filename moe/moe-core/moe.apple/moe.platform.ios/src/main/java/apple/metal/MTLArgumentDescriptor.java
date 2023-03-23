@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MTLArgumentDescriptor
- * <p>
+ * 
  * Represents a member of an argument buffer
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Metal")
@@ -45,7 +47,7 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] access
-     * <p>
+     * 
      * Access flags for the argument
      */
     @Generated
@@ -69,7 +71,7 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
 
     /**
      * argumentDescriptor
-     * <p>
+     * 
      * Create an autoreleased default argument descriptor
      */
     @Generated
@@ -78,7 +80,7 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] arrayLength
-     * <p>
+     * 
      * The length of an array of constants, textures, or samplers, or 0 for non-array arguments
      */
     @Generated
@@ -110,9 +112,9 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] constantBlockAlignment
-     * <p>
+     * 
      * if set forces the constant block to be aligned to the given alignment
-     * <p>
+     * 
      * Should only be set on the first constant of the block and is only valid if a corresponding
      * explicit "alignas" is applied to the constant in the metal shader language.
      */
@@ -129,7 +131,7 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] dataType
-     * <p>
+     * 
      * For constants, the data type. Otherwise, MTLDataTypeTexture, MTLDataTypeSampler, or
      * MTLDataTypePointer.
      */
@@ -153,7 +155,7 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] index
-     * <p>
+     * 
      * The binding point index of the argument
      */
     @Generated
@@ -201,7 +203,7 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] access
-     * <p>
+     * 
      * Access flags for the argument
      */
     @Generated
@@ -210,7 +212,7 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] arrayLength
-     * <p>
+     * 
      * The length of an array of constants, textures, or samplers, or 0 for non-array arguments
      */
     @Generated
@@ -219,9 +221,9 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] constantBlockAlignment
-     * <p>
+     * 
      * if set forces the constant block to be aligned to the given alignment
-     * <p>
+     * 
      * Should only be set on the first constant of the block and is only valid if a corresponding
      * explicit "alignas" is applied to the constant in the metal shader language.
      */
@@ -231,7 +233,7 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] dataType
-     * <p>
+     * 
      * For constants, the data type. Otherwise, MTLDataTypeTexture, MTLDataTypeSampler, or
      * MTLDataTypePointer.
      */
@@ -241,7 +243,7 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] index
-     * <p>
+     * 
      * The binding point index of the argument
      */
     @Generated
@@ -250,7 +252,7 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] textureType
-     * <p>
+     * 
      * For texture arguments, the texture type
      */
     @Generated
@@ -267,7 +269,7 @@ public class MTLArgumentDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] textureType
-     * <p>
+     * 
      * For texture arguments, the texture type
      */
     @Generated

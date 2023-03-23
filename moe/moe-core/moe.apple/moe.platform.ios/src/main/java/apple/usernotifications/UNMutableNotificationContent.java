@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UserNotifications")
 @Runtime(ObjCRuntime.class)
@@ -324,7 +327,12 @@ public class UNMutableNotificationContent extends UNNotificationContent {
 
     /**
      * The argument to be inserted in the summary for this notification.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: summaryArgument is ignored
      */
+    @Deprecated
     @Generated
     @Selector("setSummaryArgument:")
     public native void setSummaryArgument(String value);
@@ -334,13 +342,20 @@ public class UNMutableNotificationContent extends UNNotificationContent {
      * For example if a podcast app sends one notification for 3 new episodes in a show,
      * the argument should be the name of the show and the count should be 3.
      * Default is 1 and cannot be 0.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: summaryArgumentCount is ignored
      */
+    @Deprecated
     @Generated
     @Selector("setSummaryArgumentCount:")
     public native void setSummaryArgumentCount(@NUInt long value);
 
     /**
      * default nil
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTargetContentIdentifier:")
@@ -348,7 +363,12 @@ public class UNMutableNotificationContent extends UNNotificationContent {
 
     /**
      * The argument to be inserted in the summary for this notification.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: summaryArgument is ignored
      */
+    @Deprecated
     @Generated
     @Selector("summaryArgument")
     public native String summaryArgument();
@@ -358,7 +378,12 @@ public class UNMutableNotificationContent extends UNNotificationContent {
      * For example if a podcast app sends one notification for 3 new episodes in a show,
      * the argument should be the name of the show and the count should be 3.
      * Default is 1 and cannot be 0.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: summaryArgumentCount is ignored
      */
+    @Deprecated
     @Generated
     @Selector("summaryArgumentCount")
     @NUInt
@@ -366,6 +391,8 @@ public class UNMutableNotificationContent extends UNNotificationContent {
 
     /**
      * default nil
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("targetContentIdentifier")
@@ -373,6 +400,8 @@ public class UNMutableNotificationContent extends UNNotificationContent {
 
     /**
      * The interruption level determines the degree of interruption associated with the notification
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("interruptionLevel")
@@ -382,6 +411,8 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     /**
      * Relevance score determines the sorting for the notification across app notifications. The expected range is
      * between 0.0f and 1.0f.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("relevanceScore")
@@ -389,6 +420,8 @@ public class UNMutableNotificationContent extends UNNotificationContent {
 
     /**
      * The interruption level determines the degree of interruption associated with the notification
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setInterruptionLevel:")
@@ -397,8 +430,28 @@ public class UNMutableNotificationContent extends UNNotificationContent {
     /**
      * Relevance score determines the sorting for the notification across app notifications. The expected range is
      * between 0.0f and 1.0f.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setRelevanceScore:")
     public native void setRelevanceScore(double value);
+
+    /**
+     * default nil
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("filterCriteria")
+    public native String filterCriteria();
+
+    /**
+     * default nil
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setFilterCriteria:")
+    public native void setFilterCriteria(String value);
 }

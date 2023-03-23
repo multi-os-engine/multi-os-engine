@@ -28,14 +28,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An LPMetadataProvider object retrieves metadata for a given URL.
- * <p>
+ * 
  * An instance of LPMetadataProvider can only be asked to retrieve metadata once;
  * a new instance should be created for each request.
- * <p>
+ * 
  * A client must have the com.apple.security.network.client entitlement
  * in order to be able to use LPMetadataProvider for remote URLs.
- *
+ * 
  * @see `LPLinkMetadata`
+ * 
+ *      API-Since: 13.0
  */
 @Generated
 @Library("LinkPresentation")
@@ -71,7 +73,7 @@ public class LPMetadataProvider extends NSObject {
 
     /**
      * Cancel a metadata request.
-     * <p>
+     * 
      * If the request had not already completed, the completion handler will be invoked
      * with the error code `LPErrorMetadataFetchCancelled`.
      */
@@ -153,7 +155,7 @@ public class LPMetadataProvider extends NSObject {
      * resources specified by the metadata, like the icon, image, or video. If
      * shouldFetchSubresources is set to `NO`, the returned LPLinkMetadata object will
      * consist only of metadata retrieved from the main resource.
-     * <p>
+     * 
      * The default value is `YES`.
      */
     @Generated
@@ -163,10 +165,10 @@ public class LPMetadataProvider extends NSObject {
     /**
      * The time interval after which the request will automatically fail if it has not
      * already completed.
-     * <p>
+     * 
      * If the timeout is reached, no metadata is returned; the completion handler will
      * be invoked with the error code `LPErrorMetadataFetchTimedOut`.
-     * <p>
+     * 
      * The default timeout is 30 seconds.
      */
     @Generated
@@ -182,7 +184,7 @@ public class LPMetadataProvider extends NSObject {
      * resources specified by the metadata, like the icon, image, or video. If
      * shouldFetchSubresources is set to `NO`, the returned LPLinkMetadata object will
      * consist only of metadata retrieved from the main resource.
-     * <p>
+     * 
      * The default value is `YES`.
      */
     @Generated
@@ -191,12 +193,12 @@ public class LPMetadataProvider extends NSObject {
 
     /**
      * Fetch metadata for the given URL.
-     * <p>
+     * 
      * The completion handler will be called on a non-main queue.
-     * <p>
+     * 
      * File URLs returned in the resultant LPLinkMetadata will be deleted
      * when the completion handler returns.
-     * <p>
+     * 
      * An exception will be thrown if this is called more than once
      * on a particular LPMetadataProvider instance.
      */
@@ -219,10 +221,10 @@ public class LPMetadataProvider extends NSObject {
     /**
      * The time interval after which the request will automatically fail if it has not
      * already completed.
-     * <p>
+     * 
      * If the timeout is reached, no metadata is returned; the completion handler will
      * be invoked with the error code `LPErrorMetadataFetchTimedOut`.
-     * <p>
+     * 
      * The default timeout is 30 seconds.
      */
     @Generated
@@ -236,14 +238,16 @@ public class LPMetadataProvider extends NSObject {
 
     /**
      * Fetch metadata for the given NSURLRequest.
-     * <p>
+     * 
      * The completion handler will be called on a non-main queue.
-     * <p>
+     * 
      * File URLs returned in the resultant LPLinkMetadata will be deleted
      * when the completion handler returns.
-     * <p>
+     * 
      * An exception will be thrown if this is called more than once
      * on a particular LPMetadataProvider instance.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("startFetchingMetadataForRequest:completionHandler:")

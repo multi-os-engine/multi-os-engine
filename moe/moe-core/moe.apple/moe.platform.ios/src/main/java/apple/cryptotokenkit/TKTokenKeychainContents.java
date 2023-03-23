@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Contains TKTokenKeychainItem instances (keys and certificates) which represent keychain state (i.e. set of items) of
  * specific token.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -99,7 +101,7 @@ public class TKTokenKeychainContents extends NSObject {
     /**
      * Fills keychain with the set of specified items. All items belonging to token are first removed from the keychain
      * and then the keychain is populated with new items.
-     *
+     * 
      * @param items New items to be stored into the keychain.
      */
     @Generated

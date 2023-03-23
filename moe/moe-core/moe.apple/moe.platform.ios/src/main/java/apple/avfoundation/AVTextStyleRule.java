@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -132,13 +135,14 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
 
     /**
      * propertyListForTextStyleRules:
-     * <p>
+     * 
      * Converts an NSArray of AVTextStyleRules into a serializable property list that can be used for persistent
      * storage.
-     * <p>
+     * 
      * For serialization utilities, see NSPropertyList.h.
-     *
-     * @param textStyleRules An array of AVTextStyleRules.
+     * 
+     * @param textStyleRules
+     *                       An array of AVTextStyleRules.
      * @return A serializable property list.
      */
     @Generated
@@ -164,12 +168,13 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
 
     /**
      * textStyleRuleWithTextMarkupAttributes:
-     * <p>
+     * 
      * Creates an instance of AVTextStyleRule with the specified text markup attributes.
-     * <p>
+     * 
      * Equivalent to invoking +textStyleRuleWithTextMarkupAttributes:textSelector: with a value of nil for textSelector.
-     *
-     * @param textMarkupAttributes An NSDictionary with keys representing text style attributes that are specifiable in
+     * 
+     * @param textMarkupAttributes
+     *                             An NSDictionary with keys representing text style attributes that are specifiable in
      *                             text markup. Eligible keys are defined in <CoreMedia/CMTextMarkup.h>.
      * @return An instance of AVTextStyleRule
      */
@@ -180,13 +185,15 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
 
     /**
      * textStyleRuleWithTextMarkupAttributes:textSelector:
-     * <p>
+     * 
      * Creates an instance of AVTextStyleRule with the specified text markup attributes and an identifier for the range
      * or ranges of text to which the attributes should be applied.
-     *
-     * @param textMarkupAttributes An NSDictionary with keys representing text style attributes that are specifiable in
+     * 
+     * @param textMarkupAttributes
+     *                             An NSDictionary with keys representing text style attributes that are specifiable in
      *                             text markup. Eligible keys are defined in <CoreMedia/CMTextMarkup.h>.
-     * @param textSelector         An identifier for the range or ranges of text to which the attributes should be
+     * @param textSelector
+     *                             An identifier for the range or ranges of text to which the attributes should be
      *                             applied. Eligible identifiers are determined by the format and content of the legible
      *                             media. A value of nil indicates that the textMarkupAttributes should be applied as
      *                             default styles for all text unless overridden by content markup or other applicable
@@ -200,10 +207,11 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
 
     /**
      * textStyleRulesFromPropertyList:
-     * <p>
+     * 
      * Converts a property list into an NSArray of AVTextStyleRules.
-     *
-     * @param plist A property list, normally obtained previously via an invocation of +propertyListForTextStyleRules:.
+     * 
+     * @param plist
+     *              A property list, normally obtained previously via an invocation of +propertyListForTextStyleRules:.
      * @return An NSArray of AVTextStyleRules
      */
     @Generated
@@ -228,12 +236,13 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
 
     /**
      * initWithTextMarkupAttributes:
-     * <p>
+     * 
      * Creates an instance of AVTextStyleRule with the specified text markup attributes.
-     * <p>
+     * 
      * Equivalent to invoking -initWithTextMarkupAttributes:textSelector: with a value of nil for textSelector.
-     *
-     * @param textMarkupAttributes An NSDictionary with keys representing text style attributes that are specifiable in
+     * 
+     * @param textMarkupAttributes
+     *                             An NSDictionary with keys representing text style attributes that are specifiable in
      *                             text markup. Eligible keys are defined in <CoreMedia/CMTextMarkup.h>.
      * @return An instance of AVTextStyleRule
      */
@@ -243,13 +252,15 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
 
     /**
      * initWithTextMarkupAttributes:textSelector:
-     * <p>
+     * 
      * Creates an instance of AVTextStyleRule with the specified text markup attributes and an identifier for the range
      * or ranges of text to which the attributes should be applied.
-     *
-     * @param textMarkupAttributes An NSDictionary with keys representing text style attributes that are specifiable in
+     * 
+     * @param textMarkupAttributes
+     *                             An NSDictionary with keys representing text style attributes that are specifiable in
      *                             text markup. Eligible keys are defined in <CoreMedia/CMTextMarkup.h>.
-     * @param textSelector         An identifier for the range or ranges of text to which the attributes should be
+     * @param textSelector
+     *                             An identifier for the range or ranges of text to which the attributes should be
      *                             applied. Eligible identifiers are determined by the format and content of the legible
      *                             media. A value of nil indicates that the textMarkupAttributes should be applied as
      *                             default styles for all text unless overridden by content markup or other applicable
@@ -263,7 +274,7 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
 
     /**
      * [@property] textMarkupAttributes
-     * <p>
+     * 
      * An NSDictionary with keys representing text style attributes that are specifiable in text markup. Eligible keys
      * and the expected types of their corresponding values are defined in <CoreMedia/CMTextMarkup.h>.
      */
@@ -273,7 +284,7 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
 
     /**
      * [@property] textSelector
-     * <p>
+     * 
      * A string that identifies the range or ranges of text to which the attributes should be applied. A value of nil
      * indicates that the textMarkupAttributes should be applied as default styles for all text unless overridden by
      * content markup or other applicable text selectors.

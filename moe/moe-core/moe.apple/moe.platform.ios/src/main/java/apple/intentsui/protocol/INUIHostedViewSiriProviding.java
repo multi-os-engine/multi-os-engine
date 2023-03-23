@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("IntentsUI")
 @Runtime(ObjCRuntime.class)

@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * UIImpactFeedbackGenerator is used to give user feedback when an impact between UI elements occurs
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("UIKit")
@@ -169,6 +171,8 @@ public class UIImpactFeedbackGenerator extends UIFeedbackGenerator {
 
     /**
      * call when your UI element impacts something else with a specific intensity [0.0, 1.0]
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("impactOccurredWithIntensity:")

@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A WKBackForwardList object is a list of webpages previously
  * visited in a web view that can be reached by going back or forward.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("WebKit")
@@ -162,7 +164,7 @@ public class WKBackForwardList extends NSObject {
 
     /**
      * The portion of the list preceding the current item.
-     * <p>
+     * 
      * The items are in the order in which they were originally
      * visited.
      */
@@ -187,7 +189,7 @@ public class WKBackForwardList extends NSObject {
 
     /**
      * The portion of the list following the current item.
-     * <p>
+     * 
      * The items are in the order in which they were originally
      * visited.
      */
@@ -202,7 +204,7 @@ public class WKBackForwardList extends NSObject {
     /**
      * Returns the item at a specified distance from the current
      * item.
-     *
+     * 
      * @param index Index of the desired list item relative to the current item:
      *              0 for the current item, -1 for the immediately preceding item, 1 for the
      *              immediately following item, and so on.

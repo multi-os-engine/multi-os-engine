@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CoreBluetooth")
 @Runtime(ObjCRuntime.class)
@@ -154,7 +157,7 @@ public class CBManager extends NSObject {
 
     /**
      * [@property] state
-     * <p>
+     * 
      * The current state of the manager, initially set to <code>CBManagerStateUnknown</code>.
      * Updates are provided by required delegate method {@link managerDidUpdateState:}.
      */
@@ -165,12 +168,16 @@ public class CBManager extends NSObject {
 
     /**
      * [@property] authorization
-     * <p>
+     * 
      * The current authorization of the manager, initially set to <code>CBManagerAuthorizationNotDetermined</code>.
      * Updates are provided by required delegate method {@link managerDidUpdateState:}.
-     *
+     * 
      * @see state
+     * 
+     *      API-Since: 13.0
+     *      Deprecated-Since: 13.1
      */
+    @Deprecated
     @Generated
     @Selector("authorization")
     @NInt
@@ -178,12 +185,14 @@ public class CBManager extends NSObject {
 
     /**
      * [@property] authorization
-     * <p>
+     * 
      * The current authorization of the manager, initially set to <code>CBManagerAuthorizationNotDetermined</code>.
      * You can check this in your implementation of required delegate method {@link managerDidUpdateState:}. You can
      * also use it to check authorization status before allocating CBManager.
-     *
+     * 
      * @see state
+     * 
+     *      API-Since: 13.1
      */
     @Generated
     @Selector("authorization")

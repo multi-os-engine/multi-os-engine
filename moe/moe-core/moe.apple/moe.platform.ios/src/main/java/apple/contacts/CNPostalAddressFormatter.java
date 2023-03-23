@@ -44,8 +44,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Formats a postal address.
- * <p>
+ * 
  * This formatter handles international formatting of a postal address.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -77,10 +79,10 @@ public class CNPostalAddressFormatter extends NSFormatter {
 
     /**
      * Formats the postal address returning an attributed string.
-     * <p>
+     * 
      * This behaves like +stringFromPostalAddress: except it returns an attributed string. Includes attribute keys
      * CNPostalAddressPropertyAttribute and CNPostalAddressLocalizedPropertyNameAttribute.
-     *
+     * 
      * @param postalAddress The postal address to be formatted.
      * @param style         The formatting style to be used for the postal address.
      * @param attributes    The default attributes to use. See NSFormatter for details.
@@ -166,7 +168,7 @@ public class CNPostalAddressFormatter extends NSFormatter {
 
     /**
      * Formats the postal address.
-     *
+     * 
      * @param postalAddress The postal address to be formatted.
      * @param style         The formatting style to be used for the postal address.
      * @return The formatted postal address.
@@ -186,10 +188,10 @@ public class CNPostalAddressFormatter extends NSFormatter {
 
     /**
      * Formats the postal address returning an attributed string.
-     * <p>
+     * 
      * This behaves like +stringFromPostalAddress: except it returns an attributed string. Includes attribute keys
      * CNPostalAddressPropertyAttribute and CNPostalAddressLocalizedPropertyNameAttribute.
-     *
+     * 
      * @param postalAddress The postal address to be formatted.
      * @param attributes    The default attributes to use. See NSFormatter for details.
      * @return The formatted postal address as an attributed string.
@@ -209,7 +211,7 @@ public class CNPostalAddressFormatter extends NSFormatter {
 
     /**
      * The style for a postal address formatter instance.
-     * <p>
+     * 
      * The default value is CNPostalAddressFormatterStyleMailingAddress.
      */
     @Generated
@@ -218,7 +220,7 @@ public class CNPostalAddressFormatter extends NSFormatter {
 
     /**
      * Formats the postal address.
-     *
+     * 
      * @param postalAddress The postal address to be formatted.
      * @return The formatted postal address.
      */
@@ -228,7 +230,7 @@ public class CNPostalAddressFormatter extends NSFormatter {
 
     /**
      * The style for a postal address formatter instance.
-     * <p>
+     * 
      * The default value is CNPostalAddressFormatterStyleMailingAddress.
      */
     @Generated

@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -148,6 +151,11 @@ public class MTLComputePipelineReflection extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated
     @Generated
     @Selector("arguments")
     public native NSArray<? extends MTLArgument> arguments();
@@ -155,4 +163,11 @@ public class MTLComputePipelineReflection extends NSObject {
     @Generated
     @Selector("init")
     public native MTLComputePipelineReflection init();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("bindings")
+    public native NSArray<?> bindings();
 }

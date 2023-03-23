@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -139,6 +142,8 @@ public class GKTurnBasedMatch extends NSObject {
 
     /**
      * load a match based on a previously known match ID
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("loadMatchWithID:withCompletionHandler:")
@@ -182,6 +187,8 @@ public class GKTurnBasedMatch extends NSObject {
 
     /**
      * If the local participant has status invited then accept the invite, otherwise returns an error
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("acceptInviteWithCompletionHandler:")
@@ -190,6 +197,8 @@ public class GKTurnBasedMatch extends NSObject {
 
     /**
      * returns the exchanges that currently await a reply from the local player
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("activeExchanges")
@@ -198,6 +207,8 @@ public class GKTurnBasedMatch extends NSObject {
     /**
      * returns the exchanges that have been completed and need to be merged by the local participant. This will be nil
      * unless the local participant is the current turn holder for this match
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("completedExchanges")
@@ -217,6 +228,8 @@ public class GKTurnBasedMatch extends NSObject {
 
     /**
      * If the local participant has status invited then decline the invite, otherwise returns an error
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("declineInviteWithCompletionHandler:")
@@ -237,7 +250,12 @@ public class GKTurnBasedMatch extends NSObject {
      * all involved players, and multiple scores may be submitted for each to different leaderboards. Earned
      * achievements may also be submitted for any participants. You must set each participant’s matchOutcome before
      * calling this method. All completed exchanges must be resolved or canceled before calling this.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: pass GKLeaderboardScore to endMatchInTurnWithMatchData:scores:completionHandler instead
      */
+    @Deprecated
     @Generated
     @Selector("endMatchInTurnWithMatchData:scores:achievements:completionHandler:")
     public native void endMatchInTurnWithMatchDataScoresAchievementsCompletionHandler(NSData matchData,
@@ -246,6 +264,10 @@ public class GKTurnBasedMatch extends NSObject {
 
     /**
      * deprecated methods
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Use endTurnWithNextParticipants:... instead
      */
     @Generated
     @Deprecated
@@ -261,6 +283,8 @@ public class GKTurnBasedMatch extends NSObject {
      * 1. Communications problem
      * 2. Is not current player's turn
      * 3. Session is closed
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("endTurnWithNextParticipants:turnTimeout:matchData:completionHandler:")
@@ -270,6 +294,8 @@ public class GKTurnBasedMatch extends NSObject {
 
     /**
      * maximum data allowed for exchange data
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("exchangeDataMaximumSize")
@@ -278,6 +304,8 @@ public class GKTurnBasedMatch extends NSObject {
 
     /**
      * limit of the number of exchanges that this player can have initiated at a given time
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("exchangeMaxInitiatedExchangesPerPlayer")
@@ -287,6 +315,8 @@ public class GKTurnBasedMatch extends NSObject {
     /**
      * exchanges that are in progress on this match. Once an exchange has completed and has been resolved by merging it
      * into the match data by the current turn holder then it will be removed from this list
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("exchanges")
@@ -317,6 +347,8 @@ public class GKTurnBasedMatch extends NSObject {
 
     /**
      * Returns the maximum size for the match data.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("matchDataMaximumSize")
@@ -335,6 +367,11 @@ public class GKTurnBasedMatch extends NSObject {
     @Selector("message")
     public native String message();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Use participantQuitInTurnWithOutcome:nextParticipants:turnTimeout:... instead
+     */
     @Generated
     @Deprecated
     @Selector("participantQuitInTurnWithOutcome:nextParticipant:matchData:completionHandler:")
@@ -345,6 +382,8 @@ public class GKTurnBasedMatch extends NSObject {
     /**
      * Ends the current player's turn by quitting the match.  The caller must indicate the next player and pass in
      * updated matchData (if used). All completed exchanges must be resolved or canceled before calling this.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("participantQuitInTurnWithOutcome:nextParticipants:turnTimeout:matchData:completionHandler:")
@@ -376,6 +415,8 @@ public class GKTurnBasedMatch extends NSObject {
      * Possible reasons for error:
      * 1. Communications failure
      * 2. Unauthenticated player
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("rematchWithCompletionHandler:")
@@ -398,6 +439,8 @@ public class GKTurnBasedMatch extends NSObject {
      * the game state for the first player when they take their turn or for updating the turn data due to the user
      * taking an irreversible action within their turn. All completed exchanges must be resolved or canceled before
      * calling this. If you are using exchanges use saveMergedMatchData instead.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("saveCurrentTurnWithMatchData:completionHandler:")
@@ -410,6 +453,8 @@ public class GKTurnBasedMatch extends NSObject {
      * will receive a handleTurnEventForMatch to indicate that the matchData has changed. It is required that all
      * completed exchanges are resolved before ending a turn. Otherwise calling endTurn,
      * participantQuitInTurnWithOutCome or endMatchInTurn will return an error
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("saveMergedMatchData:withResolvedExchanges:completionHandler:")
@@ -422,6 +467,8 @@ public class GKTurnBasedMatch extends NSObject {
      * supplied localizable message. If any of the participants have an inactive status
      * (GKTurnBasedParticipantStatusDone) then this will return an error.  completionHandler gets passed the updated
      * exchange with identifier, sender and recipients set
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("sendExchangeToParticipants:data:localizableMessageKey:arguments:timeout:completionHandler:")
@@ -434,6 +481,8 @@ public class GKTurnBasedMatch extends NSObject {
      * Send a reminder to one or more participants. Each recipient will receive a push notification using supplied
      * localizable message. This allows a game to send reminders that a turn or exchange request needs action. On the
      * receiver side this will generate a turn event for the match.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("sendReminderToParticipants:localizableMessageKey:arguments:completionHandler:")
@@ -455,6 +504,8 @@ public class GKTurnBasedMatch extends NSObject {
      * The developer can access resulting string using the message property
      * This is a similar concept to the way we handle localization for Push Notifications. See the "Local and Push
      * Notification Programming Guide" for more details.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setLocalizableMessageWithKey:arguments:")
@@ -607,6 +658,9 @@ public class GKTurnBasedMatch extends NSObject {
         void call_sendReminderToParticipantsLocalizableMessageKeyArgumentsCompletionHandler(NSError error);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("endMatchInTurnWithMatchData:leaderboardScores:achievements:completionHandler:")
     public native void endMatchInTurnWithMatchDataLeaderboardScoresAchievementsCompletionHandler(NSData matchData,

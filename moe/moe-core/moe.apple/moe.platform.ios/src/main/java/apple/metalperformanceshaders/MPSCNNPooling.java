@@ -44,10 +44,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNPooling
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Pooling is a form of non-linear sub-sampling. Pooling partitions the input image into a set of
  * rectangles (overlapping or non-overlapping) and, for each such sub-region, outputs a value.
  * The pooling operation is used in computer vision to reduce the dimensionality of intermediate representations.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -169,7 +171,7 @@ public class MPSCNNPooling extends MPSCNNKernel {
 
     /**
      * Initialize a pooling filter
-     *
+     * 
      * @param device       The device the filter will run on
      * @param kernelWidth  The width of the kernel. Can be an odd or even value.
      * @param kernelHeight The height of the kernel. Can be an odd or even value.
@@ -182,7 +184,7 @@ public class MPSCNNPooling extends MPSCNNKernel {
 
     /**
      * Initialize a pooling filter
-     *
+     * 
      * @param device          The device the filter will run on
      * @param kernelWidth     The width of the kernel. Can be an odd or even value.
      * @param kernelHeight    The height of the kernel. Can be an odd or even value.
@@ -202,12 +204,14 @@ public class MPSCNNPooling extends MPSCNNKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSCNNPooling object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")

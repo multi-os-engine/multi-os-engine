@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Voronoi noise partitions the space into angular, polygonal "cells", which are reminiscent
  * of stained glass or crystal-like structures.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")

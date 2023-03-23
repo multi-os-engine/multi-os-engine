@@ -31,6 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An object to hold options for loading a model.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CoreML")
@@ -221,4 +223,38 @@ public class MLModelConfiguration extends NSObject implements NSCopying, NSSecur
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * A human readable name of a MLModel instance for display purposes.
+     * 
+     * Use this property to set a name of a model instance so that runtime analysis tools (e.g. Instruments and os_log)
+     * can display that name in the user interface.
+     * 
+     * CoreML framework doesn't parse nor filter the text. It is the client's responsibility to use appropriate text,
+     * which may involve localization and privacy considerations.
+     * 
+     * When the property is nil, CoreML framework provides a default.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("modelDisplayName")
+    public native String modelDisplayName();
+
+    /**
+     * A human readable name of a MLModel instance for display purposes.
+     * 
+     * Use this property to set a name of a model instance so that runtime analysis tools (e.g. Instruments and os_log)
+     * can display that name in the user interface.
+     * 
+     * CoreML framework doesn't parse nor filter the text. It is the client's responsibility to use appropriate text,
+     * which may involve localization and privacy considerations.
+     * 
+     * When the property is nil, CoreML framework provides a default.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setModelDisplayName:")
+    public native void setModelDisplayName(String value);
 }

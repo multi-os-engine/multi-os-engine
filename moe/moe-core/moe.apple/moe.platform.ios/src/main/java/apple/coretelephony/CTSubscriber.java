@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("CoreTelephony")
 @Runtime(ObjCRuntime.class)
@@ -153,11 +156,16 @@ public class CTSubscriber extends NSObject {
 
     /**
      * carrierToken
-     * <p>
+     * 
      * Description:
      * A data blob containing authorization information about the subscriber.
      * This API is deprecated without replacement. Starting in iOS 11.3, this API returns nil.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Deprecated; returns nil starting in iOS 11.3.
      */
+    @Deprecated
     @Generated
     @Selector("carrierToken")
     public native NSData carrierToken();
@@ -166,6 +174,9 @@ public class CTSubscriber extends NSObject {
     @Selector("init")
     public native CTSubscriber init();
 
+    /**
+     * API-Since: 12.1
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -173,21 +184,29 @@ public class CTSubscriber extends NSObject {
 
     /**
      * identifier
-     * <p>
+     * 
      * Description:
      * An implementation-defined identifier that can be used to correlate this CTSubscriber
      * with information vended by other API's.
      * The format of the identifier can change across software releases. Therefore, applications
      * should not persist it.
+     * 
+     * API-Since: 12.1
      */
     @Generated
     @Selector("identifier")
     public native String identifier();
 
+    /**
+     * API-Since: 12.1
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CTSubscriberDelegate value);
 
+    /**
+     * API-Since: 12.1
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) CTSubscriberDelegate value) {
         Object __old = delegate();

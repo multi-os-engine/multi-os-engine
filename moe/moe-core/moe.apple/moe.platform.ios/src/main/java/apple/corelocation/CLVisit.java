@@ -48,10 +48,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CLVisit
- * <p>
+ * 
  * Discussion
  * An instance of this class represents a possibly open-ended event
  * during which the device was at the specified coordinate.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("CoreLocation")
@@ -169,7 +171,7 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * arrivalDate
-     * <p>
+     * 
      * Discussion:
      * The date when the visit began. This may be equal to [NSDate
      * distantPast] if the true arrival date isn't available.
@@ -180,7 +182,7 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * coordinate
-     * <p>
+     * 
      * Discussion:
      * The center of the region which the device is visiting.
      */
@@ -197,7 +199,7 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * departureDate
-     * <p>
+     * 
      * Discussion:
      * The date when the visit ended. This is equal to [NSDate
      * distantFuture] if the device hasn't yet left.
@@ -212,7 +214,7 @@ public class CLVisit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * horizontalAccuracy
-     * <p>
+     * 
      * Discussion:
      * An estimate of the radius (in meters) of the region which the
      * device is visiting.

@@ -44,10 +44,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MDLURLTexture
  * [@summary] a texture provider initialized with a URL or file path.
- * <p>
+ * 
  * if any of the properties of the texture, such as data, are referenced,
  * then the texture may be loaded, otherwise, the MDLURLTexture is merely
  * a lightweight reference to something that could be loaded
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")

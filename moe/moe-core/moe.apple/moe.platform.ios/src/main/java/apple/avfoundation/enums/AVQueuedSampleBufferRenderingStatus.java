@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVQueuedSampleBufferRenderingStatus
- * <p>
+ * 
  * These constants are the possible status values for queued sample buffer renderers.
  * [@constant] AVQueuedSampleBufferRenderingStatusUnknown
  * Indicates that the receiver is in a fresh state without any sample buffers enqueued on it.
@@ -29,11 +29,22 @@ import org.moe.natj.general.ann.NInt;
  * Indicates at least one sample buffer has been enqueued on the receiver.
  * [@constant] AVQueuedSampleBufferRenderingStatusFailed
  * Indicates that the receiver cannot currently enqueue or render sample buffers because of an error.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class AVQueuedSampleBufferRenderingStatus {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Rendering = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Failed = 0x0000000000000002L;
 
     @Generated

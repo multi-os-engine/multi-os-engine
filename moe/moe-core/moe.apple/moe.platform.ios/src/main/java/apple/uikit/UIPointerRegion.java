@@ -1,7 +1,6 @@
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -25,7 +24,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -137,7 +140,7 @@ public class UIPointerRegion extends NSObject implements NSCopying {
 
     /**
      * Creates a UIPointerRegion with the supplied rect and optional identifier.
-     *
+     * 
      * @param rect       This region's rect. Must be in the pointer interaction's view's coordinate space.
      * @param identifier Optional identifier that may be used to identify this region in subsequent pointer interaction
      *                   delegate calls.

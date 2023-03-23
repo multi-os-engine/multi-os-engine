@@ -46,7 +46,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Later, should the providing app determine that the widget should have content, it can update this state via a widget
  * controller as well, even if the widget is no longer running.
  * This class is NOT intended to be subclassed.
+ * 
+ * API-Since: 8.0
+ * Deprecated-Since: 14.0
+ * Deprecated-Message: Use WidgetKit instead. Today View extensions have been deprecated.
  */
+@Deprecated
 @Generated
 @Library("NotificationCenter")
 @Runtime(ObjCRuntime.class)

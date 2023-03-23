@@ -37,12 +37,19 @@ public final class SCNTransparencyMode {
 
     /**
      * Ensures that one layer of transparency is drawn correctly.
+     * 
+     * API-Since: 11.0
      */
     @Generated @NInt public static final long SingleLayer = 0x0000000000000002L;
     /**
      * Ensures that two layers of transparency are ordered and drawn correctly. This should be used for transparent
      * convex objects like cubes and spheres, when you want to see both front and back faces.
+     * 
+     * API-Since: 11.0
      */
     @Generated @NInt public static final long DualLayer = 0x0000000000000003L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long Default = 0x0000000000000000L;
 }

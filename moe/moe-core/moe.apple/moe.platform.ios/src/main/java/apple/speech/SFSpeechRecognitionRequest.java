@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request for a speech recognition from an audio source
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Speech")
@@ -164,7 +166,12 @@ public class SFSpeechRecognitionRequest extends NSObject {
 
     /**
      * String which can be used to identify the receiver by the developer
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Not used anymore
      */
+    @Deprecated
     @Generated
     @Selector("interactionIdentifier")
     public native String interactionIdentifier();
@@ -178,7 +185,12 @@ public class SFSpeechRecognitionRequest extends NSObject {
 
     /**
      * String which can be used to identify the receiver by the developer
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Not used anymore
      */
+    @Deprecated
     @Generated
     @Selector("setInteractionIdentifier:")
     public native void setInteractionIdentifier(String value);
@@ -213,6 +225,8 @@ public class SFSpeechRecognitionRequest extends NSObject {
      * This will reduce accuracy but enables certain applications where it is
      * inappropriate to transmit user speech to a remote service.
      * Default is false
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("requiresOnDeviceRecognition")
@@ -223,8 +237,28 @@ public class SFSpeechRecognitionRequest extends NSObject {
      * This will reduce accuracy but enables certain applications where it is
      * inappropriate to transmit user speech to a remote service.
      * Default is false
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setRequiresOnDeviceRecognition:")
     public native void setRequiresOnDeviceRecognition(boolean value);
+
+    /**
+     * If true, punctuations will be automatically included in the recognition results
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("addsPunctuation")
+    public native boolean addsPunctuation();
+
+    /**
+     * If true, punctuations will be automatically included in the recognition results
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setAddsPunctuation:")
+    public native void setAddsPunctuation(boolean value);
 }

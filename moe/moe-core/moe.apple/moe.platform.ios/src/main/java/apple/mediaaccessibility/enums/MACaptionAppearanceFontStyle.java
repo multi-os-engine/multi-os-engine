@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] MACaptionAppearanceFontStyle
- * <p>
+ * 
  * MACaptionAppearanceFontStyle is used to specify a font style
- * <p>
+ * 
  * [@constant] kMACaptionAppearanceFontStyleDefault
  * Default font style.
  * [@constant] kMACaptionAppearanceFontStyleMonospacedWithSerif
@@ -40,16 +40,42 @@ import org.moe.natj.general.ann.NInt;
  * Font style for fonts similar to Coronet and Marigold.
  * [@constant] kMACaptionAppearanceFontStyleSmallCapital
  * Font style for fonts similar to Engravers Gothic.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 public final class MACaptionAppearanceFontStyle {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Default = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long MonospacedWithSerif = 0x0000000000000001L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long ProportionalWithSerif = 0x0000000000000002L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long MonospacedWithoutSerif = 0x0000000000000003L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long ProportionalWithoutSerif = 0x0000000000000004L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Casual = 0x0000000000000005L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Cursive = 0x0000000000000006L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long SmallCapital = 0x0000000000000007L;
 
     @Generated

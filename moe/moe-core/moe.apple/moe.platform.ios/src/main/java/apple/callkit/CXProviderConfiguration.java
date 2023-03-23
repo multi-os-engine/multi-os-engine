@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CallKit")
 @Runtime(ObjCRuntime.class)
@@ -165,17 +168,30 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
     @Selector("iconTemplateImageData")
     public native NSData iconTemplateImageData();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("init")
     public native CXProviderConfiguration init();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithLocalizedName:")
     public native CXProviderConfiguration initWithLocalizedName(String localizedName);
 
     /**
      * Localized name of the provider
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("localizedName")
     public native String localizedName();
@@ -262,6 +278,8 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
     /**
      * Whether this provider's calls should be included in the system's Recents list at the end of each call.
      * Default: YES
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("includesCallsInRecents")
@@ -270,6 +288,8 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
     /**
      * Whether this provider's calls should be included in the system's Recents list at the end of each call.
      * Default: YES
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setIncludesCallsInRecents:")

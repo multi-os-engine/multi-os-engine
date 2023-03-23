@@ -9,10 +9,12 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] OSLogEntryFromProcess
- * <p>
+ * 
  * Entry subclasses conforming to this protocol represent data
  * that are generated from a process; they have metadata about
  * the originator.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("OSLog")
@@ -21,8 +23,10 @@ import org.moe.natj.objc.ann.Selector;
 public interface OSLogEntryFromProcess {
     /**
      * [@property] activityIdentifier
-     * <p>
+     * 
      * The activity ID associated with the entry.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("activityIdentifier")
@@ -30,8 +34,10 @@ public interface OSLogEntryFromProcess {
 
     /**
      * [@property] process
-     * <p>
+     * 
      * The name of the process that made the entry.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("process")
@@ -39,8 +45,10 @@ public interface OSLogEntryFromProcess {
 
     /**
      * [@property] processIdentifier
-     * <p>
+     * 
      * The pid of the process that made the entry.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("processIdentifier")
@@ -48,8 +56,10 @@ public interface OSLogEntryFromProcess {
 
     /**
      * [@property] sender
-     * <p>
+     * 
      * The name of the binary image that made the entry.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("sender")
@@ -57,8 +67,10 @@ public interface OSLogEntryFromProcess {
 
     /**
      * [@property] threadIdentifier
-     * <p>
+     * 
      * The tid of the thread that made the entry.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("threadIdentifier")

@@ -17,8 +17,6 @@ limitations under the License.
 package apple.mediaplayer;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -42,7 +40,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -163,7 +166,12 @@ public class MPMediaItemArtwork extends NSObject {
 
     /**
      * MARK: - Deprecated
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: cropRect is no longer used
      */
+    @Deprecated
     @Generated
     @Selector("imageCropRect")
     @ByValue
@@ -180,11 +188,20 @@ public class MPMediaItemArtwork extends NSObject {
     @Selector("init")
     public native MPMediaItemArtwork init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithBoundsSize:requestHandler:")
     public native MPMediaItemArtwork initWithBoundsSizeRequestHandler(@ByValue CGSize boundsSize,
             @ObjCBlock(name = "call_initWithBoundsSizeRequestHandler") Block_initWithBoundsSizeRequestHandler requestHandler);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use -initWithBoundsSize:requestHandler:
+     */
+    @Deprecated
     @Generated
     @Selector("initWithImage:")
     public native MPMediaItemArtwork initWithImage(UIImage image);

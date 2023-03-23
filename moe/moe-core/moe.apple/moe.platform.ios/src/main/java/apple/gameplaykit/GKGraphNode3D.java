@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GKGraphNode coupled with a 3D position
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")

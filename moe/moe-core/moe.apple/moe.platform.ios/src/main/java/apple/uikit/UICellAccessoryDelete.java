@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A delete control (minus sign inside a circle) with default red color.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")

@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("ScreenTime")
 @Runtime(ObjCRuntime.class)
@@ -112,10 +115,10 @@ public class STWebHistory extends NSObject {
 
     /**
      * Creates a web history that will delete web usage for the given bundle identifier.
-     * <p>
+     * 
      * Using a bundle identifier other than @c NSBundle.mainBundle.bundleIdentifier is only supported for
      * web browsers that have been properly registered with Screen Time.
-     *
+     * 
      * @param bundleIdentifier Used to facilitate deletion of a parent web browser's history from one of its
      *                         helper processes or extensions.
      * @param error            Any error that occurred during initialization.

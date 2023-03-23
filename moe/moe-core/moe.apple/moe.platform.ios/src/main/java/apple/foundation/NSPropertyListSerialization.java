@@ -91,6 +91,10 @@ public class NSPropertyListSerialization extends NSObject {
 
     /**
      * This method is deprecated. Use dataWithPropertyList:format:options:error: instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use dataWithPropertyList:format:options:error: instead.
      */
     @Generated
     @Deprecated
@@ -103,6 +107,8 @@ public class NSPropertyListSerialization extends NSObject {
      * NSPropertyListBinaryFormat_v1_0. The options parameter is currently unused and should be set to 0. If an error
      * occurs the return value will be nil and the error parameter (if non-NULL) set to an autoreleased NSError
      * describing the problem.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("dataWithPropertyList:format:options:error:")
@@ -158,6 +164,10 @@ public class NSPropertyListSerialization extends NSObject {
 
     /**
      * This method is deprecated. Use propertyListWithData:options:format:error: instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use propertyListWithData:options:format:error: instead.
      */
     @Generated
     @Deprecated
@@ -171,6 +181,8 @@ public class NSPropertyListSerialization extends NSObject {
      * parameter is non-NULL, it will be filled out with the format that the property list was stored in. If an error
      * occurs the return value will be nil and the error parameter (if non-NULL) set to an autoreleased NSError
      * describing the problem.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("propertyListWithData:options:format:error:")
@@ -183,6 +195,8 @@ public class NSPropertyListSerialization extends NSObject {
      * NSPropertyListMutabilityOptions. If the format parameter is non-NULL, it will be filled out with the format that
      * the property list was stored in. If an error occurs the return value will be nil and the error parameter (if
      * non-NULL) set to an autoreleased NSError describing the problem.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("propertyListWithStream:options:format:error:")
@@ -217,6 +231,8 @@ public class NSPropertyListSerialization extends NSObject {
      * should be set to 0. If an error occurs the return value will be 0 and the error parameter (if non-NULL) set to an
      * autoreleased NSError describing the problem. In a successful case, the return value is the number of bytes
      * written to the stream.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("writePropertyList:toStream:format:options:error:")

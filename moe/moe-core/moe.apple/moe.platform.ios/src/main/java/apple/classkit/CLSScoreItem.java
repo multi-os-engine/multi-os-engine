@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CLSScoreItem represents user generated score information.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("ClassKit")
@@ -100,7 +102,7 @@ public class CLSScoreItem extends CLSActivityItem {
 
     /**
      * Create a score item with identifiers, title, score and maximum score.
-     *
+     * 
      * @param identifier An identifier that is unique within activity.
      * @param title      Title of score. Ex @em Biology- Cellular Division Quiz
      * @param score      The score the user received.
@@ -134,7 +136,7 @@ public class CLSScoreItem extends CLSActivityItem {
 
     /**
      * Total score possible.
-     * <p>
+     * 
      * Must be greater than zero.
      */
     @Generated
@@ -156,7 +158,7 @@ public class CLSScoreItem extends CLSActivityItem {
 
     /**
      * Score out of @c maxScore.
-     * <p>
+     * 
      * Should be between zero and @c maxScore [0.0,maxScore].
      */
     @Generated
@@ -165,7 +167,7 @@ public class CLSScoreItem extends CLSActivityItem {
 
     /**
      * Total score possible.
-     * <p>
+     * 
      * Must be greater than zero.
      */
     @Generated
@@ -174,7 +176,7 @@ public class CLSScoreItem extends CLSActivityItem {
 
     /**
      * Score out of @c maxScore.
-     * <p>
+     * 
      * Should be between zero and @c maxScore [0.0,maxScore].
      */
     @Generated

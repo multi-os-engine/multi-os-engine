@@ -41,6 +41,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INSearchCallHistoryIntentResponse is deprecated. There is no replacement.
+ */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -188,10 +194,16 @@ public class INSearchCallHistoryIntentResponse extends INIntentResponse {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("callRecords")
     public native NSArray<? extends INCallRecord> callRecords();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setCallRecords:")
     public native void setCallRecords(NSArray<? extends INCallRecord> value);

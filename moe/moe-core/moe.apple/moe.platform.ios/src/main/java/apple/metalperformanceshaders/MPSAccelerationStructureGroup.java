@@ -27,13 +27,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A group of acceleration structures which may be used together in an instance acceleration
  * structure.
- * <p>
+ * 
  * All acceleration structures in an instance acceleration structures must be created
  * with the same group, although they do not all need to be used in the same instance acceleration
  * structure. The acceleration structures in a group share internal GPU memory allocations, so
  * the total number and size of acceleration structures that can be created with the same group is
  * limited by the Metal device's buffer size limits. Therefore, do not group acceleration
  * structures unless they are likely to be used in the same instance acceleration structure.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("MetalPerformanceShaders")

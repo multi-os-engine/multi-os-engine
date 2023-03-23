@@ -67,14 +67,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * management notification. The one aspect it does not implement is the actual attributed string storage --- this is
  * left up to the subclassers, which need to override the two NSMutableAttributedString primitives in addition to two
  * NSAttributedString primitives:
- * <p>
+ * 
  * - (NSString *)string;
  * - (NSDictionary *)attributesAtIndex:(NSUInteger)location effectiveRange:(NSRangePointer)range;
- * <p>
+ * 
  * - (void)replaceCharactersInRange:(NSRange)range withString:(NSString *)str;
  * - (void)setAttributes:(NSDictionary *)attrs range:(NSRange)range;
- * <p>
+ * 
  * These primitives should perform the change then call edited:range:changeInLength: to get everything else to happen.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("UIKit")
@@ -479,6 +481,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
     /**
      * NSTextStorageObserving ***************************
      * An object conforming to NSTextStorageObserving observing and retaining NSTextStorage
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTextStorageObserver:")
@@ -487,6 +491,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
     /**
      * NSTextStorageObserving ***************************
      * An object conforming to NSTextStorageObserving observing and retaining NSTextStorage
+     * 
+     * API-Since: 15.0
      */
     @Generated
     public void setTextStorageObserver(@Mapped(ObjCObjectMapper.class) NSTextStorageObserving value) {
@@ -503,6 +509,8 @@ public class NSTextStorage extends NSMutableAttributedString implements NSSecure
     /**
      * NSTextStorageObserving ***************************
      * An object conforming to NSTextStorageObserving observing and retaining NSTextStorage
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("textStorageObserver")

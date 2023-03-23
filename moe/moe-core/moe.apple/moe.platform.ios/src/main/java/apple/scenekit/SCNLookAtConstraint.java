@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNLookAtConstraint
- * <p>
+ * 
  * A SCNLookAtConstraint applies on a node's orientation so that it always look at another node.
  */
 @Generated
@@ -133,9 +133,9 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     /**
      * lookAtConstraintWithTarget:
-     * <p>
+     * 
      * Creates and returns a SCNLookAtConstraint object with the specified target.
-     *
+     * 
      * @param target The target node to look at.
      */
     @Generated
@@ -174,9 +174,9 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     /**
      * [@property] gimbalLockEnabled
-     * <p>
+     * 
      * Specifies whether the receiver enables the gimbal lock. Defaults to NO.
-     * <p>
+     * 
      * Enabling the gimbal lock prevents the receiver from rotating the constrained node around to roll axis.
      */
     @Generated
@@ -193,15 +193,18 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     /**
      * [@property] gimbalLockEnabled
-     * <p>
+     * 
      * Specifies whether the receiver enables the gimbal lock. Defaults to NO.
-     * <p>
+     * 
      * Enabling the gimbal lock prevents the receiver from rotating the constrained node around to roll axis.
      */
     @Generated
     @Selector("setGimbalLockEnabled:")
     public native void setGimbalLockEnabled(boolean value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setTarget:")
     public native void setTarget(SCNNode target);
@@ -218,8 +221,10 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     /**
      * [@property] targetOffset
-     * <p>
+     * 
      * Front direction in the constraint owner local space. Defaults to -[SCNNode localFront]. Animatable
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("localFront")
@@ -228,8 +233,10 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     /**
      * [@property] targetOffset
-     * <p>
+     * 
      * Front direction in the constraint owner local space. Defaults to -[SCNNode localFront]. Animatable
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLocalFront:")
@@ -237,8 +244,10 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     /**
      * [@property] targetOffset
-     * <p>
+     * 
      * Offset look at position in target space. Defaults to zero. Animatable
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTargetOffset:")
@@ -246,8 +255,10 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     /**
      * [@property] worldUp
-     * <p>
+     * 
      * Up reference direction in world space. Defaults to -[SCNNode localUp]. Animatable
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setWorldUp:")
@@ -255,8 +266,10 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     /**
      * [@property] targetOffset
-     * <p>
+     * 
      * Offset look at position in target space. Defaults to zero. Animatable
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("targetOffset")
@@ -265,8 +278,10 @@ public class SCNLookAtConstraint extends SCNConstraint {
 
     /**
      * [@property] worldUp
-     * <p>
+     * 
      * Up reference direction in world space. Defaults to -[SCNNode localUp]. Animatable
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("worldUp")

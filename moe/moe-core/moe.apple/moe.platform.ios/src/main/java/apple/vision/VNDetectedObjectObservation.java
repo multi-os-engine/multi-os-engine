@@ -1,7 +1,6 @@
 package apple.vision;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -25,15 +24,18 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * VNDetectedObjectObservation
  * [@superclass] VNObservation
- * <p>
+ * 
  * VNDetectedObjectObservation is VNObservation in an image that has a location and/or dimension. Further attributes
  * depend on the specific detected object.
- * <p>
+ * 
  * All result objects (faces, scene objects, shapes etc) must extend from this class.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -179,6 +181,9 @@ public class VNDetectedObjectObservation extends VNObservation {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("observationWithRequestRevision:boundingBox:")
     public static native VNDetectedObjectObservation observationWithRequestRevisionBoundingBox(
@@ -186,6 +191,8 @@ public class VNDetectedObjectObservation extends VNObservation {
 
     /**
      * The resulting CVPixelBuffer from requests that generate a segmentation mask for the entire image.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("globalSegmentationMask")

@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MTLVertexDescriptor
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Metal")

@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.3
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -68,6 +71,9 @@ public class INPaymentAccount extends NSObject implements NSCopying, NSSecureCod
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("balance")
     public native INBalanceAmount balance();
@@ -121,11 +127,21 @@ public class INPaymentAccount extends NSObject implements NSCopying, NSSecureCod
     @Selector("initWithCoder:")
     public native INPaymentAccount initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Please use 'initWithNickname:number:accountType:organizationName:balance:secondaryBalance:'
+     * instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithNickname:number:accountType:organizationName:")
     public native INPaymentAccount initWithNicknameNumberAccountTypeOrganizationName(INSpeakableString nickname,
             String number, @NInt long accountType, INSpeakableString organizationName);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithNickname:number:accountType:organizationName:balance:secondaryBalance:")
     public native INPaymentAccount initWithNicknameNumberAccountTypeOrganizationNameBalanceSecondaryBalance(
@@ -174,6 +190,9 @@ public class INPaymentAccount extends NSObject implements NSCopying, NSSecureCod
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("secondaryBalance")
     public native INBalanceAmount secondaryBalance();

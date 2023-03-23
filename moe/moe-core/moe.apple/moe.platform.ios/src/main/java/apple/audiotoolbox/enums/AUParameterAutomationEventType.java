@@ -20,13 +20,13 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] AUParameterAutomationEventType
- * <p>
+ * 
  * Identifies the different types of parameter automation events.
- * <p>
+ * 
  * Audio Units may generate parameter changes from their user interfaces. Hosts may attach
  * significance to the beginning and end of a UI gesture (typically touching and releasing
  * a fader). These gestures are conveyed through these types of automation events.
- * <p>
+ * 
  * [@constant] AUParameterAutomationEventTypeValue
  * The event contains an updated value for the parameter.
  * [@constant] AUParameterAutomationEventTypeTouch

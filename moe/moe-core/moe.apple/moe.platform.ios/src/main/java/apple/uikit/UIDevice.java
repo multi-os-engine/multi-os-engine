@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -155,6 +158,8 @@ public class UIDevice extends NSObject {
 
     /**
      * 0 .. 1.0. -1.0 if UIDeviceBatteryStateUnknown
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("batteryLevel")
@@ -162,6 +167,8 @@ public class UIDevice extends NSObject {
 
     /**
      * UIDeviceBatteryStateUnknown if monitoring disabled
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("batteryState")
@@ -181,6 +188,8 @@ public class UIDevice extends NSObject {
 
     /**
      * a UUID that may be used to uniquely identify the device, same across apps from a single vendor.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("identifierForVendor")
@@ -192,6 +201,8 @@ public class UIDevice extends NSObject {
 
     /**
      * default is NO
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isBatteryMonitoringEnabled")
@@ -199,6 +210,8 @@ public class UIDevice extends NSObject {
 
     /**
      * default is NO
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setBatteryMonitoringEnabled:")
@@ -208,12 +221,17 @@ public class UIDevice extends NSObject {
     @Selector("isGeneratingDeviceOrientationNotifications")
     public native boolean isGeneratingDeviceOrientationNotifications();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("isMultitaskingSupported")
     public native boolean isMultitaskingSupported();
 
     /**
      * default is NO
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isProximityMonitoringEnabled")
@@ -221,6 +239,8 @@ public class UIDevice extends NSObject {
 
     /**
      * default is NO
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setProximityMonitoringEnabled:")
@@ -241,7 +261,7 @@ public class UIDevice extends NSObject {
     public native String model();
 
     /**
-     * e.g. "My iPhone"
+     * Synonym for model. Prior to iOS 16, user-assigned device name (e.g. @"My iPhone").
      */
     @Generated
     @Selector("name")
@@ -258,6 +278,8 @@ public class UIDevice extends NSObject {
 
     /**
      * Plays a click only if an enabling input view is on-screen and user has enabled input clicks.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("playInputClick")
@@ -265,6 +287,8 @@ public class UIDevice extends NSObject {
 
     /**
      * always returns NO if no proximity detector
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("proximityState")
@@ -284,6 +308,9 @@ public class UIDevice extends NSObject {
     @Selector("systemVersion")
     public native String systemVersion();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("userInterfaceIdiom")
     @NInt

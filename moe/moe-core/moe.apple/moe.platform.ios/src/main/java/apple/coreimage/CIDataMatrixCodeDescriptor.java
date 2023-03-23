@@ -27,9 +27,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CIDataMatrixCodeDescriptor
- * <p>
+ * 
  * CIDataMatrixCodeDescriptor is a concrete subclass of CIBarcodeDescriptor that defines an abstract representation of a
  * Data Matrix code symbol.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreImage")
@@ -83,9 +86,9 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
 
     /**
      * [@property] columnCount
-     * <p>
+     * 
      * The number of module columns.
-     * <p>
+     * 
      * Refer to ISO/IEC 16022:2006(E) for valid module row and column count combinations.
      */
     @Generated
@@ -111,9 +114,9 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
 
     /**
      * [@property] eccVersion
-     * <p>
+     * 
      * The Data Matrix code ECC version.
-     * <p>
+     * 
      * Valid values are 000, 050, 080, 100, 140, and 200. Any symbol with an even number of rows and columns will be ECC
      * 200.
      */
@@ -124,12 +127,12 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
 
     /**
      * [@property] errorCorrectedPayload
-     * <p>
+     * 
      * The error corrected payload that comprise the Data Matrix code symbol.
-     * <p>
+     * 
      * DataMatrix symbols are specified bn ISO/IEC 16022:2006(E). ECC 200-type symbols will always have an even number
      * of rows and columns.
-     * <p>
+     * 
      * For ECC 200-type symbols, the phases of encoding data into a symbol are described in section 5.1 -- Encode
      * procedure overview. The error corrected payload comprises the de-interleaved bits of the message described at the
      * end of Step 1: Data encodation.
@@ -195,9 +198,9 @@ public class CIDataMatrixCodeDescriptor extends CIBarcodeDescriptor {
 
     /**
      * [@property] rowCount
-     * <p>
+     * 
      * The number of module rows.
-     * <p>
+     * 
      * Refer to ISO/IEC 16022:2006(E) for valid module row and column count combinations.
      */
     @Generated

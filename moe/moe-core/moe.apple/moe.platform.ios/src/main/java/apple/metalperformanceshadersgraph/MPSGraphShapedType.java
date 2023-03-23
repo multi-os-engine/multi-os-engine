@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
@@ -74,7 +77,7 @@ public class MPSGraphShapedType extends MPSGraphType {
 
     /**
      * [@property] dataType
-     * <p>
+     * 
      * dataType of the shapedType
      */
     @Generated
@@ -138,7 +141,7 @@ public class MPSGraphShapedType extends MPSGraphType {
 
     /**
      * [@property] dataType
-     * <p>
+     * 
      * dataType of the shapedType
      */
     @Generated

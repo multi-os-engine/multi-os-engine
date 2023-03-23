@@ -19,15 +19,45 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 2.0
+ * Deprecated-Since: 13.0
+ * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+ * UIAlertControllerStyleActionSheet instead.
+ */
+@Deprecated
 @Generated
 public final class UIActionSheetStyle {
     /**
      * take appearance from toolbar style otherwise uses 'default'
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead.
      */
-    @Generated @NInt public static final long Automatic = 0xFFFFFFFFFFFFFFFFL;
-    @Generated @NInt public static final long Default = 0x0000000000000000L;
-    @Generated @NInt public static final long BlackTranslucent = 0x0000000000000002L;
-    @Generated @NInt public static final long BlackOpaque = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long Automatic = 0xFFFFFFFFFFFFFFFFL;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead.
+     */
+    @Deprecated @Generated @NInt public static final long Default = 0x0000000000000000L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead.
+     */
+    @Deprecated @Generated @NInt public static final long BlackTranslucent = 0x0000000000000002L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: UIActionSheet is deprecated. Use UIAlertController with a preferredStyle of
+     * UIAlertControllerStyleActionSheet instead.
+     */
+    @Deprecated @Generated @NInt public static final long BlackOpaque = 0x0000000000000001L;
 
     @Generated
     private UIActionSheetStyle() {

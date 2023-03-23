@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.3
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -95,10 +98,10 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * create a new arithmetic gradient node
-     * <p>
+     * 
      * See also -[MPSCNNNeuronNode gradientFilterNodesWithSources:]
      * for an easier way to do this.
-     *
+     * 
      * @param gradientImages          The input gradient from the 'downstream' gradient filter and the source input
      *                                image
      *                                from the forward pass (primary or secondary).
@@ -114,10 +117,10 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * create a new arithmetic gradient node
-     * <p>
+     * 
      * See also -[MPSCNNNeuronNode gradientFilterNodesWithSources:]
      * for an easier way to do this.
-     *
+     * 
      * @param sourceGradient The input gradient from the 'downstream' gradient filter.
      * @param sourceImage    The source input image from the forward pass (primary or secondary).
      * @param gradientState  The gradient state produced by the concatenation filter, consumed by this filter.
@@ -168,10 +171,10 @@ public class MPSNNArithmeticGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * create a new arithmetic gradient node
-     * <p>
+     * 
      * See also -[MPSCNNNeuronNode gradientFilterNodesWithSources:]
      * for an easier way to do this.
-     *
+     * 
      * @param sourceGradient The input gradient from the 'downstream' gradient filter.
      * @param sourceImage    The source input image from the forward pass (primary or secondary).
      * @param gradientState  The gradient state produced by the concatenation filter, consumed by this filter.

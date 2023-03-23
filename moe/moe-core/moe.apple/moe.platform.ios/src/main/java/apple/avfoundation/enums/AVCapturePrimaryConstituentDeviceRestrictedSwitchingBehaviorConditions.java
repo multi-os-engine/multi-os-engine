@@ -5,11 +5,11 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] AVCapturePrimaryConstituentDeviceRestrictedSwitchingBehaviorConditions
- * <p>
+ * 
  * These constants can be used and combined to control the conditions that allow fallback camera selection when the
  * primaryConstituentDeviceSelectionBehavior is set to AVCapturePrimaryConstituentDeviceSwitchingBehaviorRestricted.
  * Note that camera switching necessary to satisfy the requested zoom factor is still allowed.
- * <p>
+ * 
  * [@constant] AVCapturePrimaryConstituentDeviceRestrictedSwitchingBehaviorConditionNone
  * Disallow fallback switching.
  * [@constant] AVCapturePrimaryConstituentDeviceRestrictedSwitchingBehaviorConditionVideoZoomChanged
@@ -20,10 +20,10 @@ import org.moe.natj.general.ann.NUInt;
  * Restrict fallback camera switches to when AVCaptureDevice.focusMode is set.
  * [@constant] AVCapturePrimaryConstituentDeviceRestrictedSwitchingBehaviorConditionExposureModeChanged
  * Restrict fallback camera switches to when AVCaptureDevice.exposureMode is set.
- * <p>
+ * 
  * Whenever triggered by one or more of the enabled conditions, the fallback camera switching waits for exposure and
  * focus to stabilize before deciding which camera to use as the primary constituent device.
- * <p>
+ * 
  * Whenever AVCapturePrimaryConstituentDeviceRestrictedSwitchingBehaviorConditionVideoZoomChanged is not included in the
  * restricted switching behavior conditions, AVCapturePrimaryConstituentDeviceSwitchingBehaviorRestricted still allows
  * camera selection when a change in video zoom factor makes a camera eligible or ineligible to be selected as the
@@ -34,6 +34,8 @@ import org.moe.natj.general.ann.NUInt;
  * activePrimaryConstituentDevice. Similar to the
  * AVCapturePrimaryConstituentDeviceRestrictedSwitchingBehaviorConditionVideoZoomChanged this also waits for exposure
  * and focus to stabilize. Otherwise the activePrimaryConstituentDevice remains unchanged.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 public final class AVCapturePrimaryConstituentDeviceRestrictedSwitchingBehaviorConditions {
@@ -41,8 +43,20 @@ public final class AVCapturePrimaryConstituentDeviceRestrictedSwitchingBehaviorC
     private AVCapturePrimaryConstituentDeviceRestrictedSwitchingBehaviorConditions() {
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NUInt public static final long VideoZoomChanged = 0x0000000000000001L;
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NUInt public static final long FocusModeChanged = 0x0000000000000002L;
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NUInt public static final long ExposureModeChanged = 0x0000000000000004L;
 }

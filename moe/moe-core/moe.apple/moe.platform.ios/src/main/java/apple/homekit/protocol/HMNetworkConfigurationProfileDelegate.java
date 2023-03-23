@@ -9,6 +9,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -16,7 +19,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface HMNetworkConfigurationProfileDelegate {
     /**
      * Informs the delegate that the network access mode has updated.
-     *
+     * 
      * @param profile Sender of the message.
      */
     @Generated

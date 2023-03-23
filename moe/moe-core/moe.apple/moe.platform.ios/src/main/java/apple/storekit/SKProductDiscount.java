@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.2
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -87,6 +90,9 @@ public class SKProductDiscount extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 12.2
+     */
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -121,20 +127,32 @@ public class SKProductDiscount extends NSObject {
     @Selector("new")
     public static native SKProductDiscount new_objc();
 
+    /**
+     * API-Since: 11.2
+     */
     @Generated
     @Selector("numberOfPeriods")
     @NUInt
     public native long numberOfPeriods();
 
+    /**
+     * API-Since: 11.2
+     */
     @Generated
     @Selector("paymentMode")
     @NUInt
     public native long paymentMode();
 
+    /**
+     * API-Since: 11.2
+     */
     @Generated
     @Selector("price")
     public native NSDecimalNumber price();
 
+    /**
+     * API-Since: 11.2
+     */
     @Generated
     @Selector("priceLocale")
     public native NSLocale priceLocale();
@@ -151,6 +169,9 @@ public class SKProductDiscount extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 11.2
+     */
     @Generated
     @Selector("subscriptionPeriod")
     public native SKProductSubscriptionPeriod subscriptionPeriod();
@@ -159,6 +180,9 @@ public class SKProductDiscount extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 12.2
+     */
     @Generated
     @Selector("type")
     @NUInt

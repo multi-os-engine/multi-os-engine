@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Defines a shipping method for delivering physical goods.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("PassKit")
@@ -200,6 +202,8 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
     /**
      * Localized date range for this shipping method e.g. "Shipping by May 12 - 19"
      * Setting this results in the detail property not being displayed.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("dateComponentsRange")
@@ -208,6 +212,8 @@ public class PKShippingMethod extends PKPaymentSummaryItem {
     /**
      * Localized date range for this shipping method e.g. "Shipping by May 12 - 19"
      * Setting this results in the detail property not being displayed.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setDateComponentsRange:")

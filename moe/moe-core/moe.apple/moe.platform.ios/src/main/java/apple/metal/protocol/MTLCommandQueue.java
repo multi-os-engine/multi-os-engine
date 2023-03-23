@@ -28,8 +28,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MTLCommandQueue
- * <p>
+ * 
  * A serial queue of command buffers to be executed by the device.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Metal")
@@ -38,7 +40,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLCommandQueue {
     /**
      * commandBuffer
-     * <p>
+     * 
      * Returns a new autoreleased command buffer used to encode work into this queue that
      * maintains strong references to resources used within the command buffer.
      */
@@ -49,7 +51,7 @@ public interface MTLCommandQueue {
 
     /**
      * commandBufferWithUnretainedReferences
-     * <p>
+     * 
      * Returns a new autoreleased command buffer used to encode work into this queue that
      * does not maintain strong references to resources used within the command buffer.
      */
@@ -68,9 +70,14 @@ public interface MTLCommandQueue {
 
     /**
      * insertDebugCaptureBoundary
-     * <p>
+     * 
      * Inform Xcode about when debug capture should start and stop.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use MTLCaptureScope instead
      */
+    @Deprecated
     @Generated
     @Selector("insertDebugCaptureBoundary")
     void insertDebugCaptureBoundary();
@@ -91,9 +98,11 @@ public interface MTLCommandQueue {
 
     /**
      * commandBufferWithDescriptor
-     * <p>
+     * 
      * Returns a new autoreleased command buffer used to encode work into this queue.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param descriptor The requested properties of the command buffer.
      */
     @Generated

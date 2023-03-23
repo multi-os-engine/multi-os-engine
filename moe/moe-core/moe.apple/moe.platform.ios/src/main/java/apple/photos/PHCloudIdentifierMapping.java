@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Contains the cloud identifier result from looking up a local identifier via \c
  * cloudIdentifierMappingsForLocalIdentifiers, or an \c error indicating why the lookup failed
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Photos")
@@ -77,6 +79,9 @@ public class PHCloudIdentifierMapping extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("cloudIdentifier")
     public native PHCloudIdentifier cloudIdentifier();
@@ -91,6 +96,8 @@ public class PHCloudIdentifierMapping extends NSObject {
 
     /**
      * The cloud identifier of the resource found for this local identifier
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("error")

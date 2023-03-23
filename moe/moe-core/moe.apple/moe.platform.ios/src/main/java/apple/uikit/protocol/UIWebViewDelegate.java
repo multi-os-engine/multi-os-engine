@@ -33,6 +33,12 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIWebViewDelegate")
 public interface UIWebViewDelegate {
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("webView:didFailLoadWithError:")
@@ -40,6 +46,12 @@ public interface UIWebViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("webView:shouldStartLoadWithRequest:navigationType:")
@@ -48,6 +60,12 @@ public interface UIWebViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("webViewDidFinishLoad:")
@@ -55,6 +73,12 @@ public interface UIWebViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: No longer supported.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("webViewDidStartLoad:")

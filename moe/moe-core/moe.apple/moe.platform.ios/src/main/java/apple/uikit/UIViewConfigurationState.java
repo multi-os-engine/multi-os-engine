@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -226,10 +229,16 @@ public class UIViewConfigurationState extends NSObject implements UIConfiguratio
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("isPinned")
     public native boolean isPinned();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setPinned:")
     public native void setPinned(boolean value);

@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -227,6 +230,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * -writeToURL:options:originalContentsURL:error: uses the result of sending -relativePath to this URL when creating
      * a symbolic link. (An NSURL initialized by -initFileURLWithPath: returns that entire path when sent -relativePath
      * though.)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("initSymbolicLinkWithDestinationURL:")
@@ -247,6 +252,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * A designated initializer for creating an instance whose kind (directory, regular file, or symbolic link) is
      * determined based on what the URL locates. If reading is not successful return nil after setting *outError to an
      * NSError that encapsulates the reason why the file wrapper could not be read.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("initWithURL:options:error:")
@@ -284,6 +291,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * NSFileWrapperReadingImmediate is used, creating a file wrapper and then later sending it this message is not a
      * reliable way to simply check whether anything in a directory has changed. You can use this method to determine
      * whether the receiver's contents in memory are out of date relative to the file system.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("matchesContentsOfURL:")
@@ -297,7 +306,7 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * names of children are not effectively preserved when you write a file wrapper to disk and then later instantiate
      * another file wrapper by reading. If your application needs to preserve the user-visible names of attachments it
      * has to make its own arrangements for their storage.
-     * <p>
+     * 
      * Some instances of NSFileWrapper may be created without a preferredFilename (e.g. -initDirectoryWithFileWrappers:
      * or -initRegularFileWithContents:), meaning preferredFilename may be nil. However, setting nil is never allowed
      * and will result in an exception.
@@ -311,6 +320,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * If not successful, return NO after setting *outError to an NSError that encapsulates the reason why the file
      * wrapper could not be reread. When reading a directory children are added and removed as necessary to match the
      * file system.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("readFromURL:options:error:")
@@ -367,7 +378,7 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * names of children are not effectively preserved when you write a file wrapper to disk and then later instantiate
      * another file wrapper by reading. If your application needs to preserve the user-visible names of attachments it
      * has to make its own arrangements for their storage.
-     * <p>
+     * 
      * Some instances of NSFileWrapper may be created without a preferredFilename (e.g. -initDirectoryWithFileWrappers:
      * or -initRegularFileWithContents:), meaning preferredFilename may be nil. However, setting nil is never allowed
      * and will result in an exception.
@@ -379,6 +390,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
     /**
      * Return the destination link of the receiver. This may return nil if the receiver is the result of reading a
      * parent from the file system (use NSFileWrapperReadingImmediately if appropriate to prevent that).
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("symbolicLinkDestinationURL")
@@ -392,6 +405,8 @@ public class NSFileWrapper extends NSObject implements NSSecureCoding {
      * merely writing hard links to regular files instead of actually writing out their contents. The descendant file
      * wrappers must return accurate values when sent -filename for this to work (use
      * NSFileWrapperWritingWithNameUpdating to increase the likelihood of that).
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("writeToURL:options:originalContentsURL:error:")

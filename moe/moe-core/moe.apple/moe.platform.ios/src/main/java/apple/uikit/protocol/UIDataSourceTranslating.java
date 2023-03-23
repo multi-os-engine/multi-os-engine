@@ -14,6 +14,8 @@ import org.moe.natj.objc.ann.Selector;
  * For advanced clients with data model centric layouts (i.e. the layout refers to the data source
  * to gather information in order to create UICollectionViewLayoutAttributes) this protocol allows
  * translation between the data source index path into the presentation index path (i.e. layout) state.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("UIKit")

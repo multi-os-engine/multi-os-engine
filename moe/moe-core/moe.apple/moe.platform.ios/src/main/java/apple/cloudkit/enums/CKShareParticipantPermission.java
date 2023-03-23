@@ -21,12 +21,26 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * These permissions determine what share participants can do with records inside that share
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class CKShareParticipantPermission {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long ReadOnly = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long ReadWrite = 0x0000000000000003L;
 
     @Generated

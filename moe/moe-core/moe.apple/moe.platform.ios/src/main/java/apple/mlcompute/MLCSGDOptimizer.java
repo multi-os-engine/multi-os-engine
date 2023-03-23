@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCSGDOptimizer
- * <p>
+ * 
  * The MLCSGDOptimizer specifies a stochastic gradient descent optimizer.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -125,9 +127,9 @@ public class MLCSGDOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] momentumScale
-     * <p>
+     * 
      * The momentum factor. A hyper-parameter.
-     * <p>
+     * 
      * The default is 0.0.
      */
     @Generated
@@ -141,7 +143,7 @@ public class MLCSGDOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * Create an MLCSGDOptimizer object with defaults
-     *
+     * 
      * @return A new MLCSGDOptimizer object.
      */
     @Generated
@@ -150,7 +152,7 @@ public class MLCSGDOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * Create an MLCSGDOptimizer object
-     *
+     * 
      * @param optimizerDescriptor  The optimizer descriptor object
      * @param momentumScale        The momentum scale
      * @param usesNesterovMomentum A boolean to enable / disable nesterov momentum
@@ -179,9 +181,9 @@ public class MLCSGDOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] usesNesterovMomentum
-     * <p>
+     * 
      * A boolean that specifies whether to apply nesterov momentum or not.
-     * <p>
+     * 
      * The default is false.
      */
     @Generated

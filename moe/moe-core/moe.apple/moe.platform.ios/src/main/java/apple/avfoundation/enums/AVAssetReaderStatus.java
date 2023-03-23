@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVAssetReaderStatus
- * <p>
+ * 
  * These constants are returned by the AVAssetReader status property to indicate whether it can successfully read
  * samples from its asset.
- * <p>
+ * 
  * [@constant] AVAssetReaderStatusUnknown
  * Indicates that the status of the asset reader is not currently known.
  * [@constant] AVAssetReaderStatusReading

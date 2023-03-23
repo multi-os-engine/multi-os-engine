@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Node representing a MPSCNNLogSoftMax kernel
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -94,7 +96,7 @@ public class MPSCNNLogSoftMaxNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a MPSCNNLogSoftMax kernel
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @return A new MPSNNFilter node for a MPSCNNLogSoftMax kernel.
      */
@@ -130,7 +132,7 @@ public class MPSCNNLogSoftMaxNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a autoreleased MPSCNNLogSoftMax kernel
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @return A new MPSNNFilter node for a MPSCNNLogSoftMax kernel.
      */

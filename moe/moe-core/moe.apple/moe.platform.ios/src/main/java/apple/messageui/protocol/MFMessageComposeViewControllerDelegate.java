@@ -27,9 +27,9 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] MFMessageComposeViewControllerDelegate
- * <p>
+ * 
  * Protocol for delegate callbacks to MFMessageComposeViewControllerDelegate instances.
- * <p>
+ * 
  * This protocol will be implemented by delegates of MFMessageComposeViewController instances.
  * It will be called at various times while the user is composing, sending, or canceling
  * message composition.
@@ -41,14 +41,14 @@ import org.moe.natj.objc.ann.Selector;
 public interface MFMessageComposeViewControllerDelegate {
     /**
      * messageComposeViewController:didFinishWithResult:
-     * <p>
+     * 
      * Delegate callback which is called upon user's completion of message composition.
-     * <p>
+     * 
      * This delegate callback will be called when the user completes the message composition.
      * How the user chose to complete this task will be given as one of the parameters to the
      * callback. Upon this call, the client should remove the view associated with the controller,
      * typically by dismissing modally.
-     *
+     * 
      * @param controller The MFMessageComposeViewController instance which is returning the result.
      * @param result     MessageComposeResult indicating how the user chose to complete the composition process.
      */

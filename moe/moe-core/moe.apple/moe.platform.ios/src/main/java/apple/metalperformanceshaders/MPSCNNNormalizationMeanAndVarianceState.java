@@ -32,6 +32,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSCNNNormalizationMeanAndVarianceState
  * [@description] A state which contains mean and variance terms used to apply a
  * normalization in a MPSCNNBatchNormalization operation.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -118,8 +120,9 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
     /**
      * Initialize a MPSCNNNormalizationMeanAndVarianceState object using values
      * contained in MTLBuffers.
-     *
+     * 
      * @param mean     The MTLBuffer containing mean terms.
+     * 
      * @param variance The MTLBuffer containing variance terms.
      */
     @Generated
@@ -159,7 +162,7 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
 
     /**
      * [@property] mean
-     * <p>
+     * 
      * A MTLBuffer containing the mean terms.
      */
     @Generated
@@ -202,9 +205,10 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
      * Create a temporary MPSCNNNormalizationMeanAndVarianceState suitable
      * for a normalization operation on images containing no more than
      * the specified number of feature channels.
-     *
+     * 
      * @param commandBuffer           The command buffer on which the temporary state will
      *                                be used.
+     * 
      * @param numberOfFeatureChannels The number of feature channels used to size the
      *                                state.
      */
@@ -225,7 +229,7 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
 
     /**
      * [@property] variance
-     * <p>
+     * 
      * A MTLBuffer containing the variance terms.
      */
     @Generated

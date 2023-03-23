@@ -28,9 +28,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MIDICIDiscoveredNode
- * <p>
+ * 
  * An object created during MIDI-CI discovery representing a MIDI destination with an
  * associated MIDI source that responds to capability inquiries.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CoreMIDI")

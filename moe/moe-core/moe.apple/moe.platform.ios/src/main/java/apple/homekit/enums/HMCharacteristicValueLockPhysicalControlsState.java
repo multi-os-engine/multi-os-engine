@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueLockPhysicalControlsState
- * <p>
+ * 
  * [@constant] HMCharacteristicValueLockPhysicalControlsStateNotLocked Physical controls not locked.
  * [@constant] HMCharacteristicValueLockPhysicalControlsStateLocked Physical controls locked.
+ * 
+ * API-Since: 10.2
  */
 @Generated
 public final class HMCharacteristicValueLockPhysicalControlsState {
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long NotLocked = 0x0000000000000000L;
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Locked = 0x0000000000000001L;
 
     @Generated

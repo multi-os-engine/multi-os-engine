@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -141,7 +144,7 @@ public class VNHumanHandPoseObservation extends VNRecognizedPointsObservation {
 
     /**
      * Obtain a specific normalized point for a named human hand joint.
-     *
+     * 
      * @param jointName The name of the human hand joint.
      * @param error     The address of a variable that will be populated with the error that describes the failure. If
      *                  the caller does not require this information, NULL can be passed.
@@ -154,10 +157,10 @@ public class VNHumanHandPoseObservation extends VNRecognizedPointsObservation {
 
     /**
      * Obtains the collection of points associated with a named human hand joints group.
-     * <p>
+     * 
      * The obtained collection is a dictionary that provides the mapping of human hand join names to the recognized
      * point.
-     *
+     * 
      * @param jointsGroupName The name of the human hand joints group.
      * @param error           The address of a variable that will be populated with the error that describes the
      *                        failure. If the caller does not require this information, NULL can be passed.
@@ -201,6 +204,8 @@ public class VNHumanHandPoseObservation extends VNRecognizedPointsObservation {
 
     /**
      * The chirality of the hand.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("chirality")

@@ -44,6 +44,8 @@ public final class NSKeyValueObservingOptions {
      * -observeValueForKeyPath:ofObject:change:context: method. When this option is used with
      * -addObserver:toObjectsAtIndexes:forKeyPath:options:context: a notification will be sent for each indexed object
      * to which the observer is being added.
+     * 
+     * API-Since: 2.0
      */
     @Generated @NUInt public static final long Initial = 0x0000000000000004L;
     /**
@@ -54,7 +56,7 @@ public final class NSKeyValueObservingOptions {
      * invoke one of the -willChange... methods for one of its own properties, and the value of that property depends on
      * the value of the observed object's property. (In that situation it's too late to easily invoke -willChange...
      * properly in response to receiving an -observeValueForKeyPath:ofObject:change:context: message after the change.)
-     * <p>
+     * 
      * When this option is specified, the change dictionary in a notification sent after a change contains the same
      * entries that it would contain if this option were not specified, except for ordered unique to-many relationships
      * represented by NSOrderedSets. For those, for NSKeyValueChangeInsertion and NSKeyValueChangeReplacement changes,
@@ -63,6 +65,8 @@ public final class NSKeyValueObservingOptions {
      * registration time) which give the indexes (and objects) which *may* be changed by the operation. The second
      * notification, after the change, contains entries reporting what did actually change. For NSKeyValueChangeRemoval
      * changes, removals by index are precise.
+     * 
+     * API-Since: 2.0
      */
     @Generated @NUInt public static final long Prior = 0x0000000000000008L;
 

@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -150,7 +153,7 @@ public class CKDatabaseOperation extends CKOperation {
 
     /**
      * The database on which to perform the operation.
-     * <p>
+     * 
      * If no database is set, @code [self.container privateCloudDatabase] @endcode is used.
      * This will also set the container property of the operation's configuration to match the container of the
      * passed-in database.
@@ -165,7 +168,7 @@ public class CKDatabaseOperation extends CKOperation {
 
     /**
      * The database on which to perform the operation.
-     * <p>
+     * 
      * If no database is set, @code [self.container privateCloudDatabase] @endcode is used.
      * This will also set the container property of the operation's configuration to match the container of the
      * passed-in database.

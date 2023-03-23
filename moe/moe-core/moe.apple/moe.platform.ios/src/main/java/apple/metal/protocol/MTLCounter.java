@@ -9,14 +9,19 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] MTLCounter
- * <p>
+ * 
  * A descriptor for a single counter.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLCounter")
 public interface MTLCounter {
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("name")
     String name();

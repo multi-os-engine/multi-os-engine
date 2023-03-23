@@ -45,11 +45,15 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSNumber;
 
 /**
  * HKDocumentQuery
- * <p>
+ * 
  * A concrete subclass of HKQuery that provides an interface to retrieve documents from the Health store.
+ * 
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("HealthKit")
@@ -221,16 +225,19 @@ public class HKDocumentQuery extends HKQuery {
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeDuration(@NUInt long operatorType,
             double duration);
 
+    @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalDistance:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalDistance(@NUInt long operatorType,
             HKQuantity totalDistance);
 
+    @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalEnergyBurned:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalEnergyBurned(@NUInt long operatorType,
             HKQuantity totalEnergyBurned);
 
+    @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalSwimmingStrokeCount:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalSwimmingStrokeCount(
@@ -263,7 +270,7 @@ public class HKDocumentQuery extends HKQuery {
 
     /**
      * [@property] includeDocumentData
-     * <p>
+     * 
      * The XML content for documents may be large. This property can be used to control whether the query
      * returns the XML content for each record.
      */
@@ -277,16 +284,16 @@ public class HKDocumentQuery extends HKQuery {
 
     /**
      * initWithDocumentType:predicate:limit:sortDescriptors:includeDocumentData:resultsHandler:
-     * <p>
+     * 
      * Returns a query that will retrieve HKDocumentSamples matching the given predicate.
-     * <p>
+     * 
      * Health documents may contain sensitive data that a user may want to control explicitly. HKDocumentSample
      * objects returned by HKSampleQuery and HKAnchoredObjectQuery do not include this data (i.e., the document
      * property is nil). This query can be used to retrieve fully populated HKDocumentSample instances. The
      * query will prompt the user to authorize your app to read individual documents. The query will then
      * return the documents that your app is authorized to read. The user will only be asked to authorize your
      * app to read documents that are new since the last time an HKDocumentQuery was executed.
-     *
+     * 
      * @param documentType        The type of document to retreive.
      * @param predicate           The predicate which documents should match.
      * @param limit               The maximum number of documents to return. Pass HKObjectQueryNoLimit for no limit.
@@ -309,7 +316,7 @@ public class HKDocumentQuery extends HKQuery {
 
     /**
      * [@property] limit
-     * <p>
+     * 
      * The maximum number of documents the receiver will return upon completion.
      */
     @Generated
@@ -319,7 +326,7 @@ public class HKDocumentQuery extends HKQuery {
 
     /**
      * [@property] sortDescriptors
-     * <p>
+     * 
      * An array of NSSortDescriptors.
      */
     @Generated
@@ -334,6 +341,7 @@ public class HKDocumentQuery extends HKQuery {
                 HKDocumentQuery query, NSArray<? extends HKDocumentSample> results, boolean done, NSError error);
     }
 
+    @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
@@ -365,4 +373,67 @@ public class HKDocumentQuery extends HKQuery {
     @Selector("predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval:")
     public static native NSPredicate predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval(
             NSDateInterval dateInterval);
+
+    @Generated
+    @Selector("predicateForCategorySamplesEqualToValues:")
+    public static native NSPredicate predicateForCategorySamplesEqualToValues(NSSet<? extends NSNumber> values);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:duration:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeDuration(@NUInt long operatorType,
+            double duration);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:averageQuantity:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeAverageQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity averageQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:maximumQuantity:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeMaximumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity maximumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:minimumQuantity:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeMinimumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity minimumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeSumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity sumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithStartDate:endDate:options:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithStartDateEndDateOptions(NSDate startDate,
+            NSDate endDate, @NUInt long options);
+
+    @Generated
+    @Selector("predicateForWorkoutActivitiesWithWorkoutActivityType:")
+    public static native NSPredicate predicateForWorkoutActivitiesWithWorkoutActivityType(
+            @NUInt long workoutActivityType);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithActivityPredicate:")
+    public static native NSPredicate predicateForWorkoutsWithActivityPredicate(NSPredicate activityPredicate);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:quantityType:averageQuantity:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeAverageQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity averageQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:quantityType:maximumQuantity:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeMaximumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity maximumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:quantityType:minimumQuantity:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeMinimumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity minimumQuantity);
+
+    @Generated
+    @Selector("predicateForWorkoutsWithOperatorType:quantityType:sumQuantity:")
+    public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeSumQuantity(
+            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity sumQuantity);
 }

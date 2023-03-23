@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A relevance provider to indicate relevance at a date or date interval.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("Intents")

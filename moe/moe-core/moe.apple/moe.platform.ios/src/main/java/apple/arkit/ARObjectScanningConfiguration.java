@@ -21,14 +21,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.avfoundation.AVCaptureDevice;
 
 /**
  * A configuration for scanning objects.
- * <p>
+ * 
  * The object scanning configuration runs world tracking, capturing additional detail in order to create reference
  * objects.
  * Running object scanning will consume additional power in order to provide more detailed features.
  * The createReferenceObject method can be called on the session to capture a scan of an object in the world.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("ARKit")
@@ -112,7 +115,7 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable continuous auto focus.
-     * <p>
+     * 
      * Enabled by default.
      */
     @Generated
@@ -138,7 +141,7 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
 
     /**
      * Type of planes to detect in the scene.
-     * <p>
+     * 
      * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
@@ -159,7 +162,7 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
 
     /**
      * Enable or disable continuous auto focus.
-     * <p>
+     * 
      * Enabled by default.
      */
     @Generated
@@ -168,7 +171,7 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
 
     /**
      * Type of planes to detect in the scene.
-     * <p>
+     * 
      * If set, new planes will continue to be detected and updated over time. Detected planes will be added to the
      * session as
      * ARPlaneAnchor objects. In the event that two planes are merged, the newer plane will be removed. Defaults to
@@ -198,4 +201,16 @@ public class ARObjectScanningConfiguration extends ARConfiguration {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("configurableCaptureDeviceForPrimaryCamera")
+    public static native AVCaptureDevice configurableCaptureDeviceForPrimaryCamera();
+
+    @Generated
+    @Selector("recommendedVideoFormatFor4KResolution")
+    public static native ARVideoFormat recommendedVideoFormatFor4KResolution();
+
+    @Generated
+    @Selector("recommendedVideoFormatForHighResolutionFrameCapturing")
+    public static native ARVideoFormat recommendedVideoFormatForHighResolutionFrameCapturing();
 }

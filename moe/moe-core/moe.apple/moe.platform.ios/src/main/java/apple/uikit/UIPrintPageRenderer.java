@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -41,7 +40,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 4.2
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -276,6 +279,8 @@ public class UIPrintPageRenderer extends NSObject {
      * need to override this method.
      * Return value is the quality you current actually used for the rendering.
      * Returns UIPrintRenderingQualityBest by default.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("currentRenderingQualityForRequestedRenderingQuality:")

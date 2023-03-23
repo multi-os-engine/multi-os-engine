@@ -43,9 +43,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * RPBroadcastSampleHandler
- * <p>
+ * 
  * Subclass this class to handle CMSampleBuffer objects as they are captured by ReplayKit. To enable this mode of
  * handling, set the RPBroadcastProcessMode in the extension's info.plist to RPBroadcastProcessModeSampleBuffer.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("ReplayKit")
@@ -184,7 +186,7 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
     /**
      * Method is called when the RPBroadcastController startBroadcast method is called from the broadcasting
      * application.
-     *
+     * 
      * @param setupInfo Dictionary that can be supplied by the UI extension to the sample handler.
      */
     @Generated
@@ -194,7 +196,7 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
     /**
      * Method that should be called when broadcasting can not proceed due to an error. Calling this method will stop the
      * broadcast and deliver the error back to the broadcasting app through RPBroadcastController's delegate.
-     *
+     * 
      * @param error NSError object that will be passed back to the broadcasting app through
      *              RPBroadcastControllerDelegate's broadcastController:didFinishWithError: method.
      */
@@ -209,7 +211,7 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
     /**
      * Method is called as video and audio data become available during a broadcast session and is delivered as
      * CMSampleBuffer objects.
-     *
+     * 
      * @param sampleBuffer     CMSampleBuffer object which contains either video or audio data.
      * @param sampleBufferType Determine's the type of the sample buffer defined by the RPSampleBufferType enum.
      */
@@ -220,9 +222,11 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
     /**
      * Method is called when broadcast is started from Control Center and provides extension information about the first
      * application opened or used during the broadcast.
-     *
+     * 
      * @param applicationInfo Dictionary that contains information about the first application opened or used buring the
      *                        broadcast.
+     * 
+     *                        API-Since: 11.2
      */
     @Generated
     @Selector("broadcastAnnotatedWithApplicationInfo:")

@@ -21,16 +21,36 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLLibraryError
- * <p>
+ * 
  * NSErrors raised when creating a library.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class MTLLibraryError {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Unsupported = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Internal = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long CompileFailure = 0x0000000000000003L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long CompileWarning = 0x0000000000000004L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long FunctionNotFound = 0x0000000000000005L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long FileNotFound = 0x0000000000000006L;
 
     @Generated

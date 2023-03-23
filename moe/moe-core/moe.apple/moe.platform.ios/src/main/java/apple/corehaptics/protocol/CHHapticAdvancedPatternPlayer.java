@@ -13,11 +13,13 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] CHHapticAdvancedPatternPlayer
- * <p>
+ * 
  * A protocol which defines operations for pausing, resuming, seeking, and sending parameters to a pattern player.
- * <p>
+ * 
  * Instances of these objects are created via the factory methods such as
  * `CHHapticEngine(createAdvancedPlayerWithPattern:error)`.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreHaptics")
@@ -26,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
     /**
      * [@property] completionHandler
-     * <p>
+     * 
      * The block or enclosure that will be called when the player finishes.
      */
     @Generated
@@ -43,7 +45,7 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
 
     /**
      * [@property] isMuted
-     * <p>
+     * 
      * When set to YES, all audio and haptic output will be silenced.
      */
     @Generated
@@ -52,7 +54,7 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
 
     /**
      * [@property] loopEnabled
-     * <p>
+     * 
      * When set to YES, the player will loop back to the beginning of the pattern whenever playback
      * reaches the `loopEnd` time.
      */
@@ -62,9 +64,9 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
 
     /**
      * [@property] loopEnd
-     * <p>
+     * 
      * The time in seconds at which the pattern will loop back if looping is enabled.
-     * <p>
+     * 
      * If set to 0.0, the loop length will be set to the end of the last event in the pattern.
      */
     @Generated
@@ -73,9 +75,9 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
 
     /**
      * pauseAtTime:error
-     * <p>
+     * 
      * Pause playback of the pattern at the specified time (see `CHHapticEngine(currentTime)`).
-     * <p>
+     * 
      * If 'time' is set to `CHHapticTimeImmediate`, the pattern will be paused immediately.
      */
     @Generated
@@ -84,10 +86,10 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
 
     /**
      * [@property] playbackRate
-     * <p>
+     * 
      * Allows a pattern to be played back at any multiple of its normal rate. The rate can be adjusted
      * at any point before or during pattern playback.
-     * <p>
+     * 
      * This rate factor scales the relative times of all events and parameters as they are played, as well as the
      * durations of Continuous events. It does not affect the pitches of the events. Any value greater than
      * 0.0 is valid; all others are ignored.
@@ -98,9 +100,9 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
 
     /**
      * resumeAtTime:error
-     * <p>
+     * 
      * Resume playback on a previously-paused player at the specified time (see `CHHapticEngine(currentTime)`).
-     * <p>
+     * 
      * If 'time' is set to `CHHapticTimeImmediate`, the pattern is resumed as soon as possible.
      * Playback will resume at the time offset in the pattern at which it was paused.
      */
@@ -110,9 +112,9 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
 
     /**
      * seekToOffset:error
-     * <p>
+     * 
      * Set the playback position on an active player to the specified offset time.
-     * <p>
+     * 
      * If 'offsetTime' is set to 0.0, the pattern will start from the beginning. If
      * set to >= the duration of the pattern, playback will terminate as soon as possible
      * unless the player is looped, in which case playback will start at the beginning of
@@ -124,7 +126,7 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
 
     /**
      * [@property] completionHandler
-     * <p>
+     * 
      * The block or enclosure that will be called when the player finishes.
      */
     @Generated
@@ -140,7 +142,7 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
 
     /**
      * [@property] isMuted
-     * <p>
+     * 
      * When set to YES, all audio and haptic output will be silenced.
      */
     @Generated
@@ -149,7 +151,7 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
 
     /**
      * [@property] loopEnabled
-     * <p>
+     * 
      * When set to YES, the player will loop back to the beginning of the pattern whenever playback
      * reaches the `loopEnd` time.
      */
@@ -159,9 +161,9 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
 
     /**
      * [@property] loopEnd
-     * <p>
+     * 
      * The time in seconds at which the pattern will loop back if looping is enabled.
-     * <p>
+     * 
      * If set to 0.0, the loop length will be set to the end of the last event in the pattern.
      */
     @Generated
@@ -170,10 +172,10 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
 
     /**
      * [@property] playbackRate
-     * <p>
+     * 
      * Allows a pattern to be played back at any multiple of its normal rate. The rate can be adjusted
      * at any point before or during pattern playback.
-     * <p>
+     * 
      * This rate factor scales the relative times of all events and parameters as they are played, as well as the
      * durations of Continuous events. It does not affect the pitches of the events. Any value greater than
      * 0.0 is valid; all others are ignored.

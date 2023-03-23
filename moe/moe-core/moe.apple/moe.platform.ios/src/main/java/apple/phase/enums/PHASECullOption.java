@@ -5,9 +5,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] PHASECullOption
- * <p>
+ * 
  * Cull option.
- * <p>
+ * 
  * Determines what the engine should do when a sound asset becomes cullable.
  * [@constant] PHASECullOptionTerminate
  * If cullable, the sound asset will stop. Note that this can occur before or during playback.

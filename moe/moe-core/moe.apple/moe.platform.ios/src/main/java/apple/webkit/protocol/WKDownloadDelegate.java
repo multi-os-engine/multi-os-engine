@@ -26,12 +26,12 @@ import org.moe.natj.objc.ann.Selector;
 public interface WKDownloadDelegate {
     /**
      * Invoked when the download needs a location to write the downloaded bytes.
-     * <p>
+     * 
      * suggestedFilename will often be the same as response.suggestedFilename,
      * but web content can specify the suggested download filename. If the destination file
      * URL is non-null, it must be a file that does not exist in a directory that does exist
      * and can be written to.
-     *
+     * 
      * @param download          The download for which we need a file to which to write.
      * @param response          The server response if this download was the result of an HTTP request,
      *                          or a synthesized response for blob downloads.
@@ -54,7 +54,7 @@ public interface WKDownloadDelegate {
 
     /**
      * Invoked when the download has failed.
-     *
+     * 
      * @param download   The download that has failed.
      * @param error      The error indicating the failure reason.
      * @param resumeData This data can be passed to WKWebView resumeDownloadFromResumeData: to attempt to resume this
@@ -69,10 +69,10 @@ public interface WKDownloadDelegate {
 
     /**
      * Invoked when the download needs to respond to an authentication challenge.
-     * <p>
+     * 
      * If you do not implement this method, the web view will respond to the authentication challenge with the
      * NSURLSessionAuthChallengeRejectProtectionSpace disposition.
-     *
+     * 
      * @param download          The download that received the authentication challenge.
      * @param challenge         The authentication challenge.
      * @param completionHandler The completion handler you must invoke to respond to the challenge. The
@@ -101,9 +101,9 @@ public interface WKDownloadDelegate {
 
     /**
      * Invoked when the download has received an HTTP redirection response.
-     * <p>
+     * 
      * If you do not implement this method, all server suggested redirects will be taken.
-     *
+     * 
      * @param download          The download that received the redirect.
      * @param response          The redirection response.
      * @param newRequest        The new request that will be sent.
@@ -128,7 +128,7 @@ public interface WKDownloadDelegate {
 
     /**
      * Invoked when the download has finished successfully.
-     *
+     * 
      * @param download The download that finished.
      */
     @Generated

@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] PHASEPushStreamCompletionCallbackCondition
- * <p>
+ * 
  * Specifies when the completion handler must be invoked.
  * [@constant] PHASEPushStreamCompletionDataRendered
  * The buffer data has been rendered by the player.

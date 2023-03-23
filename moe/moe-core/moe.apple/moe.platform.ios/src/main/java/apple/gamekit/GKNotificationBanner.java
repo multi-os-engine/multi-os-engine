@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Asynchronously shows a notification banner like the one used for Game Center’s “Welcome Back” message.
  * If a banner is already being displayed, additional banners will be shown in sequence. Use this to notify the user of
  * game events, high scores, completed achievements, etc.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("GameKit")
@@ -145,11 +147,17 @@ public class GKNotificationBanner extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("showBannerWithTitle:message:completionHandler:")
     public static native void showBannerWithTitleMessageCompletionHandler(String title, String message,
             @ObjCBlock(name = "call_showBannerWithTitleMessageCompletionHandler") Block_showBannerWithTitleMessageCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("showBannerWithTitle:message:duration:completionHandler:")
     public static native void showBannerWithTitleMessageDurationCompletionHandler(String title, String message,

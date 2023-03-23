@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Collection of fields to give information on geo tracking status.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("ARKit")

@@ -39,6 +39,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Access destinationViewController.popoverPresentationController from your segue's performHandler
+ * or override of -perform
+ */
 @Deprecated
 @Generated
 @Library("UIKit")

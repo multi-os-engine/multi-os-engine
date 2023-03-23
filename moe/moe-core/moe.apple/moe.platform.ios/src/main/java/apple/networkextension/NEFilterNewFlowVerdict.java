@@ -45,11 +45,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEFilterNewFlowVerdict
- * <p>
+ * 
  * The NEFilterNewFlowVerdict declares the programmatic interface of an object that is the verdict for a
  * new flow of network data before any of the flow's data has been seen by the filter.
- * <p>
+ * 
  * NEFilterNewFlowVerdict is part of NetworkExtension.framework
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -67,12 +69,14 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
 
     /**
      * URLAppendStringVerdictWithMapKey
-     * <p>
+     * 
      * This class method returns a verdict indicating that safe search URL for the new should be specified
-     *
+     * 
      * @param urlAppendMapKey URL Append map key to be used by the data plugin to notify what the url should be appended
      *                        with
      * @return The NEFilterNewFlowVerdict object.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("URLAppendStringVerdictWithMapKey:")
@@ -94,10 +98,12 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
 
     /**
      * allowVerdict
-     * <p>
+     * 
      * This class method returns a verdict indicating that the flow should be allowed.
-     *
+     * 
      * @return The NEFilterNewFlowVerdict object.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("allowVerdict")
@@ -135,10 +141,12 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
 
     /**
      * dropVerdict
-     * <p>
+     * 
      * This class method returns a verdict indicating that the flow should be dropped.
-     *
+     * 
      * @return The NEFilterNewFlowVerdict object.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("dropVerdict")
@@ -146,10 +154,10 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
 
     /**
      * filterDataVerdictWithFilterInbound:peekInboundBytes:filterOutbound:peekOutboundBytes:
-     * <p>
+     * 
      * This class method returns a new flow verdict indicating that the filter needs to make a decision about
      * a new flow after seeing a portion of the flow's data.
-     *
+     * 
      * @param filterInbound     A boolean indicating if the filter needs to see inbound data
      * @param peekInboundBytes  The number of inbound bytes that the filter needs to see in the subsequent call to
      *                          -[NEFilterDataProvider handleInboundDataFromFlow:readBytesStartOffset:readBytes:].
@@ -157,6 +165,8 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
      * @param peekOutboundBytes The number of outbound bytes that the filter needs to see in the subsequent call to
      *                          -[NEFilterDataProvider handleOutboundDataFromFlow:readBytesStartOffset:readBytes:].
      * @return The new flow verdict.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("filterDataVerdictWithFilterInbound:peekInboundBytes:filterOutbound:peekOutboundBytes:")
@@ -191,13 +201,15 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
 
     /**
      * needRulesVerdict
-     * <p>
+     * 
      * This class method returns a verdict indicating that control provider needs to be asked how to handle
      * the new flow. The control provider can either drop or allow the flow, or update the rules and ask the data
      * provider
      * to decide on the new flow again.
-     *
+     * 
      * @return The NEFilterNewFlowVerdict object.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("needRulesVerdict")
@@ -210,12 +222,14 @@ public class NEFilterNewFlowVerdict extends NEFilterVerdict implements NSSecureC
 
     /**
      * remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:
-     * <p>
+     * 
      * This class method returns a verdict indicating that a "content blocked" page should be displayed to
      * the user. The block page should contain a link to the given URL.
-     *
+     * 
      * @param remediationURLMapKey Remediation map key used by data plugin to get remediation url
      * @return The NEFilterNewFlowVerdict object.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:")

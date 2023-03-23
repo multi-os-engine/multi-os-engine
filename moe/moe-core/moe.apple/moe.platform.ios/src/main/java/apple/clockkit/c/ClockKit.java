@@ -21,6 +21,9 @@ public final class ClockKit {
     private ClockKit() {
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

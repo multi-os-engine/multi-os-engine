@@ -45,8 +45,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEDNSSettings
- * <p>
+ * 
  * The NEDNSSettings class declares the programmatic interface for an object that contains DNS settings.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -170,8 +172,10 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] domainName
-     * <p>
+     * 
      * A string containing the DNS domain.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("domainName")
@@ -191,10 +195,12 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * initWithServers:
-     * <p>
+     * 
      * Initialize a newly-allocated NEDNSSettings object.
-     *
+     * 
      * @param servers An array of DNS server IP address strings.
+     * 
+     *                API-Since: 9.0
      */
     @Generated
     @Selector("initWithServers:")
@@ -202,9 +208,11 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] matchDomains
-     * <p>
+     * 
      * An array of strings containing domain strings. If this property is non-nil, the DNS settings will only be used to
      * resolve host names within the specified domains.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("matchDomains")
@@ -212,9 +220,11 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] matchDomainsNoSearch
-     * <p>
+     * 
      * A boolean indicating if the match domains should be appended to the search domain list. Default is NO (match
      * domains will be appended to the search domain list).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("matchDomainsNoSearch")
@@ -222,8 +232,10 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] searchDomains
-     * <p>
+     * 
      * An array of DNS server search domain strings.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("searchDomains")
@@ -231,8 +243,10 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] servers
-     * <p>
+     * 
      * An array of DNS server address strings.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("servers")
@@ -240,8 +254,10 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] domainName
-     * <p>
+     * 
      * A string containing the DNS domain.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDomainName:")
@@ -249,9 +265,11 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] matchDomains
-     * <p>
+     * 
      * An array of strings containing domain strings. If this property is non-nil, the DNS settings will only be used to
      * resolve host names within the specified domains.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMatchDomains:")
@@ -259,9 +277,11 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] matchDomainsNoSearch
-     * <p>
+     * 
      * A boolean indicating if the match domains should be appended to the search domain list. Default is NO (match
      * domains will be appended to the search domain list).
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMatchDomainsNoSearch:")
@@ -269,8 +289,10 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] searchDomains
-     * <p>
+     * 
      * An array of DNS server search domain strings.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSearchDomains:")
@@ -284,8 +306,10 @@ public class NEDNSSettings extends NSObject implements NSSecureCoding, NSCopying
 
     /**
      * [@property] dnsProtocol
-     * <p>
+     * 
      * The DNS protocol used by the settings.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("dnsProtocol")

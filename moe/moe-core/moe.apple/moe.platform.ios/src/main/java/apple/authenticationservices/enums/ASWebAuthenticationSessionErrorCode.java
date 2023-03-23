@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] ASWebAuthenticationSessionErrorCode
- * <p>
+ * 
  * Error code of the NSError object passed in by ASWebAuthenticationSessionCompletionHandler.
  * [@constant] ASWebAuthenticationSessionErrorCodeCanceledLogin The user has canceled login by cancelling the
  * alert asking for permission to log in to this app, or by dismissing the view controller for loading the
@@ -14,6 +14,8 @@ import org.moe.natj.general.ann.NInt;
  * was not found when -start was called. Ensure this property was not nil when -start was called.
  * [@constant] ASWebAuthenticationSessionErrorCodePresentationContextInvalid The presentation context returned
  * was not elligible to show the authentication UI. For iOS, validate that the UIWindow is in a foreground scene.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 public final class ASWebAuthenticationSessionErrorCode {
@@ -21,7 +23,16 @@ public final class ASWebAuthenticationSessionErrorCode {
     private ASWebAuthenticationSessionErrorCode() {
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NInt public static final long CanceledLogin = 0x0000000000000001L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long PresentationContextNotProvided = 0x0000000000000002L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long PresentationContextInvalid = 0x0000000000000003L;
 }

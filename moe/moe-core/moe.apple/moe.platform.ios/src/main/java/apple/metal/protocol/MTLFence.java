@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -37,7 +40,7 @@ public interface MTLFence {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
@@ -46,7 +49,7 @@ public interface MTLFence {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated

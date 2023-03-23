@@ -36,6 +36,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * backing-store. It also implements NSTextStorageObserving participating as a client of NSTextStorage. The facility
  * only supports a single NSTextContentStorage associated with a text storage. When -textStorage!=nil, -attributedString
  * is ignored. By default, NSTextContentStorage is initialized with NSTextStorage as the backing-store.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")

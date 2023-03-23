@@ -42,6 +42,12 @@ public final class GameKit {
     @MappedReturn(ObjCStringMapper.class)
     public static native String GKErrorDomain();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -58,28 +64,40 @@ public final class GameKit {
 
     /**
      * use a default timeout of one week
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
     public static native double GKTurnTimeoutDefault();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @CVariable()
     public static native double GKTurnTimeoutNone();
 
     /**
      * use a default timeout of one day
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
     public static native double GKExchangeTimeoutDefault();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     public static native double GKExchangeTimeoutNone();
 
     /**
      * Notification will be posted whenever authentication status changes.
+     * 
+     * API-Since: 4.1
      */
     @Generated
     @CVariable()
@@ -101,6 +119,8 @@ public final class GameKit {
 
     /**
      * Deprecated methods that previously returned player IDs will return GKPlayerIDNoLongerAvailable instead.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()

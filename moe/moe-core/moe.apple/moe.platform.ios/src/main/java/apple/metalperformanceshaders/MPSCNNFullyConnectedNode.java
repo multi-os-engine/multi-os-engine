@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A MPSNNFilterNode representing a MPSCNNFullyConnected kernel
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -95,7 +97,7 @@ public class MPSCNNFullyConnectedNode extends MPSCNNConvolutionNode {
 
     /**
      * Init a node representing a MPSCNNFullyConnected kernel
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param weights    A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
      *                   protocol. This object is provided by you to encapsulate storage for
@@ -135,7 +137,7 @@ public class MPSCNNFullyConnectedNode extends MPSCNNConvolutionNode {
 
     /**
      * Init an autoreleased not representing a MPSCNNFullyConnected kernel
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param weights    A pointer to a valid object conforming to the MPSCNNConvolutionDataSource
      *                   protocol. This object is provided by you to encapsulate storage for

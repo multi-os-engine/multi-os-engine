@@ -32,7 +32,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The VNContour class describes a contour provided by a VNContoursObservation.
- * <p>
+ * 
  * VNContour objects are lightweight objects that act as a façade which allows access to a small slice of the usually
  * much larger block of data owned by a VNContoursObservation that represents all of the contours detected in an image.
  * While the interface does present the notion of a hierarchy of parent/child contours, the implementation purposefully
@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * -childContours or -childContourAtIndex:error:) are NOT guaranteed to return the same VNContour instances over and
  * over again. If this kind of parent/child object stability is an absolute requirement of the client, then they are
  * responsible for creating the necessary data structures to represent and build that instance-stable hierarchy.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -72,7 +74,7 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
     public static native VNContour allocWithZone(VoidPtr zone);
 
     /**
-     * The aspect ratio of the contour from the original image aspect ration expressed as width/height
+     * The aspect ratio of the contour from the original image aspect ratio expressed as width/height
      */
     @Generated
     @Selector("aspectRatio")
@@ -94,10 +96,10 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
 
     /**
      * Returns a VNContour object that is a child of this VNContour at the specified index.
-     *
+     * 
      * @param childContourIndex The index into the childContours array.
      * @param error             The error returned if the child contour cannot be provided.
-     * @return The VNContour object at the spefiied index path, or nil of a failure occurs.
+     * @return The VNContour object at the specified index path, or nil of a failure occurs.
      */
     @Generated
     @Selector("childContourAtIndex:error:")
@@ -106,8 +108,8 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
 
     /**
      * The total number of child contours in the target contour.
-     * <p>
-     * The use of this property is prefered over childContours.count due to the cost of building the child objects.
+     * 
+     * The use of this property is preferred over childContours.count due to the cost of building the child objects.
      */
     @Generated
     @Selector("childContourCount")
@@ -116,7 +118,7 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
 
     /**
      * The array of the contours enclosed by the target contour.
-     * <p>
+     * 
      * This property may come with the cost of instantiating new VNContour objects; therefore, clients are strongly
      * encouraged to hold the results in a local variable instead of repeatedly invoking it.
      */
@@ -190,7 +192,7 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
 
     /**
      * The contour represented as a CGPath in normalized coordinates.
-     * <p>
+     * 
      * The path is owned by this object and therefore will be alive as long as the the observation is alive.
      */
     @Generated
@@ -207,10 +209,10 @@ public class VNContour extends NSObject implements NSCopying, VNRequestRevisionP
 
     /**
      * Simplifies the contour's collection of points into a polygon using the Ramer Douglas Peucker Algorithm.
-     * <p>
+     * 
      * See <https://en.wikipedia.org/wiki/Ramer–Douglas–Peucker_algorithm>
-     *
-     * @param epsilon Points that have a perpendicular distance to the line segment they are on that greather than
+     * 
+     * @param epsilon Points that have a perpendicular distance to the line segment they are on which are greater than
      *                epsilon are kept, others are eliminated.
      * @param error   The error returned if a simplified contour cannot be created.
      * @return A new VNContour object with a simplified polygon consisting of a subset of the points that defined the

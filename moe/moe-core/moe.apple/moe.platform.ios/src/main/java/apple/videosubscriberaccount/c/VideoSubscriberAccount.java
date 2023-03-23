@@ -39,6 +39,8 @@ public final class VideoSubscriberAccount {
 
     /**
      * The domain of all errors returned by VideoSubscriberAccount framework.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -48,6 +50,8 @@ public final class VideoSubscriberAccount {
     /**
      * A key that can be used to obtain the subscription provider's SAML response string from an error user info
      * dictionary.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -57,6 +61,8 @@ public final class VideoSubscriberAccount {
     /**
      * A key that can be used to obtain the subscription provider's SAML status code string from an error user info
      * dictionary.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -65,6 +71,8 @@ public final class VideoSubscriberAccount {
 
     /**
      * A key that can be used to obtain the account provider's response object from an error user info dictionary.
+     * 
+     * API-Since: 10.2
      */
     @Generated
     @CVariable()
@@ -74,6 +82,8 @@ public final class VideoSubscriberAccount {
     /**
      * A key that can be used to obtain the identifier string of the user's unsupported subscription provider from an
      * error user info dictionary.
+     * 
+     * API-Since: 10.2
      */
     @Generated
     @CVariable()
@@ -82,6 +92,8 @@ public final class VideoSubscriberAccount {
 
     /**
      * A boolean indicating whether the user may be prompted to grant access.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -90,6 +102,8 @@ public final class VideoSubscriberAccount {
 
     /**
      * The authentication scheme for responses that use the SAML protocol.
+     * 
+     * API-Since: 10.2
      */
     @Generated
     @CVariable()
@@ -98,6 +112,8 @@ public final class VideoSubscriberAccount {
 
     /**
      * The URL string used to deep link to the system TV Provider settings.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -106,6 +122,8 @@ public final class VideoSubscriberAccount {
 
     /**
      * The identifier for responses that use any authentication protocol.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()

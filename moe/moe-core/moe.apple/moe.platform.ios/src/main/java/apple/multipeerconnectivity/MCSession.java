@@ -50,23 +50,23 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MCSession
- * <p>
+ * 
  * A MCSession facilitates communication among all peers in a multipeer
  * session.
- * <p>
+ * 
  * To start a multipeer session with remote peers, a MCPeerID that
  * represents the local peer needs to be supplied to the init method.
- * <p>
+ * 
  * Once a peer is added to the session on both sides, the delegate
  * callback -session:peer:didChangeState: will be called with
  * MCSessionStateConnected state for the remote peer.
- * <p>
+ * 
  * Data messages can be sent to a connected peer with the -sendData:
  * toPeers:withMode:error: method.
- * <p>
+ * 
  * The receiver of data messages will receive a delegate callback
  * -session:didReceiveData:fromPeer:.
- * <p>
+ * 
  * Resources referenced by NSURL (e.g. a file) can be sent to a connected
  * peer with the -sendResourceAtURL:toPeer:withTimeout:completionHandler:
  * method. The completionHandler will be called when the resource is fully
@@ -76,17 +76,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * withProgress: when it starts receiving the resource and -session:
  * didFinishReceivingResourceWithName:fromPeer:atURL:withError:
  * when the resource has been fully received.
- * <p>
+ * 
  * A byte stream can be sent to a connected peer with the
  * -startStreamWithName:toPeer:error: method. On success, an
  * NSOutputStream object is returned, and can be used to send bytes to
  * the remote peer once the stream is properly set up. The receiver of the
  * byte stream will receive a delegate callback -session:didReceiveStream:
  * withName:fromPeer:
- * <p>
+ * 
  * Delegate calls occur on a private serial queue. If your app needs to
  * perform an action on a particular run loop or operation queue, its
  * delegate method should explicitly dispatch or schedule that work.
+ * 
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("MultipeerConnectivity")
@@ -285,7 +288,7 @@ public class MCSession extends NSObject {
      * fromPeer:withProgress callback when it starts receiving the resource and
      * a -session:didFinishReceivingResourceWithName:fromPeer:atURL:withError:
      * when the resource has been fully received.
-     * <p>
+     * 
      * The primary mechanism for observing progress of the send should be to
      * create an NSProgress using +progressWithTotalUnitCount,
      * -becomeCurrentWithPendingUnitCount:, invoking this method, then calling

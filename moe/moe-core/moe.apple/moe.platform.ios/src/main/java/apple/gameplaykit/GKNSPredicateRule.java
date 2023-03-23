@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A convenient subclass of GKRule that leverages existing NSPRedicate functionality for evaluating the predicate
  * of the rule.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -173,7 +175,7 @@ public class GKNSPredicateRule extends GKRule {
     /**
      * Overridden here to call the predicate's evaluateWithObject:substitutionVariables:, using sys
      * as the object and the system's state dictionary as the source of the substitution variables.
-     *
+     * 
      * @return YES if the NSPredicate evaluation passes and the action needs to be performed, NO otherwise.
      */
     @Generated
@@ -194,7 +196,7 @@ public class GKNSPredicateRule extends GKRule {
     /**
      * The NSPredicate that is used inside this subclass's implementation of evaluatePredicateWithSystem:
      * In order to effectively use this class you must still override performActionWithSystem:
-     *
+     * 
      * @see GKRule.evaluatePredicateWithSystem:
      */
     @Generated

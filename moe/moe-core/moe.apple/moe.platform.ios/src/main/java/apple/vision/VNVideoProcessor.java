@@ -31,9 +31,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A controller object that is used to perform one or more requests on a video stream.
- * <p>
+ * 
  * VNVideoProcessor handles the video decoding and buffer management, feeding the buffers to the associated requests at
  * the best desired frame rate.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -55,12 +57,12 @@ public class VNVideoProcessor extends NSObject {
 
     /**
      * Add a VNRequest with the specified processing options to be performed on the video.
-     * <p>
+     * 
      * This method can be called either before calling -analyzeTimeRange:error: or from within one of the already
      * associated request's completion handlers.
-     * <p>
+     * 
      * [@note] The VNRequest must have completion handler set otherwise no results can be returned.
-     *
+     * 
      * @param request           The VNRequest to be added to the processing pipeline. If added from within a
      *                          completionHandler, it will be processed on the same frame that is currently being
      *                          processed.
@@ -76,6 +78,11 @@ public class VNVideoProcessor extends NSObject {
             VNVideoProcessorRequestProcessingOptions processingOptions,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("addRequest:withProcessingOptions:error:")
     public native boolean addRequestWithProcessingOptionsError(VNRequest request,
@@ -93,13 +100,13 @@ public class VNVideoProcessor extends NSObject {
 
     /**
      * Processes the video over the specified time range.
-     * <p>
+     * 
      * This call is synchronous and only returns after the video is processed through its duration or an error prevented
      * the processing.
-     * <p>
+     * 
      * [@note] The intersection of the CMTimeRangeMake(start, duration) and CMTimeRangeMake(kCMTimeZero, asset.duration)
      * will determine the timerange of the video to process
-     *
+     * 
      * @param timeRange Start and duration of the timerange within video to process. If the duration is longer than the
      *                  video (e.g., kCMTimeIndefinite) the processing stops at the end of the video.
      * @param error     Returns an error that happened during the starting of the processing queue (for instance if the
@@ -112,6 +119,11 @@ public class VNVideoProcessor extends NSObject {
     public native boolean analyzeTimeRangeError(@ByValue CMTimeRange timeRange,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("analyzeWithTimeRange:error:")
     public native boolean analyzeWithTimeRangeError(@ByValue CMTimeRange timeRange,
@@ -165,7 +177,7 @@ public class VNVideoProcessor extends NSObject {
 
     /**
      * Creates a VNVideoProcessor to be used for performing requests against a video asset specified by it's URL.
-     *
+     * 
      * @param videoURL A URL pointing at a video asset on which the requests will be performed. The video format has to
      *                 be supported by AVFoundation.
      */
@@ -201,10 +213,10 @@ public class VNVideoProcessor extends NSObject {
 
     /**
      * Remove a VNRequest from the video processor, which means it won't be performed anymore.
-     * <p>
+     * 
      * This method can be called either before calling -analyzeTimeRange:error: or from within one of the already
      * associated request's completion handlers.
-     *
+     * 
      * @param request The VNRequest to be removed from the processing pipeline.
      * @param error   Returns an error that happened during processing of the request, such as if the request was not
      *                found in the processing queue. This parameter is optional.

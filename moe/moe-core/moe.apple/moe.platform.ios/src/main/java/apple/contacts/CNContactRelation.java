@@ -45,8 +45,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An immutable value object representing a related contact.
- * <p>
+ * 
  * CNContactRelation is thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")

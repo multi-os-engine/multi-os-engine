@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An obstacle with an impassible radius
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")

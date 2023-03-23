@@ -34,14 +34,17 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.metal.struct.MTLResourceID;
 
 /**
  * [@protocol] MTLComputePipelineState
- * <p>
+ * 
  * A handle to compiled code for a compute function.
- * <p>
+ * 
  * MTLComputePipelineState is a single compute function. It can only be used with the device that it was created
  * against.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Metal")
@@ -50,7 +53,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLComputePipelineState {
     /**
      * [@property] device
-     * <p>
+     * 
      * The device this resource was created against. This resource can only be used with this device.
      */
     @Generated
@@ -60,7 +63,7 @@ public interface MTLComputePipelineState {
 
     /**
      * [@property] maxTotalThreadsPerThreadgroup
-     * <p>
+     * 
      * The maximum total number of threads that can be in a single compute threadgroup.
      */
     @Generated
@@ -70,7 +73,7 @@ public interface MTLComputePipelineState {
 
     /**
      * [@property] threadExecutionWidth
-     * <p>
+     * 
      * For most efficient execution, the threadgroup size should be a multiple of this when executing the kernel.
      */
     @Generated
@@ -80,22 +83,29 @@ public interface MTLComputePipelineState {
 
     /**
      * imageblockMemoryLengthForDimensions:
-     * <p>
+     * 
      * Returns imageblock memory length for given image block dimensions.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("imageblockMemoryLengthForDimensions:")
     @NUInt
     long imageblockMemoryLengthForDimensions(@ByValue MTLSize imageblockDimensions);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("label")
     String label();
 
     /**
      * [@property] staticThreadgroupMemoryLength
-     * <p>
+     * 
      * The length in bytes of threadgroup memory that is statically allocated.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("staticThreadgroupMemoryLength")
@@ -104,8 +114,10 @@ public interface MTLComputePipelineState {
 
     /**
      * [@property] supportIndirectCommandBuffers
-     * <p>
+     * 
      * Tells whether this pipeline state is usable through an Indirect Command Buffer.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("supportIndirectCommandBuffers")
@@ -113,8 +125,10 @@ public interface MTLComputePipelineState {
 
     /**
      * functionHandleWithFunction:
-     * <p>
+     * 
      * Get the function handle for the specified function from the pipeline state.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("functionHandleWithFunction:")
@@ -123,8 +137,10 @@ public interface MTLComputePipelineState {
 
     /**
      * newRenderPipelineStateWithAdditionalBinaryFunctions:stage:
-     * <p>
+     * 
      * Allocate a new compute pipeline state by adding binary functions to this pipeline state.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("newComputePipelineStateWithAdditionalBinaryFunctions:error:")
@@ -134,8 +150,10 @@ public interface MTLComputePipelineState {
 
     /**
      * newIntersectionFunctionTableWithDescriptor:
-     * <p>
+     * 
      * Allocate an intersection function table for the pipeline with the provided descriptor.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("newIntersectionFunctionTableWithDescriptor:")
@@ -145,11 +163,25 @@ public interface MTLComputePipelineState {
 
     /**
      * newVisibleFunctionTableWithDescriptor:
-     * <p>
+     * 
      * Allocate a visible function table for the pipeline with the provided descriptor.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("newVisibleFunctionTableWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
     MTLVisibleFunctionTable newVisibleFunctionTableWithDescriptor(MTLVisibleFunctionTableDescriptor descriptor);
+
+    /**
+     * [@property] gpuResourceID
+     * 
+     * Handle of the GPU resource suitable for storing in an Argument Buffer
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("gpuResourceID")
+    @ByValue
+    MTLResourceID gpuResourceID();
 }

@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * likely to look at - hence attention based).
  * The resulting observation, VNSaliencyImageObservation, encodes this data as a heat map which can be used to highlight
  * regions of interest.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Vision")

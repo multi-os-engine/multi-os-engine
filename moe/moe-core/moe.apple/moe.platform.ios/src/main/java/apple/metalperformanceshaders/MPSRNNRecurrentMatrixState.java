@@ -29,8 +29,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSRNNRecurrentMatrixState
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * This class holds all the data that is passed from one sequence iteration of the matrix-based RNN layer to the next.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -92,7 +94,7 @@ public class MPSRNNRecurrentMatrixState extends MPSState {
 
     /**
      * Access the stored memory cell matrix data (if present).
-     *
+     * 
      * @param layerIndex Index of the layer whose to get - belongs to { 0, 1,...,@see numberOfLayers - 1 }
      * @return For valid layerIndex the memory cell image matrix, otherwise nil.
      */
@@ -102,7 +104,7 @@ public class MPSRNNRecurrentMatrixState extends MPSState {
 
     /**
      * Access the stored recurrent matrix data.
-     *
+     * 
      * @param layerIndex Index of the layer whose to get - belongs to { 0, 1,...,@see numberOfLayers - 1 }
      * @return For valid layerIndex the recurrent output matrix data, otherwise nil.
      */

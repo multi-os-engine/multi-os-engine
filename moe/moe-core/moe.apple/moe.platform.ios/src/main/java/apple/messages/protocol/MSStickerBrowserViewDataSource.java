@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * The MSStickerBrowserViewDataSource protocol declares the methods that the Sticker Browser View uses to access the
  * contents of its data source object.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Messages")
@@ -37,7 +39,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface MSStickerBrowserViewDataSource {
     /**
      * Returns the number of Stickers that the sticker browser should show.
-     *
+     * 
      * @param stickerBrowserView The sticker browser view .
      * @return The number of stickers.
      */
@@ -48,7 +50,7 @@ public interface MSStickerBrowserViewDataSource {
 
     /**
      * Returns the sticker that the sticker browser should show in the browser.
-     *
+     * 
      * @param stickerBrowserView The sticker browser view.
      * @param index              The index of the sticker to show.
      * @return A MSSticker object.

@@ -19,9 +19,18 @@ package apple.corefoundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 public final class CFDataSearchFlags {
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NUInt public static final long Backwards = 0x0000000000000001L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NUInt public static final long Anchored = 0x0000000000000002L;
 
     @Generated

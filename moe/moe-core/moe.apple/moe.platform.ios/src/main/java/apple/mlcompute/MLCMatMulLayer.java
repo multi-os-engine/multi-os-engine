@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCMatMulLayer
- * <p>
+ * 
  * A batched matrix multiplication layer
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -87,7 +89,7 @@ public class MLCMatMulLayer extends MLCLayer {
 
     /**
      * [@property] descriptor
-     * <p>
+     * 
      * The matrix multiplication descriptor
      */
     @Generated
@@ -126,7 +128,7 @@ public class MLCMatMulLayer extends MLCLayer {
 
     /**
      * Create a matrix multiply layer
-     *
+     * 
      * @param descriptor A matrix multiply descriptor
      * @return A new layer for matrix multiplication.
      */

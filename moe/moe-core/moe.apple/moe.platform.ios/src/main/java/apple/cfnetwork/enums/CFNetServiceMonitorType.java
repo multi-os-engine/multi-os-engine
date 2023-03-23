@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * CFNetServiceMonitorType
- * <p>
+ * 
  * Discussion:
  * Record type specifier in order to inform CFNetServiceMonitor to
  * watch for certain record changes.

@@ -17,7 +17,7 @@ limitations under the License.
 package apple.scenekit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
+import apple.corefoundation.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSData;

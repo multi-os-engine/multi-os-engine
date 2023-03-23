@@ -26,6 +26,11 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ * Deprecated-Since: 13.0
+ */
+@Deprecated
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)

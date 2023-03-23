@@ -41,6 +41,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INSetDefrosterSettingsInCarIntent is deprecated. There is no replacement.
+ */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -172,6 +178,11 @@ public class INSetDefrosterSettingsInCarIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INSetDefrosterSettingsInCarIntent initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithEnable:defroster:")
     public native INSetDefrosterSettingsInCarIntent initWithEnableDefroster(NSNumber enable, @NInt long defroster);
@@ -182,10 +193,16 @@ public class INSetDefrosterSettingsInCarIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("carName")
     public native INSpeakableString carName();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithEnable:defroster:carName:")
     public native INSetDefrosterSettingsInCarIntent initWithEnableDefrosterCarName(NSNumber enable,

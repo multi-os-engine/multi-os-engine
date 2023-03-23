@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCConcatenationLayer
- * <p>
+ * 
  * A concatenation layer
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -87,9 +89,9 @@ public class MLCConcatenationLayer extends MLCLayer {
 
     /**
      * [@property] dimension
-     * <p>
+     * 
      * The dimension (or axis) along which to concatenate tensors
-     * <p>
+     * 
      * The default value is 1 (which typically represents features channels)
      */
     @Generated
@@ -129,7 +131,7 @@ public class MLCConcatenationLayer extends MLCLayer {
 
     /**
      * Create a concatenation layer
-     *
+     * 
      * @return A new concatenation layer
      */
     @Generated
@@ -138,7 +140,7 @@ public class MLCConcatenationLayer extends MLCLayer {
 
     /**
      * Create a concatenation layer
-     *
+     * 
      * @param dimension The concatenation dimension
      * @return A new concatenation layer
      */

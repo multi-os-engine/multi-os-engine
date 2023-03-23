@@ -17,7 +17,6 @@ limitations under the License.
 package apple.coreimage;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.coreimage.protocol.CIImageProcessorOutput;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
@@ -44,11 +43,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * In order to use a CIImageProcessorInput & CIImageProcessorOutput you must
  * subclass from a CIImageProcessorKernel and override the methods you need to
  * produce the desired output.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CoreImage")
@@ -83,9 +85,9 @@ public class CIImageProcessorKernel extends NSObject {
      * The inputs and arguments will be retained so that your subclass can be called when the image is drawn.
      * Arguments is a dictionary containing inmutable objects of type NSData, NSString, NSNumber,
      * CIVector or CIColor.
-     * <p>
+     * 
      * This method will return [CIImage emptyImage] if extent is empty.
-     * <p>
+     * 
      * This method will return nil and an error if:
      * * calling outputFormat on your subclass returns an unsupported format
      * * calling formatForInputAtIndex: on your subclass returns an unsupported format
@@ -133,7 +135,7 @@ public class CIImageProcessorKernel extends NSObject {
      * On iOS 12 and macOS 10.14, the formats kCIFormatRh and kCIFormatRf are also supported.
      * If the requested inputFormat is 0, then the input will be a supported format that best
      * matches the rendering context's workingFormat.
-     * <p>
+     * 
      * If a processor wants data in a colorspace other than the context workingspace,
      * then call imageByColorMatchingWorkingSpaceToColorSpace on the processor input.
      * If a processor wants it input as alpha-unpremultiplied RGBA data, then call
@@ -182,14 +184,14 @@ public class CIImageProcessorKernel extends NSObject {
      * Override this class method to implement your processor's subclass of CIImageProcessorKernel.
      * The class method will be called to produce the requested region of the output image
      * given the required regions of the input images and other arguments.
-     * <p>
+     * 
      * The class method is passed two objects:
      * 'inputs’ An array of id<CIImageProcessorInput> that the block consumes to produces output.
      * The input.region may be larger than the rect returned by 'roiForInputAtIndex'.
      * 'output' The id<CIImageProcessorOutput> that the block must provide results to.
      * ‘arguments’ The arguments dictionary passed to applyWithExtent:inputs:arguments:error:
      * The contents of these objects are not valid outside the scope of this method.
-     * <p>
+     * 
      * Note that since this is a class method you cannot use or capture any state by accident.
      * All the parameters that affect the output results must be passed in ‘inputs’ and ‘arguments'.
      * This supports 0, 1, 2 or more input images.
@@ -214,7 +216,7 @@ public class CIImageProcessorKernel extends NSObject {
      * This will be called one or more times per render to determine what portion
      * of the input images are needed to render a given 'outputRect' of the output.
      * This will not be called if there are 0 input images.
-     * <p>
+     * 
      * Note that since this is a class method you cannot use or capture any state by accident.
      * All the parameters that affect the output results must be passed in ‘inputs’ and ‘arguments’.
      */
@@ -245,6 +247,9 @@ public class CIImageProcessorKernel extends NSObject {
     @Selector("init")
     public native CIImageProcessorKernel init();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("outputIsOpaque")
     public static native boolean outputIsOpaque();

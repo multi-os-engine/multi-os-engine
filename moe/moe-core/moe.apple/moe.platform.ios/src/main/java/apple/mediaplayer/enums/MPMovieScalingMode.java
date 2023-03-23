@@ -22,24 +22,44 @@ import org.moe.natj.general.ann.NInt;
 /**
  * -----------------------------------------------------------------------------
  * Types
+ * 
+ * API-Since: 3.2
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use AVPlayerViewController in AVKit
  */
 @Deprecated
 @Generated
 public final class MPMovieScalingMode {
     /**
      * No scaling
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated @Generated @NInt public static final long None = 0x0000000000000000L;
     /**
      * Uniform scale until one dimension fits
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated @Generated @NInt public static final long AspectFit = 0x0000000000000001L;
     /**
      * Uniform scale until the movie fills the visible bounds. One dimension may have clipped contents
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated @Generated @NInt public static final long AspectFill = 0x0000000000000002L;
     /**
      * Non-uniform scale. Both render dimensions will exactly match the visible bounds
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated @Generated @NInt public static final long Fill = 0x0000000000000003L;
 

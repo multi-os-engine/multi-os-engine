@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -49,7 +48,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -155,6 +158,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -181,6 +185,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -256,46 +261,57 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -382,6 +398,9 @@ public class UIToolbar extends UIView implements UIBarPositioning {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("backgroundImageForToolbarPosition:barMetrics:")
     public native UIImage backgroundImageForToolbarPositionBarMetrics(@NInt long topOrBottom, @NInt long barMetrics);
@@ -401,6 +420,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     /**
      * default is nil
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("barTintColor")
@@ -408,6 +429,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     /**
      * You may not set the delegate when the toolbar is managed by a UINavigationController.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("delegate")
@@ -428,6 +451,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     /**
      * Default is NO on iOS 6 and earlier. Always YES if barStyle is set to UIBarStyleBlackTranslucent
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isTranslucent")
@@ -435,6 +460,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     /**
      * Default is NO on iOS 6 and earlier. Always YES if barStyle is set to UIBarStyleBlackTranslucent
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setTranslucent:")
@@ -452,11 +479,13 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      * Default is nil. When non-nil the image will be used instead of the system image for toolbars in the
      * specified position.
      * For the barMetrics argument, UIBarMetricsDefault is the fallback.
-     * <p>
+     * 
      * DISCUSSION: Interdependence of barStyle, tintColor, backgroundImage.
      * When barStyle or tintColor is set as well as the bar's background image,
      * the bar buttons (unless otherwise customized) will inherit the underlying
      * barStyle or tintColor.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setBackgroundImage:forToolbarPosition:barMetrics:")
@@ -472,6 +501,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     /**
      * default is nil
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setBarTintColor:")
@@ -479,6 +510,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     /**
      * You may not set the delegate when the toolbar is managed by a UINavigationController.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -486,6 +519,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     /**
      * You may not set the delegate when the toolbar is managed by a UINavigationController.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) UIToolbarDelegate value) {
@@ -518,6 +553,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      * shadow to be shown, a custom background image must also be set with
      * -setBackgroundImage:forToolbarPosition:barMetrics: (if the default background image is used, the default shadow
      * image will be used).
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setShadowImage:forToolbarPosition:")
@@ -532,6 +569,9 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Selector("setTintColor:")
     public native void setTintColor(UIColor value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("shadowImageForToolbarPosition:")
     public native UIImage shadowImageForToolbarPosition(@NInt long topOrBottom);
@@ -548,6 +588,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     /**
      * Describes the appearance attributes for the toolbar to use when it is displayed with its compact height. If not
      * set, the standardAppearance will be used instead.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("compactAppearance")
@@ -562,6 +604,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     /**
      * Describes the appearance attributes for the toolbar to use when it is displayed with its compact height. If not
      * set, the standardAppearance will be used instead.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setCompactAppearance:")
@@ -569,6 +613,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     /**
      * Describes the appearance attributes for the toolbar to use when it is displayed with its standard height.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setStandardAppearance:")
@@ -576,6 +622,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     /**
      * Describes the appearance attributes for the toolbar to use when it is displayed with its standard height.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("standardAppearance")
@@ -585,6 +633,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      * Describes the appearance attributes for the toolbar to use at compact height when an observable scroll view is
      * scrolled to the bottom. If not set, will fall back to scrollEdgeAppearance followed by compactAppearance and
      * finally standardAppearance.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("compactScrollEdgeAppearance")
@@ -593,6 +643,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     /**
      * Describes the appearance attributes for the toolbar to use at standard height when an observable scroll view is
      * scrolled to the bottom. If not set, standardAppearance will be used instead.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("scrollEdgeAppearance")
@@ -602,6 +654,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      * Describes the appearance attributes for the toolbar to use at compact height when an observable scroll view is
      * scrolled to the bottom. If not set, will fall back to scrollEdgeAppearance followed by compactAppearance and
      * finally standardAppearance.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setCompactScrollEdgeAppearance:")
@@ -610,6 +664,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     /**
      * Describes the appearance attributes for the toolbar to use at standard height when an observable scroll view is
      * scrolled to the bottom. If not set, standardAppearance will be used instead.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setScrollEdgeAppearance:")

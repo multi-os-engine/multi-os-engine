@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * UIBlurEffect will provide a blur that appears to have been applied to the content layered behind the
  * UIVisualEffectView. Views added to the contentView of a blur visual effect are not blurred themselves.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("UIKit")

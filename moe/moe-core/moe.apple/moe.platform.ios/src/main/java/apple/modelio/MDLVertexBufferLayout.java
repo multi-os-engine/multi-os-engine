@@ -42,8 +42,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MDLVertexBufferLayout
- * <p>
+ * 
  * Describes a vertex buffer's layout
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -171,9 +173,9 @@ public class MDLVertexBufferLayout extends NSObject implements NSCopying {
 
     /**
      * [@property] stride
-     * <p>
+     * 
      * stride in bytes of each vertex element in the buffer.
-     * <p>
+     * 
      * - If you store multiple attributes interleaved in the vertex
      * buffer, the stride will be the sum of sizes of each attribute (and any padding).
      * - If you store multiple attributes non-interleaved (back to back),
@@ -186,9 +188,9 @@ public class MDLVertexBufferLayout extends NSObject implements NSCopying {
 
     /**
      * [@property] stride
-     * <p>
+     * 
      * stride in bytes of each vertex element in the buffer.
-     * <p>
+     * 
      * - If you store multiple attributes interleaved in the vertex
      * buffer, the stride will be the sum of sizes of each attribute (and any padding).
      * - If you store multiple attributes non-interleaved (back to back),

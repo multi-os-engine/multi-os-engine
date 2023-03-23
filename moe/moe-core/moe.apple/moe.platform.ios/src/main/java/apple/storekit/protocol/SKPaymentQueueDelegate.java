@@ -18,6 +18,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface SKPaymentQueueDelegate {
     /**
      * Sent when the storefront changes while a payment is processing.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -32,6 +34,8 @@ public interface SKPaymentQueueDelegate {
      * immediately show the price consent UI. Return NO if you intend to show it at a later time. Defaults to YES.
      * This may be called at any time that you have transaction observers on the payment queue, so make sure to set the
      * delegate before adding any transaction observers if you intend to implement this method.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @IsOptional

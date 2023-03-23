@@ -1,6 +1,5 @@
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGRect;
 import apple.uikit.NSTextLayoutFragment;
 import apple.uikit.NSTextViewportLayoutController;
 import org.moe.natj.general.ann.ByValue;
@@ -11,7 +10,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)

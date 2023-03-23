@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.1
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -91,7 +94,7 @@ public class MPSNNPadGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * A node to represent the gradient of a padding node.
-     *
+     * 
      * @param sourceGradient The input gradient from the 'downstream' gradient filter.
      * @param sourceImage    The input image from the forward reshape node.
      * @return A MPSNNPadGradientNode
@@ -129,7 +132,7 @@ public class MPSNNPadGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * A node to represent the gradient of a padding node.
-     *
+     * 
      * @param sourceGradient The input gradient from the 'downstream' gradient filter.
      * @param sourceImage    The input image from the forward padding node.
      * @return A MPSNNPadGradientNode

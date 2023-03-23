@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("ExternalAccessory")
 @Runtime(ObjCRuntime.class)
@@ -150,24 +153,42 @@ public class EAAccessory extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("connectionID")
     @NUInt
     public native long connectionID();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native EAAccessoryDelegate delegate();
 
+    /**
+     * API-Since: 9.3
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Not supported
+     */
+    @Deprecated
     @Generated
     @Selector("dockType")
     public native String dockType();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("firmwareRevision")
     public native String firmwareRevision();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("hardwareRevision")
     public native String hardwareRevision();
@@ -176,37 +197,60 @@ public class EAAccessory extends NSObject {
     @Selector("init")
     public native EAAccessory init();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("isConnected")
     public native boolean isConnected();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("manufacturer")
     public native String manufacturer();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("modelNumber")
     public native String modelNumber();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
      * array of strings representing the protocols supported by the accessory
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("protocolStrings")
     public native NSArray<String> protocolStrings();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("serialNumber")
     public native String serialNumber();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) EAAccessoryDelegate value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) EAAccessoryDelegate value) {
         Object __old = delegate();

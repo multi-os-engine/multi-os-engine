@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Describes a single data value, either numeric or categorical. Only the `number`
  * property will be used for data points in a numeric axis, and only the `category`
  * property will be used for data points in a categorical axis.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Accessibility")

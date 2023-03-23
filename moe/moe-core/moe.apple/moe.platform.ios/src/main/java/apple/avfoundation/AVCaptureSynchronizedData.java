@@ -26,13 +26,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVCaptureSynchronizedData
- * <p>
+ * 
  * An abstract base class representing the data delivered by a data output through the AVCaptureDataOutputSynchronizer
  * interface.
- * <p>
+ * 
  * AVCaptureDataOutputSynchronizer's -dataOutputSynchronizer:didOutputSynchronizedData: delegate callback delivers a
  * dictionary of key/value pairs, with the keys being the AVCaptureOutput instances returning data, and the values being
  * concrete subclasses of AVCaptureSynchronizedData.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("AVFoundation")
@@ -145,11 +147,11 @@ public class AVCaptureSynchronizedData extends NSObject {
 
     /**
      * [@property] timestamp
-     * <p>
+     * 
      * The time at which this synchronized data was captured.
-     * <p>
-     * Synchronized data is always clocked to the masterClock of the AVCaptureSession to which the data output is
-     * connected.
+     * 
+     * Synchronized data is always clocked to the synchronizationClock of the AVCaptureSession to which the data output
+     * is connected.
      */
     @Generated
     @Selector("timestamp")

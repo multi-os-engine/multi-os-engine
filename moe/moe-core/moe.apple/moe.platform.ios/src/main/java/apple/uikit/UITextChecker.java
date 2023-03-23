@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * A UITextChecker object is used by a client (e.g. a document in an application) to check a given NSString. Generally
  * one UITextChecker instance should be created per document. Multiple related pieces of text may share a single
  * UITextChecker instance, if they are intended to share ignored words and other similar state.
+ * 
+ * API-Since: 3.2
  */
 @Generated
 @Library("UIKit")

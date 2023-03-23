@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueLeakDetectionStatus
- * <p>
+ * 
  * [@constant] HMCharacteristicValueLeakDetectionStatusNone Leak is not detected.
  * [@constant] HMCharacteristicValueLeakDetectionStatusDetected Leak is detected.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class HMCharacteristicValueLeakStatus {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Detected = 0x0000000000000001L;
 
     @Generated

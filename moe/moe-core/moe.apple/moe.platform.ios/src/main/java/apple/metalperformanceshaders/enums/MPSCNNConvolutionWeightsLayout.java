@@ -8,5 +8,8 @@ public final class MPSCNNConvolutionWeightsLayout {
     private MPSCNNConvolutionWeightsLayout() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated public static final int MPSCNNConvolutionWeightsLayoutOHWI = 0x00000000;
 }

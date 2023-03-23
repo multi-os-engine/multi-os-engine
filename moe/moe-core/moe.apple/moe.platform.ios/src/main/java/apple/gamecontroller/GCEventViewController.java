@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("GameController")
 @Runtime(ObjCRuntime.class)
@@ -69,6 +72,7 @@ public class GCEventViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native GCEventViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -164,19 +168,19 @@ public class GCEventViewController extends UIViewController {
      * the default behavior. By using a controller event view controller you get fine grained control
      * over whether the controller events go trough the UIEvent & UIResponder chain, or if they are
      * decoupled from the UI and all incoming data is served via GCController.
-     * <p>
+     * 
      * Defaults to NO - suppressing UIEvents from game controllers and presenting them via the GCController
      * API whilst this controller's view or any of it's subviews are the first responders. If you are not
      * using any UIView components or UIEvents in your application you should leave this as NO and process
      * your game controller events via the normal GCController API.
-     * <p>
+     * 
      * If set to YES the controller input will start flowing through UIEvent and the UIResponder
      * chain will be used. This gives you fine grained control over the event handling of the
      * controlled view and its subviews. You should stop using GCController instances and the corresponding
      * profiles if you no longer need to read input from them.
-     * <p>
+     * 
      * Note that unlike UIView.userInteractionEnabled this only controls the flow of game controller events.
-     *
+     * 
      * @see GCController
      * @see UIView.userInteractionEnabled
      */
@@ -201,19 +205,19 @@ public class GCEventViewController extends UIViewController {
      * the default behavior. By using a controller event view controller you get fine grained control
      * over whether the controller events go trough the UIEvent & UIResponder chain, or if they are
      * decoupled from the UI and all incoming data is served via GCController.
-     * <p>
+     * 
      * Defaults to NO - suppressing UIEvents from game controllers and presenting them via the GCController
      * API whilst this controller's view or any of it's subviews are the first responders. If you are not
      * using any UIView components or UIEvents in your application you should leave this as NO and process
      * your game controller events via the normal GCController API.
-     * <p>
+     * 
      * If set to YES the controller input will start flowing through UIEvent and the UIResponder
      * chain will be used. This gives you fine grained control over the event handling of the
      * controlled view and its subviews. You should stop using GCController instances and the corresponding
      * profiles if you no longer need to read input from them.
-     * <p>
+     * 
      * Note that unlike UIView.userInteractionEnabled this only controls the flow of game controller events.
-     *
+     * 
      * @see GCController
      * @see UIView.userInteractionEnabled
      */

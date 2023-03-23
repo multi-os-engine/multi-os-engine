@@ -13,6 +13,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A class conforming to the WKURLSchemeHandler protocol provides methods for
  * loading resources with URL schemes that WebKit doesn't know how to handle itself.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("WebKit")
@@ -22,7 +24,7 @@ public interface WKURLSchemeHandler {
     /**
      * Notifies your app to start loading the data for a particular resource
      * represented by the URL scheme handler task.
-     *
+     * 
      * @param webView       The web view invoking the method.
      * @param urlSchemeTask The task that your app should start loading data for.
      */
@@ -32,12 +34,12 @@ public interface WKURLSchemeHandler {
 
     /**
      * Notifies your app to stop handling a URL scheme handler task.
-     * <p>
+     * 
      * After your app is told to stop loading data for a URL scheme handler task
      * it must not perform any callbacks for that task.
      * An exception will be thrown if any callbacks are made on the URL scheme handler task
      * after your app has been told to stop loading for it.
-     *
+     * 
      * @param webView       The web view invoking the method.
      * @param urlSchemeTask The task that your app should stop handling.
      */

@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class is used to represent the presence of users in a home.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("HomeKit")
@@ -103,9 +105,11 @@ public class HMPresenceEvent extends HMEvent implements NSCopying, NSMutableCopy
 
     /**
      * Creates a presence based event.
-     *
+     * 
      * @param presenceEventType The event type desired for the event.
+     * 
      * @param presenceUserType  The user type whose presence will trigger the event.
+     * 
      * @return Instance object representing the presence event.
      */
     @Generated

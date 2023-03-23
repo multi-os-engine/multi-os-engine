@@ -1,8 +1,6 @@
 package apple.vision;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -26,12 +24,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * VNTextObservation
  * [@superclass] VNDetectedObjectObservation
- * <p>
+ * 
  * VNTextObservation Describes a text area detected by the VNRequestNameDetectTextRectangles request.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -77,7 +79,7 @@ public class VNTextObservation extends VNRectangleObservation {
 
     /**
      * Array of individual character bounding boxes found within the observation's boundingBox.
-     * <p>
+     * 
      * If the associated request indicated that it is interested in character boxes by setting the
      * VNDetectTextRectanglesRequest reportCharacterBoxes property to @YES, this property will be non-nil (but may still
      * be empty, depending on the detection results).

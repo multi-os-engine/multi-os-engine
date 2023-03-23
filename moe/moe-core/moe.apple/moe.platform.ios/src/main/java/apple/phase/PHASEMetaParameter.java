@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEMetaParameter
- * <p>
+ * 
  * A generic object that represents an active metaparameter in the system
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -93,7 +95,7 @@ public class PHASEMetaParameter extends NSObject {
 
     /**
      * [@property] identifier
-     * <p>
+     * 
      * The identifier that uniquely represents this metaparameter.
      */
     @Generated
@@ -140,7 +142,7 @@ public class PHASEMetaParameter extends NSObject {
 
     /**
      * [@property] value
-     * <p>
+     * 
      * The value of this metaparameter
      */
     @Generated
@@ -157,7 +159,7 @@ public class PHASEMetaParameter extends NSObject {
 
     /**
      * [@property] value
-     * <p>
+     * 
      * The value of this metaparameter
      */
     @Generated

@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MLModelCollectionEntry
  * Information about a model in a model collection.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CoreML")

@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A relevance provider to indicate relevance at a specific location.
  * [@note] Your app needs Always or When in Use location authorization to use this relevance provider.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("Intents")
@@ -135,7 +137,7 @@ public class INLocationRelevanceProvider extends INRelevanceProvider {
 
     /**
      * The region representing the relevant location.
-     *
+     * 
      * @see CLCircularRegion
      */
     @Generated

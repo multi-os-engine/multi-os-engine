@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CBPeripheralManagerAuthorizationStatus
- * <p>
+ * 
  * Represents the current state of a CBPeripheralManager.
- * <p>
+ * 
  * [@constant] CBPeripheralManagerAuthorizationStatusNotDetermined User has not yet made a choice with regards to this
  * application.
  * [@constant] CBPeripheralManagerAuthorizationStatusRestricted This application is not authorized to share data while
@@ -33,13 +33,39 @@ import org.moe.natj.general.ann.NInt;
  * data while backgrounded.
  * [@constant] CBPeripheralManagerAuthorizationStatusAuthorized User has authorized this application to share data while
  * backgrounded.
+ * 
+ * 
+ * API-Since: 7.0
+ * Deprecated-Since: 13.0
+ * Deprecated-Message: Use CBManagerAuthorization instead
  */
+@Deprecated
 @Generated
 public final class CBPeripheralManagerAuthorizationStatus {
-    @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
-    @Generated @NInt public static final long Restricted = 0x0000000000000001L;
-    @Generated @NInt public static final long Denied = 0x0000000000000002L;
-    @Generated @NInt public static final long Authorized = 0x0000000000000003L;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use CBManagerAuthorization instead
+     */
+    @Deprecated @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use CBManagerAuthorization instead
+     */
+    @Deprecated @Generated @NInt public static final long Restricted = 0x0000000000000001L;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use CBManagerAuthorization instead
+     */
+    @Deprecated @Generated @NInt public static final long Denied = 0x0000000000000002L;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use CBManagerAuthorization instead
+     */
+    @Deprecated @Generated @NInt public static final long Authorized = 0x0000000000000003L;
 
     @Generated
     private CBPeripheralManagerAuthorizationStatus() {

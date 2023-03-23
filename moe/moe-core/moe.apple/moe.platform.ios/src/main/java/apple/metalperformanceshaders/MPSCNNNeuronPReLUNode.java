@@ -25,13 +25,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A ReLU node with parameter a provided independently for each feature channel
- * <p>
+ * 
  * For each pixel, applies the following function:
  * [@code]
  * f(x) = x if x >= 0
  * = aData[i] * x if x < 0, i is the index of the feature channel
  * [@endcode]
- *
+ * 
+ * API-Since: 11.0
+ * 
  * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
  * @param aData      An array of single precision floating-point alpha values to use
  */
@@ -104,13 +106,13 @@ public class MPSCNNNeuronPReLUNode extends MPSCNNNeuronNode {
 
     /**
      * Init a node representing a MPSCNNNeuronTanH kernel
-     * <p>
+     * 
      * For each pixel, applies the following function:
      * [@code]
      * f(x) = x if x >= 0
      * = aData[i] * x if x < 0, i is the index of the feature channel
      * [@endcode]
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param aData      An array of single precision floating-point alpha values to use
      * @return A new MPSNNFilter node for a MPSCNNNeuronTanH kernel.

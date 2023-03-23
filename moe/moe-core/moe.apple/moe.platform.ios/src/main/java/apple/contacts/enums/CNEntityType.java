@@ -21,11 +21,15 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * The entities the user can grant access to.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class CNEntityType {
     /**
      * The user's contacts.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long CNEntityTypeContacts = 0x0000000000000000L;
 

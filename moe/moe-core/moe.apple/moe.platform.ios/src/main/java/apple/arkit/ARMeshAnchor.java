@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An anchor representing a mesh in the world.
+ * 
+ * API-Since: 13.4
  */
 @Generated
 @Library("ARKit")

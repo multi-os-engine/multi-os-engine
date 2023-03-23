@@ -26,9 +26,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVPlayerPlaybackCoordinator
- * <p>
+ * 
  * An AVPlaybackCoordinator subclass for controlling an AVPlayer
- * <p>
+ * 
  * While the coordinator is connected to other participants, it will intercept rate changes and seeks issued to the
  * player to share these with other participants if appropriate.
  * Clients of AVPlayer can thus use the AVPlayer interfaces to modify the playback state of connected participants. When
@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * AVPlayerTimeControlStatusPlaying. This means that a suspension that begun because the player entered a waiting state,
  * will end automatically when the player is done waiting. A suspension that begun because the player paused, will only
  * end once the player's rate changes back to non-zero.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVFoundation")
@@ -98,7 +100,7 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * An object implementing the AVPlaybackCoordinatorDelegate protocol.
      */
     @Generated
@@ -147,7 +149,7 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
 
     /**
      * [@property] player
-     * <p>
+     * 
      * The AVPlayer this coordinator is controlling.
      */
     @Generated
@@ -164,7 +166,7 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * An object implementing the AVPlaybackCoordinatorDelegate protocol.
      */
     @Generated
@@ -173,7 +175,7 @@ public class AVPlayerPlaybackCoordinator extends AVPlaybackCoordinator {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * An object implementing the AVPlaybackCoordinatorDelegate protocol.
      */
     @Generated

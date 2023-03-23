@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -149,6 +152,9 @@ public class PHContentEditingOutput extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("adjustmentData")
     public native PHAdjustmentData adjustmentData();
@@ -157,12 +163,17 @@ public class PHContentEditingOutput extends NSObject {
     @Selector("init")
     public native PHContentEditingOutput init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("initWithContentEditingInput:")
     public native PHContentEditingOutput initWithContentEditingInput(PHContentEditingInput contentEditingInput);
 
     /**
      * Create a PHContentEditingOutput from a newly created asset within the change request block
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithPlaceholderForCreatedAsset:")
@@ -171,11 +182,16 @@ public class PHContentEditingOutput extends NSObject {
 
     /**
      * File URL where the rendered output, with adjustments baked-in, needs to be written to.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("renderedContentURL")
     public native NSURL renderedContentURL();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setAdjustmentData:")
     public native void setAdjustmentData(PHAdjustmentData value);

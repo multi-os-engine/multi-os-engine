@@ -29,8 +29,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request for classifying an image.
- * <p>
+ * 
  * This request will produce a collection of VNClassificationObservation objects which describe an image.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Vision")
@@ -137,11 +139,17 @@ public class VNClassifyImageRequest extends VNImageBasedRequest {
 
     /**
      * Obtain the collection of classifications currently recognized by the Vision framework.
-     *
-     * @return the collection of classifications for the revision, or nil if an error was encountered.
+     * 
      * @param requestRevision The revision of the request for which classifications should be reported.
+     * 
      * @param error           The address of the variable that will be populated with the error when the call fails.
+     * 
+     * @return the collection of classifications for the revision, or nil if an error was encountered.
+     * 
+     *         API-Since: 13.0
+     *         Deprecated-Since: 15.0
      */
+    @Deprecated
     @Generated
     @Selector("knownClassificationsForRevision:error:")
     public static native NSArray<? extends VNClassificationObservation> knownClassificationsForRevisionError(
@@ -186,12 +194,15 @@ public class VNClassifyImageRequest extends VNImageBasedRequest {
 
     /**
      * Obtain the collection of identifiers supported by the target request.
-     * <p>
+     * 
      * This method will return the collection of all possible classification identifiers that are produced by the target
      * request based on its current state of configuration at the time of the call.
-     *
+     * 
      * @param error The address of the variable that will be populated with the error if the call fails.
+     * 
      * @return The collection of classification identifiers, or nil if a failure occurs.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("supportedIdentifiersAndReturnError:")

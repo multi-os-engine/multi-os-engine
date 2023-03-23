@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -58,10 +61,10 @@ public class NSCollectionLayoutDecorationItem extends NSCollectionLayoutItem imp
 
     /**
      * Useful for setting a background decoration view behind a section's content area.
-     * <p>
+     * 
      * contentInset can also be applied as-needed.
      * Register the elementKind with the layout instance to associate with your custom view class/nib
-     * <p>
+     * 
      * +----------------------------------+
      * | |
      * | +----------------------------+ | +--------------------------------+

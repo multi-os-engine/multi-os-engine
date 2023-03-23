@@ -21,27 +21,39 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Values for NSTextAlignment
+ * 
+ * API-Since: 6.0
  */
 @Generated
 public final class NSTextAlignment {
     /**
      * Visually left aligned
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long Left = 0x0000000000000000L;
     /**
      * Visually centered
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long Center = 0x0000000000000001L;
     /**
      * Visually right aligned
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long Right = 0x0000000000000002L;
     /**
      * Fully-justified. The last line in a paragraph is natural-aligned.
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long Justified = 0x0000000000000003L;
     /**
      * Indicates the default alignment for script
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long Natural = 0x0000000000000004L;
 

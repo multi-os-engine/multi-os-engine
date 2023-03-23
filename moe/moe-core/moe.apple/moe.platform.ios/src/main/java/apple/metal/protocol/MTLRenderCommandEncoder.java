@@ -42,15 +42,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MTLRenderCommandEncoder
- * <p>
+ * 
  * MTLRenderCommandEncoder is a container for graphics rendering state and the code to translate the state into a
  * command format that the device can execute.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLRenderCommandEncoder")
 public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("drawIndexedPatches:patchStart:patchCount:patchIndexBuffer:patchIndexBufferOffset:controlPointIndexBuffer:controlPointIndexBufferOffset:instanceCount:baseInstance:")
     void drawIndexedPatchesPatchStartPatchCountPatchIndexBufferPatchIndexBufferOffsetControlPointIndexBufferControlPointIndexBufferOffsetInstanceCountBaseInstance(
@@ -61,9 +66,9 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * drawIndexedPrimitives:indexCount:indexType:indexBuffer:indexBufferOffset:
-     * <p>
+     * 
      * Draw primitives with an index list.
-     *
+     * 
      * @param primitiveType     The type of primitives that elements are assembled into.
      * @param indexCount        The number of indexes to read from the index buffer for each instance.
      * @param indexType         The type if indexes, either 16 bit integer or 32 bit integer.
@@ -79,9 +84,9 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * drawIndexedPrimitives:indexCount:indexType:indexBuffer:indexBufferOffset:instanceCount:
-     * <p>
+     * 
      * Draw primitives with an index list.
-     *
+     * 
      * @param primitiveType     The type of primitives that elements are assembled into.
      * @param indexCount        The number of indexes to read from the index buffer for each instance.
      * @param indexType         The type if indexes, either 16 bit integer or 32 bit integer.
@@ -98,9 +103,9 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * drawIndexedPrimitives:indexCount:indexType:indexBuffer:indexBufferOffset:instanceCount:baseVertex:baseInstance:
-     * <p>
+     * 
      * Draw primitives with an index list.
-     *
+     * 
      * @param primitiveType     The type of primitives that elements are assembled into.
      * @param indexCount        The number of indexes to read from the index buffer for each instance.
      * @param indexType         The type if indexes, either 16 bit integer or 32 bit integer.
@@ -110,6 +115,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * @param instanceCount     The number of instances drawn.
      * @param baseVertex        Offset for vertex_id. NOTE: this can be negative
      * @param baseInstance      Offset for instance_id.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("drawIndexedPrimitives:indexCount:indexType:indexBuffer:indexBufferOffset:instanceCount:baseVertex:baseInstance:")
@@ -120,9 +127,9 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * drawIndexedPrimitives:indexType:indexBuffer:indexBufferOffset:indirectBuffer:indirectBufferOffset:
-     * <p>
+     * 
      * Draw primitives with an index list using an indirect buffer see MTLDrawIndexedPrimitivesIndirectArguments.
-     *
+     * 
      * @param primitiveType        The type of primitives that elements are assembled into.
      * @param indexType            The type if indexes, either 16 bit integer or 32 bit integer.
      * @param indexBuffer          A buffer object that the device will read indexes from.
@@ -132,6 +139,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      *                             MTLDrawIndexedPrimitivesIndirectArguments.
      * @param indirectBufferOffset Byte offset within @a indirectBuffer to start reading indexes from. @a
      *                             indirectBufferOffset must be a multiple of 4.
+     * 
+     *                             API-Since: 9.0
      */
     @Generated
     @Selector("drawIndexedPrimitives:indexType:indexBuffer:indexBufferOffset:indirectBuffer:indirectBufferOffset:")
@@ -140,6 +149,9 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
             @NUInt long indexBufferOffset, @Mapped(ObjCObjectMapper.class) MTLBuffer indirectBuffer,
             @NUInt long indirectBufferOffset);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("drawPatches:patchStart:patchCount:patchIndexBuffer:patchIndexBufferOffset:instanceCount:baseInstance:")
     void drawPatchesPatchStartPatchCountPatchIndexBufferPatchIndexBufferOffsetInstanceCountBaseInstance(
@@ -149,14 +161,16 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * drawPrimitives:indirectBuffer:indirectBufferOffset:
-     * <p>
+     * 
      * Draw primitives without an index list using an indirect buffer see MTLDrawPrimitivesIndirectArguments.
-     *
+     * 
      * @param primitiveType        The type of primitives that elements are assembled into.
      * @param indirectBuffer       A buffer object that the device will read drawPrimitives arguments from, see
      *                             MTLDrawPrimitivesIndirectArguments.
      * @param indirectBufferOffset Byte offset within @a indirectBuffer to start reading indexes from. @a
      *                             indirectBufferOffset must be a multiple of 4.
+     * 
+     *                             API-Since: 9.0
      */
     @Generated
     @Selector("drawPrimitives:indirectBuffer:indirectBufferOffset:")
@@ -165,9 +179,9 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * drawPrimitives:vertexStart:vertexCount:
-     * <p>
+     * 
      * Draw primitives without an index list.
-     *
+     * 
      * @param primitiveType The type of primitives that elements are assembled into.
      * @param vertexStart   For each instance, the first index to draw
      * @param vertexCount   For each instance, the number of indexes to draw
@@ -179,9 +193,9 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * drawPrimitives:vertexStart:vertexCount:instanceCount:
-     * <p>
+     * 
      * Draw primitives without an index list.
-     *
+     * 
      * @param primitiveType The type of primitives that elements are assembled into.
      * @param vertexStart   For each instance, the first index to draw
      * @param vertexCount   For each instance, the number of indexes to draw
@@ -194,14 +208,16 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * drawPrimitives:vertexStart:vertexCount:instanceCount:baseInstance:
-     * <p>
+     * 
      * Draw primitives without an index list.
-     *
+     * 
      * @param primitiveType The type of primitives that elements are assembled into.
      * @param vertexStart   For each instance, the first index to draw
      * @param vertexCount   For each instance, the number of indexes to draw
      * @param instanceCount The number of instances drawn.
      * @param baseInstance  Offset for instance_id.
+     * 
+     *                      API-Since: 9.0
      */
     @Generated
     @Selector("drawPrimitives:vertexStart:vertexCount:instanceCount:baseInstance:")
@@ -210,9 +226,9 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * Constant Blend Color
-     * <p>
+     * 
      * setBlendColorRed:green:blue:alpha:
-     * <p>
+     * 
      * Set the constant blend color used across all blending on all render targets
      */
     @Generated
@@ -221,14 +237,16 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setColorStoreAction:atIndex:
-     * <p>
+     * 
      * If the the store action for a given color attachment was set to MTLStoreActionUnknown when the render command
      * encoder was created,
      * setColorStoreAction:atIndex: must be used to finalize the store action before endEncoding is called.
-     *
+     * 
      * @param storeAction          The desired store action for the given color attachment. This may be set to any value
      *                             other than MTLStoreActionUnknown.
      * @param colorAttachmentIndex The index of the color attachment
+     * 
+     *                             API-Since: 10.0
      */
     @Generated
     @Selector("setColorStoreAction:atIndex:")
@@ -236,7 +254,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setCullMode:
-     * <p>
+     * 
      * Controls if primitives are culled when front facing, back facing, or not culled at all.
      */
     @Generated
@@ -245,7 +263,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setDepthBias:slopeScale:clamp:
-     * <p>
+     * 
      * Depth Bias.
      */
     @Generated
@@ -254,7 +272,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setDepthStencilState:
-     * <p>
+     * 
      * Set the DepthStencil state object.
      */
     @Generated
@@ -263,10 +281,12 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setDepthStoreAction:
-     * <p>
+     * 
      * If the the store action for the depth attachment was set to MTLStoreActionUnknown when the render command encoder
      * was created,
      * setDepthStoreAction: must be used to finalize the store action before endEncoding is called.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDepthStoreAction:")
@@ -274,7 +294,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setFragmentBuffer:offset:atIndex:
-     * <p>
+     * 
      * Set a global buffer for all fragment shaders at the given bind point index.
      */
     @Generated
@@ -284,8 +304,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setFragmentBufferOffset:atIndex:
-     * <p>
+     * 
      * Set the offset within the current global buffer for all fragment shaders at the given bind point index.
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @Selector("setFragmentBufferOffset:atIndex:")
@@ -293,7 +315,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setFragmentBuffers:offsets:withRange:
-     * <p>
+     * 
      * Set an array of global buffers for all fragment shaders with the given bind point range.
      */
     @Generated
@@ -303,9 +325,11 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setFragmentBytes:length:atIndex:
-     * <p>
+     * 
      * Set the data (by copy) for a given fragment buffer binding point. This will remove any existing MTLBuffer from
      * the binding point.
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @Selector("setFragmentBytes:length:atIndex:")
@@ -313,7 +337,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setFragmentSamplerState:atIndex:
-     * <p>
+     * 
      * Set a global sampler for all fragment shaders at the given bind point index.
      */
     @Generated
@@ -322,7 +346,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setFragmentSamplerState:lodMinClamp:lodMaxClamp:atIndex:
-     * <p>
+     * 
      * Set a global sampler for all fragment shaders at the given bind point index.
      */
     @Generated
@@ -332,7 +356,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setFragmentSamplerStates:lodMinClamps:lodMaxClamps:withRange:
-     * <p>
+     * 
      * Set an array of global samplers for all fragment shaders with the given bind point range.
      */
     @Generated
@@ -343,7 +367,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setFragmentSamplerStates:withRange:
-     * <p>
+     * 
      * Set an array of global samplers for all fragment shaders with the given bind point range.
      */
     @Generated
@@ -353,7 +377,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setFragmentTexture:atIndex:
-     * <p>
+     * 
      * Set a global texture for all fragment shaders at the given bind point index.
      */
     @Generated
@@ -362,7 +386,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setFragmentTextures:withRange:
-     * <p>
+     * 
      * Set an array of global textures for all fragment shaders with the given bind point range.
      */
     @Generated
@@ -372,7 +396,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setFrontFacingWinding:
-     * <p>
+     * 
      * The winding order of front-facing primitives.
      */
     @Generated
@@ -381,7 +405,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setRenderPipelineState
-     * <p>
+     * 
      * Sets the current render pipeline state object.
      */
     @Generated
@@ -390,7 +414,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setScissorRect:
-     * <p>
+     * 
      * Specifies a rectangle for a fragment scissor test. All fragments outside of this rectangle are discarded.
      */
     @Generated
@@ -399,8 +423,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setStencilFrontReferenceValue:backReferenceValue:
-     * <p>
+     * 
      * Set the stencil reference value for the back and front stencil buffers independently.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setStencilFrontReferenceValue:backReferenceValue:")
@@ -408,7 +434,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setStencilReferenceValue:
-     * <p>
+     * 
      * Set the stencil reference value for both the back and front stencil buffers.
      */
     @Generated
@@ -417,27 +443,35 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setStencilStoreAction:
-     * <p>
+     * 
      * If the the store action for the stencil attachment was set to MTLStoreActionUnknown when the render command
      * encoder was created,
      * setStencilStoreAction: must be used to finalize the store action before endEncoding is called.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setStencilStoreAction:")
     void setStencilStoreAction(@NUInt long storeAction);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setTessellationFactorBuffer:offset:instanceStride:")
     void setTessellationFactorBufferOffsetInstanceStride(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
             @NUInt long offset, @NUInt long instanceStride);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setTessellationFactorScale:")
     void setTessellationFactorScale(float scale);
 
     /**
      * setTriangleFillMode:
-     * <p>
+     * 
      * Set how to rasterize triangle and triangle strip primitives.
      */
     @Generated
@@ -446,7 +480,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setVertexBuffer:offset:atIndex:
-     * <p>
+     * 
      * Set a global buffer for all vertex shaders at the given bind point index.
      */
     @Generated
@@ -456,8 +490,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setVertexBufferOffset:atIndex:
-     * <p>
+     * 
      * Set the offset within the current global buffer for all vertex shaders at the given bind point index.
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @Selector("setVertexBufferOffset:atIndex:")
@@ -465,7 +501,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setVertexBuffers:offsets:withRange:
-     * <p>
+     * 
      * Set an array of global buffers for all vertex shaders with the given bind point range.
      */
     @Generated
@@ -475,9 +511,11 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setVertexBytes:length:atIndex:
-     * <p>
+     * 
      * Set the data (by copy) for a given vertex buffer binding point. This will remove any existing MTLBuffer from the
      * binding point.
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @Selector("setVertexBytes:length:atIndex:")
@@ -485,7 +523,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setVertexSamplerState:atIndex:
-     * <p>
+     * 
      * Set a global sampler for all vertex shaders at the given bind point index.
      */
     @Generated
@@ -494,7 +532,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setVertexSamplerState:lodMinClamp:lodMaxClamp:atIndex:
-     * <p>
+     * 
      * Set a global sampler for all vertex shaders at the given bind point index.
      */
     @Generated
@@ -504,7 +542,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setVertexSamplerStates:lodMinClamps:lodMaxClamps:withRange:
-     * <p>
+     * 
      * Set an array of global samplers for all vertex shaders with the given bind point range.
      */
     @Generated
@@ -515,7 +553,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setVertexSamplerStates:withRange:
-     * <p>
+     * 
      * Set an array of global samplers for all vertex shaders with the given bind point range.
      */
     @Generated
@@ -525,7 +563,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setVertexTexture:atIndex:
-     * <p>
+     * 
      * Set a global texture for all vertex shaders at the given bind point index.
      */
     @Generated
@@ -534,7 +572,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setVertexTextures:withRange:
-     * <p>
+     * 
      * Set an array of global textures for all vertex shaders with the given bind point range.
      */
     @Generated
@@ -544,7 +582,7 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setViewport:
-     * <p>
+     * 
      * Set the viewport, which is used to transform vertexes from normalized device coordinates to window coordinates.
      * Fragments that lie outside of the viewport are clipped, and optionally clamped for fragments outside of
      * znear/zfar.
@@ -555,9 +593,9 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setVisibilityResultMode:offset:
-     * <p>
+     * 
      * Monitor if samples pass the depth and stencil tests.
-     *
+     * 
      * @param mode   Controls if the counter is disabled or moniters passing samples.
      * @param offset The offset relative to the occlusion query buffer provided when the command encoder was created.
      *               offset must be a multiple of 8.
@@ -568,12 +606,14 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * updateFence:afterStages:
-     * <p>
+     * 
      * Update the fence to capture all GPU work so far enqueued by this encoder for the given stages.
-     * <p>
+     * 
      * Unlike <st>updateFence:</st>, this method will update the fence when the given stage(s) complete, allowing for
      * commands to overlap in execution.
      * On iOS, render command encoder fence updates are always delayed until the end of the encoder.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("updateFence:afterStages:")
@@ -581,12 +621,14 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * waitForFence:beforeStages:
-     * <p>
+     * 
      * Prevent further GPU work until the fence is reached for the given stages.
-     * <p>
+     * 
      * Unlike <st>waitForFence:</st>, this method will only block commands assoicated with the given stage(s), allowing
      * for commands to overlap in execution.
      * On iOS, render command encoder fence waits always occur the beginning of the encoder.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("waitForFence:beforeStages:")
@@ -594,8 +636,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * dispatchThreadsPerTile:
-     * <p>
+     * 
      * dispatch threads to perform a mid-render compute operation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("dispatchThreadsPerTile:")
@@ -603,14 +647,16 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setColorStoreActionOptions:atIndex:
-     * <p>
+     * 
      * If the the store action for a given color attachment was set to MTLStoreActionUnknown when the render command
      * encoder was created,
      * setColorStoreActionOptions:atIndex: may be used to finalize the store action options before endEncoding is
      * called.
-     *
+     * 
      * @param storeActionOptions   The desired store action options for the given color attachment.
      * @param colorAttachmentIndex The index of the color attachment
+     * 
+     *                             API-Since: 11.0
      */
     @Generated
     @Selector("setColorStoreActionOptions:atIndex:")
@@ -618,8 +664,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setDepthClipMode:
-     * <p>
+     * 
      * Controls what is done with fragments outside of the near or far planes.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDepthClipMode:")
@@ -627,10 +675,12 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setDepthStoreActionOptions:
-     * <p>
+     * 
      * If the the store action for the depth attachment was set to MTLStoreActionUnknown when the render command encoder
      * was created,
      * setDepthStoreActionOptions: may be used to finalize the store action options before endEncoding is called.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDepthStoreActionOptions:")
@@ -638,10 +688,12 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setStencilStoreActionOptions:
-     * <p>
+     * 
      * If the the store action for the stencil attachment was set to MTLStoreActionUnknown when the render command
      * encoder was created,
      * setStencilStoreActionOptions: may be used to finalize the store action options before endEncoding is called.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setStencilStoreActionOptions:")
@@ -649,8 +701,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setThreadgroupMemoryLength:offset:atIndex:
-     * <p>
+     * 
      * Set the size of the threadgroup memory argument at the given bind point index and offset.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setThreadgroupMemoryLength:offset:atIndex:")
@@ -658,8 +712,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setTileBuffer:offset:atIndex:
-     * <p>
+     * 
      * Set a global buffer for all tile shaders at the given bind point index.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTileBuffer:offset:atIndex:")
@@ -668,8 +724,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setTileBufferOffset:atIndex:
-     * <p>
+     * 
      * Set the offset within the current global buffer for all tile shaders at the given bind point index.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTileBufferOffset:atIndex:")
@@ -677,8 +735,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setTileBuffers:offsets:withRange:
-     * <p>
+     * 
      * Set an array of global buffers for all tile shaders with the given bind point range.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTileBuffers:offsets:withRange:")
@@ -687,9 +747,11 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setTileBytes:length:atIndex:
-     * <p>
+     * 
      * Set the data (by copy) for a given tile buffer binding point. This will remove any existing MTLBuffer from the
      * binding point.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTileBytes:length:atIndex:")
@@ -697,8 +759,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setTileSamplerState:atIndex:
-     * <p>
+     * 
      * Set a global sampler for all tile shaders at the given bind point index.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTileSamplerState:atIndex:")
@@ -706,8 +770,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setTileSamplerState:lodMinClamp:lodMaxClamp:atIndex:
-     * <p>
+     * 
      * Set a global sampler for all tile shaders at the given bind point index.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTileSamplerState:lodMinClamp:lodMaxClamp:atIndex:")
@@ -716,8 +782,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setTileSamplerStates:lodMinClamps:lodMaxClamps:withRange:
-     * <p>
+     * 
      * Set an array of global samplers for all tile shaders with the given bind point range.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTileSamplerStates:lodMinClamps:lodMaxClamps:withRange:")
@@ -727,8 +795,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setTileSamplerStates:withRange:
-     * <p>
+     * 
      * Set an array of global samplers for all fragment shaders with the given bind point range.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTileSamplerStates:withRange:")
@@ -737,8 +807,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setTileTexture:atIndex:
-     * <p>
+     * 
      * Set a global texture for all tile shaders at the given bind point index.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTileTexture:atIndex:")
@@ -746,8 +818,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setTileTextures:withRange:
-     * <p>
+     * 
      * Set an array of global textures for all tile shaders with the given bind point range.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setTileTextures:withRange:")
@@ -756,8 +830,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * [@property] tileHeight:
-     * <p>
+     * 
      * The height of the tile for this render pass.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("tileHeight")
@@ -766,8 +842,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * [@property] tileWidth:
-     * <p>
+     * 
      * The width of the tile for this render pass.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("tileWidth")
@@ -776,31 +854,39 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * useHeap:
-     * <p>
+     * 
      * Declare that the resources allocated from a heap may be accessed by the render pass through an argument buffer
-     * <p>
+     * 
      * This method does not protect against data hazards; these hazards must be addressed using an MTLFence. This method
      * must be called before encoding any draw commands which may access the resources allocated from the heap through
      * an argument buffer. This method may cause all of the color attachments allocated from the heap to become
      * decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be
      * used for color attachments instead, with a minimal (i.e. read-only) usage.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("useHeap:")
     void useHeap(@Mapped(ObjCObjectMapper.class) MTLHeap heap);
 
     /**
      * useHeaps:count:
-     * <p>
+     * 
      * Declare that the resources allocated from an array of heaps may be accessed by the render pass through an
      * argument buffer
-     * <p>
+     * 
      * This method does not protect against data hazards; these hazards must be addressed using an MTLFence. This method
      * must be called before encoding any draw commands which may access the resources allocated from the heaps through
      * an argument buffer. This method may cause all of the color attachments allocated from the heaps to become
      * decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be
      * used for color attachments instead, with a minimal (i.e. read-only) usage.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("useHeaps:count:")
     void useHeapsCount(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> heaps, @NUInt long count);
@@ -813,11 +899,15 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * argument buffer. However, this method may cause color attachments to become decompressed. Therefore, this method
      * should be called until as late as possible within a render command encoder. Declaring a minimal usage (i.e.
      * read-only) may prevent color attachments from becoming decompressed on some devices.
-     * <p>
+     * 
      * Note that calling useResource does not retain the resource. It is the responsiblity of the user to retain the
      * resource until
      * the command buffer has been executed.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("useResource:usage:")
     void useResourceUsage(@Mapped(ObjCObjectMapper.class) MTLResource resource, @NUInt long usage);
@@ -830,16 +920,23 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * argument buffer. However, this method may cause color attachments to become decompressed. Therefore, this method
      * should be called until as late as possible within a render command encoder. Declaring a minimal usage (i.e.
      * read-only) may prevent color attachments from becoming decompressed on some devices.
-     * <p>
+     * 
      * Note that calling useResources does not retain the resources. It is the responsiblity of the user to retain the
      * resources until
      * the command buffer has been executed.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("useResources:count:usage:")
     void useResourcesCountUsage(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> resources, @NUInt long count,
             @NUInt long usage);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("drawIndexedPatches:patchIndexBuffer:patchIndexBufferOffset:controlPointIndexBuffer:controlPointIndexBufferOffset:indirectBuffer:indirectBufferOffset:")
     void drawIndexedPatchesPatchIndexBufferPatchIndexBufferOffsetControlPointIndexBufferControlPointIndexBufferOffsetIndirectBufferIndirectBufferOffset(
@@ -848,6 +945,9 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
             @NUInt long controlPointIndexBufferOffset, @Mapped(ObjCObjectMapper.class) MTLBuffer indirectBuffer,
             @NUInt long indirectBufferOffset);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("drawPatches:patchIndexBuffer:patchIndexBufferOffset:indirectBuffer:indirectBufferOffset:")
     void drawPatchesPatchIndexBufferPatchIndexBufferOffsetIndirectBufferIndirectBufferOffset(
@@ -857,11 +957,13 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * executeCommandsInBuffer:indirectBuffer:indirectBufferOffset:
-     * <p>
+     * 
      * Execute commands in the buffer within the range specified by the indirect range buffer.
-     * <p>
+     * 
      * The same indirect command buffer may be executed any number of times within the same encoder.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param indirectRangeBuffer  An indirect buffer from which the device reads the execution range parameter, as laid
      *                             out in the MTLIndirectCommandBufferExecutionRange structure.
      * @param indirectBufferOffset The byte offset within indirectBuffer where the execution range parameter is located.
@@ -875,10 +977,12 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * executeCommandsInBuffer:withRange:
-     * <p>
+     * 
      * Execute commands in the buffer within the range specified.
-     * <p>
+     * 
      * The same indirect command buffer may be executed any number of times within the same encoder.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("executeCommandsInBuffer:withRange:")
@@ -888,10 +992,12 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setScissorRects:
-     * <p>
+     * 
      * Specifies an array of rectangles for a fragment scissor test. The specific rectangle used is based on the [[
      * viewport_array_index ]] value output by the vertex shader. Fragments that lie outside the scissor rectangle are
      * discarded.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setScissorRects:count:")
@@ -901,15 +1007,17 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setVertexAmplificationCount:
-     * <p>
+     * 
      * Specifies the vertex amplification count and associated view mappings for each amplification ID.
-     * <p>
+     * 
      * Each mapping element describes how to route the corresponding amplification ID to a specific viewport and render
      * target array index by using offsets from the base array index provided by the [[render_target_array_index]]
      * and/or [[viewport_array_index]] output attributes in the vertex shader. This allows a modicum of programmability
      * for each amplified vertex to be routed to a different [[render_target_array_index]] and [[viewport_array_index]]
      * even though these attribytes cannot be amplified themselves.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param count        the amplification count. The maximum value is currently 2.
      * @param viewMappings an array of mapping elements.
      */
@@ -920,9 +1028,11 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setViewports:
-     * <p>
+     * 
      * Specifies an array of viewports, which are used to transform vertices from normalized device coordinates to
      * window coordinates based on [[ viewport_array_index ]] value specified in the vertex shader.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setViewports:count:")
@@ -930,31 +1040,35 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
             @NUInt long count);
 
     /**
-     * useHeap:stages
-     * <p>
+     * useHeap:stages:
+     * 
      * Declare that the resources allocated from a heap may be accessed by the render pass through an argument buffer
-     * <p>
+     * 
      * If the heap is tracked, this method protects against hazard tracking; these hazards must be addressed using an
      * MTLFence. This method must be called before encoding any draw commands which may access the resources allocated
      * from the heap through an argument buffer. This method may cause all of the color attachments allocated from the
      * heap to become decompressed. Therefore, it is recommended that the useResource:usage: or
      * useResources:count:usage: methods be used for color attachments instead, with a minimal (i.e. read-only) usage.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("useHeap:stages:")
     void useHeapStages(@Mapped(ObjCObjectMapper.class) MTLHeap heap, @NUInt long stages);
 
     /**
-     * useHeaps:count:stages
-     * <p>
+     * useHeaps:count:stages:
+     * 
      * Declare that the resources allocated from an array of heaps may be accessed by the render pass through an
      * argument buffer
-     * <p>
+     * 
      * This method does not protect against data hazards; these hazards must be addressed using an MTLFence. This method
      * must be called before encoding any draw commands which may access the resources allocated from the heaps through
      * an argument buffer. This method may cause all of the color attachments allocated from the heaps to become
      * decompressed. Therefore, it is recommended that the useResource:usage: or useResources:count:usage: methods be
      * used for color attachments instead, with a minimal (i.e. read-only) usage.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("useHeaps:count:stages:")
@@ -964,15 +1078,17 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
     /**
      * * @method useResources:usage:stage
      * * @abstract Declare that a resource may be accessed by the render pass through an argument buffer
-     * * @For hazard tracked resources, this method protects against data hazards. This method must be called before
-     * encoding any draw commands which may access the resource through an argument buffer. However, this method may
-     * cause color attachments to become decompressed. Therefore, this method should be called until as late as possible
-     * within a render command encoder. Declaring a minimal usage (i.e. read-only) may prevent color attachments from
-     * becoming decompressed on some devices.
-     * <p>
+     * * @discussion For hazard tracked resources, this method protects against data hazards. This method must be called
+     * before encoding any draw commands which may access the resource through an argument buffer. However, this method
+     * may cause color attachments to become decompressed. Therefore, this method should be called until as late as
+     * possible within a render command encoder. Declaring a minimal usage (i.e. read-only) may prevent color
+     * attachments from becoming decompressed on some devices.
+     * 
      * Note that calling useResource does not retain the resource. It is the responsiblity of the user to retain the
      * resource until
      * the command buffer has been executed.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("useResource:usage:stages:")
@@ -987,10 +1103,12 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      * may cause color attachments to become decompressed. Therefore, this method should be called until as late as
      * possible within a render command encoder. Declaring a minimal usage (i.e. read-only) may prevent color
      * attachments from becoming decompressed on some devices.
-     * <p>
+     * 
      * Note that calling useResources does not retain the resources. It is the responsiblity of the user to retain the
      * resources until
      * the command buffer has been executed.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("useResources:count:usage:stages:")
@@ -999,10 +1117,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * sampleCountersInBuffer:atSampleIndex:withBarrier:
-     * <p>
+     * 
      * Sample hardware counters at this point in the render encoder and
      * store the counter sample into the sample buffer at the specified index.
-     *
+     * 
      * @param sampleBuffer The sample buffer to sample into
      * @param sampleIndex  The index into the counter buffer to write the sample.
      * @param barrier      Insert a barrier before taking the sample. Passing
@@ -1013,6 +1131,8 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
      *                     In general, passing YES will lead to more repeatable counter results but
      *                     may negatively impact performance. Passing NO will generally be higher performance
      *                     but counter results may not be repeatable.
+     * 
+     *                     API-Since: 14.0
      */
     @Generated
     @Selector("sampleCountersInBuffer:atSampleIndex:withBarrier:")
@@ -1022,8 +1142,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setFragmentAccelerationStructure:atBufferIndex:
-     * <p>
+     * 
      * Set a global acceleration structure for all fragment shaders at the given buffer bind point index.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setFragmentAccelerationStructure:atBufferIndex:")
@@ -1032,8 +1154,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setFragmentIntersectionFunctionTable:atBufferIndex:
-     * <p>
+     * 
      * Set a global intersection function table for all fragment shaders at the given buffer bind point index.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setFragmentIntersectionFunctionTable:atBufferIndex:")
@@ -1043,19 +1167,23 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setFragmentIntersectionFunctionTables:withBufferRange:
-     * <p>
+     * 
      * Set an array of global intersection function tables for all fragment shaders with the given buffer bind point
      * range.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setFragmentIntersectionFunctionTables:withBufferRange:")
     void setFragmentIntersectionFunctionTablesWithBufferRange(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> intersectionFunctionTable, @ByValue NSRange range);
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> intersectionFunctionTables, @ByValue NSRange range);
 
     /**
      * setFragmentVisibleFunctionTable:atBufferIndex:
-     * <p>
+     * 
      * Set a global visible function table for all fragment shaders at the given buffer bind point index.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setFragmentVisibleFunctionTable:atBufferIndex:")
@@ -1064,8 +1192,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setFragmentVisibleFunctionTables:withBufferRange:
-     * <p>
+     * 
      * Set an array of global visible function tables for all fragment shaders with the given buffer bind point range.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setFragmentVisibleFunctionTables:withBufferRange:")
@@ -1074,8 +1204,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setTileAccelerationStructure:atBufferIndex:
-     * <p>
+     * 
      * Set a global acceleration structure for all tile shaders at the given buffer bind point index.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTileAccelerationStructure:atBufferIndex:")
@@ -1084,8 +1216,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setTileIntersectionFunctionTable:atBufferIndex:
-     * <p>
+     * 
      * Set a global intersection function table for all tile shaders at the given buffer bind point index.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTileIntersectionFunctionTable:atBufferIndex:")
@@ -1095,18 +1229,22 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setTileIntersectionFunctionTables:withBufferRange:
-     * <p>
+     * 
      * Set an array of global intersection function tables for all tile shaders with the given buffer bind point range.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTileIntersectionFunctionTables:withBufferRange:")
     void setTileIntersectionFunctionTablesWithBufferRange(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> intersectionFunctionTable, @ByValue NSRange range);
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> intersectionFunctionTables, @ByValue NSRange range);
 
     /**
      * setTileVisibleFunctionTable:atBufferIndex:
-     * <p>
+     * 
      * Set a global visible function table for all tile shaders at the given buffer bind point index.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTileVisibleFunctionTable:atBufferIndex:")
@@ -1115,8 +1253,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setTileVisibleFunctionTables:withBufferRange:
-     * <p>
+     * 
      * Set an array of global visible function tables for all tile shaders with the given buffer bind point range.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTileVisibleFunctionTables:withBufferRange:")
@@ -1125,8 +1265,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setVertexAccelerationStructure:atBufferIndex:
-     * <p>
+     * 
      * Set a global acceleration structure for all vertex shaders at the given buffer bind point index.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setVertexAccelerationStructure:atBufferIndex:")
@@ -1135,8 +1277,10 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setVertexIntersectionFunctionTable:atBufferIndex:
-     * <p>
+     * 
      * Set a global intersection function table for all vertex shaders at the given buffer bind point index.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setVertexIntersectionFunctionTable:atBufferIndex:")
@@ -1146,19 +1290,23 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setVertexIntersectionFunctionTables:withBufferRange:
-     * <p>
+     * 
      * Set an array of global intersection function tables for all vertex shaders with the given buffer bind point
      * range.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setVertexIntersectionFunctionTables:withBufferRange:")
     void setVertexIntersectionFunctionTablesWithBufferRange(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> intersectionFunctionTable, @ByValue NSRange range);
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> intersectionFunctionTables, @ByValue NSRange range);
 
     /**
      * setVertexVisibleFunctionTable:atBufferIndex:
-     * <p>
+     * 
      * Set a global visible function table for all vertex shaders at the given buffer bind point index.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setVertexVisibleFunctionTable:atBufferIndex:")
@@ -1167,11 +1315,356 @@ public interface MTLRenderCommandEncoder extends MTLCommandEncoder {
 
     /**
      * setVertexVisibleFunctionTables:withBufferRange:
-     * <p>
+     * 
      * Set an array of global visible function tables for all vertex shaders with the given buffer bind point range.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setVertexVisibleFunctionTables:withBufferRange:")
     void setVertexVisibleFunctionTablesWithBufferRange(
             @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> functionTables, @ByValue NSRange range);
+
+    /**
+     * drawMeshThreadgroups:threadsPerObjectThreadgroup:threadsPerMeshThreadgroup:
+     * 
+     * Enqueue a grid of object (if present) or mesh shader threadgroups.
+     * 
+     * The dimensions of the threadgroups and the grid are specified directly.
+     * 
+     * @param threadgroupsPerGrid         The number of threadgroups in the object (if present) or mesh shader grid.
+     * @param threadsPerObjectThreadgroup The number of threads in one object shader threadgroup. Ignored if object
+     *                                    shader is not present.
+     * @param threadsPerMeshThreadgroup   The number of threads in one mesh shader threadgroup.
+     * 
+     *                                    API-Since: 16.0
+     */
+    @Generated
+    @Selector("drawMeshThreadgroups:threadsPerObjectThreadgroup:threadsPerMeshThreadgroup:")
+    void drawMeshThreadgroupsThreadsPerObjectThreadgroupThreadsPerMeshThreadgroup(@ByValue MTLSize threadgroupsPerGrid,
+            @ByValue MTLSize threadsPerObjectThreadgroup, @ByValue MTLSize threadsPerMeshThreadgroup);
+
+    /**
+     * drawMeshThreadgroupsWithIndirectBuffer:indirectBufferOffset:threadsPerObjectThreadgroup:threadsPerMeshThreadgroup:
+     * 
+     * Enqueue a grid of object (if present) or mesh shader threadgroups.
+     * 
+     * The dimensions of the threadgroups are specified directly, the dimensions of the grid, in threadgroups, are read
+     * from a buffer by the GPU.
+     * 
+     * @param indirectBuffer              A buffer object that the device will read the grid size from, see
+     *                                    MTLDispatchThreadgroupsIndirectArguments.
+     * @param indirectBufferOffset        Byte offset within @a indirectBuffer to read arguments from. @a
+     *                                    indirectBufferOffset must be a multiple of 4.
+     * @param threadsPerObjectThreadgroup The number of threads in one object shader threadgroup. Ignored if object
+     *                                    shader is not present.
+     * @param threadsPerMeshThreadgroup   The number of threads in one mesh shader threadgroup.
+     * 
+     *                                    API-Since: 16.0
+     */
+    @Generated
+    @Selector("drawMeshThreadgroupsWithIndirectBuffer:indirectBufferOffset:threadsPerObjectThreadgroup:threadsPerMeshThreadgroup:")
+    void drawMeshThreadgroupsWithIndirectBufferIndirectBufferOffsetThreadsPerObjectThreadgroupThreadsPerMeshThreadgroup(
+            @Mapped(ObjCObjectMapper.class) MTLBuffer indirectBuffer, @NUInt long indirectBufferOffset,
+            @ByValue MTLSize threadsPerObjectThreadgroup, @ByValue MTLSize threadsPerMeshThreadgroup);
+
+    /**
+     * drawMeshThreads:threadsPerObjectThreadgroup:threadsPerMeshThreadgroup:
+     * 
+     * Enqueue a grid of object (if present) of mesh shader threadgroups.
+     * 
+     * The dimensions of the threadgroups and the grid are specified directly.
+     * The dimensions of threadsPerGrid does not have to be a multiple of threadsPerThreadgroup for object shaders.
+     * For mesh shaders, threadsPerGrid is rounded down to the neareset multiple of threadsPerMeshThreadgroup (in each
+     * dimension).
+     * 
+     * @param threadsPerGrid              The number of threads in the object (if present) or mesh shader grid
+     * @param threadsPerObjectThreadgroup The number of threads in one object shader threadgroup. Ignored if object
+     *                                    shader is not present.
+     * @param threadsPerMeshThreadgroup   The number of threads in one mesh shader threadgroup.
+     * 
+     *                                    API-Since: 16.0
+     */
+    @Generated
+    @Selector("drawMeshThreads:threadsPerObjectThreadgroup:threadsPerMeshThreadgroup:")
+    void drawMeshThreadsThreadsPerObjectThreadgroupThreadsPerMeshThreadgroup(@ByValue MTLSize threadsPerGrid,
+            @ByValue MTLSize threadsPerObjectThreadgroup, @ByValue MTLSize threadsPerMeshThreadgroup);
+
+    /**
+     * memoryBarrierWithResources:count:afterStages:beforeStages:
+     * 
+     * Make stores to memory encoded before the barrier coherent with loads from memory encoded after the barrier.
+     * 
+     * The barrier makes stores coherent that 1) are to resources in given array, and 2) happen at (or before) the stage
+     * given by afterStages. Only affects loads that happen at (or after) the stage give by beforeStages.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("memoryBarrierWithResources:count:afterStages:beforeStages:")
+    void memoryBarrierWithResourcesCountAfterStagesBeforeStages(
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> resources, @NUInt long count, @NUInt long after,
+            @NUInt long before);
+
+    /**
+     * memoryBarrierWithScope:afterStages:beforeStages:
+     * 
+     * Make stores to memory encoded before the barrier coherent with loads from memory encoded after the barrier.
+     * 
+     * The barrier makes stores coherent that 1) are to a resource with a type in the given scope, and 2) happen at (or
+     * before) the stage given by afterStages. Only affects loads that happen at (or after) the stage given by
+     * beforeStages.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("memoryBarrierWithScope:afterStages:beforeStages:")
+    void memoryBarrierWithScopeAfterStagesBeforeStages(@NUInt long scope, @NUInt long after, @NUInt long before);
+
+    /**
+     * setMeshBuffer:offset:atIndex:
+     * 
+     * Set a global buffer for all mesh shaders at the given bind point index.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setMeshBuffer:offset:atIndex:")
+    void setMeshBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
+            @NUInt long index);
+
+    /**
+     * setMeshBufferOffset:atIndex:
+     * 
+     * Set the offset within the current global buffer for all mesh shaders at the given bind point index.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setMeshBufferOffset:atIndex:")
+    void setMeshBufferOffsetAtIndex(@NUInt long offset, @NUInt long index);
+
+    /**
+     * setMeshBuffers:offsets:withRange:
+     * 
+     * Set an array of global buffers for all mesh shaders with the given bind point range.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setMeshBuffers:offsets:withRange:")
+    void setMeshBuffersOffsetsWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
+            ConstNUIntPtr offsets, @ByValue NSRange range);
+
+    /**
+     * setMeshBytes:length:atIndex:
+     * 
+     * Set the data (by copy) for a given mesh shader buffer binding point. This will remove any existing MTLBuffer from
+     * the binding point.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setMeshBytes:length:atIndex:")
+    void setMeshBytesLengthAtIndex(ConstVoidPtr bytes, @NUInt long length, @NUInt long index);
+
+    /**
+     * setMeshSamplerState:atIndex:
+     * 
+     * Set a global sampler for all mesh shaders at the given bind point index.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setMeshSamplerState:atIndex:")
+    void setMeshSamplerStateAtIndex(@Mapped(ObjCObjectMapper.class) MTLSamplerState sampler, @NUInt long index);
+
+    /**
+     * setMeshSamplerState:lodMinClamp:lodMaxClamp:atIndex:
+     * 
+     * Set a global sampler for all mesh shaders at the given bind point index.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setMeshSamplerState:lodMinClamp:lodMaxClamp:atIndex:")
+    void setMeshSamplerStateLodMinClampLodMaxClampAtIndex(@Mapped(ObjCObjectMapper.class) MTLSamplerState sampler,
+            float lodMinClamp, float lodMaxClamp, @NUInt long index);
+
+    /**
+     * setMeshSamplerStates:lodMinClamps:lodMaxClamps:withRange:
+     * 
+     * Set an array of global samplers for all mesh shaders with the given bind point range.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setMeshSamplerStates:lodMinClamps:lodMaxClamps:withRange:")
+    void setMeshSamplerStatesLodMinClampsLodMaxClampsWithRange(
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers, ConstFloatPtr lodMinClamps,
+            ConstFloatPtr lodMaxClamps, @ByValue NSRange range);
+
+    /**
+     * setMeshSamplerStates:withRange:
+     * 
+     * Set an array of global samplers for all mesh shaders with the given bind point range.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setMeshSamplerStates:withRange:")
+    void setMeshSamplerStatesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+            @ByValue NSRange range);
+
+    /**
+     * setMeshTexture:atIndex:
+     * 
+     * Set a global texture for all mesh shaders at the given bind point index.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setMeshTexture:atIndex:")
+    void setMeshTextureAtIndex(@Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long index);
+
+    /**
+     * setMeshTextures:withRange:
+     * 
+     * Set an array of global textures for all mesh shaders with the given bind point range.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setMeshTextures:withRange:")
+    void setMeshTexturesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures,
+            @ByValue NSRange range);
+
+    /**
+     * setObjectBuffer:offset:atIndex:
+     * 
+     * Set a global buffer for all object shaders at the given bind point index.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setObjectBuffer:offset:atIndex:")
+    void setObjectBufferOffsetAtIndex(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset,
+            @NUInt long index);
+
+    /**
+     * setObjectBufferOffset:atIndex:
+     * 
+     * Set the offset within the current global buffer for all object shaders at the given bind point index.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setObjectBufferOffset:atIndex:")
+    void setObjectBufferOffsetAtIndex(@NUInt long offset, @NUInt long index);
+
+    /**
+     * setObjectBuffers:offsets:withRange:
+     * 
+     * Set an array of global buffers for all object shaders with the given bind point range.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setObjectBuffers:offsets:withRange:")
+    void setObjectBuffersOffsetsWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffers,
+            ConstNUIntPtr offsets, @ByValue NSRange range);
+
+    /**
+     * setObjectBytes:length:atIndex:
+     * 
+     * Set the data (by copy) for a given object shader buffer binding point. This will remove any existing MTLBuffer
+     * from the binding point.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setObjectBytes:length:atIndex:")
+    void setObjectBytesLengthAtIndex(ConstVoidPtr bytes, @NUInt long length, @NUInt long index);
+
+    /**
+     * setObjectSamplerState:atIndex:
+     * 
+     * Set a global sampler for all object shaders at the given bind point index.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setObjectSamplerState:atIndex:")
+    void setObjectSamplerStateAtIndex(@Mapped(ObjCObjectMapper.class) MTLSamplerState sampler, @NUInt long index);
+
+    /**
+     * setObjectSamplerState:lodMinClamp:lodMaxClamp:atIndex:
+     * 
+     * Set a global sampler for all object shaders at the given bind point index.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setObjectSamplerState:lodMinClamp:lodMaxClamp:atIndex:")
+    void setObjectSamplerStateLodMinClampLodMaxClampAtIndex(@Mapped(ObjCObjectMapper.class) MTLSamplerState sampler,
+            float lodMinClamp, float lodMaxClamp, @NUInt long index);
+
+    /**
+     * setObjectSamplerStates:lodMinClamps:lodMaxClamps:withRange:
+     * 
+     * Set an array of global samplers for all object shaders with the given bind point range.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setObjectSamplerStates:lodMinClamps:lodMaxClamps:withRange:")
+    void setObjectSamplerStatesLodMinClampsLodMaxClampsWithRange(
+            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers, ConstFloatPtr lodMinClamps,
+            ConstFloatPtr lodMaxClamps, @ByValue NSRange range);
+
+    /**
+     * setObjectSamplerStates:withRange:
+     * 
+     * Set an array of global samplers for all object shaders with the given bind point range.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setObjectSamplerStates:withRange:")
+    void setObjectSamplerStatesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> samplers,
+            @ByValue NSRange range);
+
+    /**
+     * setObjectTexture:atIndex:
+     * 
+     * Set a global texture for all object shaders at the given bind point index.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setObjectTexture:atIndex:")
+    void setObjectTextureAtIndex(@Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long index);
+
+    /**
+     * setObjectTextures:withRange:
+     * 
+     * Set an array of global textures for all object shaders with the given bind point range.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setObjectTextures:withRange:")
+    void setObjectTexturesWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> textures,
+            @ByValue NSRange range);
+
+    /**
+     * setObjectThreadgroupMemoryLength:atIndex:
+     * 
+     * Set the threadgroup memory byte length at the binding point specified by the index for all object shaders.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setObjectThreadgroupMemoryLength:atIndex:")
+    void setObjectThreadgroupMemoryLengthAtIndex(@NUInt long length, @NUInt long index);
 }

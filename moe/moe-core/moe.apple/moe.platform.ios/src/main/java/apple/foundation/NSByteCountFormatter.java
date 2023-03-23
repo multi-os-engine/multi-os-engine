@@ -35,6 +35,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -186,6 +189,8 @@ public class NSByteCountFormatter extends NSFormatter {
 
     /**
      * Specify the formatting context for the formatted string. Default is NSFormattingContextUnknown.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("formattingContext")
@@ -275,6 +280,8 @@ public class NSByteCountFormatter extends NSFormatter {
 
     /**
      * Specify the formatting context for the formatted string. Default is NSFormattingContextUnknown.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFormattingContext:")
@@ -334,7 +341,7 @@ public class NSByteCountFormatter extends NSFormatter {
     /**
      * Formats `obj` as a byte count (if `obj` is an `NSNumber`) or specific byte measurement (if `obj` is an
      * `NSMeasurement`) using the receiver's settings.
-     * <p>
+     * 
      * Returns `nil` if `obj` is not of the correct class (`NSNumber` or `NSMeasurement`).
      * Throws an exception if `obj` is an `NSMeasurement` whose unit does not belong to the `NSUnitInformationStorage`
      * dimension.
@@ -349,8 +356,10 @@ public class NSByteCountFormatter extends NSFormatter {
      * the value of the measurement, this may result in a string which implies an approximate value (e.g. if the
      * measurement is too large to represent in `allowedUnits`, like `1e20 YB` expressed in
      * `NSByteCountFormatterUseBytes`).
-     * <p>
+     * 
      * Throws an exception if the given measurement's unit does not belong to the `NSUnitInformationStorage` dimension.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("stringFromMeasurement:")
@@ -358,8 +367,10 @@ public class NSByteCountFormatter extends NSFormatter {
 
     /**
      * Formats the value of the given measurement using the given `countStyle`.
-     * <p>
+     * 
      * Throws an exception if the given measurement's unit does not belong to the `NSUnitInformationStorage` dimension.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("stringFromMeasurement:countStyle:")

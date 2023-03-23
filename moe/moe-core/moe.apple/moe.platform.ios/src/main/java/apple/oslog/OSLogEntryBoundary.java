@@ -26,13 +26,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * OSLogEntryBoundary
- * <p>
+ * 
  * This entry represents metadata that partitions sequences of
  * other entries.
- * <p>
+ * 
  * For example, this kind of entry is used for boot boundaries.
  * The data here are currently informational and carried in the
  * composedMessage property.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("OSLog")

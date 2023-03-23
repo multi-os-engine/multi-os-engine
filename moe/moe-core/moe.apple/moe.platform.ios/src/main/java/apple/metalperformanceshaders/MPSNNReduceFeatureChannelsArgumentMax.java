@@ -26,9 +26,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNNReduceFeatureChannelsArgumentMax
- * <p>
+ * 
  * The MPSNNReduceFeatureChannelsArgumentMax performs returns the argument index that is the
  * location of the maximum value for feature channels of an image
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -103,9 +105,9 @@ public class MPSNNReduceFeatureChannelsArgumentMax extends MPSNNReduceUnary {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSNNReduceFeatureChannelsArgumentMax object, or nil if failure.
@@ -117,7 +119,7 @@ public class MPSNNReduceFeatureChannelsArgumentMax extends MPSNNReduceUnary {
 
     /**
      * Specifies information to apply the reduction operation on an image.
-     *
+     * 
      * @param device The device the filter will run on
      * @return A valid MPSNNReduceFeatureChannelsArgumentMax object or nil, if failure.
      */

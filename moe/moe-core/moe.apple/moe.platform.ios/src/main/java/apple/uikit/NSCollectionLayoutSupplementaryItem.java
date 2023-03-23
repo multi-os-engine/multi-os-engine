@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -170,7 +173,7 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
      * In this example, a supplementary is anchored to the top+trailing edge of a cell.
      * Supplementary items can be anchored to items (and groups, since a group is-a item)
      * Boundary supplementary items can be anchored to sections and the global layout
-     * <p>
+     * 
      * +-----+ +------------------------------------------+
      * |~~~~~| | edges: [.top,.trailing] |
      * +----------------------------+~~~~~|<------+ fractionalOffset: CGPoint(x:0.5,y:-0.5) |
@@ -181,7 +184,7 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
      * | |
      * | |
      * +-------------------------------+
-     * <p>
+     * 
      * Container anchors are used to specify positioning of an item within the host geometry (e.g. item, group, section)
      */
     @Generated
@@ -204,7 +207,7 @@ public class NSCollectionLayoutSupplementaryItem extends NSCollectionLayoutItem 
      * | |
      * | |
      * +-------------------------------+
-     * <p>
+     * 
      * Combine a container anchor with an item anchor for fine-grained positioning.
      * Optionally add an offset for additional refinement.
      */

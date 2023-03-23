@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageDilate
- * <p>
+ * 
  * The MPSImageDilate finds the maximum pixel value in a rectangular region centered around each pixel in the
  * source image. It is like the MPSImageAreaMax, except that the intensity at each position is calculated relative
  * to a different value before determining which is the maximum pixel value, allowing for shaped, non-rectangular
@@ -59,8 +59,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@endcode]
  * A filter that contains all zeros and is identical to a MPSImageAreaMax filter. The center filter element
  * is assumed to be 0 to avoid causing a general darkening of the image.
- * <p>
+ * 
  * The edgeMode property is assumed to always be MPSImageEdgeModeClamp for this filter.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -182,7 +184,7 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
 
     /**
      * Init a object with kernel height, width and weight values.
-     * <p>
+     * 
      * Each dilate shape probe defines a 3D surface of values.
      * These are arranged in order left to right, then top to bottom
      * in a 1D array. (values[kernelWidth*y+x] = probe[y][x])
@@ -190,7 +192,7 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
      * pixel tending towards 0 and edges towards 1. However, any numerical
      * value is allowed. Calculations are subject to the usual floating-point
      * rounding error.
-     *
+     * 
      * @param device       The device the filter will run on
      * @param kernelWidth  The width of the kernel. Must be an odd number.
      * @param kernelHeight The height of the kernel. Must be an odd number.
@@ -207,7 +209,7 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
 
     /**
      * [@property] kernelHeight
-     * <p>
+     * 
      * The height of the filter window. Must be an odd number.
      */
     @Generated
@@ -217,7 +219,7 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
 
     /**
      * [@property] kernelWidth
-     * <p>
+     * 
      * The width of the filter window. Must be an odd number.
      */
     @Generated
@@ -231,16 +233,18 @@ public class MPSImageDilate extends MPSUnaryImageKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")

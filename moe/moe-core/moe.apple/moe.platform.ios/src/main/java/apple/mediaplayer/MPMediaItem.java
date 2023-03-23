@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * An MPMediaItem represents a single piece of media in an MPMediaLibrary.
  * Media items have a unique identifier which persists across application launches.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("MediaPlayer")
@@ -143,6 +145,8 @@ public class MPMediaItem extends MPMediaEntity {
      * Returns the item property for a given grouping type.
      * For example, [MPMediaItem persistentIDPropertyForGroupingType:MPMediaGroupingAlbum] returns
      * MPMediaItemPropertyAlbumPersistentID.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("persistentIDPropertyForGroupingType:")
@@ -174,6 +178,8 @@ public class MPMediaItem extends MPMediaEntity {
      * MPMediaItemPropertyAlbumTitle.
      * Note that distinct collections will not necessarily have unique titles, e.g. an album may exist with the title
      * "Greatest Hits" for multiple artists.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("titlePropertyForGroupingType:")
@@ -184,91 +190,154 @@ public class MPMediaItem extends MPMediaEntity {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("albumArtist")
     public native String albumArtist();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("albumArtistPersistentID")
     public native long albumArtistPersistentID();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("albumPersistentID")
     public native long albumPersistentID();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("albumTitle")
     public native String albumTitle();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("albumTrackCount")
     @NUInt
     public native long albumTrackCount();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("albumTrackNumber")
     @NUInt
     public native long albumTrackNumber();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("artist")
     public native String artist();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("artistPersistentID")
     public native long artistPersistentID();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("artwork")
     public native MPMediaItemArtwork artwork();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("assetURL")
     public native NSURL assetURL();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("beatsPerMinute")
     @NUInt
     public native long beatsPerMinute();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("bookmarkTime")
     public native double bookmarkTime();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("comments")
     public native String comments();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("composer")
     public native String composer();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("composerPersistentID")
     public native long composerPersistentID();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("dateAdded")
     public native NSDate dateAdded();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("discCount")
     @NUInt
     public native long discCount();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("discNumber")
     @NUInt
     public native long discNumber();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("genre")
     public native String genre();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("genrePersistentID")
     public native long genrePersistentID();
 
+    /**
+     * API-Since: 9.2
+     */
     @Generated
     @Selector("hasProtectedAsset")
     public native boolean hasProtectedAsset();
@@ -281,61 +350,103 @@ public class MPMediaItem extends MPMediaEntity {
     @Selector("initWithCoder:")
     public native MPMediaItem initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("isCloudItem")
     public native boolean isCloudItem();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("isCompilation")
     public native boolean isCompilation();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("isExplicitItem")
     public native boolean isExplicitItem();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("lastPlayedDate")
     public native NSDate lastPlayedDate();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("lyrics")
     public native String lyrics();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("mediaType")
     @NUInt
     public native long mediaType();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("persistentID")
     public native long persistentID();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("playCount")
     @NUInt
     public native long playCount();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("playbackDuration")
     public native double playbackDuration();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("podcastPersistentID")
     public native long podcastPersistentID();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("podcastTitle")
     public native String podcastTitle();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("rating")
     @NUInt
     public native long rating();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("releaseDate")
     public native NSDate releaseDate();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("skipCount")
     @NUInt
@@ -347,18 +458,30 @@ public class MPMediaItem extends MPMediaEntity {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("title")
     public native String title();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("userGrouping")
     public native String userGrouping();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("playbackStoreID")
     public native String playbackStoreID();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("isPreorder")
     public native boolean isPreorder();

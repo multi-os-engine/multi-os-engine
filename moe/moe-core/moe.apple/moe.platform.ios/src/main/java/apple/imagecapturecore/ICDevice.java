@@ -32,12 +32,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * ---------------------------------------------------------------------------------------------------------------------
  * ICDevice
- * <p>
+ * 
  * ICDevice
- * <p>
+ * 
  * ICDevice is an abstract class that represents a device supported by Image Capture facility. ImageCaptureCore defines
  * two concrete subclasses of ICDevice, ICCameraDevice and ICScannerDevice. ICDeviceBrowser creates instances of these
  * two subclasses to represent cameras and scanners it finds.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("ImageCaptureCore")
@@ -55,8 +57,10 @@ public class ICDevice extends NSObject {
 
     /**
      * [@property] UUIDString
-     * <p>
+     * 
      * ￼A string representation of the Universally Unique ID of the device.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("UUIDString")
@@ -92,8 +96,10 @@ public class ICDevice extends NSObject {
 
     /**
      * [@property] capabilities
-     * <p>
+     * 
      * ￼The capabilities of the device as reported by the device module.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("capabilities")
@@ -113,12 +119,14 @@ public class ICDevice extends NSObject {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate to receive messages once a session is opened on the device.
-     * <p>
+     * 
      * The delegate must conform ICDeviceDelegate protocol. In addition it should respond to selectors defined in
      * ICCameraDeviceDelegate protocol in order to effectively interact with the device object. The messages this
      * delegate can expect to receive are described by these protocols.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("delegate")
@@ -131,8 +139,10 @@ public class ICDevice extends NSObject {
 
     /**
      * [@property] hasOpenSession
-     * <p>
+     * 
      * ￼Indicates whether the device has an open session.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("hasOpenSession")
@@ -145,10 +155,12 @@ public class ICDevice extends NSObject {
 
     /**
      * [@property] icon
-     * <p>
+     * 
      * ￼Icon image for the device class. If there is no custom icon present from a device manufacturer, this will be a
      * rendered version of the system symbol for the device class. Using a rendered system symbol instead of the
      * systemSymbolName is discouraged.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("icon")
@@ -181,11 +193,13 @@ public class ICDevice extends NSObject {
 
     /**
      * [@property] name
-     * <p>
+     * 
      * ￼Name of the device as reported by the device module or by the device transport when a device module is not in
      * control of this device.
      * [@note] This name may change if the device module overrides the default name of the device reported by the
      * device's transport, or if the name of the filesystem volume mounted by the device is changed by the user.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("name")
@@ -198,8 +212,10 @@ public class ICDevice extends NSObject {
 
     /**
      * [@property] productKind
-     * <p>
+     * 
      * ￼Type of the device. Possible values are: @"iPhone", @"iPod", @"iPad", @"Camera", @"Scanner"
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("productKind")
@@ -207,11 +223,13 @@ public class ICDevice extends NSObject {
 
     /**
      * requestCloseSession
-     * <p>
+     * 
      * This message requests to close a previously opened session on this device.
-     * <p>
+     * 
      * This request is completed when the delegate receives a "device:didCloseSessionWithError:" message.
      * [@note] Execution of the delegate callback will occur on the main thread.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("requestCloseSession")
@@ -219,11 +237,13 @@ public class ICDevice extends NSObject {
 
     /**
      * requestCloseSessionWithOptions:completion
-     * <p>
+     * 
      * This message requests to close a previously opened session on this device.
-     * <p>
+     * 
      * This request will execute the completion handler provided upon return.
      * [@note] The completion block will execute on an any available queue, often this will not be the main queue.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("requestCloseSessionWithOptions:completion:")
@@ -239,8 +259,10 @@ public class ICDevice extends NSObject {
 
     /**
      * requestEject
-     * <p>
+     * 
      * Eject the media if permitted by the device, or disconnect from a remote device.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("requestEject")
@@ -248,11 +270,13 @@ public class ICDevice extends NSObject {
 
     /**
      * requestEjectWithCompletion:
-     * <p>
+     * 
      * Eject the media, or disconnect the device - if permitted by the device.
-     * <p>
+     * 
      * This request will execute the completion handler provided upon return.
      * [@note] The completion block will execute on an any available queue, often this will not be the main queue.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("requestEjectWithCompletion:")
@@ -268,12 +292,14 @@ public class ICDevice extends NSObject {
 
     /**
      * requestOpenSession
-     * <p>
+     * 
      * This message requests to open a session on the device.
-     * <p>
+     * 
      * Make sure the receiver's delegate is set prior to sending this message; otherwise this message will be ignored.
      * This request is completed when the delegate receives a "device:didOpenSessionWithError:" message.
      * [@note] Execution of the delegate callback will occur on the main thread.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("requestOpenSession")
@@ -281,11 +307,13 @@ public class ICDevice extends NSObject {
 
     /**
      * requestOpenSessionWithOptions:completion
-     * <p>
+     * 
      * This message requests to open a session on the device.
-     * <p>
+     * 
      * This request will execute the completion handler provided upon return.
      * [@note] The completion block will execute on an any available queue, often this will not be the main queue.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("requestOpenSessionWithOptions:completion:")
@@ -309,12 +337,14 @@ public class ICDevice extends NSObject {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate to receive messages once a session is opened on the device.
-     * <p>
+     * 
      * The delegate must conform ICDeviceDelegate protocol. In addition it should respond to selectors defined in
      * ICCameraDeviceDelegate protocol in order to effectively interact with the device object. The messages this
      * delegate can expect to receive are described by these protocols.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDelegate:")
@@ -322,12 +352,14 @@ public class ICDevice extends NSObject {
 
     /**
      * [@property] delegate
-     * <p>
+     * 
      * The delegate to receive messages once a session is opened on the device.
-     * <p>
+     * 
      * The delegate must conform ICDeviceDelegate protocol. In addition it should respond to selectors defined in
      * ICCameraDeviceDelegate protocol in order to effectively interact with the device object. The messages this
      * delegate can expect to receive are described by these protocols.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) ICDeviceDelegate value) {
@@ -351,9 +383,11 @@ public class ICDevice extends NSObject {
 
     /**
      * [@property] transportType
-     * <p>
+     * 
      * ￼The transport type used by the device. The possible values are: ICTransportTypeUSB or
      * ICTransportTypeMassStorage.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("transportType")
@@ -361,12 +395,14 @@ public class ICDevice extends NSObject {
 
     /**
      * [@property] type
-     * <p>
+     * 
      * ￼The type of the device as defined by ICDeviceType OR'd with its ICDeviceLocationType.
      * [@note] The type of this device can be obtained by AND'ing the value retuned by this property with an appropriate
      * ICDeviceTypeMask.
      * [@note] The location type of this device can be obtained by AND'ing the value retuned by this property with an
      * appropriate ICDeviceLocationTypeMask.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("type")
@@ -375,8 +411,10 @@ public class ICDevice extends NSObject {
 
     /**
      * [@property] usbLocationID
-     * <p>
+     * 
      * ￼The USB location of which the device is occupying.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("usbLocationID")
@@ -384,8 +422,10 @@ public class ICDevice extends NSObject {
 
     /**
      * [@property] usbProductID
-     * <p>
+     * 
      * ￼The USB PID associated with the device attached.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("usbProductID")
@@ -393,8 +433,10 @@ public class ICDevice extends NSObject {
 
     /**
      * [@property] usbVendorID
-     * <p>
+     * 
      * ￼The USB VID associated with the device attached.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("usbVendorID")
@@ -402,8 +444,10 @@ public class ICDevice extends NSObject {
 
     /**
      * [@property] userData
-     * <p>
+     * 
      * ￼Client convenience bookkeeping object retained by the framework.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("userData")
@@ -413,4 +457,16 @@ public class ICDevice extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] systemSymbolName
+     * 
+     * ￼Standard system symbol used to represent the device class. Using the symbol to render an appropriate device icon
+     * will ensure proper scaling for high resolution devices.
+     * 
+     * API-Since: 15.2
+     */
+    @Generated
+    @Selector("systemSymbolName")
+    public native String systemSymbolName();
 }

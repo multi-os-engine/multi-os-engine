@@ -46,11 +46,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEEvaluateConnectionRule
- * <p>
+ * 
  * The NEEvaluateConnectionRule class declares the programmatic interface for an object that associates properties of
  * network connections with an action.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -168,8 +170,10 @@ public class NEEvaluateConnectionRule extends NSObject implements NSSecureCoding
 
     /**
      * [@property] action
-     * <p>
+     * 
      * The action to take if the properties of the network connection being established match the rule.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("action")
@@ -196,8 +200,10 @@ public class NEEvaluateConnectionRule extends NSObject implements NSSecureCoding
 
     /**
      * initWithMatchDomains:andAction
-     * <p>
+     * 
      * Initialize an NEEvaluateConnectionRule instance with a list of destination host domains and an action
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("initWithMatchDomains:andAction:")
@@ -205,9 +211,11 @@ public class NEEvaluateConnectionRule extends NSObject implements NSSecureCoding
 
     /**
      * [@property] matchDomains
-     * <p>
+     * 
      * An array of NSString objects. If the host name of the destination of the network connection being established
      * shares a suffix with one of the strings in this array, then the rule matches.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("matchDomains")
@@ -215,10 +223,12 @@ public class NEEvaluateConnectionRule extends NSObject implements NSSecureCoding
 
     /**
      * [@property] probeURL
-     * <p>
+     * 
      * An HTTP or HTTPS URL. If the rule matches the connection being established and the action is
      * NEEvaluateConnectionRuleActionConnectIfNeeded and a request sent to this URL results in a response with an HTTP
      * response code other than 200, then the VPN is started.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("probeURL")
@@ -226,10 +236,12 @@ public class NEEvaluateConnectionRule extends NSObject implements NSSecureCoding
 
     /**
      * [@property] probeURL
-     * <p>
+     * 
      * An HTTP or HTTPS URL. If the rule matches the connection being established and the action is
      * NEEvaluateConnectionRuleActionConnectIfNeeded and a request sent to this URL results in a response with an HTTP
      * response code other than 200, then the VPN is started.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setProbeURL:")
@@ -237,11 +249,13 @@ public class NEEvaluateConnectionRule extends NSObject implements NSSecureCoding
 
     /**
      * [@property] useDNSServers
-     * <p>
+     * 
      * An array of NSString objects. If the rule matches the connection being established and the action is
      * NEEvaluateConnectionRuleActionConnectIfNeeded, the DNS servers specified in this array are used to resolve the
      * host name of the destination while evaluating connectivity to the destination. If the resolution fails for any
      * reason, the VPN is started.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setUseDNSServers:")
@@ -255,11 +269,13 @@ public class NEEvaluateConnectionRule extends NSObject implements NSSecureCoding
 
     /**
      * [@property] useDNSServers
-     * <p>
+     * 
      * An array of NSString objects. If the rule matches the connection being established and the action is
      * NEEvaluateConnectionRuleActionConnectIfNeeded, the DNS servers specified in this array are used to resolve the
      * host name of the destination while evaluating connectivity to the destination. If the resolution fails for any
      * reason, the VPN is started.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("useDNSServers")

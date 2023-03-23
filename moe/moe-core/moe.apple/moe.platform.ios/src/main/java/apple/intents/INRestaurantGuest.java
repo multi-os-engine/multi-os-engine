@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -167,16 +170,19 @@ public class INRestaurantGuest extends INPerson {
     @Selector("initWithCoder:")
     public native INRestaurantGuest initWithCoder(NSCoder coder);
 
+    @Deprecated
     @Generated
     @Selector("initWithHandle:displayName:contactIdentifier:")
     public native INRestaurantGuest initWithHandleDisplayNameContactIdentifier(String handle, String displayName,
             String contactIdentifier);
 
+    @Deprecated
     @Generated
     @Selector("initWithHandle:nameComponents:contactIdentifier:")
     public native INRestaurantGuest initWithHandleNameComponentsContactIdentifier(String handle,
             NSPersonNameComponents nameComponents, String contactIdentifier);
 
+    @Deprecated
     @Generated
     @Selector("initWithHandle:nameComponents:displayName:image:contactIdentifier:")
     public native INRestaurantGuest initWithHandleNameComponentsDisplayNameImageContactIdentifier(String handle,

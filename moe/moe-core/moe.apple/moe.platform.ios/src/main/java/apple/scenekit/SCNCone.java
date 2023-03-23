@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNCone
- * <p>
+ * 
  * SCNCone represents a cone with controllable height, top radius and bottom radius.
  */
 @Generated
@@ -99,9 +99,9 @@ public class SCNCone extends SCNGeometry {
 
     /**
      * coneWithTopRadius:bottomRadius:height:
-     * <p>
+     * 
      * Creates and returns a cone with given top radius, bottom radius and height.
-     *
+     * 
      * @param topRadius    The radius at the top of the cone.
      * @param bottomRadius The radius at the bottom of the cone.
      * @param height       The height of the cone.
@@ -190,9 +190,9 @@ public class SCNCone extends SCNGeometry {
 
     /**
      * [@property] bottomRadius
-     * <p>
+     * 
      * The radius at the bottom of the cone. Animatable.
-     * <p>
+     * 
      * If the value is less than 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
@@ -202,9 +202,9 @@ public class SCNCone extends SCNGeometry {
 
     /**
      * [@property] height
-     * <p>
+     * 
      * The height of the cone. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -214,9 +214,9 @@ public class SCNCone extends SCNGeometry {
 
     /**
      * [@property] heightSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the Y axis. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -234,9 +234,9 @@ public class SCNCone extends SCNGeometry {
 
     /**
      * [@property] radialSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the radial coordinate. Animatable.
-     * <p>
+     * 
      * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated
@@ -246,9 +246,9 @@ public class SCNCone extends SCNGeometry {
 
     /**
      * [@property] bottomRadius
-     * <p>
+     * 
      * The radius at the bottom of the cone. Animatable.
-     * <p>
+     * 
      * If the value is less than 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
@@ -257,9 +257,9 @@ public class SCNCone extends SCNGeometry {
 
     /**
      * [@property] height
-     * <p>
+     * 
      * The height of the cone. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 1.
      */
     @Generated
@@ -268,9 +268,9 @@ public class SCNCone extends SCNGeometry {
 
     /**
      * [@property] heightSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the Y axis. Animatable.
-     * <p>
+     * 
      * If the value is less than 1, the behavior is undefined. The default value is 1.
      */
     @Generated
@@ -279,9 +279,9 @@ public class SCNCone extends SCNGeometry {
 
     /**
      * [@property] radialSegmentCount
-     * <p>
+     * 
      * The number of subdivisions along the radial coordinate. Animatable.
-     * <p>
+     * 
      * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated
@@ -290,9 +290,9 @@ public class SCNCone extends SCNGeometry {
 
     /**
      * [@property] topRadius
-     * <p>
+     * 
      * The radius at the top of the cone. Animatable.
-     * <p>
+     * 
      * If the value is less than 0, the geometry is empty. The default value is 0.
      */
     @Generated
@@ -307,9 +307,9 @@ public class SCNCone extends SCNGeometry {
 
     /**
      * [@property] topRadius
-     * <p>
+     * 
      * The radius at the top of the cone. Animatable.
-     * <p>
+     * 
      * If the value is less than 0, the geometry is empty. The default value is 0.
      */
     @Generated

@@ -19,15 +19,37 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 3.2
+ * Deprecated-Since: 16.0
+ * Deprecated-Message: UIMenuController is deprecated. Use UIEditMenuInteraction instead.
+ */
+@Deprecated
 @Generated
 public final class UIMenuControllerArrowDirection {
     /**
      * up or down based on screen location
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: UIMenuController is deprecated. Use UIEditMenuInteraction instead.
      */
-    @Generated @NInt public static final long Default = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long Default = 0x0000000000000000L;
+    /**
+     * API-Since: 3.2
+     */
     @Generated @NInt public static final long Up = 0x0000000000000001L;
+    /**
+     * API-Since: 3.2
+     */
     @Generated @NInt public static final long Down = 0x0000000000000002L;
+    /**
+     * API-Since: 3.2
+     */
     @Generated @NInt public static final long Left = 0x0000000000000003L;
+    /**
+     * API-Since: 3.2
+     */
     @Generated @NInt public static final long Right = 0x0000000000000004L;
 
     @Generated

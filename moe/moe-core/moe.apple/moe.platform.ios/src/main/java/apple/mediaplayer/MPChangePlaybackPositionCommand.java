@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Command for changing the current playback position in a now playing item.
  * Sends out MPChangePlaybackPositionCommandEvents.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MediaPlayer")

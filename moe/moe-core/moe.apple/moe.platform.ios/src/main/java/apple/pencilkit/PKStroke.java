@@ -1,8 +1,6 @@
 package apple.pencilkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -27,9 +25,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * The data model value representing a stroke in a `PKDrawing`.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("PencilKit")
@@ -199,4 +201,21 @@ public class PKStroke extends NSObject implements NSCopying {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("initWithInk:strokePath:transform:mask:randomSeed:")
+    public native PKStroke initWithInkStrokePathTransformMaskRandomSeed(PKInk ink, PKStrokePath strokePath,
+            @ByValue CGAffineTransform transform, UIBezierPath mask, int randomSeed);
+
+    /**
+     * The random seed for drawing strokes that use randomized effects.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("randomSeed")
+    public native int randomSeed();
 }

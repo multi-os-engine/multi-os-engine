@@ -29,9 +29,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request that detects trajectories of shapes (even small ones) that follow a parabolic path in a sequence of images.
- * <p>
+ * 
  * This request detects objects moving and (once their path follows the constraint of a parabola), a
  * VNTrajectoryObservation will be returned with the detected points and the equation describing the parabola.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -123,7 +125,7 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
 
     /**
      * Create a new request that will detect the trajectory of a shape in motion.
-     *
+     * 
      * @param frameAnalysisSpacing The reciprocal of the maximum rate at which buffers will be processed. The request
      *                             will not process buffers that fall within the frameAnalysisSpacing after it has
      *                             performed the analysis. The analysis is not done by wall time but by analysis of the
@@ -170,10 +172,20 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("maximumObjectSize")
     public native float maximumObjectSize();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("minimumObjectSize")
     public native float minimumObjectSize();
@@ -218,10 +230,20 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
     @Selector("results")
     public native NSArray<? extends VNTrajectoryObservation> results();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("setMaximumObjectSize:")
     public native void setMaximumObjectSize(float value);
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
+     */
+    @Deprecated
     @Generated
     @Selector("setMinimumObjectSize:")
     public native void setMinimumObjectSize(float value);
@@ -278,6 +300,8 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
      * attempt to reduce the amount of time taken by reducing the accuracy (down to a set minimum) for the next frame.
      * If a frame takes less time than this target, then accuracy of the next frame will be increased (up to a set
      * maximum). The default value is kCMTimeIndefinite, meaning accuracy stays at the predefined maximum.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTargetFrameTime:")
@@ -290,6 +314,8 @@ public class VNDetectTrajectoriesRequest extends VNStatefulRequest {
      * attempt to reduce the amount of time taken by reducing the accuracy (down to a set minimum) for the next frame.
      * If a frame takes less time than this target, then accuracy of the next frame will be increased (up to a set
      * maximum). The default value is kCMTimeIndefinite, meaning accuracy stays at the predefined maximum.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("targetFrameTime")

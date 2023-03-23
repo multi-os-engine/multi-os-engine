@@ -43,10 +43,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVPlayerItemErrorLog
- * <p>
+ * 
  * An AVPlayerItemErrorLog provides methods to retrieve the error log in a format suitable for serialization.
- * <p>
+ * 
  * An AVPlayerItemErrorLog provides data to identify if, and when, network resource playback failures occured.
+ * 
+ * API-Since: 4.3
  */
 @Generated
 @Library("AVFoundation")
@@ -166,9 +168,9 @@ public class AVPlayerItemErrorLog extends NSObject implements NSCopying {
 
     /**
      * [@property] events
-     * <p>
+     * 
      * An ordered collection of AVPlayerItemErrorLogEvent instances.
-     * <p>
+     * 
      * An ordered collection of AVPlayerItemErrorLogEvent instances that represent the chronological
      * sequence of events contained in the error log.
      * This property is not observable.
@@ -179,13 +181,13 @@ public class AVPlayerItemErrorLog extends NSObject implements NSCopying {
 
     /**
      * extendedLogData
-     * <p>
+     * 
      * Serializes an AVPlayerItemErrorLog in the Extended Log File Format.
-     * <p>
+     * 
      * This method converts the webserver error log into a textual format that conforms to the
      * W3C Extended Log File Format for web server log files.
      * For more information see: http://www.w3.org/pub/WWW/TR/WD-logfile.html
-     *
+     * 
      * @return An autoreleased NSData instance.
      */
     @Generated
@@ -194,9 +196,9 @@ public class AVPlayerItemErrorLog extends NSObject implements NSCopying {
 
     /**
      * [@property] extendedLogDataStringEncoding
-     * <p>
+     * 
      * Returns the NSStringEncoding for extendedLogData, see above.
-     * <p>
+     * 
      * A string suitable for console output is obtainable by:
      * [[NSString alloc] initWithData:[myLog extendedLogData] encoding:[myLog extendedLogDataStringEncoding]]
      */

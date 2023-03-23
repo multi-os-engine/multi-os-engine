@@ -31,6 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * observation is either a VNClassificationObservation for classifier models, VNPixelBufferObservations for
  * image-to-image models, VNRecognizedObjectObservation for object recognition models or VNCoreMLFeatureValueObservation
  * for everything else.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -111,7 +113,7 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a model.
-     *
+     * 
      * @param model The VNCoreMLModel to be used.
      */
     @Generated
@@ -120,8 +122,9 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
 
     /**
      * Create a new request with a model.
-     *
+     * 
      * @param model             The VNCoreMLModel to be used.
+     * 
      * @param completionHandler The block that is invoked when the request has been performed.
      */
     @Generated

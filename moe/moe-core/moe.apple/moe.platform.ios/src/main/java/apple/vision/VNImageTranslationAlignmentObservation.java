@@ -1,7 +1,6 @@
 package apple.vision;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -25,12 +24,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
 
 /**
  * VNImageTranslationAlignmentObservation
  * [@superclass] VNImageAlignmentObservation
- * <p>
+ * 
  * An observation describing the results of performing a translational image alignment.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")

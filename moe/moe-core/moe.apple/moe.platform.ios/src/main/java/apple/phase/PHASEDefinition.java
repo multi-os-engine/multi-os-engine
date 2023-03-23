@@ -24,10 +24,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEDefinition
- * <p>
+ * 
  * The base class for a definition.
- * <p>
+ * 
  * Contains an identifer that uniquely represents this definition.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -94,7 +96,7 @@ public class PHASEDefinition extends NSObject {
 
     /**
      * [@property] identifier
-     * <p>
+     * 
      * The identifier that uniquely represents this definition.
      */
     @Generated

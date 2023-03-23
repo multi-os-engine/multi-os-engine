@@ -47,8 +47,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKStatistics
- * <p>
+ * 
  * Represents statistics for quantity samples over a period of time.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -166,7 +168,7 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * averageQuantity
-     * <p>
+     * 
      * Returns the average quantity in the time period represented by the receiver.
      */
     @Generated
@@ -175,9 +177,9 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * averageQuantityForSource:
-     * <p>
+     * 
      * Returns the average quantity for the given source in the time period represented by the receiver.
-     * <p>
+     * 
      * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
      */
     @Generated
@@ -208,7 +210,7 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * maximumQuantity
-     * <p>
+     * 
      * Returns the maximum quantity in the time period represented by the receiver.
      */
     @Generated
@@ -217,9 +219,9 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * maximumQuantityForSource:
-     * <p>
+     * 
      * Returns the maximum quantity for the given source in the time period represented by the receiver.
-     * <p>
+     * 
      * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
      */
     @Generated
@@ -228,7 +230,7 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * minimumQuantity
-     * <p>
+     * 
      * Returns the minimum quantity in the time period represented by the receiver.
      */
     @Generated
@@ -237,9 +239,9 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * minimumQuantityForSource:
-     * <p>
+     * 
      * Returns the minimum quantity for the given source in the time period represented by the receiver.
-     * <p>
+     * 
      * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
      */
     @Generated
@@ -260,7 +262,7 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * sumQuantity
-     * <p>
+     * 
      * Returns the sum of quantities in the time period represented by the receiver.
      */
     @Generated
@@ -269,9 +271,9 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * sumQuantityForSource:
-     * <p>
+     * 
      * Returns the sum quantity for the given source in the time period represented by the receiver.
-     * <p>
+     * 
      * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
      */
     @Generated
@@ -287,12 +289,14 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * Total duration (in seconds) covered by the samples represented by these statistics.
      * Only present if HKStatisticsOptionDuration is is specified.
-     * <p>
+     * 
      * duration
-     * <p>
+     * 
      * Total duration, as a time-unit compatible quantity, covered by the samples represented by these statistics.
-     * <p>
+     * 
      * Only present if HKStatisticsOptionDuration is is specified.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("duration")
@@ -300,11 +304,13 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * durationForSource:
-     * <p>
+     * 
      * Returns the duration, as a time-unit compatible quantity, for the given source in the time period represented by
      * the receiver.
-     * <p>
+     * 
      * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("durationForSource:")
@@ -312,8 +318,10 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * mostRecentQuantity
-     * <p>
+     * 
      * Returns the most recent quantity in the time period represented by the receiver.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("mostRecentQuantity")
@@ -321,8 +329,10 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * mostRecentQuantityDateInterval
-     * <p>
+     * 
      * Returns the date interval of the most recent quantity in the time period represented by the receiver.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("mostRecentQuantityDateInterval")
@@ -330,11 +340,13 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * mostRecentQuantityDateIntervalForSource:
-     * <p>
+     * 
      * Returns the date interval of the most recent quantity for the given source in the time period
      * represented by the receiver.
-     * <p>
+     * 
      * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("mostRecentQuantityDateIntervalForSource:")
@@ -342,10 +354,12 @@ public class HKStatistics extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * mostRecentQuantityForSource:
-     * <p>
+     * 
      * Returns the most recent quantity for the given source in the time period represented by the receiver.
-     * <p>
+     * 
      * If HKStatisticsOptionSeparateBySource is not specified, then this will always be nil.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("mostRecentQuantityForSource:")

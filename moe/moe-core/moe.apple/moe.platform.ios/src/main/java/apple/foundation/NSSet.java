@@ -239,11 +239,17 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateObjectsUsingBlock:")
     public native void enumerateObjectsUsingBlock(
             @ObjCBlock(name = "call_enumerateObjectsUsingBlock") Block_enumerateObjectsUsingBlock block);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateObjectsWithOptions:usingBlock:")
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
@@ -251,6 +257,8 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
 
     /**
      * evaluate a predicate against a set of objects and return a filtered set
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("filteredSetUsingPredicate:")
@@ -322,11 +330,17 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
     @Selector("objectEnumerator")
     public native NSEnumerator<_ObjectType> objectEnumerator();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("objectsPassingTest:")
     public native NSSet<_ObjectType> objectsPassingTest(
             @ObjCBlock(name = "call_objectsPassingTest") Block_objectsPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("objectsWithOptions:passingTest:")
     public native NSSet<_ObjectType> objectsWithOptionsPassingTest(@NUInt long opts,
@@ -336,18 +350,30 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
     @Selector("removeObserver:forKeyPath:")
     public native void removeObserverForKeyPath(NSObject observer, String keyPath);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("removeObserver:forKeyPath:context:")
     public native void removeObserverForKeyPathContext(NSObject observer, String keyPath, VoidPtr context);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setByAddingObject:")
     public native NSSet<_ObjectType> setByAddingObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setByAddingObjectsFromArray:")
     public native NSSet<_ObjectType> setByAddingObjectsFromArray(NSArray<_ObjectType> other);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setByAddingObjectsFromSet:")
     public native NSSet<_ObjectType> setByAddingObjectsFromSet(NSSet<_ObjectType> other);
@@ -361,6 +387,8 @@ public class NSSet<_ObjectType> extends NSObject implements NSCopying, NSMutable
 
     /**
      * returns a new array by sorting the objects of the receiver
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("sortedArrayUsingDescriptors:")

@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.1
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -189,6 +192,8 @@ public class MKLocalSearch extends NSObject {
     /**
      * The request will be copied during initialization, so any changes made to the request
      * after this method returns do not affect the request used in -startWithCompletionHandler:
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithPointsOfInterestRequest:")

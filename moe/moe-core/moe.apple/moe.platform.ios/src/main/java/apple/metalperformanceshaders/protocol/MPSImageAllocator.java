@@ -16,18 +16,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A class that allocates new MPSImage or MPSTemporaryImage
- * <p>
+ * 
  * Sometimes it is prohibitively costly for MPS to figure out how
  * big an image should be in advance. In addition, you may want to
  * have some say over whether the image is a temporary image or not.
  * In such circumstances, the MPSImageAllocator is used to
  * provide the developer with an opportunity for just in time feedback
  * about how the image should be allocated.
- * <p>
+ * 
  * Two standard MPSImageAllocators are provided: MPSImageDefaultAllocator
  * and MPSTemporaryImageDefaultAllocator. You may of course provide
  * your own allocator instead.
- * <p>
+ * 
  * Example:
  * [@code]
  * // Note: MPSImageDefaultAllocator is already provided
@@ -39,38 +39,38 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * {
  * MPSImage * result = [[MPSImage alloc] initWithDevice: cmdBuf.device
  * imageDescriptor: descriptor ];
- * <p>
+ * 
  * // make sure the object sticks around at least as lomg as the command buffer
  * [result retain];
  * [cmdBuf addCompletedHandler: ^(id <MTLCommandBuffer> c){[result release];}];
- * <p>
+ * 
  * // return autoreleased result
  * return [result autorelease];
  * };
- * <p>
+ * 
  * -(BOOL) supportsSecureCoding{ return YES; }
  * -(void)encodeWithCoder:(NSCoder * __nonnull)aCoder
  * {
  * [super encodeWithCoder: aCoder];
- * <p>
+ * 
  * // encode any data owned by the class at this level
  * }
- * <p>
+ * 
  * -(nullable instancetype) initWithCoder: (NSCoder*__nonnull) aDecoder
  * {
  * self = [super initWithCoder: aDecoder ];
  * if( nil == self )
  * return self;
- * <p>
+ * 
  * // use coder to load any extra data kept by this object here
- * <p>
+ * 
  * return self;
  * }
  * [@endcode]
- * <p>
+ * 
  * Please see [MPSImage defaultAllocator] and [MPSTemporaryImage defaultAllocator]
  * for implentations of the protocol already provided by MPS.
- * <p>
+ * 
  * When considering whether to write your own MPSImageAllocator, you should know
  * the existing MPSImage and MPSTemporaryImage default allocators are optimized
  * to make image batch allocation much faster than one MPSImage at a time in a loop.
@@ -90,9 +90,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MPSImageAllocator extends NSSecureCoding {
     /**
      * Create a new MPSImage
-     * <p>
+     * 
      * See class description for sample implementation
-     *
+     * 
      * @param cmdBuf     The MTLCommandBuffer on which the image will be initialized.
      *                   cmdBuf.device encodes the MTLDevice.
      * @param descriptor A MPSImageDescriptor containing the image format to use.
@@ -100,6 +100,7 @@ public interface MPSImageAllocator extends NSSecureCoding {
      * @param kernel     The kernel that will overwrite the image returned by the filter.
      *                   Note that the MPS implementations of this protocol don't need
      *                   this field. It is provided for your convenience.
+     * 
      * @return A valid MPSImage or MPSTemporaryImage. It will be automatically released when the command buffer
      *         completes.
      */

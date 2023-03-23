@@ -29,9 +29,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@c] CPVoiceControlState encapsulates the title variants and image(s) for a single voice control
  * state, like listening, loading, or recognized.
- * <p>
+ * 
  * Your app may initialize the voice control template with one or more states, and
  * you may call @c activateVoiceControlState: to switch between states you've defined.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CarPlay")
@@ -118,7 +120,7 @@ public class CPVoiceControlState extends NSObject implements NSSecureCoding {
 
     /**
      * Initialize a voice control state with a title and image.
-     *
+     * 
      * @param identifier    A custom identifier you can use to identify this voice control state. You'll also
      *                      switch to this state by specifying this identifier.
      * @param titleVariants An array of title variants. The Voice Control template will select the longest

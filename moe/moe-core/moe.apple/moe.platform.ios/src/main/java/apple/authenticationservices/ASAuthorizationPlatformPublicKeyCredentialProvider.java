@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -76,7 +79,7 @@ public class ASAuthorizationPlatformPublicKeyCredentialProvider extends NSObject
 
     /**
      * Create a request to authenticate using an existing credential.
-     *
+     * 
      * @param challenge The challenge to sign.
      */
     @Generated
@@ -86,7 +89,7 @@ public class ASAuthorizationPlatformPublicKeyCredentialProvider extends NSObject
 
     /**
      * Create a request to register a new platform credential.
-     *
+     * 
      * @param challenge The challenge to sign.
      * @param name      The user name for the new credential.
      * @param userID    An identifier to be stored alongside the credential, which will be returned with the credential

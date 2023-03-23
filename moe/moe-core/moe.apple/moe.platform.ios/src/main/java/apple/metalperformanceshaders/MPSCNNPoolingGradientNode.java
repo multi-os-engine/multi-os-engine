@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.3
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -92,9 +95,9 @@ public class MPSCNNPoolingGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * make a pooling gradient node
-     * <p>
+     * 
      * It would be much easier to use [inferencePoolingNode gradientNodeForSourceGradient:] instead.
-     *
+     * 
      * @param sourceGradient  The gradient from the downstream gradient filter.
      * @param sourceImage     The input image to the inference pooling filter
      * @param gradientState   The gradient state produced by the inference poolin filter
@@ -148,9 +151,9 @@ public class MPSCNNPoolingGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * make a pooling gradient node
-     * <p>
+     * 
      * It would be much easier to use [inferencePoolingNode gradientNodeForSourceGradient:] instead.
-     *
+     * 
      * @param sourceGradient  The gradient from the downstream gradient filter.
      * @param sourceImage     The input image to the inference pooling filter
      * @param gradientState   The gradient state produced by the inference poolin filter

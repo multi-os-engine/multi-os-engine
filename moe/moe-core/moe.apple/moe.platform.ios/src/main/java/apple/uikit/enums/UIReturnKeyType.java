@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * UIReturnKeyType
- * <p>
+ * 
  * Controls the display of the return key.
- * <p>
+ * 
  * Note: This enum is under discussion and may be replaced with a
  * different implementation.
  */
@@ -40,6 +40,9 @@ public final class UIReturnKeyType {
     @Generated @NInt public static final long Yahoo = 0x0000000000000008L;
     @Generated @NInt public static final long Done = 0x0000000000000009L;
     @Generated @NInt public static final long EmergencyCall = 0x000000000000000AL;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Continue = 0x000000000000000BL;
 
     @Generated

@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A description of the input and output ports which comprise a route.
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("AVFAudio")
@@ -94,6 +96,8 @@ public class AVAudioSessionRouteDescription extends NSObject {
 
     /**
      * Flattened list of all input port descriptions associated with all the streams as part of the route.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("inputs")
@@ -127,6 +131,8 @@ public class AVAudioSessionRouteDescription extends NSObject {
 
     /**
      * Flattened list of all output port descriptions associated with all the streams as part of the route.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("outputs")

@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -45,7 +44,11 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -147,7 +150,7 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
      * This method provides compatibility with the old style [UIView
      * animationWithDuration:...] method. It is also useful for controlling
      * how animations options are inherited.
-     * <p>
+     * 
      * Creates a UIViewPropertyAnimator, sets the duration, options, etc. And starts the
      * animation with the associated animation and completion blocks. The animator
      * returned is interruptible only if it is not called from within the execution
@@ -376,6 +379,8 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     /**
      * Defaults to NO. Provides the ability for an animator to pause on completion instead of transitioning to the
      * .inactive state.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("pausesOnCompletion")
@@ -384,6 +389,8 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     /**
      * Defaults to YES. Provides the ability for an animator to pause and scrub either linearly or using the animator’s
      * current timing.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("scrubsLinearly")
@@ -392,6 +399,8 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     /**
      * Defaults to NO. Provides the ability for an animator to pause on completion instead of transitioning to the
      * .inactive state.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPausesOnCompletion:")
@@ -400,6 +409,8 @@ public class UIViewPropertyAnimator extends NSObject implements UIViewImplicitly
     /**
      * Defaults to YES. Provides the ability for an animator to pause and scrub either linearly or using the animator’s
      * current timing.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setScrubsLinearly:")

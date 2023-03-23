@@ -11,12 +11,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Protocol adopted by classes that can provide activity items configurations
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIActivityItemsConfigurationProviding")
 public interface UIActivityItemsConfigurationProviding {
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("activityItemsConfiguration")
     @MappedReturn(ObjCObjectMapper.class)

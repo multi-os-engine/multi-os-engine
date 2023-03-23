@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -138,6 +141,8 @@ public class UIStoryboardSegue extends NSObject {
 
     /**
      * Convenience constructor for returning a segue that performs a handler block in its -perform method.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("segueWithIdentifier:source:destination:performHandler:")

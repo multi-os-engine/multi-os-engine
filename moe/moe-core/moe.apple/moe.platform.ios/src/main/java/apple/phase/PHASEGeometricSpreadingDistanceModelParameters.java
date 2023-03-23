@@ -24,10 +24,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEGeometricSpreadingDistanceModelParameters
- * <p>
+ * 
  * Geometric spreading distance model parameters.
- * <p>
+ * 
  * Standard geometric spreading loss as a function of geometry and distance.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -132,7 +134,7 @@ public class PHASEGeometricSpreadingDistanceModelParameters extends PHASEDistanc
 
     /**
      * [@property] rolloffFactor
-     * <p>
+     * 
      * Rolloff factor.
      * [@note]
      * Values are clamped to the range [0.0, DBL_MAX].
@@ -145,7 +147,7 @@ public class PHASEGeometricSpreadingDistanceModelParameters extends PHASEDistanc
 
     /**
      * [@property] rolloffFactor
-     * <p>
+     * 
      * Rolloff factor.
      * [@note]
      * Values are clamped to the range [0.0, DBL_MAX].

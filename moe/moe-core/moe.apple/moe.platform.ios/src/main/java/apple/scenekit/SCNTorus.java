@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNTorus
- * <p>
+ * 
  * SCNTorus represents a torus with controllable ring radius and pipe radius.
  */
 @Generated
@@ -171,9 +171,9 @@ public class SCNTorus extends SCNGeometry {
 
     /**
      * torusWithRingRadius:pipeRadius:
-     * <p>
+     * 
      * Creates and returns a torus with given ring radius and pipe radius.
-     *
+     * 
      * @param ringRadius The radius of the ring.
      * @param pipeRadius The radius of the pipe.
      */
@@ -196,9 +196,9 @@ public class SCNTorus extends SCNGeometry {
 
     /**
      * [@property] pipeRadius
-     * <p>
+     * 
      * The radius of the torus pipe. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 0.25.
      */
     @Generated
@@ -208,9 +208,9 @@ public class SCNTorus extends SCNGeometry {
 
     /**
      * [@property] pipeSegmentCount
-     * <p>
+     * 
      * The number of subdivisions of the pipe. Animatable.
-     * <p>
+     * 
      * If the value is less than 3, the behavior is undefined. The default value is 24.
      */
     @Generated
@@ -220,9 +220,9 @@ public class SCNTorus extends SCNGeometry {
 
     /**
      * [@property] ringRadius
-     * <p>
+     * 
      * The radius of the torus ring. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
@@ -232,9 +232,9 @@ public class SCNTorus extends SCNGeometry {
 
     /**
      * [@property] ringSegmentCount
-     * <p>
+     * 
      * The number of subdivisions of the ring. Animatable.
-     * <p>
+     * 
      * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated
@@ -244,9 +244,9 @@ public class SCNTorus extends SCNGeometry {
 
     /**
      * [@property] pipeRadius
-     * <p>
+     * 
      * The radius of the torus pipe. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 0.25.
      */
     @Generated
@@ -255,9 +255,9 @@ public class SCNTorus extends SCNGeometry {
 
     /**
      * [@property] pipeSegmentCount
-     * <p>
+     * 
      * The number of subdivisions of the pipe. Animatable.
-     * <p>
+     * 
      * If the value is less than 3, the behavior is undefined. The default value is 24.
      */
     @Generated
@@ -266,9 +266,9 @@ public class SCNTorus extends SCNGeometry {
 
     /**
      * [@property] ringRadius
-     * <p>
+     * 
      * The radius of the torus ring. Animatable.
-     * <p>
+     * 
      * If the value is less than or equal to 0, the geometry is empty. The default value is 0.5.
      */
     @Generated
@@ -277,9 +277,9 @@ public class SCNTorus extends SCNGeometry {
 
     /**
      * [@property] ringSegmentCount
-     * <p>
+     * 
      * The number of subdivisions of the ring. Animatable.
-     * <p>
+     * 
      * If the value is less than 3, the behavior is undefined. The default value is 48.
      */
     @Generated

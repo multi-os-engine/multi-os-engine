@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -52,6 +55,9 @@ public class AVMovieTrack extends AVAssetTrack {
     @Selector("allocWithZone:")
     public static native AVMovieTrack allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("alternateGroupID")
     @NInt
@@ -119,11 +125,13 @@ public class AVMovieTrack extends AVAssetTrack {
 
     /**
      * [@property] mediaDataStorage
-     * <p>
+     * 
      * The storage container for media data added to a track.
-     * <p>
+     * 
      * The value of this property is an AVMediaDataStorage object that indicates the location at which media data
      * inserted or appended to the track will be written.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("mediaDataStorage")
@@ -131,8 +139,10 @@ public class AVMovieTrack extends AVAssetTrack {
 
     /**
      * [@property] mediaDecodeTimeRange
-     * <p>
+     * 
      * A CMTimeRange indicating the range of decode times for the track's media.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("mediaDecodeTimeRange")
@@ -141,8 +151,10 @@ public class AVMovieTrack extends AVAssetTrack {
 
     /**
      * [@property] mediaPresentationTimeRange
-     * <p>
+     * 
      * A CMTimeRange indicating the range of presentation times for the track's media.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("mediaPresentationTimeRange")

@@ -50,12 +50,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A SpriteKit scene graph audio node that provides a way to link audio graphs to a SpriteKit scene.
  * The currently presented scene is responsible for mixing the audio from nodes in the scene.
- * <p>
+ * 
  * Positional sounds will use their relative location and velocity to the scene's listener to apply distance
  * attenuation, doppler shift and pan.
- *
+ * 
  * @see AVAudio3DMixing
  * @see SKScene.listener
+ * 
+ *      API-Since: 9.0
  */
 @Generated
 @Library("SpriteKit")
@@ -197,11 +199,11 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      * Specifies whether the node is to automatically play sound when added to a scene.
      * If autoplaysLooped is NO, the node and its sound must be explicitly scheduled and played using
      * the scene's engine.
-     * <p>
+     * 
      * If YES, the node will automatically play sound when added to a scene.
-     * <p>
+     * 
      * Defaults to YES.
-     *
+     * 
      * @see SKView.paused
      */
     @Generated
@@ -225,7 +227,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
 
     /**
      * Creates a SpriteKit scene graph audio node from the given AVAudioNode.
-     *
+     * 
      * @see AVAudioNode
      */
     @Generated
@@ -238,7 +240,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
 
     /**
      * Convenience initializer that creates an AVAudioNode from the named audio asset in the main bundle.
-     *
+     * 
      * @see initWithAVAudioNode
      */
     @Generated
@@ -247,7 +249,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
 
     /**
      * Convenience initializer that creates an AVAudioNode from the URL that contain a audio asset.
-     *
+     * 
      * @see initWithAVAudioNode
      */
     @Generated
@@ -257,7 +259,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
     /**
      * Marks the audio source as positional so that the audio mix considers relative position and velocity
      * with regards to the scene's current listener node.
-     *
+     * 
      * @see AVAudio3DMixing
      * @see SKScene.listener
      */
@@ -268,7 +270,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
     /**
      * Marks the audio source as positional so that the audio mix considers relative position and velocity
      * with regards to the scene's current listener node.
-     *
+     * 
      * @see AVAudio3DMixing
      * @see SKScene.listener
      */
@@ -280,11 +282,11 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      * Specifies whether the node is to automatically play sound when added to a scene.
      * If autoplaysLooped is NO, the node and its sound must be explicitly scheduled and played using
      * the scene's engine.
-     * <p>
+     * 
      * If YES, the node will automatically play sound when added to a scene.
-     * <p>
+     * 
      * Defaults to YES.
-     *
+     * 
      * @see SKView.paused
      */
     @Generated

@@ -213,6 +213,8 @@ public class NSScanner extends NSObject implements NSCopying {
 
     /**
      * Corresponding to %a or %A formatting. Requires "0x" or "0X" prefix.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("scanHexDouble:")
@@ -220,6 +222,8 @@ public class NSScanner extends NSObject implements NSCopying {
 
     /**
      * Corresponding to %a or %A formatting. Requires "0x" or "0X" prefix.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("scanHexFloat:")
@@ -234,6 +238,8 @@ public class NSScanner extends NSObject implements NSCopying {
 
     /**
      * Optionally prefixed with "0x" or "0X"
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("scanHexLongLong:")
@@ -246,6 +252,9 @@ public class NSScanner extends NSObject implements NSCopying {
     @Selector("scanInt:")
     public native boolean scanInt(IntPtr result);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("scanInteger:")
     public native boolean scanInteger(NIntPtr result);
@@ -264,6 +273,9 @@ public class NSScanner extends NSObject implements NSCopying {
     public native boolean scanStringIntoString(String string,
             @ReferenceInfo(type = NSString.class) Ptr<NSString> result);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("scanUnsignedLongLong:")
     public native boolean scanUnsignedLongLong(LongPtr result);

@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -162,6 +165,8 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
 
     /**
      * entries are not necessarily purged right away when the weak object is reclaimed
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("weakObjectsHashTable")

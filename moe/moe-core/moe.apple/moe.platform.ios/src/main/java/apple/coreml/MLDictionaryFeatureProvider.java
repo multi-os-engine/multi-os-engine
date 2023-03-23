@@ -34,6 +34,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A concrete convenience class conforming to MLFeatureProvider.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreML")
@@ -127,7 +129,7 @@ public class MLDictionaryFeatureProvider extends NSObject implements MLFeaturePr
     /**
      * Create from a generic dictionary by converting all values to MLFeatureValues
      * or from a dictionary with values already stored as MLFeatureValues.
-     * <p>
+     * 
      * An error results if the values are not or cannot be represented as MLFeatureValues.
      */
     @Generated

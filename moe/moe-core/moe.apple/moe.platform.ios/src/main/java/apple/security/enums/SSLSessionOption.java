@@ -29,50 +29,77 @@ public final class SSLSessionOption {
      * handshake is complete. This disable certificate verification and
      * provides an opportunity to perform application-specific server
      * verification before deciding to continue.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int BreakOnServerAuth = 0x00000000;
+    @Deprecated @Generated public static final int BreakOnServerAuth = 0x00000000;
     /**
      * Set this option to enable returning from SSLHandshake (with a result of
      * errSSLClientCertRequested) when the server requests a client certificate.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int BreakOnCertRequested = 0x00000001;
+    @Deprecated @Generated public static final int BreakOnCertRequested = 0x00000001;
     /**
      * This option is the same as kSSLSessionOptionBreakOnServerAuth but applies
      * to the case where SecureTransport is the server and the client has presented
      * its certificates allowing the server to verify whether these should be
      * allowed to authenticate.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int BreakOnClientAuth = 0x00000002;
+    @Deprecated @Generated public static final int BreakOnClientAuth = 0x00000002;
     /**
      * Enable/Disable TLS False Start
      * When enabled, False Start will only be performed if a adequate cipher-suite is
      * negotiated.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int FalseStart = 0x00000003;
+    @Deprecated @Generated public static final int FalseStart = 0x00000003;
     /**
      * Enable/Disable 1/n-1 record splitting for BEAST attack mitigation.
      * When enabled, record splitting will only be performed for TLS 1.0 connections
      * using a block cipher.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int SendOneByteRecord = 0x00000004;
+    @Deprecated @Generated public static final int SendOneByteRecord = 0x00000004;
     /**
      * Allow/Disallow server identity change on renegotiation. Disallow by default
      * to avoid Triple Handshake attack.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int AllowServerIdentityChange = 0x00000005;
+    @Deprecated @Generated public static final int AllowServerIdentityChange = 0x00000005;
     /**
      * Enable fallback countermeasures. Use this option when retyring a SSL connection
      * with a lower protocol version because of failure to connect.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int Fallback = 0x00000006;
+    @Deprecated @Generated public static final int Fallback = 0x00000006;
     /**
      * Set this option to break from a client hello in order to check for SNI
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int BreakOnClientHello = 0x00000007;
+    @Deprecated @Generated public static final int BreakOnClientHello = 0x00000007;
     /**
      * Set this option to Allow renegotations. False by default.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int AllowRenegotiation = 0x00000008;
+    @Deprecated @Generated public static final int AllowRenegotiation = 0x00000008;
 
     @Generated
     private SSLSessionOption() {
@@ -80,6 +107,9 @@ public final class SSLSessionOption {
 
     /**
      * Set this option to enable session tickets. False by default.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int EnableSessionTickets = 0x00000009;
+    @Deprecated @Generated public static final int EnableSessionTickets = 0x00000009;
 }

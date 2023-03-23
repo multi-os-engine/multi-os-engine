@@ -27,8 +27,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAudioUnitDistortion
- * <p>
+ * 
  * An AVAudioUnitEffect that implements a multi-stage distortion effect.
+ * 
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -131,7 +134,7 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
 
     /**
      * loadFactoryPreset:
-     * <p>
+     * 
      * Load a distortion preset.
      * Default: AVAudioUnitDistortionPresetDrumsBitBrush
      */
@@ -146,7 +149,7 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
 
     /**
      * [@property] preGain
-     * <p>
+     * 
      * Gain applied to the signal before being distorted
      * Range: -80 -> 20
      * Default: -6
@@ -166,7 +169,7 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
 
     /**
      * [@property] preGain
-     * <p>
+     * 
      * Gain applied to the signal before being distorted
      * Range: -80 -> 20
      * Default: -6
@@ -182,7 +185,7 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
 
     /**
      * [@property] wetDryMix
-     * <p>
+     * 
      * Blend of the distorted and dry signals
      * Range: 0 (all dry) -> 100 (all distorted)
      * Default: 50
@@ -203,7 +206,7 @@ public class AVAudioUnitDistortion extends AVAudioUnitEffect {
 
     /**
      * [@property] wetDryMix
-     * <p>
+     * 
      * Blend of the distorted and dry signals
      * Range: 0 (all dry) -> 100 (all distorted)
      * Default: 50

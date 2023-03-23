@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Represents a profile implemented by an accessory.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("HomeKit")

@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -109,10 +112,10 @@ public class CPGridTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * Initialize a grid template with an array of @c CPGridButton and a title.
-     * <p>
+     * 
      * [@note] A grid template will only display the first @c CPGridTemplateMaximumItems buttons in the provided @c
      * gridButtons array.
-     *
+     * 
      * @param title       Title shown in template's navigation bar.
      * @param gridButtons A list of grid buttons on the template. The maximum button count is @c
      *                    CPGridTemplateMaximumItems.
@@ -208,6 +211,8 @@ public class CPGridTemplate extends CPTemplate implements CPBarButtonProviding {
     /**
      * Update the grid buttons displayed in this template, reloading
      * the view displaying these buttons.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("updateGridButtons:")
@@ -215,6 +220,8 @@ public class CPGridTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * Update the title displayed in this template.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("updateTitle:")

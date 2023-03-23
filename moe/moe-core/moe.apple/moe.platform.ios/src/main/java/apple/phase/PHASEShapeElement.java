@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEShapeElement
- * <p>
+ * 
  * A single element within a shape. The attached material defines its acoustical properties.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -117,7 +119,7 @@ public class PHASEShapeElement extends NSObject {
 
     /**
      * [@property] material
-     * <p>
+     * 
      * The shape's material defines the acoustical properties of this element.
      */
     @Generated
@@ -139,7 +141,7 @@ public class PHASEShapeElement extends NSObject {
 
     /**
      * [@property] material
-     * <p>
+     * 
      * The shape's material defines the acoustical properties of this element.
      */
     @Generated

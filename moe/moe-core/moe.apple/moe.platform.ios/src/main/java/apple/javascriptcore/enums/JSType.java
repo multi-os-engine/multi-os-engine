@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] JSType
- * <p>
+ * 
  * A constant identifying the type of a JSValue.
  * [@constant] kJSTypeUndefined The unique undefined value.
  * [@constant] kJSTypeNull The unique null value.
@@ -43,5 +43,8 @@ public final class JSType {
     private JSType() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated public static final int kJSTypeSymbol = 0x00000006;
 }

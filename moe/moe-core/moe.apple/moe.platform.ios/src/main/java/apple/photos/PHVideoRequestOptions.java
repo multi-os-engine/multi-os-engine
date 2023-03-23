@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -143,6 +146,9 @@ public class PHVideoRequestOptions extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("deliveryMode")
     @NInt
@@ -152,31 +158,52 @@ public class PHVideoRequestOptions extends NSObject {
     @Selector("init")
     public native PHVideoRequestOptions init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("isNetworkAccessAllowed")
     public native boolean isNetworkAccessAllowed();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setNetworkAccessAllowed:")
     public native void setNetworkAccessAllowed(boolean value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("progressHandler")
     @ObjCBlock(name = "call_progressHandler_ret")
     public native Block_progressHandler_ret progressHandler();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setDeliveryMode:")
     public native void setDeliveryMode(@NInt long value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setProgressHandler:")
     public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setVersion:")
     public native void setVersion(@NInt long value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("version")
     @NInt

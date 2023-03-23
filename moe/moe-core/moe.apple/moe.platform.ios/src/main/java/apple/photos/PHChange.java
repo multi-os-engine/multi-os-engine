@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -148,10 +151,16 @@ public class PHChange extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("changeDetailsForFetchResult:")
     public native PHFetchResultChangeDetails<?> changeDetailsForFetchResult(PHFetchResult<?> object);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("changeDetailsForObject:")
     public native PHObjectChangeDetails<?> changeDetailsForObject(PHObject object);

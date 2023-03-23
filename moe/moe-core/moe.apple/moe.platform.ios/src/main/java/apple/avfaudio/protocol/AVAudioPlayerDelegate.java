@@ -22,6 +22,9 @@ public interface AVAudioPlayerDelegate {
     /**
      * audioPlayerBeginInterruption: is called when the audio session has been interrupted while the player was playing.
      * The player will have been paused.
+     * 
+     * API-Since: 2.2
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -55,6 +58,9 @@ public interface AVAudioPlayerDelegate {
     /**
      * audioPlayerEndInterruption: is called when the preferred method, audioPlayerEndInterruption:withFlags:, is not
      * implemented.
+     * 
+     * API-Since: 2.2
+     * Deprecated-Since: 6.0
      */
     @Generated
     @IsOptional
@@ -64,6 +70,10 @@ public interface AVAudioPlayerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -76,6 +86,9 @@ public interface AVAudioPlayerDelegate {
      * audioPlayerEndInterruption:withOptions: is called when the audio session interruption has ended and this player
      * had been interrupted while playing.
      * Currently the only flag is AVAudioSessionInterruptionFlags_ShouldResume.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional

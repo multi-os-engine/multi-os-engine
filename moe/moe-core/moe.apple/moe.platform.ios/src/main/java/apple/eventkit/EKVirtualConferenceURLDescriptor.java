@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * EKVirtualConferenceURLDescriptor
- * <p>
+ * 
  * Describes a URL that can be used to join a virtual conference.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("EventKit")
@@ -101,9 +103,9 @@ public class EKVirtualConferenceURLDescriptor extends NSObject {
 
     /**
      * initWithTitle:URL:
-     * <p>
+     * 
      * Initializes an instance of EKVirtualConferenceURLDescriptor.
-     *
+     * 
      * @param title A user-readable title describing this URL. This string may be displayed
      *              in the UI. This string is optional and may be left nil. If your virtual
      *              conference only has one way to join it, then you can probably leave this

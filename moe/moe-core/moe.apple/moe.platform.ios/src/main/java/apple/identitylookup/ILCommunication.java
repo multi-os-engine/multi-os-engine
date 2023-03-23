@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An incident of communication via some medium.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("IdentityLookup")

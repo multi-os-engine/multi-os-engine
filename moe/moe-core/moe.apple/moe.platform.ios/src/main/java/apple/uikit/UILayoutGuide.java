@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -41,19 +40,23 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.protocol.UIPopoverPresentationControllerSourceItem;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * UILayoutGuides will not show up in the view hierarchy, but may be used as items in
  * an NSLayoutConstraint and represent a rectangle in the layout engine.
- * <p>
+ * 
  * Create a UILayoutGuide with -init, and add to a view with -[UIView addLayoutGuide:]
  * before using it in a constraint.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UILayoutGuide extends NSObject implements NSCoding {
+public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresentationControllerSourceItem {
     static {
         NatJ.register();
     }
@@ -177,6 +180,8 @@ public class UILayoutGuide extends NSObject implements NSCoding {
      * Pass UILayoutConstraintAxisHorizontal for the constraints affecting [self center].x and CGRectGetWidth([self
      * bounds]), and UILayoutConstraintAxisVertical for the constraints affecting[self center].y and
      * CGRectGetHeight([self bounds]).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("constraintsAffectingLayoutForAxis:")
@@ -195,6 +200,8 @@ public class UILayoutGuide extends NSObject implements NSCoding {
      * place.
      * -hasAmbiguousLayout runs a check for whether there is another center and bounds the receiver could have that
      * could also satisfy the constraints.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("hasAmbiguousLayout")

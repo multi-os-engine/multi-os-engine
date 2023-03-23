@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CLSBinaryItem represents user generated information that is true or false, pass or fail, yes or no.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("ClassKit")
@@ -100,7 +102,7 @@ public class CLSBinaryItem extends CLSActivityItem {
 
     /**
      * Create an item that represents a binary value
-     *
+     * 
      * @param title      Title of the CLSBinaryItem.
      * @param identifier An identifier that is unique within its owning activity.
      * @param valueType  The type of binary value. Ex. pass or fail.
@@ -177,7 +179,7 @@ public class CLSBinaryItem extends CLSActivityItem {
 
     /**
      * Value type of this CLSBinaryItem.
-     * <p>
+     * 
      * The type that best describes this CLSBinaryItem value.
      */
     @Generated

@@ -45,6 +45,13 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PKPaymentAuthorizationControllerDelegate")
 public interface PKPaymentAuthorizationControllerDelegate {
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use paymentAuthorizationController:didAuthorizePayment:handler: instead to provide more
+     * granular errors
+     */
+    @Deprecated
     @IsOptional
     @Generated
     @Selector("paymentAuthorizationController:didAuthorizePayment:completion:")
@@ -54,6 +61,13 @@ public interface PKPaymentAuthorizationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use paymentAuthorizationController:didSelectPaymentMethod:handler: instead to provide more
+     * granular errors
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationController:didSelectPaymentMethod:completion:")
@@ -63,6 +77,13 @@ public interface PKPaymentAuthorizationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use paymentAuthorizationController:didSelectShippingContact:handler: instead to provide more
+     * granular errors
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationController:didSelectShippingContact:completion:")
@@ -75,7 +96,13 @@ public interface PKPaymentAuthorizationControllerDelegate {
     /**
      * These delegate methods are deprecated and have been replaced with new callbacks that allow more granular
      * and comprehensive errors to be surfaced to users
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use paymentAuthorizationController:didSelectShippingMethod:handler: instead to provide more
+     * granular errors
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationController:didSelectShippingMethod:completion:")
@@ -89,7 +116,7 @@ public interface PKPaymentAuthorizationControllerDelegate {
      * Sent to the delegate when payment authorization is finished. This may occur when
      * the user cancels the request, or after the PKPaymentAuthorizationStatus parameter of the
      * paymentAuthorizationController:didAuthorizePayment:completion: has been shown to the user.
-     * <p>
+     * 
      * The delegate is responsible for dismissing and releasing the controller in this method.
      */
     @Generated
@@ -142,11 +169,13 @@ public interface PKPaymentAuthorizationControllerDelegate {
     /**
      * Sent to the delegate after the user has acted on the payment request. The application
      * should inspect the payment to determine whether the payment request was authorized.
-     * <p>
+     * 
      * If the application requested a shipping contact then the full contact is now part of the payment.
-     * <p>
+     * 
      * The delegate must call completion with an appropriate authorization status, as may be determined
      * by submitting the payment credential to a processing gateway for payment authorization.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -167,9 +196,11 @@ public interface PKPaymentAuthorizationControllerDelegate {
     /**
      * Sent when the user has selected a new payment card. Use this delegate callback if you need to
      * update the summary items in response to the card type changing (for example, applying credit card surcharges)
-     * <p>
+     * 
      * The delegate will receive no further callbacks except paymentAuthorizationControllerDidFinish:
      * until it has invoked the completion block.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -188,6 +219,9 @@ public interface PKPaymentAuthorizationControllerDelegate {
                 PKPaymentRequestPaymentMethodUpdate requestUpdate);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationController:didSelectShippingContact:handler:")
@@ -210,11 +244,13 @@ public interface PKPaymentAuthorizationControllerDelegate {
      * shipping costs based on the shipping method and either the shipping address contact in the original
      * PKPaymentRequest or the contact provided by the last call to paymentAuthorizationController:
      * didSelectShippingContact:completion:.
-     * <p>
+     * 
      * The delegate must invoke the completion block with an updated array of PKPaymentSummaryItem objects.
-     * <p>
+     * 
      * The delegate will receive no further callbacks except paymentAuthorizationControllerDidFinish:
      * until it has invoked the completion block.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -233,6 +269,9 @@ public interface PKPaymentAuthorizationControllerDelegate {
                 PKPaymentRequestShippingMethodUpdate requestUpdate);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationController:didRequestMerchantSessionUpdate:")
@@ -250,6 +289,9 @@ public interface PKPaymentAuthorizationControllerDelegate {
                 PKPaymentRequestMerchantSessionUpdate update);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("presentationWindowForPaymentAuthorizationController:")
@@ -257,6 +299,9 @@ public interface PKPaymentAuthorizationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationController:didChangeCouponCode:handler:")

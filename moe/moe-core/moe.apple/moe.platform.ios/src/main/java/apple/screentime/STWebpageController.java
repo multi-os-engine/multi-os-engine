@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("ScreenTime")
 @Runtime(ObjCRuntime.class)
@@ -49,7 +52,7 @@ public class STWebpageController extends UIViewController {
 
     /**
      * If @c URL is blocked or not.
-     * <p>
+     * 
      * This property can be used for pausing media and ending any Picture in Picture video. It will change at a random
      * delay (for user privacy reasons)
      * after the URL should be blocked, and is KVO-compliant.
@@ -86,6 +89,7 @@ public class STWebpageController extends UIViewController {
     @Selector("allocWithZone:")
     public static native STWebpageController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -177,9 +181,9 @@ public class STWebpageController extends UIViewController {
 
     /**
      * Changes the bundle identifier used to report web usage.
-     * <p>
+     * 
      * This is only supported for web browsers that have been properly registered with Screen Time.
-     *
+     * 
      * @param bundleIdentifier Defaults to @c NSBundle.mainBundle.bundleIdentifier but can be changed to facilitate
      *                         reporting web usage
      *                         for a parent web browser from one of its helper processes or extensions.
@@ -192,7 +196,7 @@ public class STWebpageController extends UIViewController {
 
     /**
      * Suppresses the recording of web usage.
-     * <p>
+     * 
      * When this property is set to @c YES, the current usage recording is stopped, and no further usage is recorded in
      * Screen Time.
      */
@@ -228,7 +232,7 @@ public class STWebpageController extends UIViewController {
 
     /**
      * Suppresses the recording of web usage.
-     * <p>
+     * 
      * When this property is set to @c YES, the current usage recording is stopped, and no further usage is recorded in
      * Screen Time.
      */

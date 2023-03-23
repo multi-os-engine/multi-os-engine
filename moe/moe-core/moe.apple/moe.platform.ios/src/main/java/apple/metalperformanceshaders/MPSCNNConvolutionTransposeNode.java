@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A MPSNNFilterNode representing a MPSCNNConvolutionTranspose kernel
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -152,7 +154,7 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
 
     /**
      * Init a node representing a MPSCNNConvolutionTransposeNode kernel
-     *
+     * 
      * @param sourceNode               The MPSNNImageNode representing the source MPSImage for the filter
      * @param convolutionGradientState When the convolution transpose is used to 'undo' an earlier convolution
      *                                 in the graph, it is generally desired that the output image be the same
@@ -163,6 +165,8 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
      *                                 protocol. This object is provided by you to encapsulate storage for
      *                                 convolution weights and biases.
      * @return A new MPSNNFilter node for a MPSCNNConvolutionTransposeNode kernel.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("initWithSource:convolutionGradientState:weights:")
@@ -172,7 +176,7 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
 
     /**
      * Init an autoreleased not representing a MPSCNNConvolutionTransposeNode kernel
-     *
+     * 
      * @param sourceNode               The MPSNNImageNode representing the source MPSImage for the filter
      * @param convolutionGradientState When the convolution transpose is used to 'undo' an earlier convolution
      *                                 in the graph, it is generally desired that the output image be the same
@@ -183,6 +187,8 @@ public class MPSCNNConvolutionTransposeNode extends MPSCNNConvolutionNode {
      *                                 protocol. This object is provided by you to encapsulate storage for
      *                                 convolution weights and biases.
      * @return A new MPSNNFilter node for a MPSCNNConvolutionTransposeNode kernel.
+     * 
+     *         API-Since: 11.3
      */
     @Generated
     @Selector("nodeWithSource:convolutionGradientState:weights:")

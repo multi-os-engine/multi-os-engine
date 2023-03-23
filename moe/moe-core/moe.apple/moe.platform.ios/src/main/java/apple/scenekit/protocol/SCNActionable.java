@@ -33,7 +33,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface SCNActionable {
     /**
      * actionForKey:
-     * <p>
+     * 
      * Returns an action associated with a specific key.
      */
     @Generated
@@ -42,7 +42,7 @@ public interface SCNActionable {
 
     /**
      * [@property] actionKeys
-     * <p>
+     * 
      * Returns an array containing the keys of all actions currently attached to the receiver.
      */
     @Generated
@@ -51,7 +51,7 @@ public interface SCNActionable {
 
     /**
      * [@property] hasActions
-     * <p>
+     * 
      * Returns a Boolean value that indicates whether the node is executing actions.
      */
     @Generated
@@ -60,7 +60,7 @@ public interface SCNActionable {
 
     /**
      * removeActionForKey:
-     * <p>
+     * 
      * Removes an action associated with a specific key.
      */
     @Generated
@@ -69,7 +69,7 @@ public interface SCNActionable {
 
     /**
      * removeAllActions
-     * <p>
+     * 
      * Ends and removes all actions from the node.
      */
     @Generated
@@ -78,7 +78,7 @@ public interface SCNActionable {
 
     /**
      * runAction:
-     * <p>
+     * 
      * Adds an action to the list of actions executed by the node.
      */
     @Generated
@@ -87,7 +87,7 @@ public interface SCNActionable {
 
     /**
      * runAction:completionHandler:
-     * <p>
+     * 
      * Adds an action to the list of actions executed by the node. Your block is called when the action completes.
      */
     @Generated
@@ -97,7 +97,7 @@ public interface SCNActionable {
 
     /**
      * runAction:forKey:
-     * <p>
+     * 
      * Adds an identifiable action to the list of actions executed by the node.
      */
     @Generated
@@ -106,7 +106,7 @@ public interface SCNActionable {
 
     /**
      * runAction:forKey:completionHandler:
-     * <p>
+     * 
      * Adds an identifiable action to the list of actions executed by the node. Your block is called when the action
      * completes.
      */

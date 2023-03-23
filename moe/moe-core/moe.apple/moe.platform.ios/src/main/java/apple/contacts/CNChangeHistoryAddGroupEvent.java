@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A group was added
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Contacts")

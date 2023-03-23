@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -40,11 +39,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * When attributes=nil, the methods declared here uses the default behavior for each attribute described in
  * <UIKit/NSAttributedString.h>. When stringDrawingContext=nil, it's equivalent of passing the default instance
  * initialized with [[NSStringDrawingContext alloc] init].
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("UIKit")
@@ -164,6 +166,10 @@ public class NSStringDrawingContext extends NSObject {
     @NFloat
     public native double actualScaleFactor();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("actualTrackingAdjustment")
@@ -184,6 +190,10 @@ public class NSStringDrawingContext extends NSObject {
     @NFloat
     public native double minimumScaleFactor();
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("minimumTrackingAdjustment")
@@ -199,6 +209,10 @@ public class NSStringDrawingContext extends NSObject {
     @Selector("setMinimumScaleFactor:")
     public native void setMinimumScaleFactor(@NFloat double value);
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("setMinimumTrackingAdjustment:")

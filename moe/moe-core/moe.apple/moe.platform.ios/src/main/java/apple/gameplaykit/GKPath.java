@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("GameplayKit")
 @Runtime(ObjCRuntime.class)
@@ -131,7 +134,7 @@ public class GKPath extends NSObject {
      * Creates a path from an array of graph nodes (often a result of pathfinding)
      * Accepts GKGraphNode2D and GKGraphNode3D
      * Cyclical is set to NO
-     *
+     * 
      * @param graphNodes an array of graph nodes to make a path from
      * @param radius     radius of the path to create
      * @see GKGraphNode

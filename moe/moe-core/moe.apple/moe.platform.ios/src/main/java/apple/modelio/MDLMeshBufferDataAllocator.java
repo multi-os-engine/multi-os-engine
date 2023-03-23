@@ -46,6 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An allocator to use when backing with an NSData is appropriate.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")

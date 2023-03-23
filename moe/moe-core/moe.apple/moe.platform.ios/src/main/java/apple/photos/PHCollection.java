@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -96,11 +99,17 @@ public class PHCollection extends PHObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("fetchCollectionsInCollectionList:options:")
     public static native PHFetchResult<? extends PHCollection> fetchCollectionsInCollectionListOptions(
             PHCollectionList collectionList, PHFetchOptions options);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("fetchTopLevelUserCollectionsWithOptions:")
     public static native PHFetchResult<? extends PHCollection> fetchTopLevelUserCollectionsWithOptions(
@@ -158,14 +167,23 @@ public class PHCollection extends PHObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("canContainAssets")
     public native boolean canContainAssets();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("canContainCollections")
     public native boolean canContainCollections();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("canPerformEditOperation:")
     public native boolean canPerformEditOperation(@NInt long anOperation);
@@ -174,6 +192,9 @@ public class PHCollection extends PHObject {
     @Selector("init")
     public native PHCollection init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("localizedTitle")
     public native String localizedTitle();

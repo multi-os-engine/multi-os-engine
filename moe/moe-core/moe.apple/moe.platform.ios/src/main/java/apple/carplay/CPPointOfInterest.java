@@ -27,7 +27,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
+import org.moe.natj.general.ann.ByValue;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -87,9 +92,9 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     public static native String description_static();
 
     /**
-     * Subtitle to be used when POI detail card is visible
-     * <p>
-     * [@note] If not provided, the point of interest will fall back to displaying @c subtitle
+     * Subtitle to be used when POI detail card is visible.
+     * 
+     * [@note] If not provided, the point of interest will fall back to displaying @c subtitle.
      */
     @Generated
     @Selector("detailSubtitle")
@@ -97,17 +102,17 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Summary text to be used when POI detail card is visible.
-     * <p>
-     * [@note] If not provided, the point of interest will fall back to displaying @c summary
+     * 
+     * [@note] If not provided, the point of interest will fall back to displaying @c summary.
      */
     @Generated
     @Selector("detailSummary")
     public native String detailSummary();
 
     /**
-     * Title to be used when POI detail card is visible
-     * <p>
-     * [@note] If not provided, the point of interest will fall back to displaying @c title
+     * Title to be used when POI detail card is visible.
+     * 
+     * [@note] If not provided, the point of interest will fall back to displaying @c title.
      */
     @Generated
     @Selector("detailTitle")
@@ -131,25 +136,28 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     public native CPPointOfInterest initWithCoder(NSCoder coder);
 
     /**
-     * Initializes a point of interest to be used with @c CPPointOfInterestTemplate
-     * <p>
+     * Initializes a point of interest to be used with @c CPPointOfInterestTemplate.
+     * 
      * [@note] When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the
      * image, provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * <p>
+     * 
      * CPPointOfInterest instances appear on the Point of Interest map view as both selectable items in the table view
      * overlay and as map annotations.
-     *
+     * 
+     * To properly size your pin images, your app should size them to the display scale of the car screen. See
+     * -[CPInterfaceController carTraitCollection].
+     * 
      * @param location       Location indicator use by map annotations.
-     * @param title          Primary title for this point of interest
-     * @param subtitle       Optional: Secondary title for this point of interest
-     * @param summary        Optional: Summary text for this point of interest
-     * @param detailTitle    Optional: Title to be used when POI detail card is visible
-     * @param detailSubtitle Optional: Subtitle to be used when POI detail card is visible
-     * @param detailSummary  Optional: Summary text to be used when POI detail card is visible
-     * @param pinImage       Optional: a custom map annotation image
+     * @param title          Primary title for this point of interest.
+     * @param subtitle       Optional: Secondary title for this point of interest.
+     * @param summary        Optional: Summary text for this point of interest.
+     * @param detailTitle    Optional: Title to be used when POI detail card is visible.
+     * @param detailSubtitle Optional: Subtitle to be used when POI detail card is visible.
+     * @param detailSummary  Optional: Summary text to be used when POI detail card is visible.
+     * @param pinImage       Optional: a custom map annotation image.
      */
     @Generated
     @Selector("initWithLocation:title:subtitle:summary:detailTitle:detailSubtitle:detailSummary:pinImage:")
@@ -179,7 +187,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
     /**
-     * Location associated with this point of interest
+     * Location associated with this point of interest.
      */
     @Generated
     @Selector("location")
@@ -191,14 +199,17 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     public static native CPPointOfInterest new_objc();
 
     /**
-     * Image used for map view annotations
+     * Image used for map view unselected annotations.
+     * 
+     * To properly size your pin image, your app should size them to the display scale of the car screen. See
+     * -[CPInterfaceController carTraitCollection].
      */
     @Generated
     @Selector("pinImage")
     public native UIImage pinImage();
 
     /**
-     * Point of Interest detail card buttons
+     * Point of Interest detail card buttons.
      */
     @Generated
     @Selector("primaryButton")
@@ -217,9 +228,9 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     public native CPTextButton secondaryButton();
 
     /**
-     * Subtitle to be used when POI detail card is visible
-     * <p>
-     * [@note] If not provided, the point of interest will fall back to displaying @c subtitle
+     * Subtitle to be used when POI detail card is visible.
+     * 
+     * [@note] If not provided, the point of interest will fall back to displaying @c subtitle.
      */
     @Generated
     @Selector("setDetailSubtitle:")
@@ -227,38 +238,41 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     /**
      * Summary text to be used when POI detail card is visible.
-     * <p>
-     * [@note] If not provided, the point of interest will fall back to displaying @c summary
+     * 
+     * [@note] If not provided, the point of interest will fall back to displaying @c summary.
      */
     @Generated
     @Selector("setDetailSummary:")
     public native void setDetailSummary(String value);
 
     /**
-     * Title to be used when POI detail card is visible
-     * <p>
-     * [@note] If not provided, the point of interest will fall back to displaying @c title
+     * Title to be used when POI detail card is visible.
+     * 
+     * [@note] If not provided, the point of interest will fall back to displaying @c title.
      */
     @Generated
     @Selector("setDetailTitle:")
     public native void setDetailTitle(String value);
 
     /**
-     * Location associated with this point of interest
+     * Location associated with this point of interest.
      */
     @Generated
     @Selector("setLocation:")
     public native void setLocation(MKMapItem value);
 
     /**
-     * Image used for map view annotations
+     * Image used for map view unselected annotations.
+     * 
+     * To properly size your pin image, your app should size them to the display scale of the car screen. See
+     * -[CPInterfaceController carTraitCollection].
      */
     @Generated
     @Selector("setPinImage:")
     public native void setPinImage(UIImage value);
 
     /**
-     * Point of Interest detail card buttons
+     * Point of Interest detail card buttons.
      */
     @Generated
     @Selector("setPrimaryButton:")
@@ -269,21 +283,21 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     public native void setSecondaryButton(CPTextButton value);
 
     /**
-     * Subtitle for this point of interest
+     * Subtitle for this point of interest.
      */
     @Generated
     @Selector("setSubtitle:")
     public native void setSubtitle(String value);
 
     /**
-     * Summary text for this point of interest
+     * Summary text for this point of interest.
      */
     @Generated
     @Selector("setSummary:")
     public native void setSummary(String value);
 
     /**
-     * Primary title for this point of interest
+     * Primary title for this point of interest.
      */
     @Generated
     @Selector("setTitle:")
@@ -301,14 +315,14 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     public static native void setVersion_static(@NInt long aVersion);
 
     /**
-     * Subtitle for this point of interest
+     * Subtitle for this point of interest.
      */
     @Generated
     @Selector("subtitle")
     public native String subtitle();
 
     /**
-     * Summary text for this point of interest
+     * Summary text for this point of interest.
      */
     @Generated
     @Selector("summary")
@@ -329,7 +343,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     }
 
     /**
-     * Primary title for this point of interest
+     * Primary title for this point of interest.
      */
     @Generated
     @Selector("title")
@@ -347,4 +361,83 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Initializes a point of interest to be used with @c CPPointOfInterestTemplate .
+     * 
+     * [@note] When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the
+     * image, provide
+     * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
+     * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
+     * both styles.
+     * 
+     * CPPointOfInterest instances appear on the Point of Interest map view as both selectable items in the table view
+     * overlay and as map annotations.
+     * 
+     * To properly size your pin images, your app should size them to the display scale of the car screen. See
+     * -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 16.0
+     * 
+     * @param location         Location indicator use by map annotations.
+     * @param title            Primary title for this point of interest.
+     * @param subtitle         Optional: Secondary title for this point of interest.
+     * @param summary          Optional: Summary text for this point of interest.
+     * @param detailTitle      Optional: Title to be used when POI detail card is visible.
+     * @param detailSubtitle   Optional: Subtitle to be used when POI detail card is visible.
+     * @param detailSummary    Optional: Summary text to be used when POI detail card is visible.
+     * @param pinImage         Optional: a custom unselected map annotation image.
+     * @param selectedPinImage Optional: a custom selected map annotation image.
+     */
+    @Generated
+    @Selector("initWithLocation:title:subtitle:summary:detailTitle:detailSubtitle:detailSummary:pinImage:selectedPinImage:")
+    public native CPPointOfInterest initWithLocationTitleSubtitleSummaryDetailTitleDetailSubtitleDetailSummaryPinImageSelectedPinImage(
+            MKMapItem location, String title, String subtitle, String summary, String detailTitle,
+            String detailSubtitle, String detailSummary, UIImage pinImage, UIImage selectedPinImage);
+
+    /**
+     * If you provide a custom image for this point of interest, the unselected image must be this size. Any image
+     * larger than this size will be resized.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("pinImageSize")
+    @ByValue
+    public static native CGSize pinImageSize();
+
+    /**
+     * Image used for map view selected annotation.
+     * 
+     * To properly size your pin image, your app should size them to the display scale of the car screen. See
+     * -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("selectedPinImage")
+    public native UIImage selectedPinImage();
+
+    /**
+     * If you provide a custom image for this point of interest, the selected image must be this size. Any image larger
+     * than this size will be resized.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("selectedPinImageSize")
+    @ByValue
+    public static native CGSize selectedPinImageSize();
+
+    /**
+     * Image used for map view selected annotation.
+     * 
+     * To properly size your pin image, your app should size them to the display scale of the car screen. See
+     * -[CPInterfaceController carTraitCollection].
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSelectedPinImage:")
+    public native void setSelectedPinImage(UIImage value);
 }

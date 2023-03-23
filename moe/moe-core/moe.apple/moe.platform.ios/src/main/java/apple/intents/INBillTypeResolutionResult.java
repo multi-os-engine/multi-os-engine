@@ -22,6 +22,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.3
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INBillTypeResolutionResult is deprecated. There is no replacement.
+ */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -80,6 +86,11 @@ public class INBillTypeResolutionResult extends INIntentResolutionResult {
     public static native INBillTypeResolutionResult confirmationRequiredWithBillTypeToConfirm(
             @NInt long billTypeToConfirm);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @Selector("confirmationRequiredWithValueToConfirm:")
     public static native INBillTypeResolutionResult confirmationRequiredWithValueToConfirm(@NInt long valueToConfirm);
@@ -157,6 +168,11 @@ public class INBillTypeResolutionResult extends INIntentResolutionResult {
     @Selector("successWithResolvedBillType:")
     public static native INBillTypeResolutionResult successWithResolvedBillType(@NInt long resolvedBillType);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @Selector("successWithResolvedValue:")
     public static native INBillTypeResolutionResult successWithResolvedValue(@NInt long resolvedValue);

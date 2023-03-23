@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageReduceColumnMean
- * <p>
+ * 
  * The MPSImageReduceColumnMean performs a reduction operation returning the mean value for each column of an image
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -107,7 +109,7 @@ public class MPSImageReduceColumnMean extends MPSImageReduceUnary {
 
     /**
      * Specifies information to apply the reduction operation on an image.
-     *
+     * 
      * @param device The device the filter will run on
      * @return A valid MPSImageReduce object or nil, if failure.
      */

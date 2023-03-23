@@ -27,9 +27,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * An object to describe and configure parameters to be used in a nearby interaction session for mutual relative
  * positional measurements.
- * <p>
+ * 
  * Devices engaged in a session run with an NINearbyPeerConfiguration are able to continuously generate positional
  * measurements relative to one another.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("NearbyInteraction")
@@ -104,7 +106,7 @@ public class NINearbyPeerConfiguration extends NIConfiguration {
 
     /**
      * Initializes a new configuration with the provided peer token.
-     *
+     * 
      * @param peerToken A discovery token received from the peer for this session.
      */
     @Generated
@@ -138,7 +140,7 @@ public class NINearbyPeerConfiguration extends NIConfiguration {
     public static native NINearbyPeerConfiguration new_objc();
 
     /**
-     * The discovery token identifiying the peer device for this session configuration.
+     * The discovery token identifying the peer device for this session configuration.
      */
     @Generated
     @Selector("peerDiscoveryToken")
@@ -174,4 +176,36 @@ public class NINearbyPeerConfiguration extends NIConfiguration {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Enables camera assistance during the NISession run with this configuration
+     * 
+     * If true, optionally call setARSession: on the NISession before calling runWithConfiguration:
+     * If true and setARSession: is not called, an ARSession will automatically be created
+     * If true and the platform does not support camera assistance, the NISession will generate an error when
+     * runWithConfiguration: is called
+     * [@note] Check supportsCameraAssistance property in NIDeviceCapability returned from deviceCapabilities properties
+     * on NISession
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isCameraAssistanceEnabled")
+    public native boolean isCameraAssistanceEnabled();
+
+    /**
+     * Enables camera assistance during the NISession run with this configuration
+     * 
+     * If true, optionally call setARSession: on the NISession before calling runWithConfiguration:
+     * If true and setARSession: is not called, an ARSession will automatically be created
+     * If true and the platform does not support camera assistance, the NISession will generate an error when
+     * runWithConfiguration: is called
+     * [@note] Check supportsCameraAssistance property in NIDeviceCapability returned from deviceCapabilities properties
+     * on NISession
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setCameraAssistanceEnabled:")
+    public native void setCameraAssistanceEnabled(boolean value);
 }

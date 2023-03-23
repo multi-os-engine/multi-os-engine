@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -45,6 +48,8 @@ public interface MKOverlay extends MKAnnotation {
     /**
      * If this method is implemented and returns YES, MKMapView may use it as a hint to skip loading or drawing the
      * built in map content in the area covered by this overlay.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional

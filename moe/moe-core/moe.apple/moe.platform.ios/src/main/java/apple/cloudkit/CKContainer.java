@@ -43,13 +43,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CKContainer
- * <p>
+ * 
  * A CKContainer, and its CKDatabases, are the main entry points into the CloudKit framework.
- * <p>
+ * 
  * Several methods in CloudKit accept completion handlers to indicate when they're completed.
  * All CKOperation subclasses include progress and completion blocks to report significant events in their lifecycles.
  * Each of these handlers and blocks is invoked on a non-main serial queue. The receiver is responsible for handling the
  * message on a different queue or thread if it is required.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("CloudKit")
@@ -103,7 +105,7 @@ public class CKContainer extends NSObject {
 
     /**
      * Obtain a CKContainer for the given containerIdentifier
-     * <p>
+     * 
      * If the application is in production mode (aka, @c com.apple.developer.icloud-container-environment is set to
      * Production in your entitlements plist, and you have no override in @c
      * com.apple.developer.icloud-container-development-container-identifiers), then the production environment is used.
@@ -118,7 +120,7 @@ public class CKContainer extends NSObject {
 
     /**
      * Convenience method that uses the calling process' "iCloud.\(application-identifier)" as the container identifier
-     * <p>
+     * 
      * application-identifier is the calling process' @c application-identifier entitlement on iOS / tvOS / watchOS.
      * application-identifier is the calling process' @c com.apple.application-identifier entitlement on macOS.
      * On all OSes, if an @c com.apple.developer.associated-application-identifier entitlement is present, its value
@@ -184,6 +186,9 @@ public class CKContainer extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("acceptShareMetadata:completionHandler:")
     public native void acceptShareMetadataCompletionHandler(CKShareMetadata metadata,
@@ -204,8 +209,10 @@ public class CKContainer extends NSObject {
 
     /**
      * Convenience methods
-     *
+     * 
      * @return a database that's pointer-equal to one of the above properties@enum
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("databaseWithDatabaseScope:")
@@ -213,9 +220,11 @@ public class CKContainer extends NSObject {
 
     /**
      * Fetches all user identities that match an entry in the user's contacts database.
-     * <p>
+     * 
      * [@c] CKDiscoverAllUserIdentitiesOperation is the more configurable, @c CKOperation -based alternative to this
      * methods
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("discoverAllIdentitiesWithCompletionHandler:")
@@ -224,11 +233,13 @@ public class CKContainer extends NSObject {
 
     /**
      * Fetches the user identity that corresponds to the given email address.
-     * <p>
+     * 
      * Only users who have opted-in to user discoverability will have their identities returned by this method. If a
      * user with the inputted email exists in iCloud, but has not opted-in to user discoverability, this method
      * completes with a nil @c userInfo. @c CKDiscoverUserIdentitiesOperation is the more configurable, @c CKOperation
      * -based alternative to this method
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("discoverUserIdentityWithEmailAddress:completionHandler:")
@@ -237,11 +248,13 @@ public class CKContainer extends NSObject {
 
     /**
      * Fetches the user identity that corresponds to the given phone number.
-     * <p>
+     * 
      * Only users who have opted-in to user discoverability will have their identities returned by this method. If a
      * user with the inputted phone number exists in iCloud, but has not opted-in to user discoverability, this method
      * completes with a nil @c userInfo. @c CKDiscoverUserIdentitiesOperation is the more configurable, @c CKOperation
      * -based alternative to this method
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("discoverUserIdentityWithPhoneNumber:completionHandler:")
@@ -250,10 +263,12 @@ public class CKContainer extends NSObject {
 
     /**
      * Fetches the user identity that corresponds to the given user record id.
-     * <p>
+     * 
      * Only users who have opted-in to user discoverability will have their identities returned by this method. If a
      * user has not opted-in to user discoverability, this method completes with a nil @c userInfo. @c
      * CKDiscoverUserIdentitiesOperation is the more configurable, @c CKOperation -based alternative to this method
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("discoverUserIdentityWithUserRecordID:completionHandler:")
@@ -266,17 +281,25 @@ public class CKContainer extends NSObject {
      * If an operation has already completed against the server, and is subsequently resumed, that operation will replay
      * all of its callbacks from the start of the operation, but the request will not be re-sent to the server.
      * If a long lived operation is cancelled or finishes completely it is no longer returned by these calls.
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("fetchAllLongLivedOperationIDsWithCompletionHandler:")
     public native void fetchAllLongLivedOperationIDsWithCompletionHandler(
             @ObjCBlock(name = "call_fetchAllLongLivedOperationIDsWithCompletionHandler") Block_fetchAllLongLivedOperationIDsWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("fetchLongLivedOperationWithID:completionHandler:")
     public native void fetchLongLivedOperationWithIDCompletionHandler(String operationID,
             @ObjCBlock(name = "call_fetchLongLivedOperationWithIDCompletionHandler") Block_fetchLongLivedOperationWithIDCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("fetchShareMetadataWithURL:completionHandler:")
     public native void fetchShareMetadataWithURLCompletionHandler(NSURL url,
@@ -284,20 +307,28 @@ public class CKContainer extends NSObject {
 
     /**
      * Fetches share participants matching the provided info.
-     * <p>
+     * 
      * [@c] CKFetchShareParticipantsOperation is the more configurable, @c CKOperation -based alternative to these
      * methods.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("fetchShareParticipantWithEmailAddress:completionHandler:")
     public native void fetchShareParticipantWithEmailAddressCompletionHandler(String emailAddress,
             @ObjCBlock(name = "call_fetchShareParticipantWithEmailAddressCompletionHandler") Block_fetchShareParticipantWithEmailAddressCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("fetchShareParticipantWithPhoneNumber:completionHandler:")
     public native void fetchShareParticipantWithPhoneNumberCompletionHandler(String phoneNumber,
             @ObjCBlock(name = "call_fetchShareParticipantWithPhoneNumberCompletionHandler") Block_fetchShareParticipantWithPhoneNumberCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("fetchShareParticipantWithUserRecordID:completionHandler:")
     public native void fetchShareParticipantWithUserRecordIDCompletionHandler(CKRecordID userRecordID,
@@ -306,7 +337,7 @@ public class CKContainer extends NSObject {
     /**
      * If there is no iCloud account configured, or if access is restricted, a @c CKErrorNotAuthenticated error will be
      * returned.
-     * <p>
+     * 
      * This work is treated as having @c NSQualityOfServiceUserInitiated quality of service.
      */
     @Generated
@@ -331,6 +362,9 @@ public class CKContainer extends NSObject {
     public native void requestApplicationPermissionCompletionHandler(@NUInt long applicationPermission,
             @ObjCBlock(name = "call_requestApplicationPermissionCompletionHandler") Block_requestApplicationPermissionCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("sharedCloudDatabase")
     public native CKDatabase sharedCloudDatabase();

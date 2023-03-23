@@ -54,6 +54,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * NSUserActivity encapsulates the state of a user activity in an application on a particular device, in a way that
  * allows the same activity to be continued on another device in a corresponding application from the same developer.
  * Examples of user user activities include editing a document, viewing a web page, or watching a video.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Foundation")
@@ -204,6 +206,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * If non-nil, then an absolute date after which this activity is no longer eligible to be indexed or handed off.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("expirationDate")
@@ -224,7 +228,12 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     /**
      * Initializes and returns a newly created NSUserActivity with the first activityType from the NSUserActivityTypes
      * key in the application’s Info.plist.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use initWithActivityType: with a specific activity type string
      */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSUserActivity init();
@@ -241,6 +250,9 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     @Selector("initWithActivityType:")
     public native NSUserActivity initWithActivityType(String activityType);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("interaction")
     public native INInteraction interaction();
@@ -255,6 +267,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * Set to YES if this user activity should be eligible to be handed off to another device
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isEligibleForHandoff")
@@ -262,6 +276,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * Set to YES if this user activity should be eligible to be handed off to another device
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEligibleForHandoff:")
@@ -271,6 +287,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
      * Set to YES if this user activity should be eligible for indexing for any user of this application, on any device,
      * or NO if the activity contains private or sensitive information or which would not be useful to other users if
      * indexed. The activity must also have requiredUserActivityKeys or a webpageURL
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isEligibleForPublicIndexing")
@@ -280,6 +298,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
      * Set to YES if this user activity should be eligible for indexing for any user of this application, on any device,
      * or NO if the activity contains private or sensitive information or which would not be useful to other users if
      * indexed. The activity must also have requiredUserActivityKeys or a webpageURL
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEligibleForPublicIndexing:")
@@ -287,6 +307,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * Set to YES if this user activity should be indexed by App History
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isEligibleForSearch")
@@ -294,6 +316,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * Set to YES if this user activity should be indexed by App History
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEligibleForSearch:")
@@ -302,11 +326,16 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     /**
      * A set of NSString* keywords, representing words or phrases in the current user's language that might help the
      * user to find this activity in the application history.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("keywords")
     public native NSSet<String> keywords();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("mapItem")
     public native MKMapItem mapItem();
@@ -322,6 +351,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     /**
      * The keys from the userInfo property which represent the minimal information about this user activity that should
      * be stored for later restoration. A nil value means all keys in .userInfo are required.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("requiredUserInfoKeys")
@@ -329,6 +360,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * If this activity is the current activity, it should stop being so and set the current activity to nothing.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("resignCurrent")
@@ -364,6 +397,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * If non-nil, then an absolute date after which this activity is no longer eligible to be indexed or handed off.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setExpirationDate:")
@@ -372,11 +407,16 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     /**
      * A set of NSString* keywords, representing words or phrases in the current user's language that might help the
      * user to find this activity in the application history.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setKeywords:")
     public native void setKeywords(NSSet<String> value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setMapItem:")
     public native void setMapItem(MKMapItem value);
@@ -392,6 +432,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
     /**
      * The keys from the userInfo property which represent the minimal information about this user activity that should
      * be stored for later restoration. A nil value means all keys in .userInfo are required.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRequiredUserInfoKeys:")
@@ -475,6 +517,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * A unique identifier relative to the app's media content catalog for the displayed media item.
+     * 
+     * API-Since: 10.1
      */
     @Generated
     @Selector("externalMediaContentIdentifier")
@@ -482,6 +526,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * The URL of the webpage that referred (linked to) webpageURL.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("referrerURL")
@@ -489,6 +535,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * A unique identifier relative to the app's media content catalog for the displayed media item.
+     * 
+     * API-Since: 10.1
      */
     @Generated
     @Selector("setExternalMediaContentIdentifier:")
@@ -496,11 +544,16 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * The URL of the webpage that referred (linked to) webpageURL.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setReferrerURL:")
     public native void setReferrerURL(NSURL value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("deleteAllSavedUserActivitiesWithCompletionHandler:")
     public static native void deleteAllSavedUserActivitiesWithCompletionHandler(
@@ -513,6 +566,9 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
         void call_deleteAllSavedUserActivitiesWithCompletionHandler();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("deleteSavedUserActivitiesWithPersistentIdentifiers:completionHandler:")
     public static native void deleteSavedUserActivitiesWithPersistentIdentifiersCompletionHandler(
@@ -528,11 +584,16 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * The scanned code in the user activity passed in by system scanner.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("detectedBarcodeDescriptor")
     public native CIBarcodeDescriptor detectedBarcodeDescriptor();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("isEligibleForPrediction")
     public native boolean isEligibleForPrediction();
@@ -574,6 +635,9 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("persistentIdentifier")
     public native String persistentIdentifier();
@@ -588,16 +652,24 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
         return readableTypeIdentifiersForItemProvider();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setEligibleForPrediction:")
     public native void setEligibleForPrediction(boolean value);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setPersistentIdentifier:")
     public native void setPersistentIdentifier(String value);
 
     /**
      * A human-understandable string that can be used to suggest a voice shortcut phrase to the user
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setSuggestedInvocationPhrase:")
@@ -607,6 +679,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
      * A string that identifies the content of this NSUserActivity, for matching against existing documents when
      * re-opening to see if they are the same.
      * Setting this property is optional and does not automatically set .needsSave to YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTargetContentIdentifier:")
@@ -614,6 +688,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * A human-understandable string that can be used to suggest a voice shortcut phrase to the user
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("suggestedInvocationPhrase")
@@ -623,6 +699,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
      * A string that identifies the content of this NSUserActivity, for matching against existing documents when
      * re-opening to see if they are the same.
      * Setting this property is optional and does not automatically set .needsSave to YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("targetContentIdentifier")
@@ -645,9 +723,11 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * Returns the context identifier path you should deep link to.
-     * <p>
+     * 
      * For example for the context identifier path @c @["swift-programming-book", @c "chapter1"],
      * your app should direct the user to @em chapter1 in @em swift-programming-book.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("contextIdentifierPath")
@@ -655,6 +735,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * Returns whether the user activity is a ClassKit deep link.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("isClassKitDeepLink")
@@ -662,8 +744,10 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * [@property] ndefMessagePayload
-     * <p>
+     * 
      * The NFC NDEF message with an Universial Link object that triggers the application launch.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("ndefMessagePayload")
@@ -671,6 +755,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * Defines additional contexts in which this user activity is relevant to be suggested to the user.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setShortcutAvailability:")
@@ -678,6 +764,8 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * Defines additional contexts in which this user activity is relevant to be suggested to the user.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("shortcutAvailability")
@@ -686,8 +774,10 @@ public class NSUserActivity extends NSObject implements NSItemProviderReading, N
 
     /**
      * [@property] appClipActivationPayload
-     * <p>
+     * 
      * The activation payload object that triggers the app clip launch.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("appClipActivationPayload")

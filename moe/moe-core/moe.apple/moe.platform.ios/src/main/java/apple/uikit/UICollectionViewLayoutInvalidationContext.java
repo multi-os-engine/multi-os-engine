@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSIndexPath;
@@ -42,7 +40,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -155,6 +158,8 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
 
     /**
      * delta to be applied to the collection view's current contentOffset - default is CGPointZero
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("contentOffsetAdjustment")
@@ -163,6 +168,8 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
 
     /**
      * delta to be applied to the current content size - default is CGSizeZero
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("contentSizeAdjustment")
@@ -173,6 +180,9 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     @Selector("init")
     public native UICollectionViewLayoutInvalidationContext init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("interactiveMovementTarget")
     @ByValue
@@ -186,6 +196,9 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     @Selector("invalidateDataSourceCounts")
     public native boolean invalidateDataSourceCounts();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("invalidateDecorationElementsOfKind:atIndexPaths:")
     public native void invalidateDecorationElementsOfKindAtIndexPaths(String elementKind,
@@ -198,10 +211,16 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
     @Selector("invalidateEverything")
     public native boolean invalidateEverything();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("invalidateItemsAtIndexPaths:")
     public native void invalidateItemsAtIndexPaths(NSArray<? extends NSIndexPath> indexPaths);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("invalidateSupplementaryElementsOfKind:atIndexPaths:")
     public native void invalidateSupplementaryElementsOfKindAtIndexPaths(String elementKind,
@@ -209,17 +228,24 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
 
     /**
      * keys are element kind strings - values are NSArrays of NSIndexPaths
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("invalidatedDecorationIndexPaths")
     public native NSDictionary<String, ? extends NSArray<? extends NSIndexPath>> invalidatedDecorationIndexPaths();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("invalidatedItemIndexPaths")
     public native NSArray<? extends NSIndexPath> invalidatedItemIndexPaths();
 
     /**
      * keys are element kind strings - values are NSArrays of NSIndexPaths
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("invalidatedSupplementaryIndexPaths")
@@ -227,6 +253,8 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
 
     /**
      * index paths of moving items prior to the invalidation
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("previousIndexPathsForInteractivelyMovingItems")
@@ -234,6 +262,8 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
 
     /**
      * delta to be applied to the collection view's current contentOffset - default is CGPointZero
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setContentOffsetAdjustment:")
@@ -241,6 +271,8 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
 
     /**
      * delta to be applied to the current content size - default is CGSizeZero
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setContentSizeAdjustment:")
@@ -248,6 +280,8 @@ public class UICollectionViewLayoutInvalidationContext extends NSObject {
 
     /**
      * index paths of moved items following the invalidation
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("targetIndexPathsForInteractivelyMovingItems")

@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCDropoutLayer
- * <p>
+ * 
  * A dropout layer
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -117,7 +119,7 @@ public class MLCDropoutLayer extends MLCLayer {
 
     /**
      * Create a dropout layer
-     *
+     * 
      * @param rate A scalar float value. The probability that each element is dropped.
      * @param seed The seed used to generate random numbers.
      * @return A new dropout layer
@@ -133,7 +135,7 @@ public class MLCDropoutLayer extends MLCLayer {
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * The probability that each element is dropped
      */
     @Generated
@@ -150,7 +152,7 @@ public class MLCDropoutLayer extends MLCLayer {
 
     /**
      * [@property] seed
-     * <p>
+     * 
      * The initial seed used to generate random numbers
      */
     @Generated

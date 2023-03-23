@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -62,6 +65,8 @@ public class NSLayoutConstraint extends NSObject {
     /**
      * Convenience method that activates each constraint in the contained array, in the same manner as setting
      * active=YES. This is often more efficient than activating each constraint individually.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("activateConstraints:")
@@ -104,6 +109,8 @@ public class NSLayoutConstraint extends NSObject {
      * If your equation does not have a second view and attribute, use nil and NSLayoutAttributeNotAnAttribute.
      * Use of this method is not recommended. Constraints should be created using anchor objects on views and layout
      * guides.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("constraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:")
@@ -115,6 +122,8 @@ public class NSLayoutConstraint extends NSObject {
     /**
      * Create an array of constraints using an ASCII-art-like visual format string. The values of the `metrics`
      * dictionary should be NSNumber (or some other type that responds to -doubleValue and returns a double).
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("constraintsWithVisualFormat:options:metrics:views:")
@@ -124,6 +133,8 @@ public class NSLayoutConstraint extends NSObject {
     /**
      * Convenience method that deactivates each constraint in the contained array, in the same manner as setting
      * active=NO. This is often more efficient than deactivating each constraint individually.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("deactivateConstraints:")
@@ -202,6 +213,8 @@ public class NSLayoutConstraint extends NSObject {
     /**
      * accessors
      * firstAnchor{==,<=,>=} secondAnchor * multiplier + constant
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("firstAnchor")
@@ -226,6 +239,8 @@ public class NSLayoutConstraint extends NSObject {
      * For ease in debugging, name a constraint by setting its identifier, which will be printed in the constraint's
      * description.
      * Identifiers starting with NS or UI are reserved by the system.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("identifier")
@@ -239,6 +254,8 @@ public class NSLayoutConstraint extends NSObject {
      * The receiver may be activated or deactivated by manipulating this property.  Only active constraints affect the
      * calculated layout.  Attempting to activate a constraint whose items have no common ancestor will cause an
      * exception to be thrown. Defaults to NO for newly created constraints.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isActive")
@@ -248,6 +265,8 @@ public class NSLayoutConstraint extends NSObject {
      * The receiver may be activated or deactivated by manipulating this property.  Only active constraints affect the
      * calculated layout.  Attempting to activate a constraint whose items have no common ancestor will cause an
      * exception to be thrown. Defaults to NO for newly created constraints.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setActive:")
@@ -267,6 +286,9 @@ public class NSLayoutConstraint extends NSObject {
     @NInt
     public native long relation();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("secondAnchor")
     public native NSLayoutAnchor<?> secondAnchor();
@@ -294,6 +316,8 @@ public class NSLayoutConstraint extends NSObject {
      * For ease in debugging, name a constraint by setting its identifier, which will be printed in the constraint's
      * description.
      * Identifiers starting with NS or UI are reserved by the system.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setIdentifier:")

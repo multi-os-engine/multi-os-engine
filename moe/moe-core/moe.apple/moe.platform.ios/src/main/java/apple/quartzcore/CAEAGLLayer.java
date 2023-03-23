@@ -45,6 +45,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: OpenGLES is deprecated
+ */
+@Deprecated
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -194,6 +200,8 @@ public class CAEAGLLayer extends CALayer implements EAGLDrawable {
      * appear on-screen asynchronously to normal layer updates. When true,
      * changes to the GLES content are sent to the screen via the standard
      * CATransaction mechanisms.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("presentsWithTransaction")
@@ -208,6 +216,8 @@ public class CAEAGLLayer extends CALayer implements EAGLDrawable {
      * appear on-screen asynchronously to normal layer updates. When true,
      * changes to the GLES content are sent to the screen via the standard
      * CATransaction mechanisms.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setPresentsWithTransaction:")

@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Base class used to fetch data from the store. Should not be used directly.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("StoreKit")
@@ -154,11 +156,16 @@ public class SKRequest extends NSObject {
 
     /**
      * Cancel the request if it has started.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -168,10 +175,16 @@ public class SKRequest extends NSObject {
     @Selector("init")
     public native SKRequest init();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
@@ -186,6 +199,8 @@ public class SKRequest extends NSObject {
 
     /**
      * Start the request if it has not already been started.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("start")

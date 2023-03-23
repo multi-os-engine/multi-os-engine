@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Descriptor for motion triangle geometry
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Metal")
@@ -200,8 +202,10 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
     public native void setVertexBuffers(NSArray<? extends MTLMotionKeyframeData> value);
 
     /**
-     * Stride, in bytes, between vertices in the vertex buffer. Must be at least 12 bytes and must be a
-     * multiple of 4 bytes. Defaults to 12 bytes.
+     * Stride, in bytes, between vertices in each keyframe's vertex buffer. Must be a multiple of the vertex format data
+     * type size and must be aligned to
+     * the vertex format data type's alignment. Defaults to 0, which will result in a stride of the vertex format data
+     * size.
      */
     @Generated
     @Selector("setVertexStride:")
@@ -233,11 +237,78 @@ public class MTLAccelerationStructureMotionTriangleGeometryDescriptor extends
     public native NSArray<? extends MTLMotionKeyframeData> vertexBuffers();
 
     /**
-     * Stride, in bytes, between vertices in the vertex buffer. Must be at least 12 bytes and must be a
-     * multiple of 4 bytes. Defaults to 12 bytes.
+     * Stride, in bytes, between vertices in each keyframe's vertex buffer. Must be a multiple of the vertex format data
+     * type size and must be aligned to
+     * the vertex format data type's alignment. Defaults to 0, which will result in a stride of the vertex format data
+     * size.
      */
     @Generated
     @Selector("vertexStride")
     @NUInt
     public native long vertexStride();
+
+    /**
+     * Buffer containing packed float4x3 transformation matrix. Transform is applied to the vertex data when building
+     * the acceleration structure. Input vertex buffers are not modified.
+     * The transformation matrix is applied to all keyframes' vertex data.
+     * When set to nil, transformation matrix is not applied to vertex data.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setTransformationMatrixBuffer:")
+    public native void setTransformationMatrixBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+
+    /**
+     * Transformation matrix buffer offset. Must be a multiple of 4 bytes. Defaults to 0.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setTransformationMatrixBufferOffset:")
+    public native void setTransformationMatrixBufferOffset(@NUInt long value);
+
+    /**
+     * Format type of the vertex buffers across all keyframes.
+     * Defaults to MTLAttributeFormatFloat3 (packed).
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setVertexFormat:")
+    public native void setVertexFormat(@NUInt long value);
+
+    /**
+     * Buffer containing packed float4x3 transformation matrix. Transform is applied to the vertex data when building
+     * the acceleration structure. Input vertex buffers are not modified.
+     * The transformation matrix is applied to all keyframes' vertex data.
+     * When set to nil, transformation matrix is not applied to vertex data.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("transformationMatrixBuffer")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native MTLBuffer transformationMatrixBuffer();
+
+    /**
+     * Transformation matrix buffer offset. Must be a multiple of 4 bytes. Defaults to 0.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("transformationMatrixBufferOffset")
+    @NUInt
+    public native long transformationMatrixBufferOffset();
+
+    /**
+     * Format type of the vertex buffers across all keyframes.
+     * Defaults to MTLAttributeFormatFloat3 (packed).
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("vertexFormat")
+    @NUInt
+    public native long vertexFormat();
 }

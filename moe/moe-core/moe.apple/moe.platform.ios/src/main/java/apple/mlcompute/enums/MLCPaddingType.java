@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MLCPaddingType
- * <p>
+ * 
  * A padding type that you specify for a padding layer.
  */
 @Generated

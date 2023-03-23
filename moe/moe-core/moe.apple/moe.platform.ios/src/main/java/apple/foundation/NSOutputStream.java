@@ -107,6 +107,7 @@ public class NSOutputStream extends NSStream {
             @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
             @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
 
+    @Deprecated
     @Generated
     @Selector("getStreamsToHostWithName:port:inputStream:outputStream:")
     public static native void getStreamsToHostWithNamePortInputStreamOutputStream(String hostname, @NInt long port,
@@ -156,6 +157,9 @@ public class NSOutputStream extends NSStream {
     @Selector("outputStreamToMemory")
     public static native NSOutputStream outputStreamToMemory();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("outputStreamWithURL:append:")
     public static native NSOutputStream outputStreamWithURLAppend(NSURL url, boolean shouldAppend);
@@ -208,6 +212,9 @@ public class NSOutputStream extends NSStream {
     @Selector("initToMemory")
     public native NSOutputStream initToMemory();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("initWithURL:append:")
     public native NSOutputStream initWithURLAppend(NSURL url, boolean shouldAppend);

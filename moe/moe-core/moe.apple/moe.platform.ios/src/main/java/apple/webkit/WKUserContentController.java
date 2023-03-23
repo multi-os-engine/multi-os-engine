@@ -48,6 +48,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * messages to a web view.
  * The user content controller associated with a web view is specified by its
  * web view configuration.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("WebKit")
@@ -161,10 +163,10 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
 
     /**
      * Adds a script message handler to the main world used by page content itself.
-     * <p>
+     * 
      * Calling this method is equivalent to calling addScriptMessageHandler:contentWorld:name:
      * with [WKContentWorld pageWorld] as the contentWorld argument.
-     *
+     * 
      * @param scriptMessageHandler The script message handler to add.
      * @param name                 The name of the message handler.
      */
@@ -175,7 +177,7 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
 
     /**
      * Adds a user script.
-     *
+     * 
      * @param userScript The user script to add.
      */
     @Generated
@@ -203,10 +205,10 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
 
     /**
      * Removes a script message handler.
-     * <p>
+     * 
      * Calling this method is equivalent to calling removeScriptMessageHandlerForName:contentWorld:
      * with [WKContentWorld pageWorld] as the contentWorld argument.
-     *
+     * 
      * @param name The name of the message handler to remove.
      */
     @Generated
@@ -223,8 +225,10 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
 
     /**
      * Adds a content rule list.
-     *
+     * 
      * @param contentRuleList The content rule list to add.
+     * 
+     *                        API-Since: 11.0
      */
     @Generated
     @Selector("addContentRuleList:")
@@ -232,6 +236,8 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
 
     /**
      * Removes all associated content rule lists.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("removeAllContentRuleLists")
@@ -239,8 +245,10 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
 
     /**
      * Removes a content rule list.
-     *
+     * 
      * @param contentRuleList The content rule list to remove.
+     * 
+     *                        API-Since: 11.0
      */
     @Generated
     @Selector("removeContentRuleList:")
@@ -258,24 +266,26 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
 
     /**
      * Adds a script message handler.
-     * <p>
+     * 
      * Adding a script message handler adds a function
      * window.webkit.messageHandlers.<name>.postMessage(<messageBody>) to all frames, available in the given
      * WKContentWorld.
-     * <p>
+     * 
      * The name argument must be a non-empty string.
-     * <p>
+     * 
      * Each WKContentWorld can have any number of script message handlers, but only one per unique name.
-     * <p>
+     * 
      * Once any script message handler has been added to a WKContentWorld for a given name, it is an error to add
      * another
      * script message handler to that WKContentWorld for that same name without first removing the previous script
      * message handler.
-     * <p>
+     * 
      * The above restriction applies to any type of script message handler - WKScriptMessageHandler and
      * WKScriptMessageHandlerWithReply
      * objects will conflict with each other if you try to add them to the same WKContentWorld with the same name.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param scriptMessageHandler The script message handler to add.
      * @param contentWorld         The WKContentWorld in which to add the script message handler.
      * @param name                 The name of the message handler.
@@ -288,27 +298,29 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
 
     /**
      * Adds a script message handler.
-     * <p>
+     * 
      * Adding a script message handler adds a function
      * window.webkit.messageHandlers.<name>.postMessage(<messageBody>) to all frames, available in the given
      * WKContentWorld.
-     * <p>
+     * 
      * The name argument must be a non-empty string.
-     * <p>
+     * 
      * Each WKContentWorld can have any number of script message handlers, but only one per unique name.
-     * <p>
+     * 
      * Once any script message handler has been added to a WKContentWorld for a given name, it is an error to add
      * another
      * script message handler to that WKContentWorld for that same name without first removing the previous script
      * message handler.
-     * <p>
+     * 
      * The above restriction applies to any type of script message handler - WKScriptMessageHandlerWithReply and
      * WKScriptMessageHandler
      * objects will conflict with each other if you try to add them to the same WKContentWorld with the same name.
-     * <p>
+     * 
      * Refer to the WKScriptMessageHandlerWithReply documentation for examples of how it is more flexible than
      * WKScriptMessageHandler.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param scriptMessageHandlerWithReply The script message handler to add.
      * @param contentWorld                  The WKContentWorld in which to add the script message handler.
      * @param name                          The name of the message handler.
@@ -321,6 +333,8 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
 
     /**
      * Removes all associated script message handlers.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("removeAllScriptMessageHandlers")
@@ -328,8 +342,10 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
 
     /**
      * Removes all script message handlers from a given WKContentWorld.
-     *
+     * 
      * @param contentWorld The WKContentWorld from which to remove all script message handlers.
+     * 
+     *                     API-Since: 14.0
      */
     @Generated
     @Selector("removeAllScriptMessageHandlersFromContentWorld:")
@@ -337,9 +353,11 @@ public class WKUserContentController extends NSObject implements NSSecureCoding 
 
     /**
      * Removes a script message handler.
-     *
+     * 
      * @param name         The name of the message handler to remove.
      * @param contentWorld The WKContentWorld from which to remove the script message handler.
+     * 
+     *                     API-Since: 14.0
      */
     @Generated
     @Selector("removeScriptMessageHandlerForName:contentWorld:")

@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("ScreenTime")
 @Runtime(ObjCRuntime.class)
@@ -74,7 +77,7 @@ public class STScreenTimeConfigurationObserver extends NSObject {
 
     /**
      * The current Screen Time configuration.
-     * <p>
+     * 
      * The configuration's properties are automatically updated via KVO on the update queue.
      */
     @Generated

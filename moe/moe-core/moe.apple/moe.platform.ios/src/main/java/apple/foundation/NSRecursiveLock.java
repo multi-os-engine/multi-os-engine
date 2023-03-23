@@ -158,10 +158,16 @@ public class NSRecursiveLock extends NSObject implements NSLocking {
     @Selector("lockBeforeDate:")
     public native boolean lockBeforeDate(NSDate limit);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);

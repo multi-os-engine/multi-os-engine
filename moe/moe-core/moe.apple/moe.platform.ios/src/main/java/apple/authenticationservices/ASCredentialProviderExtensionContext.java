@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -69,9 +72,9 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
 
     /**
      * Cancels the request.
-     * <p>
+     * 
      * The extension should call this method when the user cancels the action or a failure occurs.
-     *
+     * 
      * @param error error's domain should be ASExtensionErrorDomain and the code should be a value of type
      *              ASExtensionErrorCode.
      */
@@ -89,7 +92,7 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
 
     /**
      * Complete the request to configure the extension.
-     * <p>
+     * 
      * Calling this method will eventually dismiss the associated view controller.
      */
     @Generated
@@ -98,9 +101,9 @@ public class ASCredentialProviderExtensionContext extends NSExtensionContext {
 
     /**
      * Complete the request by providing the user selected credential.
-     * <p>
+     * 
      * Calling this method will eventually dismiss the associated view controller.
-     *
+     * 
      * @param credential        the credential that the user has selected.
      * @param completionHandler optionally contains any work which the extension may need to perform after the request
      *                          has been completed,

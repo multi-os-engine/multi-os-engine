@@ -19,18 +19,27 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 public final class UIBackgroundRefreshStatus {
     /**
      * unavailable on this system due to device configuration; the user cannot enable the feature
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Restricted = 0x0000000000000000L;
     /**
      * explicitly disabled by the user for this application
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Denied = 0x0000000000000001L;
     /**
      * enabled for this application
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Available = 0x0000000000000002L;
 

@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -40,11 +43,13 @@ public interface NSNetServiceDelegate {
      * * received. Before you can communicate with the connecting client, you must -open
      * * and schedule the streams. To reject a connection, just -open both streams and
      * * then immediately -close them.
-     * <p>
+     * 
      * * To enable TLS on the stream, set the various TLS settings using
      * * kCFStreamPropertySSLSettings before calling -open. You must also specify
      * * kCFBooleanTrue for kCFStreamSSLIsServer in the settings dictionary along with
      * * a valid SecIdentityRef as the first entry of kCFStreamSSLCertificates.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional

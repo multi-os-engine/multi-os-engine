@@ -40,7 +40,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MTLArgument
+ * 
+ * API-Since: 8.0
+ * Deprecated-Since: 16.0
  */
+@Deprecated
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +160,9 @@ public class MTLArgument extends NSObject {
     @NUInt
     public native long access();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("arrayLength")
     @NUInt
@@ -204,6 +211,8 @@ public class MTLArgument extends NSObject {
 
     /**
      * true for depth textures
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("isDepthTexture")
@@ -250,6 +259,9 @@ public class MTLArgument extends NSObject {
     @NUInt
     public native long type();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("bufferPointerType")
     public native MTLPointerType bufferPointerType();

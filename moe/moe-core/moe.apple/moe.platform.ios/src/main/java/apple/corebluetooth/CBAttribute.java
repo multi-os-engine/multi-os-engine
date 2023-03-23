@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("CoreBluetooth")
 @Runtime(ObjCRuntime.class)
@@ -150,7 +153,7 @@ public class CBAttribute extends NSObject {
 
     /**
      * [@property] UUID
-     * <p>
+     * 
      * The Bluetooth UUID of the attribute.
      */
     @Generated

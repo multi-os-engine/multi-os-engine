@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * the beginning of the sentence or used as a standalone string in the UI, so it will not provide any sort of
  * capitalization customization on the given items, but merely join them as-is. The string joined this way may not be
  * grammatically correct when placed in a sentence, and it should only be used in a standalone manner.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Foundation")
@@ -189,7 +191,7 @@ public class NSListFormatter extends NSFormatter {
      * format. Each item is formatted using the itemFormatter. If the itemFormatter does not apply to a particular item,
      * the method will fall back to the item's -descriptionWithLocale: or -localizedDescription if implemented, or
      * -description if not.
-     * <p>
+     * 
      * Returns nil if `items` is nil or if the list formatter cannot generate a string representation for all items in
      * the array.
      */

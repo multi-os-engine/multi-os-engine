@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request to recognize speech from arbitrary audio buffers
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Speech")

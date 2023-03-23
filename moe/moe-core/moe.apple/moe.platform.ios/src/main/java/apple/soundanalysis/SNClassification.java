@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The likelihood of a sound belonging to identified class
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("SoundAnalysis")

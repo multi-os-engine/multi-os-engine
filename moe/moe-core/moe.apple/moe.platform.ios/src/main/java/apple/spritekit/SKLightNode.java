@@ -46,6 +46,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -184,14 +187,14 @@ public class SKLightNode extends SKNode {
 
     /**
      * Ambient color of the light source, defaults to black.
-     * <p>
+     * 
      * If you had only a single light in the scene with an ambient color
      * of opaque white and a light color of black,
      * it would appear as if the scene was rendered without lighting.
-     * <p>
+     * 
      * The alpha component of the color is ignored. The color is not
      * affected by falloff or surface normals.
-     *
+     * 
      * @see lightColor
      */
     @Generated
@@ -202,7 +205,7 @@ public class SKLightNode extends SKNode {
      * The category of the light, which determines the group(s) a light belongs to.
      * Any node that has its corresponding light and shadow bitmasks set to an overlapping value
      * will be lit, shadow casting or shadowed by this light.
-     *
+     * 
      * @see SKSpriteNode.lightingBitMask
      * @see SKSpriteNode.shadowCastBitMask
      * @see SKSpriteNode.shadowedBitMask
@@ -214,7 +217,7 @@ public class SKLightNode extends SKNode {
     /**
      * Falloff in intensity of the light over distance, defaults to 1.
      * The falloff does not affect the ambient color nor the shadow color.
-     *
+     * 
      * @see lightColor
      */
     @Generated
@@ -232,16 +235,16 @@ public class SKLightNode extends SKNode {
 
     /**
      * Enables or disables lighting contribution from this light node.
-     * <p>
+     * 
      * Set to YES; sprites using this light will be lit with the ambient color and
      * the light color, with a falloff in intensity according to the falloff property.
-     * <p>
+     * 
      * Set to NO; this light does not contribute any lighting.
-     * <p>
+     * 
      * If no lights are active on a sprite it will be drawn normally, as if not lit.
-     * <p>
+     * 
      * The default value is YES.
-     *
+     * 
      * @see lightColor
      * @see falloff
      * @see categoryBitMask
@@ -252,16 +255,16 @@ public class SKLightNode extends SKNode {
 
     /**
      * Enables or disables lighting contribution from this light node.
-     * <p>
+     * 
      * Set to YES; sprites using this light will be lit with the ambient color and
      * the light color, with a falloff in intensity according to the falloff property.
-     * <p>
+     * 
      * Set to NO; this light does not contribute any lighting.
-     * <p>
+     * 
      * If no lights are active on a sprite it will be drawn normally, as if not lit.
-     * <p>
+     * 
      * The default value is YES.
-     *
+     * 
      * @see lightColor
      * @see falloff
      * @see categoryBitMask
@@ -272,11 +275,11 @@ public class SKLightNode extends SKNode {
 
     /**
      * Diffuse and Specular color of the light source, defaults to opaque white.
-     * <p>
+     * 
      * The alpha component of the color is ignored.
-     * <p>
+     * 
      * If using shaders bind a uniform to this property to use scene based custom lighting.
-     *
+     * 
      * @see SKUniform
      * @see falloff
      */
@@ -286,14 +289,14 @@ public class SKLightNode extends SKNode {
 
     /**
      * Ambient color of the light source, defaults to black.
-     * <p>
+     * 
      * If you had only a single light in the scene with an ambient color
      * of opaque white and a light color of black,
      * it would appear as if the scene was rendered without lighting.
-     * <p>
+     * 
      * The alpha component of the color is ignored. The color is not
      * affected by falloff or surface normals.
-     *
+     * 
      * @see lightColor
      */
     @Generated
@@ -304,7 +307,7 @@ public class SKLightNode extends SKNode {
      * The category of the light, which determines the group(s) a light belongs to.
      * Any node that has its corresponding light and shadow bitmasks set to an overlapping value
      * will be lit, shadow casting or shadowed by this light.
-     *
+     * 
      * @see SKSpriteNode.lightingBitMask
      * @see SKSpriteNode.shadowCastBitMask
      * @see SKSpriteNode.shadowedBitMask
@@ -316,7 +319,7 @@ public class SKLightNode extends SKNode {
     /**
      * Falloff in intensity of the light over distance, defaults to 1.
      * The falloff does not affect the ambient color nor the shadow color.
-     *
+     * 
      * @see lightColor
      */
     @Generated
@@ -325,11 +328,11 @@ public class SKLightNode extends SKNode {
 
     /**
      * Diffuse and Specular color of the light source, defaults to opaque white.
-     * <p>
+     * 
      * The alpha component of the color is ignored.
-     * <p>
+     * 
      * If using shaders bind a uniform to this property to use scene based custom lighting.
-     *
+     * 
      * @see SKUniform
      * @see falloff
      */
@@ -339,9 +342,9 @@ public class SKLightNode extends SKNode {
 
     /**
      * Color of the shadow casted on occluded objects, defaults to half opacity black.
-     * <p>
+     * 
      * The alpha component of the color is used for blending with the regions that are in shadow.
-     *
+     * 
      * @see SKSpriteNode.shadowCastBitMask
      * @see SKSpriteNode.shadowedBitMask
      */
@@ -351,9 +354,9 @@ public class SKLightNode extends SKNode {
 
     /**
      * Color of the shadow casted on occluded objects, defaults to half opacity black.
-     * <p>
+     * 
      * The alpha component of the color is used for blending with the regions that are in shadow.
-     *
+     * 
      * @see SKSpriteNode.shadowCastBitMask
      * @see SKSpriteNode.shadowedBitMask
      */

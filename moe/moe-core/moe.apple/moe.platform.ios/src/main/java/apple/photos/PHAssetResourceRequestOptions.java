@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -161,19 +164,31 @@ public class PHAssetResourceRequestOptions extends NSObject implements NSCopying
     @Selector("init")
     public native PHAssetResourceRequestOptions init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("isNetworkAccessAllowed")
     public native boolean isNetworkAccessAllowed();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setNetworkAccessAllowed:")
     public native void setNetworkAccessAllowed(boolean value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("progressHandler")
     @ObjCBlock(name = "call_progressHandler_ret")
     public native Block_progressHandler_ret progressHandler();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setProgressHandler:")
     public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);

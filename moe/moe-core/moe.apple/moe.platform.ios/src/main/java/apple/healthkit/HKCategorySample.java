@@ -44,10 +44,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKCategorySample
- * <p>
+ * 
  * An HKObject subclass representing an category measurement
- * <p>
+ * 
  * Category samples are samples that can be categorized into an enum of concrete values
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -93,9 +95,9 @@ public class HKCategorySample extends HKSample {
 
     /**
      * categorySampleWithType:value:startDate:endDate:
-     * <p>
+     * 
      * Creates a new HKCategorySample.
-     *
+     * 
      * @param type      The type of the sample.
      * @param value     The enumeration value for the sample. See HKCategoryTypeIdentifier for appropriate value.
      * @param startDate The start date of the sample.
@@ -108,15 +110,17 @@ public class HKCategorySample extends HKSample {
 
     /**
      * categorySampleWithType:value:startDate:endDate:device:metadata:
-     * <p>
+     * 
      * Creates a new HKCategorySample.
-     *
+     * 
      * @param type      The type of the sample.
      * @param value     The enumeration value for the sample. See HKCategoryTypeIdentifier for appropriate value.
      * @param startDate The start date of the sample.
      * @param endDate   The end date of the sample.
      * @param device    The HKDevice that generated the sample (optional).
      * @param metadata  Metadata for the sample (optional).
+     * 
+     *                  API-Since: 9.0
      */
     @Generated
     @Selector("categorySampleWithType:value:startDate:endDate:device:metadata:")
@@ -125,9 +129,9 @@ public class HKCategorySample extends HKSample {
 
     /**
      * categorySampleWithType:value:startDate:endDate:metadata:
-     * <p>
+     * 
      * Creates a new HKCategorySample.
-     *
+     * 
      * @param type      The type of the sample.
      * @param value     The enumeration value for the sample. See HKCategoryTypeIdentifier for appropriate value.
      * @param startDate The start date of the sample.
@@ -231,7 +235,7 @@ public class HKCategorySample extends HKSample {
 
     /**
      * [@property] value
-     * <p>
+     * 
      * The preferred enum for the value is determined by the receiver's category type.
      */
     @Generated

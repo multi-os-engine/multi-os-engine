@@ -10,6 +10,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * Chart or graph container elements may adopt this protocol to enable Audio Graph support.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Accessibility")

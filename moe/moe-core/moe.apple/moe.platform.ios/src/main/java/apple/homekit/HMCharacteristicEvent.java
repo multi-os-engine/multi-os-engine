@@ -46,6 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * This class represents an event that is evaluated based on the value of a characteristic
  * set to a particular value.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("HomeKit")
@@ -170,12 +172,14 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
 
     /**
      * Initializes a new characteristic event object
-     *
+     * 
      * @param characteristic The characteristic bound to the event. The characteristic must
      *                       support notification. An exception will be thrown otherwise.
+     * 
      * @param triggerValue   The value of the characteristic that triggers the event.
      *                       Specifying nil as the trigger value corresponds to any change in the value of the
      *                       characteristic.
+     * 
      * @return Instance object representing the characteristic event.
      */
     @Generated
@@ -194,14 +198,20 @@ public class HMCharacteristicEvent<_TriggerValueType> extends HMEvent implements
 
     /**
      * This method is used to change trigger value for the characteristic.
-     *
+     * 
      * @param triggerValue New trigger value for the characteristic.
      *                     Specifying nil as the trigger value corresponds to any change in the value of the
      *                     characteristic.
+     * 
      * @param completion   Block that is invoked once the request is processed.
      *                     The NSError provides more information on the status of the request, error
      *                     will be nil on success.
+     * 
+     *                     API-Since: 9.0
+     *                     Deprecated-Since: 11.0
+     *                     Deprecated-Message: No longer supported.
      */
+    @Deprecated
     @Generated
     @Selector("updateTriggerValue:completionHandler:")
     public native void updateTriggerValueCompletionHandler(@Mapped(ObjCObjectMapper.class) Object triggerValue,

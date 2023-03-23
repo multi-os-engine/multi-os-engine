@@ -19,16 +19,30 @@ package apple.mapkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 9.3
+ * Deprecated-Since: 13.0
+ * Deprecated-Message: Use MKLocalSearchCompleterResultType
+ */
+@Deprecated
 @Generated
 public final class MKSearchCompletionFilterType {
     /**
      * Returns completions for points of interest as well as query suggestions (e.g., "coffee")
+     * 
+     * API-Since: 9.3
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use MKLocalSearchCompleterResultType
      */
-    @Generated @NInt public static final long AndQueries = 0x0000000000000000L;
+    @Deprecated @Generated @NInt public static final long AndQueries = 0x0000000000000000L;
     /**
      * Returns completions only for points of interest
+     * 
+     * API-Since: 9.3
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use MKLocalSearchCompleterResultType
      */
-    @Generated @NInt public static final long Only = 0x0000000000000001L;
+    @Deprecated @Generated @NInt public static final long Only = 0x0000000000000001L;
 
     @Generated
     private MKSearchCompletionFilterType() {

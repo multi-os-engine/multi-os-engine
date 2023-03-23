@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.1
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -174,6 +177,8 @@ public class MPFeedbackCommand extends MPRemoteCommand {
      * An optional shorter version of the localized title for this feedback
      * command. MediaPlayer uses this property to display this command's title on
      * remote control interfaces with little screen space.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("localizedShortTitle")
@@ -190,6 +195,8 @@ public class MPFeedbackCommand extends MPRemoteCommand {
      * An optional shorter version of the localized title for this feedback
      * command. MediaPlayer uses this property to display this command's title on
      * remote control interfaces with little screen space.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setLocalizedShortTitle:")

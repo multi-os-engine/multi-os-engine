@@ -159,6 +159,8 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
      * As with any dictionary, the keys must be copyable.
      * If keyset is nil, an exception is thrown.
      * If keyset is not an object returned by +sharedKeySetForKeys:, an exception is thrown.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("dictionaryWithSharedKeySet:")
@@ -297,6 +299,9 @@ public class NSMutableDictionary<_KeyType, _ObjectType> extends NSDictionary<_Ke
     public native void setObjectForKey(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
             @Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setObject:forKeyedSubscript:")
     public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) _ObjectType obj,

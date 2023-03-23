@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Provides information about a data series. A chart may have one or many data series.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Accessibility")

@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_ws_close_code_t
- * <p>
+ * 
  * WebSocket close codes that describe the reason for closing a WebSocket
  * connection. Endpoints MAY use the following pre-defined status codes
  * when sending a Close frame.

@@ -30,6 +30,8 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * The user activity delegate is responsible for updating the state of an activity and is also notified when an activity
  * has been continued on another device.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Foundation")

@@ -30,6 +30,8 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * Messages related to the operation of a task that writes data to a
  * file and notifies the delegate upon completion.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("Foundation")

@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.3
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -86,7 +89,7 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
     /**
      * A boolean to indicate whether the reduction should perform a weighted sum of feature channels with non-zero
      * weights
-     * <p>
+     * 
      * If false, computes a dot product of the feature channels and weights.
      * If true, computes a dot product of the feature channels and weights divided by the number of non-zero weights
      */
@@ -109,9 +112,9 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSCNNPooling object, or nil if failure.
@@ -123,7 +126,7 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
 
     /**
      * Specifies information to apply the reduction operation on an image.
-     *
+     * 
      * @param device The device the filter will run on
      * @return A valid MPSNNReduceFeatureChannelsAndWeightsMean object or nil, if failure.
      */
@@ -133,7 +136,7 @@ public class MPSNNReduceFeatureChannelsAndWeightsSum extends MPSNNReduceBinary {
 
     /**
      * Specifies information to apply the reduction operation on an image.
-     *
+     * 
      * @param device                        The device the filter will run on
      * @param doWeightedSumByNonZeroWeights A boolean to indicate whether to compute a weighted sum or
      *                                      weighted sum divided by the number of non-zero weights

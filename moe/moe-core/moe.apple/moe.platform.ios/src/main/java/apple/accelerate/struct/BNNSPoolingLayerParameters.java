@@ -25,6 +25,7 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+@Deprecated
 @Generated
 @Structure()
 public final class BNNSPoolingLayerParameters extends StructObject {

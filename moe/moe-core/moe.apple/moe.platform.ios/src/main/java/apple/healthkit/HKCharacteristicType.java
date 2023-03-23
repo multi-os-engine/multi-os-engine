@@ -42,8 +42,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKCharacteristicType
- * <p>
+ * 
  * Represents a type of object that describes a characteristic of the user (such as date of birth).
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -216,4 +218,8 @@ public class HKCharacteristicType extends HKObjectType {
     @Generated
     @Selector("electrocardiogramType")
     public static native HKElectrocardiogramType electrocardiogramType();
+
+    @Generated
+    @Selector("visionPrescriptionType")
+    public static native HKPrescriptionType visionPrescriptionType();
 }

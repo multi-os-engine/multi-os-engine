@@ -21,25 +21,45 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] CBManagerState
- * <p>
+ * 
  * Represents the current state of a CBManager.
- * <p>
+ * 
  * [@constant] CBManagerStateUnknown State unknown, update imminent.
  * [@constant] CBManagerStateResetting The connection with the system service was momentarily lost, update imminent.
  * [@constant] CBManagerStateUnsupported The platform doesn't support the Bluetooth Low Energy Central/Client role.
  * [@constant] CBManagerStateUnauthorized The application is not authorized to use the Bluetooth Low Energy role.
  * [@constant] CBManagerStatePoweredOff Bluetooth is currently powered off.
  * [@constant] CBManagerStatePoweredOn Bluetooth is currently powered on and available to use.
- *
+ * 
  * @see authorization
+ * 
+ *      API-Since: 10.0
  */
 @Generated
 public final class CBManagerState {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Resetting = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Unsupported = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Unauthorized = 0x0000000000000003L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long PoweredOff = 0x0000000000000004L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long PoweredOn = 0x0000000000000005L;
 
     @Generated

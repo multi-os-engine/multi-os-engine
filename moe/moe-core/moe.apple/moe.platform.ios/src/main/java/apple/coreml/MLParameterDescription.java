@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Describes a model parameter along with a default value and any applicable constaint on the values.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreML")

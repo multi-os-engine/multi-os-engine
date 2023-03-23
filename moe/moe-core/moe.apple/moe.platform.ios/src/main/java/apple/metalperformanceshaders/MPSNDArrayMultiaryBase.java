@@ -30,6 +30,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -82,7 +85,7 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
 
     /**
      * Create a copy with
-     *
+     * 
      * @param zone   The NSZone in which to allocate the MPSNDArrayMultiaryKernel object
      * @param device The device on which the new kernel will run. Pass nil for same device.
      * @return A valid MPSNDArrayMultiaryKernel, or nil if allocation failure.
@@ -103,7 +106,7 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
 
     /**
      * Method to allocate the result image for -encodeToCommandBuffer:sourceImage:
-     * <p>
+     * 
      * Default: MPSTemporaryImage.defaultAllocator
      */
     @Generated
@@ -113,11 +116,11 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
 
     /**
      * Return a descriptor suitable for allocating a NSArray to receive the result
-     * <p>
+     * 
      * The object properties (kernelSize, offsets, edgeMode, etc.) should be properly
      * configured as if the -encode call was about to be made, before this method is
      * called. Those properties may affect the results.
-     *
+     * 
      * @param sources The list of sources passed into the -encode call
      * @param state   The source state object, if any passed to the -encode call
      * @return a valid MPSNDArrayDescriptor that may be used to create a MPSNDArray to used to
@@ -130,10 +133,14 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
 
     /**
      * Get the kernel dilation rate for each dimension
-     *
+     * 
      * @param sourceIndex The index of the source image for which this applies
      * @return The kernel dilation rate for each dimension.
+     * 
+     *         API-Since: 13.0
+     *         Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("dilationRatesForSourceIndex:")
     @ByValue
@@ -141,10 +148,14 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
 
     /**
      * The edge mode used for each source NDArray
-     *
+     * 
      * @param sourceIndex The index of the source image
      * @return The MPSImageEdgeMode for that image
+     * 
+     *         API-Since: 13.0
+     *         Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("edgeModeAtSourceIndex:")
     @NUInt
@@ -152,7 +163,7 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
 
     /**
      * Initialize a MPSNDArrayMultiaryKernel from a NSCoder
-     *
+     * 
      * @param coder The NSCoder that contains the serialized object
      */
     @Generated
@@ -174,7 +185,7 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
 
     /**
      * Initialize a MPSNDArrayMultiaryKernel from a NSCoder
-     *
+     * 
      * @param coder  The NSCoder that contains the serialized object
      * @param device The device on which the kernel will run
      * @return A valid MPSNDArrayMultiaryKernel, or nil if allocation failure.
@@ -190,7 +201,7 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
 
     /**
      * Initialize a MPSNDArrayMultiaryKernel
-     *
+     * 
      * @param device The device on which the kernel will run
      * @param count  The maximum number of NDArrays read by the kernel
      * @return A valid MPSNDArrayMultiaryKernel, or nil if allocation failure.
@@ -219,10 +230,14 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
 
     /**
      * Get the diameters of the point spread function (PSF) in each dimension
-     *
+     * 
      * @param sourceIndex The MPSNDArrayMultiaryKernel source NDArray to which the kernel will be applied
      * @return A list of kernel diameters in each dimension
+     * 
+     *         API-Since: 13.0
+     *         Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("kernelSizesForSourceIndex:")
     @ByValue
@@ -239,15 +254,19 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
 
     /**
      * Read offsets to use when addressing a source NDArray
-     * <p>
+     * 
      * The coordinate of the position read from this source array which is
      * used to calculate the result value at [0,0,0,....]
      * If the position read is actually a contiguous region (e.g. the area covered by
      * a convolution kernel) then this is the center of that region, rounded down, for
      * each dimension.
-     *
+     * 
      * @param sourceIndex The index of the source MPSNDArray to which the list of offsets is applied
+     * 
+     *                    API-Since: 13.0
+     *                    Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("offsetsAtSourceIndex:")
     @ByValue
@@ -269,7 +288,7 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
 
     /**
      * Method to allocate the result image for -encodeToCommandBuffer:sourceImage:
-     * <p>
+     * 
      * Default: MPSTemporaryImage.defaultAllocator
      */
     @Generated
@@ -282,15 +301,19 @@ public class MPSNDArrayMultiaryBase extends MPSKernel {
 
     /**
      * Return the downsampling ratio for the kernel in each dimension
-     * <p>
+     * 
      * If the filter is a "backwards" filter such as a gradient filter
      * or convolution transpose, then this is the upsampling ratio and
      * zeros are inserted in the result.
-     *
+     * 
      * @param sourceIndex The index of the source for which the strides apply
      * @return The strides from one destination sample to the next in each
      *         dimension of the corresponding source NDArray
+     * 
+     *         API-Since: 13.0
+     *         Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("stridesForSourceIndex:")
     @ByValue

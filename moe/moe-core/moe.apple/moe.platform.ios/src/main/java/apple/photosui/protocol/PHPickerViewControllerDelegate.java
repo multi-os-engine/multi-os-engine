@@ -12,6 +12,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * A set of methods that the delegate must implement to respond to \c PHPickerViewController user events.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("PhotosUI")
@@ -20,8 +22,10 @@ import org.moe.natj.objc.ann.Selector;
 public interface PHPickerViewControllerDelegate {
     /**
      * Called when the user completes a selection or dismisses \c PHPickerViewController using the cancel button.
-     * <p>
+     * 
      * The picker won't be automatically dismissed when this method is called.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("picker:didFinishPicking:")

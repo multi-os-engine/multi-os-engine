@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Cell Registration
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")

@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -152,7 +155,7 @@ public class MTLRenderPassColorAttachmentDescriptor extends MTLRenderPassAttachm
 
     /**
      * [@property] clearColor
-     * <p>
+     * 
      * The clear color to be used if the loadAction property is MTLLoadActionClear
      */
     @Generated
@@ -166,7 +169,7 @@ public class MTLRenderPassColorAttachmentDescriptor extends MTLRenderPassAttachm
 
     /**
      * [@property] clearColor
-     * <p>
+     * 
      * The clear color to be used if the loadAction property is MTLLoadActionClear
      */
     @Generated

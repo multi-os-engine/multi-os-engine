@@ -48,10 +48,15 @@ public final class GameController {
 
     /**
      * Fills out a v100 snapshot from any compatible NSData source
-     *
+     * 
      * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot.
      *         YES for all other cases.
+     * 
+     *         API-Since: 7.0
+     *         Deprecated-Since: 13.0
+     *         Deprecated-Message: GCGamepad has been deprecated, use GCExtendedGamepad instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native boolean GCGamepadSnapShotDataV100FromNSData(
@@ -62,9 +67,14 @@ public final class GameController {
      * Creates an NSData object from a v100 snapshot.
      * If the version and size is not set in the snapshot the data will automatically have version 0x100 and
      * sizeof(GCGamepadSnapShotDataV100) set as the values implicitly.
-     *
+     * 
      * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with GCGamepadSnapshot.snapshotData
+     * 
+     *         API-Since: 7.0
+     *         Deprecated-Since: 13.0
+     *         Deprecated-Message: GCGamepad has been deprecated, use GCExtendedGamepad instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native NSData NSDataFromGCGamepadSnapShotDataV100(
@@ -72,10 +82,16 @@ public final class GameController {
 
     /**
      * Fills out a v100 snapshot from any compatible NSData source
-     *
+     * 
      * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot.
      *         YES for all other cases.
+     * 
+     *         API-Since: 9.0
+     *         Deprecated-Since: 13.0
+     *         Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController
+     *         controllerWithExtendedGamepad] instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native boolean GCExtendedGamepadSnapShotDataV100FromNSData(
@@ -86,10 +102,16 @@ public final class GameController {
      * Creates an NSData object from a v100 snapshot.
      * If the version and size is not set in the snapshot the data will automatically have version 0x100 and
      * sizeof(GCExtendedGamepadSnapShotDataV100) set as the values implicitly.
-     *
+     * 
      * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with
      *         GCExtendedGamepadSnapshot.snapshotData
+     * 
+     *         API-Since: 9.0
+     *         Deprecated-Since: 13.0
+     *         Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController
+     *         controllerWithExtendedGamepad] instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native NSData NSDataFromGCExtendedGamepadSnapShotDataV100(
@@ -97,10 +119,16 @@ public final class GameController {
 
     /**
      * Fills out a v100 snapshot from any compatible NSData source
-     *
+     * 
      * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot.
      *         YES for all other cases.
+     * 
+     *         API-Since: 9.0
+     *         Deprecated-Since: 13.0
+     *         Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController
+     *         controllerWithMicroGamepad] instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native boolean GCMicroGamepadSnapShotDataV100FromNSData(
@@ -111,9 +139,15 @@ public final class GameController {
      * Creates an NSData object from a v100 snapshot.
      * If the version and size is not set in the snapshot the data will automatically have version 0x100 and
      * sizeof(GCMicroGamepadSnapShotDataV100) set as the values implicitly.
-     *
+     * 
      * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with GCGamepadSnapshot.snapshotData
+     * 
+     *         API-Since: 9.0
+     *         Deprecated-Since: 13.0
+     *         Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController
+     *         controllerWithMicroGamepad] instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native NSData NSDataFromGCMicroGamepadSnapShotDataV100(
@@ -121,31 +155,36 @@ public final class GameController {
 
     /**
      * Use these constants with NSNotificationCenter to listen to connection and disconnection events.
-     * <p>
+     * 
      * Use GCControllerDidConnectNotification for observing connections of controllers.
      * Use GCControllerDidDisconnectNotification for observing disconnections of controllers.
-     * <p>
+     * 
      * Connections and disconnections of controllers will also be reflected in the controllers array
      * of the GCController class.
-     * <p>
+     * 
      * The 'object' property of the notification will contain the GCController that was connected or disconnected.
      * For example:
-     * <p>
+     * 
      * - (void)controllerDidConnect:(NSNotification *)note {
-     * <p>
+     * 
      * GCController *controller = note.object;
-     * <p>
+     * 
      * ....
      * }
-     *
+     * 
      * @see NSNotificationCenter
      * @see GCController.controllers
+     * 
+     *      API-Since: 7.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCControllerDidConnectNotification();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -153,10 +192,16 @@ public final class GameController {
 
     /**
      * Fills out a snapshot from any compatible NSData source
-     *
+     * 
      * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot.
      *         YES for all other cases.
+     * 
+     *         API-Since: 9.0
+     *         Deprecated-Since: 13.0
+     *         Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController
+     *         controllerWithExtendedGamepad] instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native boolean GCExtendedGamepadSnapshotDataFromNSData(
@@ -168,10 +213,16 @@ public final class GameController {
      * If the version and size is not set in the snapshot the data will automatically have the version
      * GCCurrentExtendedGamepadSnapshotDataVersion and sizeof(GCExtendedGamepadSnapshotData) set as the values
      * implicitly.
-     *
+     * 
      * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with
      *         GCExtendedGamepadSnapshot.snapshotData
+     * 
+     *         API-Since: 9.0
+     *         Deprecated-Since: 13.0
+     *         Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController
+     *         controllerWithExtendedGamepad] instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native NSData NSDataFromGCExtendedGamepadSnapshotData(
@@ -179,10 +230,16 @@ public final class GameController {
 
     /**
      * Fills out a snapshot from any compatible NSData source
-     *
+     * 
      * @return NO if data is nil, snapshotData is nil or the contents of data does not contain a compatible snapshot.
      *         YES for all other cases.
+     * 
+     *         API-Since: 9.0
+     *         Deprecated-Since: 13.0
+     *         Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController
+     *         controllerWithMicroGamepad] instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native boolean GCMicroGamepadSnapshotDataFromNSData(
@@ -193,19 +250,39 @@ public final class GameController {
      * Creates an NSData object from a snapshot.
      * If the version and size is not set in the snapshot the data will automatically have version
      * GCCurrentMicroGamepadSnapshotDataVersion and sizeof(GCMicroGamepadSnapshotData) set as the values implicitly.
-     *
+     * 
      * @return nil if the snapshot is NULL, otherwise an NSData instance compatible with GCGamepadSnapshot.snapshotData
+     * 
+     *         API-Since: 9.0
+     *         Deprecated-Since: 13.0
+     *         Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController
+     *         controllerWithMicroGamepad] instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native NSData NSDataFromGCMicroGamepadSnapshotData(
             @UncertainArgument("Options: reference, array Fallback: reference") GCMicroGamepadSnapshotData snapshotData);
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: GCExtendedGamepadSnapshot has been deprecated, use [GCController
+     * controllerWithExtendedGamepad] instead
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @NInt
     public static native long GCCurrentExtendedGamepadSnapshotDataVersion();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController controllerWithMicroGamepad]
+     * instead
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @NInt
@@ -213,87 +290,134 @@ public final class GameController {
 
     /**
      * A set of commonly used strings that can be used to access controller buttons
-     * <p>
+     * 
      * [@example] controller.physicalInputProfile.buttons[GCInputButtonA]
-     *
+     * 
      * @see GCController.h
      * @see GCPhysicalInputProfile.h
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputButtonA();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputButtonB();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputButtonX();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputButtonY();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputDirectionPad();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputLeftThumbstick();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputRightThumbstick();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputLeftShoulder();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputRightShoulder();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputLeftTrigger();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputRightTrigger();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputLeftThumbstickButton();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputRightThumbstickButton();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputButtonHome();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputButtonMenu();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -301,27 +425,38 @@ public final class GameController {
 
     /**
      * A set of strings commonly used to access Xbox buttons
-     * <p>
+     * 
      * [@example] controller.physicalInputProfile.buttons[GCInputButtonPaddleOne]
-     *
+     * 
      * @see GCController.h
      * @see GCPhysicalInputProfile.h
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputXboxPaddleOne();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputXboxPaddleTwo();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputXboxPaddleThree();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -329,22 +464,30 @@ public final class GameController {
 
     /**
      * A set of strings commonly used to access DualShock buttons
-     * <p>
+     * 
      * [@example] controller.physicalInputProfile.dpads[GCInputDualShockTouchpadOne]
-     *
+     * 
      * @see GCController.h
      * @see GCPhysicalInputProfile.h
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputDualShockTouchpadOne();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCInputDualShockTouchpadTwo();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -352,6 +495,8 @@ public final class GameController {
 
     /**
      * a or A
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -360,6 +505,8 @@ public final class GameController {
 
     /**
      * b or B
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -368,6 +515,8 @@ public final class GameController {
 
     /**
      * c or C
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -376,6 +525,8 @@ public final class GameController {
 
     /**
      * d or D
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -384,6 +535,8 @@ public final class GameController {
 
     /**
      * e or E
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -392,6 +545,8 @@ public final class GameController {
 
     /**
      * f or F
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -400,6 +555,8 @@ public final class GameController {
 
     /**
      * g or G
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -408,6 +565,8 @@ public final class GameController {
 
     /**
      * h or H
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -416,6 +575,8 @@ public final class GameController {
 
     /**
      * i or I
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -424,6 +585,8 @@ public final class GameController {
 
     /**
      * j or J
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -432,6 +595,8 @@ public final class GameController {
 
     /**
      * k or K
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -440,6 +605,8 @@ public final class GameController {
 
     /**
      * l or L
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -448,6 +615,8 @@ public final class GameController {
 
     /**
      * m or M
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -456,6 +625,8 @@ public final class GameController {
 
     /**
      * n or N
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -464,6 +635,8 @@ public final class GameController {
 
     /**
      * o or O
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -472,6 +645,8 @@ public final class GameController {
 
     /**
      * p or P
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -480,6 +655,8 @@ public final class GameController {
 
     /**
      * q or Q
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -488,6 +665,8 @@ public final class GameController {
 
     /**
      * r or R
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -496,6 +675,8 @@ public final class GameController {
 
     /**
      * s or S
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -504,6 +685,8 @@ public final class GameController {
 
     /**
      * t or T
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -512,6 +695,8 @@ public final class GameController {
 
     /**
      * u or U
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -520,6 +705,8 @@ public final class GameController {
 
     /**
      * v or V
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -528,6 +715,8 @@ public final class GameController {
 
     /**
      * w or W
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -536,6 +725,8 @@ public final class GameController {
 
     /**
      * x or X
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -544,6 +735,8 @@ public final class GameController {
 
     /**
      * y or Y
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -552,6 +745,8 @@ public final class GameController {
 
     /**
      * z or Z
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -560,6 +755,8 @@ public final class GameController {
 
     /**
      * 1 or !
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -568,6 +765,8 @@ public final class GameController {
 
     /**
      * 2 or @
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -576,6 +775,8 @@ public final class GameController {
 
     /**
      * 3 or #
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -584,6 +785,8 @@ public final class GameController {
 
     /**
      * 4 or $
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -592,6 +795,8 @@ public final class GameController {
 
     /**
      * 5 or %
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -600,6 +805,8 @@ public final class GameController {
 
     /**
      * 6 or ^
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -608,6 +815,8 @@ public final class GameController {
 
     /**
      * 7 or &
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -616,6 +825,8 @@ public final class GameController {
 
     /**
      * 8 or *
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -624,6 +835,8 @@ public final class GameController {
 
     /**
      * 9 or (
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -632,6 +845,8 @@ public final class GameController {
 
     /**
      * 0 or )
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -640,6 +855,8 @@ public final class GameController {
 
     /**
      * Return (Enter)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -648,6 +865,8 @@ public final class GameController {
 
     /**
      * Escape
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -656,6 +875,8 @@ public final class GameController {
 
     /**
      * Delete (Backspace)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -664,6 +885,8 @@ public final class GameController {
 
     /**
      * Tab
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -672,6 +895,8 @@ public final class GameController {
 
     /**
      * Spacebar
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -680,6 +905,8 @@ public final class GameController {
 
     /**
      * - or _
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -688,6 +915,8 @@ public final class GameController {
 
     /**
      * = or +
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -696,6 +925,8 @@ public final class GameController {
 
     /**
      * [ or {
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -704,6 +935,8 @@ public final class GameController {
 
     /**
      * ] or }
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -712,6 +945,8 @@ public final class GameController {
 
     /**
      * \ or |
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -720,6 +955,8 @@ public final class GameController {
 
     /**
      * Non-US # or _
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -728,6 +965,8 @@ public final class GameController {
 
     /**
      * ; or :
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -736,6 +975,8 @@ public final class GameController {
 
     /**
      * ' or "
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -744,6 +985,8 @@ public final class GameController {
 
     /**
      * Grave Accent and Tilde
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -752,6 +995,8 @@ public final class GameController {
 
     /**
      * , or <
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -760,6 +1005,8 @@ public final class GameController {
 
     /**
      * . or >
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -768,6 +1015,8 @@ public final class GameController {
 
     /**
      * / or ?
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -776,6 +1025,8 @@ public final class GameController {
 
     /**
      * Caps Lock
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -784,6 +1035,8 @@ public final class GameController {
 
     /**
      * F1
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -792,6 +1045,8 @@ public final class GameController {
 
     /**
      * F2
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -800,6 +1055,8 @@ public final class GameController {
 
     /**
      * F3
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -808,6 +1065,8 @@ public final class GameController {
 
     /**
      * F4
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -816,6 +1075,8 @@ public final class GameController {
 
     /**
      * F5
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -824,6 +1085,8 @@ public final class GameController {
 
     /**
      * F6
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -832,6 +1095,8 @@ public final class GameController {
 
     /**
      * F7
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -840,6 +1105,8 @@ public final class GameController {
 
     /**
      * F8
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -848,6 +1115,8 @@ public final class GameController {
 
     /**
      * F9
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -856,6 +1125,8 @@ public final class GameController {
 
     /**
      * F10
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -864,6 +1135,8 @@ public final class GameController {
 
     /**
      * F11
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -872,6 +1145,8 @@ public final class GameController {
 
     /**
      * F12
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -880,6 +1155,8 @@ public final class GameController {
 
     /**
      * Print Screen
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -888,6 +1165,8 @@ public final class GameController {
 
     /**
      * Scroll Lock
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -896,6 +1175,8 @@ public final class GameController {
 
     /**
      * Pause
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -904,6 +1185,8 @@ public final class GameController {
 
     /**
      * Insert
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -912,6 +1195,8 @@ public final class GameController {
 
     /**
      * Home
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -920,6 +1205,8 @@ public final class GameController {
 
     /**
      * Page Up
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -928,6 +1215,8 @@ public final class GameController {
 
     /**
      * Delete Forward
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -936,6 +1225,8 @@ public final class GameController {
 
     /**
      * End
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -944,6 +1235,8 @@ public final class GameController {
 
     /**
      * Page Down
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -952,6 +1245,8 @@ public final class GameController {
 
     /**
      * Right Arrow
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -960,6 +1255,8 @@ public final class GameController {
 
     /**
      * Left Arrow
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -968,6 +1265,8 @@ public final class GameController {
 
     /**
      * Down Arrow
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -976,6 +1275,8 @@ public final class GameController {
 
     /**
      * Up Arrow
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -984,6 +1285,8 @@ public final class GameController {
 
     /**
      * Keypad NumLock or Clear
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -992,6 +1295,8 @@ public final class GameController {
 
     /**
      * Keypad /
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1000,6 +1305,8 @@ public final class GameController {
 
     /**
      * Keypad *
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1008,6 +1315,8 @@ public final class GameController {
 
     /**
      * Keypad -
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1016,6 +1325,8 @@ public final class GameController {
 
     /**
      * Keypad +
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1024,6 +1335,8 @@ public final class GameController {
 
     /**
      * Keypad Enter
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1032,6 +1345,8 @@ public final class GameController {
 
     /**
      * Keypad 1 or End
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1040,6 +1355,8 @@ public final class GameController {
 
     /**
      * Keypad 2 or Down Arrow
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1048,6 +1365,8 @@ public final class GameController {
 
     /**
      * Keypad 3 or Page Down
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1056,6 +1375,8 @@ public final class GameController {
 
     /**
      * Keypad 4 or Left Arrow
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1064,6 +1385,8 @@ public final class GameController {
 
     /**
      * Keypad 5
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1072,6 +1395,8 @@ public final class GameController {
 
     /**
      * Keypad 6 or Right Arrow
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1080,6 +1405,8 @@ public final class GameController {
 
     /**
      * Keypad 7 or Home
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1088,6 +1415,8 @@ public final class GameController {
 
     /**
      * Keypad 8 or Up Arrow
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1096,6 +1425,8 @@ public final class GameController {
 
     /**
      * Keypad 9 or Page Up
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1104,6 +1435,8 @@ public final class GameController {
 
     /**
      * Keypad 0 or Insert
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1112,6 +1445,8 @@ public final class GameController {
 
     /**
      * Keypad . or Delete
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1120,6 +1455,8 @@ public final class GameController {
 
     /**
      * Keypad =
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1128,6 +1465,8 @@ public final class GameController {
 
     /**
      * Non-US \ or |
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1136,6 +1475,8 @@ public final class GameController {
 
     /**
      * Application
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1144,6 +1485,8 @@ public final class GameController {
 
     /**
      * Power
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1152,6 +1495,8 @@ public final class GameController {
 
     /**
      * International1
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1160,6 +1505,8 @@ public final class GameController {
 
     /**
      * International2
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1168,6 +1515,8 @@ public final class GameController {
 
     /**
      * International3
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1176,6 +1525,8 @@ public final class GameController {
 
     /**
      * International4
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1184,6 +1535,8 @@ public final class GameController {
 
     /**
      * International5
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1192,6 +1545,8 @@ public final class GameController {
 
     /**
      * International6
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1200,6 +1555,8 @@ public final class GameController {
 
     /**
      * International7
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1208,6 +1565,8 @@ public final class GameController {
 
     /**
      * International8
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1216,6 +1575,8 @@ public final class GameController {
 
     /**
      * International9
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1224,6 +1585,8 @@ public final class GameController {
 
     /**
      * LANG1
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1232,6 +1595,8 @@ public final class GameController {
 
     /**
      * LANG2
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1240,6 +1605,8 @@ public final class GameController {
 
     /**
      * LANG3
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1248,6 +1615,8 @@ public final class GameController {
 
     /**
      * LANG4
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1256,6 +1625,8 @@ public final class GameController {
 
     /**
      * LANG5
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1264,6 +1635,8 @@ public final class GameController {
 
     /**
      * LANG6
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1272,6 +1645,8 @@ public final class GameController {
 
     /**
      * LANG7
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1280,6 +1655,8 @@ public final class GameController {
 
     /**
      * LANG8
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1288,6 +1665,8 @@ public final class GameController {
 
     /**
      * LANG9
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1296,6 +1675,8 @@ public final class GameController {
 
     /**
      * Left Control
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1304,6 +1685,8 @@ public final class GameController {
 
     /**
      * Left Shift
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1312,6 +1695,8 @@ public final class GameController {
 
     /**
      * Left Alt
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1320,6 +1705,8 @@ public final class GameController {
 
     /**
      * Left GUI
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1328,6 +1715,8 @@ public final class GameController {
 
     /**
      * Right Control
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1336,6 +1725,8 @@ public final class GameController {
 
     /**
      * Right Shift
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1344,6 +1735,8 @@ public final class GameController {
 
     /**
      * Right Alt
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1352,6 +1745,8 @@ public final class GameController {
 
     /**
      * Right GUI
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1360,6 +1755,8 @@ public final class GameController {
 
     /**
      * a or A
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1368,6 +1765,8 @@ public final class GameController {
 
     /**
      * b or B
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1376,6 +1775,8 @@ public final class GameController {
 
     /**
      * c or C
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1384,6 +1785,8 @@ public final class GameController {
 
     /**
      * d or D
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1392,6 +1795,8 @@ public final class GameController {
 
     /**
      * e or E
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1400,6 +1805,8 @@ public final class GameController {
 
     /**
      * f or F
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1408,6 +1815,8 @@ public final class GameController {
 
     /**
      * g or G
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1416,6 +1825,8 @@ public final class GameController {
 
     /**
      * h or H
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1424,6 +1835,8 @@ public final class GameController {
 
     /**
      * i or I
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1432,6 +1845,8 @@ public final class GameController {
 
     /**
      * j or J
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1440,6 +1855,8 @@ public final class GameController {
 
     /**
      * k or K
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1448,6 +1865,8 @@ public final class GameController {
 
     /**
      * l or L
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1456,6 +1875,8 @@ public final class GameController {
 
     /**
      * m or M
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1464,6 +1885,8 @@ public final class GameController {
 
     /**
      * n or N
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1472,6 +1895,8 @@ public final class GameController {
 
     /**
      * o or O
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1480,6 +1905,8 @@ public final class GameController {
 
     /**
      * p or P
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1488,6 +1915,8 @@ public final class GameController {
 
     /**
      * q or Q
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1496,6 +1925,8 @@ public final class GameController {
 
     /**
      * r or R
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1504,6 +1935,8 @@ public final class GameController {
 
     /**
      * s or S
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1512,6 +1945,8 @@ public final class GameController {
 
     /**
      * t or T
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1520,6 +1955,8 @@ public final class GameController {
 
     /**
      * u or U
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1528,6 +1965,8 @@ public final class GameController {
 
     /**
      * v or V
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1536,6 +1975,8 @@ public final class GameController {
 
     /**
      * w or W
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1544,6 +1985,8 @@ public final class GameController {
 
     /**
      * x or X
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1552,6 +1995,8 @@ public final class GameController {
 
     /**
      * y or Y
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1560,6 +2005,8 @@ public final class GameController {
 
     /**
      * z or Z
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1568,6 +2015,8 @@ public final class GameController {
 
     /**
      * 1 or !
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1576,6 +2025,8 @@ public final class GameController {
 
     /**
      * 2 or @
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1584,6 +2035,8 @@ public final class GameController {
 
     /**
      * 3 or #
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1592,6 +2045,8 @@ public final class GameController {
 
     /**
      * 4 or $
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1600,6 +2055,8 @@ public final class GameController {
 
     /**
      * 5 or %
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1608,6 +2065,8 @@ public final class GameController {
 
     /**
      * 6 or ^
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1616,6 +2075,8 @@ public final class GameController {
 
     /**
      * 7 or &
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1624,6 +2085,8 @@ public final class GameController {
 
     /**
      * 8 or *
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1632,6 +2095,8 @@ public final class GameController {
 
     /**
      * 9 or (
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1640,6 +2105,8 @@ public final class GameController {
 
     /**
      * 0 or )
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1648,6 +2115,8 @@ public final class GameController {
 
     /**
      * Return (Enter)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1656,6 +2125,8 @@ public final class GameController {
 
     /**
      * Escape
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1664,6 +2135,8 @@ public final class GameController {
 
     /**
      * Delete (Backspace)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1672,6 +2145,8 @@ public final class GameController {
 
     /**
      * Tab
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1680,6 +2155,8 @@ public final class GameController {
 
     /**
      * Spacebar
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1688,6 +2165,8 @@ public final class GameController {
 
     /**
      * - or _
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1696,6 +2175,8 @@ public final class GameController {
 
     /**
      * = or +
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1704,6 +2185,8 @@ public final class GameController {
 
     /**
      * [ or {
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1712,6 +2195,8 @@ public final class GameController {
 
     /**
      * ] or }
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1720,6 +2205,8 @@ public final class GameController {
 
     /**
      * \ or |
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1728,6 +2215,8 @@ public final class GameController {
 
     /**
      * Non-US # or _
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1736,6 +2225,8 @@ public final class GameController {
 
     /**
      * ; or :
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1744,6 +2235,8 @@ public final class GameController {
 
     /**
      * ' or "
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1752,6 +2245,8 @@ public final class GameController {
 
     /**
      * Grave Accent and Tilde
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1760,6 +2255,8 @@ public final class GameController {
 
     /**
      * , or <
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1768,6 +2265,8 @@ public final class GameController {
 
     /**
      * . or >
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1776,6 +2275,8 @@ public final class GameController {
 
     /**
      * / or ?
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1784,6 +2285,8 @@ public final class GameController {
 
     /**
      * Caps Lock
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1792,6 +2295,8 @@ public final class GameController {
 
     /**
      * F1
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1800,6 +2305,8 @@ public final class GameController {
 
     /**
      * F2
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1808,6 +2315,8 @@ public final class GameController {
 
     /**
      * F3
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1816,6 +2325,8 @@ public final class GameController {
 
     /**
      * F4
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1824,6 +2335,8 @@ public final class GameController {
 
     /**
      * F5
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1832,6 +2345,8 @@ public final class GameController {
 
     /**
      * F6
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1840,6 +2355,8 @@ public final class GameController {
 
     /**
      * F7
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1848,6 +2365,8 @@ public final class GameController {
 
     /**
      * F8
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1856,6 +2375,8 @@ public final class GameController {
 
     /**
      * F9
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1864,6 +2385,8 @@ public final class GameController {
 
     /**
      * F10
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1872,6 +2395,8 @@ public final class GameController {
 
     /**
      * F11
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1880,6 +2405,8 @@ public final class GameController {
 
     /**
      * F12
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1888,6 +2415,8 @@ public final class GameController {
 
     /**
      * Print Screen
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1896,6 +2425,8 @@ public final class GameController {
 
     /**
      * Scroll Lock
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1904,6 +2435,8 @@ public final class GameController {
 
     /**
      * Pause
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1912,6 +2445,8 @@ public final class GameController {
 
     /**
      * Insert
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1920,6 +2455,8 @@ public final class GameController {
 
     /**
      * Home
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1928,6 +2465,8 @@ public final class GameController {
 
     /**
      * Page Up
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1936,6 +2475,8 @@ public final class GameController {
 
     /**
      * Delete Forward
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1944,6 +2485,8 @@ public final class GameController {
 
     /**
      * End
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1952,6 +2495,8 @@ public final class GameController {
 
     /**
      * Page Down
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1960,6 +2505,8 @@ public final class GameController {
 
     /**
      * Right Arrow
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1968,6 +2515,8 @@ public final class GameController {
 
     /**
      * Left Arrow
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1976,6 +2525,8 @@ public final class GameController {
 
     /**
      * Down Arrow
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1984,6 +2535,8 @@ public final class GameController {
 
     /**
      * Up Arrow
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1992,6 +2545,8 @@ public final class GameController {
 
     /**
      * Keypad NumLock or Clear
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2000,6 +2555,8 @@ public final class GameController {
 
     /**
      * Keypad /
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2008,6 +2565,8 @@ public final class GameController {
 
     /**
      * Keypad *
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2016,6 +2575,8 @@ public final class GameController {
 
     /**
      * Keypad -
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2024,6 +2585,8 @@ public final class GameController {
 
     /**
      * Keypad +
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2032,6 +2595,8 @@ public final class GameController {
 
     /**
      * Keypad Enter
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2040,6 +2605,8 @@ public final class GameController {
 
     /**
      * Keypad 1 or End
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2048,6 +2615,8 @@ public final class GameController {
 
     /**
      * Keypad 2 or Down Arrow
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2056,6 +2625,8 @@ public final class GameController {
 
     /**
      * Keypad 3 or Page Down
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2064,6 +2635,8 @@ public final class GameController {
 
     /**
      * Keypad 4 or Left Arrow
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2072,6 +2645,8 @@ public final class GameController {
 
     /**
      * Keypad 5
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2080,6 +2655,8 @@ public final class GameController {
 
     /**
      * Keypad 6 or Right Arrow
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2088,6 +2665,8 @@ public final class GameController {
 
     /**
      * Keypad 7 or Home
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2096,6 +2675,8 @@ public final class GameController {
 
     /**
      * Keypad 8 or Up Arrow
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2104,6 +2685,8 @@ public final class GameController {
 
     /**
      * Keypad 9 or Page Up
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2112,6 +2695,8 @@ public final class GameController {
 
     /**
      * Keypad 0 or Insert
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2120,6 +2705,8 @@ public final class GameController {
 
     /**
      * Keypad . or Delete
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2128,6 +2715,8 @@ public final class GameController {
 
     /**
      * Keypad =
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2136,6 +2725,8 @@ public final class GameController {
 
     /**
      * Non-US \ or |
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2144,6 +2735,8 @@ public final class GameController {
 
     /**
      * Application
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2152,6 +2745,8 @@ public final class GameController {
 
     /**
      * Power
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2160,6 +2755,8 @@ public final class GameController {
 
     /**
      * International1
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2168,6 +2765,8 @@ public final class GameController {
 
     /**
      * International2
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2176,6 +2775,8 @@ public final class GameController {
 
     /**
      * International3
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2184,6 +2785,8 @@ public final class GameController {
 
     /**
      * International4
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2192,6 +2795,8 @@ public final class GameController {
 
     /**
      * International5
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2200,6 +2805,8 @@ public final class GameController {
 
     /**
      * International6
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2208,6 +2815,8 @@ public final class GameController {
 
     /**
      * International7
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2216,6 +2825,8 @@ public final class GameController {
 
     /**
      * International8
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2224,6 +2835,8 @@ public final class GameController {
 
     /**
      * International9
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2232,6 +2845,8 @@ public final class GameController {
 
     /**
      * LANG1
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2240,6 +2855,8 @@ public final class GameController {
 
     /**
      * LANG2
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2248,6 +2865,8 @@ public final class GameController {
 
     /**
      * LANG3
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2256,6 +2875,8 @@ public final class GameController {
 
     /**
      * LANG4
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2264,6 +2885,8 @@ public final class GameController {
 
     /**
      * LANG5
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2272,6 +2895,8 @@ public final class GameController {
 
     /**
      * LANG6
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2280,6 +2905,8 @@ public final class GameController {
 
     /**
      * LANG7
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2288,6 +2915,8 @@ public final class GameController {
 
     /**
      * LANG8
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2296,6 +2925,8 @@ public final class GameController {
 
     /**
      * LANG9
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2304,6 +2935,8 @@ public final class GameController {
 
     /**
      * Left Control
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2312,6 +2945,8 @@ public final class GameController {
 
     /**
      * Left Shift
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2320,6 +2955,8 @@ public final class GameController {
 
     /**
      * Left Alt
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2328,6 +2965,8 @@ public final class GameController {
 
     /**
      * Left GUI
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2336,6 +2975,8 @@ public final class GameController {
 
     /**
      * Right Control
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2344,6 +2985,8 @@ public final class GameController {
 
     /**
      * Right Shift
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2352,6 +2995,8 @@ public final class GameController {
 
     /**
      * Right Alt
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2360,6 +3005,8 @@ public final class GameController {
 
     /**
      * Right GUI
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2371,25 +3018,30 @@ public final class GameController {
      * controller.
      * This is a good time to swap out UI to match the new current controller, and unregister any handlers with
      * the old current controller.
-     * <p>
+     * 
      * The 'object' property of the notification will contain the GCController that became the current controller.
      * For example:
-     * <p>
+     * 
      * - (void)controllerDidBecomeCurrent:(NSNotification *)note {
-     * <p>
+     * 
      * GCController *controller = note.object;
-     * <p>
+     * 
      * ...
      * }
-     *
+     * 
      * @see NSNotificationCenter
      * @see GCController.controllers
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCControllerDidBecomeCurrentNotification();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2397,15 +3049,17 @@ public final class GameController {
 
     /**
      * Use these constants with NSNotificationCenter to listen to connection and disconnection events
-     * <p>
+     * 
      * Use GCKeyboardDidConnectNotification for observing keyboard connection
      * Use GCKeyboardDidDisconnectNotification for observing keyboard disconnection
-     * <p>
+     * 
      * The 'object' property of the notification will contain the GCKeyboard that was connected or disconnected.
-     * <p>
+     * 
      * [@note] All connected keyboards are coalesced into one keyboard object, so notification about
      * connection/disconnection will only be delivered once until last keyboard disconnects.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @see NSNotificationCetner
      */
     @Generated
@@ -2413,6 +3067,9 @@ public final class GameController {
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCKeyboardDidConnectNotification();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2420,31 +3077,36 @@ public final class GameController {
 
     /**
      * Use these constants with NSNotificationCenter to listen to connection and disconnection events.
-     * <p>
+     * 
      * Use GCMouseDidConnectNotification for observing connections of mice.
      * Use GCMouserDidDisconnectNotification for observing disconnections of mice.
-     * <p>
+     * 
      * Connections and disconnections of mice will also be reflected in the mice array
      * of the GCMouse class.
-     * <p>
+     * 
      * The 'object' property of the notification will contain the GCMouse that was connected or disconnected.
      * For example:
-     * <p>
+     * 
      * - (void)controllerDidConnect:(NSNotification *)note {
-     * <p>
+     * 
      * GCMouse *mouse = note.object;
-     * <p>
+     * 
      * ....
      * }
-     *
+     * 
      * @see NSNotificationCenter
      * @see GCMouse.mice
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCMouseDidConnectNotification();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2454,26 +3116,31 @@ public final class GameController {
      * Use these constants with NSNotificationCenter to listen to a controller becoming the most recently used mouse.
      * This is a good time to swap out UI to match the new current mouse, and unregister any handlers with
      * the old current controller.
-     * <p>
+     * 
      * The 'object' property of the notification will contain the GCMouse that became the current one.
      * For example:
-     * <p>
+     * 
      * - (void)mouseDidBecomeCurrent:(NSNotification *)note {
-     * <p>
+     * 
      * GCMouse *mouse = note.object;
-     * <p>
+     * 
      * ...
      * }
-     *
+     * 
      * @see NSNotificationCenter
      * @see GCMouse.mice
      * @see GCMouse.current
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCMouseDidBecomeCurrentNotification();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2481,6 +3148,8 @@ public final class GameController {
 
     /**
      * guaranteed to be supported
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -2489,46 +3158,72 @@ public final class GameController {
 
     /**
      * guaranteed to be supported
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCHapticsLocalityAll();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCHapticsLocalityHandles();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCHapticsLocalityLeftHandle();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCHapticsLocalityRightHandle();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCHapticsLocalityTriggers();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCHapticsLocalityLeftTrigger();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCHapticsLocalityRightTrigger();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     public static native float GCHapticDurationInfinite();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2536,6 +3231,8 @@ public final class GameController {
 
     /**
      * F13
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2544,6 +3241,8 @@ public final class GameController {
 
     /**
      * F14
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2552,6 +3251,8 @@ public final class GameController {
 
     /**
      * F15
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2560,6 +3261,8 @@ public final class GameController {
 
     /**
      * F16
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2568,6 +3271,8 @@ public final class GameController {
 
     /**
      * F17
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2576,6 +3281,8 @@ public final class GameController {
 
     /**
      * F18
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2584,6 +3291,8 @@ public final class GameController {
 
     /**
      * F19
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2592,6 +3301,8 @@ public final class GameController {
 
     /**
      * F20
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2600,6 +3311,8 @@ public final class GameController {
 
     /**
      * F13
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2608,6 +3321,8 @@ public final class GameController {
 
     /**
      * F14
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2616,6 +3331,8 @@ public final class GameController {
 
     /**
      * F15
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2624,6 +3341,8 @@ public final class GameController {
 
     /**
      * F16
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2632,6 +3351,8 @@ public final class GameController {
 
     /**
      * F17
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2640,6 +3361,8 @@ public final class GameController {
 
     /**
      * F18
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2648,6 +3371,8 @@ public final class GameController {
 
     /**
      * F19
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2656,6 +3381,8 @@ public final class GameController {
 
     /**
      * F20
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2664,11 +3391,13 @@ public final class GameController {
 
     /**
      * The primary directional input surface for the directional gamepad
-     * <p>
+     * 
      * [@note] Equivalent to microgamepad.dpad
-     * <p>
+     * 
      * [@note] For the 1st generation and 2nd generation Siri Remotes, this represents touching anywhere on the entire
      * touch surface.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2677,9 +3406,11 @@ public final class GameController {
 
     /**
      * The primary button for the microgamepad
-     * <p>
+     * 
      * [@note] For the 1st generation and 2nd generation Siri Remotes, this represents pressing anywhere on the touch
      * surface.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2688,10 +3419,12 @@ public final class GameController {
 
     /**
      * The secondary button for the microgamepad
-     * <p>
+     * 
      * [@note] Equivalent to microgamepad.buttonX
-     * <p>
+     * 
      * [@note] For the 1st and 2nd generation Siri Remotes, this represents pressing the play/pause button.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2700,15 +3433,17 @@ public final class GameController {
 
     /**
      * The primary menu button for the microgamepad
-     * <p>
+     * 
      * [@note] Equivalent to microgamepad.buttonMenu
-     * <p>
+     * 
      * [@note] For the 1st generation Siri Remote, this represents pressing the play/pause button. For the 2nd
      * generation Siri Remote, this represents pressing the back button.
-     * <p>
+     * 
      * [@note] You should avoid polling this button every frame. tvOS will run a gesture recognizer on events before
      * forwarding them to your application that can reduce the window
      * to poll button changes. Instead, register a pressedChangedHandler or a valueChangedHandler.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2717,11 +3452,13 @@ public final class GameController {
 
     /**
      * The primary directional input surface for the directional gamepad
-     * <p>
+     * 
      * [@note] Equivalent to microgamepad.dpad
-     * <p>
+     * 
      * [@note] For the 2021 2nd generation Siri Remote, this represents touching anywhere on the entire touch surface -
      * including the inner and outer rings.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @CVariable()
@@ -2731,11 +3468,13 @@ public final class GameController {
     /**
      * The button corresponding to pressing anywhere on the primary directional input surface for the directional
      * gamepad
-     * <p>
+     * 
      * [@note] Equivalent to microgamepad.buttonA
-     * <p>
+     * 
      * [@note] For the 2021 2nd generation Siri Remote, this represents pressing anywhere the entire touch surface -
      * including the inner and outer rings.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2745,8 +3484,10 @@ public final class GameController {
     /**
      * An optional secondary directional input surface for the directional gamepad. This input is guaranteed to be an
      * 8-way digital dpad with physical Up, Down, Left, Right butttons.
-     * <p>
+     * 
      * [@note] For the 2021 2nd generation Siri Remote, this represents pressing on the outer ring of the touch surface.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @CVariable()
@@ -2755,9 +3496,11 @@ public final class GameController {
 
     /**
      * An optional button for the directional gamepad. This input represents the center button of the cardinal dpad.
-     * <p>
+     * 
      * [@note] For the 2021 2nd generation Siri Remote, this represents pressing anywhere on the inner ring of the touch
      * surface.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2766,22 +3509,33 @@ public final class GameController {
 
     /**
      * Game Controller Product Categories
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCProductCategoryDualSense();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCProductCategoryDualShock4();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCProductCategoryMFi();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2790,6 +3544,8 @@ public final class GameController {
     /**
      * The Siri Remote (1st generation), or Apple TV Remote (1st generation), was first introduced in 2015. It features
      * a Touch surface for touch navigation, and supports device motion.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2799,6 +3555,8 @@ public final class GameController {
     /**
      * The Siri Remote (2nd generation), or Apple TV Remote (2nd generation), was first introduced in 2021. It features
      * a touch-enabled clickpad for navigation.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2807,6 +3565,8 @@ public final class GameController {
 
     /**
      * Users can use Apple TV Remote controls in Control Center on an iOS or iPadOS device.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2816,6 +3576,8 @@ public final class GameController {
     /**
      * The Universal Electronics remote is an infrared and Bluetooth Low Energy remote designed to work with the Apple
      * TV.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2825,11 +3587,13 @@ public final class GameController {
     /**
      * If multiple remotes have been combined into one, the device will have the GCProductCategoryCoalescedRemote
      * product category.
-     * <p>
+     * 
      * By default, the Game Controller framework will try to coalesce, or combine, the physical Apple TV Remote and the
      * virtual Control Center remote and treat them as a single GCDevice instance. By setting
      * GCSupportsMultipleMicroGamepads in your
      * app's plist to true, you can disable this behavior.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2838,14 +3602,54 @@ public final class GameController {
 
     /**
      * Keyboards and Mice Product Categories
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCProductCategoryMouse();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String GCProductCategoryKeyboard();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCProductCategoryHID();
+
+    /**
+     * Use this constant with NSNotificationCenter to listen to controller user customization events.
+     * 
+     * When a user customizes the button mappings or other settings of a controller this notification will be
+     * posted. This is a good time to swap out UI to match the new user settings. Users can modify game
+     * controller settings through the Settings app on iOS, tvOS, and macOS.
+     * 
+     * The 'object' property of the notification will contain the GCController that was customized.
+     * For example:
+     * 
+     * - (void)controllerDidConnect:(NSNotification *)note {
+     * 
+     * GCController *controller = note.object;
+     * 
+     * ....
+     * }
+     * 
+     * @see NSNotificationCenter
+     * @see GCController.controllers
+     * 
+     *      API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String GCControllerUserCustomizationsDidChangeNotification();
 }

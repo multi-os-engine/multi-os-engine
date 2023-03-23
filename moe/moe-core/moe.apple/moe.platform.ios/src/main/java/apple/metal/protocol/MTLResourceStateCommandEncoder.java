@@ -13,7 +13,12 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.metal.struct.MTLOrigin;
+import apple.metal.struct.MTLSize;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -21,12 +26,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
     /**
      * updateFence:
-     * <p>
+     * 
      * Update the fence to capture all GPU work so far enqueued by this encoder.
-     * <p>
+     * 
      * The fence is updated at kernel submission to maintain global order and prevent deadlock.
      * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of
      * an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("updateFence:")
@@ -34,14 +41,16 @@ public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
 
     /**
      * updateTextureMapping:indirectBuffer:indirectBufferOffset:
-     * <p>
+     * 
      * Updates mapping for given sparse texture. Updates are driven via a MTLBuffer with the structure format defined by
      * MTLMapIndirectBufferFormat.
-     * <p>
+     * 
      * struct MTLMapIndirectBufferFormat{
      * uint32_t numMappings;
      * MTLMapIndirectArguments mappings[numMappings];
      * }
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("updateTextureMapping:mode:indirectBuffer:indirectBufferOffset:")
@@ -51,8 +60,10 @@ public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
 
     /**
      * updateTextureMapping:region:mipLevel:slice:mode:
-     * <p>
+     * 
      * Updates mapping for given sparse texture
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("updateTextureMapping:mode:region:mipLevel:slice:")
@@ -61,8 +72,10 @@ public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
 
     /**
      * updateTextureMappings:regions:mipLevels:slices:numRegions:mode:
-     * <p>
+     * 
      * Updates multiple regions within a sparse texture.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("updateTextureMappings:mode:regions:mipLevels:slices:numRegions:")
@@ -72,14 +85,35 @@ public interface MTLResourceStateCommandEncoder extends MTLCommandEncoder {
 
     /**
      * waitForFence:
-     * <p>
+     * 
      * Prevent further GPU work until the fence is reached.
-     * <p>
-     * The fence is evaluated at kernel submision to maintain global order and prevent deadlock.
+     * 
+     * The fence is evaluated at kernel submission to maintain global order and prevent deadlock.
      * Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of
      * an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("waitForFence:")
     void waitForFence(@Mapped(ObjCObjectMapper.class) MTLFence fence);
+
+    /**
+     * moveTextureMappingsFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:
+     * 
+     * Move sparse page mappings from one sparse texture to another from the same heap.
+     * 
+     * The tile mapping is moved from the source texture only if the destination texture tile is unmapped. The textures
+     * must also have matching a texture format,
+     * texture type, sample count, usage and resource options.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("moveTextureMappingsFromTexture:sourceSlice:sourceLevel:sourceOrigin:sourceSize:toTexture:destinationSlice:destinationLevel:destinationOrigin:")
+    void moveTextureMappingsFromTextureSourceSliceSourceLevelSourceOriginSourceSizeToTextureDestinationSliceDestinationLevelDestinationOrigin(
+            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture, @NUInt long sourceSlice, @NUInt long sourceLevel,
+            @ByValue MTLOrigin sourceOrigin, @ByValue MTLSize sourceSize,
+            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture, @NUInt long destinationSlice,
+            @NUInt long destinationLevel, @ByValue MTLOrigin destinationOrigin);
 }

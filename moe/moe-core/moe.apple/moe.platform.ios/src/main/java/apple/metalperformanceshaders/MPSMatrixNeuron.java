@@ -29,24 +29,27 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSMatrixNeuron
- * <p>
+ * 
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * A neuron activation kernel that operates on matrices.
- * <p>
+ * 
  * A MPSMatrixNeuron object computes:
- * <p>
+ * 
  * y = neuron(alpha * x + bias)
- * <p>
+ * 
  * y is the output matrix, x is the input matrix corresponding
  * to a collection of input vectors and bias is a vector which is broadcast
  * and accumulated to each row of the intermediate result.
  * alpha is a scale factor applied to the input.
- * <p>
+ * 
  * neuron() defines the pointwise function that is applied to the intermediate result.
- * <p>
+ * 
  * Note: This function computes the same result as MPSMatrixFullyConnected that has
  * unit weight matrix.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -78,7 +81,7 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The scale factor to apply to the input. Specified in double
      * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
@@ -112,7 +115,7 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
 
     /**
      * Make a copy of this kernel for a new device - @see MPSKernel
-     *
+     * 
      * @param zone   The NSZone in which to allocate the object
      * @param device The device for the new MPSKernel. If nil, then use
      *               self.device.
@@ -135,20 +138,23 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
 
     /**
      * Encode a MPSMatrixNeuron object to a command buffer.
-     * <p>
+     * 
      * Encodes the operation to the specified command buffer. resultMatrix
      * must be large enough to hold a
      * MIN(sourceNumberOfFeatureVectors, inputMatrix.rows - sourceMatrixOrigin.x)
      * x
      * MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels) array.
-     * <p>
+     * 
      * The bias vector must contain at least
      * MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels) elements.
-     *
+     * 
      * @param commandBuffer A valid MTLCommandBuffer to receive the encoded kernel.
+     * 
      * @param inputMatrix   A valid MPSMatrix object which specifies the input array.
+     * 
      * @param biasVector    A valid MPSVector object which specifies the bias values, or
      *                      a null object to indicate that no bias is to be applied.
+     * 
      * @param resultMatrix  A valid MPSMatrix object which specifies the output array.
      */
     @Generated
@@ -172,9 +178,9 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSMatrixNeuron
      * @param device   The MTLDevice on which to make the MPSMatrixNeuron object.
      * @return A new MPSMatrixNeuron object, or nil if failure.
@@ -251,7 +257,7 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The scale factor to apply to the input. Specified in double
      * precision. Will be converted to the appropriate precision in the
      * implementation subject to rounding and/or clamping as necessary.
@@ -263,21 +269,21 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
 
     /**
      * Add per output value neuron parameters A for PReLu neuron activation functions.
-     * <p>
+     * 
      * This method sets the neuron to PReLU, zeros parameters A and B and sets the per output value
      * neuron parameters A to an array containing a unique value of A for each output value.
-     * <p>
+     * 
      * If the neuron function is f(v,a,b), it will apply
-     * <p>
+     * 
      * resultMatrix(i, j) = f( input(i, j), A[j], B[j] )
      * where j in [0, sourceInputFeatureChannels]
-     * <p>
+     * 
      * See https://arxiv.org/pdf/1502.01852.pdf for details.
-     * <p>
+     * 
      * All other neuron types, where parameter A
      * and parameter B are shared across output values must be set using
      * -setNeuronType:parameterA:parameterB:
-     *
+     * 
      * @param A An array containing float values for neuron parameter A.
      *          Number of entries must be equal to MIN(inputMatrix.columns - sourceMatrixOrigin.y,
      *          sourceInputFeatureChannels)
@@ -288,7 +294,7 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
 
     /**
      * Specifies a neuron activation function to be used.
-     * <p>
+     * 
      * This method can be used to add a neuron activation funtion of given type with
      * associated scalar parameters A, B, and C that are shared across all output values.
      * Note that this method can only be used to specify neurons which are specified by three (or fewer)
@@ -297,7 +303,7 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
      * which require per-channel parameter values. For those kind of neuron activation functions,
      * use appropriate setter functions. An MPSMatrixNeuron kernel is initialized
      * with a default neuron function of MPSCNNNeuronTypeNone.
-     *
+     * 
      * @param neuronType Type of neuron activation function. For full list see MPSCNNNeuronType.h
      * @param parameterA parameterA of neuron activation that is shared across all output values.
      * @param parameterB parameterB of neuron activation that is shared across all output values.
@@ -310,7 +316,7 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
 
     /**
      * [@property] sourceInputFeatureChannels
-     * <p>
+     * 
      * The input size to to use in the operation. This is equivalent to the
      * number of columns in the primary (input array) source matrix to consider
      * and the number of channels to produce for the output matrix.
@@ -328,7 +334,7 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
 
     /**
      * [@property] sourceNumberOfFeatureVectors
-     * <p>
+     * 
      * The number of input vectors which make up the input array. This
      * is equivalent to the number of rows to consider from the primary
      * source matrix.
@@ -347,7 +353,7 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
 
     /**
      * [@property] sourceInputFeatureChannels
-     * <p>
+     * 
      * The input size to to use in the operation. This is equivalent to the
      * number of columns in the primary (input array) source matrix to consider
      * and the number of channels to produce for the output matrix.
@@ -366,7 +372,7 @@ public class MPSMatrixNeuron extends MPSMatrixUnaryKernel {
 
     /**
      * [@property] sourceNumberOfFeatureVectors
-     * <p>
+     * 
      * The number of input vectors which make up the input array. This
      * is equivalent to the number of rows to consider from the primary
      * source matrix.

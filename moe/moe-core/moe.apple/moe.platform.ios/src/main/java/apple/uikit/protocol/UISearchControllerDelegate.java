@@ -24,6 +24,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.moe.natj.general.ann.NInt;
 
 @Generated
 @Library("UIKit")
@@ -71,6 +72,28 @@ public interface UISearchControllerDelegate {
     @IsOptional
     @Selector("willPresentSearchController:")
     default void willPresentSearchController(UISearchController searchController) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("searchController:didChangeFromSearchBarPlacement:")
+    default void searchControllerDidChangeFromSearchBarPlacement(UISearchController searchController,
+            @NInt long previousPlacement) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("searchController:willChangeToSearchBarPlacement:")
+    default void searchControllerWillChangeToSearchBarPlacement(UISearchController searchController,
+            @NInt long newPlacement) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

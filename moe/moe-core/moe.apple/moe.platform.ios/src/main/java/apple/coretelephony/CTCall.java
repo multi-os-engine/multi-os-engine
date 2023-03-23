@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("CoreTelephony")
 @Runtime(ObjCRuntime.class)
@@ -150,24 +153,34 @@ public class CTCall extends NSObject {
 
     /**
      * callID
-     * <p>
+     * 
      * Description:
      * A unique identifier for this call to be used by clients to differentiate
      * multiple active calls.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Replaced by <CallKit/CXCall.h> properties
      */
+    @Deprecated
     @Generated
     @Selector("callID")
     public native String callID();
 
     /**
      * callState
-     * <p>
+     * 
      * Description:
      * An NSString constant that describes the state of this call. The initial state
      * will be either CTCallStateDialing or CTCallStateIncoming, will transition
      * to CTCallStateConnected when the call is established with all parties
      * involved and will move to CTCallStateDisconnected when this call is terminated.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Replaced by <CallKit/CXCall.h> properties
      */
+    @Deprecated
     @Generated
     @Selector("callState")
     public native String callState();

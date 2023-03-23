@@ -20,11 +20,22 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * Alpha state of loaded texture
+ * 
+ * API-Since: 5.0
  */
 @Generated
 public final class GLKTextureInfoAlphaState {
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int None = 0x00000000;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int NonPremultiplied = 0x00000001;
+    /**
+     * API-Since: 5.0
+     */
     @Generated public static final int Premultiplied = 0x00000002;
 
     @Generated

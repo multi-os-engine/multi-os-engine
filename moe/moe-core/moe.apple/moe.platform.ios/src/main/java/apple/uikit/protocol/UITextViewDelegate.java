@@ -29,6 +29,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.foundation.NSArray;
+import apple.uikit.UIMenu;
+import apple.uikit.UIMenuElement;
+import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.objc.map.ObjCObjectMapper;
 
 @Generated
 @Library("UIKit")
@@ -43,6 +48,11 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithTextAttachment:inRange:")
@@ -51,6 +61,9 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithTextAttachment:inRange:interaction:")
@@ -59,6 +72,11 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithURL:inRange:")
@@ -67,6 +85,9 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("textView:shouldInteractWithURL:inRange:interaction:")
@@ -114,6 +135,58 @@ public interface UITextViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("textViewShouldEndEditing:")
     default boolean textViewShouldEndEditing(UITextView textView) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Asks the delegate for the menu to be shown for the specified text range.
+     * 
+     * @param textView         The text view requesting the menu.
+     * @param range            The text range for which the menu is presented for.
+     * @param suggestedActions The actions and commands that the system suggests.
+     * 
+     * @return Return a UIMenu describing the desired menu hierarchy. Return @c nil to present the default system menu.
+     * 
+     *         API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textView:editMenuForTextInRange:suggestedActions:")
+    default UIMenu textViewEditMenuForTextInRangeSuggestedActions(UITextView textView, @ByValue NSRange range,
+            NSArray<? extends UIMenuElement> suggestedActions) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when the text view is about to dismiss the edit menu.
+     * 
+     * @param textView The text view displaying the menu.
+     * @param animator Dismissal animator. Add animations to this object to run them alongside the dismissal transition.
+     * 
+     *                 API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textView:willDismissEditMenuWithAnimator:")
+    default void textViewWillDismissEditMenuWithAnimator(UITextView textView,
+            @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when the text view is about to present the edit menu.
+     * 
+     * @param textView The text view displaying the menu.
+     * @param animator Appearance animator. Add animations to this object to run them alongside the appearance
+     *                 transition.
+     * 
+     *                 API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("textView:willPresentEditMenuWithAnimator:")
+    default void textViewWillPresentEditMenuWithAnimator(UITextView textView,
+            @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

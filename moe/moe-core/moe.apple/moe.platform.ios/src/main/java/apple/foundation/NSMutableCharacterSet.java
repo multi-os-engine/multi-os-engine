@@ -203,6 +203,9 @@ public class NSMutableCharacterSet extends NSCharacterSet implements NSCopying, 
     @Selector("new")
     public static native NSMutableCharacterSet new_objc();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("newlineCharacterSet")
     public static native NSMutableCharacterSet newlineCharacterSet();

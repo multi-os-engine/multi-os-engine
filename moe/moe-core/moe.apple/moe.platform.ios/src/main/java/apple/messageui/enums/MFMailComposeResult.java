@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] MFMailComposeResult
- * <p>
+ * 
  * Composition result sent to the delegate upon user completion.
- * <p>
+ * 
  * This result will inform of the user's choice in regards to email composition. If the user
  * cancels the composition, <tt>MFMailComposeResultCancelled</tt> will be sent to the delegate.
  * Typically <tt>MFMailComposeResultSent</tt> or <tt>MFMailComposeResultSaved</tt> will
@@ -34,12 +34,26 @@ import org.moe.natj.general.ann.NInt;
  * [@constant] MFMailComposeResultSaved User successfully saved the message.
  * [@constant] MFMailComposeResultSent User successfully sent/queued the message.
  * [@constant] MFMailComposeResultFailed User's attempt to save or send was unsuccessful.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 public final class MFMailComposeResult {
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long Cancelled = 0x0000000000000000L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long Saved = 0x0000000000000001L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long Sent = 0x0000000000000002L;
+    /**
+     * API-Since: 3.0
+     */
     @Generated @NInt public static final long Failed = 0x0000000000000003L;
 
     @Generated

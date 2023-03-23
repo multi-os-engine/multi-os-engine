@@ -18,8 +18,6 @@ package apple.spritekit;
 
 import apple.NSObject;
 import apple.avfaudio.AVAudioEngine;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSError;
@@ -51,10 +49,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * A scene is the root node of your content. It is used to display SpriteKit content on an SKView.
- *
+ * 
  * @see SKView
  */
 @Generated
@@ -205,6 +205,9 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     @ByValue
     public native CGPoint anchorPoint();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("audioEngine")
     public native AVAudioEngine audioEngine();
@@ -219,6 +222,8 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     /**
      * The camera that is used to obtain the view scale and translation based on where the camera is in relation to the
      * scene.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("camera")
@@ -234,6 +239,9 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     @ByValue
     public native CGPoint convertPointToView(@ByValue CGPoint point);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -243,6 +251,8 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
      * Override this to perform game logic. Called exactly once per frame after any enabled constraints have been
      * applied. Any additional actions applied is not evaluated until the next update. Any changes to physics bodies is
      * not simulated until the next update. Any changes to constraints will not be applied until the next update.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("didApplyConstraints")
@@ -264,9 +274,11 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
      * Override this to perform game logic. Called after all update logic has been completed. Any additional actions
      * applied are not evaluated until the next update. Any changes to physics bodies are not simulated until the next
      * update. Any changes to constraints will not be applied until the next update.
-     * <p>
+     * 
      * No futher update logic will be applied to the scene after this call. Any values set on nodes here will be used
      * when the scene is rendered for the current frame.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("didFinishUpdate")
@@ -297,7 +309,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
      * A scene is infinitely large, but it has a viewport that is the frame through which you present the content of the
      * scene.
      * The passed in size defines the size of this viewport that you use to present the scene.
-     *
+     * 
      * @param size a size in points that signifies the viewport into the scene that defines your framing of the scene.
      */
     @Generated
@@ -306,8 +318,10 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
 
     /**
      * The node that is currently the listener for positional audio coming from SKAudioNodes
-     *
+     * 
      * @see SKAudioNode
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("listener")
@@ -331,6 +345,8 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     /**
      * This is called once after the scene has been initialized or decoded,
      * this is the recommended place to perform one-time setup
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("sceneDidLoad")
@@ -353,6 +369,8 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     /**
      * The camera that is used to obtain the view scale and translation based on where the camera is in relation to the
      * scene.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCamera:")
@@ -361,6 +379,8 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     /**
      * The camera that is used to obtain the view scale and translation based on where the camera is in relation to the
      * scene.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     public void setCamera(SKCameraNode value) {
@@ -374,10 +394,16 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
         }
     }
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SKSceneDelegate value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) SKSceneDelegate value) {
         Object __old = delegate();
@@ -392,8 +418,10 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
 
     /**
      * The node that is currently the listener for positional audio coming from SKAudioNodes
-     *
+     * 
      * @see SKAudioNode
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     @Selector("setListener:")
@@ -401,8 +429,10 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
 
     /**
      * The node that is currently the listener for positional audio coming from SKAudioNodes
-     *
+     * 
      * @see SKAudioNode
+     * 
+     *      API-Since: 9.0
      */
     @Generated
     public void setListener(SKNode value) {
@@ -435,7 +465,7 @@ public class SKScene extends SKEffectNode implements GKSceneRootNodeType {
     /**
      * Override this to perform per-frame game logic. Called exactly once per frame before any actions are evaluated and
      * any physics are simulated.
-     *
+     * 
      * @param currentTime the current time in the app. This must be monotonically increasing.
      */
     @Generated

@@ -1,7 +1,6 @@
 package apple.arkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -25,9 +24,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * A model representing the camera and its parameters.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ARKit")
@@ -175,6 +177,8 @@ public class ARCamera extends NSObject implements NSCopying {
 
     /**
      * The camera exposure duration in seconds.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("exposureDuration")
@@ -182,6 +186,8 @@ public class ARCamera extends NSObject implements NSCopying {
 
     /**
      * The camera exposure offset in EV (exposure value) units.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("exposureOffset")

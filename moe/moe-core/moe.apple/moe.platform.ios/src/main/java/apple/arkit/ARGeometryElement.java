@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A container for index data describing how vertices connect to define a geometry.
+ * 
+ * API-Since: 13.4
  */
 @Generated
 @Library("ARKit")
@@ -123,9 +125,9 @@ public class ARGeometryElement extends NSObject implements NSSecureCoding {
 
     /**
      * The number of indices for each primitive.
-     * <p>
+     * 
      * This is based on the primitiveType. For ARGeometryPrimitiveTypeTriangle the value is 3.
-     *
+     * 
      * @see ARGeometryPrimitiveType
      */
     @Generated

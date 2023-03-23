@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("CoreLocation")
 @Runtime(ObjCRuntime.class)
@@ -162,7 +165,12 @@ public class CLGeocoder extends NSObject {
      * geocodeAddressDictionary:completionHandler: takes an address dictionary as defined by the AddressBook framework.
      * You can obtain an address dictionary from an ABPerson by retrieving the kABPersonAddressProperty property.
      * Alternately, one can be constructed using the kABPersonAddress* keys defined in <AddressBook/ABPerson.h>.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use -geocodePostalAddress:completionHandler:
      */
+    @Deprecated
     @Generated
     @Selector("geocodeAddressDictionary:completionHandler:")
     public native void geocodeAddressDictionaryCompletionHandler(NSDictionary<?, ?> addressDictionary,
@@ -223,6 +231,9 @@ public class CLGeocoder extends NSObject {
         void call_reverseGeocodeLocationCompletionHandler(NSArray<? extends CLPlacemark> placemarks, NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("geocodeAddressString:inRegion:preferredLocale:completionHandler:")
     public native void geocodeAddressStringInRegionPreferredLocaleCompletionHandler(String addressString,
@@ -237,6 +248,9 @@ public class CLGeocoder extends NSObject {
                 NSArray<? extends CLPlacemark> placemarks, NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("geocodePostalAddress:completionHandler:")
     public native void geocodePostalAddressCompletionHandler(CNPostalAddress postalAddress,
@@ -249,6 +263,9 @@ public class CLGeocoder extends NSObject {
         void call_geocodePostalAddressCompletionHandler(NSArray<? extends CLPlacemark> placemarks, NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("geocodePostalAddress:preferredLocale:completionHandler:")
     public native void geocodePostalAddressPreferredLocaleCompletionHandler(CNPostalAddress postalAddress,
@@ -263,6 +280,9 @@ public class CLGeocoder extends NSObject {
                 NSError error);
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("reverseGeocodeLocation:preferredLocale:completionHandler:")
     public native void reverseGeocodeLocationPreferredLocaleCompletionHandler(CLLocation location, NSLocale locale,

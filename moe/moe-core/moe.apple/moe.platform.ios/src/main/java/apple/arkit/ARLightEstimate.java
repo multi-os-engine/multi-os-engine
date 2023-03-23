@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A light estimate representing the light in the scene.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ARKit")
@@ -56,7 +58,7 @@ public class ARLightEstimate extends NSObject {
 
     /**
      * The ambient color temperature of the lighting.
-     * <p>
+     * 
      * This specifies the ambient color temperature of the lighting in Kelvin (6500 corresponds to pure white).
      */
     @Generated
@@ -66,7 +68,7 @@ public class ARLightEstimate extends NSObject {
 
     /**
      * Ambient intensity of the lighting.
-     * <p>
+     * 
      * In a well lit environment, this value is close to 1000. It typically ranges from 0 (very dark) to around 2000
      * (very bright).
      */

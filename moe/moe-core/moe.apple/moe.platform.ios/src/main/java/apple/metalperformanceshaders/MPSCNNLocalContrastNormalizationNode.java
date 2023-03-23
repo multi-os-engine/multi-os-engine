@@ -24,11 +24,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Node representing MPSCNNLocalContrastNormalization
- * <p>
+ * 
  * The result is computed for each element of X as follows:
- * <p>
+ * 
  * Y(i,j) = pm + ps * ( X(i,j) - p0 * M(i,j)) / pow((delta + alpha * variance(i,j)), beta),
- * <p>
+ * 
  * where kw and kh are the kernelWidth and the kernelHeight and pm, ps and p0 are parameters that
  * can be used to offset and scale the result in various ways. *
  * [@code]
@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * p0 = 1
  * kernelHeight = kernelWidth = kernelSize
  * [@endcode]
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")

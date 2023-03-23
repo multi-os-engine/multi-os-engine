@@ -23,6 +23,8 @@ public final class LinkPresentation {
 
     /**
      * LPErrorDomain is used to indicate a LinkPresentation error.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()

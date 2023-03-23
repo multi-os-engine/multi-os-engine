@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Performs document detection and segmentation in an image.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Vision")

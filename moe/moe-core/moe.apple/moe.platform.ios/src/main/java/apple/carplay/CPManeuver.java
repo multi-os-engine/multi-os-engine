@@ -28,9 +28,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.UIColor;
 
 /**
  * [@c] CPManeuver describes a navigation instruction.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CarPlay")
@@ -64,16 +67,16 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * attributedInstructionVariants is an array of @c NSAttributedString representing the instruction for this
      * maneuver,
      * arranged from most to least preferred.
-     * <p>
+     * 
      * [@c] attributedInstructionVariants will be preferred over instructionVariants. You must provide at least one
      * variant for each maneuver.
-     * <p>
+     * 
      * Only one attribute is presently supported: text attachments. You may annotate a maneuver instruction with an
      * image
      * by including a text attachment. The maximum text attachment image size is 64x16 points.
-     * <p>
+     * 
      * [@warning] All attributes other than text attachment attributes will be removed from your attributed string.
-     *
+     * 
      * @see +[NSAttributedString attributedStringWithAttachment:], -[NSTextAttachment image]
      */
     @Generated
@@ -168,7 +171,7 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * junctionImage is a @c UIImage used to display a junction for the maneuver.
-     * <p>
+     * 
      * [@note] The maximum image size is 140 points by 100 points. If necessary, images will be scaled down to fit while
      * maintaining the aspect ratio.
      */
@@ -197,16 +200,16 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * attributedInstructionVariants is an array of @c NSAttributedString representing the instruction for this
      * maneuver,
      * arranged from most to least preferred.
-     * <p>
+     * 
      * [@c] attributedInstructionVariants will be preferred over instructionVariants. You must provide at least one
      * variant for each maneuver.
-     * <p>
+     * 
      * Only one attribute is presently supported: text attachments. You may annotate a maneuver instruction with an
      * image
      * by including a text attachment. The maximum text attachment image size is 64x16 points.
-     * <p>
+     * 
      * [@warning] All attributes other than text attachment attributes will be removed from your attributed string.
-     *
+     * 
      * @see +[NSAttributedString attributedStringWithAttachment:], -[NSTextAttachment image]
      */
     @Generated
@@ -231,7 +234,7 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * junctionImage is a @c UIImage used to display a junction for the maneuver.
-     * <p>
+     * 
      * [@note] The maximum image size is 140 points by 100 points. If necessary, images will be scaled down to fit while
      * maintaining the aspect ratio.
      */
@@ -249,7 +252,11 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * symbolSet is a @c CPImageSet representing the maneuver.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("setSymbolSet:")
     public native void setSymbolSet(CPImageSet value);
@@ -289,7 +296,11 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * symbolSet is a @c CPImageSet representing the maneuver.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("symbolSet")
     public native CPImageSet symbolSet();
@@ -311,17 +322,19 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * dashboardAttributedInstructionVariants is an array of @c NSAttributedString representing the instruction for this
      * maneuver on the dashboard,
      * arranged from most to least preferred.
-     * <p>
+     * 
      * [@c] dashboardAttributedInstructionVariants will be preferred over dashboardInstructionVariants. If no dashboard
      * attributed variants are provided, dashboardInstructionVariants will be used.
-     * <p>
+     * 
      * Only one attribute is presently supported: text attachments. You may annotate a maneuver instruction with an
      * image
      * by including a text attachment. The maximum text attachment image size is 64x16 points.
-     * <p>
+     * 
      * [@warning] All attributes other than text attachment attributes will be removed from your attributed string.
-     *
+     * 
      * @see +[NSAttributedString attributedStringWithAttachment:], -[NSTextAttachment image]
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("dashboardAttributedInstructionVariants")
@@ -332,6 +345,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * dashboard, arranged from most to least preferred. If no dashboard variants are provided, the system will check
      * for attributedInstructionVariants, then instructionVariants.
      * The variant strings should be provided as localized, displayable content.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("dashboardInstructionVariants")
@@ -340,9 +355,11 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * dashboardJunctionImage is a @c UIImage used to display a junction for the maneuver on the dashboard. If no
      * dashboard junction image is provided, junctionImage will be used.
-     * <p>
+     * 
      * [@note] The maximum image size is 140 points by 100 points. If necessary, images will be scaled down to fit while
      * maintaining the aspect ratio.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("dashboardJunctionImage")
@@ -353,6 +370,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * variants for UIUserInterfaceStyleLight and UIUserInterfaceStyleDark that will be used against light backgrounds
      * and dark backgrounds. If no dashboard image
      * is provided, symbolImage will be used.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("dashboardSymbolImage")
@@ -362,17 +381,19 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * notificationAttributedInstructionVariants is an array of @c NSAttributedString representing the instruction for
      * this maneuver in a notification banner,
      * arranged from most to least preferred.
-     * <p>
+     * 
      * [@c] notificationAttributedInstructionVariants will be preferred over instructionVariants. If no notification
      * attributed variants are provided, notificationInstructionVariants will be used.
-     * <p>
+     * 
      * Only one attribute is presently supported: text attachments. You may annotate a maneuver instruction with an
      * image
      * by including a text attachment. The maximum text attachment image size is 64x16 points.
-     * <p>
+     * 
      * [@warning] All attributes other than text attachment attributes will be removed from your attributed string.
-     *
+     * 
      * @see +[NSAttributedString attributedStringWithAttachment:], -[NSTextAttachment image]
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("notificationAttributedInstructionVariants")
@@ -383,6 +404,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * notification banner, arranged from most to least preferred. If no notification instruction variants are provided,
      * the system will check for attributedInstructionVariants, then instructionVariants.
      * The variant strings should be provided as localized, displayable content.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("notificationInstructionVariants")
@@ -393,6 +416,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * Provide variants for UIUserInterfaceStyleLight and UIUserInterfaceStyleDark that will be used against light
      * backgrounds and dark backgrounds. If no
      * notification symbol image is provided, symbolImage will be used.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("notificationSymbolImage")
@@ -402,17 +427,19 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * dashboardAttributedInstructionVariants is an array of @c NSAttributedString representing the instruction for this
      * maneuver on the dashboard,
      * arranged from most to least preferred.
-     * <p>
+     * 
      * [@c] dashboardAttributedInstructionVariants will be preferred over dashboardInstructionVariants. If no dashboard
      * attributed variants are provided, dashboardInstructionVariants will be used.
-     * <p>
+     * 
      * Only one attribute is presently supported: text attachments. You may annotate a maneuver instruction with an
      * image
      * by including a text attachment. The maximum text attachment image size is 64x16 points.
-     * <p>
+     * 
      * [@warning] All attributes other than text attachment attributes will be removed from your attributed string.
-     *
+     * 
      * @see +[NSAttributedString attributedStringWithAttachment:], -[NSTextAttachment image]
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("setDashboardAttributedInstructionVariants:")
@@ -423,6 +450,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * dashboard, arranged from most to least preferred. If no dashboard variants are provided, the system will check
      * for attributedInstructionVariants, then instructionVariants.
      * The variant strings should be provided as localized, displayable content.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDashboardInstructionVariants:")
@@ -431,9 +460,11 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * dashboardJunctionImage is a @c UIImage used to display a junction for the maneuver on the dashboard. If no
      * dashboard junction image is provided, junctionImage will be used.
-     * <p>
+     * 
      * [@note] The maximum image size is 140 points by 100 points. If necessary, images will be scaled down to fit while
      * maintaining the aspect ratio.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDashboardJunctionImage:")
@@ -444,6 +475,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * variants for UIUserInterfaceStyleLight and UIUserInterfaceStyleDark that will be used against light backgrounds
      * and dark backgrounds. If no dashboard image
      * is provided, symbolImage will be used.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDashboardSymbolImage:")
@@ -453,17 +486,19 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * notificationAttributedInstructionVariants is an array of @c NSAttributedString representing the instruction for
      * this maneuver in a notification banner,
      * arranged from most to least preferred.
-     * <p>
+     * 
      * [@c] notificationAttributedInstructionVariants will be preferred over instructionVariants. If no notification
      * attributed variants are provided, notificationInstructionVariants will be used.
-     * <p>
+     * 
      * Only one attribute is presently supported: text attachments. You may annotate a maneuver instruction with an
      * image
      * by including a text attachment. The maximum text attachment image size is 64x16 points.
-     * <p>
+     * 
      * [@warning] All attributes other than text attachment attributes will be removed from your attributed string.
-     *
+     * 
      * @see +[NSAttributedString attributedStringWithAttachment:], -[NSTextAttachment image]
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("setNotificationAttributedInstructionVariants:")
@@ -474,6 +509,8 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * notification banner, arranged from most to least preferred. If no notification instruction variants are provided,
      * the system will check for attributedInstructionVariants, then instructionVariants.
      * The variant strings should be provided as localized, displayable content.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setNotificationInstructionVariants:")
@@ -484,8 +521,28 @@ public class CPManeuver extends NSObject implements NSCopying, NSSecureCoding {
      * Provide variants for UIUserInterfaceStyleLight and UIUserInterfaceStyleDark that will be used against light
      * backgrounds and dark backgrounds. If no
      * notification symbol image is provided, symbolImage will be used.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setNotificationSymbolImage:")
     public native void setNotificationSymbolImage(UIImage value);
+
+    /**
+     * Takes precedence over @c guidanceBackgroundColor set in @c CPMapTemplate.
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @Selector("cardBackgroundColor")
+    public native UIColor cardBackgroundColor();
+
+    /**
+     * Takes precedence over @c guidanceBackgroundColor set in @c CPMapTemplate.
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @Selector("setCardBackgroundColor:")
+    public native void setCardBackgroundColor(UIColor value);
 }

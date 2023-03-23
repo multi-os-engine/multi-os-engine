@@ -27,7 +27,7 @@ public final class NSFileCoordinatorWritingOptions {
      * writing to wait, and what NSFilePresenter messaging is done. See the comments in the Single File Coordination
      * section below. This option is how you trigger sending of -accommodatePresentedItemDeletionWithCompletionHandler:
      * or -accommodatePresentedSubitemDeletionAtURL:completionHandler: messages to NSFilePresenters.
-     * <p>
+     * 
      * For example, Finder uses this when it's emptying the trash to give NSFilePresenters a chance to close documents
      * before their files disappear, or would disappear if the files weren't still open.
      */
@@ -39,7 +39,7 @@ public final class NSFileCoordinatorWritingOptions {
      * section below. This option has no effect when what's being moved is a plain file so you can use it in code that
      * moves file system items without checking whether the items are files or directories. Any such check would invite
      * a race condition anyway.
-     * <p>
+     * 
      * For example, Finder uses this when it's moving items that the user has dragged and dropped so as not to yank
      * files contained by moved folders out from underneath applications that are reading or writing those files.
      */
@@ -58,12 +58,12 @@ public final class NSFileCoordinatorWritingOptions {
      * an item in the way before the writing begins. Don't use this when simply updating the contents of a file, even if
      * the way you do that is writing the contents to another file and renaming it into place. This is not a valid
      * option to use with -prepareForReadingItemsAtURLs:options:writingItemsAtURLs:options:error:byAccessor:.
-     * <p>
+     * 
      * For example, NSDocument uses this for NSSaveAsOperation and NSSaveToOperation to announce that it is possibly
      * overwriting an item with a brand new file or file package. This gives any NSFilePresenter of the overwritten
      * item, including perhaps a different instance of NSDocument, perhaps in the same application, a chance to close
      * itself before the item is overwritten.
-     * <p>
+     * 
      * For another example, the most accurate and safe way to coordinate a move is to invoke
      * -coordinateWritingItemAtURL:options:writingItemAtURL:options:error:byAccessor: using the
      * NSFileCoordinatorWritingForMoving option with the source URL and NSFileCoordinatorWritingForReplacing with the
@@ -76,6 +76,8 @@ public final class NSFileCoordinatorWritingOptions {
      * or fail. When using this option, changing metadata that is related to the item's contents is not supported for
      * ubiquitous items and such changes may not be preserved. For example, changing the value of NSURLTagNamesKey is
      * supported, but changing the value of NSURLContentModificationDateKey is not.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NUInt public static final long ContentIndependentMetadataOnly = 0x0000000000000010L;
 

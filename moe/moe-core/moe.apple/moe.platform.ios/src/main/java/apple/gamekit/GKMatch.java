@@ -48,6 +48,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * GKMatch represents an active networking sessions between players. It handles network communications and can report
  * player connection status. All matches are created by a GKMatchmaker.
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -161,6 +163,11 @@ public class GKMatch extends NSObject {
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use
+     * chooseBestHostingPlayerWithCompletionHandler:
      */
     @Generated
     @Deprecated
@@ -172,6 +179,8 @@ public class GKMatch extends NSObject {
      * Choose the best host from among the connected players using gathered estimates for bandwidth and packet loss.
      * This is intended for applications that wish to implement a client-server model on top of the match. The returned
      * player ID will be nil if the best host cannot currently be determined (e.g. players are still connecting).
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("chooseBestHostingPlayerWithCompletionHandler:")
@@ -205,23 +214,32 @@ public class GKMatch extends NSObject {
 
     /**
      * NSStrings of player identifiers in the match
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use players instead.
      */
     @Generated
     @Deprecated
     @Selector("playerIDs")
     public native NSArray<String> playerIDs();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("players")
     public native NSArray<? extends GKPlayer> players();
 
     /**
-     * Auto-matching to recreate a previous peer-to-peer match that became disconnected. A new match with the same set
-     * of players will be returned by the completion handler. All players should perform this when the match has ended
-     * for auto-matching to succeed. Error will be nil on success.
+     * Automatching to recreate a previous peer-to-peer match that became disconnected. A new match with the same set of
+     * players will be returned by the completion handler. All players should perform this when the match has ended for
+     * automatching to succeed. Error will be nil on success.
      * Possible reasons for error:
      * 1. Communications failure
      * 2. Timeout
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("rematchWithCompletionHandler:")
@@ -231,6 +249,8 @@ public class GKMatch extends NSObject {
     /**
      * Asynchronously send data to one or more GKPlayers. Returns YES if delivery started, NO if unable to start sending
      * and error will be set.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("sendData:toPlayers:dataMode:error:")
@@ -239,6 +259,11 @@ public class GKMatch extends NSObject {
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use
+     * sendData:toPlayers:dataMode:error:
      */
     @Generated
     @Deprecated

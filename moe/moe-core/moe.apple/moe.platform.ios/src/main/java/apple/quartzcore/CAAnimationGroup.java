@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Animation subclass for grouped animations. *
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("QuartzCore")

@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Voice analytics corresponding to a segment of recorded audio
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Speech")

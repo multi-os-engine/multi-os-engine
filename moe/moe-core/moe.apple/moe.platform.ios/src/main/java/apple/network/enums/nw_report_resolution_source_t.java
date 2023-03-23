@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_report_resolution_source_t
- * <p>
+ * 
  * The source of a resolution indicates if the set of endpoints was resolved
  * locally using a cache, or sent a query over the network.
  */

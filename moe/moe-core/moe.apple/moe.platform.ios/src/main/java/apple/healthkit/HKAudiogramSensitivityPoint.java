@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -152,9 +155,9 @@ public class HKAudiogramSensitivityPoint extends NSObject {
 
     /**
      * sensitivityPointWithFrequency:leftEarSensitivity:rightEarSensitivity:error:
-     * <p>
+     * 
      * Creates a point that can be included in a audiogram.
-     *
+     * 
      * @param frequency           Frequency where sensitivity was measured.
      * @param leftEarSensitivity  Left ear sensitivity measured in attenuated dB from a baseline of 0 dB.
      * @param rightEarSensitivity Right ear sensitivity measured in attenuated dB from a baseline of 0 dB.

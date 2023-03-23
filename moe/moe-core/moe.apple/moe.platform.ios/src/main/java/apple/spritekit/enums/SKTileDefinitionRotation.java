@@ -21,12 +21,26 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * Adjust the rotation of the tile definition image, in 90 degree increments.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class SKTileDefinitionRotation {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Rotation0 = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Rotation90 = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Rotation180 = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Rotation270 = 0x0000000000000003L;
 
     @Generated

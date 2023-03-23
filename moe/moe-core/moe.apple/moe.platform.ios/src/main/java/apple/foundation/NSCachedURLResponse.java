@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * objects that are stored in the framework's caching system.
  * It is used to maintain characteristics and attributes of a cached
  * object.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")
@@ -168,7 +170,7 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
 
     /**
      * Returns the data of the receiver.
-     *
+     * 
      * @return The data of the receiver.
      */
     @Generated
@@ -189,14 +191,14 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
 
     /**
      * initWithResponse:data
-     * <p>
+     * 
      * Initializes an NSCachedURLResponse with the given
      * response and data.
-     * <p>
+     * 
      * A default NSURLCacheStoragePolicy is used for
      * NSCachedURLResponse objects initialized with this method:
      * NSURLCacheStorageAllowed.
-     *
+     * 
      * @param response a NSURLResponse object.
      * @param data     an NSData object representing the URL content
      *                 corresponding to the given response.
@@ -208,10 +210,10 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
 
     /**
      * initWithResponse:data:userInfo:storagePolicy:
-     * <p>
+     * 
      * Initializes an NSCachedURLResponse with the given
      * response, data, user-info dictionary, and storage policy.
-     *
+     * 
      * @param response      a NSURLResponse object.
      * @param data          an NSData object representing the URL content
      *                      corresponding to the given response.
@@ -227,7 +229,7 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
 
     /**
      * Returns the response wrapped by this instance.
-     *
+     * 
      * @return The response wrapped by this instance.
      */
     @Generated
@@ -236,7 +238,7 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
 
     /**
      * Returns the NSURLCacheStoragePolicy constant of the receiver.
-     *
+     * 
      * @return The NSURLCacheStoragePolicy constant of the receiver.
      */
     @Generated
@@ -252,7 +254,7 @@ public class NSCachedURLResponse extends NSObject implements NSSecureCoding, NSC
 
     /**
      * Returns the userInfo dictionary of the receiver.
-     *
+     * 
      * @return The userInfo dictionary of the receiver.
      */
     @Generated

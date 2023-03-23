@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCActivationDescriptor
- * <p>
+ * 
  * The MLCActivationDescriptor specifies a neuron descriptor.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -45,7 +47,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] a
-     * <p>
+     * 
      * Parameter to the activation function
      */
     @Generated
@@ -58,7 +60,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] activationType
-     * <p>
+     * 
      * The type of activation function
      */
     @Generated
@@ -81,7 +83,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] b
-     * <p>
+     * 
      * Parameter to the activation function
      */
     @Generated
@@ -90,7 +92,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] c
-     * <p>
+     * 
      * Parameter to the activation function
      */
     @Generated
@@ -131,7 +133,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCActivationDescriptor object
-     *
+     * 
      * @param activationType A type of activation function.
      * @return A new neuron descriptor or nil if failure
      */
@@ -141,7 +143,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCActivationDescriptor object
-     *
+     * 
      * @param activationType A type of activation function.
      * @param a              Parameter "a".
      * @return A new neuron descriptor or nil if failure
@@ -152,7 +154,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCActivationDescriptor object
-     *
+     * 
      * @param activationType A type of activation function.
      * @param a              Parameter "a".
      * @param b              Parameter "b".
@@ -164,7 +166,7 @@ public class MLCActivationDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCActivationDescriptor object
-     *
+     * 
      * @param activationType A type of activation function.
      * @param a              Parameter "a".
      * @param b              Parameter "b".

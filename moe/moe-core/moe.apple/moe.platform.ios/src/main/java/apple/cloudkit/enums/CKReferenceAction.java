@@ -24,10 +24,18 @@ import org.moe.natj.general.ann.NUInt;
  * [@constant] CKReferenceActionNone When the referred record is deleted, this record is unchanged, and has a dangling
  * pointer
  * [@constant] CKReferenceActionDeleteSelf When the referred record is deleted then this record is also deleted
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class CKReferenceAction {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long DeleteSelf = 0x0000000000000001L;
 
     @Generated

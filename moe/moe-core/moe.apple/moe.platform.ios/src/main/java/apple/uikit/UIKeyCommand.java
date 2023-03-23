@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -131,7 +134,11 @@ public class UIKeyCommand extends UICommand {
 
     /**
      * Key Commands with a discoverabilityTitle _will_ be discoverable in the UI.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("keyCommandWithInput:modifierFlags:action:discoverabilityTitle:")
     public static native UIKeyCommand keyCommandWithInputModifierFlagsActionDiscoverabilityTitle(String input,
@@ -173,6 +180,8 @@ public class UIKeyCommand extends UICommand {
 
     /**
      * Elaborated title, if any.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("discoverabilityTitle")
@@ -197,6 +206,8 @@ public class UIKeyCommand extends UICommand {
 
     /**
      * Elaborated title, if any.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDiscoverabilityTitle:")
@@ -217,6 +228,8 @@ public class UIKeyCommand extends UICommand {
 
     /**
      * Alternates that differ in modifier flags, if any.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("alternates")
@@ -224,6 +237,8 @@ public class UIKeyCommand extends UICommand {
 
     /**
      * Command attributes.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("attributes")
@@ -232,7 +247,7 @@ public class UIKeyCommand extends UICommand {
 
     /**
      * Initializes a key command.
-     *
+     * 
      * @param title         Short display title. This should be localized.
      * @param image         Image that can appear next to this command, if needed.
      * @param action        Action to take on choosing this command.
@@ -249,7 +264,7 @@ public class UIKeyCommand extends UICommand {
 
     /**
      * Initializes a key command with alternates.
-     *
+     * 
      * @param title         Short display title. This should be localized.
      * @param image         Image that can appear next to this command, if needed.
      * @param action        Action to take on choosing this command.
@@ -278,6 +293,8 @@ public class UIKeyCommand extends UICommand {
 
     /**
      * Image that can appear next to this command.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("image")
@@ -285,6 +302,8 @@ public class UIKeyCommand extends UICommand {
 
     /**
      * Property list object to distinguish commands, if needed.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("propertyList")
@@ -293,6 +312,8 @@ public class UIKeyCommand extends UICommand {
 
     /**
      * Command attributes.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAttributes:")
@@ -300,6 +321,8 @@ public class UIKeyCommand extends UICommand {
 
     /**
      * Image that can appear next to this command.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setImage:")
@@ -307,6 +330,8 @@ public class UIKeyCommand extends UICommand {
 
     /**
      * State that can appear next to this command.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setState:")
@@ -314,6 +339,8 @@ public class UIKeyCommand extends UICommand {
 
     /**
      * Short display title.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setTitle:")
@@ -321,6 +348,8 @@ public class UIKeyCommand extends UICommand {
 
     /**
      * State that can appear next to this command.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("state")
@@ -329,6 +358,8 @@ public class UIKeyCommand extends UICommand {
 
     /**
      * Short display title.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("title")
@@ -338,6 +369,8 @@ public class UIKeyCommand extends UICommand {
      * Suppose the system detects a given key command that is not reachable in the current keyboard layout; it will
      * localize the key command to something reachable. By setting this property to NO, you will opt-out this menu item
      * from the system-provided localization. YES by default for apps linked against 15.0 and later SDK.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("allowsAutomaticLocalization")
@@ -351,6 +384,8 @@ public class UIKeyCommand extends UICommand {
      * command of automatically mirroring in RTL. It would be best only to do this if your action will result in some
      * sort of directional change in the UI, e.g. a segmented control for text alignment or a D-pad in a game. YES by
      * default for apps linked against 15.0 and later SDK.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("allowsAutomaticMirroring")
@@ -360,6 +395,8 @@ public class UIKeyCommand extends UICommand {
      * Suppose the system detects a given key command that is not reachable in the current keyboard layout; it will
      * localize the key command to something reachable. By setting this property to NO, you will opt-out this menu item
      * from the system-provided localization. YES by default for apps linked against 15.0 and later SDK.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAllowsAutomaticLocalization:")
@@ -373,6 +410,8 @@ public class UIKeyCommand extends UICommand {
      * command of automatically mirroring in RTL. It would be best only to do this if your action will result in some
      * sort of directional change in the UI, e.g. a segmented control for text alignment or a D-pad in a game. YES by
      * default for apps linked against 15.0 and later SDK.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAllowsAutomaticMirroring:")
@@ -381,6 +420,8 @@ public class UIKeyCommand extends UICommand {
     /**
      * Indicates whether the key command should execute if it conflicts with focus or text-editing system commands,
      * defaults to @c NO
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setWantsPriorityOverSystemBehavior:")
@@ -389,6 +430,8 @@ public class UIKeyCommand extends UICommand {
     /**
      * Indicates whether the key command should execute if it conflicts with focus or text-editing system commands,
      * defaults to @c NO
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("wantsPriorityOverSystemBehavior")

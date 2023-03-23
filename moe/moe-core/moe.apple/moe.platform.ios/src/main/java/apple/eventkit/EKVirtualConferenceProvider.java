@@ -28,10 +28,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * EKVirtualConferenceProvider
- * <p>
+ * 
  * Provides virtual conferences to Calendar.
- * <p>
+ * 
  * Subclass this class in your extension and override the below two methods.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("EventKit")
@@ -97,13 +99,13 @@ public class EKVirtualConferenceProvider extends NSObject implements NSExtension
 
     /**
      * fetchAvailableRoomTypesWithCompletionHandler:
-     * <p>
+     * 
      * Called to determine the available virtual conference room types that the user can add to a calendar event.
-     * <p>
+     * 
      * Your extension must override this method in order to present virtual conference options in Calendar's UI.
      * When your extension has finished determining what room types are available, call the completion handler with
      * an array of EKVirtualConferenceRoomTypeDescriptors. Most extensions will only need to provide one room type.
-     *
+     * 
      * @param completionHandler A block to call when your extension has finished retrieving available room types. If
      *                          your extension is unable to provide any room types at this time, call this block with
      *                          nil
@@ -127,14 +129,14 @@ public class EKVirtualConferenceProvider extends NSObject implements NSExtension
 
     /**
      * fetchVirtualConferenceForIdentifier:completionHandler:
-     * <p>
+     * 
      * Called to fetch the specific virtual conference details to add to an event.
-     * <p>
+     * 
      * Your extension must override this method in order to add virtual conferences to calendar events.
      * When your extension has finished retrieving the requested virtual conference details, create an
      * EKVirtualConferenceDescriptor object containing the virtual conference details and call the completion handler
      * with the EKVirtualConferenceDescriptor object as the first argument.
-     *
+     * 
      * @param identifier        Represents the room type that the user chose. This is the same identifier that your
      *                          extension
      *                          chose for this EKVirtualConferenceRoomTypeDescriptor in an earlier call to

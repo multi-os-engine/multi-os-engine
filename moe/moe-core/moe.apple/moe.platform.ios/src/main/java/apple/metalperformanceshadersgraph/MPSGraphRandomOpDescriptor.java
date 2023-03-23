@@ -82,7 +82,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] dataType
-     * <p>
+     * 
      * The data type of the generated result values.
      * When sampling from the uniform distribution, valid types are MPSDataTypeFloat16,
      * MPSDataTypeFloat32, and MPSDataTypeInt32.
@@ -107,7 +107,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] distribution
-     * <p>
+     * 
      * The type of distribution to draw samples from. See MPSGraphRandomDistribution.
      */
     @Generated
@@ -146,7 +146,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] max
-     * <p>
+     * 
      * The upper range of the distribution. This value is used for Uniform distributions with float data types and
      * Truncated Normal disributions.
      * Defaults to 1 for uniform distributions and 2 for normal distributions.
@@ -157,7 +157,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] maxInteger
-     * <p>
+     * 
      * The upper range of the distribution. This value is used for Uniform with integer data types
      * Defaults to INT32_MAX for uniform distributions and 0 for normal distributions.
      */
@@ -168,7 +168,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] mean
-     * <p>
+     * 
      * The mean of the distribution. This value is used for Normal and Truncated Normal disributions.
      * Defaults to 0.
      */
@@ -178,7 +178,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] min
-     * <p>
+     * 
      * The lower range of the distribution. This value is used for Uniform distributions with float data types and
      * Truncated Normal disributions.
      * Defaults to 0 for uniform distributions and -2 for normal distributions.
@@ -189,7 +189,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] minInteger
-     * <p>
+     * 
      * The lower range of the distribution. This value is used for Uniform with integer data types
      * Defaults to 0.
      */
@@ -213,7 +213,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] samplingMethod
-     * <p>
+     * 
      * The sampling method of the distribution. This value is used for Normal and Truncated Normal disributions. See
      * MPSGraphRandomNormalSamplingMethod.
      * Defaults to MPSGraphRandomNormalSamplingInvCDF.
@@ -224,7 +224,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] dataType
-     * <p>
+     * 
      * The data type of the generated result values.
      * When sampling from the uniform distribution, valid types are MPSDataTypeFloat16,
      * MPSDataTypeFloat32, and MPSDataTypeInt32.
@@ -237,7 +237,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] distribution
-     * <p>
+     * 
      * The type of distribution to draw samples from. See MPSGraphRandomDistribution.
      */
     @Generated
@@ -246,7 +246,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] max
-     * <p>
+     * 
      * The upper range of the distribution. This value is used for Uniform distributions with float data types and
      * Truncated Normal disributions.
      * Defaults to 1 for uniform distributions and 2 for normal distributions.
@@ -257,7 +257,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] maxInteger
-     * <p>
+     * 
      * The upper range of the distribution. This value is used for Uniform with integer data types
      * Defaults to INT32_MAX for uniform distributions and 0 for normal distributions.
      */
@@ -267,7 +267,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] mean
-     * <p>
+     * 
      * The mean of the distribution. This value is used for Normal and Truncated Normal disributions.
      * Defaults to 0.
      */
@@ -277,7 +277,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] min
-     * <p>
+     * 
      * The lower range of the distribution. This value is used for Uniform distributions with float data types and
      * Truncated Normal disributions.
      * Defaults to 0 for uniform distributions and -2 for normal distributions.
@@ -288,7 +288,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] minInteger
-     * <p>
+     * 
      * The lower range of the distribution. This value is used for Uniform with integer data types
      * Defaults to 0.
      */
@@ -298,7 +298,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] samplingMethod
-     * <p>
+     * 
      * The sampling method of the distribution. This value is used for Normal and Truncated Normal disributions. See
      * MPSGraphRandomNormalSamplingMethod.
      * Defaults to MPSGraphRandomNormalSamplingInvCDF.
@@ -309,7 +309,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] standardDeviation
-     * <p>
+     * 
      * The standardDeviation of the distribution. This value is used for Normal and Truncated Normal disributions.
      * For Truncated Normal distribution this defines the standard deviation parameter of the underlying Normal
      * distribution, that is the width
@@ -328,7 +328,7 @@ public class MPSGraphRandomOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] standardDeviation
-     * <p>
+     * 
      * The standardDeviation of the distribution. This value is used for Normal and Truncated Normal disributions.
      * For Truncated Normal distribution this defines the standard deviation parameter of the underlying Normal
      * distribution, that is the width

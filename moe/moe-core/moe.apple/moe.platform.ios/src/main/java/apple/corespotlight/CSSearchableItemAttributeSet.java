@@ -52,6 +52,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * CSSearchableItemAttribute encapsulates a set of properties of an CSSearchableItem.
  * CSSearchableItemAttribute set should only be mutated from one thread at a time. Concurrent access to properties has
  * undefined behavior.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("CoreSpotlight")
@@ -636,6 +638,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * It can be set on the contentAttributeSet property of a NSUserActivity instance and then used to delete the user
      * activity
      * by calling [[CSSearchableIndex defaultSearchableIndex] deleteSearchableItemsWithDomainIdentifiers:].
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("domainIdentifier")
@@ -835,7 +839,12 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * Creates an attribute set for the given content type.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use initWithContentType instead
      */
+    @Deprecated
     @Generated
     @Selector("initWithItemContentType:")
     public native CSSearchableItemAttributeSet initWithItemContentType(String itemContentType);
@@ -1688,6 +1697,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * It can be set on the contentAttributeSet property of a NSUserActivity instance and then used to delete the user
      * activity
      * by calling [[CSSearchableIndex defaultSearchableIndex] deleteSearchableItemsWithDomainIdentifiers:].
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDomainIdentifier:")
@@ -2578,6 +2589,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * For activities, this is the unique identifier for an item this activity is related to. Unlike
      * relatedUniqueIdentifier, this attribute does not link the life time of the items.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setWeakRelatedUniqueIdentifier:")
@@ -2745,6 +2758,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * For activities, this is the unique identifier for an item this activity is related to. Unlike
      * relatedUniqueIdentifier, this attribute does not link the life time of the items.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("weakRelatedUniqueIdentifier")
@@ -2761,6 +2776,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * This property is used to indicate if the indexed item was created by the user
      * It is used to distinguish pushed app content from content that required explicit user interaction
      * Example content that may set this field: user created notes, documents
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isUserCreated")
@@ -2770,6 +2787,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * This property is used to indicate if the indexed item was selected by the user
      * It is used to distinguish pushed app content from content that a user has chosen to add to a collection
      * Example content that may set this field: downloaded media content, bookmarked websites/news articles
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isUserCurated")
@@ -2778,6 +2797,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * This property is used to indicate if the indexed item has been purchased or otherwise acquired by the user
      * Example content are songs bought by a user and made searchable
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isUserOwned")
@@ -2785,6 +2806,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * An array of types identifiers that owner can provided a NSData representation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("providerDataTypeIdentifiers")
@@ -2792,6 +2815,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * An array of types identifiers that owner can provided a NSURL to file representation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("providerFileTypeIdentifiers")
@@ -2799,6 +2824,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * An array of types identifiers that owner can provided a NSURL to inplace file representation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("providerInPlaceFileTypeIdentifiers")
@@ -2811,6 +2838,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * items for the same application
      * Expected value ∈ [0-100]; preferably integral values
      * Monotonically increasing with larger values being considered better results
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("rankingHint")
@@ -2818,6 +2847,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * An array of types identifiers that owner can provided a NSData representation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setProviderDataTypeIdentifiers:")
@@ -2825,6 +2856,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * An array of types identifiers that owner can provided a NSURL to file representation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setProviderFileTypeIdentifiers:")
@@ -2832,6 +2865,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * An array of types identifiers that owner can provided a NSURL to inplace file representation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setProviderInPlaceFileTypeIdentifiers:")
@@ -2844,6 +2879,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * items for the same application
      * Expected value ∈ [0-100]; preferably integral values
      * Monotonically increasing with larger values being considered better results
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRankingHint:")
@@ -2853,6 +2890,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * This property is used to indicate if the indexed item was created by the user
      * It is used to distinguish pushed app content from content that required explicit user interaction
      * Example content that may set this field: user created notes, documents
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setUserCreated:")
@@ -2862,6 +2901,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
      * This property is used to indicate if the indexed item was selected by the user
      * It is used to distinguish pushed app content from content that a user has chosen to add to a collection
      * Example content that may set this field: downloaded media content, bookmarked websites/news articles
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setUserCurated:")
@@ -2870,17 +2911,24 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
     /**
      * This property is used to indicate if the indexed item has been purchased or otherwise acquired by the user
      * Example content are songs bought by a user and made searchable
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setUserOwned:")
     public native void setUserOwned(NSNumber value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithContentType:")
     public native CSSearchableItemAttributeSet initWithContentType(UTType contentType);
 
     /**
      * An array of strings that are the custom action identifiers.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("actionIdentifiers")
@@ -2895,6 +2943,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * An array of strings that are the custom action identifiers.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setActionIdentifiers:")
@@ -2909,6 +2959,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The file type used for the share action.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSharedItemContentType:")
@@ -2916,6 +2968,8 @@ public class CSSearchableItemAttributeSet extends NSObject implements NSCopying,
 
     /**
      * The file type used for the share action.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("sharedItemContentType")

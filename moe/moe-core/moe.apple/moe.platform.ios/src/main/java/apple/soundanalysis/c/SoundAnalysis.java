@@ -21,6 +21,9 @@ public final class SoundAnalysis {
     private SoundAnalysis() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -28,6 +31,8 @@ public final class SoundAnalysis {
 
     /**
      * Denotes the first edition of the Apple-provided sound classifier.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()

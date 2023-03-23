@@ -29,23 +29,25 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAudioUnitComponentManager
- * <p>
+ * 
  * A singleton object that provides an easy way to find audio components that are
  * registered with the system.
- * <p>
+ * 
  * AVAudioUnitComponentManager provides methods to search and query various information about the
  * audio components without opening them.
- * <p>
+ * 
  * Currently audio components that are audio units can only be searched.
- * <p>
+ * 
  * The class also supports predefined system tags and arbitrary user tags. Each audio unit can be
  * tagged as part of its definition. Refer to AudioComponent.h for more details. AudioUnit Hosts
  * such as Logic or GarageBand can present groupings of audio units based on the tags.
- * <p>
+ * 
  * Searching for audio units can be done in various ways
  * - using a NSPredicate that contains search strings for tags or descriptions
  * - using a block to match on custom criteria
  * - using an AudioComponentDescription
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AVFAudio")
@@ -99,9 +101,9 @@ public class AVAudioUnitComponentManager extends NSObject {
 
     /**
      * componentsMatchingDescription:
-     * <p>
+     * 
      * returns an array of AVAudioUnitComponent objects that match the description.
-     * <p>
+     * 
      * This method provides a mechanism to search for AudioComponents using AudioComponentDescription
      * structure. The type, subtype and manufacturer fields are used to search for audio units. A
      * value of 0 for any of these fields is a wildcard and returns the first match found.
@@ -113,9 +115,9 @@ public class AVAudioUnitComponentManager extends NSObject {
 
     /**
      * componentsMatchingPredicate:
-     * <p>
+     * 
      * returns an array of AVAudioUnitComponent objects that match the search predicate.
-     * <p>
+     * 
      * AudioComponent's information or tags can be used to build a search criteria.
      * For example, "typeName CONTAINS 'Effect'" or tags IN {'Sampler', 'MIDI'}"
      */
@@ -125,9 +127,9 @@ public class AVAudioUnitComponentManager extends NSObject {
 
     /**
      * componentsPassingTest:
-     * <p>
+     * 
      * returns an array of AVAudioUnitComponent objects that pass the user provided block method.
-     * <p>
+     * 
      * For each AudioComponent found by the manager, the block method will be called. If the return
      * value is YES then the AudioComponent is added to the resulting array else it will excluded.
      * This gives more control to the block provider to filter out the components returned.

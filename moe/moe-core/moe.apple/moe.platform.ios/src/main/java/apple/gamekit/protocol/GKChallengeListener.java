@@ -37,6 +37,8 @@ public interface GKChallengeListener {
      * player: The player who completed the challenge
      * challenge: The challenge which the player completed
      * friendPlayer: The friend who sent the challenge originally
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -51,6 +53,8 @@ public interface GKChallengeListener {
      * while the game is running.
      * player: The player who received the challenge
      * challenge: The challenge which was received
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -65,6 +69,8 @@ public interface GKChallengeListener {
      * player: The player who sent the challenge originally
      * challenge: The challenge which the player created and sent
      * friendPlayer: The friend who completed the challenge
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -79,6 +85,8 @@ public interface GKChallengeListener {
      * selecting it within the in-game Game Center UI.
      * player: The player who selected the challenge
      * challenge: The challenge which was selected
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional

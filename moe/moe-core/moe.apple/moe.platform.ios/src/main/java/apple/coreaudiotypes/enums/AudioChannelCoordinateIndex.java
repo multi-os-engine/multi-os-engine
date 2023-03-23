@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.Generated;
 /**
  * these are indices for accessing the mCoordinates array in struct AudioChannelDescription
  * [@enum] AudioChannelCoordinateIndex
- * <p>
+ * 
  * Constants for indexing the mCoordinates array in an AudioChannelDescription
  * structure.
  * [@constant] kAudioChannelCoordinates_LeftRight

@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("DeviceCheck")
 @Runtime(ObjCRuntime.class)
@@ -56,11 +59,14 @@ public class DCAppAttestService extends NSObject {
     /**
      * Attest the key by keyId. The same key may be attested more than once, provided that the key has
      * not been used for generating assertions.
-     *
-     * @param keyId             The key identifier to be attested
-     * @param clientDataHash    An arbitrary byte (up to 32 bytes) to be supplied by caller. It will be used to compute
+     * 
+     * @param keyId
+     *                          The key identifier to be attested
+     * @param clientDataHash
+     *                          An arbitrary byte (up to 32 bytes) to be supplied by caller. It will be used to compute
      *                          a nonce to be embedded into the certificate that certifies the key.
-     * @param completionHandler The completion callback, returning the attestationObject upon success, or an error
+     * @param completionHandler
+     *                          The completion callback, returning the attestationObject upon success, or an error
      */
     @Generated
     @Selector("attestKey:clientDataHash:completionHandler:")
@@ -107,11 +113,14 @@ public class DCAppAttestService extends NSObject {
     /**
      * Attest the key by keyId. The same key may be attested more than once, provided that the key has
      * not been used for generating assertions.
-     *
-     * @param keyId             The key identifier to the key to generate assertions with
-     * @param clientDataHash    An arbitrary byte (up to 32 bytes) to be supplied by caller. It will be used to compute
+     * 
+     * @param keyId
+     *                          The key identifier to the key to generate assertions with
+     * @param clientDataHash
+     *                          An arbitrary byte (up to 32 bytes) to be supplied by caller. It will be used to compute
      *                          a nonce to be embedded into the certificate that certifies the key.
-     * @param completionHandler The completion callback, returning the assertionObject upon success, or an error
+     * @param completionHandler
+     *                          The completion callback, returning the assertionObject upon success, or an error
      */
     @Generated
     @Selector("generateAssertion:clientDataHash:completionHandler:")
@@ -128,8 +137,9 @@ public class DCAppAttestService extends NSObject {
     /**
      * Generate a new unattested key. This call generates a new
      * key every time. the key identifier keyId is returned.
-     *
-     * @param completionHandler The key identifier (KeyId) for the newly generated unattested key upon success, or an
+     * 
+     * @param completionHandler
+     *                          The key identifier (KeyId) for the newly generated unattested key upon success, or an
      *                          error
      */
     @Generated

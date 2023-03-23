@@ -28,8 +28,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKVerifiableClinicalRecord
- * <p>
+ * 
  * An NSObject that represents a verifiable clinical record.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("HealthKit")
@@ -47,9 +49,13 @@ public class HKVerifiableClinicalRecord extends HKSample {
 
     /**
      * [@property] JWSRepresentation
-     * <p>
+     * 
      * The record's entirety as JSON Web Signature (JWS) data.
+     * 
+     * API-Since: 15.0
+     * Deprecated-Since: 15.4
      */
+    @Deprecated
     @Generated
     @Selector("JWSRepresentation")
     public native NSData JWSRepresentation();
@@ -100,7 +106,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
 
     /**
      * [@property] expirationDate
-     * <p>
+     * 
      * The date this record expires.
      */
     @Generated
@@ -139,7 +145,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
 
     /**
      * [@property] issuedDate
-     * <p>
+     * 
      * The date this record was issued.
      */
     @Generated
@@ -148,7 +154,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
 
     /**
      * [@property] issuerIdentifier
-     * <p>
+     * 
      * The identifier for the issuer of this record.
      */
     @Generated
@@ -157,7 +163,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
 
     /**
      * [@property] itemNames
-     * <p>
+     * 
      * A list of display names for each item contained in this record.
      */
     @Generated
@@ -175,7 +181,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
 
     /**
      * [@property] recordTypes
-     * <p>
+     * 
      * The types present in this record.
      */
     @Generated
@@ -184,7 +190,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
 
     /**
      * [@property] relevantDate
-     * <p>
+     * 
      * A date most relevant to this record, like when a vaccine was
      * administered or a test was performed.
      */
@@ -206,7 +212,7 @@ public class HKVerifiableClinicalRecord extends HKSample {
 
     /**
      * [@property] subject
-     * <p>
+     * 
      * The subject of this record.
      */
     @Generated
@@ -231,4 +237,26 @@ public class HKVerifiableClinicalRecord extends HKSample {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] dataRepresentation
+     * 
+     * The record's data representation, determined by source type.
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @Selector("dataRepresentation")
+    public native NSData dataRepresentation();
+
+    /**
+     * [@property] sourceType
+     * 
+     * The type of the source leading to this verifiable record.
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @Selector("sourceType")
+    public native String sourceType();
 }

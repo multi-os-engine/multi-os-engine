@@ -6,7 +6,7 @@ import org.moe.natj.general.ann.NUInt;
 /**
  * Some PDF access permissions are non-strict supersets of other permissions. Granting access to a superset
  * permission also grants access to permission(s) it is a superset of. These permissions are as follows:
- * <p>
+ * 
  * * Granting PDFAllowsHighQualityPrinting also grants PDFAllowsLowQualityPrinting
  * * Granting PDFAllowsDocumentChanges also grants PDFAllowsCommenting and PDFAllowsFormFieldEntry
  * * Granting PDFAllowsContentCopying also grants PDFAllowsContentAccessibility

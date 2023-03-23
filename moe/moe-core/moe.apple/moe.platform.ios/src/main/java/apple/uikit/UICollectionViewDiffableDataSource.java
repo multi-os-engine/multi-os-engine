@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -58,15 +61,15 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
 
     /**
      * Apply a snapshot to the collection view committing to the new data source state.
-     * <p>
+     * 
      * animatingDifferences == YES: perform a diff between the current UICollectionView state and the snapshot, and
      * animate the update.
      * animatingDifferences == NO: perform a diff between the current UICollectionView state and the snapshot, but don't
      * animate the update.
-     * <p>
+     * 
      * If the (optional) completion block is specified, it will be called on the main queue when any animations are
      * completed.
-     * <p>
+     * 
      * Note: you may call this from a background queue which will cause the diff (if needed) to be generated on the
      * calling queue and the
      * final UI update to be applied back on the main queue. However, all applySnapshot invocations must be confined to
@@ -287,6 +290,8 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
 
     /**
      * Section Snapshot Support
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("applySnapshot:toSection:animatingDifferences:")
@@ -294,6 +299,9 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
             NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshot,
             @Mapped(ObjCObjectMapper.class) _SectionIdentifierType sectionIdentifier, boolean animatingDifferences);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("applySnapshot:toSection:animatingDifferences:completion:")
     public native void applySnapshotToSectionAnimatingDifferencesCompletion(
@@ -310,28 +318,41 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
 
     /**
      * Reordering Support
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("reorderingHandlers")
     public native UICollectionViewDiffableDataSourceReorderingHandlers<_SectionIdentifierType, _ItemIdentifierType> reorderingHandlers();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("sectionSnapshotHandlers")
     public native UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemIdentifierType> sectionSnapshotHandlers();
 
     /**
      * Reordering Support
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setReorderingHandlers:")
     public native void setReorderingHandlers(
             UICollectionViewDiffableDataSourceReorderingHandlers<_SectionIdentifierType, _ItemIdentifierType> value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setSectionSnapshotHandlers:")
     public native void setSectionSnapshotHandlers(
             UICollectionViewDiffableDataSourceSectionSnapshotHandlers<_ItemIdentifierType> value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("snapshotForSection:")
     public native NSDiffableDataSourceSectionSnapshot<_ItemIdentifierType> snapshotForSection(
@@ -339,7 +360,7 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
 
     /**
      * Apply a snapshot to the collection view using reloadData.
-     * <p>
+     * 
      * This always skips diffing, and immediately resets the UICollectionView to the new data source state without
      * animation.
      * Generally this should only be used for specific cases where you need to fully reset the collection view's data to
@@ -347,12 +368,17 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
      * new state immediately (e.g. recycling the collection view for use with a completely different data set), or when
      * you
      * specifically want to skip diffing (e.g. applying an exceptionally large changeset).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("applySnapshotUsingReloadData:")
     public native void applySnapshotUsingReloadData(
             NSDiffableDataSourceSnapshot<_SectionIdentifierType, _ItemIdentifierType> snapshot);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("applySnapshotUsingReloadData:completion:")
     public native void applySnapshotUsingReloadDataCompletion(
@@ -366,6 +392,9 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
         void call_applySnapshotUsingReloadDataCompletion();
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("indexForSectionIdentifier:")
     @NInt
@@ -373,6 +402,8 @@ public class UICollectionViewDiffableDataSource<_SectionIdentifierType, _ItemIde
 
     /**
      * convert section index <-> SectionIdentifierType
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("sectionIdentifierForIndex:")

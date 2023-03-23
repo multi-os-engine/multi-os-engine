@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("CoreMotion")
 @Runtime(ObjCRuntime.class)
@@ -44,7 +47,7 @@ public class CMAbsoluteAltitudeData extends CMLogItem {
 
     /**
      * accuracy
-     * <p>
+     * 
      * Discussion:
      * The accuracy of the altitude estimate, in meters.
      */
@@ -64,7 +67,7 @@ public class CMAbsoluteAltitudeData extends CMLogItem {
 
     /**
      * altitude
-     * <p>
+     * 
      * Discussion:
      * The absolute altitude of the device in meters relative to sea level; could be positive or negative.
      */
@@ -143,7 +146,7 @@ public class CMAbsoluteAltitudeData extends CMLogItem {
 
     /**
      * precision
-     * <p>
+     * 
      * Discussion:
      * The precision of the altitude estimate, in meters.
      */

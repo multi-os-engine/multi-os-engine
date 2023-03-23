@@ -48,6 +48,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Properties describe values within a managed object. There are different types of properties, each of them represented
  * by a subclass which encapsulates the specific property behavior.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("CoreData")
@@ -184,7 +186,12 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     /**
      * Returns a boolean value indicating if the property is important for searching. NSPersistentStores can optionally
      * utilize this information upon store creation for operations like defining indexes.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use NSEntityDescription.indexes instead
      */
+    @Deprecated
     @Generated
     @Selector("isIndexed")
     public native boolean isIndexed();
@@ -192,13 +199,20 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     /**
      * Returns a boolean value indicating if the property is important for searching. NSPersistentStores can optionally
      * utilize this information upon store creation for operations like defining indexes.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use NSEntityDescription.indexes instead
      */
+    @Deprecated
     @Generated
     @Selector("setIndexed:")
     public native void setIndexed(boolean value);
 
     /**
      * Returns a boolean value indicating if the property should be indexed by Spotlight.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isIndexedBySpotlight")
@@ -206,6 +220,8 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
 
     /**
      * Returns a boolean value indicating if the property should be indexed by Spotlight.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setIndexedBySpotlight:")
@@ -227,14 +243,24 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
 
     /**
      * Returns a boolean value indicating if the property data should be written out to the external record file.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Spotlight integration is deprecated. Use CoreSpotlight integration instead.
      */
+    @Deprecated
     @Generated
     @Selector("isStoredInExternalRecord")
     public native boolean isStoredInExternalRecord();
 
     /**
      * Returns a boolean value indicating if the property data should be written out to the external record file.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Spotlight integration is deprecated. Use CoreSpotlight integration instead.
      */
+    @Deprecated
     @Generated
     @Selector("setStoredInExternalRecord:")
     public native void setStoredInExternalRecord(boolean value);
@@ -259,6 +285,9 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("renamingIdentifier")
     public native String renamingIdentifier();
@@ -267,6 +296,9 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
     @Selector("setName:")
     public native void setName(String value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setRenamingIdentifier:")
     public native void setRenamingIdentifier(String value);
@@ -285,6 +317,8 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
      * property, allowing developers to mark/denote a property as being a different "version" than another, even if all
      * of the values which affects persistence are equal. (Such a difference is important in cases where the design of a
      * property is unchanged, but the format or content of data has changed.)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setVersionHashModifier:")
@@ -313,6 +347,8 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
      * versionHashModifier value. (The values which affect persistence are the name of the property, the flags for
      * isOptional, isTransient, and isReadOnly). This value is stored as part of the version information in the metadata
      * for stores, as well as a definition of a property involved in an NSPropertyMapping.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("versionHash")
@@ -323,6 +359,8 @@ public class NSPropertyDescription extends NSObject implements NSCoding, NSCopyi
      * property, allowing developers to mark/denote a property as being a different "version" than another, even if all
      * of the values which affects persistence are equal. (Such a difference is important in cases where the design of a
      * property is unchanged, but the format or content of data has changed.)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("versionHashModifier")

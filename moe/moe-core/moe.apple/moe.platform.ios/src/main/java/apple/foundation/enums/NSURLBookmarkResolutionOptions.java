@@ -19,14 +19,21 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 public final class NSURLBookmarkResolutionOptions {
     /**
      * don't perform any user interaction during bookmark resolution
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long UI = 0x0000000000000100L;
     /**
      * don't mount a volume during bookmark resolution
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long Mounting = 0x0000000000000200L;
 
@@ -38,6 +45,8 @@ public final class NSURLBookmarkResolutionOptions {
      * Disable implicitly starting access of the ephemeral security-scoped resource during resolution. Instead, call
      * `-[NSURL startAccessingSecurityScopedResource]` on the returned URL when ready to use the resource. Not
      * applicable to security-scoped bookmarks.
+     * 
+     * API-Since: 14.2
      */
     @Generated @NUInt public static final long ImplicitStartAccessing = 0x0000000000008000L;
 }

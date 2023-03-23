@@ -15,11 +15,13 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] CHHapticPatternPlayer
- * <p>
+ * 
  * A protocol which defines operations for starting, stopping, and sending parameters to a pattern player.
- * <p>
+ * 
  * Instances of these objects are created via the factory methods such as
  * `CHHapticEngine(createPlayerWithPattern:error)`.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreHaptics")
@@ -28,7 +30,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface CHHapticPatternPlayer {
     /**
      * cancelAndReturnError:
-     * <p>
+     * 
      * Removes all pending commands and stops the player as soon as possible.
      */
     @Generated
@@ -37,7 +39,7 @@ public interface CHHapticPatternPlayer {
 
     /**
      * [@property] isMuted
-     * <p>
+     * 
      * When set to YES, the player's audio and haptic output will be silenced.
      */
     @Generated
@@ -46,10 +48,10 @@ public interface CHHapticPatternPlayer {
 
     /**
      * scheduleParameterCurve:atTime:error
-     * <p>
+     * 
      * Schedule a CHHapticParameterCurve, starting at the specified time (see `CHHapticEngine(currentTime)`).
      * If 'time' is set to `CHHapticTimeImmediate`, the parameter curve is scheduled as soon as possible.
-     * <p>
+     * 
      * This method overrides the relativeTime property of the passed-in CHHapticParameterCurve,
      * setting it to this method's 'time' argument. All the curve's control point times will then be
      * calculated relative to that time.
@@ -61,7 +63,7 @@ public interface CHHapticPatternPlayer {
 
     /**
      * sendParameters:atTime:error
-     * <p>
+     * 
      * Send an array of CHHapticDynamicParameters, starting at the specified time (see `CHHapticEngine(currentTime)`).
      * If 'time' is set to `CHHapticTimeImmediate`, the parameters are sent as soon as possible.
      */
@@ -72,7 +74,7 @@ public interface CHHapticPatternPlayer {
 
     /**
      * [@property] isMuted
-     * <p>
+     * 
      * When set to YES, the player's audio and haptic output will be silenced.
      */
     @Generated
@@ -81,7 +83,7 @@ public interface CHHapticPatternPlayer {
 
     /**
      * startAtTime:error
-     * <p>
+     * 
      * Start playing the pattern at the specified time (see `CHHapticEngine(currentTime)`).
      * If 'time' is set to `CHHapticTimeImmediate`, the pattern is started as soon as possible.
      */
@@ -91,7 +93,7 @@ public interface CHHapticPatternPlayer {
 
     /**
      * stopAtTime:error
-     * <p>
+     * 
      * Stop playing the pattern at the specified time (see `CHHapticEngine(currentTime)`).
      * If 'time' is set to `CHHapticTimeImmediate`, the pattern is stopped as soon as possible.
      */

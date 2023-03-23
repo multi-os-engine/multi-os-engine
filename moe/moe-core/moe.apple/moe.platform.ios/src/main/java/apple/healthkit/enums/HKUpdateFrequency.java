@@ -21,12 +21,26 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HKUpdateFrequency
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class HKUpdateFrequency {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Immediate = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Hourly = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Daily = 0x0000000000000003L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Weekly = 0x0000000000000004L;
 
     @Generated

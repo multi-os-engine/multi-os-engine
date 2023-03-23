@@ -17,7 +17,6 @@ limitations under the License.
 package apple.mediaplayer;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -50,7 +49,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +159,7 @@ public class MPVolumeView extends UIView implements NSCoding {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -182,6 +186,7 @@ public class MPVolumeView extends UIView implements NSCoding {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -257,46 +262,57 @@ public class MPVolumeView extends UIView implements NSCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -386,7 +402,12 @@ public class MPVolumeView extends UIView implements NSCoding {
     /**
      * Returns YES if wireless routes (AirPlay, Bluetooth, etc) are available for user selection.
      * Note that the view must be in present in a window hierarchy in order to discover some types of wireless routes.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use AVRouteDetector.multipleRoutesDetected instead.
      */
+    @Deprecated
     @Generated
     @Selector("areWirelessRoutesAvailable")
     public native boolean areWirelessRoutesAvailable();
@@ -409,34 +430,62 @@ public class MPVolumeView extends UIView implements NSCoding {
 
     /**
      * Returns YES if a wireless route is active.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use AVPlayer.externalPlaybackActive instead.
      */
+    @Deprecated
     @Generated
     @Selector("isWirelessRouteActive")
     public native boolean isWirelessRouteActive();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("maximumVolumeSliderImageForState:")
     public native UIImage maximumVolumeSliderImageForState(@NUInt long state);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("minimumVolumeSliderImageForState:")
     public native UIImage minimumVolumeSliderImageForState(@NUInt long state);
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: See AVRoutePickerView for possible replacements.
+     */
+    @Deprecated
     @Generated
     @Selector("routeButtonImageForState:")
     public native UIImage routeButtonImageForState(@NUInt long state);
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: See AVRoutePickerView for possible replacements.
+     */
+    @Deprecated
     @Generated
     @Selector("routeButtonRectForBounds:")
     @ByValue
     public native CGRect routeButtonRectForBounds(@ByValue CGRect bounds);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setMaximumVolumeSliderImage:forState:")
     public native void setMaximumVolumeSliderImageForState(UIImage image, @NUInt long state);
 
     /**
      * Volume slider customization
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setMinimumVolumeSliderImage:forState:")
@@ -444,22 +493,38 @@ public class MPVolumeView extends UIView implements NSCoding {
 
     /**
      * Route button customization
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use AVRoutePickerView.routePickerButtonStyle instead.
      */
+    @Deprecated
     @Generated
     @Selector("setRouteButtonImage:forState:")
     public native void setRouteButtonImageForState(UIImage image, @NUInt long state);
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use AVRoutePickerView instead.
+     */
+    @Deprecated
     @Generated
     @Selector("setShowsRouteButton:")
     public native void setShowsRouteButton(boolean value);
 
     /**
      * Default is YES.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setShowsVolumeSlider:")
     public native void setShowsVolumeSlider(boolean value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setVolumeThumbImage:forState:")
     public native void setVolumeThumbImageForState(UIImage image, @NUInt long state);
@@ -470,31 +535,50 @@ public class MPVolumeView extends UIView implements NSCoding {
      * a color similar to the default, to convey a sense of warning to the user. The same image is used for
      * all control states. For debugging purposes, switch on the "EU Volume Limit" setting in the Developer
      * menu of the Settings application to always enable the volume limit.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setVolumeWarningSliderImage:")
     public native void setVolumeWarningSliderImage(UIImage value);
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use AVRoutePickerView instead.
+     */
+    @Deprecated
     @Generated
     @Selector("showsRouteButton")
     public native boolean showsRouteButton();
 
     /**
      * Default is YES.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("showsVolumeSlider")
     public native boolean showsVolumeSlider();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("volumeSliderRectForBounds:")
     @ByValue
     public native CGRect volumeSliderRectForBounds(@ByValue CGRect bounds);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("volumeThumbImageForState:")
     public native UIImage volumeThumbImageForState(@NUInt long state);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("volumeThumbRectForBounds:volumeSliderRect:value:")
     @ByValue
@@ -507,6 +591,8 @@ public class MPVolumeView extends UIView implements NSCoding {
      * a color similar to the default, to convey a sense of warning to the user. The same image is used for
      * all control states. For debugging purposes, switch on the "EU Volume Limit" setting in the Developer
      * menu of the Settings application to always enable the volume limit.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("volumeWarningSliderImage")

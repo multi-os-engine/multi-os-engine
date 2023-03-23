@@ -54,6 +54,8 @@ import org.moe.natj.general.ptr.NIntPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.ann.ObjCBlock;
+import apple.videotoolbox.opaque.VTPixelRotationSessionRef;
+import apple.videotoolbox.opaque.VTPixelTransferSessionRef;
 
 @Generated
 @Library("VideoToolbox")
@@ -69,9 +71,9 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTSessionCopySupportedPropertyDictionary
-     * <p>
+     * 
      * Returns a dictionary enumerating all the supported properties of a video toolbox session.
-     * <p>
+     * 
      * The keys of the returned dictionary are the supported property keys.
      * The values are themselves dictionaries, each containing the following optional fields:
      * <OL>
@@ -82,6 +84,8 @@ public final class VideoToolbox {
      * <LI> developer-level documentation for the property (kVTPropertyDocumentationKey).
      * </OL>
      * The caller must release the returned dictionary.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -90,10 +94,12 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTSessionSetProperty
-     * <p>
+     * 
      * Sets a property on a video toolbox session.
-     * <p>
+     * 
      * Setting a property value to NULL restores the default value.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -102,9 +108,9 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTSessionCopyProperty
-     * <p>
+     * 
      * Retrieves a property on a video toolbox session.
-     * <p>
+     * 
      * The caller must release the retrieved property value.
      * <BR>
      * Note: for most types of property, the returned values should be considered immutable.
@@ -112,13 +118,19 @@ public final class VideoToolbox {
      * objects between the client, session and codec should be avoided.
      * However, some properties will be used for exchanging service objects that are inherently
      * mutable (eg, CVPixelBufferPool).
-     *
-     * @param propertyValueOut Points to a variable to receive the property value, which must be a CF-registered type --
+     * 
+     * @param propertyKey
+     *                         The key for the property to retrieve.
+     * @param allocator
+     *                         An allocator suitable for use when copying property values.
+     * @param propertyValueOut
+     *                         Points to a variable to receive the property value, which must be a CF-registered type --
      *                         the caller may call CFGetTypeID() on it to identify which specific type.
      *                         The caller must release the this property value.
-     * @return noErr if successful; kVTPropertyNotSupportedErr for unrecognized or unsupported properties.
-     * @param propertyKey The key for the property to retrieve.
-     * @param allocator   An allocator suitable for use when copying property values.
+     * @return
+     *         noErr if successful; kVTPropertyNotSupportedErr for unrecognized or unsupported properties.
+     * 
+     *         API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -127,10 +139,12 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTSessionSetProperties
-     * <p>
+     * 
      * Sets multiple properties at once.
-     * <p>
+     * 
      * Sets the properties specified by keys in propertyDictionary to the corresponding values.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -138,11 +152,13 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTSessionCopySerializableProperties
-     * <p>
+     * 
      * Retrieves the set of serializable property keys and their current values.
-     * <p>
+     * 
      * The serializable properties are those which can be saved and applied to a different session.
      * The caller must release the returned dictionary.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -151,36 +167,49 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTCompressionSessionCreate
-     * <p>
+     * 
      * Creates a session for compressing video frames.
-     * <p>
+     * 
      * Compressed frames will be emitted through calls to outputCallback.
-     *
-     * @param allocator                   An allocator for the session. Pass NULL to use the default allocator.
-     * @param width                       The width of frames, in pixels.
+     * 
+     * @param allocator
+     *                                    An allocator for the session. Pass NULL to use the default allocator.
+     * @param width
+     *                                    The width of frames, in pixels.
      *                                    If the video encoder cannot support the provided width and height it may
      *                                    change them.
-     * @param height                      The height of frames in pixels.
-     * @param cType                       The codec type.
-     * @param encoderSpecification        Specifies a particular video encoder that must be used.
+     * @param height
+     *                                    The height of frames in pixels.
+     * @param codecType
+     *                                    The codec type.
+     * @param encoderSpecification
+     *                                    Specifies a particular video encoder that must be used.
      *                                    Pass NULL to let the video toolbox choose a encoder.
-     * @param sourceImageBufferAttributes Required attributes for source pixel buffers, used when creating a pixel
+     * @param sourceImageBufferAttributes
+     *                                    Required attributes for source pixel buffers, used when creating a pixel
      *                                    buffer pool
      *                                    for source frames. If you do not want the Video Toolbox to create one for you,
      *                                    pass NULL.
      *                                    (Using pixel buffers not allocated by the Video Toolbox may increase the
      *                                    chance that
      *                                    it will be necessary to copy image data.)
-     * @param compressedDataAllocator     An allocator for the compressed data. Pass NULL to use the default allocator.
+     * @param compressedDataAllocator
+     *                                    An allocator for the compressed data. Pass NULL to use the default allocator.
      *                                    Note: on MacOS 10.12 and later, using a compressedDataAllocator may trigger an
      *                                    extra buffer copy.
-     * @param outputCallback              The callback to be called with compressed frames.
+     * @param outputCallback
+     *                                    The callback to be called with compressed frames.
      *                                    This function may be called asynchronously, on a different thread from the one
      *                                    that calls VTCompressionSessionEncodeFrame.
      *                                    Pass NULL if and only if you will be calling
      *                                    VTCompressionSessionEncodeFrameWithOutputHandler for encoding frames.
-     * @param outputCallbackRefCon        Client-defined reference value for the output callback.
-     * @param compressionSessionOut       Points to a variable to receive the new compression session.
+     * @param outputCallbackRefCon
+     *                                    Client-defined reference value for the output callback.
+     * @param compressionSessionOut
+     *                                    Points to a variable to receive the new compression session.
+     * 
+     * 
+     *                                    API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -192,14 +221,16 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTCompressionSessionInvalidate
-     * <p>
+     * 
      * Tears down a compression session.
-     * <p>
+     * 
      * When you are done with a compression session you created, call VTCompressionSessionInvalidate
      * to tear it down and then CFRelease to release your object reference.
      * When a compression session's retain count reaches zero, it is automatically invalidated, but
      * since sessions may be retained by multiple parties, it can be hard to predict when this will happen.
      * Calling VTCompressionSessionInvalidate ensures a deterministic, orderly teardown.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -207,8 +238,10 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTCompressionSessionGetTypeID
-     * <p>
+     * 
      * Returns the CFTypeID for compression sessions.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -217,9 +250,9 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTCompressionSessionGetPixelBufferPool
-     * <p>
+     * 
      * Returns a pool that can provide ideal source pixel buffers for a compression session.
-     * <p>
+     * 
      * The compression session creates this pixel buffer pool based on
      * the compressor's pixel buffer attributes and any pixel buffer
      * attributes passed in to VTCompressionSessionCreate. If the
@@ -233,6 +266,8 @@ public final class VideoToolbox {
      * to call it once per frame. If a change of session properties causes
      * the compressor's pixel buffer attributes to change, it's possible that
      * VTCompressionSessionGetPixelBufferPool might return a different pool.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -240,16 +275,19 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTCompressionSessionPrepareToEncodeFrames
-     * <p>
+     * 
      * You can optionally call this function to provide the encoder with an opportunity to perform
      * any necessary resource allocation before it begins encoding frames.
-     * <p>
+     * 
      * This optional call can be used to provide the encoder an opportunity to allocate
      * any resources necessary before it begins encoding frames. If this isn't called, any
      * necessary resources will be allocated on the first VTCompressionSessionEncodeFrame call.
      * Extra calls to this function will have no effect.
-     *
-     * @param session The compression session.
+     * 
+     * @param session
+     *                The compression session.
+     * 
+     *                API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -257,32 +295,41 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTCompressionSessionEncodeFrame
-     * <p>
+     * 
      * Call this function to present frames to the compression session.
      * Encoded frames may or may not be output before the function returns.
-     * <p>
+     * 
      * The client should not modify the pixel data after making this call.
      * The session and/or encoder will retain the image buffer as long as necessary.
-     *
-     * @param session               The compression session.
-     * @param imageBuffer           A CVImageBuffer containing a video frame to be compressed.
+     * 
+     * @param session
+     *                              The compression session.
+     * @param imageBuffer
+     *                              A CVImageBuffer containing a video frame to be compressed.
      *                              Must have a nonzero reference count.
-     * @param presentationTimeStamp The presentation timestamp for this frame, to be attached to the sample buffer.
+     * @param presentationTimeStamp
+     *                              The presentation timestamp for this frame, to be attached to the sample buffer.
      *                              Each presentation timestamp passed to a session must be greater than the previous
      *                              one.
-     * @param duration              The presentation duration for this frame, to be attached to the sample buffer.
+     * @param duration
+     *                              The presentation duration for this frame, to be attached to the sample buffer.
      *                              If you do not have duration information, pass kCMTimeInvalid.
-     * @param frameProperties       Contains key/value pairs specifying additional properties for encoding this frame.
+     * @param frameProperties
+     *                              Contains key/value pairs specifying additional properties for encoding this frame.
      *                              Note that some session properties may also be changed between frames.
      *                              Such changes have effect on subsequently encoded frames.
-     * @param sourceFrameRefcon     Your reference value for the frame, which will be passed to the output callback
+     * @param sourceFrameRefcon
+     *                              Your reference value for the frame, which will be passed to the output callback
      *                              function.
-     * @param infoFlagsOut          Points to a VTEncodeInfoFlags to receive information about the encode operation.
+     * @param infoFlagsOut
+     *                              Points to a VTEncodeInfoFlags to receive information about the encode operation.
      *                              The kVTEncodeInfo_Asynchronous bit may be set if the encode is (or was) running
      *                              asynchronously.
      *                              The kVTEncodeInfo_FrameDropped bit may be set if the frame was dropped
      *                              (synchronously).
      *                              Pass NULL if you do not want to receive this information.
+     * 
+     *                              API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -292,34 +339,43 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTCompressionSessionEncodeFrameWithOutputHandler
-     * <p>
+     * 
      * Call this function to present frames to the compression session.
      * Encoded frames may or may not be output before the function returns.
-     * <p>
+     * 
      * The client should not modify the pixel data after making this call.
      * The session and/or encoder will retain the image buffer as long as necessary.
      * Cannot be called with a session created with a VTCompressionOutputCallback.
-     *
-     * @param session               The compression session.
-     * @param imageBuffer           A CVImageBuffer containing a video frame to be compressed.
+     * 
+     * @param session
+     *                              The compression session.
+     * @param imageBuffer
+     *                              A CVImageBuffer containing a video frame to be compressed.
      *                              Must have a nonzero reference count.
-     * @param presentationTimeStamp The presentation timestamp for this frame, to be attached to the sample buffer.
+     * @param presentationTimeStamp
+     *                              The presentation timestamp for this frame, to be attached to the sample buffer.
      *                              Each presentation timestamp passed to a session must be greater than the previous
      *                              one.
-     * @param duration              The presentation duration for this frame, to be attached to the sample buffer.
+     * @param duration
+     *                              The presentation duration for this frame, to be attached to the sample buffer.
      *                              If you do not have duration information, pass kCMTimeInvalid.
-     * @param frameProperties       Contains key/value pairs specifying additional properties for encoding this frame.
+     * @param frameProperties
+     *                              Contains key/value pairs specifying additional properties for encoding this frame.
      *                              Note that some session properties may also be changed between frames.
      *                              Such changes have effect on subsequently encoded frames.
-     * @param infoFlagsOut          Points to a VTEncodeInfoFlags to receive information about the encode operation.
+     * @param infoFlagsOut
+     *                              Points to a VTEncodeInfoFlags to receive information about the encode operation.
      *                              The kVTEncodeInfo_Asynchronous bit may be set if the encode is (or was) running
      *                              asynchronously.
      *                              The kVTEncodeInfo_FrameDropped bit may be set if the frame was dropped
      *                              (synchronously).
      *                              Pass NULL if you do not want to receive this information.
-     * @param outputHandler         The block to be called when encoding the frame is completed.
+     * @param outputHandler
+     *                              The block to be called when encoding the frame is completed.
      *                              This block may be called asynchronously, on a different thread from the one that
      *                              calls VTCompressionSessionEncodeFrameWithOutputHandler.
+     * 
+     *                              API-Since: 9.0
      */
     @Generated
     @CFunction
@@ -330,13 +386,15 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTCompressionSessionCompleteFrames
-     * <p>
+     * 
      * Forces the compression session to complete encoding frames.
-     * <p>
+     * 
      * If completeUntilPresentationTimeStamp is numeric, frames with presentation timestamps
      * up to and including this timestamp will be emitted before the function returns.
      * If completeUntilPresentationTimeStamp is non-numeric, all pending frames
      * will be emitted before the function returns.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -345,15 +403,18 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTCompressionSessionBeginPass
-     * <p>
+     * 
      * Call to announce the start of a specific compression pass.
-     * <p>
+     * 
      * During multi-pass encoding, this function must be called before VTCompressionSessionEncodeFrame.
      * It is an error to call this function when multi-pass encoding has not been enabled by setting
      * kVTCompressionPropertyKey_MultiPassStorage.
-     *
-     * @param beginPassFlags Pass kVTCompressionSessionBeginFinalPass to inform the encoder that the pass must be the
+     * 
+     * @param beginPassFlags
+     *                       Pass kVTCompressionSessionBeginFinalPass to inform the encoder that the pass must be the
      *                       final pass.
+     * 
+     *                       API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -362,9 +423,9 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTCompressionSessionEndPass
-     * <p>
+     * 
      * Call to announce the end of a pass.
-     * <p>
+     * 
      * VTCompressionSessionEndPass can take a long time, since the video encoder may perform significant processing
      * between passes.
      * VTCompressionSessionEndPass will indicate via the furtherPassesRequestedOut argument whether the video encoder
@@ -372,11 +433,14 @@ public final class VideoToolbox {
      * request, but the client is free to disregard this request and use the last-emitted set of frames.
      * It is an error to call this function when multi-pass encoding has not been enabled by setting
      * kVTCompressionPropertyKey_MultiPassStorage.
-     *
-     * @param furtherPassesRequestedOut Points to a Boolean that will be set to true if the video encoder would like to
+     * 
+     * @param furtherPassesRequestedOut
+     *                                  Points to a Boolean that will be set to true if the video encoder would like to
      *                                  perform another pass, false otherwise.
      *                                  You may pass NULL to indicate that the client is certain to use this as the
      *                                  final pass, in which case the video encoder can skip that evaluation step.
+     * 
+     *                                  API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -385,9 +449,9 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTCompressionSessionGetTimeRangesForNextPass
-     * <p>
+     * 
      * Retrieves the time ranges for the next pass.
-     * <p>
+     * 
      * If VTCompressionSessionEndPass sets *furtherPassesRequestedOut to true, call
      * VTCompressionSessionGetTimeRangesForNextPass to find out the time ranges for the next pass. Source frames outside
      * these time ranges should be skipped.
@@ -396,13 +460,17 @@ public final class VideoToolbox {
      * It is an error to call this function when multi-pass encoding has not been enabled by setting
      * kVTCompressionPropertyKey_MultiPassStorage, or when VTCompressionSessionEndPass did not set
      * *furtherPassesRequestedOut to true.
-     *
-     * @param timeRangeCountOut Points to a CMItemCount to receive the number of CMTimeRanges.
-     * @param timeRangeArrayOut Points to a const CMTimeRange * to receive a pointer to a C array of CMTimeRanges.
+     * 
+     * @param timeRangeCountOut
+     *                          Points to a CMItemCount to receive the number of CMTimeRanges.
+     * @param timeRangeArrayOut
+     *                          Points to a const CMTimeRange * to receive a pointer to a C array of CMTimeRanges.
      *                          The storage for this array belongs to the VTCompressionSession and should not be
      *                          modified.
      *                          The pointer will be valid until the next call to VTCompressionSessionEndPass, or until
      *                          the VTCompressionSession is invalidated or finalized.
+     * 
+     *                          API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -411,21 +479,30 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTDecompressionSessionCreate
-     * <p>
+     * 
      * Creates a session for decompressing video frames.
-     * <p>
+     * 
      * Decompressed frames will be emitted through calls to outputCallback.
-     *
-     * @param allocator                        An allocator for the session. Pass NULL to use the default allocator.
-     * @param videoFormatDescription           Describes the source video frames.
-     * @param videoDecoderSpecification        Specifies a particular video decoder that must be used.
+     * 
+     * @param allocator
+     *                                         An allocator for the session. Pass NULL to use the default allocator.
+     * @param videoFormatDescription
+     *                                         Describes the source video frames.
+     * @param videoDecoderSpecification
+     *                                         Specifies a particular video decoder that must be used.
      *                                         Pass NULL to let the video toolbox choose a decoder.
-     * @param destinationImageBufferAttributes Describes requirements for emitted pixel buffers.
+     * @param destinationImageBufferAttributes
+     *                                         Describes requirements for emitted pixel buffers.
      *                                         Pass NULL to set no requirements.
-     * @param outputCallback                   The callback to be called with decompressed frames.
+     * @param outputCallback
+     *                                         The callback to be called with decompressed frames.
      *                                         Pass NULL if and only if you will be calling
      *                                         VTDecompressionSessionDecodeFrameWithOutputHandler for decoding frames.
-     * @param decompressionSessionOut          Points to a variable to receive the new decompression session.
+     * @param decompressionSessionOut
+     *                                         Points to a variable to receive the new decompression session.
+     * 
+     * 
+     *                                         API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -437,14 +514,16 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTDecompressionSessionInvalidate
-     * <p>
+     * 
      * Tears down a decompression session.
-     * <p>
+     * 
      * When you are done with a decompression session you created, call VTDecompressionSessionInvalidate
      * to tear it down and then CFRelease to release your object reference.
      * When a decompression session's retain count reaches zero, it is automatically invalidated, but
      * since sessions may be retained by multiple parties, it can be hard to predict when this will happen.
      * Calling VTDecompressionSessionInvalidate ensures a deterministic, orderly teardown.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -452,8 +531,10 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTDecompressionSessionGetTypeID
-     * <p>
+     * 
      * Returns the CFTypeID for decompression sessions.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -462,15 +543,18 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTDecompressionSessionDecodeFrame
-     * <p>
+     * 
      * Decompresses a video frame.
-     * <p>
+     * 
      * If an error is returned from this function, there will be no callback. Otherwise
      * the callback provided during VTDecompressionSessionCreate will be called.
-     *
-     * @param session           The decompression session.
-     * @param sampleBuffer      A CMSampleBuffer containing one or more video frames.
-     * @param decodeFlags       A bitfield of directives to the decompression session and decoder.
+     * 
+     * @param session
+     *                          The decompression session.
+     * @param sampleBuffer
+     *                          A CMSampleBuffer containing one or more video frames.
+     * @param decodeFlags
+     *                          A bitfield of directives to the decompression session and decoder.
      *                          The kVTDecodeFrame_EnableAsynchronousDecompression bit indicates whether the video
      *                          decoder
      *                          may decompress the frame asynchronously.
@@ -482,15 +566,19 @@ public final class VideoToolbox {
      *                          before VTDecompressionSessionDecodeFrame returns.
      *                          If either flag is set, VTDecompressionSessionDecodeFrame may return before the output
      *                          callback function is called.
-     * @param sourceFrameRefCon Your reference value for the frame.
+     * @param sourceFrameRefCon
+     *                          Your reference value for the frame.
      *                          Note that if sampleBuffer contains multiple frames, the output callback function will be
      *                          called
      *                          multiple times with this sourceFrameRefCon.
-     * @param infoFlagsOut      Points to a VTDecodeInfoFlags to receive information about the decode operation.
+     * @param infoFlagsOut
+     *                          Points to a VTDecodeInfoFlags to receive information about the decode operation.
      *                          The kVTDecodeInfo_Asynchronous bit may be set if the decode is (or was) running
      *                          asynchronously.
      *                          The kVTDecodeInfo_FrameDropped bit may be set if the frame was dropped (synchronously).
      *                          Pass NULL if you do not want to receive this information.
+     * 
+     *                          API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -499,16 +587,19 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTDecompressionSessionDecodeFrameWithOutputHandler
-     * <p>
+     * 
      * Decompresses a video frame.
-     * <p>
+     * 
      * Cannot be called with a session created with a VTDecompressionOutputCallbackRecord.
      * If the VTDecompressionSessionDecodeFrameWithOutputHandler call returns an error, the block
      * will not be called.
-     *
-     * @param session       The decompression session.
-     * @param sampleBuffer  A CMSampleBuffer containing one or more video frames.
-     * @param decodeFlags   A bitfield of directives to the decompression session and decoder.
+     * 
+     * @param session
+     *                      The decompression session.
+     * @param sampleBuffer
+     *                      A CMSampleBuffer containing one or more video frames.
+     * @param decodeFlags
+     *                      A bitfield of directives to the decompression session and decoder.
      *                      The kVTDecodeFrame_EnableAsynchronousDecompression bit indicates whether the video decoder
      *                      may decompress the frame asynchronously.
      *                      The kVTDecodeFrame_EnableTemporalProcessing bit indicates whether the decoder may delay
@@ -519,14 +610,18 @@ public final class VideoToolbox {
      *                      before VTDecompressionSessionDecodeFrame returns.
      *                      If either flag is set, VTDecompressionSessionDecodeFrame may return before the output
      *                      callback function is called.
-     * @param infoFlagsOut  Points to a VTDecodeInfoFlags to receive information about the decode operation.
+     * @param infoFlagsOut
+     *                      Points to a VTDecodeInfoFlags to receive information about the decode operation.
      *                      The kVTDecodeInfo_Asynchronous bit may be set if the decode is (or was) running
      *                      asynchronously.
      *                      The kVTDecodeInfo_FrameDropped bit may be set if the frame was dropped (synchronously).
      *                      Pass NULL if you do not want to receive this information.
-     * @param outputHandler The block to be called when decoding the frame is completed. If the
+     * @param outputHandler
+     *                      The block to be called when decoding the frame is completed. If the
      *                      VTDecompressionSessionDecodeFrameWithOutputHandler
      *                      call returns an error, the block will not be called.
+     * 
+     *                      API-Since: 9.0
      */
     @Generated
     @CFunction
@@ -536,14 +631,16 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTDecompressionSessionFinishDelayedFrames
-     * <p>
+     * 
      * Directs the decompression session to emit all delayed frames.
-     * <p>
+     * 
      * By default, the decompression session may not delay frames indefinitely;
      * frames may only be indefinitely delayed if the client opts in via
      * kVTDecodeFrame_EnableTemporalProcessing.
      * IMPORTANT NOTE: This function may return before all delayed frames are emitted.
      * To wait for them, call VTDecompressionSessionWaitForAsynchronousFrames instead.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -551,12 +648,14 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTDecompressionSessionCanAcceptFormatDescription
-     * <p>
+     * 
      * Indicates whether the session can decode frames with the given format description.
-     * <p>
+     * 
      * Some video decoders are able to accommodate minor changes in format without needing to be
      * completely reset in a new session. This function can be used to test whether a format change
      * is sufficiently minor.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -565,11 +664,13 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTDecompressionSessionWaitForAsynchronousFrames
-     * <p>
+     * 
      * Waits for any and all outstanding asynchronous and delayed frames to complete, then returns.
-     * <p>
+     * 
      * This function automatically calls VTDecompressionSessionFinishDelayedFrames,
      * so clients don't have to call both.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -577,19 +678,27 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTDecompressionSessionCopyBlackPixelBuffer
-     * <p>
+     * 
      * Copies a black pixel buffer from the decompression session.
-     * <p>
+     * 
      * The pixel buffer is in the same format that the session is decompressing to.
-     *
-     * @param session        The decompression session.
-     * @param pixelBufferOut Points to a variable to receive the copied pixel buffer.
+     * 
+     * @param session
+     *                       The decompression session.
+     * @param pixelBufferOut
+     *                       Points to a variable to receive the copied pixel buffer.
+     * 
+     * 
+     *                       API-Since: 8.0
      */
     @Generated
     @CFunction
     public static native int VTDecompressionSessionCopyBlackPixelBuffer(VTDecompressionSessionRef session,
             Ptr<CVBufferRef> pixelBufferOut);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CFunction
     @NUInt
@@ -597,18 +706,24 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTFrameSiloCreate
-     * <p>
+     * 
      * Creates a VTFrameSilo object using a temporary file.
-     * <p>
+     * 
      * The returned VTFrameSilo object may be used to gather frames produced by multi-pass encoding.
-     *
-     * @param fileURL      Specifies where to put the backing file for the VTFrameSilo object.
+     * 
+     * @param fileURL
+     *                     Specifies where to put the backing file for the VTFrameSilo object.
      *                     If you pass NULL for fileURL, the video toolbox will pick a unique temporary file name.
-     * @param options      Reserved, pass NULL.
-     * @param timeRange    The valid time range for the frame silo. Must be valid for progress reporting.
-     * @param frameSiloOut Points to a VTFrameSiloRef to receive the newly created object.
+     * @param options
+     *                     Reserved, pass NULL.
+     * @param timeRange
+     *                     The valid time range for the frame silo. Must be valid for progress reporting.
+     * @param frameSiloOut
+     *                     Points to a VTFrameSiloRef to receive the newly created object.
      *                     Call CFRelease to release your retain on the created VTFrameSilo object when you are done
      *                     with it.
+     * 
+     *                     API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -617,17 +732,20 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTFrameSiloAddSampleBuffer
-     * <p>
+     * 
      * Adds a sample buffer to a VTFrameSilo object.
-     * <p>
+     * 
      * Within each pass, sample buffers must have strictly increasing decode timestamps.
      * Passes after the first pass are begun with a call to VTFrameSiloSetTimeRangesForNextPass.
      * After a call to VTFrameSiloSetTimeRangesForNextPass, sample buffer decode timestamps must also be within
      * the stated time ranges.
      * Note that CMTimeRanges are considered to contain their start times but not their end times.
-     *
-     * @return Returns kVTFrameSiloInvalidTimeStampErr if an attempt is made to add a sample buffer with an
+     * 
+     * @return
+     *         Returns kVTFrameSiloInvalidTimeStampErr if an attempt is made to add a sample buffer with an
      *         inappropriate decode timestamp.
+     * 
+     *         API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -635,15 +753,18 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTFrameSiloSetTimeRangesForNextPass
-     * <p>
+     * 
      * Begins a new pass of samples to be added to a VTFrameSilo object.
-     * <p>
+     * 
      * Previously-added sample buffers with decode timestamps within the time ranges will be deleted from the
      * VTFrameSilo.
      * It is not necessary to call VTFrameSiloSetTimeRangesForNextPass before adding the first pass' sample buffers.
-     *
-     * @return Returns kVTFrameSiloInvalidTimeRangeErr if any time ranges are non-numeric, overlap or are not in
+     * 
+     * @return
+     *         Returns kVTFrameSiloInvalidTimeRangeErr if any time ranges are non-numeric, overlap or are not in
      *         ascending order.
+     * 
+     *         API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -652,13 +773,16 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTFrameSiloGetProgressOfCurrentPass
-     * <p>
+     * 
      * Gets the progress of the current pass.
-     * <p>
+     * 
      * Calculates the current progress based on the most recent sample buffer added and the current pass time ranges.
-     *
-     * @return Returns kVTFrameSiloInvalidTimeRangeErr if any time ranges are non-numeric, overlap or are not in
+     * 
+     * @return
+     *         Returns kVTFrameSiloInvalidTimeRangeErr if any time ranges are non-numeric, overlap or are not in
      *         ascending order.
+     * 
+     *         API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -666,21 +790,26 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTFrameSiloCallFunctionForEachSampleBuffer
-     * <p>
+     * 
      * Retrieves sample buffers from a VTFrameSilo object.
-     * <p>
+     * 
      * You call this function to retrieve sample buffers at the end of a multi-pass compression session.
-     *
-     * @param timeRange The decode time range of sample buffers to retrieve.
+     * 
+     * @param timeRange
+     *                  The decode time range of sample buffers to retrieve.
      *                  Pass kCMTimeRangeInvalid to retrieve all sample buffers from the VTFrameSilo.
-     * @param callback  A function to be called, in decode order, with each sample buffer that was added.
+     * @param callback
+     *                  A function to be called, in decode order, with each sample buffer that was added.
      *                  To abort iteration early, return a nonzero status.
      *                  The VTFrameSilo may write sample buffers and data to the backing file between addition and
      *                  retrieval;
      *                  do not expect to get identical object pointers back.
-     * @return Returns kVTFrameSiloInvalidTimeRangeErr if any time ranges are non-numeric, overlap or are not in
+     * @return
+     *         Returns kVTFrameSiloInvalidTimeRangeErr if any time ranges are non-numeric, overlap or are not in
      *         ascending order.
      *         Returns any nonzero status returned by the callback function.
+     * 
+     *         API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -690,21 +819,26 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTFrameSiloCallBlockForEachSampleBuffer
-     * <p>
+     * 
      * Retrieves sample buffers from a VTFrameSilo object.
-     * <p>
+     * 
      * You call this function to retrieve sample buffers at the end of a multi-pass compression session.
-     *
-     * @param timeRange The decode time range of sample buffers to retrieve.
+     * 
+     * @param timeRange
+     *                  The decode time range of sample buffers to retrieve.
      *                  Pass kCMTimeRangeInvalid to retrieve all sample buffers from the VTFrameSilo.
-     * @param handler   A block to be called, in decode order, with each sample buffer that was added.
+     * @param handler
+     *                  A block to be called, in decode order, with each sample buffer that was added.
      *                  To abort iteration early, return a nonzero status.
      *                  The VTFrameSilo may write sample buffers and data to the backing file between addition and
      *                  retrieval;
      *                  do not expect to get identical object pointers back.
-     * @return Returns kVTFrameSiloInvalidTimeRangeErr if any time ranges are non-numeric, overlap or are not in
+     * @return
+     *         Returns kVTFrameSiloInvalidTimeRangeErr if any time ranges are non-numeric, overlap or are not in
      *         ascending order.
      *         Returns any nonzero status returned by the handler block.
+     * 
+     *         API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -712,6 +846,9 @@ public final class VideoToolbox {
             @ByValue CMTimeRange timeRange,
             @ObjCBlock(name = "call_VTFrameSiloCallBlockForEachSampleBuffer") Block_VTFrameSiloCallBlockForEachSampleBuffer handler);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CFunction
     @NUInt
@@ -719,20 +856,25 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTMultiPassStorageCreate
-     * <p>
+     * 
      * Creates a VTMultiPassStorage object using a temporary file.
-     * <p>
+     * 
      * The returned VTMultiPassStorage object may be used to perform multi-pass encoding; see
      * kVTCompressionPropertyKey_MultiPassStorage.
      * Call CFRelease to release your retain on the created VTMultiPassStorage object when you are done with it.
-     *
-     * @param fileURL   Specifies where to put the backing file for the VTMultiPassStorage object.
+     * 
+     * @param fileURL
+     *                  Specifies where to put the backing file for the VTMultiPassStorage object.
      *                  If you pass NULL for fileURL, the video toolbox will pick a unique temporary file name.
-     * @param timeRange Gives a hint to the multi pass storage about valid time stamps for data.
-     * @param options   If the file did not exist when the storage was created, the file will be deleted when the
+     * @param timeRange
+     *                  Gives a hint to the multi pass storage about valid time stamps for data.
+     * @param options
+     *                  If the file did not exist when the storage was created, the file will be deleted when the
      *                  VTMultiPassStorage object is finalized, unless you set the
      *                  kVTMultiPassStorageCreationOption_DoNotDelete option to kCFBooleanTrue in the options
      *                  dictionary.
+     * 
+     *                  API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -741,11 +883,13 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTMultiPassStorageClose
-     * <p>
+     * 
      * Ensures that any pending data is written to the multipass storage file and closes the file.
-     * <p>
+     * 
      * After this function is called, all methods on the multipass storage object will fail.
      * It is still necessary to release the object by calling CFRelease.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -753,10 +897,12 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTCopyVideoEncoderList
-     * <p>
+     * 
      * Builds a list of available video encoders.
-     * <p>
+     * 
      * The caller must CFRelease the returned list.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -764,9 +910,9 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTCreateCGImageFromCVPixelBuffer
-     * <p>
+     * 
      * Creates a CGImage using the provided CVPixelBuffer
-     * <p>
+     * 
      * This routine creates a CGImage representation of the image data contained in
      * the provided CVPixelBuffer.
      * The source CVPixelBuffer may be retained for the lifetime of the CGImage. Changes
@@ -774,10 +920,15 @@ public final class VideoToolbox {
      * undefined results.
      * Not all CVPixelBuffer pixel formats will support conversion into a CGImage compatible
      * pixel format.
-     *
-     * @param pixelBuffer The pixelBuffer to be used as the image data source for the CGImage.
-     * @param options     no options currently. pass NULL.
-     * @param imageOut    pointer to an address to receive the newly created CGImage.
+     * 
+     * API-Since: 9.0
+     * 
+     * @param pixelBuffer
+     *                    The pixelBuffer to be used as the image data source for the CGImage.
+     * @param options
+     *                    no options currently. pass NULL.
+     * @param imageOut
+     *                    pointer to an address to receive the newly created CGImage.
      */
     @Generated
     @CFunction
@@ -786,6 +937,8 @@ public final class VideoToolbox {
 
     /**
      * Read-only, CFNumber<int>
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -793,6 +946,8 @@ public final class VideoToolbox {
 
     /**
      * Read-only, CFBoolean
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -800,6 +955,8 @@ public final class VideoToolbox {
 
     /**
      * Read-only, CFDictionary
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -807,6 +964,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumber<int>, Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -814,6 +973,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumber<seconds>, Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -821,6 +982,8 @@ public final class VideoToolbox {
 
     /**
      * Read/Write, CFBoolean, Optional, defaults to true
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -828,6 +991,8 @@ public final class VideoToolbox {
 
     /**
      * Read/Write, CFBoolean, Optional, defaults to true
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -835,6 +1000,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumber<SInt32>, Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -842,6 +1009,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFArray[CFNumber], [bytes, seconds, bytes, seconds...], Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -849,6 +1018,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumber<Float>, Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -856,6 +1027,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFBoolean, Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -863,6 +1036,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFBoolean, Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -870,220 +1045,376 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFString (enumeration), Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_ProfileLevel();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_1_3();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_3_0();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_3_1();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_3_2();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_4_0();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_4_1();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_4_2();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_5_0();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_5_1();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_5_2();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_AutoLevel();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_3_0();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_3_1();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_3_2();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_4_0();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_4_1();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_4_2();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_5_0();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_5_1();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_5_2();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_AutoLevel();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Extended_5_0();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Extended_AutoLevel();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_3_0();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_3_1();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_3_2();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_4_0();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_4_1();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_4_2();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_5_0();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_5_1();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_5_2();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_AutoLevel();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_Simple_L0();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_Simple_L1();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_Simple_L2();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_Simple_L3();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_Main_L2();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_Main_L3();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_Main_L4();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_AdvancedSimple_L0();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_AdvancedSimple_L1();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_AdvancedSimple_L2();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_AdvancedSimple_L3();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_AdvancedSimple_L4();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H263_Profile0_Level10();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H263_Profile0_Level45();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H263_Profile3_Level45();
 
     /**
      * Read/write, CFString, optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_H264EntropyMode();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTH264EntropyMode_CAVLC();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTH264EntropyMode_CABAC();
 
     /**
      * Read/write, CFNumber (CMPixelFormatType), Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1091,6 +1422,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumber, Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1098,6 +1431,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumber<SInt32>, Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1105,6 +1440,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFBoolean or NULL, Optional, default NULL
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1112,6 +1449,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumber, Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1119,6 +1458,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumber, Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1126,6 +1467,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumber(seconds), Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1133,6 +1476,8 @@ public final class VideoToolbox {
 
     /**
      * CFBoolean
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1140,6 +1485,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFDictionary (see CMFormatDescription.h), Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1147,6 +1494,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFDictionary (see CMFormatDescription.h), Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1154,6 +1503,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumber (see kCMFormatDescriptionExtension_FieldCount), Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1161,6 +1512,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFString (see kCMFormatDescriptionExtension_FieldDetail), Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1168,6 +1521,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFBoolean, Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1175,6 +1530,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFBoolean, Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1182,6 +1539,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFString (see kCMFormatDescriptionExtension_ColorPrimaries), Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1189,6 +1548,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFString (see kCMFormatDescriptionExtension_TransferFunction), Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1196,6 +1557,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFString (see kCMFormatDescriptionExtension_YCbCrMatrix), Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1203,6 +1566,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFData (see kCMFormatDescriptionExtension_ICCProfile), Optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1210,6 +1575,8 @@ public final class VideoToolbox {
 
     /**
      * Read/Write, CFDictionary containing properties from VTPixelTransferProperties.h.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1217,6 +1584,8 @@ public final class VideoToolbox {
 
     /**
      * VTMultiPassStorage, optional, default is NULL
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1224,6 +1593,8 @@ public final class VideoToolbox {
 
     /**
      * value is CFStringRef, one of the following:
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1231,6 +1602,8 @@ public final class VideoToolbox {
 
     /**
      * value is one of a list of CFStrings
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1238,6 +1611,8 @@ public final class VideoToolbox {
 
     /**
      * value is a CFBoolean
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1245,25 +1620,38 @@ public final class VideoToolbox {
 
     /**
      * value is a CFNumber
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
     public static native CFStringRef kVTPropertyType_Number();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTPropertyReadWriteStatusKey();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTPropertyReadWriteStatus_ReadOnly();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTPropertyReadWriteStatus_ReadWrite();
 
     /**
      * CFBoolean, false by default
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1271,6 +1659,8 @@ public final class VideoToolbox {
 
     /**
      * CFNumber
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1278,6 +1668,8 @@ public final class VideoToolbox {
 
     /**
      * CFNumber
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1285,6 +1677,8 @@ public final class VideoToolbox {
 
     /**
      * CFArray of appropriate values
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1292,6 +1686,8 @@ public final class VideoToolbox {
 
     /**
      * a CFString for developer eyes only
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1299,6 +1695,8 @@ public final class VideoToolbox {
 
     /**
      * CFString
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1306,6 +1704,8 @@ public final class VideoToolbox {
 
     /**
      * Read-only, CVPixelBufferPool
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1313,6 +1713,8 @@ public final class VideoToolbox {
 
     /**
      * Read-only, CFBoolean
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1320,6 +1722,8 @@ public final class VideoToolbox {
 
     /**
      * Read/Write, CFNumberRef
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1327,6 +1731,8 @@ public final class VideoToolbox {
 
     /**
      * Read-only, CFNumber.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1334,6 +1740,8 @@ public final class VideoToolbox {
 
     /**
      * Read-only, CMTime as CFDictionary.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1341,6 +1749,8 @@ public final class VideoToolbox {
 
     /**
      * Read-only, CMTime as CFDictionary.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1348,6 +1758,8 @@ public final class VideoToolbox {
 
     /**
      * Read-only, CFBoolean
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1355,6 +1767,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFBoolean or NULL, Optional, default is true
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1362,6 +1776,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumber
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1369,30 +1785,46 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFString, one of
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_FieldMode();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_FieldMode_BothFields();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_FieldMode_TopFieldOnly();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_FieldMode_BottomFieldOnly();
 
     /**
      * Most appropriate of either TopFieldOnly or BottomFieldOnly
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_FieldMode_SingleField();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_FieldMode_DeinterlaceFields();
@@ -1400,6 +1832,8 @@ public final class VideoToolbox {
     /**
      * Read/write, CFString; only applicable if kVTDecompressionPropertyKey_FieldMode is
      * kVTDecompressionProperty_FieldMode_DeinterlaceFields; supported values may include:
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1407,6 +1841,8 @@ public final class VideoToolbox {
 
     /**
      * apply 0.25-0.50-0.25 vertical filter to individual interlaced frames; default mode
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1417,6 +1853,8 @@ public final class VideoToolbox {
      * better result at the expense of a pipeline delay; this mode is only used if
      * kVTDecodeFrame_EnableTemporalProcessing is set, otherwise a non-temporal mode (eg, VerticalFilter) will be used
      * instead
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1424,6 +1862,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFDictionary containing width and height keys and CFNumber values:
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1431,6 +1871,8 @@ public final class VideoToolbox {
 
     /**
      * CFNumber
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1438,6 +1880,8 @@ public final class VideoToolbox {
 
     /**
      * CFNumber
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1445,6 +1889,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumber
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1452,6 +1898,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumber in range [0.0,1.0].
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1459,29 +1907,45 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFString, supported values may include:
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_OnlyTheseFrames();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_OnlyTheseFrames_AllFrames();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_OnlyTheseFrames_NonDroppableFrames();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_OnlyTheseFrames_IFrames();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_OnlyTheseFrames_KeyFrames();
 
     /**
      * Read-only, CFArray of CFDictionaries containing property key/value pairs
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1489,6 +1953,8 @@ public final class VideoToolbox {
 
     /**
      * Read-only, CFArray[CFNumber(CMPixelFormatType)] ordered best to worst, optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1496,6 +1962,8 @@ public final class VideoToolbox {
 
     /**
      * Read-only, CFArray[CFNumber(CMPixelFormatType)] ordered fast to slow, optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1503,6 +1971,8 @@ public final class VideoToolbox {
 
     /**
      * Read-only, CFArray[CFNumber(CMPixelFormatType)], optional
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1510,6 +1980,8 @@ public final class VideoToolbox {
 
     /**
      * Read/Write, CFDictionary containing properties from VTPixelTransferProperties.h.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1524,6 +1996,8 @@ public final class VideoToolbox {
 
     /**
      * CFNumber for four-char-code (eg, 'avc1')
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1532,6 +2006,8 @@ public final class VideoToolbox {
     /**
      * CFString, reverse-DNS-style unique identifier for this encoder; may be passed as
      * kVTVideoEncoderSpecification_EncoderID
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1539,6 +2015,8 @@ public final class VideoToolbox {
 
     /**
      * CFString, for display to user (eg, "H.264")
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1546,6 +2024,8 @@ public final class VideoToolbox {
 
     /**
      * CFString, for display to user (eg, "Apple H.264")
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1553,6 +2033,8 @@ public final class VideoToolbox {
 
     /**
      * CFString (same as CodecName if there is only one encoder for that format, otherwise same as EncoderName)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1560,6 +2042,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFStringRef, one of kVTScalingMode_*
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1568,6 +2052,8 @@ public final class VideoToolbox {
     /**
      * Copy full width and height. Write adjusted clean aperture and pixel aspect ratios to compensate for any change in
      * dimensions.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1575,6 +2061,8 @@ public final class VideoToolbox {
 
     /**
      * Crop to remove edge processing region; scale remainder to destination clean aperture.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1582,6 +2070,8 @@ public final class VideoToolbox {
 
     /**
      * Preserve aspect ratio of the source, and fill remaining areas with black in to fit destination dimensions
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1589,6 +2079,8 @@ public final class VideoToolbox {
 
     /**
      * Preserve aspect ratio of the source, and crop picture to fit destination dimensions
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1597,6 +2089,8 @@ public final class VideoToolbox {
     /**
      * Read/write, CFDictionary with same keys as used in kCVImageBufferCleanApertureKey dictionary. Used as applicable
      * to current kVTPixelTransferPropertyKey_ScalingMode value.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1605,6 +2099,8 @@ public final class VideoToolbox {
     /**
      * Read/write, CFDictionary with same keys as used in kCVImageBufferPixelAspectRatioKey dictionary. Used as
      * applicable to current kVTPixelTransferPropertyKey_ScalingMode value.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1612,6 +2108,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFStringRef, one of:
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1619,6 +2117,8 @@ public final class VideoToolbox {
 
     /**
      * Default, decimate extra samples
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1626,6 +2126,8 @@ public final class VideoToolbox {
 
     /**
      * Average missing samples (default center)
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1633,6 +2135,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFString (see kCMFormatDescriptionExtension_ColorPrimaries), Optional
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1640,6 +2144,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFString (see kCMFormatDescriptionExtension_TransferFunction), Optional
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1647,6 +2153,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFData (see kCMFormatDescriptionExtension_ICCProfile), Optional
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1654,6 +2162,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFString (see kCMFormatDescriptionExtension_YCbCrMatrix), Optional
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1698,14 +2208,16 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTIsHardwareDecodeSupported
-     * <p>
+     * 
      * Indicates whether the current system supports hardware decode for a given codec
-     * <p>
+     * 
      * This routine reports whether the current system supports hardware decode. Using
      * this information, clients can make informed decisions regarding remote assets to load,
      * favoring alternate encodings when hardware decode is not supported.
      * This call returning true does not guarantee that hardware decode resources will be
      * available at all times.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CFunction
@@ -1713,10 +2225,12 @@ public final class VideoToolbox {
 
     /**
      * [@function] VTCopySupportedPropertyDictionaryForEncoder
-     * <p>
+     * 
      * Builds a list of supported properties and encoder ID for an encoder
-     * <p>
+     * 
      * The caller must CFRelease the returned supported properties and encoder ID.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CFunction
@@ -1724,16 +2238,24 @@ public final class VideoToolbox {
             CFDictionaryRef encoderSpecification, Ptr<CFStringRef> encoderIDOut,
             Ptr<CFDictionaryRef> supportedPropertiesOut);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_HEVC_Main_AutoLevel();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_HEVC_Main10_AutoLevel();
 
     /**
      * Read/write, CFNumber, Optional
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -1741,6 +2263,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFData(24 bytes) (see kCMFormatDescriptionExtension_MasteringDisplayColorVolume), Optional
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -1748,6 +2272,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFData(4 bytes) (see kCMFormatDescriptionExtension_ContentLightLevelInfo), Optional
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -1755,6 +2281,8 @@ public final class VideoToolbox {
 
     /**
      * CFStringRef
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -1762,6 +2290,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumber
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -1769,6 +2299,8 @@ public final class VideoToolbox {
 
     /**
      * Read/Write, CFBoolean, Optional
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @CVariable()
@@ -1776,6 +2308,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumber<Float>, Optional, NULL by default
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -1783,6 +2317,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFBoolean or NULL, Optional, default is false
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @CVariable()
@@ -1819,21 +2355,31 @@ public final class VideoToolbox {
     /**
      * Read/write, Optional, CFString(kVTAlphaChannelMode_*); if property is not set, matches first source frame's
      * attachment; if that's also not set, defaults to premultiplied alpha
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_AlphaChannelMode();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTAlphaChannelMode_StraightAlpha();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTAlphaChannelMode_PremultipliedAlpha();
 
     /**
      * Read/write, CFBoolean or NULL, Optional, default is false
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1871,6 +2417,8 @@ public final class VideoToolbox {
     /**
      * optional. CFDictionary. If present, represents a subset of supported properties that may be useful during encoder
      * selection
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -1879,6 +2427,8 @@ public final class VideoToolbox {
     /**
      * optional. CFNumber. If present, indicates a relative rating value for the encoder compared to other encoders of
      * the same format.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -1888,6 +2438,8 @@ public final class VideoToolbox {
      * optional. CFNumber. If present, indicates a Quality Rating value for the encoder relative to other encoders of
      * the same format. This is a highly generalized value and different encoders may have strengths at different
      * resolutions and bitrates.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -1896,6 +2448,8 @@ public final class VideoToolbox {
     /**
      * optional. CFBoolean. If present and set to kCFBooleanTrue, there is a global instance limit cap on this encoder.
      * Indicates that an encoder is a scarce resource which may potentially be unavailable.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -1903,6 +2457,8 @@ public final class VideoToolbox {
 
     /**
      * optional. CFBoolean. If present and set to kCFBooleanTrue, indicates that the encoder is hardware accelerated.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -1917,6 +2473,8 @@ public final class VideoToolbox {
 
     /**
      * CFBoolean, Optional
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1924,21 +2482,31 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFString, Optional, default is kVTHDRMetadataInsertionMode_Auto
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_HDRMetadataInsertionMode();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTHDRMetadataInsertionMode_None();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTHDRMetadataInsertionMode_Auto();
 
     /**
      * CFBoolean, Write, Optional
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1946,6 +2514,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFBoolean, Optional, default is kCFBooleanTrue
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -1954,21 +2524,31 @@ public final class VideoToolbox {
     /**
      * optional. CFBoolean. By default, this is assumed to be true if not present. If present and set to
      * kCFBooleanFalse, indicates that the encoder will not use B frames.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderList_SupportsFrameReordering();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_ConstrainedBaseline_AutoLevel();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_ConstrainedHigh_AutoLevel();
 
     /**
      * Read/write, CFNumber<Float>, Optional
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @CVariable()
@@ -1976,6 +2556,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumber<Float>, Optional
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -1983,6 +2565,8 @@ public final class VideoToolbox {
 
     /**
      * Read only, CFBoolean, Optional, false by default
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -1990,6 +2574,8 @@ public final class VideoToolbox {
 
     /**
      * CFNumberRef, Optional
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -1997,6 +2583,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFBoolean, Optional
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @CVariable()
@@ -2004,6 +2592,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFNumberRef, Optional
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2011,6 +2601,8 @@ public final class VideoToolbox {
 
     /**
      * Read/write, CFBoolean, Optional
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2018,6 +2610,8 @@ public final class VideoToolbox {
 
     /**
      * CFArray[CFNumberRef], Optional
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2025,6 +2619,8 @@ public final class VideoToolbox {
 
     /**
      * CFNumberRef, Optional
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2032,6 +2628,8 @@ public final class VideoToolbox {
 
     /**
      * CFNumberRef, Optional
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -2040,8 +2638,288 @@ public final class VideoToolbox {
     /**
      * optional. CFBoolean. By default, DV encoders will not be included in the list. If present and set to
      * kCFBooleanTrue, DV encoders will be included.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderListOption_IncludeStandardDefinitionDVEncoders();
+
+    /**
+     * [@function] VTPixelTransferSessionCreate
+     * 
+     * Creates a session for transferring images between CVPixelBuffers.
+     * 
+     * The function creates a session for transferring images between CVPixelBuffers.
+     * 
+     * @param allocator
+     *                                An allocator for the session. Pass NULL to use the default allocator.
+     * @param pixelTransferSessionOut
+     *                                Points to a variable to receive the new pixel transfer session.
+     */
+    @Generated
+    @CFunction
+    public static native int VTPixelTransferSessionCreate(CFAllocatorRef allocator,
+            Ptr<VTPixelTransferSessionRef> pixelTransferSessionOut);
+
+    /**
+     * [@function] VTPixelTransferSessionInvalidate
+     * 
+     * Tears down a pixel transfer session.
+     * 
+     * When you are done with a pixel transfer session you created, call VTPixelTransferSessionInvalidate
+     * to tear it down and then CFRelease to release your object reference.
+     * When a pixel transfer session's retain count reaches zero, it is automatically invalidated, but
+     * since sessions may be retained by multiple parties, it can be hard to predict when this will happen.
+     * Calling VTPixelTransferSessionInvalidate ensures a deterministic, orderly teardown.
+     */
+    @Generated
+    @CFunction
+    public static native void VTPixelTransferSessionInvalidate(VTPixelTransferSessionRef session);
+
+    /**
+     * [@function] VTPixelTransferSessionGetTypeID
+     * 
+     * Returns the CFTypeID for pixel transfer sessions.
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long VTPixelTransferSessionGetTypeID();
+
+    /**
+     * [@function] VTPixelTransferSessionTransferImage
+     * 
+     * Copies and/or converts an image from one pixel buffer to another.
+     * 
+     * By default, the full width and height of sourceBuffer are scaled to the full
+     * width and height of destinationBuffer.
+     * By default, all existing attachments on destinationBuffer are removed and new attachments
+     * are set describing the transferred image. Unrecognised attachments on sourceBuffer will
+     * be propagated to destinationBuffer.
+     * Some properties will modify this behaviour; see VTPixelTransferProperties.h for more details.
+     * 
+     * @param session
+     *                          The pixel transfer session.
+     * @param sourceBuffer
+     *                          The source buffer.
+     * @param destinationBuffer
+     *                          The destination buffer.
+     * @return
+     *         If the transfer was successful, noErr; otherwise an error code, such as kVTPixelTransferNotSupportedErr.
+     */
+    @Generated
+    @CFunction
+    public static native int VTPixelTransferSessionTransferImage(VTPixelTransferSessionRef session,
+            CVBufferRef sourceBuffer, CVBufferRef destinationBuffer);
+
+    /**
+     * [@function] VTPixelRotationSessionCreate
+     * 
+     * Creates a session for rotating images between CVPixelBuffers.
+     * 
+     * @param allocator
+     *                                An allocator for the session. Pass NULL to use the default allocator.
+     * @param pixelRotationSessionOut
+     *                                Points to a variable to receive the new pixel rotation session.
+     * 
+     *                                API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    public static native int VTPixelRotationSessionCreate(CFAllocatorRef allocator,
+            Ptr<VTPixelRotationSessionRef> pixelRotationSessionOut);
+
+    /**
+     * [@function] VTPixelRotationSessionInvalidate
+     * 
+     * Tears down a pixel rotation session.
+     * 
+     * When you are done with an image rotation session you created, call VTPixelRotationSessionInvalidate
+     * to tear it down and then VTPixelRotationSessionRelease to release your object reference.
+     * When an pixel rotation session's retain count reaches zero, it is automatically invalidated, but
+     * since sessions may be retained by multiple parties, it can be hard to predict when this will happen.
+     * Calling VTPixelRotationSessionInvalidate ensures a deterministic, orderly teardown.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    public static native void VTPixelRotationSessionInvalidate(VTPixelRotationSessionRef session);
+
+    /**
+     * [@function] VTPixelRotationSessionGetTypeID
+     * 
+     * Returns the CFTypeID for pixel rotation sessions.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long VTPixelRotationSessionGetTypeID();
+
+    /**
+     * [@function] VTPixelRotationSessionRotateImage
+     * 
+     * Rotates a pixel buffer.
+     * 
+     * Rotates sourceBuffer and places the output in destinationBuffer.
+     * For 90 and 270 degree rotations, the width and height of destinationBuffer must be the inverse
+     * of sourceBuffer.
+     * For 180 degree rotations, the width and height of destinationBuffer and sourceBuffer must match.
+     * By default, all existing attachments on destinationBuffer are removed and new attachments
+     * are set describing the transferred image. Unrecognised attachments on sourceBuffer will
+     * be propagated to destinationBuffer.
+     * Some properties may modify this behaviour; see VTPixelRotationProperties.h for more details.
+     * 
+     * @param session
+     *                          The pixel rotation session.
+     * @param sourceBuffer
+     *                          The source buffer.
+     * @param destinationBuffer
+     *                          The destination buffer.
+     * @return
+     *         If the transfer was successful, noErr; otherwise an error code, such as kVTPixelRotationNotSupportedErr.
+     * 
+     *         API-Since: 16.0
+     */
+    @Generated
+    @CFunction
+    public static native int VTPixelRotationSessionRotateImage(VTPixelRotationSessionRef session,
+            CVBufferRef sourceBuffer, CVBufferRef destinationBuffer);
+
+    /**
+     * CFNumber bits per second, Optional
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_ConstantBitRate();
+
+    /**
+     * Read Only, CFNumber (bytes per frame)
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_EstimatedAverageBytesPerFrame();
+
+    /**
+     * API-Since: 15.4
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTProfileLevel_HEVC_Main42210_AutoLevel();
+
+    /**
+     * Read/write, Optional, CFNumber, NULL by default
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_OutputBitDepth();
+
+    /**
+     * Read/write, CFBoolean, Optional, (effectively) kCFBooleanTrue by default
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_PreserveAlphaChannel();
+
+    /**
+     * CFNumber, Optional
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_ReferenceBufferCount();
+
+    /**
+     * Read/write, CFNumberRef, Optional
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTCompressionPropertyKey_MinAllowedFrameQP();
+
+    /**
+     * [@constant] kVTPixelRotationPropertyKey_Rotation
+     * 
+     * Specifies the amount of rotation in degrees.
+     * 
+     * Specifies the amount of rotation to apply when copying source to destination.
+     * Valid values: kVTRotation_0, kVTRotation_CW90, kVTRotation_180, and kVTRotation_CCW90
+     * default is kVTRotation_0.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTPixelRotationPropertyKey_Rotation();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTRotation_0();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTRotation_CW90();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTRotation_180();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTRotation_CCW90();
+
+    /**
+     * [@constant] kVTPixelRotationPropertyKey_FlipHorizontalOrientation
+     * 
+     * Specifies the horizontal flip.
+     * 
+     * kVTPixelRotationPropertyKey_FlipHorizontalOrientation must pass a CFBoolean as value. true will apply a
+     * horizontal flip after the rotation.
+     * default is false;
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTPixelRotationPropertyKey_FlipHorizontalOrientation();
+
+    /**
+     * [@constant] kVTPixelRotationPropertyKey_FlipVerticalOrientation
+     * 
+     * Specifies the vertical flip.
+     * 
+     * kVTPixelRotationPropertyKey_FlipVerticalOrientation must pass a CFBoolean as value. true will apply a vertical
+     * flip after the rotation.
+     * default is false;
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    public static native CFStringRef kVTPixelRotationPropertyKey_FlipVerticalOrientation();
 }

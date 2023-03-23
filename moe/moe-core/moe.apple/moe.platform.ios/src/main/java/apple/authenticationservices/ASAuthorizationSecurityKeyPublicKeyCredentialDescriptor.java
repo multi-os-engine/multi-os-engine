@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An object to describe a credential on a security key.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AuthenticationServices")

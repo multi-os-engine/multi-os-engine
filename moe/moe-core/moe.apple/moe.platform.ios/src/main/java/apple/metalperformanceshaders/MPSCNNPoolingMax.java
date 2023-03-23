@@ -44,9 +44,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNPoolingMax
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Specifies the max pooling filter. For each pixel, returns the maximum value of pixels
  * in the kernelWidth x kernelHeight filter region.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -173,7 +175,7 @@ public class MPSCNNPoolingMax extends MPSCNNPooling {
 
     /**
      * Initialize a MPSCNNPoolingMax pooling filter
-     *
+     * 
      * @param device          The device the filter will run on
      * @param kernelWidth     The width of the kernel. Can be an odd or even value.
      * @param kernelHeight    The height of the kernel. Can be an odd or even value.
@@ -193,12 +195,14 @@ public class MPSCNNPoolingMax extends MPSCNNPooling {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSCNNPooling object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")

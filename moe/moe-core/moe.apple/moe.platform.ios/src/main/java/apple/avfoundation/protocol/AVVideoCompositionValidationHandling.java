@@ -38,12 +38,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface AVVideoCompositionValidationHandling {
     /**
      * videoComposition:shouldContinueValidatingAfterFindingEmptyTimeRange:
-     * <p>
+     * 
      * Invoked by an instance of AVVideoComposition when validating an instance of AVVideoComposition, to report a
      * timeRange that has no corresponding video composition instruction.
-     *
-     * @return An indication of whether the AVVideoComposition should continue validation in order to report additional
+     * 
+     * @return
+     *         An indication of whether the AVVideoComposition should continue validation in order to report additional
      *         problems that may exist.
+     * 
+     *         API-Since: 5.0
      */
     @Generated
     @IsOptional
@@ -55,17 +58,20 @@ public interface AVVideoCompositionValidationHandling {
 
     /**
      * videoComposition:shouldContinueValidatingAfterFindingInvalidTimeRangeInInstruction:
-     * <p>
+     * 
      * Invoked by an instance of AVVideoComposition when validating an instance of AVVideoComposition, to report a video
      * composition instruction with a timeRange that's invalid, that overlaps with the timeRange of a prior instruction,
      * or that contains times earlier than the timeRange of a prior instruction.
-     * <p>
+     * 
      * Use CMTIMERANGE_IS_INVALID, defined in CMTimeRange.h, to test whether the timeRange itself is invalid. Refer to
      * headerdoc for AVVideoComposition.instructions for a discussion of how timeRanges for instructions must be
      * formulated.
-     *
-     * @return An indication of whether the AVVideoComposition should continue validation in order to report additional
+     * 
+     * @return
+     *         An indication of whether the AVVideoComposition should continue validation in order to report additional
      *         problems that may exist.
+     * 
+     *         API-Since: 5.0
      */
     @Generated
     @IsOptional
@@ -78,14 +84,17 @@ public interface AVVideoCompositionValidationHandling {
 
     /**
      * videoComposition:shouldContinueValidatingAfterFindingInvalidTrackIDInInstruction:layerInstruction:asset:
-     * <p>
+     * 
      * Invoked by an instance of AVVideoComposition when validating an instance of AVVideoComposition, to report a video
      * composition layer instruction with a trackID that does not correspond either to the trackID used for the
      * composition's animationTool or to a track of the asset specified in -[AVVideoComposition
      * isValidForAsset:timeRange:delegate:].
-     *
-     * @return An indication of whether the AVVideoComposition should continue validation in order to report additional
+     * 
+     * @return
+     *         An indication of whether the AVVideoComposition should continue validation in order to report additional
      *         problems that may exist.
+     * 
+     *         API-Since: 5.0
      */
     @Generated
     @IsOptional
@@ -99,12 +108,15 @@ public interface AVVideoCompositionValidationHandling {
 
     /**
      * videoComposition:shouldContinueValidatingAfterFindingInvalidValueForKey:
-     * <p>
+     * 
      * Invoked by an instance of AVVideoComposition when validating an instance of AVVideoComposition, to report a key
      * that has an invalid value.
-     *
-     * @return An indication of whether the AVVideoComposition should continue validation in order to report additional
+     * 
+     * @return
+     *         An indication of whether the AVVideoComposition should continue validation in order to report additional
      *         problems that may exist.
+     * 
+     *         API-Since: 5.0
      */
     @Generated
     @IsOptional

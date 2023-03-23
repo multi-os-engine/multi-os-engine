@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -153,6 +156,9 @@ public class MTLVertexAttribute extends NSObject {
     @NUInt
     public native long attributeIndex();
 
+    /**
+     * API-Since: 8.3
+     */
     @Generated
     @Selector("attributeType")
     @NUInt
@@ -166,10 +172,16 @@ public class MTLVertexAttribute extends NSObject {
     @Selector("isActive")
     public native boolean isActive();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("isPatchControlPointData")
     public native boolean isPatchControlPointData();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("isPatchData")
     public native boolean isPatchData();

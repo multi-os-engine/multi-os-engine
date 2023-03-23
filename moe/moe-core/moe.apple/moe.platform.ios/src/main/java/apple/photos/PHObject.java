@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -162,6 +165,8 @@ public class PHObject extends NSObject implements NSCopying {
 
     /**
      * Returns an identifier which persistently identifies the object on a given device
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("localIdentifier")

@@ -39,6 +39,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * NSURLSessionDownloadTask is a task that represents a download to
  * local storage.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("Foundation")
@@ -124,6 +126,13 @@ public class NSURLSessionDownloadTask extends NSURLSessionTask {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use -[NSURLSession downloadTaskWithRequest:] or other NSURLSession methods to create
+     * instances
+     */
+    @Deprecated
     @Generated
     @Owned
     @Selector("new")
@@ -163,6 +172,13 @@ public class NSURLSessionDownloadTask extends NSURLSessionTask {
     public native void cancelByProducingResumeData(
             @ObjCBlock(name = "call_cancelByProducingResumeData") Block_cancelByProducingResumeData completionHandler);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use -[NSURLSession downloadTaskWithRequest:] or other NSURLSession methods to create
+     * instances
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSURLSessionDownloadTask init();

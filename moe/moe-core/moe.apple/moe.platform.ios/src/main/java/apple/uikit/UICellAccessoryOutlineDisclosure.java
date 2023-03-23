@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A rotating disclosure chevron for use with outlines, used to indicate and toggle the expanded/collapsed state of the
  * item.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")

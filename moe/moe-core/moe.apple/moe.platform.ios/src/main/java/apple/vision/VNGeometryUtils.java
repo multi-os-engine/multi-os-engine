@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("Vision")
 @Runtime(ObjCRuntime.class)
@@ -64,12 +67,17 @@ public class VNGeometryUtils extends NSObject {
      * This takes the aspect ratio of the contour into account when using a VNContour as an input.
      * boundingCircleForPoints and boundingCircleForSIMDPoints assume that the aspect ratio is correctly applied to the
      * points.
-     *
+     * 
      * @param contour    A contour around which to find the bounding circle.
+     * 
      * @param points     A collection of points around which to find the bounding circle.
+     * 
      * @param pointCount Number of points in points
+     * 
      * @param contour    VNContour object whose bounding circle needs to be calculated
+     * 
      * @param error      An output parameter, populated only in case of algorithmic failure
+     * 
      * @return the VNCircle object describing the bounding circle or nil, if the algorithm failed. The latter case is
      *         accompanied by populating an 'error' output parameter
      */
@@ -90,13 +98,17 @@ public class VNGeometryUtils extends NSObject {
      * undefined results
      * Note that because this is based on a geometric shape the aspect ratio is important when using normalized points.
      * This takes the aspect ratio of the contour into account when using a VNContour as an input.
-     *
+     * 
      * @param area         Output parameter to be populated with calculated contour area
+     * 
      * @param contour      A VNContour object whose area is being calculated
+     * 
      * @param orientedArea If true, returns signed area - positive for CCW oriented contours and negative for CW
      *                     oriented contours.
      *                     If false, returned area is always positive.
+     * 
      * @param error        An output parameter, populated only in case of algorithmic failure
+     * 
      * @return Area calculation status, YES indicates success, NO - failure. The failure case is accompanied by
      *         populating an 'error' output parameter
      */
@@ -110,10 +122,13 @@ public class VNGeometryUtils extends NSObject {
      * set of points in VNContour object.
      * Note that because this is based on a geometric shape the aspect ratio is important when using normalized points.
      * This takes the aspect ratio of the contour into account when using a VNContour as an input.
-     *
+     * 
      * @param perimeter Output parameter to be populated with calculated contour perimeter
+     * 
      * @param contour   A VNContour object whose perimeter is being calculated
+     * 
      * @param error     An output parameter, populated only in case of algorithmic failure
+     * 
      * @return Perimeter calculation status, YES indicates success, NO - failure. The failure case is accompanied by
      *         populating an 'error' output parameter
      */

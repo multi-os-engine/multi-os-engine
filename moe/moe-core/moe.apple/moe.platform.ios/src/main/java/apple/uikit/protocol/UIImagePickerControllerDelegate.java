@@ -36,6 +36,9 @@ public interface UIImagePickerControllerDelegate {
      * The picker does not dismiss itself; the client dismisses it in these callbacks.
      * The delegate will receive one or the other, but not both, depending whether the user
      * confirms or cancels.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @IsOptional

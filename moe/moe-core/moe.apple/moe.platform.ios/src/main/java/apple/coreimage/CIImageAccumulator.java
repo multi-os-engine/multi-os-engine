@@ -18,7 +18,6 @@ package apple.coreimage;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGColorSpaceRef;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -40,7 +39,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -115,6 +118,9 @@ public class CIImageAccumulator extends NSObject {
     @Selector("imageAccumulatorWithExtent:format:")
     public static native CIImageAccumulator imageAccumulatorWithExtentFormat(@ByValue CGRect extent, int format);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("imageAccumulatorWithExtent:format:colorSpace:")
     public static native CIImageAccumulator imageAccumulatorWithExtentFormatColorSpace(@ByValue CGRect extent,
@@ -206,6 +212,9 @@ public class CIImageAccumulator extends NSObject {
     @Selector("initWithExtent:format:")
     public native CIImageAccumulator initWithExtentFormat(@ByValue CGRect extent, int format);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithExtent:format:colorSpace:")
     public native CIImageAccumulator initWithExtentFormatColorSpace(@ByValue CGRect extent, int format,

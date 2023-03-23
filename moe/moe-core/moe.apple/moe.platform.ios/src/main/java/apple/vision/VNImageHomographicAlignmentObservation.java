@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * VNImageHomographicAlignmentObservation
  * [@superclass] VNImageAlignmentObservation
- * <p>
+ * 
  * An observation describing the results of performing a homographic image alignment.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")

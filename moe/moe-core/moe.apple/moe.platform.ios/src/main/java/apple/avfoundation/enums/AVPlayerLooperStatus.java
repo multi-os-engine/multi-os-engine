@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVPlayerLooperStatus
- * <p>
+ * 
  * These constants are returned by the AVPlayerLooper status property to indicate whether it can successfully accomplish
  * looping playback.
  * [@constant] AVPlayerLooperStatusUnknown

@@ -21,15 +21,26 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueCurrentFanState
- * <p>
+ * 
  * [@constant] HMCharacteristicValueCurrentFanStateInactive Inactive.
  * [@constant] HMCharacteristicValueCurrentFanStateIdle Idle.
  * [@constant] HMCharacteristicValueCurrentFanStateActive Blowing Air.
+ * 
+ * API-Since: 10.2
  */
 @Generated
 public final class HMCharacteristicValueCurrentFanState {
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Inactive = 0x0000000000000000L;
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Idle = 0x0000000000000001L;
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Active = 0x0000000000000002L;
 
     @Generated

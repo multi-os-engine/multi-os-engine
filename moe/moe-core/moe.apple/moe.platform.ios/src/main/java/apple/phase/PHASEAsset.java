@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEAsset
- * <p>
+ * 
  * An object that represents a registered asset in the asset registry.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -92,7 +94,7 @@ public class PHASEAsset extends NSObject {
 
     /**
      * [@property] identifier
-     * <p>
+     * 
      * The identifier that uniquely represents this asset.
      */
     @Generated

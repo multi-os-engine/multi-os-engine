@@ -39,12 +39,14 @@ public final class MessageUI {
 
     /**
      * [@const] MFMailComposeErrorDomain
-     * <p>
+     * 
      * Error domain for NSError values stemming from the MFMailCompose API.
-     * <p>
+     * 
      * This error domain is used as the domain for all NSError instances stemmming from the
      * MFMailCompose API. Valid error code values are declared in the <tt>MFMailComposeErrorCode</tt>
      * space.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -70,11 +72,13 @@ public final class MessageUI {
 
     /**
      * [@const] MFMessageComposeViewControllerTextMessageAvailabilityDidChangeNotification
-     * <p>
+     * 
      * Notification posted when the value of <tt>+[MFMessageComposeViewController canSendText]</tt> has changed.
-     * <p>
+     * 
      * This notification is posted when the value of <tt>+[MFMessageComposeViewController canSendText]</tt>
      * has changed. Clients should invalidate any caches and update UI as appropriate.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -83,12 +87,14 @@ public final class MessageUI {
 
     /**
      * [@const] MFMessageComposeViewControllerTextMessageAvailabilityKey
-     * <p>
+     * 
      * UserInfo key for MFMessageComposeViewControllerTextMessageAvailabilityDidChangeNotification
      * containing the value of <tt>+[MFMessageComposeViewController canSendText]</tt>
-     * <p>
+     * 
      * The value of this key is an NSNumber containing a BOOL value. This value matches
      * the result of <tt>+[MFMessageComposeViewController canSendText]</tt>.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()

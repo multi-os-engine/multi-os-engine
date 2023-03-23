@@ -33,6 +33,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface ABPeoplePickerNavigationControllerDelegate {
     /**
      * Called after a person has been selected by the user.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -44,6 +46,8 @@ public interface ABPeoplePickerNavigationControllerDelegate {
 
     /**
      * Called after a property has been selected by the user.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -55,6 +59,9 @@ public interface ABPeoplePickerNavigationControllerDelegate {
 
     /**
      * Deprecated, use predicateForSelectionOfPerson and/or -peoplePickerNavigationController:didSelectPerson: instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -68,6 +75,9 @@ public interface ABPeoplePickerNavigationControllerDelegate {
     /**
      * Deprecated, use predicateForSelectionOfProperty and/or
      * -peoplePickerNavigationController:didSelectPerson:property:identifier: instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
      */
     @Generated
     @IsOptional

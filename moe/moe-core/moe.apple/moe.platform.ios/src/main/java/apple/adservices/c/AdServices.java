@@ -23,14 +23,16 @@ public final class AdServices {
 
     /**
      * [@enum] AAAttributionErrorCode
-     * <p>
+     * 
      * [@const] AAAttributionErrorCodeNetworkNotAvailable
      * A token could not be provided because a network error occured.
-     * <p>
+     * 
      * [@const] AAAttributionErrorCodeInternalError
      * A token could not be provided because an internal error occurred.
-     * <p>
+     * 
      * Error codes for NSErrors returned from the attributionTokenWithError: method.
+     * 
+     * API-Since: 14.3
      */
     @Generated
     @CVariable()

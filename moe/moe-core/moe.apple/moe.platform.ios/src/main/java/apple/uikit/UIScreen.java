@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -46,7 +45,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -133,7 +136,12 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
 
     /**
      * the device's internal screen
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use a UIScreen instance found through context instead: i.e, view.window.windowScene.screen
      */
+    @Deprecated
     @Generated
     @Selector("mainScreen")
     public static native UIScreen mainScreen();
@@ -153,7 +161,12 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
 
     /**
      * all screens currently attached to the device
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Use UIApplication.shared.openSessions to find open sessions with scenes from other screens
      */
+    @Deprecated
     @Generated
     @Selector("screens")
     public static native NSArray<? extends UIScreen> screens();
@@ -171,6 +184,10 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     */
     @Generated
     @Deprecated
     @Selector("applicationFrame")
@@ -179,6 +196,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
 
     /**
      * The list of modes that this screen supports
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("availableModes")
@@ -194,12 +213,17 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
 
     /**
      * 0 .. 1.0, where 1.0 is maximum brightness. Only supported by main screen.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("brightness")
     @NFloat
     public native double brightness();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("coordinateSpace")
     @MappedReturn(ObjCObjectMapper.class)
@@ -207,25 +231,45 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
 
     /**
      * Current mode of this screen
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("currentMode")
     public native UIScreenMode currentMode();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("displayLinkWithTarget:selector:")
     public native CADisplayLink displayLinkWithTargetSelector(@Mapped(ObjCObjectMapper.class) Object target, SEL sel);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("fixedCoordinateSpace")
     @MappedReturn(ObjCObjectMapper.class)
     public native UICoordinateSpace fixedCoordinateSpace();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use -[UIWindowScene focusSystem].focusedItem instead
+     */
+    @Deprecated
     @Generated
     @Selector("focusedItem")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIFocusItem focusedItem();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use -[UIWindowScene focusSystem].focusedItem instead
+     */
+    @Deprecated
     @Generated
     @Selector("focusedView")
     public native UIView focusedView();
@@ -237,6 +281,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     /**
      * The screen being mirrored by the receiver. nil if mirroring is disabled or unsupported. Moving a UIWindow to this
      * screen will disable mirroring
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("mirroredScreen")
@@ -244,6 +290,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
 
     /**
      * Native bounds of the physical screen in pixels
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("nativeBounds")
@@ -252,6 +300,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
 
     /**
      * Native scale factor of the physical screen
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("nativeScale")
@@ -261,6 +311,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     /**
      * Default is UIScreenOverscanCompensationScale. Determines how the screen behaves if the connected display is
      * overscanning
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("overscanCompensation")
@@ -269,6 +321,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
 
     /**
      * The amount that should be inset to avoid clipping
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("overscanCompensationInsets")
@@ -277,11 +331,16 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
 
     /**
      * Preferred mode of this screen. Choosing this mode will likely produce the best results
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @Selector("preferredMode")
     public native UIScreenMode preferredMode();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("scale")
     @NFloat
@@ -289,6 +348,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
 
     /**
      * 0 .. 1.0, where 1.0 is maximum brightness. Only supported by main screen.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setBrightness:")
@@ -296,6 +357,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
 
     /**
      * Current mode of this screen
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @Selector("setCurrentMode:")
@@ -304,6 +367,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     /**
      * Default is UIScreenOverscanCompensationScale. Determines how the screen behaves if the connected display is
      * overscanning
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setOverscanCompensation:")
@@ -312,6 +377,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     /**
      * Default is NO. If YES, brightness levels lower than that of which the hardware is capable are emulated in
      * software, if necessary. Having enabled may entail performance cost.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setWantsSoftwareDimming:")
@@ -320,11 +387,19 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     /**
      * Please see snapshotViewAfterScreenUpdates: in UIView.h for some important details on the behavior of this method
      * when called from layoutSubviews.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("snapshotViewAfterScreenUpdates:")
     public native UIView snapshotViewAfterScreenUpdates(boolean afterUpdates);
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use -[UIWindowScene focusSystem] != nil instead
+     */
+    @Deprecated
     @Generated
     @Selector("supportsFocus")
     public native boolean supportsFocus();
@@ -340,6 +415,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     /**
      * Default is NO. If YES, brightness levels lower than that of which the hardware is capable are emulated in
      * software, if necessary. Having enabled may entail performance cost.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("wantsSoftwareDimming")
@@ -347,6 +424,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
 
     /**
      * True if this screen is being captured (e.g. recorded, AirPlayed, mirrored, etc.)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isCaptured")
@@ -354,6 +433,8 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
 
     /**
      * The maximumFramesPerSecond this screen is capable of
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @Selector("maximumFramesPerSecond")
@@ -365,8 +446,46 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
      * Can be used along with CoreAudio devices' kAudioDeviceLatencyProperty to
      * achieve A/V sync when writing custom video playback software.
      * Will be `0` if display latency has not been calibrated by the user.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("calibratedLatency")
     public native double calibratedLatency();
+
+    /**
+     * Headroom is the ratio of the luminance of the brightest white the display can currently produce to the luminance
+     * of SDR white, in the display's native color space.
+     * The screen’s current headroom can change depending on the display configuration and whether it is currently
+     * displaying any EDR content.
+     * If any onscreen layer has `wantsExtendedDynamicRangeContent == YES` set, all rendered content is limited to the
+     * screen's currentEDRHeadroom value.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("currentEDRHeadroom")
+    @NFloat
+    public native double currentEDRHeadroom();
+
+    /**
+     * Returns the maximum potential EDR headroom the screen is capable of displaying when EDR is enabled, regardless of
+     * whether EDR is currently enabled.
+     * The potential EDR headroom may change depending on the display configuration. For example, this may change when
+     * referenceDisplayModeStatus changes.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("potentialEDRHeadroom")
+    @NFloat
+    public native double potentialEDRHeadroom();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("referenceDisplayModeStatus")
+    @NInt
+    public native long referenceDisplayModeStatus();
 }

@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -163,6 +166,8 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
     /**
      * The filename for the resource. If not specified, one will be inferred from a fileURL if available, or else
      * generated.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("originalFilename")
@@ -171,6 +176,8 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
     /**
      * The filename for the resource. If not specified, one will be inferred from a fileURL if available, or else
      * generated.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setOriginalFilename:")
@@ -180,6 +187,8 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
      * When enabled, the file passed to the creation request will be moved into the photo library without duplicating
      * the file data (the original file is removed if the asset is created successfully), otherwise a copy of the file
      * is created from the original. Defaults to NO. Attempting to move a file that is open or hardlinked will fail.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setShouldMoveFile:")
@@ -188,6 +197,8 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
     /**
      * The uniform type identifier for the resource. If not specified, one will be inferred from the
      * PHAssetResourceType.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setUniformTypeIdentifier:")
@@ -197,6 +208,8 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
      * When enabled, the file passed to the creation request will be moved into the photo library without duplicating
      * the file data (the original file is removed if the asset is created successfully), otherwise a copy of the file
      * is created from the original. Defaults to NO. Attempting to move a file that is open or hardlinked will fail.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("shouldMoveFile")
@@ -205,6 +218,8 @@ public class PHAssetResourceCreationOptions extends NSObject implements NSCopyin
     /**
      * The uniform type identifier for the resource. If not specified, one will be inferred from the
      * PHAssetResourceType.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("uniformTypeIdentifier")

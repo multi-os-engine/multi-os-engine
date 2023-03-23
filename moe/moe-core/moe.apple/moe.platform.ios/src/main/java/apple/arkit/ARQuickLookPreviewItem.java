@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -77,7 +80,7 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
 
     /**
      * An optional canonical web page URL for the 3D content that will be shared.
-     * <p>
+     * 
      * If this is supplied, the URL to the canonical web page is shared instead of the 3D content file.
      * For example, providing https://developer.apple.com/arkit/gallery/ as the canonical web page URL string will be
      * shared via the Share button. If the web page URL string is malformed or not provided, then AR Quick Look will
@@ -114,19 +117,19 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
 
     /**
      * Creates an object representing the 3D content that will be previewed in AR Quick Look.
-     * <p>
+     * 
      * This object will be previewed in AR Quick Look using the default
      * behavior:
-     * <p>
+     * 
      * - Start in Object mode without camera passthrough
-     * <p>
+     * 
      * - Display the Share button for 3D content sharing
-     * <p>
+     * 
      * - Allow scaling content in both Object and AR mode
-     * <p>
+     * 
      * This is a promise to the ARQuickLookPreviewItem class that the URL points to a 3D content file. This class does
      * not deal with the file's existence or content, and leaves it up to QuickLook to handle and process the URL.
-     *
+     * 
      * @param url A file URL to 3D content file (e.g. usdz).
      * @return The preview object to display in AR Quick Look.
      */
@@ -187,7 +190,7 @@ public class ARQuickLookPreviewItem extends NSObject implements QLPreviewItem {
 
     /**
      * An optional canonical web page URL for the 3D content that will be shared.
-     * <p>
+     * 
      * If this is supplied, the URL to the canonical web page is shared instead of the 3D content file.
      * For example, providing https://developer.apple.com/arkit/gallery/ as the canonical web page URL string will be
      * shared via the Share button. If the web page URL string is malformed or not provided, then AR Quick Look will

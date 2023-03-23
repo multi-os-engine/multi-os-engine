@@ -17,8 +17,6 @@ limitations under the License.
 package apple.mapkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -52,7 +50,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -158,6 +161,7 @@ public class MKAnnotationView extends UIView {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -184,6 +188,7 @@ public class MKAnnotationView extends UIView {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -259,46 +264,57 @@ public class MKAnnotationView extends UIView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -416,6 +432,9 @@ public class MKAnnotationView extends UIView {
     @ByValue
     public native CGPoint centerOffset();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("detailCalloutAccessoryView")
     public native UIView detailCalloutAccessoryView();
@@ -423,6 +442,8 @@ public class MKAnnotationView extends UIView {
     /**
      * Automatically set to MKAnnotationViewDragStateStarting, Canceling, and Ending when necessary.
      * Implementer is responsible for transitioning to Dragging and None states as appropriate.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("dragState")
@@ -453,6 +474,8 @@ public class MKAnnotationView extends UIView {
     /**
      * If YES and the underlying id<MKAnnotation> responds to setCoordinate:,
      * the user will be able to drag this annotation view around the map.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isDraggable")
@@ -461,6 +484,8 @@ public class MKAnnotationView extends UIView {
     /**
      * If YES and the underlying id<MKAnnotation> responds to setCoordinate:,
      * the user will be able to drag this annotation view around the map.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setDraggable:")
@@ -555,6 +580,9 @@ public class MKAnnotationView extends UIView {
     @Selector("setCenterOffset:")
     public native void setCenterOffset(@ByValue CGPoint value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setDetailCalloutAccessoryView:")
     public native void setDetailCalloutAccessoryView(UIView value);
@@ -562,6 +590,8 @@ public class MKAnnotationView extends UIView {
     /**
      * Automatically set to MKAnnotationViewDragStateStarting, Canceling, and Ending when necessary.
      * Implementer is responsible for transitioning to Dragging and None states as appropriate.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setDragState:")
@@ -569,6 +599,8 @@ public class MKAnnotationView extends UIView {
 
     /**
      * Developers targeting iOS 4.2 and after must use setDragState:animated: instead of setDragState:.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("setDragState:animated:")
@@ -592,6 +624,8 @@ public class MKAnnotationView extends UIView {
 
     /**
      * If non-nil this is the annotation view this view is clustered into.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("clusterAnnotationView")
@@ -599,6 +633,8 @@ public class MKAnnotationView extends UIView {
 
     /**
      * Annotation views with equal non-nil identifiers can cluster together.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("clusteringIdentifier")
@@ -606,6 +642,8 @@ public class MKAnnotationView extends UIView {
 
     /**
      * Default collision mode is rectangle.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("collisionMode")
@@ -614,17 +652,24 @@ public class MKAnnotationView extends UIView {
 
     /**
      * Default is MKFeatureDisplayPriorityRequired, other values opts into collision occlusion by priority.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("displayPriority")
     public native float displayPriority();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("prepareForDisplay")
     public native void prepareForDisplay();
 
     /**
      * Annotation views with equal non-nil identifiers can cluster together.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setClusteringIdentifier:")
@@ -632,6 +677,8 @@ public class MKAnnotationView extends UIView {
 
     /**
      * Default collision mode is rectangle.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCollisionMode:")
@@ -639,6 +686,8 @@ public class MKAnnotationView extends UIView {
 
     /**
      * Default is MKFeatureDisplayPriorityRequired, other values opts into collision occlusion by priority.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDisplayPriority:")
@@ -650,18 +699,30 @@ public class MKAnnotationView extends UIView {
             boolean autoreverses,
             @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("selectedZPriority")
     public native float selectedZPriority();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setSelectedZPriority:")
     public native void setSelectedZPriority(float value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setZPriority:")
     public native void setZPriority(float value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("zPriority")
     public native float zPriority();

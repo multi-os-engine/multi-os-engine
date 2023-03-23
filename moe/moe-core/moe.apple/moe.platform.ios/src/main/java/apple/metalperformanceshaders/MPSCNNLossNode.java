@@ -24,7 +24,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSCNNLossNode
- * <p>
+ * 
  * This node calculates loss information during training
  * typically immediately after the inference portion
  * of network evaluation is performed. The result image
@@ -33,6 +33,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * their way back up the graph. In addition, the node will
  * update the loss image in the MPSNNLabels with the
  * desired estimate of correctness.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")

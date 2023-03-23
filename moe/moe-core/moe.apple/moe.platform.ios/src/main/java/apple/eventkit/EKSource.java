@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("EventKit")
 @Runtime(ObjCRuntime.class)
@@ -150,8 +153,11 @@ public class EKSource extends EKObject {
 
     /**
      * [@property] calendars
-     * <p>
+     * 
      * This is now deprecated in favor of -[EKSource calendarsForEntityType:]
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 6.0
      */
     @Generated
     @Deprecated
@@ -160,9 +166,11 @@ public class EKSource extends EKObject {
 
     /**
      * calendarsForEntityType
-     * <p>
+     * 
      * Returns the calendars that belong to this source that
      * support a given entity type (reminders, events)
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("calendarsForEntityType:")
@@ -184,4 +192,15 @@ public class EKSource extends EKObject {
     @Generated
     @Selector("title")
     public native String title();
+
+    /**
+     * [@property] isDelegate
+     * 
+     * Returns YES if this EKSource represents an account delegated by another user.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isDelegate")
+    public native boolean isDelegate();
 }

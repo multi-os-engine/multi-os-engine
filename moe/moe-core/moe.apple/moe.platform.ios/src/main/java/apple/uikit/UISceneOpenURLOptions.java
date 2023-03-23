@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This object is vended to your application's UISceneDelegate when it is asked to open a URL
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")
@@ -166,6 +168,8 @@ public class UISceneOpenURLOptions extends NSObject {
 
     /**
      * An event attribution associated with the URL to open.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("eventAttribution")

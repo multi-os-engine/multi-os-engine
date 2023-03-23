@@ -33,6 +33,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UISearchBarDelegate")
 public interface UISearchBarDelegate extends UIBarPositioningDelegate {
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("searchBar:selectedScopeButtonIndexDidChange:")
@@ -42,6 +45,8 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
 
     /**
      * called before text changes
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @IsOptional
@@ -83,6 +88,8 @@ public interface UISearchBarDelegate extends UIBarPositioningDelegate {
 
     /**
      * called when search results button pressed
+     * 
+     * API-Since: 3.2
      */
     @Generated
     @IsOptional

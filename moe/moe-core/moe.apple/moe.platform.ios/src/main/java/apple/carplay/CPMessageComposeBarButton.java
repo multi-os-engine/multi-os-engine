@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -91,7 +94,7 @@ public class CPMessageComposeBarButton extends CPBarButton {
 
     /**
      * Convenience initializer that creates a message compose button with a system-provided image.
-     * <p>
+     * 
      * [@note] This button type does not use a handler. Instead, tapping this button will activate Siri
      * and launch into a compose message flow.
      */
@@ -105,7 +108,7 @@ public class CPMessageComposeBarButton extends CPBarButton {
 
     /**
      * Convenience initializer that creates a message compose button with a custom image.
-     * <p>
+     * 
      * [@note] This button type does not use a handler. Instead, tapping this button will activate Siri
      * and launch into a compose message flow.
      */
@@ -123,6 +126,7 @@ public class CPMessageComposeBarButton extends CPBarButton {
     public native CPMessageComposeBarButton initWithTitleHandler(String title,
             @ObjCBlock(name = "call_initWithTitleHandler") CPBarButton.Block_initWithTitleHandler handler);
 
+    @Deprecated
     @Generated
     @Selector("initWithType:handler:")
     public native CPMessageComposeBarButton initWithTypeHandler(@NUInt long type,

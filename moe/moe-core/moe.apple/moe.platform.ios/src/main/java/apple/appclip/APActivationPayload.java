@@ -33,10 +33,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * APActivationPayload
- * An APActivationPayload object is an object passed to application within NSUserActity when it is launched by a
+ * An APActivationPayload object is an object passed to application within NSUserActivity when it is launched by a
  * physical code scan. Upon receiving
  * the payload, application can inspect its content. Application can also check whether the payload was acquired at an
  * expected location.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("AppClip")
@@ -94,12 +96,12 @@ public class APActivationPayload extends NSObject implements NSSecureCoding, NSC
 
     /**
      * checks if the payload was acquired at an expected region.
-     * <p>
+     * 
      * For the system to accept this request, application needs to specify sub-key NSAppClipRequestLocationConfirmation
      * to true in NSAppClip section in Info.plist.
-     *
+     * 
      * @param region            the region this paylaod is expected to be acquired.
-     * @param completionHandler the completion handler which is called when the system confirms weather the payload was
+     * @param completionHandler the completion handler which is called when the system confirms whether the payload was
      *                          acquired in expected region.
      */
     @Generated

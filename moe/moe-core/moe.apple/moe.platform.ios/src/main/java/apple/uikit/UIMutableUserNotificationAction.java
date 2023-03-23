@@ -41,6 +41,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ * Deprecated-Since: 10.0
+ * Deprecated-Message: Use UserNotifications Framework's UNNotificationAction
+ */
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -165,6 +171,8 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
 
     /**
      * The behavior of this action when the user activates it.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("behavior")
@@ -218,6 +226,8 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
 
     /**
      * Parameters that can be used by some types of actions.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("parameters")
@@ -232,6 +242,8 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
 
     /**
      * The behavior of this action when the user activates it.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setBehavior:")
@@ -246,6 +258,8 @@ public class UIMutableUserNotificationAction extends UIUserNotificationAction {
 
     /**
      * Parameters that can be used by some types of actions.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setParameters:")

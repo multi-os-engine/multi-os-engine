@@ -25,12 +25,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.protocol.UIMenuLeaf;
+import apple.uikit.protocol.UIPopoverPresentationControllerSourceItem;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class UIAction extends UIMenuElement {
+public class UIAction extends UIMenuElement implements UIMenuLeaf {
     static {
         NatJ.register();
     }
@@ -46,11 +51,12 @@ public class UIAction extends UIMenuElement {
 
     /**
      * Creates a UIAction with the given arguments.
-     *
+     * 
      * @param title      The action's title.
      * @param image      Image that can appear next to this action, if needed.
      * @param identifier The action's identifier. Pass nil to use an auto-generated identifier.
      * @param handler    Handler block. Called when the user selects the action.
+     * 
      * @return A new UIAction.
      */
     @Generated
@@ -256,9 +262,12 @@ public class UIAction extends UIMenuElement {
 
     /**
      * Creates a UIAction with an empty title, nil image, and automatically generated identifier
-     *
+     * 
      * @param handler Handler block. Called when the user selects the action.
+     * 
      * @return A new UIAction.
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("actionWithHandler:")
@@ -282,13 +291,26 @@ public class UIAction extends UIMenuElement {
 
     /**
      * Creates a new UIAction for the captureTextFromCamera: standard edit action.
-     *
+     * 
      * @param responder  The UIKeyInput responder to send captureTextFromCamera: to.
      * @param identifier The action's identifier. Pass nil to use an auto-generated identifier.
+     * 
      * @return A new UIAction.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("captureTextFromCameraActionForResponder:identifier:")
     public static native UIAction captureTextFromCameraActionForResponderIdentifier(UIResponder responder,
             String identifier);
+
+    @Generated
+    @Selector("performWithSender:target:")
+    public native void performWithSenderTarget(@Mapped(ObjCObjectMapper.class) Object sender,
+            @Mapped(ObjCObjectMapper.class) Object target);
+
+    @Generated
+    @Selector("presentationSourceItem")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIPopoverPresentationControllerSourceItem presentationSourceItem();
 }

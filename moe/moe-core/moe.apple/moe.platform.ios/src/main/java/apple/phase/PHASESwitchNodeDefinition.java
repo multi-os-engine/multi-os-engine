@@ -24,10 +24,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASESwitchNodeDefinition
- * <p>
+ * 
  * An object for defining a switch sound event node when building a sound event.
- * <p>
+ * 
  * A switch node switches between its children based on a string parameter.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -49,11 +51,13 @@ public class PHASESwitchNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * addSubtree
-     * <p>
+     * 
      * Add a subtree to a switch node
-     *
-     * @param subtree     A PHASESoundEventNodeDefinition that will be a child node of this switch node
-     * @param switchValue A string value that the metaparameter will use to activate this subtree
+     * 
+     * @param subtree
+     *                    A PHASESoundEventNodeDefinition that will be a child node of this switch node
+     * @param switchValue
+     *                    A string value that the metaparameter will use to activate this subtree
      */
     @Generated
     @Selector("addSubtree:switchValue:")
@@ -110,12 +114,14 @@ public class PHASESwitchNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * initWithSwitchMetaParameterDefinition
-     * <p>
+     * 
      * Create a switch node definition
-     *
-     * @param switchMetaParameterDefinition A metaparameter definition that wil be used to control the parameter of the
+     * 
+     * @param switchMetaParameterDefinition
+     *                                      A metaparameter definition that wil be used to control the parameter of the
      *                                      switch node at runtime.
-     * @return A new PHASESwitchNodeDefinition object
+     * @return
+     *         A new PHASESwitchNodeDefinition object
      */
     @Generated
     @Selector("initWithSwitchMetaParameterDefinition:")
@@ -124,13 +130,16 @@ public class PHASESwitchNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * initWithSwitchMetaParameterDefinition:identifier
-     * <p>
+     * 
      * Create a switch node definition
-     *
-     * @param switchMetaParameterDefinition A metaparameter definition that wil be used to control the parameter of the
+     * 
+     * @param switchMetaParameterDefinition
+     *                                      A metaparameter definition that wil be used to control the parameter of the
      *                                      switch node at runtime.
-     * @param identifier                    An optional custom identifier to give to this object
-     * @return A new PHASESwitchNodeDefinition object
+     * @param identifier
+     *                                      An optional custom identifier to give to this object
+     * @return
+     *         A new PHASESwitchNodeDefinition object
      */
     @Generated
     @Selector("initWithSwitchMetaParameterDefinition:identifier:")
@@ -181,7 +190,7 @@ public class PHASESwitchNodeDefinition extends PHASESoundEventNodeDefinition {
 
     /**
      * [@property] mixerDefinition
-     * <p>
+     * 
      * The readonly property that returns the PHASEMixerDefinition this sampler was created with and assigned to.
      */
     @Generated

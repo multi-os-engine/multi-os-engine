@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -241,16 +244,32 @@ public class UIImageSymbolConfiguration extends UIImageConfiguration {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("configurationPreferringMulticolor")
     public static native UIImageSymbolConfiguration configurationPreferringMulticolor();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("configurationWithHierarchicalColor:")
     public static native UIImageSymbolConfiguration configurationWithHierarchicalColor(UIColor hierarchicalColor);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("configurationWithPaletteColors:")
     public static native UIImageSymbolConfiguration configurationWithPaletteColors(
             NSArray<? extends UIColor> paletteColors);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("configurationPreferringMonochrome")
+    public static native UIImageSymbolConfiguration configurationPreferringMonochrome();
 }

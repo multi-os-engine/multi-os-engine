@@ -44,9 +44,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMMagnetometerData
- * <p>
+ * 
  * Discussion:
  * Contains a single magnetometer measurement.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("CoreMotion")
@@ -172,7 +174,7 @@ public class CMMagnetometerData extends CMLogItem {
 
     /**
      * magneticField
-     * <p>
+     * 
      * Discussion:
      * Returns the magnetic field measured by the magnetometer. Note
      * that this is the total magnetic field observed by the device which

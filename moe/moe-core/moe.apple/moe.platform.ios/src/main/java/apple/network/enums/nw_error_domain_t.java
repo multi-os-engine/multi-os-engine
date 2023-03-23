@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_error_domain_t
- * <p>
+ * 
  * The enumeration of network error domains.
  */
 @Generated

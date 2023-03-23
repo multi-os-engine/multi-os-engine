@@ -5,8 +5,10 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NETrafficDirection
- * <p>
+ * 
  * The direction of network traffic
+ * 
+ * API-Since: 13.0
  */
 @Generated
 public final class NETrafficDirection {
@@ -16,14 +18,20 @@ public final class NETrafficDirection {
 
     /**
      * [@const] NETrafficDirectionAny Any direction
+     * 
+     * API-Since: 13.0
      */
     @Generated @NInt public static final long Any = 0x0000000000000000L;
     /**
      * [@const] NETrafficDirectionInbound Inbound direction
+     * 
+     * API-Since: 13.0
      */
     @Generated @NInt public static final long Inbound = 0x0000000000000001L;
     /**
      * [@const] NETrafficDirectionOutbound Outbound direction
+     * 
+     * API-Since: 13.0
      */
     @Generated @NInt public static final long Outbound = 0x0000000000000002L;
 }

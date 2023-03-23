@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UserNotifications")
 @Runtime(ObjCRuntime.class)
@@ -38,6 +41,8 @@ public interface UNUserNotificationCenterDelegate {
      * The method will be called on the delegate when the user responded to the notification by opening the application,
      * dismissing the notification or choosing a UNNotificationAction. The delegate must be set before the application
      * returns from application:didFinishLaunchingWithOptions:.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -54,6 +59,8 @@ public interface UNUserNotificationCenterDelegate {
      * application can choose to have the notification presented as a sound, badge, alert and/or in the notification
      * list. This decision should be based on whether the information in the notification is otherwise visible to the
      * user.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -83,6 +90,8 @@ public interface UNUserNotificationCenterDelegate {
      * view in-app notification settings. Add UNAuthorizationOptionProvidesAppNotificationSettings as an option in
      * requestAuthorizationWithOptions:completionHandler: to add a button to inline notification settings view and the
      * notification settings view in Settings. The notification will be nil when opened from Settings.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @IsOptional

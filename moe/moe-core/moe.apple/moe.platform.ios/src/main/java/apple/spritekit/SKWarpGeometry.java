@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Base class for future expansion
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("SpriteKit")

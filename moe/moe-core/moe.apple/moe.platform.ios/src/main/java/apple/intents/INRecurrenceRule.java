@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -179,11 +182,17 @@ public class INRecurrenceRule extends NSObject implements NSCopying, NSSecureCod
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithInterval:frequency:weeklyRecurrenceDays:")
     public native INRecurrenceRule initWithIntervalFrequencyWeeklyRecurrenceDays(@NUInt long interval,
             @NInt long frequency, @NUInt long weeklyRecurrenceDays);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("weeklyRecurrenceDays")
     @NUInt

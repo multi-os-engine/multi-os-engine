@@ -31,6 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A SceneKit geometry representing a plane.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("ARKit")
@@ -144,7 +146,7 @@ public class ARSCNPlaneGeometry extends SCNGeometry {
 
     /**
      * Creates a new plane geometry using a Metal device.
-     *
+     * 
      * @param device A Metal device.
      * @return A new plane geometry.
      */
@@ -180,7 +182,7 @@ public class ARSCNPlaneGeometry extends SCNGeometry {
 
     /**
      * Updates the geometry with the vertices of a plane geometry.
-     *
+     * 
      * @param planeGeometry A plane geometry.
      */
     @Generated

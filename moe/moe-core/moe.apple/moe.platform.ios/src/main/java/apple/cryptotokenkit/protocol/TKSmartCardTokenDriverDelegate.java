@@ -25,7 +25,7 @@ public interface TKSmartCardTokenDriverDelegate extends TKTokenDriverDelegate {
     /**
      * Called by system when new SmartCard is detected. You must override this method to create a new valid token
      * TKSmartCardToken instance for @c smartCard.
-     *
+     * 
      * @param smartCard Target SmartCard.
      * @param AID       ISO7816-4 AID (application ID) which is already selected on the card. If @c com.apple.ctk.aid is
      *                  not present, no application is selected and this parameter is nil.

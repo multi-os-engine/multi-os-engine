@@ -29,8 +29,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKActivityMoveModeObject
- * <p>
+ * 
  * A wrapper object for HKActivityMoveMode enumeration.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("HealthKit")

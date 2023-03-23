@@ -19,8 +19,14 @@ package apple.safariservices.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 public final class SSReadingListErrorCode {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long SSReadingListErrorURLSchemeNotAllowed = 0x0000000000000001L;
 
     @Generated

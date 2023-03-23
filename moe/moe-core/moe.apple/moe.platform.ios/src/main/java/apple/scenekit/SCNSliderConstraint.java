@@ -29,8 +29,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNSliderConstraint
- * <p>
+ * 
  * A SCNSliderConstraint constraint makes a node to collide and slide against a category of nodes
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("SceneKit")
@@ -84,7 +86,7 @@ public class SCNSliderConstraint extends SCNConstraint {
 
     /**
      * [@property] collisionCategoryBitMask
-     * <p>
+     * 
      * Defines the category of node to collide against. Defaults to 0.
      */
     @Generated
@@ -141,7 +143,7 @@ public class SCNSliderConstraint extends SCNConstraint {
 
     /**
      * [@property] offset
-     * <p>
+     * 
      * Defines the offset of the slider. Defaults to (0,0,0).
      */
     @Generated
@@ -151,7 +153,7 @@ public class SCNSliderConstraint extends SCNConstraint {
 
     /**
      * [@property] radius
-     * <p>
+     * 
      * Defines the radius of the slider. Defaults to 1.
      */
     @Generated
@@ -169,7 +171,7 @@ public class SCNSliderConstraint extends SCNConstraint {
 
     /**
      * [@property] collisionCategoryBitMask
-     * <p>
+     * 
      * Defines the category of node to collide against. Defaults to 0.
      */
     @Generated
@@ -178,7 +180,7 @@ public class SCNSliderConstraint extends SCNConstraint {
 
     /**
      * [@property] offset
-     * <p>
+     * 
      * Defines the offset of the slider. Defaults to (0,0,0).
      */
     @Generated
@@ -187,7 +189,7 @@ public class SCNSliderConstraint extends SCNConstraint {
 
     /**
      * [@property] radius
-     * <p>
+     * 
      * Defines the radius of the slider. Defaults to 1.
      */
     @Generated
@@ -200,7 +202,7 @@ public class SCNSliderConstraint extends SCNConstraint {
 
     /**
      * accelerationConstraint
-     * <p>
+     * 
      * Creates and returns a SCNSliderConstraint object.
      */
     @Generated

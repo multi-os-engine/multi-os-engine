@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A WKScriptMessage object contains information about a message sent from
  * a webpage.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("WebKit")
@@ -155,7 +157,7 @@ public class WKScriptMessage extends NSObject {
 
     /**
      * The body of the message.
-     * <p>
+     * 
      * Allowed types are NSNumber, NSString, NSDate, NSArray,
      * NSDictionary, and NSNull.
      */
@@ -191,6 +193,8 @@ public class WKScriptMessage extends NSObject {
 
     /**
      * The content world from which the message was sent.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("world")

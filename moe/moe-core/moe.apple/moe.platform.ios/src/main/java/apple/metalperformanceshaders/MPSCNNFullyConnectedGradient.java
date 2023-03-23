@@ -29,8 +29,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNFullyConnectedGradient
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Compute the gradient for fully connected layer.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -105,13 +107,13 @@ public class MPSCNNFullyConnectedGradient extends MPSCNNConvolutionGradient {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
@@ -127,10 +129,11 @@ public class MPSCNNFullyConnectedGradient extends MPSCNNConvolutionGradient {
 
     /**
      * Initializes a convolution gradient (with respect to weights and bias) object.
-     *
+     * 
      * @param device  The MTLDevice on which this MPSCNNConvolutionGradient filter will be used
      * @param weights A pointer to a object that conforms to the MPSCNNConvolutionDataSource
      *                protocol. Note that same data source as provided to forward convolution should be used.
+     * 
      * @return A valid MPSCNNConvolutionGradient object or nil, if failure.
      */
     @Generated

@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("SceneKit")
 @Runtime(ObjCRuntime.class)
@@ -74,9 +77,9 @@ public class SCNBillboardConstraint extends SCNConstraint {
 
     /**
      * billboardConstraint:
-     * <p>
+     * 
      * Creates and returns a SCNBillboardConstraint constraint.
-     * <p>
+     * 
      * A billboard constraint forces the receiver to look into the direction of the current point of view.
      */
     @Generated
@@ -167,7 +170,7 @@ public class SCNBillboardConstraint extends SCNConstraint {
 
     /**
      * [@property] freeAxes
-     * <p>
+     * 
      * Specifies the axes on which the billboarding orientation operates. Defaults to SCNBillboardAxisAll.
      */
     @Generated
@@ -185,7 +188,7 @@ public class SCNBillboardConstraint extends SCNConstraint {
 
     /**
      * [@property] freeAxes
-     * <p>
+     * 
      * Specifies the axes on which the billboarding orientation operates. Defaults to SCNBillboardAxisAll.
      */
     @Generated

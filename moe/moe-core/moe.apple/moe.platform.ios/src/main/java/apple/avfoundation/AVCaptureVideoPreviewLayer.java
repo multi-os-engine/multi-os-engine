@@ -17,8 +17,6 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -46,17 +44,21 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * AVCaptureVideoPreviewLayer
- * <p>
+ * 
  * A CoreAnimation layer subclass for previewing the visual output of an AVCaptureSession.
- * <p>
+ * 
  * An AVCaptureVideoPreviewLayer instance is a subclass of CALayer and is therefore suitable for insertion in a layer
  * hierarchy as part of a graphical interface. One creates an AVCaptureVideoPreviewLayer instance with the capture
  * session to be previewed, using +layerWithSession: or -initWithSession:. Using the @"videoGravity" property, one can
  * influence how content is viewed relative to the layer bounds. On some hardware configurations, the orientation of the
  * layer can be manipulated using @"orientation" and @"mirrored".
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("AVFoundation")
@@ -158,11 +160,13 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * layerWithSession:
-     * <p>
+     * 
      * Creates an AVCaptureVideoPreviewLayer for previewing the visual output of the specified AVCaptureSession.
-     *
-     * @param session The AVCaptureSession instance to be previewed.
-     * @return A newly initialized AVCaptureVideoPreviewLayer instance.
+     * 
+     * @param session
+     *                The AVCaptureSession instance to be previewed.
+     * @return
+     *         A newly initialized AVCaptureVideoPreviewLayer instance.
      */
     @Generated
     @Selector("layerWithSession:")
@@ -170,14 +174,18 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * layerWithSessionWithNoConnection:
-     * <p>
+     * 
      * Creates an AVCaptureVideoPreviewLayer for previewing the visual output of the specified AVCaptureSession, but
      * creates no connections to any of the session's eligible video inputs. Only use this initializer if you intend to
      * manually form a connection between a desired AVCaptureInputPort and the receiver using AVCaptureSession's
      * -addConnection: method.
-     *
-     * @param session The AVCaptureSession instance to be previewed.
-     * @return A newly initialized AVCaptureVideoPreviewLayer instance.
+     * 
+     * @param session
+     *                The AVCaptureSession instance to be previewed.
+     * @return
+     *         A newly initialized AVCaptureVideoPreviewLayer instance.
+     * 
+     *         API-Since: 8.0
      */
     @Generated
     @Selector("layerWithSessionWithNoConnection:")
@@ -215,13 +223,17 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * [@property] automaticallyAdjustsMirroring
-     * <p>
+     * 
      * Specifies whether or not the value of @"mirrored" can change based on configuration of the session.
-     * <p>
+     * 
      * For some session configurations, preview will be mirrored by default. When the value of this property is YES, the
      * value of @"mirrored" may change depending on the configuration of the session, for example after switching to a
      * different AVCaptureDeviceInput. The default value is YES. This property is deprecated. Use AVCaptureConnection's
      * -automaticallyAdjustsVideoMirroring instead.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Use AVCaptureConnection's automaticallyAdjustsVideoMirroring instead.
      */
     @Generated
     @Deprecated
@@ -230,17 +242,21 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * captureDevicePointOfInterestForPoint:
-     * <p>
+     * 
      * Converts a point in layer coordinates to a point of interest in the coordinate space of the capture device
      * providing input to the layer.
-     * <p>
+     * 
      * AVCaptureDevice pointOfInterest is expressed as a CGPoint where {0,0} represents the top left of the picture
      * area, and {1,1} represents the bottom right on an unrotated picture. This convenience method converts a point in
      * the coordinate space of the receiver to a point of interest in the coordinate space of the AVCaptureDevice
      * providing input to the receiver. The conversion takes frameSize and videoGravity into consideration.
-     *
-     * @param pointInLayer A CGPoint in layer coordinates.
-     * @return A CGPoint in the coordinate space of the capture device providing input to the layer.
+     * 
+     * API-Since: 6.0
+     * 
+     * @param pointInLayer
+     *                     A CGPoint in layer coordinates.
+     * @return
+     *         A CGPoint in the coordinate space of the capture device providing input to the layer.
      */
     @Generated
     @Selector("captureDevicePointOfInterestForPoint:")
@@ -249,12 +265,14 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * [@property] connection
-     * <p>
+     * 
      * The AVCaptureConnection instance describing the AVCaptureInputPort to which the receiver is connected.
-     * <p>
+     * 
      * When calling initWithSession: or setSession: with a valid AVCaptureSession instance, a connection is formed to
      * the first eligible video AVCaptureInput. If the receiver is detached from a session, the connection property
      * becomes nil.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("connection")
@@ -274,11 +292,13 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * initWithSession:
-     * <p>
+     * 
      * Creates an AVCaptureVideoPreviewLayer for previewing the visual output of the specified AVCaptureSession.
-     *
-     * @param session The AVCaptureSession instance to be previewed.
-     * @return A newly initialized AVCaptureVideoPreviewLayer instance.
+     * 
+     * @param session
+     *                The AVCaptureSession instance to be previewed.
+     * @return
+     *         A newly initialized AVCaptureVideoPreviewLayer instance.
      */
     @Generated
     @Selector("initWithSession:")
@@ -286,14 +306,18 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * initWithSessionWithNoConnection:
-     * <p>
+     * 
      * Creates an AVCaptureVideoPreviewLayer for previewing the visual output of the specified AVCaptureSession, but
      * creates no connections to any of the session's eligible video inputs. Only use this initializer if you intend to
      * manually form a connection between a desired AVCaptureInputPort and the receiver using AVCaptureSession's
      * -addConnection: method.
-     *
-     * @param session The AVCaptureSession instance to be previewed.
-     * @return A newly initialized AVCaptureVideoPreviewLayer instance.
+     * 
+     * @param session
+     *                The AVCaptureSession instance to be previewed.
+     * @return
+     *         A newly initialized AVCaptureVideoPreviewLayer instance.
+     * 
+     *         API-Since: 8.0
      */
     @Generated
     @Selector("initWithSessionWithNoConnection:")
@@ -301,14 +325,18 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * [@property] mirrored
-     * <p>
+     * 
      * Specifies whether or not the preview is flipped over a vertical axis.
-     * <p>
+     * 
      * For most applications, it is unnecessary to manipulate preview mirroring manually
      * if @"automaticallyAdjustsMirroring" is set to YES. The value of @"automaticallyAdjustsMirroring" must be NO in
      * order to set @"mirrored". The value of @"mirroringSupported" must be YES in order to set @"mirrored". An
      * exception will be raised if the value of @"mirrored" is mutated without respecting these requirements. This
      * property is deprecated. Use AVCaptureConnection's -videoMirrored instead.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Use AVCaptureConnection's videoMirrored instead.
      */
     @Generated
     @Deprecated
@@ -317,14 +345,18 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * [@property] mirrored
-     * <p>
+     * 
      * Specifies whether or not the preview is flipped over a vertical axis.
-     * <p>
+     * 
      * For most applications, it is unnecessary to manipulate preview mirroring manually
      * if @"automaticallyAdjustsMirroring" is set to YES. The value of @"automaticallyAdjustsMirroring" must be NO in
      * order to set @"mirrored". The value of @"mirroringSupported" must be YES in order to set @"mirrored". An
      * exception will be raised if the value of @"mirrored" is mutated without respecting these requirements. This
      * property is deprecated. Use AVCaptureConnection's -videoMirrored instead.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Use AVCaptureConnection's videoMirrored instead.
      */
     @Generated
     @Deprecated
@@ -333,12 +365,16 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * [@property] mirroringSupported
-     * <p>
+     * 
      * Specifies whether or not the preview layer supports mirroring.
-     * <p>
+     * 
      * Mirroring is not supported on all hardware configurations. An application should check the value
      * of @"mirroringSupported" before attempting to manipulate mirroring on the receiver. This property is deprecated.
      * Use AVCaptureConnection's -isVideoMirroringSupported instead.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Use AVCaptureConnection's isVideoMirroringSupported instead.
      */
     @Generated
     @Deprecated
@@ -347,12 +383,16 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * [@property] orientationSupported
-     * <p>
+     * 
      * Specifies whether or not the preview layer supports orientation.
-     * <p>
+     * 
      * Changes in orientation are not supported on all hardware configurations. An application should check the value
      * of @"orientationSupported" before attempting to manipulate the orientation of the receiver. This property is
      * deprecated. Use AVCaptureConnection's -isVideoOrientationSupported instead.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Use AVCaptureConnection's isVideoOrientationSupported instead.
      */
     @Generated
     @Deprecated
@@ -361,18 +401,22 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * metadataOutputRectOfInterestForRect:
-     * <p>
+     * 
      * Converts a rectangle in layer coordinates to a rectangle of interest in the coordinate space of an
      * AVCaptureMetadataOutput whose capture device is providing input to the layer.
-     * <p>
+     * 
      * AVCaptureMetadataOutput rectOfInterest is expressed as a CGRect where {0,0} represents the top left of the
      * picture area, and {1,1} represents the bottom right on an unrotated picture. This convenience method converts a
      * rectangle in the coordinate space of the receiver to a rectangle of interest in the coordinate space of an
      * AVCaptureMetadataOutput whose AVCaptureDevice is providing input to the receiver. The conversion takes frame size
      * and videoGravity into consideration.
-     *
-     * @param rectInLayerCoordinates A CGRect in layer coordinates.
-     * @return A CGRect in the coordinate space of the metadata output whose capture device is providing input to the
+     * 
+     * API-Since: 7.0
+     * 
+     * @param rectInLayerCoordinates
+     *                               A CGRect in layer coordinates.
+     * @return
+     *         A CGRect in the coordinate space of the metadata output whose capture device is providing input to the
      *         layer.
      */
     @Generated
@@ -382,12 +426,16 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * [@property] orientation
-     * <p>
+     * 
      * Specifies the orientation of the preview layer.
-     * <p>
+     * 
      * AVCaptureVideoOrientation and its constants are defined in AVCaptureSession.h. The value
      * of @"orientationSupported" must be YES in order to set @"orientation". An exception will be raised if this
      * requirement is ignored. This property is deprecated. Use AVCaptureConnection's -videoOrientation instead.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Use AVCaptureConnection's videoOrientation instead.
      */
     @Generated
     @Deprecated
@@ -397,18 +445,22 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * pointForCaptureDevicePointOfInterest:
-     * <p>
+     * 
      * Converts a point of interest in the coordinate space of the capture device providing input to the layer to a
      * point in layer coordinates.
-     * <p>
+     * 
      * AVCaptureDevice pointOfInterest is expressed as a CGPoint where {0,0} represents the top left of the picture
      * area, and {1,1} represents the bottom right on an unrotated picture. This convenience method converts a point in
      * the coordinate space of the AVCaptureDevice providing input to the coordinate space of the receiver. The
      * conversion takes frame size and videoGravity into consideration.
-     *
-     * @param captureDevicePointOfInterest A CGPoint in the coordinate space of the capture device providing input to
+     * 
+     * API-Since: 6.0
+     * 
+     * @param captureDevicePointOfInterest
+     *                                     A CGPoint in the coordinate space of the capture device providing input to
      *                                     the layer.
-     * @return A CGPoint in layer coordinates.
+     * @return
+     *         A CGPoint in layer coordinates.
      */
     @Generated
     @Selector("pointForCaptureDevicePointOfInterest:")
@@ -417,18 +469,22 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * rectForMetadataOutputRectOfInterest:
-     * <p>
+     * 
      * Converts a rectangle of interest in the coordinate space of an AVCaptureMetadataOutput whose capture device is
      * providing input to the layer to a rectangle in layer coordinates.
-     * <p>
+     * 
      * AVCaptureMetadataOutput rectOfInterest is expressed as a CGRect where {0,0} represents the top left of the
      * picture area, and {1,1} represents the bottom right on an unrotated picture. This convenience method converts a
      * rectangle in the coordinate space of an AVCaptureMetadataOutput whose AVCaptureDevice is providing input to the
      * coordinate space of the receiver. The conversion takes frame size and videoGravity into consideration.
-     *
-     * @param rectInMetadataOutputCoordinates A CGRect in the coordinate space of the metadata output whose capture
+     * 
+     * API-Since: 7.0
+     * 
+     * @param rectInMetadataOutputCoordinates
+     *                                        A CGRect in the coordinate space of the metadata output whose capture
      *                                        device is providing input to the layer.
-     * @return A CGRect in layer coordinates.
+     * @return
+     *         A CGRect in layer coordinates.
      */
     @Generated
     @Selector("rectForMetadataOutputRectOfInterest:")
@@ -437,9 +493,9 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * [@property] session
-     * <p>
+     * 
      * The AVCaptureSession instance being previewed by the receiver.
-     * <p>
+     * 
      * The session is retained by the preview layer.
      */
     @Generated
@@ -448,13 +504,17 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * [@property] automaticallyAdjustsMirroring
-     * <p>
+     * 
      * Specifies whether or not the value of @"mirrored" can change based on configuration of the session.
-     * <p>
+     * 
      * For some session configurations, preview will be mirrored by default. When the value of this property is YES, the
      * value of @"mirrored" may change depending on the configuration of the session, for example after switching to a
      * different AVCaptureDeviceInput. The default value is YES. This property is deprecated. Use AVCaptureConnection's
      * -automaticallyAdjustsVideoMirroring instead.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Use AVCaptureConnection's automaticallyAdjustsVideoMirroring instead.
      */
     @Generated
     @Deprecated
@@ -463,12 +523,16 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * [@property] orientation
-     * <p>
+     * 
      * Specifies the orientation of the preview layer.
-     * <p>
+     * 
      * AVCaptureVideoOrientation and its constants are defined in AVCaptureSession.h. The value
      * of @"orientationSupported" must be YES in order to set @"orientation". An exception will be raised if this
      * requirement is ignored. This property is deprecated. Use AVCaptureConnection's -videoOrientation instead.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Use AVCaptureConnection's videoOrientation instead.
      */
     @Generated
     @Deprecated
@@ -477,9 +541,9 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * [@property] session
-     * <p>
+     * 
      * The AVCaptureSession instance being previewed by the receiver.
-     * <p>
+     * 
      * The session is retained by the preview layer.
      */
     @Generated
@@ -488,12 +552,14 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * method setSessionWithNoConnection:
-     * <p>
+     * 
      * Attaches the receiver to a given session without implicitly forming a connection to the first eligible video
      * AVCaptureInputPort. Only use this setter if you intend to manually form a connection between a desired
      * AVCaptureInputPort and the receiver using AVCaptureSession's -addConnection: method.
-     * <p>
+     * 
      * The session is retained by the preview layer.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSessionWithNoConnection:")
@@ -501,9 +567,9 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * [@property] videoGravity
-     * <p>
+     * 
      * A string defining how the video is displayed within an AVCaptureVideoPreviewLayer bounds rect.
-     * <p>
+     * 
      * Options are AVLayerVideoGravityResize, AVLayerVideoGravityResizeAspect and AVLayerVideoGravityResizeAspectFill.
      * AVLayerVideoGravityResizeAspect is default. See <AVFoundation/AVAnimation.h> for a description of these options.
      */
@@ -513,18 +579,22 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * transformedMetadataObjectForMetadataObject:
-     * <p>
+     * 
      * Converts an AVMetadataObject's visual properties to layer coordinates.
-     * <p>
+     * 
      * AVMetadataObject bounds may be expressed as a rect where {0,0} represents the top left of the picture area, and
      * {1,1} represents the bottom right on an unrotated picture. Face metadata objects likewise express yaw and roll
      * angles with respect to an unrotated picture. -transformedMetadataObjectForMetadataObject: converts the visual
      * properties in the coordinate space of the supplied AVMetadataObject to the coordinate space of the receiver. The
      * conversion takes orientation, mirroring, layer bounds and videoGravity into consideration. If the provided
      * metadata object originates from an input source other than the preview layer's, nil will be returned.
-     *
-     * @param metadataObject An AVMetadataObject originating from the same AVCaptureInput as the preview layer.
-     * @return An AVMetadataObject whose properties are in layer coordinates.
+     * 
+     * API-Since: 6.0
+     * 
+     * @param metadataObject
+     *                       An AVMetadataObject originating from the same AVCaptureInput as the preview layer.
+     * @return
+     *         An AVMetadataObject whose properties are in layer coordinates.
      */
     @Generated
     @Selector("transformedMetadataObjectForMetadataObject:")
@@ -532,9 +602,9 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * [@property] videoGravity
-     * <p>
+     * 
      * A string defining how the video is displayed within an AVCaptureVideoPreviewLayer bounds rect.
-     * <p>
+     * 
      * Options are AVLayerVideoGravityResize, AVLayerVideoGravityResizeAspect and AVLayerVideoGravityResizeAspectFill.
      * AVLayerVideoGravityResizeAspect is default. See <AVFoundation/AVAnimation.h> for a description of these options.
      */
@@ -559,15 +629,17 @@ public class AVCaptureVideoPreviewLayer extends CALayer {
 
     /**
      * [@property] previewing
-     * <p>
+     * 
      * A BOOL value indicating whether the receiver is currently rendering video frames from its source.
-     * <p>
+     * 
      * An AVCaptureVideoPreviewLayer begins previewing when -[AVCaptureSession startRunning] is called. When associated
      * with an AVCaptureMultiCamSession, all video preview layers are guaranteed to be previewing by the time the
      * blocking call to -startRunning or -commitConfiguration returns. While a session is running, you may enable or
      * disable a video preview layer's connection to re-start or stop the flow of video to the layer. Once you've set
      * enabled to YES, you can observe this property changing from NO to YES and synchronize any UI to take place
      * precisely when the video resumes rendering to the video preview layer.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isPreviewing")

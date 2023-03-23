@@ -35,6 +35,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -42,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLLibrary {
     /**
      * [@property] device
-     * <p>
+     * 
      * The device this resource was created against. This resource can only be used with this device.
      */
     @Generated
@@ -52,7 +55,7 @@ public interface MTLLibrary {
 
     /**
      * [@property] functionNames
-     * <p>
+     * 
      * The array contains NSString objects, with the name of each function in library.
      */
     @Generated
@@ -61,7 +64,7 @@ public interface MTLLibrary {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
@@ -70,7 +73,7 @@ public interface MTLLibrary {
 
     /**
      * newFunctionWithName
-     * <p>
+     * 
      * Returns a pointer to a function object, return nil if the function is not found in the library.
      */
     @Generated
@@ -80,10 +83,12 @@ public interface MTLLibrary {
 
     /**
      * newFunctionWithName:constantValues:completionHandler:
-     * <p>
+     * 
      * Returns a pointer to a function object obtained by applying the constant values to the named function.
-     * <p>
+     * 
      * This method is asynchronous since it is will call the compiler.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("newFunctionWithName:constantValues:completionHandler:")
@@ -92,11 +97,13 @@ public interface MTLLibrary {
 
     /**
      * newFunctionWithName:constantValues:error:
-     * <p>
+     * 
      * Returns a pointer to a function object obtained by applying the constant values to the named function.
-     * <p>
+     * 
      * This method will call the compiler. Use newFunctionWithName:constantValues:completionHandler: to
      * avoid waiting on the compiler.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("newFunctionWithName:constantValues:error:")
@@ -106,7 +113,7 @@ public interface MTLLibrary {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
@@ -123,12 +130,14 @@ public interface MTLLibrary {
 
     /**
      * [@property] installName
-     * <p>
+     * 
      * The installName provided when this MTLLibrary was created.
-     * <p>
+     * 
      * Always nil if the type of the library is not MTLLibraryTypeDynamic.
-     *
+     * 
      * @see MTLCompileOptions
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("installName")
@@ -136,8 +145,10 @@ public interface MTLLibrary {
 
     /**
      * newFunctionWithDescriptor:completionHandler:
-     * <p>
+     * 
      * Create a new MTLFunction object asynchronously.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("newFunctionWithDescriptor:completionHandler:")
@@ -154,8 +165,10 @@ public interface MTLLibrary {
 
     /**
      * newFunctionWithDescriptor:error:
-     * <p>
+     * 
      * Create a new MTLFunction object synchronously.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("newFunctionWithDescriptor:error:")
@@ -165,8 +178,10 @@ public interface MTLLibrary {
 
     /**
      * newIntersectionFunctionWithDescriptor:completionHandler:
-     * <p>
+     * 
      * Create a new MTLFunction object asynchronously.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("newIntersectionFunctionWithDescriptor:completionHandler:")
@@ -183,8 +198,10 @@ public interface MTLLibrary {
 
     /**
      * newIntersectionFunctionWithDescriptor:error:
-     * <p>
+     * 
      * Create a new MTLFunction object synchronously.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("newIntersectionFunctionWithDescriptor:error:")
@@ -194,12 +211,14 @@ public interface MTLLibrary {
 
     /**
      * [@property] type
-     * <p>
+     * 
      * The library type provided when this MTLLibrary was created.
      * Libraries with MTLLibraryTypeExecutable can be used to obtain MTLFunction from.
      * Libraries with MTLLibraryTypeDynamic can be used to resolve external references in other MTLLibrary from.
-     *
+     * 
      * @see MTLCompileOptions
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("type")

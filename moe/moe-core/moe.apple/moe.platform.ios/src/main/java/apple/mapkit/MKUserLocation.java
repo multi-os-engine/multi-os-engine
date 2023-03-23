@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -161,6 +164,8 @@ public class MKUserLocation extends NSObject implements MKAnnotation {
 
     /**
      * Returns nil if not in MKUserTrackingModeFollowWithHeading
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("heading")

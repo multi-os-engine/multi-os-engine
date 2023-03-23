@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -156,9 +159,9 @@ public class AVCompositionTrack extends AVAssetTrack {
 
     /**
      * [@property] segments
-     * <p>
+     * 
      * Provides read-only access to the array of track segments, each an instance of AVCompositionTrackSegment.
-     * <p>
+     * 
      * Note that timeMapping.target.start of the first AVCompositionTrackSegment must be kCMTimeZero, and the
      * timeMapping.target.start of each subsequent AVCompositionTrackSegment must equal CMTimeRangeGetEnd(the previous
      * AVCompositionTrackSegment's timeMapping.target).
@@ -171,14 +174,15 @@ public class AVCompositionTrack extends AVAssetTrack {
 
     /**
      * segmentForTrackTime:
-     * <p>
+     * 
      * Supplies the AVCompositionTrackSegment from the segments array with a target timeRange that either contains the
      * specified track time or is the closest to it among the target timeRanges of the track's segments.
-     * <p>
+     * 
      * If the trackTime does not map to a sample presentation time (e.g. it's outside the track's timeRange), the
      * segment closest in time to the specified trackTime is returned.
-     *
-     * @param trackTime The trackTime for which an AVCompositionTrackSegment is requested.
+     * 
+     * @param trackTime
+     *                  The trackTime for which an AVCompositionTrackSegment is requested.
      * @return An AVCompositionTrackSegment.
      */
     @Generated
@@ -187,17 +191,39 @@ public class AVCompositionTrack extends AVAssetTrack {
 
     /**
      * [@property] formatDescriptionReplacements
-     * <p>
+     * 
      * An array of AVCompositionTrackFormatDescriptionReplacement objects indicating original format descriptions and
      * their replacements.
-     * <p>
+     * 
      * The value of this property is an array of AVCompositionTrackFormatDescriptionReplacement objects, each of which
      * specifies an original format description together with its replacement format description (as specified by a
      * previous call to -replaceFormatDescription:withFormatDescription:). Only format descriptions that are to be
      * replaced will occur as the originalFormatDescription elements in the
      * AVCompositionTrackFormatDescriptionReplacement objects in this array.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("formatDescriptionReplacements")
     public native NSArray<? extends AVCompositionTrackFormatDescriptionReplacement> formatDescriptionReplacements();
+
+    /**
+     * API-Since: 7.0
+     */
+    @Generated
+    @Selector("associatedTracksOfType:")
+    public native NSArray<? extends AVAssetTrack> associatedTracksOfType(String trackAssociationType);
+
+    @Generated
+    @Selector("hasMediaCharacteristic:")
+    public native boolean hasMediaCharacteristic(String mediaCharacteristic);
+
+    @Generated
+    @Selector("metadataForFormat:")
+    public native NSArray<? extends AVMetadataItem> metadataForFormat(String format);
+
+    @Generated
+    @Selector("samplePresentationTimeForTrackTime:")
+    @ByValue
+    public native CMTime samplePresentationTimeForTrackTime(@ByValue CMTime trackTime);
 }

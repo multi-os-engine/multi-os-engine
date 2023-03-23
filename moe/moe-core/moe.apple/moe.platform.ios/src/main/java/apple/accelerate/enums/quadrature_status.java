@@ -20,11 +20,11 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] quadrature_status
- * <p>
+ * 
  * Quadrature return status
- * <p>
+ * 
  * Success is 0, and errors have a negative value.
- * <p>
+ * 
  * [@constant] QUADRATURE_SUCCESS Success.
  * [@constant] QUADRATURE_ERROR Generic error.
  * [@constant] QUADRATURE_INVALID_ARG_ERROR Invalid argument.

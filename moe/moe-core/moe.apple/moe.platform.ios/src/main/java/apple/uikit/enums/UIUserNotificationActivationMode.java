@@ -19,16 +19,30 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 8.0
+ * Deprecated-Since: 10.0
+ * Deprecated-Message: Use UserNotifications Framework's UNNotificationActionOptions
+ */
+@Deprecated
 @Generated
 public final class UIUserNotificationActivationMode {
     /**
      * activates the application in the foreground
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationActionOptions
      */
-    @Generated @NUInt public static final long Foreground = 0x0000000000000000L;
+    @Deprecated @Generated @NUInt public static final long Foreground = 0x0000000000000000L;
     /**
      * activates the application in the background, unless it's already in the foreground
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's UNNotificationActionOptions
      */
-    @Generated @NUInt public static final long Background = 0x0000000000000001L;
+    @Deprecated @Generated @NUInt public static final long Background = 0x0000000000000001L;
 
     @Generated
     private UIUserNotificationActivationMode() {

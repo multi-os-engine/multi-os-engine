@@ -31,6 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Analyzes an audio file and provides analysis results to the client
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("SoundAnalysis")
@@ -52,9 +54,9 @@ public class SNAudioFileAnalyzer extends NSObject {
 
     /**
      * Adds a new analysis request to the analyzer
-     * <p>
+     * 
      * If addRequest is called while the file is being processed, an error will be returned.
-     *
+     * 
      * @param request  An audio analysis request to be performed on the audio stream
      * @param observer The object that will receive the analysis results for the supplied request. The observer is
      *                 weakly retained by the analyzer.
@@ -81,7 +83,7 @@ public class SNAudioFileAnalyzer extends NSObject {
 
     /**
      * Analyzes the audio file synchronously
-     * <p>
+     * 
      * This function executes synchronously. Any errors produced during analysis will flow downstream to the request
      * observers. This method may block for a long period of time, so be careful to ensure this call does not block UI
      * or other important tasks.
@@ -92,7 +94,7 @@ public class SNAudioFileAnalyzer extends NSObject {
 
     /**
      * Analyzes the audio file asynchronously
-     * <p>
+     * 
      * This function executes asynchronously, calling the completion after the entire file has completed analysis. Any
      * errors produced during analysis will flow downstream to the request observers. If the cancelAnalysis method is
      * called, the completionHandler will still be called, but with didReachEndOfFile set to NO.
@@ -115,7 +117,7 @@ public class SNAudioFileAnalyzer extends NSObject {
 
     /**
      * Cancels any in-progress analysis of the audio file
-     * <p>
+     * 
      * This function executes asynchronously, and will trigger the completion handler provided in the
      * analyzeWithCompletionHandler method after the cancellation is complete.
      */
@@ -160,7 +162,7 @@ public class SNAudioFileAnalyzer extends NSObject {
 
     /**
      * Creates a new analyzer
-     *
+     * 
      * @param url   The url for the audio file to be analyzed
      * @param error On input, a pointer to an error object. If an error occurs, this pointer is set to an actual error
      *              object containing the error information. You may specify nil for this parameter if you do not want
@@ -206,10 +208,10 @@ public class SNAudioFileAnalyzer extends NSObject {
 
     /**
      * Removes an existing analysis request from the analyzer
-     * <p>
+     * 
      * Requests can be removed while analysis is in progress. Once the removeRequest method returns, the previously
      * registered observer will not receive any more callbacks.
-     *
+     * 
      * @param request An audio analysis request to be removed
      */
     @Generated

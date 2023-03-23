@@ -28,7 +28,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Performs person segmentationin an image.
+ * Performs person segmentation on an image generating a mask.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Vision")

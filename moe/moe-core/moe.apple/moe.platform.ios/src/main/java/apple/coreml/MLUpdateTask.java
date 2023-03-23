@@ -33,6 +33,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Main class for setting up and controlling a model update. It provides some utility class methods for performing an
  * update synchronously as well as class constructors for configuring an update and give developers control for the
  * execution of that update.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreML")
@@ -185,6 +187,8 @@ public class MLUpdateTask extends MLTask {
 
     /**
      * Update via task control with completion handler supplying default configuration
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("updateTaskForModelAtURL:trainingData:completionHandler:error:")
@@ -202,6 +206,8 @@ public class MLUpdateTask extends MLTask {
 
     /**
      * Update via task control and custom progress callbacks supplying default configuration
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("updateTaskForModelAtURL:trainingData:progressHandlers:error:")

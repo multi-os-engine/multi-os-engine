@@ -40,15 +40,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAssetResourceRenewalRequest
- * <p>
+ * 
  * AVAssetResourceRenewalRequest encapsulates information about a resource request issued by a resource loader for the
  * purpose of renewing a request previously issued.
- * <p>
+ * 
  * When an AVURLAsset needs to renew a resource (because contentInformationRequest.renewalDate has been set on a
  * previous loading request), it asks its AVAssetResourceLoader object to assist. The resource loader encapsulates the
  * request information by creating an instance of this object, which it then hands to its delegate for processing. The
  * delegate uses the information in this object to perform the request and report on the success or failure of the
  * operation.
+ * 
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFoundation")

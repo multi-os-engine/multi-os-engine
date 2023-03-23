@@ -161,6 +161,9 @@ public class PKPass extends PKObject {
     @Selector("authenticationToken")
     public native String authenticationToken();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("deviceName")
     public native String deviceName();
@@ -177,6 +180,9 @@ public class PKPass extends PKObject {
     @Selector("initWithData:error:")
     public native PKPass initWithDataError(NSData data, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("isRemotePass")
     public native boolean isRemotePass();
@@ -210,6 +216,9 @@ public class PKPass extends PKObject {
     @Selector("organizationName")
     public native String organizationName();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("passType")
     @NUInt
@@ -226,6 +235,12 @@ public class PKPass extends PKObject {
     @Selector("passURL")
     public native NSURL passURL();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use -[PKPass secureElementPass] instead
+     */
+    @Deprecated
     @Generated
     @Selector("paymentPass")
     public native PKPaymentPass paymentPass();
@@ -241,6 +256,9 @@ public class PKPass extends PKObject {
     @Selector("serialNumber")
     public native String serialNumber();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
@@ -249,6 +267,9 @@ public class PKPass extends PKObject {
     @Selector("webServiceURL")
     public native NSURL webServiceURL();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("secureElementPass")
     public native PKSecureElementPass secureElementPass();

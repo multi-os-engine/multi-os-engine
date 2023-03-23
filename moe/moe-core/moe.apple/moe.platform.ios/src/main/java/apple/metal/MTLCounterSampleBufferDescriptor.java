@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] MTLCounterSampleBufferDescriptor
- * <p>
+ * 
  * Object to represent the counter state.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Metal")
@@ -88,6 +90,8 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
 
     /**
      * [@property] counterSet The counterset to be sampled for this counter sample buffer
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("counterSet")
@@ -134,6 +138,8 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
 
     /**
      * [@property] label A label to identify the sample buffer in debugging tools.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("label")
@@ -155,6 +161,8 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     /**
      * [@property] sampleCount The number of samples that may be stored in the
      * counter sample buffer.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("sampleCount")
@@ -163,6 +171,8 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
 
     /**
      * [@property] counterSet The counterset to be sampled for this counter sample buffer
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setCounterSet:")
@@ -170,6 +180,8 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
 
     /**
      * [@property] label A label to identify the sample buffer in debugging tools.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setLabel:")
@@ -178,6 +190,8 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     /**
      * [@property] sampleCount The number of samples that may be stored in the
      * counter sample buffer.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSampleCount:")
@@ -186,6 +200,8 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     /**
      * [@property] storageMode The storage mode for the sample buffer. Only
      * MTLStorageModeShared and MTLStorageModePrivate may be used.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setStorageMode:")
@@ -198,6 +214,8 @@ public class MTLCounterSampleBufferDescriptor extends NSObject implements NSCopy
     /**
      * [@property] storageMode The storage mode for the sample buffer. Only
      * MTLStorageModeShared and MTLStorageModePrivate may be used.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("storageMode")

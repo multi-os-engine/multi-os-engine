@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -98,7 +101,7 @@ public class CPInformationRatingItem extends CPInformationItem {
 
     /**
      * Initializes a new item to be used with @c CPInformationTemplate.
-     *
+     * 
      * @param rating        A number incremented by 0.5 intervals between 0 and maximumRating that will be styled by the
      *                      template as the rating of the item.
      * @param maximumRating A whole number between 1 - 5 that will be styled by the template as the maximum rating of

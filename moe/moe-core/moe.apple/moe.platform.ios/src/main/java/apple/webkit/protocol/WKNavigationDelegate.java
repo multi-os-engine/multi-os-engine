@@ -47,10 +47,10 @@ import org.moe.natj.objc.ann.Selector;
 public interface WKNavigationDelegate {
     /**
      * Decides whether to allow or cancel a navigation.
-     * <p>
+     * 
      * If you do not implement this method, the web view will load the request or, if appropriate, forward it to another
      * application.
-     *
+     * 
      * @param webView          The web view invoking the delegate method.
      * @param navigationAction Descriptive information about the action
      *                         triggering the navigation request.
@@ -70,9 +70,9 @@ public interface WKNavigationDelegate {
     /**
      * Decides whether to allow or cancel a navigation after its
      * response is known.
-     * <p>
+     * 
      * If you do not implement this method, the web view will allow the response, if the web view can show it.
-     *
+     * 
      * @param webView            The web view invoking the delegate method.
      * @param navigationResponse Descriptive information about the navigation
      *                           response.
@@ -91,7 +91,7 @@ public interface WKNavigationDelegate {
 
     /**
      * Invoked when content starts arriving for the main frame.
-     *
+     * 
      * @param webView    The web view invoking the delegate method.
      * @param navigation The navigation.
      */
@@ -105,7 +105,7 @@ public interface WKNavigationDelegate {
     /**
      * Invoked when an error occurs during a committed main frame
      * navigation.
-     *
+     * 
      * @param webView    The web view invoking the delegate method.
      * @param navigation The navigation.
      * @param error      The error that occurred.
@@ -120,7 +120,7 @@ public interface WKNavigationDelegate {
     /**
      * Invoked when an error occurs while starting to load data for
      * the main frame.
-     *
+     * 
      * @param webView    The web view invoking the delegate method.
      * @param navigation The navigation.
      * @param error      The error that occurred.
@@ -135,7 +135,7 @@ public interface WKNavigationDelegate {
 
     /**
      * Invoked when a main frame navigation completes.
-     *
+     * 
      * @param webView    The web view invoking the delegate method.
      * @param navigation The navigation.
      */
@@ -148,10 +148,10 @@ public interface WKNavigationDelegate {
 
     /**
      * Invoked when the web view needs to respond to an authentication challenge.
-     * <p>
+     * 
      * If you do not implement this method, the web view will respond to the authentication challenge with the
      * NSURLSessionAuthChallengeRejectProtectionSpace disposition.
-     *
+     * 
      * @param webView           The web view that received the authentication challenge.
      * @param challenge         The authentication challenge.
      * @param completionHandler The completion handler you must invoke to respond to the challenge. The
@@ -174,7 +174,7 @@ public interface WKNavigationDelegate {
     /**
      * Invoked when a server redirect is received for the main
      * frame.
-     *
+     * 
      * @param webView    The web view invoking the delegate method.
      * @param navigation The navigation.
      */
@@ -187,7 +187,7 @@ public interface WKNavigationDelegate {
 
     /**
      * Invoked when a main frame navigation starts.
-     *
+     * 
      * @param webView    The web view invoking the delegate method.
      * @param navigation The navigation.
      */
@@ -200,8 +200,10 @@ public interface WKNavigationDelegate {
 
     /**
      * Invoked when the web view's web content process is terminated.
-     *
+     * 
      * @param webView The web view whose underlying web content process was terminated.
+     * 
+     *                API-Since: 9.0
      */
     @Generated
     @IsOptional
@@ -234,10 +236,12 @@ public interface WKNavigationDelegate {
 
     /**
      * Decides whether to allow or cancel a navigation.
-     * <p>
+     * 
      * If you implement this method,
      * -webView:decidePolicyForNavigationAction:decisionHandler: will not be called.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param webView          The web view invoking the delegate method.
      * @param navigationAction Descriptive information about the action
      *                         triggering the navigation request.
@@ -266,11 +270,13 @@ public interface WKNavigationDelegate {
 
     /**
      * Invoked when the web view is establishing a network connection using a deprecated version of TLS.
-     *
+     * 
      * @param webView         The web view initiating the connection.
      * @param challenge       The authentication challenge.
      * @param decisionHandler The decision handler you must invoke to respond to indicate whether or not to continue
      *                        with the connection establishment.
+     * 
+     *                        API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -290,9 +296,11 @@ public interface WKNavigationDelegate {
 
     /**
      * Called after using WKNavigationActionPolicyDownload.
-     * <p>
+     * 
      * The download needs its delegate to be set to receive updates about its progress.
-     *
+     * 
+     * API-Since: 14.5
+     * 
      * @param webView          The web view that created the download.
      * @param navigationAction The action that is being turned into a download.
      * @param download         The download.
@@ -307,9 +315,11 @@ public interface WKNavigationDelegate {
 
     /**
      * Called after using WKNavigationResponsePolicyDownload.
-     * <p>
+     * 
      * The download needs its delegate to be set to receive updates about its progress.
-     *
+     * 
+     * API-Since: 14.5
+     * 
      * @param webView            The web view that created the download.
      * @param navigationResponse The response that is being turned into a download.
      * @param download           The download.

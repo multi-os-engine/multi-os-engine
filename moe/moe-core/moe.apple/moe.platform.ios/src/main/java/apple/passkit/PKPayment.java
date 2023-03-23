@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * have a PKPaymentToken which contains a payment credential encrypted to the merchant
  * identifier specified in the request, and when requested, the user's shipping address
  * and chosen shipping method.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("PassKit")
@@ -155,6 +157,11 @@ public class PKPayment extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use billingContact instead
+     */
     @Generated
     @Deprecated
     @Selector("billingAddress")
@@ -165,6 +172,8 @@ public class PKPayment extends NSObject {
      * constrained to those specified in the requiredBillingAddressFields property of the original
      * PKPaymentRequest object. This property is only set when the application has set
      * the requiredBillingAddressFields property of the PKPaymentRequest.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("billingContact")
@@ -174,6 +183,11 @@ public class PKPayment extends NSObject {
     @Selector("init")
     public native PKPayment init();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use shippingContact instead
+     */
     @Generated
     @Deprecated
     @Selector("shippingAddress")
@@ -184,6 +198,8 @@ public class PKPayment extends NSObject {
      * constrained to those specified in the requiredShippingAddressFields property of the original
      * PKPaymentRequest object. This property is only set when the application has set
      * the requiredShippingAddressFields property of the PKPaymentRequest.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("shippingContact")

@@ -22,16 +22,25 @@ public final class PencilKit {
     private PencilKit() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKInkTypePen();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String PKInkTypePencil();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -39,6 +48,8 @@ public final class PencilKit {
 
     /**
      * The UTType for storing drawing data.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()

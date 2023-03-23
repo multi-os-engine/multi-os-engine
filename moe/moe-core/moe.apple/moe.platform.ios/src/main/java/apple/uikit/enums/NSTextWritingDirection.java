@@ -19,10 +19,22 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 7.0
+ * Deprecated-Since: 9.0
+ */
 @Deprecated
 @Generated
 public final class NSTextWritingDirection {
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 9.0
+     */
     @Deprecated @Generated @NInt public static final long Embedding = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 9.0
+     */
     @Deprecated @Generated @NInt public static final long Override = 0x0000000000000002L;
 
     @Generated

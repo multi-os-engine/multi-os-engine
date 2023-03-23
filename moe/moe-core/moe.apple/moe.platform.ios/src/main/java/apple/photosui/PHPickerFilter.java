@@ -25,7 +25,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * A filter used to restrict the types \c PHPickerViewController can display.
+ * A filter that restricts which types of assets \c PHPickerViewController can show.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("PhotosUI")
@@ -57,6 +59,8 @@ public class PHPickerFilter extends NSObject implements NSCopying {
 
     /**
      * Returns a new filter formed by OR-ing the filters in a given array.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("anyFilterMatchingSubfilters:")
@@ -105,6 +109,8 @@ public class PHPickerFilter extends NSObject implements NSCopying {
 
     /**
      * The filter for images.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("imagesFilter")
@@ -137,6 +143,8 @@ public class PHPickerFilter extends NSObject implements NSCopying {
 
     /**
      * The filter for live photos.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("livePhotosFilter")
@@ -170,8 +178,109 @@ public class PHPickerFilter extends NSObject implements NSCopying {
 
     /**
      * The filter for videos.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("videosFilter")
     public static native PHPickerFilter videosFilter();
+
+    /**
+     * Returns a new filter formed by AND-ing the filters in a given array.
+     * 
+     * API-Since: 15.0
+     */
+    @Generated
+    @Selector("allFilterMatchingSubfilters:")
+    public static native PHPickerFilter allFilterMatchingSubfilters(NSArray<? extends PHPickerFilter> subfilters);
+
+    /**
+     * The filter for bursts.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("burstsFilter")
+    public static native PHPickerFilter burstsFilter();
+
+    /**
+     * The filter for Cinematic videos.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("cinematicVideosFilter")
+    public static native PHPickerFilter cinematicVideosFilter();
+
+    /**
+     * The filter for Depth Effect photos.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("depthEffectPhotosFilter")
+    public static native PHPickerFilter depthEffectPhotosFilter();
+
+    /**
+     * Returns a new filter formed by negating the given filter.
+     * 
+     * API-Since: 15.0
+     */
+    @Generated
+    @Selector("notFilterOfSubfilter:")
+    public static native PHPickerFilter notFilterOfSubfilter(PHPickerFilter subfilter);
+
+    /**
+     * The filter for panorama photos.
+     * 
+     * API-Since: 15.0
+     */
+    @Generated
+    @Selector("panoramasFilter")
+    public static native PHPickerFilter panoramasFilter();
+
+    /**
+     * Returns a new filter based on the asset playback style.
+     * 
+     * API-Since: 15.0
+     */
+    @Generated
+    @Selector("playbackStyleFilter:")
+    public static native PHPickerFilter playbackStyleFilter(@NInt long playbackStyle);
+
+    /**
+     * The filter for screen recordings.
+     * 
+     * API-Since: 15.0
+     */
+    @Generated
+    @Selector("screenRecordingsFilter")
+    public static native PHPickerFilter screenRecordingsFilter();
+
+    /**
+     * The filter for screenshots.
+     * 
+     * API-Since: 15.0
+     */
+    @Generated
+    @Selector("screenshotsFilter")
+    public static native PHPickerFilter screenshotsFilter();
+
+    /**
+     * The filter for Slow-Mo videos.
+     * 
+     * API-Since: 15.0
+     */
+    @Generated
+    @Selector("slomoVideosFilter")
+    public static native PHPickerFilter slomoVideosFilter();
+
+    /**
+     * The filter for time-lapse videos.
+     * 
+     * API-Since: 15.0
+     */
+    @Generated
+    @Selector("timelapseVideosFilter")
+    public static native PHPickerFilter timelapseVideosFilter();
 }

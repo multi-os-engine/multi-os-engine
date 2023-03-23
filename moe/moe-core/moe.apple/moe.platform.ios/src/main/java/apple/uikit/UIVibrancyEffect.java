@@ -47,6 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * vibrancy effect is color dependent, subviews added to the contentView need to be tintColorDidChange aware and must be
  * prepared to update themselves accordingly. UIImageView will need its image to have a rendering mode of
  * UIImageRenderingModeAlwaysTemplate to receive the proper effect.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("UIKit")
@@ -141,6 +143,11 @@ public class UIVibrancyEffect extends UIVisualEffect {
     @Selector("new")
     public static native UIVibrancyEffect new_objc();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("notificationCenterVibrancyEffect")
     public static native UIVibrancyEffect notificationCenterVibrancyEffect();
@@ -172,14 +179,22 @@ public class UIVibrancyEffect extends UIVisualEffect {
 
     /**
      * For use with select supporting text and glyphs.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("widgetPrimaryVibrancyEffect")
     public static native UIVibrancyEffect widgetPrimaryVibrancyEffect();
 
     /**
      * For use with select supporting text and glyphs where further diminution is required.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("widgetSecondaryVibrancyEffect")
     public static native UIVibrancyEffect widgetSecondaryVibrancyEffect();
@@ -198,10 +213,19 @@ public class UIVibrancyEffect extends UIVisualEffect {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("effectForBlurEffect:style:")
     public static native UIVibrancyEffect effectForBlurEffectStyle(UIBlurEffect blurEffect, @NInt long style);
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use WidgetKit instead. Today View extensions have been deprecated.
+     */
+    @Deprecated
     @Generated
     @Selector("widgetEffectForVibrancyStyle:")
     public static native UIVibrancyEffect widgetEffectForVibrancyStyle(@NInt long vibrancyStyle);

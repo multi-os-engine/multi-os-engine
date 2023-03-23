@@ -17,8 +17,6 @@ limitations under the License.
 package apple.spritekit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
@@ -50,7 +48,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -196,9 +199,9 @@ public class SK3DNode extends SKNode {
 
     /**
      * [@property] autoenablesDefaultLighting
-     * <p>
+     * 
      * Specifies whether the receiver should automatically light up scenes that have no light source. The default is NO.
-     * <p>
+     * 
      * When enabled, a diffuse light is automatically added and placed while rendering scenes that have no light or only
      * ambient lights.
      */
@@ -208,9 +211,9 @@ public class SK3DNode extends SKNode {
 
     /**
      * hitTest:options:
-     * <p>
+     * 
      * Returns an array of SCNHitTestResult for each node that contains a specified point.
-     *
+     * 
      * @param point   A point in the coordinate system of the receiver.
      * @param options Optional parameters (see the "Hit test options" group for the available options).
      */
@@ -240,7 +243,7 @@ public class SK3DNode extends SKNode {
 
     /**
      * [@property] playing
-     * <p>
+     * 
      * Returns YES if the scene is playing, NO otherwise.
      */
     @Generated
@@ -249,7 +252,7 @@ public class SK3DNode extends SKNode {
 
     /**
      * [@property] playing
-     * <p>
+     * 
      * Returns YES if the scene is playing, NO otherwise.
      */
     @Generated
@@ -258,9 +261,9 @@ public class SK3DNode extends SKNode {
 
     /**
      * [@property] loops
-     * <p>
+     * 
      * Indicates whether the receiver restarts playback when it reaches the end of its content. Default: YES.
-     * <p>
+     * 
      * YES when the receiver restarts playback when it finishes, NO otherwise.
      */
     @Generated
@@ -269,9 +272,9 @@ public class SK3DNode extends SKNode {
 
     /**
      * [@property] pointOfView
-     * <p>
+     * 
      * Specifies the point of view used to render the scene.
-     * <p>
+     * 
      * A point of view must have either a camera or a spot light attached.
      */
     @Generated
@@ -280,7 +283,7 @@ public class SK3DNode extends SKNode {
 
     /**
      * [@property] sceneTime
-     * <p>
+     * 
      * Specifies the current time to display the scene.
      */
     @Generated
@@ -296,9 +299,9 @@ public class SK3DNode extends SKNode {
 
     /**
      * [@property] autoenablesDefaultLighting
-     * <p>
+     * 
      * Specifies whether the receiver should automatically light up scenes that have no light source. The default is NO.
-     * <p>
+     * 
      * When enabled, a diffuse light is automatically added and placed while rendering scenes that have no light or only
      * ambient lights.
      */
@@ -308,9 +311,9 @@ public class SK3DNode extends SKNode {
 
     /**
      * [@property] loops
-     * <p>
+     * 
      * Indicates whether the receiver restarts playback when it reaches the end of its content. Default: YES.
-     * <p>
+     * 
      * YES when the receiver restarts playback when it finishes, NO otherwise.
      */
     @Generated
@@ -319,9 +322,9 @@ public class SK3DNode extends SKNode {
 
     /**
      * [@property] pointOfView
-     * <p>
+     * 
      * Specifies the point of view used to render the scene.
-     * <p>
+     * 
      * A point of view must have either a camera or a spot light attached.
      */
     @Generated
@@ -330,7 +333,7 @@ public class SK3DNode extends SKNode {
 
     /**
      * [@property] sceneTime
-     * <p>
+     * 
      * Specifies the current time to display the scene.
      */
     @Generated

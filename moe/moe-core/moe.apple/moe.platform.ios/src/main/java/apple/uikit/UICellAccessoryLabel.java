@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A label displaying a short string of text, typically a small number such as a count for the associated item.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")

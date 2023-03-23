@@ -19,17 +19,39 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 public final class NSJSONReadingOptions {
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NUInt public static final long MutableContainers = 0x0000000000000001L;
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NUInt public static final long MutableLeaves = 0x0000000000000002L;
-    @Generated @NUInt public static final long AllowFragments = 0x0000000000000004L;
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated @Generated @NUInt public static final long AllowFragments = 0x0000000000000004L;
 
     @Generated
     private NSJSONReadingOptions() {
     }
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated @NUInt public static final long FragmentsAllowed = 0x0000000000000004L;
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NUInt public static final long JSON5Allowed = 0x0000000000000008L;
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NUInt public static final long TopLevelDictionaryAssumed = 0x0000000000000010L;
 }

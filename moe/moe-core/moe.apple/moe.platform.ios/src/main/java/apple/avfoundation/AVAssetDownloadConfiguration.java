@@ -25,20 +25,22 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAssetDownloadConfiguration
- * <p>
+ * 
  * Configuration parameters for the download task.
- * <p>
+ * 
  * Download configuration consists of primary and auxiliary content configurations. Primary content configuration
  * represents the primary set of renditions essential for offline playback. Auxiliary content configurations represent
  * additional configurations to complement the primary.
  * For example, the primary content configuration may represent stereo audio renditions and auxiliary configuration may
  * represent complementing multichannel audio renditions.
- * <p>
+ * 
  * It is important to configure your download configuration object appropriately before using it to create a download
  * task. Download task makes a copy of the configuration settings you provide and use those settings to configure the
  * task. Once configured, the task object ignores any changes you make to the NSURLSessionConfiguration object. If you
  * need to modify your settings, you must update the download configuration object and use it to create a new download
  * task object.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVFoundation")
@@ -70,7 +72,7 @@ public class AVAssetDownloadConfiguration extends NSObject {
 
     /**
      * [@property] assetArtworkData
-     * <p>
+     * 
      * NSData representing artwork data for this asset. Optional. May be displayed, for example, by the usage pane of
      * the Settings app. Must work with +[UIImage imageWithData:].
      */
@@ -84,9 +86,9 @@ public class AVAssetDownloadConfiguration extends NSObject {
 
     /**
      * [@property] auxiliaryContentConfigurations
-     * <p>
+     * 
      * The auxiliary content for the download. Optional.
-     * <p>
+     * 
      * By default, auxiliaryContentConfigurations will have one or more default auxiliary content configurations. These
      * content configurations can be augmented with additional content configurations or removed entirely if no
      * auxiliary content is desired.
@@ -123,13 +125,15 @@ public class AVAssetDownloadConfiguration extends NSObject {
 
     /**
      * downloadConfigurationWithAsset:title:
-     * <p>
+     * 
      * Creates and initializes a download configuration object.
-     * <p>
+     * 
      * This method will throw an exception if AVURLAsset has been invalidated.
-     *
-     * @param asset The asset to create the download configuration for.
-     * @param title A human readable title for this asset, expected to be as suitable as possible for the user's
+     * 
+     * @param asset
+     *              The asset to create the download configuration for.
+     * @param title
+     *              A human readable title for this asset, expected to be as suitable as possible for the user's
      *              preferred languages. Will show up in the usage pane of the settings app.
      */
     @Generated
@@ -174,10 +178,10 @@ public class AVAssetDownloadConfiguration extends NSObject {
 
     /**
      * [@property] optimizesAuxiliaryContentConfigurations
-     * <p>
+     * 
      * Optimizes auxiliary content selection depending on the primary to minimize total number of video renditions
      * downloaded. True by default.
-     * <p>
+     * 
      * For example, if the primary content configuration represents stereo renditions and auxiliary content
      * configuration represents multichannel audio renditions, auxiliary multichannel variant will be chosen so as to
      * avoid downloading duplicate video renditions.
@@ -188,7 +192,7 @@ public class AVAssetDownloadConfiguration extends NSObject {
 
     /**
      * [@property] primaryContentConfiguration
-     * <p>
+     * 
      * The primary content for the download.
      */
     @Generated
@@ -205,7 +209,7 @@ public class AVAssetDownloadConfiguration extends NSObject {
 
     /**
      * [@property] assetArtworkData
-     * <p>
+     * 
      * NSData representing artwork data for this asset. Optional. May be displayed, for example, by the usage pane of
      * the Settings app. Must work with +[UIImage imageWithData:].
      */
@@ -215,9 +219,9 @@ public class AVAssetDownloadConfiguration extends NSObject {
 
     /**
      * [@property] auxiliaryContentConfigurations
-     * <p>
+     * 
      * The auxiliary content for the download. Optional.
-     * <p>
+     * 
      * By default, auxiliaryContentConfigurations will have one or more default auxiliary content configurations. These
      * content configurations can be augmented with additional content configurations or removed entirely if no
      * auxiliary content is desired.
@@ -228,10 +232,10 @@ public class AVAssetDownloadConfiguration extends NSObject {
 
     /**
      * [@property] optimizesAuxiliaryContentConfigurations
-     * <p>
+     * 
      * Optimizes auxiliary content selection depending on the primary to minimize total number of video renditions
      * downloaded. True by default.
-     * <p>
+     * 
      * For example, if the primary content configuration represents stereo renditions and auxiliary content
      * configuration represents multichannel audio renditions, auxiliary multichannel variant will be chosen so as to
      * avoid downloading duplicate video renditions.

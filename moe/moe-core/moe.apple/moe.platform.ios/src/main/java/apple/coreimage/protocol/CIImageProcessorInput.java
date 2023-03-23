@@ -17,7 +17,6 @@ limitations under the License.
 package apple.coreimage.protocol;
 
 import apple.coregraphics.opaque.IOSurfaceRef;
-import apple.coregraphics.struct.CGRect;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.metal.protocol.MTLTexture;
 import org.moe.natj.general.ann.ByValue;
@@ -31,7 +30,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -93,4 +96,14 @@ public interface CIImageProcessorInput {
     @Generated
     @Selector("surface")
     IOSurfaceRef surface();
+
+    /**
+     * A 64-bit digest that uniquely descibes the contents of the input to a processor.
+     * This digest will change if the graph of the input changes in any way.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("digest")
+    long digest();
 }

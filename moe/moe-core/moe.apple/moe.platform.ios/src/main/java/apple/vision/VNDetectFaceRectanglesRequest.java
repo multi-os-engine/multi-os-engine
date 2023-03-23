@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request that will detect faces in an image.
- * <p>
+ * 
  * This request will generate VNFaceObservation objects with a defined boundingBox.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")

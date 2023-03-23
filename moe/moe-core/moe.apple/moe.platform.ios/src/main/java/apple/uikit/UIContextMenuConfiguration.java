@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -76,7 +79,7 @@ public class UIContextMenuConfiguration extends NSObject {
 
     /**
      * Returns a UIContextMenuConfiguration.
-     *
+     * 
      * @param identifier      Optional unique identifier. If omitted, an NSUUID will be generated. May be used to
      *                        identify this configuration throughout the interaction's lifecycle.
      * @param previewProvider Optional preview view controller provider block, called when the menu is about to be
@@ -118,6 +121,10 @@ public class UIContextMenuConfiguration extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * This configuration's identifier. When representing multiple items in your app, this identifier
+     * corresponds to the primary item (i.e. the one with which the user interacted when invoking the menu).
+     */
     @Generated
     @Selector("identifier")
     @MappedReturn(ObjCObjectMapper.class)
@@ -173,4 +180,64 @@ public class UIContextMenuConfiguration extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Number of items on which this menu acts. Used to badge a multi-item menu's preview stack.
+     * When unset, this value is determined automatically by the system. Values lower than 2 hide the badge.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("badgeCount")
+    @NInt
+    public native long badgeCount();
+
+    /**
+     * Preferred menu element ordering strategy for this menu.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("preferredMenuElementOrder")
+    @NInt
+    public native long preferredMenuElementOrder();
+
+    /**
+     * When this menu acts on multiple items, you may include the identifiers of secondary items to display a multi-item
+     * menu.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("secondaryItemIdentifiers")
+    public native NSSet<?> secondaryItemIdentifiers();
+
+    /**
+     * Number of items on which this menu acts. Used to badge a multi-item menu's preview stack.
+     * When unset, this value is determined automatically by the system. Values lower than 2 hide the badge.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setBadgeCount:")
+    public native void setBadgeCount(@NInt long value);
+
+    /**
+     * Preferred menu element ordering strategy for this menu.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setPreferredMenuElementOrder:")
+    public native void setPreferredMenuElementOrder(@NInt long value);
+
+    /**
+     * When this menu acts on multiple items, you may include the identifiers of secondary items to display a multi-item
+     * menu.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSecondaryItemIdentifiers:")
+    public native void setSecondaryItemIdentifiers(NSSet<?> value);
 }

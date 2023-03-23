@@ -26,6 +26,12 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 8.0
+ * Deprecated-Since: 13.0
+ * Deprecated-Message: UIDocumentMenuDelegate is deprecated. Use UIDocumentPickerViewController directly.
+ */
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)

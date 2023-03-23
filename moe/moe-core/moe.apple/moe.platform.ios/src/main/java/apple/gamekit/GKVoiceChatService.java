@@ -46,6 +46,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GKVoiceChatService provides voice chat capabilities depending on your networking situation.
+ * 
+ * API-Since: 3.0
+ * Deprecated-Since: 7.0
+ * Deprecated-Message: Use GKVoiceChat instead
  */
 @Deprecated
 @Generated
@@ -174,6 +178,10 @@ public class GKVoiceChatService extends NSObject {
     @Selector("acceptCallID:error:")
     public native boolean acceptCallIDError(@NInt long callID, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
     @Deprecated
     @Generated
     @Selector("client")
@@ -269,11 +277,19 @@ public class GKVoiceChatService extends NSObject {
     @Selector("remoteParticipantVolume")
     public native float remoteParticipantVolume();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
     @Deprecated
     @Generated
     @Selector("setClient:")
     public native void setClient_unsafe(@Mapped(ObjCObjectMapper.class) GKVoiceChatClient value);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
     @Deprecated
     @Generated
     public void setClient(@Mapped(ObjCObjectMapper.class) GKVoiceChatClient value) {

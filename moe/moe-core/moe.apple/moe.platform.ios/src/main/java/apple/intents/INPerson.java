@@ -46,6 +46,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -203,11 +206,17 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
 
     /**
      * The identity of the person in the application (e.g. email address, phone number, user handle, etc.)
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use personHandle instead
      */
+    @Deprecated
     @Generated
     @Selector("handle")
     public native String handle();
 
+    @Deprecated
     @IsOptional
     @Generated
     @Selector("identifier")
@@ -230,7 +239,12 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
 
     /**
      * Use this convenience initializer if the person's name is unknown
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use the designated initializer instead
      */
+    @Deprecated
     @Generated
     @Selector("initWithHandle:displayName:contactIdentifier:")
     public native INPerson initWithHandleDisplayNameContactIdentifier(String handle, String displayName,
@@ -239,12 +253,23 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     /**
      * This is the preferred convenience initializer if the app knows the name components of the person (e.g. given
      * name, family name, etc).
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use the designated initializer instead
      */
+    @Deprecated
     @Generated
     @Selector("initWithHandle:nameComponents:contactIdentifier:")
     public native INPerson initWithHandleNameComponentsContactIdentifier(String handle,
             NSPersonNameComponents nameComponents, String contactIdentifier);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithHandle:nameComponents:displayName:image:contactIdentifier:")
     public native INPerson initWithHandleNameComponentsDisplayNameImageContactIdentifier(String handle,
@@ -283,6 +308,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
 
     /**
      * This person's relationship to the user
+     * 
+     * API-Since: 10.2
      */
     @Generated
     @Selector("relationship")
@@ -313,6 +340,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
 
     /**
      * This property is set to YES when the user says things like "Search for messages from me", etc.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isMe")
@@ -320,6 +349,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
 
     /**
      * This property is filled in with what Siri thinks are close matches to what the user said
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @Selector("siriMatches")
@@ -329,24 +360,36 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Selector("vocabularyIdentifier")
     public native String vocabularyIdentifier();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isMe:")
     public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsMe(
             INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
             String contactIdentifier, String customIdentifier, boolean isMe);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:relationship:")
     public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierRelationship(
             INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
             String contactIdentifier, String customIdentifier, String relationship);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isContactSuggestion:suggestionType:")
     public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsContactSuggestionSuggestionType(
             INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
             String contactIdentifier, String customIdentifier, boolean isContactSuggestion, @NInt long suggestionType);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isMe:suggestionType:")
     public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsMeSuggestionType(
@@ -355,6 +398,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
 
     /**
      * Indicates that the person is confirmed
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isContactSuggestion")

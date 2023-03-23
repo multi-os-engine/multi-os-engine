@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] PHASESpatializationMode
- * <p>
+ * 
  * Spatialization mode.
  * [@constant] PHASESpatializationModeAutomatic
  * Automatically select the spatialization mode based on the current output device.

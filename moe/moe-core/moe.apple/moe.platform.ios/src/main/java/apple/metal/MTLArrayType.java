@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -175,15 +178,24 @@ public class MTLArrayType extends MTLType {
     @NUInt
     public native long stride();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("argumentIndexStride")
     @NUInt
     public native long argumentIndexStride();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("elementPointerType")
     public native MTLPointerType elementPointerType();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("elementTextureReferenceType")
     public native MTLTextureReferenceType elementTextureReferenceType();

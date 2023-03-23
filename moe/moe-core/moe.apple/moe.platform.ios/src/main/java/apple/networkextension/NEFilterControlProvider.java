@@ -42,9 +42,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEFilterControlProvider
- * <p>
+ * 
  * The NEFilterControlProvider class declares the programmatic interface for an object that is responsible for
  * installing filtering rules on the device.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -158,8 +160,10 @@ public class NEFilterControlProvider extends NEFilterProvider {
 
     /**
      * [@property] URLAppendStringMap
-     * <p>
+     * 
      * A dictionary containing strings to be appended to URLs.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("URLAppendStringMap")
@@ -167,18 +171,20 @@ public class NEFilterControlProvider extends NEFilterProvider {
 
     /**
      * handleNewFlow:completionHandler:
-     * <p>
+     * 
      * This function is called by the framework when the NEFilterDataProvider indicates that the filtering verdict for
      * the given flow is NEFilterNewFlowVerdictNeedRules. Subclass implementations must override this method and
      * implement whatever steps are necessary to fetch new rules pertaining to the given flow and place them on disk in
      * a location accessible by the NEFilterDataProvider.
-     *
+     * 
      * @param flow              An NEFilterFlow object containing details about the flow that requires a rules update.
      * @param completionHandler A block that must be called when the NEFilterControlProvider is ready for the
      *                          NEFilterDataProvider to re-process the new flow. NEFilterControlVerdict stores the
      *                          verdict through which the control provider determines if a flow needs to be dropped or
      *                          allowed. The verdict also indicates if the control plugin wants the data plugin to
      *                          update its rules and handle the verdict.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("handleNewFlow:completionHandler:")
@@ -187,17 +193,19 @@ public class NEFilterControlProvider extends NEFilterProvider {
 
     /**
      * handleRemediationForFlow:completionHandler:
-     * <p>
+     * 
      * This function is called by the framework when the NEFilterDataProvider indicates that the filtering verdict for
      * the given flow is NEFilterRemediateVerdictNeedRules. Subclass implementations must override this method and
      * implement whatever steps are necessary to remediate the given flow.
-     *
+     * 
      * @param flow              An NEFilterFlow object containing details about the flow that requires remediation.
      * @param completionHandler A block that must be called when the NEFilterControlProvider is ready for the
      *                          NEFilterDataProvider to re-process the new flow. NEFilterControlVerdict stores the
      *                          verdict through which the control provider determines if a flow needs to be dropped or
      *                          allowed. The verdict also indicates if the control plugin wants the data plugin to
      *                          update its rules and handle the verdict.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("handleRemediationForFlow:completionHandler:")
@@ -210,9 +218,11 @@ public class NEFilterControlProvider extends NEFilterProvider {
 
     /**
      * notifyRulesChanged
-     * <p>
+     * 
      * This function is called by filter control implementations to notify the data provider "out of band" that the
      * rules changed.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("notifyRulesChanged")
@@ -226,11 +236,10 @@ public class NEFilterControlProvider extends NEFilterProvider {
      * the sub-dictionaries are defined by the control provider. When the data provider creates a "remediate" verdict
      * using [NEFilterDataVerdict remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:], it passes the
      * key corresponding to the custom string to be inserted into the "content blocked" page.
-     * <p>
+     * 
      * Here is a sample remediationMap dictionary:
-     * <p>
+     * 
      * remediationMap = @{ NEFilterProviderRemediationMapRemediationURLs :
-     *
      * @{
      * @"RemediateKey1" : @"http://www.remediation_url_1.com",
      * @"RemediateKey2" : @"http://www.remediation_url_2.com"
@@ -240,6 +249,9 @@ public class NEFilterControlProvider extends NEFilterProvider {
      * @"RemediationButtonText1" : @"Remediate URL"
      * }
      * };
+     * 
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("remediationMap")
@@ -253,11 +265,10 @@ public class NEFilterControlProvider extends NEFilterProvider {
      * the sub-dictionaries are defined by the control provider. When the data provider creates a "remediate" verdict
      * using [NEFilterDataVerdict remediateVerdictWithRemediationURLMapKey:remediationButtonTextMapKey:], it passes the
      * key corresponding to the custom string to be inserted into the "content blocked" page.
-     * <p>
+     * 
      * Here is a sample remediationMap dictionary:
-     * <p>
+     * 
      * remediationMap = @{ NEFilterProviderRemediationMapRemediationURLs :
-     *
      * @{
      * @"RemediateKey1" : @"http://www.remediation_url_1.com",
      * @"RemediateKey2" : @"http://www.remediation_url_2.com"
@@ -267,6 +278,9 @@ public class NEFilterControlProvider extends NEFilterProvider {
      * @"RemediationButtonText1" : @"Remediate URL"
      * }
      * };
+     * 
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setRemediationMap:")
@@ -275,8 +289,10 @@ public class NEFilterControlProvider extends NEFilterProvider {
 
     /**
      * [@property] URLAppendStringMap
-     * <p>
+     * 
      * A dictionary containing strings to be appended to URLs.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setURLAppendStringMap:")

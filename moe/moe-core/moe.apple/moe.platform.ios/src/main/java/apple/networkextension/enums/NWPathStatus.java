@@ -21,26 +21,36 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NWPathStatus
- * <p>
+ * 
  * Path status values
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class NWPathStatus {
     /**
      * [@const] NWPathStatusInvalid The path cannot be evaluated.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Invalid = 0x0000000000000000L;
     /**
      * [@const] NWPathStatusSatisfied The path is ready to be used for traffic.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Satisfied = 0x0000000000000001L;
     /**
      * [@const] NWPathStatusUnsatisfied The network for this connection is not available.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Unsatisfied = 0x0000000000000002L;
     /**
      * [@const] NWPathStatusSatisfiable The path may become satisfied upon
      * a connection attempt.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long Satisfiable = 0x0000000000000003L;
 

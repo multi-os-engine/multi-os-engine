@@ -21,6 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class CBATTError {
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NInt public static final long Success = 0x0000000000000000L;
     @Generated @NInt public static final long InvalidHandle = 0x0000000000000001L;
     @Generated @NInt public static final long ReadNotPermitted = 0x0000000000000002L;

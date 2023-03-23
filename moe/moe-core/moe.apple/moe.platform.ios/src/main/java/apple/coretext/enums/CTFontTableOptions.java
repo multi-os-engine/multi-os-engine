@@ -21,6 +21,11 @@ import org.moe.natj.general.ann.Generated;
 @Generated
 public final class CTFontTableOptions {
     @Generated public static final int NoOptions = 0x00000000;
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Unsupported
+     */
     @Deprecated @Generated public static final int ExcludeSynthetic = 0x00000001;
 
     @Generated

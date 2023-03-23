@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -69,6 +72,7 @@ public class UINavigationController extends UIViewController {
     @Selector("allocWithZone:")
     public static native UINavigationController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -162,6 +166,8 @@ public class UINavigationController extends UIViewController {
     /**
      * The gesture recognizer that triggers if the bars will hide or show due to a swipe. Do not change the delegate or
      * attempt to replace this gesture by overriding this method.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("barHideOnSwipeGestureRecognizer")
@@ -170,6 +176,8 @@ public class UINavigationController extends UIViewController {
     /**
      * The gesture recognizer used to recognize if the bars will hide or show due to a tap in content. Do not change the
      * delegate or attempt to replace this gesture by overriding this method.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("barHideOnTapGestureRecognizer")
@@ -183,6 +191,8 @@ public class UINavigationController extends UIViewController {
     /**
      * When the user swipes, the navigation controller's navigationBar & toolbar will be hidden (on a swipe up) or shown
      * (on a swipe down). The toolbar only participates if it has items.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("hidesBarsOnSwipe")
@@ -191,6 +201,8 @@ public class UINavigationController extends UIViewController {
     /**
      * When the user taps, the navigation controller's navigationBar & toolbar will be hidden or shown, depending on the
      * hidden state of the navigationBar. The toolbar will only be shown if it has items to display.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("hidesBarsOnTap")
@@ -199,6 +211,8 @@ public class UINavigationController extends UIViewController {
     /**
      * When the keyboard appears, the navigation controller's navigationBar toolbar will be hidden. The bars will remain
      * hidden when the keyboard dismisses, but a tap in the content area will show them.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("hidesBarsWhenKeyboardAppears")
@@ -207,6 +221,8 @@ public class UINavigationController extends UIViewController {
     /**
      * When the UINavigationController's vertical size class is compact, hide the UINavigationBar and UIToolbar.
      * Unhandled taps in the regions that would normally be occupied by these bars will reveal the bars.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("hidesBarsWhenVerticallyCompact")
@@ -224,6 +240,8 @@ public class UINavigationController extends UIViewController {
      * Use this initializer to make the navigation controller use your custom bar class.
      * Passing nil for navigationBarClass will get you UINavigationBar, nil for toolbarClass gets UIToolbar.
      * The arguments must otherwise be subclasses of the respective UIKit classes.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
@@ -244,6 +262,9 @@ public class UINavigationController extends UIViewController {
     @Selector("initWithRootViewController:")
     public native UINavigationController initWithRootViewController(UIViewController rootViewController);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("interactivePopGestureRecognizer")
     public native UIGestureRecognizer interactivePopGestureRecognizer();
@@ -258,6 +279,8 @@ public class UINavigationController extends UIViewController {
 
     /**
      * Defaults to YES, i.e. hidden.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isToolbarHidden")
@@ -265,6 +288,8 @@ public class UINavigationController extends UIViewController {
 
     /**
      * Defaults to YES, i.e. hidden.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setToolbarHidden:")
@@ -326,6 +351,8 @@ public class UINavigationController extends UIViewController {
     /**
      * When the user swipes, the navigation controller's navigationBar & toolbar will be hidden (on a swipe up) or shown
      * (on a swipe down). The toolbar only participates if it has items.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setHidesBarsOnSwipe:")
@@ -334,6 +361,8 @@ public class UINavigationController extends UIViewController {
     /**
      * When the user taps, the navigation controller's navigationBar & toolbar will be hidden or shown, depending on the
      * hidden state of the navigationBar. The toolbar will only be shown if it has items to display.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setHidesBarsOnTap:")
@@ -342,6 +371,8 @@ public class UINavigationController extends UIViewController {
     /**
      * When the keyboard appears, the navigation controller's navigationBar toolbar will be hidden. The bars will remain
      * hidden when the keyboard dismisses, but a tap in the content area will show them.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setHidesBarsWhenKeyboardAppears:")
@@ -350,6 +381,8 @@ public class UINavigationController extends UIViewController {
     /**
      * When the UINavigationController's vertical size class is compact, hide the UINavigationBar and UIToolbar.
      * Unhandled taps in the regions that would normally be occupied by these bars will reveal the bars.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setHidesBarsWhenVerticallyCompact:")
@@ -366,6 +399,8 @@ public class UINavigationController extends UIViewController {
     /**
      * Hide or show the toolbar at the bottom of the screen. If animated, it will transition vertically using
      * UINavigationControllerHideShowBarDuration.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setToolbarHidden:animated:")
@@ -381,6 +416,8 @@ public class UINavigationController extends UIViewController {
     /**
      * If animated is YES, then simulate a push or pop depending on whether the new top view controller was previously
      * in the stack.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setViewControllers:animated:")
@@ -389,6 +426,8 @@ public class UINavigationController extends UIViewController {
 
     /**
      * Interpreted as pushViewController:animated:
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("showViewController:sender:")
@@ -396,6 +435,8 @@ public class UINavigationController extends UIViewController {
 
     /**
      * For use when presenting an action sheet.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("toolbar")

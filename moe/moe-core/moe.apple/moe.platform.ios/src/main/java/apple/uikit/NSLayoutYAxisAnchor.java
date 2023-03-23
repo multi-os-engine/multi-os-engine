@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -155,6 +158,8 @@ public class NSLayoutYAxisAnchor extends NSLayoutAnchor<NSLayoutYAxisAnchor> {
 
     /**
      * A composite anchor for creating constraints relating vertical distances between locations.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("anchorWithOffsetToAnchor:")
@@ -167,17 +172,25 @@ public class NSLayoutYAxisAnchor extends NSLayoutAnchor<NSLayoutYAxisAnchor> {
      * The constraint affects how far the receiver will be positioned below 'anchor'.
      * If either the receiver or 'anchor' is the firstBaselineAnchor or lastBaselineAnchor of a view with text content
      * then the spacing will depend on the fonts involved and will change when those do.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("constraintEqualToSystemSpacingBelowAnchor:multiplier:")
     public native NSLayoutConstraint constraintEqualToSystemSpacingBelowAnchorMultiplier(NSLayoutYAxisAnchor anchor,
             @NFloat double multiplier);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("constraintGreaterThanOrEqualToSystemSpacingBelowAnchor:multiplier:")
     public native NSLayoutConstraint constraintGreaterThanOrEqualToSystemSpacingBelowAnchorMultiplier(
             NSLayoutYAxisAnchor anchor, @NFloat double multiplier);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("constraintLessThanOrEqualToSystemSpacingBelowAnchor:multiplier:")
     public native NSLayoutConstraint constraintLessThanOrEqualToSystemSpacingBelowAnchorMultiplier(

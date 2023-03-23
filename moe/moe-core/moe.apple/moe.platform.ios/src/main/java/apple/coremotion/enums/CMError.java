@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * CMError
- * <p>
+ * 
  * Discussion:
  * Error returned as code to NSError from CoreMotion.
  */

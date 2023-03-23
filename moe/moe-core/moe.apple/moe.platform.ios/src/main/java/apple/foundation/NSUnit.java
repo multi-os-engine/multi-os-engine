@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NSUnit is the base class for all unit types (dimensional and dimensionless).
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Foundation")

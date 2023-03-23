@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The ARSession class configures and runs different Augmented Reality techniques on a device.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("ARKit")
@@ -50,9 +52,9 @@ public class ARSession extends NSObject {
 
     /**
      * Adds an anchor to the session.
-     * <p>
+     * 
      * The anchor will be added in the next frame update.
-     *
+     * 
      * @param anchor The anchor to add.
      */
     @Generated
@@ -119,7 +121,7 @@ public class ARSession extends NSObject {
 
     /**
      * The dispatch queue on which the delegate calls are performed.
-     * <p>
+     * 
      * If not provided or nil, delegate calls will be performed on the main queue.
      */
     @Generated
@@ -167,7 +169,7 @@ public class ARSession extends NSObject {
 
     /**
      * Pauses the session.
-     * <p>
+     * 
      * Once paused, no more updates will be received from the
      * session until run is called again.
      */
@@ -177,9 +179,9 @@ public class ARSession extends NSObject {
 
     /**
      * Removes an anchor from the session.
-     * <p>
+     * 
      * The anchor will be removed from subsequent frame updates.
-     *
+     * 
      * @param anchor The anchor to remove.
      */
     @Generated
@@ -196,10 +198,10 @@ public class ARSession extends NSObject {
 
     /**
      * Runs the session with the provided configuration.
-     * <p>
+     * 
      * Calling run on a session that has already started will
      * transition immediately to using the new configuration.
-     *
+     * 
      * @param configuration The configuration to use.
      */
     @Generated
@@ -208,11 +210,11 @@ public class ARSession extends NSObject {
 
     /**
      * Runs the session with the provided configuration and options.
-     * <p>
+     * 
      * Calling run on a session that has already started will
      * transition immediately to using the new configuration. Options
      * can be used to alter the default behavior when transitioning configurations.
-     *
+     * 
      * @param configuration The configuration to use.
      * @param options       The run options to use.
      */
@@ -244,7 +246,7 @@ public class ARSession extends NSObject {
 
     /**
      * The dispatch queue on which the delegate calls are performed.
-     * <p>
+     * 
      * If not provided or nil, delegate calls will be performed on the main queue.
      */
     @Generated
@@ -266,14 +268,16 @@ public class ARSession extends NSObject {
 
     /**
      * Copies the current state of the world being tracked by the session.
-     * <p>
+     * 
      * A world map is only provided when running an ARWorldTrackingConfiguration.
-     *
+     * 
      * @param completionHandler The completion handler to call when the get has completed. This handler is executed
      *                          on the session's delegate queue. The completion handler takes the following parameters:
      *                          worldMap - The current world map or nil if unavailable.
      *                          error - An error that indicates why the world map is unavailable, or nil if a world map
      *                          was provided.
+     * 
+     *                          API-Since: 12.0
      */
     @Generated
     @Selector("getCurrentWorldMapWithCompletionHandler:")
@@ -289,8 +293,10 @@ public class ARSession extends NSObject {
 
     /**
      * Unique identifier of the running session.
-     * <p>
+     * 
      * The identifier may change after calling runWithConfiguration.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("identifier")
@@ -298,10 +304,12 @@ public class ARSession extends NSObject {
 
     /**
      * Perform a raycast.
-     *
+     * 
      * @param query Raycast query used for raycasting.
      * @return List of raycast results, sorted from nearest to farthest (in distance from the camera). The results could
      *         be empty if raycast fails.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("raycast:")
@@ -309,11 +317,11 @@ public class ARSession extends NSObject {
 
     /**
      * Perform a tracked raycast.
-     * <p>
+     * 
      * The session performs continuous raycasting and calls the update handler with the updated results.
      * The ARTrackedRaycast object returned can be used to update the raycast with a new raycast query or stop
      * raycasting.
-     *
+     * 
      * @param query         Raycast query used for raycasting.
      * @param updateHandler update handler where updated list of results, sorted from nearest to farthest (in distance
      *                      from
@@ -321,6 +329,8 @@ public class ARSession extends NSObject {
      * @return Tracked raycast object used to update or stop raycasting. This could be nil if the raycast fails or if
      *         the
      *         configuration is not `ARWorldTrackingConfiguration` or its subclasses.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @Selector("trackedRaycast:updateHandler:")
@@ -336,13 +346,39 @@ public class ARSession extends NSObject {
 
     /**
      * Update session with collaboration data.
-     * <p>
+     * 
      * Use this to update the session with collaboration data received from other participants.
-     *
+     * 
      * @param collaborationData Collaboration data for updating the session.
      * @see ARCollaborationData
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("updateWithCollaborationData:")
     public native void updateWithCollaborationData(ARCollaborationData collaborationData);
+
+    /**
+     * Requests a single, high resolution frame be captured at that moment in time.
+     * 
+     * Some video formats do not support a significantly higher resolution than the streaming camera resolution. Use
+     * the @c isRecommendedForHighResolutionFrameCapturing method on the video format to check if the format is
+     * recommended.
+     * 
+     * @see -[ARVideoFormat isRecommendedForHighResolutionFrameCapturing]
+     * @param completion Block being called when the call completes.
+     * 
+     *                   API-Since: 16.0
+     */
+    @Generated
+    @Selector("captureHighResolutionFrameWithCompletion:")
+    public native void captureHighResolutionFrameWithCompletion(
+            @ObjCBlock(name = "call_captureHighResolutionFrameWithCompletion") Block_captureHighResolutionFrameWithCompletion completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_captureHighResolutionFrameWithCompletion {
+        @Generated
+        void call_captureHighResolutionFrameWithCompletion(ARFrame frame, NSError error);
+    }
 }

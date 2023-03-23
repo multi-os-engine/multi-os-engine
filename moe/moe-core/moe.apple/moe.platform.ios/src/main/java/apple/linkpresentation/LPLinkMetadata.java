@@ -31,6 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An LPLinkMetadata object contains metadata about a URL.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("LinkPresentation")
@@ -172,7 +174,7 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * A remote URL corresponding to a representative video for the URL.
-     * <p>
+     * 
      * This may point to to a remote video file that AVFoundation can stream,
      * or to a YouTube video URL.
      */
@@ -213,7 +215,7 @@ public class LPLinkMetadata extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * A remote URL corresponding to a representative video for the URL.
-     * <p>
+     * 
      * This may point to to a remote video file that AVFoundation can stream,
      * or to a YouTube video URL.
      */

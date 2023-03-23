@@ -35,9 +35,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * VNRecognizedText
- * <p>
+ * 
  * VNRecognizedText A block of recognized text. There can be multiple VNRecognizedText objects returned in a
  * VNRecognizedTextObservation - one for each candidate.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Vision")
@@ -73,7 +75,7 @@ public class VNRecognizedText extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Calculate the bounding box around the characters in the range of the string.
-     * <p>
+     * 
      * The bounding boxes are not guaranteed to be an exact fit around the characters and are purely meant for UI
      * purposes and not for image processing.
      */
@@ -178,7 +180,7 @@ public class VNRecognizedText extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Field that contains recognized text.
-     * <p>
+     * 
      * This is the top candidate of the recognized text.
      */
     @Generated

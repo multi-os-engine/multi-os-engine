@@ -31,8 +31,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKFHIRResource
- * <p>
+ * 
  * The HKFHIRResource class encapsulates a FHIR (Fast Healthcare Interoperability Resources) resource.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("HealthKit")
@@ -92,9 +94,9 @@ public class HKFHIRResource extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] data
-     * <p>
+     * 
      * The JSON representation of the FHIR resource.
-     * <p>
+     * 
      * Conforms to the HL7 Argonaut Project resource type definitions.
      */
     @Generated
@@ -120,9 +122,9 @@ public class HKFHIRResource extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] identifier
-     * <p>
+     * 
      * The identifier of the resource, corresponding to the 'id' field in the resource's JSON representation.
-     * <p>
+     * 
      * Unique within a given resource type and FHIR end-point, as represented by an HKSource.
      */
     @Generated
@@ -173,9 +175,9 @@ public class HKFHIRResource extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] resourceType
-     * <p>
+     * 
      * The resource type, corresponding to the 'resourceType' field in the resource's JSON representation.
-     * <p>
+     * 
      * May be one of 8 FHIR resource types supported within HealthKit: AllergyIntolerance, Condition,
      * Immunization, MedicationDispense, MedicationOrder, MedicationStatement, Observation, and Procedure.
      */
@@ -189,9 +191,9 @@ public class HKFHIRResource extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] sourceURL
-     * <p>
+     * 
      * The fully specified source URL of the FHIR resource.
-     * <p>
+     * 
      * This URL can be used to help determine the provenance of the resource. Direct access is protected by
      * OAuth: querying without suitable authorization will result in an authorization error.
      */
@@ -220,8 +222,10 @@ public class HKFHIRResource extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] FHIRVersion
-     * <p>
+     * 
      * The FHIR version of the resource data.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("FHIRVersion")

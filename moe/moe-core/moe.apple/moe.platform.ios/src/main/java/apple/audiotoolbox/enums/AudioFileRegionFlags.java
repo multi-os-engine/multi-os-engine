@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] AudioFileRegionFlags
- * <p>
+ * 
  * These are flags for an AudioFileRegion that specify a playback direction.
- * <p>
+ * 
  * One or multiple of these flags can be set. For example, if both kAudioFileRegionFlag_LoopEnable and
  * kAudioFileRegionFlag_PlayForward are set, then the region will play as a forward loop. If only
  * kAudioFileRegionFlag_PlayForward is set, then the region will be played forward once.

@@ -18,8 +18,6 @@ package apple.mapkit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGContextRef;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -54,10 +52,16 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * Prefer MKOverlayRenderer
+ * 
+ * API-Since: 4.0
+ * Deprecated-Since: 13.0
  */
+@Deprecated
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -163,6 +167,7 @@ public class MKOverlayView extends UIView {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -189,6 +194,7 @@ public class MKOverlayView extends UIView {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -264,46 +270,57 @@ public class MKOverlayView extends UIView {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -397,12 +414,19 @@ public class MKOverlayView extends UIView {
      * case where the view may want to draw in the specified rect but the data is
      * not available, use setNeedsDisplayInMapRect:zoomLevel: to signal when the
      * data does become available.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
     @Selector("canDrawMapRect:zoomScale:")
     public native boolean canDrawMapRectZoomScale(@ByValue MKMapRect mapRect, @NFloat double zoomScale);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("drawMapRect:zoomScale:inContext:")
@@ -421,23 +445,39 @@ public class MKOverlayView extends UIView {
     @Selector("initWithFrame:")
     public native MKOverlayView initWithFrame(@ByValue CGRect frame);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("initWithOverlay:")
     public native MKOverlayView initWithOverlay(@Mapped(ObjCObjectMapper.class) MKOverlay overlay);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("mapPointForPoint:")
     @ByValue
     public native MKMapPoint mapPointForPoint(@ByValue CGPoint point);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("mapRectForRect:")
     @ByValue
     public native MKMapRect mapRectForRect(@ByValue CGRect rect);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("overlay")
@@ -446,6 +486,9 @@ public class MKOverlayView extends UIView {
 
     /**
      * Convert screen points relative to this view to absolute MKMapPoints
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -453,17 +496,29 @@ public class MKOverlayView extends UIView {
     @ByValue
     public native CGPoint pointForMapPoint(@ByValue MKMapPoint mapPoint);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("rectForMapRect:")
     @ByValue
     public native CGRect rectForMapRect(@ByValue MKMapRect mapRect);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("setNeedsDisplayInMapRect:")
     public native void setNeedsDisplayInMapRect(@ByValue MKMapRect mapRect);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     */
     @Generated
     @Deprecated
     @Selector("setNeedsDisplayInMapRect:zoomScale:")

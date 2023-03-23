@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCArithmeticLayer
- * <p>
+ * 
  * An arithmetic layer
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -117,7 +119,7 @@ public class MLCArithmeticLayer extends MLCLayer {
 
     /**
      * Create an arithmetic layer
-     *
+     * 
      * @param operation The arithmetic operation
      * @return A new arithmetic layer
      */
@@ -132,7 +134,7 @@ public class MLCArithmeticLayer extends MLCLayer {
 
     /**
      * [@property] operation
-     * <p>
+     * 
      * The arithmetic operation.
      */
     @Generated

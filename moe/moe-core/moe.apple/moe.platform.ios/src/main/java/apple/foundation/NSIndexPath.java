@@ -106,6 +106,9 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("indexPathForItem:inSection:")
     public static native NSIndexPath indexPathForItemInSection(@NInt long item, @NInt long section);
@@ -194,16 +197,22 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * use -getIndexes:range: instead
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("getIndexes:")
     public native void getIndexes(NUIntPtr indexes);
 
     /**
      * Copies the indexes stored in this index path from the positions specified by positionRange into indexes.
-     * <p>
+     * 
      * It is the developer’s responsibility to allocate the memory for the C array.
-     *
+     * 
+     * API-Since: 7.0
+     * 
      * @param indexes       Buffer of at least as many NSUIntegers as specified by the length of positionRange. On
      *                      return, this memory will hold the index path's indexes.
      * @param positionRange A range of valid positions within this index path. If the location plus the length of
@@ -245,6 +254,8 @@ public class NSIndexPath extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Returns the index at position 1 if it exists, otherwise returns NSNotFound.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("item")

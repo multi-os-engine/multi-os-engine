@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("QuickLookThumbnailing")
 @Runtime(ObjCRuntime.class)
@@ -69,7 +72,7 @@ public class QLThumbnailGenerator extends NSObject {
 
     /**
      * Cancels the given QLThumbnailGenerationRequest.
-     *
+     * 
      * @param request The request that should be cancelled.
      */
     @Generated
@@ -93,7 +96,8 @@ public class QLThumbnailGenerator extends NSObject {
     public static native String description_static();
 
     /**
-     * @param completionHandler Always called when the thumbnail generation is over.
+     * @param completionHandler
+     *                          Always called when the thumbnail generation is over.
      *                          The thumbnail passed to this handler is the most representative version of the thumbnail
      *                          that was successfully generated (if any).
      *                          If set, the error contains information about the issue that occurred while trying to
@@ -114,7 +118,8 @@ public class QLThumbnailGenerator extends NSObject {
     }
 
     /**
-     * @param updateHandler Called for the successive requested representations of a thumbnail.
+     * @param updateHandler
+     *                      Called for the successive requested representations of a thumbnail.
      *                      If a representation was not successfully generated, this may be called with a nil
      *                      representation.
      *                      If a requested more representative version was successfully generated before a less
@@ -187,10 +192,11 @@ public class QLThumbnailGenerator extends NSObject {
      * The file saved at fileURL has to be deleted when it is not used anymore.
      * This is primarily intended for file provider extensions which need to upload thumbnails and have a small memory
      * limit.
-     *
+     * 
      * @param contentType       An image content type to save the thumbnail as, supported by CGImageDestination, such as
      *                          kUTTypePNG or kUTTypeJPEG
-     * @param completionHandler Always called when the thumbnail generation is over. Will contain an error if the
+     * @param completionHandler
+     *                          Always called when the thumbnail generation is over. Will contain an error if the
      *                          thumbnail could not be successfully saved to disk at fileURL.
      */
     @Generated

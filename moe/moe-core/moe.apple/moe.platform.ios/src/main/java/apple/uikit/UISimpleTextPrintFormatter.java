@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * ______________________________
+ * 
+ * API-Since: 4.2
  */
 @Generated
 @Library("UIKit")
@@ -152,6 +154,9 @@ public class UISimpleTextPrintFormatter extends UIPrintFormatter {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("attributedText")
     public native NSAttributedString attributedText();
@@ -168,6 +173,9 @@ public class UISimpleTextPrintFormatter extends UIPrintFormatter {
     @Selector("init")
     public native UISimpleTextPrintFormatter init();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithAttributedText:")
     public native UISimpleTextPrintFormatter initWithAttributedText(NSAttributedString attributedText);
@@ -176,6 +184,9 @@ public class UISimpleTextPrintFormatter extends UIPrintFormatter {
     @Selector("initWithText:")
     public native UISimpleTextPrintFormatter initWithText(String text);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setAttributedText:")
     public native void setAttributedText(NSAttributedString value);

@@ -19,10 +19,22 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 public final class UICollisionBehaviorMode {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NUInt public static final long Items = 0x0000000000000001L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NUInt public static final long Boundaries = 0x0000000000000002L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NUInt public static final long Everything = org.moe.natj.general.NatJ.is64Bit() ?
             0xFFFFFFFFFFFFFFFFL :
             0x00000000FFFFFFFFL;

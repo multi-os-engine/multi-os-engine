@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * This object is the main configuration mechanism for the communication between two processes. Each NSXPCConnection
  * instance has a private serial queue. This queue is used when sending messages to reply handlers, interruption
  * handlers, and invalidation handlers.
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("Foundation")
@@ -253,6 +255,7 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      * The service will be started on demand when the first message is sent. However, if the name specified when
      * creating the connection is determined to be invalid, your invalidation handler will be called immediately (and
      * asynchronously) after calling resume.
+     * For new code, calling `-activate` is preferred for the initial activation of the connection.
      */
     @Generated
     @Selector("resume")
@@ -358,6 +361,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
     /**
      * Get the current connection, in the context of a call to a method on your exported object. Useful for determining
      * 'who called this'.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("currentConnection")
@@ -368,6 +373,8 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
      * have completed. Note: This does not guarantee that messages will be received by the remote process by the time
      * the block is invoked. If you need to ensure receipt of a message by the remote process, waiting for a reply to
      * come back is the best option.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("scheduleSendBarrierBlock:")
@@ -380,4 +387,18 @@ public class NSXPCConnection extends NSObject implements NSXPCProxyCreating {
         @Generated
         void call_scheduleSendBarrierBlock();
     }
+
+    /**
+     * Activates the connection.
+     * Connections start in an inactive state. You must call `-activate` on a connection before it will send or receive
+     * any messages.
+     * Calling `-activate` on an active connection has no effect.
+     * For backward compatibility reasons, `-resume` on an inactive and otherwise not suspended NSXPCConnection has the
+     * same effect as calling `-activate`. For new code, using `-activate` is preferred.
+     * 
+     * API-Since: 14.0
+     */
+    @Generated
+    @Selector("activate")
+    public native void activate();
 }

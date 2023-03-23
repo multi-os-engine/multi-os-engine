@@ -2,7 +2,6 @@ package apple.pdfkit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGPDFDocumentRef;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
@@ -30,7 +29,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("PDFKit")
 @Runtime(ObjCRuntime.class)
@@ -61,6 +64,8 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     /**
      * Create or modify annotations, including form field entries
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsCommenting")
@@ -68,6 +73,8 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     /**
      * Extract content, but only for the purpose of accessibility
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsContentAccessibility")
@@ -75,6 +82,8 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     /**
      * Extract content (text, images, etc.)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsCopying")
@@ -82,6 +91,8 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     /**
      * Page management: insert, delete, and rotate pages
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsDocumentAssembly")
@@ -89,6 +100,8 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     /**
      * Modify the document contents except for page management (document attrubutes)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsDocumentChanges")
@@ -96,6 +109,8 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     /**
      * Modify form field entries, even if allowsCommenting is NO
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsFormFieldEntry")
@@ -103,6 +118,8 @@ public class PDFDocument extends NSObject implements NSCopying {
 
     /**
      * Printing the document
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allowsPrinting")
@@ -124,6 +141,8 @@ public class PDFDocument extends NSObject implements NSCopying {
     /**
      * Like -[beginFindString:withOptions:] above but it accepts an array of strings to search for.
      * All other comments for -[beginFindString:withOptions:] above apply.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("beginFindStrings:withOptions:")
@@ -170,6 +189,9 @@ public class PDFDocument extends NSObject implements NSCopying {
     @Selector("dataRepresentation")
     public native NSData dataRepresentation();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("dataRepresentationWithOptions:")
     public native NSData dataRepresentationWithOptions(NSDictionary<?, ?> options);
@@ -361,6 +383,8 @@ public class PDFDocument extends NSObject implements NSCopying {
      * tree
      * structure is written out to the destination PDF file. Passing NULL is a way to strip any outline from a document.
      * Returns the root outline object for the PDF (or NULL if none).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("outlineRoot")
@@ -398,6 +422,8 @@ public class PDFDocument extends NSObject implements NSCopying {
      * Returns the permissions status of the PDF document. You have kPDFDocumentPermissionsNone status for an encrypted
      * document that you have not supplied either a valid user or owner password. For a document with no encryption, you
      * automatically have kPDFDocumentPermissionsOwner status.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("permissionsStatus")
@@ -479,6 +505,8 @@ public class PDFDocument extends NSObject implements NSCopying {
      * tree
      * structure is written out to the destination PDF file. Passing NULL is a way to strip any outline from a document.
      * Returns the root outline object for the PDF (or NULL if none).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setOutlineRoot:")

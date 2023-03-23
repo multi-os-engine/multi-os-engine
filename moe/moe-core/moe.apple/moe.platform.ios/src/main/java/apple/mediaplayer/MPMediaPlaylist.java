@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * An MPMediaPlaylist is a collection of related MPMediaItems in an MPMediaLibrary.
  * Playlists have a unique identifier which persists across application launches.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("MediaPlayer")
@@ -168,20 +170,32 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("addItemWithProductID:completionHandler:")
     public native void addItemWithProductIDCompletionHandler(String productID,
             @ObjCBlock(name = "call_addItemWithProductIDCompletionHandler") Block_addItemWithProductIDCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("addMediaItems:completionHandler:")
     public native void addMediaItemsCompletionHandler(NSArray<? extends MPMediaItem> mediaItems,
             @ObjCBlock(name = "call_addMediaItemsCompletionHandler") Block_addMediaItemsCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("authorDisplayName")
     public native String authorDisplayName();
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("descriptionText")
     public native String descriptionText();
@@ -198,19 +212,31 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
     @Selector("initWithItems:")
     public native MPMediaPlaylist initWithItems(NSArray<? extends MPMediaItem> items);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("persistentID")
     public native long persistentID();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("playlistAttributes")
     @NUInt
     public native long playlistAttributes();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("seedItems")
     public native NSArray<? extends MPMediaItem> seedItems();
@@ -235,6 +261,9 @@ public class MPMediaPlaylist extends MPMediaItemCollection {
         void call_addMediaItemsCompletionHandler(NSError error);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("cloudGlobalID")
     public native String cloudGlobalID();

@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.2
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -193,6 +196,8 @@ public class NSMutableAttributedString extends NSAttributedString {
      * NSParagraphStyleAttributeName is only changing at paragraph boundaries, and NSTextAttachmentAttributeName is
      * assigned to NSAttachmentCharacter. NSTextStorage automatically invokes this method via
      * -ensureAttributesAreFixedInRange:.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("fixAttributesInRange:")
@@ -247,12 +252,19 @@ public class NSMutableAttributedString extends NSAttributedString {
     @Selector("mutableString")
     public native NSMutableString mutableString();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("readFromData:options:documentAttributes:error:")
     public native boolean readFromDataOptionsDocumentAttributesError(NSData data, NSDictionary<String, ?> opts,
             @ReferenceInfo(type = NSDictionary.class) Ptr<NSDictionary<String, ?>> dict,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 9.0
+     */
     @Generated
     @Deprecated
     @Selector("readFromFileURL:options:documentAttributes:error:")
@@ -266,6 +278,8 @@ public class NSMutableAttributedString extends NSAttributedString {
      * NSDefaultAttributesDocumentAttribute are supported options key. When they are not specified, these methods will
      * examine the data and do their best to detect the appropriate attributes. If dict is non-NULL, it will return a
      * dictionary with various document-wide attributes accessible via NS...DocumentAttribute keys.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("readFromURL:options:documentAttributes:error:")
@@ -282,6 +296,10 @@ public class NSMutableAttributedString extends NSAttributedString {
     public native void replaceCharactersInRangeWithAttributedString(@ByValue NSRange range,
             NSAttributedString attrString);
 
+    /**
+     * Override these two APIs (in addition to the two for NSAttributedString) when subclassing
+     * NSMutableAttributedString
+     */
     @Generated
     @Selector("replaceCharactersInRange:withString:")
     public native void replaceCharactersInRangeWithString(@ByValue NSRange range, String str);
@@ -372,6 +390,8 @@ public class NSMutableAttributedString extends NSAttributedString {
     /**
      * Formats the specified string and arguments with the current locale,
      * then appends the result to the receiver.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Variadic()

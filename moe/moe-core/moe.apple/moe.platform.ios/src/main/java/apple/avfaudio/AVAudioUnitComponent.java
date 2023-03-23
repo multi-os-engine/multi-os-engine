@@ -24,12 +24,16 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSDictionary;
+import apple.uikit.UIImage;
 
 /**
  * AVAudioUnitComponent
- * <p>
+ * 
  * Provides details about an audio unit such as type, subtype, manufacturer, location etc. User
  * tags can be added to the AVAudioUnitComponent which can be queried later for display.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AVFAudio")
@@ -51,7 +55,7 @@ public class AVAudioUnitComponent extends NSObject {
 
     /**
      * [@property] allTagNames
-     * <p>
+     * 
      * represent the tags from the current user and the system tags defined by AudioComponent.
      */
     @Generated
@@ -70,7 +74,7 @@ public class AVAudioUnitComponent extends NSObject {
 
     /**
      * [@property] audioComponent
-     * <p>
+     * 
      * the audioComponent that can be used in AudioComponent APIs.
      */
     @Generated
@@ -79,7 +83,7 @@ public class AVAudioUnitComponent extends NSObject {
 
     /**
      * [@property] audioComponentDescription
-     * <p>
+     * 
      * description of the audio component that can be used in AudioComponent APIs.
      */
     @Generated
@@ -119,7 +123,7 @@ public class AVAudioUnitComponent extends NSObject {
 
     /**
      * [@property] hasMIDIInput
-     * <p>
+     * 
      * YES if AudioComponent has midi input, otherwise NO
      */
     @Generated
@@ -128,7 +132,7 @@ public class AVAudioUnitComponent extends NSObject {
 
     /**
      * [@property] hasMIDIOutput
-     * <p>
+     * 
      * YES if AudioComponent has midi output, otherwise NO
      */
     @Generated
@@ -159,7 +163,7 @@ public class AVAudioUnitComponent extends NSObject {
 
     /**
      * [@property] sandboxSafe
-     * <p>
+     * 
      * On OSX, YES if the AudioComponent can be loaded into a sandboxed process otherwise NO.
      * On iOS, this is always YES.
      */
@@ -177,7 +181,7 @@ public class AVAudioUnitComponent extends NSObject {
 
     /**
      * [@property] localizedTypeName
-     * <p>
+     * 
      * localized string of typeName for display
      */
     @Generated
@@ -186,7 +190,7 @@ public class AVAudioUnitComponent extends NSObject {
 
     /**
      * [@property] manufacturerName
-     * <p>
+     * 
      * the manufacturer name, extracted from the manufacturer key defined in Info.plist dictionary
      */
     @Generated
@@ -195,7 +199,7 @@ public class AVAudioUnitComponent extends NSObject {
 
     /**
      * [@property] name
-     * <p>
+     * 
      * the name of an audio component
      */
     @Generated
@@ -225,7 +229,7 @@ public class AVAudioUnitComponent extends NSObject {
 
     /**
      * [@property] typeName
-     * <p>
+     * 
      * standard audio component types returned as strings
      */
     @Generated
@@ -234,7 +238,7 @@ public class AVAudioUnitComponent extends NSObject {
 
     /**
      * [@property] version
-     * <p>
+     * 
      * version number comprised of a hexadecimal number with major, minor, dot-release format: 0xMMMMmmDD
      */
     @Generated
@@ -244,10 +248,40 @@ public class AVAudioUnitComponent extends NSObject {
 
     /**
      * [@property] versionString
-     * <p>
+     * 
      * version number as string
      */
     @Generated
     @Selector("versionString")
     public native String versionString();
+
+    /**
+     * [@property] configurationDictionary
+     * 
+     * A NSDictionary that contains information describing the capabilities of the AudioComponent.
+     * The specific information depends on the type and the keys are defined in AudioUnitProperties.h
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("configurationDictionary")
+    public native NSDictionary<String, ?> configurationDictionary();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("icon")
+    public native UIImage icon();
+
+    /**
+     * [@property] passesAUVal
+     * 
+     * YES if the AudioComponent has passed the AU validation tests, otherwise NO
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("passesAUVal")
+    public native boolean passesAUVal();
 }

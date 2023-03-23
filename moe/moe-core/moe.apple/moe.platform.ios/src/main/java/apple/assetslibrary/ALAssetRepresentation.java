@@ -18,7 +18,6 @@ package apple.assetslibrary;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGImageRef;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
@@ -46,7 +45,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 4.0
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use PHImageRequestOptions with the PHImageManager from the Photos framework instead
+ */
 @Deprecated
 @Generated
 @Library("AssetsLibrary")
@@ -161,6 +166,11 @@ public class ALAssetRepresentation extends NSObject {
     /**
      * This is a convenience method that returns a full resolution CGImage of the representation. It takes a dictionary
      * of options as described for CGImageSourceCreateWithData() or CGImageSourceCreateWithURL()
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use requestImageForAsset:targetSize:contentMode:options:resultHandler: on PHImageManager to
+     * request a targetSize of image for a PHAsset from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -169,6 +179,11 @@ public class ALAssetRepresentation extends NSObject {
 
     /**
      * Returns the representation's UTI.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use requestImageDataForAsset:options:resultHandler: on PHImageManager for a PHAsset to
+     * request image data from the Photos framework and check the dataUTI passed to your result handler instead
      */
     @Generated
     @Deprecated
@@ -178,6 +193,11 @@ public class ALAssetRepresentation extends NSObject {
     /**
      * Returns the dimensions of this representation. If the representation does not have valid dimensions, this method
      * will return CGSizeZero.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use requestImageForAsset:targetSize:contentMode:options:resultHandler: on PHImageManager to
+     * request a targetSize of image for a PHAsset from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -188,6 +208,10 @@ public class ALAssetRepresentation extends NSObject {
     /**
      * Returns a string representing the filename of the representation on disk.
      * For representations synced from iTunes, this will be the filename of the representation on the host.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -196,6 +220,11 @@ public class ALAssetRepresentation extends NSObject {
 
     /**
      * This is a convenience method for -[ALAssetRepresentation CGImageWithOptions:] where options is nil.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use requestImageForAsset:targetSize:contentMode:options:resultHandler: on PHImageManager to
+     * request a targetSize PHImageManagerMaximumSize for a PHAsset from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -206,6 +235,11 @@ public class ALAssetRepresentation extends NSObject {
      * Returns a CGImage of the representation that is appropriate for displaying full screen.
      * The dimensions of this image will be dependent on the hardware that the application is running on and does not
      * mean it will match the dimensions of the screen.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use requestImageForAsset:targetSize:contentMode:options:resultHandler: on PHImageManager to
+     * request a targetSize of image for a PHAsset from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -218,6 +252,11 @@ public class ALAssetRepresentation extends NSObject {
      * less than the requested range if the range exceeds the file's size.
      * If an error occurs, the method returns 0 and upon return contains an NSError object that describes the problem.
      * Pass NULL if you do not want error information.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use requestImageDataForAsset:options:resultHandler: on PHImageManager to request image data
+     * for a PHAsset from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -233,6 +272,11 @@ public class ALAssetRepresentation extends NSObject {
     /**
      * Returns a dictionary of dictionaries of metadata for the representation.
      * If the representation is one that the system cannot interpret, nil is returned.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use CGImageSourceCopyPropertiesAtIndex() to retrieve metadata from an image returned by the
+     * PHImageManager from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -241,6 +285,11 @@ public class ALAssetRepresentation extends NSObject {
 
     /**
      * Returns the representation's orientation as defined in ALAssetOrientation.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use the orientation of the UIImage returned for a PHAsset from the PHImageManager from the
+     * Photos framework instead
      */
     @Generated
     @Deprecated
@@ -250,6 +299,11 @@ public class ALAssetRepresentation extends NSObject {
 
     /**
      * Returns the representation's scale.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use requestImageForAsset:targetSize:contentMode:options:resultHandler: on PHImageManager to
+     * request a targetSize of image for a PHAsset from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -259,6 +313,11 @@ public class ALAssetRepresentation extends NSObject {
     /**
      * Returns the size of the file for this representation. Callers can use this to allocate buffers of the right size
      * for -getBytes:fromOffset:length:error:
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use requestImageDataForAsset:options:resultHandler: on PHImageManager to request image data
+     * for a PHAsset from the Photos framework instead
      */
     @Generated
     @Deprecated
@@ -267,6 +326,10 @@ public class ALAssetRepresentation extends NSObject {
 
     /**
      * Returns a persistent URL uniquely identifying the representation
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use PHImageRequestOptions with the PHImageManager instead
      */
     @Generated
     @Deprecated

@@ -34,6 +34,8 @@ public interface UIPreviewInteractionDelegate {
     /**
      * If implemented, a preview interaction will also trigger haptic feedback when detecting a commit (pop). The
      * provided transitionProgress ranges from 0 to 1.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -45,16 +47,24 @@ public interface UIPreviewInteractionDelegate {
 
     /**
      * transitionProgress ranges from 0 to 1
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("previewInteraction:didUpdatePreviewTransition:ended:")
     void previewInteractionDidUpdatePreviewTransitionEnded(UIPreviewInteraction previewInteraction,
             @NFloat double transitionProgress, boolean ended);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("previewInteractionDidCancel:")
     void previewInteractionDidCancel(UIPreviewInteraction previewInteraction);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @IsOptional
     @Selector("previewInteractionShouldBegin:")

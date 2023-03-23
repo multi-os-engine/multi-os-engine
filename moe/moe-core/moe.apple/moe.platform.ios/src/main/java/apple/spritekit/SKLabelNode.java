@@ -196,7 +196,7 @@ public class SKLabelNode extends SKNode {
 
     /**
      * Sets the blend mode to use when composing the sprite with the final framebuffer.
-     *
+     * 
      * @see SKNode.SKBlendMode
      */
     @Generated
@@ -256,7 +256,7 @@ public class SKLabelNode extends SKNode {
 
     /**
      * Sets the blend mode to use when composing the sprite with the final framebuffer.
-     *
+     * 
      * @see SKNode.SKBlendMode
      */
     @Generated
@@ -315,10 +315,16 @@ public class SKLabelNode extends SKNode {
     @NInt
     public native long verticalAlignmentMode();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("attributedText")
     public native NSAttributedString attributedText();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("labelNodeWithAttributedText:")
     public static native SKLabelNode labelNodeWithAttributedText(NSAttributedString attributedText);
@@ -326,6 +332,8 @@ public class SKLabelNode extends SKNode {
     /**
      * Determines the line break mode for multiple lines.
      * Default is NSLineBreakByTruncatingTail
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("lineBreakMode")
@@ -335,6 +343,8 @@ public class SKLabelNode extends SKNode {
     /**
      * Determines the number of lines to draw. The default value is 1 (single line). A value of 0 means no limit.
      * If the height of the text reaches the # of lines the text will be truncated using the line break mode.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("numberOfLines")
@@ -344,12 +354,17 @@ public class SKLabelNode extends SKNode {
     /**
      * If nonzero, this is used when determining layout width for multiline labels.
      * Default is zero.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("preferredMaxLayoutWidth")
     @NFloat
     public native double preferredMaxLayoutWidth();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setAttributedText:")
     public native void setAttributedText(NSAttributedString value);
@@ -357,6 +372,8 @@ public class SKLabelNode extends SKNode {
     /**
      * Determines the line break mode for multiple lines.
      * Default is NSLineBreakByTruncatingTail
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLineBreakMode:")
@@ -365,6 +382,8 @@ public class SKLabelNode extends SKNode {
     /**
      * Determines the number of lines to draw. The default value is 1 (single line). A value of 0 means no limit.
      * If the height of the text reaches the # of lines the text will be truncated using the line break mode.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setNumberOfLines:")
@@ -373,6 +392,8 @@ public class SKLabelNode extends SKNode {
     /**
      * If nonzero, this is used when determining layout width for multiline labels.
      * Default is zero.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPreferredMaxLayoutWidth:")

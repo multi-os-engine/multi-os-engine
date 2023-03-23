@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSCNNSubPixelConvolutionDescriptor can be used to create MPSCNNConvolution object that does sub pixel upsamling
  * and reshaping opeartion as described in
  * http://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Shi_Real-Time_Single_Image_CVPR_2016_paper.pdf
- * <p>
+ * 
  * Conceptually MPSCNNConvolution with subPixelScaleFactor > 1 can be thought of as filter performing regular CNN
  * convolution producing N output feature channels at each pixel of
  * an intermediate MPSImage followed by a kernel that rearranges/reshapes these N channels at each pixel of intermediate
@@ -51,12 +51,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * mod(x,r) ) + c ]
  * where x in [0,clipRect.size.width-1], y in [0,clipRect.size.height-1], c in [0,N/r^2 - 1]
  * [@endcode]
- * <p>
+ * 
  * The following conditions must be met:
  * 1) N (outputFeatureChannels) must be multiple of r^2 (subPixelScaleFactor * subPixelScaleFactor).
  * 2) The destination MPSImage to encode call must have at least N/r^2 + destinationFeatureChannelOffset channels.
  * 3) Number of feature channels in reshaped output image (N/r^2) can be any value when groups = 1 but must be multiple
  * of 4 when groups > 1.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -114,6 +116,7 @@ public class MPSCNNSubPixelConvolutionDescriptor extends MPSCNNConvolutionDescri
             @NUInt long kernelWidth, @NUInt long kernelHeight, @NUInt long inputFeatureChannels,
             @NUInt long outputFeatureChannels);
 
+    @Deprecated
     @Generated
     @Selector("cnnConvolutionDescriptorWithKernelWidth:kernelHeight:inputFeatureChannels:outputFeatureChannels:neuronFilter:")
     public static native MPSCNNSubPixelConvolutionDescriptor cnnConvolutionDescriptorWithKernelWidthKernelHeightInputFeatureChannelsOutputFeatureChannelsNeuronFilter(
@@ -177,7 +180,7 @@ public class MPSCNNSubPixelConvolutionDescriptor extends MPSCNNConvolutionDescri
 
     /**
      * [@property] subPixelScaleFactor
-     * <p>
+     * 
      * Upsampling scale factor. Each pixel in input is upsampled into a subPixelScaleFactor x subPixelScaleFactor pixel
      * block by rearranging
      * the outputFeatureChannels as described above. Default value is 1.
@@ -192,7 +195,7 @@ public class MPSCNNSubPixelConvolutionDescriptor extends MPSCNNConvolutionDescri
 
     /**
      * [@property] subPixelScaleFactor
-     * <p>
+     * 
      * Upsampling scale factor. Each pixel in input is upsampled into a subPixelScaleFactor x subPixelScaleFactor pixel
      * block by rearranging
      * the outputFeatureChannels as described above. Default value is 1.

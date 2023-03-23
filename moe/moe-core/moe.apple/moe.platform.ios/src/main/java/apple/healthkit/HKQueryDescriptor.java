@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -111,9 +114,9 @@ public class HKQueryDescriptor extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * initWithSampleType:predicate:
-     * <p>
+     * 
      * Returns a query descriptor that describes a data type and predicate to be used in an HKQuery.
-     *
+     * 
      * @param sampleType The type of sample to retrieve.
      * @param predicate  The predicate which samples should match.
      */
@@ -149,7 +152,7 @@ public class HKQueryDescriptor extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * [@property] predicate
-     * <p>
+     * 
      * The predicate which samples should match.
      */
     @Generated
@@ -166,7 +169,7 @@ public class HKQueryDescriptor extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * [@property] sampleType
-     * <p>
+     * 
      * The type of sample to retrieve in an HKQuery.
      */
     @Generated

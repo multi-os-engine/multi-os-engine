@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] PHASESoundEventStartHandlerReason
- * <p>
+ * 
  * Sound event start handler reason
  */
 @Generated

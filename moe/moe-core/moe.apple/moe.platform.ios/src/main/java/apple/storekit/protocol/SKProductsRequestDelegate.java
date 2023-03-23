@@ -32,6 +32,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface SKProductsRequestDelegate extends SKRequestDelegate {
     /**
      * Sent immediately before -requestDidFinish:
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("productsRequest:didReceiveResponse:")

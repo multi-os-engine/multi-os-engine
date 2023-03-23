@@ -50,7 +50,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSUUID;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -67,11 +71,13 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
 
     /**
      * URLAssetWithURL:options:
-     * <p>
+     * 
      * Returns an instance of AVURLAsset for inspection of a media resource.
-     *
-     * @param URL     An instance of NSURL that references a media resource.
-     * @param options An instance of NSDictionary that contains keys for specifying options for the initialization of
+     * 
+     * @param URL
+     *                An instance of NSURL that references a media resource.
+     * @param options
+     *                An instance of NSDictionary that contains keys for specifying options for the initialization of
      *                the AVURLAsset. See AVURLAssetPreferPreciseDurationAndTimingKey and
      *                AVURLAssetReferenceRestrictionsKey above.
      * @return An instance of AVURLAsset.
@@ -100,10 +106,12 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
 
     /**
      * audiovisualMIMETypes
-     * <p>
+     * 
      * Provides the MIME types the AVURLAsset class understands.
-     *
+     * 
      * @return An NSArray of NSStrings containing MIME types the AVURLAsset class understands.
+     * 
+     *         API-Since: 5.0
      */
     @Generated
     @Selector("audiovisualMIMETypes")
@@ -111,10 +119,12 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
 
     /**
      * audiovisualTypes
-     * <p>
+     * 
      * Provides the file types the AVURLAsset class understands.
-     *
+     * 
      * @return An NSArray of UTIs identifying the file types the AVURLAsset class understands.
+     * 
+     *         API-Since: 5.0
      */
     @Generated
     @Selector("audiovisualTypes")
@@ -170,12 +180,14 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
 
     /**
      * isPlayableExtendedMIMEType:
-     * <p>
+     * 
      * Returns YES if asset is playable with the codec(s) and container type specified in extendedMIMEType. Returns NO
      * otherwise.
-     *
+     * 
      * @param extendedMIMEType
      * @return YES or NO.
+     * 
+     *         API-Since: 5.0
      */
     @Generated
     @Selector("isPlayableExtendedMIMEType:")
@@ -216,7 +228,9 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
     public static native long version_static();
 
     /**
-     * indicates the URL with which the instance of AVURLAsset was initialized
+     * [@property] URL
+     * 
+     * Indicates the URL with which the instance of AVURLAsset was initialized.
      */
     @Generated
     @Selector("URL")
@@ -224,9 +238,11 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
 
     /**
      * [@property] assetCache
-     * <p>
+     * 
      * Provides access to an instance of AVAssetCache to use for inspection of locally cached media data. Will be nil if
      * an asset has not been configured to store or access media data from disk.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("assetCache")
@@ -234,17 +250,22 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
 
     /**
      * compatibleTrackForCompositionTrack:
-     * <p>
+     * 
      * Provides a reference to an AVAssetTrack of the target from which any timeRange
      * can be inserted into a mutable composition track (via -[AVMutableCompositionTrack
      * insertTimeRange:ofTrack:atTime:error:]).
-     * <p>
+     * 
      * Finds a track of the target with content that can be accommodated by the specified composition track.
      * The logical complement of -[AVMutableComposition mutableTrackCompatibleWithTrack:].
-     *
-     * @param compositionTrack The composition track for which a compatible AVAssetTrack is requested.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 100000.0
+     * 
+     * @param compositionTrack
+     *                         The composition track for which a compatible AVAssetTrack is requested.
      * @return an instance of AVAssetTrack
      */
+    @Deprecated
     @Generated
     @Selector("compatibleTrackForCompositionTrack:")
     public native AVAssetTrack compatibleTrackForCompositionTrack(AVCompositionTrack compositionTrack);
@@ -255,11 +276,13 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
 
     /**
      * initWithURL:options:
-     * <p>
+     * 
      * Initializes an instance of AVURLAsset for inspection of a media resource.
-     *
-     * @param URL     An instance of NSURL that references a media resource.
-     * @param options An instance of NSDictionary that contains keys for specifying options for the initialization of
+     * 
+     * @param URL
+     *                An instance of NSURL that references a media resource.
+     * @param options
+     *                An instance of NSDictionary that contains keys for specifying options for the initialization of
      *                the AVURLAsset. See AVURLAssetPreferPreciseDurationAndTimingKey and
      *                AVURLAssetReferenceRestrictionsKey above.
      * @return An instance of AVURLAsset.
@@ -270,11 +293,13 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
 
     /**
      * [@property] resourceLoader
-     * <p>
+     * 
      * Provides access to an instance of AVAssetResourceLoader, which offers limited control over the handling of URLs
      * that may be loaded in the course of performing operations on the asset, such as playback.
      * The loading of file URLs cannot be mediated via use of AVAssetResourceLoader.
      * Note that copies of an AVAsset will vend the same instance of AVAssetResourceLoader.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("resourceLoader")
@@ -354,16 +379,20 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
 
     /**
      * findCompatibleTrackForCompositionTrack:completionHandler:
-     * <p>
+     * 
      * Loads a reference to an AVAssetTrack of the target from which any timeRange
      * can be inserted into a mutable composition track (via -[AVMutableCompositionTrack
      * insertTimeRange:ofTrack:atTime:error:]).
-     * <p>
+     * 
      * Finds a track of the target with content that can be accommodated by the specified composition track.
      * The logical complement of -[AVMutableComposition mutableTrackCompatibleWithTrack:].
-     *
-     * @param compositionTrack  The composition track for which a compatible AVAssetTrack is requested.
-     * @param completionHandler A block that is invoked when loading is complete, vending an instance of AVAssetTrack or
+     * 
+     * API-Since: 15.0
+     * 
+     * @param compositionTrack
+     *                          The composition track for which a compatible AVAssetTrack is requested.
+     * @param completionHandler
+     *                          A block that is invoked when loading is complete, vending an instance of AVAssetTrack or
      *                          an error.
      */
     @Generated
@@ -380,12 +409,29 @@ public class AVURLAsset extends AVAsset implements NSItemProviderReading, NSItem
 
     /**
      * [@property] variants
-     * <p>
+     * 
      * Provides an array of AVAssetVariants contained in the asset
-     * <p>
+     * 
      * Some variants may not be playable according to the current device configuration.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("variants")
     public native NSArray<? extends AVAssetVariant> variants();
+
+    /**
+     * [@property] httpSessionIdentifier
+     * 
+     * Provides the identifier that's automatically included in any HTTP request issued on behalf of this asset in the
+     * HTTP header field "X-Playback-Session-Id".
+     * 
+     * The value is an NSUUID from which the UUID string can be obtained.
+     * Note that copies of an AVURLAsset vend an equivalent httpSessionIdentifier.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("httpSessionIdentifier")
+    public native NSUUID httpSessionIdentifier();
 }

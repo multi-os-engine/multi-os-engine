@@ -42,8 +42,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKQuantityType
- * <p>
+ * 
  * Represents types of HKQuantitySamples.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -202,7 +204,7 @@ public class HKQuantityType extends HKSampleType {
 
     /**
      * isCompatibleWithUnit:
-     * <p>
+     * 
      * Returns YES if the type of HKQuantitySample represented by the receiver can be created with quantities
      * of the given unit.
      */
@@ -231,4 +233,8 @@ public class HKQuantityType extends HKSampleType {
     @Generated
     @Selector("electrocardiogramType")
     public static native HKElectrocardiogramType electrocardiogramType();
+
+    @Generated
+    @Selector("visionPrescriptionType")
+    public static native HKPrescriptionType visionPrescriptionType();
 }

@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -107,7 +110,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * Dismiss the currently-visible navigation alert on this map template.
-     *
+     * 
      * @param animated   Whether the dismissal should be animated (YES) or not (NO).
      * @param completion A block invoked after the alert has been dismissed. The BOOL argument
      *                   in the completion block indicates whether any visible alert was dismissed (YES) or
@@ -225,10 +228,10 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     /**
      * Display a navigation alert on this map template. Your @c CPMapTemplateDelegate will be notified
      * of navigation alert lifecycle events.
-     * <p>
+     * 
      * [@warning] If a navigation alert is already visible, this method has no effect.
      * You must dismiss the currently-visible navigation alert before presenting a new alert.
-     *
+     * 
      * @param navigationAlert The navigation alert to display.
      * @param animated        YES to animate the presentation of this alert, or NO to display it immediately.
      */
@@ -319,11 +322,11 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * Shows the panning interface on the map interface if not already visible.
-     * <p>
+     * 
      * When showing the panning interface, a maximum of two mapButtons will be visible.
      * If more than two mapButtons are visible when the template transitions to panning mode,
      * the system will hide one or more map buttons beginning from the end of the mapButtons array.
-     * <p>
+     * 
      * [@note] The system will not provide a button to dismiss the UI. You are required to provide
      * a button in the map template navigation bar that will dismiss the panning interface.
      */
@@ -352,7 +355,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * * Begins guidance for a trip.
-     *
+     * 
      * @return CPNavigationSession maintain a reference to the navigation session to perform guidance updates
      */
     @Generated
@@ -413,6 +416,8 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
      * options,
      * such as for search results. Trip previews can appear over an active navigation session. Number of trips will be
      * limited to 12. Optionally provide a CPTrip object from the list of trips to be selected when initially presented.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("showTripPreviews:selectedTrip:textConfiguration:")

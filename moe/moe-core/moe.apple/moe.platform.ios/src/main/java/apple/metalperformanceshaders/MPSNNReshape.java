@@ -30,10 +30,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNReshape
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Describes a reshape operation
- * <p>
+ * 
  * This functions copies data from source MPSImage intot the new shape in the destination MPSImage
+ * 
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -112,7 +115,7 @@ public class MPSNNReshape extends MPSCNNKernel {
 
     /**
      * Initialize a MPSNNReshape kernel
-     *
+     * 
      * @param device The device the filter will run on
      * @return A valid MPSNNReshape object or nil, if failure.
      */
@@ -179,7 +182,7 @@ public class MPSNNReshape extends MPSCNNKernel {
 
     /**
      * Encode a reshape to a command buffer for a given shape.
-     *
+     * 
      * @param commandBuffer           The command buffer on which to encode the reshape operation.
      * @param outState                A state to be created and autoreleased which will hold information about this
      *                                execution
@@ -189,6 +192,8 @@ public class MPSNNReshape extends MPSCNNKernel {
      * @param reshapedWidth           The width of the resulting reshaped image.
      * @param reshapedHeight          The height of the resulting reshaped image.
      * @param reshapedFeatureChannels The number of feature channels in the resulting reshaped image.
+     * 
+     *                                API-Since: 14.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:destinationState:destinationStateIsTemporary:reshapedWidth:reshapedHeight:reshapedFeatureChannels:")
@@ -199,12 +204,14 @@ public class MPSNNReshape extends MPSCNNKernel {
 
     /**
      * Encode a reshape to a command buffer for a given shape.
-     *
+     * 
      * @param commandBuffer           The command buffer on which to encode the reshape operation.
      * @param sourceImage             The input image to be reshaped.
      * @param reshapedWidth           The width of the resulting reshaped image.
      * @param reshapedHeight          The height of the resulting reshaped image.
      * @param reshapedFeatureChannels The number of feature channels in the resulting reshaped image.
+     * 
+     *                                API-Since: 14.0
      */
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:reshapedWidth:reshapedHeight:reshapedFeatureChannels:")

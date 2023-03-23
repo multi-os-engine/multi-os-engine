@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -158,6 +161,9 @@ public class SKMutablePayment extends SKPayment {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("applicationUsername")
     public native String applicationUsername();
@@ -166,47 +172,80 @@ public class SKMutablePayment extends SKPayment {
     @Selector("init")
     public native SKMutablePayment init();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("productIdentifier")
     public native String productIdentifier();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("quantity")
     @NInt
     public native long quantity();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("requestData")
     public native NSData requestData();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setApplicationUsername:")
     public native void setApplicationUsername(String value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setProductIdentifier:")
     public native void setProductIdentifier(String value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setQuantity:")
     public native void setQuantity(@NInt long value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setRequestData:")
     public native void setRequestData(NSData value);
 
+    /**
+     * API-Since: 8.3
+     */
     @Generated
     @Selector("setSimulatesAskToBuyInSandbox:")
     public native void setSimulatesAskToBuyInSandbox(boolean value);
 
+    /**
+     * API-Since: 8.3
+     */
     @Generated
     @Selector("simulatesAskToBuyInSandbox")
     public native boolean simulatesAskToBuyInSandbox();
 
+    /**
+     * API-Since: 12.2
+     */
     @Generated
     @Selector("paymentDiscount")
     public native SKPaymentDiscount paymentDiscount();
 
+    /**
+     * API-Since: 12.2
+     */
     @Generated
     @Selector("setPaymentDiscount:")
     public native void setPaymentDiscount(SKPaymentDiscount value);

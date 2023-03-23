@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An insert control (plus sign inside a circle) with default green color.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")

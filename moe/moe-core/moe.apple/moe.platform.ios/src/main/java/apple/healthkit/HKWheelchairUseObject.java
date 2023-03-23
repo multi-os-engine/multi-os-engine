@@ -45,8 +45,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKWheelchairUseObject
- * <p>
+ * 
  * A wrapper object for HKWheelchairUse enumeration.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("HealthKit")

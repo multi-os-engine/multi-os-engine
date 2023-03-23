@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPMediaQuery represents a collection of items or playlists determined by a chain of MPMediaPredicate objects.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("MediaPlayer")
@@ -204,6 +206,9 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("addFilterPredicate:")
     public native void addFilterPredicate(MPMediaPredicate predicate);
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("collectionSections")
     public native NSArray<? extends MPMediaQuerySection> collectionSections();
@@ -254,6 +259,8 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
      * Returns an array of MPMediaQuerySection instances representing the section grouping of the query's items or
      * collections.
      * May be nil in cases where no section grouping of the items or collections is appropriate.
+     * 
+     * API-Since: 4.2
      */
     @Generated
     @Selector("itemSections")

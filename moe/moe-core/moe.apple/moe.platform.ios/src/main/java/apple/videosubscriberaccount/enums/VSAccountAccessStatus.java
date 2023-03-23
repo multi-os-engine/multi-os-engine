@@ -21,23 +21,33 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Represents the current state of the application's access to the user's subscription information.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class VSAccountAccessStatus {
     /**
      * The user has not yet made a choice about whether to allow this access to the app.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
     /**
      * Restrictions, e.g. parental controls, prohibit the user from allowing access to the app.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Restricted = 0x0000000000000001L;
     /**
      * The user has explicitly decided to not allow the app to access subscription information.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Denied = 0x0000000000000002L;
     /**
      * The user has currently decided to allow the app to access subscription information.
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Granted = 0x0000000000000003L;
 

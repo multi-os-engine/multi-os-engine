@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -55,6 +58,9 @@ public class INMediaItem extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("allocWithZone:")
     public static native INMediaItem allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("artist")
     public native String artist();
@@ -125,6 +131,9 @@ public class INMediaItem extends NSObject implements NSCopying, NSSecureCoding {
     public native INMediaItem initWithIdentifierTitleTypeArtwork(String identifier, String title, @NInt long type,
             INImage artwork);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithIdentifier:title:type:artwork:artist:")
     public native INMediaItem initWithIdentifierTitleTypeArtworkArtist(String identifier, String title, @NInt long type,

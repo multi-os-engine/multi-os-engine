@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * ------------------------------------------------------------------------
  * MPMediaPredicate is an abstract class that allows filtering media in an MPMediaQuery.
  * See the concrete subclass MPMediaPropertyPredicate for filtering options.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("MediaPlayer")

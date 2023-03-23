@@ -42,21 +42,23 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * may be explicitly created from an NSURLSession, or created as a
  * result of the appropriate disposition response to a
  * -URLSession:dataTask:didReceiveResponse: delegate message.
- * <p>
+ * 
  * NSURLSessionStreamTask can be used to perform asynchronous reads
- * and writes. Reads and writes are enquened and executed serially,
+ * and writes. Reads and writes are enqueued and executed serially,
  * with the completion handler being invoked on the sessions delegate
- * queuee. If an error occurs, or the task is canceled, all
+ * queue. If an error occurs, or the task is canceled, all
  * outstanding read and write calls will have their completion
  * handlers invoked with an appropriate error.
- * <p>
+ * 
  * It is also possible to create NSInputStream and NSOutputStream
  * instances from an NSURLSessionTask by sending
- * -captureStreams to the task. All outstanding read and writess are
+ * -captureStreams to the task. All outstanding reads and writes are
  * completed before the streams are created. Once the streams are
  * delivered to the session delegate, the task is considered complete
- * and will receive no more messsages. These streams are
+ * and will receive no more messages. These streams are
  * disassociated from the underlying session.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("Foundation")
@@ -142,6 +144,13 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use -[NSURLSession streamTaskWithHostName:port:] or other NSURLSession methods to
+     * create instances
+     */
+    @Deprecated
     @Generated
     @Owned
     @Selector("new")
@@ -200,6 +209,13 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     @Selector("closeWrite")
     public native void closeWrite();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use -[NSURLSession streamTaskWithHostName:port:] or other NSURLSession methods to
+     * create instances
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSURLSessionStreamTask init();
@@ -217,7 +233,7 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
             @ObjCBlock(name = "call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler") Block_readDataOfMinLengthMaxLengthTimeoutCompletionHandler completionHandler);
 
     /**
-     * Begin encrypted handshake. The hanshake begins after all pending
+     * Begin encrypted handshake. The handshake begins after all pending
      * IO has completed. TLS authentication callbacks are sent to the
      * session's -URLSession:task:didReceiveChallenge:completionHandler:
      */
@@ -228,9 +244,14 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     /**
      * Cleanly close a secure connection after all pending secure IO has
      * completed.
-     * <p>
+     * 
      * [@warning] This API is non-functional.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: TLS cannot be disabled once it is enabled
      */
+    @Deprecated
     @Generated
     @Selector("stopSecureConnection")
     public native void stopSecureConnection();

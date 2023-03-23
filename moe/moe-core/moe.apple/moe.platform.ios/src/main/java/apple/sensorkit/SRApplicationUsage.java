@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("SensorKit")
 @Runtime(ObjCRuntime.class)
@@ -124,11 +127,13 @@ public class SRApplicationUsage extends NSObject {
 
     /**
      * [@property] reportApplicationIdentifier
-     * <p>
+     * 
      * An application identifier that is valid for the duration of the report.
-     * <p>
+     * 
      * This is useful for identifying distinct application uses within the same
      * report duration without revealing the actual application identifier.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("reportApplicationIdentifier")
@@ -152,13 +157,15 @@ public class SRApplicationUsage extends NSObject {
 
     /**
      * [@property] textInputSessions
-     * <p>
+     * 
      * The text input session types that occurred during this application usage
-     * <p>
+     * 
      * The list of text input sessions describes the order and type of text input that may
      * have occured during an application usage. Multiple sessions of the same text input
      * type will appear as separate array entries. If no text input occurred, this array
      * will be empty.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("textInputSessions")
@@ -175,4 +182,15 @@ public class SRApplicationUsage extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] supplementalCategories
+     * 
+     * Additional categories that describe this app
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("supplementalCategories")
+    public native NSArray<? extends SRSupplementalCategory> supplementalCategories();
 }

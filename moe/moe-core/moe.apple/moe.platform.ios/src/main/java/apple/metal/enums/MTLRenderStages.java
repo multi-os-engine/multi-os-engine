@@ -21,19 +21,38 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * Generic render stage enum
- * <p>
+ * 
  * Can also be used for points at which a fence may be waited on or signaled.
  * [@constant] MTLRenderStageVertex All vertex work prior to rasterization has completed.
  * [@constant] MTLRenderStageFragment All rendering work has completed.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class MTLRenderStages {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Vertex = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Fragment = 0x0000000000000002L;
 
     @Generated
     private MTLRenderStages() {
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NUInt public static final long Tile = 0x0000000000000004L;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NUInt public static final long Object = 0x0000000000000008L;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NUInt public static final long Mesh = 0x0000000000000010L;
 }

@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("SensorKit")
 @Runtime(ObjCRuntime.class)
@@ -53,7 +56,7 @@ public class SRDeviceUsageReport extends NSObject {
 
     /**
      * Usage time of applications per category
-     * <p>
+     * 
      * category is the primary genre from the app's iTunesMetadata.plist.
      */
     @Generated
@@ -134,7 +137,7 @@ public class SRDeviceUsageReport extends NSObject {
 
     /**
      * Usage time of notifications per category
-     * <p>
+     * 
      * category is the primary genre from the notifying app's iTunesMetadata.plist.
      */
     @Generated
@@ -187,7 +190,7 @@ public class SRDeviceUsageReport extends NSObject {
 
     /**
      * Usage time of web domains per category
-     * <p>
+     * 
      * category based on the primary Screen Time category of the web domain
      */
     @Generated

@@ -55,7 +55,7 @@ public class TKSmartCardUserInteractionForPINOperation extends TKSmartCardUserIn
     /**
      * List of message indices referring to a predefined message table. It is used to specify the type and number of
      * messages displayed during the PIN operation.
-     * <p>
+     * 
      * If nil, the reader does not display any message (reader specific). Typically, PIN verification takes 1 message,
      * PIN modification 1-3 messages.
      * [@note] Default value: nil
@@ -192,7 +192,7 @@ public class TKSmartCardUserInteractionForPINOperation extends TKSmartCardUserIn
     /**
      * List of message indices referring to a predefined message table. It is used to specify the type and number of
      * messages displayed during the PIN operation.
-     * <p>
+     * 
      * If nil, the reader does not display any message (reader specific). Typically, PIN verification takes 1 message,
      * PIN modification 1-3 messages.
      * [@note] Default value: nil

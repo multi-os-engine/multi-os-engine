@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Used to track a user info dictionary being transferred.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("WatchConnectivity")

@@ -40,7 +40,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * EAGL Sharegroup
+ * 
+ * API-Since: 2.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
  */
+@Deprecated
 @Generated
 @Library("OpenGLES")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +156,9 @@ public class EAGLSharegroup extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("debugLabel")
     public native String debugLabel();
@@ -159,6 +167,9 @@ public class EAGLSharegroup extends NSObject {
     @Selector("init")
     public native EAGLSharegroup init();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setDebugLabel:")
     public native void setDebugLabel(String value);

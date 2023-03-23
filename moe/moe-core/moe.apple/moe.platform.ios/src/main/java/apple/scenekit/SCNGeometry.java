@@ -58,7 +58,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNGeometry
- * <p>
+ * 
  * SCNGeometry is an abstract class that represents the geometry that can be attached to a SCNNode.
  */
 @Generated
@@ -122,28 +122,31 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * geometry
-     * <p>
+     * 
      * Creates and returns an empty geometry object.
-     * <p>
+     * 
      * An empty geometry may be used as the lowest level of detail of a geometry.
      */
     @Generated
     @Selector("geometry")
     public static native SCNGeometry geometry();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("geometryWithMDLMesh:")
     public static native SCNGeometry geometryWithMDLMesh(MDLMesh mdlMesh);
 
     /**
      * geometryWithSources:elements:
-     * <p>
+     * 
      * Creates and returns a new geometry built from geometry sources and geometry elements.
-     * <p>
+     * 
      * A geometry is made of geometry sources (at least vertices) and at least one geometry element. Multiple sources
      * for texture coordinates are accepted. In that case the mappingChannel is implicitly set based on the order of the
      * texture sources, starting at index 0.
-     *
+     * 
      * @param sources  An array of geometry sources. If several geometry sources have the same semantic, only the first
      *                 one is taken into account.
      * @param elements An array of geometry elements. The sort order in the array determines the mapping between
@@ -214,6 +217,7 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
     @Selector("addAnimation:forKey:")
     public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
 
+    @Deprecated
     @Generated
     @Selector("animationForKey:")
     public native CAAnimation animationForKey(String key);
@@ -230,9 +234,9 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * [@property] edgeCreasesElement
-     * <p>
+     * 
      * Specifies the edges creases that control the subdivision. Defaults to nil.
-     * <p>
+     * 
      * The primitive type of this geometry element must be SCNGeometryPrimitiveTypeLine. See subdivisionLevel above to
      * control the level of subdivision. See edgeCreasesSource below to specify sharpness of the creases.
      */
@@ -242,9 +246,9 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * [@property] edgeCreasesSource
-     * <p>
+     * 
      * Specifies the crease value of the edges specified by edgeCreasesElement. Defaults to nil.
-     * <p>
+     * 
      * The semantic of this geometry source must be "SCNGeometrySourceSemanticEdgeCrease". The creases values are
      * floating values between 0 and 10, where 0 means smooth and 10 means infinitely sharp. See subdivisionLevel above
      * to control the level of subdivision. See edgeCreasesElement above to specify edges for edge creases.
@@ -259,9 +263,9 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * [@property] firstMaterial
-     * <p>
+     * 
      * Determines the first material of the geometry. Returns nil if the geometry has no material.
-     * <p>
+     * 
      * This method is here for convenience. It is equivalent to the first object in the "materials" array above.
      */
     @Generated
@@ -270,9 +274,9 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * geometryElementAtIndex:
-     * <p>
+     * 
      * Returns the geometry element at a given index.
-     *
+     * 
      * @param elementIndex The index of the geometry element.
      */
     @Generated
@@ -281,7 +285,7 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * [@property] geometryElementCount
-     * <p>
+     * 
      * Returns the number of geometry elements owned by the geometry.
      */
     @Generated
@@ -291,7 +295,7 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * [@property] geometryElements
-     * <p>
+     * 
      * The array of geometry elements of the receiver.
      */
     @Generated
@@ -300,7 +304,7 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * [@property] geometrySources
-     * <p>
+     * 
      * The array of geometry sources of the receiver.
      */
     @Generated
@@ -309,12 +313,12 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * geometrySourcesForSemantic:
-     * <p>
+     * 
      * Returns the geometry sources for a given semantic.
-     * <p>
+     * 
      * Returns nil if no geometry source is found for the given semantic. May return more than one source, typically for
      * multiple texture coordinate sources.
-     *
+     * 
      * @param semantic The semantic of the geometry sources that should be retrieved.
      */
     @Generated
@@ -351,9 +355,9 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * insertMaterial:atIndex:
-     * <p>
+     * 
      * Insert a material in the materials array at the specified index.
-     *
+     * 
      * @param material The material to insert.
      * @param index    Index in the materials array to insert the new material.
      */
@@ -361,13 +365,14 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
     @Selector("insertMaterial:atIndex:")
     public native void insertMaterialAtIndex(SCNMaterial material, @NUInt long index);
 
+    @Deprecated
     @Generated
     @Selector("isAnimationForKeyPaused:")
     public native boolean isAnimationForKeyPaused(String key);
 
     /**
      * [@property] levelsOfDetail
-     * <p>
+     * 
      * Determines the receiver's levels of detail. Defaults to nil.
      */
     @Generated
@@ -376,9 +381,9 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * materialWithName:
-     * <p>
+     * 
      * Return the first material from the materials array of the receiver with the specified name.
-     *
+     * 
      * @param name The name of the material to retrieve.
      */
     @Generated
@@ -387,9 +392,9 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * [@property] materials
-     * <p>
+     * 
      * Specifies the receiver's materials array.
-     * <p>
+     * 
      * Each geometry element can be rendered using a different material. The index of the material used for a geometry
      * element is equal to the index of that element modulo the number of materials.
      */
@@ -399,13 +404,14 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * [@property] name
-     * <p>
+     * 
      * Determines the name of the receiver.
      */
     @Generated
     @Selector("name")
     public native String name();
 
+    @Deprecated
     @Generated
     @Selector("pauseAnimationForKey:")
     public native void pauseAnimationForKey(String key);
@@ -423,15 +429,16 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
     @Selector("removeAnimationForKey:")
     public native void removeAnimationForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
     public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
 
     /**
      * removeMaterialAtIndex:
-     * <p>
+     * 
      * Remove the material at the specified index from the materials array.
-     *
+     * 
      * @param index The index of the material to remove from the 'materials' array.
      */
     @Generated
@@ -440,10 +447,10 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * replaceMaterialAtIndex:withMaterial:
-     * <p>
+     * 
      * Remove the material at the index 'index' from the materials array of the receiver and insert 'material' in its
      * position.
-     *
+     * 
      * @param index    The index of the material to replace in the materials array.
      * @param material The new material that will replace the previous one.
      */
@@ -451,6 +458,7 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
     @Selector("replaceMaterialAtIndex:withMaterial:")
     public native void replaceMaterialAtIndexWithMaterial(@NUInt long index, SCNMaterial material);
 
+    @Deprecated
     @Generated
     @Selector("resumeAnimationForKey:")
     public native void resumeAnimationForKey(String key);
@@ -461,9 +469,9 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * [@property] edgeCreasesElement
-     * <p>
+     * 
      * Specifies the edges creases that control the subdivision. Defaults to nil.
-     * <p>
+     * 
      * The primitive type of this geometry element must be SCNGeometryPrimitiveTypeLine. See subdivisionLevel above to
      * control the level of subdivision. See edgeCreasesSource below to specify sharpness of the creases.
      */
@@ -473,9 +481,9 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * [@property] edgeCreasesSource
-     * <p>
+     * 
      * Specifies the crease value of the edges specified by edgeCreasesElement. Defaults to nil.
-     * <p>
+     * 
      * The semantic of this geometry source must be "SCNGeometrySourceSemanticEdgeCrease". The creases values are
      * floating values between 0 and 10, where 0 means smooth and 10 means infinitely sharp. See subdivisionLevel above
      * to control the level of subdivision. See edgeCreasesElement above to specify edges for edge creases.
@@ -486,9 +494,9 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * [@property] firstMaterial
-     * <p>
+     * 
      * Determines the first material of the geometry. Returns nil if the geometry has no material.
-     * <p>
+     * 
      * This method is here for convenience. It is equivalent to the first object in the "materials" array above.
      */
     @Generated
@@ -497,7 +505,7 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * [@property] levelsOfDetail
-     * <p>
+     * 
      * Determines the receiver's levels of detail. Defaults to nil.
      */
     @Generated
@@ -506,9 +514,9 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * [@property] materials
-     * <p>
+     * 
      * Specifies the receiver's materials array.
-     * <p>
+     * 
      * Each geometry element can be rendered using a different material. The index of the material used for a geometry
      * element is equal to the index of that element modulo the number of materials.
      */
@@ -518,7 +526,7 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * [@property] name
-     * <p>
+     * 
      * Determines the name of the receiver.
      */
     @Generated
@@ -535,15 +543,16 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
     @Selector("setShaderModifiers:")
     public native void setShaderModifiers(NSDictionary<String, String> value);
 
+    @Deprecated
     @Generated
     @Selector("setSpeed:forAnimationKey:")
     public native void setSpeedForAnimationKey(@NFloat double speed, String key);
 
     /**
      * [@property] subdivisionLevel
-     * <p>
+     * 
      * Specifies the subdivision level of the receiver. Defaults to 0.
-     * <p>
+     * 
      * A subdivision level of 0 means no subdivision. When the `tessellator` property of the receiver is not nil, the
      * refinement is done on the GPU.
      */
@@ -558,9 +567,9 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
 
     /**
      * [@property] subdivisionLevel
-     * <p>
+     * 
      * Specifies the subdivision level of the receiver. Defaults to 0.
-     * <p>
+     * 
      * A subdivision level of 0 means no subdivision. When the `tessellator` property of the receiver is not nil, the
      * refinement is done on the GPU.
      */
@@ -587,31 +596,41 @@ public class SCNGeometry extends NSObject implements SCNAnimatable, SCNBoundingV
     @Selector("removeAnimationForKey:blendOutDuration:")
     public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setTessellator:")
     public native void setTessellator(SCNGeometryTessellator value);
 
     /**
      * [@property] wantsAdaptiveSubdivision
-     * <p>
+     * 
      * Specifies if the subdivision is adaptive or uniform. Defaults to YES.
-     * <p>
+     * 
      * Adaptive subdivision requires that the `tessellator` property of the receiver is not nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setWantsAdaptiveSubdivision:")
     public native void setWantsAdaptiveSubdivision(boolean value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("tessellator")
     public native SCNGeometryTessellator tessellator();
 
     /**
      * [@property] wantsAdaptiveSubdivision
-     * <p>
+     * 
      * Specifies if the subdivision is adaptive or uniform. Defaults to YES.
-     * <p>
+     * 
      * Adaptive subdivision requires that the `tessellator` property of the receiver is not nil.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("wantsAdaptiveSubdivision")

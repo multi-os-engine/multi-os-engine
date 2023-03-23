@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Holds configuration of one class of tokens
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -102,7 +104,7 @@ public class TKTokenDriverConfiguration extends NSObject {
 
     /**
      * Contains dictionary of token class configurations keyed by TKTokenDriverClassID of token driver.
-     * <p>
+     * 
      * Hosting application of token extension will contain the list of configurations for hosted token extensions. All
      * other callers will get an empty array. This means that only token's hosting application can actually modify
      * token's configuration. Typically, hosting application will contain only one token extension, therefore this

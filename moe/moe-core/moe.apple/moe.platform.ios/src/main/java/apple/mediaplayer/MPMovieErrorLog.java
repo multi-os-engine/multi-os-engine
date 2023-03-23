@@ -44,6 +44,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * -----------------------------------------------------------------------------
  * An MPMovieErrorLog provides data to identify if, and when, network resource playback failures occured.
+ * 
+ * API-Since: 4.3
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use AVFoundation.
  */
 @Deprecated
 @Generated
@@ -165,6 +169,10 @@ public class MPMovieErrorLog extends NSObject implements NSCopying {
     /**
      * An ordered collection of MPMovieErrorLogEvent instances that represent the chronological sequence of events
      * contained in the error log.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -175,6 +183,10 @@ public class MPMovieErrorLog extends NSObject implements NSCopying {
      * Returns the webserver error log into a textual format that conforms to the W3C Extended Log File Format for web
      * server log files.
      * For more information see: http://www.w3.org/pub/WWW/TR/WD-logfile.html
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -183,6 +195,10 @@ public class MPMovieErrorLog extends NSObject implements NSCopying {
 
     /**
      * Returns the string encoding of the extendedLogData property.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated

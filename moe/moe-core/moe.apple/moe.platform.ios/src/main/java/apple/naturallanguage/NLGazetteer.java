@@ -31,6 +31,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * NLGazetteer is a class representing an efficient probabilistic representation for assigning labels to a set of
  * strings.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("NaturalLanguage")
@@ -82,6 +84,9 @@ public class NLGazetteer extends NSObject {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("data")
     public native NSData data();
@@ -94,6 +99,9 @@ public class NLGazetteer extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("gazetteerWithContentsOfURL:error:")
     public static native NLGazetteer gazetteerWithContentsOfURLError(NSURL url,
@@ -108,15 +116,24 @@ public class NLGazetteer extends NSObject {
     @Selector("init")
     public native NLGazetteer init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithContentsOfURL:error:")
     public native NLGazetteer initWithContentsOfURLError(NSURL url,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithData:error:")
     public native NLGazetteer initWithDataError(NSData data, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithDictionary:language:error:")
     public native NLGazetteer initWithDictionaryLanguageError(
@@ -144,10 +161,16 @@ public class NLGazetteer extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("labelForString:")
     public native String labelForString(String string);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("language")
     public native String language();
@@ -178,6 +201,9 @@ public class NLGazetteer extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("writeGazetteerForDictionary:language:toURL:error:")
     public static native boolean writeGazetteerForDictionaryLanguageToURLError(

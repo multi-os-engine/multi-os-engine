@@ -23,9 +23,6 @@ import apple.avfoundation.AVSemanticSegmentationMatte;
 import apple.coregraphics.opaque.CGColorSpaceRef;
 import apple.coregraphics.opaque.CGImageRef;
 import apple.coregraphics.opaque.IOSurfaceRef;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
@@ -59,7 +56,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -154,11 +157,16 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Creates a new image whose data is from the contents of a CVImageBuffer.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("imageWithCVImageBuffer:")
     public static native CIImage imageWithCVImageBuffer(CVBufferRef imageBuffer);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("imageWithCVImageBuffer:options:")
     public static native CIImage imageWithCVImageBufferOptions(CVBufferRef imageBuffer,
@@ -166,11 +174,16 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Creates a new image whose data is from the contents of a CVPixelBufferRef.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("imageWithCVPixelBuffer:")
     public static native CIImage imageWithCVPixelBuffer(CVBufferRef pixelBuffer);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("imageWithCVPixelBuffer:options:")
     public static native CIImage imageWithCVPixelBufferOptions(CVBufferRef pixelBuffer,
@@ -205,6 +218,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
      * The provider object 'p' is retained until the image is deallocated.
      * The 'options' dictionary supports kCIImageProviderTileSize as well as
      * other options defined in CIImage.h
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("imageWithImageProvider:size::format:colorSpace:options:")
@@ -217,6 +232,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
      * The texture type must be MTLTextureType2D and the texture format must be unsigned normalized or floating-point.
      * When rendering a CIImage referencing this Metal texture, there should not be any uncommitted Metal comand buffers
      * writing to the texture.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("imageWithMTLTexture:options:")
@@ -229,7 +246,13 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
      * by 'size'. If 'flipped' is true, then the contents of the texture are
      * flipped vertically when referenced. 'colorSpace' defines the color space
      * that the image is defined in, if nil, the texture is not color matched.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Core Image OpenGL API deprecated. (Define CI_SILENCE_GL_DEPRECATION to silence these
+     * warnings)
      */
+    @Deprecated
     @Generated
     @Selector("imageWithTexture:size:flipped:colorSpace:")
     public static native CIImage imageWithTextureSizeFlippedColorSpace(int name, @ByValue CGSize size, boolean flipped,
@@ -290,6 +313,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
      * Returns a CGImageRef if the CIImage was created with [CIImage imageWithCGImage] or [CIImage
      * imageWithContentsOfURL] and no options.
      * Otherwise this property will be nil and calling [CIContext createCGImage:fromRect:] is recommended.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("CGImage")
@@ -298,17 +323,22 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Return an array of filters to apply to an image to improve its
      * skin tones, saturation, contrast, shadows and repair red-eyes or LED-eyes.
-     * <p>
+     * 
      * The options dictionary can contain a CIDetectorImageOrientation key value.
      * The value for this key is an integer NSNumber from 1..8 such as that
      * found in kCGImagePropertyOrientation. If present, the adjustment will be done
      * based on that orientation but any coordinates in the returned filters will
      * still be based on those of the sender image.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("autoAdjustmentFilters")
     public native NSArray<? extends CIFilter> autoAdjustmentFilters();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("autoAdjustmentFiltersWithOptions:")
     public native NSArray<? extends CIFilter> autoAdjustmentFiltersWithOptions(NSDictionary<String, ?> options);
@@ -316,6 +346,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Returns if possible the color space of the image it was defined in.
      * This method will return nil, if the color space cannot be determined.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("colorSpace")
@@ -344,6 +376,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
      * The method returns outputImage of the filter after setting the
      * filter's inputImage to the method receiver and other parameters
      * from the key/value pairs of 'params'.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("imageByApplyingFilter:withInputParameters:")
@@ -351,6 +385,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Return a new image by applying a gaussian blur to the receiver.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("imageByApplyingGaussianBlurWithSigma:")
@@ -360,6 +396,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
      * Returns a new image representing the original image with a transform applied to it based on an orientation value.
      * CGImagePropertyOrientation enum values from 1 to 8 as defined in the TIFF spec are supported.
      * Returns original image if the image is of infinite extent.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("imageByApplyingOrientation:")
@@ -375,6 +413,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Return a new infinite image by replicating the edge pixels of the receiver image.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("imageByClampingToExtent")
@@ -383,6 +423,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Return a new infinite image by replicating the edge pixels of a rectangle.
      * This is equivalent to the CICrop filter.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("imageByClampingToRect:")
@@ -391,6 +433,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Return a new image by color matching from the colorSpace to the context's working space.
      * This method will return nil if the CGColorSpace is not kCGColorSpaceModelRGB.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("imageByColorMatchingColorSpaceToWorkingSpace:")
@@ -399,6 +443,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Return a new image by color matching from the context's working space to the colorSpace.
      * This method will return nil if the CGColorSpace is not kCGColorSpaceModelRGB.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("imageByColorMatchingWorkingSpaceToColorSpace:")
@@ -407,6 +453,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Return a new image formed by compositing the receiver image over 'dest'.
      * This is equivalent to the CISourceOverCompositing filter.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("imageByCompositingOverImage:")
@@ -421,6 +469,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Return a new image by multiplying the receiver's RGB values by its alpha.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("imageByPremultiplyingAlpha")
@@ -428,6 +478,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Return a new image with alpha set to 1 within the rectangle and 0 outside.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("imageBySettingAlphaOneInExtent:")
@@ -435,6 +487,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Return a new image by changing the recevier's properties.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("imageBySettingProperties:")
@@ -442,6 +496,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Return a new image by dividing the receiver's RGB values by its alpha.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("imageByUnpremultiplyingAlpha")
@@ -451,6 +507,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
      * Returns a CGAffineTransform for an orientation value that can be applied to an image.
      * CGImagePropertyOrientation enum values from 1 to 8 as defined in the TIFF spec are supported.
      * Returns CGAffineTransformIdentity if the image is of infinite extent.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("imageTransformForOrientation:")
@@ -477,18 +535,30 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithCGImage:options:")
     public native CIImage initWithCGImageOptions(CGImageRef image, NSDictionary<String, ?> options);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithCVImageBuffer:")
     public native CIImage initWithCVImageBuffer(CVBufferRef imageBuffer);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithCVImageBuffer:options:")
     public native CIImage initWithCVImageBufferOptions(CVBufferRef imageBuffer, NSDictionary<String, ?> options);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithCVPixelBuffer:")
     public native CIImage initWithCVPixelBuffer(CVBufferRef pixelBuffer);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithCVPixelBuffer:options:")
     public native CIImage initWithCVPixelBufferOptions(CVBufferRef pixelBuffer, NSDictionary<String, ?> options);
@@ -517,14 +587,23 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("initWithData:options:")
     public native CIImage initWithDataOptions(NSData data, NSDictionary<String, ?> options);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithImage:")
     public native CIImage initWithImage(UIImage image);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithImage:options:")
     public native CIImage initWithImageOptions(UIImage image, NSDictionary<String, ?> options);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("initWithImageProvider:size::format:colorSpace:options:")
     public native CIImage initWithImageProviderSize_FormatColorSpaceOptions(@Mapped(ObjCObjectMapper.class) Object p,
@@ -532,12 +611,21 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * initWithMTLTexture will return nil if textureType is not MTLTextureType2D.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("initWithMTLTexture:options:")
     public native CIImage initWithMTLTextureOptions(@Mapped(ObjCObjectMapper.class) MTLTexture texture,
             NSDictionary<String, ?> options);
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Core Image OpenGL API deprecated. (Define CI_SILENCE_GL_DEPRECATION to silence these
+     * warnings)
+     */
+    @Deprecated
     @Generated
     @Selector("initWithTexture:size:flipped:colorSpace:")
     public native CIImage initWithTextureSizeFlippedColorSpace(int name, @ByValue CGSize size, boolean flipped,
@@ -547,6 +635,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
      * Returns a CVPixelBufferRef if the CIImage was created with [CIImage imageWithCVPixelBuffer] and no options.
      * Otherwise this property will be nil and calling [CIContext render:toCVPixelBuffer:] is recommended.
      * Modifying the contents of this pixelBuffer will cause the CIImage to render with undefined results.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("pixelBuffer")
@@ -556,6 +646,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
      * Returns the metadata properties of an image. If the image is the
      * output of one or more CIFilters, then the metadata of the root inputImage
      * will be returned. See also kCIImageProperties.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("properties")
@@ -564,6 +656,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Returns the rectangle of 'image' that is required to render the
      * rectangle 'rect' of the receiver. This may return a null rect.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("regionOfInterestForImage:inRect:")
@@ -579,6 +673,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Returns the URL of the image when the image was created using the imageWithContentsOfURL APIs.
      * This method will return nil, if the URL cannot be determined.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("url")
@@ -588,6 +684,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
      * Returns a AVDepthData if the CIImage was created with [CIImage imageWithData] or [CIImage imageWithContentsOfURL]
      * and.
      * one the options kCIImageAuxiliaryDepth or kCIImageAuxiliaryDisparity.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("depthData")
@@ -595,6 +693,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Returns a new image representing the original image transformeded for the given CGImagePropertyOrientation
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("imageByApplyingCGOrientation:")
@@ -605,6 +705,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
      * The method returns outputImage of the filter after setting the
      * filter's inputImage to the method receiver and any other parameters
      * from the filter's defaults.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("imageByApplyingFilter:")
@@ -612,6 +714,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Returns a new image by changing the receiver's sample mode to bilinear interpolation.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("imageBySamplingLinear")
@@ -619,6 +723,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Returns a new image by changing the receiver's sample mode to nearest neighbor.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("imageBySamplingNearest")
@@ -626,6 +732,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Returns a CGAffineTransform for the CGImagePropertyOrientation value that can be applied to an image.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("imageTransformForCGOrientation:")
@@ -634,52 +742,82 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Creates a new image from the contents of an IOSurface.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("imageWithIOSurface:")
     public static native CIImage imageWithIOSurface(IOSurfaceRef surface);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("imageWithIOSurface:options:")
     public static native CIImage imageWithIOSurfaceOptions(IOSurfaceRef surface, NSDictionary<String, ?> options);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithIOSurface:")
     public native CIImage initWithIOSurface(IOSurfaceRef surface);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("initWithIOSurface:options:")
     public native CIImage initWithIOSurfaceOptions(IOSurfaceRef surface, NSDictionary<String, ?> options);
 
     /**
      * Convenience constant color CIImages in the sRGB colorspace.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("blackImage")
     public static native CIImage blackImage();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("blueImage")
     public static native CIImage blueImage();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("clearImage")
     public static native CIImage clearImage();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("cyanImage")
     public static native CIImage cyanImage();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("grayImage")
     public static native CIImage grayImage();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("greenImage")
     public static native CIImage greenImage();
 
     /**
      * specifying true or false here will override the context's kCIContextHighQualityDownsample setting.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("imageByApplyingTransform:highQualityDownsample:")
@@ -689,6 +827,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Returns a new image that inserts a intermediate that is cacheable
      * according to the CIContext's kCIContextCacheIntermediates option.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("imageByInsertingIntermediate")
@@ -697,6 +837,8 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * Returns a new image that inserts a intermediate that is cacheable
      * independent of the CIContext's kCIContextCacheIntermediates option.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("imageByInsertingIntermediate:")
@@ -704,69 +846,113 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Creates a new image from the contents of 'source'.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("imageWithCGImageSource:index:options:")
     public static native CIImage imageWithCGImageSourceIndexOptions(CGImageSourceRef source, @NUInt long index,
             NSDictionary<String, ?> dict);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("imageWithDepthData:")
     public static native CIImage imageWithDepthData(AVDepthData data);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("imageWithDepthData:options:")
     public static native CIImage imageWithDepthDataOptions(AVDepthData data, NSDictionary<String, ?> options);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("imageWithPortaitEffectsMatte:")
     public static native CIImage imageWithPortaitEffectsMatte(AVPortraitEffectsMatte matte);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("imageWithPortaitEffectsMatte:options:")
     public static native CIImage imageWithPortaitEffectsMatteOptions(AVPortraitEffectsMatte matte,
             NSDictionary<String, ?> options);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("imageWithSemanticSegmentationMatte:")
     public static native CIImage imageWithSemanticSegmentationMatte(AVSemanticSegmentationMatte matte);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("imageWithSemanticSegmentationMatte:options:")
     public static native CIImage imageWithSemanticSegmentationMatteOptions(AVSemanticSegmentationMatte matte,
             NSDictionary<String, ?> options);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithCGImageSource:index:options:")
     public native CIImage initWithCGImageSourceIndexOptions(CGImageSourceRef source, @NUInt long index,
             NSDictionary<String, ?> dict);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithDepthData:")
     public native CIImage initWithDepthData(AVDepthData data);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithDepthData:options:")
     public native CIImage initWithDepthDataOptions(AVDepthData data, NSDictionary<String, ?> options);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithPortaitEffectsMatte:")
     public native CIImage initWithPortaitEffectsMatte(AVPortraitEffectsMatte matte);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithPortaitEffectsMatte:options:")
     public native CIImage initWithPortaitEffectsMatteOptions(AVPortraitEffectsMatte matte,
             NSDictionary<String, ?> options);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithSemanticSegmentationMatte:")
     public native CIImage initWithSemanticSegmentationMatte(AVSemanticSegmentationMatte matte);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithSemanticSegmentationMatte:options:")
     public native CIImage initWithSemanticSegmentationMatteOptions(AVSemanticSegmentationMatte matte,
             NSDictionary<String, ?> options);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("magentaImage")
     public static native CIImage magentaImage();
@@ -775,11 +961,16 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
      * Returns a AVPortraitEffectsMatte if the CIImage was created with [CIImage imageWithData] or [CIImage
      * imageWithContentsOfURL] and.
      * one the options kCIImageAuxiliaryPortraitEffectsMatte.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("portraitEffectsMatte")
     public native AVPortraitEffectsMatte portraitEffectsMatte();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("redImage")
     public static native CIImage redImage();
@@ -788,16 +979,46 @@ public class CIImage extends NSObject implements NSSecureCoding, NSCopying {
      * Returns a AVSemanticSegmentationMatte if the CIImage was created with [CIImage imageWithData] or [CIImage
      * imageWithContentsOfURL] and.
      * one the options like kCIImageAuxiliarySemanticSegmentationSkinMatte.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("semanticSegmentationMatte")
     public native AVSemanticSegmentationMatte semanticSegmentationMatte();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("whiteImage")
     public static native CIImage whiteImage();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("yellowImage")
     public static native CIImage yellowImage();
+
+    /**
+     * Converts an image from La*b* to the Core Image RGB working space.
+     * This is the inverse of imageByConvertingWorkingSpaceToLab.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("imageByConvertingLabToWorkingSpace")
+    public native CIImage imageByConvertingLabToWorkingSpace();
+
+    /**
+     * Converts the receiver from the Core Image RGB working space to La*b* space.
+     * The L channel in the range of 0...100 is stored in the the R channel of the resulting CIImage.
+     * The a*b* channels in the range of -128..128 are stored in the GB channels of the resulting CIImage.
+     * The A channel of the resulting CIImage is the same as the receiver's
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("imageByConvertingWorkingSpaceToLab")
+    public native CIImage imageByConvertingWorkingSpaceToLab();
 }

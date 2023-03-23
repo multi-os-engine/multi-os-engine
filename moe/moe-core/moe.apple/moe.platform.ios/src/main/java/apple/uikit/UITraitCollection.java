@@ -47,6 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A trait collection encapsulates the system traits of an interface's environment.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("UIKit")
@@ -157,6 +159,9 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("traitCollectionWithDisplayGamut:")
     public static native UITraitCollection traitCollectionWithDisplayGamut(@NInt long displayGamut);
@@ -165,6 +170,9 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("traitCollectionWithDisplayScale:")
     public static native UITraitCollection traitCollectionWithDisplayScale(@NFloat double scale);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("traitCollectionWithForceTouchCapability:")
     public static native UITraitCollection traitCollectionWithForceTouchCapability(@NInt long capability);
@@ -173,10 +181,16 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     @Selector("traitCollectionWithHorizontalSizeClass:")
     public static native UITraitCollection traitCollectionWithHorizontalSizeClass(@NInt long horizontalSizeClass);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("traitCollectionWithLayoutDirection:")
     public static native UITraitCollection traitCollectionWithLayoutDirection(@NInt long layoutDirection);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("traitCollectionWithPreferredContentSizeCategory:")
     public static native UITraitCollection traitCollectionWithPreferredContentSizeCategory(
@@ -216,6 +230,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * unspecified: UIDisplayGamutUnspecified
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("displayGamut")
@@ -236,6 +252,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * unspecified: UIForceTouchCapabilityUnknown
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("forceTouchCapability")
@@ -260,6 +278,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * unspecified: UITraitEnvironmentLayoutDirectionUnspecified
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("layoutDirection")
@@ -268,6 +288,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * unspecified: UIContentSizeCategoryUnspecified
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("preferredContentSizeCategory")
@@ -297,6 +319,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * unspecified: UIAccessibilityContrastUnspecified
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("accessibilityContrast")
@@ -306,6 +330,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     /**
      * The current trait collection, used when resolving the appearance of dynamic UIColors and similar objects.
      * This is a thread-local property, so it may be changed on non-main threads without affecting the main thread.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("currentTraitCollection")
@@ -317,10 +343,12 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
      * If you need to be aware of when dynamic colors might change, override `traitCollectionDidChange` in your view or
      * view controller,
      * and use this method to compare `self.traitCollection` with `previousTraitCollection`.
-     * <p>
+     * 
      * Currently, a change in any of these traits could affect dynamic colors:
      * userInterfaceIdiom, userInterfaceStyle, displayGamut, accessibilityContrast, userInterfaceLevel
      * and more could be added in the future.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("hasDifferentColorAppearanceComparedToTraitCollection:")
@@ -328,6 +356,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * Returns an image configuration compatible with this trait collection.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("imageConfiguration")
@@ -335,6 +365,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * unspecified: UILegibilityWeightUnspecified
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("legibilityWeight")
@@ -346,6 +378,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
      * then restores `UITraitCollection.currentTraitCollection` to its original value.
      * Just like `currentTraitCollection`, this only affects the current thread, and may be used on non-main threads
      * without affecting the main thread.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("performAsCurrentTraitCollection:")
@@ -362,29 +396,45 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
     /**
      * The current trait collection, used when resolving the appearance of dynamic UIColors and similar objects.
      * This is a thread-local property, so it may be changed on non-main threads without affecting the main thread.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setCurrentTraitCollection:")
     public static native void setCurrentTraitCollection(UITraitCollection value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("traitCollectionWithAccessibilityContrast:")
     public static native UITraitCollection traitCollectionWithAccessibilityContrast(@NInt long accessibilityContrast);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("traitCollectionWithLegibilityWeight:")
     public static native UITraitCollection traitCollectionWithLegibilityWeight(@NInt long legibilityWeight);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("traitCollectionWithUserInterfaceLevel:")
     public static native UITraitCollection traitCollectionWithUserInterfaceLevel(@NInt long userInterfaceLevel);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("traitCollectionWithUserInterfaceStyle:")
     public static native UITraitCollection traitCollectionWithUserInterfaceStyle(@NInt long userInterfaceStyle);
 
     /**
      * unspecified: UIUserInterfaceLevelUnspecified
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("userInterfaceLevel")
@@ -393,6 +443,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * unspecified: UIUserInterfaceStyleUnspecified
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("userInterfaceStyle")
@@ -401,6 +453,8 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * unspecified: UIUserInterfaceActiveAppearanceUnspecified
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("activeAppearance")
@@ -411,9 +465,21 @@ public class UITraitCollection extends NSObject implements NSCopying, NSSecureCo
      * This trait indicates whether the UI should have an 'active' appearance.
      * On macOS, this varies based on window activation state.
      * On other platforms, this is always .active.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("traitCollectionWithActiveAppearance:")
     public static native UITraitCollection traitCollectionWithActiveAppearance(
             @NInt long userInterfaceActiveAppearance);
+
+    @Generated
+    @Selector("toolbarItemPresentationSize")
+    @NInt
+    public native long toolbarItemPresentationSize();
+
+    @Generated
+    @Selector("traitCollectionWithToolbarItemPresentationSize:")
+    public static native UITraitCollection traitCollectionWithToolbarItemPresentationSize(
+            @NInt long toolbarItemPresentationSize);
 }

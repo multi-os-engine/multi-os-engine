@@ -31,12 +31,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNCropAndResizeBilinear
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The MPSNNCropAndResizeBilinear filter resizes the source image using bilinear interpolation to
  * a destination whose dimensions are given by resizeWidth and resizeHeight
- * <p>
+ * 
  * The number of output feature channels remains the same as the number of input feature
  * channels.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -111,9 +113,9 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSNNCropAndResizeBilinear
      * @param device   The MTLDevice on which to make the MPSNNCropAndResizeBilinear
      * @return A new MPSNNResizeBilinear object, or nil if failure.
@@ -129,7 +131,7 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     /**
      * Initialize the crop and resize bilinear filter.
-     *
+     * 
      * @param device          The device the filter will run on.
      * @param resizeWidth     The destination resize width in pixels
      * @param resizeHeight    The destination resize height in pixels
@@ -173,7 +175,7 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property] numberOfRegions
-     * <p>
+     * 
      * the number of bounding box i.e. regions to resize.
      */
     @Generated
@@ -183,7 +185,7 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property] regions
-     * <p>
+     * 
      * This is a pointer to "numberOfRegions" boxes which specify the locations in the
      * source image to use for each box/region to perform the resize operation.
      * The coordinates specified are normalized values. A normalized region outside the
@@ -197,7 +199,7 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property] resizeHeight
-     * <p>
+     * 
      * The resize height.
      */
     @Generated
@@ -207,7 +209,7 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     /**
      * [@property] resizeWidth
-     * <p>
+     * 
      * The resize width.
      */
     @Generated

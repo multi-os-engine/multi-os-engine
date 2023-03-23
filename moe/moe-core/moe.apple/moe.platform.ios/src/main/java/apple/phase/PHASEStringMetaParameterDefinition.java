@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEStringMetaParameterDefinition
- * <p>
+ * 
  * A Metaparameter that has a string value
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -96,11 +98,13 @@ public class PHASEStringMetaParameterDefinition extends PHASEMetaParameterDefini
 
     /**
      * initWithValue
-     * <p>
+     * 
      * Create a new string metaparameter definition
-     *
-     * @param value The initial value of the metaparameter
-     * @return The new PHASEStringMetaParameterDefinition object
+     * 
+     * @param value
+     *              The initial value of the metaparameter
+     * @return
+     *         The new PHASEStringMetaParameterDefinition object
      */
     @Generated
     @Selector("initWithValue:")
@@ -108,12 +112,15 @@ public class PHASEStringMetaParameterDefinition extends PHASEMetaParameterDefini
 
     /**
      * initWithValue:identifier
-     * <p>
+     * 
      * Create a new string metaparameter definition
-     *
-     * @param value      The initial value of the metaparameter
-     * @param identifier An optional custom identifier to give to this object
-     * @return The new PHASEStringMetaParameterDefinition object
+     * 
+     * @param value
+     *                   The initial value of the metaparameter
+     * @param identifier
+     *                   An optional custom identifier to give to this object
+     * @return
+     *         The new PHASEStringMetaParameterDefinition object
      */
     @Generated
     @Selector("initWithValue:identifier:")

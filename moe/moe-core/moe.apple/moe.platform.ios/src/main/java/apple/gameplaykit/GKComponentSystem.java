@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A component system is a homogeneous collection of components that are intended to be called at the same time.
  * The system is homogeneous, meaning it only allows members of the same class into the system.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -160,7 +162,7 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
      * Adds a component to the system. The component must be of the same class as the system's componentClass.
      * The component is added to the tail of the collection and will be processed after components that were added
      * before it.
-     *
+     * 
      * @throws NSInvalidArgumentException if the component added is not a kind of the system's componentClass.
      */
     @Generated
@@ -170,11 +172,11 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
     /**
      * Adds the supported component from the entity's component collection.
      * This is conceptually the same as the pseudo-code:
-     * <p>
+     * 
      * for (GKComponent *component in entity.components)
      * if (component.class == system.componentClass)
      * [system addComponent:component]
-     *
+     * 
      * @see GKEntity.components
      */
     @Generated
@@ -231,7 +233,7 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
 
     /**
      * Removes a component from the system
-     * <p>
+     * 
      * Does nothing if the component is not in this system
      */
     @Generated
@@ -241,7 +243,7 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
     /**
      * Removes the supported component from the entity's component collection
      * This is conceptually the same as the pseudo-code:
-     * <p>
+     * 
      * for (GKComponent *component in entity.components)
      * if (component.class == system.componentClass)
      * [system removeComponent:component]

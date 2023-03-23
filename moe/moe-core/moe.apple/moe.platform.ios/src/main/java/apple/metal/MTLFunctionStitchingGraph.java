@@ -26,10 +26,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] MTLFunctionStitchingGraph
- * <p>
+ * 
  * A function graph that describes a directed acyclic graph.
- * <p>
+ * 
  * The return value of the output node will be used as the return value for the final stitched graph.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Metal")

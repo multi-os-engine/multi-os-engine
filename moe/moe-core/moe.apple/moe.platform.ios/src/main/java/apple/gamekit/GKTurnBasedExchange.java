@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +159,8 @@ public class GKTurnBasedExchange extends NSObject {
      * cancel an exchange. It is possible to cancel an exchange that is active or complete. Each recipient will receive
      * a push notification using supplied localizable message. Returns an error if the exchange has already been
      * canceled.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("cancelWithLocalizableMessageKey:arguments:completionHandler:")
@@ -211,6 +216,8 @@ public class GKTurnBasedExchange extends NSObject {
     /**
      * reply to an exchange. The sender will receive a push notification using supplied localizable message. Returns an
      * error if the exchange has already been canceled.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("replyWithLocalizableMessageKey:arguments:data:completionHandler:")

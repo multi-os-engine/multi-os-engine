@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -101,6 +104,9 @@ public class PHAsset extends PHObject {
     @Selector("description")
     public static native String description_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("fetchAssetsInAssetCollection:options:")
     public static native PHFetchResult<? extends PHAsset> fetchAssetsInAssetCollectionOptions(
@@ -108,12 +114,20 @@ public class PHAsset extends PHObject {
 
     /**
      * assetURLs are URLs retrieved from ALAsset's ALAssetPropertyAssetURL
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Will be removed in a future release
      */
+    @Deprecated
     @Generated
     @Selector("fetchAssetsWithALAssetURLs:options:")
     public static native PHFetchResult<? extends PHAsset> fetchAssetsWithALAssetURLsOptions(
             NSArray<? extends NSURL> assetURLs, PHFetchOptions options);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("fetchAssetsWithBurstIdentifier:options:")
     public static native PHFetchResult<? extends PHAsset> fetchAssetsWithBurstIdentifierOptions(String burstIdentifier,
@@ -121,12 +135,17 @@ public class PHAsset extends PHObject {
 
     /**
      * includes hidden assets by default
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fetchAssetsWithLocalIdentifiers:options:")
     public static native PHFetchResult<? extends PHAsset> fetchAssetsWithLocalIdentifiersOptions(
             NSArray<String> identifiers, PHFetchOptions options);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("fetchAssetsWithMediaType:options:")
     public static native PHFetchResult<? extends PHAsset> fetchAssetsWithMediaTypeOptions(@NInt long mediaType,
@@ -134,11 +153,16 @@ public class PHAsset extends PHObject {
 
     /**
      * Fetches PHAssetSourceTypeUserLibrary assets by default (use includeAssetSourceTypes option to override)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fetchAssetsWithOptions:")
     public static native PHFetchResult<? extends PHAsset> fetchAssetsWithOptions(PHFetchOptions options);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("fetchKeyAssetsInAssetCollection:options:")
     public static native PHFetchResult<? extends PHAsset> fetchKeyAssetsInAssetCollectionOptions(
@@ -196,27 +220,45 @@ public class PHAsset extends PHObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("burstIdentifier")
     public native String burstIdentifier();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("burstSelectionTypes")
     @NUInt
     public native long burstSelectionTypes();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("canPerformEditOperation:")
     public native boolean canPerformEditOperation(@NInt long editOperation);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("cancelContentEditingInputRequest:")
     public native void cancelContentEditingInputRequest(@NUInt long requestID);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("duration")
     public native double duration();
@@ -225,6 +267,9 @@ public class PHAsset extends PHObject {
     @Selector("init")
     public native PHAsset init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("isFavorite")
     public native boolean isFavorite();
@@ -232,45 +277,70 @@ public class PHAsset extends PHObject {
     /**
      * a hidden asset will be excluded from moment collections, but may still be included in other smart or regular
      * album collections
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isHidden")
     public native boolean isHidden();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("location")
     public native CLLocation location();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("mediaSubtypes")
     @NUInt
     public native long mediaSubtypes();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("mediaType")
     @NInt
     public native long mediaType();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("modificationDate")
     public native NSDate modificationDate();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("pixelHeight")
     @NUInt
     public native long pixelHeight();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("pixelWidth")
     @NUInt
     public native long pixelWidth();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("representsBurst")
     public native boolean representsBurst();
 
     /**
      * Completion and progress handlers are called on an arbitrary serial queue.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("requestContentEditingInputWithOptions:completionHandler:")
@@ -279,6 +349,9 @@ public class PHAsset extends PHObject {
             PHContentEditingInputRequestOptions options,
             @ObjCBlock(name = "call_requestContentEditingInputWithOptionsCompletionHandler") Block_requestContentEditingInputWithOptionsCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("sourceType")
     @NUInt
@@ -296,6 +369,8 @@ public class PHAsset extends PHObject {
      * Playback style describes how the asset should be presented to the user (regardless of the backing media for that
      * asset). Use this value to choose the type of view and the appropriate APIs on the PHImageManager to display this
      * asset
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("playbackStyle")
@@ -304,8 +379,17 @@ public class PHAsset extends PHObject {
 
     /**
      * only applies to adjusted assets
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("adjustmentFormatIdentifier")
     public native String adjustmentFormatIdentifier();
+
+    /**
+     * API-Since: 15.0
+     */
+    @Generated
+    @Selector("hasAdjustments")
+    public native boolean hasAdjustments();
 }

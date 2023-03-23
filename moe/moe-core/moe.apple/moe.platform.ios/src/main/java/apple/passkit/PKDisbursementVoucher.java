@@ -79,6 +79,8 @@ public class PKDisbursementVoucher extends NSObject {
 
     /**
      * The data containing information for the disbursement
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("data")
@@ -129,6 +131,8 @@ public class PKDisbursementVoucher extends NSObject {
 
     /**
      * The URL for redeeming the voucher
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("redemptionURL")

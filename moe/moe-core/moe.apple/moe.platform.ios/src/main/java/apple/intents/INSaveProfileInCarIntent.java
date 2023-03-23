@@ -41,6 +41,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INSaveProfileInCarIntent is deprecated. There is no replacement.
+ */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -163,19 +169,37 @@ public class INSaveProfileInCarIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INSaveProfileInCarIntent initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.2
+     * Deprecated-Message: Use `-initWithProfileNumber:profileName:` method instead.
+     */
+    @Deprecated
     @Generated
     @Selector("initWithProfileNumber:profileLabel:")
     public native INSaveProfileInCarIntent initWithProfileNumberProfileLabel(NSNumber profileNumber,
             String profileLabel);
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @Selector("initWithProfileNumber:profileName:")
     public native INSaveProfileInCarIntent initWithProfileNumberProfileName(NSNumber profileNumber, String profileName);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.2
+     * Deprecated-Message: Use `profileName` property instead.
+     */
+    @Deprecated
     @Generated
     @Selector("profileLabel")
     public native String profileLabel();
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @Selector("profileName")
     public native String profileName();

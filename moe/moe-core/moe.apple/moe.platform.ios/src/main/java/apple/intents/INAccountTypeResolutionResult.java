@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -80,6 +83,11 @@ public class INAccountTypeResolutionResult extends INIntentResolutionResult {
     public static native INAccountTypeResolutionResult confirmationRequiredWithAccountTypeToConfirm(
             @NInt long accountTypeToConfirm);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @Selector("confirmationRequiredWithValueToConfirm:")
     public static native INAccountTypeResolutionResult confirmationRequiredWithValueToConfirm(
@@ -158,6 +166,11 @@ public class INAccountTypeResolutionResult extends INIntentResolutionResult {
     @Selector("successWithResolvedAccountType:")
     public static native INAccountTypeResolutionResult successWithResolvedAccountType(@NInt long resolvedAccountType);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @Selector("successWithResolvedValue:")
     public static native INAccountTypeResolutionResult successWithResolvedValue(@NInt long resolvedValue);

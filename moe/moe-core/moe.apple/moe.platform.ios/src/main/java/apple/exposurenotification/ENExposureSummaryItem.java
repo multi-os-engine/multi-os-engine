@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * ===========================================================================================================================
- * <p>
+ * 
  * Summary for a specific time period or report type.
+ * 
+ * API-Since: 12.5
  */
 @Generated
 @Library("ExposureNotification")

@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MusicSequenceLoadFlags
- * <p>
+ * 
  * Flags used to customise loading behaviour
  * [@constant] kMusicSequenceLoadSMF_PreserveTracks
  * If this flag is set the resultant Sequence will contain:

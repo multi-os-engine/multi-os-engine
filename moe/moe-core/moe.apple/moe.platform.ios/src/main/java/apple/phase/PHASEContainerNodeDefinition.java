@@ -24,10 +24,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEContainerNodeDefinition
- * <p>
+ * 
  * An object for defining a container sound event node when building a sound event.
- * <p>
+ * 
  * A container node plays back all its children at once.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -49,10 +51,11 @@ public class PHASEContainerNodeDefinition extends PHASESoundEventNodeDefinition 
 
     /**
      * addSubtree
-     * <p>
+     * 
      * Add a subtree to this node
-     *
-     * @param subtree Add a subtree of PHASESoundEventNodeDefinition nodes beneath this node.
+     * 
+     * @param subtree
+     *                Add a subtree of PHASESoundEventNodeDefinition nodes beneath this node.
      */
     @Generated
     @Selector("addSubtree:")
@@ -105,10 +108,11 @@ public class PHASEContainerNodeDefinition extends PHASESoundEventNodeDefinition 
 
     /**
      * init
-     * <p>
+     * 
      * Create a container node definition
-     *
-     * @return A new PHASEContainerNodeDefinition object
+     * 
+     * @return
+     *         A new PHASEContainerNodeDefinition object
      */
     @Generated
     @Selector("init")
@@ -116,11 +120,13 @@ public class PHASEContainerNodeDefinition extends PHASESoundEventNodeDefinition 
 
     /**
      * initWithIdentifier
-     * <p>
+     * 
      * Create a container node definition
-     *
-     * @param identifier An optional custom identifier to give to this object
-     * @return A new PHASEContainerNodeDefinition object
+     * 
+     * @param identifier
+     *                   An optional custom identifier to give to this object
+     * @return
+     *         A new PHASEContainerNodeDefinition object
      */
     @Generated
     @Selector("initWithIdentifier:")
@@ -149,10 +155,11 @@ public class PHASEContainerNodeDefinition extends PHASESoundEventNodeDefinition 
 
     /**
      * new
-     * <p>
+     * 
      * Create a container node definition
-     *
-     * @return A new PHASEContainerNodeDefinition object
+     * 
+     * @return
+     *         A new PHASEContainerNodeDefinition object
      */
     @Generated
     @Owned

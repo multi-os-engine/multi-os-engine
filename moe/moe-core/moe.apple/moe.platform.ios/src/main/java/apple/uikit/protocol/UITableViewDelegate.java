@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSIndexPath;
 import apple.uikit.UIContextMenuConfiguration;
@@ -41,6 +40,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
 /**
  * _______________________________________________________________________________________________________________
@@ -51,6 +51,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITableViewDelegate")
 public interface UITableViewDelegate extends UIScrollViewDelegate {
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("indexPathForPreferredFocusedViewInTableView:")
@@ -67,6 +70,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Accessories (disclosures).
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 3.0
      */
     @Generated
     @IsOptional
@@ -79,6 +85,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Focus
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional
@@ -87,6 +95,11 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("tableView:canPerformAction:forRowAtIndexPath:withSender:")
@@ -95,6 +108,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("tableView:didDeselectRowAtIndexPath:")
@@ -102,6 +118,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Selector("tableView:didEndDisplayingCell:forRowAtIndexPath:")
@@ -110,6 +129,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Selector("tableView:didEndDisplayingFooterView:forSection:")
@@ -117,6 +139,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Selector("tableView:didEndDisplayingHeaderView:forSection:")
@@ -131,6 +156,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Selector("tableView:didHighlightRowAtIndexPath:")
@@ -148,6 +176,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Selector("tableView:didUnhighlightRowAtIndexPath:")
@@ -155,6 +186,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("tableView:didUpdateFocusInContext:withAnimationCoordinator:")
@@ -165,7 +199,11 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * This method supersedes -tableView:titleForDeleteConfirmationButtonForRowAtIndexPath: if return value is non-nil
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("tableView:editActionsForRowAtIndexPath:")
@@ -187,6 +225,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("tableView:estimatedHeightForFooterInSection:")
@@ -195,6 +236,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("tableView:estimatedHeightForHeaderInSection:")
@@ -208,6 +252,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
      * table.
      * If these methods are implemented, the above -tableView:heightForXXX calls will be deferred until views are ready
      * to be displayed, so more expensive logic can be placed there.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -255,6 +301,11 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("tableView:performAction:forRowAtIndexPath:withSender:")
@@ -267,6 +318,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
      * -tableView:shouldHighlightRowAtIndexPath: is called when a touch comes down on a row.
      * Returning NO to that message halts the selection process and does not cause the currently selected row to lose
      * its selected look while the touch is down.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @IsOptional
@@ -288,7 +341,11 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Copy/Paste. All three methods must be implemented by the delegate.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("tableView:shouldShowMenuForRowAtIndexPath:")
@@ -296,6 +353,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("tableView:shouldUpdateFocusInContext:")
@@ -314,6 +374,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("tableView:titleForDeleteConfirmationButtonForRowAtIndexPath:")
@@ -353,6 +416,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("tableView:willDeselectRowAtIndexPath:")
@@ -371,6 +437,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Selector("tableView:willDisplayFooterView:forSection:")
@@ -378,6 +447,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Selector("tableView:willDisplayHeaderView:forSection:")
@@ -399,6 +471,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
      * Swipe actions
      * These methods supersede -editActionsForRowAtIndexPath: if implemented
      * return nil to get the default swipe actions
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -413,6 +487,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
      * If you want the interaction effect on a different subview of the spring loaded cell, modify the
      * context.targetView property. The default is the cell.
      * If this method is not implemented, the default is YES except when the row is part of a drag session.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -422,6 +498,9 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("tableView:trailingSwipeActionsConfigurationForRowAtIndexPath:")
@@ -432,10 +511,11 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the interaction begins.
-     *
+     * 
      * @param tableView This UITableView.
      * @param indexPath IndexPath of the row for which a configuration is being requested.
      * @param point     Location of the interaction in the table view's coordinate space
+     * 
      * @return A UIContextMenuConfiguration describing the menu to be presented. Return nil to prevent the interaction
      *         from beginning.
      *         Returning an empty configuration causes the interaction to begin then fail with a cancellation effect.
@@ -443,6 +523,8 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
      *         to indicate to users that it's possible for a menu to be presented from this element, but that there are
      *         no actions to
      *         present at this particular time.
+     * 
+     *         API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -455,10 +537,12 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     /**
      * Called right after the multi-select pan gesture begins and the table view is automatically transitioned into
      * editing mode.
-     * <p>
+     * 
      * In your app, this would be a good opportunity to update the state of your UI to reflect the fact that the user is
      * now selecting
      * multiple items at once; such as updating buttons to say "Done" instead of "Select"/"Edit", for instance.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -472,9 +556,11 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
      * Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal
      * target.
      * The interaction will animate the presented menu to the target. Use this to customize the dismissal animation.
-     *
+     * 
      * @param tableView     This UITableView.
      * @param configuration The configuration of the menu displayed by this interaction.
+     * 
+     *                      API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -487,9 +573,11 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     /**
      * Called when the interaction begins. Return a UITargetedPreview to override the default preview created by the
      * table view.
-     *
+     * 
      * @param tableView     This UITableView.
      * @param configuration The configuration of the menu about to be displayed by this interaction.
+     * 
+     *                      API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -502,16 +590,18 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
     /**
      * Allows a two-finger pan gesture to automatically transition the table view into editing mode and start selecting
      * cells.
-     * <p>
+     * 
      * If this method returns YES, allow the user to start selecting multiple contiguous cells via a two-finger pan
      * gesture. If
      * the table view is already in editing mode, the user can also select multiple cells via a one-finger pan gesture
      * along the
      * edge of the table that contains editing controls (checkboxes).
-     * <p>
+     * 
      * In order to support this behavior, you must also set allowsMultipleSelectionDuringEditing to YES.
-     * <p>
+     * 
      * If this method is not implemented, the default is NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -523,10 +613,12 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the interaction is about to "commit" in response to the user tapping the preview.
-     *
+     * 
      * @param tableView     This UITableView.
      * @param configuration Configuration of the currently displayed menu.
      * @param animator      Commit animator. Add animations to this object to run them alongside the commit transition.
+     * 
+     *                      API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -539,10 +631,12 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the multi-select interaction ends.
-     * <p>
+     * 
      * At this point, the table view will remain in multi-select mode, but this delegate method is called to indicate
      * that the multiple
      * selection gesture or hardware keyboard interaction has ended.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -553,10 +647,12 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the table view is about to display a menu.
-     *
+     * 
      * @param tableView     This UITableView.
      * @param configuration The configuration of the menu about to be displayed.
      * @param animator      Appearance animator. Add animations to run them alongside the appearance transition.
+     * 
+     *                      API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -569,10 +665,12 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
 
     /**
      * Called when the table view's context menu interaction is about to end.
-     *
+     * 
      * @param tableView     This UITableView.
      * @param configuration Ending configuration.
      * @param animator      Disappearance animator. Add animations to run them alongside the disappearance transition.
+     * 
+     *                      API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -587,11 +685,59 @@ public interface UITableViewDelegate extends UIScrollViewDelegate {
      * Determines if the row at the specified index path should also become selected when focus moves to it.
      * If the table view's global selectionFollowsFocus is enabled, this method will allow you to override that behavior
      * on a per-index path basis. This method is not called if selectionFollowsFocus is disabled.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional
     @Selector("tableView:selectionFollowsFocusForRowAtIndexPath:")
     default boolean tableViewSelectionFollowsFocusForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called to determine if a primary action can be performed for the row at the given indexPath.
+     * See @c tableView:performPrimaryActionForRowAtIndexPath: for more details about primary actions.
+     * 
+     * @param tableView This UITableView
+     * @param indexPath NSIndexPath of the row
+     * 
+     * @return `YES` if the primary action can be performed; otherwise `NO`. If not implemented defaults to `YES` when
+     *         not editing
+     *         and `NO` when editing.
+     * 
+     *         API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("tableView:canPerformPrimaryActionForRowAtIndexPath:")
+    default boolean tableViewCanPerformPrimaryActionForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when the primary action should be performed for the row at the given indexPath.
+     * 
+     * Primary actions allow you to distinguish between a change of selection (which can be based on focus changes or
+     * other indirect selection changes) and distinct user actions. Primary actions are performed when the user selects
+     * a cell without extending
+     * an existing selection. This is called after @c willSelectRow and @c didSelectRow , regardless of whether the
+     * cell's selection
+     * state was allowed to change.
+     * 
+     * As an example, use @c didSelectRowAtIndexPath for updating state in the current view controller (i.e. buttons,
+     * title, etc) and
+     * use the primary action for navigation or showing another split view column.
+     * 
+     * @param tableView This UITableView
+     * @param indexPath NSIndexPath of the row to perform the action on
+     * 
+     *                  API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("tableView:performPrimaryActionForRowAtIndexPath:")
+    default void tableViewPerformPrimaryActionForRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

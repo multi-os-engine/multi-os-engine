@@ -1,7 +1,6 @@
 package apple.arkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -25,7 +24,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 11.3
+ */
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -70,6 +73,8 @@ public class ARVideoFormat extends NSObject implements NSCopying {
 
     /**
      * Indicates the physical position of an AVCaptureDevice's hardware on the system.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("captureDevicePosition")
@@ -172,8 +177,28 @@ public class ARVideoFormat extends NSObject implements NSCopying {
 
     /**
      * Indicates the type of AVCaptureDevice.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("captureDeviceType")
     public native String captureDeviceType();
+
+    /**
+     * Indicates if the video format is recommended for capturing high resolution frames.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isRecommendedForHighResolutionFrameCapturing")
+    public native boolean isRecommendedForHighResolutionFrameCapturing();
+
+    /**
+     * Indicates if the video format supports high dynamic range (HDR) streaming.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isVideoHDRSupported")
+    public native boolean isVideoHDRSupported();
 }

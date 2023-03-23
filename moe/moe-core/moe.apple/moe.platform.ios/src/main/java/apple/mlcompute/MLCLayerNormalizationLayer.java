@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCLayerNormalizationLayer
- * <p>
+ * 
  * The layer normalizaion layer. For more information, refer to https://pytorch.org/docs/stable/nn.html#layernorm.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -62,7 +64,7 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The beta tensor
      */
     @Generated
@@ -71,7 +73,7 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] betaParameter
-     * <p>
+     * 
      * The beta tensor parameter used for optimizer update
      */
     @Generated
@@ -106,7 +108,7 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] gamma
-     * <p>
+     * 
      * The gamma tensor
      */
     @Generated
@@ -115,7 +117,7 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] gammaParameter
-     * <p>
+     * 
      * The gamma tensor parameter used for optimizer update
      */
     @Generated
@@ -154,7 +156,7 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
 
     /**
      * Create a layer normalization layer
-     *
+     * 
      * @param normalizedShape The shape of the axes over which normalization occurs, currently (C,H,W) only
      * @param beta            Training parameter
      * @param gamma           Training parameter
@@ -173,7 +175,7 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] normalizedShape
-     * <p>
+     * 
      * The shape of the axes over which normalization occurs, (W), (H,W) or (C,H,W)
      */
     @Generated
@@ -202,7 +204,7 @@ public class MLCLayerNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] varianceEpsilon
-     * <p>
+     * 
      * A value used for numerical stability
      */
     @Generated

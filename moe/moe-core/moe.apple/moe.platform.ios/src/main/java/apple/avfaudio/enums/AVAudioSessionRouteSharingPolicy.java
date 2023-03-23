@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] AVAudioSessionRouteSharingPolicy
- * <p>
+ * 
  * Starting in iOS 11, tvOS 11, and watchOS 5, the route sharing policy allows a session
  * to specify that its output audio should be routed somewhere other than the default system output,
  * when appropriate alternative routes are available.
@@ -47,7 +47,14 @@ public final class AVAudioSessionRouteSharingPolicy {
 
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
     @Generated @NUInt public static final long LongFormAudio = 0x0000000000000001L;
-    @Generated @NUInt public static final long LongForm = 0x0000000000000001L;
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated @NUInt public static final long LongForm = 0x0000000000000001L;
     @Generated @NUInt public static final long Independent = 0x0000000000000002L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NUInt public static final long LongFormVideo = 0x0000000000000003L;
 }

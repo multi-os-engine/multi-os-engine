@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCGatherLayer
- * <p>
+ * 
  * A gather layer
+ * 
+ * API-Since: 14.5
  */
 @Generated
 @Library("MLCompute")
@@ -87,7 +89,7 @@ public class MLCGatherLayer extends MLCLayer {
 
     /**
      * [@property] dimension
-     * <p>
+     * 
      * The dimension along which to index
      */
     @Generated
@@ -127,7 +129,7 @@ public class MLCGatherLayer extends MLCLayer {
 
     /**
      * Create a gather layer
-     *
+     * 
      * @param dimension The dimension along which to index
      * @return A new gather layer
      */

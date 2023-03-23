@@ -47,6 +47,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -214,21 +217,32 @@ public class UIPasteboard extends NSObject {
     @Selector("dataForPasteboardType:inItemSet:")
     public native NSArray<? extends NSData> dataForPasteboardTypeInItemSet(String pasteboardType, NSIndexSet itemSet);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("hasColors")
     public native boolean hasColors();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("hasImages")
     public native boolean hasImages();
 
     /**
      * Queries
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("hasStrings")
     public native boolean hasStrings();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("hasURLs")
     public native boolean hasURLs();
@@ -249,6 +263,12 @@ public class UIPasteboard extends NSObject {
     @Selector("isPersistent")
     public native boolean isPersistent();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Do not set persistence on pasteboards. This property is set automatically.
+     */
+    @Deprecated
     @Generated
     @Selector("setPersistent:")
     public native void setPersistent(boolean persistent);
@@ -314,6 +334,9 @@ public class UIPasteboard extends NSObject {
     @Selector("setItems:")
     public native void setItems(NSArray<? extends NSDictionary<String, ?>> value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setItems:options:")
     public native void setItemsOptions(NSArray<? extends NSDictionary<String, ?>> items,
@@ -358,6 +381,8 @@ public class UIPasteboard extends NSObject {
 
     /**
      * Item provider interface
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("itemProviders")
@@ -365,11 +390,16 @@ public class UIPasteboard extends NSObject {
 
     /**
      * Item provider interface
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setItemProviders:")
     public native void setItemProviders(NSArray<? extends NSItemProvider> value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setItemProviders:localOnly:expirationDate:")
     public native void setItemProvidersLocalOnlyExpirationDate(NSArray<? extends NSItemProvider> itemProviders,
@@ -377,20 +407,27 @@ public class UIPasteboard extends NSObject {
 
     /**
      * Automatically creates item providers wrapping the objects passed in.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setObjects:")
     public native void setObjects(NSArray<?> objects);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setObjects:localOnly:expirationDate:")
     public native void setObjectsLocalOnlyExpirationDate(NSArray<?> objects, boolean localOnly, NSDate expirationDate);
 
     /**
      * Detects patterns in the first pasteboard item.
-     *
+     * 
      * @param patterns          Detect only these patterns.
      * @param completionHandler Receives which patterns were detected, or an error.
+     * 
+     *                          API-Since: 14.0
      */
     @Generated
     @Selector("detectPatternsForPatterns:completionHandler:")
@@ -406,11 +443,13 @@ public class UIPasteboard extends NSObject {
 
     /**
      * Detects patterns in the specified pasteboard items.
-     *
+     * 
      * @param patterns          Detect only these patterns.
      * @param itemSet           Specifies which pasteboard items by their position. Nil means all items.
      * @param completionHandler Receives which patterns were detected per item specified,
      *                          or an error.
+     * 
+     *                          API-Since: 14.0
      */
     @Generated
     @Selector("detectPatternsForPatterns:inItemSet:completionHandler:")
@@ -427,9 +466,11 @@ public class UIPasteboard extends NSObject {
 
     /**
      * Detects patterns and corresponding values in the first pasteboard item.
-     *
+     * 
      * @param patterns          Detect only these patterns.
      * @param completionHandler Receives which patterns and values were detected, or an error.
+     * 
+     *                          API-Since: 14.0
      */
     @Generated
     @Selector("detectValuesForPatterns:completionHandler:")
@@ -445,11 +486,13 @@ public class UIPasteboard extends NSObject {
 
     /**
      * Detects patterns and corresponding values in the specified pasteboard items.
-     *
+     * 
      * @param patterns          Detect only these patterns.
      * @param itemSet           Specifies which pasteboard items by their position. Nil means all items.
      * @param completionHandler Receives which patterns and values were detected per item specified,
      *                          or an error.
+     * 
+     *                          API-Since: 14.0
      */
     @Generated
     @Selector("detectValuesForPatterns:inItemSet:completionHandler:")

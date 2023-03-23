@@ -24,7 +24,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSData;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("NetworkExtension")
 @Runtime(ObjCRuntime.class)
@@ -136,9 +140,11 @@ public class NEDNSOverHTTPSSettings extends NEDNSSettings {
 
     /**
      * [@property] serverURL
-     * <p>
+     * 
      * The URL to which to make DNS-over-HTTPS requests. The format should be an HTTPS URL with the path indicating the
      * location of the DNS-over-HTTPS server, such as: "https://dnsserver.example.net/dns-query".
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("serverURL")
@@ -146,9 +152,11 @@ public class NEDNSOverHTTPSSettings extends NEDNSSettings {
 
     /**
      * [@property] serverURL
-     * <p>
+     * 
      * The URL to which to make DNS-over-HTTPS requests. The format should be an HTTPS URL with the path indicating the
      * location of the DNS-over-HTTPS server, such as: "https://dnsserver.example.net/dns-query".
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setServerURL:")
@@ -176,4 +184,26 @@ public class NEDNSOverHTTPSSettings extends NEDNSSettings {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] identityReference
+     * 
+     * The optional certificate identity keychain reference to use as a TLS client certificate.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("identityReference")
+    public native NSData identityReference();
+
+    /**
+     * [@property] identityReference
+     * 
+     * The optional certificate identity keychain reference to use as a TLS client certificate.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setIdentityReference:")
+    public native void setIdentityReference(NSData value);
 }

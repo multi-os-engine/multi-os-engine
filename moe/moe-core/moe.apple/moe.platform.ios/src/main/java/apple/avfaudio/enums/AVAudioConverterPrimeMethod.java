@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVAudioConverterPrimeMethod
- * <p>
+ * 
  * values for the primeMethod property. See further discussion under AVAudioConverterPrimeInfo.
  */
 @Generated

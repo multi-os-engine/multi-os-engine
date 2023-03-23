@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -90,7 +93,7 @@ public class MTLVisibleFunctionTableDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] functionCount
-     * <p>
+     * 
      * The number of functions in the table.
      */
     @Generated
@@ -143,7 +146,7 @@ public class MTLVisibleFunctionTableDescriptor extends NSObject implements NSCop
 
     /**
      * [@property] functionCount
-     * <p>
+     * 
      * The number of functions in the table.
      */
     @Generated
@@ -165,7 +168,7 @@ public class MTLVisibleFunctionTableDescriptor extends NSObject implements NSCop
 
     /**
      * visibleFunctionTableDescriptor
-     * <p>
+     * 
      * Create an autoreleased visible function table descriptor
      */
     @Generated

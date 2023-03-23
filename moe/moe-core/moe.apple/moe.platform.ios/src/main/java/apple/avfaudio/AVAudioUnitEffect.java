@@ -27,16 +27,19 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAudioUnitEffect
- * <p>
+ * 
  * an AVAudioUnit that processes audio in real-time
- * <p>
+ * 
  * An AVAudioUnitEffect represents an audio unit of type kAudioUnitType_Effect,
  * kAudioUnitType_MusicEffect, kAudioUnitType_Panner, kAudioUnitType_RemoteEffect or
  * kAudioUnitType_RemoteMusicEffect.
- * <p>
+ * 
  * These effects run in real-time and process some x number of audio input
  * samples to produce x number of audio output samples. A delay unit is an
  * example of an effect unit.
+ * 
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -72,7 +75,7 @@ public class AVAudioUnitEffect extends AVAudioUnit {
 
     /**
      * [@property] bypass
-     * <p>
+     * 
      * Bypass state of the audio unit.
      */
     @Generated
@@ -116,17 +119,18 @@ public class AVAudioUnitEffect extends AVAudioUnit {
 
     /**
      * initWithAudioComponentDescription:
-     * <p>
+     * 
      * Create an AVAudioUnitEffect object.
-     * <p>
+     * 
      * The componentType must be one of these types
      * kAudioUnitType_Effect
      * kAudioUnitType_MusicEffect
      * kAudioUnitType_Panner
      * kAudioUnitType_RemoteEffect
      * kAudioUnitType_RemoteMusicEffect
-     *
-     * @param audioComponentDescription AudioComponentDescription of the audio unit to be instantiated.
+     * 
+     * @param audioComponentDescription
+     *                                  AudioComponentDescription of the audio unit to be instantiated.
      */
     @Generated
     @Selector("initWithAudioComponentDescription:")
@@ -175,7 +179,7 @@ public class AVAudioUnitEffect extends AVAudioUnit {
 
     /**
      * [@property] bypass
-     * <p>
+     * 
      * Bypass state of the audio unit.
      */
     @Generated

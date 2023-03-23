@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -73,6 +76,9 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Selector("allocWithZone:")
     public static native MPMediaLibrary allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("authorizationStatus")
     @NInt
@@ -143,6 +149,9 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Selector("new")
     public static native MPMediaLibrary new_objc();
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("requestAuthorization:")
     public static native void requestAuthorization(
@@ -173,6 +182,9 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("addItemWithProductID:completionHandler:")
     public native void addItemWithProductIDCompletionHandler(String productID,
@@ -197,8 +209,10 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
      * Finds the playlist associated with the UUID.
      * If the playlist exists, the creation metadata is ignored.
      * If no such playlist exists and creation metadata is valid, a playlist associated the UUID will be created.
-     * <p>
+     * 
      * The UUID should typically be pre-generated to avoid creating a new playlist with every call.
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("getPlaylistWithUUID:creationMetadata:completionHandler:")

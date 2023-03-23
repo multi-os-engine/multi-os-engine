@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
 import apple.foundation.NSArray;
 import apple.foundation.NSBundle;
 import apple.foundation.NSCoder;
@@ -44,7 +43,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -73,6 +76,7 @@ public class UIImagePickerController extends UINavigationController implements N
     @Selector("allocWithZone:")
     public static native UIImagePickerController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -83,6 +87,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * returns array of NSNumbers (UIImagePickerControllerCameraCaptureMode)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("availableCaptureModesForCameraDevice:")
@@ -145,6 +151,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * returns YES if camera device is available
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isCameraDeviceAvailable:")
@@ -152,6 +160,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * returns YES if camera device supports flash and torch.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("isFlashAvailableForCameraDevice:")
@@ -200,11 +210,17 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * replacement for -allowsImageEditing; default value is NO.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("allowsEditing")
     public native boolean allowsEditing();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 3.1
+     */
     @Generated
     @Deprecated
     @Selector("allowsImageEditing")
@@ -212,6 +228,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * default is UIImagePickerControllerCameraCaptureModePhoto
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("cameraCaptureMode")
@@ -220,6 +238,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * default is UIImagePickerControllerCameraDeviceRear
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("cameraDevice")
@@ -228,6 +248,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * default is UIImagePickerControllerCameraFlashModeAuto.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("cameraFlashMode")
@@ -236,6 +258,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * set a view to overlay the preview view.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("cameraOverlayView")
@@ -243,6 +267,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * set the transform of the preview view.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("cameraViewTransform")
@@ -285,11 +311,17 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * replacement for -allowsImageEditing; default value is NO.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("setAllowsEditing:")
     public native void setAllowsEditing(boolean value);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 3.1
+     */
     @Generated
     @Deprecated
     @Selector("setAllowsImageEditing:")
@@ -297,6 +329,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * default is UIImagePickerControllerCameraCaptureModePhoto
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setCameraCaptureMode:")
@@ -304,6 +338,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * default is UIImagePickerControllerCameraDeviceRear
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setCameraDevice:")
@@ -311,6 +347,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * default is UIImagePickerControllerCameraFlashModeAuto.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setCameraFlashMode:")
@@ -318,6 +356,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * set a view to overlay the preview view.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("setCameraOverlayView:")
@@ -325,6 +365,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * set the transform of the preview view.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("setCameraViewTransform:")
@@ -352,6 +394,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * set to NO to hide all standard camera UI. default is YES
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("setShowsCameraControls:")
@@ -366,6 +410,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * default value is 10 minutes.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("setVideoMaximumDuration:")
@@ -374,6 +420,8 @@ public class UIImagePickerController extends UINavigationController implements N
     /**
      * default value is UIImagePickerControllerQualityTypeMedium. If the cameraDevice does not support the videoQuality,
      * it will use the default value.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("setVideoQuality:")
@@ -381,6 +429,8 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * set to NO to hide all standard camera UI. default is YES
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("showsCameraControls")
@@ -398,21 +448,31 @@ public class UIImagePickerController extends UINavigationController implements N
      * programmatically initiates still image capture. ignored if image capture is in-flight.
      * clients can initiate additional captures after receiving -imagePickerController:didFinishPickingMediaWithInfo:
      * delegate callback
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("startVideoCapture")
     public native boolean startVideoCapture();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("stopVideoCapture")
     public native void stopVideoCapture();
 
+    /**
+     * API-Since: 3.1
+     */
     @Generated
     @Selector("takePicture")
     public native void takePicture();
 
     /**
      * default value is 10 minutes.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("videoMaximumDuration")
@@ -421,6 +481,8 @@ public class UIImagePickerController extends UINavigationController implements N
     /**
      * default value is UIImagePickerControllerQualityTypeMedium. If the cameraDevice does not support the videoQuality,
      * it will use the default value.
+     * 
+     * API-Since: 3.1
      */
     @Generated
     @Selector("videoQuality")
@@ -429,7 +491,12 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * default value is UIImagePickerControllerImageExportPresetCompatible.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Will be removed in a future release, use PHPicker.
      */
+    @Deprecated
     @Generated
     @Selector("imageExportPreset")
     @NInt
@@ -437,7 +504,12 @@ public class UIImagePickerController extends UINavigationController implements N
 
     /**
      * default value is UIImagePickerControllerImageExportPresetCompatible.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Will be removed in a future release, use PHPicker.
      */
+    @Deprecated
     @Generated
     @Selector("setImageExportPreset:")
     public native void setImageExportPreset(@NInt long value);
@@ -446,7 +518,12 @@ public class UIImagePickerController extends UINavigationController implements N
      * videoExportPreset can be used to specify the transcoding quality for videos (via a AVAssetExportPreset* string).
      * If the value is nil (the default) then the transcodeQuality is determined by videoQuality instead. Not valid if
      * the source type is UIImagePickerControllerSourceTypeCamera
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Will be removed in a future release, use PHPicker.
      */
+    @Deprecated
     @Generated
     @Selector("setVideoExportPreset:")
     public native void setVideoExportPreset(String value);
@@ -455,7 +532,12 @@ public class UIImagePickerController extends UINavigationController implements N
      * videoExportPreset can be used to specify the transcoding quality for videos (via a AVAssetExportPreset* string).
      * If the value is nil (the default) then the transcodeQuality is determined by videoQuality instead. Not valid if
      * the source type is UIImagePickerControllerSourceTypeCamera
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Will be removed in a future release, use PHPicker.
      */
+    @Deprecated
     @Generated
     @Selector("videoExportPreset")
     public native String videoExportPreset();

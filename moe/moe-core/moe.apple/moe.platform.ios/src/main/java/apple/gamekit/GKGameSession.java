@@ -43,6 +43,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: For real-time matches, use GKMatchmakerViewController. For turn-based matches, use
+ * GKTurnBasedMatchmakerViewController.
+ */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -61,6 +68,13 @@ public class GKGameSession extends NSObject {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use GKLocalPlayer's registerListener: to register for GKLocalPlayerListener event
+     * notifications.
+     */
+    @Deprecated
     @Generated
     @Selector("addEventListener:")
     public static native void addEventListener(NSObject listener);
@@ -162,6 +176,13 @@ public class GKGameSession extends NSObject {
     @Selector("new")
     public static native GKGameSession new_objc();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use GKLocalPlayer's unregisterListener: or unregisterAllListeners to unregister from
+     * GKLocalPlayerListener event notifications.
+     */
+    @Deprecated
     @Generated
     @Selector("removeEventListener:")
     public static native void removeEventListener(NSObject listener);

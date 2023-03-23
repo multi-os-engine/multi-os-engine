@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -150,7 +153,7 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
 
     /**
      * [@property] clearStencil
-     * <p>
+     * 
      * The clear stencil value to be used if the loadAction property is MTLLoadActionClear
      */
     @Generated
@@ -163,7 +166,7 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
 
     /**
      * [@property] clearStencil
-     * <p>
+     * 
      * The clear stencil value to be used if the loadAction property is MTLLoadActionClear
      */
     @Generated
@@ -172,8 +175,10 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
 
     /**
      * [@property] stencilResolveFilter
-     * <p>
+     * 
      * The filter to be used for stencil multisample resolve. Defaults to MTLMultisampleStencilResolveFilterSample0.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setStencilResolveFilter:")
@@ -181,8 +186,10 @@ public class MTLRenderPassStencilAttachmentDescriptor extends MTLRenderPassAttac
 
     /**
      * [@property] stencilResolveFilter
-     * <p>
+     * 
      * The filter to be used for stencil multisample resolve. Defaults to MTLMultisampleStencilResolveFilterSample0.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("stencilResolveFilter")

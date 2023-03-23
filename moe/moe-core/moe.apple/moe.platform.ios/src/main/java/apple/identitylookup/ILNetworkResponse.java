@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A response to an HTTPS network request.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("IdentityLookup")

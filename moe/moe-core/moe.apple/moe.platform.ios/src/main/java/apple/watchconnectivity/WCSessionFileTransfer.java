@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Used to track a file being transferred.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("WatchConnectivity")
@@ -168,6 +170,9 @@ public class WCSessionFileTransfer extends NSObject {
     @Selector("isTransferring")
     public native boolean isTransferring();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("progress")
     public native NSProgress progress();

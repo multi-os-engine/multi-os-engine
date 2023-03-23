@@ -29,8 +29,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEPrivateLTENetwork
- * <p>
+ * 
  * The NEPrivateLTENetwork class declares an object that contains the parameters of a private LTE network.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -136,8 +138,10 @@ public class NEPrivateLTENetwork extends NSObject implements NSCopying, NSSecure
 
     /**
      * [@property] mobileCountryCode
-     * <p>
+     * 
      * Mobile Country Code of the private LTE network.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("mobileCountryCode")
@@ -145,8 +149,10 @@ public class NEPrivateLTENetwork extends NSObject implements NSCopying, NSSecure
 
     /**
      * [@property] mobileNetworkCode
-     * <p>
+     * 
      * Mobile Network Code of the private LTE network.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("mobileNetworkCode")
@@ -167,8 +173,10 @@ public class NEPrivateLTENetwork extends NSObject implements NSCopying, NSSecure
 
     /**
      * [@property] mobileCountryCode
-     * <p>
+     * 
      * Mobile Country Code of the private LTE network.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMobileCountryCode:")
@@ -176,8 +184,10 @@ public class NEPrivateLTENetwork extends NSObject implements NSCopying, NSSecure
 
     /**
      * [@property] mobileNetworkCode
-     * <p>
+     * 
      * Mobile Network Code of the private LTE network.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMobileNetworkCode:")
@@ -185,8 +195,10 @@ public class NEPrivateLTENetwork extends NSObject implements NSCopying, NSSecure
 
     /**
      * [@property] trackingAreaCode
-     * <p>
+     * 
      * Tracking Area Code of the private LTE network. This property is only applicable for band 48 private LTE networks.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setTrackingAreaCode:")
@@ -212,8 +224,10 @@ public class NEPrivateLTENetwork extends NSObject implements NSCopying, NSSecure
 
     /**
      * [@property] trackingAreaCode
-     * <p>
+     * 
      * Tracking Area Code of the private LTE network. This property is only applicable for band 48 private LTE networks.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("trackingAreaCode")

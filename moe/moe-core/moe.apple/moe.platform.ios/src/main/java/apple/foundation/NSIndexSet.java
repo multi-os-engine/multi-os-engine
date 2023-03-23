@@ -194,6 +194,9 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @NUInt
     public native long count();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("countOfIndexesInRange:")
     @NUInt
@@ -203,21 +206,33 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateIndexesInRange:options:usingBlock:")
     public native void enumerateIndexesInRangeOptionsUsingBlock(@ByValue NSRange range, @NUInt long opts,
             @ObjCBlock(name = "call_enumerateIndexesInRangeOptionsUsingBlock") Block_enumerateIndexesInRangeOptionsUsingBlock block);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateIndexesUsingBlock:")
     public native void enumerateIndexesUsingBlock(
             @ObjCBlock(name = "call_enumerateIndexesUsingBlock") Block_enumerateIndexesUsingBlock block);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateIndexesWithOptions:usingBlock:")
     public native void enumerateIndexesWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateIndexesWithOptionsUsingBlock") Block_enumerateIndexesWithOptionsUsingBlock block);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("enumerateRangesInRange:options:usingBlock:")
     public native void enumerateRangesInRangeOptionsUsingBlock(@ByValue NSRange range, @NUInt long opts,
@@ -228,15 +243,20 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
      * contiguous indexes. The performance of these methods is not guaranteed to be any better than if they were
      * implemented with enumerateIndexesInRange:options:usingBlock:. However, depending on the receiver's
      * implementation, they may perform better than that.
-     * <p>
+     * 
      * If the specified range for enumeration intersects a range of contiguous indexes in the receiver, then the block
      * will be invoked with the intersection of those two ranges.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("enumerateRangesUsingBlock:")
     public native void enumerateRangesUsingBlock(
             @ObjCBlock(name = "call_enumerateRangesUsingBlock") Block_enumerateRangesUsingBlock block);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("enumerateRangesWithOptions:usingBlock:")
     public native void enumerateRangesWithOptionsUsingBlock(@NUInt long opts,
@@ -272,6 +292,9 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @NUInt
     public native long indexGreaterThanOrEqualToIndex(@NUInt long value);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexInRange:options:passingTest:")
     @NUInt
@@ -288,27 +311,42 @@ public class NSIndexSet extends NSObject implements NSCopying, NSMutableCopying,
     @NUInt
     public native long indexLessThanOrEqualToIndex(@NUInt long value);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexPassingTest:")
     @NUInt
     public native long indexPassingTest(@ObjCBlock(name = "call_indexPassingTest") Block_indexPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexWithOptions:passingTest:")
     @NUInt
     public native long indexWithOptionsPassingTest(@NUInt long opts,
             @ObjCBlock(name = "call_indexWithOptionsPassingTest") Block_indexWithOptionsPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexesInRange:options:passingTest:")
     public native NSIndexSet indexesInRangeOptionsPassingTest(@ByValue NSRange range, @NUInt long opts,
             @ObjCBlock(name = "call_indexesInRangeOptionsPassingTest") Block_indexesInRangeOptionsPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexesPassingTest:")
     public native NSIndexSet indexesPassingTest(
             @ObjCBlock(name = "call_indexesPassingTest") Block_indexesPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexesWithOptions:passingTest:")
     public native NSIndexSet indexesWithOptionsPassingTest(@NUInt long opts,

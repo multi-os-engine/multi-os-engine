@@ -26,9 +26,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNNPadNode
- * <p>
+ * 
  * A node for a MPSNNPad kernel
- * <p>
+ * 
  * You should not use this node to zero pad your data in the XY-plane.
  * This node copies the input image and therefore should only be used in
  * special circumstances where the normal padding operation, defined for most
@@ -38,6 +38,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@ref] MPSImageEdgeModeMirrorWithEdge or, if you need padding in the
  * feature-channel dimesion.
  * In other cases use to @ref MPSNNPadding to get best performance.
+ * 
+ * API-Since: 12.1
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -99,7 +101,7 @@ public class MPSNNPadNode extends MPSNNFilterNode {
 
     /**
      * [@property] fillValue
-     * <p>
+     * 
      * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
      */
     @Generated
@@ -117,7 +119,7 @@ public class MPSNNPadNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a MPSNNPad kernel
-     *
+     * 
      * @param source            The MPSNNImageNode representing the source MPSImage for the filter
      * @param paddingSizeBefore The amount of padding to apply before the image in each dimension.
      * @param paddingSizeAfter  The amount of padding to apply after the image in each dimension.
@@ -160,7 +162,7 @@ public class MPSNNPadNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a autoreleased MPSNNPad kernel
-     *
+     * 
      * @param source            The MPSNNImageNode representing the source MPSImage for the filter
      * @param paddingSizeBefore The amount of padding to apply before the image in each dimension.
      * @param paddingSizeAfter  The amount of padding to apply after the image in each dimension.
@@ -185,7 +187,7 @@ public class MPSNNPadNode extends MPSNNFilterNode {
 
     /**
      * [@property] fillValue
-     * <p>
+     * 
      * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
      */
     @Generated

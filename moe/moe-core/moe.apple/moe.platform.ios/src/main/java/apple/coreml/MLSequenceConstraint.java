@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Constraint describing expected MLSequence properties
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CoreML")

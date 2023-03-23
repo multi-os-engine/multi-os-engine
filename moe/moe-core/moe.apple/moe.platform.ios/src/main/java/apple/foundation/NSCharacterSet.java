@@ -58,6 +58,8 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
 
     /**
      * Returns a character set containing the characters allowed in a URL's fragment component.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("URLFragmentAllowedCharacterSet")
@@ -65,6 +67,8 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
 
     /**
      * Returns a character set containing the characters allowed in a URL's host subcomponent.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("URLHostAllowedCharacterSet")
@@ -72,6 +76,8 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
 
     /**
      * Returns a character set containing the characters allowed in a URL's password subcomponent.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("URLPasswordAllowedCharacterSet")
@@ -82,6 +88,8 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
      * character, but it is recommended that it be percent-encoded for best compatibility with NSURL
      * (-stringByAddingPercentEncodingWithAllowedCharacters: will percent-encode any ';' characters if you pass the
      * URLPathAllowedCharacterSet).
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("URLPathAllowedCharacterSet")
@@ -89,6 +97,8 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
 
     /**
      * Returns a character set containing the characters allowed in a URL's query component.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("URLQueryAllowedCharacterSet")
@@ -96,6 +106,8 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
 
     /**
      * Returns a character set containing the characters allowed in a URL's user subcomponent.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("URLUserAllowedCharacterSet")
@@ -224,6 +236,9 @@ public class NSCharacterSet extends NSObject implements NSCopying, NSMutableCopy
     @Selector("new")
     public static native NSCharacterSet new_objc();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("newlineCharacterSet")
     public static native NSCharacterSet newlineCharacterSet();

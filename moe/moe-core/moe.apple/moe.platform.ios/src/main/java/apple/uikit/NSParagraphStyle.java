@@ -47,6 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NSParagraphStyle
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("UIKit")
@@ -187,6 +189,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
      * Tightens inter-character spacing in attempt to fit lines wider than the available space if the line break mode is
      * one of the truncation modes before starting to truncate. NO by default. The maximum amount of tightening
      * performed is determined by the system based on contexts such as font, line width, etc.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("allowsDefaultTighteningForTruncation")
@@ -205,6 +209,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
 
     /**
      * The default tab interval used for locations beyond the last element in tabStops
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("defaultTabInterval")
@@ -322,6 +328,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     /**
      * An array of NSTextTabs. Contents should be ordered by location. The default value is an array of 12 left-aligned
      * tabs at 28pt interval
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("tabStops")
@@ -338,6 +346,8 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
     /**
      * Specifies the line break strategies that may be used for laying out the paragraph. The default value is
      * NSLineBreakStrategyNone.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("lineBreakStrategy")
@@ -348,8 +358,19 @@ public class NSParagraphStyle extends NSObject implements NSCopying, NSMutableCo
      * A property controlling the hyphenation behavior for the paragraph associated with the paragraph style. The exact
      * hyphenation logic is dynamically determined by the layout context such as language, platform, etc. When YES, it
      * affects the return value from -hyphenationFactor when the property is set to 0.0.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("usesDefaultHyphenation")
     public native boolean usesDefaultHyphenation();
+
+    /**
+     * Array to specify the text lists containing the paragraph, nested from outermost to innermost.
+     * 
+     * API-Since: 7.0
+     */
+    @Generated
+    @Selector("textLists")
+    public native NSArray<? extends NSTextList> textLists();
 }

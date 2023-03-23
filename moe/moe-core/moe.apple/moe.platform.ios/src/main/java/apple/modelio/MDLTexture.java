@@ -48,12 +48,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MDLTexture
  * [@summary] a description of texels provided by a texture object.
- * <p>
+ * 
  * A texture optionally generates or loads texels
  * through an access to the data property, or one of the other
  * properties, otherwise the texture object is a lightweight descriptor
  * only.
- * <p>
+ * 
  * [@property] data
  * Texel data that will exist when referenced; it may or may not exist
  * before
@@ -73,6 +73,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The texture encodes a cube map. If YES, then the layout of the cube
  * map is deduced as a vertical strip if dimension.y is six times
  * dimension.x. Other layouts are possible in the future.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")
@@ -184,7 +186,7 @@ public class MDLTexture extends NSObject implements MDLNamed {
      * ordered +X,-X,+Y,-Y,+Z,-Z If the data is read back the image will be compacted
      * into a single vertical stack where dimensions.y = 6 * dimensions.x
      * isCube will return YES
-     *
+     * 
      * @param names a collection of mosaiced images in a cross formation or column or row.
      *              - If 6 individual images are given they are assumed to be in order and will be
      *              loaded as is.
@@ -316,12 +318,17 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @Selector("writeToURL:type:")
     public native boolean writeToURLType(NSURL nsurl, CFStringRef type);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("imageFromTextureAtLevel:")
     public native CGImageRef imageFromTextureAtLevel(@NUInt long level);
 
     /**
      * write a particular level of a mipped texture to URL, deducing type from path extension
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("writeToURL:level:")
@@ -329,11 +336,16 @@ public class MDLTexture extends NSObject implements MDLNamed {
 
     /**
      * write a particular level of a mipped texture to URL, using a specific UT type
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("writeToURL:type:level:")
     public native boolean writeToURLTypeLevel(NSURL nsurl, CFStringRef type, @NUInt long level);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("textureNamed:assetResolver:")
     public static native MDLTexture textureNamedAssetResolver(String name,

@@ -29,16 +29,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAudioFile
- * <p>
+ * 
  * An audio file opened for reading or writing.
- * <p>
+ * 
  * Regardless of the file's actual format, reading and writing the file is done via
  * `AVAudioPCMBuffer` objects, containing samples in an `AVAudioCommonFormat`,
  * referred to as the file's "processing format." Conversions are performed to and from
  * the file's actual format.
- * <p>
+ * 
  * Reads and writes are always sequential, but random access is possible by setting the
  * framePosition property.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -100,7 +102,7 @@ public class AVAudioFile extends NSObject {
 
     /**
      * [@property] fileFormat
-     * <p>
+     * 
      * The on-disk format of the file.
      */
     @Generated
@@ -109,9 +111,9 @@ public class AVAudioFile extends NSObject {
 
     /**
      * [@property] framePosition
-     * <p>
+     * 
      * The position in the file at which the next read or write will occur.
-     * <p>
+     * 
      * Set framePosition to perform a seek before a read or write. A read or write operation advances the frame position
      * by the number of frames read or written.
      */
@@ -130,13 +132,17 @@ public class AVAudioFile extends NSObject {
 
     /**
      * initForReading:commonFormat:interleaved:error:
-     * <p>
+     * 
      * Open a file for reading, using a specified processing format.
-     *
-     * @param fileURL     the file to open
-     * @param format      the processing format to use when reading from the file
-     * @param interleaved whether to use an interleaved processing format
-     * @param outError    on exit, if an error occurs, a description of the error
+     * 
+     * @param fileURL
+     *                    the file to open
+     * @param format
+     *                    the processing format to use when reading from the file
+     * @param interleaved
+     *                    whether to use an interleaved processing format
+     * @param outError
+     *                    on exit, if an error occurs, a description of the error
      */
     @Generated
     @Selector("initForReading:commonFormat:interleaved:error:")
@@ -145,13 +151,15 @@ public class AVAudioFile extends NSObject {
 
     /**
      * initForReading:error:
-     * <p>
+     * 
      * Open a file for reading.
-     * <p>
+     * 
      * This opens the file for reading using the standard format (deinterleaved floating point).
-     *
-     * @param fileURL  the file to open
-     * @param outError on exit, if an error occurs, a description of the error
+     * 
+     * @param fileURL
+     *                 the file to open
+     * @param outError
+     *                 on exit, if an error occurs, a description of the error
      */
     @Generated
     @Selector("initForReading:error:")
@@ -160,19 +168,24 @@ public class AVAudioFile extends NSObject {
 
     /**
      * initForWriting:settings:commonFormat:interleaved:error:
-     * <p>
+     * 
      * Open a file for writing.
-     * <p>
+     * 
      * The file type to create can be set through the corresponding settings key. If not set, it will be
      * inferred from the file extension. Will overwrite a file at the specified URL if a file exists.
-     *
-     * @param fileURL     the path at which to create the file
-     * @param settings    the format of the file to create (See `AVAudioRecorder`.) For linear PCM,
+     * 
+     * @param fileURL
+     *                    the path at which to create the file
+     * @param settings
+     *                    the format of the file to create (See `AVAudioRecorder`.) For linear PCM,
      *                    only interleaved formats are supported for the saved file, non interleaved setting will be
      *                    ignored and a warning is shown.
-     * @param format      the processing format to use when writing to the file.
-     * @param interleaved whether to use an interleaved processing format
-     * @param outError    on exit, if an error occurs, a description of the error
+     * @param format
+     *                    the processing format to use when writing to the file.
+     * @param interleaved
+     *                    whether to use an interleaved processing format
+     * @param outError
+     *                    on exit, if an error occurs, a description of the error
      */
     @Generated
     @Selector("initForWriting:settings:commonFormat:interleaved:error:")
@@ -182,19 +195,22 @@ public class AVAudioFile extends NSObject {
 
     /**
      * initForWriting:settings:error:
-     * <p>
+     * 
      * Open a file for writing.
-     * <p>
+     * 
      * The file type to create can be set through the corresponding settings key. If not set, it will be
      * inferred from the file extension. Will overwrite a file at the specified URL if a file exists.
-     * <p>
+     * 
      * This opens the file for writing using the standard format (deinterleaved floating point).
-     *
-     * @param fileURL  the path at which to create the file
-     * @param settings the format of the file to create (See `AVAudioRecorder`.) For linear PCM,
+     * 
+     * @param fileURL
+     *                 the path at which to create the file
+     * @param settings
+     *                 the format of the file to create (See `AVAudioRecorder`.) For linear PCM,
      *                 only interleaved formats are supported for the saved file, non interleaved setting will be
      *                 ignored and a warning is shown.
-     * @param outError on exit, if an error occurs, a description of the error
+     * @param outError
+     *                 on exit, if an error occurs, a description of the error
      */
     @Generated
     @Selector("initForWriting:settings:error:")
@@ -224,9 +240,9 @@ public class AVAudioFile extends NSObject {
 
     /**
      * [@property] length
-     * <p>
+     * 
      * The number of sample frames in the file.
-     * <p>
+     * 
      * Note: this can be expensive to compute for the first time.
      */
     @Generated
@@ -240,7 +256,7 @@ public class AVAudioFile extends NSObject {
 
     /**
      * [@property] processingFormat
-     * <p>
+     * 
      * The processing format of the file.
      */
     @Generated
@@ -249,16 +265,19 @@ public class AVAudioFile extends NSObject {
 
     /**
      * readIntoBuffer:error:
-     * <p>
+     * 
      * Read an entire buffer.
-     * <p>
+     * 
      * Reading sequentially from framePosition, attempts to fill the buffer to its capacity. On
      * return, the buffer's length indicates the number of sample frames successfully read.
-     *
-     * @param buffer   The buffer into which to read from the file. Its format must match the file's
+     * 
+     * @param buffer
+     *                 The buffer into which to read from the file. Its format must match the file's
      *                 processing format.
-     * @param outError on exit, if an error occurs, a description of the error
-     * @return YES for success.
+     * @param outError
+     *                 on exit, if an error occurs, a description of the error
+     * @return
+     *         YES for success.
      */
     @Generated
     @Selector("readIntoBuffer:error:")
@@ -267,16 +286,20 @@ public class AVAudioFile extends NSObject {
 
     /**
      * readIntoBuffer:frameCount:error:
-     * <p>
+     * 
      * Read a portion of a buffer.
-     * <p>
+     * 
      * Like `readIntoBuffer:error:`, but can be used to read fewer frames than buffer.frameCapacity.
-     *
-     * @param frames   The number of frames to read.
-     * @param buffer   The buffer into which to read from the file. Its format must match the file's
+     * 
+     * @param frames
+     *                 The number of frames to read.
+     * @param buffer
+     *                 The buffer into which to read from the file. Its format must match the file's
      *                 processing format.
-     * @param outError on exit, if an error occurs, a description of the error
-     * @return YES for success.
+     * @param outError
+     *                 on exit, if an error occurs, a description of the error
+     * @return
+     *         YES for success.
      */
     @Generated
     @Selector("readIntoBuffer:frameCount:error:")
@@ -293,9 +316,9 @@ public class AVAudioFile extends NSObject {
 
     /**
      * [@property] framePosition
-     * <p>
+     * 
      * The position in the file at which the next read or write will occur.
-     * <p>
+     * 
      * Set framePosition to perform a seek before a read or write. A read or write operation advances the frame position
      * by the number of frames read or written.
      */
@@ -313,7 +336,7 @@ public class AVAudioFile extends NSObject {
 
     /**
      * [@property] url
-     * <p>
+     * 
      * The URL the file is reading or writing.
      */
     @Generated
@@ -327,15 +350,18 @@ public class AVAudioFile extends NSObject {
 
     /**
      * writeFromBuffer:error:
-     * <p>
+     * 
      * Write a buffer.
-     * <p>
+     * 
      * Writes sequentially. The buffer's frameLength signifies how much of the buffer is to be written.
-     *
-     * @param buffer   The buffer from which to write to the file. Its format must match the file's
+     * 
+     * @param buffer
+     *                 The buffer from which to write to the file. Its format must match the file's
      *                 processing format.
-     * @param outError on exit, if an error occurs, a description of the error
-     * @return YES for success.
+     * @param outError
+     *                 on exit, if an error occurs, a description of the error
+     * @return
+     *         YES for success.
      */
     @Generated
     @Selector("writeFromBuffer:error:")

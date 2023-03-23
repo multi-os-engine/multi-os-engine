@@ -25,16 +25,19 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.UIColor;
 
 /**
  * [@c] CPAlertAction represents a single action that appears inside of a @c CPActionSheetTemplate or @c
  * CPAlertTemplate.
- * <p>
+ * 
  * The style of the parent template and the style of the @c CPAlertAction will together
  * determine the action's appearance.
- * <p>
+ * 
  * The action has a customizable title, style, and a block callback
  * that is invoked when the user taps this button.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CarPlay")
@@ -204,4 +207,34 @@ public class CPAlertAction extends NSObject implements NSSecureCoding {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("color")
+    public native UIColor color();
+
+    /**
+     * Create an alert action with a title, a custom action color, and a callback handler that is invoked
+     * when the user taps this action.
+     * 
+     * The system will automatically determine if the provided color meets contrast requirements.
+     * If the provided color does not meet contrast requirements, the system default will be used.
+     * Font color will automatically be adjusted by the system to correspond with this color.
+     * Alpha values will be ignored.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("initWithTitle:color:handler:")
+    public native CPAlertAction initWithTitleColorHandler(String title, UIColor color,
+            @ObjCBlock(name = "call_initWithTitleColorHandler") Block_initWithTitleColorHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_initWithTitleColorHandler {
+        @Generated
+        void call_initWithTitleColorHandler(CPAlertAction arg0);
+    }
 }

@@ -1,7 +1,6 @@
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -27,7 +26,11 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -135,7 +138,7 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
 
     /**
      * Returns the interaction's location within the given view.
-     *
+     * 
      * @param view The view in which to locate the interaction.
      */
     @Generated
@@ -187,6 +190,8 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
     /**
      * Appearance of the menu this interaction has presented or is about to present. Since it may be
      * dependent on the user's input method, the appearance is only known while the interaction is active.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("menuAppearance")
@@ -195,20 +200,22 @@ public class UIContextMenuInteraction extends NSObject implements UIInteraction 
 
     /**
      * Call to update the currently visible menu. This method does nothing if called before a menu is presented.
-     *
+     * 
      * @param block Called with a mutable copy of the currently visible menu. Modify and return this menu (or an
      *              entirely
      *              new one) to change the currently visible menu items. Starting in iOS 15, this block is called once
      *              for
      *              every visible submenu. For example, in the following hierarchy:
-     *              <p>
+     * 
      *              *- Root Menu
      *              *- Submenu A
      *              *- Submenu B
      *              *- Submenu C
-     *              <p>
+     * 
      *              If Submenu A is visible, the block is called twice (once for the Root Menu and once for Submenu A).
      *              If both A and B are visible, it's called 3 times (for the Root Menu, A, and B).
+     * 
+     *              API-Since: 14.0
      */
     @Generated
     @Selector("updateVisibleMenuWithBlock:")

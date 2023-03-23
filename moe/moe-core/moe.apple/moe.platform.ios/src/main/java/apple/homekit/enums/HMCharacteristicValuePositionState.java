@@ -21,15 +21,26 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValuePositionState
- * <p>
+ * 
  * [@constant] HMCharacteristicValuePositionStateClosing Position is moving towards minimum value.
  * [@constant] HMCharacteristicValuePositionStateOpening Position is moving towards maximum value.
  * [@constant] HMCharacteristicValuePositionStateStopped Position is Stopped.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class HMCharacteristicValuePositionState {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Closing = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Opening = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Stopped = 0x0000000000000002L;
 
     @Generated

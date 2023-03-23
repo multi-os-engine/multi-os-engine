@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] SMPTE State Flags
- * <p>
+ * 
  * Flags that describe the SMPTE time state.
  * [@constant] kCVSMPTETimeValid
  * The full time is valid.

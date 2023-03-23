@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNNReduceColumnMean
- * <p>
+ * 
  * The MPSNNReduceColumnMean performs a reduction operation returning the mean value for each column of an image
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -102,9 +104,9 @@ public class MPSNNReduceColumnMean extends MPSNNReduceUnary {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSCNNPooling
      * @param device   The MTLDevice on which to make the MPSCNNPooling
      * @return A new MPSNNReduceColumnMean object, or nil if failure.
@@ -116,7 +118,7 @@ public class MPSNNReduceColumnMean extends MPSNNReduceUnary {
 
     /**
      * Specifies information to apply the reduction operation on an image.
-     *
+     * 
      * @param device The device the filter will run on
      * @return A valid MPSNNReduceColumnMean object or nil, if failure.
      */

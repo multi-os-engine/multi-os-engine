@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -195,4 +198,22 @@ public class MKRoute extends NSObject {
     @Selector("transportType")
     @NUInt
     public native long transportType();
+
+    /**
+     * indicates if the route contains highways
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("hasHighways")
+    public native boolean hasHighways();
+
+    /**
+     * indicates if the route contains tolls
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("hasTolls")
+    public native boolean hasTolls();
 }

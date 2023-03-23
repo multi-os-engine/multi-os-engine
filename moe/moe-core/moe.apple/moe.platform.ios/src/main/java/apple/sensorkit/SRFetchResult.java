@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("SensorKit")
 @Runtime(ObjCRuntime.class)
@@ -133,7 +136,7 @@ public class SRFetchResult<_SampleType> extends NSObject implements NSCopying {
 
     /**
      * Retrieves the resultant sample
-     * <p>
+     * 
      * The caller is expected to know what the result type should be
      * [@note] This may thrown an exception if the sample could not be constructed from
      * the data in the datastore

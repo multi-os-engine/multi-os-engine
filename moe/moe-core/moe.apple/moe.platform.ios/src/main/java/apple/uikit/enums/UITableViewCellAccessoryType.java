@@ -39,6 +39,8 @@ public final class UITableViewCellAccessoryType {
     @Generated @NInt public static final long Checkmark = 0x0000000000000003L;
     /**
      * info button. tracks
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long DetailButton = 0x0000000000000004L;
 

@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.1
+ */
 @Generated
 @Library("MediaPlayer")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +159,9 @@ public class MPRemoteCommandCenter extends NSObject {
     @Selector("bookmarkCommand")
     public native MPFeedbackCommand bookmarkCommand();
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @Selector("changePlaybackPositionCommand")
     public native MPChangePlaybackPositionCommand changePlaybackPositionCommand();
@@ -172,6 +178,9 @@ public class MPRemoteCommandCenter extends NSObject {
     @Selector("changeShuffleModeCommand")
     public native MPChangeShuffleModeCommand changeShuffleModeCommand();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("disableLanguageOptionCommand")
     public native MPRemoteCommand disableLanguageOptionCommand();
@@ -180,6 +189,9 @@ public class MPRemoteCommandCenter extends NSObject {
     @Selector("dislikeCommand")
     public native MPFeedbackCommand dislikeCommand();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("enableLanguageOptionCommand")
     public native MPRemoteCommand enableLanguageOptionCommand();

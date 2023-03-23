@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGSize;
 import apple.uikit.UITraitCollection;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
@@ -27,17 +26,24 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIContentContainer")
 public interface UIContentContainer {
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("preferredContentSize")
     @ByValue
     CGSize preferredContentSize();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("preferredContentSizeDidChangeForChildContentContainer:")
     void preferredContentSizeDidChangeForChildContentContainer(
@@ -46,9 +52,11 @@ public interface UIContentContainer {
     /**
      * When the content container forwards viewWillTransitionToSize:withTransitionCoordinator: to its children, it will
      * call this method to determine what size to send them.
-     * <p>
+     * 
      * If the returned size is the same as the child container's current size,
      * viewWillTransitionToSize:withTransitionCoordinator: will not be called.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("sizeForChildContentContainer:withParentContainerSize:")
@@ -59,9 +67,11 @@ public interface UIContentContainer {
     /**
      * Intended as a bridge for a view controller that does not use auto layout presenting a child that does use auto
      * layout.
-     * <p>
+     * 
      * If the child's view is using auto layout and the -systemLayoutSizeFittingSize: of the view
      * changes, -systemLayoutFittingSizeDidChangeForChildContentContainer: will be sent to the view controller's parent.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("systemLayoutFittingSizeDidChangeForChildContentContainer:")
@@ -71,9 +81,11 @@ public interface UIContentContainer {
     /**
      * This method is called when the view controller's view's size is changed by its parent (i.e. for the root view
      * controller when its window rotates or is resized).
-     * <p>
+     * 
      * If you override this method, you should either call super to propagate the change to children or manually forward
      * the change to children.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("viewWillTransitionToSize:withTransitionCoordinator:")
@@ -82,9 +94,11 @@ public interface UIContentContainer {
 
     /**
      * This method is called when the view controller's trait collection is changed by its parent.
-     * <p>
+     * 
      * If you override this method, you should either call super to propagate the change to children or manually forward
      * the change to children.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("willTransitionToTraitCollection:withTransitionCoordinator:")

@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * TKBERTLVRecord implements encoding using BER-TLV encoding rules.
  * It is able to parse BER-encoded data and always produces DER-encoded data.
  * No interpretation of tag values is made, all values are treated only as NSData irrespective of the tag.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -80,7 +82,7 @@ public class TKBERTLVRecord extends TKTLVRecord {
 
     /**
      * Encodes tag using BER-TLV tag encoding rules.
-     *
+     * 
      * @param tag Tag value to encode
      * @return Binary block containing encoded tag value.
      */
@@ -107,7 +109,7 @@ public class TKBERTLVRecord extends TKTLVRecord {
 
     /**
      * Creates TKBERTLVRecord with specified tag and array of children TKTLVRecord instances as subrecords.
-     *
+     * 
      * @param tag     Tag value for the new record.
      * @param records Array of TKTLVRecord instances serving as subrecords of this record.
      * @return Newly created TLV record.
@@ -118,7 +120,7 @@ public class TKBERTLVRecord extends TKTLVRecord {
 
     /**
      * Creates TLV record with specified tag and value.
-     *
+     * 
      * @param tag   Tag value for the new record.
      * @param value Value for the new record.
      * @return Newly created TLV record.

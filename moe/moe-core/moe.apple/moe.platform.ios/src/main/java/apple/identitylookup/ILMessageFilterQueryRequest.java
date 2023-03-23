@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request to query a MessageFilter extension about how to interpret a received message.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("IdentityLookup")
@@ -173,4 +175,13 @@ public class ILMessageFilterQueryRequest extends NSObject implements NSSecureCod
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The ISO Country Code of the receiving phone number, in format specified by the ISO 3166-2 standard
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("receiverISOCountryCode")
+    public native String receiverISOCountryCode();
 }

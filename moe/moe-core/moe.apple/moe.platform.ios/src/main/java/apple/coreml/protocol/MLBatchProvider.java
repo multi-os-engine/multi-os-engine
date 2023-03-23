@@ -12,6 +12,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Protocol for accessing a collection of feature providers
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CoreML")

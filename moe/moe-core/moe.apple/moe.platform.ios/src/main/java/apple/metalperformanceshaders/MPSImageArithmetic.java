@@ -29,18 +29,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSImageArithmetic
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * This filter takes two source images, a primary source image and a secondary source image,
  * and outputs a single destination image. It applies an element-wise arithmetic operator to
  * each pixel in a primary source image and a corresponding pixel in a secondary source image
  * over a specified region.
- * <p>
+ * 
  * The supported arithmetic operators are the following:
  * - Addition
  * - Subtraction
  * - Multiplication
  * - Division
- * <p>
+ * 
  * This filter takes additional parameters: primaryScale, secondaryScale, and bias. The default
  * value for primaryScale and secondaryScale is 1.0f. The default value for bias is 0.0f. This
  * filter applies primaryScale, secondaryScale, and bias to the primary source pixel (x) and
@@ -49,12 +49,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * - Subtraction: result = ((primaryScale * x) - (secondaryScale * y)) + bias
  * - Multiplicaton: result = ((primaryScale * x) * (secondaryScale * y)) + bias
  * - Division: result = ((primaryScale * x) / (secondaryScale * y)) + bias
- * <p>
+ * 
  * To clamp the result of an arithmetic operation, where
  * result = clamp(result, minimumValue, maximumValue),
  * set the minimumValue and maximumValue appropriately. The default value of minimumValue
  * is -FLT_MAX. The default value of maximumValue is FLT_MAX.
- * <p>
+ * 
  * This filter also takes the following additional parameters:
  * - primaryStrideInPixels
  * - secondaryStrideInPixels
@@ -62,10 +62,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * secondary source images. For example, setting all strides for the primary source image to 0
  * will result in the primarySource image being treated as a scalar value. The only supported
  * values are 0 or 1. The default value of these parameters is 1.
- * <p>
+ * 
  * This filter accepts uint and int data in addition to unorm and floating-point data.
- * <p>
+ * 
  * You must use one of the sub-classes of MPSImageArithmetic.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -183,7 +185,7 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
 
     /**
      * [@property] primaryStrideInPixels
-     * <p>
+     * 
      * The secondarySource stride in the x, y, and z dimensions. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
      */
@@ -206,7 +208,7 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
 
     /**
      * [@property] secondaryStrideInPixels
-     * <p>
+     * 
      * The secondarySource stride in the x, y, and z dimensions. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
      */
@@ -225,7 +227,7 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
 
     /**
      * [@property] primaryStrideInPixels
-     * <p>
+     * 
      * The secondarySource stride in the x, y, and z dimensions. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
      */
@@ -239,7 +241,7 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
 
     /**
      * [@property] secondaryStrideInPixels
-     * <p>
+     * 
      * The secondarySource stride in the x, y, and z dimensions. The only supported values are 0 or 1.
      * The default value for each dimension is 1.
      */
@@ -272,10 +274,12 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
 
     /**
      * [@property] maximumValue
-     * <p>
+     * 
      * maximumValue is used to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
      * The default value of maximumValue is FLT_MAX.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("maximumValue")
@@ -283,10 +287,12 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
 
     /**
      * [@property] minimumValue
-     * <p>
+     * 
      * minimumValue is to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
      * The default value of minimumValue is -FLT_MAX.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("minimumValue")
@@ -294,10 +300,12 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
 
     /**
      * [@property] maximumValue
-     * <p>
+     * 
      * maximumValue is used to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
      * The default value of maximumValue is FLT_MAX.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setMaximumValue:")
@@ -305,10 +313,12 @@ public class MPSImageArithmetic extends MPSBinaryImageKernel {
 
     /**
      * [@property] minimumValue
-     * <p>
+     * 
      * minimumValue is to clamp the result of an arithmetic operation:
      * result = clamp(result, minimumValue, maximumValue).
      * The default value of minimumValue is -FLT_MAX.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("setMinimumValue:")

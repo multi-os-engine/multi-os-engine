@@ -3,6 +3,9 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 public final class UICollectionLayoutSectionOrthogonalScrollingBehavior {
     @Generated
@@ -11,28 +14,40 @@ public final class UICollectionLayoutSectionOrthogonalScrollingBehavior {
 
     /**
      * default behavior. Section will layout along main layout axis (i.e. configuration.scrollDirection)
+     * 
+     * API-Since: 13.0
      */
     @Generated @NInt public static final long None = 0x0000000000000000L;
     /**
      * Standard scroll view behavior: UIScrollViewDecelerationRateNormal
+     * 
+     * API-Since: 13.0
      */
     @Generated @NInt public static final long Continuous = 0x0000000000000001L;
     /**
      * Scrolling will come to rest on the leading edge of a group boundary
+     * 
+     * API-Since: 13.0
      */
     @Generated @NInt public static final long ContinuousGroupLeadingBoundary = 0x0000000000000002L;
     /**
      * Standard scroll view paging behavior (UIScrollViewDecelerationRateFast) with page size == extent of the
      * collection view's bounds
+     * 
+     * API-Since: 13.0
      */
     @Generated @NInt public static final long Paging = 0x0000000000000003L;
     /**
      * Fractional size paging behavior determined by the sections layout group's dimension
+     * 
+     * API-Since: 13.0
      */
     @Generated @NInt public static final long GroupPaging = 0x0000000000000004L;
     /**
      * Same of group paging with additional leading and trailing content insets to center each group's contents along
      * the orthogonal axis
+     * 
+     * API-Since: 13.0
      */
     @Generated @NInt public static final long GroupPagingCentered = 0x0000000000000005L;
 }

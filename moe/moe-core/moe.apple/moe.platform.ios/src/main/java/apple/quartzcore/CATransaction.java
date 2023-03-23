@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("QuartzCore")
 @Runtime(ObjCRuntime.class)
@@ -240,16 +243,16 @@ public class CATransaction extends NSObject {
     /**
      * Associate arbitrary keyed-data with the current transaction (i.e.
      * with the current thread).
-     * <p>
+     * 
      * Nested transactions have nested data scope, i.e. reading a key
      * searches for the innermost scope that has set it, setting a key
      * always sets it in the innermost scope.
-     * <p>
+     * 
      * Currently supported transaction properties include:
      * "animationDuration", "animationTimingFunction", "completionBlock",
      * "disableActions". See method declarations above for descriptions of
      * each property.
-     * <p>
+     * 
      * Attempting to set a property to a type other than its document type
      * has an undefined result.
      */

@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEDirectivityModelParameters
- * <p>
+ * 
  * Directivity model parameters.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")

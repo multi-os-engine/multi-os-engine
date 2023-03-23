@@ -24,11 +24,15 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.metal.struct.MTLResourceID;
+import org.moe.natj.general.ann.ByValue;
 
 /**
  * [@protocol] MTLSamplerState
- * <p>
+ * 
  * An immutable collection of sampler state compiled for a single device.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Metal")
@@ -37,7 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLSamplerState {
     /**
      * [@property] device
-     * <p>
+     * 
      * The device this resource was created against. This resource can only be used with this device.
      */
     @Generated
@@ -47,10 +51,22 @@ public interface MTLSamplerState {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
     @Selector("label")
     String label();
+
+    /**
+     * [@property] gpuResourceID
+     * 
+     * Handle of the GPU resource suitable for storing in an Argument Buffer
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("gpuResourceID")
+    @ByValue
+    MTLResourceID gpuResourceID();
 }

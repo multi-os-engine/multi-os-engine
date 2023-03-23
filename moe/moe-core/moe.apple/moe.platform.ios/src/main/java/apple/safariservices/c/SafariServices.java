@@ -37,11 +37,19 @@ public final class SafariServices {
     private SafariServices() {
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SFErrorDomain();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -49,17 +57,27 @@ public final class SafariServices {
 
     /**
      * domain for NSError
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SSReadingListErrorDomain();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SFAuthenticationErrorDomain();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

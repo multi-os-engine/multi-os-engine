@@ -21,19 +21,36 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HKCategoryValueMenstrualFlow
- * <p>
+ * 
  * Set of values to indicate the type of menstrual flow.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class HKCategoryValueMenstrualFlow {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Unspecified = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Light = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Medium = 0x0000000000000003L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Heavy = 0x0000000000000004L;
 
     @Generated
     private HKCategoryValueMenstrualFlow() {
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000005L;
 }

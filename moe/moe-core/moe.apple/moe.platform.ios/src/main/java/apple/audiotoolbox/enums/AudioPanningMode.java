@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] AudioPanningMode
- * <p>
+ * 
  * Different panning algorithms.
  * [@constant] kPanningMode_SoundField
  * Sound field panning algorithm

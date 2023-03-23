@@ -44,22 +44,30 @@ public final class NSStringCompareOptions {
     @Generated @NUInt public static final long NumericSearch = 0x0000000000000040L;
     /**
      * If specified, ignores diacritics (o-umlaut == o)
+     * 
+     * API-Since: 2.0
      */
     @Generated @NUInt public static final long DiacriticInsensitiveSearch = 0x0000000000000080L;
     /**
      * If specified, ignores width differences ('a' == UFF41)
+     * 
+     * API-Since: 2.0
      */
     @Generated @NUInt public static final long WidthInsensitiveSearch = 0x0000000000000100L;
     /**
      * If specified, comparisons are forced to return either NSOrderedAscending or NSOrderedDescending if the strings
      * are equivalent but not strictly equal, for stability when sorting (e.g. "aaa" > "AAA" with
      * NSCaseInsensitiveSearch specified)
+     * 
+     * API-Since: 2.0
      */
     @Generated @NUInt public static final long ForcedOrderingSearch = 0x0000000000000200L;
     /**
      * Applies to rangeOfString:..., stringByReplacingOccurrencesOfString:..., and replaceOccurrencesOfString:...
      * methods only; the search string is treated as an ICU-compatible regular expression; if set, no other options can
      * apply except NSCaseInsensitiveSearch and NSAnchoredSearch
+     * 
+     * API-Since: 3.2
      */
     @Generated @NUInt public static final long RegularExpressionSearch = 0x0000000000000400L;
 

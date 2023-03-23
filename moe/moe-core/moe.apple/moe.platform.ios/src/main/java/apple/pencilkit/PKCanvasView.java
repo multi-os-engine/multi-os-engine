@@ -1,7 +1,6 @@
 package apple.pencilkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -37,9 +36,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * The view for interactively drawing, and non-interactively showing PKDrawing contents.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("PencilKit")
@@ -75,6 +77,12 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     @Selector("allocWithZone:")
     public static native PKCanvasView allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use 'drawingPolicy' property.
+     */
+    @Deprecated
     @Generated
     @Selector("allowsFingerDrawing")
     public native boolean allowsFingerDrawing();
@@ -191,6 +199,7 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -217,6 +226,7 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -339,50 +349,67 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use 'drawingPolicy' property.
+     */
+    @Deprecated
     @Generated
     @Selector("setAllowsFingerDrawing:")
     public native void setAllowsFingerDrawing(boolean value);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -503,6 +530,8 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     /**
      * The drawing policy that controls the types of touches that are allowed to draw in the canvas.
      * Defaults to `PKCanvasViewDrawingPolicyDefault`.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("drawingPolicy")
@@ -512,6 +541,8 @@ public class PKCanvasView extends UIScrollView implements PKToolPickerObserver {
     /**
      * The drawing policy that controls the types of touches that are allowed to draw in the canvas.
      * Defaults to `PKCanvasViewDrawingPolicyDefault`.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setDrawingPolicy:")

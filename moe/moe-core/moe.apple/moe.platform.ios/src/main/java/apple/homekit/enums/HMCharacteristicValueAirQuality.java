@@ -21,21 +21,41 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueAirQuality
- * <p>
+ * 
  * [@constant] HMCharacteristicValueAirQualityUnknown Air quality is unknown.
  * [@constant] HMCharacteristicValueAirQualityExcellent Air quality is excellent.
  * [@constant] HMCharacteristicValueAirQualityGood Air quality is good.
  * [@constant] HMCharacteristicValueAirQualityFair Air quality is fair.
  * [@constant] HMCharacteristicValueAirQualityInferior Air quality is inferior.
  * [@constant] HMCharacteristicValueAirQualityPoor Air quality is poor.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class HMCharacteristicValueAirQuality {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Excellent = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Good = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Fair = 0x0000000000000003L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Inferior = 0x0000000000000004L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Poor = 0x0000000000000005L;
 
     @Generated

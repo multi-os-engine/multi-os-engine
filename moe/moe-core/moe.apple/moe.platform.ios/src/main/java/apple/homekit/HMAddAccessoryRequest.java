@@ -139,10 +139,11 @@ public class HMAddAccessoryRequest extends NSObject {
 
     /**
      * Creates an accessory setup payload with ownership token
-     * <p>
+     * 
      * This method may fail if this request requires a setup payload URL.
-     *
+     * 
      * @param ownershipToken The token proving ownership of the accessory being added to the home.
+     * 
      * @return Returns an accessory setup payload object if successful or nil on error.
      */
     @Generated
@@ -151,11 +152,13 @@ public class HMAddAccessoryRequest extends NSObject {
 
     /**
      * Creates an accessory setup payload with URL and ownership token
-     * <p>
+     * 
      * This method may fail if the setup payload URL is not a valid payload URL.
-     *
+     * 
      * @param setupPayloadURL The HomeKit setup payload for the accessory being added to the home.
+     * 
      * @param ownershipToken  The token proving ownership of the accessory being added to the home.
+     * 
      * @return Returns an accessory setup payload object if successful or nil on error.
      */
     @Generated
@@ -165,7 +168,12 @@ public class HMAddAccessoryRequest extends NSObject {
 
     /**
      * Indication if the ownership token needs to be updated for this request.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("requiresOwnershipToken")
     public native boolean requiresOwnershipToken();

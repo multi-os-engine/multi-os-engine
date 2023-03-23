@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -41,7 +40,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -179,10 +182,16 @@ public class UISnapBehavior extends UIDynamicBehavior {
     @Selector("setDamping:")
     public native void setDamping(@NFloat double value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setSnapPoint:")
     public native void setSnapPoint(@ByValue CGPoint value);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("snapPoint")
     @ByValue

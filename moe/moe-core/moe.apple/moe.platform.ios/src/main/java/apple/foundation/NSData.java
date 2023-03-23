@@ -126,6 +126,12 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     public static native NSData dataWithContentsOfFileOptionsError(String path, @NUInt long readOptionsMask,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use +dataWithContentsOfURL:options:error: and NSDataReadingMappedIfSafe or
+     * NSDataReadingMappedAlways instead.
+     */
     @Generated
     @Deprecated
     @Selector("dataWithContentsOfMappedFile:")
@@ -206,6 +212,8 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
 
     /**
      * Create a Base-64, UTF-8 encoded NSData from the receiver's contents using the given options.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("base64EncodedDataWithOptions:")
@@ -213,11 +221,18 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
 
     /**
      * Create a Base-64 encoded NSString from the receiver's contents using the given options.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("base64EncodedStringWithOptions:")
     public native String base64EncodedStringWithOptions(@NUInt long options);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use base64EncodedStringWithOptions: instead
+     */
     @Generated
     @Deprecated
     @Selector("base64Encoding")
@@ -250,12 +265,20 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     /**
      * 'block' is called once for each contiguous region of memory in the receiver (once total for contiguous NSDatas),
      * until either all bytes have been enumerated, or the 'stop' parameter is set to YES.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("enumerateByteRangesUsingBlock:")
     public native void enumerateByteRangesUsingBlock(
             @ObjCBlock(name = "call_enumerateByteRangesUsingBlock") Block_enumerateByteRangesUsingBlock block);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This method is unsafe because it could potentially cause buffer overruns. Use
+     * -getBytes:length: instead.
+     */
     @Generated
     @Deprecated
     @Selector("getBytes:")
@@ -276,6 +299,8 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     /**
      * Create an NSData from a Base-64, UTF-8 encoded NSData. By default, returns nil when the input is not recognized
      * as valid Base-64.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("initWithBase64EncodedData:options:")
@@ -284,6 +309,8 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     /**
      * Create an NSData from a Base-64 encoded NSString using the given options. By default, returns nil when the input
      * is not recognized as valid Base-64.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("initWithBase64EncodedString:options:")
@@ -293,6 +320,10 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
      * These methods first appeared in NSData.h on OS X 10.9 and iOS 7.0. They are deprecated in the same releases in
      * favor of the methods in the NSDataBase64Encoding category. However, these methods have existed for several
      * releases, so they may be used for applications targeting releases prior to OS X 10.9 and iOS 7.0.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use initWithBase64EncodedString:options: instead
      */
     @Generated
     @Deprecated
@@ -307,6 +338,9 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @Selector("initWithBytesNoCopy:length:")
     public native NSData initWithBytesNoCopyLength(VoidPtr bytes, @NUInt long length);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithBytesNoCopy:length:deallocator:")
     public native NSData initWithBytesNoCopyLengthDeallocator(VoidPtr bytes, @NUInt long length,
@@ -329,6 +363,12 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     public native NSData initWithContentsOfFileOptionsError(String path, @NUInt long readOptionsMask,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> errorPtr);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use -initWithContentsOfURL:options:error: and NSDataReadingMappedIfSafe or
+     * NSDataReadingMappedAlways instead.
+     */
     @Generated
     @Deprecated
     @Selector("initWithContentsOfMappedFile:")
@@ -362,6 +402,9 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
     @MappedReturn(ObjCObjectMapper.class)
     public native Object mutableCopyWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("rangeOfData:options:range:")
     @ByValue
@@ -412,6 +455,9 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
         void call_initWithBytesNoCopyLengthDeallocator(VoidPtr bytes, @NUInt long length);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("compressedDataUsingAlgorithm:error:")
     public native NSData compressedDataUsingAlgorithmError(@NInt long algorithm,
@@ -419,6 +465,8 @@ public class NSData extends NSObject implements NSCopying, NSMutableCopying, NSS
 
     /**
      * These methods return a compressed or decompressed version of the receiver using the specified algorithm.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("decompressedDataUsingAlgorithm:error:")

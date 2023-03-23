@@ -19,28 +19,85 @@ package apple.metal.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 8.0
+ * Deprecated-Since: 16.0
+ * Deprecated-Message: Use MTLGPUFamily instead
+ */
+@Deprecated
 @Generated
 public final class MTLFeatureSet {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Family1_v1 = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Family2_v1 = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long Family1_v2 = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long Family2_v2 = 0x0000000000000003L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long Family3_v1 = 0x0000000000000004L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Family1_v3 = 0x0000000000000005L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Family2_v3 = 0x0000000000000006L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Family3_v2 = 0x0000000000000007L;
 
     @Generated
     private MTLFeatureSet() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NUInt public static final long Family1_v4 = 0x0000000000000008L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NUInt public static final long Family2_v4 = 0x0000000000000009L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NUInt public static final long Family3_v3 = 0x000000000000000AL;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NUInt public static final long Family4_v1 = 0x000000000000000BL;
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NUInt public static final long Family1_v5 = 0x000000000000000CL;
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NUInt public static final long Family2_v5 = 0x000000000000000DL;
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NUInt public static final long Family3_v4 = 0x000000000000000EL;
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NUInt public static final long Family4_v2 = 0x000000000000000FL;
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NUInt public static final long Family5_v1 = 0x0000000000000010L;
 }

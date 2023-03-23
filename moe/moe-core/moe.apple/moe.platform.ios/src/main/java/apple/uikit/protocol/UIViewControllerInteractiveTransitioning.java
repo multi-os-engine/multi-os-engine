@@ -60,6 +60,8 @@ public interface UIViewControllerInteractiveTransitioning {
      * interactive and then interrupt the transition and interact with it. In this
      * case, implement this method and return NO. If an interactor does not
      * implement this method, YES is assumed.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional

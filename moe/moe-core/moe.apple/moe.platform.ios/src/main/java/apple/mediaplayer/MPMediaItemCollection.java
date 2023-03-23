@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An MPMediaItemCollection is a collection of related MPMediaItems in a media library.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("MediaPlayer")

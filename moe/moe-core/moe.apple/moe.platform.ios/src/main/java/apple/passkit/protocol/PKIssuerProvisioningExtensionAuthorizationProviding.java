@@ -9,6 +9,9 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)

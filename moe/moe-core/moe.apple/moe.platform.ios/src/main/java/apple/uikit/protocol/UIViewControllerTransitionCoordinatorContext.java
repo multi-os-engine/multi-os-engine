@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGAffineTransform;
 import apple.uikit.UIView;
 import apple.uikit.UIViewController;
 import org.moe.natj.general.ann.ByValue;
@@ -28,6 +27,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGAffineTransform;
 
 @Generated
 @Library("UIKit")
@@ -87,6 +87,9 @@ public interface UIViewControllerTransitionCoordinatorContext {
     @Selector("isInteractive")
     boolean isInteractive();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("isInterruptible")
     boolean isInterruptible();
@@ -113,6 +116,8 @@ public interface UIViewControllerTransitionCoordinatorContext {
 
     /**
      * This is either CGAffineTransformIdentity (indicating no rotation), or a rotation transform of +90, -90, or 180.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("targetTransform")
@@ -139,6 +144,8 @@ public interface UIViewControllerTransitionCoordinatorContext {
      * Currently only two keys are defined by the system:
      * UITransitionContextToViewKey
      * UITransitionContextFromViewKey
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("viewForKey:")

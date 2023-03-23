@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.1
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -72,6 +75,7 @@ public class GKMatchmakerViewController extends UINavigationController {
     @Selector("allocWithZone:")
     public static native GKMatchmakerViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -166,6 +170,8 @@ public class GKMatchmakerViewController extends UINavigationController {
      * Add additional players (not currently connected) to an existing peer-to-peer match.
      * Apps should elect a single device to do this, otherwise conflicts could arise resulting in unexpected connection
      * errors.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("addPlayersToMatch:")
@@ -173,6 +179,9 @@ public class GKMatchmakerViewController extends UINavigationController {
 
     /**
      * default message to use when inviting friends. Can be edited by the user.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -242,6 +251,9 @@ public class GKMatchmakerViewController extends UINavigationController {
 
     /**
      * default message to use when inviting friends. Can be edited by the user.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -250,18 +262,30 @@ public class GKMatchmakerViewController extends UINavigationController {
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use setHostedPlayer:didConnect:
      */
     @Generated
     @Deprecated
     @Selector("setHostedPlayer:connected:")
     public native void setHostedPlayerConnected(String playerID, boolean connected);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setHostedPlayer:didConnect:")
     public native void setHostedPlayerDidConnect(GKPlayer player, boolean connected);
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 5.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use setHostedPlayer:connected:
+     * instead
      */
     @Generated
     @Deprecated
@@ -309,6 +333,8 @@ public class GKMatchmakerViewController extends UINavigationController {
      * If the value is set to YES, then once the number of connected players is greater than or equal to minPlayers of
      * the match request, matchmakerViewController:didFindMatch: will be called and the game can get the match instance,
      * and update the game scene accordingly. The remaining players wil continue to connect.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("canStartWithMinimumPlayers")
@@ -321,6 +347,8 @@ public class GKMatchmakerViewController extends UINavigationController {
      * If the value is set to YES, then once the number of connected players is greater than or equal to minPlayers of
      * the match request, matchmakerViewController:didFindMatch: will be called and the game can get the match instance,
      * and update the game scene accordingly. The remaining players wil continue to connect.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setCanStartWithMinimumPlayers:")

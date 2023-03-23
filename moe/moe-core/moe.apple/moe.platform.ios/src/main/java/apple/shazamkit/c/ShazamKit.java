@@ -23,6 +23,8 @@ public final class ShazamKit {
 
     /**
      * The Shazam media ID
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -31,6 +33,8 @@ public final class ShazamKit {
 
     /**
      * Title
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -39,6 +43,8 @@ public final class ShazamKit {
 
     /**
      * Subtitle
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -47,6 +53,8 @@ public final class ShazamKit {
 
     /**
      * Artist
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -55,6 +63,8 @@ public final class ShazamKit {
 
     /**
      * A web URL representing this result
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -63,6 +73,8 @@ public final class ShazamKit {
 
     /**
      * The AppleMusic ID
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -71,6 +83,8 @@ public final class ShazamKit {
 
     /**
      * A link to this media on Apple Music
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -79,6 +93,8 @@ public final class ShazamKit {
 
     /**
      * A URL to the artwork
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -87,6 +103,8 @@ public final class ShazamKit {
 
     /**
      * A URL for a Video associated with the media
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -95,6 +113,8 @@ public final class ShazamKit {
 
     /**
      * Is this content explicit
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -103,6 +123,8 @@ public final class ShazamKit {
 
     /**
      * An array of strings representing the genres of the media item
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -111,12 +133,17 @@ public final class ShazamKit {
 
     /**
      * The International Standard Recording Code
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SHMediaItemISRC();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -124,6 +151,8 @@ public final class ShazamKit {
 
     /**
      * How far in seconds is this match from the start of the reference audio
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -132,9 +161,31 @@ public final class ShazamKit {
 
     /**
      * How much the match differs in frequency from reference material
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SHMediaItemFrequencySkew();
+
+    /**
+     * The time ranges in the represented media that are described by this @c SHMediaItem
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SHMediaItemTimeRanges();
+
+    /**
+     * The frequency skew ranges that are described by this @c SHMediaItem
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String SHMediaItemFrequencySkewRanges();
 }

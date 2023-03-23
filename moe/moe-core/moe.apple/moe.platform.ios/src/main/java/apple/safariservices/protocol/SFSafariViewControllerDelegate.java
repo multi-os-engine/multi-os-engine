@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("SafariServices")
 @Runtime(ObjCRuntime.class)
@@ -35,7 +38,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface SFSafariViewControllerDelegate {
     /**
      * Called when the view controller is about to show UIActivityViewController after the user taps the action button.
-     *
+     * 
      * @param URL   the URL of the web page.
      * @param title the title of the web page.
      * @return Returns an array of UIActivity instances that will be appended to UIActivityViewController.
@@ -50,10 +53,10 @@ public interface SFSafariViewControllerDelegate {
 
     /**
      * Invoked when the initial URL load is complete.
-     * <p>
+     * 
      * This method is invoked when SFSafariViewController completes the loading of the URL that you pass
      * to its initializer. It is not invoked for any subsequent page loads in the same SFSafariViewController instance.
-     *
+     * 
      * @param didLoadSuccessfully YES if loading completed successfully, NO if loading failed.
      */
     @Generated
@@ -78,13 +81,15 @@ public interface SFSafariViewControllerDelegate {
     /**
      * Allows you to exclude certain UIActivityTypes from the UIActivityViewController presented when the user taps the
      * action button.
-     * <p>
+     * 
      * Called when the view controller is about to show a UIActivityViewController after the user taps the action
      * button.
-     *
+     * 
      * @param URL   the URL of the current web page.
      * @param title the title of the current web page.
      * @return Returns an array of any UIActivityType that you want to be excluded from the UIActivityViewController.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -96,10 +101,12 @@ public interface SFSafariViewControllerDelegate {
 
     /**
      * Called when the browser is redirected to another URL while loading the initial page.
-     * <p>
+     * 
      * This method may be called even after -safariViewController:didCompleteInitialLoad: if
      * the web page performs additional redirects without user interaction.
-     *
+     * 
+     * API-Since: 11.0
+     * 
      * @param URL The new URL to which the browser was redirected.
      */
     @Generated
@@ -111,6 +118,8 @@ public interface SFSafariViewControllerDelegate {
 
     /**
      * Called when the user opens the current page in the default browser by tapping the toolbar button.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional

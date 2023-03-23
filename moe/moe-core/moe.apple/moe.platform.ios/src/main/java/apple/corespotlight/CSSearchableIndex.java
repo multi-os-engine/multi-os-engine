@@ -42,7 +42,11 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uniformtypeidentifiers.UTType;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("CoreSpotlight")
 @Runtime(ObjCRuntime.class)
@@ -313,5 +317,18 @@ public class CSSearchableIndex extends NSObject {
     public interface Block_indexSearchableItemsCompletionHandler {
         @Generated
         void call_indexSearchableItemsCompletionHandler(NSError error);
+    }
+
+    @Generated
+    @Selector("fetchDataForBundleIdentifier:itemIdentifier:contentType:completionHandler:")
+    public native void fetchDataForBundleIdentifierItemIdentifierContentTypeCompletionHandler(String bundleIdentifier,
+            String itemIdentifier, UTType contentType,
+            @ObjCBlock(name = "call_fetchDataForBundleIdentifierItemIdentifierContentTypeCompletionHandler") Block_fetchDataForBundleIdentifierItemIdentifierContentTypeCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_fetchDataForBundleIdentifierItemIdentifierContentTypeCompletionHandler {
+        @Generated
+        void call_fetchDataForBundleIdentifierItemIdentifierContentTypeCompletionHandler(NSData arg0, NSError arg1);
     }
 }

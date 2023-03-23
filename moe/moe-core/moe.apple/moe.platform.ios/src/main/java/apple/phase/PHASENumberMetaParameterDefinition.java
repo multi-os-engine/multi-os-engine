@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASENumberMetaParameterDefinition
- * <p>
+ * 
  * A metaparameter that has a numeric value
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -96,11 +98,13 @@ public class PHASENumberMetaParameterDefinition extends PHASEMetaParameterDefini
 
     /**
      * initWithValue
-     * <p>
+     * 
      * Create a new numeric metaparameter definition
-     *
-     * @param value The initial value of the metaparameter
-     * @return The new PHASENumberMetaParameterDefinition object
+     * 
+     * @param value
+     *              The initial value of the metaparameter
+     * @return
+     *         The new PHASENumberMetaParameterDefinition object
      */
     @Generated
     @Selector("initWithValue:")
@@ -108,12 +112,15 @@ public class PHASENumberMetaParameterDefinition extends PHASEMetaParameterDefini
 
     /**
      * initWithValue:identifier
-     * <p>
+     * 
      * Create a new numeric metaparameter definition
-     *
-     * @param value      The initial value of the metaparameter
-     * @param identifier An optional custom identifier to give to this object
-     * @return The new PHASENumberMetaParameterDefinition object
+     * 
+     * @param value
+     *                   The initial value of the metaparameter
+     * @param identifier
+     *                   An optional custom identifier to give to this object
+     * @return
+     *         The new PHASENumberMetaParameterDefinition object
      */
     @Generated
     @Selector("initWithValue:identifier:")
@@ -121,15 +128,19 @@ public class PHASENumberMetaParameterDefinition extends PHASEMetaParameterDefini
 
     /**
      * initWithValue:minimum:maximum
-     * <p>
+     * 
      * Create a new numeric metaparameter definition and a predefined min and maximum range
-     *
-     * @param value   The initial value of the metaparameter
-     * @param minimum The minimum value for this metaparameter. Values set to this metaparamter less than the minimum
+     * 
+     * @param value
+     *                The initial value of the metaparameter
+     * @param minimum
+     *                The minimum value for this metaparameter. Values set to this metaparamter less than the minimum
      *                will be clamped.
-     * @param maximum The maximum value for this metaparameter. Values set to this metaparamter less than the minimum
+     * @param maximum
+     *                The maximum value for this metaparameter. Values set to this metaparamter less than the minimum
      *                will be clamped.
-     * @return The new PHASENumberMetaParameterDefinition object
+     * @return
+     *         The new PHASENumberMetaParameterDefinition object
      */
     @Generated
     @Selector("initWithValue:minimum:maximum:")
@@ -138,16 +149,21 @@ public class PHASENumberMetaParameterDefinition extends PHASEMetaParameterDefini
 
     /**
      * initWithValue:minimum:maximum:identifier
-     * <p>
+     * 
      * Create a new numeric metaparameter definition and a predefined min and maximum range
-     *
-     * @param value      The initial value of the metaparameter
-     * @param minimum    The minimum value for this metaparameter. Values set to this metaparamter less than the minimum
+     * 
+     * @param value
+     *                   The initial value of the metaparameter
+     * @param minimum
+     *                   The minimum value for this metaparameter. Values set to this metaparamter less than the minimum
      *                   will be clamped.
-     * @param maximum    The maximum value for this metaparameter. Values set to this metaparamter less than the minimum
+     * @param maximum
+     *                   The maximum value for this metaparameter. Values set to this metaparamter less than the minimum
      *                   will be clamped.
-     * @param identifier An optional custom identifier to give to this object
-     * @return The new PHASENumberMetaParameterDefinition object
+     * @param identifier
+     *                   An optional custom identifier to give to this object
+     * @return
+     *         The new PHASENumberMetaParameterDefinition object
      */
     @Generated
     @Selector("initWithValue:minimum:maximum:identifier:")
@@ -177,7 +193,7 @@ public class PHASENumberMetaParameterDefinition extends PHASEMetaParameterDefini
 
     /**
      * [@property] maximum
-     * <p>
+     * 
      * The readonly maximum that this metaparameter definition was initialized with
      */
     @Generated
@@ -186,7 +202,7 @@ public class PHASENumberMetaParameterDefinition extends PHASEMetaParameterDefini
 
     /**
      * [@property] minimum
-     * <p>
+     * 
      * The readonly minimum that this metaparameter definition was initialized with
      */
     @Generated

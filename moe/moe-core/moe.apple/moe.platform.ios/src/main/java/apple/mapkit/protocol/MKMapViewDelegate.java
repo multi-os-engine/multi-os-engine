@@ -54,6 +54,9 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("mapView:annotationView:didChangeDragState:fromOldState:")
@@ -74,6 +77,9 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("mapView:didAddOverlayRenderers:")
@@ -84,7 +90,11 @@ public interface MKMapViewDelegate {
     /**
      * Called after the provided overlay views have been added and positioned in the map.
      * Prefer -mapView:didAddOverlayRenderers:
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("mapView:didAddOverlayViews:")
@@ -92,6 +102,9 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @IsOptional
     @Selector("mapView:didChangeUserTrackingMode:animated:")
@@ -99,6 +112,9 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("mapView:didDeselectAnnotationView:")
@@ -106,6 +122,9 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("mapView:didFailToLocateUserWithError:")
@@ -113,6 +132,9 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("mapView:didSelectAnnotationView:")
@@ -120,6 +142,9 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("mapView:didUpdateUserLocation:")
@@ -141,6 +166,9 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("mapView:rendererForOverlay:")
@@ -164,7 +192,11 @@ public interface MKMapViewDelegate {
 
     /**
      * Prefer -mapView:rendererForOverlay:
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("mapView:viewForOverlay:")
@@ -186,6 +218,9 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("mapViewDidFinishRenderingMap:fullyRendered:")
@@ -193,6 +228,9 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("mapViewDidStopLocatingUser:")
@@ -207,6 +245,9 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("mapViewWillStartLocatingUser:")
@@ -214,6 +255,9 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("mapViewWillStartRenderingMap:")
@@ -224,6 +268,8 @@ public interface MKMapViewDelegate {
     /**
      * Return nil for default MKClusterAnnotation, it is illegal to return a cluster annotation not containing the
      * identical array of member annotations given.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -233,10 +279,35 @@ public interface MKMapViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("mapViewDidChangeVisibleRegion:")
     default void mapViewDidChangeVisibleRegion(MKMapView mapView) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("mapView:didDeselectAnnotation:")
+    default void mapViewDidDeselectAnnotation(MKMapView mapView,
+            @Mapped(ObjCObjectMapper.class) MKAnnotation annotation) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("mapView:didSelectAnnotation:")
+    default void mapViewDidSelectAnnotation(MKMapView mapView,
+            @Mapped(ObjCObjectMapper.class) MKAnnotation annotation) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

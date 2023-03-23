@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -54,6 +57,7 @@ public class UIColorPickerViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native UIColorPickerViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -182,7 +186,7 @@ public class UIColorPickerViewController extends UIViewController {
 
     /**
      * Controls whether the color picker shows an alpha slider or not.
-     * <p>
+     * 
      * If set to `NO` users are only able to pick fully opaque colors.
      */
     @Generated
@@ -199,7 +203,7 @@ public class UIColorPickerViewController extends UIViewController {
 
     /**
      * Controls whether the color picker shows an alpha slider or not.
-     * <p>
+     * 
      * If set to `NO` users are only able to pick fully opaque colors.
      */
     @Generated

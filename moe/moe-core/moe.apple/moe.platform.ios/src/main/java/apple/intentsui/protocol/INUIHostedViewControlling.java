@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.intentsui.protocol;
 
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSSet;
 import apple.intents.INInteraction;
 import apple.intents.INParameter;
@@ -30,7 +29,11 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("IntentsUI")
 @Runtime(ObjCRuntime.class)
@@ -38,16 +41,17 @@ import org.moe.natj.objc.ann.Selector;
 public interface INUIHostedViewControlling {
     /**
      * Perform configuration of UI based on the provided INInteraction object.
-     * <p>
+     * 
      * When configuration is complete for the given interaction, the hosted view controller should call the completion
      * block with its view's desired size. This size will be constrained between hostedViewMinimumAllowedSize and
      * hostedViewMaximumAllowedSize of the extension context.
-     *
+     * 
      * @param interaction The input interaction
      * @param context     The hosting context for this interaction. The hosted view will be displayed alongside this
      *                    context -- for instance, a Siri result snippet, or a place card within Maps.
      * @param completion  The response handling block takes one parameter corresponding the optional desiredSize
      *                    property of the INUIHostedViewControlling protocol
+     * 
      * @see INInteraction
      */
     @IsOptional
@@ -67,12 +71,12 @@ public interface INUIHostedViewControlling {
 
     /**
      * Perform configuration of UI based on the provided INInteraction and INParameter objects.
-     * <p>
+     * 
      * When configuration is complete for the given parameters and interaction, the hosted view controller should call
      * the completion block with whether it was successful, the parameters it configured itself with, and its view's
      * desired size. The size of the view will ultimately be constrained between hostedViewMinimumAllowedSize and
      * hostedViewMaximumAllowedSize of the extension context.
-     *
+     * 
      * @param parameters          The parameters of the interaction for which to configure the view
      * @param interaction         The input interaction
      * @param interactiveBehavior The behavior that will be driven by user interaction of this view
@@ -83,8 +87,11 @@ public interface INUIHostedViewControlling {
      *                            hosted view context if this view was successfully configured, B) the set of parameters
      *                            that this view was successfully configured for, and C) a desiredSize for this view to
      *                            be sized at within the hosted view context.
+     * 
      * @see INParameter
      * @see INInteraction
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @IsOptional

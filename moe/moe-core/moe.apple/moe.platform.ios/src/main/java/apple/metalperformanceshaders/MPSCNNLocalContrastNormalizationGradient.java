@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNLocalContrastNormalizationGradient
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Specifies the local contrast normalization gradient filter.
  * The local contrast normalization is quite similar to spatial normalization
  * (see @ref MPSCNNSpatialNormalization) in that it applies the filter over local regions which extend
@@ -37,11 +37,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * of the feature - effectively the mean value of the feature is subtracted from the signal.
  * For each feature channel, the function computes the variance VAR(i,j) and
  * mean M(i,j) of X(i,j) inside each rectangle around the spatial point (i,j).
- * <p>
+ * 
  * Then the result is computed for each element of X as follows:
- * <p>
+ * 
  * Y(i,j) = pm + ps * ( X(i,j) - p0 * M(i,j)) / (delta + alpha * VAR(i,j))^beta,
- * <p>
+ * 
  * where kw and kh are the kernelWidth and the kernelHeight and pm, ps and p0 are parameters that
  * can be used to offset and scale the result in various ways. For example setting
  * pm=0, ps=1, p0=1, delta=0, alpha=1.0 and beta=0.5 scales input data so that the result has
@@ -51,18 +51,20 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * becomes zero - in such situations the resulting pixel-value is undefined. A good way to guard
  * against tiny variances is to regulate the expression with a small value for delta, for example
  * delta = 1/1024 = 0.0009765625.
- * <p>
+ * 
  * T(i,j) = (delta + alpha * VAR(i,j))
  * N = kw * kh
- * <p>
+ * 
  * OutputGradient:
  * dZ/dX(i,j) = ps * T(i,j)^(-beta) * ( dZ/dY(i,j) - (sum_{l,k in L(i),K(j)} dZ/dY(l,k) * (((p0/N) +
  * (2*alpha*beta/N)*(X(k,l)-1)*(X(i,j)-M(i,j)*p0)/T(i,j)))) )
  * N is the kernel size. The window L(i) and K(j) itself is defined as:
  * L(i) = [i-floor((kw-1)/2), i+floor(kw/2]
  * K(j) = [j-floor((kh-1)/2), j+floor(kh/2]
- * <p>
+ * 
  * For correct gradient computation all parameters must be the same as the original normalization filter.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -94,9 +96,9 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The value of alpha. Default is 0.0
-     * <p>
+     * 
      * The default value 0.0 is not recommended and is
      * preserved for backwards compatibility. With alpha 0,
      * it performs a local mean subtraction. The
@@ -113,7 +115,7 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The value of beta. Default is 0.5
      */
     @Generated
@@ -144,7 +146,7 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
 
     /**
      * [@property] delta
-     * <p>
+     * 
      * The value of delta. Default is 1/1024
      */
     @Generated
@@ -170,13 +172,13 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
@@ -193,12 +195,12 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
 
     /**
      * Initialize a local contrast normalization filter
-     *
+     * 
      * @param device       The device the filter will run on
      * @param kernelWidth  The width of the kernel
      * @param kernelHeight The height of the kernel
      * @return A valid MPSCNNLocalContrastNormalization object or nil, if failure.
-     *         <p>
+     * 
      *         NOTE: For now, kernelWidth must be equal to kernelHeight
      */
     @Generated
@@ -234,7 +236,7 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
 
     /**
      * [@property] p0
-     * <p>
+     * 
      * The value of p0. Default is 1.0
      */
     @Generated
@@ -243,7 +245,7 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
 
     /**
      * [@property] pm
-     * <p>
+     * 
      * The value of pm. Default is 0.0
      */
     @Generated
@@ -252,7 +254,7 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
 
     /**
      * [@property] ps
-     * <p>
+     * 
      * The value of ps. Default is 1.0
      */
     @Generated
@@ -269,9 +271,9 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The value of alpha. Default is 0.0
-     * <p>
+     * 
      * The default value 0.0 is not recommended and is
      * preserved for backwards compatibility. With alpha 0,
      * it performs a local mean subtraction. The
@@ -284,7 +286,7 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The value of beta. Default is 0.5
      */
     @Generated
@@ -293,7 +295,7 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
 
     /**
      * [@property] delta
-     * <p>
+     * 
      * The value of delta. Default is 1/1024
      */
     @Generated
@@ -302,7 +304,7 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
 
     /**
      * [@property] p0
-     * <p>
+     * 
      * The value of p0. Default is 1.0
      */
     @Generated
@@ -311,7 +313,7 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
 
     /**
      * [@property] pm
-     * <p>
+     * 
      * The value of pm. Default is 0.0
      */
     @Generated
@@ -320,7 +322,7 @@ public class MPSCNNLocalContrastNormalizationGradient extends MPSCNNGradientKern
 
     /**
      * [@property] ps
-     * <p>
+     * 
      * The value of ps. Default is 1.0
      */
     @Generated

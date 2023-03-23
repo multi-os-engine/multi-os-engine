@@ -21,20 +21,31 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVCaptureFlashMode
- * <p>
+ * 
  * Constants indicating the mode of the flash on the receiver's device, if it has one.
- * <p>
+ * 
  * [@constant] AVCaptureFlashModeOff
  * Indicates that the flash should always be off.
  * [@constant] AVCaptureFlashModeOn
  * Indicates that the flash should always be on.
  * [@constant] AVCaptureFlashModeAuto
  * Indicates that the flash should be used automatically depending on ambient light conditions.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 public final class AVCaptureFlashMode {
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long Off = 0x0000000000000000L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long On = 0x0000000000000001L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long Auto = 0x0000000000000002L;
 
     @Generated

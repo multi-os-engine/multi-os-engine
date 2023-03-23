@@ -23,6 +23,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * This object holds all information about the interface of an exported or imported object. This includes: what messages
  * are allowed, what kinds of objects are allowed as arguments, what the signature of any reply blocks are, and any
  * information about additional proxy objects.
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("Foundation")
@@ -142,7 +144,7 @@ public class NSXPCInterface extends NSObject {
      * of the method the NSSet applies to. If the NSSet is for an argument of the reply block in the method, pass YES
      * for the ofReply: argument. The first argument is index 0 for both the method and the reply block.
      * If the expected classes are all property list types, calling this method is optional (property list types are
-     * automatically whitelisted for collection objects). You may use this method to further restrict the set of allowed
+     * automatically allowed for collection objects). You may use this method to further restrict the set of allowed
      * classes.
      */
     @Generated

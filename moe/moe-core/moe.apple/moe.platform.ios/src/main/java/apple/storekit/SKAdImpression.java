@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.5
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -280,4 +283,32 @@ public class SKAdImpression extends NSObject {
     @Generated
     @Selector("version")
     public native String version();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("initWithSourceAppStoreItemIdentifier:advertisedAppStoreItemIdentifier:adNetworkIdentifier:adCampaignIdentifier:adImpressionIdentifier:timestamp:signature:version:")
+    public native SKAdImpression initWithSourceAppStoreItemIdentifierAdvertisedAppStoreItemIdentifierAdNetworkIdentifierAdCampaignIdentifierAdImpressionIdentifierTimestampSignatureVersion(
+            NSNumber sourceAppStoreItemIdentifier, NSNumber advertisedAppStoreItemIdentifier,
+            String adNetworkIdentifier, NSNumber adCampaignIdentifier, String adImpressionIdentifier,
+            NSNumber timestamp, String signature, String version);
+
+    /**
+     * The source identifier
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setSourceIdentifier:")
+    public native void setSourceIdentifier(NSNumber value);
+
+    /**
+     * The source identifier
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("sourceIdentifier")
+    public native NSNumber sourceIdentifier();
 }

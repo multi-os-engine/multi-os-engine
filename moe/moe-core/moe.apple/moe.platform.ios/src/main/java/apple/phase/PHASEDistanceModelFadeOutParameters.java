@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEDistanceModelFadeOutParameters
- * <p>
+ * 
  * Distance model fade out parameters.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -79,7 +81,7 @@ public class PHASEDistanceModelFadeOutParameters extends NSObject {
 
     /**
      * [@property] cullDistance
-     * <p>
+     * 
      * The distance beyond which the sound will be culled.
      * [@note]
      * Values are clamped the range [1, DBL_MAX].
@@ -108,14 +110,16 @@ public class PHASEDistanceModelFadeOutParameters extends NSObject {
 
     /**
      * initWithCullDistance
-     * <p>
+     * 
      * Initialize with a cullDistance.
      * [@note]
      * The cullDistance is scaled by unitsPerMeter internally, so can be provided at the client's native spatial scale.
      * The system will smoothly fade the sound to zero before reaching this distance to avoid any audible artifacts.
-     *
-     * @param cullDistance The distance beyond which the sound will be culled. Values must be >= 1.
-     * @return An instance, or nil if initialization fails.
+     * 
+     * @param cullDistance
+     *                     The distance beyond which the sound will be culled. Values must be >= 1.
+     * @return
+     *         An instance, or nil if initialization fails.
      */
     @Generated
     @Selector("initWithCullDistance:")

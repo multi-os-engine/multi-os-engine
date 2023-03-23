@@ -24,7 +24,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 
 /**
  * Protocol that specifies the type of objects that can be used as root nodes of a GKScene.
- *
+ * 
  * @see GKScene.rootNode
  */
 @Generated

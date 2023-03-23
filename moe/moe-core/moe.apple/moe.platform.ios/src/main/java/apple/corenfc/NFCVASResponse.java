@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NFCVASResponse
- * <p>
+ * 
  * Response from one GET VAS DATA command.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreNFC")
@@ -126,8 +128,10 @@ public class NFCVASResponse extends NSObject implements NSCopying {
 
     /**
      * [@property] mobileToken
-     * <p>
+     * 
      * Mobile token value.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("mobileToken")
@@ -152,8 +156,10 @@ public class NFCVASResponse extends NSObject implements NSCopying {
 
     /**
      * [@property] status
-     * <p>
+     * 
      * Response APDU status.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("status")
@@ -166,8 +172,10 @@ public class NFCVASResponse extends NSObject implements NSCopying {
 
     /**
      * [@property] vasData
-     * <p>
+     * 
      * VAS data.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("vasData")

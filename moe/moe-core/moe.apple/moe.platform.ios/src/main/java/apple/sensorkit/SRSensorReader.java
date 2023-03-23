@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("SensorKit")
 @Runtime(ObjCRuntime.class)
@@ -99,18 +102,18 @@ public class SRSensorReader extends NSObject {
 
     /**
      * Fetches samples for the reader's sensor for given request parameters
-     * <p>
+     * 
      * The reader must be authorized for the sensor for this to succeed.
-     * <p>
+     * 
      * Samples will be delivered to the delegate through multiple calls
      * to the sensorReader:fetchingRequest:didFetchResult: delegate method
-     * <p>
+     * 
      * In the case of a failure, any error will be delivered to the delegate in the
      * sensorReader:fetchingRequest:failedWithError: method.
-     * <p>
+     * 
      * In the case of success, completion notification will be delivered
      * to the delegate in the sensorReader:didCompleteFetch: method.
-     *
+     * 
      * @param request The query parameters for this fetch
      */
     @Generated
@@ -120,7 +123,7 @@ public class SRSensorReader extends NSObject {
     /**
      * Fetches device information for all devices that have stored data for
      * the given sensor in SensorKit
-     * <p>
+     * 
      * If the request completes successfully, devices will be returned to the
      * delegate in the sensorReader:fetchedDevices: callback. If the request
      * failed, an error will be returned to the delegate in the
@@ -176,11 +179,11 @@ public class SRSensorReader extends NSObject {
 
     /**
      * Request authorization to a given set of sensors
-     * <p>
+     * 
      * If the SRSensorReader instance is not authorized, this
      * method must be called before any other methods. Failure to request
      * authorization will cause errors to be returned from the other methods.
-     * <p>
+     * 
      * When SensorKit prepares the prompt for display, it will look at the
      * NSSensorKitUsageDetail key in your Info.plist. The value should be
      * a dictionary containing usage descriptions for all of the sensors being
@@ -189,7 +192,7 @@ public class SRSensorReader extends NSObject {
      * string, SensorKit will load your InfoPlist.strings file and try to look
      * up a string using the description key you provided. If that fails,
      * SensorKit will use the content provided in your Info.plist.
-     * <p>
+     * 
      * SensorKit may decide against showing the user a prompt. For example,
      * if the user has already chosen whether to grant the application access
      * to all of the types provided. When that happens, your completion block
@@ -247,18 +250,18 @@ public class SRSensorReader extends NSObject {
 
     /**
      * Starts recording for the reader's sensor
-     * <p>
+     * 
      * The reader must be authorized for the sensor for this to succeed.
      * This starts recording on this device and any paired devices.
      * If other readers have already started the sensor recording this
      * reader's interest in recording will be maintained. Other readers in
      * other apps for the same sensor will not affect the recording status
      * of this reader.
-     * <p>
+     * 
      * In the case of success, completion notification will be delivered
      * to the delegate in the sensorReaderWillStartRecording:
      * delegate method.
-     * <p>
+     * 
      * In the case of failure, error notification will be delivered
      * to the delegate in the sensorReader:startRecordingFailedWithError:
      * delegate method.
@@ -269,16 +272,16 @@ public class SRSensorReader extends NSObject {
 
     /**
      * Stops recording for the reader's sensor
-     * <p>
+     * 
      * The reader must be authorized for the sensor for this to succeed.
      * This stops recording on this device and any paired devices.
      * Sensor recording will continue until the last interested reader has
      * stopped recording.
-     * <p>
+     * 
      * In the case of success, completion notification will be delivered
      * to the delegate in the sensorReaderDidStopRecording:
      * delegate method.
-     * <p>
+     * 
      * In the case of failure, error notification will be delivered
      * to the delegate in the sensorReader:stopRecordingFailedWithError:
      * delegate method.

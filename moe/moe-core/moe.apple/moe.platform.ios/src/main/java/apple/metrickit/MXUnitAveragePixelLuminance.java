@@ -28,8 +28,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXUnitAveragePixelLuminance
- * <p>
+ * 
  * An NSUnit subclass representing the linear space Display APL.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetricKit")

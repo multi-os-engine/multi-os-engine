@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCSoftmaxLayer
- * <p>
+ * 
  * A softmax layer
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -87,7 +89,7 @@ public class MLCSoftmaxLayer extends MLCLayer {
 
     /**
      * [@property] dimension
-     * <p>
+     * 
      * The dimension over which softmax operation should be performed
      */
     @Generated
@@ -127,7 +129,7 @@ public class MLCSoftmaxLayer extends MLCLayer {
 
     /**
      * Create a softmax layer
-     *
+     * 
      * @param operation The softmax operation
      * @return A new softmax layer
      */
@@ -137,7 +139,7 @@ public class MLCSoftmaxLayer extends MLCLayer {
 
     /**
      * Create a softmax layer
-     *
+     * 
      * @param operation The softmax operation
      * @param dimension The dimension over which softmax operation should be performed
      * @return A new softmax layer
@@ -153,7 +155,7 @@ public class MLCSoftmaxLayer extends MLCLayer {
 
     /**
      * [@property] operation
-     * <p>
+     * 
      * The softmax operation. Supported values are softmax and log softmax.
      */
     @Generated

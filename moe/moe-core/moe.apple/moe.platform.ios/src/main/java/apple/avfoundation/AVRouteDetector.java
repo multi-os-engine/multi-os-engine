@@ -24,12 +24,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVRouteDetector
- * <p>
+ * 
  * AVRouteDetector detects the presence of media playback routes.
- * <p>
+ * 
  * If route detection is enabled (it is disabled by default), AVRouteDetector reports whether or not multiple playback
  * routes have been detected. If this is the case, AVKit's AVRoutePickerView can be used to allow users to pick from the
  * set of available routes.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("AVFoundation")
@@ -113,9 +115,9 @@ public class AVRouteDetector extends NSObject {
 
     /**
      * [@property] routeDetectionEnabled
-     * <p>
+     * 
      * Whether or not route detection is enabled. The default value is NO.
-     * <p>
+     * 
      * Route detection significantly increases power consumption and must be turned off when it's no longer needed.
      */
     @Generated
@@ -132,10 +134,10 @@ public class AVRouteDetector extends NSObject {
 
     /**
      * [@property] multipleRoutesDetected
-     * <p>
+     * 
      * This property is YES if, in addition to the local playback route, at least one more playback route has been
      * detected.
-     * <p>
+     * 
      * If multiple route have been detected, AVKit's AVRoutePickerView can be used to allow users to pick from the set
      * of available routes. When the values of this property changes
      * AVRouteDetectorMultipleRoutesDetectedDidChangeNotification is posted.
@@ -159,9 +161,9 @@ public class AVRouteDetector extends NSObject {
 
     /**
      * [@property] routeDetectionEnabled
-     * <p>
+     * 
      * Whether or not route detection is enabled. The default value is NO.
-     * <p>
+     * 
      * Route detection significantly increases power consumption and must be turned off when it's no longer needed.
      */
     @Generated
@@ -180,4 +182,30 @@ public class AVRouteDetector extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * [@property] detectsCustomRoutes
+     * 
+     * Whether or not route detection will include custom routes. The default value is NO.
+     * 
+     * Only set this to YES if also using AVCustomRoutingController.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("detectsCustomRoutes")
+    public native boolean detectsCustomRoutes();
+
+    /**
+     * [@property] detectsCustomRoutes
+     * 
+     * Whether or not route detection will include custom routes. The default value is NO.
+     * 
+     * Only set this to YES if also using AVCustomRoutingController.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setDetectsCustomRoutes:")
+    public native void setDetectsCustomRoutes(boolean value);
 }

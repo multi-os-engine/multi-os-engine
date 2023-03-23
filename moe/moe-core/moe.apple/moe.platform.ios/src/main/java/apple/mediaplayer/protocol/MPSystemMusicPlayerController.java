@@ -15,6 +15,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface MPSystemMusicPlayerController {
     /**
      * Switches to Music to play the content provided by the queue descriptor.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("openToPlayQueueDescriptor:")

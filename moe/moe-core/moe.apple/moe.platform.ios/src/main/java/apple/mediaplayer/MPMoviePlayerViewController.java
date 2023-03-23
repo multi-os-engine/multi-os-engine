@@ -42,6 +42,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.2
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use AVPlayerViewController in AVKit.
+ */
 @Deprecated
 @Generated
 @Library("MediaPlayer")
@@ -71,6 +76,7 @@ public class MPMoviePlayerViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native MPMoviePlayerViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -169,6 +175,11 @@ public class MPMoviePlayerViewController extends UIViewController {
     @Selector("initWithCoder:")
     public native MPMoviePlayerViewController initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit.
+     */
     @Deprecated
     @Generated
     @Selector("initWithContentURL:")
@@ -178,6 +189,11 @@ public class MPMoviePlayerViewController extends UIViewController {
     @Selector("initWithNibName:bundle:")
     public native MPMoviePlayerViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit.
+     */
     @Deprecated
     @Generated
     @Selector("moviePlayer")

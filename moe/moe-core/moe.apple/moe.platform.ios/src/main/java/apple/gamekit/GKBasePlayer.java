@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -161,6 +164,12 @@ public class GKBasePlayer extends NSObject {
     @Selector("init")
     public native GKBasePlayer init();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: use the teamPlayerID property to identify a player
+     */
+    @Deprecated
     @Generated
     @Selector("playerID")
     public native String playerID();

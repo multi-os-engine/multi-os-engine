@@ -37,6 +37,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -196,18 +199,30 @@ public class NSUnitDuration extends NSDimension implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("microseconds")
     public static native NSUnitDuration microseconds();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("milliseconds")
     public static native NSUnitDuration milliseconds();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("nanoseconds")
     public static native NSUnitDuration nanoseconds();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("picoseconds")
     public static native NSUnitDuration picoseconds();

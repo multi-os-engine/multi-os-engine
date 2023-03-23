@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * An R-tree is a data structure that partitions axis aligned bounding rectangles into groups spatially.
  * When a group goes to large, it is split according to its split strategy into two new groups.
  * Fast queries can be made on these partition bounding rectangles.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -151,7 +153,7 @@ public class GKRTree<_ElementType> extends NSObject {
     /**
      * Creates an RTree with a given maximum number of children per node. Nodes that grow beyond this number of children
      * will be split.
-     *
+     * 
      * @param maxNumberOfChildren the maximum number of children per node before splitting
      */
     @Generated

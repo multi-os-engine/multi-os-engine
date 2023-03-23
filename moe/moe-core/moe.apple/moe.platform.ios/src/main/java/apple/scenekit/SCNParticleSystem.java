@@ -59,7 +59,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNParticleSystem
- * <p>
+ * 
  * The SCNParticleSystem class represents a system of particles.
  */
 @Generated
@@ -224,6 +224,7 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     @Selector("affectedByPhysicsFields")
     public native boolean affectedByPhysicsFields();
 
+    @Deprecated
     @Generated
     @Selector("animationForKey:")
     public native CAAnimation animationForKey(String key);
@@ -433,6 +434,7 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     @Selector("initWithCoder:")
     public native SCNParticleSystem initWithCoder(NSCoder coder);
 
+    @Deprecated
     @Generated
     @Selector("isAnimationForKeyPaused:")
     public native boolean isAnimationForKeyPaused(String key);
@@ -678,6 +680,7 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     @NFloat
     public native double particleVelocityVariation();
 
+    @Deprecated
     @Generated
     @Selector("pauseAnimationForKey:")
     public native void pauseAnimationForKey(String key);
@@ -701,6 +704,7 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     @Selector("removeAnimationForKey:")
     public native void removeAnimationForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
     public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
@@ -716,6 +720,7 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     @Selector("reset")
     public native void reset();
 
+    @Deprecated
     @Generated
     @Selector("resumeAnimationForKey:")
     public native void resumeAnimationForKey(String key);
@@ -1083,6 +1088,7 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
     @Selector("setSortingMode:")
     public native void setSortingMode(@NInt long value);
 
+    @Deprecated
     @Generated
     @Selector("setSpeed:forAnimationKey:")
     public native void setSpeedForAnimationKey(@NFloat double speed, String key);
@@ -1236,6 +1242,8 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
      * Specifies the orientation direction of newly created particles, used in the SCNParticleOrientationModeFree mode.
      * The particle will rotate around this axis. Defaults to {0, 0, 0}, which means random. The particle will then
      * rotate arbitraly. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("orientationDirection")
@@ -1244,6 +1252,8 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * Specifies the initial intensity of the particle. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("particleIntensity")
@@ -1252,6 +1262,8 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * Specifies the initial intensity variation of the particle. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("particleIntensityVariation")
@@ -1266,6 +1278,8 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
      * Specifies the orientation direction of newly created particles, used in the SCNParticleOrientationModeFree mode.
      * The particle will rotate around this axis. Defaults to {0, 0, 0}, which means random. The particle will then
      * rotate arbitraly. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setOrientationDirection:")
@@ -1273,6 +1287,8 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * Specifies the initial intensity of the particle. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setParticleIntensity:")
@@ -1280,6 +1296,8 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * Specifies the initial intensity variation of the particle. Animatable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setParticleIntensityVariation:")
@@ -1291,8 +1309,10 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * [@property] writeToDepthBuffer
-     * <p>
+     * 
      * Determines whether the receiver writes to the depth buffer when rendered. Defaults to NO.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setWritesToDepthBuffer:")
@@ -1300,8 +1320,10 @@ public class SCNParticleSystem extends NSObject implements NSCopying, NSSecureCo
 
     /**
      * [@property] writeToDepthBuffer
-     * <p>
+     * 
      * Determines whether the receiver writes to the depth buffer when rendered. Defaults to NO.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("writesToDepthBuffer")

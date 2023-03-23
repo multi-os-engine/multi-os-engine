@@ -141,15 +141,24 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("sortDescriptorWithKey:ascending:")
     public static native NSSortDescriptor sortDescriptorWithKeyAscending(String key, boolean ascending);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("sortDescriptorWithKey:ascending:comparator:")
     public static native NSSortDescriptor sortDescriptorWithKeyAscendingComparator(String key, boolean ascending,
             @ObjCBlock(name = "call_sortDescriptorWithKeyAscendingComparator") Block_sortDescriptorWithKeyAscendingComparator cmptr);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("sortDescriptorWithKey:ascending:selector:")
     public static native NSSortDescriptor sortDescriptorWithKeyAscendingSelector(String key, boolean ascending,
@@ -170,6 +179,8 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
 
     /**
      * Force a sort descriptor which was securely decoded to allow evaluation
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("allowEvaluation")
@@ -179,6 +190,9 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     @Selector("ascending")
     public native boolean ascending();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("comparator")
     @ObjCBlock(name = "call_comparator_ret")
@@ -218,6 +232,9 @@ public class NSSortDescriptor extends NSObject implements NSSecureCoding, NSCopy
     @Selector("initWithKey:ascending:")
     public native NSSortDescriptor initWithKeyAscending(String key, boolean ascending);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("initWithKey:ascending:comparator:")
     public native NSSortDescriptor initWithKeyAscendingComparator(String key, boolean ascending,

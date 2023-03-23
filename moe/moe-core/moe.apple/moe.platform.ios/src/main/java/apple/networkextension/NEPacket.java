@@ -46,13 +46,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEPacket
- * <p>
+ * 
  * An NEPacket object represents the data, protocol family, and metadata associated with an IP packet.
  * These packets are used to read and write on an NEPacketTunnelFlow.
- * <p>
+ * 
  * NEPacket is part of NetworkExtension.framework
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -176,8 +178,10 @@ public class NEPacket extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] data
-     * <p>
+     * 
      * The data content of the packet.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("data")
@@ -197,11 +201,13 @@ public class NEPacket extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * initWithData:protocolFamily:
-     * <p>
+     * 
      * Initializes a new NEPacket object with data and protocol family.
-     *
+     * 
      * @param data           The content of the packet.
      * @param protocolFamily The protocol family of the packet (such as AF_INET or AF_INET6).
+     * 
+     *                       API-Since: 10.0
      */
     @Generated
     @Selector("initWithData:protocolFamily:")
@@ -209,10 +215,12 @@ public class NEPacket extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] metadata
-     * <p>
+     * 
      * Metadata about the source application and flow for this packet.
      * This property will only be non-nil when the routing method for the NEPacketTunnelProvider
      * is NETunnelProviderRoutingMethodSourceApplication.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("metadata")
@@ -220,8 +228,10 @@ public class NEPacket extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * [@property] protocolFamily
-     * <p>
+     * 
      * The protocol family of the packet (such as AF_INET or AF_INET6).
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("protocolFamily")

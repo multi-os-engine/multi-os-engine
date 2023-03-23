@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -113,6 +116,8 @@ public class NSMappingModel extends NSObject {
      * able to reasonably infer a data migration mapping model, such a model is created and returned. If the mapping
      * model can not be created, nil is returned and an error code is returned to indicate why inferring a mapping model
      * automatically failed.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("inferredMappingModelForSourceModel:destinationModel:error:")

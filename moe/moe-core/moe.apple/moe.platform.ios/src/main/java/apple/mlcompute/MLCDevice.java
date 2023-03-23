@@ -26,7 +26,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCDevice
- * <p>
+ * 
  * A device that will be used to execute a neural network.
  * If a MLCdevice is created with multiple devices using the [devicesWithType:selectMultipleDvices], on configurations
  * where multiple GPUs are available such as on the Mac Pro, the framework may transparently schedule the execution
@@ -35,6 +35,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * using
  * MLCGraphCompilationOptionsLinkGraphs specified in compileOptions and the multiple graphs should be linked together
  * with linkWithGraphs.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -56,11 +58,13 @@ public class MLCDevice extends NSObject implements NSCopying {
 
     /**
      * [@property] actualDeviceType
-     * <p>
+     * 
      * The specific device selected.
-     * <p>
+     * 
      * This can be CPU, GPU or ANE. If type is MLCDeviceTypeAny, this property
      * can be used to find out the specific device type that is selected.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("actualDeviceType")
@@ -78,8 +82,10 @@ public class MLCDevice extends NSObject implements NSCopying {
 
     /**
      * Creates a device which uses the Apple Neural Engine, if any.
-     *
+     * 
      * @return A new device, or `nil` if no ANE exists.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("aneDevice")
@@ -115,7 +121,7 @@ public class MLCDevice extends NSObject implements NSCopying {
 
     /**
      * Creates a device which uses the CPU.
-     *
+     * 
      * @return A new device.
      */
     @Generated
@@ -132,9 +138,9 @@ public class MLCDevice extends NSObject implements NSCopying {
 
     /**
      * Create a MLCDevice object
-     * <p>
+     * 
      * This method can be used by developers to select specific GPUs
-     *
+     * 
      * @param gpus List of Metal devices
      * @return A new device object
      */
@@ -144,7 +150,7 @@ public class MLCDevice extends NSObject implements NSCopying {
 
     /**
      * Create a MLCDevice object
-     *
+     * 
      * @param type A device type
      * @return A new device object
      */
@@ -154,10 +160,12 @@ public class MLCDevice extends NSObject implements NSCopying {
 
     /**
      * Create a MLCDevice object that uses multiple devices if available
-     *
+     * 
      * @param type                          A device type
      * @param selectsMultipleComputeDevices A boolean to indicate whether to select multiple compute devices
      * @return A new device object
+     * 
+     *         API-Since: 14.5
      */
     @Generated
     @Selector("deviceWithType:selectsMultipleComputeDevices:")
@@ -166,7 +174,7 @@ public class MLCDevice extends NSObject implements NSCopying {
 
     /**
      * Creates a device which uses a GPU, if any.
-     *
+     * 
      * @return A new device, or `nil` if no GPU exists.
      */
     @Generated
@@ -230,9 +238,9 @@ public class MLCDevice extends NSObject implements NSCopying {
 
     /**
      * [@property] type
-     * <p>
+     * 
      * The type specified when the device is created
-     * <p>
+     * 
      * Recommend that developers use MLCDeviceTypeAny as the device type.
      * This will ensure that MLCompute will select the best device to execute the neural network.
      * If developers want to be able to control device selection, they can select CPU or GPU and

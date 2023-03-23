@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVCoordinatedPlaybackParticipant
- * <p>
+ * 
  * A participant in a coordinated playback group connected through AVPlaybackCoordinator.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVFoundation")
@@ -93,9 +95,9 @@ public class AVCoordinatedPlaybackParticipant extends NSObject {
 
     /**
      * [@property] identifier
-     * <p>
+     * 
      * A unique id for the participant.
-     * <p>
+     * 
      * Use this identifier to distinguish participants.
      */
     @Generated
@@ -121,7 +123,7 @@ public class AVCoordinatedPlaybackParticipant extends NSObject {
 
     /**
      * [@property] readyToPlay
-     * <p>
+     * 
      * YES if the participant is ready to play.
      */
     @Generated
@@ -159,7 +161,7 @@ public class AVCoordinatedPlaybackParticipant extends NSObject {
 
     /**
      * [@property] suspensionReasons
-     * <p>
+     * 
      * The reason, if any, this participant is currently not participating in coordinated playback.
      */
     @Generated

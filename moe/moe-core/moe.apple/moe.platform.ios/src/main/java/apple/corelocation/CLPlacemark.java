@@ -48,10 +48,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CLPlacemark
- * <p>
+ * 
  * Discussion:
  * Represents placemark data for a geographic location. Placemark data can be
  * information such as the country, state, city, and street address.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("CoreLocation")
@@ -142,6 +144,9 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("new")
     public static native CLPlacemark new_objc();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("placemarkWithLocation:name:postalAddress:")
     public static native CLPlacemark placemarkWithLocationNamePostalAddress(CLLocation location, String name,
@@ -181,11 +186,16 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * addressDictionary
-     * <p>
+     * 
      * Discussion:
      * This dictionary can be formatted as an address using ABCreateStringWithAddressDictionary,
      * defined in the AddressBookUI framework.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use @properties
      */
+    @Deprecated
     @Generated
     @Selector("addressDictionary")
     public native NSDictionary<?, ?> addressDictionary();
@@ -231,7 +241,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * initWithPlacemark:
-     * <p>
+     * 
      * Discussion:
      * Initialize a newly allocated placemark from another placemark, copying its data.
      */
@@ -255,7 +265,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * location
-     * <p>
+     * 
      * Discussion:
      * Returns the geographic location associated with the placemark.
      */
@@ -286,7 +296,7 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * region
-     * <p>
+     * 
      * Discussion:
      * Returns the geographic region associated with the placemark.
      */
@@ -330,14 +340,19 @@ public class CLPlacemark extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * timeZone
-     * <p>
+     * 
      * Discussion:
      * Returns the time zone associated with the placemark.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("postalAddress")
     public native CNPostalAddress postalAddress();

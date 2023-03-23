@@ -24,11 +24,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEGroupPresetSetting
- * <p>
+ * 
  * A PHASEGroupPresetSetting is an object that holds settings that can be applied to a PHASEGroup object.
- * <p>
+ * 
  * These can be either be manually created and added to a PHASEGroupPreset object, or created inline using
  * PHASEGroupPreset addGroup.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -90,7 +92,7 @@ public class PHASEGroupPresetSetting extends NSObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
@@ -101,7 +103,7 @@ public class PHASEGroupPresetSetting extends NSObject {
 
     /**
      * [@property] gainCurveType
-     * <p>
+     * 
      * The type of curve to apply to the gain as the preset changes to this new setting.
      */
     @Generated
@@ -120,15 +122,19 @@ public class PHASEGroupPresetSetting extends NSObject {
 
     /**
      * initWithGain:rate:gainCurveType:rateCurveType
-     * <p>
+     * 
      * Initialize the PHASEGroupPresetSetting object with an existing PHASEGroup object.
-     *
-     * @param gain          The main gain setting to apply to the group. Values are clamped to the range [0, 1]. Default
+     * 
+     * @param gain
+     *                      The main gain setting to apply to the group. Values are clamped to the range [0, 1]. Default
      *                      value is 1.
-     * @param rate          The playback rate setting to apply to the group. Values are clamped to the range [0.25, 4].
+     * @param rate
+     *                      The playback rate setting to apply to the group. Values are clamped to the range [0.25, 4].
      *                      Default value is 1.
-     * @param gainCurveType The type of curve to apply to the gain as the preset changes to this new setting.
-     * @param rateCurveType The type of curve to apply to the rate as the preset changes to this new setting.
+     * @param gainCurveType
+     *                      The type of curve to apply to the gain as the preset changes to this new setting.
+     * @param rateCurveType
+     *                      The type of curve to apply to the rate as the preset changes to this new setting.
      */
     @Generated
     @Selector("initWithGain:rate:gainCurveType:rateCurveType:")
@@ -163,7 +169,7 @@ public class PHASEGroupPresetSetting extends NSObject {
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * Linear rate scalar.
      */
     @Generated
@@ -172,7 +178,7 @@ public class PHASEGroupPresetSetting extends NSObject {
 
     /**
      * [@property] rateCurveType
-     * <p>
+     * 
      * The type of curve to apply to the rate as the preset changes to this new setting.
      */
     @Generated

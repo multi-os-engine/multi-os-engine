@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A checkmark with default green color.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")

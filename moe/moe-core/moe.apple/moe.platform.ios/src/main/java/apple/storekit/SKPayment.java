@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -131,10 +134,17 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
     @Selector("new")
     public static native SKPayment new_objc();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("paymentWithProduct:")
     public static native SKPayment paymentWithProduct(SKProduct product);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 5.0
+     */
     @Generated
     @Deprecated
     @Selector("paymentWithProductIdentifier:")
@@ -163,6 +173,8 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
 
     /**
      * Application-specific user identifier. Optional.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("applicationUsername")
@@ -186,6 +198,8 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
 
     /**
      * Identifier agreed upon with the store. Required.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("productIdentifier")
@@ -193,6 +207,8 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
 
     /**
      * default: 1. Must be at least 1.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("quantity")
@@ -201,6 +217,8 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
 
     /**
      * Payment request data agreed upon with the store. Optional.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("requestData")
@@ -208,6 +226,8 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
 
     /**
      * Force an "ask to buy" flow for this payment, in the sandbox
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @Selector("simulatesAskToBuyInSandbox")
@@ -215,6 +235,8 @@ public class SKPayment extends NSObject implements NSCopying, NSMutableCopying {
 
     /**
      * The relevant data for specifying a discount to be applied to this payment. Optional.
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("paymentDiscount")

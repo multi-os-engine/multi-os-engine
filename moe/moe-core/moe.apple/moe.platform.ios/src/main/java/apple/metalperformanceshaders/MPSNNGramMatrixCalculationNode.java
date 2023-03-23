@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Node representing a @ref MPSNNGramMatrixCalculation kernel
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -57,7 +59,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * Scaling factor for the output. Default: 1.0f.
      */
     @Generated
@@ -105,7 +107,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a MPSNNGramMatrixCalculationNode kernel.
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter.
      * @return A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
      */
@@ -115,7 +117,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a MPSNNGramMatrixCalculationNode kernel.
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter.
      * @param alpha      Scaling factor for the output.
      * @return A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
@@ -152,7 +154,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a autoreleased MPSNNGramMatrixCalculationNode kernel.
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter.
      * @return A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
      */
@@ -162,7 +164,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a autoreleased MPSNNGramMatrixCalculationNode kernel.
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter.
      * @param alpha      Scaling factor for the output.
      * @return A new MPSNNFilter node for a MPSNNGramMatrixCalculationNode kernel.
@@ -173,7 +175,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
 
     /**
      * [@property] propertyCallBack
-     * <p>
+     * 
      * Optional callback option - setting this allows the alpha value to be changed dynamically at encode time.
      * Default value: nil.
      */
@@ -192,7 +194,7 @@ public class MPSNNGramMatrixCalculationNode extends MPSNNFilterNode {
 
     /**
      * [@property] propertyCallBack
-     * <p>
+     * 
      * Optional callback option - setting this allows the alpha value to be changed dynamically at encode time.
      * Default value: nil.
      */

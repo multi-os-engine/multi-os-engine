@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -177,6 +180,8 @@ public class GKTurnBasedExchangeReply extends NSObject {
 
     /**
      * send date for the exchange.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("replyDate")

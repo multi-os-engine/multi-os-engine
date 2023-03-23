@@ -46,8 +46,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An immutable value object representing a postal address.
- * <p>
+ * 
  * CNPostalAddress is thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -227,10 +229,16 @@ public class CNPostalAddress extends NSObject implements NSCopying, NSMutableCop
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("subAdministrativeArea")
     public native String subAdministrativeArea();
 
+    /**
+     * API-Since: 10.3
+     */
     @Generated
     @Selector("subLocality")
     public native String subLocality();

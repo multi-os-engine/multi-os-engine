@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MusicSequenceFileFlags
- * <p>
+ * 
  * controls the behaviour of the create file calls
  * [@constant] kMusicSequenceFileFlags_Default
  * Does not overwrite existing files. Attempts to save over an existing file

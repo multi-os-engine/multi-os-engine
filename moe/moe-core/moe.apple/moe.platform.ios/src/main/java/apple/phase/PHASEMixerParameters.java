@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEMixerParameters
- * <p>
+ * 
  * An object that holds runtime parameters for mixers when creating PHASESoundEvents.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -47,11 +49,13 @@ public class PHASEMixerParameters extends NSObject {
 
     /**
      * addAmbientMixerParametersWithIdentifier:listener
-     * <p>
+     * 
      * Adds runtime parameters for an ambient mixer
-     *
-     * @param identifier The unique identifier assigned to a spatial submixer object.
-     * @param listener   The PHASEListener object that this mixer will use to orient sounds.
+     * 
+     * @param identifier
+     *                   The unique identifier assigned to a spatial submixer object.
+     * @param listener
+     *                   The PHASEListener object that this mixer will use to orient sounds.
      */
     @Generated
     @Selector("addAmbientMixerParametersWithIdentifier:listener:")
@@ -59,12 +63,15 @@ public class PHASEMixerParameters extends NSObject {
 
     /**
      * addSpatialMixerParametersWithIdentifier:source:listener
-     * <p>
+     * 
      * Adds runtime parameters for a spatial mixer
-     *
-     * @param identifier The unique identifier assigned to a spatial submixer object.
-     * @param source     The PHASESource object that this mixer will use to spatialize sounds.
-     * @param listener   The PHASEListener object that this mixer will use to spatialize sounds.
+     * 
+     * @param identifier
+     *                   The unique identifier assigned to a spatial submixer object.
+     * @param source
+     *                   The PHASESource object that this mixer will use to spatialize sounds.
+     * @param listener
+     *                   The PHASEListener object that this mixer will use to spatialize sounds.
      */
     @Generated
     @Selector("addSpatialMixerParametersWithIdentifier:source:listener:")

@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An object which provides an account provider to be added to the list of providers in your application.
+ * 
+ * API-Since: 14.2
  */
 @Generated
 @Library("VideoSubscriberAccount")

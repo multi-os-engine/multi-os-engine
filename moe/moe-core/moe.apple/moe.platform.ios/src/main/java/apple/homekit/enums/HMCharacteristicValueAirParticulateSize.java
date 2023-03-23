@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueAirParticulateSize
- * <p>
+ * 
  * [@constant] HMCharacteristicValueAirParticulateSize2_5 Air particulate size of 2.5 micrometers.
  * [@constant] HMCharacteristicValueAirParticulateSize10 Air particulate size of 10 micrometers.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class HMCharacteristicValueAirParticulateSize {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Size2_5 = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Size10 = 0x0000000000000001L;
 
     @Generated

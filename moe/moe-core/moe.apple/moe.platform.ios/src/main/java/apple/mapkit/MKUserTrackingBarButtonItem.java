@@ -49,6 +49,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -305,4 +308,18 @@ public class MKUserTrackingBarButtonItem extends UIBarButtonItem {
     @Generated
     @Selector("initWithTitle:menu:")
     public native MKUserTrackingBarButtonItem initWithTitleMenu(String title, UIMenu menu);
+
+    @Generated
+    @Selector("initWithBarButtonSystemItem:primaryAction:menu:")
+    public native MKUserTrackingBarButtonItem initWithBarButtonSystemItemPrimaryActionMenu(@NInt long systemItem,
+            UIAction primaryAction, UIMenu menu);
+
+    @Generated
+    @Selector("initWithPrimaryAction:menu:")
+    public native MKUserTrackingBarButtonItem initWithPrimaryActionMenu(UIAction primaryAction, UIMenu menu);
+
+    @Generated
+    @Selector("initWithTitle:image:target:action:menu:")
+    public native MKUserTrackingBarButtonItem initWithTitleImageTargetActionMenu(String title, UIImage image,
+            @Mapped(ObjCObjectMapper.class) Object target, SEL action, UIMenu menu);
 }

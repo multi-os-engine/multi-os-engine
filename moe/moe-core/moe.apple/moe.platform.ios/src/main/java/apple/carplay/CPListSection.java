@@ -30,6 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@c] CPListSection models a single section of items appearing in a @c CPListTemplate.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CarPlay")
@@ -212,16 +214,24 @@ public class CPListSection extends NSObject implements NSSecureCoding {
     @MappedReturn(ObjCObjectMapper.class)
     public native CPListTemplateItem itemAtIndex(@NUInt long index);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("headerButton")
     public native CPButton headerButton();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("headerImage")
     public native UIImage headerImage();
 
     /**
      * Optional section header elements used by the enhanced header in this section.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("headerSubtitle")
@@ -229,19 +239,22 @@ public class CPListSection extends NSObject implements NSSecureCoding {
 
     /**
      * Create a section with a list of items and an optional header containing labels, an image, and a button.
-     * <p>
+     * 
      * [@note] The maximum size of the section header image is given by CPMaximumListSectionImageSize.
-     * <p>
+     * 
      * When providing an image, your app may provide a @c UIImage that is display-ready. If necessary for the image,
      * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * <p>
+     * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
-     * <p>
+     * 
      * To properly size your header image, your app should consider the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
+     * 
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithItems:header:headerSubtitle:headerImage:headerButton:sectionIndexTitle:")
@@ -249,6 +262,9 @@ public class CPListSection extends NSObject implements NSSecureCoding {
             NSArray<?> items, String header, String headerSubtitle, UIImage headerImage, CPButton headerButton,
             String sectionIndexTitle);
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("setHeaderImage:")
     public native void setHeaderImage(UIImage value);

@@ -42,11 +42,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEFilterProvider
- * <p>
+ * 
  * The NEFilterProvider class is an abstract base class that declares the programmatic interface of an
  * object that implements a socket filter.
- * <p>
+ * 
  * NEFilterProvider is part of NetworkExtension.framework
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -160,10 +162,12 @@ public class NEFilterProvider extends NEProvider {
 
     /**
      * [@property] filterConfiguration
-     * <p>
+     * 
      * An NEContentFilterConfiguration object containing the current filter configuration. The value of this
      * property can change during the lifetime of a filter. Filter implementations can use KVO to be notified when the
      * configuration changes.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("filterConfiguration")
@@ -175,15 +179,17 @@ public class NEFilterProvider extends NEProvider {
 
     /**
      * startFilterWithCompletionHandler:
-     * <p>
+     * 
      * This function is called by the framework when the content filter is being started. Subclasses must
      * override this method and perform whatever steps are necessary to start the filter.
-     *
+     * 
      * @param completionHandler A block that must be called when the process of starting the filter is complete. If the
      *                          filter was started successfully, subclass implementations must pass the nil value to
      *                          this block. If an error occurred
      *                          while starting the filter, sublcass implementations must pass a non-nil NSError
      *                          containing more details about the error.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("startFilterWithCompletionHandler:")
@@ -192,12 +198,14 @@ public class NEFilterProvider extends NEProvider {
 
     /**
      * stopFilterWithReason:completionHandler:
-     * <p>
+     * 
      * This function is called by the framework when the content filter is being stopped. Subclasses must
      * override this method and perform whatever steps are necessary to stop the filter.
-     *
+     * 
      * @param reason            An NEProviderStopReason indicating why the filter is being stopped.
      * @param completionHandler A block that must be called when the process of stopping the filter is complete.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("stopFilterWithReason:completionHandler:")
@@ -220,12 +228,14 @@ public class NEFilterProvider extends NEProvider {
 
     /**
      * handleReport:
-     * <p>
+     * 
      * This function is called by the framework when the data provider extension returns a verdict with the report
      * property set to True.
      * Subclass implementations may override this method to handle the flow report.
-     *
+     * 
      * @param report The report being delivered.
+     * 
+     *               API-Since: 11.0
      */
     @Generated
     @Selector("handleReport:")

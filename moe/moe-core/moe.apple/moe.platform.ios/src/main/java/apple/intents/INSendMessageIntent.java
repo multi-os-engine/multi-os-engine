@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -162,6 +165,12 @@ public class INSendMessageIntent extends INIntent implements UNNotificationConte
     @Selector("content")
     public native String content();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use speakableGroupNames instead
+     */
+    @Deprecated
     @Generated
     @Selector("groupName")
     public native String groupName();
@@ -174,6 +183,12 @@ public class INSendMessageIntent extends INIntent implements UNNotificationConte
     @Selector("initWithCoder:")
     public native INSendMessageIntent initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithRecipients:content:groupName:serviceName:sender:")
     public native INSendMessageIntent initWithRecipientsContentGroupNameServiceNameSender(
@@ -207,30 +222,54 @@ public class INSendMessageIntent extends INIntent implements UNNotificationConte
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("conversationIdentifier")
     public native String conversationIdentifier();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use the designated initializer with outgoingMessageType instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithRecipients:content:speakableGroupName:conversationIdentifier:serviceName:sender:")
     public native INSendMessageIntent initWithRecipientsContentSpeakableGroupNameConversationIdentifierServiceNameSender(
             NSArray<? extends INPerson> recipients, String content, INSpeakableString speakableGroupName,
             String conversationIdentifier, String serviceName, INPerson sender);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("speakableGroupName")
     public native INSpeakableString speakableGroupName();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("attachments")
     public native NSArray<? extends INSendMessageAttachment> attachments();
 
+    /**
+     * API-Since: 14.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use the designated initializer with attachments instead instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithRecipients:outgoingMessageType:content:speakableGroupName:conversationIdentifier:serviceName:sender:")
     public native INSendMessageIntent initWithRecipientsOutgoingMessageTypeContentSpeakableGroupNameConversationIdentifierServiceNameSender(
             NSArray<? extends INPerson> recipients, @NInt long outgoingMessageType, String content,
             INSpeakableString speakableGroupName, String conversationIdentifier, String serviceName, INPerson sender);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithRecipients:outgoingMessageType:content:speakableGroupName:conversationIdentifier:serviceName:sender:attachments:")
     public native INSendMessageIntent initWithRecipientsOutgoingMessageTypeContentSpeakableGroupNameConversationIdentifierServiceNameSenderAttachments(
@@ -238,6 +277,9 @@ public class INSendMessageIntent extends INIntent implements UNNotificationConte
             INSpeakableString speakableGroupName, String conversationIdentifier, String serviceName, INPerson sender,
             NSArray<? extends INSendMessageAttachment> attachments);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("outgoingMessageType")
     @NInt

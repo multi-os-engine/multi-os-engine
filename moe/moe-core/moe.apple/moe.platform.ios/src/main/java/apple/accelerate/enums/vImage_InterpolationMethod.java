@@ -25,14 +25,20 @@ import org.moe.natj.general.ann.Generated;
 public final class vImage_InterpolationMethod {
     /**
      * nearest neighbor. Fast but probably causes banding and will certainly quantize the histogram.
+     * 
+     * API-Since: 5.0
      */
     @Generated public static final int kvImageNoInterpolation = 0x00000000;
     /**
      * full linear interpolation
+     * 
+     * API-Since: 5.0
      */
     @Generated public static final int kvImageFullInterpolation = 0x00000001;
     /**
      * partial linear interpolation between vertices on gray axis and N-1 nearest vertices
+     * 
+     * API-Since: 5.0
      */
     @Generated public static final int kvImageHalfInterpolation = 0x00000002;
 

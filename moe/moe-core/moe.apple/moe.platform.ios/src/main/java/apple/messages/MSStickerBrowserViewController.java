@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The MSStickerBrowserViewController class creates a controller object that manages a MSStickerBrowserView.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Messages")
@@ -73,6 +75,7 @@ public class MSStickerBrowserViewController extends UIViewController implements 
     @Selector("allocWithZone:")
     public static native MSStickerBrowserViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -177,7 +180,7 @@ public class MSStickerBrowserViewController extends UIViewController implements 
 
     /**
      * initWithStickerSize:
-     * <p>
+     * 
      * Initializes a MSStickerBrowserViewController and configures it's MSStickerBrowserView with the provided sticker
      * size class.
      */
@@ -192,7 +195,7 @@ public class MSStickerBrowserViewController extends UIViewController implements 
 
     /**
      * [@property] stickerBrowserView
-     * <p>
+     * 
      * Returns the sticker browser view managed by the controller object.
      */
     @Generated

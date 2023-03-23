@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] CMTimeRoundingMethod
- * <p>
+ * 
  * Rounding method to use when computing time.value during timescale conversions.
  * [@constant] kCMTimeRoundingMethod_RoundHalfAwayFromZero Round towards zero if abs(fraction) is < 0.5,
  * away from 0 if abs(fraction) is >= 0.5.
@@ -37,15 +37,38 @@ import org.moe.natj.general.ann.Generated;
  * CMTime in this case (-1/newTimescale).
  * [@constant] kCMTimeRoundingMethod_RoundTowardPositiveInfinity Round towards +inf if fraction is != 0.
  * [@constant] kCMTimeRoundingMethod_RoundTowardNegativeInfinity Round towards -inf if fraction is != 0.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 public final class CMTimeRoundingMethod {
+    /**
+     * API-Since: 4.0
+     */
     @Generated public static final int RoundHalfAwayFromZero = 0x00000001;
+    /**
+     * API-Since: 4.0
+     */
     @Generated public static final int RoundTowardZero = 0x00000002;
+    /**
+     * API-Since: 4.0
+     */
     @Generated public static final int RoundAwayFromZero = 0x00000003;
+    /**
+     * API-Since: 4.0
+     */
     @Generated public static final int QuickTime = 0x00000004;
+    /**
+     * API-Since: 4.0
+     */
     @Generated public static final int RoundTowardPositiveInfinity = 0x00000005;
+    /**
+     * API-Since: 4.0
+     */
     @Generated public static final int RoundTowardNegativeInfinity = 0x00000006;
+    /**
+     * API-Since: 4.0
+     */
     @Generated public static final int Default = 0x00000001;
 
     @Generated

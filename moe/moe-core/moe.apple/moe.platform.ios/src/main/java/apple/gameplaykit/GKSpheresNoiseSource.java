@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Produces 3D spherical noise with an infinite number of spheres-within-spheres of constantly-increasing radius.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")

@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MLCLossType
- * <p>
+ * 
  * A loss function.
  */
 @Generated

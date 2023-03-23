@@ -21,6 +21,9 @@ public final class DeviceCheck {
     private DeviceCheck() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MIDINotificationMessageID
- * <p>
+ * 
  * Signifies the type of a MIDINotification.
- * <p>
+ * 
  * [@constant] kMIDIMsgSetupChanged
  * Some aspect of the current MIDISetup has changed. No data. Should ignore this message if
  * messages 2-6 are handled.

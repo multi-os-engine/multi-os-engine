@@ -37,6 +37,8 @@ import org.moe.natj.objc.ann.Selector;
  * communication from the index.
  * Alternatively, an app can provide an extension whose request handler conforms to this protocol and the extension will
  * be called if the app isn't running.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("CoreSpotlight")
@@ -107,6 +109,8 @@ public interface CSSearchableIndexDelegate {
 
     /**
      * The developer may provided a NSData representation if type was specified in providerDataTypeIdentifiers property.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -119,6 +123,8 @@ public interface CSSearchableIndexDelegate {
     /**
      * The developer may provided a NSURL to file representation representation if type was specified from
      * providerDataTypeIdentifiers or providerInPlaceFileTypeIdentifiers property.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional

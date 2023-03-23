@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGRect;
 import apple.uikit.UIPopoverController;
 import apple.uikit.UIView;
 import org.moe.natj.general.ann.Generated;
@@ -28,6 +27,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGRect;
 
 @Generated
 @Library("UIKit")
@@ -37,6 +37,9 @@ public interface UIPopoverControllerDelegate {
     /**
      * -popoverController:willRepositionPopoverToRect:inView: is called on your delegate when the popover may require a
      * different view or rectangle
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 9.0
      */
     @Generated
     @IsOptional
@@ -50,6 +53,9 @@ public interface UIPopoverControllerDelegate {
     /**
      * Called on the delegate when the user has taken action to dismiss the popover. This is not called when
      * -dismissPopoverAnimated: is called directly.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
      */
     @Generated
     @IsOptional
@@ -62,6 +68,9 @@ public interface UIPopoverControllerDelegate {
     /**
      * Called on the delegate when the popover controller will dismiss the popover. Return NO to prevent the dismissal
      * of the view.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
      */
     @Generated
     @IsOptional

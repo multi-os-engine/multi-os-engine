@@ -30,6 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A shortcut that has been added to Siri
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("Intents")

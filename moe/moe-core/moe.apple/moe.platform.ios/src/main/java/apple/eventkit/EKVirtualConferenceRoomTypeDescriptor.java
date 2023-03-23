@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * EKVirtualConferenceRoomTypeDescriptor
- * <p>
+ * 
  * Describes a virtual conference room type.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("EventKit")
@@ -100,9 +102,9 @@ public class EKVirtualConferenceRoomTypeDescriptor extends NSObject {
 
     /**
      * initWithTitle:identifier:
-     * <p>
+     * 
      * Initializes an instance of EKVirtualConferenceRoomTypeDescriptor.
-     *
+     * 
      * @param title      A user-readable title describing this room type. This string will be
      *                   displayed in UI.
      * @param identifier An EKVirtualConferenceRoomTypeIdentifier that your extension can use to

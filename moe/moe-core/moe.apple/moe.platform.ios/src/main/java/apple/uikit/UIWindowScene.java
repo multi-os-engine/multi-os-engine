@@ -24,7 +24,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSError;
+import org.moe.natj.objc.ann.ObjCBlock;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -151,7 +156,7 @@ public class UIWindowScene extends UIScene {
 
     /**
      * The screenshot object associated with the scene
-     * <p>
+     * 
      * This is non-null if the screenshot service is available for this window scene
      */
     @Generated
@@ -165,11 +170,16 @@ public class UIWindowScene extends UIScene {
     /**
      * Restrictions which the system should use when resizing the scene. This property will be NULL on platforms which
      * don't support scene resize, else a mutable object is returned which the client may customize.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("sizeRestrictions")
     public native UISceneSizeRestrictions sizeRestrictions();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("statusBarManager")
     public native UIStatusBarManager statusBarManager();
@@ -196,9 +206,11 @@ public class UIWindowScene extends UIScene {
 
     /**
      * An optional object used as a source of scene-level activity items configuration
-     * <p>
+     * 
      * If this property returns @c nil, the @c activityItemsConfiguration property of the most-presented view controller
      * of the scene's key window will be used for scene-level sharing and activities.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("activityItemsConfigurationSource")
@@ -207,6 +219,8 @@ public class UIWindowScene extends UIScene {
 
     /**
      * Returns the focus system that is responsible for this scene or nil if this scene does not support focus.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("focusSystem")
@@ -214,6 +228,8 @@ public class UIWindowScene extends UIScene {
 
     /**
      * The key window for this UIWindowScene
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("keyWindow")
@@ -221,9 +237,11 @@ public class UIWindowScene extends UIScene {
 
     /**
      * An optional object used as a source of scene-level activity items configuration
-     * <p>
+     * 
      * If this property returns @c nil, the @c activityItemsConfiguration property of the most-presented view controller
      * of the scene's key window will be used for scene-level sharing and activities.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setActivityItemsConfigurationSource:")
@@ -232,9 +250,11 @@ public class UIWindowScene extends UIScene {
 
     /**
      * An optional object used as a source of scene-level activity items configuration
-     * <p>
+     * 
      * If this property returns @c nil, the @c activityItemsConfiguration property of the most-presented view controller
      * of the scene's key window will be used for scene-level sharing and activities.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     public void setActivityItemsConfigurationSource(
@@ -248,4 +268,45 @@ public class UIWindowScene extends UIScene {
             org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
         }
     }
+
+    /**
+     * Provides the current resolved values for the window scene's geometry in system space.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("effectiveGeometry")
+    public native UIWindowSceneGeometry effectiveGeometry();
+
+    @Generated
+    @Selector("isFullScreen")
+    public native boolean isFullScreen();
+
+    /**
+     * Request an update to the window scene's geometry in system space.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("requestGeometryUpdateWithPreferences:errorHandler:")
+    public native void requestGeometryUpdateWithPreferencesErrorHandler(
+            UIWindowSceneGeometryPreferences geometryPreferences,
+            @ObjCBlock(name = "call_requestGeometryUpdateWithPreferencesErrorHandler") Block_requestGeometryUpdateWithPreferencesErrorHandler errorHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_requestGeometryUpdateWithPreferencesErrorHandler {
+        @Generated
+        void call_requestGeometryUpdateWithPreferencesErrorHandler(NSError error);
+    }
+
+    /**
+     * Additional window behaviors which may be platform specific. This property will be nil on unsupported platforms,
+     * otherwise will provide a mutable object for window behavior customization.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("windowingBehaviors")
+    public native UISceneWindowingBehaviors windowingBehaviors();
 }

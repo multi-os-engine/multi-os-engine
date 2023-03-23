@@ -33,13 +33,17 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@c] SHMediaItem represents metadata associated with a @c SHSignature
- * <p>
+ * 
  * A @c SHMediaItem is used in two distinct ways
- * 1. As the base class of a @c SHMatchedMedia item, and therefore as the result of a match
+ * 1. As the base class of a @c SHMatchedMediaItem, and therefore as the result of a match
  * 2. As a way of associating metadata with reference signatures in a @c SHCustomCatalog
- * <p>
+ * 
  * A SHMediaItem contains no required fields and may be entirely blank, they can also contain custom data set with
  * custom keys when making a @c SHCustomCatalog.
+ * 
+ * [@note] @c SHMediaItem is not intended to be subclassed further.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("ShazamKit")
@@ -151,7 +155,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Fetch a @c SHMediaItem by Shazam ID
-     * <p>
+     * 
      * The completionHandler will contain a @c SHMediaItem if the ShazamID is valid, otherwise nil and an error
      */
     @Generated
@@ -169,7 +173,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
     /**
      * The Genre Names
      * [@note] This may be fetched using the key @c SHMediaItemGenres
-     * <p>
+     * 
      * An array of strings representing the genres of the media item. Will return an empty array if there are no genres.
      */
     @Generated
@@ -220,8 +224,10 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Construct a new instance with the provided dictionary
-     * <p>
+     * 
      * You may add your own keys here to return custom data, custom data should conform to NSCoding
+     * 
+     * @param properties A dictionary of @c SHMediaItemProperty and their values
      */
     @Generated
     @Selector("mediaItemWithProperties:")
@@ -234,7 +240,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Use subscripting to retrieve values
-     *
+     * 
      * @param key The `SHMediaItemProperty` or custom key for a value
      */
     @Generated
@@ -294,7 +300,7 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Retrieve a value using a known key
-     *
+     * 
      * @param property The `SHMediaItemProperty` for a value
      */
     @Generated
@@ -317,11 +323,30 @@ public class SHMediaItem extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * The Web URL
-     * <p>
+     * 
      * The URL will point to a page that displays the current object in its entirety
      * [@note] This may be fetched using the key @c SHMediaItemWebURL
      */
     @Generated
     @Selector("webURL")
     public native NSURL webURL();
+
+    /**
+     * An array of @c SHRange that indicate the frequency skews in the reference signature that this media item
+     * describes
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("frequencySkewRanges")
+    public native NSArray<? extends SHRange> frequencySkewRanges();
+
+    /**
+     * An array of @c SHRange that indicate the offsets within the reference signature that this media item describes
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("timeRanges")
+    public native NSArray<? extends SHRange> timeRanges();
 }

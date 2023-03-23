@@ -19,15 +19,29 @@ package apple.mapkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 public final class MKDistanceFormatterUnits {
     /**
      * Let units depend on locale. Note that some locales use imperial measurements for distances but metric for
      * everything else, so this is not identical to NSLocaleUsesMetricSystem.
+     * 
+     * API-Since: 7.0
      */
     @Generated @NUInt public static final long Default = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NUInt public static final long Metric = 0x0000000000000001L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NUInt public static final long Imperial = 0x0000000000000002L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NUInt public static final long ImperialWithYards = 0x0000000000000003L;
 
     @Generated

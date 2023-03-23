@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -154,6 +157,8 @@ public class SKProductsResponse extends NSObject {
 
     /**
      * Array of invalid product identifiers.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("invalidProductIdentifiers")
@@ -161,6 +166,8 @@ public class SKProductsResponse extends NSObject {
 
     /**
      * Array of SKProduct instances.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("products")

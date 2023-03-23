@@ -26,9 +26,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This anchor represents the physical position and orientation of another participant in the collaborative session.
- * <p>
+ * 
  * The participant anchors are automatically added to the ARSession and are updated with each frame.
  * The participant can be identified by `sessionIdentifier` property of the anchor.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("ARKit")

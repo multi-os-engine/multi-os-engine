@@ -32,12 +32,17 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITraitEnvironment")
 public interface UITraitEnvironment {
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("traitCollection")
     UITraitCollection traitCollection();
 
     /**
      * To be overridden as needed to provide custom behavior when the environment's traits change.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("traitCollectionDidChange:")

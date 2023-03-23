@@ -19,14 +19,21 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 public final class NSVolumeEnumerationOptions {
     /**
      * The mounted volume enumeration will skip hidden volumes.
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long SkipHiddenVolumes = 0x0000000000000002L;
     /**
      * The mounted volume enumeration will produce file reference URLs rather than path-based URLs.
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long ProduceFileReferenceURLs = 0x0000000000000004L;
 

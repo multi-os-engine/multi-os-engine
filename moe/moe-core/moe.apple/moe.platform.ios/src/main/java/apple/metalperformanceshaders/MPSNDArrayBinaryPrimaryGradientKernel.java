@@ -28,8 +28,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNDArrayDivisionPrimaryGradient
- * <p>
+ * 
  * [@dependency] This depends on Metal.framework.
+ * 
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")

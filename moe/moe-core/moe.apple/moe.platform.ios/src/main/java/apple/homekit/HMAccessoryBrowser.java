@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * This class is used to discover new accessories in the home
  * that have never been paired with and therefore not part of the home.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -199,7 +201,7 @@ public class HMAccessoryBrowser extends NSObject {
 
     /**
      * Starts searching for accessories that are not associated to any home.
-     * <p>
+     * 
      * If any accessories are discovered, updates are sent to the delegate.
      * This will scan for the following types of accessories:
      * Accessories supporting HomeKit Wireless Accessory Configuration profile
@@ -216,7 +218,7 @@ public class HMAccessoryBrowser extends NSObject {
 
     /**
      * Stops searching for new accessories.
-     * <p>
+     * 
      * After this method is called, updates will not be sent to the delegate
      * if new accessories are found or removed. Scanning may continue for system
      * reasons or if other delegates are still in active searching sessions.

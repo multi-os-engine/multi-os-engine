@@ -30,6 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The data store maintains and syncs your app's contexts.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("ClassKit")
@@ -90,8 +92,10 @@ public class CLSDataStore extends NSObject {
 
     /**
      * Complete all assigned actvities.
-     * <p>
+     * 
      * Marks all of the currently active assigned activities for this contextPath as complete.
+     * 
+     * API-Since: 12.2
      */
     @Generated
     @Selector("completeAllAssignedActivitiesMatching:")
@@ -99,7 +103,7 @@ public class CLSDataStore extends NSObject {
 
     /**
      * Returns contexts matching a set of identifiers where each identifier is the parent of the following identifier.
-     * <p>
+     * 
      * For example: @c@["math-game", @c"level1"] returns two contexts where @em math-game is the parent of @em level1.
      * If there are any missing contexts, they will be filled in by calling the following method on the data store's
      * delegate:
@@ -121,9 +125,9 @@ public class CLSDataStore extends NSObject {
 
     /**
      * Fetch contexts matching a predicate.
-     * <p>
-     * For example: NSPredicate<topic == kCLSContextTopicPhysics AND parent == someContext>. Completion block may be
-     * called on a background thread.
+     * 
+     * For example: NSPredicate<topic == CLSContextTopicMath AND parent == someContext>. Completion block may be called
+     * on a background thread.
      */
     @Generated
     @Selector("contextsMatchingPredicate:completion:")
@@ -185,7 +189,7 @@ public class CLSDataStore extends NSObject {
 
     /**
      * Fetch the top level context for the current app.
-     * <p>
+     * 
      * The main context is automatically created. Add child contexts to this context to persist them in the data store.
      */
     @Generated
@@ -199,7 +203,7 @@ public class CLSDataStore extends NSObject {
 
     /**
      * Mark a context for removal.
-     * <p>
+     * 
      * Save to commit removal. Removal cascades and deletes all descendants.
      */
     @Generated
@@ -223,7 +227,7 @@ public class CLSDataStore extends NSObject {
 
     /**
      * Save changes made in the data store.
-     * <p>
+     * 
      * Save new/modified/removed contexts, activities, etc. to the local store. In case of an error -[NSError userInfo]
      * will contain the object that caused the error under the CLSErrorObjectKey..
      */
@@ -267,7 +271,7 @@ public class CLSDataStore extends NSObject {
 
     /**
      * The data store provides read/write access to your app's ClassKit data.
-     * <p>
+     * 
      * Data written to the data store is automatically synced via iCloud across the user's devices.
      */
     @Generated
@@ -285,10 +289,13 @@ public class CLSDataStore extends NSObject {
 
     /**
      * Implement to fetch the current CLSActivity instance for your document to add progress to.
-     * <p>
+     * 
      * Gets the currently CLSActivity for the file. If no current activity exists, one will be created for you.
-     *
+     * 
      * @param url File url for the document.
+     * 
+     * 
+     *            API-Since: 14.5
      */
     @Generated
     @Selector("fetchActivityForURL:completion:")

@@ -31,6 +31,8 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * This defines the protocol for a delegate to receive updates about
  * different aspects of an accessory
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -39,8 +41,9 @@ import org.moe.natj.objc.ann.Selector;
 public interface HMAccessoryDelegate {
     /**
      * Informs the delegate when the associated service type of a service is modified.
-     *
+     * 
      * @param accessory Sender of the message.
+     * 
      * @param service   Service whose associated service type was modified.
      */
     @Generated
@@ -52,8 +55,9 @@ public interface HMAccessoryDelegate {
 
     /**
      * Informs the delegate when the name of a service is modfied.
-     *
+     * 
      * @param accessory Sender of the message.
+     * 
      * @param service   Service whose name was modified.
      */
     @Generated
@@ -65,9 +69,11 @@ public interface HMAccessoryDelegate {
 
     /**
      * Informs the delegate of a change in value of a characteristic.
-     *
+     * 
      * @param accessory      Sender of this message
+     * 
      * @param service        HMService that contains the characteristic whose value was modified.
+     * 
      * @param characteristic The characteristic whose value was changed.
      */
     @Generated
@@ -80,7 +86,7 @@ public interface HMAccessoryDelegate {
 
     /**
      * Informs the delegate when the name of the accessory is modified.
-     *
+     * 
      * @param accessory Sender of the message.
      */
     @Generated
@@ -92,7 +98,7 @@ public interface HMAccessoryDelegate {
 
     /**
      * Informs the delegate when the reachability of the accessory changes.
-     *
+     * 
      * @param accessory Sender of the message.
      */
     @Generated
@@ -105,7 +111,7 @@ public interface HMAccessoryDelegate {
     /**
      * Informs the delegate when the services on the accessory have been dynamically updated.
      * The services discovered are accessible via the 'services' property of the accessory.
-     *
+     * 
      * @param accessory Sender of the message.
      */
     @Generated
@@ -117,9 +123,11 @@ public interface HMAccessoryDelegate {
 
     /**
      * Informs the delegate when a profile is added to an accessory.
-     *
+     * 
      * @param accessory Sender of the message.
      * @param profile   The added profile.
+     * 
+     *                  API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -130,9 +138,11 @@ public interface HMAccessoryDelegate {
 
     /**
      * Informs the delegate when a profile is removed from an accessory.
-     *
+     * 
      * @param accessory Sender of the message.
      * @param profile   The removed profile.
+     * 
+     *                  API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -143,9 +153,12 @@ public interface HMAccessoryDelegate {
 
     /**
      * Informs the delegate when firmwareVersion has been changed for an accessory.
-     *
+     * 
      * @param accessory       Sender of the message.
+     * 
      * @param firmwareVersion The newly updated firmwareVersion.
+     * 
+     *                        API-Since: 11.0
      */
     @Generated
     @IsOptional

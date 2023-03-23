@@ -14,7 +14,7 @@ import org.moe.natj.objc.ann.Selector;
  * ------------------------------------------------------------------------------------------------------
  * ICDeviceBrowserDelegate
  * [@protocol] ICDeviceBrowserDelegate <NSObject>
- * <p>
+ * 
  * A delegate of ICDeviceBrowser must conform to ICDeviceBrowserDelegate protocol.
  */
 @Generated
@@ -24,11 +24,13 @@ import org.moe.natj.objc.ann.Selector;
 public interface ICDeviceBrowserDelegate {
     /**
      * deviceBrowser:deviceDidChangeName:
-     * <p>
+     * 
      * This message is sent if the name of a device changes.
-     * <p>
+     * 
      * This happens if the device module overrides the default name of the device reported by the device's transport
      * layer, or if the name of the filesystem volume mounted by the device is changed by the user.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -39,7 +41,7 @@ public interface ICDeviceBrowserDelegate {
 
     /**
      * deviceBrowser:deviceDidChangeSharingState:
-     * <p>
+     * 
      * This message is sent when the sharing state of a device has changes.
      * [@discusson] Any Image Capture client application can choose to share the device over the network using the
      * sharing or webSharing facility in Image Capture.
@@ -53,11 +55,13 @@ public interface ICDeviceBrowserDelegate {
 
     /**
      * deviceBrowser:didAddDevice:moreComing:
-     * <p>
+     * 
      * This message is sent to the delegate to inform that a device has been added.
-     * <p>
+     * 
      * If several devices are found during the initial search, then this message is sent once for each device with the
      * value of 'moreComing' set to YES in each message except the last one.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("deviceBrowser:didAddDevice:moreComing:")
@@ -65,11 +69,13 @@ public interface ICDeviceBrowserDelegate {
 
     /**
      * deviceBrowser:didRemoveDevice:moreGoing:
-     * <p>
+     * 
      * This message is sent to the delegate to inform that a device has been removed.
-     * <p>
+     * 
      * If several devices are removed at the same time, then this message is sent once for each device with the value of
      * 'moreGoing' set to YES in each message except the last one.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("deviceBrowser:didRemoveDevice:moreGoing:")
@@ -77,13 +83,15 @@ public interface ICDeviceBrowserDelegate {
 
     /**
      * deviceBrowserDidCancelSuspendOperations:
-     * <p>
+     * 
      * This message is sent to the delegate to inform that operations on devices in the browser have resumed before the
      * suspension timeout.
-     * <p>
+     * 
      * All communcation with the attached device will remain available as the application was switched back to the
      * foreground before the
      * suspension timeout.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -94,10 +102,12 @@ public interface ICDeviceBrowserDelegate {
 
     /**
      * deviceBrowserDidResumeOperations:
-     * <p>
+     * 
      * This message is sent to the delegate to inform that operations on devices in the browser have resumed.
-     * <p>
+     * 
      * All communcation with the attached device has been resumed as the application has now entered the foreground.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -108,13 +118,16 @@ public interface ICDeviceBrowserDelegate {
 
     /**
      * deviceBrowserDidSuspendOperations:
-     * <p>
+     * 
      * This message is sent to the delegate to inform that operations on devices in the browser have been suspended.
-     * <p>
+     * 
      * All communcation with the attached device will remain suspended until the application has entered the foreground.
      * In no way does this suspension modify the state of the connected device, nor does it issue a close session of any
      * kind. State should always be
      * managed by the application.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional
@@ -125,13 +138,15 @@ public interface ICDeviceBrowserDelegate {
 
     /**
      * deviceBrowserWillSuspendOperations:
-     * <p>
+     * 
      * This message is sent to the delegate to inform that operations on devices in the browser will be suspended
      * shortly.
-     * <p>
+     * 
      * Attached devices may require time to prepare the device for suspended communication. This delegate method is
      * called
      * when the application is switched into the background.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @IsOptional

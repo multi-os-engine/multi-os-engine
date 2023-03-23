@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -122,6 +125,13 @@ public class NSURLSession extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use +[NSURLSession sessionWithConfiguration:] or other class methods to create
+     * instances
+     */
+    @Deprecated
     @Generated
     @Owned
     @Selector("new")
@@ -266,10 +276,10 @@ public class NSURLSession extends NSObject {
      * to run to completion. New tasks may not be created. The session
      * will continue to make delegate callbacks until URLSession:didBecomeInvalidWithError:
      * has been issued.
-     * <p>
+     * 
      * -finishTasksAndInvalidate and -invalidateAndCancel do not
      * have any effect on the shared session singleton.
-     * <p>
+     * 
      * When invalidating a background session, it is not safe to create another background
      * session with the same identifier until URLSession:didBecomeInvalidWithError: has
      * been issued.
@@ -279,8 +289,7 @@ public class NSURLSession extends NSObject {
     public native void finishTasksAndInvalidate();
 
     /**
-     * flush storage to disk and clear transient network caches. Invokes completionHandler() on the delegate queue if
-     * not nil.
+     * flush storage to disk and clear transient network caches. Invokes completionHandler() on the delegate queue.
      */
     @Generated
     @Selector("flushWithCompletionHandler:")
@@ -289,6 +298,8 @@ public class NSURLSession extends NSObject {
 
     /**
      * invokes completionHandler with all outstanding tasks.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("getAllTasksWithCompletionHandler:")
@@ -303,6 +314,13 @@ public class NSURLSession extends NSObject {
     public native void getTasksWithCompletionHandler(
             @ObjCBlock(name = "call_getTasksWithCompletionHandler") Block_getTasksWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use +[NSURLSession sessionWithConfiguration:] or other class methods to create
+     * instances
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSURLSession init();
@@ -319,7 +337,7 @@ public class NSURLSession extends NSObject {
 
     /**
      * empty all cookies, cache and credential stores, removes disk files, issues -flushWithCompletionHandler:. Invokes
-     * completionHandler() on the delegate queue if not nil.
+     * completionHandler() on the delegate queue.
      */
     @Generated
     @Selector("resetWithCompletionHandler:")
@@ -344,6 +362,8 @@ public class NSURLSession extends NSObject {
 
     /**
      * Creates a bidirectional stream task to a given host and port.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("streamTaskWithHostName:port:")
@@ -352,7 +372,12 @@ public class NSURLSession extends NSObject {
     /**
      * Creates a bidirectional stream task with an NSNetService to identify the endpoint.
      * The NSNetService will be resolved before any IO completes.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_connection_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @Selector("streamTaskWithNetService:")
     public native NSURLSessionStreamTask streamTaskWithNetService(NSNetService service);
@@ -480,6 +505,8 @@ public class NSURLSession extends NSObject {
      * Clients who want to add custom protocols can do so by directly adding headers with the key Sec-WebSocket-Protocol
      * and a comma separated list of protocols they wish to negotiate with the server. The custom HTTP headers provided
      * by the client will remain unchanged for the handshake with the server.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("webSocketTaskWithRequest:")
@@ -487,6 +514,8 @@ public class NSURLSession extends NSObject {
 
     /**
      * Creates a WebSocket task given the url. The given url must have a ws or wss scheme.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("webSocketTaskWithURL:")
@@ -495,9 +524,11 @@ public class NSURLSession extends NSObject {
     /**
      * Creates a WebSocket task given the url and an array of protocols. The protocols will be used in the WebSocket
      * handshake to
-     * negotiate a prefered protocol with the server
+     * negotiate a preferred protocol with the server
      * Note - The protocol will not affect the WebSocket framing. More details on the protocol can be found by reading
      * the WebSocket RFC
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("webSocketTaskWithURL:protocols:")

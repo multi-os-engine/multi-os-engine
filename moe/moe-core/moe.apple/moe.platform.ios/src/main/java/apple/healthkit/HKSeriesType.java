@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKSeriesType
- * <p>
+ * 
  * Represents a type of HKSeriesSample
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("HealthKit")
@@ -201,6 +203,9 @@ public class HKSeriesType extends HKSampleType {
     @Selector("clinicalTypeForIdentifier:")
     public static native HKClinicalType clinicalTypeForIdentifier(String identifier);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("heartbeatSeriesType")
     public static native HKSeriesType heartbeatSeriesType();
@@ -208,4 +213,8 @@ public class HKSeriesType extends HKSampleType {
     @Generated
     @Selector("electrocardiogramType")
     public static native HKElectrocardiogramType electrocardiogramType();
+
+    @Generated
+    @Selector("visionPrescriptionType")
+    public static native HKPrescriptionType visionPrescriptionType();
 }

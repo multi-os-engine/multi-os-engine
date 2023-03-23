@@ -36,6 +36,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -120,12 +123,12 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
      * that use Core Data with CloudKit and uploads them to CloudKit. These records are "fully saturated"
      * in that they have a representative value set for every field Core Data might serialize for the given
      * managed object model.
-     * <p>
+     * 
      * After records are successfully uploaded the schema will be visible in the CloudKit dashboard and
      * the representative records will be deleted.
-     * <p>
+     * 
      * This method returns YES if these operations succeed, or NO and the underlying error if they fail.
-     * <p>
+     * 
      * Note: This method also validates the managed object model in use for a store, so a validation error
      * may be returned if the model is not valid for use with CloudKit.
      */
@@ -169,9 +172,6 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
     public static native NSPersistentCloudKitContainer persistentContainerWithNameManagedObjectModel(String name,
             NSManagedObjectModel model);
 
-    /**
-     * These methods provide access to the underlying CKRecord, or CKRecordID, backing a given NSManagedObjectID.
-     */
     @Generated
     @Selector("recordForManagedObjectID:")
     public native CKRecord recordForManagedObjectID(NSManagedObjectID managedObjectID);
@@ -211,19 +211,24 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("canDeleteRecordForManagedObjectWithID:")
     public native boolean canDeleteRecordForManagedObjectWithID(NSManagedObjectID objectID);
 
     /**
      * canModifyManagedObjectsInStore indicates whether or not a given store is mutable when used with CloudKit.
-     * <p>
+     * 
      * This method return YES if the current user has write permissions to the CKDatabase that backs the store.
-     * <p>
+     * 
      * For example:
      * - When using the Public database, devices without an iCloud account can read data but not write any.
      * - When using the Private database, this method always returns YES, even if no iCloud account is present on the
      * device.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("canModifyManagedObjectsInStore:")
@@ -233,10 +238,10 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
      * canUpdateRecordForManagedObjectWithID / canDeleteRecordForManagedObjectWithID indicate whether or not a given
      * object assigned the provided NSManagedObjectID is mutable with respect to the instance of CKRecord that backs it
      * with CloudKit.
-     * <p>
+     * 
      * In order for canUpdateRecordForManagedObjectWithID / canDeleteRecordForManagedObjectWithID to return YES,
      * -[NSPersistentCloudKitContainer canModifyManagedObjectsInStore] must also be YES.
-     * <p>
+     * 
      * Returns YES if any of the following conditions are true:
      * - The provided objectID is a temporary objectID
      * - The provided objectID is assigned to a store not backed by a CKDatabase
@@ -246,6 +251,8 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
      * - The object has yet to be uploaded to CloudKit (it will be assigned to the current user)
      * - The object has already been uploaded to CloudKit and is owned (indicated by CKRecord.creatorUserRecordID) by
      * the current user
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("canUpdateRecordForManagedObjectWithID:")
@@ -253,12 +260,14 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
 
     /**
      * Accept a sharing invitation with the given share metadata.
-     * <p>
+     * 
      * The provided persistent store must be configured to use the Shared database scope. If provided the completion
      * block will be invoked
      * once all operations required to accept the share invitations have finished with the resulting CKShareMetadata
      * objects or with an
      * error if one occurs.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("acceptShareInvitationsFromMetadata:intoPersistentStore:completion:")
@@ -276,9 +285,11 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
 
     /**
      * Fetches a set of CKShareParticipant objects from the CKDatabase associated with the given persistent store.
-     * <p>
+     * 
      * The completion block will be invoked with the result of the CKFetchShareParticipantsOperation and the retrieved
      * participants (if any).
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("fetchParticipantsMatchingLookupInfos:intoPersistentStore:completion:")
@@ -297,9 +308,11 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
     /**
      * Fetches all known CKShare records in the given persistent store (or all persistent stores in the persistent cloud
      * container if none is set).
-     * <p>
+     * 
      * This method does not to any network work to attempt to discover additional zones or shares in the CKDatabase that
      * is associated with the persistent store.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("fetchSharesInPersistentStore:error:")
@@ -310,10 +323,12 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
      * Returns the associated CKShare object for a given managed object. If the object's backing CKRecord resides in a
      * CKRecordZone that
      * is currently shared a CKShare will be returned.
-     * <p>
+     * 
      * If the object is not associated with a shared record zone, or the object has not yet been exported to CloudKit
      * (and it's zone is not known),
      * it will not have an entry in the resulting dictionary.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("fetchSharesMatchingObjectIDs:error:")
@@ -322,10 +337,12 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
 
     /**
      * Saves the given CKShare object to the persistent cloud container's metadata in the provided persistent store.
-     * <p>
+     * 
      * If provided the completion block will be invoked once the share has been saved to the corresponding CKDatabase
      * with the
      * result of the operation.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("persistUpdatedShare:inPersistentStore:completion:")
@@ -342,8 +359,10 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
     /**
      * Purges a zone from the CKDatabase associated with the given persistent store (or all active CKDatabases in the
      * persistent cloud container's stores).
-     * <p>
+     * 
      * If provided the completion block will be invoked once per store with the result of the purge operation.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("purgeObjectsAndRecordsInZoneWithID:inPersistentStore:completion:")
@@ -362,23 +381,25 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
     /**
      * Use this method to share a set of managed objects to either a new CKShare or an existing one if specified as the
      * 'share' parameter.
-     * <p>
+     * 
      * - managedObjects - the set of objects to be shared. A deep traversal will be performed among the objects and any
      * related objects will also be shared.
      * - share - The existing share in which to share the objects, or nil if a new one should be created for them
      * - completion - A completion block when the share is created and the objects are assigned to it (not necessarily
      * when the objects have been exported to the share)
-     * <p>
+     * 
      * This method will fail if:
-     * <p>
+     * 
      * 1. Any of the objects in 'managedObjects' or those discovered by traversal are already shared
      * 2. Any of the objects in 'managedObjects' are from persistent stores which do not support sharing (for example
      * those using CKDatabaseScopePublic)
      * 3. The current device conditions do not support sharing, for example if there is no CloudKit account on the
      * device, or if NSPersistentCloudKitContainer has failed to initialize.
-     * <p>
+     * 
      * The completion block is meant to be used directly with UICloudSharingController's preparation block completion
      * handler.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("shareManagedObjects:toShare:completion:")

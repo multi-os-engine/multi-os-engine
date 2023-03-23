@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_interface_radio_type_t
- * <p>
+ * 
  * Interface radio types represent the radio technology for a network link.
  */
 @Generated

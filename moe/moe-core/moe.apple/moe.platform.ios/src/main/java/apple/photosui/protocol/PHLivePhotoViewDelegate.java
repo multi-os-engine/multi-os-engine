@@ -25,12 +25,19 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.uikit.UITouch;
 
+/**
+ * API-Since: 9.1
+ */
 @Generated
 @Library("PhotosUI")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PHLivePhotoViewDelegate")
 public interface PHLivePhotoViewDelegate {
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @IsOptional
     @Selector("livePhotoView:didEndPlaybackWithStyle:")
@@ -38,6 +45,9 @@ public interface PHLivePhotoViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @IsOptional
     @Selector("livePhotoView:willBeginPlaybackWithStyle:")
@@ -45,10 +55,27 @@ public interface PHLivePhotoViewDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @IsOptional
     @Selector("livePhotoView:canBeginPlaybackWithStyle:")
     default boolean livePhotoViewCanBeginPlaybackWithStyle(PHLivePhotoView livePhotoView, @NInt long playbackStyle) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * This will be called before gestureRecognizer get touch info (point location), so we need to provide the touch to
+     * delegate to decide.
+     * 
+     * API-Since: 9.1
+     */
+    @Generated
+    @IsOptional
+    @Selector("livePhotoView:extraMinimumTouchDurationForTouch:withStyle:")
+    default double livePhotoViewExtraMinimumTouchDurationForTouchWithStyle(PHLivePhotoView livePhotoView, UITouch touch,
+            @NInt long playbackStyle) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

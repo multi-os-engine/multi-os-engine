@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A hypothesized text form of a speech recording
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Speech")
@@ -197,14 +199,24 @@ public class SFTranscription extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * Measures average pause between words (in seconds)
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.5
+     * Deprecated-Message: averagePauseDuration is moved to SFSpeechRecognitionMetadata
      */
+    @Deprecated
     @Generated
     @Selector("averagePauseDuration")
     public native double averagePauseDuration();
 
     /**
      * Measures the number of words spoken per minute
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.5
+     * Deprecated-Message: speakingRate is moved to SFSpeechRecognitionMetadata
      */
+    @Deprecated
     @Generated
     @Selector("speakingRate")
     public native double speakingRate();

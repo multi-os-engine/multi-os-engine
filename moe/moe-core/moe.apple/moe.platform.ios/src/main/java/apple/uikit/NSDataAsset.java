@@ -46,6 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * NSDataAsset represents the contents of data entries in your asset catalog.
  * Data assets are not in the same class of stored content as images, so you cannot use a data asset to get image data
  * for an image.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("UIKit")

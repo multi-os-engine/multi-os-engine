@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNPhysicsConeTwistJoint
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("SceneKit")

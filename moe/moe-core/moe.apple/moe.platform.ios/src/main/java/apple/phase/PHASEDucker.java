@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEDucker
- * <p>
+ * 
  * A PHASEDucker is used to describe ducking behavior across different groups.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -47,7 +49,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * activate
-     * <p>
+     * 
      * Activates the ducker
      */
     @Generated
@@ -66,7 +68,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] attackCurve
-     * <p>
+     * 
      * The type of curve function to use during the attack phase of gain reduction.
      */
     @Generated
@@ -76,7 +78,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] attackTime
-     * <p>
+     * 
      * The time for the attenuation gain to ramp into effect.
      * [@note]
      * The attack time is scaled by unitsPerSecond internally, so can be provided at the client's native time scale.
@@ -109,7 +111,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * deactivate
-     * <p>
+     * 
      * Deactivates the ducker
      */
     @Generated
@@ -126,7 +128,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
@@ -142,7 +144,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] identifier
-     * <p>
+     * 
      * The identifier that uniquely represents this ducker.
      */
     @Generated
@@ -155,7 +157,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * initWithSourceGroups:targetGroups:attenuation:attackTime:releaseTime:
-     * <p>
+     * 
      * Whenever a generator node from any source group plays, all the generator nodes in the target groups will be
      * ducked by the given gain using the given attack and release times.
      * [@note]
@@ -166,22 +168,30 @@ public class PHASEDucker extends NSObject {
      * previously triggered.
      * Dealloc'ing a ducker will force the ducker into its release phase if it is actively ducking and remove it from
      * the system when it finishes.
-     *
-     * @param engine       The engine to register this ducker with.
-     * @param sourceGroups The source groups that will trigger the ducker when a sound in one of the source groups
+     * 
+     * @param engine
+     *                     The engine to register this ducker with.
+     * @param sourceGroups
+     *                     The source groups that will trigger the ducker when a sound in one of the source groups
      *                     starts playback.
-     * @param targetGroups The target groups that will be ducked when a sound in one of the source groups triggers the
+     * @param targetGroups
+     *                     The target groups that will be ducked when a sound in one of the source groups triggers the
      *                     ducker.
-     * @param gain         The linear gain scalar to apply when the ducker is engaged. 0 means full attenuation. 1 is no
+     * @param gain
+     *                     The linear gain scalar to apply when the ducker is engaged. 0 means full attenuation. 1 is no
      *                     attenuation. Values are clamped to the range [0, 1].
-     * @param attackTime   The time for the attenuation gain to ramp into effect.
+     * @param attackTime
+     *                     The time for the attenuation gain to ramp into effect.
      *                     This value is scaled by unitsPerSecond internally, so can be provided at the client's native
      *                     time scale.
-     * @param releaseTime  The time for the ducked sounds to ramp back to their original level.
+     * @param releaseTime
+     *                     The time for the ducked sounds to ramp back to their original level.
      *                     This value is scaled by unitsPerSecond internally, so can be provided at the client's native
      *                     time scale.
-     * @param attackCurve  The type of curve function to use during the attack phase of gain reduction.
-     * @param releaseCurve The type of curve function to use during the release phase of gain reduction.
+     * @param attackCurve
+     *                     The type of curve function to use during the attack phase of gain reduction.
+     * @param releaseCurve
+     *                     The type of curve function to use during the release phase of gain reduction.
      */
     @Generated
     @Selector("initWithEngine:sourceGroups:targetGroups:gain:attackTime:releaseTime:attackCurve:releaseCurve:")
@@ -204,7 +214,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] active
-     * <p>
+     * 
      * YES if the ducker is active; otherwise, NO.
      */
     @Generated
@@ -226,7 +236,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] releaseCurve
-     * <p>
+     * 
      * The type of curve function to use during the release phase of gain reduction.
      */
     @Generated
@@ -236,7 +246,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] releaseTime
-     * <p>
+     * 
      * The time for the ducked sounds to ramp back to their original level.
      * [@note]
      * The release time is scaled by unitsPerSecond internally, so can be provided at the client's native time scale.
@@ -259,7 +269,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] sourceGroups
-     * <p>
+     * 
      * The source groups that will trigger the ducker when a sound in one of the source groups starts playback.
      */
     @Generated
@@ -272,7 +282,7 @@ public class PHASEDucker extends NSObject {
 
     /**
      * [@property] targetGroups
-     * <p>
+     * 
      * The target groups that will be ducked when a sound in one of the source groups triggers the ducker.
      */
     @Generated

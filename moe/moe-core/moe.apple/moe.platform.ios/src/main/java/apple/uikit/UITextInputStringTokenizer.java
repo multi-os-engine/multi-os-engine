@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A recommended base implementation of the tokenizer protocol. Subclasses are responsible
  * for handling directions and granularities affected by layout.
+ * 
+ * API-Since: 3.2
  */
 @Generated
 @Library("UIKit")

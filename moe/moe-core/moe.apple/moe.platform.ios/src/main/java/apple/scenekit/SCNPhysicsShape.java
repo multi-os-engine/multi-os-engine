@@ -47,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNPhysicsShape
- * <p>
+ * 
  * SCNPhysicsShape represents the shape of a physics body.
  */
 @Generated
@@ -209,6 +209,8 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
 
     /**
      * Returns the options requested at init time
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("options")
@@ -217,6 +219,8 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     /**
      * Returns the object from which this physics shape was created. It can be an SCNGeometry*, an SCNNode* or in
      * NSArray* of subshapes.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("sourceObject")
@@ -232,6 +236,8 @@ public class SCNPhysicsShape extends NSObject implements NSCopying, NSSecureCodi
     /**
      * If the physics shape was created from an array of sub shapes, transforms contains the associated transforms as
      * SCNMatrix4 wrapped in NSValue.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("transforms")

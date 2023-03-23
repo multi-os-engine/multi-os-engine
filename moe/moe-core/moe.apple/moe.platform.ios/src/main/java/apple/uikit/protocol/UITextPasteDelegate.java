@@ -18,18 +18,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * UIKit will handle the state management for pasting several long during item providers
  * if necessary. While the pasting is ongoing, the state of the text control will not
  * be altered, and only at the end the resulting string will be pasted at the specified location.
- * <p>
+ * 
  * The location of the paste is referenced from the time the paste was initiated. If the
  * text changes in the mean time, this might not be at the same location as before.
  * If the old location is out of bounds of the new text, it will be clamped to the range of the
  * current state of the text when the paste actually occurs.
- * <p>
+ * 
  * The ranges passed to the 2 optional methods will reflect the actual correct range at the
  * time of actually pasting the resulting string.
- * <p>
+ * 
  * UITextView and UITextField do not have an explicit .pasteConfiguration set, but will
  * behave like they have one set implicitly depending on a few factors:
- * <p>
+ * 
  * - if the view allows editing text attributes (.allowsEditingTextAttributes == YES),
  * it accepts items that can be read as:
  * - plain strings
@@ -38,9 +38,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * - if the view does not allow editing text attributes (.allowsEditingTextAttributes == NO),
  * it accepts items that can be read as:
  * - plain strings
- * <p>
+ * 
  * If you modify your text control's pasteConfiguration, you should probably also use
  * this delegate to properly handle any custom items you have there.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("UIKit")
@@ -99,12 +101,12 @@ public interface UITextPasteDelegate {
      * Will be called for each item in the paste.
      * You *must* eventually call on of the result methods (`setFooResult:`
      * or `discardResult`) on the given UITextPasteItem.
-     * <p>
+     * 
      * Note: It is not required to call these result methods in the
      * same scope as the transformPasteItem:. You can pass these on to any
      * async handling code (see: NSItemProvider), hold on to them through
      * a closure and/or invoke them in a completion block.
-     * <p>
+     * 
      * Note: You can use this UITextPasteItem on any thread,
      * but textPasteConfigurationSupporting:transformPasteItem: will be called
      * on the main thread.

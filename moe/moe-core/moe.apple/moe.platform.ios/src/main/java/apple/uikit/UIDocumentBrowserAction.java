@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * UIDocumentBrowserAction instances are custom, contextual actions that are presented to the user by a
  * UIDocumentBrowserViewController.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("UIKit")

@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Purgeable Data ***************
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("Foundation")

@@ -46,7 +46,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNLevelOfDetail
- * <p>
+ * 
  * SCNLevelOfDetail represents a level of detail of a geometry.
  */
 @Generated
@@ -135,9 +135,9 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * levelOfDetailWithGeometry:screenSpaceRadius:
-     * <p>
+     * 
      * This is a convenience method to create a level of detail with a coverage radius threshold mode.
-     *
+     * 
      * @param geometry The geometry for this level of detail. nil is supported and indicates that no geometry should be
      *                 rendered for this level of detail.
      * @param radius   The maximum radius in screen-space that this level of detail is suitable for. The coverage radius
@@ -150,9 +150,9 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * levelOfDetailWithGeometry:worldSpaceDistance:
-     * <p>
+     * 
      * This is a convenience method to create a level of detail with a distance threshold mode.
-     *
+     * 
      * @param geometry The geometry for this level of detail. nil is supported and indicates that no geometry should be
      *                 rendered for this level of detail.
      * @param distance The minimum distance to the current point of view that this level of detail is suitable for.
@@ -204,7 +204,7 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * [@property] geometry
-     * <p>
+     * 
      * Returns the geometry of the receiver.
      */
     @Generated
@@ -221,7 +221,7 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * [@property] screenSpaceRadius
-     * <p>
+     * 
      * Returns the screen space radius of the receiver if any, 0 otherwise.
      */
     @Generated
@@ -237,7 +237,7 @@ public class SCNLevelOfDetail extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * [@property] worldSpaceDistance
-     * <p>
+     * 
      * Returns the world space distance of the receiver if any, 0 otherwise.
      */
     @Generated

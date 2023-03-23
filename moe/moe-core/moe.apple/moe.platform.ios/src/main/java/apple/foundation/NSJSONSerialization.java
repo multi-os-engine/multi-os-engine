@@ -40,12 +40,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A class for converting JSON to Foundation objects and converting Foundation objects to JSON.
- * <p>
+ * 
  * An object that may be converted to JSON must have the following properties:
  * - Top level object is an NSArray or NSDictionary
  * - All objects are NSString, NSNumber, NSArray, NSDictionary, or NSNull
  * - All dictionary keys are NSStrings
  * - NSNumbers are not NaN or infinity
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("Foundation")

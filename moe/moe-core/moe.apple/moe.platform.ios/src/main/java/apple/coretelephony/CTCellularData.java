@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("CoreTelephony")
 @Runtime(ObjCRuntime.class)
@@ -151,10 +154,12 @@ public class CTCellularData extends NSObject {
 
     /**
      * cellularDataRestrictionDidUpdateNotifier
-     * <p>
+     * 
      * A block that will be dispatched on the default priority global dispatch queue the first time
      * app sets the callback handler and everytime there is a change in cellular data allowed policy
      * for the app.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("cellularDataRestrictionDidUpdateNotifier")
@@ -165,6 +170,9 @@ public class CTCellularData extends NSObject {
     @Selector("init")
     public native CTCellularData init();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("restrictedState")
     @NUInt
@@ -172,10 +180,12 @@ public class CTCellularData extends NSObject {
 
     /**
      * cellularDataRestrictionDidUpdateNotifier
-     * <p>
+     * 
      * A block that will be dispatched on the default priority global dispatch queue the first time
      * app sets the callback handler and everytime there is a change in cellular data allowed policy
      * for the app.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCellularDataRestrictionDidUpdateNotifier:")

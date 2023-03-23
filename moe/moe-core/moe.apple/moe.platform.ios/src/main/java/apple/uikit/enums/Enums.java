@@ -22,17 +22,43 @@ import org.moe.natj.general.ann.Generated;
 public final class Enums {
     /**
      * Replacement character is used for attachments
+     * 
+     * API-Since: 7.0
      */
     @Generated public static final int NSAttachmentCharacter = 0x0000FFFC;
     /**
      * segment index for no selected segment
      */
     @Generated public static final int UISegmentedControlNoSegment = 0xFFFFFFFF;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 9.0
+     */
     @Deprecated @Generated public static final int NSControlCharacterZeroAdvancementAction = 0x00000001;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 9.0
+     */
     @Deprecated @Generated public static final int NSControlCharacterWhitespaceAction = 0x00000002;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 9.0
+     */
     @Deprecated @Generated public static final int NSControlCharacterHorizontalTabAction = 0x00000004;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 9.0
+     */
     @Deprecated @Generated public static final int NSControlCharacterLineBreakAction = 0x00000008;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 9.0
+     */
     @Deprecated @Generated public static final int NSControlCharacterParagraphBreakAction = 0x00000010;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 9.0
+     */
     @Deprecated @Generated public static final int NSControlCharacterContainerBreakAction = 0x00000020;
 
     @Generated

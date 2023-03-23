@@ -11,6 +11,9 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("IntentsUI")
 @Runtime(ObjCRuntime.class)
@@ -18,7 +21,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface INUIEditVoiceShortcutViewControllerDelegate {
     /**
      * Called if the user deletes the voice shortcut.
-     * <p>
+     * 
      * Your implementation of this method should dismiss the view controller.
      */
     @Generated
@@ -28,7 +31,7 @@ public interface INUIEditVoiceShortcutViewControllerDelegate {
 
     /**
      * Called if the user updates the voice shortcut, with either the successfully-updated voice shortcut, or an error.
-     * <p>
+     * 
      * Your implementation of this method should dismiss the view controller.
      */
     @Generated
@@ -38,7 +41,7 @@ public interface INUIEditVoiceShortcutViewControllerDelegate {
 
     /**
      * Called if the user cancelled; no changes were made to the voice shortcut.
-     * <p>
+     * 
      * Your implementation of this method should dismiss the view controller.
      */
     @Generated

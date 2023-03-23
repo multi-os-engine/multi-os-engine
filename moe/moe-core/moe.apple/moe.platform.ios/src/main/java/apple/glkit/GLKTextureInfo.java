@@ -42,7 +42,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Immutable Texture Object Data
+ * 
+ * API-Since: 5.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
  */
+@Deprecated
 @Generated
 @Library("GLKit")
 @Runtime(ObjCRuntime.class)

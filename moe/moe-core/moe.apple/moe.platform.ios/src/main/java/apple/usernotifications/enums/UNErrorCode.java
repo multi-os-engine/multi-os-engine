@@ -19,22 +19,62 @@ package apple.usernotifications.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class UNErrorCode {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long NotificationsNotAllowed = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long AttachmentInvalidURL = 0x0000000000000064L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long AttachmentUnrecognizedType = 0x0000000000000065L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long AttachmentInvalidFileSize = 0x0000000000000066L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long AttachmentNotInDataStore = 0x0000000000000067L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long AttachmentMoveIntoDataStoreFailed = 0x0000000000000068L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long AttachmentCorrupt = 0x0000000000000069L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long NotificationInvalidNoDate = 0x0000000000000578L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long NotificationInvalidNoContent = 0x0000000000000579L;
 
     @Generated
     private UNErrorCode() {
     }
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long ContentProvidingObjectNotAllowed = 0x00000000000005DCL;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long ContentProvidingInvalid = 0x00000000000005DDL;
+    /**
+     * API-Since: 10.0
+     */
+    @Generated @NInt public static final long BadgeInputInvalid = 0x0000000000000640L;
 }

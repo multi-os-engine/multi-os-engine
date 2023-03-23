@@ -15,6 +15,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * This protocol allows a class to be constructed from a variety of binary representations.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Foundation")

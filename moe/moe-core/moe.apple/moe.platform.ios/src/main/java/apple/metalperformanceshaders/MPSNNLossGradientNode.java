@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Node representing a @ref MPSNNLossGradient kernel
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -116,7 +118,7 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * Init a gradient loss node from multiple images
-     *
+     * 
      * @param sourceNodes The MPSNNImageNode representing the source MPSImages for the filter
      *                    Node0: input gradients, Node1: logits, Node2: labels, Node3: weights
      * @return A new MPSNNFilter node.
@@ -179,7 +181,7 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * Init a gradient loss node from multiple images
-     *
+     * 
      * @param sourceNodes The MPSNNImageNode representing the source MPSImages for the filter
      *                    Node0: logits, Node1: labels, Node2: weights
      * @return A new MPSNNFilter node.
@@ -197,7 +199,7 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * [@property] propertyCallBack
-     * <p>
+     * 
      * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
      * Default value: nil.
      */
@@ -220,7 +222,7 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * [@property] propertyCallBack
-     * <p>
+     * 
      * Optional callback option - setting this allows the scalar weight value to be changed dynamically at encode time.
      * Default value: nil.
      */
@@ -245,6 +247,9 @@ public class MPSNNLossGradientNode extends MPSNNGradientFilterNode {
     @Selector("weight")
     public native float weight();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("reduceAcrossBatch")
     public native boolean reduceAcrossBatch();

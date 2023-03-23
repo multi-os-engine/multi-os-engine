@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCEmbeddingDescriptor
- * <p>
+ * 
  * The MLCEmbeddingDescriptor specifies an embedding layer descriptor
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -107,7 +109,7 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] embeddingCount
-     * <p>
+     * 
      * The size of the dictionary
      */
     @Generated
@@ -116,7 +118,7 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] embeddingDimension
-     * <p>
+     * 
      * The dimension of embedding vectors
      */
     @Generated
@@ -155,7 +157,7 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] maximumNorm
-     * <p>
+     * 
      * A float, if set, in the forward pass only, the selected embedding vectors will be re-normalized to have an Lp
      * norm of less than maximumNorm in the dictionary, Default=nil
      */
@@ -170,7 +172,7 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] pNorm
-     * <p>
+     * 
      * A float, the p of the Lp norm, can be set to infinity norm by [NSNumber numberWithFloat:INFINITY]. Default=2.0
      */
     @Generated
@@ -179,7 +181,7 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] paddingIndex
-     * <p>
+     * 
      * If set, the embedding vector at paddingIndex is initialized with zero and will not be updated in gradient pass,
      * Default=nil
      */
@@ -197,7 +199,7 @@ public class MLCEmbeddingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scalesGradientByFrequency
-     * <p>
+     * 
      * If set, the gradients are scaled by the inverse of the frequency of the words in batch before the weight update.
      * Default=NO
      */

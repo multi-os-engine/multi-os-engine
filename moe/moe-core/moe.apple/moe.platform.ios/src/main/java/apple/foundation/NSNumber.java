@@ -19,11 +19,6 @@ package apple.foundation;
 import apple.NSObject;
 import apple.cloudkit.protocol.CKRecordValue;
 import apple.coredata.protocol.NSFetchRequestResult;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
-import apple.coregraphics.struct.CGVector;
 import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.coremedia.struct.CMTime;
 import apple.coremedia.struct.CMTimeMapping;
@@ -58,6 +53,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.coremedia.struct.CMVideoDimensions;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
+import apple.corefoundation.struct.CGVector;
 
 @Generated
 @Library("Foundation")
@@ -168,6 +169,9 @@ public class NSNumber extends NSValue implements CKRecordValue, NSFetchRequestRe
     @Selector("numberWithInt:")
     public static native NSNumber numberWithInt(int value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("numberWithInteger:")
     public static native NSNumber numberWithInteger(@NInt long value);
@@ -192,6 +196,9 @@ public class NSNumber extends NSValue implements CKRecordValue, NSFetchRequestRe
     @Selector("numberWithUnsignedInt:")
     public static native NSNumber numberWithUnsignedInt(int value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("numberWithUnsignedInteger:")
     public static native NSNumber numberWithUnsignedInteger(@NUInt long value);
@@ -374,6 +381,9 @@ public class NSNumber extends NSValue implements CKRecordValue, NSFetchRequestRe
     @Selector("initWithInt:")
     public native NSNumber initWithInt(int value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithInteger:")
     public native NSNumber initWithInteger(@NInt long value);
@@ -398,6 +408,9 @@ public class NSNumber extends NSValue implements CKRecordValue, NSFetchRequestRe
     @Selector("initWithUnsignedInt:")
     public native NSNumber initWithUnsignedInt(int value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithUnsignedInteger:")
     public native NSNumber initWithUnsignedInteger(@NUInt long value);
@@ -418,6 +431,9 @@ public class NSNumber extends NSValue implements CKRecordValue, NSFetchRequestRe
     @Selector("intValue")
     public native int intValue();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("integerValue")
     @NInt
@@ -458,6 +474,9 @@ public class NSNumber extends NSValue implements CKRecordValue, NSFetchRequestRe
     @Selector("unsignedIntValue")
     public native int unsignedIntValue();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("unsignedIntegerValue")
     @NUInt
@@ -479,4 +498,8 @@ public class NSNumber extends NSValue implements CKRecordValue, NSFetchRequestRe
     @Generated
     @Selector("valueWithDirectionalEdgeInsets:")
     public static native NSValue valueWithDirectionalEdgeInsets(@ByValue NSDirectionalEdgeInsets insets);
+
+    @Generated
+    @Selector("valueWithCMVideoDimensions:")
+    public static native NSValue valueWithCMVideoDimensions(@ByValue CMVideoDimensions dimensions);
 }

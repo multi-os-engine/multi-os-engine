@@ -37,6 +37,8 @@ public interface GKTurnBasedEventListener {
     /**
      * If Game Center initiates a match the developer should create a GKTurnBasedMatch from playersToInvite and present
      * a GKTurnbasedMatchmakerViewController.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -47,6 +49,10 @@ public interface GKTurnBasedEventListener {
 
     /**
      * Deprecated
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: use didRequestMatchWithOtherPlayers
      */
     @Generated
     @IsOptional
@@ -68,6 +74,8 @@ public interface GKTurnBasedEventListener {
 
     /**
      * this is called when an exchange is canceled by the sender.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -80,6 +88,8 @@ public interface GKTurnBasedEventListener {
     /**
      * called when all players either respond or timeout responding to this request. This is sent to both the turn
      * holder and the initiator of the exchange
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -91,6 +101,8 @@ public interface GKTurnBasedEventListener {
 
     /**
      * this is called when a player receives an exchange request from another player.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -109,6 +121,8 @@ public interface GKTurnBasedEventListener {
      * another player saved the match data
      * Because of this the app needs to be prepared to handle this even while the player is taking a turn in an existing
      * match. The boolean indicates whether this event launched or brought to forground the app.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -122,6 +136,8 @@ public interface GKTurnBasedEventListener {
      * Called when a player chooses to quit a match and that player has the current turn. The developer should call
      * participantQuitInTurnWithOutcome:nextParticipants:turnTimeout:matchData:completionHandler: on the match passing
      * in appropriate values. They can also update matchOutcome for other players as appropriate.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional

@@ -24,11 +24,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * PHASEEnvelopeSegment
- * <p>
+ * 
  * An envelope segment defined by an end point and a curve type.
- * <p>
+ * 
  * Envelope segments do 'not' contain a start point.
  * We do this so we can connect envelope segments together end to end and gaurantee continuity along the x and y axes.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -82,9 +84,9 @@ public class PHASEEnvelopeSegment extends NSObject {
 
     /**
      * [@property] curveType
-     * <p>
+     * 
      * The curve type of the envelope segment.
-     * <p>
+     * 
      * The default value is PHASECurveTypeLinear.
      */
     @Generated
@@ -145,9 +147,9 @@ public class PHASEEnvelopeSegment extends NSObject {
 
     /**
      * [@property] curveType
-     * <p>
+     * 
      * The curve type of the envelope segment.
-     * <p>
+     * 
      * The default value is PHASECurveTypeLinear.
      */
     @Generated

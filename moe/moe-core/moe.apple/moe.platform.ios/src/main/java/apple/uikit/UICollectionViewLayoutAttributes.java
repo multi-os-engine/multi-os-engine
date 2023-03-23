@@ -17,10 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSIndexPath;
 import apple.foundation.NSMethodSignature;
@@ -49,7 +45,14 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -249,6 +252,9 @@ public class UICollectionViewLayoutAttributes extends NSObject implements NSCopy
     @Selector("setAlpha:")
     public native void setAlpha(@NFloat double value);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("setBounds:")
     public native void setBounds(@ByValue CGRect value);

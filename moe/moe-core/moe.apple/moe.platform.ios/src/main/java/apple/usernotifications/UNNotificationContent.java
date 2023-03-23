@@ -50,6 +50,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UserNotifications")
 @Runtime(ObjCRuntime.class)
@@ -269,7 +272,12 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
 
     /**
      * The argument to be inserted in the summary for this notification.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: summaryArgument is ignored
      */
+    @Deprecated
     @Generated
     @Selector("summaryArgument")
     public native String summaryArgument();
@@ -279,7 +287,12 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
      * For example if a podcast app sends one notification for 3 new episodes in a show,
      * the argument should be the name of the show and the count should be 3.
      * Default is 1 and cannot be 0.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: summaryArgumentCount is ignored
      */
+    @Deprecated
     @Generated
     @Selector("summaryArgumentCount")
     @NUInt
@@ -287,6 +300,8 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
 
     /**
      * default nil
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("targetContentIdentifier")
@@ -300,9 +315,11 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
      * This throws an error with a UNErrorCode found in UNError.h if the UNNotificationContentProviding object is
      * invalid. A valid UNNotificationContent result should not be mutated and be passed directly to
      * UNUserNotificationCenter.
-     * <p>
+     * 
      * This should be called in the UNNotificationServiceExtension in didReceiveNotificationRequest:withContentHandler:
      * and the returned UNNotificationContent should be passed to the contentHandler for incoming push notifications.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("contentByUpdatingWithProvider:error:")
@@ -312,6 +329,8 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
 
     /**
      * The interruption level determines the degree of interruption associated with the notification
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("interruptionLevel")
@@ -321,8 +340,17 @@ public class UNNotificationContent extends NSObject implements NSCopying, NSMuta
     /**
      * Relevance score determines the sorting for the notification across app notifications. The expected range is
      * between 0.0f and 1.0f.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("relevanceScore")
     public native double relevanceScore();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("filterCriteria")
+    public native String filterCriteria();
 }

@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Transition animation subclass. *
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("QuartzCore")

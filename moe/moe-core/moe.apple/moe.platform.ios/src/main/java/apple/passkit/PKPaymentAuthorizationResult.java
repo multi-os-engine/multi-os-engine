@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -174,4 +177,24 @@ public class PKPaymentAuthorizationResult extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Optional metadata for an order that was placed by this payment. The device will attempt to fetch
+     * the order in the background. Ignored unless the status is `PKPaymentAuthorizationStatusSuccess`.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("orderDetails")
+    public native PKPaymentOrderDetails orderDetails();
+
+    /**
+     * Optional metadata for an order that was placed by this payment. The device will attempt to fetch
+     * the order in the background. Ignored unless the status is `PKPaymentAuthorizationStatusSuccess`.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setOrderDetails:")
+    public native void setOrderDetails(PKPaymentOrderDetails value);
 }

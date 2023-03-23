@@ -37,6 +37,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -218,6 +221,8 @@ public class NSUnitFrequency extends NSDimension implements NSSecureCoding {
 
     /**
      * 1 FPS ≡ 1 Hertz
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("framesPerSecond")

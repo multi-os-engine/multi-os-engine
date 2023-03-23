@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * An MKGeodesicPolyline follows the shortest path along the surface of the earth,
  * which may appear as a curved line when drawn on the projected MKMapView.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("MapKit")

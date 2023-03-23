@@ -36,6 +36,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface UIPickerViewDelegate {
     /**
      * attributed title is favored if both methods are implemented
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @IsOptional

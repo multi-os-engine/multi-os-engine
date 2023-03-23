@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -189,14 +192,23 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("entityDescription")
     public static native NSEntityDescription entityDescription();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("entityDescriptionWithContext:")
     public static native NSEntityDescription entityDescriptionWithContext(NSManagedObjectContext context);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("fetchRequest")
     public static native NSFetchRequest<?> fetchRequest();

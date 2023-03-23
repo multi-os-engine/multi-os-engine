@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MTLStageInputOutputDescriptor
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Metal")

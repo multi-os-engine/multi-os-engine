@@ -20,13 +20,37 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class clockid_t {
+    /**
+     * API-Since: 10.0
+     */
     @Generated public static final int _CLOCK_REALTIME = 0x00000000;
+    /**
+     * API-Since: 10.0
+     */
     @Generated public static final int _CLOCK_MONOTONIC = 0x00000006;
+    /**
+     * API-Since: 10.0
+     */
     @Generated public static final int _CLOCK_MONOTONIC_RAW = 0x00000004;
+    /**
+     * API-Since: 10.0
+     */
     @Generated public static final int _CLOCK_MONOTONIC_RAW_APPROX = 0x00000005;
+    /**
+     * API-Since: 10.0
+     */
     @Generated public static final int _CLOCK_UPTIME_RAW = 0x00000008;
+    /**
+     * API-Since: 10.0
+     */
     @Generated public static final int _CLOCK_UPTIME_RAW_APPROX = 0x00000009;
+    /**
+     * API-Since: 10.0
+     */
     @Generated public static final int _CLOCK_PROCESS_CPUTIME_ID = 0x0000000C;
+    /**
+     * API-Since: 10.0
+     */
     @Generated public static final int _CLOCK_THREAD_CPUTIME_ID = 0x00000010;
 
     @Generated

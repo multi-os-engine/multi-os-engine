@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCAdamOptimizer
- * <p>
+ * 
  * The MLCAdamOptimizer specifies the Adam optimizer.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -63,9 +65,9 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] beta1
-     * <p>
+     * 
      * Coefficent used for computing running averages of gradient.
-     * <p>
+     * 
      * The default is 0.9.
      */
     @Generated
@@ -74,9 +76,9 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] beta2
-     * <p>
+     * 
      * Coefficent used for computing running averages of square of gradient.
-     * <p>
+     * 
      * The default is 0.999.
      */
     @Generated
@@ -117,9 +119,9 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] epsilon
-     * <p>
+     * 
      * A term added to improve numerical stability.
-     * <p>
+     * 
      * The default is 1e-8.
      */
     @Generated
@@ -163,7 +165,7 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * Create a MLCAdamOptimizer object with defaults
-     *
+     * 
      * @return A new MLCAdamOptimizer object.
      */
     @Generated
@@ -172,7 +174,7 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * Create a MLCAdamOptimizer object
-     *
+     * 
      * @param optimizerDescriptor The optimizer descriptor object
      * @param beta1               The beta1 value
      * @param beta2               The beta2 value
@@ -187,7 +189,7 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * Create a MLCAdamOptimizer object
-     *
+     * 
      * @param optimizerDescriptor The optimizer descriptor object
      * @param beta1               The beta1 value
      * @param beta2               The beta2 value
@@ -196,6 +198,8 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
      *                            (https://arxiv.org/abs/1904.09237)
      * @param timeStep            The initial timestep to use for the update
      * @return A new MLCAdamOptimizer object.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("optimizerWithDescriptor:beta1:beta2:epsilon:usesAMSGrad:timeStep:")
@@ -221,9 +225,9 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] timeStep
-     * <p>
+     * 
      * The current timestep used for the update.
-     * <p>
+     * 
      * The default is 1.
      */
     @Generated
@@ -233,9 +237,9 @@ public class MLCAdamOptimizer extends MLCOptimizer implements NSCopying {
 
     /**
      * [@property] usesAMSGrad
-     * <p>
+     * 
      * Whether to use the AMSGrad variant of this algorithm
-     * <p>
+     * 
      * The default is false
      */
     @Generated

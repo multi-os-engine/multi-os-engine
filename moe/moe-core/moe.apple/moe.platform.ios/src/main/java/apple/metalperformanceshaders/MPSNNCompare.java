@@ -27,10 +27,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNCompare
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * Specifies the elementwise comparison operator.
  * For each pixel in the primary source image (x) and each pixel in a secondary source image (y),
  * it applies the following function: result = (abs(x-y)) <= threshold
+ * 
+ * API-Since: 12.1
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -84,7 +86,7 @@ public class MPSNNCompare extends MPSCNNArithmetic {
 
     /**
      * [@property] comparisonType
-     * <p>
+     * 
      * The comparison type to use
      */
     @Generated
@@ -119,7 +121,7 @@ public class MPSNNCompare extends MPSCNNArithmetic {
 
     /**
      * Initialize the comparison operator
-     *
+     * 
      * @param device The device the filter will run on.
      * @return A valid MPSNNCompare object or nil, if failure.
      */
@@ -163,7 +165,7 @@ public class MPSNNCompare extends MPSCNNArithmetic {
 
     /**
      * [@property] comparisonType
-     * <p>
+     * 
      * The comparison type to use
      */
     @Generated
@@ -172,7 +174,7 @@ public class MPSNNCompare extends MPSCNNArithmetic {
 
     /**
      * [@property] threshold
-     * <p>
+     * 
      * The threshold to use when comparing for equality. Two values will
      * be considered to be equal if the absolute value of their difference
      * is less than, or equal, to the specified threshold:
@@ -202,7 +204,7 @@ public class MPSNNCompare extends MPSCNNArithmetic {
 
     /**
      * [@property] threshold
-     * <p>
+     * 
      * The threshold to use when comparing for equality. Two values will
      * be considered to be equal if the absolute value of their difference
      * is less than, or equal, to the specified threshold:

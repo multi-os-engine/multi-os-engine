@@ -43,10 +43,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Used to describe a collection of HMService objects
- * <p>
+ * 
  * This class is used to group a collection of HMService objects.
  * This allows for association of a set of accessory services into a group.
  * Eg. A collection of lights can be grouped as the "Desk Lamps" service group.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -162,8 +164,9 @@ public class HMServiceGroup extends NSObject {
      * Adds an service to this service group. The service and the group must be part of the same
      * home. A service can be added to multiple service groups, e.g., a light can be added
      * to "Desk Lamps" as well as "Dimmable Lamps" service groups.
-     *
+     * 
      * @param service    Service to add to this group.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -186,8 +189,9 @@ public class HMServiceGroup extends NSObject {
 
     /**
      * Removes an service from this service group.
-     *
+     * 
      * @param service    Service to remove from this group.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -206,6 +210,8 @@ public class HMServiceGroup extends NSObject {
 
     /**
      * A unique identifier for the service group.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("uniqueIdentifier")
@@ -213,8 +219,9 @@ public class HMServiceGroup extends NSObject {
 
     /**
      * This method is used to change the name of the service group.
-     *
+     * 
      * @param name       New name for the service group.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.

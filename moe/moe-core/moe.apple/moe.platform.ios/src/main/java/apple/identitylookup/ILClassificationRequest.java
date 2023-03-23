@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request to classify a communication.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("IdentityLookup")

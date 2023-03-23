@@ -18,10 +18,6 @@ package apple.uikit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGPathRef;
-import apple.coregraphics.struct.CGAffineTransform;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -52,7 +48,14 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 3.2
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -201,6 +204,9 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("CGPath")
     public native CGPathRef CGPath();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("addArcWithCenter:radius:startAngle:endAngle:clockwise:")
     public native void addArcWithCenterRadiusStartAngleEndAngleClockwise(@ByValue CGPoint center, @NFloat double radius,
@@ -239,6 +245,8 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * Modified paths
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("bezierPathByReversingPath")

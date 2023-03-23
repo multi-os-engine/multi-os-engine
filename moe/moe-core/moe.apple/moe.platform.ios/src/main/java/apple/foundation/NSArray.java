@@ -97,11 +97,20 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     /**
      * These methods are deprecated, and will be marked with API_DEPRECATED in a subsequent release. Use the variants
      * that use errors instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("arrayWithContentsOfFile:")
     public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfFile(String path);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("arrayWithContentsOfURL:")
     public static native <_ObjectType> NSArray<_ObjectType> arrayWithContentsOfURL(NSURL url);
@@ -275,16 +284,25 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateObjectsAtIndexes:options:usingBlock:")
     public native void enumerateObjectsAtIndexesOptionsUsingBlock(NSIndexSet s, @NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsAtIndexesOptionsUsingBlock") Block_enumerateObjectsAtIndexesOptionsUsingBlock block);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateObjectsUsingBlock:")
     public native void enumerateObjectsUsingBlock(
             @ObjCBlock(name = "call_enumerateObjectsUsingBlock") Block_enumerateObjectsUsingBlock block);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("enumerateObjectsWithOptions:usingBlock:")
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
@@ -297,6 +315,9 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     @Selector("filteredArrayUsingPredicate:")
     public native NSArray<_ObjectType> filteredArrayUsingPredicate(NSPredicate predicate);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("firstObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -310,7 +331,12 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     /**
      * This method is unsafe because it could potentially cause buffer overruns. You should use -getObjects:range:
      * instead.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use -getObjects:range: instead
      */
+    @Deprecated
     @Generated
     @Selector("getObjects:")
     public native void getObjects(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects);
@@ -333,6 +359,8 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
 
     /**
      * binary search
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("indexOfObject:inSortedRange:options:usingComparator:")
@@ -341,6 +369,9 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
             @ByValue NSRange r, @NUInt long opts,
             @ObjCBlock(name = "call_indexOfObjectInSortedRangeOptionsUsingComparator") Block_indexOfObjectInSortedRangeOptionsUsingComparator cmp);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexOfObjectAtIndexes:options:passingTest:")
     @NUInt
@@ -358,28 +389,43 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     public native long indexOfObjectIdenticalToInRange(@Mapped(ObjCObjectMapper.class) _ObjectType anObject,
             @ByValue NSRange range);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexOfObjectPassingTest:")
     @NUInt
     public native long indexOfObjectPassingTest(
             @ObjCBlock(name = "call_indexOfObjectPassingTest") Block_indexOfObjectPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexOfObjectWithOptions:passingTest:")
     @NUInt
     public native long indexOfObjectWithOptionsPassingTest(@NUInt long opts,
             @ObjCBlock(name = "call_indexOfObjectWithOptionsPassingTest") Block_indexOfObjectWithOptionsPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexesOfObjectsAtIndexes:options:passingTest:")
     public native NSIndexSet indexesOfObjectsAtIndexesOptionsPassingTest(NSIndexSet s, @NUInt long opts,
             @ObjCBlock(name = "call_indexesOfObjectsAtIndexesOptionsPassingTest") Block_indexesOfObjectsAtIndexesOptionsPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexesOfObjectsPassingTest:")
     public native NSIndexSet indexesOfObjectsPassingTest(
             @ObjCBlock(name = "call_indexesOfObjectsPassingTest") Block_indexesOfObjectsPassingTest predicate);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("indexesOfObjectsWithOptions:passingTest:")
     public native NSIndexSet indexesOfObjectsWithOptionsPassingTest(@NUInt long opts,
@@ -401,10 +447,20 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     @Selector("initWithCoder:")
     public native NSArray<?> initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithContentsOfFile:")
     public native NSArray<_ObjectType> initWithContentsOfFile(String path);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithContentsOfURL:")
     public native NSArray<_ObjectType> initWithContentsOfURL(NSURL url);
@@ -448,6 +504,9 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectAtIndex(@NUInt long index);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -469,6 +528,9 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     @Selector("removeObserver:forKeyPath:")
     public native void removeObserverForKeyPath(NSObject observer, String keyPath);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("removeObserver:forKeyPath:context:")
     public native void removeObserverForKeyPathContext(NSObject observer, String keyPath, VoidPtr context);
@@ -478,6 +540,9 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     public native void removeObserverFromObjectsAtIndexesForKeyPath(NSObject observer, NSIndexSet indexes,
             String keyPath);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("removeObserver:fromObjectsAtIndexes:forKeyPath:context:")
     public native void removeObserverFromObjectsAtIndexesForKeyPathContext(NSObject observer, NSIndexSet indexes,
@@ -513,6 +578,9 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     @Selector("sortedArrayHint")
     public native NSData sortedArrayHint();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("sortedArrayUsingComparator:")
     public native NSArray<_ObjectType> sortedArrayUsingComparator(
@@ -541,6 +609,9 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     @Selector("sortedArrayUsingSelector:")
     public native NSArray<_ObjectType> sortedArrayUsingSelector(SEL comparator);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("sortedArrayWithOptions:usingComparator:")
     public native NSArray<_ObjectType> sortedArrayWithOptionsUsingComparator(@NUInt long opts,
@@ -565,10 +636,20 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     @MappedReturn(ObjCObjectMapper.class)
     public native Object valueForKey(String key);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("writeToFile:atomically:")
     public native boolean writeToFileAtomically(String path, boolean useAuxiliaryFile);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     */
+    @Deprecated
     @Generated
     @Selector("writeToURL:atomically:")
     public native boolean writeToURLAtomically(NSURL url, boolean atomically);
@@ -982,6 +1063,8 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
 
     /**
      * Reads array stored in NSPropertyList format from the specified url.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("arrayWithContentsOfURL:error:")
@@ -990,6 +1073,8 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
 
     /**
      * Reads array stored in NSPropertyList format from the specified url.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithContentsOfURL:error:")
@@ -999,6 +1084,8 @@ public class NSArray<_ObjectType> extends NSObject implements NSCopying, NSMutab
     /**
      * Serializes this instance to the specified URL in the NSPropertyList format (using NSPropertyListXMLFormat_v1_0).
      * For other formats use NSPropertyListSerialization directly.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("writeToURL:error:")

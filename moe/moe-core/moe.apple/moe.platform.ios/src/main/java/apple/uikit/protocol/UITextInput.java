@@ -16,9 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSAttributedString;
 import apple.foundation.NSDictionary;
@@ -41,6 +38,11 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.UIMenu;
+import apple.uikit.UIMenuElement;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
 @Generated
 @Library("UIKit")
@@ -60,6 +62,8 @@ public interface UITextInput extends UIKeyInput {
      * guide user manipulation of the selected text range via the system-provided keyboard. If a client
      * does not implement these methods, user feedback will be limited to the outcome after setting the
      * selected text range using positions resulting from hit testing.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional
@@ -132,6 +136,9 @@ public interface UITextInput extends UIKeyInput {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("endFloatingCursor")
@@ -278,6 +285,8 @@ public interface UITextInput extends UIKeyInput {
 
     /**
      * Returns an array of UITextSelectionRects
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("selectionRectsForRange:")
@@ -330,6 +339,8 @@ public interface UITextInput extends UIKeyInput {
 
     /**
      * return NO to not change text
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @IsOptional
@@ -386,6 +397,9 @@ public interface UITextInput extends UIKeyInput {
     @Selector("unmarkText")
     void unmarkText();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("updateFloatingCursorAtPoint:")
@@ -434,6 +448,48 @@ public interface UITextInput extends UIKeyInput {
     @IsOptional
     @Selector("setAttributedMarkedText:selectedRange:")
     default void setAttributedMarkedTextSelectedRange(NSAttributedString markedText, @ByValue NSRange selectedRange) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Called when the text input is preparing an edit menu presentation for the specified text range.
+     * 
+     * @param textRange        The text range for which the menu is presented for.
+     * @param suggestedActions The actions and commands that the system suggests.
+     * 
+     * @return Return a UIMenu describing the desired menu hierarchy. Return @c nil to present the default system menu.
+     * 
+     *         API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("editMenuForTextRange:suggestedActions:")
+    default UIMenu editMenuForTextRangeSuggestedActions(UITextRange textRange,
+            NSArray<? extends UIMenuElement> suggestedActions) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("willDismissEditMenuWithAnimator:")
+    default void willDismissEditMenuWithAnimator(
+            @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * These are optional methods for clients that wish to know the visiblity of text editing menus
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("willPresentEditMenuWithAnimator:")
+    default void willPresentEditMenuWithAnimator(
+            @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

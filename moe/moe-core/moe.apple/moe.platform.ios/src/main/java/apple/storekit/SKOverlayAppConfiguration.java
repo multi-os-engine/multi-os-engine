@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An overlay configuration that can be used to show any app from the App Store.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("StoreKit")
@@ -114,7 +116,7 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     /**
      * Creates a new app overlay configuration that will show an app from the App Store.
-     *
+     * 
      * @param appIdentifier the app identifier of the app to show.
      * @param position      the desired position of the overlay.
      */
@@ -232,6 +234,8 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     /**
      * An optional identifier for an app's custom product page.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("customProductPageIdentifier")
@@ -239,6 +243,8 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     /**
      * An optional extra parameter for specifying the version of your app that will be shown to the user.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("latestReleaseID")
@@ -246,6 +252,8 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     /**
      * An optional identifier for an app's custom product page.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setCustomProductPageIdentifier:")
@@ -253,8 +261,17 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     /**
      * An optional extra parameter for specifying the version of your app that will be shown to the user.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setLatestReleaseID:")
     public native void setLatestReleaseID(String value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setAdImpression:")
+    public native void setAdImpression(SKAdImpression impression);
 }

@@ -182,6 +182,9 @@ public class NSNotification extends NSObject implements NSCopying, NSCoding {
     @Selector("initWithCoder:")
     public native NSNotification initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("initWithName:object:userInfo:")
     public native NSNotification initWithNameObjectUserInfo(String name, @Mapped(ObjCObjectMapper.class) Object object,

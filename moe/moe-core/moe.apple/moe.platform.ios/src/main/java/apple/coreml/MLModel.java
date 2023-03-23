@@ -32,10 +32,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLModel
- * <p>
+ * 
  * Construct a model and evaluate on a specific set of input features.
  * Inputs and outputs are accessed via the MLFeatureProvider protocol.
  * Returns a model or nil if there is an error.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreML")
@@ -89,19 +91,25 @@ public class MLModel extends NSObject {
 
     /**
      * Compile a .mlmodel for this device
-     * <p>
+     * 
      * [@returns] a URL to the compiled .mlmodelc directory if successful
      * The model is compiled to a temporary location on disk
-     * You must move the compiled model to a permenant location if you wish to keep it
-     * <p>
-     * the returned model can be loaded using:
+     * You must move the compiled model to a permanent location if you wish to keep it
+     * 
+     * The returned model can be loaded using:
      * [@code]
      * [MLModel modelWithContentsOfURL:error:]
      * [@endcode]
-     *
+     * 
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use the asynchronous interface compileModelAtURL:completionHandler:error: instead.
+     * 
      * @param modelURL URL file path to .mlmodel file you wish to compile
      * @param error    Any errors are surfaced here
      */
+    @Deprecated
     @Generated
     @Selector("compileModelAtURL:error:")
     public static native NSURL compileModelAtURLError(NSURL modelURL,
@@ -207,6 +215,8 @@ public class MLModel extends NSObject {
 
     /**
      * The load-time parameters used to instantiate this MLModel object.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("configuration")
@@ -214,6 +224,8 @@ public class MLModel extends NSObject {
 
     /**
      * Construct a model given the location of its on-disk representation. Returns nil on error.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("modelWithContentsOfURL:configuration:error:")
@@ -222,6 +234,8 @@ public class MLModel extends NSObject {
 
     /**
      * Provides value for the given parameter. Returns nil on error.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("parameterValueForKey:error:")
@@ -231,6 +245,8 @@ public class MLModel extends NSObject {
 
     /**
      * Batch prediction without explicit options
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("predictionsFromBatch:error:")
@@ -240,6 +256,8 @@ public class MLModel extends NSObject {
 
     /**
      * Batch prediction with explicit options
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("predictionsFromBatch:options:error:")
@@ -250,14 +268,16 @@ public class MLModel extends NSObject {
 
     /**
      * Construct a model asynchronously given the location of its on-disk representation and configuration.
-     * <p>
+     * 
      * Model loading may take time when the model content is not immediately available (e.g. encrypted model). Use this
      * factory method especially when the caller is on the main thread.
-     *
+     * 
      * @param url           the location of its on-disk representation (.mlmodelc directory).
      * @param configuration The model configuration
      * @param handler       When the model load completes successfully or unsuccessfully, the completion handler is
      *                      invoked with a valid MLModel instance or NSError object.
+     * 
+     *                      API-Since: 14.0
      */
     @Generated
     @Selector("loadContentsOfURL:configuration:completionHandler:")
@@ -270,5 +290,57 @@ public class MLModel extends NSObject {
     public interface Block_loadContentsOfURLConfigurationCompletionHandler {
         @Generated
         void call_loadContentsOfURLConfigurationCompletionHandler(MLModel model, NSError error);
+    }
+
+    /**
+     * Compile a .mlmodel or .mlpackage for this device. Perform the compilation asynchronously.
+     * 
+     * The model is compiled to a temporary location in the file system. You must move the compiled model to a permanent
+     * location if you wish to keep it. Then the model can be loaded using the returned URL:
+     * [@code]
+     * [MLModel modelWithContentsOfURL:error:]
+     * [@endcode]
+     * 
+     * 
+     * API-Since: 16.0
+     * 
+     * @param modelURL URL file path to .mlmodel file you wish to compile
+     * @param handler  When the model compilation completes successfully the completion handler is invoked with a valid
+     *                 URL to the compiled .mlmodelc directory.
+     *                 On failure, signified by nil compiledModelURL, the NSError object is populated.
+     */
+    @Generated
+    @Selector("compileModelAtURL:completionHandler:")
+    public static native void compileModelAtURLCompletionHandler(NSURL modelURL,
+            @ObjCBlock(name = "call_compileModelAtURLCompletionHandler") Block_compileModelAtURLCompletionHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_compileModelAtURLCompletionHandler {
+        @Generated
+        void call_compileModelAtURLCompletionHandler(NSURL compiledModelURL, NSError error);
+    }
+
+    /**
+     * Construct a model asynchronously from a compiled model asset.
+     * 
+     * @param asset         Compiled model asset derived from in-memory or on-disk Core ML model
+     * @param configuration Model configuration that hold options for loading a model
+     * @param handler       When the model load completes successfully or unsuccessfully, the completion handler is
+     *                      invoked with a valid MLModel instance or NSError object.
+     * 
+     *                      API-Since: 16.0
+     */
+    @Generated
+    @Selector("loadModelAsset:configuration:completionHandler:")
+    public static native void loadModelAssetConfigurationCompletionHandler(MLModelAsset asset,
+            MLModelConfiguration configuration,
+            @ObjCBlock(name = "call_loadModelAssetConfigurationCompletionHandler") Block_loadModelAssetConfigurationCompletionHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_loadModelAssetConfigurationCompletionHandler {
+        @Generated
+        void call_loadModelAssetConfigurationCompletionHandler(MLModel model, NSError error);
     }
 }

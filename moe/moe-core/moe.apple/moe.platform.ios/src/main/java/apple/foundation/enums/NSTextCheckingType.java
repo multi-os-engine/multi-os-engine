@@ -67,14 +67,20 @@ public final class NSTextCheckingType {
     @Generated public static final long Correction = 0x0000000000000200L;
     /**
      * regular expression matches
+     * 
+     * API-Since: 4.0
      */
     @Generated public static final long RegularExpression = 0x0000000000000400L;
     /**
      * phone number detection
+     * 
+     * API-Since: 4.0
      */
     @Generated public static final long PhoneNumber = 0x0000000000000800L;
     /**
      * transit (e.g. flight) info detection
+     * 
+     * API-Since: 4.0
      */
     @Generated public static final long TransitInformation = 0x0000000000001000L;
 

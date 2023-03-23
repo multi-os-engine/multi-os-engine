@@ -1,7 +1,6 @@
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -23,7 +22,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -155,4 +158,12 @@ public class UISceneSizeRestrictions extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    @Generated
+    @Selector("allowsFullScreen")
+    public native boolean allowsFullScreen();
+
+    @Generated
+    @Selector("setAllowsFullScreen:")
+    public native void setAllowsFullScreen(boolean value);
 }

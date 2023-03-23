@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEMixer
- * <p>
+ * 
  * A generic object the represents an active mixer in the system
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -87,7 +89,7 @@ public class PHASEMixer extends NSObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note] Values are clamped to the range [0, 1]. Default value is 1.
      */
@@ -97,7 +99,7 @@ public class PHASEMixer extends NSObject {
 
     /**
      * [@property] gainMetaParameter
-     * <p>
+     * 
      * The metaparameter that can be used to adjust the gain during playback
      */
     @Generated
@@ -111,7 +113,7 @@ public class PHASEMixer extends NSObject {
 
     /**
      * [@property] identifier
-     * <p>
+     * 
      * The identifier that uniquely represents this mixer.
      */
     @Generated

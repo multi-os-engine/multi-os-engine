@@ -1,7 +1,6 @@
 package apple.pencilkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSDate;
 import apple.foundation.NSMethodSignature;
@@ -29,9 +28,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
 /**
  * A uniform cubic B-spline representing the point data of a `PKStroke`.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("PencilKit")
@@ -115,7 +117,7 @@ public class PKStrokePath extends NSObject implements NSCopying {
 
     /**
      * Executes a given block using each point in a range with a distance step.
-     *
+     * 
      * @param range        The parametric range to enumerate points in.
      * @param distanceStep The distance to step between points.
      * @param block        The block to execute for each point. This block takes two parameters
@@ -139,7 +141,7 @@ public class PKStrokePath extends NSObject implements NSCopying {
 
     /**
      * Executes a given block using each point in a range with a parametric step.
-     *
+     * 
      * @param range          The parametric range to enumerate points in.
      * @param parametricStep The parametric step between points.
      * @param block          The block to execute for each point. This block takes two parameters
@@ -163,7 +165,7 @@ public class PKStrokePath extends NSObject implements NSCopying {
 
     /**
      * Executes a given block using each point in a range with a time step.
-     *
+     * 
      * @param range    The parametric range to enumerate points in.
      * @param timeStep The time interval to step between points.
      * @param block    The block to execute for each point. This block takes two parameters
@@ -195,7 +197,7 @@ public class PKStrokePath extends NSObject implements NSCopying {
 
     /**
      * Create a stroke path value with the given cubic B-spline control points.
-     *
+     * 
      * @param controlPoints An array of control points for a cubic B-spline.
      * @param creationDate  The start time of this path.
      */
@@ -219,7 +221,7 @@ public class PKStrokePath extends NSObject implements NSCopying {
 
     /**
      * The on-curve location for the floating point [0, count-1] `parametricValue` parameter.
-     * <p>
+     * 
      * This has better performance than `[self interpolatedPointAt: parametricValue].location`
      * for when only the location is required.
      */
@@ -257,7 +259,7 @@ public class PKStrokePath extends NSObject implements NSCopying {
 
     /**
      * Returns a parametric value on the B-spline that is a specified distance from the given parametric value.
-     *
+     * 
      * @param parametricValue The floating point [0, count-1] parametric value.
      * @param distanceStep    The distance to offset `parametricValue`. `distanceStep` can be positive or negative.
      * @return A parametric value offset by `distanceStep` from `parametricValue`.
@@ -269,7 +271,7 @@ public class PKStrokePath extends NSObject implements NSCopying {
 
     /**
      * Returns a parametric value on the B-spline that is a specified time from the given parametric value.
-     *
+     * 
      * @param parametricValue The floating point [0, count-1] parametric value.
      * @param timeStep        The time to offset `parametricValue`. `timeStep` can be positive or negative.
      * @return A parametric value offset by `timeStep` from `parametricValue`.

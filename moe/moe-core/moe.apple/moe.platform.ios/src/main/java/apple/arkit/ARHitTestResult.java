@@ -25,7 +25,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A result of an intersection found during a hit-test.
+ * 
+ * API-Since: 11.0
+ * Deprecated-Since: 14.0
+ * Deprecated-Message: Use raycasting
  */
+@Deprecated
 @Generated
 @Library("ARKit")
 @Runtime(ObjCRuntime.class)
@@ -56,7 +61,7 @@ public class ARHitTestResult extends NSObject {
 
     /**
      * The anchor that the hit-test intersected.
-     * <p>
+     * 
      * An anchor will only be provided for existing plane result types.
      */
     @Generated

@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class describes a room in the home.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -175,6 +177,8 @@ public class HMRoom extends NSObject {
 
     /**
      * A unique identifier for the room.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("uniqueIdentifier")
@@ -182,8 +186,9 @@ public class HMRoom extends NSObject {
 
     /**
      * This method is used to change the name of the room.
-     *
+     * 
      * @param name       New name for the room.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.

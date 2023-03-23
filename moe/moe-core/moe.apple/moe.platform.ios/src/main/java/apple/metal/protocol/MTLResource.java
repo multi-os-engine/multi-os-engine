@@ -28,8 +28,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MTLResource
- * <p>
+ * 
  * Common APIs available for MTLBuffer and MTLTexture instances
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Metal")
@@ -38,7 +40,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLResource {
     /**
      * [@property] cpuCacheMode
-     * <p>
+     * 
      * The cache mode used for the CPU mapping for this resource
      */
     @Generated
@@ -48,7 +50,7 @@ public interface MTLResource {
 
     /**
      * [@property] device
-     * <p>
+     * 
      * The device this resource was created against. This resource can only be used with this device.
      */
     @Generated
@@ -58,10 +60,12 @@ public interface MTLResource {
 
     /**
      * [@property] heap
-     * <p>
+     * 
      * The heap from which this resouce was created.
-     * <p>
+     * 
      * Nil when this resource is not backed by a heap.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("heap")
@@ -70,12 +74,14 @@ public interface MTLResource {
 
     /**
      * isAliasable
-     * <p>
+     * 
      * Returns whether future heap sub-allocations may alias against this resource's memory.
-     *
+     * 
      * @return YES if <st>makeAliasable</st> was previously successfully called on this resource. NO otherwise.
      *         If resource is sub-allocated from other resource created on the heap, isAliasable returns
      *         aliasing state of that base resource. Also returns NO when storage mode is memoryless.
+     * 
+     *         API-Since: 10.0
      */
     @Generated
     @Selector("isAliasable")
@@ -83,7 +89,7 @@ public interface MTLResource {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
@@ -92,14 +98,16 @@ public interface MTLResource {
 
     /**
      * makeAliasable
-     * <p>
+     * 
      * Allow future heap sub-allocations to alias against this resource's memory.
-     * <p>
+     * 
      * It is illegal to call this method on a non heap-based resource.
      * It is also illegal to call this method on texture views created from heap-based textures.
      * The debug layer will raise an exception. Calling this method on textures sub-allocated
      * from Buffers backed by heap memory has no effect.
      * Once a resource is made aliasable, the decision cannot be reverted.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("makeAliasable")
@@ -107,7 +115,7 @@ public interface MTLResource {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
@@ -116,9 +124,9 @@ public interface MTLResource {
 
     /**
      * setPurgeableState
-     * <p>
+     * 
      * Set (or query) the purgeability state of a resource
-     * <p>
+     * 
      * Synchronously set the purgeability state of a resource and return what the prior (or current) state is.
      * FIXME: If the device is keeping a cached copy of the resource, both the shared copy and cached copy are made
      * purgeable. Any access to the resource by either the CPU or device will be undefined.
@@ -130,8 +138,10 @@ public interface MTLResource {
 
     /**
      * [@property] storageMode
-     * <p>
+     * 
      * The resource storage mode used for the CPU mapping for this resource
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("storageMode")
@@ -140,7 +150,10 @@ public interface MTLResource {
 
     /**
      * [@property] allocatedSize
-     * [@abstrace] The size in bytes occupied by this resource
+     * 
+     * The size in bytes occupied by this resource
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("allocatedSize")
@@ -149,12 +162,14 @@ public interface MTLResource {
 
     /**
      * [@property] hazardTrackingMode
-     * <p>
+     * 
      * Whether or not the resource is hazard tracked.
-     * <p>
+     * 
      * This value can be either MTLHazardTrackingModeUntracked or MTLHazardTrackingModeTracked.
      * Resources created from heaps are by default untracked, whereas resources created from the device are by default
      * tracked.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("hazardTrackingMode")
@@ -163,10 +178,12 @@ public interface MTLResource {
 
     /**
      * [@property] heapOffset
-     * <p>
+     * 
      * The offset inside the heap at which this resource was created.
-     * <p>
+     * 
      * Zero when this resource was not created on a heap with MTLHeapTypePlacement.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("heapOffset")
@@ -175,8 +192,10 @@ public interface MTLResource {
 
     /**
      * [@property] resourceOptions
-     * <p>
+     * 
      * A packed tuple of the storageMode, cpuCacheMode and hazardTrackingMode properties.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("resourceOptions")

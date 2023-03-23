@@ -28,8 +28,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCTensor
- * <p>
+ * 
  * A tensor object
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -66,13 +68,13 @@ public class MLCTensor extends NSObject implements NSCopying {
     /**
      * Associates the given data to the tensor. If the device is GPU, also copies the data to the device memory.
      * Returns true if the data is successfully associated with the tensor and copied to the device.
-     * <p>
+     * 
      * The caller must guarantee the lifetime of the underlying memory of \p data for the entirety of the tensor's
      * lifetime. For input tensors, we recommend that the bindAndwriteData method provided by MLCTrainingGraph
      * and MLCInferenceGraph be used. This method should only be used to allocate and copy data to device memory
      * for tensors that are typically layer parameters such as weights, bias for convolution layers, beta, gamma for
      * normalization layers.
-     *
+     * 
      * @param data   The data to associated with the tensor
      * @param device The compute device
      * @return A Boolean value indicating whether the data is successfully associated with the tensor and copied to the
@@ -85,11 +87,11 @@ public class MLCTensor extends NSObject implements NSCopying {
     /**
      * Associates the given optimizer data and device data buffers to the tensor.
      * Returns true if the data is successfully associated with the tensor and copied to the device.
-     * <p>
+     * 
      * The caller must guarantee the lifetime of the underlying memory of \p data for the entirety of the tensor's
      * lifetime. The \p deviceData buffers are allocated by MLCompute. This method must be called
      * before executeOptimizerUpdateWithOptions or executeWithInputsData is called for the training graph.
-     *
+     * 
      * @param data       The optimizer data to be associated with the tensor
      * @param deviceData The optimizer device data to be associated with the tensor
      * @return A Boolean value indicating whether the data is successfully associated with the tensor .
@@ -119,7 +121,7 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Copy tensor data from device memory to user specified memory
-     * <p>
+     * 
      * Before copying tensor data from device memory, one may need to synchronize the device memory for example
      * when device is the GPU. The synchronizeWithDevice argumet can be set appropraitely to indicate this.
      * For CPU this is ignored. If the tensor has been specified in outputs of a graph using addOutputs,
@@ -127,7 +129,7 @@ public class MLCTensor extends NSObject implements NSCopying {
      * NOTE: This method should only be called once the graph that this tensor is used with has finished execution;
      * Otherwise the results in device memory may not be up to date. synchronizeWithDevice must be set to NO
      * when this method is called from a completion callback for GPU.
-     *
+     * 
      * @param bytes                 The user specified data in which to copy
      * @param length                The size in bytes to copy
      * @param synchronizeWithDevice Whether to synchronize device memory if device is GPU
@@ -146,7 +148,7 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * [@property] data
-     * <p>
+     * 
      * The tensor data
      */
     @Generated
@@ -163,7 +165,7 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * [@property] descriptor
-     * <p>
+     * 
      * The tensor descriptor
      */
     @Generated
@@ -172,7 +174,7 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * [@property] device
-     * <p>
+     * 
      * The device associated with this tensor.
      */
     @Generated
@@ -219,7 +221,7 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
@@ -233,9 +235,9 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * [@property] optimizer buffers to use if tensor is used as a parameter
-     * <p>
+     * 
      * These are the host side optimizer (momentum and velocity) buffers which developers can query and initialize
-     * <p>
+     * 
      * When customizing optimizer data, the contents of these buffers must be initialized before executing optimizer
      * update for a graph.
      */
@@ -245,7 +247,7 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * [@property] optimizer device buffers to use if tensor is used as a parameter
-     * <p>
+     * 
      * These are the device side optimizer (momentum and velocity) buffers which developers can query
      */
     @Generated
@@ -262,7 +264,7 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
@@ -279,12 +281,12 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Synchronize the data in host memory.
-     * <p>
+     * 
      * Synchronize the data in host memory i.e. tensor.data with latest contents in device memory
      * This should only be called once the graph that this tensor is used with has finished execution;
      * Otherwise the results in device memory may not be up to date.
      * NOTE: This method should not be called from a completion callback when device is the GPU.
-     *
+     * 
      * @return Returns YES if success, NO if there is a failure to synchronize
      */
     @Generated
@@ -293,12 +295,12 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Synchronize the optimizer data in host memory.
-     * <p>
+     * 
      * Synchronize the optimizer data in host memory with latest contents in device memory
      * This should only be called once the graph that this tensor is used with has finished execution;
      * Otherwise the results in device memory may not be up to date.
      * NOTE: This method should not be called from a completion callback when device is the GPU.
-     *
+     * 
      * @return Returns YES if success, NO if there is a failure to synchronize
      */
     @Generated
@@ -308,11 +310,13 @@ public class MLCTensor extends NSObject implements NSCopying {
     /**
      * Converts a quantized tensor to a 32-bit floating-point tensor
      * Returns a de-quantized tensor
-     *
+     * 
      * @param type  The de-quantized data type. Must be MLCFloat32
      * @param scale The scale thst was used for the quantized data
      * @param bias  The offset value that maps to float zero used for the quantized data
      * @return A quantized tensor
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("tensorByDequantizingToType:scale:bias:")
@@ -321,12 +325,14 @@ public class MLCTensor extends NSObject implements NSCopying {
     /**
      * Converts a quantized tensor to a 32-bit floating-point tensor
      * Returns a de-quantized tensor
-     *
+     * 
      * @param type  The de-quantized data type. Must be MLCFloat32
      * @param scale The scale thst was used for the quantized data
      * @param bias  The offset value that maps to float zero used for the quantized data
      * @param axis  The dimension on which to apply per-channel quantization
      * @return A quantized tensor
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("tensorByDequantizingToType:scale:bias:axis:")
@@ -336,11 +342,13 @@ public class MLCTensor extends NSObject implements NSCopying {
     /**
      * Converts a 32-bit floating-point tensor with given scale and a zero point
      * Returns a quantized tensor
-     *
+     * 
      * @param type  The quantized data type. Must be MLCDataTypeInt8, MLCDataTypeUInt8 or MLCDataTypeInt32
      * @param scale The scale to apply in quantization
      * @param bias  The offset value that maps to float zero
      * @return A quantized tensor
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("tensorByQuantizingToType:scale:bias:")
@@ -349,12 +357,14 @@ public class MLCTensor extends NSObject implements NSCopying {
     /**
      * Converts a 32-bit floating-point tensor with given scale and a zero point
      * Returns a quantized tensor
-     *
+     * 
      * @param type  The quantized data type. Must be MLCDataTypeInt8, MLCDataTypeUInt8 or MLCDataTypeInt32
      * @param scale The scale to apply in quantization
      * @param bias  The offset value that maps to float zero
      * @param axis  The dimension on which to apply per-channel quantization
      * @return A quantized tensor
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("tensorByQuantizingToType:scale:bias:axis:")
@@ -363,9 +373,9 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * [@property] tensorID
-     * <p>
+     * 
      * The tensor ID
-     * <p>
+     * 
      * A unique number to identify each tensor. Assigned when the tensor is created.
      */
     @Generated
@@ -375,9 +385,9 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a tensor object without any data
-     *
+     * 
      * @return A new MLCTensor object
      */
     @Generated
@@ -386,9 +396,9 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a tensor object with a MLCTensorData object that specifies the tensor data buffer
-     *
+     * 
      * @param tensorDescriptor The tensor descriptor
      * @param data             The random initializer type
      * @return A new MLCTensor object
@@ -399,9 +409,9 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a tensor object with a MLCTensorData object that specifies the tensor data buffer
-     *
+     * 
      * @param tensorDescriptor The tensor descriptor
      * @param fillData         The scalar data to fill to tensor with
      * @return A new MLCTensor object
@@ -413,9 +423,9 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a tensor object initialized with a random initializer such as Glorot Uniform.
-     *
+     * 
      * @param tensorDescriptor      The tensor descriptor
      * @param randomInitializerType The random initializer type
      * @return A new MLCTensor object
@@ -427,10 +437,10 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a tensor typically used by a recurrent layer
      * The tensor data type is MLCDataTypeFloat32.
-     *
+     * 
      * @param sequenceLength      The length of sequences stored in the tensor
      * @param featureChannelCount Number of feature channels
      * @param batchSize           The tensor batch size
@@ -443,10 +453,10 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a tensor typically used by a recurrent layer
      * The tensor data type is MLCDataTypeFloat32.
-     *
+     * 
      * @param sequenceLength      The length of sequences stored in the tensor
      * @param featureChannelCount Number of feature channels
      * @param batchSize           The tensor batch size
@@ -460,10 +470,10 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a tensor typically used by a recurrent layer
      * The tensor data type is MLCDataTypeFloat32.
-     *
+     * 
      * @param sequenceLength        The length of sequences stored in the tensor
      * @param featureChannelCount   Number of feature channels
      * @param batchSize             The tensor batch size
@@ -478,10 +488,10 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a tensor of variable length sequences typically used by a recurrent layer
      * The tensor data type is MLCDataTypeFloat32.
-     *
+     * 
      * @param sequenceLengths     An array of sequence lengths
      * @param sortedSequences     A flag to indicate if the sequence lengths are sorted. If yes, they must be sorted in
      *                            descending order
@@ -498,10 +508,10 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a tensor of variable length sequences typically used by a recurrent layer
      * The tensor data type is MLCDataTypeFloat32.
-     *
+     * 
      * @param sequenceLengths       An array of sequence lengths
      * @param sortedSequences       A flag to indicate if the sequence lengths are sorted. If yes, they must be sorted
      *                              in descending order
@@ -518,9 +528,9 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a tensor object without any data. The tensor data type is MLCDataTypeFloat32.
-     *
+     * 
      * @param shape The tensor shape
      * @return A new MLCTensor object
      */
@@ -530,9 +540,9 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a tensor object with data
-     *
+     * 
      * @param shape    The tensor shape
      * @param data     The tensor data
      * @param dataType The tensor data type
@@ -545,9 +555,9 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a tensor object without any data
-     *
+     * 
      * @param shape    The tensor shape
      * @param dataType The tensor data type
      * @return A new MLCTensor object
@@ -558,9 +568,9 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a tensor object with data
-     *
+     * 
      * @param shape    The tensor shape
      * @param fillData The scalar value to initialize the tensor data with
      * @param dataType The tensor data type
@@ -573,10 +583,10 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a tensor object initialized with a random initializer such as Glorot Uniform.
      * The tensor data type is MLCDataTypeFloat32
-     *
+     * 
      * @param shape                 The tensor shape
      * @param randomInitializerType The random initializer type
      * @return A new MLCTensor object
@@ -588,10 +598,10 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a tensor object initialized with a random initializer such as Glorot Uniform.
      * The tensor data type is MLCDataTypeFloat32
-     *
+     * 
      * @param shape                 The tensor shape
      * @param randomInitializerType The random initializer type
      * @param dataType              The tensor data type
@@ -604,9 +614,9 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a NCHW tensor object with tensor data type = MLCDataTypeFloat32
-     *
+     * 
      * @param width               The tensor width
      * @param height              The tensor height
      * @param featureChannelCount Number of feature channels
@@ -620,10 +630,10 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a NCHW tensor object with a tensor data object
      * The tensor data type is MLCDataTypeFloat32.
-     *
+     * 
      * @param width               The tensor width
      * @param height              The tensor height
      * @param featureChannelCount Number of feature channels
@@ -638,10 +648,10 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a NCHW tensor object with a tensor data object
      * The tensor data type is MLCDataTypeFloat32.
-     *
+     * 
      * @param width               The tensor width
      * @param height              The tensor height
      * @param featureChannelCount Number of feature channels
@@ -658,9 +668,9 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a NCHW tensor object initialized with a scalar value
-     *
+     * 
      * @param width               The tensor width
      * @param height              The tensor height
      * @param featureChannelCount Number of feature channels
@@ -677,10 +687,10 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCTensor object
-     * <p>
+     * 
      * Create a NCHW tensor object initialized with a random initializer type.
      * The tensor data type is MLCDataTypeFloat32
-     *
+     * 
      * @param width                 The tensor width
      * @param height                The tensor height
      * @param featureChannelCount   Number of feature channels

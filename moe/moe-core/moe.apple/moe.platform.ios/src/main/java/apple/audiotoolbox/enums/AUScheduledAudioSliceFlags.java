@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] ScheduledAudioSlice
- * <p>
+ * 
  * bits in ScheduledAudioSlice.mFlags
- * <p>
+ * 
  * [@constant] kScheduledAudioSliceFlag_Complete
  * Set if the unit is done with this slice
  * [@constant] kScheduledAudioSliceFlag_BeganToRender

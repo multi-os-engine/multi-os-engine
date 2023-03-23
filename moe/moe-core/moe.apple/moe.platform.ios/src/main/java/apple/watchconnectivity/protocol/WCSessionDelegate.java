@@ -48,6 +48,8 @@ public interface WCSessionDelegate {
     /**
      * Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there
      * will be an error with more details.
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("session:activationDidCompleteWithState:error:")
@@ -161,6 +163,8 @@ public interface WCSessionDelegate {
      * Called when the session can no longer be used to modify or add any new transfers and, all interactive messages
      * will be cancelled, but delegate callbacks for background transfers can still occur. This will happen when the
      * selected watch is being changed.
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("sessionDidBecomeInactive:")
@@ -169,6 +173,8 @@ public interface WCSessionDelegate {
     /**
      * Called when all delegate callbacks for the previously selected watch has occurred. The session can be
      * re-activated for the now selected watch using activateSession.
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("sessionDidDeactivate:")

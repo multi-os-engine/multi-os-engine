@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.natj.objc.map.ObjCStringMapper;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -186,14 +189,24 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
 
     /**
      * pointers should (not) be assigned using the GC strong write barrier
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Garbage collection no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("setUsesStrongWriteBarrier:")
     public native void setUsesStrongWriteBarrier(boolean value);
 
     /**
      * pointers should (not) use GC weak read and write barriers
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Garbage collection no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("setUsesWeakReadAndWriteBarriers:")
     public native void setUsesWeakReadAndWriteBarriers(boolean value);
@@ -205,14 +218,24 @@ public class NSPointerFunctions extends NSObject implements NSCopying {
 
     /**
      * pointers should (not) be assigned using the GC strong write barrier
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Garbage collection no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("usesStrongWriteBarrier")
     public native boolean usesStrongWriteBarrier();
 
     /**
      * pointers should (not) use GC weak read and write barriers
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Garbage collection no longer supported
      */
+    @Deprecated
     @Generated
     @Selector("usesWeakReadAndWriteBarriers")
     public native boolean usesWeakReadAndWriteBarriers();

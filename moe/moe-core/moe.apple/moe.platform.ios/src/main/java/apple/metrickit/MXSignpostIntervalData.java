@@ -31,17 +31,19 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXSignpostIntervalData
- * <p>
+ * 
  * A class that encapsulates metrics associated with app specific signpost intervals.
- * <p>
+ * 
  * These metrics will be collected and aggregated if the associated signposts were emit using MXSignpost or
  * MXSignpostAnimation APIs
- * <p>
+ * 
  * To limit on-device overhead, the system will automatically limit the number of signposts (emitted using the MetricKit
  * log handle) processed.
- * <p>
+ * 
  * Avoid losing telemetry by limiting usage of signposts (emitted using the MetricKit log handle) to critical sections
  * of code.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetricKit")
@@ -77,9 +79,9 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] averageMemory
-     * <p>
+     * 
      * Average value of memory snapshots taken at beginning and end of MXSignpost intervals
-     * <p>
+     * 
      * This property is null when signposts with the associated signpostName and signpostCategory contain no interval
      * metric data.
      */
@@ -107,9 +109,9 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeCPUTime
-     * <p>
+     * 
      * Cumulative CPU time aggregated over the MXSignpost intervals.
-     * <p>
+     * 
      * This property is null when signposts with the associated signpostName and signpostCategory contain no interval
      * metric data.
      */
@@ -119,9 +121,9 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeLogicalWrites
-     * <p>
+     * 
      * Cumulative logical writes aggregated over the MXSignpost intervals.
-     * <p>
+     * 
      * This property is null when signposts with the associated signpostName and signpostCategory contain no interval
      * metric data.
      */
@@ -148,7 +150,7 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] histogrammedSignpostDuration
-     * <p>
+     * 
      * A histogram of signpost intervals durations associated with the given signposts with signpostName and
      * signpostCategory.
      */
@@ -223,11 +225,13 @@ public class MXSignpostIntervalData extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] cumulativeHitchTimeRatio
-     * <p>
+     * 
      * Cumulative hitch time ratio aggregated over the MXSignpostAnimation intervals.
-     * <p>
+     * 
      * This property is null when signposts with the associated signpostName and signpostCategory contain no interval
      * metric data.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("cumulativeHitchTimeRatio")

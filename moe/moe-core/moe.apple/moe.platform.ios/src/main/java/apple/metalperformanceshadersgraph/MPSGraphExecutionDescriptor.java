@@ -21,11 +21,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.metal.protocol.MTLSharedEvent;
 
 /**
  * MPSGraphExecutionDescriptor
- * <p>
+ * 
  * A structure which consists of all the levers users can use to synchronize and schedule their graph execution
+ * 
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MetalPerformanceShadersGraph")
@@ -134,7 +138,7 @@ public class MPSGraphExecutionDescriptor extends NSObject {
 
     /**
      * [@property] waitUntilCompleted
-     * <p>
+     * 
      * waitUntilCompleted for the graph, default value is false
      */
     @Generated
@@ -152,10 +156,59 @@ public class MPSGraphExecutionDescriptor extends NSObject {
 
     /**
      * [@property] waitUntilCompleted
-     * <p>
+     * 
      * waitUntilCompleted for the graph, default value is false
      */
     @Generated
     @Selector("waitUntilCompleted")
     public native boolean waitUntilCompleted();
+
+    /**
+     * [@property] compilationDescriptor
+     * 
+     * compilationDescriptor for the graph, default value is nil
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @Selector("compilationDescriptor")
+    public native MPSGraphCompilationDescriptor compilationDescriptor();
+
+    /**
+     * [@property] compilationDescriptor
+     * 
+     * compilationDescriptor for the graph, default value is nil
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @Selector("setCompilationDescriptor:")
+    public native void setCompilationDescriptor(MPSGraphCompilationDescriptor value);
+
+    /**
+     * Executable signals these shared events at execution stage and immediately proceeds
+     * 
+     * @param event          shared event to signal
+     * @param executionStage execution stage to signal event at
+     * @param value          value for shared event to wait on
+     * 
+     *                       API-Since: 16.0
+     */
+    @Generated
+    @Selector("signalEvent:atExecutionEvent:value:")
+    public native void signalEventAtExecutionEventValue(@Mapped(ObjCObjectMapper.class) MTLSharedEvent event,
+            long executionStage, long value);
+
+    /**
+     * Executable waits on these shared events before scheduling execution on the HW, this does not include encoding
+     * which can still continue.
+     * 
+     * @param event shared event to wait on
+     * @param value value for shared event to wait on
+     * 
+     *              API-Since: 16.0
+     */
+    @Generated
+    @Selector("waitForEvent:value:")
+    public native void waitForEventValue(@Mapped(ObjCObjectMapper.class) MTLSharedEvent event, long value);
 }

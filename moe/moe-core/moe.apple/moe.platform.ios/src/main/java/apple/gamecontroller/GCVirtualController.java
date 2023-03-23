@@ -26,6 +26,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GCVirtualController
+ * 
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("GameController")
@@ -183,7 +186,7 @@ public class GCVirtualController extends NSObject {
 
     /**
      * Create a virtual controller
-     *
+     * 
      * @see GCVirtualControllerConfiguration
      */
     @Generated

@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Represents a Classification UI extension request's context.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("IdentityLookupUI")

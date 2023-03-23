@@ -49,7 +49,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNConstraint
- * <p>
+ * 
  * A SCNConstraint is an abstract class that represents a single constraint that can be applied to a node.
  */
 @Generated
@@ -170,6 +170,7 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     @Selector("addAnimation:forKey:")
     public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
 
+    @Deprecated
     @Generated
     @Selector("animationForKey:")
     public native CAAnimation animationForKey(String key);
@@ -190,7 +191,7 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] influenceFactor
-     * <p>
+     * 
      * Specifies the inflence factor of the receiver. Defaults to 1. Animatable
      */
     @Generated
@@ -206,10 +207,12 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     @Selector("initWithCoder:")
     public native SCNConstraint initWithCoder(NSCoder coder);
 
+    @Deprecated
     @Generated
     @Selector("isAnimationForKeyPaused:")
     public native boolean isAnimationForKeyPaused(String key);
 
+    @Deprecated
     @Generated
     @Selector("pauseAnimationForKey:")
     public native void pauseAnimationForKey(String key);
@@ -222,23 +225,26 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
     @Selector("removeAnimationForKey:")
     public native void removeAnimationForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
     public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
 
+    @Deprecated
     @Generated
     @Selector("resumeAnimationForKey:")
     public native void resumeAnimationForKey(String key);
 
     /**
      * [@property] influenceFactor
-     * <p>
+     * 
      * Specifies the inflence factor of the receiver. Defaults to 1. Animatable
      */
     @Generated
     @Selector("setInfluenceFactor:")
     public native void setInfluenceFactor(@NFloat double value);
 
+    @Deprecated
     @Generated
     @Selector("setSpeed:forAnimationKey:")
     public native void setSpeedForAnimationKey(@NFloat double speed, String key);
@@ -259,7 +265,7 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] enable
-     * <p>
+     * 
      * Determines whether the constraint is enabled or not. Defaults to YES.
      */
     @Generated
@@ -268,10 +274,12 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] incremental
-     * <p>
+     * 
      * Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the
      * rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous
      * versions.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isIncremental")
@@ -283,7 +291,7 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] enable
-     * <p>
+     * 
      * Determines whether the constraint is enabled or not. Defaults to YES.
      */
     @Generated
@@ -292,10 +300,12 @@ public class SCNConstraint extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] incremental
-     * <p>
+     * 
      * Specifies whether or not the contraint should applies incrementally and have it's effect being cumulated over the
      * rendered frames. Defaults to YES starting macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Defaults to NO in previous
      * versions.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setIncremental:")

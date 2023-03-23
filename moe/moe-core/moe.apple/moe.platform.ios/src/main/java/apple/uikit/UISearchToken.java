@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An individual token in a UISearchTextField.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")
@@ -121,10 +123,10 @@ public class UISearchToken extends NSObject {
 
     /**
      * The object which this token represents.
-     * <p>
+     * 
      * The application can assign any object it wants to this property. UISearchTextField does not attempt to interpret
      * this object.
-     * <p>
+     * 
      * [@note]
      * Because UISearchToken strongly references its representedObject, consider assigning a lightweight representation
      * (such as NSManagedObjectID) instead of a complete model object to this property. The lifetime of a UISearchToken
@@ -145,10 +147,10 @@ public class UISearchToken extends NSObject {
 
     /**
      * The object which this token represents.
-     * <p>
+     * 
      * The application can assign any object it wants to this property. UISearchTextField does not attempt to interpret
      * this object.
-     * <p>
+     * 
      * [@note]
      * Because UISearchToken strongly references its representedObject, consider assigning a lightweight representation
      * (such as NSManagedObjectID) instead of a complete model object to this property. The lifetime of a UISearchToken

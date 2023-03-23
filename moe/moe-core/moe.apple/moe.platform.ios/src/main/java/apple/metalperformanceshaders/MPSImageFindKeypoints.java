@@ -34,10 +34,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageFindKeypoints
- * <p>
+ * 
  * The MPSImageFindKeypoints kernel is used to find a list of keypoints whose values are >= minimumPixelThresholdValue
  * in MPSImageKeypointRangeInfo. The keypoints are generated for a specified region in the image.
  * The pixel format of the source image must be MTLPixelFormatR8Unorm.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -99,10 +102,10 @@ public class MPSImageFindKeypoints extends MPSKernel {
 
     /**
      * Encode the filter to a command buffer using a MTLComputeCommandEncoder.
-     * <p>
+     * 
      * The filter will not begin to execute until after the command
      * buffer has been enqueued and committed.
-     *
+     * 
      * @param commandBuffer             A valid MTLCommandBuffer.
      * @param source                    A valid MTLTexture containing the source image for the filter.
      * @param regions                   An array of rectangles that describe regions in the image.
@@ -143,13 +146,13 @@ public class MPSImageFindKeypoints extends MPSKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
@@ -165,7 +168,7 @@ public class MPSImageFindKeypoints extends MPSKernel {
 
     /**
      * Specifies information to find keypoints in an image.
-     *
+     * 
      * @param device The device the filter will run on
      * @param info   Pointer to the MPSImageKeypointRangeInfo struct
      * @return A valid MPSImageFindKeypoints object or nil, if failure.
@@ -198,9 +201,9 @@ public class MPSImageFindKeypoints extends MPSKernel {
 
     /**
      * [@property] keypointRangeInfo
-     * <p>
+     * 
      * Return a structure describing the keypoint range info
-     * <p>
+     * 
      * Returns a MPSImageKeypointRangeInfo structure
      */
     @Generated

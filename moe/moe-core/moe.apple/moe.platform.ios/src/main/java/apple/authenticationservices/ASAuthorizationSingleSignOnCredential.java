@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -208,6 +211,8 @@ public class ASAuthorizationSingleSignOnCredential extends NSObject implements A
 
     /**
      * Private SecKeys returned from the AuthenticationServices extension.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("privateKeys")

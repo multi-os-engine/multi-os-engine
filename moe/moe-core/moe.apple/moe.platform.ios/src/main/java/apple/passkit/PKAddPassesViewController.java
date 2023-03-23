@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -71,6 +74,7 @@ public class PKAddPassesViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native PKAddPassesViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -79,6 +83,9 @@ public class PKAddPassesViewController extends UIViewController {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("canAddPasses")
     public static native boolean canAddPasses();
@@ -190,6 +197,9 @@ public class PKAddPassesViewController extends UIViewController {
     @Selector("initWithPass:")
     public native PKAddPassesViewController initWithPass(PKPass pass);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("initWithPasses:")
     public native PKAddPassesViewController initWithPasses(NSArray<? extends PKPass> passes);

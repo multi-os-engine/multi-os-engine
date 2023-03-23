@@ -41,12 +41,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CMSensorRecorder
- * <p>
+ * 
  * Discussion:
  * CMSensorRecorder allows applications to record sensor data for periods
  * during which the application is not active. This data is then made
  * available for later access (up to 3 days) when the application
  * is run at a later time.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("CoreMotion")
@@ -126,7 +128,7 @@ public class CMSensorRecorder extends NSObject {
 
     /**
      * isAccelerometerRecordingAvailable
-     * <p>
+     * 
      * Discussion:
      * Determines whether accelerometer recording is available.
      */
@@ -136,10 +138,14 @@ public class CMSensorRecorder extends NSObject {
 
     /**
      * isAuthorizedForRecording
-     * <p>
+     * 
      * Discussion:
      * Determines whether the application is authorized for sensor recording.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 11.0
      */
+    @Deprecated
     @Generated
     @Selector("isAuthorizedForRecording")
     public static native boolean isAuthorizedForRecording();
@@ -180,7 +186,7 @@ public class CMSensorRecorder extends NSObject {
 
     /**
      * accelerometerDataFromDate:ToDate:
-     * <p>
+     * 
      * Discussion:
      * Gives access to recorded accelerometer samples given a time range (fromDate, toDate].
      * A total duration of 12 hours of data can be requested at any one time. Data can be delayed
@@ -197,7 +203,7 @@ public class CMSensorRecorder extends NSObject {
 
     /**
      * recordAccelerometerForDuration:
-     * <p>
+     * 
      * Discussion:
      * Starts recording accelerometer data for the duration given at 50hz. Data can be recorded
      * for up to 12 hours.
@@ -208,9 +214,11 @@ public class CMSensorRecorder extends NSObject {
 
     /**
      * authorizationStatus
-     * <p>
+     * 
      * Discussion:
      * Returns the current authorization status for sensor recording.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("authorizationStatus")

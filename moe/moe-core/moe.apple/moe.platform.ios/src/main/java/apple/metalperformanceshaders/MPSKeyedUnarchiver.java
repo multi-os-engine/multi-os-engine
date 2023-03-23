@@ -33,8 +33,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSKeyedUnarchiver
- * <p>
+ * 
  * A NSKeyedArchiver that supports the MPSDeviceProvider protocol for MPSKernel decoding
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -107,6 +109,9 @@ public class MPSKeyedUnarchiver extends NSKeyedUnarchiver implements MPSDevicePr
     @Selector("init")
     public native MPSKeyedUnarchiver init();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initForReadingFromData:device:error:")
     public native MPSKeyedUnarchiver initForReadingFromDataDeviceError(NSData data,
@@ -117,15 +122,26 @@ public class MPSKeyedUnarchiver extends NSKeyedUnarchiver implements MPSDevicePr
     public native MPSKeyedUnarchiver initForReadingFromDataError(NSData data,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @Deprecated
     @Generated
     @Selector("initForReadingWithData:")
     public native MPSKeyedUnarchiver initForReadingWithData(NSData data);
 
+    /**
+     * API-Since: 11.3
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("initForReadingWithData:device:")
     public native MPSKeyedUnarchiver initForReadingWithDataDevice(NSData data,
             @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
+    /**
+     * API-Since: 11.3
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithDevice:")
     public native MPSKeyedUnarchiver initWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
@@ -181,40 +197,61 @@ public class MPSKeyedUnarchiver extends NSKeyedUnarchiver implements MPSDevicePr
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Deprecated
     @Generated
     @Selector("unarchiveObjectWithData:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object unarchiveObjectWithData(NSData data);
 
+    /**
+     * API-Since: 11.3
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("unarchiveObjectWithData:device:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object unarchiveObjectWithDataDevice(NSData data,
             @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
+    @Deprecated
     @Generated
     @Selector("unarchiveObjectWithFile:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object unarchiveObjectWithFile(String path);
 
+    /**
+     * API-Since: 11.3
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("unarchiveObjectWithFile:device:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object unarchiveObjectWithFileDevice(String path,
             @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
+    /**
+     * API-Since: 11.3
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("unarchiveTopLevelObjectWithData:device:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object unarchiveTopLevelObjectWithDataDeviceError(NSData data,
             @Mapped(ObjCObjectMapper.class) MTLDevice device, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @Deprecated
     @Generated
     @Selector("unarchiveTopLevelObjectWithData:error:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object unarchiveTopLevelObjectWithDataError(NSData data,
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("unarchivedObjectOfClass:fromData:device:error:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -229,6 +266,8 @@ public class MPSKeyedUnarchiver extends NSKeyedUnarchiver implements MPSDevicePr
 
     /**
      * Common NSKeyedUnarchiver methods
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("unarchivedObjectOfClasses:fromData:device:error:")

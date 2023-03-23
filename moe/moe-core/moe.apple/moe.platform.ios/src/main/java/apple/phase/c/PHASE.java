@@ -23,7 +23,7 @@ public final class PHASE {
 
     /**
      * [@const] PHASEErrorDomain
-     * <p>
+     * 
      * The NSErrorDomain for general PHASE errors
      */
     @Generated
@@ -33,7 +33,7 @@ public final class PHASE {
 
     /**
      * [@const] PHASESoundEventErrorDomain
-     * <p>
+     * 
      * The NSErrorDomain for PHASE sound event errors.
      */
     @Generated
@@ -43,7 +43,7 @@ public final class PHASE {
 
     /**
      * [@const] PHASEAssetErrorDomain
-     * <p>
+     * 
      * The NSErrorDomain for PHASE Asset errors
      */
     @Generated

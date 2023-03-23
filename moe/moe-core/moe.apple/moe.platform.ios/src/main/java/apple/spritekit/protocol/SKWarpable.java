@@ -25,6 +25,9 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)

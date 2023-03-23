@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -167,7 +170,12 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
     /**
      * indicates the bitmap context should draw into a context capable of rendering extended color images. The
      * preferredFormat sets this according to the main screen's current configuration.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use the preferredRange property instead
      */
+    @Deprecated
     @Generated
     @Selector("prefersExtendedRange")
     public native boolean prefersExtendedRange();
@@ -191,7 +199,12 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
     /**
      * indicates the bitmap context should draw into a context capable of rendering extended color images. The
      * preferredFormat sets this according to the main screen's current configuration.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use the preferredRange property instead
      */
+    @Deprecated
     @Generated
     @Selector("setPrefersExtendedRange:")
     public native void setPrefersExtendedRange(boolean value);
@@ -209,6 +222,8 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
      * displayScale and displayGamut.
      * Traits that are not specified will be ignored, with their corresponding format properties defaulting to the
      * values in preferredFormat.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("formatForTraitCollection:")
@@ -218,11 +233,17 @@ public class UIGraphicsImageRendererFormat extends UIGraphicsRendererFormat {
     @Selector("preferredFormat")
     public static native UIGraphicsImageRendererFormat preferredFormat();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("preferredRange")
     @NInt
     public native long preferredRange();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setPreferredRange:")
     public native void setPreferredRange(@NInt long value);

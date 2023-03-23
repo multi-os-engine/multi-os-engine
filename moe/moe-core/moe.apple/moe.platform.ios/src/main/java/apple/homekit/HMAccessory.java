@@ -42,13 +42,16 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSNumber;
 
 /**
  * Represent an accessory in the home.
- * <p>
+ * 
  * This class represents an accessory in the home. There is a one to
  * one relationship between a physical accessory and an object of this
  * class. An accessory is composed of one or more services.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -162,10 +165,12 @@ public class HMAccessory extends NSObject {
 
     /**
      * Returns array of camera profiles implemented by the accessory.
-     * <p>
+     * 
      * An accessory can contain one or more cameras. Each camera is represented as a
      * an HMCameraProfile object. If the accessory does not contain a camera, this property
      * will be nil.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("cameraProfiles")
@@ -173,6 +178,8 @@ public class HMAccessory extends NSObject {
 
     /**
      * Category information for the accessory.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("category")
@@ -188,8 +195,12 @@ public class HMAccessory extends NSObject {
 
     /**
      * A unique identifier for the accessory.
-     * <p>
+     * 
      * Use uniqueIdentifier to obtain the identifier for this object.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: No longer supported.
      */
     @Generated
     @Deprecated
@@ -199,9 +210,13 @@ public class HMAccessory extends NSObject {
     /**
      * If this accessory is a bridge, this property is an array of NSUUID objects that,
      * each of which represents the 'uniqueIdentifier' of the accessory vended by the bridge.
-     * <p>
+     * 
      * Use uniqueIdentifiersForBridgedAccessories to obtain the identifiers for the
      * bridged accessories.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: No longer supported.
      */
     @Generated
     @Deprecated
@@ -210,7 +225,7 @@ public class HMAccessory extends NSObject {
 
     /**
      * This method is used to have an accessory identify itself.
-     *
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -250,7 +265,7 @@ public class HMAccessory extends NSObject {
 
     /**
      * The name of the accessory.
-     * <p>
+     * 
      * Returns the accessory's name that is associated with HomeKit. The initial value is the name
      * provided by the accessory information service of the accessory.
      */
@@ -296,6 +311,8 @@ public class HMAccessory extends NSObject {
 
     /**
      * A unique identifier for the accessory.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("uniqueIdentifier")
@@ -304,7 +321,7 @@ public class HMAccessory extends NSObject {
     /**
      * If this accessory is a bridge, this property is an array of NSUUID objects that,
      * each of which represents the 'uniqueIdentifier' of the accessory vended by the bridge.
-     * <p>
+     * 
      * An accessory can be standalone, a bridge, or hosted behind a bridge.
      * - A standalone accessory would have its 'bridged' property set to FALSE and
      * its 'uniqueIdentifiersForBridgedAccessories' property set to nil.
@@ -312,6 +329,8 @@ public class HMAccessory extends NSObject {
      * but have a non-empty 'uniqueIdentifiersForBridgedAccessories' property.
      * - An accessory behind a bridge would have its 'bridged' property set to TRUE and
      * its 'uniqueIdentifiersForBridgedAccessories' property set to nil.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("uniqueIdentifiersForBridgedAccessories")
@@ -319,10 +338,11 @@ public class HMAccessory extends NSObject {
 
     /**
      * This method is used to change the name of the accessory.
-     * <p>
+     * 
      * The new name is stored in HomeKit and not on the accessory.
-     *
+     * 
      * @param name       New name for the accessory.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -348,6 +368,8 @@ public class HMAccessory extends NSObject {
 
     /**
      * Accessory's firmware version.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("firmwareVersion")
@@ -355,6 +377,8 @@ public class HMAccessory extends NSObject {
 
     /**
      * Manufacturer of the accessory.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("manufacturer")
@@ -362,6 +386,8 @@ public class HMAccessory extends NSObject {
 
     /**
      * Model of the accessory.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("model")
@@ -369,6 +395,8 @@ public class HMAccessory extends NSObject {
 
     /**
      * Accessory profiles of the receiver.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("profiles")
@@ -376,8 +404,19 @@ public class HMAccessory extends NSObject {
 
     /**
      * Indicates if the accessory supports the identify action.
+     * 
+     * API-Since: 11.3
      */
     @Generated
     @Selector("supportsIdentify")
     public native boolean supportsIdentify();
+
+    /**
+     * The node identifier used to identify the device on Apple’s Matter fabric.
+     * 
+     * API-Since: 16.1
+     */
+    @Generated
+    @Selector("matterNodeID")
+    public native NSNumber matterNodeID();
 }

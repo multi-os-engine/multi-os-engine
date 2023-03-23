@@ -17,6 +17,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * This protocol allows a class to export its data to a variety of binary representations.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Foundation")

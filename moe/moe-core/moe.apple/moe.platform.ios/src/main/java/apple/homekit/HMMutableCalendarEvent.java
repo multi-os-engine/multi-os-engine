@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class is used to represent a calendar event.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("HomeKit")

@@ -19,10 +19,22 @@ package apple.cloudkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class CKQueryNotificationReason {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Created = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Updated = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Deleted = 0x0000000000000003L;
 
     @Generated

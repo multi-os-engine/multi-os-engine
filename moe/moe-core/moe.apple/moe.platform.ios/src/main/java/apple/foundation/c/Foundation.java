@@ -71,10 +71,21 @@ public final class Foundation {
      * An NSHashTable can also be configured to operate on arbitrary pointers and not just objects. We recommend the C
      * function API for "void *" access. To configure for pointer use, consult and choose the appropriate
      * NSPointerFunctionsOptions or configure or use an NSPointerFunctions object itself for initialization.
+     * 
+     * API-Since: 6.0
      */
     @Generated @NUInt public static final long NSHashTableStrongMemory = 0x0000000000000000L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long NSHashTableCopyIn = 0x0000000000010000L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long NSHashTableObjectPointerPersonality = 0x0000000000000200L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long NSHashTableWeakMemory = 0x0000000000000005L;
     /**
      * An NSMapTable is modeled after a dictionary, although, because of its options, is not a dictionary because it
@@ -84,10 +95,21 @@ public final class Foundation {
      * An NSMapTable can also be configured to operate on arbitrary pointers and not just objects. We recommend the C
      * function API for "void *" access. To configure for pointer use, consult and choose the appropriate
      * NSPointerFunction options or configure and use NSPointerFunctions objects directly for initialization.
+     * 
+     * API-Since: 6.0
      */
     @Generated @NUInt public static final long NSMapTableStrongMemory = 0x0000000000000000L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long NSMapTableCopyIn = 0x0000000000010000L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long NSMapTableObjectPointerPersonality = 0x0000000000000200L;
+    /**
+     * API-Since: 6.0
+     */
     @Generated @NUInt public static final long NSMapTableWeakMemory = 0x0000000000000005L;
     @Generated @NInt public static final long NSOperationQueueDefaultMaxConcurrentOperationCount = 0xFFFFFFFFFFFFFFFFL;
     /**
@@ -243,6 +265,11 @@ public final class Foundation {
     @CFunction
     public static native void NSCopyMemoryPages(ConstVoidPtr source, VoidPtr dest, @NUInt long bytes);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Use NSProcessInfo instead
+     */
     @Generated
     @Deprecated
     @CFunction
@@ -637,81 +664,129 @@ public final class Foundation {
     @CVariable()
     public static native double NSFoundationVersionNumber();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringTransformLatinToKatakana();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringTransformLatinToHiragana();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringTransformLatinToHangul();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringTransformLatinToArabic();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringTransformLatinToHebrew();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringTransformLatinToThai();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringTransformLatinToCyrillic();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringTransformLatinToGreek();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringTransformToLatin();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringTransformMandarinToLatin();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringTransformHiraganaToKatakana();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringTransformFullwidthToHalfwidth();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringTransformToXMLHex();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringTransformToUnicodeName();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringTransformStripCombiningMarks();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -720,6 +795,8 @@ public final class Foundation {
     /**
      * NSArray of NSNumbers which contain NSStringEncoding values; if this key is not present in the dictionary, all
      * encodings are weighted the same
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -729,6 +806,8 @@ public final class Foundation {
     /**
      * NSArray of NSNumbers which contain NSStringEncoding values; if this key is not present in the dictionary, all
      * encodings are considered
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -737,6 +816,8 @@ public final class Foundation {
 
     /**
      * NSNumber boolean value; if this key is not present in the dictionary, the default value is NO
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -745,6 +826,8 @@ public final class Foundation {
 
     /**
      * NSNumber boolean value; if this key is not present in the dictionary, the default value is YES
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -753,6 +836,8 @@ public final class Foundation {
 
     /**
      * NSNumber boolean value; if this key is not present in the dictionary, the default value is NO
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -761,6 +846,8 @@ public final class Foundation {
 
     /**
      * NSString value; if this key is not present in the dictionary, the default value is U+FFFD
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -770,6 +857,8 @@ public final class Foundation {
     /**
      * NSString value; ISO language code; if this key is not present in the dictionary, no such information is
      * considered
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -791,6 +880,8 @@ public final class Foundation {
 
     /**
      * How much time is probably left in the operation, as an NSNumber containing a number of seconds.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -799,6 +890,8 @@ public final class Foundation {
 
     /**
      * How fast data is being processed, as an NSNumber containing bytes per second.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -811,6 +904,8 @@ public final class Foundation {
      * implementation of -localizedDescription takes advantage of that to return more specific text than it could
      * otherwise. The NSProgressFileTotalCountKey and NSProgressFileCompletedCountKey keys in the userInfo dictionary
      * are used for the overall count of files.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -821,6 +916,8 @@ public final class Foundation {
      * A user info dictionary key, for an entry that is required when the value for the kind property is
      * NSProgressKindFile. The value must be one of the strings listed in the next section. The default implementations
      * of of -localizedDescription and -localizedItemDescription use this value to determine the text that they return.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -829,22 +926,33 @@ public final class Foundation {
 
     /**
      * Possible values for NSProgressFileOperationKindKey entries.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSProgressFileOperationKindDownloading();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSProgressFileOperationKindDecompressingAfterDownloading();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSProgressFileOperationKindReceiving();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -854,6 +962,8 @@ public final class Foundation {
      * A user info dictionary key. The value must be an NSURL identifying the item on which progress is being made. This
      * is required for any NSProgress that is published using -publish to be reported to subscribers registered with
      * +addSubscriberForFileURL:withPublishingHandler:.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -864,12 +974,17 @@ public final class Foundation {
      * User info dictionary keys. The values must be NSNumbers containing integers. These entries are optional but if
      * they are both present then the default implementation of -localizedAdditionalDescription uses them to determine
      * the text that it returns.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSProgressFileTotalCountKey();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -891,14 +1006,16 @@ public final class Foundation {
     /**
      * This notification is posted to the default notification center when the resource request system detects a low
      * disk space condition.
-     * <p>
+     * 
      * If the application is in the background, the system needs more space, and the application does not free up enough
      * in response to the notification then the application may be killed. The application can free up space by calling
      * -endAccessingResources on any outstanding requests. This will inform the system that you are done with those
      * resources and it may purge the content to make room for a new request.
-     * <p>
+     * 
      * Note that this notification may not be the same as low disk space on the system, as applications can have a
      * smaller quota.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -909,11 +1026,16 @@ public final class Foundation {
      * Use this value for the loadingPriority property if the user is doing nothing but waiting on the result of this
      * request. The system will dedicate the maximum amount of resources available to finishing this request as soon as
      * possible.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
     public static native double NSBundleResourceRequestLoadingPriorityUrgent();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -921,72 +1043,113 @@ public final class Foundation {
 
     /**
      * the common calendar in Europe, the Western Hemisphere, and elsewhere
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSCalendarIdentifierGregorian();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSCalendarIdentifierBuddhist();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSCalendarIdentifierChinese();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSCalendarIdentifierCoptic();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSCalendarIdentifierEthiopicAmeteMihret();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSCalendarIdentifierEthiopicAmeteAlem();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSCalendarIdentifierHebrew();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSCalendarIdentifierISO8601();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSCalendarIdentifierIndian();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSCalendarIdentifierIslamic();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSCalendarIdentifierIslamicCivil();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSCalendarIdentifierJapanese();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSCalendarIdentifierPersian();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -994,6 +1157,8 @@ public final class Foundation {
 
     /**
      * A simple tabular Islamic calendar using the astronomical/Thursday epoch of CE 622 July 15
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1003,6 +1168,8 @@ public final class Foundation {
     /**
      * The Islamic Umm al-Qura calendar used in Saudi Arabia. This is based on astronomical calculation, instead of
      * tabular behavior.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1019,12 +1186,17 @@ public final class Foundation {
      * process and its locale and time zone. There are no guarantees that this
      * notification is received by observers in a "timely" manner, same as
      * with distributed notifications.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSCalendarDayChangedNotification();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1144,6 +1316,8 @@ public final class Foundation {
 
     /**
      * NSString
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1152,6 +1326,8 @@ public final class Foundation {
 
     /**
      * NSString
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1160,6 +1336,8 @@ public final class Foundation {
 
     /**
      * NSString
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1168,6 +1346,8 @@ public final class Foundation {
 
     /**
      * NSString
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1176,6 +1356,8 @@ public final class Foundation {
 
     /**
      * NSString
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1184,6 +1366,9 @@ public final class Foundation {
 
     /**
      * Values for NSCalendar identifiers (not the NSLocaleCalendar property key)
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
      */
     @Deprecated
     @Generated
@@ -1191,60 +1376,100 @@ public final class Foundation {
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSGregorianCalendar();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSBuddhistCalendar();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSChineseCalendar();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSHebrewCalendar();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSIslamicCalendar();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSIslamicCivilCalendar();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSJapaneseCalendar();
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSRepublicOfChinaCalendar();
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSPersianCalendar();
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSIndianCalendar();
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 8.0
+     */
     @Deprecated
     @Generated
     @CVariable()
@@ -1253,6 +1478,8 @@ public final class Foundation {
 
     /**
      * Attributed String identifier key string
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1261,32 +1488,49 @@ public final class Foundation {
 
     /**
      * Constants for attributed strings
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSPersonNameComponentGivenName();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSPersonNameComponentFamilyName();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSPersonNameComponentMiddleName();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSPersonNameComponentPrefix();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSPersonNameComponentSuffix();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1295,6 +1539,8 @@ public final class Foundation {
     /**
      * The delimiter is the character or characters used to separate name components.
      * For CJK languages there is no delimiter.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1374,6 +1620,9 @@ public final class Foundation {
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSOldStyleException();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1514,6 +1763,9 @@ public final class Foundation {
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSDefaultRunLoopMode();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1554,6 +1806,11 @@ public final class Foundation {
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileHandleNotificationFileHandleItem();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 5.0
+     * Deprecated-Message: Not supported
+     */
     @Deprecated
     @Generated
     @CVariable()
@@ -1572,6 +1829,8 @@ public final class Foundation {
     /**
      * Key for the resource properties that have not been set after setResourceValues:error: returns an error, returned
      * as an array of of strings.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -1580,6 +1839,8 @@ public final class Foundation {
 
     /**
      * The resource name provided by the file system (Read-write, value type NSString)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1588,6 +1849,8 @@ public final class Foundation {
 
     /**
      * Localized or extension-hidden name as displayed to users (Read-only, value type NSString)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1596,6 +1859,8 @@ public final class Foundation {
 
     /**
      * True for regular files (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1604,6 +1869,8 @@ public final class Foundation {
 
     /**
      * True for directories (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1612,6 +1879,8 @@ public final class Foundation {
 
     /**
      * True for symlinks (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1620,6 +1889,8 @@ public final class Foundation {
 
     /**
      * True for the root directory of a volume (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1631,6 +1902,8 @@ public final class Foundation {
      * can only set or clear this property on directories; if you try to set this property on non-directory objects, the
      * property is ignored. If the directory is a package for some other reason (extension type, etc), setting this
      * property to false will have no effect.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1639,6 +1912,8 @@ public final class Foundation {
 
     /**
      * True if resource is an application (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -1647,6 +1922,8 @@ public final class Foundation {
 
     /**
      * True for system-immutable resources (Read-write, value type boolean NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1655,6 +1932,8 @@ public final class Foundation {
 
     /**
      * True for user-immutable resources (Read-write, value type boolean NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1665,6 +1944,8 @@ public final class Foundation {
      * True for resources normally not displayed to users (Read-write, value type boolean NSNumber). Note: If the
      * resource is a hidden because its name starts with a period, setting this property to false will not change the
      * property.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1674,6 +1955,8 @@ public final class Foundation {
     /**
      * True for resources whose filename extension is removed from the localized name property (Read-write, value type
      * boolean NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1682,6 +1965,8 @@ public final class Foundation {
 
     /**
      * The date the resource was created (Read-write, value type NSDate)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1690,6 +1975,8 @@ public final class Foundation {
 
     /**
      * The date the resource was last accessed (Read-write, value type NSDate)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1698,6 +1985,8 @@ public final class Foundation {
 
     /**
      * The time the resource content was last modified (Read-write, value type NSDate)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1706,6 +1995,8 @@ public final class Foundation {
 
     /**
      * The time the resource's attributes were last modified (Read-only, value type NSDate)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1714,6 +2005,8 @@ public final class Foundation {
 
     /**
      * Number of hard links to the resource (Read-only, value type NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1722,6 +2015,8 @@ public final class Foundation {
 
     /**
      * The resource's parent directory, if any (Read-only, value type NSURL)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1730,6 +2025,8 @@ public final class Foundation {
 
     /**
      * URL of the volume on which the resource is stored (Read-only, value type NSURL)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1738,7 +2035,12 @@ public final class Foundation {
 
     /**
      * Uniform type identifier (UTI) for the resource (Read-only, value type NSString)
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use NSURLContentTypeKey instead
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1746,6 +2048,8 @@ public final class Foundation {
 
     /**
      * User-visible type or "kind" description (Read-only, value type NSString)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1754,6 +2058,8 @@ public final class Foundation {
 
     /**
      * The label number assigned to the resource (Read-write, value type NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1762,6 +2068,8 @@ public final class Foundation {
 
     /**
      * The color of the assigned label (Read-only, value type NSColor)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1770,6 +2078,8 @@ public final class Foundation {
 
     /**
      * The user-visible label text (Read-only, value type NSString)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1778,6 +2088,8 @@ public final class Foundation {
 
     /**
      * The icon normally displayed for the resource (Read-only, value type NSImage)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1786,6 +2098,8 @@ public final class Foundation {
 
     /**
      * The custom icon assigned to the resource, if any (Currently not implemented, value type NSImage)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -1797,6 +2111,8 @@ public final class Foundation {
      * identifiers are equal if they have the same file system path or if the paths are linked to same inode on the same
      * file system). This identifier is not persistent across system restarts. (Read-only, value type id <NSCopying,
      * NSCoding, NSSecureCoding, NSObject>)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -1808,6 +2124,8 @@ public final class Foundation {
      * volume will have the same volume identifier and can be compared using for equality using -isEqual. This
      * identifier is not persistent across system restarts. (Read-only, value type id <NSCopying, NSCoding,
      * NSSecureCoding, NSObject>)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -1817,6 +2135,8 @@ public final class Foundation {
     /**
      * The optimal block size when reading or writing this file's data, or nil if not available. (Read-only, value type
      * NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -1825,6 +2145,8 @@ public final class Foundation {
 
     /**
      * true if this process (as determined by EUID) can read the resource. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -1833,6 +2155,8 @@ public final class Foundation {
 
     /**
      * true if this process (as determined by EUID) can write to the resource. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -1842,6 +2166,8 @@ public final class Foundation {
     /**
      * true if this process (as determined by EUID) can execute a file resource or search a directory resource.
      * (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -1851,6 +2177,8 @@ public final class Foundation {
     /**
      * The file system object's security information encapsulated in a NSFileSecurity object. (Read-write, Value type
      * NSFileSecurity)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -1862,6 +2190,8 @@ public final class Foundation {
      * property is only useful for excluding cache and other application support files which are not needed in a backup.
      * Some operations commonly made to user documents will cause this property to be reset to false and so this
      * property should not be used on user documents.
+     * 
+     * API-Since: 5.1
      */
     @Generated
     @CVariable()
@@ -1870,6 +2200,8 @@ public final class Foundation {
 
     /**
      * the URL's path as a file system path (Read-only, value type NSString)
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -1878,6 +2210,8 @@ public final class Foundation {
 
     /**
      * the URL's path as a canonical absolute file system path (Read-only, value type NSString)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -1887,6 +2221,8 @@ public final class Foundation {
     /**
      * true if this URL is a file system trigger directory. Traversing or opening a file system trigger will cause an
      * attempt to mount a file system on the trigger directory. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -1903,6 +2239,8 @@ public final class Foundation {
      * across system restarts. The generation identifier is tied to a specific document on a specific volume and is not
      * transferred when the document is copied to another volume. This property is not supported by all volumes.
      * (Read-only, value type id <NSCopying, NSCoding, NSSecureCoding, NSObject>)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1917,6 +2255,8 @@ public final class Foundation {
      * The document identifier is persistent across system restarts. The document identifier is not transferred when the
      * file is copied. Document identifiers are only unique within a single volume. This property is not supported by
      * all volumes. (Read-only, value type NSNumber)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1928,6 +2268,8 @@ public final class Foundation {
      * behavior may be observed when this attribute is requested on hard-linked items. This property is not supported by
      * all volumes. (Read-only before macOS 10.15, iOS 13.0, watchOS 6.0, and tvOS 13.0; Read-write after, value type
      * NSDate)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -1936,6 +2278,8 @@ public final class Foundation {
 
     /**
      * Returns the file system object type. (Read-only, value type NSString)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -1944,42 +2288,65 @@ public final class Foundation {
 
     /**
      * The file system object type values returned for the NSURLFileResourceTypeKey
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSURLFileResourceTypeNamedPipe();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSURLFileResourceTypeCharacterSpecial();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSURLFileResourceTypeDirectory();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSURLFileResourceTypeBlockSpecial();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSURLFileResourceTypeRegular();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSURLFileResourceTypeSymbolicLink();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSURLFileResourceTypeSocket();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1987,7 +2354,12 @@ public final class Foundation {
 
     /**
      * dictionary of NSImage/UIImage objects keyed by size
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use the QuickLookThumbnailing framework and extension point instead
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1995,7 +2367,12 @@ public final class Foundation {
 
     /**
      * size key for a 1024 x 1024 thumbnail image
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use the QuickLookThumbnailing framework and extension point instead
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2003,6 +2380,8 @@ public final class Foundation {
 
     /**
      * Total file size in bytes (Read-only, value type NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -2012,6 +2391,8 @@ public final class Foundation {
     /**
      * Total size allocated on disk for the file in bytes (number of blocks times block size) (Read-only, value type
      * NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -2021,6 +2402,8 @@ public final class Foundation {
     /**
      * Total displayable size of the file in bytes (this may include space used by metadata), or nil if not available.
      * (Read-only, value type NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2031,6 +2414,8 @@ public final class Foundation {
      * Total allocated size of the file in bytes (this may include space used by metadata), or nil if not available.
      * This can be less than the value returned by NSURLTotalFileSizeKey if the resource is compressed. (Read-only,
      * value type NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2040,6 +2425,8 @@ public final class Foundation {
     /**
      * true if the resource is a Finder alias file or a symlink, false otherwise ( Read-only, value type boolean
      * NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -2048,6 +2435,8 @@ public final class Foundation {
 
     /**
      * The protection level for this file
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -2056,6 +2445,8 @@ public final class Foundation {
 
     /**
      * The file has no special protections associated with it. It can be read from or written to at any time.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -2066,6 +2457,8 @@ public final class Foundation {
      * The file is stored in an encrypted format on disk and cannot be read from or written to while the device is
      * locked or booting. Transient data files with this protection type should be excluded from backups using
      * NSURLIsExcludedFromBackupKey.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -2079,6 +2472,8 @@ public final class Foundation {
      * when the file is created and opened, though not when being written to or read from. This can be mitigated by
      * changing the file protection to NSURLFileProtectionComplete when the device is unlocked. Transient data files
      * with this protection type should be excluded from backups using NSURLIsExcludedFromBackupKey.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -2089,6 +2484,8 @@ public final class Foundation {
      * The file is stored in an encrypted format on disk and cannot be accessed until after the device has booted. After
      * the user unlocks the device for the first time, your app can access the file and continue to access it even if
      * the user subsequently locks the device.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -2097,6 +2494,8 @@ public final class Foundation {
 
     /**
      * The user-visible volume format (Read-only, value type NSString)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -2105,6 +2504,8 @@ public final class Foundation {
 
     /**
      * Total volume capacity in bytes (Read-only, value type NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -2113,6 +2514,8 @@ public final class Foundation {
 
     /**
      * Total free space in bytes (Read-only, value type NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -2121,6 +2524,8 @@ public final class Foundation {
 
     /**
      * Total number of resources on the volume (Read-only, value type NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -2130,6 +2535,8 @@ public final class Foundation {
     /**
      * true if the volume format supports persistent object identifiers and can look up file system objects by their IDs
      * (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -2138,6 +2545,8 @@ public final class Foundation {
 
     /**
      * true if the volume format supports symbolic links (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -2146,6 +2555,8 @@ public final class Foundation {
 
     /**
      * true if the volume format supports hard links (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -2156,6 +2567,8 @@ public final class Foundation {
      * true if the volume format supports a journal used to speed recovery in case of unplanned restart (such as a power
      * outage or crash). This does not necessarily mean the volume is actively using a journal. (Read-only, value type
      * boolean NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -2165,6 +2578,8 @@ public final class Foundation {
     /**
      * true if the volume is currently using a journal for speedy recovery after an unplanned restart. (Read-only, value
      * type boolean NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -2175,6 +2590,8 @@ public final class Foundation {
      * true if the volume format supports sparse files, that is, files which can have 'holes' that have never been
      * written to, and thus do not consume space on disk. A sparse file may have an allocated size on disk that is less
      * than its logical length (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -2185,6 +2602,8 @@ public final class Foundation {
      * For security reasons, parts of a file (runs) that have never been written to must appear to contain zeroes. true
      * if the volume keeps track of allocated but unwritten runs of a file so that it can substitute zeroes without
      * actually writing zeroes to the media. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -2195,6 +2614,8 @@ public final class Foundation {
      * true if the volume format treats upper and lower case characters in file and directory names as different.
      * Otherwise an upper case character is equivalent to a lower case character, and you can't have two names that
      * differ solely in the case of the characters. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -2205,6 +2626,8 @@ public final class Foundation {
      * true if the volume format preserves the case of file and directory names. Otherwise the volume may change the
      * case of some characters (typically making them all upper or all lower case). (Read-only, value type boolean
      * NSNumber)
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -2214,6 +2637,8 @@ public final class Foundation {
     /**
      * true if the volume supports reliable storage of times for the root directory. (Read-only, value type boolean
      * NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2223,6 +2648,8 @@ public final class Foundation {
     /**
      * true if the volume supports returning volume size values (NSURLVolumeTotalCapacityKey and
      * NSURLVolumeAvailableCapacityKey). (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2231,6 +2658,8 @@ public final class Foundation {
 
     /**
      * true if the volume can be renamed. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2240,6 +2669,8 @@ public final class Foundation {
     /**
      * true if the volume implements whole-file flock(2) style advisory locks, and the O_EXLOCK and O_SHLOCK flags of
      * the open(2) call. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2248,6 +2679,8 @@ public final class Foundation {
 
     /**
      * true if the volume implements extended security (ACLs). (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2257,6 +2690,8 @@ public final class Foundation {
     /**
      * true if the volume should be visible via the GUI (i.e., appear on the Desktop as a separate volume). (Read-only,
      * value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2266,6 +2701,8 @@ public final class Foundation {
     /**
      * The largest file size (in bytes) supported by this file system, or nil if this cannot be determined. (Read-only,
      * value type NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2275,6 +2712,8 @@ public final class Foundation {
     /**
      * true if the volume's media is ejectable from the drive mechanism under software control. (Read-only, value type
      * boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2283,6 +2722,8 @@ public final class Foundation {
 
     /**
      * true if the volume's media is removable from the drive mechanism. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2292,6 +2733,8 @@ public final class Foundation {
     /**
      * true if the volume's device is connected to an internal bus, false if connected to an external bus, or nil if not
      * available. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2301,6 +2744,8 @@ public final class Foundation {
     /**
      * true if the volume is automounted. Note: do not mistake this with the functionality provided by
      * kCFURLVolumeSupportsBrowsingKey. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2309,6 +2754,8 @@ public final class Foundation {
 
     /**
      * true if the volume is stored on a local device. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2317,6 +2764,8 @@ public final class Foundation {
 
     /**
      * true if the volume is read-only. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2325,6 +2774,8 @@ public final class Foundation {
 
     /**
      * The volume's creation date, or nil if this cannot be determined. (Read-only, value type NSDate)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2333,6 +2784,8 @@ public final class Foundation {
 
     /**
      * The NSURL needed to remount a network volume, or nil if not available. (Read-only, value type NSURL)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2342,6 +2795,8 @@ public final class Foundation {
     /**
      * The volume's persistent UUID as a string, or nil if a persistent UUID is not available for the volume.
      * (Read-only, value type NSString)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2351,6 +2806,8 @@ public final class Foundation {
     /**
      * The name of the volume (Read-write if NSURLVolumeSupportsRenamingKey is YES, otherwise read-only, value type
      * NSString)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2359,6 +2816,8 @@ public final class Foundation {
 
     /**
      * The user-presentable name of the volume (Read-only, value type NSString)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2367,6 +2826,8 @@ public final class Foundation {
 
     /**
      * true if the volume is encrypted. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -2375,6 +2836,8 @@ public final class Foundation {
 
     /**
      * true if the volume is the root filesystem. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -2384,6 +2847,8 @@ public final class Foundation {
     /**
      * true if the volume supports transparent decompression of compressed files using decmpfs. (Read-only, value type
      * boolean NSNumber)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -2392,6 +2857,8 @@ public final class Foundation {
 
     /**
      * true if the volume supports clonefile(2) (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -2400,6 +2867,8 @@ public final class Foundation {
 
     /**
      * true if the volume supports renamex_np(2)'s RENAME_SWAP option (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -2408,6 +2877,8 @@ public final class Foundation {
 
     /**
      * true if the volume supports renamex_np(2)'s RENAME_EXCL option (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -2417,6 +2888,8 @@ public final class Foundation {
     /**
      * true if this item is synced to the cloud, false if it is only a local file. (Read-only, value type boolean
      * NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2425,6 +2898,8 @@ public final class Foundation {
 
     /**
      * true if this item has conflicts outstanding. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2434,6 +2909,10 @@ public final class Foundation {
     /**
      * equivalent to NSURLUbiquitousItemDownloadingStatusKey == NSURLUbiquitousItemDownloadingStatusCurrent. Has never
      * behaved as documented in earlier releases, hence deprecated. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use NSURLUbiquitousItemDownloadingStatusKey instead
      */
     @Deprecated
     @Generated
@@ -2443,6 +2922,8 @@ public final class Foundation {
 
     /**
      * true if data is being downloaded for this item. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2451,6 +2932,8 @@ public final class Foundation {
 
     /**
      * true if there is data present in the cloud for this item. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2459,6 +2942,8 @@ public final class Foundation {
 
     /**
      * true if data is being uploaded for this item. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -2467,6 +2952,10 @@ public final class Foundation {
 
     /**
      * Use NSMetadataQuery and NSMetadataUbiquitousItemPercentDownloadedKey on NSMetadataItem instead
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Use NSMetadataUbiquitousItemPercentDownloadedKey instead
      */
     @Deprecated
     @Generated
@@ -2476,6 +2965,10 @@ public final class Foundation {
 
     /**
      * Use NSMetadataQuery and NSMetadataUbiquitousItemPercentUploadedKey on NSMetadataItem instead
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 6.0
+     * Deprecated-Message: Use NSMetadataUbiquitousItemPercentUploadedKey instead
      */
     @Deprecated
     @Generated
@@ -2485,6 +2978,8 @@ public final class Foundation {
 
     /**
      * returns the download status of this item. (Read-only, value type NSString). Possible values below.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2494,6 +2989,8 @@ public final class Foundation {
     /**
      * returns the error when downloading the item from iCloud failed, see the NSUbiquitousFile section in
      * FoundationErrors.h (Read-only, value type NSError)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2503,6 +3000,8 @@ public final class Foundation {
     /**
      * returns the error when uploading the item to iCloud failed, see the NSUbiquitousFile section in
      * FoundationErrors.h (Read-only, value type NSError)
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2512,6 +3011,8 @@ public final class Foundation {
     /**
      * returns whether a download of this item has already been requested with an API like
      * -startDownloadingUbiquitousItemAtURL:error: (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -2520,6 +3021,8 @@ public final class Foundation {
 
     /**
      * returns the name of this item's container as displayed to users.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -2528,6 +3031,8 @@ public final class Foundation {
 
     /**
      * this item has not been downloaded yet. Use startDownloadingUbiquitousItemAtURL:error: to download it.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2537,6 +3042,8 @@ public final class Foundation {
     /**
      * there is a local version of this item available. The most current version will get downloaded as soon as
      * possible.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2545,6 +3052,8 @@ public final class Foundation {
 
     /**
      * there is a local version of this item and it is the most up-to-date version known to this device.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -2553,6 +3062,8 @@ public final class Foundation {
 
     /**
      * Notification sent after the current ubiquity identity has changed.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -2689,26 +3200,41 @@ public final class Foundation {
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileBusy();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileProtectionKey();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileProtectionNone();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileProtectionComplete();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileProtectionCompleteUnlessOpen();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2736,8 +3262,10 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieName
-     * <p>
+     * 
      * Key for cookie name
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2746,8 +3274,10 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieValue
-     * <p>
+     * 
      * Key for cookie value
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2756,8 +3286,10 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieOriginURL
-     * <p>
+     * 
      * Key for cookie origin URL
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2766,8 +3298,10 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieVersion
-     * <p>
+     * 
      * Key for cookie version
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2776,8 +3310,10 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieDomain
-     * <p>
+     * 
      * Key for cookie domain
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2786,8 +3322,10 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookiePath
-     * <p>
+     * 
      * Key for cookie path
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2796,8 +3334,10 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieSecure
-     * <p>
+     * 
      * Key for cookie secure flag
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2806,8 +3346,10 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieExpires
-     * <p>
+     * 
      * Key for cookie expiration date
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2816,8 +3358,10 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieComment
-     * <p>
+     * 
      * Key for cookie comment text
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2826,8 +3370,10 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieCommentURL
-     * <p>
+     * 
      * Key for cookie comment URL
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2836,8 +3382,10 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieDiscard
-     * <p>
+     * 
      * Key for cookie discard (session-only) flag
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2846,8 +3394,10 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieMaximumAge
-     * <p>
+     * 
      * Key for cookie maximum age (an alternate way of specifying the expiration)
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2856,8 +3406,10 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookiePort
-     * <p>
+     * 
      * Key for cookie ports
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2866,10 +3418,12 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieManagerAcceptPolicyChangedNotification
-     * <p>
+     * 
      * Name of notification that should be posted to the
      * distributed notification center whenever the accept cookies
      * preference is changed
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2878,8 +3432,10 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieManagerCookiesChangedNotification
-     * <p>
+     * 
      * Notification sent when the set of cookies changes
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2891,7 +3447,7 @@ public final class Foundation {
      * contain at least two entries:
      * - @"NSTargetObjectUserInfoKey": the receiver of the failed KVC message.
      * - @"NSUnknownUserInfoKey": the key that was used in the failed KVC message.
-     * <p>
+     * 
      * The actual value of this constant string is "NSUnknownKeyException," to match the exceptions that are thrown by
      * KVC methods that were deprecated in Mac OS 10.3.
      */
@@ -2984,6 +3540,9 @@ public final class Foundation {
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSKeyValueChangeIndexesKey();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3003,17 +3562,25 @@ public final class Foundation {
      * Archives created using the class method archivedDataWithRootObject used this key for the root object in the
      * hierarchy of encoded objects. The NSKeyedUnarchiver class method unarchiveObjectWithData: will look for this root
      * key as well. You can also use it as the key for the root object in your own archives.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSKeyedArchiveRootObjectKey();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSInvocationOperationVoidResultException();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3028,13 +3595,15 @@ public final class Foundation {
      * NSProcessInfoPowerStateDidChangeNotification is posted once any power usage mode of the system has changed. Once
      * the notification is posted, use the isLowPowerModeEnabled property to retrieve the current state of the low power
      * mode setting of the system.
-     * <p>
+     * 
      * When this notification is posted your application should attempt to reduce power usage by reducing potentially
      * costly computation and other power using activities like network activity or keeping the screen on if the low
      * power mode setting is enabled.
-     * <p>
+     * 
      * This notification is posted on the global dispatch queue. Register for it using the default notification center.
      * The object associated with the notification is NSProcessInfo.processInfo.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -3043,57 +3612,89 @@ public final class Foundation {
 
     /**
      * Keys for address components.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSTextCheckingNameKey();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSTextCheckingJobTitleKey();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSTextCheckingOrganizationKey();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSTextCheckingStreetKey();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSTextCheckingCityKey();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSTextCheckingStateKey();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSTextCheckingZIPKey();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSTextCheckingCountryKey();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSTextCheckingPhoneKey();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSTextCheckingAirlineKey();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3101,32 +3702,49 @@ public final class Foundation {
 
     /**
      * use this as the key for setting one of the following values for the security level of the target stream.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStreamSocketSecurityLevelKey();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStreamSocketSecurityLevelNone();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStreamSocketSecurityLevelSSLv2();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStreamSocketSecurityLevelSSLv3();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStreamSocketSecurityLevelTLSv1();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3135,12 +3753,17 @@ public final class Foundation {
     /**
      * Value is an NSDictionary containing the key/value pairs below. The dictionary returned from SystemConfiguration
      * for SOCKS proxies will work without alteration.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStreamSOCKSProxyConfigurationKey();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3148,6 +3771,8 @@ public final class Foundation {
 
     /**
      * Value is an NSString
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3156,6 +3781,8 @@ public final class Foundation {
 
     /**
      * Value is an NSNumber
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3164,6 +3791,8 @@ public final class Foundation {
 
     /**
      * Value is one of NSStreamSOCKSProxyVersion4 or NSStreamSOCKSProxyVersion5
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3172,12 +3801,17 @@ public final class Foundation {
 
     /**
      * Value is an NSString
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStreamSOCKSProxyPasswordKey();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3185,6 +3819,8 @@ public final class Foundation {
 
     /**
      * Value for NSStreamSOCKProxyVersionKey
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3193,6 +3829,8 @@ public final class Foundation {
 
     /**
      * Value for NSStreamSOCKProxyVersionKey
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3201,6 +3839,8 @@ public final class Foundation {
 
     /**
      * Key for obtaining the data written to a memory stream.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3209,6 +3849,8 @@ public final class Foundation {
 
     /**
      * NSString constants for error domains.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3217,6 +3859,8 @@ public final class Foundation {
 
     /**
      * SSL errors are to be interpreted via <Security/SecureTransport.h>
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3229,6 +3873,8 @@ public final class Foundation {
      * routing, suspension behavior and other networking related attributes
      * appropriate for the given service type. The service types supported
      * are documented below.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -3237,27 +3883,41 @@ public final class Foundation {
 
     /**
      * Supported network service types:
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStreamNetworkServiceTypeVoIP();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStreamNetworkServiceTypeVideo();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStreamNetworkServiceTypeBackground();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStreamNetworkServiceTypeVoice();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3278,6 +3938,9 @@ public final class Foundation {
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSThreadWillExitNotification();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3285,8 +3948,10 @@ public final class Foundation {
 
     /**
      * [@const] NSURLProtectionSpaceHTTP
-     * <p>
+     * 
      * The protocol for HTTP
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3295,8 +3960,10 @@ public final class Foundation {
 
     /**
      * [@const] NSURLProtectionSpaceHTTPS
-     * <p>
+     * 
      * The protocol for HTTPS
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3305,8 +3972,10 @@ public final class Foundation {
 
     /**
      * [@const] NSURLProtectionSpaceFTP
-     * <p>
+     * 
      * The protocol for FTP
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3315,8 +3984,10 @@ public final class Foundation {
 
     /**
      * [@const] NSURLProtectionSpaceHTTPProxy
-     * <p>
+     * 
      * The proxy type for http proxies
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3325,8 +3996,10 @@ public final class Foundation {
 
     /**
      * [@const] NSURLProtectionSpaceHTTPSProxy
-     * <p>
+     * 
      * The proxy type for https proxies
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3335,8 +4008,10 @@ public final class Foundation {
 
     /**
      * [@const] NSURLProtectionSpaceFTPProxy
-     * <p>
+     * 
      * The proxy type for ftp proxies
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3345,8 +4020,10 @@ public final class Foundation {
 
     /**
      * [@const] NSURLProtectionSpaceSOCKSProxy
-     * <p>
+     * 
      * The proxy type for SOCKS proxies
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3355,8 +4032,10 @@ public final class Foundation {
 
     /**
      * [@const] NSURLAuthenticationMethodDefault
-     * <p>
+     * 
      * The default authentication method for a protocol
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3365,9 +4044,11 @@ public final class Foundation {
 
     /**
      * [@const] NSURLAuthenticationMethodHTTPBasic
-     * <p>
+     * 
      * HTTP basic authentication. Equivalent to
      * NSURLAuthenticationMethodDefault for http.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3376,8 +4057,10 @@ public final class Foundation {
 
     /**
      * [@const] NSURLAuthenticationMethodHTTPDigest
-     * <p>
+     * 
      * HTTP digest authentication.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3386,8 +4069,10 @@ public final class Foundation {
 
     /**
      * [@const] NSURLAuthenticationMethodHTMLForm
-     * <p>
+     * 
      * HTML form authentication. Applies to any protocol.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3396,8 +4081,10 @@ public final class Foundation {
 
     /**
      * [@const] NSURLAuthenticationMethodNTLM
-     * <p>
+     * 
      * NTLM authentication.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3406,8 +4093,10 @@ public final class Foundation {
 
     /**
      * [@const] NSURLAuthenticationMethodNegotiate
-     * <p>
+     * 
      * Negotiate authentication.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3416,8 +4105,10 @@ public final class Foundation {
 
     /**
      * [@const] NSURLAuthenticationMethodClientCertificate
-     * <p>
+     * 
      * SSL Client certificate. Applies to any protocol.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -3426,8 +4117,10 @@ public final class Foundation {
 
     /**
      * [@const] NSURLAuthenticationMethodServerTrust
-     * <p>
+     * 
      * SecTrustRef validation required. Applies to any protocol.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -3436,9 +4129,11 @@ public final class Foundation {
 
     /**
      * [@const] NSURLCredentialStorageChangedNotification
-     * <p>
+     * 
      * This notification is sent on the main thread whenever
      * the set of stored credentials changes.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3451,6 +4146,8 @@ public final class Foundation {
      * NSURLCredentialPersistenceSynchronizable
      * attribute should be removed. If the key is missing or the value is @NO, then no attempt will be made
      * to remove such a credential.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -3469,8 +4166,10 @@ public final class Foundation {
 
     /**
      * [@const] NSURLErrorFailingURLErrorKey
-     * <p>
+     * 
      * The NSError userInfo dictionary key used to store and retrieve the URL which caused a load to fail.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -3479,12 +4178,14 @@ public final class Foundation {
 
     /**
      * [@const] NSURLErrorFailingURLStringErrorKey
-     * <p>
+     * 
      * The NSError userInfo dictionary key used to store and retrieve the NSString object for the URL which caused a
      * load to fail.
-     * <p>
+     * 
      * This constant supersedes NSErrorFailingURLStringKey, which was deprecated in Mac OS X 10.6. Both constants refer
      * to the same value for backward-compatibility, but this symbol name has a better prefix.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -3493,12 +4194,16 @@ public final class Foundation {
 
     /**
      * [@const] NSErrorFailingURLStringKey
-     * <p>
+     * 
      * The NSError userInfo dictionary key used to store and retrieve the NSString object for the URL which caused a
      * load to fail.
-     * <p>
+     * 
      * This constant is deprecated in Mac OS X 10.6, and is superseded by NSURLErrorFailingURLStringErrorKey. Both
      * constants refer to the same value for backward-compatibility, but the new symbol name has a better prefix.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 4.0
+     * Deprecated-Message: Use NSURLErrorFailingURLStringErrorKey instead
      */
     @Deprecated
     @Generated
@@ -3508,9 +4213,11 @@ public final class Foundation {
 
     /**
      * [@const] NSURLErrorFailingURLPeerTrustErrorKey
-     * <p>
+     * 
      * The NSError userInfo dictionary key used to store and retrieve the SecTrustRef object representing the state of a
      * failed SSL handshake.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -3519,10 +4226,12 @@ public final class Foundation {
 
     /**
      * [@const] NSURLErrorBackgroundTaskCancelledReasonKey
-     * <p>
+     * 
      * The NSError userInfo dictionary key used to store and retrieve the NSNumber corresponding to the reason why a
      * background
      * NSURLSessionTask was cancelled
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -3562,6 +4271,8 @@ public final class Foundation {
      * than is allowed. Currently there is no limit for local user defaults except on tvOS, where a warning notification
      * will be posted at 512kB, and the process terminated at 1MB. For ubiquitous defaults, the limit depends on the
      * logged in iCloud user.
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @CVariable()
@@ -3571,9 +4282,11 @@ public final class Foundation {
     /**
      * NSUbiquitousUserDefaultsNoCloudAccountNotification is posted on the main queue to the default notification center
      * when a cloud default is set, but no iCloud user is logged in.
-     * <p>
+     * 
      * This is not necessarily an error: ubiquitous defaults set when no iCloud user is logged in will be uploaded the
      * next time one is available if configured to do so.
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @CVariable()
@@ -3584,6 +4297,8 @@ public final class Foundation {
      * NSUbiquitousUserDefaultsDidChangeAccountsNotification is posted on the main queue to the default notification
      * center when the user changes the primary iCloud account. The keys and values in the local key-value store have
      * been replaced with those from the new account, regardless of the relative timestamps.
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @CVariable()
@@ -3594,6 +4309,8 @@ public final class Foundation {
      * NSUbiquitousUserDefaultsCompletedInitialSyncNotification is posted on the main queue when ubiquitous defaults
      * finish downloading the first time a device is connected to an iCloud account, and when a user switches their
      * primary iCloud account.
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @CVariable()
@@ -3611,26 +4328,45 @@ public final class Foundation {
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUserDefaultsDidChangeNotification();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSNegateBooleanTransformerName();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSIsNilTransformerName();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSIsNotNilTransformerName();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUnarchiveFromDataTransformerName();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3638,6 +4374,8 @@ public final class Foundation {
 
     /**
      * for use with NSError.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3646,6 +4384,8 @@ public final class Foundation {
 
     /**
      * Key in userInfo. Value is a dictionary of NSExtensionItems and associated NSError instances.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -3654,6 +4394,8 @@ public final class Foundation {
 
     /**
      * The host process will enter the foreground
+     * 
+     * API-Since: 8.2
      */
     @Generated
     @CVariable()
@@ -3662,6 +4404,8 @@ public final class Foundation {
 
     /**
      * The host process did enter the background
+     * 
+     * API-Since: 8.2
      */
     @Generated
     @CVariable()
@@ -3670,6 +4414,8 @@ public final class Foundation {
 
     /**
      * The host process will resign active status (stop receiving events), the extension may be suspended
+     * 
+     * API-Since: 8.2
      */
     @Generated
     @CVariable()
@@ -3678,6 +4424,8 @@ public final class Foundation {
 
     /**
      * The host process did become active (begin receiving events)
+     * 
+     * API-Since: 8.2
      */
     @Generated
     @CVariable()
@@ -3686,6 +4434,8 @@ public final class Foundation {
 
     /**
      * NSValue of CGSize or NSSize, specifies image size in pixels.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -3695,6 +4445,8 @@ public final class Foundation {
     /**
      * If JavaScript code passes an object to its completionFunction, it will be placed into an item of type
      * kUTTypePropertyList, containing an NSDictionary, under this key.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -3704,6 +4456,8 @@ public final class Foundation {
     /**
      * Arguments to be passed to a JavaScript finalize method should be placed in an item of type kUTTypePropertyList,
      * containing an NSDictionary, under this key.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -3712,6 +4466,8 @@ public final class Foundation {
 
     /**
      * Constant used by NSError to distinguish errors belonging to the NSItemProvider domain
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -3720,17 +4476,25 @@ public final class Foundation {
 
     /**
      * Keys corresponding to properties exposed on the NSExtensionItem interface
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSExtensionItemAttributedTitleKey();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSExtensionItemAttributedContentTextKey();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3738,7 +4502,12 @@ public final class Foundation {
 
     /**
      * This tag scheme classifies tokens according to their broad general type: word, punctuation, whitespace, etc.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3747,7 +4516,12 @@ public final class Foundation {
     /**
      * This tag scheme classifies tokens according to class: part of speech for words, type of punctuation or
      * whitespace, etc.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3755,7 +4529,12 @@ public final class Foundation {
 
     /**
      * This tag scheme classifies tokens as to whether they are part of named entities of various types or not.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3764,7 +4543,12 @@ public final class Foundation {
     /**
      * This tag scheme follows NSLinguisticTagSchemeNameType for names, NSLinguisticTagSchemeLexicalClass for all other
      * tokens.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3772,7 +4556,12 @@ public final class Foundation {
 
     /**
      * This tag scheme supplies a stem form for each word token (if known).
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3780,7 +4569,12 @@ public final class Foundation {
 
     /**
      * This tag scheme tags tokens according to their most likely language (if known).
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3788,7 +4582,12 @@ public final class Foundation {
 
     /**
      * This tag scheme tags tokens according to their script.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3796,7 +4595,12 @@ public final class Foundation {
 
     /**
      * Tokens considered to be words or word-like linguistic items.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3804,7 +4608,12 @@ public final class Foundation {
 
     /**
      * Tokens made up of punctuation.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3812,7 +4621,12 @@ public final class Foundation {
 
     /**
      * Tokens made up of whitespace of all sorts.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3820,7 +4634,12 @@ public final class Foundation {
 
     /**
      * Other tokens, including non-linguistic items such as symbols.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3828,122 +4647,265 @@ public final class Foundation {
 
     /**
      * Tags for NSLinguisticTagSchemeLexicalClass
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagNoun();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagVerb();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagAdjective();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagAdverb();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagPronoun();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagDeterminer();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagParticle();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagPreposition();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagNumber();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagConjunction();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagInterjection();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagClassifier();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagIdiom();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagOtherWord();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagSentenceTerminator();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagOpenQuote();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagCloseQuote();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagOpenParenthesis();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagCloseParenthesis();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagWordJoiner();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagDash();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagOtherPunctuation();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagParagraphBreak();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3951,17 +4913,34 @@ public final class Foundation {
 
     /**
      * Tags for NSLinguisticTagSchemeNameType
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagPersonalName();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLinguisticTagPlaceName();
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
+     */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3969,6 +4948,8 @@ public final class Foundation {
 
     /**
      * NSString
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -3977,6 +4958,8 @@ public final class Foundation {
 
     /**
      * NSString
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -3985,6 +4968,8 @@ public final class Foundation {
 
     /**
      * NSURL
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -3993,6 +4978,8 @@ public final class Foundation {
 
     /**
      * NSString
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -4001,6 +4988,8 @@ public final class Foundation {
 
     /**
      * file size in bytes; unsigned long long NSNumber
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -4009,6 +4998,8 @@ public final class Foundation {
 
     /**
      * NSDate
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -4017,6 +5008,8 @@ public final class Foundation {
 
     /**
      * NSDate
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -4025,6 +5018,8 @@ public final class Foundation {
 
     /**
      * NSString
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -4033,6 +5028,8 @@ public final class Foundation {
 
     /**
      * NSArray of NSString
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -4041,6 +5038,8 @@ public final class Foundation {
 
     /**
      * boolean NSNumber
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -4049,6 +5048,8 @@ public final class Foundation {
 
     /**
      * boolean NSNumber
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -4057,6 +5058,10 @@ public final class Foundation {
 
     /**
      * boolean NSNumber
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use NSMetadataUbiquitousItemDownloadingStatusKey instead
      */
     @Deprecated
     @Generated
@@ -4066,6 +5071,8 @@ public final class Foundation {
 
     /**
      * NSString ; download status of this item. The values are the three strings defined below:
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -4074,6 +5081,8 @@ public final class Foundation {
 
     /**
      * this item has not been downloaded yet. Use startDownloadingUbiquitousItemAtURL:error: to download it.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -4083,6 +5092,8 @@ public final class Foundation {
     /**
      * there is a local version of this item available. The most current version will get downloaded as soon as
      * possible.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -4091,6 +5102,8 @@ public final class Foundation {
 
     /**
      * there is a local version of this item and it is the most up-to-date version known to this device.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -4099,6 +5112,8 @@ public final class Foundation {
 
     /**
      * boolean NSNumber
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -4107,6 +5122,8 @@ public final class Foundation {
 
     /**
      * boolean NSNumber
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -4115,6 +5132,8 @@ public final class Foundation {
 
     /**
      * boolean NSNumber
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -4123,6 +5142,8 @@ public final class Foundation {
 
     /**
      * double NSNumber; range [0..100]
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -4131,6 +5152,8 @@ public final class Foundation {
 
     /**
      * double NSNumber; range [0..100]
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -4140,6 +5163,8 @@ public final class Foundation {
     /**
      * NSError; the error when downloading the item from iCloud failed, see the NSUbiquitousFile section in
      * FoundationErrors.h
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -4149,6 +5174,8 @@ public final class Foundation {
     /**
      * NSError; the error when uploading the item to iCloud failed, see the NSUbiquitousFile section in
      * FoundationErrors.h
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -4157,6 +5184,8 @@ public final class Foundation {
 
     /**
      * boolean NSNumber
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -4165,6 +5194,8 @@ public final class Foundation {
 
     /**
      * boolean NSNumber
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -4173,6 +5204,8 @@ public final class Foundation {
 
     /**
      * NSString
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -4181,6 +5214,8 @@ public final class Foundation {
 
     /**
      * NSURL
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -4189,22 +5224,33 @@ public final class Foundation {
 
     /**
      * notifications
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMetadataQueryDidStartGatheringNotification();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMetadataQueryGatheringProgressNotification();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMetadataQueryDidFinishGatheringNotification();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4212,22 +5258,33 @@ public final class Foundation {
 
     /**
      * keys for use with notification info dictionary
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMetadataQueryUpdateAddedItemsKey();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMetadataQueryUpdateChangedItemsKey();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMetadataQueryUpdateRemovedItemsKey();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4235,6 +5292,8 @@ public final class Foundation {
 
     /**
      * "Documents" subdirectory in the application's Ubiquity container
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -4243,6 +5302,8 @@ public final class Foundation {
 
     /**
      * application's Ubiquity container, excluding the "Documents" subdirectory
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -4252,32 +5313,49 @@ public final class Foundation {
     /**
      * documents from outside the application's container that are accessible without user interaction.
      * NSMetadataItemURLKey attributes of results are security-scoped NSURLs.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMetadataQueryAccessibleUbiquitousExternalDocumentsScope();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSNetServicesErrorCode();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSNetServicesErrorDomain();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUbiquitousKeyValueStoreDidChangeExternallyNotification();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUbiquitousKeyValueStoreChangeReasonKey();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4286,12 +5364,17 @@ public final class Foundation {
     /**
      * This key is set on the user info dictionary of the NSUndoManagerDidCloseUndoGroupNotification, with a NSNumber
      * boolean value of YES, if the undo group as a whole is discardable.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUndoManagerGroupIsDiscardableKey();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4301,32 +5384,49 @@ public final class Foundation {
      * This is called before an undo group is begun or ended so any
      * clients that need to lazily register undos can do so in the
      * correct group.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUndoManagerWillUndoChangeNotification();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUndoManagerWillRedoChangeNotification();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUndoManagerDidUndoChangeNotification();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUndoManagerDidRedoChangeNotification();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUndoManagerDidOpenUndoGroupNotification();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4334,6 +5434,8 @@ public final class Foundation {
 
     /**
      * This notification is sent after an undo group closes. It should be safe to undo at this time.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -4342,25 +5444,38 @@ public final class Foundation {
 
     /**
      * -1LL
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
     public static native long NSURLSessionTransferSizeUnknown();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native float NSURLSessionTaskPriorityDefault();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native float NSURLSessionTaskPriorityLow();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     public static native float NSURLSessionTaskPriorityHigh();
 
     /**
      * Key in the userInfo dictionary of an NSError received during a failed download.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @CVariable()
@@ -4394,6 +5509,8 @@ public final class Foundation {
      * NSString. This provides a string which will be shown when constructing the debugDescription of the NSError, to be
      * used when debugging or when formatting the error with %@. This string will never be used in localizedDescription,
      * so will not be shown to the user.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4407,6 +5524,8 @@ public final class Foundation {
      * the value of this key to "The image library could not be saved." will allow the localizedDescription of the error
      * to come out as "The image library could not be saved. The volume Macintosh HD is out of space." rather than the
      * default (say) “You can't save the file ImgDatabaseV2 because the volume Macintosh HD is out of space."
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -4416,6 +5535,8 @@ public final class Foundation {
     /**
      * true if the volume supports making files immutable with the NSURLIsUserImmutableKey or NSURLIsSystemImmutableKey
      * properties (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -4425,6 +5546,8 @@ public final class Foundation {
     /**
      * true if the volume supports setting POSIX access permissions with the NSURLFileSecurityKey property (Read-only,
      * value type boolean NSNumber)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -4433,6 +5556,8 @@ public final class Foundation {
 
     /**
      * (Read-only, value type NSNumber)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -4441,6 +5566,8 @@ public final class Foundation {
 
     /**
      * (Read-only, value type NSNumber)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -4449,6 +5576,8 @@ public final class Foundation {
 
     /**
      * true if the ubiquitous item is shared. (Read-only, value type boolean NSNumber)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4458,6 +5587,8 @@ public final class Foundation {
     /**
      * returns the current user's role for this shared item, or nil if not shared. (Read-only, value type NSString).
      * Possible values below.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4467,6 +5598,8 @@ public final class Foundation {
     /**
      * returns the permissions for the current user, or nil if not shared. (Read-only, value type NSString). Possible
      * values below.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4475,6 +5608,8 @@ public final class Foundation {
 
     /**
      * returns a NSPersonNameComponents, or nil if the current user. (Read-only, value type NSPersonNameComponents)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4484,6 +5619,8 @@ public final class Foundation {
     /**
      * returns a NSPersonNameComponents for the most recent editor of the document, or nil if it is the current user.
      * (Read-only, value type NSPersonNameComponents)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4492,6 +5629,8 @@ public final class Foundation {
 
     /**
      * the current user is the owner of this shared item.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4500,6 +5639,8 @@ public final class Foundation {
 
     /**
      * the current user is a participant of this shared item.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4508,6 +5649,8 @@ public final class Foundation {
 
     /**
      * the current user is only allowed to read this item
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4516,6 +5659,8 @@ public final class Foundation {
 
     /**
      * the current user is allowed to both read and write this item
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4525,13 +5670,15 @@ public final class Foundation {
     /**
      * NSProcessInfoThermalStateDidChangeNotification is posted once the thermal state of the system has changed. Once
      * the notification is posted, use the thermalState property to retrieve the current thermal state of the system.
-     * <p>
+     * 
      * You can use this opportunity to take corrective action in your application to help cool the system down. Work
      * that could be done in the background or at opportunistic times should be using the Quality of Service levels in
      * NSOperation or the NSBackgroundActivityScheduler API.
-     * <p>
+     * 
      * This notification is posted on the global dispatch queue. Register for it using the default notification center.
      * The object associated with the notification is NSProcessInfo.processInfo.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @CVariable()
@@ -4540,6 +5687,8 @@ public final class Foundation {
 
     /**
      * true if the ubiquitous item is shared. (value type boolean NSNumber)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4549,6 +5698,8 @@ public final class Foundation {
     /**
      * returns the current user's role for this shared item, or nil if not shared. (value type NSString). Possible
      * values below.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4557,6 +5708,8 @@ public final class Foundation {
 
     /**
      * returns the permissions for the current user, or nil if not shared. (value type NSString). Possible values below.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4565,6 +5718,8 @@ public final class Foundation {
 
     /**
      * returns a NSPersonNameComponents, or nil if the current user. (value type NSPersonNameComponents)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4574,6 +5729,8 @@ public final class Foundation {
     /**
      * returns a NSPersonNameComponents for the most recent editor of the document, or nil if it is the current user.
      * (Read-only, value type NSPersonNameComponents)
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4582,6 +5739,8 @@ public final class Foundation {
 
     /**
      * the current user is the owner of this shared item.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4590,6 +5749,8 @@ public final class Foundation {
 
     /**
      * the current user is a participant of this shared item.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4598,6 +5759,8 @@ public final class Foundation {
 
     /**
      * the current user is only allowed to read this item
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4606,6 +5769,8 @@ public final class Foundation {
 
     /**
      * the current user is allowed to both read and write this item
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -4809,8 +5974,10 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieSameSitePolicy
-     * <p>
+     * 
      * Key for cookie same site
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -4819,8 +5986,10 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieSameSiteLax
-     * <p>
+     * 
      * String constant "lax" to be used as a value for the property key NSHTTPCookieSameSite
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -4829,8 +5998,10 @@ public final class Foundation {
 
     /**
      * [@const] NSHTTPCookieSameSiteStrict
-     * <p>
+     * 
      * String constant "strict" to be used as a value for the property key NSHTTPCookieSameSite
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -4862,6 +6033,11 @@ public final class Foundation {
     @ByValue
     public static native NSMapTableKeyCallBacks NSOwnedPointerMapKeyCallBacks();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Not supported
+     */
     @Deprecated
     @Generated
     @CVariable()
@@ -4888,6 +6064,11 @@ public final class Foundation {
     @ByValue
     public static native NSMapTableValueCallBacks NSOwnedPointerMapValueCallBacks();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Not supported
+     */
     @Deprecated
     @Generated
     @CVariable()
@@ -4896,16 +6077,21 @@ public final class Foundation {
 
     /**
      * [@const] NSURLErrorNetworkUnavailableReasonKey
-     * <p>
+     * 
      * The NSErrorUserInfoKey used to store and retrieve the NSNumber object corresponding to the reason why the network
      * is unavailable when the task failed due to unsatisfiable network constraints. See the
      * NSURLErrorNetworkUnavailableReason enum for details.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSURLErrorNetworkUnavailableReasonKey();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4913,6 +6099,8 @@ public final class Foundation {
 
     /**
      * File type (UTType) for the resource (Read-only, value type UTType)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -4922,6 +6110,8 @@ public final class Foundation {
     /**
      * A 64-bit value assigned by APFS that identifies a file's content data stream. Only cloned files and their
      * originals can have the same identifier. (Read-only, value type NSNumber)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -4931,6 +6121,8 @@ public final class Foundation {
     /**
      * True for cloned files and their originals that may share all, some, or no data blocks. (Read-only, value type
      * NSNumber)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -4939,6 +6131,8 @@ public final class Foundation {
 
     /**
      * True if the file has extended attributes. False guarantees there are none. (Read-only, value type NSNumber)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -4947,6 +6141,8 @@ public final class Foundation {
 
     /**
      * True if the file can be deleted by the file system when asked to free space. (Read-only, value type NSNumber)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -4955,6 +6151,8 @@ public final class Foundation {
 
     /**
      * True if the file has sparse regions. (Read-only, value type NSNumber)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -4964,17 +6162,25 @@ public final class Foundation {
     /**
      * True if the volume supports the File Protection attribute (see NSURLFileProtectionKey). (Read-only, value type
      * NSNumber)
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSURLVolumeSupportsFileProtectionKey();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSProgressFileOperationKindUploading();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4982,6 +6188,8 @@ public final class Foundation {
 
     /**
      * a NSNumber wrapping a value of type NSInlinePresentationIntent
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -4990,6 +6198,8 @@ public final class Foundation {
 
     /**
      * a NSString
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -4998,6 +6208,8 @@ public final class Foundation {
 
     /**
      * a NSURL
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
@@ -5006,32 +6218,49 @@ public final class Foundation {
 
     /**
      * a NSString
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSLanguageIdentifierAttributeName();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSReplacementIndexAttributeName();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMorphologyAttributeName();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSInflectionRuleAttributeName();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSInflectionAlternativeAttributeName();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5041,6 +6270,8 @@ public final class Foundation {
      * Key in userInfo. A recommended standard way to embed a list of several NSErrors from underlying calls. The value
      * of this key should be an NSArray of NSError. This value is independent from the value of `NSUnderlyingErrorKey` -
      * neither, one, or both may be set.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @CVariable()
@@ -5050,9 +6281,21 @@ public final class Foundation {
     /**
      * true if the item is excluded from sync, which means it is locally on disk but won't be available on the server.
      * An excluded item is no longer ubiquitous. (Read-write, value type boolean NSNumber
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSURLUbiquitousItemIsExcludedFromSyncKey();
+
+    /**
+     * a NSAttributedStringMarkdownSourcePosition
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String NSMarkdownSourcePositionAttributeName();
 }

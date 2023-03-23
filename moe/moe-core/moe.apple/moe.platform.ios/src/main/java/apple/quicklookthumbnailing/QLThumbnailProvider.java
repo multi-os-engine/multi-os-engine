@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("QuickLookThumbnailing")
 @Runtime(ObjCRuntime.class)
@@ -119,7 +122,7 @@ public class QLThumbnailProvider extends NSObject {
 
     /**
      * Subclass this method to provide a QLThumbnailReply that either contains a drawing block or an image file URL.
-     *
+     * 
      * @param request An object which contains information about the thumbnail that should be provided. It contains the
      *                URL of the file to provide a thumbnail for.
      * @param handler Call the completion handler with a QLThumbnailReply if you can provide a thumbnail, or with an

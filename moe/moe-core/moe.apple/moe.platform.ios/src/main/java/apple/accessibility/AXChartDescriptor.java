@@ -2,7 +2,6 @@ package apple.accessibility;
 
 import apple.NSObject;
 import apple.accessibility.protocol.AXDataAxisDescriptor;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSAttributedString;
 import apple.foundation.NSMethodSignature;
@@ -27,9 +26,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * The top-level descriptor object for an accessible chart.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Accessibility")

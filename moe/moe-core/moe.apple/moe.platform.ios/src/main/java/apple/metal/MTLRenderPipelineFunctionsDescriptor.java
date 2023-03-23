@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -90,7 +93,7 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
 
     /**
      * [@property] fragmentAdditionalBinaryFunctions
-     * <p>
+     * 
      * The set of additional binary functions to be accessed from the fragment function in an incrementally created
      * pipeline state.
      */
@@ -143,7 +146,7 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
 
     /**
      * [@property] fragmentAdditionalBinaryFunctions
-     * <p>
+     * 
      * The set of additional binary functions to be accessed from the fragment function in an incrementally created
      * pipeline state.
      */
@@ -153,7 +156,7 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
 
     /**
      * [@property] tileAdditionalBinaryFunctions
-     * <p>
+     * 
      * The set of additional binary functions to be accessed from the tile function in an incrementally created pipeline
      * state.
      */
@@ -167,7 +170,7 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
 
     /**
      * [@property] vertexAdditionalBinaryFunctions
-     * <p>
+     * 
      * The set of additional binary functions to be accessed from the vertex function in an incrementally created
      * pipeline state.
      */
@@ -181,7 +184,7 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
 
     /**
      * [@property] tileAdditionalBinaryFunctions
-     * <p>
+     * 
      * The set of additional binary functions to be accessed from the tile function in an incrementally created pipeline
      * state.
      */
@@ -196,7 +199,7 @@ public class MTLRenderPipelineFunctionsDescriptor extends NSObject implements NS
 
     /**
      * [@property] vertexAdditionalBinaryFunctions
-     * <p>
+     * 
      * The set of additional binary functions to be accessed from the vertex function in an incrementally created
      * pipeline state.
      */

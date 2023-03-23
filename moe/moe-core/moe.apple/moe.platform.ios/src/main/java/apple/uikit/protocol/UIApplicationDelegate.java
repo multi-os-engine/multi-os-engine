@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit.protocol;
 
 import apple.cloudkit.CKShareMetadata;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSData;
@@ -51,6 +50,7 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 @Generated
 @Library("UIKit")
@@ -65,6 +65,8 @@ public interface UIApplicationDelegate {
      * invoked with the user activity. Invoking the restorationHandler is optional. It may be copied and invoked later,
      * and it will bounce to the main thread to complete its work and call
      * restoreUserActivityState on all objects.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -75,6 +77,12 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use viewWillTransitionToSize:withTransitionCoordinator: instead.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:didChangeStatusBarFrame:")
@@ -82,6 +90,12 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use viewWillTransitionToSize:withTransitionCoordinator: instead.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:didChangeStatusBarOrientation:")
@@ -90,6 +104,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Selector("application:didDecodeRestorableStateWithCoder:")
@@ -100,6 +117,8 @@ public interface UIApplicationDelegate {
     /**
      * If the user activity cannot be fetched after willContinueUserActivityWithType is called, this will be called on
      * the main thread when implemented.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -109,6 +128,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("application:didFailToRegisterForRemoteNotificationsWithError:")
@@ -116,6 +138,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("application:didFinishLaunchingWithOptions:")
@@ -124,6 +149,14 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's -[UNUserNotificationCenterDelegate
+     * willPresentNotification:withCompletionHandler:] or -[UNUserNotificationCenterDelegate
+     * didReceiveNotificationResponse:withCompletionHandler:]
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:didReceiveLocalNotification:")
@@ -131,6 +164,15 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's -[UNUserNotificationCenterDelegate
+     * willPresentNotification:withCompletionHandler:] or -[UNUserNotificationCenterDelegate
+     * didReceiveNotificationResponse:withCompletionHandler:] for user visible notifications and -[UIApplicationDelegate
+     * application:didReceiveRemoteNotification:fetchCompletionHandler:] for silent remote notifications
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:didReceiveRemoteNotification:")
@@ -143,11 +185,13 @@ public interface UIApplicationDelegate {
      * fetch appropriate new data in response to an incoming remote notification. You should call the
      * fetchCompletionHandler as soon as you're finished performing that operation, so the system can accurately
      * estimate its power and data cost.
-     * <p>
+     * 
      * This method will be invoked even if the application was launched or resumed because of the remote notification.
      * The respective delegate methods will be invoked first. Note that this behavior is in contrast to
      * application:didReceiveRemoteNotification:, which is not called in those cases, and which will not be invoked if
      * this method is implemented. !
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -158,6 +202,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("application:didRegisterForRemoteNotificationsWithDeviceToken:")
@@ -169,7 +216,13 @@ public interface UIApplicationDelegate {
     /**
      * This callback will be made upon calling -[UIApplication registerUserNotificationSettings:]. The settings the user
      * has granted to the application will be passed in as the second argument.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's -[UNUserNotificationCenter
+     * requestAuthorizationWithOptions:completionHandler:]
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:didRegisterUserNotificationSettings:")
@@ -181,6 +234,8 @@ public interface UIApplicationDelegate {
     /**
      * This is called on the main thread when a user activity managed by UIKit has been updated. You can use this as a
      * last chance to add additional data to the userActivity.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -193,7 +248,13 @@ public interface UIApplicationDelegate {
      * Called when your app has been activated by the user selecting an action from a local notification.
      * A nil action identifier indicates the default action.
      * You should call the completion handler as soon as you've finished handling the action.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's -[UNUserNotificationCenterDelegate
+     * didReceiveNotificationResponse:withCompletionHandler:]
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:handleActionWithIdentifier:forLocalNotification:completionHandler:")
@@ -203,6 +264,13 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's -[UNUserNotificationCenterDelegate
+     * didReceiveNotificationResponse:withCompletionHandler:]
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:handleActionWithIdentifier:forLocalNotification:withResponseInfo:completionHandler:")
@@ -217,7 +285,13 @@ public interface UIApplicationDelegate {
      * Called when your app has been activated by the user selecting an action from a remote notification.
      * A nil action identifier indicates the default action.
      * You should call the completion handler as soon as you've finished handling the action.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's -[UNUserNotificationCenterDelegate
+     * didReceiveNotificationResponse:withCompletionHandler:]
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:handleActionWithIdentifier:forRemoteNotification:completionHandler:")
@@ -227,6 +301,13 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: Use UserNotifications Framework's -[UNUserNotificationCenterDelegate
+     * didReceiveNotificationResponse:withCompletionHandler:]
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:handleActionWithIdentifier:forRemoteNotification:withResponseInfo:completionHandler:")
@@ -247,6 +328,8 @@ public interface UIApplicationDelegate {
      * delegate will start receiving
      * callbacks without any action by the application. You should call the completionHandler as soon as you're finished
      * handling the callbacks.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -257,6 +340,10 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -265,6 +352,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 8.2
+     */
     @Generated
     @IsOptional
     @Selector("application:handleWatchKitExtensionRequest:reply:")
@@ -275,6 +365,8 @@ public interface UIApplicationDelegate {
 
     /**
      * no equiv. notification. return NO if the application can't open for some reason
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional
@@ -283,6 +375,10 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -296,6 +392,8 @@ public interface UIApplicationDelegate {
      * Called when the user activates your application by selecting a shortcut on the home screen,
      * except when -application:willFinishLaunchingWithOptions: or -application:didFinishLaunchingWithOptions returns
      * NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional
@@ -311,7 +409,12 @@ public interface UIApplicationDelegate {
      * background or when it is convenient for the system. This method will be called in these situations. You should
      * call the fetchCompletionHandler as soon as you're finished performing that operation, so the system can
      * accurately estimate its power and data cost.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use a BGAppRefreshTask in the BackgroundTasks framework instead
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:performFetchWithCompletionHandler:")
@@ -324,6 +427,8 @@ public interface UIApplicationDelegate {
      * Applications may reject specific types of extensions based on the extension point identifier.
      * Constants representing common extension point identifiers are provided further down.
      * If unimplemented, the default behavior is to allow the extension point identifier.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -333,6 +438,12 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 13.2
+     * Deprecated-Message: Use application:shouldRestoreSecureApplicationState: instead
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:shouldRestoreApplicationState:")
@@ -342,7 +453,12 @@ public interface UIApplicationDelegate {
 
     /**
      * Deprecated State Restoration opt-in methods:
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 13.2
+     * Deprecated-Message: Use application:shouldSaveSecureApplicationState: instead
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:shouldSaveApplicationState:")
@@ -350,6 +466,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Selector("application:supportedInterfaceOrientationsForWindow:")
@@ -365,6 +484,8 @@ public interface UIApplicationDelegate {
      * CKAcceptSharesOperation, then start using
      * the resulting CKShare and its associated record(s), which will appear in the CKContainer's shared database in a
      * zone matching that of the record's owner.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -374,6 +495,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Selector("application:viewControllerWithRestorationIdentifierPath:coder:")
@@ -384,7 +508,12 @@ public interface UIApplicationDelegate {
 
     /**
      * in screen coordinates
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use viewWillTransitionToSize:withTransitionCoordinator: instead.
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:willChangeStatusBarFrame:")
@@ -392,6 +521,12 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use viewWillTransitionToSize:withTransitionCoordinator: instead.
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:willChangeStatusBarOrientation:duration:")
@@ -407,6 +542,8 @@ public interface UIApplicationDelegate {
      * For each application:willContinueUserActivityWithType: invocation, you are guaranteed to get exactly one
      * invocation of application:continueUserActivity: on success,
      * or application:didFailToContinueUserActivityWithType:error: if an error was encountered.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional
@@ -415,6 +552,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Selector("application:willEncodeRestorableStateWithCoder:")
@@ -422,6 +562,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @IsOptional
     @Selector("application:willFinishLaunchingWithOptions:")
@@ -437,6 +580,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("applicationDidEnterBackground:")
@@ -461,6 +607,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("applicationProtectedDataDidBecomeAvailable:")
@@ -468,6 +617,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("applicationProtectedDataWillBecomeUnavailable:")
@@ -475,6 +627,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @IsOptional
     @Selector("applicationShouldRequestHealthAuthorization:")
@@ -492,6 +647,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @IsOptional
     @Selector("applicationWillEnterForeground:")
@@ -513,6 +671,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @IsOptional
     @Selector("setWindow:")
@@ -520,6 +681,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @IsOptional
     @Selector("window")
@@ -597,6 +761,12 @@ public interface UIApplicationDelegate {
         void call_applicationPerformFetchWithCompletionHandler(@NUInt long result);
     }
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use application:handlerForIntent: instead
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("application:handleIntent:completionHandler:")
@@ -617,6 +787,8 @@ public interface UIApplicationDelegate {
      * The application delegate may modify the provided UISceneConfiguration within this method.
      * If the UISceneConfiguration instance returned from this method does not have a systemType which matches the
      * connectingSession's, UIKit will assert
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -631,6 +803,8 @@ public interface UIApplicationDelegate {
      * representation from the -[UIApplication openSessions] set
      * If sessions are discarded while the application is not running, this method is called shortly after the
      * applications next launch.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -640,6 +814,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.2
+     */
     @Generated
     @IsOptional
     @Selector("application:shouldRestoreSecureApplicationState:")
@@ -647,6 +824,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.2
+     */
     @Generated
     @IsOptional
     @Selector("application:shouldSaveSecureApplicationState:")
@@ -654,6 +834,9 @@ public interface UIApplicationDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("application:handlerForIntent:")
@@ -667,6 +850,8 @@ public interface UIApplicationDelegate {
      * This method will be called during application launch.
      * Return NO if the receiving delegate object wishes to opt-out of system-wide keyboard shortcut localization for
      * all application-supplied UIKeyCommands. Return YES by default for apps linked against 15.0 and later SDK.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional

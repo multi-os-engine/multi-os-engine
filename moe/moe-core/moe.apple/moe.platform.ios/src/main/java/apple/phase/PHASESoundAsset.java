@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASESoundAsset
- * <p>
+ * 
  * An object that represents a registered sound asset in the asset registry.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -81,7 +83,7 @@ public class PHASESoundAsset extends PHASEAsset {
 
     /**
      * [@property] data
-     * <p>
+     * 
      * The buffer for the sound asset, if applicable.
      */
     @Generated
@@ -149,7 +151,7 @@ public class PHASESoundAsset extends PHASEAsset {
 
     /**
      * [@property] type
-     * <p>
+     * 
      * The sound asset type.
      */
     @Generated
@@ -159,7 +161,7 @@ public class PHASESoundAsset extends PHASEAsset {
 
     /**
      * [@property] url
-     * <p>
+     * 
      * The URL of the sound asset, if applicable.
      */
     @Generated

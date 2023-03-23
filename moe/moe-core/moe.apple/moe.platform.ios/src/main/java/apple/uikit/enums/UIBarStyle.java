@@ -26,8 +26,18 @@ import org.moe.natj.general.ann.NInt;
 public final class UIBarStyle {
     @Generated @NInt public static final long Default = 0x0000000000000000L;
     @Generated @NInt public static final long Black = 0x0000000000000001L;
-    @Generated @NInt public static final long BlackOpaque = 0x0000000000000001L;
-    @Generated @NInt public static final long BlackTranslucent = 0x0000000000000002L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use UIBarStyleBlack instead.
+     */
+    @Deprecated @Generated @NInt public static final long BlackOpaque = 0x0000000000000001L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use UIBarStyleBlack and set the translucent property to YES instead.
+     */
+    @Deprecated @Generated @NInt public static final long BlackTranslucent = 0x0000000000000002L;
 
     @Generated
     private UIBarStyle() {

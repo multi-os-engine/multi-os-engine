@@ -32,9 +32,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * SFSafariViewControllerActivityButton
  * A custom button to show in SFSafariViewController's toolbar. When tapped, it will invoke a Share or Action Extension
  * bundled with your app.
- * <p>
+ * 
  * The default VoiceOver description of this button is the `CFBundleDisplayName` set in the extension's Info.plist.
  * To set a different description for VoiceOver to read, set this object's `accessibilityLabel` property.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("SafariServices")
@@ -131,7 +133,7 @@ public class SFSafariViewControllerActivityButton extends NSObject implements NS
     /**
      * Initializes an SFSafariViewControllerActivityButton with the given image, accessibility label, and extension
      * bundle identifier.
-     *
+     * 
      * @param templateImage       the image to show in SFSafariViewController's toolbar. This is a template image that
      *                            will get the same color as all
      *                            other buttons, defined by @link -[SFSafariViewController

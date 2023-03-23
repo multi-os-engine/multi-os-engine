@@ -37,6 +37,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class defines the performance metrics collected for a request/response transaction during the task execution.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Foundation")
@@ -122,6 +124,12 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Not supported
+     */
+    @Deprecated
     @Generated
     @Owned
     @Selector("new")
@@ -158,7 +166,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * connectStartDate is the time immediately before the user agent started establishing the connection to the server.
-     * <p>
+     * 
      * For example, this would correspond to the time immediately before the user agent started trying to establish the
      * TCP connection.
      */
@@ -184,10 +192,10 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * fetchStartDate returns the time when the user agent started fetching the resource, whether or not the resource
      * was retrieved from the server or local resources.
-     * <p>
+     * 
      * The following metrics will be set to nil, if a persistent connection was used or the resource was retrieved from
      * local resources:
-     * <p>
+     * 
      * domainLookupStartDate
      * domainLookupEndDate
      * connectStartDate
@@ -199,6 +207,12 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     @Selector("fetchStartDate")
     public native NSDate fetchStartDate();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Not supported
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSURLSessionTaskTransactionMetrics init();
@@ -220,11 +234,11 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * The network protocol used to fetch the resource, as identified by the ALPN Protocol ID Identification Sequence
      * [RFC7301].
-     * E.g., h2, http/1.1, spdy/3.1.
-     * <p>
+     * E.g., h3, h2, http/1.1.
+     * 
      * When a proxy is configured AND a tunnel connection is established, then this attribute returns the value for the
      * tunneled protocol.
-     * <p>
+     * 
      * For example:
      * If no proxy were used, and HTTP/2 was negotiated, then h2 would be returned.
      * If HTTP/1.1 were used to the proxy, and the tunneled connection was HTTP/2, then h2 would be returned.
@@ -244,7 +258,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * requestEndDate is the time immediately after the user agent finished requesting the source, regardless of whether
      * the resource was retrieved from the server or local resources.
-     * <p>
+     * 
      * For example, this would correspond to the time immediately after the user agent finished sending the last byte of
      * the request.
      */
@@ -255,7 +269,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * requestStartDate is the time immediately before the user agent started requesting the source, regardless of
      * whether the resource was retrieved from the server or local resources.
-     * <p>
+     * 
      * For example, this would correspond to the time immediately before the user agent sent an HTTP GET request.
      */
     @Generated
@@ -287,7 +301,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * responseStartDate is the time immediately after the user agent received the first byte of the response from the
      * server or from local resources.
-     * <p>
+     * 
      * For example, this would correspond to the time immediately after the user agent received the first byte of an
      * HTTP response.
      */
@@ -298,7 +312,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * If an encrypted connection was used, secureConnectionEndDate is the time immediately after the security handshake
      * completed.
-     * <p>
+     * 
      * If an encrypted connection was not used, this attribute is set to nil.
      */
     @Generated
@@ -308,9 +322,9 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * If an encrypted connection was used, secureConnectionStartDate is the time immediately before the user agent
      * started the security handshake to secure the current connection.
-     * <p>
+     * 
      * For example, this would correspond to the time immediately before the user agent started the TLS handshake.
-     * <p>
+     * 
      * If an encrypted connection was not used, this attribute is set to nil.
      */
     @Generated
@@ -319,6 +333,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * countOfRequestBodyBytesBeforeEncoding is the size of upload body data, file, or stream.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("countOfRequestBodyBytesBeforeEncoding")
@@ -327,6 +343,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * countOfRequestBodyBytesSent is the number of bytes transferred for request body.
      * It includes protocol-specific framing, transfer encoding, and content encoding.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("countOfRequestBodyBytesSent")
@@ -334,6 +352,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * countOfRequestHeaderBytesSent is the number of bytes transferred for request header.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("countOfRequestHeaderBytesSent")
@@ -341,6 +361,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * countOfResponseBodyBytesAfterDecoding is the size of data delivered to your delegate or completion handler.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("countOfResponseBodyBytesAfterDecoding")
@@ -349,6 +371,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * countOfResponseBodyBytesReceived is the number of bytes transferred for response header.
      * It includes protocol-specific framing, transfer encoding, and content encoding.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("countOfResponseBodyBytesReceived")
@@ -356,6 +380,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * countOfResponseHeaderBytesReceived is the number of bytes transferred for response header.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("countOfResponseHeaderBytesReceived")
@@ -363,6 +389,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * Whether the connection is established over a cellular interface.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isCellular")
@@ -370,6 +398,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * Whether the connection is established over a constrained interface.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isConstrained")
@@ -377,6 +407,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * Whether the connection is established over an expensive interface.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isExpensive")
@@ -384,6 +416,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * Whether a multipath protocol is successfully negotiated for the connection.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isMultipath")
@@ -391,10 +425,12 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * localAddress is the IP address string of the local interface for the connection.
-     * <p>
+     * 
      * For multipath protocols, this is the local address of the initial flow.
-     * <p>
+     * 
      * If a connection was not used, this attribute is set to nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("localAddress")
@@ -402,10 +438,12 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * localPort is the port number of the local interface for the connection.
-     * <p>
+     * 
      * For multipath protocols, this is the local port of the initial flow.
-     * <p>
+     * 
      * If a connection was not used, this attribute is set to nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("localPort")
@@ -414,10 +452,12 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * negotiatedTLSCipherSuite is the TLS cipher suite negotiated for the connection.
      * It is a 2-byte sequence in host byte order.
-     * <p>
+     * 
      * Please refer to tls_ciphersuite_t enum in Security/SecProtocolTypes.h
-     * <p>
+     * 
      * If an encrypted connection was not used, this attribute is set to nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("negotiatedTLSCipherSuite")
@@ -426,10 +466,12 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * negotiatedTLSProtocolVersion is the TLS protocol version negotiated for the connection.
      * It is a 2-byte sequence in host byte order.
-     * <p>
+     * 
      * Please refer to tls_protocol_version_t enum in Security/SecProtocolTypes.h
-     * <p>
+     * 
      * If an encrypted connection was not used, this attribute is set to nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("negotiatedTLSProtocolVersion")
@@ -437,10 +479,12 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * remoteAddress is the IP address string of the remote interface for the connection.
-     * <p>
+     * 
      * For multipath protocols, this is the remote address of the initial flow.
-     * <p>
+     * 
      * If a connection was not used, this attribute is set to nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("remoteAddress")
@@ -448,10 +492,12 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * remotePort is the port number of the remote interface for the connection.
-     * <p>
+     * 
      * For multipath protocols, this is the remote port of the initial flow.
-     * <p>
+     * 
      * If a connection was not used, this attribute is set to nil.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("remotePort")
@@ -459,6 +505,8 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     /**
      * DNS protocol used for domain resolution.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("domainResolutionProtocol")

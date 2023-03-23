@@ -28,7 +28,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] SCNProgramDelegate
- * <p>
+ * 
  * The SCNProgramDelegate protocol declares the methods that an instance of SCNProgram invokes to delegate the binding
  * of parameters.
  */
@@ -39,11 +39,11 @@ import org.moe.natj.objc.ann.Selector;
 public interface SCNProgramDelegate {
     /**
      * handleError
-     * <p>
+     * 
      * Invoked on the delegate whenever a compilation error occurs.
-     * <p>
+     * 
      * Error domain is SCNErrorDomain.
-     *
+     * 
      * @param program The program that generated a compilation error.
      * @param error   The compilation error.
      */

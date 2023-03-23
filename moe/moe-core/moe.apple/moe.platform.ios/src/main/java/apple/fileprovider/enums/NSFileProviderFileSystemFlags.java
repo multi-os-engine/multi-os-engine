@@ -23,7 +23,7 @@ public final class NSFileProviderFileSystemFlags {
     @Generated @NUInt public static final long UserWritable = 0x0000000000000004L;
     /**
      * Item should not be presented in the file viewers.
-     * <p>
+     * 
      * This includes both the UF_HIDDEN BSD flag and the Invisible bit from the
      * FinderInfo. When syncing down, the system only sets the UF_HIDDEN
      * flag.

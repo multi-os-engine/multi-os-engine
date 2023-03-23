@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class specifies progress reporting capability of a ClassKit client app
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("ClassKit")
@@ -107,7 +109,7 @@ public class CLSProgressReportingCapability extends CLSObject {
 
     /**
      * Initialize and configure the type of progress reporting capability
-     *
+     * 
      * @param kind    The kind of progress reporting capability
      * @param details An optional localized string describing the capability. For example: "Reports percentage of
      *                progress", "Reports overall score". Schoolwork will use an appropriate default string if one is

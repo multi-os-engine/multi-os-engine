@@ -21,10 +21,10 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVAssetWriterStatus
- * <p>
+ * 
  * These constants are returned by the AVAssetWriter status property to indicate whether it can successfully write
  * samples to its output file.
- * <p>
+ * 
  * [@constant] AVAssetWriterStatusUnknown
  * Indicates that the status of the asset writer is not currently known.
  * [@constant] AVAssetWriterStatusWriting

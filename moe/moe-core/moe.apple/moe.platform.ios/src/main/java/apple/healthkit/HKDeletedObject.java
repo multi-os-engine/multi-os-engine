@@ -45,8 +45,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKDeletedObject
- * <p>
+ * 
  * A class representing an HKObject that was deleted from the HealtKit database.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("HealthKit")
@@ -164,7 +166,7 @@ public class HKDeletedObject extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] UUID
-     * <p>
+     * 
      * The unique identifier of the HKObject that was deleted from the HealthKit database.
      */
     @Generated
@@ -191,11 +193,13 @@ public class HKDeletedObject extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] metadata
-     * <p>
+     * 
      * Extra information describing properties of the receiver.
-     * <p>
+     * 
      * Metadata retained from the deleted HKObject.
      * Available keys: HKMetadataKeySyncIdentifier, HKMetadataKeySyncVersion
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("metadata")

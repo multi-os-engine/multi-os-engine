@@ -21,6 +21,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -210,4 +213,18 @@ public class NSAttributedStringMarkdownParsingOptions extends NSObject implement
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("appliesSourcePositionAttributes")
+    public native boolean appliesSourcePositionAttributes();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setAppliesSourcePositionAttributes:")
+    public native void setAppliesSourcePositionAttributes(boolean value);
 }

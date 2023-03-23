@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A contact was removed from a group
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Contacts")

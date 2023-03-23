@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -183,7 +186,7 @@ public class CKReference extends NSObject implements NSSecureCoding, NSCopying, 
     /**
      * It is acceptable to relate two records that have not yet been uploaded to the server, but those records must be
      * uploaded to the server in the same operation.
-     * <p>
+     * 
      * If a record references a record that does not exist on the server and is not in the current save operation it
      * will result in an error.
      */

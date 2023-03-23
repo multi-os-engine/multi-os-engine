@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A dimension for representing amounts of digital information.
  * Base Unit: Byte
- * <p>
+ * 
  * The values of the below follow IEC 80000-13 definitions and conventions.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Foundation")

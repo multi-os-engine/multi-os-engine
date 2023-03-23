@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * NSPersistentCloudKitContainerOptions provides customization of how NSPersistentCloudKitContainer aligns a given
  * instance of NSPersistentStoreDescription with a CloudKit database.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreData")
@@ -151,11 +153,17 @@ public class NSPersistentCloudKitContainerOptions extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("databaseScope")
     @NInt
     public native long databaseScope();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setDatabaseScope:")
     public native void setDatabaseScope(@NInt long value);

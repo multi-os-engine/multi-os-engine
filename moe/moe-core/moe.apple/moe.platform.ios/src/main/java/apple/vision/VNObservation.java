@@ -33,10 +33,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * VNObservation
- * <p>
+ * 
  * VNObservation describes the results of performing a VNRequest. The result has a confidence score. The different types
  * of requests will create different subclasses of VNObservation to return their results in properties of those
  * subclasses.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")
@@ -90,7 +93,7 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The level of confidence normalized to [0, 1] where 1 is most confident
-     * <p>
+     * 
      * Confidence can always be returned as 1.0 if confidence is not supported or has no meaning
      */
     @Generated
@@ -199,9 +202,11 @@ public class VNObservation extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * The duration of the observation reporting when first detected and how long it is valid.
-     * <p>
+     * 
      * The duration of the observation when used with a sequence of buffers. If a request does not support a timeRange
      * or the timeRange is not known, the start time and duration will be set to 0.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("timeRange")

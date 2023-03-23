@@ -40,6 +40,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("ExternalAccessory")
 @Runtime(ObjCRuntime.class)
@@ -150,6 +153,9 @@ public class EASession extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("accessory")
     public native EAAccessory accessory();
@@ -158,18 +164,30 @@ public class EASession extends NSObject {
     @Selector("init")
     public native EASession init();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("initWithAccessory:forProtocol:")
     public native EASession initWithAccessoryForProtocol(EAAccessory accessory, String protocolString);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("inputStream")
     public native NSInputStream inputStream();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("outputStream")
     public native NSOutputStream outputStream();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("protocolString")
     public native String protocolString();

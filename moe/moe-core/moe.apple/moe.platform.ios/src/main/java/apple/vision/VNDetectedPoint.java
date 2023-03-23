@@ -1,7 +1,6 @@
 package apple.vision;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -25,14 +24,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
 /**
  * VNDetectedPoint
- * <p>
+ * 
  * VNDetectedPoint is a VNPoint with a confidence value.
- * <p>
+ * 
  * It should be noted that VNDetectedPoint is not intended as an overall replacement of CGPoint, NSPoint or vec2, but is
  * used by observations that detect points of interest.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -99,6 +101,7 @@ public class VNDetectedPoint extends VNPoint {
     @Selector("description")
     public static native String description_static();
 
+    @Deprecated
     @Generated
     @Selector("distanceBetweenPoint:point:")
     public static native double distanceBetweenPointPoint(VNPoint point1, VNPoint point2);

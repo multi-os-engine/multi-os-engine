@@ -42,12 +42,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEVPNProtocolIKEv2
- * <p>
+ * 
  * The NEVPNProtocolIKEv2 class declares the programmatic interface of an object that manages the IKEv2-specific portion
  * of a VPN configuration.
- * <p>
+ * 
  * Instances of this class use IKE version 2 for key negotiation.
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -165,8 +167,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] IKESecurityAssociationParameters
-     * <p>
+     * 
      * Parameters for the IKE SA
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("IKESecurityAssociationParameters")
@@ -174,8 +178,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] certificateType
-     * <p>
+     * 
      * contains the type of certificate if an certificate is configured. Default is RSA.
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @Selector("certificateType")
@@ -184,8 +190,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] childSecurityAssociationParameters
-     * <p>
+     * 
      * Parameters for the child SA
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("childSecurityAssociationParameters")
@@ -193,9 +201,11 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] deadPeerDetectionRate
-     * <p>
+     * 
      * How frequently the IKEv2 client will run the dead peer detection algorithm. Default is
      * NEVPNIKEv2DeadPeerDetectionRateMedium.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("deadPeerDetectionRate")
@@ -204,8 +214,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] disableMOBIKE
-     * <p>
+     * 
      * Disable MOBIKE negotiation. Default is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("disableMOBIKE")
@@ -213,8 +225,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] disableRedirect
-     * <p>
+     * 
      * Disable Server Redirect. Default is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("disableRedirect")
@@ -222,8 +236,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] enablePFS
-     * <p>
+     * 
      * Enable Perfect Forward Secrecy. Default is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("enablePFS")
@@ -231,8 +247,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] enableRevocationCheck
-     * <p>
+     * 
      * Enable certificate revocation check. Default is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("enableRevocationCheck")
@@ -248,8 +266,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] serverCertificateCommonName
-     * <p>
+     * 
      * A string containing the value to verify in the IKEv2 server certificate's Subject Common Name field.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("serverCertificateCommonName")
@@ -257,9 +277,11 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] serverCertificateIssuerCommonName
-     * <p>
+     * 
      * A string containing the Subject Common Name field of the Certificate Authority certificate that issued the IKEv2
      * server's certificate.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("serverCertificateIssuerCommonName")
@@ -267,8 +289,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] certificateType
-     * <p>
+     * 
      * contains the type of certificate if an certificate is configured. Default is RSA.
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @Selector("setCertificateType:")
@@ -276,9 +300,11 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] deadPeerDetectionRate
-     * <p>
+     * 
      * How frequently the IKEv2 client will run the dead peer detection algorithm. Default is
      * NEVPNIKEv2DeadPeerDetectionRateMedium.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDeadPeerDetectionRate:")
@@ -286,8 +312,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] disableMOBIKE
-     * <p>
+     * 
      * Disable MOBIKE negotiation. Default is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDisableMOBIKE:")
@@ -295,8 +323,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] disableRedirect
-     * <p>
+     * 
      * Disable Server Redirect. Default is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setDisableRedirect:")
@@ -304,8 +334,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] enablePFS
-     * <p>
+     * 
      * Enable Perfect Forward Secrecy. Default is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEnablePFS:")
@@ -313,8 +345,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] enableRevocationCheck
-     * <p>
+     * 
      * Enable certificate revocation check. Default is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setEnableRevocationCheck:")
@@ -322,8 +356,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] serverCertificateCommonName
-     * <p>
+     * 
      * A string containing the value to verify in the IKEv2 server certificate's Subject Common Name field.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setServerCertificateCommonName:")
@@ -331,9 +367,11 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] serverCertificateIssuerCommonName
-     * <p>
+     * 
      * A string containing the Subject Common Name field of the Certificate Authority certificate that issued the IKEv2
      * server's certificate.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setServerCertificateIssuerCommonName:")
@@ -341,8 +379,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] strictRevocationCheck
-     * <p>
+     * 
      * Require positive certificate revocation check response for peer certificate validation to pass. Default is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setStrictRevocationCheck:")
@@ -350,8 +390,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] useConfigurationAttributeInternalIPSubnet
-     * <p>
+     * 
      * Boolean indicating if client should use INTERNAL_IP4_SUBNET / INTERNAL_IP6_SUBNET attributes. Default is False.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setUseConfigurationAttributeInternalIPSubnet:")
@@ -359,8 +401,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] strictRevocationCheck
-     * <p>
+     * 
      * Require positive certificate revocation check response for peer certificate validation to pass. Default is NO.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("strictRevocationCheck")
@@ -374,8 +418,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] useConfigurationAttributeInternalIPSubnet
-     * <p>
+     * 
      * Boolean indicating if client should use INTERNAL_IP4_SUBNET / INTERNAL_IP6_SUBNET attributes. Default is False.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("useConfigurationAttributeInternalIPSubnet")
@@ -383,8 +429,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] maximumTLSVersion
-     * <p>
+     * 
      * Sets a maximum TLS version to allow for EAP-TLS authentication. Default is NEVPNIKEv2TLSVersionDefault.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("maximumTLSVersion")
@@ -393,8 +441,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] minimumTLSVersion
-     * <p>
+     * 
      * Sets a minimum TLS version to allow for EAP-TLS authentication. Default is NEVPNIKEv2TLSVersionDefault.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("minimumTLSVersion")
@@ -403,8 +453,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] maximumTLSVersion
-     * <p>
+     * 
      * Sets a maximum TLS version to allow for EAP-TLS authentication. Default is NEVPNIKEv2TLSVersionDefault.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMaximumTLSVersion:")
@@ -412,8 +464,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] minimumTLSVersion
-     * <p>
+     * 
      * Sets a minimum TLS version to allow for EAP-TLS authentication. Default is NEVPNIKEv2TLSVersionDefault.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMinimumTLSVersion:")
@@ -421,7 +475,7 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] enableFallback
-     * <p>
+     * 
      * Enable Fallback is used to support Wi-Fi Assist. Wi-Fi Assist allows connections for foreground apps to switch
      * over
      * to Cellular Data when WiFi connectivity is poor. By setting the EnableFallback key, the device will bring up a
@@ -429,6 +483,8 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
      * Cellular Data to carry traffic that is eligible for Wi-Fi Assist and also requires VPN. Enabling fallback
      * requires that the
      * server support multiple tunnels for a single user. Default is NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("enableFallback")
@@ -436,7 +492,7 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] enableFallback
-     * <p>
+     * 
      * Enable Fallback is used to support Wi-Fi Assist. Wi-Fi Assist allows connections for foreground apps to switch
      * over
      * to Cellular Data when WiFi connectivity is poor. By setting the EnableFallback key, the device will bring up a
@@ -444,6 +500,8 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
      * Cellular Data to carry traffic that is eligible for Wi-Fi Assist and also requires VPN. Enabling fallback
      * requires that the
      * server support multiple tunnels for a single user. Default is NO.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setEnableFallback:")
@@ -451,8 +509,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] mtu
-     * <p>
+     * 
      * Maximum Transmission Unit (MTU) size in bytes to assign to the tunnel interface.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("mtu")
@@ -461,8 +521,10 @@ public class NEVPNProtocolIKEv2 extends NEVPNProtocolIPSec {
 
     /**
      * [@property] mtu
-     * <p>
+     * 
      * Maximum Transmission Unit (MTU) size in bytes to assign to the tunnel interface.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setMtu:")

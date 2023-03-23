@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] SCNPhysicsFieldScope
- * <p>
+ * 
  * Specifies the domain of influence of a physics field.
  */
 @Generated

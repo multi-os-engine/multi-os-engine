@@ -21,15 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * The type of frame in the Live Photo
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class PHLivePhotoFrameType {
     /**
      * Indicates the still image
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Photo = 0x0000000000000000L;
     /**
      * Indicates a video frame
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Video = 0x0000000000000001L;
 

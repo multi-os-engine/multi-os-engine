@@ -74,6 +74,8 @@ public interface UIViewControllerTransitionCoordinator extends UIViewControllerT
      * changed slightly to account for the fact that transitions can be interruptible. For interruptible transitions
      * The block may be called multiple times. It is called each time the transition moves from an interactive to a
      * non-interactive state and vice-versa. The block is now also retained until the transition has completed.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("notifyWhenInteractionChangesUsingBlock:")
@@ -89,7 +91,11 @@ public interface UIViewControllerTransitionCoordinator extends UIViewControllerT
      * appearing will receive a viewWillDisappear: call, and the view controller
      * that was disappearing will receive a viewWillAppear: call. This handler is
      * invoked BEFORE the "will" method calls are made.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
      */
+    @Deprecated
     @Generated
     @Selector("notifyWhenInteractionEndsUsingBlock:")
     void notifyWhenInteractionEndsUsingBlock(

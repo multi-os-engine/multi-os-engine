@@ -48,6 +48,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * A WKWebViewConfiguration object is a collection of properties with
  * which to initialize a web view.
  * [@helps] Contains properties used to configure a @link WKWebView @/link.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("WebKit")
@@ -161,8 +163,10 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     /**
      * A Boolean value indicating whether AirPlay is allowed.
-     * <p>
+     * 
      * The default value is YES.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("allowsAirPlayForMediaPlayback")
@@ -171,7 +175,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     /**
      * A Boolean value indicating whether HTML5 videos play inline
      * (YES) or use the native full-screen controller (NO).
-     * <p>
+     * 
      * The default value is NO.
      */
     @Generated
@@ -181,8 +185,10 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     /**
      * A Boolean value indicating whether HTML5 videos may play
      * picture-in-picture.
-     * <p>
+     * 
      * The default value is YES.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("allowsPictureInPictureMediaPlayback")
@@ -190,6 +196,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     /**
      * The name of the application as used in the user agent string.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("applicationNameForUserAgent")
@@ -203,13 +211,16 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     /**
      * An enum value indicating the type of data detection desired.
-     * <p>
+     * 
      * The default value is WKDataDetectorTypeNone.
      * An example of how this property may affect the content loaded in the WKWebView is that content like
      * 'Visit apple.com on July 4th or call 1 800 555-5545' will be transformed to add links around 'apple.com', 'July
      * 4th' and '1 800 555-5545'
      * if the dataDetectorTypes property is set to WKDataDetectorTypePhoneNumber | WKDataDetectorTypeLink |
      * WKDataDetectorTypeCalendarEvent.
+     * 
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("dataDetectorTypes")
@@ -223,9 +234,11 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     /**
      * A Boolean value indicating whether the WKWebView should always allow scaling of the web page, regardless of
      * author intent.
-     * <p>
+     * 
      * This will override the user-scalable property.
      * The default value is NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("ignoresViewportScaleLimits")
@@ -239,16 +252,27 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     @Selector("initWithCoder:")
     public native WKWebViewConfiguration initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     */
     @Generated
     @Deprecated
     @Selector("mediaPlaybackAllowsAirPlay")
     public native boolean mediaPlaybackAllowsAirPlay();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     */
     @Generated
     @Deprecated
     @Selector("mediaPlaybackRequiresUserAction")
     public native boolean mediaPlaybackRequiresUserAction();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("mediaTypesRequiringUserActionForPlayback")
     @NUInt
@@ -264,7 +288,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     /**
      * The process pool from which to obtain the view's web content
      * process.
-     * <p>
+     * 
      * When a web view is initialized, a new web content process
      * will be created for it from the specified pool, or an existing process in
      * that pool will be used.
@@ -273,6 +297,11 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     @Selector("processPool")
     public native WKProcessPool processPool();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("requiresUserActionForMediaPlayback")
     public native boolean requiresUserActionForMediaPlayback();
@@ -280,7 +309,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     /**
      * The level of granularity with which the user can interactively
      * select content in the web view.
-     * <p>
+     * 
      * Possible values are described in WKSelectionGranularity.
      * The default value is WKSelectionGranularityDynamic.
      */
@@ -291,8 +320,10 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     /**
      * A Boolean value indicating whether AirPlay is allowed.
-     * <p>
+     * 
      * The default value is YES.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAllowsAirPlayForMediaPlayback:")
@@ -301,7 +332,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     /**
      * A Boolean value indicating whether HTML5 videos play inline
      * (YES) or use the native full-screen controller (NO).
-     * <p>
+     * 
      * The default value is NO.
      */
     @Generated
@@ -311,8 +342,10 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     /**
      * A Boolean value indicating whether HTML5 videos may play
      * picture-in-picture.
-     * <p>
+     * 
      * The default value is YES.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAllowsPictureInPictureMediaPlayback:")
@@ -320,6 +353,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     /**
      * The name of the application as used in the user agent string.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setApplicationNameForUserAgent:")
@@ -327,13 +362,16 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     /**
      * An enum value indicating the type of data detection desired.
-     * <p>
+     * 
      * The default value is WKDataDetectorTypeNone.
      * An example of how this property may affect the content loaded in the WKWebView is that content like
      * 'Visit apple.com on July 4th or call 1 800 555-5545' will be transformed to add links around 'apple.com', 'July
      * 4th' and '1 800 555-5545'
      * if the dataDetectorTypes property is set to WKDataDetectorTypePhoneNumber | WKDataDetectorTypeLink |
      * WKDataDetectorTypeCalendarEvent.
+     * 
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setDataDetectorTypes:")
@@ -342,24 +380,37 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     /**
      * A Boolean value indicating whether the WKWebView should always allow scaling of the web page, regardless of
      * author intent.
-     * <p>
+     * 
      * This will override the user-scalable property.
      * The default value is NO.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setIgnoresViewportScaleLimits:")
     public native void setIgnoresViewportScaleLimits(boolean value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     */
     @Generated
     @Deprecated
     @Selector("setMediaPlaybackAllowsAirPlay:")
     public native void setMediaPlaybackAllowsAirPlay(boolean value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     */
     @Generated
     @Deprecated
     @Selector("setMediaPlaybackRequiresUserAction:")
     public native void setMediaPlaybackRequiresUserAction(boolean value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setMediaTypesRequiringUserActionForPlayback:")
     public native void setMediaTypesRequiringUserActionForPlayback(@NUInt long value);
@@ -374,7 +425,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     /**
      * The process pool from which to obtain the view's web content
      * process.
-     * <p>
+     * 
      * When a web view is initialized, a new web content process
      * will be created for it from the specified pool, or an existing process in
      * that pool will be used.
@@ -383,6 +434,11 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     @Selector("setProcessPool:")
     public native void setProcessPool(WKProcessPool value);
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("setRequiresUserActionForMediaPlayback:")
     public native void setRequiresUserActionForMediaPlayback(boolean value);
@@ -390,7 +446,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     /**
      * The level of granularity with which the user can interactively
      * select content in the web view.
-     * <p>
+     * 
      * Possible values are described in WKSelectionGranularity.
      * The default value is WKSelectionGranularityDynamic.
      */
@@ -401,7 +457,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     /**
      * A Boolean value indicating whether the web view suppresses
      * content rendering until it is fully loaded into memory.
-     * <p>
+     * 
      * The default value is NO.
      */
     @Generated
@@ -417,6 +473,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     /**
      * The website data store to be used by the web view.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setWebsiteDataStore:")
@@ -425,7 +483,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     /**
      * A Boolean value indicating whether the web view suppresses
      * content rendering until it is fully loaded into memory.
-     * <p>
+     * 
      * The default value is NO.
      */
     @Generated
@@ -441,6 +499,8 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     /**
      * The website data store to be used by the web view.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("websiteDataStore")
@@ -448,7 +508,7 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     /**
      * Sets the URL scheme handler object for the given URL scheme.
-     * <p>
+     * 
      * Each URL scheme can only have one URL scheme handler object registered.
      * An exception will be thrown if you try to register an object for a particular URL scheme more than once.
      * URL schemes are case insensitive. e.g. "myprotocol" and "MyProtocol" are equivalent.
@@ -458,7 +518,9 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
      * An exception will be thrown if you try to register a URL scheme handler for a URL scheme that WebKit handles
      * internally.
      * You can use +[WKWebView handlesURLScheme:] to check the availability of a given URL scheme.
-     *
+     * 
+     * API-Since: 11.0
+     * 
      * @param urlSchemeHandler The object to register.
      * @param scheme           The URL scheme the object will handle.
      */
@@ -469,8 +531,10 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     /**
      * Returns the currently registered URL scheme handler object for the given URL scheme.
-     *
+     * 
      * @param scheme The URL scheme to lookup.
+     * 
+     *               API-Since: 11.0
      */
     @Generated
     @Selector("urlSchemeHandlerForURLScheme:")
@@ -479,9 +543,11 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     /**
      * The set of default webpage preferences to use when loading and rendering content.
-     * <p>
+     * 
      * These default webpage preferences are additionally passed to the navigation delegate
      * in -webView:decidePolicyForNavigationAction:preferences:decisionHandler:.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("defaultWebpagePreferences")
@@ -489,9 +555,11 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
 
     /**
      * The set of default webpage preferences to use when loading and rendering content.
-     * <p>
+     * 
      * These default webpage preferences are additionally passed to the navigation delegate
      * in -webView:decidePolicyForNavigationAction:preferences:decisionHandler:.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDefaultWebpagePreferences:")
@@ -507,10 +575,16 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("limitsNavigationsToAppBoundDomains")
     public native boolean limitsNavigationsToAppBoundDomains();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setLimitsNavigationsToAppBoundDomains:")
     public native void setLimitsNavigationsToAppBoundDomains(boolean value);
@@ -518,8 +592,10 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     /**
      * A Boolean value indicating whether HTTP requests to servers known to support HTTPS should be automatically
      * upgraded to HTTPS requests.
-     * <p>
+     * 
      * The default value is YES.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("setUpgradeKnownHostsToHTTPS:")
@@ -528,8 +604,10 @@ public class WKWebViewConfiguration extends NSObject implements NSSecureCoding, 
     /**
      * A Boolean value indicating whether HTTP requests to servers known to support HTTPS should be automatically
      * upgraded to HTTPS requests.
-     * <p>
+     * 
      * The default value is YES.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("upgradeKnownHostsToHTTPS")

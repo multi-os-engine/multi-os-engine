@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An action that facilitates activating a @c UIWindowScene when performed.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")
@@ -53,7 +55,7 @@ public class UIWindowSceneActivationAction extends UIAction {
 
     /**
      * Returns a new @c UIWindowSceneActivationAction
-     *
+     * 
      * @param identifier            The action's identifier. Pass nil to use an auto-generated identifier.
      * @param alternateAction       If running on a platform that doesn't support multiple windows, the alternate action
      *                              is used. Otherwise, the alternates handler is called if the scene activation request

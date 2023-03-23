@@ -30,13 +30,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MIDICISession
- * <p>
+ * 
  * Object representating a MIDI Capability Inquiry session.
- * <p>
+ * 
  * A MIDI Capability Inquiry session is a bidirectional communication path between a MIDI process
  * and a MIDI-CI node (i.e., paired MIDI source and destination) identified using MIDI-CI discovery.
  * A MIDICISession can be used to manipulate MIDI-CI profiles and to discover the MIDI-CI property
  * capability.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CoreMIDI")
@@ -295,6 +297,8 @@ public class MIDICISession extends NSObject {
     /**
      * Given a MIDI channel number, send profile specific data to the MIDICISession.
      * Returns YES if the data was successfully sent.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("sendProfile:onChannel:profileData:")

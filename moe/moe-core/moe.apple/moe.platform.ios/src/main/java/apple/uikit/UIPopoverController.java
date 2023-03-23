@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -44,7 +42,15 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 3.2
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: UIPopoverController is deprecated. Popovers are now implemented as UIViewController
+ * presentations. Use a modal presentation style of UIModalPresentationPopover and UIPopoverPresentationController.
+ */
 @Deprecated
 @Generated
 @Library("UIKit")
@@ -158,6 +164,8 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
 
     /**
      * Set popover background color. Set to nil to use default background color. Default is nil.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("backgroundColor")
@@ -225,6 +233,8 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     /**
      * Clients may customize the popover background chrome by providing a class which subclasses
      * `UIPopoverBackgroundView` and which implements the required instance and class methods on that class.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("popoverBackgroundViewClass")
@@ -245,6 +255,8 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
      * accounts for the status bar. The rectangle being inset is always expressed in terms of the current device
      * orientation; (0, 0) is always in the upper-left of the device. This may require insets to change on device
      * rotation.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("popoverLayoutMargins")
@@ -272,6 +284,8 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
 
     /**
      * Set popover background color. Set to nil to use default background color. Default is nil.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setBackgroundColor:")
@@ -318,6 +332,8 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
     /**
      * Clients may customize the popover background chrome by providing a class which subclasses
      * `UIPopoverBackgroundView` and which implements the required instance and class methods on that class.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setPopoverBackgroundViewClass:")
@@ -341,6 +357,8 @@ public class UIPopoverController extends NSObject implements UIAppearanceContain
      * accounts for the status bar. The rectangle being inset is always expressed in terms of the current device
      * orientation; (0, 0) is always in the upper-left of the device. This may require insets to change on device
      * rotation.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setPopoverLayoutMargins:")

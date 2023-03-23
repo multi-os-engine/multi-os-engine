@@ -31,10 +31,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CLBeaconIdentityConstraint
- * <p>
+ * 
  * Discussion:
  * A constraint that describes the identity caracteristics of a beacon.
- * <p>
+ * 
  * A beacon identity is defined by UUID, major and minor values.
  * UUID must be specified. If only UUID is specified, the major and
  * minor values will be wildcarded and any beacons with the same
@@ -42,6 +42,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * major value are specified, the minor value will be wildcarded
  * and any beacons with the same UUID and major value will satisfy
  * the constraint.
+ * 
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreLocation")
@@ -59,7 +62,7 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
 
     /**
      * UUID
-     * <p>
+     * 
      * Discussion:
      * UUID associated with the beacon.
      */
@@ -136,7 +139,7 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
 
     /**
      * initWithUUID:
-     * <p>
+     * 
      * Discussion:
      * Initialize a beacon identity constraint with a UUID. Major and
      * minor values will be wildcarded.
@@ -147,7 +150,7 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
 
     /**
      * initWithUUID:major:
-     * <p>
+     * 
      * Discussion:
      * Initialize a beacon identity constraint with a UUID and major
      * value. Minor value will be wildcarded.
@@ -158,7 +161,7 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
 
     /**
      * initWithUUID:major:minor:
-     * <p>
+     * 
      * Discussion:
      * Initialize a beacon identity constraint with a UUID, major, and
      * minor values.
@@ -190,7 +193,7 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
 
     /**
      * major
-     * <p>
+     * 
      * Discussion:
      * Most significant value associated with the beacon.
      */
@@ -200,7 +203,7 @@ public class CLBeaconIdentityConstraint extends NSObject implements NSCopying, N
 
     /**
      * minor
-     * <p>
+     * 
      * Discussion:
      * Least significant value associated with the beacon.
      */

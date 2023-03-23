@@ -21,25 +21,35 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEFilterManagerError
- * <p>
+ * 
  * Filter error codes
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class NEFilterManagerError {
     /**
      * [@const] NEFilterManagerErrorConfigurationInvalid The filter configuration is invalid
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Invalid = 0x0000000000000001L;
     /**
      * [@const] NEFilterManagerErrorConfigurationDisabled The filter configuration is not enabled.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Disabled = 0x0000000000000002L;
     /**
      * [@const] NEFilterManagerErrorConfigurationStale The filter configuration needs to be loaded.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long Stale = 0x0000000000000003L;
     /**
      * [@const] NEFilterManagerErrorConfigurationCannotBeRemoved The filter configuration cannot be removed.
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long CannotBeRemoved = 0x0000000000000004L;
 
@@ -49,10 +59,14 @@ public final class NEFilterManagerError {
 
     /**
      * [@const] NEFilterManagerErrorConfigurationPermissionDenied Operation permission denied.
+     * 
+     * API-Since: 13.0
      */
     @Generated @NInt public static final long PermissionDenied = 0x0000000000000005L;
     /**
      * [@const] NEFilterManagerErrorConfigurationInternalError An internal configuration error occurred.
+     * 
+     * API-Since: 13.0
      */
     @Generated @NInt public static final long InternalError = 0x0000000000000006L;
 }

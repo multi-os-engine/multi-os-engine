@@ -82,9 +82,10 @@ public class TKSmartCardSlotManager extends NSObject {
 
     /**
      * Global pool of SmartCard reader slots.
-     * Note that defaultManager instance is accessible only if the calling application has
+     * macOS: Note that defaultManager instance is accessible only if the calling application has
      * 'com.apple.security.smartcard' entitlement set to Boolean:YES. If the calling application does not have this
      * entitlement, defaultManager is always set to nil.
+     * iOS: The defaultManager instance is always accessible.
      */
     @Generated
     @Selector("defaultManager")

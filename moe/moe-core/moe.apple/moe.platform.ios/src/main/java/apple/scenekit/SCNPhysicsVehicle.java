@@ -43,7 +43,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNPhysicsVehicle
- * <p>
+ * 
  * SCNPhysicsVehicle provides a vehicle behavior.
  */
 @Generated

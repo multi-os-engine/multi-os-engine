@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * This class represents a collection of action objects that can be executed.
  * The order of execution of these actions is undefined.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -160,6 +162,8 @@ public class HMActionSet extends NSObject {
      * Specifies the action set type - user-defined, trigger-owned or one of the builtin types.
      * Builtin action sets cannot be removed from the home. trigger-owned action sets cannot
      * be executed, renamed or associated with another trigger.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("actionSetType")
@@ -174,8 +178,9 @@ public class HMActionSet extends NSObject {
 
     /**
      * Adds an action to the action set.
-     *
+     * 
      * @param action     Action object to add to the action set.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -198,6 +203,8 @@ public class HMActionSet extends NSObject {
 
     /**
      * Specifies the last execution date for the action set.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("lastExecutionDate")
@@ -212,8 +219,9 @@ public class HMActionSet extends NSObject {
 
     /**
      * Removes an existing action from the action set.
-     *
+     * 
      * @param action     Action object to remove from the action set.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.
@@ -225,6 +233,8 @@ public class HMActionSet extends NSObject {
 
     /**
      * A unique identifier for the action set.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("uniqueIdentifier")
@@ -232,8 +242,9 @@ public class HMActionSet extends NSObject {
 
     /**
      * This method is used to change the name of the action set.
-     *
+     * 
      * @param name       New name for the action set.
+     * 
      * @param completion Block that is invoked once the request is processed.
      *                   The NSError provides more information on the status of the request, error
      *                   will be nil on success.

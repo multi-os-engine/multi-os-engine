@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -152,6 +155,12 @@ public class PKPaymentPass extends PKSecureElementPass {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use [PKSecureElementPass passActivationState] instead
+     */
+    @Deprecated
     @Generated
     @Selector("activationState")
     @NUInt

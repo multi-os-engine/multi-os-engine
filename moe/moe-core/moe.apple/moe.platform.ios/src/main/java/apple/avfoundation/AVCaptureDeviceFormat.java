@@ -43,18 +43,21 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.NSValue;
 
 /**
  * AVCaptureDeviceFormat
- * <p>
+ * 
  * An AVCaptureDeviceFormat wraps a CMFormatDescription and other format-related information, such as min and max
  * framerate.
- * <p>
+ * 
  * An AVCaptureDevice exposes an array of formats, and its current activeFormat may be queried. The payload for the
  * formats property is an array of AVCaptureDeviceFormat objects and the activeFormat property payload is an
  * AVCaptureDeviceFormat. AVCaptureDeviceFormat is a thin wrapper around a CMFormatDescription, and can carry associated
  * device format information that doesn't go in a CMFormatDescription, such as min and max frame rate. An
  * AVCaptureDeviceFormat object is immutable. Its values do not change for the life of the object.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("AVFoundation")
@@ -168,10 +171,12 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] autoFocusSystem
-     * <p>
+     * 
      * A property indicating the autofocus system.
-     * <p>
+     * 
      * This read-only property indicates the autofocus system.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("autoFocusSystem")
@@ -180,9 +185,9 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] formatDescription
-     * <p>
+     * 
      * A CMFormatDescription describing an AVCaptureDevice active or supported format.
-     * <p>
+     * 
      * A CMFormatDescription describing an AVCaptureDevice active or supported format. This is a read-only property. The
      * caller assumes no ownership of the returned value and should not CFRelease it.
      */
@@ -192,9 +197,9 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] highResolutionStillImageDimensions
-     * <p>
+     * 
      * CMVideoDimensions indicating the highest resolution still image that can be produced by this format.
-     * <p>
+     * 
      * By default, AVCapturePhotoOutput and AVCaptureStillImageOutput emit images with the same dimensions as their
      * source AVCaptureDevice's activeFormat.formatDescription property. Some device formats support high resolution
      * photo output. That is, they can stream video to an AVCaptureVideoDataOutput or AVCaptureMovieFileOutput at one
@@ -202,7 +207,7 @@ public class AVCaptureDeviceFormat extends NSObject {
      * discover a video format's supported high resolution still image dimensions. See -[AVCapturePhotoOutput
      * highResolutionPhotoEnabled], -[AVCapturePhotoSettings highResolutionPhotoEnabled], and
      * -[AVCaptureStillImageOutput highResolutionStillImageOutputEnabled].
-     * <p>
+     * 
      * AVCaptureDeviceFormats of type AVMediaTypeDepthData may also support the delivery of a higher resolution depth
      * data map to an AVCapturePhotoOutput. Chief differences are:
      * - Depth data accompanying still images is not supported by AVCaptureStillImageOutput. You must use
@@ -211,7 +216,12 @@ public class AVCaptureDeviceFormat extends NSObject {
      * in for high resolution depth data if it's available. You may query the -[AVCaptureDevice activeDepthDataFormat]'s
      * highResolutionStillImageDimensions to discover the depth data resolution that will be delivered with captured
      * photos.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
+     * Deprecated-Message: Use supportedMaxPhotoDimensions instead.
      */
+    @Deprecated
     @Generated
     @Selector("highResolutionStillImageDimensions")
     @ByValue
@@ -223,9 +233,9 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] videoBinned
-     * <p>
+     * 
      * A property indicating whether the format is binned.
-     * <p>
+     * 
      * videoBinned is a BOOL indicating whether the format is a binned format. Binning is a pixel-combining process
      * which can result in greater low light sensitivity at the cost of reduced resolution.
      */
@@ -235,9 +245,9 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] videoHDRSupported
-     * <p>
+     * 
      * A property indicating whether the format supports high dynamic range streaming.
-     * <p>
+     * 
      * videoHDRSupported is a BOOL indicating whether the format supports high dynamic range streaming, also known as
      * Extended Dynamic Range (EDR). When enabled, the device streams at twice the published frame rate, capturing an
      * under-exposed frame and correctly exposed frame for each frame time at the published rate. Portions of the
@@ -247,6 +257,8 @@ public class AVCaptureDeviceFormat extends NSObject {
      * function, and when captured in movies, contain Dolby Vision metadata. They are, in effect, "always on" HDR. And
      * thus the videoHDRSupported property is always NO for 10-bit formats only supporting HLG BT2020 colorspace, since
      * HDR cannot be enabled or disabled. To enable videoHDR (EDR), set the AVCaptureDevice.videoHDREnabled property.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isVideoHDRSupported")
@@ -254,13 +266,16 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * isVideoStabilizationModeSupported
-     * <p>
+     * 
      * Returns whether the format supports the given video stabilization mode.
-     * <p>
+     * 
      * isVideoStabilizationModeSupported: returns a boolean value indicating whether the format can be stabilized using
      * the given mode with -[AVCaptureConnection setPreferredVideoStabilizationMode:].
-     *
-     * @param videoStabilizationMode An AVCaptureVideoStabilizationMode to be checked.
+     * 
+     * API-Since: 8.0
+     * 
+     * @param videoStabilizationMode
+     *                               An AVCaptureVideoStabilizationMode to be checked.
      */
     @Generated
     @Selector("isVideoStabilizationModeSupported:")
@@ -268,12 +283,16 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] videoStabilizationSupported
-     * <p>
+     * 
      * A property indicating whether the format supports video stabilization.
-     * <p>
+     * 
      * videoStabilizationSupported is a BOOL indicating whether the format can be stabilized using AVCaptureConnection
      * -setEnablesVideoStabilizationWhenAvailable. This property is deprecated. Use isVideoStabilizationModeSupported:
      * instead.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Use isVideoStabilizationModeSupported: instead.
      */
     @Generated
     @Deprecated
@@ -282,10 +301,12 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] maxExposureDuration
-     * <p>
+     * 
      * A CMTime indicating the maximum supported exposure duration.
-     * <p>
+     * 
      * This read-only property indicates the maximum supported exposure duration.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("maxExposureDuration")
@@ -294,10 +315,12 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] maxISO
-     * <p>
+     * 
      * An float indicating the maximum supported exposure ISO value.
-     * <p>
+     * 
      * This read-only property indicates the maximum supported exposure ISO value.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("maxISO")
@@ -305,9 +328,9 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] mediaType
-     * <p>
+     * 
      * An NSString describing the media type of an AVCaptureDevice active or supported format.
-     * <p>
+     * 
      * Supported mediaTypes are listed in AVMediaFormat.h. This is a read-only property. The caller assumes no ownership
      * of the returned value and should not CFRelease it.
      */
@@ -317,10 +340,12 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] minExposureDuration
-     * <p>
+     * 
      * A CMTime indicating the minimum supported exposure duration.
-     * <p>
+     * 
      * This read-only property indicates the minimum supported exposure duration.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("minExposureDuration")
@@ -329,10 +354,12 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] minISO
-     * <p>
+     * 
      * A float indicating the minimum supported exposure ISO value.
-     * <p>
+     * 
      * This read-only property indicates the minimum supported exposure ISO value.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("minISO")
@@ -340,11 +367,13 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] supportedColorSpaces
-     * <p>
+     * 
      * A property indicating the receiver's supported color spaces.
-     * <p>
+     * 
      * This read-only property indicates the receiver's supported color spaces as an array of AVCaptureColorSpace
      * constants sorted from narrow to wide color.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("supportedColorSpaces")
@@ -352,9 +381,9 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] videoFieldOfView
-     * <p>
+     * 
      * A property indicating the format's horizontal field of view.
-     * <p>
+     * 
      * videoFieldOfView is a float value indicating the receiver's field of view in degrees. If field of view is
      * unknown, a value of 0 is returned.
      */
@@ -364,9 +393,9 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] videoMaxZoomFactor
-     * <p>
+     * 
      * Indicates the maximum zoom factor available for the AVCaptureDevice's videoZoomFactor property.
-     * <p>
+     * 
      * If the device's videoZoomFactor property is assigned a larger value, an NSRangeException will be thrown. A
      * maximum zoom factor of 1 indicates no zoom is available.
      */
@@ -377,9 +406,9 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] videoSupportedFrameRateRanges
-     * <p>
+     * 
      * A property indicating the format's supported frame rate ranges.
-     * <p>
+     * 
      * videoSupportedFrameRateRanges is an array of AVFrameRateRange objects, one for each of the format's supported
      * video frame rate ranges.
      */
@@ -389,10 +418,10 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] videoZoomFactorUpscaleThreshold
-     * <p>
+     * 
      * Indicates the value of AVCaptureDevice's videoZoomFactor property at which the image output begins to require
      * upscaling.
-     * <p>
+     * 
      * In some cases the image sensor's dimensions are larger than the dimensions reported by the video
      * AVCaptureDeviceFormat. As long as the sensor crop is larger than the reported dimensions of the
      * AVCaptureDeviceFormat, the image will be downscaled. Setting videoZoomFactor to the value of
@@ -406,13 +435,15 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] supportedDepthDataFormats
-     * <p>
+     * 
      * Indicates this format's companion depth data formats.
-     * <p>
+     * 
      * If no depth data formats are supported by the receiver, an empty array is returned. On virtual devices, the
      * supportedDepthDataFormats list items always match the aspect ratio of their paired video format. When the
      * receiver is set as the device's activeFormat, you may set the device's activeDepthDataFormat to one of these
      * supported depth data formats.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("supportedDepthDataFormats")
@@ -420,9 +451,9 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] unsupportedCaptureOutputClasses
-     * <p>
+     * 
      * A property indicating AVCaptureOutput subclasses the receiver does not support.
-     * <p>
+     * 
      * As a rule, AVCaptureDeviceFormats of a given mediaType are available for use with all AVCaptureOutputs that
      * accept that media type, but there are exceptions. For instance, on apps linked against iOS versions earlier than
      * 12.0, the photo resolution video formats may not be used as sources for AVCaptureMovieFileOutput due to bandwidth
@@ -432,6 +463,8 @@ public class AVCaptureDeviceFormat extends NSObject {
      * Likewise, to stream depth data while capturing video to a movie file using AVCaptureMovieFileOutput, call
      * -[AVCaptureSession setSessionPreset:AVCaptureSessionPresetPhoto]. When using the photo preset, video is captured
      * at preview resolution rather than the full sensor resolution.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("unsupportedCaptureOutputClasses")
@@ -439,13 +472,13 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] videoMaxZoomFactorForDepthDataDelivery
-     * <p>
-     * Indicates the maximum zoom factor available for the AVCaptureDevice's videoZoomFactor property when delivering
-     * depth data to one or more outputs.
-     * <p>
-     * Virtual devices support a limited zoom range when delivering depth data to any output. If this device format has
-     * no -supportedDepthDataFormats, this property returns videoMaxZoomFactor.
+     * 
+     * A deprecated property. Please use supportedVideoZoomFactorsForDepthDataDelivery instead
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("videoMaxZoomFactorForDepthDataDelivery")
     @NFloat
@@ -453,13 +486,13 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] videoMinZoomFactorForDepthDataDelivery
-     * <p>
-     * Indicates the minimum zoom factor available for the AVCaptureDevice's videoZoomFactor property when delivering
-     * depth data to one or more outputs.
-     * <p>
-     * Virtual devices support a limited zoom range when delivering depth data to any output. If this device format has
-     * no -supportedDepthDataFormats, this property returns 1.0.
+     * 
+     * A deprecated property. Please use supportedVideoZoomFactorsForDepthDataDelivery instead
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("videoMinZoomFactorForDepthDataDelivery")
     @NFloat
@@ -467,11 +500,13 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] geometricDistortionCorrectedVideoFieldOfView
-     * <p>
+     * 
      * A property indicating the format's horizontal field of view post geometric distortion correction.
-     * <p>
+     * 
      * If the receiver's AVCaptureDevice does not support GDC, geometricDistortionCorrectedVideoFieldOfView matches the
      * videoFieldOfView property.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("geometricDistortionCorrectedVideoFieldOfView")
@@ -479,11 +514,13 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] globalToneMappingSupported
-     * <p>
+     * 
      * A property indicating whether the format supports global tone mapping.
-     * <p>
+     * 
      * globalToneMappingSupported is a BOOL indicating whether the format supports global tone mapping. See
      * AVCaptureDevice's globalToneMappingEnabled property.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isGlobalToneMappingSupported")
@@ -491,15 +528,17 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] highestPhotoQualitySupported
-     * <p>
+     * 
      * A boolean value specifying whether this format supports the highest possible photo quality that can be delivered
      * on the current platform.
-     * <p>
+     * 
      * Of the many formats supported by an AVCaptureDevice, only a few of them are designated as "photo" formats which
      * can produce the highest possible quality, such as still image stabilization and Live Photos. If you intend to
      * connect an AVCaptureDeviceInput to an AVCapturePhotoOutput and receive the best possible images, you should
      * ensure that you are either using the AVCaptureSessionPresetPhoto as your preset, or if using the parallel
      * AVCaptureDevice activeFormat API, select as your activeFormat one for which this property is YES.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isHighestPhotoQualitySupported")
@@ -507,13 +546,15 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] multiCamSupported
-     * <p>
+     * 
      * A property indicating whether this format is supported in an AVCaptureMultiCamSession.
-     * <p>
+     * 
      * When using an AVCaptureSession (single camera capture), any of the formats in the device's -formats array may be
      * set as the -activeFormat. However, when used with an AVCaptureMultiCamSession, the device's -activeFormat may
      * only be set to one of the formats for which multiCamSupported answers YES. This limited subset of capture formats
      * are known to run sustainably in a multi camera capture scenario.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("isMultiCamSupported")
@@ -521,13 +562,15 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] portraitEffectsMatteStillImageDeliverySupported
-     * <p>
+     * 
      * Indicates whether this depth format supports the delivery of a portrait effects matte.
-     * <p>
+     * 
      * Some depth formats are capable of producing an auxiliary matting image (similar to an auxiliary depth image)
      * tuned for high quality portrait effects rendering (see AVPortraitEffectsMatte.h). If this property's value is
      * YES, you may request portrait effects matte delivery in your photos using the AVCapturePhotoOutput, provided this
      * format is selected as the activeDepthDataFormat.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("isPortraitEffectsMatteStillImageDeliverySupported")
@@ -535,12 +578,14 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] centerStageSupported
-     * <p>
+     * 
      * Indicates whether the format supports the Center Stage feature.
-     * <p>
+     * 
      * This property returns YES if the format supports "Center Stage", which automatically adjusts the camera to keep
      * people optimally framed within the field of view. See +AVCaptureDevice.centerStageEnabled for a detailed
      * discussion.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("isCenterStageSupported")
@@ -548,10 +593,10 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] highPhotoQualitySupported
-     * <p>
+     * 
      * A boolean value specifying whether this format supports high photo quality when selecting an
      * AVCapturePhotoQualityPrioritization of .balanced or .quality.
-     * <p>
+     * 
      * If an AVCaptureDeviceFormat's highPhotoQualitySupported property is YES, the format produces higher image quality
      * when selecting .balanced or .quality AVCapturePhotoQualityPrioritization compared to .speed. Such formats adhere
      * to the following rules:
@@ -564,6 +609,8 @@ public class AVCaptureDeviceFormat extends NSObject {
      * Formats that don't support high photo quality produce the same image quality whether you select .speed,
      * .balanced, or .quality. Note that high photo quality is only attainable when using the AVCapturePhotoOutput with
      * these supported formats.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isHighPhotoQualitySupported")
@@ -571,11 +618,13 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] portraitEffectSupported
-     * <p>
+     * 
      * Indicates whether the format supports the Portrait Effect feature.
-     * <p>
+     * 
      * This property returns YES if the format supports Portrait Effect, the application of a shallow depth of field
      * effect to objects in the background. See +AVCaptureDevice.portraitEffectEnabled for a detailed discussion.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isPortraitEffectSupported")
@@ -583,11 +632,13 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] videoFrameRateRangeForCenterStage
-     * <p>
+     * 
      * Indicates the minimum / maximum frame rates available when centerStageActive is YES.
-     * <p>
+     * 
      * Devices may support a limited frame rate range when Center Stage is active. If this device format does not
      * support Center Stage, this property returns nil.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("videoFrameRateRangeForCenterStage")
@@ -595,11 +646,13 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] videoFrameRateRangeForPortraitEffect
-     * <p>
+     * 
      * Indicates the minimum / maximum frame rates available when portraitEffectActive is YES.
-     * <p>
+     * 
      * Devices may support a limited frame rate range when Portrait Effect is active. If this device format does not
      * support Portrait Effect, this property returns nil.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("videoFrameRateRangeForPortraitEffect")
@@ -607,12 +660,14 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] videoMaxZoomFactorForCenterStage
-     * <p>
+     * 
      * Indicates the maximum zoom factor available for the AVCaptureDevice's videoZoomFactor property when
      * centerStageActive is YES.
-     * <p>
+     * 
      * Devices support a limited zoom range when Center Stage is active. If this device format does not support Center
      * Stage, this property returns videoMaxZoomFactor.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("videoMaxZoomFactorForCenterStage")
@@ -621,15 +676,89 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     /**
      * [@property] videoMinZoomFactorForCenterStage
-     * <p>
+     * 
      * Indicates the minimum zoom factor available for the AVCaptureDevice's videoZoomFactor property when
      * centerStageActive is YES.
-     * <p>
+     * 
      * Devices support a limited zoom range when Center Stage is active. If this device format does not support Center
      * Stage, this property returns 1.0.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("videoMinZoomFactorForCenterStage")
     @NFloat
     public native double videoMinZoomFactorForCenterStage();
+
+    /**
+     * [@property] studioLightSupported
+     * 
+     * Indicates whether the format supports the Studio Light feature.
+     * 
+     * This property returns YES if the format supports Studio Light (artificial re-lighting of the subject's face). See
+     * +AVCaptureDevice.studioLightEnabled.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isStudioLightSupported")
+    public native boolean isStudioLightSupported();
+
+    /**
+     * [@property] secondaryNativeResolutionZoomFactors
+     * 
+     * Indicates zoom factors at which this device transitions to secondary native resolution modes.
+     * 
+     * Devices with this property have the means to switch their pixel sampling mode on the fly to produce a
+     * high-fidelity, non-upsampled images at a fixed zoom factor beyond 1.0x.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("secondaryNativeResolutionZoomFactors")
+    public native NSArray<? extends NSNumber> secondaryNativeResolutionZoomFactors();
+
+    /**
+     * [@property] supportedMaxPhotoDimensions
+     * 
+     * This property lists all of the supported maximum photo dimensions for this format. The array contains
+     * CMVideoDimensions structs encoded as NSValues.
+     * 
+     * Enumerate all supported resolution settings for which this format may be configured to capture photos. Use these
+     * values to set AVCapturePhotoOutput.maxPhotoDimensions and AVCapturePhotoSettings.maxPhotoDimensions.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("supportedMaxPhotoDimensions")
+    public native NSArray<? extends NSValue> supportedMaxPhotoDimensions();
+
+    /**
+     * [@property] supportedVideoZoomFactorsForDepthDataDelivery
+     * 
+     * Indicates the sorted zoom factors available for the AVCaptureDevice's videoZoomFactor property when delivering
+     * depth data to one or more outputs.
+     * 
+     * Virtual devices support limited zoom factors when delivering depth data to any output. If this device format has
+     * no -supportedDepthDataFormats, this property returns an empty array.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("supportedVideoZoomFactorsForDepthDataDelivery")
+    public native NSArray<? extends NSNumber> supportedVideoZoomFactorsForDepthDataDelivery();
+
+    /**
+     * [@property] videoFrameRateRangeForStudioLight
+     * 
+     * Indicates the minimum / maximum frame rates available when studioLight is YES.
+     * 
+     * Devices may support a limited frame rate range when Studio Light is active. If this device format does not
+     * support Studio Light, this property returns nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("videoFrameRateRangeForStudioLight")
+    public native AVFrameRateRange videoFrameRateRangeForStudioLight();
 }

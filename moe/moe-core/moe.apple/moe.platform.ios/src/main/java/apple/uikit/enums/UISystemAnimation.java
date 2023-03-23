@@ -19,10 +19,15 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 public final class UISystemAnimation {
     /**
      * removes the views from the hierarchy when complete
+     * 
+     * API-Since: 7.0
      */
     @Generated @NUInt public static final long UISystemAnimationDelete = 0x0000000000000000L;
 

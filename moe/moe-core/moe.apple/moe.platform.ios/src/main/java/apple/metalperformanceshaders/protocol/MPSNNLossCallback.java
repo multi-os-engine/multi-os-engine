@@ -12,7 +12,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] MPSNNLossCallback
- * <p>
+ * 
  * MPSNNLossCallback Defines a callback protocol for @ref MPSNNForwardLossNode and @ref MPSNNLossGradientNode
  * to set the scalar weight value just before encoding the underlying kernels.
  */
@@ -23,7 +23,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface MPSNNLossCallback extends NSSecureCoding, NSCopying {
     /**
      * Returns the desired loss scaling weight value.
-     *
+     * 
      * @param sourceImage      One of the source images in the batch given as a reference.
      * @param destinationImage One of the destination images in the batch given as a reference.
      * @return The desired scalar weight value.

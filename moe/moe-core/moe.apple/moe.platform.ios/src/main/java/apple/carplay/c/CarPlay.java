@@ -1,6 +1,5 @@
 package apple.carplay.c;
 
-import apple.coregraphics.struct.CGSize;
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.c.ann.CVariable;
 import org.moe.natj.general.NatJ;
@@ -11,6 +10,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import apple.corefoundation.struct.CGSize;
 
 @Generated
 @Library("CarPlay")
@@ -27,13 +27,15 @@ public final class CarPlay {
     /**
      * Your @c CPNavigationAlert may specify a duration for which the alert will be visible onscreen,
      * or 0 for an alert that is visible indefinitely.
-     * <p>
+     * 
      * For non-indefinite alerts, this is the minimum duration the alert will be visible.
      */
     @Generated public static final double CPNavigationAlertMinimumDuration = 5.0;
 
     /**
      * A session role which defines a typical interactive application on the car display
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -42,6 +44,8 @@ public final class CarPlay {
 
     /**
      * A session role which defines a typical interactive application in the CarPlay dashboard
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @CVariable()
@@ -80,6 +84,9 @@ public final class CarPlay {
     @ByValue
     public static native CGSize CPNowPlayingButtonMaximumImageSize();
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @CVariable()
     @NUInt
@@ -87,7 +94,7 @@ public final class CarPlay {
 
     /**
      * The expected maximum size of an image size for your @c CPListSection.
-     * <p>
+     * 
      * To properly size your images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
      */
@@ -95,4 +102,14 @@ public final class CarPlay {
     @CVariable()
     @ByValue
     public static native CGSize CPMaximumListSectionImageSize();
+
+    /**
+     * A session role which defines a typical interactive application in the CarPlay instrument cluster
+     * 
+     * API-Since: 15.4
+     */
+    @Generated
+    @CVariable()
+    @MappedReturn(ObjCStringMapper.class)
+    public static native String CPTemplateApplicationInstrumentClusterSceneSessionRoleApplication();
 }

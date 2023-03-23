@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("ModelIO")
 @Runtime(ObjCRuntime.class)
@@ -129,6 +132,9 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("materialWithSCNMaterial:")
     public static native MDLMaterial materialWithSCNMaterial(SCNMaterial scnMaterial);
@@ -209,6 +215,8 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
 
     /**
      * Returns the complete list of properties that match the semantic (e.g. Kd & Kd_map)
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("propertiesWithSemantic:")
@@ -267,9 +275,11 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
      * can be resolved as textures, then the string and NSURL values will be replaced by
      * MDLTextureSampler values. The transforms on the samplers will be identity, the
      * wrap modes will be clamp, and the filter modes will be linear.
-     *
+     * 
      * @param resolver If non-nil, the resolver can be invoked to convert stringValues
      *                 to NSURLs for loading.
+     * 
+     *                 API-Since: 11.0
      */
     @Generated
     @Selector("loadTexturesUsingResolver:")
@@ -278,9 +288,11 @@ public class MDLMaterial extends NSObject implements MDLNamed, NSFastEnumeration
     /**
      * Iterates all material properties. If they are string values, they are resolved into
      * valid paths as NSURL values.
-     *
+     * 
      * @param resolver If non-nil, the resolver can be invoked to convert stringValues
      *                 to NSURLs for loading.
+     * 
+     *                 API-Since: 11.0
      */
     @Generated
     @Selector("resolveTexturesWithResolver:")

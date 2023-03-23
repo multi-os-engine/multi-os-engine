@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * An interaction behavior for a PKCanvasView.
  * Should not be subclassed outside of the PencilKit framework.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("PencilKit")

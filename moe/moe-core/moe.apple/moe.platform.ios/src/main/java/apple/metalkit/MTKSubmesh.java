@@ -40,12 +40,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MTKSubmesh
- * <p>
+ * 
  * A segment of a mesh and properties to render the segement.
- * <p>
+ * 
  * Container for data that can be rendered in a single draw call. 1:1 mapping to MDLSubmesh. Each submesh contains an
  * index Buffer with which the parents mesh data can be rendered. Actual vertex data resides in the submesh's parent
  * MTKMesh object.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalKit")
@@ -159,9 +161,9 @@ public class MTKSubmesh extends NSObject {
 
     /**
      * [@property] indexBuffer
-     * <p>
+     * 
      * IndexBuffer (including indexCount) to render the object.
-     * <p>
+     * 
      * The MTLBuffer to use for indexBuffer parameter in a [MTLRenderCommandEncoder drawIndexedPrimitives] call.
      */
     @Generated
@@ -170,9 +172,9 @@ public class MTKSubmesh extends NSObject {
 
     /**
      * [@property] indexCount
-     * <p>
+     * 
      * Number of indicies in indexBuffer.
-     * <p>
+     * 
      * Value to use for indexCount parameter in a [MTLRenderCommandEncoder drawIndexedPrimitives] call.
      */
     @Generated
@@ -182,9 +184,9 @@ public class MTKSubmesh extends NSObject {
 
     /**
      * [@property] indexType
-     * <p>
+     * 
      * Metal index type of data in indexBuffer.
-     * <p>
+     * 
      * Value to use for indexType parameter in a [MTLRenderCommandEncoder drawIndexedPrimitives] call.
      */
     @Generated
@@ -198,9 +200,9 @@ public class MTKSubmesh extends NSObject {
 
     /**
      * [@property] mesh
-     * <p>
+     * 
      * Parent MTKMesh object containing vertex data of this object.
-     * <p>
+     * 
      * The buffer of this parent mesh should be set in the encoder before a drawIndexedPrimitives call is made.
      */
     @Generated
@@ -209,9 +211,9 @@ public class MTKSubmesh extends NSObject {
 
     /**
      * [@property] name
-     * <p>
+     * 
      * Name from the original MDLSubmesh object.
-     * <p>
+     * 
      * Although not directly used by this object, the application may use this to identify the submesh in the
      * renderer/scene/world.
      */
@@ -221,9 +223,9 @@ public class MTKSubmesh extends NSObject {
 
     /**
      * [@property] primitiveType
-     * <p>
+     * 
      * Metal primitive type with which to draw this object.
-     * <p>
+     * 
      * Value to use for primitiveType parameter in a [MTLRenderCommandEncoder drawIndexedPrimitives] call.
      */
     @Generated
@@ -233,9 +235,9 @@ public class MTKSubmesh extends NSObject {
 
     /**
      * [@property] name
-     * <p>
+     * 
      * Name from the original MDLSubmesh object.
-     * <p>
+     * 
      * Although not directly used by this object, the application may use this to identify the submesh in the
      * renderer/scene/world.
      */

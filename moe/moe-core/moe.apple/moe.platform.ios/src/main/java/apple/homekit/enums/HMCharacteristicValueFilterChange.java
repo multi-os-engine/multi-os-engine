@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueFilterChange
- * <p>
+ * 
  * [@constant] HMCharacteristicValueFilterChangeNotNeeded Filter does not need to be changed.
  * [@constant] HMCharacteristicValueFilterChangeNeeded Filter needs to be changed.
+ * 
+ * API-Since: 10.2
  */
 @Generated
 public final class HMCharacteristicValueFilterChange {
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long NotNeeded = 0x0000000000000000L;
+    /**
+     * API-Since: 10.2
+     */
     @Generated @NInt public static final long Needed = 0x0000000000000001L;
 
     @Generated

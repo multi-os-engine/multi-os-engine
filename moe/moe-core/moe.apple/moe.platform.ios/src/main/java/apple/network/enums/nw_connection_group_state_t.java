@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_connection_group_state_t
- * <p>
+ * 
  * Connection Group states sent by nw_connection_group_set_state_changed_handler.
  * States progress forward and do not move backwards.
  */

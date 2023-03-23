@@ -45,21 +45,24 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MCPeerID
- * <p>
+ * 
  * MCPeerID represents a peer in a multipeer session.
- * <p>
+ * 
  * MCPeerID is used to reference a peer in a multipeer session.
- * <p>
+ * 
  * Use the init method -initWithDisplayName: to create a new ID for the
  * local app, and associate a display name with the ID.
- * <p>
+ * 
  * Note that the displayName is intended for a UI element, and should
  * be short and descriptive of the local peer.  The hard limit of
  * displayName is 63 bytes in UTF8 encoding. The displayName parameter
  * may not be nil or an empty string.
- * <p>
+ * 
  * MCPeerID conforms to NSCopying and can be used as a key in a
  * NSDictionary.
+ * 
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("MultipeerConnectivity")

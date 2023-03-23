@@ -55,7 +55,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNMaterial
- * <p>
+ * 
  * A SCNMaterial determines how a geometry is rendered. It encapsulates the colors and textures that define the
  * appearance of 3d geometries.
  */
@@ -145,13 +145,16 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * material
-     * <p>
+     * 
      * Creates and initialize a material instance.
      */
     @Generated
     @Selector("material")
     public static native SCNMaterial material();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("materialWithMDLMaterial:")
     public static native SCNMaterial materialWithMDLMaterial(MDLMaterial mdlMaterial);
@@ -192,9 +195,9 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] ambient
-     * <p>
+     * 
      * Specifies the receiver's ambient property.
-     * <p>
+     * 
      * The ambient property specifies the amount of ambient light to reflect. This property has no visual impact on
      * scenes that have no ambient light. Setting the ambient has no effect if locksAmbientWithDiffuse is set to YES.
      */
@@ -204,15 +207,18 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] ambientOcclusion
-     * <p>
+     * 
      * The ambientOcclusion property specifies the ambient occlusion of the surface. The ambient occlusion is multiplied
      * with the ambient light, then the result is added to the lighting contribution. This property has no visual impact
      * on scenes that have no ambient light. When an ambient occlusion map is set, the ambient property is ignored.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("ambientOcclusion")
     public native SCNMaterialProperty ambientOcclusion();
 
+    @Deprecated
     @Generated
     @Selector("animationForKey:")
     public native CAAnimation animationForKey(String key);
@@ -223,8 +229,10 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] blendMode
-     * <p>
+     * 
      * Specifies the receiver's blend mode. Defaults to SCNBlendModeAlpha.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("blendMode")
@@ -239,8 +247,8 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] cullMode
-     * <p>
-     * Determines the culling mode of the receiver. Defaults to SCNCullBack. Animatable.
+     * 
+     * Determines the culling mode of the receiver. Defaults to SCNCullModeBack. Animatable.
      */
     @Generated
     @Selector("cullMode")
@@ -249,9 +257,9 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] diffuse
-     * <p>
+     * 
      * Specifies the receiver's diffuse property.
-     * <p>
+     * 
      * The diffuse property specifies the amount of light diffusely reflected from the surface. The diffuse light is
      * reflected equally in all directions and is therefore independent of the point of view.
      */
@@ -261,7 +269,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] emission
-     * <p>
+     * 
      * The emission property specifies the amount of light the material emits. This emission does not light up other
      * surfaces in the scene.
      */
@@ -275,9 +283,9 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] fresnelExponent
-     * <p>
+     * 
      * Specifies the receiver's fresnel exponent value. Defaults to 0.0. Animatable.
-     * <p>
+     * 
      * The effect of the reflectivity property is modulated by this property. The fresnelExponent changes the exponent
      * of the reflectance. The bigger the exponent, the more concentrated the reflection is around the edges.
      */
@@ -306,13 +314,14 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     @Selector("initWithCoder:")
     public native SCNMaterial initWithCoder(NSCoder coder);
 
+    @Deprecated
     @Generated
     @Selector("isAnimationForKeyPaused:")
     public native boolean isAnimationForKeyPaused(String key);
 
     /**
      * [@property] doubleSided
-     * <p>
+     * 
      * Determines whether the receiver is double sided. Defaults to NO. Animatable.
      */
     @Generated
@@ -321,7 +330,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] doubleSided
-     * <p>
+     * 
      * Determines whether the receiver is double sided. Defaults to NO. Animatable.
      */
     @Generated
@@ -330,7 +339,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] litPerPixel
-     * <p>
+     * 
      * Determines whether the receiver is lit per pixel. Defaults to YES. Animatable.
      */
     @Generated
@@ -339,7 +348,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] litPerPixel
-     * <p>
+     * 
      * Determines whether the receiver is lit per pixel. Defaults to YES. Animatable.
      */
     @Generated
@@ -348,7 +357,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] lightingModelName
-     * <p>
+     * 
      * Determines the receiver's lighting model. See above for the list of lighting models. Defaults to
      * SCNLightingModelBlinn.
      */
@@ -358,7 +367,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] locksAmbientWithDiffuse
-     * <p>
+     * 
      * Makes the ambient property automatically match the diffuse property. Defaults to YES. Animatable.
      */
     @Generated
@@ -367,10 +376,12 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] metalness
-     * <p>
+     * 
      * The metalness property specifies how metallic the material's surface appears. Lower values (darker colors) cause
      * the material to appear more like a dielectric surface. Higher values (brighter colors) cause the surface to
      * appear more metallic. This property is only used when 'lightingModelName' is 'SCNLightingModelPhysicallyBased'.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("metalness")
@@ -378,7 +389,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] multiply
-     * <p>
+     * 
      * The multiply property specifies a color or an image used to multiply the output fragments with. The computed
      * fragments are multiplied with the multiply value to produce the final fragments. This property may be used for
      * shadow maps, to fade out or tint 3d objects.
@@ -389,7 +400,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] name
-     * <p>
+     * 
      * Determines the name of the receiver.
      */
     @Generated
@@ -398,9 +409,9 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] normal
-     * <p>
+     * 
      * The normal property specifies the surface orientation.
-     * <p>
+     * 
      * When an image is set on the normal property the material is automatically lit per pixel. Setting a color has no
      * effect.
      */
@@ -408,6 +419,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     @Selector("normal")
     public native SCNMaterialProperty normal();
 
+    @Deprecated
     @Generated
     @Selector("pauseAnimationForKey:")
     public native void pauseAnimationForKey(String key);
@@ -419,7 +431,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] readsFromDepthBuffer
-     * <p>
+     * 
      * Determines whether the receiver reads from the depth buffer when rendered. Defaults to YES.
      */
     @Generated
@@ -428,7 +440,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] reflective
-     * <p>
+     * 
      * The reflective property specifies the reflectivity of the surface. The surface will not actually reflect other
      * objects in the scene. This property may be used as a sphere mapping to reflect a precomputed environment.
      */
@@ -444,21 +456,25 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     @Selector("removeAnimationForKey:")
     public native void removeAnimationForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
     public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
 
+    @Deprecated
     @Generated
     @Selector("resumeAnimationForKey:")
     public native void resumeAnimationForKey(String key);
 
     /**
      * [@property] roughness
-     * <p>
+     * 
      * The roughness property specifies the apparent smoothness of the surface. Lower values (darker colors) cause the
      * material to appear shiny, with well-defined specular highlights. Higher values (brighter colors) cause specular
      * highlights to spread out and the diffuse property of the material to become more retroreflective. This property
      * is only used when 'lightingModelName' is 'SCNLightingModelPhysicallyBased'.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("roughness")
@@ -466,9 +482,11 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] selfIllumination
-     * <p>
+     * 
      * The selfIllumination property specifies a texture or a color that is added to the lighting contribution of the
      * surface. When a selfIllumination is set, the emission property is ignored.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("selfIllumination")
@@ -476,8 +494,10 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] blendMode
-     * <p>
+     * 
      * Specifies the receiver's blend mode. Defaults to SCNBlendModeAlpha.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setBlendMode:")
@@ -485,8 +505,8 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] cullMode
-     * <p>
-     * Determines the culling mode of the receiver. Defaults to SCNCullBack. Animatable.
+     * 
+     * Determines the culling mode of the receiver. Defaults to SCNCullModeBack. Animatable.
      */
     @Generated
     @Selector("setCullMode:")
@@ -494,9 +514,9 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] fresnelExponent
-     * <p>
+     * 
      * Specifies the receiver's fresnel exponent value. Defaults to 0.0. Animatable.
-     * <p>
+     * 
      * The effect of the reflectivity property is modulated by this property. The fresnelExponent changes the exponent
      * of the reflectance. The bigger the exponent, the more concentrated the reflection is around the edges.
      */
@@ -506,7 +526,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] lightingModelName
-     * <p>
+     * 
      * Determines the receiver's lighting model. See above for the list of lighting models. Defaults to
      * SCNLightingModelBlinn.
      */
@@ -516,7 +536,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] locksAmbientWithDiffuse
-     * <p>
+     * 
      * Makes the ambient property automatically match the diffuse property. Defaults to YES. Animatable.
      */
     @Generated
@@ -525,7 +545,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] name
-     * <p>
+     * 
      * Determines the name of the receiver.
      */
     @Generated
@@ -539,7 +559,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] readsFromDepthBuffer
-     * <p>
+     * 
      * Determines whether the receiver reads from the depth buffer when rendered. Defaults to YES.
      */
     @Generated
@@ -553,22 +573,23 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] shininess
-     * <p>
+     * 
      * Specifies the receiver's shininess value. Defaults to 1.0. Animatable.
      */
     @Generated
     @Selector("setShininess:")
     public native void setShininess(@NFloat double value);
 
+    @Deprecated
     @Generated
     @Selector("setSpeed:forAnimationKey:")
     public native void setSpeedForAnimationKey(@NFloat double speed, String key);
 
     /**
      * [@property] transparency
-     * <p>
+     * 
      * Specifies the receiver's transparency value. Defaults to 1.0. Animatable.
-     * <p>
+     * 
      * The color of the transparent property is multiplied by this property. The result is then used to produce the
      * final transparency according to the rule defined by the transparencyMode property.
      */
@@ -578,7 +599,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] transparencyMode
-     * <p>
+     * 
      * Determines the transparency mode of the receiver. See above for the transparency modes. Defaults to
      * SCNTransparencyModeDefault.
      */
@@ -588,7 +609,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] writeToDepthBuffer
-     * <p>
+     * 
      * Determines whether the receiver writes to the depth buffer when rendered. Defaults to YES.
      */
     @Generated
@@ -602,7 +623,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] shininess
-     * <p>
+     * 
      * Specifies the receiver's shininess value. Defaults to 1.0. Animatable.
      */
     @Generated
@@ -612,9 +633,9 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] specular
-     * <p>
+     * 
      * Specifies the receiver's specular property.
-     * <p>
+     * 
      * The specular property specifies the amount of light to reflect in a mirror-like manner. The specular intensity
      * increases when the point of view lines up with the direction of the reflected light.
      */
@@ -630,9 +651,9 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] transparency
-     * <p>
+     * 
      * Specifies the receiver's transparency value. Defaults to 1.0. Animatable.
-     * <p>
+     * 
      * The color of the transparent property is multiplied by this property. The result is then used to produce the
      * final transparency according to the rule defined by the transparencyMode property.
      */
@@ -643,7 +664,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] transparencyMode
-     * <p>
+     * 
      * Determines the transparency mode of the receiver. See above for the transparency modes. Defaults to
      * SCNTransparencyModeDefault.
      */
@@ -654,7 +675,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] transparent
-     * <p>
+     * 
      * The transparent property specifies the transparent areas of the material.
      */
     @Generated
@@ -663,7 +684,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] writeToDepthBuffer
-     * <p>
+     * 
      * Determines whether the receiver writes to the depth buffer when rendered. Defaults to YES.
      */
     @Generated
@@ -680,6 +701,8 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * Determines whether the receiver writes to the color buffer when rendered. Defaults to SCNColorMaskAll.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("colorBufferWriteMask")
@@ -688,10 +711,12 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] displacement
-     * <p>
+     * 
      * The displacement property specifies how vertex are translated in tangent space.
-     * <p>
+     * 
      * Pass a grayscale image for a simple 'elevation' or rgb image for a vector displacement.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("displacement")
@@ -699,8 +724,10 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] fillMode
-     * <p>
+     * 
      * Determines of to how to rasterize the receiver's primitives. Defaults to SCNFillModeFill.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("fillMode")
@@ -713,6 +740,8 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * Determines whether the receiver writes to the color buffer when rendered. Defaults to SCNColorMaskAll.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setColorBufferWriteMask:")
@@ -720,8 +749,10 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] fillMode
-     * <p>
+     * 
      * Determines of to how to rasterize the receiver's primitives. Defaults to SCNFillModeFill.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setFillMode:")
@@ -729,8 +760,10 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] clearCoat
-     * <p>
+     * 
      * The clearCoat property specifies color and intensity of the coat layer.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("clearCoat")
@@ -738,8 +771,10 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] clearCoatNormal
-     * <p>
+     * 
      * The clearCoatNormal property specifies color and intensity of the optional coat normal map.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("clearCoatNormal")
@@ -747,8 +782,10 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     /**
      * [@property] clearCoatRoughness
-     * <p>
+     * 
      * The clearCoat property specifies color and intensity of the coat roughness.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("clearCoatRoughness")

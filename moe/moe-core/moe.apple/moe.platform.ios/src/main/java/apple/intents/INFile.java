@@ -30,6 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * An object that describes a piece of data and its associated name and uniform type identifier.
  * This data can either be stored in a file on disk, or in memory.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Intents")
@@ -100,7 +102,7 @@ public class INFile extends NSObject implements NSSecureCoding {
     /**
      * URL to the file on disk, if any.
      * If the file isn't stored on disk, access the contents using the `data` property.
-     * <p>
+     * 
      * If the file was created elsewhere on the system, make sure to surround access to file contents
      * with `-[NSURL startAccessingSecurityScopedResource]` and `-[NSURL stopAccessingSecurityScopedResource]`.
      */
@@ -216,6 +218,8 @@ public class INFile extends NSObject implements NSSecureCoding {
     /**
      * Indicates whether the file should be automatically deleted from disk when the Shortcut is done running. `false`
      * by default.
+     * 
+     * API-Since: 15.1
      */
     @Generated
     @Selector("removedOnCompletion")
@@ -224,6 +228,8 @@ public class INFile extends NSObject implements NSSecureCoding {
     /**
      * Indicates whether the file should be automatically deleted from disk when the Shortcut is done running. `false`
      * by default.
+     * 
+     * API-Since: 15.1
      */
     @Generated
     @Selector("setRemovedOnCompletion:")

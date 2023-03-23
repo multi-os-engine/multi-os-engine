@@ -18,8 +18,6 @@ package apple.spritekit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGImageRef;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSData;
@@ -48,9 +46,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * SKMutableTextures are not currently supported in the simulator
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("SpriteKit")
@@ -225,7 +227,7 @@ public class SKMutableTexture extends SKTexture {
 
     /**
      * Create a mutable texture with a specfic size.
-     *
+     * 
      * @param size the dimension to use when creating the given texture.
      */
     @Generated
@@ -234,7 +236,7 @@ public class SKMutableTexture extends SKTexture {
 
     /**
      * Create a mutable texture with a specfic size and type.
-     *
+     * 
      * @param size   the dimension to use when creating the given texture.
      * @param format the CoreVideo format type. supported types include 'RGBA', 'RGhA', and 'RGfA' for byte, half-float,
      *               and float components.

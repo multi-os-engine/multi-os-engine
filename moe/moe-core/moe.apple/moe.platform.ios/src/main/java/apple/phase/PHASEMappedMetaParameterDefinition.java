@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEMappedMetaParameterDefinition
- * <p>
+ * 
  * An object to define a Mapped Metaparameter when building an sound event.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -87,7 +89,7 @@ public class PHASEMappedMetaParameterDefinition extends PHASENumberMetaParameter
 
     /**
      * [@property] envelope
-     * <p>
+     * 
      * An Envelope to define segments of curves
      */
     @Generated
@@ -105,12 +107,15 @@ public class PHASEMappedMetaParameterDefinition extends PHASENumberMetaParameter
 
     /**
      * initWithInputMetaParameterDefinition
-     * <p>
+     * 
      * Create a new mapped range metaparameter definition
-     *
-     * @param inputMetaParameterDefinition The metaparameter that will provide an input for this mapped metaparameter
-     * @param envelope                     The envelope to use.
-     * @return The new PHASEMappedMetaParameterDefinition object
+     * 
+     * @param inputMetaParameterDefinition
+     *                                     The metaparameter that will provide an input for this mapped metaparameter
+     * @param envelope
+     *                                     The envelope to use.
+     * @return
+     *         The new PHASEMappedMetaParameterDefinition object
      */
     @Generated
     @Selector("initWithInputMetaParameterDefinition:envelope:")
@@ -119,13 +124,17 @@ public class PHASEMappedMetaParameterDefinition extends PHASENumberMetaParameter
 
     /**
      * initWithInputMetaParameterDefinition:identifier
-     * <p>
+     * 
      * Create a new mapped range metaparameter definition
-     *
-     * @param inputMetaParameterDefinition The metaparameter that will provide an input for this mapped metaparameter
-     * @param envelope                     The envelope to use.
-     * @param identifier                   An optional custom identifier to give to this object
-     * @return The new PHASEMappedMetaParameterDefinition object
+     * 
+     * @param inputMetaParameterDefinition
+     *                                     The metaparameter that will provide an input for this mapped metaparameter
+     * @param envelope
+     *                                     The envelope to use.
+     * @param identifier
+     *                                     An optional custom identifier to give to this object
+     * @return
+     *         The new PHASEMappedMetaParameterDefinition object
      */
     @Generated
     @Selector("initWithInputMetaParameterDefinition:envelope:identifier:")
@@ -152,7 +161,7 @@ public class PHASEMappedMetaParameterDefinition extends PHASENumberMetaParameter
 
     /**
      * [@property] inputMetaParameterDefinition
-     * <p>
+     * 
      * The readonly PHASENumberMetaParameterDefinition that this metaparameter definition was initialized with
      */
     @Generated

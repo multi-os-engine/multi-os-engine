@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * UINotificationFeedbackGenerator is used to give user feedback when an notification is displayed
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("UIKit")

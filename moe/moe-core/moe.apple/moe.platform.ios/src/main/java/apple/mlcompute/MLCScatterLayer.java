@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCScatterLayer
- * <p>
+ * 
  * A scatter layer
+ * 
+ * API-Since: 14.5
  */
 @Generated
 @Library("MLCompute")
@@ -87,7 +89,7 @@ public class MLCScatterLayer extends MLCLayer {
 
     /**
      * [@property] dimension
-     * <p>
+     * 
      * The dimension along which to index
      */
     @Generated
@@ -127,7 +129,7 @@ public class MLCScatterLayer extends MLCLayer {
 
     /**
      * Create a scatter layer
-     *
+     * 
      * @param dimension     The dimension along which to index
      * @param reductionType The reduction type to use
      * @return A new scatter layer
@@ -143,7 +145,7 @@ public class MLCScatterLayer extends MLCLayer {
 
     /**
      * [@property] reductionType
-     * <p>
+     * 
      * The reduction type applied for all values in source tensor that are scattered to a specific location in the
      * result tensor.
      * Must be: MLCReductionTypeNone or MLCReductionTypeSum.

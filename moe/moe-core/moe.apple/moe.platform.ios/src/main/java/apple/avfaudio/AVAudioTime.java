@@ -26,24 +26,26 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAudioTime
- * <p>
+ * 
  * Represent a moment in time.
- * <p>
+ * 
  * AVAudioTime is used in AVAudioEngine to represent time. Instances are immutable.
- * <p>
+ * 
  * A single moment in time may be represented in two different ways:
  * 1. mach_absolute_time(), the system's basic clock. Commonly referred to as "host time."
  * 2. audio samples at a particular sample rate
- * <p>
+ * 
  * A single AVAudioTime instance may contain either or both representations; it might
  * represent only a sample time, only a host time, or both.
- * <p>
+ * 
  * Rationale for using host time:
  * [a] internally we are using AudioTimeStamp, which uses host time, and it seems silly to divide
  * [b] it is consistent with a standard system timing service
  * [c] we do provide conveniences to convert between host ticks and seconds (host time divided by
  * frequency) so client code wanting to do what should be straightforward time computations can at
  * least not be cluttered by ugly multiplications and divisions by the host clock frequency.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -75,9 +77,9 @@ public class AVAudioTime extends NSObject {
 
     /**
      * [@property] audioTimeStamp
-     * <p>
+     * 
      * The time expressed as an AudioTimeStamp structure.
-     * <p>
+     * 
      * This may be useful for compatibility with lower-level CoreAudio and AudioToolbox API's.
      */
     @Generated
@@ -117,17 +119,17 @@ public class AVAudioTime extends NSObject {
 
     /**
      * extrapolateTimeFromAnchor:
-     * <p>
+     * 
      * Converts between host and sample time.
-     * <p>
+     * 
      * If anchorTime is an AVAudioTime where both host time and sample time are valid,
      * and self is another timestamp where only one of the two is valid, this method
      * returns a new AVAudioTime copied from self and where any additional valid fields provided by
      * the anchor are also valid.
-     * <p>
+     * 
      * Note that the anchorTime must have both host and sample time valid, and self must have
      * sample rate and at least one of host or sample time valid. Otherwise this method returns nil.
-     *
+     * 
      * <pre>
      * // time0 has a valid audio sample representation, but no host time representation.
      * AVAudioTime *time0 = [AVAudioTime timeWithSampleTime: 0.0 atRate: 44100.0];
@@ -136,9 +138,11 @@ public class AVAudioTime extends NSObject {
      * // fill in valid host time representation
      * AVAudioTime *fullTime0 = [time0 extrapolateTimeFromAnchor: anchor];
      * </pre>
-     *
-     * @param anchorTime An AVAudioTime with a more complete AudioTimeStamp than that of the receiver (self).
-     * @return the extrapolated time
+     * 
+     * @param anchorTime
+     *                   An AVAudioTime with a more complete AudioTimeStamp than that of the receiver (self).
+     * @return
+     *         the extrapolated time
      */
     @Generated
     @Selector("extrapolateTimeFromAnchor:")
@@ -151,7 +155,7 @@ public class AVAudioTime extends NSObject {
 
     /**
      * [@property] hostTime
-     * <p>
+     * 
      * The host time.
      */
     @Generated
@@ -160,7 +164,7 @@ public class AVAudioTime extends NSObject {
 
     /**
      * hostTimeForSeconds:
-     * <p>
+     * 
      * Convert seconds to host time.
      */
     @Generated
@@ -214,7 +218,7 @@ public class AVAudioTime extends NSObject {
 
     /**
      * [@property] hostTimeValid
-     * <p>
+     * 
      * Whether the hostTime property is valid.
      */
     @Generated
@@ -223,7 +227,7 @@ public class AVAudioTime extends NSObject {
 
     /**
      * [@property] sampleTimeValid
-     * <p>
+     * 
      * Whether the sampleTime and sampleRate properties are valid.
      */
     @Generated
@@ -253,7 +257,7 @@ public class AVAudioTime extends NSObject {
 
     /**
      * [@property] sampleRate
-     * <p>
+     * 
      * The sample rate at which sampleTime is being expressed.
      */
     @Generated
@@ -262,7 +266,7 @@ public class AVAudioTime extends NSObject {
 
     /**
      * [@property] sampleTime
-     * <p>
+     * 
      * The time as a number of audio samples, as tracked by the current audio device.
      */
     @Generated
@@ -271,7 +275,7 @@ public class AVAudioTime extends NSObject {
 
     /**
      * secondsForHostTime:
-     * <p>
+     * 
      * Convert host time to seconds.
      */
     @Generated

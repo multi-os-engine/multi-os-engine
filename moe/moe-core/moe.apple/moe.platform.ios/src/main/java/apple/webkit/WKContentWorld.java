@@ -25,7 +25,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A WKContentWorld object allows you to separate your application's interaction with content displayed in a WKWebView
  * into different roles that cannot interfere with one another.
- * <p>
+ * 
  * WKContentWorld objects should be treated as namespaces. This is useful for keeping your application's web content
  * environment separate from the environment of the web page content itself,
  * as well as managing multiple different environments within your own application.
@@ -35,13 +35,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * you avoid possible conflicts by using a client WKContentWorld.
  * - If you are writing a general purpose web browser that supports JavaScript extensions, you would use a different
  * client WKContentWorld for each extension.
- * <p>
+ * 
  * Since a WKContentWorld object is a namespace it does not contain any data itself.
  * For example:
  * - If you store a variable in JavaScript in the scope of a particular WKContentWorld while viewing a particular web
  * page document, after navigating to a new document that variable will be gone.
  * - If you store a variable in JavaScript in the scope of a particular WKContentWorld in one WKWebView, that variable
  * will not exist in the same world in another WKWebView.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("WebKit")
@@ -99,7 +101,7 @@ public class WKContentWorld extends NSObject {
 
     /**
      * Retrieve the default world for API client use.
-     * <p>
+     * 
      * When using a content world different from the page content world you can still manipulate the DOM and built-in
      * DOM APIs but without conflicting with other aspects of the page content (e.g. JavaScript from the web page
      * content itself)
@@ -145,7 +147,7 @@ public class WKContentWorld extends NSObject {
 
     /**
      * The name of the WKContentWorld
-     * <p>
+     * 
      * The pageWorld and defaultClientWorld instances will have a nil name.
      * All other instances will have the non-nil name they were accessed by.
      */
@@ -160,7 +162,7 @@ public class WKContentWorld extends NSObject {
 
     /**
      * Retrieve the main world that page content itself uses.
-     * <p>
+     * 
      * When interacting with page content in a WKWebView using the page content world you can disrupt the operation of
      * page content (e.g. by conflicting with variable names in JavaScript set by the web page content itself).
      */
@@ -191,7 +193,7 @@ public class WKContentWorld extends NSObject {
 
     /**
      * Retrieves a named content world for API client use.
-     * <p>
+     * 
      * When using a content world different from the page content world you can still manipulate the DOM and built-in
      * DOM APIs but without conflicting with other aspects of the page content (e.g. JavaScript from the web page
      * content itself)
@@ -201,7 +203,7 @@ public class WKContentWorld extends NSObject {
      * pageWorld.
      * The name can be used to keep distinct worlds identifiable anywhere a world might be surfaced in a user interface.
      * For example, the different worlds used in your application will be surfaced by name in the WebKit Web Inspector.
-     *
+     * 
      * @param name The name of the WKContentWorld to retrieve.
      */
     @Generated

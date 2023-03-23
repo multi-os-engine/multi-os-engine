@@ -17,8 +17,6 @@ limitations under the License.
 package apple.spritekit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
@@ -54,11 +52,15 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * A SpriteKit node used to render a 2D array of textured sprites. Uses SKTileSet to determine what textures it can use
  * to render. Separate tile map nodes can be layered on top of one another to achieve various effects, such as parallax
  * scrolling.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("SpriteKit")
@@ -194,7 +196,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
     /**
      * Create a tile map node with the specified tile set and dimensions. The tiles of the map will be empty, equivalent
      * to the nil tile definition/group.
-     *
+     * 
      * @param tileSet  the tile set that is used to render the tiles
      * @param columns  the number of columns in the map that can hold tiles
      * @param rows     the number of rows in the map that can hold tiles
@@ -207,7 +209,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
 
     /**
      * Create a tile map node with the specified tile set and dimensions, and fill it with the specified tile group.
-     *
+     * 
      * @param tileSet   the tile set that is used to render the tiles
      * @param columns   the number of columns in the map that can hold tiles
      * @param rows      the number of rows in the map that can hold tiles
@@ -227,7 +229,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      * the number of columns in the tile map. If the array has fewer elements than the number of tiles in the map, the
      * remaining tiles are initialized with the nil tile group. If the array has more elements than the number of tiles
      * in the map, the extra tile groups are ignored.
-     *
+     * 
      * @param tileSet         the tile set that is used to render the tiles
      * @param columns         the number of columns in the map that can hold tiles
      * @param rows            the number of rows in the map that can hold tiles
@@ -260,7 +262,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      * threshold values 0.0 and 0.5 in the noise map. And finally, the fourth tile map would contain the fourth tile
      * group
      * (i.e., tileSet.tileGroups[3]) within tiles that fall between the threshold values 0.5 and 1.0.
-     *
+     * 
      * @param tileSet    the tile set that is used to render the tiles
      * @param columns    the number of columns in each map that can hold tiles
      * @param rows       the number of rows in each map that can hold tiles
@@ -291,6 +293,8 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
     /**
      * Optional dictionary of SKAttributeValues
      * Attributes can be used with custom SKShaders.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("attributeValues")
@@ -298,7 +302,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
 
     /**
      * Sets the blend mode to use when composing the tile map with the final framebuffer.
-     *
+     * 
      * @see SKNode.SKBlendMode
      */
     @Generated
@@ -308,7 +312,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
 
     /**
      * Returns the position of the center of the tile at the specified column and row.
-     *
+     * 
      * @param column the column index of the tile
      * @param row    the row index of the tile
      */
@@ -350,7 +354,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
 
     /**
      * Fill the entire tile map with the provided tile group.
-     *
+     * 
      * @param tileGroup the tile group that will be used to fill the map
      */
     @Generated
@@ -368,7 +372,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
     /**
      * Initialize a tile map node with the specified tile set and dimensions. The tiles of the map will be empty,
      * equivalent to the nil tile definition/group.
-     *
+     * 
      * @param tileSet  the tile set that is used to render the tiles
      * @param columns  the number of columns in the map that can hold tiles
      * @param rows     the number of rows in the map that can hold tiles
@@ -381,7 +385,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
 
     /**
      * Initialize a tile map node with the specified tile set and dimensions, and fill it with the specified tile group.
-     *
+     * 
      * @param tileSet   the tile set that is used to render the tiles
      * @param columns   the number of columns in the map that can hold tiles
      * @param rows      the number of rows in the map that can hold tiles
@@ -401,7 +405,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      * the number of columns in the tile map. If the array has fewer elements than the number of tiles in the map, the
      * remaining tiles are initialized with the nil tile group. If the array has more elements than the number of tiles
      * in the map, the extra tile groups are ignored.
-     *
+     * 
      * @param tileSet         the tile set that is used to render the tiles
      * @param columns         the number of columns in the map that can hold tiles
      * @param rows            the number of rows in the map that can hold tiles
@@ -416,10 +420,10 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
 
     /**
      * Bitmask to indicate being lit by a set of lights using overlapping lighting categories.
-     * <p>
+     * 
      * A light whose category is set to a value that masks to non-zero using this mask will
      * apply light to this sprite.
-     * <p>
+     * 
      * When used together with a normal texture, complex lighting effects can be used.
      */
     @Generated
@@ -462,6 +466,8 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
     /**
      * Optional dictionary of SKAttributeValues
      * Attributes can be used with custom SKShaders.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAttributeValues:")
@@ -469,7 +475,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
 
     /**
      * Sets the blend mode to use when composing the tile map with the final framebuffer.
-     *
+     * 
      * @see SKNode.SKBlendMode
      */
     @Generated
@@ -498,10 +504,10 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
 
     /**
      * Bitmask to indicate being lit by a set of lights using overlapping lighting categories.
-     * <p>
+     * 
      * A light whose category is set to a value that masks to non-zero using this mask will
      * apply light to this sprite.
-     * <p>
+     * 
      * When used together with a normal texture, complex lighting effects can be used.
      */
     @Generated
@@ -533,7 +539,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      * Set the tile group and tile defintion at the specified tile index. When automapping is enabled, it will attempt
      * to resolve the surrounding tiles to allow the specified tile definition to be placed. When automapping is
      * disabled, it will simply place the tile definition and not modify any of the neighboring tiles.
-     *
+     * 
      * @param tileGroup      the tile group we want to place in the map
      * @param tileDefinition the tile definition we want to place in the map
      * @param column         the column index of the tile
@@ -549,7 +555,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
      * will automatically be selected and placed, possibly modifying neighboring tiles. When automapping is disabled, it
      * will simply place the default center tile definition for the group, and will not modify any of the neihboring
      * tiles.
-     *
+     * 
      * @param tileGroup the tile group we want to place in the map
      * @param column    the column index of the tile
      * @param row       the row index of the tile
@@ -572,6 +578,9 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
     @Selector("setTileSize:")
     public native void setTileSize(@ByValue CGSize value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setValue:forAttributeNamed:")
     public native void setValueForAttributeNamed(SKAttributeValue value, String key);
@@ -586,7 +595,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
     /**
      * Returns the column index of the tile that lies under the specified position. Returns NSUIntegerMax if the
      * position does not fall within the tile map.
-     *
+     * 
      * @param position the position we want to check against the tile map
      */
     @Generated
@@ -596,7 +605,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
 
     /**
      * Look up the tile definition at the specified tile index.
-     *
+     * 
      * @param column the column index of the tile
      * @param row    the row index of the tile
      */
@@ -606,7 +615,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
 
     /**
      * Look up the tile group at the specified tile index.
-     *
+     * 
      * @param column the column index of the tile
      * @param row    the row index of the tile
      */
@@ -617,7 +626,7 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
     /**
      * Returns the row index of the tile that lies under the specified position. Returns NSUIntegerMax if the position
      * does not fall within the tile map.
-     *
+     * 
      * @param position the position we want to check against the tile map
      */
     @Generated
@@ -640,6 +649,9 @@ public class SKTileMapNode extends SKNode implements NSCopying, NSSecureCoding {
     @ByValue
     public native CGSize tileSize();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("valueForAttributeNamed:")
     public native SKAttributeValue valueForAttributeNamed(String key);

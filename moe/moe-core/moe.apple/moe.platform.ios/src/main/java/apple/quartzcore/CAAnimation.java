@@ -54,6 +54,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The base animation class. *
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("QuartzCore")
@@ -183,7 +185,7 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     /**
      * [@property] animationEvents
-     * <p>
+     * 
      * Specifies the animation events attached to the receiver.
      */
     @Generated
@@ -224,9 +226,9 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     /**
      * [@property] fadeInDuration
-     * <p>
+     * 
      * Determines the receiver's fade-in duration.
-     * <p>
+     * 
      * When the fadeInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100%
      * during the specified duration.
      */
@@ -237,9 +239,9 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     /**
      * [@property] fadeOutDuration
-     * <p>
+     * 
      * Determines the receiver's fade-out duration.
-     * <p>
+     * 
      * When the fadeOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0%
      * at the end of the animation duration.
      */
@@ -291,7 +293,7 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     /**
      * [@property] animationEvents
-     * <p>
+     * 
      * Specifies the animation events attached to the receiver.
      */
     @Generated
@@ -321,9 +323,9 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     /**
      * [@property] fadeInDuration
-     * <p>
+     * 
      * Determines the receiver's fade-in duration.
-     * <p>
+     * 
      * When the fadeInDuration is greater than zero, the effect of the animation progressively increase from 0% to 100%
      * during the specified duration.
      */
@@ -333,9 +335,9 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     /**
      * [@property] fadeOutDuration
-     * <p>
+     * 
      * Determines the receiver's fade-out duration.
-     * <p>
+     * 
      * When the fadeOutDuration is greater than zero, the effect of the animation progressively decrease from 100% to 0%
      * at the end of the animation duration.
      */
@@ -373,9 +375,9 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     /**
      * [@property] usesSceneTimeBase
-     * <p>
+     * 
      * Determines whether the receiver is evaluated using the scene time or the system time. Defaults to NO.
-     * <p>
+     * 
      * A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
      */
     @Generated
@@ -404,9 +406,9 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
 
     /**
      * [@property] usesSceneTimeBase
-     * <p>
+     * 
      * Determines whether the receiver is evaluated using the scene time or the system time. Defaults to NO.
-     * <p>
+     * 
      * A scene-time based animation is evaluated using the "sceneTime" value of the renderer that renders the scene.
      */
     @Generated
@@ -416,6 +418,8 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
     /**
      * Bridge with SCNAnimation
      * Initializes a CoreAnimation animation from a SCNAnimation
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("animationWithSCNAnimation:")
@@ -435,6 +439,8 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
      * Defines the range of desired frame rate in frames-per-second for this
      * animation. The actual frame rate is dynamically adjusted to better align
      * with other animation sources.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("preferredFrameRateRange")
@@ -445,6 +451,8 @@ public class CAAnimation extends NSObject implements NSSecureCoding, NSCopying, 
      * Defines the range of desired frame rate in frames-per-second for this
      * animation. The actual frame rate is dynamically adjusted to better align
      * with other animation sources.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPreferredFrameRateRange:")

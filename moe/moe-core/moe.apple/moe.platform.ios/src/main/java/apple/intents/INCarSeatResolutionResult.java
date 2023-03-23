@@ -38,6 +38,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INCarSeatResolutionResult is deprecated. There is no replacement.
+ */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -88,6 +94,11 @@ public class INCarSeatResolutionResult extends INIntentResolutionResult {
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @Selector("confirmationRequiredWithValueToConfirm:")
     public static native INCarSeatResolutionResult confirmationRequiredWithValueToConfirm(@NInt long valueToConfirm);
@@ -151,6 +162,11 @@ public class INCarSeatResolutionResult extends INIntentResolutionResult {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @Selector("successWithResolvedValue:")
     public static native INCarSeatResolutionResult successWithResolvedValue(@NInt long resolvedValue);

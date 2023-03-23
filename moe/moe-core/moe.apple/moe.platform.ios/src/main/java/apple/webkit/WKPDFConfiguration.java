@@ -1,7 +1,6 @@
 package apple.webkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -25,7 +24,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)
@@ -127,7 +130,7 @@ public class WKPDFConfiguration extends NSObject implements NSCopying {
 
     /**
      * The rect to capture in web page coordinates
-     * <p>
+     * 
      * If the rect is set to the null rect, the bounds of the currently displayed web page will be used.
      * The initial value is the null rect.
      */
@@ -146,7 +149,7 @@ public class WKPDFConfiguration extends NSObject implements NSCopying {
 
     /**
      * The rect to capture in web page coordinates
-     * <p>
+     * 
      * If the rect is set to the null rect, the bounds of the currently displayed web page will be used.
      * The initial value is the null rect.
      */

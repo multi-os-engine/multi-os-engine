@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * This class represents an event that is evaluated based on the value of a characteristic
  * set to a particular value.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("HomeKit")

@@ -39,7 +39,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.protocol.UINavigationItemRenameDelegate;
+import apple.uikit.protocol.UIPopoverPresentationControllerSourceItem;
+import org.moe.natj.general.ann.MappedReturn;
+import org.moe.natj.objc.ann.ObjCBlock;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -192,14 +199,16 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * Use these properties to set multiple items in a navigation bar.
      * The older single properties (leftBarButtonItem and rightBarButtonItem) now refer to
      * the first item in the respective array of items.
-     * <p>
+     * 
      * NOTE: You'll achieve the best results if you use either the singular properties or
      * the plural properties consistently and don't try to mix them.
-     * <p>
+     * 
      * leftBarButtonItems are placed in the navigation bar left to right with the first
      * item in the list at the left outside edge and left aligned.
      * rightBarButtonItems are placed right to left with the first item in the list at
      * the right outside edge and right aligned.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("leftBarButtonItems")
@@ -210,6 +219,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * the back button is not drawn and the left item or items replace it. If you
      * would like the left items to appear in addition to the back button (as opposed to instead of it)
      * set leftItemsSupplementBackButton to YES.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("leftItemsSupplementBackButton")
@@ -226,6 +237,9 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @Selector("rightBarButtonItem")
     public native UIBarButtonItem rightBarButtonItem();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("rightBarButtonItems")
     public native NSArray<? extends UIBarButtonItem> rightBarButtonItems();
@@ -264,19 +278,24 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * Use these properties to set multiple items in a navigation bar.
      * The older single properties (leftBarButtonItem and rightBarButtonItem) now refer to
      * the first item in the respective array of items.
-     * <p>
+     * 
      * NOTE: You'll achieve the best results if you use either the singular properties or
      * the plural properties consistently and don't try to mix them.
-     * <p>
+     * 
      * leftBarButtonItems are placed in the navigation bar left to right with the first
      * item in the list at the left outside edge and left aligned.
      * rightBarButtonItems are placed right to left with the first item in the list at
      * the right outside edge and right aligned.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setLeftBarButtonItems:")
     public native void setLeftBarButtonItems(NSArray<? extends UIBarButtonItem> value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setLeftBarButtonItems:animated:")
     public native void setLeftBarButtonItemsAnimated(NSArray<? extends UIBarButtonItem> items, boolean animated);
@@ -286,6 +305,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * the back button is not drawn and the left item or items replace it. If you
      * would like the left items to appear in addition to the back button (as opposed to instead of it)
      * set leftItemsSupplementBackButton to YES.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setLeftItemsSupplementBackButton:")
@@ -306,10 +327,16 @@ public class UINavigationItem extends NSObject implements NSCoding {
     @Selector("setRightBarButtonItem:animated:")
     public native void setRightBarButtonItemAnimated(UIBarButtonItem item, boolean animated);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setRightBarButtonItems:")
     public native void setRightBarButtonItems(NSArray<? extends UIBarButtonItem> value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setRightBarButtonItems:animated:")
     public native void setRightBarButtonItemsAnimated(NSArray<? extends UIBarButtonItem> items, boolean animated);
@@ -346,6 +373,9 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * If this property is true (the default), the searchController’s search bar will hide as the user scrolls in the
      * top view controller’s scroll view. If false, the search bar will remain visible and pinned underneath the
      * navigation bar.
+     * Not appicable and ignored for UINavigationItemSearchBarPlacementInline
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("hidesSearchBarWhenScrolling")
@@ -354,6 +384,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * When UINavigationBar.prefersLargeTitles=YES, this property controls when the larger out-of-line title is
      * displayed. If prefersLargeTitles=NO, this property has no effect. The default value is Automatic.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("largeTitleDisplayMode")
@@ -363,6 +395,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * A view controller that will be shown inside of a navigation controller can assign a UISearchController to this
      * property to display the search controller’s search bar in its containing navigation controller’s navigation bar.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("searchController")
@@ -372,6 +406,9 @@ public class UINavigationItem extends NSObject implements NSCoding {
      * If this property is true (the default), the searchController’s search bar will hide as the user scrolls in the
      * top view controller’s scroll view. If false, the search bar will remain visible and pinned underneath the
      * navigation bar.
+     * Not appicable and ignored for UINavigationItemSearchBarPlacementInline
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setHidesSearchBarWhenScrolling:")
@@ -380,6 +417,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * When UINavigationBar.prefersLargeTitles=YES, this property controls when the larger out-of-line title is
      * displayed. If prefersLargeTitles=NO, this property has no effect. The default value is Automatic.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setLargeTitleDisplayMode:")
@@ -388,6 +427,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * A view controller that will be shown inside of a navigation controller can assign a UISearchController to this
      * property to display the search controller’s search bar in its containing navigation controller’s navigation bar.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSearchController:")
@@ -396,6 +437,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * When set and this item is topmost, overrides the hosting navigation bar's compactAppearance. See
      * UINavigationBar.compactAppearance for further details.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("compactAppearance")
@@ -404,6 +447,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * When set and this item is topmost, overrides the hosting navigation bar's scrollEdgeAppearance. See
      * UINavigationBar.scrollEdgeAppearance for further details.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("scrollEdgeAppearance")
@@ -412,6 +457,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * When set and this item is topmost, overrides the hosting navigation bar's compactAppearance. See
      * UINavigationBar.compactAppearance for further details.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setCompactAppearance:")
@@ -420,6 +467,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * When set and this item is topmost, overrides the hosting navigation bar's scrollEdgeAppearance. See
      * UINavigationBar.scrollEdgeAppearance for further details.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setScrollEdgeAppearance:")
@@ -428,6 +477,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * When set and this item is topmost, overrides the hosting navigation bar's standardAppearance. See
      * UINavigationBar.standardAppearance for further details.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setStandardAppearance:")
@@ -436,6 +487,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * When set and this item is topmost, overrides the hosting navigation bar's standardAppearance. See
      * UINavigationBar.standardAppearance for further details.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("standardAppearance")
@@ -443,6 +496,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
 
     /**
      * Controls how the back button sources its title.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("backButtonDisplayMode")
@@ -452,6 +507,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * Title to use when this item is the navigation bar's backItem. Default is nil. backBarButtonItem takes precedence
      * if both are specified.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("backButtonTitle")
@@ -459,6 +516,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
 
     /**
      * Controls how the back button sources its title.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setBackButtonDisplayMode:")
@@ -467,6 +526,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * Title to use when this item is the navigation bar's backItem. Default is nil. backBarButtonItem takes precedence
      * if both are specified.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setBackButtonTitle:")
@@ -475,6 +536,8 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * When set and this item is topmost, overrides the hosting navigation bar's compactScrollEdgeAppearance. See
      * UINavigationBar.h for further details.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("compactScrollEdgeAppearance")
@@ -483,8 +546,306 @@ public class UINavigationItem extends NSObject implements NSCoding {
     /**
      * When set and this item is topmost, overrides the hosting navigation bar's compactScrollEdgeAppearance. See
      * UINavigationBar.h for further details.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setCompactScrollEdgeAppearance:")
     public native void setCompactScrollEdgeAppearance(UINavigationBarAppearance value);
+
+    /**
+     * Additional items to add to the overflow menu. Setting this property to a non-nil value will force the overflow
+     * button to appear, regardless of if you provide any content in the element's callback. Items returned are
+     * displayed directly in the presented menu.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("additionalOverflowItems")
+    public native UIDeferredMenuElement additionalOverflowItems();
+
+    /**
+     * Replaces the back action for the navigation bar. if a back button is naturally present, this replaces only its
+     * action, otherwise a back button will be synthesized with the image or title from the action.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("backAction")
+    public native UIAction backAction();
+
+    /**
+     * Customizable UIBarButtonItemGroups that will be placed in the center region when the navigation bar is the
+     * browser or editor modes. In navigation mode, these items will be placed in the overflow.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("centerItemGroups")
+    public native NSArray<? extends UIBarButtonItemGroup> centerItemGroups();
+
+    /**
+     * Setting a non-nil customizationIdentifier enables customization and UIKit will automatically save & restore
+     * customizations based on this identifier. The identifier must be unique within the scope of the application.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("customizationIdentifier")
+    public native String customizationIdentifier();
+
+    /**
+     * When non-nil, UIKit will use the metadata provided to generate additional controls displayed from the title.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("documentProperties")
+    public native UIDocumentProperties documentProperties();
+
+    /**
+     * UIBarButtonItemGroups to be displayed in the leading section of the navigation bar. Items set via this method
+     * will replace items set via .leftBarButtonItem or .leftBarButtonItems.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("leadingItemGroups")
+    public native NSArray<? extends UIBarButtonItemGroup> leadingItemGroups();
+
+    /**
+     * If the overflow button for this item is currently present, then this will return a non-nil item that can be used
+     * as a presentation source (e.g. for popovers). Otherwise it will return nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("overflowPresentationSource")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UIPopoverPresentationControllerSourceItem overflowPresentationSource();
+
+    /**
+     * Set a group of items to be placed on the trailing edge of the bar, past the overflow & search items (if present).
+     * If you wish to have more than 1 item, it is HIGHLY recommended to assign a representative item to the group to
+     * avoid overflowing the bar as this group cannot move to the overflow.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("pinnedTrailingGroup")
+    public native UIBarButtonItemGroup pinnedTrailingGroup();
+
+    /**
+     * The preferred search bar placement, when a search controller is assigned to this item.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("preferredSearchBarPlacement")
+    @NInt
+    public native long preferredSearchBarPlacement();
+
+    /**
+     * When non-nil, enables the UINavigationBar to respond to the rename: action by providing an inline UI.
+     * Setting this property to nil while a rename operation is in progress will cancel the operation immediately.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("renameDelegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native UINavigationItemRenameDelegate renameDelegate();
+
+    /**
+     * The realized placement. Only valid if a search controller has been assigned to this item.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("searchBarPlacement")
+    @NInt
+    public native long searchBarPlacement();
+
+    /**
+     * Additional items to add to the overflow menu. Setting this property to a non-nil value will force the overflow
+     * button to appear, regardless of if you provide any content in the element's callback. Items returned are
+     * displayed directly in the presented menu.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setAdditionalOverflowItems:")
+    public native void setAdditionalOverflowItems(UIDeferredMenuElement value);
+
+    /**
+     * Replaces the back action for the navigation bar. if a back button is naturally present, this replaces only its
+     * action, otherwise a back button will be synthesized with the image or title from the action.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setBackAction:")
+    public native void setBackAction(UIAction value);
+
+    /**
+     * Customizable UIBarButtonItemGroups that will be placed in the center region when the navigation bar is the
+     * browser or editor modes. In navigation mode, these items will be placed in the overflow.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setCenterItemGroups:")
+    public native void setCenterItemGroups(NSArray<? extends UIBarButtonItemGroup> value);
+
+    /**
+     * Setting a non-nil customizationIdentifier enables customization and UIKit will automatically save & restore
+     * customizations based on this identifier. The identifier must be unique within the scope of the application.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setCustomizationIdentifier:")
+    public native void setCustomizationIdentifier(String value);
+
+    /**
+     * When non-nil, UIKit will use the metadata provided to generate additional controls displayed from the title.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setDocumentProperties:")
+    public native void setDocumentProperties(UIDocumentProperties value);
+
+    /**
+     * UIBarButtonItemGroups to be displayed in the leading section of the navigation bar. Items set via this method
+     * will replace items set via .leftBarButtonItem or .leftBarButtonItems.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setLeadingItemGroups:")
+    public native void setLeadingItemGroups(NSArray<? extends UIBarButtonItemGroup> value);
+
+    /**
+     * Set a group of items to be placed on the trailing edge of the bar, past the overflow & search items (if present).
+     * If you wish to have more than 1 item, it is HIGHLY recommended to assign a representative item to the group to
+     * avoid overflowing the bar as this group cannot move to the overflow.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setPinnedTrailingGroup:")
+    public native void setPinnedTrailingGroup(UIBarButtonItemGroup value);
+
+    /**
+     * The preferred search bar placement, when a search controller is assigned to this item.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setPreferredSearchBarPlacement:")
+    public native void setPreferredSearchBarPlacement(@NInt long value);
+
+    /**
+     * When non-nil, enables the UINavigationBar to respond to the rename: action by providing an inline UI.
+     * Setting this property to nil while a rename operation is in progress will cancel the operation immediately.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setRenameDelegate:")
+    public native void setRenameDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UINavigationItemRenameDelegate value);
+
+    /**
+     * When non-nil, enables the UINavigationBar to respond to the rename: action by providing an inline UI.
+     * Setting this property to nil while a rename operation is in progress will cancel the operation immediately.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    public void setRenameDelegate(@Mapped(ObjCObjectMapper.class) UINavigationItemRenameDelegate value) {
+        Object __old = renameDelegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setRenameDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
+
+    /**
+     * Controls how content defined by this item is laid out in the navigation bar.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setStyle:")
+    public native void setStyle(@NInt long value);
+
+    /**
+     * When non-nil, UIKit will generate suggestedActions and call this block to generate a menu that is displayed from
+     * the title.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setTitleMenuProvider:")
+    public native void setTitleMenuProvider(
+            @ObjCBlock(name = "call_setTitleMenuProvider") Block_setTitleMenuProvider value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setTitleMenuProvider {
+        @Generated
+        UIMenu call_setTitleMenuProvider(NSArray<? extends UIMenuElement> arg0);
+    }
+
+    /**
+     * UIBarButtonItemGroups to be displayed in the trailing section of the navigation bar. Items set via this method
+     * will replace items set via .rightBarButtonItem or .rightBarButtonItems.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setTrailingItemGroups:")
+    public native void setTrailingItemGroups(NSArray<? extends UIBarButtonItemGroup> value);
+
+    /**
+     * Controls how content defined by this item is laid out in the navigation bar.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("style")
+    @NInt
+    public native long style();
+
+    /**
+     * When non-nil, UIKit will generate suggestedActions and call this block to generate a menu that is displayed from
+     * the title.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("titleMenuProvider")
+    @ObjCBlock(name = "call_titleMenuProvider_ret")
+    public native Block_titleMenuProvider_ret titleMenuProvider();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_titleMenuProvider_ret {
+        @Generated
+        UIMenu call_titleMenuProvider_ret(NSArray<? extends UIMenuElement> arg0);
+    }
+
+    /**
+     * UIBarButtonItemGroups to be displayed in the trailing section of the navigation bar. Items set via this method
+     * will replace items set via .rightBarButtonItem or .rightBarButtonItems.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("trailingItemGroups")
+    public native NSArray<? extends UIBarButtonItemGroup> trailingItemGroups();
 }

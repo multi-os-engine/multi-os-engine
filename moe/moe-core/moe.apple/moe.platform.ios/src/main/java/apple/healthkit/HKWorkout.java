@@ -44,8 +44,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKWorkout
- * <p>
+ * 
  * An HKObject subclass representing a workout or activity
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -163,7 +165,7 @@ public class HKWorkout extends HKSample {
 
     /**
      * workoutWithActivityType:startDate:endDate:
-     *
+     * 
      * @param workoutActivityType The activity type of the workout
      * @param startDate           The point in time that the workout was started
      * @param endDate             The point in time that the workout was ended
@@ -175,10 +177,10 @@ public class HKWorkout extends HKSample {
 
     /**
      * workoutWithActivityType:startDate:endDate:duration:totalEnergyBurned:totalDistance:device:metadata:
-     * <p>
+     * 
      * If the optional total parameters are specified, matching samples that add up to the calculated total quantities
      * should be associated with this workout using addSamples:toWorkout:completion: in HKHealthStore.
-     *
+     * 
      * @param workoutActivityType The activity type of the workout
      * @param startDate           The point in time that the workout was started
      * @param endDate             The point in time that the workout was ended
@@ -188,6 +190,8 @@ public class HKWorkout extends HKSample {
      * @param totalDistance       The total distance that was traveled during the workout. (Optional)
      * @param device              The HKDevice associated with the workout. (Optional)
      * @param metadata            Metadata for the workout. (Optional)
+     * 
+     *                            API-Since: 9.0
      */
     @Generated
     @Selector("workoutWithActivityType:startDate:endDate:duration:totalEnergyBurned:totalDistance:device:metadata:")
@@ -197,10 +201,10 @@ public class HKWorkout extends HKSample {
 
     /**
      * workoutWithActivityType:startDate:endDate:duration:totalEnergyBurned:totalDistance:metadata:
-     * <p>
+     * 
      * If the optional total parameters are specified, matching samples that add up to the calculated total quantities
      * should be associated with this workout using addSamples:toWorkout:completion: in HKHealthStore.
-     *
+     * 
      * @param workoutActivityType The activity type of the workout
      * @param startDate           The point in time that the workout was started
      * @param endDate             The point in time that the workout was ended
@@ -218,10 +222,10 @@ public class HKWorkout extends HKSample {
 
     /**
      * workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:metadata
-     * <p>
+     * 
      * If the optional total parameters are specified, matching samples that add up to the calculated total quantities
      * should be associated with this workout using addSamples:toWorkout:completion: in HKHealthStore.
-     *
+     * 
      * @param workoutActivityType The activity type of the workout
      * @param startDate           The point in time that the workout was started
      * @param endDate             The point in time that the workout was ended
@@ -231,6 +235,8 @@ public class HKWorkout extends HKSample {
      * @param totalDistance       The total distance that was traveled during the workout. (Optional)
      * @param device              The HKDevice associated with the workout. (Optional)
      * @param metadata            Metadata for the workout. (Optional)
+     * 
+     *                            API-Since: 9.0
      */
     @Generated
     @Selector("workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:device:metadata:")
@@ -241,10 +247,10 @@ public class HKWorkout extends HKSample {
 
     /**
      * workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:metadata
-     * <p>
+     * 
      * If the optional total parameters are specified, matching samples that add up to the calculated total quantities
      * should be associated with this workout using addSamples:toWorkout:completion: in HKHealthStore.
-     *
+     * 
      * @param workoutActivityType The activity type of the workout
      * @param startDate           The point in time that the workout was started
      * @param endDate             The point in time that the workout was ended
@@ -263,10 +269,10 @@ public class HKWorkout extends HKSample {
 
     /**
      * workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:totalSwimmingStrokeCount:device:metadata:
-     * <p>
+     * 
      * If the optional total parameters are specified, matching samples that add up to the calculated total quantities
      * should be associated with this workout using addSamples:toWorkout:completion: in HKHealthStore.
-     *
+     * 
      * @param workoutActivityType      The activity type of the workout
      * @param startDate                The point in time that the workout was started
      * @param endDate                  The point in time that the workout was ended
@@ -278,6 +284,8 @@ public class HKWorkout extends HKSample {
      *                                 (Optional)
      * @param device                   The HKDevice associated with the workout. (Optional)
      * @param metadata                 Metadata for the workout. (Optional)
+     * 
+     *                                 API-Since: 10.0
      */
     @Generated
     @Selector("workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:totalSwimmingStrokeCount:device:metadata:")
@@ -288,9 +296,9 @@ public class HKWorkout extends HKSample {
 
     /**
      * [@property] duration
-     * <p>
+     * 
      * The length of time that a workout was recording
-     * <p>
+     * 
      * The duration is derived from the start and end dates of the workout and takes into account periods that the
      * workout was paused. Periods that the workout was paused are based off of the workoutEvents property.
      */
@@ -314,43 +322,60 @@ public class HKWorkout extends HKSample {
 
     /**
      * [@property] totalDistance
-     * <p>
+     * 
      * The total distance that was traveled during a workout
-     * <p>
+     * 
      * This metric should represent the total distance traveled during the course of the workout. It should be a
      * quantity with a unit representing length.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use statisticsForType: passing the HKQuantityType for the desired distance type
      */
+    @Deprecated
     @Generated
     @Selector("totalDistance")
     public native HKQuantity totalDistance();
 
     /**
      * [@property] totalEnergyBurned
-     * <p>
+     * 
      * The amount of energy that was burned during a workout
-     * <p>
+     * 
      * This metric should represent the total active energy burned during the course of the workout. It should be a
      * quantity with a unit representing energy.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use statisticsForType: passing the HKQuantityType for
+     * HKQuantityTypeIdentifierActiveEnergyBurned
      */
+    @Deprecated
     @Generated
     @Selector("totalEnergyBurned")
     public native HKQuantity totalEnergyBurned();
 
     /**
      * [@property] totalSwimmingStrokeCount
-     * <p>
+     * 
      * The total count of swimming strokes that was accumulated during a workout
-     * <p>
+     * 
      * This metric should represent the total count of swimming strokes accumulated during the course of the
      * workout. It should be a quantity with a unit representing count.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use statisticsForType: passing the HKQuantityType for
+     * HKQuantityTypeIdentifierSwimmingStrokeCount
      */
+    @Deprecated
     @Generated
     @Selector("totalSwimmingStrokeCount")
     public native HKQuantity totalSwimmingStrokeCount();
 
     /**
      * [@property] workoutActivityType
-     * <p>
+     * 
      * Represents the activity that the user was performing during a workout
      */
     @Generated
@@ -360,9 +385,9 @@ public class HKWorkout extends HKSample {
 
     /**
      * [@property] workoutEvents
-     * <p>
+     * 
      * An array of HKWorkoutEvents that occurred during a workout.
-     * <p>
+     * 
      * These events will be ordered by date in ascending order. All events must take place
      * between the start date and end date of the workout. The first workout event should never be a resume event
      * because it is assumed that the workout begins in a running state.
@@ -373,23 +398,28 @@ public class HKWorkout extends HKSample {
 
     /**
      * [@property] totalFlightsClimbed
-     * <p>
+     * 
      * The total count of flights climbed during a workout
-     * <p>
+     * 
      * This metric should represent the total count of flights accumulated during the course of the
      * workout. It should be a quantity with a unit representing count.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use statisticsForType: passing the HKQuantityType for HKQuantityTypeIdentifierFlightClimbed
      */
+    @Deprecated
     @Generated
     @Selector("totalFlightsClimbed")
     public native HKQuantity totalFlightsClimbed();
 
     /**
      * workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:totalFlightsClimbed:device:metadata:
-     * <p>
+     * 
      * If the optional total parameters are specified, matching samples that add up to the calculated total
      * quantities should be associated with this workout using addSamples:toWorkout:completion: in
      * HKHealthStore.
-     *
+     * 
      * @param workoutActivityType The activity type of the workout
      * @param startDate           The point in time that the workout was started
      * @param endDate             The point in time that the workout was ended
@@ -400,6 +430,8 @@ public class HKWorkout extends HKSample {
      * @param totalFlightsClimbed The total count of flights climbed that was accumulated during the workout. (Optional)
      * @param device              The HKDevice associated with the workout. (Optional)
      * @param metadata            Metadata for the workout. (Optional)
+     * 
+     *                            API-Since: 11.0
      */
     @Generated
     @Selector("workoutWithActivityType:startDate:endDate:workoutEvents:totalEnergyBurned:totalDistance:totalFlightsClimbed:device:metadata:")
@@ -407,4 +439,46 @@ public class HKWorkout extends HKSample {
             @NUInt long workoutActivityType, NSDate startDate, NSDate endDate,
             NSArray<? extends HKWorkoutEvent> workoutEvents, HKQuantity totalEnergyBurned, HKQuantity totalDistance,
             HKQuantity totalFlightsClimbed, HKDevice device, NSDictionary<String, ?> metadata);
+
+    /**
+     * [@property] allStatistics
+     * 
+     * A dictionary of statistics per quantity type during the workout
+     * 
+     * This dictionary will contain HKStatistics objects containing the statistics by quantity
+     * sample type for all of the samples that have been added to the workout.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("allStatistics")
+    public native NSDictionary<? extends HKQuantityType, ? extends HKStatistics> allStatistics();
+
+    /**
+     * statisticsForType:
+     * 
+     * Returns an HKStatistics object containing the statistics for all the samples of the given type that
+     * have been added to the workout. If there are no samples of the given type then nil is returned.
+     * 
+     * @param quantityType The quantity type to gather statistics about.
+     * 
+     *                     API-Since: 16.0
+     */
+    @Generated
+    @Selector("statisticsForType:")
+    public native HKStatistics statisticsForType(HKQuantityType quantityType);
+
+    /**
+     * [@property] workoutActivities
+     * 
+     * An array of HKWorkoutActivities that were performed during a workout.
+     * 
+     * These activities will be ordered by date in ascending order. All activities must take place
+     * between the start date and end date of the workout.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("workoutActivities")
+    public native NSArray<? extends HKWorkoutActivity> workoutActivities();
 }

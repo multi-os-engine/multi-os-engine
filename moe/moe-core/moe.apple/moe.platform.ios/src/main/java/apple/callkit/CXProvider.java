@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("CallKit")
 @Runtime(ObjCRuntime.class)
@@ -212,10 +215,10 @@ public class CXProvider extends NSObject {
 
     /**
      * Report a new incoming call to the system.
-     * <p>
+     * 
      * If completion is invoked with a non-nil `error`, the incoming call has been disallowed by the system and will not
      * be displayed, so the provider should not proceed with the call.
-     * <p>
+     * 
      * Completion block will be called on delegate queue, if specified, otherwise on a private serial queue.
      */
     @Generated
@@ -264,6 +267,8 @@ public class CXProvider extends NSObject {
     /**
      * From within a Notification Service Extension, request the containing application be launched to handle an
      * incoming VoIP call. The application's PKPushRegistryDelegate must handle the push upon launch.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("reportNewIncomingVoIPPushPayload:completion:")

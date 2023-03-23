@@ -30,9 +30,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request that will detect regions of text and recognize the containing text in an image.
- * <p>
+ * 
  * This request will generate VNRecognizedTextObservation objects describing the locations of text and the actual text
  * recognized.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Vision")
@@ -258,7 +260,11 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
     /**
      * Returns all the supported languages for a given text recognition level. Note that a language supported in one
      * recognition level might not be available in another.
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
      */
+    @Deprecated
     @Generated
     @Selector("supportedRecognitionLanguagesForTextRecognitionLevel:revision:error:")
     public static native NSArray<String> supportedRecognitionLanguagesForTextRecognitionLevelRevisionError(
@@ -291,15 +297,48 @@ public class VNRecognizeTextRequest extends VNImageBasedRequest implements VNReq
 
     /**
      * Obtain the collection of supported recognition languages.
-     * <p>
+     * 
      * This method will return the collection of all possible language identifiers that are recognized by the target
      * request based on its current state of configuration at the time of the call.
-     *
+     * 
      * @param error The address of the variable that will be populated with the error if the call fails.
+     * 
      * @return The collection of language identifiers, or nil if a failure occurs.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("supportedRecognitionLanguagesAndReturnError:")
     public native NSArray<String> supportedRecognitionLanguagesAndReturnError(
             @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+
+    /**
+     * Language detection will try to automatically identify the script/langauge during the detection and use the
+     * appropiate model for recognition and language correction. This can be particularly helpful, if the nature of the
+     * content is unkown and with this flag being set it will for instance determine if text is latin vs chinese so you
+     * don't have to pick the language model in the first case. But as the language correction cannot always guarantee
+     * the correct detection, it is advisable to set the languages, if you have domain knowledge of what language to
+     * expect. The default value is NO. Also note that this feature is only available since
+     * VNRecognizeTextRequestRevision3 and is a no-op before that.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("automaticallyDetectsLanguage")
+    public native boolean automaticallyDetectsLanguage();
+
+    /**
+     * Language detection will try to automatically identify the script/langauge during the detection and use the
+     * appropiate model for recognition and language correction. This can be particularly helpful, if the nature of the
+     * content is unkown and with this flag being set it will for instance determine if text is latin vs chinese so you
+     * don't have to pick the language model in the first case. But as the language correction cannot always guarantee
+     * the correct detection, it is advisable to set the languages, if you have domain knowledge of what language to
+     * expect. The default value is NO. Also note that this feature is only available since
+     * VNRecognizeTextRequestRevision3 and is a no-op before that.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setAutomaticallyDetectsLanguage:")
+    public native void setAutomaticallyDetectsLanguage(boolean value);
 }

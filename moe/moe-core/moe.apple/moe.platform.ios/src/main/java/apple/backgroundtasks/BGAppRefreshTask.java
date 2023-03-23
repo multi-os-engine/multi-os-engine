@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A background task used to update your app's contents in the background.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("BackgroundTasks")

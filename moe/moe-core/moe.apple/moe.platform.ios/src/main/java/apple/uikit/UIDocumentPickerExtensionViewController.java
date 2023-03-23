@@ -41,6 +41,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ * Deprecated-Since: 14.0
+ * Deprecated-Message: Use enumeration based NSFileProviderExtension instead
+ */
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -69,6 +75,7 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native UIDocumentPickerExtensionViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();

@@ -40,8 +40,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The user defaults for contacts.
- * <p>
+ * 
  * [@note] This class is not thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")

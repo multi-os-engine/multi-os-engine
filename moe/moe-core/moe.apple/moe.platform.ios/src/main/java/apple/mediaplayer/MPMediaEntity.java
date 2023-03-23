@@ -47,6 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * An MPMediaEntity represents an abstract member of an MPMediaLibrary.
  * Concrete subclasses are MPMediaItem and MPMediaItemCollection.
+ * 
+ * API-Since: 4.2
  */
 @Generated
 @Library("MediaPlayer")
@@ -178,6 +180,8 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
      * for a property.
      * In some cases, enumerating the values for multiple properties can be more efficient than fetching each individual
      * property with -valueForProperty:.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("enumerateValuesForProperties:usingBlock:")
@@ -194,12 +198,17 @@ public class MPMediaEntity extends NSObject implements NSSecureCoding {
 
     /**
      * Read-only support for Objective-C subscripting syntax with MPMediaEntity property constants.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("objectForKeyedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object objectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object key);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("persistentID")
     public native long persistentID();

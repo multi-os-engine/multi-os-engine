@@ -68,10 +68,16 @@ public class NSThread extends NSObject {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("callStackReturnAddresses")
     public static native NSArray<? extends NSNumber> callStackReturnAddresses();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("callStackSymbols")
     public static native NSArray<String> callStackSymbols();
@@ -111,6 +117,9 @@ public class NSThread extends NSObject {
     public static native void detachNewThreadSelectorToTargetWithObject(SEL selector,
             @Mapped(ObjCObjectMapper.class) Object target, @Mapped(ObjCObjectMapper.class) Object argument);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("detachNewThreadWithBlock:")
     public static native void detachNewThreadWithBlock(
@@ -140,6 +149,8 @@ public class NSThread extends NSObject {
 
     /**
      * reports whether current thread is main
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("isMainThread")
@@ -157,6 +168,9 @@ public class NSThread extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("mainThread")
     public static native NSThread mainThread();
@@ -203,85 +217,132 @@ public class NSThread extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("cancel")
     public native void cancel();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("init")
     public native NSThread init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithBlock:")
     public native NSThread initWithBlock(@ObjCBlock(name = "call_initWithBlock") Block_initWithBlock block);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("initWithTarget:selector:object:")
     public native NSThread initWithTargetSelectorObject(@Mapped(ObjCObjectMapper.class) Object target, SEL selector,
             @Mapped(ObjCObjectMapper.class) Object argument);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isCancelled")
     public native boolean isCancelled();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isExecuting")
     public native boolean isExecuting();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isFinished")
     public native boolean isFinished();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isMainThread")
     public native boolean isMainThread();
 
     /**
      * thread body method
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("main")
     public native void main();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("name")
     public native String name();
 
     /**
      * read-only after the thread is started
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("qualityOfService")
     @NInt
     public native long qualityOfService();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
     /**
      * read-only after the thread is started
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setQualityOfService:")
     public native void setQualityOfService(@NInt long value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setStackSize:")
     public native void setStackSize(@NUInt long value);
 
     /**
      * To be deprecated; use qualityOfService below
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("setThreadPriority:")
     public native void setThreadPriority(double value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("stackSize")
     @NUInt
     public native long stackSize();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("start")
     public native void start();
@@ -292,6 +353,8 @@ public class NSThread extends NSObject {
 
     /**
      * To be deprecated; use qualityOfService below
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("threadPriority")

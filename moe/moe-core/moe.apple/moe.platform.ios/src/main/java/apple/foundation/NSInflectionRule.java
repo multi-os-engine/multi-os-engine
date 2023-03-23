@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -61,6 +64,8 @@ public class NSInflectionRule extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Whether inflection will work in the specified language code.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("canInflectLanguage:")
@@ -68,6 +73,8 @@ public class NSInflectionRule extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Whether inflection will work in the language of the main bundle's first preferred localization.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("canInflectPreferredLocalization")

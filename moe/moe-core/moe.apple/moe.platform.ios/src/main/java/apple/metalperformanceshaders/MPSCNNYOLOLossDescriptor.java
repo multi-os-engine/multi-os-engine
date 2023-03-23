@@ -28,23 +28,23 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNYOLOLossDescriptor
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * The MPSCNNYOLOLossDescriptor specifies a loss filter descriptor
  * that is used to create a MPSCNNLoss filter. The MPSCNNYOLOLoss is a filter that
  * has been specialized for object detection tasks and follows a specific layout
  * for the feature-channels of the input, output, weight and label data.
- * <p>
+ * 
  * The layout of the data within the feature-channels is as follows:
- * <p>
+ * 
  * Each anchorbox uses ( 2+2+1 + numberOfClasses = 5 + numberOfClasses ) feature channels.
- * <p>
+ * 
  * Therefore the total number of feature channels used is: (5 + numberOfClasses) * numberOfAnchorBoxes.
  * The first feature channel for anchorbox index 'anchorIdx' is at fcIndex = (5 + numberOfClasses) * anchorIdx,
  * and the feature channels within each anchorbox are stored in the layout: 'XYWHCFFFFFF...', where (XY) are
  * the so-called raw x and y coordinates of the bounding box within each gridcell and (WH) are the corresponding
  * width and height. 'C' signifies a confidence for having an object in the cell and FFFFF... are the feature channel
  * values for each class of object to be classified in the object detector.
- * <p>
+ * 
  * The YOLO-loss filter works by operating mostly independently on each anchorbox:
  * * The XY-channels of the inputs are first transformed to relative XY-values by applying the sigmoid-neuron on them,
  * after which they are passed through the loss function defined by @ref XYLossDescriptor, which is typically chosen
@@ -58,8 +58,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * object classes, used to identify which objects are the most probable ones in the bounding box and
  * these channels are passed through the loss function defined by @ref classesLossDescriptor, which in
  * typical cases is of the type @ref MPSCNNLossTypeSoftMaxCrossEntropy.
- * <p>
+ * 
  * For details on how to set up the label values and anchorboxes see https://arxiv.org/abs/1612.08242
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -77,9 +79,9 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] WHLossDescriptor
-     * <p>
+     * 
      * The type of a loss filter.
-     * <p>
+     * 
      * This parameter specifies the type of a loss filter.
      */
     @Generated
@@ -88,9 +90,9 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] XYLossDescriptor
-     * <p>
+     * 
      * The type of a loss filter.
-     * <p>
+     * 
      * This parameter specifies the type of a loss filter.
      */
     @Generated
@@ -113,7 +115,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] anchorBoxes
-     * <p>
+     * 
      * NSData containing the width and height for numberOfAnchorBoxes anchor boxes
      * This NSData should have 2 float values per anchor box which represent the width
      * and height of the anchor box.
@@ -122,8 +124,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * float width;
      * float height;
      * }anchorBox;
-     * <p>
-     * <p>
+     * 
+     * 
      * anchorBox_t gAnchorBoxes[MAX_NUM_ANCHOR_BOXES] = {
      * {.width = 1.f, .height = 2.f},
      * {.width = 1.f, .height = 1.f},
@@ -160,9 +162,9 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] classesLossDescriptor
-     * <p>
+     * 
      * The type of a loss filter.
-     * <p>
+     * 
      * This parameter specifies the type of a loss filter.
      */
     @Generated
@@ -171,7 +173,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * Make a descriptor for a MPSCNNYOLOLoss object.
-     *
+     * 
      * @param XYLossType         The type of spatial position loss filter.
      * @param WHLossType         The type of spatial size loss filter.
      * @param confidenceLossType The type of confidence filter.
@@ -189,9 +191,9 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] confidenceLossDescriptor
-     * <p>
+     * 
      * The type of a loss filter.
-     * <p>
+     * 
      * This parameter specifies the type of a loss filter.
      */
     @Generated
@@ -244,7 +246,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] neg_iou
-     * <p>
+     * 
      * If the prediction IOU with groundTruth is lower than this
      * value we consider it a confident object absence, default is 0.3
      */
@@ -254,7 +256,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] pos_iou
-     * <p>
+     * 
      * If the prediction IOU with groundTruth is higher than this
      * value we consider it a confident object presence, default is 0.7
      */
@@ -269,7 +271,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] numberOfAnchorBoxes
-     * <p>
+     * 
      * number of anchor boxes used to detect object per grid cell
      */
     @Generated
@@ -279,7 +281,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] reductionType
-     * <p>
+     * 
      * ReductionType shared accross all losses (so they may generate same sized output)
      */
     @Generated
@@ -288,7 +290,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] rescore
-     * <p>
+     * 
      * Rescore pertains to multiplying the confidence groundTruth with IOU (intersection over union)
      * of predicted bounding box and the groundTruth boundingBox. Default is YES
      */
@@ -306,7 +308,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleClass
-     * <p>
+     * 
      * scale factor for no object classes loss and loss gradient default is 2.0
      */
     @Generated
@@ -315,7 +317,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleNoObject
-     * <p>
+     * 
      * scale factor for no object confidence loss and loss gradient default is 5.0
      */
     @Generated
@@ -324,7 +326,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleObject
-     * <p>
+     * 
      * scale factor for no object confidence loss and loss gradient default is 100.0
      */
     @Generated
@@ -333,7 +335,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleWH
-     * <p>
+     * 
      * scale factor for WH loss and loss gradient default is 10.0
      */
     @Generated
@@ -342,7 +344,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleXY
-     * <p>
+     * 
      * scale factor for XY loss and loss gradient default is 10.0
      */
     @Generated
@@ -351,7 +353,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] anchorBoxes
-     * <p>
+     * 
      * NSData containing the width and height for numberOfAnchorBoxes anchor boxes
      * This NSData should have 2 float values per anchor box which represent the width
      * and height of the anchor box.
@@ -360,8 +362,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * float width;
      * float height;
      * }anchorBox;
-     * <p>
-     * <p>
+     * 
+     * 
      * anchorBox_t gAnchorBoxes[MAX_NUM_ANCHOR_BOXES] = {
      * {.width = 1.f, .height = 2.f},
      * {.width = 1.f, .height = 1.f},
@@ -376,9 +378,9 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] classesLossDescriptor
-     * <p>
+     * 
      * The type of a loss filter.
-     * <p>
+     * 
      * This parameter specifies the type of a loss filter.
      */
     @Generated
@@ -387,9 +389,9 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] confidenceLossDescriptor
-     * <p>
+     * 
      * The type of a loss filter.
-     * <p>
+     * 
      * This parameter specifies the type of a loss filter.
      */
     @Generated
@@ -398,7 +400,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] neg_iou
-     * <p>
+     * 
      * If the prediction IOU with groundTruth is lower than this
      * value we consider it a confident object absence, default is 0.3
      */
@@ -408,7 +410,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] pos_iou
-     * <p>
+     * 
      * If the prediction IOU with groundTruth is higher than this
      * value we consider it a confident object presence, default is 0.7
      */
@@ -418,7 +420,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] numberOfAnchorBoxes
-     * <p>
+     * 
      * number of anchor boxes used to detect object per grid cell
      */
     @Generated
@@ -427,7 +429,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] reductionType
-     * <p>
+     * 
      * ReductionType shared accross all losses (so they may generate same sized output)
      */
     @Generated
@@ -436,7 +438,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] rescore
-     * <p>
+     * 
      * Rescore pertains to multiplying the confidence groundTruth with IOU (intersection over union)
      * of predicted bounding box and the groundTruth boundingBox. Default is YES
      */
@@ -446,7 +448,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleClass
-     * <p>
+     * 
      * scale factor for no object classes loss and loss gradient default is 2.0
      */
     @Generated
@@ -455,7 +457,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleNoObject
-     * <p>
+     * 
      * scale factor for no object confidence loss and loss gradient default is 5.0
      */
     @Generated
@@ -464,7 +466,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleObject
-     * <p>
+     * 
      * scale factor for no object confidence loss and loss gradient default is 100.0
      */
     @Generated
@@ -473,7 +475,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleWH
-     * <p>
+     * 
      * scale factor for WH loss and loss gradient default is 10.0
      */
     @Generated
@@ -482,7 +484,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] scaleXY
-     * <p>
+     * 
      * scale factor for XY loss and loss gradient default is 10.0
      */
     @Generated
@@ -495,9 +497,9 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] WHLossDescriptor
-     * <p>
+     * 
      * The type of a loss filter.
-     * <p>
+     * 
      * This parameter specifies the type of a loss filter.
      */
     @Generated
@@ -506,9 +508,9 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] XYLossDescriptor
-     * <p>
+     * 
      * The type of a loss filter.
-     * <p>
+     * 
      * This parameter specifies the type of a loss filter.
      */
     @Generated
@@ -526,7 +528,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] reduceAcrossBatch
-     * <p>
+     * 
      * If set to YES then the reduction operation is applied also across the batch-index dimension,
      * ie. the loss value is summed over images in the batch and the result of the reduction is written
      * on the first loss image in the batch while the other loss images will be set to zero.
@@ -538,6 +540,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * the final forward loss value is computed by first summing over the components and then by
      * dividing the result with: number of feature channels * width * height * number of images in the batch.
      * The default value is NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("reduceAcrossBatch")
@@ -545,7 +549,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] reduceAcrossBatch
-     * <p>
+     * 
      * If set to YES then the reduction operation is applied also across the batch-index dimension,
      * ie. the loss value is summed over images in the batch and the result of the reduction is written
      * on the first loss image in the batch while the other loss images will be set to zero.
@@ -557,6 +561,8 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * the final forward loss value is computed by first summing over the components and then by
      * dividing the result with: number of feature channels * width * height * number of images in the batch.
      * The default value is NO.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setReduceAcrossBatch:")

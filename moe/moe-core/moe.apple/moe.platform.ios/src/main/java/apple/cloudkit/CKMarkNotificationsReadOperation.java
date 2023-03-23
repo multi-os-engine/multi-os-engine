@@ -40,6 +40,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ * Deprecated-Since: 11.0
+ * Deprecated-Message: Instead of iterating notifications, consider using CKDatabaseSubscription,
+ * CKFetchDatabaseChangesOperation, and CKFetchRecordZoneChangesOperation as appropriate
+ */
+@Deprecated
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -161,7 +168,7 @@ public class CKMarkNotificationsReadOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
@@ -176,7 +183,7 @@ public class CKMarkNotificationsReadOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */

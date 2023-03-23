@@ -34,6 +34,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * the visual aspect of its children.
  * The physics and constraints of the children will behave as if none
  * of them were transformed.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("SpriteKit")

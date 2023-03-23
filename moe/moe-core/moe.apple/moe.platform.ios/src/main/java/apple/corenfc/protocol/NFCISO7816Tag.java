@@ -13,7 +13,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] NFCISO7816Tag
- * <p>
+ * 
  * A @link NFCTagReaderSession @link/ reader session returns an instance conforming to this protocol
  * when an ISO7816 compatible tag is detected. Unless it is specified all block completion handlers are dispatched on
  * the
@@ -37,6 +37,9 @@ import org.moe.natj.objc.ann.Selector;
  * to the NFCTagReaderSessionDelegate if no application described in
  * "com.apple.developer.nfc.readersession.iso7816.select-identifiers"
  * is found. Tag must be in the connected state for NFCNDEFTag protocol properties and methods to work correctly.
+ * 
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("CoreNFC")
@@ -45,6 +48,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface NFCISO7816Tag extends NFCTag, NFCNDEFTag {
     /**
      * The optional Application Data bytes extracted from the Type B Answer To Request response.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("applicationData")
@@ -52,6 +57,8 @@ public interface NFCISO7816Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * The optional historical bytes extracted from the Type A Answer To Select response.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("historicalBytes")
@@ -59,6 +66,8 @@ public interface NFCISO7816Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * The hardware UID of the tag.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("identifier")
@@ -69,6 +78,8 @@ public interface NFCISO7816Tag extends NFCTag, NFCNDEFTag {
      * the tag is discovered.
      * This will match one of the entries in the "com.apple.developer.nfc.readersession.iso7816.select-identifiers"
      * in the Info.plist.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initialSelectedAID")
@@ -78,6 +89,8 @@ public interface NFCISO7816Tag extends NFCTag, NFCNDEFTag {
      * Indicates if @link applicationData @link/ follows proprietary data coding. If false, the format of the
      * application data is
      * defined in the ISO14443-3 specification.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("proprietaryApplicationDataCoding")
@@ -85,13 +98,15 @@ public interface NFCISO7816Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * sendCommandAPDU:completionHandler:
-     * <p>
+     * 
      * Send a command APDU to the tag and receives a response APDU. Note that a SELECT command with a P1 value of 0x04
      * (seelction by DF name)
      * will be checked against the values listed in the
      * "com.apple.developer.nfc.readersession.iso7816.select-identifiers" in the Info.plist.
      * Selecting an application outside of the permissible list will result in a NFCReaderErrorSecurityViolation error.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param apdu              The command APDU object
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
      *                          succeeds.

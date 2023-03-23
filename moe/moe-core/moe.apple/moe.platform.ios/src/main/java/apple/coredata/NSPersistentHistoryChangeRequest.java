@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("CoreData")
 @Runtime(ObjCRuntime.class)
@@ -184,14 +187,23 @@ public class NSPersistentHistoryChangeRequest extends NSPersistentStoreRequest {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("fetchHistoryWithFetchRequest:")
     public static native NSPersistentHistoryChangeRequest fetchHistoryWithFetchRequest(NSFetchRequest<?> fetchRequest);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("fetchRequest")
     public native NSFetchRequest<?> fetchRequest();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setFetchRequest:")
     public native void setFetchRequest(NSFetchRequest<?> value);

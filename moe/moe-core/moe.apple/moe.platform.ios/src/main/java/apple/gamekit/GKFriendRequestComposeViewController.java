@@ -44,6 +44,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.2
+ * Deprecated-Since: 10.0
+ */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -72,6 +77,7 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     @Selector("allocWithZone:")
     public static native GKFriendRequestComposeViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -175,6 +181,8 @@ public class GKFriendRequestComposeViewController extends UINavigationController
      * If you don't specify at least one recipient before presenting the view, the recipients field will be made
      * firstResponder, to encourage the user to add some.
      * If you add more than maxNumberOfRecipients recipients, these methods will throw an exception.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("addRecipientPlayers:")
@@ -184,11 +192,21 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     @Selector("addRecipientsWithEmailAddresses:")
     public native void addRecipientsWithEmailAddresses(NSArray<String> emailAddresses);
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: use addRecipientPlayers:
+     */
     @Generated
     @Deprecated
     @Selector("addRecipientsWithPlayerIDs:")
     public native void addRecipientsWithPlayerIDs(NSArray<String> playerIDs);
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("composeViewDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -216,11 +234,21 @@ public class GKFriendRequestComposeViewController extends UINavigationController
     @Selector("initWithRootViewController:")
     public native GKFriendRequestComposeViewController initWithRootViewController(UIViewController rootViewController);
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("setComposeViewDelegate:")
     public native void setComposeViewDelegate_unsafe(
             @Mapped(ObjCObjectMapper.class) GKFriendRequestComposeViewControllerDelegate value);
 
+    /**
+     * API-Since: 4.2
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     public void setComposeViewDelegate(
             @Mapped(ObjCObjectMapper.class) GKFriendRequestComposeViewControllerDelegate value) {

@@ -152,9 +152,11 @@ public class NWTLSParameters extends NSObject {
 
     /**
      * [@property] SSLCipherSuites
-     * <p>
+     * 
      * The set of allowed cipher suites, as defined in <Security/CipherSuite.h>.
      * If set to nil, the default cipher suites will be used.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("SSLCipherSuites")
@@ -162,9 +164,11 @@ public class NWTLSParameters extends NSObject {
 
     /**
      * [@property] TLSSessionID
-     * <p>
+     * 
      * The session ID for the associated connection, used for TLS session resumption.
      * This property is optional when using TLS.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("TLSSessionID")
@@ -176,11 +180,13 @@ public class NWTLSParameters extends NSObject {
 
     /**
      * [@property] maximumSSLProtocolVersion
-     * <p>
+     * 
      * The maximum allowed SSLProtocol value. as defined in <Security/SecureTransport.h>.
      * If set, the SSL handshake will not accept any protocol version newer than the maximum.
      * This property should be used with caution, since it may limit the use of preferred
      * SSL protocols.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("maximumSSLProtocolVersion")
@@ -189,9 +195,11 @@ public class NWTLSParameters extends NSObject {
 
     /**
      * [@property] minimumSSLProtocolVersion
-     * <p>
+     * 
      * The minimum allowed SSLProtocol value. as defined in <Security/SecureTransport.h>.
      * If set, the SSL handshake will not accept any protocol version older than the minimum.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("minimumSSLProtocolVersion")
@@ -200,11 +208,13 @@ public class NWTLSParameters extends NSObject {
 
     /**
      * [@property] maximumSSLProtocolVersion
-     * <p>
+     * 
      * The maximum allowed SSLProtocol value. as defined in <Security/SecureTransport.h>.
      * If set, the SSL handshake will not accept any protocol version newer than the maximum.
      * This property should be used with caution, since it may limit the use of preferred
      * SSL protocols.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMaximumSSLProtocolVersion:")
@@ -212,9 +222,11 @@ public class NWTLSParameters extends NSObject {
 
     /**
      * [@property] minimumSSLProtocolVersion
-     * <p>
+     * 
      * The minimum allowed SSLProtocol value. as defined in <Security/SecureTransport.h>.
      * If set, the SSL handshake will not accept any protocol version older than the minimum.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMinimumSSLProtocolVersion:")
@@ -222,9 +234,11 @@ public class NWTLSParameters extends NSObject {
 
     /**
      * [@property] SSLCipherSuites
-     * <p>
+     * 
      * The set of allowed cipher suites, as defined in <Security/CipherSuite.h>.
      * If set to nil, the default cipher suites will be used.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setSSLCipherSuites:")
@@ -232,9 +246,11 @@ public class NWTLSParameters extends NSObject {
 
     /**
      * [@property] TLSSessionID
-     * <p>
+     * 
      * The session ID for the associated connection, used for TLS session resumption.
      * This property is optional when using TLS.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setTLSSessionID:")

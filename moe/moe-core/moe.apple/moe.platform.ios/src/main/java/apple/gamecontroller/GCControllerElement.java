@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Every controller element knows which collection it belongs to and whether its input value is analog or digital.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("GameController")
@@ -174,6 +176,9 @@ public class GCControllerElement extends NSObject {
 
     /**
      * A set of aliases that can be used to access this element with keyed subscript notation.
+     * 
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("aliases")
@@ -182,7 +187,7 @@ public class GCControllerElement extends NSObject {
     /**
      * Check if the element is bound to a system gesture.
      * Defaults to NO for most elements.
-     *
+     * 
      * @see preferredSystemGestureState
      * @see GCSystemGestureState
      */
@@ -192,7 +197,7 @@ public class GCControllerElement extends NSObject {
 
     /**
      * The element's localized name, taking input remapping into account.
-     * <p>
+     * 
      * [@note] In almost all instances, you should use this over unmappedLocalizedName in your UI.
      */
     @Generated
@@ -202,12 +207,12 @@ public class GCControllerElement extends NSObject {
     /**
      * The preferred system gesture state for this element.
      * Defaults to GCSystemGestureStateEnabled for most elements
-     * <p>
+     * 
      * [@note] This is merely the preferred system gesture state - it is not guaranteed to be respected by the system.
      * [@note] It is highly recommended to leave this set to the default value, however there may be situations (for
      * example, game
      * streaming apps) where it is preferrable to disable system gestures.
-     *
+     * 
      * @see boundToSystemGesture
      */
     @Generated
@@ -217,7 +222,7 @@ public class GCControllerElement extends NSObject {
 
     /**
      * The element's localized name, taking input remapping into account.
-     * <p>
+     * 
      * [@note] In almost all instances, you should use this over unmappedLocalizedName in your UI.
      */
     @Generated
@@ -227,12 +232,12 @@ public class GCControllerElement extends NSObject {
     /**
      * The preferred system gesture state for this element.
      * Defaults to GCSystemGestureStateEnabled for most elements
-     * <p>
+     * 
      * [@note] This is merely the preferred system gesture state - it is not guaranteed to be respected by the system.
      * [@note] It is highly recommended to leave this set to the default value, however there may be situations (for
      * example, game
      * streaming apps) where it is preferrable to disable system gestures.
-     *
+     * 
      * @see boundToSystemGesture
      */
     @Generated
@@ -241,7 +246,7 @@ public class GCControllerElement extends NSObject {
 
     /**
      * The element's SF Symbols name, taking input remapping into account.
-     * <p>
+     * 
      * [@note] In almost all instances, you should use this over unmappedSfSymbolsName in your UI.
      */
     @Generated
@@ -250,7 +255,7 @@ public class GCControllerElement extends NSObject {
 
     /**
      * The element's localized name, not taking any input remapping into account.
-     * <p>
+     * 
      * [@note] Use this in your games own remapping UI, or when you need to prompt a user that a given button has no
      * mapping (localizedName is nil).
      */
@@ -260,7 +265,7 @@ public class GCControllerElement extends NSObject {
 
     /**
      * The element's SF Symbols name, not taking any input remapping into account.
-     * <p>
+     * 
      * [@note] Use this in your games own remapping UI, or when you need to prompt a user that a given button has no
      * mapping (sfSymbolsName is nil).
      */
@@ -270,7 +275,7 @@ public class GCControllerElement extends NSObject {
 
     /**
      * The element's SF Symbols name, taking input remapping into account.
-     * <p>
+     * 
      * [@note] In almost all instances, you should use this over unmappedSfSymbolsName in your UI.
      */
     @Generated
@@ -279,7 +284,7 @@ public class GCControllerElement extends NSObject {
 
     /**
      * The element's localized name, not taking any input remapping into account.
-     * <p>
+     * 
      * [@note] Use this in your games own remapping UI, or when you need to prompt a user that a given button has no
      * mapping (localizedName is nil).
      */
@@ -289,7 +294,7 @@ public class GCControllerElement extends NSObject {
 
     /**
      * The element's SF Symbols name, not taking any input remapping into account.
-     * <p>
+     * 
      * [@note] Use this in your games own remapping UI, or when you need to prompt a user that a given button has no
      * mapping (sfSymbolsName is nil).
      */

@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * CFNetServiceBrowser flags
- * <p>
+ * 
  * Discussion:
  * Result bit flags passed to CFNetServiceBrowserClientCallBack.
  */
@@ -41,6 +41,9 @@ public final class CFNetServiceBrowserFlags {
     @Generated @NUInt public static final long IsDefault = 0x0000000000000004L;
     /**
      * Same as the previous but incorrectly named. Kept for compatibility.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
      */
     @Deprecated @Generated @NUInt public static final long IsRegistrationDomain = 0x0000000000000004L;
     /**

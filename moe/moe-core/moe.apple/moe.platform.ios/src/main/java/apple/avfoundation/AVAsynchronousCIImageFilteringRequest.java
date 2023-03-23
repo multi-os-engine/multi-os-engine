@@ -17,7 +17,6 @@ limitations under the License.
 package apple.avfoundation;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.coreimage.CIContext;
 import apple.coreimage.CIImage;
 import apple.coremedia.struct.CMTime;
@@ -45,7 +44,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -180,7 +183,7 @@ public class AVAsynchronousCIImageFilteringRequest extends NSObject implements N
     /**
      * Callback the filter should call when filtering succeeded. If context is nil then a default context will be used,
      * GPU-accelerated if possible.
-     * <p>
+     * 
      * It is safe to pass in the sourceImage in which case the filter will appear to have no effect, essentially
      * functioning as a pass-through.
      */

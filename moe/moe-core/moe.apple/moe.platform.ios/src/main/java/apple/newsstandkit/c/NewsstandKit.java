@@ -39,9 +39,15 @@ public final class NewsstandKit {
 
     /**
      * [@constant] NKIssueDownloadCompletedNotification
-     * <p>
+     * 
      * Notification when an issue's assets have all been downloaded.
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the Remote Notifications Background Modes instead:
+     * https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_updates_to_your_app_silently
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * UIFocusDebugger provides a collection of runtime utilities for debugging issues related to focus interaction.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("UIKit")
@@ -193,13 +195,26 @@ public class UIFocusDebugger extends NSObject {
     /**
      * Outputs a diagnosis of the focus groups of the specified environment and its children.
      * Pass a focus system as the environment to get the full focus group tree for this focus system.
-     * - To use in Swift, enter `po UIFocusDebugger.checkFocusGroupTree(for: <environment reference>)` when paused in
-     * lldb.
-     * - To use in Objective-C, enter `po [UIFocusDebugger checkFocusGroupTreeForEnvironment:<environment reference>]`
-     * when paused in lldb.
+     * - To use in Swift, enter `po UIFocusDebugger.focusGroups(for: <environment reference>)` when paused in lldb.
+     * - To use in Objective-C, enter `po [UIFocusDebugger focusGroupsForEnvironment:<environment reference>]` when
+     * paused in lldb.
      */
     @Generated
-    @Selector("checkFocusGroupTreeForEnvironment:")
-    public static native String checkFocusGroupTreeForEnvironment(
+    @Selector("focusGroupsForEnvironment:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native UIFocusDebuggerOutput focusGroupsForEnvironment(
+            @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
+
+    /**
+     * Outputs a diagnoses of the preferred focus environments tree.
+     * - To use in Swift, enter `po UIFocusDebugger.preferredFocusEnvironments(for: <environment reference>)` when
+     * paused in lldb.
+     * - To use in Objective-C, enter `po [UIFocusDebugger preferredFocusEnvironmentsForEnvironment:<environment
+     * reference>]` when paused in lldb.
+     */
+    @Generated
+    @Selector("preferredFocusEnvironmentsForEnvironment:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native UIFocusDebuggerOutput preferredFocusEnvironmentsForEnvironment(
             @Mapped(ObjCObjectMapper.class) UIFocusEnvironment environment);
 }

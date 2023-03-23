@@ -25,12 +25,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVDelegatingPlaybackCoordinatorBufferingCommand
- * <p>
+ * 
  * A playback command requesting buffering in anticipation of playback.
- * <p>
+ * 
  * Receiving this command should be reflected to the user as playback in a buffering state.
  * To cancel the group intent to begin playback and move back into a paused state, call [AVDelegatingPlaybackCoordinator
  * coordinateRateChangeToRate:0 options: 0]
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVFoundation")
@@ -63,9 +65,9 @@ public class AVDelegatingPlaybackCoordinatorBufferingCommand extends
 
     /**
      * [@property] anticipatedPlaybackRate
-     * <p>
+     * 
      * The rate to prepare playback for.
-     * <p>
+     * 
      * The command should only be considered complete once the player is ready to receive an
      * AVDelegatingPlaybackCoordinatorPlayCommand with the indicated rate.
      */
@@ -97,9 +99,9 @@ public class AVDelegatingPlaybackCoordinatorBufferingCommand extends
 
     /**
      * [@property] completionDueDate
-     * <p>
+     * 
      * Communicates when the coordinator expects the command's completion handler at the latest.
-     * <p>
+     * 
      * A receiver of a buffering command should fire the completion handler by this date at the latest. This is useful
      * in buffering situations where the receiver
      * has not yet buffered enough data to be considered ready to play by the due date. The receiver should then decide

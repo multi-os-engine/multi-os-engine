@@ -8,8 +8,10 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 
 /**
  * [@protocol] MTLFunctionStitchingAttribute
- * <p>
+ * 
  * An attribute to be applied to the produced stitched function.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Metal")

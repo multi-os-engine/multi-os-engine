@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Representation of a ray and its target which is used for raycasting.
- * <p>
+ * 
  * Represents a 3D ray and its target which is used to perform raycasting.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("ARKit")

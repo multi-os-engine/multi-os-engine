@@ -43,13 +43,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEPacketTunnelFlow
- * <p>
+ * 
  * The NEPacketTunnelFlow class declares the programmatic interface of an object that is used by NEPacketTunnelProvider
  * implementations to tunnel IP packets.
- * <p>
+ * 
  * NEPacketTunnelFlow is part of NetworkExtension.framework
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -167,12 +169,14 @@ public class NEPacketTunnelFlow extends NSObject {
 
     /**
      * readPacketObjectsWithCompletionHandler:
-     * <p>
+     * 
      * Read available IP packets from the flow.
-     *
+     * 
      * @param completionHandler A block that will be executed to handle the packets. This block takes an array of
      *                          NEPacket objects. If after handling the packets the caller wants to read more packets
      *                          then the caller must call this method again.
+     * 
+     *                          API-Since: 10.0
      */
     @Generated
     @Selector("readPacketObjectsWithCompletionHandler:")
@@ -181,13 +185,15 @@ public class NEPacketTunnelFlow extends NSObject {
 
     /**
      * readPacketsWithCompletionHandler:
-     * <p>
+     * 
      * Read available IP packets from the flow.
-     *
+     * 
      * @param completionHandler A block that will be executed to handle the packets. This block takes an array of NSData
      *                          objects and an array of NSNumber objects. The NSData and NSNumber in corresponding
      *                          indicies in the array represent one packet. If after handling the packets the caller
      *                          wants to read more packets then the caller must call this method again.
+     * 
+     *                          API-Since: 9.0
      */
     @Generated
     @Selector("readPacketsWithCompletionHandler:")
@@ -196,10 +202,12 @@ public class NEPacketTunnelFlow extends NSObject {
 
     /**
      * writePacketObjects:
-     * <p>
+     * 
      * Write multiple IP packets to the flow.
-     *
+     * 
      * @param packets An array of NEPacket objects, each containing packet data and protocol family to be written.
+     * 
+     *                API-Since: 10.0
      */
     @Generated
     @Selector("writePacketObjects:")
@@ -207,12 +215,14 @@ public class NEPacketTunnelFlow extends NSObject {
 
     /**
      * writePackets:completionHandler:
-     * <p>
+     * 
      * Write multiple IP packets to the flow.
-     *
+     * 
      * @param packets   An array of NSData objects, each containing packet data to be written.
      * @param protocols An array of NSNumber objects. Each number contains the protocol of the packet in the
      *                  corresponding index in the packets array.
+     * 
+     *                  API-Since: 9.0
      */
     @Generated
     @Selector("writePackets:withProtocols:")

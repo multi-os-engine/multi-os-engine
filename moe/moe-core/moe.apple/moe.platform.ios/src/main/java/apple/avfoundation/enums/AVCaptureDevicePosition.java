@@ -21,20 +21,31 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVCaptureDevicePosition
- * <p>
+ * 
  * Constants indicating the physical position of an AVCaptureDevice's hardware on the system.
- * <p>
+ * 
  * [@constant] AVCaptureDevicePositionUnspecified
  * Indicates that the device's position relative to the system hardware is unspecified.
  * [@constant] AVCaptureDevicePositionBack
  * Indicates that the device is physically located on the back of the system hardware.
  * [@constant] AVCaptureDevicePositionFront
  * Indicates that the device is physically located on the front of the system hardware.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 public final class AVCaptureDevicePosition {
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long Unspecified = 0x0000000000000000L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long Back = 0x0000000000000001L;
+    /**
+     * API-Since: 4.0
+     */
     @Generated @NInt public static final long Front = 0x0000000000000002L;
 
     @Generated

@@ -1,9 +1,6 @@
 package apple.coreimage;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.coreimage.protocol.CIFilterConstructor;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.foundation.NSArray;
@@ -36,7 +33,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -180,6 +183,7 @@ public class CIRAWFilter extends CIFilter {
     public static native CIRAWFilter filterWithCVPixelBufferProperties(CVBufferRef buffer,
             NSDictionary<?, ?> properties);
 
+    @Deprecated
     @Generated
     @Selector("filterWithCVPixelBuffer:properties:options:")
     public static native CIFilter filterWithCVPixelBufferPropertiesOptions(CVBufferRef pixelBuffer,
@@ -189,6 +193,7 @@ public class CIRAWFilter extends CIFilter {
     @Selector("filterWithImageData:identifierHint:")
     public static native CIRAWFilter filterWithImageDataIdentifierHint(NSData data, String identifierHint);
 
+    @Deprecated
     @Generated
     @Selector("filterWithImageData:options:")
     public static native CIFilter filterWithImageDataOptions(NSData data, NSDictionary<String, ?> options);
@@ -197,6 +202,7 @@ public class CIRAWFilter extends CIFilter {
     @Selector("filterWithImageURL:")
     public static native CIRAWFilter filterWithImageURL(NSURL url);
 
+    @Deprecated
     @Generated
     @Selector("filterWithImageURL:options:")
     public static native CIFilter filterWithImageURLOptions(NSURL url, NSDictionary<String, ?> options);
@@ -693,6 +699,7 @@ public class CIRAWFilter extends CIFilter {
     @Selector("supportedDecoderVersions")
     public native NSArray<String> supportedDecoderVersions();
 
+    @Deprecated
     @Generated
     @Selector("supportedRawCameraModels")
     public static native NSArray<String> supportedRawCameraModels();

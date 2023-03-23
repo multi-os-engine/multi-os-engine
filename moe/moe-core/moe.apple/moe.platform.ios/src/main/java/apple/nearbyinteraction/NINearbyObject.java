@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A nearby object with distance and direction measurements.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("NearbyInteraction")
@@ -96,7 +98,7 @@ public class NINearbyObject extends NSObject implements NSCopying, NSSecureCodin
 
     /**
      * Nearby interaction discovery token
-     * <p>
+     * 
      * This discovery token will be equal to the token provided in the configuration with which the session was run.
      */
     @Generated
@@ -184,4 +186,25 @@ public class NINearbyObject extends NSObject implements NSCopying, NSSecureCodin
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * An angle in radians indicating the azimuthal direction to the nearby object.
+     * 
+     * when unavailable, the value will be set to `NINearbyObjectAngleNotAvailable`.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("horizontalAngle")
+    public native float horizontalAngle();
+
+    /**
+     * An indication of the positional relationship to the nearby object in the vertical dimension.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("verticalDirectionEstimate")
+    @NInt
+    public native long verticalDirectionEstimate();
 }

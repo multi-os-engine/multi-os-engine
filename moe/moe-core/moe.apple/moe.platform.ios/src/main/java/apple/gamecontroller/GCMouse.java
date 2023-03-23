@@ -26,9 +26,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Mice are available to an application that links to GameController.framework. There are 2 ways to access mice
  * paired to the system. Adopt both to ensure the best user experience:
- * <p>
+ * 
  * 1: Querying for the current array of mice using [GCMouse mice]
  * 2: Registering for Connection/Disconnection notifications from NSNotificationCenter.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("GameController")
@@ -82,7 +84,7 @@ public class GCMouse extends NSObject implements GCDevice {
 
     /**
      * The most recently used mouse device. If a user actuates a mouse input, that mouse will become the current one.
-     *
+     * 
      * @see GCMouseDidBecomeCurrentNotification
      * @see GCMouseDidStopBeingCurrentNotification
      */
@@ -134,7 +136,7 @@ public class GCMouse extends NSObject implements GCDevice {
 
     /**
      * Get a list of mice currently attached to the system
-     *
+     * 
      * @see GCMouseDidConnectNotification
      * @see GCMouseDidDisconnectNotification
      */
@@ -155,6 +157,7 @@ public class GCMouse extends NSObject implements GCDevice {
     @Selector("new")
     public static native GCMouse new_objc();
 
+    @Deprecated
     @Generated
     @Selector("physicalInputProfile")
     public native GCPhysicalInputProfile physicalInputProfile();

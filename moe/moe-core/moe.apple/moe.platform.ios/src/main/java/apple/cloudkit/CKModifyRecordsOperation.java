@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -153,7 +156,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
 
     /**
      * Determines whether the batch should fail atomically or not.
-     * <p>
+     * 
      * YES by default.
      * Server-side write atomicity is only enforced on zones that have @c CKRecordZoneCapabilityAtomic.
      * If @c isAtomic is YES, client-side checks are enforced regardless of the zone's capabilities. (For example, if a
@@ -183,7 +186,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordIDs to
      * errors keyed off of @c CKPartialErrorsByItemIDKey.
@@ -200,10 +203,14 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
 
     /**
      * Called on success or failure for each record.
-     * <p>
+     * 
      * Will not be invoked if @c perRecordSaveBlock is set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 15.0
      */
+    @Deprecated
     @Generated
     @Selector("perRecordCompletionBlock")
     @ObjCBlock(name = "call_perRecordCompletionBlock_ret")
@@ -211,7 +218,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
 
     /**
      * Indicates the progress for each record.
-     * <p>
+     * 
      * This method is called at least once with a progress of 1.0 for every record. Intermediate progress is only
      * reported for records that contain assets.
      * It is possible for progress to regress when a retry is automatically triggered.
@@ -240,7 +247,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
 
     /**
      * Determines whether the batch should fail atomically or not.
-     * <p>
+     * 
      * YES by default.
      * Server-side write atomicity is only enforced on zones that have @c CKRecordZoneCapabilityAtomic.
      * If @c isAtomic is YES, client-side checks are enforced regardless of the zone's capabilities. (For example, if a
@@ -261,7 +268,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of recordIDs to
      * errors keyed off of @c CKPartialErrorsByItemIDKey.
@@ -278,10 +285,14 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
 
     /**
      * Called on success or failure for each record.
-     * <p>
+     * 
      * Will not be invoked if @c perRecordSaveBlock is set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 15.0
      */
+    @Deprecated
     @Generated
     @Selector("setPerRecordCompletionBlock:")
     public native void setPerRecordCompletionBlock(
@@ -289,7 +300,7 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
 
     /**
      * Indicates the progress for each record.
-     * <p>
+     * 
      * This method is called at least once with a progress of 1.0 for every record. Intermediate progress is only
      * reported for records that contain assets.
      * It is possible for progress to regress when a retry is automatically triggered.
@@ -361,8 +372,10 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
 
     /**
      * Called on success or failure of a record deletion
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("perRecordDeleteBlock")
@@ -378,11 +391,13 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
 
     /**
      * Called on success or failure of a record save
-     * <p>
+     * 
      * Following a successful record save, this callback will be invoked with a nonnull @c record, and a nil @c error.
      * Following a save failure due to a per-item error (@c CKErrorServerRecordChanged, for example), this callback will
      * be invoked with a nil @c record, and a nonnull @c error
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("perRecordSaveBlock")
@@ -398,8 +413,10 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
 
     /**
      * Called on success or failure of a record deletion
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPerRecordDeleteBlock:")
@@ -415,11 +432,13 @@ public class CKModifyRecordsOperation extends CKDatabaseOperation {
 
     /**
      * Called on success or failure of a record save
-     * <p>
+     * 
      * Following a successful record save, this callback will be invoked with a nonnull @c record, and a nil @c error.
      * Following a save failure due to a per-item error (@c CKErrorServerRecordChanged, for example), this callback will
      * be invoked with a nil @c record, and a nonnull @c error
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPerRecordSaveBlock:")

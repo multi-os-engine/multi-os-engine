@@ -159,6 +159,9 @@ public class NSNotificationCenter extends NSObject {
     public native void addObserverSelectorNameObject(@Mapped(ObjCObjectMapper.class) Object observer, SEL aSelector,
             String aName, @Mapped(ObjCObjectMapper.class) Object anObject);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("addObserverForName:object:queue:usingBlock:")
     @MappedReturn(ObjCObjectMapper.class)

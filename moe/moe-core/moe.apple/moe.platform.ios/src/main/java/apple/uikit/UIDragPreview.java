@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -143,12 +146,17 @@ public class UIDragPreview extends NSObject implements NSCopying {
     @Selector("parameters")
     public native UIDragPreviewParameters parameters();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("previewForURL:")
     public static native UIDragPreview previewForURL(NSURL url);
 
     /**
      * If the title is nil or empty, this is the same as `previewForURL:`.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("previewForURL:title:")

@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -83,7 +86,7 @@ public class AVAssetVariantAudioAttributes extends NSObject {
 
     /**
      * [@property] formatIDs
-     * <p>
+     * 
      * Provides an array of audio formats present in the variant's renditions if any are declared. Each value in the
      * array is a NSNumber representation of AudioFormatID.
      */
@@ -128,11 +131,12 @@ public class AVAssetVariantAudioAttributes extends NSObject {
 
     /**
      * renditionSpecificAttributesForMediaOption:
-     * <p>
+     * 
      * Provides attributes for a specific audio media selection option. If no rendition specific attributes are
      * declared, it will be nil.
-     *
-     * @param mediaSelectionOption The option to return rendition specific information for.
+     * 
+     * @param mediaSelectionOption
+     *                             The option to return rendition specific information for.
      */
     @Generated
     @Selector("renditionSpecificAttributesForMediaOption:")

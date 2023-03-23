@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * This delegate receives updates about new accessories in the home.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -36,8 +38,9 @@ import org.moe.natj.objc.ann.Selector;
 public interface HMAccessoryBrowserDelegate {
     /**
      * Informs the delegate about new accessories discovered in the home.
-     *
+     * 
      * @param browser   Sender of the message.
+     * 
      * @param accessory New accessory that was discovered.
      */
     @Generated
@@ -49,8 +52,9 @@ public interface HMAccessoryBrowserDelegate {
 
     /**
      * Informs the delegate about new accessories removed from the home.
-     *
+     * 
      * @param browser   Sender of the message.
+     * 
      * @param accessory Accessory that was previously discovered but are no longer reachable.
      *                  This method is also invoked when an accessory is added to a home.
      */

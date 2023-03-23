@@ -24,13 +24,25 @@ public final class UIEventType {
     @Generated @NInt public static final long Touches = 0x0000000000000000L;
     @Generated @NInt public static final long Motion = 0x0000000000000001L;
     @Generated @NInt public static final long RemoteControl = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Presses = 0x0000000000000003L;
 
     @Generated
     private UIEventType() {
     }
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated @NInt public static final long Scroll = 0x000000000000000AL;
+    /**
+     * API-Since: 13.4
+     */
     @Generated @NInt public static final long Hover = 0x000000000000000BL;
+    /**
+     * API-Since: 13.4
+     */
     @Generated @NInt public static final long Transform = 0x000000000000000EL;
 }

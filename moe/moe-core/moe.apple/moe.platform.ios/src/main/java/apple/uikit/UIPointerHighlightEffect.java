@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Pointer slides under the given view and morphs into the view's shape
+ * 
+ * API-Since: 13.4
  */
 @Generated
 @Library("UIKit")

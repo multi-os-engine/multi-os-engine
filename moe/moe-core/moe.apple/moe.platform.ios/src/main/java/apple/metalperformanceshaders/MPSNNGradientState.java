@@ -29,9 +29,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A state created to record a MPSCNNKernel properties
  * at the time an -encode call was made. The contents are opaque.
- * <p>
+ * 
  * Gradient states must be created with [MPSCNNKernel resultStateForSourceImage:sourceStates:destinationImage:]
  * or analogous interfaces.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")

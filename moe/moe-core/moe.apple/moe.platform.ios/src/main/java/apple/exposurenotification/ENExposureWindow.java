@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * ===========================================================================================================================
- * <p>
+ * 
  * A duration of up to 30 minutes during which beacons from a TEK were observed.
+ * 
+ * API-Since: 12.5
  */
 @Generated
 @Library("ExposureNotification")
@@ -180,6 +182,8 @@ public class ENExposureWindow extends NSObject {
 
     /**
      * Type of variant of concern
+     * 
+     * API-Since: 15.2
      */
     @Generated
     @Selector("variantOfConcernType")

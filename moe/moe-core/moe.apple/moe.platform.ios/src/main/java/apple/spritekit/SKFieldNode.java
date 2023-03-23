@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -178,9 +181,10 @@ public class SKFieldNode extends SKNode {
      * A time varying differentiable Perlin simplex noise field. By default a smooth noise is calculated,
      * and the field is time varying. Use this to simulate such effects as fireflies, or snow.
      * To freeze the noise in place, set animationSpeed to 0.0. Mass is ignored.
-     *
+     * 
      * @param smoothness value of 0 means as noisy as possible, 1 means as smooth as possible
      * @param speed      is the general rate in Hz that any particular texel changes to a different value
+     * 
      * @see smoothness
      * @see animationSpeed
      */
@@ -241,9 +245,10 @@ public class SKFieldNode extends SKNode {
 
     /**
      * Just like Noise, except the strength of the noise is proportional to the velocity of the object in the field.
-     *
+     * 
      * @param smoothness value of 0 means as noisy as possible, 1 means as smooth as possible
      * @param speed      is the general rate in Hz that any particular texel changes to a different value
+     * 
      * @see smoothness
      * @see animationSpeed
      */
@@ -258,9 +263,10 @@ public class SKFieldNode extends SKNode {
      * Velocity fields override the effect of any other acceleration applied to the body.
      * Velocity fields are typically used for such effects as advection, for example, a velocity field
      * might describe the velocity on the surface of a river. An object placed in the river would then follow the river.
-     *
+     * 
      * @param velocityTexture The R and G channels of the supplied texture become x and y components of velocity. B and
      *                        A, if present in the SKTexture, are ignored.
+     * 
      * @see texture
      */
     @Generated
@@ -284,9 +290,9 @@ public class SKFieldNode extends SKNode {
 
     /**
      * fields that can be animated can have non zero values.
-     * <p>
+     * 
      * A value of 2 will animated twice as fast as a value of 1.
-     *
+     * 
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
      */
@@ -298,7 +304,7 @@ public class SKFieldNode extends SKNode {
      * Logical categories the field belongs to. Default is all categories.
      * These categories correspond to fieldBitMasks, and can be used to enforce that a particular field applies
      * to a particular category of objects.
-     *
+     * 
      * @see SKPhysicsBody.fieldBitMask
      * @see SKEmitterNode.fieldBitMask
      */
@@ -309,9 +315,9 @@ public class SKFieldNode extends SKNode {
     /**
      * The falloff exponent used to calculate field strength at a distance.
      * Falloff starts at the minimum radius.
-     * <p>
+     * 
      * The default exponent is zero, which results in a uniform field with no falloff.
-     *
+     * 
      * @see minimumRadius
      */
     @Generated
@@ -328,7 +334,7 @@ public class SKFieldNode extends SKNode {
 
     /**
      * If enabled, a field has an effect.
-     * <p>
+     * 
      * default YES
      */
     @Generated
@@ -337,7 +343,7 @@ public class SKFieldNode extends SKNode {
 
     /**
      * If enabled, a field has an effect.
-     * <p>
+     * 
      * default YES
      */
     @Generated
@@ -347,7 +353,7 @@ public class SKFieldNode extends SKNode {
     /**
      * If a field is exclusive, it suppresses any other field in its region of effect.
      * If two or more exclusive fields overlap, it is undefined which one of them will take effect
-     *
+     * 
      * @see region
      */
     @Generated
@@ -357,7 +363,7 @@ public class SKFieldNode extends SKNode {
     /**
      * If a field is exclusive, it suppresses any other field in its region of effect.
      * If two or more exclusive fields overlap, it is undefined which one of them will take effect
-     *
+     * 
      * @see region
      */
     @Generated
@@ -380,9 +386,9 @@ public class SKFieldNode extends SKNode {
 
     /**
      * fields that can be animated can have non zero values.
-     * <p>
+     * 
      * A value of 2 will animated twice as fast as a value of 1.
-     *
+     * 
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
      */
@@ -394,7 +400,7 @@ public class SKFieldNode extends SKNode {
      * Logical categories the field belongs to. Default is all categories.
      * These categories correspond to fieldBitMasks, and can be used to enforce that a particular field applies
      * to a particular category of objects.
-     *
+     * 
      * @see SKPhysicsBody.fieldBitMask
      * @see SKEmitterNode.fieldBitMask
      */
@@ -405,9 +411,9 @@ public class SKFieldNode extends SKNode {
     /**
      * The falloff exponent used to calculate field strength at a distance.
      * Falloff starts at the minimum radius.
-     * <p>
+     * 
      * The default exponent is zero, which results in a uniform field with no falloff.
-     *
+     * 
      * @see minimumRadius
      */
     @Generated
@@ -430,7 +436,7 @@ public class SKFieldNode extends SKNode {
 
     /**
      * fields without a smoothness component will return 0
-     *
+     * 
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
      */
@@ -447,7 +453,7 @@ public class SKFieldNode extends SKNode {
 
     /**
      * fields constructed with a texture can be uppdated by assigning a new texture
-     *
+     * 
      * @see velocityFieldWithTexture:velocityTexture
      */
     @Generated
@@ -456,7 +462,7 @@ public class SKFieldNode extends SKNode {
 
     /**
      * fields without a smoothness component will return 0
-     *
+     * 
      * @see noiseFieldWithSmoothness:smoothness:animationSpeed
      * @see turbulenceFieldWithSmoothness:smoothness:animationSpeed
      */
@@ -473,7 +479,7 @@ public class SKFieldNode extends SKNode {
 
     /**
      * fields constructed with a texture can be uppdated by assigning a new texture
-     *
+     * 
      * @see velocityFieldWithTexture:velocityTexture
      */
     @Generated

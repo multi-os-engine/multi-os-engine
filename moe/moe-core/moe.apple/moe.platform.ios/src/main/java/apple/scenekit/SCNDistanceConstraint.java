@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNDistanceConstraint
- * <p>
+ * 
  * A SCNDistanceConstraint ensure a minimum/maximum distance with a target node.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("SceneKit")
@@ -90,7 +92,7 @@ public class SCNDistanceConstraint extends SCNConstraint {
 
     /**
      * distanceConstraintWithTarget
-     * <p>
+     * 
      * Creates and returns a SCNDistanceConstraint constraint.
      */
     @Generated
@@ -133,7 +135,7 @@ public class SCNDistanceConstraint extends SCNConstraint {
 
     /**
      * [@property] maximumDistance
-     * <p>
+     * 
      * The minimum distance. Defaults to MAXFLOAT. Animatable.
      */
     @Generated
@@ -143,7 +145,7 @@ public class SCNDistanceConstraint extends SCNConstraint {
 
     /**
      * [@property] minimumDistance
-     * <p>
+     * 
      * The minimum distance. Defaults to 0. Animatable.
      */
     @Generated
@@ -166,7 +168,7 @@ public class SCNDistanceConstraint extends SCNConstraint {
 
     /**
      * [@property] maximumDistance
-     * <p>
+     * 
      * The minimum distance. Defaults to MAXFLOAT. Animatable.
      */
     @Generated
@@ -175,7 +177,7 @@ public class SCNDistanceConstraint extends SCNConstraint {
 
     /**
      * [@property] minimumDistance
-     * <p>
+     * 
      * The minimum distance. Defaults to 0. Animatable.
      */
     @Generated
@@ -184,7 +186,7 @@ public class SCNDistanceConstraint extends SCNConstraint {
 
     /**
      * [@property] target
-     * <p>
+     * 
      * Defines the target node to keep distance with.
      */
     @Generated
@@ -211,7 +213,7 @@ public class SCNDistanceConstraint extends SCNConstraint {
 
     /**
      * [@property] target
-     * <p>
+     * 
      * Defines the target node to keep distance with.
      */
     @Generated

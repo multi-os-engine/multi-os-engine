@@ -1,7 +1,6 @@
 package apple.pdfkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSAttributedString;
 import apple.foundation.NSMethodSignature;
@@ -28,7 +27,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("PDFKit")
 @Runtime(ObjCRuntime.class)
@@ -62,6 +65,8 @@ public class PDFSelection extends NSObject implements NSCopying {
      * PDFSelections than calling -[addSelection] above inside a loop. It is the "normalization" (removing the overlaps)
      * that can be slow when adding a selection to another. This function adds all the selections first and then
      * normalizes just once at the end.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("addSelections:")
@@ -118,6 +123,8 @@ public class PDFSelection extends NSObject implements NSCopying {
      * and
      * [NSColor secondarySelectedControlColor] when not active. Calling -[setColor] will force the specified color to be
      * used for both active and inactive drawing.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("color")
@@ -174,6 +181,8 @@ public class PDFSelection extends NSObject implements NSCopying {
      * line, then this will extend it to the entire line width. If the selection is across multiple lines, then the
      * first and last
      * lines are expected to wholly contain their respective rows of text.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("extendSelectionForLineBoundaries")
@@ -192,6 +201,8 @@ public class PDFSelection extends NSObject implements NSCopying {
      * Returns and empty PDFSelection. Generally this is not useful but you can use this empty PDFSelection as a
      * container
      * into which you -[addSelection] or -[addSelections] below.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initWithDocument:")
@@ -226,6 +237,8 @@ public class PDFSelection extends NSObject implements NSCopying {
     /**
      * Returns the number of contiguous ranges of text on the specified page. Returns zero if page is not in selection.
      * A typical, simple selection will contain a single range of text.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("numberOfTextRangesOnPage:")
@@ -242,6 +255,8 @@ public class PDFSelection extends NSObject implements NSCopying {
     /**
      * Returns a range of contiguous text at index on the specified page.
      * A typical, simple selection will contain a single range of text.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("rangeAtIndex:onPage:")
@@ -261,6 +276,8 @@ public class PDFSelection extends NSObject implements NSCopying {
      * receiver PDFSelection represents a selected paragraph, calling this method would return several PDFSelections -
      * one
      * for each line of text in the paragraph.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("selectionsByLine")
@@ -271,6 +288,8 @@ public class PDFSelection extends NSObject implements NSCopying {
      * and
      * [NSColor secondarySelectedControlColor] when not active. Calling -[setColor] will force the specified color to be
      * used for both active and inactive drawing.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setColor:")

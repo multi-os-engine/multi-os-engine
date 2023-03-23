@@ -28,10 +28,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * VNTrajectoryObservation
  * [@superclass] VNObservation
- * <p>
+ * 
  * The VNTrajectoryObservation describes a detected trajectory with the points on the trajectory and the equation
  * describing the trajectory. The observation also reprorts the duration describing when the trajectory was first
  * detected (which will be in the past).
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -93,7 +95,7 @@ public class VNTrajectoryObservation extends VNObservation {
 
     /**
      * The centroids of the contour being detected along the trajectory.
-     * <p>
+     * 
      * These are the unprocessed centroid points of the detected contour that is tracked on the trajectory. The points
      * may be slightly off the ideal trajectory as these are the measured points that fall within the allowed tolerance.
      * The maximum number or past points is limited by the maximum trajectory length set in the request.
@@ -143,7 +145,7 @@ public class VNTrajectoryObservation extends VNObservation {
 
     /**
      * The centroids of the calculated trajectory from the detected points.
-     * <p>
+     * 
      * These are the calculated centroid points along the ideal trajectory described by the parabolic equation. The
      * equation and the projected points of the detected trajectory get refined over time. The maximum number of cached
      * points is limited by the maximum points needed to describe the trajectory together with the parabolic equation.
@@ -185,8 +187,10 @@ public class VNTrajectoryObservation extends VNObservation {
 
     /**
      * The moving average radius of the object being tracked.
-     * <p>
+     * 
      * This is the radius of the object at each detected point (used to determine the trajectory) averaged.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("movingAverageRadius")

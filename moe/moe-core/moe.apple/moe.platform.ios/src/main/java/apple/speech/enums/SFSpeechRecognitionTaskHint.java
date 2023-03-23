@@ -21,23 +21,33 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * Hints on kind of speech recognition being performed
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class SFSpeechRecognitionTaskHint {
     /**
      * Unspecified recognition
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Unspecified = 0x0000000000000000L;
     /**
      * General dictation/keyboard-style
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Dictation = 0x0000000000000001L;
     /**
      * Search-style requests
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Search = 0x0000000000000002L;
     /**
      * Short, confirmation-style requests ("Yes", "No", "Maybe")
+     * 
+     * API-Since: 10.0
      */
     @Generated @NInt public static final long Confirmation = 0x0000000000000003L;
 

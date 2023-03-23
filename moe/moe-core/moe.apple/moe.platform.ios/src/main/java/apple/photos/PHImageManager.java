@@ -21,7 +21,6 @@ import apple.avfoundation.AVAsset;
 import apple.avfoundation.AVAssetExportSession;
 import apple.avfoundation.AVAudioMix;
 import apple.avfoundation.AVPlayerItem;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
@@ -47,9 +46,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * Note that all sizes are in pixels
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Photos")
@@ -105,6 +107,9 @@ public class PHImageManager extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("defaultManager")
     public static native PHImageManager defaultManager();
@@ -165,6 +170,9 @@ public class PHImageManager extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("cancelImageRequest:")
     public native void cancelImageRequest(int requestID);
@@ -175,6 +183,8 @@ public class PHImageManager extends NSObject {
 
     /**
      * Everything else. The result handler is called on an arbitrary queue.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("requestAVAssetForVideo:options:resultHandler:")
@@ -183,6 +193,8 @@ public class PHImageManager extends NSObject {
 
     /**
      * Export. The result handler is called on an arbitrary queue.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("requestExportSessionForVideo:options:exportPreset:resultHandler:")
@@ -192,7 +204,7 @@ public class PHImageManager extends NSObject {
 
     /**
      * Request largest represented image as data bytes for the specified asset.
-     *
+     * 
      * @param asset         The asset whose image data is to be loaded.
      * @param options       Options specifying how Photos should handle the request, format the requested image, and
      *                      notify your app of progress or errors.
@@ -202,7 +214,11 @@ public class PHImageManager extends NSObject {
      * @param resultHandler A block that is called exactly once either synchronously on the current thread or
      *                      asynchronously on the main thread depending on the synchronous option specified in the
      *                      PHImageRequestOptions options parameter (deliveryMode is ignored).
+     * 
+     *                      API-Since: 8.0
+     *                      Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("requestImageDataForAsset:options:resultHandler:")
     public native int requestImageDataForAssetOptionsResultHandler(PHAsset asset, PHImageRequestOptions options,
@@ -210,7 +226,7 @@ public class PHImageManager extends NSObject {
 
     /**
      * Request an image representation for the specified asset.
-     *
+     * 
      * @param asset         The asset whose image data is to be loaded.
      * @param targetSize    The target size of image to be returned.
      * @param contentMode   An option for how to fit the image to the aspect ratio of the requested size.
@@ -241,6 +257,8 @@ public class PHImageManager extends NSObject {
      *                      PHImageRequestOptions options parameter.
      * @return A numeric identifier for the request. If you need to cancel the request before it completes, pass this
      *         identifier to the cancelImageRequest: method.
+     * 
+     *         API-Since: 8.0
      */
     @Generated
     @Selector("requestImageForAsset:targetSize:contentMode:options:resultHandler:")
@@ -253,6 +271,8 @@ public class PHImageManager extends NSObject {
      * options are specified), the resultHandler block may be called more than once (the first call may occur before the
      * method returns). The PHImageResultIsDegradedKey key in the result handler's info parameter indicates when a
      * temporary low-quality live photo is provided.
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("requestLivePhotoForAsset:targetSize:contentMode:options:resultHandler:")
@@ -262,6 +282,8 @@ public class PHImageManager extends NSObject {
 
     /**
      * Playback only. The result handler is called on an arbitrary queue.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("requestPlayerItemForVideo:options:resultHandler:")
@@ -317,7 +339,7 @@ public class PHImageManager extends NSObject {
 
     /**
      * Request largest represented image as data bytes and EXIF orientation for the specified asset.
-     *
+     * 
      * @param asset         The asset whose image data is to be loaded.
      * @param options       Options specifying how Photos should handle the request, format the requested image, and
      *                      notify your app of progress or errors.
@@ -329,6 +351,8 @@ public class PHImageManager extends NSObject {
      *                      PHImageRequestOptions options parameter (deliveryMode is ignored). Orientation is an EXIF
      *                      orientation as an CGImagePropertyOrientation. For iOS or tvOS, convert this to an
      *                      UIImageOrientation.
+     * 
+     *                      API-Since: 13.0
      */
     @Generated
     @Selector("requestImageDataAndOrientationForAsset:options:resultHandler:")

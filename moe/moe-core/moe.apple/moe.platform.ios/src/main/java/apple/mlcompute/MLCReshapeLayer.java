@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCReshapeLayer
- * <p>
+ * 
  * A reshape layer.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -118,7 +120,7 @@ public class MLCReshapeLayer extends MLCLayer {
 
     /**
      * Creates a reshape layer with the shape you specify.
-     *
+     * 
      * @param shape An array that contains the sizes of each dimension.
      * @return A new reshape layer.
      */
@@ -145,8 +147,10 @@ public class MLCReshapeLayer extends MLCLayer {
 
     /**
      * [@property] shape
-     * <p>
+     * 
      * The target shape.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("shape")

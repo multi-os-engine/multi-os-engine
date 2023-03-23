@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Constraint describing expected MLMultiArray properties
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreML")
@@ -168,6 +170,8 @@ public class MLMultiArrayConstraint extends NSObject implements NSSecureCoding {
 
     /**
      * Detailed shape constraint
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("shapeConstraint")

@@ -31,9 +31,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNPad
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Describes a padding operation
- * <p>
+ * 
  * You should not use this filter to zero pad your data in the XY-plane.
  * This filter achieves padding by copying the input image and therefore should only be used in
  * special circumstances where the normal padding operation, defined for most filters through
@@ -61,14 +61,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * filled in the destination is determined by the number of active feature channels
  * determined by @ref sourceFeatureChannelOffset and @ref sourceFeatureChannelMaxCount and
  * the amount of padding to be added on each side of the source.
- * <p>
+ * 
  * Example for feature channel indices:
  * [@code]
  * paddingSizeBefore.channel = 2, paddingSizeAfter.channel = 3,
  * sourceFeatureChannelOffset = 1, sourceFeatureChannelMaxCount = 3,
  * destinationFeatureChannelOffset = 4.
  * We get the following padding operation:
- * <p>
+ * 
  * Source:
  * |-----------------------------|
  * | x0 | x1 | x2 | x3 | x4 | x5 |
@@ -77,9 +77,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * |----------------------------------------------------------------|
  * | - | - | - | - | 0 | 0 | x1 | x2 | x3 | 0 | 0 | 0 | - |
  * |----------------------------------------------------------------|
- * <p>
+ * 
  * And with @ref edgeMode = MPSImageEdgeModeMirrorWithEdge:
- * <p>
+ * 
  * Source:
  * |-----------------------------|
  * | x0 | x1 | x2 | x3 | x4 | x5 |
@@ -88,19 +88,22 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * |----------------------------------------------------------------|
  * | - | - | - | - | x2 | x1 | x1 | x2 | x3 | x3 | x2 | x1 | - |
  * |----------------------------------------------------------------|
- * <p>
+ * 
  * Here the symbols '-' denote pixels not written by the kernel.
- * <p>
+ * 
  * NOTE: The 'channel' coordinate and size in sourceRegion can be
  * set to other values than those with multiple of four channels,
  * but the @ref destinationFeatureChannelOffset property must be multiple of
  * four, which means that there are some limitations to what can be achieved
  * with this filter alone.
- * <p>
+ * 
  * [@endcode]
  * [@NOTE] MPSNNPad is currently the only filter that supports
  * [@ref] MPSImageEdgeModeMirror, @ref MPSImageEdgeModeMirrorWithEdge and
  * [@ref] MPSImageEdgeModeConstant.
+ * 
+ * 
+ * API-Since: 12.1
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -162,7 +165,7 @@ public class MPSNNPad extends MPSCNNKernel {
 
     /**
      * [@property] fillValue
-     * <p>
+     * 
      * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
      * NOTE: this value is ignored if the filter is initialized with a per-channel fill value
      * using @ref initWithDevice:paddingSizeBefore:paddingSizeAfter:fillValueArray:.
@@ -186,9 +189,9 @@ public class MPSNNPad extends MPSCNNKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSNNPad
      * @param device   The MTLDevice on which to make the MPSNNPad
      * @return A new MPSNNPad object, or nil if failure.
@@ -199,7 +202,7 @@ public class MPSNNPad extends MPSCNNKernel {
 
     /**
      * Initialize a MPSNNPad kernel
-     *
+     * 
      * @param device The device the filter will run on.
      * @return A valid MPSNNPad object or nil, if failure.
      */
@@ -209,7 +212,7 @@ public class MPSNNPad extends MPSCNNKernel {
 
     /**
      * Initialize a MPSNNPad kernel
-     *
+     * 
      * @param device            The device the filter will run on
      * @param paddingSizeBefore The amount of padding to add before the source image - see details above.
      * @param paddingSizeAfter  The amount of padding to add after the source image - see details above.
@@ -223,7 +226,7 @@ public class MPSNNPad extends MPSCNNKernel {
 
     /**
      * Initialize a MPSNNPad kernel
-     *
+     * 
      * @param device            The device the filter will run on
      * @param paddingSizeBefore The amount of padding to add before the source image - see details above.
      * @param paddingSizeAfter  The amount of padding to add after the source image - see details above.
@@ -269,7 +272,7 @@ public class MPSNNPad extends MPSCNNKernel {
 
     /**
      * [@property] paddingSizeAfter
-     * <p>
+     * 
      * This property is used for automatically sizing the destination image
      * for the function @ref destinationImageDescriptorForSourceImages:sourceStates:. Defines
      * how much padding to assign on the right, bottom and higher feature channel indices
@@ -289,7 +292,7 @@ public class MPSNNPad extends MPSCNNKernel {
 
     /**
      * [@property] paddingSizeBefore
-     * <p>
+     * 
      * This property is used for automatically sizing the destination image
      * for the function @ref destinationImageDescriptorForSourceImages:sourceStates:. Defines
      * how much padding to assign on the left, top and smaller feature channel indices
@@ -316,7 +319,7 @@ public class MPSNNPad extends MPSCNNKernel {
 
     /**
      * [@property] fillValue
-     * <p>
+     * 
      * Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
      * NOTE: this value is ignored if the filter is initialized with a per-channel fill value
      * using @ref initWithDevice:paddingSizeBefore:paddingSizeAfter:fillValueArray:.
@@ -327,7 +330,7 @@ public class MPSNNPad extends MPSCNNKernel {
 
     /**
      * [@property] paddingSizeAfter
-     * <p>
+     * 
      * This property is used for automatically sizing the destination image
      * for the function @ref destinationImageDescriptorForSourceImages:sourceStates:. Defines
      * how much padding to assign on the right, bottom and higher feature channel indices
@@ -346,7 +349,7 @@ public class MPSNNPad extends MPSCNNKernel {
 
     /**
      * [@property] paddingSizeBefore
-     * <p>
+     * 
      * This property is used for automatically sizing the destination image
      * for the function @ref destinationImageDescriptorForSourceImages:sourceStates:. Defines
      * how much padding to assign on the left, top and smaller feature channel indices

@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueHeatingCooling
- * <p>
+ * 
  * [@constant] HMCharacteristicValueHeatingCoolingOff Off.
  * [@constant] HMCharacteristicValueHeatingCoolingHeat If the current temperature is below the target temperature then
  * turn on heating.
@@ -29,12 +29,26 @@ import org.moe.natj.general.ann.NInt;
  * turn on cooling.
  * [@constant] HMCharacteristicValueHeatingCoolingAuto Turn on heating or cooling to maintain temperature within the
  * heating and cooling threshold of the target temperature.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class HMCharacteristicValueHeatingCooling {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Off = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Heat = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Cool = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Auto = 0x0000000000000003L;
 
     @Generated

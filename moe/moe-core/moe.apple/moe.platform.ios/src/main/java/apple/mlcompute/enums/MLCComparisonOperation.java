@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MLCComparisonOperation
- * <p>
+ * 
  * A comparison operation.
  */
 @Generated

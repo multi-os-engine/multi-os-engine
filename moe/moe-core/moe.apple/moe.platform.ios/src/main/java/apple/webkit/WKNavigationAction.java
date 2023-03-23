@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A WKNavigationAction object contains information about an action that may cause a navigation, used for making policy
  * decisions.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("WebKit")
@@ -159,7 +161,7 @@ public class WKNavigationAction extends NSObject {
 
     /**
      * The type of action that triggered the navigation.
-     * <p>
+     * 
      * The value is one of the constants of the enumerated type WKNavigationType.
      */
     @Generated
@@ -190,6 +192,8 @@ public class WKNavigationAction extends NSObject {
 
     /**
      * A value indicating whether the web content used a download attribute to indicate that this should be downloaded.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @Selector("shouldPerformDownload")

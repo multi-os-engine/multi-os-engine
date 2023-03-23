@@ -40,7 +40,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface]
- * <p>
+ * 
  * JSManagedValue represents a "conditionally retained" JSValue.
  * "Conditionally retained" means that as long as the JSManagedValue's
  * JSValue is reachable through the JavaScript object graph,
@@ -48,10 +48,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * addManagedReference:withOwner:, the corresponding JSValue will
  * be retained. However, if neither graph reaches the JSManagedValue, the
  * corresponding JSValue will be released and set to nil.
- * <p>
+ * 
  * The primary use for a JSManagedValue is to store a JSValue in an Objective-C
  * or Swift object that is exported to JavaScript. It is incorrect to store a JSValue
  * in an object that is exported to JavaScript, since doing so creates a retain cycle.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("JavaScriptCore")
@@ -139,13 +141,16 @@ public class JSManagedValue extends NSObject {
 
     /**
      * Create a JSManagedValue from a JSValue.
-     *
+     * 
      * @return The new JSManagedValue.
      */
     @Generated
     @Selector("managedValueWithValue:")
     public static native JSManagedValue managedValueWithValue(JSValue value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("managedValueWithValue:andOwner:")
     public static native JSManagedValue managedValueWithValueAndOwner(JSValue value,
@@ -183,7 +188,7 @@ public class JSManagedValue extends NSObject {
 
     /**
      * Create a JSManagedValue.
-     *
+     * 
      * @return The new JSManagedValue.
      */
     @Generated
@@ -192,9 +197,9 @@ public class JSManagedValue extends NSObject {
 
     /**
      * [@property]
-     * <p>
+     * 
      * Get the JSValue from the JSManagedValue.
-     *
+     * 
      * @return The corresponding JSValue for this JSManagedValue or
      *         nil if the JSValue has been collected.
      */

@@ -13,6 +13,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@c] CPListSelectable describes list items that accept a list item handler, called when
  * the user selects this list item.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CarPlay")
@@ -21,7 +23,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface CPSelectableListItem extends CPListTemplateItem {
     /**
      * An optional action block, fired when the user selects this item in a list template.
-     * <p>
+     * 
      * You must call the completion block after processing the user's selection.
      */
     @Generated
@@ -46,7 +48,7 @@ public interface CPSelectableListItem extends CPListTemplateItem {
 
     /**
      * An optional action block, fired when the user selects this item in a list template.
-     * <p>
+     * 
      * You must call the completion block after processing the user's selection.
      */
     @Generated

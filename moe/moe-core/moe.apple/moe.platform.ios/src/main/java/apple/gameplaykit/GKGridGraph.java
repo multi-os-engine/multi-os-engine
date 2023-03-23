@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A collection of GKGraphNodes that are governed by a 2D Cartesian grid
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -167,7 +169,7 @@ public class GKGridGraph<_NodeType> extends GKGraph {
     /**
      * Connects the given GKGridGraphNode to this graph by connecting it to it's adjacent nodes on the grid
      * Input node must have coordinates within the rectangle specified by minCoordinates and maxCoordinates
-     *
+     * 
      * @param node the node to be connected
      */
     @Generated

@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * returns elementwise comparison of left and right
+ * 
+ * API-Since: 12.1
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -77,7 +79,7 @@ public class MPSNNComparisonNode extends MPSNNBinaryArithmeticNode {
 
     /**
      * [@property] comparisonType
-     * <p>
+     * 
      * The comparison type to set on the underlying kernel. Defaults
      * to MPSNNComparisonTypeEqual.
      */
@@ -155,7 +157,7 @@ public class MPSNNComparisonNode extends MPSNNBinaryArithmeticNode {
 
     /**
      * [@property] comparisonType
-     * <p>
+     * 
      * The comparison type to set on the underlying kernel. Defaults
      * to MPSNNComparisonTypeEqual.
      */

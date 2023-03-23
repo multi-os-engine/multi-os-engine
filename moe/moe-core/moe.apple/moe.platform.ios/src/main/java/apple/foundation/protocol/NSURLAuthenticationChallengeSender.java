@@ -28,13 +28,15 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] NSURLAuthenticationChallengeSender
- * <p>
+ * 
  * This protocol represents the sender of an
  * authentication challenge. It has methods to provide a credential,
  * to continue without any credential, getting whatever failure
  * result would happen in that case, cancel a challenge, perform the default
  * action as defined by the system, or reject the currently supplied protection-space
  * in the challenge.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")

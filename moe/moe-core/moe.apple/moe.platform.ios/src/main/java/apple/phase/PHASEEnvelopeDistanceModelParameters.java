@@ -24,10 +24,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * PHASEEnvelopeDistanceModelParameters
- * <p>
+ * 
  * Envelope distance model parameters.
- * <p>
+ * 
  * Envelope-driven attenuation over distance.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -89,7 +91,7 @@ public class PHASEEnvelopeDistanceModelParameters extends PHASEDistanceModelPara
 
     /**
      * [@property] envelope
-     * <p>
+     * 
      * A PHASEEnvelope object
      * [@note]
      * The x values are interpreted as distance and the y values are interpreted as gain.
@@ -109,12 +111,14 @@ public class PHASEEnvelopeDistanceModelParameters extends PHASEDistanceModelPara
 
     /**
      * initWithEnvelope
-     * <p>
+     * 
      * Initialize a PHASEEnvelopeDistanceModelParameters with a PHASEEnvelope
-     *
-     * @param envelope An envelope object where x values are interpreted as distance and the y values interpreted as
+     * 
+     * @param envelope
+     *                 An envelope object where x values are interpreted as distance and the y values interpreted as
      *                 gain.
-     * @return An instance, or nil if initialization failed.
+     * @return
+     *         An instance, or nil if initialization failed.
      */
     @Generated
     @Selector("initWithEnvelope:")

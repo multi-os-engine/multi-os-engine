@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 3.0
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -151,10 +154,16 @@ public class SKProduct extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("downloadContentLengths")
     public native NSArray<? extends NSNumber> downloadContentLengths();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("downloadContentVersion")
     public native String downloadContentVersion();
@@ -165,27 +174,44 @@ public class SKProduct extends NSObject {
 
     /**
      * YES if this product has content downloadable using SKDownload
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("isDownloadable")
     public native boolean isDownloadable();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("localizedTitle")
     public native String localizedTitle();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("price")
     public native NSDecimalNumber price();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("priceLocale")
     public native NSLocale priceLocale();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("productIdentifier")
     public native String productIdentifier();
@@ -197,24 +223,38 @@ public class SKProduct extends NSObject {
     @Selector("contentVersion")
     public native String contentVersion();
 
+    /**
+     * API-Since: 12.2
+     */
     @Generated
     @Selector("discounts")
     public native NSArray<? extends SKProductDiscount> discounts();
 
+    /**
+     * API-Since: 11.2
+     */
     @Generated
     @Selector("introductoryPrice")
     public native SKProductDiscount introductoryPrice();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("subscriptionGroupIdentifier")
     public native String subscriptionGroupIdentifier();
 
+    /**
+     * API-Since: 11.2
+     */
     @Generated
     @Selector("subscriptionPeriod")
     public native SKProductSubscriptionPeriod subscriptionPeriod();
 
     /**
      * YES if this product allows for sharing among family members
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isFamilyShareable")

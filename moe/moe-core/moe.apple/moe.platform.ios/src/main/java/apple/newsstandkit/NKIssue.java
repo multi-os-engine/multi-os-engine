@@ -43,9 +43,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NKIssue
- * <p>
+ * 
  * Represents the Newsstand issue and its location on disk.
- * <p>
+ * 
  * All Newsstand issues have a publication date and a unique name.
  * You register assets for download through this class.
  * All of the Newsstand content that represents this issue should be
@@ -56,7 +56,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * is "content available".
  * An issue is created by adding it to the library with
  * -[NKLibrary addIssueWithName:date:].
+ * 
+ * API-Since: 5.0
+ * Deprecated-Since: 13.0
+ * Deprecated-Message: Use the Remote Notifications Background Modes instead:
+ * https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_updates_to_your_app_silently
  */
+@Deprecated
 @Generated
 @Library("NewsstandKit")
 @Runtime(ObjCRuntime.class)
@@ -169,7 +175,7 @@ public class NKIssue extends NSObject {
 
     /**
      * addAssetWithRequest:
-     * <p>
+     * 
      * Add a downloading asset to this issue. Initiate the download for this
      * asset with the downloadWithDelegate: method on the NKAssetDownload.
      */
@@ -179,7 +185,7 @@ public class NKIssue extends NSObject {
 
     /**
      * [@property] contentURL
-     * <p>
+     * 
      * All content that represents this issue should be placed in the
      * URL provided.
      */
@@ -189,7 +195,7 @@ public class NKIssue extends NSObject {
 
     /**
      * [@property] date
-     * <p>
+     * 
      * The date of this issue
      */
     @Generated
@@ -198,7 +204,7 @@ public class NKIssue extends NSObject {
 
     /**
      * [@property] downloadingAssets
-     * <p>
+     * 
      * An array of NKAssetDownload associated with this issue.
      */
     @Generated
@@ -211,7 +217,7 @@ public class NKIssue extends NSObject {
 
     /**
      * [@property] name
-     * <p>
+     * 
      * The unique name given to this issue
      */
     @Generated
@@ -220,9 +226,9 @@ public class NKIssue extends NSObject {
 
     /**
      * [@property] status
-     * <p>
+     * 
      * The availability of this issue's content.
-     * <p>
+     * 
      * If there are asset downloads associated with this issue, the status
      * is NKIssueContentStatusDownloading. If there are no downloading assets
      * and the directory represented by contentURL is non-empty, the status

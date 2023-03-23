@@ -44,12 +44,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This operation will fetch records changes across the given record zones
- * <p>
+ * 
  * For each @c previousServerChangeToken passed in with a @c CKFetchRecordZoneChangesConfiguration, only records that
  * have changed since that anchor will be fetched.
  * If this is your first fetch of a zone or if you wish to re-fetch all records within a zone, do not include a @c
  * previousServerChangeToken.
  * Change tokens are opaque tokens and clients should not infer any behavior based on their content.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CloudKit")
@@ -162,16 +164,16 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
     public static native long version_static();
 
     /**
-     * Determines if the opertaion should fetch all changes from the server before completing.
-     * <p>
+     * Determines if the operation should fetch all changes from the server before completing.
+     * 
      * When set to YES, this operation will send repeated requests to the server until all record changes have been
      * fetched. @c recordZoneChangeTokensUpdatedBlock will be invoked periodically, to give clients an updated change
      * token so that already-fetched record changes don't need to be re-fetched on a subsequent operation. @c
      * recordZoneFetchCompletionBlock will only be called once and @c moreComing will always be NO.
-     * <p>
+     * 
      * When set to NO, it is the responsibility of the caller to issue subsequent fetch-changes operations when @c
      * moreComing is YES in a @c recordZoneFetchCompletionBlock invocation.
-     * <p>
+     * 
      * [@c] fetchAllChanges is YES by default
      */
     @Generated
@@ -180,7 +182,7 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * [@c] serverChangeToken-s previously returned via a @c recordZoneChangeTokensUpdatedBlock or @c
      * recordZoneFetchCompletionBlock invocation, along with the record changes that preceded it, are valid even if
      * there is a subsequent @c operationError
@@ -197,12 +199,22 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
     @Selector("init")
     public native CKFetchRecordZoneChangesOperation init();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithRecordZoneIDs:optionsByRecordZoneID:")
     public native CKFetchRecordZoneChangesOperation initWithRecordZoneIDsOptionsByRecordZoneID(
             NSArray<? extends CKRecordZoneID> recordZoneIDs,
             NSDictionary<? extends CKRecordZoneID, ? extends CKFetchRecordZoneChangesOptions> optionsByRecordZoneID);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("optionsByRecordZoneID")
     public native NSDictionary<? extends CKRecordZoneID, ? extends CKFetchRecordZoneChangesOptions> optionsByRecordZoneID();
@@ -210,7 +222,12 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
     /**
      * If the replacement callback @c recordWasChangedBlock is set, this callback block is ignored.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use recordWasChangedBlock instead, which surfaces per-record errors
      */
+    @Deprecated
     @Generated
     @Selector("recordChangedBlock")
     @ObjCBlock(name = "call_recordChangedBlock_ret")
@@ -255,16 +272,16 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
     public native NSArray<? extends CKRecordZoneID> recordZoneIDs();
 
     /**
-     * Determines if the opertaion should fetch all changes from the server before completing.
-     * <p>
+     * Determines if the operation should fetch all changes from the server before completing.
+     * 
      * When set to YES, this operation will send repeated requests to the server until all record changes have been
      * fetched. @c recordZoneChangeTokensUpdatedBlock will be invoked periodically, to give clients an updated change
      * token so that already-fetched record changes don't need to be re-fetched on a subsequent operation. @c
      * recordZoneFetchCompletionBlock will only be called once and @c moreComing will always be NO.
-     * <p>
+     * 
      * When set to NO, it is the responsibility of the caller to issue subsequent fetch-changes operations when @c
      * moreComing is YES in a @c recordZoneFetchCompletionBlock invocation.
-     * <p>
+     * 
      * [@c] fetchAllChanges is YES by default
      */
     @Generated
@@ -273,7 +290,7 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * [@c] serverChangeToken-s previously returned via a @c recordZoneChangeTokensUpdatedBlock or @c
      * recordZoneFetchCompletionBlock invocation, along with the record changes that preceded it, are valid even if
      * there is a subsequent @c operationError
@@ -286,6 +303,11 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
     public native void setFetchRecordZoneChangesCompletionBlock(
             @ObjCBlock(name = "call_setFetchRecordZoneChangesCompletionBlock") Block_setFetchRecordZoneChangesCompletionBlock value);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("setOptionsByRecordZoneID:")
     public native void setOptionsByRecordZoneID(
@@ -294,7 +316,12 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
     /**
      * If the replacement callback @c recordWasChangedBlock is set, this callback block is ignored.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Use recordWasChangedBlock instead, which surfaces per-record errors
      */
+    @Deprecated
     @Generated
     @Selector("setRecordChangedBlock:")
     public native void setRecordChangedBlock(
@@ -410,16 +437,25 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
                 boolean arg3, NSError arg4);
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("configurationsByRecordZoneID")
     public native NSDictionary<? extends CKRecordZoneID, ? extends CKFetchRecordZoneChangesConfiguration> configurationsByRecordZoneID();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithRecordZoneIDs:configurationsByRecordZoneID:")
     public native CKFetchRecordZoneChangesOperation initWithRecordZoneIDsConfigurationsByRecordZoneID(
             NSArray<? extends CKRecordZoneID> recordZoneIDs,
             NSDictionary<? extends CKRecordZoneID, ? extends CKFetchRecordZoneChangesConfiguration> configurationsByRecordZoneID);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setConfigurationsByRecordZoneID:")
     public native void setConfigurationsByRecordZoneID(
@@ -429,6 +465,8 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
      * If a record fails in post-processing (say, a network failure materializing a @c CKAsset record field), the
      * per-record error will be passed here.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("recordWasChangedBlock")
@@ -446,6 +484,8 @@ public class CKFetchRecordZoneChangesOperation extends CKDatabaseOperation {
      * If a record fails in post-processing (say, a network failure materializing a @c CKAsset record field), the
      * per-record error will be passed here.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setRecordWasChangedBlock:")

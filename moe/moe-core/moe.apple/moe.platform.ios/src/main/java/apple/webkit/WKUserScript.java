@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A @link WKUserScript @/link object represents a script that can be injected into webpages.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("WebKit")
@@ -165,10 +167,10 @@ public class WKUserScript extends NSObject implements NSCopying {
 
     /**
      * Returns an initialized user script that can be added to a @link WKUserContentController @/link.
-     * <p>
+     * 
      * Calling this method is the same as calling `initWithSource:injectionTime:forMainFrameOnly:inContentWorld:` with a
      * `contentWorld` value of `WKContentWorld.pageWorld`
-     *
+     * 
      * @param source           The script source.
      * @param injectionTime    When the script should be injected.
      * @param forMainFrameOnly Whether the script should be injected into all frames or just the main frame.
@@ -202,11 +204,13 @@ public class WKUserScript extends NSObject implements NSCopying {
 
     /**
      * Returns an initialized user script that can be added to a @link WKUserContentController @/link.
-     *
+     * 
      * @param source           The script source.
      * @param injectionTime    When the script should be injected.
      * @param forMainFrameOnly Whether the script should be injected into all frames or just the main frame.
      * @param contentWorld     The WKContentWorld in which to inject the script.
+     * 
+     *                         API-Since: 14.0
      */
     @Generated
     @Selector("initWithSource:injectionTime:forMainFrameOnly:inContentWorld:")

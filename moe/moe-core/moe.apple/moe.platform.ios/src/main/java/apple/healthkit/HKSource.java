@@ -45,8 +45,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKSource
- * <p>
+ * 
  * Represents the entity that created an object stored by HealthKit.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -104,7 +106,7 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * defaultSource
-     * <p>
+     * 
      * Returns the source representing the calling application.
      */
     @Generated
@@ -173,7 +175,7 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * [@property] bundleIdentifier
-     * <p>
+     * 
      * The bundle identifier of the source represented by the receiver.
      */
     @Generated
@@ -200,7 +202,7 @@ public class HKSource extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * [@property] name
-     * <p>
+     * 
      * The name of the source represented by the receiver. If the source is an app, then the name is the
      * localized name of the app.
      */

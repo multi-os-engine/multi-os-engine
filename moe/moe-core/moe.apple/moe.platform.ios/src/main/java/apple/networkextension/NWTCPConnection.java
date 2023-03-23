@@ -43,8 +43,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NWTCPConnection
- * <p>
+ * 
  * Establish TCP connections to an endpoint, and send and receive data on the TCP connection.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -158,9 +160,11 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * cancel:
-     * <p>
+     * 
      * Cancel the connection. This will clean up the resources associated with this object
      * and transition this object to NWTCPConnectionStateCancelled state.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("cancel")
@@ -168,13 +172,15 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * [@property] connectedPath
-     * <p>
+     * 
      * The network path over which the connection was established. The caller can query
      * additional properties from the NWPath object for more information.
-     * <p>
+     * 
      * Note that this contains a snapshot of information at the time of connection establishment
      * for this connection only. As a result, some underlying properties might change in time and
      * might not reflect the path for other connections that might be established at different times.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("connectedPath")
@@ -182,8 +188,10 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * [@property] endpoint
-     * <p>
+     * 
      * The destination endpoint with which this connection was created.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("endpoint")
@@ -191,9 +199,11 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * [@property] error
-     * <p>
+     * 
      * The connection-wide error property indicates any fatal error that occurred while
      * processing the connection or performing data reading or writing.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("error")
@@ -201,11 +211,13 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * [@property] hasBetterPath
-     * <p>
+     * 
      * YES if the system determines there is a better path the destination can be reached if
      * the caller creates a new connection using the same endpoint and parameters. This can
      * be done using the convenience upgrade initializer method.
      * Use KVO to watch this property to get updates.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("hasBetterPath")
@@ -217,15 +229,15 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * initWithUpgradeForConnection:
-     * <p>
+     * 
      * This convenience initializer can be used to create a new connection that would only
      * be connected if there exists a better path (as determined by the system) to the destination
      * endpoint of the original connection. It will be initialized using the same destination endpoint
      * and set of parameters from the original connection.
-     * <p>
+     * 
      * If the original connection becomes disconnected or cancelled, the new "upgrade" connection
      * would automatically be considered better.
-     * <p>
+     * 
      * The caller should create an NWTCPConnection and watch for the hasBetterPath property.
      * When this property is YES, the caller should attempt to create a new upgrade
      * connection, with the goal to start transferring data on the new better path as soon as
@@ -233,9 +245,11 @@ public class NWTCPConnection extends NSObject {
      * becomes connected and when the caller wraps up the previous caller session on
      * the original connection, the caller can start using the new upgrade connection and
      * tear down the original one.
-     *
+     * 
      * @param connection The original connection from which the caller will upgrade
      * @return An initialized NWTCPConnection
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithUpgradeForConnection:")
@@ -243,8 +257,10 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * [@property] viable
-     * <p>
+     * 
      * YES if the connection can read and write data, NO otherwise. Use KVO to watch this property.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isViable")
@@ -252,8 +268,10 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * [@property] localAddress
-     * <p>
+     * 
      * The IP address endpoint from which the connection was connected.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("localAddress")
@@ -261,12 +279,14 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * readLength:completionHandler:
-     * <p>
+     * 
      * Read "length" number of bytes. See readMinimumLength:maximumLength:completionHandler:
      * for a complete discussion of the callback behavior.
-     *
+     * 
      * @param length     The exact number of bytes the application wants to read
      * @param completion The completion handler to be invoked when there is data to read or an error occurred
+     * 
+     *                   API-Since: 9.0
      */
     @Generated
     @Selector("readLength:completionHandler:")
@@ -275,28 +295,30 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * readMinimumLength:maximumLength:completionHandler:
-     * <p>
+     * 
      * Read the requested range of bytes. The completion handler will be invoked when:
      * - Exactly "length" number of bytes have been read. 'data' will be non-nil.
-     * <p>
+     * 
      * - Fewer than "length" number of bytes, including 0 bytes, have been read, and the connection's
      * read side has been closed. 'data' might be nil, depending on whether there was any data to be
      * read when the connection's read side was closed.
-     * <p>
+     * 
      * - Some fatal error has occurred, and 'data' will be nil.
-     * <p>
+     * 
      * To know when to schedule a read again, check for the condition whether an error has occurred.
-     * <p>
+     * 
      * For better performance, the caller should pick the effective minimum and maximum lengths.
      * For example, if the caller absolutely needs a specific number of bytes before it can
      * make any progress, use that value as the minimum. The maximum bytes can be the upperbound
      * that the caller wants to read. Typically, the minimum length can be the caller
      * protocol fixed-size header and the maximum length can be the maximum size of the payload or
      * the size of the current read buffer.
-     *
+     * 
      * @param minimum    The minimum number of bytes the caller wants to read
      * @param maximum    The maximum number of bytes the caller wants to read
      * @param completion The completion handler to be invoked when there is data to read or an error occurred
+     * 
+     *                   API-Since: 9.0
      */
     @Generated
     @Selector("readMinimumLength:maximumLength:completionHandler:")
@@ -305,8 +327,10 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * [@property] remoteAddress
-     * <p>
+     * 
      * The IP address endpoint to which the connection was connected.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("remoteAddress")
@@ -314,8 +338,10 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * [@property] state
-     * <p>
+     * 
      * The status of the connection. Use KVO to watch this property to get updates.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("state")
@@ -324,10 +350,12 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * [@property] txtRecord
-     * <p>
+     * 
      * When the connection is connected to a Bonjour service endpoint, the TXT record associated
      * with the Bonjour service is available via this property. Beware that the value comes from
      * the network. Care must be taken when parsing this potentially malicious value.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("txtRecord")
@@ -335,14 +363,16 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * write:completionHandler:
-     * <p>
+     * 
      * Write the given data object content. Callers should wait until the completionHandler is executed
      * before issuing another write.
-     *
+     * 
      * @param data       The data object whose content will be written
      * @param completion The completion handler to be invoked when the data content has been written or an error has
      *                   occurred.
      *                   If the error is nil, the write succeeded and the caller can write more data.
+     * 
+     *                   API-Since: 9.0
      */
     @Generated
     @Selector("write:completionHandler:")
@@ -351,11 +381,13 @@ public class NWTCPConnection extends NSObject {
 
     /**
      * writeClose:
-     * <p>
+     * 
      * Close this connection's write side such that further write requests won't succeed.
      * Note that this has the effect of closing the read side of the peer connection.
      * When the connection's read side and write side are closed, the connection is considered
      * disconnected and will transition to the appropriate state.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("writeClose")

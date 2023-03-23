@@ -24,11 +24,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAudioUnitEQFilterParameters
- * <p>
+ * 
  * Filter parameters used by AVAudioUnitEQ.
- * <p>
+ * 
  * A standalone instance of AVAudioUnitEQFilterParameters cannot be created. Only an instance
  * vended out by a source object (e.g. AVAudioUnitEQ) can be used.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -64,9 +66,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] bandwidth
-     * <p>
+     * 
      * Bandwidth in octaves.
-     * <p>
+     * 
      * Range: 0.05 -> 5.0
      * Unit: Octaves
      */
@@ -76,9 +78,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] bypass
-     * <p>
+     * 
      * bypass state of band.
-     * <p>
+     * 
      * Default: YES
      */
     @Generated
@@ -113,9 +115,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] filterType
-     * <p>
+     * 
      * AVAudioUnitEQFilterType
-     * <p>
+     * 
      * Default: AVAudioUnitEQFilterTypeParametric
      */
     @Generated
@@ -125,9 +127,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] frequency
-     * <p>
+     * 
      * Frequency in Hertz.
-     * <p>
+     * 
      * Range: 20 -> (SampleRate/2)
      * Unit: Hertz
      */
@@ -137,9 +139,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Gain in dB.
-     * <p>
+     * 
      * Range: -96 -> 24
      * Default: 0
      * Unit: dB
@@ -193,9 +195,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] bandwidth
-     * <p>
+     * 
      * Bandwidth in octaves.
-     * <p>
+     * 
      * Range: 0.05 -> 5.0
      * Unit: Octaves
      */
@@ -205,9 +207,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] bypass
-     * <p>
+     * 
      * bypass state of band.
-     * <p>
+     * 
      * Default: YES
      */
     @Generated
@@ -216,9 +218,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] filterType
-     * <p>
+     * 
      * AVAudioUnitEQFilterType
-     * <p>
+     * 
      * Default: AVAudioUnitEQFilterTypeParametric
      */
     @Generated
@@ -227,9 +229,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] frequency
-     * <p>
+     * 
      * Frequency in Hertz.
-     * <p>
+     * 
      * Range: 20 -> (SampleRate/2)
      * Unit: Hertz
      */
@@ -239,9 +241,9 @@ public class AVAudioUnitEQFilterParameters extends NSObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Gain in dB.
-     * <p>
+     * 
      * Range: -96 -> 24
      * Default: 0
      * Unit: dB

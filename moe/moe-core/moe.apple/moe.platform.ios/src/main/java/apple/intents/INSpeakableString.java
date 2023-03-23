@@ -45,6 +45,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -155,6 +158,7 @@ public class INSpeakableString extends NSObject implements INSpeakable, NSCopyin
     @NInt
     public static native long version_static();
 
+    @Deprecated
     @IsOptional
     @Generated
     @Selector("identifier")
@@ -164,11 +168,20 @@ public class INSpeakableString extends NSObject implements INSpeakable, NSCopyin
     @Selector("init")
     public native INSpeakableString init();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Please use -initWithVocabularyIdentifier:spokenPhrase:pronunciationHint:
+     */
+    @Deprecated
     @Generated
     @Selector("initWithIdentifier:spokenPhrase:pronunciationHint:")
     public native INSpeakableString initWithIdentifierSpokenPhrasePronunciationHint(String identifier,
             String spokenPhrase, String pronunciationHint);
 
+    /**
+     * API-Since: 10.2
+     */
     @Generated
     @Selector("initWithSpokenPhrase:")
     public native INSpeakableString initWithSpokenPhrase(String spokenPhrase);

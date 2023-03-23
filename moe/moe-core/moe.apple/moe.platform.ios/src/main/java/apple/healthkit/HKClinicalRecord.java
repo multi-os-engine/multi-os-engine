@@ -29,13 +29,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKClinicalRecord
- * <p>
+ * 
  * An HKObject subclass representing a health record.
- * <p>
+ * 
  * The startDate and endDate properties (inherited from HKSample) are set to the date the sample was
  * added to Health. Unlike other HKObject subclasses, UUID is not a stable identifier
  * for a given sample. Use a combination of HKSource, FHIRResource.resourceType, and
  * FHIRResource.identifier instead.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("HealthKit")
@@ -53,7 +55,7 @@ public class HKClinicalRecord extends HKSample implements NSSecureCoding, NSCopy
 
     /**
      * [@property] FHIRResource
-     * <p>
+     * 
      * The FHIR resource (where applicable) backing this sample.
      */
     @Generated
@@ -116,9 +118,9 @@ public class HKClinicalRecord extends HKSample implements NSSecureCoding, NSCopy
 
     /**
      * [@property] displayName
-     * <p>
+     * 
      * The primary display name used in Health.
-     * <p>
+     * 
      * The display name is not localized, and is generally expected to be US English.
      */
     @Generated

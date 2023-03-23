@@ -52,10 +52,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The default session is used to communicate between two counterpart apps
  * (i.e. iOS app and its native WatchKit extension). The session provides
  * methods for sending, receiving, and tracking state.
- * <p>
+ * 
  * On start up an app should set a delegate on the default session and call
  * activate. This will allow the system to populate the state properties and
  * deliver any outstanding background transfers.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("WatchConnectivity")
@@ -193,6 +195,8 @@ public class WCSession extends NSObject {
 
     /**
      * The state of the current session
+     * 
+     * API-Since: 9.3
      */
     @Generated
     @Selector("activationState")
@@ -220,6 +224,8 @@ public class WCSession extends NSObject {
 
     /**
      * Whether or not there is more content for the session to deliver
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("hasContentPending")
@@ -284,6 +290,8 @@ public class WCSession extends NSObject {
      * The number of calls remaining to transferCurrentComplicationUserInfo: before the system starts transferring the
      * complicationUserInfo as regular userInfos. If this is 0, the complicationUserInfo will be transferred as regular
      * userInfos. Count will be 0 whenever the complication is not enabled
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("remainingComplicationUserInfoTransfers")

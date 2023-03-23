@@ -2,7 +2,6 @@ package apple.carplay;
 
 import apple.NSObject;
 import apple.carplay.protocol.CPSelectableListItem;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -27,7 +26,11 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -88,7 +91,7 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
 
     /**
      * Read-only access to the grid images shown in a row in the cell.
-     * <p>
+     * 
      * [@note] The maximum number of images shown is @c CPMaximumNumberOfGridImages.
      * If you supply more images, only the first @c CPMaximumNumberOfGridImages will be used.
      */
@@ -113,18 +116,18 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
     /**
      * Initialize a list image row item with a text string and an array of @c UIImage
      * for the grid of images.
-     * <p>
+     * 
      * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
      * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * <p>
+     * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
-     * <p>
+     * 
      * [@note] The expected image size is given by +[CPListImageRowItem maximumImageSize]. Images provided
      * will be resized to this size if necessary.
-     * <p>
+     * 
      * To properly size your images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
      */
@@ -179,7 +182,7 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
     /**
      * The expected image size for the grid images in your @c CPListImageRowItem. Images provided
      * will be resized to this size.
-     * <p>
+     * 
      * To properly size your images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
      */
@@ -255,15 +258,15 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      * Update the images displayed in this image row item. If this image row
      * item is already displayed in a list template, this image row item will be
      * automatically reloaded.
-     * <p>
+     * 
      * When providing an image, your app should provide a @c UIImage that is display-ready. If necessary for the image,
      * provide
      * light and dark styles by using an asset from your asset catalog, prepared with light and dark styles
      * or by using @c UIImageAsset to combine two @c UIImage instances into a single image with
      * both styles.
-     * <p>
+     * 
      * UIImageAsset is used to combine multiple UIImages with different trait collections into a single UIImage.
-     *
+     * 
      * @see To update/reload the title of the image row item, assign to
      *      the @c text property of the image row item.
      */

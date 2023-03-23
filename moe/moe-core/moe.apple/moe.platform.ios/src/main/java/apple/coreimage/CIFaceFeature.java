@@ -17,8 +17,6 @@ limitations under the License.
 package apple.coreimage;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -40,10 +38,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * A face feature found by a CIDetector.
  * All positions are relative to the original image.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("CoreImage")
@@ -157,7 +159,7 @@ public class CIFaceFeature extends CIFeature {
 
     /**
      * coordinates of various cardinal points within a face.
-     * <p>
+     * 
      * Note that the left eye is the eye on the left side of the face
      * from the observer's perspective. It is not the left eye from
      * the subject's perspective.

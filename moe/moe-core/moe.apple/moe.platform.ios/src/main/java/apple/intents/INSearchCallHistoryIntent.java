@@ -41,6 +41,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INSearchCallHistoryIntent is deprecated. There is no replacement.
+ */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -162,7 +168,12 @@ public class INSearchCallHistoryIntent extends INIntent {
 
     /**
      * What type of call record to search for.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use callTypes instead
      */
+    @Deprecated
     @Generated
     @Selector("callType")
     @NInt
@@ -179,6 +190,12 @@ public class INSearchCallHistoryIntent extends INIntent {
     @Selector("init")
     public native INSearchCallHistoryIntent init();
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithCallType:dateCreated:recipient:callCapabilities:")
     public native INSearchCallHistoryIntent initWithCallTypeDateCreatedRecipientCallCapabilities(@NInt long callType,
@@ -198,17 +215,26 @@ public class INSearchCallHistoryIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("callTypes")
     @NUInt
     public native long callTypes();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithDateCreated:recipient:callCapabilities:callTypes:unseen:")
     public native INSearchCallHistoryIntent initWithDateCreatedRecipientCallCapabilitiesCallTypesUnseen(
             INDateComponentsRange dateCreated, INPerson recipient, @NUInt long callCapabilities, @NUInt long callTypes,
             NSNumber unseen);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("unseen")
     public native NSNumber unseen();

@@ -32,6 +32,11 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIDocumentPickerDelegate")
 public interface UIDocumentPickerDelegate {
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @IsOptional
     @Generated
     @Selector("documentPicker:didPickDocumentAtURL:")
@@ -49,6 +54,9 @@ public interface UIDocumentPickerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("documentPicker:didPickDocumentsAtURLs:")

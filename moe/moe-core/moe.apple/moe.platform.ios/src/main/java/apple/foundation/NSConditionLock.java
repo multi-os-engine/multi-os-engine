@@ -175,10 +175,16 @@ public class NSConditionLock extends NSObject implements NSLocking {
     @Selector("lockWhenCondition:beforeDate:")
     public native boolean lockWhenConditionBeforeDate(@NInt long condition, NSDate limit);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);

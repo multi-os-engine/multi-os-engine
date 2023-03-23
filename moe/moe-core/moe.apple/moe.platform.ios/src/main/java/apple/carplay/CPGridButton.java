@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -96,7 +99,7 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
 
     /**
      * The image displayed on the button.
-     * <p>
+     * 
      * Animated images are not supported. If an animated image is assigned, only the first image will be used.
      * To properly size your list images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
@@ -115,16 +118,16 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
 
     /**
      * Initialize a button with a title and image.
-     * <p>
+     * 
      * To properly size your images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
-     *
+     * 
      * @param titleVariants An array of title variants for this button, arranged from most to least preferred. You must
      *                      provide at least one title.
      * @param image         The image displayed on the button. It must be non-nil for the button to be displayed.
      * @param handler       A block to execute when the user selects the button. The block has no return value and takes
      *                      the selected button as its only parameter.
-     *                      <p>
+     * 
      *                      The image must be non-nil and the title must be a non-zero length string for the button to
      *                      be displayed.
      */
@@ -155,7 +158,7 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
 
     /**
      * A Boolean value indicating whether the button is enabled.
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
      * property is @c YES.
      */
@@ -186,7 +189,7 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
 
     /**
      * A Boolean value indicating whether the button is enabled.
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
      * property is @c YES.
      */

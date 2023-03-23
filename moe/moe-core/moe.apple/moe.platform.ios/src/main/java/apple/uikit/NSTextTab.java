@@ -48,6 +48,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -102,6 +105,8 @@ public class NSTextTab extends NSObject implements NSCopying, NSCoding, NSSecure
      * Returns the column terminators for locale. Passing nil returns an instance corresponding to +[NSLocale
      * systemLocale]. For matching user's formatting preferences, pass +[NSLocale currentLocale]. Can be used as the
      * value for NSTabColumnTerminatorsAttributeName to make a decimal tab stop.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("columnTerminatorsForLocale:")

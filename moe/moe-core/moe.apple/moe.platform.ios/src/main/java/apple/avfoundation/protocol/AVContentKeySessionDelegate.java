@@ -15,6 +15,9 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.3
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -48,6 +51,9 @@ public interface AVContentKeySessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("contentKeySession:didUpdatePersistableContentKey:forContentKeyIdentifier:")
@@ -71,6 +77,9 @@ public interface AVContentKeySessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @IsOptional
     @Selector("contentKeySession:contentKeyRequestDidSucceed:")
@@ -79,6 +88,9 @@ public interface AVContentKeySessionDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @IsOptional
     @Selector("contentKeySessionDidGenerateExpiredSessionReport:")

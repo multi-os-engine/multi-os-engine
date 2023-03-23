@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * PKPaymentAuthorizationController prompts the user to authorize a PKPaymentRequest, funding the
  * payment amount with a valid payment card.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("PassKit")

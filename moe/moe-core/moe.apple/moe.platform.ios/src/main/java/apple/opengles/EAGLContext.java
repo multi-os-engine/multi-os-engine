@@ -41,7 +41,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * EAGL Context
+ * 
+ * API-Since: 2.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
  */
+@Deprecated
 @Generated
 @Library("OpenGLES")
 @Runtime(ObjCRuntime.class)
@@ -165,6 +170,9 @@ public class EAGLContext extends NSObject {
     @NUInt
     public native long API();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("debugLabel")
     public native String debugLabel();
@@ -181,10 +189,16 @@ public class EAGLContext extends NSObject {
     @Selector("initWithAPI:sharegroup:")
     public native EAGLContext initWithAPISharegroup(@NUInt long api, EAGLSharegroup sharegroup);
 
+    /**
+     * API-Since: 7.1
+     */
     @Generated
     @Selector("isMultiThreaded")
     public native boolean isMultiThreaded();
 
+    /**
+     * API-Since: 7.1
+     */
     @Generated
     @Selector("setMultiThreaded:")
     public native void setMultiThreaded(boolean value);
@@ -211,6 +225,9 @@ public class EAGLContext extends NSObject {
     public native boolean renderbufferStorageFromDrawable(@NUInt long target,
             @Mapped(ObjCObjectMapper.class) EAGLDrawable drawable);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setDebugLabel:")
     public native void setDebugLabel(String value);

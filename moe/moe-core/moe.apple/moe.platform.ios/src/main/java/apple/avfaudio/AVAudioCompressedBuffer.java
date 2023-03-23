@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAudioCompressedBuffer
- * <p>
+ * 
  * A subclass of AVAudioBuffer for use with compressed audio formats.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("AVFAudio")
@@ -62,8 +64,10 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * [@property] byteCapacity
-     * <p>
+     * 
      * The buffer's capacity in bytes
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("byteCapacity")
@@ -71,10 +75,12 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * [@property] byteLength
-     * <p>
+     * 
      * The current number of valid bytes in the buffer.
-     * <p>
+     * 
      * Can be changed as part of an operation that modifies the contents.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("byteLength")
@@ -100,7 +106,7 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * [@property] data
-     * <p>
+     * 
      * Access the buffer's data bytes.
      */
     @Generated
@@ -126,14 +132,16 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * initWithFormat:packetCapacity:
-     * <p>
+     * 
      * Initialize a buffer that is to contain constant bytes per packet compressed audio data.
-     * <p>
+     * 
      * This fails if the format is PCM or if the format has variable bytes per packet
      * (format.streamDescription->mBytesPerPacket == 0).
-     *
-     * @param format         The format of the audio to be contained in the buffer.
-     * @param packetCapacity The capacity of the buffer in packets.
+     * 
+     * @param format
+     *                       The format of the audio to be contained in the buffer.
+     * @param packetCapacity
+     *                       The capacity of the buffer in packets.
      */
     @Generated
     @Selector("initWithFormat:packetCapacity:")
@@ -141,14 +149,17 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * initWithFormat:packetCapacity:maximumPacketSize:
-     * <p>
+     * 
      * Initialize a buffer that is to contain compressed audio data.
-     * <p>
+     * 
      * An exception is raised if the format is PCM.
-     *
-     * @param format            The format of the audio to be contained in the buffer.
-     * @param packetCapacity    The capacity of the buffer in packets.
-     * @param maximumPacketSize The maximum size in bytes of a compressed packet.
+     * 
+     * @param format
+     *                          The format of the audio to be contained in the buffer.
+     * @param packetCapacity
+     *                          The capacity of the buffer in packets.
+     * @param maximumPacketSize
+     *                          The maximum size in bytes of a compressed packet.
      *                          The maximum packet size can be obtained from the maximumOutputPacketSize property of an
      *                          AVAudioConverter configured for encoding this format.
      */
@@ -180,7 +191,7 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * [@property] maximumPacketSize
-     * <p>
+     * 
      * The maximum size of a compressed packet in bytes.
      */
     @Generated
@@ -195,7 +206,7 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * [@property] packetCapacity
-     * <p>
+     * 
      * The number of compressed packets the buffer can contain.
      */
     @Generated
@@ -204,9 +215,9 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * [@property] packetCount
-     * <p>
+     * 
      * The current number of compressed packets in the buffer.
-     * <p>
+     * 
      * You may modify the packetCount as part of an operation that modifies its contents.
      * The packetCount must be less than or equal to the packetCapacity.
      */
@@ -216,9 +227,9 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * [@property] packetDescriptions
-     * <p>
+     * 
      * Access the buffer's array of packet descriptions, if any.
-     * <p>
+     * 
      * If the format has constant bytes per packet (format.streamDescription->mBytesPerPacket != 0), then this will
      * return nil.
      */
@@ -236,10 +247,12 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * [@property] byteLength
-     * <p>
+     * 
      * The current number of valid bytes in the buffer.
-     * <p>
+     * 
      * Can be changed as part of an operation that modifies the contents.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setByteLength:")
@@ -247,9 +260,9 @@ public class AVAudioCompressedBuffer extends AVAudioBuffer {
 
     /**
      * [@property] packetCount
-     * <p>
+     * 
      * The current number of compressed packets in the buffer.
-     * <p>
+     * 
      * You may modify the packetCount as part of an operation that modifies its contents.
      * The packetCount must be less than or equal to the packetCapacity.
      */

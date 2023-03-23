@@ -46,6 +46,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.1
+ */
 @Generated
 @Library("StoreKit")
 @Runtime(ObjCRuntime.class)
@@ -74,6 +77,7 @@ public class SKCloudServiceSetupViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native SKCloudServiceSetupViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -166,6 +170,8 @@ public class SKCloudServiceSetupViewController extends UIViewController {
 
     /**
      * Optional delegate.
+     * 
+     * API-Since: 10.1
      */
     @Generated
     @Selector("delegate")
@@ -187,6 +193,8 @@ public class SKCloudServiceSetupViewController extends UIViewController {
     /**
      * Load cloud service setup view with the given options.
      * Block is invoked on the main thread when the load finishes.
+     * 
+     * API-Since: 10.1
      */
     @Generated
     @Selector("loadWithOptions:completionHandler:")
@@ -195,6 +203,8 @@ public class SKCloudServiceSetupViewController extends UIViewController {
 
     /**
      * Optional delegate.
+     * 
+     * API-Since: 10.1
      */
     @Generated
     @Selector("setDelegate:")
@@ -203,6 +213,8 @@ public class SKCloudServiceSetupViewController extends UIViewController {
 
     /**
      * Optional delegate.
+     * 
+     * API-Since: 10.1
      */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) SKCloudServiceSetupViewControllerDelegate value) {

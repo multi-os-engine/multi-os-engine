@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This object is vended to your application by UIKit when there are URLs to open
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")

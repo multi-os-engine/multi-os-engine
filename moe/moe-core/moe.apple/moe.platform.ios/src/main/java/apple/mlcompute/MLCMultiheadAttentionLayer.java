@@ -24,9 +24,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCMultiheadAttentionLayer
- * <p>
+ * 
  * A multi-head attention layer
- * <p>
+ * 
  * A multi-head "Scaled Dot-Product Attention" layer which attends to one or more entries in the input key-value pairs
  * N=Batch, S=source length, L=target length, E = model(embedding) dimension, K = Key dimension, V = value
  * dimension H = headCount. The sources to this layer are of shapes: Query:(N,L,E), Key:(N,S,K), Value:(N,S,V),
@@ -34,6 +34,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * or none of them can be passed. KeyMask is of Boolean type and AttentionMask can be of Float or Boolean type.
  * Output is of shape:(N,L,E).
  * For details refer to: https://pytorch.org/docs/stable/nn.html#multiheadattention
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -65,7 +67,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
 
     /**
      * [@property] attentionBiases
-     * <p>
+     * 
      * The biases added to key and value
      */
     @Generated
@@ -78,7 +80,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
 
     /**
      * [@property] biases
-     * <p>
+     * 
      * The biases of query, key, value and output projections
      */
     @Generated
@@ -87,7 +89,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
 
     /**
      * [@property] biasesParameters
-     * <p>
+     * 
      * The biases tensor parameters used for optimizer update
      */
     @Generated
@@ -122,7 +124,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
 
     /**
      * [@property] descriptor
-     * <p>
+     * 
      * The multi-head attention descriptor
      */
     @Generated
@@ -161,7 +163,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
 
     /**
      * Create a multi-head attention layer
-     *
+     * 
      * @param weights         weights corresponding to query, key, value and output projections for all heads
      * @param biases          Optional, biases corresponding to query, key, value and output projections for all heads
      * @param attentionBiases Optional, An array of biases added to the key and value respectively
@@ -205,7 +207,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
 
     /**
      * [@property] weights
-     * <p>
+     * 
      * The weights of query, key, value and output projections
      */
     @Generated
@@ -214,7 +216,7 @@ public class MLCMultiheadAttentionLayer extends MLCLayer {
 
     /**
      * [@property] weightsParameters
-     * <p>
+     * 
      * The weights tensor parameters used for optimizer update
      */
     @Generated

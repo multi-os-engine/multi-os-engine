@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GKInvite represents an accepted game invite, it is used to create a GKMatchmakerViewController
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -157,6 +159,10 @@ public class GKInvite extends NSObject {
 
     /**
      * This property is obsolete. **
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This property is obsolete, use sender instead
      */
     @Generated
     @Deprecated
@@ -169,6 +175,8 @@ public class GKInvite extends NSObject {
 
     /**
      * player attributes from inviter's match request
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("playerAttributes")
@@ -176,12 +184,17 @@ public class GKInvite extends NSObject {
 
     /**
      * player group from inviter's match request
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("playerGroup")
     @NUInt
     public native long playerGroup();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("sender")
     public native GKPlayer sender();

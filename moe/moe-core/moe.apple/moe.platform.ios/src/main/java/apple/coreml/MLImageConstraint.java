@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLImageConstraint
- * <p>
+ * 
  * Constraint on image properties.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreML")
@@ -177,6 +179,8 @@ public class MLImageConstraint extends NSObject implements NSSecureCoding {
 
     /**
      * Detailed image size constraint
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("sizeConstraint")

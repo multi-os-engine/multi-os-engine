@@ -28,21 +28,23 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSMatrixSolveTriangular
- * <p>
+ * 
  * [@dependency] This depends on Metal.framework.
- * <p>
+ * 
  * A kernel for computing the solution of a linear system of
  * equations using a triangular coefficient matrix.
- * <p>
+ * 
  * A MPSMatrixSolveTriangular finds the solution matrix to the
  * triangular system:
- * <p>
+ * 
  * op(A) * X = alpha * B or X * op(A) = alpha * B
- * <p>
+ * 
  * Where A is either upper or lower triangular and op(A) is A**T
  * or A. B is the array of right hand sides for which the
  * equations are to be solved. X is the resulting matrix of
  * solutions.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -104,23 +106,26 @@ public class MPSMatrixSolveTriangular extends MPSMatrixBinaryKernel {
 
     /**
      * Encode a MPSMatrixSolveTriangular kernel into a command Buffer.
-     * <p>
+     * 
      * This function encodes the MPSMatrixSolveTriangular object to a
      * valid command buffer.
-     * <p>
+     * 
      * rightHandSideMatrix and solutionMatrix must be large enough to
      * hold at least order * numberOfRightHandSides values starting at
      * secondarySourceMatrixOrigin and resultMatrixOrigin respectively.
-     * <p>
+     * 
      * sourceMatrix must be at least size order x order starting at
      * primarySourceMatrixOrigin.
-     *
+     * 
      * @param commandBuffer       A valid MTLCommandBuffer to receive the
      *                            encoded filter
+     * 
      * @param sourceMatrix        A valid MPSMatrix containing the source
      *                            matrix.
+     * 
      * @param rightHandSideMatrix A valid MPSMatrix containing the right hand
      *                            side values.
+     * 
      * @param solutionMatrix      A valid MPSMatrix to contain the result.
      */
     @Generated
@@ -153,34 +158,42 @@ public class MPSMatrixSolveTriangular extends MPSMatrixBinaryKernel {
 
     /**
      * Initialize an MPSMatrixSolveTriangular object on a device
-     * <p>
+     * 
      * This function initializes a MPSMatrixSolveTriangular object. It
      * may allocate device side memory.
-     *
+     * 
      * @param device                 The device on which the kernel will execute.
+     * 
      * @param right                  A boolean value which indicates if the
      *                               coefficient matrix is multiplied on the left
      *                               or right side of the solution. NO indicates
      *                               the multiplication is on the left.
+     * 
      * @param upper                  A boolean value which indicates if the source
      *                               is lower or upper triangular. NO indicates
      *                               that the coefficient matrix is lower triangular.
+     * 
      * @param transpose              A boolean value which indicates if the source
      *                               matrix should be used in transposed form. NO
      *                               indicates that the coefficient matrix is to be
      *                               used normally.
+     * 
      * @param unit                   A boolean value which indicates if the source
      *                               matrix is unit triangular.
+     * 
      * @param order                  The order of the source matrix and, if
      *                               right == NO, the number of rows in the solution
      *                               and right hand side matrices. If right == YES
      *                               the number of columns in the solution and right
      *                               hand side matrices.
+     * 
      * @param numberOfRightHandSides If right == NO, the number of columns in the
      *                               solution and right hand side matrices. The
      *                               number of rows otherwise.
+     * 
      * @param alpha                  A double precision value used to scale the right
      *                               hand sides.
+     * 
      * @return A valid MPSMatrixSolveTriangular object or nil, if failure.
      */
     @Generated

@@ -48,11 +48,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEFilterFlow
- * <p>
+ * 
  * The NEFilterFlow class declares the programmatic interface of an object that represents a flow of network data to be
  * filtered.
- * <p>
+ * 
  * NEFilterFlow is part of NetworkExtension.framework
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -170,8 +172,10 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * [@property] URL
-     * <p>
+     * 
      * The flow's HTTP request URL. Will be nil if the flow did not originate from WebKit.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("URL")
@@ -203,9 +207,11 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * [@property] sourceAppIdentifier
-     * <p>
+     * 
      * A string containing the identifier of the source application of the flow. This identifier stays the same for all
      * versions and builds of the application. This identifier is unique among all applications.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("sourceAppIdentifier")
@@ -213,8 +219,10 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * [@property] sourceAppUniqueIdentifier
-     * <p>
+     * 
      * A byte string that uniquely identifies the binary for each build of the source application of the flow.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("sourceAppUniqueIdentifier")
@@ -222,8 +230,10 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * [@property] sourceAppVersion
-     * <p>
+     * 
      * The short version string of the source application. Will be nil if the app info is unavailable.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("sourceAppVersion")
@@ -231,8 +241,10 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * [@property] direction
-     * <p>
+     * 
      * Initial direction of the flow (outgoing or incoming flow)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("direction")
@@ -241,8 +253,10 @@ public class NEFilterFlow extends NSObject implements NSSecureCoding, NSCopying 
 
     /**
      * [@property] identifier
-     * <p>
+     * 
      * The unique identifier of the flow.
+     * 
+     * API-Since: 13.1
      */
     @Generated
     @Selector("identifier")

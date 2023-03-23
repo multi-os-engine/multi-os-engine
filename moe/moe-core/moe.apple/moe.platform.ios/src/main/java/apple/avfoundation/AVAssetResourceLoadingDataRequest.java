@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -151,7 +154,7 @@ public class AVAssetResourceLoadingDataRequest extends NSObject {
 
     /**
      * [@property] currentOffset
-     * <p>
+     * 
      * The position within the resource of the next byte within the resource following the bytes that have already been
      * provided via prior invocations of -respondWithData.
      */
@@ -165,9 +168,9 @@ public class AVAssetResourceLoadingDataRequest extends NSObject {
 
     /**
      * [@property] requestedLength
-     * <p>
+     * 
      * The length of the data requested.
-     * <p>
+     * 
      * Note that requestsAllDataToEndOfResource will be set to YES when the entire remaining length of the resource is
      * being requested from requestedOffset to the end of the resource. This can occur even when the content length has
      * not yet been reported by you via a prior finished loading request.
@@ -188,7 +191,7 @@ public class AVAssetResourceLoadingDataRequest extends NSObject {
 
     /**
      * [@property] requestedOffset
-     * <p>
+     * 
      * The position within the resource of the first byte requested.
      */
     @Generated
@@ -197,15 +200,17 @@ public class AVAssetResourceLoadingDataRequest extends NSObject {
 
     /**
      * [@property] requestsAllDataToEndOfResource
-     * <p>
+     * 
      * Specifies that the entire remaining length of the resource from requestedOffset to the end of the resource is
      * being requested.
-     * <p>
+     * 
      * When requestsAllDataToEndOfResource has a value of YES, you should disregard the value of requestedLength and
      * incrementally provide as much data starting from the requestedOffset as the resource contains, until you have
      * provided all of the available data successfully and invoked -finishLoading, until you have encountered a failure
      * and invoked -finishLoadingWithError:, or until you have received -resourceLoader:didCancelLoadingRequest: for the
      * AVAssetResourceLoadingRequest from which the AVAssetResourceLoadingDataRequest was obtained.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("requestsAllDataToEndOfResource")
@@ -213,9 +218,9 @@ public class AVAssetResourceLoadingDataRequest extends NSObject {
 
     /**
      * respondWithData:
-     * <p>
+     * 
      * Provides data to the receiver.
-     * <p>
+     * 
      * May be invoked multiple times on the same instance of AVAssetResourceLoadingDataRequest to provide the full range
      * of requested data incrementally. Upon each invocation, the value of currentOffset will be updated to accord with
      * the amount of data provided.
@@ -224,8 +229,9 @@ public class AVAssetResourceLoadingDataRequest extends NSObject {
      * should avoid mutating it further after sharing its contents. If you are managing your own memory pool for I/O and
      * resource loading, consider using -[NSData initWithBytesNoCopy:length:deallocator:] in order to receive
      * notification of the earliest opportunity for safe recycling of the underlying memory.
-     *
-     * @param data An instance of NSData containing some or all of the requested bytes.
+     * 
+     * @param data
+     *             An instance of NSData containing some or all of the requested bytes.
      */
     @Generated
     @Selector("respondWithData:")

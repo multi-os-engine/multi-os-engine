@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * UIKeyboardAppearance
- * <p>
+ * 
  * Requests a keyboard appearance be used when a text widget
  * becomes first responder..
  * Note: Some keyboard/input methods types may not support every variant.
@@ -34,7 +34,13 @@ public final class UIKeyboardAppearance {
      * Default appearance for the current input method.
      */
     @Generated @NInt public static final long Default = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Dark = 0x0000000000000001L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Light = 0x0000000000000002L;
     /**
      * Deprecated

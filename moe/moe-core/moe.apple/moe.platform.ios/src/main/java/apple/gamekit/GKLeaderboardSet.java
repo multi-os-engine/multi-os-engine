@@ -47,6 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GKLeaderboardSet represents the sets that leaderboards can be broken out into.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("GameKit")
@@ -138,6 +140,8 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
      * 1. Communications problem
      * 2. Unauthenticated player
      * 3. Set not present
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("loadLeaderboardSetsWithCompletionHandler:")
@@ -211,7 +215,12 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
      * Possible reasons for error:
      * 1. Communications problem
      * 2. Unauthenticated player
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use loadLeaderboardsWithHandler: instead.
      */
+    @Deprecated
     @Generated
     @Selector("loadLeaderboardsWithCompletionHandler:")
     public native void loadLeaderboardsWithCompletionHandler(
@@ -264,6 +273,8 @@ public class GKLeaderboardSet extends NSObject implements NSCoding, NSSecureCodi
      * Possible reasons for error:
      * 1. Communications problem
      * 2. Unauthenticated player
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("loadLeaderboardsWithHandler:")

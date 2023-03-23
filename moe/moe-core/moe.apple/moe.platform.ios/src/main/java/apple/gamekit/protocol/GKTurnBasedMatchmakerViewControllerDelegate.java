@@ -34,6 +34,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface GKTurnBasedMatchmakerViewControllerDelegate {
     /**
      * Matchmaking has failed with an error
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("turnBasedMatchmakerViewController:didFailWithError:")
@@ -42,6 +44,10 @@ public interface GKTurnBasedMatchmakerViewControllerDelegate {
 
     /**
      * Deprecated
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: use GKTurnBasedEventListener player:receivedTurnEventForMatch:didBecomeActive:
      */
     @Generated
     @IsOptional
@@ -54,6 +60,10 @@ public interface GKTurnBasedMatchmakerViewControllerDelegate {
 
     /**
      * Deprectated
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: use GKTurnBasedEventListener player:wantsToQuitMatch:
      */
     @Generated
     @IsOptional
@@ -66,6 +76,8 @@ public interface GKTurnBasedMatchmakerViewControllerDelegate {
 
     /**
      * The user has cancelled
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("turnBasedMatchmakerViewControllerWasCancelled:")

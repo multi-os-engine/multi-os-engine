@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] AudioChannelFlags
- * <p>
+ * 
  * These constants are used in the mChannelFlags field of an
  * AudioChannelDescription structure.
  * [@constant] kAudioChannelFlags_RectangularCoordinates

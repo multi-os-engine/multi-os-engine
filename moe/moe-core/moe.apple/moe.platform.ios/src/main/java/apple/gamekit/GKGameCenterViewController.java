@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -72,6 +75,7 @@ public class GKGameCenterViewController extends UINavigationController {
     @Selector("allocWithZone:")
     public static native GKGameCenterViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -188,15 +192,33 @@ public class GKGameCenterViewController extends UINavigationController {
     @Selector("initWithRootViewController:")
     public native GKGameCenterViewController initWithRootViewController(UIViewController rootViewController);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: GKGameCenterViewController's leaderboardCategory property is deprecated. Use
+     * -initWithLeaderboard: instead
+     */
     @Generated
     @Deprecated
     @Selector("leaderboardCategory")
     public native String leaderboardCategory();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use -initWithLeaderboard: instead
+     */
+    @Deprecated
     @Generated
     @Selector("leaderboardIdentifier")
     public native String leaderboardIdentifier();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use -initWithLeaderboard: instead
+     */
+    @Deprecated
     @Generated
     @Selector("leaderboardTimeScope")
     @NInt
@@ -219,23 +241,53 @@ public class GKGameCenterViewController extends UINavigationController {
         }
     }
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: GKGameCenterViewController's leaderboardCategory property is deprecated. Use
+     * -initWithLeaderboard: instead
+     */
     @Generated
     @Deprecated
     @Selector("setLeaderboardCategory:")
     public native void setLeaderboardCategory(String value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use -initWithLeaderboard: instead
+     */
+    @Deprecated
     @Generated
     @Selector("setLeaderboardIdentifier:")
     public native void setLeaderboardIdentifier(String value);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use -initWithLeaderboard: instead
+     */
+    @Deprecated
     @Generated
     @Selector("setLeaderboardTimeScope:")
     public native void setLeaderboardTimeScope(@NInt long value);
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use -initWithState: instead
+     */
+    @Deprecated
     @Generated
     @Selector("setViewState:")
     public native void setViewState(@NInt long value);
 
+    /**
+     * API-Since: 6.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use -initWithState: instead
+     */
+    @Deprecated
     @Generated
     @Selector("viewState")
     @NInt
@@ -243,6 +295,8 @@ public class GKGameCenterViewController extends UINavigationController {
 
     /**
      * Use this to display the details associated with the specified achievementID
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithAchievementID:")
@@ -251,6 +305,8 @@ public class GKGameCenterViewController extends UINavigationController {
     /**
      * Use this to display the scores for the specified leaderboard and player scope. Both classic and recurring
      * leaderboards can use this method to initialize the view with their scores.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithLeaderboard:playerScope:")
@@ -261,6 +317,8 @@ public class GKGameCenterViewController extends UINavigationController {
      * Use this to display the scores for the specified leaderboardID, player scope and time scope. The time scope is
      * only applicable to classic leaderboards. Recurring leaderboards will always be displayed initially with the
      * results (scores) associated with the current instance of the leaderboard.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithLeaderboardID:playerScope:timeScope:")
@@ -271,6 +329,8 @@ public class GKGameCenterViewController extends UINavigationController {
      * Use this to display content associated with the specified state. For example setting the state to
      * GKGameCenterViewControllerStateLeaderboards will display a list of leaderboard sets or leaderboards (if no sets).
      * Setting state to GKGameCenterViewControllerStateAchievements will display a list of achievements.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithState:")

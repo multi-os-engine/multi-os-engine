@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASENumericPair
- * <p>
+ * 
  * A numeric pair.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -87,9 +89,9 @@ public class PHASENumericPair extends NSObject {
 
     /**
      * [@property] first
-     * <p>
+     * 
      * The first value in the numeric pair.
-     * <p>
+     * 
      * The default value is 0.0.
      */
     @Generated
@@ -107,12 +109,15 @@ public class PHASENumericPair extends NSObject {
 
     /**
      * initWithFirstValue:secondValue
-     * <p>
+     * 
      * Initialize a numeric pair with a first and second value.
-     *
-     * @param first  The first value in the pair.
-     * @param second The second value in the pair.
-     * @return A new pair.
+     * 
+     * @param first
+     *               The first value in the pair.
+     * @param second
+     *               The second value in the pair.
+     * @return
+     *         A new pair.
      */
     @Generated
     @Selector("initWithFirstValue:secondValue:")
@@ -154,9 +159,9 @@ public class PHASENumericPair extends NSObject {
 
     /**
      * [@property] second
-     * <p>
+     * 
      * The second value in the numeric pair.
-     * <p>
+     * 
      * The default value is 0.0.
      */
     @Generated
@@ -165,9 +170,9 @@ public class PHASENumericPair extends NSObject {
 
     /**
      * [@property] first
-     * <p>
+     * 
      * The first value in the numeric pair.
-     * <p>
+     * 
      * The default value is 0.0.
      */
     @Generated
@@ -176,9 +181,9 @@ public class PHASENumericPair extends NSObject {
 
     /**
      * [@property] second
-     * <p>
+     * 
      * The second value in the numeric pair.
-     * <p>
+     * 
      * The default value is 0.0.
      */
     @Generated

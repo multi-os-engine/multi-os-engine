@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Subclass for property-based animations. *
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("QuartzCore")

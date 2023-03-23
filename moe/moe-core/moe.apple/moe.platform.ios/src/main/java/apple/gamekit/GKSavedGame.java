@@ -46,6 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Class representing a saved game for the local player, or a version of a saved game when in conflict
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("GameKit")
@@ -163,6 +165,9 @@ public class GKSavedGame extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("deviceName")
     public native String deviceName();
@@ -173,16 +178,24 @@ public class GKSavedGame extends NSObject implements NSCopying {
 
     /**
      * Asynchronously load the data for this saved game. The completion handler is called with loaded data or an error.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("loadDataWithCompletionHandler:")
     public native void loadDataWithCompletionHandler(
             @ObjCBlock(name = "call_loadDataWithCompletionHandler") Block_loadDataWithCompletionHandler handler);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("modificationDate")
     public native NSDate modificationDate();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("name")
     public native String name();

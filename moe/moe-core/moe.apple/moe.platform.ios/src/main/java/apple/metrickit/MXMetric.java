@@ -29,10 +29,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXMetric
- * <p>
+ * 
  * An abstract class that describes a specific metric vended by MetricKit.
- * <p>
+ * 
  * All supported metrics are subclasses of MXMetric.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetricKit")
@@ -50,20 +52,24 @@ public class MXMetric extends NSObject implements NSSecureCoding {
 
     /**
      * DictionaryRepresentation
-     * <p>
+     * 
      * Convenience method to return a NSDictionary representation of this metric.
-     *
+     * 
      * @return An NSDictionary object containing the dictionary representation
+     * 
+     *         API-Since: 13.0
+     *         Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("DictionaryRepresentation")
     public native NSDictionary<?, ?> DictionaryRepresentation();
 
     /**
      * JSONRepresentation
-     * <p>
+     * 
      * Convenience method to return a JSON representation of this metric.
-     *
+     * 
      * @return An NSData object containing the JSON representation
      */
     @Generated
@@ -190,10 +196,12 @@ public class MXMetric extends NSObject implements NSSecureCoding {
 
     /**
      * dictionaryRepresentation
-     * <p>
+     * 
      * Convenience method to return a NSDictionary representation of this metric.
-     *
+     * 
      * @return An NSDictionary object containing the dictionary representation
+     * 
+     *         API-Since: 14.0
      */
     @Generated
     @Selector("dictionaryRepresentation")

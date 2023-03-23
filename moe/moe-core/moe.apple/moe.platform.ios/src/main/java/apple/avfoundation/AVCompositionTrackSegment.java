@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -93,10 +96,11 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
 
     /**
      * compositionTrackSegmentWithTimeRange:
-     * <p>
+     * 
      * Returns an instance of AVCompositionTrackSegment that presents an empty track segment.
-     *
-     * @param timeRange The timeRange of the empty AVCompositionTrackSegment.
+     * 
+     * @param timeRange
+     *                  The timeRange of the empty AVCompositionTrackSegment.
      * @return An instance of AVCompositionTrackSegment.
      */
     @Generated
@@ -105,20 +109,24 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
 
     /**
      * compositionTrackSegmentWithURL:trackID:sourceTimeRange:targetTimeRange:
-     * <p>
+     * 
      * Returns an instance of AVCompositionTrackSegment that presents a portion of a file referenced by URL.
-     * <p>
+     * 
      * To specify that the segment be played at the asset's normal rate, set source.duration == target.duration in the
      * timeMapping.
      * Otherwise, the segment will be played at a rate equal to the ratio source.duration / target.duration.
-     *
-     * @param URL             An instance of NSURL that references the container file to be presented by the
+     * 
+     * @param URL
+     *                        An instance of NSURL that references the container file to be presented by the
      *                        AVCompositionTrackSegment.
-     * @param trackID         The track identifier that specifies the track of the container file to be presented by the
+     * @param trackID
+     *                        The track identifier that specifies the track of the container file to be presented by the
      *                        AVCompositionTrackSegment.
-     * @param sourceTimeRange The timeRange of the track of the container file to be presented by the
+     * @param sourceTimeRange
+     *                        The timeRange of the track of the container file to be presented by the
      *                        AVCompositionTrackSegment.
-     * @param targetTimeRange The timeRange of the composition track during which the AVCompositionTrackSegment is to be
+     * @param targetTimeRange
+     *                        The timeRange of the composition track during which the AVCompositionTrackSegment is to be
      *                        presented.
      * @return An instance of AVCompositionTrackSegment.
      */
@@ -193,10 +201,11 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
 
     /**
      * initWithTimeRange:
-     * <p>
+     * 
      * Initializes an instance of AVCompositionTrackSegment that presents an empty track segment.
-     *
-     * @param timeRange The timeRange of the empty AVCompositionTrackSegment.
+     * 
+     * @param timeRange
+     *                  The timeRange of the empty AVCompositionTrackSegment.
      * @return An instance of AVCompositionTrackSegment.
      */
     @Generated
@@ -205,20 +214,24 @@ public class AVCompositionTrackSegment extends AVAssetTrackSegment {
 
     /**
      * initWithURL:trackID:sourceTimeRange:targetTimeRange:
-     * <p>
+     * 
      * Initializes an instance of AVCompositionTrackSegment that presents a portion of a file referenced by URL.
-     * <p>
+     * 
      * To specify that the segment be played at the asset's normal rate, set source.duration == target.duration in the
      * timeMapping.
      * Otherwise, the segment will be played at a rate equal to the ratio source.duration / target.duration.
-     *
-     * @param URL             An instance of NSURL that references the container file to be presented by the
+     * 
+     * @param URL
+     *                        An instance of NSURL that references the container file to be presented by the
      *                        AVCompositionTrackSegment.
-     * @param trackID         The track identifier that specifies the track of the container file to be presented by the
+     * @param trackID
+     *                        The track identifier that specifies the track of the container file to be presented by the
      *                        AVCompositionTrackSegment.
-     * @param sourceTimeRange The timeRange of the track of the container file to be presented by the
+     * @param sourceTimeRange
+     *                        The timeRange of the track of the container file to be presented by the
      *                        AVCompositionTrackSegment.
-     * @param targetTimeRange The timeRange of the composition track during which the AVCompositionTrackSegment is to be
+     * @param targetTimeRange
+     *                        The timeRange of the composition track during which the AVCompositionTrackSegment is to be
      *                        presented.
      * @return An instance of AVCompositionTrackSegment.
      */

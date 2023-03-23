@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -155,6 +158,8 @@ public class UIEvent extends NSObject {
     /**
      * An array of auxiliary UITouch’s for the touch events that did not get delivered for a given main touch. This also
      * includes an auxiliary version of the main touch itself.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("coalescedTouchesForTouch:")
@@ -168,11 +173,16 @@ public class UIEvent extends NSObject {
      * An array of auxiliary UITouch’s for touch events that are predicted to occur for a given main touch. These
      * predictions may not exactly match the real behavior of the touch as it moves, so they should be interpreted as an
      * estimate.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("predictedTouchesForTouch:")
     public native NSArray<? extends UITouch> predictedTouchesForTouch(UITouch touch);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("subtype")
     @NInt
@@ -182,6 +192,9 @@ public class UIEvent extends NSObject {
     @Selector("timestamp")
     public native double timestamp();
 
+    /**
+     * API-Since: 3.2
+     */
     @Generated
     @Selector("touchesForGestureRecognizer:")
     public native NSSet<? extends UITouch> touchesForGestureRecognizer(UIGestureRecognizer gesture);
@@ -194,16 +207,25 @@ public class UIEvent extends NSObject {
     @Selector("touchesForWindow:")
     public native NSSet<? extends UITouch> touchesForWindow(UIWindow window);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("type")
     @NInt
     public native long type();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("buttonMask")
     @NInt
     public native long buttonMask();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("modifierFlags")
     @NInt

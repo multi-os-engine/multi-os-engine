@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -94,7 +97,7 @@ public class CPContactDirectionsButton extends CPButton {
     /**
      * Create a contact button with a system-provided navigation directions image that, when tapped, calls your custom
      * handler.
-     *
+     * 
      * @param handler A block that will be called when the user taps this button.
      */
     @Generated

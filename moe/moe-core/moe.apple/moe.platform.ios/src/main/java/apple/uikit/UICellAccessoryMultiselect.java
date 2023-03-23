@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A two-state control whose appearance follows the selection state of the cell (empty circle when deselected,
  * filled circle with checkmark when selected).
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")

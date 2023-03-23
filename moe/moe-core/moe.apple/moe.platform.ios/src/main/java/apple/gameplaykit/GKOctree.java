@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A tree data structure where each level has 8 children that subdivide a given space into the eight octants.
  * Stores arbitrary NSObject elements via points and boxes.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -160,7 +162,7 @@ public class GKOctree<_ElementType> extends NSObject {
      * Removes the given NSObject from this octree
      * Note that this is an exhaustive search and is can be slow for larger trees.
      * Cache the relevant GKOctreeNode and use removeElement:WithNode: for better performance.
-     *
+     * 
      * @param element the element to be removed
      * @return returns YES if the data was removed, NO otherwise
      */
@@ -171,7 +173,7 @@ public class GKOctree<_ElementType> extends NSObject {
     /**
      * Removes the given NSObject from the given node
      * Note that this is not an exhaustive search and is faster than removeData:
-     *
+     * 
      * @param element the element to be removed
      * @param node    the node in which this data resides
      * @return returns YES if the element was removed, NO otherwise

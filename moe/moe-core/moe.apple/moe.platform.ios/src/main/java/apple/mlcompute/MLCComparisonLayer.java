@@ -24,11 +24,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Compare layer.
- * <p>
+ * 
  * The layer is used to perform element-wise comparison of two tensor. Returns a
  * tensor with the shape equal to the largest shape of operands and filled
  * with Boolean values result[i] = op1[i] ? op2[i], where ? corresponds to the
  * given \p MLCComparisonOperation.
+ * 
+ * API-Since: 14.5
  */
 @Generated
 @Library("MLCompute")
@@ -120,7 +122,7 @@ public class MLCComparisonLayer extends MLCLayer {
 
     /**
      * Create a comparison layer.
-     *
+     * 
      * @return A new compare layer.
      */
     @Generated

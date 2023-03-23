@@ -41,6 +41,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: INSetSeatSettingsInCarIntent is deprecated. There is no replacement.
+ */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -175,6 +181,11 @@ public class INSetSeatSettingsInCarIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INSetSeatSettingsInCarIntent initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithEnableHeating:enableCooling:enableMassage:seat:level:relativeLevelSetting:")
     public native INSetSeatSettingsInCarIntent initWithEnableHeatingEnableCoolingEnableMassageSeatLevelRelativeLevelSetting(
@@ -201,10 +212,16 @@ public class INSetSeatSettingsInCarIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("carName")
     public native INSpeakableString carName();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("initWithEnableHeating:enableCooling:enableMassage:seat:level:relativeLevelSetting:carName:")
     public native INSetSeatSettingsInCarIntent initWithEnableHeatingEnableCoolingEnableMassageSeatLevelRelativeLevelSettingCarName(

@@ -30,11 +30,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVSpeechUtterance
- * <p>
+ * 
  * AVSpeechUtterance is the atom of speaking a string or pausing the synthesizer.
- * <p>
+ * 
  * To start speaking, specify the AVSpeechSynthesisVoice and the string to be spoken, then optionally change the rate,
  * pitch or volume if desired.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("AVFAudio")
@@ -64,6 +66,9 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     @Selector("allocWithZone:")
     public static native AVSpeechUtterance allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("attributedSpeechString")
     public native NSAttributedString attributedSpeechString();
@@ -117,6 +122,9 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     @Selector("init")
     public native AVSpeechUtterance init();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("initWithAttributedString:")
     public native AVSpeechUtterance initWithAttributedString(NSAttributedString string);
@@ -181,6 +189,8 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
      * for this speech utterance instead of the default values.
      * If no assistive technologies are on, then the values of the properties on AVSpeechUtterance will be used.
      * Note that querying the properties will not refect the user's settings.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("prefersAssistiveTechnologySettings")
@@ -227,6 +237,8 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
      * for this speech utterance instead of the default values.
      * If no assistive technologies are on, then the values of the properties on AVSpeechUtterance will be used.
      * Note that querying the properties will not refect the user's settings.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setPrefersAssistiveTechnologySettings:")
@@ -261,6 +273,9 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     @Selector("speechString")
     public native String speechString();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("speechUtteranceWithAttributedString:")
     public static native AVSpeechUtterance speechUtteranceWithAttributedString(NSAttributedString string);
@@ -301,4 +316,33 @@ public class AVSpeechUtterance extends NSObject implements NSCopying, NSSecureCo
     @Generated
     @Selector("volume")
     public native float volume();
+
+    /**
+     * A speech utterance that expects markup written using the Speech Synthesis Markup Language (SSML) standard.
+     * 
+     * Uses SSML markup to add attributes. If using SSML to request voices that fall under certain attributes, a single
+     * utterance may be split into multiple parts, each sent to the appropriate synthesizer. If no voice matches the
+     * properties,
+     * the voice in the @c voice property of the utterance will be used. If no @c voice is specified, the system's
+     * default
+     * will be used. @c AVSpeechUtterance properties that affect the prosidy of a voice such as @c rate,
+     * [@c] pitchMultiplier, @c pitchMultiplier will not apply to an utterance that uses an SSML representation.
+     * 
+     * Returns nil if invalid SSML is passed in.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("initWithSSMLRepresentation:")
+    public native AVSpeechUtterance initWithSSMLRepresentation(String string);
+
+    /**
+     * A speech utterance that expects markup written using the Speech Synthesis Markup Language (SSML) standard.
+     * Returns nil if invalid SSML is passed in.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("speechUtteranceWithSSMLRepresentation:")
+    public static native AVSpeechUtterance speechUtteranceWithSSMLRepresentation(String string);
 }

@@ -26,10 +26,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@c] SHMediaLibrary represents the user's synced Shazam library.
- * <p>
+ * 
  * You can add new @c SHMediaItem instances to the user's library.
  * Before using any @c SHMediaLibrary method, you must obtain permission from the user to use their Media Library by
  * calling - [MPMediaLibrary requestAuthorization:].
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("ShazamKit")
@@ -51,14 +53,14 @@ public class SHMediaLibrary extends NSObject {
 
     /**
      * Adds an array of media items to the user's Shazam library.
-     * <p>
+     * 
      * For each @c SHMediaItem instance passed in, the following @c SHMediaItemProperty keys will be saved:
      * [@c] SHMediaItemShazamID, @c SHMediaItemTitle, @c SHMediaItemSubtitle.
      * If @c SHMediaItemSubtitle is not set it may fallback to use @c SHMediaItemArtist if available.
-     * <p>
+     * 
      * [@note] @c SHMediaItemShazamID is required for each @c SHMediaItem to be considered valid.
      * [@c] SHMediaItemShazamID must be a numeric only string
-     *
+     * 
      * @param mediaItems        An array containing the @c SHMediaItem objects to be added to the library.
      * @param completionHandler A block called after all valid @c SHMediaItem objects have been added to the library. If
      *                          an error occurred, the error parameter will be populated.

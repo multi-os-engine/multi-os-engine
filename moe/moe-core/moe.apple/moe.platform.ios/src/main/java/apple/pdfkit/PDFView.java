@@ -2,9 +2,6 @@ package apple.pdfkit;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGContextRef;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -46,12 +43,22 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.pdfkit.protocol.PDFPageOverlayViewProvider;
+import apple.uikit.UIFindInteraction;
+import apple.uikit.UIFindSession;
+import apple.uikit.protocol.UIFindInteractionDelegate;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("PDFKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class PDFView extends UIView implements UIGestureRecognizerDelegate {
+public class PDFView extends UIView implements UIGestureRecognizerDelegate, UIFindInteractionDelegate {
     static {
         NatJ.register();
     }
@@ -116,6 +123,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     /**
      * Tells PDFView that an annotation has changed on the specified page. PDFView re-scans then for tooltips, popups,
      * and informs PDFThumbnailViews so the thumbnail can be redrawn.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("annotationsChangedOnPage:")
@@ -231,6 +240,7 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -305,6 +315,7 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -403,6 +414,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     /**
      * Set the layout direction, either vertical or horizontal, for the given display mode
      * Defaults to vertical layout (kPDFDisplayDirectionVertical).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("displayDirection")
@@ -435,6 +448,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
 
     /**
      * Specifies presentation of pages from right-to-left. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("displaysRTL")
@@ -460,6 +475,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
      * of the PDF page or draw the page entirely yourself. Default implementation erases page to white and calls:
      * [page drawWithBox: [self displayBox] toContext: context]. Note that this may be called multiple times for
      * the same page due to tiling of renderable content.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("drawPage:toContext:")
@@ -469,6 +486,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
      * Also a handy method for sub-classing. Called for post-page rendering. In this method however no scaling/rotating
      * is
      * applied to the current context to map to page-space. The context is in "view-space" coordinates.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("drawPagePost:toContext:")
@@ -480,6 +499,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
      * times/dates, etc., as the page becomes visible. Where URL's are found, Link annotations are created in place.
      * These are
      * temporary annotations and are not saved.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("enableDataDetectors")
@@ -487,6 +508,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
 
     /**
      * Specifies if shadows should be drawn around page borders in a PDFView. Defaults to YES.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("enablePageShadows:")
@@ -594,6 +617,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
      * by passing nil to -[setHighlightedSelections:]. These methods allow you to highlight text perhaps to indicate
      * matches from a text search. To avoid confusion you should probably make sure the PDFSelections passed in are a
      * different color from the user's default text selection color. Commonly used for highlighting search results.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("highlightedSelections")
@@ -630,6 +655,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
 
     /**
      * Allows setting the interpolation quality for images drawn into the PDFView context.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("interpolationQuality")
@@ -640,6 +667,9 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("isUsingPageViewController")
     public native boolean isUsingPageViewController();
@@ -661,6 +691,9 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     @Selector("layoutDocumentView")
     public native void layoutDocumentView();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("maxScaleFactor")
     @NFloat
@@ -669,6 +702,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     /**
      * Set the minimum and maximum scaling factors for the PDF document. Assigning these values will implicitly turn
      * off autoScales, and allows scaleFactor to vary between these min / max scale factors
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("minScaleFactor")
@@ -691,6 +726,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
      * the top, bottom, left, and right of each page. Note that pageBreakMargins only allows positive values
      * and will clamp any negative value to 0.0. By default, if displaysPageBreaks is enabled, pageBreakMargins
      * is { 4.75, 4.0, 4.75, 4.0 } (with respect to top, left, bottom, right), otherwise it is { 0.0, 0.0, 0.0, 0.0 }
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("pageBreakMargins")
@@ -707,6 +744,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
 
     /**
      * Specifies if shadows should be drawn around page borders in a PDFView. Defaults to YES.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("pageShadowsEnabled")
@@ -714,6 +753,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
 
     /**
      * Performs the action specified by action.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("performAction:")
@@ -768,6 +809,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
      * Regardless of current autoScales mode, this returns the "size to fit" scale factor that autoScales would use
      * for scaling the current document and layout. For continuous modes this is a "fit width" scale, for
      * non-continuous modes it is a "best fit" scale.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("scaleFactorForSizeToFit")
@@ -789,46 +832,57 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     @Selector("selectAll:")
     public native void selectAll(@Mapped(ObjCObjectMapper.class) Object sender);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -868,6 +922,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     /**
      * Like -[setCurrentSelection:] above but with the additional parameter that specifies whether setting the selection
      * should be animated. The animation draws the user's attention to the new selection. Useful when searching.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setCurrentSelection:animate:")
@@ -905,6 +961,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     /**
      * Set the layout direction, either vertical or horizontal, for the given display mode
      * Defaults to vertical layout (kPDFDisplayDirectionVertical).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDisplayDirection:")
@@ -935,6 +993,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
 
     /**
      * Specifies presentation of pages from right-to-left. Defaults to NO.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setDisplaysRTL:")
@@ -953,6 +1013,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
      * times/dates, etc., as the page becomes visible. Where URL's are found, Link annotations are created in place.
      * These are
      * temporary annotations and are not saved.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setEnableDataDetectors:")
@@ -965,6 +1027,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
      * by passing nil to -[setHighlightedSelections:]. These methods allow you to highlight text perhaps to indicate
      * matches from a text search. To avoid confusion you should probably make sure the PDFSelections passed in are a
      * different color from the user's default text selection color. Commonly used for highlighting search results.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setHighlightedSelections:")
@@ -972,11 +1036,16 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
 
     /**
      * Allows setting the interpolation quality for images drawn into the PDFView context.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setInterpolationQuality:")
     public native void setInterpolationQuality(@NInt long value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setMaxScaleFactor:")
     public native void setMaxScaleFactor(@NFloat double value);
@@ -984,6 +1053,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     /**
      * Set the minimum and maximum scaling factors for the PDF document. Assigning these values will implicitly turn
      * off autoScales, and allows scaleFactor to vary between these min / max scale factors
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMinScaleFactor:")
@@ -994,6 +1065,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
      * the top, bottom, left, and right of each page. Note that pageBreakMargins only allows positive values
      * and will clamp any negative value to 0.0. By default, if displaysPageBreaks is enabled, pageBreakMargins
      * is { 4.75, 4.0, 4.75, 4.0 } (with respect to top, left, bottom, right), otherwise it is { 0.0, 0.0, 0.0, 0.0 }
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setPageBreakMargins:")
@@ -1036,6 +1109,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
      * pages. Note that you can change the orientation via -[PDFView setDisplayDirection:], and that
      * the property -[PDFView displayMode] is ignored: layout is always assumed single page continuous.
      * The viewOptions argument is given to the UIPageViewController initializer, as a way to pass in page spacing, etc.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("usePageViewController:withViewOptions:")
@@ -1060,6 +1135,8 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     /**
      * Returns an array of PDFPage objects representing the currently visible pages. May return empty array if no
      * document is assigned.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("visiblePages")
@@ -1080,4 +1157,98 @@ public class PDFView extends UIView implements UIGestureRecognizerDelegate {
     @IsOptional
     @Selector("gestureRecognizer:shouldReceiveEvent:")
     public native boolean gestureRecognizerShouldReceiveEvent(UIGestureRecognizer gestureRecognizer, UIEvent event);
+
+    /**
+     * If `findInteractionEnabled` is set to true, returns the receiver's built-in find interaction. Otherwise, nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("findInteraction")
+    public native UIFindInteraction findInteraction();
+
+    @Generated
+    @IsOptional
+    @Selector("findInteraction:didBeginFindSession:")
+    public native void findInteractionDidBeginFindSession(UIFindInteraction interaction, UIFindSession session);
+
+    @Generated
+    @IsOptional
+    @Selector("findInteraction:didEndFindSession:")
+    public native void findInteractionDidEndFindSession(UIFindInteraction interaction, UIFindSession session);
+
+    @Generated
+    @Selector("findInteraction:sessionForView:")
+    public native UIFindSession findInteractionSessionForView(UIFindInteraction interaction, UIView view);
+
+    /**
+     * Enables the built-in find interaction.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isFindInteractionEnabled")
+    public native boolean isFindInteractionEnabled();
+
+    /**
+     * If YES, page overlay views will be hit tested and therefore receive gestures. If NO, PDFView will receive
+     * gestures,
+     * namely those for text selection.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isInMarkupMode")
+    public native boolean isInMarkupMode();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("pageOverlayViewProvider")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native PDFPageOverlayViewProvider pageOverlayViewProvider();
+
+    /**
+     * Enables the built-in find interaction.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setFindInteractionEnabled:")
+    public native void setFindInteractionEnabled(boolean value);
+
+    /**
+     * If YES, page overlay views will be hit tested and therefore receive gestures. If NO, PDFView will receive
+     * gestures,
+     * namely those for text selection.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setInMarkupMode:")
+    public native void setInMarkupMode(boolean value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setPageOverlayViewProvider:")
+    public native void setPageOverlayViewProvider_unsafe(
+            @Mapped(ObjCObjectMapper.class) PDFPageOverlayViewProvider value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    public void setPageOverlayViewProvider(@Mapped(ObjCObjectMapper.class) PDFPageOverlayViewProvider value) {
+        Object __old = pageOverlayViewProvider();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setPageOverlayViewProvider_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
 }

@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageReduceRowSum
- * <p>
+ * 
  * The MPSImageReduceRowSum performs a reduction operation returning the sum for each row of an image
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -107,7 +109,7 @@ public class MPSImageReduceRowSum extends MPSImageReduceUnary {
 
     /**
      * Specifies information to apply the reduction operation on an image.
-     *
+     * 
      * @param device The device the filter will run on
      * @return A valid MPSImageReduce object or nil, if failure.
      */

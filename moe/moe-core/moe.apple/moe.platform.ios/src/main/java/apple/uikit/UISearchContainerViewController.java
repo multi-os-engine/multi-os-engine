@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Use this container view controller for UISearchController containment or presentation on tvOS
+ * 
+ * API-Since: 9.1
  */
 @Generated
 @Library("UIKit")
@@ -71,6 +73,7 @@ public class UISearchContainerViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native UISearchContainerViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();

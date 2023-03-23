@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.3
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -80,6 +83,11 @@ public class INCarSignalOptionsResolutionResult extends INIntentResolutionResult
     public static native INCarSignalOptionsResolutionResult confirmationRequiredWithCarSignalOptionsToConfirm(
             @NUInt long carSignalOptionsToConfirm);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @Selector("confirmationRequiredWithValueToConfirm:")
     public static native INCarSignalOptionsResolutionResult confirmationRequiredWithValueToConfirm(
@@ -159,6 +167,11 @@ public class INCarSignalOptionsResolutionResult extends INIntentResolutionResult
     public static native INCarSignalOptionsResolutionResult successWithResolvedCarSignalOptions(
             @NUInt long resolvedCarSignalOptions);
 
+    /**
+     * API-Since: 10.3
+     * Deprecated-Since: 11.0
+     */
+    @Deprecated
     @Generated
     @Selector("successWithResolvedValue:")
     public static native INCarSignalOptionsResolutionResult successWithResolvedValue(@NUInt long resolvedValue);

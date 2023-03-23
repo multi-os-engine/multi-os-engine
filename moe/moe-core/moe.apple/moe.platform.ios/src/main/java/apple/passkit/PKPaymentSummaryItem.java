@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * PKPaymentSummaryItem Defines a line-item for a payment such as tax, shipping, or discount.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("PassKit")
@@ -147,6 +149,9 @@ public class PKPaymentSummaryItem extends NSObject {
     @Selector("summaryItemWithLabel:amount:")
     public static native PKPaymentSummaryItem summaryItemWithLabelAmount(String label, NSDecimalNumber amount);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("summaryItemWithLabel:amount:type:")
     public static native PKPaymentSummaryItem summaryItemWithLabelAmountType(String label, NSDecimalNumber amount,
@@ -198,6 +203,8 @@ public class PKPaymentSummaryItem extends NSObject {
     /**
      * Defaults to PKPaymentSummaryItemTypeFinal
      * Set to PKPaymentSummaryItemTypePending if the amount of the item is not known at this time
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setType:")
@@ -206,6 +213,8 @@ public class PKPaymentSummaryItem extends NSObject {
     /**
      * Defaults to PKPaymentSummaryItemTypeFinal
      * Set to PKPaymentSummaryItemTypePending if the amount of the item is not known at this time
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("type")

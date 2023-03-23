@@ -39,11 +39,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * NSDateComponentsFormatter provides locale-correct and flexible string formatting of quantities of time, such as "1
- * day" or "1h 10m", as specified by NSDateComponents. For formatting intervals of time (such as "2PM to 5PM"), see
- * NSDateIntervalFormatter. NSDateComponentsFormatter is thread-safe, in that calling methods on it from multiple
- * threads will not cause crashes or incorrect results, but it makes no attempt to prevent confusion when one thread
- * sets something and another thread isn't expecting it to change.
+ * API-Since: 8.0
  */
 @Generated
 @Library("Foundation")
@@ -165,9 +161,9 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * units is low, unit collapsing is on, or zero dropping is on, not all allowed units may actually be used for a
      * given NSDateComponents. Default value is the components of the passed-in NSDateComponents object, or years |
      * months | weeks | days | hours | minutes | seconds if passed an NSTimeInterval or pair of NSDates.
-     * <p>
+     * 
      * Allowed units are:
-     * <p>
+     * 
      * NSCalendarUnitYear
      * NSCalendarUnitMonth
      * NSCalendarUnitWeekOfMonth (used to mean "quantity of weeks")
@@ -175,7 +171,7 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * NSCalendarUnitHour
      * NSCalendarUnitMinute
      * NSCalendarUnitSecond
-     * <p>
+     * 
      * Specifying any other NSCalendarUnits will result in an exception.
      */
     @Generated
@@ -258,7 +254,7 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * 1h 10m 30s, maximumUnitCount set to 2: "1h 10m"
      * 10m 30s, maximumUnitCount set to 0: "10m 30s"
      * 10m 30s, maximumUnitCount set to 2: "10m 30s"
-     * <p>
+     * 
      * Default is 0, which is interpreted as unlimited.
      */
     @Generated
@@ -271,9 +267,9 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * units is low, unit collapsing is on, or zero dropping is on, not all allowed units may actually be used for a
      * given NSDateComponents. Default value is the components of the passed-in NSDateComponents object, or years |
      * months | weeks | days | hours | minutes | seconds if passed an NSTimeInterval or pair of NSDates.
-     * <p>
+     * 
      * Allowed units are:
-     * <p>
+     * 
      * NSCalendarUnitYear
      * NSCalendarUnitMonth
      * NSCalendarUnitWeekOfMonth (used to mean "quantity of weeks")
@@ -281,7 +277,7 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * NSCalendarUnitHour
      * NSCalendarUnitMinute
      * NSCalendarUnitSecond
-     * <p>
+     * 
      * Specifying any other NSCalendarUnits will result in an exception.
      */
     @Generated
@@ -344,7 +340,7 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * 1h 10m 30s, maximumUnitCount set to 2: "1h 10m"
      * 10m 30s, maximumUnitCount set to 0: "10m 30s"
      * 10m 30s, maximumUnitCount set to 2: "10m 30s"
-     * <p>
+     * 
      * Default is 0, which is interpreted as unlimited.
      */
     @Generated
@@ -363,7 +359,7 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * Bitmask specifying how to handle zeros in units. This includes both padding and dropping zeros so that a
      * consistent number digits are displayed, causing updating displays to remain more stable. Default is
      * NSDateComponentsFormatterZeroFormattingBehaviorDefault.
-     * <p>
+     * 
      * If the combination of zero formatting behavior and style would lead to ambiguous date formats (for example, 1:10
      * meaning 1 hour, 10 seconds), NSDateComponentsFormatter will throw an exception.
      */
@@ -382,9 +378,9 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * Normally, NSDateComponentsFormatter will calculate as though counting from referenceDate (e.g. in February, 1
      * month formatted as a number of days will be 28). -stringFromDate:toDate: calculates from the passed-in startDate
      * instead.
-     * <p>
+     * 
      * See 'allowedUnits' for how the default set of allowed units differs from -stringFromDateComponents:.
-     * <p>
+     * 
      * Note that this is still formatting the quantity of time between the dates, not the pair of dates itself. For
      * strings like "Feb 22nd - Feb 28th", use NSDateIntervalFormatter.
      */
@@ -422,7 +418,7 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * Bitmask specifying how to handle zeros in units. This includes both padding and dropping zeros so that a
      * consistent number digits are displayed, causing updating displays to remain more stable. Default is
      * NSDateComponentsFormatterZeroFormattingBehaviorDefault.
-     * <p>
+     * 
      * If the combination of zero formatting behavior and style would lead to ambiguous date formats (for example, 1:10
      * meaning 1 hour, 10 seconds), NSDateComponentsFormatter will throw an exception.
      */
@@ -436,6 +432,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * NSDateComponentsFormatter will calculate as though counting from the date specified by the referenceDate in the
      * appropriate calendar. Defaults to [NSDate dateWithTimeIntervalSinceReferenceDate:0] at the time of the
      * -stringForObjectValue: call if not set. Set to nil to get the default behavior.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("referenceDate")
@@ -446,6 +444,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * NSDateComponentsFormatter will calculate as though counting from the date specified by the referenceDate in the
      * appropriate calendar. Defaults to [NSDate dateWithTimeIntervalSinceReferenceDate:0] at the time of the
      * -stringForObjectValue: call if not set. Set to nil to get the default behavior.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setReferenceDate:")

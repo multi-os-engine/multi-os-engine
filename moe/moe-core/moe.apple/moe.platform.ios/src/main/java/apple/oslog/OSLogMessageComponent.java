@@ -29,10 +29,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * OSLogMessageComponent
- * <p>
+ * 
  * The message arguments for a particular entry. There is one
  * component for each placeholder in the formatString plus one
  * component for any text after the last placeholder.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("OSLog")
@@ -64,9 +66,11 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] argumentCategory
-     * <p>
+     * 
      * The type of argument corresponding to the placeholder; see
      * OSLogMessageComponentArgumentCategory.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("argumentCategory")
@@ -75,10 +79,12 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] argumentDataValue
-     * <p>
+     * 
      * The argument as a sequence of bytes. Can be nil if the
      * argument cannot be decoded (for example, it could be
      * redacted), or if this is the last component.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("argumentDataValue")
@@ -86,10 +92,12 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] argumentDoubleValue
-     * <p>
+     * 
      * The argument as a double-precision floating point number; the
      * value is undefined if the argument cannot be decoded or if this
      * is the last component.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("argumentDoubleValue")
@@ -97,9 +105,11 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] argumentInt64Value
-     * <p>
+     * 
      * The argument as a 64-bit signed integer; the value is undefined
      * if it cannot be decoded or if this is the last component.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("argumentInt64Value")
@@ -107,10 +117,12 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] argumentNumberValue
-     * <p>
+     * 
      * The argument as a number. Can be nil if the argument cannot
      * be decoded (for example, it could be redacted), or if this is
      * the last component.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("argumentNumberValue")
@@ -118,10 +130,12 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] argumentStringValue
-     * <p>
+     * 
      * The argument as a string. Can be nil if the argument cannot
      * be decoded (for example, it could be redacted), or if this is
      * the last component.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("argumentStringValue")
@@ -129,10 +143,12 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] argumentUInt64Value
-     * <p>
+     * 
      * The argument as a 64-bit unsigned integer; the value is
      * undefined if the argument cannot be decoded or if this is the
      * last component.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("argumentUInt64Value")
@@ -174,10 +190,12 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] formatSubstring
-     * <p>
+     * 
      * The text immediately preceding a placeholder. This can be an
      * empty string if there is nothing between two placeholders, or
      * between the placeholder and the bounds of the string.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("formatSubstring")
@@ -224,8 +242,10 @@ public class OSLogMessageComponent extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] placeholder
-     * <p>
+     * 
      * The placeholder text. Is empty for is the last component.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("placeholder")

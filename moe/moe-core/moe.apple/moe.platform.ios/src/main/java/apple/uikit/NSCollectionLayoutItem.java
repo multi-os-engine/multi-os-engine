@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -86,10 +89,10 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
      * | +-------+ | +--------------------------+
      * | |
      * +-------------+
-     * <p>
+     * 
      * Use contentInsets on an item to adjust the final size of the item after layout is computed.
      * useful for grid style layouts to apply even spacing around each the edges of each item.
-     * <p>
+     * 
      * Note: contentInsets are ignored for any axis with an .estimated dimension
      */
     @Generated
@@ -131,7 +134,7 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
      * +--------+
      * | Bottom |
      * +--------+
-     * <p>
+     * 
      * Specifies additional space required surrounding and item when laying out.
      * Flexible spacing can be used to apportion remaining space after items are laid out to
      * evenly align items among available layout space.
@@ -206,10 +209,10 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
      * | +-------+ | +--------------------------+
      * | |
      * +-------------+
-     * <p>
+     * 
      * Use contentInsets on an item to adjust the final size of the item after layout is computed.
      * useful for grid style layouts to apply even spacing around each the edges of each item.
-     * <p>
+     * 
      * Note: contentInsets are ignored for any axis with an .estimated dimension
      */
     @Generated
@@ -236,7 +239,7 @@ public class NSCollectionLayoutItem extends NSObject implements NSCopying {
      * +--------+
      * | Bottom |
      * +--------+
-     * <p>
+     * 
      * Specifies additional space required surrounding and item when laying out.
      * Flexible spacing can be used to apportion remaining space after items are laid out to
      * evenly align items among available layout space.

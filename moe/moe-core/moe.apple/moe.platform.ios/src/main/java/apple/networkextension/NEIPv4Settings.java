@@ -45,10 +45,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEIPv4Settings
- * <p>
+ * 
  * The NEIPv4Settings class declares the programmatic interface for an object that contains IPv4 settings.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -166,9 +168,11 @@ public class NEIPv4Settings extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] addresses
-     * <p>
+     * 
      * An array of IPv4 addresses represented as dotted decimal strings. These addresses will be set on the virtual
      * interface used by the VPN tunnel.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("addresses")
@@ -186,9 +190,11 @@ public class NEIPv4Settings extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] excludedRoutes
-     * <p>
+     * 
      * An array of NEIPv4Route objects. Traffic matching these routes will be routed through the current primary
      * physical interface of the device.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("excludedRoutes")
@@ -196,9 +202,11 @@ public class NEIPv4Settings extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] includedRoutes
-     * <p>
+     * 
      * An array of NEIPv4Route objects. Traffic matching these routes will be routed through the virtual interface used
      * by the VPN tunnel.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("includedRoutes")
@@ -210,12 +218,14 @@ public class NEIPv4Settings extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * initWithAddresses:subnetMasks:
-     * <p>
+     * 
      * Initialize a newly-allocated NEIPv4Settings object.
-     *
+     * 
      * @param addresses   An array of IPv4 addresses represented as dotted decimal strings.
      * @param subnetMasks An array of IPv4 subnet masks represented as dotted decimal strings.
      * @return The initialized object.
+     * 
+     *         API-Since: 9.0
      */
     @Generated
     @Selector("initWithAddresses:subnetMasks:")
@@ -227,9 +237,11 @@ public class NEIPv4Settings extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] excludedRoutes
-     * <p>
+     * 
      * An array of NEIPv4Route objects. Traffic matching these routes will be routed through the current primary
      * physical interface of the device.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setExcludedRoutes:")
@@ -237,9 +249,11 @@ public class NEIPv4Settings extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] includedRoutes
-     * <p>
+     * 
      * An array of NEIPv4Route objects. Traffic matching these routes will be routed through the virtual interface used
      * by the VPN tunnel.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setIncludedRoutes:")
@@ -247,9 +261,11 @@ public class NEIPv4Settings extends NSObject implements NSSecureCoding, NSCopyin
 
     /**
      * [@property] subnetMasks
-     * <p>
+     * 
      * An array of IPv4 subnet masks represented as dotted decimal strings. These subnet masks will be set along with
      * their corresponding addresses from the addresses array on the virtual interface used by the VPN tunnel.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("subnetMasks")

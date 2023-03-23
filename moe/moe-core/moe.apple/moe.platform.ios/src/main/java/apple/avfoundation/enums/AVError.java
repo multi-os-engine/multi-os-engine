@@ -65,6 +65,12 @@ public final class AVError {
     @Generated @NInt public static final long EncoderNotFound = 0xFFFFFFFFFFFFD1C6L;
     @Generated @NInt public static final long ContentIsNotAuthorized = 0xFFFFFFFFFFFFD1C5L;
     @Generated @NInt public static final long ApplicationIsNotAuthorized = 0xFFFFFFFFFFFFD1C4L;
+    /**
+     * API-Since: 4.3
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: AVCaptureSession no longer produces an AVCaptureSessionRuntimeErrorNotification with this
+     * error. See AVCaptureSessionInterruptionReasonVideoDeviceNotAvailableInBackground.
+     */
     @Deprecated @Generated @NInt public static final long DeviceIsNotAvailableInBackground = 0xFFFFFFFFFFFFD1C3L;
     @Generated @NInt public static final long OperationNotSupportedForAsset = 0xFFFFFFFFFFFFD1C2L;
     /**
@@ -86,40 +92,125 @@ public final class AVError {
     @Generated @NInt public static final long FailedToLoadMediaData = 0xFFFFFFFFFFFFD1B7L;
     @Generated @NInt public static final long ServerIncorrectlyConfigured = 0xFFFFFFFFFFFFD1B6L;
     @Generated @NInt public static final long ApplicationIsNotAuthorizedToUseDevice = 0xFFFFFFFFFFFFD1B4L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long FailedToParse = 0xFFFFFFFFFFFFD1B3L;
     /**
      * userInfo contains AVErrorFileTypeKey
+     * 
+     * API-Since: 8.0
      */
     @Generated @NInt public static final long FileTypeDoesNotSupportSampleReferences = 0xFFFFFFFFFFFFD1B2L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long UndecodableMediaData = 0xFFFFFFFFFFFFD1B1L;
+    /**
+     * API-Since: 8.3
+     */
     @Generated @NInt public static final long AirPlayControllerRequiresInternet = 0xFFFFFFFFFFFFD1B0L;
+    /**
+     * API-Since: 8.3
+     */
     @Generated @NInt public static final long AirPlayReceiverRequiresInternet = 0xFFFFFFFFFFFFD1AFL;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long VideoCompositorFailed = 0xFFFFFFFFFFFFD1AEL;
     /**
      * on iOS, AVCaptureMovieFileOutput only supports one recording at a time
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long RecordingAlreadyInProgress = 0xFFFFFFFFFFFFD1ADL;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long UnsupportedOutputSettings = 0xFFFFFFFFFFFFD1ABL;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long OperationNotAllowed = 0xFFFFFFFFFFFFD1AAL;
 
     @Generated
     private AVError() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long ContentIsUnavailable = 0xFFFFFFFFFFFFD1A9L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long FormatUnsupported = 0xFFFFFFFFFFFFD1A8L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long MalformedDepth = 0xFFFFFFFFFFFFD1A7L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long ContentNotUpdated = 0xFFFFFFFFFFFFD1A6L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long NoLongerPlayable = 0xFFFFFFFFFFFFD1A5L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long NoCompatibleAlternatesForExternalDisplay = 0xFFFFFFFFFFFFD1A4L;
+    /**
+     * API-Since: 11.2
+     */
     @Generated @NInt public static final long NoSourceTrack = 0xFFFFFFFFFFFFD1A3L;
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NInt public static final long ExternalPlaybackNotSupportedForAsset = 0xFFFFFFFFFFFFD1A2L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long OperationNotSupportedForPreset = 0xFFFFFFFFFFFFD1A1L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long SessionHardwareCostOverage = 0xFFFFFFFFFFFFD1A0L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long UnsupportedDeviceActiveFormat = 0xFFFFFFFFFFFFD19FL;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long IncorrectlyConfigured = 0xFFFFFFFFFFFFD19DL;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long SegmentStartedWithNonSyncSample = 0xFFFFFFFFFFFFD19CL;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long RosettaNotInstalled = 0xFFFFFFFFFFFFD19BL;
+    /**
+     * API-Since: 15.0
+     */
     @Generated @NInt public static final long OperationCancelled = 0xFFFFFFFFFFFFD19AL;
+    /**
+     * API-Since: 14.6
+     */
     @Generated @NInt public static final long ContentKeyRequestCancelled = 0xFFFFFFFFFFFFD199L;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NInt public static final long InvalidSampleCursor = 0xFFFFFFFFFFFFD198L;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NInt public static final long FailedToLoadSampleData = 0xFFFFFFFFFFFFD197L;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NInt public static final long AirPlayReceiverTemporarilyUnavailable = 0xFFFFFFFFFFFFD196L;
 }

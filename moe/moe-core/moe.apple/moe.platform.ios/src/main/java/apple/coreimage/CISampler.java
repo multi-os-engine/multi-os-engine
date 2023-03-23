@@ -17,7 +17,6 @@ limitations under the License.
 package apple.coreimage;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSMethodSignature;
@@ -43,7 +42,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("CoreImage")
 @Runtime(ObjCRuntime.class)
@@ -151,15 +154,15 @@ public class CISampler extends NSObject implements NSCopying {
     /**
      * Creates a new sampler object from 'im' specifying key/value option
      * pairs. Each key is an NSString. Supported keys include:
-     * <p>
+     * 
      * kCISamplerAffineMatrix: An NSArray [a b c d tx ty] defining the
      * transformation to be applied to the sampler.
-     * <p>
+     * 
      * kCISamplerWrapMode: An NSString defining how pixels outside the
      * sampler's extent are produced. Options include kCISamplerWrapBlack
      * (pixels are transparent black, the default) and kCISamplerWrapClamp
      * (coordinates are clamped to the extent).
-     * <p>
+     * 
      * kCISamplerFilterMode: An NSString defining the filter to use when
      * sampling the image. One of kCISamplerFilterNearest (point sampling)
      * or kCISamplerFilterLinear (bilinear interpolation, the default).

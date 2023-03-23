@@ -30,6 +30,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * Protocol to which the principal view controller of the extension must conform.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("PhotosUI")
@@ -38,6 +40,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface PHContentEditingController {
     /**
      * Query whether the receiver can handle (i.e. can decode and render) the given adjustment data.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("canHandleAdjustmentData:")
@@ -46,6 +50,8 @@ public interface PHContentEditingController {
     /**
      * Called if the user cancels the editing session. (Can be called while the receiver is producing the editing
      * output.)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("cancelContentEditing")
@@ -56,6 +62,8 @@ public interface PHContentEditingController {
      * further. Also, it should create the editing output and call the completion handler. The completion handler
      * returns after the output has been consumed, so it is safe to perform clean up after it returns. The completion
      * handler can (and should best) be called on a background queue.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("finishContentEditingWithCompletionHandler:")
@@ -64,15 +72,15 @@ public interface PHContentEditingController {
 
     /**
      * Returns whether the user should be prompted when canceling the editing session.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("shouldShowCancelConfirmation")
     boolean shouldShowCancelConfirmation();
 
     /**
-     * Provides the input for the editing session. The placeholder image represents the current version of the asset
-     * (with adjustments baked in), and can be used as UI placeholder, in case rendering the adjustments from the input
-     * cannot be done in a timely fashion.
+     * API-Since: 8.0
      */
     @Generated
     @Selector("startContentEditingWithInput:placeholderImage:")

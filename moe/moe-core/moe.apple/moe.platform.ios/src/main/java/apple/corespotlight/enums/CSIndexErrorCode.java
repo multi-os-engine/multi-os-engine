@@ -19,31 +19,49 @@ package apple.corespotlight.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 public final class CSIndexErrorCode {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long UnknownError = 0xFFFFFFFFFFFFFFFFL;
     /**
      * The indexer was unavailable
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long IndexUnavailableError = 0xFFFFFFFFFFFFFC18L;
     /**
      * The CSSearchableItem is invalid for some reason
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long InvalidItemError = 0xFFFFFFFFFFFFFC17L;
     /**
      * The provided clientState was not valid for some reason
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long InvalidClientStateError = 0xFFFFFFFFFFFFFC16L;
     /**
      * There was an error trying to communicate with the remote process
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long RemoteConnectionError = 0xFFFFFFFFFFFFFC15L;
     /**
      * Quota for bundle was exceeded
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long QuotaExceeded = 0xFFFFFFFFFFFFFC14L;
     /**
      * Indexing isn't supported on this device
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long IndexingUnsupported = 0xFFFFFFFFFFFFFC13L;
 

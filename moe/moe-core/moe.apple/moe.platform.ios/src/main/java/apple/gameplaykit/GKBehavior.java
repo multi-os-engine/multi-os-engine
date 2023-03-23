@@ -49,6 +49,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A collection of GKGoals or GKBehaviors with weights that can be applied to a GKAgent
  * The sub-goals or sub-behaviors are summed to produce a total force to be applied to an agent
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -237,7 +239,7 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
 
     /**
      * Remove the indicated goal from this behavior.
-     *
+     * 
      * @param goal the goal to be removed
      */
     @Generated
@@ -254,7 +256,7 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
     /**
      * Adds a new goal or changes the weight of the existing goal in this behavior.
      * If the goal does not exist in this behavior, it is added.
-     *
+     * 
      * @param weight the weight for this goal
      * @param goal   the goal who's weight to change
      */
@@ -264,7 +266,7 @@ public class GKBehavior extends NSObject implements NSFastEnumeration, NSCopying
 
     /**
      * Gets the current weight for a given goal.
-     *
+     * 
      * @return the weight of the goal, or 0 if there is no such goal on this behavior
      */
     @Generated

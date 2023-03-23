@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A request for generating a feature print of an image.
- * <p>
+ * 
  * This request will produce a VNFeaturePrintObservation object.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("Vision")
@@ -105,7 +107,7 @@ public class VNGenerateImageFeaturePrintRequest extends VNImageBasedRequest {
     /**
      * Determine what type of croping and scaling action should be applied to the image before generating the feature
      * print.
-     * <p>
+     * 
      * The default value for this property is VNImageCropAndScaleOptionScaleFill.
      */
     @Generated
@@ -159,7 +161,7 @@ public class VNGenerateImageFeaturePrintRequest extends VNImageBasedRequest {
     /**
      * Determine what type of croping and scaling action should be applied to the image before generating the feature
      * print.
-     * <p>
+     * 
      * The default value for this property is VNImageCropAndScaleOptionScaleFill.
      */
     @Generated

@@ -20,10 +20,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MPSCNNGroupNormalizationDataSource
- * <p>
+ * 
  * The MPSCNNGroupNormalizationDataSource protocol declares the methods that an
  * group of MPSCNNGroupNormalization uses to initialize the
  * scale factors (gamma) and bias terms (beta).
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -32,7 +34,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
     /**
      * Return a pointer to an array containing the beta terms.
-     * <p>
+     * 
      * Must have numberOfFeatureChannels values since scaling is done per feature channel.
      */
     @Generated
@@ -41,9 +43,10 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
 
     /**
      * Optional copy method to create a copy of the data source for use with a new device.
-     *
+     * 
      * @param zone   The NSZone on which to allocate.
      * @param device The device where the kernel which uses this data source will be used.
+     * 
      * @return A pointer to a copy of this data source.
      */
     @Generated
@@ -67,7 +70,7 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
 
     /**
      * An optional tiny number to use to maintain numerical stability.
-     * <p>
+     * 
      * output_image = (input_image - mean[c]) * gamma[c] / sqrt(variance[c] + epsilon) + beta[c];
      * Defalt value if method unavailable: FLT_MIN
      */
@@ -80,7 +83,7 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
 
     /**
      * Return a pointer to an array containing the gamma terms.
-     * <p>
+     * 
      * Must have numberOfFeatureChannels values since scaling is done per feature channel.
      */
     @Generated
@@ -99,7 +102,7 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
 
     /**
      * A label that is transferred to the group normalization filter at init time
-     * <p>
+     * 
      * Overridden by a MPSCNNGroupNormalizationNode.label if it is non-nil.
      */
     @Generated
@@ -116,7 +119,7 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
 
     /**
      * [@property] The number of groups used.
-     * <p>
+     * 
      * numberOfFeatureChannels/numberOfGroups channels are normalized together.
      */
     @Generated
@@ -126,7 +129,7 @@ public interface MPSCNNGroupNormalizationDataSource extends NSCopying {
 
     /**
      * [@property] The number of groups used.
-     * <p>
+     * 
      * numberOfFeatureChannels/numberOfGroups channels are normalized together.
      */
     @Generated

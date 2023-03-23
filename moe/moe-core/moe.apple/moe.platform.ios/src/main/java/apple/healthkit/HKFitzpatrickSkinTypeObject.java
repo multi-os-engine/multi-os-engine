@@ -45,8 +45,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKFitzpatrickSkinTypeObject
- * <p>
+ * 
  * A wrapper object for HKFitzpatrickSkinType enumeration.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("HealthKit")

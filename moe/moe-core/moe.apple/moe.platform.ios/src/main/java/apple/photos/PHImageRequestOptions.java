@@ -17,7 +17,6 @@ limitations under the License.
 package apple.photos;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSError;
@@ -45,7 +44,11 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -155,6 +158,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
 
     /**
      * delivery mode. Defaults to PHImageRequestOptionsDeliveryModeOpportunistic
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("deliveryMode")
@@ -168,6 +173,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     /**
      * if necessary will download the image from iCloud (client can monitor or cancel using progressHandler). Defaults
      * to NO (see start/stopCachingImagesForAssets)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isNetworkAccessAllowed")
@@ -176,6 +183,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     /**
      * if necessary will download the image from iCloud (client can monitor or cancel using progressHandler). Defaults
      * to NO (see start/stopCachingImagesForAssets)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setNetworkAccessAllowed:")
@@ -183,6 +192,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
 
     /**
      * return only a single result, blocking until available (or failure). Defaults to NO
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("isSynchronous")
@@ -190,6 +201,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
 
     /**
      * return only a single result, blocking until available (or failure). Defaults to NO
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setSynchronous:")
@@ -198,6 +211,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     /**
      * specify crop rectangle in unit coordinates of the original image, such as a face. Defaults to CGRectZero (not
      * applicable)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("normalizedCropRect")
@@ -207,6 +222,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     /**
      * provide caller a way to be told how much progress has been made prior to delivering the data when it comes from
      * iCloud. Defaults to nil, shall be set by caller
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("progressHandler")
@@ -216,6 +233,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     /**
      * resize mode. Does not apply when size is PHImageManagerMaximumSize. Defaults to
      * PHImageRequestOptionsResizeModeFast
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("resizeMode")
@@ -224,6 +243,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
 
     /**
      * delivery mode. Defaults to PHImageRequestOptionsDeliveryModeOpportunistic
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setDeliveryMode:")
@@ -232,6 +253,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     /**
      * specify crop rectangle in unit coordinates of the original image, such as a face. Defaults to CGRectZero (not
      * applicable)
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setNormalizedCropRect:")
@@ -240,6 +263,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     /**
      * provide caller a way to be told how much progress has been made prior to delivering the data when it comes from
      * iCloud. Defaults to nil, shall be set by caller
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setProgressHandler:")
@@ -248,6 +273,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
     /**
      * resize mode. Does not apply when size is PHImageManagerMaximumSize. Defaults to
      * PHImageRequestOptionsResizeModeFast
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setResizeMode:")
@@ -255,6 +282,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
 
     /**
      * version
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setVersion:")
@@ -262,6 +291,8 @@ public class PHImageRequestOptions extends NSObject implements NSCopying {
 
     /**
      * version
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("version")

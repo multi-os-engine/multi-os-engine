@@ -46,6 +46,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * View controller that provides the standard user interface for leaderboards. Present modally from the top view
  * controller.
+ * 
+ * API-Since: 4.1
+ * Deprecated-Since: 7.0
+ * Deprecated-Message: Use GKGameCenterViewController instead
  */
 @Deprecated
 @Generated
@@ -76,6 +80,7 @@ public class GKLeaderboardViewController extends GKGameCenterViewController {
     @Selector("allocWithZone:")
     public static native GKLeaderboardViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();

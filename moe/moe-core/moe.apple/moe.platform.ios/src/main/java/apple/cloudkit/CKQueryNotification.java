@@ -41,7 +41,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CKQueryNotification
- * <p>
+ * 
  * [@c] notificationType == @c CKNotificationTypeQuery
  * When properties must be dropped (see @c isPruned), here's the order of importance. The most important properties are
  * first, they'll be the last ones to be dropped.
@@ -65,6 +65,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * - subtitleLocalizationKey
  * - subtitleLocalizationArgs
  * - subtitle
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("CloudKit")
@@ -181,6 +183,9 @@ public class CKQueryNotification extends CKNotification {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("databaseScope")
     @NInt
@@ -197,7 +202,7 @@ public class CKQueryNotification extends CKNotification {
 
     /**
      * A set of key->value pairs for creates and updates.
-     * <p>
+     * 
      * You request the server fill out this property via the @c desiredKeys property of @c CKNotificationInfo
      */
     @Generated

@@ -20,7 +20,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] SCNetworkConnectionStatus
- * <p>
+ * 
  * Status of the network connection.
  * This status is intended to be generic and high level.
  * An extended status, specific to the type of network

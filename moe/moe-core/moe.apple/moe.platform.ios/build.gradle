@@ -69,6 +69,7 @@ artifacts {
 spotless {
     java {
         target("src/main/java/apple/**")
+        removeUnusedImports()
         eclipse().configFile('Eclipse_Adjusted_NatJGen.xml')
     }
 }

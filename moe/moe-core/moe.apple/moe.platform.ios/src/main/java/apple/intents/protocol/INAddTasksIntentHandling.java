@@ -22,10 +22,12 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * Protocol to declare support for handling an INAddTasksIntent. By implementing this protocol, a class can provide
  * logic for resolving, confirming and handling the intent.
- * <p>
+ * 
  * The minimum requirement for an implementing class is that it should be able to handle the intent. The resolution and
  * confirmation methods are optional. The handling method is always called last, after resolving and confirming the
  * intent.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Intents")
@@ -34,15 +36,16 @@ import org.moe.natj.objc.ann.Selector;
 public interface INAddTasksIntentHandling {
     /**
      * Confirmation method - Validate that this intent is ready for the next step (i.e. handling)
-     * <p>
+     * 
      * Called prior to asking the app to handle the intent. The app should return a response object that contains
      * additional information about the intent, which may be relevant for the system to show the user prior to handling.
      * If unimplemented, the system will assume the intent is valid following resolution, and will assume there is no
      * additional information relevant to this intent.
-     *
+     * 
      * @param intent     The input intent
      * @param completion The response block contains an INAddTasksIntentResponse containing additional details about the
      *                   intent that may be relevant for the system to show the user prior to handling.
+     * 
      * @see INAddTasksIntentResponse
      */
     @Generated
@@ -62,12 +65,13 @@ public interface INAddTasksIntentHandling {
 
     /**
      * Handling method - Execute the task represented by the INAddTasksIntent that's passed in
-     * <p>
+     * 
      * Called to actually execute the intent. The app must return a response for this intent.
-     *
+     * 
      * @param intent     The input intent
      * @param completion The response handling block takes a INAddTasksIntentResponse containing the details of the
      *                   result of having executed the intent
+     * 
      * @see INAddTasksIntentResponse
      */
     @Generated
@@ -100,14 +104,21 @@ public interface INAddTasksIntentHandling {
 
     /**
      * Resolution methods - Determine if this intent is ready for the next step (confirmation)
-     * <p>
+     * 
      * Called to make sure the app extension is capable of handling this intent in its current form. This method is for
      * validating if the intent needs any further fleshing out.
-     *
+     * 
      * @param intent     The input intent
      * @param completion The response block contains an INIntentResolutionResult for the parameter being resolved
+     * 
      * @see INIntentResolutionResult
+     * 
+     *      API-Since: 11.0
+     *      Deprecated-Since: 13.0
+     *      Deprecated-Message: resolveTargetTaskListForAddTasks:withCompletion: is deprecated. Use
+     *      resolveTargetTaskListForAddTasks:completion: instead
      */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveTargetTaskListForAddTasks:withCompletion:")
@@ -139,6 +150,13 @@ public interface INAddTasksIntentHandling {
                 NSArray<? extends INSpeakableStringResolutionResult> resolutionResults);
     }
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: resolveTemporalEventTriggerForAddTasks:withCompletion: is deprecated. Use
+     * resolveTemporalEventTriggerForAddTasks:completion: instead
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("resolveTemporalEventTriggerForAddTasks:withCompletion:")
@@ -155,6 +173,9 @@ public interface INAddTasksIntentHandling {
                 INTemporalEventTriggerResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("resolvePriorityForAddTasks:withCompletion:")
@@ -170,6 +191,9 @@ public interface INAddTasksIntentHandling {
         void call_resolvePriorityForAddTasksWithCompletion(INTaskPriorityResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveTargetTaskListForAddTasks:completion:")
@@ -185,6 +209,9 @@ public interface INAddTasksIntentHandling {
         void call_resolveTargetTaskListForAddTasksCompletion(INAddTasksTargetTaskListResolutionResult resolutionResult);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("resolveTemporalEventTriggerForAddTasks:completion:")

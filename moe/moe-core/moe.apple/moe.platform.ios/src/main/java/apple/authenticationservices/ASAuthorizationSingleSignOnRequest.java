@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -171,9 +174,11 @@ public class ASAuthorizationSingleSignOnRequest extends ASAuthorizationOpenIDReq
 
     /**
      * Enables or disables the authorization user interface.
-     * <p>
+     * 
      * The default values is YES. If user interface is not enabled, then the authorization will fail with @see
      * ASAuthorizationErrorNotInteractive if it attempts to display the authorization user interface.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isUserInterfaceEnabled")
@@ -181,9 +186,11 @@ public class ASAuthorizationSingleSignOnRequest extends ASAuthorizationOpenIDReq
 
     /**
      * Enables or disables the authorization user interface.
-     * <p>
+     * 
      * The default values is YES. If user interface is not enabled, then the authorization will fail with @see
      * ASAuthorizationErrorNotInteractive if it attempts to display the authorization user interface.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setUserInterfaceEnabled:")

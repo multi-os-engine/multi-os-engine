@@ -38,11 +38,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NSURLCredentialStorage
- * <p>
+ * 
  * NSURLCredentialStorage implements a singleton object (shared instance) which manages the shared credentials cache.
  * Note: Whereas in Mac OS X any application can access any credential with a persistence of
  * NSURLCredentialPersistencePermanent provided the user gives permission, in iPhone OS an application can access only
  * its own credentials.
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("Foundation")
@@ -147,9 +149,9 @@ public class NSURLCredentialStorage extends NSObject {
 
     /**
      * [@property] sharedCredentialStorage
-     * <p>
+     * 
      * Get the shared singleton authentication storage
-     *
+     * 
      * @return the shared authentication storage
      */
     @Generated
@@ -167,7 +169,7 @@ public class NSURLCredentialStorage extends NSObject {
 
     /**
      * Get a dictionary mapping NSURLProtectionSpaces to dictionaries which map usernames to NSURLCredentials
-     *
+     * 
      * @return an NSDictionary where the keys are NSURLProtectionSpaces
      *         and the values are dictionaries, in which the keys are usernames
      *         and the values are NSURLCredentials
@@ -178,9 +180,9 @@ public class NSURLCredentialStorage extends NSObject {
 
     /**
      * credentialsForProtectionSpace:
-     * <p>
+     * 
      * Get a dictionary mapping usernames to credentials for the specified protection space.
-     *
+     * 
      * @param space An NSURLProtectionSpace indicating the protection space for which to get credentials
      * @return A dictionary where the keys are usernames and the values are the corresponding NSURLCredentials.
      */
@@ -191,21 +193,27 @@ public class NSURLCredentialStorage extends NSObject {
 
     /**
      * defaultCredentialForProtectionSpace:
-     * <p>
+     * 
      * Get the default credential for the specified protection space.
-     *
+     * 
      * @param space The protection space for which to get the default credential.
      */
     @Generated
     @Selector("defaultCredentialForProtectionSpace:")
     public native NSURLCredential defaultCredentialForProtectionSpace(NSURLProtectionSpace space);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("getCredentialsForProtectionSpace:task:completionHandler:")
     public native void getCredentialsForProtectionSpaceTaskCompletionHandler(NSURLProtectionSpace protectionSpace,
             NSURLSessionTask task,
             @ObjCBlock(name = "call_getCredentialsForProtectionSpaceTaskCompletionHandler") Block_getCredentialsForProtectionSpaceTaskCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("getDefaultCredentialForProtectionSpace:task:completionHandler:")
     public native void getDefaultCredentialForProtectionSpaceTaskCompletionHandler(NSURLProtectionSpace space,
@@ -218,13 +226,13 @@ public class NSURLCredentialStorage extends NSObject {
 
     /**
      * removeCredential:forProtectionSpace:
-     * <p>
+     * 
      * Remove the credential from the set for the specified protection space.
-     * <p>
+     * 
      * The credential is removed from both persistent and temporary storage. A credential that
      * has a persistence policy of NSURLCredentialPersistenceSynchronizable will fail.
      * See removeCredential:forProtectionSpace:options.
-     *
+     * 
      * @param credential The credential to remove.
      * @param space      The protection space for which a credential should be removed
      */
@@ -234,11 +242,13 @@ public class NSURLCredentialStorage extends NSObject {
 
     /**
      * removeCredential:forProtectionSpace:options
-     * <p>
+     * 
      * Remove the credential from the set for the specified protection space based on options.
-     * <p>
+     * 
      * The credential is removed from both persistent and temporary storage.
-     *
+     * 
+     * API-Since: 7.0
+     * 
      * @param credential The credential to remove.
      * @param space      The protection space for which a credential should be removed
      * @param options    A dictionary containing options to consider when removing the credential. This should
@@ -253,6 +263,9 @@ public class NSURLCredentialStorage extends NSObject {
     public native void removeCredentialForProtectionSpaceOptions(NSURLCredential credential, NSURLProtectionSpace space,
             NSDictionary<String, ?> options);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("removeCredential:forProtectionSpace:options:task:")
     public native void removeCredentialForProtectionSpaceOptionsTask(NSURLCredential credential,
@@ -260,13 +273,13 @@ public class NSURLCredentialStorage extends NSObject {
 
     /**
      * setCredential:forProtectionSpace:
-     * <p>
+     * 
      * Add a new credential to the set for the specified protection space or replace an existing one.
-     * <p>
+     * 
      * Multiple credentials may be set for a given protection space, but each must have
      * a distinct user. If a credential with the same user is already set for the protection space,
      * the new one will replace it.
-     *
+     * 
      * @param credential The credential to set.
      * @param space      The protection space for which to add it.
      */
@@ -274,6 +287,9 @@ public class NSURLCredentialStorage extends NSObject {
     @Selector("setCredential:forProtectionSpace:")
     public native void setCredentialForProtectionSpace(NSURLCredential credential, NSURLProtectionSpace space);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setCredential:forProtectionSpace:task:")
     public native void setCredentialForProtectionSpaceTask(NSURLCredential credential,
@@ -281,11 +297,11 @@ public class NSURLCredentialStorage extends NSObject {
 
     /**
      * setDefaultCredential:forProtectionSpace:
-     * <p>
+     * 
      * Set the default credential for the specified protection space.
-     * <p>
+     * 
      * If the credential is not yet in the set for the protection space, it will be added to it.
-     *
+     * 
      * @param credential The credential to set as default.
      * @param space      The protection space for which the credential should be set as default.
      */
@@ -293,6 +309,9 @@ public class NSURLCredentialStorage extends NSObject {
     @Selector("setDefaultCredential:forProtectionSpace:")
     public native void setDefaultCredentialForProtectionSpace(NSURLCredential credential, NSURLProtectionSpace space);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setDefaultCredential:forProtectionSpace:task:")
     public native void setDefaultCredentialForProtectionSpaceTask(NSURLCredential credential,

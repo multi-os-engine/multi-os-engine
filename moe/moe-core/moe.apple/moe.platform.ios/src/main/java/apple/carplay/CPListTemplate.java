@@ -29,6 +29,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -89,7 +92,11 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * The list template's delegate is informed of list selection events.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -170,14 +177,22 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * The list template's delegate is informed of list selection events.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CPListTemplateDelegate value);
 
     /**
      * The list template's delegate is informed of list selection events.
+     * 
+     * API-Since: 12.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) CPListTemplateDelegate value) {
         Object __old = delegate();
@@ -244,13 +259,15 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
      * An optional array of strings, ordered from most to least preferred.
      * The variant strings should be provided as localized, displayable content.
      * The system will select the first variant that fits the available space.
-     * <p>
+     * 
      * If the list template does not contain any items (itemCount == 0), then
      * the template will display an empty view with a title and subtitle to indicate
      * that the template has no list items.
-     * <p>
+     * 
      * If the list template is updated to contain items, the empty view will be automatically
      * removed.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("emptyViewSubtitleVariants")
@@ -260,13 +277,15 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
      * An optional array of strings, ordered from most to least preferred.
      * The variant strings should be provided as localized, displayable content.
      * The system will select the first variant that fits the available space.
-     * <p>
+     * 
      * If the list template does not contain any items (itemCount == 0), then
      * the template will display an empty view with a title and subtitle to indicate
      * that the template has no list items.
-     * <p>
+     * 
      * If the list template is updated to contain items, the empty view will be automatically
      * removed.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("emptyViewTitleVariants")
@@ -275,6 +294,8 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     /**
      * Return an @c NSIndexPath for the specified item, if it exists in any section
      * in this list template, or nil if not found.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("indexPathForItem:")
@@ -282,6 +303,8 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * The number of items currently displayed in this list template, across all sections.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("itemCount")
@@ -290,9 +313,11 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * The maximum number of items, across all sections, that may appear in a @c CPListTemplate.
-     * <p>
+     * 
      * [@note] Your list template will display the first @c maximumItemCount items, across all sections.
      * Any items or sections beyond that limit will be trimmed.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("maximumItemCount")
@@ -301,9 +326,11 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * The maximum number of sections that may appear in a @c CPListTemplate.
-     * <p>
+     * 
      * [@note] Your list template will display the first @c maximumSectionCount sections.
      * Any sections beyond that limit will be trimmed.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("maximumSectionCount")
@@ -312,6 +339,8 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * The number of sections currently displayed in this list template.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("sectionCount")
@@ -322,13 +351,15 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
      * An optional array of strings, ordered from most to least preferred.
      * The variant strings should be provided as localized, displayable content.
      * The system will select the first variant that fits the available space.
-     * <p>
+     * 
      * If the list template does not contain any items (itemCount == 0), then
      * the template will display an empty view with a title and subtitle to indicate
      * that the template has no list items.
-     * <p>
+     * 
      * If the list template is updated to contain items, the empty view will be automatically
      * removed.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setEmptyViewSubtitleVariants:")
@@ -338,13 +369,15 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
      * An optional array of strings, ordered from most to least preferred.
      * The variant strings should be provided as localized, displayable content.
      * The system will select the first variant that fits the available space.
-     * <p>
+     * 
      * If the list template does not contain any items (itemCount == 0), then
      * the template will display an empty view with a title and subtitle to indicate
      * that the template has no list items.
-     * <p>
+     * 
      * If the list template is updated to contain items, the empty view will be automatically
      * removed.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setEmptyViewTitleVariants:")
@@ -352,16 +385,18 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * The configuration of the Assistant Cell.
-     * <p>
+     * 
      * Assigning to this property will dynamically update the List Template to reflect the visibility, position, and
      * intent identifier of the Assistant Cell.
-     * <p>
+     * 
      * [@note] The Assistant Cell is only supported by CarPlay Audio and Communication Apps.
-     * <p>
+     * 
      * Unlike @c CPListItem, your application will not receive a callback when the user selects the cell.
      * Instead, configure an Intents app extention to receive user requests from SiriKit, in order to turn the requests
      * into an
      * app-specific actions.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("assistantCellConfiguration")
@@ -370,13 +405,15 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
     /**
      * Initialize a list template with one or more sections of items, an optional title, and configuration for the
      * assistant cell via a @c CPAssistantCellConfiguration object.
-     * <p>
+     * 
      * [@note] The Assistant Cell is only supported by CarPlay Audio and Communication Apps.
-     * <p>
+     * 
      * Unlike @c CPListItem, your application will not receive a callback when the user selects the cell.
      * Instead, configure an Intents app extention to receive user requests from SiriKit, in order to turn the requests
      * into an
      * app-specific actions.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("initWithTitle:sections:assistantCellConfiguration:")
@@ -385,16 +422,18 @@ public class CPListTemplate extends CPTemplate implements CPBarButtonProviding {
 
     /**
      * The configuration of the Assistant Cell.
-     * <p>
+     * 
      * Assigning to this property will dynamically update the List Template to reflect the visibility, position, and
      * intent identifier of the Assistant Cell.
-     * <p>
+     * 
      * [@note] The Assistant Cell is only supported by CarPlay Audio and Communication Apps.
-     * <p>
+     * 
      * Unlike @c CPListItem, your application will not receive a callback when the user selects the cell.
      * Instead, configure an Intents app extention to receive user requests from SiriKit, in order to turn the requests
      * into an
      * app-specific actions.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setAssistantCellConfiguration:")

@@ -43,9 +43,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageGaussianBlur
- * <p>
+ * 
  * The MPSImageGaussianBlur convolves an image with gaussian of given sigma in both x and y direction.
- * <p>
+ * 
  * The MPSImageGaussianBlur utilizes a very fast algorith that typically runs at approximately
  * 1/2 of copy speeds. Notably, it is faster than either the tent or box blur except perhaps
  * for very large filter windows. Mathematically, it is an approximate gaussian. Some
@@ -54,6 +54,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * filter instead with an appropriate set of weights. The MPSImageGaussianBlur is intended
  * to be suitable for all common image processing needs demanding ~10 bits of precision or
  * less.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -175,7 +177,7 @@ public class MPSImageGaussianBlur extends MPSUnaryImageKernel {
 
     /**
      * Initialize a gaussian blur filter for a particular sigma and device
-     *
+     * 
      * @param device The device the filter will run on
      * @param sigma  The standard deviation of gaussian blur filter.
      *               Gaussian weight, centered at 0, at integer grid i is given as
@@ -193,7 +195,7 @@ public class MPSImageGaussianBlur extends MPSUnaryImageKernel {
 
     /**
      * [@property] sigma
-     * <p>
+     * 
      * Read-only sigma value with which filter was created
      */
     @Generated
@@ -206,16 +208,18 @@ public class MPSImageGaussianBlur extends MPSUnaryImageKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")

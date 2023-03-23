@@ -43,11 +43,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CKFetchShareMetadataOperation
- * <p>
+ * 
  * Fetch the @c CKShareMetadata for a share URL.
- * <p>
+ * 
  * Since you can't know what container this share is in before you fetch its metadata, you may run this operation in any
  * container you have access to
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CloudKit")
@@ -161,7 +163,7 @@ public class CKFetchShareMetadataOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of shareURLs to
      * errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
@@ -183,7 +185,7 @@ public class CKFetchShareMetadataOperation extends CKOperation {
 
     /**
      * Called once for each share URL that the server processed
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -193,7 +195,7 @@ public class CKFetchShareMetadataOperation extends CKOperation {
 
     /**
      * Declares which user-defined keys should be fetched and added to the resulting @c rootRecord.
-     * <p>
+     * 
      * Only consulted if @c shouldFetchRootRecord is @c YES.
      * If nil, declares the entire root record should be downloaded. If set to an empty array, declares that no user
      * fields should be downloaded.
@@ -205,7 +207,7 @@ public class CKFetchShareMetadataOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * If the error is @c CKErrorPartialFailure, the error's userInfo dictionary contains a dictionary of shareURLs to
      * errors keyed off of @c CKPartialErrorsByItemIDKey. These errors are repeats of those sent back in previous @c
@@ -219,7 +221,7 @@ public class CKFetchShareMetadataOperation extends CKOperation {
 
     /**
      * Called once for each share URL that the server processed
-     * <p>
+     * 
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
     @Generated
@@ -229,7 +231,7 @@ public class CKFetchShareMetadataOperation extends CKOperation {
 
     /**
      * Declares which user-defined keys should be fetched and added to the resulting @c rootRecord.
-     * <p>
+     * 
      * Only consulted if @c shouldFetchRootRecord is @c YES.
      * If nil, declares the entire root record should be downloaded. If set to an empty array, declares that no user
      * fields should be downloaded.
@@ -245,7 +247,7 @@ public class CKFetchShareMetadataOperation extends CKOperation {
 
     /**
      * If set to YES, the resulting @c CKShareMetadata will have a @c rootRecord object filled out.
-     * <p>
+     * 
      * Defaults to @c NO.
      * The resulting @c CKShareMetadata will have a @c rootRecordID property regardless of the value of this property.
      */
@@ -259,7 +261,7 @@ public class CKFetchShareMetadataOperation extends CKOperation {
 
     /**
      * If set to YES, the resulting @c CKShareMetadata will have a @c rootRecord object filled out.
-     * <p>
+     * 
      * Defaults to @c NO.
      * The resulting @c CKShareMetadata will have a @c rootRecordID property regardless of the value of this property.
      */

@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASESoundEventNodeAsset
- * <p>
+ * 
  * An object that represents a registered sound event asset in the asset registry.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")

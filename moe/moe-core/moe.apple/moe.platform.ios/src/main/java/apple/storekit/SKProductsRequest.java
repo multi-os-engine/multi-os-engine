@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * request information about products for your application
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("StoreKit")
@@ -152,6 +154,9 @@ public class SKProductsRequest extends SKRequest {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -163,15 +168,23 @@ public class SKProductsRequest extends SKRequest {
 
     /**
      * Set of string product identifiers
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("initWithProductIdentifiers:")
     public native SKProductsRequest initWithProductIdentifiers(NSSet<String> productIdentifiers);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();

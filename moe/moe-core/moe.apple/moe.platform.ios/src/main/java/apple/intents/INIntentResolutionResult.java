@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -174,11 +177,17 @@ public class INIntentResolutionResult extends NSObject {
     @Selector("init")
     public native INIntentResolutionResult init();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
     public static native INIntentResolutionResult confirmationRequiredWithItemToConfirmForReason(
             @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INIntentResolutionResult unsupportedWithReason(@NInt long reason);

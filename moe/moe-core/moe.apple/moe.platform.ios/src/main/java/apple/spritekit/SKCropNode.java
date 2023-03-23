@@ -193,7 +193,7 @@ public class SKCropNode extends SKNode {
 
     /**
      * SKNode to be used as the mask.
-     * <p>
+     * 
      * The SKNode supplied as the mask must not be a child of another node, but it may have children. Anywhere the
      * mask's output alpha component is less than 0.05 masks out that area for the SKCropNode's children. If the mask is
      * nil, nothing is masked out.
@@ -204,7 +204,7 @@ public class SKCropNode extends SKNode {
 
     /**
      * SKNode to be used as the mask.
-     * <p>
+     * 
      * The SKNode supplied as the mask must not be a child of another node, but it may have children. Anywhere the
      * mask's output alpha component is less than 0.05 masks out that area for the SKCropNode's children. If the mask is
      * nil, nothing is masked out.

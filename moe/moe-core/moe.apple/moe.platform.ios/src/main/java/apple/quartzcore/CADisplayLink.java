@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Class representing a timer bound to the display vsync. *
+ * 
+ * API-Since: 3.1
  */
 @Generated
 @Library("QuartzCore")
@@ -185,7 +187,12 @@ public class CADisplayLink extends NSObject {
      * will cause the display link to fire every other display frame, and
      * so on. The behavior when using values less than one is undefined.
      * DEPRECATED - use preferredFramesPerSecond.
+     * 
+     * API-Since: 3.1
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: preferredFramesPerSecond
      */
+    @Deprecated
     @Generated
     @Selector("frameInterval")
     @NInt
@@ -224,7 +231,11 @@ public class CADisplayLink extends NSObject {
      * link. If set to zero, the default value, the display link will fire at the
      * native cadence of the display hardware. The display link will make a
      * best-effort attempt at issuing callbacks at the requested rate.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("preferredFramesPerSecond")
     @NInt
@@ -246,7 +257,12 @@ public class CADisplayLink extends NSObject {
      * will cause the display link to fire every other display frame, and
      * so on. The behavior when using values less than one is undefined.
      * DEPRECATED - use preferredFramesPerSecond.
+     * 
+     * API-Since: 3.1
+     * Deprecated-Since: 10.0
+     * Deprecated-Message: preferredFramesPerSecond
      */
+    @Deprecated
     @Generated
     @Selector("setFrameInterval:")
     public native void setFrameInterval(@NInt long value);
@@ -256,13 +272,19 @@ public class CADisplayLink extends NSObject {
      * link. If set to zero, the default value, the display link will fire at the
      * native cadence of the display hardware. The display link will make a
      * best-effort attempt at issuing callbacks at the requested rate.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 100000.0
      */
+    @Deprecated
     @Generated
     @Selector("setPreferredFramesPerSecond:")
     public native void setPreferredFramesPerSecond(@NInt long value);
 
     /**
      * The next timestamp that the client should target their render for.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("targetTimestamp")
@@ -284,6 +306,8 @@ public class CADisplayLink extends NSObject {
      * this property is identical as preferredFramesPerSecond. Otherwise, the actual
      * callback rate will be dynamically adjusted to better align with other
      * animation sources.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("preferredFrameRateRange")
@@ -296,6 +320,8 @@ public class CADisplayLink extends NSObject {
      * this property is identical as preferredFramesPerSecond. Otherwise, the actual
      * callback rate will be dynamically adjusted to better align with other
      * animation sources.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setPreferredFrameRateRange:")

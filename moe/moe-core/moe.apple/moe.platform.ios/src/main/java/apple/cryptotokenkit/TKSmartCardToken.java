@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * TKSmartCardToken base class for implementing SmartCard based token.
- * <p>
+ * 
  * When implementing SmartCard token extension, subclass TKSmartCardToken and implement TKTokenDelegate on it.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("CryptoTokenKit")
@@ -107,7 +109,7 @@ public class TKSmartCardToken extends TKToken {
 
     /**
      * Initializes token instance with specified attributes.
-     *
+     * 
      * @param smartCard   TKSmartCard instance representing connection to SmartCard on which the intance should operate.
      * @param AID         ISO7816-4 application ID which is preselected on the card.
      * @param instanceID  Unique, persistent identifier of this token. This is typically implemented by some kind of

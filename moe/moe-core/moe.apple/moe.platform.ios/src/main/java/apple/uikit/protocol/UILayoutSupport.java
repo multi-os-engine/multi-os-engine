@@ -31,10 +31,16 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UILayoutSupport")
 public interface UILayoutSupport {
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("bottomAnchor")
     NSLayoutYAxisAnchor bottomAnchor();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("heightAnchor")
     NSLayoutDimension heightAnchor();
@@ -50,6 +56,8 @@ public interface UILayoutSupport {
 
     /**
      * Constraint creation conveniences. See NSLayoutAnchor.h for details.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("topAnchor")

@@ -24,16 +24,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVCaptureMultiCamSession
- * <p>
+ * 
  * A subclass of AVCaptureSession which supports simultaneous capture from multiple inputs of the same media type.
- * <p>
+ * 
  * AVCaptureMultiCamSession's sessionPreset is always AVCaptureSessionPresetInputPriority and may not be set to any
  * other value. Each input's device.activeFormat must be set manually to achieve the desired quality of service.
- * <p>
+ * 
  * AVCaptureMultiCamSession supports dynamic enabling and disabling of individual camera inputs without interrupting
  * preview. In order to stop an individual camera input, set the enabled property on all of its connections or connected
  * ports to NO. When the last active connection or port is disabled, the source camera stops streaming to save power and
  * bandwidth. Other inputs streaming data through the session are unaffected.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("AVFoundation")
@@ -95,15 +97,15 @@ public class AVCaptureMultiCamSession extends AVCaptureSession {
 
     /**
      * [@property] hardwareCost
-     * <p>
+     * 
      * Indicates the percentage of the session's available hardware budget currently in use.
-     * <p>
+     * 
      * The value of this property is a float from 0.0 => 1.0 indicating how much of the session's available hardware is
      * in use as a percentage, given the currently connected inputs and outputs and the features for which you've opted
      * in. When your hardwareCost is greater than 1.0, the capture session cannot run your desired configuration due to
      * hardware constraints, so you receive an AVCaptureSessionRuntimeErrorNotification when attempting to start it
      * running. Default value is 0.
-     * <p>
+     * 
      * Contributors to hardwareCost include:
      * - Whether the source devices' active formats use the full sensor (4:3) or a crop (16:9). Cropped formats require
      * lower hardware bandwidth, and therefore lower the cost.
@@ -146,8 +148,9 @@ public class AVCaptureMultiCamSession extends AVCaptureSession {
 
     /**
      * [@property] multiCamSupported
+     * 
      * Indicates whether multicam session is supported on this platform.
-     * <p>
+     * 
      * AVCaptureMultiCamSession is intended to be used with multiple cameras and is only supported on platforms with
      * sufficient hardware bandwidth, system memory, and thermal performance. For single-camera use cases,
      * AVCaptureSession should be used instead.
@@ -187,9 +190,9 @@ public class AVCaptureMultiCamSession extends AVCaptureSession {
 
     /**
      * [@property] systemPressureCost
-     * <p>
+     * 
      * Indicates the system pressure cost of your current configuration.
-     * <p>
+     * 
      * The value of this property is a float whose nominal range is 0.0 => 1.0 indicating the system pressure cost of
      * your current configuration. When your systemPressureCost is greater than 1.0, the capture session cannot run
      * sustainably. It may be able to run for a brief period before needing to stop due to high system pressure. While

@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -44,9 +47,9 @@ public class CPInformationTemplate extends CPTemplate {
 
     /**
      * An array of actions that appear at the bottom of the template.
-     * <p>
+     * 
      * To update the actions appearing in this information template, assign a new array to this property.
-     * <p>
+     * 
      * [@note] The maximum number of actions is 3. If you specify more than 3, only the first 3 will be used.
      */
     @Generated
@@ -108,11 +111,11 @@ public class CPInformationTemplate extends CPTemplate {
 
     /**
      * Initialize a CPInformationTemplate with a title, optional labels, and optional action buttons.
-     * <p>
+     * 
      * [@note] The maximum number of @c CPInformationItem is 10. If you specify more than 10 items, only the first 10
      * will be used.
      * The maximum number of @c CPTextButton is 3. If you specify more than 3, only the first 3 will be used.
-     *
+     * 
      * @param layout  Information template layout, either leading aligned or two columns
      * @param title   Information template title, appears at the top of the template
      * @param items   Information items that will appear in the template
@@ -142,9 +145,9 @@ public class CPInformationTemplate extends CPTemplate {
 
     /**
      * An array of @c CPInformationItem.
-     * <p>
+     * 
      * To update the items appearing in this information template, assign a new array to this property.
-     * <p>
+     * 
      * [@note] The maximum number of items is 10. If you specify more than 10 items, only the first 10 will be used.
      */
     @Generated
@@ -178,9 +181,9 @@ public class CPInformationTemplate extends CPTemplate {
 
     /**
      * An array of actions that appear at the bottom of the template.
-     * <p>
+     * 
      * To update the actions appearing in this information template, assign a new array to this property.
-     * <p>
+     * 
      * [@note] The maximum number of actions is 3. If you specify more than 3, only the first 3 will be used.
      */
     @Generated
@@ -189,9 +192,9 @@ public class CPInformationTemplate extends CPTemplate {
 
     /**
      * An array of @c CPInformationItem.
-     * <p>
+     * 
      * To update the items appearing in this information template, assign a new array to this property.
-     * <p>
+     * 
      * [@note] The maximum number of items is 10. If you specify more than 10 items, only the first 10 will be used.
      */
     @Generated

@@ -26,10 +26,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * VNFaceLandmarks2D
- * <p>
+ * 
  * VNFaceLandmarks2D is the result of a face landmarks 2D request, containing detected facial landmark points organized
  * into VNFaceLandmarkRegion2D regions. The points are accessible as a full list, or as sub-gruops representing
  * pre-defined facial regions.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("Vision")

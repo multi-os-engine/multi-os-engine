@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * PKPaymentRequest defines an application's request to produce a payment instrument for the
  * purchase of goods and services. It encapsulates information about the selling party's payment
  * processing capabilities, an amount to pay, and the currency code.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("PassKit")
@@ -80,6 +82,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * The payment networks and platforms supported for in-app payment
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("availableNetworks")
@@ -171,6 +175,12 @@ public class PKPaymentRequest extends NSObject {
     @Selector("applicationData")
     public native NSData applicationData();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: ABRecordRef has been deprecated, and does not support all available address properties. You
+     * should migrate to billingContact.
+     */
     @Generated
     @Deprecated
     @Selector("billingAddress")
@@ -178,6 +188,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * If the merchant already has a billing address on file, set it here.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("billingContact")
@@ -228,7 +240,11 @@ public class PKPaymentRequest extends NSObject {
     /**
      * Indicates which billing address fields are required. The default is PKAddressFieldNone.
      * This property is deprecated and should not be used.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
      */
+    @Deprecated
     @Generated
     @Selector("requiredBillingAddressFields")
     @NUInt
@@ -237,7 +253,11 @@ public class PKPaymentRequest extends NSObject {
     /**
      * Indicates which shipping address fields are required. The default is PKAddressFieldNone.
      * This property is deprecated and should not be used
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
      */
+    @Deprecated
     @Generated
     @Selector("requiredShippingAddressFields")
     @NUInt
@@ -251,6 +271,12 @@ public class PKPaymentRequest extends NSObject {
     @Selector("setApplicationData:")
     public native void setApplicationData(NSData value);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: ABRecordRef has been deprecated, and does not support all available address properties. You
+     * should migrate to billingContact.
+     */
     @Generated
     @Deprecated
     @Selector("setBillingAddress:")
@@ -258,6 +284,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * If the merchant already has a billing address on file, set it here.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setBillingContact:")
@@ -303,7 +331,11 @@ public class PKPaymentRequest extends NSObject {
     /**
      * Indicates which billing address fields are required. The default is PKAddressFieldNone.
      * This property is deprecated and should not be used.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
      */
+    @Deprecated
     @Generated
     @Selector("setRequiredBillingAddressFields:")
     public native void setRequiredBillingAddressFields(@NUInt long value);
@@ -311,13 +343,22 @@ public class PKPaymentRequest extends NSObject {
     /**
      * Indicates which shipping address fields are required. The default is PKAddressFieldNone.
      * This property is deprecated and should not be used
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
      */
+    @Deprecated
     @Generated
     @Selector("setRequiredShippingAddressFields:")
     public native void setRequiredShippingAddressFields(@NUInt long value);
 
     /**
      * These properties have been deprecated and should not be used.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: ABRecordRef has been deprecated, and does not support all available address properties. You
+     * should migrate to shippingContact.
      */
     @Generated
     @Deprecated
@@ -326,6 +367,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * If the merchant already has a shipping address on file, set it here.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setShippingContact:")
@@ -341,6 +384,8 @@ public class PKPaymentRequest extends NSObject {
     /**
      * Indicates the display mode for the shipping (e.g, "Pick Up", "Ship To", "Deliver To"). Localized.
      * The default is PKShippingTypeShipping
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @Selector("setShippingType:")
@@ -356,6 +401,11 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * These properties have been deprecated and should not be used.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: ABRecordRef has been deprecated, and does not support all available address properties. You
+     * should migrate to shippingContact.
      */
     @Generated
     @Deprecated
@@ -364,6 +414,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * If the merchant already has a shipping address on file, set it here.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("shippingContact")
@@ -379,6 +431,8 @@ public class PKPaymentRequest extends NSObject {
     /**
      * Indicates the display mode for the shipping (e.g, "Pick Up", "Ship To", "Deliver To"). Localized.
      * The default is PKShippingTypeShipping
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @Selector("shippingType")
@@ -395,6 +449,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * Convenience method to create a payment billing address error with the supplied CNPostalAddressKey and description
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("paymentBillingAddressInvalidErrorWithKey:localizedDescription:")
@@ -405,6 +461,8 @@ public class PKPaymentRequest extends NSObject {
      * Convenience method to create a payment contact error with the supplied field
      * You may optionally provide a localized description to be displayed to the user.
      * Available display space for descriptions may be limited, so you should keep your messages concise
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("paymentContactInvalidErrorWithContactField:localizedDescription:")
@@ -414,6 +472,8 @@ public class PKPaymentRequest extends NSObject {
     /**
      * Convenience method to create a payment shipping address error with the supplied CNPostalAddressKey and
      * description
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("paymentShippingAddressInvalidErrorWithKey:localizedDescription:")
@@ -422,6 +482,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * Convenience method to create a payment shipping address service error with the supplied description
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("paymentShippingAddressUnserviceableErrorWithLocalizedDescription:")
@@ -432,6 +494,8 @@ public class PKPaymentRequest extends NSObject {
      * Indicates which billing contact fields the merchant requires in order to process a transaction.
      * Currently only postal address may be requested for billing contact. For all other fields use
      * -requiredShippingContactFields
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("requiredBillingContactFields")
@@ -439,6 +503,9 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * Indicates which shipping contact fields the merchant requires in order to process a transactions
+     * 
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("requiredShippingContactFields")
@@ -448,6 +515,8 @@ public class PKPaymentRequest extends NSObject {
      * Indicates which billing contact fields the merchant requires in order to process a transaction.
      * Currently only postal address may be requested for billing contact. For all other fields use
      * -requiredShippingContactFields
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRequiredBillingContactFields:")
@@ -455,6 +524,9 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * Indicates which shipping contact fields the merchant requires in order to process a transactions
+     * 
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRequiredShippingContactFields:")
@@ -463,6 +535,8 @@ public class PKPaymentRequest extends NSObject {
     /**
      * Set of two-letter ISO 3166 country codes. When provided will filter the selectable payment passes to those
      * issued in the supported countries.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setSupportedCountries:")
@@ -471,6 +545,8 @@ public class PKPaymentRequest extends NSObject {
     /**
      * Set of two-letter ISO 3166 country codes. When provided will filter the selectable payment passes to those
      * issued in the supported countries.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("supportedCountries")
@@ -478,6 +554,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * An optional coupon code that is valid and has been applied to the payment request already.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("couponCode")
@@ -485,6 +563,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * Convenience method to create a payment coupon code expired error with the supplied description.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("paymentCouponCodeExpiredErrorWithLocalizedDescription:")
@@ -492,6 +572,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * Convenience method to create a payment coupon code invalid error with the supplied description.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("paymentCouponCodeInvalidErrorWithLocalizedDescription:")
@@ -499,6 +581,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * An optional coupon code that is valid and has been applied to the payment request already.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setCouponCode:")
@@ -506,6 +590,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * Indicates the editing mode for the shipping contact. The default is PKShippingContactEditingModeEnabled.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setShippingContactEditingMode:")
@@ -513,6 +599,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * Indicates whether the merchant supports coupon code entry and validation. Defaults to NO.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setSupportsCouponCode:")
@@ -520,6 +608,8 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * Indicates the editing mode for the shipping contact. The default is PKShippingContactEditingModeEnabled.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("shippingContactEditingMode")
@@ -528,8 +618,104 @@ public class PKPaymentRequest extends NSObject {
 
     /**
      * Indicates whether the merchant supports coupon code entry and validation. Defaults to NO.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("supportsCouponCode")
     public native boolean supportsCouponCode();
+
+    /**
+     * Optional request to set up an automatic reload, such as a store card top-up. This payment request
+     * will receive a merchant-specific payment token if the payment network supports merchant-specific
+     * payment tokens.
+     * 
+     * This property cannot be used simultaneously with multi token contexts or recurring payment requests.
+     * 
+     * Merchant-specific payment tokens are not supported on watchOS.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("automaticReloadPaymentRequest")
+    public native PKAutomaticReloadPaymentRequest automaticReloadPaymentRequest();
+
+    /**
+     * Array of payment token contexts that indicates multiple payment tokens are requested, one for
+     * each context object provided.
+     * 
+     * The sum of all context amounts must be less than or equal to the total amount of the enclosing
+     * payment request, as indicated by the last payment summary item.
+     * 
+     * This property cannot be used simultaneously with recurring or automatic reload payment requests.
+     * 
+     * Multiple payment tokens are not supported on watchOS.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("multiTokenContexts")
+    public native NSArray<? extends PKPaymentTokenContext> multiTokenContexts();
+
+    /**
+     * Optional request to set up a recurring payment, typically a subscription. This payment request
+     * will receive a merchant-specific payment token if the payment network supports merchant-specific
+     * payment tokens.
+     * 
+     * This property cannot be used simultaneously with multi token contexts or automatic reload payment requests.
+     * 
+     * Merchant-specific payment tokens are not supported on watchOS.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("recurringPaymentRequest")
+    public native PKRecurringPaymentRequest recurringPaymentRequest();
+
+    /**
+     * Optional request to set up an automatic reload, such as a store card top-up. This payment request
+     * will receive a merchant-specific payment token if the payment network supports merchant-specific
+     * payment tokens.
+     * 
+     * This property cannot be used simultaneously with multi token contexts or recurring payment requests.
+     * 
+     * Merchant-specific payment tokens are not supported on watchOS.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setAutomaticReloadPaymentRequest:")
+    public native void setAutomaticReloadPaymentRequest(PKAutomaticReloadPaymentRequest value);
+
+    /**
+     * Array of payment token contexts that indicates multiple payment tokens are requested, one for
+     * each context object provided.
+     * 
+     * The sum of all context amounts must be less than or equal to the total amount of the enclosing
+     * payment request, as indicated by the last payment summary item.
+     * 
+     * This property cannot be used simultaneously with recurring or automatic reload payment requests.
+     * 
+     * Multiple payment tokens are not supported on watchOS.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setMultiTokenContexts:")
+    public native void setMultiTokenContexts(NSArray<? extends PKPaymentTokenContext> value);
+
+    /**
+     * Optional request to set up a recurring payment, typically a subscription. This payment request
+     * will receive a merchant-specific payment token if the payment network supports merchant-specific
+     * payment tokens.
+     * 
+     * This property cannot be used simultaneously with multi token contexts or automatic reload payment requests.
+     * 
+     * Merchant-specific payment tokens are not supported on watchOS.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setRecurringPaymentRequest:")
+    public native void setRecurringPaymentRequest(PKRecurringPaymentRequest value);
 }

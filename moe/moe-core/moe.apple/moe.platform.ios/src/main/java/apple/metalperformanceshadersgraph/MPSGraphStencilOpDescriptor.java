@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
@@ -95,11 +98,12 @@ public class MPSGraphStencilOpDescriptor extends NSObject implements NSCopying {
 
     /**
      * stencil operation descriptor
-     * <p>
+     * 
      * Stencil operation descriptor with a user specified paddingStyle.
      * Default values for everything else.
-     *
+     * 
      * @param paddingStyle Determines how many values to pad the inpur Tensor with.
+     * 
      * @return A valid MPSGraphStencilOpDescriptor object
      */
     @Generated

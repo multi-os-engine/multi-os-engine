@@ -13,6 +13,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * [@c] CPListTemplateItem describes common properties of list items that can be displayed
  * in a @c CPListTemplate.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CarPlay")
@@ -43,9 +45,11 @@ public interface CPListTemplateItem {
 
     /**
      * A Boolean value indicating whether the button is enabled.
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
      * property is @c YES.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isEnabled")
@@ -53,9 +57,11 @@ public interface CPListTemplateItem {
 
     /**
      * A Boolean value indicating whether the button is enabled.
-     * <p>
+     * 
      * Set the value of this property to @c YES to enable the button or @c NO to disable it. The default value of this
      * property is @c YES.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setEnabled:")

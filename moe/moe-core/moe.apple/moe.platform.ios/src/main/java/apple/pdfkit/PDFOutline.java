@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("PDFKit")
 @Runtime(ObjCRuntime.class)
@@ -47,6 +50,8 @@ public class PDFOutline extends NSObject {
      * and
      * you must therefore call this method. The root outline item will never return either an action or a destination.
      * Calling -[setAction] on the root item has no effect.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("action")
@@ -125,6 +130,8 @@ public class PDFOutline extends NSObject {
      * Returns the index of the outline item - that is, relative to its siblings (and from the perspective of the
      * parent).
      * The root outline item (or any item with no parent) is always index 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("index")
@@ -149,6 +156,8 @@ public class PDFOutline extends NSObject {
      * NOTE: Be careful when calling this for a PDFOutline item which already has a parent (for example when moving
      * items
      * around within an outline hierarchy) - you should retain the item and call -[removeFromParent] first.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("insertChild:atIndex:")
@@ -172,6 +181,8 @@ public class PDFOutline extends NSObject {
      * is
      * always NO and calling -[setIsOpen] has no effect. The root item always returns YES for -[isOpen] and calling
      * -[setIsOpen] also has no effect.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isOpen")
@@ -207,6 +218,8 @@ public class PDFOutline extends NSObject {
 
     /**
      * Returns the parent outline (the root outline will return nil).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("parent")
@@ -214,6 +227,8 @@ public class PDFOutline extends NSObject {
 
     /**
      * Removes self from parent (for root outline, does nothing since the root has no parent).
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("removeFromParent")
@@ -234,6 +249,8 @@ public class PDFOutline extends NSObject {
      * and
      * you must therefore call this method. The root outline item will never return either an action or a destination.
      * Calling -[setAction] on the root item has no effect.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAction:")
@@ -254,6 +271,8 @@ public class PDFOutline extends NSObject {
      * is
      * always NO and calling -[setIsOpen] has no effect. The root item always returns YES for -[isOpen] and calling
      * -[setIsOpen] also has no effect.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setIsOpen:")

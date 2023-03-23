@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -71,6 +74,7 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native PKPaymentAuthorizationViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -105,6 +109,8 @@ public class PKPaymentAuthorizationViewController extends UIViewController {
     /**
      * Determine whether this device can process payments using the specified networks and capabilities bitmask
      * See -canMakePaymentsUsingNetworks:
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("canMakePaymentsUsingNetworks:capabilities:")

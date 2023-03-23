@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A three-dimensional shape that represents the geometry of a mesh.
+ * 
+ * API-Since: 13.4
  */
 @Generated
 @Library("ARKit")

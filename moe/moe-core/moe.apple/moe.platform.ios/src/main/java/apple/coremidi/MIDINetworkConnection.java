@@ -41,8 +41,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * __________________________________________________________________________________________________
  * MIDINetworkConnection
- * <p>
+ * 
  * Add a connection to a session to connect to the remote host; remove it to disconnect.
+ * 
+ * API-Since: 4.2
  */
 @Generated
 @Library("CoreMIDI")

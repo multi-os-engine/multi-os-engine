@@ -20,9 +20,9 @@ import org.moe.natj.objc.ann.Selector;
  * -------------------------------------------------------------------------------------------------------
  * ICCameraDeviceDelegate
  * [@protocol] ICCameraDeviceDelegate <ICDeviceDelegate>
- * <p>
+ * 
  * A delegate of ICCameraDevice must conform to ICCameraDeviceDelegate protocol.
- * <p>
+ * 
  * The ICCameraDeviceDelegate protocol inherits from the ICDeviceDelegate protocol.
  */
 @Generated
@@ -42,10 +42,12 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
 
     /**
      * cameraDevice:didAddItems:
-     * <p>
+     * 
      * This message is sent when objects are added to the device.
-     * <p>
+     * 
      * The objects in items are instances ICCameraFile class.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cameraDevice:didAddItems:")
@@ -53,11 +55,13 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
 
     /**
      * cameraDevice:didCompleteDeleteFilesWithError:
-     * <p>
+     * 
      * This message is sent after the camera device completes a delete operation initiated by sending a
      * 'requestDeleteFiles:' message to that device.
      * [@discusson] This message is sent after the camera device completes a delete operation initiated by sending a
      * 'requestDeleteFiles:' message to that device.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -68,8 +72,10 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
 
     /**
      * cameraDevice:didReceiveMetadata:forItem:error:
-     * <p>
+     * 
      * This message is sent when the metadata requested for an item on a device is available.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cameraDevice:didReceiveMetadata:forItem:error:")
@@ -88,8 +94,10 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
 
     /**
      * cameraDevice:didReceivePTPEvent:
-     * <p>
+     * 
      * This message is sent to the delegate to convey a PTP event.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cameraDevice:didReceivePTPEvent:")
@@ -97,8 +105,10 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
 
     /**
      * cameraDevice:didReceiveThumbnail:forItem:error:
-     * <p>
+     * 
      * This message is sent when the thumbnail requested for an item on a device is available.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cameraDevice:didReceiveThumbnail:forItem:error:")
@@ -127,10 +137,12 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
 
     /**
      * cameraDevice:didRemoveItems:
-     * <p>
+     * 
      * This message is sent when objects are removed from the device.
-     * <p>
+     * 
      * The objects in items are instances ICCameraFile class.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cameraDevice:didRemoveItems:")
@@ -138,10 +150,12 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
 
     /**
      * cameraDevice:didRenameItems:
-     * <p>
+     * 
      * This message is sent when an object or objects are renamed on the device.
-     * <p>
+     * 
      * The objects may be instances of ICCameraFolder or ICCameraFile class.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cameraDevice:didRenameItems:")
@@ -153,6 +167,8 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
      * If the request is no longer wanted, eg: the item is no longer displayed on the screen, the client can return NO
      * and abort sending
      * a request down to the camera device, speeding up the execution queue.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -163,12 +179,14 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
 
     /**
      * cameraDevice:shouldGetThumbnailOfItem:
-     * <p>
+     * 
      * This message is sent when the camera device is about to execute queued requests for the thumbnail of a specific
      * item.
      * If the request is no longer wanted, eg: the item is no longer displayed on the screen, the client can return NO
      * and abort sending
      * a request down to the camera device, speeding up the exection queue.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -179,10 +197,12 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
 
     /**
      * cameraDeviceDidChangeCapability:
-     * <p>
+     * 
      * This message is sent when a capability of a device changes.
-     * <p>
+     * 
      * Detailed capabilitiy descriptions are provided at the top of this header file.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("cameraDeviceDidChangeCapability:")
@@ -190,7 +210,7 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
 
     /**
      * deviceDidEnableAccessRestriction:
-     * <p>
+     * 
      * This message is sent when an Apple device has been locked, and media is unavailable until the restriction
      * has been removed.
      */
@@ -200,7 +220,7 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
 
     /**
      * deviceDidRemoveAccessRestriction:
-     * <p>
+     * 
      * This message is sent when an Apple device has been unlocked, paired to the host, and media is available.
      */
     @Generated
@@ -209,10 +229,12 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
 
     /**
      * deviceDidBecomeReadyWithCompleteContentCatalog:
-     * <p>
+     * 
      * This message is sent when the camera device is done enumerating its content and is ready to receive requests.
-     * <p>
+     * 
      * A session must be opened on the device in order to enumerate its content and make it ready to receive requests.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("deviceDidBecomeReadyWithCompleteContentCatalog:")

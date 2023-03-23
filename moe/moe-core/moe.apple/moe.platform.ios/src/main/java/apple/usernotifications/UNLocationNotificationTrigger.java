@@ -47,6 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * containing the same identifier will result in undefined behavior. The number of UNLocationNotificationTriggers that
  * may be scheduled by an application at any one time is limited by the system. Applications must have "when-in-use"
  * authorization through CoreLocation. See the CoreLocation documentation for more information.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("UserNotifications")

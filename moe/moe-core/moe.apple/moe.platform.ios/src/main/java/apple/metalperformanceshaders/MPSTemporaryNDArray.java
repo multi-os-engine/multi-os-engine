@@ -28,14 +28,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSTemporaryNDArray
- * <p>
+ * 
  * A MPSNDArray that uses command buffer specific memory to store the array data
- * <p>
+ * 
  * Temporary memory is command buffer specific memory, and is useful for MPSNDArray allocations
  * with limited lifetime within a single command buffer. Typically, most MPSNDArrays that
  * are not read or written to by the CPU or needed in other command buffers should be
  * MPSTemporaryNDArray. This will greatly reduce time spent allocating new memory, reduce memory usage
  * and help improve memory locality.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -151,7 +153,7 @@ public class MPSTemporaryNDArray extends MPSNDArray {
     /**
      * The number of times a temporary MPSNDArray may be read by a MPSNDArray... kernel
      * before its contents become undefined.
-     * <p>
+     * 
      * MPSTemporaryNDArrays must release their underlying buffers for reuse
      * immediately after last use. So as to facilitate *prompt* convenient
      * memory recycling, each time a MPSTemporaryNDArray is read by a
@@ -160,17 +162,17 @@ public class MPSTemporaryNDArray extends MPSNDArray {
      * automatically made available for reuse to MPS for its own needs and for
      * other MPSTemporaryNDArrays prior to return from the -encode.. function.
      * The contents of the buffer become undefined at this time.
-     * <p>
+     * 
      * By default, the readCount is initialized to 1, indicating a MPSNDArray that
      * may be overwritten any number of times, but read only once.
-     * <p>
+     * 
      * You may change the readCount as desired to allow MPSNDArrayKernels to read
      * the MPSTemporaryNDArray additional times. However, it is an error to change
      * the readCount once it is zero. It is an error to read or write to a
      * MPSTemporaryNDArray with a zero readCount. You may set the readCount to 0
      * yourself to cause the underlying buffer to be returned to MPS. Writing
      * to a MPSTemporaryNDArray does not adjust the readCount.
-     * <p>
+     * 
      * The Metal API Validation layer will assert if a MPSTemporaryNDArray is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
@@ -191,7 +193,7 @@ public class MPSTemporaryNDArray extends MPSNDArray {
     /**
      * The number of times a temporary MPSNDArray may be read by a MPSNDArray... kernel
      * before its contents become undefined.
-     * <p>
+     * 
      * MPSTemporaryNDArrays must release their underlying buffers for reuse
      * immediately after last use. So as to facilitate *prompt* convenient
      * memory recycling, each time a MPSTemporaryNDArray is read by a
@@ -200,17 +202,17 @@ public class MPSTemporaryNDArray extends MPSNDArray {
      * automatically made available for reuse to MPS for its own needs and for
      * other MPSTemporaryNDArrays prior to return from the -encode.. function.
      * The contents of the buffer become undefined at this time.
-     * <p>
+     * 
      * By default, the readCount is initialized to 1, indicating a MPSNDArray that
      * may be overwritten any number of times, but read only once.
-     * <p>
+     * 
      * You may change the readCount as desired to allow MPSNDArrayKernels to read
      * the MPSTemporaryNDArray additional times. However, it is an error to change
      * the readCount once it is zero. It is an error to read or write to a
      * MPSTemporaryNDArray with a zero readCount. You may set the readCount to 0
      * yourself to cause the underlying buffer to be returned to MPS. Writing
      * to a MPSTemporaryNDArray does not adjust the readCount.
-     * <p>
+     * 
      * The Metal API Validation layer will assert if a MPSTemporaryNDArray is
      * deallocated with non-zero readCount to help identify cases when resources
      * are not returned promptly.
@@ -229,7 +231,7 @@ public class MPSTemporaryNDArray extends MPSNDArray {
 
     /**
      * Initialize a MPSTemporaryNDArray for use on a MTLCommandBuffer
-     *
+     * 
      * @param commandBuffer The MTLCommandBuffer on which the MPSTemporaryNDArray will be exclusively used
      * @param descriptor    A valid MPSNDArrayDescriptor describing the MPSNDArray format to create
      * @return A valid MPSTemporaryNDArray. The object is not managed by a NSAutoreleasePool. The object will be

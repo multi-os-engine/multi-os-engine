@@ -19,10 +19,24 @@ package apple.photos.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class PHCollectionListType {
-    @Generated @NInt public static final long MomentList = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Will be removed in a future release
+     */
+    @Deprecated @Generated @NInt public static final long MomentList = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Folder = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long SmartFolder = 0x0000000000000003L;
 
     @Generated

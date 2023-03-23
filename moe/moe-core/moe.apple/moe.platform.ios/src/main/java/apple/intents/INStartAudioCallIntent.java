@@ -40,6 +40,12 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 13.0
+ * Deprecated-Message: INStartAudioCallIntent is deprecated. Please adopt INStartCallIntent instead
+ */
+@Deprecated
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -169,6 +175,12 @@ public class INStartAudioCallIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INStartAudioCallIntent initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithContacts:")
     public native INStartAudioCallIntent initWithContacts(NSArray<? extends INPerson> contacts);
@@ -179,11 +191,17 @@ public class INStartAudioCallIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("destinationType")
     @NInt
     public native long destinationType();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("initWithDestinationType:contacts:")
     public native INStartAudioCallIntent initWithDestinationTypeContacts(@NInt long destinationType,

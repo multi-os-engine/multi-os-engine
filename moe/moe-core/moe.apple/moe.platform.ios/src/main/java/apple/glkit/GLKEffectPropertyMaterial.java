@@ -42,10 +42,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * GLKEffectPropertyMaterial
- * <p>
+ * 
  * GLKEffectPropertyMaterial encapsulates material properties for an GLKEffect in
  * accordance with the specification and lighting behavior of OpenGL ES 1.1.
+ * 
+ * API-Since: 5.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
  */
+@Deprecated
 @Generated
 @Library("GLKit")
 @Runtime(ObjCRuntime.class)

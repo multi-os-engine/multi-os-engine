@@ -48,9 +48,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Formats a contact name.
- * <p>
+ * 
  * This formatter handles international ordering and delimiting of the contact name components. This includes applying
  * the user defaults when appropriate.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -82,10 +84,10 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     /**
      * Formats the contact name returning an attributed string.
-     * <p>
+     * 
      * This behaves like +stringFromContact:style: except it returns an attributed string. Includes the attribute key
      * CNContactPropertyAttribute.
-     *
+     * 
      * @param contact    The contact whose name is to be formatted.
      * @param style      The formatting style to be used for the contact name.
      * @param attributes The default attributes to use. See NSFormatter for details.
@@ -135,10 +137,10 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     /**
      * The contact key descriptor required for the formatter.
-     * <p>
+     * 
      * Use to fetch all contact keys required for the formatter style. Can combine key descriptors for different
      * formatter styles in the fetch.
-     *
+     * 
      * @param style The formatting style to be used for the contact name.
      * @return The contact key descriptor for the formatting style.
      */
@@ -200,7 +202,7 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     /**
      * Formats the contact name.
-     *
+     * 
      * @param contact The contact whose name is to be formatted.
      * @param style   The formatting style to be used for the contact name.
      * @return The formatted contact name.
@@ -220,10 +222,10 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     /**
      * Formats the contact name returning an attributed string.
-     * <p>
+     * 
      * This behaves like -stringFromContact:style: except it returns an attributed string. CNContactPropertyAttribute
      * key has the value of a CNContact name property key.
-     *
+     * 
      * @param contact    The contact whose name is to be formatted.
      * @param attributes The default attributes to use. See NSFormatter for details.
      * @return The formatted contact name as an attributed string.
@@ -243,7 +245,7 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     /**
      * The style for a contact formatter instance.
-     * <p>
+     * 
      * The default value is CNContactFormatterStyleFullName.
      */
     @Generated
@@ -252,7 +254,7 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     /**
      * Formats the contact name.
-     *
+     * 
      * @param contact The contact whose name is to be formatted.
      * @return The formatted contact name.
      */
@@ -262,7 +264,7 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     /**
      * The style for a contact formatter instance.
-     * <p>
+     * 
      * The default value is CNContactFormatterStyleFullName.
      */
     @Generated
@@ -286,10 +288,10 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     /**
      * The contact key descriptor required for the name delimiter.
-     * <p>
+     * 
      * Use to fetch all contact keys required for +delimiterForContact:. Can combine key descriptors for different
      * formatter styles in the fetch.
-     *
+     * 
      * @return The contact key descriptor for the name delimiter.
      */
     @Generated
@@ -299,10 +301,10 @@ public class CNContactFormatter extends NSFormatter implements NSSecureCoding {
 
     /**
      * The contact key descriptor required for the name order.
-     * <p>
+     * 
      * Use to fetch all contact keys required for +nameOrderForContact:. Can combine key descriptors for different
      * formatter styles in the fetch.
-     *
+     * 
      * @return The contact key descriptor for the name order.
      */
     @Generated

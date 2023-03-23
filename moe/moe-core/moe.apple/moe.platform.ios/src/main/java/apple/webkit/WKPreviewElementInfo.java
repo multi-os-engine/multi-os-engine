@@ -41,6 +41,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 13.0
+ */
+@Deprecated
 @Generated
 @Library("WebKit")
 @Runtime(ObjCRuntime.class)

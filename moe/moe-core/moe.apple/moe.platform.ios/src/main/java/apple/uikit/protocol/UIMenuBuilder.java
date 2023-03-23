@@ -19,6 +19,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Encapsulates access and mutation for a menu hierarchy.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")
@@ -27,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface UIMenuBuilder {
     /**
      * Fetch the identified action.
-     *
+     * 
      * @param identifier The identifier of the action to fetch.
      * @return The action with the given identifier, or `nil` if no such action.
      */
@@ -37,7 +39,7 @@ public interface UIMenuBuilder {
 
     /**
      * Fetch the identified command.
-     *
+     * 
      * @param action       The action of the command to fetch.
      * @param propertyList Property list object to distinguish commands, if needed.
      * @return The command with the given action and property list, or `nil` if no such command.
@@ -48,7 +50,7 @@ public interface UIMenuBuilder {
 
     /**
      * Insert a child menu at the end of an identified parent menu.
-     *
+     * 
      * @param childGroup       The child menu to insert.
      * @param parentIdentifier The identifier of the parent menu to insert at the end of.
      */
@@ -58,7 +60,7 @@ public interface UIMenuBuilder {
 
     /**
      * Insert a child menu at the start of an identified parent menu.
-     *
+     * 
      * @param childGroup       The child menu to insert.
      * @param parentIdentifier The identifier of the parent menu to insert at the start of.
      */
@@ -68,7 +70,7 @@ public interface UIMenuBuilder {
 
     /**
      * Insert a sibling menu after an identified sibling menu.
-     *
+     * 
      * @param siblingGroup      The sibling menu to insert.
      * @param siblingIdentifier The identifier of the sibling menu to insert after.
      */
@@ -78,7 +80,7 @@ public interface UIMenuBuilder {
 
     /**
      * Insert a sibling menu before an identified sibling menu.
-     *
+     * 
      * @param siblingGroup      The sibling menu to insert.
      * @param siblingIdentifier The identifier of the sibling menu to insert before.
      */
@@ -88,7 +90,7 @@ public interface UIMenuBuilder {
 
     /**
      * Fetch the identified menu.
-     *
+     * 
      * @param identifier The identifier of the menu to fetch.
      * @return The menu with the given identifier, or `nil` if no such menu.
      */
@@ -98,7 +100,7 @@ public interface UIMenuBuilder {
 
     /**
      * Remove an identified menu.
-     *
+     * 
      * @param removedIdentifier The menu to remove.
      */
     @Generated
@@ -107,7 +109,7 @@ public interface UIMenuBuilder {
 
     /**
      * Replace the children of an identified parent menu.
-     *
+     * 
      * @param parentIdentifier The identifier of the parent menu.
      * @param childrenBlock    A block that returns the new children, given the old children.
      */
@@ -126,7 +128,7 @@ public interface UIMenuBuilder {
 
     /**
      * Replace an identified menu with a menu.
-     *
+     * 
      * @param replacedIdentifier The identifier of the menu to be replaced.
      * @param replacementGroup   The replacement menu.
      */

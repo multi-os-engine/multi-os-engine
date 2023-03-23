@@ -27,7 +27,16 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * This class is used to represent a calendar event.
+ * A calendar event which fires at an absolute time. It can also be used to set up a recurring events which will fire at
+ * a scheduled time.
+ * 
+ * [@note] Not all the fields in NSDateComponents are used to calculate the next fire date. Only Month, Day & Minutes
+ * are used. Other NSDateComponents such as
+ * year, weekday, quarter, week of the year / month are not used in calculation for next fire date.
+ * If its expected to fire on the same day, it should be at least 1 minute ahead or it could get scheduled for the next
+ * recurrent day.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("HomeKit")
@@ -95,6 +104,12 @@ public class HMCalendarEvent extends HMTimeEvent implements NSCopying, NSMutable
 
     /**
      * The date component that specifies the time when the event is fired
+     * 
+     * [@note] Not all the fields in NSDateComponents are used to calculate the next fire date. Only Month, Day &
+     * Minutes are used. Other NSDateComponents such as
+     * year, weekday, quarter, week of the year / month are not used in calculation for next fire date.
+     * If its expected to fire on the same day, it should be at least 1 minute ahead or it could get scheduled for the
+     * next recurrent day.
      */
     @Generated
     @Selector("fireDateComponents")
@@ -111,8 +126,15 @@ public class HMCalendarEvent extends HMTimeEvent implements NSCopying, NSMutable
 
     /**
      * Creates a calendar event
-     *
+     * 
+     * [@note] Not all the fields in NSDateComponents are used to calculate the next fire date. Only Month, Day &
+     * Minutes are used. Other NSDateComponents such as
+     * year, weekday, quarter, week of the year / month are not used in calculation for next fire date.
+     * If its expected to fire on the same day, it should be at least 1 minute ahead or it could get scheduled for the
+     * next recurrent day.
+     * 
      * @param fireDateComponents The date component that specifies the time when the event is fired
+     * 
      * @return Instance object representing the event trigger.
      */
     @Generated

@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A collection of GKGraphNodes that are governed by a set of extruded GKPolygonObstacles
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")
@@ -111,7 +113,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
      * obstacle
      * Guaranteed not to have any edges which intersect obstacles.
      * Same effect as [[GKObstacleGraph alloc] init], setting bufferRadius, and then calling addObstacles.
-     *
+     * 
      * @param obstacles    a list of obstacles to create the graph from
      * @param bufferRadius the circular radius of a potential agent that will navigate this graph. Obstacles are
      *                     extruded by this amount to create the graph. Must be positive. Negative values are clipped to
@@ -128,7 +130,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
      * obstacle
      * Guaranteed not to have any edges which intersect obstacles.
      * Same effect as [[GKObstacleGraph alloc] init], setting bufferRadius, and then calling addObstacles.
-     *
+     * 
      * @param obstacles    a list of obstacles to create the graph from
      * @param bufferRadius the circular radius of a potential agent that will navigate this graph. Obstacles are
      *                     extruded by this amount to create the graph. Must be positive. Negative values are clipped to
@@ -198,7 +200,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
      * Nothing is done if an obstacle is already present in this graph
      * Any existing connections that intersect the new obstacles are destroyed unless they are protected with
      * [GKObstacleGraph lockConnection:]
-     *
+     * 
      * @param obstacles an array of obstacles to be added
      * @see lockConnection
      */
@@ -224,7 +226,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
     /**
      * Connects the node to this graph by testing edge intersection with existing obstacles.
      * Same behavior as if this node had been present during initWithObstacles.
-     *
+     * 
      * @param node the node to connect
      */
     @Generated
@@ -273,13 +275,13 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
 
     /**
      * Query if a given connection is locked
-     *
+     * 
      * @param startNode startNode of the connection to query
      * @param endNode   endNode of the connection to query
-     * @return YES if the connection was locked with lockConnection, NO if it was never locked or was unlocked via
-     *         unlockConnection
      * @see lockConnection
      * @see unlockConnection
+     * @return YES if the connection was locked with lockConnection, NO if it was never locked or was unlocked via
+     *         unlockConnection
      */
     @Generated
     @Selector("isConnectionLockedFromNode:toNode:")
@@ -288,7 +290,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
     /**
      * Marks a connection as "locked", preventing this connection from being destroyed when you add obstacles that would
      * intersect it
-     *
+     * 
      * @param startNode startNode of the connection to lock
      * @param endNode   endNode of the connection to lock
      */
@@ -298,7 +300,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
 
     /**
      * Returns an array of the graph nodes associated with a given obstacle
-     *
+     * 
      * @param obstacle the obstacle who's nodes are to be retrieved
      */
     @Generated
@@ -324,7 +326,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
      * All associated graph nodes are removed and their connections are bidirectionally removed.
      * Connections between obstacle nodes that were previously invalidated by any of these obstacles are restored.
      * Nothing is done if an obstacle is already present in this graph
-     *
+     * 
      * @param obstacles an array of obstacles to be removed
      */
     @Generated
@@ -334,7 +336,7 @@ public class GKObstacleGraph<_NodeType> extends GKGraph {
     /**
      * "Unlocks" a connection, removing its protection from being destroyed when you add obstacles that would intersect
      * it
-     *
+     * 
      * @param startNode startNode of the connection to unlock
      * @param endNode   endNode of the connection to unlock
      * @see lockConnection

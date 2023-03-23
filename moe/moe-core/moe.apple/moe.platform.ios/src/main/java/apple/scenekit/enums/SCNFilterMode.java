@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] SCNFilterMode
- * <p>
+ * 
  * Filtering modes
  */
 @Generated

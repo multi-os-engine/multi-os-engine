@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -151,9 +154,9 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
 
     /**
      * videoCompositionCoreAnimationToolWithAdditionalLayer:asTrackID:
-     * <p>
+     * 
      * Add a Core Animation layer to the video composition
-     * <p>
+     * 
      * Include a Core Animation layer as an individual track input in video composition.
      * This layer should not come from, or be added to, another layer tree.
      * trackID should not match any real trackID in the source. Use -[AVAsset unusedTrackID]
@@ -173,9 +176,9 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
 
     /**
      * videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:inLayer:
-     * <p>
+     * 
      * Compose the composited video frames with the Core Animation layer
-     * <p>
+     * 
      * Place composited video frames in videoLayer and render animationLayer
      * to produce the final frame. Normally videoLayer should be in animationLayer's sublayer tree.
      * The animationLayer should not come from, or be added to, another layer tree.
@@ -192,9 +195,9 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
 
     /**
      * videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:
-     * <p>
+     * 
      * Compose the composited video frames with the Core Animation layer
-     * <p>
+     * 
      * Duplicate the composited video frames in each videoLayer and render animationLayer
      * to produce the final frame. Normally videoLayers should be in animationLayer's sublayer tree.
      * The animationLayer should not come from, or be added to, another layer tree.
@@ -203,6 +206,8 @@ public class AVVideoCompositionCoreAnimationTool extends NSObject {
      * to YES in the layer hierarchy to get the same result when attaching a CALayer to a
      * AVVideoCompositionCoreAnimationTool
      * as when using it to back a UIView.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayers:inLayer:")

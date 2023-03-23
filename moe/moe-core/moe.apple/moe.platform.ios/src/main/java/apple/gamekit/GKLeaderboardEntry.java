@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -67,6 +70,9 @@ public class GKLeaderboardEntry extends NSObject {
             @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("challengeComposeControllerWithMessage:players:completionHandler:")
     public native UIViewController challengeComposeControllerWithMessagePlayersCompletionHandler(String message,

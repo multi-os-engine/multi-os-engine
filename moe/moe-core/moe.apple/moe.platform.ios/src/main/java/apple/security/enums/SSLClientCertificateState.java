@@ -26,24 +26,36 @@ import org.moe.natj.general.ann.Generated;
 public final class SSLClientCertificateState {
     /**
      * Server hasn't asked for a cert. Client hasn't sent one.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int None = 0x00000000;
+    @Deprecated @Generated public static final int None = 0x00000000;
     /**
      * Server has asked for a cert, but client didn't send it.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int Requested = 0x00000001;
+    @Deprecated @Generated public static final int Requested = 0x00000001;
     /**
      * Server side: We asked for a cert, client sent one, we validated
      * it OK. App can inspect the cert via
      * SSLCopyPeerCertificates().
      * Client side: server asked for one, we sent it.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int Sent = 0x00000002;
+    @Deprecated @Generated public static final int Sent = 0x00000002;
     /**
      * Client sent a cert but failed validation. Server side only.
      * Server app can inspect the cert via SSLCopyPeerCertificates().
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
      */
-    @Generated public static final int Rejected = 0x00000003;
+    @Deprecated @Generated public static final int Rejected = 0x00000003;
 
     @Generated
     private SSLClientCertificateState() {

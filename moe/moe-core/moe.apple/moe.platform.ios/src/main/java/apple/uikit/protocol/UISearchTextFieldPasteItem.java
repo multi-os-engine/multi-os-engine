@@ -10,7 +10,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * A protocol that refines UITextPasteItem to support pasting of tokens.
- * <p>
+ * 
  * Paste items vended by UISearchTextField conform to this protocol.
  */
 @Generated

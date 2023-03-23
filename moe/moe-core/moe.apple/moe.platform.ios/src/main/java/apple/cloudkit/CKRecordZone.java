@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -209,12 +212,14 @@ public class CKRecordZone extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * The share property on a record zone will only be set on zones fetched from the server and only if a
      * corresponding zone-wide share record for the zone exists on the server.
-     * <p>
+     * 
      * You can create a zone-wide share for a zone using @code -[CKShare initWithRecordZoneID:] @endcode.
-     * <p>
+     * 
      * Zone-wide sharing is only supported in zones with the @c CKRecordZoneCapabilityZoneWideSharing sharing
      * capability.
      * You cannot share a zone if it already contains shared records.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("share")

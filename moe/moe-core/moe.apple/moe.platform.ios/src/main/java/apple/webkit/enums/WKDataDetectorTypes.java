@@ -21,7 +21,7 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] WKDataDetectorTypes
- * <p>
+ * 
  * The type of data detected.
  * [@constant] WKDataDetectorTypeNone No detection is performed.
  * [@constant] WKDataDetectorTypePhoneNumber Phone numbers are detected and turned into links.
@@ -32,21 +32,54 @@ import org.moe.natj.general.ann.NUInt;
  * [@constant] WKDataDetectorTypeAll All of the above data types are turned into links when detected. Choosing this
  * value will
  * automatically include any new detection type that is added.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class WKDataDetectorTypes {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long PhoneNumber = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Link = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Address = 0x0000000000000004L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long CalendarEvent = 0x0000000000000008L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long TrackingNumber = 0x0000000000000010L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long FlightNumber = 0x0000000000000020L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long LookupSuggestion = 0x0000000000000040L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long All = org.moe.natj.general.NatJ.is64Bit() ?
             0xFFFFFFFFFFFFFFFFL :
             0x00000000FFFFFFFFL;
-    @Generated @NUInt public static final long SpotlightSuggestion = 0x0000000000000040L;
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated @Generated @NUInt public static final long SpotlightSuggestion = 0x0000000000000040L;
 
     @Generated
     private WKDataDetectorTypes() {

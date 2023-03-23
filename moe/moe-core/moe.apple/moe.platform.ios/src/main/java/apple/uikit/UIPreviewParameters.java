@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -191,6 +194,8 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
 
     /**
      * Bezier path to be used to draw the preview's shadow. If nil, the visiblePath is used.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setShadowPath:")
@@ -198,6 +203,8 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
 
     /**
      * Bezier path to be used to draw the preview's shadow. If nil, the visiblePath is used.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("shadowPath")

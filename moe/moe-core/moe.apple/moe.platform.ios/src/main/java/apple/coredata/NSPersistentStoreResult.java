@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Used to wrap the result of whatever is returned by the persistent store coordinator when
  * -[NSManagedObjectContext executeRequest:error:] is called
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("CoreData")

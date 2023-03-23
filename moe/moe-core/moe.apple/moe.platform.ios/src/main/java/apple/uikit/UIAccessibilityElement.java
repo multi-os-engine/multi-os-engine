@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -41,14 +40,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * UIAccessibilityElement
- * <p>
+ * 
  * Instances of this class can be used as "fake" accessibility elements.
  * An accessibility container (see UIAccessibility.h) can create and vend instances
  * of UIAccessibilityElement to cover for user interface items that are not
  * backed by a UIView (for example: painted text or icon).
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("UIKit")
@@ -173,6 +175,8 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
     /**
      * When set, -[UIAccessibilityElement accessibilityFrame] will automatically adjust for the container's frame.
      * This can be useful when the element is a descendant of a scroll view, for instance.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("accessibilityFrameInContainerSpace")
@@ -238,6 +242,8 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
     /**
      * When set, -[UIAccessibilityElement accessibilityFrame] will automatically adjust for the container's frame.
      * This can be useful when the element is a descendant of a scroll view, for instance.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAccessibilityFrameInContainerSpace:")

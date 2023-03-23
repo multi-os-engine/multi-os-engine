@@ -19,14 +19,21 @@ package apple.passkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 public final class PKPaymentSummaryItemType {
     /**
      * The payment summary item's amount is known to be correct
+     * 
+     * API-Since: 9.0
      */
     @Generated @NUInt public static final long Final = 0x0000000000000000L;
     /**
      * The payment summary item's amount is estimated or unknown - e.g, a taxi fare
+     * 
+     * API-Since: 9.0
      */
     @Generated @NUInt public static final long Pending = 0x0000000000000001L;
 

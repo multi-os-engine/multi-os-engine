@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 5.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -60,7 +63,7 @@ public class NSFileCoordinator extends NSObject {
     /**
      * The process' file presenters. If you invoke +addFilePresenter: you have to do a balancing invocation of
      * +removeFilePresenter: before the file presenter is deallocated, even in a garbage-collected application.
-     * <p>
+     * 
      * If your application reads an item and then registers a file presenter for it there is a possible race condition
      * in which between those two steps another process does coordinated reading or writing of the item, without any
      * messages sent to your not-quite-registered file presenter. This can leave your file presenter ignorant of the
@@ -181,7 +184,7 @@ public class NSFileCoordinator extends NSObject {
      * invoking the passed-in block because this method was invoked it instead returns an error whose domain is
      * NSCocoaErrorDomain and whose code is NSUserCancelledError. Messages that have already been sent to
      * NSFilePresenters will not be cancelled but the file coordination machinery will stop waiting for the replies.
-     * <p>
+     * 
      * This method can be invoked from any thread. It always returns immediately, without waiting for anything.
      * Cancellation is racy; you usually cannot assume that no block passed into a -coordinate... or -prepare... method
      * is already being invoked, so the code inside those blocks typically still has to check for cancellation, whatever
@@ -197,21 +200,21 @@ public class NSFileCoordinator extends NSObject {
      * on the given queue, which must not be nil. If an error occurs, file access is not granted and a non-nil error
      * will be passed to the accessor block. If file access is successfully granted, then 'error' will be nil and you
      * may perform the intended file access inside the accessor block.
-     * <p>
+     * 
      * You must use the URL property on the NSFileAccessIntent objects when performing file access in the accessor
      * block. Within the block, the NSFileAccessIntent objects' URLs may differ from their original values to account
      * for items that have been moved or renamed while waiting for access to be granted. When access to the intended
      * files is granted, certain other readers and writers are made to wait until the given block returns, which defines
      * the end of that file access. Do not allow file access to continue after the accessor block returns by dispatching
      * work to other threads or queues.
-     * <p>
+     * 
      * You can invoke this method to serialize your process's access of files and directories with other processes'
      * access of the same files and directories so that inconsistencies due to overlapping reading and writing don't
      * occur. It also causes messages to be sent to NSFilePresenters, and wait for NSFilePresenters to react, as
      * described below. The fact that file system items can be moved or renamed while this method is waiting to invoke
      * the block you passed when invoking it is why it's critical to use the URL property on the NSFileAccessIntent
      * objects, not the URLs you used when initializing them.
-     * <p>
+     * 
      * In general a coordinated reader waits for a coordinated writer of the same item, and a coordinated writer waits
      * for coordinated readers and other coordinated writers of the same item. Coordinated readers do not wait for each
      * other. Coordinated reading or writing of items in a file package is treated as coordinated reading or writing of
@@ -222,7 +225,7 @@ public class NSFileCoordinator extends NSObject {
      * NSFileCoordinatorWritingForMoving, or NSFileCoordinatorWritingForReplacing. They make your coordinated writer
      * wait for previously scheduled coordinated readers and writers of contained items, and causes subsequently
      * scheduled coordinated readers and writers of contained items to wait.
-     * <p>
+     * 
      * None of those rules apply to coordinated readers and writers that are using the exact same instance of
      * NSFileCoordinator, including arrays of multiple NSFileAccessIntent objects. Instances of NSFileCoordinator never
      * block themselves. You can take advantage of that in a couple of ways when invoking
@@ -230,10 +233,10 @@ public class NSFileCoordinator extends NSObject {
      * care because doing so raises the possibility of deadlocking with other processes that are doing the same sort of
      * thing. If you can, you should invoke -coordinateAccessWithIntents:queue:byAccessor: a single time with multiple
      * NSFileAccessIntent objects instead of invoking it multiple times with a single NSFileAccssIntent object.
-     * <p>
+     * 
      * In addition to waiting for writers, readers wait for NSFilePresenters that are messaged as part of the
      * coordinated reading.
-     * <p>
+     * 
      * Coordinated reading of an item triggers the sending of messages to NSFilePresenters that implement the
      * corresponding optional methods, even those in other processes, except the one specified when
      * -initWithFilePresenter: was invoked:
@@ -242,10 +245,10 @@ public class NSFileCoordinator extends NSObject {
      * NSFilePresenters of all of them.
      * - If NSFileCoordinatorReadingWithoutChanges is not used then -savePresentedItemChangesWithCompletionHandler: is
      * also sent to the same NSFilePresenters.
-     * <p>
+     * 
      * In addition to waiting for readers and other writers, writers wait for NSFilePresenters that are messaged as part
      * of the coordinated writing.
-     * <p>
+     * 
      * Coordinated writing of an item triggers the sending of messages to NSFilePresenters that implement the
      * corresponding optional methods, even those in other processes, except the one specified when
      * -initWithFilePresenter: was invoked:
@@ -265,10 +268,12 @@ public class NSFileCoordinator extends NSObject {
      * - If NSFileCoordinatorWritingForMerging is used then -savePresentedItemChangesWithCompletionHandler: is sent to
      * NSFilePresenters of the item and, if the item is in a file package, NSFilePresenters of the file package. If
      * there are nested file packages then the message is sent to NSFilePresenters of all of them.
-     * <p>
+     * 
      * For both coordinated reading and writing, if there are multiple NSFilePresenters involved then the order in which
      * they are messaged is undefined. If an NSFilePresenter signals failure then waiting will fail and *outError will
      * be set to an NSError describing the failure.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("coordinateAccessWithIntents:queue:byAccessor:")
@@ -279,15 +284,15 @@ public class NSFileCoordinator extends NSObject {
     /**
      * The next four methods behave similarly to -coordinateAccessWithIntents:queue:byAccessor: with one or two
      * NSFileAccessIntent objects with the following exceptions:
-     * <p>
+     * 
      * Each of these methods wait synchronously on the same thread they were invoked on before invoking the passed-in
      * accessor block on the same thread, instead of waiting asynchronously and scheduling invocation of the block on a
      * specific queue.
-     * <p>
+     * 
      * The accessor block of each of these methods is passed one or more URLs that locate the intended items, perhaps
      * changed from the original URLs to take into account the fact that the item might have been moved or renamed
      * during the waiting.
-     * <p>
+     * 
      * Each of these methods returns an NSError by reference instead of passing it to the accessory block. However,
      * these methods are uncommon among Cocoa framework methods in that they don't also return a result indicating
      * success or failure. The success of the waiting that they do is typically not interesting to invokers. Only the
@@ -331,13 +336,13 @@ public class NSFileCoordinator extends NSObject {
     /**
      * The designated initializer. If an NSFilePresenter is provided then the receiver is considered to have been
      * created by that NSFilePresenter, or on its behalf.
-     * <p>
+     * 
      * NSFileCoordinator is meant to be instantiated on a per-file-operation basis, where a file operation is something
      * like the opening or saving of a document, or the copying or moving of a batch of folders and files. There is no
      * benefit to keeping an instance of it alive in your application for much more time than it takes to actually
      * perform the file operation. Doing so can be harmful, or at least wasteful of memory, because NSFileCoordinators
      * may retain NSFilePresenters.
-     * <p>
+     * 
      * You pass an NSFilePresenter to this initializer when the operation whose file access is to be coordinated is
      * being performed by that NSFilePresenter. Associating an NSFileCoordinator with an NSFilePresenter accomplishes a
      * few important things:
@@ -363,7 +368,7 @@ public class NSFileCoordinator extends NSObject {
      * example takes advantage of this by registering brand new untitled NSDocuments as NSFilePresenters immediately,
      * instead of waiting until after the first time the user causes the document to be saved to a file, which would be
      * more complicated.
-     * <p>
+     * 
      * For example, NSDocument creates a single NSFileCoordinator for all of the coordinated reading and writing it does
      * during the saving of a document. It always creates the NSFileCoordinator in the main queue even when it is doing
      * the actual coordinated reading and writing in a background queue to implement asynchronous saving.
@@ -375,7 +380,7 @@ public class NSFileCoordinator extends NSObject {
 
     /**
      * Announce that the item located by a URL is now located by another URL.
-     * <p>
+     * 
      * This triggers the sending of messages to NSFilePresenters that implement the corresponding optional methods, even
      * those in other processes, except the one specified when -initWithFilePresenter: was invoked:
      * - -presentedItemDidMoveToURL: is sent to NSFilePresenters of the item.
@@ -384,9 +389,9 @@ public class NSFileCoordinator extends NSObject {
      * - -presentedSubitemAtURL:didMoveToURL: is sent to NSFilePresenters of each directory that contains the item,
      * unless that method is not implemented but -presentedItemDidChange is, and the directory is actually a file
      * package, in which case -presentedItemDidChange is sent instead.
-     * <p>
+     * 
      * This also balances invocations of -itemAtURL:willMoveToURL:, as described above.
-     * <p>
+     * 
      * Useless invocations of this method are harmless, so you don't have to write code that compares NSURLs for
      * equality, which is not straightforward. This method must be invoked from within the block passed to an invocation
      * of -coordinateAccessWithIntents:queue:byAccessory:, -coordinateWritingItemAtURL:options:error:byAccessor:, or
@@ -398,7 +403,7 @@ public class NSFileCoordinator extends NSObject {
 
     /**
      * Announce that the item located by a URL is going to be located by another URL.
-     * <p>
+     * 
      * Support for App Sandbox on OS X. Some applications can rename files while saving them. For example, when a user
      * adds attachments to a rich text document, TextEdit changes the document's extension from .rtf to .rtfd. A
      * sandboxed application like TextEdit must ordinarily prompt the user for approval before renaming a document. You
@@ -406,9 +411,11 @@ public class NSFileCoordinator extends NSObject {
      * the renaming succeeds you must invoke -itemAtURL:didMoveToURL:, with the same arguments, for the process to keep
      * access to the file with its new name and to give up access to any file that appears with the old name. If the
      * renaming fails you should probably not invoke -itemAtURL:didMoveToURL:.
-     * <p>
+     * 
      * There is no reason to invoke this method from applications that do not use App Sandbox. Invoking it does nothing
      * on iOS.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("itemAtURL:willMoveToURL:")
@@ -425,17 +432,19 @@ public class NSFileCoordinator extends NSObject {
      * NSFileProviderExtension.
      * - To avoid deadlocking when two separate subsystems need to work together to perform one high-level operation,
      * and both subsystems perform their own coordinated reads or writes.
-     * <p>
+     * 
      * If you are coordinating file access on behalf of an NSFilePresenter, you should use -initWithFilePresenter: and
      * should not attempt to set a custom purpose identifier. Every NSFileCoordinator instance initialized with the same
      * NSFilePresenter will have the same purpose identifier.
-     * <p>
+     * 
      * When creating custom purpose identifiers, you can use a reverse DNS style string, such as
      * "com.mycompany.myapplication.mypurpose", or a UUID string. Nil and zero-length strings are not allowed.
-     * <p>
+     * 
      * Purpose identifiers can be set only once. If you attempt to set the purpose identifier of an NSFileCoordinator
      * that you initialized with -initWithFilePresenter: or that you already assigned a purpose identifier, an exception
      * will be thrown.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("purposeIdentifier")
@@ -452,17 +461,19 @@ public class NSFileCoordinator extends NSObject {
      * NSFileProviderExtension.
      * - To avoid deadlocking when two separate subsystems need to work together to perform one high-level operation,
      * and both subsystems perform their own coordinated reads or writes.
-     * <p>
+     * 
      * If you are coordinating file access on behalf of an NSFilePresenter, you should use -initWithFilePresenter: and
      * should not attempt to set a custom purpose identifier. Every NSFileCoordinator instance initialized with the same
      * NSFilePresenter will have the same purpose identifier.
-     * <p>
+     * 
      * When creating custom purpose identifiers, you can use a reverse DNS style string, such as
      * "com.mycompany.myapplication.mypurpose", or a UUID string. Nil and zero-length strings are not allowed.
-     * <p>
+     * 
      * Purpose identifiers can be set only once. If you attempt to set the purpose identifier of an NSFileCoordinator
      * that you initialized with -initWithFilePresenter: or that you already assigned a purpose identifier, an exception
      * will be thrown.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setPurposeIdentifier:")
@@ -507,9 +518,11 @@ public class NSFileCoordinator extends NSObject {
     /**
      * Announce that the item located by a URL has changed one or more ubiquity attributes. See
      * NSFilePresenter.observedPresentedItemUbiquityAttributes for an explanation of valid attributes.
-     * <p>
+     * 
      * This triggers the sending of messages to NSFilePresenters that implement
      * -presentedItemDidChangeUbiquityAttibutes:, even those in other processes.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("itemAtURL:didChangeUbiquityAttributes:")
@@ -522,7 +535,7 @@ public class NSFileCoordinator extends NSObject {
      * completion handler passed to it when all of the coordinated reading and writing it does is done. The completion
      * handler block can be invoked on any thread (or from any dispatch queue, if that's how you think of it). This
      * method returns errors in the same manner as the -coordinate... methods.
-     * <p>
+     * 
      * The -coordinate... methods must use interprocess communication to message instances of NSFileCoordinator and
      * NSFilePresenter in other processes in the system. That is an expense best avoided when reading or writing many
      * files in one operation. Using this method can greatly reduce the amount of interprocess communication required
@@ -537,7 +550,7 @@ public class NSFileCoordinator extends NSObject {
      * the exact files and folders that the user has selected, even though those folders may contain many files and
      * subfolders for which Finder is going to do coordinated reading, and writingURLs is an array that contains just
      * the URL of the destination folder.
-     * <p>
+     * 
      * In most cases it is redundant to pass the same reading or writing options in an invocation of this method as are
      * passed to individual invocations of the -coordinate... methods invoked by the block passed to an invocation of
      * this method. For example, when Finder invokes this method during a copy operation it does not pass

@@ -21,13 +21,21 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HMCharacteristicValueContactState
- * <p>
+ * 
  * [@constant] HMCharacteristicValueContactStateDetected Contact is detected.
  * [@constant] HMCharacteristicValueContactStateNone Contact is not detected.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class HMCharacteristicValueContactState {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Detected = 0x0000000000000000L;
 
     @Generated

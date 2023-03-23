@@ -11,6 +11,10 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * The AVAudioSessionDelegate protocol is deprecated. Instead you should register for notifications.
+ * 
+ * API-Since: 3.0
+ * Deprecated-Since: 6.0
+ * Deprecated-Message: No longer supported
  */
 @Deprecated
 @Generated
@@ -40,6 +44,8 @@ public interface AVAudioSessionDelegate {
 
     /**
      * Currently the only flag is AVAudioSessionInterruptionFlags_ShouldResume.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @IsOptional

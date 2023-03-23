@@ -11,15 +11,21 @@ public final class MPSNNTrainingStyle {
 
     /**
      * Do not train this node, for example in transfer learning
+     * 
+     * API-Since: 11.3
      */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     /**
      * The weight update pass will be called in a command buffer completion callback, with a nil command buffer
+     * 
+     * API-Since: 11.3
      */
     @Generated @NUInt public static final long CPU = 0x0000000000000001L;
     /**
      * The weight update pass will be called immediately after the gradient pass is encoded, with a nonnull command
      * buffer
+     * 
+     * API-Since: 11.3
      */
     @Generated @NUInt public static final long GPU = 0x0000000000000002L;
 }

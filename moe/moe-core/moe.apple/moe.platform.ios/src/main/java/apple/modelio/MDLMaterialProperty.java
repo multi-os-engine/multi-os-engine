@@ -46,6 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * If a color is encoded in a floatN property, it is to be interpreted as
  * a Rec 709 color.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("ModelIO")

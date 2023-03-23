@@ -5,6 +5,8 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * Options describing how an acceleration structure will be used
+ * 
+ * API-Since: 12.0
  */
 @Generated
 public final class MPSAccelerationStructureUsage {
@@ -14,12 +16,16 @@ public final class MPSAccelerationStructureUsage {
 
     /**
      * No usage options specified
+     * 
+     * API-Since: 12.0
      */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
     /**
      * Enable support for refitting the acceleration structure after it has been built.
      * This option may reduce raytracing performance so do not use it unless the acceleration
      * structure will be refit.
+     * 
+     * API-Since: 12.0
      */
     @Generated @NUInt public static final long Refit = 0x0000000000000001L;
     /**
@@ -29,6 +35,8 @@ public final class MPSAccelerationStructureUsage {
      * performance so do not use it unless reduced acceleration structure build time is
      * worth reduced raytracing performance. This option may be useful if, for example, the user
      * is interactively editing a live view of the scene.
+     * 
+     * API-Since: 12.0
      */
     @Generated @NUInt public static final long FrequentRebuild = 0x0000000000000002L;
     /**
@@ -36,6 +44,8 @@ public final class MPSAccelerationStructureUsage {
      * structure will be built on the GPU when possible. However, in some cases such as very small
      * triangle counts, the acceleration structure may be built on the CPU. This option will force
      * the acceleration structure to be always be built on the GPU whenever possible.
+     * 
+     * API-Since: 13.0
      */
     @Generated @NUInt public static final long PreferGPUBuild = 0x0000000000000004L;
     /**
@@ -43,6 +53,8 @@ public final class MPSAccelerationStructureUsage {
      * structure will be built on the GPU when possible, which is typically much faster than
      * building on the CPU. However, in some cases it may be preferable to build on the CPU such as
      * to avoid framerate hitches when the GPU is rendering the user interface.
+     * 
+     * API-Since: 13.0
      */
     @Generated @NUInt public static final long PreferCPUBuild = 0x0000000000000008L;
 }

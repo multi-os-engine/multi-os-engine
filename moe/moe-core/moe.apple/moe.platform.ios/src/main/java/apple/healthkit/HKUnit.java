@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("HealthKit")
 @Runtime(ObjCRuntime.class)
@@ -82,6 +85,12 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use smallCalorieUnit or largeCalorieUnit, depending on which you mean
+     */
+    @Deprecated
     @Generated
     @Selector("calorieUnit")
     public static native HKUnit calorieUnit();
@@ -120,6 +129,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * cup_imp
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("cupImperialUnit")
@@ -127,6 +138,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * cup_us
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("cupUSUnit")
@@ -480,6 +493,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * yd
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("yardUnit")
@@ -538,6 +553,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * IU
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("internationalUnit")
@@ -545,6 +562,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * 1 Cal = 4184.0 J
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("largeCalorieUnit")
@@ -552,6 +571,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * 1 cal = 4.1840 J
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("smallCalorieUnit")
@@ -559,6 +580,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * dBASPL
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("decibelAWeightedSoundPressureLevelUnit")
@@ -566,6 +589,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * dBHL
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("decibelHearingLevelUnit")
@@ -573,6 +598,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Hz
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("hertzUnit")
@@ -580,6 +607,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * Hz
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("hertzUnitWithMetricPrefix:")
@@ -587,6 +616,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * inHg
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("inchesOfMercuryUnit")
@@ -594,6 +625,8 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * V
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("voltUnit")
@@ -601,8 +634,73 @@ public class HKUnit extends NSObject implements NSSecureCoding, NSCopying {
 
     /**
      * V
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("voltUnitWithMetricPrefix:")
     public static native HKUnit voltUnitWithMetricPrefix(@NInt long prefix);
+
+    /**
+     * deg
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("degreeAngleUnit")
+    public static native HKUnit degreeAngleUnit();
+
+    /**
+     * D
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("diopterUnit")
+    public static native HKUnit diopterUnit();
+
+    /**
+     * pD
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("prismDiopterUnit")
+    public static native HKUnit prismDiopterUnit();
+
+    /**
+     * rad
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("radianAngleUnit")
+    public static native HKUnit radianAngleUnit();
+
+    /**
+     * rad
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("radianAngleUnitWithMetricPrefix:")
+    public static native HKUnit radianAngleUnitWithMetricPrefix(@NInt long prefix);
+
+    /**
+     * W
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("wattUnit")
+    public static native HKUnit wattUnit();
+
+    /**
+     * W
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("wattUnitWithMetricPrefix:")
+    public static native HKUnit wattUnitWithMetricPrefix(@NInt long prefix);
 }

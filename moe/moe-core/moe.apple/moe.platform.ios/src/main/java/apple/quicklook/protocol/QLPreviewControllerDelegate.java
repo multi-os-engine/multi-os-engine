@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.quicklook.protocol;
 
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSURL;
 import apple.quicklook.QLPreviewController;
 import apple.uikit.UIImage;
@@ -34,6 +33,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 @Generated
 @Library("QuickLook")
@@ -43,7 +43,7 @@ public interface QLPreviewControllerDelegate {
     /**
      * Invoked when the preview controller is about to be presented full screen or dismissed from full screen, to
      * provide a zoom effect.
-     * <p>
+     * 
      * Return the origin of the zoom. It should be relative to view, or screen based if view is not set. The controller
      * will fade in/out if the rect is CGRectZero.
      */
@@ -58,9 +58,9 @@ public interface QLPreviewControllerDelegate {
 
     /**
      * Invoked by the preview controller before trying to open an URL tapped in the preview.
-     * <p>
+     * 
      * If not implemented, defaults is YES.
-     *
+     * 
      * @return Returns NO to prevent the preview controller from calling -[UIApplication openURL:] on url.
      */
     @Generated
@@ -74,10 +74,10 @@ public interface QLPreviewControllerDelegate {
     /**
      * Invoked when the preview controller is about to be presented full screen or dismissed from full screen, to
      * provide a smooth transition when zooming.
-     * <p>
+     * 
      * Return an image the controller will crossfade with when zooming. You can specify the actual "document" content
      * rect in the image in contentRect.
-     *
+     * 
      * @param contentRect The rect within the image that actually represents the content of the document. For example,
      *                    for icons the actual rect is generally smaller than the icon itself.
      */
@@ -92,8 +92,10 @@ public interface QLPreviewControllerDelegate {
     /**
      * Invoked when the preview controller is about to be presented full screen or dismissed from full screen, to
      * provide a smooth transition when zooming.
-     * <p>
+     * 
      * Return the view that will crossfade with the preview.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -126,20 +128,22 @@ public interface QLPreviewControllerDelegate {
     /**
      * * @abstract This method will be called with an edited copy of the contents of the preview item at previewItemURL.
      * * @discussion This can be called after the users save changes in the following cases:
-     * <p>
+     * 
      * - If the returned editing mode of the preview item is QLPreviewItemEditingModeCreateCopy.
-     * <p>
+     * 
      * - If the returned editing mode of the preview item is QLPreviewItemEditingModeUpdateContents and its
      * previewItemURL could not be successfully overwritten. In this case, modifiedContentsURL will point to a temporary
      * file on disk containing the edited copy.
-     * <p>
+     * 
      * - If the returned editing mode of the preview item is QLPreviewItemEditingModeUpdateContents and its content type
      * and the content type of the edited version don't match.
      * This means that the file type of modifiedContentsURL may be different from the one of the preview item.
-     * <p>
+     * 
      * Note that this may be called multiple times in a row with the successive edited versions of the preview item
      * (whenever the users save the changes).
      * * @param modifiedContentsURL NSURL of a temporary file on disk containing the edited copy of the preview item.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -152,9 +156,11 @@ public interface QLPreviewControllerDelegate {
     /**
      * Called after the preview controller has successfully overwritten the contents of the file at previewItemURL for
      * the preview item with the edited version of the users.
-     * <p>
+     * 
      * May be called multiple times in a row when overwriting the preview item with the successive edited versions of
      * the preview item (whenever the users save the changes).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -179,6 +185,8 @@ public interface QLPreviewControllerDelegate {
      * * @param previewItem The preview item for which the controller needs to know how its delegate wants edited
      * versions of the preview item to be handled.
      * * @result A value indicating how the preview controller should handle edited versions of the preview item.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional

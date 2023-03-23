@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A component that encapsulates a SceneKit node.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("GameplayKit")
@@ -93,7 +95,7 @@ public class GKSCNNodeComponent extends GKComponent implements GKAgentDelegate {
     /**
      * Creates a component that encapsulate the given SceneKit node. When the component is
      * added to an entity, the SCNNode's entity property will be set.
-     *
+     * 
      * @param node Node to associate with the component.
      * @see SCNNode.entity
      */
@@ -125,7 +127,7 @@ public class GKSCNNodeComponent extends GKComponent implements GKAgentDelegate {
     /**
      * Initializes component to encapsulate the given SceneKit node. When the component is
      * added to an entity, the SCNNode's entity property will be set.
-     *
+     * 
      * @param node Node to associate with the component.
      * @see SCNNode.entity
      */

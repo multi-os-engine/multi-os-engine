@@ -49,6 +49,8 @@ public interface UIAdaptivePresentationControllerDelegate {
 
     /**
      * Returning UIModalPresentationNone will indicate that an adaptation should not happen.
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @IsOptional
@@ -73,6 +75,8 @@ public interface UIAdaptivePresentationControllerDelegate {
     /**
      * If there is no adaptation happening and an original style is used UIModalPresentationNone will be passed as an
      * argument.
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @IsOptional
@@ -89,6 +93,8 @@ public interface UIAdaptivePresentationControllerDelegate {
      * returned NO.
      * When this method is called, it is recommended that the user be informed why they cannot dismiss the presentation,
      * such as by presenting an instance of UIAlertController.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -101,6 +107,8 @@ public interface UIAdaptivePresentationControllerDelegate {
      * Called on the delegate when the user has taken action to dismiss the presentation successfully, after all
      * animations are finished.
      * This is not called if the presentation is dismissed programatically.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -115,6 +123,8 @@ public interface UIAdaptivePresentationControllerDelegate {
      * or presentationControllerDidDismiss:.
      * Any implementation of this method should be fast.
      * Return NO to prevent dismissal of the view controller.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -129,6 +139,8 @@ public interface UIAdaptivePresentationControllerDelegate {
      * Use this callback to setup alongside animations or interaction notifications with the presentingViewController's
      * transitionCoordinator.
      * This is not called if the presentation is dismissed programatically.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional
@@ -140,6 +152,8 @@ public interface UIAdaptivePresentationControllerDelegate {
     /**
      * Called during adaptation so the delegate may configure properties of the adaptive presentation controller before
      * it is presented.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional

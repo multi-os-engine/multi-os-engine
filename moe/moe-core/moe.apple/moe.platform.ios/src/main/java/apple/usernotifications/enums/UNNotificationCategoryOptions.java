@@ -19,10 +19,15 @@ package apple.usernotifications.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class UNNotificationCategoryOptions {
     /**
      * Whether dismiss action should be sent to the UNUserNotificationCenter delegate
+     * 
+     * API-Since: 10.0
      */
     @Generated @NUInt public static final long CustomDismissAction = 0x0000000000000001L;
     /**
@@ -36,14 +41,22 @@ public final class UNNotificationCategoryOptions {
 
     /**
      * Whether the title should be shown if the user has previews off
+     * 
+     * API-Since: 11.0
      */
     @Generated @NUInt public static final long HiddenPreviewsShowTitle = 0x0000000000000004L;
     /**
      * Whether the subtitle should be shown if the user has previews off
+     * 
+     * API-Since: 11.0
      */
     @Generated @NUInt public static final long HiddenPreviewsShowSubtitle = 0x0000000000000008L;
     /**
      * Whether notifications of this category should be allowed for announcing notifications
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 15.0
+     * Deprecated-Message: Announcement option is ignored
      */
-    @Generated @NUInt public static final long AllowAnnouncement = 0x0000000000000010L;
+    @Deprecated @Generated @NUInt public static final long AllowAnnouncement = 0x0000000000000010L;
 }

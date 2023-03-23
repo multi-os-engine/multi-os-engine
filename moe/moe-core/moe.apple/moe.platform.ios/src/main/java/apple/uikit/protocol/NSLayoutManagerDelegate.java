@@ -16,9 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.struct.NSRange;
 import apple.uikit.NSLayoutManager;
 import apple.uikit.NSTextContainer;
@@ -38,6 +35,9 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
 @Generated
 @Library("UIKit")
@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface NSLayoutManagerDelegate {
     /**
      * Invoked for resolving the glyph metrics for NSControlCharacterWhitespaceAction control character.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -61,6 +63,8 @@ public interface NSLayoutManagerDelegate {
      * This is sent whenever a container has been filled. This method can be useful for paginating. The textContainer
      * might be nil if we have completed all layout and not all of it fit into the existing containers. The atEnd flag
      * indicates whether all layout is complete.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -72,6 +76,8 @@ public interface NSLayoutManagerDelegate {
 
     /**
      * Returns the spacing after the line ending with glyphIndex.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -84,6 +90,8 @@ public interface NSLayoutManagerDelegate {
 
     /**
      * Returns the paragraph spacing after the line ending with glyphIndex.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -96,6 +104,8 @@ public interface NSLayoutManagerDelegate {
 
     /**
      * Returns the paragraph spacing before the line starting with glyphIndex.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -109,6 +119,8 @@ public interface NSLayoutManagerDelegate {
     /**
      * Invoked while determining the hyphenation point. When NO, NSLayoutManager tries to find the next hyphenation
      * opportunity before charIndex
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -121,6 +133,8 @@ public interface NSLayoutManagerDelegate {
     /**
      * Invoked while determining the soft line break point. When NO, NSLayoutManager tries to find the next line break
      * opportunity before charIndex
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -138,6 +152,8 @@ public interface NSLayoutManagerDelegate {
      * information. The return value specifies the actual glyph range stored in this method. By returning 0, it can
      * indicate layoutManager to do the default processing. Note that querying glyph information surrounding glyphRange
      * could lead to recursion since the data might not be available, yet.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -154,6 +170,8 @@ public interface NSLayoutManagerDelegate {
      * implementation of this method should make sure that the modified fragments are still valid inside the text
      * container coordinate. When it returns YES, the layout manager uses the modified rects. Otherwise, it ignores the
      * rects returned from this method.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @IsOptional
@@ -166,6 +184,8 @@ public interface NSLayoutManagerDelegate {
 
     /**
      * Returns the control character action for the control character at charIndex.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -180,6 +200,8 @@ public interface NSLayoutManagerDelegate {
      * This is sent right before layoutManager invalidates the layout due to textContainer changing geometry. The
      * receiver of this method can react to the geometry change and perform adjustments such as recreating the exclusion
      * path.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -193,6 +215,8 @@ public interface NSLayoutManagerDelegate {
      * Layout processing ***********************
      * This is sent whenever layout or glyphs become invalidated in a layout manager which previously had all layout
      * complete.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional

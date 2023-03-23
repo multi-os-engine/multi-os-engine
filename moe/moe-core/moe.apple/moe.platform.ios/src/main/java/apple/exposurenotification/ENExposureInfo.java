@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * ===========================================================================================================================
- * <p>
+ * 
  * Info about an exposure.
+ * 
+ * API-Since: 12.5
  */
 @Generated
 @Library("ExposureNotification")
@@ -108,6 +110,8 @@ public class ENExposureInfo extends NSObject {
 
     /**
      * Number of days since the onset of symptoms. Defaults to ENDaysSinceOnsetOfSymptomsUnknown.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("daysSinceOnsetOfSymptoms")
@@ -124,6 +128,8 @@ public class ENExposureInfo extends NSObject {
 
     /**
      * How positive diagnosis was reported.
+     * 
+     * API-Since: 12.5
      */
     @Generated
     @Selector("diagnosisReportType")

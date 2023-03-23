@@ -32,13 +32,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKFHIRVersion
- * <p>
+ * 
  * Represents a FHIR version.
- * <p>
+ * 
  * FHIR uses semantic versions ("1.0.2", "4.0.1") to communicate which FHIR version a server supports or a
  * given resource is represented in. A FHIR version is associated with one FHIR release.
- *
+ * 
  * @see http://hl7.org/fhir/versions.html#versions
+ * 
+ *      API-Since: 14.0
  */
 @Generated
 @Library("HealthKit")
@@ -188,7 +190,7 @@ public class HKFHIRVersion extends NSObject implements NSCopying, NSSecureCoding
 
     /**
      * [@property] stringRepresentation
-     * <p>
+     * 
      * A string representation in the format "{major}.{minor}.{patch}".
      */
     @Generated

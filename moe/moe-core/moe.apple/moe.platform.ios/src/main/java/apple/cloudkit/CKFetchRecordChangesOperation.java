@@ -43,19 +43,23 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CKFetchRecordChangesOperation
- * <p>
+ * 
  * Use CKFetchRecordZoneChangesOperation instead of this class.
- * <p>
+ * 
  * Any serverChangeTokens saved from a CKFetchRecordChangesOperation are usable as a serverRecordZoneChangeToken in
  * CKFetchRecordZoneChangesOperation
- * <p>
+ * 
  * This operation will fetch records changes in the given record zone.
- * <p>
+ * 
  * If a change token from a previous @c CKFetchRecordChangesOperation is passed in, only the records that have changed
  * since that token will be fetched.
  * If this is your first fetch or if you wish to re-fetch all records, pass nil for the change token.
  * Change tokens are opaque tokens and clients should not infer any behavior based on their content
+ * 
+ * API-Since: 8.0
+ * Deprecated-Since: 10.0
  */
+@Deprecated
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -168,7 +172,7 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
 
     /**
      * Declares which user-defined keys should be fetched and added to the resulting CKRecords.
-     * <p>
+     * 
      * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields
      * should be downloaded.
      * Defaults to @c nil.
@@ -179,7 +183,7 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * Clients are responsible for saving the change token at the end of the operation and passing it in to the next
      * call to @c CKFetchRecordChangesOperation.
      * Note that a fetch can fail partway. If that happens, an updated change token may be returned in the completion
@@ -207,7 +211,7 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
 
     /**
      * If true, then the server wasn't able to return all the changes in this response.
-     * <p>
+     * 
      * Will be set before fetchRecordChangesCompletionBlock is called.
      * Another CKFetchRecordChangesOperation operation should be run with the updated serverChangeToken token from this
      * operation.
@@ -249,7 +253,7 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
 
     /**
      * Declares which user-defined keys should be fetched and added to the resulting CKRecords.
-     * <p>
+     * 
      * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields
      * should be downloaded.
      * Defaults to @c nil.
@@ -260,7 +264,7 @@ public class CKFetchRecordChangesOperation extends CKDatabaseOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * Clients are responsible for saving the change token at the end of the operation and passing it in to the next
      * call to @c CKFetchRecordChangesOperation.
      * Note that a fetch can fail partway. If that happens, an updated change token may be returned in the completion

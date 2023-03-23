@@ -32,6 +32,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * An ASPasswordCredentialIdentity is used to describe an identity that can use a service upon successful password based
  * authentication.
  * Use this class to save entries into ASCredentialIdentityStore.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("AuthenticationServices")
@@ -108,7 +110,7 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
 
     /**
      * Creates and initializes an instance of ASPasswordCredentialIdentity.
-     *
+     * 
      * @param serviceIdentifier the service identifier for which this credential identity is valid.
      * @param user              the user that can authenticate into the service indicated by the serviceIdentifier.
      * @param recordIdentifier  an optional string to uniquely identify this record in your local database.
@@ -128,7 +130,7 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
 
     /**
      * Initializes an instance of ASPasswordCredentialIdentity.
-     *
+     * 
      * @param serviceIdentifier the service identifier for which this credential identity is valid.
      * @param user              the user that can authenticate into the service indicated by the serviceIdentifier.
      * @param recordIdentifier  an optional string to uniquely identify this record in your local database.
@@ -166,7 +168,7 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
 
     /**
      * Get or set the rank of the credential identity object.
-     * <p>
+     * 
      * The system may utilize the rank to decide which credential identity precedes the other
      * if two identities have the same service identifier. A credential identity with a larger rank value
      * precedes one with a smaller value if both credential identities have the same service identifier.
@@ -179,9 +181,9 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
 
     /**
      * Get the record identifier.
-     * <p>
+     * 
      * You can utilize the record identifier to uniquely identify the credential identity in your local database.
-     *
+     * 
      * @return The record identifier.
      */
     @Generated
@@ -198,7 +200,7 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
 
     /**
      * Get the service identifier.
-     *
+     * 
      * @return The service identifier for this credential identity.
      */
     @Generated
@@ -207,7 +209,7 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
 
     /**
      * Get or set the rank of the credential identity object.
-     * <p>
+     * 
      * The system may utilize the rank to decide which credential identity precedes the other
      * if two identities have the same service identifier. A credential identity with a larger rank value
      * precedes one with a smaller value if both credential identities have the same service identifier.
@@ -237,7 +239,7 @@ public class ASPasswordCredentialIdentity extends NSObject implements NSCopying,
 
     /**
      * Get the user.
-     *
+     * 
      * @return The user string.
      */
     @Generated

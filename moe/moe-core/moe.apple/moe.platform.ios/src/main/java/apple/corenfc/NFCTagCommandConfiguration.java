@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NFCTagCommandConfiguration
- * <p>
+ * 
  * Define configuration parameters for tag commands.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreNFC")
@@ -125,6 +127,8 @@ public class NFCTagCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * Maximum number of retries. Valid value is 0 to 256. Default is 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("maximumRetries")
@@ -146,6 +150,8 @@ public class NFCTagCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * Delay in seconds before retry occurs. Default is 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("retryInterval")
@@ -153,6 +159,8 @@ public class NFCTagCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * Maximum number of retries. Valid value is 0 to 256. Default is 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setMaximumRetries:")
@@ -160,6 +168,8 @@ public class NFCTagCommandConfiguration extends NSObject implements NSCopying {
 
     /**
      * Delay in seconds before retry occurs. Default is 0.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setRetryInterval:")

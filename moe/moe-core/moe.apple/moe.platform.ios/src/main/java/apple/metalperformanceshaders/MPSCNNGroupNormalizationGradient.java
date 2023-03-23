@@ -27,8 +27,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNGroupNormalizationGradient
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * This kernel executes a gradient pass corresponding to MPSCNNGroupNormalization.
+ * 
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")

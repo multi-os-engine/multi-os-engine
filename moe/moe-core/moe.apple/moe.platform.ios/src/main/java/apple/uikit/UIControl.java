@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -52,9 +50,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * ______________________________________________________
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("UIKit")
@@ -161,6 +163,7 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -187,6 +190,7 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -262,46 +266,57 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -636,6 +651,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
      * Adds the UIAction to a given event. UIActions are uniqued based on their identifier, and subsequent actions with
      * the same identifier replace previously added actions. You may add multiple UIActions for corresponding
      * controlEvents, and you may add the same action to multiple controlEvents.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("addAction:forControlEvents:")
@@ -645,6 +662,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
      * Returns a UIContextMenuInteraction with this control set as its delegate. Before constructing the
      * UIContextMenuInteraction, UIControl verifies 'self' is a viable delegate. See 'Implementing UIControl Menus'
      * below for more details.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("contextMenuInteraction")
@@ -688,6 +707,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
      * Iterate over the event handlers installed on this control at the time this method is called. For each call,
      * either actionHandler or action will be non-nil. controlEvents is always non-zero. Setting *stop to YES will
      * terminate the enumeration early. It is legal to manipulate the control's event handlers within the block.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("enumerateEventHandlers:")
@@ -706,6 +727,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
      * Initializes the control and adds primaryAction for the UIControlEventPrimaryActionTriggered control event.
      * Subclasses of UIControl may alter or add behaviors around the usage of primaryAction, see subclass documentation
      * of this initializer for additional information.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithFrame:primaryAction:")
@@ -713,6 +736,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * Specifies if the context menu interaction is enabled. NO by default.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isContextMenuInteractionEnabled")
@@ -720,6 +745,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * Return a point in this control's coordinate space to which to attach the given configuration's menu.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("menuAttachmentPointForConfiguration:")
@@ -728,6 +755,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * Removes the action from the set of passed control events.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("removeAction:forControlEvents:")
@@ -735,6 +764,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * Removes the action with the provided identifier from the set of passed control events.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("removeActionForIdentifier:forControlEvents:")
@@ -744,6 +775,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
      * Like -sendAction:to:forEvent:, this method is called by -sendActionsForControlEvents:. You may override this
      * method to observe or modify behavior. If you override this method, you should call super precisely once to
      * dispatch the action, or not call super to suppress sending that action.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("sendAction:")
@@ -751,6 +784,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * Specifies if the context menu interaction is enabled. NO by default.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setContextMenuInteractionEnabled:")
@@ -758,6 +793,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * If the contextMenuInteraction is the primary action of the control, invoked on touch-down. NO by default.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setShowsMenuAsPrimaryAction:")
@@ -765,6 +802,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * If the contextMenuInteraction is the primary action of the control, invoked on touch-down. NO by default.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("showsMenuAsPrimaryAction")
@@ -773,6 +812,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     /**
      * Assigning a value to this property causes the tool tip to be displayed for the view. Setting the property to nil
      * cancels the display of the tool tip for the view.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setToolTip:")
@@ -781,6 +822,8 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
     /**
      * Assigning a value to this property causes the tool tip to be displayed for the view. Setting the property to nil
      * cancels the display of the tool tip for the view.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("toolTip")
@@ -788,8 +831,24 @@ public class UIControl extends UIView implements UIContextMenuInteractionDelegat
 
     /**
      * Returns the control's default UIToolTipInteraction.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("toolTipInteraction")
     public native UIToolTipInteraction toolTipInteraction();
+
+    @Generated
+    @IsOptional
+    @Selector("contextMenuInteraction:configuration:dismissalPreviewForItemWithIdentifier:")
+    public native UITargetedPreview contextMenuInteractionConfigurationDismissalPreviewForItemWithIdentifier(
+            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) Object identifier);
+
+    @Generated
+    @IsOptional
+    @Selector("contextMenuInteraction:configuration:highlightPreviewForItemWithIdentifier:")
+    public native UITargetedPreview contextMenuInteractionConfigurationHighlightPreviewForItemWithIdentifier(
+            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration,
+            @Mapped(ObjCObjectMapper.class) Object identifier);
 }

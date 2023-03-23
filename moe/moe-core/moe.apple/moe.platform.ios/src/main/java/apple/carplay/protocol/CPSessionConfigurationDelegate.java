@@ -10,11 +10,17 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("CPSessionConfigurationDelegate")
 public interface CPSessionConfigurationDelegate {
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("sessionConfiguration:contentStyleChanged:")

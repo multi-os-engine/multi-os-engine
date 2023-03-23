@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * This class allows your application to produce a higher fidelity, PDF screenshot to the user. Set the delegate so that
  * when a screenshot is taken, screenshots can show the full document content from the application.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")

@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Descriptor for an instance acceleration structure
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Metal")
@@ -228,6 +230,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     /**
      * Type of instance descriptor in the instance descriptor buffer. Defaults to
      * MTLAccelerationStructureInstanceDescriptorTypeDefault.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("instanceDescriptorType")
@@ -236,6 +240,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     /**
      * Buffer containing transformation information for motion
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("motionTransformBuffer")
@@ -245,6 +251,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     /**
      * Offset into the instance motion descriptor buffer. Must be a multiple of 64 bytes and
      * must be aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("motionTransformBufferOffset")
@@ -253,6 +261,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     /**
      * Number of motion transforms
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("motionTransformCount")
@@ -262,6 +272,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     /**
      * Type of instance descriptor in the instance descriptor buffer. Defaults to
      * MTLAccelerationStructureInstanceDescriptorTypeDefault.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setInstanceDescriptorType:")
@@ -269,6 +281,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     /**
      * Buffer containing transformation information for motion
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMotionTransformBuffer:")
@@ -277,6 +291,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
     /**
      * Offset into the instance motion descriptor buffer. Must be a multiple of 64 bytes and
      * must be aligned to the platform's buffer offset alignment.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMotionTransformBufferOffset:")
@@ -284,6 +300,8 @@ public class MTLInstanceAccelerationStructureDescriptor extends MTLAccelerationS
 
     /**
      * Number of motion transforms
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setMotionTransformCount:")

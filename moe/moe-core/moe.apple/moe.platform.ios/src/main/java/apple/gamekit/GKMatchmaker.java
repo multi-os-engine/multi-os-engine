@@ -41,7 +41,9 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * GKMatchmaker is a singleton object to manage match creation from invites and auto-matching.
+ * GKMatchmaker is a singleton object to manage match creation from invites and automatching.
+ * 
+ * API-Since: 4.1
  */
 @Generated
 @Library("GameKit")
@@ -161,7 +163,7 @@ public class GKMatchmaker extends NSObject {
     public static native long version_static();
 
     /**
-     * Auto-matching or invites to add additional players to a peer-to-peer match for the specified request. Error will
+     * Automatching or invites to add additional players to a peer-to-peer match for the specified request. Error will
      * be nil on success:
      * Possible reasons for error:
      * 1. Communications failure
@@ -181,6 +183,10 @@ public class GKMatchmaker extends NSObject {
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use cancelPendingInviteToPlayer:
      */
     @Generated
     @Deprecated
@@ -189,13 +195,15 @@ public class GKMatchmaker extends NSObject {
 
     /**
      * Cancel a pending invitation to a player
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("cancelPendingInviteToPlayer:")
     public native void cancelPendingInviteToPlayer(GKPlayer player);
 
     /**
-     * Auto-matching or invites to find a peer-to-peer match for the specified request. Error will be nil on success:
+     * Automatching or invites to find a peer-to-peer match for the specified request. Error will be nil on success:
      * Possible reasons for error:
      * 1. Communications failure
      * 2. Unauthenticated player
@@ -211,6 +219,10 @@ public class GKMatchmaker extends NSObject {
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, use findPlayersForHostedRequest:
      */
     @Generated
     @Deprecated
@@ -219,7 +231,7 @@ public class GKMatchmaker extends NSObject {
             @ObjCBlock(name = "call_findPlayersForHostedMatchRequestWithCompletionHandler") Block_findPlayersForHostedMatchRequestWithCompletionHandler completionHandler);
 
     /**
-     * Auto-matching or invites for host-client match request. This returns a list of player identifiers to be included
+     * Automatching or invites for host-client match request. This returns a list of player identifiers to be included
      * in the match. Determination and communication with the host is not part of this API.
      * When inviting, no player identifiers will be returned. Player responses will be reported via the
      * inviteeResponseHandler.
@@ -227,6 +239,8 @@ public class GKMatchmaker extends NSObject {
      * 1. Communications failure
      * 2. Unauthenticated player
      * 3. Timeout
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("findPlayersForHostedRequest:withCompletionHandler:")
@@ -236,6 +250,8 @@ public class GKMatchmaker extends NSObject {
     /**
      * Call this when finished with all programmatic P2P invites/matchmaking, for compatability with connected players
      * using GKMatchmakerViewController.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("finishMatchmakingForMatch:")
@@ -245,6 +261,12 @@ public class GKMatchmaker extends NSObject {
     @Selector("init")
     public native GKMatchmaker init();
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use registerListener on GKLocalPlayer to register an object that implements the
+     * GKInviteEventListenerProtocol instead
+     */
     @Generated
     @Deprecated
     @Selector("inviteHandler")
@@ -256,6 +278,8 @@ public class GKMatchmaker extends NSObject {
      * Possible reasons for error:
      * 1. Communications failure
      * 2. Invite cancelled
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("matchForInvite:completionHandler:")
@@ -283,6 +307,12 @@ public class GKMatchmaker extends NSObject {
     public native void queryPlayerGroupActivityWithCompletionHandler(@NUInt long playerGroup,
             @ObjCBlock(name = "call_queryPlayerGroupActivityWithCompletionHandler") Block_queryPlayerGroupActivityWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use registerListener on GKLocalPlayer to register an object that implements the
+     * GKInviteEventListenerProtocol instead
+     */
     @Generated
     @Deprecated
     @Selector("setInviteHandler:")
@@ -293,6 +323,8 @@ public class GKMatchmaker extends NSObject {
      * player found with a compatible game. It may be called more than once for the same player if that player ever
      * becomes unreachable (e.g. moves out of range). You should call stopBrowsingForNearbyPlayers when finished
      * browsing.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("startBrowsingForNearbyPlayersWithHandler:")
@@ -301,6 +333,11 @@ public class GKMatchmaker extends NSObject {
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This is never invoked and its implementation does nothing, Use
+     * startBrowsingForNearbyPlayersWithHandler: instead
      */
     @Generated
     @Deprecated
@@ -310,6 +347,8 @@ public class GKMatchmaker extends NSObject {
 
     /**
      * Stop browsing for nearby players.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("stopBrowsingForNearbyPlayers")
@@ -391,4 +430,31 @@ public class GKMatchmaker extends NSObject {
         @Generated
         void call_startBrowsingForNearbyPlayersWithReachableHandler(String playerID, boolean reachable);
     }
+
+    /**
+     * Activate a group activity by Game Center for your game, which allows people in the FaceTime call to join the
+     * local player's game. The handler will be called for each player who joined from the activity.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("startGroupActivityWithPlayerHandler:")
+    public native void startGroupActivityWithPlayerHandler(
+            @ObjCBlock(name = "call_startGroupActivityWithPlayerHandler") Block_startGroupActivityWithPlayerHandler handler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_startGroupActivityWithPlayerHandler {
+        @Generated
+        void call_startGroupActivityWithPlayerHandler(GKPlayer player);
+    }
+
+    /**
+     * End the group activity created by Game Center for your game, which was activated by the local player.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("stopGroupActivity")
+    public native void stopGroupActivity();
 }

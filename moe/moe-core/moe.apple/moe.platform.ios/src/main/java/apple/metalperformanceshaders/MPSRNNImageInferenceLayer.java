@@ -30,7 +30,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSRNNImageInferenceLayer
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The MPSRNNImageInferenceLayer specifies a recurrent neural network layer for inference on MPSImages.
  * Currently two types of recurrent layers are supported: ones that operate with convolutions on
  * images: @ref MPSRNNImageInferenceLayer and one that operates on matrices: @ref MPSRNNMatrixInferenceLayer.
@@ -46,6 +46,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * unidirectional stacks of layers, and running the same input sequence on them separately (one forwards and one
  * backwards)
  * and ultimately combining the two result sequences as desired with auxiliary functions.
+ * 
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -81,7 +84,7 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
 
     /**
      * [@property] bidirectionalCombineMode
-     * <p>
+     * 
      * Defines how to combine the output-results, when encoding bidirectional layers using
      * [@ref] encodeBidirectionalSequenceToCommandBuffer.
      * Defaults to @ref MPSRNNBidirectionalCombineModeNone.
@@ -111,7 +114,7 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
 
     /**
      * Make a copy of this kernel for a new device - @see MPSKernel
-     *
+     * 
      * @param zone   The NSZone in which to allocate the object
      * @param device The device for the new MPSKernel. If nil, then use
      *               self.device.
@@ -154,7 +157,7 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
      * yb(N-1)) },
      * where '+' stands either for sum, or concatenation along feature channels, as specified by @ref
      * bidirectionalCombineMode.
-     *
+     * 
      * @param commandBuffer             A valid MTLCommandBuffer to receive the encoded filter
      * @param sourceSequence            An array of valid MPSImage objects containing the source image sequence (x0, x1,
      *                                  ... x_n-1).
@@ -210,7 +213,7 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
      * recurrentInputState: recurrent0
      * recurrentOutputState: nil];
      * [@endcode]
-     *
+     * 
      * @param commandBuffer         A valid MTLCommandBuffer to receive the encoded filter
      * @param sourceImages          An array of valid MPSImage objects containing the sequence of source images.
      * @param destinationImages     An array valid MPSImages to be overwritten by result image sequence.
@@ -252,12 +255,14 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSRNNImageInferenceLayer
      * @param device   The MTLDevice on which to make the MPSRNNImageInferenceLayer
      * @return A new MPSRNNImageInferenceLayer object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -270,10 +275,12 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
 
     /**
      * Initializes a convolutional RNN kernel
-     *
+     * 
      * @param device        The MTLDevice on which this MPSRNNImageLayer filter will be used
      * @param rnnDescriptor The descriptor that defines the RNN layer
      * @return A valid MPSRNNImageInferenceLayer object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:rnnDescriptor:")
@@ -282,12 +289,14 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
 
     /**
      * Initializes a kernel that implements a stack of convolutional RNN layers
-     *
+     * 
      * @param device         The MTLDevice on which this MPSRNNImageLayer filter will be used
      * @param rnnDescriptors An array of RNN descriptors that defines a stack of RNN layers, starting at index zero.
      *                       The number of layers in stack is the number of entries in the array.
      *                       All entries in the array must be valid MPSRNNDescriptors.
      * @return A valid MPSRNNImageInferenceLayer object or nil, if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:rnnDescriptors:")
@@ -296,7 +305,7 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
 
     /**
      * [@property] inputFeatureChannels
-     * <p>
+     * 
      * The number of feature channels per pixel in the input image.
      */
     @Generated
@@ -332,7 +341,7 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
 
     /**
      * [@property] numberOfLayers
-     * <p>
+     * 
      * Number of layers in the filter-stack. This will be one when using initWithDevice:rnnDescriptor to initialize
      * this filter and the number of entries in the array 'rnnDescriptors' when initializing this filter with
      * initWithDevice:rnnDescriptors.
@@ -344,7 +353,7 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
 
     /**
      * [@property] outputFeatureChannels
-     * <p>
+     * 
      * The number of feature channels per pixel in the output image.
      */
     @Generated
@@ -354,7 +363,7 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
 
     /**
      * [@property] recurrentOutputIsTemporary
-     * <p>
+     * 
      * How output states from @ref encodeSequenceToCommandBuffer are constructed.
      * Defaults to NO. For reference @see MPSState.
      */
@@ -372,7 +381,7 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
 
     /**
      * [@property] bidirectionalCombineMode
-     * <p>
+     * 
      * Defines how to combine the output-results, when encoding bidirectional layers using
      * [@ref] encodeBidirectionalSequenceToCommandBuffer.
      * Defaults to @ref MPSRNNBidirectionalCombineModeNone.
@@ -383,7 +392,7 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
 
     /**
      * [@property] recurrentOutputIsTemporary
-     * <p>
+     * 
      * How output states from @ref encodeSequenceToCommandBuffer are constructed.
      * Defaults to NO. For reference @see MPSState.
      */
@@ -393,7 +402,7 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
 
     /**
      * [@property] storeAllIntermediateStates
-     * <p>
+     * 
      * If YES then calls to @ref encodeSequenceToCommandBuffer return every recurrent state
      * in the array: recurrentOutputStates.
      * Defaults to NO.
@@ -408,7 +417,7 @@ public class MPSRNNImageInferenceLayer extends MPSCNNKernel {
 
     /**
      * [@property] storeAllIntermediateStates
-     * <p>
+     * 
      * If YES then calls to @ref encodeSequenceToCommandBuffer return every recurrent state
      * in the array: recurrentOutputStates.
      * Defaults to NO.

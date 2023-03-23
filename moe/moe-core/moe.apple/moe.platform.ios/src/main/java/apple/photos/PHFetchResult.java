@@ -52,6 +52,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Accessing fetched results (fetches objects from the backing store in chunks on demand rather than all at once)
  * Fetched objects will be kept in a cache and purged under memory pressure
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Photos")
@@ -163,6 +165,9 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("containsObject:")
     public native boolean containsObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
@@ -173,6 +178,9 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("count")
     @NUInt
@@ -184,36 +192,57 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
             @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("countOfAssetsWithMediaType:")
     @NUInt
     public native long countOfAssetsWithMediaType(@NInt long mediaType);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("enumerateObjectsAtIndexes:options:usingBlock:")
     public native void enumerateObjectsAtIndexesOptionsUsingBlock(NSIndexSet s, @NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsAtIndexesOptionsUsingBlock") Block_enumerateObjectsAtIndexesOptionsUsingBlock block);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("enumerateObjectsUsingBlock:")
     public native void enumerateObjectsUsingBlock(
             @ObjCBlock(name = "call_enumerateObjectsUsingBlock") Block_enumerateObjectsUsingBlock block);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("enumerateObjectsWithOptions:usingBlock:")
     public native void enumerateObjectsWithOptionsUsingBlock(@NUInt long opts,
             @ObjCBlock(name = "call_enumerateObjectsWithOptionsUsingBlock") Block_enumerateObjectsWithOptionsUsingBlock block);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("firstObject")
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType firstObject();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("indexOfObject:")
     @NUInt
     public native long indexOfObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("indexOfObject:inRange:")
     @NUInt
@@ -224,21 +253,33 @@ public class PHFetchResult<_ObjectType> extends NSObject implements NSCopying, N
     @Selector("init")
     public native PHFetchResult<?> init();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("lastObject")
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType lastObject();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("objectAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectAtIndex(@NUInt long index);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("objectAtIndexedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
     public native _ObjectType objectAtIndexedSubscript(@NUInt long idx);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("objectsAtIndexes:")
     public native NSArray<_ObjectType> objectsAtIndexes(NSIndexSet indexes);

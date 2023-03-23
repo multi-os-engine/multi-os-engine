@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCPoolingDescriptor
- * <p>
+ * 
  * The MLCPoolingDescriptor specifies a pooling descriptor.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -64,7 +66,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCPoolingDescriptor object for an average pooling function
-     *
+     * 
      * @param kernelSizes          The kernel sizes in x and y
      * @param strides              The kernel strides in x and y
      * @param dilationRates        The kernel dilation rates in x and y
@@ -82,7 +84,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCPoolingDescriptor object for an average pooling function
-     *
+     * 
      * @param kernelSizes          The kernel sizes in x and y
      * @param strides              The kernel strides in x and y
      * @param paddingPolicy        The padding policy
@@ -122,7 +124,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] countIncludesPadding
-     * <p>
+     * 
      * Include the zero-padding in the averaging calculation if true. Used only with average pooling.
      */
     @Generated
@@ -139,7 +141,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] dilationRateInX
-     * <p>
+     * 
      * The dilation rate i.e. stride of elements in the kernel in x.
      */
     @Generated
@@ -149,7 +151,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] dilationRateInY
-     * <p>
+     * 
      * The dilation rate i.e. stride of elements in the kernel in y.
      */
     @Generated
@@ -185,7 +187,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] kernelHeight
-     * <p>
+     * 
      * The pooling kernel size in y.
      */
     @Generated
@@ -195,7 +197,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] kernelWidth
-     * <p>
+     * 
      * The pooling kernel size in x.
      */
     @Generated
@@ -209,7 +211,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCPoolingDescriptor object for a L2 norm pooling function
-     *
+     * 
      * @param kernelSizes   The kernel sizes in x and y
      * @param strides       The kernel strides in x and y
      * @param dilationRates The kernel dilation rates in x and y
@@ -225,7 +227,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCPoolingDescriptor object for a L2 norm pooling function
-     *
+     * 
      * @param kernelSizes   The kernel sizes in x and y
      * @param strides       The kernel strides in x and y
      * @param paddingPolicy The padding policy
@@ -240,7 +242,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCPoolingDescriptor object for a max pooling function
-     *
+     * 
      * @param kernelSizes   The kernel sizes in x and y
      * @param strides       The kernel strides in x and y
      * @param dilationRates The kernel dilation rates in x and y
@@ -256,7 +258,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCPoolingDescriptor object for a max pooling function
-     *
+     * 
      * @param kernelSizes   The kernel sizes in x and y
      * @param strides       The kernel strides in x and y
      * @param paddingPolicy The padding policy
@@ -276,7 +278,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] paddingPolicy
-     * <p>
+     * 
      * The padding policy to use.
      */
     @Generated
@@ -285,7 +287,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] paddingSizeInX
-     * <p>
+     * 
      * The padding size in x (left and right) to use if paddingPolicy is MLCPaddingPolicyUsePaddingSize
      */
     @Generated
@@ -295,7 +297,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] paddingSizeInY
-     * <p>
+     * 
      * The padding size in y (top and bottom) to use if paddingPolicy is MLCPaddingPolicyUsePaddingSize
      */
     @Generated
@@ -305,7 +307,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * Create a MLCPoolingDescriptor object
-     *
+     * 
      * @param poolingType The pooling function
      * @param kernelSize  The kernel sizes in x and y
      * @param stride      The kernel strides in x and y
@@ -318,7 +320,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] poolingType
-     * <p>
+     * 
      * The pooling operation
      */
     @Generated
@@ -339,7 +341,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] strideInX
-     * <p>
+     * 
      * The stride of the kernel in x.
      */
     @Generated
@@ -349,7 +351,7 @@ public class MLCPoolingDescriptor extends NSObject implements NSCopying {
 
     /**
      * [@property] strideInY
-     * <p>
+     * 
      * The stride of the kernel in y.
      */
     @Generated

@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@protocol] MTLCommandEncoder
- * <p>
+ * 
  * MTLCommandEncoder is the common interface for objects that write commands into MTLCommandBuffers.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Metal")
@@ -37,7 +39,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface MTLCommandEncoder {
     /**
      * [@property] device
-     * <p>
+     * 
      * The device this resource was created against.
      */
     @Generated
@@ -47,7 +49,7 @@ public interface MTLCommandEncoder {
 
     /**
      * endEncoding
-     * <p>
+     * 
      * Declare that all command generation from this encoder is complete, and detach from the MTLCommandBuffer.
      */
     @Generated
@@ -56,7 +58,7 @@ public interface MTLCommandEncoder {
 
     /**
      * insertDebugSignpost:
-     * <p>
+     * 
      * Inserts a debug string into the command buffer. This does not change any API behavior, but can be useful when
      * debugging.
      */
@@ -66,7 +68,7 @@ public interface MTLCommandEncoder {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated
@@ -75,7 +77,7 @@ public interface MTLCommandEncoder {
 
     /**
      * popDebugGroup
-     * <p>
+     * 
      * Pop the latest named string off of the stack.
      */
     @Generated
@@ -84,7 +86,7 @@ public interface MTLCommandEncoder {
 
     /**
      * pushDebugGroup:
-     * <p>
+     * 
      * Push a new named string onto a stack of string labels.
      */
     @Generated
@@ -93,7 +95,7 @@ public interface MTLCommandEncoder {
 
     /**
      * [@property] label
-     * <p>
+     * 
      * A string to help identify this object.
      */
     @Generated

@@ -40,23 +40,25 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAssetReaderSampleReferenceOutput
- * <p>
+ * 
  * AVAssetReaderSampleReferenceOutput is a concrete subclass of AVAssetReaderOutput that defines an interface for
  * reading sample references from a single AVAssetTrack of an AVAssetReader's AVAsset.
- * <p>
+ * 
  * Clients can extract information about the location (file URL and offset) of samples in a track by adding an instance
  * of AVAssetReaderSampleReferenceOutput to an AVAssetReader using the -[AVAssetReader addOutput:] method. No actual
  * sample data can be extracted using this class. The location of the sample data is described by the
  * kCMSampleBufferAttachmentKey_SampleReferenceURL and kCMSampleBufferAttachmentKey_SampleReferenceByteOffset
  * attachments on the extracted sample buffers. More information about sample buffers describing sample references can
  * be found in the CMSampleBuffer documentation.
- * <p>
+ * 
  * Sample buffers extracted using this class can also be appended to an AVAssetWriterInput to create movie tracks that
  * are not self-contained and reference data in the original file instead. Currently, only instances of AVAssetWriter
  * configured to write files of type AVFileTypeQuickTimeMovie can be used to write tracks that are not self-contained.
- * <p>
+ * 
  * Since no sample data is ever returned by instances of AVAssetReaderSampleReferenceOutput, the value of the
  * alwaysCopiesSampleData property is ignored.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFoundation")
@@ -88,14 +90,16 @@ public class AVAssetReaderSampleReferenceOutput extends AVAssetReaderOutput {
 
     /**
      * assetReaderSampleReferenceOutputWithTrack:
-     * <p>
+     * 
      * Returns an instance of AVAssetReaderSampleReferenceOutput for supplying sample references.
-     * <p>
+     * 
      * The track must be one of the tracks contained by the target AVAssetReader's asset.
-     *
-     * @param track The AVAssetTrack for which the resulting AVAssetReaderSampleReferenceOutput should provide sample
+     * 
+     * @param track
+     *              The AVAssetTrack for which the resulting AVAssetReaderSampleReferenceOutput should provide sample
      *              references.
-     * @return An instance of AVAssetReaderSampleReferenceOutput.
+     * @return
+     *         An instance of AVAssetReaderSampleReferenceOutput.
      */
     @Generated
     @Selector("assetReaderSampleReferenceOutputWithTrack:")
@@ -190,14 +194,16 @@ public class AVAssetReaderSampleReferenceOutput extends AVAssetReaderOutput {
 
     /**
      * initWithTrack:
-     * <p>
+     * 
      * Returns an instance of AVAssetReaderSampleReferenceOutput for supplying sample references.
-     * <p>
+     * 
      * The track must be one of the tracks contained by the target AVAssetReader's asset.
-     *
-     * @param track The AVAssetTrack for which the resulting AVAssetReaderSampleReferenceOutput should provide sample
+     * 
+     * @param track
+     *              The AVAssetTrack for which the resulting AVAssetReaderSampleReferenceOutput should provide sample
      *              references.
-     * @return An instance of AVAssetReaderTrackOutput.
+     * @return
+     *         An instance of AVAssetReaderTrackOutput.
      */
     @Generated
     @Selector("initWithTrack:")
@@ -205,9 +211,9 @@ public class AVAssetReaderSampleReferenceOutput extends AVAssetReaderOutput {
 
     /**
      * [@property] track
-     * <p>
+     * 
      * The track from which the receiver extracts sample references.
-     * <p>
+     * 
      * The value of this property is an AVAssetTrack owned by the target AVAssetReader's asset.
      */
     @Generated

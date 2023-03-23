@@ -64,6 +64,8 @@ public interface UIPageViewControllerDelegate {
 
     /**
      * Sent when a gesture-initiated transition begins.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @IsOptional
@@ -73,6 +75,9 @@ public interface UIPageViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("pageViewControllerPreferredInterfaceOrientationForPresentation:")
@@ -82,6 +87,9 @@ public interface UIPageViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("pageViewControllerSupportedInterfaceOrientations:")

@@ -22,13 +22,25 @@ import org.moe.natj.general.ann.NInt;
 /**
  * UITextItemInteraction.h
  * UIKit
- * <p>
+ * 
  * Copyright (c) 2016-2018 Apple Inc. All rights reserved.
+ * 
+ * 
+ * API-Since: 10.0
  */
 @Generated
 public final class UITextItemInteraction {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long InvokeDefaultAction = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long PresentActions = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NInt public static final long Preview = 0x0000000000000002L;
 
     @Generated

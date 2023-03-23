@@ -43,7 +43,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * ACAccountType objects are obtained by using the [ACAccountStore accountTypeWithIdentifier:] method
  * or accessing the accountType property for a particular account object. They may also be used to find
  * all the accounts of a particular type using [ACAccountStore accountsWithAccountType:]
+ * 
+ * API-Since: 6.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference instead
  */
+@Deprecated
 @Generated
 @Library("Accounts")
 @Runtime(ObjCRuntime.class)

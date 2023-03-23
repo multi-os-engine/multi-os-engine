@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -119,14 +122,14 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
 
     /**
      * Creates a new difference representing the changes in the parameter.
-     * <p>
+     * 
      * For clients interested in the difference between two collections, the
      * collection's differenceFrom method should be used instead.
-     * <p>
+     * 
      * To guarantee that instances are unambiguous and safe for compatible base
      * states, this method requires that its parameter conform to the following
      * requirements:
-     * <p>
+     * 
      * 1) All insertion offsets are unique
      * 2) All removal offsets are unique
      * 3) All associated indexes match a change with the opposite parity.
@@ -148,6 +151,9 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
             NSIndexSet inserts, NSArray<_ObjectType> insertedObjects, NSIndexSet removes,
             NSArray<_ObjectType> removedObjects, NSArray<? extends NSOrderedCollectionChange<_ObjectType>> changes);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("insertions")
     public native NSArray<? extends NSOrderedCollectionChange<_ObjectType>> insertions();
@@ -167,11 +173,13 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
 
     /**
      * Returns a difference that is the inverse of the receiver.
-     * <p>
+     * 
      * In other words, given a valid difference `diff` the array `a` is equal to
      * [[a arrayByApplyingDifference:diff] arrayByApplyingDifference:diff.inverseDifference]
-     * <p>
+     * 
      * To revert a chronological sequence of diffs, apply their inverses in reverse order.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("inverseDifference")
@@ -190,6 +198,9 @@ public class NSOrderedCollectionDifference<_ObjectType> extends NSObject impleme
     @Selector("new")
     public static native NSOrderedCollectionDifference<?> new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("removals")
     public native NSArray<? extends NSOrderedCollectionChange<_ObjectType>> removals();

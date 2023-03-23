@@ -27,8 +27,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXAppLaunchMetric
- * <p>
+ * 
  * An MXMetric subclass that encapsulates app launch metrics.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetricKit")
@@ -95,9 +97,9 @@ public class MXAppLaunchMetric extends MXMetric {
 
     /**
      * [@property] histogrammedApplicationResumeTime
-     * <p>
+     * 
      * Histogrammed application resume time data.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
      */
     @Generated
@@ -106,11 +108,11 @@ public class MXAppLaunchMetric extends MXMetric {
 
     /**
      * [@property] histogrammedTimeToFirstDraw
-     * <p>
+     * 
      * Histogrammed application time-to-first-draw data.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
-     * <p>
+     * 
      * This represents the time when the first CA commit is finished.
      */
     @Generated
@@ -184,19 +186,37 @@ public class MXAppLaunchMetric extends MXMetric {
 
     /**
      * [@property] histogrammedOptimizedTimeToFirstDraw
-     * <p>
+     * 
      * Histogrammed optimized application time-to-first-draw data.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
-     * <p>
+     * 
      * This represents the time when the first CA commit is finished where the application launch has been optimized by
      * the system.
-     * <p>
+     * 
      * In iOS 15, the system will opportunistically start applications that are not running in the background to reduce
      * the amount of time a user may have to wait before an application is usable. These launches can occur after a
      * system reboot and periodically as system conditions allow.
+     * 
+     * API-Since: 15.2
      */
     @Generated
     @Selector("histogrammedOptimizedTimeToFirstDraw")
     public native MXHistogram<NSUnitDuration> histogrammedOptimizedTimeToFirstDraw();
+
+    /**
+     * [@property] histogrammedExtendedLaunch
+     * 
+     * Histogrammed extended launch data.
+     * 
+     * Dimensioned as NSUnitDuration.
+     * 
+     * This represents the time when the app has drawn the first frame and finishes all extended launch tasks that
+     * assigned by the developer.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("histogrammedExtendedLaunch")
+    public native MXHistogram<NSUnitDuration> histogrammedExtendedLaunch();
 }

@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] MTLStitchedLibraryDescriptor
- * <p>
+ * 
  * A container for the graphs and functions needed to create the stitched functions described by the graphs.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Metal")

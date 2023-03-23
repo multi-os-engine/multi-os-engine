@@ -24,9 +24,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCEmbeddingLayer
- * <p>
+ * 
  * An embedding layer which stores the words embedding
- * <p>
+ * 
  * For details refer to: https://pytorch.org/docs/stable/nn.html#embedding
  * Only supported on CPU and can only be used as the first layer in a graph. If needs to be used with another graph
  * compiled for a GPU device,
@@ -34,6 +34,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * input to the second graph
  * and respectively the gradient result of the first layer of the second graph can be passed to this graph for weight
  * update.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -164,7 +166,7 @@ public class MLCEmbeddingLayer extends MLCLayer {
 
     /**
      * [@property] weights
-     * <p>
+     * 
      * The array of word embeddings
      */
     @Generated
@@ -173,7 +175,7 @@ public class MLCEmbeddingLayer extends MLCLayer {
 
     /**
      * [@property] weightsParameter
-     * <p>
+     * 
      * The weights tensor parameter used for optimizer update
      */
     @Generated

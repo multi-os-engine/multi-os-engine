@@ -49,8 +49,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * UIMotionEffect is an abstract superclass which declaratively represents a rendering
  * effect that depends on the motion of the device. Given some device pose, subclassers
  * provide relative values which are to be applied to the key paths of the target's view.
- * <p>
+ * 
  * Subclasses must implement conformance for NSCopying and NSCoding.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("UIKit")
@@ -185,18 +187,17 @@ public class UIMotionEffect extends NSObject implements NSCopying, NSCoding {
      * and relative values pairs which will represent the effect of the device's motion on
      * the target view. The return value is a dictionary whose keys and values are these
      * key paths (as NSStrings) and relative values, respectively.
-     * <p>
+     * 
      * The `viewerOffset` is an estimate of the viewer's position relative to direction the
      * screen's facing. Values in each dimension range from -1 to 1. Facing straight at the
      * viewer is (0, 0). Tilting the phone to the right produces a more positive horizontal
      * value; tilting the phone down produces a more positive vertical value.
-     * <p>
+     * 
      * `keyPaths` should be expressed relative to the effect's target view. Only key paths
      * which would animate if set in an animation block may be targeted by motion effects.
-     * <p>
+     * 
      * Example return value: `@{ @"center": [NSValue
      * valueFromCGPoint:CGPointMake(3.4, 1.2)],
-     *
      * @"layer.shadowOffset.x": @(-1.1) }`
      */
     @Generated

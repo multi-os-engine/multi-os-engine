@@ -16,6 +16,8 @@ import org.moe.natj.objc.ann.Selector;
 /**
  * NSTextStorageObserving defines the protocol for NSTextStorage controller objects observing changes in the text
  * backing-store.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("UIKit")

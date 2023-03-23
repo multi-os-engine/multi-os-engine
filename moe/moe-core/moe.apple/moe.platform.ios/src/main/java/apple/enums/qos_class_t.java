@@ -20,11 +20,29 @@ import org.moe.natj.general.ann.Generated;
 
 @Generated
 public final class qos_class_t {
+    /**
+     * API-Since: 8.0
+     */
     @Generated public static final int QOS_CLASS_USER_INTERACTIVE = 0x00000021;
+    /**
+     * API-Since: 8.0
+     */
     @Generated public static final int QOS_CLASS_USER_INITIATED = 0x00000019;
+    /**
+     * API-Since: 8.0
+     */
     @Generated public static final int QOS_CLASS_DEFAULT = 0x00000015;
+    /**
+     * API-Since: 8.0
+     */
     @Generated public static final int QOS_CLASS_UTILITY = 0x00000011;
+    /**
+     * API-Since: 8.0
+     */
     @Generated public static final int QOS_CLASS_BACKGROUND = 0x00000009;
+    /**
+     * API-Since: 8.0
+     */
     @Generated public static final int QOS_CLASS_UNSPECIFIED = 0x00000000;
 
     @Generated

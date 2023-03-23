@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A WKWebpagePreferences object is a collection of properties that
  * determine the preferences to use when loading and rendering a page.
- * <p>
+ * 
  * Contains properties used to determine webpage preferences.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("WebKit")
@@ -124,9 +126,11 @@ public class WKWebpagePreferences extends NSObject {
     /**
      * A WKContentMode indicating the content mode to prefer
      * when loading and rendering a webpage.
-     * <p>
+     * 
      * The default value is WKContentModeRecommended. The stated
      * preference is ignored on subframe navigation
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("preferredContentMode")
@@ -144,9 +148,11 @@ public class WKWebpagePreferences extends NSObject {
     /**
      * A WKContentMode indicating the content mode to prefer
      * when loading and rendering a webpage.
-     * <p>
+     * 
      * The default value is WKContentModeRecommended. The stated
      * preference is ignored on subframe navigation
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setPreferredContentMode:")
@@ -167,18 +173,20 @@ public class WKWebpagePreferences extends NSObject {
 
     /**
      * A Boolean value indicating whether JavaScript from web content is enabled
-     * <p>
+     * 
      * If this value is set to NO then JavaScript referenced by the web content will not execute.
      * This includes JavaScript found in inline <script> elements, referenced by external JavaScript resources,
      * "javascript:" URLs, and all other forms.
-     * <p>
+     * 
      * Even if this value is set to NO your application can still execute JavaScript using:
      * - [WKWebView evaluteJavaScript:completionHandler:]
      * - [WKWebView evaluteJavaScript:inContentWorld:completionHandler:]
      * - [WKWebView callAsyncJavaScript:arguments:inContentWorld:completionHandler:]
      * - WKUserScripts
-     * <p>
+     * 
      * The default value is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("allowsContentJavaScript")
@@ -186,20 +194,46 @@ public class WKWebpagePreferences extends NSObject {
 
     /**
      * A Boolean value indicating whether JavaScript from web content is enabled
-     * <p>
+     * 
      * If this value is set to NO then JavaScript referenced by the web content will not execute.
      * This includes JavaScript found in inline <script> elements, referenced by external JavaScript resources,
      * "javascript:" URLs, and all other forms.
-     * <p>
+     * 
      * Even if this value is set to NO your application can still execute JavaScript using:
      * - [WKWebView evaluteJavaScript:completionHandler:]
      * - [WKWebView evaluteJavaScript:inContentWorld:completionHandler:]
      * - [WKWebView callAsyncJavaScript:arguments:inContentWorld:completionHandler:]
      * - WKUserScripts
-     * <p>
+     * 
      * The default value is YES.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAllowsContentJavaScript:")
     public native void setAllowsContentJavaScript(boolean value);
+
+    /**
+     * A boolean indicating whether lockdown mode is enabled.
+     * 
+     * This mode trades off performance and compatibility in favor of security.
+     * The default value depends on the system setting.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isLockdownModeEnabled")
+    public native boolean isLockdownModeEnabled();
+
+    /**
+     * A boolean indicating whether lockdown mode is enabled.
+     * 
+     * This mode trades off performance and compatibility in favor of security.
+     * The default value depends on the system setting.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setLockdownModeEnabled:")
+    public native void setLockdownModeEnabled(boolean value);
 }

@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPMusicPlayerController allows playback of MPMediaItems through the Music application.
  * See MPMediaPlayback.h for basic playback control.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("MediaPlayer")
@@ -115,6 +117,10 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @NUInt
     public static native long hash_static();
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 8.0
+     */
     @Generated
     @Deprecated
     @Selector("iPodMusicPlayer")
@@ -209,6 +215,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     /**
      * Returns the index of the now playing item in the current playback queue.
      * May return NSNotFound if the index is not valid (e.g. an empty queue or an infinite playlist).
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("indexOfNowPlayingItem")
@@ -257,6 +265,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
      * item cannot be prepared for playback.
      * If a first item is not specified, the error will be non-nil if an item cannot be prepared for playback.
      * Errors will be in MPErrorDomain.
+     * 
+     * API-Since: 10.1
      */
     @Generated
     @Selector("prepareToPlayWithCompletionHandler:")
@@ -287,6 +297,9 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("setNowPlayingItem:")
     public native void setNowPlayingItem(MPMediaItem value);
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("setQueueWithDescriptor:")
     public native void setQueueWithDescriptor(MPMusicPlayerQueueDescriptor descriptor);
@@ -303,6 +316,9 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     @Selector("setQueueWithQuery:")
     public native void setQueueWithQuery(MPMediaQuery query);
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("setQueueWithStoreIDs:")
     public native void setQueueWithStoreIDs(NSArray<String> storeIDs);
@@ -324,6 +340,10 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     /**
      * The current volume of playing music, in the range of 0.0 to 1.0.
      * This property is deprecated -- use MPVolumeView for volume control instead.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use MPVolumeView for volume control.
      */
     @Generated
     @Deprecated
@@ -367,6 +387,10 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
     /**
      * The current volume of playing music, in the range of 0.0 to 1.0.
      * This property is deprecated -- use MPVolumeView for volume control instead.
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use MPVolumeView for volume control.
      */
     @Generated
     @Deprecated
@@ -382,6 +406,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Adds the contents of the queue descriptor to the end of the queue
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @Selector("appendQueueDescriptor:")
@@ -389,6 +415,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Similar to applicationMusicPlayer, but allows direct manipulation of the queue.
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @Selector("applicationQueuePlayer")
@@ -396,6 +424,8 @@ public class MPMusicPlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Inserts the contents of the queue descriptor after the now playing item
+     * 
+     * API-Since: 10.3
      */
     @Generated
     @Selector("prependQueueDescriptor:")

@@ -40,6 +40,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ * Deprecated-Since: 12.0
+ * Deprecated-Message: GKGameSession is deprecated. Use GKPlayer for both real-time and turn-based matchmaking APIs.
+ */
+@Deprecated
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)

@@ -45,7 +45,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNShape
- * <p>
+ * 
  * SCNShape represents a 2D shape (cubic Bezier spline) than can be extruded.
  */
 @Generated
@@ -164,9 +164,9 @@ public class SCNShape extends SCNGeometry {
 
     /**
      * shapeWithPath:extrusionDepth:
-     * <p>
+     * 
      * Creates and returns a 3D representation of the given shape with the given extrusion depth.
-     *
+     * 
      * @param path           The cubic Bezier spline to extrude.
      * @param extrusionDepth The extrusion depth.
      */
@@ -189,9 +189,9 @@ public class SCNShape extends SCNGeometry {
 
     /**
      * [@property] chamferMode
-     * <p>
+     * 
      * The sides of the text that are chamfered.
-     * <p>
+     * 
      * The default value is SCNChamferModeBoth.
      */
     @Generated
@@ -201,10 +201,10 @@ public class SCNShape extends SCNGeometry {
 
     /**
      * [@property] chamferProfile
-     * <p>
+     * 
      * Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path
      * representing a quadrant.
-     * <p>
+     * 
      * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to
      * flatten this path. The default value is nil.
      */
@@ -214,9 +214,9 @@ public class SCNShape extends SCNGeometry {
 
     /**
      * [@property] chamferRadius
-     * <p>
+     * 
      * The chamfer radius. Animatable.
-     * <p>
+     * 
      * Values are clamped to the range [0, extrusionDepth / 2]. The default value is 0.
      */
     @Generated
@@ -226,9 +226,9 @@ public class SCNShape extends SCNGeometry {
 
     /**
      * [@property] extrusionDepth
-     * <p>
+     * 
      * The extrusion depth. Animatable.
-     * <p>
+     * 
      * If the value is 0, we get a mono-sided, 2D version of the shape.
      */
     @Generated
@@ -246,9 +246,9 @@ public class SCNShape extends SCNGeometry {
 
     /**
      * [@property] path
-     * <p>
+     * 
      * The path defining the shape to be rendered.
-     * <p>
+     * 
      * The path defines the outline of the shape. The path is filled using the even-odd rule. If the path is
      * self-intersecting, the behavior is undefined.
      */
@@ -258,9 +258,9 @@ public class SCNShape extends SCNGeometry {
 
     /**
      * [@property] chamferMode
-     * <p>
+     * 
      * The sides of the text that are chamfered.
-     * <p>
+     * 
      * The default value is SCNChamferModeBoth.
      */
     @Generated
@@ -269,10 +269,10 @@ public class SCNShape extends SCNGeometry {
 
     /**
      * [@property] chamferProfile
-     * <p>
+     * 
      * Describes the profile used to when "chamferRadius" is not nil. When "chamferProfile" is nil we fallback on a path
      * representing a quadrant.
-     * <p>
+     * 
      * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to
      * flatten this path. The default value is nil.
      */
@@ -282,9 +282,9 @@ public class SCNShape extends SCNGeometry {
 
     /**
      * [@property] chamferRadius
-     * <p>
+     * 
      * The chamfer radius. Animatable.
-     * <p>
+     * 
      * Values are clamped to the range [0, extrusionDepth / 2]. The default value is 0.
      */
     @Generated
@@ -293,9 +293,9 @@ public class SCNShape extends SCNGeometry {
 
     /**
      * [@property] extrusionDepth
-     * <p>
+     * 
      * The extrusion depth. Animatable.
-     * <p>
+     * 
      * If the value is 0, we get a mono-sided, 2D version of the shape.
      */
     @Generated
@@ -304,9 +304,9 @@ public class SCNShape extends SCNGeometry {
 
     /**
      * [@property] path
-     * <p>
+     * 
      * The path defining the shape to be rendered.
-     * <p>
+     * 
      * The path defines the outline of the shape. The path is filled using the even-odd rule. If the path is
      * self-intersecting, the behavior is undefined.
      */

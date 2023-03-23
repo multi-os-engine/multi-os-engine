@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Represents a camera snapshot.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("HomeKit")

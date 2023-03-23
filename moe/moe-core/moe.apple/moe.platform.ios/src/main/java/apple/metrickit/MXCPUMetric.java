@@ -29,8 +29,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXCPUMetric
- * <p>
+ * 
  * An MXMetric subclass that encapsulates CPU metrics.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetricKit")
@@ -84,12 +86,12 @@ public class MXCPUMetric extends MXMetric {
 
     /**
      * [@property] cumulativeCPUTime
-     * <p>
+     * 
      * CPU time aggregated cumulatively.
-     * <p>
+     * 
      * The data here represents the total CPU time an application consumed over the date range of the containing
      * payload.
-     * <p>
+     * 
      * Dimensioned as NSUnitDuration.
      */
     @Generated
@@ -176,13 +178,15 @@ public class MXCPUMetric extends MXMetric {
 
     /**
      * [@property] cumulativeCPUInstructions
-     * <p>
+     * 
      * CPU instructions retired aggregated cumulatively.
-     * <p>
+     * 
      * The data here represents the total number of CPU instructions an application retired over the date range of the
      * containing payload.
-     * <p>
+     * 
      * Dimensionless.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("cumulativeCPUInstructions")

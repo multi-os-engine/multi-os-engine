@@ -9,7 +9,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.natj.objc.ann.IsOptional;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -29,4 +33,19 @@ public interface UIContentView {
     @Generated
     @Selector("setConfiguration:")
     void setConfiguration(@Mapped(ObjCObjectMapper.class) UIContentConfiguration value);
+
+    /**
+     * Whether this view is compatible with the provided configuration, meaning the view supports
+     * it being set to the `configuration` property and is capable of updating itself for the
+     * configuration. If not implemented, the view is assumed to be compatible with configuration
+     * classes that match the class of the view's existing configuration.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("supportsConfiguration:")
+    default boolean supportsConfiguration(@Mapped(ObjCObjectMapper.class) UIContentConfiguration configuration) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 }

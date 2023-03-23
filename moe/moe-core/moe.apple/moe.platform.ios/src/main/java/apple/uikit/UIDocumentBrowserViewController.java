@@ -35,6 +35,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * UIDocumentBrowserViewController is a view controller to browse the files on the user's device or cloud services and
  * open them directly in your application
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("UIKit")
@@ -80,6 +82,12 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Selector("allocWithZone:")
     public static native UIDocumentBrowserViewController allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: allowedContentTypes is no longer supported
+     */
+    @Deprecated
     @Generated
     @Selector("allowedContentTypes")
     public native NSArray<String> allowedContentTypes();
@@ -98,6 +106,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Selector("allowsPickingMultipleItems")
     public native boolean allowsPickingMultipleItems();
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();
@@ -189,7 +198,11 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     /**
      * @param allowedContentTypes The document types that the user should be able to open. If nil, the types specified
      *                            via the CFBundleDocumentTypes key in the application plist will be used instead.
+     * 
+     *                            API-Since: 11.0
+     *                            Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("initForOpeningFilesWithContentTypes:")
     public native UIDocumentBrowserViewController initForOpeningFilesWithContentTypes(
@@ -324,6 +337,11 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated
     @Generated
     @Selector("transitionControllerForDocumentURL:")
     public native UIDocumentBrowserTransitionController transitionControllerForDocumentURL(NSURL documentURL);
@@ -335,6 +353,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     /**
      * Aspect ratio of the Create Document button defined as width / height (default: 2/3).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("defaultDocumentAspectRatio")
@@ -343,6 +363,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     /**
      * Title of the Create Document button (default: "Create Document”).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("localizedCreateDocumentActionTitle")
@@ -354,13 +376,19 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      * Can be defined via the 'UIDocumentBrowserRecentDocumentContentTypes' key in the app Info.plist.
      * Note that the recentDocumentsContentTypes must be a subset conforming to the types declared in
      * allowedContentTypes.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 14.0
      */
+    @Deprecated
     @Generated
     @Selector("recentDocumentsContentTypes")
     public native NSArray<String> recentDocumentsContentTypes();
 
     /**
      * Aspect ratio of the Create Document button defined as width / height (default: 2/3).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setDefaultDocumentAspectRatio:")
@@ -368,6 +396,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     /**
      * Title of the Create Document button (default: "Create Document”).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setLocalizedCreateDocumentActionTitle:")
@@ -375,6 +405,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     /**
      * Force the display of file extensions (default: NO).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setShouldShowFileExtensions:")
@@ -382,6 +414,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     /**
      * Force the display of file extensions (default: NO).
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("shouldShowFileExtensions")
@@ -392,6 +426,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      * spending time on time-consuming operations (e.g., loading, parsing, …) after having finished the file download,
      * and before presenting it. To be used together with the UIViewControllerTransitioningDelegate protocol for custom
      * view controller transitions.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("transitionControllerForDocumentAtURL:")
@@ -404,6 +440,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      * Can be defined via the 'UIDocumentBrowserRecentDocumentContentTypes' key in the app Info.plist.
      * Note that the contentTypesForRecentDocuments must be a subset conforming to the types passed in the initializer
      * or Info.plist.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("contentTypesForRecentDocuments")
@@ -412,8 +450,29 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     /**
      * @param contentTypes The content types that the user should be able to open. If nil, the types specified via the
      *                     CFBundleDocumentTypes key in the application plist will be used instead.
+     * 
+     *                     API-Since: 14.0
      */
     @Generated
     @Selector("initForOpeningContentTypes:")
     public native UIDocumentBrowserViewController initForOpeningContentTypes(NSArray<? extends UTType> contentTypes);
+
+    /**
+     * Rename a document.
+     * If the proposed name is already taken, a different name may be used after confirming with the user.
+     * The finalURL and error are available in the completion handler.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("renameDocumentAtURL:proposedName:completionHandler:")
+    public native void renameDocumentAtURLProposedNameCompletionHandler(NSURL documentURL, String proposedName,
+            @ObjCBlock(name = "call_renameDocumentAtURLProposedNameCompletionHandler") Block_renameDocumentAtURLProposedNameCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_renameDocumentAtURLProposedNameCompletionHandler {
+        @Generated
+        void call_renameDocumentAtURLProposedNameCompletionHandler(NSURL finalURL, NSError error);
+    }
 }

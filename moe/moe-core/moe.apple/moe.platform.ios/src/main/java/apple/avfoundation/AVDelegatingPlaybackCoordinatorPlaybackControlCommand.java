@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVDelegatingPlaybackCoordinatorPlaybackControlCommand
- * <p>
+ * 
  * Abstract superclass for playback commands
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVFoundation")
@@ -87,9 +89,9 @@ public class AVDelegatingPlaybackCoordinatorPlaybackControlCommand extends NSObj
 
     /**
      * [@property] expectedCurrentItemIdentifier
-     * <p>
+     * 
      * Indicates the item this command was issued for.
-     * <p>
+     * 
      * Commands are always meant for the current item. A command handler should verify that the identifier of its
      * current item matches this identifier.
      * If it doesn't this command is obsolete and should be ignored. Note that any completion handler of the delegate
@@ -136,9 +138,9 @@ public class AVDelegatingPlaybackCoordinatorPlaybackControlCommand extends NSObj
 
     /**
      * [@property] originator
-     * <p>
+     * 
      * The participant causing this command to be issued.
-     * <p>
+     * 
      * Only commands issued on behalf of another participant will contain an originator.
      * Commands caused by local requests, e.g., requests to coordinate a rate change, will not contain an originator.
      * Similarly, re-application of older commands, e.g., in response to a call to [AVDelegatingPlaybackCoordinator

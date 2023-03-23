@@ -57,6 +57,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * fetches data using a model, it will become uneditable. Any attempt to mutate a model or any of its subobjects after
  * that point will cause an exception to be thrown. If you need to modify a model that is in use, create a copy, modify
  * the copy, and then discard the objects with the old model.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("CoreData")
@@ -155,6 +157,8 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
      * to the mergedModelFromBundles: method; in this case, the framework uses the version information stored in the
      * metadata for a store to locate the models/entities used to create the store in the available bundles, and return
      * the model. If the model for the store cannot be found, this method will return nil.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("mergedModelFromBundles:forStoreMetadata:")
@@ -172,6 +176,8 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
      * Returns a merged model from the specified array for the version information in the provided metadata. (This is
      * the companion method to mergedModelFromBundles:forStoreMetadata:) If a model cannot be created to match the
      * version information in the specified metadata, this method will return nil.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("modelByMergingModels:forStoreMetadata:")
@@ -242,6 +248,8 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
     /**
      * Returns a dictionary of the version hashes for the entities in the model, keyed by entity name. (The dictionary
      * of version hash information is used by Core Data to determine schema compatibility.)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("entityVersionHashesByName")
@@ -264,6 +272,8 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
      * Returns the dictionary of fetch request templates, keyed by name, for the model. If the template contains a
      * predicate with substitution variables, you should instead use
      * fetchRequestFromTemplateWithName:substitutionVariables: to create a new fetch request.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("fetchRequestTemplatesByName")
@@ -285,6 +295,8 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
      * Compares the version information in the store metadata with the entity version of a given configuration. Returns
      * NO if there are differences between the version information. (For information on specific differences, developers
      * should utilize the entityVersionHashesByName method, and perform a comparison.)
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("isConfiguration:compatibleWithStoreMetadata:")
@@ -296,15 +308,15 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
      * model. The key and value pattern follows:
      * key = "Entity/NonLocalizedEntityName"
      * value = "LocalizedEntityName"
-     * <p>
+     * 
      * // for properties of the same non-localized name in differenct entities, which should have different localized
      * names
      * key = "Property/NonLocalizedPropertyName/Entity/EntityName"
      * value = "LocalizedPropertyName"
-     * <p>
+     * 
      * key = "Property/NonLocalizedPropertyName"
      * value = "LocalizedPropertyName"
-     * <p>
+     * 
      * key = "ErrorString/NonLocalizedErrorString"
      * value = "LocalizedErrorString"
      */
@@ -334,15 +346,15 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
      * model. The key and value pattern follows:
      * key = "Entity/NonLocalizedEntityName"
      * value = "LocalizedEntityName"
-     * <p>
+     * 
      * // for properties of the same non-localized name in differenct entities, which should have different localized
      * names
      * key = "Property/NonLocalizedPropertyName/Entity/EntityName"
      * value = "LocalizedPropertyName"
-     * <p>
+     * 
      * key = "Property/NonLocalizedPropertyName"
      * value = "LocalizedPropertyName"
-     * <p>
+     * 
      * key = "ErrorString/NonLocalizedErrorString"
      * value = "LocalizedErrorString"
      */
@@ -356,6 +368,8 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
      * identifiers. This value is meant to be used as a debugging hint to help developers determine the models that were
      * combined to create a merged model. The framework does not give models a default identifier, nor does it depend
      * this value at runtime.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("setVersionIdentifiers:")
@@ -367,6 +381,8 @@ public class NSManagedObjectModel extends NSObject implements NSCoding, NSCopyin
      * identifiers. This value is meant to be used as a debugging hint to help developers determine the models that were
      * combined to create a merged model. The framework does not give models a default identifier, nor does it depend
      * this value at runtime.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("versionIdentifiers")

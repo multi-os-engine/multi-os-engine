@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.3
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -93,7 +96,7 @@ public class MPSCNNDropoutGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * create a new dropout gradient node
-     * <p>
+     * 
      * See also -[MPSCNNNeuronNode gradientFilterNodeWithSources:]
      * for an easier way to do this
      */
@@ -140,7 +143,7 @@ public class MPSCNNDropoutGradientNode extends MPSNNGradientFilterNode {
 
     /**
      * create a new dropout gradient node
-     * <p>
+     * 
      * See also -[MPSCNNNeuronNode gradientFilterNodeWithSources:]
      * for an easier way to do this
      */

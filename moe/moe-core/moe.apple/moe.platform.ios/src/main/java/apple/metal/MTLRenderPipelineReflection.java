@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -148,6 +151,11 @@ public class MTLRenderPipelineReflection extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated
     @Generated
     @Selector("fragmentArguments")
     public native NSArray<? extends MTLArgument> fragmentArguments();
@@ -156,11 +164,56 @@ public class MTLRenderPipelineReflection extends NSObject {
     @Selector("init")
     public native MTLRenderPipelineReflection init();
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated
     @Generated
     @Selector("vertexArguments")
     public native NSArray<? extends MTLArgument> vertexArguments();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 16.0
+     */
+    @Deprecated
     @Generated
     @Selector("tileArguments")
     public native NSArray<? extends MTLArgument> tileArguments();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("fragmentBindings")
+    public native NSArray<?> fragmentBindings();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("meshBindings")
+    public native NSArray<?> meshBindings();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("objectBindings")
+    public native NSArray<?> objectBindings();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("tileBindings")
+    public native NSArray<?> tileBindings();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("vertexBindings")
+    public native NSArray<?> vertexBindings();
 }

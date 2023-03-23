@@ -23,6 +23,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.3
+ * Deprecated-Since: 16.1
+ */
+@Deprecated
 @Generated
 @Library("BusinessChat")
 @Runtime(ObjCRuntime.class)
@@ -118,10 +123,14 @@ public class BCChatAction extends NSObject {
 
     /**
      * Open the chat transcript configured for a given business.
-     *
+     * 
      * @param businessIdentifier The business identifier for the given business.
      * @param intentParameters   Parameters to be sent with the initial message.
+     * 
+     *                           API-Since: 11.3
+     *                           Deprecated-Since: 16.1
      */
+    @Deprecated
     @Generated
     @Selector("openTranscript:intentParameters:")
     public static native void openTranscriptIntentParameters(String businessIdentifier,

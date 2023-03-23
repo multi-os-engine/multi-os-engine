@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * An obstacle with an impassible radius in 3D space
  * For use with GKAgent3D. Using this with a GKAgent2D is no different than using GKCircleObstacle.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")

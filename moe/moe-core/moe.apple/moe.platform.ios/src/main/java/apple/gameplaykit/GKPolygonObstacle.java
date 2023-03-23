@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An obstacle with an impassible closed polygon
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")

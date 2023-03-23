@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("AuthenticationServices")
 @Runtime(ObjCRuntime.class)
@@ -105,7 +108,7 @@ public class ASCredentialIdentityStoreState extends NSObject {
     /**
      * Get the enabled state of the credential identity store.
      * [@dicussion] You can only modify the credential identity store when it is enabled.
-     *
+     * 
      * @return YES if the credential identity store is enabled.
      */
     @Generated
@@ -143,13 +146,13 @@ public class ASCredentialIdentityStoreState extends NSObject {
 
     /**
      * Get whether the credential identity store supports incremental updates.
-     * <p>
+     * 
      * You should examine the value returned by this property to find out if
      * the credential identity store can accept incremental updates. If incremental updates
      * are supported, you can update the credential identity store with only the new changes
      * since the last time it was updated. Otherwise, you should update the credential identity
      * store by adding all credential identities.
-     *
+     * 
      * @return YES if the credential identity store supports incremental updates.
      */
     @Generated

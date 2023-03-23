@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * A cursor is a Direction Pad that has its axis extended from [-1; 1] to [width; height] range
  * Up, down, left, right allows to use mouse to simulate DirectionaPad or Thumbstick since values are normalized for
  * these elements
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("GameController")

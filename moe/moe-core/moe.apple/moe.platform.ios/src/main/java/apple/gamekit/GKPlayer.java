@@ -41,6 +41,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.1
+ */
 @Generated
 @Library("GameKit")
 @Runtime(ObjCRuntime.class)
@@ -69,6 +72,9 @@ public class GKPlayer extends GKBasePlayer {
     @Selector("allocWithZone:")
     public static native GKPlayer allocWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("anonymousGuestPlayerWithIdentifier:")
     public static native GKPlayer anonymousGuestPlayerWithIdentifier(String guestIdentifier);
@@ -135,7 +141,12 @@ public class GKPlayer extends GKBasePlayer {
      * 1. Unauthenticated local player
      * 2. Communications failure
      * 3. Invalid player identifier
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 14.5
+     * Deprecated-Message: use GKLocalPlayer.loadFriendsWithIdentifiers to load a friend's GKPlayer object.
      */
+    @Deprecated
     @Generated
     @Selector("loadPlayersForIdentifiers:withCompletionHandler:")
     public static native void loadPlayersForIdentifiersWithCompletionHandler(NSArray<String> identifiers,
@@ -179,11 +190,16 @@ public class GKPlayer extends GKBasePlayer {
     /**
      * This is player's alias to be displayed. The display name may be very long, so be sure to use appropriate string
      * truncation API when drawing.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("displayName")
     public native String displayName();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("guestIdentifier")
     public native String guestIdentifier();
@@ -194,17 +210,30 @@ public class GKPlayer extends GKBasePlayer {
 
     /**
      * True if this player is a friend of the local player
+     * 
+     * API-Since: 4.1
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: use -[GKLocalPlayer loadFriendPlayers...]
      */
     @Generated
     @Deprecated
     @Selector("isFriend")
     public native boolean isFriend();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("loadPhotoForSize:withCompletionHandler:")
     public native void loadPhotoForSizeWithCompletionHandler(@NInt long size,
             @ObjCBlock(name = "call_loadPhotoForSizeWithCompletionHandler") Block_loadPhotoForSizeWithCompletionHandler completionHandler);
 
+    /**
+     * API-Since: 4.1
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: use the teamPlayerID property to identify a player
+     */
+    @Deprecated
     @Generated
     @Selector("playerID")
     public native String playerID();
@@ -225,6 +254,8 @@ public class GKPlayer extends GKBasePlayer {
 
     /**
      * This is the player's unique and persistent ID that is scoped to this application.
+     * 
+     * API-Since: 12.4
      */
     @Generated
     @Selector("gamePlayerID")
@@ -233,6 +264,8 @@ public class GKPlayer extends GKBasePlayer {
     /**
      * This convenience method checks if the gamePlayerID and the teamPlayerID (scopedIDs) are persistent or unique for
      * the instantiation of this app.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("scopedIDsArePersistent")
@@ -241,6 +274,8 @@ public class GKPlayer extends GKBasePlayer {
     /**
      * This is the player's unique and persistent ID that is scoped to the Apple Store Connect Team identifier of this
      * application.
+     * 
+     * API-Since: 12.4
      */
     @Generated
     @Selector("teamPlayerID")
@@ -248,6 +283,8 @@ public class GKPlayer extends GKBasePlayer {
 
     /**
      * This convenience method checks if you can invite the player to multiplayer game.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("isInvitable")

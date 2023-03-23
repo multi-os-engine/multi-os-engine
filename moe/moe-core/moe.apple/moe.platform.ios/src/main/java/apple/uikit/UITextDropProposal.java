@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -102,7 +105,7 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
      * - load the data from the item providers
      * - insert it into the text droppable view
      * - provide a preview for the drop
-     * <p>
+     * 
      * The default is `UITextDropPerformerView`.
      */
     @Generated
@@ -178,7 +181,7 @@ public class UITextDropProposal extends UIDropProposal implements NSCopying {
      * - load the data from the item providers
      * - insert it into the text droppable view
      * - provide a preview for the drop
-     * <p>
+     * 
      * The default is `UITextDropPerformerView`.
      */
     @Generated

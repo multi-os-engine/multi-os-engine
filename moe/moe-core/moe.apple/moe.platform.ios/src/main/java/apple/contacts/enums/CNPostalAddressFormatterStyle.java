@@ -21,11 +21,15 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * The formatting styles for postal addresses.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class CNPostalAddressFormatterStyle {
     /**
      * Combine the postal address components into a multi-line mailing address.
+     * 
+     * API-Since: 9.0
      */
     @Generated @NInt public static final long CNPostalAddressFormatterStyleMailingAddress = 0x0000000000000000L;
 

@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -171,7 +174,12 @@ public class PKPaymentMethod extends NSObject {
 
     /**
      * The payment pass - will only be provided if your app is entitled to view the pass in question
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use -[PKPass secureElementPass] instead
      */
+    @Deprecated
     @Generated
     @Selector("paymentPass")
     public native PKPaymentPass paymentPass();
@@ -186,11 +194,16 @@ public class PKPaymentMethod extends NSObject {
 
     /**
      * A partially redacted billing address. Only available if no shipping address info was requested.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("billingAddress")
     public native CNContact billingAddress();
 
+    /**
+     * API-Since: 13.4
+     */
     @Generated
     @Selector("secureElementPass")
     public native PKSecureElementPass secureElementPass();

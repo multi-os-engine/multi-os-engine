@@ -28,6 +28,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An anchor representing an app clip code in the world.
+ * 
+ * API-Since: 14.3
  */
 @Generated
 @Library("ARKit")

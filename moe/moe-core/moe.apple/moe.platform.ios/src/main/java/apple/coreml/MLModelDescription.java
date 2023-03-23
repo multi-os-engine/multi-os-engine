@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A description of a model containing input and output feature descriptions, optionally outputted features
  * with special meaning and metadata.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreML")
@@ -220,17 +222,19 @@ public class MLModelDescription extends NSObject implements NSSecureCoding {
 
     /**
      * Array to map a class index to the corresponding label, which is either Number or String.
-     * <p>
+     * 
      * The property is populated from the classLabels entry specified in the model's protobuf message. When the model is
      * a pipeline, which contains one or more sub models, the property value is calculated as follows.
-     * <p>
+     * 
      * 1. If the pipeline model's proto message specifies predictedFeatureName parameter, use classLabels property value
      * of the sub model with the output feature with the name.
-     * <p>
+     * 
      * 2. Otherwise, if the pipeline model has only one sub model with non-nil classLabels property, use the property
      * value.
-     * <p>
+     * 
      * 3. Otherwise, the property is nil.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("classLabels")

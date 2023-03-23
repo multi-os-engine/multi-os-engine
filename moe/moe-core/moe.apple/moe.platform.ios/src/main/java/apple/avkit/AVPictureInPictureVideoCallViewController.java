@@ -27,9 +27,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVPictureInPictureVideoCallViewController
- * <p>
+ * 
  * Subclass or directly use `AVPictureInPictureVideoCallViewController` as the container for content to be shown in
  * Picture in Picture while video calls are active.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVKit")
@@ -59,6 +61,7 @@ public class AVPictureInPictureVideoCallViewController extends UIViewController 
     @Selector("allocWithZone:")
     public static native AVPictureInPictureVideoCallViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();

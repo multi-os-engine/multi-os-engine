@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Provides the basic unit of external data that the Core Data stack interacts with.
+ * 
+ * API-Since: 5.0
  */
 @Generated
 @Library("CoreData")
@@ -155,25 +157,25 @@ public class NSIncrementalStoreNode extends NSObject {
     /**
      * Returns an object initialized with the following values
      * objectID -> The NSManagedObjectID corresponding to the object whose values are cached
-     * <p>
+     * 
      * values -> A dictionary containing the values persisted in an external store with keys corresponding to the names
      * of the NSPropertyDescriptions
      * in the NSEntityDescription described by the NSManagedObjectID. Unknown or unmodeled keys will be stripped out.
-     * <p>
+     * 
      * For attributes: an immutable value (NSNumber, NSString, NSData etc). Missing attribute keys will assume a nil
      * value.
-     * <p>
+     * 
      * For to-one relationships: the NSManagedObjectID of the related object or NSNull for nil relationship values. A
      * missing key will be resolved lazily through calling
      * -newValueForRelationship:forObjectWithID:withContext:error: on the NSPersistentStore. Lazy resolution for to-ones
      * is discouraged.
-     * <p>
+     * 
      * For to-many relationships: an NSArray or NSSet containing the NSManagedObjectIDs of the related objects. Empty
      * to-many relationships must
      * be represented by an empty non-nil collection. A missing key will be resolved lazily through calling. Lazy
      * resolution for to-manys is encouraged.
      * -newValueForRelationship:forObjectWithID:withContext:error: on the NSPersistentStore
-     * <p>
+     * 
      * version -> The revision number of this state; used for conflict detection and merging
      */
     @Generated

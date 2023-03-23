@@ -42,9 +42,11 @@ public final class CoreLocation {
 
     /**
      * CLLocationCoordinate2DIsValid
-     * <p>
+     * 
      * Discussion:
      * Returns YES if the specified coordinate is valid, NO otherwise.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CFunction
@@ -52,9 +54,11 @@ public final class CoreLocation {
 
     /**
      * CLLocationCoordinate2DMake:
-     * <p>
+     * 
      * Discussion:
      * Returns a new CLLocationCoordinate2D at the given latitude and longitude
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CFunction
@@ -63,7 +67,7 @@ public final class CoreLocation {
 
     /**
      * kCLDistanceFilterNone
-     * <p>
+     * 
      * Discussion:
      * Use as the distanceFilter property for CLLocationManager. This indicates
      * to the location service that no minimum movement filter is desired - ie, client will be informed
@@ -75,12 +79,14 @@ public final class CoreLocation {
 
     /**
      * kCLLocationAccuracy<x>
-     * <p>
+     * 
      * Discussion:
      * Used to specify the accuracy level desired. The location service will try its best to achieve
      * your desired accuracy. However, it is not guaranteed. To optimize
      * power performance, be sure to specify an appropriate accuracy for your usage scenario (eg,
      * use a large accuracy value when only a coarse location is needed).
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -108,9 +114,11 @@ public final class CoreLocation {
 
     /**
      * CLLocationDistanceMax
-     * <p>
+     * 
      * Discussion:
      * Used to specify the maximum CLLocationDistance
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -118,9 +126,11 @@ public final class CoreLocation {
 
     /**
      * CLTimeIntervalMax
-     * <p>
+     * 
      * Discussion:
      * Used to specify the maximum NSTimeInterval
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -128,9 +138,11 @@ public final class CoreLocation {
 
     /**
      * kCLLocationCoordinate2DInvalid
-     * <p>
+     * 
      * Discussion:
      * Used to specify an invalid CLLocationCoordinate2D.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -139,10 +151,10 @@ public final class CoreLocation {
 
     /**
      * kCLErrorDomain
-     * <p>
+     * 
      * Discussion:
      * Error returned as the domain to NSError from CoreLocation.
-     * <p>
+     * 
      * The file CLError.h defines constants for the errors in kCLErrorDomain.
      */
     @Generated
@@ -152,10 +164,12 @@ public final class CoreLocation {
 
     /**
      * kCLErrorUserInfoAlternateRegionKey
-     * <p>
+     * 
      * Discussion:
      * When an error with code kCLErrorRegionMonitoringResponseDelayed is received, this key may be populated
      * in the userInfo dictionary. The value is a CLRegion that the location service can more effectively monitor.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -164,7 +178,7 @@ public final class CoreLocation {
 
     /**
      * kCLHeadingFilterNone
-     * <p>
+     * 
      * Discussion:
      * Use as the headingFilter property for CLLocationManager. This indicates
      * to the heading service that no minimum movement filter is desired - ie, client will be informed
@@ -176,7 +190,7 @@ public final class CoreLocation {
 
     /**
      * kCLLocationAccuracyReduced
-     * <p>
+     * 
      * Discussion:
      * If you set your CLLocationManager's desiredAccuracy property to
      * this value, locations delivered to your delegate in response to
@@ -184,6 +198,8 @@ public final class CoreLocation {
      * accuracy reduced. The locations you receive will match the
      * locations your app would have received if the user had decided
      * not to grant your app authorization for precise location.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @CVariable()
@@ -191,9 +207,12 @@ public final class CoreLocation {
 
     /**
      * CLLocationPushServiceErrorDomain
-     * <p>
+     * 
      * Discussion:
      * Error returned as the domain to NSError from -[CLLocationManager startMonitoringLocationPushesWithCompletion:].
+     * 
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CVariable()

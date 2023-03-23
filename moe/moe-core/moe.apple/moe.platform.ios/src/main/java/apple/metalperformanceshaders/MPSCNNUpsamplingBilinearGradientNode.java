@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Node representing a MPSCNNUpsamplingBilinear kernel
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -94,9 +96,9 @@ public class MPSCNNUpsamplingBilinearGradientNode extends MPSNNGradientFilterNod
 
     /**
      * A node to represent the gradient calculation for nearest upsampling training.
-     * <p>
+     * 
      * [forwardFilter gradientFilterWithSources:] is a more convient way to do this.
-     *
+     * 
      * @param sourceGradient The input gradient from the 'downstream' gradient filter.
      * @param sourceImage    The input image from the forward filter node
      * @param gradientState  The gradient state from the forward filter
@@ -138,9 +140,9 @@ public class MPSCNNUpsamplingBilinearGradientNode extends MPSNNGradientFilterNod
 
     /**
      * A node to represent the gradient calculation for nearest upsampling training.
-     * <p>
+     * 
      * [forwardFilter gradientFilterWithSources:] is a more convient way to do this.
-     *
+     * 
      * @param sourceGradient The input gradient from the 'downstream' gradient filter.
      * @param sourceImage    The input image from the forward filter node
      * @param gradientState  The gradient state from the forward filter

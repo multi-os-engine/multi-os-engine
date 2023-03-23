@@ -30,6 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A vertex buffer and optional index and mask buffer for a set of polygons
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -246,10 +248,10 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
      * that by default each vertex is aligned to the alignment of the vector_float3 type: 16 bytes.
      * This can be changed using the vertexStride property. A vertex buffer must be provided before
      * the acceleration structure is built.
-     * <p>
+     * 
      * When using triangle polygons, degenerate (zero or negative area) triangles are ignored
      * during acceleration structure construction. This can be used to pad triangle indices if needed.
-     * <p>
+     * 
      * Quadrilateral polygons are internally treated as two triangles. If the quadrilateral has
      * vertices v0, v1, v2, and v3, the two triangles will have vertices v0, v1, v2 and v0, v2, v3.
      * A quadrilateral may be used to represent a triangle by repeating the last vertex. If the first
@@ -293,10 +295,10 @@ public class MPSPolygonBuffer extends NSObject implements NSCopying, NSSecureCod
      * that by default each vertex is aligned to the alignment of the vector_float3 type: 16 bytes.
      * This can be changed using the vertexStride property. A vertex buffer must be provided before
      * the acceleration structure is built.
-     * <p>
+     * 
      * When using triangle polygons, degenerate (zero or negative area) triangles are ignored
      * during acceleration structure construction. This can be used to pad triangle indices if needed.
-     * <p>
+     * 
      * Quadrilateral polygons are internally treated as two triangles. If the quadrilateral has
      * vertices v0, v1, v2, and v3, the two triangles will have vertices v0, v1, v2 and v0, v2, v3.
      * A quadrilateral may be used to represent a triangle by repeating the last vertex. If the first

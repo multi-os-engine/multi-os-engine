@@ -24,9 +24,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEGroup
- * <p>
+ * 
  * A PHASEGroup allows clients to group generator nodes for shared processing.
  * Clients can set the gain and playback rate, as well as mute and solo the generator nodes in a group.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -88,16 +90,19 @@ public class PHASEGroup extends NSObject {
 
     /**
      * fadeGain:duration:curveType:
-     * <p>
+     * 
      * Fade the gain of this group over a specified duration and curve.
      * [@note]
      * The fade gain is applied on top of the base gain of the group.
-     *
-     * @param gain      A target linear gain scalar. Values are clamped to the range [0, 1].
-     * @param duration  The duration over which to ramp to the target linear gain scalar. Values must be >= 0.
+     * 
+     * @param gain
+     *                  A target linear gain scalar. Values are clamped to the range [0, 1].
+     * @param duration
+     *                  The duration over which to ramp to the target linear gain scalar. Values must be >= 0.
      *                  The duration is scaled by unitsPerSecond internally, so can be provided at the client's native
      *                  time scale.
-     * @param curveType The type of curve function that is applied during the fade.
+     * @param curveType
+     *                  The type of curve function that is applied during the fade.
      */
     @Generated
     @Selector("fadeGain:duration:curveType:")
@@ -105,16 +110,19 @@ public class PHASEGroup extends NSObject {
 
     /**
      * fadeRate:duration:curveType:
-     * <p>
+     * 
      * Fade the playback rate of this group over a specified duration and curve.
      * [@note]
      * The fade gain is applied on top of the base gain of the group.
-     *
-     * @param rate      A target linear rate scalar. Values are clamped to the range [0.25, 4.0].
-     * @param duration  The duration over which to ramp to the target linear rate scalar. Values must be >= 0.
+     * 
+     * @param rate
+     *                  A target linear rate scalar. Values are clamped to the range [0.25, 4.0].
+     * @param duration
+     *                  The duration over which to ramp to the target linear rate scalar. Values must be >= 0.
      *                  The duration is scaled by unitsPerSecond internally, so can be provided at the client's native
      *                  time scale.
-     * @param curveType The type of curve function that is applied during the fade.
+     * @param curveType
+     *                  The type of curve function that is applied during the fade.
      */
     @Generated
     @Selector("fadeRate:duration:curveType:")
@@ -122,7 +130,7 @@ public class PHASEGroup extends NSObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
@@ -138,7 +146,7 @@ public class PHASEGroup extends NSObject {
 
     /**
      * [@property] identifier
-     * <p>
+     * 
      * The identifier that uniquely represents this group.
      */
     @Generated
@@ -151,10 +159,11 @@ public class PHASEGroup extends NSObject {
 
     /**
      * initWithIdentifier:
-     * <p>
+     * 
      * Create a new group.
-     *
-     * @param identifier The identifier that uniquely represents this group.
+     * 
+     * @param identifier
+     *                   The identifier that uniquely represents this group.
      */
     @Generated
     @Selector("initWithIdentifier:")
@@ -175,7 +184,7 @@ public class PHASEGroup extends NSObject {
 
     /**
      * [@property] muted
-     * <p>
+     * 
      * Whether or not this group is muted.
      */
     @Generated
@@ -184,7 +193,7 @@ public class PHASEGroup extends NSObject {
 
     /**
      * [@property] soloed
-     * <p>
+     * 
      * Whether or not this group is soloed.
      */
     @Generated
@@ -201,7 +210,7 @@ public class PHASEGroup extends NSObject {
 
     /**
      * mute
-     * <p>
+     * 
      * Mute the group.
      */
     @Generated
@@ -215,7 +224,7 @@ public class PHASEGroup extends NSObject {
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * Linear rate scalar.
      * [@note]
      * Values are clamped to the range [0.25, 4]. Default value is 1.
@@ -226,12 +235,13 @@ public class PHASEGroup extends NSObject {
 
     /**
      * registerWithEngine
-     * <p>
+     * 
      * Registers a group with a particular engine so that referenced assets can find it.
      * [@note]
      * An exception will be thrown if the engine is invalid or the group already exists.
-     *
-     * @param engine An engine object to associate this group with.
+     * 
+     * @param engine
+     *               An engine object to associate this group with.
      */
     @Generated
     @Selector("registerWithEngine:")
@@ -247,7 +257,7 @@ public class PHASEGroup extends NSObject {
 
     /**
      * [@property] gain
-     * <p>
+     * 
      * Linear gain scalar.
      * [@note]
      * Values are clamped to the range [0, 1]. Default value is 1.
@@ -258,7 +268,7 @@ public class PHASEGroup extends NSObject {
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * Linear rate scalar.
      * [@note]
      * Values are clamped to the range [0.25, 4]. Default value is 1.
@@ -273,7 +283,7 @@ public class PHASEGroup extends NSObject {
 
     /**
      * solo
-     * <p>
+     * 
      * Solo the group.
      */
     @Generated
@@ -286,7 +296,7 @@ public class PHASEGroup extends NSObject {
 
     /**
      * unmute
-     * <p>
+     * 
      * Unmute the group.
      */
     @Generated
@@ -295,7 +305,7 @@ public class PHASEGroup extends NSObject {
 
     /**
      * unregisterFromEngine
-     * <p>
+     * 
      * Unregister the group from a particular engine.
      */
     @Generated
@@ -304,7 +314,7 @@ public class PHASEGroup extends NSObject {
 
     /**
      * unsolo
-     * <p>
+     * 
      * Unsolo the group.
      */
     @Generated

@@ -29,8 +29,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MXHistogram
- * <p>
+ * 
  * A class representing bucketized histogram data.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetricKit")
@@ -66,7 +68,7 @@ public class MXHistogram<_UnitType> extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] bucketEnumerator
-     * <p>
+     * 
      * An NSEnumerator that can be used to enumerate the buckets of this histogram.
      */
     @Generated
@@ -170,9 +172,9 @@ public class MXHistogram<_UnitType> extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] totalBucketCount
-     * <p>
+     * 
      * The number of buckets contained within this histogram.
-     * <p>
+     * 
      * This value can never be negative.
      */
     @Generated

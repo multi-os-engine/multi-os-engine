@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSAttributedString;
 import apple.foundation.NSCoder;
@@ -50,7 +48,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -156,6 +159,7 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -182,6 +186,7 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -257,46 +262,57 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -356,6 +372,9 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     /**
      * Non-functional. Hand tune by using NSKernAttributeName to affect tracking, or consider using the
      * allowsDefaultTighteningForTruncation property.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -364,6 +383,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is NO
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("allowsDefaultTighteningForTruncation")
@@ -412,6 +433,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is nil
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("attributedText")
@@ -511,6 +534,9 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * deprecated - use minimumScaleFactor. default is 0.0
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 6.0
      */
     @Generated
     @Deprecated
@@ -520,6 +546,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is 0.0
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("minimumScaleFactor")
@@ -541,6 +569,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     /**
      * Support for constraint-based layout (auto layout)
      * If nonzero, this is used when determining -intrinsicContentSize for multiline labels
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("preferredMaxLayoutWidth")
@@ -561,6 +591,9 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     /**
      * Non-functional. Hand tune by using NSKernAttributeName to affect tracking, or consider using the
      * allowsDefaultTighteningForTruncation property.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 7.0
      */
     @Generated
     @Deprecated
@@ -569,6 +602,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is NO
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAllowsDefaultTighteningForTruncation:")
@@ -576,6 +611,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is nil
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setAttributedText:")
@@ -611,6 +648,9 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * deprecated - use minimumScaleFactor. default is 0.0
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 6.0
      */
     @Generated
     @Deprecated
@@ -619,6 +659,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
 
     /**
      * default is 0.0
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setMinimumScaleFactor:")
@@ -638,6 +680,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
     /**
      * Support for constraint-based layout (auto layout)
      * If nonzero, this is used when determining -intrinsicContentSize for multiline labels
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setPreferredMaxLayoutWidth:")
@@ -736,6 +780,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
      * If the label contains an attributed text with paragraph style(s) that specify a set of line break strategies, the
      * set of strategies in the paragraph style(s) will be used instead of the set of strategies defined by this
      * property.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("lineBreakStrategy")
@@ -748,6 +794,8 @@ public class UILabel extends UIView implements NSCoding, UIContentSizeCategoryAd
      * If the label contains an attributed text with paragraph style(s) that specify a set of line break strategies, the
      * set of strategies in the paragraph style(s) will be used instead of the set of strategies defined by this
      * property.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setLineBreakStrategy:")

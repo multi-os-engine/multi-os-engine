@@ -21,14 +21,28 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLBlitOption
- * <p>
+ * 
  * Controls the blit operation
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class MTLBlitOption {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long DepthFromDepthStencil = 0x0000000000000001L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long StencilFromDepthStencil = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NUInt public static final long RowLinearPVRTC = 0x0000000000000004L;
 
     @Generated

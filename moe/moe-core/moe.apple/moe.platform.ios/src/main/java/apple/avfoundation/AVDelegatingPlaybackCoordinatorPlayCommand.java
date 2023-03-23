@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVDelegatingPlaybackCoordinatorPlayCommand
- * <p>
+ * 
  * A playback command requesting playback with specific timing.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("AVFoundation")
@@ -94,7 +96,7 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
 
     /**
      * [@property] hostClockTime
-     * <p>
+     * 
      * This is the host clock time (see CMClockGetHostTimeClock()) defining when playback should start (or should have
      * started) at the given itemTime.
      */
@@ -126,9 +128,9 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
 
     /**
      * [@property] itemTime
-     * <p>
+     * 
      * The itemTime that playback should begin at.
-     * <p>
+     * 
      * The receiver of this command should verify that data is loaded for the requested time and potentially begin
      * loading it before beginning playback.
      * It is not important to load data for time exactly. If data "similar" to time is already loaded, it is acceptable
@@ -155,7 +157,7 @@ public class AVDelegatingPlaybackCoordinatorPlayCommand extends AVDelegatingPlay
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * Playback rate. Will always be non-zero.
      */
     @Generated

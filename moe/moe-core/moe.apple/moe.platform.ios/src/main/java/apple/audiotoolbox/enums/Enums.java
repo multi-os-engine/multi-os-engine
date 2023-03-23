@@ -467,7 +467,7 @@ public final class Enums {
     @Generated public static final int kConverterPrimeMethod_Pre = 0x00000000;
     @Generated public static final int kConverterPrimeMethod_Normal = 0x00000001;
     @Generated public static final int kConverterPrimeMethod_None = 0x00000002;
-    @Deprecated @Generated public static final int kAudioUnitSubType_AU3DMixerEmbedded = 0x3364656D;
+    @Generated public static final int kAudioUnitSubType_AU3DMixerEmbedded = 0x3364656D;
     @Generated public static final int kAudioFileLoopDirection_NoLooping = 0x00000000;
     @Generated public static final int kAudioFileLoopDirection_Forward = 0x00000001;
     @Generated public static final int kAudioFileLoopDirection_ForwardAndBackward = 0x00000002;
@@ -826,6 +826,9 @@ public final class Enums {
     @Generated public static final int kDynamicsProcessorParam_ReleaseTime = 0x00000005;
     /**
      * Global, dB, -40->40, 0
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
      */
     @Deprecated @Generated public static final int kDynamicsProcessorParam_MasterGain = 0x00000006;
     /**
@@ -892,7 +895,11 @@ public final class Enums {
      */
     @Generated public static final int kAudioSessionSetActiveFlag_NotifyOthersOnDeactivation = 0x00000001;
     @Generated public static final int kAudioUnitSubType_Reverb2 = 0x72766232;
-    @Generated public static final int kAudioUnitSubType_AUiPodEQ = 0x69706571;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated public static final int kAudioUnitSubType_AUiPodEQ = 0x69706571;
     @Generated public static final int kAudioToolboxErr_InvalidSequenceType = 0xFFFFD5A2;
     @Generated public static final int kAudioToolboxErr_TrackIndexError = 0xFFFFD595;
     @Generated public static final int kAudioToolboxErr_TrackNotFound = 0xFFFFD596;
@@ -904,6 +911,11 @@ public final class Enums {
     @Generated public static final int kAudioToolboxErr_InvalidPlayerState = 0xFFFFD59C;
     @Generated public static final int kAudioToolboxErr_CannotDoInCurrentContext = 0xFFFFD591;
     @Generated public static final int kAudioToolboxError_NoTrackDestination = 0xFFFEFB60;
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: not longer supported
+     */
     @Deprecated @Generated public static final int kAUVoiceIOProperty_DuckNonVoiceAudio = 0x00000836;
     @Generated public static final int kAudioUnitType_Output = 0x61756F75;
     @Generated public static final int kAudioUnitType_MusicDevice = 0x61756D75;
@@ -969,6 +981,10 @@ public final class Enums {
     @Generated @NInt public static final long kAUNBandEQFilterType_ResonantHighShelf = 0x000000000000000AL;
     @Generated @NInt public static final long kNumAUNBandEQFilterTypes = 0x000000000000000BL;
     @Generated public static final int kAudioConverterPropertyCanResumeFromInterruption = 0x63726669;
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 7.0
+     */
     @Deprecated @Generated public static final int kAUVoiceIOProperty_VoiceProcessingQuality = 0x00000837;
     @Generated public static final int kAudioUnitProperty_ScheduledFileIDs = 0x00000CEE;
     @Generated public static final int kAudioUnitProperty_ScheduledFileRegion = 0x00000CEF;
@@ -1066,20 +1082,25 @@ public final class Enums {
      */
     @Generated public static final int kNewTimePitchParam_Pitch = 0x00000001;
     /**
-     * Overlap is the number of overlapped spectral windows that are used to produce the output.
-     * The value of overlap is directly proportional to CPU cost. More overlaps can make smooth
-     * passages sound smoother. For percussive sound, a lower overlap may be better.
+     * The generated output can be made to sound smoother by increasing
+     * the density of the processing time frames. The value is directly proportional
+     * to the CPU cost. When slowing down percussive audio, lower values may be better.
      * Global, generic, 3.0 -> 32.0, 8.0
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 16.0
      */
-    @Generated public static final int kNewTimePitchParam_Overlap = 0x00000004;
+    @Deprecated @Generated public static final int kNewTimePitchParam_Overlap = 0x00000004;
     /**
-     * Peak locking enforces phase coherence of spectral peaks.
-     * Peak locking adds some expense but results in a less "phasey"
-     * or reverberant sound, sometimes also called loss of presence.
-     * However the flip side is that it can sound more stuttery for some content.
+     * Spectral phase coherence is enabled through peak locking.
+     * This adds some computation cost but results in a less "phasey"
+     * or reverberant sound.
      * Global, Boolean, 0->1, 1
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 16.0
      */
-    @Generated public static final int kNewTimePitchParam_EnablePeakLocking = 0x00000006;
+    @Deprecated @Generated public static final int kNewTimePitchParam_EnablePeakLocking = 0x00000006;
     @Generated public static final int kAudioSessionCategory_UserInterfaceSoundEffects = 0x75696678;
     @Generated public static final int kAudioSessionCategory_LiveAudio = 0x6C697665;
     /**
@@ -1137,7 +1158,13 @@ public final class Enums {
      * Multichannel Mixer
      */
     @Generated public static final int kAudioUnitProperty_InputAnchorTimeStamp = 0x00000BC8;
-    @Generated public static final int kAudioQueueTimePitchAlgorithm_LowQualityZeroLatency = 0x6C717A6C;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Low Quality Zero Latency algorithm is now Deprecated. Please choose from other available
+     * options
+     */
+    @Deprecated @Generated public static final int kAudioQueueTimePitchAlgorithm_LowQualityZeroLatency = 0x6C717A6C;
     @Generated public static final int kAUVoiceIOProperty_BypassVoiceProcessing = 0x00000834;
     @Generated public static final int kAUVoiceIOProperty_VoiceProcessingEnableAGC = 0x00000835;
     @Generated public static final int kAUVoiceIOProperty_MuteOutput = 0x00000838;
@@ -1163,36 +1190,57 @@ public final class Enums {
     @Generated public static final int k3DMixerParam_PlaybackRate = 0x00000004;
     /**
      * bus enable : 0.0 or 1.0
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated public static final int k3DMixerParam_Enable = 0x00000005;
+    @Deprecated @Generated public static final int k3DMixerParam_Enable = 0x00000005;
     /**
      * Minimum input gain constraint : 0.0 -> 1.0 (available on iphone only)
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated public static final int k3DMixerParam_MinGain = 0x00000006;
+    @Deprecated @Generated public static final int k3DMixerParam_MinGain = 0x00000006;
     /**
      * Maximum input gain constraint : 0.0 -> 1.0 (available on iphone only)
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated public static final int k3DMixerParam_MaxGain = 0x00000007;
+    @Deprecated @Generated public static final int k3DMixerParam_MaxGain = 0x00000007;
     /**
      * Input, Dry/Wet equal-power blend, % 0.0 -> 100.0
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated public static final int k3DMixerParam_ReverbBlend = 0x00000008;
+    @Deprecated @Generated public static final int k3DMixerParam_ReverbBlend = 0x00000008;
     /**
      * Global, dB, -40.0 -> +40.0
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated public static final int k3DMixerParam_GlobalReverbGain = 0x00000009;
+    @Deprecated @Generated public static final int k3DMixerParam_GlobalReverbGain = 0x00000009;
     /**
      * Input, Lowpass filter attenuation at 5KHz : decibels -100.0dB -> 0.0dB
      * smaller values make both direct and reverb sound more muffled; a value of 0.0 indicates no filtering
      * Occlusion is a filter applied to the sound prior to the reverb send
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated public static final int k3DMixerParam_OcclusionAttenuation = 0x0000000A;
+    @Deprecated @Generated public static final int k3DMixerParam_OcclusionAttenuation = 0x0000000A;
     /**
      * Input, Lowpass filter attenuation at 5KHz : decibels -100.0dB -> 0.0dB
      * smaller values make direct sound more muffled; a value of 0.0 indicates no filtering
      * Obstruction is a filter applied to the "direct" part of the sound (so is post reverb send)
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
      */
-    @Generated public static final int k3DMixerParam_ObstructionAttenuation = 0x0000000B;
+    @Deprecated @Generated public static final int k3DMixerParam_ObstructionAttenuation = 0x0000000B;
     @Generated public static final int kAudioUnitSubType_RemoteIO = 0x72696F63;
     @Generated public static final int kCAF_FileType = 0x63616666;
     @Generated public static final int kCAF_FileVersion_Initial = 0x00000001;
@@ -1572,7 +1620,11 @@ public final class Enums {
      * these report level in dB, as do the other mixers
      */
     @Generated public static final int kMultiChannelMixerParam_PostPeakHoldLevel = 0x00000FA0;
-    @Generated public static final int kAudioUnitSubType_AUiPodTime = 0x6970746D;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated public static final int kAudioUnitSubType_AUiPodTime = 0x6970746D;
     @Generated public static final int kAppleSoftwareAudioCodecManufacturer = 0x6170706C;
     @Generated public static final int kAppleHardwareAudioCodecManufacturer = 0x61706877;
     /**
@@ -1705,6 +1757,9 @@ public final class Enums {
      */
     @Generated public static final int kSpatialMixerParam_ObstructionAttenuation = 0x0000000B;
     @Generated public static final long AUEventSampleTimeImmediate = 0xFFFFFFFF00000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated public static final int kAudioQueueProperty_ChannelAssignments = 0x61716361;
     /**
      * Global, CrossFade, 0->100, 100
@@ -1763,18 +1818,42 @@ public final class Enums {
      * Global, dB, -20->40, 0
      */
     @Generated public static final int kHipassParam_Resonance = 0x00000001;
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 9.0
+     */
     @Deprecated @Generated public static final int kAudioUnitProperty_3DMixerDistanceParams = 0x00000BC2;
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 9.0
+     */
     @Deprecated @Generated public static final int kAudioUnitProperty_3DMixerAttenuationCurve = 0x00000BC5;
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 9.0
+     */
     @Deprecated @Generated public static final int kAudioUnitProperty_DopplerShift = 0x00000BBA;
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 9.0
+     */
     @Deprecated @Generated public static final int kAudioUnitProperty_3DMixerRenderingFlags = 0x00000BBB;
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 9.0
+     */
     @Deprecated @Generated public static final int kAudioUnitProperty_3DMixerDistanceAtten = 0x00000BBC;
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 9.0
+     */
     @Deprecated @Generated public static final int kAudioUnitProperty_ReverbPreset = 0x00000BC4;
     @Generated public static final int kMusicDeviceProperty_InstrumentName = 0x000003E9;
     @Generated public static final int kMusicDeviceProperty_InstrumentNumber = 0x000003EC;
     @Generated public static final int kExtAudioFileError_CodecUnavailableInputConsumed = 0xFFFEFC01;
     @Generated public static final int kExtAudioFileError_CodecUnavailableInputNotConsumed = 0xFFFEFC00;
-    @Deprecated @Generated public static final int kAudioUnitErr_IllegalInstrument = 0xFFFFD587;
-    @Deprecated @Generated public static final int kAudioUnitErr_InstrumentTypeNotFound = 0xFFFFD588;
+    @Generated public static final int kAudioUnitErr_IllegalInstrument = 0xFFFFD587;
+    @Generated public static final int kAudioUnitErr_InstrumentTypeNotFound = 0xFFFFD588;
     @Generated public static final int kAudioQueueErr_InvalidBuffer = 0xFFFEFB81;
     @Generated public static final int kAudioQueueErr_BufferEmpty = 0xFFFEFB82;
     @Generated public static final int kAudioQueueErr_DisposalPending = 0xFFFEFB83;
@@ -1903,7 +1982,7 @@ public final class Enums {
     @Generated public static final int kAudioUnitSubType_MultiChannelMixer = 0x6D636D78;
     @Generated public static final int kAudioUnitSubType_MatrixMixer = 0x6D786D78;
     @Generated public static final int kAudioUnitSubType_SpatialMixer = 0x3364656D;
-    @Deprecated @Generated public static final int kAudioFormatProperty_HardwareCodecCapabilities = 0x68776363;
+    @Generated public static final int kAudioFormatProperty_HardwareCodecCapabilities = 0x68776363;
     /**
      * AudioStreamBasicDescription
      */
@@ -2124,39 +2203,53 @@ public final class Enums {
     @Generated public static final int kAudioCodecDelayMode_Optimal = 0x00000002;
     /**
      * bus enable : 0.0 or 1.0
+     * 
+     * API-Since: 13.0
      */
     @Generated public static final int k3DMixerParam_BusEnable = 0x00000014;
     /**
      * Input/Output, dB, -120->20, 0
+     * 
+     * API-Since: 13.0
      */
     @Generated public static final int k3DMixerParam_MinGainInDecibels = 0x00000015;
     /**
      * Input/Output, dB, -120->20, 0
+     * 
+     * API-Since: 13.0
      */
     @Generated public static final int k3DMixerParam_MaxGainInDecibels = 0x00000016;
     /**
      * Input, Dry/Wet equal-power blend, % 0.0 -> 100.0
+     * 
+     * API-Since: 13.0
      */
     @Generated public static final int k3DMixerParam_DryWetReverbBlend = 0x00000017;
     /**
      * Global, dB, -40.0 -> +40.0
+     * 
+     * API-Since: 13.0
      */
     @Generated public static final int k3DMixerParam_GlobalReverbGainInDecibels = 0x00000018;
     /**
      * Input, Lowpass filter attenuation at 5KHz : decibels -100.0dB -> 0.0dB
      * smaller values make both direct and reverb sound more muffled; a value of 0.0 indicates no filtering
      * Occlusion is a filter applied to the sound prior to the reverb send
+     * 
+     * API-Since: 13.0
      */
     @Generated public static final int k3DMixerParam_OcclusionAttenuationInDecibels = 0x00000019;
     /**
      * Input, Lowpass filter attenuation at 5KHz : decibels -100.0dB -> 0.0dB
      * smaller values make direct sound more muffled; a value of 0.0 indicates no filtering
      * Obstruction is a filter applied to the "direct" part of the sound (so is post reverb send)
+     * 
+     * API-Since: 13.0
      */
     @Generated public static final int k3DMixerParam_ObstructionAttenuationInDecibels = 0x0000001A;
     /**
      * read-only
-     * <p>
+     * 
      * For each of the following, use the parameter ID plus the channel number
      * to get the specific parameter ID for a given channel.
      * For example, k3DMixerParam_PostAveragePower indicates the left channel
@@ -2165,7 +2258,7 @@ public final class Enums {
     @Generated public static final int k3DMixerParam_PreAveragePower = 0x000003E8;
     /**
      * read-only
-     * <p>
+     * 
      * For each of the following, use the parameter ID plus the channel number
      * to get the specific parameter ID for a given channel.
      * For example, k3DMixerParam_PostAveragePower indicates the left channel
@@ -2174,7 +2267,7 @@ public final class Enums {
     @Generated public static final int k3DMixerParam_PrePeakHoldLevel = 0x000007D0;
     /**
      * read-only
-     * <p>
+     * 
      * For each of the following, use the parameter ID plus the channel number
      * to get the specific parameter ID for a given channel.
      * For example, k3DMixerParam_PostAveragePower indicates the left channel
@@ -2183,7 +2276,7 @@ public final class Enums {
     @Generated public static final int k3DMixerParam_PostAveragePower = 0x00000BB8;
     /**
      * read-only
-     * <p>
+     * 
      * For each of the following, use the parameter ID plus the channel number
      * to get the specific parameter ID for a given channel.
      * For example, k3DMixerParam_PostAveragePower indicates the left channel
@@ -2282,6 +2375,9 @@ public final class Enums {
      */
     @Generated public static final int kDynamicsProcessorParam_OverallGain = 0x00000006;
     @Generated public static final int kMusicDeviceMIDIEventListSelect = 0x00000107;
+    /**
+     * API-Since: 15.0
+     */
     @Generated public static final int kAUVoiceIOProperty_MutedSpeechActivityEventListener = 0x0000083A;
     @Generated public static final int kAudioUnitSubType_TimePitch = 0x746D7074;
     @Generated public static final int kTimePitchParam_Pitch = 0x00000001;
@@ -2289,4 +2385,53 @@ public final class Enums {
      * only for the AUPitch unit
      */
     @Generated public static final int kTimePitchParam_EffectBlend = 0x00000002;
+    @Generated public static final int kAudioCodecProduceOutputPacketSuccessConcealed = 0x00000006;
+    /**
+     * Global, Percent, 0->100, 100
+     * 
+     * API-Since: 16.0
+     */
+    @Generated public static final int kAUSoundIsolationParam_WetDryMixPercent = 0x00000000;
+    /**
+     * Global, Indexed, 1->1, 1
+     * 
+     * API-Since: 16.0
+     */
+    @Generated public static final int kAUSoundIsolationParam_SoundToIsolate = 0x00000001;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated @NInt public static final long kAUSoundIsolationSoundType_Voice = 0x0000000000000001L;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated public static final int kAudioUnitType_SpeechSynthesizer = 0x61757370;
+    /**
+     * API-Since: 16.0
+     */
+    @Generated public static final int kAudioUnitSubType_AUSoundIsolation = 0x766F6973;
+    /**
+     * The generated output can be made to sound smoother by increasing
+     * the density of the processing time frames. The value is directly proportional
+     * to the CPU cost. When slowing down percussive audio, lower values may be better.
+     * Global, generic, 3.0 -> 32.0, 8.0
+     */
+    @Generated public static final int kNewTimePitchParam_Smoothness = 0x00000004;
+    /**
+     * Spectral phase coherence is enabled through peak locking.
+     * This adds some computation cost but results in a less "phasey"
+     * or reverberant sound.
+     * Global, Boolean, 0->1, 1
+     */
+    @Generated public static final int kNewTimePitchParam_EnableSpectralCoherence = 0x00000006;
+    /**
+     * Transient preservation uses group delay to identify transients.
+     * It resets the phase at points of transients to preserve the original
+     * spectral phase relationships. It also sets the stretch factor to 1 at
+     * those points.
+     * Global, Boolean, 0->1, 1
+     */
+    @Generated public static final int kNewTimePitchParam_EnableTransientPreservation = 0x00000007;
+    @Generated public static final int kAudioUnitProperty_MIDIOutputBufferSizeHint = 0x00000042;
+    @Generated public static final int kAUParameterListener_AnyParameter = 0xFFFFFFFF;
 }

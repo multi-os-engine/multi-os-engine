@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCBatchNormalizationLayer
- * <p>
+ * 
  * A batch normalizaion layer
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -61,7 +63,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The beta tensor
      */
     @Generated
@@ -70,7 +72,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] betaParameter
-     * <p>
+     * 
      * The beta tensor parameter used for optimizer update
      */
     @Generated
@@ -105,7 +107,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] featureChannelCount
-     * <p>
+     * 
      * The number of feature channels
      */
     @Generated
@@ -115,7 +117,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] gamma
-     * <p>
+     * 
      * The gamma tensor
      */
     @Generated
@@ -124,7 +126,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] gammaParameter
-     * <p>
+     * 
      * The gamma tensor parameter used for optimizer update
      */
     @Generated
@@ -163,7 +165,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
 
     /**
      * Create a batch normalization layer
-     *
+     * 
      * @param featureChannelCount The number of feature channels
      * @param mean                The mean tensor
      * @param variance            The variance tensor
@@ -180,7 +182,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
 
     /**
      * Create a batch normalization layer
-     *
+     * 
      * @param featureChannelCount The number of feature channels
      * @param mean                The mean tensor
      * @param variance            The variance tensor
@@ -198,7 +200,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] mean
-     * <p>
+     * 
      * The mean tensor
      */
     @Generated
@@ -207,9 +209,9 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] momentum
-     * <p>
+     * 
      * The value used for the running mean and variance computation
-     * <p>
+     * 
      * The default is 0.99f.
      */
     @Generated
@@ -243,7 +245,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] variance
-     * <p>
+     * 
      * The variance tensor
      */
     @Generated
@@ -252,7 +254,7 @@ public class MLCBatchNormalizationLayer extends MLCLayer {
 
     /**
      * [@property] varianceEpsilon
-     * <p>
+     * 
      * A value used for numerical stability
      */
     @Generated

@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -155,29 +158,42 @@ public class PHContentEditingInput extends NSObject {
 
     /**
      * Adjustments to be applied onto the provided input image or video.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("adjustmentData")
     public native PHAdjustmentData adjustmentData();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("audiovisualAsset")
     public native AVAsset audiovisualAsset();
 
     /**
      * Input video:
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
      */
     @Generated
     @Deprecated
     @Selector("avAsset")
     public native AVAsset avAsset();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
 
     /**
      * Input image:
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("displaySizeImage")
@@ -185,11 +201,16 @@ public class PHContentEditingInput extends NSObject {
 
     /**
      * EXIF value
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fullSizeImageOrientation")
     public native int fullSizeImageOrientation();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("fullSizeImageURL")
     public native NSURL fullSizeImageURL();
@@ -200,25 +221,39 @@ public class PHContentEditingInput extends NSObject {
 
     /**
      * Input Live Photo:
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("livePhoto")
     public native PHLivePhoto livePhoto();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("location")
     public native CLLocation location();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("mediaSubtypes")
     @NUInt
     public native long mediaSubtypes();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("mediaType")
     @NInt
     public native long mediaType();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("uniformTypeIdentifier")
     public native String uniformTypeIdentifier();
@@ -228,6 +263,8 @@ public class PHContentEditingInput extends NSObject {
      * view and the appropriate APIs on the content editing input to display this content.
      * When editing a live photo with a PHAssetPlaybackStyleLoopingVideo, you should provide an updated video that
      * includes the looping video metadata on the PHContentEditingOutput's renderedContentURL.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("playbackStyle")

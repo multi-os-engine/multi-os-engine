@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCLossLayer
- * <p>
+ * 
  * A loss layer
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -71,7 +73,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType  The reduction type to use
      * @param labelSmoothing Label smoothing value
      * @param classCount     Number of classes
@@ -85,7 +87,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType  The reduction type to use
      * @param labelSmoothing Label smoothing value
      * @param classCount     Number of classes
@@ -107,7 +109,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param weight        A scalar floating-point value
      * @return A new cosine distance loss layer.
@@ -118,7 +120,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param weights       The loss label weights tensor
      * @return A new cosine distance loss layer.
@@ -137,7 +139,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * [@property] descriptor
-     * <p>
+     * 
      * The loss descriptor
      */
     @Generated
@@ -151,7 +153,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param weight        A scalar floating-point value
      * @return A new hinge loss layer.
@@ -162,7 +164,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param weights       The loss label weights tensor
      * @return A new hinge loss layer.
@@ -173,7 +175,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param delta         The delta parameter
      * @param weight        A scalar floating-point value
@@ -186,7 +188,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param delta         The delta parameter
      * @param weights       The loss label weights tensor
@@ -224,7 +226,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param lossDescriptor The loss descriptor
      * @return A new loss layer.
      */
@@ -234,7 +236,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a MLComputeLoss layer
-     *
+     * 
      * @param lossDescriptor The loss descriptor
      * @param weights        The loss label weights tensor
      * @return A new loss layer.
@@ -245,7 +247,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param epsilon       The epsilon parameter
      * @param weight        A scalar floating-point value
@@ -258,7 +260,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param epsilon       The epsilon parameter
      * @param weights       The loss label weights tensor
@@ -271,7 +273,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param weight        A scalar floating-point value
      * @return A new L1 i.e. mean absolute error loss layer.
@@ -282,7 +284,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param weights       The loss label weights tensor
      * @return A new L1 i.e. mean absolute error loss layer.
@@ -294,7 +296,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param weight        A scalar floating-point value
      * @return A new L2 i.e. mean squared error loss layer.
@@ -305,7 +307,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType The reduction type to use
      * @param weights       The loss label weights tensor
      * @return A new L2 i.e. mean squared error loss layer.
@@ -334,7 +336,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType  The reduction type to use
      * @param labelSmoothing Label smoothing value
      * @param weight         A scalar floating-point value
@@ -347,7 +349,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType  The reduction type to use
      * @param labelSmoothing Label smoothing value
      * @param weights        The loss label weights tensor
@@ -360,7 +362,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType  The reduction type to use
      * @param labelSmoothing Label smoothing value
      * @param classCount     Number of classes
@@ -374,7 +376,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * Create a loss layer
-     *
+     * 
      * @param reductionType  The reduction type to use
      * @param labelSmoothing Label smoothing value
      * @param classCount     Number of classes
@@ -401,7 +403,7 @@ public class MLCLossLayer extends MLCLayer {
 
     /**
      * [@property] weights
-     * <p>
+     * 
      * The loss label weights tensor
      */
     @Generated

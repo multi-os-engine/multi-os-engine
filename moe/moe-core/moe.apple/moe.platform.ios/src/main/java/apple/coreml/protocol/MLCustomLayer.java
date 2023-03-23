@@ -21,6 +21,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Protocol for specifying a custom layer implementation.
+ * 
+ * API-Since: 11.2
  */
 @Generated
 @Library("CoreML")

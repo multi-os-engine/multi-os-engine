@@ -22,6 +22,7 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.moe.natj.general.ann.NFloat;
 
 /**
  * UIHoverGestureRecognizer
@@ -31,9 +32,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Note: While buttons are pressed any currently active hover gesture recognizers
  * are effectively paused (letting other gesture recognizers work) until all
  * mouse buttons have been released.
- * <p>
+ * 
  * On iOS, this gesture recognizer doesn't recognize anything and is effectively
  * a no-op.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")
@@ -157,4 +160,17 @@ public class UIHoverGestureRecognizer extends UIGestureRecognizer {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * The normalized distance from the screen of the hovering device. This value will be 1 at the maximum distance
+     * from the screen and will approach 0 as the device gets closer to the screen. Will always return 0 for devices
+     * that
+     * don't support z offset.
+     * 
+     * API-Since: 16.1
+     */
+    @Generated
+    @Selector("zOffset")
+    @NFloat
+    public native double zOffset();
 }

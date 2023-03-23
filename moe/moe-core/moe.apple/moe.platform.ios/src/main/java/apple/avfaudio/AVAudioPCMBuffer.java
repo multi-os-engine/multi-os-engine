@@ -32,11 +32,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAudioPCMBuffer
- * <p>
+ * 
  * A subclass of AVAudioBuffer for use with PCM audio formats.
- * <p>
+ * 
  * AVAudioPCMBuffer provides a number of methods useful for manipulating buffers of
  * audio in PCM format.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -98,18 +100,18 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
 
     /**
      * [@property] floatChannelData
-     * <p>
+     * 
      * Access the buffer's float audio samples.
-     * <p>
+     * 
      * floatChannelData returns pointers to the buffer's audio samples if the buffer's format is
      * 32-bit float, or nil if it is another format.
-     * <p>
+     * 
      * The returned pointer is to format.channelCount pointers to float. Each of these pointers
      * is to "frameLength" valid samples, which are spaced by "stride" samples.
-     * <p>
+     * 
      * If format.interleaved is false (as with the standard deinterleaved float format), then
      * the pointers will be to separate chunks of memory. "stride" is 1.
-     * <p>
+     * 
      * If format.interleaved is true, then the pointers will refer into the same chunk of interleaved
      * samples, each offset by 1 frame. "stride" is the number of interleaved channels.
      */
@@ -120,7 +122,7 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
 
     /**
      * [@property] frameCapacity
-     * <p>
+     * 
      * The buffer's capacity, in audio sample frames.
      */
     @Generated
@@ -129,9 +131,9 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
 
     /**
      * [@property] frameLength
-     * <p>
+     * 
      * The current number of valid sample frames in the buffer.
-     * <p>
+     * 
      * You may modify the length of the buffer as part of an operation that modifies its contents.
      * The length must be less than or equal to the frameCapacity. Modifying frameLength will update
      * the mDataByteSize in each of the underlying AudioBufferList's AudioBuffer's correspondingly,
@@ -153,12 +155,12 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
 
     /**
      * initWithPCMFormat:bufferListNoCopy:deallocator:
-     * <p>
+     * 
      * Initialize a buffer that is to contain PCM audio samples with a given AudioBufferList
      * without copying samples and a custom deallocator block.
-     * <p>
+     * 
      * An exception is raised if the format is not PCM.
-     * <p>
+     * 
      * Returns nil in the following cases:
      * - if the format has zero bytes per frame (format.streamDescription->mBytesPerFrame == 0)
      * - if supplied buffer has zero number of buffers
@@ -166,16 +168,21 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
      * - if there is a mismatch between the format's number of buffers and the AudioBufferList's size
      * (1 if interleaved, mChannelsPerFrame if deinterleaved)
      * - if the AudioBufferList's pointer to the buffer of audio data is null.
-     * <p>
+     * 
      * Use the deallocator block to define your own deallocation behavior for the provided AudioBufferList's
      * underlying memory.
-     * <p>
+     * 
      * The AudioBufferList passed to the deallocator is identical to the one which was passed to the initializer,
      * in terms of the buffer count, and each buffer's mData and mDataByteSize members.
-     *
-     * @param format      The format of the PCM audio to be contained in the buffer.
-     * @param bufferList  The buffer list with allocated memory to contain the PCM audio data.
-     * @param deallocator A block to invoke when the resulting AVAudioPCMBuffer object is deallocated.
+     * 
+     * API-Since: 15.0
+     * 
+     * @param format
+     *                    The format of the PCM audio to be contained in the buffer.
+     * @param bufferList
+     *                    The buffer list with allocated memory to contain the PCM audio data.
+     * @param deallocator
+     *                    A block to invoke when the resulting AVAudioPCMBuffer object is deallocated.
      */
     @Generated
     @Selector("initWithPCMFormat:bufferListNoCopy:deallocator:")
@@ -193,18 +200,20 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
 
     /**
      * initWithPCMFormat:frameCapacity:
-     * <p>
+     * 
      * Initialize a buffer that is to contain PCM audio samples.
-     * <p>
+     * 
      * An exception is raised if the format is not PCM.
-     * <p>
+     * 
      * Returns nil in the following cases:
      * - if the format has zero bytes per frame (format.streamDescription->mBytesPerFrame == 0)
      * - if the buffer byte capacity (frameCapacity * format.streamDescription->mBytesPerFrame)
      * cannot be represented by an uint32_t
-     *
-     * @param format        The format of the PCM audio to be contained in the buffer.
-     * @param frameCapacity The capacity of the buffer in PCM sample frames.
+     * 
+     * @param format
+     *                      The format of the PCM audio to be contained in the buffer.
+     * @param frameCapacity
+     *                      The capacity of the buffer in PCM sample frames.
      */
     @Generated
     @Selector("initWithPCMFormat:frameCapacity:")
@@ -225,12 +234,12 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
 
     /**
      * [@property] int16ChannelData
-     * <p>
+     * 
      * Access the buffer's int16_t audio samples.
-     * <p>
+     * 
      * int16ChannelData returns the buffer's audio samples if the buffer's format has 2-byte
      * integer samples, or nil if it is another format.
-     * <p>
+     * 
      * See the discussion of floatChannelData.
      */
     @Generated
@@ -240,12 +249,12 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
 
     /**
      * [@property] int32ChannelData
-     * <p>
+     * 
      * Access the buffer's int32_t audio samples.
-     * <p>
+     * 
      * int32ChannelData returns the buffer's audio samples if the buffer's format has 4-byte
      * integer samples, or nil if it is another format.
-     * <p>
+     * 
      * See the discussion of floatChannelData.
      */
     @Generated
@@ -276,9 +285,9 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
 
     /**
      * [@property] frameLength
-     * <p>
+     * 
      * The current number of valid sample frames in the buffer.
-     * <p>
+     * 
      * You may modify the length of the buffer as part of an operation that modifies its contents.
      * The length must be less than or equal to the frameCapacity. Modifying frameLength will update
      * the mDataByteSize in each of the underlying AudioBufferList's AudioBuffer's correspondingly,
@@ -295,9 +304,9 @@ public class AVAudioPCMBuffer extends AVAudioBuffer {
 
     /**
      * [@property] stride
-     * <p>
+     * 
      * The buffer's number of interleaved channels.
-     * <p>
+     * 
      * Useful in conjunction with floatChannelData etc.
      */
     @Generated

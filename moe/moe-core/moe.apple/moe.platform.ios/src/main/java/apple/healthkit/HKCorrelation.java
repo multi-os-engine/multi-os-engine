@@ -44,14 +44,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKCorrelation
- * <p>
+ * 
  * An HKCorrelation is a collection of correlated objects.
- * <p>
+ * 
  * When multiple readings are taken together, it may be beneficial to correlate them so that they can be
  * displayed together and share common metadata about how they were created.
- * <p>
+ * 
  * For example, systolic and diastolic blood pressure readings are typically presented together so these
  * readings should be saved with a correlation of type blood pressure.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HealthKit")
@@ -105,9 +107,9 @@ public class HKCorrelation extends HKSample {
 
     /**
      * correlationWithType:startDate:endDate:objects:
-     * <p>
+     * 
      * Creates a new HKCorrelation with the given type, start date, end date, and objects.
-     * <p>
+     * 
      * objects must be a set of HKQuantitySamples and HKCategorySamples
      */
     @Generated
@@ -117,11 +119,13 @@ public class HKCorrelation extends HKSample {
 
     /**
      * correlationWithType:startDate:endDate:objects:device:metadata:
-     * <p>
+     * 
      * Creates a new HKCorrelation with the given type, start date, end date, objects, and metadata.
-     * <p>
+     * 
      * objects must be a set of HKQuantitySamples and HKCategorySamples
-     *
+     * 
+     * API-Since: 9.0
+     * 
      * @param correlationType The correlation type of the objects set.
      * @param startDate       The start date of the correlation.
      * @param endDate         The end date of the correlation.
@@ -136,9 +140,9 @@ public class HKCorrelation extends HKSample {
 
     /**
      * correlationWithType:startDate:endDate:objects:metadata:
-     * <p>
+     * 
      * Creates a new HKCorrelation with the given type, start date, end date, objects, and metadata.
-     * <p>
+     * 
      * objects must be a set of HKQuantitySamples and HKCategorySamples
      */
     @Generated
@@ -225,7 +229,7 @@ public class HKCorrelation extends HKSample {
 
     /**
      * [@property] objects
-     * <p>
+     * 
      * A set of HKSamples containing all of the objects that were saved with the receiver.
      */
     @Generated
@@ -234,7 +238,7 @@ public class HKCorrelation extends HKSample {
 
     /**
      * objectsForType:
-     * <p>
+     * 
      * Returns the set of correlated objects with the specified type.
      */
     @Generated

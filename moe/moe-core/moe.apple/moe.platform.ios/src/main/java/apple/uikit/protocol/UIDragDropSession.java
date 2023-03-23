@@ -1,6 +1,5 @@
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.protocol.NSItemProviderReading;
 import apple.uikit.UIDragItem;
@@ -14,7 +13,11 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -22,10 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 public interface UIDragDropSession {
     /**
      * Whether this session allows moving, or not.
-     * <p>
+     * 
      * This is determined based on the UIDragInteraction's delegate's
      * `-dragInteraction:sessionAllowsMoveOperation:`.
-     * <p>
+     * 
      * If true, then the delegate of UIDropInteraction is allowed to return `UIDropOperationMove`
      * from `-dropInteraction:sessionDidUpdate:`.
      */
@@ -42,7 +45,7 @@ public interface UIDragDropSession {
 
     /**
      * Convenience methods to iterate through this session's `items`.
-     * <p>
+     * 
      * Returns true if any of the session's items conforms to any of the specified UTIs.
      */
     @Generated
@@ -51,7 +54,7 @@ public interface UIDragDropSession {
 
     /**
      * Whether this session is restricted to the application that began the drag.
-     * <p>
+     * 
      * This is determined based on the UIDragInteraction's delegate's
      * `-dragInteraction:sessionIsRestrictedToDraggingApplication:`.
      */
@@ -61,13 +64,13 @@ public interface UIDragDropSession {
 
     /**
      * The items in the session.
-     * <p>
+     * 
      * Before the drop happens, the items' NSItemProviders do not allow
      * the data in the NSItemProvider to be loaded.
      * However, `registeredTypeIdentifiers` and metadata are available at any time.
      * You may request the data only inside the UIDropInteractionDelegate's implementation
      * of `-dropInteraction:performDrop:`.
-     * <p>
+     * 
      * When handling the drop, if you display dropped items in a linear order,
      * place them in this order, first to last.
      */

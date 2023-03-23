@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.3
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -93,7 +96,7 @@ public class MPSCNNConvolutionGradientNode extends MPSNNGradientFilterNode imple
 
     /**
      * A node to represent the gradient calculation for convolution training.
-     *
+     * 
      * @param sourceGradient The input gradient from the 'downstream' gradient filter. Often
      *                       that is a neuron gradient filter node.
      * @param sourceImage    The input image from the forward convolution node
@@ -138,7 +141,7 @@ public class MPSCNNConvolutionGradientNode extends MPSNNGradientFilterNode imple
 
     /**
      * A node to represent the gradient calculation for convolution training.
-     *
+     * 
      * @param sourceGradient The input gradient from the 'downstream' gradient filter. Often
      *                       that is a neuron gradient filter node.
      * @param sourceImage    The input image from the forward convolution node

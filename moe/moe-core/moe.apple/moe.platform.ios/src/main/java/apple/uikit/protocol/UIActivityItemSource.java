@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGSize;
 import apple.linkpresentation.LPLinkMetadata;
 import apple.uikit.UIActivityViewController;
 import apple.uikit.UIImage;
@@ -30,6 +29,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
 @Generated
 @Library("UIKit")
@@ -89,6 +89,8 @@ public interface UIActivityItemSource {
 
     /**
      * called to fetch LinkPresentation metadata for the activity item. iOS 13.0
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @IsOptional

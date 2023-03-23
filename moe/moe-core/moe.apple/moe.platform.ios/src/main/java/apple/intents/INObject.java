@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -168,6 +171,9 @@ public class INObject extends NSObject implements INSpeakable, NSCopying, NSSecu
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setAlternativeSpeakableMatches:")
     public native void setAlternativeSpeakableMatches(NSArray<? extends INSpeakableString> value);
@@ -203,28 +209,46 @@ public class INObject extends NSObject implements INSpeakable, NSCopying, NSSecu
     @Selector("vocabularyIdentifier")
     public native String vocabularyIdentifier();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("displayImage")
     public native INImage displayImage();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithIdentifier:displayString:pronunciationHint:subtitleString:displayImage:")
     public native INObject initWithIdentifierDisplayStringPronunciationHintSubtitleStringDisplayImage(String identifier,
             String displayString, String pronunciationHint, String subtitleString, INImage displayImage);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("initWithIdentifier:displayString:subtitleString:displayImage:")
     public native INObject initWithIdentifierDisplayStringSubtitleStringDisplayImage(String identifier,
             String displayString, String subtitleString, INImage displayImage);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setDisplayImage:")
     public native void setDisplayImage(INImage value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("setSubtitleString:")
     public native void setSubtitleString(String value);
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("subtitleString")
     public native String subtitleString();

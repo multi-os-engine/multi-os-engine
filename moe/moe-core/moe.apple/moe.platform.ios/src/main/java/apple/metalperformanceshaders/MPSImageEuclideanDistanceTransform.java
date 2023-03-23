@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageEuclideanDistanceTransform
- * <p>
+ * 
  * Perform a Euclidean Distance Transform
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -102,13 +104,13 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
@@ -120,7 +122,7 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
 
     /**
      * Specifies information to apply the statistics min-max operation on an image.
-     *
+     * 
      * @param device The device the filter will run on
      * @return A valid MPSImageEuclideanDistanceTransform object or nil, if failure.
      */
@@ -187,9 +189,9 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
 
     /**
      * [@property] searchLimitRadius
-     * <p>
+     * 
      * Defines a search scope size around output pixel to limit closest non-zero pixel search. Optional variable.
-     * <p>
+     * 
      * When the non-zeroes in the input image are on average very far away from each other (ie. the distances are
      * large),
      * the distance calculation algorithm has to work harder to find the closest pixel. If you don't care about getting
@@ -201,6 +203,8 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
      * which results in the exact EDT, so use this only if you need additional performance.
      * Typical good values are: 32, 64, 96, 128.
      * Default: FLT_MAX
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("searchLimitRadius")
@@ -208,9 +212,9 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
 
     /**
      * [@property] searchLimitRadius
-     * <p>
+     * 
      * Defines a search scope size around output pixel to limit closest non-zero pixel search. Optional variable.
-     * <p>
+     * 
      * When the non-zeroes in the input image are on average very far away from each other (ie. the distances are
      * large),
      * the distance calculation algorithm has to work harder to find the closest pixel. If you don't care about getting
@@ -222,6 +226,8 @@ public class MPSImageEuclideanDistanceTransform extends MPSUnaryImageKernel {
      * which results in the exact EDT, so use this only if you need additional performance.
      * Typical good values are: 32, 64, 96, 128.
      * Default: FLT_MAX
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setSearchLimitRadius:")

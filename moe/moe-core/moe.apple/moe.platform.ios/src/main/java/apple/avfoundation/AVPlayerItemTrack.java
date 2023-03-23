@@ -40,18 +40,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVPlayerItemTrack
- * <p>
+ * 
  * An AVPlayerItemTrack carries a reference to an AVAssetTrack as well as presentation settings for that track.
- * <p>
+ * 
  * Note that inspection of assets tracks is provided by AVAssetTrack.
  * This class is intended to represent presentation state for a track of an asset that's played by an AVPlayer and
  * AVPlayerItem.
- * <p>
- * To ensure safe access to AVPlayerItemTrack's nonatomic properties while dynamic changes in playback state may be
- * reported,
- * clients must serialize their access with the associated AVPlayer's notification queue. In the common case, such
- * serialization
- * is naturally achieved by invoking AVPlayerItemTrack's various methods on the main thread or queue.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("AVFoundation")
@@ -165,9 +161,9 @@ public class AVPlayerItemTrack extends NSObject {
 
     /**
      * [@property] assetTrack
-     * <p>
+     * 
      * Indicates the AVAssetTrack for which the AVPlayerItemTrack represents presentation state.
-     * <p>
+     * 
      * This property is not observable.
      * Clients must serialize their access to the resulting AVAssetTrack and related objects on the associated
      * AVPlayer's
@@ -179,14 +175,16 @@ public class AVPlayerItemTrack extends NSObject {
 
     /**
      * [@property] currentVideoFrameRate
-     * <p>
+     * 
      * If the media type of the assetTrack is AVMediaTypeVideo, indicates the current frame rate of the track as it
      * plays, in units of frames per second. If the item is not playing, or if the media type of the track is not video,
      * the value of this property is 0.
-     * <p>
+     * 
      * This property is not observable.
-     * <p>
-     * This property must be accessed on the main thread/queue.
+     * 
+     * Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this property must be accessed on the main thread/queue.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("currentVideoFrameRate")
@@ -198,10 +196,10 @@ public class AVPlayerItemTrack extends NSObject {
 
     /**
      * [@property] enabled
-     * <p>
+     * 
      * Indicates whether the track is enabled for presentation during playback.
-     * <p>
-     * This property must be accessed on the main thread/queue.
+     * 
+     * Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this property must be accessed on the main thread/queue.
      */
     @Generated
     @Selector("isEnabled")
@@ -209,10 +207,10 @@ public class AVPlayerItemTrack extends NSObject {
 
     /**
      * [@property] enabled
-     * <p>
+     * 
      * Indicates whether the track is enabled for presentation during playback.
-     * <p>
-     * This property must be accessed on the main thread/queue.
+     * 
+     * Before macOS 13, iOS 16, tvOS 16, and watchOS 9, this property must be accessed on the main thread/queue.
      */
     @Generated
     @Selector("setEnabled:")

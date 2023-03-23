@@ -31,9 +31,11 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] AVVideoCompositionInstruction
- * <p>
+ * 
  * The AVVideoCompositionInstruction protocol is implemented by objects to represent operations to be performed by a
  * compositor.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("AVFoundation")
@@ -43,7 +45,7 @@ public interface AVVideoCompositionInstruction {
     /**
      * If YES, rendering a frame from the same source buffers and the same composition instruction at 2 different
      * compositionTime may yield different output frames. If NO, 2 such compositions would yield the
-     * same frame. The media pipeline may me able to avoid some duplicate processing when containsTweening is NO
+     * same frame. The media pipeline may be able to avoid some duplicate processing when containsTweening is NO
      */
     @Generated
     @Selector("containsTweening")
@@ -84,6 +86,8 @@ public interface AVVideoCompositionInstruction {
     /**
      * List of sample data track IDs required to compose frames for this instruction. An empty array indicates that no
      * sample data is required for this instruction.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @IsOptional

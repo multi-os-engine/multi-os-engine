@@ -62,29 +62,31 @@ public final class GSS {
     /**
      * [@page] internalVSmechname Internal names and mechanism names
      * [@section] gssapi_api_INvsMN Name forms
-     * <p>
+     * 
      * There are two forms of name in GSS-API, Internal form and
      * Contiguous string ("flat") form. gss_export_name() and
      * gss_import_name() can be used to convert between the two forms.
-     * <p>
+     * 
      * - The contiguous string form is described by an oid specificing the
      * type and an octet string. A special form of the contiguous
      * string form is the exported name object. The exported name
      * defined for each mechanism, is something that can be stored and
      * complared later. The exported name is what should be used for
      * ACLs comparisons.
-     * <p>
+     * 
      * - The Internal form
-     * <p>
+     * 
      * There is also special form of the Internal Name (IN), and that is
      * the Mechanism Name (MN). In the mechanism name all the generic
      * information is stripped of and only contain the information for
      * one mechanism. In GSS-API some function return MN and some
      * require MN as input. Each of these function is marked up as such.
-     * <p>
-     * <p>
+     * 
+     * 
      * Describe relationship between import_name, canonicalize_name,
      * export_name and friends.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CFunction
@@ -96,6 +98,9 @@ public final class GSS {
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_token,
             IntPtr ret_flags, IntPtr time_rec, Ptr<gss_cred_id_t> delegated_cred_handle);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_acquire_cred(IntPtr minor_status, gss_name_t desired_name, int time_req,
@@ -103,6 +108,9 @@ public final class GSS {
             int cred_usage, Ptr<gss_cred_id_t> output_cred_handle, Ptr<Ptr<gss_OID_set_desc_struct>> actual_mechs,
             IntPtr time_rec);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_acquire_cred_with_password(IntPtr minor_status, gss_name_t desired_name,
@@ -112,12 +120,18 @@ public final class GSS {
             int cred_usage, Ptr<gss_cred_id_t> output_cred_handle, Ptr<Ptr<gss_OID_set_desc_struct>> actual_mechs,
             IntPtr time_rec);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_add_buffer_set_member(IntPtr minor_status,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct member_buffer,
             Ptr<Ptr<gss_buffer_set_desc_struct>> buffer_set);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_add_cred(IntPtr minor_status, gss_cred_id_t input_cred_handle, gss_name_t desired_name,
@@ -129,15 +143,17 @@ public final class GSS {
      * Add a oid to the oid set, function does not make a copy of the oid,
      * so the pointer to member_oid needs to be stable for the whole time
      * oid_set is used.
-     * <p>
+     * 
      * If there is a duplicate member of the oid, the new member is not
      * added to to the set.
-     * <p>
+     * 
      * [@returns] a gss_error code, see gss_display_status() about printing
      * the error code.
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 5.0
+     * 
      * @param minor_status minor status code.
      * @param member_oid   member to add to the oid set
      * @param oid_set      oid set to add the member too
@@ -151,20 +167,22 @@ public final class GSS {
     /**
      * gss_canonicalize_name takes a Internal Name (IN) and converts in into a
      * mechanism specific Mechanism Name (MN).
-     * <p>
+     * 
      * The input name may multiple name, or generic name types.
-     * <p>
+     * 
      * If the input_name if of the GSS_C_NT_USER_NAME, and the Kerberos
      * mechanism is specified, the resulting MN type is a
      * GSS_KRB5_NT_PRINCIPAL_NAME.
-     * <p>
+     * 
      * For more information about @ref internalVSmechname.
-     * <p>
+     * 
      * [@returns] a gss_error code, see gss_display_status() about printing
      * the error code.
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 5.0
+     * 
      * @param minor_status minor status code.
      * @param input_name   name to covert, unchanged by gss_canonicalize_name().
      * @param mech_type    the type to convert Name too.
@@ -177,24 +195,39 @@ public final class GSS {
             @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech_type,
             Ptr<gss_name_t> output_name);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_compare_name(IntPtr minor_status, gss_name_t name1_arg, gss_name_t name2_arg,
             IntPtr name_equal);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_context_time(IntPtr minor_status, gss_ctx_id_t context_handle, IntPtr time_rec);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_create_empty_buffer_set(IntPtr minor_status,
             Ptr<Ptr<gss_buffer_set_desc_struct>> buffer_set);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_create_empty_oid_set(IntPtr minor_status, Ptr<Ptr<gss_OID_set_desc_struct>> oid_set);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_decapsulate_token(
@@ -202,6 +235,9 @@ public final class GSS {
             @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct oid,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_token);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_delete_sec_context(IntPtr minor_status, Ptr<gss_ctx_id_t> context_handle,
@@ -209,15 +245,17 @@ public final class GSS {
 
     /**
      * Destroy a credential
-     * <p>
+     * 
      * gss_release_cred() frees the memory, gss_destroy_cred() removes the credentials from memory/disk and then call
      * gss_release_cred() on the credential.
-     * <p>
+     * 
      * [@returns] a gss_error code, see gss_display_status() about printing
      * the error code.
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 5.0
+     * 
      * @param min_stat    minor status code
      * @param cred_handle credentail to destory
      */
@@ -227,13 +265,16 @@ public final class GSS {
 
     /**
      * Return names and descriptions of mech attributes
-     *
+     * 
      * @param minor_status minor status code
      * @param mech_attr    attributes wanted
      * @param name         name of attribute
      * @param short_desc   short description
      * @param long_desc    long description
+     * 
      * @return returns GSS_S_COMPLETE or an error code.
+     * 
+     *         API-Since: 5.0
      */
     @Generated
     @CFunction
@@ -245,15 +286,17 @@ public final class GSS {
 
     /**
      * Create a representstion of a name suitable for display
-     * <p>
+     * 
      * A name that is useful to print to user, not suitable for
      * authorization. For authorization use gss_authorize_localname(), or
      * gss_userok().
-     * <p>
+     * 
      * [@returns] GSS major status code
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 5.0
+     * 
      * @param minor_status       minor status code returned
      * @param input_name         name to be converted into a name
      * @param output_name_buffer output buffer with name, must be released with gss_release_buffer() on success.
@@ -265,6 +308,9 @@ public final class GSS {
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_name_buffer,
             Ptr<Ptr<gss_OID_desc_struct>> output_name_type);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_display_status(IntPtr minor_status, int status_value, int status_type,
@@ -272,10 +318,18 @@ public final class GSS {
             IntPtr message_content,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct status_string);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_duplicate_name(IntPtr minor_status, gss_name_t src_name, Ptr<gss_name_t> dest_name);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Not standardised
+     */
     @Generated
     @Deprecated
     @CFunction
@@ -283,6 +337,9 @@ public final class GSS {
             @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct src_oid,
             Ptr<Ptr<gss_OID_desc_struct>> dest_oid);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_encapsulate_token(
@@ -290,27 +347,42 @@ public final class GSS {
             @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct oid,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_token);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_export_cred(IntPtr minor_status, gss_cred_id_t cred_handle,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct token);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_export_name(IntPtr minor_status, gss_name_t input_name,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct exported_name);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_export_sec_context(IntPtr minor_status, Ptr<gss_ctx_id_t> context_handle,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct interprocess_token);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_get_mic(IntPtr minor_status, gss_ctx_id_t context_handle, int qop_req,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct message_buffer,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct message_token);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_import_cred(IntPtr minor_status,
@@ -319,7 +391,7 @@ public final class GSS {
 
     /**
      * Import a name internal or mechanism name
-     * <p>
+     * 
      * Type of name and their format:
      * - GSS_C_NO_OID
      * - GSS_C_NT_USER_NAME
@@ -327,14 +399,16 @@ public final class GSS {
      * - GSS_C_NT_EXPORT_NAME
      * - GSS_C_NT_ANONYMOUS
      * - GSS_KRB5_NT_PRINCIPAL_NAME
-     * <p>
+     * 
      * For more information about @ref internalVSmechname.
-     * <p>
+     * 
      * [@returns] a gss_error code, see gss_display_status() about printing
      * the error code.
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 5.0
+     * 
      * @param minor_status      minor status code
      * @param input_name_buffer import name buffer
      * @param input_name_type   type of the import name buffer
@@ -350,6 +424,8 @@ public final class GSS {
 
     /**
      * If we can't find a mechanism name for the name, we fail though.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CFunction
@@ -357,14 +433,19 @@ public final class GSS {
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct interprocess_token,
             Ptr<gss_ctx_id_t> context_handle);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_indicate_mechs(IntPtr minor_status, Ptr<Ptr<gss_OID_set_desc_struct>> mech_set);
 
     /**
      * Return set of mechanism that fullfill the criteria
-     *
+     * 
      * @return returns GSS_S_COMPLETE or an error code.
+     * 
+     *         API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -376,50 +457,64 @@ public final class GSS {
 
     /**
      * As the initiator build a context with an acceptor.
-     * <p>
+     * 
      * This function is blocking and should not be used on threads blocking UI updates.
-     * <p>
+     * 
      * Returns in the major
      * - GSS_S_COMPLETE - if the context if build
      * - GSS_S_CONTINUE_NEEDED - if the caller needs to continue another
      * round of gss_i nit_sec_context
      * - error code - any other error code
-     * <p>
+     * 
      * [@returns] a gss_error code, see gss_display_status() about printing
      * the error code.
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 5.0
+     * 
      * @param minor_status          minor status code.
+     * 
      * @param initiator_cred_handle the credential to use when building
      *                              the context, if GSS_C_NO_CREDENTIAL is passed, the default
      *                              credential for the mechanism will be used.
+     * 
      * @param context_handle        a pointer to a context handle, will be
      *                              returned as long as there is not an error.
+     * 
      * @param target_name           the target name of acceptor, created using
      *                              gss_import_name(). The name is can be of any name types the
      *                              mechanism supports, check supported name types with
      *                              gss_inquire_names_for_mech().
+     * 
      * @param input_mech_type       mechanism type to use, if GSS_C_NO_OID is
      *                              used, Kerberos (GSS_KRB5_MECHANISM) will be tried. Other
      *                              available mechanism are listed in the @ref gssapi_mechs_intro
      *                              section.
+     * 
      * @param req_flags             flags using when building the context, see @ref
      *                              gssapi_context_flags
+     * 
      * @param time_req              time requested this context should be valid in
      *                              seconds, common used value is GSS_C_INDEFINITE
+     * 
      * @param input_chan_bindings   Channel bindings used, if not exepected
      *                              otherwise, used GSS_C_NO_CHANNEL_BINDINGS
+     * 
      * @param input_token           input token sent from the acceptor, for the
      *                              initial packet the buffer of { NULL, 0 } should be used.
+     * 
      * @param actual_mech_type      the actual mech used, MUST NOT be freed
      *                              since it pointing to static memory.
+     * 
      * @param output_token          if there is an output token, regardless of
      *                              complete, continue_needed, or error it should be sent to the
      *                              acceptor
+     * 
      * @param ret_flags             return what flags was negotitated, caller should
      *                              check if they are accetable. For example, if
      *                              GSS_C_MUTUAL_FLAG was negotiated with the acceptor or not.
+     * 
      * @param time_rec              amount of time this context is valid for
      */
     @Generated
@@ -436,9 +531,11 @@ public final class GSS {
 
     /**
      * List support attributes for a mech and/or all mechanisms.
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 5.0
+     * 
      * @param minor_status     minor status code
      * @param mech             given together with mech_attr will return the list of
      *                         attributes for mechanism, can optionally be GSS_C_NO_OID.
@@ -453,23 +550,35 @@ public final class GSS {
             @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech,
             Ptr<Ptr<gss_OID_set_desc_struct>> mech_attr, Ptr<Ptr<gss_OID_set_desc_struct>> known_mech_attrs);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_inquire_context(IntPtr minor_status, gss_ctx_id_t context_handle,
             Ptr<gss_name_t> src_name, Ptr<gss_name_t> targ_name, IntPtr lifetime_rec,
             Ptr<Ptr<gss_OID_desc_struct>> mech_type, IntPtr ctx_flags, IntPtr locally_initiated, IntPtr xopen);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_inquire_cred(IntPtr minor_status, gss_cred_id_t cred_handle, Ptr<gss_name_t> name_ret,
             IntPtr lifetime, IntPtr cred_usage, Ptr<Ptr<gss_OID_set_desc_struct>> mechanisms);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_inquire_cred_by_mech(IntPtr minor_status, gss_cred_id_t cred_handle,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech_type,
             Ptr<gss_name_t> cred_name, IntPtr initiator_lifetime, IntPtr acceptor_lifetime, IntPtr cred_usage);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_inquire_cred_by_oid(IntPtr minor_status, gss_cred_id_t cred_handle,
@@ -478,11 +587,14 @@ public final class GSS {
 
     /**
      * Find a mech for a sasl name
-     *
+     * 
      * @param minor_status   minor status code
      * @param sasl_mech_name sasl mech name
      * @param mech_type      mech type
+     * 
      * @return returns GSS_S_COMPLETE or an error code.
+     * 
+     *         API-Since: 8.0
      */
     @Generated
     @CFunction
@@ -490,16 +602,25 @@ public final class GSS {
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct sasl_mech_name,
             Ptr<Ptr<gss_OID_desc_struct>> mech_type);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_inquire_mechs_for_name(IntPtr minor_status, gss_name_t input_name,
             Ptr<Ptr<gss_OID_set_desc_struct>> mech_types);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_inquire_name(IntPtr minor_status, gss_name_t input_name, IntPtr name_is_MN,
             Ptr<Ptr<gss_OID_desc_struct>> MN_mech, Ptr<Ptr<gss_buffer_set_desc_struct>> attrs);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_inquire_names_for_mech(IntPtr minor_status,
@@ -508,14 +629,17 @@ public final class GSS {
 
     /**
      * Returns different protocol names and description of the mechanism.
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 8.0
+     * 
      * @param minor_status     minor status code
      * @param desired_mech     mech list query
      * @param sasl_mech_name   SASL GS2 protocol name
      * @param mech_name        gssapi protocol name
      * @param mech_description description of gssapi mech
+     * 
      * @return returns GSS_S_COMPLETE or a error code.
      */
     @Generated
@@ -526,12 +650,18 @@ public final class GSS {
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct mech_name,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct mech_description);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_inquire_sec_context_by_oid(IntPtr minor_status, gss_ctx_id_t context_handle,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct desired_object,
             Ptr<Ptr<gss_buffer_set_desc_struct>> data_set);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_iter_creds(IntPtr min_stat, int flags,
@@ -540,9 +670,11 @@ public final class GSS {
 
     /**
      * Iterate over all credentials
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 5.0
+     * 
      * @param min_stat set to minor status in case of an error
      * @param flags    flags argument, no flags currently defined, pass in 0 (zero)
      * @param mech     the mechanism type of credentials to iterate over, by passing in GSS_C_NO_OID, the function will
@@ -557,26 +689,43 @@ public final class GSS {
             @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct mech,
             VoidPtr userctx, @FunctionPtr(name = "call_gss_iter_creds_f") Function_gss_iter_creds_f useriter);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_krb5_ccache_name(IntPtr minor_status,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
             @UncertainArgument("Options: java.string.array, c.const-byte-ptr-ptr Fallback: java.string.array") @Mapped(CStringArrayMapper.class) String[] out_name);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use gss_export_cred
+     */
     @Generated
     @Deprecated
     @CFunction
     public static native int gss_krb5_copy_ccache(IntPtr minor_status, gss_cred_id_t cred, VoidPtr out);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_krb5_export_lucid_sec_context(IntPtr minor_status, Ptr<gss_ctx_id_t> context_handle,
             int version, Ptr<VoidPtr> rctx);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_krb5_free_lucid_sec_context(IntPtr minor_status, VoidPtr c);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_krb5_set_allowable_enctypes(IntPtr minor_status, gss_cred_id_t cred, int num_enctypes,
@@ -584,13 +733,16 @@ public final class GSS {
 
     /**
      * Compare two GSS-API OIDs with each other.
-     * <p>
+     * 
      * GSS_C_NO_OID matches nothing, not even it-self.
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 5.0
+     * 
      * @param a first oid to compare
      * @param b second oid to compare
+     * 
      * @return non-zero when both oid are the same OID, zero when they are
      *         not the same.
      */
@@ -602,17 +754,19 @@ public final class GSS {
 
     /**
      * Turn an mech OID into an name
-     * <p>
+     * 
      * Try to turn a OID into a mechanism name. If a matching OID can't be
      * found, this function will return NULL.
-     * <p>
+     * 
      * The caller must free the oid_str buffer with gss_release_buffer()
      * when done with the string.
-     * <p>
+     * 
      * [@returns] a gss major status code
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 5.0
+     * 
      * @param minor_status an minor status code
      * @param oid          an oid
      * @param oid_str      buffer that will point to a NUL terminated string that is the numreric OID
@@ -623,11 +777,17 @@ public final class GSS {
             @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct oid,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct oid_str);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_process_context_token(IntPtr minor_status, gss_ctx_id_t context_handle,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct token_buffer);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_pseudo_random(IntPtr minor_status, gss_ctx_id_t context, int prf_key,
@@ -635,11 +795,17 @@ public final class GSS {
             @NInt long desired_output_len,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct prf_out);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_release_buffer(IntPtr minor_status,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct buffer);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_release_buffer_set(IntPtr minor_status,
@@ -647,22 +813,25 @@ public final class GSS {
 
     /**
      * Release a credentials
-     * <p>
+     * 
      * Its ok to release the GSS_C_NO_CREDENTIAL/NULL credential, it will
      * return a GSS_S_COMPLETE error code. On return cred_handle is set ot
      * GSS_C_NO_CREDENTIAL.
-     * <p>
+     * 
      * Example:
-     * <p>
+     * 
      * [@code]
      * gss_cred_id_t cred = GSS_C_NO_CREDENTIAL;
      * major = gss_release_cred(&minor, &cred);
      * [@endcode]
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 5.0
+     * 
      * @param minor_status minor status return code, mech specific
      * @param cred_handle  a pointer to the credential too release
+     * 
      * @return an gssapi error code
      */
     @Generated
@@ -671,16 +840,18 @@ public final class GSS {
 
     /**
      * Free a name
-     * <p>
+     * 
      * import_name can point to NULL or be NULL, or a pointer to a
      * gss_name_t structure. If it was a pointer to gss_name_t, the
      * pointer will be set to NULL on success and failure.
-     * <p>
+     * 
      * [@returns] a gss_error code, see gss_display_status() about printing
      * the error code.
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 5.0
+     * 
      * @param minor_status minor status code
      * @param input_name   name to free
      */
@@ -690,22 +861,26 @@ public final class GSS {
 
     /**
      * Release a gss_OID
-     * <p>
+     * 
      * This function should never be used, this is since many of the
      * gss_OID objects passed around are stack and data objected that are
      * not free-able.
-     * <p>
+     * 
      * The function tries to find internal OIDs that are static and avoid
      * trying to free them.
-     * <p>
+     * 
      * One could guess that gss_name_to_oid() might return an allocated
      * OID. In this implementation it wont, so there is no need to call
      * gss_release_oid().
-     * <p>
+     * 
      * [@returns] GSS major status code
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Not standardised and not safe to call for most gss_OIDs
+     * 
      * @param minor_status minor status code returned
      * @param oid          oid to be released/freed.
      */
@@ -714,10 +889,18 @@ public final class GSS {
     @CFunction
     public static native int gss_release_oid(IntPtr minor_status, Ptr<Ptr<gss_OID_desc_struct>> oid);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_release_oid_set(IntPtr minor_status, Ptr<Ptr<gss_OID_set_desc_struct>> set);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use gss_wrap
+     */
     @Generated
     @Deprecated
     @CFunction
@@ -726,18 +909,29 @@ public final class GSS {
             IntPtr conf_state,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_message_buffer);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_set_cred_option(IntPtr minor_status, Ptr<gss_cred_id_t> cred_handle,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct object,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct value);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_set_sec_context_option(IntPtr minor_status, Ptr<gss_ctx_id_t> context_handle,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_desc_struct object,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct value);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use gss_get_mic
+     */
     @Generated
     @Deprecated
     @CFunction
@@ -745,6 +939,9 @@ public final class GSS {
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct message_buffer,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct message_token);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_test_oid_set_member(IntPtr minor_status,
@@ -752,6 +949,11 @@ public final class GSS {
             @UncertainArgument("Options: reference, array Fallback: reference") gss_OID_set_desc_struct set,
             IntPtr present);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use gss_unwrap
+     */
     @Generated
     @Deprecated
     @CFunction
@@ -760,6 +962,9 @@ public final class GSS {
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_message_buffer,
             IntPtr conf_state, IntPtr qop_state);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_unwrap(IntPtr minor_status, gss_ctx_id_t context_handle,
@@ -767,11 +972,19 @@ public final class GSS {
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_message_buffer,
             IntPtr conf_state, IntPtr qop_state);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @CFunction
     public static native int gss_userok(gss_name_t name,
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String user);
 
+    /**
+     * API-Since: 5.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Use gss_verify_mic
+     */
     @Generated
     @Deprecated
     @CFunction
@@ -780,6 +993,9 @@ public final class GSS {
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct token_buffer,
             IntPtr qop_state);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_verify_mic(IntPtr minor_status, gss_ctx_id_t context_handle,
@@ -790,9 +1006,11 @@ public final class GSS {
     /**
      * Wrap a message using either confidentiality (encryption +
      * signature) or sealing (signature).
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 5.0
+     * 
      * @param minor_status          minor status code.
      * @param context_handle        context handle.
      * @param conf_req_flag         if non zero, confidentiality is requestd.
@@ -808,22 +1026,34 @@ public final class GSS {
             IntPtr conf_state,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct output_message_buffer);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gss_wrap_size_limit(IntPtr minor_status, gss_ctx_id_t context_handle, int conf_req_flag,
             int qop_req, int req_output_size, IntPtr max_input_size);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gsskrb5_extract_authz_data_from_sec_context(IntPtr minor_status,
             gss_ctx_id_t context_handle, int ad_type,
             @UncertainArgument("Options: reference, array Fallback: reference") gss_buffer_desc_struct ad_data);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int gsskrb5_register_acceptor_identity(
             @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String identity);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @CFunction
     public static native int krb5_gss_register_acceptor_identity(
@@ -831,18 +1061,23 @@ public final class GSS {
 
     /**
      * Returns a GSS credential for a given UUID if the credential exists.
-     * <p>
+     * 
      * [@returns] a gss_cred_id_t, normal CoreFoundaton rules for rules
      * applies so the CFUUIDRef needs to be released with either CFRelease() or gss_release_name().
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 7.0
+     * 
      * @param uuid the UUID of the credential to fetch
      */
     @Generated
     @CFunction
     public static native gss_cred_id_t GSSCreateCredentialFromUUID(CFUUIDRef uuid);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @CFunction
     public static native CFErrorRef GSSCreateError(
@@ -851,12 +1086,14 @@ public final class GSS {
 
     /**
      * Create a GSS name from a buffer and type.
-     * <p>
+     * 
      * [@returns] returns gss_name_t or NULL on failure. Must be freed using gss_release_name() or CFRelease(). Follows
      * CoreFoundation Create/Copy rule.
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 7.0
+     * 
      * @param name      name buffer describing a credential, can be either a CFDataRef or CFStringRef of a name.
      * @param name_type on OID of the GSS_C_NT_* OIDs constants specifiy the name type.
      * @param error     if an error happen, this may be set to a CFErrorRef describing the failure futher.
@@ -869,12 +1106,14 @@ public final class GSS {
 
     /**
      * Copy the name describing the credential
-     * <p>
+     * 
      * [@returns] returns gss_name_t or NULL on failure. Must be freed using gss_release_name() or CFRelease(). Follows
      * CoreFoundation Create/Copy rule.
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 7.0
+     * 
      * @param cred the credential to get the name from
      */
     @Generated
@@ -883,13 +1122,15 @@ public final class GSS {
 
     /**
      * Returns a copy of the UUID of the GSS credential
-     * <p>
+     * 
      * [@returns] CFUUIDRef that can be used to turn into a credential,
      * normal CoreFoundaton rules for rules applies so the CFUUIDRef needs
      * to be released.
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 7.0
+     * 
      * @param credential credential
      */
     @Generated
@@ -898,12 +1139,14 @@ public final class GSS {
 
     /**
      * Return the lifetime (in seconds) left of the credential.
-     * <p>
+     * 
      * [@returns] the lifetime of the credentials. 0 on failure and
      * GSS_C_INDEFINITE on credentials that never expire.
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 7.0
+     * 
      * @param cred the credential to get the name from
      */
     @Generated
@@ -913,11 +1156,13 @@ public final class GSS {
     /**
      * Returns a string that is suitable for displaying to user, must not
      * be used for verify subjects on an ACLs.
-     * <p>
+     * 
      * [@returns] a string that is printable. Follows CoreFoundation Create/Copy rule.
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 7.0
+     * 
      * @param name to get a display strings from
      */
     @Generated
@@ -926,11 +1171,13 @@ public final class GSS {
 
     /**
      * Change pasword for a gss name
-     * <p>
+     * 
      * [@returns] returns GSS_S_COMPLETE on success, error might be set if passed in.
-     * <p>
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 6.0
+     * 
      * @param name       name to change password for
      * @param mech       mechanism to use
      * @param attributes old and new password (kGSSChangePasswordOldPassword and kGSSChangePasswordNewPassword) and
@@ -947,24 +1194,24 @@ public final class GSS {
 
     /**
      * Acquire a new initial credentials using long term credentials (password, certificate).
-     * <p>
+     * 
      * Credentials acquired should be free-ed with gss_release_cred() or
      * destroyed with (removed from storage) gss_destroy_cred().
-     * <p>
+     * 
      * Some mechanism types can not directly acquire or validate
      * credential (for example PK-U2U, SCRAM, NTLM or IAKERB), for those
      * mechanisms its instead the gss_init_sec_context() that will either acquire or
      * force validation of the credential.
-     * <p>
+     * 
      * This function is blocking and should not be used on threads used for UI updates.
-     * <p>
+     * 
      * [@returns] a gss_error code, see the CFErrorRef passed back in error for the failure message.
-     * <p>
+     * 
      * attributes must contains one of the following keys
      * * kGSSICPassword - CFStringRef password
      * * kGSSICCertificate - SecIdentityRef, SecCertificate, or CFDataRef[data of a Keychain Persistent Reference] to
      * the certificate to use with PKINIT/PKU2U
-     * <p>
+     * 
      * optional keys
      * * kGSSCredentialUsage - one of kGSS_C_INITIATE, kGSS_C_ACCEPT, kGSS_C_BOTH, default if not given is
      * kGSS_C_INITIATE
@@ -978,11 +1225,11 @@ public final class GSS {
      * credential with the same name
      * * kGSSICAuthenticationContext - CFBooleanRef/YES to allow authentication UI, or LAContext to pass a pre-evaluated
      * authentication context
-     * <p>
+     * 
      * * kGSSICAppleSourceApp - CFDictionaryRef application we are performing this on behalf of (only applies to AppVPN)
-     * <p>
+     * 
      * Keys for kGSSICAppleSourceApp dictionary:
-     * <p>
+     * 
      * - kGSSICAppleSourceAppAuditToken - audit token of process this is
      * preformed on behalf of, the audit_token_t is wrapped
      * in a CFDataRef.
@@ -990,17 +1237,23 @@ public final class GSS {
      * preformed on behalf of
      * - kGSSICAppleSourceAppUUID - UUID of the application
      * - kGSSICAppleSourceAppSigningIdentity - bundle/signing identity of the application
-     * <p>
-     * <p>
+     * 
+     * 
      * [@ingroup] gssapi
-     *
+     * 
+     * API-Since: 5.0
+     * 
      * @param desired_name       name to use to acquire credential. Import the name using gss_import_name(). The type of
      *                           the name has to be supported by the desired_mech used.
+     * 
      * @param desired_mech       mechanism to use to acquire credential. GSS_C_NO_OID is not valid input and a mechanism
      *                           must be selected. For example GSS_KRB5_MECHANISM, GSS_NTLM_MECHNISM or any other
      *                           mechanisms supported by the implementation. See gss_indicate_mechs().
+     * 
      * @param attributes         CFDictionary that contains how to acquire the credential, see below for examples
+     * 
      * @param output_cred_handle the resulting credential handle, value is set to GSS_C_NO_CREDENTIAL on failure.
+     * 
      * @param error              an CFErrorRef returned in case of an error, that needs to be released with CFRelease()
      *                           by the caller, input can be NULL.
      */

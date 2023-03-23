@@ -17,7 +17,6 @@ limitations under the License.
 package apple.mediaplayer;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -43,12 +42,17 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * -----------------------------------------------------------------------------
  * Movie Player
- * <p>
+ * 
  * See MPMediaPlayback.h for the playback methods.
+ * 
+ * API-Since: 3.2
+ * Deprecated-Since: 9.0
+ * Deprecated-Message: Use AVPlayerViewController in AVKit
  */
 @Deprecated
 @Generated
@@ -163,6 +167,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Returns an object that represents a snapshot of the network access log. Can be nil.
+     * 
+     * API-Since: 4.3
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVFoundation.
      */
     @Generated
     @Deprecated
@@ -171,6 +179,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Indicates whether the movie player allows AirPlay video playback. Defaults to YES on iOS 5.0 and later.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -179,6 +191,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * A view for customization which is always displayed behind movie content.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -195,12 +211,21 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Cancels all pending asynchronous thumbnail requests.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
     @Selector("cancelAllThumbnailImageRequests")
     public native void cancelAllThumbnailImageRequests();
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated
     @Generated
     @Selector("contentURL")
@@ -208,6 +233,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * The style of the playback controls. Defaults to MPMovieControlStyleDefault.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -225,6 +254,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * The duration of the movie, or 0.0 if not known.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -233,6 +266,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * The end time of movie playback. Defaults to NaN, which indicates natural end time of the movie.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -245,6 +282,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Returns an object that represents a snapshot of the error log. Can be nil.
+     * 
+     * API-Since: 4.3
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVFoundation.
      */
     @Generated
     @Deprecated
@@ -255,6 +296,11 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     @Selector("init")
     public native MPMoviePlayerController init();
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated
     @Generated
     @Selector("initWithContentURL:")
@@ -262,6 +308,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * The start time of movie playback. Defaults to NaN, indicating the natural start time of the movie.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -270,6 +320,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Indicates whether the movie player is currently playing video via AirPlay.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -280,6 +334,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
      * Determines if the movie is presented in the entire screen (obscuring all other application content). Default is
      * NO.
      * Setting this property to YES before the movie player's view is visible will have no effect.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -290,6 +348,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
      * Determines if the movie is presented in the entire screen (obscuring all other application content). Default is
      * NO.
      * Setting this property to YES before the movie player's view is visible will have no effect.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -302,6 +364,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Returns the network load state of the movie player.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -311,6 +377,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * The types of media in the movie, or MPMovieMediaTypeNone if not known.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -321,6 +391,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * The playback type of the movie. Defaults to MPMovieSourceTypeUnknown.
      * Specifying a playback type before playing the movie can result in faster load times.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -330,6 +404,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * The natural size of the movie, or CGSizeZero if not known/applicable.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -347,6 +425,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * The currently playable duration of the movie, for progressively downloaded network content.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -355,6 +437,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Returns the current playback state of the movie player.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -369,6 +455,8 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * Returns YES if the first video frame has been made ready for display for the current item.
      * Will remain NO for items that do not have video tracks associated.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("readyForDisplay")
@@ -376,6 +464,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Determines how the movie player repeats when reaching the end of playback. Defaults to MPMovieRepeatModeNone.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -386,6 +478,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * Asynchronously request thumbnails for one or more times, provided as an array of NSNumbers (double).
      * Posts MPMoviePlayerThumbnailImageRequestDidFinishNotification on completion.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -394,6 +490,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Determines how the content scales to fit the view. Defaults to MPMovieScalingModeAspectFit.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -403,12 +503,21 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Indicates whether the movie player allows AirPlay video playback. Defaults to YES on iOS 5.0 and later.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
     @Selector("setAllowsAirPlay:")
     public native void setAllowsAirPlay(boolean value);
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated
     @Generated
     @Selector("setContentURL:")
@@ -416,6 +525,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * The style of the playback controls. Defaults to MPMovieControlStyleDefault.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -432,12 +545,21 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * The end time of movie playback. Defaults to NaN, which indicates natural end time of the movie.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
     @Selector("setEndPlaybackTime:")
     public native void setEndPlaybackTime(double value);
 
+    /**
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
+     */
     @Deprecated
     @Generated
     @Selector("setFullscreen:animated:")
@@ -445,6 +567,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * The start time of movie playback. Defaults to NaN, indicating the natural start time of the movie.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -454,6 +580,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * The playback type of the movie. Defaults to MPMovieSourceTypeUnknown.
      * Specifying a playback type before playing the movie can result in faster load times.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -462,6 +592,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Determines how the movie player repeats when reaching the end of playback. Defaults to MPMovieRepeatModeNone.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -470,6 +604,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Determines how the content scales to fit the view. Defaults to MPMovieScalingModeAspectFit.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -479,6 +617,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * Indicates if a movie should automatically start playback when it is likely to finish uninterrupted based on e.g.
      * network conditions. Defaults to YES.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -490,6 +632,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
      * (which would interrupt the application's session).
      * Defaults to YES. Setting this property during playback will not take effect until playback is stopped and started
      * again.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit.
      */
     @Generated
     @Deprecated
@@ -499,6 +645,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
     /**
      * Indicates if a movie should automatically start playback when it is likely to finish uninterrupted based on e.g.
      * network conditions. Defaults to YES.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -513,6 +663,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
      * Returns a thumbnail at the given time.
      * Deprecated. Use -requestThumbnailImagesAtTimes:timeOption: /
      * MPMoviePlayerThumbnailImageRequestDidFinishNotification instead.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated
@@ -521,6 +675,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * Returns an array of the most recent MPTimedMetadata objects provided by the media stream.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit.
      */
     @Generated
     @Deprecated
@@ -532,6 +690,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
      * (which would interrupt the application's session).
      * Defaults to YES. Setting this property during playback will not take effect until playback is stopped and started
      * again.
+     * 
+     * API-Since: 6.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit.
      */
     @Generated
     @Deprecated
@@ -540,6 +702,10 @@ public class MPMoviePlayerController extends NSObject implements MPMediaPlayback
 
     /**
      * The view in which the media and playback controls are displayed.
+     * 
+     * API-Since: 3.2
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use AVPlayerViewController in AVKit
      */
     @Deprecated
     @Generated

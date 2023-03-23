@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -41,7 +40,11 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -201,6 +204,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
      * affected by
      * electric and magnetic fields. Note that this is a unitless quantity, it is up to the developer to
      * set charge and field strength appropriately. Defaults to 0.0
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("charge")
@@ -243,6 +248,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
      * If an item is anchored, it can participate in collisions, but will not exhibit
      * any dynamic response. i.e. The item will behave more like a collision boundary.
      * The default is NO
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isAnchored")
@@ -252,6 +259,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
      * If an item is anchored, it can participate in collisions, but will not exhibit
      * any dynamic response. i.e. The item will behave more like a collision boundary.
      * The default is NO
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setAnchored:")
@@ -297,6 +306,8 @@ public class UIDynamicItemBehavior extends UIDynamicBehavior {
      * affected by
      * electric and magnetic fields. Note that this is a unitless quantity, it is up to the developer to
      * set charge and field strength appropriately. Defaults to 0.0
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setCharge:")

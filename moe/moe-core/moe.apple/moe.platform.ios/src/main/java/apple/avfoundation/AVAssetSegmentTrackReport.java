@@ -26,8 +26,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAssetSegmentTrackReport
- * <p>
+ * 
  * This class is vended by AVAssetSegmentReport. It will provide information on a track in a segment data.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("AVFoundation")
@@ -89,7 +91,7 @@ public class AVAssetSegmentTrackReport extends NSObject {
 
     /**
      * [@property] duration
-     * <p>
+     * 
      * Indicates the duration for this track. The value is kCMTimeInvalid if there is no information available.
      */
     @Generated
@@ -99,7 +101,7 @@ public class AVAssetSegmentTrackReport extends NSObject {
 
     /**
      * [@property] earliestPresentationTimeStamp
-     * <p>
+     * 
      * Indicates the earliest presentation timestamp (PTS) for this track. The value is kCMTimeInvalid if there is no
      * information available.
      */
@@ -110,7 +112,7 @@ public class AVAssetSegmentTrackReport extends NSObject {
 
     /**
      * [@property] firstVideoSampleInformation
-     * <p>
+     * 
      * Provides information on the first video sample in this track. The value is nil if this track is not video track
      * or no information available.
      */
@@ -150,7 +152,7 @@ public class AVAssetSegmentTrackReport extends NSObject {
 
     /**
      * [@property] mediaType
-     * <p>
+     * 
      * Indicates the media type for this track. Media types are declared in AVMediaFormat.h.
      */
     @Generated
@@ -180,7 +182,7 @@ public class AVAssetSegmentTrackReport extends NSObject {
 
     /**
      * [@property] trackID
-     * <p>
+     * 
      * Indicates the persistent unique identifier for this track.
      */
     @Generated

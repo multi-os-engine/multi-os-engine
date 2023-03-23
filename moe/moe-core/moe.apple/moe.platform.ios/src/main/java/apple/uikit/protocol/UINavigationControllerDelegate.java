@@ -36,6 +36,9 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UINavigationControllerDelegate")
 public interface UINavigationControllerDelegate {
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("navigationController:animationControllerForOperation:fromViewController:toViewController:")
@@ -54,6 +57,9 @@ public interface UINavigationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("navigationController:interactionControllerForAnimationController:")
@@ -76,6 +82,9 @@ public interface UINavigationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("navigationControllerPreferredInterfaceOrientationForPresentation:")
@@ -85,6 +94,9 @@ public interface UINavigationControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @IsOptional
     @Selector("navigationControllerSupportedInterfaceOrientations:")

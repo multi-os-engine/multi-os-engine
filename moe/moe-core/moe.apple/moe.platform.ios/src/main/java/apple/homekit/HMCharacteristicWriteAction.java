@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * This class is used to represent an entry in an action set that writes a specific
  * value to a characteristic.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -168,9 +170,11 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
 
     /**
      * Initializer method that ties the action to a particular characteristic.
-     *
+     * 
      * @param characteristic The characteristic bound to the action.
+     * 
      * @param targetValue    The target value for the characteristic.
+     * 
      * @return Instance object representing the characteristic write action.
      */
     @Generated
@@ -188,8 +192,9 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
 
     /**
      * This method is used to change target value for the characteristic.
-     *
+     * 
      * @param targetValue New target value for the characteristic.
+     * 
      * @param completion  Block that is invoked once the request is processed.
      *                    The NSError provides more information on the status of the request, error
      *                    will be nil on success.

@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] PHASESoundEventError
- * <p>
+ * 
  * Sound event error.
  */
 @Generated

@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Subclass for mass-spring animations.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("QuartzCore")

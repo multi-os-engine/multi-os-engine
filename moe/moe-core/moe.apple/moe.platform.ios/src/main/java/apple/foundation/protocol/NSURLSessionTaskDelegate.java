@@ -37,6 +37,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * Messages related to the operation of a specific task.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("Foundation")
@@ -56,6 +58,8 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
 
     /**
      * Sent when complete statistics information has been collected for the task.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional
@@ -112,7 +116,7 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
      * pass nil to the completionHandler to cause the body of the redirection
      * response to be delivered as the payload of this request. The default
      * is to follow redirections.
-     * <p>
+     * 
      * For tasks in background sessions, redirections will always be followed and this method will not be called.
      */
     @Generated
@@ -154,19 +158,21 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
      * the task, replaces the request with the specified task, or cancels the task.
      * If this delegate is not implemented, loading will proceed with the original
      * request.
-     * <p>
+     * 
      * Recommendation: only implement this delegate if tasks that have the
      * earliestBeginDate property set may become stale and require alteration prior
      * to starting the network load.
-     * <p>
+     * 
      * If a new request is specified, the allowsExpensiveNetworkAccess,
-     * allowsContrainedNetworkAccess, and allowsCellularAccess properties
+     * allowsConstrainedNetworkAccess, and allowsCellularAccess properties
      * from the new request will not be used; the properties from the
      * original request will continue to be used.
-     * <p>
+     * 
      * Canceling the task is equivalent to calling the task's cancel method; the
      * URLSession:task:didCompleteWithError: task delegate will be called with error
      * NSURLErrorCancelled.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -188,18 +194,36 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     /**
      * Sent when a task cannot start the network loading process because the current
      * network connectivity is not available or sufficient for the task's request.
-     * <p>
+     * 
      * This delegate will be called at most one time per task, and is only called if
      * the waitsForConnectivity property in the NSURLSessionConfiguration has been
      * set to YES.
-     * <p>
+     * 
      * This delegate callback will never be called for background sessions, because
      * the waitForConnectivity property is ignored by those sessions.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
     @Selector("URLSession:taskIsWaitingForConnectivity:")
     default void URLSessionTaskIsWaitingForConnectivity(NSURLSession session, NSURLSessionTask task) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    /**
+     * Notification that a task has been created. This method is the first message
+     * a task sends, providing a place to configure the task before it is resumed.
+     * 
+     * This delegate callback is *NOT* dispatched to the delegate queue. It is
+     * invoked synchronously before the task creation method returns.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @IsOptional
+    @Selector("URLSession:didCreateTask:")
+    default void URLSessionDidCreateTask(NSURLSession session, NSURLSessionTask task) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

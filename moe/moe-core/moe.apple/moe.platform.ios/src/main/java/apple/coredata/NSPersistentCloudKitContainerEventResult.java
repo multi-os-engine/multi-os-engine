@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The result returned when executing an NSPersistentCloudKitContainerEventRequest
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CoreData")

@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -109,8 +112,9 @@ public class MPSMatrixCopy extends MPSKernel {
 
     /**
      * Encode the copy operations to the command buffer
-     *
+     * 
      * @param commandBuffer  A valid MTLCommandBuffer to receive the encoded kernel.
+     * 
      * @param copyDescriptor The descriptor that defines the copy operator
      */
     @Generated
@@ -133,12 +137,14 @@ public class MPSMatrixCopy extends MPSKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * See @ref MPSKernel#initWithCoder.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSMatrixLookUpAndCopy
      * @param device   The MTLDevice on which to make the MPSMatrixLookUpAndCopy
      * @return A new MPSMatrixLookUpAndCopy object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")
@@ -150,11 +156,13 @@ public class MPSMatrixCopy extends MPSKernel {
 
     /**
      * Initialize a copy operator
-     *
+     * 
      * @param copyRows                  The number of rows to copy for each copy operation
      * @param copyColumns               The number of matrix columns to copy in each copy operation
      * @param sourcesAreTransposed      If YES, the sources are in column major storage order
      * @param destinationsAreTransposed If YES, the destinations are in column major storage order
+     * 
+     *                                  API-Since: 11.0
      */
     @Generated
     @Selector("initWithDevice:copyRows:copyColumns:sourcesAreTransposed:destinationsAreTransposed:")
@@ -231,20 +239,25 @@ public class MPSMatrixCopy extends MPSKernel {
      * This of the encode version support permuting the outputs with custom vectors of indices.
      * The permutations are defined on the destination indices and are the same for each copy
      * operation.
-     *
+     * 
      * @param commandBuffer        A valid MTLCommandBuffer to receive the encoded kernel.
+     * 
      * @param copyDescriptor       The descriptor that defines the copy operator
+     * 
      * @param rowPermuteIndices    If not nil then the output row index is
      *                             'rowPermuteIndices[i] + rowOffset' instead of 'i + rowOffset',
      *                             where 'i' is the local row index of the copy operation.
      *                             Note: if destinationsAreTransposed is set to YES then the destination
      *                             transpose is performed before permutations.
+     * 
      * @param rowPermuteOffset     Offset in numbers to apply to the 'rowPermuteIndices' vector.
+     * 
      * @param columnPermuteIndices If not nil then the output column index is
      *                             'columnPermuteIndices[i] + columnOffset' instead of 'i + columnOffset',
      *                             where 'i' is the local column index of the copy operation.
      *                             Note: if destinationsAreTransposed is set to YES then the destination
      *                             transpose is performed before permutations.
+     * 
      * @param columnPermuteOffset  Offset in numbers to apply to the 'columnPermuteIndices' vector.
      */
     @Generated

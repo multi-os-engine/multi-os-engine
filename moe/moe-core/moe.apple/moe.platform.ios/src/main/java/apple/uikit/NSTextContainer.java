@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -45,7 +43,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -163,6 +166,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     /**
      * Default value : empty array An array of UIBezierPath representing the exclusion paths inside the receiver's
      * bounding rect.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("exclusionPaths")
@@ -182,6 +187,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
 
     /**
      * Initialization ***************************
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("initWithSize:")
@@ -194,6 +201,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      * or -lineFragmentRectForProposedRect:atIndex:writingDirection:remainingRect: is overridden. It's recommended to
      * override this property when -lineFragmentRectForProposedRect:atIndex:writingDirection:remainingRect: is
      * overridden.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("isSimpleRectangularTextContainer")
@@ -216,6 +225,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     /**
      * Default value: NSLineBreakByWordWrapping The line break mode defines the behavior of the last line inside the
      * text container.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("lineBreakMode")
@@ -241,6 +252,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      * visual horizontal line. The values passed into the method are either NSWritingDirectionLeftToRight or
      * NSWritingDirectionRightToLeft. This method can be overridden by subclasses for further text container region
      * customization.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("lineFragmentRectForProposedRect:atIndex:writingDirection:remainingRect:")
@@ -252,6 +265,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     /**
      * Default value: 0 (no limit) The maximum number of lines that can be stored in the receiver. This value is
      * utilized by NSLayoutManager for determining the maximum number of lines associated with the text container.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("maximumNumberOfLines")
@@ -263,6 +278,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
      * layoutManager with a new one leaving the rest of the web intact. All the NSTextContainers on the old
      * NSLayoutManager get transferred to the new one. This method deals with all the work of making sure the containers
      * don't get deallocated and removing the old layoutManager from the text storage and replacing it with the new one.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("replaceLayoutManager:")
@@ -271,6 +288,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     /**
      * Default value : empty array An array of UIBezierPath representing the exclusion paths inside the receiver's
      * bounding rect.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setExclusionPaths:")
@@ -309,6 +328,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     /**
      * Default value: NSLineBreakByWordWrapping The line break mode defines the behavior of the last line inside the
      * text container.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setLineBreakMode:")
@@ -325,6 +346,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     /**
      * Default value: 0 (no limit) The maximum number of lines that can be stored in the receiver. This value is
      * utilized by NSLayoutManager for determining the maximum number of lines associated with the text container.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setMaximumNumberOfLines:")
@@ -333,6 +356,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     /**
      * Default value: CGSizeZero Defines the maximum size for the layout area returned from
      * -lineFragmentRectForProposedRect:writingDirection:remainingRect:. 0.0 and less means no limitation.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setSize:")
@@ -348,6 +373,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
     /**
      * Default value: CGSizeZero Defines the maximum size for the layout area returned from
      * -lineFragmentRectForProposedRect:writingDirection:remainingRect:. 0.0 and less means no limitation.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("size")
@@ -373,6 +400,8 @@ public class NSTextContainer extends NSObject implements NSSecureCoding, NSTextL
 
     /**
      * Returns NSTextLayoutManager owning the text container. When non-nil, -layoutManager should be nil.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("textLayoutManager")

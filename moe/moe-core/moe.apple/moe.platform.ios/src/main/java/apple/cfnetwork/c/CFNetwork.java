@@ -69,13 +69,19 @@ public final class CFNetwork {
 
     /**
      * CFHostGetTypeID()
-     * <p>
+     * 
      * Discussion:
      * Returns the type identifier of all CFHost instances.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @Deprecated
     @Generated
     @CFunction
     @NUInt
@@ -83,125 +89,149 @@ public final class CFNetwork {
 
     /**
      * CFHostCreateWithName()
-     * <p>
+     * 
      * Discussion:
      * Creates a new host object with the given name.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * allocator:
      * The CFAllocator which should be used to allocate memory for the
      * host. If this reference is not a valid CFAllocator, the
      * behavior is undefined.
-     * <p>
+     * 
      * hostname:
      * A CFStringRef representing the name of the host. Must be
      * non-NULL. If this reference is not a valid CFStringRef, the
      * behavior is undefined.
-     * <p>
+     * 
      * Result:
      * A valid CFHostRef which may now be resolved, or NULL if
      * unsuccessful.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFHostRef CFHostCreateWithName(CFAllocatorRef allocator, CFStringRef hostname);
 
     /**
      * CFHostCreateWithAddress()
-     * <p>
+     * 
      * Discussion:
      * Creates a new host object with the given address.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * allocator:
      * The CFAllocator which should be used to allocate memory for the
      * host. If this reference is not a valid CFAllocator, the
      * behavior is undefined.
-     * <p>
+     * 
      * addr:
      * A CFDataRef containing a struct sockaddr which is the address
      * of the host. Must be non-NULL. If this reference is not a
      * valid CFDataRef, the behavior is undefined.
-     * <p>
+     * 
      * Result:
      * A valid CFHostRef which may now be resolved, or NULL if
      * unsuccessful.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFHostRef CFHostCreateWithAddress(CFAllocatorRef allocator, CFDataRef addr);
 
     /**
      * CFHostCreateCopy()
-     * <p>
+     * 
      * Discussion:
      * Creates a new host object as a copy of host argument.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * The CFAllocator which should be used to allocate memory for the
      * new host. If this reference is not a valid CFAllocator, the
      * behavior is undefined.
-     * <p>
+     * 
      * host:
      * A CFHostRef representing the original host. Must be non-NULL.
      * If this reference is not a valid CFHostRef, the behavior is
      * undefined.
-     * <p>
+     * 
      * Result:
      * A valid CFHostRef which contains a copy of all previously
      * resolved data from the original. NULL is returned in the case of
      * failure.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFHostRef CFHostCreateCopy(CFAllocatorRef alloc, CFHostRef host);
 
     /**
      * CFHostStartInfoResolution()
-     * <p>
+     * 
      * Discussion:
      * Performs a lookup for the given host. It will search for the
      * requested information if there is no other active request.
      * Previously cached information of the given type will be released.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theHost:
      * The CFHostRef which should be resolved. Must be non-NULL. If
      * this reference is not a valid CFHostRef, the behavior is
      * undefined.
-     * <p>
+     * 
      * info:
      * The enum representing the type of information to be retrieved.
      * If the value is not a valid type, the behavior is undefined.
-     * <p>
+     * 
      * error:
      * A reference to a CFStreamError structure which will be filled
      * with any error information should an error occur. May be set
      * to NULL if error information is not wanted.
-     * <p>
+     * 
      * Result:
      * Returns TRUE on success and FALSE on failure. In asynchronous
      * mode, this function will return immediately. In synchronous
      * mode, it will block until the resolve has completed or until the
      * resolve is cancelled.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native byte CFHostStartInfoResolution(CFHostRef theHost, int info,
@@ -209,70 +239,82 @@ public final class CFNetwork {
 
     /**
      * CFHostGetAddressing()
-     * <p>
+     * 
      * Discussion:
      * Tries to retrieve the known addresses from the given host.
      * Returns a CFArrayRef of addresses if known and there were some.
      * NULL is returned otherwise. Each address is a CFDataRef wrapping
      * a struct sockaddr.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The function gets the data in a thread-safe manner, but the
      * resulting data is not safe. Since it is returned as a matter of
      * a get opposed to a copy, the data is not safe if the host is
      * being altered from another thread.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theHost:
      * The CFHostRef which contains the relevant information. Must be
      * non-NULL. If this reference is not a valid CFHostRef, the
      * behavior is undefined.
-     * <p>
+     * 
      * hasBeenResolved:
      * A reference to a Boolean which returns FALSE if the information
      * was not available (e.g. CFHostStartInfoResolution has not been
      * called), otherwise TRUE will be returned.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFArrayRef CFHostGetAddressing(CFHostRef theHost, BytePtr hasBeenResolved);
 
     /**
      * CFHostGetNames()
-     * <p>
+     * 
      * Discussion:
      * Tries to retrieve the names/aliases from the given host. Returns
      * a CFArrayRef of names for the given host. NULL is returned
      * otherwise.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The function gets the data in a thread-safe manner, but the
      * resulting data is not safe. Since it is returned as a matter of
      * a get opposed to a copy, the data is not safe if the host is
      * being altered from another thread.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theHost:
      * The CFHostRef which contains the relevant information. Must be
      * non-NULL. If this reference is not a valid CFHostRef, the
      * behavior is undefined.
-     * <p>
+     * 
      * hasBeenResolved:
      * A reference to a Boolean which returns FALSE if the information
      * was not available (e.g. CFHostStartInfoResolution has not been
      * called), otherwise TRUE will be returned. Can be NULL.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFArrayRef CFHostGetNames(CFHostRef theHost, BytePtr hasBeenResolved);
 
     /**
      * CFHostGetReachability()
-     * <p>
+     * 
      * Discussion:
      * Tries to retrieve the reachability of the given host. Returns a
      * CFDataRef which wraps the reachability flags. NULL will be
@@ -281,87 +323,105 @@ public final class CFNetwork {
      * Returns FALSE if the information was not available, otherwise
      * TRUE will be returned with the results containing the requested
      * information.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The function gets the data in a thread-safe manner, but the
      * resulting data is not safe. Since it is returned as a matter of
      * a get opposed to a copy, the data is not safe if the host is
      * being altered from another thread.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theHost:
      * The CFHostRef which contains the relevant information. Must be
      * non-NULL. If this reference is not a valid CFHostRef, the
      * behavior is undefined.
-     * <p>
+     * 
      * hasBeenResolved:
      * A reference to a Boolean which returns FALSE if the information
      * was not available (e.g. CFHostStartInfoResolution has not been
      * called), otherwise TRUE will be returned. Can be NULL.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFDataRef CFHostGetReachability(CFHostRef theHost, BytePtr hasBeenResolved);
 
     /**
      * CFHostCancelInfoResolution()
-     * <p>
+     * 
      * Discussion:
      * Cancels an outstanding asynchronous or synchronous resolve.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theHost:
      * The CFHostRef which is currently resolving. Must be non-NULL.
      * If this reference is not a valid CFHostRef, the behavior is
      * undefined.
-     * <p>
+     * 
      * info:
      * The enum representing which resolution to be canceled. If the
      * value is not a valid type, the behavior is undefined.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void CFHostCancelInfoResolution(CFHostRef theHost, int info);
 
     /**
      * CFHostSetClient()
-     * <p>
+     * 
      * Discussion:
      * Associates a client context and callback function with a CFHostRef.
      * This is required for asynchronous usage. If not set, resolve will
      * take place synchronously.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theHost:
      * The CFHostRef which is getting a client. Must be non-NULL. If
      * this reference is not a valid CFHostRef, the behavior is
      * undefined.
-     * <p>
+     * 
      * clientCB:
      * A CFHostClientCallBack which will be called when the resolve
      * completes or is cancelled. Use NULL to remove the client
      * association with a host object.
-     * <p>
+     * 
      * clientContext:
      * A CFHostClientContext which is used to set the contextual
      * information associated with the host object. The info pointer
      * from the struct will be passed to the callback function. If
      * setting a client, this value must be non-NULL.
-     * <p>
+     * 
      * Result:
      * Returns TRUE if the procedure was a success, otherwise it returns
      * FALSE.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native byte CFHostSetClient(CFHostRef theHost,
@@ -370,31 +430,37 @@ public final class CFNetwork {
 
     /**
      * CFHostScheduleWithRunLoop()
-     * <p>
+     * 
      * Discussion:
      * Schedules the given host on a run loop and mode so the client
      * will receive its callbacks on that loop and mode.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theHost:
      * The CFHostRef which is being scheduled. Must be non-NULL. If
      * this reference is not a valid CFHostRef, the behavior is
      * undefined.
-     * <p>
+     * 
      * runLoop:
      * A CFRunLoopRef on which the host should be scheduled. Must be
      * non-NULL. If this reference is not a valid CFRunLoopRef, the
      * behavior is undefined.
-     * <p>
+     * 
      * runLoopMode:
      * A CFStringRef which is the mode in which the run loop will be
      * running when notification occurs. Must be non-NULL. If this
      * reference is not a valid CFStringRef, the behavior is undefined.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void CFHostScheduleWithRunLoop(CFHostRef theHost, CFRunLoopRef runLoop,
@@ -402,31 +468,37 @@ public final class CFNetwork {
 
     /**
      * CFHostUnscheduleFromRunLoop()
-     * <p>
+     * 
      * Discussion:
      * Unschedules the given host from a run loop and mode so the client
      * will not receive its callbacks on that loop and mode.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theHost:
      * The CFHostRef which is being unscheduled. Must be non-NULL. If
      * this reference is not a valid CFHostRef, the behavior is
      * undefined.
-     * <p>
+     * 
      * runLoop:
      * A CFRunLoopRef on which the host is scheduled and should now be
      * unscheduled. Must be non-NULL. If this reference is not a
      * valid CFRunLoopRef, the behavior is undefined.
-     * <p>
+     * 
      * runLoopMode:
      * A CFStringRef which is the mode in which the host is scheduled
      * and should be unscheduled. Must be non-NULL. If this reference
      * is not a valid CFStringRef, the behavior is undefined.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void CFHostUnscheduleFromRunLoop(CFHostRef theHost, CFRunLoopRef runLoop,
@@ -434,13 +506,19 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceGetTypeID()
-     * <p>
+     * 
      * Discussion:
      * Returns the type identifier of all CFNetService instances.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     @NUInt
@@ -448,13 +526,19 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceMonitorGetTypeID()
-     * <p>
+     * 
      * Discussion:
      * Returns the type identifier of all CFNetServiceMonitor instances.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     @NUInt
@@ -462,13 +546,19 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceBrowserGetTypeID()
-     * <p>
+     * 
      * Discussion:
      * Returns the type identifier of all CFNetServiceBrowser instances.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     @NUInt
@@ -476,24 +566,24 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceCreate()
-     * <p>
+     * 
      * Discussion:
      * Creates an instance of a Network Service.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * The CFAllocator which should be used to allocate memory for the
      * service and its storage for values. If this reference is not a
      * valid CFAllocator, the behavior is undefined.
-     * <p>
+     * 
      * domain:
      * The network domain in which it is registered or will be
      * registered. This value must be non-NULL.
-     * <p>
+     * 
      * serviceType:
      * The type of service being registered or resolved on the
      * network. The service type consists of the application protocol
@@ -503,21 +593,27 @@ public final class CFNetwork {
      * letters, digits, and hyphens. New service types should be
      * registered at <http://www.dns-sd.org/ServiceTypes.html>. This
      * value must be non-NULL.
-     * <p>
+     * 
      * name:
      * The name of the machine or application advertising the service.
      * If this value is not unique, registering will eventually fail.
      * This value must be non-NULL. This value is usually displayed
      * in a browser for the user.
-     * <p>
+     * 
      * port:
      * The port on which the service is listening. This must be
      * non-zero for services which are to be registered.
-     * <p>
+     * 
      * Result:
      * A valid CFNetService which may now be registered or resolved, or
      * NULL if unsuccessful.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFNetServiceRef CFNetServiceCreate(CFAllocatorRef alloc, CFStringRef domain,
@@ -525,112 +621,136 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceCreateCopy()
-     * <p>
+     * 
      * Discussion:
      * Creates a new CFNetService object as a copy of service argument.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * The CFAllocator which should be used to allocate memory for the
      * new service. If this reference is not a valid CFAllocator, the
      * behavior is undefined.
-     * <p>
+     * 
      * service:
      * A CFNetServiceRef representing the original service. Must be
      * non-NULL. If this If this reference is not a valid
      * CFNetServiceRef, the behavior is undefined.
-     * <p>
+     * 
      * Result:
      * Returns a valid CFNetServiceRef which contains a copy of all
      * previously resolved data from the original. NULL is returned in
      * the case of failure.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFNetServiceRef CFNetServiceCreateCopy(CFAllocatorRef alloc, CFNetServiceRef service);
 
     /**
      * CFNetServiceGetDomain()
-     * <p>
+     * 
      * Discussion:
      * Query a Network Service for its domain.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The function gets the data in a thread-safe manner, but the
      * resulting data is not safe. Since it is returned as a matter of
      * a get opposed to a copy, the data is not safe if the service is
      * being altered from another thread.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theService:
      * The Network Service to be queried. Must be non-NULL.
-     * <p>
+     * 
      * Result:
      * CFStringRef which is the service's domain.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFStringRef CFNetServiceGetDomain(CFNetServiceRef theService);
 
     /**
      * CFNetServiceGetType()
-     * <p>
+     * 
      * Discussion:
      * Query a Network Service for its type.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The function gets the data in a thread-safe manner, but the
      * resulting data is not safe. Since it is returned as a matter of
      * a get opposed to a copy, the data is not safe if the service is
      * being altered from another thread.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theService:
      * The Network Service to be queried. Must be non-NULL.
-     * <p>
+     * 
      * Result:
      * CFStringRef which is the service's service type.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFStringRef CFNetServiceGetType(CFNetServiceRef theService);
 
     /**
      * CFNetServiceGetName()
-     * <p>
+     * 
      * Discussion:
      * Query a Network Service for its name.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The function gets the data in a thread-safe manner, but the
      * resulting data is not safe. Since it is returned as a matter of
      * a get opposed to a copy, the data is not safe if the service is
      * being altered from another thread.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theService:
      * The Network Service to be queried. Must be non-NULL.
-     * <p>
+     * 
      * Result:
      * CFStringRef which is the service's name.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFStringRef CFNetServiceGetName(CFNetServiceRef theService);
 
     /**
      * CFNetServiceRegisterWithOptions()
-     * <p>
+     * 
      * Discussion:
      * Registers the entity on the network. This requires that the
      * service has a domain, a type, a name, and a port. The service is
@@ -640,31 +760,37 @@ public final class CFNetwork {
      * cancelled from another thread. In asynchronous mode, this
      * function returns immediately and the underlying network
      * registration process will start.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theService:
      * The Network Service to register on the network. Must be
      * non-NULL.
-     * <p>
+     * 
      * options:
      * A set of bit options used to instruct the registration process.
      * Current supported option is kCFNetServiceFlagNoAutoRename.
-     * <p>
+     * 
      * error:
      * A reference to an error struct which will be set to the error
      * and domain of the error should one occur. If the value of
      * error is not desired, set to NULL.
-     * <p>
+     * 
      * Result:
      * Returns FALSE if domain, type, name or port is NULL. In
      * synchronous mode, it will always return FALSE as a result of the
      * error or the cancellation. In asynchronous mode, it will return
      * TRUE if the registration process could start.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native byte CFNetServiceRegisterWithOptions(CFNetServiceRef theService, @NUInt long options,
@@ -672,40 +798,46 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceResolveWithTimeout()
-     * <p>
+     * 
      * Discussion:
      * Resolves the information related to this service. It will
      * resolve the target host, the addresses, and the first TXT record
      * associated with the service.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theService:
      * The CFNetServiceRef which should be resolved. Must be non-NULL.
      * If this reference is not a valid CFNetServiceRef, the behavior
      * is undefined.
-     * <p>
+     * 
      * timeout:
      * CFTimeInterval representing the maximum amount of time to take
      * to perform the resolve. If the resolve can not be performed
      * within this timeout, the function or callback will receive a
      * timeout error. Values less than or equal to zero indicate an
      * infinite timeout.
-     * <p>
+     * 
      * error:
      * A reference to a CFStreamError structure which will be filled
      * with any error information should an error occur. May be set
      * to NULL if error information is not wanted.
-     * <p>
+     * 
      * Result:
      * Returns TRUE on success and FALSE on failure. In asynchronous
      * mode, this function will return immediately. In synchronous
      * mode, it will block until the resolve has completed or until the
      * resolve is cancelled.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native byte CFNetServiceResolveWithTimeout(CFNetServiceRef theService, double timeout,
@@ -713,157 +845,193 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceCancel()
-     * <p>
+     * 
      * Discussion:
      * Cancels an outstanding request for registration or resolution.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theService:
      * The Network Service which is active. Must be non-NULL.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void CFNetServiceCancel(CFNetServiceRef theService);
 
     /**
      * CFNetServiceGetTargetHost()
-     * <p>
+     * 
      * Discussion:
      * Query a Network Service for its resolve target.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The function gets the data in a thread-safe manner, but the
      * resulting data is not safe. Since it is returned as a matter of
      * a get opposed to a copy, the data is not safe if the service is
      * being altered from another thread.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theService:
      * The Network Service to be queried. Must be non-NULL.
-     * <p>
+     * 
      * Result:
      * Returns The target hostname of the machine providing the service,
      * or NULL if the entity's target is not known (has not been
      * resolved).
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFStringRef CFNetServiceGetTargetHost(CFNetServiceRef theService);
 
     /**
      * CFNetServiceGetPortNumber()
-     * <p>
+     * 
      * Discussion:
      * Query a Network Service for its port number.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The function gets the data in a thread-safe manner.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theService:
      * The Network Service to be queried. Must be non-NULL.
-     * <p>
+     * 
      * Result:
      * Returns a SInt32 containing the port number in host byte order.
      * Returns -1 if the entity's port is not known (has not been
      * resolved)
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native int CFNetServiceGetPortNumber(CFNetServiceRef theService);
 
     /**
      * CFNetServiceGetAddressing()
-     * <p>
+     * 
      * Discussion:
      * Query a Network Service for its addressing.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The function gets the data in a thread-safe manner, but the
      * resulting data is not safe. Since it is returned as a matter of
      * a get opposed to a copy, the data is not safe if the service is
      * being altered from another thread.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theService:
      * The Network Service to be queried. Must be non-NULL.
-     * <p>
+     * 
      * Result:
      * Returns NULL if the entity's addressing is not known (has not
      * been resolved). The array will contain a CFDataRef for each
      * address resolved. Each CFDataRef contains a struct sockaddr
      * representing the address of the service.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFArrayRef CFNetServiceGetAddressing(CFNetServiceRef theService);
 
     /**
      * CFNetServiceGetTXTData()
-     * <p>
+     * 
      * Discussion:
      * Query a Network Service for its TXT record contents.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The function gets the data in a thread-safe manner, but the
      * resulting data is not safe. Since it is returned as a matter of
      * a get opposed to a copy, the data is not safe if the service is
      * being altered from another thread.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theService:
      * The Network Service to be queried. Must be non-NULL.
-     * <p>
+     * 
      * Result:
      * Returns NULL if the entity's TXT is not known (has not been
      * resolved). The result will contain the contents of the TXT
      * record. This is suitable to pass to
      * CFNetServiceCreateDictionaryWithTXTData.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFDataRef CFNetServiceGetTXTData(CFNetServiceRef theService);
 
     /**
      * CFNetServiceSetTXTData()
-     * <p>
+     * 
      * Discussion:
      * Sets the TXT record for the service. If the service is currently
      * registered on the network, the record will be broadcast. Setting
      * the TXT record on a resolving service is not allowed.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theService:
      * The Network Service to receive the new record. Must be
      * non-NULL.
-     * <p>
+     * 
      * txtRecord:
      * The contents of the TXT record. This should not exceed a
      * length of 1450 bytes.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native byte CFNetServiceSetTXTData(CFNetServiceRef theService, CFDataRef txtRecord);
 
     /**
      * CFNetServiceCreateDictionaryWithTXTData()
-     * <p>
+     * 
      * Discussion:
      * Parses the given TXT record data into a set of key/value pairs as
      * a CFDictionary where keys are CFStringRefs and values are
@@ -871,23 +1039,29 @@ public final class CFNetwork {
      * returned. READ THE COMMENTS FOR
      * CFNetServiceCreateTXTDataWithDictionary TO FULLY UNDERSTAND THE
      * USE AND RESULTS OF THIS FUNCTION.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * CFAllocatorRef to be used for the creation of the result.
-     * <p>
+     * 
      * txtRecord:
      * The TXT record data as returned by CFNetServiceGetInfo.
-     * <p>
+     * 
      * Result:
      * CFDictionaryRef containing the key/value pairs parsed from the
      * record. It will return NULL if the record could not be parsed.
      * Keys in the dictionary are CFStringRef's. Values are CFDataRef's.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFDictionaryRef CFNetServiceCreateDictionaryWithTXTData(CFAllocatorRef alloc,
@@ -895,7 +1069,7 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceCreateTXTDataWithDictionary()
-     * <p>
+     * 
      * Discussion:
      * Flattens a set of key/value pairs into a CFDataRef suitable to
      * pass into CFNetServiceSetTXTData. This function will properly
@@ -908,26 +1082,32 @@ public final class CFNetwork {
      * therefore CFStringRef's will be flattened into CFDataRef's, and
      * they will come out of CFNetServiceCreateDictionaryWithTXTData as
      * CFDataRef's.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * CFAllocatorRef to be used for the creation of the result.
-     * <p>
+     * 
      * keyValuePairs:
      * CFDictionaryRef containing keys and values to be placed into
      * the TXT record. The keys must be CFStringRef's. The values
      * should be CFDataRef's (CFStringRef's are permitted for
      * convenience). Any other types will cause a failure. The
      * length of a key and its value should not exceed 255.
-     * <p>
+     * 
      * Result:
      * CFDataRef containing the flattened form of the keys and values.
      * If the dictionary could not be flattened, NULL will be returned.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFDataRef CFNetServiceCreateTXTDataWithDictionary(CFAllocatorRef alloc,
@@ -935,7 +1115,7 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceSetClient()
-     * <p>
+     * 
      * Discussion:
      * Sets up the service to be used in asynchronous mode.
      * Notification of registration failure or resolution completion
@@ -947,30 +1127,36 @@ public final class CFNetwork {
      * before calling CFNetServiceRegister or CFNetServiceResolve,
      * otherwise it will return FALSE. TRUE will be returned if the
      * client could be set.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theService:
      * The service to set up for asynchronous mode. Must be non-NULL.
-     * <p>
+     * 
      * clientCB:
      * Function pointer will be called upon registration failure or
      * upon resolution completion. In the case of resolution, this
      * callback may be called multiple times if there is more than one
      * address for a service. Passing NULL will remove the client
      * from the entity and cancel any outstanding activity.
-     * <p>
+     * 
      * clientContext:
      * Client contextual information to be used when calling clientCB.
      * Passing NULL will remove the client from the entity and cancel
      * any outstanding activity.
-     * <p>
+     * 
      * Result:
      * Returns FALSE if the client could not be set, TRUE otherwise.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native byte CFNetServiceSetClient(CFNetServiceRef theService,
@@ -979,26 +1165,32 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceScheduleWithRunLoop()
-     * <p>
+     * 
      * Discussion:
      * Schedule the given service on the given run loop and mode.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theService:
      * The service which is set up for asynchronous mode. Must be
      * non-NULL.
-     * <p>
+     * 
      * runLoop:
      * A reference to a runloop on which the service should be
      * scheduled. Must be non-NULL.
-     * <p>
+     * 
      * runLoopMode:
      * The mode on which to schedule the service. Must be non-NULL.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void CFNetServiceScheduleWithRunLoop(CFNetServiceRef theService, CFRunLoopRef runLoop,
@@ -1006,27 +1198,33 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceUnscheduleFromRunLoop()
-     * <p>
+     * 
      * Discussion:
      * Unschedule the given service from the given run loop and mode.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * theService:
      * The service which is set up for asynchronous mode. Must be
      * non-NULL.
-     * <p>
+     * 
      * runLoop:
      * A reference to a runloop from which the service should be
      * unscheduled. Must be non-NULL.
-     * <p>
+     * 
      * runLoopMode:
      * The mode from which to unschedule the service. Must be
      * non-NULL.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void CFNetServiceUnscheduleFromRunLoop(CFNetServiceRef theService, CFRunLoopRef runLoop,
@@ -1034,36 +1232,42 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceMonitorCreate()
-     * <p>
+     * 
      * Discussion:
      * Creates an instance of an object suitable for watching for
      * CFNetService record changes on the network.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * The CFAllocator which should be used to allocate memory for the
      * monitor and its storage for values. If this reference is not a
      * valid CFAllocator, the behavior is undefined.
-     * <p>
+     * 
      * theService:
      * The CFNetService to be monitored for record changes.
-     * <p>
+     * 
      * clientCB:
      * Function pointer that will be called as record changes occur.
      * Must be non-NULL.
-     * <p>
+     * 
      * clientContext:
      * Client contextual information to be used when calling clientCB.
      * Must be non-NULL.
-     * <p>
+     * 
      * Result:
      * Returns a new instance of a CFNetServiceMonitor, or NULL if the
      * object could not be created.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFNetServiceMonitorRef CFNetServiceMonitorCreate(CFAllocatorRef alloc,
@@ -1073,27 +1277,33 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceMonitorInvalidate()
-     * <p>
+     * 
      * Discussion:
      * Invalidates the given monitor object so that it may no longer be
      * scheduled and callback never be called. This will also stop any
      * monitors currently in progress.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * monitor:
      * CFNetServiceMonitor to invalidate. Must be non-NULL.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void CFNetServiceMonitorInvalidate(CFNetServiceMonitorRef monitor);
 
     /**
      * CFNetServiceMonitorStart()
-     * <p>
+     * 
      * Discussion:
      * Starts monitoring for record changes on a service. It watches
      * for changes of the given record type. If there is already an
@@ -1103,27 +1313,33 @@ public final class CFNetwork {
      * some other error. It will return TRUE otherwise. In
      * asynchronous mode, this call will return TRUE or FALSE depending
      * if the underlying network query could be instantiated.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * monitor:
      * CFNetServiceMonitor to perform the watch.
-     * <p>
+     * 
      * recordType:
      * CFNetServiceMonitorType indicating the record type to watch.
-     * <p>
+     * 
      * error:
      * A reference to an error struct which will be set to the error
      * and domain of the error should one occur. If the value of
      * error is not desired, set to NULL.
-     * <p>
+     * 
      * Result:
      * Returns FALSE if an error occurs during a synchronous monitor or
      * if the monitor could not start. It returns TRUE otherwise.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native byte CFNetServiceMonitorStart(CFNetServiceMonitorRef monitor, int recordType,
@@ -1131,18 +1347,18 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceMonitorStop()
-     * <p>
+     * 
      * Discussion:
      * Stops an outstanding monitor.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * monitor:
      * CFNetServiceMonitor with an active monitor. Must be non-NULL.
-     * <p>
+     * 
      * error:
      * Error value to be returned in "error" in
      * CFNetServiceMonitorStart if monitor is being performed in
@@ -1150,7 +1366,13 @@ public final class CFNetwork {
      * of the struct will cause CFNetServiceMonitorStart to return
      * FALSE. In asynchronous mode, the client call back will be
      * called with this error. Can be NULL.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void CFNetServiceMonitorStop(CFNetServiceMonitorRef monitor,
@@ -1158,29 +1380,35 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceMonitorScheduleWithRunLoop()
-     * <p>
+     * 
      * Discussion:
      * Schedules the monitor on a run loop and mode. Use this to place
      * the given monitor into asynchronous mode. The client callback
      * will be triggered via one of the scheduled run loops; It is the
      * caller's responsibility to ensure that at least one of the
      * scheduled run loops is being run.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * monitor:
      * CFNetServiceMonitor to schedule. Must be non-NULL.
-     * <p>
+     * 
      * runLoop:
      * A reference to a runloop on which the monitor should be
      * scheduled. Must be non-NULL.
-     * <p>
+     * 
      * runLoopMode:
      * The mode on which to schedule the monitor. Must be non-NULL.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void CFNetServiceMonitorScheduleWithRunLoop(CFNetServiceMonitorRef monitor,
@@ -1188,26 +1416,32 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceMonitorUnscheduleFromRunLoop()
-     * <p>
+     * 
      * Discussion:
      * Unschedules the browser from a run loop and mode.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * monitor:
      * CFNetServiceMonitor to unschedule. Must be non-NULL.
-     * <p>
+     * 
      * runLoop:
      * A reference to a runloop from which the monitor should be
      * unscheduled. Must be non-NULL.
-     * <p>
+     * 
      * runLoopMode:
      * The mode from which to unschedule the monitor. Must be
      * non-NULL.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void CFNetServiceMonitorUnscheduleFromRunLoop(CFNetServiceMonitorRef monitor,
@@ -1215,32 +1449,38 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceBrowserCreate()
-     * <p>
+     * 
      * Discussion:
      * Creates an instance of a browser object.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * The CFAllocator which should be used to allocate memory for the
      * browser and its storage for values. If this reference is not a
      * valid CFAllocator, the behavior is undefined.
-     * <p>
+     * 
      * clientCB:
      * Function pointer that will be called as domains or services are
      * found on the network. Must be non-NULL.
-     * <p>
+     * 
      * clientContext:
      * Client contextual information to be used when calling clientCB.
      * Must be non-NULL.
-     * <p>
+     * 
      * Result:
      * Returns a new instance of a browser, or NULL if the instance
      * could not be created.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFNetServiceBrowserRef CFNetServiceBrowserCreate(CFAllocatorRef alloc,
@@ -1249,24 +1489,30 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceBrowserInvalidate()
-     * <p>
+     * 
      * Discussion:
      * Invalidates the given browser object so that it may no longer be
      * scheduled and callback never be called. This will also stop any
      * searches currently in progress.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * browser:
      * Network Service Browser to invalidate. Must be non-NULL.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void CFNetServiceBrowserInvalidate(CFNetServiceBrowserRef browser);
 
     /**
      * CFNetServiceBrowserSearchForDomains()
-     * <p>
+     * 
      * Discussion:
      * Starts a search for domains. The browser will either try to find
      * "Browse" domains or will search for "Registration" domains. If
@@ -1276,29 +1522,35 @@ public final class CFNetwork {
      * It will return TRUE otherwise. In asynchronous mode, this call
      * will return TRUE or FALSE depending if the underlying network
      * search could be started.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * browser:
      * Network Service Browser to perform the search. Must be
      * non-NULL.
-     * <p>
+     * 
      * registrationDomains:
      * FALSE if "Browse" domains are to be discovered. TRUE if only
      * "Registration" domains are to be discovered.
-     * <p>
+     * 
      * error:
      * A reference to an error struct which will be set to the error
      * and domain of the error should one occur. If the value of
      * error is not desired, set to NULL.
-     * <p>
+     * 
      * Result:
      * Returns FALSE if an error occurs during a synchronous search or
      * if the search could not start. It returns TRUE otherwise.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native byte CFNetServiceBrowserSearchForDomains(CFNetServiceBrowserRef browser,
@@ -1307,7 +1559,7 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceBrowserSearchForServices()
-     * <p>
+     * 
      * Discussion:
      * Starts a search for a service type on the given domain. If there
      * is already an outstanding search, it will return FALSE. In
@@ -1316,32 +1568,38 @@ public final class CFNetwork {
      * or if there is some other error. It will return TRUE otherwise.
      * In asynchronous mode, this call will return TRUE or FALSE
      * depending if the underlying network search could be instantiated.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * browser:
      * Network Service Browser to perform the search. Must be
      * non-NULL.
-     * <p>
+     * 
      * domain:
      * Network domain to search in order to find the service. Must be
      * non-NULL.
-     * <p>
+     * 
      * serviceType:
      * Service type for which to search. Must be non-NULL.
-     * <p>
+     * 
      * error:
      * A reference to an error struct which will be set to the error
      * and domain of the error should one occur. If the value of
      * error is not desired, set to NULL.
-     * <p>
+     * 
      * Result:
      * Returns FALSE if an error occurs during a synchronous search or
      * if the search could not start. It returns TRUE otherwise.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native byte CFNetServiceBrowserSearchForServices(CFNetServiceBrowserRef browser, CFStringRef domain,
@@ -1350,19 +1608,19 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceBrowserStopSearch()
-     * <p>
+     * 
      * Discussion:
      * Stops an outstanding browser search.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * browser:
      * Network Service Browser performing the search. Must be
      * non-NULL.
-     * <p>
+     * 
      * error:
      * Error value to be returned in "error" in
      * CFNetServiceBrowserStartServiceSearch if search is being
@@ -1371,7 +1629,13 @@ public final class CFNetwork {
      * CFNetServiceBrowserStartServiceSearch to return FALSE. In
      * asynchronous mode, the client call back will be called with
      * this error. Can be NULL.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void CFNetServiceBrowserStopSearch(CFNetServiceBrowserRef browser,
@@ -1379,29 +1643,35 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceBrowserScheduleWithRunLoop()
-     * <p>
+     * 
      * Discussion:
      * Schedules the browser on a run loop and mode. Use this to place
      * the given browser into asynchronous mode. The client callback
      * will be triggered via one of the scheduled run loops; It is the
      * caller's responsibility to ensure that at least one of the
      * scheduled run loops is being run.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * browser:
      * Network Service Browser to schedule. Must be non-NULL.
-     * <p>
+     * 
      * runLoop:
      * A reference to a runloop on which the browser should be
      * scheduled. Must be non-NULL.
-     * <p>
+     * 
      * runLoopMode:
      * The mode on which to schedule the browser. Must be non-NULL.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void CFNetServiceBrowserScheduleWithRunLoop(CFNetServiceBrowserRef browser,
@@ -1409,26 +1679,32 @@ public final class CFNetwork {
 
     /**
      * CFNetServiceBrowserUnscheduleFromRunLoop()
-     * <p>
+     * 
      * Discussion:
      * Unschedules the browser from a run loop and mode.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * browser:
      * Network Service Browser to unschedule. Must be non-NULL.
-     * <p>
+     * 
      * runLoop:
      * A reference to a runloop from which the browser should be
      * unscheduled. Must be non-NULL.
-     * <p>
+     * 
      * runLoopMode:
      * The mode from which to unschedule the browser. Must be
      * non-NULL.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void CFNetServiceBrowserUnscheduleFromRunLoop(CFNetServiceBrowserRef browser,
@@ -1448,37 +1724,43 @@ public final class CFNetwork {
 
     /**
      * CFStreamCreatePairWithSocketToCFHost()
-     * <p>
+     * 
      * Discussion:
      * Given a CFHostRef, this function will create a pair of streams
      * suitable for connecting to the host. If there is a failure
      * during creation, the stream references will be set to NULL.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * The CFAllocator which should be used to allocate memory for the
      * streams. If this reference is not a valid CFAllocator, the
      * behavior is undefined.
-     * <p>
+     * 
      * host:
      * A reference to a CFHost to which the streams are desired. If
      * unresolved, the host will be resolved prior to connecting.
-     * <p>
+     * 
      * port:
      * The port to which the connection should be established.
-     * <p>
+     * 
      * readStream:
      * A pointer to a CFReadStreamRef which will be set to the new
      * read stream instance. Can be set to NULL if not desired.
-     * <p>
+     * 
      * writeStream:
      * A pointer to a CFWriteStreamRef which will be set to the new
      * write stream instance. Can be set to NULL if not desired.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void CFStreamCreatePairWithSocketToCFHost(CFAllocatorRef alloc, CFHostRef host, int port,
@@ -1486,35 +1768,41 @@ public final class CFNetwork {
 
     /**
      * CFStreamCreatePairWithSocketToNetService()
-     * <p>
+     * 
      * Discussion:
      * Given a CFNetService, this function will create a pair of streams
      * suitable for connecting to the service. If there is a failure
      * during creation, the stream references will be set to NULL.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * The CFAllocator which should be used to allocate memory for the
      * streams. If this reference is not a valid CFAllocator, the
      * behavior is undefined.
-     * <p>
+     * 
      * service:
      * A reference to a CFNetService to which the streams are desired.
      * If unresolved, the service will be resolved prior to
      * connecting.
-     * <p>
+     * 
      * readStream:
      * A pointer to a CFReadStreamRef which will be set to the new
      * read stream instance. Can be set to NULL if not desired.
-     * <p>
+     * 
      * writeStream:
      * A pointer to a CFWriteStreamRef which will be set to the new
      * write stream instance. Can be set to NULL if not desired.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Use Network framework instead
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void CFStreamCreatePairWithSocketToNetService(CFAllocatorRef alloc, CFNetServiceRef service,
@@ -1522,36 +1810,41 @@ public final class CFNetwork {
 
     /**
      * CFReadStreamCreateWithFTPURL()
-     * <p>
+     * 
      * DEPRECATED: Use NSURLSessionAPI for ftp requests
-     * <p>
+     * 
      * Discussion:
      * Create an FTP read stream for downloading operation from an FTP
      * URL. If the URL refers to a directory, the stream is a filtered
      * line-at-a-time read stream corresponding to the listing results
      * provided by the server. If it's a file, then the stream is a
      * regular read stream providing the data for that file.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * A pointer to the CFAllocator which should be used to allocate
      * memory for the CF read stream and its storage for values. If
      * this reference is not a valid CFAllocator, the behavior is
      * undefined.
-     * <p>
+     * 
      * ftpURL:
      * A pointer to a CFURL structure created by CFURLCreateWithString
      * function. If this parameter is not a pointer to a valid CFURL
      * structure, the behavior is undefined.
-     * <p>
+     * 
      * Result:
      * A pointer to the CF read stream created, or NULL if failed. It is
      * caller's responsibility to release the memory allocated for the
      * read stream.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Generated
     @Deprecated
@@ -1560,41 +1853,46 @@ public final class CFNetwork {
 
     /**
      * CFFTPCreateParsedResourceListing()
-     * <p>
+     * 
      * DEPRECATED: Use NSURLSessionAPI for ftp requests
-     * <p>
+     * 
      * Discussion:
      * Parse a line of file or folder listing of Unix format, and store
      * the extracted result in a CFDictionary.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * A pointer to the CFAllocator which should be used to allocate
      * memory for the CFDictionary to hold resource info. If this
      * reference is not a valid CFAllocator, the behavior is undefined.
-     * <p>
+     * 
      * buffer:
      * A pointer to a buffer that may hold lines of resource listing,
      * but only the first line starting from buffer[0] will be parsed
      * each call.
-     * <p>
+     * 
      * bufferLength:
      * The maximum buffer size in bytes started from the location
      * pointed by "buffer."
-     * <p>
+     * 
      * parsed:
      * A pointer to a CFDictionary pointer. The dictionary holds the
      * extracted resource information. When parsing fails, a NULL
      * pointer will be returned. It is caller's responsibility to
      * release the memory allocated for the dictionary.
-     * <p>
+     * 
      * Result:
      * The number of bytes consumed from buffer, 0 if there are not
      * enough bytes, or -1 if a parse failure occurs.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Generated
     @Deprecated
@@ -1606,35 +1904,40 @@ public final class CFNetwork {
 
     /**
      * CFWriteStreamCreateWithFTPURL()
-     * <p>
+     * 
      * DEPRECATED: Use NSURLSessionAPI for ftp requests
-     * <p>
+     * 
      * Discussion:
      * Create an FTP write stream for uploading operation to a FTP URL.
      * If the URL specifies a directory, the open will be followed by a
      * close event/state and the directory will have been created.
      * Intermediary directory structure is not created.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * A pointer to the CFAllocator which should be used to allocate
      * memory for the CF read stream and its storage for values. If
      * this reference is not a valid CFAllocator, the behavior is
      * undefined.
-     * <p>
+     * 
      * ftpURL:
      * A pointer to a CFURL structure created by CFURLCreateWithString
      * function. If this parameter is not a pointer to a valid CFURL
      * structure, the behavior is undefined.
-     * <p>
+     * 
      * Result:
      * A pointer to the CF write stream created, or NULL if failed. It
      * is caller's responsibility to release the memory allocated for the
      * write stream.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Generated
     @Deprecated
@@ -1643,15 +1946,18 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageGetTypeID()
-     * <p>
+     * 
      * Discussion:
      * Return the unique type for this class.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Result:
      * A unique CFType for CFHTTPMessage.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1660,37 +1966,40 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageCreateRequest()
-     * <p>
+     * 
      * Discussion:
      * Create an HTTPMessage from an HTTP method, url and version.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * A pointer to the CFAllocator which should be used to allocate
      * memory for the CF read stream and its storage for values. If
      * this reference is not a valid CFAllocator, the behavior is
      * undefined.
-     * <p>
+     * 
      * requestMethod:
      * A pointer to a CFString indicating the method of request. For a
      * "GET" request, for example, the value would be CFSTR("GET").
-     * <p>
+     * 
      * url:
      * A pointer to a CFURL structure created any of the several
      * CFURLCreate... functions. If this parameter is not a pointer
      * to a valid CFURL structure, the behavior is undefined.
-     * <p>
+     * 
      * httpVersion:
      * A pointer to a CFString indicating the version of request.
-     * <p>
+     * 
      * Result:
      * A pointer to the CFHTTPMessage created, or NULL if failed. It is
      * caller's responsibility to release the memory allocated for the
      * message.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1699,37 +2008,40 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageCreateResponse()
-     * <p>
+     * 
      * Discussion:
      * Create an HTTPMessage from an HTTP status code, description and
      * version.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * A pointer to the CFAllocator which should be used to allocate
      * memory for the CF read stream and its storage for values. If
      * this reference is not a valid CFAllocator, the behavior is
      * undefined.
-     * <p>
+     * 
      * statusCode:
      * An integer status code for the response.
-     * <p>
+     * 
      * statusDescription:
      * A pointer to a CFString for the status. Pass NULL to use the
      * standard description for the given status code, as found in RFC
      * 2616.
-     * <p>
+     * 
      * httpVersion:
      * A pointer to a CFString for the HTTP version.
-     * <p>
+     * 
      * Result:
      * A pointer to the CFHTTPMessage created, or NULL if failed. It is
      * caller's responsibility to release the memory allocated for the
      * message.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1738,30 +2050,33 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageCreateEmpty()
-     * <p>
+     * 
      * Discussion:
      * Creates an empty request or response, which you can then append
      * bytes to via CFHTTPMessageAppendBytes().
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * A pointer to the CFAllocator which should be used to allocate
      * memory for the CF read stream and its storage for values. If
      * this reference is not a valid CFAllocator, the behavior is
      * undefined.
-     * <p>
+     * 
      * isRequest:
      * A boolean. Pass kCFBooleanTrue if the message should be a
      * request.
-     * <p>
+     * 
      * Result:
      * A pointer to the CFHTTPMessage created, or NULL if failed. It is
      * caller's responsibility to release the memory allocated for the
      * message.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1769,29 +2084,32 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageCreateCopy()
-     * <p>
+     * 
      * Discussion:
      * Creates a copy of a CFHTTPMessage.
-     * <p>
+     * 
      * Mac OS X threading:
      * Not thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * A pointer to the CFAllocator which should be used to allocate
      * memory for the CF read stream and its storage for values. If
      * this reference is not a valid CFAllocator, the behavior is
      * undefined.
-     * <p>
+     * 
      * message:
      * A pointer to the CFHTTPMessage to be copied. If the message is
      * NULL, the behavior is undefined.
-     * <p>
+     * 
      * Result:
      * A pointer to the CFHTTPMessage created, or NULL if failed. It is
      * caller's responsibility to release the memory allocated for the
      * message.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1799,23 +2117,26 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageIsRequest()
-     * <p>
+     * 
      * Discussion:
      * Returns whether the CFHTTPMessage is a request or a response.
-     * <p>
+     * 
      * Mac OS X threading:
      * Not thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * message:
      * A pointer to the CFHTTPMessage to be copied. If the message is
      * NULL, the behavior is undefined.
-     * <p>
+     * 
      * Result:
      * A Boolean. A value of kCFBooleanTrue indicates the message is a
      * request. A value of kCFBooleanFalse indicates the message is a
      * response.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1823,22 +2144,25 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageCopyVersion()
-     * <p>
+     * 
      * Discussion:
      * Returns the HTTP version.
-     * <p>
+     * 
      * Mac OS X threading:
      * Not thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * message:
      * A pointer to the CFHTTPMessage to be copied. If the message is
      * NULL, the behavior is undefined.
-     * <p>
+     * 
      * Result:
      * A pointer to a CFString, or NULL if failed. It is caller's
      * responsibility to release the memory allocated for the string.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1846,22 +2170,25 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageCopyBody()
-     * <p>
+     * 
      * Discussion:
      * Returns the body of the message.
-     * <p>
+     * 
      * Mac OS X threading:
      * Not thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * message:
      * A pointer to the CFHTTPMessage to be copied. If the message is
      * NULL, the behavior is undefined.
-     * <p>
+     * 
      * Result:
      * A pointer to a CFData, or NULL if failed. It is caller's
      * responsibility to release the memory allocated for the data.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1869,22 +2196,25 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageSetBody()
-     * <p>
+     * 
      * Discussion:
      * Sets the body of the message from a CFData.
-     * <p>
+     * 
      * Mac OS X threading:
      * Not thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * message:
      * A pointer to the CFHTTPMessage to be copied. If the message is
      * NULL, the behavior is undefined.
-     * <p>
+     * 
      * bodyData:
      * A pointer to a CFData containing the body to be set. If the
      * bodyData is NULL, the behavior is undefined.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1892,26 +2222,29 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageCopyHeaderFieldValue()
-     * <p>
+     * 
      * Discussion:
      * Returns the specified header field.
-     * <p>
+     * 
      * Mac OS X threading:
      * Not thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * message:
      * A pointer to the CFHTTPMessage to be copied. If the message is
      * NULL, the behavior is undefined.
-     * <p>
+     * 
      * headerField:
      * A pointer to the CFString. If the headerField is NULL, the
      * behavior is undefined.
-     * <p>
+     * 
      * Result:
      * A pointer to a CFString, or NULL if failed. It is caller's
      * responsibility to release the memory allocated for the string.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1920,22 +2253,25 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageCopyAllHeaderFields()
-     * <p>
+     * 
      * Discussion:
      * Returns a CFDictionary containing all of the header fields.
-     * <p>
+     * 
      * Mac OS X threading:
      * Not thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * message:
      * A pointer to the CFHTTPMessage to be copied. If the message is
      * NULL, the behavior is undefined.
-     * <p>
+     * 
      * Result:
      * A pointer to a CFDictionary, or NULL if failed. It is caller's
      * responsibility to release the memory allocated for the dictionary.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1943,26 +2279,29 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageSetHeaderFieldValue()
-     * <p>
+     * 
      * Discussion:
      * Sets the value of the specified header field.
-     * <p>
+     * 
      * Mac OS X threading:
      * Not thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * message:
      * A pointer to the CFHTTPMessage to be copied. If the message is
      * NULL, the behavior is undefined.
-     * <p>
+     * 
      * headerField:
      * A pointer to the CFString. If headerField is NULL, the behavior
      * is undefined.
-     * <p>
+     * 
      * value:
      * A pointer to the CFString containing the value to set. Set the
      * value to NULL to remove the header field.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -1971,30 +2310,33 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageAppendBytes()
-     * <p>
+     * 
      * Discussion:
      * Appends the given bytes to the message given (parsing out any
      * control information if appropriate). Returns kCFBooleanFalse if
      * a parsing error occurs while processing the new data.
-     * <p>
+     * 
      * Mac OS X threading:
      * Not thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * message:
      * A pointer to the CFHTTPMessage to be copied. If the message is
      * NULL, the behavior is undefined.
-     * <p>
+     * 
      * newBytes:
      * A pointer to the bytes. If newBytes is NULL, the behavior is
      * undefined.
-     * <p>
+     * 
      * numBytes:
      * A CFIndex of the number of bytes to append.
-     * <p>
+     * 
      * Result:
      * A Boolean indicating success or failure.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2004,22 +2346,25 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageIsHeaderComplete()
-     * <p>
+     * 
      * Discussion:
      * Returns whether further header data is expected by the message.
-     * <p>
+     * 
      * Mac OS X threading:
      * Not thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * message:
      * A pointer to the CFHTTPMessage to be copied. If the message is
      * NULL, the behavior is undefined.
-     * <p>
+     * 
      * Result:
      * A Boolean. A value of kCFBooleanTrue indicates the header is
      * complete and no further data is expected.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2027,23 +2372,26 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageCopySerializedMessage()
-     * <p>
+     * 
      * Discussion:
      * Creates a self-contained copy of a CFHTTPMessage. This would be
      * suitable for persistent storage or for transmitting over the
      * network independently.
-     * <p>
+     * 
      * Mac OS X threading:
      * Not thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * request:
      * A pointer to the CFHTTPMessage to be serialized.
-     * <p>
+     * 
      * Result:
      * A pointer to a CFData, or NULL if failed. It is caller's
      * responsibility to release the memory allocated for the data.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2051,21 +2399,24 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageCopyRequestURL()
-     * <p>
+     * 
      * Discussion:
      * Creates a copy of the request URL.
-     * <p>
+     * 
      * Mac OS X threading:
      * Not thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * request:
      * A pointer to the CFHTTPMessage.
-     * <p>
+     * 
      * Result:
      * A pointer to a CFURL, or NULL if failed. It is caller's
      * responsibility to release the memory allocated for the url.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2073,21 +2424,24 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageCopyRequestMethod()
-     * <p>
+     * 
      * Discussion:
      * Creates a copy of the request method.
-     * <p>
+     * 
      * Mac OS X threading:
      * Not thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * request:
      * A pointer to the CFHTTPMessage.
-     * <p>
+     * 
      * Result:
      * A pointer to a CFString, or NULL if failed. It is caller's
      * responsibility to release the memory allocated for the string.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2095,43 +2449,46 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageAddAuthentication()
-     * <p>
+     * 
      * Discussion:
      * Adds authentication to the request. Tries to modify request to
      * contain the authentication information requested by the failed
      * response (which presumably is a 401 or 407 response).
-     * <p>
+     * 
      * Mac OS X threading:
      * Not thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * request:
      * A pointer to a CFHTTPMessage request.
-     * <p>
+     * 
      * authenticationFailureResponse:
      * A pointer to a CFHTTPMessage of the failed response.
-     * <p>
+     * 
      * username:
      * A pointer to a CFString containing the user name to
      * authenticate.
-     * <p>
+     * 
      * password:
      * A pointer to a CFString containing the password of the user.
-     * <p>
+     * 
      * authenticationScheme:
      * A pointer to a CFString containing the authentication scheme to
      * use to authenticate. If authenticationScheme is NULL, strongest
      * supported scheme listed authenticationFailureResponse will be
      * used.
-     * <p>
+     * 
      * forProxy:
      * A boolean indicating whether the authentication applies to a
      * proxy or not.
-     * <p>
+     * 
      * Result:
      * A pointer to a CFString, or NULL if failed. It is caller's
      * responsibility to release the memory allocated for the string.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2141,21 +2498,24 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageGetResponseStatusCode()
-     * <p>
+     * 
      * Discussion:
      * Returns the status code for the response.
-     * <p>
+     * 
      * Mac OS X threading:
      * Not thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * response:
      * A pointer to the CFHTTPMessage to be copied. If the message is
      * NULL, the behavior is undefined.
-     * <p>
+     * 
      * Result:
      * A UInt32 indicating the status code.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2164,23 +2524,26 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageCopyResponseStatusLine()
-     * <p>
+     * 
      * Discussion:
      * Returns the status line for the response.
-     * <p>
+     * 
      * Mac OS X threading:
      * Not thread safe
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * response:
      * A pointer to the CFHTTPMessage to be copied. If the message is
      * NULL, the behavior is undefined.
-     * <p>
+     * 
      * Result:
      * A CFString indicating the status code, or NULL if failed. It is
      * caller's responsibility to release the memory allocated for the
      * string.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2189,9 +2552,9 @@ public final class CFNetwork {
     /**
      * Creation routines
      * CFReadStreamCreateForHTTPRequest() *** DEPRECATED ***
-     * <p>
+     * 
      * DEPRECATED: Use NSURLSession API for http requests
-     * <p>
+     * 
      * Discussion:
      * Create an HTTP read stream for the response to the given request.
      * When the stream is opened, it will begin transmitting the
@@ -2202,23 +2565,28 @@ public final class CFNetwork {
      * reported, if there are no data bytes). When an HTTP/1.1 server
      * returns a chunked a response, the chunks will be formed into one
      * continuous stream.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * A pointer to the CFAllocator which should be used to allocate
      * memory for the CF read stream and its storage for values. If
      * this reference is not a valid CFAllocator, the behavior is
      * undefined.
-     * <p>
+     * 
      * request:
      * A pointer to a CFHTTPMessage created by the
      * CFHTTPMessageCreateRequest function.
-     * <p>
+     * 
      * Result:
      * A pointer to the CF read stream created, or NULL if failed. It is
      * caller's responsibility to release the memory allocated for the
      * read stream.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSession API for http requests
      */
     @Generated
     @Deprecated
@@ -2228,9 +2596,9 @@ public final class CFNetwork {
 
     /**
      * CFReadStreamCreateForStreamedHTTPRequest() *** DEPRECATED ***
-     * <p>
+     * 
      * DEPRECATED: Use NSURLSession API for http requests
-     * <p>
+     * 
      * Discussion:
      * Creates a read stream for the response to the given
      * requestHeaders plus requestBody. Use in preference to
@@ -2245,27 +2613,32 @@ public final class CFNetwork {
      * transfer-encoding will be added to requestHeaders, and bytes read
      * from requestBody will be transmitted chunked. The body of
      * requestHeaders is ignored.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * A pointer to the CFAllocator which should be used to allocate
      * memory for the CF read stream and its storage for values. If
      * this reference is not a valid CFAllocator, the behavior is
      * undefined.
-     * <p>
+     * 
      * requestHeaders:
      * A pointer to a CFHTTPMessage created by the
      * CFHTTPMessageCreateRequest function. The body of requestHeaders
      * is ignored.
-     * <p>
+     * 
      * requestBody:
      * A pointer to a CFReadStream.
-     * <p>
+     * 
      * Result:
      * A pointer to the CF read stream created, or NULL if failed. It is
      * caller's responsibility to release the memory allocated for the
      * read stream.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSession API for http requests
      */
     @Generated
     @Deprecated
@@ -2275,12 +2648,15 @@ public final class CFNetwork {
 
     /**
      * CFHTTPAuthenticationGetTypeID()
-     * <p>
+     * 
      * Discussion:
      * Returns the type identifier of all CFHTTPAuthentication instances.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2289,29 +2665,32 @@ public final class CFNetwork {
 
     /**
      * CFHTTPAuthenticationCreateFromResponse()
-     * <p>
+     * 
      * Discussion:
      * Based on a response of 401 or 407, this function will create a
      * new authentication object which can be used for adding
      * credentials to future requests.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The API's to CFHTTPAuthenticationRef are thread-safe so long as
      * multiple threads are not altering the same
      * CFHTTPAuthenticationRef at the same time.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * Allocator to use for creating authentication object
-     * <p>
+     * 
      * response:
      * Failed response.
-     * <p>
+     * 
      * Result:
      * A freshly created authentication object useful for applying
      * authentication credentials to new requests.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2320,7 +2699,7 @@ public final class CFNetwork {
 
     /**
      * CFHTTPAuthenticationIsValid()
-     * <p>
+     * 
      * Discussion:
      * Returns TRUE if the given authentication information was
      * instantiated correctly and contains enough information in order
@@ -2328,18 +2707,18 @@ public final class CFNetwork {
      * still contain information which is useful to the user, e.g.
      * unsupported method name. An invalid object may be queried for
      * information but may not be applied to a request.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The API's to CFHTTPAuthenticationRef are thread-safe so long as
      * multiple threads are not altering the same
      * CFHTTPAuthenticationRef at the same time.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * auth:
      * The authentication information being queried.
-     * <p>
+     * 
      * error:
      * Reference to a CFStreamError which will be populated in the
      * case of an error in creation. Pass NULL if not interested in
@@ -2347,10 +2726,13 @@ public final class CFNetwork {
      * kCFStreamErrorDomainHTTP, and the error code will be one of
      * those defined in CFHTTPStream.h or one of those listed as
      * CFStreamErrorHTTPAuthentication.
-     * <p>
+     * 
      * Result:
      * TRUE or FALSE depending on whether the authentication object is
      * good for applying credentials to further requests.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2359,28 +2741,31 @@ public final class CFNetwork {
 
     /**
      * CFHTTPAuthenticationAppliesToRequest()
-     * <p>
+     * 
      * Discussion:
      * Returns TRUE if the given request requires credentials based upon
      * the given authentication information.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The API's to CFHTTPAuthenticationRef are thread-safe so long as
      * multiple threads are not altering the same
      * CFHTTPAuthenticationRef at the same time.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * auth:
      * The authentication information being queried.
-     * <p>
+     * 
      * request:
      * The request which is believed to need the given authentication.
-     * <p>
+     * 
      * Result:
      * TRUE if the given authentication information should be applied to
      * the request, otherwise FALSE is returned.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2389,26 +2774,29 @@ public final class CFNetwork {
 
     /**
      * CFHTTPAuthenticationRequiresOrderedRequests()
-     * <p>
+     * 
      * Discussion:
      * Some authentication methods require that future requests must be
      * performed in an ordered manner, so that information from a
      * response can be added to a following request.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The API's to CFHTTPAuthenticationRef are thread-safe so long as
      * multiple threads are not altering the same
      * CFHTTPAuthenticationRef at the same time.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * auth:
      * The authentication information being queried.
-     * <p>
+     * 
      * Result:
      * Returns TRUE if the given authentication method requires ordered
      * requests.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2416,31 +2804,31 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageApplyCredentials()
-     * <p>
+     * 
      * Discussion:
      * Perform the authentication method required on the request using
      * the given username and password.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The API's to CFHTTPAuthenticationRef are thread-safe so long as
      * multiple threads are not altering the same
      * CFHTTPAuthenticationRef at the same time.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * request:
      * The request which is to receive the credentials.
-     * <p>
+     * 
      * auth:
      * The authentication information for the given request.
-     * <p>
+     * 
      * username:
      * The username to use for performing the authentication.
-     * <p>
+     * 
      * password:
      * The password to use for performing the authentication.
-     * <p>
+     * 
      * error:
      * Reference to a CFStreamError which will be populated with the
      * error information should one occur during the application of
@@ -2448,10 +2836,13 @@ public final class CFNetwork {
      * reason. The error domain will be kCFStreamErrorDomainHTTP, and
      * the error code will be one of those define in CFHTTPStream.h or
      * one of those listed as CFStreamErrorHTTPAuthentication.
-     * <p>
+     * 
      * Result:
      * TRUE will be returned if the application of the credentials to
      * the request was successful, otherwise FALSE is returned.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2461,29 +2852,29 @@ public final class CFNetwork {
 
     /**
      * CFHTTPMessageApplyCredentialDictionary()
-     * <p>
+     * 
      * Discussion:
      * Perform the authentication method required on the request using
      * the given credential information.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The API's to CFHTTPAuthenticationRef are thread-safe so long as
      * multiple threads are not altering the same
      * CFHTTPAuthenticationRef at the same time.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * request:
      * The request which is to receive the credentials.
-     * <p>
+     * 
      * auth:
      * The authentication information for the given request.
-     * <p>
+     * 
      * dict:
      * A dictionary containing credentials to be applied to the
      * request. Valid keys are declared above.
-     * <p>
+     * 
      * error:
      * Reference to a CFStreamError which will be populated with the
      * error information should one occur during the application of
@@ -2491,10 +2882,13 @@ public final class CFNetwork {
      * reason. The error domain will be kCFStreamErrorDomainHTTP, and
      * the error code will be one of those define in CFHTTPStream.h or
      * one of those listed as CFStreamErrorHTTPAuthentication.
-     * <p>
+     * 
      * Result:
      * TRUE will be returned if the application of the credentials to
      * the request was successful, otherwise FALSE is returned.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2504,28 +2898,31 @@ public final class CFNetwork {
 
     /**
      * CFHTTPAuthenticationCopyRealm()
-     * <p>
+     * 
      * Discussion:
      * Some authentication techniques provide for namespaces on top of
      * domains. This call will return the authentication information's
      * namespace if there is one, otherwise it will return NULL. This
      * namespace is usually used for prompting the application user for
      * a name and password.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The API's to CFHTTPAuthenticationRef are thread-safe so long as
      * multiple threads are not altering the same
      * CFHTTPAuthenticationRef at the same time.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * auth:
      * The authentication information being queried.
-     * <p>
+     * 
      * Result:
      * This call will return the authentication information's namespace
      * if there is one, otherwise it will return NULL.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2533,28 +2930,31 @@ public final class CFNetwork {
 
     /**
      * CFHTTPAuthenticationCopyDomains()
-     * <p>
+     * 
      * Discussion:
      * Returns a list of domain URL's on which the given authentication
      * should be applied. This function is provided mostly for
      * informational purposes. CFHTTPAuthenticationAppliesToRequest
      * should be used in order to check whether a request requires the
      * authentication.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The API's to CFHTTPAuthenticationRef are thread-safe so long as
      * multiple threads are not altering the same
      * CFHTTPAuthenticationRef at the same time.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * auth:
      * The authentication information being queried.
-     * <p>
+     * 
      * Result:
      * Returns a list of domain URL's on which the given authentication
      * should be applied.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2562,26 +2962,29 @@ public final class CFNetwork {
 
     /**
      * CFHTTPAuthenticationCopyMethod()
-     * <p>
+     * 
      * Discussion:
      * Returns the method of authentication which will be performed when
      * applying credentials. The strongest method of authentication
      * will be chosen in the case of multiple choices.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The API's to CFHTTPAuthenticationRef are thread-safe so long as
      * multiple threads are not altering the same
      * CFHTTPAuthenticationRef at the same time.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * auth:
      * The authentication information being queried.
-     * <p>
+     * 
      * Result:
      * Returns the method of authentication which will be performed when
      * applying credentials.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2589,25 +2992,28 @@ public final class CFNetwork {
 
     /**
      * CFHTTPAuthenticationRequiresUserNameAndPassword()
-     * <p>
+     * 
      * Discussion:
      * Returns TRUE if the chosen authentication scheme requires a
      * username and password.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The API's to CFHTTPAuthenticationRef are thread-safe so long as
      * multiple threads are not altering the same
      * CFHTTPAuthenticationRef at the same time.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * auth:
      * The authentication information being queried.
-     * <p>
+     * 
      * Result:
      * Returns TRUE if the chosen authentication scheme requires a
      * username and password.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2615,26 +3021,29 @@ public final class CFNetwork {
 
     /**
      * CFHTTPAuthenticationRequiresAccountDomain()
-     * <p>
+     * 
      * Discussion:
      * Returns TRUE if the chosen authentication scheme requires a
      * domain for authentication. Currently, this will return TRUE for
      * "NTLM" and FALSE for the other methods.
-     * <p>
+     * 
      * Mac OS X threading:
      * Thread safe
      * The API's to CFHTTPAuthenticationRef are thread-safe so long as
      * multiple threads are not altering the same
      * CFHTTPAuthenticationRef at the same time.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * auth:
      * The authentication information being queried.
-     * <p>
+     * 
      * Result:
      * Returns TRUE if the chosen authentication scheme requires a
      * domain for authentication.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2642,27 +3051,32 @@ public final class CFNetwork {
 
     /**
      * CFNetDiagnosticCreateWithStreams()
-     * <p>
+     * 
      * Discussion:
      * Creates a CFNetDiagnosticRef from a pair of CFStreams. Either
      * stream may be NULL. This is the preferred interface for creating
      * a CFNetDiagnosticRef.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * The CF allocator to use.
-     * <p>
+     * 
      * readStream:
      * CFReadStreamRef referring to the failed connection. May be NULL.
-     * <p>
+     * 
      * writeStream:
      * CFWriteStreamRef referring to the failed connection. May be
      * NULL.
-     * <p>
+     * 
      * Result:
      * A CFNetDiagnosticRef referring to the current networking issue.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 11.0
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFNetDiagnosticRef CFNetDiagnosticCreateWithStreams(CFAllocatorRef alloc,
@@ -2670,67 +3084,82 @@ public final class CFNetwork {
 
     /**
      * CFNetDiagnosticCreateWithURL()
-     * <p>
+     * 
      * Discussion:
      * Creates a CFNetDiagnosticRef based on a CFURLRef passed in by the
      * application.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * alloc:
      * The CF allocator to use.
-     * <p>
+     * 
      * url:
      * CFURLRef referring to the failed connection.
-     * <p>
+     * 
      * Result:
      * A CFNetDiagnosticRef referring to the current networking issue.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 11.0
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native CFNetDiagnosticRef CFNetDiagnosticCreateWithURL(CFAllocatorRef alloc, CFURLRef url);
 
     /**
      * CFNetDiagnosticSetName()
-     * <p>
+     * 
      * Discussion:
      * If the framework requires an application name to be displayed to
      * the user it will derive it from the bundle identifier of the
      * currently running application, in that application's current
      * localization. If you want to override that you may use
      * CFNetDiagnosticSetName to specify a CFStringRef to be used.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * details:
      * CFNetDiagnosticRef referring to the current problem.
-     * <p>
+     * 
      * name:
      * The localized name that should appear to the user when
      * referring to the application.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 11.0
      */
+    @Deprecated
     @Generated
     @CFunction
     public static native void CFNetDiagnosticSetName(CFNetDiagnosticRef details, CFStringRef name);
 
     /**
      * CFNetDiagnosticDiagnoseProblemInteractively()
-     * <p>
+     * 
      * Discussion:
      * Opens the Network Diagnostics window and returns immediately once
      * it is open. The client passes in a CFNetDiagnosticRef built with
      * one of the creator functions.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * details:
      * CFNetDiagnosticRef referring to the current problem.
-     * <p>
+     * 
      * Result:
      * A CFNetDiagnosticStatus. Will either be CFNetDiagnosticNoErr, or
      * CFNetDiagnosticErr if there was an error attempting to run the
      * diagnosis.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 11.0
      */
+    @Deprecated
     @Generated
     @CFunction
     @NInt
@@ -2738,7 +3167,7 @@ public final class CFNetwork {
 
     /**
      * CFNetDiagnosticCopyNetworkStatusPassively()
-     * <p>
+     * 
      * Discussion:
      * Returns a status value that can be used to display basic
      * information about the connection. If the caller wishes they may
@@ -2748,18 +3177,23 @@ public final class CFNetwork {
      * want a description they may pass in NULL.
      * CFNetDiagnosticCopyNetworkStatusPassively() is guaranteed not to
      * cause network activity.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * details:
      * CFNetDiagnosticRef referring to the current problem.
-     * <p>
+     * 
      * description:
      * A pointer to a CFStringRef that, upon return, will point to a
      * localized string containing a description of the current
      * network status. May be NULL. If it is not NULL, the client must
      * call CFRelease on the returned object.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 11.0
      */
+    @Deprecated
     @Generated
     @CFunction
     @NInt
@@ -2768,15 +3202,17 @@ public final class CFNetwork {
 
     /**
      * [@function] CFNetworkCopySystemProxySettings
-     * <p>
+     * 
      * Returns a CFDictionary containing the current system internet proxy settings.
-     *
+     * 
      * @return Returns a dictionary containing key-value pairs that represent
      *         the current internet proxy settings. See below for definitions of the keys and
      *         values.
      *         NULL if no proxy settings have been defined or if an error
      *         was encountered.
      *         The caller is responsible for releasing the returned dictionary.
+     * 
+     *         API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2784,25 +3220,28 @@ public final class CFNetwork {
 
     /**
      * CFNetworkCopyProxiesForURL()
-     * <p>
+     * 
      * Discussion:
      * Given a URL and a proxy dictionary, determines the ordered list
      * of proxies that should be used to download the given URL.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * url:
      * The URL to be accessed
-     * <p>
+     * 
      * proxySettings:
      * A dictionary describing the available proxy settings; the
      * dictionary's format should match the dictionary returned
      * by CFNetworkCopySystemProxySettings described below.
-     * <p>
+     * 
      * Result:
      * An array of dictionaries; each dictionary describes a single
      * proxy. See the comment at the top of this file for how to
      * interpret the returned dictionaries.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2810,27 +3249,30 @@ public final class CFNetwork {
 
     /**
      * CFNetworkCopyProxiesForAutoConfigurationScript()
-     * <p>
+     * 
      * Discussion:
      * Synchronously executes the given proxy auto-configuration script
      * and returns a valid proxyList and NULL error upon success or a
      * NULL proxyList and valid error on failure.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * proxyAutoConfigurationScript:
      * A CFString containing the code of the script to be executed.
-     * <p>
+     * 
      * targetURL:
      * The URL that should be input in to the auto-configuration script.
-     * <p>
+     * 
      * error:
      * A return argument that will contain a valid error in case of
      * failure.
-     * <p>
+     * 
      * Result:
      * An array of dictionaries describing the proxies returned by the
      * script or NULL on failure.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2839,7 +3281,7 @@ public final class CFNetwork {
 
     /**
      * CFNetworkExecuteProxyAutoConfigurationScript()
-     * <p>
+     * 
      * Discussion:
      * Begins the process of executing proxyAutoConfigurationScript to
      * determine the correct proxy to use to retrieve targetURL. The
@@ -2851,25 +3293,28 @@ public final class CFNetwork {
      * terminate the request before completion. The returned
      * RunLoopSource will be removed from all run loops and modes on
      * which it was scheduled after the callback returns.
-     * <p>
+     * 
      * Parameters:
-     * <p>
+     * 
      * proxyAutoConfigurationScript:
      * A CFString containing the code of the script to be executed.
-     * <p>
+     * 
      * targetURL:
      * The URL that should be passed to the auto-configuration script.
-     * <p>
+     * 
      * cb:
      * A client callback to notify the caller of completion.
-     * <p>
+     * 
      * clientContext:
      * a stream context containing a client info object and optionally
      * retain / release callbacks for said info object.
-     * <p>
+     * 
      * Result:
      * A CFRunLoopSource which the client can use to schedule execution
      * of the AutoConfiguration Script.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2880,7 +3325,7 @@ public final class CFNetwork {
 
     /**
      * CFNetworkExecuteProxyAutoConfigurationURL()
-     * <p>
+     * 
      * Discussion:
      * As CFNetworkExecuteProxyAutoConfigurationScript(), above, except
      * that CFNetworkExecuteProxyAutoConfigurationURL will additionally
@@ -2888,6 +3333,9 @@ public final class CFNetwork {
      * JavaScript string, and then execute that script.
      * Ownership for the returned CFRunLoopSourceRef follows the copy rule,
      * the client is responsible for releasing the object.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CFunction
@@ -2898,10 +3346,13 @@ public final class CFNetwork {
 
     /**
      * kCFErrorDomainCFNetwork
-     * <p>
+     * 
      * Discussion:
      * Error domain for all errors originating in CFNetwork. Error codes
      * may be interpreted using the list below.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2909,10 +3360,13 @@ public final class CFNetwork {
 
     /**
      * kCFErrorDomainWinSock
-     * <p>
+     * 
      * Discussion:
      * On Windows, errors originating from WinSock are represented using
      * this domain.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2921,10 +3375,13 @@ public final class CFNetwork {
     /**
      * Keys used by CFNetwork to pass additional error information back to the user within CFError's userInfo dictionary
      * kCFURLErrorFailingURLErrorKey
-     * <p>
+     * 
      * Discussion:
      * When an NSURLConnection or NSURLDownload error occurs, this key's
      * value is set to the URL which caused a load to fail
+     * 
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @CVariable()
@@ -2932,11 +3389,14 @@ public final class CFNetwork {
 
     /**
      * kCFURLErrorFailingURLStringErrorKey
-     * <p>
+     * 
      * Discussion:
      * When an NSURLConnection or NSURLDownload error occurs, this key's
      * value is set to the CFString value of the URL which caused a load
      * to fail
+     * 
+     * 
+     * API-Since: 2.2
      */
     @Generated
     @CVariable()
@@ -2944,11 +3404,14 @@ public final class CFNetwork {
 
     /**
      * kCFGetAddrInfoFailureKey
-     * <p>
+     * 
      * Discussion:
      * When an error of kCFHostErrorUnknown is returned, this key's
      * value is set to a CFNumber containing the raw error value
      * returned by getaddrinfo()
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2956,10 +3419,13 @@ public final class CFNetwork {
 
     /**
      * kCFSOCKSStatusCodeKey
-     * <p>
+     * 
      * Discussion:
      * When a SOCKS failure has occurred, this key's value is set to a
      * CFString containing the status value returned by the SOCKS server.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2967,11 +3433,14 @@ public final class CFNetwork {
 
     /**
      * kCFSOCKSVersionKey
-     * <p>
+     * 
      * Discussion:
      * When an error of kCFSOCKSErrorUnsupportedServerVersion is
      * returned, this key's value is set to a CFString containing the
      * version number requested by the server.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2979,11 +3448,14 @@ public final class CFNetwork {
 
     /**
      * kCFSOCKSNegotiationMethodKey
-     * <p>
+     * 
      * Discussion:
      * When an error of kCFSOCKS5ErrorUnsupportedNegotiationMethod is
      * returned, this key's value is set to a CFString containing the
      * negotiation method requested by the server.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -2991,12 +3463,15 @@ public final class CFNetwork {
 
     /**
      * kCFDNSServiceFailureKey
-     * <p>
+     * 
      * Discussion:
      * When an error of kCFNetServicesErrorDNSServiceFailure is
      * returned, this key's value is set to a CFNumber containing the
      * value returned from DNS; interpret it using the values in
      * <dns_sd.h>.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3004,11 +3479,14 @@ public final class CFNetwork {
 
     /**
      * kCFFTPStatusCodeKey
-     * <p>
+     * 
      * Discussion:
      * When an error of kCFFTPErrorUnexpectedStatusCode is returned,
      * this key's value is set to a CFString containing the status code
      * returned by the server
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3016,9 +3494,12 @@ public final class CFNetwork {
 
     /**
      * kCFStreamErrorDomainNetDB
-     * <p>
+     * 
      * Discussion:
      * Errors listed in netdb.h
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3026,9 +3507,12 @@ public final class CFNetwork {
 
     /**
      * kCFStreamErrorDomainSystemConfiguration
-     * <p>
+     * 
      * Discussion:
      * Errors listed in SystemConfiguration/SystemConfiguration.h
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3036,9 +3520,12 @@ public final class CFNetwork {
 
     /**
      * kCFStreamErrorDomainMach
-     * <p>
+     * 
      * Discussion:
      * Errors reported by mach. See <mach/error.h>
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3046,12 +3533,15 @@ public final class CFNetwork {
 
     /**
      * kCFStreamErrorDomainNetServices
-     * <p>
+     * 
      * Discussion:
      * Errors listed below or reported by the Service Discovery API's.
      * See <dns_sd.h>. The Service Discovery errors will only be
      * returned when using the new, Mac OS X 10.4-based API's or
      * CFNetServiceBrowser.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3059,30 +3549,33 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertySSLContext
-     * <p>
+     * 
      * The SSLContextRef used for both read and write operations on a
      * CFSocketStream.
-     * <p>
+     * 
      * CFReadStreamCopyProperty or CFWriteStreamCopyProperty return an
      * appropriately reference counted SSLContextRef. If the stream has
      * not yet been opened, this SSLContext may be configured directly
      * using the appropriate SecureTransport APIs.
-     * <p>
+     * 
      * CFReadStreamSetProperty or CFWriteStreamSetProperty will allow you
      * to specify an SSLContextRef for a stream. If the stream has not
      * been opened, the SSLContextRef will replace any existing
      * SSLContextRef and be used in the initial stream handshake. If the
      * stream has been opened without SSL enabled, setting this property
      * will initiate an SSL handshake over the existing socket.
-     * <p>
+     * 
      * If an SSL settings dictionary was set via
      * kCFStreamPropertySSLSettings, a SSLContextRef is created internally
      * and configured as per the dictionary. However, if an SSLContextRef
      * is set after this, its configuration will take precedence over the
      * previously configured context.
-     * <p>
+     * 
      * Reconfiguring an SSLContext after the stream it is bound to has
      * opened is unsupported.
+     * 
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -3090,11 +3583,14 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertySSLPeerTrust
-     * <p>
+     * 
      * Discussion:
      * Stream property value for copy operations. Returns a SecTrustRef
      * which was a result of the SSL handshake. This property is not valid before
      * a stream is opened. See Security/SecTrust.h for more information.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3102,12 +3598,15 @@ public final class CFNetwork {
 
     /**
      * kCFStreamSSLValidatesCertificateChain
-     * <p>
+     * 
      * Discussion:
      * Security property key for kCFStreamPropertySSLSettings.
      * CFBooleanRef indicating whether the certificate chain should be
      * validated or not. The value is kCFBooleanTrue by default (not
      * set).
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3115,11 +3614,14 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertySSLSettings
-     * <p>
+     * 
      * Discussion:
      * Stream property key for set operations. CFDictionaryRef filled
      * with different security settings. By default, there are no
      * security settings.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3127,11 +3629,14 @@ public final class CFNetwork {
 
     /**
      * kCFStreamSSLLevel
-     * <p>
+     * 
      * Discussion:
      * Security property key for kCFStreamPropertySSLSettings.
      * CFStringRef being one of the security levels. The value is
      * kCFStreamSocketSecurityLevelNegotiatedSSL by default (not set).
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3139,13 +3644,16 @@ public final class CFNetwork {
 
     /**
      * kCFStreamSSLPeerName
-     * <p>
+     * 
      * Discussion:
      * Security property key for kCFStreamPropertySSLSettings.
      * CFStringRef overriding the name used for certificate
      * verification. Set to kCFNull to prevent name verification.
      * Default is the host name with which the streams were created. If
      * no host name was used, no peer name will be used.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3153,12 +3661,15 @@ public final class CFNetwork {
 
     /**
      * kCFStreamSSLCertificates
-     * <p>
+     * 
      * Discussion:
      * Security property key for kCFStreamPropertySSLSettings.
      * CFArrayRef of SecCertificateRefs, except for index [0], which is
      * a SecIdentityRef. See SSLSetCertificate in
      * Security/SecureTransport.h for more information.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3166,13 +3677,16 @@ public final class CFNetwork {
 
     /**
      * kCFStreamSSLIsServer
-     * <p>
+     * 
      * Discussion:
      * Security property key for kCFStreamPropertySSLSettings.
      * CFBooleanRef indicating whether the connection is to act as a
      * server in the SSL process or not. The value is kCFBooleanFalse
      * by default (not set). If set to kCFBooleanTrue, there must be a
      * valid value for the kCFStreamSSLCertificates key too.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3180,7 +3694,7 @@ public final class CFNetwork {
 
     /**
      * kCFStreamNetworkServiceType
-     * <p>
+     * 
      * Discussion:
      * Property key to specify the type of service for the stream. This
      * allows the system to properly handle the request with respect to
@@ -3188,6 +3702,8 @@ public final class CFNetwork {
      * appropriate for the given service type. The service types supported
      * are documented below. Most streams should not need to set this
      * property.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @CVariable()
@@ -3195,6 +3711,8 @@ public final class CFNetwork {
 
     /**
      * interactive video
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -3202,6 +3720,8 @@ public final class CFNetwork {
 
     /**
      * interactive voice data
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -3209,6 +3729,8 @@ public final class CFNetwork {
 
     /**
      * background
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -3216,6 +3738,8 @@ public final class CFNetwork {
 
     /**
      * Call Signaling
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @CVariable()
@@ -3223,6 +3747,10 @@ public final class CFNetwork {
 
     /**
      * voice over IP control - this service type is deprecated in favor of using PushKit for VoIP control
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: use PushKit for VoIP control purposes
      */
     @Deprecated
     @Generated
@@ -3231,13 +3759,16 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyNoCellular
-     * <p>
+     * 
      * Discussion:
      * Stream property value, for both set and copy operations.
      * The value is a CFBooleanRef which indicates whether the connection
      * is allowed to use the built-in cellular radios. A value of kCFBooleanTrue
      * disallows use of cellular interfaces. kCFBooleanFalse (the default)
      * allows use of cellular interfaces.
+     * 
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @CVariable()
@@ -3245,12 +3776,14 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyConnectionIsCellular
-     * <p>
+     * 
      * Discussion:
      * Stream property key for copy operations. Returns a CFBooleanRef value
      * of kCFBooleanTrue if the stream has connected using the built in cellular radios.
      * It returns kCFBooleanFalse if the stream is connected over a non-cellular
      * interface or has not yet established a connection.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -3258,12 +3791,15 @@ public final class CFNetwork {
 
     /**
      * kCFStreamErrorDomainWinSock
-     * <p>
+     * 
      * Discussion:
      * WinSock error domain. On Win32 platforms, networking errors will
      * come in this domain. See <winsock2.h> for values. Note that
      * non-networking errors, like ENOMEM, will continue to come in the
      * POSIX domain as on OS X.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3272,12 +3808,15 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyProxyLocalBypass
-     * <p>
+     * 
      * Discussion:
      * CFDictionary key for proxy information. It matches
      * kSCPropNetProxiesExcludeSimpleHostnames defined in
      * SCSchemaDefinitions.h. CFNumber (0 or 1) indicating to bypass
      * the proxies for simple hostnames (names without dots).
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3285,10 +3824,13 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertySocketRemoteHost
-     * <p>
+     * 
      * Discussion:
      * Stream property key for copy operations. Returns a CFHostRef if
      * known, otherwise NULL.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3296,10 +3838,13 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertySocketRemoteNetService
-     * <p>
+     * 
      * Discussion:
      * Stream property key for copy operations. Returns a
      * CFNetServiceRef if known, otherwise NULL.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3307,13 +3852,16 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertySocketExtendedBackgroundIdleMode
-     * <p>
+     * 
      * Discussion:
      * Set this to kCFBooleanTrue to enable extended background idle
      * mode. Enabling this mode asks the system to keep the socket open
      * and delay reclaiming it when the process moves to the background (see
      * https://developer.apple.com/library/ios/technotes/tn2277/_index.html)
      * This property must be set before the stream is opened.
+     * 
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @CVariable()
@@ -3321,32 +3869,47 @@ public final class CFNetwork {
 
     /**
      * The following properties are DEPRECATED starting in OS X 10.6 and iOS 4.0.
-     * <p>
+     * 
      * kCFStreamPropertySSLPeerCertificates:
      * The peer certificates are available as part of the SecTrustRef object. See <Security/SecTrust.h>
-     * <p>
+     * 
      * kCFStreamSSLAllowsExpiredCertificates:
      * kCFStreamSSLAllowsExpiredRoots:
      * kCFStreamSSLAllowsAnyRoot:
      * The SSL handshake flags which affect untrusted certificate chain evaluation are deprecated.
      * Instead, use the single property kCFStreamSSLValidatesCertificateChain to disable certificate
      * chain checking if the user has decided that it is appropriate to do so.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 4.0
      */
     @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertySSLPeerCertificates();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 4.0
+     */
     @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamSSLAllowsExpiredCertificates();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 4.0
+     */
     @Deprecated
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamSSLAllowsExpiredRoots();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 4.0
+     */
     @Deprecated
     @Generated
     @CVariable()
@@ -3354,9 +3917,12 @@ public final class CFNetwork {
 
     /**
      * kCFStreamErrorDomainFTP
-     * <p>
+     * 
      * Discussion:
      * Result code returned by FTP server
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3364,11 +3930,16 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyFTPUserName
-     * <p>
+     * 
      * Discussion:
      * Stream property key, for both set and copy operations. CFString
      * type to hold login user name. Don't set this property if you
      * want anonymous FTP.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3377,11 +3948,16 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyFTPPassword
-     * <p>
+     * 
      * Discussion:
      * Stream property key, for both set and copy operations. CFString
      * type to hold login password. Don't set this property if you want
      * anonymous FTP.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3390,11 +3966,16 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyFTPUsePassiveMode
-     * <p>
+     * 
      * Discussion:
      * Stream property key, for both set and copy operations. CFBoolean
      * type. kCFBooleanTrue means use passive mode, kCFBooleanFalse
      * otherwise
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3403,10 +3984,15 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyFTPResourceSize
-     * <p>
+     * 
      * Discussion:
      * Stream property key, for read stream copy operations. CFNumber
      * of kCFNumberLongLongType to hold resource size in bytes.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3415,13 +4001,18 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyFTPFetchResourceInfo
-     * <p>
+     * 
      * Discussion:
      * Stream property key, for both set and copy operations. CFBoolean
      * type. TRUE means that resource info, such as size, must be
      * provided before download starts at higher cost. Don't set if
      * resource size/other info is unnecessary. Initially, only
      * resource size is implemented.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3430,10 +4021,15 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyFTPFileTransferOffset
-     * <p>
+     * 
      * Discussion:
      * Stream property key, for both set and copy operations. CFNumber
      * of kCFNumberLongLongType for the file offset to start transfer at.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3442,11 +4038,16 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyFTPAttemptPersistentConnection
-     * <p>
+     * 
      * Discussion:
      * Stream property key, for both set and copy operations. CFBoolean
      * type. TRUE by default, set to FALSE to avoid reusing existing
      * server connections.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3455,12 +4056,17 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyFTPProxy
-     * <p>
+     * 
      * Discussion:
      * Stream property key, for both set and copy operations.
      * CFDictionary type that holds key-value pairs of proxy dictionary.
      * The dictionary returned by SystemConfiguration can also be
      * passed directly as the value.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3469,13 +4075,18 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyFTPProxyHost
-     * <p>
+     * 
      * Discussion:
      * Stream property key or FTP Proxy dictionary key, for both set and
      * copy operations. It matches kSCPropNetProxiesFTPProxy defined in
      * SCSchemaDefinitions.h. CFString for proxy server host name.
      * This property can be set and copied individually or via a
      * CFDictionary.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3484,13 +4095,18 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyFTPProxyPort
-     * <p>
+     * 
      * Discussion:
      * Stream property key or FTP Proxy dictionary key, for both set and
      * copy operations. It matches kSCPropNetProxiesFTPPort defined in
      * SCSchemaDefinitions.h. CFNumber of kCFNumberIntType for proxy
      * server port number. This property can be set and copied
      * individually or via a CFDictionary.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3499,6 +4115,11 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyFTPProxyUser
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3507,6 +4128,11 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyFTPProxyPassword
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3515,10 +4141,15 @@ public final class CFNetwork {
 
     /**
      * kCFFTPResourceMode
-     * <p>
+     * 
      * Discussion:
      * CFDictionary key, for get value operation. CFNumber to hold the
      * resource access permission defined in sys/types.h.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3527,10 +4158,15 @@ public final class CFNetwork {
 
     /**
      * kCFFTPResourceName
-     * <p>
+     * 
      * Discussion:
      * CFDictionary key, for get value operation. CFString that holds
      * the resource name.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3539,10 +4175,15 @@ public final class CFNetwork {
 
     /**
      * kCFFTPResourceOwner
-     * <p>
+     * 
      * Discussion:
      * CFDictionary key, for get value operation. CFString that holds
      * the resource owner's name.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3551,10 +4192,15 @@ public final class CFNetwork {
 
     /**
      * kCFFTPResourceGroup
-     * <p>
+     * 
      * Discussion:
      * CFDictionary key, for get value operation. CFString to hold the
      * name of the group that shares the resource.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3563,11 +4209,16 @@ public final class CFNetwork {
 
     /**
      * kCFFTPResourceLink
-     * <p>
+     * 
      * Discussion:
      * CFDictionary key, for get value operation. CFString to hold
      * symbolic link information. If the item is a symbolic link the
      * string will contain the path to the item the link references.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3576,10 +4227,15 @@ public final class CFNetwork {
 
     /**
      * kCFFTPResourceSize
-     * <p>
+     * 
      * Discussion:
      * CFDictionary key, for get value operation. CFNumber of
      * kCFNumberLongLongType to hold the resource length in bytes.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3588,10 +4244,15 @@ public final class CFNetwork {
 
     /**
      * kCFFTPResourceType
-     * <p>
+     * 
      * Discussion:
      * CFDictionary key, for get value operation. CFNumber to hold the
      * resource type as defined in sys/dirent.h.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3600,10 +4261,15 @@ public final class CFNetwork {
 
     /**
      * kCFFTPResourceModDate
-     * <p>
+     * 
      * Discussion:
      * CFDictionary key, for get value operation. CFDate to hold the
      * last modification date and time information.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
     @Deprecated
     @Generated
@@ -3612,9 +4278,12 @@ public final class CFNetwork {
 
     /**
      * kCFHTTPVersion1_0
-     * <p>
+     * 
      * Discussion:
      * Version string for HTTP 1.0.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3622,9 +4291,12 @@ public final class CFNetwork {
 
     /**
      * kCFHTTPVersion1_1
-     * <p>
+     * 
      * Discussion:
      * Version string for HTTP 1.1.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3632,9 +4304,12 @@ public final class CFNetwork {
 
     /**
      * kCFHTTPVersion2_0
-     * <p>
+     * 
      * Discussion:
      * Version string for HTTP 2.0.
+     * 
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @CVariable()
@@ -3642,9 +4317,12 @@ public final class CFNetwork {
 
     /**
      * kCFHTTPAuthenticationSchemeBasic
-     * <p>
+     * 
      * Discussion:
      * HTTP Basic authentication scheme.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3652,9 +4330,12 @@ public final class CFNetwork {
 
     /**
      * kCFHTTPAuthenticationSchemeDigest
-     * <p>
+     * 
      * Discussion:
      * HTTP Digest Access authentication scheme.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3662,9 +4343,12 @@ public final class CFNetwork {
 
     /**
      * kCFHTTPAuthenticationSchemeNTLM
-     * <p>
+     * 
      * Discussion:
      * HTTP NTLM authentication scheme.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3672,9 +4356,12 @@ public final class CFNetwork {
 
     /**
      * kCFHTTPAuthenticationSchemeKerberos
-     * <p>
+     * 
      * Discussion:
      * HTTP Negotiate authentication scheme.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3682,9 +4369,12 @@ public final class CFNetwork {
 
     /**
      * kCFHTTPAuthenticationSchemeNegotiate
-     * <p>
+     * 
      * Discussion:
      * HTTP Negotiate authentication scheme.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3692,9 +4382,12 @@ public final class CFNetwork {
 
     /**
      * kCFHTTPAuthenticationSchemeNegotiate2
-     * <p>
+     * 
      * Discussion:
      * HTTP Negotiate v2 authentication scheme.
+     * 
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -3702,9 +4395,12 @@ public final class CFNetwork {
 
     /**
      * kCFHTTPAuthenticationSchemeXMobileMeAuthToken
-     * <p>
+     * 
      * Discussion:
      * HTTP XMobileMeAuthToken authentication scheme.
+     * 
+     * 
+     * API-Since: 4.3
      */
     @Generated
     @CVariable()
@@ -3712,9 +4408,12 @@ public final class CFNetwork {
 
     /**
      * kCFStreamErrorDomainHTTP
-     * <p>
+     * 
      * Discussion:
      * Result code returned by HTTP server
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3722,10 +4421,15 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyHTTPResponseHeader
-     * <p>
+     * 
      * Discussion:
      * Stream property key, for copy operations. Value is a
      * CFHTTPMessage with 0 bytes data.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSession API for http requests
      */
     @Deprecated
     @Generated
@@ -3734,12 +4438,17 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyHTTPFinalURL *** DEPRECATED ***
-     * <p>
+     * 
      * Discussion:
      * Stream property key, for copy operations. The response header
      * value is the CFURL from the final request; will only differ from
      * the URL in the original request if an auto-redirection has
      * occurred.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSession API for http requests
      */
     @Deprecated
     @Generated
@@ -3748,12 +4457,17 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyHTTPFinalRequest *** DEPRECATED ***
-     * <p>
+     * 
      * Discussion:
      * Stream property key, for copy operations. The value is the
      * CFHTTPMessage transmitted by the stream, after all modifications
      * (such as for authentication, connection policy, or redirection)
      * have been made.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSession API for http requests
      */
     @Deprecated
     @Generated
@@ -3762,7 +4476,7 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyHTTPProxy *** DEPRECATED ***
-     * <p>
+     * 
      * Discussion:
      * Stream property key, for both set and copy operations. The value
      * is a CFDictionary. HTTP proxy information is set the same way as
@@ -3772,6 +4486,11 @@ public final class CFNetwork {
      * Host/Port pair from the keys below. Use the dictionary returned
      * by SystemConfiguration.framework to set the default values for
      * the system. HTTP proxies are not applied automatically.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSession API for http requests
      */
     @Deprecated
     @Generated
@@ -3780,10 +4499,15 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyHTTPProxyHost *** DEPRECATED ***
-     * <p>
+     * 
      * Discussion:
      * Proxy dictionary key. The hostname of an HTTP proxy. The value is
      * a CFString. The key name matches kSCPropNetProxiesHTTPProxy.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSession API for http requests
      */
     @Deprecated
     @Generated
@@ -3792,9 +4516,14 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyHTTPProxyPort *** DEPRECATED ***
-     * <p>
+     * 
      * Discussion:
      * Proxy dictionary key. Value is a CFNumber.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSession API for http requests
      */
     @Deprecated
     @Generated
@@ -3803,9 +4532,14 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyHTTPSProxyHost *** DEPRECATED ***
-     * <p>
+     * 
      * Discussion:
      * Proxy dictionary key. Value is a CFString.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSession API for http requests
      */
     @Deprecated
     @Generated
@@ -3814,9 +4548,14 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyHTTPSProxyPort *** DEPRECATED ***
-     * <p>
+     * 
      * Discussion:
      * Proxy dictionary key. Value is a CFNumber.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSession API for http requests
      */
     @Deprecated
     @Generated
@@ -3825,10 +4564,15 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyHTTPShouldAutoredirect *** DEPRECATED ***
-     * <p>
+     * 
      * Discussion:
      * Stream property key. Value is a CFBoolean. Redirection is not
      * performed by default.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSession API for http requests
      */
     @Deprecated
     @Generated
@@ -3837,13 +4581,18 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyHTTPAttemptPersistentConnection *** DEPRECATED ***
-     * <p>
+     * 
      * Discussion:
      * Stream property key. Value is a CFBoolean. If this property is
      * set to kCFBooleanTrue, an HTTP stream will look for an
      * appropriate extant persistent connection to use, and if it finds
      * none, will try to create one. Persistent connections are not used
      * by default.
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSession API for http requests
      */
     @Deprecated
     @Generated
@@ -3852,12 +4601,17 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyHTTPRequestBytesWrittenCount *** DEPRECATED ***
-     * <p>
+     * 
      * Discussion:
      * Stream property key. Value is a CFNumber. This property can only
      * be retrieved, not set. The number returned is the number of bytes
      * from the body of the request that have been written to the
      * underlying socket
+     * 
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: Use NSURLSession API for http requests
      */
     @Deprecated
     @Generated
@@ -3866,11 +4620,14 @@ public final class CFNetwork {
 
     /**
      * kCFHTTPAuthenticationUsername
-     * <p>
+     * 
      * Discussion:
      * CFDictionary key, for CFHTTPMessageApplyCredentialDictionary. The
      * username for authentication as a CFString. Needs to be added if
      * CFHTTPAuthenticationRequiresUserNameAndPassword returns TRUE.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3878,11 +4635,14 @@ public final class CFNetwork {
 
     /**
      * kCFHTTPAuthenticationPassword
-     * <p>
+     * 
      * Discussion:
      * CFDictionary key, for CFHTTPMessageApplyCredentialDictionary. The
      * password for authentication as a CFString. Needs to be added if
      * CFHTTPAuthenticationRequiresUserNameAndPassword returns TRUE.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3890,11 +4650,14 @@ public final class CFNetwork {
 
     /**
      * kCFHTTPAuthenticationAccountDomain
-     * <p>
+     * 
      * Discussion:
      * CFDictionary key, for CFHTTPMessageApplyCredentialDictionary. The
      * domain for authentication as a CFString. Needs to be added if
      * CFHTTPAuthenticationRequiresAccountDomain returns TRUE.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3902,10 +4665,13 @@ public final class CFNetwork {
 
     /**
      * kCFProxyTypeKey
-     * <p>
+     * 
      * Discussion:
      * Key for the type of proxy being represented; value will be one of
      * the kCFProxyType constants listed below.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3913,10 +4679,13 @@ public final class CFNetwork {
 
     /**
      * kCFProxyHostNameKey
-     * <p>
+     * 
      * Discussion:
      * Key for the proxy's hostname; value is a CFString. Note that
      * this may be an IPv4 or IPv6 dotted-IP string.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3924,10 +4693,13 @@ public final class CFNetwork {
 
     /**
      * kCFProxyPortNumberKey
-     * <p>
+     * 
      * Discussion:
      * Key for the proxy's port number; value is a CFNumber specifying
      * the port on which to contact the proxy
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3935,12 +4707,15 @@ public final class CFNetwork {
 
     /**
      * kCFProxyAutoConfigurationURLKey
-     * <p>
+     * 
      * Discussion:
      * Key for the proxy's PAC file location; this key is only present
      * if the proxy's type is kCFProxyTypeAutoConfigurationURL. Value
      * is a CFURL specifying the location of a proxy auto-configuration
      * file
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3948,10 +4723,13 @@ public final class CFNetwork {
 
     /**
      * kCFProxyAutoConfigurationJavaScriptKey
-     * <p>
+     * 
      * Discussion:
      * Key for the proxy's PAC script
      * The value is a CFString that contains the full JavaScript source text for the PAC file.
+     * 
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -3959,12 +4737,15 @@ public final class CFNetwork {
 
     /**
      * kCFProxyUsernameKey
-     * <p>
+     * 
      * Discussion:
      * Key for the username to be used with the proxy; value is a
      * CFString. Note that this key will only be present if the username
      * could be extracted from the information passed in. No external
      * credential stores (like the Keychain) are consulted.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3972,12 +4753,15 @@ public final class CFNetwork {
 
     /**
      * kCFProxyPasswordKey
-     * <p>
+     * 
      * Discussion:
      * Key for the password to be used with the proxy; value is a
      * CFString. Note that this key will only be present if the username
      * could be extracted from the information passed in. No external
      * credential stores (like the Keychain) are consulted.
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3985,6 +4769,9 @@ public final class CFNetwork {
 
     /**
      * kCFProxyTypeNone
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3992,6 +4779,9 @@ public final class CFNetwork {
 
     /**
      * kCFProxyTypeHTTP
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -3999,6 +4789,9 @@ public final class CFNetwork {
 
     /**
      * kCFProxyTypeHTTPS
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4006,6 +4799,9 @@ public final class CFNetwork {
 
     /**
      * kCFProxyTypeSOCKS
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4013,6 +4809,9 @@ public final class CFNetwork {
 
     /**
      * kCFProxyTypeFTP
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4020,6 +4819,9 @@ public final class CFNetwork {
 
     /**
      * kCFProxyTypeAutoConfigurationURL
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4027,6 +4829,9 @@ public final class CFNetwork {
 
     /**
      * kCFProxyTypeAutoConfigurationJavaScript
+     * 
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -4034,6 +4839,9 @@ public final class CFNetwork {
 
     /**
      * kCFProxyAutoConfigHTTPResponse
+     * 
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4041,10 +4849,12 @@ public final class CFNetwork {
 
     /**
      * kCFNetworkProxiesHTTPEnable
-     * <p>
+     * 
      * Discussion:
      * Key for the enabled status of the HTTP proxy; value is a
      * CFNumber. The proxy is enabled if the key is present and has a non-zero value.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4052,10 +4862,12 @@ public final class CFNetwork {
 
     /**
      * kCFNetworkProxiesHTTPPort
-     * <p>
+     * 
      * Discussion:
      * Key for the port number associated with the HTTP proxy; value is a
      * CFNumber which is the port number.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4063,10 +4875,12 @@ public final class CFNetwork {
 
     /**
      * kCFNetworkProxiesHTTPProxy
-     * <p>
+     * 
      * Discussion:
      * Key for the host name associated with the HTTP proxy; value is a
      * CFString which is the proxy host name.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4074,10 +4888,12 @@ public final class CFNetwork {
 
     /**
      * kCFNetworkProxiesProxyAutoConfigEnable
-     * <p>
+     * 
      * Discussion:
      * Key for the enabled status ProxyAutoConfig (PAC); value is a
      * CFNumber. ProxyAutoConfig is enabled if the key is present and has a non-zero value.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4085,10 +4901,12 @@ public final class CFNetwork {
 
     /**
      * kCFNetworkProxiesProxyAutoConfigURLString
-     * <p>
+     * 
      * Discussion:
      * Key for the url which indicates the location of the ProxyAutoConfig (PAC) file; value is a
      * CFString which is url for the PAC file.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @CVariable()
@@ -4096,10 +4914,12 @@ public final class CFNetwork {
 
     /**
      * kCFNetworkProxiesProxyAutoConfigJavaScript
-     * <p>
+     * 
      * Discussion:
      * Key for the string which is the full JavaScript source of the ProxyAutoConfig (PAC) script; value is a
      * CFString with is the full text source of the PAC script.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @CVariable()
@@ -4153,6 +4973,8 @@ public final class CFNetwork {
 
     /**
      * responsive (time sensitive) data
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -4160,6 +4982,8 @@ public final class CFNetwork {
 
     /**
      * multimedia audio/video streaming
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -4167,6 +4991,8 @@ public final class CFNetwork {
 
     /**
      * responsive multimedia audio/video
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @CVariable()
@@ -4174,13 +5000,16 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyAllowExpensiveNetworkAccess
-     * <p>
+     * 
      * Discussion:
      * Stream property value, for both set and copy operations.
      * The value is a CFBooleanRef which indicates whether the connection
      * is allowed to use network interfaces that are marked expensive. A value of
      * kCFBooleanTrue (the default) allows use of expensive interfaces. kCFBooleanFalse
      * disallows use of expensive interfaces.
+     * 
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -4188,12 +5017,14 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyConnectionIsExpensive
-     * <p>
+     * 
      * Discussion:
      * Stream property key for copy operations. Returns a CFBooleanRef value
      * of kCFBooleanTrue if the stream has connected using an "expensive" interface.
      * It returns kCFBooleanFalse if the stream is connected over an "inexpensive"
      * interface. If the connection has not been established yet NULL will be returned.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -4201,13 +5032,16 @@ public final class CFNetwork {
 
     /**
      * kCFStreamPropertyAllowConstrainedNetworkAccess
-     * <p>
+     * 
      * Discussion:
      * Stream property value, for both set and copy operations.
      * The value is a CFBooleanRef which indicates whether the connection
      * is allowed to use "constrained" networks. A value of kCFBooleanTrue (the default)
      * allows the use of constrained interfaces. kCFBooleanFalse
      * disallows use of constrained interfaces.
+     * 
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()
@@ -4215,9 +5049,12 @@ public final class CFNetwork {
 
     /**
      * kCFHTTPVersion3_0
-     * <p>
+     * 
      * Discussion:
      * Version string for HTTP 3.0.
+     * 
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @CVariable()

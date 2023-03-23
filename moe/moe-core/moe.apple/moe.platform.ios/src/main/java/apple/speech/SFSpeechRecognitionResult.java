@@ -46,6 +46,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A recognized utterance, corresponding to a segment of recorded audio with speech and containing one or more
  * transcriptions hypotheses
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("Speech")
@@ -203,6 +205,9 @@ public class SFSpeechRecognitionResult extends NSObject implements NSCopying, NS
     @Selector("transcriptions")
     public native NSArray<? extends SFTranscription> transcriptions();
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @Selector("speechRecognitionMetadata")
     public native SFSpeechRecognitionMetadata speechRecognitionMetadata();

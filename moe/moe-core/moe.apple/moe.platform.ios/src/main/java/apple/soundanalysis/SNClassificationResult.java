@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A result containing the most likely classification candidates in the time range specified
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("SoundAnalysis")
@@ -146,7 +148,7 @@ public class SNClassificationResult extends NSObject implements SNResult {
 
     /**
      * The time range in the client-provided audio stream to which this classification result corresponds
-     * <p>
+     * 
      * Each CMTime contains of a value (audio frame count) and timescale (client sample rate). This enables the client
      * to precisely identify the frame range in the original audio stream to which this result corresponds. Time ranges
      * will often be in the past compared to the frame count of the most recent audio buffer provided to the analyzer,
@@ -164,12 +166,14 @@ public class SNClassificationResult extends NSObject implements SNResult {
 
     /**
      * Retrieves the classification candidate with the specified identifier.
-     *
+     * 
      * @param identifier An identifier on which to query for a particular classification candidate. The query will match
      *                   to any classification candidate whose `identifier` property (see `identifier` property of
      *                   `SNClassification`) contains a value equal to the provided argument.
      * @return The classification candidate which has the specified identifier, if it exists. If no such candidate
      *         exists, `nil` will be returned.
+     * 
+     *         API-Since: 15.0
      */
     @Generated
     @Selector("classificationForIdentifier:")

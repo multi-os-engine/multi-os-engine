@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Relationships represent references to other objects. They usually come in pairs, where the reference back is called
  * the "inverse".
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("CoreData")
@@ -175,10 +177,16 @@ public class NSRelationshipDescription extends NSPropertyDescription {
     @Selector("inverseRelationship")
     public native NSRelationshipDescription inverseRelationship();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("isOrdered")
     public native boolean isOrdered();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("setOrdered:")
     public native void setOrdered(boolean value);
@@ -260,6 +268,8 @@ public class NSRelationshipDescription extends NSPropertyDescription {
      * Returns the version hash for the relationship. This value includes the versionHash information from the
      * NSPropertyDescription superclass, the name of the destination entity and the inverse relationship, and the min
      * and max count.
+     * 
+     * API-Since: 3.0
      */
     @Generated
     @Selector("versionHash")

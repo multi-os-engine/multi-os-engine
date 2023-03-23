@@ -16,7 +16,6 @@ limitations under the License.
 
 package apple.uikit.protocol;
 
-import apple.coregraphics.struct.CGRect;
 import apple.uikit.UIGestureRecognizer;
 import apple.uikit.UIView;
 import org.moe.natj.general.ann.ByValue;
@@ -28,12 +27,18 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIViewControllerPreviewing")
 public interface UIViewControllerPreviewing {
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -42,7 +47,11 @@ public interface UIViewControllerPreviewing {
     /**
      * This gesture can be used to cause the previewing presentation to wait until one of your gestures fails or to
      * allow simultaneous recognition during the initial phase of the preview presentation.
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("previewingGestureRecognizerForFailureRelationship")
     UIGestureRecognizer previewingGestureRecognizerForFailureRelationship();
@@ -50,7 +59,11 @@ public interface UIViewControllerPreviewing {
     /**
      * This rect will be set to the bounds of sourceView before each call to
      * -previewingContext:viewControllerForLocation:
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("setSourceRect:")
     void setSourceRect(@ByValue CGRect value);
@@ -58,12 +71,21 @@ public interface UIViewControllerPreviewing {
     /**
      * This rect will be set to the bounds of sourceView before each call to
      * -previewingContext:viewControllerForLocation:
+     * 
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("sourceRect")
     @ByValue
     CGRect sourceRect();
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated
     @Generated
     @Selector("sourceView")
     UIView sourceView();

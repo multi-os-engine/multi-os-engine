@@ -34,6 +34,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("NaturalLanguage")
 @Runtime(ObjCRuntime.class)
@@ -70,6 +73,8 @@ public class NLTagger extends NSObject {
      * Not all combinations of scheme and unit are supported, and not all combinations of scheme and language are
      * supported. Clients can use +availableTagSchemesForUnit:language: to determine which ones are supported on the
      * current device.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("availableTagSchemesForUnit:language:")
@@ -104,6 +109,8 @@ public class NLTagger extends NSObject {
     /**
      * Returns the top identified language (if any) for the entire string. Convenience for tagAtIndex: with
      * NLTagSchemeLanguage and NLTaggerUnitDocument.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("dominantLanguage")
@@ -117,6 +124,8 @@ public class NLTagger extends NSObject {
      * intersecting a given range at once. In each case, the index or range passed in must not extend beyond the end of
      * the tagger's string, or the methods will raise an exception. Note that a given instance of NLTagger should not be
      * used from more than one thread simultaneously.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("enumerateTagsInRange:unit:scheme:options:usingBlock:")
@@ -132,6 +141,9 @@ public class NLTagger extends NSObject {
                 BoolPtr stop);
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("gazetteersForTagScheme:")
     public native NSArray<? extends NLGazetteer> gazetteersForTagScheme(String tagScheme);
@@ -148,6 +160,8 @@ public class NLTagger extends NSObject {
     /**
      * An instance of NLTagger is created with an array of tag schemes. The tagger will be able to supply tags
      * corresponding to any of the schemes in this array.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("initWithTagSchemes:")
@@ -174,6 +188,9 @@ public class NLTagger extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("modelsForTagScheme:")
     public native NSArray<? extends NLModel> modelsForTagScheme(String tagScheme);
@@ -183,6 +200,9 @@ public class NLTagger extends NSObject {
     @Selector("new")
     public static native NLTagger new_objc();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("requestAssetsForLanguage:tagScheme:completionHandler:")
     public static native void requestAssetsForLanguageTagSchemeCompletionHandler(String language, String tagScheme,
@@ -207,6 +227,8 @@ public class NLTagger extends NSObject {
      * In addition to the model for a given tag scheme, clients can add a custom gazetteer that will override the tags
      * for that scheme, for terms that are included in the gazetteer. If multiple gazetteers are specified, they will be
      * matched to text based on the language that they specify.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setGazetteers:forTagScheme:")
@@ -217,6 +239,8 @@ public class NLTagger extends NSObject {
      * (after setting the string itself via 'string' @property). Otherwise, the tagger will infer the language from the
      * contents of the text. In each case, the range passed in must not extend beyond the end of the tagger's string, or
      * the methods will raise an exception. When a new string is set, it resets any language or orthography settings.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setLanguage:range:")
@@ -226,11 +250,16 @@ public class NLTagger extends NSObject {
      * In addition to the built-in models for predefined tag schemes, clients can set custom models that they have
      * trained, either for existing tag schemes or for custom tag schemes. If multiple models are specified, they will
      * be matched to text based on the language that they specify.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setModels:forTagScheme:")
     public native void setModelsForTagScheme(NSArray<? extends NLModel> models, String tagScheme);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("setOrthography:range:")
     public native void setOrthographyRange(NSOrthography orthography, @ByValue NSRange range);
@@ -238,6 +267,8 @@ public class NLTagger extends NSObject {
     /**
      * An NLTagger instance must be assigned a string to tag, and clients can then obtain tags and ranges for tokens in
      * that string appropriate to a given tag scheme and unit.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setString:")
@@ -250,6 +281,8 @@ public class NLTagger extends NSObject {
     /**
      * An NLTagger instance must be assigned a string to tag, and clients can then obtain tags and ranges for tokens in
      * that string appropriate to a given tag scheme and unit.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("string")
@@ -259,15 +292,24 @@ public class NLTagger extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("tagAtIndex:unit:scheme:tokenRange:")
     public native String tagAtIndexUnitSchemeTokenRange(@NUInt long characterIndex, @NInt long unit, String scheme,
             @UncertainArgument("Options: reference, array Fallback: reference") NSRange tokenRange);
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("tagSchemes")
     public native NSArray<String> tagSchemes();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("tagsInRange:unit:scheme:options:tokenRanges:")
     public native NSArray<String> tagsInRangeUnitSchemeOptionsTokenRanges(@ByValue NSRange range, @NInt long unit,
@@ -276,6 +318,8 @@ public class NLTagger extends NSObject {
 
     /**
      * Returns the range corresponding to the token for the given unit that contains the given character index.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("tokenRangeAtIndex:unit:")
@@ -290,6 +334,8 @@ public class NLTagger extends NSObject {
     /**
      * In addition, it is possible to obtain multiple hypotheses for a given tag with associated probability scores. Not
      * all tag schemes will produce more than one hypothesis.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("tagHypothesesAtIndex:unit:scheme:maximumCount:tokenRange:")
@@ -300,6 +346,8 @@ public class NLTagger extends NSObject {
     /**
      * Returns the smallest range covering all tokens for the given unit intersecting the given range. If range.length
      * == 0, this is equivalent to tokenRangeAtIndex:unit:.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("tokenRangeForRange:unit:")

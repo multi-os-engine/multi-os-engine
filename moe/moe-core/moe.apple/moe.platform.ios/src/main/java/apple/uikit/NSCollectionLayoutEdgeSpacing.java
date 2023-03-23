@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -146,7 +149,7 @@ public class NSCollectionLayoutEdgeSpacing extends NSObject implements NSCopying
     /**
      * Edge spacing specifies additional outsets around items required when performing layout.
      * Edges may be omitted as-needed
-     * <p>
+     * 
      * +-----------------+--------+-----------------+------+-----------------+
      * |~~~~~~~~~~~~~~~~~| |~~~~~~~~~~~~~~~~~| |~~~~~~~~~~~~~~~~~|
      * |~~~~~~~~~~~~~~~~~| |~~~~~~~~~~~~~~~~~| |~~~~~~~~~~~~~~~~~|

@@ -55,6 +55,8 @@ public interface UIViewControllerAnimatedTransitioning {
      * be interrupted. For example, it could return an instance of a
      * UIViewPropertyAnimator. It is expected that this method will return the same
      * instance for the life of a transition.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @IsOptional

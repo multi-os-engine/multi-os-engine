@@ -17,9 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSAttributedString;
 import apple.foundation.NSCoder;
@@ -65,13 +62,23 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.uikit.protocol.UIEditMenuInteractionAnimating;
+import apple.uikit.protocol.UIFindInteractionDelegate;
+import apple.uikit.protocol.UITextSearchAggregator;
+import apple.uikit.protocol.UITextSearching;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class UITextView extends UIScrollView implements UITextInput, UIContentSizeCategoryAdjusting, UITextDraggable,
-        UITextDroppable, UITextPasteConfigurationSupporting {
+        UITextDroppable, UITextPasteConfigurationSupporting, UIFindInteractionDelegate, UITextSearching {
     static {
         NatJ.register();
     }
@@ -172,6 +179,7 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -198,6 +206,7 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -273,46 +282,57 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -364,6 +384,8 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
 
     /**
      * defaults to NO
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("allowsEditingTextAttributes")
@@ -410,6 +432,9 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("attributedText")
     public native NSAttributedString attributedText();
@@ -463,6 +488,8 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     /**
      * defaults to NO. if YES, the selection UI is hidden, and inserting text will replace the contents of the field.
      * changing the selection will automatically set this to NO.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("clearsOnInsertion")
@@ -481,6 +508,9 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @NInt
     public native long comparePositionToPosition(UITextPosition position, UITextPosition other);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("dataDetectorTypes")
     @NUInt
@@ -551,8 +581,12 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     public native UITextView initWithFrame(@ByValue CGRect frame);
 
     /**
-     * Create a new text view with the specified text container (can be nil) - this is the new designated initializer
-     * for this class
+     * Create a new text view with the specified text container (can be nil).
+     * This initializer will follow the NSTextContainer's usage of TextKit 2 (NSTextLayoutManager) or TextKit 1
+     * (NSLayoutManager).
+     * If a nil NSTextContainer is specified, TextKit 2 will be used.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("initWithFrame:textContainer:")
@@ -611,6 +645,8 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     /**
      * toggle selectability, which controls the ability of the user to select content and interact with URLs &
      * attachments. On tvOS this also makes the text view focusable.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("isSelectable")
@@ -619,6 +655,8 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     /**
      * toggle selectability, which controls the ability of the user to select content and interact with URLs &
      * attachments. On tvOS this also makes the text view focusable.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setSelectable:")
@@ -637,7 +675,12 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     public native long keyboardType();
 
     /**
-     * Convenience accessors (access through the text container)
+     * To ensure compatibility with older code, accessing the .layoutManager of a UITextView - or its .textContainer's
+     * .layoutManager - will cause a UITextView that's using TextKit 2 to 'fall back' to TextKit 1, and return a newly
+     * created NSLayoutManager. After this happens, .textLayoutManager will return nil - and _any TextKit 2 objects you
+     * may have cached will cease functioning_. Be careful about this if you are intending to be using TextKit 2!
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("layoutManager")
@@ -645,6 +688,8 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
 
     /**
      * Style for links
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("linkTextAttributes")
@@ -726,11 +771,16 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
 
     /**
      * defaults to NO
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setAllowsEditingTextAttributes:")
     public native void setAllowsEditingTextAttributes(boolean value);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("setAttributedText:")
     public native void setAttributedText(NSAttributedString value);
@@ -752,11 +802,16 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     /**
      * defaults to NO. if YES, the selection UI is hidden, and inserting text will replace the contents of the field.
      * changing the selection will automatically set this to NO.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setClearsOnInsertion:")
     public native void setClearsOnInsertion(boolean value);
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @Selector("setDataDetectorTypes:")
     public native void setDataDetectorTypes(@NUInt long value);
@@ -826,6 +881,8 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
 
     /**
      * Style for links
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setLinkTextAttributes:")
@@ -879,6 +936,8 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
 
     /**
      * Inset the text container's layout area within the text view's content area
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setTextContainerInset:")
@@ -891,6 +950,8 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
 
     /**
      * automatically resets when the selection changes
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setTypingAttributes:")
@@ -925,6 +986,8 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
 
     /**
      * Get the text container for the text view
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("textContainer")
@@ -932,6 +995,8 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
 
     /**
      * Inset the text container's layout area within the text view's content area
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("textContainerInset")
@@ -956,6 +1021,11 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
     @Selector("textRangeFromPosition:toPosition:")
     public native UITextRange textRangeFromPositionToPosition(UITextPosition fromPosition, UITextPosition toPosition);
 
+    /**
+     * The textual contents of the text view.
+     * 
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("textStorage")
     public native NSTextStorage textStorage();
@@ -973,6 +1043,8 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
 
     /**
      * automatically resets when the selection changes
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("typingAttributes")
@@ -1167,6 +1239,8 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
      * When turned on, this changes the rendering scale of the text to match the standard text scaling and preserves the
      * original font point sizes when the contents of the text view are copied to the pasteboard. Apps that show a lot
      * of text content, such as a text viewer or editor, should turn this on and use the standard text scaling.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setUsesStandardTextScaling:")
@@ -1176,6 +1250,8 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
      * When turned on, this changes the rendering scale of the text to match the standard text scaling and preserves the
      * original font point sizes when the contents of the text view are copied to the pasteboard. Apps that show a lot
      * of text content, such as a text viewer or editor, should turn this on and use the standard text scaling.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("usesStandardTextScaling")
@@ -1189,6 +1265,8 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
      * and first responder status.
      * The object returned here will be a plist type, so can e.g. be stored in
      * an NSUserActivity's userInfo dictionary.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("interactionState")
@@ -1203,8 +1281,161 @@ public class UITextView extends UIScrollView implements UITextInput, UIContentSi
      * and first responder status.
      * The object returned here will be a plist type, so can e.g. be stored in
      * an NSUserActivity's userInfo dictionary.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setInteractionState:")
     public native void setInteractionState(@Mapped(ObjCObjectMapper.class) Object value);
+
+    @Generated
+    @Selector("clearAllDecoratedFoundText")
+    public native void clearAllDecoratedFoundText();
+
+    @Generated
+    @Selector("compareFoundRange:toRange:inDocument:")
+    @NInt
+    public native long compareFoundRangeToRangeInDocument(UITextRange foundRange, UITextRange toRange,
+            @Mapped(ObjCObjectMapper.class) Object document);
+
+    @Generated
+    @IsOptional
+    @Selector("compareOrderFromDocument:toDocument:")
+    @NInt
+    public native long compareOrderFromDocumentToDocument(@Mapped(ObjCObjectMapper.class) Object fromDocument,
+            @Mapped(ObjCObjectMapper.class) Object toDocument);
+
+    @Generated
+    @Selector("decorateFoundTextRange:inDocument:usingStyle:")
+    public native void decorateFoundTextRangeInDocumentUsingStyle(UITextRange range,
+            @Mapped(ObjCObjectMapper.class) Object document, @NInt long style);
+
+    @Generated
+    @IsOptional
+    @Selector("editMenuForTextRange:suggestedActions:")
+    public native UIMenu editMenuForTextRangeSuggestedActions(UITextRange textRange,
+            NSArray<? extends UIMenuElement> suggestedActions);
+
+    /**
+     * If `findInteractionEnabled` is set to true, returns this text view's built-in find interaction. Otherwise, nil.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("findInteraction")
+    public native UIFindInteraction findInteraction();
+
+    @Generated
+    @IsOptional
+    @Selector("findInteraction:didBeginFindSession:")
+    public native void findInteractionDidBeginFindSession(UIFindInteraction interaction, UIFindSession session);
+
+    @Generated
+    @IsOptional
+    @Selector("findInteraction:didEndFindSession:")
+    public native void findInteractionDidEndFindSession(UIFindInteraction interaction, UIFindSession session);
+
+    @Generated
+    @Selector("findInteraction:sessionForView:")
+    public native UIFindSession findInteractionSessionForView(UIFindInteraction interaction, UIView view);
+
+    /**
+     * Enables this text view's built-in find interaction.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("isFindInteractionEnabled")
+    public native boolean isFindInteractionEnabled();
+
+    @Generated
+    @Selector("performTextSearchWithQueryString:usingOptions:resultAggregator:")
+    public native void performTextSearchWithQueryStringUsingOptionsResultAggregator(String string,
+            UITextSearchOptions options, @Mapped(ObjCObjectMapper.class) UITextSearchAggregator aggregator);
+
+    @Generated
+    @IsOptional
+    @Selector("replaceAllOccurrencesOfQueryString:usingOptions:withText:")
+    public native void replaceAllOccurrencesOfQueryStringUsingOptionsWithText(String queryString,
+            UITextSearchOptions options, String replacementText);
+
+    @Generated
+    @IsOptional
+    @Selector("replaceFoundTextInRange:inDocument:withText:")
+    public native void replaceFoundTextInRangeInDocumentWithText(UITextRange range,
+            @Mapped(ObjCObjectMapper.class) Object document, String replacementText);
+
+    @Generated
+    @IsOptional
+    @Selector("scrollRangeToVisible:inDocument:")
+    public native void scrollRangeToVisibleInDocument(UITextRange range,
+            @Mapped(ObjCObjectMapper.class) Object document);
+
+    @Generated
+    @IsOptional
+    @Selector("selectedTextSearchDocument")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object selectedTextSearchDocument();
+
+    /**
+     * Enables this text view's built-in find interaction.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setFindInteractionEnabled:")
+    public native void setFindInteractionEnabled(boolean value);
+
+    @Generated
+    @IsOptional
+    @Selector("shouldReplaceFoundTextInRange:inDocument:withText:")
+    public native boolean shouldReplaceFoundTextInRangeInDocumentWithText(UITextRange range,
+            @Mapped(ObjCObjectMapper.class) Object document, String replacementText);
+
+    @Generated
+    @IsOptional
+    @Selector("supportsTextReplacement")
+    public native boolean supportsTextReplacement();
+
+    /**
+     * This property accesses the TextKit 2 NSTextLayoutManager. You should generally prefer to use it over the TextKit
+     * 1 .layoutManager property if it exists. This property will return nil if TextKit 1 is in use.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("textLayoutManager")
+    public native NSTextLayoutManager textLayoutManager();
+
+    /**
+     * From iOS 16 onwards, UITextViews are, by default, created with a TextKit 2 NSTextLayoutManager managing text
+     * layout (see the .textLayoutManager property). They will dynamically 'fall back' to a TextKit 1 NSLayoutManager if
+     * TextKit 1 features are used (notably, if the .layoutManager property is accessed).
+     * This convenience initializer can be used to specify TextKit 1 by default if you know code in your app relies on
+     * that. This avoids inefficiencies associated with the needless creation of a NSTextLayoutManager and the
+     * subsequent fallback.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("textViewUsingTextLayoutManager:")
+    public static native UITextView textViewUsingTextLayoutManager(boolean usingTextLayoutManager);
+
+    @Generated
+    @IsOptional
+    @Selector("willDismissEditMenuWithAnimator:")
+    public native void willDismissEditMenuWithAnimator(
+            @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator);
+
+    @Generated
+    @IsOptional
+    @Selector("willHighlightFoundTextRange:inDocument:")
+    public native void willHighlightFoundTextRangeInDocument(UITextRange range,
+            @Mapped(ObjCObjectMapper.class) Object document);
+
+    @Generated
+    @IsOptional
+    @Selector("willPresentEditMenuWithAnimator:")
+    public native void willPresentEditMenuWithAnimator(
+            @Mapped(ObjCObjectMapper.class) UIEditMenuInteractionAnimating animator);
 }

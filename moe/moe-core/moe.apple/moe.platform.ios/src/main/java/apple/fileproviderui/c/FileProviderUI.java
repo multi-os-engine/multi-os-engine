@@ -21,6 +21,9 @@ public final class FileProviderUI {
     private FileProviderUI() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

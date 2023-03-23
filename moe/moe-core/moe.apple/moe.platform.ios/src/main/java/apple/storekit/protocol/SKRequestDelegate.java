@@ -31,6 +31,9 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SKRequestDelegate")
 public interface SKRequestDelegate {
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("request:didFailWithError:")
@@ -38,6 +41,9 @@ public interface SKRequestDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 3.0
+     */
     @Generated
     @IsOptional
     @Selector("requestDidFinish:")

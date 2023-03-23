@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * centroid if numberOfTouchesRequired > 1
  * locationOfTouch:inView: location of a particular touch, from the first tap in the sequence if numberOfTapsRequired >
  * 1
+ * 
+ * API-Since: 3.2
  */
 @Generated
 @Library("UIKit")
@@ -202,6 +204,8 @@ public class UITapGestureRecognizer extends UIGestureRecognizer {
     /**
      * Default is UIEventButtonMaskPrimary and cannot be 0. This property is only evaluated on indirect input devices
      * and is the mask of pressed buttons to required to match.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("buttonMaskRequired")
@@ -211,6 +215,8 @@ public class UITapGestureRecognizer extends UIGestureRecognizer {
     /**
      * Default is UIEventButtonMaskPrimary and cannot be 0. This property is only evaluated on indirect input devices
      * and is the mask of pressed buttons to required to match.
+     * 
+     * API-Since: 13.4
      */
     @Generated
     @Selector("setButtonMaskRequired:")

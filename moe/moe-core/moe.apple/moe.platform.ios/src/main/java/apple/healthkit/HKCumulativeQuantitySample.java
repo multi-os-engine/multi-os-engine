@@ -28,8 +28,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * HKCumulativeQuantitySample
- * <p>
+ * 
  * An HKQuantitySample subclass representing a quantity measurement with cumulative aggregation style.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("HealthKit")
@@ -159,7 +161,7 @@ public class HKCumulativeQuantitySample extends HKQuantitySample {
 
     /**
      * [@property] sumQuantity
-     * <p>
+     * 
      * The sum of quantities represented by the receiver.
      */
     @Generated

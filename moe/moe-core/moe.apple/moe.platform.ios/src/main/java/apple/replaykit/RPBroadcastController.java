@@ -46,9 +46,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * RPBroadcastController
- * <p>
+ * 
  * Available once a user has successfully initiated a broadcast using an RPBroadcastActivityViewController. Can be used
  * to start, pause and stop a broadcast.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("ReplayKit")
@@ -162,7 +164,12 @@ public class RPBroadcastController extends NSObject {
 
     /**
      * bundleID of the broadcast extension which was selected by the user.
+     * 
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: No longer supported
      */
+    @Deprecated
     @Generated
     @Selector("broadcastExtensionBundleID")
     public native String broadcastExtensionBundleID();
@@ -184,7 +191,7 @@ public class RPBroadcastController extends NSObject {
 
     /**
      * Finish the broadcast.
-     *
+     * 
      * @param error Optional error in the RPRecordingErrorCode domain. A nil error signifies that broadcasting has
      *              finished successfully.
      */
@@ -257,7 +264,7 @@ public class RPBroadcastController extends NSObject {
 
     /**
      * Start the broadcast.
-     *
+     * 
      * @param error Optional error in the RPRecordingErrorCode domain. A nil error signifies that broadcasting has
      *              started successfully.
      */

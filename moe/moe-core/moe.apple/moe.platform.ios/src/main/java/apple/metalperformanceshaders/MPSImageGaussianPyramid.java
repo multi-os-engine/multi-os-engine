@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSImageGaussianPyramid
- * <p>
+ * 
  * A Gaussian image pyramid is constructed as follows:
  * The mipmap level zero is the source of the operation and is left untouched and
  * the subsequent mipmap levels are constructed from it recursively:
@@ -62,13 +62,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * k = w w^T, where w = [ (1/4 - a/2), 1/4, a, 1/4, (1/4 - a/2) ]^T
  * [@endcode]
  * or the user can provide a completely custom kernel.
- * <p>
+ * 
  * This procedure is continued until every mipmap level present in the image texture are
  * filled with the pyramid levels.
- * <p>
+ * 
  * In case of the Gaussian pyramid the user must run the operation in-place using:
  * [@ref] MPSUnaryImageKernel::encodeToCommandBuffer:inPlaceTexture:fallbackCopyAllocator:,
  * where the fallback allocator is ignored.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("MetalPerformanceShaders")

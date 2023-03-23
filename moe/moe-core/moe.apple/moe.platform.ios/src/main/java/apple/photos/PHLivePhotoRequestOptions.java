@@ -44,6 +44,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.1
+ */
 @Generated
 @Library("Photos")
 @Runtime(ObjCRuntime.class)
@@ -151,6 +154,9 @@ public class PHLivePhotoRequestOptions extends NSObject implements NSCopying {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object copyWithZone(VoidPtr zone);
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @Selector("deliveryMode")
     @NInt
@@ -160,29 +166,46 @@ public class PHLivePhotoRequestOptions extends NSObject implements NSCopying {
     @Selector("init")
     public native PHLivePhotoRequestOptions init();
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @Selector("isNetworkAccessAllowed")
     public native boolean isNetworkAccessAllowed();
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @Selector("setNetworkAccessAllowed:")
     public native void setNetworkAccessAllowed(boolean value);
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @Selector("progressHandler")
     @ObjCBlock(name = "call_progressHandler_ret")
     public native Block_progressHandler_ret progressHandler();
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @Selector("setDeliveryMode:")
     public native void setDeliveryMode(@NInt long value);
 
+    /**
+     * API-Since: 9.1
+     */
     @Generated
     @Selector("setProgressHandler:")
     public native void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
 
     /**
      * version
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("setVersion:")
@@ -190,6 +213,8 @@ public class PHLivePhotoRequestOptions extends NSObject implements NSCopying {
 
     /**
      * version
+     * 
+     * API-Since: 9.1
      */
     @Generated
     @Selector("version")

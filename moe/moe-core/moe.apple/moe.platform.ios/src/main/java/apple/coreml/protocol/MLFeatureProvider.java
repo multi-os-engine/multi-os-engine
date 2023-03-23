@@ -11,6 +11,8 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * Protocol for accessing a feature value for a feature name
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreML")

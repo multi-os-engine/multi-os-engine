@@ -44,7 +44,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNCrossChannelNormalization
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * Specifies the normalization filter across feature channels.
  * This normalization filter applies the filter to a local region across nearby feature channels,
  * but with no spatial extent (i.e., they have shape kernelSize x 1 x 1).
@@ -54,12 +54,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * L(i,j,k) = delta + alpha/N * (sum_{q in Q(k)} X(i,j,q)^2, where
  * N is the kernel size. The window Q(k) itself is defined as:
  * Q(k) = [max(0, k-floor(N/2)), min(D-1, k+floor((N-1)/2)], where
- * <p>
+ * 
  * k is the feature channel index (running from 0 to D-1) and
  * D is the number of feature channels, and alpha, beta and delta are paremeters.
  * It is the end-users responsibility to ensure that the combination of the
  * parameters delta and alpha does not result in a situation where the denominator
  * becomes zero - in such situations the resulting pixel-value is undefined.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -173,7 +175,7 @@ public class MPSCNNCrossChannelNormalization extends MPSCNNKernel {
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The value of alpha. Default is 1.0. Must be non-negative.
      */
     @Generated
@@ -182,7 +184,7 @@ public class MPSCNNCrossChannelNormalization extends MPSCNNKernel {
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The value of beta. Default is 5.0
      */
     @Generated
@@ -191,7 +193,7 @@ public class MPSCNNCrossChannelNormalization extends MPSCNNKernel {
 
     /**
      * [@property] delta
-     * <p>
+     * 
      * The value of delta. Default is 1.0
      */
     @Generated
@@ -208,7 +210,7 @@ public class MPSCNNCrossChannelNormalization extends MPSCNNKernel {
 
     /**
      * Initialize a local response normalization filter in a channel
-     *
+     * 
      * @param device     The device the filter will run on
      * @param kernelSize The kernel filter size in each dimension.
      * @return A valid MPSCNNCrossChannelNormalization object or nil, if failure.
@@ -220,7 +222,7 @@ public class MPSCNNCrossChannelNormalization extends MPSCNNKernel {
 
     /**
      * [@property] kernelSize
-     * <p>
+     * 
      * The size of the square filter window. Default is 5
      */
     @Generated
@@ -230,7 +232,7 @@ public class MPSCNNCrossChannelNormalization extends MPSCNNKernel {
 
     /**
      * [@property] alpha
-     * <p>
+     * 
      * The value of alpha. Default is 1.0. Must be non-negative.
      */
     @Generated
@@ -239,7 +241,7 @@ public class MPSCNNCrossChannelNormalization extends MPSCNNKernel {
 
     /**
      * [@property] beta
-     * <p>
+     * 
      * The value of beta. Default is 5.0
      */
     @Generated
@@ -248,7 +250,7 @@ public class MPSCNNCrossChannelNormalization extends MPSCNNKernel {
 
     /**
      * [@property] delta
-     * <p>
+     * 
      * The value of delta. Default is 1.0
      */
     @Generated
@@ -261,16 +263,18 @@ public class MPSCNNCrossChannelNormalization extends MPSCNNKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
+     * 
+     *         API-Since: 11.0
      */
     @Generated
     @Selector("initWithCoder:device:")

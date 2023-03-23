@@ -332,6 +332,9 @@ public class NSMutableData extends NSData {
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("compressUsingAlgorithm:error:")
     public native boolean compressUsingAlgorithmError(@NInt long algorithm,
@@ -340,6 +343,8 @@ public class NSMutableData extends NSData {
     /**
      * These methods compress or decompress the receiver's contents in-place using the specified algorithm. If the
      * operation is not successful, these methods leave the receiver unchanged..
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("decompressUsingAlgorithm:error:")

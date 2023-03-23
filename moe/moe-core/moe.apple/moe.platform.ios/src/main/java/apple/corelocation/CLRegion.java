@@ -47,9 +47,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CLRegion
- * <p>
+ * 
  * Discussion:
  * A logical area.
+ * 
+ * API-Since: 4.0
  */
 @Generated
 @Library("CoreLocation")
@@ -167,11 +169,15 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * center
-     * <p>
+     * 
      * Discussion:
      * Returns the coordinate of the center of the region.
-     * <p>
+     * 
      * This method has been deprecated, please see CLCircularRegion.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Please see CLCircularRegion
      */
     @Generated
     @Deprecated
@@ -181,11 +187,15 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * containsCoordinate:
-     * <p>
+     * 
      * Discussion:
      * Returns YES if the coordinate lies inside the region, and NO otherwise.
-     * <p>
+     * 
      * This method has been deprecated, please see CLCircularRegion.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Please see CLCircularRegion
      */
     @Generated
     @Deprecated
@@ -204,9 +214,11 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * identifier
-     * <p>
+     * 
      * Discussion:
      * Returns the region's identifier.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("identifier")
@@ -218,13 +230,17 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * initCircularRegionWithCenter:radius:identifier:
-     * <p>
+     * 
      * Discussion:
      * Initialize a region. center gives the coordinates of center of the region, while radius gives
      * the distance in meters between the center and the region's boundary. identifier is a description
      * for the region that could be displayed to the user, and ideally should be chosen by the user.
-     * <p>
+     * 
      * This method has been deprecated, please see CLCircularRegion.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Please see CLCircularRegion
      */
     @Generated
     @Deprecated
@@ -238,10 +254,12 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * notifyOnEntry
-     * <p>
+     * 
      * Discussion:
      * App will be launched and the delegate will be notified via locationManager:didEnterRegion:
      * when the user enters the region. By default, this is YES.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("notifyOnEntry")
@@ -249,10 +267,12 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * notifyOnExit
-     * <p>
+     * 
      * Discussion:
      * App will be launched and the delegate will be notified via locationManager:didExitRegion:
      * when the user exits the region. By default, this is YES.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("notifyOnExit")
@@ -260,11 +280,15 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * radius
-     * <p>
+     * 
      * Discussion:
      * Returns the radius of the region.
-     * <p>
+     * 
      * This method has been deprecated, please see CLCircularRegion.
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Please see CLCircularRegion
      */
     @Generated
     @Deprecated
@@ -273,10 +297,12 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * notifyOnEntry
-     * <p>
+     * 
      * Discussion:
      * App will be launched and the delegate will be notified via locationManager:didEnterRegion:
      * when the user enters the region. By default, this is YES.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setNotifyOnEntry:")
@@ -284,10 +310,12 @@ public class CLRegion extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * notifyOnExit
-     * <p>
+     * 
      * Discussion:
      * App will be launched and the delegate will be notified via locationManager:didExitRegion:
      * when the user exits the region. By default, this is YES.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setNotifyOnExit:")

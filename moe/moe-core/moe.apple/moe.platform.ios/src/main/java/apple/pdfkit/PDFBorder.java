@@ -1,7 +1,6 @@
 package apple.pdfkit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
@@ -29,9 +28,12 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * PDFBorder is not directly an annotation, but instead is a supportive structure common to a few annotations.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("PDFKit")

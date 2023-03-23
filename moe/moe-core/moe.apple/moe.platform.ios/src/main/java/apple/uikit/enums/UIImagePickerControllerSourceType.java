@@ -21,9 +21,19 @@ import org.moe.natj.general.ann.NInt;
 
 @Generated
 public final class UIImagePickerControllerSourceType {
-    @Generated @NInt public static final long PhotoLibrary = 0x0000000000000000L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Will be removed in a future release, use PHPicker.
+     */
+    @Deprecated @Generated @NInt public static final long PhotoLibrary = 0x0000000000000000L;
     @Generated @NInt public static final long Camera = 0x0000000000000001L;
-    @Generated @NInt public static final long SavedPhotosAlbum = 0x0000000000000002L;
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 100000.0
+     * Deprecated-Message: Will be removed in a future release, use PHPicker.
+     */
+    @Deprecated @Generated @NInt public static final long SavedPhotosAlbum = 0x0000000000000002L;
 
     @Generated
     private UIImagePickerControllerSourceType() {

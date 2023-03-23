@@ -589,7 +589,11 @@ public final class Enums {
      * < needs to be ORed with the actual number of channels
      */
     @Generated public static final int kAudioChannelLayoutTag_Unknown = 0xFFFF0000;
-    @Generated public static final int AVAudioSessionErrorInsufficientPriority = 0x21707269;
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 12.0
+     */
+    @Deprecated @Generated public static final int AVAudioSessionErrorInsufficientPriority = 0x21707269;
     @Generated public static final int kAudioFormatLinearPCM = 0x6C70636D;
     @Generated public static final int kAudioFormatAC3 = 0x61632D33;
     @Generated public static final int kAudioFormat60958AC3 = 0x63616333;
@@ -631,8 +635,8 @@ public final class Enums {
     @Generated public static final int kAudioFormatFLAC = 0x666C6163;
     @Generated public static final int kAudioFormatOpus = 0x6F707573;
     @Generated public static final int kAudioFormatFlagsNativeEndian = 0x00000000;
-    @Deprecated @Generated public static final int kAudioFormatFlagsCanonical = 0x0000000C;
-    @Deprecated @Generated public static final int kAudioFormatFlagsAudioUnitCanonical = 0x00000C2C;
+    @Generated public static final int kAudioFormatFlagsCanonical = 0x0000000C;
+    @Generated public static final int kAudioFormatFlagsAudioUnitCanonical = 0x00000C2C;
     @Generated public static final int kAudioFormatFlagsNativeFloatPacked = 0x00000009;
     @Generated public static final int kAudio_UnimplementedError = 0xFFFFFFFC;
     @Generated public static final int kAudio_FileNotFoundError = 0xFFFFFFD5;
@@ -1113,4 +1117,96 @@ public final class Enums {
      * < L R Rls Rrs Ls Rs C LFE Vhl Vhr Ltm Rtm Ltr Rtr
      */
     @Generated public static final int kAudioChannelLayoutTag_Logic_Atmos_7_1_6 = 0x00CB000E;
+    @Generated public static final int kAudioChannelLabel_LeftSideSurround = 0x00000037;
+    @Generated public static final int kAudioChannelLabel_RightSideSurround = 0x00000038;
+    @Generated public static final int kAudioChannelLabel_LeftBottom = 0x00000039;
+    @Generated public static final int kAudioChannelLabel_RightBottom = 0x0000003A;
+    @Generated public static final int kAudioChannelLabel_CenterBottom = 0x0000003B;
+    @Generated public static final int kAudioChannelLabel_LeftTopSurround = 0x0000003C;
+    @Generated public static final int kAudioChannelLabel_RightTopSurround = 0x0000003D;
+    @Generated public static final int kAudioChannelLabel_LFE3 = 0x0000003E;
+    @Generated public static final int kAudioChannelLabel_LeftBackSurround = 0x0000003F;
+    @Generated public static final int kAudioChannelLabel_RightBackSurround = 0x00000040;
+    @Generated public static final int kAudioChannelLabel_LeftEdgeOfScreen = 0x00000041;
+    @Generated public static final int kAudioChannelLabel_RightEdgeOfScreen = 0x00000042;
+    /**
+     * channel represents an object, ORed with channel index
+     */
+    @Generated public static final int kAudioChannelLabel_Object = 0x00040000;
+    /**
+     * < C
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_1 = 0x00640001;
+    /**
+     * < L R
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_2 = 0x00650002;
+    /**
+     * < L R C
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_3 = 0x00710003;
+    /**
+     * < L R C Cs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_4 = 0x00730004;
+    /**
+     * < L R C Ls Rs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_5 = 0x00750005;
+    /**
+     * < L R C LFE Ls Rs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_6 = 0x00790006;
+    /**
+     * < L R C LFE Ls Rs Lc Rc
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_7 = 0x007F0008;
+    /**
+     * < L R Cs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_9 = 0x00830003;
+    /**
+     * < L R Ls Rs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_10 = 0x00840004;
+    /**
+     * < L R C LFE Ls Rs Cs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_11 = 0x007D0007;
+    /**
+     * < L R C LFE Ls Rs Rls Rrs
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_12 = 0x00800008;
+    /**
+     * < Lc Rc C LFE2 Rls Rrs L R Cs LFE3 Lss Rss Vhl Vhr Vhc Ts Ltr Rtr Ltm Rtm Ctr Cb Lb Rb
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_13 = 0x00CC0018;
+    /**
+     * < L R C LFE Ls Rs Vhl Vhr
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_14 = 0x00CD0008;
+    /**
+     * < L R C LFE2 Rls Rrs LFE3 Lss Rss Vhl Vhr Ctr
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_15 = 0x00CE000C;
+    /**
+     * < L R C LFE Ls Rs Vhl Vhr Lts Rts
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_16 = 0x00CF000A;
+    /**
+     * < L R C LFE Ls Rs Vhl Vhr Vhc Lts Rts Ts
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_17 = 0x00D0000C;
+    /**
+     * < L R C LFE Ls Rs Lbs Rbs Vhl Vhr Vhc Lts Rts Ts
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_18 = 0x00D1000E;
+    /**
+     * < L R C LFE Rls Rrs Lss Rss Vhl Vhr Ltr Rtr
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_19 = 0x00D2000C;
+    /**
+     * < L R C LFE Rls Rrs Lss Rss Vhl Vhr Ltr Rtr Leos Reos
+     */
+    @Generated public static final int kAudioChannelLayoutTag_CICP_20 = 0x00D3000E;
 }

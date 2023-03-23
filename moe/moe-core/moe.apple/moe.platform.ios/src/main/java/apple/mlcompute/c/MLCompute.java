@@ -111,6 +111,8 @@ public final class MLCompute {
 
     /**
      * Returns a textual description of the comparison operation, suitable for debugging.
+     * 
+     * API-Since: 14.5
      */
     @Generated
     @CFunction
@@ -119,6 +121,8 @@ public final class MLCompute {
 
     /**
      * Returns a textual description of the gradient clipping type, suitable for debugging.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @CFunction

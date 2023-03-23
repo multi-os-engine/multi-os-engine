@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Description of a feature
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreML")
@@ -210,6 +212,8 @@ public class MLFeatureDescription extends NSObject implements NSCopying, NSSecur
 
     /**
      * Constraint when type == MLFeatureTypeSequence, nil otherwise
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("sequenceConstraint")

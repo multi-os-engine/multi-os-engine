@@ -30,14 +30,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNBinaryFullyConnected
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The MPSCNNBinaryFullyConnected specifies a fully connected convolution layer with binary weights
  * and optionally binarized input image.
  * See @ref MPSCNNFullyConnected for details on the fully connected layer and
  * MPSCNNBinaryConvolution for binary convolutions.
- * <p>
+ * 
  * The default padding policy for MPSCNNBinaryConvolution is different from most
  * filters. It uses MPSNNPaddingMethodSizeValidOnly instead of MPSNNPaddingMethodSizeSame.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -112,13 +114,13 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
@@ -134,7 +136,7 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
 
     /**
      * Initializes a binary fully connected kernel with binary weights as well as both pre and post scaling terms.
-     *
+     * 
      * @param device           The MTLDevice on which this MPSCNNBinaryFullyConnected filter will be used
      * @param convolutionData  A pointer to a object that conforms to the MPSCNNConvolutionDataSource protocol.
      *                         The MPSCNNConvolutionDataSource protocol declares the methods that an
@@ -151,6 +153,7 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
      *                         on
      *                         inputchannels varies most rapidly, followed by kernelWidth, then kernelHeight and finally
      *                         outputChannels varies least rapidly.)
+     * 
      * @param outputBiasTerms  A pointer to bias terms to be applied to the convolution output. Each entry is a float
      *                         value.
      *                         The number of entries is = numberOfOutputFeatureMaps. If nil then 0.0 is used for bias.
@@ -176,6 +179,7 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
      *                         function returns.
      * @param type             What kind of binarization strategy is to be used.
      * @param flags            See documentation above and documentation of MPSCNNBinaryConvolutionFlags.
+     * 
      * @return A valid MPSCNNBinaryFullyConnected object or nil, if failure.
      */
     @Generated
@@ -188,7 +192,7 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
 
     /**
      * Initializes a binary fully connected kernel with binary weights and a single scaling term.
-     *
+     * 
      * @param device          The MTLDevice on which this MPSCNNBinaryFullyConnected filter will be used
      * @param convolutionData A pointer to a object that conforms to the MPSCNNConvolutionDataSource protocol.
      *                        The MPSCNNConvolutionDataSource protocol declares the methods that an
@@ -210,6 +214,7 @@ public class MPSCNNBinaryFullyConnected extends MPSCNNBinaryConvolution {
      *                        1.0 is used.
      * @param type            What kind of binarization strategy is to be used.
      * @param flags           See documentation above and documentation of MPSCNNBinaryConvolutionFlags.
+     * 
      * @return A valid MPSCNNBinaryFullyConnected object or nil, if failure.
      */
     @Generated

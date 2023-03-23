@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HKElectrocardiogramSymptomsStatus
- * <p>
+ * 
  * An indication of whether the user experienced symptoms when taking an ECG
  * [@constant] HKElectrocardiogramSymptomsStatusNotSet The user did not specify whether or not they experienced
  * symptoms.
@@ -13,9 +13,11 @@ import org.moe.natj.general.ann.NInt;
  * electrocardiogram reading.
  * HKElectrocardiogramSymptomsStatusPresent The user indicated that they experienced symptoms during the duration of the
  * electrocardiogram reading.
- * <p>
+ * 
  * If an HKElectrocardiogram indicates that there are symptoms present, you must do a separate sample query to
  * retrieve those symptoms.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 public final class HKElectrocardiogramSymptomsStatus {
@@ -23,7 +25,16 @@ public final class HKElectrocardiogramSymptomsStatus {
     private HKElectrocardiogramSymptomsStatus() {
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long NotSet = 0x0000000000000000L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000001L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long Present = 0x0000000000000002L;
 }

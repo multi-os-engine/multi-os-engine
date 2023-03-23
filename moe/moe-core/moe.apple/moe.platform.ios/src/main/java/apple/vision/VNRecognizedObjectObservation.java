@@ -1,7 +1,6 @@
 package apple.vision;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSMethodSignature;
@@ -25,14 +24,17 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * VNRecognizedObjectObservation
  * [@superclass] VNDetectedObjectObservation
- * <p>
+ * 
  * VNRecognizedObjectObservation is a VNDetectedObjectObservation with an array of classifications that classify the
  * recognized object. The confidence of the classifications sum up to 1.0. It is common practice to multiply the
  * classification confidence with the confidence of this observation.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("Vision")

@@ -158,16 +158,34 @@ public class NSKeyedUnarchiver extends NSCoder {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use +unarchivedObjectOfClass:fromData:error: instead
+     */
+    @Deprecated
     @Generated
     @Selector("unarchiveObjectWithData:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object unarchiveObjectWithData(NSData data);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use +unarchivedObjectOfClass:fromData:error: instead
+     */
+    @Deprecated
     @Generated
     @Selector("unarchiveObjectWithFile:")
     @MappedReturn(ObjCObjectMapper.class)
     public static native Object unarchiveObjectWithFile(String path);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use +unarchivedObjectOfClass:fromData:error: instead
+     */
+    @Deprecated
     @Generated
     @Selector("unarchiveTopLevelObjectWithData:error:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -226,6 +244,9 @@ public class NSKeyedUnarchiver extends NSCoder {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object decodeObjectForKey(String key);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("decodingFailurePolicy")
     @NInt
@@ -240,10 +261,22 @@ public class NSKeyedUnarchiver extends NSCoder {
     @Selector("finishDecoding")
     public native void finishDecoding();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use -initForReadingFromData:error: instead
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSKeyedUnarchiver init();
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 12.0
+     * Deprecated-Message: Use -initForReadingFromData:error: instead
+     */
+    @Deprecated
     @Generated
     @Selector("initForReadingWithData:")
     public native NSKeyedUnarchiver initForReadingWithData(NSData data);
@@ -253,6 +286,8 @@ public class NSKeyedUnarchiver extends NSCoder {
      * exception. Once enabled, attempting to set requiresSecureCoding to NO will throw an exception. This is to prevent
      * classes from selectively turning secure coding off. This is designed to be set once at the top level and remain
      * on. Note that the getter is on the superclass, NSCoder. See NSCoder for more information about secure coding.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("requiresSecureCoding")
@@ -262,6 +297,9 @@ public class NSKeyedUnarchiver extends NSCoder {
     @Selector("setClass:forClassName:")
     public native void setClassForClassName(Class cls, String codedName);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("setDecodingFailurePolicy:")
     public native void setDecodingFailurePolicy(@NInt long value);
@@ -287,6 +325,8 @@ public class NSKeyedUnarchiver extends NSCoder {
      * exception. Once enabled, attempting to set requiresSecureCoding to NO will throw an exception. This is to prevent
      * classes from selectively turning secure coding off. This is designed to be set once at the top level and remain
      * on. Note that the getter is on the superclass, NSCoder. See NSCoder for more information about secure coding.
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setRequiresSecureCoding:")
@@ -294,13 +334,15 @@ public class NSKeyedUnarchiver extends NSCoder {
 
     /**
      * Initializes the receiver for decoding an archive previously encoded by \c NSKeyedUnarchiver.
-     * <p>
+     * 
      * Enables \c requiresSecureCoding by default. If \c NSSecureCoding cannot be used, \c requiresSecureCoding may be
      * turned off manually; for improved security, \c requiresSecureCoding should be left enabled whenever possible.
-     * <p>
+     * 
      * Sets the unarchiver's \c decodingFailurePolicy to \c NSDecodingFailurePolicySetErrorAndReturn.
-     * <p>
+     * 
      * Returns \c nil if the given data is not valid, and sets the \c error out parameter.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("initForReadingFromData:error:")
@@ -309,11 +351,13 @@ public class NSKeyedUnarchiver extends NSCoder {
 
     /**
      * Decodes the root object of the given class from the given archive, previously encoded by \c NSKeyedArchiver.
-     * <p>
+     * 
      * Enables \c requiresSecureCoding and sets the \c decodingFailurePolicy to \c
      * NSDecodingFailurePolicySetErrorAndReturn.
-     * <p>
+     * 
      * Returns \c nil if the given data is not valid or cannot be decoded, and sets the \c error out parameter.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("unarchivedObjectOfClass:fromData:error:")
@@ -324,11 +368,13 @@ public class NSKeyedUnarchiver extends NSCoder {
     /**
      * Decodes the root object of one of the given classes from the given archive, previously encoded by \c
      * NSKeyedArchiver.
-     * <p>
+     * 
      * Enables \c requiresSecureCoding and sets the \c decodingFailurePolicy to \c
      * NSDecodingFailurePolicySetErrorAndReturn.
-     * <p>
+     * 
      * Returns \c nil if the given data is not valid or cannot be decoded, and sets the \c error out parameter.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("unarchivedObjectOfClasses:fromData:error:")
@@ -340,11 +386,13 @@ public class NSKeyedUnarchiver extends NSCoder {
      * Decodes the \c NSArray root object from \c data which should be an \c NSArray<cls> containing the given
      * non-collection class (no nested arrays or arrays of dictionaries, etc) from the given archive, previously encoded
      * by \c NSKeyedArchiver.
-     * <p>
+     * 
      * Enables \c requiresSecureCoding and sets the \c decodingFailurePolicy to \c
      * NSDecodingFailurePolicySetErrorAndReturn.
-     * <p>
+     * 
      * Returns \c nil if the given data is not valid or cannot be decoded, and sets the \c error out parameter.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("unarchivedArrayOfObjectsOfClass:fromData:error:")
@@ -355,11 +403,13 @@ public class NSKeyedUnarchiver extends NSCoder {
      * Decodes the \c NSArray root object from \c data which should be an \c NSArray, containing the given
      * non-collection classes in \c classes (no nested arrays or arrays of dictionaries, etc) from the given archive,
      * previously encoded by \c NSKeyedArchiver.
-     * <p>
+     * 
      * Enables \c requiresSecureCoding and sets the \c decodingFailurePolicy to \c
      * NSDecodingFailurePolicySetErrorAndReturn.
-     * <p>
+     * 
      * Returns \c nil if the given data is not valid or cannot be decoded, and sets the \c error out parameter.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("unarchivedArrayOfObjectsOfClasses:fromData:error:")
@@ -371,11 +421,13 @@ public class NSKeyedUnarchiver extends NSCoder {
      * keys of type given in \c keyCls and objects of the given non-collection class \c objectCls (no nested
      * dictionaries or other dictionaries contained in the dictionary, etc) from the given archive, previously encoded
      * by \c NSKeyedArchiver.
-     * <p>
+     * 
      * Enables \c requiresSecureCoding and sets the \c decodingFailurePolicy to \c
      * NSDecodingFailurePolicySetErrorAndReturn.
-     * <p>
+     * 
      * Returns \c nil if the given data is not valid or cannot be decoded, and sets the \c error out parameter.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("unarchivedDictionaryWithKeysOfClass:objectsOfClass:fromData:error:")
@@ -387,11 +439,13 @@ public class NSKeyedUnarchiver extends NSCoder {
      * given in \c keyClasses and objects of the given non-collection classes in \c objectClasses (no nested
      * dictionaries or other dictionaries contained in the dictionary, etc) from the given archive, previously encoded
      * by \c NSKeyedArchiver.
-     * <p>
+     * 
      * Enables \c requiresSecureCoding and sets the \c decodingFailurePolicy to \c
      * NSDecodingFailurePolicySetErrorAndReturn.
-     * <p>
+     * 
      * Returns \c nil if the given data is not valid or cannot be decoded, and sets the \c error out parameter.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("unarchivedDictionaryWithKeysOfClasses:objectsOfClasses:fromData:error:")

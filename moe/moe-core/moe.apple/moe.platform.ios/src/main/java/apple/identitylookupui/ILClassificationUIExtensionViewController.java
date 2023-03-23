@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Represents a view controller to subclass for displaying classification UI
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("IdentityLookupUI")
@@ -58,6 +60,7 @@ public class ILClassificationUIExtensionViewController extends UIViewController 
     @Selector("allocWithZone:")
     public static native ILClassificationUIExtensionViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();

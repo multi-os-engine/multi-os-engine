@@ -148,6 +148,8 @@ public class NSTimer extends NSObject {
      * be invalidated after it fires.
      * - parameter: block The execution body of the timer; the timer itself is passed as the parameter to this block
      * when executed to aid in avoiding cyclical references
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("scheduledTimerWithTimeInterval:repeats:block:")
@@ -182,6 +184,8 @@ public class NSTimer extends NSObject {
      * be invalidated after it fires.
      * - parameter: block The execution body of the timer; the timer itself is passed as the parameter to this block
      * when executed to aid in avoiding cyclical references
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("timerWithTimeInterval:repeats:block:")
@@ -221,6 +225,8 @@ public class NSTimer extends NSObject {
      * be invalidated after it fires.
      * - parameter: block The execution body of the timer; the timer itself is passed as the parameter to this block
      * when executed to aid in avoiding cyclical references
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("initWithFireDate:interval:repeats:block:")
@@ -256,6 +262,8 @@ public class NSTimer extends NSObject {
      * general rule of thumb, though, is to set the tolerance to at least 10% of the interval, for a repeating timer.
      * Even a small amount of tolerance will have a significant positive impact on the power usage of your application.
      * The system may put a maximum value of the tolerance.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setTolerance:")
@@ -277,6 +285,8 @@ public class NSTimer extends NSObject {
      * general rule of thumb, though, is to set the tolerance to at least 10% of the interval, for a repeating timer.
      * Even a small amount of tolerance will have a significant positive impact on the power usage of your application.
      * The system may put a maximum value of the tolerance.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("tolerance")

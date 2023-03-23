@@ -42,7 +42,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * The ACAccount class represents an account stored on the system.
  * Accounts are created not bound to any store. Once an account is saved it belongs
  * to the store it was saved into.
+ * 
+ * API-Since: 6.0
+ * Deprecated-Since: 15.0
+ * Deprecated-Message: Use appropriate non-Apple SDK corresponding to the type of account you want to reference instead
  */
+@Deprecated
 @Generated
 @Library("Accounts")
 @Runtime(ObjCRuntime.class)
@@ -173,6 +178,14 @@ public class ACAccount extends NSObject {
     /**
      * The credential for the account. This property can be set and saved during account creation. It is
      * inaccessible once the account has been saved.
+     * 
+     * Unless an error occurs in loading, calling account.credential will always return a non-nil ACAccountCredential
+     * object,
+     * which will have 0 to n credential items set on it. Setting this property to nil will not unset any credential
+     * items saved
+     * to this account's credential. See ACAccountCredential.h for details on setting, getting, and clearing credential
+     * items.
+     * 
      * WARNING: Backed by a synchronous xpc call to accountsd, not appropriate to call on a UI Application's main thread
      */
     @Generated
@@ -217,6 +230,14 @@ public class ACAccount extends NSObject {
     /**
      * The credential for the account. This property can be set and saved during account creation. It is
      * inaccessible once the account has been saved.
+     * 
+     * Unless an error occurs in loading, calling account.credential will always return a non-nil ACAccountCredential
+     * object,
+     * which will have 0 to n credential items set on it. Setting this property to nil will not unset any credential
+     * items saved
+     * to this account's credential. See ACAccountCredential.h for details on setting, getting, and clearing credential
+     * items.
+     * 
      * WARNING: Backed by a synchronous xpc call to accountsd, not appropriate to call on a UI Application's main thread
      */
     @Generated
@@ -234,6 +255,8 @@ public class ACAccount extends NSObject {
     /**
      * For accounts that support it (currently only Facebook accounts), you can get the user's full name for display
      * purposes without having to talk to the network.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("userFullName")

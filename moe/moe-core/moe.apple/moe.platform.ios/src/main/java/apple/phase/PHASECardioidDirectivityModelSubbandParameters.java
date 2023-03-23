@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASECardioidDirectivityModelSubbandParameters
- * <p>
+ * 
  * Cardioid directivity model subband parameters.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -87,7 +89,7 @@ public class PHASECardioidDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] frequency
-     * <p>
+     * 
      * The frequency of the subband, in hertz.
      * [@note]
      * Values are clamped to the range [20.0, 20000.0]. Default value is 1000.0.
@@ -133,7 +135,7 @@ public class PHASECardioidDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] pattern
-     * <p>
+     * 
      * The directivity pattern.
      * [@note]
      * Values are clamped to the range [0.0, 1.0]. Default value is 0.0. 0.0 is omnidirectional. 0.5 is cardioid. 1.0 is
@@ -153,7 +155,7 @@ public class PHASECardioidDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] frequency
-     * <p>
+     * 
      * The frequency of the subband, in hertz.
      * [@note]
      * Values are clamped to the range [20.0, 20000.0]. Default value is 1000.0.
@@ -164,7 +166,7 @@ public class PHASECardioidDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] pattern
-     * <p>
+     * 
      * The directivity pattern.
      * [@note]
      * Values are clamped to the range [0.0, 1.0]. Default value is 0.0. 0.0 is omnidirectional. 0.5 is cardioid. 1.0 is
@@ -176,7 +178,7 @@ public class PHASECardioidDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] sharpness
-     * <p>
+     * 
      * The sharpness of the directivity pattern.
      * [@note]
      * Values are clamped to the range [1.0, DBL_MAX]. Default value is 1.0. Values > 1.0 increase sharpness.
@@ -191,7 +193,7 @@ public class PHASECardioidDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] sharpness
-     * <p>
+     * 
      * The sharpness of the directivity pattern.
      * [@note]
      * Values are clamped to the range [1.0, DBL_MAX]. Default value is 1.0. Values > 1.0 increase sharpness.

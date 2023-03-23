@@ -33,6 +33,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNAnimationPlayer let you control when and how to play and blend an animation
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("SceneKit")
@@ -77,6 +79,7 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @Selector("animation")
     public native SCNAnimation animation();
 
+    @Deprecated
     @Generated
     @Selector("animationForKey:")
     public native CAAnimation animationForKey(String key);
@@ -91,7 +94,7 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
 
     /**
      * Initialize an animation player with an animation
-     *
+     * 
      * @param animation The animation to play
      */
     @Generated
@@ -174,6 +177,7 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    @Deprecated
     @Generated
     @Selector("isAnimationForKeyPaused:")
     public native boolean isAnimationForKeyPaused(String key);
@@ -191,6 +195,7 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @Selector("new")
     public static native SCNAnimationPlayer new_objc();
 
+    @Deprecated
     @Generated
     @Selector("pauseAnimationForKey:")
     public native void pauseAnimationForKey(String key);
@@ -221,6 +226,7 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @Selector("removeAnimationForKey:blendOutDuration:")
     public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
 
+    @Deprecated
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
     public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
@@ -233,6 +239,7 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("resumeAnimationForKey:")
     public native void resumeAnimationForKey(String key);
@@ -260,6 +267,7 @@ public class SCNAnimationPlayer extends NSObject implements SCNAnimatable, NSCop
     @Selector("setSpeed:")
     public native void setSpeed(@NFloat double value);
 
+    @Deprecated
     @Generated
     @Selector("setSpeed:forAnimationKey:")
     public native void setSpeedForAnimationKey(@NFloat double speed, String key);

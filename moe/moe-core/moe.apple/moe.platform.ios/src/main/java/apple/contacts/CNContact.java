@@ -58,12 +58,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An immutable value object representing a contact.
- * <p>
+ * 
  * CNContact is thread safe.
- * <p>
+ * 
  * If using a CNContact instance where you are not certain of the keys that were fetched, use isKeyAvailable: or
  * areKeysAvailable:. If these return NO you need to refetch the contact by the contact identifier with the keys you
  * want to fetch. Accessing a property that was not fetched will throw CNContactPropertyNotFetchedExceptionName.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("Contacts")
@@ -188,7 +190,7 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
 
     /**
      * To fetch contacts matching a name.
-     * <p>
+     * 
      * The name can contain any number of words.
      */
     @Generated
@@ -295,6 +297,9 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     @Selector("imageData")
     public native NSData imageData();
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("imageDataAvailable")
     public native boolean imageDataAvailable();
@@ -384,6 +389,9 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     @Selector("phoneticMiddleName")
     public native String phoneticMiddleName();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("phoneticOrganizationName")
     public native String phoneticOrganizationName();
@@ -487,11 +495,14 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
 
     /**
      * Fetch contacts matching an email address.
-     * <p>
+     * 
      * Use this predicate to find the contact(s) which contain the specified
      * email address. The search is not case-sensitive.
-     *
-     * @param emailAddress The email address to search for. Do not include a scheme (e.g., "mailto:").
+     * 
+     * @param emailAddress
+     *                     The email address to search for. Do not include a scheme (e.g., "mailto:").
+     * 
+     *                     API-Since: 11.0
      */
     @Generated
     @Selector("predicateForContactsMatchingEmailAddress:")
@@ -499,13 +510,16 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
 
     /**
      * Fetch contacts matching a phone number.
-     * <p>
+     * 
      * If the predicate and contact differ in their use or presence of country
      * codes, a best effort will be made to match results; however, inexact
      * matches are not guaranteed.
-     *
-     * @param phoneNumber A @c CNPhoneNumber representing the phone number to search for.
+     * 
+     * @param phoneNumber
+     *                    A @c CNPhoneNumber representing the phone number to search for.
      *                    Do not include a scheme (e.g., "tel:").
+     * 
+     *                    API-Since: 11.0
      */
     @Generated
     @Selector("predicateForContactsMatchingPhoneNumber:")

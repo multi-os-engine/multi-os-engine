@@ -27,13 +27,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAudioUnitDelay
- * <p>
+ * 
  * an AVAudioUnitEffect that implements a delay effect
- * <p>
+ * 
  * A delay unit delays the input signal by the specified time interval
  * and then blends it with the input signal. The amount of high frequency
  * roll-off can also be controlled in order to simulate the effect of
  * a tape delay.
+ * 
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -92,7 +95,7 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
     /**
      * [@property] delayTime
      * Time taken by the delayed input signal to reach the output
-     * <p>
+     * 
      * Range: 0 -> 2
      * Default: 1
      * Unit: Seconds
@@ -107,7 +110,7 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
 
     /**
      * [@property] feedback
-     * <p>
+     * 
      * Amount of the output signal fed back into the delay line
      * Range: -100 -> 100
      * Default: 50
@@ -160,7 +163,7 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
 
     /**
      * [@property] lowPassCutoff
-     * <p>
+     * 
      * Cutoff frequency above which high frequency content is rolled off
      * Range: 10 -> (samplerate/2)
      * Default: 15000
@@ -186,7 +189,7 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
     /**
      * [@property] delayTime
      * Time taken by the delayed input signal to reach the output
-     * <p>
+     * 
      * Range: 0 -> 2
      * Default: 1
      * Unit: Seconds
@@ -197,7 +200,7 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
 
     /**
      * [@property] feedback
-     * <p>
+     * 
      * Amount of the output signal fed back into the delay line
      * Range: -100 -> 100
      * Default: 50
@@ -209,7 +212,7 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
 
     /**
      * [@property] lowPassCutoff
-     * <p>
+     * 
      * Cutoff frequency above which high frequency content is rolled off
      * Range: 10 -> (samplerate/2)
      * Default: 15000
@@ -225,7 +228,7 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
 
     /**
      * [@property] wetDryMix
-     * <p>
+     * 
      * Blend of the wet and dry signals
      * Range: 0 (all dry) -> 100 (all wet)
      * Default: 100
@@ -246,7 +249,7 @@ public class AVAudioUnitDelay extends AVAudioUnitEffect {
 
     /**
      * [@property] wetDryMix
-     * <p>
+     * 
      * Blend of the wet and dry signals
      * Range: 0 (all dry) -> 100 (all wet)
      * Default: 100

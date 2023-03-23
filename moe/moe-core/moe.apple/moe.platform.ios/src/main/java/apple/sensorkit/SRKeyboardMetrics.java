@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("SensorKit")
 @Runtime(ObjCRuntime.class)
@@ -243,6 +246,8 @@ public class SRKeyboardMetrics extends NSObject {
 
     /**
      * The input modes used during a keyboard session
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("inputModes")
@@ -695,4 +700,26 @@ public class SRKeyboardMetrics extends NSObject {
     @Selector("wordCountForSentimentCategory:")
     @NInt
     public native long wordCountForSentimentCategory(@NInt long category);
+
+    /**
+     * WARNING!!! Availability for longWordTouchUpDown metrics is not accurate,
+     * since we're introducing these in C which doesn't have an SDK !!!
+     * The duration between touch up and touch down of the character keys of all the long words in the session.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("longWordTouchUpDown")
+    public native NSArray<? extends SRKeyboardProbabilityMetric<NSUnitDuration>> longWordTouchUpDown();
+
+    /**
+     * WARNING!!! Availability for touchUpDown metrics is not accurate,
+     * since we're introducing these in C which doesn't have an SDK !!!
+     * The duration between touch up to touch down for any key
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("touchUpDown")
+    public native SRKeyboardProbabilityMetric<NSUnitDuration> touchUpDown();
 }

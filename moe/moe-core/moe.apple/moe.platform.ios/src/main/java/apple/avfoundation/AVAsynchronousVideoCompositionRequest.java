@@ -47,6 +47,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -179,7 +182,12 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
     public native void finishCancelledRequest();
 
     /**
-     * callback the custom compositor should call when composition succeeded
+     * finishWithComposedVideoFrame:
+     * 
+     * The method that the custom compositor calls when composition succeeds.
+     * 
+     * @param composedVideoFrame
+     *                           The video frame to finish with.
      */
     @Generated
     @Selector("finishWithComposedVideoFrame:")
@@ -206,10 +214,11 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
 
     /**
      * sourceFrameByTrackID:
-     * <p>
+     * 
      * Returns the source CVPixelBufferRef for the given track ID
-     *
-     * @param trackID The track ID for the requested source frame
+     * 
+     * @param trackID
+     *                The track ID for the requested source frame
      */
     @Generated
     @Selector("sourceFrameByTrackID:")
@@ -232,10 +241,13 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
 
     /**
      * sourceSampleBufferByTrackID:
-     * <p>
+     * 
      * Returns the source CMSampleBufferRef for the given track ID
-     *
-     * @param trackID The track ID for the requested source sample buffer
+     * 
+     * @param trackID
+     *                The track ID for the requested source sample buffer
+     * 
+     *                API-Since: 15.0
      */
     @Generated
     @Selector("sourceSampleBufferByTrackID:")
@@ -243,6 +255,8 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
 
     /**
      * Track IDs of all the source sample data buffers that are available to compose the frame.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("sourceSampleDataTrackIDs")
@@ -250,10 +264,13 @@ public class AVAsynchronousVideoCompositionRequest extends NSObject implements N
 
     /**
      * sourceTimedMetadataByTrackID:
-     * <p>
+     * 
      * Returns the source AVTimedMetadataGroup * for the given track ID
-     *
-     * @param trackID The track ID for the requested source timed metadata group.
+     * 
+     * @param trackID
+     *                The track ID for the requested source timed metadata group.
+     * 
+     *                API-Since: 15.0
      */
     @Generated
     @Selector("sourceTimedMetadataByTrackID:")

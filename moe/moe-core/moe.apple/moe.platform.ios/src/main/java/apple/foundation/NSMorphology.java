@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -134,6 +137,8 @@ public class NSMorphology extends NSObject implements NSCopying, NSSecureCoding 
 
     /**
      * Equivalent to the above.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isUnspecified")
@@ -201,6 +206,9 @@ public class NSMorphology extends NSObject implements NSCopying, NSSecureCoding 
         return supportsSecureCoding();
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @Selector("userMorphology")
     public static native NSMorphology userMorphology();

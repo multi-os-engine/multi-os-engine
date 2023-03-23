@@ -19,32 +19,47 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 public final class NSControlCharacterAction {
     /**
      * glyphs with this action are filtered out from layout (notShownAttribute == YES)
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long ZeroAdvancement = 0x0000000000000001L;
     /**
      * the width for glyphs with this action are determined by
      * -layoutManager:boundingBoxForControlGlyphAtIndex:forTextContainer:proposedLineFragment:glyphPosition:characterIndex:
      * if the method is implemented; otherwise, same as NSControlCharacterZeroAdvancementAction
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long Whitespace = 0x0000000000000002L;
     /**
      * Treated as tab character
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long HorizontalTab = 0x0000000000000004L;
     /**
      * Causes line break
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long LineBreak = 0x0000000000000008L;
     /**
      * Causes paragraph break; firstLineIndent will be used for the following glyph
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long ParagraphBreak = 0x0000000000000010L;
     /**
      * Causes container break
+     * 
+     * API-Since: 7.0
      */
     @Generated @NInt public static final long ContainerBreak = 0x0000000000000020L;
 

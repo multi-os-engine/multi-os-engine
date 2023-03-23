@@ -29,9 +29,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * VNVector
- * <p>
+ * 
  * VNVector is a two-dimensional vector represented its X and Y axis projections. Once created, VNVector objects are
  * immutable.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")

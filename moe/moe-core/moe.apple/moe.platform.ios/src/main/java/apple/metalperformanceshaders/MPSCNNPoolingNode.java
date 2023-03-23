@@ -24,10 +24,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A node for a MPSCNNPooling kernel
- * <p>
+ * 
  * This is an abstract base class that does not correspond with any
  * particular MPSCNNKernel. Please make one of the MPSCNNPooling
  * subclasses instead.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -98,7 +100,7 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
 
     /**
      * Convenience initializer for MPSCNNPooling nodes with square non-overlapping kernels
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param size       kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = size
      * @return A new MPSNNFilter node for a MPSCNNPooling kernel.
@@ -109,7 +111,7 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
 
     /**
      * Convenience initializer for MPSCNNPooling nodes with square kernels
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param size       kernelWidth = kernelHeight = size
      * @param stride     strideInPixelsX = strideInPixelsY = stride
@@ -122,7 +124,7 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
 
     /**
      * Init a node representing a MPSCNNPooling kernel
-     *
+     * 
      * @param sourceNode      The MPSNNImageNode representing the source MPSImage for the filter
      * @param kernelWidth     The width of the max filter window
      * @param kernelHeight    The height of the max filter window
@@ -164,7 +166,7 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
 
     /**
      * Convenience initializer for MPSCNNPooling nodes with square non-overlapping kernels
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param size       kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = size
      * @return A new MPSNNFilter node for a MPSCNNPooling kernel.
@@ -175,7 +177,7 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
 
     /**
      * Convenience initializer for MPSCNNPooling nodes with square non-overlapping kernels and a different stride
-     *
+     * 
      * @param sourceNode The MPSNNImageNode representing the source MPSImage for the filter
      * @param size       kernelWidth = kernelHeight = size
      * @param stride     strideInPixelsX = strideInPixelsY = stride
@@ -207,21 +209,33 @@ public class MPSCNNPoolingNode extends MPSNNFilterNode {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("kernelHeight")
     @NUInt
     public native long kernelHeight();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("kernelWidth")
     @NUInt
     public native long kernelWidth();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("strideInPixelsX")
     @NUInt
     public native long strideInPixelsX();
 
+    /**
+     * API-Since: 12.0
+     */
     @Generated
     @Selector("strideInPixelsY")
     @NUInt

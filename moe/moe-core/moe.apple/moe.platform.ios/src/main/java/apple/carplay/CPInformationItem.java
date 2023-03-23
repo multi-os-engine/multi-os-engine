@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -106,7 +109,7 @@ public class CPInformationItem extends NSObject implements NSSecureCoding {
 
     /**
      * Initializes a new item to be used with @c CPInformationTemplate.
-     *
+     * 
      * @param title  An optional string that will be styled by the template as the title text of the item.
      * @param detail An optional string that will be styled by the template as the detail text of the item.
      */

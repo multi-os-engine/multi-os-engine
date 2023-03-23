@@ -37,6 +37,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -195,19 +198,19 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
      * This property can be set to ensure that the formatter behaves in a way the developer expects, even if it is not
      * standard according to the preferences of the user's locale. If not specified, unitOptions defaults to localizing
      * according to the preferences of the locale.
-     * <p>
+     * 
      * Ex:
-     * <p>
+     * 
      * By default, if unitOptions is set to the empty set, the formatter will do the following:
      * - kilocalories may be formatted as "C" instead of "kcal" depending on the locale.
      * - kilometersPerHour may be formatted as "miles per hour" for US and UK locales but "kilometers per hour" for
      * other locales.
-     * <p>
+     * 
      * However, if NSMeasurementFormatterUnitOptionsProvidedUnit is set, the formatter will do the following:
      * - kilocalories would be formatted as "kcal" in the language of the locale, even if the locale prefers "C".
      * - kilometersPerHour would be formatted as "kilometers per hour" for US and UK locales even though the preference
      * is for "miles per hour."
-     * <p>
+     * 
      * Note that NSMeasurementFormatter will handle converting measurement objects to the preferred units in a
      * particular locale. For instance, if provided a measurement object in kilometers and the set locale is en_US, the
      * formatter will implicitly convert the measurement object to miles and return the formatted string as the
@@ -247,19 +250,19 @@ public class NSMeasurementFormatter extends NSFormatter implements NSSecureCodin
      * This property can be set to ensure that the formatter behaves in a way the developer expects, even if it is not
      * standard according to the preferences of the user's locale. If not specified, unitOptions defaults to localizing
      * according to the preferences of the locale.
-     * <p>
+     * 
      * Ex:
-     * <p>
+     * 
      * By default, if unitOptions is set to the empty set, the formatter will do the following:
      * - kilocalories may be formatted as "C" instead of "kcal" depending on the locale.
      * - kilometersPerHour may be formatted as "miles per hour" for US and UK locales but "kilometers per hour" for
      * other locales.
-     * <p>
+     * 
      * However, if NSMeasurementFormatterUnitOptionsProvidedUnit is set, the formatter will do the following:
      * - kilocalories would be formatted as "kcal" in the language of the locale, even if the locale prefers "C".
      * - kilometersPerHour would be formatted as "kilometers per hour" for US and UK locales even though the preference
      * is for "miles per hour."
-     * <p>
+     * 
      * Note that NSMeasurementFormatter will handle converting measurement objects to the preferred units in a
      * particular locale. For instance, if provided a measurement object in kilometers and the set locale is en_US, the
      * formatter will implicitly convert the measurement object to miles and return the formatted string as the

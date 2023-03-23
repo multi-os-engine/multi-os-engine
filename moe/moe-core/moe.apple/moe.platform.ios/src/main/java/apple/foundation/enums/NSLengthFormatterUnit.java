@@ -19,15 +19,42 @@ package apple.foundation.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 public final class NSLengthFormatterUnit {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Millimeter = 0x0000000000000008L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Centimeter = 0x0000000000000009L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Meter = 0x000000000000000BL;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Kilometer = 0x000000000000000EL;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Inch = 0x0000000000000501L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Foot = 0x0000000000000502L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Yard = 0x0000000000000503L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long Mile = 0x0000000000000504L;
 
     @Generated

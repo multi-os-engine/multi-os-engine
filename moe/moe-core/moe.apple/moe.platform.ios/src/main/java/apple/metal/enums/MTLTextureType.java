@@ -21,24 +21,56 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] MTLTextureType
- * <p>
+ * 
  * MTLTextureType describes the dimensionality of each image, and if multiple images are arranged into an array or cube.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class MTLTextureType {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Type1D = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Type1DArray = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Type2D = 0x0000000000000002L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Type2DArray = 0x0000000000000003L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Type2DMultisample = 0x0000000000000004L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long TypeCube = 0x0000000000000005L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NUInt public static final long Type3D = 0x0000000000000007L;
 
     @Generated
     private MTLTextureType() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NUInt public static final long TypeCubeArray = 0x0000000000000006L;
+    /**
+     * API-Since: 12.0
+     */
     @Generated @NUInt public static final long TypeTextureBuffer = 0x0000000000000009L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NUInt public static final long Type2DMultisampleArray = 0x0000000000000008L;
 }

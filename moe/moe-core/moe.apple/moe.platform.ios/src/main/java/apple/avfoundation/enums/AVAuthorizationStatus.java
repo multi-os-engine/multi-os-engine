@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVAuthorizationStatus
- * <p>
+ * 
  * Constants indicating the client's authorization to the underlying hardware supporting a media type.
- * <p>
+ * 
  * [@constant] AVAuthorizationStatusNotDetermined
  * Indicates that the user has not yet made a choice regarding whether the client can access the hardware.
  * [@constant] AVAuthorizationStatusRestricted
@@ -33,12 +33,26 @@ import org.moe.natj.general.ann.NInt;
  * The user explicitly denied access to the hardware supporting a media type for the client.
  * [@constant] AVAuthorizationStatusAuthorized
  * The client is authorized to access the hardware supporting a media type.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 public final class AVAuthorizationStatus {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long NotDetermined = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Restricted = 0x0000000000000001L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Denied = 0x0000000000000002L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Authorized = 0x0000000000000003L;
 
     @Generated

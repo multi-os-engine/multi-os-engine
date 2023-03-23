@@ -20,9 +20,9 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] AUParameterEventType
- * <p>
+ * 
  * The type of a parameter event (see AudioUnitScheduleParameter)
- * <p>
+ * 
  * [@constant] kParameterEvent_Immediate
  * The parameter event describes an immediate change to the parameter value to
  * the new value

@@ -25,10 +25,12 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVMutableAssetDownloadStorageManagementPolicy
- * <p>
+ * 
  * A mutable subclass of AVAssetDownloadStorageManagementPolicy.
- * <p>
+ * 
  * System will put in best-effort to evict all the assets based on expirationDate before evicting based on priority.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("AVFoundation")
@@ -90,7 +92,7 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
 
     /**
      * [@property] expirationDate
-     * <p>
+     * 
      * Returns the expiration date of asset.
      */
     @Generated
@@ -134,9 +136,9 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
 
     /**
      * [@property] priority
-     * <p>
+     * 
      * Indicates the eviction priority of downloaded asset.
-     * <p>
+     * 
      * Assets with default priority will be purged first before assets with higher priorities.
      * In case this is not set, default priority is used.
      */
@@ -154,7 +156,7 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
 
     /**
      * [@property] expirationDate
-     * <p>
+     * 
      * Returns the expiration date of asset.
      */
     @Generated
@@ -163,9 +165,9 @@ public class AVMutableAssetDownloadStorageManagementPolicy extends AVAssetDownlo
 
     /**
      * [@property] priority
-     * <p>
+     * 
      * Indicates the eviction priority of downloaded asset.
-     * <p>
+     * 
      * Assets with default priority will be purged first before assets with higher priorities.
      * In case this is not set, default priority is used.
      */

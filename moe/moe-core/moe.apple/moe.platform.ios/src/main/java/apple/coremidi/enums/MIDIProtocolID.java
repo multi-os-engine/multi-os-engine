@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MIDIProtocolID
- * <p>
+ * 
  * Specifies a MIDI protocol variant.
  * [@var] kMIDIProtocol_1_0
  * MIDI 1.0.

@@ -26,11 +26,21 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 2.0
+ * Deprecated-Since: 13.0
+ * Deprecated-Message: UIAcceleration has been replaced by the CoreMotion framework
+ */
+@Deprecated
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIAccelerometerDelegate")
 public interface UIAccelerometerDelegate {
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 5.0
+     */
     @Generated
     @IsOptional
     @Deprecated

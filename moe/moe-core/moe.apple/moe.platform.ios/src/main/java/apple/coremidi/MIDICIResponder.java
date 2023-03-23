@@ -28,9 +28,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MIDICIResponder
- * <p>
+ * 
  * Responds to MIDI-CI inquiries from an initiator on behalf of a MIDIClient and handles profile and property change
  * operations for the Responder role.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("CoreMIDI")

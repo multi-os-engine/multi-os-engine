@@ -27,10 +27,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAudioUnitTimePitch
- * <p>
+ * 
  * an AVAudioUnitTimeEffect that provides good quality time stretching and pitch shifting
- * <p>
+ * 
  * In this time effect, the playback rate and pitch parameters function independently of each other
+ * 
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -138,12 +141,12 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
 
     /**
      * [@property] overlap
-     * <p>
+     * 
      * amount of overlap between segments of the input audio signal
-     * <p>
+     * 
      * A higher value results in fewer artifacts in the output signal.
      * This parameter also impacts the amount of CPU used.
-     * <p>
+     * 
      * Range: 3.0 -> 32.0
      * Default: 8.0
      * Unit: Generic
@@ -154,12 +157,12 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
 
     /**
      * [@property] pitch
-     * <p>
+     * 
      * amount by which the input signal is pitch shifted
-     * <p>
+     * 
      * 1 octave = 1200 cents
      * 1 musical semitone = 100 cents
-     * <p>
+     * 
      * Range: -2400 -> 2400
      * Default: 0.0
      * Unit: Cents
@@ -170,9 +173,9 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * playback rate of the input signal
-     * <p>
+     * 
      * Range: 1/32 -> 32.0
      * Default: 1.0
      * Unit: Generic
@@ -191,12 +194,12 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
 
     /**
      * [@property] overlap
-     * <p>
+     * 
      * amount of overlap between segments of the input audio signal
-     * <p>
+     * 
      * A higher value results in fewer artifacts in the output signal.
      * This parameter also impacts the amount of CPU used.
-     * <p>
+     * 
      * Range: 3.0 -> 32.0
      * Default: 8.0
      * Unit: Generic
@@ -207,12 +210,12 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
 
     /**
      * [@property] pitch
-     * <p>
+     * 
      * amount by which the input signal is pitch shifted
-     * <p>
+     * 
      * 1 octave = 1200 cents
      * 1 musical semitone = 100 cents
-     * <p>
+     * 
      * Range: -2400 -> 2400
      * Default: 0.0
      * Unit: Cents
@@ -223,9 +226,9 @@ public class AVAudioUnitTimePitch extends AVAudioUnitTimeEffect {
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * playback rate of the input signal
-     * <p>
+     * 
      * Range: 1/32 -> 32.0
      * Default: 1.0
      * Unit: Generic

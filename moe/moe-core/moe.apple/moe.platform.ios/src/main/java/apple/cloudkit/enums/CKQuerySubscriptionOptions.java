@@ -19,11 +19,26 @@ package apple.cloudkit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 public final class CKQuerySubscriptionOptions {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long OnRecordCreation = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long OnRecordUpdate = 0x0000000000000002L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long OnRecordDeletion = 0x0000000000000004L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Once = 0x0000000000000008L;
 
     @Generated

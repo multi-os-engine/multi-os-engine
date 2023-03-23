@@ -25,6 +25,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A user selected asset from \c PHPickerViewController.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("PhotosUI")
@@ -55,7 +57,9 @@ public class PHPickerResult extends NSObject {
     public static native PHPickerResult allocWithZone(VoidPtr zone);
 
     /**
-     * Local identifier of the selected asset.
+     * The local identifier of the selected asset.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("assetIdentifier")
@@ -119,6 +123,8 @@ public class PHPickerResult extends NSObject {
 
     /**
      * Representations of the selected asset.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("itemProvider")

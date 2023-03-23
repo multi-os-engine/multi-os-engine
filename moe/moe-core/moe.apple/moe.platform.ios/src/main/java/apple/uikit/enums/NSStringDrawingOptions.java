@@ -19,23 +19,34 @@ package apple.uikit.enums;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 public final class NSStringDrawingOptions {
     /**
      * The specified origin is the line fragment origin, not the base line origin
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long UsesLineFragmentOrigin = 0x0000000000000001L;
     /**
      * Uses the font leading for calculating line heights
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long UsesFontLeading = 0x0000000000000002L;
     /**
      * Uses image glyph bounds instead of typographic bounds
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long UsesDeviceMetrics = 0x0000000000000008L;
     /**
      * Truncates and adds the ellipsis character to the last visible line if the text doesn't fit into the bounds
      * specified. Ignored if NSStringDrawingUsesLineFragmentOrigin is not also set.
+     * 
+     * API-Since: 6.0
      */
     @Generated @NInt public static final long TruncatesLastVisibleLine = 0x0000000000000020L;
 

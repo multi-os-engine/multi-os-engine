@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGAffineTransform;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDictionary;
@@ -46,7 +45,11 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGAffineTransform;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -162,6 +165,8 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
     /**
      * Returns a font descriptor containing the text style and containing the content size category defined in the trait
      * collection.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("preferredFontDescriptorWithTextStyle:compatibleWithTraitCollection:")
@@ -294,6 +299,8 @@ public class UIFontDescriptor extends NSObject implements NSCopying, NSSecureCod
 
     /**
      * Returns a new font descriptor reference with the given design, or nil if no match is found in the system.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("fontDescriptorWithDesign:")

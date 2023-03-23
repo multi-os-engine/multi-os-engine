@@ -27,6 +27,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 12.0
+ */
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -93,7 +96,7 @@ public class CKFetchRecordZoneChangesConfiguration extends NSObject implements N
 
     /**
      * Declares which user-defined keys should be fetched and added to the resulting CKRecords.
-     * <p>
+     * 
      * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields
      * should be downloaded.
      * Defaults to @c nil.
@@ -164,7 +167,7 @@ public class CKFetchRecordZoneChangesConfiguration extends NSObject implements N
 
     /**
      * Declares which user-defined keys should be fetched and added to the resulting CKRecords.
-     * <p>
+     * 
      * If nil, declares the entire record should be downloaded. If set to an empty array, declares that no user fields
      * should be downloaded.
      * Defaults to @c nil.

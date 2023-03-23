@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * functionality over an NSURLSessionDataTask. All delegate messages
  * that may be sent referencing an NSURLSessionDataTask equally apply
  * to NSURLSessionUploadTasks.
+ * 
+ * API-Since: 7.0
  */
 @Generated
 @Library("Foundation")
@@ -125,6 +127,13 @@ public class NSURLSessionUploadTask extends NSURLSessionDataTask {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use -[NSURLSession uploadTaskWithStreamedRequest:] or other NSURLSession methods to
+     * create instances
+     */
+    @Deprecated
     @Generated
     @Owned
     @Selector("new")
@@ -151,6 +160,13 @@ public class NSURLSessionUploadTask extends NSURLSessionDataTask {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use -[NSURLSession uploadTaskWithStreamedRequest:] or other NSURLSession methods to
+     * create instances
+     */
+    @Deprecated
     @Generated
     @Selector("init")
     public native NSURLSessionUploadTask init();

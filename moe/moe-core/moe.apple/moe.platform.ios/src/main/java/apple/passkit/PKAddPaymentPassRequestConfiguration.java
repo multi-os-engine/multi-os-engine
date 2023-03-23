@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 9.0
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -148,6 +151,9 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("cardDetails")
     public native NSArray<? extends PKLabeledValue> cardDetails();
@@ -199,10 +205,16 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     @Selector("primaryAccountSuffix")
     public native String primaryAccountSuffix();
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("requiresFelicaSecureElement")
     public native boolean requiresFelicaSecureElement();
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("setCardDetails:")
     public native void setCardDetails(NSArray<? extends PKLabeledValue> value);
@@ -234,12 +246,17 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     @Selector("setPrimaryAccountSuffix:")
     public native void setPrimaryAccountSuffix(String value);
 
+    /**
+     * API-Since: 10.1
+     */
     @Generated
     @Selector("setRequiresFelicaSecureElement:")
     public native void setRequiresFelicaSecureElement(boolean value);
 
     /**
      * Filters introduction page to a specific set of images - does not function as a restriction.
+     * 
+     * API-Since: 12.3
      */
     @Generated
     @Selector("productIdentifiers")
@@ -247,6 +264,8 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
 
     /**
      * Filters introduction page to a specific set of images - does not function as a restriction.
+     * 
+     * API-Since: 12.3
      */
     @Generated
     @Selector("setProductIdentifiers:")
@@ -255,6 +274,8 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     /**
      * Display Properties:
      * At least one of cardholder name or primary account suffix must be supplied.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setStyle:")
@@ -263,6 +284,8 @@ public class PKAddPaymentPassRequestConfiguration extends NSObject {
     /**
      * Display Properties:
      * At least one of cardholder name or primary account suffix must be supplied.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("style")

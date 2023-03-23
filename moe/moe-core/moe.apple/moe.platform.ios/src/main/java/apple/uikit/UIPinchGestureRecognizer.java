@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Begins: when two touches have moved enough to be considered a pinch
  * Changes: when a finger moves while two fingers remain down
  * Ends: when both fingers have lifted
+ * 
+ * API-Since: 3.2
  */
 @Generated
 @Library("UIKit")

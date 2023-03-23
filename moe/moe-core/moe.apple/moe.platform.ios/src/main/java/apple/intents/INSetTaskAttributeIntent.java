@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
@@ -95,6 +98,12 @@ public class INSetTaskAttributeIntent extends INIntent {
     @Selector("initWithCoder:")
     public native INSetTaskAttributeIntent initWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Use the designated initializer instead
+     */
+    @Deprecated
     @Generated
     @Selector("initWithTargetTask:status:spatialEventTrigger:temporalEventTrigger:")
     public native INSetTaskAttributeIntent initWithTargetTaskStatusSpatialEventTriggerTemporalEventTrigger(
@@ -175,17 +184,26 @@ public class INSetTaskAttributeIntent extends INIntent {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithTargetTask:taskTitle:status:priority:spatialEventTrigger:temporalEventTrigger:")
     public native INSetTaskAttributeIntent initWithTargetTaskTaskTitleStatusPrioritySpatialEventTriggerTemporalEventTrigger(
             INTask targetTask, INSpeakableString taskTitle, @NInt long status, @NInt long priority,
             INSpatialEventTrigger spatialEventTrigger, INTemporalEventTrigger temporalEventTrigger);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("priority")
     @NInt
     public native long priority();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("taskTitle")
     public native INSpeakableString taskTitle();

@@ -32,6 +32,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface SKCloudServiceSetupViewControllerDelegate {
     /**
      * Sent when the view controller was dismissed.
+     * 
+     * API-Since: 10.1
      */
     @Generated
     @IsOptional

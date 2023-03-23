@@ -38,6 +38,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("Metal")
 @Runtime(ObjCRuntime.class)
@@ -174,15 +177,24 @@ public class MTLStructMember extends NSObject {
     @Selector("structType")
     public native MTLStructType structType();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("argumentIndex")
     @NUInt
     public native long argumentIndex();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("pointerType")
     public native MTLPointerType pointerType();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("textureReferenceType")
     public native MTLTextureReferenceType textureReferenceType();

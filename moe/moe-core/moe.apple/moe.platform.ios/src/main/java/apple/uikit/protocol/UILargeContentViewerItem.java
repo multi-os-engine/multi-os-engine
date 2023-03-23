@@ -17,6 +17,8 @@ import org.moe.natj.objc.ann.Selector;
  * The viewer should not be used as a replacement for proper Dynamic Type support in general.
  * It is intended only for use with items that must remain small due to unavoidable design constraints.
  * For example, buttons in a tab bar remain small to leave more room for the main content.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")

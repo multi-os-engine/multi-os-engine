@@ -23,12 +23,18 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.foundation.protocol.NSCopying;
+import apple.metal.protocol.MTLSharedEvent;
+import org.moe.natj.general.ann.MappedReturn;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("MetalPerformanceShadersGraph")
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
-public class MPSGraphExecutableExecutionDescriptor extends NSObject {
+public class MPSGraphExecutableExecutionDescriptor extends NSObject implements NSCopying {
     static {
         NatJ.register();
     }
@@ -76,7 +82,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
 
     /**
      * [@property] completionHandler
-     * <p>
+     * 
      * completionHandler for the graph executable, default value is nil
      */
     @Generated
@@ -144,7 +150,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
 
     /**
      * [@property] scheduledHandler
-     * <p>
+     * 
      * scheduledHandler for the graph executable, default value is nil
      */
     @Generated
@@ -161,7 +167,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
 
     /**
      * [@property] completionHandler
-     * <p>
+     * 
      * completionHandler for the graph executable, default value is nil
      */
     @Generated
@@ -178,7 +184,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
 
     /**
      * [@property] scheduledHandler
-     * <p>
+     * 
      * scheduledHandler for the graph executable, default value is nil
      */
     @Generated
@@ -199,7 +205,7 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
 
     /**
      * [@property] waitUntilCompleted
-     * <p>
+     * 
      * waitUntilCompleted for the graph executable, default value is false
      */
     @Generated
@@ -217,10 +223,43 @@ public class MPSGraphExecutableExecutionDescriptor extends NSObject {
 
     /**
      * [@property] waitUntilCompleted
-     * <p>
+     * 
      * waitUntilCompleted for the graph executable, default value is false
      */
     @Generated
     @Selector("waitUntilCompleted")
     public native boolean waitUntilCompleted();
+
+    @Generated
+    @Owned
+    @Selector("copyWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object copyWithZone(VoidPtr zone);
+
+    /**
+     * Executable signals these shared events at execution stage and immediately proceeds
+     * 
+     * @param event          shared event to signal
+     * @param executionStage execution stage to signal event at
+     * @param value          value for shared event to wait on
+     * 
+     *                       API-Since: 16.0
+     */
+    @Generated
+    @Selector("signalEvent:atExecutionEvent:value:")
+    public native void signalEventAtExecutionEventValue(@Mapped(ObjCObjectMapper.class) MTLSharedEvent event,
+            long executionStage, long value);
+
+    /**
+     * Executable waits on these shared events before scheduling execution on the HW, this does not include encoding
+     * which can still continue.
+     * 
+     * @param event shared event to wait on
+     * @param value value for shared event to wait on
+     * 
+     *              API-Since: 16.0
+     */
+    @Generated
+    @Selector("waitForEvent:value:")
+    public native void waitForEventValue(@Mapped(ObjCObjectMapper.class) MTLSharedEvent event, long value);
 }

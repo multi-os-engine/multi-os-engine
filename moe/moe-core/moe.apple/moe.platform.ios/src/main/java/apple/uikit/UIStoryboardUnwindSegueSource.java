@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * You do not create instances of this class directly. Instead, UIKit creates an instance of this class and sends
  * -allowedChildViewControllersForUnwindingFromSource: to each ancestor of the sourceViewController until it finds a
  * view controller which returns YES from -canPerformUnwindSegueAction:fromViewController:sender:.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("UIKit")

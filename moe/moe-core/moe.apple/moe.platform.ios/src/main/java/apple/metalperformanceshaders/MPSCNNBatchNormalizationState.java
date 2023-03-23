@@ -30,13 +30,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSCNNBatchNormalizationState
- * <p>
+ * 
  * MPSCNNBatchNormalizationState encapsulates the data necessary
  * to execute batch normalization.
- * <p>
+ * 
  * MPSCNNBatchNormalizationState cannot initialize the size of its own
  * underlying resources. Use [MPSCNNBatchNormalizationStatistics resultStateForSourceImages:]
  * or [MPSCNNBatchNormalizationStatistics temporaryResultStateForCommandBuffer:sourceImages:].
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")

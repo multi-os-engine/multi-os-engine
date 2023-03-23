@@ -21,6 +21,9 @@ public final class BackgroundTasks {
     private BackgroundTasks() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEStringMetaParameter
- * <p>
+ * 
  * An object that represents an active string metaparameter in the system
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")

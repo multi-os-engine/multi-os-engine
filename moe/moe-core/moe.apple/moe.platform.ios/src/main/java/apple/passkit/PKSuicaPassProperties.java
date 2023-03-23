@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.1
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
@@ -160,6 +163,11 @@ public class PKSuicaPassProperties extends PKTransitPassProperties {
     @Selector("init")
     public native PKSuicaPassProperties init();
 
+    /**
+     * API-Since: 10.1
+     * Deprecated-Since: 15.0
+     */
+    @Deprecated
     @Generated
     @Selector("isBlacklisted")
     public native boolean isBlacklisted();
@@ -187,10 +195,16 @@ public class PKSuicaPassProperties extends PKTransitPassProperties {
     @Selector("transitBalanceCurrencyCode")
     public native String transitBalanceCurrencyCode();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("isBalanceAllowedForCommute")
     public native boolean isBalanceAllowedForCommute();
 
+    /**
+     * API-Since: 11.3
+     */
     @Generated
     @Selector("isLowBalanceGateNotificationEnabled")
     public native boolean isLowBalanceGateNotificationEnabled();

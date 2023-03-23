@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MLCConvolutionLayer
- * <p>
+ * 
  * A convolution layer
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("MLCompute")
@@ -61,7 +63,7 @@ public class MLCConvolutionLayer extends MLCLayer {
 
     /**
      * [@property] biases
-     * <p>
+     * 
      * The bias tensor used by the convolution layer
      */
     @Generated
@@ -70,7 +72,7 @@ public class MLCConvolutionLayer extends MLCLayer {
 
     /**
      * [@property] biasesParameter
-     * <p>
+     * 
      * The bias tensor parameter used for optimizer update
      */
     @Generated
@@ -105,7 +107,7 @@ public class MLCConvolutionLayer extends MLCLayer {
 
     /**
      * [@property] descriptor
-     * <p>
+     * 
      * The convolution descriptor
      */
     @Generated
@@ -144,7 +146,7 @@ public class MLCConvolutionLayer extends MLCLayer {
 
     /**
      * Create a convolution layer
-     *
+     * 
      * @param weights    The weights tensor
      * @param biases     The bias tensor
      * @param descriptor The convolution descriptor
@@ -187,7 +189,7 @@ public class MLCConvolutionLayer extends MLCLayer {
 
     /**
      * [@property] weights
-     * <p>
+     * 
      * The weights tensor used by the convolution layer
      */
     @Generated
@@ -196,7 +198,7 @@ public class MLCConvolutionLayer extends MLCLayer {
 
     /**
      * [@property] weightsParameter
-     * <p>
+     * 
      * The weights tensor parameter used for optimizer update
      */
     @Generated

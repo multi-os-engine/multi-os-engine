@@ -21,10 +21,13 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * [@enum] CTFontOptions
- * <p>
+ * 
  * Options for descriptor match and font creation.
  * [@constant] kCTFontOptionsPreventAutoActivation
  * Prevents automatic font activation from taking place.
+ * This option is available only on macOS and will be deprecated on other platforms in the future.
+ * [@constant] kCTFontOptionsPreventAutoDownload
+ * Prevents automatic font download from taking place.
  * [@constant] kCTFontOptionsPreferSystemFont
  * Font matching will prefer to match Apple system fonts.
  */
@@ -37,4 +40,6 @@ public final class CTFontOptions {
     @Generated
     private CTFontOptions() {
     }
+
+    @Generated @NUInt public static final long PreventAutoDownload = 0x0000000000000002L;
 }

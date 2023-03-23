@@ -5,7 +5,7 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] NFCReaderError
- * <p>
+ * 
  * Possible errors returned by CoreNFC framework reader session.
  * [@constant] NFCReaderErrorUnsupportedFeature Core NFC is not supported on the current platform.
  * [@constant] NFCReaderErrorSecurityViolation Missing required entitlement and/or privacy settings from the client app.
@@ -38,26 +38,92 @@ public final class NFCReaderError {
     private NFCReaderError() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long ReaderErrorUnsupportedFeature = 0x0000000000000001L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long ReaderErrorSecurityViolation = 0x0000000000000002L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long ReaderErrorInvalidParameter = 0x0000000000000003L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long ReaderErrorInvalidParameterLength = 0x0000000000000004L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long ReaderErrorParameterOutOfBound = 0x0000000000000005L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long ReaderTransceiveErrorTagConnectionLost = 0x0000000000000064L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long ReaderTransceiveErrorRetryExceeded = 0x0000000000000065L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long ReaderTransceiveErrorTagResponseError = 0x0000000000000066L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long ReaderTransceiveErrorSessionInvalidated = 0x0000000000000067L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long ReaderTransceiveErrorTagNotConnected = 0x0000000000000068L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long ReaderSessionInvalidationErrorUserCanceled = 0x00000000000000C8L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long ReaderSessionInvalidationErrorSessionTimeout = 0x00000000000000C9L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long ReaderSessionInvalidationErrorSessionTerminatedUnexpectedly = 0x00000000000000CAL;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long ReaderSessionInvalidationErrorSystemIsBusy = 0x00000000000000CBL;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long ReaderSessionInvalidationErrorFirstNDEFTagRead = 0x00000000000000CCL;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long TagCommandConfigurationErrorInvalidParameters = 0x000000000000012CL;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long NdefReaderSessionErrorTagNotWritable = 0x0000000000000190L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long NdefReaderSessionErrorTagUpdateFailure = 0x0000000000000191L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long NdefReaderSessionErrorTagSizeTooSmall = 0x0000000000000192L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long NdefReaderSessionErrorZeroLengthMessage = 0x0000000000000193L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long ReaderErrorRadioDisabled = 0x0000000000000006L;
+    /**
+     * API-Since: 14.0
+     */
     @Generated @NInt public static final long ReaderTransceiveErrorPacketTooLong = 0x0000000000000069L;
 }

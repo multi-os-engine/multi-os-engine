@@ -47,6 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A scene stores and handles loading of data related to a particular scene.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -167,7 +169,7 @@ public class GKScene extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Adds an entity to the scene's list of entities.
-     *
+     * 
      * @param entity the entity to add.
      */
     @Generated
@@ -176,7 +178,7 @@ public class GKScene extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Adds a graph to the scene's list of graphs.
-     *
+     * 
      * @param graph the graph to add.
      */
     @Generated
@@ -217,7 +219,7 @@ public class GKScene extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Removes an entity from the scene's list of entities.
-     *
+     * 
      * @param entity the entity to remove.
      */
     @Generated
@@ -226,7 +228,7 @@ public class GKScene extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Removes a graph from the scene's list of graphs.
-     *
+     * 
      * @param name the name of the corresponding graph as added via addGraph:
      */
     @Generated
@@ -235,7 +237,7 @@ public class GKScene extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * The root node for the scene.
-     *
+     * 
      * @see GKSceneRootNodeType
      */
     @Generated
@@ -245,7 +247,7 @@ public class GKScene extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * The root node for the scene.
-     *
+     * 
      * @see GKSceneRootNodeType
      */
     @Generated

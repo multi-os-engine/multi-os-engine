@@ -28,6 +28,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -88,9 +91,9 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
 
     /**
      * Inference encode calls
-     * <p>
+     * 
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
-     *
+     * 
      * @param cmdBuf       The command buffer into which to encode the kernel
      * @param sourceArrays The list of sources for the filter in a NSArray.
      *                     Ordering to be defined by subclass
@@ -104,7 +107,7 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
 
     /**
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
-     *
+     * 
      * @param cmdBuf       The command buffer into which to encode the kernel
      * @param sourceArrays The list of sources for the filter in a NSArray.
      *                     Ordering to be defined by subclass
@@ -118,7 +121,7 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
 
     /**
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
-     *
+     * 
      * @param cmdBuf           The command buffer into which to encode the kernel
      * @param sourceArrays     The list of sources for the filter in a NSArray.
      *                         Ordering to be defined by subclass
@@ -134,9 +137,9 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
 
     /**
      * Forward training encode calls
-     * <p>
+     * 
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
-     *
+     * 
      * @param cmdBuf                 The command buffer into which to encode the kernel
      * @param sourceArrays           The list of sources for the filter in a NSArray.
      *                               Ordering to be defined by subclass

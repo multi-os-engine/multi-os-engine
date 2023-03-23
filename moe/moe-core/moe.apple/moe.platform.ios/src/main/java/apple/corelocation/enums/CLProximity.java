@@ -21,15 +21,30 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * CLProximity
- * <p>
+ * 
  * Discussion:
  * Represents the current proximity of an entity.
+ * 
+ * 
+ * API-Since: 7.0
  */
 @Generated
 public final class CLProximity {
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Unknown = 0x0000000000000000L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Immediate = 0x0000000000000001L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Near = 0x0000000000000002L;
+    /**
+     * API-Since: 7.0
+     */
     @Generated @NInt public static final long Far = 0x0000000000000003L;
 
     @Generated

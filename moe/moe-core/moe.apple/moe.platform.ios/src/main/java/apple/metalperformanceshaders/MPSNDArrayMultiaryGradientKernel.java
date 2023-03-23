@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -132,7 +135,7 @@ public class MPSNDArrayMultiaryGradientKernel extends MPSNDArrayMultiaryBase {
 
     /**
      * Initialize a MPSNDArrayMultiaryKernel
-     *
+     * 
      * @param device              The device on which the kernel will run
      * @param count               The maximum number of NDArrays read by the kernel
      * @param sourceGradientIndex The source index for which gradient will be calculated

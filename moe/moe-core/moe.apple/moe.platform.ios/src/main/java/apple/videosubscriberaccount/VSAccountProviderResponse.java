@@ -40,6 +40,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A value object that encapsulates the response given by an account provider.
+ * 
+ * API-Since: 10.2
  */
 @Generated
 @Library("VideoSubscriberAccount")

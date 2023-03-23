@@ -23,6 +23,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("MetalPerformanceShaders")
 @Runtime(ObjCRuntime.class)
@@ -92,7 +95,7 @@ public class MPSCNNFullyConnectedGradientNode extends MPSCNNConvolutionGradientN
 
     /**
      * A node to represent the gradient calculation for fully connectd training.
-     *
+     * 
      * @param sourceGradient The input gradient from the 'downstream' gradient filter. Often
      *                       that is a neuron gradient filter node.
      * @param sourceImage    The input image from the forward fully connected node
@@ -137,7 +140,7 @@ public class MPSCNNFullyConnectedGradientNode extends MPSCNNConvolutionGradientN
 
     /**
      * A node to represent the gradient calculation for fully connected training.
-     *
+     * 
      * @param sourceGradient The input gradient from the 'downstream' gradient filter. Often
      *                       that is a neuron gradient filter node.
      * @param sourceImage    The input image from the forward fully connected node

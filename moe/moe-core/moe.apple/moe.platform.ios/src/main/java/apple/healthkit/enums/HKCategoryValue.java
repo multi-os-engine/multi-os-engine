@@ -21,11 +21,16 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HKCategoryValue
- * <p>
+ * 
  * This category value is to be used for types which don't have a specific value defined.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class HKCategoryValue {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long HKCategoryValueNotApplicable = 0x0000000000000000L;
 
     @Generated

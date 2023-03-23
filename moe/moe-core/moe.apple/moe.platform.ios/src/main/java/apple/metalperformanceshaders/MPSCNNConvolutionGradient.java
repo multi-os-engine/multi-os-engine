@@ -31,13 +31,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNConvolutionGradient
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The MPSCNNConvolutionGradient implementents backward propagation of gradient i.e. it computes the gradient of loss
  * function
  * with respect input data of corresonding forward convolution and gradient of loss function with respect to weights and
  * bias
  * of corresponding convolution in forward pass.
- * <p>
+ * 
  * Gradient with respect to data
  * ==============================
  * Gradient with respect to input data of corresponding forward convolution will be written in destination image passed
@@ -54,7 +54,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * weights[inputFeatureChannels][kernelWidth][kernelHeight][outputFeatureChannels]
  * i.e. weights are transposed in inputFeatureChannels/outputFeatureChannels dimension and also rotated 180 degress in
  * spatial dimension
- * <p>
+ * 
  * User should use the same data source provider to initialize MPSCNNConvolutionGradient as is used to initialize
  * corresponding
  * forward MPSCNNConvolution. Implementation will do the transposition/shuffling needed.
@@ -69,7 +69,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * corresponding MPSCNNConvolutionGradient object, it is user responsibility to make sure both data source providers
  * provide same weights/bias data
  * and have same properties in convolution descriptor else behavior is undefined.
- * <p>
+ * 
  * Gradient with respect to weights and bias
  * =========================================
  * Gradient with respect to weights and bias are returned in MPSCNNConvolutionGradientState object to be used in weights
@@ -77,21 +77,21 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * If I denotes the input image to corresponding MPSCNNConvolution in forward pass and E denoates the loss gradient from
  * previous layer
  * (normally neuron backward layer) in backward pass, gradient of E with respect to weights is
- * <p>
+ * 
  * delta_E/delta_Wkpqc = sum_i sum_j [ E(i, j, k) * I( secondaryStrideInPixelX*i + secondaryOffset.x +
  * secondaryDilationRateX*p,
  * secondaryStrideinPixelY*i + secondaryOffset.y + secondaryDilationRateY*q, c) ]
- * <p>
+ * 
  * where i goes over 0..W-1 and j goes over 0..H-1, (W,H) being width and height of E.
  * p in [0, secondaryKernelWidth-1]
  * q in [0, secondaryKernelHeight-1]
  * c in [0, inputeFeatureChannels/groups - 1]
  * k in [0, outputFeatureChannels]
- * <p>
+ * 
  * and gradient with respect to bias
- * <p>
+ * 
  * delta_E/delta_bk = sum_i sum_j [ E(i, j, k) ]
- * <p>
+ * 
  * These gradients with respect to weights and bias are returned as buffers in MPSCNNConvolutionGradientState object
  * passed in the encode call.
  * These are consumed by MPSCNNConvolution object's -updateWeightsAndBias:MPSCNNConvolutionGradientState* method for CPU
@@ -99,10 +99,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * encodeWeightsAndBiasUpdate:commandBuffer:MPSCNNConvolutionGradientState* method of MPSCNNConvolution object for GPU
  * side update.
  * UPdated weights and biases are computed as
- * <p>
+ * 
  * Wkpqc_new = Wkpqc_old + delta_E/delta_Wkpqc
  * bk_new = bk_old + delta_E/delta_bk
- * <p>
+ * 
  * Note that MPSCNNConvolutionGradientState objects's buffers that contain gradients, for CPU side update, will only
  * contain
  * valid data after command buffer is complete so
@@ -112,7 +112,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * MPSCNNConvolutionGradient in backward pass in same command buffer and passed onto MPSCNNConvolution
  * updateWeightsAndBias method
  * after completion of command buffer, it cannot be a temporary state.
- * <p>
+ * 
  * In order to gaurantee consistency between forward pass (MPSCNNConvolution) and weights gradient computation in this
  * filter, certain requirements
  * must be met.
@@ -126,11 +126,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * set primaryOffset = 0 Or
  * ii) set primatryOffset to offset in E at which valid data starts and make sure data outside is zeroed.
  * 2) secondaryOffset should be set to what offset property of MPSCNNConvolution was set to in forward pass.
- * <p>
+ * 
  * Currently back propagation for gradients is only supported for regualar convolution and depthwise convolution. Back
  * propagation
  * sub-pixel convolution are not supported. So channelMultiplier and subPixelScaleFactor must be one.
- * <p>
+ * 
  * Note on setting correct offsets
  * ===============================
  * If the forward convolution is called with
@@ -160,7 +160,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * kernelOffset.x = -_offset.x + (~(NSInteger) kW_Dilated & 1L);
  * kernelOffset.y = -_offset.y + (~(NSInteger) kH_Dilated & 1L);
  * Convolution gradient with data does not use secondaryOffset.
- * <p>
+ * 
  * Convolution Gradient with Weights and Biases
  * ============================================
  * For consistent padding policy with respect to forward convolution,
@@ -171,12 +171,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * gradient image and only gradient image without any padding is currently accepted. If previous layer produces gradient
  * image with
  * padding, slice operation should be used to extract out the gradient which will be input to MPSCNNConvolutionGradient.
- * <p>
+ * 
  * Note that if application uses encode method that return destination gradient on left hand side and consumes
  * MPSCNNConvolutionGradientState
  * object produced by forward MPSCNNConvolution, all these parameters are set automatically for the application i.e.
  * applicaiton does not
  * need to worry about setting these.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -222,7 +224,7 @@ public class MPSCNNConvolutionGradient extends MPSCNNGradientKernel {
 
     /**
      * Channel multiplier.
-     * <p>
+     * 
      * For convolution created with MPSCNNDepthWiseConvolutionDescriptor, it is the number of
      * output feature channels for each input channel. See MPSCNNDepthWiseConvolutionDescriptor for more details.
      * Default is 0 which means regular CNN convolution. Currently only channelMultiplier of 1 is supported i.e.
@@ -243,7 +245,7 @@ public class MPSCNNConvolutionGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property] dataSource
-     * <p>
+     * 
      * dataSource with which gradient object was created
      */
     @Generated
@@ -261,7 +263,7 @@ public class MPSCNNConvolutionGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property] gradientOption
-     * <p>
+     * 
      * Option to control which gradient to compute. Default is MPSCNNConvolutionGradientOptionAll
      * which means both gradient with respect to data and gradient with respect to weight and bias are computed.
      */
@@ -272,7 +274,7 @@ public class MPSCNNConvolutionGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property] groups
-     * <p>
+     * 
      * Number of groups input and output channels are divided into.
      */
     @Generated
@@ -295,13 +297,13 @@ public class MPSCNNConvolutionGradient extends MPSCNNGradientKernel {
 
     /**
      * NSSecureCoding compatability
-     * <p>
+     * 
      * While the standard NSSecureCoding/NSCoding method
      * -initWithCoder: should work, since the file can't
      * know which device your data is allocated on, we
      * have to guess and may guess incorrectly. To avoid
      * that problem, use initWithCoder:device instead.
-     *
+     * 
      * @param aDecoder The NSCoder subclass with your serialized MPSKernel
      * @param device   The MTLDevice on which to make the MPSKernel
      * @return A new MPSKernel object, or nil if failure.
@@ -317,10 +319,11 @@ public class MPSCNNConvolutionGradient extends MPSCNNGradientKernel {
 
     /**
      * Initializes a convolution gradient (with respect to weights and bias) object.
-     *
+     * 
      * @param device  The MTLDevice on which this MPSCNNConvolutionGradient filter will be used
      * @param weights A pointer to a object that conforms to the MPSCNNConvolutionDataSource
      *                protocol. Note that same data source as provided to forward convolution should be used.
+     * 
      * @return A valid MPSCNNConvolutionGradient object or nil, if failure.
      */
     @Generated
@@ -369,12 +372,15 @@ public class MPSCNNConvolutionGradient extends MPSCNNGradientKernel {
      * kernel into internal weights
      * and biases buffer. Weights and biases gradients needed for update are obtained from
      * MPSCNNConvolutionGradientState object's gradientForWeights and gradientForBiases metal buffer.
-     *
+     * 
      * @param commandBuffer Metal command buffer on which application update kernel was enqueued consuming
      *                      MPSCNNConvolutionGradientState's gradientForWeights and gradientForBiases buffer
      *                      and producing updateBuffer metal buffer.
      * @param state         MPSCNNConvolutionWeightsAndBiasesState containing weights and biases buffers which have
      *                      updated weights produced by application's update kernel.
+     * 
+     * 
+     *                      API-Since: 11.3
      */
     @Generated
     @Selector("reloadWeightsAndBiasesWithCommandBuffer:state:")
@@ -392,7 +398,7 @@ public class MPSCNNConvolutionGradient extends MPSCNNGradientKernel {
 
     /**
      * Property to control serialization of weights and bias.
-     * <p>
+     * 
      * During serialization of convolution object in -encodeWithCoder call, weights and biases are saved so that
      * convolution
      * object can be properly unserialized/restored in -initWithCoder call. If data source provied is NSSecureCoding
@@ -405,14 +411,18 @@ public class MPSCNNConvolutionGradient extends MPSCNNGradientKernel {
      * Default is NO. When application decides to set it to NO, it MUST call
      * -(void) reloadWeightsAndBiasesFromDataSource
      * after initWithCoder has initialized convolution object.
+     * 
+     * API-Since: 11.3
+     * Deprecated-Since: 12.0
      */
+    @Deprecated
     @Generated
     @Selector("serializeWeightsAndBiases")
     public native boolean serializeWeightsAndBiases();
 
     /**
      * [@property] gradientOption
-     * <p>
+     * 
      * Option to control which gradient to compute. Default is MPSCNNConvolutionGradientOptionAll
      * which means both gradient with respect to data and gradient with respect to weight and bias are computed.
      */
@@ -422,7 +432,7 @@ public class MPSCNNConvolutionGradient extends MPSCNNGradientKernel {
 
     /**
      * Property to control serialization of weights and bias.
-     * <p>
+     * 
      * During serialization of convolution object in -encodeWithCoder call, weights and biases are saved so that
      * convolution
      * object can be properly unserialized/restored in -initWithCoder call. If data source provied is NSSecureCoding
@@ -435,7 +445,11 @@ public class MPSCNNConvolutionGradient extends MPSCNNGradientKernel {
      * Default is NO. When application decides to set it to NO, it MUST call
      * -(void) reloadWeightsAndBiasesFromDataSource
      * after initWithCoder has initialized convolution object.
+     * 
+     * API-Since: 11.3
+     * Deprecated-Since: 12.0
      */
+    @Deprecated
     @Generated
     @Selector("setSerializeWeightsAndBiases:")
     public native void setSerializeWeightsAndBiases(boolean value);
@@ -446,7 +460,7 @@ public class MPSCNNConvolutionGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property] sourceGradientFeatureChannels
-     * <p>
+     * 
      * The number of feature channels per pixel in the gradient image (primarySource) of encode call. This is same is
      * outputFeatureChannels
      * or the feature channels of destination image in forward convolution i.e.
@@ -459,7 +473,7 @@ public class MPSCNNConvolutionGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property] sourceImageFeatureChannels
-     * <p>
+     * 
      * The number of feature channels per pixel in the input image to forward convolution which is used here as
      * secondarySource.
      * This is same as dataSource.descriptor.inputFeatureChannels. This is also the number of feature channels in

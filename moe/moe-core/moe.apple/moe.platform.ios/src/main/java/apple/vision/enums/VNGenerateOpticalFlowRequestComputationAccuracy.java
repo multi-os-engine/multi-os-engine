@@ -5,6 +5,8 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * The level of optical flow computational accuracy.
+ * 
+ * Computational accuracy settings are only available for VNGenerateOpticalFlowRequestRevision1.
  */
 @Generated
 public final class VNGenerateOpticalFlowRequestComputationAccuracy {

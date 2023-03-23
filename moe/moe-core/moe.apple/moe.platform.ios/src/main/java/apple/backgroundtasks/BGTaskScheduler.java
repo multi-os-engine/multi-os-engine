@@ -28,8 +28,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * BGTaskScheduler
- * <p>
+ * 
  * The object you use to schedule deferrable work to be done in the background.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("BackgroundTasks")
@@ -82,7 +84,7 @@ public class BGTaskScheduler extends NSObject {
 
     /**
      * Cancel a previously submitted task request.
-     *
+     * 
      * @param identifier The identifier of the previously submitted task request to cancel.
      */
     @Generated
@@ -107,7 +109,7 @@ public class BGTaskScheduler extends NSObject {
 
     /**
      * Returns a list of all task requests that have been submitted but not yet completed.
-     *
+     * 
      * @param completionHandler A block for processing task requests. This block may be executed on a background thread.
      *                          The block has no return value and takes a single parameter, taskRequests, which is an
      *                          array of BGTaskRequest objects. If there are no pending requests, this array is empty.
@@ -164,11 +166,11 @@ public class BGTaskScheduler extends NSObject {
 
     /**
      * Register a handler to be called for tasks that launch the app.
-     * <p>
+     * 
      * You must register launch handlers before your application finishes launching. Attempting to register a handler
      * after launch or multiple handlers for the same identifier is an error. Although you may submit task requests from
      * some extensions, only the host app will be launched to handle background work.
-     *
+     * 
      * @param identifier    The identifier for the task that will be handled by the provided launch handler.
      * @param queue         The queue on which the launch handler and the expiration handler for the task will be
      *                      called. The queue should be serial to ensure consistent ordering. If you pass nil, handlers
@@ -210,9 +212,9 @@ public class BGTaskScheduler extends NSObject {
 
     /**
      * Submit a request to be launched in the background to perform work.
-     * <p>
+     * 
      * Submitting a task request with the same identifier as an existing request will replace that request.
-     *
+     * 
      * @param taskRequest The task request object representing the parameters of the background task to be scheduled.
      * @param error       If an error occurs, upon return contains an error object that indicates why the request was
      *                    rejected.

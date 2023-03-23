@@ -40,8 +40,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
- * Note: NSUUID is not toll-free bridged with CFUUID. Use UUID strings to convert between CFUUID and NSUUID, if needed.
- * NSUUIDs are not guaranteed to be comparable by pointer value (as CFUUIDRef is); use isEqual: to compare two NSUUIDs.
+ * API-Since: 6.0
  */
 @Generated
 @Library("Foundation")
@@ -207,6 +206,8 @@ public class NSUUID extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Compare the receiver to another NSUUID in constant time
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("compare:")

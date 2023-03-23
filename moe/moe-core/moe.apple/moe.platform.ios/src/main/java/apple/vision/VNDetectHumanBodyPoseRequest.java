@@ -29,9 +29,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Detects specific landmark points on human bodies.
- * <p>
+ * 
  * This request will produce a collection of VNHumanBodyPoseObservation objects which describe the pose of each detected
  * human body.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("Vision")
@@ -166,7 +168,7 @@ public class VNDetectHumanBodyPoseRequest extends VNImageBasedRequest {
 
     /**
      * Obtain the collection of human body joint names that are supported by a given request revision.
-     *
+     * 
      * @param revision The revision of VNDetectHumanBodyPoseRequest being queried.
      * @param error    The address of a variable that will be populated with an error upon failure. If the caller does
      *                 not need this information, NULL can be passed.
@@ -180,7 +182,7 @@ public class VNDetectHumanBodyPoseRequest extends VNImageBasedRequest {
 
     /**
      * Obtain the collection of human body joints group names that are supported by a given request revision.
-     *
+     * 
      * @param revision The revision of VNDetectHumanBodyPoseRequest being queried.
      * @param error    The address of a variable that will be populated with an error upon failure. If the caller does
      *                 not need this information, NULL can be passed.

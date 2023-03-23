@@ -23,10 +23,18 @@ import org.moe.natj.general.ann.NInt;
  * NSWritingDirectionFormatType values used by NSWritingDirectionAttributeName. It is or'ed with either
  * NSWritingDirectionLeftToRight or NSWritingDirectionRightToLeft. Can specify the formatting controls defined by
  * Unicode Bidirectional Algorithm.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class NSWritingDirectionFormatType {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Embedding = 0x0000000000000000L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Override = 0x0000000000000002L;
 
     @Generated

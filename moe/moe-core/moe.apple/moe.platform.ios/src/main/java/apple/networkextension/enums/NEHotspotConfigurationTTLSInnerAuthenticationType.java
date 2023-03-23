@@ -5,13 +5,15 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@typedef] NEHotspotConfigurationEAPTTLSInnerAuthenticationType
- * <p>
+ * 
  * TTLS Inner Authentication Type.
  * [@const] NEHotspotConfigurationEAPTTLSInnerAuthenticationPAP PAP.
  * [@const] NEHotspotConfigurationEAPTTLSInnerAuthenticationCHAP CHAP.
  * [@const] NEHotspotConfigurationEAPTTLSInnerAuthenticationMSCHAP MSCHAP.
  * [@const] NEHotspotConfigurationEAPTTLSInnerAuthenticationMSCHAPv2 MSCHAPv2.
  * [@const] NEHotspotConfigurationEAPTTLSInnerAuthenticationEAP EAP (Default).
+ * 
+ * API-Since: 11.0
  */
 @Generated
 public final class NEHotspotConfigurationTTLSInnerAuthenticationType {
@@ -19,9 +21,24 @@ public final class NEHotspotConfigurationTTLSInnerAuthenticationType {
     private NEHotspotConfigurationTTLSInnerAuthenticationType() {
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long PAP = 0x0000000000000000L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long CHAP = 0x0000000000000001L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long MSCHAP = 0x0000000000000002L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long MSCHAPv2 = 0x0000000000000003L;
+    /**
+     * API-Since: 11.0
+     */
     @Generated @NInt public static final long EAP = 0x0000000000000004L;
 }

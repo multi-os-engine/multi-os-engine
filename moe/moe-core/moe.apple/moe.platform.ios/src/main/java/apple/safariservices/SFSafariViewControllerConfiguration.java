@@ -25,6 +25,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 11.0
+ */
 @Generated
 @Library("SafariServices")
 @Runtime(ObjCRuntime.class)
@@ -61,7 +64,7 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
      * Indicates if SFSafariViewController should enable collapsing of the navigation bar and hiding of the bottom
      * toolbar
      * when the user scrolls web content.
-     * <p>
+     * 
      * The default value is YES.
      */
     @Generated
@@ -155,7 +158,7 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
      * Indicates if SFSafariViewController should enable collapsing of the navigation bar and hiding of the bottom
      * toolbar
      * when the user scrolls web content.
-     * <p>
+     * 
      * The default value is YES.
      */
     @Generated
@@ -186,9 +189,11 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     /**
      * An additional button to be shown in SFSafariViewController's toolbar. See @link
      * SFSafariViewControllerActivityButton @/link for more details.
-     * <p>
+     * 
      * This allows the user to access powerful functionality from your extension without needing to first show the
      * UIActivityViewController.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("activityButton")
@@ -197,9 +202,11 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
     /**
      * An additional button to be shown in SFSafariViewController's toolbar. See @link
      * SFSafariViewControllerActivityButton @/link for more details.
-     * <p>
+     * 
      * This allows the user to access powerful functionality from your extension without needing to first show the
      * UIActivityViewController.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setActivityButton:")
@@ -207,8 +214,10 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
 
     /**
      * An event attribution associated with a click that caused this SFSafariViewController to be opened.
-     * <p>
+     * 
      * This attribute is ignored if the SFSafariViewController initialURL has a scheme of 'http'.
+     * 
+     * API-Since: 15.2
      */
     @Generated
     @Selector("eventAttribution")
@@ -216,8 +225,10 @@ public class SFSafariViewControllerConfiguration extends NSObject implements NSC
 
     /**
      * An event attribution associated with a click that caused this SFSafariViewController to be opened.
-     * <p>
+     * 
      * This attribute is ignored if the SFSafariViewController initialURL has a scheme of 'http'.
+     * 
+     * API-Since: 15.2
      */
     @Generated
     @Selector("setEventAttribution:")

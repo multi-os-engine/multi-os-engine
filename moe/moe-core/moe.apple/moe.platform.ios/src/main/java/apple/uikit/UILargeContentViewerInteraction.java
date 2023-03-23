@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * UILargeContentViewerInteraction enables a gesture to present and dismiss the large content viewer on a device with
  * relevant settings.
  * Use methods in <UIKit/UIInteraction.h> to add the interaction to an appropriate view, such as a custom tab bar.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")

@@ -131,6 +131,9 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("localizedStringFromNumber:numberStyle:")
     public static native String localizedStringFromNumberNumberStyle(NSNumber num, @NUInt long nstyle);
@@ -181,6 +184,9 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("currencyDecimalSeparator")
     public native String currencyDecimalSeparator();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("currencyGroupingSeparator")
     public native String currencyGroupingSeparator();
@@ -209,6 +215,8 @@ public class NSNumberFormatter extends NSFormatter {
 
     /**
      * default is NSFormattingContextUnknown
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("formattingContext")
@@ -248,18 +256,30 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("internationalCurrencySymbol")
     public native String internationalCurrencySymbol();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isLenient")
     public native boolean isLenient();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setLenient:")
     public native void setLenient(boolean value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("isPartialStringValidationEnabled")
     public native boolean isPartialStringValidationEnabled();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setPartialStringValidationEnabled:")
     public native void setPartialStringValidationEnabled(boolean value);
@@ -282,6 +302,9 @@ public class NSNumberFormatter extends NSFormatter {
     @NUInt
     public native long maximumIntegerDigits();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("maximumSignificantDigits")
     @NUInt
@@ -301,6 +324,9 @@ public class NSNumberFormatter extends NSFormatter {
     @NUInt
     public native long minimumIntegerDigits();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("minimumSignificantDigits")
     @NUInt
@@ -414,6 +440,9 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("setCurrencyDecimalSeparator:")
     public native void setCurrencyDecimalSeparator(String value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setCurrencyGroupingSeparator:")
     public native void setCurrencyGroupingSeparator(String value);
@@ -440,6 +469,8 @@ public class NSNumberFormatter extends NSFormatter {
 
     /**
      * default is NSFormattingContextUnknown
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFormattingContext:")
@@ -477,6 +508,9 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("setMaximumIntegerDigits:")
     public native void setMaximumIntegerDigits(@NUInt long value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setMaximumSignificantDigits:")
     public native void setMaximumSignificantDigits(@NUInt long value);
@@ -493,6 +527,9 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("setMinimumIntegerDigits:")
     public native void setMinimumIntegerDigits(@NUInt long value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setMinimumSignificantDigits:")
     public native void setMinimumSignificantDigits(@NUInt long value);
@@ -613,6 +650,9 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("setUsesGroupingSeparator:")
     public native void setUsesGroupingSeparator(boolean value);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("setUsesSignificantDigits:")
     public native void setUsesSignificantDigits(boolean value);
@@ -661,6 +701,9 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("usesGroupingSeparator")
     public native boolean usesGroupingSeparator();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("usesSignificantDigits")
     public native boolean usesSignificantDigits();

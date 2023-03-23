@@ -21,8 +21,17 @@ import org.moe.natj.general.ann.NUInt;
 
 @Generated
 public final class MPSAlphaType {
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long NonPremultiplied = 0x0000000000000000L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long AlphaIsOne = 0x0000000000000001L;
+    /**
+     * API-Since: 10.0
+     */
     @Generated @NUInt public static final long Premultiplied = 0x0000000000000002L;
 
     @Generated

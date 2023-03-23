@@ -43,14 +43,16 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] NEPacketTunnelNetworkSettings
- * <p>
+ * 
  * The NEPacketTunnelNetworkSettings class declares the programmatic interface for an object that contains IP network
  * settings.
- * <p>
+ * 
  * NEPacketTunnelNetworkSettings is used by NEPacketTunnelProviders to communicate the desired IP network settings for
  * the packet tunnel to the framework. The framework takes care of applying the contained settings to the system.
- * <p>
+ * 
  * Instances of this class are thread safe.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("NetworkExtension")
@@ -168,8 +170,10 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
 
     /**
      * [@property] IPv4Settings
-     * <p>
+     * 
      * An NEIPv4Settings object that contains the desired tunnel IPv4 settings.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("IPv4Settings")
@@ -177,8 +181,10 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
 
     /**
      * [@property] IPv6Settings
-     * <p>
+     * 
      * An NEIPv6Settings object that contains the desired tunnel IPv6 settings.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("IPv6Settings")
@@ -186,9 +192,11 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
 
     /**
      * [@property] MTU
-     * <p>
+     * 
      * An NSNumber object containing the Maximum Transmission Unit (MTU) size in bytes to assign to the TUN interface.
      * If this property is set, the tunnelOverheadBytes property is ignored.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("MTU")
@@ -208,8 +216,10 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
 
     /**
      * [@property] IPv4Settings
-     * <p>
+     * 
      * An NEIPv4Settings object that contains the desired tunnel IPv4 settings.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setIPv4Settings:")
@@ -217,8 +227,10 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
 
     /**
      * [@property] IPv6Settings
-     * <p>
+     * 
      * An NEIPv6Settings object that contains the desired tunnel IPv6 settings.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setIPv6Settings:")
@@ -226,9 +238,11 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
 
     /**
      * [@property] MTU
-     * <p>
+     * 
      * An NSNumber object containing the Maximum Transmission Unit (MTU) size in bytes to assign to the TUN interface.
      * If this property is set, the tunnelOverheadBytes property is ignored.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setMTU:")
@@ -236,10 +250,12 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
 
     /**
      * [@property] tunnelOverheadBytes
-     * <p>
+     * 
      * An NSNumber object containing the number of bytes of overhead appended to each outbound packet through the
      * tunnel. The MTU for the TUN interface is computed by subtracting this value from the MTU of the primary physical
      * interface.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("setTunnelOverheadBytes:")
@@ -253,10 +269,12 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
 
     /**
      * [@property] tunnelOverheadBytes
-     * <p>
+     * 
      * An NSNumber object containing the number of bytes of overhead appended to each outbound packet through the
      * tunnel. The MTU for the TUN interface is computed by subtracting this value from the MTU of the primary physical
      * interface.
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("tunnelOverheadBytes")

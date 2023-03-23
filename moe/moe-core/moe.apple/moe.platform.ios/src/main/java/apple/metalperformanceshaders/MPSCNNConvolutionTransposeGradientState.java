@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSCNNConvolutionTransposeGradientState
- * <p>
+ * 
  * The MPSCNNConvolutionTransposeGradientState is returned by resultStateForSourceImage:sourceStates method on
  * MPSCNNConvolutionTranspose object.
  * Note that resultStateForSourceImage:sourceStates:destinationImage creates the object on autoreleasepool.
@@ -45,12 +45,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * object and the MPSCNNConvolutionTransposeGradientState produced by MPSCNNConvolutionTranspose's
  * resultStateForSourceImage:sourceStates:destinationImage will be consumed by
  * MPSCNNConvolutionTransposeGradient object
- * <p>
+ * 
  * Note that state objects are not usable across batches i.e. when batch is done you should nuke the state object and
  * create
  * new one for next batch.
  * Weights update process for MPSCNNConvolutionTranspose is same as explained above for MPSCNNConvolution. See comments
  * for MPSCNNConvolutionGradientState.
+ * 
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -104,7 +107,7 @@ public class MPSCNNConvolutionTransposeGradientState extends MPSCNNConvolutionGr
 
     /**
      * [@property] convolutionTranspose
-     * <p>
+     * 
      * The convolutionTranspose filter that produced the state.
      */
     @Generated

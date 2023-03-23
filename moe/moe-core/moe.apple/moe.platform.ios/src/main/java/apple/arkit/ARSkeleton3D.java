@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An object representing a skeleton in 3D.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("ARKit")

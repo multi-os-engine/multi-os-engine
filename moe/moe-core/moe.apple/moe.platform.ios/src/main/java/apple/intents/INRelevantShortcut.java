@@ -29,9 +29,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Lets you provide relevant shortcut to Siri, for display on the Siri Watch Face.
- * <p>
+ * 
  * Including relevance information allows Siri to make suggestions for shortcuts that the user might be interested in
  * but has not previously performed.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("Intents")
@@ -149,10 +151,10 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * A collection of relevance information that is attached to the relevant shortcuts.
-     * <p>
+     * 
      * Providing additional relevance information allows Siri to suggest a shortcut that the user is interested in but
      * has not previously performed.
-     *
+     * 
      * @see INRelevanceProvider
      */
     @Generated
@@ -169,10 +171,10 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * A collection of relevance information that is attached to the relevant shortcuts.
-     * <p>
+     * 
      * Providing additional relevance information allows Siri to suggest a shortcut that the user is interested in but
      * has not previously performed.
-     *
+     * 
      * @see INRelevanceProvider
      */
     @Generated
@@ -181,9 +183,9 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * The role of the relevant shortcut.
-     * <p>
+     * 
      * Provides a hint to Siri about the expected user experience. The default is @c INRelevantShortcutRoleAction.
-     *
+     * 
      * @see INRelevantShortcutRole
      */
     @Generated
@@ -196,10 +198,10 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * Customizes the display of the relevant shortcut on the Siri watch face.
-     * <p>
+     * 
      * By default, the UI for the relevant shortcut can be derivied from the information provided in the @c INShortcut.
      * In certain situations, it may be desirable to override this behavior and provide a custom template.
-     *
+     * 
      * @see INDefaultCardTemplate
      */
     @Generated
@@ -208,7 +210,7 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * The shortcut that will be performed when this relevant shortcut is invoked.
-     *
+     * 
      * @see INShortcut
      */
     @Generated
@@ -217,9 +219,9 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * The role of the relevant shortcut.
-     * <p>
+     * 
      * Provides a hint to Siri about the expected user experience. The default is @c INRelevantShortcutRoleAction.
-     *
+     * 
      * @see INRelevantShortcutRole
      */
     @Generated
@@ -248,10 +250,10 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * Customizes the display of the relevant shortcut on the Siri watch face.
-     * <p>
+     * 
      * By default, the UI for the relevant shortcut can be derivied from the information provided in the @c INShortcut.
      * In certain situations, it may be desirable to override this behavior and provide a custom template.
-     *
+     * 
      * @see INDefaultCardTemplate
      */
     @Generated
@@ -260,9 +262,11 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * Links the relevant shortcut to a specific WidgetKit widget kind.
-     * <p>
+     * 
      * When a relevant shortcut is linked to a WidgetKit widget, it hints to the system when to show the widget in a
      * stack.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setWidgetKind:")
@@ -270,9 +274,11 @@ public class INRelevantShortcut extends NSObject implements NSSecureCoding, NSCo
 
     /**
      * Links the relevant shortcut to a specific WidgetKit widget kind.
-     * <p>
+     * 
      * When a relevant shortcut is linked to a WidgetKit widget, it hints to the system when to show the widget in a
      * stack.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("widgetKind")

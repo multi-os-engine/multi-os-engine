@@ -33,6 +33,8 @@ public final class UIControlState {
     @Generated @NUInt public static final long Selected = 0x0000000000000004L;
     /**
      * Applicable only when the screen supports focus
+     * 
+     * API-Since: 9.0
      */
     @Generated @NUInt public static final long Focused = 0x0000000000000008L;
     /**

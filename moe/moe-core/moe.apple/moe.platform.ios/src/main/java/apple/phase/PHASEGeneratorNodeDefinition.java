@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEGeneratorNodeDefinition
- * <p>
+ * 
  * An object for defining a generator node when building a sound event.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -61,7 +63,7 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
 
     /**
      * [@property] calibrationMode
-     * <p>
+     * 
      * The generator's calibration mode. The default value is PHASECalibrationModeNone.
      */
     @Generated
@@ -97,7 +99,7 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
 
     /**
      * [@property] gainMetaParameterDefinition
-     * <p>
+     * 
      * Optionally attach a metaparameter definition here to enable dynamic control of the gain during playback.
      */
     @Generated
@@ -106,7 +108,7 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
 
     /**
      * [@property] group
-     * <p>
+     * 
      * The PHASEGroup object this generator should be associated with for gain and rate control.
      */
     @Generated
@@ -145,7 +147,7 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
 
     /**
      * [@property] level
-     * <p>
+     * 
      * The generator's level. The default value is 1.
      * [@note] The level's underlying unit and range are dependent on the calibrationMode.
      */
@@ -155,7 +157,7 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
 
     /**
      * [@property] mixerDefinition
-     * <p>
+     * 
      * The readonly property that returns the PHASEMixerDefinition this generator was created with and assigned to.
      */
     @Generated
@@ -169,7 +171,7 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * Linear rate scalar.
      * [@note]
      * Values are clamped to the range [0.25, 4]. Default value is 1.
@@ -180,7 +182,7 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
 
     /**
      * [@property] rateMetaParameterDefinition
-     * <p>
+     * 
      * Optionally attach a metaparameter definition here to enable dynamic control of the rate during playback.
      */
     @Generated
@@ -197,13 +199,15 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
 
     /**
      * setCalibrationMode:level
-     * <p>
+     * 
      * Set the generator's calibration mode and level.
      * [@note]
      * The level, including its underlying unit and range, are dependent on the calibration mode.
-     *
-     * @param calibrationMode The calibration mode.
-     * @param level           The level.
+     * 
+     * @param calibrationMode
+     *                        The calibration mode.
+     * @param level
+     *                        The level.
      */
     @Generated
     @Selector("setCalibrationMode:level:")
@@ -211,7 +215,7 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
 
     /**
      * [@property] gainMetaParameterDefinition
-     * <p>
+     * 
      * Optionally attach a metaparameter definition here to enable dynamic control of the gain during playback.
      */
     @Generated
@@ -220,7 +224,7 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
 
     /**
      * [@property] group
-     * <p>
+     * 
      * The PHASEGroup object this generator should be associated with for gain and rate control.
      */
     @Generated
@@ -229,7 +233,7 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
 
     /**
      * [@property] group
-     * <p>
+     * 
      * The PHASEGroup object this generator should be associated with for gain and rate control.
      */
     @Generated
@@ -246,7 +250,7 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
 
     /**
      * [@property] rate
-     * <p>
+     * 
      * Linear rate scalar.
      * [@note]
      * Values are clamped to the range [0.25, 4]. Default value is 1.
@@ -257,7 +261,7 @@ public class PHASEGeneratorNodeDefinition extends PHASESoundEventNodeDefinition 
 
     /**
      * [@property] rateMetaParameterDefinition
-     * <p>
+     * 
      * Optionally attach a metaparameter definition here to enable dynamic control of the rate during playback.
      */
     @Generated

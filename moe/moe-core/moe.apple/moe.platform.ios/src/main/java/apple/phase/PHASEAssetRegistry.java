@@ -33,8 +33,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEAssetRegistry
- * <p>
+ * 
  * Asset registry
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -66,11 +68,13 @@ public class PHASEAssetRegistry extends NSObject {
 
     /**
      * assetForIdentifier
-     * <p>
+     * 
      * Finds an asset in the asset registry, given an identifier.
-     *
-     * @param identifier The identifier of this asset
-     * @return A PHASEAsset object, or nil if one could not be found.
+     * 
+     * @param identifier
+     *                   The identifier of this asset
+     * @return
+     *         A PHASEAsset object, or nil if one could not be found.
      */
     @Generated
     @Selector("assetForIdentifier:")
@@ -108,7 +112,7 @@ public class PHASEAssetRegistry extends NSObject {
 
     /**
      * [@property] globalMetaParameters
-     * <p>
+     * 
      * A dictionary of global metaparameters
      */
     @Generated
@@ -152,16 +156,19 @@ public class PHASEAssetRegistry extends NSObject {
 
     /**
      * registerGlobalMetaParameter:error
-     * <p>
+     * 
      * Register a global metaparameter with the asset registry.
      * [@note]
      * This function is synchronous and thread-safe.
      * Clients can safely run this function to register multiple global metaparameters from multiple threads, if
      * required.
-     *
-     * @param metaParameterDefinition The metaparameter object to register.
-     * @param error                   The error object in case of an error.
-     * @return A PHASEGlobalMetaParameterAsset object.
+     * 
+     * @param metaParameterDefinition
+     *                                The metaparameter object to register.
+     * @param error
+     *                                The error object in case of an error.
+     * @return
+     *         A PHASEGlobalMetaParameterAsset object.
      */
     @Generated
     @Selector("registerGlobalMetaParameter:error:")
@@ -171,25 +178,32 @@ public class PHASEAssetRegistry extends NSObject {
 
     /**
      * registerSoundAssetAtURL:identifier:assetType:channelLayout:normalizationMode:error
-     * <p>
+     * 
      * Register an audio file as a sound asset in the system.
      * [@note]
      * This function is synchronous and thread-safe.
      * Clients can safely run this function to register multiple sound assets from multiple threads, if required.
-     *
-     * @param url               The URL of the audio file.
-     * @param identifier        An identifier that uniquely represents this sound event asset. Nil generates an
+     * 
+     * @param url
+     *                          The URL of the audio file.
+     * @param identifier
+     *                          An identifier that uniquely represents this sound event asset. Nil generates an
      *                          automatic identifier.
-     * @param assetType         The asset type for this sound asset.
-     * @param channelLayout     The audio channel layout for this sound asset.
+     * @param assetType
+     *                          The asset type for this sound asset.
+     * @param channelLayout
+     *                          The audio channel layout for this sound asset.
      *                          If a valid channel layout definition is read from the file being registered, this will
      *                          override it.
      *                          If nil is passed as a value for this property, the file must either be mono or stereo,
      *                          or already contain a vaild channel layout definition.
      *                          This channel layout must have the same channel count as the audio file being loaded.
-     * @param normalizationMode The normalization mode.
-     * @param error             The error object in case of an error
-     * @return A PHASESoundAsset object
+     * @param normalizationMode
+     *                          The normalization mode.
+     * @param error
+     *                          The error object in case of an error
+     * @return
+     *         A PHASESoundAsset object
      */
     @Generated
     @Selector("registerSoundAssetAtURL:identifier:assetType:channelLayout:normalizationMode:error:")
@@ -199,20 +213,26 @@ public class PHASEAssetRegistry extends NSObject {
 
     /**
      * registerSoundAssetWithData:identifier:format:normalizationMode:error
-     * <p>
+     * 
      * Register audio data as a sound asset in the system.
      * [@note]
      * This function is synchronous and thread-safe.
      * Clients can safely run this function to register multiple sound assets from multiple threads, if required.
-     *
-     * @param data              A buffer containing the audio data to register as a sound asset.
+     * 
+     * @param data
+     *                          A buffer containing the audio data to register as a sound asset.
      *                          Audio data must either be a single PCM buffer of interleaved channels or multiple
      *                          deinterleaved PCM buffers per channel packed back to back.
-     * @param identifier        The identifier to assign to this sound asset. Nil generates an automatic identifier.
-     * @param format            The AVAudioFormat object that describes the audio data in the buffer.
-     * @param normalizationMode The normalization mode.
-     * @param error             The error object in case of an error.
-     * @return A PHASESoundAsset object.
+     * @param identifier
+     *                          The identifier to assign to this sound asset. Nil generates an automatic identifier.
+     * @param format
+     *                          The AVAudioFormat object that describes the audio data in the buffer.
+     * @param normalizationMode
+     *                          The normalization mode.
+     * @param error
+     *                          The error object in case of an error.
+     * @return
+     *         A PHASESoundAsset object.
      */
     @Generated
     @Selector("registerSoundAssetWithData:identifier:format:normalizationMode:error:")
@@ -222,17 +242,21 @@ public class PHASEAssetRegistry extends NSObject {
 
     /**
      * registerSoundEventAssetWithRootNode:identifier:error
-     * <p>
+     * 
      * Register a sound event asset with the asset registry.
      * [@note]
      * This function is synchronous and thread-safe.
      * Clients can safely run this function to register multiple sound event assets from multiple threads, if required.
-     *
-     * @param rootNode   The root node of the sound event asset to register.
-     * @param identifier An identifier that uniquely represents this sound event asset. Nil generates an automatic
+     * 
+     * @param rootNode
+     *                   The root node of the sound event asset to register.
+     * @param identifier
+     *                   An identifier that uniquely represents this sound event asset. Nil generates an automatic
      *                   identifier.
-     * @param error      The error object in case of an error
-     * @return A PHASESoundEventNodeAsset object
+     * @param error
+     *                   The error object in case of an error
+     * @return
+     *         A PHASESoundEventNodeAsset object
      */
     @Generated
     @Selector("registerSoundEventAssetWithRootNode:identifier:error:")
@@ -258,11 +282,13 @@ public class PHASEAssetRegistry extends NSObject {
 
     /**
      * unregisterAssetWithIdentifier:completion:
-     * <p>
+     * 
      * Unregister and unload an asset.
-     *
-     * @param identifier The identifier of the PHASEAsset object to unregister
-     * @param handler    An optional completion block that will be called when the asset has been unregistered.
+     * 
+     * @param identifier
+     *                   The identifier of the PHASEAsset object to unregister
+     * @param handler
+     *                   An optional completion block that will be called when the asset has been unregistered.
      *                   Once you receive this callback, it's safe to deallocate external resources, if applicable.
      */
     @Generated

@@ -20,7 +20,7 @@ import org.moe.natj.objc.ann.Selector;
 
 /**
  * [@protocol] NFCISO15693Tag
- * <p>
+ * 
  * A @link NFCISO15693ReaderSession @link/ or @link NFCTagReaderSession @link/ reader session returns an instance
  * conforming
  * to this protocol when an ISO15693 tag is detected. Unless it is specified all block completion handlers are
@@ -34,6 +34,8 @@ import org.moe.natj.objc.ann.Selector;
  * Tag must be in the connected state for NFCNDEFTag protocol properties and methods to work correctly. Each data frame
  * send out by the reader may not
  * exceed 256 bytes total.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreNFC")
@@ -42,12 +44,14 @@ import org.moe.natj.objc.ann.Selector;
 public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
     /**
      * customCommandWithRequestFlag:customCommandCode:customRequestParameters:completionHandler:
-     * <p>
+     * 
      * Custom command (0xA0 to 0xDF command code) as defined in ISO15693-3 specification. IC manufacturer code from the
      * tag is
      * automatically inserted after the command byte before appending the custom request parameters in forming the
      * packet.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param flags                   Request flags.
      * @param customCommandCode       Custom command code defined by the IC manufacturer. Valid range is 0xA0 to 0xDF
      *                                inclusively.
@@ -78,12 +82,14 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * extendedLockBlockWithRequestFlags:blockNumber:completionHandler:
-     * <p>
+     * 
      * Extende lock single block command (0x32 command code) as defined in ISO15693-3 specification. Address flag is
      * automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param flags             Request flags.
      * @param blockNumber       2 bytes block number, valid range from 0 to 65535 inclusively.
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
@@ -109,12 +115,14 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * extendedReadMultipleBlocksWithRequestFlags:blockRange:completionHandler:
-     * <p>
+     * 
      * Extended read multiple block command (0x33 command code) as defined in ISO15693-3 specification. Address flag is
      * automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param flags             Request flags.
      * @param blockRange        The range of blocks. Valid start index range is 0 to 65535 inclusively. Valid length is
      *                          1 to 65536 inclusively.
@@ -146,12 +154,14 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * extendedReadSingleBlockWithRequestFlags:blockNumber:completionHandler:
-     * <p>
+     * 
      * Extended read single block command (0x30 command code) as defined in ISO15693-3 specification. Address flag is
      * automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param flags             Request flags.
      * @param blockNumber       2 bytes block number, valid range from 0 to 65535 inclusively.
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
@@ -179,12 +189,14 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * extendedWriteSingleBlockWithRequestFlags:blockNumber:dataBlock:completionHandler:
-     * <p>
+     * 
      * Extended write single block command (0x31 command code) as defined in ISO15693-3 specification. Address flag is
      * automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param flags             Request flags.
      * @param blockNumber       2 bytes block number, valid range from 0 to 65535 inclusively.
      * @param dataBlock         A single block of data.
@@ -212,12 +224,14 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * getMultipleBlockSecurityStatusWithRequestFlag:blockRange:completionHandler:
-     * <p>
+     * 
      * Get multiple block security status command (0x2C command code) as defined in ISO15693-3 specification. Address
      * flag is automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param flags             Request flags.
      * @param blockRange        The range of blocks. Valid start index range is 0 to 255 inclusively. Valid length is 1
      *                          to 256 inclusively.
@@ -248,9 +262,12 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * getSystemInfoWithRequestFlag:completionHandler:
-     * <p>
+     * 
      * Use the replacement -getSystemInfoAndUIDWithRequestFlag:completionHandler:.
-     *
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
+     * 
      * @param flags             Request flags.
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
      *                          succeeds.
@@ -266,6 +283,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
      *                          the actual number of blocks
      *                          ranged from 1 to 256 blocks.
      */
+    @Deprecated
     @Generated
     @Selector("getSystemInfoWithRequestFlag:completionHandler:")
     void getSystemInfoWithRequestFlagCompletionHandler(byte flags,
@@ -281,6 +299,8 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * The IC manufacturer code (bits 56 – 49) in UID according to ISO/IEC 7816-6:2004.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("icManufacturerCode")
@@ -289,6 +309,8 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * The IC serial number (bits 48 – 1) in UID assigned by the manufacturer. Data is in Big Endian byte order.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("icSerialNumber")
@@ -296,6 +318,8 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * The 64 bit hardware UID of the tag. Data is in Big Endian byte order.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("identifier")
@@ -303,11 +327,13 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * lockAFIWithRequestFlag:completionHandler:
-     * <p>
+     * 
      * Lock AFI command (0x28 command code) as defined in ISO15693-3 specification. Address flag is automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param flags             Request flags.
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
      *                          succeeds.
@@ -332,11 +358,13 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * lockBlockWithRequestFlags:blockNumber:completionHandler:
-     * <p>
+     * 
      * Lock block command (0x22 command code) as defined in ISO15693-3 specification. Address flag is automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param flags             Request flags.
      * @param blockNumber       Block number. Blocks are numbered from 0 to 255 inclusively.
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
@@ -363,9 +391,12 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * lockDFSIDWithRequestFlag:completionHandler:
-     * <p>
+     * 
      * Use the replacement -lockDSFIDWithRequestFlag:completionHandler:.
-     *
+     * 
+     * API-Since: 13.0
+     * Deprecated-Since: 14.0
+     * 
      * @param flags             Request flags.
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
      *                          succeeds.
@@ -376,6 +407,7 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
      *                          responded to the command with an error, and the error code value is defined in
      *                          ISO15693-3 specification.
      */
+    @Deprecated
     @Generated
     @Selector("lockDFSIDWithRequestFlag:completionHandler:")
     void lockDFSIDWithRequestFlagCompletionHandler(byte flags,
@@ -390,11 +422,13 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * readMultipleBlocksWithConfiguration:completionHandler:
-     * <p>
+     * 
      * Performs read operation using Read Multiple Blocks command (0x23 command code) as defined in ISO15693-3
      * specification.
      * Multiple Read Multiple Blocks commands will be sent if necessary to complete the operation.
-     *
+     * 
+     * API-Since: 11.0
+     * 
      * @param readConfiguration Configuration For the Read Multiple Blocks command.
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
      *                          succeeds.
@@ -420,12 +454,14 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * readMultipleBlocksWithRequestFlags:blockRange:completionHandler:
-     * <p>
+     * 
      * Read multiple blocks command (0x23 command code) as defined in ISO15693-3 specification. Address flag is
      * automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param flags             Request flags.
      * @param blockRange        The range of blocks. Valid start index range is 0 to 255 inclusively. Valid length is 1
      *                          to 256 inclusively.
@@ -458,12 +494,14 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * readSingleBlockWithRequestFlags:blockNumber:completionHandler:
-     * <p>
+     * 
      * Read single block command (0x20 command code) as defined in ISO15693-3 specification. Address flag is
      * automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param flags             Request flags.
      * @param blockNumber       Block number. Blocks are numbered from 0 to 255 inclusively.
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
@@ -492,11 +530,13 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * resetToReadyWithRequestFlags:completionHandler:
-     * <p>
+     * 
      * Reset To Ready command (0x26 command code) as defined in ISO15693-3 specification. Address flag is automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param flags             Request flags.
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
      *                          succeeds.
@@ -521,11 +561,13 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * selectWithRequestFlags:completionHandler:
-     * <p>
+     * 
      * Select command (0x25 command code) as defined in ISO15693-3 specification. Address flag is automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param flags             Request flags.
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
      *                          succeeds.
@@ -550,10 +592,12 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * sendCustomCommandWithConfiguration:completionHandler:
-     * <p>
+     * 
      * Send a manufacturer dependent custom command using command code range from 0xA0 to 0xDF. Refer to ISO15693-3
      * specification for details.
-     *
+     * 
+     * API-Since: 11.0
+     * 
      * @param commandConfiguration Configuration for the Manufacturer Custom Command.
      * @param completionHandler    Completion handler called when the operation is completed. error is nil if operation
      *                             succeeds.
@@ -576,9 +620,11 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * stayQuietWithCompletionHandler:
-     * <p>
+     * 
      * Stay quiet command (0x02 command code) as defined in ISO15693-3 specification.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
      *                          succeeds.
      *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with
@@ -602,11 +648,13 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * writeAFIWithRequestFlag:afi:completionHandler:
-     * <p>
+     * 
      * Write AFI command (0x27 command code) as defined in ISO15693-3 specification. Address flag is automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param flags             Request flags.
      * @param afi               Application Family Identifier.
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
@@ -632,11 +680,13 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * writeDSFIDWithRequestFlag:dsfid:completionHandler:
-     * <p>
+     * 
      * Write DSFID command (0x29 command code) as defined in ISO15693-3 specification. Address flag is automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param flags             Request flags.
      * @param dsfid             Data Storage Format Identifier.
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
@@ -662,12 +712,14 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * writeMultipleBlocksWithRequestFlags:blockRange:dataBlocks:completionHandler:
-     * <p>
+     * 
      * Write multiple blocks command (0x24 command code) as defined in ISO15693-3 specification. Address flag is
      * automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param flags             Request flags.
      * @param blockRange        The range of blocks. Valid start index range is 0 to 255 inclusively. Valid length is 1
      *                          to 256 inclusively.
@@ -699,12 +751,14 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * writeSingleBlockWithRequestFlags:blockNumber:dataBlock:completionHandler:
-     * <p>
+     * 
      * Write single block command (0x21 command code) as defined in ISO15693-3 specification. Address flag is
      * automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param flags             Request flags.
      * @param blockNumber       Block number. Blocks are numbered from 0 to 255 inclusively.
      * @param dataBlock         A single block of data.
@@ -732,10 +786,12 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * authenticateWithRequestFlags:cryptoSuiteIdentifier:message:completionHandler:
-     * <p>
+     * 
      * Authenticate command (0x35 command code) as defined in ISO15693-3 specification. Please note that in-process
      * reply is returned to the caller without any processing.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param flags                 Request flags.
      * @param cryptoSuiteIdentifier 8 bits Crypto Suite Indicator as defined in ISO/IEC 29167 specification.
      * @param message               Content of the Authenticate command as dictated by the Crypto Suite Indicator.
@@ -766,9 +822,11 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * challengeWithRequestFlags:message:completionHandler:
-     * <p>
+     * 
      * Challenge command (0x39 command code) as defined in ISO15693-3 specification.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param flags                 Request flags.
      * @param cryptoSuiteIdentifier 8 bits Crypto Suite Indicator as defined in ISO/IEC 29167 specification.
      * @param message               Content of the Key Update command as dictated by the Crypto Suite Indicator used in
@@ -797,9 +855,11 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * extendedFastReadMultipleBlocksWithRequestFlag:blockRange:completionHandler:
-     * <p>
+     * 
      * Fast read multiple blocks command (0x3D command code) as defined in ISO15693-3 specification.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param flags             Request flags.
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
      *                          succeeds.
@@ -820,12 +880,14 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * extendedGetMultipleBlockSecurityStatusWithRequestFlag:blockRange:completionHandler:
-     * <p>
+     * 
      * Get multiple block security status command (0x3C command code) as defined in ISO15693-3 specification. Address
      * flag is automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param flags             Request flags.
      * @param blockRange        The range of blocks. Valid start index range is 0 to 255 inclusively. Valid length is 1
      *                          to 256 inclusively.
@@ -856,12 +918,14 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * extendedWriteMultipleBlocksWithRequestFlags:blockRange:dataBlocks:completionHandler:
-     * <p>
+     * 
      * Extended write multiple block command (0x34 command code) as defined in ISO15693-3 specification. Address flag is
      * automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param flags             Request flags.
      * @param blockRange        The range of blocks. Valid start index range is 0 to 65535 inclusively. Valid length is
      *                          1 to 65536 inclusively.
@@ -893,9 +957,11 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * fastReadMultipleBlocksWithRequestFlag:blockRange:completionHandler:
-     * <p>
+     * 
      * Fast read multiple blocks command (0x2D command code) as defined in ISO15693-3 specification.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param flags             Request flags.
      * @param blockRange        The range of blocks. Valid start index range is 0 to 255 inclusively. Valid length is 1
      *                          to 256 inclusively.
@@ -917,12 +983,14 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * getSystemInfoAndUIDWithRequestFlag:completionHandler:
-     * <p>
+     * 
      * Get system information command (0x2B command code) as defined in ISO15693-3 specification. Address flag is
      * automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param flags             Request flags.
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
      *                          succeeds.
@@ -954,10 +1022,12 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * keyUpdateWithRequestFlags:message:completionHandler:
-     * <p>
+     * 
      * Key update command (0x36 command code) as defined in ISO15693-3 specification. Please note that in-process reply
      * is returned to the caller without any processing.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param flags             Request flags.
      * @param keyIdentifier     8 bits key identifier
      * @param message           Content of the Key Update command as dictated by the Crypto Suite Indicator used in
@@ -989,11 +1059,13 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * lockDSFIDWithRequestFlag:completionHandler:
-     * <p>
+     * 
      * Lock DSFID command (0x2A command code) as defined in ISO15693-3 specification. Address flag is automatically
      * enforced by default and the tag's UID is sent with the command; setting RequestFlagSelect to flags will disable
      * the Address flag.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param flags             Request flags.
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
      *                          succeeds.
@@ -1018,9 +1090,11 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * readBufferWithRequestFlags:completionHandler:
-     * <p>
+     * 
      * Read buffer command (0x3A command code) as defined in ISO15693-3 specification.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param flags             Request flags.
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
      *                          succeeds.
@@ -1047,12 +1121,14 @@ public interface NFCISO15693Tag extends NFCTag, NFCNDEFTag {
 
     /**
      * sendRequestWithFlag:commandCode:parameters:data:completionHandler:
-     * <p>
+     * 
      * Send a command according to the ISO15693-3 specification. The request data frame is concatenation of 8 bits
      * request flag, 8 bits command code, and optional data.
      * Total length of the data frame cannot exceed 256 bytes. The 8 bits response flag and the data are returned in the
      * completion handler.
-     *
+     * 
+     * API-Since: 14.0
+     * 
      * @param flags             Request flags.
      * @param commandCode       8 bits command code.
      * @param data              Data follows after the command code.

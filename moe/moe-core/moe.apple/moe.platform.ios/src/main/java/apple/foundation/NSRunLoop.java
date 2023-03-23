@@ -125,6 +125,9 @@ public class NSRunLoop extends NSObject {
     @Selector("keyPathsForValuesAffectingValueForKey:")
     public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("mainRunLoop")
     public static native NSRunLoop mainRunLoop();
@@ -195,6 +198,8 @@ public class NSRunLoop extends NSObject {
     /**
      * Schedules the execution of a block on the target run loop.
      * - parameter: block The block to execute
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("performBlock:")
@@ -204,6 +209,8 @@ public class NSRunLoop extends NSObject {
      * Schedules the execution of a block on the target run loop in given modes.
      * - parameter: modes An array of input modes for which the block may be executed.
      * - parameter: block The block to execute
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("performInModes:block:")

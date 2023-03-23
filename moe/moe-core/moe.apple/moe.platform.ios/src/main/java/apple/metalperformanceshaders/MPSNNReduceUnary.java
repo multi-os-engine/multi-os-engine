@@ -29,7 +29,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * MPSNNReduceUnary
- * <p>
+ * 
  * The MPSNNReduce performs a reduction operation
  * The reduction operations supported are:
  * - Reduce row min
@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * - Reduce row sum
  * - Reduce column sum
  * - Reduce feature channels sum
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -97,9 +99,9 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
 
     /**
      * [@property] clipRectSource
-     * <p>
+     * 
      * The source rectangle to use when reading data.
-     * <p>
+     * 
      * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSCNNKernel offset parameter for this filter.
@@ -175,9 +177,9 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
 
     /**
      * [@property] clipRectSource
-     * <p>
+     * 
      * The source rectangle to use when reading data.
-     * <p>
+     * 
      * A MTLRegion that indicates which part of the source to read. If the clipRectSource does not lie
      * completely within the source image, the intersection of the image bounds and clipRectSource will
      * be used. The clipRectSource replaces the MPSCNNKernel offset parameter for this filter.
@@ -213,7 +215,11 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
     /**
      * Since the clipRectSource replaces the MPSCNNKernel offset parameter for this filter,
      * this property is deprecated..
+     * 
+     * API-Since: 11.3
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("offset")
     @ByValue
@@ -222,7 +228,11 @@ public class MPSNNReduceUnary extends MPSCNNKernel {
     /**
      * Since the clipRectSource replaces the MPSCNNKernel offset parameter for this filter,
      * this property is deprecated..
+     * 
+     * API-Since: 11.3
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("setOffset:")
     public native void setOffset(@ByValue MPSOffset value);

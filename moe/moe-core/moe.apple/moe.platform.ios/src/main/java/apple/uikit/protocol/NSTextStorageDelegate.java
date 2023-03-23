@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface NSTextStorageDelegate {
     /**
      * Sent inside -processEditing right before notifying layout managers. Delegates can change the attributes.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -50,6 +52,8 @@ public interface NSTextStorageDelegate {
 
     /**
      * Sent inside -processEditing right before fixing attributes. Delegates can change the characters or attributes.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional

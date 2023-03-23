@@ -39,12 +39,17 @@ public final class iAd {
 
     /**
      * [@const] ADClientErrorDomain
-     * <p>
+     * 
      * Error domain for NSErrors passed to the completionHandler as a
      * result of calling:
-     * <p>
+     * 
      * • -[[ADClient SharedClient] requestAttributionDetailsWithBlock]
+     * 
+     * 
+     * API-Since: 7.1
+     * Deprecated-Since: 15.0
      */
+    @Deprecated
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

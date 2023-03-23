@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A tree data structure where each level has 4 children that subdivide a given space into the four quadrants.
  * Stores arbitrary NSObject data via points and quads.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("GameplayKit")
@@ -160,7 +162,7 @@ public class GKQuadtree<_ElementType> extends NSObject {
      * Removes the given NSObject from this quad tree.
      * Note that this is an exhaustive search and is slow.
      * Cache the relevant GKQuadTreeNode and use removeElement:WithNode: for better performance.
-     *
+     * 
      * @param element the data to be removed
      * @return returns YES if the data was removed, NO otherwise
      */
@@ -171,7 +173,7 @@ public class GKQuadtree<_ElementType> extends NSObject {
     /**
      * Removes the given NSObject from the given quadtree node
      * Note that this is not an exhaustive search and is faster than removeData:
-     *
+     * 
      * @param data the data to be removed
      * @param node the node in which this data resides
      * @return returns YES if the data was removed, NO otherwise

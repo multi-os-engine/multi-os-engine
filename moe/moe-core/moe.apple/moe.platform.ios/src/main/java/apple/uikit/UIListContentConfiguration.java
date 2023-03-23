@@ -32,6 +32,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -459,6 +462,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * Returns the default configuration for an extra prominent inset grouped list header.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("extraProminentInsetGroupedHeaderConfiguration")
@@ -466,6 +471,8 @@ public class UIListContentConfiguration extends NSObject implements UIContentCon
 
     /**
      * Returns the default configuration for a prominent inset grouped list header.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("prominentInsetGroupedHeaderConfiguration")

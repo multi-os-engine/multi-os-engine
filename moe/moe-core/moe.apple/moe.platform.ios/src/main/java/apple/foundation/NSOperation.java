@@ -36,6 +36,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -154,6 +157,9 @@ public class NSOperation extends NSObject {
     @Selector("cancel")
     public native void cancel();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("completionBlock")
     @ObjCBlock(name = "call_completionBlock_ret")
@@ -167,6 +173,9 @@ public class NSOperation extends NSObject {
     @Selector("init")
     public native NSOperation init();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("isAsynchronous")
     public native boolean isAsynchronous();
@@ -198,10 +207,16 @@ public class NSOperation extends NSObject {
     @Selector("main")
     public native void main();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("qualityOfService")
     @NInt
@@ -216,14 +231,23 @@ public class NSOperation extends NSObject {
     @Selector("removeDependency:")
     public native void removeDependency(NSOperation op);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("setCompletionBlock:")
     public native void setCompletionBlock(@ObjCBlock(name = "call_setCompletionBlock") Block_setCompletionBlock value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setName:")
     public native void setName(String value);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("setQualityOfService:")
     public native void setQualityOfService(@NInt long value);
@@ -232,6 +256,11 @@ public class NSOperation extends NSObject {
     @Selector("setQueuePriority:")
     public native void setQueuePriority(@NInt long value);
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Not supported
+     */
     @Generated
     @Deprecated
     @Selector("setThreadPriority:")
@@ -241,11 +270,19 @@ public class NSOperation extends NSObject {
     @Selector("start")
     public native void start();
 
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: Not supported
+     */
     @Generated
     @Deprecated
     @Selector("threadPriority")
     public native double threadPriority();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("waitUntilFinished")
     public native void waitUntilFinished();

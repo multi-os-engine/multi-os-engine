@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@typedef] nw_ws_opcode_t
- * <p>
+ * 
  * WebSocket opcodes that denote the type of frame sent or received by
  * a WebSocket endpoint. Opcodes define the interpretation of their
  * associated payload data.
@@ -21,6 +21,9 @@ public final class nw_ws_opcode_t {
     @Generated public static final int nw_ws_opcode_invalid = 0xFFFFFFFF;
     /**
      * [@const] nw_ws_opcode_cont Denotes a continuation frame.
+     * 
+     * Protocol WebSocket handles continuation frames internally,
+     * so clients will not see or use continuation frames.
      */
     @Generated public static final int nw_ws_opcode_cont = 0x00000000;
     /**

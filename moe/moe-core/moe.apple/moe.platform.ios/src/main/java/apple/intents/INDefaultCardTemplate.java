@@ -29,8 +29,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A template for customizing the display of relevant shortcuts.
- *
+ * 
  * @see INRelevantShortcut
+ * 
+ *      API-Since: 12.0
  */
 @Generated
 @Library("Intents")

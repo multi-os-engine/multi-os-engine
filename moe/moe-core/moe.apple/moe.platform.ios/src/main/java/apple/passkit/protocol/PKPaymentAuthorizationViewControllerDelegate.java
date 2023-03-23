@@ -48,7 +48,13 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     /**
      * Deprecated delegate methods
      * These methods are deprecated. Please migrate away from them to their replacements.
+     * 
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use paymentAuthorizationViewController:didAuthorizePayment:handler: instead to provide more
+     * granular errors
      */
+    @Deprecated
     @IsOptional
     @Generated
     @Selector("paymentAuthorizationViewController:didAuthorizePayment:completion:")
@@ -58,6 +64,13 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use paymentAuthorizationViewController:didSelectPaymentMethod:handler: instead to provide
+     * more granular errors
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationViewController:didSelectPaymentMethod:completion:")
@@ -67,6 +80,12 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 9.0
+     * Deprecated-Message: ABRecordRef has been deprecated. Please migrate away from this delegate callback as soon as
+     * possible.
+     */
     @Generated
     @IsOptional
     @Deprecated
@@ -77,6 +96,13 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use paymentAuthorizationViewController:didSelectShippingContact:handler: instead to provide
+     * more granular errors
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationViewController:didSelectShippingContact:completion:")
@@ -86,6 +112,13 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 8.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Use paymentAuthorizationViewController:didSelectShippingMethod:handler: instead to provide
+     * more granular errors
+     */
+    @Deprecated
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationViewController:didSelectShippingMethod:completion:")
@@ -99,7 +132,7 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
      * Sent to the delegate when payment authorization is finished. This may occur when
      * the user cancels the request, or after the PKPaymentAuthorizationStatus parameter of the
      * paymentAuthorizationViewController:didAuthorizePayment:completion: has been shown to the user.
-     * <p>
+     * 
      * The delegate is responsible for dismissing the view controller in this method.
      */
     @Generated
@@ -109,6 +142,8 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     /**
      * Sent to the delegate before the payment is authorized, but after the user has authenticated using
      * passcode or Touch ID. Optional.
+     * 
+     * API-Since: 8.3
      */
     @Generated
     @IsOptional
@@ -162,11 +197,13 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     /**
      * Sent to the delegate after the user has acted on the payment request. The application
      * should inspect the payment to determine whether the payment request was authorized.
-     * <p>
+     * 
      * If the application requested a shipping address then the full addresses is now part of the payment.
-     * <p>
+     * 
      * The delegate must call completion with an appropriate authorization status, as may be determined
      * by submitting the payment credential to a processing gateway for payment authorization.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -187,9 +224,11 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     /**
      * Sent when the user has selected a new payment card. Use this delegate callback if you need to
      * update the summary items in response to the card type changing (for example, applying credit card surcharges)
-     * <p>
+     * 
      * The delegate will receive no further callbacks except paymentAuthorizationViewControllerDidFinish:
      * until it has invoked the completion block.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -211,9 +250,11 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
     /**
      * Sent when the user has selected a new shipping address. The delegate should inspect the
      * address and must invoke the completion block with an updated array of PKPaymentSummaryItem objects.
-     * <p>
+     * 
      * The delegate will receive no further callbacks except paymentAuthorizationViewControllerDidFinish:
      * until it has invoked the completion block.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -237,11 +278,13 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
      * shipping costs based on the shipping method and either the shipping address supplied in the original
      * PKPaymentRequest or the address fragment provided by the last call to paymentAuthorizationViewController:
      * didSelectShippingAddress:completion:.
-     * <p>
+     * 
      * The delegate must invoke the completion block with an updated array of PKPaymentSummaryItem objects.
-     * <p>
+     * 
      * The delegate will receive no further callbacks except paymentAuthorizationViewControllerDidFinish:
      * until it has invoked the completion block.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -260,6 +303,9 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
                 PKPaymentRequestShippingMethodUpdate update);
     }
 
+    /**
+     * API-Since: 14.0
+     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationViewController:didRequestMerchantSessionUpdate:")
@@ -277,6 +323,9 @@ public interface PKPaymentAuthorizationViewControllerDelegate {
                 PKPaymentRequestMerchantSessionUpdate update);
     }
 
+    /**
+     * API-Since: 15.0
+     */
     @Generated
     @IsOptional
     @Selector("paymentAuthorizationViewController:didChangeCouponCode:handler:")

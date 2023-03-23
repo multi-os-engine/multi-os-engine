@@ -24,8 +24,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEConeDirectivityModelSubbandParameters
- * <p>
+ * 
  * Cone directivity model subband parameters.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -87,7 +89,7 @@ public class PHASEConeDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] frequency
-     * <p>
+     * 
      * The frequency of the subband, in hertz.
      * [@note]
      * Default value is 1000.0.
@@ -107,7 +109,7 @@ public class PHASEConeDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] innerAngle
-     * <p>
+     * 
      * The inner angle, in degrees.
      * [@note]
      * Default value is 360.0.
@@ -144,7 +146,7 @@ public class PHASEConeDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] outerAngle
-     * <p>
+     * 
      * The outer angle, in degrees.
      * [@note]
      * Default value is 360.0.
@@ -155,7 +157,7 @@ public class PHASEConeDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] outerGain
-     * <p>
+     * 
      * The outer gain.
      * [@note]
      * Values are clamped to the range [0.0, 1.0]. Default value is 1.0.
@@ -174,7 +176,7 @@ public class PHASEConeDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] frequency
-     * <p>
+     * 
      * The frequency of the subband, in hertz.
      * [@note]
      * Default value is 1000.0.
@@ -185,12 +187,14 @@ public class PHASEConeDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * setInnerAngle:outerAngle
-     * <p>
+     * 
      * Set the innerAngle and outerAngle of the Cone Directivity Model Subband
      * [@note] The default value for each angle is 360.0. outerAngle must be >= innerAngle.
-     *
-     * @param innerAngle The inner angle of the cone directivity model, must be less than or equal to outer angle.
-     * @param outerAngle The outer angle of the cone directivity model, must be greater than or equal to inner angle.
+     * 
+     * @param innerAngle
+     *                   The inner angle of the cone directivity model, must be less than or equal to outer angle.
+     * @param outerAngle
+     *                   The outer angle of the cone directivity model, must be greater than or equal to inner angle.
      */
     @Generated
     @Selector("setInnerAngle:outerAngle:")
@@ -198,7 +202,7 @@ public class PHASEConeDirectivityModelSubbandParameters extends NSObject {
 
     /**
      * [@property] outerGain
-     * <p>
+     * 
      * The outer gain.
      * [@note]
      * Values are clamped to the range [0.0, 1.0]. Default value is 1.0.

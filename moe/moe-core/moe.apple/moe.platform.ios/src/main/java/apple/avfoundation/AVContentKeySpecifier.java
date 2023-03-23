@@ -24,6 +24,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.5
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -76,15 +79,18 @@ public class AVContentKeySpecifier extends NSObject {
 
     /**
      * contentKeySpecifierForKeySystem:identifier:options:
-     * <p>
+     * 
      * Creates a new instance of AVContentKeySpecifier.
-     * <p>
+     * 
      * This method returns an AVContentKeySpecifier instance that represents a content key in a specific content key
      * system.
-     *
-     * @param keySystem            A valid key system for content keys.
-     * @param contentKeyIdentifier Container and protocol-specific key identifier.
-     * @param options              Additional information necessary to obtain the key, can be empty if none needed.
+     * 
+     * @param keySystem
+     *                             A valid key system for content keys.
+     * @param contentKeyIdentifier
+     *                             Container and protocol-specific key identifier.
+     * @param options
+     *                             Additional information necessary to obtain the key, can be empty if none needed.
      * @return A new AVContentKeySpecifier
      */
     @Generated
@@ -107,7 +113,7 @@ public class AVContentKeySpecifier extends NSObject {
 
     /**
      * [@property] identifier
-     * <p>
+     * 
      * Container and protocol-specific key identifier.
      */
     @Generated
@@ -121,15 +127,18 @@ public class AVContentKeySpecifier extends NSObject {
 
     /**
      * initForKeySystem:identifier:options:
-     * <p>
+     * 
      * Initialize an instance of AVContentKeySpecifier.
-     * <p>
+     * 
      * This method returns an AVContentKeySpecifier instance that represents a content key in a specific content key
      * system.
-     *
-     * @param keySystem            A valid key system for content keys.
-     * @param contentKeyIdentifier Container and protocol-specific key identifier.
-     * @param options              Additional information necessary to obtain the key, can be empty if none needed.
+     * 
+     * @param keySystem
+     *                             A valid key system for content keys.
+     * @param contentKeyIdentifier
+     *                             Container and protocol-specific key identifier.
+     * @param options
+     *                             Additional information necessary to obtain the key, can be empty if none needed.
      * @return An instance of AVContentKeySpecifier
      */
     @Generated
@@ -160,7 +169,7 @@ public class AVContentKeySpecifier extends NSObject {
 
     /**
      * [@property] keySystem
-     * <p>
+     * 
      * A valid key system for content keys.
      */
     @Generated
@@ -174,7 +183,7 @@ public class AVContentKeySpecifier extends NSObject {
 
     /**
      * [@property] options
-     * <p>
+     * 
      * Additional information necessary to obtain the key, can be empty if none needed.
      */
     @Generated

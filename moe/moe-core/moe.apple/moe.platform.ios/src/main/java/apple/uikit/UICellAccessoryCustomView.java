@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * An accessory using a custom view.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")

@@ -16,8 +16,6 @@ limitations under the License.
 
 package apple;
 
-import apple.coregraphics.struct.CGPoint;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSAttributedString;
 import apple.foundation.NSCoder;
@@ -59,7 +57,12 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGPoint;
+import apple.corefoundation.struct.CGRect;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
@@ -175,18 +178,20 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * method if it is found. So, any such method must return an NSSet too. If no such method is found, an NSSet that is
      * computed from information provided by previous invocations of the now-deprecated
      * +setKeys:triggerChangeNotificationsForDependentKey: method is returned, for backward binary compatibility.
-     * <p>
+     * 
      * This method and KVO's automatic use of it comprise a dependency mechanism that you can use instead of sending
      * -willChangeValueForKey:/-didChangeValueForKey: messages for dependent, computed, properties.
-     * <p>
+     * 
      * You can override this method when the getter method of one of your properties computes a value to return using
      * the values of other properties, including those that are located by key paths. Your override should typically
      * invoke super and return a set that includes any members in the set that result from doing that (so as not to
      * interfere with overrides of this method in superclasses).
-     * <p>
+     * 
      * You can't really override this method when you add a computed property to an existing class using a category,
      * because you're not supposed to override methods in categories. In that case, implement a matching
      * +keyPathsForValuesAffecting<Key> to take advantage of this mechanism.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
@@ -197,10 +202,16 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("new")
     public static native NSObject new_objc();
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("resolveClassMethod:")
     public static native boolean resolveClassMethod(SEL sel);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
@@ -224,6 +235,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * VoiceOver user will perform a double-tap to activate the item.
      * If your implementation successfully handles activate, return YES, otherwise return NO.
      * default == NO
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("accessibilityActivate")
@@ -232,6 +245,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     /**
      * Returns the activation point for an accessible element in screen coordinates.
      * default == Mid-point of the accessibilityFrame.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("accessibilityActivationPoint")
@@ -240,6 +255,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     /**
      * Returns a set of identifier keys indicating which technology is focused on this object
+     * 
+     * API-Since: 9.0
      */
     @Generated
     @Selector("accessibilityAssistiveTechnologyFocusedIdentifiers")
@@ -252,15 +269,23 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * If the view returns a delete action from this property, VoiceOver and Switch Control users will be able to delete
      * photos without performing the flick gesture.
      * default == nil
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("accessibilityCustomActions")
     public native NSArray<? extends UIAccessibilityCustomAction> accessibilityCustomActions();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("accessibilityCustomRotors")
     public native NSArray<? extends UIAccessibilityCustomRotor> accessibilityCustomRotors();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("accessibilityDecrement")
     public native void accessibilityDecrement();
@@ -285,17 +310,24 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     /**
      * Override the following methods to know when an assistive technology has set or unset its virtual focus on the
      * element.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("accessibilityElementDidBecomeFocused")
     public native void accessibilityElementDidBecomeFocused();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("accessibilityElementDidLoseFocus")
     public native void accessibilityElementDidLoseFocus();
 
     /**
      * Returns whether an assistive technology is focused on the element.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("accessibilityElementIsFocused")
@@ -305,6 +337,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * A list of container elements managed by the receiver.
      * This can be used as an alternative to implementing the dynamic methods.
      * default == nil
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("accessibilityElements")
@@ -313,6 +347,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     /**
      * Marks all the accessible elements contained within as hidden.
      * default == NO
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("accessibilityElementsHidden")
@@ -346,6 +382,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * the following methods. Incrementing will adjust the element so that it increases its content,
      * while decrementing decreases its content. For example, accessibilityIncrement will increase the value
      * of a UISlider, and accessibilityDecrement will decrease the value.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("accessibilityIncrement")
@@ -382,6 +420,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Currently, this property only affects Switch Control, not VoiceOver or other assistive technologies.
      * See UIAccessibilityConstants.h for the list of supported values.
      * default == UIAccessibilityNavigationStyleAutomatic
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("accessibilityNavigationStyle")
@@ -394,6 +434,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Setting the property, or overriding the method, will cause the assistive technology to prefer the path over the
      * accessibility.
      * frame when highlighting the element.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("accessibilityPath")
@@ -406,6 +448,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * called (as a result of a VoiceOver user action), it dismisses the popover.
      * If your implementation successfully dismisses the current UI, return YES, otherwise return NO.
      * default == NO
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("accessibilityPerformEscape")
@@ -418,11 +462,16 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * stop recording.
      * Return YES to indicate that the action was handled.
      * default == NO
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("accessibilityPerformMagicTap")
     public native boolean accessibilityPerformMagicTap();
 
+    /**
+     * API-Since: 4.2
+     */
     @Generated
     @Selector("accessibilityScroll:")
     public native boolean accessibilityScroll(@NInt long direction);
@@ -457,6 +506,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Informs whether the receiving view should be considered modal by accessibility. If YES, then
      * elements outside this view will be ignored. Only elements inside this view will be exposed.
      * default == NO
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("accessibilityViewIsModal")
@@ -491,9 +542,9 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * error's recovery options, attempt recovery from the error, and send the selected message to the specified
      * delegate. The option index is an index into the error's array of localized recovery options. The method selected
      * by didRecoverSelector must have the same signature as:
-     * <p>
+     * 
      * - (void)didPresentErrorWithRecovery:(BOOL)didRecover contextInfo:(void *)contextInfo;
-     * <p>
+     * 
      * The value passed for didRecover must be YES if error recovery was completely successful, NO otherwise.
      */
     @Generated
@@ -502,6 +553,9 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
             @NUInt long recoveryOptionIndex, @Mapped(ObjCObjectMapper.class) Object delegate, SEL didRecoverSelector,
             VoidPtr contextInfo);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("autoContentAccessingProxy")
     @MappedReturn(ObjCObjectMapper.class)
@@ -574,18 +628,27 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("doesNotRecognizeSelector:")
     public native void doesNotRecognizeSelector(SEL aSelector);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Handler API no longer supported
+     */
     @Generated
     @Deprecated
     @Selector("fileManager:shouldProceedAfterError:")
     public native boolean fileManagerShouldProceedAfterError(NSFileManager fm, NSDictionary<?, ?> errorInfo);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Handler API no longer supported
+     */
     @Generated
     @Deprecated
     @Selector("fileManager:willProcessPath:")
     public native void fileManagerWillProcessPath(NSFileManager fm, String path);
 
     @Generated
-    @Deprecated
     @Selector("finalize")
     public native void finalize_objc();
 
@@ -593,6 +656,9 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("forwardInvocation:")
     public native void forwardInvocation(NSInvocation anInvocation);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("forwardingTargetForSelector:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -655,7 +721,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Given a key that identifies an _ordered_ to-many relationship, return a mutable array that provides read-write
      * access to the related objects. Objects added to the mutable array will become related to the receiver, and
      * objects removed from the mutable array will become unrelated.
-     * <p>
+     * 
      * The default implementation of this method recognizes the same simple accessor methods and array accessor methods
      * as -valueForKey:'s, and follows the same direct instance variable access policies, but always returns a mutable
      * collection proxy object instead of the immutable collection that -valueForKey: would return. It also:
@@ -683,7 +749,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * result in a -setValue:forUndefinedKey: message being sent to the original receiver of -mutableArrayValueForKey:.
      * The default implementation of -setValue:forUndefinedKey: raises an NSUndefinedKeyException, but you can override
      * it in your application.
-     * <p>
+     * 
      * Performance note: the repetitive -set<Key>: messages implied by step 2's description are a potential performance
      * problem. For better performance implement insertion and removal methods that fulfill the requirements for step 1
      * in your KVC-compliant class. For best performance implement a replacement method too.
@@ -706,7 +772,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Given a key that identifies an _ordered_ and uniquing to-many relationship, return a mutable ordered set that
      * provides read-write access to the related objects. Objects added to the mutable ordered set will become related
      * to the receiver, and objects removed from the mutable ordered set will become unrelated.
-     * <p>
+     * 
      * The default implementation of this method recognizes the same simple accessor methods and ordered set accessor
      * methods as -valueForKey:'s, and follows the same direct instance variable access policies, but always returns a
      * mutable collection proxy object instead of the immutable collection that -valueForKey: would return. It also:
@@ -734,15 +800,20 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * object will result in a -setValue:forUndefinedKey: message being sent to the original receiver of
      * -mutableOrderedSetValueForKey:. The default implementation of -setValue:forUndefinedKey: raises an
      * NSUndefinedKeyException, but you can override it in your application.
-     * <p>
+     * 
      * Performance note: the repetitive -set<Key>: messages implied by step 2's description are a potential performance
      * problem. For better performance implement insertion and removal methods that fulfill the requirements for step 1
      * in your KVC-compliant class. For best performance implement a replacement method too.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("mutableOrderedSetValueForKey:")
     public native NSMutableOrderedSet<?> mutableOrderedSetValueForKey(String key);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("mutableOrderedSetValueForKeyPath:")
     public native NSMutableOrderedSet<?> mutableOrderedSetValueForKeyPath(String keyPath);
@@ -751,7 +822,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Given a key that identifies an _unordered_ and uniquing to-many relationship, return a mutable set that provides
      * read-write access to the related objects. Objects added to the mutable set will become related to the receiver,
      * and objects removed from the mutable set will become unrelated.
-     * <p>
+     * 
      * The default implementation of this method recognizes the same simple accessor methods and set accessor methods as
      * -valueForKey:'s, and follows the same direct instance variable access policies, but always returns a mutable
      * collection proxy object instead of the immutable collection that -valueForKey: would return. It also:
@@ -777,7 +848,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * in a -setValue:forUndefinedKey: message being sent to the original receiver of -mutableSetValueForKey:. The
      * default implementation of -setValue:forUndefinedKey: raises an NSUndefinedKeyException, but you can override it
      * in your application.
-     * <p>
+     * 
      * Performance note: the repetitive -set<Key>: messages implied by step 2's description are a potential performance
      * problem. For better performance implement methods that fulfill the requirements for step 1 in your KVC-compliant
      * class.
@@ -804,7 +875,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     /**
      * Given that the receiver has been registered as an observer of the value at a key path relative to an object, be
      * notified of a change to that value.
-     * <p>
+     * 
      * The change dictionary always contains an NSKeyValueChangeKindKey entry whose value is an NSNumber wrapping an
      * NSKeyValueChange (use -[NSNumber unsignedIntegerValue]). The meaning of NSKeyValueChange depends on what sort of
      * property is identified by the key path:
@@ -824,21 +895,21 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * coding-compliant set mutation methods for the key has been invoked, or that a
      * -willChangeValueForKey:withSetMutation:usingObjects:/-didChangeValueForKey:withSetMutation:usingObjects: pair has
      * otherwise been invoked.
-     * <p>
+     * 
      * For any sort of property, the change dictionary contains an NSKeyValueChangeNewKey entry if
      * NSKeyValueObservingOptionNew was specified at observer registration time, it's the right kind of change, and this
      * isn't a prior notification. The change dictionary contains an NSKeyValueChangeOldKey if
      * NSKeyValueObservingOptionOld was specified and it's the right kind of change. See the comments for the
      * NSKeyValueObserverNotification informal protocol methods for what the values of those entries can be.
-     * <p>
+     * 
      * For an _ordered_ to-many relationship, the change dictionary always contains an NSKeyValueChangeIndexesKey entry
      * whose value is an NSIndexSet containing the indexes of the inserted, removed, or replaced objects, unless the
      * change is an NSKeyValueChangeSetting.
-     * <p>
+     * 
      * If NSKeyValueObservingOptionPrior (introduced in Mac OS 10.5) was specified at observer registration time, and
      * this notification is one being sent prior to a change as a result, the change dictionary contains an
      * NSKeyValueChangeNotificationIsPriorKey entry whose value is an NSNumber wrapping YES (use -[NSNumber boolValue]).
-     * <p>
+     * 
      * context is always the same pointer that was passed in at observer registration time.
      */
     @Generated
@@ -851,6 +922,9 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @MappedReturn(ObjCObjectMapper.class)
     public native Object performSelector(SEL aSelector);
 
+    /**
+     * API-Since: 2.0
+     */
     @Generated
     @Selector("performSelector:onThread:withObject:waitUntilDone:")
     public native void performSelectorOnThreadWithObjectWaitUntilDone(SEL aSelector, NSThread thr,
@@ -858,6 +932,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     /**
      * equivalent to the first method with kCFRunLoopCommonModes
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("performSelector:onThread:withObject:waitUntilDone:modes:")
@@ -887,6 +963,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     /**
      * equivalent to the first method with kCFRunLoopCommonModes
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("performSelectorInBackground:withObject:")
@@ -902,6 +980,9 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     public native void performSelectorOnMainThreadWithObjectWaitUntilDoneModes(SEL aSelector,
             @Mapped(ObjCObjectMapper.class) Object arg, boolean wait_, NSArray<String> array);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("prepareForInterfaceBuilder")
     public native void prepareForInterfaceBuilder();
@@ -911,14 +992,14 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * width,height of the image. (this subregion is defined in the image's
      * local coordinate space, i.e. the origin is the top left corner of
      * the image).
-     * <p>
+     * 
      * By default, this method will be called to requests the full image
      * data regardless of what subregion is needed for the current render.
      * All of the image is loaded or none of it is.
-     * <p>
+     * 
      * If the kCIImageProviderTileSize option is specified, then only the
      * tiles that are needed are requested.
-     * <p>
+     * 
      * Changing the virtual memory mapping of the supplied buffer (e.g. using
      * vm_copy () to modify it) will give undefined behavior.
      */
@@ -932,6 +1013,9 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("removeObserver:forKeyPath:")
     public native void removeObserverForKeyPath(NSObject observer, String keyPath);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("removeObserver:forKeyPath:context:")
     public native void removeObserverForKeyPathContext(NSObject observer, String keyPath, VoidPtr context);
@@ -966,6 +1050,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     /**
      * Returns the activation point for an accessible element in screen coordinates.
      * default == Mid-point of the accessibilityFrame.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setAccessibilityActivationPoint:")
@@ -978,11 +1064,16 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * If the view returns a delete action from this property, VoiceOver and Switch Control users will be able to delete
      * photos without performing the flick gesture.
      * default == nil
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAccessibilityCustomActions:")
     public native void setAccessibilityCustomActions(NSArray<? extends UIAccessibilityCustomAction> value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setAccessibilityCustomRotors:")
     public native void setAccessibilityCustomRotors(NSArray<? extends UIAccessibilityCustomRotor> value);
@@ -991,6 +1082,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * A list of container elements managed by the receiver.
      * This can be used as an alternative to implementing the dynamic methods.
      * default == nil
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAccessibilityElements:")
@@ -999,6 +1092,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     /**
      * Marks all the accessible elements contained within as hidden.
      * default == NO
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setAccessibilityElementsHidden:")
@@ -1057,6 +1152,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Currently, this property only affects Switch Control, not VoiceOver or other assistive technologies.
      * See UIAccessibilityConstants.h for the list of supported values.
      * default == UIAccessibilityNavigationStyleAutomatic
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setAccessibilityNavigationStyle:")
@@ -1068,6 +1165,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Setting the property, or overriding the method, will cause the assistive technology to prefer the path over the
      * accessibility.
      * frame when highlighting the element.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setAccessibilityPath:")
@@ -1103,6 +1202,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Informs whether the receiving view should be considered modal by accessibility. If YES, then
      * elements outside this view will be ignored. Only elements inside this view will be exposed.
      * default == NO
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setAccessibilityViewIsModal:")
@@ -1146,6 +1247,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * By default, VoiceOver will navigate those items in horizontal rows. If shouldGroupAccessibilityChildren is set on
      * a parent view of the items in the vertical column, VoiceOver will navigate the order correctly.
      * default == NO
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("setShouldGroupAccessibilityChildren:")
@@ -1156,7 +1259,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * that identifies a to-one relationship, relate the object to the receiver, unrelating the previously related
      * object if there was one. Given a collection object and a key that identifies a to-many relationship, relate the
      * objects contained in the collection to the receiver, unrelating previously related objects if there were any.
-     * <p>
+     * 
      * The default implementation of this method does the following:
      * 1. Searches the class of the receiver for an accessor method whose name matches the pattern -set<Key>:. If such a
      * method is found the type of its parameter is checked. If the parameter type is not an object pointer type but the
@@ -1174,7 +1277,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * 3. Otherwise (no accessor method or instance variable is found), invokes -setValue:forUndefinedKey:. The default
      * implementation of -setValue:forUndefinedKey: raises an NSUndefinedKeyException, but you can override it in your
      * application.
-     * <p>
+     * 
      * Compatibility notes:
      * - For backward binary compatibility with -takeValue:forKey:'s behavior, a method whose name matches the pattern
      * -_set<Key>: is also recognized in step 1. KVC accessor methods whose names start with underscores were deprecated
@@ -1219,6 +1322,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * By default, VoiceOver will navigate those items in horizontal rows. If shouldGroupAccessibilityChildren is set on
      * a parent view of the items in the vertical column, VoiceOver will navigate the order correctly.
      * default == NO
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("shouldGroupAccessibilityChildren")
@@ -1236,7 +1341,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * original value, but without altering *outError. If validation is necessary but not possible, return NO after
      * setting *outError to an NSError that encapsulates the reason that validation was not possible, but without
      * altering *ioValue. The sender of the message is never given responsibility for releasing ioValue or outError.
-     * <p>
+     * 
      * The default implementation of this method searches the class of the receiver for a validator method whose name
      * matches the pattern -validate<Key>:error:. If such a method is found it is invoked and the result is returned. If
      * no such method is found, YES is returned.
@@ -1255,7 +1360,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Given a key that identifies an attribute or to-one relationship, return the attribute value or the related
      * object. Given a key that identifies a to-many relationship, return an immutable array or an immutable set that
      * contains all of the related objects.
-     * <p>
+     * 
      * The default implementation of this method does the following:
      * 1. Searches the class of the receiver for an accessor method whose name matches the pattern -get<Key>, -<key>, or
      * -is<Key>, in that order. If such a method is found it is invoked. If the type of the method's result is an object
@@ -1296,7 +1401,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * 6. Otherwise (no simple accessor method, set of collection access methods, or instance variable is found),
      * invokes -valueForUndefinedKey: and returns the result. The default implementation of -valueForUndefinedKey:
      * raises an NSUndefinedKeyException, but you can override it in your application.
-     * <p>
+     * 
      * Compatibility notes:
      * - For backward binary compatibility, an accessor method whose name matches the pattern -_get<Key>, or -_<key> is
      * searched for between steps 1 and 3. If such a method is found it is invoked, with the same sort of conversion to
@@ -1343,7 +1448,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * NSKeyValueChangeRemoval, or NSKeyValueChangeReplacement. The passed-in index set must be the indexes of the
      * objects being inserted, removed, or replaced. Invocations of these methods must always be paired, with identical
      * arguments.
-     * <p>
+     * 
      * The change dictionaries in notifications resulting from use of these methods contain optional entries if
      * requested at observer registration time:
      * - The NSKeyValueChangeOldKey entry, if present (only for NSKeyValueChangeRemoval and
@@ -1363,7 +1468,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * NSKeyValueChangeSetting to each observer registered for the key, including those that are registered with other
      * objects using key paths that locate the keyed value in this object. Invocations of these methods must always be
      * paired.
-     * <p>
+     * 
      * The change dictionaries in notifications resulting from use of these methods contain optional entries if
      * requested at observer registration time:
      * - The NSKeyValueChangeOldKey entry, if present, contains the value returned by -valueForKey: at the instant that
@@ -1382,14 +1487,14 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * object. The passed-in mutation kind corresponds to an NSMutableSet method. The passed-in set must contain the set
      * that would be passed to the corresponding NSMutableSet method. Invocations of these methods must always be
      * paired, with identical arguments.
-     * <p>
+     * 
      * The value of the NSKeyValueChangeKindKey entry in change dictionaries in notifications resulting from use of
      * these methods depends on the passed-in mutationKind value:
      * - NSKeyValueUnionSetMutation -> NSKeyValueChangeInsertion
      * - NSKeyValueMinusSetMutation -> NSKeyValueChangeRemoval
      * - NSKeyValueIntersectSetMutation -> NSKeyValueChangeRemoval
      * - NSKeyValueSetSetMutation -> NSKeyValueChangeReplacement
-     * <p>
+     * 
      * The change dictionaries may also contain optional entries:
      * - The NSKeyValueChangeOldKey entry, if present (only for for NSKeyValueChangeRemoval and
      * NSKeyValueChangeReplacement), contains the set of objects that were removed.
@@ -1418,6 +1523,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     /**
      * The underlying attributed version of the accessibility hint. Setting this property will change the
      * value of the accessibilityHint property and vice-versa.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("accessibilityAttributedHint")
@@ -1426,6 +1533,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     /**
      * The underlying attributed version of the accessibility label. Setting this property will change the
      * value of the accessibilityLabel property and vice-versa.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("accessibilityAttributedLabel")
@@ -1434,6 +1543,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     /**
      * The underlying attributed version of the accessibility value. Setting this property will change the
      * value of the accessibilityValue property and vice-versa.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("accessibilityAttributedValue")
@@ -1443,6 +1554,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Some containers provide more context for accessibility elements, such as tables or lists.
      * Set this property so that assistive technologies can output more information.
      * default == UIAccessibilityContainerTypeNone
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("accessibilityContainerType")
@@ -1456,10 +1569,10 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * experience. Also, there may be situations in which you want to expose drags or drops from an
      * element, and those interactions are installed on views that are not part of that element's view
      * hierarchy subtree.
-     * <p>
+     * 
      * This is trivially the case when the element is not a view at all, but an instance of
      * UIAccessibilityElement.
-     * <p>
+     * 
      * Another example is when a container view maintains interactions that are logically
      * associated with subviews. For instance, UITableView has associated drag interactions that allow
      * for dragging its rows; to make the rows draggable by assistive technologies, UITableViewCell has
@@ -1467,27 +1580,33 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * the cell.
      * (Note that this implementation detail is noted here for expository purposes only and may change
      * at any time without warning.)
-     * <p>
+     * 
      * Properties defined here allow you to fine-tune how drags and drops are exposed to assistive
      * technologies. Both of their getter methods can be overridden to provide information on-demand.
      * For each location descriptor, the associated view should be the UIView with the appropriate
      * UIInteraction object for that drag or drop.
-     * <p>
+     * 
      * `accessibilityDragSourceDescriptors` is an array of UIAccessibilityLocationDescriptor
      * objects and is used to define and describe what drags are available from an element.
-     * <p>
+     * 
      * `accessibilityDropPointDescriptors` is similarly an array of
      * UIAccessibilityLocationDescriptor objects and is used to define and describe where
      * drops are possible on this element.
-     * <p>
+     * 
      * To restore the default automatic behavior for these properties, assign (or return) the default
      * value of nil. Note that nil does not describe the same behavior as the empty array, which
      * specifies that there are no relevant interactions for this element.
+     * 
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("accessibilityDragSourceDescriptors")
     public native NSArray<? extends UIAccessibilityLocationDescriptor> accessibilityDragSourceDescriptors();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("accessibilityDropPointDescriptors")
     public native NSArray<? extends UIAccessibilityLocationDescriptor> accessibilityDropPointDescriptors();
@@ -1495,6 +1614,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     /**
      * The underlying attributed version of the accessibility hint. Setting this property will change the
      * value of the accessibilityHint property and vice-versa.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAccessibilityAttributedHint:")
@@ -1503,6 +1624,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     /**
      * The underlying attributed version of the accessibility label. Setting this property will change the
      * value of the accessibilityLabel property and vice-versa.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAccessibilityAttributedLabel:")
@@ -1511,6 +1634,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     /**
      * The underlying attributed version of the accessibility value. Setting this property will change the
      * value of the accessibilityValue property and vice-versa.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAccessibilityAttributedValue:")
@@ -1520,6 +1645,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Some containers provide more context for accessibility elements, such as tables or lists.
      * Set this property so that assistive technologies can output more information.
      * default == UIAccessibilityContainerTypeNone
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAccessibilityContainerType:")
@@ -1532,10 +1659,10 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * experience. Also, there may be situations in which you want to expose drags or drops from an
      * element, and those interactions are installed on views that are not part of that element's view
      * hierarchy subtree.
-     * <p>
+     * 
      * This is trivially the case when the element is not a view at all, but an instance of
      * UIAccessibilityElement.
-     * <p>
+     * 
      * Another example is when a container view maintains interactions that are logically
      * associated with subviews. For instance, UITableView has associated drag interactions that allow
      * for dragging its rows; to make the rows draggable by assistive technologies, UITableViewCell has
@@ -1543,28 +1670,34 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * the cell.
      * (Note that this implementation detail is noted here for expository purposes only and may change
      * at any time without warning.)
-     * <p>
+     * 
      * Properties defined here allow you to fine-tune how drags and drops are exposed to assistive
      * technologies. Both of their getter methods can be overridden to provide information on-demand.
      * For each location descriptor, the associated view should be the UIView with the appropriate
      * UIInteraction object for that drag or drop.
-     * <p>
+     * 
      * `accessibilityDragSourceDescriptors` is an array of UIAccessibilityLocationDescriptor
      * objects and is used to define and describe what drags are available from an element.
-     * <p>
+     * 
      * `accessibilityDropPointDescriptors` is similarly an array of
      * UIAccessibilityLocationDescriptor objects and is used to define and describe where
      * drops are possible on this element.
-     * <p>
+     * 
      * To restore the default automatic behavior for these properties, assign (or return) the default
      * value of nil. Note that nil does not describe the same behavior as the empty array, which
      * specifies that there are no relevant interactions for this element.
+     * 
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("setAccessibilityDragSourceDescriptors:")
     public native void setAccessibilityDragSourceDescriptors(
             NSArray<? extends UIAccessibilityLocationDescriptor> value);
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("setAccessibilityDropPointDescriptors:")
     public native void setAccessibilityDropPointDescriptors(NSArray<? extends UIAccessibilityLocationDescriptor> value);
@@ -1572,6 +1705,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     /**
      * The underlying attributed versions of the accessibility user input label(s).
      * Setting this property will change the value of the accessibilityUserInputLabels property and vice versa.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("accessibilityAttributedUserInputLabels")
@@ -1583,6 +1718,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * A label whose only purpose is to display information should return NO.
      * default == derived from other accessibility properties (for example, an element with
      * UIAccessibilityTraitNotEnabled returns NO)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("accessibilityRespondsToUserInteraction")
@@ -1594,6 +1731,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * For example, when encountering a source coding context, VoiceOver could choose to speak all punctuation.
      * To specify a substring within the textual context, use the UIAccessibilityTextAttributeContext attributed key.
      * default == nil
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("accessibilityTextualContext")
@@ -1609,6 +1748,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * If this property returns an empty or invalid value, the accessibilityLabel will be used instead.
      * default == an empty array
      * default on UIKit controls == an array with an appropriate label, if different from accessibilityLabel
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("accessibilityUserInputLabels")
@@ -1617,6 +1758,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     /**
      * The underlying attributed versions of the accessibility user input label(s).
      * Setting this property will change the value of the accessibilityUserInputLabels property and vice versa.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAccessibilityAttributedUserInputLabels:")
@@ -1628,6 +1771,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * A label whose only purpose is to display information should return NO.
      * default == derived from other accessibility properties (for example, an element with
      * UIAccessibilityTraitNotEnabled returns NO)
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAccessibilityRespondsToUserInteraction:")
@@ -1639,6 +1784,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * For example, when encountering a source coding context, VoiceOver could choose to speak all punctuation.
      * To specify a substring within the textual context, use the UIAccessibilityTextAttributeContext attributed key.
      * default == nil
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAccessibilityTextualContext:")
@@ -1654,6 +1801,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * If this property returns an empty or invalid value, the accessibilityLabel will be used instead.
      * default == an empty array
      * default on UIKit controls == an array with an appropriate label, if different from accessibilityLabel
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setAccessibilityUserInputLabels:")

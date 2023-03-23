@@ -31,48 +31,48 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSNNNeuronDescriptor
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * The MPSNNNeuronDescriptor specifies a neuron descriptor.
  * Supported neuron types:
- * <p>
+ * 
  * Neuron type "none": f(x) = x
  * Parameters: none
- * <p>
+ * 
  * ReLU neuron filter: f(x) = x >= 0 ? x : a * x
  * This is called Leaky ReLU in literature. Some literature defines
  * classical ReLU as max(0, x). If you want this behavior, simply pass a = 0.
  * Parameters: a
  * For default behavior, set the value of a to 0.0f.
- * <p>
+ * 
  * Linear neuron filter: f(x) = a * x + b
  * Parameters: a, b
  * For default behavior, set the value of a to 1.0f and the value of b to 0.0f.
- * <p>
+ * 
  * Sigmoid neuron filter: f(x) = 1 / (1 + e^-x)
  * Parameters: none
- * <p>
+ * 
  * Hard Sigmoid filter: f(x) = clamp((x * a) + b, 0, 1)
  * Parameters: a, b
  * For default behavior, set the value of a to 0.2f and the value of b to 0.5f.
- * <p>
+ * 
  * Hyperbolic tangent (TanH) neuron filter: f(x) = a * tanh(b * x)
  * Parameters: a, b
  * For default behavior, set the value of a to 1.0f and the value of b to 1.0f.
- * <p>
+ * 
  * Absolute neuron filter: f(x) = fabs(x)
  * Parameters: none
- * <p>
+ * 
  * Parametric Soft Plus neuron filter: f(x) = a * log(1 + e^(b * x))
  * Parameters: a, b
  * For default behavior, set the value of a to 1.0f and the value of b to 1.0f.
- * <p>
+ * 
  * Parametric Soft Sign neuron filter: f(x) = x / (1 + abs(x))
  * Parameters: none
- * <p>
+ * 
  * Parametric ELU neuron filter: f(x) = x >= 0 ? x : a * (exp(x) - 1)
  * Parameters: a
  * For default behavior, set the value of a to 1.0f.
- * <p>
+ * 
  * Parametric ReLU (PReLU) neuron filter: Same as ReLU, except parameter
  * aArray is per channel.
  * For each pixel, applies the following function: f(x_i) = x_i, if x_i >= 0
@@ -83,13 +83,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * See https://arxiv.org/pdf/1502.01852.pdf for details.
  * Parameters: aArray - Array of floats containing per channel value of PReLu parameter
  * count - Number of float values in array aArray.
- * <p>
+ * 
  * ReLUN neuron filter: f(x) = min((x >= 0 ? x : a * x), b)
  * Parameters: a, b
  * As an example, the TensorFlow Relu6 activation layer can be implemented
  * by setting the parameter b to 6.0f:
  * https://www.tensorflow.org/api_docs/cc/class/tensorflow/ops/relu6.
  * For default behavior, set the value of a to 1.0f and the value of b to 6.0f.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -155,7 +157,7 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
 
     /**
      * Make a descriptor for a MPSCNNNeuron object.
-     *
+     * 
      * @param neuronType The type of a neuron filter.
      * @return A valid MPSNNNeuronDescriptor object or nil, if failure.
      */
@@ -165,7 +167,7 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
 
     /**
      * Make a descriptor for a MPSCNNNeuron object.
-     *
+     * 
      * @param neuronType The type of a neuron filter.
      * @param a          Parameter "a".
      * @return A valid MPSNNNeuronDescriptor object or nil, if failure.
@@ -176,7 +178,7 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
 
     /**
      * Initialize the neuron descriptor.
-     *
+     * 
      * @param neuronType The type of a neuron filter.
      * @param a          Parameter "a".
      * @param b          Parameter "b".
@@ -188,7 +190,7 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
 
     /**
      * Make a descriptor for a MPSCNNNeuron object.
-     *
+     * 
      * @param neuronType The type of a neuron filter.
      * @param a          Parameter "a".
      * @param b          Parameter "b".
@@ -202,9 +204,9 @@ public class MPSNNNeuronDescriptor extends NSObject implements NSCopying, NSSecu
 
     /**
      * Make a descriptor for a neuron of type MPSCNNNeuronTypePReLU.
-     * <p>
+     * 
      * The PReLU neuron is the same as a ReLU neuron, except parameter "a" is per feature channel.
-     *
+     * 
      * @param data   A NSData containing a float array with the per feature channel value
      *               of PReLu parameter. The number of float values in this array usually
      *               corresponds to number of output channels in a convolution layer.

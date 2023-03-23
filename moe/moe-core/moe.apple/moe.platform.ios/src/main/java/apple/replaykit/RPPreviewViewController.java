@@ -71,6 +71,7 @@ public class RPPreviewViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native RPPreviewViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();

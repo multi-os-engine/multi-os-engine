@@ -26,6 +26,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 13.0
+ */
 @Generated
 @Library("CarPlay")
 @Runtime(ObjCRuntime.class)
@@ -177,4 +180,12 @@ public class CPTemplateApplicationScene extends UIScene {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * API-Since: 15.4
+     */
+    @Generated
+    @Selector("contentStyle")
+    @NInt
+    public native long contentStyle();
 }

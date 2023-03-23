@@ -40,6 +40,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ * Deprecated-Since: 11.0
+ * Deprecated-Message: No longer supported, will cease working at some point in the future
+ */
+@Deprecated
 @Generated
 @Library("CloudKit")
 @Runtime(ObjCRuntime.class)
@@ -165,7 +171,7 @@ public class CKModifyBadgeOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
@@ -180,7 +186,7 @@ public class CKModifyBadgeOperation extends CKOperation {
 
     /**
      * This block is called when the operation completes.
-     * <p>
+     * 
      * The @code -[NSOperation completionBlock] @endcode will also be called if both are set.
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */

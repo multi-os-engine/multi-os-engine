@@ -47,6 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * server using Apple Push Notification Service. If the application is authorized then the UNNotificationRequest will be
  * used to create a UNNotification and it will be used to notify the user. If the user acts on the UNNotification then a
  * UNNotificationResponse will be sent to the application.
+ * 
+ * API-Since: 10.0
  */
 @Generated
 @Library("UserNotifications")
@@ -327,5 +329,20 @@ public class UNUserNotificationCenter extends NSObject {
     public interface Block_requestAuthorizationWithOptionsCompletionHandler {
         @Generated
         void call_requestAuthorizationWithOptionsCompletionHandler(boolean granted, NSError error);
+    }
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setBadgeCount:withCompletionHandler:")
+    public native void setBadgeCountWithCompletionHandler(@NInt long newBadgeCount,
+            @ObjCBlock(name = "call_setBadgeCountWithCompletionHandler") Block_setBadgeCountWithCompletionHandler completionHandler);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setBadgeCountWithCompletionHandler {
+        @Generated
+        void call_setBadgeCountWithCompletionHandler(NSError error);
     }
 }

@@ -25,11 +25,20 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Intents")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("INSpeakable")
 public interface INSpeakable {
+    /**
+     * API-Since: 10.0
+     * Deprecated-Since: 11.0
+     * Deprecated-Message: Please use vocabularyIdentifier
+     */
+    @Deprecated
     @IsOptional
     @Generated
     @Selector("identifier")

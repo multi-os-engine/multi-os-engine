@@ -17,8 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSCoder;
 import apple.foundation.NSDate;
@@ -51,7 +49,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
+import apple.corefoundation.struct.CGSize;
 
+/**
+ * API-Since: 2.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -157,6 +160,7 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
 
+    @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
     public static native void beginAnimationsContext(String animationID, VoidPtr context);
@@ -183,6 +187,7 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("clearTextInputContextIdentifier:")
     public static native void clearTextInputContextIdentifier(String identifier);
 
+    @Deprecated
     @Generated
     @Selector("commitAnimations")
     public static native void commitAnimations();
@@ -258,46 +263,57 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationBeginsFromCurrentState:")
     public static native void setAnimationBeginsFromCurrentState(boolean fromCurrentState);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationCurve:")
     public static native void setAnimationCurve(@NInt long curve);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelay:")
     public static native void setAnimationDelay(double delay);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
     public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
     public static native void setAnimationDidStopSelector(SEL selector);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationDuration:")
     public static native void setAnimationDuration_static(double duration);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatAutoreverses:")
     public static native void setAnimationRepeatAutoreverses(boolean repeatAutoreverses);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationRepeatCount:")
     public static native void setAnimationRepeatCount_static(float repeatCount);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
     public static native void setAnimationStartDate(NSDate startDate);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
     public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
 
+    @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
     public static native void setAnimationWillStartSelector(SEL selector);
@@ -387,11 +403,16 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     /**
      * For segments whose width value is 0, setting this property to YES attempts to adjust segment widths based on
      * their content widths. Default is NO.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("apportionsSegmentWidthsByContent")
     public native boolean apportionsSegmentWidthsByContent();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("backgroundImageForState:barMetrics:")
     public native UIImage backgroundImageForStateBarMetrics(@NUInt long state, @NInt long barMetrics);
@@ -401,12 +422,18 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @ByValue
     public native CGSize contentOffsetForSegmentAtIndex(@NUInt long segment);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("contentPositionAdjustmentForSegmentType:barMetrics:")
     @ByValue
     public native UIOffset contentPositionAdjustmentForSegmentTypeBarMetrics(@NInt long leftCenterRightOrAlone,
             @NInt long barMetrics);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("dividerImageForLeftSegmentState:rightSegmentState:barMetrics:")
     public native UIImage dividerImageForLeftSegmentStateRightSegmentStateBarMetrics(@NUInt long leftState,
@@ -483,6 +510,11 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("removeSegmentAtIndex:animated:")
     public native void removeSegmentAtIndexAnimated(@NUInt long segment, boolean animated);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: The segmentedControlStyle property no longer has any effect
+     */
     @Generated
     @Deprecated
     @Selector("segmentedControlStyle")
@@ -503,6 +535,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     /**
      * For segments whose width value is 0, setting this property to YES attempts to adjust segment widths based on
      * their content widths. Default is NO.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setApportionsSegmentWidthsByContent:")
@@ -513,13 +547,15 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
      * calculated from that information, otherwise, the cap width will be calculated by subtracting one from the image's
      * width then dividing by 2. The cap widths will also be used as the margins for text placement. To adjust the
      * margin use the margin adjustment methods.
-     * <p>
+     * 
      * In general, you should specify a value for the normal state to be used by other states which don't have a custom
      * value set.
-     * <p>
+     * 
      * Similarly, when a property is dependent on the bar metrics, be sure to specify a value for UIBarMetricsDefault.
      * In the case of the segmented control, appearance properties for UIBarMetricsCompact are only respected for
      * segmented controls in the smaller navigation and toolbars.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setBackgroundImage:forState:barMetrics:")
@@ -535,6 +571,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     /**
      * For adjusting the position of a title or image within the given segment of a segmented control.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setContentPositionAdjustment:forSegmentType:barMetrics:")
@@ -547,6 +585,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
      * the left and unselected on the right (leftSegmentState:UIControlStateSelected
      * rightSegmentState:UIControlStateNormal), and unselected on the left and selected on the right
      * (leftSegmentState:UIControlStateNormal rightSegmentState:UIControlStateSelected).
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setDividerImage:forLeftSegmentState:rightSegmentState:barMetrics:")
@@ -567,6 +607,11 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("setImage:forSegmentAtIndex:")
     public native void setImageForSegmentAtIndex(UIImage image, @NUInt long segment);
 
+    /**
+     * API-Since: 2.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: The segmentedControlStyle property no longer has any effect
+     */
     @Generated
     @Deprecated
     @Selector("setSegmentedControlStyle:")
@@ -592,6 +637,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     /**
      * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary,
      * using the keys found in NSAttributedString.h.
+     * 
+     * API-Since: 5.0
      */
     @Generated
     @Selector("setTitleTextAttributes:forState:")
@@ -608,6 +655,9 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     @Selector("titleForSegmentAtIndex:")
     public native String titleForSegmentAtIndex(@NUInt long segment);
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("titleTextAttributesForState:")
     public native NSDictionary<String, ?> titleTextAttributesForState(@NUInt long state);
@@ -633,6 +683,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     /**
      * The color to use for highlighting the currently selected segment.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("selectedSegmentTintColor")
@@ -640,6 +692,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     /**
      * The color to use for highlighting the currently selected segment.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setSelectedSegmentTintColor:")
@@ -647,6 +701,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
 
     /**
      * Fetch the action for the given segment, if one has been assigned to that segment
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("actionForSegmentAtIndex:")
@@ -656,6 +712,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
      * Initializes the segmented control with the given frame and segments constructed from the given UIActions.
      * Segments will prefer images over titles when both are provided. Selecting a segment calls UIAction.actionHandler
      * as well as handlers for the ValueChanged and PrimaryActionTriggered control events.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("initWithFrame:actions:")
@@ -670,6 +728,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
      * provided. When the segment is selected UIAction.actionHandler is called. If a segment already exists with the
      * action's identifier that segment will either be updated (if the index is the same) or it will be removed (if
      * different).
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("insertSegmentWithAction:atIndex:animated:")
@@ -678,6 +738,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
     /**
      * Returns the index of the segment associated with the given actionIdentifier, or NSNotFound if the identifier
      * could not be found.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("segmentIndexForActionIdentifier:")
@@ -689,6 +751,8 @@ public class UISegmentedControl extends UIControl implements NSCoding, UISpringL
      * When the segment is selected UIAction.actionHandler is called. UIAction.identifier must either match the action
      * of the existing segment at this index, or be unique within all actions associated with the segmented control, or
      * this method will assert.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("setAction:forSegmentAtIndex:")

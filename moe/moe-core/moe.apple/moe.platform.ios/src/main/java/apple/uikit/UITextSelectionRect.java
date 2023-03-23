@@ -17,7 +17,6 @@ limitations under the License.
 package apple.uikit;
 
 import apple.NSObject;
-import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
@@ -39,11 +38,14 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGRect;
 
 /**
  * UITextSelectionRect defines an annotated selection rect used by the system to
  * offer rich text interaction experience. It also serves as an abstract class
  * provided to be subclassed when adopting UITextInput
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("UIKit")

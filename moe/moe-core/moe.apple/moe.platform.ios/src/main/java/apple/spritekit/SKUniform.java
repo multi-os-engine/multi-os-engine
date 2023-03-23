@@ -50,6 +50,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 8.0
+ */
 @Generated
 @Library("SpriteKit")
 @Runtime(ObjCRuntime.class)
@@ -157,7 +160,7 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a shader uniform with a given name.
-     *
+     * 
      * @param name the name of the shader uniform.
      */
     @Generated
@@ -166,7 +169,7 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
 
     /**
      * Create a shader uniform with a given name, and a float value
-     *
+     * 
      * @param name  the name of the shader uniform.
      * @param value the floating point value associated with this uniform.
      */
@@ -174,33 +177,63 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("uniformWithName:float:")
     public static native SKUniform uniformWithNameFloat(String name, float value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("uniformWithName:floatMatrix2:")
     public static native SKUniform uniformWithNameFloatMatrix2(String name, @ByValue GLKMatrix2 value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("uniformWithName:floatMatrix3:")
     public static native SKUniform uniformWithNameFloatMatrix3(String name, @ByValue GLKMatrix3 value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("uniformWithName:floatMatrix4:")
     public static native SKUniform uniformWithNameFloatMatrix4(String name, @ByValue GLKMatrix4 value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("uniformWithName:floatVector2:")
     public static native SKUniform uniformWithNameFloatVector2(String name, @ByValue GLKVector2 value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("uniformWithName:floatVector3:")
     public static native SKUniform uniformWithNameFloatVector3(String name, @ByValue GLKVector3 value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("uniformWithName:floatVector4:")
     public static native SKUniform uniformWithNameFloatVector4(String name, @ByValue GLKVector4 value);
 
     /**
      * Create a shader uniform with a given name, and texture data
-     *
+     * 
      * @param name    the name of the shader uniform.
      * @param texture the texture data associated with this uniform.
      */
@@ -223,16 +256,31 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("encodeWithCoder:")
     public native void encodeWithCoder(NSCoder coder);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("floatMatrix2Value")
     @ByValue
     public native GLKMatrix2 floatMatrix2Value();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("floatMatrix3Value")
     @ByValue
     public native GLKMatrix3 floatMatrix3Value();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("floatMatrix4Value")
     @ByValue
@@ -245,16 +293,31 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("floatValue")
     public native float floatValue();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("floatVector2Value")
     @ByValue
     public native GLKVector2 floatVector2Value();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("floatVector3Value")
     @ByValue
     public native GLKVector3 floatVector3Value();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("floatVector4Value")
     @ByValue
@@ -276,26 +339,56 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("initWithName:float:")
     public native SKUniform initWithNameFloat(String name, float value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithName:floatMatrix2:")
     public native SKUniform initWithNameFloatMatrix2(String name, @ByValue GLKMatrix2 value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithName:floatMatrix3:")
     public native SKUniform initWithNameFloatMatrix3(String name, @ByValue GLKMatrix3 value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithName:floatMatrix4:")
     public native SKUniform initWithNameFloatMatrix4(String name, @ByValue GLKMatrix4 value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithName:floatVector2:")
     public native SKUniform initWithNameFloatVector2(String name, @ByValue GLKVector2 value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithName:floatVector3:")
     public native SKUniform initWithNameFloatVector3(String name, @ByValue GLKVector3 value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("initWithName:floatVector4:")
     public native SKUniform initWithNameFloatVector4(String name, @ByValue GLKVector4 value);
@@ -311,14 +404,29 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("name")
     public native String name();
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("setFloatMatrix2Value:")
     public native void setFloatMatrix2Value(@ByValue GLKMatrix2 value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("setFloatMatrix3Value:")
     public native void setFloatMatrix3Value(@ByValue GLKMatrix3 value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("setFloatMatrix4Value:")
     public native void setFloatMatrix4Value(@ByValue GLKMatrix4 value);
@@ -330,14 +438,29 @@ public class SKUniform extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("setFloatValue:")
     public native void setFloatValue(float value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("setFloatVector2Value:")
     public native void setFloatVector2Value(@ByValue GLKVector2 value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("setFloatVector3Value:")
     public native void setFloatVector3Value(@ByValue GLKVector3 value);
 
+    /**
+     * API-Since: 7.0
+     * Deprecated-Since: 10.0
+     */
+    @Deprecated
     @Generated
     @Selector("setFloatVector4Value:")
     public native void setFloatVector4Value(@ByValue GLKVector4 value);

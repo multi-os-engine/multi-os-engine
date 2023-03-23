@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * Represents an impassible area in 2D space.
  * Able to be avoided by GKAgent's steering functions
  * GKGraph can generate navigation graphs from a list of obstacles
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("GameplayKit")

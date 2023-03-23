@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEMetaParameterDefinition
- * <p>
+ * 
  * A base object for metaparameter definitions
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -139,7 +141,7 @@ public class PHASEMetaParameterDefinition extends PHASEDefinition {
 
     /**
      * [@property] value
-     * <p>
+     * 
      * The value of the metaparameter.
      */
     @Generated

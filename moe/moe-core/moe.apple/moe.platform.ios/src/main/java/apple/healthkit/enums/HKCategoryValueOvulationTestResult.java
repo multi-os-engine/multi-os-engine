@@ -21,22 +21,40 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] HKCategoryValueOvulationTestResult
- * <p>
+ * 
  * Set of values that may be used for HKCategorySamples with the HKCategoryTypeIdentifierOvulationTestResult type.
- * <p>
+ * 
  * This category value tracks the result of a home ovulation test that use surges in hormone levels to
  * indicate fertility.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 public final class HKCategoryValueOvulationTestResult {
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Negative = 0x0000000000000001L;
-    @Generated @NInt public static final long Positive = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     * Deprecated-Since: 13.0
+     */
+    @Deprecated @Generated @NInt public static final long Positive = 0x0000000000000002L;
+    /**
+     * API-Since: 9.0
+     */
     @Generated @NInt public static final long Indeterminate = 0x0000000000000003L;
 
     @Generated
     private HKCategoryValueOvulationTestResult() {
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long LuteinizingHormoneSurge = 0x0000000000000002L;
+    /**
+     * API-Since: 13.0
+     */
     @Generated @NInt public static final long EstrogenSurge = 0x0000000000000004L;
 }

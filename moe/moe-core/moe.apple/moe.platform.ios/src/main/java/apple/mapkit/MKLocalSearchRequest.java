@@ -42,6 +42,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.1
+ */
 @Generated
 @Library("MapKit")
 @Runtime(ObjCRuntime.class)
@@ -162,6 +165,9 @@ public class MKLocalSearchRequest extends NSObject implements NSCopying {
     @Selector("init")
     public native MKLocalSearchRequest init();
 
+    /**
+     * API-Since: 9.3
+     */
     @Generated
     @Selector("initWithCompletion:")
     public native MKLocalSearchRequest initWithCompletion(MKLocalSearchCompletion completion);
@@ -183,28 +189,46 @@ public class MKLocalSearchRequest extends NSObject implements NSCopying {
     @Selector("setRegion:")
     public native void setRegion(@ByValue MKCoordinateRegion value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithNaturalLanguageQuery:")
     public native MKLocalSearchRequest initWithNaturalLanguageQuery(String naturalLanguageQuery);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("initWithNaturalLanguageQuery:region:")
     public native MKLocalSearchRequest initWithNaturalLanguageQueryRegion(String naturalLanguageQuery,
             @ByValue MKCoordinateRegion region);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("pointOfInterestFilter")
     public native MKPointOfInterestFilter pointOfInterestFilter();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("resultTypes")
     @NUInt
     public native long resultTypes();
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setPointOfInterestFilter:")
     public native void setPointOfInterestFilter(MKPointOfInterestFilter value);
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @Selector("setResultTypes:")
     public native void setResultTypes(@NUInt long value);

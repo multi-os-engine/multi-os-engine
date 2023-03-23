@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * NSCoreDataSpotlightDelegate implements the CSSearchableIndexDelegate API, but can't
  * publicly declare it due to linkage requirements.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreData")
@@ -119,6 +121,11 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     @Selector("init")
     public native NSCoreDataCoreSpotlightDelegate init();
 
+    /**
+     * API-Since: 11.0
+     * Deprecated-Since: 15.0
+     */
+    @Deprecated
     @Generated
     @Selector("initForStoreWithDescription:model:")
     public native NSCoreDataCoreSpotlightDelegate initForStoreWithDescriptionModel(
@@ -203,6 +210,8 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     /**
      * Deletes all searchable items for the configured Spotlight index. Calling this method may return
      * errors from lower layer dependencies, such as Core Data and Core Spotlight.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("deleteSpotlightIndexWithCompletionHandler:")
@@ -219,10 +228,12 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
     /**
      * Designated initializer for NSCoreDataCoreSpotlightDelegate. If this method is used to create the object,
      * -[NSCoreDataCoreSpotlightDelegate startSpotlightIndexing] must be called for the delegate to begin indexing.
-     * <p>
+     * 
      * NSCoreDataSpotlightDelegate requires that
      * - the store type is NSSQLiteStoreType.
      * - the store has persistent history tracking enabled.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("initForStoreWithDescription:coordinator:")
@@ -231,6 +242,8 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
 
     /**
      * Returns if indexing is enabled or not.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("isIndexingEnabled")
@@ -238,6 +251,8 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
 
     /**
      * Starts Spotlight indexing.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("startSpotlightIndexing")
@@ -245,6 +260,8 @@ public class NSCoreDataCoreSpotlightDelegate extends NSObject {
 
     /**
      * Stops Spotlight indexing.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("stopSpotlightIndexing")

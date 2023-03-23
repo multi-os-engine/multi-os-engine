@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Contains information about a navigation response, used for making policy decisions.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("WebKit")
@@ -154,7 +156,7 @@ public class WKNavigationResponse extends NSObject {
 
     /**
      * A Boolean value indicating whether WebKit can display the response's MIME type natively.
-     * <p>
+     * 
      * Allowing a navigation response with a MIME type that can't be shown will cause the navigation to fail.
      */
     @Generated

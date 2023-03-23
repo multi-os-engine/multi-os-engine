@@ -27,9 +27,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * CIQRCodeDescriptor
- * <p>
+ * 
  * CIQRCodeDescriptor is a concrete subclass of CIBarcodeDescriptor that defines an abstract representation of a QR code
  * symbol.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreImage")
@@ -99,13 +101,13 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
 
     /**
      * [@property] errorCorrectedPayload
-     * <p>
+     * 
      * The error-corrected codewords that comprise the QR code symbol.
-     * <p>
+     * 
      * QR Codes are formally specified in ISO/IEC 18004:2006(E). Section 6.4.10 "Bitstream to codeword conversion"
      * specifies the set of 8-bit codewords in the symbol immediately prior to splitting the message into blocks and
      * applying error correction.
-     * <p>
+     * 
      * During decode, error correction is applied and if successful, the message is re-ordered to the state immediately
      * following "Bitstream to codeword coversion." The errorCorrectedPayload corresponds to this sequence of 8-bit
      * codewords.
@@ -116,9 +118,9 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
 
     /**
      * [@property] errorCorrectionLevel
-     * <p>
+     * 
      * The error correction level of the QR code.
-     * <p>
+     * 
      * QR Codes support four levels of Reed-Solomon error correction, in increasing error correction capability: L, M,
      * Q, and H.
      */
@@ -171,9 +173,9 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
 
     /**
      * [@property] maskPattern
-     * <p>
+     * 
      * The data mask pattern for the QR code symbol.
-     * <p>
+     * 
      * QR Codes support eight data mask patterns, which are used to avoid large black or large white areas inside the
      * symbol body. Valid values range from 0 to 7.
      */
@@ -214,9 +216,9 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
 
     /**
      * [@property] symbolVersion
-     * <p>
+     * 
      * The version property corresponds to the size of the QR Code.
-     * <p>
+     * 
      * QR Codes are square. ISO/IEC 18004 defines versions from 1 to 40, where a higher symbol version indicates a
      * larger data carrying capacity. This field is required in order to properly interpret the error corrected payload.
      */

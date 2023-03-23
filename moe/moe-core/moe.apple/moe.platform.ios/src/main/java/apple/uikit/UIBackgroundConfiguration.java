@@ -32,6 +32,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 14.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -468,6 +471,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     /**
      * The image to use. Default is nil.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("image")
@@ -475,6 +480,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     /**
      * The content mode to use when rendering the image. Default is UIViewContentModeScaleToFill.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("imageContentMode")
@@ -483,6 +490,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     /**
      * The image to use. Default is nil.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setImage:")
@@ -490,6 +499,8 @@ public class UIBackgroundConfiguration extends NSObject implements NSCopying, NS
 
     /**
      * The content mode to use when rendering the image. Default is UIViewContentModeScaleToFill.
+     * 
+     * API-Since: 15.0
      */
     @Generated
     @Selector("setImageContentMode:")

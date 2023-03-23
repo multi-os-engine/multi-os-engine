@@ -28,11 +28,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * AVAudioChannelLayout
- * <p>
+ * 
  * A description of the roles of a set of audio channels.
- * <p>
+ * 
  * This object is a thin wrapper for the AudioChannelLayout structure, described
  * in <CoreAudio/CoreAudioTypes.h>.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("AVFAudio")
@@ -78,7 +80,7 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] channelCount
-     * <p>
+     * 
      * The number of channels of audio data.
      */
     @Generated
@@ -120,13 +122,14 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
 
     /**
      * initWithLayout:
-     * <p>
+     * 
      * Initialize from an AudioChannelLayout.
-     * <p>
+     * 
      * If the provided layout's tag is kAudioChannelLayoutTag_UseChannelDescriptions, this
      * initializer attempts to convert it to a more specific tag.
-     *
-     * @param layout The AudioChannelLayout.
+     * 
+     * @param layout
+     *               The AudioChannelLayout.
      */
     @Generated
     @Selector("initWithLayout:")
@@ -134,13 +137,14 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
 
     /**
      * initWithLayoutTag:
-     * <p>
+     * 
      * Initialize from a layout tag.
-     * <p>
+     * 
      * Returns nil if the tag is either kAudioChannelLayoutTag_UseChannelDescriptions or
      * kAudioChannelLayoutTag_UseChannelBitmap.
-     *
-     * @param layoutTag The tag.
+     * 
+     * @param layoutTag
+     *                  The tag.
      */
     @Generated
     @Selector("initWithLayoutTag:")
@@ -161,12 +165,13 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
 
     /**
      * isEqual:
-     * <p>
+     * 
      * Determine whether another AVAudioChannelLayout is exactly equal to this layout.
-     * <p>
+     * 
      * The underlying AudioChannelLayoutTag and AudioChannelLayout are compared for equality.
-     *
-     * @param object The AVAudioChannelLayout to compare against.
+     * 
+     * @param object
+     *               The AVAudioChannelLayout to compare against.
      */
     @Generated
     @Selector("isEqual:")
@@ -182,7 +187,7 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] layout
-     * <p>
+     * 
      * The underlying AudioChannelLayout.
      */
     @Generated
@@ -191,7 +196,7 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
 
     /**
      * [@property] layoutTag
-     * <p>
+     * 
      * The layout's tag.
      */
     @Generated
@@ -200,7 +205,7 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
 
     /**
      * layoutWithLayout:
-     * <p>
+     * 
      * Create from an AudioChannelLayout
      */
     @Generated
@@ -209,7 +214,7 @@ public class AVAudioChannelLayout extends NSObject implements NSSecureCoding {
 
     /**
      * layoutWithLayoutTag:
-     * <p>
+     * 
      * Create from a layout tag.
      */
     @Generated

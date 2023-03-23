@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 4.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -103,6 +106,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     public static native NSTextCheckingResult correctionCheckingResultWithRangeReplacementString(@ByValue NSRange range,
             String replacementString);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("correctionCheckingResultWithRange:replacementString:alternativeStrings:")
     public static native NSTextCheckingResult correctionCheckingResultWithRangeReplacementStringAlternativeStrings(
@@ -178,6 +184,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     public static native NSTextCheckingResult orthographyCheckingResultWithRangeOrthography(@ByValue NSRange range,
             NSOrthography orthography);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("phoneNumberCheckingResultWithRange:phoneNumber:")
     public static native NSTextCheckingResult phoneNumberCheckingResultWithRangePhoneNumber(@ByValue NSRange range,
@@ -188,6 +197,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     public static native NSTextCheckingResult quoteCheckingResultWithRangeReplacementString(@ByValue NSRange range,
             String replacementString);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("regularExpressionCheckingResultWithRanges:count:regularExpression:")
     public static native NSTextCheckingResult regularExpressionCheckingResultWithRangesCountRegularExpression(
@@ -223,6 +235,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("transitInformationCheckingResultWithRange:components:")
     public static native NSTextCheckingResult transitInformationCheckingResultWithRangeComponents(
@@ -244,10 +259,16 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("addressComponents")
     public native NSDictionary<String, String> addressComponents();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("alternativeStrings")
     public native NSArray<String> alternativeStrings();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("components")
     public native NSDictionary<String, String> components();
@@ -286,6 +307,8 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
      * A result must have at least one range, but may optionally have more (for example, to represent regular expression
      * capture groups). The range at index 0 always matches the range property. Additional ranges, if any, will have
      * indexes from 1 to numberOfRanges-1. rangeWithName: can be used with named regular expression capture groups.
+     * 
+     * API-Since: 4.0
      */
     @Generated
     @Selector("numberOfRanges")
@@ -299,6 +322,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("orthography")
     public native NSOrthography orthography();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("phoneNumber")
     public native String phoneNumber();
@@ -308,11 +334,17 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @ByValue
     public native NSRange range();
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("rangeAtIndex:")
     @ByValue
     public native NSRange rangeAtIndex(@NUInt long idx);
 
+    /**
+     * API-Since: 4.0
+     */
     @Generated
     @Selector("regularExpression")
     public native NSRegularExpression regularExpression();
@@ -321,6 +353,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("replacementString")
     public native String replacementString();
 
+    /**
+     * API-Since: 5.0
+     */
     @Generated
     @Selector("resultByAdjustingRangesWithOffset:")
     public native NSTextCheckingResult resultByAdjustingRangesWithOffset(@NInt long offset);
@@ -342,6 +377,9 @@ public class NSTextCheckingResult extends NSObject implements NSCopying, NSSecur
     @Selector("timeZone")
     public native NSTimeZone timeZone();
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @Selector("rangeWithName:")
     @ByValue

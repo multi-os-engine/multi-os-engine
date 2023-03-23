@@ -30,11 +30,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A view controller that will take the user through the setup flow to add a shortcut to Siri.
- * <p>
+ * 
  * First create the @c INShortcut object that represents the shortcut the user wants to perform. Then create an @c
  * INUIAddVoiceShortcutViewController object and set its delegate. Then, present the view controller modally from
  * another view controller in your app. The delegate must dismiss the view controller when the user completes the set
  * up.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("IntentsUI")
@@ -64,6 +66,7 @@ public class INUIAddVoiceShortcutViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native INUIAddVoiceShortcutViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();

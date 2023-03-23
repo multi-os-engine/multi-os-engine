@@ -29,8 +29,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSMatrixUnaryKernel
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * A MPSMatrixUnaryKernel consumes one MPSMatrix and produces one MPSMatrix.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -66,7 +68,7 @@ public class MPSMatrixUnaryKernel extends MPSKernel {
 
     /**
      * [@property] batchSize
-     * <p>
+     * 
      * The number of matrices in the batch to process. This property
      * is modifiable and by default allows all matrices available at
      * encoding time to be processed. If a single matrix should be
@@ -79,7 +81,7 @@ public class MPSMatrixUnaryKernel extends MPSKernel {
 
     /**
      * [@property] batchStart
-     * <p>
+     * 
      * The index of the first matrix in the batch. This property is
      * modifiable and defaults to 0 at initialization time. If
      * batch processing should begin at a different matrix this value
@@ -174,7 +176,7 @@ public class MPSMatrixUnaryKernel extends MPSKernel {
 
     /**
      * [@property] resultMatrixOrigin
-     * <p>
+     * 
      * The origin, relative to [0, 0] in the result matrix, at which to
      * start writing results. This property is modifiable and defaults
      * to [0, 0] at initialization time. If a different origin is desired
@@ -188,7 +190,7 @@ public class MPSMatrixUnaryKernel extends MPSKernel {
 
     /**
      * [@property] batchSize
-     * <p>
+     * 
      * The number of matrices in the batch to process. This property
      * is modifiable and by default allows all matrices available at
      * encoding time to be processed. If a single matrix should be
@@ -200,7 +202,7 @@ public class MPSMatrixUnaryKernel extends MPSKernel {
 
     /**
      * [@property] batchStart
-     * <p>
+     * 
      * The index of the first matrix in the batch. This property is
      * modifiable and defaults to 0 at initialization time. If
      * batch processing should begin at a different matrix this value
@@ -212,7 +214,7 @@ public class MPSMatrixUnaryKernel extends MPSKernel {
 
     /**
      * [@property] resultMatrixOrigin
-     * <p>
+     * 
      * The origin, relative to [0, 0] in the result matrix, at which to
      * start writing results. This property is modifiable and defaults
      * to [0, 0] at initialization time. If a different origin is desired
@@ -225,7 +227,7 @@ public class MPSMatrixUnaryKernel extends MPSKernel {
 
     /**
      * [@property] sourceMatrixOrigin
-     * <p>
+     * 
      * The origin, relative to [0, 0] in the source matrix, at which to
      * start reading values. This property is modifiable and defaults to
      * [0, 0] at initialization time. If a different origin is desired then
@@ -242,7 +244,7 @@ public class MPSMatrixUnaryKernel extends MPSKernel {
 
     /**
      * [@property] sourceMatrixOrigin
-     * <p>
+     * 
      * The origin, relative to [0, 0] in the source matrix, at which to
      * start reading values. This property is modifiable and defaults to
      * [0, 0] at initialization time. If a different origin is desired then

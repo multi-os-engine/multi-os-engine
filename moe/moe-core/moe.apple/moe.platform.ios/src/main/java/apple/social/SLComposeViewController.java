@@ -52,6 +52,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * to set the content return a Boolean value. The methods return NO if the
  * content doesn't fit or if the view was already presented to the user and the
  * content can no longer be changed.
+ * 
+ * API-Since: 6.0
  */
 @Generated
 @Library("Social")
@@ -81,6 +83,7 @@ public class SLComposeViewController extends UIViewController {
     @Selector("allocWithZone:")
     public static native SLComposeViewController allocWithZone(VoidPtr zone);
 
+    @Deprecated
     @Generated
     @Selector("attemptRotationToDeviceOrientation")
     public static native void attemptRotationToDeviceOrientation();

@@ -26,6 +26,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A tool for drawing on a PKCanvasView.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("PencilKit")
@@ -83,11 +85,11 @@ public class PKInkingTool extends PKTool {
 
     /**
      * Converts a color from one user interface style to another.
-     * <p>
+     * 
      * A dark color in a light user interface style is converted to a lighter color in a
      * dark user interface style. This conversion is not guaranteed to roundtrip losslessly, or to
      * be consistent between different OS versions.
-     *
+     * 
      * @param color                  The color to convert
      * @param fromUserInterfaceStyle The user interface style to convert the color from.
      * @param toUserInterfaceStyle   The user interface style to convert the color to.
@@ -210,9 +212,11 @@ public class PKInkingTool extends PKTool {
 
     /**
      * Create a new inking tool for the provided ink.
-     *
+     * 
      * @param ink   The ink to use.
      * @param width The width of stroke to create.
+     * 
+     *              API-Since: 14.0
      */
     @Generated
     @Selector("initWithInk:width:")
@@ -220,6 +224,8 @@ public class PKInkingTool extends PKTool {
 
     /**
      * The ink that this tool will create strokes with.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("ink")

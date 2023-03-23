@@ -28,7 +28,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * NFCNDEFReaderSession
- * <p>
+ * 
  * NFC reader session for processing NFC Data Exchange Format (NDEF) tags. This session requires the
  * "com.apple.developer.nfc.readersession.formats"
  * entitlement in your process. In addition your application's Info.plist must contain a non-empty usage description
@@ -36,7 +36,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@link] NFCReaderErrorSecurityViolation @link/ will be returned from @link [NFCNDEFReaderSessionDelegate
  * readerSession:didInvalidateWithError:] @link/
  * if the required entitlement is missing when session is started.
- * <p>
+ * 
  * [@note] Only one NFCNDEFReaderSession can be active at any time in the system. Subsequent opened sessions will get
  * queued up and processed by the system in FIFO order.
  * [@note] If the delegate object implements the optional -readerSession:didDetectTags: method the NFCNDEFReaderSession
@@ -45,6 +45,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * [@note] The error symbol will not be drawn on the action sheet if -invalidateSessionWithError: method is called on a
  * session that is not a read-write session;
  * -invalidateSession: method should be used in a read-only session.
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("CoreNFC")
@@ -98,14 +100,17 @@ public class NFCNDEFReaderSession extends NFCReaderSession {
 
     /**
      * connectToTag:completionHandler:
-     * <p>
+     * 
      * This method establishes a tag connection and activates the tag. Connecting to the same tag that is currently
      * opened has no effect.
      * Connecting to a different tag will automatically terminate the previous tag connection and put it into the halt
      * state. Tag stays in the
      * connected state until another tag is connected or the polling is restarted.
-     *
+     * 
+     * API-Since: 13.0
+     * 
      * @param tag               A NFCTag protocol compliant tag object that will be connect to.
+     * 
      * @param completionHandler Completion handler called when the operation is completed. error is nil if operation
      *                          succeeds.
      *                          A @link NFCErrorDomain @link/ error is returned when there is a communication issue with
@@ -142,7 +147,7 @@ public class NFCNDEFReaderSession extends NFCReaderSession {
 
     /**
      * initWithDelegate:queue:invalidateAfterFirstRead:
-     * <p>
+     * 
      * A NDEF reader session will scan and detect NFC Forum tags that contain a valid NDEF message. NFC Forum Tag type 1
      * to 5 that
      * is NDEF formatted are supported. A modal system UI will present once -beginSession is called to inform the start
@@ -150,7 +155,7 @@ public class NFCNDEFReaderSession extends NFCReaderSession {
      * is automatically dismissed when the session is invalidated either by the user or by calling -invalidateSession.
      * The alertMessage property shall be set
      * prior to -beginSession to display a message on the action sheet UI for the tag scanning operation.
-     * <p>
+     * 
      * The reader session has the following properties:
      * + An opened session has a 60 seconds time limit restriction after -beginSession is called;
      * -readerSession:didInvalidateWithError: will return
@@ -166,11 +171,13 @@ public class NFCNDEFReaderSession extends NFCReaderSession {
      * + -readerSession:didInvalidateWithError: will return NFCReaderErrorUnsupportedFeature when 1) reader mode feature
      * is not available on the hardware,
      * 2) client application does not have the required entitlement.
-     * <p>
+     * 
      * The session's mode of operation is determined by the implementation of the delegate object. The
      * -readerSession:didDetectTags: optional method will
      * enable the read-write capability and suppress the -readerSession:didDetectNDEFs: callback for the session.
-     *
+     * 
+     * API-Since: 11.0
+     * 
      * @param delegate                 The session will hold a weak ARC reference to this @link
      *                                 NFCNDEFReaderSessionDelegate @link/ object.
      * @param queue                    A dispatch queue where NFCNDEFReaderSessionDelegate delegate callbacks will be
@@ -183,6 +190,7 @@ public class NFCNDEFReaderSession extends NFCReaderSession {
      *                                 NFCReaderSessionInvalidationErrorFirstNDEFTagRead in this case.
      *                                 Set to NO if the delegate object implements the -readerSession:didDetectTags:
      *                                 optional method.
+     * 
      * @return A new NFCNDEFReaderSession instance.
      */
     @Generated
@@ -231,10 +239,9 @@ public class NFCNDEFReaderSession extends NFCReaderSession {
 
     /**
      * restartPolling
-     * <p>
+     * 
      * Restart the polling sequence in this session to discover new NDEF tags. New tags discovered from polling will
      * return in the subsequent @link [NFCNDEFReaderSessionDelegate readerSession:didDetectTags:]
-     *
      * @link/ call. Tags that are returned previously by @link [NFCNDEFReaderSessionDelegate
      * -readerSession:didDetectTags:] @link/ will become invalid,
      * and all references to these tags shall be removed to properly release the resources. Calling this method on an
@@ -242,6 +249,8 @@ public class NFCNDEFReaderSession extends NFCReaderSession {
      * will have no effect; a new reader session is required to restart the reader. Calling this method on an instance
      * initiated with a delegate object that does not implement
      * the optional -readerSession:didDetectTags: method has no effect as RF polling restart is done automatically.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("restartPolling")

@@ -52,6 +52,9 @@ public interface UIPickerViewAccessibilityDelegate extends UIPickerViewDelegate 
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 11.0
+     */
     @Generated
     @IsOptional
     @Selector("pickerView:accessibilityAttributedHintForComponent:")
@@ -63,6 +66,8 @@ public interface UIPickerViewAccessibilityDelegate extends UIPickerViewDelegate 
     /**
      * If an object adopting this protocol responds to these methods, the system will try sending them before sending
      * their non-attributed versions.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @IsOptional
@@ -72,6 +77,9 @@ public interface UIPickerViewAccessibilityDelegate extends UIPickerViewDelegate 
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("pickerView:accessibilityAttributedUserInputLabelsForComponent:")
@@ -80,6 +88,9 @@ public interface UIPickerViewAccessibilityDelegate extends UIPickerViewDelegate 
         throw new java.lang.UnsupportedOperationException();
     }
 
+    /**
+     * API-Since: 13.0
+     */
     @Generated
     @IsOptional
     @Selector("pickerView:accessibilityUserInputLabelsForComponent:")

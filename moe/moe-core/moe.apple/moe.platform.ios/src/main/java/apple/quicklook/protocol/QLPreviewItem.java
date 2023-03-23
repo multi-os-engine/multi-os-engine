@@ -36,7 +36,7 @@ import org.moe.natj.objc.ann.Selector;
 public interface QLPreviewItem {
     /**
      * The item's title this will be used as apparent item title.
-     * <p>
+     * 
      * The title replaces the default item display name. This property is optional.
      */
     @Generated
@@ -48,7 +48,7 @@ public interface QLPreviewItem {
 
     /**
      * The URL of the item to preview.
-     * <p>
+     * 
      * The URL must be a file URL.
      */
     @Generated

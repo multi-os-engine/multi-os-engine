@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Pointer slides under the given view and disappears as the view scales up and gains a shadow.
+ * 
+ * API-Since: 13.4
  */
 @Generated
 @Library("UIKit")

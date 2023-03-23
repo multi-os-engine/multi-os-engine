@@ -28,8 +28,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] PHASEPushStreamNode
- * <p>
+ * 
  * An object for addessing an instance of a stream in an executing sound event
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("PHASE")
@@ -91,7 +93,7 @@ public class PHASEPushStreamNode extends NSObject {
 
     /**
      * [@property] format
-     * <p>
+     * 
      * The readonly property that returns the AVAudioFormat that this stream was initialized with.
      */
     @Generated
@@ -100,7 +102,7 @@ public class PHASEPushStreamNode extends NSObject {
 
     /**
      * [@property] gainMetaParameter
-     * <p>
+     * 
      * If specified during construction, the metaparameter for controlling gain will be available here
      */
     @Generated
@@ -139,7 +141,7 @@ public class PHASEPushStreamNode extends NSObject {
 
     /**
      * [@property] mixer
-     * <p>
+     * 
      * The readonly property that returns the PHASEMixer this sampler was created with and assigned to.
      */
     @Generated
@@ -153,7 +155,7 @@ public class PHASEPushStreamNode extends NSObject {
 
     /**
      * [@property] rateMetaParameter
-     * <p>
+     * 
      * If specified during construction, the metaparameter for controlling rate/pitch will be available here
      */
     @Generated
@@ -170,13 +172,14 @@ public class PHASEPushStreamNode extends NSObject {
 
     /**
      * scheduleBuffer
-     * <p>
+     * 
      * Schedule a buffer for playback.
-     * <p>
+     * 
      * Schedules the buffer to be played following any previously scheduled buffer(s).
      * The buffer format must be same as format specified during player instantiation
-     *
-     * @param buffer The buffer with PCM audio data.
+     * 
+     * @param buffer
+     *               The buffer with PCM audio data.
      */
     @Generated
     @Selector("scheduleBuffer:")
@@ -184,14 +187,17 @@ public class PHASEPushStreamNode extends NSObject {
 
     /**
      * scheduleBuffer:atTime:options:
-     * <p>
+     * 
      * Schedule a buffer for playback at a given time.
-     * <p>
+     * 
      * The buffer format must be same as format specified during player instantiation
-     *
-     * @param buffer  The buffer with PCM audio data.
-     * @param when    The time at which to play the buffer. see the discussion of timestamps, above.
-     * @param options Options for looping, interrupting other buffers, etc.
+     * 
+     * @param buffer
+     *                The buffer with PCM audio data.
+     * @param when
+     *                The time at which to play the buffer. see the discussion of timestamps, above.
+     * @param options
+     *                Options for looping, interrupting other buffers, etc.
      */
     @Generated
     @Selector("scheduleBuffer:atTime:options:")
@@ -199,16 +205,21 @@ public class PHASEPushStreamNode extends NSObject {
 
     /**
      * scheduleBuffer:atTime:options:completionCallbackType:completionHandler:
-     * <p>
+     * 
      * Schedule a buffer for playback at a given time.
-     * <p>
+     * 
      * The buffer format must be same as format specified during player instantiation
-     *
-     * @param buffer                 The buffer with PCM audio data.
-     * @param when                   The time at which to play the buffer. see the discussion of timestamps, above.
-     * @param options                Options for looping, interrupting other buffers, etc.
-     * @param completionCallbackType Option to specify when the completion handler must be called.
-     * @param completionHandler      The completionHandler to be called as per the callback type specified or when
+     * 
+     * @param buffer
+     *                               The buffer with PCM audio data.
+     * @param when
+     *                               The time at which to play the buffer. see the discussion of timestamps, above.
+     * @param options
+     *                               Options for looping, interrupting other buffers, etc.
+     * @param completionCallbackType
+     *                               Option to specify when the completion handler must be called.
+     * @param completionHandler
+     *                               The completionHandler to be called as per the callback type specified or when
      *                               the player is stopped, at which point the buffer can be recycled.
      */
     @Generated
@@ -226,15 +237,18 @@ public class PHASEPushStreamNode extends NSObject {
 
     /**
      * scheduleBuffer:completionCallbackType:completionHandler:
-     * <p>
+     * 
      * Schedule a buffer for playback.
-     * <p>
+     * 
      * Schedules the buffer to be played following any previously scheduled buffer(s).
      * The buffer format must be same as format specified during player instantiation
-     *
-     * @param buffer                 The buffer with PCM audio data.
-     * @param completionCallbackType Option to specify when the completion handler must be called.
-     * @param completionHandler      The completionHandler to be called as per the specified completion callback type
+     * 
+     * @param buffer
+     *                               The buffer with PCM audio data.
+     * @param completionCallbackType
+     *                               Option to specify when the completion handler must be called.
+     * @param completionHandler
+     *                               The completionHandler to be called as per the specified completion callback type
      *                               or when the player is stopped, at which point the buffer can be recycled.
      */
     @Generated

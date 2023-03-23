@@ -26,6 +26,10 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 
+/**
+ * API-Since: 3.0
+ * Deprecated-Since: 5.0
+ */
 @Deprecated
 @Generated
 @Library("MapKit")
@@ -37,12 +41,19 @@ public interface MKReverseGeocoderDelegate {
      * - Errors sent up from the underlying connection (temporary condition)
      * - Result not found errors (permanent condition). The result not found errors
      * will have the domain MKErrorDomain and the code MKErrorPlacemarkNotFound
+     * 
+     * API-Since: 3.0
+     * Deprecated-Since: 5.0
      */
     @Generated
     @Deprecated
     @Selector("reverseGeocoder:didFailWithError:")
     void reverseGeocoderDidFailWithError(MKReverseGeocoder geocoder, NSError error);
 
+    /**
+     * API-Since: 3.0
+     * Deprecated-Since: 5.0
+     */
     @Generated
     @Deprecated
     @Selector("reverseGeocoder:didFindPlacemark:")

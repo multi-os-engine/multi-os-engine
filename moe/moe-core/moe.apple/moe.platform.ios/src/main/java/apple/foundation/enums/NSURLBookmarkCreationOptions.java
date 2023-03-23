@@ -21,19 +21,29 @@ import org.moe.natj.general.ann.NUInt;
 
 /**
  * Working with Bookmarks and alias (bookmark) files
+ * 
+ * API-Since: 4.0
  */
 @Generated
 public final class NSURLBookmarkCreationOptions {
     /**
      * This option does nothing and has no effect on bookmark resolution
+     * 
+     * API-Since: 4.0
+     * Deprecated-Since: 7.0
+     * Deprecated-Message: Not supported
      */
     @Deprecated @Generated @NUInt public static final long PreferFileIDResolution = 0x0000000000000100L;
     /**
      * creates bookmark data with "less" information, which may be smaller but still be able to resolve in certain ways
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long MinimalBookmark = 0x0000000000000200L;
     /**
      * include the properties required by writeBookmarkData:toURL:options: in the bookmark data created
+     * 
+     * API-Since: 4.0
      */
     @Generated @NUInt public static final long SuitableForBookmarkFile = 0x0000000000000400L;
 
@@ -45,6 +55,8 @@ public final class NSURLBookmarkCreationOptions {
      * Disable automatic embedding of an implicit security scope. The resolving process will not be able gain access to
      * the resource by security scope, either implicitly or explicitly, through the returned URL. Not applicable to
      * security-scoped bookmarks.
+     * 
+     * API-Since: 5.0
      */
     @Generated @NUInt public static final long WithoutImplicitSecurityScope = 0x0000000020000000L;
 }

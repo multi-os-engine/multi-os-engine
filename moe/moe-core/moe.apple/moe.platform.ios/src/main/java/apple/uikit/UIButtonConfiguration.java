@@ -33,6 +33,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -567,4 +570,53 @@ public class UIButtonConfiguration extends NSObject implements NSCopying, NSSecu
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * What kind of indicator should the button show. Default value is .automatic.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("indicator")
+    @NInt
+    public native long indicator();
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("indicatorColorTransformer")
+    @ObjCBlock(name = "call_indicatorColorTransformer_ret")
+    public native Block_indicatorColorTransformer_ret indicatorColorTransformer();
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_indicatorColorTransformer_ret {
+        @Generated
+        UIColor call_indicatorColorTransformer_ret(UIColor color);
+    }
+
+    /**
+     * What kind of indicator should the button show. Default value is .automatic.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setIndicator:")
+    public native void setIndicator(@NInt long value);
+
+    /**
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("setIndicatorColorTransformer:")
+    public native void setIndicatorColorTransformer(
+            @ObjCBlock(name = "call_setIndicatorColorTransformer") Block_setIndicatorColorTransformer value);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setIndicatorColorTransformer {
+        @Generated
+        UIColor call_setIndicatorColorTransformer(UIColor color);
+    }
 }

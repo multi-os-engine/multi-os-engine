@@ -10,16 +10,29 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.moe.natj.objc.ann.IsOptional;
 
+/**
+ * API-Since: 13.4
+ */
 @Generated
 @Library("PassKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("PKAddSecureElementPassViewControllerDelegate")
 public interface PKAddSecureElementPassViewControllerDelegate {
+    /**
+     * API-Since: 13.4
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: Use addSecureElementPassViewController:didFinishAddingSecureElementPasses:error: instead
+     */
+    @IsOptional
+    @Deprecated
     @Generated
     @Selector("addSecureElementPassViewController:didFinishAddingSecureElementPass:error:")
-    void addSecureElementPassViewControllerDidFinishAddingSecureElementPassError(
-            PKAddSecureElementPassViewController controller, PKSecureElementPass pass, NSError error);
+    default void addSecureElementPassViewControllerDidFinishAddingSecureElementPassError(
+            PKAddSecureElementPassViewController controller, PKSecureElementPass pass, NSError error) {
+        throw new java.lang.UnsupportedOperationException();
+    }
 
     @Generated
     @Selector("addSecureElementPassViewController:didFinishAddingSecureElementPasses:error:")

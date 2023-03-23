@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A type used to uniquely discover and identify a device in a nearby interaction session.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("NearbyInteraction")

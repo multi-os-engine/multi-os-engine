@@ -47,6 +47,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * output time also in the range [0,1]. E.g. these functions are used
  * to define the pacing of an animation over its duration (or over the
  * duration of one keyframe).
+ * 
+ * API-Since: 2.0
  */
 @Generated
 @Library("QuartzCore")

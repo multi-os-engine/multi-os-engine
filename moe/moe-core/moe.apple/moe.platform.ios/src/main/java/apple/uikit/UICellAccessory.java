@@ -30,6 +30,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Abstract base class. Do not instantiate directly.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("UIKit")

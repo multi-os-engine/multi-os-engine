@@ -41,6 +41,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * This class is used to represent a generic HomeKit event.
+ * 
+ * API-Since: 9.0
  */
 @Generated
 @Library("HomeKit")
@@ -165,6 +167,8 @@ public class HMEvent extends NSObject {
 
     /**
      * Specifies whether the HMEvent can be added to HMEventTrigger on the given home.
+     * 
+     * API-Since: 11.0
      */
     @Generated
     @Selector("isSupportedForHome:")

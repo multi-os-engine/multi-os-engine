@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Represents a user-configurable option for the compose session.
  * For allowing the user to choose which account to post from, what privacy settings to use, etc.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("Social")

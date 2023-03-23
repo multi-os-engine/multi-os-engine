@@ -2,7 +2,6 @@ package apple.quicklook;
 
 import apple.NSObject;
 import apple.coregraphics.opaque.CGContextRef;
-import apple.coregraphics.struct.CGSize;
 import apple.foundation.NSArray;
 import apple.foundation.NSData;
 import apple.foundation.NSDictionary;
@@ -33,9 +32,12 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.corefoundation.struct.CGSize;
 
 /**
  * To provide a data-based preview, you have to return a QLPreviewReply object.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("QuickLook")
@@ -114,7 +116,7 @@ public class QLPreviewReply extends NSObject {
 
     /**
      * Use this method to provide a preview with a PDFDocument
-     *
+     * 
      * @param defaultPageSize       The size of your pages in the document. If the page size varies, use the first
      *                              page's size.
      * @param documentCreationBlock Create and return the PDFDocument. Heavy lifting should be done inside of the
@@ -139,7 +141,7 @@ public class QLPreviewReply extends NSObject {
 
     /**
      * Use this method to provide a preview by drawing into a context.
-     *
+     * 
      * @param contextSize  The size of your image.
      * @param isBitmap     Whether the context should be bitmap or vector.
      * @param drawingBlock The preview should be drawn into the context passed to this block. The QLPreviewReply passed
@@ -162,7 +164,7 @@ public class QLPreviewReply extends NSObject {
 
     /**
      * Use this method to provide a preview with data of a supported format.
-     *
+     * 
      * @param contentType       The content type of the data.
      * @param contentSize       A hint for the size you would like to display your content at. If your content has an
      *                          intrinsic size built in, such as images and PDFs, that will be used as the final size,
@@ -193,7 +195,7 @@ public class QLPreviewReply extends NSObject {
 
     /**
      * Use this method to provide a preview by providing a URL to a file of a supported type.
-     *
+     * 
      * @param fileURL A file URL representing a preview of the previewed URL. Currently supported types include:
      *                UTTypeImage, UTTypePDF, UTTypeHTML, UTTypeXML, UTTypePlainText, UTTypeRTF, UTTypeRTFD,
      *                UTTypeMovie, UTTypeAudio

@@ -24,6 +24,13 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * This class can be used to launch system UI that will allow the user to go through the process
+ * of adding one or more accessories to a particular home and follow up with additional setup.
+ * These APIs do not require that the current app has home data authorization
+ * 
+ * API-Since: 15.0
+ */
 @Generated
 @Library("HomeKit")
 @Runtime(ObjCRuntime.class)
@@ -41,26 +48,6 @@ public class HMAccessorySetupManager extends NSObject {
     @Generated
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
-
-    /**
-     * Add and set up CHIP accessories with a CHIP Partner Ecosystem App. This flow is unique among the
-     * "Add Accessory" flows in that it primarily targets the originating (i.e. non-HomeKit) ecosystem
-     * to add accessories to. "Add to Apple Home?" is presented as a final, optional step after the user
-     * has completed pairing and configuration with the Partner Ecosystem App
-     *
-     * @param topology A configuration object representing the topology of the initiating ecosystem
-     */
-    @Generated
-    @Selector("addAndSetUpAccessoriesForTopology:completionHandler:")
-    public native void addAndSetUpAccessoriesForTopologyCompletionHandler(HMMatterTopology topology,
-            @ObjCBlock(name = "call_addAndSetUpAccessoriesForTopologyCompletionHandler") Block_addAndSetUpAccessoriesForTopologyCompletionHandler completion);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_addAndSetUpAccessoriesForTopologyCompletionHandler {
-        @Generated
-        void call_addAndSetUpAccessoriesForTopologyCompletionHandler(NSError error);
-    }
 
     @Generated
     @Owned
@@ -157,4 +144,27 @@ public class HMAccessorySetupManager extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Launch system UI to perform the process of setting up accessories with the given request.
+     * During this process, each of the accessories is added to a home, assigned to a room and
+     * further configured based on its services
+     * 
+     * @param request    A request object describing information about how to set up the accessory
+     * @param completion A block that is invoked once the setup process finishes. On failure, the result will be
+     *                   nil and the error will provide additional information
+     * 
+     *                   API-Since: 15.4
+     */
+    @Generated
+    @Selector("performAccessorySetupUsingRequest:completionHandler:")
+    public native void performAccessorySetupUsingRequestCompletionHandler(HMAccessorySetupRequest request,
+            @ObjCBlock(name = "call_performAccessorySetupUsingRequestCompletionHandler") Block_performAccessorySetupUsingRequestCompletionHandler completion);
+
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_performAccessorySetupUsingRequestCompletionHandler {
+        @Generated
+        void call_performAccessorySetupUsingRequestCompletionHandler(HMAccessorySetupResult result, NSError error);
+    }
 }

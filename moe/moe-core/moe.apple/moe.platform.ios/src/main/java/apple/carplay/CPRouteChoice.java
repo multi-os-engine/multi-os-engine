@@ -29,6 +29,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@c] CPRouteChoice describes a possible route for a @c CPTrip.
+ * 
+ * API-Since: 12.0
  */
 @Generated
 @Library("CarPlay")

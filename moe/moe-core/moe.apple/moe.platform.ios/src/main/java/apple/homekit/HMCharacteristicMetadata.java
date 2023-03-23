@@ -43,6 +43,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
  * This class defines the metadata for a characteristic. Metadata provides
  * further information about a characteristic’s value, which can be used
  * for presentation purposes.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 @Library("HomeKit")
@@ -211,6 +213,8 @@ public class HMCharacteristicMetadata extends NSObject {
 
     /**
      * The subset of valid values supported by the characteristic when the format is unsigned integral type.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("validValues")

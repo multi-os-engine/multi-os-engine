@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.Selector;
 public interface GKInviteEventListener {
     /**
      * player:didAcceptInvite: gets called when another player accepts the invite from the local player
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @IsOptional
@@ -48,6 +50,11 @@ public interface GKInviteEventListener {
 
     /**
      * This method is obsolete. It will never be invoked and its implementation does nothing**
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 8.0
+     * Deprecated-Message: This method is obsolete. It will never be invoked its implementation does nothing, use
+     * player:didRequestMatchWithRecipients:
      */
     @Generated
     @IsOptional
@@ -60,6 +67,8 @@ public interface GKInviteEventListener {
     /**
      * didRequestMatchWithRecipients: gets called when the player chooses to play with another player from Game Center
      * and it launches the game to start matchmaking
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @IsOptional

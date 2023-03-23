@@ -22,6 +22,9 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 15.0
+ */
 @Generated
 @Library("AVFoundation")
 @Runtime(ObjCRuntime.class)
@@ -66,7 +69,7 @@ public class AVAssetVariantAudioRenditionSpecificAttributes extends NSObject {
 
     /**
      * [@property] channelCount
-     * <p>
+     * 
      * If it is not declared, the value will be negative.
      */
     @Generated

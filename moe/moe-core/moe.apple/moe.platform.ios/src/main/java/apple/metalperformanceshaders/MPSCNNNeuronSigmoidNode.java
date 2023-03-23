@@ -24,11 +24,13 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A node representing a MPSCNNNeuronSigmoid kernel
- * <p>
+ * 
  * For each pixel, applies the following function:
  * [@code]
  * f(x) = 1 / (1 + e^-x)
  * [@endcode]
+ * 
+ * API-Since: 11.0
  */
 @Generated
 @Library("MetalPerformanceShaders")

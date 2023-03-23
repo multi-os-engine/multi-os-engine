@@ -21,9 +21,9 @@ import org.moe.natj.general.ann.NInt;
 
 /**
  * [@enum] AVCaptureAutoFocusSystem
- * <p>
+ * 
  * Constants indicating the autofocus system.
- * <p>
+ * 
  * [@constant] AVCaptureAutoFocusSystemNone
  * Indicates that autofocus is not available.
  * [@constant] AVCaptureAutoFocusSystemContrastDetection
@@ -33,11 +33,22 @@ import org.moe.natj.general.ann.NInt;
  * Indicates that autofocus is achieved by phase detection. Phase detection has the ability to achieve focus in many
  * cases without a focus scan. Phase detection autofocus is typically less visually intrusive than contrast detection
  * autofocus.
+ * 
+ * API-Since: 8.0
  */
 @Generated
 public final class AVCaptureAutoFocusSystem {
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long None = 0x0000000000000000L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long ContrastDetection = 0x0000000000000001L;
+    /**
+     * API-Since: 8.0
+     */
     @Generated @NInt public static final long PhaseDetection = 0x0000000000000002L;
 
     @Generated

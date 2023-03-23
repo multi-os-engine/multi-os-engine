@@ -23,9 +23,13 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import apple.arkit.ARSession;
+import apple.nearbyinteraction.protocol.NIDeviceCapability;
 
 /**
  * Nearby interaction session.
+ * 
+ * API-Since: 14.0
  */
 @Generated
 @Library("NearbyInteraction")
@@ -98,7 +102,7 @@ public class NISession extends NSObject {
 
     /**
      * The dispatch queue on which the delegate calls are performed.
-     * <p>
+     * 
      * If not provided or nil, delegate calls will be performed on the main queue.
      */
     @Generated
@@ -111,7 +115,7 @@ public class NISession extends NSObject {
 
     /**
      * A unique nearby interaction identifier for this session.
-     * <p>
+     * 
      * Copy this discoveryToken and share it with a peer device.
      * The discoveryToken is unique to this device and this session.
      */
@@ -143,7 +147,7 @@ public class NISession extends NSObject {
 
     /**
      * Invalidate an ongoing nearby interaction session.
-     * <p>
+     * 
      * Invalidate sessions you wish to terminate and do not intend to restart. A peer device in a nearby interaction
      * session will receive a callback to -didRemoveNearbyObject:withReason: some time after a call to invalidate (see
      * NINearbyObjectRemovalReason).
@@ -159,7 +163,11 @@ public class NISession extends NSObject {
 
     /**
      * Whether or not this device is capable of participating in a nearby interaction session.
+     * 
+     * API-Since: 14.0
+     * Deprecated-Since: 16.0
      */
+    @Deprecated
     @Generated
     @Selector("isSupported")
     public static native boolean isSupported();
@@ -175,7 +183,7 @@ public class NISession extends NSObject {
 
     /**
      * Pause an ongoing nearby interaction session.
-     * <p>
+     * 
      * Paused sessions may be restarted by calling -runWithConfiguration:. The same local discoveryToken will be used.
      */
     @Generated
@@ -192,7 +200,7 @@ public class NISession extends NSObject {
 
     /**
      * Start a nearby interaction session.
-     *
+     * 
      * @param configuration Nearby interaction configuration for this session.
      *                      Both devices must call -runWithConfiguration: with a valid configuration identifying the
      *                      other device in order to receive nearby object updates.
@@ -225,7 +233,7 @@ public class NISession extends NSObject {
 
     /**
      * The dispatch queue on which the delegate calls are performed.
-     * <p>
+     * 
      * If not provided or nil, delegate calls will be performed on the main queue.
      */
     @Generated
@@ -244,4 +252,38 @@ public class NISession extends NSObject {
     @Selector("version")
     @NInt
     public static native long version_static();
+
+    /**
+     * Get the protocol that describes nearby interaction capabilities on this device.
+     * 
+     * Detailed description on the capability protocol is in NIDeviceCapability.h.
+     * 
+     * API-Since: 16.0
+     */
+    @Generated
+    @Selector("deviceCapabilities")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native NIDeviceCapability deviceCapabilities();
+
+    /**
+     * Provide an ARSession object for use with the NISession
+     * 
+     * If not provided, an ARSession will be created automatically if the cameraAssistanceEnabled property on the
+     * configuration is YES
+     * 
+     * The developer is responsible for running the ARSession if provided.
+     * 
+     * If the ARConfiguration used to run the session is not compatible with the NISession, the NISession will
+     * invalidate with error
+     * 
+     * If the platform does not support camera assistance or an ARSession is provided without enabling
+     * cameraAssistanceEnabled property in the NIConfiguration, the NISession will invalidate with error (see NIError.h)
+     * 
+     * API-Since: 16.0
+     * 
+     * @param session The ARSession to use for camera assistance
+     */
+    @Generated
+    @Selector("setARSession:")
+    public native void setARSession(ARSession session);
 }

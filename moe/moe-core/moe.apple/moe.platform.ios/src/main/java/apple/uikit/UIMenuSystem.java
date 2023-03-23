@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * The command system to build or rebuild.
+ * 
+ * API-Since: 13.0
  */
 @Generated
 @Library("UIKit")

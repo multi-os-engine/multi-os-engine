@@ -25,8 +25,10 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * [@interface] MTLFunctionStitchingAttributeAlwaysInline
- * <p>
+ * 
  * Applies the `__attribute__((always_inline))` attribute to the produced stitched function.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Metal")

@@ -27,6 +27,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * Provides axis values for a single data point within a series.
+ * 
+ * API-Since: 15.0
  */
 @Generated
 @Library("Accessibility")

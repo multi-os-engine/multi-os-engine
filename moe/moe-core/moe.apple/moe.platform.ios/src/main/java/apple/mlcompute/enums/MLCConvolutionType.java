@@ -4,7 +4,7 @@ import org.moe.natj.general.ann.Generated;
 
 /**
  * [@enum] MLCConvolutionType
- * <p>
+ * 
  * A convolution type that you specify for a convolution descriptor.
  */
 @Generated

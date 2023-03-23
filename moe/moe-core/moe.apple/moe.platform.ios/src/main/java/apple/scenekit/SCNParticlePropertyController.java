@@ -47,7 +47,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * SCNParticlePropertyController
- * <p>
+ * 
  * The SCNParticlePropertyController class controls the variation over time or over distance of a particle property.
  */
 @Generated

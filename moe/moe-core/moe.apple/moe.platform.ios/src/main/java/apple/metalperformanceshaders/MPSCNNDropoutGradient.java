@@ -30,13 +30,15 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * MPSCNNDropoutGradient
  * [@dependency] This depends on Metal.framework
- * <p>
+ * 
  * This filter is the backward filter for the MPSCNNDropout forward filter.
  * It requires the mask data, along with all the associated parameters used
  * to generate the mask, from the forward pass. The mask is associated with
  * a MPSCNNDropoutGradientState object.
- * <p>
+ * 
  * In this kernel, use the secondaryOffset to apply an offset to the mask data.
+ * 
+ * API-Since: 11.3
  */
 @Generated
 @Library("MetalPerformanceShaders")
@@ -123,7 +125,7 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
 
     /**
      * Standard init with default properties per filter type.
-     *
+     * 
      * @param device             The device that the filter will be used on.
      * @param keepProbability    The probability that each element in the input is kept.
      *                           The valid range is (0.0f, 1.0f).
@@ -160,7 +162,7 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property] keepProbability
-     * <p>
+     * 
      * The probability that each element in the input is kept.
      * The valid range is (0.0f, 1.0f).
      */
@@ -174,10 +176,10 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property] maskStrideInPixels
-     * <p>
+     * 
      * The mask stride in the x, y, and x dimensions, which
      * allows for the broadcasting the mask data.
-     * <p>
+     * 
      * The only valid values are 0 and 1 for each dimension.
      * For no broadcasting, set the values for each dimension
      * to 1. For broadcasting, set desired values to 0.
@@ -202,7 +204,7 @@ public class MPSCNNDropoutGradient extends MPSCNNGradientKernel {
 
     /**
      * [@property] seed
-     * <p>
+     * 
      * The seed used to generate random numbers.
      */
     @Generated

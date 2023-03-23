@@ -46,12 +46,14 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * A profile for getting motion input from a controller that has the ability to measure acceleration
  * and rotation rate.
- * <p>
+ * 
  * You check for the availablity of motion inputs by getting the motion property
  * of a controller. If that returns a nil value; motion is not available. A non-nil value is a valid
  * GCMotion profile that is able to provide motion input.
- *
+ * 
  * @see GCController.motion
+ * 
+ *      API-Since: 8.0
  */
 @Generated
 @Library("GameController")
@@ -165,12 +167,14 @@ public class GCMotion extends NSObject {
 
     /**
      * The current attitude of the controller.
-     * <p>
+     * 
      * [@note] Remotes without accurate attitude and rotation rate can not determine a stable attitude so the values
      * will be (0,0,0,1) at all times.
-     *
+     * 
      * @see hasAttitude
      * @see GCMicroGamepad
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("attitude")
@@ -183,9 +187,9 @@ public class GCMotion extends NSObject {
 
     /**
      * The gravity vector expressed in the controller's reference frame.
-     * <p>
+     * 
      * Note that the total acceleration of the controller is equal to gravity plus userAcceleration.
-     *
+     * 
      * @see userAcceleration
      * @see acceleration
      */
@@ -200,12 +204,14 @@ public class GCMotion extends NSObject {
 
     /**
      * The current rotation rate of the controller.
-     * <p>
+     * 
      * [@note] Remotes without accurate attitude and rotation rate can not determine a stable rotation rate so the
      * values will be (0,0,0) at all times.
-     *
+     * 
      * @see hasRotationRate
      * @see GCMicroGamepad
+     * 
+     *      API-Since: 11.0
      */
     @Generated
     @Selector("rotationRate")
@@ -219,9 +225,9 @@ public class GCMotion extends NSObject {
 
     /**
      * The acceleration that the user is giving to the controller.
-     * <p>
+     * 
      * Note that the total acceleration of the controller is equal to gravity plus userAcceleration.
-     *
+     * 
      * @see gravity
      * @see acceleration
      */
@@ -252,17 +258,24 @@ public class GCMotion extends NSObject {
     /**
      * The controller generating the motion data has sensors that can accurately determine the current attitude and
      * rotation rate. If this is enabled the motion data for attitude and rotation rate are usable for inputs.
+     * 
+     * API-Since: 11.0
+     * Deprecated-Since: 14.0
+     * Deprecated-Message: hasAttitudeAndRotationRate has been deprecated, use -hasAttitude and -hasRotationRate instead
      */
+    @Deprecated
     @Generated
     @Selector("hasAttitudeAndRotationRate")
     public native boolean hasAttitudeAndRotationRate();
 
     /**
      * Sets the current rotation rate of the controller.
-     * <p>
+     * 
      * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
-     *
+     * 
      * @see attitude
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("setAttitude:")
@@ -270,10 +283,12 @@ public class GCMotion extends NSObject {
 
     /**
      * Sets the gravity vector expressed in the controller's reference frame.
-     * <p>
+     * 
      * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
-     *
+     * 
      * @see gravity
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("setGravity:")
@@ -281,10 +296,12 @@ public class GCMotion extends NSObject {
 
     /**
      * Sets the current rotation rate of the controller.
-     * <p>
+     * 
      * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
-     *
+     * 
      * @see rotationRate
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("setRotationRate:")
@@ -292,10 +309,12 @@ public class GCMotion extends NSObject {
 
     /**
      * Sets the state vector of the motion profile to a copy of the input motion profile's state vector.
-     * <p>
+     * 
      * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
-     *
+     * 
      * @see GCController.snapshot
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("setStateFromMotion:")
@@ -303,10 +322,12 @@ public class GCMotion extends NSObject {
 
     /**
      * Sets the acceleration that the user is giving to the controller.
-     * <p>
+     * 
      * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
-     *
+     * 
      * @see userAcceleration
+     * 
+     *      API-Since: 13.0
      */
     @Generated
     @Selector("setUserAcceleration:")
@@ -314,9 +335,11 @@ public class GCMotion extends NSObject {
 
     /**
      * The total acceleration of the controller.
-     *
+     * 
      * @see gravity
      * @see userAcceleration
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("acceleration")
@@ -326,6 +349,8 @@ public class GCMotion extends NSObject {
     /**
      * The controller generating the motion data has sensors that can accurately determine the current attitude. If this
      * is enabled the motion data for attitude is usable for inputs.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("hasAttitude")
@@ -333,13 +358,15 @@ public class GCMotion extends NSObject {
 
     /**
      * Returns YES if the controller is capable of reporting gravity and user acceleration separately.
-     * <p>
+     * 
      * [@note] Some controllers do not separate gravity from user acceleration, and only report the total acceleration
      * of the controller.
      * Query whether the connected controller has the ability to separate gravity and user acceleration, and it doesn’t,
      * use acceleration instead.
-     *
+     * 
      * @see acceleration
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("hasGravityAndUserAcceleration")
@@ -348,6 +375,8 @@ public class GCMotion extends NSObject {
     /**
      * The controller generating the motion data has sensors that can accurately determine the current rotation rate. If
      * this is enabled the motion data for rotation rate is usable for inputs.
+     * 
+     * API-Since: 14.0
      */
     @Generated
     @Selector("hasRotationRate")
@@ -357,12 +386,14 @@ public class GCMotion extends NSObject {
      * Set this property to YES when you wish to receive motion data from the controller. When you set this property to
      * NO, the motion sensors
      * will be disabled and the GCMotion profile will not be updated.
-     * <p>
+     * 
      * [@note] It is highly recommended that you only enable sensor during the period of time you directly need motion
      * data. Motion sensors
      * can drain controller battery, device battery, and needlessly consume Bluetooth bandwidth.
-     *
+     * 
      * @see sensorsRequireManualActivation
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("sensorsActive")
@@ -371,12 +402,14 @@ public class GCMotion extends NSObject {
     /**
      * If this property is returns YES, you are responsible for setting sensorsActive to YES when you need motion data
      * from the controller.
-     * <p>
+     * 
      * Some controllers, such as the Siri Remote, automatically activate and deactivate motion sensors. In such a case,
      * this property
      * will return NO.
-     *
+     * 
      * @see sensorsActive
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("sensorsRequireManualActivation")
@@ -384,10 +417,12 @@ public class GCMotion extends NSObject {
 
     /**
      * Sets the acceleration that the user is giving to the controller.
-     * <p>
+     * 
      * [@note] If the controller's snapshot flag is set to NO, this method has no effect.
-     *
+     * 
      * @see userAcceleration
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("setAcceleration:")
@@ -397,12 +432,14 @@ public class GCMotion extends NSObject {
      * Set this property to YES when you wish to receive motion data from the controller. When you set this property to
      * NO, the motion sensors
      * will be disabled and the GCMotion profile will not be updated.
-     * <p>
+     * 
      * [@note] It is highly recommended that you only enable sensor during the period of time you directly need motion
      * data. Motion sensors
      * can drain controller battery, device battery, and needlessly consume Bluetooth bandwidth.
-     *
+     * 
      * @see sensorsRequireManualActivation
+     * 
+     *      API-Since: 14.0
      */
     @Generated
     @Selector("setSensorsActive:")

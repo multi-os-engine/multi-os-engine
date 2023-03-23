@@ -42,6 +42,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 /**
  * Fetched properties allow to specify related objects through a "weakly" resolved property, so there is no actual join
  * necessary.
+ * 
+ * API-Since: 3.0
  */
 @Generated
 @Library("CoreData")

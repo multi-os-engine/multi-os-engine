@@ -39,6 +39,12 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 2.0
+ * Deprecated-Since: 100000.0
+ * Deprecated-Message: Use nw_connection_t or nw_listener_t in Network framework instead
+ */
+@Deprecated
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -225,6 +231,8 @@ public class NSNetService extends NSObject {
     /**
      * Initially set to NO. Set to YES to also publish, resolve, or monitor this service over peer to peer Wi-Fi (if
      * available). Must be set before operation starts.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("includesPeerToPeer")
@@ -239,7 +247,7 @@ public class NSNetService extends NSObject {
      * to discover addresses, you should initialize an NSNetService instance using this method and call resolve: on the
      * result. If you wish to connect to this service immediately, you should call getInputStream:getOutputStream: on
      * the result and forego the resolution step entirely.
-     * <p>
+     * 
      * If publish: is called on an NSNetService instance initialized with this method, an NSNetServicesBadArgumentError
      * will be sent in the error dictionary to the delegate's netService:didNotPublish: method.
      */
@@ -265,6 +273,8 @@ public class NSNetService extends NSObject {
 
     /**
      * The port of a resolved service. This returns -1 if the service has not been resolved.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("port")
@@ -274,7 +284,7 @@ public class NSNetService extends NSObject {
     /**
      * Advertises a given service on the network. This method returns immediately. Success or failure is indicated by
      * callbacks to the NSNetService instance's delegate.
-     * <p>
+     * 
      * If the name of the service is the default name (@""), then the service will be renamed automatically. If the name
      * of the service has been specified, then the service will not be renamed automatically. If more control over
      * renaming is required, then -[NSNetService publishWithOptions:] is available.
@@ -286,9 +296,11 @@ public class NSNetService extends NSObject {
     /**
      * Advertises a given service on the network. This method returns immediately. Success or failure is indicated by
      * callbacks to the NSNetService instance's delegate.
-     * <p>
+     * 
      * See the notes above for NSNetServiceNoAutoRename for information about controlling the auto-renaming behavior
      * using this method.
+     * 
+     * API-Since: 2.0
      */
     @Generated
     @Selector("publishWithOptions:")
@@ -303,6 +315,10 @@ public class NSNetService extends NSObject {
      * OS X 10.4 "Tiger", this method calls -resolveWithTimeout: with a value of 5.0. Applications linked prior to Mac
      * OS X 10.4 "Tiger" must call -stop on the instance after an appropriate (short) amount of time to avoid causing
      * unnecessary network traffic.
+     * 
+     * API-Since: 2.0
+     * Deprecated-Since: 2.0
+     * Deprecated-Message: Not supported
      */
     @Generated
     @Deprecated
@@ -353,6 +369,8 @@ public class NSNetService extends NSObject {
     /**
      * Initially set to NO. Set to YES to also publish, resolve, or monitor this service over peer to peer Wi-Fi (if
      * available). Must be set before operation starts.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setIncludesPeerToPeer:")

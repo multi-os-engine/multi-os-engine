@@ -43,6 +43,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 6.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -150,10 +153,16 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("strongToStrongObjectsMapTable")
     public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> strongToStrongObjectsMapTable();
 
+    /**
+     * API-Since: 6.0
+     */
     @Generated
     @Selector("strongToWeakObjectsMapTable")
     public static native <_KeyType, _ObjectType> NSMapTable<_KeyType, _ObjectType> strongToWeakObjectsMapTable();
@@ -169,6 +178,8 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
 
     /**
      * entries are not necessarily purged right away when the weak key is reclaimed
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("weakToStrongObjectsMapTable")
@@ -176,6 +187,8 @@ public class NSMapTable<_KeyType, _ObjectType> extends NSObject implements NSCop
 
     /**
      * entries are not necessarily purged right away when the weak key or object is reclaimed
+     * 
+     * API-Since: 6.0
      */
     @Generated
     @Selector("weakToWeakObjectsMapTable")

@@ -22,7 +22,7 @@ import org.moe.natj.general.ann.NInt;
 @Generated
 public final class NSNetServicesError {
     /**
-     * An unknown error occured during resolution or publication.
+     * An unknown error occurred during resolution or publication.
      */
     @Generated @NInt public static final long UnknownError = 0xFFFFFFFFFFFEE6C0L;
     /**
@@ -62,8 +62,10 @@ public final class NSNetServicesError {
 
     /**
      * Missing required configuration for local network access.
-     * <p>
+     * 
      * NSBonjourServices and NSLocalNetworkUsageDescription are required in Info.plist
+     * 
+     * API-Since: 14.0
      */
     @Generated @NInt public static final long MissingRequiredConfigurationError = 0xFFFFFFFFFFFEE6B8L;
 }

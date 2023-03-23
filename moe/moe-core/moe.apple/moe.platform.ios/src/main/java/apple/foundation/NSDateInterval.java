@@ -39,6 +39,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 10.0
+ */
 @Generated
 @Library("Foundation")
 @Runtime(ObjCRuntime.class)
@@ -161,14 +164,14 @@ public class NSDateInterval extends NSObject implements NSCopying, NSSecureCodin
      * a. |-----|
      * b. |-----|
      * [a compare:b] would return NSOrderedAscending because a's startDate is earlier in time than b's start date.
-     * <p>
+     * 
      * In the event that the start dates are equal, the compare method will attempt to order by duration.
      * e.g.
      * Given intervals c and d
      * c. |-----|
      * d. |---|
      * [c compare:d] would result in NSOrderedDescending because c is longer than d.
-     * <p>
+     * 
      * If both the start dates and the durations are equal, then the intervals are considered equal and NSOrderedSame is
      * returned as the result.
      */
