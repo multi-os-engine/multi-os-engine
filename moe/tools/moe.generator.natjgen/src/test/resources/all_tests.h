@@ -17,6 +17,7 @@ limitations under the License.
 #include "base_types.h"
 #include "c_enums.h"
 #include "c_variables.h"
+#include "macros.h"
 #include "pointers.h"
 #include "structs.h"
 

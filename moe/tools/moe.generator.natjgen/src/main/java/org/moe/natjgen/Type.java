@@ -173,7 +173,7 @@ public class Type {
     /**
      * The resolved kind of the type
      */
-    private final int kind;
+    private int kind;
 
     /**
      * Name of the associated element, present when kind is Objective-C Object,
@@ -1026,6 +1026,10 @@ public class Type {
      */
     public int getKind() {
         return kind;
+    }
+
+    public void setKind(int kind) {
+        this.kind = kind;
     }
 
     /**

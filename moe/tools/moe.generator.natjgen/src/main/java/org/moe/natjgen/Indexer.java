@@ -17,6 +17,7 @@ limitations under the License.
 package org.moe.natjgen;
 
 import org.clang.c.clang;
+import org.clang.enums.CXChildVisitResult;
 import org.clang.enums.CXCursorKind;
 import org.clang.enums.CXIdxEntityKind;
 import org.clang.enums.CXIndexOptFlags;
@@ -24,7 +25,11 @@ import org.clang.enums.CXTranslationUnit_Flags;
 import org.clang.opaque.CXTranslationUnit;
 import org.clang.struct.CXCursor;
 import org.clang.struct.CXIdxDeclInfo;
+import org.clang.struct.CXIdxEntityInfo;
 import org.clang.struct.CXSourceLocation;
+import org.clang.struct.CXSourceRange;
+import org.clang.struct.CXString;
+import org.clang.struct.CXToken;
 import org.clang.struct.IndexerCallbacks;
 import org.clang.struct.IndexerCallbacks.Function_indexDeclaration;
 import org.clang.util.StdHeaders;
@@ -33,11 +38,14 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.text.edits.TextEditGroup;
 import org.moe.common.developer.NativeSDKUtil;
+import org.moe.natj.c.CRuntime;
 import org.moe.natj.general.NatJ;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
+import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natjgen.Configuration.Action;
 import org.moe.natjgen.Configuration.Condition;
 import org.moe.natjgen.Configuration.Unit;
@@ -47,6 +55,7 @@ import org.moe.natjgen.util.Path;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.lang.model.SourceVersion;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -326,7 +335,7 @@ public class Indexer {
             String[] args = configuration.getCMDLine(arch);
             LOG.debug("Clang options: " + Arrays.asList(args));
             tu = clang_parseTranslationUnit(index, file, args, args.length, null, 0,
-                    CXTranslationUnit_Flags.SkipFunctionBodies | CXTranslationUnit_Flags.IncludeAttributedTypes);
+                    CXTranslationUnit_Flags.SkipFunctionBodies | CXTranslationUnit_Flags.IncludeAttributedTypes | CXTranslationUnit_Flags.DetailedPreprocessingRecord);
             VoidPtr iaction = clang_IndexAction_create(index);
 
             // Create indexer callbacks
@@ -349,6 +358,23 @@ public class Indexer {
             int error = clang_indexTranslationUnit(iaction, null, callbacks, 64,
                     CXIndexOptFlags.CXIndexOpt_SuppressWarnings | CXIndexOptFlags.CXIndexOpt_SuppressRedundantRefs, tu);
 
+            clang_visitChildren(clang_getTranslationUnitCursor(tu), new Function_clang_visitChildren() {
+                @Override
+                public int call_clang_visitChildren (@ByValue CXCursor cursor, @ByValue CXCursor parent, VoidPtr arg2) {
+                    if (cursor.kind() == CXCursorKind.MacroDefinition) {
+                        if (clang_Cursor_isMacroBuiltin(cursor) == 0 && clang_Cursor_isMacroFunctionLike(cursor) == 0) {
+                            CXIdxDeclInfo declInfo = new CXIdxDeclInfo();
+                            declInfo.setIsImplicit(0);
+                            declInfo.setCursor(cursor);
+                            CXIdxEntityInfo entityInfo = new CXIdxEntityInfo();
+                            entityInfo.setKind(CXIdxEntityKind.CXIdxEntity_Macro);
+                            declInfo.setEntityInfo(entityInfo);
+                            indexDeclaration(declInfo);
+                        }
+                    }
+                    return CXChildVisitResult.Recurse;
+                }
+            }, null);
             // Clean up
             clang_IndexAction_dispose(iaction);
             iaction = null;
@@ -356,6 +382,7 @@ public class Indexer {
             tu = null;
             clang_disposeIndex(index);
             index = null;
+
             NatJ.disposeFunctionPtr(this);
 
             // Fail if TU failed
@@ -402,6 +429,7 @@ public class Indexer {
 
         return true;
     }
+
 
     /**
      * Get path to a temp file containing the given content
@@ -507,6 +535,9 @@ public class Indexer {
 
         case CXIdxEntityKind.CXIdxEntity_Typedef:
             modelEditor.processTypedef(decl);
+            break;
+        case CXIdxEntityKind.CXIdxEntity_Macro:
+            modelEditor.processMacro(decl);
             break;
         }
     }
