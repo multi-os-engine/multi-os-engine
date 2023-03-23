@@ -7573,4 +7573,8 @@ public final class AudioToolbox {
     public static native BytePtr AUParameterFormatValue(double inParameterValue,
             @UncertainArgument("Options: reference, array Fallback: reference") AudioUnitParameter inParameter,
             BytePtr inTextBuffer, int inDigits);
+
+    @Generated public static final double AUDIO_TOOLBOX_VERSION = 1060.0;
+    @Generated public static final double AU_SUPPORT_INTERAPP_AUDIO = 1.0;
+    @Generated public static final double AUDIO_UNIT_VERSION = 1070.0;
 }

@@ -1381,4 +1381,12 @@ public final class AVFAudio {
     @Generated
     @CVariable()
     public static native int AVExtendedNoteOnEventDefaultInstrument();
+
+    @Generated public static final double AVAUDIOFORMAT_HAVE_CMFORMATDESCRIPTION = 1.0;
+    @Generated public static final double AVAUDIONODE_HAVE_AUAUDIOUNIT = 1.0;
+    @Generated public static final double AVAUDIOIONODE_HAVE_AUDIOUNIT = 1.0;
+    @Generated public static final double AVAUDIOENGINE_HAVE_MUSICPLAYER = 1.0;
+    @Generated public static final double AVAUDIOENGINE_HAVE_AUAUDIOUNIT = 1.0;
+    @Generated public static final double AVAUDIOUNIT_HAVE_AUDIOUNIT = 1.0;
+    @Generated public static final double AVAUDIOUNITCOMPONENT_HAVE_AUDIOCOMPONENT = 1.0;
 }

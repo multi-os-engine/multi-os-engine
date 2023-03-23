@@ -259,4 +259,8 @@ public final class MetalPerformanceShaders {
     @CFunction
     @NUInt
     public static native long MPSSizeofMPSDataType(int t);
+
+    @Generated public static final double MetalPerformanceShaders_h = 1.0;
+    @Generated public static final double MPSKernelTypes_h = 1.0;
+    @Generated public static final double MPSDeviceCapsIndex = 127.0;
 }

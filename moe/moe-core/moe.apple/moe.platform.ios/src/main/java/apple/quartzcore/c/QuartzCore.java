@@ -1147,4 +1147,6 @@ public final class QuartzCore {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String kCARendererMetalCommandQueue();
+
+    @Generated public static final double CA_WARN_DEPRECATED = 1.0;
 }

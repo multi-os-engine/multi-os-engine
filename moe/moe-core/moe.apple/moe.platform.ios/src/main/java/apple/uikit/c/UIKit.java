@@ -5920,4 +5920,12 @@ public final class UIKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String UIActivityTypeCollaborationCopyLink();
+
+    @Generated public static final double UIKIT_HAS_UIFOUNDATION_SYMBOLS = 1.0;
+    @Generated public static final double __NSDATAASSET_SHARED_SECTION__ = 1.0;
+    @Generated public static final double __NSTEXT_SHARED_SECTION__ = 1.0;
+    @Generated public static final double __NSPARAGRAPH_STYLE_SHARED_SECTION__ = 1.0;
+    @Generated public static final double NSLAYOUTCONSTRAINT_H = 1.0;
+    @Generated public static final double NSLAYOUTANCHOR_H = 1.0;
+    @Generated public static final double __NSLAYOUT_MANAGER_SHARED_SECTION__ = 1.0;
 }

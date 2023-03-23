@@ -188,4 +188,6 @@ public final class CoreSpotlight {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String CSSuggestionHighlightAttributeName();
+
+    @Generated public static final double CoreSpotlightAPIVersion = 40.0;
 }

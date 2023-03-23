@@ -2091,4 +2091,7 @@ public final class CoreImage {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String kCIPropertiesKey();
+
+    @Generated public static final double COREIMAGE_SUPPORTS_IOSURFACE = 1.0;
+    @Generated public static final double UNIFIED_CORE_IMAGE = 1.0;
 }

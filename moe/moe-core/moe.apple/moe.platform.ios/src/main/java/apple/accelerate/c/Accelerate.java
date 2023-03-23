@@ -47463,4 +47463,17 @@ public final class Accelerate {
     public static native long vImageFloodFill_Planar16U(
             @UncertainArgument("Options: reference, array Fallback: reference") vImage_Buffer srcDest,
             VoidPtr tempBuffer, @NUInt long seedX, @NUInt long seedY, char newValue, int connectivity, int flags);
+
+    @Generated public static final double vDSP_Version0 = 818.0;
+    @Generated public static final double vDSP_Version1 = 60.0;
+    @Generated public static final double USE_NON_APPLE_STANDARD_DATATYPES = 1.0;
+    @Generated public static final double LA_L1_NORM = 1.0;
+    @Generated public static final double LA_L2_NORM = 2.0;
+    @Generated public static final double LA_LINF_NORM = 3.0;
+    @Generated public static final double QUADRATURE_INTEGRATE_QAG_WORKSPACE_PER_INTERVAL = 32.0;
+    @Generated public static final double QUADRATURE_INTEGRATE_QAGS_WORKSPACE_PER_INTERVAL = 152.0;
+    @Generated public static final double BNNS_MAX_TENSOR_DIMENSION = 8.0;
+    @Generated public static final double VIMAGE_AFFINETRANSFORM_DOUBLE_IS_AVAILABLE = 1.0;
+    @Generated public static final double VIMAGE_CGAFFINETRANSFORM_IS_AVAILABLE = 1.0;
+    @Generated public static final double vImage_CVUtilities_h = 1.0;
 }

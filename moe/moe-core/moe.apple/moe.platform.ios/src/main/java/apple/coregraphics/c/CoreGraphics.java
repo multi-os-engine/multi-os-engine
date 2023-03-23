@@ -6577,4 +6577,5 @@ public final class CoreGraphics {
 
     @Generated public static final int kCGBitmapByteOrder16Host = 0x00001000;
     @Generated public static final int kCGBitmapByteOrder32Host = 0x00002000;
+    @Generated public static final double CG_HDR_BT_2100 = 1.0;
 }

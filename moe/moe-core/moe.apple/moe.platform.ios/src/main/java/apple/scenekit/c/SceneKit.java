@@ -1463,4 +1463,7 @@ public final class SceneKit {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String SCNLightingModelShadowOnly();
+
+    @Generated public static final double SCN_ENABLE_METAL = 1.0;
+    @Generated public static final double SCN_ENABLE_OPENGL = 1.0;
 }

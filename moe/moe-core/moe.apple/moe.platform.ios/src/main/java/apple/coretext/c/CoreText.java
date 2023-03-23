@@ -6352,4 +6352,21 @@ public final class CoreText {
     @CFunction
     public static native CFArrayRef CTFontCollectionCopyFontAttributes(CTFontCollectionRef collection,
             CFSetRef attributeNames, int options);
+
+    @Generated public static final double ATSFONTREF_DEFINED = 1.0;
+    @Generated public static final double kCTVersionNumber10_5 = 131072.0;
+    @Generated public static final double kCTVersionNumber10_5_2 = 131073.0;
+    @Generated public static final double kCTVersionNumber10_5_3 = 131074.0;
+    @Generated public static final double kCTVersionNumber10_5_5 = 131075.0;
+    @Generated public static final double kCTVersionNumber10_6 = 196608.0;
+    @Generated public static final double kCTVersionNumber10_7 = 262144.0;
+    @Generated public static final double kCTVersionNumber10_8 = 327680.0;
+    @Generated public static final double kCTVersionNumber10_9 = 393216.0;
+    @Generated public static final double kCTVersionNumber10_10 = 458752.0;
+    @Generated public static final double kCTVersionNumber10_11 = 524288.0;
+    @Generated public static final double kCTVersionNumber10_12 = 589824.0;
+    @Generated public static final double kCTVersionNumber10_13 = 655360.0;
+    @Generated public static final double kCTVersionNumber10_14 = 720896.0;
+    @Generated public static final double kCTVersionNumber10_15 = 786432.0;
+    @Generated public static final double kCTVersionNumber11_0 = 851968.0;
 }

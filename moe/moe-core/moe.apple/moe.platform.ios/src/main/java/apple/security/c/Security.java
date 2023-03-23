@@ -7027,4 +7027,6 @@ public final class Security {
     @Generated
     @CFunction
     public static native CFArrayRef SecTrustCopyCertificateChain(SecTrustRef trust);
+
+    @Generated public static final double SECURITY_TYPE_UNIFICATION = 1.0;
 }

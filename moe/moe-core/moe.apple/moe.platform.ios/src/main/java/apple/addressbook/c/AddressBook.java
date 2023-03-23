@@ -1856,4 +1856,9 @@ public final class AddressBook {
     @Generated
     @CVariable()
     public static native int kABGroupNameProperty();
+
+    @Generated public static final double kABRecordInvalidID = -1.0;
+    @Generated public static final double kABPropertyInvalidID = -1.0;
+    @Generated public static final double kABSourceTypeSearchableMask = 1.6777216E7;
+    @Generated public static final double kABMultiValueInvalidIdentifier = -1.0;
 }

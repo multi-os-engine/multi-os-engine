@@ -1908,4 +1908,6 @@ public final class JavaScriptCore {
     @CFunction
     public static native boolean JSObjectDeletePropertyForKey(JSContextRef ctx, JSObjectRef object,
             JSValueRef propertyKey, Ptr<JSValueRef> exception);
+
+    @Generated public static final double JSC_OBJC_API_ENABLED = 1.0;
 }

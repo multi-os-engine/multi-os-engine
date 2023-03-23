@@ -54,7 +54,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 /**
  * A SpriteKit Node used to stroke or fill a shape. CGPaths are used to supply the path.
- * <p>
+ * 
  * See CGPath <a
  * href="http://developer.apple.com/library/mac/#documentation/GraphicsImaging/Reference/CGPath/Reference/reference.html">reference
  * pages</a> for details on how to construct a CGPath.
@@ -188,6 +188,8 @@ public class SKShapeNode extends SKNode {
 
     /**
      * Create a Shape Node representing an circle centered at the Node's origin.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("shapeNodeWithCircleOfRadius:")
@@ -195,6 +197,8 @@ public class SKShapeNode extends SKNode {
 
     /**
      * Create a Shape Node representing an Ellipse inscribed within a Rect
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("shapeNodeWithEllipseInRect:")
@@ -202,6 +206,8 @@ public class SKShapeNode extends SKNode {
 
     /**
      * Create a Shape Node representing an Ellipse inscribed within a Rect centered at the Node's origin.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("shapeNodeWithEllipseOfSize:")
@@ -209,17 +215,24 @@ public class SKShapeNode extends SKNode {
 
     /**
      * Create a Shape Node using a CGPathRef, optionally centered at the Node's origin.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("shapeNodeWithPath:")
     public static native SKShapeNode shapeNodeWithPath(CGPathRef path);
 
+    /**
+     * API-Since: 8.0
+     */
     @Generated
     @Selector("shapeNodeWithPath:centered:")
     public static native SKShapeNode shapeNodeWithPathCentered(CGPathRef path, boolean centered);
 
     /**
      * Create a Shape Node representing an a series of Points interpreted as line segments
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("shapeNodeWithPoints:count:")
@@ -228,6 +241,8 @@ public class SKShapeNode extends SKNode {
 
     /**
      * Create a Shape Node representing a Rect.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("shapeNodeWithRect:")
@@ -235,6 +250,8 @@ public class SKShapeNode extends SKNode {
 
     /**
      * Create a Shape Node representing a rounded rect with a corner radius
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("shapeNodeWithRect:cornerRadius:")
@@ -242,6 +259,8 @@ public class SKShapeNode extends SKNode {
 
     /**
      * Create a Shape Node representing a rect centered at the Node's origin.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("shapeNodeWithRectOfSize:")
@@ -249,6 +268,8 @@ public class SKShapeNode extends SKNode {
 
     /**
      * Create a Shape Node representing a rounded rect with a corner radius centered at the Node's origin.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("shapeNodeWithRectOfSize:cornerRadius:")
@@ -257,6 +278,8 @@ public class SKShapeNode extends SKNode {
 
     /**
      * Create a Shape Node representing a smoothed spline that passes through a series of Points
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("shapeNodeWithSplinePoints:count:")
@@ -275,6 +298,8 @@ public class SKShapeNode extends SKNode {
     /**
      * Optional dictionary of SKAttributeValues
      * Attributes can be used with custom SKShaders.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("attributeValues")
@@ -282,7 +307,7 @@ public class SKShapeNode extends SKNode {
 
     /**
      * Sets the blend mode to use when composing the shape with the final framebuffer.
-     *
+     * 
      * @see SKNode.SKBlendMode
      */
     @Generated
@@ -299,6 +324,8 @@ public class SKShapeNode extends SKNode {
 
     /**
      * An optional SKShader used for the filling the Shape
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fillShader")
@@ -306,6 +333,8 @@ public class SKShapeNode extends SKNode {
 
     /**
      * An optional Texture used for the filling the Shape
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("fillTexture")
@@ -389,6 +418,8 @@ public class SKShapeNode extends SKNode {
     /**
      * Optional dictionary of SKAttributeValues
      * Attributes can be used with custom SKShaders.
+     * 
+     * API-Since: 10.0
      */
     @Generated
     @Selector("setAttributeValues:")
@@ -396,7 +427,7 @@ public class SKShapeNode extends SKNode {
 
     /**
      * Sets the blend mode to use when composing the shape with the final framebuffer.
-     *
+     * 
      * @see SKNode.SKBlendMode
      */
     @Generated
@@ -412,6 +443,8 @@ public class SKShapeNode extends SKNode {
 
     /**
      * An optional SKShader used for the filling the Shape
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFillShader:")
@@ -419,6 +452,8 @@ public class SKShapeNode extends SKNode {
 
     /**
      * An optional Texture used for the filling the Shape
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setFillTexture:")
@@ -475,6 +510,8 @@ public class SKShapeNode extends SKNode {
 
     /**
      * An optional SKShader used for the Shape's Stroke.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setStrokeShader:")
@@ -482,11 +519,16 @@ public class SKShapeNode extends SKNode {
 
     /**
      * An optional Texture used for the Shape's stroke.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("setStrokeTexture:")
     public native void setStrokeTexture(SKTexture value);
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("setValue:forAttributeNamed:")
     public native void setValueForAttributeNamed(SKAttributeValue value, String key);
@@ -500,6 +542,8 @@ public class SKShapeNode extends SKNode {
 
     /**
      * An optional SKShader used for the Shape's Stroke.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("strokeShader")
@@ -507,11 +551,16 @@ public class SKShapeNode extends SKNode {
 
     /**
      * An optional Texture used for the Shape's stroke.
+     * 
+     * API-Since: 8.0
      */
     @Generated
     @Selector("strokeTexture")
     public native SKTexture strokeTexture();
 
+    /**
+     * API-Since: 10.0
+     */
     @Generated
     @Selector("valueForAttributeNamed:")
     public native SKAttributeValue valueForAttributeNamed(String key);

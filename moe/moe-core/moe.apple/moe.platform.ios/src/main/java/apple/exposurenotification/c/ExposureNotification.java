@@ -43,4 +43,5 @@ public final class ExposureNotification {
      */
     @Deprecated @Generated @NInt public static final long ENDaysSinceOnsetOfSymptomsUnknown = org.moe.natj.general.NatJ
             .is64Bit() ? 0x7FFFFFFFFFFFFFFFL : 0x000000007FFFFFFFL;
+    @Generated public static final double EN_FEATURE_GENERAL = 1.0;
 }

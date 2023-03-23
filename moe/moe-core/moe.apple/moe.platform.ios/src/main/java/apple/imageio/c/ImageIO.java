@@ -6258,4 +6258,12 @@ public final class ImageIO {
     @Generated
     @CVariable()
     public static native CFStringRef kIIOCameraModel_Intrinsics();
+
+    @Generated public static final double IIO_HAS_IOSURFACE = 1.0;
+    @Generated public static final double IMAGEIO_PNG_NO_FILTERS = 0.0;
+    @Generated public static final double IMAGEIO_PNG_FILTER_NONE = 8.0;
+    @Generated public static final double IMAGEIO_PNG_FILTER_SUB = 16.0;
+    @Generated public static final double IMAGEIO_PNG_FILTER_UP = 32.0;
+    @Generated public static final double IMAGEIO_PNG_FILTER_AVG = 64.0;
+    @Generated public static final double IMAGEIO_PNG_FILTER_PAETH = 128.0;
 }

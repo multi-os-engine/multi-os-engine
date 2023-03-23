@@ -1074,4 +1074,7 @@ public final class IOSurface {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String IOSurfacePropertyKeyName();
+
+    @Generated public static final double IOSURFACE_REF_H = 1.0;
+    @Generated public static final double IOSURFACE_OBJC_H = 1.0;
 }

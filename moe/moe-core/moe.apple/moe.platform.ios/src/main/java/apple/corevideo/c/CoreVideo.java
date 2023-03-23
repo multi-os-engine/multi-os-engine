@@ -2809,4 +2809,18 @@ public final class CoreVideo {
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatContainsSenselArray();
+
+    @Generated public static final double __COREVIDEO_CVRETURN_H__ = 1.0;
+    @Generated public static final double __COREVIDEO_CVBASE_H__ = 1.0;
+    @Generated public static final double __COREVIDEO_CVBUFFER_H__ = 1.0;
+    @Generated public static final double __COREVIDEO_CVPIXELBUFFER_H__ = 1.0;
+    @Generated public static final double __COREVIDEO_CVIMAGEBUFFER_H__ = 1.0;
+    @Generated public static final double __COREVIDEO_CVPIXELBUFFERIOSURFACE_H__ = 1.0;
+    @Generated public static final double COREVIDEO_INCLUDED_IOSURFACE_HEADER_FILE = 1.0;
+    @Generated public static final double __COREVIDEO__CVPIXELBUFFERPOOL_H__ = 1.0;
+    @Generated public static final double __COREVIDEO_CVOPENGLESTEXTURE_H__ = 1.0;
+    @Generated public static final double __COREVIDEO__CVOPENGLESTEXTURECACHE_H__ = 1.0;
+    @Generated public static final double COREVIDEO_USE_EAGLCONTEXT_CLASS_IN_API = 1.0;
+    @Generated public static final double __COREVIDEO_CVMETALTEXTURE_H__ = 1.0;
+    @Generated public static final double __COREVIDEO__CVMETALTEXTURECACHE_H__ = 1.0;
 }

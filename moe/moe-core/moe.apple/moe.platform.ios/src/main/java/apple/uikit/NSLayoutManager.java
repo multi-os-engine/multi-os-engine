@@ -65,6 +65,9 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
+/**
+ * API-Since: 7.0
+ */
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
@@ -175,6 +178,9 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("CGGlyphAtIndex:")
     public native char CGGlyphAtIndex(@NUInt long glyphIndex);
@@ -184,6 +190,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * glyphIndex. The first CGGlyphAtIndex variant returns kCGFontIndexInvalid if the requested index is out of the
      * range (0, numberOfGlyphs), and optionally returns a flag indicating whether the requested index is in range. The
      * second CGGlyphAtIndex variant raises a NSRangeError if the requested index is out of range.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("CGGlyphAtIndex:isValidIndex:")
@@ -202,6 +210,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * having glyphs or layout for preceding portions. The default is NO. Turning this setting on will significantly
      * alter which portions of the text will have glyph generation or layout performed when a given generation-causing
      * method is invoked. It also gives significant performance benefits, especially for large documents.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("allowsNonContiguousLayout")
@@ -374,6 +384,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * whether to go to the trouble of doing this special work. If the caller is interested in this more from an
      * enclosing point of view rather than a selection point of view, pass {NSNotFound, 0} as the selected range. This
      * method will do the minimum amount of work required to answer the question.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("enumerateEnclosingRectsForGlyphRange:withinSelectedGlyphRange:inTextContainer:usingBlock:")
@@ -383,6 +395,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
 
     /**
      * Enumerates line fragments intersecting with glyphRange.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("enumerateLineFragmentsForGlyphRange:usingBlock:")
@@ -418,6 +432,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * color are merely for informational purposes; the color will already be set in the graphics state. If for any
      * reason you modify it, you must restore it before returning from this method. You should never call this method,
      * but you might override it. The default implementation will simply fill the specified rect array.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("fillBackgroundRectArray:count:forCharacterRange:color:")
@@ -454,6 +470,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * the glyph properties, character indexes, and bidi levels corresponding to these glyphs. Each pointer passed in
      * should either be NULL, or else point to sufficient memory to hold glyphRange.length elements. These methods
      * return the number of glyphs filled in.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("getGlyphsInRange:glyphs:properties:characterIndexes:bidiLevels:")
@@ -570,6 +588,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * Even if non-contiguous layout is allowed, it may not always be used, and there may not always be layout holes.
      * This method returns YES if there might currently be non-contiguous portions of the text laid out.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("hasNonContiguousLayout")
@@ -581,7 +601,12 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * A value of 1.0 causes hyphenation to be attempted always. Note that hyphenation will slow down text layout and
      * increase memory usage, so it should be used sparingly. Maybe overridden on a per-paragraph basis by the
      * NSParagraphStyle's hyphenationFactor.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use usesDefaultHyphenation or -[NSParagraphStyle hyphenationFactor] instead.
      */
+    @Deprecated
     @Generated
     @Selector("hyphenationFactor")
     @NFloat
@@ -633,12 +658,17 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * This method invalidates the layout information for the given range of characters. If actualCharRange is non-NULL
      * it will be set to the actual range invalidated after any necessary expansion.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("invalidateLayoutForCharacterRange:actualCharacterRange:")
     public native void invalidateLayoutForCharacterRangeActualCharacterRange(@ByValue NSRange charRange,
             NSRange actualCharRange);
 
+    /**
+     * API-Since: 7.0
+     */
     @Generated
     @Selector("isValidGlyphIndex:")
     public native boolean isValidGlyphIndex(@NUInt long glyphIndex);
@@ -655,6 +685,9 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     public native CGRect lineFragmentRectForGlyphAtIndexEffectiveRange(@NUInt long glyphIndex,
             NSRange effectiveGlyphRange);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("lineFragmentRectForGlyphAtIndex:effectiveRange:withoutAdditionalLayout:")
     @ByValue
@@ -673,6 +706,9 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     public native CGRect lineFragmentUsedRectForGlyphAtIndexEffectiveRange(@NUInt long glyphIndex,
             NSRange effectiveGlyphRange);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("lineFragmentUsedRectForGlyphAtIndex:effectiveRange:withoutAdditionalLayout:")
     @ByValue
@@ -715,6 +751,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * edited. The invalidatedRange includes portions that changed as a result of attribute fixing. invalidatedRange is
      * either equal to newCharRange or larger. Layout managers should not change the contents of the text storage during
      * the execution of this message.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("processEditingForTextStorage:edited:range:changeInLength:invalidatedRange:")
@@ -725,6 +763,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * If non-contiguous layout is not enabled, this will cause generation of all glyphs up to and including glyphIndex.
      * It will return the glyph property associated with the glyph at the specified index.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("propertyForGlyphAtIndex:")
@@ -753,6 +793,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * having glyphs or layout for preceding portions. The default is NO. Turning this setting on will significantly
      * alter which portions of the text will have glyph generation or layout performed when a given generation-causing
      * method is invoked. It also gives significant performance benefits, especially for large documents.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setAllowsNonContiguousLayout:")
@@ -817,6 +859,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * index (a character index generating multiple glyph IDs). Due to the font substitution, aFont passed into this
      * method might not match the font in the attributes dictionary. Calling this method for a range with the layout
      * information invalidates the layout and display.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("setGlyphs:properties:characterIndexes:font:forGlyphRange:")
@@ -829,7 +873,12 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * A value of 1.0 causes hyphenation to be attempted always. Note that hyphenation will slow down text layout and
      * increase memory usage, so it should be used sparingly. Maybe overridden on a per-paragraph basis by the
      * NSParagraphStyle's hyphenationFactor.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
+     * Deprecated-Message: Please use usesDefaultHyphenation or -[NSParagraphStyle hyphenationFactor] instead.
      */
+    @Deprecated
     @Generated
     @Selector("setHyphenationFactor:")
     public native void setHyphenationFactor(@NFloat double value);
@@ -935,7 +984,11 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * of various font substitutions that the system automatically executes. The textMatrix is the affine transform
      * mapping the text space coordinate system to the user space coordinate system. The tx and ty components of
      * textMatrix are ignored since Quartz overrides them with the glyph positions.
+     * 
+     * API-Since: 7.0
+     * Deprecated-Since: 13.0
      */
+    @Deprecated
     @Generated
     @Selector("showCGGlyphs:positions:count:font:matrix:attributes:inContext:")
     public native void showCGGlyphsPositionsCountFontMatrixAttributesInContext(ConstCharPtr glyphs,
@@ -983,6 +1036,9 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     public native NSTextContainer textContainerForGlyphAtIndexEffectiveRange(@NUInt long glyphIndex,
             NSRange effectiveGlyphRange);
 
+    /**
+     * API-Since: 9.0
+     */
     @Generated
     @Selector("textContainerForGlyphAtIndex:effectiveRange:withoutAdditionalLayout:")
     public native NSTextContainer textContainerForGlyphAtIndexEffectiveRangeWithoutAdditionalLayout(
@@ -1007,6 +1063,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
     /**
      * Returns a range of truncated glyph range for a line fragment containing the specified index. When there is no
      * truncation for the line fragment, it returns {NSNotFound, 0}.
+     * 
+     * API-Since: 7.0
      */
     @Generated
     @Selector("truncatedGlyphRangeInLineFragmentForGlyphAtIndex:")
@@ -1058,6 +1116,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * When YES, enables internal security analysis for malicious inputs and activates defensive behaviors. By enabling
      * this functionality, it's possible certain text such as a very long paragraph might result in unexpected layout.
      * NO by default.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("limitsLayoutForSuspiciousContents")
@@ -1067,6 +1127,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * When YES, enables internal security analysis for malicious inputs and activates defensive behaviors. By enabling
      * this functionality, it's possible certain text such as a very long paragraph might result in unexpected layout.
      * NO by default.
+     * 
+     * API-Since: 12.0
      */
     @Generated
     @Selector("setLimitsLayoutForSuspiciousContents:")
@@ -1077,6 +1139,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * basis by the NSParagraphStyle's hyphenationFactor. The receiver makes the best effort to decide the exact logic
      * including the hyphenation factor based on the context. The default value is NO. Can be overridden by the
      * preference key @"NSUsesDefaultHyphenation".
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("setUsesDefaultHyphenation:")
@@ -1090,6 +1154,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * of various font substitutions that the system automatically executes. The textMatrix is the affine transform
      * mapping the text space coordinate system to the user space coordinate system. The tx and ty components of
      * textMatrix are ignored since Quartz overrides them with the glyph positions.
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("showCGGlyphs:positions:count:font:textMatrix:attributes:inContext:")
@@ -1113,6 +1179,8 @@ public class NSLayoutManager extends NSObject implements NSSecureCoding {
      * basis by the NSParagraphStyle's hyphenationFactor. The receiver makes the best effort to decide the exact logic
      * including the hyphenation factor based on the context. The default value is NO. Can be overridden by the
      * preference key @"NSUsesDefaultHyphenation".
+     * 
+     * API-Since: 13.0
      */
     @Generated
     @Selector("usesDefaultHyphenation")

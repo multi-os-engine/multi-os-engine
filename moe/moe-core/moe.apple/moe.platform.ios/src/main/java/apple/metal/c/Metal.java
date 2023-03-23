@@ -424,4 +424,8 @@ public final class Metal {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String MTLIOErrorDomain();
+
+    @Generated public static final double MTLResourceCPUCacheModeShift = 0.0;
+    @Generated public static final double MTLResourceStorageModeShift = 4.0;
+    @Generated public static final double MTLResourceHazardTrackingModeShift = 8.0;
 }

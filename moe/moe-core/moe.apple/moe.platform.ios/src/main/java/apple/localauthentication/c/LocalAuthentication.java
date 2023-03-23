@@ -55,4 +55,27 @@ public final class LocalAuthentication {
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String LAErrorDomain();
+
+    @Generated public static final double kLAPolicyDeviceOwnerAuthenticationWithBiometrics = 1.0;
+    @Generated public static final double kLAPolicyDeviceOwnerAuthentication = 2.0;
+    @Generated public static final double kLAPolicyDeviceOwnerAuthenticationWithWatch = 3.0;
+    @Generated public static final double kLAPolicyDeviceOwnerAuthenticationWithBiometricsOrWatch = 4.0;
+    @Generated public static final double kLAPolicyDeviceOwnerAuthenticationWithWristDetection = 5.0;
+    @Generated public static final double kLACredentialTypeApplicationPassword = 0.0;
+    @Generated public static final double kLACredentialSmartCardPIN = -3.0;
+    @Generated public static final double kLAErrorAuthenticationFailed = -1.0;
+    @Generated public static final double kLAErrorUserCancel = -2.0;
+    @Generated public static final double kLAErrorUserFallback = -3.0;
+    @Generated public static final double kLAErrorSystemCancel = -4.0;
+    @Generated public static final double kLAErrorPasscodeNotSet = -5.0;
+    @Generated public static final double kLAErrorTouchIDNotAvailable = -6.0;
+    @Generated public static final double kLAErrorTouchIDNotEnrolled = -7.0;
+    @Generated public static final double kLAErrorTouchIDLockout = -8.0;
+    @Generated public static final double kLAErrorAppCancel = -9.0;
+    @Generated public static final double kLAErrorInvalidContext = -10.0;
+    @Generated public static final double kLAErrorWatchNotAvailable = -11.0;
+    @Generated public static final double kLAErrorNotInteractive = -1004.0;
+    @Generated public static final double kLAErrorBiometryNotPaired = -12.0;
+    @Generated public static final double kLAErrorBiometryDisconnected = -13.0;
+    @Generated public static final double kLAErrorInvalidDimensions = -14.0;
 }

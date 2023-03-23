@@ -8865,4 +8865,7 @@ public final class Network {
     @Generated
     @CFunction
     public static native char nw_quic_get_stream_usable_datagram_frame_size(NSObject metadata);
+
+    @Generated public static final double NW_NOT_i386_MAC = 1.0;
+    @Generated public static final double NW_FRAMER_CREATE_FLAGS_DEFAULT = 0.0;
 }

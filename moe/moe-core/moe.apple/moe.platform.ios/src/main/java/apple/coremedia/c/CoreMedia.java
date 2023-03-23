@@ -8759,4 +8759,6 @@ public final class CoreMedia {
     @Generated
     @CVariable()
     public static native CFStringRef kCMTextMarkupAttribute_FontFamilyNameList();
+
+    @Generated public static final double CMTIMEBASE_USE_SOURCE_TERMINOLOGY = 0.0;
 }
