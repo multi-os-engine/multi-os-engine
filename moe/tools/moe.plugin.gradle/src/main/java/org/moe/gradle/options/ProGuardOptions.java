@@ -24,6 +24,7 @@ public class ProGuardOptions {
     private int level = LEVEL_APP;
     private boolean minifyEnabled = true;
     private boolean obfuscationEnabled = false;
+    private boolean serializationSupport = false;
     @Nullable
     private Set<String> excludeFiles;
 
@@ -86,6 +87,15 @@ public class ProGuardOptions {
     @IgnoreUnused
     public void setObfuscationEnabled(boolean obfuscationEnabled) {
         this.obfuscationEnabled = obfuscationEnabled;
+    }
+
+    public boolean isSerializationSupport() {
+        return serializationSupport;
+    }
+
+    @IgnoreUnused
+    public void setSerializationSupport(boolean serializationSupport) {
+        this.serializationSupport = serializationSupport;
     }
 
     @Nullable
