@@ -182,11 +182,17 @@ public class ModifierEditor extends EditContext {
     };
     private static final String Selector[] = new String[] { Constants.SelectorAnnotation, Constants.SelectorAnnotationFQ
     };
+    private static final String NotNull[] = new String[] { Constants.NotNullAnnotation, Constants.NotNullFQ
+    };
+    private static final String Nullable[] = new String[] { Constants.NullableAnnotation, Constants.NullableFQ
+    };
     private static final String XIB[] = new String[] { Constants.XIBAnnotation, Constants.XIBAnnotationFQ
     };
 
     // Other annotations
     private Annotation aDeprecated;
+
+    private Annotation aNullAnnotation;
 
     private static final String Deprecated[] = new String[] { "Deprecated", null
     };
@@ -747,6 +753,14 @@ public class ModifierEditor extends EditContext {
 
     public void setDeprecated() throws GeneratorException {
         aDeprecated = newMarker(aDeprecated, Deprecated);
+    }
+
+    public void setNullable() throws GeneratorException {
+        aNullAnnotation = newMarker(aNullAnnotation, Nullable);
+    }
+
+    public void setNotNull() throws GeneratorException {
+        aNullAnnotation = newMarker(aNullAnnotation, NotNull);
     }
 
     private Annotation newMarker(Annotation annotation, String type[]) throws GeneratorException {
